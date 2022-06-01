@@ -1,150 +1,245 @@
 <template>
-
   <div class="sidebar_left">
-    <div class="chapter_1">
-      <div class="logo" @click="goTo('/')"><img alt="logo" src="@/assets/img/logo.svg"></div>
-      <div class="numb-1 jbm-300">
-        <div>01</div>
-      </div>
-      <div class="race_title jbm-300">
-        <div>Раса</div>
-      </div>
-      <div class="race">
-        <div>Полурослик</div>
-      </div>
-      <div class="arrows">
-        <div><img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg"></div>
-        <div><img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg"></div>
-      </div>
-      <div class="delimiter">
-        <div></div>
-      </div>
-
-      <div class="menu-1">
-
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Этнос</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Коренастый</div>
-          </div>
+    <div class="chapter">
+      <div class="main_chapter">
+        <div class="logo" @click="goTo('/')">
+          <img alt="logo" src="@/assets/img/logo.svg" />
         </div>
 
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Пол</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Женщина, гетеро</div>
-          </div>
+        <my-slider numb="01" title="Раса" arr="Полурослик"></my-slider>
+
+        <div class="delimiter"></div>
+
+        <div class="selection_menu">
+          <my-selection 
+            @click="showEthnos()"
+            title="Этнос"
+            :type="ethnos_select.type"
+            :rare="ethnos_select.rare"
+          ></my-selection>
+          <my-selection title="Пол" type="Женщина, гетеро"></my-selection>
+          <my-selection title="Цвет кожи" type="Белый"></my-selection>
+          <my-selection title="Цвет глаз" type="Зеленый"></my-selection>
+          <my-selection title="Цвет волос" type="Русый"></my-selection>
         </div>
 
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Цвет кожи</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Белый</div>
-          </div>
+        <div class="selection_menu">
+          <my-controller
+            title="Возраст"
+            value="34"
+            unit="г"
+            note="Взрослый"
+          ></my-controller>
+          <my-controller
+            title="Рост"
+            value="100"
+            unit="см"
+            note="Маленький"
+          ></my-controller>
+          <my-controller
+            title="Вес"
+            value="18"
+            unit="кг"
+            note=""
+          ></my-controller>
         </div>
 
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Цвет глаз</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Зеленый</div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Цвет волос</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Русый</div>
-          </div>
+        <div class="selection_menu">
+          <my-selection title="Характеристики" type="Сил, Лов"></my-selection>
+          <my-selection title="Навыки" type="Арк, Ана"></my-selection>
+          <my-selection title="Языки" type="Акван"></my-selection>
         </div>
       </div>
 
-      <div class="menu-2">
-
-        <div class="column">
-          <div class="menu-2_title jbm-300">
-            <div>Возраст</div>
-          </div>
-          <div class="menu-2_link int-400">
-            <div>34 г <span>Взрослый</span></div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="menu-2_title jbm-300">
-            <div>Рост</div>
-          </div>
-          <div class="menu-2_link int-400">
-            <div>100 см <span>Маленький</span></div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="menu-2_title jbm-300">
-            <div>Вес</div>
-          </div>
-          <div class="menu-2_link int-400">
-            <div>18 кг</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="menu-3">
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Характеристики</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Сил, Лов</div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Навыки</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Арк, Ана</div>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="menu-1_title jbm-300">
-            <div>Языки</div>
-          </div>
-          <div class="menu-1_link int-400">
-            <div>Акван</div>
-          </div>
-        </div>
-      </div>
-
+      <my-button v-if="shown_home" numb="02" title="Класс"></my-button>
+      <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
     </div>
-    <div class="next_chapter">
-      <div class="numb-2 jbm-300">
-        <div>02</div>
+
+    <!-- Этнос -->
+    <div v-if="shown_ethnos" class="selection_item">
+      <div class="ethnos_attributes">
+        <div class="feature jbm-300">
+          <my-attribute
+            title="Сила"
+            type="Базовая"
+            plus
+            :numb="attributes_main.strength"
+            icon="strength"
+            ethnos
+          >
+          </my-attribute>
+
+          <my-attribute
+            title="Ловкость"
+            type="Базовая"
+            plus
+            :numb="attributes_main.agility"
+            icon="agility"
+            ethnos
+          >
+          </my-attribute>
+
+          <my-attribute
+            title="Телосложение"
+            type="Базовое"
+            plus
+            :numb="attributes_main.constitution"
+            icon="constitution"
+            ethnos
+          ></my-attribute>
+
+          <my-attribute
+            title="Интеллект"
+            type="Базовый"
+            plus
+            :numb="attributes_main.intellect"
+            icon="intellect"
+            ethnos
+          ></my-attribute>
+
+          <my-attribute
+            title="Мудрость"
+            type="Базовая"
+            plus
+            :numb="attributes_main.wisdom"
+            icon="wisdom"
+            ethnos
+          ></my-attribute>
+
+          <my-attribute
+            title="Харизма"
+            type="Базовая"
+            plus
+            :numb="attributes_main.charisma"
+            icon="charisma"
+            ethnos
+          ></my-attribute>
+
+          <my-attribute
+            title="Скорость"
+            type="Пешком"
+            :numb="attributes_travel.speed"
+            feet
+            icon="speed"
+            ethnos
+          ></my-attribute>
+
+          <my-attribute
+            title="Темное зрение"
+            type=""
+            :numb="attributes_travel.dark_vision"
+            feet
+            icon="dark_vision"
+            ethnos
+          ></my-attribute>
+        </div>
+
+        <div class="inventory">
+          <my-inventory
+            title="Оружие"
+            :item="inventory.weapon"
+            ethnos
+          ></my-inventory>
+          <my-inventory
+            title="Доспехи"
+            :item="inventory.armor"
+            ethnos
+          ></my-inventory>
+          <my-inventory
+            title="Инструменты"
+            :item="inventory.tools"
+            ethnos
+          ></my-inventory>
+          <my-inventory
+            title="Языки"
+            :item="inventory.languages"
+            ethnos
+          ></my-inventory>
+        </div>
+
+        <div class="fines">
+          <my-fines
+            v-for="item in fines"
+            :key="item"
+            :effect="item.effect"
+            :icon="item.icon"
+            :title="item.title"
+            :description="item.description"
+          ></my-fines>
+        </div>
       </div>
-      <div class="class_title jbm-300">
-        <div>Класс</div>
-        <div><img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg"></div>
+      <div class="ethnos_cards_menu">
+        <div class="ethnos_card">
+        <div>
+          <img
+            src="@/assets/img/characters/halfling/ethhnos/image.png"
+            :alt="image"
+          />
+        </div>
+        <div class="feature jbm-300">
+          <my-attribute
+            title="Мудрость"
+            type="Базовая"
+            plus
+            :numb="attributes_main.wisdom"
+            icon="wisdom"
+          >
+          </my-attribute>
+        </div>
+
+        <div class="fines">
+          <my-fines
+            v-for="item in fines"
+            :key="item"
+            :effect="item.effect"
+            :icon="item.icon"
+            :title="item.title"
+            :description="item.description"
+          ></my-fines>
+        </div>
+        <div class="ethnos_text int-400">
+          <h3>Призрачный полурослик</h3>
+          <p>
+            Из-за того, что их народ имеет закрытую, клановую культуру,
+            недоверчивую ко всему чужому, призрачные полурослики в качестве
+            искателей приключений встречаются редко.
+            <br />
+            <br />
+            <span
+              >Спросите своего Мастера, можете ли Вы играть представителем этой
+              подрасы.</span
+            >
+          </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- character -->
   <div class="represent">
-    <div class="character"><img alt="halfling" src="@/assets/img/characters/halfling.png"></div>
+    <div class="character">
+      <div class="skin">
+        <img
+          alt="halfling_skin"
+          src="@/assets/img/characters/halfling/halfling_skin_2_0_1.png"
+        />
+      </div>
+      <div class="hair">
+        <img
+          alt="halfling_hair"
+          src="@/assets/img/characters/halfling/halfling_hair_0_6_1.png"
+        />
+      </div>
+      <div class="eyes">
+        <img
+          alt="halfling_eyes"
+          src="@/assets/img/characters/halfling/halfling_eyes_8_2_1.png"
+        />
+      </div>
+    </div>
 
     <div class="size">
-
       <div class="skale">
         <div class="division_numb_top"></div>
         <div class="skale_division division_off">
@@ -200,590 +295,474 @@
           <div class=""></div>
         </div>
       </div>
-
     </div>
-
   </div>
 
   <!-- sidebar_right -->
-  <div class="sidebar_right">
+  <div v-if="shown_home" class="sidebar_right">
     <div class="feature jbm-300">
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5.5" y="5.5" width="7" height="7" stroke="white" fill="" stroke-opacity="0.2" />
-            </svg>
-          </div>
-          <div class="feature_item">Сила<span>Базовая</span></div>
-          <div class="feature_numb">+0</div>
-        </div>
-        <div class="feature_column_visual">
-        </div>
-      </div>
+      <my-attribute
+        title="Сила"
+        type="Базовая"
+        plus
+        :numb="attributes_main.strength"
+        icon="strength"
+      >
+      </my-attribute>
 
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.80902 12.5L9 6.11803L12.191 12.5H5.80902Z" stroke="white" fill="" stroke-opacity="1" />
-            </svg>
-          </div>
-          <div class="feature_item feature_active">Ловкость<span>Базовая</span></div>
-          <div class="feature_numb feature_active">+2</div>
-        </div>
-        <div class="feature_column_visual">
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-      </div>
+      <my-attribute
+        title="Ловкость"
+        type="Базовая"
+        plus
+        :numb="attributes_main.agility"
+        icon="agility"
+      >
+      </my-attribute>
 
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.191 5.5L9 11.882L5.80902 5.5L12.191 5.5Z" stroke="white" fill="" stroke-opacity="0.2" />
-            </svg>
-          </div>
-          <div class="feature_item">Телосложение<span>Базовое</span></div>
-          <div class="feature_numb">+0</div>
-        </div>
-        <div class="feature_column_visual">
-        </div>
-      </div>
+      <my-attribute
+        title="Телосложение"
+        type="Базовое"
+        plus
+        :numb="attributes_main.constitution"
+        icon="constitution"
+      ></my-attribute>
 
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5.5" y="5.5" width="7" height="7" rx="3.5" stroke="white" fill="" stroke-opacity="0.2" />
-            </svg>
-          </div>
-          <div class="feature_item">Интеллект<span>Базовый</span></div>
-          <div class="feature_numb">+0</div>
-        </div>
-        <div class="feature_column_visual">
-        </div>
-      </div>
+      <my-attribute
+        title="Интеллект"
+        type="Базовый"
+        plus
+        :numb="attributes_main.intellect"
+        icon="intellect"
+      ></my-attribute>
 
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4.7071" y="9" width="6.07108" height="6.07108" transform="rotate(-45 4.7071 9)" stroke="white"
-                fill="" stroke-opacity="1" />
-            </svg>
-          </div>
-          <div class="feature_item feature_active">Мудрость<span>Базовая</span></div>
-          <div class="feature_numb feature_active">+1</div>
-        </div>
-        <div class="feature_column_visual">
-          <div class="cube"></div>
-        </div>
-      </div>
+      <my-attribute
+        title="Мудрость"
+        type="Базовая"
+        plus
+        :numb="attributes_main.wisdom"
+        icon="wisdom"
+      ></my-attribute>
 
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M9 4L10.1803 7.81966H14L10.9098 10.1803L12.0902 14L9 11.6393L5.90983 14L7.09017 10.1803L4 7.81966H7.81966L9 4Z"
-                stroke="white" fill="" stroke-opacity="0.2" />
-            </svg>
-          </div>
-          <div class="feature_item">Харизма<span>Базовая</span></div>
-          <div class="feature_numb">+0</div>
-        </div>
-        <div class="feature_column_visual">
-        </div>
-      </div>
-
+      <my-attribute
+        title="Харизма"
+        type="Базовая"
+        plus
+        :numb="attributes_main.charisma"
+        icon="charisma"
+      ></my-attribute>
     </div>
 
-    <div class="gap">
-      <div></div>
-    </div>
+    <div class="gap"></div>
     <!-- special_feature -->
 
     <div class="feature jbm-300">
-
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <img alt="acrobatics" src="@/assets/img/icon/special_feature/acrobatics.svg">
-          </div>
-          <div class="feature_item feature_active">Акробатика</div>
-          <div class="feature_numb feature_active">+2</div>
-        </div>
-        <div class="feature_column_visual">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube_zero"></div>
-          <div class="cube_zero"></div>
-          <div class="cube_zero"></div>
-          <div class="cube_zero"></div>
-        </div>
-      </div>
-
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <img alt="analysis" src="@/assets/img/icon/special_feature/analysis.svg">
-          </div>
-          <div class="feature_item feature_active">Анализ</div>
-          <div class="feature_numb feature_active">+2</div>
-        </div>
-        <div class="feature_column_visual">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube_zero"></div>
-          <div class="cube_zero"></div>
-          <div class="cube_zero"></div>
-          <div class="cube_zero"></div>
-        </div>
-      </div>
+      <my-attribute
+        v-for="item in attributes_race"
+        :key="item"
+        :title="item.name"
+        plus
+        :numb="item.value"
+        :icon="item.icon"
+        cube_zero
+      ></my-attribute>
     </div>
 
-    <div class="gap">
-      <div></div>
-    </div>
+    <div class="gap"></div>
 
     <!-- extra_feature -->
 
     <div class="feature jbm-300">
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 5H7L9 9L7 13H4L6 9L4 5Z" fill="white" fill-opacity="1" />
-              <path d="M9 5H12L14 9L12 13H9L11 9L9 5Z" fill="white" fill-opacity="1" />
-            </svg>
-          </div>
-          <div class="feature_item feature_active">Скорость<span>Пешком</span></div>
-          <div class="feature_numb feature_active">25 футов</div>
-        </div>
-        <div class="feature_column_visual">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-      </div>
+      <my-attribute
+        title="Скорость"
+        type="Пешком"
+        :numb="attributes_travel.speed"
+        feet
+        icon="speed"
+      ></my-attribute>
 
-      <div class="feature_column">
-        <div class="feature_column_value">
-          <div class="feature_icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9" cy="9" r="2.5" stroke="white" stroke-opacity="1" />
-              <!-- Для не активного параметра stroke-opacity="0.2" -->
-              <path d="M14 9L11 7V11L14 9Z" fill="white" fill-opacity="1" />
-              <!-- Для не активного параметра fill-opacity="0.2" -->
-              <path d="M4 9L7 11L7 7L4 9Z" fill="white" fill-opacity="1" />
-              <!-- Для не активного параметра fill-opacity="0.2" -->
-            </svg>
-          </div>
-          <div class="feature_item feature_active">Темное зрение<span></span></div>
-          <div class="feature_numb feature_active">120 футов</div>
-        </div>
-        <div class="feature_column_visual">
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-          <div class="cube"></div>
-        </div>
-      </div>
-
+      <my-attribute
+        title="Темное зрение"
+        type=""
+        :numb="attributes_travel.dark_vision"
+        feet
+        icon="dark_vision"
+      ></my-attribute>
     </div>
 
-    <div class="gap">
-      <div></div>
-    </div>
+    <div class="gap"></div>
 
     <!-- inventory -->
 
     <div class="inventory">
-
-      <div class="inventory_column">
-        <div class="inventory_item jbm-300 inventory_icon inventory_active">Оружие<span>:</span></div>
-        <div class="inventory_text int-400 inventory_active">Боевые топоры, Ручные топоры, Легкие молоты, Боевые молоты
-        </div>
-      </div>
-
-      <div class="inventory_column">
-        <div class="inventory_item jbm-300">Доспехи<span>:</span></div>
-        <div class="inventory_text int-400">—</div>
-      </div>
-
-      <div class="inventory_column">
-        <div class="inventory_item jbm-300 inventory_icon inventory_active">Инструменты<span>:</span></div>
-        <div class="inventory_text int-400 inventory_active">Кузнеца, Пивовара, Каменщика</div>
-      </div>
-
-      <div class="inventory_column">
-        <div class="inventory_item jbm-300 inventory_icon inventory_active">Языки<span>:</span></div>
-        <div class="inventory_text int-400 inventory_active">Всеобщий, Дварфийский, Подземный</div>
-      </div>
-
+      <my-inventory title="Оружие" :item="inventory.weapon"></my-inventory>
+      <my-inventory title="Доспехи" :item="inventory.armor"></my-inventory>
+      <my-inventory title="Инструменты" :item="inventory.tools"></my-inventory>
+      <my-inventory title="Языки" :item="inventory.languages"></my-inventory>
     </div>
 
-    <div class="gap">
-      <div></div>
-    </div>
+    <div class="gap"></div>
 
     <!-- fines -->
-
     <div class="fines">
-
-      <div class="fines_column">
-        <div class="fines_icon"><img alt="plus" src="@/assets/img/icon/fines/plus.svg"></div>
-        <div class="fines_text int-400"><span class="positive">Преимущество </span>против Яда</div>
-      </div>
-
-      <div class="fines_column">
-        <div class="fines_icon"><img alt="shield" src="@/assets/img/icon/fines/shield.svg"></div>
-        <div class="fines_text int-400"><span class="positive">Сопротивление </span>урону Ядом</div>
-      </div>
-
-      <div class="fines_column">
-        <div class="fines_icon"><img alt="corner" src="@/assets/img/icon/fines/corner.svg"></div>
-        <div class="fines_text int-400"><span class="positive">2×Мастерства </span>к проверке Истории на теме связанной
-          с камнем</div>
-      </div>
-
-      <div class="fines_column">
-        <div class="fines_icon"><img alt="minus" src="@/assets/img/icon/fines/minus.svg"></div>
-        <div class="fines_text int-400"><span class="negative">Помеха </span>на Восприятие под прямым солнечным светом
-        </div>
-      </div>
-
-      <div class="fines_column">
-        <div class="fines_icon"><img alt="minus" src="@/assets/img/icon/fines/minus.svg"></div>
-        <div class="fines_text int-400"><span class="negative">Помеха </span>на атаку под прямым солнечным светом</div>
-      </div>
-
+      <my-fines
+        v-for="item in fines"
+        :key="item"
+        :effect="item.effect"
+        :icon="item.icon"
+        :title="item.title"
+        :description="item.description"
+      ></my-fines>
     </div>
 
-    <div class="gap">
-      <div></div>
-    </div>
+    <div class="gap"></div>
 
     <!-- text -->
 
     <div class="story int-400">
-      <p>Целью большинства полуросликов является домашний уют. Место, где можно поселиться в покое и тишине, подальше от
-        мародёрствующих чудовищ и сражающихся армий. Огонь очага, сытная пища, добрая выпивка и добрая беседа. Хотя
-        некоторые полурослики проживают свой век в удалённых сельских общинах, другие сбиваются в постоянно кочующие
-        общины, влекомые открытыми дорогами, широкими горизонтами и возможностью открыть чудеса новых мест и новых
-        людей. Но даже такие кочевники любят покой, вкусную еду, свой очаг и свой дом, даже если это повозка, трясущаяся
-        по пыльной дороге или плот, плывущий по течению реки.</p>
+      <p>
+        Целью большинства полуросликов является домашний уют. Место, где можно
+        поселиться в покое и тишине, подальше от мародёрствующих чудовищ и
+        сражающихся армий. Огонь очага, сытная пища, добрая выпивка и добрая
+        беседа. Хотя некоторые полурослики проживают свой век в удалённых
+        сельских общинах, другие сбиваются в постоянно кочующие общины, влекомые
+        открытыми дорогами, широкими горизонтами и возможностью открыть чудеса
+        новых мест и новых людей. Но даже такие кочевники любят покой, вкусную
+        еду, свой очаг и свой дом, даже если это повозка, трясущаяся по пыльной
+        дороге или плот, плывущий по течению реки.
+      </p>
 
       <h3>Маленькие и практичные</h3>
       <p>
-        Крошечные полурослики выживают в мире, полном более крупных существ, стараясь избегать внимания, а если это
-        оказывается невозможным, то избегая враждебности. Они кажутся относительно безвредными, и благодаря этому
-        успешно существуют столетиями, оставаясь в тени империй, войн и политической борьбы. Они склонны к полноте.
+        Крошечные полурослики выживают в мире, полном более крупных существ,
+        стараясь избегать внимания, а если это оказывается невозможным, то
+        избегая враждебности. Они кажутся относительно безвредными, и благодаря
+        этому успешно существуют столетиями, оставаясь в тени империй, войн и
+        политической борьбы. Они склонны к полноте.
         <br />
         <br />
-        Кожа у полуросликов встречается от смуглой до бледной, с румянцем. Волосы обычно коричневые или рыже-коричневые,
-        вьющиеся. Глаза полуросликов карие или ореховые. Мужчины часто отпускают длинные бакенбарды, но бороды носят
-        редко, а усы тем более. Они любят носить простую, удобную одежду, предпочитая яркие цвета.
+        Кожа у полуросликов встречается от смуглой до бледной, с румянцем.
+        Волосы обычно коричневые или рыже-коричневые, вьющиеся. Глаза
+        полуросликов карие или ореховые. Мужчины часто отпускают длинные
+        бакенбарды, но бороды носят редко, а усы тем более. Они любят носить
+        простую, удобную одежду, предпочитая яркие цвета.
         <br />
         <br />
-        Практичность полуросликов распространяется не только на их одежду. Они довольствуются удовлетворением основных
-        потребностей и простых радостей, уделяя совсем мало внимания роскоши. Даже богатейшие из них предпочитают
-        хранить своё добро в закрытых сундуках и подвалах, а не выставлять его на всеобщее обозрение. Полурослики умеют
-        находить простые решения своих проблем, и являются весьма решительными.
+        Практичность полуросликов распространяется не только на их одежду. Они
+        довольствуются удовлетворением основных потребностей и простых радостей,
+        уделяя совсем мало внимания роскоши. Даже богатейшие из них предпочитают
+        хранить своё добро в закрытых сундуках и подвалах, а не выставлять его
+        на всеобщее обозрение. Полурослики умеют находить простые решения своих
+        проблем, и являются весьма решительными.
       </p>
 
       <h3>Добрые и любопытные</h3>
-      <p>Приветливый и дружелюбный народ. Ценят дружбу и родственные связи так же как собственный дом и очаг, лишь в
-        тайне мечтая о золоте и славе. И даже те из них, кто стали искателями приключений, обычно отправляются в путь,
-        преследуя цели дружбы или общества, тяги к переменам или любопытства. Они любят открывать для себя что-то новое,
-        даже если это совсем простые вещи, вроде экзотической еды или незнакомого стиля одежды.
+      <p>
+        Приветливый и дружелюбный народ. Ценят дружбу и родственные связи так же
+        как собственный дом и очаг, лишь в тайне мечтая о золоте и славе. И даже
+        те из них, кто стали искателями приключений, обычно отправляются в путь,
+        преследуя цели дружбы или общества, тяги к переменам или любопытства.
+        Они любят открывать для себя что-то новое, даже если это совсем простые
+        вещи, вроде экзотической еды или незнакомого стиля одежды.
         <br />
         <br />
-        Легко поддаются жалости, и не выносят вида чужих страданий. Они щедры, и с радостью делятся тем, что имеют, даже
-        в трудные времена.
+        Легко поддаются жалости, и не выносят вида чужих страданий. Они щедры, и
+        с радостью делятся тем, что имеют, даже в трудные времена.
       </p>
 
       <h3>Единые с толпой</h3>
-      <p>Полурослики легко вливаются в сообщества людей, дварфов или эльфов, где их ценят и всегда им рады. Сочетание их
-        врождённых скрытности и скромности позволяют им легко избегать ненужного внимания.
+      <p>
+        Полурослики легко вливаются в сообщества людей, дварфов или эльфов, где
+        их ценят и всегда им рады. Сочетание их врождённых скрытности и
+        скромности позволяют им легко избегать ненужного внимания.
         <br />
         <br />
-        Полурослики охотно работают с другими, и они верны своим друзьям, вне зависимости от их вида. Однако, если
-        кто-то из их друзей, семьи или общины оказывается под угрозой, они способны проявить удивительную свирепость.
+        Полурослики охотно работают с другими, и они верны своим друзьям, вне
+        зависимости от их вида. Однако, если кто-то из их друзей, семьи или
+        общины оказывается под угрозой, они способны проявить удивительную
+        свирепость.
       </p>
 
       <h3>Приветливые и положительные</h3>
-      <p>Полурослики стараются поладить с кем угодно, и не склонны выносить поспешные суждения — особенно отрицательные.
+      <p>
+        Полурослики стараются поладить с кем угодно, и не склонны выносить
+        поспешные суждения — особенно отрицательные.
       </p>
 
       <h3>Пасторальные удовольствия</h3>
-      <p>Большинство полуросликов живёт в маленьких, мирных общинах с большими фермами, среди ухоженных рощ. Они редко
-        создают собственные королевства, и не держат земель за пределами своих тихих владений. Они обычно не признают
-        среди себя какого-либо рода знати или королевской власти, вместо этого прислушиваясь к семейным старейшинам,
-        руководствуясь их мнением. Семьи сохраняют свой традиционный уклад, несмотря на подъёмы и падения империй.
+      <p>
+        Большинство полуросликов живёт в маленьких, мирных общинах с большими
+        фермами, среди ухоженных рощ. Они редко создают собственные королевства,
+        и не держат земель за пределами своих тихих владений. Они обычно не
+        признают среди себя какого-либо рода знати или королевской власти,
+        вместо этого прислушиваясь к семейным старейшинам, руководствуясь их
+        мнением. Семьи сохраняют свой традиционный уклад, несмотря на подъёмы и
+        падения империй.
         <br />
         <br />
-        Множество полуросликов живёт среди других рас, где усердная работа и надёжные перспективы принесут им обильное
-        вознаграждение и земные блага. Некоторые общины полуросликов ведут кочевой образ жизни, путешествуя на повозках
-        или плавая на суднах от одного места к другому, не оседая на одном месте постоянно.
+        Множество полуросликов живёт среди других рас, где усердная работа и
+        надёжные перспективы принесут им обильное вознаграждение и земные блага.
+        Некоторые общины полуросликов ведут кочевой образ жизни, путешествуя на
+        повозках или плавая на суднах от одного места к другому, не оседая на
+        одном месте постоянно.
       </p>
 
       <h3>Поиск возможностей</h3>
-      <p>Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую ко всему чужому, призрачные
-        полурослики в качестве искателей приключений встречаются редко.</p>
-
-      <h3>Призрачный полурослик</h3>
-      <p>Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую ко всему чужому, призрачные
-        полурослики в качестве искателей приключений встречаются редко.
-        <br />
-        <br />
-        <span>Спросите своего Мастера, можете ли Вы играть представителем этой подрасы.</span>
+      <p>
+        Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую
+        ко всему чужому, призрачные полурослики в качестве искателей приключений
+        встречаются редко.
       </p>
 
+      <h3>Призрачный полурослик</h3>
+      <p>
+        Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую
+        ко всему чужому, призрачные полурослики в качестве искателей приключений
+        встречаются редко.
+        <br />
+        <br />
+        <span
+          >Спросите своего Мастера, можете ли Вы играть представителем этой
+          подрасы.</span
+        >
+      </p>
     </div>
-
-
   </div>
 </template>
 
 <script>
+import MyInventory from "./components/ui/MyInventory.vue";
 export default {
+  components: { MyInventory },
+  data() {
+    return {
+      shown_ethnos: false,
+      shown_home: true,
+      ethnos_select: {
+        type: "Коренастый",
+        rare: "Спросите своего Мастера, можете ли Вы играть представителем этой подрасы.",
+      },
+
+      attributes_main: {
+        strength: 0,
+        agility: 2,
+        constitution: 0,
+        intellect: 0,
+        wisdom: 1,
+        charisma: 0,
+      },
+
+      attributes_race: [
+        {
+          name: "Акробатика",
+          value: 2,
+          icon: "agility",
+        },
+        {
+          name: "Анализ",
+          value: 2,
+          icon: "intellect",
+        },
+      ],
+
+      attributes_travel: {
+        speed: 25,
+        dark_vision: 120,
+      },
+
+      inventory: {
+        weapon: "Боевые топоры, Ручные топоры, Легкие молоты, Боевые молоты",
+        armor: null,
+        tools: "Кузнеца, Пивовара, Каменщика",
+        languages: "Всеобщий, Дварфийский, Подземный",
+      },
+
+      fines: [
+        {
+          effect: "positive",
+          icon: "plus",
+          title: "Преимущество",
+          description: "против Яда",
+        },
+        {
+          effect: "positive",
+          icon: "shield",
+          title: "Сопротивление",
+          description: "урону Ядом",
+        },
+        {
+          effect: "positive",
+          icon: "corner",
+          title: "2×Мастерства ",
+          description: "к проверке Истории на теме связанной с камнем",
+        },
+        {
+          effect: "negative",
+          icon: "minus",
+          title: "Помеха",
+          description: "на Восприятие под прямым солнечным светом",
+        },
+        {
+          effect: "negative",
+          icon: "minus",
+          title: "Помеха",
+          description: "на атаку под прямым солнечным светом",
+        },
+      ],
+    };
+  },
   methods: {
     goTo(route) {
       this.$router.push(route);
     },
+    showEthnos() {
+      this.shown_ethnos = true;
+      this.shown_home = false;
+    },
+    showHome() {
+      this.shown_home = true;
+      this.shown_ethnos = false;
+    }
   },
 };
 </script>
 
 <style>
 body {
-  background-color: #0E1518;
+  background-color: #0e1518;
 }
 
 #app {
   /*font-family: 'JetBrains Mono', sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   height: 100%;
   display: flex;
-}
 
-.sidebar_left {
-  width: 320px;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  /*border-right: 2px solid rgba(255, 255, 255, 0.1);*/
-  outline: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.chapter_1 {
-  padding-left: 32px;
-  flex: 1 1 auto;
-}
-
-.logo {
-  padding-top: 32px;
-  text-align: left;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 .jbm-300 {
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 300;
   font-size: 10.95px;
   line-height: 18px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .int-400 {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   line-height: 15px;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
-.numb-1 {
-  padding-top: 18px;
-}
-
-.numb-1 div {
-  text-align: left;
-  height: 18px;
-}
-
-.race_title {
-  padding-top: 36px;
-}
-
-.race_title div {
-  text-align: left;
-  height: 18px;
-}
-
-.race {
-  padding-top: 4px;
-}
-
-.race div {
-  text-align: left;
-  height: 24px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-}
-
-.arrows {
-  padding-top: 18px;
-  width: 52px;
+.sidebar_left {
+  min-height: 100%;
   display: flex;
-  justify-content: space-between;
+  outline: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.chapter {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main_chapter {
+  width: 320px;
+  padding-left: 32px;
+  flex: 1 1 auto;
+}
+
+.logo {
+  height: 32px;
+  margin: 32px 0 18px 0;
 }
 
 .delimiter {
-  padding-top: 40px;
-}
-
-
-.delimiter div {
   width: 256px;
   height: 1px;
+  margin: 40px 0;
   background: rgba(255, 255, 255, 0.2);
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
-.menu-1 {
+.selection_menu {
   width: 256px;
-  height: 122px;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 34px;
 }
 
-.column {
-  height: 18px;
-  display: flex;
-  align-items: center;
+.selection_item {
+  width: 426px;
+  padding-top: 32px;
+  overflow-y: scroll;
 }
 
-.menu-1_title {
-  width: 120px;
-  text-align: left;
+.selection_item::-webkit-scrollbar {
+  width: 0;
 }
 
-.menu-1_link {
-  width: 110px;
-  margin-left: 4px;
-  text-align: left;
-  position: relative;
-}
-
-.menu-1_link::after {
-  content: url(@/assets/img/icon/arrow_down_small.svg);
-  position: absolute;
-  right: -22px;
-  top: -2px;
-}
-
-.menu-2 {
-  width: 256px;
-  height: 70px;
-  margin-top: 34px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.menu-2_title {
-  width: 120px;
-  text-align: left;
-}
-
-.menu-2_link {
-  width: 110px;
-  margin-left: 4px;
-  text-align: left;
-  position: relative;
-}
-
-.menu-2_link span {
+.ethnos_attributes {
   color: rgba(255, 255, 255, 0.2);
-}
-
-.menu-2_link::after {
-  content: url(@/assets/img/icon/arrow_slider.svg);
-  position: absolute;
-  right: -22px;
-  top: -2px;
-}
-
-.menu-3 {
-  width: 256px;
-  height: 70px;
-  margin-top: 34px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 26px;
+  margin-left: 16px;
 }
 
-.next_chapter {
-  width: 320px;
-  height: 118px;
-  background: #0047FF;
-  padding-left: 32px;
-}
-
-.numb-2 {
-  margin-top: 32px;
-  height: 18px;
-  text-align: left;
-}
-
-.class_title {
-  margin-top: 18px;
+.ethnos_cards_menu {
+  padding: 32px 0 28px 0;
   display: flex;
-  width: 256px;
-  height: 18px;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ethnos_card {
+  padding: 16px;
+  width: 394px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(60px);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.ethnos_text {
+
+}
+
+.ethnos_text {
+  color: rgba(255, 255, 255, 0.4);
+  text-align: start;
+}
+
+.ethnos_text h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.ethnos_text span {
+  color: #ffc93d;
 }
 
 /* ---------------------characters----------------------*/
@@ -794,6 +773,32 @@ body {
   display: flex;
   align-items: flex-end;
   position: relative;
+  text-align: center;
+}
+
+.character {
+  flex: 1 1 auto;
+  padding: 0px 5px 0 5px;
+  position: relative;
+}
+
+.skin {
+  /* -webkit-filter : hue-rotate(520deg);
+  filter : hue-rotate(520deg); */
+}
+
+.hair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.eyes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .character {
@@ -805,14 +810,14 @@ body {
   position: absolute;
   right: 0;
   width: 35px;
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 300;
   font-size: 11.45px;
   line-height: 18px;
   text-align: right;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-right: 32px;
   display: flex;
   flex-direction: column;
@@ -848,7 +853,7 @@ body {
 }
 
 .division_active {
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .division_filling_back {
@@ -859,12 +864,9 @@ body {
 }
 
 .division_filling_front {
-  background: #FFFFFF;
+  background: #ffffff;
   height: 33%;
 }
-
-
-
 
 /* ---------------------sidebar_right----------------------*/
 
@@ -898,92 +900,25 @@ body {
 
 .feature {
   color: rgba(255, 255, 255, 0.2);
-  max-width: 362px;
-}
-
-.feature_column {
+  width: 362px;
   display: flex;
-  min-height: 18px;
-  margin-bottom: 4px;
-
-}
-
-.feature_column_value {
-  display: flex;
-  width: 252px;
-}
-
-.feature_icon {
-  display: flex;
-  width: 18px;
-  height: 18px;
-  align-items: center;
-  justify-content: center;
-}
-
-.feature_item {
-  margin-left: 4px;
-}
-
-.feature_item span {
-  margin-left: 8px;
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.feature_active {
-  color: #FFFFFF;
-}
-
-.feature_numb {
-  flex: 1 1 auto;
-  text-align: end;
-}
-
-.feature_column_visual {
-  width: 98px;
-  display: flex;
-  align-items: center;
-  margin-left: 12px;
-  flex-wrap: wrap;
-  padding: 5px 0 5px 0;
-  gap: 2px 2px;
-}
-
-.cube {
-  width: 8px;
-  height: 8px;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
-  border-radius: 2px;
-}
-
-.cube_zero {
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-direction: column;
+  gap: 4px;
 }
 
 .gap {
   width: 362px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.gap div {
-  width: 362px;
   height: 1px;
+  margin: 26px 0;
   background: rgba(255, 255, 255, 0.2);
 }
 
 .inventory {
+  color: rgba(255, 255, 255, 0.2);
   max-width: 362px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 4px;
 }
 
 .inventory_column {
@@ -998,7 +933,6 @@ body {
 
 .inventory_item {
   margin-left: 22px;
-  color: rgba(255, 255, 255, 0.2);
 }
 
 .inventory_icon {
@@ -1020,7 +954,7 @@ body {
 }
 
 .inventory_active {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .fines {
@@ -1028,7 +962,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 4px;
 }
 
 .fines_column {
@@ -1036,7 +969,8 @@ body {
   min-height: 18px;
 }
 
-.fines_icon {}
+.fines_icon {
+}
 
 .fines_text {
   margin-left: 4px;
@@ -1045,11 +979,11 @@ body {
 }
 
 .positive {
-  color: #05FF00;
+  color: #05ff00;
 }
 
 .negative {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .story {
@@ -1059,18 +993,18 @@ body {
 }
 
 .story h3 {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 13px;
   line-height: 15px;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 25px;
   margin-bottom: 5px;
 }
 
 .story span {
-  color: #FFC93D;
+  color: #ffc93d;
 }
 </style>
