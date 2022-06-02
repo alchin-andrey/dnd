@@ -26,7 +26,7 @@ export const dic = {
             charisma:"харизма",
 
             alignment:"мировоззрение",
-            gender:"пол",
+            gender:"гендер",
                 phisiological: "физиологический",
                     male: "мужчина",
                     male_details: "ваш персонаж обладает исключительно мужскими половыми признаками.",
@@ -149,6 +149,18 @@ export const dic = {
 
                     lang_dwarf: langs_ru.lang_dwarf,
                     lang_dwarf_details: langs_ru.lang_dwarf_details,
+
+                    lang_tiefling: langs_ru.lang_tiefling,
+                    lang_tiefling_details: langs_ru.lang_tiefling_details,
+
+                    lang_elf: langs_ru.lang_elf,
+                    lang_elf_details: langs_ru.lang_elf_details,
+
+                    lang_orc: langs_ru.lang_orc,
+                    lang_orc_details: langs_ru.lang_orc_details,
+
+                    lang_dragon: langs_ru.lang_dragon,
+                    lang_dragon_details: langs_ru.lang_dragon_details,
 
                     
 

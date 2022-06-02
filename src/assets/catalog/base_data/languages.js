@@ -15,7 +15,21 @@ export const lang = {
         name: "lang_dwarf",
         details: "lang_dwarf_details"
     },
-
-
-
+    tiefling: {
+        name: "lang_tiefling",
+        details: "lang_tiefling_details"
+    },
+    elf: {
+        name: "lang_elf",
+        details: "lang_elf_details"
+    },
+    orc: {
+        name: "lang_orc",
+        details: "lang_orc_details"
+    },
+    dragon: {
+        name: "lang_dragon",
+        details: "lang_dragon_details"
+    },
+    
 }
