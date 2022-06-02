@@ -79,104 +79,35 @@
     <!-- Этнос -->
     <div v-if="shown_ethnos" class="selection_item">
       <div class="ethnos_attributes">
+        <!-- Этнос_attributes_main -->
         <div class="feature jbm-300">
           <my-attribute
-            title="Сила"
-            type="Базовая"
+            v-for="item in attributes_main"
+            :key="item"
+            :title="item.name"
+            :type="item.type"
             plus
-            :numb="attributes_main.strength"
-            icon="strength"
+            :numb="item.value"
+            :icon="item.icon"
             ethnos
+            :base="item.base"
           >
           </my-attribute>
-
-          <my-attribute
-            title="Ловкость"
-            type="Базовая"
-            plus
-            :numb="attributes_main.agility"
-            icon="agility"
-            ethnos
-          >
-          </my-attribute>
-
-          <my-attribute
-            title="Телосложение"
-            type="Базовое"
-            plus
-            :numb="attributes_main.constitution"
-            icon="constitution"
-            ethnos
-          ></my-attribute>
-
-          <my-attribute
-            title="Интеллект"
-            type="Базовый"
-            plus
-            :numb="attributes_main.intellect"
-            icon="intellect"
-            ethnos
-          ></my-attribute>
-
-          <my-attribute
-            title="Мудрость"
-            type="Базовая"
-            plus
-            :numb="attributes_main.wisdom"
-            icon="wisdom"
-            ethnos
-          ></my-attribute>
-
-          <my-attribute
-            title="Харизма"
-            type="Базовая"
-            plus
-            :numb="attributes_main.charisma"
-            icon="charisma"
-            ethnos
-          ></my-attribute>
-
-          <my-attribute
-            title="Скорость"
-            type="Пешком"
-            :numb="attributes_travel.speed"
-            feet
-            icon="speed"
-            ethnos
-          ></my-attribute>
-
-          <my-attribute
-            title="Темное зрение"
-            type=""
-            :numb="attributes_travel.dark_vision"
-            feet
-            icon="dark_vision"
-            ethnos
-          ></my-attribute>
         </div>
+        <!-- Этнос_attributes_main -->
 
+        <!-- Этнос_inventory -->
         <div class="inventory">
           <my-inventory
-            title="Оружие"
-            :item="inventory.weapon"
+            v-for="item in inventory"
+            :key="item"
+            :title="item.name"
+            :item="item.type"
             ethnos
-          ></my-inventory>
-          <my-inventory
-            title="Доспехи"
-            :item="inventory.armor"
-            ethnos
-          ></my-inventory>
-          <my-inventory
-            title="Инструменты"
-            :item="inventory.tools"
-            ethnos
-          ></my-inventory>
-          <my-inventory
-            title="Языки"
-            :item="inventory.languages"
-            ethnos
-          ></my-inventory>
+          >
+          </my-inventory>
         </div>
+        <!-- Этнос_inventory -->
 
         <div class="fines">
           <my-fines
@@ -189,6 +120,7 @@
           ></my-fines>
         </div>
       </div>
+
       <div class="ethnos_cards_menu">
         <div class="ethnos_card">
           <div>
@@ -199,10 +131,10 @@
           </div>
           <div class="feature jbm-300">
             <my-attribute
-              title="Мудрость"
+              title="телосложение"
               type="Базовая"
               plus
-              :numb="attributes_main.wisdom"
+              :numb="6"
               icon="wisdom"
             >
             </my-attribute>
@@ -322,61 +254,24 @@
 
   <!-- sidebar_right -->
   <div v-if="shown_home" class="sidebar_right">
+    <!-- attributes_main -->
     <div class="feature jbm-300">
       <my-attribute
-        title="Сила"
-        type="Базовая"
+        v-for="item in attributes_main"
+        :key="item"
+        :title="item.name"
+        :type="item.type"
         plus
-        :numb="attributes_main.strength"
-        icon="strength"
+        :numb="item.value"
+        :icon="item.icon"
       >
       </my-attribute>
-
-      <my-attribute
-        title="Ловкость"
-        type="Базовая"
-        plus
-        :numb="attributes_main.agility"
-        icon="agility"
-      >
-      </my-attribute>
-
-      <my-attribute
-        title="Телосложение"
-        type="Базовое"
-        plus
-        :numb="attributes_main.constitution"
-        icon="constitution"
-      ></my-attribute>
-
-      <my-attribute
-        title="Интеллект"
-        type="Базовый"
-        plus
-        :numb="attributes_main.intellect"
-        icon="intellect"
-      ></my-attribute>
-
-      <my-attribute
-        title="Мудрость"
-        type="Базовая"
-        plus
-        :numb="attributes_main.wisdom"
-        icon="wisdom"
-      ></my-attribute>
-
-      <my-attribute
-        title="Харизма"
-        type="Базовая"
-        plus
-        :numb="attributes_main.charisma"
-        icon="charisma"
-      ></my-attribute>
     </div>
 
     <div class="gap"></div>
-    <!-- special_feature -->
+    <!-- attributes_main -->
 
+    <!-- attributes_race -->
     <div class="feature jbm-300">
       <my-attribute
         v-for="item in attributes_race"
@@ -390,39 +285,38 @@
     </div>
 
     <div class="gap"></div>
+    <!-- attributes_race -->
 
-    <!-- extra_feature -->
-
+    <!-- attributes_travel -->
     <div class="feature jbm-300">
       <my-attribute
-        title="Скорость"
-        type="Пешком"
-        :numb="attributes_travel.speed"
+        v-for="item in attributes_travel"
+        :key="item"
+        :title="item.name"
+        :type="item.type"
+        :numb="item.value"
         feet
-        icon="speed"
-      ></my-attribute>
-
-      <my-attribute
-        title="Темное зрение"
-        type=""
-        :numb="attributes_travel.dark_vision"
-        feet
-        icon="dark_vision"
+        :icon="item.icon"
       ></my-attribute>
     </div>
 
     <div class="gap"></div>
+    <!-- attributes_travel -->
 
     <!-- inventory -->
 
     <div class="inventory">
-      <my-inventory title="Оружие" :item="inventory.weapon"></my-inventory>
-      <my-inventory title="Доспехи" :item="inventory.armor"></my-inventory>
-      <my-inventory title="Инструменты" :item="inventory.tools"></my-inventory>
-      <my-inventory title="Языки" :item="inventory.languages"></my-inventory>
+      <my-inventory
+        v-for="item in inventory"
+        :key="item"
+        :title="item.name"
+        :item="item.type"
+      >
+      </my-inventory>
     </div>
 
     <div class="gap"></div>
+    <!-- inventory -->
 
     <!-- fines -->
     <div class="fines">
@@ -437,9 +331,9 @@
     </div>
 
     <div class="gap"></div>
+    <!-- fines -->
 
     <!-- text -->
-
     <div class="story int-400">
       <p>
         Целью большинства полуросликов является домашний уют. Место, где можно
@@ -610,15 +504,14 @@ export default {
         },
       ],
 
-
-      attributes_main: {
-        strength: 0,
-        agility: 2,
-        constitution: 0,
-        intellect: 0,
-        wisdom: 1,
-        charisma: 0,
-      },
+      // attributes_main: {
+      //   strength: 0,
+      //   agility: 2,
+      //   constitution: 0,
+      //   intellect: 0,
+      //   wisdom: 1,
+      //   charisma: 0,
+      // },
 
       attributes_race: [
         {
@@ -633,48 +526,117 @@ export default {
         },
       ],
 
-      attributes_travel: {
-        speed: 25,
-        dark_vision: 120,
-      },
+      attributes_travel: [
+        {
+          name: "скорость",
+          type: "пешком",
+          value: 25,
+          icon: "speed",
+        },
+        {
+          name: "Анализ",
+          value: 0,
+          icon: "dark_vision",
+        },
+      ],
 
-      inventory: {
-        weapon: "Боевые топоры, Ручные топоры, Легкие молоты, Боевые молоты",
-        armor: null,
-        tools: "Кузнеца, Пивовара, Каменщика",
-        languages: "Всеобщий, Дварфийский, Подземный",
-      },
+      // attributes_travel: {
+      //   speed: 25,
+      //   dark_vision: 120,
+      // },
+
+      inventory: [
+        {
+          name: "оружие",
+          type: null,
+        },
+        {
+          name: "доспехи",
+          type: null,
+        },
+        {
+          name: "инструменты",
+          type: null,
+        },
+        {
+          name: "языки",
+          type: "Всеобщий, Полуросликов",
+        },
+      ],
+
+      // inventory: {
+      //   weapon: "Боевые топоры, Ручные топоры, Легкие молоты, Боевые молоты",
+      //   armor: null,
+      //   tools: "Кузнеца, Пивовара, Каменщика",
+      //   languages: "Всеобщий, Дварфийский, Подземный",
+      // },
 
       fines: [
         {
           effect: "positive",
           icon: "plus",
-          title: "Преимущество",
-          description: "против Яда",
+          title: "Переброс",
+          description: 'любого кубика при "1"',
         },
         {
           effect: "positive",
-          icon: "shield",
-          title: "Сопротивление",
-          description: "урону Ядом",
+          icon: "plus",
+          title: "Преимущество",
+          description: "против Испуга",
         },
         {
           effect: "positive",
           icon: "corner",
-          title: "2×Мастерства ",
-          description: "к проверке Истории на теме связанной с камнем",
+          title: "Проскальзывание",
+          description: "Проскальзывание среди существ выше среднего",
+        },
+      ],
+
+      ethnos_card: [
+        {
+          stocky: [
+            {
+              attributes_main: [
+                {
+                  name: "телосложение",
+                  type: "базовое",
+                  value: 1,
+                  icon: "constitution",
+                  base: false,
+                },
+              ],
+              fines: [
+                {
+                  effect: "positive",
+                  icon: "plus",
+                  title: "Преимущество",
+                  description: 'против Яда',
+                },
+                {
+                  effect: "positive",
+                  icon: "plus",
+                  title: "Сопротивление",
+                  description: "урону Ядом",
+                },
+              ],
+            },
+          ],
         },
         {
-          effect: "negative",
-          icon: "minus",
-          title: "Помеха",
-          description: "на Восприятие под прямым солнечным светом",
+          name: "оружие",
+          type: null,
         },
         {
-          effect: "negative",
-          icon: "minus",
-          title: "Помеха",
-          description: "на атаку под прямым солнечным светом",
+          name: "доспехи",
+          type: null,
+        },
+        {
+          name: "инструменты",
+          type: null,
+        },
+        {
+          name: "языки",
+          type: "Всеобщий, Полуросликов",
         },
       ],
     };
@@ -683,10 +645,6 @@ export default {
     goTo(route) {
       this.$router.push(route);
     },
-    // showEthnos() {
-    //   this.shown_ethnos = true;
-    //   this.shown_home = false;
-    // },
 
     close() {
       this.shown_ethnos = false;
@@ -696,12 +654,6 @@ export default {
     show(name) {
       this.close();
       this[name] = true;
-      this.shown_home = false;
-    },
-
-    showInvent() {
-      this.close();
-      this.shown_invent = true;
       this.shown_home = false;
     },
 
