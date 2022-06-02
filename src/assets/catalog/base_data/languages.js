@@ -7,4 +7,15 @@ export const lang = {
         name: "lang_halfling",
         details: "lang_halfling_details"
     },
+    gnome: {
+        name: "lang_gnome",
+        details: "lang_gnome_details"
+    },
+    dwarf: {
+        name: "lang_dwarf",
+        details: "lang_dwarf_details"
+    },
+
+
+
 }

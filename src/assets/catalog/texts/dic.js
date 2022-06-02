@@ -142,7 +142,15 @@ export const dic = {
                     lang_common_details: langs_ru.lang_common_details,
 
                     lang_halfling: langs_ru.lang_halfling,
-                    lang_halfling_details: "lang_halfling_details",
+                    lang_halfling_details: langs_ru.lang_halfling_details,
+
+                    lang_gnome: langs_ru.lang_gnome,
+                    lang_gnome_details: langs_ru.lang_gnome_details,
+
+                    lang_dwarf: langs_ru.lang_dwarf,
+                    lang_dwarf_details: langs_ru.lang_dwarf_details,
+
+                    
 
             //Особенности - пассивньіе умения
             peculiarities:"особенности",
