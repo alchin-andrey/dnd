@@ -6,7 +6,7 @@
           <img alt="logo" src="@/assets/img/logo.svg" />
         </div>
 
-        <my-slider numb="01" title="Раса" arr="Полурослик"></my-slider>
+        <my-slider numb="01" title="Раса1" arr="Полурослик"></my-slider>
 
         <div class="delimiter"></div>
 
