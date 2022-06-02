@@ -19,30 +19,51 @@
             :rare="ethnos_select.rare"
           ></my-selection>
           <my-selection
-            @click="show('shown_invent')"
-            :active="shown_invent"
+            @click="show('shown_gender')"
+            :active="shown_gender"
             title="Пол"
             type="Женщина, гетеро"
           ></my-selection>
-          <my-selection title="Цвет кожи" type="Белый"></my-selection>
-          <my-selection title="Цвет глаз" type="Зеленый"></my-selection>
-          <my-selection title="Цвет волос" type="Русый"></my-selection>
+          <my-selection
+            @click="show('shown_skin_color')"
+            :active="shown_skin_color"
+            title="Цвет кожи"
+            type="Белый"
+          ></my-selection>
+          <my-selection
+            @click="show('shown_eye_color')"
+            :active="shown_eye_color"
+            title="Цвет глаз"
+            type="Зеленый"
+          ></my-selection>
+          <my-selection
+            @click="show('shown_hair_color')"
+            :active="shown_hair_color"
+            title="Цвет волос"
+            type="Русый"
+          ></my-selection>
         </div>
 
         <div class="selection_menu">
           <my-controller
+            @click="show('shown_age')"
+            :active="shown_age"
             title="Возраст"
             value="34"
             unit="г"
             note="Взрослый"
           ></my-controller>
           <my-controller
+            @click="show('shown_growth')"
+            :active="shown_growth"
             title="Рост"
             value="100"
             unit="см"
             note="Маленький"
           ></my-controller>
           <my-controller
+            @click="show('shown_weight')"
+            :active="shown_weight"
             title="Вес"
             value="18"
             unit="кг"
@@ -51,9 +72,24 @@
         </div>
 
         <div class="selection_menu">
-          <my-selection title="Характеристики" type="Сил, Лов"></my-selection>
-          <my-selection title="Навыки" type="Арк, Ана"></my-selection>
-          <my-selection title="Языки" type="Акван"></my-selection>
+          <my-selection
+            @click="show('shown_characteristics')"
+            :active="shown_characteristics"
+            title="Характеристики"
+            type="Сил, Лов"
+          ></my-selection>
+          <my-selection
+            @click="show('shown_skills')"
+            :active="shown_skills"
+            title="Навыки"
+            type="Арк, Ана"
+          ></my-selection>
+          <my-selection
+            @click="show('shown_languages')"
+            :active="shown_languages"
+            title="Языки"
+            type="Акван"
+          ></my-selection>
         </div>
       </div>
 
@@ -61,23 +97,9 @@
       <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
     </div>
 
-    <!-- Этнос -->
 
-    <my-selection-box :shown="shown_invent">
-      <div class="fines">
-        <my-fines
-          v-for="item in fines"
-          :key="item"
-          :effect="item.effect"
-          :icon="item.icon"
-          :title="item.title"
-          :description="item.description"
-        ></my-fines>
-      </div>
-    </my-selection-box>
-
-    <!-- Этнос -->
-    <div v-if="shown_ethnos" class="selection_item">
+    <!-- Этнос-->
+    <my-selection-box v-model:shown="shown_ethnos">
       <div class="ethnos_attributes">
         <!-- Этнос_attributes_main -->
         <div class="feature jbm-300">
@@ -122,10 +144,13 @@
       </div>
 
       <div class="ethnos_cards_menu">
-        <div v-for="race of ethnos_card" :key="race" 
-        @click="ethnosName(race.name, race.rare)"
-        class="ethnos_card" 
-        :class="{ethnos_card_active: ethnos_select.name === race.name}">
+        <div
+          v-for="race of ethnos_card"
+          :key="race"
+          @click="ethnosName(race.name, race.rare)"
+          class="ethnos_card"
+          :class="{ ethnos_card_active: ethnos_select.name === race.name }"
+        >
           <div>
             <img
               src="@/assets/img/characters/halfling/ethhnos/image.png"
@@ -159,15 +184,75 @@
             <h3>{{ race.name }}</h3>
             <p>
               {{ race.story }}
-              <br v-if="race.rare"/>
-              <br v-if="race.rare"/>
+              <br v-if="race.rare" />
+              <br v-if="race.rare" />
               <span v-if="race.rare">{{ race.rare }}</span>
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </my-selection-box>
     <!-- Этнос -->
+
+    <!-- Гендр -->
+    <my-selection-box v-model:shown="shown_gender">
+      <div class="jbm-300">Гендр</div>
+    </my-selection-box>
+    <!-- Гендр -->
+  
+    <!-- Цвет кожи -->
+    <my-selection-box v-model:shown="shown_skin_color">
+      <div class="jbm-300">Цвет кожи</div>
+    </my-selection-box>
+    <!-- Цвет кожи -->
+
+    <!-- Цвет глаз -->
+    <my-selection-box v-model:shown="shown_eye_color">
+      <div class="jbm-300">Цвет глаз</div>
+    </my-selection-box>
+    <!-- Цвет глаз --> 
+
+    <!-- Цвет волос -->
+    <my-selection-box v-model:shown="shown_hair_color">
+      <div class="jbm-300">Цвет волос</div>
+    </my-selection-box>
+    <!-- Цвет волос -->
+
+    <!-- Возраст -->
+    <my-selection-box v-model:shown="shown_age">
+      <div class="jbm-300">Возраст</div>
+    </my-selection-box>
+    <!-- Возраст --> 
+  
+    <!-- Рост -->
+    <my-selection-box v-model:shown="shown_growth">
+      <div class="jbm-300">Рост</div>
+    </my-selection-box>
+    <!-- Рост -->   
+
+    <!-- Вес -->
+    <my-selection-box v-model:shown="shown_weight">
+      <div class="jbm-300">Вес</div>
+    </my-selection-box>
+    <!-- Вес --> 
+
+    <!-- Характеристики -->
+    <my-selection-box v-model:shown="shown_characteristics">
+      <div class="jbm-300">Характеристики</div>
+    </my-selection-box>
+    <!-- Характеристики --> 
+
+        <!-- Навыки -->
+    <my-selection-box v-model:shown="shown_skills">
+      <div class="jbm-300">Навыки</div>
+    </my-selection-box>
+    <!-- Навыки --> 
+
+        <!-- Языки -->
+    <my-selection-box v-model:shown="shown_languages">
+      <div class="jbm-300">Языки</div>
+    </my-selection-box>
+    <!-- Языки --> 
   </div>
 
   <!-- character -->
@@ -452,9 +537,18 @@ export default {
   data() {
     return {
       shown_ethnos: false,
-      shown_invent: false,
-      shown_home: true,
+      shown_gender: false,
+      shown_skin_color: false,
+      shown_eye_color: false,
+      shown_hair_color: false,
+      shown_age: false,
+      shown_growth: false,
+      shown_weight: false,
+      shown_characteristics: false,
+      shown_skills: false,
+      shown_languages: false,
 
+      shown_home: true,
 
       ethnos_select: {
         name: "Коренастый",
@@ -686,7 +780,16 @@ export default {
 
     close() {
       this.shown_ethnos = false;
-      this.shown_invent = false;
+      this.shown_gender = false;
+      this.shown_skin_color = false;
+      this.shown_eye_color = false;
+      this.shown_hair_color = false;
+      this.shown_age = false;
+      this.shown_growth = false;
+      this.shown_weight = false;
+      this.shown_characteristics = false;
+      this.shown_skills = false;
+      this.shown_languages = false;
     },
 
     show(name) {
@@ -820,13 +923,12 @@ body {
 }
 
 .ethnos_card_active {
-  background: rgba(255, 255, 255, 0.10);
-  border: 2px solid #FFFFFF;
+  border: 2px solid #ffffff;
   padding: 14px;
 }
 
 .ethnos_card:hover {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .ethnos_text {
