@@ -11,6 +11,7 @@ import MyButtonBack from "@/components/ui/MyButtonBack.vue";
 import MyAttribute from "@/components/ui/MyAttribute.vue";
 import MyInventory from "@/components/ui/MyInventory.vue";
 import MyFines from "@/components/ui/MyFines.vue";
+import MySelectionBox from "@/components/ui/MySelectionBox.vue";
 
 const app = createApp(App);
 app.use(store);
@@ -23,4 +24,5 @@ app.component('MyButtonBack', MyButtonBack);
 app.component('MyAttribute', MyAttribute);
 app.component('MyInventory', MyInventory);
 app.component('MyFines', MyFines);
+app.component('MySelectionBox', MySelectionBox);
 app.mount('#app');
