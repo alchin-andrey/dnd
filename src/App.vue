@@ -15,7 +15,7 @@
             @click="show('shown_ethnos')"
             :active="shown_ethnos"
             title="Этнос"
-            :type="ethnos_select.type"
+            :type="ethnos_select.name"
             :rare="ethnos_select.rare"
           ></my-selection>
           <my-selection
@@ -122,7 +122,10 @@
       </div>
 
       <div class="ethnos_cards_menu">
-        <div class="ethnos_card">
+        <div v-for="race of ethnos_card" :key="race" 
+        @click="ethnosName(race.name, race.rare)"
+        class="ethnos_card" 
+        :class="{ethnos_card_active: ethnos_select.name === race.name}">
           <div>
             <img
               src="@/assets/img/characters/halfling/ethhnos/image.png"
@@ -131,18 +134,20 @@
           </div>
           <div class="feature jbm-300">
             <my-attribute
-              title="телосложение"
-              type="Базовая"
+              v-for="item of race.attributes_main"
+              :key="item"
+              :title="item.name"
+              :type="item.type"
               plus
-              :numb="6"
-              icon="wisdom"
+              :numb="item.value"
+              :icon="item.icon"
             >
             </my-attribute>
           </div>
 
           <div class="fines">
             <my-fines
-              v-for="item in fines"
+              v-for="item of race.fines"
               :key="item"
               :effect="item.effect"
               :icon="item.icon"
@@ -151,17 +156,12 @@
             ></my-fines>
           </div>
           <div class="ethnos_text int-400">
-            <h3>Призрачный полурослик</h3>
+            <h3>{{ race.name }}</h3>
             <p>
-              Из-за того, что их народ имеет закрытую, клановую культуру,
-              недоверчивую ко всему чужому, призрачные полурослики в качестве
-              искателей приключений встречаются редко.
-              <br />
-              <br />
-              <span
-                >Спросите своего Мастера, можете ли Вы играть представителем
-                этой подрасы.</span
-              >
+              {{ race.story }}
+              <br v-if="race.rare"/>
+              <br v-if="race.rare"/>
+              <span v-if="race.rare">{{ race.rare }}</span>
             </p>
           </div>
         </div>
@@ -454,9 +454,11 @@ export default {
       shown_ethnos: false,
       shown_invent: false,
       shown_home: true,
+
+
       ethnos_select: {
-        type: "Коренастый",
-        rare: "Спросите своего Мастера, можете ли Вы играть представителем этой подрасы.",
+        name: "Коренастый",
+        rare: "",
       },
 
       attributes_main: [
@@ -594,54 +596,90 @@ export default {
 
       ethnos_card: [
         {
-          stocky: [
+          name: "Коренастый",
+          attributes_main: [
             {
-              attributes_main: [
-                {
-                  name: "телосложение",
-                  type: "базовое",
-                  value: 1,
-                  icon: "constitution",
-                  base: false,
-                },
-              ],
-              fines: [
-                {
-                  effect: "positive",
-                  icon: "plus",
-                  title: "Преимущество",
-                  description: 'против Яда',
-                },
-                {
-                  effect: "positive",
-                  icon: "plus",
-                  title: "Сопротивление",
-                  description: "урону Ядом",
-                },
-              ],
+              name: "телосложение",
+              type: "базовое",
+              value: 1,
+              icon: "constitution",
+              base: false,
             },
           ],
+          fines: [
+            {
+              effect: "positive",
+              icon: "plus",
+              title: "Преимущество",
+              description: "против Яда",
+            },
+            {
+              effect: "positive",
+              icon: "plus",
+              title: "Сопротивление",
+              description: "урону Ядом",
+            },
+          ],
+          img: "@/assets/img/characters/halfling/ethhnos/image.png",
+          story:
+            "Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую ко всему чужому, призрачные полурослики в качестве искателей приключений встречаются редко.",
         },
         {
-          name: "оружие",
-          type: null,
+          name: "Легконогий",
+          attributes_main: [
+            {
+              name: "харизма",
+              type: "базовая",
+              value: 1,
+              icon: "charisma",
+              base: false,
+            },
+          ],
+          fines: [
+            {
+              effect: "positive",
+              icon: "corner",
+              title: "Скрытность",
+              description: "за существом выше среднего",
+            },
+          ],
+          img: "@/assets/img/characters/halfling/ethhnos/image.png",
+          story:
+            "Умеют отлично скрываться, в том числе используя других существ как укрытие. Они приветливы и хорошо ладят с другими. В мире Забытых Королевств легконогие являются самой распространённой ветвью полуросликов. Более других склонны к перемене мест, и часто селятся по соседству с другими народами, или ведут кочевую жизнь. В мире Серого Ястреба таких полуросликов называют мохноногими или великанчиками.",
         },
         {
-          name: "доспехи",
-          type: null,
-        },
-        {
-          name: "инструменты",
-          type: null,
-        },
-        {
-          name: "языки",
-          type: "Всеобщий, Полуросликов",
+          name: "Призрачный",
+          attributes_main: [
+            {
+              name: "мудрость",
+              type: "базовая",
+              value: 1,
+              icon: "wisdom",
+              base: false,
+            },
+          ],
+          fines: [
+            {
+              effect: "positive",
+              icon: "corner",
+              title: "Телепатия",
+              description: "на известных языках",
+            },
+          ],
+          img: "@/assets/img/characters/halfling/ethhnos/image.png",
+          story:
+            "Умеют отлично скрываться, в том числе используя других существ как укрытие. Они приветливы и хорошо ладят с другими. В мире Забытых Королевств легконогие являются самой распространённой ветвью полуросликов. Более других склонны к перемене мест, и часто селятся по соседству с другими народами, или ведут кочевую жизнь. В мире Серого Ястреба таких полуросликов называют мохноногими или великанчиками.",
+          rare: "Спросите своего Мастера, можете ли Вы играть представителем этого этноса.",
         },
       ],
     };
   },
   methods: {
+    ethnosName(name, rare) {
+      this.ethnos_select.name = name;
+      this.ethnos_select.rare = rare;
+    },
+
     goTo(route) {
       this.$router.push(route);
     },
@@ -781,7 +819,14 @@ body {
   gap: 26px;
 }
 
-.ethnos_text {
+.ethnos_card_active {
+  background: rgba(255, 255, 255, 0.10);
+  border: 2px solid #FFFFFF;
+  padding: 14px;
+}
+
+.ethnos_card:hover {
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .ethnos_text {
@@ -802,6 +847,7 @@ body {
 
 .ethnos_text span {
   color: #ffc93d;
+  margin-top: 20px;
 }
 
 /* ---------------------characters----------------------*/
