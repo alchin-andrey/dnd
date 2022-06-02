@@ -1,40 +1,6 @@
 import { color } from './colors.js'
 import { spells } from './spells.js'
 
-export const genders = {
-    phisiological: {
-        male: "male",
-        intersex: "intersex",
-        female: "female",
-        demiboy: "demiboy",
-        demigirl: "demigirl",
-        neutral: "neutral_gender",
-        unstable: "unstable",
-        other: "other_gender"
-    },
-
-    feel: {
-        pangender:"pangender",
-        undecided:"undecided",
-        gender_fluid:"gender_fluid",
-        androgin:"androgin",
-        cisgender:"cisgender",
-        transsexual:"transsexual",
-        demigender:"demigender",
-        queer:"queer",
-        neutral: "neutral_gender",
-        bigender: "bigender",
-        other:"other_gender"
-    },
-
-    look: {
-        as_phisiological: "as_phisiological",
-        as_feel: "as_feel",
-        as_other:"as_other_gender"
-    }
-
-}
-
 export const ethnos = {
 
     halfling: {
@@ -166,7 +132,6 @@ export const races = {
 
         "settings": {
             "ethnos": ethnos.halfling,
-            "gender": genders,
             "age": {
                 "young": 10,
                 "mature": 25,

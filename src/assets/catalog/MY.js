@@ -8,21 +8,14 @@ export let MY = {
     subclass:null,
     past:null,
     level:null,
-    base:{
-        strength:10,
-        dexterity:10,
-        constitution:10,
-        intelligence:10,    
-        wisdom:10,
-        charisma:10,
-    },
 
     //Character
     alignment:null,
     gender:{
         phisiological:null,
         feel:null, 
-        look:null,   
+        look:null, 
+        attraction:null,  
     },
     faith:null,
 
@@ -61,22 +54,22 @@ export let MY = {
     stats:{
         
         strength:
-        { total:0, mod:0, save:0 },
+        { base: 0, total:0, mod:0, save:0 },
 
         dexterity:
-        { total:0, mod:0, save:0 },
+        { base: 0, total:0, mod:0, save:0 },
 
         constitution:
-        { total:0, mod:0, save:0 },
+        { base: 0, total:0, mod:0, save:0 },
 
         intelligence:
-        { total:0, mod:0, save:0 },
+        { base: 0, total:0, mod:0, save:0 },
 
         wisdom:
-        { total:0, mod:0, save:0 },
+        { base: 0, total:0, mod:0, save:0 },
     
         charisma:
-        { total:0, mod:0, save:0 }
+        { base: 0, total:0, mod:0, save:0 }
     },
     
     skills:{
@@ -145,8 +138,9 @@ export let MY = {
         languages:null,
     },
 
-    custom_skills:null,
+    //доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
     custom_stats:null,
+    custom_skills:null,
     custom_language:null,
 
     //Особенности - пассивньіе умения
