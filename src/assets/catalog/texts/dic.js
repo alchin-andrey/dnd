@@ -1,6 +1,6 @@
 import * as races_ru from './ru/ru_races.js';
 import * as spells_ru from './ru/ru_spells.js';
-import * as langs_ru from './ru/ru_languages.js';
+import { langs_ru } from './ru/ru_languages.js';
 
 export const dic = {
 
@@ -26,7 +26,7 @@ export const dic = {
             charisma:"харизма",
 
             alignment:"мировоззрение",
-            gender:"пол",
+            gender:"гендер",
                 phisiological: "физиологический",
                     male: "мужчина",
                     male_details: "ваш персонаж обладает исключительно мужскими половыми признаками.",
@@ -138,11 +138,59 @@ export const dic = {
                 tools:"инструменты",
                 languages:"языки",
                 
-                    lang_common: langs_ru.lang_common,
-                    lang_common_details: langs_ru.lang_common_details,
+                    lang_common: langs_ru.common,
+                    lang_common_details: langs_ru.common_details,
 
-                    lang_halfling: langs_ru.lang_halfling,
-                    lang_halfling_details: "lang_halfling_details",
+                    lang_halfling: langs_ru.halfling,
+                    lang_halfling_details: langs_ru.halfling_details,
+
+                    lang_gnome: langs_ru.gnome,
+                    lang_gnome_details: langs_ru.gnome_details,
+
+                    lang_dwarf: langs_ru.dwarf,
+                    lang_dwarf_details: langs_ru.dwarf_details,
+
+                    lang_tiefling: langs_ru.tiefling,
+                    lang_tiefling_details: langs_ru.tiefling_details,
+
+                    lang_elf: langs_ru.elf,
+                    lang_elf_details: langs_ru.elf_details,
+
+                    lang_orc: langs_ru.orc,
+                    lang_orc_details: langs_ru.orc_details,
+
+                    lang_dragon: langs_ru.dragon,
+                    lang_dragon_details: langs_ru.dragon_details,
+
+                    lang_giant: langs_ru.giant,
+                    lang_giant_details: langs_ru.giant_details,
+
+                    lang_goblin: langs_ru.goblin,
+                    lang_goblin_details: langs_ru.goblin_details,
+
+                    lang_undercommon: langs_ru.undercommon,
+                    lang_undercommon_details: langs_ru.undercommon_details,
+
+                    lang_sylvan: langs_ru.sylvan,
+                    lang_sylvan_details: langs_ru.sylvan_details,
+
+                    lang_animal: langs_ru.animal,
+                    lang_animal_details: langs_ru.animal_details,
+
+                    lang_druid: langs_ru.druid,
+                    lang_druid_details: langs_ru.druid_details,
+
+                    lang_primordial: langs_ru.primordial,
+                    lang_primordial_details: langs_ru.primordial_details,
+
+                    lang_sky: langs_ru.sky,
+                    lang_sky_details: langs_ru.sky_details,
+
+                    lang_demonic: langs_ru.demonic,
+                    lang_demonic_details: langs_ru.demonic_details,
+
+                    lang_thieves: langs_ru.thieves,
+                    lang_thieves_details: langs_ru.thieves_details,
 
             //Особенности - пассивньіе умения
             peculiarities:"особенности",
