@@ -18,7 +18,6 @@
         class="cube_zero"
         v-for="n in getCubeZero(numb)"
         :key="n"
-        v-if="cube_zero"
       ></div>
     </div>
   </div>
@@ -107,7 +106,9 @@ export default {
     },
 
     getCubeZero(numb) {
+      if (this.cube_zero) {
       return numb < 6 ? 6 - numb : 0;
+      }
     },
   },
 };

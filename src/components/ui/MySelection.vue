@@ -43,10 +43,6 @@ export default {
       type: String,
       default: null,
     },
-    shown: {
-      type: String,
-      default: null,
-    },
     active: {
       type: Boolean,
       default: false,
@@ -138,16 +134,3 @@ export default {
 }
 
 </style>
-
-
-shown_ethnos: false,
-      shown_gender: false,
-      shown_skin_color: false,
-      shown_eye_color: false,
-      shown_hair_color: false,
-      shown_age: false,
-      shown_growth: false,
-      shown_weight: false,
-      shown_characteristics: false,
-      shown_skills: false,
-      shown_languages: false,

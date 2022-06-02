@@ -1,9 +1,9 @@
 <template>
-  <div class="column">
-    <div class="column_title jbm-300">
+  <div class="column" :class="{ active_link: active}">
+    <div class="column_title jbm-300" @click.stop>
       <div>{{ title }}</div>
     </div>
-    <div class="column_link int-400">
+    <div class="column_link int-400 hover">
       <div>{{ Number(value) }} {{ unit }}</div> 
       <div class="note">{{ note }}</div>
     </div>
@@ -39,6 +39,10 @@ export default {
       type: String,
       default: null,
     },
+    active: {
+      type: Boolean,
+      default: false,
+    },
   },
   watch: {
     modelValue: {
@@ -61,6 +65,27 @@ export default {
   height: 18px;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.hover:hover::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  left: -165px;
+  top: calc(50% - 1px);
+  background: #FFFFFF;
+}
+
+.active_link:before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  left: -39px;
+  top: calc(50% - 1px);
+  background: #FFFFFF;
 }
 
 .column_title {
@@ -88,37 +113,3 @@ export default {
   cursor: ew-resize;
 }
 </style>
-
-title="Скорость"
-        type="Пешком"
-        :numb="speed"
-        feet
-        icon="speed"
-
-
- <!-- <my-attribute
-        title="Анализ"
-        type=""
-        plus
-        :numb="analysis"
-        icon="analysis"
-        cube_zero
-      ></my-attribute>
-
-      <my-attribute
-        title="Внимательность"
-        type=""
-        plus
-        :numb="attention"
-        icon="attention"
-        cube_zero
-      ></my-attribute>
-
-      <my-attribute
-        title="Запугивание"
-        type=""
-        plus
-        :numb="intimidation"
-        icon="intimidation"
-        cube_zero
-      ></my-attribute> -->

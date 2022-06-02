@@ -99,7 +99,7 @@
 
 
     <!-- Этнос-->
-    <my-selection-box v-model:shown="shown_ethnos">
+    <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
         <!-- Этнос_attributes_main -->
         <div class="feature jbm-300">
@@ -195,61 +195,61 @@
     <!-- Этнос -->
 
     <!-- Гендр -->
-    <my-selection-box v-model:shown="shown_gender">
+    <my-selection-box :shown="shown_gender">
       <div class="jbm-300">Гендр</div>
     </my-selection-box>
     <!-- Гендр -->
   
     <!-- Цвет кожи -->
-    <my-selection-box v-model:shown="shown_skin_color">
+    <my-selection-box :shown="shown_skin_color">
       <div class="jbm-300">Цвет кожи</div>
     </my-selection-box>
     <!-- Цвет кожи -->
 
     <!-- Цвет глаз -->
-    <my-selection-box v-model:shown="shown_eye_color">
+    <my-selection-box :shown="shown_eye_color">
       <div class="jbm-300">Цвет глаз</div>
     </my-selection-box>
     <!-- Цвет глаз --> 
 
     <!-- Цвет волос -->
-    <my-selection-box v-model:shown="shown_hair_color">
+    <my-selection-box :shown="shown_hair_color">
       <div class="jbm-300">Цвет волос</div>
     </my-selection-box>
     <!-- Цвет волос -->
 
     <!-- Возраст -->
-    <my-selection-box v-model:shown="shown_age">
+    <my-selection-box :shown="shown_age">
       <div class="jbm-300">Возраст</div>
     </my-selection-box>
     <!-- Возраст --> 
   
     <!-- Рост -->
-    <my-selection-box v-model:shown="shown_growth">
+    <my-selection-box :shown="shown_growth">
       <div class="jbm-300">Рост</div>
     </my-selection-box>
     <!-- Рост -->   
 
     <!-- Вес -->
-    <my-selection-box v-model:shown="shown_weight">
+    <my-selection-box :shown="shown_weight">
       <div class="jbm-300">Вес</div>
     </my-selection-box>
     <!-- Вес --> 
 
     <!-- Характеристики -->
-    <my-selection-box v-model:shown="shown_characteristics">
+    <my-selection-box :shown="shown_characteristics">
       <div class="jbm-300">Характеристики</div>
     </my-selection-box>
     <!-- Характеристики --> 
 
         <!-- Навыки -->
-    <my-selection-box v-model:shown="shown_skills">
+    <my-selection-box :shown="shown_skills">
       <div class="jbm-300">Навыки</div>
     </my-selection-box>
     <!-- Навыки --> 
 
         <!-- Языки -->
-    <my-selection-box v-model:shown="shown_languages">
+    <my-selection-box :shown="shown_languages">
       <div class="jbm-300">Языки</div>
     </my-selection-box>
     <!-- Языки --> 
@@ -920,6 +920,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 26px;
+  cursor: pointer;
 }
 
 .ethnos_card_active {
