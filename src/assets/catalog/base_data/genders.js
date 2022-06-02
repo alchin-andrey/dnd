@@ -13,14 +13,14 @@ export const genders = {
     feel: {
         androgin:"androgin",
         pangender:"pangender",
-        transsexual:"transsexual",
-        demigender:"demigender",
         gender_fluid:"gender_fluid",
+        demigender:"demigender",
+        bigender: "bigender",
         cisgender:"cisgender",
         undecided:"undecided",
         queer:"queer",
         neutral: "neutral_gender",
-        bigender: "bigender",
+        transsexual:"transsexual",
         other:"other_gender"
     },
 
@@ -28,6 +28,10 @@ export const genders = {
         as_phisiological: "as_phisiological",
         as_feel: "as_feel",
         as_other:"as_other_gender"
-    }
+    },
+
+    attraction:{
+
+    },
 
 }
