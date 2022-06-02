@@ -69,7 +69,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    ethnos_base: {
+    base: {
       type: Boolean,
       default: false,
     },

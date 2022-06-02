@@ -11,13 +11,19 @@
         <div class="delimiter"></div>
 
         <div class="selection_menu">
-          <my-selection 
-            @click="showEthnos()"
+          <my-selection
+            @click="show('shown_ethnos')"
+            :active="shown_ethnos"
             title="Этнос"
             :type="ethnos_select.type"
             :rare="ethnos_select.rare"
           ></my-selection>
-          <my-selection title="Пол" type="Женщина, гетеро"></my-selection>
+          <my-selection
+            @click="show('shown_invent')"
+            :active="shown_invent"
+            title="Пол"
+            type="Женщина, гетеро"
+          ></my-selection>
           <my-selection title="Цвет кожи" type="Белый"></my-selection>
           <my-selection title="Цвет глаз" type="Зеленый"></my-selection>
           <my-selection title="Цвет волос" type="Русый"></my-selection>
@@ -54,6 +60,21 @@
       <my-button v-if="shown_home" numb="02" title="Класс"></my-button>
       <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
     </div>
+
+    <!-- Этнос -->
+
+    <my-selection-box :shown="shown_invent">
+      <div class="fines">
+        <my-fines
+          v-for="item in fines"
+          :key="item"
+          :effect="item.effect"
+          :icon="item.icon"
+          :title="item.title"
+          :description="item.description"
+        ></my-fines>
+      </div>
+    </my-selection-box>
 
     <!-- Этнос -->
     <div v-if="shown_ethnos" class="selection_item">
@@ -170,50 +191,51 @@
       </div>
       <div class="ethnos_cards_menu">
         <div class="ethnos_card">
-        <div>
-          <img
-            src="@/assets/img/characters/halfling/ethhnos/image.png"
-            :alt="image"
-          />
-        </div>
-        <div class="feature jbm-300">
-          <my-attribute
-            title="Мудрость"
-            type="Базовая"
-            plus
-            :numb="attributes_main.wisdom"
-            icon="wisdom"
-          >
-          </my-attribute>
-        </div>
-
-        <div class="fines">
-          <my-fines
-            v-for="item in fines"
-            :key="item"
-            :effect="item.effect"
-            :icon="item.icon"
-            :title="item.title"
-            :description="item.description"
-          ></my-fines>
-        </div>
-        <div class="ethnos_text int-400">
-          <h3>Призрачный полурослик</h3>
-          <p>
-            Из-за того, что их народ имеет закрытую, клановую культуру,
-            недоверчивую ко всему чужому, призрачные полурослики в качестве
-            искателей приключений встречаются редко.
-            <br />
-            <br />
-            <span
-              >Спросите своего Мастера, можете ли Вы играть представителем этой
-              подрасы.</span
+          <div>
+            <img
+              src="@/assets/img/characters/halfling/ethhnos/image.png"
+              :alt="image"
+            />
+          </div>
+          <div class="feature jbm-300">
+            <my-attribute
+              title="Мудрость"
+              type="Базовая"
+              plus
+              :numb="attributes_main.wisdom"
+              icon="wisdom"
             >
-          </p>
+            </my-attribute>
+          </div>
+
+          <div class="fines">
+            <my-fines
+              v-for="item in fines"
+              :key="item"
+              :effect="item.effect"
+              :icon="item.icon"
+              :title="item.title"
+              :description="item.description"
+            ></my-fines>
+          </div>
+          <div class="ethnos_text int-400">
+            <h3>Призрачный полурослик</h3>
+            <p>
+              Из-за того, что их народ имеет закрытую, клановую культуру,
+              недоверчивую ко всему чужому, призрачные полурослики в качестве
+              искателей приключений встречаются редко.
+              <br />
+              <br />
+              <span
+                >Спросите своего Мастера, можете ли Вы играть представителем
+                этой подрасы.</span
+              >
+            </p>
           </div>
         </div>
       </div>
     </div>
+    <!-- Этнос -->
   </div>
 
   <!-- character -->
@@ -536,11 +558,58 @@ export default {
   data() {
     return {
       shown_ethnos: false,
+      shown_invent: false,
       shown_home: true,
       ethnos_select: {
         type: "Коренастый",
         rare: "Спросите своего Мастера, можете ли Вы играть представителем этой подрасы.",
       },
+
+      attributes_main: [
+        {
+          name: "сила",
+          type: "базовая",
+          value: 0,
+          icon: "strength",
+          base: false,
+        },
+        {
+          name: "ловкость",
+          type: "базовая",
+          value: 2,
+          icon: "agility",
+          base: true,
+        },
+        {
+          name: "телосложение",
+          type: "базовое",
+          value: 0,
+          icon: "constitution",
+          base: false,
+        },
+        {
+          name: "интелект",
+          type: "базовый",
+          value: 0,
+          icon: "intellect",
+          base: false,
+        },
+        {
+          name: "мудрость",
+          type: "базовая",
+          value: 0,
+          icon: "wisdom",
+          base: false,
+        },
+        {
+          name: "харизма",
+          type: "базовая",
+          value: 0,
+          icon: "charisma",
+          base: false,
+        },
+      ],
+
 
       attributes_main: {
         strength: 0,
@@ -614,14 +683,33 @@ export default {
     goTo(route) {
       this.$router.push(route);
     },
-    showEthnos() {
-      this.shown_ethnos = true;
+    // showEthnos() {
+    //   this.shown_ethnos = true;
+    //   this.shown_home = false;
+    // },
+
+    close() {
+      this.shown_ethnos = false;
+      this.shown_invent = false;
+    },
+
+    show(name) {
+      this.close();
+      this[name] = true;
       this.shown_home = false;
     },
-    showHome() {
+
+    showInvent() {
+      this.close();
+      this.shown_invent = true;
+      this.shown_home = false;
+    },
+
+    showHome(event) {
+      console.log(event);
+      this.close();
       this.shown_home = true;
-      this.shown_ethnos = false;
-    }
+    },
   },
 };
 </script>
@@ -742,7 +830,6 @@ body {
 }
 
 .ethnos_text {
-
 }
 
 .ethnos_text {
