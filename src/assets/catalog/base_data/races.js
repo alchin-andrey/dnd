@@ -1,39 +1,8 @@
 import { color } from './colors.js'
 import { spells } from './spells.js'
+import { genders } from './genders.js';
+import { lang } from './languages.js';
 
-export const genders = {
-    phisiological: {
-        male: "male",
-        intersex: "intersex",
-        female: "female",
-        demiboy: "demiboy",
-        demigirl: "demigirl",
-        neutral: "neutral_gender",
-        unstable: "unstable",
-        other: "other_gender"
-    },
-
-    feel: {
-        pangender:"pangender",
-        undecided:"undecided",
-        gender_fluid:"gender_fluid",
-        androgin:"androgin",
-        cisgender:"cisgender",
-        transsexual:"transsexual",
-        demigender:"demigender",
-        queer:"queer",
-        neutral: "neutral_gender",
-        bigender: "bigender",
-        other:"other_gender"
-    },
-
-    look: {
-        as_phisiological: "as_phisiological",
-        as_feel: "as_feel",
-        as_other:"as_other_gender"
-    }
-
-}
 
 export const ethnos = {
 
@@ -43,22 +12,21 @@ export const ethnos = {
 
             name: "stout",
             description: "stout_halfling_description",
-            img: "image",
 
             constitution: 1,
 
             peculiarities: [
 
                 {
-                    "type": "advantage",
-                    "keyword": "advantage",
-                    "details": "poison_against",
+                    type: "advantage",
+                    keyword: "advantage",
+                    details: "poison_against",
                 },
 
                 {
-                    "type": "resistance",
-                    "keyword":"resistance",
-                    "details": "poison_damage",
+                    type: "resistance",
+                    keyword:"resistance",
+                    details: "poison_damage",
                 },
 
             ]
@@ -67,18 +35,17 @@ export const ethnos = {
 
         lightfoot: {
 
-            "name": "lightfoot",
-            "description": "lightfoot_halfling_description",
-            "img": "image",
+            name: "lightfoot",
+            description: "lightfoot_halfling_description",
 
-            "charisma": 1,
+            charisma: 1,
 
-            "peculiarities": [
+            peculiarities: [
 
                 {
-                    "type": "plus",
-                    "keyword": "stealth",
-                    "details": "behind_bigger_then_mid",
+                    type: "plus",
+                    keyword: "stealth",
+                    details: "behind_bigger_then_mid",
                 },
 
             ]
@@ -87,20 +54,18 @@ export const ethnos = {
 
         ghost: {
 
-            "name": "ghost",
-            "description": "ghost_halfling_description",
-            "img": "image",
+            name: "ghost",
+            description: "ghost_halfling_description",
+            img: "image",
 
-            "wisdom": {
-                "mod": 1,
-            },
+            wisdom: 1,
 
-            "peculiarities": [
+            peculiarities: [
 
                 {
-                    "type": "plus",
-                    "keyword": "telepathy",
-                    "details": "secrecy_size_description",
+                    type: "plus",
+                    keyword: "telepathy",
+                    details: "secrecy_size_description",
                 },
 
             ],
@@ -112,6 +77,89 @@ export const ethnos = {
 }
 
 export const races = {
+
+    halfling: {
+
+        name: "halfling",
+        description: "halfling_description",
+
+        settings: {
+            ethnos: ethnos.halfling,
+            gender: genders,
+            color_skin: [
+                    color[1][0], 
+                    color[2][0], 
+                    color[2][1], 
+                    color[2][2], 
+                    color[2][3], 
+                    color[2][4], 
+                    color[2][5], 
+                    color[2][6], 
+                    color[0][6],
+                    color[3][0],
+                    color[12][0],
+                    color[11][0],
+                    color[10][0],
+                ],
+            color_eyes: [
+                    color[2][4],
+                    color[2][6],
+                ],
+            color_hair: [
+                ],
+
+            age: {
+                young: 10,
+                mature: 25,
+                old: 100,
+                oldest: 150,
+            },
+
+            height: {
+                from: 90,
+                to: 120,
+            },
+
+            weight: {
+                from: 15,
+                to: 20,
+            },
+
+        },
+
+        dexterity: 2,
+
+        speed: 25,
+
+        proficiencies: {
+            languages: [
+                lang.common,
+                lang.halfling
+            ],
+        },
+
+        peculiarities: [
+
+            {
+                type: "advantage",
+                keyword: "advantage",
+                details: "fear_against",
+            },
+
+            {
+                type: "plus",
+                keyword: "rethrow",
+                details: "any_dice_1",
+            },
+
+            {
+                type: "plus",
+                keyword: "slippage",
+                details: "among_bigger_than_mid",
+            },
+
+        ]
+    },
 
     human : {
 
@@ -134,95 +182,13 @@ export const races = {
         }
     }, // недораюлтан
 
-    halfling: {
-
-        name: "halfling",
-        "description": "halfling_description",
-        "img": "image",
-
-        "color": {
-            "skin": [
-                color[1][0], 
-                color[2][0], 
-                color[2][1], 
-                color[2][2], 
-                color[2][3], 
-                color[2][4], 
-                color[2][5], 
-                color[2][6], 
-                color[0][6],
-                color[3][0],
-                color[12][0],
-                color[11][0],
-                color[10][0],
-            ],
-            "eyes": [
-                color[2][4],
-                color[2][6],
-            ],
-            "hair": [
-            ],
-        },
-
-        "settings": {
-            "ethnos": ethnos.halfling,
-            "gender": genders,
-            "age": {
-                "young": 10,
-                "mature": 25,
-                "old": 100,
-                "oldest": 150,
-            },
-            "height": {
-                "from": 90,
-                "to": 120,
-            },
-            "weight": {
-                "from": 15,
-                "to": 20,
-            },
-
-        },
-
-        "dexterity": 2,
-
-        "speed": 25,
-
-        "proficiencies": {
-            "languages": [
-                "lang_common",
-                "lang_halfling"
-            ],
-        },
-
-        "peculiarities": [
-
-            {
-                "type": "advantage",
-                "keyword": "advantage",
-                "details": "fear_against",
-            },
-
-            {
-                "type": "plus",
-                "keyword": "rethrow",
-                "details": "any_dice_1",
-            },
-
-            {
-                "type": "plus",
-                "keyword": "slippage",
-                "details": "among_bigger_than_mid",
-            },
-
-        ]
-    },
-
     halfelf: {
 
-        custom_skills:2,
-        custom_stats:2,
-        custom_language:1,
+        settings: {
+            custom_skills:2,
+            custom_stats:2,
+            custom_language:1,
+        }
 
     }, //недоработан, обсудить применение
 

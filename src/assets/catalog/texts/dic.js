@@ -1,5 +1,6 @@
-import * as races_ru from './ru_races.js';
-import * as spells_ru from './ru_spells.js';
+import * as races_ru from './ru/ru_races.js';
+import * as spells_ru from './ru/ru_spells.js';
+import * as langs_ru from './ru/ru_languages.js';
 
 export const dic = {
 
@@ -137,8 +138,11 @@ export const dic = {
                 tools:"инструменты",
                 languages:"языки",
                 
-                    lang_common:"Всеобщий",
-                    lang_halfling:"Полуросличий",
+                    lang_common: langs_ru.lang_common,
+                    lang_common_details: langs_ru.lang_common_details,
+
+                    lang_halfling: langs_ru.lang_halfling,
+                    lang_halfling_details: "lang_halfling_details",
 
             //Особенности - пассивньіе умения
             peculiarities:"особенности",

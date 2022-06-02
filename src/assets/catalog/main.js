@@ -1,4 +1,5 @@
 import { color } from './base_data/colors.js';
+import { genders } from './base_data/genders.js';
 import { races,ethnos } from './base_data/races.js';
 import { classes,subclasses } from "./base_data/classes.js";
 import { pasts } from "./base_data/pasts.js";
