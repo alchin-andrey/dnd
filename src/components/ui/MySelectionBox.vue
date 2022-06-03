@@ -19,7 +19,10 @@ export default {
 <style scoped>
 .selection_box {
   width: 426px;
-  padding-top: 32px;
+  padding: 32px 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   overflow-y: scroll;
 }
 
