@@ -97,7 +97,6 @@
       <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
     </div>
 
-
     <!-- Этнос-->
     <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
@@ -196,10 +195,88 @@
 
     <!-- Гендр -->
     <my-selection-box :shown="shown_gender">
-      <div class="jbm-300">Гендр</div>
+      <div class="gender_cards_menu">
+        <div class="gender_card">
+          <div class="gender_card_title jbm-300">Cамощущение</div>
+          <div class="gender_grid">
+            <div class="gender_item gender_item_1">
+              <img
+                alt="androgin"
+                src="@/assets/img/icon/gender/androgin.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_2">
+              <img
+                alt="pangender"
+                src="@/assets/img/icon/gender/pangender.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_3">
+              <img
+                alt="gender_fluid"
+                src="@/assets/img/icon/gender/gender_fluid.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_4">
+              <img
+                alt="demigender"
+                src="@/assets/img/icon/gender/demigender.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_5">
+              <img
+                alt="bigender"
+                src="@/assets/img/icon/gender/bigender.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_6">
+              <img
+                alt="cisgender"
+                src="@/assets/img/icon/gender/cisgender.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_7">
+              <img
+                alt="undecided"
+                src="@/assets/img/icon/gender/undecided.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_8">
+              <img
+                alt="queer"
+                src="@/assets/img/icon/gender/queer.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_9">
+              <img
+                alt="neutral_gender"
+                src="@/assets/img/icon/gender/neutral_gender.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_10">
+              <img
+                alt="transsexual"
+                src="@/assets/img/icon/gender/transsexual.svg"
+              />
+            </div>
+            <div class="gender_item gender_item_11">
+              <img
+                alt="other_gender"
+                src="@/assets/img/icon/gender/other_gender.svg"
+              />
+            </div>
+          </div>
+          <div class="ethnos_text int-400">
+            <h3>Цисгендер</h3>
+            <p>
+              Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.
+            </p>
+          </div>
+        </div>
+      </div>
     </my-selection-box>
     <!-- Гендр -->
-  
+
     <!-- Цвет кожи -->
     <my-selection-box :shown="shown_skin_color">
       <div class="jbm-300">Цвет кожи</div>
@@ -210,7 +287,7 @@
     <my-selection-box :shown="shown_eye_color">
       <div class="jbm-300">Цвет глаз</div>
     </my-selection-box>
-    <!-- Цвет глаз --> 
+    <!-- Цвет глаз -->
 
     <!-- Цвет волос -->
     <my-selection-box :shown="shown_hair_color">
@@ -222,37 +299,37 @@
     <my-selection-box :shown="shown_age">
       <div class="jbm-300">Возраст</div>
     </my-selection-box>
-    <!-- Возраст --> 
-  
+    <!-- Возраст -->
+
     <!-- Рост -->
     <my-selection-box :shown="shown_growth">
       <div class="jbm-300">Рост</div>
     </my-selection-box>
-    <!-- Рост -->   
+    <!-- Рост -->
 
     <!-- Вес -->
     <my-selection-box :shown="shown_weight">
       <div class="jbm-300">Вес</div>
     </my-selection-box>
-    <!-- Вес --> 
+    <!-- Вес -->
 
     <!-- Характеристики -->
     <my-selection-box :shown="shown_characteristics">
       <div class="jbm-300">Характеристики</div>
     </my-selection-box>
-    <!-- Характеристики --> 
+    <!-- Характеристики -->
 
-        <!-- Навыки -->
+    <!-- Навыки -->
     <my-selection-box :shown="shown_skills">
       <div class="jbm-300">Навыки</div>
     </my-selection-box>
-    <!-- Навыки --> 
+    <!-- Навыки -->
 
-        <!-- Языки -->
+    <!-- Языки -->
     <my-selection-box :shown="shown_languages">
       <div class="jbm-300">Языки</div>
     </my-selection-box>
-    <!-- Языки --> 
+    <!-- Языки -->
   </div>
 
   <!-- character -->
@@ -951,6 +1028,102 @@ body {
 .ethnos_text span {
   color: #ffc93d;
   margin-top: 20px;
+}
+
+.gender_cards_menu {
+  padding: 0 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gender_card {
+  padding: 16px;
+  width: 394px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(60px);
+  border-radius: 12px;
+}
+
+.gender_card_title {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.gender_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 72px);
+  grid-template-rows: repeat(5, 72px);
+  grid-auto-flow: dense;
+  gap: 4px 0;
+  margin: 26px 0;
+}
+.gender_item {
+  width: 72px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gender_item:hover {
+  border: 2px solid #ffffff;
+}
+
+.gender_item_1 {
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.gender_item_2 {
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+.gender_item_3 {
+  grid-row: 1/2;
+  grid-column: 5/6;
+}
+
+.gender_item_4 {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.gender_item_5 {
+  grid-row: 2/3;
+  grid-column: 4/5;
+}
+
+.gender_item_6 {
+  grid-row: 3/4;
+  grid-column: 3/4;
+}
+
+.gender_item_7 {
+  grid-row: 4/5;
+  grid-column: 2/3;
+}
+
+.gender_item_8 {
+  grid-row: 4/5;
+  grid-column: 4/5;
+}
+
+.gender_item_9 {
+  grid-row: 5/6;
+  grid-column: 1/2;
+}
+
+.gender_item_10 {
+  grid-row: 5/6;
+  grid-column: 3/4;
+}
+
+.gender_item_11 {
+  grid-row: 5/6;
+  grid-column: 5/6;
 }
 
 /* ---------------------characters----------------------*/
