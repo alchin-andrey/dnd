@@ -31,7 +31,7 @@ export const genders = {
     },
 
     attraction:{
-
+        //Добавить на предистории
     },
 
 }

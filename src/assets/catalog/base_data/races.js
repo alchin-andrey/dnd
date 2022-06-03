@@ -124,6 +124,11 @@ export const races = {
                 from: 15,
                 to: 20,
             },
+            
+            // ТОЛЬКО ДЛЯ ОТЛАДКИ
+            custom_skills:2,
+            custom_stats:2,
+            custom_language:1,
 
         },
 
@@ -158,7 +163,28 @@ export const races = {
                 details: "among_bigger_than_mid",
             },
 
+        ],
+
+        spells: [ //ТОЛЬКО ДЛЯ ОТЛАДКИ
+
+            {
+                level: 1,
+                spell: spells.thaumaturgy,
+            },
+
+            {
+                level: 3,
+                spell: spells.hellish_rebuke,
+                gain: 2,
+            },
+
+            {
+                level: 5,
+                spell: spells.darkness,
+            }
+
         ]
+
     },
 
     human : {
