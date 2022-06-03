@@ -14,7 +14,7 @@ export default {
 <style scoped>
 .btm {
   height: 18px;
-  padding: 0 0 32px 32px;
+  margin: 0 0 32px 32px;
   display: flex;
   cursor: pointer;
   width: 52px;

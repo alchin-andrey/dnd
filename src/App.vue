@@ -375,7 +375,10 @@
         >
         </my-card-text>
       </my-selection-card>
-      <my-selection-card v-if="gender_select.feel !== gender.feel[5].name" passive>
+      <my-selection-card
+        v-if="gender_select.feel !== gender.feel[5].name"
+        passive
+      >
         <div class="gender_card_title jbm-300">Внешний вид</div>
         <div class="gender__flex">
           <div class="gender__flex-3">
@@ -462,31 +465,15 @@
 
   <!-- character -->
   <div class="represent">
-    <div class="character">
-      <div class="skin">
-        <img
-          alt="halfling_skin"
-          src="@/assets/img/characters/halfling/halfling_skin_2_0_1.png"
-        />
+      <div class="character jbm-300">
+
       </div>
-      <div class="hair">
-        <img
-          alt="halfling_hair"
-          src="@/assets/img/characters/halfling/halfling_hair_0_6_1.png"
-        />
-      </div>
-      <div class="eyes">
-        <img
-          alt="halfling_eyes"
-          src="@/assets/img/characters/halfling/halfling_eyes_8_2_1.png"
-        />
-      </div>
-    </div>
+
 
     <div class="size">
-      <div class="skale">
+      <div class="skale_division_top division_off">
         <div class="division_numb_top"></div>
-        <div class="skale_division division_off">
+        <div class="skale_division_top division_off">
           <div class=""></div>
         </div>
       </div>
@@ -1091,9 +1078,9 @@ export default {
 
     changeLookName(name) {
       if (name === this.gender.feel[5].name) {
-        return this.gender_select.look = this.gender.look[0].name;
+        return (this.gender_select.look = this.gender.look[0].name);
       } else {
-        return this.gender_select.look = this.gender_select.look
+        return (this.gender_select.look = this.gender_select.look);
       }
     },
 
@@ -1236,13 +1223,6 @@ body {
   padding: 14px !important;
 }
 
-/* .gender_cards_menu {
-  padding: 0 0 28px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-} */
-
 .gender_card {
   padding: 16px;
   width: 394px;
@@ -1255,13 +1235,6 @@ body {
   color: rgba(255, 255, 255, 0.2);
 }
 
-.gender_grid {
-  display: grid;
-  grid-template-columns: repeat(5, 72px);
-  grid-template-rows: repeat(5, 72px);
-  grid-auto-flow: dense;
-  gap: 4px 0;
-}
 .gender_item {
   width: 72px;
   height: 72px;
@@ -1273,65 +1246,6 @@ body {
   cursor: pointer;
 }
 
-/* .gender_item:hover {
-  border: 2px solid #ffffff;
-} */
-
-.gender_item_1 {
-  grid-row: 1/2;
-  grid-column: 1/2;
-}
-
-.gender_item_2 {
-  grid-row: 1/2;
-  grid-column: 3/4;
-}
-
-.gender_item_3 {
-  grid-row: 1/2;
-  grid-column: 5/6;
-}
-
-.gender_item_4 {
-  grid-row: 2/3;
-  grid-column: 2/3;
-}
-
-.gender_item_5 {
-  grid-row: 2/3;
-  grid-column: 4/5;
-}
-
-.gender_item_6 {
-  grid-row: 3/4;
-  grid-column: 3/4;
-}
-
-.gender_item_7 {
-  grid-row: 4/5;
-  grid-column: 2/3;
-}
-
-.gender_item_8 {
-  grid-row: 4/5;
-  grid-column: 4/5;
-}
-
-.gender_item_9 {
-  grid-row: 5/6;
-  grid-column: 1/2;
-}
-
-.gender_item_10 {
-  grid-row: 5/6;
-  grid-column: 3/4;
-}
-
-.gender_item_11 {
-  grid-row: 5/6;
-  grid-column: 5/6;
-}
-
 /* ---------------------characters----------------------*/
 
 .represent {
@@ -1340,41 +1254,20 @@ body {
   display: flex;
   align-items: flex-end;
   position: relative;
-  text-align: center;
+  height: 100%;
 }
 
 .character {
   flex: 1 1 auto;
-  padding: 0px 5px 0 5px;
-  position: relative;
-}
-
-.skin {
-  /* -webkit-filter : hue-rotate(520deg);
-  filter : hue-rotate(520deg); */
-}
-
-.hair {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.eyes {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.character {
-  flex: 1 1 auto;
-  padding: 0px 5px 0 5px;
+  width: 250px;
+  height: calc((100% - 40px) / 696 * 396 - (((100% - 64px) * 96 / 30 / 7 / 96) * 0 ));
+  background:
+url('@/assets/img/characters/halfling/halfling_hair_0_6_1.png') center/auto 100% no-repeat,
+url('@/assets/img/characters/halfling/halfling_eyes_8_2_1.png') center/auto 100% no-repeat,
+url('@/assets/img/characters/halfling/halfling_skin_2_0_1.png') center/auto 100% no-repeat;
 }
 
 .size {
-  position: absolute;
   right: 0;
   width: 35px;
   font-family: "JetBrains Mono";
@@ -1390,11 +1283,13 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
+  height: 100%;
+  background-color: transparent;
 }
 
 .skale {
+  height: 100%;
   display: flex;
-  gap: 4px 0;
 }
 
 .division_numb_down {
@@ -1411,7 +1306,13 @@ body {
 
 .skale_division {
   width: 1px;
-  height: 96px;
+  /* min-height: 96px; */
+  flex: 1 1 auto;
+}
+
+.skale_division_top {
+  width: 1px;
+  height: 36px;
 }
 
 .division_off {
@@ -1432,7 +1333,7 @@ body {
 
 .division_filling_front {
   background: #ffffff;
-  height: 33%;
+  height: calc((100% * 96 / 30 / 96) * 30 );
 }
 
 /* ---------------------sidebar_right----------------------*/
