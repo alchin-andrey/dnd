@@ -64,6 +64,6 @@ for (let i in MY.race.peculiarities){
     console.log(T(MY.race.peculiarities[i].keyword) + " " + t(MY.race.peculiarities[i].details));
 }
 
-console.log(t(MY.race.description));
+console.log(t(MY.race.details));
 console.log(`${T(MY.ethnos.name)} ${t(MY.race.name)}`);
-console.log(t(MY.ethnos.description));
+console.log(t(MY.ethnos.details));

@@ -8,14 +8,14 @@ export default {
     halfling: {
 
         name: "halfling",
-        description: "halfling_description",
+        details: "halfling_details",
 
         settings: {
             ethnos: {
                 stout: {
 
                     name: "stout",
-                    description: "stout_halfling_description",
+                    details: "stout_halfling_details",
         
                     constitution: 1,
         
@@ -40,7 +40,7 @@ export default {
                 lightfoot: {
         
                     name: "lightfoot",
-                    description: "lightfoot_halfling_description",
+                    details: "lightfoot_halfling_details",
         
                     charisma: 1,
         
@@ -59,7 +59,7 @@ export default {
                 ghost: {
         
                     name: "ghost",
-                    description: "ghost_halfling_description",
+                    details: "ghost_halfling_details",
                     img: "image",
         
                     wisdom: 1,
@@ -69,7 +69,7 @@ export default {
                         {
                             type: "plus",
                             keyword: "telepathy",
-                            details: "secrecy_size_description",
+                            details: "secrecy_size_details",
                         },
         
                     ],
