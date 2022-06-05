@@ -16,6 +16,8 @@ export default {
 
                     name: "stout",
                     details: "stout_halfling_details",
+                    link_male: 'https://www.heroforge.com/load_config%3D503185616',
+                    link_female: 'https://www.heroforge.com/load_config%3D503211377',
         
                     constitution: 1,
         
@@ -41,6 +43,8 @@ export default {
         
                     name: "lightfoot",
                     details: "lightfoot_halfling_details",
+                    link_male: 'https://www.heroforge.com/load_config%3D503210924',
+                    link_female: 'https://www.heroforge.com/load_config%3D503211388',
         
                     charisma: 1,
         
@@ -60,7 +64,8 @@ export default {
         
                     name: "ghost",
                     details: "ghost_halfling_details",
-                    img: "image",
+                    link_male: 'https://www.heroforge.com/load_config%3D503211188',
+                    link_female: 'https://www.heroforge.com/load_config%3D503211452',
         
                     wisdom: 1,
         
