@@ -28,7 +28,7 @@ for (let i in color) {
     c = c + `<div>`
     for (let j in color[i]){ 
         c = c + 
-        `<div style="
+        `<div id = "${i} ${j}" style="
         display:inline-block;
         background-color:${color[i][j].hex}
         ;width:80px;height:60px;
