@@ -1,4 +1,4 @@
-export let MY = {
+export default {
     
     //Key selections
     name:null,

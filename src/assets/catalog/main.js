@@ -1,12 +1,12 @@
 import color from './base_data/colors.js';
 import gender from './base_data/genders.js';
 import race from './base_data/races.js';
-import clas from "./base_data/classes.js";
-import past from "./base_data/pasts.js";
+import clas from './base_data/classes.js';
+import past from './base_data/pasts.js';
 
 
-import { MY } from "./MY.js";
-import { dic } from './texts/dic.js';
+import MY from "./MY.js";
+import dic from './texts/dic.js';
 
 //----------------------------------------
 

@@ -2,7 +2,7 @@ import * as races_ru from './ru/ru_races.js';
 import * as spells_ru from './ru/ru_spells.js';
 import { langs_ru } from './ru/ru_languages.js';
 
-export const dic = {
+export default {
 
     ru:{
 
