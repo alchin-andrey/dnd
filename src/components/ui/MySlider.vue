@@ -76,6 +76,7 @@ export default {
   line-height: 24px;
   letter-spacing: 0.02em;
   color: #ffffff;
+  text-transform: capitalize;
 }
 
 .arrows {

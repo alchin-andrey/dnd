@@ -2,11 +2,11 @@
   <div class="sidebar_left">
     <div class="chapter">
       <div class="main_chapter">
-        <div class="logo" @click="goTo('/')">
+        <div class="logo" @click="showRace()">
           <img alt="logo" src="@/assets/img/logo.svg" />
         </div>
 
-        <my-slider numb="01" title="Раса" arr="Полурослик"></my-slider>
+        <my-slider :numb="t(genders.phisiological.male)" :title="t('race')" :arr="t($store.state.races.halfling.name)"></my-slider>
 
         <div class="delimiter"></div>
 
@@ -370,8 +370,7 @@
         </div>
         <my-card-text
           :title="gender_select.feel"
-          text="Самоощущение вашего персонажа полностью соответствует его
-              физиологическому гендеру."
+          text="Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру."
         >
         </my-card-text>
       </my-selection-card>
@@ -465,10 +464,7 @@
 
   <!-- character -->
   <div class="represent">
-      <div class="character jbm-300">
-
-      </div>
-
+    <div class="character jbm-300"></div>
 
     <div class="size">
       <div class="skale_division_top division_off">
@@ -723,9 +719,30 @@
 </template>
 
 <script>
+import { color } from "@/assets/catalog/base_data/colors.js";
+
+import { races } from "@/assets/catalog/base_data/races.js";
+import { classes, subclasses } from "@/assets/catalog/base_data/classes.js";
+import { pasts } from "@/assets/catalog/base_data/pasts.js";
+
+import { MY } from "@/assets/catalog/MY.js";
+
+import genders from "@/assets/catalog/base_data/genders.js";
+
 export default {
+  components: {
+    color,
+    races,
+    classes,
+    subclasses,
+    pasts,
+    MY,
+  },
   data() {
     return {
+      genders: genders,
+
+
       shown_ethnos: false,
       shown_gender: false,
       shown_skin_color: false,
@@ -1260,11 +1277,15 @@ body {
 .character {
   flex: 1 1 auto;
   width: 250px;
-  height: calc((100% - 40px) / 696 * 396 - (((100% - 64px) * 96 / 30 / 7 / 96) * 0 ));
-  background:
-url('@/assets/img/characters/halfling/halfling_hair_0_6_1.png') center/auto 100% no-repeat,
-url('@/assets/img/characters/halfling/halfling_eyes_8_2_1.png') center/auto 100% no-repeat,
-url('@/assets/img/characters/halfling/halfling_skin_2_0_1.png') center/auto 100% no-repeat;
+  height: calc(
+    (100% - 40px) / 696 * 396 - (((100% - 64px) * 96 / 30 / 7 / 96) * 0)
+  );
+  background: url("@/assets/img/characters/halfling/halfling_hair_0_6_1.png")
+      center/auto 100% no-repeat,
+    url("@/assets/img/characters/halfling/halfling_eyes_8_2_1.png") center/auto
+      100% no-repeat,
+    url("@/assets/img/characters/halfling/halfling_skin_2_0_1.png") center/auto
+      100% no-repeat;
 }
 
 .size {
@@ -1333,7 +1354,7 @@ url('@/assets/img/characters/halfling/halfling_skin_2_0_1.png') center/auto 100%
 
 .division_filling_front {
   background: #ffffff;
-  height: calc((100% * 96 / 30 / 96) * 30 );
+  height: calc((100% * 96 / 30 / 96) * 30);
 }
 
 /* ---------------------sidebar_right----------------------*/

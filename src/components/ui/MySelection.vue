@@ -8,7 +8,7 @@
     :class="{ 
       rare: rare,
       passive: type === 'Обычный',
-      icon: type !== 'Обычный' || !active,
+      icon: type !== 'Обычный' || active,
       cursor_pointer: type !== 'Обычный',
       hover: type !== 'Обычный',
       icon_active: active,
@@ -126,7 +126,7 @@ export default {
 }
 
 .passive {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .cursor_pointer {

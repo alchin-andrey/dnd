@@ -1,0 +1,28 @@
+import MySelection from "@/components/ui/MySelection.vue";
+import MyController from "@/components/ui/MyController.vue";
+import MySlider from "@/components/ui/MySlider.vue";
+import MyButton from "@/components/ui/MyButton.vue";
+import MyButtonBack from "@/components/ui/MyButtonBack.vue";
+import MyButtonGender from "@/components/ui/MyButtonGender.vue";
+import MyAttribute from "@/components/ui/MyAttribute.vue";
+import MyInventory from "@/components/ui/MyInventory.vue";
+import MyFines from "@/components/ui/MyFines.vue";
+import MySelectionBox from "@/components/ui/MySelectionBox.vue";
+import MySelectionCard from "@/components/ui/MySelectionCard.vue";
+import MyCardText from "@/components/ui/MyCardText.vue";
+
+
+export default [
+  MySelection,
+  MyController,
+  MySlider,
+  MyButton,
+  MyButtonBack,
+  MyButtonGender,
+  MyAttribute,
+  MyInventory,
+  MyFines,
+  MySelectionBox,
+  MySelectionCard,
+  MyCardText,
+]
