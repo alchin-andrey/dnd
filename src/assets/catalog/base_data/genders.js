@@ -1,4 +1,4 @@
-export const genders = {
+export default {
     phisiological: {
         male: "male",
         intersex: "intersex",

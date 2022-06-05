@@ -1,4 +1,4 @@
-export const color = {
+export default {
   0: {
     0: { h: 0, s: 0, l: 100, hex: "#ffffff", name: "White" },
     1: { h: 0, s: 0, l: 83, hex: "#d4d4d4", name: "Smoke" },

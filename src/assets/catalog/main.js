@@ -1,11 +1,12 @@
-import { color } from './base_data/colors.js';
-import { genders } from './base_data/genders.js';
-import { races,ethnos } from './base_data/races.js';
-import { classes,subclasses } from "./base_data/classes.js";
-import { pasts } from "./base_data/pasts.js";
+import color from './base_data/colors.js';
+import gender from './base_data/genders.js';
+import race from './base_data/races.js';
+import clas from './base_data/classes.js';
+import past from './base_data/pasts.js';
 
-import { MY } from "./MY.js";
-import { dic } from './texts/dic.js';
+
+import MY from "./MY.js";
+import dic from './texts/dic.js';
 
 //----------------------------------------
 
@@ -49,8 +50,8 @@ c = c + `</div>`;
 
 document.getElementById('out').innerHTML = c;
 
-MY.race = races.halfling
-MY.ethnos = ethnos.halfling.lightfoot
+MY.race = race.halfling
+MY.ethnos = race.halfling.settings.ethnos.lightfoot
 
 console.log(`${TT(MY.ethnos.name)} ${TT(MY.race.name)}`);
 
@@ -63,6 +64,6 @@ for (let i in MY.race.peculiarities){
     console.log(T(MY.race.peculiarities[i].keyword) + " " + t(MY.race.peculiarities[i].details));
 }
 
-console.log(t(MY.race.description));
+console.log(t(MY.race.details));
 console.log(`${T(MY.ethnos.name)} ${t(MY.race.name)}`);
-console.log(t(MY.ethnos.description));
+console.log(t(MY.ethnos.details));
