@@ -31,7 +31,7 @@ class Spell {
 
 }
 
-export const spells = {
+export default {
 
     thaumaturgy: {
         name: "thaumaturgy",

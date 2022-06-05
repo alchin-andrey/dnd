@@ -1,4 +1,6 @@
-export const lang = {
+export default {
+
+    //давай назьівать єто lang
 
     common: {
         name: "lang_common",
