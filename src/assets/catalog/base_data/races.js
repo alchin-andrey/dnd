@@ -1,82 +1,11 @@
-import { color } from './colors.js'
+import * as colors from './colors.js'
 import { spells } from './spells.js'
-import { genders } from './genders.js';
-import { lang } from './languages.js';
+import * as gender from './genders.js';
+import * as lang from './languages.js';
 
+const color = colors.default;
 
-export const ethnos = {
-
-    halfling: {
-
-        stout: {
-
-            name: "stout",
-            description: "stout_halfling_description",
-
-            constitution: 1,
-
-            peculiarities: [
-
-                {
-                    type: "advantage",
-                    keyword: "advantage",
-                    details: "poison_against",
-                },
-
-                {
-                    type: "resistance",
-                    keyword:"resistance",
-                    details: "poison_damage",
-                },
-
-            ]
-
-        },
-
-        lightfoot: {
-
-            name: "lightfoot",
-            description: "lightfoot_halfling_description",
-
-            charisma: 1,
-
-            peculiarities: [
-
-                {
-                    type: "plus",
-                    keyword: "stealth",
-                    details: "behind_bigger_then_mid",
-                },
-
-            ]
-
-        },
-
-        ghost: {
-
-            name: "ghost",
-            description: "ghost_halfling_description",
-            img: "image",
-
-            wisdom: 1,
-
-            peculiarities: [
-
-                {
-                    type: "plus",
-                    keyword: "telepathy",
-                    details: "secrecy_size_description",
-                },
-
-            ],
-
-            rare: true,
-
-        },
-    }
-}
-
-export const races = {
+export default {
 
     halfling: {
 
@@ -84,8 +13,74 @@ export const races = {
         description: "halfling_description",
 
         settings: {
-            ethnos: ethnos.halfling,
-            gender: genders,
+            ethnos: {
+                stout: {
+
+                    name: "stout",
+                    description: "stout_halfling_description",
+        
+                    constitution: 1,
+        
+                    peculiarities: [
+        
+                        {
+                            type: "advantage",
+                            keyword: "advantage",
+                            details: "poison_against",
+                        },
+        
+                        {
+                            type: "resistance",
+                            keyword:"resistance",
+                            details: "poison_damage",
+                        },
+        
+                    ]
+        
+                },
+        
+                lightfoot: {
+        
+                    name: "lightfoot",
+                    description: "lightfoot_halfling_description",
+        
+                    charisma: 1,
+        
+                    peculiarities: [
+        
+                        {
+                            type: "plus",
+                            keyword: "stealth",
+                            details: "behind_bigger_then_mid",
+                        },
+        
+                    ]
+        
+                },
+        
+                ghost: {
+        
+                    name: "ghost",
+                    description: "ghost_halfling_description",
+                    img: "image",
+        
+                    wisdom: 1,
+        
+                    peculiarities: [
+        
+                        {
+                            type: "plus",
+                            keyword: "telepathy",
+                            details: "secrecy_size_description",
+                        },
+        
+                    ],
+        
+                    rare: true,
+        
+                },
+            },
+            gender: gender,
             color_skin: [
                     color[1][0], 
                     color[2][0], 

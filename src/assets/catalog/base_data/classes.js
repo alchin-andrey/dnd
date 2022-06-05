@@ -1,12 +1,12 @@
-export const subclasses = {
-    barbarian:{
-
-    },
-}
-
-export const classes = {
+export default {
 
     barbarian:{
+
+        settings: {
+            subclasses:{
+
+            }
+        }
 
     },
 
