@@ -16,8 +16,13 @@ export default {
 
                     name: "stout",
                     details: "stout_halfling_details",
+
                     link_male: 'https://www.heroforge.com/load_config%3D503185616',
+                    img_coef_male: 3.65,
+
                     link_female: 'https://www.heroforge.com/load_config%3D503211377',
+                    img_coef_female: null,
+
         
                     constitution: 1,
         
