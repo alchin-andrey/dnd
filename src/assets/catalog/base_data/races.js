@@ -1,9 +1,7 @@
-import * as colors from './colors.js'
-import { spells } from './spells.js'
-import * as gender from './genders.js';
-import * as lang from './languages.js';
-
-const color = colors.default;
+import color from './colors.js'
+import spells from './spells.js'
+import gender from './genders.js';
+import lang from './languages.js';
 
 export default {
 
