@@ -357,15 +357,15 @@
   </div>
 
   <!-- character -->
-  <div class="represent">
+  <div class="represent" :class="{ active_eyes: shown_eye_color }">
     <div class="character"
     :style="{ 
-      'height': 'calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30))',
+      'height': `${calcImg()}`,
       'background-image': `${getHairImg()}, ${getEyesImg()}, ${getSkinImg()}`,
     }"
     ></div>
 
-    <div class="size">
+    <div class="size" v-if="!shown_eye_color">
       <div class="skale_division_top division_off">
         <div class="division_numb_top"></div>
         <div class="skale_division_top division_off">
@@ -950,6 +950,14 @@ export default {
     getSkinImg() {
       return 'url(' + require('@/assets/img/characters/halfling/stout/male/skin/2-0.png') + ')';
     },
+
+    calcImg() {
+      if (this.shown_eye_color) { 
+        return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30)*5)`;
+      } else {
+        return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30))`;
+      }
+    },
   },
   computed: {
     getColorsArr() {
@@ -961,6 +969,8 @@ export default {
       }
       return arr;
     },
+
+    
   },
 
   created() {
@@ -1078,12 +1088,16 @@ body {
 /* ---------------------characters----------------------*/
 
 .represent {
-  padding-bottom: 32px;
+  padding: 32px;
   flex: 1 1 auto;
   display: flex;
   align-items: flex-end;
   position: relative;
   height: 100%;
+}
+
+.active_eyes {
+align-items: flex-start;
 }
 
 .character {
@@ -1102,8 +1116,6 @@ body {
 background-repeat: no-repeat;
 background-position: center;
 background-size: auto 100%;
-
-
 }
 
 .size {
