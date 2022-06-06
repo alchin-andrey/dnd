@@ -1,7 +1,10 @@
 <template>
   <div
     class="pasive_card"
-    :class="{ active_card: !passive}"
+    :class="{ 
+      active_card: !passive,
+      colors_card: colors_card,
+      }"
   >
     <slot></slot>
   </div>
@@ -12,6 +15,10 @@ export default {
   name: "MySelectionCard",
   props: {
     passive: {
+      type: Boolean,
+      default: false,
+    },
+    colors_card: {
       type: Boolean,
       default: false,
     },
@@ -38,4 +45,9 @@ export default {
   flex-direction: column;
   gap: 26px;
 }
+
+.colors_card {
+  background: #000000;
+}
+
 </style>

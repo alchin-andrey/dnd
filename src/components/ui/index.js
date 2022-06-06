@@ -10,6 +10,7 @@ import MyFines from "@/components/ui/MyFines.vue";
 import MySelectionBox from "@/components/ui/MySelectionBox.vue";
 import MySelectionCard from "@/components/ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/MyCardText.vue";
+import MyColorBlock from "@/components/ui/MyColorBlock.vue";
 
 
 
@@ -27,4 +28,5 @@ export default [
   MySelectionBox,
   MySelectionCard,
   MyCardText,
+  MyColorBlock,
 ]

@@ -1,9 +1,11 @@
+import color from "./base_data/colors.js";
+
 export default {
     
     //Key selections
     name:null,
-    race:"halfling",
-    ethnos:null,
+    race: "halfling",
+    ethnos: "stout",
     class:null,
     subclass:null,
     past:null,
@@ -31,9 +33,9 @@ export default {
     weight:null,
     height:null,
     color:{
-        eyes:null,
-        skin:null,
-        hair:null,
+        skin: { h: 30, s: 85, l: 89, hex: "#fbe3cb", name: "Pale" },
+        eyes: { h: 90, s: 90, l: 24, hex: "#3d7406", name: "Grass" },
+        hair: { h: 0, s: 95, l: 37, hex: "#b80505", name: "Ruby" },
     },
 
     //Calculated
