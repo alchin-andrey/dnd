@@ -6,8 +6,15 @@ import components from "@/components/ui";
 
 import myTranslation from "@/plagins/myTranslation.js";
 
+import genders from "@/assets/catalog/base_data/genders.js";
 
-import races from "@/assets/catalog/base_data/races.js";
+
+
+
+
+// function getDefault (path, clear, add) {
+
+//     }
 
 
 
@@ -15,7 +22,7 @@ const app = createApp(App);
 app.use(store);
 app.use(router);
 app.use(myTranslation);
-
+app.config.globalProperties.$http = () => {genders}
 components.forEach(component => {
     app.component(component.name, component);
 });

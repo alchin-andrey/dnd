@@ -1,19 +1,84 @@
-import { color } from '@/assets/catalog/base_data/colors.js'
-import { spells } from '@/assets/catalog/base_data/spells.js'
-import { genders } from "@/assets/catalog/base_data/genders.js";
-import { lang } from '@/assets/catalog/base_data/languages.js';
-import { ethnos } from '@/assets/catalog/base_data/races.js';
+import color from '@/assets/catalog/base_data/colors.js'
+import spells from '@/assets/catalog/base_data/spells.js'
+import gender from '@/assets/catalog/base_data/genders.js';
+import lang from '@/assets/catalog/base_data/languages.js';
 // Расса
 export default function () {
     return {
         halfling: {
 
             name: "halfling",
-            description: "halfling_description",
+            details: "halfling_details",
     
             settings: {
-                ethnos: ethnos.halfling,
-                gender: genders,
+                ethnos: {
+                    stout: {
+    
+                        name: "stout",
+                        details: "stout_halfling_details",
+            
+                        constitution: 1,
+            
+                        peculiarities: [
+            
+                            {
+                                type: "advantage",
+                                keyword: "advantage",
+                                details: "poison_against",
+                            },
+            
+                            {
+                                type: "resistance",
+                                keyword:"resistance",
+                                details: "poison_damage",
+                            },
+            
+                        ]
+            
+                    },
+            
+                    lightfoot: {
+            
+                        name: "lightfoot",
+                        details: "lightfoot_halfling_details",
+            
+                        charisma: 1,
+            
+                        peculiarities: [
+            
+                            {
+                                type: "plus",
+                                keyword: "stealth",
+                                details: "behind_bigger_then_mid",
+                            },
+            
+                        ]
+            
+                    },
+            
+                    ghost: {
+            
+                        name: "ghost",
+                        details: "ghost_halfling_details",
+                        img: "image",
+            
+                        wisdom: 1,
+            
+                        peculiarities: [
+            
+                            {
+                                type: "plus",
+                                keyword: "telepathy",
+                                details: "secrecy_size_details",
+                            },
+            
+                        ],
+            
+                        rare: true,
+            
+                    },
+                },
+                gender: gender,
                 color_skin: [
                         color[1][0], 
                         color[2][0], 
@@ -164,11 +229,11 @@ export default function () {
                 {
                     level: 5,
                     spell: spells.darkness,
-                },
+                }
     
-            ],
+            ]
     
-        },
+        }
         
 }
 }

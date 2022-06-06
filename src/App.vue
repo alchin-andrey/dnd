@@ -2,11 +2,16 @@
   <div class="sidebar_left">
     <div class="chapter">
       <div class="main_chapter">
-        <div class="logo" @click="showRace()">
+        <div class="logo" @click="showMY()">
           <img alt="logo" src="@/assets/img/logo.svg" />
         </div>
 
-        <my-slider :numb="t(genders.phisiological.male)" :title="t('race')" :arr="t($store.state.races.halfling.name)"></my-slider>
+        <my-slider
+          numb="01"
+          :title="t('race')"
+          :arr="t(MY.race)"
+        >
+        </my-slider>
 
         <div class="delimiter"></div>
 
@@ -22,26 +27,29 @@
             @click="show('shown_gender')"
             :active="shown_gender"
             title="Пол"
-            :type="`${gender_select.phisiological}, ${gender_select.feel}`"
+            :type="getGenderName()"
           ></my-selection>
           <my-selection
             @click="show('shown_skin_color')"
             :active="shown_skin_color"
             title="Цвет кожи"
             type="Белый"
-          ></my-selection>
+          >
+          </my-selection>
           <my-selection
             @click="show('shown_eye_color')"
             :active="shown_eye_color"
             title="Цвет глаз"
             type="Зеленый"
-          ></my-selection>
+          >
+          </my-selection>
           <my-selection
             @click="show('shown_hair_color')"
             :active="shown_hair_color"
             title="Цвет волос"
             type="Русый"
-          ></my-selection>
+          >
+          </my-selection>
         </div>
 
         <div class="selection_menu">
@@ -68,7 +76,8 @@
             value="18"
             unit="кг"
             note=""
-          ></my-controller>
+          >
+          </my-controller>
         </div>
 
         <div class="selection_menu">
@@ -83,13 +92,15 @@
             :active="shown_skills"
             title="Навыки"
             type="Арк, Ана"
-          ></my-selection>
+          >
+          </my-selection>
           <my-selection
             @click="show('shown_languages')"
             :active="shown_languages"
             title="Языки"
             type="Акван"
-          ></my-selection>
+          >
+          </my-selection>
         </div>
       </div>
 
@@ -198,212 +209,7 @@
 
     <!-- Гендр -->
     <my-selection-box :shown="shown_gender">
-      <my-selection-card passive>
-        <div class="gender_card_title jbm-300">Физиологический</div>
-        <div class="gender__flex">
-          <div class="gender__flex-3">
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[0].name)"
-              :img="gender.phisiological[0].name"
-              :active_link="gender.phisiological[0].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[1].name)"
-              :img="gender.phisiological[1].name"
-              :active_link="gender.phisiological[1].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[2].name)"
-              :img="gender.phisiological[2].name"
-              :active_link="gender.phisiological[2].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-          </div>
-
-          <div class="gender__flex-2">
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[3].name)"
-              :img="gender.phisiological[3].name"
-              :active_link="gender.phisiological[3].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[4].name)"
-              :img="gender.phisiological[4].name"
-              :active_link="gender.phisiological[4].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-          </div>
-
-          <div class="gender__flex-3">
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[5].name)"
-              :img="gender.phisiological[5].name"
-              :active_link="gender.phisiological[5].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[6].name)"
-              :img="gender.phisiological[6].name"
-              :active_link="gender.phisiological[6].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getPhisiologicalName(gender.phisiological[7].name)"
-              :img="gender.phisiological[7].name"
-              :active_link="gender.phisiological[7].name"
-              :select_link="gender_select.phisiological"
-            >
-            </my-button-gender>
-          </div>
-        </div>
-        <my-card-text
-          :title="gender_select.phisiological"
-          text="Самоощущение вашего персонажа полностью соответствует его
-              физиологическому гендеру."
-        >
-        </my-card-text>
-      </my-selection-card>
-      <my-selection-card passive>
-        <div class="gender_card_title jbm-300">Cамощущение</div>
-        <div class="gender__flex">
-          <div class="gender__flex-3">
-            <my-button-gender
-              @click="getFeelName(gender.feel[0].name)"
-              :img="gender.feel[0].name"
-              :active_link="gender.feel[0].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getFeelName(gender.feel[1].name)"
-              :img="gender.feel[1].name"
-              :active_link="gender.feel[1].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getFeelName(gender.feel[2].name)"
-              :img="gender.feel[2].name"
-              :active_link="gender.feel[2].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-          </div>
-
-          <div class="gender__flex-2">
-            <my-button-gender
-              @click="getFeelName(gender.feel[3].name)"
-              :img="gender.feel[3].name"
-              :active_link="gender.feel[3].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getFeelName(gender.feel[4].name)"
-              :img="gender.feel[4].name"
-              :active_link="gender.feel[4].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-          </div>
-
-          <div class="gender__flex-1">
-            <my-button-gender
-              @click="getFeelName(gender.feel[5].name)"
-              :img="gender.feel[5].name"
-              :active_link="gender.feel[5].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-          </div>
-
-          <div class="gender__flex-2">
-            <my-button-gender
-              @click="getFeelName(gender.feel[6].name)"
-              :img="gender.feel[6].name"
-              :active_link="gender.feel[6].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getFeelName(gender.feel[7].name)"
-              :img="gender.feel[7].name"
-              :active_link="gender.feel[7].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-          </div>
-
-          <div class="gender__flex-3">
-            <my-button-gender
-              @click="getFeelName(gender.feel[8].name)"
-              :img="gender.feel[8].name"
-              :active_link="gender.feel[8].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getFeelName(gender.feel[9].name)"
-              :img="gender.feel[9].name"
-              :active_link="gender.feel[9].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-            <my-button-gender
-              @click="getFeelName(gender.feel[10].name)"
-              :img="gender.feel[10].name"
-              :active_link="gender.feel[10].name"
-              :select_link="gender_select.feel"
-            >
-            </my-button-gender>
-          </div>
-        </div>
-        <my-card-text
-          :title="gender_select.feel"
-          text="Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру."
-        >
-        </my-card-text>
-      </my-selection-card>
-      <my-selection-card
-        v-if="gender_select.feel !== gender.feel[5].name"
-        passive
-      >
-        <div class="gender_card_title jbm-300">Внешний вид</div>
-        <div class="gender__flex">
-          <div class="gender__flex-3">
-            <my-button-gender
-              @click="getLookName(gender.look[0].name)"
-              :img="gender.look[0].name"
-              :active_link="gender.look[0].name"
-              :select_link="gender_select.look"
-            ></my-button-gender>
-            <my-button-gender
-              @click="getLookName(gender.look[1].name)"
-              :img="gender.look[1].name"
-              :active_link="gender.look[1].name"
-              :select_link="gender_select.look"
-            ></my-button-gender>
-            <my-button-gender
-              @click="getLookName(gender.look[2].name)"
-              :img="gender.look[2].name"
-              :active_link="gender.look[2].name"
-              :select_link="gender_select.look"
-            ></my-button-gender>
-          </div>
-        </div>
-        <my-card-text title="Соответствует физиологическому полу">
-        </my-card-text>
-      </my-selection-card>
+    <Genders />
     </my-selection-box>
     <!-- Гендр -->
 
@@ -719,29 +525,34 @@
 </template>
 
 <script>
-import { color } from "@/assets/catalog/base_data/colors.js";
+import MY from "@/assets/catalog/MY.js";
+import default_MY from "@/assets/catalog/default_MY.js";
 
-import { races } from "@/assets/catalog/base_data/races.js";
-import { classes, subclasses } from "@/assets/catalog/base_data/classes.js";
-import { pasts } from "@/assets/catalog/base_data/pasts.js";
-
-import { MY } from "@/assets/catalog/MY.js";
-
+import color from "@/assets/catalog/base_data/colors.js";
 import genders from "@/assets/catalog/base_data/genders.js";
+import race from "@/assets/catalog/base_data/races.js";
+import clas from "@/assets/catalog/base_data/classes.js";
+import past from "@/assets/catalog/base_data/pasts.js";
+
+
+import Genders from "@/components/Genders.vue";
+
 
 export default {
-  components: {
-    color,
-    races,
-    classes,
-    subclasses,
-    pasts,
-    MY,
-  },
+  name: "App",
+    components: {
+    Genders,
+},
   data() {
     return {
-      genders: genders,
+      MY: MY,
+      default_MY: default_MY,
 
+      genders: genders,
+      color: color,
+      race: race,
+      clas: clas,
+      past: past,
 
       shown_ethnos: false,
       shown_gender: false,
@@ -762,111 +573,6 @@ export default {
       ethnos_select: {
         name: "Коренастый",
         rare: "",
-      },
-
-      gender_select: {
-        phisiological: "male",
-        feel: "cisgender",
-        look: "as_phisiological",
-      },
-
-      gender: {
-        phisiological: [
-          {
-            name: "male",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-
-          {
-            name: "intersex",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "female",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "demiboy",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "demigirl",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "neutral_gender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "unstable",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "other_gender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-        ],
-
-        feel: [
-          {
-            name: "androgin",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "pangender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "gender_fluid",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "demigender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "bigender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "cisgender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "undecided",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "queer",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "neutral_gender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "transsexual",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-          {
-            name: "other_gender",
-            text: "Самоощущение вашего персонажа полностью соответствует его физиологическому гендеру.",
-          },
-        ],
-        look: [
-          {
-            name: "as_phisiological",
-            text: "Соответствует физиологическому полу",
-          },
-          {
-            name: "as_feel",
-            text: "Соответствует физиологическому полу",
-          },
-          {
-            name: "as_other_gender",
-            text: "Соответствует физиологическому полу",
-          },
-        ],
       },
 
       attributes_main: [
@@ -1084,30 +790,18 @@ export default {
     };
   },
   methods: {
-    ethnosName(name, rare) {
-      this.ethnos_select.name = name;
-      this.ethnos_select.rare = rare;
-    },
 
-    getPhisiologicalName(name) {
-      this.gender_select.phisiological = name;
-    },
-
-    changeLookName(name) {
-      if (name === this.gender.feel[5].name) {
-        return (this.gender_select.look = this.gender.look[0].name);
-      } else {
-        return (this.gender_select.look = this.gender_select.look);
+    getGenderName() {
+      if (this.MY.gender.feel === this.genders.feel.cisgender) {
+return this.t(this.MY.gender.phisiological);
+      } else { 
+return `${this.t(this.MY.gender.phisiological)} *`;
       }
     },
 
-    getFeelName(name) {
-      this.changeLookName(name);
-      this.gender_select.feel = name;
-    },
-
-    getLookName(name) {
-      this.gender_select.look = name;
+    ethnosName(name, rare) {
+      this.ethnos_select.name = name;
+      this.ethnos_select.rare = rare;
     },
 
     goTo(route) {
@@ -1138,6 +832,14 @@ export default {
       this.close();
       this.shown_home = true;
     },
+
+    showMY() {
+      console.log(this.MY)
+    },
+  },
+  created() {
+    this.MY = this.default_MY;
+
   },
 };
 </script>
@@ -1154,11 +856,16 @@ body {
   height: 100%;
   display: flex;
 
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Chrome/Safari/Opera */
-  -khtml-user-select: none; /* Konqueror */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
   user-select: none;
 }
 

@@ -107,6 +107,10 @@ export default {
   position: relative;
 }
 
+.column_link:first-letter {
+  text-transform: uppercase;
+}
+
 .icon::after {
   content: url(@/assets/img/icon/arrow_down_small.svg);
   position: absolute;
