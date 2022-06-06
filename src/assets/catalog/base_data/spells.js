@@ -81,5 +81,31 @@ export default {
             "verbal",
             "material +"
         ],
-    }
+    },
+
+    acid_breath:{
+
+        name: "acid_breath",
+        compomemt: [
+            "verbal",
+            "somatic",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "dexterity",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:10,
+        },
+
+        gain: {
+            x:1,
+            dice:10,
+        },
+    },
 }

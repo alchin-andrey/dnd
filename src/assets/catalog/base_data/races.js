@@ -1,241 +1,246 @@
-import color from './colors.js'
-import spells from './spells.js'
-import gender from './genders.js';
-import lang from './languages.js';
+import color from "./colors.js";
+import spells from "./spells.js";
+import gender from "./genders.js";
+import lang from "./languages.js";
 
 export default {
+  halfling: {
+    name: "halfling",
+    details: "halfling_details",
 
-    halfling: {
+    settings: {
+      ethnos: {
+        stout: {
+          name: "stout",
+          details: "stout_halfling_details",
 
-        name: "halfling",
-        details: "halfling_details",
+          male: {
+            link: "https://www.heroforge.com/load_config%3D503185616",
+            img_coef: 3.65,
+          },
 
-        settings: {
-            ethnos: {
-                stout: {
+          female: {
+            link: "https://www.heroforge.com/load_config%3D503211377",
+            img_coef: 3.75,
+          },
 
-                    name: "stout",
-                    details: "stout_halfling_details",
-        
-                    constitution: 1,
-        
-                    peculiarities: [
-        
-                        {
-                            type: "advantage",
-                            keyword: "advantage",
-                            details: "poison_against",
-                        },
-        
-                        {
-                            type: "resistance",
-                            keyword:"resistance",
-                            details: "poison_damage",
-                        },
-        
-                    ]
-        
-                },
-        
-                lightfoot: {
-        
-                    name: "lightfoot",
-                    details: "lightfoot_halfling_details",
-        
-                    charisma: 1,
-        
-                    peculiarities: [
-        
-                        {
-                            type: "plus",
-                            keyword: "stealth",
-                            details: "behind_bigger_then_mid",
-                        },
-        
-                    ]
-        
-                },
-        
-                ghost: {
-        
-                    name: "ghost",
-                    details: "ghost_halfling_details",
-                    img: "image",
-        
-                    wisdom: 1,
-        
-                    peculiarities: [
-        
-                        {
-                            type: "plus",
-                            keyword: "telepathy",
-                            details: "secrecy_size_details",
-                        },
-        
-                    ],
-        
-                    rare: true,
-        
-                },
+          settings: {
+            color: {
+              skin: [color[2][0]],
+              eyes: [color[4][5]],
+              hair: [color[1][4]],
             },
-            gender: gender,
-            color_skin: [
-                    color[1][0], 
-                    color[2][0], 
-                    color[2][1], 
-                    color[2][2], 
-                    color[2][3], 
-                    color[2][4], 
-                    color[2][5], 
-                    color[2][6], 
-                    color[0][6],
-                    color[3][0],
-                    color[12][0],
-                    color[11][0],
-                    color[10][0],
-                ],
-            color_eyes: [
-                    color[2][4],
-                    color[2][6],
-                ],
-            color_hair: [
-                ],
+          },
 
-            age: {
-                young: 10,
-                mature: 25,
-                old: 100,
-                oldest: 150,
+          constitution: 1,
+
+          peculiarities: [
+            {
+              type: "advantage",
+              keyword: "advantage",
+              details: "poison_against",
             },
 
-            height: {
-                from: 90,
-                to: 120,
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "poison_damage",
             },
-
-            weight: {
-                from: 15,
-                to: 20,
-            },
-            
-            // ТОЛЬКО ДЛЯ ОТЛАДКИ
-            custom_skills:2,
-            custom_stats:2,
-            custom_language:1,
-
+          ],
         },
 
-        dexterity: 2,
+        lightfoot: {
+          name: "lightfoot",
+          details: "lightfoot_halfling_details",
+          link_male: "https://www.heroforge.com/load_config%3D503210924",
+          link_female: "https://www.heroforge.com/load_config%3D503211388",
 
-        speed: 25,
+          settings: {
+            color: {
+              skin: [color[2][1]],
+              eyes: [color[2][5]],
+              hair: [color[0][6]],
+            },
+          },
 
-        proficiencies: {
-            languages: [
-                lang.common,
-                lang.halfling
-            ],
+          charisma: 1,
+
+          peculiarities: [
+            {
+              type: "plus",
+              keyword: "stealth",
+              details: "behind_bigger_then_mid",
+            },
+          ],
         },
 
-        peculiarities: [
+        ghost: {
+          name: "ghost",
+          details: "ghost_halfling_details",
+          link_male: "https://www.heroforge.com/load_config%3D503211188",
+          link_female: "https://www.heroforge.com/load_config%3D503211452",
 
-            {
-                type: "advantage",
-                keyword: "advantage",
-                details: "fear_against",
+          settings: {
+            color: {
+              skin: [color[2][2]],
+              eyes: [color[8][2]],
+              hair: [color[2][5]],
             },
+          },
 
+          wisdom: 1,
+
+          peculiarities: [
             {
-                type: "plus",
-                keyword: "rethrow",
-                details: "any_dice_1",
+              type: "plus",
+              keyword: "telepathy",
+              details: "secrecy_size_details",
             },
+          ],
 
-            {
-                type: "plus",
-                keyword: "slippage",
-                details: "among_bigger_than_mid",
-            },
-
+          rare: true,
+        },
+      },
+      gender: gender,
+      color: {
+        skin: [
+          color[1][0],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[0][6],
+          color[3][0],
+          color[12][0],
+          color[11][0],
+          color[10][0],
         ],
+        eyes: [color[2][4], color[2][6]],
+        hair: [color[2][4], color[2][6], color[1][5], color[1][6]],
+      },
 
-        spells: [ //ТОЛЬКО ДЛЯ ОТЛАДКИ
+      age: {
+        young: 10,
+        mature: 25,
+        old: 100,
+        oldest: 150,
+      },
 
-            {
-                level: 1,
-                spell: spells.thaumaturgy,
-            },
+      height: {
+        from: 90,
+        to: 120,
+      },
 
-            {
-                level: 3,
-                spell: spells.hellish_rebuke,
-                gain: 2,
-            },
+      weight: {
+        from: 15,
+        to: 20,
+      },
 
-            {
-                level: 5,
-                spell: spells.darkness,
-            }
-
-        ]
-
+      // ТОЛЬКО ДЛЯ ОТЛАДКИ
+      custom_skills: 2,
+      custom_stats: 2,
+      custom_language: 1,
     },
 
-    human : {
+    dexterity: 2,
 
-        color: {
-            skin : [
-                color[1][0], 
-                color[2][0], 
-                color[2][1], 
-                color[2][2], 
-                color[2][3], 
-                color[2][4], 
-                color[2][5], 
-                color[2][6], 
-                color[0][6],
-                color[3][0],
-                color[12][0],
-                color[11][0],
-                color[10][0],
-            ]
-        }
-    }, // недораюлтан
+    speed: 25,
 
-    halfelf: {
+    proficiencies: {
+      languages: [lang.common, lang.halfling],
+    },
 
-        settings: {
-            custom_skills:2,
-            custom_stats:2,
-            custom_language:1,
-        }
+    peculiarities: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "fear_against",
+      },
 
-    }, //недоработан, обсудить применение
+      {
+        type: "plus",
+        keyword: "rethrow",
+        details: "any_dice_1",
+      },
 
-    tiefling: {
-        
-        spells: [
+      {
+        type: "plus",
+        keyword: "slippage",
+        details: "among_bigger_than_mid",
+      },
+    ],
 
-            {
-                level: 1,
-                spell: spells.thaumaturgy,
-            },
+    spells: [
+      //ТОЛЬКО ДЛЯ ОТЛАДКИ
 
-            {
-                level: 3,
-                spell: spells.hellish_rebuke,
-                gain: 2,
-            },
+      {
+        level: 1,
+        spell: spells.thaumaturgy,
+      },
 
-            {
-                level: 5,
-                spell: spells.darkness,
-            }
+      {
+        level: 3,
+        spell: spells.hellish_rebuke,
+        gain: 2,
+      },
 
-        ]
+      {
+        level: 5,
+        spell: spells.darkness,
+      },
+    ],
+  },
 
-    }
+  human: {
+    settings: {
+      color: {
+        skin: [
+          color[1][0],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[0][6],
+          color[3][0],
+          color[12][0],
+          color[11][0],
+          color[10][0],
+        ],
+      },
+    },
+  }, // недораюлтан
 
-}
+  halfelf: {
+    settings: {
+      custom_skills: 2,
+      custom_stats: 2,
+      custom_language: 1,
+    },
+  }, //недоработан, обсудить применение
 
+  tiefling: {
+    spells: [
+      {
+        level: 1,
+        spell: spells.thaumaturgy,
+      },
 
+      {
+        level: 3,
+        spell: spells.hellish_rebuke,
+        gain: 2,
+      },
 
+      {
+        level: 5,
+        spell: spells.darkness,
+      },
+    ],
+  },
+};
