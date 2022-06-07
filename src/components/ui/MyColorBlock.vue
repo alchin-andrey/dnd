@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div tabindex="0"
     class="color_block"
     :class="{ color_block_active: active_link === select_link }"
   >
@@ -42,14 +42,23 @@ export default {
   height: 100%;
   flex: 1 1 auto;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .color_block_2 {
   width: 100%;
   height: 100%;
-
   border-radius: 4px;
 }
+
+.color_block:hover {
+  padding: 5px;
+}
+
+.color_block_2:hover {
+  border-radius: 1px;
+}
+
 
 .color_block_active {
   border: 2px solid #ffffff;

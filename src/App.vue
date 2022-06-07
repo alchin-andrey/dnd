@@ -353,7 +353,7 @@
       class="character"
       :style="{
         height: `${calcImg()}`,
-        'background-image': `${getHairImg()}, ${getEyesImg()}, ${getSkinImg()}`,
+        'background-image': `${getCharImg('hair')}, ${getCharImg('eyes')}, ${getCharImg('skin')}`,
       }"
     ></div>
 
@@ -940,56 +940,18 @@ export default {
       this.MY.color.hair = name;
     },
 
-    getCharImg(vale, i, j) {
+    getCharImg(vale) {
       let race = this.MY.race;
       let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
+      let img = this.MY.color[vale].img;
       let sex;
       if (phisiological === "female" || phisiological === "demigirl") {
         sex = "female";
       } else {
         sex = "male";
       }
-      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${vale}/${i}-${j}.png`)})`;
-    },
-
-    getHairImg() {
-      let race = this.MY.race;
-      let ethnos = this.MY.ethnos;
-      let phisiological = this.MY.gender.phisiological;
-      let tt;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        tt = "female";
-      } else {
-        tt = "male";
-      }
-      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${tt}/hair/1-4.png`)})`;
-    },
-
-    getEyesImg() {
-      let race = this.MY.race;
-      let ethnos = this.MY.ethnos;
-      let phisiological = this.MY.gender.phisiological;
-      let tt;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        tt = "female";
-      } else {
-        tt = "male";
-      }
-      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${tt}/eyes/4-5.png`)})`;
-    },
-
-    getSkinImg() {
-      let race = this.MY.race;
-      let ethnos = this.MY.ethnos;
-      let phisiological = this.MY.gender.phisiological;
-      let tt;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        tt = "female";
-      } else {
-        tt = "male";
-      }
-      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${tt}/skin/2-0.png`)})`;
+      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${vale}/${img}.png`)})`;
     },
 
     calcImg() {
