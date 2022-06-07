@@ -238,7 +238,7 @@
         </div>
         <my-card-text
           :title="t(skin_hower ? skin_hower.name : MY.color.skin.name)"
-          :text="t(`${MY.gender.phisiological}_details`)"
+          :text="`${t('characteristic')} ${t('for_ethnos')}`"
         ></my-card-text>
       </my-selection-card>
     </my-selection-box>
@@ -274,7 +274,7 @@
         </div>
         <my-card-text
           :title="t(eyes_hower ? eyes_hower.name : MY.color.eyes.name)"
-          :text="t(`${MY.gender.phisiological}_details`)"
+          :text="`${t('characteristic')} ${t('for_ethnos')}`"
         ></my-card-text>
       </my-selection-card>
     </my-selection-box>
@@ -312,7 +312,7 @@
         </div>
         <my-card-text
           :title="t(hair_hower ? hair_hower.name : MY.color.hair.name)"
-          :text="t(`${MY.gender.phisiological}_details`)"
+          :text="`${t('characteristic')} ${t('for_ethnos')}`"
         ></my-card-text>
       </my-selection-card>
     </my-selection-box>
@@ -364,6 +364,10 @@
         height: `${calcImg()}`,
         'background-image': `${getCharImg('hair', hair_hower)}, ${getCharImg(
           'eyes', eyes_hower)}, ${getCharImg('skin', skin_hower)}`,
+          'transition-property': 'all',
+          'transition-duration': '0s',
+          'transition-delay': '.05s',
+          'transition-timing-function': 'ease-in',
       }"
     ></div>
 
@@ -1305,4 +1309,5 @@ body {
   height: 100%;
   gap: 2px;
 }
+
 </style>
