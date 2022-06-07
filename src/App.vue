@@ -32,8 +32,8 @@
           >
           </my-selection>
           <my-selection
-            @click="show('shown_eye_color')"
-            :active="shown_eye_color"
+            @click="show('shown_eyes_color')"
+            :active="shown_eyes_color"
             :title="t('color_eyes')"
             :type="t(MY.color.eyes.name)"
           >
@@ -222,10 +222,12 @@
           >
           </my-color-block> -->
 
-          <div v-for="(val, i) in color" :key="i" class="colors_row">
+          <div v-for="(val, i) in color" :key="i" class="colors_row"
+          @mouseleave="hoverStop('skin_hower')">
             <my-color-block
               v-for="(val, j) in color[i]"
               :key="j"
+              @mouseover="hoverColor('skin_hower', color, i, j)"
               @click="choiceColor('skin', color, i, j)"
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
@@ -235,7 +237,7 @@
           </div>
         </div>
         <my-card-text
-          :title="t(MY.color.skin.name)"
+          :title="t(skin_hower ? skin_hower.name : MY.color.skin.name)"
           :text="t(`${MY.gender.phisiological}_details`)"
         ></my-card-text>
       </my-selection-card>
@@ -243,7 +245,7 @@
     <!-- Цвет кожи -->
 
     <!-- Цвет глаз -->
-    <my-selection-box :shown="shown_eye_color">
+    <my-selection-box :shown="shown_eyes_color">
       <my-selection-card passive colors_card>
         <div class="colors_box jbm-300">
           <!-- <my-color-block
@@ -256,10 +258,12 @@
           >
           </my-color-block> -->
 
-          <div v-for="(val, i) in color" :key="i" class="colors_row">
+          <div v-for="(val, i) in color" :key="i" class="colors_row"
+          @mouseleave="hoverStop('eyes_hower')">
             <my-color-block
               v-for="(val, j) in color[i]"
               :key="j"
+              @mouseover="hoverColor('eyes_hower', color, i, j)"
               @click="choiceColor('eyes', color, i, j)"
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
@@ -269,7 +273,7 @@
           </div>
         </div>
         <my-card-text
-          :title="t(MY.color.eyes.name)"
+          :title="t(eyes_hower ? eyes_hower.name : MY.color.eyes.name)"
           :text="t(`${MY.gender.phisiological}_details`)"
         ></my-card-text>
       </my-selection-card>
@@ -278,7 +282,10 @@
 
     <!-- Цвет волос -->
     <my-selection-box :shown="shown_hair_color">
-      <my-selection-card passive colors_card>
+      <my-selection-card 
+      passive 
+      colors_card 
+>
         <div class="colors_box jbm-300">
           <!-- <my-color-block
             v-for="color in getColorsArr"
@@ -289,11 +296,12 @@
             :select_link="MY.color.hair.name"
           >
           </my-color-block> -->
-          
-          <div v-for="(val, i) in color" :key="i" class="colors_row">
+
+          <div v-for="(val, i) in color" :key="i" class="colors_row" @mouseleave="hoverStop('hair_hower')">
             <my-color-block
               v-for="(val, j) in color[i]"
               :key="j"
+              @mouseover="hoverColor('hair_hower', color, i, j)"
               @click="choiceColor('hair', color, i, j)"
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
@@ -303,7 +311,7 @@
           </div>
         </div>
         <my-card-text
-          :title="t(MY.color.hair.name)"
+          :title="t(hair_hower ? hair_hower.name : MY.color.hair.name)"
           :text="t(`${MY.gender.phisiological}_details`)"
         ></my-card-text>
       </my-selection-card>
@@ -348,16 +356,18 @@
   </div>
 
   <!-- character -->
-  <div class="represent" :class="{ active_eyes: shown_eye_color }">
+  <div class="represent">
     <div
       class="character"
+      :class="{ active_eyes: shown_eyes_color || shown_hair_color }"
       :style="{
         height: `${calcImg()}`,
-        'background-image': `${getCharImg('hair')}, ${getCharImg('eyes')}, ${getCharImg('skin')}`,
+        'background-image': `${getCharImg('hair', hair_hower)}, ${getCharImg(
+          'eyes', eyes_hower)}, ${getCharImg('skin', skin_hower)}`,
       }"
     ></div>
 
-    <div class="size" v-if="!shown_eye_color">
+    <div class="size" v-if="hideRuler()">
       <div class="skale_division_top division_off">
         <div class="division_numb_top"></div>
         <div class="skale_division_top division_off">
@@ -640,7 +650,7 @@ export default {
       shown_ethnos: false,
       shown_gender: false,
       shown_skin_color: false,
-      shown_eye_color: false,
+      shown_eyes_color: false,
       shown_hair_color: false,
       shown_age: false,
       shown_growth: false,
@@ -650,6 +660,10 @@ export default {
       shown_languages: false,
 
       shown_home: true,
+
+      skin_hower: null,
+      hair_hower: null,
+      eyes_hower: null,
 
       active: false,
 
@@ -894,7 +908,7 @@ export default {
       this.shown_ethnos = false;
       this.shown_gender = false;
       this.shown_skin_color = false;
-      this.shown_eye_color = false;
+      this.shown_eyes_color = false;
       this.shown_hair_color = false;
       this.shown_age = false;
       this.shown_growth = false;
@@ -920,31 +934,34 @@ export default {
     },
 
     choiceColor(name, obj, i, j) {
-      this.MY.color[name]= obj[i][j];
-
-      // getCharImg(name, i, j);
-      // this.MY.color.skin = name;
+      this.MY.color[name] = obj[i][j];
     },
 
-    choiceSkinColor(obj, n, n_2) {
-      this.MY.color.skin = obj[n][n_2];
-
-      // this.MY.color.skin = name;
+    hoverStop(name) {
+      this[name] = null;
     },
 
-    choiceEyesColor(name) {
-      this.MY.color.eyes = name;
+    hoverColor(name, obj, i, j) {
+      this[name] = obj[i][j];
     },
 
-    choiceHairColor(name) {
-      this.MY.color.hair = name;
+    hideRuler() {
+      if (
+        this.shown_skin_color ||
+        this.shown_eyes_color ||
+        this.shown_hair_color
+      ) {
+        return false;
+      } else {
+        return true;
+      }
     },
 
-    getCharImg(vale) {
+    getCharImg(vale, hower) {
       let race = this.MY.race;
       let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.MY.color[vale].img;
+      let img = hower ? hower.img : this.MY.color[vale].img;
       let sex;
       if (phisiological === "female" || phisiological === "demigirl") {
         sex = "female";
@@ -955,24 +972,25 @@ export default {
     },
 
     calcImg() {
-      if (this.shown_eye_color) {
-        return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30)*5)`;
+      if (this.shown_skin_color ||
+        this.shown_eyes_color ||
+        this.shown_hair_color) {
+        return `100%`;
       } else {
         return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30))`;
       }
     },
   },
   computed: {
-    getColorsArr() {
-      let arr = [];
-      for (let i in this.color) {
-        for (let j in this.color[i]) {
-          arr.push(this.color[i][j]);
-          arr.push(`color[${i}][${j}]`);
-        }
-      }
-      return arr;
-    },
+    // getColorsArr() {
+    //   let arr = [];
+    //   for (let i in this.color) {
+    //     for (let j in this.color[i]) {
+    //       arr.push(this.color[i][j]);
+    //     }
+    //   }
+    //   return arr;
+    // },
 
     getColor() {
       let arr = [];
@@ -1108,26 +1126,18 @@ body {
   height: 100%;
 }
 
-.active_eyes {
-  align-items: flex-start;
-}
-
 .character {
   flex: 1 1 auto;
   width: 250px;
-  /* height: calc(
-    (100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30)
-  ); */
-  /* background: url("@/assets/img/characters/halfling/stout/male/hair/1-4.png")
-      center/auto 100% no-repeat,
-    url("@/assets/img/characters/halfling/stout/male/eyes/4-5.png") center/auto
-      100% no-repeat,
-    url("@/assets/img/characters/halfling/stout/male/skin/2-0.png") center/auto
-      100% no-repeat; */
-  /* background-image: url('@/assets/img/characters/halfling/stout/male/hair/1-4.png'), url('@/assets/img/characters/halfling/stout/male/eyes/4-5.png'),url('@/assets/img/characters/halfling/stout/male/skin/2-0.png'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 100%;
+}
+
+.active_eyes {
+  align-items: flex-start;
+  background-position: top;
+  background-size: auto 200%;
 }
 
 .size {
@@ -1282,8 +1292,8 @@ body {
 }
 
 .colors_box {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
   height: 100%;
   gap: 2px;
@@ -1295,28 +1305,4 @@ flex-direction: column;
   height: 100%;
   gap: 2px;
 }
-
-/* .color_block {
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  border-radius: 4px;
-}
-
-.color_block_2 {
-  width: 100%;
-  flex: 1 1 auto;
-  max-height: 50px;
-  border-radius: 4px;
-}
-
-.color_block_active {
-  border: 2px solid #ffffff;
-  padding: 5px;
-}
-
-.color_block_2_active {
-  border-radius: 1px;
-} */
 </style>
