@@ -258,6 +258,11 @@ export default {
             color_skin: "цвет кожи",
             color_eyes: "цвет глаз",
             color_hair: "цвет волос",
+
+            characteristic: "характерный",
+            not_characteristic: "нехарактерный",
+            for_race: "для этой расы",
+            for_ethnos: "для этого этноса",
             
             White: "белый",
             Smoke: "дымчатый",
