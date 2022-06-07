@@ -39,14 +39,15 @@ export default {
 <style scoped>
 .color_block {
   width: 50px;
-  height: 50px;
+  height: 100%;
+  flex: 1 1 auto;
   border-radius: 4px;
 }
 
 .color_block_2 {
   width: 100%;
   height: 100%;
-  max-height: 50px;
+
   border-radius: 4px;
 }
 

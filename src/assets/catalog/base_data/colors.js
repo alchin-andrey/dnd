@@ -1,22 +1,22 @@
 export default {
   0: {
-    0: { h: 0, s: 0, l: 100, hex: "#ffffff", name: "White" },
-    1: { h: 0, s: 0, l: 83, hex: "#d4d4d4", name: "Smoke" },
-    2: { h: 0, s: 0, l: 66, hex: "#a8a8a8", name: "Steel" },
-    3: { h: 0, s: 0, l: 50, hex: "#808080", name: "Grey" },
-    4: { h: 0, s: 0, l: 33, hex: "#545454", name: "Ash" },
-    5: { h: 0, s: 0, l: 16, hex: "#292929", name: "Iron" },
-    6: { h: 0, s: 0, l: 0, hex: "#000000", name: "Black" },
+    0: { h: 0, s: 0, l: 100, hex: "#ffffff", name: "White", x: 0, y: 0 },
+    1: { h: 0, s: 0, l: 83, hex: "#d4d4d4", name: "Smoke", x: 0, y: 1 },
+    2: { h: 0, s: 0, l: 66, hex: "#a8a8a8", name: "Steel", x: 0, y: 2 },
+    3: { h: 0, s: 0, l: 50, hex: "#808080", name: "Grey", x: 0, y: 3 },
+    4: { h: 0, s: 0, l: 33, hex: "#545454", name: "Ash", x: 0, y: 4 },
+    5: { h: 0, s: 0, l: 16, hex: "#292929", name: "Iron", x: 0, y: 5 },
+    6: { h: 0, s: 0, l: 0, hex: "#000000", name: "Black", x: 0, y: 6 },
   },
 
   1: {
-    0: { h: 0, s: 85, l: 89, hex: "#fbcbcb", name: "Blush" },
-    1: { h: 0, s: 90, l: 76, hex: "#f98b8b", name: "Reddish" },
-    2: { h: 0, s: 95, l: 63, hex: "#fa4747", name: "Red" },
-    3: { h: 0, s: 100, l: 50, hex: "#ff0000", name: "Bright_Red" },
-    4: { h: 0, s: 95, l: 37, hex: "#b80505", name: "Ruby" },
-    5: { h: 0, s: 90, l: 24, hex: "#740606", name: "Blood" },
-    6: { h: 0, s: 85, l: 11, hex: "#340404", name: "Maroon" },
+    0: { h: 0, s: 85, l: 89, hex: "#fbcbcb", name: "Blush", x: 1, y: 0 },
+    1: { h: 0, s: 90, l: 76, hex: "#f98b8b", name: "Reddish", x: 1, y: 1 },
+    2: { h: 0, s: 95, l: 63, hex: "#fa4747", name: "Red", x: 1, y: 2 },
+    3: { h: 0, s: 100, l: 50, hex: "#ff0000", name: "Bright_Red", x: 1, y: 3 },
+    4: { h: 0, s: 95, l: 37, hex: "#b80505", name: "Ruby", x: 1, y: 4 },
+    5: { h: 0, s: 90, l: 24, hex: "#740606", name: "Blood", x: 1, y: 5 },
+    6: { h: 0, s: 85, l: 11, hex: "#340404", name: "Maroon", x: 1, y: 6 },
   },
 
   2: {

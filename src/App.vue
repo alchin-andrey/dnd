@@ -212,20 +212,7 @@
     <my-selection-box :shown="shown_skin_color">
       <my-selection-card passive colors_card>
         <div class="colors_box jbm-300">
-          <!-- <div
-            v-for="color in getColorsArr"
-            :key="color"
-            @click="choiceSkinColor(color)"
-            class="color_block"
-            :class="{ color_block_active: color.name === MY.color.skin.name }"
-          >
-            <div
-              class="color_block_2"
-              :class="{ color_block_2_active: color.name === MY.color.skin.name }"
-              :style="{ backgroundColor: color.hex }"
-            ></div>
-          </div> -->
-          <my-color-block
+          <!-- <my-color-block
             v-for="color in getColorsArr"
             :key="color"
             @click="choiceSkinColor(color)"
@@ -233,39 +220,19 @@
             :active_link="color.name"
             :select_link="MY.color.skin.name"
           >
-          </my-color-block>
+          </my-color-block> -->
 
-          <!-- <div
-            v-for="color in getColorsArr"
-            :key="color"
-            @click="choiceSkinColor(color)"
-            class="color_block"
-            :class="{ color_block_active: color.name === MY.color.skin.name }"
-          >
-            <div
-              class="color_block_2"
-              :class="{ color_block_2_active: color.name === MY.color.skin.name }"
-              :style="{ backgroundColor: color.hex }"
-            ></div>
-          </div> -->
-
-          <!-- <div v-for="i in color" :key="i" class="colors_row">
-            <div
-              v-for="j in i"
+          <div v-for="(val, i) in color" :key="i" class="colors_row">
+            <my-color-block
+              v-for="(val, j) in color[i]"
               :key="j"
-              class="color_block"
-              :style="{ backgroundColor: j.hex }"
-            ></div>
-          </div> -->
-
-          <!-- <div v-for="(i, name_1) in color" :key="i" class="colors_row">
-            <div
-              v-for="(j) in i"
-              :key="j"
-              class="color_block"
-              :style="{ backgroundColor: j.hex }"
-            ></div>
-          </div> -->
+              @click="choiceColor('skin', color, i, j)"
+              :color="color[i][j].hex"
+              :active_link="color[i][j].hex"
+              :select_link="MY.color.skin.hex"
+            >
+            </my-color-block>
+          </div>
         </div>
         <my-card-text
           :title="t(MY.color.skin.name)"
@@ -277,9 +244,9 @@
 
     <!-- Цвет глаз -->
     <my-selection-box :shown="shown_eye_color">
-    <my-selection-card passive colors_card>
-      <div class="colors_box jbm-300">
-        <my-color-block
+      <my-selection-card passive colors_card>
+        <div class="colors_box jbm-300">
+          <!-- <my-color-block
             v-for="color in getColorsArr"
             :key="color"
             @click="choiceEyesColor(color)"
@@ -287,9 +254,21 @@
             :active_link="color.name"
             :select_link="MY.color.eyes.name"
           >
-          </my-color-block>
-      </div>
-      <my-card-text
+          </my-color-block> -->
+
+          <div v-for="(val, i) in color" :key="i" class="colors_row">
+            <my-color-block
+              v-for="(val, j) in color[i]"
+              :key="j"
+              @click="choiceColor('eyes', color, i, j)"
+              :color="color[i][j].hex"
+              :active_link="color[i][j].hex"
+              :select_link="MY.color.eyes.hex"
+            >
+            </my-color-block>
+          </div>
+        </div>
+        <my-card-text
           :title="t(MY.color.eyes.name)"
           :text="t(`${MY.gender.phisiological}_details`)"
         ></my-card-text>
@@ -299,9 +278,9 @@
 
     <!-- Цвет волос -->
     <my-selection-box :shown="shown_hair_color">
-          <my-selection-card passive colors_card>
-      <div class="colors_box jbm-300">
-        <my-color-block
+      <my-selection-card passive colors_card>
+        <div class="colors_box jbm-300">
+          <!-- <my-color-block
             v-for="color in getColorsArr"
             :key="color"
             @click="choiceHairColor(color)"
@@ -309,9 +288,21 @@
             :active_link="color.name"
             :select_link="MY.color.hair.name"
           >
-          </my-color-block>
-      </div>
-      <my-card-text
+          </my-color-block> -->
+          
+          <div v-for="(val, i) in color" :key="i" class="colors_row">
+            <my-color-block
+              v-for="(val, j) in color[i]"
+              :key="j"
+              @click="choiceColor('hair', color, i, j)"
+              :color="color[i][j].hex"
+              :active_link="color[i][j].hex"
+              :select_link="MY.color.hair.hex"
+            >
+            </my-color-block>
+          </div>
+        </div>
+        <my-card-text
           :title="t(MY.color.hair.name)"
           :text="t(`${MY.gender.phisiological}_details`)"
         ></my-card-text>
@@ -358,11 +349,12 @@
 
   <!-- character -->
   <div class="represent" :class="{ active_eyes: shown_eye_color }">
-    <div class="character"
-    :style="{ 
-      'height': `${calcImg()}`,
-      'background-image': `${getHairImg()}, ${getEyesImg()}, ${getSkinImg()}`,
-    }"
+    <div
+      class="character"
+      :style="{
+        height: `${calcImg()}`,
+        'background-image': `${getHairImg()}, ${getEyesImg()}, ${getSkinImg()}`,
+      }"
     ></div>
 
     <div class="size" v-if="!shown_eye_color">
@@ -927,8 +919,17 @@ export default {
       console.log(this.MY);
     },
 
-    choiceSkinColor(name) {
-      this.MY.color.skin = name;
+    choiceColor(name, obj, i, j) {
+      this.MY.color[name]= obj[i][j];
+
+      // getCharImg(name, i, j);
+      // this.MY.color.skin = name;
+    },
+
+    choiceSkinColor(obj, n, n_2) {
+      this.MY.color.skin = obj[n][n_2];
+
+      // this.MY.color.skin = name;
     },
 
     choiceEyesColor(name) {
@@ -939,20 +940,60 @@ export default {
       this.MY.color.hair = name;
     },
 
+    getCharImg(vale, i, j) {
+      let race = this.MY.race;
+      let ethnos = this.MY.ethnos;
+      let phisiological = this.MY.gender.phisiological;
+      let sex;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        sex = "female";
+      } else {
+        sex = "male";
+      }
+      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${vale}/${i}-${j}.png`)})`;
+    },
+
     getHairImg() {
-      return 'url(' + require('@/assets/img/characters/halfling/stout/male/hair/1-4.png') + ')';
+      let race = this.MY.race;
+      let ethnos = this.MY.ethnos;
+      let phisiological = this.MY.gender.phisiological;
+      let tt;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        tt = "female";
+      } else {
+        tt = "male";
+      }
+      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${tt}/hair/1-4.png`)})`;
     },
 
     getEyesImg() {
-      return 'url(' + require('@/assets/img/characters/halfling/stout/male/eyes/4-5.png') + ')';
+      let race = this.MY.race;
+      let ethnos = this.MY.ethnos;
+      let phisiological = this.MY.gender.phisiological;
+      let tt;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        tt = "female";
+      } else {
+        tt = "male";
+      }
+      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${tt}/eyes/4-5.png`)})`;
     },
 
     getSkinImg() {
-      return 'url(' + require('@/assets/img/characters/halfling/stout/male/skin/2-0.png') + ')';
+      let race = this.MY.race;
+      let ethnos = this.MY.ethnos;
+      let phisiological = this.MY.gender.phisiological;
+      let tt;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        tt = "female";
+      } else {
+        tt = "male";
+      }
+      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${tt}/skin/2-0.png`)})`;
     },
 
     calcImg() {
-      if (this.shown_eye_color) { 
+      if (this.shown_eye_color) {
         return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30)*5)`;
       } else {
         return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30))`;
@@ -965,12 +1006,21 @@ export default {
       for (let i in this.color) {
         for (let j in this.color[i]) {
           arr.push(this.color[i][j]);
+          arr.push(`color[${i}][${j}]`);
         }
       }
       return arr;
     },
 
-    
+    getColor() {
+      let arr = [];
+      for (let i in this.color) {
+        for (let j in this.color[i]) {
+          arr.push(this.color[i][j]);
+        }
+      }
+      return arr;
+    },
   },
 
   created() {
@@ -1097,7 +1147,7 @@ body {
 }
 
 .active_eyes {
-align-items: flex-start;
+  align-items: flex-start;
 }
 
 .character {
@@ -1112,10 +1162,10 @@ align-items: flex-start;
       100% no-repeat,
     url("@/assets/img/characters/halfling/stout/male/skin/2-0.png") center/auto
       100% no-repeat; */
-/* background-image: url('@/assets/img/characters/halfling/stout/male/hair/1-4.png'), url('@/assets/img/characters/halfling/stout/male/eyes/4-5.png'),url('@/assets/img/characters/halfling/stout/male/skin/2-0.png'); */
-background-repeat: no-repeat;
-background-position: center;
-background-size: auto 100%;
+  /* background-image: url('@/assets/img/characters/halfling/stout/male/hair/1-4.png'), url('@/assets/img/characters/halfling/stout/male/eyes/4-5.png'),url('@/assets/img/characters/halfling/stout/male/skin/2-0.png'); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
 }
 
 .size {
@@ -1270,25 +1320,31 @@ background-size: auto 100%;
 }
 
 .colors_box {
-  display: flex;
-  flex-wrap: wrap;
+display: flex;
+flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
   gap: 2px;
 }
 
 .colors_row {
   display: flex;
+  flex: 1 1 auto;
+  height: 100%;
   gap: 2px;
 }
 
-.color_block {
+/* .color_block {
   width: 50px;
-  height: 50px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   border-radius: 4px;
 }
 
 .color_block_2 {
   width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
   max-height: 50px;
   border-radius: 4px;
 }
@@ -1300,5 +1356,5 @@ background-size: auto 100%;
 
 .color_block_2_active {
   border-radius: 1px;
-}
+} */
 </style>

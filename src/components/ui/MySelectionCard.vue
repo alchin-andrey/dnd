@@ -47,6 +47,7 @@ export default {
 }
 
 .colors_card {
+  height: 100%;
   background: #000000;
 }
 

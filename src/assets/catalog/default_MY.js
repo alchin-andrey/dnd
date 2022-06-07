@@ -33,9 +33,9 @@ export default {
     weight:null,
     height:null,
     color:{
-        skin: { h: 30, s: 85, l: 89, hex: "#fbe3cb", name: "Pale" },
-        eyes: { h: 90, s: 90, l: 24, hex: "#3d7406", name: "Grass" },
-        hair: { h: 0, s: 95, l: 37, hex: "#b80505", name: "Ruby" },
+        skin: color[2][0],
+        eyes: color[4][5],
+        hair: color[1][4],
     },
 
     //Calculated
