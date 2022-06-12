@@ -51,15 +51,15 @@
           <my-controller
             @click="show('shown_age')"
             :active="shown_age"
-            title="Возраст"
-            value="34"
-            unit="г"
+            :title="t('age')"
+            :value="age"
+            age
             note="Взрослый"
           ></my-controller>
           <my-controller
             @click="show('shown_growth')"
             :active="shown_growth"
-            title="Рост"
+            :title="t('height')"
             value="100"
             unit="см"
             note="Маленький"
@@ -67,8 +67,8 @@
           <my-controller
             @click="show('shown_weight')"
             :active="shown_weight"
-            title="Вес"
-            value="18"
+            :title="t('weight')"
+            :value="weight"
             unit="кг"
             note=""
           >
@@ -284,57 +284,60 @@
 
     <!-- Возраст -->
     <my-selection-box :shown="shown_age">
-      <div class="jbm-300">Возраст</div>
+
+    <AgeWeight :value="age" :arr="age_arr" age/>
+
     </my-selection-box>
     <!-- Возраст -->
 
     <!-- Рост -->
     <my-selection-box :shown="shown_growth">
+      <div class="flex_options">
+        <div class="slider_growth_back">
+          <div class="slider_growth">
+            <div class="slider_knob"></div>
+            <div class="slider_value">100 см</div>
+          </div>
+        </div>
 
-            <div class="flex_options">
-              <div class="slider_growth_back">
-                <div class="slider_growth">
-                  <div class="slider_knob"></div>
-                  <div class="slider_value">100 см</div>
-                </div>
-              </div>
         <div class="size_growth">
-          <div class="skale">
-            <div class="skale_numb_top">210</div>
-          </div>
-  
-          <div class="skale">
-            <div class="skale_numb_top">180</div>
-          </div>
-  
-          <div class="skale">
-            <div class="skale_numb_top">150</div>
-          </div>
-  
-          <div class="skale">
-            <div class="skale_numb_top">120</div>
-          </div>
-  
-          <div class="skale">
-            <div class="skale_numb_top">90</div>
-          </div>
-  
           <div class="skale">
             <div class="skale_numb_top"></div>
           </div>
-  
+
           <div class="skale">
-            <div class="skale_numb_down">0</div>
+            <div class="skale_numb_top"></div>
+          </div>
+
+          <div class="skale">
+            <div class="skale_numb_top"></div>
+          </div>
+
+          <div class="skale">
+            <div class="skale_numb_top">120</div>
+          </div>
+
+          <div class="skale">
+            <div class="skale_numb_top">90</div>
+          </div>
+
+          <div class="skale">
+            <div class="skale_numb_top"></div>
+          </div>
+
+          <div class="skale">
+            <div class="skale_numb_down"></div>
           </div>
         </div>
-            </div>
-
+      </div>
     </my-selection-box>
     <!-- Рост -->
 
     <!-- Вес -->
     <my-selection-box :shown="shown_weight">
-      <div class="jbm-300">Вес</div>
+
+    <AgeWeight :value="weight" :arr="weight_arr"/>
+    
     </my-selection-box>
     <!-- Вес -->
 
@@ -648,11 +651,13 @@ import clas from "@/assets/catalog/base_data/classes.js";
 import past from "@/assets/catalog/base_data/pasts.js";
 
 import Genders from "@/components/Genders.vue";
+import AgeWeight from "@/components/AgeWeight.vue";
 
 export default {
   name: "App",
   components: {
     Genders,
+    AgeWeight,
   },
   data() {
     return {
@@ -684,6 +689,14 @@ export default {
       eyes_hower: null,
 
       active: false,
+
+      age_arr: [0, 20, 'x', 'x', 75, 'x', 'x', 130, 150],
+      weight_arr: [0, 'x', 'x', 20],
+
+      age: 34,
+      age_units: 'лет',
+      weight: 18,
+      weight_units: 'кг',
 
       ethnos_select: {
         name: "Коренастый",
@@ -1200,27 +1213,6 @@ body {
   right: 0;
   padding-top: 36px;
   bottom: 32px;
-
-}
-
-.size_growth {
-  width: 35px;
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 11.45px;
-  line-height: 18px;
-  text-align: right;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  margin-right: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  height: 100%;
-  background-color: transparent;
-  padding-top: 4px;
 }
 
 .skale {
@@ -1230,14 +1222,13 @@ body {
 
 .division_numb_down {
   margin-right: 12px;
-  margin-bottom: -5px;
+  margin-bottom: -4px;
   align-self: flex-end;
 }
 
 .division_numb_top {
   margin-right: 12px;
-  margin-top: -5px;
-  align-self: flex-start;
+  margin-top: -4px;
 }
 
 .skale_division {
@@ -1271,7 +1262,6 @@ body {
 .division_filling_front {
   background: #ffffff;
   height: calc(100% / 30 * 10);
-
 }
 
 /* ---------------------sidebar_right----------------------*/
@@ -1398,8 +1388,8 @@ body {
 }
 .slider_growth {
   width: 100%;
-  height: calc(100% / 396 * (300 + 3.2 * 30));
-  background: #FFFFFF;
+  height: calc(100% / 396 * (300 + 3.2 * 10));
+  background: #ffffff;
   padding: 12px 16px 11px 16px;
   display: flex;
   flex-direction: column;
@@ -1408,7 +1398,7 @@ body {
 .slider_knob {
   width: 96px;
   height: 6px;
-  background: #0E1518;
+  background: #0e1518;
   opacity: 0.2;
   border-radius: 4px;
   margin: 0 auto;
@@ -1416,14 +1406,14 @@ body {
 }
 
 .slider_value {
-height: 24px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 24px;
-letter-spacing: 0.02em;
-color: #000000;
+  height: 24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #000000;
 }
 
 .flex_options {
@@ -1434,7 +1424,7 @@ color: #000000;
 }
 
 .size_growth {
-  width: 35px;
+  width: 42px;
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 300;
@@ -1443,14 +1433,14 @@ color: #000000;
   text-align: right;
   letter-spacing: 0.06em;
   color: #ffffff;
-  margin-right: 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  text-align: end;
   gap: 4px;
-  height: 100%;
   background-color: transparent;
-  margin-top: 4px;
+  height: 100%;
+  padding-top: 4px;
 }
 
 .skale {
@@ -1460,19 +1450,80 @@ color: #000000;
 
 .skale_numb_down {
   text-align: end;
-  width: 42px;
-  margin-bottom: -5px;
+  margin-bottom: -4px;
   align-self: flex-end;
   flex: 1 1 auto;
 }
 
 .skale_numb_top {
   text-align: end;
-  width: 42px;
-  margin-top: -5px;
+  margin-top: -4px;
   align-self: flex-start;
   flex: 1 1 auto;
 }
+
+
+.slider_age_back {
+  width: 344px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.slider_age {
+  width: 100%;
+  height: calc(100% / 150 * 34);
+  background: #ffffff;
+  padding: 12px 16px 11px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.size_age {
+  width: 42px;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11.45px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-align: end;
+  background-color: transparent;
+  height: 100%;
+}
+
+
+.slider_weight_back {
+  width: 344px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.slider_weight {
+  width: 100%;
+  height: calc(100% / 20 * 18);
+  background: #ffffff;
+  padding: 12px 16px 11px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
 
 /* -------------slider-grwwth------------------- */
 </style>

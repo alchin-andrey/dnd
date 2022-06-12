@@ -4,7 +4,7 @@
       <div>{{ title }}</div>
     </div>
     <div class="column_link int-400 hover">
-      <div>{{ Number(value) }} {{ unit }}</div> 
+      <div>{{value}} {{age ? getAgeUnits(value) : unit}}</div> 
       <div class="note">{{ note }}</div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
       default: null,
     },
     value: {
-      type: String,
+      type: Number,
       default: null,
     },
     unit: {
@@ -40,6 +40,10 @@ export default {
       default: null,
     },
     active: {
+      type: Boolean,
+      default: false,
+    },
+    age: {
       type: Boolean,
       default: false,
     },
@@ -55,6 +59,21 @@ export default {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
       },
+    },
+  },
+  methods: {
+        getAgeUnits(numb) {
+      let mod10 = Math.abs(numb % 10);
+      let mod100 = Math.abs(numb % 100);
+      if (mod100 > 10 && mod100 < 20) {
+        return 'лет'
+      } else if (mod10 >= 2 && mod10 <= 4) {
+        return 'года'
+      } else if (mod10 === 1) {
+        return 'год'
+      } else {
+        return 'лет'
+      }
     },
   },
 };
