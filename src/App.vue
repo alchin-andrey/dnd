@@ -102,7 +102,6 @@
       <my-button v-if="shown_home" numb="02" title="Класс"></my-button>
       <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
     </div>
-
     <!-- Этнос-->
     <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
@@ -211,19 +210,8 @@
     <!-- Цвет кожи -->
     <my-selection-box :shown="shown_skin_color">
       <my-selection-card passive colors_card>
-        <div class="colors_box jbm-300">
-          <!-- <my-color-block
-            v-for="color in getColorsArr"
-            :key="color"
-            @click="choiceSkinColor(color)"
-            :color="color.hex"
-            :active_link="color.name"
-            :select_link="MY.color.skin.name"
-          >
-          </my-color-block> -->
-
-          <div v-for="(val, i) in color" :key="i" class="colors_row"
-          @mouseleave="hoverStop('skin_hower')">
+        <div class="colors_box jbm-300" @mouseleave="hoverStop('skin_hower')">
+          <div v-for="(val, i) in color" :key="i" class="colors_row">
             <my-color-block
               v-for="(val, j) in color[i]"
               :key="j"
@@ -247,19 +235,8 @@
     <!-- Цвет глаз -->
     <my-selection-box :shown="shown_eyes_color">
       <my-selection-card passive colors_card>
-        <div class="colors_box jbm-300">
-          <!-- <my-color-block
-            v-for="color in getColorsArr"
-            :key="color"
-            @click="choiceEyesColor(color)"
-            :color="color.hex"
-            :active_link="color.name"
-            :select_link="MY.color.eyes.name"
-          >
-          </my-color-block> -->
-
-          <div v-for="(val, i) in color" :key="i" class="colors_row"
-          @mouseleave="hoverStop('eyes_hower')">
+        <div class="colors_box jbm-300" @mouseleave="hoverStop('eyes_hower')">
+          <div v-for="(val, i) in color" :key="i" class="colors_row">
             <my-color-block
               v-for="(val, j) in color[i]"
               :key="j"
@@ -282,22 +259,9 @@
 
     <!-- Цвет волос -->
     <my-selection-box :shown="shown_hair_color">
-      <my-selection-card 
-      passive 
-      colors_card 
->
-        <div class="colors_box jbm-300">
-          <!-- <my-color-block
-            v-for="color in getColorsArr"
-            :key="color"
-            @click="choiceHairColor(color)"
-            :color="color.hex"
-            :active_link="color.name"
-            :select_link="MY.color.hair.name"
-          >
-          </my-color-block> -->
-
-          <div v-for="(val, i) in color" :key="i" class="colors_row" @mouseleave="hoverStop('hair_hower')">
+      <my-selection-card passive colors_card>
+        <div class="colors_box jbm-300" @mouseleave="hoverStop('hair_hower')">
+          <div v-for="(val, i) in color" :key="i" class="colors_row">
             <my-color-block
               v-for="(val, j) in color[i]"
               :key="j"
@@ -326,7 +290,45 @@
 
     <!-- Рост -->
     <my-selection-box :shown="shown_growth">
-      <div class="jbm-300">Рост</div>
+
+            <div class="flex_options">
+              <div class="slider_growth_back">
+                <div class="slider_growth">
+                  <div class="slider_knob"></div>
+                  <div class="slider_value">100 см</div>
+                </div>
+              </div>
+        <div class="size_growth">
+          <div class="skale">
+            <div class="skale_numb_top">210</div>
+          </div>
+  
+          <div class="skale">
+            <div class="skale_numb_top">180</div>
+          </div>
+  
+          <div class="skale">
+            <div class="skale_numb_top">150</div>
+          </div>
+  
+          <div class="skale">
+            <div class="skale_numb_top">120</div>
+          </div>
+  
+          <div class="skale">
+            <div class="skale_numb_top">90</div>
+          </div>
+  
+          <div class="skale">
+            <div class="skale_numb_top"></div>
+          </div>
+  
+          <div class="skale">
+            <div class="skale_numb_down">0</div>
+          </div>
+        </div>
+            </div>
+
     </my-selection-box>
     <!-- Рост -->
 
@@ -354,80 +356,92 @@
     </my-selection-box>
     <!-- Языки -->
   </div>
-
   <!-- character -->
   <div class="represent">
     <div
       class="character"
-      :class="{ active_eyes: shown_eyes_color || shown_hair_color }"
-      :style="{
-        height: `${calcImg()}`,
-        'background-image': `${getCharImg('hair', hair_hower)}, ${getCharImg(
-          'eyes', eyes_hower)}, ${getCharImg('skin', skin_hower)}`,
-          'transition-property': 'all',
-          'transition-duration': '0s',
-          'transition-delay': '.05s',
-          'transition-timing-function': 'ease-in',
+      :class="{
+        active_eyes: shown_eyes_color || shown_hair_color,
+        active_skin: shown_skin_color,
       }"
-    ></div>
+    >
+      <img
+        :style="{ height: `${calcImg()}` }"
+        :src="getCharImg('skin', skin_hower)"
+        alt="skin"
+      />
 
-    <div class="size" v-if="hideRuler()">
-      <div class="skale_division_top division_off">
-        <div class="division_numb_top"></div>
-        <div class="skale_division_top division_off">
-          <div class=""></div>
-        </div>
-      </div>
+      <img
+        :style="{ height: `${calcImg()}` }"
+        :src="getCharImg('hair', hair_hower)"
+        alt="hair"
+      />
 
-      <div class="skale">
-        <div class="division_numb_top">210</div>
-        <div class="skale_division division_off">
-          <div class=""></div>
-        </div>
-      </div>
-
-      <div class="skale">
-        <div class="division_numb_top">180</div>
-        <div class="skale_division division_off">
-          <div class=""></div>
-        </div>
-      </div>
-
-      <div class="skale">
-        <div class="division_numb_top">150</div>
-        <div class="skale_division division_off">
-          <div class=""></div>
-        </div>
-      </div>
-
-      <div class="skale">
-        <div class="division_numb_top">120</div>
-        <div class="skale_division division_filling_back">
-          <div class="division_filling_front"></div>
-        </div>
-      </div>
-
-      <div class="skale">
-        <div class="division_numb_top">90</div>
-        <div class="skale_division division_active">
-          <div class=""></div>
-        </div>
-      </div>
-
-      <div class="skale">
-        <div class="division_numb_top"></div>
-        <div class="skale_division division_active">
-          <div class=""></div>
-        </div>
-      </div>
-
-      <div class="skale">
-        <div class="division_numb_down">0</div>
-        <div class="skale_division division_active">
-          <div class=""></div>
-        </div>
-      </div>
+      <img
+        :style="{ height: `${calcImg()}` }"
+        :src="getCharImg('eyes', eyes_hower)"
+        alt="eyes"
+      />
     </div>
+    <transition name="slide-fade">
+      <div class="size" v-if="hideRuler()">
+        <div class="skale_division_top">
+          <div class="division_numb_top"></div>
+          <div class="skale_division_top division_off">
+            <div class=""></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_top">210</div>
+          <div class="skale_division division_off">
+            <div class=""></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_top">180</div>
+          <div class="skale_division division_off">
+            <div class=""></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_top">150</div>
+          <div class="skale_division division_off">
+            <div class=""></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_top">120</div>
+          <div class="skale_division division_filling_back">
+            <div class="division_filling_front"></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_top">90</div>
+          <div class="skale_division division_active">
+            <div class=""></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_top"></div>
+          <div class="skale_division division_active">
+            <div class=""></div>
+          </div>
+        </div>
+
+        <div class="skale">
+          <div class="division_numb_down">0</div>
+          <div class="skale_division division_active">
+            <div class=""></div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 
   <!-- sidebar_right -->
@@ -972,16 +986,18 @@ export default {
       } else {
         sex = "male";
       }
-      return `url(${require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${vale}/${img}.png`)})`;
+      return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${vale}/${img}.png`);
     },
 
     calcImg() {
-      if (this.shown_skin_color ||
+      if (
+        this.shown_skin_color ||
         this.shown_eyes_color ||
-        this.shown_hair_color) {
+        this.shown_hair_color
+      ) {
         return `100%`;
       } else {
-        return `calc((100% - 40px) / 696 * 300 + (((100% - 64px) * 96 / 30 / 7 / 96) * 30))`;
+        return `calc(100% / 700 * (300 + 3.2 * 10))`;
       }
     },
   },
@@ -1027,7 +1043,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   display: flex;
-
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -1125,27 +1140,46 @@ body {
   padding: 32px;
   flex: 1 1 auto;
   display: flex;
-  align-items: flex-end;
   position: relative;
-  height: 100%;
+  overflow: hidden;
 }
 
 .character {
-  flex: 1 1 auto;
-  width: 250px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+.character img {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
 }
 
 .active_eyes {
-  align-items: flex-start;
-  background-position: top;
-  background-size: auto 200%;
+  align-self: flex-start;
+  height: 200%;
+  transition-property: all;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+.active_skin {
+  align-self: flex-start;
+  transition-property: all;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
 }
 
 .size {
-  right: 0;
   width: 35px;
   font-family: "JetBrains Mono";
   font-style: normal;
@@ -1162,6 +1196,31 @@ body {
   gap: 4px;
   height: 100%;
   background-color: transparent;
+  position: absolute;
+  right: 0;
+  padding-top: 36px;
+  bottom: 32px;
+
+}
+
+.size_growth {
+  width: 35px;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11.45px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  margin-right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+  background-color: transparent;
+  padding-top: 4px;
 }
 
 .skale {
@@ -1189,7 +1248,8 @@ body {
 
 .skale_division_top {
   width: 1px;
-  height: 36px;
+  height: 32px;
+  flex: 1 1 auto;
 }
 
 .division_off {
@@ -1210,7 +1270,8 @@ body {
 
 .division_filling_front {
   background: #ffffff;
-  height: calc((100% * 96 / 30 / 96) * 30);
+  height: calc(100% / 30 * 10);
+
 }
 
 /* ---------------------sidebar_right----------------------*/
@@ -1310,4 +1371,108 @@ body {
   gap: 2px;
 }
 
+.slide-fade-enter-active {
+  transition: all 0.8s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+/* -------------slider-grwwth------------------- */
+
+.slider_growth_back {
+  width: 344px;
+  height: calc(100% / 700 * 396);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.slider_growth {
+  width: 100%;
+  height: calc(100% / 396 * (300 + 3.2 * 30));
+  background: #FFFFFF;
+  padding: 12px 16px 11px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.slider_knob {
+  width: 96px;
+  height: 6px;
+  background: #0E1518;
+  opacity: 0.2;
+  border-radius: 4px;
+  margin: 0 auto;
+  cursor: ns-resize;
+}
+
+.slider_value {
+height: 24px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0.02em;
+color: #000000;
+}
+
+.flex_options {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.size_growth {
+  width: 35px;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11.45px;
+  line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  margin-right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+  background-color: transparent;
+  margin-top: 4px;
+}
+
+.skale {
+  height: 100%;
+  display: flex;
+}
+
+.skale_numb_down {
+  text-align: end;
+  width: 42px;
+  margin-bottom: -5px;
+  align-self: flex-end;
+  flex: 1 1 auto;
+}
+
+.skale_numb_top {
+  text-align: end;
+  width: 42px;
+  margin-top: -5px;
+  align-self: flex-start;
+  flex: 1 1 auto;
+}
+
+/* -------------slider-grwwth------------------- */
 </style>
