@@ -20,12 +20,23 @@ export default {
             stats:"характеристики",
 
             strength:"сила",
+            strength_base:"базовая",
+
             dexterity:"ловкость",
+            dexterity_base:"базовая",
+
             constitution:"телосложение",
-            intelligence:"интеллект",    
+            constitution_base:"базовое",
+
+            intelligence:"интеллект",
+            constitution_base:"базовый",  
+            
             wisdom:"мудрость",
+            constitution_base:"базовая",
+
             charisma:"харизма",
-            base:"базовая",
+            constitution_base:"базовая",
+
 
     //Genders
 
@@ -251,6 +262,18 @@ export default {
             rare:"редкий этнос",           
             ghost_halfling_details: races.ghost_halfling,
             rare_details:races.rare,
+
+            //Human
+            
+            human:"человек",
+
+            //Halfelf
+            
+            halfelf:"полуэльф",
+
+            //Tiefling
+            
+            tiefling:"тифлинг",
 
     //Colors
 

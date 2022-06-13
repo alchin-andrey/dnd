@@ -6,7 +6,7 @@
           <img alt="logo" src="@/assets/img/logo.svg" />
         </div>
 
-        <my-slider numb="01" :title="t('race')" :arr="t(MY.race)"> </my-slider>
+        <my-slider numb="01" :title="t('race')" :arr="Object.keys(this.race)" :type="MY.race"> </my-slider>
 
         <div class="delimiter"></div>
 
@@ -368,7 +368,7 @@
         active_skin: shown_skin_color,
       }"
     >
-      <img
+      <!-- <img
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('skin', skin_hower)"
         alt="skin"
@@ -384,7 +384,7 @@
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('eyes', eyes_hower)"
         alt="eyes"
-      />
+      /> -->
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -452,6 +452,20 @@
     <!-- attributes_main -->
     <div class="feature jbm-300">
       <my-attribute
+        v-for="(val, n, i) in MY.stats"
+        :key="n"
+        :title="n"
+        :type="n"
+        plus
+        :numb="race[MY.race][n]"
+        :icon="n"
+      >
+      </my-attribute>
+
+
+
+
+      <!-- <my-attribute
         v-for="item in attributes_main"
         :key="item"
         :title="item.name"
@@ -460,7 +474,7 @@
         :numb="item.value"
         :icon="item.icon"
       >
-      </my-attribute>
+      </my-attribute> -->
     </div>
 
     <div class="gap"></div>
@@ -688,6 +702,8 @@ export default {
       hair_hower: null,
       eyes_hower: null,
 
+      sel_race: 'halfling',
+
       active: false,
 
       age_arr: [0, 20, 'x', 'x', 75, 'x', 'x', 130, 150],
@@ -715,7 +731,7 @@ export default {
           name: "ловкость",
           type: "базовая",
           value: 2,
-          icon: "agility",
+          icon: "dexterity",
           base: true,
         },
         {
@@ -729,7 +745,7 @@ export default {
           name: "интелект",
           type: "базовый",
           value: 0,
-          icon: "intellect",
+          icon: "intelligence",
           base: false,
         },
         {
@@ -761,12 +777,12 @@ export default {
         {
           name: "Акробатика",
           value: 2,
-          icon: "agility",
+          icon: "dexterity",
         },
         {
           name: "Анализ",
           value: 2,
-          icon: "intellect",
+          icon: "intelligence",
         },
       ],
 
@@ -784,11 +800,6 @@ export default {
           icon: "dark_vision",
         },
       ],
-
-      // attributes_travel: {
-      //   speed: 25,
-      //   dark_vision: 120,
-      // },
 
       inventory: [
         {
@@ -808,13 +819,6 @@ export default {
           type: "Всеобщий, Полуросликов",
         },
       ],
-
-      // inventory: {
-      //   weapon: "Боевые топоры, Ручные топоры, Легкие молоты, Боевые молоты",
-      //   armor: null,
-      //   tools: "Кузнеца, Пивовара, Каменщика",
-      //   languages: "Всеобщий, Дварфийский, Подземный",
-      // },
 
       fines: [
         {
@@ -1014,8 +1018,9 @@ export default {
       }
     },
   },
+
   computed: {
-    // getColorsArr() {
+    // getColor() {
     //   let arr = [];
     //   for (let i in this.color) {
     //     for (let j in this.color[i]) {
@@ -1024,23 +1029,15 @@ export default {
     //   }
     //   return arr;
     // },
-
-    getColor() {
-      let arr = [];
-      for (let i in this.color) {
-        for (let j in this.color[i]) {
-          arr.push(this.color[i][j]);
-        }
-      }
-      return arr;
-    },
   },
 
   created() {
-    // this.default_MY.race = this.race.halfling
-    // this.default_MY.ethnos = this.race.halfling.settings.ethnos.lightfoot
+    this.default_MY.race = Object.keys(this.race)[0]
+    this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
+    this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
     this.MY = this.default_MY;
-    console.log();
+    console.log()
+    // console.log(this.race.halfling.settings.ethnos);
   },
 };
 </script>

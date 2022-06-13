@@ -26,9 +26,9 @@ export default {
 
           settings: {
             color: {
-              skin: [color[2][0]],
-              eyes: [color[4][5]],
-              hair: [color[1][4]],
+              skin: color[2][0],
+              eyes: color[4][5],
+              hair: color[1][4],
             },
           },
 
@@ -57,9 +57,9 @@ export default {
 
           settings: {
             color: {
-              skin: [color[2][1]],
-              eyes: [color[2][5]],
-              hair: [color[0][6]],
+              skin: color[2][1],
+              eyes: color[2][5],
+              hair: color[0][6],
             },
           },
 
@@ -82,9 +82,9 @@ export default {
 
           settings: {
             color: {
-              skin: [color[2][2]],
-              eyes: [color[8][2]],
-              hair: [color[2][5]],
+              skin: color[2][2],
+              eyes: color[8][2],
+              hair: color[2][5],
             },
           },
 

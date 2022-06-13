@@ -6,22 +6,31 @@
     <div>{{ title }}</div>
   </div>
   <div class="main">
-    <div>{{ arr }}</div>
+    <transition mode="out-in" name="type">
+    <div :key="type">{{ t(type) }}</div>
+    </transition>
   </div>
   <div class="arrows">
-    <div><img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg" /></div>
-    <div><img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg" /></div>
+    <div>
+      <img
+        @click="getNameBack(arr, type)"
+        alt="arrow_left"
+        src="@/assets/img/icon/arrow_left.svg"
+      />
+    </div>
+    <div>
+      <img
+        @click="getNameForward(arr, type)"
+        alt="arrow_right"
+        src="@/assets/img/icon/arrow_right.svg"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "MySlider",
-  data() {
-    return {
-      inputValue: "",
-    };
-  },
   props: {
     modelValue: {
       type: String,
@@ -35,22 +44,33 @@ export default {
       type: String,
       default: null,
     },
-    arr: {
+    type: {
       type: String,
       default: null,
     },
-  },
-  watch: {
-    modelValue: {
-      handler() {
-        this.inputValue = this.modelValue;
-      },
-      immediate: true,
+    arr: {
+      type: Array,
+      default: [],
     },
-    inputValue: {
-      handler() {
-        this.$emit("update:modelValue", this.inputValue);
-      },
+  },
+  methods: {
+    getNameBack(arr, i) {
+      let j = arr.indexOf(i);
+      console.log(this.type);
+      if (j === 0) {
+        this.$root.MY.race = arr[arr.length - 1];
+      } else {
+        this.$root.MY.race = arr[j - 1];
+      }
+    },
+    getNameForward(arr, i) {
+      let j = arr.indexOf(i);
+      console.log(this.type);
+      if (j === arr.length - 1) {
+        this.$root.MY.race = arr[0];
+      } else {
+        this.$root.MY.race = arr[j + 1];
+      }
     },
   },
 };
@@ -86,7 +106,33 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.arrows img{
+.arrows img {
   cursor: pointer;
 }
+
+
+/* .type-enter-active,
+.type-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.type-enter,
+.type-leave-to {
+  opacity: 0;
+} */
+
+
+
+.type-enter-active, 
+.type-leave-active {
+  transition: opacity .3s
+}
+
+.type-enter-from, 
+.type-leave-to {
+  opacity: 0
+}
+
+
+
 </style>

@@ -5,10 +5,10 @@
         <img :src="getImage(icon)" :alt="icon" />
       </div>
       <div class="item" :class="{ active: numb > 0 }">
-        {{ title }}<span>{{ type }}</span>
+        {{ t(title) }}<span>{{ t(type) }}</span>
       </div>
       <div class="numb" :class="{ active: numb > 0 }">
-        {{ plus ? "+" : "" }}{{ numb }} {{ feet ? "футов" : "" }}
+        {{ plus ? "+" : "" }}{{ getNumb(numb) }} {{ feet ? "футов" : "" }}
       </div>
     </div>
     <div class="visual">
@@ -87,6 +87,15 @@ export default {
     },
   },
   methods: {
+
+    getNumb(numb) {
+      if (numb === null) {
+        return 0;
+      } else {
+        return numb;
+      }
+    },
+
     getImage(name) {
       if (name === null) {
         return null;
