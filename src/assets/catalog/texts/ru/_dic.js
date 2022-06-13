@@ -95,8 +95,24 @@ export default {
             story:"прошлое",
 
             age:"возраст",
+                year: "год",
+                years: "лет",
+                yeara: "года",
+                baby: "ребенок",
+                young: "молодой",
+                mature: "взрослый",
+                old: "пожилой",
+                oldest: "старик",
+
+
             weight:"вес",
+                kg: "кг",
+                skinny: "худощавый",
+                fat: "полный",
+
             height:"рост",
+                cm: "см",
+
             size:"размер",
 
                 small_size:"маленький",

@@ -123,20 +123,21 @@ export default {
       },
 
       age: {
-        young: 10,
-        mature: 25,
+        min: 10,
+        young: 20,
+        mature: 75,
         old: 100,
-        oldest: 150,
+        max: 150,
       },
 
       height: {
-        from: 90,
-        to: 120,
+        min: 90,
+        max: 120,
       },
 
       weight: {
-        from: 15,
-        to: 20,
+        min: 15,
+        max: 20,
       },
 
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
