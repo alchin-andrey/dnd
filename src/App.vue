@@ -452,13 +452,13 @@
     <!-- attributes_main -->
     <div class="feature jbm-300">
       <my-attribute
-        v-for="(val, n, i) in MY.stats"
-        :key="n"
-        :title="n"
-        :type="n"
+        v-for="(val, name) in MY.stats"
+        :key="name"
+        :title="name"
+        :type="name"
         plus
-        :numb="race[MY.race][n]"
-        :icon="n"
+        :numb="race[MY.race][name]"
+        :icon="name"
       >
       </my-attribute>
 
@@ -954,9 +954,14 @@ export default {
     },
 
     show(name) {
+      if (this[name] === false) {
       this.close();
       this[name] = true;
       this.shown_home = false;
+      } else {
+      this.close();
+      this.shown_home = true;
+      }
     },
 
     showHome() {

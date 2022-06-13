@@ -1,18 +1,24 @@
 <template>
-  <div class="column" :class="{ active_link: active}">
-    <div class="column_title jbm-300" @click.stop>
-      <div class="cursor_pointer">{{ title }}</div>
-    </div>
-    <div 
-    class="column_link int-400" 
-    :class="{ 
-      rare: rare,
-      passive: type === 'Обычный',
-      icon: type !== 'Обычный' || active,
+  <div
+    class="column"
+    :class="{
+      active_link: active,
       cursor_pointer: type !== 'Обычный',
       hover: type !== 'Обычный',
-      icon_active: active,
-      }">
+    }"
+  >
+    <div class="column_title jbm-300">
+      <div>{{ title }}</div>
+    </div>
+    <div
+      class="column_link int-400"
+      :class="{
+        rare: rare,
+        passive: type === 'Обычный',
+        icon: type !== 'Обычный' || active,
+        icon_active: active,
+      }"
+    >
       <div>{{ type }}</div>
     </div>
   </div>
@@ -23,7 +29,7 @@ export default {
   name: "MySelection",
   data() {
     return {
-      inputValue: '',
+      inputValue: "",
     };
   },
   props: {
@@ -73,24 +79,24 @@ export default {
   position: relative;
 }
 
-.hover:hover::before {
-  content: '';
+.hover:hover::after {
+  content: "";
   position: absolute;
   width: 20px;
   height: 2px;
-  left: -165px;
+  left: -40px;
   top: calc(50% - 1px);
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .active_link:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 35px;
   height: 2px;
   left: -39px;
   top: calc(50% - 1px);
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .column_title {
@@ -126,7 +132,7 @@ export default {
 }
 
 .rare {
-  color: #FFC93D;
+  color: #ffc93d;
 }
 
 .passive {
@@ -136,5 +142,4 @@ export default {
 .cursor_pointer {
   cursor: pointer;
 }
-
 </style>

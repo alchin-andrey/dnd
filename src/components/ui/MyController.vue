@@ -1,9 +1,9 @@
 <template>
-  <div class="column" :class="{ active_link: active}">
-    <div class="column_title jbm-300" @click.stop>
+  <div class="column hover" :class="{ active_link: active}">
+    <div class="column_title jbm-300">
       <div>{{ title }}</div>
     </div>
-    <div class="column_link int-400 hover">
+    <div class="column_link int-400">
       <div>{{value}} {{age ? getAgeUnits(value) : unit}}</div> 
       <div class="note">{{ note }}</div>
     </div>
@@ -85,16 +85,17 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
-.hover:hover::before {
-  content: '';
+.hover:hover::after {
+  content: "";
   position: absolute;
   width: 20px;
   height: 2px;
-  left: -165px;
+  left: -40px;
   top: calc(50% - 1px);
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .active_link:before {
@@ -116,7 +117,6 @@ export default {
   margin-left: 4px;
   position: relative;
   display: flex;
-  cursor: pointer;
 }
 
 .note {
