@@ -29,13 +29,13 @@ export default {
             constitution_base:"базовое",
 
             intelligence:"интеллект",
-            constitution_base:"базовый",  
+            intelligence_base:"базовый",  
             
             wisdom:"мудрость",
-            constitution_base:"базовая",
+            wisdom_base:"базовая",
 
             charisma:"харизма",
-            constitution_base:"базовая",
+            charisma_base:"базовая",
 
 
     //Genders
@@ -133,6 +133,7 @@ export default {
             armor_class:"броня",
 
             speed:"скорость",
+            speed_details: "пешком",
             vision_day:"зрение",
             vision_night:"темное зрение",
 

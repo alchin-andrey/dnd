@@ -49,9 +49,11 @@ export default {
     initiative:null,
     armor_class:null,
 
-    speed:null,
-    vision_day:null,
-    vision_night:null,
+    qualities:{
+        speed:null,
+        // vision_day:null,
+        vision_night:null,
+    },
 
     stats:{
         

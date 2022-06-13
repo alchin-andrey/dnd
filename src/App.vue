@@ -455,9 +455,9 @@
         v-for="(val, name) in MY.stats"
         :key="name"
         :title="name"
-        :type="name"
+        :type="`${name}_base`"
         plus
-        :numb="race[MY.race][name]"
+        :numb="getNumbStats(name)"
         :icon="name"
       >
       </my-attribute>
@@ -498,7 +498,22 @@
 
     <!-- attributes_travel -->
     <div class="feature jbm-300">
+
       <my-attribute
+        v-for="(val, name) in MY.qualities"
+        :key="name"
+        :title="name"
+        :type="`${name}_details`"
+        :numb="getRaceObj()[name]"
+        feet
+        :icon="name"
+      ></my-attribute>
+      
+      
+      
+      
+      
+      <!-- <my-attribute
         v-for="item in attributes_travel"
         :key="item"
         :title="item.name"
@@ -506,7 +521,7 @@
         :numb="item.value"
         feet
         :icon="item.icon"
-      ></my-attribute>
+      ></my-attribute> -->
     </div>
 
     <div class="gap"></div>
@@ -702,17 +717,16 @@ export default {
       hair_hower: null,
       eyes_hower: null,
 
-      sel_race: 'halfling',
+      // race_obj: getRaceObj(),
+      // etnos_obj: race[MY.race].settings.ethnos[MY.ethnos],
 
       active: false,
 
       age_arr: [0, 20, 'x', 'x', 75, 'x', 'x', 130, 150],
-      weight_arr: [0, 'x', 'x', 20],
+      weight_arr: [0, 'x', 'x', 15, 20],
 
       age: 34,
-      age_units: 'лет',
-      weight: 18,
-      weight_units: 'кг',
+      weight: 15,
 
       ethnos_select: {
         name: "Коренастый",
@@ -764,14 +778,6 @@ export default {
         },
       ],
 
-      // attributes_main: {
-      //   strength: 0,
-      //   agility: 2,
-      //   constitution: 0,
-      //   intellect: 0,
-      //   wisdom: 1,
-      //   charisma: 0,
-      // },
 
       attributes_race: [
         {
@@ -797,7 +803,7 @@ export default {
         {
           name: "Анализ",
           value: 0,
-          icon: "dark_vision",
+          icon: "vision_night",
         },
       ],
 
@@ -1022,6 +1028,36 @@ export default {
         return `calc(100% / 700 * (300 + 3.2 * 10))`;
       }
     },
+
+    getNumbStats(name) {
+      let i = 0;
+      let j = 0;
+      this.getRaceObj()[name] == null ? i = 0 : i = this.getRaceObj()[name];
+      this.getethnosObj()[name] == null ? j = 0 : j = this.getethnosObj()[name];
+      console.log()
+      return i + j;
+    }, 
+
+    getBaseQualities() {
+      let arr = [];
+      let qualities = Object.keys(this.MY.qualities);
+      for (let kay in this.MY.qualities) {
+        if (kay in this.race[this.MY.race]) {
+          arr.push(kay);
+        }
+        console.log()
+      }
+      return arr;
+    }, 
+
+    getRaceObj() {
+      console.log(this.race[this.MY.race])
+      return this.race[this.MY.race];
+    }, 
+    getethnosObj() {
+      console.log(this.race[this.MY.race].settings.ethnos[this.MY.ethnos])
+      return this.race[this.MY.race].settings.ethnos[this.MY.ethnos];
+    }, 
   },
 
   computed: {
@@ -1041,7 +1077,7 @@ export default {
     this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
     this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
     this.MY = this.default_MY;
-    console.log()
+    console.log(this.getethnosObj())
     // console.log(this.race.halfling.settings.ethnos);
   },
 };
