@@ -146,7 +146,7 @@ export default {
     custom_language:null,
 
     //Особенности - пассивньіе умения
-    peculiarities:null,
+    fines:null,
 
     //Умения - активньіе умения без урона
     abilities:null,

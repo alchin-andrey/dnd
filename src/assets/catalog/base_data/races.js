@@ -34,7 +34,7 @@ export default {
 
           constitution: 1,
 
-          peculiarities: [
+          fines: [
             {
               type: "advantage",
               keyword: "advantage",
@@ -65,7 +65,7 @@ export default {
 
           charisma: 1,
 
-          peculiarities: [
+          fines: [
             {
               type: "plus",
               keyword: "stealth",
@@ -90,7 +90,7 @@ export default {
 
           wisdom: 1,
 
-          peculiarities: [
+          fines: [
             {
               type: "plus",
               keyword: "telepathy",
@@ -154,7 +154,7 @@ export default {
       languages: [lang.common, lang.halfling],
     },
 
-    peculiarities: [
+    fines: [
       {
         type: "advantage",
         keyword: "advantage",
@@ -171,6 +171,12 @@ export default {
         type: "plus",
         keyword: "slippage",
         details: "among_bigger_than_mid",
+      },
+
+      {
+        type: "disadvantage",
+        keyword: "disadvantage",
+        details: "fire against",
       },
     ],
 
