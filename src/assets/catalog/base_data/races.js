@@ -176,7 +176,7 @@ export default {
       {
         type: "disadvantage",
         keyword: "disadvantage",
-        details: "fire against",
+        details: "fire_against",
       },
     ],
 
