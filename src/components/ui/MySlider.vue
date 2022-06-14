@@ -54,6 +54,10 @@ export default {
     },
   },
   methods: {
+    getNewEthnos() {
+      this.$root.MY.ethnos = Object.keys(this.$root.race[this.$root.MY.race].settings.ethnos)[0]
+    },
+
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
       console.log(this.type);
@@ -62,6 +66,7 @@ export default {
       } else {
         this.$root.MY.race = arr[j - 1];
       }
+this.getNewEthnos()
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
@@ -71,6 +76,7 @@ export default {
       } else {
         this.$root.MY.race = arr[j + 1];
       }
+      this.getNewEthnos()
     },
   },
 };

@@ -7,7 +7,7 @@
         icon: getIcon(item),
       }"
     >
-      {{ title }}<span>:</span>
+      {{ t(title) }}<span>:</span>
     </div>
     <div class="item int-400" :class="{ passive: getPassive(item) }">
       {{ getItem(item) }}
@@ -34,7 +34,7 @@ export default {
       default: null,
     },
     item: {
-      type: String,
+      type: Array,
       default: null,
     },
     ethnos: {
@@ -57,19 +57,23 @@ export default {
   },
   methods: {
     getItem(item) {
-      if (!item) {
-        return (item = "—");
+      if (item.length === 0) {
+        return "—";
       } else {
-        return item;
+        let arr = []
+        for (let i in item) {
+          arr.push(this.t(item[i]))
+        }
+        return arr.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(', ');
       }
     },
 
     getPassive(item) {
-      return item ? false : true;
+      return item.length !== 0 ? false : true;
     },
 
     getIcon(item) {
-      return item ? true : false;
+      return item.length !== 0 ? true : false;
     },
   },
 };

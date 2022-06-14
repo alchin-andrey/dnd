@@ -449,7 +449,7 @@
 
   <!-- sidebar_right -->
   <div v-if="shown_home" class="sidebar_right">
-    <!-- attributes_main -->
+    <!-- stats -->
     <div class="feature jbm-300">
       <my-attribute
         v-for="(val, name) in MY.stats"
@@ -478,7 +478,7 @@
     </div>
 
     <div class="gap"></div>
-    <!-- attributes_main -->
+    <!-- stats -->
 
     <!-- attributes_race -->
     <div class="feature jbm-300">
@@ -503,7 +503,6 @@
         v-for="(val, name) in MY.qualities"
         :key="name"
         :title="name"
-        :type="`${name}_details`"
         :numb="getRaceObj()[name]"
         feet
         :icon="name"
@@ -527,30 +526,39 @@
     <div class="gap"></div>
     <!-- attributes_travel -->
 
-    <!-- inventory -->
+    <!-- proficiencies -->
 
     <div class="inventory">
       <my-inventory
-        v-for="item in inventory"
-        :key="item"
-        :title="item.name"
-        :item="item.type"
+        v-for="(val, name) in MY.proficiencies"
+        :key="name"
+        :title="name"
+        :item="getProficienciesItem(name)"
+        
       >
       </my-inventory>
     </div>
 
     <div class="gap"></div>
-    <!-- inventory -->
+    <!-- proficiencies -->
 
     <!-- fines -->
     <div class="fines">
+
       <my-fines
-        v-for="item in fines"
+        v-for="item in getRaceObj().fines"
         :key="item"
-        :effect="item.effect"
-        :icon="item.icon"
-        :title="item.title"
-        :description="item.description"
+        :icon="item.type"
+        :title="item.keyword"
+        :details="item.details"
+      ></my-fines>
+
+      <my-fines
+        v-for="item in getEthnosObj().fines"
+        :key="item"
+        :icon="item.type"
+        :title="item.keyword"
+        :details="item.details"
       ></my-fines>
     </div>
 
@@ -827,19 +835,19 @@ export default {
       fines: [
         {
           effect: "positive",
-          icon: "plus",
+          icon: "advantage",
           title: "Переброс",
           description: 'любого кубика при "1"',
         },
         {
           effect: "positive",
-          icon: "plus",
+          icon: "advantage",
           title: "Преимущество",
           description: "против Испуга",
         },
         {
           effect: "positive",
-          icon: "corner",
+          icon: "plus",
           title: "Проскальзывание",
           description: "Проскальзывание среди существ выше среднего",
         },
@@ -860,13 +868,13 @@ export default {
           fines: [
             {
               effect: "positive",
-              icon: "plus",
+              icon: "advantage",
               title: "Преимущество",
               description: "против Яда",
             },
             {
               effect: "positive",
-              icon: "plus",
+              icon: "advantage",
               title: "Сопротивление",
               description: "урону Ядом",
             },
@@ -889,7 +897,7 @@ export default {
           fines: [
             {
               effect: "positive",
-              icon: "corner",
+              icon: "plus",
               title: "Скрытность",
               description: "за существом выше среднего",
             },
@@ -912,7 +920,7 @@ export default {
           fines: [
             {
               effect: "positive",
-              icon: "corner",
+              icon: "plus",
               title: "Телепатия",
               description: "на известных языках",
             },
@@ -925,7 +933,30 @@ export default {
       ],
     };
   },
+  //  watch: {
+  //   MY: {
+  //     handler(newQuestion) {
+        
+  //     },
+  //     immediate: true
+  //   }
+  // },
   methods: {
+
+    getProficienciesItem(name) {
+      let arr = []
+      for (let i in this.getRaceObj().proficiencies[name]) {
+        arr.push(this.getRaceObj().proficiencies[name][i].name);
+      }
+      return arr;
+    },
+
+    getNewEthnos() {
+      this.MY.ethnos = Object.keys(this.race[this.MY.race].settings.ethnos)[0]
+    },
+
+
+
     getGenderName() {
       if (this.MY.gender.feel === this.genders.feel.cisgender) {
         return this.t(this.MY.gender.phisiological);
@@ -1031,8 +1062,7 @@ export default {
       let i = 0;
       // let j = 0;
       this.getRaceObj()[name] == null ? i = 0 : i = this.getRaceObj()[name];
-      // this.getethnosObj()[name] == null ? j = 0 : j = this.getethnosObj()[name];
-      console.log()
+      // this.getEthnosObj()[name] == null ? j = 0 : j = this.getEthnosObj()[name];
       return i;
     }, 
 
@@ -1043,7 +1073,6 @@ export default {
         if (kay in this.race[this.MY.race]) {
           arr.push(kay);
         }
-        console.log()
       }
       return arr;
     }, 
@@ -1051,8 +1080,12 @@ export default {
     getRaceObj() {
       return this.race[this.MY.race];
     }, 
-    getethnosObj() {
-      return this.race[this.MY.race].settings.ethnos[this.MY.ethnos];
+    getEthnosObj() {
+      if (this.race[this.MY.race].settings.ethnos[this.MY.ethnos] == undefined) {
+        return null
+      } else {
+        return this.race[this.MY.race].settings.ethnos[this.MY.ethnos];
+      }
     }, 
   },
 
@@ -1073,7 +1106,7 @@ export default {
     this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
     this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
     this.MY = this.default_MY;
-    console.log(this.race[this.MY.race].proficiencies.languages[0].name)
+    console.log()
     // console.log(this.race.halfling.settings.ethnos);
   },
 };

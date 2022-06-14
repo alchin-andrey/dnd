@@ -6,12 +6,12 @@
     <div class="text int-400">
       <span
         :class="{
-          positive: effect === 'positive',
-          negative: effect === 'negative',
+          positive: title !== 'disadvantage',
+          negative: title === 'disadvantage',
         }"
-        >{{ title }}</span
+        >{{ t(title) }}</span
       >
-      {{ description }}
+      {{ t(details) }}
     </div>
   </div>
 </template>
@@ -33,15 +33,11 @@ export default {
       type: String,
       default: null,
     },
-    description: {
+    details: {
       type: String,
       default: null,
     },
     icon: {
-      type: String,
-      default: null,
-    },
-    effect: {
       type: String,
       default: null,
     },
@@ -78,6 +74,10 @@ export default {
   margin-left: 4px;
   padding: 2px 0 1px 0;
   text-align: start;
+}
+
+.text:first-letter {
+  text-transform: uppercase;
 }
 
 .positive {
