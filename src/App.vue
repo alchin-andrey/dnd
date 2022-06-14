@@ -717,8 +717,6 @@ export default {
       hair_hower: null,
       eyes_hower: null,
 
-      // race_obj: getRaceObj(),
-      // etnos_obj: race[MY.race].settings.ethnos[MY.ethnos],
 
       active: false,
 
@@ -1031,11 +1029,11 @@ export default {
 
     getNumbStats(name) {
       let i = 0;
-      let j = 0;
+      // let j = 0;
       this.getRaceObj()[name] == null ? i = 0 : i = this.getRaceObj()[name];
-      this.getethnosObj()[name] == null ? j = 0 : j = this.getethnosObj()[name];
+      // this.getethnosObj()[name] == null ? j = 0 : j = this.getethnosObj()[name];
       console.log()
-      return i + j;
+      return i;
     }, 
 
     getBaseQualities() {
@@ -1051,11 +1049,9 @@ export default {
     }, 
 
     getRaceObj() {
-      console.log(this.race[this.MY.race])
       return this.race[this.MY.race];
     }, 
     getethnosObj() {
-      console.log(this.race[this.MY.race].settings.ethnos[this.MY.ethnos])
       return this.race[this.MY.race].settings.ethnos[this.MY.ethnos];
     }, 
   },
@@ -1077,7 +1073,7 @@ export default {
     this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
     this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
     this.MY = this.default_MY;
-    console.log(this.getethnosObj())
+    console.log(this.race[this.MY.race].proficiencies.languages[0].name)
     // console.log(this.race.halfling.settings.ethnos);
   },
 };
