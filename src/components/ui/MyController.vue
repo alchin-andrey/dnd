@@ -1,10 +1,10 @@
 <template>
   <div class="column hover" :class="{ active_link: active}">
     <div class="column_title jbm-300">
-      <div>{{ title }}</div>
+      <div>{{ t(title) }}</div>
     </div>
     <div class="column_link int-400">
-      <div>{{value}} {{age ? getAgeUnits(value) : unit}}</div> 
+      <div>{{value}} {{age ? t(getAgeUnits(value)) : t(unit)}}</div> 
       <div class="note">{{ note }}</div>
     </div>
   </div>
@@ -66,13 +66,13 @@ export default {
       let mod10 = Math.abs(numb % 10);
       let mod100 = Math.abs(numb % 100);
       if (mod100 > 10 && mod100 < 20) {
-        return 'лет'
+        return 'years'
       } else if (mod10 >= 2 && mod10 <= 4) {
-        return 'года'
+        return 'yeara'
       } else if (mod10 === 1) {
-        return 'год'
+        return 'year'
       } else {
-        return 'лет'
+        return 'years'
       }
     },
   },

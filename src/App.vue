@@ -8,7 +8,7 @@
 
         <my-slider
           numb="01"
-          :title="t('race')"
+          title="race"
           :arr="Object.keys(this.race)"
           :type="MY.race"
         >
@@ -20,34 +20,34 @@
           <my-selection
             @click="show('shown_ethnos')"
             :active="shown_ethnos"
-            :title="t('ethnos')"
+            title="ethnos"
             :type="t(MY.ethnos)"
             :rare="getEthnosObj().rare"
           ></my-selection>
           <my-selection
             @click="show('shown_gender')"
             :active="shown_gender"
-            :title="t('gender')"
+            title="gender"
             :type="getGenderName()"
           ></my-selection>
           <my-selection
             @click="show('shown_skin_color')"
             :active="shown_skin_color"
-            :title="t('color_skin')"
+            title="color_skin"
             :type="t(MY.color.skin.name)"
           >
           </my-selection>
           <my-selection
             @click="show('shown_eyes_color')"
             :active="shown_eyes_color"
-            :title="t('color_eyes')"
+            title="color_eyes"
             :type="t(MY.color.eyes.name)"
           >
           </my-selection>
           <my-selection
             @click="show('shown_hair_color')"
             :active="shown_hair_color"
-            :title="t('color_hair')"
+            title="color_hair"
             :type="t(MY.color.hair.name)"
           >
           </my-selection>
@@ -57,7 +57,7 @@
           <my-controller
             @click="show('shown_age')"
             :active="shown_age"
-            :title="t('age')"
+            title="age"
             :value="age"
             age
             note="Взрослый"
@@ -65,17 +65,17 @@
           <my-controller
             @click="show('shown_growth')"
             :active="shown_growth"
-            :title="t('height')"
+            title="height"
             value="100"
-            unit="см"
+            unit="cm"
             note="Маленький"
           ></my-controller>
           <my-controller
             @click="show('shown_weight')"
             :active="shown_weight"
-            :title="t('weight')"
+            title="weight"
             :value="weight"
-            unit="кг"
+            unit="kg"
             note=""
           >
           </my-controller>
@@ -85,20 +85,20 @@
           <my-selection
             @click="show('shown_characteristics')"
             :active="shown_characteristics"
-            title="Характеристики"
+            title="stats"
             type="Сил, Лов"
           ></my-selection>
           <my-selection
             @click="show('shown_skills')"
             :active="shown_skills"
-            title="Навыки"
+            title="skills"
             type="Арк, Ана"
           >
           </my-selection>
           <my-selection
             @click="show('shown_languages')"
             :active="shown_languages"
-            title="Языки"
+            title="languages"
             type="Акван"
           >
           </my-selection>
@@ -176,19 +176,6 @@
 
 <!-- Этнос_Карточка_stats -->          
           <div class="feature jbm-300">
-            <!-- <my-attribute
-              v-for="item of race.attributes_main"
-              :key="item"
-              :title="item.name"
-              :type="item.type"
-              plus
-              :numb="item.value"
-              :icon="item.icon"
-            >
-            </my-attribute> -->
-
-
-
                       <my-attribute
             v-for="n in getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos])"
             :key="n"
@@ -390,7 +377,7 @@
         active_skin: shown_skin_color,
       }"
     >
-      <!-- <img
+      <img
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('skin', skin_hower)"
         alt="skin"
@@ -406,7 +393,7 @@
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('eyes', eyes_hower)"
         alt="eyes"
-      /> -->
+      />
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -483,17 +470,6 @@
         :icon="name"
       >
       </my-attribute>
-
-      <!-- <my-attribute
-        v-for="item in attributes_main"
-        :key="item"
-        :title="item.name"
-        :type="item.type"
-        plus
-        :numb="item.value"
-        :icon="item.icon"
-      >
-      </my-attribute> -->
     </div>
 
     <div class="gap"></div>
@@ -525,16 +501,6 @@
         feet
         :icon="name"
       ></my-attribute>
-
-      <!-- <my-attribute
-        v-for="item in attributes_travel"
-        :key="item"
-        :title="item.name"
-        :type="item.type"
-        :numb="item.value"
-        feet
-        :icon="item.icon"
-      ></my-attribute> -->
     </div>
 
     <div class="gap"></div>

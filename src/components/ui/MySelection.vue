@@ -8,7 +8,7 @@
     }"
   >
     <div class="column_title jbm-300">
-      <div>{{ title }}</div>
+      <div>{{ t(title) }}</div>
     </div>
     <div
       class="column_link int-400"

@@ -3,7 +3,7 @@
     <div>{{ numb }}</div>
   </div>
   <div class="title jbm-300">
-    <div>{{ title }}</div>
+    <div>{{ t(title) }}</div>
   </div>
   <div class="main">
     <transition mode="out-in" name="type">
