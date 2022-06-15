@@ -22,7 +22,7 @@
             :active="shown_ethnos"
             :title="t('ethnos')"
             :type="t(MY.ethnos)"
-            :rare="ethnos_select.rare"
+            :rare="getEthnosObj().rare"
           ></my-selection>
           <my-selection
             @click="show('shown_gender')"
@@ -111,10 +111,10 @@
     <!-- Этнос-->
     <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
-        <!-- Этнос_attributes_main -->
+        <!-- Этнос_stats + qualities -->
         <div class="feature jbm-300">
           <my-attribute
-            v-for="n in getActiveRaceAttribute(MY.stats)"
+            v-for="n in getActiveAttribute(MY.stats, getRaceObj())"
             :key="n"
             :title="n"
             :type="`${n}_base`"
@@ -124,7 +124,7 @@
           >
           </my-attribute>
           <my-attribute
-            v-for="n in getActiveRaceAttribute(MY.qualities)"
+            v-for="n in getActiveAttribute(MY.qualities, getRaceObj())"
             :key="n"
             :title="n"
             :numb="getRaceObj()[n]"
@@ -132,7 +132,7 @@
             :icon="n"
           ></my-attribute>
         </div>
-        <!-- Этнос_attributes_main -->
+        <!-- Этнос_stats + qualities -->
 
         <!-- Этнос_proficiencies -->
         <div class="proficiencies">
@@ -159,11 +159,12 @@
       </div>
       <!-- Этнос_fines -->
 
+      <!-- Этнос_Карточка -->
       <div class="ethnos_cards_menu">
         <my-selection-card
           v-for="(val, ethnos) in getAllEthnosObj()"
           :key="ethnos"
-          @click="ethnosName(ethnos, getAllEthnosObj()[ethnos].rare)"
+          @click="ethnosName(ethnos)"
           :class="{ selection_card_active: MY.ethnos === ethnos }"
         >
           <div>
@@ -172,8 +173,10 @@
               :alt="image"
             />
           </div>
+
+<!-- Этнос_Карточка_stats -->          
           <div class="feature jbm-300">
-            <my-attribute
+            <!-- <my-attribute
               v-for="item of race.attributes_main"
               :key="item"
               :title="item.name"
@@ -182,22 +185,44 @@
               :numb="item.value"
               :icon="item.icon"
             >
-            </my-attribute>
-          </div>
+            </my-attribute> -->
 
+
+
+                      <my-attribute
+            v-for="n in getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos])"
+            :key="n"
+            :title="n"
+            :type="`${n}_base`"
+            plus
+            :numb="getAllEthnosObj()[ethnos][n]"
+            :icon="n"
+          >
+          </my-attribute>
+          </div>
+<!-- Этнос_Карточка_stats -->
+
+<!-- Этнос_Карточка_fines -->
           <div class="fines">
             <my-fines
-              v-for="item of race.fines"
+              v-for="item in getAllEthnosObj()[ethnos].fines"
               :key="item"
-              :effect="item.effect"
-              :icon="item.icon"
-              :title="item.title"
-              :description="item.description"
+              :icon="item.type"
+              :title="item.keyword"
+              :details="item.details"
             ></my-fines>
           </div>
-          <my-card-text :title="getAllEthnosObj()[ethnos].name" :text="getAllEthnosObj()[ethnos].details" :rare="getAllEthnosObj()[ethnos].rare">
+<!-- Этнос_Карточка_fines -->
+
+          <my-card-text
+            :title="getAllEthnosObj()[ethnos].name"
+            :text="getAllEthnosObj()[ethnos].details"
+            :rare="getAllEthnosObj()[ethnos].rare"
+          >
           </my-card-text>
         </my-selection-card>
+        <!-- Этнос_Карточка -->
+
       </div>
     </my-selection-box>
     <!-- Этнос -->
@@ -720,56 +745,6 @@ export default {
       age: 34,
       weight: 15,
 
-      ethnos_select: {
-        name: "Коренастый",
-        rare: "",
-      },
-
-      attributes_main: [
-        {
-          name: "сила",
-          type: "базовая",
-          value: 0,
-          icon: "strength",
-          base: false,
-        },
-        {
-          name: "ловкость",
-          type: "базовая",
-          value: 2,
-          icon: "dexterity",
-          base: true,
-        },
-        {
-          name: "телосложение",
-          type: "базовое",
-          value: 0,
-          icon: "constitution",
-          base: false,
-        },
-        {
-          name: "интелект",
-          type: "базовый",
-          value: 0,
-          icon: "intelligence",
-          base: false,
-        },
-        {
-          name: "мудрость",
-          type: "базовая",
-          value: 0,
-          icon: "wisdom",
-          base: false,
-        },
-        {
-          name: "харизма",
-          type: "базовая",
-          value: 0,
-          icon: "charisma",
-          base: false,
-        },
-      ],
-
       attributes_race: [
         {
           name: "Акробатика",
@@ -783,139 +758,6 @@ export default {
         },
       ],
 
-      attributes_travel: [
-        {
-          name: "скорость",
-          type: "пешком",
-          value: 25,
-          icon: "speed",
-          base: true,
-        },
-        {
-          name: "Анализ",
-          value: 0,
-          icon: "vision_night",
-        },
-      ],
-
-      inventory: [
-        {
-          name: "оружие",
-          type: null,
-        },
-        {
-          name: "доспехи",
-          type: null,
-        },
-        {
-          name: "инструменты",
-          type: null,
-        },
-        {
-          name: "языки",
-          type: "Всеобщий, Полуросликов",
-        },
-      ],
-
-      fines: [
-        {
-          effect: "positive",
-          icon: "advantage",
-          title: "Переброс",
-          description: 'любого кубика при "1"',
-        },
-        {
-          effect: "positive",
-          icon: "advantage",
-          title: "Преимущество",
-          description: "против Испуга",
-        },
-        {
-          effect: "positive",
-          icon: "plus",
-          title: "Проскальзывание",
-          description: "Проскальзывание среди существ выше среднего",
-        },
-      ],
-
-      ethnos_card: [
-        {
-          name: "Коренастый",
-          attributes_main: [
-            {
-              name: "телосложение",
-              type: "базовое",
-              value: 1,
-              icon: "constitution",
-              base: false,
-            },
-          ],
-          fines: [
-            {
-              effect: "positive",
-              icon: "advantage",
-              title: "Преимущество",
-              description: "против Яда",
-            },
-            {
-              effect: "positive",
-              icon: "advantage",
-              title: "Сопротивление",
-              description: "урону Ядом",
-            },
-          ],
-          img: "@/assets/img/characters/halfling/ethhnos/image.png",
-          story:
-            "Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую ко всему чужому, призрачные полурослики в качестве искателей приключений встречаются редко.",
-        },
-        {
-          name: "Легконогий",
-          attributes_main: [
-            {
-              name: "харизма",
-              type: "базовая",
-              value: 1,
-              icon: "charisma",
-              base: false,
-            },
-          ],
-          fines: [
-            {
-              effect: "positive",
-              icon: "plus",
-              title: "Скрытность",
-              description: "за существом выше среднего",
-            },
-          ],
-          img: "@/assets/img/characters/halfling/ethhnos/image.png",
-          story:
-            "Умеют отлично скрываться, в том числе используя других существ как укрытие. Они приветливы и хорошо ладят с другими. В мире Забытых Королевств легконогие являются самой распространённой ветвью полуросликов. Более других склонны к перемене мест, и часто селятся по соседству с другими народами, или ведут кочевую жизнь. В мире Серого Ястреба таких полуросликов называют мохноногими или великанчиками.",
-        },
-        {
-          name: "Призрачный",
-          attributes_main: [
-            {
-              name: "мудрость",
-              type: "базовая",
-              value: 1,
-              icon: "wisdom",
-              base: false,
-            },
-          ],
-          fines: [
-            {
-              effect: "positive",
-              icon: "plus",
-              title: "Телепатия",
-              description: "на известных языках",
-            },
-          ],
-          img: "@/assets/img/characters/halfling/ethhnos/image.png",
-          story:
-            "Умеют отлично скрываться, в том числе используя других существ как укрытие. Они приветливы и хорошо ладят с другими. В мире Забытых Королевств легконогие являются самой распространённой ветвью полуросликов. Более других склонны к перемене мест, и часто селятся по соседству с другими народами, или ведут кочевую жизнь. В мире Серого Ястреба таких полуросликов называют мохноногими или великанчиками.",
-          rare: "Спросите своего Мастера, можете ли Вы играть представителем этого этноса.",
-        },
-      ],
     };
   },
   //  watch: {
@@ -927,11 +769,11 @@ export default {
   //   }
   // },
   methods: {
-    getActiveRaceAttribute(obj) {
+
+    getActiveAttribute(obj, obj_2) {
       let arr = [];
-      let qualities = Object.keys(obj);
       for (let kay in obj) {
-        if (kay in this.getRaceObj()) {
+        if (kay in obj_2) {
           arr.push(kay);
         }
       }
@@ -958,10 +800,8 @@ export default {
       }
     },
 
-    ethnosName(name, rare) {
-      console.log(name, rare);
+    ethnosName(name) {
       this.MY.ethnos = name;
-      this.ethnos_select.rare = rare;
     },
 
     goTo(route) {
@@ -1062,32 +902,19 @@ export default {
       return i + j;
     },
 
-    // getBaseQualities() {
-    //   let arr = [];
-    //   let qualities = Object.keys(this.MY.qualities);
-    //   for (let kay in this.MY.qualities) {
-    //     if (kay in this.race[this.MY.race]) {
-    //       arr.push(kay);
-    //     }
-    //   }
-    //   return arr;
-    // },
-
     getRaceObj() {
       return this.race[this.MY.race];
     },
 
-     getAllEthnosObj() {
+    getAllEthnosObj() {
       return this.getRaceObj().settings.ethnos;
     },
 
     getEthnosObj() {
-      if (
-        this.race[this.MY.race].settings.ethnos[this.MY.ethnos] == undefined
-      ) {
+      if (this.getAllEthnosObj()[this.MY.ethnos] == undefined) {
         return null;
       } else {
-        return this.race[this.MY.race].settings.ethnos[this.MY.ethnos];
+        return this.getAllEthnosObj()[this.MY.ethnos];
       }
     },
   },
@@ -1106,16 +933,10 @@ export default {
 
   created() {
     this.default_MY.race = Object.keys(this.race)[0];
-    this.default_MY.ethnos = Object.keys(
-      this.race[this.default_MY.race].settings.ethnos
-    )[0];
-    this.default_MY.color =
-      this.race[this.default_MY.race].settings.ethnos[
-        this.default_MY.ethnos
-      ].settings.color;
+    this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
+    this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
     this.MY = this.default_MY;
     console.log();
-    // console.log(this.race.halfling.settings.ethnos);
   },
 };
 </script>
