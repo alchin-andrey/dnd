@@ -69,7 +69,7 @@ export default {
             {
               type: "plus",
               keyword: "stealth",
-              details: "behind_bigger_then_mid",
+              details: "behind_bigger_than_mid",
             },
           ],
         },
@@ -94,11 +94,11 @@ export default {
             {
               type: "plus",
               keyword: "telepathy",
-              details: "secrecy_size_details",
+              details: "known_languages",
             },
           ],
 
-          rare: true,
+          rare: "rare",
         },
       },
       gender: gender,

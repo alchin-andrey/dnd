@@ -1,11 +1,11 @@
 <template>
 <div class="int-400">
-            <h3 class="title">{{ title }}</h3>
+            <h3 class="title">{{ t(title) }}</h3>
             <p class="text">
-              {{ text }}
+              {{ t(text) }}
               <br v-if="rare" />
               <br v-if="rare" />
-              <span v-if="rare">{{ rare }}</span>
+              <span v-if="rare">{{ t(`${rare}_details`) }}</span>
             </p>
           </div>
 </template>
@@ -23,8 +23,8 @@ export default {
       default: null,
     },
     rare: {
-      type: Boolean,
-      default: false,
+      type: String,
+      default: null,
     },
   },
 };

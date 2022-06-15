@@ -272,7 +272,7 @@ export default {
             
             ghost:"призрачный",
 
-            rare:"редкий этнос",           
+            rare:"редкий этнос",        
             ghost_halfling_details: races.ghost_halfling,
             rare_details:races.rare,
 

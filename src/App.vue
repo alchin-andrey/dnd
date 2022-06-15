@@ -6,7 +6,13 @@
           <img alt="logo" src="@/assets/img/logo.svg" />
         </div>
 
-        <my-slider numb="01" :title="t('race')" :arr="Object.keys(this.race)" :type="MY.race"> </my-slider>
+        <my-slider
+          numb="01"
+          :title="t('race')"
+          :arr="Object.keys(this.race)"
+          :type="MY.race"
+        >
+        </my-slider>
 
         <div class="delimiter"></div>
 
@@ -108,62 +114,57 @@
         <!-- Этнос_attributes_main -->
         <div class="feature jbm-300">
           <my-attribute
-            v-for="item in attributes_main"
-            :key="item"
-            :title="item.name"
-            :type="item.type"
+            v-for="n in getActiveRaceAttribute(MY.stats)"
+            :key="n"
+            :title="n"
+            :type="`${n}_base`"
             plus
-            :numb="item.value"
-            :icon="item.icon"
-            ethnos
-            :base="item.base"
+            :numb="getRaceObj()[n]"
+            :icon="n"
           >
           </my-attribute>
           <my-attribute
-            v-for="item in attributes_travel"
-            :key="item"
-            :title="item.name"
-            :type="item.type"
-            :numb="item.value"
+            v-for="n in getActiveRaceAttribute(MY.qualities)"
+            :key="n"
+            :title="n"
+            :numb="getRaceObj()[n]"
             feet
-            :icon="item.icon"
-            ethnos
-            :base="item.base"
+            :icon="n"
           ></my-attribute>
         </div>
         <!-- Этнос_attributes_main -->
 
-        <!-- Этнос_inventory -->
-        <div class="inventory">
+        <!-- Этнос_proficiencies -->
+        <div class="proficiencies">
           <my-inventory
-            v-for="item in inventory"
-            :key="item"
-            :title="item.name"
-            :item="item.type"
-            ethnos
+            v-for="(val, name) in getRaceObj().proficiencies"
+            :key="name"
+            :title="name"
+            :item="getProficienciesItem(name)"
           >
           </my-inventory>
         </div>
-        <!-- Этнос_inventory -->
+        <!-- Этнос_proficiencies -->
 
+        <!-- Этнос_fines -->
         <div class="fines">
           <my-fines
-            v-for="item in fines"
+            v-for="item in getRaceObj().fines"
             :key="item"
-            :effect="item.effect"
-            :icon="item.icon"
-            :title="item.title"
-            :description="item.description"
+            :icon="item.type"
+            :title="item.keyword"
+            :details="item.details"
           ></my-fines>
         </div>
       </div>
+      <!-- Этнос_fines -->
 
       <div class="ethnos_cards_menu">
         <my-selection-card
-          v-for="race of ethnos_card"
-          :key="race"
-          @click="ethnosName(race.name, race.rare)"
-          :class="{ selection_card_active: ethnos_select.name === race.name }"
+          v-for="(val, ethnos) in getAllEthnosObj()"
+          :key="ethnos"
+          @click="ethnosName(ethnos, getAllEthnosObj()[ethnos].rare)"
+          :class="{ selection_card_active: MY.ethnos === ethnos }"
         >
           <div>
             <img
@@ -194,7 +195,7 @@
               :description="item.description"
             ></my-fines>
           </div>
-          <my-card-text :title="race.name" :text="race.story" :rare="race.rare">
+          <my-card-text :title="getAllEthnosObj()[ethnos].name" :text="getAllEthnosObj()[ethnos].details" :rare="getAllEthnosObj()[ethnos].rare">
           </my-card-text>
         </my-selection-card>
       </div>
@@ -284,9 +285,7 @@
 
     <!-- Возраст -->
     <my-selection-box :shown="shown_age">
-
-    <AgeWeight :value="age" :arr="age_arr" age/>
-
+      <AgeWeight :value="age" :arr="age_arr" age />
     </my-selection-box>
     <!-- Возраст -->
 
@@ -335,9 +334,7 @@
 
     <!-- Вес -->
     <my-selection-box :shown="shown_weight">
-
-    <AgeWeight :value="weight" :arr="weight_arr"/>
-    
+      <AgeWeight :value="weight" :arr="weight_arr" />
     </my-selection-box>
     <!-- Вес -->
 
@@ -462,9 +459,6 @@
       >
       </my-attribute>
 
-
-
-
       <!-- <my-attribute
         v-for="item in attributes_main"
         :key="item"
@@ -496,9 +490,8 @@
     <div class="gap"></div>
     <!-- attributes_race -->
 
-    <!-- attributes_travel -->
+    <!-- qualities -->
     <div class="feature jbm-300">
-
       <my-attribute
         v-for="(val, name) in MY.qualities"
         :key="name"
@@ -507,11 +500,7 @@
         feet
         :icon="name"
       ></my-attribute>
-      
-      
-      
-      
-      
+
       <!-- <my-attribute
         v-for="item in attributes_travel"
         :key="item"
@@ -524,17 +513,16 @@
     </div>
 
     <div class="gap"></div>
-    <!-- attributes_travel -->
+    <!-- qualities -->
 
     <!-- proficiencies -->
 
-    <div class="inventory">
+    <div class="proficiencies">
       <my-inventory
         v-for="(val, name) in MY.proficiencies"
         :key="name"
         :title="name"
         :item="getProficienciesItem(name)"
-        
       >
       </my-inventory>
     </div>
@@ -544,7 +532,6 @@
 
     <!-- fines -->
     <div class="fines">
-
       <my-fines
         v-for="item in getRaceObj().fines"
         :key="item"
@@ -725,11 +712,10 @@ export default {
       hair_hower: null,
       eyes_hower: null,
 
-
       active: false,
 
-      age_arr: [0, 20, 'x', 'x', 75, 'x', 'x', 130, 150],
-      weight_arr: [0, 'x', 'x', 15, 20],
+      age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
+      weight_arr: [0, "x", "x", 15, 20],
 
       age: 34,
       weight: 15,
@@ -783,7 +769,6 @@ export default {
           base: false,
         },
       ],
-
 
       attributes_race: [
         {
@@ -936,15 +921,25 @@ export default {
   //  watch: {
   //   MY: {
   //     handler(newQuestion) {
-        
+
   //     },
   //     immediate: true
   //   }
   // },
   methods: {
+    getActiveRaceAttribute(obj) {
+      let arr = [];
+      let qualities = Object.keys(obj);
+      for (let kay in obj) {
+        if (kay in this.getRaceObj()) {
+          arr.push(kay);
+        }
+      }
+      return arr;
+    },
 
     getProficienciesItem(name) {
-      let arr = []
+      let arr = [];
       for (let i in this.getRaceObj().proficiencies[name]) {
         arr.push(this.getRaceObj().proficiencies[name][i].name);
       }
@@ -952,10 +947,8 @@ export default {
     },
 
     getNewEthnos() {
-      this.MY.ethnos = Object.keys(this.race[this.MY.race].settings.ethnos)[0]
+      this.MY.ethnos = Object.keys(this.race[this.MY.race].settings.ethnos)[0];
     },
-
-
 
     getGenderName() {
       if (this.MY.gender.feel === this.genders.feel.cisgender) {
@@ -966,7 +959,8 @@ export default {
     },
 
     ethnosName(name, rare) {
-      this.ethnos_select.name = name;
+      console.log(name, rare);
+      this.MY.ethnos = name;
       this.ethnos_select.rare = rare;
     },
 
@@ -990,12 +984,12 @@ export default {
 
     show(name) {
       if (this[name] === false) {
-      this.close();
-      this[name] = true;
-      this.shown_home = false;
+        this.close();
+        this[name] = true;
+        this.shown_home = false;
       } else {
-      this.close();
-      this.shown_home = true;
+        this.close();
+        this.shown_home = true;
       }
     },
 
@@ -1060,33 +1054,42 @@ export default {
 
     getNumbStats(name) {
       let i = 0;
-      // let j = 0;
-      this.getRaceObj()[name] == null ? i = 0 : i = this.getRaceObj()[name];
-      // this.getEthnosObj()[name] == null ? j = 0 : j = this.getEthnosObj()[name];
-      return i;
-    }, 
+      let j = 0;
+      this.getRaceObj()[name] == null ? (i = 0) : (i = this.getRaceObj()[name]);
+      this.getEthnosObj()[name] == null
+        ? (j = 0)
+        : (j = this.getEthnosObj()[name]);
+      return i + j;
+    },
 
-    getBaseQualities() {
-      let arr = [];
-      let qualities = Object.keys(this.MY.qualities);
-      for (let kay in this.MY.qualities) {
-        if (kay in this.race[this.MY.race]) {
-          arr.push(kay);
-        }
-      }
-      return arr;
-    }, 
+    // getBaseQualities() {
+    //   let arr = [];
+    //   let qualities = Object.keys(this.MY.qualities);
+    //   for (let kay in this.MY.qualities) {
+    //     if (kay in this.race[this.MY.race]) {
+    //       arr.push(kay);
+    //     }
+    //   }
+    //   return arr;
+    // },
 
     getRaceObj() {
       return this.race[this.MY.race];
-    }, 
+    },
+
+     getAllEthnosObj() {
+      return this.getRaceObj().settings.ethnos;
+    },
+
     getEthnosObj() {
-      if (this.race[this.MY.race].settings.ethnos[this.MY.ethnos] == undefined) {
-        return null
+      if (
+        this.race[this.MY.race].settings.ethnos[this.MY.ethnos] == undefined
+      ) {
+        return null;
       } else {
         return this.race[this.MY.race].settings.ethnos[this.MY.ethnos];
       }
-    }, 
+    },
   },
 
   computed: {
@@ -1102,11 +1105,16 @@ export default {
   },
 
   created() {
-    this.default_MY.race = Object.keys(this.race)[0]
-    this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
-    this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
+    this.default_MY.race = Object.keys(this.race)[0];
+    this.default_MY.ethnos = Object.keys(
+      this.race[this.default_MY.race].settings.ethnos
+    )[0];
+    this.default_MY.color =
+      this.race[this.default_MY.race].settings.ethnos[
+        this.default_MY.ethnos
+      ].settings.color;
     this.MY = this.default_MY;
-    console.log()
+    console.log();
     // console.log(this.race.halfling.settings.ethnos);
   },
 };
@@ -1376,7 +1384,7 @@ body {
   gap: 4px;
 }
 
-.inventory {
+.proficiencies {
   color: rgba(255, 255, 255, 0.2);
   max-width: 362px;
   display: flex;
@@ -1529,7 +1537,6 @@ body {
   flex: 1 1 auto;
 }
 
-
 .slider_age_back {
   width: 344px;
   height: 100%;
@@ -1568,7 +1575,6 @@ body {
   height: 100%;
 }
 
-
 .slider_weight_back {
   width: 344px;
   height: 100%;
@@ -1587,10 +1593,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
-
-
-
 
 /* -------------slider-grwwth------------------- */
 </style>
