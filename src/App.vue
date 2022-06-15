@@ -497,7 +497,7 @@
         v-for="(val, name) in MY.qualities"
         :key="name"
         :title="name"
-        :numb="getRaceObj()[name]"
+        :numb="getNumbStats(name)"
         feet
         :icon="name"
       ></my-attribute>
@@ -861,8 +861,8 @@ export default {
     getNumbStats(name) {
       let i = 0;
       let j = 0;
-      this.getRaceObj()[name] == null ? (i = 0) : (i = this.getRaceObj()[name]);
-      this.getEthnosObj()[name] == null
+      this.getRaceObj()[name] === undefined ? (i = 0) : (i = this.getRaceObj()[name]);
+      this.getEthnosObj()[name] === undefined
         ? (j = 0)
         : (j = this.getEthnosObj()[name]);
       return i + j;
@@ -1164,7 +1164,6 @@ body {
 }
 
 .feature {
-  color: rgba(255, 255, 255, 0.2);
   width: 362px;
   display: flex;
   flex-direction: column;
@@ -1172,7 +1171,6 @@ body {
 }
 
 .proficiencies {
-  color: rgba(255, 255, 255, 0.2);
   max-width: 362px;
   display: flex;
   flex-direction: column;

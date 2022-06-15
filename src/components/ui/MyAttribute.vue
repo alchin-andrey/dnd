@@ -4,11 +4,11 @@
       <div class="icon">
         <img :src="getImage(icon)" :alt="icon" />
       </div>
-      <div class="item" :class="{ active: numb > 0 }">
+      <div class="item" :class="{ passive: numb == 0 }">
         {{ t(title) }}<span>{{ t(type) }}</span>
       </div>
-      <div class="numb" :class="{ active: numb > 0 }">
-        {{ plus ? "+" : "" }}{{ getNumb(numb) }} {{ feet ? "футов" : "" }}
+      <div class="numb" :class="{ passive: numb == 0 }">
+        {{ plus ? "+" : "" }}{{ numb }} {{ feet ? "футов" : "" }}
       </div>
     </div>
     <div class="visual">
@@ -88,14 +88,6 @@ export default {
   },
   methods: {
 
-    getNumb(numb) {
-      if (numb === null) {
-        return 0;
-      } else {
-        return numb;
-      }
-    },
-
     getImage(name) {
       if (name === null) {
         return null;
@@ -152,6 +144,10 @@ export default {
 
 .active {
   color: #ffffff;
+}
+
+.passive {
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .numb {
