@@ -95,6 +95,7 @@ export default {
             story:"прошлое",
 
             age:"возраст",
+            maturity:"зрелость",
                 year: "год",
                 years: "лет",
                 yeara: "года",
@@ -102,7 +103,7 @@ export default {
                 young: "молодой",
                 mature: "взрослый",
                 old: "пожилой",
-                oldest: "старик",
+                oldest: "престарелый",
 
 
             weight:"вес",
@@ -115,15 +116,9 @@ export default {
 
             size:"размер",
 
-                small_size:"маленький",
-                medium_size:"средний",
-
-            maturity:"зрелость",
-
-                young:"молодой",
-                mature:"взрослый",
-                old:"пожилой",
-                oldest:"престарелый",
+                size_small:"маленький",
+                size_medium:"средний",
+                size_big:"большой",
 
             HP_max:"max HP",
             HP_dice:"кости хитов",
