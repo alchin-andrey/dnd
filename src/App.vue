@@ -537,7 +537,7 @@
 
     <!-- text -->
     <div class="story int-400">
-      <p>
+      <!-- <p>
         Целью большинства полуросликов является домашний уют. Место, где можно
         поселиться в покое и тишине, подальше от мародёрствующих чудовищ и
         сражающихся армий. Огонь очага, сытная пища, добрая выпивка и добрая
@@ -642,7 +642,14 @@
           >Спросите своего Мастера, можете ли Вы играть представителем этой
           подрасы.</span
         >
-      </p>
+      </p> -->
+      <div v-html="t(getRaceObj().details)"></div>
+      <my-card-text
+        :title="getEthnosObj().name"
+        :text="getEthnosObj().details"
+        :rare="getEthnosObj().rare"
+      >
+      </my-card-text>
     </div>
   </div>
 </template>
@@ -1169,10 +1176,6 @@ body {
   color: #ffffff;
   margin-top: 25px;
   margin-bottom: 5px;
-}
-
-.story span {
-  color: #ffc93d;
 }
 
 .colors_box {
