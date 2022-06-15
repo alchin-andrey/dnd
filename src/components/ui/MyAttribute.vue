@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!ethnos || base" class="column">
+  <div class="column jbm-300">
     <div class="column_value">
       <div class="icon">
         <img :src="getImage(icon)" :alt="icon" />

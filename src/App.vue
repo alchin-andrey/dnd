@@ -112,7 +112,7 @@
     <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
         <!-- Этнос_stats + qualities -->
-        <div class="feature jbm-300">
+        <my-wrapper>
           <my-attribute
             v-for="n in getActiveAttribute(MY.stats, getRaceObj())"
             :key="n"
@@ -131,11 +131,12 @@
             feet
             :icon="n"
           ></my-attribute>
-        </div>
+        </my-wrapper>
+
         <!-- Этнос_stats + qualities -->
 
         <!-- Этнос_proficiencies -->
-        <div class="proficiencies">
+        <my-wrapper>
           <my-inventory
             v-for="(val, name) in getRaceObj().proficiencies"
             :key="name"
@@ -143,11 +144,11 @@
             :item="getProficienciesItem(name)"
           >
           </my-inventory>
-        </div>
+        </my-wrapper>
         <!-- Этнос_proficiencies -->
 
         <!-- Этнос_fines -->
-        <div class="fines">
+        <my-wrapper gap_8>
           <my-fines
             v-for="item in getRaceObj().fines"
             :key="item"
@@ -155,7 +156,7 @@
             :title="item.keyword"
             :details="item.details"
           ></my-fines>
-        </div>
+        </my-wrapper>
       </div>
       <!-- Этнос_fines -->
 
@@ -174,23 +175,26 @@
             />
           </div>
 
-<!-- Этнос_Карточка_stats -->          
-          <div class="feature jbm-300">
-                      <my-attribute
-            v-for="n in getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos])"
-            :key="n"
-            :title="n"
-            :type="`${n}_base`"
-            plus
-            :numb="getAllEthnosObj()[ethnos][n]"
-            :icon="n"
-          >
-          </my-attribute>
-          </div>
-<!-- Этнос_Карточка_stats -->
+          <!-- Этнос_Карточка_stats -->
+          <my-wrapper>
+            <my-attribute
+              v-for="n in getActiveAttribute(
+                MY.stats,
+                getAllEthnosObj()[ethnos]
+              )"
+              :key="n"
+              :title="n"
+              :type="`${n}_base`"
+              plus
+              :numb="getAllEthnosObj()[ethnos][n]"
+              :icon="n"
+            >
+            </my-attribute>
+          </my-wrapper>
+          <!-- Этнос_Карточка_stats -->
 
-<!-- Этнос_Карточка_fines -->
-          <div class="fines">
+          <!-- Этнос_Карточка_fines -->
+          <my-wrapper gap_8>
             <my-fines
               v-for="item in getAllEthnosObj()[ethnos].fines"
               :key="item"
@@ -198,8 +202,8 @@
               :title="item.keyword"
               :details="item.details"
             ></my-fines>
-          </div>
-<!-- Этнос_Карточка_fines -->
+          </my-wrapper>
+          <!-- Этнос_Карточка_fines -->
 
           <my-card-text
             :title="getAllEthnosObj()[ethnos].name"
@@ -209,7 +213,6 @@
           </my-card-text>
         </my-selection-card>
         <!-- Этнос_Карточка -->
-
       </div>
     </my-selection-box>
     <!-- Этнос -->
@@ -459,7 +462,7 @@
   <!-- sidebar_right -->
   <div v-if="shown_home" class="sidebar_right">
     <!-- stats -->
-    <div class="feature jbm-300">
+    <my-wrapper hr>
       <my-attribute
         v-for="(val, name) in MY.stats"
         :key="name"
@@ -470,13 +473,11 @@
         :icon="name"
       >
       </my-attribute>
-    </div>
-
-    <div class="gap"></div>
+    </my-wrapper>
     <!-- stats -->
 
     <!-- attributes_race -->
-    <div class="feature jbm-300">
+    <my-wrapper hr>
       <my-attribute
         v-for="item in attributes_race"
         :key="item"
@@ -486,13 +487,11 @@
         :icon="item.icon"
         cube_zero
       ></my-attribute>
-    </div>
-
-    <div class="gap"></div>
+    </my-wrapper>
     <!-- attributes_race -->
 
     <!-- qualities -->
-    <div class="feature jbm-300">
+    <my-wrapper hr>
       <my-attribute
         v-for="(val, name) in MY.qualities"
         :key="name"
@@ -501,14 +500,11 @@
         feet
         :icon="name"
       ></my-attribute>
-    </div>
-
-    <div class="gap"></div>
+    </my-wrapper>
     <!-- qualities -->
 
     <!-- proficiencies -->
-
-    <div class="proficiencies">
+    <my-wrapper gap_8 hr>
       <my-inventory
         v-for="(val, name) in MY.proficiencies"
         :key="name"
@@ -516,13 +512,11 @@
         :item="getProficienciesItem(name)"
       >
       </my-inventory>
-    </div>
-
-    <div class="gap"></div>
+    </my-wrapper>
     <!-- proficiencies -->
 
     <!-- fines -->
-    <div class="fines">
+    <my-wrapper gap_8 hr>
       <my-fines
         v-for="item in getRaceObj().fines"
         :key="item"
@@ -538,9 +532,7 @@
         :title="item.keyword"
         :details="item.details"
       ></my-fines>
-    </div>
-
-    <div class="gap"></div>
+    </my-wrapper>
     <!-- fines -->
 
     <!-- text -->
@@ -723,7 +715,6 @@ export default {
           icon: "intelligence",
         },
       ],
-
     };
   },
   //  watch: {
@@ -735,7 +726,6 @@ export default {
   //   }
   // },
   methods: {
-
     getActiveAttribute(obj, obj_2) {
       let arr = [];
       for (let kay in obj) {
@@ -861,7 +851,9 @@ export default {
     getNumbStats(name) {
       let i = 0;
       let j = 0;
-      this.getRaceObj()[name] === undefined ? (i = 0) : (i = this.getRaceObj()[name]);
+      this.getRaceObj()[name] === undefined
+        ? (i = 0)
+        : (i = this.getRaceObj()[name]);
       this.getEthnosObj()[name] === undefined
         ? (j = 0)
         : (j = this.getEthnosObj()[name]);
@@ -899,8 +891,13 @@ export default {
 
   created() {
     this.default_MY.race = Object.keys(this.race)[0];
-    this.default_MY.ethnos = Object.keys(this.race[this.default_MY.race].settings.ethnos)[0];
-    this.default_MY.color = this.race[this.default_MY.race].settings.ethnos[this.default_MY.ethnos].settings.color;
+    this.default_MY.ethnos = Object.keys(
+      this.race[this.default_MY.race].settings.ethnos
+    )[0];
+    this.default_MY.color =
+      this.race[this.default_MY.race].settings.ethnos[
+        this.default_MY.ethnos
+      ].settings.color;
     this.MY = this.default_MY;
     console.log();
   },
@@ -1131,7 +1128,7 @@ body {
 .sidebar_right {
   /* width: 426px; */
   min-width: 426px;
-  padding: 32px 0 32px 32px;
+  padding: 32px;
   overflow-y: scroll;
 }
 
@@ -1154,34 +1151,6 @@ body {
 
 .sidebar_right::-webkit-scrollbar {
   width: 0;
-}
-
-.gap {
-  width: 362px;
-  height: 1px;
-  margin: 26px 0;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.feature {
-  width: 362px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.proficiencies {
-  max-width: 362px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.fines {
-  max-width: 362px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .story {
@@ -1331,6 +1300,7 @@ body {
   align-items: flex-end;
   overflow: hidden;
 }
+
 .slider_age {
   width: 100%;
   height: calc(100% / 150 * 34);
@@ -1369,6 +1339,7 @@ body {
   align-items: flex-end;
   overflow: hidden;
 }
+
 .slider_weight {
   width: 100%;
   height: calc(100% / 20 * 18);
