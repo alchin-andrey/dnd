@@ -34,21 +34,21 @@
             @click="show('shown_skin_color')"
             :active="shown_skin_color"
             title="color_skin"
-            :type="t(MY.color.skin.name)"
+            :type="t(getCharColor('skin').name)"
           >
           </my-selection>
           <my-selection
             @click="show('shown_eyes_color')"
             :active="shown_eyes_color"
             title="color_eyes"
-            :type="t(MY.color.eyes.name)"
+            :type="t(getCharColor('eyes').name)"
           >
           </my-selection>
           <my-selection
             @click="show('shown_hair_color')"
             :active="shown_hair_color"
             title="color_hair"
-            :type="t(MY.color.hair.name)"
+            :type="t(getCharColor('hair').name)"
           >
           </my-selection>
         </div>
@@ -207,7 +207,7 @@
 
           <my-card-text
             :title="getAllEthnosObj()[ethnos].name"
-            :text="getAllEthnosObj()[ethnos].details"
+            :text="t(getAllEthnosObj()[ethnos].details)"
             :rare="getAllEthnosObj()[ethnos].rare"
           >
           </my-card-text>
@@ -235,13 +235,13 @@
               @click="choiceColor('skin', color, i, j)"
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
-              :select_link="MY.color.skin.hex"
+              :select_link="getCharColor('skin').hex"
             >
             </my-color-block>
           </div>
         </div>
         <my-card-text
-          :title="t(skin_hower ? skin_hower.name : MY.color.skin.name)"
+          :title="skin_hower ? skin_hower.name : getCharColor('skin').name"
           :text="`${t('characteristic')} ${t('for_ethnos')}`"
         ></my-card-text>
       </my-selection-card>
@@ -260,13 +260,13 @@
               @click="choiceColor('eyes', color, i, j)"
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
-              :select_link="MY.color.eyes.hex"
+              :select_link="getCharColor('eyes').hex"
             >
             </my-color-block>
           </div>
         </div>
         <my-card-text
-          :title="t(eyes_hower ? eyes_hower.name : MY.color.eyes.name)"
+          :title="eyes_hower ? eyes_hower.name : getCharColor('eyes').name"
           :text="`${t('characteristic')} ${t('for_ethnos')}`"
         ></my-card-text>
       </my-selection-card>
@@ -285,13 +285,13 @@
               @click="choiceColor('hair', color, i, j)"
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
-              :select_link="MY.color.hair.hex"
+              :select_link="getCharColor('hair').hex"
             >
             </my-color-block>
           </div>
         </div>
         <my-card-text
-          :title="t(hair_hower ? hair_hower.name : MY.color.hair.name)"
+          :title="hair_hower ? hair_hower.name : getCharColor('hair').name"
           :text="`${t('characteristic')} ${t('for_ethnos')}`"
         ></my-card-text>
       </my-selection-card>
@@ -373,6 +373,7 @@
   </div>
   <!-- character -->
   <div class="represent">
+    
     <div
       class="character"
       :class="{
@@ -380,11 +381,13 @@
         active_skin: shown_skin_color,
       }"
     >
+
       <img
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('skin', skin_hower)"
         alt="skin"
       />
+
 
       <img
         :style="{ height: `${calcImg()}` }"
@@ -397,6 +400,7 @@
         :src="getCharImg('eyes', eyes_hower)"
         alt="eyes"
       />
+      
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -646,7 +650,7 @@
       <div v-html="t(getRaceObj().details)"></div>
       <my-card-text
         :title="getEthnosObj().name"
-        :text="getEthnosObj().details"
+        :text="t(getEthnosObj().details)"
         :rare="getEthnosObj().rare"
       >
       </my-card-text>
@@ -829,18 +833,26 @@ export default {
       }
     },
 
-    getCharImg(vale, hower) {
+    getCharColor(value) {
+      if (this.MY.color[value] === null) {
+        return this.getEthnosObj().settings.color[value];
+      } else {
+        return this.MY.color[value];
+      }
+    },
+
+    getCharImg(value, hower) {
       let race = this.MY.race;
       let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
-      let img = hower ? hower.img : this.MY.color[vale].img;
+      let img = hower ? hower.img : this.getCharColor(value).img;
       let sex;
       if (phisiological === "female" || phisiological === "demigirl") {
         sex = "female";
       } else {
         sex = "male";
       }
-      return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${vale}/${img}.png`);
+      return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
     },
 
     calcImg() {
@@ -901,10 +913,10 @@ export default {
     this.default_MY.ethnos = Object.keys(
       this.race[this.default_MY.race].settings.ethnos
     )[0];
-    this.default_MY.color =
-      this.race[this.default_MY.race].settings.ethnos[
-        this.default_MY.ethnos
-      ].settings.color;
+    // this.default_MY.color =
+    //   this.race[this.default_MY.race].settings.ethnos[
+    //     this.default_MY.ethnos
+    //   ].settings.color;
     this.MY = this.default_MY;
     console.log();
   },

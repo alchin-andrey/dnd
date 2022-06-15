@@ -56,7 +56,7 @@
         </div>
         <my-card-text
           :title="$root.MY.gender.phisiological"
-          :text="`${$root.MY.gender.phisiological}_details`"
+          :text="t(`${$root.MY.gender.phisiological}_details`)"
         >
         </my-card-text>
       </my-selection-card>
@@ -135,7 +135,7 @@
         </div>
         <my-card-text
           :title="$root.MY.gender.feel"
-          :text="`${$root.MY.gender.feel}_details`"
+          :text="t(`${$root.MY.gender.feel}_details`)"
         >
         </my-card-text>
       </my-selection-card>
@@ -159,7 +159,7 @@
           </div>
         </div>
         <my-card-text :title="$root.MY.gender.look"
-        :text="`${$root.MY.gender.look}_details`">
+        :text="t(`${$root.MY.gender.look}_details`)">
         </my-card-text>
       </my-selection-card>
 </template>

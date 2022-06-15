@@ -2,7 +2,7 @@
 <div class="int-400">
             <h3 class="title">{{ t(title) }}</h3>
             <p class="text">
-              {{ t(text) }}
+              {{ text }}
               <br v-if="rare" />
               <br v-if="rare" />
               <span v-if="rare">{{ t(`${rare}_details`) }}</span>

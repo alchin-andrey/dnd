@@ -33,9 +33,9 @@ export default {
     weight:null,
     height:null,
     color:{
-        skin: color[2][0],
-        eyes: color[4][5],
-        hair: color[1][4],
+        skin: null,
+        eyes: null,
+        hair: null,
     },
 
     //Calculated

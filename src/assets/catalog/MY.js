@@ -1,3 +1,5 @@
+import color from "./base_data/colors.js";
+
 export default {
     
     //Key selections
