@@ -66,7 +66,7 @@
             @click="show('shown_growth')"
             :active="shown_growth"
             title="height"
-            value="100"
+            :value="growth"
             unit="cm"
             note="Маленький"
           ></my-controller>
@@ -712,6 +712,7 @@ export default {
       weight_arr: [0, "x", "x", 15, 20],
 
       age: 34,
+      growth: 100,
       weight: 15,
 
       attributes_race: [
