@@ -172,4 +172,4 @@ export default {
         copper:0,
     }
 
-}
+};

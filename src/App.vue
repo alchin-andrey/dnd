@@ -168,11 +168,24 @@
           @click="ethnosName(ethnos)"
           :class="{ selection_card_active: MY.ethnos === ethnos }"
         >
-          <div>
-            <img
-              src="@/assets/img/characters/halfling/ethhnos/image.png"
-              :alt="image"
-            />
+          <div class="char_back"
+          :style="{ 'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})` }"
+          >
+      <img
+        :src="getCharEthnosImg('skin', ethnos)"
+        alt="skin"
+      />
+
+
+      <img
+        :src="getCharEthnosImg('hair', ethnos)"
+        alt="hair"
+      />
+
+      <img
+        :src="getCharEthnosImg('eyes', ethnos)"
+        alt="eyes"
+      />
           </div>
 
           <!-- Этнос_Карточка_stats -->
@@ -856,6 +869,20 @@ export default {
       return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
     },
 
+    getCharEthnosImg(value, ethnos_name) {
+      let race = this.MY.race;
+      let ethnos = ethnos_name;
+      let phisiological = this.MY.gender.phisiological;
+      let img = this.getAllEthnosObj()[ethnos_name].settings.color[value].img;
+      let sex;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        sex = "female";
+      } else {
+        sex = "male";
+      }
+      return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+    },
+
     calcImg() {
       if (
         this.shown_skin_color ||
@@ -1024,6 +1051,24 @@ body {
 .selection_card_active {
   border: 2px solid #ffffff;
   padding: 14px !important;
+}
+
+
+.char_back {
+  width: 100%;
+  height: 120px;
+  background: #0E1518;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.char_back img {
+  height: 300px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+  
 }
 
 /* ---------------------characters----------------------*/
