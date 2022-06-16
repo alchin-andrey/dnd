@@ -234,6 +234,8 @@ export default {
                 known_languages:"на известных языках",
                 fire_against:"против 🔥 Огня",
                 history_check_rock_gnome:"к проверке Истории к магическому, алхимическому или технологическому предмету",
+                stealth_in_stones: "при Скрытности в каменистой местности",
+                magic_against_int_wis_cha: "против Магии: Интеллект, Мудрость, Харизма",
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -431,6 +433,16 @@ export default {
             darkness_details: spells.darkness_details,
 
             spell_toy: spells.toy,
-            spell_toy_details: spells.toy_details
+            spell_toy_details: spells.toy_details,
+
+            spell_lighter: spells.lighter,
+            spell_lighter_details: spells.lighter_details,
+
+            spell_music_box: spells.music_box,
+            spell_music_box_details: spells.music_box_details,
+
+            spell_small_illusion: spells.small_illusion,
+            spell_small_illusion_details: spells.small_illusion_details,
+            
 
 }

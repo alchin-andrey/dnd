@@ -4,13 +4,11 @@ import gender from "./genders.js";
 import lang from "./languages.js";
 
 export default {
-
   halfling: {
     name: "halfling",
     details: "halfling_details",
 
     settings: {
-
       ethnos: {
         stout: {
           name: "stout",
@@ -115,11 +113,11 @@ export default {
       },
 
       age: {
-        min: 10,
+        baby: 10,
         young: 20,
-        mature: 75,
+        mature: 45,
         old: 100,
-        max: 150,
+        oldest: 150,
       },
 
       height: {
@@ -199,7 +197,7 @@ export default {
 
     settings: {
       ethnos: {
-        stout: {
+        rock: {
           name: "rock",
           details: "rock_gnome_details",
 
@@ -220,6 +218,8 @@ export default {
               color[5][1],
               color[6][0],
               color[6][1],
+              color[7][0],
+              color[7][1],
             ],
             hair: [color[2][2], color[2][3]],
           },
@@ -236,106 +236,105 @@ export default {
           ],
 
           spells: [
-      
             {
               level: 1,
               spell: spells.toy,
             },
-      
+
             {
-              level: 3,
+              level: 1,
               spell: spells.lighter,
-              gain: 2,
             },
-      
+
             {
-              level: 5,
-              spell: spells.darkness,
-            },
-          ],
-
-
-        },
-
-        lightfoot: {
-          name: "lightfoot",
-          details: "lightfoot_halfling_details",
-          link_male: "https://www.heroforge.com/load_config%3D503210924",
-          link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          settings: {
-            color: {
-              skin: color[2][1],
-              eyes: color[2][5],
-              hair: color[0][6],
-            },
-          },
-
-          charisma: 1,
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "stealth",
-              details: "behind_bigger_than_mid",
+              level: 1,
+              spell: spells.music_box,
             },
           ],
         },
 
-        ghost: {
-          name: "ghost",
-          details: "ghost_halfling_details",
-          link_male: "https://www.heroforge.com/load_config%3D503211188",
-          link_female: "https://www.heroforge.com/load_config%3D503211452",
+        deep: {
+          name: "deep",
+          details: "deep_gnome_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503210924",
+          // link_female: "https://www.heroforge.com/load_config%3D503211388",
 
-          settings: {
-            color: {
-              skin: color[2][2],
-              eyes: color[8][2],
-              hair: color[2][5],
-            },
+          color: {
+            skin: [color[0][3], color[0][4], color[0][5], color[0][6]],
+            eyes: [color[7][2], color[7][3], color[7][4], color[7][5]],
+            hair: color[8][1],
           },
 
-          wisdom: 1,
+          age: {
+            min: 10,
+            young: 18,
+            mature: 25,
+            old: 200,
+            max: 250,
+          },
+
+          weight: {
+            min: 36,
+            max: 54,
+          },
+
+          dexterity: 1,
+          vision_night: 120,
+
+          proficiencies: {
+            languages: [lang.undercommon],
+          },
 
           fines: [
             {
-              type: "plus",
-              keyword: "telepathy",
-              details: "known_languages",
+              type: "advantage",
+              keyword: "advantage",
+              details: "stealth_in_stones",
             },
           ],
+        },
 
-          rare: "rare",
+        forest: {
+          name: "forest",
+          details: "forest_gnome_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503211188",
+          // link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: color[2][2],
+            eyes: color[8][2],
+            hair: color[2][5],
+          },
+
+          dexterity: 1,
+          vision_night: 60,
+
+          proficiencies: {
+            languages: [lang.animal],
+          },
+
+          spells: [
+            {
+              level: 1,
+              spell: spells.small_illusion,
+            },
+          ],
         },
       },
+
       gender: gender,
       color: {
-        skin: [
-          color[1][0],
-          color[2][0],
-          color[2][1],
-          color[2][2],
-          color[2][3],
-          color[2][4],
-          color[2][5],
-          color[2][6],
-          color[0][6],
-          color[3][0],
-          color[12][0],
-          color[11][0],
-          color[10][0],
-        ],
-        eyes: [color[2][4], color[2][6]],
-        hair: [color[2][4], color[2][6], color[1][5], color[1][6]],
+        skin: [],
+        eyes: [],
+        hair: [],
       },
 
       age: {
         min: 10,
-        young: 20,
-        mature: 75,
-        old: 100,
-        max: 150,
+        young: 18,
+        mature: 40,
+        old: 350,
+        max: 500,
       },
 
       height: {
@@ -348,65 +347,25 @@ export default {
         max: 20,
       },
 
-      // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      custom_skills: 2,
-      custom_stats: 2,
-      custom_language: 1,
     },
 
-    dexterity: 2,
+    intelligence: 2,
 
     speed: 25,
 
     proficiencies: {
-      languages: [lang.common, lang.halfling],
+      languages: [lang.common, lang.gnome],
     },
 
     fines: [
       {
         type: "advantage",
         keyword: "advantage",
-        details: "fear_against",
+        details: "magic_against_int_wis_cha",
       },
 
-      {
-        type: "plus",
-        keyword: "rethrow",
-        details: "any_dice_1",
-      },
-
-      {
-        type: "plus",
-        keyword: "slippage",
-        details: "among_bigger_than_mid",
-      },
-
-      {
-        type: "disadvantage",
-        keyword: "disadvantage",
-        details: "fire_against",
-      },
     ],
 
-    spells: [
-      //ТОЛЬКО ДЛЯ ОТЛАДКИ
-
-      {
-        level: 1,
-        spell: spells.thaumaturgy,
-      },
-
-      {
-        level: 3,
-        spell: spells.hellish_rebuke,
-        gain: 2,
-      },
-
-      {
-        level: 5,
-        spell: spells.darkness,
-      },
-    ],
   },
 
   human: {

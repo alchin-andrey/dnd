@@ -112,15 +112,26 @@ export default {
     },
 
     toy:{
+        slot: 0,
         name: "spell_toy",
         details: "spell_toy_details",
     },
 
     lighter:{
-
+        slot: 0,
+        name: "spell_lighter",
+        details: "spell_lighter_details"
     },
 
     music_box:{
+        slot: 0,
+        name: "spell_music_box",
+        details: "spell_music_box_details",
+    },
 
+    small_illusion:{
+        slot:0,
+        name: "spell_small_illusion",
+        details: "spell_small_illusion_details",
     }
 }
