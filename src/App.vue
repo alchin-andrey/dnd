@@ -168,24 +168,17 @@
           @click="ethnosName(ethnos)"
           :class="{ selection_card_active: MY.ethnos === ethnos }"
         >
-          <div class="char_back"
-          :style="{ 'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})` }"
+          <div
+            class="char_back"
+            :style="{
+              'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
+            }"
           >
-      <img
-        :src="getCharEthnosImg('skin', ethnos)"
-        alt="skin"
-      />
+            <img :src="getCharEthnosImg('skin', ethnos)" alt="skin" />
 
+            <img :src="getCharEthnosImg('hair', ethnos)" alt="hair" />
 
-      <img
-        :src="getCharEthnosImg('hair', ethnos)"
-        alt="hair"
-      />
-
-      <img
-        :src="getCharEthnosImg('eyes', ethnos)"
-        alt="eyes"
-      />
+            <img :src="getCharEthnosImg('eyes', ethnos)" alt="eyes" />
           </div>
 
           <!-- Этнос_Карточка_stats -->
@@ -249,14 +242,21 @@
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
               :select_link="getCharColor('skin').hex"
+              :ethnos_color="getEthnosColor(color[i][j], 'skin')"
+              :race_color="getRaceColor(color[i][j], 'skin')"
             >
             </my-color-block>
           </div>
         </div>
-        <my-card-text
+        <my-card-text-color
           :title="skin_hower ? skin_hower.name : getCharColor('skin').name"
-          :text="`${t('characteristic')} ${t('for_ethnos')}`"
-        ></my-card-text>
+          :ethnos_color="skin_hower
+              ? getEthnosColor(skin_hower, 'skin')
+              : getEthnosColor(getCharColor('skin'), 'skin')"
+          :race_color="skin_hower
+              ? getRaceColor(skin_hower, 'skin')
+              : getRaceColor(getCharColor('skin'), 'skin')"
+        ></my-card-text-color>
       </my-selection-card>
     </my-selection-box>
     <!-- Цвет кожи -->
@@ -274,14 +274,21 @@
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
               :select_link="getCharColor('eyes').hex"
+              :ethnos_color="getEthnosColor(color[i][j], 'eyes')"
+              :race_color="getRaceColor(color[i][j], 'eyes')"
             >
             </my-color-block>
           </div>
         </div>
-        <my-card-text
+        <my-card-text-color
           :title="eyes_hower ? eyes_hower.name : getCharColor('eyes').name"
-          :text="`${t('characteristic')} ${t('for_ethnos')}`"
-        ></my-card-text>
+          :ethnos_color="eyes_hower
+              ? getEthnosColor(eyes_hower, 'eyes')
+              : getEthnosColor(getCharColor('eyes'), 'eyes')"
+          :race_color="eyes_hower
+              ? getRaceColor(eyes_hower, 'eyes')
+              : getRaceColor(getCharColor('eyes'), 'eyes')"
+        ></my-card-text-color>
       </my-selection-card>
     </my-selection-box>
     <!-- Цвет глаз -->
@@ -299,14 +306,21 @@
               :color="color[i][j].hex"
               :active_link="color[i][j].hex"
               :select_link="getCharColor('hair').hex"
+              :ethnos_color="getEthnosColor(color[i][j], 'hair')"
+              :race_color="getRaceColor(color[i][j], 'hair')"
             >
             </my-color-block>
           </div>
         </div>
-        <my-card-text
+        <my-card-text-color
           :title="hair_hower ? hair_hower.name : getCharColor('hair').name"
-          :text="`${t('characteristic')} ${t('for_ethnos')}`"
-        ></my-card-text>
+          :ethnos_color="hair_hower
+            ? getEthnosColor(hair_hower, 'hair')
+            : getEthnosColor(getCharColor('eyes'), 'hair')"
+          :race_color="hair_hower
+            ? getRaceColor(hair_hower, 'hair')
+            : getRaceColor(getCharColor('hair'), 'hair')"
+        ></my-card-text-color>
       </my-selection-card>
     </my-selection-box>
     <!-- Цвет волос -->
@@ -386,7 +400,6 @@
   </div>
   <!-- character -->
   <div class="represent">
-    
     <div
       class="character"
       :class="{
@@ -394,13 +407,11 @@
         active_skin: shown_skin_color,
       }"
     >
-
       <img
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('skin', skin_hower)"
         alt="skin"
       />
-
 
       <img
         :style="{ height: `${calcImg()}` }"
@@ -413,7 +424,6 @@
         :src="getCharImg('eyes', eyes_hower)"
         alt="eyes"
       />
-      
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -554,112 +564,6 @@
 
     <!-- text -->
     <div class="story int-400">
-      <!-- <p>
-        Целью большинства полуросликов является домашний уют. Место, где можно
-        поселиться в покое и тишине, подальше от мародёрствующих чудовищ и
-        сражающихся армий. Огонь очага, сытная пища, добрая выпивка и добрая
-        беседа. Хотя некоторые полурослики проживают свой век в удалённых
-        сельских общинах, другие сбиваются в постоянно кочующие общины, влекомые
-        открытыми дорогами, широкими горизонтами и возможностью открыть чудеса
-        новых мест и новых людей. Но даже такие кочевники любят покой, вкусную
-        еду, свой очаг и свой дом, даже если это повозка, трясущаяся по пыльной
-        дороге или плот, плывущий по течению реки.
-      </p>
-
-      <h3>Маленькие и практичные</h3>
-      <p>
-        Крошечные полурослики выживают в мире, полном более крупных существ,
-        стараясь избегать внимания, а если это оказывается невозможным, то
-        избегая враждебности. Они кажутся относительно безвредными, и благодаря
-        этому успешно существуют столетиями, оставаясь в тени империй, войн и
-        политической борьбы. Они склонны к полноте.
-        <br />
-        <br />
-        Кожа у полуросликов встречается от смуглой до бледной, с румянцем.
-        Волосы обычно коричневые или рыже-коричневые, вьющиеся. Глаза
-        полуросликов карие или ореховые. Мужчины часто отпускают длинные
-        бакенбарды, но бороды носят редко, а усы тем более. Они любят носить
-        простую, удобную одежду, предпочитая яркие цвета.
-        <br />
-        <br />
-        Практичность полуросликов распространяется не только на их одежду. Они
-        довольствуются удовлетворением основных потребностей и простых радостей,
-        уделяя совсем мало внимания роскоши. Даже богатейшие из них предпочитают
-        хранить своё добро в закрытых сундуках и подвалах, а не выставлять его
-        на всеобщее обозрение. Полурослики умеют находить простые решения своих
-        проблем, и являются весьма решительными.
-      </p>
-
-      <h3>Добрые и любопытные</h3>
-      <p>
-        Приветливый и дружелюбный народ. Ценят дружбу и родственные связи так же
-        как собственный дом и очаг, лишь в тайне мечтая о золоте и славе. И даже
-        те из них, кто стали искателями приключений, обычно отправляются в путь,
-        преследуя цели дружбы или общества, тяги к переменам или любопытства.
-        Они любят открывать для себя что-то новое, даже если это совсем простые
-        вещи, вроде экзотической еды или незнакомого стиля одежды.
-        <br />
-        <br />
-        Легко поддаются жалости, и не выносят вида чужих страданий. Они щедры, и
-        с радостью делятся тем, что имеют, даже в трудные времена.
-      </p>
-
-      <h3>Единые с толпой</h3>
-      <p>
-        Полурослики легко вливаются в сообщества людей, дварфов или эльфов, где
-        их ценят и всегда им рады. Сочетание их врождённых скрытности и
-        скромности позволяют им легко избегать ненужного внимания.
-        <br />
-        <br />
-        Полурослики охотно работают с другими, и они верны своим друзьям, вне
-        зависимости от их вида. Однако, если кто-то из их друзей, семьи или
-        общины оказывается под угрозой, они способны проявить удивительную
-        свирепость.
-      </p>
-
-      <h3>Приветливые и положительные</h3>
-      <p>
-        Полурослики стараются поладить с кем угодно, и не склонны выносить
-        поспешные суждения — особенно отрицательные.
-      </p>
-
-      <h3>Пасторальные удовольствия</h3>
-      <p>
-        Большинство полуросликов живёт в маленьких, мирных общинах с большими
-        фермами, среди ухоженных рощ. Они редко создают собственные королевства,
-        и не держат земель за пределами своих тихих владений. Они обычно не
-        признают среди себя какого-либо рода знати или королевской власти,
-        вместо этого прислушиваясь к семейным старейшинам, руководствуясь их
-        мнением. Семьи сохраняют свой традиционный уклад, несмотря на подъёмы и
-        падения империй.
-        <br />
-        <br />
-        Множество полуросликов живёт среди других рас, где усердная работа и
-        надёжные перспективы принесут им обильное вознаграждение и земные блага.
-        Некоторые общины полуросликов ведут кочевой образ жизни, путешествуя на
-        повозках или плавая на суднах от одного места к другому, не оседая на
-        одном месте постоянно.
-      </p>
-
-      <h3>Поиск возможностей</h3>
-      <p>
-        Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую
-        ко всему чужому, призрачные полурослики в качестве искателей приключений
-        встречаются редко.
-      </p>
-
-      <h3>Призрачный полурослик</h3>
-      <p>
-        Из-за того, что их народ имеет закрытую, клановую культуру, недоверчивую
-        ко всему чужому, призрачные полурослики в качестве искателей приключений
-        встречаются редко.
-        <br />
-        <br />
-        <span
-          >Спросите своего Мастера, можете ли Вы играть представителем этой
-          подрасы.</span
-        >
-      </p> -->
       <div v-html="t(getRaceObj().details)"></div>
       <my-card-text
         :title="getEthnosObj().name"
@@ -821,6 +725,9 @@ export default {
 
     showMY() {
       console.log(this.MY);
+      console.log(
+        this.getCharColor("skin") == this.getEthnosObj().settings.color.skin
+      );
     },
 
     choiceColor(name, obj, i, j) {
@@ -881,6 +788,14 @@ export default {
         sex = "male";
       }
       return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+    },
+
+    getEthnosColor(obj, value) {
+      return obj === this.getEthnosObj().settings.color[value];
+    },
+
+    getRaceColor(obj, value) {
+      return this.getRaceObj().settings.color[value].includes(obj);
     },
 
     calcImg() {
@@ -1053,11 +968,10 @@ body {
   padding: 14px !important;
 }
 
-
 .char_back {
   width: 100%;
   height: 120px;
-  background: #0E1518;
+  background: #0e1518;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -1068,7 +982,6 @@ body {
   position: absolute;
   top: 16px;
   left: 0;
-  
 }
 
 /* ---------------------characters----------------------*/

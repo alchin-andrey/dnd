@@ -12,6 +12,7 @@ import MySelectionCard from "@/components/ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/MyCardText.vue";
 import MyColorBlock from "@/components/ui/MyColorBlock.vue";
 import MyWrapper from "@/components/ui/MyWrapper.vue";
+import MyCardTextColor from "@/components/ui/MyCardTextColor.vue";
 
 
 export default [
@@ -29,4 +30,5 @@ export default [
   MyCardText,
   MyColorBlock,
   MyWrapper,
-]
+  MyCardTextColor,
+];
