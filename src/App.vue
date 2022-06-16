@@ -316,7 +316,7 @@
           :title="hair_hower ? hair_hower.name : getCharColor('hair').name"
           :ethnos_color="hair_hower
             ? getEthnosColor(hair_hower, 'hair')
-            : getEthnosColor(getCharColor('eyes'), 'hair')"
+            : getEthnosColor(getCharColor('hair'), 'hair')"
           :race_color="hair_hower
             ? getRaceColor(hair_hower, 'hair')
             : getRaceColor(getCharColor('hair'), 'hair')"
