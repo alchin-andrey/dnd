@@ -726,7 +726,7 @@ export default {
     showMY() {
       console.log(this.MY);
       console.log(
-        this.getCharColor("skin") == this.getEthnosObj().settings.color.skin
+        this.getCharColor("skin") == this.getEthnosObj().color.skin
       );
     },
 
@@ -756,7 +756,7 @@ export default {
 
     getCharColor(value) {
       if (this.MY.color[value] === null) {
-        return this.getEthnosObj().settings.color[value];
+        return this.getEthnosObj().color[value];
       } else {
         return this.MY.color[value];
       }
@@ -780,7 +780,7 @@ export default {
       let race = this.MY.race;
       let ethnos = ethnos_name;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.getAllEthnosObj()[ethnos_name].settings.color[value].img;
+      let img = this.getAllEthnosObj()[ethnos_name].color[value].img;
       let sex;
       if (phisiological === "female" || phisiological === "demigirl") {
         sex = "female";
@@ -791,7 +791,7 @@ export default {
     },
 
     getEthnosColor(obj, value) {
-      return obj === this.getEthnosObj().settings.color[value];
+      return obj === this.getEthnosObj().color[value];
     },
 
     getRaceColor(obj, value) {
@@ -859,7 +859,7 @@ export default {
     // this.default_MY.color =
     //   this.race[this.default_MY.race].settings.ethnos[
     //     this.default_MY.ethnos
-    //   ].settings.color;
+    //   ].color;
     this.MY = this.default_MY;
     console.log();
   },
