@@ -233,6 +233,7 @@ export default {
                 poison_damage:"урону 🧪 Ядом",
                 known_languages:"на известных языках",
                 fire_against:"против 🔥 Огня",
+                history_check_rock_gnome:"к проверке Истории к магическому, алхимическому или технологическому предмету",
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -271,10 +272,25 @@ export default {
             lightfoot_halfling_details: races.lightfoot_halfling,
             
             ghost:"призрачный",
+            ghost_halfling_details: races.ghost_halfling,
 
             rare:"редкий этнос",        
-            ghost_halfling_details: races.ghost_halfling,
             rare_details:races.rare,
+
+            //Gnome
+
+            gnome:"гном",
+            gnome_details: races.gnome,
+
+            rock:"скальный",
+            rock_gnome_details: races.rock_gnome,
+
+            deep:"глубинный",
+            deep_gnome_details: races.deep_gnome,
+
+            forest:"лесной",
+            forest_gnome_details: races.forest_gnome,
+
 
             //Human
             
@@ -413,5 +429,8 @@ export default {
 
             darkness: spells.darkness,
             darkness_details: spells.darkness_details,
+
+            spell_toy: spells.toy,
+            spell_toy_details: spells.toy_details
 
 }

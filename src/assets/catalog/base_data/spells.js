@@ -34,6 +34,7 @@ class Spell {
 export default {
 
     thaumaturgy: {
+        slot: 0,
         name: "thaumaturgy",
         details: "thaumaturgy_details",
         component: [
@@ -46,8 +47,9 @@ export default {
     },
 
     hellish_rebuke:{
-
+        slot: 0,
         name: "hellish_rebuke",
+        details: "hellish_rebuke_details",
         compomemt: [
             "verbal",
             "somatic",
@@ -72,8 +74,8 @@ export default {
     },
 
     darkness : {
-        name: "darkness",
         slot: 2,
+        name: "darkness",
         school: "evocation",
         details: "darkness_details",
 
@@ -108,4 +110,17 @@ export default {
             dice:10,
         },
     },
+
+    toy:{
+        name: "spell_toy",
+        details: "spell_toy_details",
+    },
+
+    lighter:{
+
+    },
+
+    music_box:{
+
+    }
 }
