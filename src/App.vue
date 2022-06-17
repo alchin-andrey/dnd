@@ -1000,8 +1000,11 @@ export default {
     },
 
     getEthnosColor(obj, value) {
-      return this.getEthnosObj().color[value].includes(obj);
-      // return obj === this.getEthnosObj().color[value];
+      if (this.MY.ethnos === 'common') {
+        return false
+      } else {
+        return this.getEthnosObj().color[value].includes(obj);
+      }
     },
 
     getRaceColor(obj, value) {
