@@ -678,7 +678,7 @@
     <!-- text -->
     <div class="story int-400">
       <div v-html="t(getRaceObj().details)"></div>
-      <my-card-text
+      <my-card-text v-if="MY.ethnos !== 'common'"
         :title="getEthnosObj().name"
         :text="t(getEthnosObj().details)"
         :rare="getEthnosObj().rare"
