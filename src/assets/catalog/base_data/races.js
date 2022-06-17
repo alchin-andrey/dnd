@@ -74,9 +74,9 @@ export default {
           link_female: "https://www.heroforge.com/load_config%3D503211452",
 
           color: {
-            skin: color[2][2],
-            eyes: color[8][2],
-            hair: color[2][5],
+            skin: [color[2][2]],
+            eyes: [color[8][2]],
+            hair: [color[2][5]],
           },
 
           wisdom: 1,
