@@ -3,8 +3,8 @@
     class="column"
     :class="{
       active_link: active,
-      cursor_pointer: type !== 'Обычный',
-      hover: type !== 'Обычный',
+      cursor_pointer: type !== 'common',
+      hover: type !== 'common',
     }"
   >
     <div class="column_title jbm-300">
@@ -14,8 +14,8 @@
       class="column_link int-400"
       :class="{
         rare: rare,
-        passive: type === 'Обычный',
-        icon: type !== 'Обычный' || active,
+        passive: type === 'common',
+        icon: type !== 'common' || active,
         icon_active: active,
       }"
     >

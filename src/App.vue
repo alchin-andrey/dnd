@@ -21,7 +21,7 @@
             @click="show('shown_ethnos')"
             :active="shown_ethnos"
             title="ethnos"
-            :type="t(MY.ethnos)"
+            :type="MY.ethnos"
             :rare="getEthnosObj().rare"
           ></my-selection>
           <my-selection
@@ -174,9 +174,10 @@
               'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
             }"
           >
-            <img v-if="getCharEthnosImg('skin', ethnos)"
-            :src="getCharEthnosImg('skin', ethnos)" 
-            alt="skin" 
+            <img
+              v-if="getCharEthnosImg('skin', ethnos)"
+              :src="getCharEthnosImg('skin', ethnos)"
+              alt="skin"
             />
 
             <svg
@@ -188,8 +189,11 @@
               v-html="placeholder.skin"
             ></svg>
 
-            <img v-if="getCharEthnosImg('hair', ethnos)"
-            :src="getCharEthnosImg('hair', ethnos)" alt="hair" />
+            <img
+              v-if="getCharEthnosImg('hair', ethnos)"
+              :src="getCharEthnosImg('hair', ethnos)"
+              alt="hair"
+            />
 
             <svg
               v-if="!getCharEthnosImg('hair', ethnos)"
@@ -200,8 +204,11 @@
               v-html="placeholder.hair"
             ></svg>
 
-            <img v-if="getCharEthnosImg('eyes', ethnos)"
-            :src="getCharEthnosImg('eyes', ethnos)" alt="eyes" />
+            <img
+              v-if="getCharEthnosImg('eyes', ethnos)"
+              :src="getCharEthnosImg('eyes', ethnos)"
+              alt="eyes"
+            />
 
             <svg
               v-if="!getCharEthnosImg('eyes', ethnos)"
@@ -214,9 +221,19 @@
           </div>
 
           <!-- Этнос_Карточка_stats + qualities -->
-          <my-wrapper v-if="getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos]).length !== 0 || getActiveAttribute(MY.qualities,getAllEthnosObj()[ethnos]).length !== 0">
+          <my-wrapper
+            v-if="
+              getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos]).length !==
+                0 ||
+              getActiveAttribute(MY.qualities, getAllEthnosObj()[ethnos])
+                .length !== 0
+            "
+          >
             <my-attribute
-              v-for="n in getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos])"
+              v-for="n in getActiveAttribute(
+                MY.stats,
+                getAllEthnosObj()[ethnos]
+              )"
               :key="n"
               :title="n"
               :type="`${n}_base`"
@@ -226,7 +243,10 @@
             >
             </my-attribute>
             <my-attribute
-              v-for="n in getActiveAttribute(MY.qualities,getAllEthnosObj()[ethnos])"
+              v-for="n in getActiveAttribute(
+                MY.qualities,
+                getAllEthnosObj()[ethnos]
+              )"
               :key="n"
               :title="n"
               :type="`${n}_base`"
@@ -238,17 +258,17 @@
           </my-wrapper>
           <!-- Этнос_Карточка_stats + qualities-->
 
-        <!-- Этнос_Карточка_proficiencies -->
-        <my-wrapper v-if="getAllEthnosObj()[ethnos].proficiencies">
-          <my-inventory
-            v-for="(val, name) in getAllEthnosObj()[ethnos].proficiencies"
-            :key="name"
-            :title="name"
-            :item="getProficItem(getAllEthnosObj()[ethnos], name)"
-          >
-          </my-inventory>
-        </my-wrapper>
-        <!-- Этнос_proficiencies -->
+          <!-- Этнос_Карточка_proficiencies -->
+          <my-wrapper v-if="getAllEthnosObj()[ethnos].proficiencies">
+            <my-inventory
+              v-for="(val, name) in getAllEthnosObj()[ethnos].proficiencies"
+              :key="name"
+              :title="name"
+              :item="getProficItem(getAllEthnosObj()[ethnos], name)"
+            >
+            </my-inventory>
+          </my-wrapper>
+          <!-- Этнос_proficiencies -->
 
           <!-- Этнос_Карточка_fines -->
           <my-wrapper v-if="getAllEthnosObj()[ethnos].fines" gap_8>
@@ -741,13 +761,18 @@ export default {
       ],
     };
   },
-  //  watch: {
-  //   MY: {
-  //     handler(newQuestion) {
-
+  // watch: {
+  //   shown_ethnos: {
+  //     handler() {
+  //       if (this.shown_ethnos === true && this.MY.ethnos === "common") {
+  //         this.close();
+  //         this.shown_home = true;
+  //       } else {
+  //         this.shown_ethnos === true;
+  //       }
   //     },
-  //     immediate: true
-  //   }
+  //     immediate: true,
+  //   },
   // },
   methods: {
     getActiveAttribute(obj, obj_2) {
@@ -757,7 +782,6 @@ export default {
           arr.push(kay);
         }
       }
-      console.log(arr)
       return arr;
     },
 
@@ -770,13 +794,12 @@ export default {
     },
 
     getProficienciesEthnosItem(obj, name) {
-      console.log(obj, name)
+      console.log(obj, name);
       let arr = [];
-      console.log(this.getAllEthnosObj()[obj].proficiencies[name])
+      console.log(this.getAllEthnosObj()[obj].proficiencies[name]);
       for (let i in this.getAllEthnosObj()[obj].proficiencies[name]) {
         arr.push(this.getAllEthnosObj()[obj].proficiencies[name][i].name);
       }
-      console.log(arr)
       return arr;
     },
 
@@ -823,7 +846,10 @@ export default {
     },
 
     show(name) {
-      if (this[name] === false) {
+      console.log();
+      if (name === "shown_ethnos" && this.MY.ethnos === "common") {
+        this[name] === false;
+      } else if (this[name] === false) {
         this.close();
         this[name] = true;
         this.shown_home = false;
@@ -867,7 +893,9 @@ export default {
     },
 
     getCharColor(value) {
-      if (this.MY.color[value] === null) {
+      if (this.MY.color[value] === null && this.MY.ethnos === "common") {
+        return this.getRaceObj().settings.color[value][0];
+      } else if (this.MY.color[value] === null) {
         return this.getEthnosObj().color[value][0];
       } else {
         return this.MY.color[value];
@@ -878,7 +906,6 @@ export default {
       let hex = hower ? hower.hex : this.getCharColor(value).hex;
       return hex;
     },
-
 
     getCharImg_NoEthnos(value, hower) {
       let race = this.MY.race;
@@ -903,7 +930,7 @@ export default {
       return result;
     },
 
-      getCharEthnosImg_NoEthnos(value, ethnos_name) {
+    getCharEthnosImg_NoEthnos(value, ethnos_name) {
       let race = this.MY.race;
       let ethnos = getRaceObj().noimg_ethnos ? "" : `/${ethnos_name}`;
       let phisiological = this.MY.gender.phisiological;

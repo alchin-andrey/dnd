@@ -57,6 +57,15 @@ export default {
     getNewEthnos() {
       this.$root.MY.ethnos = Object.keys(this.$root.race[this.$root.MY.race].settings.ethnos)[0]
     },
+    closeEthnos() {
+      if (this.$root.shown_ethnos === true && this.$root.MY.ethnos === "common") {
+          this.$root.shown_ethnos = false;
+          this.$root.shown_home = true;
+        } else {
+          this.$root.shown_ethnos === true;
+        }
+    },
+
 
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
@@ -66,7 +75,8 @@ export default {
       } else {
         this.$root.MY.race = arr[j - 1];
       }
-this.getNewEthnos()
+    this.getNewEthnos()
+    this.closeEthnos()
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
@@ -77,6 +87,7 @@ this.getNewEthnos()
         this.$root.MY.race = arr[j + 1];
       }
       this.getNewEthnos()
+      this.closeEthnos()
     },
   },
 };
