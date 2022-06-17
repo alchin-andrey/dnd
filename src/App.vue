@@ -250,12 +250,16 @@
         </div>
         <my-card-text-color
           :title="skin_hower ? skin_hower.name : getCharColor('skin').name"
-          :ethnos_color="skin_hower
+          :ethnos_color="
+            skin_hower
               ? getEthnosColor(skin_hower, 'skin')
-              : getEthnosColor(getCharColor('skin'), 'skin')"
-          :race_color="skin_hower
+              : getEthnosColor(getCharColor('skin'), 'skin')
+          "
+          :race_color="
+            skin_hower
               ? getRaceColor(skin_hower, 'skin')
-              : getRaceColor(getCharColor('skin'), 'skin')"
+              : getRaceColor(getCharColor('skin'), 'skin')
+          "
         ></my-card-text-color>
       </my-selection-card>
     </my-selection-box>
@@ -282,12 +286,16 @@
         </div>
         <my-card-text-color
           :title="eyes_hower ? eyes_hower.name : getCharColor('eyes').name"
-          :ethnos_color="eyes_hower
+          :ethnos_color="
+            eyes_hower
               ? getEthnosColor(eyes_hower, 'eyes')
-              : getEthnosColor(getCharColor('eyes'), 'eyes')"
-          :race_color="eyes_hower
+              : getEthnosColor(getCharColor('eyes'), 'eyes')
+          "
+          :race_color="
+            eyes_hower
               ? getRaceColor(eyes_hower, 'eyes')
-              : getRaceColor(getCharColor('eyes'), 'eyes')"
+              : getRaceColor(getCharColor('eyes'), 'eyes')
+          "
         ></my-card-text-color>
       </my-selection-card>
     </my-selection-box>
@@ -314,12 +322,16 @@
         </div>
         <my-card-text-color
           :title="hair_hower ? hair_hower.name : getCharColor('hair').name"
-          :ethnos_color="hair_hower
-            ? getEthnosColor(hair_hower, 'hair')
-            : getEthnosColor(getCharColor('hair'), 'hair')"
-          :race_color="hair_hower
-            ? getRaceColor(hair_hower, 'hair')
-            : getRaceColor(getCharColor('hair'), 'hair')"
+          :ethnos_color="
+            hair_hower
+              ? getEthnosColor(hair_hower, 'hair')
+              : getEthnosColor(getCharColor('hair'), 'hair')
+          "
+          :race_color="
+            hair_hower
+              ? getRaceColor(hair_hower, 'hair')
+              : getRaceColor(getCharColor('hair'), 'hair')
+          "
         ></my-card-text-color>
       </my-selection-card>
     </my-selection-box>
@@ -408,22 +420,58 @@
       }"
     >
       <img
+        v-if="getCharImg('skin', skin_hower)"
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('skin', skin_hower)"
         alt="skin"
       />
 
+      <svg
+        v-if="!getCharImg('skin', skin_hower)"
+        :fill="getCharColor('skin')"
+
+        :height="calcImg()"
+        viewBox="0 0 197 400"
+        xmlns="http://www.w3.org/2000/svg"
+        v-html="placeholder.skin"
+      >
+      </svg>
+
       <img
+        v-if="getCharImg('eyes', eyes_hower)"
+        :style="{ height: `${calcImg()}` }"
+        :src="getCharImg('eyes', eyes_hower)"
+        alt="eyes"
+      />
+
+        <svg
+        v-if="!getCharImg('eyes', skin_hower)"
+        fill="red"
+        :height="calcImg()"
+        viewBox="0 0 197 400"
+        xmlns="http://www.w3.org/2000/svg"
+        v-html="placeholder.eyes"
+      >
+      </svg>
+
+      <img
+        v-if="getCharImg('hair', hair_hower)"
         :style="{ height: `${calcImg()}` }"
         :src="getCharImg('hair', hair_hower)"
         alt="hair"
       />
 
-      <img
-        :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('eyes', eyes_hower)"
-        alt="eyes"
-      />
+        <svg
+        v-if="!getCharImg('hair', skin_hower)"
+        fill="blue"
+        :height="calcImg()"
+        viewBox="0 0 197 400"
+        xmlns="http://www.w3.org/2000/svg"
+        v-html="placeholder.hair"
+      >
+      </svg>
+
+
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -584,6 +632,7 @@ import genders from "@/assets/catalog/base_data/genders.js";
 import race from "@/assets/catalog/base_data/races.js";
 import clas from "@/assets/catalog/base_data/classes.js";
 import past from "@/assets/catalog/base_data/pasts.js";
+import placeholder from "@/assets/catalog/base_data/placeholder.js";
 
 import Genders from "@/components/Genders.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
@@ -604,6 +653,7 @@ export default {
       race: race,
       clas: clas,
       past: past,
+      placeholder: placeholder,
 
       shown_ethnos: false,
       shown_gender: false,
@@ -725,9 +775,7 @@ export default {
 
     showMY() {
       console.log(this.MY);
-      console.log(
-        this.getCharColor("skin") == this.getEthnosObj().color.skin
-      );
+      console.log(this.getCharColor("skin") == this.getEthnosObj().color.skin);
     },
 
     choiceColor(name, obj, i, j) {
@@ -762,32 +810,96 @@ export default {
       }
     },
 
+    getCharImg_Alt(value, hower) {
+      let race = this.MY.race;
+      let ethnos = this.MY.ethnos;
+      let phisiological = this.MY.gender.phisiological;
+      let img = hower ? hower.img : this.getCharColor(value).img;
+      let sex;
+      let result;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        sex = "female";
+      } else {
+        sex = "male";
+      }
+      try {
+        result = require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+      } catch (e) {
+        if (e.code !== "MODULE_NOT_FOUND") {
+          throw e;
+        }
+        result = require(`@/assets/img/characters/img_placeholder_${value}.svg`);
+      }
+      return result;
+    },
+
+      getCharImg_NoEthnos(value, hower) {
+      let race = this.MY.race;
+      let ethnos = getRaceObj().noimg_ethnos ? '' : `/${this.MY.ethnos}`;
+      let phisiological = this.MY.gender.phisiological;
+      let img = hower ? hower.img : this.getCharColor(value).img;
+      let sex;
+      let result;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        sex = "female";
+      } else {
+        sex = "male";
+      }
+      try {
+        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${value}/${img}.png`);
+      } catch (e) {
+        if (e.code !== "MODULE_NOT_FOUND") {
+          throw e;
+        }
+        result = require(`@/assets/img/characters/img_placeholder_${value}.svg`);
+      }
+      return result;
+    },
+
     getCharImg(value, hower) {
       let race = this.MY.race;
       let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
       let img = hower ? hower.img : this.getCharColor(value).img;
       let sex;
+      let result;
       if (phisiological === "female" || phisiological === "demigirl") {
         sex = "female";
       } else {
         sex = "male";
       }
-      return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+      try {
+        result = require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+      } catch (e) {
+        if (e.code !== "MODULE_NOT_FOUND") {
+          throw e;
+        }
+        result = null;
+      }
+      return result;
     },
 
     getCharEthnosImg(value, ethnos_name) {
       let race = this.MY.race;
-      let ethnos = ethnos_name;
+      let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
       let img = this.getAllEthnosObj()[ethnos_name].color[value].img;
       let sex;
+      let result;
       if (phisiological === "female" || phisiological === "demigirl") {
         sex = "female";
       } else {
         sex = "male";
       }
-      return require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+      try {
+        result = require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
+      } catch (e) {
+        if (e.code !== "MODULE_NOT_FOUND") {
+          throw e;
+        }
+        result = require(`@/assets/img/characters/img_placeholder_${value}.svg`);
+      }
+      return result;
     },
 
     getEthnosColor(obj, value) {
@@ -1014,6 +1126,18 @@ body {
   transition-timing-function: ease-in-out;
 }
 
+.character svg {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
 .active_eyes {
   align-self: flex-start;
   height: 200%;
@@ -1106,6 +1230,7 @@ body {
 .sidebar_right {
   /* width: 426px; */
   min-width: 426px;
+  max-width: 426px;
   padding: 32px;
   overflow-y: scroll;
 }
