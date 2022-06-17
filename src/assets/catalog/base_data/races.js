@@ -798,7 +798,7 @@ export default {
           },
         },
 
-        tetitian:{
+        tetirian:{
 
           color: {
             skin: [color[2][2]],
@@ -806,8 +806,8 @@ export default {
             hair: [color[2][6]],
           },
 
-          name:"tetitian",
-          details:"tetitian_details",
+          name:"tetirian",
+          details:"tetirian_details",
 
           proficiencies: {
             languages: [lang.chondatanian],
@@ -1271,17 +1271,108 @@ export default {
     name: "halfelf",
     details: "halfelf_details",
 
-
-
-
     settings: {
+
+      ethnos:{
+        common:{},
+      },
+
+      gender: gender,
+
+      color: {
+        skin: [
+          color[1][0],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[1][6],
+          color[0][6],
+          color[3][0],
+          color[12][0],
+          color[11][0],
+          color[10][0],
+        ],
+        eyes: [
+          color[0][1],
+          color[0][2],
+          color[0][3],
+          color[0][4],
+          color[0][5],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[4][1],
+          color[4][2],
+          color[4][3],
+          color[4][4],
+          color[4][5],
+          color[5][1],
+          color[5][2],
+          color[5][3],
+          color[5][4],
+          color[5][5],
+          color[6][1],
+          color[6][2],
+          color[6][3],
+          color[6][4],
+          color[6][5],
+          color[7][1],
+          color[7][2],
+          color[7][3],
+          color[7][4],
+          color[7][5],
+          color[8][1],
+          color[8][2],
+          color[8][3],
+          color[8][4],
+          color[8][5],
+          color[9][1],
+          color[9][2],
+          color[9][3],
+          color[9][4],
+          color[9][5],
+        ],
+        hair: [
+          color[0][0],
+          color[0][1],
+          color[0][2],
+          color[0][3],
+          color[0][4],
+          color[0][5],
+          color[0][6],
+          color[1][0],
+          color[1][1],
+          color[1][2],
+          color[1][3],
+          color[1][4],
+          color[1][5],
+          color[1][6],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[3][0],
+          color[3][1],
+          color[3][2],
+          color[3][3],
+        ],
+      },
 
       age: {
         min: 10,
-        young: 18,
-        mature: 30,
-        old: 85,
-        max: 100,
+        young: 20,
+        mature: 45,
+        old: 150,
+        max: 180,
       },
 
       height: {
@@ -1298,6 +1389,29 @@ export default {
       custom_stats: 2,
       custom_language: 1,
     },
+
+    charisma: 2,
+
+    speed: 30,
+    vision_night: 60,
+
+    proficiencies: {
+      languages: [lang.common, lang.elf],
+    },
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "charm_against",
+      },
+      {
+        type: "resistance",
+        keyword: "resistance",
+        details: "magic_sleep_against",
+      },
+    ],
+
   }, //недоработан, обсудить применение
 
 };
