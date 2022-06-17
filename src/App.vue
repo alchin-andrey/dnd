@@ -228,11 +228,36 @@
               :icon="n"
             >
             </my-attribute>
+            <my-attribute
+              v-for="n in getActiveAttribute(
+                MY.qualities,
+                getAllEthnosObj()[ethnos]
+              )"
+              :key="n"
+              :title="n"
+              :type="`${n}_base`"
+              feet
+              :numb="getAllEthnosObj()[ethnos][n]"
+              :icon="n"
+            >
+            </my-attribute>
           </my-wrapper>
           <!-- Этнос_Карточка_stats -->
 
+        <!-- Этнос_Карточка_proficiencies -->
+        <my-wrapper v-if="getAllEthnosObj()[ethnos].proficiencies">
+          <my-inventory
+            v-for="(val, name) in getAllEthnosObj()[ethnos].proficiencies"
+            :key="name"
+            :title="name"
+            :item="getProficItem(getAllEthnosObj()[ethnos], name)"
+          >
+          </my-inventory>
+        </my-wrapper>
+        <!-- Этнос_proficiencies -->
+
           <!-- Этнос_Карточка_fines -->
-          <my-wrapper gap_8>
+          <my-wrapper v-if="getAllEthnosObj()[ethnos].fines" gap_8>
             <my-fines
               v-for="item in getAllEthnosObj()[ethnos].fines"
               :key="item"
@@ -745,6 +770,25 @@ export default {
       let arr = [];
       for (let i in this.getRaceObj().proficiencies[name]) {
         arr.push(this.getRaceObj().proficiencies[name][i].name);
+      }
+      return arr;
+    },
+
+    getProficienciesEthnosItem(obj, name) {
+      console.log(obj, name)
+      let arr = [];
+      console.log(this.getAllEthnosObj()[obj].proficiencies[name])
+      for (let i in this.getAllEthnosObj()[obj].proficiencies[name]) {
+        arr.push(this.getAllEthnosObj()[obj].proficiencies[name][i].name);
+      }
+      console.log(arr)
+      return arr;
+    },
+
+    getProficItem(obj, kay) {
+      let arr = [];
+      for (let i in obj.proficiencies[kay]) {
+        arr.push(obj.proficiencies[kay][i].name);
       }
       return arr;
     },
