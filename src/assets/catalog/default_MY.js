@@ -78,40 +78,46 @@ export default {
     
     skills:{
         
-        acrobatics:
-        { bonus:0, mod:"dexterity" },
-
-        animal_hanging:
-        { bonus:0, mod:"wisdom" },
-
-        arcana:
-        { bonus:0, mod:"intelligence" },
-
         athletics:
         { bonus:0, mod:"strength" },
 
-        deception:
-        { bonus:0, mod:"charisma" },
+        acrobatics:
+        { bonus:0, mod:"dexterity" },
 
-        history:
-        { bonus:0, mod:"intelligence" },
+        sleight_of_hand:
+        { bonus:0, mod:"dexterity" },
 
-        insight:
-        { bonus:0, mod:"wisdom" },
-
-        intimidation:
-        { bonus:0, mod:"charisma" },
+        stealth:
+        { bonus:0, mod:"dexterity" },
 
         investigation:
         { bonus:0, mod:"intelligence" },
 
-        medicine:
-        { bonus:0, mod:"wisdom" },
+        history:
+        { bonus:0, mod:"intelligence" },
+
+        religion:
+        { bonus:0, mod:"intelligence" },
+
+        arcana:
+        { bonus:0, mod:"intelligence" },
 
         nature:
         { bonus:0, mod:"intelligence" },
 
         perception:
+        { bonus:0, mod:"wisdom" },
+
+        insight:
+        { bonus:0, mod:"wisdom" },
+
+        animal_hanging:
+        { bonus:0, mod:"wisdom" },
+
+        medicine:
+        { bonus:0, mod:"wisdom" },
+
+        survival:
         { bonus:0, mod:"wisdom" },
 
         performance:
@@ -120,17 +126,11 @@ export default {
         persuasion:
         { bonus:0, mod:"charisma" },
 
-        religion:
-        { bonus:0, mod:"intelligence" },
+        deception:
+        { bonus:0, mod:"charisma" },
 
-        sleight_of_hand:
-        { bonus:0, mod:"dexterity" },
-
-        stealth:
-        { bonus:0, mod:"dexterity" },
-
-        survival:
-        { bonus:0, mod:"wisdom" },
+        intimidation:
+        { bonus:0, mod:"charisma" },
 
     },
 
