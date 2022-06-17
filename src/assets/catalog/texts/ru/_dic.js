@@ -324,7 +324,7 @@ export default {
                 attack_under_sun:"на атаку под прямым солнечным светом",
                 for_each_lvl_incl_1:"за каждый уровень включая первый",
                 charm_against: "против Очарования",
-                
+                magic_sleep_against:"магическому Усыплению",
 
             //Умения - активньіе умения без урона
             abilities:"умения",

@@ -1405,6 +1405,11 @@ export default {
         keyword: "advantage",
         details: "charm_against",
       },
+      {
+        type: "resistance",
+        keyword: "resistance",
+        details: "magic_sleep_against",
+      },
     ],
 
   }, //недоработан, обсудить применение
