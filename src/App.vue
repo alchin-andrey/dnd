@@ -181,7 +181,7 @@
 
             <svg
               v-if="!getCharEthnosImg('skin', ethnos)"
-              :fill="getAllEthnosObj()[ethnos].color.skin.hex"
+              :fill="getAllEthnosObj()[ethnos].color.skin[0].hex"
               :height="calcImg()"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@
 
             <svg
               v-if="!getCharEthnosImg('hair', ethnos)"
-              :fill="getAllEthnosObj()[ethnos].color.hair.hex"
+              :fill="getAllEthnosObj()[ethnos].color.hair[0].hex"
               :height="calcImg()"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
@@ -205,7 +205,7 @@
 
             <svg
               v-if="!getCharEthnosImg('eyes', ethnos)"
-              :fill="getAllEthnosObj()[ethnos].color.eyes.hex"
+              :fill="getAllEthnosObj()[ethnos].color.eyes[0].hex"
               :height="calcImg()"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
@@ -829,7 +829,7 @@ export default {
 
     getCharColor(value) {
       if (this.MY.color[value] === null) {
-        return this.getEthnosObj().color[value];
+        return this.getEthnosObj().color[value][0];
       } else {
         return this.MY.color[value];
       }
@@ -868,7 +868,7 @@ export default {
       let race = this.MY.race;
       let ethnos = getRaceObj().noimg_ethnos ? "" : `/${this.MY.ethnos}`;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.getAllEthnosObj()[ethnos_name].color[value].img;
+      let img = this.getAllEthnosObj()[ethnos_name].color[value][0].img;
       let sex;
       let result;
       if (phisiological === "female" || phisiological === "demigirl") {
@@ -914,7 +914,7 @@ export default {
       let race = this.MY.race;
       let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.getAllEthnosObj()[ethnos_name].color[value].img;
+      let img = this.getAllEthnosObj()[ethnos_name].color[value][0].img;
       let sex;
       let result;
       if (phisiological === "female" || phisiological === "demigirl") {
@@ -934,7 +934,8 @@ export default {
     },
 
     getEthnosColor(obj, value) {
-      return obj === this.getEthnosObj().color[value];
+      return this.getEthnosObj().color[value].includes(obj);
+      // return obj === this.getEthnosObj().color[value];
     },
 
     getRaceColor(obj, value) {
