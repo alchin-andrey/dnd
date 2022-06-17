@@ -52,7 +52,7 @@ export default {
 .text {
   color: rgba(255, 255, 255, 0.4);
   text-align: start;
-
+  white-space: pre-line;
 }
 
 .text:first-letter {
