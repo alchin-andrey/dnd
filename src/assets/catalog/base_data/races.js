@@ -798,7 +798,7 @@ export default {
           },
         },
 
-        tetitian:{
+        tetirian:{
 
           color: {
             skin: [color[2][2]],
@@ -806,8 +806,8 @@ export default {
             hair: [color[2][6]],
           },
 
-          name:"tetitian",
-          details:"tetitian_details",
+          name:"tetirian",
+          details:"tetirian_details",
 
           proficiencies: {
             languages: [lang.chondatanian],
