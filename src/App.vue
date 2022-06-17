@@ -174,11 +174,43 @@
               'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
             }"
           >
-            <img :src="getCharEthnosImg('skin', ethnos)" alt="skin" />
+            <img v-if="getCharEthnosImg('skin', ethnos)"
+            :src="getCharEthnosImg('skin', ethnos)" 
+            alt="skin" 
+            />
 
-            <img :src="getCharEthnosImg('hair', ethnos)" alt="hair" />
+            <svg
+              v-if="!getCharEthnosImg('skin', ethnos)"
+              :fill="getAllEthnosObj()[ethnos].color.skin.hex"
+              :height="calcImg()"
+              viewBox="0 0 197 400"
+              xmlns="http://www.w3.org/2000/svg"
+              v-html="placeholder.skin"
+            ></svg>
 
-            <img :src="getCharEthnosImg('eyes', ethnos)" alt="eyes" />
+            <img v-if="getCharEthnosImg('hair', ethnos)"
+            :src="getCharEthnosImg('hair', ethnos)" alt="hair" />
+
+            <svg
+              v-if="!getCharEthnosImg('hair', ethnos)"
+              :fill="getAllEthnosObj()[ethnos].color.hair.hex"
+              :height="calcImg()"
+              viewBox="0 0 197 400"
+              xmlns="http://www.w3.org/2000/svg"
+              v-html="placeholder.hair"
+            ></svg>
+
+            <img v-if="getCharEthnosImg('eyes', ethnos)"
+            :src="getCharEthnosImg('eyes', ethnos)" alt="eyes" />
+
+            <svg
+              v-if="!getCharEthnosImg('eyes', ethnos)"
+              :fill="getAllEthnosObj()[ethnos].color.eyes.hex"
+              :height="calcImg()"
+              viewBox="0 0 197 400"
+              xmlns="http://www.w3.org/2000/svg"
+              v-html="placeholder.eyes"
+            ></svg>
           </div>
 
           <!-- Этнос_Карточка_stats -->
@@ -428,14 +460,12 @@
 
       <svg
         v-if="!getCharImg('skin', skin_hower)"
-        :fill="getCharColor('skin')"
-
+        :fill="getCharColorHex('skin', skin_hower)"
         :height="calcImg()"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
         v-html="placeholder.skin"
-      >
-      </svg>
+      ></svg>
 
       <img
         v-if="getCharImg('eyes', eyes_hower)"
@@ -444,15 +474,14 @@
         alt="eyes"
       />
 
-        <svg
-        v-if="!getCharImg('eyes', skin_hower)"
-        fill="red"
+      <svg
+        v-if="!getCharImg('eyes', eyes_hower)"
+        :fill="getCharColorHex('eyes', eyes_hower)"
         :height="calcImg()"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
         v-html="placeholder.eyes"
-      >
-      </svg>
+      ></svg>
 
       <img
         v-if="getCharImg('hair', hair_hower)"
@@ -461,17 +490,14 @@
         alt="hair"
       />
 
-        <svg
+      <svg
         v-if="!getCharImg('hair', skin_hower)"
-        fill="blue"
+        :fill="getCharColorHex('hair', hair_hower)"
         :height="calcImg()"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
         v-html="placeholder.hair"
-      >
-      </svg>
-
-
+      ></svg>
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -775,7 +801,6 @@ export default {
 
     showMY() {
       console.log(this.MY);
-      console.log(this.getCharColor("skin") == this.getEthnosObj().color.skin);
     },
 
     choiceColor(name, obj, i, j) {
@@ -810,32 +835,15 @@ export default {
       }
     },
 
-    getCharImg_Alt(value, hower) {
-      let race = this.MY.race;
-      let ethnos = this.MY.ethnos;
-      let phisiological = this.MY.gender.phisiological;
-      let img = hower ? hower.img : this.getCharColor(value).img;
-      let sex;
-      let result;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        sex = "female";
-      } else {
-        sex = "male";
-      }
-      try {
-        result = require(`@/assets/img/characters/${race}/${ethnos}/${sex}/${value}/${img}.png`);
-      } catch (e) {
-        if (e.code !== "MODULE_NOT_FOUND") {
-          throw e;
-        }
-        result = require(`@/assets/img/characters/img_placeholder_${value}.svg`);
-      }
-      return result;
+    getCharColorHex(value, hower) {
+      let hex = hower ? hower.hex : this.getCharColor(value).hex;
+      return hex;
     },
 
-      getCharImg_NoEthnos(value, hower) {
+
+    getCharImg_NoEthnos(value, hower) {
       let race = this.MY.race;
-      let ethnos = getRaceObj().noimg_ethnos ? '' : `/${this.MY.ethnos}`;
+      let ethnos = getRaceObj().noimg_ethnos ? "" : `/${this.MY.ethnos}`;
       let phisiological = this.MY.gender.phisiological;
       let img = hower ? hower.img : this.getCharColor(value).img;
       let sex;
@@ -851,7 +859,30 @@ export default {
         if (e.code !== "MODULE_NOT_FOUND") {
           throw e;
         }
-        result = require(`@/assets/img/characters/img_placeholder_${value}.svg`);
+        result = null;
+      }
+      return result;
+    },
+
+      getCharEthnosImg_NoEthnos(value, ethnos_name) {
+      let race = this.MY.race;
+      let ethnos = getRaceObj().noimg_ethnos ? "" : `/${this.MY.ethnos}`;
+      let phisiological = this.MY.gender.phisiological;
+      let img = this.getAllEthnosObj()[ethnos_name].color[value].img;
+      let sex;
+      let result;
+      if (phisiological === "female" || phisiological === "demigirl") {
+        sex = "female";
+      } else {
+        sex = "male";
+      }
+      try {
+        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${value}/${img}.png`);
+      } catch (e) {
+        if (e.code !== "MODULE_NOT_FOUND") {
+          throw e;
+        }
+        result = null;
       }
       return result;
     },
@@ -897,7 +928,7 @@ export default {
         if (e.code !== "MODULE_NOT_FOUND") {
           throw e;
         }
-        result = require(`@/assets/img/characters/img_placeholder_${value}.svg`);
+        result = null;
       }
       return result;
     },
@@ -1096,6 +1127,13 @@ body {
   left: 0;
 }
 
+.char_back svg {
+  height: 300px;
+  position: absolute;
+  top: 16px;
+  left: 0;
+}
+
 /* ---------------------characters----------------------*/
 
 .represent {
@@ -1134,7 +1172,8 @@ body {
   -webkit-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
-  transition-duration: 0.8s;
+  transition-property: all, fill;
+  transition-duration: 0.8s, 0.1s;
   transition-timing-function: ease-in-out;
 }
 
