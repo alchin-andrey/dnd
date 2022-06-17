@@ -21,9 +21,9 @@ export default {
           link_female: "https://www.heroforge.com/load_config%3D503211377",
 
           color: {
-            skin: color[2][0],
-            eyes: color[4][5],
-            hair: color[1][4],
+            skin: [color[2][0]],
+            eyes: [color[4][5]],
+            hair: [color[1][4]],
           },
 
           constitution: 1,
@@ -51,9 +51,9 @@ export default {
           link_female: "https://www.heroforge.com/load_config%3D503211388",
 
           color: {
-            skin: color[2][1],
-            eyes: color[2][5],
-            hair: color[0][6],
+            skin: [color[2][1]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
           },
 
           charisma: 1,
@@ -265,7 +265,7 @@ export default {
           color: {
             skin: [color[0][3], color[0][4], color[0][5], color[0][6]],
             eyes: [color[7][2], color[7][3], color[7][4], color[7][5]],
-            hair: color[8][1],
+            hair: [color[8][1]],
           },
 
           age: {
@@ -304,9 +304,9 @@ export default {
           // link_female: "https://www.heroforge.com/load_config%3D503211452",
 
           color: {
-            skin: color[2][2],
-            eyes: color[8][2],
-            hair: color[2][5],
+            skin: [color[2][2]],
+            eyes: [color[8][2]],
+            hair: [color[2][5]],
           },
 
           dexterity: 1,
@@ -601,7 +601,7 @@ export default {
         weapon.battle_hammers,
         weapon.light_hammers,
       ],
-      tools: [tool.blacksmith, tool.brewer, tool.mason], // добавить
+      tools: [tool.blacksmith, tool.brewer, tool.mason],
       languages: [lang.common, lang.dwarf],
     },
 
@@ -627,7 +627,218 @@ export default {
   },
 
   human: {
+    
+    name: "human",
+    details: "human_details",
+
+    noimg_ethnos: true,
+
     settings: {
+      ethnos: {
+
+        arkayun:{
+
+          name:"arkayun",
+          details:"arkayun_details",
+
+          proficiencies: {
+            languages: [lang.dambratan],
+          },
+        },
+
+        bedin:{
+
+          name:"bedin",
+          details:"bedin_details",
+
+          proficiencies: {
+            languages: [lang.midani],
+          },
+        },
+
+        gur:{
+
+          name:"gur",
+          details:"gur_details",
+
+          proficiencies: {
+            languages: [lang.guran],
+          },
+        },
+
+        damarian:{
+
+          name:"damarian",
+          details:"damarian_details",
+
+          proficiencies: {
+            languages: [lang.damarian],
+          },
+        },
+
+        illuskian:{
+
+          name:"illuskian",
+          details:"illuskian_details",
+
+          proficiencies: {
+            languages: [lang.illuskian],
+          },
+        },
+
+        imaskari:{
+
+          name:"imaskari",
+          details:"imaskari_details",
+
+          proficiencies: {
+            languages: [lang.rushum],
+          },
+        },
+
+        kalishit:{
+
+          name:"kalishit",
+          details:"kalishit_details",
+
+          proficiencies: {
+            languages: [lang.alzhedo],
+          },
+        },
+
+        mulan:{
+
+          name:"mulan",
+          details:"mulan_details",
+
+          proficiencies: {
+            languages: [lang.chessent],
+          },
+        },
+
+        nar:{
+
+          name:"nar",
+          details:"nar_details",
+
+          proficiencies: {
+            languages: [lang.damarian],
+          },
+        },
+
+        rashemi:{
+
+          name:"rashemi",
+          details:"rashemi_details",
+
+          proficiencies: {
+            languages: [lang.rashemian],
+          },
+        },
+
+        tetitian:{
+
+          name:"tetitian",
+          details:"tetitian_details",
+
+          proficiencies: {
+            languages: [lang.chondatanian],
+          },
+        },
+
+        tuigan:{
+
+          name:"tuigan",
+          details:"tuigan_details",
+
+          proficiencies: {
+            languages: [lang.tuiganian],
+          },
+        },
+
+        terami:{
+
+          name:"terami",
+          details:"terami_details",
+
+          proficiencies: {
+            languages: [lang.teramian],
+          },
+        },
+
+        ulutiune:{
+
+          name:"ulutiune",
+          details:"ulutiune_details",
+
+          proficiencies: {
+            languages: [lang.uluik],
+          },
+        },
+
+        ffolk:{
+
+          name:"ffolk",
+          details:"ffolk_details",
+
+          proficiencies: {
+            languages: [lang.vaelan],
+          },
+        },
+
+        halruanian:{
+
+          name:"halruanian",
+          details:"halruanian_details",
+
+          proficiencies: {
+            languages: [lang.halruanian],
+          },
+        },
+
+        chondatan:{
+
+          name:"chondatan",
+          details:"chondatan_details",
+
+          proficiencies: {
+            languages: [lang.chondatanian],
+          },
+        },
+
+        chult:{
+
+          name:"chult",
+          details:"chult_details",
+
+          proficiencies: {
+            languages: [lang.chult],
+          },
+        },
+
+        shaarian:{
+
+          name:"shaarian",
+          details:"shaarian_details",
+
+          proficiencies: {
+            languages: [lang.shaarian],
+          },
+        },
+
+        shu:{
+
+          name:"shu",
+          details:"shu_details",
+
+          proficiencies: {
+            languages: [lang.shu],
+          },
+        },
+
+
+
+      },
       color: {
         skin: [
           color[1][0],
@@ -644,17 +855,25 @@ export default {
           color[11][0],
           color[10][0],
         ],
+        eyes: [],
+        hair: [],
       },
     },
-  }, // недораюлтан
 
-  halfelf: {
-    settings: {
-      custom_skills: 2,
-      custom_stats: 2,
-      custom_language: 1,
+    strength: 1,
+    dexterity: 1,
+    constitution: 1,
+    intelligence: 1,
+    wisdom: 1,
+    charisma: 1,
+
+    speed: 30,
+
+    proficiencies: {
+      languages: [lang.common],
     },
-  }, //недоработан, обсудить применение
+
+  }, // недораюлтан
 
   tiefling: {
     spells: [
@@ -675,4 +894,13 @@ export default {
       },
     ],
   },
+
+  halfelf: {
+    settings: {
+      custom_skills: 2,
+      custom_stats: 2,
+      custom_language: 1,
+    },
+  }, //недоработан, обсудить применение
+
 };
