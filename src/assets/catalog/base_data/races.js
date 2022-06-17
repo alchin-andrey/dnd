@@ -1094,7 +1094,9 @@ export default {
 
     settings:{
       ethnos:{
-        common:{},
+        common:{
+          name:"common",
+        },
       },
 
       gender:gender,
@@ -1274,7 +1276,9 @@ export default {
     settings: {
 
       ethnos:{
-        common:{},
+        common:{
+          name:"common",
+        },
       },
 
       gender: gender,
@@ -1412,6 +1416,6 @@ export default {
       },
     ],
 
-  }, //недоработан, обсудить применение
+  },
 
 };
