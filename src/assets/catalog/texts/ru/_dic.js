@@ -1,6 +1,9 @@
 import * as races from './races.js';
 import * as spells from './spells.js';
 import { langs } from './languages.js';
+import { weapons } from './weapons.js';
+import { tools } from './tools.js';
+import { armor } from './armor.js';
 
 export default {
 
@@ -155,8 +158,31 @@ export default {
             proficiencies:"владения",
 
                 armor:"доспехи",
+
+                    armor_light: armor.light,
+                    armor_medium: armor.medium,
+                    // добавить описания
+
                 weapons:"оружие",
+
+                    weapons_battle_axes: weapons.battle_axes,
+                    weapons_battle_axes_details: weapons.battle_axes_details,
+
+                    weapons_hand_axes: weapons.hand_axes,
+                    weapons_hand_axes_details: weapons.hand_axes_details,
+
+                    weapons_battle_hammers: weapons.battle_hammers,
+                    weapons_battle_hammers_details: weapons.battle_hammers_details,
+
+                    weapons_light_hammers: weapons.light_hammers,
+                    weapons_light_hammers_details: weapons.light_hammers_details,
+
                 tools:"инструменты",
+
+                    tool_blacksmith: tools.blacksmith,
+                    tool_brewer: tools.brewer,
+                    tool_mason: tools.mason,
+
                 languages:"языки",
                 
                     lang_common: langs.common,
@@ -223,7 +249,8 @@ export default {
                 telepathy:"телепатия",
                 proficiency_bonus:"2× Мастерства",
                 slippage: "проскальзывание",
-                disadvantage: "уязвимость",
+                disadvantage: "помеха",
+                plus_1_to_maxhp: "+1 к Max HP",
 
                 any_dice_1:"любого кубика при “1”",
                 behind_bigger_than_mid:"за существом выше среднего",
@@ -236,6 +263,10 @@ export default {
                 history_check_rock_gnome:"к проверке Истории к магическому, алхимическому или технологическому предмету",
                 stealth_in_stones: "при Скрытности в каменистой местности",
                 magic_against_int_wis_cha: "против Магии: Интеллект, Мудрость, Харизма",
+                stone_history:"к проверке Истории на теме связанной с камнем",
+                perception_under_sun:"на восприятие под прямым солнечным светом",
+                attack_under_sun:"на атаку под прямым солнечным светом",
+                for_each_lvl_incl_1:"за каждый уровень включая первый",
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -293,6 +324,19 @@ export default {
             forest:"лесной",
             forest_gnome_details: races.forest_gnome,
 
+            //Dwarf
+
+            dwarf:"дварф",
+            dwarf_details: races.dwarf,
+
+            mountain:"горный",
+            mountain_dwarf_details: races.mountain_dwarf,
+
+            grey:"серый",
+            grey_dwarf_details: races.grey_dwarf,
+
+            hill:"холмовой",
+            hill_dwarf_details: races.hill_dwarf,
 
             //Human
             
@@ -418,10 +462,15 @@ export default {
             //schools
             cantrip:"заговор",
             evocation:"воплощение",
+            illusion:"иллюзия",
 
             //components
-            verbal:"вербальный",
-            somatic:"соматический",
+            verbal:"слово",
+            somatic:"жест",
+
+            //more
+            damage: "урон",
+            additional: "дополнительный",
             
             thaumaturgy: spells.thaumaturgy,
             thaumaturgy_details: spells.thaumaturgy_details,
@@ -443,6 +492,14 @@ export default {
 
             spell_small_illusion: spells.small_illusion,
             spell_small_illusion_details: spells.small_illusion_details,
+
+            spell_enlargement: spells.enlargement,
+            spell_enlargement_details: spells.enlargement_details,
+
+            spell_invisibility: spells.invisibility,
+            spell_invisibility_details: spells.invisibility_details,
+
+
             
 
 }

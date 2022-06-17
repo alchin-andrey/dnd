@@ -133,5 +133,21 @@ export default {
         slot:0,
         name: "spell_small_illusion",
         details: "spell_small_illusion_details",
+    },
+
+    enlargement:{
+        slot:0,
+        name: "spell_enlargement",
+        details: "spell_enlargement_details",
+        damage_additional: {
+            x:1,
+            dice:4,
+        },
+    },
+
+    invisibility:{
+        slot:2,
+        name: "spell_invisibility",
+        details: "spell_invisibility_details",
     }
 }

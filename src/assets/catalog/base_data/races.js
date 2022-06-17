@@ -2,6 +2,9 @@ import color from "./colors.js";
 import spells from "./spells.js";
 import gender from "./genders.js";
 import lang from "./languages.js";
+import weapon from "./weapons.js";
+import tool from "./tools.js";
+import armor from "./armor.js";
 
 export default {
   halfling: {
@@ -346,7 +349,6 @@ export default {
         min: 15,
         max: 20,
       },
-
     },
 
     intelligence: 2,
@@ -363,9 +365,228 @@ export default {
         keyword: "advantage",
         details: "magic_against_int_wis_cha",
       },
-
     ],
+  },
 
+  dwarf: {
+    name: "dwarf",
+    details: "dwarf_details",
+
+    settings: {
+      ethnos: {
+        mountain: {
+          name: "mountain",
+          details: "mountain_dwarf_details",
+
+          //link_male
+          //link_female
+
+          color: {
+            skin: [
+              color[1][0],
+              color[1][1],
+              color[2][0],
+              color[2][1],
+              color[2][2],
+              color[3][0],
+            ],
+            eyes: [color[4][4], color[2][5], color[8][0]],
+            hair: [
+              color[2][1],
+              color[3][1],
+              color[1][3],
+              color[1][4],
+              color[2][2],
+              color[2][3],
+              color[2][4],
+              color[2][5],
+            ],
+          },
+
+          strength: 2,
+          vision_night: 60,
+
+          proficiencies: {
+            armor: [armor.light, armor.medium],
+          },
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "proficiency_bonus",
+              details: "history_check_rock_gnome",
+            },
+          ],
+        },
+
+        grey: {
+          name: "grey",
+          details: "gray_dwarf_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503210924",
+          // link_female: "https://www.heroforge.com/load_config%3D503211388",
+
+          color: {
+            skin: [color[0][3],color[0][4],color[0][5]],
+            eyes: [color[4][4], color[2][5], color[8][0]],
+            hair: [color[2][1],
+            color[3][1],
+            color[1][3],
+            color[1][4],
+            color[2][2],
+            color[2][3],
+            color[2][4],
+            color[2][5],],
+          },
+
+          strength: 1,
+          vision_night: 120,
+
+          proficiencies: {
+            languages: [lang.undercommon],
+          },
+
+          fines: [
+            {
+              type: "disadvantage",
+              keyword: "disadvantage",
+              details: "percetion_under_sun",
+            },
+            {
+              type: "disadvantage",
+              keyword: "disadvantage",
+              details: "attack_under_sun",
+            },
+          ],
+
+          spells: [
+            {
+              level: 3,
+              spell: spells.enlargement,
+            },
+            {
+              level: 5,
+              spell: spells.invisibility,
+            },
+          ],
+        },
+
+        hill: {
+          name: "hill",
+          details: "hill_dwarf_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503211188",
+          // link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [
+            color[1][4],
+            color[1][5],
+            color[2][4],
+            color[2][5],
+            color[2][6],
+            color[1][6],
+            color[0][6],],
+            eyes: [color[2][4],color[2][5]],
+            hair: [color[0][6],color[1][6], color[2][5],color[2][6]],
+          },
+
+          wisdom: 1,
+          vision_night: 60,
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "plus_1_to_maxhp",
+              details: "for_each_lvl_incl_1",
+            },
+          ],
+        },
+      },
+
+      gender: gender,
+
+      color: {
+        skin: [
+          color[1][0],
+          color[1][1],
+          color[1][4],
+          color[1][5],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[1][6],
+          color[0][6],
+          color[3][0],
+        ],
+        eyes: [],
+        hair: [
+          color[0][6],
+          color[1][6],
+          color[2][6],
+          color[0][5],
+          color[1][5],
+          color[2][5],
+          color[1][4],
+          color[1][3],
+        ],
+      },
+
+      age: {
+        min: 10,
+        young: 18,
+        mature: 50,
+        old: 350,
+        max: 400,
+      },
+
+      height: {
+        min: 120,
+        max: 150,
+      },
+
+      weight: {
+        min: 60,
+        max: 90,
+      },
+    },
+
+    constitution: 2,
+
+    speed: 25,
+
+    proficiencies: {
+      weapons: [
+        weapon.battle_axes,
+        weapon.hand_axes,
+        weapon.battle_hammers,
+        weapon.light_hammers,
+      ],
+      tools: [tool.blacksmith, tool.brewer, tool.mason], // добавить
+      languages: [lang.common, lang.dwarf],
+    },
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "poison_against",
+      },
+
+      {
+        type: "resistance",
+        keyword: "resistance",
+        details: "poison_damage",
+      },
+
+      {
+        type: "plus",
+        keyword: "proficiency_bonus",
+        details: "stone_history",
+      },
+    ],
   },
 
   human: {
