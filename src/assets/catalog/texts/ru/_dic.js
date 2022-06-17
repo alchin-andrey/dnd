@@ -239,6 +239,61 @@ export default {
                     lang_thieves: langs.thieves,
                     lang_thieves_details: langs.thieves_details,
 
+                    land_dambratan: langs.dambratan,
+                    lang_dambratan_details: langs.dambratan_details,
+
+                    lang_midani: langs.midani,
+                    lang_midani_details: langs.midani_details,
+
+                    lang_guran: langs.guran,
+                    lang_guran_details: langs.guran_details,
+
+                    lang_damarian: langs.damarian,
+                    lang_damarian_details: langs.damarian_details,
+
+                    lang_illuskian: langs.illuskian,
+                    lang_illuskian_details: langs.illuskian_details,
+
+                    lang_rushum: langs.rushum,
+                    lang_rushum_details: langs.rushum_details,
+
+                    lang_alzhedo: langs.alzhedo,
+                    lang_alzhedo_details: langs.alzhedo_details,
+
+                    lang_chessent: langs.chessent,
+                    lang_chessent_details: langs.chessent_details,
+
+                    lang_rashemian: langs.rashemian,
+                    lang_rashemian_details: langs.rashemian_details,
+
+                    lang_chondatanian: langs.chondatanian,
+                    lang_chondatanian_details: langs.chondatanian_details,
+
+                    lang_tuiganian: langs.tuiganian,
+                    lang_tuiganian_details: langs.tuiganian_details,
+
+                    lang_teramian: langs.teramian,
+                    lang_teramian_details: langs.teramian_details,
+
+                    lang_uluik: langs.uluik,
+                    lang_uluik_details: langs.uluik_details,
+
+                    lang_vaelan: langs.vaelan,
+                    lang_vaelan_details: langs.vaelan_details,
+
+                    lang_halruanian: langs.halruanian,
+                    lang_halruanian_details: langs.halruanian_details,
+
+                    lang_chult: langs.chult,
+                    lang_chult_details: langs.chult_details,
+
+                    lang_shaarian: langs.shaarian,
+                    lang_shaarian_details: langs.shaarian_details,
+
+                    lang_shu: langs.shu,
+                    lang_shu_details: langs.shu_details,
+
+
             //Особенности - пассивньіе умения
             fines:"особенности",
 
@@ -341,6 +396,67 @@ export default {
             //Human
             
             human:"человек",
+            human_details: races.human,
+
+            arkayun:"аркаюн",
+            arkayun_details: races.arkayun_human,
+            
+            bedin:"бедин",
+            bedin_details: races.bedin_human,
+
+            gur:"гур",
+            gur_details: races.gur_human,
+
+            damarian:"дамарец",
+            damarian_details: races.damarian_human,
+
+            illuskian:"иллюскианец",
+            illuskian_details: races.illuskian_human,
+
+            imaskari:"имаскари",
+            imaskari_details: races.imaskari_human,
+
+            kalishit:"калишит",
+            kalishit_details: races.kalishit_human,
+
+            mulan:"мулан",
+            mulan_details: races.mulan_human,
+
+            nar:"нар",
+            nar_details: races.nar_human,
+
+            rashemi:"рашеми",
+            rashemi_details: races.rashemi_human,
+
+            tetirian:"тетирец",
+            tetirian_details: races.tetirian_human,
+
+            tuigan:"туйган",
+            tuigan_details: races.tuigan_human,
+
+            terami:"тёрами",
+            terami_details: races.terami_human,
+
+            ulutiune:"улутиун",
+            ulutiune_details: races.ulutiune_human,
+
+            ffolk:"ффолк",
+            ffolk_details: races.ffolk_human,
+
+            halruanian:"халруанин",
+            halruanian_details: races.halruanian_human,
+
+            chondatan:"чондатанец",
+            chondatan_details: races.chondatan_human,
+
+            chult:"чульт",
+            chult_details: races.chult_human,
+
+            shaarian:"шаарец",
+            shaarian_details: races.shaarian_human,
+
+            shu:"шу",
+            shu_details: races.shu_human,
 
             //Halfelf
             

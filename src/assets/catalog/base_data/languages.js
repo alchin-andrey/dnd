@@ -75,4 +75,112 @@ export default {
         details: "lang_thieves_details"
     },
 
+    dambratan: {
+        name: "lang_dambratan",
+        details: "lang_dambratan_details",
+        human: true,
+    },
+
+    midani: {
+        name: "lang_midani",
+        details: "lang_midani_details",
+        human: true,
+    },
+
+    guran: {
+        name: "lang_guran",
+        details: "lang_guran_details",
+        human: true,
+    },
+
+    damarian: {
+        name: "lang_damarian",
+        details: "lang_damarian_details",
+        human: true,
+    },
+
+    illuskian: {
+        name: "lang_illuskian",
+        details: "lang_illuskian_details",
+        human: true,
+    },
+
+    rushum: {
+        name: "lang_rushum",
+        details: "lang_rushum_details",
+        human: true,
+    },
+
+    alzhedo: {
+        name: "lang_alzhedo",
+        details: "lang_alzhedo_details",
+        human: true,
+    },
+
+    chessent: {
+        name: "lang_chessent",
+        details: "lang_chessent_details",
+        human: true,
+    },
+
+    rashemian: {
+        name: "lang_rashemian",
+        details: "lang_rashemian_details",
+        human: true,
+    },
+
+    chondatanian: {
+        name: "lang_chondatanian",
+        details: "lang_chondatanian_details",
+        human: true,
+    },
+
+    tuiganian: {
+        name: "lang_tuiganian",
+        details: "lang_tuiganian_details",
+        human: true,
+    },
+
+    teramian: {
+        name: "lang_teramian",
+        details: "lang_teramian_details",
+        human: true,
+    },
+
+    uluik: {
+        name: "lang_uluik",
+        details: "lang_uluik_details",
+        human: true,
+    },
+
+    vaelan: {
+        name: "lang_vaelan",
+        details: "lang_vaelan_details",
+        human: true,
+    },
+
+    halruanian: {
+        name: "lang_halruanian",
+        details: "lang_halruanian_details",
+        human: true,
+    },
+
+    chult: {
+        name: "lang_chult",
+        details: "lang_chult_details",
+        human: true,
+    },
+
+    shaarian: {
+        name: "lang_shaarian",
+        details: "lang_shaarian_details",
+        human: true,
+    },
+
+    shu: {
+        name: "lang_shu",
+        details: "lang_shu_details",
+        human: true,
+    },
+
 }

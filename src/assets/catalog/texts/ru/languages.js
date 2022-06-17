@@ -1,3 +1,5 @@
+import * as races from './races.js';
+
 export const langs = {
   common: "всеобщий",
 
@@ -63,4 +65,59 @@ export const langs = {
   thieves: "воровской жаргон",
   thieves_details:"Тайная смесь диалекта, жаргона и шифра, который позволяет скрывать сообщения в, казалось бы, обычном разговоре. Только другое существо, знающее воровской жаргон, понимает такие сообщения. Это занимает в четыре раза больше времени, нежели передача тех же слов прямым текстом." +
   "<br /><br />Так же в него входит набор секретных знаков и символов, используемый для передачи коротких и простых сообщений. Например, является ли область опасной или территорией гильдии воров, находится ли поблизости добыча, простодушны ли люди в округе, и предоставляют ли здесь безопасное убежище для воров в бегах.",
+
+  dambratan: "дамбратан",
+  dambratan_details: "Язык народа Аркаюн: " + races.arkayun_human,
+
+  midani: "мидани",
+  midani_details: "Язык народа Бедин: " + races.bedin_human,
+
+  guran: "мидани",
+  guran_details: "Язык народа Гур: " + races.gur_human,
+
+  damarian: "дамарский",
+  damarian_details: "Язык народа Дамарцев: " + races.damarian_human + "<br /><br />Язык народа Нар: " + races.nar_human,
+
+  illuskian: "иллюскианский",
+  illuskian_details: "Язык народа Иллюскианцев: " + races.illuskian_human,
+
+  rushum: "рушум",
+  rushum_details: "Язык народа Имаскари: " + races.imaskari_human,
+
+  alzhedo: "алжедо",
+  alzhedo_details: "Язык народа Калишит: " + races.kalishit_human,
+
+  chessent: "чессент",
+  chessent_details: "Язык народа Мулан: " + races.mulan_human,
+
+  rashemian: "рашемийский",
+  rashemian_details: "Язык народа Рашеми: " + races.rashemi_human,
+
+  chondatanian: "чондатанский",
+  chondatanian_details: "Язык народа Тетирцев: " + races.tetirian_human + "<br /><br />Язык народа Чондатанцев: " + races.chondatan_human,
+
+  tuiganian: "туйганский",
+  tuiganian_details: "Язык народа Туйган: " + races.tuigan_human,
+
+  teramian: "терамийский",
+  teramian_details: "Язык народа Тёрами: " + races.terami_human,
+
+  uluik: "улуик",
+  uluik_details: "Язык народа Улутиун: " + races.ulutiune_human,
+
+  vaelan: "ваэлан",
+  vaelan_details: "Язык народа Ффолк: " + races.ffolk_human,
+
+  halruanian: "халруанский",
+  halruanian_details: "Язык народа Халруан: " + races.halruanian_human,
+
+  chult: "чультский",
+  chult_details: "Язык народа Чульт: " + races.chult_human,
+
+  shaarian: "шаарский",
+  shaarian_details: "Язык народа Шаар: " + races.shaarian_human,
+
+  shu: "шу",
+  shu_details: "Язык народа Шу: " + races.shu_human,
+
 };
