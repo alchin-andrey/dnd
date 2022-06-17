@@ -529,6 +529,8 @@ export default {
           wisdom: 1,
           vision_night: 60,
 
+          hp_bonus: 1,
+
           fines: [
             {
               type: "plus",
@@ -654,6 +656,12 @@ export default {
 
         bedin:{
 
+          color: {
+            skin: [color[2][6]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
           name:"bedin",
           details:"bedin_details",
 
@@ -663,6 +671,12 @@ export default {
         },
 
         gur:{
+
+          color: {
+            skin: [color[0][3]],
+            eyes: [color[2][5]],
+            hair: [color[1][6]],
+          },
 
           name:"gur",
           details:"gur_details",
@@ -674,6 +688,12 @@ export default {
 
         damarian:{
 
+          color: {
+            skin: [color[2][1],color[2][0],color[2][2],color[2][3],color[2][4]],
+            eyes: [color[2][5]],
+            hair: [color[2][6]],
+          },
+
           name:"damarian",
           details:"damarian_details",
 
@@ -683,6 +703,12 @@ export default {
         },
 
         illuskian:{
+
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[7][3]],
+            hair: [color[1][4],color[0][6],color[2][2]],
+          },
 
           name:"illuskian",
           details:"illuskian_details",
@@ -694,6 +720,12 @@ export default {
 
         imaskari:{
 
+          color: {
+            skin: [color[9][0]],
+            eyes: [color[0][2]],
+            hair: [color[8][1]],
+          },
+
           name:"imaskari",
           details:"imaskari_details",
 
@@ -703,6 +735,12 @@ export default {
         },
 
         kalishit:{
+
+          color: {
+            skin: [color[2][4]],
+            eyes: [color[2][5]],
+            hair: [color[2][6]],
+          },
 
           name:"kalishit",
           details:"kalishit_details",
@@ -714,6 +752,12 @@ export default {
 
         mulan:{
 
+          color: {
+            skin: [color[2][3]],
+            eyes: [color[2][4]],
+            hair: [color[1][6]],
+          },
+
           name:"mulan",
           details:"mulan_details",
 
@@ -723,6 +767,12 @@ export default {
         },
 
         nar:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[1][4]],
+            hair: [color[0][6]],
+          },
 
           name:"nar",
           details:"nar_details",
@@ -734,6 +784,12 @@ export default {
 
         rashemi:{
 
+          color: {
+            skin: [color[2][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
           name:"rashemi",
           details:"rashemi_details",
 
@@ -743,6 +799,12 @@ export default {
         },
 
         tetitian:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][3]],
+            hair: [color[2][6]],
+          },
 
           name:"tetitian",
           details:"tetitian_details",
@@ -754,6 +816,12 @@ export default {
 
         tuigan:{
 
+          color: {
+            skin: [color[3][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][5]],
+          },
+
           name:"tuigan",
           details:"tuigan_details",
 
@@ -763,6 +831,12 @@ export default {
         },
 
         terami:{
+
+          color: {
+            skin: [color[1][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
 
           name:"terami",
           details:"terami_details",
@@ -774,6 +848,12 @@ export default {
 
         ulutiune:{
 
+          color: {
+            skin: [color[3][4]],
+            eyes: [color[8][3]],
+            hair: [color[0][6]],
+          },
+
           name:"ulutiune",
           details:"ulutiune_details",
 
@@ -783,6 +863,12 @@ export default {
         },
 
         ffolk:{
+
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[7][3]],
+            hair: [color[3][5]],
+          },
 
           name:"ffolk",
           details:"ffolk_details",
@@ -794,6 +880,12 @@ export default {
 
         halruanian:{
 
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[10][2],color[2][5],color[0][5],color[6][3]],
+            hair: [color[3][2],color[2][5]],
+          },
+
           name:"halruanian",
           details:"halruanian_details",
 
@@ -803,6 +895,12 @@ export default {
         },
 
         chondatan:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[6][3],color[2][5]],
+            hair: [color[0][2],color[0][3],color[0][4],color[0][5]],
+          },
 
           name:"chondatan",
           details:"chondatan_details",
@@ -814,6 +912,12 @@ export default {
 
         chult:{
 
+          color: {
+            skin: [color[1][6]],
+            eyes: [color[3][3]],
+            hair: [color[2][5]],
+          },
+
           name:"chult",
           details:"chult_details",
 
@@ -823,6 +927,12 @@ export default {
         },
 
         shaarian:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[11][2]],
+            hair: [color[2][5]],
+          },
 
           name:"shaarian",
           details:"shaarian_details",
@@ -834,6 +944,12 @@ export default {
 
         shu:{
 
+          color: {
+            skin: [color[3][4]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
           name:"shu",
           details:"shu_details",
 
@@ -841,8 +957,6 @@ export default {
             languages: [lang.shu],
           },
         },
-
-
 
       },
       color: {
