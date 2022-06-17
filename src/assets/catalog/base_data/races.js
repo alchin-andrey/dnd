@@ -529,6 +529,8 @@ export default {
           wisdom: 1,
           vision_night: 60,
 
+          hp_bonus: 1,
+
           fines: [
             {
               type: "plus",
@@ -654,6 +656,12 @@ export default {
 
         bedin:{
 
+          color: {
+            skin: [color[2][6]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
           name:"bedin",
           details:"bedin_details",
 
@@ -663,6 +671,12 @@ export default {
         },
 
         gur:{
+
+          color: {
+            skin: [color[0][3]],
+            eyes: [color[2][5]],
+            hair: [color[1][6]],
+          },
 
           name:"gur",
           details:"gur_details",
@@ -674,6 +688,12 @@ export default {
 
         damarian:{
 
+          color: {
+            skin: [color[2][1],color[2][0],color[2][2],color[2][3],color[2][4]],
+            eyes: [color[2][5]],
+            hair: [color[2][6]],
+          },
+
           name:"damarian",
           details:"damarian_details",
 
@@ -683,6 +703,12 @@ export default {
         },
 
         illuskian:{
+
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[7][3]],
+            hair: [color[1][4],color[0][6],color[2][2]],
+          },
 
           name:"illuskian",
           details:"illuskian_details",
@@ -694,6 +720,12 @@ export default {
 
         imaskari:{
 
+          color: {
+            skin: [color[9][0]],
+            eyes: [color[0][2]],
+            hair: [color[8][1]],
+          },
+
           name:"imaskari",
           details:"imaskari_details",
 
@@ -703,6 +735,12 @@ export default {
         },
 
         kalishit:{
+
+          color: {
+            skin: [color[2][4]],
+            eyes: [color[2][5]],
+            hair: [color[2][6]],
+          },
 
           name:"kalishit",
           details:"kalishit_details",
@@ -714,6 +752,12 @@ export default {
 
         mulan:{
 
+          color: {
+            skin: [color[2][3]],
+            eyes: [color[2][4]],
+            hair: [color[1][6]],
+          },
+
           name:"mulan",
           details:"mulan_details",
 
@@ -723,6 +767,12 @@ export default {
         },
 
         nar:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[1][4]],
+            hair: [color[0][6]],
+          },
 
           name:"nar",
           details:"nar_details",
@@ -734,6 +784,12 @@ export default {
 
         rashemi:{
 
+          color: {
+            skin: [color[2][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
           name:"rashemi",
           details:"rashemi_details",
 
@@ -743,6 +799,12 @@ export default {
         },
 
         tetitian:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][3]],
+            hair: [color[2][6]],
+          },
 
           name:"tetitian",
           details:"tetitian_details",
@@ -754,6 +816,12 @@ export default {
 
         tuigan:{
 
+          color: {
+            skin: [color[3][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][5]],
+          },
+
           name:"tuigan",
           details:"tuigan_details",
 
@@ -763,6 +831,12 @@ export default {
         },
 
         terami:{
+
+          color: {
+            skin: [color[1][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
 
           name:"terami",
           details:"terami_details",
@@ -774,6 +848,12 @@ export default {
 
         ulutiune:{
 
+          color: {
+            skin: [color[3][4]],
+            eyes: [color[8][3]],
+            hair: [color[0][6]],
+          },
+
           name:"ulutiune",
           details:"ulutiune_details",
 
@@ -783,6 +863,12 @@ export default {
         },
 
         ffolk:{
+
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[7][3]],
+            hair: [color[3][5]],
+          },
 
           name:"ffolk",
           details:"ffolk_details",
@@ -794,6 +880,12 @@ export default {
 
         halruanian:{
 
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[10][2],color[2][5],color[0][5],color[6][3]],
+            hair: [color[3][2],color[2][5]],
+          },
+
           name:"halruanian",
           details:"halruanian_details",
 
@@ -803,6 +895,12 @@ export default {
         },
 
         chondatan:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[6][3],color[2][5]],
+            hair: [color[0][2],color[0][3],color[0][4],color[0][5]],
+          },
 
           name:"chondatan",
           details:"chondatan_details",
@@ -814,6 +912,12 @@ export default {
 
         chult:{
 
+          color: {
+            skin: [color[1][6]],
+            eyes: [color[3][3]],
+            hair: [color[2][5]],
+          },
+
           name:"chult",
           details:"chult_details",
 
@@ -823,6 +927,12 @@ export default {
         },
 
         shaarian:{
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[11][2]],
+            hair: [color[2][5]],
+          },
 
           name:"shaarian",
           details:"shaarian_details",
@@ -834,6 +944,12 @@ export default {
 
         shu:{
 
+          color: {
+            skin: [color[3][4]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
           name:"shu",
           details:"shu_details",
 
@@ -842,9 +958,10 @@ export default {
           },
         },
 
-
-
       },
+
+      gender:gender,
+
       color: {
         skin: [
           color[1][0],
@@ -932,6 +1049,25 @@ export default {
           color[3][3],
         ],
       },
+
+      age: {
+        min: 10,
+        young: 18,
+        mature: 30,
+        old: 60,
+        max: 90,
+      },
+
+      height: {
+        min: 150,
+        max: 180,
+      },
+
+      weight: {
+        min: 60,
+        max: 90,
+      },
+
     },
 
     strength: 1,
@@ -950,6 +1086,167 @@ export default {
   }, // недораюлтан
 
   tiefling: {
+
+    name: "tiefling",
+    details: "tiefling_details",
+
+    noimg_ethnos: true,
+
+    settings:{
+      ethnos:{
+        common:{},
+      },
+
+      gender:gender,
+
+      color: {
+        skin: [
+          color[0][0],
+          color[0][1],
+          color[0][2],
+          color[0][3],
+          color[0][4],
+          color[0][5],
+          color[0][6],
+          color[1][0],
+          color[1][1],
+          color[1][2],
+          color[1][3],
+          color[1][4],
+          color[1][5],
+          color[1][6],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[3][0],
+          color[12][0],
+          color[11][0],
+          color[10][0],
+        ],
+        eyes: [
+          color[0][0],
+          color[0][6],
+          color[1][3],
+          color[8][0],
+          color[3][3],
+          color[7][3],
+          color[9][1],
+          color[11][3],
+          color[12][3],
+        ],
+        hair: [
+          color[0][0],
+          color[0][1],
+          color[0][2],
+          color[0][3],
+          color[0][4],
+          color[0][5],
+          color[0][6],
+          color[1][0],
+          color[1][1],
+          color[1][2],
+          color[1][3],
+          color[1][4],
+          color[1][5],
+          color[1][6],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[3][0],
+          color[3][1],
+          color[3][2],
+          color[3][3],
+
+          color[8][0],
+          color[8][1],
+          color[8][2],
+          color[8][3],
+          color[8][4],
+          color[8][5],
+          color[8][6],
+
+          color[9][0],
+          color[9][1],
+          color[9][2],
+          color[9][3],
+          color[9][4],
+          color[9][5],
+          color[9][6],
+
+          color[10][0],
+          color[10][1],
+          color[10][2],
+          color[10][3],
+          color[10][4],
+          color[10][5],
+          color[10][6],
+
+          color[11][0],
+          color[11][1],
+          color[11][2],
+          color[11][3],
+          color[11][4],
+          color[11][5],
+          color[11][6],
+
+          color[12][0],
+          color[12][1],
+          color[12][2],
+          color[12][3],
+          color[12][4],
+          color[12][5],
+          color[12][6],
+
+        ],
+      },
+
+      age: {
+        min: 10,
+        young: 18,
+        mature: 30,
+        old: 85,
+        max: 100,
+      },
+
+      height: {
+        min: 150,
+        max: 180,
+      },
+
+      weight: {
+        min: 60,
+        max: 90,
+      },
+
+    },
+
+    intelligence: 1,
+    charisma: 2,
+
+    speed: 30,
+
+    vision_night: 60,
+
+    proficiencies: {
+      languages: [lang.common, lang.tiefling],
+    },
+
+    fines: [
+      {
+        type: "resistance",
+        keyword: "resistance",
+        details: "fire_damage",
+      },
+    ],
+
     spells: [
       {
         level: 1,
