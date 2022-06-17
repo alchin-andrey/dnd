@@ -19,7 +19,7 @@ export default {
 <style scoped>
 .selection_box {
   width: 426px;
-  padding: 32px 0 32px 0;
+  padding: 32px 32px 32px 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
