@@ -239,7 +239,7 @@ export default {
                     lang_thieves: langs.thieves,
                     lang_thieves_details: langs.thieves_details,
 
-                    land_dambratan: langs.dambratan,
+                    lang_dambratan: langs.dambratan,
                     lang_dambratan_details: langs.dambratan_details,
 
                     lang_midani: langs.midani,

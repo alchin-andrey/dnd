@@ -1083,7 +1083,7 @@ export default {
       languages: [lang.common],
     },
 
-  }, // недораюлтан
+  },
 
   tiefling: {
 
@@ -1267,7 +1267,33 @@ export default {
   },
 
   halfelf: {
+
+    name: "halfelf",
+    details: "halfelf_details",
+
+
+
+
     settings: {
+
+      age: {
+        min: 10,
+        young: 18,
+        mature: 30,
+        old: 85,
+        max: 100,
+      },
+
+      height: {
+        min: 150,
+        max: 180,
+      },
+
+      weight: {
+        min: 60,
+        max: 90,
+      },
+
       custom_skills: 2,
       custom_stats: 2,
       custom_language: 1,
