@@ -455,7 +455,7 @@ export default {
 
         grey: {
           name: "grey",
-          details: "gray_dwarf_details",
+          details: "grey_dwarf_details",
           // link_male: "https://www.heroforge.com/load_config%3D503210924",
           // link_female: "https://www.heroforge.com/load_config%3D503211388",
 
@@ -485,7 +485,7 @@ export default {
             {
               type: "disadvantage",
               keyword: "disadvantage",
-              details: "percetion_under_sun",
+              details: "perception_under_sun",
             },
             {
               type: "disadvantage",
