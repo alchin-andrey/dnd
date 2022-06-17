@@ -24,6 +24,7 @@ export default {
 
             strength:"сила",
             strength_base:"базовая",
+            strength_details: "",
 
             dexterity:"ловкость",
             dexterity_base:"базовая",
@@ -619,8 +620,5 @@ export default {
 
             spell_invisibility: spells.invisibility,
             spell_invisibility_details: spells.invisibility_details,
-
-
-            
 
 }
