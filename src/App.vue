@@ -148,7 +148,7 @@
         <!-- Этнос_proficiencies -->
 
         <!-- Этнос_fines -->
-        <my-wrapper gap_8>
+        <my-wrapper v-if="getRaceObj().fines" gap_8>
           <my-fines
             v-for="item in getRaceObj().fines"
             :key="item"
@@ -213,13 +213,10 @@
             ></svg>
           </div>
 
-          <!-- Этнос_Карточка_stats -->
-          <my-wrapper>
+          <!-- Этнос_Карточка_stats + qualities -->
+          <my-wrapper v-if="getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos]).length !== 0 || getActiveAttribute(MY.qualities,getAllEthnosObj()[ethnos]).length !== 0">
             <my-attribute
-              v-for="n in getActiveAttribute(
-                MY.stats,
-                getAllEthnosObj()[ethnos]
-              )"
+              v-for="n in getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos])"
               :key="n"
               :title="n"
               :type="`${n}_base`"
@@ -229,10 +226,7 @@
             >
             </my-attribute>
             <my-attribute
-              v-for="n in getActiveAttribute(
-                MY.qualities,
-                getAllEthnosObj()[ethnos]
-              )"
+              v-for="n in getActiveAttribute(MY.qualities,getAllEthnosObj()[ethnos])"
               :key="n"
               :title="n"
               :type="`${n}_base`"
@@ -242,7 +236,7 @@
             >
             </my-attribute>
           </my-wrapper>
-          <!-- Этнос_Карточка_stats -->
+          <!-- Этнос_Карточка_stats + qualities-->
 
         <!-- Этнос_Карточка_proficiencies -->
         <my-wrapper v-if="getAllEthnosObj()[ethnos].proficiencies">
@@ -763,6 +757,7 @@ export default {
           arr.push(kay);
         }
       }
+      console.log(arr)
       return arr;
     },
 
