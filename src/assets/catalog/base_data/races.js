@@ -11,6 +11,8 @@ export default {
     name: "halfling",
     details: "halfling_details",
 
+    ethnos_preview: [300,0],
+
     settings: {
       ethnos: {
         stout: {
@@ -619,6 +621,7 @@ export default {
     details: "human_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [390,-36],
 
     settings: {
       ethnos: {
