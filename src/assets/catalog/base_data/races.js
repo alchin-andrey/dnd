@@ -2236,10 +2236,102 @@ export default {
 
       color: {
         eyes: [
+          color[0][2],
+          color[0][3],
+          color[0][4],
+
+          color[1][2],
           color[1][3],
+          color[1][4],
+
+          color[3][2],
+          color[3][3],
+          color[3][4],
+
+          color[4][2],
+          color[4][3],
+          color[4][4],
+
+          color[5][2],
+          color[5][3],
+          color[5][4],
+
+          color[6][2],
+          color[6][3],
+          color[6][4],
+
+          color[7][2],
+          color[7][3],
+          color[7][4],
+
+          color[8][2],
+          color[8][3],
+          color[8][4],
+
+          color[9][2],
+          color[9][3],
+          color[9][4],
+
+          color[10][2],
+          color[10][3],
+          color[10][4],
+
+          color[11][2],
+          color[11][3],
+          color[11][4],
+
+          color[12][2],
+          color[12][3],
+          color[12][4],
         ],
         hair: [
+          color[0][5],
+          color[0][3],
+          color[0][4],
+
           color[1][5],
+          color[1][3],
+          color[1][4],
+
+          color[3][5],
+          color[3][3],
+          color[3][4],
+
+          color[4][5],
+          color[4][3],
+          color[4][4],
+
+          color[5][5],
+          color[5][3],
+          color[5][4],
+
+          color[6][5],
+          color[6][3],
+          color[6][4],
+
+          color[7][5],
+          color[7][3],
+          color[7][4],
+
+          color[8][5],
+          color[8][3],
+          color[8][4],
+
+          color[9][5],
+          color[9][3],
+          color[9][4],
+
+          color[10][5],
+          color[10][3],
+          color[10][4],
+
+          color[11][5],
+          color[11][3],
+          color[11][4],
+
+          color[12][5],
+          color[12][3],
+          color[12][4],
         ],
       },
 
