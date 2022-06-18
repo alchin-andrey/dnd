@@ -1003,9 +1003,9 @@ getProf_RE(kay) {
       return hex;
     },
 
-    getCharImg_NoEthnos(value, hower) {
+    getCharImg(value, hower) {
       let race = this.MY.race;
-      let ethnos = getRaceObj().noimg_ethnos ? "" : `/${this.MY.ethnos}`;
+      let ethnos = this.getRaceObj().noimg_ethnos ? "" : `/${this.MY.ethnos}`;
       let phisiological = this.MY.gender.phisiological;
       let img = hower ? hower.img : this.getCharColor(value).img;
       let sex;
@@ -1026,9 +1026,9 @@ getProf_RE(kay) {
       return result;
     },
 
-    getCharEthnosImg_NoEthnos(value, ethnos_name) {
+    getCharEthnosImg(value, ethnos_name) {
       let race = this.MY.race;
-      let ethnos = getRaceObj().noimg_ethnos ? "" : `/${ethnos_name}`;
+      let ethnos = this.getRaceObj().noimg_ethnos ? "" : `/${ethnos_name}`;
       let phisiological = this.MY.gender.phisiological;
       let img = this.getAllEthnosObj()[ethnos_name].color[value][0].img;
       let sex;
@@ -1049,7 +1049,7 @@ getProf_RE(kay) {
       return result;
     },
 
-    getCharImg(value, hower) {
+    getCharImg_1(value, hower) {
       let race = this.MY.race;
       let ethnos = this.MY.ethnos;
       let phisiological = this.MY.gender.phisiological;
@@ -1072,7 +1072,7 @@ getProf_RE(kay) {
       return result;
     },
 
-    getCharEthnosImg(value, ethnos_name) {
+    getCharEthnosImg_1(value, ethnos_name) {
       let race = this.MY.race;
       let ethnos = ethnos_name;
       let phisiological = this.MY.gender.phisiological;
