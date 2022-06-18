@@ -1813,4 +1813,98 @@ export default {
       },
     ],
   },
+ 
+  halforc:{
+    name:"halforc",
+    details:"halforc_details",
+
+    noimg_ethnos: true,
+
+    settings: {
+      ethnos: {
+        common: {
+          name: "common",
+        },
+      },
+
+      gender: gender,
+
+      color: {
+        skin: [
+          color[0][2],
+          color[0][3],
+          color[0][4],
+          color[1][2],
+          color[1][3],
+          color[1][4],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[9][0],
+        ],
+        eyes: [
+          color[0][5],
+          color[1][5],
+          color[2][5],
+          color[10][5],
+          color[11][5],
+          color[12][5],
+        ],
+        hair: [
+          color[0][6],
+          color[1][6],
+          color[2][6],
+          color[10][6],
+          color[11][6],
+          color[12][6],
+        ],
+      },
+
+      age: {
+        min: 10,
+        young: 14,
+        mature: 25,
+        old: 55,
+        max: 75,
+      },
+
+      height: {
+        min: 180,
+        max: 210,
+      },
+
+      weight: {
+        min: 80,
+        max: 115,
+      },
+    },
+
+    stats: { 
+      strength: 2,
+      constitution: 1, 
+    },    
+
+    skills: {
+      intimidation: 2,
+    },
+
+    qualities: { speed: 30, vision_night: 60 },
+
+    proficiencies: {
+      languages: [lang.common, lang.orc],
+    },
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "double_dice_damage",
+        details: "crit_hand_weapon",
+      },
+      {
+        type: "plus",
+        keyword: "persistence",
+        details: "persistence_details",
+      },
+    ],
+  }
 };

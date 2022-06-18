@@ -374,6 +374,8 @@ export default {
                 trans: "транс",
                 stealth_in_wild: "маскировка в дикой местности",
                 knowledge: "знание",
+                double_dice_damage:"2× Кость урона",
+                persistence: "стойкость",
 
                 any_dice_1:"любого кубика при “1”",
                 behind_bigger_than_mid:"за существом выше среднего",
@@ -393,9 +395,11 @@ export default {
                 for_each_lvl_incl_1:"за каждый уровень включая первый",
                 charm_against: "против Очарования",
                 magic_sleep_against:"магическому Усыплению",
-                trans_details: "– глубокая медитация вместо сна, до 4 часов",
-                stealth_in_wild_details:"– даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
+                trans_details: "— глубокая медитация вместо сна, до 4 часов",
+                stealth_in_wild_details:"— даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
                 any_cantrip_wizard: "1 любого заговора Волшебника",
+                crit_hand_weapon: "при крите рукопашным оружием",
+                persistence_details:"— когда HP опускается до 0 и вы при этом не убиты, оно становится = 1",
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -554,6 +558,11 @@ export default {
 
             dark: "темный",
             dark_elf_details: races.dark_elf,
+
+            // Halforc
+
+            halforc: "полуорк",
+            halforc_details: races.halforc,
 
     //Colors
 
