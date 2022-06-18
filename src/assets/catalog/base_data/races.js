@@ -26,7 +26,7 @@ export default {
             hair: [color[1][4]],
           },
 
-          constitution: 1,
+          stats:{constitution: 1},
 
           fines: [
             {
@@ -56,7 +56,7 @@ export default {
             hair: [color[0][6]],
           },
 
-          charisma: 1,
+          stats:{charisma: 1},
 
           fines: [
             {
@@ -79,7 +79,7 @@ export default {
             hair: [color[2][5]],
           },
 
-          wisdom: 1,
+          stats:{wisdom: 1},
 
           fines: [
             {
@@ -139,9 +139,9 @@ export default {
       custom_language: 1,
     },
 
-    dexterity: 2,
+    stats:{dexterity: 2},
 
-    speed: 25,
+    qualities:{speed: 25},
 
     proficiencies: {
       languages: [lang.common, lang.halfling],
@@ -227,8 +227,8 @@ export default {
             hair: [color[2][2], color[2][3]],
           },
 
-          constitution: 1,
-          vision_night: 60,
+          stats:{constitution: 1},
+          qualities:{vision_night: 60},
 
           fines: [
             {
@@ -281,8 +281,8 @@ export default {
             max: 54,
           },
 
-          dexterity: 1,
-          vision_night: 120,
+          stats:{dexterity: 1},
+          qualities:{vision_night: 120},
 
           proficiencies: {
             languages: [lang.undercommon],
@@ -309,8 +309,8 @@ export default {
             hair: [color[2][5]],
           },
 
-          dexterity: 1,
-          vision_night: 60,
+          stats:{dexterity: 1},
+          qualities:{vision_night: 60},
 
           proficiencies: {
             languages: [lang.animal],
@@ -379,9 +379,9 @@ export default {
       },
     },
 
-    intelligence: 2,
+    stats:{intelligence: 2},
 
-    speed: 25,
+    qualities:{speed: 25},
 
     proficiencies: {
       languages: [lang.common, lang.gnome],
@@ -437,8 +437,8 @@ export default {
             ],
           },
 
-          strength: 2,
-          vision_night: 60,
+          stats:{strength: 2},
+          qualities:{vision_night: 60},
 
           proficiencies: {
             armor: [armor.light, armor.medium],
@@ -467,8 +467,8 @@ export default {
             ],
           },
 
-          strength: 1,
-          vision_night: 120,
+          stats:{strength: 1},
+          qualities:{vision_night: 120},
 
           proficiencies: {
             languages: [lang.undercommon],
@@ -519,8 +519,8 @@ export default {
             hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
           },
 
-          wisdom: 1,
-          vision_night: 60,
+          stats:{wisdom: 1},
+          qualities:{vision_night: 60},
 
           hp_bonus: 1,
 
@@ -585,9 +585,9 @@ export default {
       },
     },
 
-    constitution: 2,
+    stats:{constitution: 2},
 
-    speed: 25,
+    qualities:{speed: 25},
 
     proficiencies: {
       weapons: [
@@ -1063,14 +1063,14 @@ export default {
 
     },
 
-    strength: 1,
+    stats:{strength: 1,
     dexterity: 1,
     constitution: 1,
     intelligence: 1,
     wisdom: 1,
-    charisma: 1,
+    charisma: 1},
 
-    speed: 30,
+    qualities:{speed: 30},
 
     proficiencies: {
       languages: [lang.common],
@@ -1223,12 +1223,11 @@ export default {
 
     },
 
-    intelligence: 1,
-    charisma: 2,
+    stats:{intelligence: 1,
+    charisma: 2},
 
-    speed: 30,
-
-    vision_night: 60,
+    qualities:{speed: 30,
+    vision_night: 60},
 
     proficiencies: {
       languages: [lang.common, lang.tiefling],
@@ -1388,10 +1387,10 @@ export default {
 
     },
 
-    charisma: 2,
+    stats:{charisma: 2},
 
-    speed: 30,
-    vision_night: 60,
+    qualities:{speed: 30,
+    vision_night: 60},
 
     proficiencies: {
       languages: [lang.common, lang.elf],
