@@ -649,14 +649,14 @@
         v-for="(val, name) in MY.proficiencies"
         :key="name"
         :title="name"
-        :item="getProficienciesItem(name)"
+        :item="getProficItem(getRaceObj(), name).concat(getProficItem(getEthnosObj(), name))"
       >
       </my-inventory>
     </my-wrapper>
     <!-- proficiencies -->
 
     <!-- fines -->
-    <my-wrapper gap_8 hr>
+    <my-wrapper v-if="getRaceObj().fines || getEthnosObj().fines" gap_8 hr>
       <my-fines
         v-for="item in getRaceObj().fines"
         :key="item"
@@ -805,6 +805,10 @@ export default {
 
     getProficItem(obj, kay) {
       let arr = [];
+      if (obj.proficiencies === undefined) {
+        return arr;
+      }
+      console.log(obj, kay)
       for (let i in obj.proficiencies[kay]) {
         arr.push(obj.proficiencies[kay][i].name);
       }
