@@ -465,7 +465,24 @@
 
     <!-- Характеристики -->
     <my-selection-box :shown="shown_characteristics">
-      <div class="jbm-300">Характеристики</div>
+        <my-selection-card
+          v-for="(val, name) in MY.stats"
+          :key="name"
+        >
+        <my-attribute
+        :title="name"
+        :type="`${name}_base`"
+        plus
+        :numb="getNumbStats(name, 1)"
+        :icon="name"
+      >
+      </my-attribute>
+          <my-card-text
+            title=""
+            :text="t(`${name}_details`)"
+          >
+          </my-card-text>
+        </my-selection-card>
     </my-selection-box>
     <!-- Характеристики -->
 
@@ -477,7 +494,16 @@
 
     <!-- Языки -->
     <my-selection-box :shown="shown_languages">
-      <div class="jbm-300">Языки</div>
+        <my-selection-card
+          v-for="lang in languages"
+          :key="lang"
+        >
+          <my-card-text
+            :title="lang.name"
+            :text="t(lang.details)"
+          >
+          </my-card-text>
+        </my-selection-card>
     </my-selection-box>
     <!-- Языки -->
   </div>
@@ -697,7 +723,9 @@ import genders from "@/assets/catalog/base_data/genders.js";
 import race from "@/assets/catalog/base_data/races.js";
 import clas from "@/assets/catalog/base_data/classes.js";
 import past from "@/assets/catalog/base_data/pasts.js";
+import languages from "@/assets/catalog/base_data/languages.js";
 import placeholder from "@/assets/catalog/base_data/placeholder.js";
+
 
 import Genders from "@/components/Genders.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
@@ -718,6 +746,7 @@ export default {
       race: race,
       clas: clas,
       past: past,
+      languages: languages,
       placeholder: placeholder,
 
       shown_ethnos: false,
@@ -796,7 +825,6 @@ export default {
     getProficienciesEthnosItem(obj, name) {
       console.log(obj, name);
       let arr = [];
-      console.log(this.getAllEthnosObj()[obj].proficiencies[name]);
       for (let i in this.getAllEthnosObj()[obj].proficiencies[name]) {
         arr.push(this.getAllEthnosObj()[obj].proficiencies[name][i].name);
       }
@@ -808,7 +836,6 @@ export default {
       if (obj.proficiencies === undefined) {
         return arr;
       }
-      console.log(obj, kay)
       for (let i in obj.proficiencies[kay]) {
         arr.push(obj.proficiencies[kay][i].name);
       }
@@ -1027,16 +1054,18 @@ export default {
       }
     },
 
-    getNumbStats(name) {
+    getNumbStats(name, numb) {
       let i = 0;
       let j = 0;
+      numb === undefined ? numb = 0 : numb = numb ;
       this.getRaceObj()[name] === undefined
         ? (i = 0)
         : (i = this.getRaceObj()[name]);
       this.getEthnosObj()[name] === undefined
         ? (j = 0)
         : (j = this.getEthnosObj()[name]);
-      return i + j;
+        i === 0 && j === 0 ? numb = numb : numb = 0;
+      return i + j + numb;
     },
 
     getRaceObj() {

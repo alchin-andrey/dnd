@@ -1,6 +1,9 @@
 <template>
   <div class="wrapper"
-  :class="{ gap_8: gap_8 }">
+  :class="{ 
+    gap_8: gap_8,
+    gap_26: gap_26  
+    }">
     <slot></slot>
   </div>
   <div v-if="hr" class="hr"></div>
@@ -11,6 +14,10 @@ export default {
   name: "MyWrapper",
   props: {
     gap_8: {
+      type: Boolean,
+      default: false,
+    },
+    gap_26: {
       type: Boolean,
       default: false,
     },
@@ -35,5 +42,8 @@ export default {
 }
 .gap_8 {
   gap: 8px;
+}
+.gap_26 {
+  gap: 26px;
 }
 </style>
