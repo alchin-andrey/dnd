@@ -73,24 +73,13 @@ export default {
         },
     },
 
-    darkness : {
-        slot: 2,
-        name: "darkness",
-        school: "evocation",
-        details: "darkness_details",
+    fire_breath:{
 
-        components: [
-            "verbal",
-            "material +"
-        ],
-    },
+        name: "fire_breath",
+        details: "fire_breath_details",
 
-    acid_breath:{
-
-        name: "acid_breath",
         compomemt: [
             "verbal",
-            "somatic",
         ],
 
         school: "evocation",
@@ -102,12 +91,120 @@ export default {
 
         damage: {
             x:2,
-            dice:10,
+            dice:6,
         },
 
         gain: {
             x:1,
-            dice:10,
+            dice:6,
+        },
+    },
+
+    cold_breath:{
+
+        name: "cold_breath",
+        details: "cold_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "constitution",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
+        },
+    },
+
+    electricity_breath:{
+
+        name: "electricity_breath",
+        details: "electricity_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "dexterity",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
+        },
+    },
+
+    acid_breath:{
+
+        name: "acid_breath",
+        details: "acid_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "dexterity",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
+        },
+    },
+
+    poison_breath:{
+
+        name: "poison_breath",
+        details: "poison_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "constitution",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
         },
     },
 
@@ -145,9 +242,32 @@ export default {
         },
     },
 
+    dancing_lights: {
+        slot:0,
+        name: "spell_dancing_lights",
+        details: "spell_dancing_lights_details",
+        components: [
+            "verbal",
+            "somatic",
+            "material +"
+        ],
+    },
+
     invisibility:{
         slot:2,
         name: "spell_invisibility",
         details: "spell_invisibility_details",
-    }
+    },
+
+    darkness : {
+        slot: 2,
+        name: "darkness",
+        school: "evocation",
+        details: "darkness_details",
+
+        components: [
+            "verbal",
+            "material +"
+        ],
+    },
 }

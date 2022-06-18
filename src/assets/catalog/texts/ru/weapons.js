@@ -11,4 +11,22 @@ export const weapons = {
     battle_hammers: "легкие молоты",
     battle_hammers_details: "—",
 
+    long_swords: "длинные мечи",
+    long_swords_details: "—",
+
+    short_swords: "короткие мечи",
+    short_swords_details: "—",
+
+    long_bows: "длинные луки",
+    long_bows_details: "—",
+
+    short_bows: "короткие луки",
+    short_bows_details: "—",
+
+    rapires: "рапиры",
+    rapires_details: "—",
+
+    hand_arbalets: "ручные арбалеты",
+    hand_arbalets_details: "—",
+
 }

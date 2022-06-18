@@ -224,6 +224,24 @@ export default {
                     weapons_light_hammers: weapons.light_hammers,
                     weapons_light_hammers_details: weapons.light_hammers_details,
 
+                    weapons_long_swords: weapons.long_swords,
+                    weapons_long_swords_details: weapons.long_swords_details,
+
+                    weapons_short_swords: weapons.short_swords,
+                    weapons_short_swords_details: weapons.short_swords_details,
+
+                    weapons_long_bows: weapons.long_bows,
+                    weapons_long_bows_details: weapons.long_bows_details,
+
+                    weapons_short_bows: weapons.short_bows,
+                    weapons_short_bows_details: weapons.short_bows_details,
+
+                    weapons_rapires: weapons.rapires,
+                    weapons_rapires_details: weapons.rapires_details,
+
+                    weapons_hand_arbalets: weapons.hand_arbalets,
+                    weapons_hand_arbalets_details: weapons.hand_arbalets_details,
+
                 tools:"инструменты",
 
                     tool_blacksmith: tools.blacksmith,
@@ -353,6 +371,11 @@ export default {
                 slippage: "проскальзывание",
                 disadvantage: "помеха",
                 plus_1_to_maxhp: "+1 к Max HP",
+                trans: "транс",
+                stealth_in_wild: "маскировка в дикой местности",
+                knowledge: "знание",
+                double_dice_damage:"2× Кость урона",
+                persistence: "стойкость",
 
                 any_dice_1:"любого кубика при “1”",
                 behind_bigger_than_mid:"за существом выше среднего",
@@ -363,6 +386,9 @@ export default {
                 known_languages:"на известных языках",
                 fire_against:"против 🔥 Огня",
                 fire_damage:"урону 🔥 Огнем",
+                cold_damage:"урону ❄️ Холодом",
+                electricity_damage:"урону ⚡️ Электричеством",
+                acid_damage:"урону ⚗️ Кислотой",
                 history_check_rock_gnome:"к проверке Истории к магическому, алхимическому или технологическому предмету",
                 stealth_in_stones: "при Скрытности в каменистой местности",
                 magic_against_int_wis_cha: "против Магии: Интеллект, Мудрость, Харизма",
@@ -372,6 +398,11 @@ export default {
                 for_each_lvl_incl_1:"за каждый уровень включая первый",
                 charm_against: "против Очарования",
                 magic_sleep_against:"магическому Усыплению",
+                trans_details: "— глубокая медитация вместо сна, до 4 часов",
+                stealth_in_wild_details:"— даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
+                any_cantrip_wizard: "1 любого заговора Волшебника",
+                crit_hand_weapon: "при крите рукопашным оружием",
+                persistence_details:"— когда HP опускается до 0 и вы при этом не убиты, оно становится = 1",
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -517,6 +548,59 @@ export default {
             
             tiefling:"тифлинг",
             tiefling_details: races.tiefling,
+
+            // Elf
+
+            elf: "эльф",
+            elf_details: races.elf,
+
+            forest_elf_details: races.forest_elf,
+
+            high_elf: "высший",
+            high_elf_details: races.high_elf,
+
+            dark: "темный",
+            dark_elf_details: races.dark_elf,
+
+            // Halforc
+
+            halforc: "полуорк",
+            halforc_details: races.halforc,
+
+            // Dragonborn
+
+            dragonborn: "драконорожденный",
+            dragonborn_details: races.dragonborn,
+
+            red_dragonborn: "красный",
+            red_dragonborn_details: races.red_dragonborn,
+
+            brass_dragonborn: "латунный",
+            brass_dragonborn_details: races.brass_dragonborn,
+
+            golden_dragonborn: "золотой",
+            golden_dragonborn_details: races.golden_dragonborn,
+
+            silver_dragonborn: "серебряный",
+            silver_dragonborn_details: races.silver_dragonborn,
+
+            white_dragonborn: "белый",
+            white_dragonborn_details: races.white_dragonborn,
+
+            blue_dragonborn: "синий",
+            blue_dragonborn_details: races.blue_dragonborn,
+
+            bronze_dragonborn: "бронзовый",
+            bronze_dragonborn_details: races.bronze_dragonborn,
+
+            copper_dragonborn: "медный",
+            copper_dragonborn_details: races.copper_dragonborn,
+
+            black_dragonborn: "черный",
+            black_dragonborn_details: races.black_dragonborn,
+
+            green_dragonborn: "зеленый",
+            green_dragonborn_details: races.green_dragonborn,
 
     //Colors
 
@@ -666,5 +750,26 @@ export default {
 
             spell_invisibility: spells.invisibility,
             spell_invisibility_details: spells.invisibility_details,
+
+            spell_dancing_lights: spells.dancing_lights,
+            spell_dancing_lights_details: spells.dancing_lights_details,
+
+            spell_faerie_fire: spells.faerie_fire,
+            spell_faerie_fire_details: spells.faerie_fire_details,
+
+            spell_fire_breath: spells.fire_breath,
+            spell_fire_breath_details: spells.fire_breath_details,
+
+            spell_cold_breath: spells.cold_breath,
+            spell_cold_breath_details: spells.cold_breath_details,
+
+            spell_electricity_breath: spells.electricity_breath,
+            spell_electricity_breath_details: spells.electricity_breath_details,
+
+            spell_acid_breath: spells.acid_breath,
+            spell_acid_breath_details: spells.acid_breath_details,
+
+            spell_poison_breath: spells.poison_breath,
+            spell_poison_breath_details: spells.poison_breath_details,
 
 }
