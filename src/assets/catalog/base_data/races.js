@@ -134,8 +134,8 @@ export default {
       },
 
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      custom_skills: 2,
-      custom_stats: 2,
+      custom_stats: [2,1], // [колво, инкремент]
+      custom_skills: [2,2], 
       custom_language: 1,
     },
 
@@ -1382,9 +1382,10 @@ export default {
         max: 90,
       },
 
-      custom_skills: 2,
-      custom_stats: 2,
+      custom_stats: [2,1],
+      custom_skills: [2,2],
       custom_language: 1,
+
     },
 
     charisma: 2,
