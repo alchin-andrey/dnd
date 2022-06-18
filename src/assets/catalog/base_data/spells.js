@@ -73,18 +73,6 @@ export default {
         },
     },
 
-    darkness : {
-        slot: 2,
-        name: "darkness",
-        school: "evocation",
-        details: "darkness_details",
-
-        components: [
-            "verbal",
-            "material +"
-        ],
-    },
-
     acid_breath:{
 
         name: "acid_breath",
@@ -145,9 +133,32 @@ export default {
         },
     },
 
+    dancing_lights: {
+        slot:0,
+        name: "spell_dancing_lights",
+        details: "spell_dancing_lights_details",
+        components: [
+            "verbal",
+            "somatic",
+            "material +"
+        ],
+    },
+
     invisibility:{
         slot:2,
         name: "spell_invisibility",
         details: "spell_invisibility_details",
-    }
+    },
+
+    darkness : {
+        slot: 2,
+        name: "darkness",
+        school: "evocation",
+        details: "darkness_details",
+
+        components: [
+            "verbal",
+            "material +"
+        ],
+    },
 }

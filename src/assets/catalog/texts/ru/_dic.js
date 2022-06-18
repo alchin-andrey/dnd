@@ -224,6 +224,24 @@ export default {
                     weapons_light_hammers: weapons.light_hammers,
                     weapons_light_hammers_details: weapons.light_hammers_details,
 
+                    weapons_long_swords: weapons.long_swords,
+                    weapons_long_swords_details: weapons.long_swords_details,
+
+                    weapons_short_swords: weapons.short_swords,
+                    weapons_short_swords_details: weapons.short_swords_details,
+
+                    weapons_long_bows: weapons.long_bows,
+                    weapons_long_bows_details: weapons.long_bows_details,
+
+                    weapons_short_bows: weapons.short_bows,
+                    weapons_short_bows_details: weapons.short_bows_details,
+
+                    weapons_rapires: weapons.rapires,
+                    weapons_rapires_details: weapons.rapires_details,
+
+                    weapons_hand_arbalets: weapons.hand_arbalets,
+                    weapons_hand_arbalets_details: weapons.hand_arbalets_details,
+
                 tools:"инструменты",
 
                     tool_blacksmith: tools.blacksmith,
@@ -353,6 +371,9 @@ export default {
                 slippage: "проскальзывание",
                 disadvantage: "помеха",
                 plus_1_to_maxhp: "+1 к Max HP",
+                trans: "транс",
+                stealth_in_wild: "маскировка в дикой местности",
+                knowledge: "знание",
 
                 any_dice_1:"любого кубика при “1”",
                 behind_bigger_than_mid:"за существом выше среднего",
@@ -372,6 +393,9 @@ export default {
                 for_each_lvl_incl_1:"за каждый уровень включая первый",
                 charm_against: "против Очарования",
                 magic_sleep_against:"магическому Усыплению",
+                trans_details: "– глубокая медитация вместо сна, до 4 часов",
+                stealth_in_wild_details:"– даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
+                any_cantrip_wizard: "1 любого заговора Волшебника",
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -517,6 +541,19 @@ export default {
             
             tiefling:"тифлинг",
             tiefling_details: races.tiefling,
+
+            // Elf
+
+            elf: "эльф",
+            elf_details: races.elf,
+
+            forest_elf_details: races.forest_elf,
+
+            high_elf: "высший",
+            high_elf_details: races.high_elf,
+
+            dark: "темный",
+            dark_elf_details: races.dark_elf,
 
     //Colors
 
@@ -666,5 +703,11 @@ export default {
 
             spell_invisibility: spells.invisibility,
             spell_invisibility_details: spells.invisibility_details,
+
+            spell_dancing_lights: spells.dancing_lights,
+            spell_dancing_lights_details: spells.dancing_lights_details,
+
+            spell_faerie_fire: spells.faerie_fire,
+            spell_faerie_fire_details: spells.faerie_fire_details,
 
 }

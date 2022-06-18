@@ -20,4 +20,36 @@ export default {
         details:"weapons_light_hammers_details",
     },
 
+    long_swords:{
+        name:"weapons_long_swords",
+        details:"weapons_long_swords_details",
+    },
+
+    short_swords:{
+        name:"weapons_short_swords",
+        details:"weapons_short_swords_details",
+    },
+
+    rapires:{
+        name:"weapons_rapires",
+        details:"weapons_rapires_details",
+    },
+
+
+    long_bows:{
+        name:"weapons_long_bows",
+        details:"weapons_long_bows_details",
+    },
+
+    short_bows:{
+        name:"weapons_short_bows",
+        details:"weapons_short_bows_details",
+    },
+
+    hand_arbalets:{
+        name:"weapons_hand_arbalets",
+        details:"weapons_hand_arbalets_details",
+    },
+
+
 }
