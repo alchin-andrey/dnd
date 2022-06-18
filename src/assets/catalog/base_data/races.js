@@ -444,13 +444,6 @@ export default {
             armor: [armor.light, armor.medium],
           },
 
-          fines: [
-            {
-              type: "plus",
-              keyword: "proficiency_bonus",
-              details: "history_check_rock_gnome",
-            },
-          ],
         },
 
         grey: {
