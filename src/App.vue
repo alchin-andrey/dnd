@@ -179,6 +179,10 @@
           >
             <img
               v-if="getCharEthnosImg('skin', ethnos)"
+              :style="{ 
+                height: `${getRaceObj().ethnos_preview[0]}px`,
+                left: `${getRaceObj().ethnos_preview[1]}px`,
+              }"
               :src="getCharEthnosImg('skin', ethnos)"
               alt="skin"
             />
@@ -186,7 +190,7 @@
             <svg
               v-if="!getCharEthnosImg('skin', ethnos)"
               :fill="getAllEthnosObj()[ethnos].color.skin[0].hex"
-              :height="calcImg()"
+              :height="300"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
               v-html="placeholder.skin"
@@ -194,6 +198,10 @@
 
             <img
               v-if="getCharEthnosImg('hair', ethnos)"
+              :style="{ 
+                height: `${getRaceObj().ethnos_preview[0]}px`,
+                left: `${getRaceObj().ethnos_preview[1]}px`,
+              }"
               :src="getCharEthnosImg('hair', ethnos)"
               alt="hair"
             />
@@ -201,7 +209,7 @@
             <svg
               v-if="!getCharEthnosImg('hair', ethnos)"
               :fill="getAllEthnosObj()[ethnos].color.hair[0].hex"
-              :height="calcImg()"
+              :height="300"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
               v-html="placeholder.hair"
@@ -209,6 +217,10 @@
 
             <img
               v-if="getCharEthnosImg('eyes', ethnos)"
+              :style="{ 
+                height: `${getRaceObj().ethnos_preview[0]}px`,
+                left: `${getRaceObj().ethnos_preview[1]}px`,
+              }"
               :src="getCharEthnosImg('eyes', ethnos)"
               alt="eyes"
             />
@@ -216,7 +228,7 @@
             <svg
               v-if="!getCharEthnosImg('eyes', ethnos)"
               :fill="getAllEthnosObj()[ethnos].color.eyes[0].hex"
-              :height="calcImg()"
+              :height="300"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
               v-html="placeholder.eyes"
@@ -1293,10 +1305,10 @@ body {
 }
 
 .char_back img {
-  height: 300px;
+  height: 390px;
   position: absolute;
   top: 16px;
-  left: 0;
+  left: -36px;
 }
 
 .char_back svg {
