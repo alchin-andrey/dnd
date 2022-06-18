@@ -112,31 +112,31 @@
     <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
         <!-- Этнос_stats + qualities -->
-        <my-wrapper>
+        <my-wrapper v-if="getRaceObj().stats || getRaceObj().qualities">
           <my-attribute
-            v-for="n in getActiveAttribute(MY.stats, getRaceObj())"
-            :key="n"
-            :title="n"
-            :type="`${n}_base`"
+            v-for="(val, name) in getRaceObj().stats"
+          :key="name"
+            :title="name"
+            :type="`${name}_base`"
             plus
-            :numb="getRaceObj()[n]"
-            :icon="n"
+            :numb="val"
+            :icon="name"
           >
           </my-attribute>
           <my-attribute
-            v-for="n in getActiveAttribute(MY.qualities, getRaceObj())"
-            :key="n"
-            :title="n"
-            :numb="getRaceObj()[n]"
+          v-for="(val, name) in getRaceObj().qualities"
+          :key="name"
+            :title="name"
+            :numb="val"
             feet
-            :icon="n"
+            :icon="name"
           ></my-attribute>
         </my-wrapper>
 
         <!-- Этнос_stats + qualities -->
 
         <!-- Этнос_proficiencies -->
-        <my-wrapper>
+        <my-wrapper v-if="getRaceObj().proficiencies">
           <my-inventory
             v-for="(val, name) in getRaceObj().proficiencies"
             :key="name"
@@ -223,36 +223,28 @@
           <!-- Этнос_Карточка_stats + qualities -->
           <my-wrapper
             v-if="
-              getActiveAttribute(MY.stats, getAllEthnosObj()[ethnos]).length !==
-                0 ||
-              getActiveAttribute(MY.qualities, getAllEthnosObj()[ethnos])
-                .length !== 0
+              getAllEthnosObj()[ethnos].stats ||
+              getAllEthnosObj()[ethnos].qualities
             "
           >
             <my-attribute
-              v-for="n in getActiveAttribute(
-                MY.stats,
-                getAllEthnosObj()[ethnos]
-              )"
-              :key="n"
-              :title="n"
-              :type="`${n}_base`"
+              v-for="(val, name) in getAllEthnosObj()[ethnos].stats"
+          :key="name"
+              :title="name"
+              :type="`${name}_base`"
               plus
-              :numb="getAllEthnosObj()[ethnos][n]"
-              :icon="n"
+              :numb="val"
+              :icon="name"
             >
             </my-attribute>
             <my-attribute
-              v-for="n in getActiveAttribute(
-                MY.qualities,
-                getAllEthnosObj()[ethnos]
-              )"
-              :key="n"
-              :title="n"
-              :type="`${n}_base`"
+              v-for="(val, name) in getAllEthnosObj()[ethnos].qualities"
+          :key="name"
+              :title="name"
+              :type="`${name}_base`"
               feet
-              :numb="getAllEthnosObj()[ethnos][n]"
-              :icon="n"
+              :numb="val"
+              :icon="name"
             >
             </my-attribute>
           </my-wrapper>
@@ -635,7 +627,7 @@
         :title="name"
         :type="`${name}_base`"
         plus
-        :numb="getNumbStats(name)"
+        :numb="getParNumb('stats', name)"
         :icon="name"
       >
       </my-attribute>
@@ -662,7 +654,7 @@
         v-for="(val, name) in MY.qualities"
         :key="name"
         :title="name"
-        :numb="getNumbStats(name)"
+        :numb="getParNumb('qualities', name)"
         feet
         :icon="name"
       ></my-attribute>
@@ -1054,16 +1046,27 @@ export default {
       }
     },
 
-    getNumbStats(name, numb) {
+    getParNumb(par_1, par_2, numb) {
+      console.log(par_1, par_2)
       let i = 0;
       let j = 0;
+      console.log()
+      console.log()
       numb === undefined ? numb = 0 : numb = numb ;
-      this.getRaceObj()[name] === undefined
+      if (this.getRaceObj()[par_1] === undefined) {
+        i = 0
+      } else {
+        this.getRaceObj()[par_1][par_2] === undefined
         ? (i = 0)
-        : (i = this.getRaceObj()[name]);
-      this.getEthnosObj()[name] === undefined
+        : (i = this.getRaceObj()[par_1][par_2]);
+      }
+      if (this.getEthnosObj()[par_1] === undefined) {
+        j = 0
+      } else {
+        this.getEthnosObj()[par_1][par_2] === undefined
         ? (j = 0)
-        : (j = this.getEthnosObj()[name]);
+        : (j = this.getEthnosObj()[par_1][par_2]);
+      }
         i === 0 && j === 0 ? numb = numb : numb = 0;
       return i + j + numb;
     },
@@ -1077,11 +1080,7 @@ export default {
     },
 
     getEthnosObj() {
-      if (this.getAllEthnosObj()[this.MY.ethnos] == undefined) {
-        return null;
-      } else {
-        return this.getAllEthnosObj()[this.MY.ethnos];
-      }
+    return this.getAllEthnosObj()[this.MY.ethnos];
     },
   },
 
