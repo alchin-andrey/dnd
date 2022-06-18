@@ -2,8 +2,10 @@
   <div
     class="pasive_card"
     :class="{ 
-      active_card: !passive,
+      active_card: !passive && !basic,
       colors_card: colors_card,
+      basic: basic,
+      selection_card_active: getActive(), 
       }"
   >
     <slot></slot>
@@ -22,6 +24,28 @@ export default {
       type: Boolean,
       default: false,
     },
+    basic: {
+      type: Boolean,
+      default: false,
+    },
+    active_link: {
+      type: String,
+      default: null,
+    },
+    select_link: {
+      type: String,
+      default: null,
+    },
+  },
+    methods: {
+    getActive() {
+      if (this.active_link !== null) {
+        return this.active_link === this.select_link;
+      } else {
+        return null
+      }
+    },
+
   },
 };
 </script>
@@ -49,6 +73,16 @@ export default {
 .colors_card {
   height: 100%;
   background: #000000;
+}
+
+.basic {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 14px !important;
+}
+
+.selection_card_active {
+  border: 2px solid #ffffff;
+  padding: 14px !important;
 }
 
 </style>

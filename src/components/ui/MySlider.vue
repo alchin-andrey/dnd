@@ -66,6 +66,24 @@ export default {
         }
     },
 
+    closePar(name_1, name_2) {
+      console.log(this.$root.getRaceObj().settings[name_2])
+      if (this.$root[name_1] === true && this.$root.getRaceObj().settings[name_2] === undefined) {
+          this.$root[name_1] = false;
+          this.$root.shown_home = true;
+        } else {
+          this.$root[name_1] === true;
+        }
+    },
+
+    getFunction() {
+      this.getNewEthnos()
+      this.closeEthnos()
+      this.closePar('shown_characteristics', 'custom_stats')
+      this.closePar('shown_skills', 'custom_skills')
+      this.closePar('shown_languages', 'custom_language')
+    },
+
 
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
@@ -75,8 +93,7 @@ export default {
       } else {
         this.$root.MY.race = arr[j - 1];
       }
-    this.getNewEthnos()
-    this.closeEthnos()
+    this.getFunction()
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
@@ -86,8 +103,7 @@ export default {
       } else {
         this.$root.MY.race = arr[j + 1];
       }
-      this.getNewEthnos()
-      this.closeEthnos()
+      this.getFunction()
     },
   },
 };

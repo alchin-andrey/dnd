@@ -83,12 +83,14 @@
 
         <div class="selection_menu">
           <my-selection
+          v-if="getRaceObj().settings.custom_stats"
             @click="show('shown_characteristics')"
             :active="shown_characteristics"
             title="stats"
             type="Сил, Лов"
           ></my-selection>
           <my-selection
+          v-if="getRaceObj().settings.custom_skills"
             @click="show('shown_skills')"
             :active="shown_skills"
             title="skills"
@@ -96,6 +98,7 @@
           >
           </my-selection>
           <my-selection
+          v-if="getRaceObj().settings.custom_language"
             @click="show('shown_languages')"
             :active="shown_languages"
             title="languages"
@@ -256,10 +259,10 @@
               v-for="(val, name) in getAllEthnosObj()[ethnos].proficiencies"
               :key="name"
               :title="name"
-              :item="getProficItem(getAllEthnosObj()[ethnos], name)"
+              :item="getProf_Obj_Item(getAllEthnosObj()[ethnos], name)"
             >
             </my-inventory>
-          </my-wrapper>
+          </my-wrapper> 
           <!-- Этнос_proficiencies -->
 
           <!-- Этнос_Карточка_fines -->
@@ -456,16 +459,34 @@
     <!-- Вес -->
 
     <!-- Характеристики -->
-    <my-selection-box :shown="shown_characteristics">
+    <my-selection-box
+    :shown="shown_characteristics">
+    <div class="ethnos_attributes">
+        <!-- Этнос_stats -->
+        <my-wrapper v-if="getRaceObj().stats">
+      <my-attribute
+        v-for="(val, name) in MY.stats"
+        :key="name"
+        :title="name"
+        :type="`${name}_base`"
+        plus
+        :numb="getParNumb('stats', name)"
+        :icon="name"
+      >
+      </my-attribute>
+        </my-wrapper>
+        <!-- Этнос_stats -->
+    </div>
         <my-selection-card
-          v-for="(val, name) in MY.stats"
+          v-for="name in getPasAttribute(MY.stats, 'stats')"
           :key="name"
+          :class="{ selection_card_active: getParNumb('stats', name) > 0 }"
         >
         <my-attribute
         :title="name"
         :type="`${name}_base`"
         plus
-        :numb="getNumbStats(name, 1)"
+        :numb="getParNumb('stats', name, getRaceObj().settings.custom_stats[1])"
         :icon="name"
       >
       </my-attribute>
@@ -489,6 +510,10 @@
         <my-selection-card
           v-for="lang in languages"
           :key="lang"
+          :active_link="lang.name"
+          :select_link="getPasLang(languages, 'languages')[0].name"
+          :basic ="getProf_RE('languages').includes(lang)"
+          
         >
           <my-card-text
             :title="lang.name"
@@ -667,7 +692,7 @@
         v-for="(val, name) in MY.proficiencies"
         :key="name"
         :title="name"
-        :item="getProficItem(getRaceObj(), name).concat(getProficItem(getEthnosObj(), name))"
+        :item="getProf_Item(getProf_RE(name), 'name')"
       >
       </my-inventory>
     </my-wrapper>
@@ -806,33 +831,17 @@ export default {
       return arr;
     },
 
-    getProficienciesItem(name) {
+    getPasAttribute(obj, name) {
       let arr = [];
-      for (let i in this.getRaceObj().proficiencies[name]) {
-        arr.push(this.getRaceObj().proficiencies[name][i].name);
+      for (let kay in obj) {
+        if (this.getParNumb(name, kay) === 0) {
+          arr.push(kay);
+        }
       }
       return arr;
     },
 
-    getProficienciesEthnosItem(obj, name) {
-      console.log(obj, name);
-      let arr = [];
-      for (let i in this.getAllEthnosObj()[obj].proficiencies[name]) {
-        arr.push(this.getAllEthnosObj()[obj].proficiencies[name][i].name);
-      }
-      return arr;
-    },
 
-    getProficItem(obj, kay) {
-      let arr = [];
-      if (obj.proficiencies === undefined) {
-        return arr;
-      }
-      for (let i in obj.proficiencies[kay]) {
-        arr.push(obj.proficiencies[kay][i].name);
-      }
-      return arr;
-    },
 
     getNewEthnos() {
       this.MY.ethnos = Object.keys(this.race[this.MY.race].settings.ethnos)[0];
@@ -922,6 +931,70 @@ export default {
         return this.getEthnosObj().color[value][0];
       } else {
         return this.MY.color[value];
+      }
+    },
+
+
+        getProficienciesItem(name) {
+      let arr = [];
+      for (let i in this.getRaceObj().proficiencies[name]) {
+        arr.push(this.getRaceObj().proficiencies[name][i].name);
+      }
+      return arr;
+    },
+
+    getProficienciesEthnosItem(obj, name) {
+      console.log(obj, name);
+      let arr = [];
+      for (let i in this.getAllEthnosObj()[obj].proficiencies[name]) {
+        arr.push(this.getAllEthnosObj()[obj].proficiencies[name][i].name);
+      }
+      return arr;
+    },
+
+    getProf_Obj_Item(obj, kay) {
+      let arr = [];
+      if (obj.proficiencies === undefined) {
+        return arr;
+      }
+      for (let i in obj.proficiencies[kay]) {
+        arr.push(obj.proficiencies[kay][i].name);
+      }
+      return arr;
+    },
+
+getProf_Item(obj, kay) {
+      let arr = [];
+      for (let i in obj) {
+        arr.push(obj[i][kay]);
+      }
+      return arr;
+    },
+
+getProfArr(obj, kay) {
+      let arr = []
+      if ((obj.proficiencies || {})[kay]) {
+        arr = Object.values(obj.proficiencies[kay])
+      }
+    return arr
+},
+
+getProf_RE(kay) {
+      let i = this.getProfArr(this.getRaceObj(), kay)
+      let j = this.getProfArr(this.getEthnosObj(), kay)
+    return i.concat(j)
+},
+
+    getPasLang(obj, kay) {
+      return Object.values(obj).filter( (el) => !this.getProf_RE(kay).includes(el) );
+    },
+
+    getLang(value) {
+     if (this.getRaceObj().settings.custom_language  === undefined) {
+      return this.MY.custom_language === null
+      } else {
+
+        return this.MY.custom_language;
       }
     },
 
@@ -1047,11 +1120,8 @@ export default {
     },
 
     getParNumb(par_1, par_2, numb) {
-      console.log(par_1, par_2)
       let i = 0;
       let j = 0;
-      console.log()
-      console.log()
       numb === undefined ? numb = 0 : numb = numb ;
       if (this.getRaceObj()[par_1] === undefined) {
         i = 0
@@ -1106,7 +1176,7 @@ export default {
     //     this.default_MY.ethnos
     //   ].color;
     this.MY = this.default_MY;
-    console.log();
+    console.log()
   },
 };
 </script>
