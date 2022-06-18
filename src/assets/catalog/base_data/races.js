@@ -165,12 +165,6 @@ export default {
         keyword: "slippage",
         details: "among_bigger_than_mid",
       },
-
-      {
-        type: "disadvantage",
-        keyword: "disadvantage",
-        details: "fire_against",
-      },
     ],
 
     spells: [
