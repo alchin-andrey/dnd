@@ -38,15 +38,19 @@ export default {
 
             constitution:"телосложение",
             constitution_base:"базовое",
+            constitution_details: "—", // доработать
 
             intelligence:"интеллект",
-            intelligence_base:"базовый",  
+            intelligence_base:"базовый",
+            intelligence_details: "—", // доработать  
             
             wisdom:"мудрость",
             wisdom_base:"базовая",
+            wisdom_details: "—", // доработать
 
             charisma:"харизма",
             charisma_base:"базовая",
+            charisma_details: "—", // доработать
 
 
     //Genders
@@ -145,23 +149,58 @@ export default {
             skills:"навыки",
                 
                 acrobatics:"акробатика",
+                acrobatics_details: "—", // доработать
+
                 animal_hanging:"уход за животными",
+                animal_hanging_details: "—", // доработать
+
                 arcana:"магия",
+                arcana_details: "—", // доработать
+
                 athletics:"атлетика",
+                athletics_details: "—", // доработать
+
                 deception:"обман",
+                deception_details: "—", // доработать
+
                 history:"история",
+                history_details: "—", // доработать
+
                 insight:"проницательность",
+                insight_details: "—", // доработать
+
                 intimidation:"запугивание",
+                intimidation_details: "—", // доработать
+
                 investigation:"анализ",
+                investigation_details: "—", // доработать
+
                 medicine:"медицина",
+                medicine_details: "—", // доработать
+
                 nature:"природа",
+                nature_details: "—", // доработать
+
                 perception:"внимательность",
+                perception_details: "—", // доработать
+
                 performance:"выступление",
+                performance_details: "—", // доработать
+
                 persuasion:"убеждение",
+                persuasion_details: "—", // доработать
+
                 religion:"религия",
+                religion_details: "—", // доработать
+
                 sleight_of_hand:"ловкость рук",
+                sleight_of_hand_details: "—", // доработать
+
                 stealth:"скрытность",
+                stealth_details: "—", // доработать
+
                 survival:"выживание",
+                survival_details: "—", // доработать
             
             proficiencies:"владения",
 
