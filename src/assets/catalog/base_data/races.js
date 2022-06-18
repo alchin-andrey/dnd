@@ -1305,6 +1305,7 @@ export default {
           ],
 
           custom_language: 1,
+          custom_spell: [1,0,"wizard"],
         },
 
         dark: {
