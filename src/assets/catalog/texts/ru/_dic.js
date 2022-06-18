@@ -386,6 +386,9 @@ export default {
                 known_languages:"на известных языках",
                 fire_against:"против 🔥 Огня",
                 fire_damage:"урону 🔥 Огнем",
+                cold_damage:"урону ❄️ Холодом",
+                electricity_damage:"урону ⚡️ Электричеством",
+                acid_damage:"урону ⚗️ Кислотой",
                 history_check_rock_gnome:"к проверке Истории к магическому, алхимическому или технологическому предмету",
                 stealth_in_stones: "при Скрытности в каменистой местности",
                 magic_against_int_wis_cha: "против Магии: Интеллект, Мудрость, Харизма",
@@ -564,6 +567,41 @@ export default {
             halforc: "полуорк",
             halforc_details: races.halforc,
 
+            // Dragonborn
+
+            dragonborn: "драконорожденный",
+            dragonborn_details: races.dragonborn,
+
+            red_dragonborn: "красный",
+            red_dragonborn_details: races.red_dragonborn,
+
+            brass_dragonborn: "латунный",
+            brass_dragonborn_details: races.brass_dragonborn,
+
+            golden_dragonborn: "золотой",
+            golden_dragonborn_details: races.golden_dragonborn,
+
+            silver_dragonborn: "серебряный",
+            silver_dragonborn_details: races.silver_dragonborn,
+
+            white_dragonborn: "белый",
+            white_dragonborn_details: races.white_dragonborn,
+
+            blue_dragonborn: "синий",
+            blue_dragonborn_details: races.blue_dragonborn,
+
+            bronze_dragonborn: "бронзовый",
+            bronze_dragonborn_details: races.bronze_dragonborn,
+
+            copper_dragonborn: "медный",
+            copper_dragonborn_details: races.copper_dragonborn,
+
+            black_dragonborn: "черный",
+            black_dragonborn_details: races.black_dragonborn,
+
+            green_dragonborn: "зеленый",
+            green_dragonborn_details: races.green_dragonborn,
+
     //Colors
 
             color:"цвет",
@@ -718,5 +756,20 @@ export default {
 
             spell_faerie_fire: spells.faerie_fire,
             spell_faerie_fire_details: spells.faerie_fire_details,
+
+            spell_fire_breath: spells.fire_breath,
+            spell_fire_breath_details: spells.fire_breath_details,
+
+            spell_cold_breath: spells.cold_breath,
+            spell_cold_breath_details: spells.cold_breath_details,
+
+            spell_electricity_breath: spells.electricity_breath,
+            spell_electricity_breath_details: spells.electricity_breath_details,
+
+            spell_acid_breath: spells.acid_breath,
+            spell_acid_breath_details: spells.acid_breath_details,
+
+            spell_poison_breath: spells.poison_breath,
+            spell_poison_breath_details: spells.poison_breath_details,
 
 }

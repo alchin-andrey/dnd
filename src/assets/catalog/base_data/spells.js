@@ -73,12 +73,13 @@ export default {
         },
     },
 
-    acid_breath:{
+    fire_breath:{
 
-        name: "acid_breath",
+        name: "fire_breath",
+        details: "fire_breath_details",
+
         compomemt: [
             "verbal",
-            "somatic",
         ],
 
         school: "evocation",
@@ -90,12 +91,120 @@ export default {
 
         damage: {
             x:2,
-            dice:10,
+            dice:6,
         },
 
         gain: {
             x:1,
-            dice:10,
+            dice:6,
+        },
+    },
+
+    cold_breath:{
+
+        name: "cold_breath",
+        details: "cold_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "constitution",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
+        },
+    },
+
+    electricity_breath:{
+
+        name: "electricity_breath",
+        details: "electricity_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "dexterity",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
+        },
+    },
+
+    acid_breath:{
+
+        name: "acid_breath",
+        details: "acid_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "dexterity",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
+        },
+    },
+
+    poison_breath:{
+
+        name: "poison_breath",
+        details: "poison_breath_details",
+
+        compomemt: [
+            "verbal",
+        ],
+
+        school: "evocation",
+
+        trial:{
+            stat: "constitution",
+            complexity: 10,
+        },
+
+        damage: {
+            x:2,
+            dice:6,
+        },
+
+        gain: {
+            x:1,
+            dice:6,
         },
     },
 

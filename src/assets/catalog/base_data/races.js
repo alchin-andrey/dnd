@@ -1840,7 +1840,10 @@ export default {
           color[2][2],
           color[2][3],
           color[2][4],
+          color[8][0],
+          color[8][1],
           color[9][0],
+          color[9][1],
         ],
         eyes: [
           color[0][5],
@@ -1906,5 +1909,369 @@ export default {
         details: "persistence_details",
       },
     ],
-  }
+  },
+
+  dragonborn:{
+    name:"dragonborn",
+    details:"dragonborn_details",
+
+    noimg_ethnos: true,
+
+    settings: {
+      ethnos: {
+
+        red: {
+          
+          name:"red_dragonborn",
+          details:"red_dragonborn_details",
+
+          color: {
+            skin: [
+              color[1][4],
+            ],
+            eyes: [
+              color[1][3],
+            ],
+            hair: [
+              color[1][5],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "fire_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.fire_breath,
+            },
+          ],
+        },
+
+        brass: {
+          
+          name:"brass_dragonborn",
+          details:"brass_dragonborn_details",
+
+          color: {
+            skin: [
+              color[3][4],
+            ],
+            eyes: [
+              color[1][3],
+            ],
+            hair: [
+              color[1][4],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "fire_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.fire_breath,
+            },
+          ],
+        },
+
+        golden: {
+          
+          name:"golden_dragonborn",
+          details:"golden_dragonborn_details",
+
+          color: {
+            skin: [
+              color[3][5],
+            ],
+            eyes: [
+              color[1][3],
+            ],
+            hair: [
+              color[1][4],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "fire_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.fire_breath,
+            },
+          ],
+        },
+
+        silver: {
+          
+          name:"silver_dragonborn",
+          details:"silver_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[8][0],
+            ],
+            eyes: [
+              color[7][3],
+            ],
+            hair: [
+              color[8][3],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "cold_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.cold_breath,
+            },
+          ],
+        },
+  
+        white: {
+            
+          name:"white_dragonborn",
+          details:"white_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[0][0],
+            ],
+            eyes: [
+              color[7][3],
+            ],
+            hair: [
+              color[8][3],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "cold_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.cold_breath,
+            },
+          ],
+        },
+  
+        blue: {
+            
+          name:"blue_dragonborn",
+          details:"blue_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[9][3],
+            ],
+            eyes: [
+              color[3][3],
+            ],
+            hair: [
+              color[3][4],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "electricity_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.electricity_breath,
+            },
+          ],
+        },
+  
+        bronze: {
+            
+          name:"bronze_dragonborn",
+          details:"bronze_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[2][5],
+            ],
+            eyes: [
+              color[3][3],
+            ],
+            hair: [
+              color[3][4],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "electricity_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.electricity_breath,
+            },
+          ],
+        },
+  
+        copper: {
+            
+          name:"copper_dragonborn",
+          details:"copper_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[2][3],
+            ],
+            eyes: [
+              color[11][3],
+            ],
+            hair: [
+              color[11][4],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "acid_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.acid_breath,
+            },
+          ],
+        },
+  
+        black: {
+            
+          name:"black_dragonborn",
+          details:"black_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[0][6],
+            ],
+            eyes: [
+              color[11][3],
+            ],
+            hair: [
+              color[11][4],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "acid_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.acid_breath,
+            },
+          ],
+        },
+  
+        green: {
+            
+          name:"green_dragonborn",
+          details:"green_dragonborn_details",
+  
+          color: {
+            skin: [
+              color[5][4],
+            ],
+            eyes: [
+              color[4][3],
+            ],
+            hair: [
+              color[4][5],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "poison_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.poison_breath,
+            },
+          ],
+        },
+
+      },
+
+      gender: gender,
+
+      color: {
+        eyes: [
+          color[1][3],
+        ],
+        hair: [
+          color[1][5],
+        ],
+      },
+
+      age: {
+        min: 3,
+        young: 10,
+        mature: 15,
+        old: 65,
+        max: 85,
+      },
+
+      height: {
+        min: 180,
+        max: 210,
+      },
+
+      weight: {
+        min: 80,
+        max: 115,
+      },
+    },
+
+    stats: { 
+      strength: 2,
+      charisma: 1, 
+    },  
+
+    qualities: { speed: 30 },
+
+    proficiencies: {
+      languages: [lang.common, lang.dragon],
+    },
+
+  },
 };
