@@ -15,6 +15,31 @@ export default {
 
     settings: {
       ethnos: {
+
+        lightfoot: {
+          name: "lightfoot",
+          details: "lightfoot_halfling_details",
+
+          link_male: "https://www.heroforge.com/load_config%3D503210924",
+          link_female: "https://www.heroforge.com/load_config%3D503211388",
+
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
+          stats: { charisma: 1 },
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "stealth",
+              details: "behind_bigger_than_mid",
+            },
+          ],
+        },
+        
         stout: {
           name: "stout",
           details: "stout_halfling_details",
@@ -41,30 +66,6 @@ export default {
               type: "resistance",
               keyword: "resistance",
               details: "poison_damage",
-            },
-          ],
-        },
-
-        lightfoot: {
-          name: "lightfoot",
-          details: "lightfoot_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503210924",
-          link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[2][5]],
-            hair: [color[0][6]],
-          },
-
-          stats: { charisma: 1 },
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "stealth",
-              details: "behind_bigger_than_mid",
             },
           ],
         },
