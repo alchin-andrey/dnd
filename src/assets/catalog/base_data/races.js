@@ -39,7 +39,7 @@ export default {
             },
           ],
         },
-        
+         
         stout: {
           name: "stout",
           details: "stout_halfling_details",
