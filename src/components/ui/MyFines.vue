@@ -9,9 +9,9 @@
           positive: title !== 'disadvantage',
           negative: title === 'disadvantage',
         }"
-        >{{ t(title) }}</span
+        >{{ t_Title }}</span
       >
-      {{ t(details) }}
+      {{ t_Details }}
     </div>
   </div>
 </template>
@@ -19,11 +19,6 @@
 <script>
 export default {
   name: "MyFines",
-  data() {
-    return {
-      inputValue: "",
-    };
-  },
   props: {
     modelValue: {
       type: Number,
@@ -42,19 +37,14 @@ export default {
       default: null,
     },
   },
-  watch: {
-    modelValue: {
-      handler() {
-        this.inputValue = this.modelValue;
-      },
-      immediate: true,
-    },
-    inputValue: {
-      handler() {
-        this.$emit("update:modelValue", this.inputValue);
-      },
-    },
-  },
+    computed: {
+    t_Title() {
+		return this.t(this.title);
+		},
+    t_Details() {
+		return this.t(this.details);
+		},
+	},
   methods: {
     getIcon(name) {
       return require(`@/assets/img/icon/fines/${name}.svg`);

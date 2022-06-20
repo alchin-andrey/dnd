@@ -3,11 +3,11 @@
     <div>{{ numb }}</div>
   </div>
   <div class="title jbm-300">
-    <div>{{ t(title) }}</div>
+    <div>{{ t_Title }}</div>
   </div>
   <div class="main">
     <transition mode="out-in" name="type">
-    <div :key="type">{{ t(type) }}</div>
+      <div :key="type">{{ t_Type }}</div>
     </transition>
   </div>
   <div class="arrows">
@@ -53,57 +53,70 @@ export default {
       default: [],
     },
   },
+  computed: {
+    t_Title() {
+      return this.t(this.title);
+    },
+    t_Type() {
+      return this.t(this.type);
+    },
+  },
   methods: {
     getNewEthnos() {
-      this.$root.MY.ethnos = Object.keys(this.$root.race[this.$root.MY.race].settings.ethnos)[0]
+      this.$root.MY.ethnos = Object.values(
+        this.$root.race[this.$root.MY.race].settings.ethnos
+      )[0].name;
     },
+    
     closeEthnos() {
-      if (this.$root.shown_ethnos === true && this.$root.MY.ethnos === "common") {
-          this.$root.shown_ethnos = false;
-          this.$root.shown_home = true;
-        } else {
-          this.$root.shown_ethnos === true;
-        }
+      if (
+        this.$root.shown_ethnos === true &&
+        this.$root.MY.ethnos === "common"
+      ) {
+        this.$root.shown_ethnos = false;
+        this.$root.shown_home = true;
+      } else {
+        this.$root.shown_ethnos === true;
+      }
     },
 
     closePar(name_1, name_2) {
-      console.log(this.$root.getRaceObj().settings[name_2])
-      if (this.$root[name_1] === true && this.$root.getRaceObj().settings[name_2] === undefined) {
-          this.$root[name_1] = false;
-          this.$root.shown_home = true;
-        } else {
-          this.$root[name_1] === true;
-        }
+      if (
+        this.$root[name_1] === true &&
+        this.$root.Race_Obj.settings[name_2] === undefined
+      ) {
+        this.$root[name_1] = false;
+        this.$root.shown_home = true;
+      } else {
+        this.$root[name_1] === true;
+      }
     },
 
     getFunction() {
-      this.getNewEthnos()
-      this.closeEthnos()
-      this.closePar('shown_characteristics', 'custom_stats')
-      this.closePar('shown_skills', 'custom_skills')
-      this.closePar('shown_languages', 'custom_language')
+      this.getNewEthnos();
+      this.closeEthnos();
+      this.closePar("shown_characteristics", "custom_stats");
+      this.closePar("shown_skills", "custom_skills");
+      this.closePar("shown_languages", "custom_language");
     },
-
 
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
-      console.log(this.type);
       if (j === 0) {
         this.$root.MY.race = arr[arr.length - 1];
       } else {
         this.$root.MY.race = arr[j - 1];
       }
-    this.getFunction()
+      this.getFunction();
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
-      console.log(this.type);
       if (j === arr.length - 1) {
         this.$root.MY.race = arr[0];
       } else {
         this.$root.MY.race = arr[j + 1];
       }
-      this.getFunction()
+      this.getFunction();
     },
   },
 };
@@ -143,7 +156,6 @@ export default {
   cursor: pointer;
 }
 
-
 /* .type-enter-active,
 .type-leave-active {
   transition: opacity 0.5s ease;
@@ -154,18 +166,13 @@ export default {
   opacity: 0;
 } */
 
-
-
-.type-enter-active, 
+.type-enter-active,
 .type-leave-active {
-  transition: opacity .3s
+  transition: opacity 0.3s;
 }
 
-.type-enter-from, 
+.type-enter-from,
 .type-leave-to {
-  opacity: 0
+  opacity: 0;
 }
-
-
-
 </style>

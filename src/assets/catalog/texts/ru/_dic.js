@@ -143,6 +143,7 @@ export default {
             armor_class:"броня",
 
             speed:"скорость",
+                feet: "футов",
             vision_day:"зрение",
             vision_night:"темное зрение",
 

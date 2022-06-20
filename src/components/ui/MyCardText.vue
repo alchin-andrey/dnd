@@ -1,11 +1,11 @@
 <template>
 <div class="int-400">
-            <h3 class="title">{{ t(title) }}</h3>
+            <h3 class="title">{{ t_Title }}</h3>
             <p class="text">
-              {{ text }}
+              {{ t_Text }}
               <br v-if="rare" />
               <br v-if="rare" />
-              <span v-if="rare">{{ t(`${rare}_details`) }}</span>
+              <span v-if="rare">{{ t_Rare }}</span>
             </p>
           </div>
 </template>
@@ -25,6 +25,17 @@ export default {
     rare: {
       type: String,
       default: null,
+    },
+  },
+    computed: {
+    t_Title() {
+      return this.t(this.title);
+    },
+    t_Text() {
+      return this.t(this.text);
+    },
+    t_Rare() {
+      return this.t(`${this.rare}_details`);
     },
   },
 };

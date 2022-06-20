@@ -1,12 +1,12 @@
 <template>
   <div
     class="pasive_card"
-    :class="{ 
+    :class="{
       active_card: !passive && !basic,
       colors_card: colors_card,
       basic: basic,
-      selection_card_active: getActive(), 
-      }"
+      selection_card_active: get_Active,
+    }"
   >
     <slot></slot>
   </div>
@@ -37,15 +37,14 @@ export default {
       default: null,
     },
   },
-    methods: {
-    getActive() {
+  computed: {
+    get_Active() {
       if (this.active_link !== null) {
         return this.active_link === this.select_link;
       } else {
-        return null
+        return null;
       }
     },
-
   },
 };
 </script>
@@ -84,5 +83,4 @@ export default {
   border: 2px solid #ffffff;
   padding: 14px !important;
 }
-
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="int-400">
-    <h3 class="title">{{ t(title) }}</h3>
+    <h3 class="title">{{ t_Title }}</h3>
     <p
       class="text"
       :class="{
@@ -8,7 +8,7 @@
         race: race_color && !ethnos_color,
       }"
     >
-      {{ getText(ethnos_color, race_color) }}
+      {{ t_Text }}
     </p>
   </div>
 </template>
@@ -31,17 +31,20 @@ export default {
     },
   },
 
-  methods: {
-    getText(ethnos, race) {
-      if (ethnos) {
+    computed: {
+    t_Title() {
+		return this.t(this.title);
+		},
+    t_Text() {
+		if (this.ethnos_color) {
         return `${this.t("characteristic")} ${this.t("for_ethnos")}`;
-      } else if (race) {
+      } else if (this.race_color) {
         return `${this.t("characteristic")} ${this.t("for_race")}`;
       } else {
         return `${this.t("not_characteristic")} ${this.t("for_race")}`;
-      }
-    },
-  },
+      };
+		},
+	},
 };
 </script>
 

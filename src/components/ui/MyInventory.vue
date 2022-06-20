@@ -1,16 +1,16 @@
 <template>
-  <div v-if="!ethnos || item" class="column">
+  <div class="column">
     <div
       class="title jbm-300"
       :class="{
-        passive: getPassive(item),
-        icon: getIcon(item),
+        passive: get_Passive,
+        icon: get_Icon,
       }"
     >
-      {{ t(title) }}<span>:</span>
+      {{ t_Title }}<span>:</span>
     </div>
-    <div class="item int-400" :class="{ passive: getPassive(item) }">
-      {{ getItem(item) }}
+    <div class="item int-400" :class="{ passive: get_Passive }">
+      {{ get_Item }}
     </div>
   </div>
 
@@ -19,11 +19,6 @@
 <script>
 export default {
   name: "MyInventory",
-  data() {
-    return {
-      inputValue: "",
-    };
-  },
   props: {
     modelValue: {
       type: Number,
@@ -37,45 +32,32 @@ export default {
       type: Array,
       default: null,
     },
-    ethnos: {
-      type: Boolean,
-      default: false,
-    },
   },
-  watch: {
-    modelValue: {
-      handler() {
-        this.inputValue = this.modelValue;
-      },
-      immediate: true,
-    },
-    inputValue: {
-      handler() {
-        this.$emit("update:modelValue", this.inputValue);
-      },
-    },
-  },
-  methods: {
-    getItem(item) {
-      if (item.length === 0) {
+  computed: {
+    t_Title() {
+		return this.t(this.title);
+		},
+
+    get_Item() {
+      if (this.item.length === 0) {
         return "—";
       } else {
         let arr = []
-        for (let i in item) {
-          arr.push(this.t(item[i]))
+        for (let i in this.item) {
+          arr.push(this.t(this.item[i]))
         }
         return arr.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(', ');
       }
     },
 
-    getPassive(item) {
-      return item.length !== 0 ? false : true;
+    get_Passive() {
+      return this.item.length !== 0 ? false : true;
     },
 
-    getIcon(item) {
-      return item.length !== 0 ? true : false;
+    get_Icon() {
+      return this.item.length !== 0 ? true : false;
     },
-  },
+	},
 };
 </script>
 

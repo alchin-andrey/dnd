@@ -22,33 +22,33 @@
             :active="shown_ethnos"
             title="ethnos"
             :type="MY.ethnos"
-            :rare="getEthnosObj().rare"
+            :rare="Ethnos_Obj.rare"
           ></my-selection>
           <my-selection
             @click="show('shown_gender')"
             :active="shown_gender"
             title="gender"
-            :type="getGenderName()"
+            :type="MY.gender.phisiological"
           ></my-selection>
           <my-selection
             @click="show('shown_skin_color')"
             :active="shown_skin_color"
             title="color_skin"
-            :type="t(getCharColor('skin').name)"
+            :type="getCharColor('skin').name"
           >
           </my-selection>
           <my-selection
             @click="show('shown_eyes_color')"
             :active="shown_eyes_color"
             title="color_eyes"
-            :type="t(getCharColor('eyes').name)"
+            :type="getCharColor('eyes').name"
           >
           </my-selection>
           <my-selection
             @click="show('shown_hair_color')"
             :active="shown_hair_color"
             title="color_hair"
-            :type="t(getCharColor('hair').name)"
+            :type="getCharColor('hair').name"
           >
           </my-selection>
         </div>
@@ -83,14 +83,14 @@
 
         <div class="selection_menu">
           <my-selection
-          v-if="getRaceObj().settings.custom_stats"
+        v-if="Race_Obj.settings.custom_stats"
             @click="show('shown_characteristics')"
             :active="shown_characteristics"
             title="stats"
             type="Сил, Лов"
           ></my-selection>
           <my-selection
-          v-if="getRaceObj().settings.custom_skills"
+          v-if="Race_Obj.settings.custom_skills"
             @click="show('shown_skills')"
             :active="shown_skills"
             title="skills"
@@ -98,7 +98,7 @@
           >
           </my-selection>
           <my-selection
-          v-if="getRaceObj().settings.custom_language"
+          v-if="Race_Obj.settings.custom_language"
             @click="show('shown_languages')"
             :active="shown_languages"
             title="languages"
@@ -106,18 +106,19 @@
           >
           </my-selection>
         </div>
+        <button @click="plus()" type="">+1</button>
       </div>
 
-      <my-button v-if="shown_home" numb="02" title="Класс"></my-button>
+      <my-button v-if="shown_home" numb="02" title="class"></my-button>
       <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
     </div>
     <!-- Этнос-->
     <my-selection-box :shown="shown_ethnos">
       <div class="ethnos_attributes">
         <!-- Этнос_stats + qualities -->
-        <my-wrapper v-if="getRaceObj().stats || getRaceObj().qualities">
+        <my-wrapper v-if="Race_Obj.stats || Race_Obj.qualities">
           <my-attribute
-            v-for="(val, name) in getRaceObj().stats"
+            v-for="(val, name) in Race_Obj.stats"
           :key="name"
             :title="name"
             :type="`${name}_base`"
@@ -127,7 +128,7 @@
           >
           </my-attribute>
           <my-attribute
-          v-for="(val, name) in getRaceObj().qualities"
+          v-for="(val, name) in Race_Obj.qualities"
           :key="name"
             :title="name"
             :numb="val"
@@ -139,9 +140,9 @@
         <!-- Этнос_stats + qualities -->
 
         <!-- Этнос_proficiencies -->
-        <my-wrapper v-if="getRaceObj().proficiencies">
+        <my-wrapper v-if="Race_Obj.proficiencies">
           <my-inventory
-            v-for="(val, name) in getRaceObj().proficiencies"
+            v-for="(val, name) in Race_Obj.proficiencies"
             :key="name"
             :title="name"
             :item="getProficienciesItem(name)"
@@ -151,9 +152,9 @@
         <!-- Этнос_proficiencies -->
 
         <!-- Этнос_fines -->
-        <my-wrapper v-if="getRaceObj().fines" gap_8>
+        <my-wrapper v-if="Race_Obj.fines" gap_8>
           <my-fines
-            v-for="item in getRaceObj().fines"
+            v-for="item in Race_Obj.fines"
             :key="item"
             :icon="item.type"
             :title="item.keyword"
@@ -166,10 +167,10 @@
       <!-- Этнос_Карточка -->
       <div class="ethnos_cards_menu">
         <my-selection-card
-          v-for="(val, ethnos) in getAllEthnosObj()"
+          v-for="(val, ethnos) in All_Ethnos_Obj"
           :key="ethnos"
-          @click="ethnosName(ethnos)"
-          :class="{ selection_card_active: MY.ethnos === ethnos }"
+          @click="ethnosName(val)"
+          :class="{ selection_card_active: MY.ethnos === val.name }"
         >
           <div
             class="char_back"
@@ -180,8 +181,8 @@
             <img
               v-if="getCharEthnosImg('skin', ethnos)"
               :style="{ 
-                height: `${getRaceObj().ethnos_preview[0]}px`,
-                left: `${getRaceObj().ethnos_preview[1]}px`,
+                height: `${Race_Obj.ethnos_preview[0]}px`,
+                left: `${Race_Obj.ethnos_preview[1]}px`,
               }"
               :src="getCharEthnosImg('skin', ethnos)"
               alt="skin"
@@ -189,7 +190,7 @@
 
             <svg
               v-if="!getCharEthnosImg('skin', ethnos)"
-              :fill="getAllEthnosObj()[ethnos].color.skin[0].hex"
+              :fill="All_Ethnos_Obj[ethnos].color.skin[0].hex"
               :height="300"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
@@ -199,8 +200,8 @@
             <img
               v-if="getCharEthnosImg('hair', ethnos)"
               :style="{ 
-                height: `${getRaceObj().ethnos_preview[0]}px`,
-                left: `${getRaceObj().ethnos_preview[1]}px`,
+                height: `${Race_Obj.ethnos_preview[0]}px`,
+                left: `${Race_Obj.ethnos_preview[1]}px`,
               }"
               :src="getCharEthnosImg('hair', ethnos)"
               alt="hair"
@@ -208,7 +209,7 @@
 
             <svg
               v-if="!getCharEthnosImg('hair', ethnos)"
-              :fill="getAllEthnosObj()[ethnos].color.hair[0].hex"
+              :fill="All_Ethnos_Obj[ethnos].color.hair[0].hex"
               :height="300"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
@@ -218,8 +219,8 @@
             <img
               v-if="getCharEthnosImg('eyes', ethnos)"
               :style="{ 
-                height: `${getRaceObj().ethnos_preview[0]}px`,
-                left: `${getRaceObj().ethnos_preview[1]}px`,
+                height: `${Race_Obj.ethnos_preview[0]}px`,
+                left: `${Race_Obj.ethnos_preview[1]}px`,
               }"
               :src="getCharEthnosImg('eyes', ethnos)"
               alt="eyes"
@@ -227,7 +228,7 @@
 
             <svg
               v-if="!getCharEthnosImg('eyes', ethnos)"
-              :fill="getAllEthnosObj()[ethnos].color.eyes[0].hex"
+              :fill="All_Ethnos_Obj[ethnos].color.eyes[0].hex"
               :height="300"
               viewBox="0 0 197 400"
               xmlns="http://www.w3.org/2000/svg"
@@ -238,12 +239,12 @@
           <!-- Этнос_Карточка_stats + qualities -->
           <my-wrapper
             v-if="
-              getAllEthnosObj()[ethnos].stats ||
-              getAllEthnosObj()[ethnos].qualities
+              All_Ethnos_Obj[ethnos].stats ||
+              All_Ethnos_Obj[ethnos].qualities
             "
           >
             <my-attribute
-              v-for="(val, name) in getAllEthnosObj()[ethnos].stats"
+              v-for="(val, name) in All_Ethnos_Obj[ethnos].stats"
           :key="name"
               :title="name"
               :type="`${name}_base`"
@@ -253,7 +254,7 @@
             >
             </my-attribute>
             <my-attribute
-              v-for="(val, name) in getAllEthnosObj()[ethnos].qualities"
+              v-for="(val, name) in All_Ethnos_Obj[ethnos].qualities"
           :key="name"
               :title="name"
               :type="`${name}_base`"
@@ -266,21 +267,21 @@
           <!-- Этнос_Карточка_stats + qualities-->
 
           <!-- Этнос_Карточка_proficiencies -->
-          <my-wrapper v-if="getAllEthnosObj()[ethnos].proficiencies">
+          <my-wrapper v-if="All_Ethnos_Obj[ethnos].proficiencies">
             <my-inventory
-              v-for="(val, name) in getAllEthnosObj()[ethnos].proficiencies"
+              v-for="(val, name) in All_Ethnos_Obj[ethnos].proficiencies"
               :key="name"
               :title="name"
-              :item="getProf_Obj_Item(getAllEthnosObj()[ethnos], name)"
+              :item="getProf_Obj_Item(All_Ethnos_Obj[ethnos], name)"
             >
             </my-inventory>
           </my-wrapper> 
           <!-- Этнос_proficiencies -->
 
           <!-- Этнос_Карточка_fines -->
-          <my-wrapper v-if="getAllEthnosObj()[ethnos].fines" gap_8>
+          <my-wrapper v-if="All_Ethnos_Obj[ethnos].fines" gap_8>
             <my-fines
-              v-for="item in getAllEthnosObj()[ethnos].fines"
+              v-for="item in All_Ethnos_Obj[ethnos].fines"
               :key="item"
               :icon="item.type"
               :title="item.keyword"
@@ -290,9 +291,9 @@
           <!-- Этнос_Карточка_fines -->
 
           <my-card-text
-            :title="getAllEthnosObj()[ethnos].name"
-            :text="t(getAllEthnosObj()[ethnos].details)"
-            :rare="getAllEthnosObj()[ethnos].rare"
+            :title="All_Ethnos_Obj[ethnos].name"
+            :text="All_Ethnos_Obj[ethnos].details"
+            :rare="All_Ethnos_Obj[ethnos].rare"
           >
           </my-card-text>
         </my-selection-card>
@@ -475,7 +476,7 @@
     :shown="shown_characteristics">
     <div class="ethnos_attributes">
         <!-- Этнос_stats -->
-        <my-wrapper v-if="getRaceObj().stats">
+        <my-wrapper v-if="Race_Obj.stats">
       <my-attribute
         v-for="(val, name) in MY.stats"
         :key="name"
@@ -498,13 +499,13 @@
         :title="name"
         :type="`${name}_base`"
         plus
-        :numb="getParNumb('stats', name, getRaceObj().settings.custom_stats[1])"
+        :numb="getParNumb('stats', name, Race_Obj.settings.custom_stats[1])"
         :icon="name"
       >
       </my-attribute>
           <my-card-text
             title=""
-            :text="t(`${name}_details`)"
+            :text="`${name}_details`"
           >
           </my-card-text>
         </my-selection-card>
@@ -529,7 +530,7 @@
         >
           <my-card-text
             :title="lang.name"
-            :text="t(lang.details)"
+            :text="lang.details"
           >
           </my-card-text>
         </my-selection-card>
@@ -711,9 +712,9 @@
     <!-- proficiencies -->
 
     <!-- fines -->
-    <my-wrapper v-if="getRaceObj().fines || getEthnosObj().fines" gap_8 hr>
+    <my-wrapper v-if="Race_Obj.fines || Ethnos_Obj.fines" gap_8 hr>
       <my-fines
-        v-for="item in getRaceObj().fines"
+        v-for="item in Race_Obj.fines"
         :key="item"
         :icon="item.type"
         :title="item.keyword"
@@ -721,7 +722,7 @@
       ></my-fines>
 
       <my-fines
-        v-for="item in getEthnosObj().fines"
+        v-for="item in Ethnos_Obj.fines"
         :key="item"
         :icon="item.type"
         :title="item.keyword"
@@ -732,11 +733,11 @@
 
     <!-- text -->
     <div class="story int-400">
-      <div v-html="t(getRaceObj().details)"></div>
+      <div v-html="t(Race_Obj.details)"></div>
       <my-card-text v-if="MY.ethnos !== 'common'"
-        :title="getEthnosObj().name"
-        :text="t(getEthnosObj().details)"
-        :rare="getEthnosObj().rare"
+        :title="Ethnos_Obj.name"
+        :text="Ethnos_Obj.details"
+        :rare="Ethnos_Obj.rare"
       >
       </my-card-text>
     </div>
@@ -819,6 +820,22 @@ export default {
       ],
     };
   },
+    computed: {
+    Race_Obj() {
+      return this.race[this.MY.race];
+    },
+
+    All_Ethnos_Obj() {
+      console.log(11122)
+      return this.Race_Obj.settings.ethnos;
+    },
+
+    Ethnos_Obj() {
+      console.log(111)
+    return this.All_Ethnos_Obj[this.MY.ethnos];
+    },
+
+  },
   // watch: {
   //   shown_ethnos: {
   //     handler() {
@@ -833,6 +850,11 @@ export default {
   //   },
   // },
   methods: {
+
+    plus() {
+      this.weight ++
+    },
+
     getActiveAttribute(obj, obj_2) {
       let arr = [];
       for (let kay in obj) {
@@ -853,26 +875,13 @@ export default {
       return arr;
     },
 
+    // getNewEthnos() {
+    //   this.MY.ethnos = Object.keys(this.race[this.MY.race].settings.ethnos)[0];
+    // },
 
-
-    getNewEthnos() {
-      this.MY.ethnos = Object.keys(this.race[this.MY.race].settings.ethnos)[0];
-    },
-
-    getGenderName() {
-      if (this.MY.gender.feel === this.genders.feel.cisgender) {
-        return this.t(this.MY.gender.phisiological);
-      } else {
-        return `${this.t(this.MY.gender.phisiological)} *`;
-      }
-    },
-
-    ethnosName(name) {
-      this.MY.ethnos = name;
-    },
-
-    goTo(route) {
-      this.$router.push(route);
+    ethnosName(obj) {
+      console.log(obj);
+      this.MY.ethnos = obj.name;
     },
 
     close() {
@@ -938,9 +947,9 @@ export default {
 
     getCharColor(value) {
       if (this.MY.color[value] === null && this.MY.ethnos === "common") {
-        return this.getRaceObj().settings.color[value][0];
+        return this.Race_Obj.settings.color[value][0];
       } else if (this.MY.color[value] === null) {
-        return this.getEthnosObj().color[value][0];
+        return this.Ethnos_Obj.color[value][0];
       } else {
         return this.MY.color[value];
       }
@@ -949,8 +958,8 @@ export default {
 
         getProficienciesItem(name) {
       let arr = [];
-      for (let i in this.getRaceObj().proficiencies[name]) {
-        arr.push(this.getRaceObj().proficiencies[name][i].name);
+      for (let i in this.Race_Obj.proficiencies[name]) {
+        arr.push(this.Race_Obj.proficiencies[name][i].name);
       }
       return arr;
     },
@@ -958,8 +967,8 @@ export default {
     getProficienciesEthnosItem(obj, name) {
       console.log(obj, name);
       let arr = [];
-      for (let i in this.getAllEthnosObj()[obj].proficiencies[name]) {
-        arr.push(this.getAllEthnosObj()[obj].proficiencies[name][i].name);
+      for (let i in this.All_Ethnos_Obj[obj].proficiencies[name]) {
+        arr.push(this.All_Ethnos_Obj[obj].proficiencies[name][i].name);
       }
       return arr;
     },
@@ -992,8 +1001,8 @@ getProfArr(obj, kay) {
 },
 
 getProf_RE(kay) {
-      let i = this.getProfArr(this.getRaceObj(), kay)
-      let j = this.getProfArr(this.getEthnosObj(), kay)
+      let i = this.getProfArr(this.Race_Obj, kay)
+      let j = this.getProfArr(this.Ethnos_Obj, kay)
     return i.concat(j)
 },
 
@@ -1002,7 +1011,7 @@ getProf_RE(kay) {
     },
 
     getLang(value) {
-     if (this.getRaceObj().settings.custom_language  === undefined) {
+     if (this.Race_Obj.settings.custom_language  === undefined) {
       return this.MY.custom_language === null
       } else {
 
@@ -1017,7 +1026,7 @@ getProf_RE(kay) {
 
     getCharImg(value, hower) {
       let race = this.MY.race;
-      let ethnos = this.getRaceObj().noimg_ethnos ? "" : `/${this.MY.ethnos}`;
+      let ethnos = this.Race_Obj.noimg_ethnos ? "" : `/${this.MY.ethnos}`;
       let phisiological = this.MY.gender.phisiological;
       let img = hower ? hower.img : this.getCharColor(value).img;
       let sex;
@@ -1040,9 +1049,9 @@ getProf_RE(kay) {
 
     getCharEthnosImg(value, ethnos_name) {
       let race = this.MY.race;
-      let ethnos = this.getRaceObj().noimg_ethnos ? "" : `/${ethnos_name}`;
+      let ethnos = this.Race_Obj.noimg_ethnos ? "" : `/${ethnos_name}`;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.getAllEthnosObj()[ethnos_name].color[value][0].img;
+      let img = this.All_Ethnos_Obj[ethnos_name].color[value][0].img;
       let sex;
       let result;
       if (phisiological === "female" || phisiological === "demigirl") {
@@ -1088,7 +1097,7 @@ getProf_RE(kay) {
       let race = this.MY.race;
       let ethnos = ethnos_name;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.getAllEthnosObj()[ethnos_name].color[value][0].img;
+      let img = this.All_Ethnos_Obj[ethnos_name].color[value][0].img;
       let sex;
       let result;
       if (phisiological === "female" || phisiological === "demigirl") {
@@ -1111,12 +1120,12 @@ getProf_RE(kay) {
       if (this.MY.ethnos === 'common') {
         return false
       } else {
-        return this.getEthnosObj().color[value].includes(obj);
+        return this.Ethnos_Obj.color[value].includes(obj);
       }
     },
 
     getRaceColor(obj, value) {
-      return this.getRaceObj().settings.color[value].includes(obj);
+      return this.Race_Obj.settings.color[value].includes(obj);
     },
 
     calcImg() {
@@ -1135,47 +1144,24 @@ getProf_RE(kay) {
       let i = 0;
       let j = 0;
       numb === undefined ? numb = 0 : numb = numb ;
-      if (this.getRaceObj()[par_1] === undefined) {
+      if (this.Race_Obj[par_1] === undefined) {
         i = 0
       } else {
-        this.getRaceObj()[par_1][par_2] === undefined
+        this.Race_Obj[par_1][par_2] === undefined
         ? (i = 0)
-        : (i = this.getRaceObj()[par_1][par_2]);
+        : (i = this.Race_Obj[par_1][par_2]);
       }
-      if (this.getEthnosObj()[par_1] === undefined) {
+      if (this.Ethnos_Obj[par_1] === undefined) {
         j = 0
       } else {
-        this.getEthnosObj()[par_1][par_2] === undefined
+        this.Ethnos_Obj[par_1][par_2] === undefined
         ? (j = 0)
-        : (j = this.getEthnosObj()[par_1][par_2]);
+        : (j = this.Ethnos_Obj[par_1][par_2]);
       }
         i === 0 && j === 0 ? numb = numb : numb = 0;
       return i + j + numb;
     },
 
-    getRaceObj() {
-      return this.race[this.MY.race];
-    },
-
-    getAllEthnosObj() {
-      return this.getRaceObj().settings.ethnos;
-    },
-
-    getEthnosObj() {
-    return this.getAllEthnosObj()[this.MY.ethnos];
-    },
-  },
-
-  computed: {
-    // getColor() {
-    //   let arr = [];
-    //   for (let i in this.color) {
-    //     for (let j in this.color[i]) {
-    //       arr.push(this.color[i][j]);
-    //     }
-    //   }
-    //   return arr;
-    // },
   },
 
   created() {

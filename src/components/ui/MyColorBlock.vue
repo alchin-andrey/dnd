@@ -1,17 +1,17 @@
 <template>
-  <div tabindex="0"
+  <div
     class="color_block"
     :class="{ 
-      color_block_active: getActive(), 
+      color_block_active: get_Active, 
       ethnos_dot: ethnos_color,
-      ethnos_dot_active: ethnos_color && getActive() ,
+      ethnos_dot_active: ethnos_color && get_Active ,
       race_dot: race_color && !ethnos_color,
-      race_dot_active: race_color && !ethnos_color && getActive()
+      race_dot_active: race_color && !ethnos_color && get_Active
       }"
   >
     <div
       class="color_block_2"
-      :class="{ color_block_2_active: getActive() }"
+      :class="{ color_block_2_active: get_Active }"
       :style="{ backgroundColor: color }"
     ></div>
   </div>
@@ -42,14 +42,14 @@ export default {
       default: false,
     },
   },
-  methods: {
-    getActive() {
+
+    computed: {
+    get_Active() {
       return this.active_link === this.select_link;
     },
-
-    getImage(name) {
-      return require(`@/assets/img/icon/gender/${name}.svg`);
-    },
+    t_Text() {
+		return this.getText(this.ethnos_color, this.race_color);
+		},
   },
 };
 </script>
@@ -101,14 +101,10 @@ export default {
 .color_block_2:hover {
   border-radius: 1px;
 }
-
-
 .color_block_active {
   border: 2px solid #ffffff;
   padding: 5px;
 }
-
-
 .ethnos_dot_active:after {
   content: '';
   width: 6px;
@@ -120,7 +116,6 @@ export default {
   border: 1px solid #000000;
   border-radius: 50%;
 }
-
 .race_dot_active:after {
   content: '';
   width: 6px;
@@ -132,7 +127,6 @@ export default {
   border: 1px solid #000000;
   border-radius: 50%;
 }
-
 .color_block_2_active {
   border-radius: 1px;
 }

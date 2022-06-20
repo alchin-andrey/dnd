@@ -5,18 +5,18 @@
         <img :src="getImage(icon)" :alt="icon" />
       </div>
       <div class="item" :class="{ passive: numb == 0 }">
-        {{ t(title) }}<span>{{ t(type) }}</span>
+        {{ t_Title }}<span>{{ t_Type }}</span>
       </div>
       <div class="numb" :class="{ passive: numb == 0 }">
-        {{ plus ? "+" : "" }}{{ numb }} {{ feet ? "футов" : "" }}
+        {{ prefix }}{{ numb }} {{ suffix }}
       </div>
     </div>
     <div class="visual">
       <!-- <slot name="cube"></slot> -->
-      <div class="cube" v-for="n in getCube(numb)" :key="n"></div>
+      <div class="cube" v-for="n in get_Cube" :key="n"></div>
       <div
         class="cube_zero"
-        v-for="n in getCubeZero(numb)"
+        v-for="n in get_CubeZero"
         :key="n"
       ></div>
     </div>
@@ -64,28 +64,40 @@ export default {
       type: Boolean,
       default: false,
     },
-    ethnos: {
-      type: Boolean,
-      default: false,
-    },
-    base: {
-      type: Boolean,
-      default: false,
-    },
   },
-  watch: {
-    modelValue: {
-      handler() {
-        this.inputValue = this.modelValue;
-      },
-      immediate: true,
+
+  computed: {
+    t_Title() {
+		return this.t(this.title);
+		},
+
+    t_Type() {
+		return this.t(this.type);
+		},
+
+    prefix() {
+		return this.plus ? "+" : "";
+		},
+
+    suffix() {
+		return this.feet ? this.t("feet") : "";
+		},
+
+    get_Cube() {
+      if (this.feet) {
+        return Math.ceil(this.numb / 5);
+      } else {
+        return this.numb;
+      }
     },
-    inputValue: {
-      handler() {
-        this.$emit("update:modelValue", this.inputValue);
-      },
+
+    get_CubeZero() {
+      if (this.cube_zero) {
+      return this.numb < 6 ? 6 - this.numb : 0;
+      }
     },
-  },
+	},
+
   methods: {
 
     getImage(name) {

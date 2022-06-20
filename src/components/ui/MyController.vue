@@ -1,10 +1,10 @@
 <template>
   <div class="column hover" :class="{ active_link: active}">
     <div class="column_title jbm-300">
-      <div>{{ t(title) }}</div>
+      <div>{{ t_Title }}</div>
     </div>
     <div class="column_link int-400">
-      <div>{{value}} {{age ? t(getAgeUnits(value)) : t(unit)}}</div> 
+      <div>{{value}} {{t_Unit}}</div> 
       <div class="note">{{ note }}</div>
     </div>
   </div>
@@ -13,11 +13,6 @@
 <script>
 export default {
   name: "MyController",
-  data() {
-    return {
-      inputValue: '',
-    };
-  },
   props: {
     modelValue: {
       type: Number,
@@ -48,21 +43,18 @@ export default {
       default: false,
     },
   },
-  watch: {
-    modelValue: {
-      handler() {
-        this.inputValue = this.modelValue;
-      },
-      immediate: true,
-    },
-    inputValue: {
-      handler() {
-        this.$emit("update:modelValue", this.inputValue);
-      },
-    },
-  },
+
+  computed: {
+    t_Title() {
+		return this.t(this.title);
+		},
+    t_Unit() {
+		return this.age ? this.t(this.getAgeUnits(this.value)) : this.t(this.unit);
+		},
+	},
+  
   methods: {
-        getAgeUnits(numb) {
+    getAgeUnits(numb) {
       let mod10 = Math.abs(numb % 10);
       let mod100 = Math.abs(numb % 100);
       if (mod100 > 10 && mod100 < 20) {

@@ -1918,7 +1918,7 @@ export default {
     settings: {
       ethnos: {
 
-        red: {
+        red_dragonborn: {
           
           name:"red_dragonborn",
           details:"red_dragonborn_details",
@@ -1949,7 +1949,7 @@ export default {
           ],
         },
 
-        brass: {
+        brass_dragonborn: {
           
           name:"brass_dragonborn",
           details:"brass_dragonborn_details",
@@ -1980,7 +1980,7 @@ export default {
           ],
         },
 
-        golden: {
+        golden_dragonborn: {
           
           name:"golden_dragonborn",
           details:"golden_dragonborn_details",
@@ -2011,7 +2011,7 @@ export default {
           ],
         },
 
-        silver: {
+        silver_dragonborn: {
           
           name:"silver_dragonborn",
           details:"silver_dragonborn_details",
@@ -2042,7 +2042,7 @@ export default {
           ],
         },
   
-        white: {
+        white_dragonborn: {
             
           name:"white_dragonborn",
           details:"white_dragonborn_details",
@@ -2073,7 +2073,7 @@ export default {
           ],
         },
   
-        blue: {
+        blue_dragonborn: {
             
           name:"blue_dragonborn",
           details:"blue_dragonborn_details",
@@ -2104,7 +2104,7 @@ export default {
           ],
         },
   
-        bronze: {
+        bronze_dragonborn: {
             
           name:"bronze_dragonborn",
           details:"bronze_dragonborn_details",
@@ -2135,7 +2135,7 @@ export default {
           ],
         },
   
-        copper: {
+        copper_dragonborn: {
             
           name:"copper_dragonborn",
           details:"copper_dragonborn_details",
@@ -2166,7 +2166,7 @@ export default {
           ],
         },
   
-        black: {
+        black_dragonborn: {
             
           name:"black_dragonborn",
           details:"black_dragonborn_details",
@@ -2197,7 +2197,7 @@ export default {
           ],
         },
   
-        green: {
+        green_dragonborn: {
             
           name:"green_dragonborn",
           details:"green_dragonborn_details",
@@ -2233,6 +2233,7 @@ export default {
       gender: gender,
 
       color: {
+        skin: [],
         eyes: [
           color[0][2],
           color[0][3],

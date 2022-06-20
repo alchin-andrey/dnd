@@ -8,7 +8,7 @@
     }"
   >
     <div class="column_title jbm-300">
-      <div>{{ t(title) }}</div>
+      <div>{{ t_Title }}</div>
     </div>
     <div
       class="column_link int-400"
@@ -19,7 +19,7 @@
         icon_active: active,
       }"
     >
-      <div>{{ type }}</div>
+      <div>{{ t_Type }}</div>
     </div>
   </div>
 </template>
@@ -54,17 +54,21 @@ export default {
       default: false,
     },
   },
-  watch: {
-    modelValue: {
-      handler() {
-        this.inputValue = this.modelValue;
-      },
-      immediate: true,
+  computed: {
+    t_Title() {
+      return this.t(this.title);
     },
-    inputValue: {
-      handler() {
-        this.$emit("update:modelValue", this.inputValue);
-      },
+    t_Type() {
+      return this.title === 'gender' ? this.getGenderName() : this.t(this.type);
+    },
+  },
+  methods: {
+    getGenderName() {
+      if (this.$root.MY.gender.feel === this.$root.genders.feel.cisgender) {
+        return this.t(this.$root.MY.gender.phisiological);
+      } else {
+        return `${this.t(this.$root.MY.gender.phisiological)} *`;
+      }
     },
   },
 };

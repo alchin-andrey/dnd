@@ -5,7 +5,7 @@
       :style="{ height: `calc(100% / ${arr[arr.length - 1]} * ${value})` }"
       >
         <div class="slider_knob"></div>
-        <div class="slider_value">{{value}} {{age ? getAgeUnits(value) : 'кг'}}</div>
+        <div class="slider_value">{{value}} {{t_Unit}}</div>
       </div>
     </div>
 
@@ -38,21 +38,26 @@ export default {
       default: false,
     },
   },
-  // created() {
-  //   console.log(getAgeUnits(34))
-  // },
+
+    computed: {
+    t_Unit() {
+		return this.age ? this.t(this.getAgeUnits(this.value)) : this.t('kg');
+		},
+	},
+
   methods: {
-        getAgeUnits(numb) {
+    getAgeUnits(numb) {
+      console.log(500)
       let mod10 = Math.abs(numb % 10);
       let mod100 = Math.abs(numb % 100);
       if (mod100 > 10 && mod100 < 20) {
-        return 'лет'
+        return 'years'
       } else if (mod10 >= 2 && mod10 <= 4) {
-        return 'года'
+        return 'yeara'
       } else if (mod10 === 1) {
-        return 'год'
+        return 'year'
       } else {
-        return 'лет'
+        return 'years'
       }
     },
   },

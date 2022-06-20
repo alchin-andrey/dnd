@@ -4,7 +4,7 @@
       <div>{{ numb }}</div>
     </div>
     <div class="title jbm-300">
-      <div>{{ title }}</div>
+      <div>{{ t_Title }}</div>
       <div><img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg" /></div>
     </div>
   </div>
@@ -23,6 +23,12 @@ export default {
       default: null,
     },
   },
+
+    computed: {
+    t_Title() {
+		return this.t(this.title);
+		},
+	},
 };
 </script>
 
