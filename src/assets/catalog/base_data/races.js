@@ -15,6 +15,31 @@ export default {
 
     settings: {
       ethnos: {
+
+        lightfoot: {
+          name: "lightfoot",
+          details: "lightfoot_halfling_details",
+
+          link_male: "https://www.heroforge.com/load_config%3D503210924",
+          link_female: "https://www.heroforge.com/load_config%3D503211388",
+
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
+          stats: { charisma: 1 },
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "stealth",
+              details: "behind_bigger_than_mid",
+            },
+          ],
+        },
+         
         stout: {
           name: "stout",
           details: "stout_halfling_details",
@@ -41,30 +66,6 @@ export default {
               type: "resistance",
               keyword: "resistance",
               details: "poison_damage",
-            },
-          ],
-        },
-
-        lightfoot: {
-          name: "lightfoot",
-          details: "lightfoot_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503210924",
-          link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[2][5]],
-            hair: [color[0][6]],
-          },
-
-          stats: { charisma: 1 },
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "stealth",
-              details: "behind_bigger_than_mid",
             },
           ],
         },
@@ -625,48 +626,34 @@ export default {
 
     settings: {
       ethnos: {
-        arkayun: {
-          name: "arkayun",
-          details: "arkayun_details",
 
+        illuskian: {
           color: {
-            skin: [color[2][2]],
-            eyes: [color[0][5]],
-            hair: [color[0][6]],
+            skin: [color[2][0]],
+            eyes: [color[7][3]],
+            hair: [color[1][4], color[0][6], color[2][2]],
           },
 
+          name: "illuskian",
+          details: "illuskian_details",
+
           proficiencies: {
-            languages: [lang.dambratan],
+            languages: [lang.illuskian],
           },
         },
 
-        bedin: {
+        ffolk: {
           color: {
-            skin: [color[2][6]],
-            eyes: [color[2][5]],
-            hair: [color[0][6]],
+            skin: [color[2][1]],
+            eyes: [color[7][3]],
+            hair: [color[3][5]],
           },
 
-          name: "bedin",
-          details: "bedin_details",
+          name: "ffolk",
+          details: "ffolk_details",
 
           proficiencies: {
-            languages: [lang.midani],
-          },
-        },
-
-        gur: {
-          color: {
-            skin: [color[0][3]],
-            eyes: [color[2][5]],
-            hair: [color[1][6]],
-          },
-
-          name: "gur",
-          details: "gur_details",
-
-          proficiencies: {
-            languages: [lang.guran],
+            languages: [lang.vaelan],
           },
         },
 
@@ -691,93 +678,18 @@ export default {
           },
         },
 
-        illuskian: {
-          color: {
-            skin: [color[2][0]],
-            eyes: [color[7][3]],
-            hair: [color[1][4], color[0][6], color[2][2]],
-          },
-
-          name: "illuskian",
-          details: "illuskian_details",
-
-          proficiencies: {
-            languages: [lang.illuskian],
-          },
-        },
-
-        imaskari: {
-          color: {
-            skin: [color[9][0]],
-            eyes: [color[0][2]],
-            hair: [color[8][1]],
-          },
-
-          name: "imaskari",
-          details: "imaskari_details",
-
-          proficiencies: {
-            languages: [lang.rushum],
-          },
-        },
-
-        kalishit: {
-          color: {
-            skin: [color[2][4]],
-            eyes: [color[2][5]],
-            hair: [color[2][6]],
-          },
-
-          name: "kalishit",
-          details: "kalishit_details",
-
-          proficiencies: {
-            languages: [lang.alzhedo],
-          },
-        },
-
-        mulan: {
-          color: {
-            skin: [color[2][3]],
-            eyes: [color[2][4]],
-            hair: [color[1][6]],
-          },
-
-          name: "mulan",
-          details: "mulan_details",
-
-          proficiencies: {
-            languages: [lang.chessent],
-          },
-        },
-
-        nar: {
+        halruanian: {
           color: {
             skin: [color[2][2]],
-            eyes: [color[1][4]],
-            hair: [color[0][6]],
+            eyes: [color[10][2], color[2][5], color[0][5], color[6][3]],
+            hair: [color[3][2], color[2][5]],
           },
 
-          name: "nar",
-          details: "nar_details",
+          name: "halruanian",
+          details: "halruanian_details",
 
           proficiencies: {
-            languages: [lang.damarian],
-          },
-        },
-
-        rashemi: {
-          color: {
-            skin: [color[2][5]],
-            eyes: [color[0][5]],
-            hair: [color[0][6]],
-          },
-
-          name: "rashemi",
-          details: "rashemi_details",
-
-          proficiencies: {
-            languages: [lang.rashemian],
+            languages: [lang.halruanian],
           },
         },
 
@@ -796,108 +708,33 @@ export default {
           },
         },
 
-        tuigan: {
+        arkayun: {
+          name: "arkayun",
+          details: "arkayun_details",
+
           color: {
-            skin: [color[3][5]],
-            eyes: [color[0][5]],
-            hair: [color[0][5]],
-          },
-
-          name: "tuigan",
-          details: "tuigan_details",
-
-          proficiencies: {
-            languages: [lang.tuiganian],
-          },
-        },
-
-        terami: {
-          color: {
-            skin: [color[1][5]],
+            skin: [color[2][2]],
             eyes: [color[0][5]],
             hair: [color[0][6]],
           },
 
-          name: "terami",
-          details: "terami_details",
-
           proficiencies: {
-            languages: [lang.teramian],
+            languages: [lang.dambratan],
           },
         },
 
-        ulutiune: {
+        nar: {
           color: {
-            skin: [color[3][4]],
-            eyes: [color[8][3]],
+            skin: [color[2][2]],
+            eyes: [color[1][4]],
             hair: [color[0][6]],
           },
 
-          name: "ulutiune",
-          details: "ulutiune_details",
+          name: "nar",
+          details: "nar_details",
 
           proficiencies: {
-            languages: [lang.uluik],
-          },
-        },
-
-        ffolk: {
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[7][3]],
-            hair: [color[3][5]],
-          },
-
-          name: "ffolk",
-          details: "ffolk_details",
-
-          proficiencies: {
-            languages: [lang.vaelan],
-          },
-        },
-
-        halruanian: {
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[10][2], color[2][5], color[0][5], color[6][3]],
-            hair: [color[3][2], color[2][5]],
-          },
-
-          name: "halruanian",
-          details: "halruanian_details",
-
-          proficiencies: {
-            languages: [lang.halruanian],
-          },
-        },
-
-        chondatan: {
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[6][3], color[2][5]],
-            hair: [color[0][2], color[0][3], color[0][4], color[0][5]],
-          },
-
-          name: "chondatan",
-          details: "chondatan_details",
-
-          proficiencies: {
-            languages: [lang.chondatanian],
-          },
-        },
-
-        chult: {
-          color: {
-            skin: [color[1][6]],
-            eyes: [color[3][3]],
-            hair: [color[2][5]],
-          },
-
-          name: "chult",
-          details: "chult_details",
-
-          proficiencies: {
-            languages: [lang.chult],
+            languages: [lang.damarian],
           },
         },
 
@@ -916,6 +753,126 @@ export default {
           },
         },
 
+        chondatan: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[6][3], color[2][5]],
+            hair: [color[0][2], color[0][3], color[0][4], color[0][5]],
+          },
+
+          name: "chondatan",
+          details: "chondatan_details",
+
+          proficiencies: {
+            languages: [lang.chondatanian],
+          },
+        },
+
+        mulan: {
+          color: {
+            skin: [color[2][3]],
+            eyes: [color[2][4]],
+            hair: [color[1][6]],
+          },
+
+          name: "mulan",
+          details: "mulan_details",
+
+          proficiencies: {
+            languages: [lang.chessent],
+          },
+        },
+
+        kalishit: {
+          color: {
+            skin: [color[2][4]],
+            eyes: [color[2][5]],
+            hair: [color[2][6]],
+          },
+
+          name: "kalishit",
+          details: "kalishit_details",
+
+          proficiencies: {
+            languages: [lang.alzhedo],
+          },
+        },
+
+        rashemi: {
+          color: {
+            skin: [color[2][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "rashemi",
+          details: "rashemi_details",
+
+          proficiencies: {
+            languages: [lang.rashemian],
+          },
+        },
+
+        bedin: {
+          color: {
+            skin: [color[2][6]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "bedin",
+          details: "bedin_details",
+
+          proficiencies: {
+            languages: [lang.midani],
+          },
+        },
+
+        chult: {
+          color: {
+            skin: [color[1][6]],
+            eyes: [color[3][3]],
+            hair: [color[2][5]],
+          },
+
+          name: "chult",
+          details: "chult_details",
+
+          proficiencies: {
+            languages: [lang.chult],
+          },
+        },
+
+        terami: {
+          color: {
+            skin: [color[1][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "terami",
+          details: "terami_details",
+
+          proficiencies: {
+            languages: [lang.teramian],
+          },
+        },
+
+        tuigan: {
+          color: {
+            skin: [color[3][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][5]],
+          },
+
+          name: "tuigan",
+          details: "tuigan_details",
+
+          proficiencies: {
+            languages: [lang.tuiganian],
+          },
+        },
+
         shu: {
           color: {
             skin: [color[3][4]],
@@ -928,6 +885,51 @@ export default {
 
           proficiencies: {
             languages: [lang.shu],
+          },
+        },
+
+        ulutiune: {
+          color: {
+            skin: [color[3][4]],
+            eyes: [color[8][3]],
+            hair: [color[0][6]],
+          },
+
+          name: "ulutiune",
+          details: "ulutiune_details",
+
+          proficiencies: {
+            languages: [lang.uluik],
+          },
+        },
+
+        gur: {
+          color: {
+            skin: [color[0][3]],
+            eyes: [color[2][5]],
+            hair: [color[1][6]],
+          },
+
+          name: "gur",
+          details: "gur_details",
+
+          proficiencies: {
+            languages: [lang.guran],
+          },
+        },
+
+        imaskari: {
+          color: {
+            skin: [color[9][0]],
+            eyes: [color[0][2]],
+            hair: [color[8][1]],
+          },
+
+          name: "imaskari",
+          details: "imaskari_details",
+
+          proficiencies: {
+            languages: [lang.rushum],
           },
         },
       },
