@@ -104,7 +104,7 @@
           >
           </my-selection>
         </div>
-        <button @click="plus()" type="">+1</button>
+        <!-- <button @click="plus()" type="">+1</button> -->
       </div>
 
       <my-button
@@ -183,62 +183,11 @@
               'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
             }"
           >
-            <img
-              v-if="getCharEthnosImg('skin', ethnos)"
-              :style="{
-                height: `${MY.race.ethnos_preview[0]}px`,
-                left: `${MY.race.ethnos_preview[1]}px`,
-              }"
-              :src="getCharEthnosImg('skin', ethnos)"
-              alt="skin"
-            />
+            <race-body body_part="skin" :ethnos_name="ethnos"></race-body>
 
-            <svg
-              v-if="!getCharEthnosImg('skin', ethnos)"
-              :fill="All_Ethnos_Obj[ethnos].color.skin[0].hex"
-              :height="300"
-              viewBox="0 0 197 400"
-              xmlns="http://www.w3.org/2000/svg"
-              v-html="placeholder.skin"
-            ></svg>
+            <race-body body_part="hair" :ethnos_name="ethnos"></race-body>
 
-            <img
-              v-if="getCharEthnosImg('hair', ethnos)"
-              :style="{
-                height: `${MY.race.ethnos_preview[0]}px`,
-                left: `${MY.race.ethnos_preview[1]}px`,
-              }"
-              :src="getCharEthnosImg('hair', ethnos)"
-              alt="hair"
-            />
-
-            <svg
-              v-if="!getCharEthnosImg('hair', ethnos)"
-              :fill="All_Ethnos_Obj[ethnos].color.hair[0].hex"
-              :height="300"
-              viewBox="0 0 197 400"
-              xmlns="http://www.w3.org/2000/svg"
-              v-html="placeholder.hair"
-            ></svg>
-
-            <img
-              v-if="getCharEthnosImg('eyes', ethnos)"
-              :style="{
-                height: `${MY.race.ethnos_preview[0]}px`,
-                left: `${MY.race.ethnos_preview[1]}px`,
-              }"
-              :src="getCharEthnosImg('eyes', ethnos)"
-              alt="eyes"
-            />
-
-            <svg
-              v-if="!getCharEthnosImg('eyes', ethnos)"
-              :fill="All_Ethnos_Obj[ethnos].color.eyes[0].hex"
-              :height="300"
-              viewBox="0 0 197 400"
-              xmlns="http://www.w3.org/2000/svg"
-              v-html="placeholder.eyes"
-            ></svg>
+            <race-body body_part="eyes" :ethnos_name="ethnos"></race-body>
           </div>
 
           <!-- Этнос_Карточка_stats + qualities -->
@@ -623,12 +572,14 @@ import race_page from "@/assets/catalog/page_data/race_page.js";
 
 import Genders from "@/components/Genders.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
+import RaceBody from "./components/ui/RaceBody.vue";
 
 export default {
   name: "App",
   components: {
     Genders,
     AgeWeight,
+    RaceBody,
   },
   data() {
     return {
@@ -874,29 +825,6 @@ export default {
       }
     },
 
-    getCharEthnosImg(value, ethnos_name) {
-      let race = this.MY.race.name;
-      let ethnos = this.MY.race.noimg_ethnos ? "" : `/${ethnos_name}`;
-      let phisiological = this.MY.gender.phisiological;
-      let img = this.All_Ethnos_Obj[ethnos_name].color[value][0].img;
-      let sex;
-      let result;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        sex = "female";
-      } else {
-        sex = "male";
-      }
-      try {
-        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${value}/${img}.png`);
-      } catch (e) {
-        if (e.code !== "MODULE_NOT_FOUND") {
-          throw e;
-        }
-        result = null;
-      }
-      return result;
-    },
-
     getParNumb(par_1, par_2, numb) {
       let i = 0;
       let j = 0;
@@ -1027,10 +955,9 @@ body {
 }
 
 .char_back img {
-  height: 390px;
+  /* height: 390px; */
   position: absolute;
   top: 16px;
-  left: -36px;
 }
 
 .char_back svg {

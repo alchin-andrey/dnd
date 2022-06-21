@@ -1,7 +1,10 @@
 <template>
   <img
         v-if="Char_Img"
-        :style="{ height: `${Calc_Img}` }"
+        :style="{ 
+          height: Char_Hight,
+          left: Char_Left 
+          }"
         :src="Char_Img"
         :alt="body_part"
       />
@@ -24,6 +27,10 @@ export default {
       type: String,
       default: null,
     },
+    ethnos_name: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
@@ -31,8 +38,17 @@ export default {
     }
   },
   computed: {
+
     Hower() {
       return this.$root.race_page[this.hower_link]
+    },
+
+    Char_Ethnos() {
+      if(this.ethnos_name) {
+        return this.$root.MY.race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
+      } else {
+        return this.$root.MY.race.noimg_ethnos ? "" : `/${this.$root.MY.ethnos.name}`;
+      }
     },
 
     Char_Color() {
@@ -47,11 +63,20 @@ export default {
         return this.$root.MY.color[this.body_part];
       }
     },
+
+    Char_Img_Numb() {
+      if(this.ethnos_name) {
+        return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
+      } else {
+        return this.Hower ? this.Hower.img : this.Char_Color.img;
+      }
+    },
+
     Char_Img() {
       let race = this.$root.MY.race.name;
-      let ethnos = this.$root.MY.race.noimg_ethnos ? "" : `/${this.$root.MY.ethnos.name}`;
+      let ethnos = this.Char_Ethnos;
       let phisiological = this.$root.MY.gender.phisiological;
-      let img = this.Hower ? this.Hower.img : this.Char_Color.img;
+      let img = this.Char_Img_Numb;
       let sex;
       let body = this.body_part;
       let result;
@@ -70,6 +95,7 @@ export default {
       }
       return result;
     },
+
     Calc_Img() {
       if (
         this.$root.race_page.shown_skin_color ||
@@ -79,6 +105,22 @@ export default {
         return `100%`;
       } else {
         return `calc(100% / 700 * (300 + 3.2 * 10))`;
+      }
+    },
+
+    Char_Hight() {
+      if(this.ethnos_name) {
+        return `${this.$root.MY.race.ethnos_preview[0]}px`;
+      } else {
+        return this.Calc_Img;
+      }
+    },
+
+    Char_Left() {
+      if(this.ethnos_name) {
+        return `${this.$root.MY.race.ethnos_preview[1]}px`;
+      } else {
+        return `50%`;
       }
     },
   },
@@ -95,28 +137,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-img {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
-}
 
-svg {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-property: all, fill;
-  transition-duration: 0.8s, 0.1s;
-  transition-timing-function: ease-in-out;
-}
 </style>
