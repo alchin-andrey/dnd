@@ -105,19 +105,19 @@ export default {
         nature:
         { bonus:0, mod:"intelligence" },
 
+        survival:
+        { bonus:0, mod:"wisdom" },
+
         perception:
         { bonus:0, mod:"wisdom" },
 
         insight:
         { bonus:0, mod:"wisdom" },
 
-        animal_hanging:
-        { bonus:0, mod:"wisdom" },
-
         medicine:
         { bonus:0, mod:"wisdom" },
 
-        survival:
+        animal_hanging:
         { bonus:0, mod:"wisdom" },
 
         performance:
