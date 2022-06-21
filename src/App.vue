@@ -107,8 +107,15 @@
         <button @click="plus()" type="">+1</button>
       </div>
 
-      <my-button v-if="race_page.shown_home" numb="02" title="class"></my-button>
-      <my-button-back v-if="!race_page.shown_home" @click="showHome()"></my-button-back>
+      <my-button
+        v-if="race_page.shown_home"
+        numb="02"
+        title="class"
+      ></my-button>
+      <my-button-back
+        v-if="!race_page.shown_home"
+        @click="showHome()"
+      ></my-button-back>
     </div>
     <!-- Этнос-->
     <my-selection-box :shown="race_page.shown_ethnos">
@@ -307,22 +314,19 @@
 
     <!-- Цвет кожи -->
     <my-selection-box :shown="race_page.shown_skin_color">
-      <my-color-select body_part="skin">
-      </my-color-select>
+      <my-color-select body_part="skin"> </my-color-select>
     </my-selection-box>
     <!-- Цвет кожи -->
 
     <!-- Цвет глаз -->
     <my-selection-box :shown="race_page.shown_eyes_color">
-      <my-color-select body_part="eyes">
-      </my-color-select>
+      <my-color-select body_part="eyes"> </my-color-select>
     </my-selection-box>
     <!-- Цвет глаз -->
 
     <!-- Цвет волос -->
     <my-selection-box :shown="race_page.shown_hair_color">
-      <my-color-select body_part="hair">
-      </my-color-select>
+      <my-color-select body_part="hair"> </my-color-select>
     </my-selection-box>
     <!-- Цвет волос -->
 
@@ -446,53 +450,11 @@
         active_skin: race_page.shown_skin_color,
       }"
     >
-      <img
-        v-if="getCharImg('skin', race_page.skin_hower)"
-        :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('skin', race_page.skin_hower)"
-        alt="skin"
-      />
+      <race-body body_part="skin"></race-body>
 
-      <svg
-        v-if="!getCharImg('skin', race_page.skin_hower)"
-        :fill="getCharColorHex('skin', race_page.skin_hower)"
-        :height="calcImg()"
-        viewBox="0 0 197 400"
-        xmlns="http://www.w3.org/2000/svg"
-        v-html="placeholder.skin"
-      ></svg>
+      <race-body body_part="eyes"></race-body>
 
-      <img
-        v-if="getCharImg('eyes', race_page.eyes_hower)"
-        :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('eyes', race_page.eyes_hower)"
-        alt="eyes"
-      />
-
-      <svg
-        v-if="!getCharImg('eyes', race_page.eyes_hower)"
-        :fill="getCharColorHex('eyes', race_page.eyes_hower)"
-        :height="calcImg()"
-        viewBox="0 0 197 400"
-        xmlns="http://www.w3.org/2000/svg"
-        v-html="placeholder.eyes"
-      ></svg>
-
-      <img
-        v-if="getCharImg('hair', race_page.hair_hower)"
-        :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('hair', race_page.hair_hower)"
-        alt="hair"
-      />
-
-      <svg
-        v-if="!getCharImg('hair', race_page.skin_hower)"
-        :fill="getCharColorHex('hair', race_page.hair_hower)"
-        :height="calcImg()"
-        viewBox="0 0 197 400"
-        xmlns="http://www.w3.org/2000/svg"
-        v-html="placeholder.hair"
-      ></svg>
+      <race-body body_part="hair"></race-body>
     </div>
     <transition name="slide-fade">
       <div class="size" v-if="hideRuler()">
@@ -737,7 +699,10 @@ export default {
     },
 
     closeEthnos() {
-      if (this.race_page.shown_ethnos === true && this.MY.ethnos.name === "common") {
+      if (
+        this.race_page.shown_ethnos === true &&
+        this.MY.ethnos.name === "common"
+      ) {
         this.race_page.shown_ethnos = false;
         this.race_page.shown_home = true;
       } else {
@@ -800,7 +765,10 @@ export default {
     },
 
     show(name) {
-      if (this.race_page[name] === "shown_ethnos" && this.MY.ethnos.name === "common") {
+      if (
+        this.race_page[name] === "shown_ethnos" &&
+        this.MY.ethnos.name === "common"
+      ) {
         this.race_page[name] === false;
       } else if (this.race_page[name] === false) {
         this.close();
@@ -906,34 +874,6 @@ export default {
       }
     },
 
-    getCharColorHex(value, hower) {
-      let hex = hower ? hower.hex : this.getCharColor(value).hex;
-      return hex;
-    },
-
-    getCharImg(value, hower) {
-      let race = this.MY.race.name;
-      let ethnos = this.MY.race.noimg_ethnos ? "" : `/${this.MY.ethnos.name}`;
-      let phisiological = this.MY.gender.phisiological;
-      let img = hower ? hower.img : this.getCharColor(value).img;
-      let sex;
-      let result;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        sex = "female";
-      } else {
-        sex = "male";
-      }
-      try {
-        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${value}/${img}.png`);
-      } catch (e) {
-        if (e.code !== "MODULE_NOT_FOUND") {
-          throw e;
-        }
-        result = null;
-      }
-      return result;
-    },
-
     getCharEthnosImg(value, ethnos_name) {
       let race = this.MY.race.name;
       let ethnos = this.MY.race.noimg_ethnos ? "" : `/${ethnos_name}`;
@@ -955,18 +895,6 @@ export default {
         result = null;
       }
       return result;
-    },
-
-    calcImg() {
-      if (
-        this.race_page.shown_skin_color ||
-        this.race_page.shown_eyes_color ||
-        this.race_page.shown_hair_color
-      ) {
-        return `100%`;
-      } else {
-        return `calc(100% / 700 * (300 + 3.2 * 10))`;
-      }
     },
 
     getParNumb(par_1, par_2, numb) {

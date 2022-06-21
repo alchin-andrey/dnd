@@ -17,15 +17,15 @@
     </div>
   </div>
   <my-card-text-color
-    :title="Hover ? Hover.name : Char_Color.name"
+    :title="Hower ? Hower.name : Char_Color.name"
     :ethnos_color="
-      Hover
-        ? getEthnosColor(Hover, body_part)
+      Hower
+        ? getEthnosColor(Hower, body_part)
         : getEthnosColor(Char_Color, body_part)
     "
     :race_color="
-      Hover
-        ? getRaceColor(Hover, body_part)
+      Hower
+        ? getRaceColor(Hower, body_part)
         : getRaceColor(Char_Color, body_part)
     "
   ></my-card-text-color>
@@ -47,7 +47,7 @@ export default {
     }
   },
   computed: {
-    Hover() {
+    Hower() {
       return this.$root.race_page[this.hower_link]
     },
 

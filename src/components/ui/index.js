@@ -14,6 +14,7 @@ import MyColorBlock from "@/components/ui/MyColorBlock.vue";
 import MyWrapper from "@/components/ui/MyWrapper.vue";
 import MyCardTextColor from "@/components/ui/MyCardTextColor.vue";
 import MyColorSelect from "@/components/ui/MyColorSelect.vue";
+import RaceBody from "@/components/ui/RaceBody.vue";
 
 
 export default [
@@ -33,4 +34,5 @@ export default [
   MyWrapper,
   MyCardTextColor,
   MyColorSelect,
+  RaceBody,
 ];
