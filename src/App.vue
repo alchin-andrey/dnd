@@ -17,34 +17,34 @@
         <div class="selection_menu">
           <my-selection
             @click="show('shown_ethnos')"
-            :active="shown_ethnos"
+            :active="race_page.shown_ethnos"
             title="ethnos"
             :type="MY.ethnos.name"
             :rare="MY.ethnos.rare"
           ></my-selection>
           <my-selection
             @click="show('shown_gender')"
-            :active="shown_gender"
+            :active="race_page.shown_gender"
             title="gender"
             :type="MY.gender.phisiological"
           ></my-selection>
           <my-selection
             @click="show('shown_skin_color')"
-            :active="shown_skin_color"
+            :active="race_page.shown_skin_color"
             title="color_skin"
             :type="getCharColor('skin').name"
           >
           </my-selection>
           <my-selection
             @click="show('shown_eyes_color')"
-            :active="shown_eyes_color"
+            :active="race_page.shown_eyes_color"
             title="color_eyes"
             :type="getCharColor('eyes').name"
           >
           </my-selection>
           <my-selection
             @click="show('shown_hair_color')"
-            :active="shown_hair_color"
+            :active="race_page.shown_hair_color"
             title="color_hair"
             :type="getCharColor('hair').name"
           >
@@ -54,25 +54,25 @@
         <div class="selection_menu">
           <my-controller
             @click="show('shown_age')"
-            :active="shown_age"
+            :active="race_page.shown_age"
             title="age"
-            :value="age"
+            :value="race_page.age"
             age
             note="Взрослый"
           ></my-controller>
           <my-controller
             @click="show('shown_growth')"
-            :active="shown_growth"
+            :active="race_page.shown_growth"
             title="height"
-            :value="growth"
+            :value="race_page.growth"
             unit="cm"
             note="Маленький"
           ></my-controller>
           <my-controller
             @click="show('shown_weight')"
-            :active="shown_weight"
+            :active="race_page.shown_weight"
             title="weight"
-            :value="weight"
+            :value="race_page.weight"
             unit="kg"
             note=""
           >
@@ -83,14 +83,14 @@
           <my-selection
             v-if="MY.race.settings.custom_stats"
             @click="show('shown_characteristics')"
-            :active="shown_characteristics"
+            :active="race_page.shown_characteristics"
             title="stats"
             type="Сил, Лов"
           ></my-selection>
           <my-selection
             v-if="MY.race.settings.custom_skills"
             @click="show('shown_skills')"
-            :active="shown_skills"
+            :active="race_page.shown_skills"
             title="skills"
             type="Арк, Ана"
           >
@@ -98,7 +98,7 @@
           <my-selection
             v-if="MY.race.settings.custom_language"
             @click="show('shown_languages')"
-            :active="shown_languages"
+            :active="race_page.shown_languages"
             title="languages"
             type="Акван"
           >
@@ -107,11 +107,11 @@
         <button @click="plus()" type="">+1</button>
       </div>
 
-      <my-button v-if="shown_home" numb="02" title="class"></my-button>
-      <my-button-back v-if="!shown_home" @click="showHome()"></my-button-back>
+      <my-button v-if="race_page.shown_home" numb="02" title="class"></my-button>
+      <my-button-back v-if="!race_page.shown_home" @click="showHome()"></my-button-back>
     </div>
     <!-- Этнос-->
-    <my-selection-box :shown="shown_ethnos">
+    <my-selection-box :shown="race_page.shown_ethnos">
       <div class="ethnos_attributes">
         <!-- Этнос_stats + qualities -->
         <my-wrapper v-if="MY.race.stats || MY.race.qualities">
@@ -300,127 +300,40 @@
     <!-- Этнос -->
 
     <!-- Гендр -->
-    <my-selection-box :shown="shown_gender">
+    <my-selection-box :shown="race_page.shown_gender">
       <Genders />
     </my-selection-box>
     <!-- Гендр -->
 
     <!-- Цвет кожи -->
-    <my-selection-box :shown="shown_skin_color">
-      <my-selection-card passive colors_card>
-        <div class="colors_box jbm-300" @mouseleave="hoverStop('skin_hower')">
-          <div v-for="(val, i) in color" :key="i" class="colors_row">
-            <my-color-block
-              v-for="(val, j) in color[i]"
-              :key="j"
-              @mouseover="hoverColor('skin_hower', color, i, j)"
-              @click="choiceColor('skin', color, i, j)"
-              :color="color[i][j].hex"
-              :active_link="color[i][j].hex"
-              :select_link="getCharColor('skin').hex"
-              :ethnos_color="getEthnosColor(color[i][j], 'skin')"
-              :race_color="getRaceColor(color[i][j], 'skin')"
-            >
-            </my-color-block>
-          </div>
-        </div>
-        <my-card-text-color
-          :title="skin_hower ? skin_hower.name : getCharColor('skin').name"
-          :ethnos_color="
-            skin_hower
-              ? getEthnosColor(skin_hower, 'skin')
-              : getEthnosColor(getCharColor('skin'), 'skin')
-          "
-          :race_color="
-            skin_hower
-              ? getRaceColor(skin_hower, 'skin')
-              : getRaceColor(getCharColor('skin'), 'skin')
-          "
-        ></my-card-text-color>
-      </my-selection-card>
+    <my-selection-box :shown="race_page.shown_skin_color">
+      <my-color-select body_part="skin">
+      </my-color-select>
     </my-selection-box>
     <!-- Цвет кожи -->
 
     <!-- Цвет глаз -->
-    <my-selection-box :shown="shown_eyes_color">
-      <my-selection-card passive colors_card>
-        <div class="colors_box jbm-300" @mouseleave="hoverStop('eyes_hower')">
-          <div v-for="(val, i) in color" :key="i" class="colors_row">
-            <my-color-block
-              v-for="(val, j) in color[i]"
-              :key="j"
-              @mouseover="hoverColor('eyes_hower', color, i, j)"
-              @click="choiceColor('eyes', color, i, j)"
-              :color="color[i][j].hex"
-              :active_link="color[i][j].hex"
-              :select_link="getCharColor('eyes').hex"
-              :ethnos_color="getEthnosColor(color[i][j], 'eyes')"
-              :race_color="getRaceColor(color[i][j], 'eyes')"
-            >
-            </my-color-block>
-          </div>
-        </div>
-        <my-card-text-color
-          :title="eyes_hower ? eyes_hower.name : getCharColor('eyes').name"
-          :ethnos_color="
-            eyes_hower
-              ? getEthnosColor(eyes_hower, 'eyes')
-              : getEthnosColor(getCharColor('eyes'), 'eyes')
-          "
-          :race_color="
-            eyes_hower
-              ? getRaceColor(eyes_hower, 'eyes')
-              : getRaceColor(getCharColor('eyes'), 'eyes')
-          "
-        ></my-card-text-color>
-      </my-selection-card>
+    <my-selection-box :shown="race_page.shown_eyes_color">
+      <my-color-select body_part="eyes">
+      </my-color-select>
     </my-selection-box>
     <!-- Цвет глаз -->
 
     <!-- Цвет волос -->
-    <my-selection-box :shown="shown_hair_color">
-      <my-selection-card passive colors_card>
-        <div class="colors_box jbm-300" @mouseleave="hoverStop('hair_hower')">
-          <div v-for="(val, i) in color" :key="i" class="colors_row">
-            <my-color-block
-              v-for="(val, j) in color[i]"
-              :key="j"
-              @mouseover="hoverColor('hair_hower', color, i, j)"
-              @click="choiceColor('hair', color, i, j)"
-              :color="color[i][j].hex"
-              :active_link="color[i][j].hex"
-              :select_link="getCharColor('hair').hex"
-              :ethnos_color="getEthnosColor(color[i][j], 'hair')"
-              :race_color="getRaceColor(color[i][j], 'hair')"
-            >
-            </my-color-block>
-          </div>
-        </div>
-        <my-card-text-color
-          :title="hair_hower ? hair_hower.name : getCharColor('hair').name"
-          :ethnos_color="
-            hair_hower
-              ? getEthnosColor(hair_hower, 'hair')
-              : getEthnosColor(getCharColor('hair'), 'hair')
-          "
-          :race_color="
-            hair_hower
-              ? getRaceColor(hair_hower, 'hair')
-              : getRaceColor(getCharColor('hair'), 'hair')
-          "
-        ></my-card-text-color>
-      </my-selection-card>
+    <my-selection-box :shown="race_page.shown_hair_color">
+      <my-color-select body_part="hair">
+      </my-color-select>
     </my-selection-box>
     <!-- Цвет волос -->
 
     <!-- Возраст -->
-    <my-selection-box :shown="shown_age">
-      <AgeWeight :value="age" :arr="age_arr" age />
+    <my-selection-box :shown="race_page.shown_age">
+      <AgeWeight :value="race_page.age" :arr="race_page.age_arr" age />
     </my-selection-box>
     <!-- Возраст -->
 
     <!-- Рост -->
-    <my-selection-box :shown="shown_growth">
+    <my-selection-box :shown="race_page.shown_growth">
       <div class="flex_options">
         <div class="slider_growth_back">
           <div class="slider_growth">
@@ -463,13 +376,13 @@
     <!-- Рост -->
 
     <!-- Вес -->
-    <my-selection-box :shown="shown_weight">
-      <AgeWeight :value="weight" :arr="weight_arr" />
+    <my-selection-box :shown="race_page.shown_weight">
+      <AgeWeight :value="race_page.weight" :arr="race_page.weight_arr" />
     </my-selection-box>
     <!-- Вес -->
 
     <!-- Характеристики -->
-    <my-selection-box :shown="shown_characteristics">
+    <my-selection-box :shown="race_page.shown_characteristics">
       <div class="ethnos_attributes">
         <!-- Этнос_stats -->
         <my-wrapper v-if="MY.race.stats">
@@ -505,13 +418,13 @@
     <!-- Характеристики -->
 
     <!-- Навыки -->
-    <my-selection-box :shown="shown_skills">
+    <my-selection-box :shown="race_page.shown_skills">
       <div class="jbm-300">Навыки</div>
     </my-selection-box>
     <!-- Навыки -->
 
     <!-- Языки -->
-    <my-selection-box :shown="shown_languages">
+    <my-selection-box :shown="race_page.shown_languages">
       <my-selection-card
         v-for="lang in languages"
         :key="lang"
@@ -529,20 +442,20 @@
     <div
       class="character"
       :class="{
-        active_eyes: shown_eyes_color || shown_hair_color,
-        active_skin: shown_skin_color,
+        active_eyes: race_page.shown_eyes_color || race_page.shown_hair_color,
+        active_skin: race_page.shown_skin_color,
       }"
     >
       <img
-        v-if="getCharImg('skin', skin_hower)"
+        v-if="getCharImg('skin', race_page.skin_hower)"
         :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('skin', skin_hower)"
+        :src="getCharImg('skin', race_page.skin_hower)"
         alt="skin"
       />
 
       <svg
-        v-if="!getCharImg('skin', skin_hower)"
-        :fill="getCharColorHex('skin', skin_hower)"
+        v-if="!getCharImg('skin', race_page.skin_hower)"
+        :fill="getCharColorHex('skin', race_page.skin_hower)"
         :height="calcImg()"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
@@ -550,15 +463,15 @@
       ></svg>
 
       <img
-        v-if="getCharImg('eyes', eyes_hower)"
+        v-if="getCharImg('eyes', race_page.eyes_hower)"
         :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('eyes', eyes_hower)"
+        :src="getCharImg('eyes', race_page.eyes_hower)"
         alt="eyes"
       />
 
       <svg
-        v-if="!getCharImg('eyes', eyes_hower)"
-        :fill="getCharColorHex('eyes', eyes_hower)"
+        v-if="!getCharImg('eyes', race_page.eyes_hower)"
+        :fill="getCharColorHex('eyes', race_page.eyes_hower)"
         :height="calcImg()"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
@@ -566,15 +479,15 @@
       ></svg>
 
       <img
-        v-if="getCharImg('hair', hair_hower)"
+        v-if="getCharImg('hair', race_page.hair_hower)"
         :style="{ height: `${calcImg()}` }"
-        :src="getCharImg('hair', hair_hower)"
+        :src="getCharImg('hair', race_page.hair_hower)"
         alt="hair"
       />
 
       <svg
-        v-if="!getCharImg('hair', skin_hower)"
-        :fill="getCharColorHex('hair', hair_hower)"
+        v-if="!getCharImg('hair', race_page.skin_hower)"
+        :fill="getCharColorHex('hair', race_page.hair_hower)"
         :height="calcImg()"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
@@ -643,7 +556,7 @@
   </div>
 
   <!-- sidebar_right -->
-  <div v-if="shown_home" class="sidebar_right">
+  <div v-if="race_page.shown_home" class="sidebar_right">
     <!-- stats -->
     <my-wrapper hr>
       <my-attribute
@@ -744,6 +657,8 @@ import past from "@/assets/catalog/base_data/pasts.js";
 import languages from "@/assets/catalog/base_data/languages.js";
 import placeholder from "@/assets/catalog/base_data/placeholder.js";
 
+import race_page from "@/assets/catalog/page_data/race_page.js";
+
 import Genders from "@/components/Genders.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
@@ -766,25 +681,7 @@ export default {
       languages: languages,
       placeholder: placeholder,
 
-      shown_ethnos: false,
-      shown_gender: false,
-      shown_skin_color: false,
-      shown_eyes_color: false,
-      shown_hair_color: false,
-      shown_age: false,
-      shown_growth: false,
-      shown_weight: false,
-      shown_characteristics: false,
-      shown_skills: false,
-      shown_languages: false,
-
-      shown_home: true,
-
-      skin_hower: null,
-      hair_hower: null,
-      eyes_hower: null,
-
-      active: false,
+      race_page: race_page,
 
       age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
       weight_arr: [0, "x", "x", 15, 20],
@@ -840,23 +737,23 @@ export default {
     },
 
     closeEthnos() {
-      if (this.shown_ethnos === true && this.MY.ethnos.name === "common") {
-        this.shown_ethnos = false;
-        this.shown_home = true;
+      if (this.race_page.shown_ethnos === true && this.MY.ethnos.name === "common") {
+        this.race_page.shown_ethnos = false;
+        this.race_page.shown_home = true;
       } else {
-        this.shown_ethnos === true;
+        this.race_page.shown_ethnos === true;
       }
     },
 
     closePar(name_1, name_2) {
       if (
-        this[name_1] === true &&
+        this.race_page[name_1] === true &&
         this.MY.race.settings[name_2] === undefined
       ) {
-        this[name_1] = false;
+        this.race_page[name_1] = false;
         this.shown_home = true;
       } else {
-        this[name_1] === true;
+        this.race_page[name_1] === true;
       }
     },
 
@@ -889,58 +786,46 @@ export default {
     },
 
     close() {
-      this.shown_ethnos = false;
-      this.shown_gender = false;
-      this.shown_skin_color = false;
-      this.shown_eyes_color = false;
-      this.shown_hair_color = false;
-      this.shown_age = false;
-      this.shown_growth = false;
-      this.shown_weight = false;
-      this.shown_characteristics = false;
-      this.shown_skills = false;
-      this.shown_languages = false;
+      this.race_page.shown_ethnos = false;
+      this.race_page.shown_gender = false;
+      this.race_page.shown_skin_color = false;
+      this.race_page.shown_eyes_color = false;
+      this.race_page.shown_hair_color = false;
+      this.race_page.shown_age = false;
+      this.race_page.shown_growth = false;
+      this.race_page.shown_weight = false;
+      this.race_page.shown_characteristics = false;
+      this.race_page.shown_skills = false;
+      this.race_page.shown_languages = false;
     },
 
     show(name) {
-      if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
-        this[name] === false;
-      } else if (this[name] === false) {
+      if (this.race_page[name] === "shown_ethnos" && this.MY.ethnos.name === "common") {
+        this.race_page[name] === false;
+      } else if (this.race_page[name] === false) {
         this.close();
-        this[name] = true;
-        this.shown_home = false;
+        this.race_page[name] = true;
+        this.race_page.shown_home = false;
       } else {
         this.close();
-        this.shown_home = true;
+        this.race_page.shown_home = true;
       }
     },
 
     showHome() {
       this.close();
-      this.shown_home = true;
+      this.race_page.shown_home = true;
     },
 
     showMY() {
       console.log(this.MY);
     },
 
-    choiceColor(name, obj, i, j) {
-      this.MY.color[name] = obj[i][j];
-    },
-
-    hoverStop(name) {
-      this[name] = null;
-    },
-
-    hoverColor(name, obj, i, j) {
-      this[name] = obj[i][j];
-    },
-
     hideRuler() {
       if (
-        this.shown_skin_color ||
-        this.shown_eyes_color ||
-        this.shown_hair_color
+        this.race_page.shown_skin_color ||
+        this.race_page.shown_eyes_color ||
+        this.race_page.shown_hair_color
       ) {
         return false;
       } else {
@@ -967,7 +852,6 @@ export default {
     },
 
     getProficienciesEthnosItem(obj, name) {
-      console.log(obj, name);
       let arr = [];
       for (let i in this.All_Ethnos_Obj[obj].proficiencies[name]) {
         arr.push(this.All_Ethnos_Obj[obj].proficiencies[name][i].name);
@@ -1073,23 +957,11 @@ export default {
       return result;
     },
 
-    getEthnosColor(obj, value) {
-      if (this.MY.ethnos.name === "common") {
-        return false;
-      } else {
-        return this.MY.ethnos.color[value].includes(obj);
-      }
-    },
-
-    getRaceColor(obj, value) {
-      return this.MY.race.settings.color[value].includes(obj);
-    },
-
     calcImg() {
       if (
-        this.shown_skin_color ||
-        this.shown_eyes_color ||
-        this.shown_hair_color
+        this.race_page.shown_skin_color ||
+        this.race_page.shown_eyes_color ||
+        this.race_page.shown_hair_color
       ) {
         return `100%`;
       } else {
@@ -1417,21 +1289,6 @@ body {
   color: #ffffff;
   margin-top: 25px;
   margin-bottom: 5px;
-}
-
-.colors_box {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  height: 100%;
-  gap: 2px;
-}
-
-.colors_row {
-  display: flex;
-  flex: 1 1 auto;
-  height: 100%;
-  gap: 2px;
 }
 
 .slide-fade-enter-active {
