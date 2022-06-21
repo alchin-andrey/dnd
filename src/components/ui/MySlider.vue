@@ -26,16 +26,14 @@
       />
     </div>
   </div>
+
+  <div class="delimiter"></div>
 </template>
 
 <script>
 export default {
   name: "MySlider",
   props: {
-    modelValue: {
-      type: String,
-      default: null,
-    },
     numb: {
       type: String,
       default: null,
@@ -45,60 +43,24 @@ export default {
       default: null,
     },
     type: {
-      type: String,
-      default: null,
+      type: Object,
+      default: {},
     },
     arr: {
       type: Array,
       default: [],
     },
   },
+
   computed: {
     t_Title() {
       return this.t(this.title);
     },
     t_Type() {
-      return this.t(this.type);
+      return this.t(this.type.name);
     },
   },
   methods: {
-    getNewEthnos() {
-      this.$root.MY.ethnos = Object.values(
-        this.$root.race[this.$root.MY.race].settings.ethnos
-      )[0].name;
-    },
-    
-    closeEthnos() {
-      if (
-        this.$root.shown_ethnos === true &&
-        this.$root.MY.ethnos === "common"
-      ) {
-        this.$root.shown_ethnos = false;
-        this.$root.shown_home = true;
-      } else {
-        this.$root.shown_ethnos === true;
-      }
-    },
-
-    closePar(name_1, name_2) {
-      if (
-        this.$root[name_1] === true &&
-        this.$root.Race_Obj.settings[name_2] === undefined
-      ) {
-        this.$root[name_1] = false;
-        this.$root.shown_home = true;
-      } else {
-        this.$root[name_1] === true;
-      }
-    },
-
-    getFunction() {
-      this.getNewEthnos();
-      this.closeEthnos();
-      this.closePar("shown_characteristics", "custom_stats");
-      this.closePar("shown_skills", "custom_skills");
-      this.closePar("shown_languages", "custom_language");
-    },
 
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
@@ -107,7 +69,6 @@ export default {
       } else {
         this.$root.MY.race = arr[j - 1];
       }
-      this.getFunction();
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
@@ -116,7 +77,6 @@ export default {
       } else {
         this.$root.MY.race = arr[j + 1];
       }
-      this.getFunction();
     },
   },
 };
@@ -156,15 +116,12 @@ export default {
   cursor: pointer;
 }
 
-/* .type-enter-active,
-.type-leave-active {
-  transition: opacity 0.5s ease;
+.delimiter {
+  width: 256px;
+  height: 1px;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.2);
 }
-
-.type-enter,
-.type-leave-to {
-  opacity: 0;
-} */
 
 .type-enter-active,
 .type-leave-active {

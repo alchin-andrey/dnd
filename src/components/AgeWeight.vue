@@ -47,7 +47,6 @@ export default {
 
   methods: {
     getAgeUnits(numb) {
-      console.log(500)
       let mod10 = Math.abs(numb % 10);
       let mod100 = Math.abs(numb % 100);
       if (mod100 > 10 && mod100 < 20) {
