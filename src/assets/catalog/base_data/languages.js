@@ -18,13 +18,13 @@ export default {
         name: "lang_dwarf",
         details: "lang_dwarf_details"
     },
-    tiefling: {
-        name: "lang_tiefling",
-        details: "lang_tiefling_details"
-    },
     elf: {
         name: "lang_elf",
         details: "lang_elf_details"
+    },
+    tiefling: {
+        name: "lang_tiefling",
+        details: "lang_tiefling_details"
     },
     orc: {
         name: "lang_orc",
