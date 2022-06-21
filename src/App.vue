@@ -119,82 +119,31 @@
     </div>
     <!-- Этнос-->
     <my-selection-box :shown="race_page.shown_ethnos">
-      <div class="ethnos_attributes">
-        <!-- Этнос_stats + qualities -->
-        <my-wrapper v-if="MY.race.stats || MY.race.qualities">
-          <my-attribute
-            v-for="(val, name) in MY.race.stats"
-            :key="name"
-            :title="name"
-            :type="`${name}_base`"
-            plus
-            :numb="val"
-            :icon="name"
-          >
-          </my-attribute>
-          <my-attribute
-            v-for="(val, name) in MY.race.qualities"
-            :key="name"
-            :title="name"
-            :numb="val"
-            feet
-            :icon="name"
-          ></my-attribute>
-        </my-wrapper>
-
-        <!-- Этнос_stats + qualities -->
-
-        <!-- Этнос_proficiencies -->
-        <my-wrapper v-if="MY.race.proficiencies">
-          <my-inventory
-            v-for="(val, name) in MY.race.proficiencies"
-            :key="name"
-            :title="name"
-            :item="getProficienciesItem(name)"
-          >
-          </my-inventory>
-        </my-wrapper>
-        <!-- Этнос_proficiencies -->
-
-        <!-- Этнос_fines -->
-        <my-wrapper v-if="MY.race.fines" gap_8>
-          <my-fines
-            v-for="item in MY.race.fines"
-            :key="item"
-            :icon="item.type"
-            :title="item.keyword"
-            :details="item.details"
-          ></my-fines>
-        </my-wrapper>
-      </div>
-      <!-- Этнос_fines -->
-
-      <!-- Этнос_Карточка -->
-      <EthnosCard/>
+      <EthnosChoice/>
     </my-selection-box>
     <!-- Этнос -->
 
     <!-- Гендр -->
     <my-selection-box :shown="race_page.shown_gender">
-      <Genders />
+      <GenderChoice />
     </my-selection-box>
     <!-- Гендр -->
 
     <!-- Цвет кожи -->
     <my-selection-box :shown="race_page.shown_skin_color">
-      <my-color-select body_part="skin"> </my-color-select>
+      <my-color-select body_part="skin" />
     </my-selection-box>
     <!-- Цвет кожи -->
 
     <!-- Цвет глаз -->
     <my-selection-box :shown="race_page.shown_eyes_color">
-      <my-color-select body_part="eyes"> </my-color-select>
+      <my-color-select body_part="eyes" />
     </my-selection-box>
     <!-- Цвет глаз -->
 
     <!-- Цвет волос -->
     <my-selection-box :shown="race_page.shown_hair_color">
-      <my-color-select body_part="hair"> </my-color-select>
+      <my-color-select body_part="hair" />
     </my-selection-box>
     <!-- Цвет волос -->
 
@@ -489,16 +438,19 @@ import placeholder from "@/assets/catalog/base_data/placeholder.js";
 
 import race_page from "@/assets/catalog/page_data/race_page.js";
 
-import Genders from "@/components/Genders.vue";
+import EthnosChoice from "@/components/EthnosChoice.vue";
+import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
-import EthnosCard from "./components/EthnosCard.vue";
+
 
 export default {
   name: "App",
   components: {
-    Genders,
+    EthnosChoice,
+    GenderChoice,
+    
     AgeWeight,
-    EthnosCard,
+
   },
   data() {
     return {

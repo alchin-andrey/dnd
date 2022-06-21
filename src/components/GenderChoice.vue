@@ -142,7 +142,7 @@
 
 <script>
 export default {
-  name: "Genders",
+  name: "GenderChoice",
 
   computed: {
     phisiological_kay() {
