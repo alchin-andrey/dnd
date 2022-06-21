@@ -843,28 +843,6 @@ body {
   padding: 14px !important;
 }
 
-.char_back {
-  width: 100%;
-  height: 120px;
-  background: #0e1518;
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-}
-
-.char_back img {
-  /* height: 390px; */
-  position: absolute;
-  top: 16px;
-}
-
-.char_back svg {
-  height: 300px;
-  position: absolute;
-  top: 16px;
-  left: 0;
-}
-
 /* ---------------------characters----------------------*/
 
 .represent {
