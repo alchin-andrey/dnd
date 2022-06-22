@@ -255,21 +255,30 @@
       >
         <my-card-text :title="lang.name" :text="lang.details"> </my-card-text>
       </my-selection-card>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <my-selection-card
-        v-for="lang in Lang_Humman"
-        :key="lang"
-        @click="getExtraLang(Lang_Activ.includes(lang), lang)"
-        :active_boll_link="Lang_Select.includes(lang)"
-        :basic="Lang_Activ.includes(lang)"
+
+      <div
+        class="skroll_list jbm-300"
+        :class="{
+          skroll_list_closed: race_page.shown_humman_lang,
+          skroll_list_open: !race_page.shown_humman_lang,
+        }"
+        @click="showSkroll('shown_humman_lang')"
       >
-        <my-card-text :title="lang.name" :text="lang.details"> </my-card-text>
-      </my-selection-card>
+        Языки этносов людей
+      </div>
+<transition name="slide-fade">
+      <div v-if="!race_page.shown_humman_lang" class="flex_gap-8">
+        <my-selection-card
+          v-for="lang in Lang_Humman"
+          :key="lang"
+          @click="getExtraLang(Lang_Activ.includes(lang), lang)"
+          :active_boll_link="Lang_Select.includes(lang)"
+          :basic="Lang_Activ.includes(lang)"
+        >
+          <my-card-text :title="lang.name" :text="lang.details"> </my-card-text>
+        </my-selection-card>
+      </div>
+</transition>
     </my-selection-box>
     <!-- Языки -->
   </div>
@@ -509,7 +518,7 @@ export default {
     )[0];
     this.MY = this.default_MY;
     this.getExtra(this.Lang_Pass, "custom_language");
-    console.log()
+    console.log();
   },
 
   computed: {
@@ -536,21 +545,21 @@ export default {
     Lang_Not_Humman() {
       let arr = [];
       for (let i in this.languages) {
-        if (!((this.languages || {})[i].human)) {
-          arr.push(this.languages[i])
+        if (!(this.languages || {})[i].human) {
+          arr.push(this.languages[i]);
         }
       }
-      return arr
+      return arr;
     },
 
     Lang_Humman() {
       let arr = [];
       for (let i in this.languages) {
         if ((this.languages || {})[i].human) {
-          arr.push(this.languages[i])
+          arr.push(this.languages[i]);
         }
       }
-      return arr
+      return arr;
     },
 
     Lang_Pass() {
@@ -667,6 +676,14 @@ export default {
     showHome() {
       this.close();
       this.race_page.shown_home = true;
+    },
+
+    showSkroll(name) {
+      if (this.race_page[name] === false) {
+        this.race_page[name] = true;
+      } else {
+        this.race_page[name] = false;
+      }
     },
 
     showMY() {
@@ -1222,5 +1239,46 @@ body {
   justify-content: space-between;
 }
 
+.skroll_list {
+  position: relative;
+  padding-left: 16px;
+  height: 18px;
+  margin: 34px 0;
+  cursor: pointer;
+}
+
+.flex_gap-8 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skroll_list_closed::after {
+  position: absolute;
+  content: url(@/assets/img/icon/arrow_down_small.svg);
+  top: 0px;
+  right: 16px;
+}
+
+.skroll_list_open::after {
+  position: absolute;
+  content: url(@/assets/img/icon/arrow_top_small.svg);
+  top: 0px;
+  right: 16px;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+}
 /* -------------slider-grwwth------------------- */
 </style>
