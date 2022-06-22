@@ -247,7 +247,22 @@
     <!-- Языки -->
     <my-selection-box :shown="race_page.shown_languages">
       <my-selection-card
-        v-for="lang in languages"
+        v-for="lang in Lang_Not_Humman"
+        :key="lang"
+        @click="getExtraLang(Lang_Activ.includes(lang), lang)"
+        :active_boll_link="Lang_Select.includes(lang)"
+        :basic="Lang_Activ.includes(lang)"
+      >
+        <my-card-text :title="lang.name" :text="lang.details"> </my-card-text>
+      </my-selection-card>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <my-selection-card
+        v-for="lang in Lang_Humman"
         :key="lang"
         @click="getExtraLang(Lang_Activ.includes(lang), lang)"
         :active_boll_link="Lang_Select.includes(lang)"
@@ -494,6 +509,7 @@ export default {
     )[0];
     this.MY = this.default_MY;
     this.getExtra(this.Lang_Pass, "custom_language");
+    console.log()
   },
 
   computed: {
@@ -517,19 +533,30 @@ export default {
       return i.concat(j);
     },
 
+    Lang_Not_Humman() {
+      let arr = [];
+      for (let i in this.languages) {
+        if (!((this.languages || {})[i].human)) {
+          arr.push(this.languages[i])
+        }
+      }
+      return arr
+    },
+
+    Lang_Humman() {
+      let arr = [];
+      for (let i in this.languages) {
+        if ((this.languages || {})[i].human) {
+          arr.push(this.languages[i])
+        }
+      }
+      return arr
+    },
+
     Lang_Pass() {
       return Object.values(this.languages).filter(
         (el) => !this.Lang_Activ.includes(el)
       );
-    },
-
-    Lang_Extra() {
-      let arr = [];
-      if ((this.Race_Set_Obj || {}).custom_language) {
-        let i = this.Race_Set_Obj.custom_language;
-        arr = this.Lang_Pass.slice(0, i);
-      }
-      return arr;
     },
 
     Lang_Select() {
