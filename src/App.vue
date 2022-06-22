@@ -249,7 +249,7 @@
       <my-selection-card
         v-for="lang in Lang_Not_Humman"
         :key="lang"
-        @click="getExtraLang(Lang_Activ.includes(lang), lang)"
+        @click="getExtraLang(Lang_Activ.includes(lang), Lang_Select.includes(lang), lang)"
         :active_boll_link="Lang_Select.includes(lang)"
         :basic="Lang_Activ.includes(lang)"
       >
@@ -788,8 +788,9 @@ export default {
       this.race_page.extra.languages = arr;
     },
 
-    getExtraLang(bool, item) {
-      if (bool) {
+    getExtraLang(active, selekt, item) {
+      console.log(active, selekt, item)
+      if (active || selekt) {
         return null;
       } else {
         let arr = this.race_page.extra.languages;
