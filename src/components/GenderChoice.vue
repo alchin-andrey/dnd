@@ -45,7 +45,7 @@
     >
     </my-card-text>
   </my-selection-card>
-  <my-selection-card passive>
+  <my-selection-card passive v-vpshow="$root.MY.gender.feel !== $root.genders.feel.cisgender">
     <div class="gender_card_title jbm-300">{{ t_Feel }}</div>
     <div class="gender__flex">
       <div class="gender__flex-3">
@@ -114,6 +114,7 @@
     >
     </my-card-text>
   </my-selection-card>
+  <transition name="slide-fade">
   <my-selection-card
     v-if="$root.MY.gender.feel !== $root.genders.feel.cisgender"
     passive
@@ -138,6 +139,7 @@
     >
     </my-card-text>
   </my-selection-card>
+  </transition>
 </template>
 
 <script>

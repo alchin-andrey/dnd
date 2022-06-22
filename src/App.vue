@@ -259,15 +259,18 @@
       <div
         class="skroll_list jbm-300"
         :class="{
-          skroll_list_closed: race_page.shown_humman_lang,
-          skroll_list_open: !race_page.shown_humman_lang,
+          skroll_list_closed: !race_page.shown_humman_lang,
+          skroll_list_open: race_page.shown_humman_lang,
         }"
+        v-vpshow="race_page.shown_humman_lang"
         @click="showSkroll('shown_humman_lang')"
+        
       >
         Языки этносов людей
       </div>
+      <!-- <div v-if="!race_page.shown_humman_lang" v-vpshow></div> -->
 <transition name="slide-fade">
-      <div v-if="!race_page.shown_humman_lang" class="flex_gap-8">
+      <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
         <my-selection-card
           v-for="lang in Lang_Humman"
           :key="lang"
@@ -574,6 +577,9 @@ export default {
   },
   watch: {
     "MY.race": "getFunction",
+    "race_page.shown_languages": function (val, oldVal) {
+      this.race_page.shown_humman_lang = false
+    },
     // "MY.ethnos": "getFunction_2",
   },
 
@@ -750,13 +756,6 @@ export default {
       let k = this.getProfArr(this.race_page.extra, kay);
       return i.concat(j).concat(k);
     },
-
-    // getPasLang(obj, kay) {
-    //   console.log(500);
-    //   return Object.values(obj).filter(
-    //     (el) => !this.getProf_RE(kay).includes(el)
-    //   );
-    // },
 
     getParNumb(par_1, par_2, numb) {
       let i = 0;
@@ -1267,12 +1266,13 @@ body {
   right: 16px;
 }
 
+
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.8s ease-out;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.6s cubic-bezier(1, 0.8, 0.8, 1);
 }
 
 .slide-fade-enter-from,

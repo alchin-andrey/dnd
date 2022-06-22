@@ -139,7 +139,7 @@ export default {
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
       custom_stats: [2, 1], // [колво, инкремент]
       custom_skills: [2, 2],
-      custom_language: 1,
+      custom_language: 2,
     },
 
     stats: { dexterity: 2 },
