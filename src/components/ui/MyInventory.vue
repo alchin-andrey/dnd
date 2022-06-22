@@ -44,7 +44,7 @@ export default {
       } else {
         let arr = []
         for (let i in this.item) {
-          arr.push(this.t(this.item[i]))
+          arr.push(this.t(this.item[i].name))
         }
         return arr.map(n => `${n[0].toUpperCase()}${n.slice(1)}`).join(', ');
       }

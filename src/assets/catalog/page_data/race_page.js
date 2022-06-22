@@ -17,6 +17,10 @@ export default {
     hair_hower: null,
     eyes_hower: null,
 
+    extra:{
+        languages:null,
+    },
+
     age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
     weight_arr: [0, "x", "x", 15, 20],
 

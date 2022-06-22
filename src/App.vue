@@ -100,7 +100,7 @@
             @click="show('shown_languages')"
             :active="race_page.shown_languages"
             title="languages"
-            type="Акван"
+            :type_arr="race_page.extra.languages"
           >
           </my-selection>
         </div>
@@ -119,7 +119,7 @@
     </div>
     <!-- Этнос-->
     <my-selection-box :shown="race_page.shown_ethnos">
-      <EthnosChoice/>
+      <EthnosChoice />
     </my-selection-box>
     <!-- Этнос -->
 
@@ -249,9 +249,9 @@
       <my-selection-card
         v-for="lang in languages"
         :key="lang"
-        :active_link="lang.name"
-        :select_link="getPasLang(languages, 'languages')[0].name"
-        :basic="getProf_RE('languages').includes(lang)"
+        @click="getExtraLang(Lang_Activ.includes(lang), lang)"
+        :active_boll_link="Lang_Select.includes(lang)"
+        :basic="Lang_Activ.includes(lang)"
       >
         <my-card-text :title="lang.name" :text="lang.details"> </my-card-text>
       </my-selection-card>
@@ -384,7 +384,7 @@
         v-for="(val, name) in MY.proficiencies"
         :key="name"
         :title="name"
-        :item="getProf_Item(getProf_RE(name), 'name')"
+        :item="getProf_RE(name)"
       >
       </my-inventory>
     </my-wrapper>
@@ -414,7 +414,7 @@
     <div class="story int-400">
       <div v-html="t(MY.race.details)"></div>
       <my-card-text
-        v-if="MY.ethnos !== 'common'"
+        v-if="MY.ethnos.name !== 'common'"
         :title="MY.ethnos.name"
         :text="MY.ethnos.details"
         :rare="MY.ethnos.rare"
@@ -442,15 +442,13 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
-
 export default {
   name: "App",
   components: {
     EthnosChoice,
     GenderChoice,
-    
-    AgeWeight,
 
+    AgeWeight,
   },
   data() {
     return {
@@ -495,16 +493,52 @@ export default {
       this.default_MY.race.settings.ethnos
     )[0];
     this.MY = this.default_MY;
-    console.log();
+    this.getExtra(this.Lang_Pass, "custom_language");
   },
 
   computed: {
+    Race_Set_Obj() {
+      return this.MY.race.settings;
+    },
+
     All_Ethnos_Obj() {
       return this.MY.race.settings.ethnos;
+    },
+
+    Lang_Activ() {
+      let i = [];
+      let j = [];
+      if ((this.MY.race.proficiencies || {}).languages) {
+        i = Object.values(this.MY.race.proficiencies.languages);
+      }
+      if ((this.MY.ethnos.proficiencies || {}).languages) {
+        j = Object.values(this.MY.ethnos.proficiencies.languages);
+      }
+      return i.concat(j);
+    },
+
+    Lang_Pass() {
+      return Object.values(this.languages).filter(
+        (el) => !this.Lang_Activ.includes(el)
+      );
+    },
+
+    Lang_Extra() {
+      let arr = [];
+      if ((this.Race_Set_Obj || {}).custom_language) {
+        let i = this.Race_Set_Obj.custom_language;
+        arr = this.Lang_Pass.slice(0, i);
+      }
+      return arr;
+    },
+
+    Lang_Select() {
+      return this.race_page.extra.languages;
     },
   },
   watch: {
     "MY.race": "getFunction",
+    // "MY.ethnos": "getFunction_2",
   },
 
   methods: {
@@ -514,7 +548,12 @@ export default {
       this.closePar("shown_characteristics", "custom_stats");
       this.closePar("shown_skills", "custom_skills");
       this.closePar("shown_languages", "custom_language");
+      this.getExtra(this.Lang_Pass, "custom_language");
     },
+
+    // getFunction_2() {
+    //   this.getExtra (this.Lang_Pass, "custom_language");
+    // },
 
     getNewEthnos() {
       this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
@@ -538,7 +577,7 @@ export default {
         this.MY.race.settings[name_2] === undefined
       ) {
         this.race_page[name_1] = false;
-        this.shown_home = true;
+        this.race_page.shown_home = true;
       } else {
         this.race_page[name_1] === true;
       }
@@ -604,7 +643,7 @@ export default {
     },
 
     showMY() {
-      console.log(this.MY);
+      console.log(this.MY, this.race_page);
     },
 
     hideRuler() {
@@ -655,31 +694,25 @@ export default {
 
     getProfArr(obj, kay) {
       let arr = [];
-      if ((obj.proficiencies || {})[kay]) {
-        arr = Object.values(obj.proficiencies[kay]);
+      if ((obj || {})[kay]) {
+        arr = Object.values(obj[kay]);
       }
       return arr;
     },
 
     getProf_RE(kay) {
-      let i = this.getProfArr(this.MY.race, kay);
-      let j = this.getProfArr(this.MY.ethnos, kay);
-      return i.concat(j);
+      let i = this.getProfArr(this.MY.race.proficiencies, kay);
+      let j = this.getProfArr(this.MY.ethnos.proficiencies, kay);
+      let k = this.getProfArr(this.race_page.extra, kay);
+      return i.concat(j).concat(k);
     },
 
-    getPasLang(obj, kay) {
-      return Object.values(obj).filter(
-        (el) => !this.getProf_RE(kay).includes(el)
-      );
-    },
-
-    getLang(value) {
-      if (this.MY.race.settings.custom_language === undefined) {
-        return this.MY.custom_language === null;
-      } else {
-        return this.MY.custom_language;
-      }
-    },
+    // getPasLang(obj, kay) {
+    //   console.log(500);
+    //   return Object.values(obj).filter(
+    //     (el) => !this.getProf_RE(kay).includes(el)
+    //   );
+    // },
 
     getParNumb(par_1, par_2, numb) {
       let i = 0;
@@ -701,6 +734,34 @@ export default {
       }
       i === 0 && j === 0 ? (numb = numb) : (numb = 0);
       return i + j + numb;
+    },
+
+    getExtra(arr_obj, name) {
+      let arr = [];
+      if ((this.Race_Set_Obj || {})[name]) {
+        let i = this.Race_Set_Obj.custom_language;
+        arr = arr_obj.slice(0, i);
+      }
+      this.race_page.extra.languages = arr;
+    },
+
+    getExtraLang(bool, item) {
+      if (bool) {
+        return null;
+      } else {
+        let arr = this.race_page.extra.languages;
+        arr.splice(0, 1);
+        arr.push(item);
+        return (this.race_page.extra.languages = arr);
+      }
+    },
+
+    getSelectLang() {
+      if (this.race_page.extra.languages) {
+        return this.race_page.extra.languages;
+      } else {
+        return this.Lang_Pass[0].name;
+      }
     },
   },
 };

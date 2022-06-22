@@ -7,9 +7,7 @@
       hover: type !== 'common',
     }"
   >
-    <div class="column_title jbm-300">
-      <div>{{ t_Title }}</div>
-    </div>
+    <div class="column_title jbm-300">{{ t_Title }}</div>
     <div
       class="column_link int-400"
       :class="{
@@ -19,7 +17,7 @@
         icon_active: active,
       }"
     >
-      <div>{{ t_Type }}</div>
+      {{ t_Type }}
     </div>
   </div>
 </template>
@@ -45,6 +43,10 @@ export default {
       type: String,
       default: null,
     },
+    type_arr: {
+      type: Array,
+      default: [],
+    },
     rare: {
       type: String,
       default: null,
@@ -59,7 +61,19 @@ export default {
       return this.t(this.title);
     },
     t_Type() {
-      return this.title === 'gender' ? this.getGenderName() : this.t(this.type);
+      if (this.type) {
+        return this.title === "gender"
+          ? this.getGenderName()
+          : this.t(this.type);
+      } else if (this.type_arr.length === 0) {
+        return "—";
+      } else {
+        let arr = [];
+        for (let i in this.type_arr) {
+          arr.push(this.t(this.type_arr[i].name));
+        }
+        return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+      }
     },
   },
   methods: {
@@ -113,8 +127,18 @@ export default {
 
 .column_link {
   width: 132px;
+  padding-right: 16px;
   margin-left: 4px;
   position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.column_link div {
+  white-space: nowrap; /* Текст не переносится */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+  text-overflow: ellipsis;
 }
 
 .column_link:first-letter {

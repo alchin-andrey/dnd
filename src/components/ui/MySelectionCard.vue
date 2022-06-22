@@ -36,11 +36,17 @@ export default {
       type: String,
       default: null,
     },
+    active_boll_link: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     get_Active() {
       if (this.active_link !== null) {
         return this.active_link === this.select_link;
+      } else if (this.active_boll_link) {
+        return this.active_boll_link;
       } else {
         return null;
       }

@@ -127,8 +127,13 @@ export default {
 
   methods: {
     getCharColorHex(hower) {
-      let hex = hower ? hower.hex : this.Char_Color.hex;
+      console.log(this.ethnos_name && !this.Char_Img)
+      if (this.ethnos_name && !this.Char_Img) {
+        return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].hex;
+      } else {
+        let hex = hower ? hower.hex : this.Char_Color.hex;
       return hex;
+      }
     },
 
   },

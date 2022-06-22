@@ -67,7 +67,7 @@ export default {
     getProficienciesItem(name) {
       let arr = [];
       for (let i in this.$root.MY.race.proficiencies[name]) {
-        arr.push(this.$root.MY.race.proficiencies[name][i].name);
+        arr.push(this.$root.MY.race.proficiencies[name][i]);
       }
       return arr;
     },

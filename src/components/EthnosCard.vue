@@ -84,12 +84,14 @@ export default {
   name: "EthnosCard",
   methods: {
     getProfObjItem(obj, kay) {
+      console.log('12', obj, kay)
       let arr = [];
       if ((obj.proficiencies || {})[kay]) {
         for (let i in obj.proficiencies[kay]) {
-          arr.push(obj.proficiencies[kay][i].name);
+          arr.push(obj.proficiencies[kay][i]);
         }
       }
+      console.log('122222', arr)
       return arr;
     },
 
