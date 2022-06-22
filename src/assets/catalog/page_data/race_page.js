@@ -17,6 +17,9 @@ export default {
     hair_hower: null,
     eyes_hower: null,
 
+    shown_humman_lang: false,
+
+
     extra:{
         languages:null,
     },
