@@ -411,7 +411,7 @@
         v-for="(val, name) in MY.proficiencies"
         :key="name"
         :title="name"
-        :item="getProf_RE(name)"
+        :item="getProf_REX(name)"
       >
       </my-inventory>
     </my-wrapper>
@@ -664,8 +664,10 @@ export default {
     },
 
     show(name) {
+      console.log(name, name === "shown_ethnos" &&
+        this.MY.ethnos.name === "common")
       if (
-        this.race_page[name] === "shown_ethnos" &&
+        name === "shown_ethnos" &&
         this.MY.ethnos.name === "common"
       ) {
         this.race_page[name] === false;
@@ -750,7 +752,7 @@ export default {
       return arr;
     },
 
-    getProf_RE(kay) {
+    getProf_REX(kay) {
       let i = this.getProfArr(this.MY.race.proficiencies, kay);
       let j = this.getProfArr(this.MY.ethnos.proficiencies, kay);
       let k = this.getProfArr(this.race_page.extra, kay);
