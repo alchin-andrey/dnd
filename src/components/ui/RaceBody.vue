@@ -65,6 +65,7 @@ export default {
     },
 
     Char_Img_Numb() {
+console.log('Char_Img_Numb', this.ethnos_name)
       if(this.ethnos_name) {
         return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
       } else {
@@ -127,7 +128,6 @@ export default {
 
   methods: {
     getCharColorHex(hower) {
-      console.log(this.ethnos_name && !this.Char_Img)
       if (this.ethnos_name && !this.Char_Img) {
         return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].hex;
       } else {

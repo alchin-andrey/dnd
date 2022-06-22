@@ -1261,7 +1261,7 @@ export default {
           ],
         },
 
-        high: {
+        high_elf: {
           name: "high_elf",
           details: "high_elf_details",
 
