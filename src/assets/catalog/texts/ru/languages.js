@@ -72,7 +72,7 @@ export const langs = {
   midani: "мидани",
   midani_details: "Язык народа Бедин: " + races.bedin_human,
 
-  guran: "мидани",
+  guran: "гуран",
   guran_details: "Язык народа Гур: " + races.gur_human,
 
   damarian: "дамарский",

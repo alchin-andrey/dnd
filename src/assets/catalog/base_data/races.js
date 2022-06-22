@@ -1617,6 +1617,7 @@ export default {
 
       color: {
         skin: [
+          color[1][1],
           color[0][0],
           color[0][1],
           color[0][2],
@@ -1625,7 +1626,6 @@ export default {
           color[0][5],
           color[0][6],
           color[1][0],
-          color[1][1],
           color[1][2],
           color[1][3],
           color[1][4],
@@ -1659,17 +1659,18 @@ export default {
           color[12][2],
         ],
         eyes: [
+          color[9][1],
           color[0][0],
           color[0][6],
           color[1][3],
           color[8][0],
           color[3][3],
           color[7][3],
-          color[9][1],
           color[11][3],
           color[12][3],
         ],
         hair: [
+          color[9][5],
           color[0][0],
           color[0][1],
           color[0][2],
@@ -1731,7 +1732,7 @@ export default {
           color[9][2],
           color[9][3],
           color[9][4],
-          color[9][5],
+
           color[9][6],
 
           color[10][0],

@@ -267,6 +267,7 @@ export default {
                     tool_mason: tools.mason,
 
                 languages:"языки",
+                languages_human:"языки этносов людей",
                 
                     lang_common: langs.common,
                     lang_common_details: langs.common_details,
