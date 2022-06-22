@@ -266,7 +266,7 @@
         @click="showSkroll('shown_humman_lang')"
         
       >
-        Языки этносов людей
+        {{t('languages_human')}}
       </div>
       <!-- <div v-if="!race_page.shown_humman_lang" v-vpshow></div> -->
 <transition name="slide-fade">
@@ -274,7 +274,7 @@
         <my-selection-card
           v-for="lang in Lang_Humman"
           :key="lang"
-          @click="getExtraLang(Lang_Activ.includes(lang), lang)"
+          @click="getExtraLang(Lang_Activ.includes(lang), Lang_Select.includes(lang), lang)"
           :active_boll_link="Lang_Select.includes(lang)"
           :basic="Lang_Activ.includes(lang)"
         >
@@ -664,8 +664,6 @@ export default {
     },
 
     show(name) {
-      console.log(name, name === "shown_ethnos" &&
-        this.MY.ethnos.name === "common")
       if (
         name === "shown_ethnos" &&
         this.MY.ethnos.name === "common"
@@ -791,7 +789,6 @@ export default {
     },
 
     getExtraLang(active, selekt, item) {
-      console.log(active, selekt, item)
       if (active || selekt) {
         return null;
       } else {
