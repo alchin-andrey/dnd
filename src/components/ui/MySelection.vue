@@ -70,7 +70,7 @@ export default {
       } else {
         let arr = [];
         for (let i in this.type_arr) {
-          arr.push(this.t(this.type_arr[i].name));
+          arr.push(this.t(this.type_arr[i]));
         }
         return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
       }

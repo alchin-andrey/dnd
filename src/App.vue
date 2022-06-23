@@ -85,7 +85,7 @@
             @click="show('shown_characteristics')"
             :active="race_page.shown_characteristics"
             title="stats"
-            type="Сил, Лов"
+            :type_arr="race_page.extra.stats"
           ></my-selection>
           <my-selection
             v-if="MY.race.settings.custom_skills"
@@ -100,7 +100,7 @@
             @click="show('shown_languages')"
             :active="race_page.shown_languages"
             title="languages"
-            :type_arr="race_page.extra.languages"
+            :type_arr="Lang_Extra"
           >
           </my-selection>
         </div>
@@ -571,7 +571,7 @@ export default {
     this.MY = this.default_MY;
     this.getExtra(this.Lang_Pass, "languages");
     this.getExtra(this.Stats_Pass, "stats");
-    console.log();
+    console.log(this.Lang_Extra);
   },
 
   computed: {
@@ -624,6 +624,16 @@ export default {
     Lang_Select() {
       return this.race_page.extra.languages;
     },
+
+    Lang_Extra() {
+      let arr = [];
+      let obj = this.race_page.extra.languages;
+      for (let i in obj) {
+          arr.push(obj[i].name)
+        }
+      return arr;
+    },
+
 
     Stats_Keys() {
       return Object.keys(this.MY.stats);
