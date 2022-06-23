@@ -1293,6 +1293,7 @@ export default {
               weapon.long_bows,
               weapon.short_bows,
             ],
+            languages: [],
           },
 
           fines: [

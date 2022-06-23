@@ -82,13 +82,24 @@
 <script>
 export default {
   name: "EthnosCard",
+  computed: {
+    etnos_Prof() {
+
+
+    },
+  },
   methods: {
     getProfObjItem(obj, kay) {
       let arr = [];
+      let ethnos_custom = (obj || {})[`custom_${kay}`];
       if ((obj.proficiencies || {})[kay]) {
         for (let i in obj.proficiencies[kay]) {
           arr.push(obj.proficiencies[kay][i]);
         }
+      }
+      if (ethnos_custom) {
+        let incr = obj[`custom_${kay}`][0]
+        arr.push(`+${incr}`);
       }
       return arr;
     },

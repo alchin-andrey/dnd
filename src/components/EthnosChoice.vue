@@ -30,7 +30,7 @@
         v-for="(val, name) in $root.MY.race.proficiencies"
         :key="name"
         :title="name"
-        :item="getProf_RX(name)"
+        :item="getProf_RX(val, name)"
       >
       </my-inventory>
     </my-wrapper>
@@ -64,14 +64,6 @@ export default {
   },
 
   methods: {
-    getProficienciesItem(name) {
-      let arr = [];
-      for (let i in this.$root.MY.race.proficiencies[name]) {
-        arr.push(this.$root.MY.race.proficiencies[name][i]);
-      }
-      return arr;
-    },
-
         getProfArr(obj, kay) {
       let arr = [];
       if ((obj || {})[kay]) {
@@ -80,9 +72,14 @@ export default {
       return arr;
     },
 
-    getProf_RX(kay) {
+    getProf_RX(obj, kay) {
       let i = this.getProfArr(this.$root.MY.race.proficiencies, kay);
-      let k = this.getProfArr(this.$root.race_page.extra, kay);
+      let k = []
+      let ethnos_custom = (this.$root.MY.ethnos|| {})[`custom_${kay}`]
+      if (!ethnos_custom) {
+        k = this.getProfArr(this.$root.race_page.extra, kay);
+      }
+
       return i.concat(k);
     },
   }
