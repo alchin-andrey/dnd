@@ -256,13 +256,13 @@
          @click="
           getExtraActiv(
             false,
-            Skills_Select.includes(name),
+            skills_Select.includes(name),
             name,
             'skills'
           )
         "
         :class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
-        :active_boll_link="Skills_Select.includes(name)"
+        :active_boll_link="skills_Select.includes(name)"
       >
         <my-attribute
           :title="name"
@@ -426,13 +426,13 @@
     <!-- stats -->
 
     <!-- attributes_race -->
-    <my-wrapper hr v-if="Race_Set_Obj.custom_skills">
+    <my-wrapper hr v-if="Skills_All_Chose.length !== 0">
       <my-attribute
-        v-for="item in Skills_Select"
+        v-for="item in Skills_All_Chose"
         :key="item"
         :title="item"
         plus
-        :numb="Race_Set_Obj.custom_skills[1]"
+        :numb="getSummNumb('skills', item)"
         :icon="MY.skills[item].mod"
       ></my-attribute>
     </my-wrapper>
@@ -569,7 +569,7 @@ export default {
     this.getExtra(this.Stats_Pass, "stats");
       this.getExtra(this.Skills_Pass, "skills");
       this.getExtra(this.Lang_Pass, "languages");
-    console.log();
+    console.log(this.Skills_All_Chose);
   },
 
   computed: {
@@ -657,12 +657,29 @@ export default {
       return this.race_page.extra.stats;
     },
 
-    Skills_Pass() {
-      return Object.keys(this.MY.skills);
+    skills_Activ_Obj() {
+      let i = this.MY.race.skills;
+      let j = this.MY.ethnos.skills;
+      let arr = Object.assign({}, i, j);
+      return arr;
     },
 
-    Skills_Select() {
+    Skills_Activ() {
+      return Object.keys(this.skills_Activ_Obj);
+    },
+
+    Skills_Pass() {
+      return Object.keys(this.MY.skills).filter(
+        (el) => !this.Skills_Activ.includes(el)
+      );
+    },
+
+    skills_Select() {
       return this.race_page.extra.skills;
+    },
+
+    Skills_All_Chose() {
+      return this.Skills_Activ.concat(this.skills_Select);
     },
   },
   watch: {
@@ -719,16 +736,6 @@ export default {
 
     plus() {
       this.weight++;
-    },
-
-    getPasAttribute(obj, name) {
-      let arr = [];
-      for (let kay in obj) {
-        if (this.getParNumb(name, kay) === 0) {
-          arr.push(kay);
-        }
-      }
-      return arr;
     },
 
     close() {
@@ -906,7 +913,6 @@ export default {
     },
 
     getSkillMarg(i, name, k) {
-      console.log(k, k);
       if (i === 0) {
         return true
       }
