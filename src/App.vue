@@ -92,7 +92,7 @@
             @click="show('shown_skills')"
             :active="race_page.shown_skills"
             title="skills"
-            type="Арк, Ана"
+            :type_arr="race_page.extra.skills"
           >
           </my-selection>
           <my-selection
@@ -227,12 +227,12 @@
         @click="
           getExtraActiv(
             Stats_Activ.includes(name),
-            Stats_Select.includes(name),
+            stats_Select.includes(name),
             name,
             'stats'
           )
         "
-        :active_boll_link="Stats_Select.includes(name)"
+        :active_boll_link="stats_Select.includes(name)"
       >
         <my-attribute
           :title="name"
@@ -249,7 +249,31 @@
 
     <!-- Навыки -->
     <my-selection-box :shown="race_page.shown_skills">
-      <div class="jbm-300">Навыки</div>
+      <my-card-text :text="'skills_details'"> </my-card-text>
+      <my-selection-card
+        v-for="(val, name, i) in MY.skills"
+        :key="name"
+         @click="
+          getExtraActiv(
+            false,
+            Skills_Select.includes(name),
+            name,
+            'skills'
+          )
+        "
+        :class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
+        :active_boll_link="Skills_Select.includes(name)"
+      >
+        <my-attribute
+          :title="name"
+          :type="val.mod"
+          plus
+          :numb="Race_Set_Obj.custom_skills[1]"
+          :icon="val.mod"
+        >
+        </my-attribute>
+        <my-card-text title="" :text="`${name}_details`"> </my-card-text>
+      </my-selection-card>
     </my-selection-box>
     <!-- Навыки -->
 
@@ -402,15 +426,14 @@
     <!-- stats -->
 
     <!-- attributes_race -->
-    <my-wrapper hr>
+    <my-wrapper hr v-if="Race_Set_Obj.custom_skills">
       <my-attribute
-        v-for="item in attributes_race"
+        v-for="item in Skills_Select"
         :key="item"
-        :title="item.name"
+        :title="item"
         plus
-        :numb="item.value"
-        :icon="item.icon"
-        cube_zero
+        :numb="Race_Set_Obj.custom_skills[1]"
+        :icon="MY.skills[item].mod"
       ></my-attribute>
     </my-wrapper>
     <!-- attributes_race -->
@@ -543,8 +566,9 @@ export default {
       this.default_MY.race.settings.ethnos
     )[0];
     this.MY = this.default_MY;
-    this.getExtra(this.Lang_Pass, "languages");
     this.getExtra(this.Stats_Pass, "stats");
+      this.getExtra(this.Skills_Pass, "skills");
+      this.getExtra(this.Lang_Pass, "languages");
     console.log();
   },
 
@@ -629,12 +653,16 @@ export default {
       );
     },
 
-    Stats_Select() {
+    stats_Select() {
       return this.race_page.extra.stats;
     },
 
-    stats_Extra() {
-      return this.race_page.extra.stats;
+    Skills_Pass() {
+      return Object.keys(this.MY.skills);
+    },
+
+    Skills_Select() {
+      return this.race_page.extra.skills;
     },
   },
   watch: {
@@ -652,8 +680,9 @@ export default {
       this.closePar("shown_characteristics", "custom_stats");
       this.closePar("shown_skills", "custom_skills");
       this.closePar("shown_languages", "custom_languages");
-      this.getExtra(this.Lang_Pass, "languages");
       this.getExtra(this.Stats_Pass, "stats");
+      this.getExtra(this.Skills_Pass, "skills");
+      this.getExtra(this.Lang_Pass, "languages");
     },
 
     // getFunction_2() {
@@ -835,7 +864,7 @@ export default {
       if (activ_val) {
         i = activ_val;
       } else if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
-        let extr_bool = this[`${name}_Extra`].includes(item);
+        let extr_bool = this[`${name}_Select`].includes(item);
         let increment = this.Race_Set_Obj[`custom_${name}`][1];
         if (extr_bool) {
           i = increment;
@@ -875,6 +904,18 @@ export default {
         return this.Lang_Pass[0].name;
       }
     },
+
+    getSkillMarg(i, name, k) {
+      console.log(k, k);
+      if (i === 0) {
+        return true
+      }
+      let obj = Object.values(name)
+      if (obj[i].mod !== obj[i - 1].mod) {
+        return true
+      }
+      return false
+    },
   },
 };
 </script>
@@ -882,6 +923,10 @@ export default {
 <style>
 body {
   background-color: #0e1518;
+}
+
+.skill_marg {
+  margin-top: 26px;
 }
 
 #app {

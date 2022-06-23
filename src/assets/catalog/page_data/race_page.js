@@ -22,7 +22,8 @@ export default {
 
     extra:{
         stats: null,
-        languages:null,
+        skills: null,
+        languages: null,
     },
 
     age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
