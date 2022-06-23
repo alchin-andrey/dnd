@@ -29,21 +29,21 @@
             :type="MY.gender.phisiological"
           ></my-selection>
           <my-selection
-            @click="show('shown_skin_color')"
+            @click="show('shown_skin_color', 'skin')"
             :active="race_page.shown_skin_color"
             title="color_skin"
             :type="getCharColor('skin').name"
           >
           </my-selection>
           <my-selection
-            @click="show('shown_eyes_color')"
+            @click="show('shown_eyes_color', 'eyes')"
             :active="race_page.shown_eyes_color"
             title="color_eyes"
             :type="getCharColor('eyes').name"
           >
           </my-selection>
           <my-selection
-            @click="show('shown_hair_color')"
+            @click="show('shown_hair_color', 'hair')"
             :active="race_page.shown_hair_color"
             title="color_hair"
             :type="getCharColor('hair').name"
@@ -694,6 +694,9 @@ export default {
     getFunction() {
       this.getNewEthnos();
       this.closeEthnos();
+      this.closeColor('skin');
+      this.closeColor('eyes');
+      this.closeColor('hair');
       this.closePar("shown_characteristics", "custom_stats");
       this.closePar("shown_skills", "custom_skills");
       this.closePar("shown_languages", "custom_languages");
@@ -721,6 +724,18 @@ export default {
         this.race_page.shown_home = true;
       } else {
         this.race_page.shown_ethnos === true;
+      }
+    },
+
+    closeColor(name) {
+      if (
+        this.race_page[`shown_${name}_color`] === true &&
+        this.MY.race.settings.color[name].length === 0
+      ) {
+        this.race_page[`shown_${name}_color`] = false;
+        this.race_page.shown_home = true;
+      } else {
+        this.race_page[`shown_${name}_color`] === true;
       }
     },
 
@@ -754,8 +769,10 @@ export default {
       this.race_page.shown_languages = false;
     },
 
-    show(name) {
+    show(name, key) {
       if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
+        this.race_page[name] === false;
+      } else if (name === `shown_${key}_color` && this.MY.race.settings.color[key].length === 0) {
         this.race_page[name] === false;
       } else if (this.race_page[name] === false) {
         this.close();

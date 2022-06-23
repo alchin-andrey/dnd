@@ -3,8 +3,8 @@
     class="column"
     :class="{
       active_link: active,
-      cursor_pointer: type !== 'common',
-      hover: type !== 'common',
+      cursor_pointer: pass_link,
+      hover: pass_link,
     }"
   >
     <div class="column_title jbm-300">{{ t_Title }}</div>
@@ -12,8 +12,8 @@
       class="column_link int-400"
       :class="{
         rare: rare,
-        passive: type === 'common',
-        icon: type !== 'common' || active,
+        active: pass_link,
+        icon: pass_link || active,
         icon_active: active,
       }"
     >
@@ -25,16 +25,7 @@
 <script>
 export default {
   name: "MySelection",
-  data() {
-    return {
-      inputValue: "",
-    };
-  },
   props: {
-    modelValue: {
-      type: String,
-      default: null,
-    },
     title: {
       type: String,
       default: null,
@@ -57,6 +48,19 @@ export default {
     },
   },
   computed: {
+    pass_link() {
+      
+      let skin = this.$root.MY.race.settings.color.skin.length;
+      let eyes = this.$root.MY.race.settings.color.eyes.length;
+      let hair = this.$root.MY.race.settings.color.hair.length;
+      let fact_1 = this.type !== "common";
+      let fact_2 = this.title == "color_skin" && skin == 0;
+      let fact_3 = this.title == "color_eyes" && eyes == 0;
+      let fact_4 = this.title == "color_hair" && hair == 0;
+      console.log(fact_1, fact_2, fact_3, fact_4, "результ", fact_1 && !(fact_2 || fact_3 || fact_4));
+      return fact_1 && !(fact_2 || fact_3 || fact_4);
+    },
+
     t_Title() {
       return this.t(this.title);
     },
@@ -95,6 +99,7 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
+  
 }
 
 .hover:hover::after {
@@ -119,6 +124,7 @@ export default {
 
 .column_title {
   width: 120px;
+  
 }
 
 .column_title div {
@@ -133,6 +139,7 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .column_link div {
@@ -163,8 +170,8 @@ export default {
   color: #ffc93d;
 }
 
-.passive {
-  color: rgba(255, 255, 255, 0.2);
+.active {
+  color: #ffffff;
 }
 
 .cursor_pointer {
