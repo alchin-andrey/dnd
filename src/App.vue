@@ -214,18 +214,25 @@
             :title="name"
             :type="`${name}_base`"
             plus
-            :numb="Stats_Active_Obj[name] ? Stats_Active_Obj[name] : 0"
+            :numb="getSummNumb('stats', name)"
             :icon="name"
           >
           </my-attribute>
         </my-wrapper>
         <my-card-text :text="'stats_base_details'"> </my-card-text>
-        
       </div>
       <my-selection-card
         v-for="name in Stats_Pass"
         :key="name"
-        :class="{ selection_card_active: getParNumb('stats', name) > 0 }"
+        @click="
+          getExtraActiv(
+            Stats_Activ.includes(name),
+            Stats_Select.includes(name),
+            name,
+            'stats'
+          )
+        "
+        :active_boll_link="Stats_Select.includes(name)"
       >
         <my-attribute
           :title="name"
@@ -237,41 +244,6 @@
         </my-attribute>
         <my-card-text title="" :text="`${name}_details`"> </my-card-text>
       </my-selection-card>
-
-
-
-
-
-
-        <!-- <my-wrapper v-if="MY.race.stats">
-          <my-attribute
-            v-for="(val, name) in MY.stats"
-            :key="name"
-            :title="name"
-            :type="`${name}_base`"
-            plus
-            :numb="getParNumb('stats', name)"
-            :icon="name"
-          >
-          </my-attribute>
-        </my-wrapper>
-
-      </div>
-      <my-selection-card
-        v-for="name in getPasAttribute(MY.stats, 'stats')"
-        :key="name"
-        :class="{ selection_card_active: getParNumb('stats', name) > 0 }"
-      >
-        <my-attribute
-          :title="name"
-          :type="`${name}_base`"
-          plus
-          :numb="getParNumb('stats', name, MY.race.settings.custom_stats[1])"
-          :icon="name"
-        >
-        </my-attribute>
-        <my-card-text title="" :text="`${name}_details`"> </my-card-text>
-      </my-selection-card> -->
     </my-selection-box>
     <!-- Характеристики -->
 
@@ -287,10 +259,11 @@
         v-for="lang in Lang_Not_Humman"
         :key="lang"
         @click="
-          getExtraLang(
+          getExtraActiv(
             Lang_Activ.includes(lang),
             Lang_Select.includes(lang),
-            lang
+            lang,
+            'languages'
           )
         "
         :active_boll_link="Lang_Select.includes(lang)"
@@ -317,10 +290,11 @@
             v-for="lang in Lang_Humman"
             :key="lang"
             @click="
-              getExtraLang(
+              getExtraActiv(
                 Lang_Activ.includes(lang),
                 Lang_Select.includes(lang),
-                lang
+                lang,
+                'languages'
               )
             "
             :active_boll_link="Lang_Select.includes(lang)"
@@ -415,12 +389,12 @@
     <!-- stats -->
     <my-wrapper hr>
       <my-attribute
-        v-for="(val, name) in MY.stats"
+        v-for="name in Stats_Keys"
         :key="name"
         :title="name"
         :type="`${name}_base`"
         plus
-        :numb="getParNumb('stats', name)"
+        :numb="getSummNumb('stats', name)"
         :icon="name"
       >
       </my-attribute>
@@ -571,7 +545,7 @@ export default {
     this.MY = this.default_MY;
     this.getExtra(this.Lang_Pass, "languages");
     this.getExtra(this.Stats_Pass, "stats");
-    console.log(this.Lang_Extra);
+    console.log();
   },
 
   computed: {
@@ -629,31 +603,38 @@ export default {
       let arr = [];
       let obj = this.race_page.extra.languages;
       for (let i in obj) {
-          arr.push(obj[i].name)
-        }
+        arr.push(obj[i].name);
+      }
       return arr;
     },
-
 
     Stats_Keys() {
       return Object.keys(this.MY.stats);
     },
 
-    Stats_Active_Obj() {
+    stats_Activ_Obj() {
       let i = this.MY.race.stats;
       let j = this.MY.ethnos.stats;
-      let arr = Object.assign({}, i, j)
+      let arr = Object.assign({}, i, j);
       return arr;
     },
 
-    Stats_Active() {
-      return Object.keys(this.Stats_Active_Obj);
+    Stats_Activ() {
+      return Object.keys(this.stats_Activ_Obj);
     },
 
     Stats_Pass() {
       return Object.keys(this.MY.stats).filter(
-        (el) => !this.Stats_Active.includes(el)
+        (el) => !this.Stats_Activ.includes(el)
       );
+    },
+
+    Stats_Select() {
+      return this.race_page.extra.stats;
+    },
+
+    stats_Extra() {
+      return this.race_page.extra.stats;
     },
   },
   watch: {
@@ -848,6 +829,25 @@ export default {
       return i + j + numb;
     },
 
+    getSummNumb(name, item) {
+      let i = 0;
+      let activ_val = this[`${name}_Activ_Obj`][item];
+      if (activ_val) {
+        i = activ_val;
+      } else if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
+        let extr_bool = this[`${name}_Extra`].includes(item);
+        let increment = this.Race_Set_Obj[`custom_${name}`][1];
+        if (extr_bool) {
+          i = increment;
+        } else {
+          i = 0;
+        }
+      } else {
+        i = 0;
+      }
+      return i;
+    },
+
     getExtra(arr_obj, name) {
       let arr = [];
       if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
@@ -857,14 +857,14 @@ export default {
       this.race_page.extra[name] = arr;
     },
 
-    getExtraLang(active, selekt, item) {
+    getExtraActiv(active, selekt, item, name) {
       if (active || selekt) {
         return null;
       } else {
-        let arr = this.race_page.extra.languages;
+        let arr = this.race_page.extra[name];
         arr.splice(0, 1);
         arr.push(item);
-        return (this.race_page.extra.languages = arr);
+        return (this.race_page.extra[name] = arr);
       }
     },
 
