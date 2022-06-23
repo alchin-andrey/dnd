@@ -96,7 +96,7 @@
           >
           </my-selection>
           <my-selection
-            v-if="MY.race.settings.custom_languages"
+            v-if="MY.race.settings.custom_languages || MY.ethnos.custom_languages"
             @click="show('shown_languages')"
             :active="race_page.shown_languages"
             title="languages"
@@ -428,12 +428,12 @@
     <!-- attributes_race -->
     <my-wrapper hr v-if="Skills_All_Chose.length !== 0">
       <my-attribute
-        v-for="item in Skills_All_Chose"
-        :key="item"
-        :title="item"
+        v-for="name in Skills_All_Chose"
+        :key="name"
+        :title="name"
         plus
-        :numb="getSummNumb('skills', item)"
-        :icon="MY.skills[item].mod"
+        :numb="getSummNumb('skills', name)"
+        :icon="MY.skills[name].mod"
       ></my-attribute>
     </my-wrapper>
     <!-- attributes_race -->
@@ -687,7 +687,7 @@ export default {
     "race_page.shown_languages": function (val, oldVal) {
       this.race_page.shown_humman_lang = false;
     },
-    // "MY.ethnos": "getFunction_2",
+    "MY.ethnos": "getFunction_2",
   },
 
   methods: {
@@ -702,9 +702,11 @@ export default {
       this.getExtra(this.Lang_Pass, "languages");
     },
 
-    // getFunction_2() {
-    //   this.getExtra (this.Lang_Pass, "custom_languages");
-    // },
+    getFunction_2() {
+      this.getExtra_Ethnos(this.Stats_Pass, "stats");
+      this.getExtra_Ethnos(this.Skills_Pass, "skills");
+      this.getExtra_Ethnos(this.Lang_Pass, "languages");
+    },
 
     getNewEthnos() {
       this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
@@ -843,26 +845,16 @@ export default {
       return i.concat(j).concat(k);
     },
 
-    getParNumb(par_1, par_2, numb) {
+    getParNumb(par_1, par_2) {
       let i = 0;
       let j = 0;
-      numb === undefined ? (numb = 0) : (numb = numb);
-      if (this.MY.race[par_1] === undefined) {
-        i = 0;
-      } else {
-        this.MY.race[par_1][par_2] === undefined
-          ? (i = 0)
-          : (i = this.MY.race[par_1][par_2]);
-      }
-      if (this.MY.ethnos[par_1] === undefined) {
-        j = 0;
-      } else {
-        this.MY.ethnos[par_1][par_2] === undefined
-          ? (j = 0)
-          : (j = this.MY.ethnos[par_1][par_2]);
-      }
-      i === 0 && j === 0 ? (numb = numb) : (numb = 0);
-      return i + j + numb;
+      if (((this.MY.race || {})[par_1] || {})[par_2]) {
+        i = this.MY.race[par_1][par_2];
+      };
+      if (((this.MY.ethnos || {})[par_1] || {})[par_2]) {
+        j = this.MY.ethnos[par_1][par_2];
+      };
+      return i + j;
     },
 
     getSummNumb(name, item) {
@@ -890,7 +882,26 @@ export default {
         let i = this.Race_Set_Obj[`custom_${name}`][0];
         arr = arr_obj.slice(0, i);
       }
+      if ((this.MY.ethnos || {})[`custom_${name}`]) {
+        let i = this.MY.ethnos[`custom_${name}`][0];
+        arr = arr_obj.slice(0, i);
+      }
       this.race_page.extra[name] = arr;
+    },
+
+    getExtra_Ethnos(arr_obj, name) {
+      let arr = [];
+      let race_custom = (this.Race_Set_Obj || {})[`custom_${name}`];
+      let ethnos_custom = (this.MY.ethnos || {})[`custom_${name}`];
+      if (ethnos_custom) {
+        let i = ethnos_custom[0];
+        arr = arr_obj.slice(0, i);
+        this.race_page.extra[name] = arr;
+      } else if(!race_custom && !ethnos_custom) {
+        this.race_page.extra[name] = arr;
+      } else {
+        return null
+      }
     },
 
     getExtraActiv(active, selekt, item, name) {

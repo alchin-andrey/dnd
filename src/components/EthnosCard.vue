@@ -95,7 +95,26 @@ export default {
 
     ethnosName(obj) {
       this.$root.MY.ethnos = obj;
+      // this.getExtra_Ethnos(this.$root.Stats_Pass, "stats");
+      // this.getExtra_Ethnos(this.$root.Skills_Pass, "skills");
+      // this.getExtra_Ethnos(this.$root.Lang_Pass, "languages");
     },
+
+    // getExtra_Ethnos(arr_obj, name) {
+    //   let arr = [];
+    //   let race_custom = (this.$root.Race_Set_Obj || {})[`custom_${name}`];
+    //   let ethnos_custom = (this.$root.MY.ethnos || {})[`custom_${name}`];
+    //   console.log(race_custom, ethnos_custom, !race_custom && !ethnos_custom);
+    //   if (ethnos_custom) {
+    //     let i = ethnos_custom[0];
+    //     arr = arr_obj.slice(0, i);
+    //     this.$root.race_page.extra[name] = arr;
+    //   } else if(!race_custom && !ethnos_custom) {
+    //     this.$root.race_page.extra[name] = arr;
+    //   } else {
+    //     return null
+    //   }
+    // },
   },
 };
 </script>
