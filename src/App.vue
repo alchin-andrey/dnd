@@ -96,7 +96,7 @@
           >
           </my-selection>
           <my-selection
-            v-if="MY.race.settings.custom_language"
+            v-if="MY.race.settings.custom_languages"
             @click="show('shown_languages')"
             :active="race_page.shown_languages"
             title="languages"
@@ -206,7 +206,44 @@
     <my-selection-box :shown="race_page.shown_characteristics">
       <div class="ethnos_attributes">
         <!-- Этнос_stats -->
-        <my-wrapper v-if="MY.race.stats">
+
+        <my-wrapper>
+          <my-attribute
+            v-for="name in Stats_Keys"
+            :key="name"
+            :title="name"
+            :type="`${name}_base`"
+            plus
+            :numb="Stats_Active_Obj[name] ? Stats_Active_Obj[name] : 0"
+            :icon="name"
+          >
+          </my-attribute>
+        </my-wrapper>
+        <my-card-text :text="'stats_base_details'"> </my-card-text>
+        
+      </div>
+      <my-selection-card
+        v-for="name in Stats_Pass"
+        :key="name"
+        :class="{ selection_card_active: getParNumb('stats', name) > 0 }"
+      >
+        <my-attribute
+          :title="name"
+          :type="`${name}_base`"
+          plus
+          :numb="Race_Set_Obj.custom_stats[1]"
+          :icon="name"
+        >
+        </my-attribute>
+        <my-card-text title="" :text="`${name}_details`"> </my-card-text>
+      </my-selection-card>
+
+
+
+
+
+
+        <!-- <my-wrapper v-if="MY.race.stats">
           <my-attribute
             v-for="(val, name) in MY.stats"
             :key="name"
@@ -218,7 +255,7 @@
           >
           </my-attribute>
         </my-wrapper>
-        <!-- Этнос_stats -->
+
       </div>
       <my-selection-card
         v-for="name in getPasAttribute(MY.stats, 'stats')"
@@ -234,7 +271,7 @@
         >
         </my-attribute>
         <my-card-text title="" :text="`${name}_details`"> </my-card-text>
-      </my-selection-card>
+      </my-selection-card> -->
     </my-selection-box>
     <!-- Характеристики -->
 
@@ -249,7 +286,13 @@
       <my-selection-card
         v-for="lang in Lang_Not_Humman"
         :key="lang"
-        @click="getExtraLang(Lang_Activ.includes(lang), Lang_Select.includes(lang), lang)"
+        @click="
+          getExtraLang(
+            Lang_Activ.includes(lang),
+            Lang_Select.includes(lang),
+            lang
+          )
+        "
         :active_boll_link="Lang_Select.includes(lang)"
         :basic="Lang_Activ.includes(lang)"
       >
@@ -264,24 +307,30 @@
         }"
         v-vpshow="race_page.shown_humman_lang"
         @click="showSkroll('shown_humman_lang')"
-        
       >
-        {{t('languages_human')}}
+        {{ t("languages_human") }}
       </div>
       <!-- <div v-if="!race_page.shown_humman_lang" v-vpshow></div> -->
-<transition name="slide-fade">
-      <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
-        <my-selection-card
-          v-for="lang in Lang_Humman"
-          :key="lang"
-          @click="getExtraLang(Lang_Activ.includes(lang), Lang_Select.includes(lang), lang)"
-          :active_boll_link="Lang_Select.includes(lang)"
-          :basic="Lang_Activ.includes(lang)"
-        >
-          <my-card-text :title="lang.name" :text="lang.details"> </my-card-text>
-        </my-selection-card>
-      </div>
-</transition>
+      <transition name="slide-fade">
+        <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
+          <my-selection-card
+            v-for="lang in Lang_Humman"
+            :key="lang"
+            @click="
+              getExtraLang(
+                Lang_Activ.includes(lang),
+                Lang_Select.includes(lang),
+                lang
+              )
+            "
+            :active_boll_link="Lang_Select.includes(lang)"
+            :basic="Lang_Activ.includes(lang)"
+          >
+            <my-card-text :title="lang.name" :text="lang.details">
+            </my-card-text>
+          </my-selection-card>
+        </div>
+      </transition>
     </my-selection-box>
     <!-- Языки -->
   </div>
@@ -520,7 +569,8 @@ export default {
       this.default_MY.race.settings.ethnos
     )[0];
     this.MY = this.default_MY;
-    this.getExtra(this.Lang_Pass, "custom_language");
+    this.getExtra(this.Lang_Pass, "languages");
+    this.getExtra(this.Stats_Pass, "stats");
     console.log();
   },
 
@@ -531,18 +581,6 @@ export default {
 
     All_Ethnos_Obj() {
       return this.MY.race.settings.ethnos;
-    },
-
-    Lang_Activ() {
-      let i = [];
-      let j = [];
-      if ((this.MY.race.proficiencies || {}).languages) {
-        i = Object.values(this.MY.race.proficiencies.languages);
-      }
-      if ((this.MY.ethnos.proficiencies || {}).languages) {
-        j = Object.values(this.MY.ethnos.proficiencies.languages);
-      }
-      return i.concat(j);
     },
 
     Lang_Not_Humman() {
@@ -565,6 +603,18 @@ export default {
       return arr;
     },
 
+    Lang_Activ() {
+      let i = [];
+      let j = [];
+      if ((this.MY.race.proficiencies || {}).languages) {
+        i = Object.values(this.MY.race.proficiencies.languages);
+      }
+      if ((this.MY.ethnos.proficiencies || {}).languages) {
+        j = Object.values(this.MY.ethnos.proficiencies.languages);
+      }
+      return i.concat(j);
+    },
+
     Lang_Pass() {
       return Object.values(this.languages).filter(
         (el) => !this.Lang_Activ.includes(el)
@@ -574,11 +624,32 @@ export default {
     Lang_Select() {
       return this.race_page.extra.languages;
     },
+
+    Stats_Keys() {
+      return Object.keys(this.MY.stats);
+    },
+
+    Stats_Active_Obj() {
+      let i = this.MY.race.stats;
+      let j = this.MY.ethnos.stats;
+      let arr = Object.assign({}, i, j)
+      return arr;
+    },
+
+    Stats_Active() {
+      return Object.keys(this.Stats_Active_Obj);
+    },
+
+    Stats_Pass() {
+      return Object.keys(this.MY.stats).filter(
+        (el) => !this.Stats_Active.includes(el)
+      );
+    },
   },
   watch: {
     "MY.race": "getFunction",
     "race_page.shown_languages": function (val, oldVal) {
-      this.race_page.shown_humman_lang = false
+      this.race_page.shown_humman_lang = false;
     },
     // "MY.ethnos": "getFunction_2",
   },
@@ -589,12 +660,13 @@ export default {
       this.closeEthnos();
       this.closePar("shown_characteristics", "custom_stats");
       this.closePar("shown_skills", "custom_skills");
-      this.closePar("shown_languages", "custom_language");
-      this.getExtra(this.Lang_Pass, "custom_language");
+      this.closePar("shown_languages", "custom_languages");
+      this.getExtra(this.Lang_Pass, "languages");
+      this.getExtra(this.Stats_Pass, "stats");
     },
 
     // getFunction_2() {
-    //   this.getExtra (this.Lang_Pass, "custom_language");
+    //   this.getExtra (this.Lang_Pass, "custom_languages");
     // },
 
     getNewEthnos() {
@@ -629,16 +701,6 @@ export default {
       this.weight++;
     },
 
-    getActiveAttribute(obj, obj_2) {
-      let arr = [];
-      for (let kay in obj) {
-        if (kay in obj_2) {
-          arr.push(kay);
-        }
-      }
-      return arr;
-    },
-
     getPasAttribute(obj, name) {
       let arr = [];
       for (let kay in obj) {
@@ -664,10 +726,7 @@ export default {
     },
 
     show(name) {
-      if (
-        name === "shown_ethnos" &&
-        this.MY.ethnos.name === "common"
-      ) {
+      if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
         this.race_page[name] === false;
       } else if (this.race_page[name] === false) {
         this.close();
@@ -781,11 +840,11 @@ export default {
 
     getExtra(arr_obj, name) {
       let arr = [];
-      if ((this.Race_Set_Obj || {})[name]) {
-        let i = this.Race_Set_Obj.custom_language;
+      if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
+        let i = this.Race_Set_Obj[`custom_${name}`][0];
         arr = arr_obj.slice(0, i);
       }
-      this.race_page.extra.languages = arr;
+      this.race_page.extra[name] = arr;
     },
 
     getExtraLang(active, selekt, item) {
@@ -1265,7 +1324,6 @@ body {
   top: 0px;
   right: 16px;
 }
-
 
 .slide-fade-enter-active {
   transition: all 0.8s ease-out;

@@ -65,7 +65,6 @@ export default {
     },
 
     Char_Img_Numb() {
-console.log('Char_Img_Numb', this.ethnos_name)
       if(this.ethnos_name) {
         return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
       } else {

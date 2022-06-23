@@ -139,7 +139,7 @@ export default {
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
       custom_stats: [2, 1], // [колво, инкремент]
       custom_skills: [2, 2],
-      custom_language: 2,
+      custom_languages: [2],
     },
 
     stats: { dexterity: 2 },
@@ -1182,7 +1182,7 @@ export default {
 
       custom_stats: [2, 1],
       custom_skills: [2, 2],
-      custom_language: 1,
+      custom_languages: [1],
     },
 
     stats: { charisma: 2 },
@@ -1303,7 +1303,7 @@ export default {
             },
           ],
 
-          custom_language: 1,
+          custom_languages: [1],
           custom_spell: [1,0,"wizard"],
         },
 

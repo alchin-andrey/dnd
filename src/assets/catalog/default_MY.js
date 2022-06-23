@@ -145,7 +145,7 @@ export default {
     //доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
     custom_stats:null,
     custom_skills:null,
-    custom_language:null,
+    custom_languages:null,
 
     //Особенности - пассивньіе умения
     peculiarities:null,

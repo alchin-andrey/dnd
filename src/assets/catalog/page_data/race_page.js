@@ -21,6 +21,7 @@ export default {
 
 
     extra:{
+        stats: null,
         languages:null,
     },
 
