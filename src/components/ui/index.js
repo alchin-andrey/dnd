@@ -16,6 +16,7 @@ import MyCardTextColor from "@/components/ui/MyCardTextColor.vue";
 import MyColorSelect from "@/components/ui/MyColorSelect.vue";
 import RaceBody from "@/components/ui/RaceBody.vue";
 import MySkale from "@/components/ui/MySkale.vue";
+import MySizeGrowth from "@/components/ui/MySizeGrowth.vue";
 
 
 export default [
@@ -37,4 +38,5 @@ export default [
   MyColorSelect,
   RaceBody,
   MySkale,
+  MySizeGrowth,
 ];

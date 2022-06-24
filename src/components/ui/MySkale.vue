@@ -8,13 +8,13 @@
     v-if="division"
     class="division"
     :class="{
-      division_off: numb < main_numb,
-      fill_back: numb - 30 < numb || main_numb === numb
+      off: numb > main_numb && !active_size,
+      fill_back: active_size
       }"
     >
       <div class="fill_front"
       :style="{ 
-          height: `get_height`,
+          height: get_height,
           }"
       ></div>
     </div>
@@ -45,7 +45,7 @@ export default {
 
   computed: {
     active_size() {
-      return this.numb - 30 < this.numb || this.main_numb === this.numb;
+      return this.numb - 30 < this.main_numb && this.main_numb <= this.numb;
     },
 
     get_height() {
@@ -54,7 +54,6 @@ export default {
         return `calc(100% / 30 * (30 - ${divisor}))`;
       }
     },
-
   },
 };
 </script>
@@ -87,7 +86,7 @@ export default {
   background: #ffffff;
 }
 
-.division_off {
+.off {
   background: rgba(255, 255, 255, 0.2);
   opacity: 0.3;
 }

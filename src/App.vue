@@ -339,71 +339,23 @@
         active_skin: race_page.shown_skin_color,
       }"
     >
-      <race-body body_part="skin"></race-body>
+      <race-body body_part="skin" />
 
-      <race-body body_part="eyes"></race-body>
+      <race-body body_part="eyes" />
 
-      <race-body body_part="hair"></race-body>
-    </div>
+      <race-body body_part="hair" />
+    
     <transition name="slide-fade">
-      <div class="size jbm-300" v-if="hideRuler()">
-        <!-- <div class="skale_division_top">
-          <div class="skale_numb_top"></div>
-          <div class="skale_division_top division_off">
-            <div class=""></div>
-          </div>
-        </div> -->
-
-        <div class="skale">
-          <div class="skale_numb_top">210</div>
-          <div class="skale_division division_off">
-            <div class=""></div>
-          </div>
-        </div>
-
-        <div class="skale">
-          <div class="skale_numb_top">180</div>
-          <div class="skale_division division_off">
-            <div class=""></div>
-          </div>
-        </div>
-
-        <div class="skale">
-          <div class="skale_numb_top">150</div>
-          <div class="skale_division division_off">
-            <div class=""></div>
-          </div>
-        </div>
-
-        <div class="skale">
-          <div class="skale_numb_top">120</div>
-          <div class="skale_division division_filling_back">
-            <div class="division_filling_front"></div>
-          </div>
-        </div>
-
-        <div class="skale">
-          <div class="skale_numb_top">90</div>
-          <div class="skale_division division_active">
-            <div class=""></div>
-          </div>
-        </div>
-
-        <div class="skale">
-          <div class="skale_numb_top"></div>
-          <div class="skale_division division_active">
-            <div class=""></div>
-          </div>
-        </div>
-
-        <div class="skale">
-          <div class="skale_numb_down">0</div>
-          <div class="skale_division division_active">
-            <div class=""></div>
-          </div>
-        </div>
+    <div class="size jbm-300" v-if="hideRuler()">
+      <my-skale
+      v-for = "n in skale_arr"
+      :key="n"
+      division 
+      :numb="n" 
+      :main_numb="race_page.growth" />
       </div>
     </transition>
+    </div>
   </div>
 
   <!-- sidebar_right -->
@@ -540,6 +492,7 @@ export default {
       age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
       weight_arr: [0, "x", "x", 15, 20],
 
+      skale_arr: [0, 60, 90, 120, 150, 180, 210],
       age: 34,
       growth: 100,
       weight: 15,
@@ -1052,7 +1005,7 @@ body {
   padding: 32px;
   flex: 1 1 auto;
   display: flex;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
 }
 
@@ -1290,7 +1243,7 @@ body {
   /* letter-spacing: 0.06em;
   color: #ffffff; */
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-end;
   gap: 4px;
   height: 100%;
