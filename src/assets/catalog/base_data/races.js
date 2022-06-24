@@ -518,7 +518,7 @@ export default {
           stats: { wisdom: 1 },
           qualities: { vision_night: 60 },
 
-          hp_bonus: 1,
+          hp_bonus: [1,1],
 
           fines: [
             {
