@@ -163,17 +163,17 @@
           </div>
         </div>
 
-        <div class="size_growth">
+        <div class="size_growth jbm-300">
           <div class="skale">
-            <div class="skale_numb_top"></div>
+            <div class="skale_numb_top">210</div>
           </div>
 
           <div class="skale">
-            <div class="skale_numb_top"></div>
+            <div class="skale_numb_top">180</div>
           </div>
 
           <div class="skale">
-            <div class="skale_numb_top"></div>
+            <div class="skale_numb_top">150</div>
           </div>
 
           <div class="skale">
@@ -189,7 +189,7 @@
           </div>
 
           <div class="skale">
-            <div class="skale_numb_down"></div>
+            <div class="skale_numb_down">0</div>
           </div>
         </div>
       </div>
@@ -346,58 +346,58 @@
       <race-body body_part="hair"></race-body>
     </div>
     <transition name="slide-fade">
-      <div class="size" v-if="hideRuler()">
-        <div class="skale_division_top">
-          <div class="division_numb_top"></div>
+      <div class="size jbm-300" v-if="hideRuler()">
+        <!-- <div class="skale_division_top">
+          <div class="skale_numb_top"></div>
           <div class="skale_division_top division_off">
             <div class=""></div>
           </div>
-        </div>
+        </div> -->
 
         <div class="skale">
-          <div class="division_numb_top">210</div>
+          <div class="skale_numb_top">210</div>
           <div class="skale_division division_off">
             <div class=""></div>
           </div>
         </div>
 
         <div class="skale">
-          <div class="division_numb_top">180</div>
+          <div class="skale_numb_top">180</div>
           <div class="skale_division division_off">
             <div class=""></div>
           </div>
         </div>
 
         <div class="skale">
-          <div class="division_numb_top">150</div>
+          <div class="skale_numb_top">150</div>
           <div class="skale_division division_off">
             <div class=""></div>
           </div>
         </div>
 
         <div class="skale">
-          <div class="division_numb_top">120</div>
+          <div class="skale_numb_top">120</div>
           <div class="skale_division division_filling_back">
             <div class="division_filling_front"></div>
           </div>
         </div>
 
         <div class="skale">
-          <div class="division_numb_top">90</div>
+          <div class="skale_numb_top">90</div>
           <div class="skale_division division_active">
             <div class=""></div>
           </div>
         </div>
 
         <div class="skale">
-          <div class="division_numb_top"></div>
+          <div class="skale_numb_top"></div>
           <div class="skale_division division_active">
             <div class=""></div>
           </div>
         </div>
 
         <div class="skale">
-          <div class="division_numb_down">0</div>
+          <div class="skale_numb_down">0</div>
           <div class="skale_division division_active">
             <div class=""></div>
           </div>
@@ -1104,29 +1104,6 @@ body {
   transition-timing-function: ease-in-out;
 }
 
-.size {
-  width: 35px;
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 11.45px;
-  line-height: 18px;
-  text-align: right;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  margin-right: 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  height: 100%;
-  background-color: transparent;
-  position: absolute;
-  right: 0;
-  padding-top: 36px;
-  bottom: 32px;
-}
-
 .skale {
   height: 100%;
   display: flex;
@@ -1147,13 +1124,16 @@ body {
   width: 1px;
   /* min-height: 96px; */
   flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.skale_division_top {
+/* .skale_division_top {
   width: 1px;
   height: 32px;
   flex: 1 1 auto;
-}
+} */
 
 .division_off {
   background: rgba(255, 255, 255, 0.2);
@@ -1166,14 +1146,14 @@ body {
 
 .division_filling_back {
   background: rgba(255, 255, 255, 0.4);
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; */
 }
 
 .division_filling_front {
   background: #ffffff;
-  height: calc(100% / 30 * 10);
+  height: calc(100% / 30 * (30 - 20));
 }
 
 /* ---------------------sidebar_right----------------------*/
@@ -1283,44 +1263,94 @@ body {
 .flex_options {
   height: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   gap: 8px;
 }
 
-.size_growth {
-  width: 42px;
+.jbm-300 {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 300;
-  font-size: 11.45px;
+  font-size: 10.95px;
   line-height: 18px;
-  text-align: right;
   letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: #ffffff;
+}
+
+.size {
+  /* width: 35px; */
+  /* font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300; */
+  font-size: 11.45px;
+  /* line-height: 18px; */
+  /* text-align: right; */
+  /* letter-spacing: 0.06em;
+  color: #ffffff; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  text-align: end;
   gap: 4px;
-  background-color: transparent;
   height: 100%;
+  /* background-color: transparent; */
   padding-top: 4px;
+  /* padding-top: 36px;
+  margin-right: 32px; */
+  /* position: absolute;
+  right: 0;
+  bottom: 32px; */
+  /* text-align: end; */
+  position: relative;
+}
+
+.size::after {
+  content: '';
+  position: absolute;
+  top: -32px;
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0.3;
+}
+
+.size_growth {
+  /* width: 42px; */
+  /* font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300; */
+  font-size: 11.45px;
+  /* line-height: 18px;
+  text-align: right;
+  letter-spacing: 0.06em;
+  color: #ffffff; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+  /* background-color: transparent; */
+  padding-top: 4px;
+  /* text-align: end; */
+  position: relative;
 }
 
 .skale {
   height: 100%;
   display: flex;
+  gap: 0 12px
 }
 
 .skale_numb_down {
-  text-align: end;
+  /* text-align: end; */
   margin-bottom: -4px;
   align-self: flex-end;
   flex: 1 1 auto;
 }
 
 .skale_numb_top {
-  text-align: end;
+  /* text-align: end; */
   margin-top: -4px;
   align-self: flex-start;
   flex: 1 1 auto;
@@ -1345,6 +1375,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 .size_age {
   width: 42px;

@@ -15,6 +15,7 @@ import MyWrapper from "@/components/ui/MyWrapper.vue";
 import MyCardTextColor from "@/components/ui/MyCardTextColor.vue";
 import MyColorSelect from "@/components/ui/MyColorSelect.vue";
 import RaceBody from "@/components/ui/RaceBody.vue";
+import MySkale from "@/components/ui/MySkale.vue";
 
 
 export default [
@@ -35,4 +36,5 @@ export default [
   MyCardTextColor,
   MyColorSelect,
   RaceBody,
+  MySkale,
 ];
