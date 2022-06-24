@@ -10,8 +10,7 @@
       :key="n"
       :division = "division"
       :zero = "zero"
-      :numb="n" 
-      :main_numb="$root.race_page.growth" />
+      :numb="n" />
   </div>
 </template>
 
@@ -37,6 +36,17 @@ export default {
       default: false,
     },
   },
+  // computed: {
+  //   сhar_Height_2() {
+  //     if (this.$root.MY.height === null) {
+  //     let max_height = this.$root.MY.race.settings.height.max
+  //     let min_height = this.$root.MY.race.settings.height.min
+  //       return (min_height + max_height) / 2;
+  //     } else {
+  //       return this.$root.MY.height;
+  //     }
+  //   },
+  // }
 };
 </script>
 
@@ -44,7 +54,7 @@ export default {
 .size {
   font-size: 11.45px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-end;
   gap: 4px;
   height: 100%;

@@ -64,7 +64,7 @@
             @click="show('shown_growth')"
             :active="race_page.shown_growth"
             title="height"
-            :value="race_page.growth"
+            :value="Char_Height"
             unit="cm"
             note="Маленький"
           ></my-controller>
@@ -306,7 +306,7 @@
       >
         {{ t("languages_human") }}
       </div>
-      <transition name="slide-fade">
+      <transition name="scroll-fade">
         <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
           <my-selection-card
             v-for="lang in Lang_Humman"
@@ -339,22 +339,15 @@
         active_skin: race_page.shown_skin_color,
       }"
     >
-      <race-body body_part="skin" />
-
-      <race-body body_part="eyes" />
-
-      <race-body body_part="hair" />
+      <RaceBody body_part="skin" />
+      <RaceBody body_part="eyes" />
+      <RaceBody body_part="hair" />
     
     <transition name="slide-fade">
-    <div class="size jbm-300" v-if="hideRuler()">
-      <my-skale
-      v-for = "n in skale_arr"
-      :key="n"
-      division 
-      :numb="n" 
-      :main_numb="race_page.growth" />
-      </div>
+      <mySizeGrowth v-if="hideRuler()"
+      division zero skale_top />
     </transition>
+
     </div>
   </div>
 
@@ -465,6 +458,7 @@ import race_page from "@/assets/catalog/page_data/race_page.js";
 import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
+import MySizeGrowth from '@/components/ui/MySizeGrowth.vue';
 
 export default {
   name: "App",
@@ -473,6 +467,7 @@ export default {
     GenderChoice,
 
     AgeWeight,
+    MySizeGrowth,
   },
   data() {
     return {
@@ -519,8 +514,8 @@ export default {
     )[0];
     this.MY = this.default_MY;
     this.getExtra(this.Stats_Pass, "stats");
-      this.getExtra(this.Skills_Pass, "skills");
-      this.getExtra(this.Lang_Pass, "languages");
+    this.getExtra(this.Skills_Pass, "skills");
+    this.getExtra(this.Lang_Pass, "languages");
     console.log();
   },
 
@@ -531,6 +526,16 @@ export default {
 
     All_Ethnos_Obj() {
       return this.MY.race.settings.ethnos;
+    },
+
+    Char_Height() {
+      if (this.MY.height === null) {
+      let max_height = this.MY.race.settings.height.max
+      let min_height = this.MY.race.settings.height.min
+        return (min_height + max_height) / 2;
+      } else {
+        return this.MY.height;
+      }
     },
 
     Lang_Not_Humman() {
@@ -1258,7 +1263,7 @@ body {
   position: relative;
 }
 
-.size::after {
+/* .size::after {
   content: '';
   position: absolute;
   top: -32px;
@@ -1266,7 +1271,7 @@ body {
   height: 32px;
   background: rgba(255, 255, 255, 0.2);
   opacity: 0.3;
-}
+} */
 
 .size_growth {
   /* width: 42px; */
@@ -1397,16 +1402,16 @@ body {
   right: 16px;
 }
 
-.slide-fade-enter-active {
+.scroll-fade-enter-active {
   transition: all 0.8s ease-out;
 }
 
-.slide-fade-leave-active {
+.scroll-fade-leave-active {
   transition: all 0.6s cubic-bezier(1, 0.8, 0.8, 1);
 }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
+.scroll-fade-enter-from,
+.scroll-fade-leave-to {
   transform: translateY(-20px);
   opacity: 0;
 }

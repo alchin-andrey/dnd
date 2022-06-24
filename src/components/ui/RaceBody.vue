@@ -38,6 +38,15 @@ export default {
     }
   },
   computed: {
+    growth() {
+      if (this.$root.MY.height === null) {
+      let max_height = this.$root.MY.race.settings.height.max
+      let min_height = this.$root.MY.race.settings.height.min
+        return (min_height + max_height) / 2;
+      } else {
+        return this.$root.MY.height;
+      }
+    },
 
     Hower() {
       return this.$root.race_page[this.hower_link]
@@ -104,7 +113,7 @@ export default {
       ) {
         return `100%`;
       } else {
-        return `calc(100% / 700 * (300 + 3.2 * 10))`;
+        return `calc(100% / 210 * ${this.growth})`;
       }
     },
 

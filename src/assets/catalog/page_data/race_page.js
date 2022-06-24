@@ -30,6 +30,6 @@ export default {
     weight_arr: [0, "x", "x", 15, 20],
 
     age: 34,
-    growth: 100,
+    growth: 91,
     weight: 15,
 };
