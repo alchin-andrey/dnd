@@ -57,7 +57,6 @@ export default {
       let fact_2 = this.title == "color_skin" && skin == 0;
       let fact_3 = this.title == "color_eyes" && eyes == 0;
       let fact_4 = this.title == "color_hair" && hair == 0;
-      console.log(fact_1, fact_2, fact_3, fact_4, "результ", fact_1 && !(fact_2 || fact_3 || fact_4));
       return fact_1 && !(fact_2 || fact_3 || fact_4);
     },
 

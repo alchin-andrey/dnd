@@ -32,4 +32,4 @@ export default {
     age: 34,
     growth: 100,
     weight: 15,
-}
+};

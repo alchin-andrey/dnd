@@ -206,7 +206,6 @@
     <my-selection-box :shown="race_page.shown_characteristics">
       <div class="ethnos_attributes">
         <!-- Этнос_stats -->
-
         <my-wrapper>
           <my-attribute
             v-for="name in Stats_Keys"
@@ -307,7 +306,6 @@
       >
         {{ t("languages_human") }}
       </div>
-      <!-- <div v-if="!race_page.shown_humman_lang" v-vpshow></div> -->
       <transition name="slide-fade">
         <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
           <my-selection-card
@@ -431,6 +429,7 @@
         v-for="name in Skills_All_Chose"
         :key="name"
         :title="name"
+        :type="MY.skills[name].mod"
         plus
         :numb="getSummNumb('skills', name)"
         :icon="MY.skills[name].mod"
