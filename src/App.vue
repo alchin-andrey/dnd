@@ -14,6 +14,7 @@
         >
         </my-slider>
 <!-- <div class="main_menu"> -->
+  <button @click="plusLvl()" type="">Увеличить Level на +1</button>
         <div class="selection_menu">
           <my-controller
             @click="show('shown_lvl')"
@@ -252,9 +253,8 @@
       >
         <my-attribute
           :title="name"
-          :type="val.mod"
           plus
-          :numb="Race_Set_Obj.custom_skills[1]"
+          :numb="mastery"
           :icon="val.mod"
         >
         </my-attribute>
@@ -361,9 +361,8 @@
         v-for="name in Skills_All_Chose"
         :key="name"
         :title="name"
-        :type="MY.skills[name].mod"
         plus
-        :numb="getSummNumb('skills', name)"
+        :numb="mastery"
         :icon="MY.skills[name].mod"
       ></my-attribute>
     </my-wrapper>
@@ -510,6 +509,17 @@ export default {
   },
 
   computed: {
+    // mastery() {
+    //   if(this.Race_Set_Obj.custom_skills[1] === 'mastery') {
+    //     return 1 + Math.ceil(this.MY.level / 4); 
+    //   } else {
+    //     return this.Race_Set_Obj.custom_skills[1]; 
+    //   }
+    // },
+
+    mastery() {
+        return 1 + Math.ceil(this.MY.level / 4); 
+    },
 
     Foo_PS() {
       return this.numb_foo * 2;
@@ -646,6 +656,10 @@ export default {
   methods: {
     plus() {
       this.numb_foo++;
+    },
+
+    plusLvl() {
+      this.MY.level++;
     },
 
     F(foo, numb) {
