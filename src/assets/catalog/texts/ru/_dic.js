@@ -17,6 +17,7 @@ export default {
             subclass:"специализация",
             past:"предистория",
             level:"уровень",
+                level_unit:"й",
 
     //Stats
 

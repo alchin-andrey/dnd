@@ -9,7 +9,7 @@ export default {
     class:null,
     subclass:null,
     past:null,
-    level:null,
+    level: 1,
 
     //Character
     alignment:null,

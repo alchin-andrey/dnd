@@ -31,8 +31,8 @@ export default {
     weight_arr: [0, "x", "x", 15, 20],
     lvl_arr: [0, 5, 10, 15, 20],
 
-    lvl: 1,
-    age: 34,
+    lvl: 2,
+    age: 35,
     growth: 91,
     weight: 15,
 };

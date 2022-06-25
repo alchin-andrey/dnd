@@ -1,18 +1,19 @@
 <template>
   <div class="flex_options">
     <div class="slider_a_w_back">
-      <div class="slider_a_w"
-      :style="{ height: `calc(100% / ${arr[arr.length - 1]} * ${value})` }"
+      <div
+        class="slider_a_w"
+        :style="{ height: `calc(100% / ${arr[arr.length - 1]} * ${value})` }"
       >
         <div class="slider_knob"></div>
-        <div class="slider_value">{{value}} {{t_Unit}}</div>
+        <div class="slider_value">{{ t_Unit }}</div>
       </div>
     </div>
 
     <div class="size_a_w">
-      <div v-for="n in arr" :key="n"
-      :class="{ passive: n === 'x'}"
-      >{{n}}</div>
+      <div v-for="n in arr" :key="n" :class="{ passive: n === 'x' }">
+        {{ n }}
+      </div>
     </div>
   </div>
 </template>
@@ -37,26 +38,36 @@ export default {
       type: Boolean,
       default: false,
     },
+    lvl: {
+      type: Boolean,
+      default: false,
+    },
   },
 
-    computed: {
+  computed: {
     t_Unit() {
-		return this.age ? this.t(this.getAgeUnits(this.value)) : this.t('kg');
-		},
-	},
+      if (this.age) {
+        return `${this.value} ${this.t(this.getAgeUnits(this.value))}`;
+      } else if (this.lvl) {
+        return `${this.value}${this.t('level_unit')} ${this.t('level')}`;
+      } else {
+        return `${this.value} ${this.t('kg')}`;
+      }
+    },
+  },
 
   methods: {
     getAgeUnits(numb) {
       let mod10 = Math.abs(numb % 10);
       let mod100 = Math.abs(numb % 100);
       if (mod100 > 10 && mod100 < 20) {
-        return 'years'
+        return "years";
       } else if (mod10 >= 2 && mod10 <= 4) {
-        return 'yeara'
+        return "yeara";
       } else if (mod10 === 1) {
-        return 'year'
+        return "year";
       } else {
-        return 'years'
+        return "years";
       }
     },
   },
@@ -65,7 +76,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .slider_a_w_back {
   width: 344px;
   height: 100%;
@@ -125,6 +135,4 @@ export default {
 .passive {
   color: rgba(255, 255, 255, 0);
 }
-
-
 </style>

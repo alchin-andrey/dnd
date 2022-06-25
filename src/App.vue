@@ -18,8 +18,8 @@
           <my-controller
             @click="show('shown_lvl')"
             :active="race_page.shown_lvl"
-            title="age"
-            :value="race_page.lvl"
+            title="level"
+            :value="MY.level"
           ></my-controller>
           <my-selection
             @click="show('shown_ethnos')"
@@ -111,7 +111,9 @@
           </my-selection>
         </div>
 <!-- </div> -->
-        <!-- <button @click="plus()" type="">+1</button> -->
+        <div class="jbm-300">{{'методс:' + F(foo_met, numb_foo)}}</div>
+        <!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
+        <button @click="plus()" type="">Увеличить входящий параметр на +1</button>
       </div>
 
       <my-button
@@ -127,7 +129,7 @@
 
     <!-- Уровень -->
     <my-selection-box :shown="race_page.shown_lvl">
-      <AgeWeight :value="race_page.lvl" :arr="race_page.lvl_arr" />
+      <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl/>
     </my-selection-box>
     <!-- Уровень -->
 
@@ -183,7 +185,7 @@
 
     <!-- Вес -->
     <my-selection-box :shown="race_page.shown_weight">
-      <AgeWeight :value="race_page.weight" :arr="race_page.weight_arr" />
+      <AgeWeight :value="race_page.weight" :arr="race_page.weight_arr" unit="kg" />
     </my-selection-box>
     <!-- Вес -->
 
@@ -476,6 +478,10 @@ export default {
       growth: 100,
       weight: 15,
 
+      foo_met: 'getFoo',
+      // foo_com: Foo_PS,
+      numb_foo: 1,
+
       attributes_race: [
         {
           name: "Акробатика",
@@ -500,11 +506,17 @@ export default {
     this.getExtra(this.Stats_Pass, "stats");
     this.getExtra(this.Skills_Pass, "skills");
     this.getExtra(this.Lang_Pass, "languages");
-    console.log();
+    console.log(this[this.foo_met](this.numb_foo));
   },
 
   computed: {
-    Race_Set_Obj() {
+
+    Foo_PS() {
+      return this.numb_foo * 2;
+    },
+
+
+      Race_Set_Obj() {
       return this.MY.race.settings;
     },
 
@@ -632,6 +644,18 @@ export default {
   },
 
   methods: {
+    plus() {
+      this.numb_foo++;
+    },
+
+    F(foo, numb) {
+      return this[foo](numb)
+    },
+
+    getFoo(namb) {
+      return namb * 2
+    },
+
     getFunction() {
       this.getNewEthnos();
       this.closeEthnos();
@@ -690,10 +714,6 @@ export default {
       } else {
         this.race_page[name_1] === true;
       }
-    },
-
-    plus() {
-      this.weight++;
     },
 
     close() {
