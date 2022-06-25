@@ -138,7 +138,7 @@ export default {
 
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
       custom_stats: [2, 1], // [колво, инкремент]
-      custom_skills: [2, 2],
+      custom_skills: [2, "mastery"],
       custom_languages: [2],
     },
 
@@ -1181,7 +1181,7 @@ export default {
       },
 
       custom_stats: [2, 1],
-      custom_skills: [2, 2],
+      custom_skills: [2, "mastery"],
       custom_languages: [1],
     },
 
@@ -1575,7 +1575,7 @@ export default {
     },
 
     skills: {
-      perception: 2,
+      perception: "mastery",
     },
 
     proficiencies: {
@@ -1890,7 +1890,7 @@ export default {
     },    
 
     skills: {
-      intimidation: 2,
+      intimidation: "mastery",
     },
 
     qualities: { speed: 30, vision_night: 60 },
