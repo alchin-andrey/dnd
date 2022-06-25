@@ -114,7 +114,7 @@
     >
     </my-card-text>
   </my-selection-card>
-  <transition name="slide-fade">
+  <transition name="scroll-fade">
   <my-selection-card
     v-if="$root.MY.gender.feel !== $root.genders.feel.cisgender"
     passive

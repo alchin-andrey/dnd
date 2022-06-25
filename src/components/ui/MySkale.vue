@@ -63,7 +63,6 @@ export default {
     },
 
     active_size() {
-      console.log(this.growth <= this.numb && this.numb - 30 < this.growth);
       return this.growth <= this.numb && this.numb - 30 < this.growth;
     },
 

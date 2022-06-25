@@ -13,8 +13,14 @@
           :type="MY.race"
         >
         </my-slider>
-
+<!-- <div class="main_menu"> -->
         <div class="selection_menu">
+          <my-controller
+            @click="show('shown_lvl')"
+            :active="race_page.shown_lvl"
+            title="age"
+            :value="race_page.lvl"
+          ></my-controller>
           <my-selection
             @click="show('shown_ethnos')"
             :active="race_page.shown_ethnos"
@@ -104,6 +110,7 @@
           >
           </my-selection>
         </div>
+<!-- </div> -->
         <!-- <button @click="plus()" type="">+1</button> -->
       </div>
 
@@ -117,6 +124,13 @@
         @click="showHome()"
       ></my-button-back>
     </div>
+
+    <!-- Уровень -->
+    <my-selection-box :shown="race_page.shown_lvl">
+      <AgeWeight :value="race_page.lvl" :arr="race_page.lvl_arr" />
+    </my-selection-box>
+    <!-- Уровень -->
+
     <!-- Этнос-->
     <my-selection-box :shown="race_page.shown_ethnos">
       <EthnosChoice />
@@ -683,6 +697,7 @@ export default {
     },
 
     close() {
+      this.race_page.shown_lvl = false;
       this.race_page.shown_ethnos = false;
       this.race_page.shown_gender = false;
       this.race_page.shown_skin_color = false;
@@ -930,30 +945,44 @@ body {
   color: #ffffff;
 }
 
-.sidebar_left {
-  min-height: 100%;
-  display: flex;
-  outline: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.chapter {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.main_chapter {
-  width: 320px;
-  padding-left: 32px;
-  flex: 1 1 auto;
-}
-
 .logo {
   height: 32px;
   margin: 32px 0 18px 0;
 }
 
+.sidebar_left {
+  /* height: 100%; */
+  display: flex;
+  outline: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.chapter {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  /* flex: 1 1 auto; */
+}
+
+.main_chapter {
+  /* height: 100%; */
+  width: 320px;
+  padding-left: 32px;
+  flex: 1 1 auto;
+}
+
+.main_menu {
+/* height: 100%; */
+display: flex;
+  flex-direction: column;
+overflow-y: scroll;
+/* flex: 1 1 auto; */
+}
+.main_menu::-webkit-scrollbar {
+  /* width: 0; */
+}
+
 .selection_menu {
+  /* height: 100%; */
   width: 256px;
   display: flex;
   flex-direction: column;

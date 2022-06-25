@@ -1,4 +1,5 @@
 export default {
+    shown_lvl: false,
     shown_ethnos: false,
     shown_gender: false,
     shown_skin_color: false,
@@ -28,7 +29,9 @@ export default {
 
     age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
     weight_arr: [0, "x", "x", 15, 20],
+    lvl_arr: [0, 5, 10, 15, 20],
 
+    lvl: 1,
     age: 34,
     growth: 91,
     weight: 15,
