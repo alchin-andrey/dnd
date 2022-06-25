@@ -13,8 +13,8 @@
           :type="MY.race"
         >
         </my-slider>
-<!-- <div class="main_menu"> -->
-  <button @click="plusLvl()" type="">Увеличить Level на +1</button>
+        <!-- <div class="main_menu"> -->
+        <button @click="plusLvl()" type="">Увеличить Level на +1</button>
         <div class="selection_menu">
           <my-controller
             @click="show('shown_lvl')"
@@ -58,6 +58,10 @@
           </my-selection>
         </div>
 
+<button @click="plusGrow()" type="">
+          Увеличить рост +5
+        </button>
+
         <div class="selection_menu">
           <my-controller
             @click="show('shown_age')"
@@ -85,6 +89,7 @@
           >
           </my-controller>
         </div>
+        
 
         <div class="selection_menu">
           <my-selection
@@ -103,7 +108,9 @@
           >
           </my-selection>
           <my-selection
-            v-if="MY.race.settings.custom_languages || MY.ethnos.custom_languages"
+            v-if="
+              MY.race.settings.custom_languages || MY.ethnos.custom_languages
+            "
             @click="show('shown_languages')"
             :active="race_page.shown_languages"
             title="languages"
@@ -111,10 +118,12 @@
           >
           </my-selection>
         </div>
-<!-- </div> -->
-        <div class="jbm-300">{{'методс:' + F(foo_met, numb_foo)}}</div>
+        <!-- </div> -->
+        <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>
         <!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
-        <button @click="plus()" type="">Увеличить входящий параметр на +1</button>
+        <button @click="plus()" type="">
+          Увеличить входящий параметр на +1
+        </button>
       </div>
 
       <my-button
@@ -130,7 +139,7 @@
 
     <!-- Уровень -->
     <my-selection-box :shown="race_page.shown_lvl">
-      <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl/>
+      <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl />
     </my-selection-box>
     <!-- Уровень -->
 
@@ -186,7 +195,11 @@
 
     <!-- Вес -->
     <my-selection-box :shown="race_page.shown_weight">
-      <AgeWeight :value="race_page.weight" :arr="race_page.weight_arr" unit="kg" />
+      <AgeWeight
+        :value="race_page.weight"
+        :arr="race_page.weight_arr"
+        unit="kg"
+      />
     </my-selection-box>
     <!-- Вес -->
 
@@ -240,23 +253,13 @@
       <my-selection-card
         v-for="(val, name, i) in MY.skills"
         :key="name"
-         @click="
-          getExtraActiv(
-            false,
-            skills_Select.includes(name),
-            name,
-            'skills'
-          )
+        @click="
+          getExtraActiv(false, skills_Select.includes(name), name, 'skills')
         "
         :class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
         :active_boll_link="skills_Select.includes(name)"
       >
-        <my-attribute
-          :title="name"
-          plus
-          :numb="mastery"
-          :icon="val.mod"
-        >
+        <my-attribute :title="name" plus :numb="mastery" :icon="val.mod">
         </my-attribute>
         <my-card-text title="" :text="`${name}_details`"> </my-card-text>
       </my-selection-card>
@@ -317,7 +320,7 @@
     </my-selection-box>
     <!-- Языки -->
   </div>
-  <!-- character -->
+  <!-- Персонаж -->
   <div class="represent">
     <div
       class="character"
@@ -325,18 +328,20 @@
         active_eyes: race_page.shown_eyes_color || race_page.shown_hair_color,
         active_skin: race_page.shown_skin_color,
       }"
+      :style="{
+        height: Char_Hight_Back,
+      }"
     >
       <RaceBody body_part="skin" />
       <RaceBody body_part="eyes" />
       <RaceBody body_part="hair" />
-    
-    <transition name="slide-fade">
-      <mySizeGrowth v-if="hideRuler()"
-      division zero skale_top />
-    </transition>
 
+      <transition name="slide-fade">
+        <mySizeGrowth v-if="hideRuler()" division zero skale_top />
+      </transition>
     </div>
   </div>
+  <!-- Персонаж -->
 
   <!-- sidebar_right -->
   <div v-if="race_page.shown_home" class="sidebar_right">
@@ -445,7 +450,6 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
-
 export default {
   name: "App",
   components: {
@@ -477,7 +481,7 @@ export default {
       growth: 100,
       weight: 15,
 
-      foo_met: 'getFoo',
+      foo_met: "getFoo",
       // foo_com: Foo_PS,
       numb_foo: 1,
 
@@ -511,23 +515,51 @@ export default {
   computed: {
     // mastery() {
     //   if(this.Race_Set_Obj.custom_skills[1] === 'mastery') {
-    //     return 1 + Math.ceil(this.MY.level / 4); 
+    //     return 1 + Math.ceil(this.MY.level / 4);
     //   } else {
-    //     return this.Race_Set_Obj.custom_skills[1]; 
+    //     return this.Race_Set_Obj.custom_skills[1];
     //   }
     // },
 
     mastery() {
-        return 1 + Math.ceil(this.MY.level / 4); 
+      return 1 + Math.ceil(this.MY.level / 4);
     },
 
     Foo_PS() {
       return this.numb_foo * 2;
     },
 
-
-      Race_Set_Obj() {
+    Race_Set_Obj() {
       return this.MY.race.settings;
+    },
+
+    Char_Hight_Back() {
+      let max_height = this.MY.race.settings.height.max;
+      let min_height = this.MY.race.settings.height.min;
+      let mein_height = (min_height + max_height) / 2;
+      let kof = 0;
+      if ((mein_height == 105)) {
+        console.log(1);
+        kof = 4;
+      } else if ((mein_height == 135)) {
+        console.log(2);
+        kof = 3.7;
+      } else if ((mein_height == 165)) {
+        console.log(3);
+        kof = 3.4;
+      } else {
+        kof = 3.1;
+      }
+      if (
+        this.$root.race_page.shown_eyes_color ||
+        this.$root.race_page.shown_hair_color
+      ) {
+        console.log(mein_height, kof);
+        console.log(`calc((100% / 210 * ${mein_height})*${kof})`);
+        return `calc((100% / 210 * ${mein_height})*${kof})`;
+      } else {
+        return `100%`;
+      }
     },
 
     All_Ethnos_Obj() {
@@ -536,8 +568,8 @@ export default {
 
     Char_Height() {
       if (this.MY.height === null) {
-      let max_height = this.MY.race.settings.height.max
-      let min_height = this.MY.race.settings.height.min
+        let max_height = this.MY.race.settings.height.max;
+        let min_height = this.MY.race.settings.height.min;
         return (min_height + max_height) / 2;
       } else {
         return this.MY.height;
@@ -654,8 +686,14 @@ export default {
   },
 
   methods: {
+
     plus() {
       this.numb_foo++;
+    },
+
+    plusGrow() {
+      this.MY.height = this.Char_Height
+      this.MY.height += 5;
     },
 
     plusLvl() {
@@ -663,19 +701,19 @@ export default {
     },
 
     F(foo, numb) {
-      return this[foo](numb)
+      return this[foo](numb);
     },
 
     getFoo(namb) {
-      return namb * 2
+      return namb * 2;
     },
 
     getFunction() {
       this.getNewEthnos();
       this.closeEthnos();
-      this.closeColor('skin');
-      this.closeColor('eyes');
-      this.closeColor('hair');
+      this.closeColor("skin");
+      this.closeColor("eyes");
+      this.closeColor("hair");
       this.closePar("shown_characteristics", "custom_stats");
       this.closePar("shown_skills", "custom_skills");
       this.closePar("shown_languages", "custom_languages");
@@ -748,7 +786,10 @@ export default {
     show(name, key) {
       if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
         this.race_page[name] === false;
-      } else if (name === `shown_${key}_color` && this.MY.race.settings.color[key].length === 0) {
+      } else if (
+        name === `shown_${key}_color` &&
+        this.MY.race.settings.color[key].length === 0
+      ) {
         this.race_page[name] === false;
       } else if (this.race_page[name] === false) {
         this.close();
@@ -843,10 +884,10 @@ export default {
       let j = 0;
       if (((this.MY.race || {})[par_1] || {})[par_2]) {
         i = this.MY.race[par_1][par_2];
-      };
+      }
       if (((this.MY.ethnos || {})[par_1] || {})[par_2]) {
         j = this.MY.ethnos[par_1][par_2];
-      };
+      }
       return i + j;
     },
 
@@ -890,10 +931,10 @@ export default {
         let i = ethnos_custom[0];
         arr = arr_obj.slice(0, i);
         this.race_page.extra[name] = arr;
-      } else if(!race_custom && !ethnos_custom) {
+      } else if (!race_custom && !ethnos_custom) {
         this.race_page.extra[name] = arr;
       } else {
-        return null
+        return null;
       }
     },
 
@@ -918,13 +959,13 @@ export default {
 
     getSkillMarg(i, name, k) {
       if (i === 0) {
-        return true
+        return true;
       }
-      let obj = Object.values(name)
+      let obj = Object.values(name);
       if (obj[i].mod !== obj[i - 1].mod) {
-        return true
+        return true;
       }
-      return false
+      return false;
     },
   },
 };
@@ -1005,11 +1046,11 @@ body {
 }
 
 .main_menu {
-/* height: 100%; */
-display: flex;
+  /* height: 100%; */
+  display: flex;
   flex-direction: column;
-overflow-y: scroll;
-/* flex: 1 1 auto; */
+  overflow-y: scroll;
+  /* flex: 1 1 auto; */
 }
 .main_menu::-webkit-scrollbar {
   /* width: 0; */
@@ -1080,9 +1121,14 @@ overflow-y: scroll;
   transition-timing-function: ease-in-out;
 }
 
+/* .active_eyes .character img {
+  top: 0;
+  bottom: auto;
+} */
+
 .active_eyes {
   align-self: flex-start;
-  height: 200%;
+  /* height: 200%; */
   transition-property: all;
   transition-duration: 0.8s;
   transition-timing-function: ease-in-out;
