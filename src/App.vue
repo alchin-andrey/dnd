@@ -58,9 +58,7 @@
           </my-selection>
         </div>
 
-<button @click="plusGrow()" type="">
-          Увеличить рост +5
-        </button>
+        <button @click="plusGrow()" type="">Увеличить рост +5</button>
 
         <div class="selection_menu">
           <my-controller
@@ -89,7 +87,6 @@
           >
           </my-controller>
         </div>
-        
 
         <div class="selection_menu">
           <my-selection
@@ -294,7 +291,7 @@
         v-vpshow="race_page.shown_humman_lang"
         @click="showSkroll('shown_humman_lang')"
       >
-        {{ t("languages_human") }}
+        {{ Lang_Humman_Title }}
       </div>
       <transition name="scroll-fade">
         <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
@@ -509,7 +506,7 @@ export default {
     this.getExtra(this.Stats_Pass, "stats");
     this.getExtra(this.Skills_Pass, "skills");
     this.getExtra(this.Lang_Pass, "languages");
-    console.log(this[this.foo_met](this.numb_foo));
+    // console.log(this[this.foo_met](this.numb_foo));
   },
 
   computed: {
@@ -538,14 +535,11 @@ export default {
       let min_height = this.MY.race.settings.height.min;
       let mein_height = (min_height + max_height) / 2;
       let kof = 0;
-      if ((mein_height == 105)) {
-        console.log(1);
+      if (mein_height == 105) {
         kof = 4;
-      } else if ((mein_height == 135)) {
-        console.log(2);
+      } else if (mein_height == 135) {
         kof = 3.7;
-      } else if ((mein_height == 165)) {
-        console.log(3);
+      } else if (mein_height == 165) {
         kof = 3.4;
       } else {
         kof = 3.1;
@@ -554,8 +548,6 @@ export default {
         this.$root.race_page.shown_eyes_color ||
         this.$root.race_page.shown_hair_color
       ) {
-        console.log(mein_height, kof);
-        console.log(`calc((100% / 210 * ${mein_height})*${kof})`);
         return `calc((100% / 210 * ${mein_height})*${kof})`;
       } else {
         return `100%`;
@@ -586,6 +578,19 @@ export default {
       return arr;
     },
 
+    Lang_Humman_Title() {
+      console.log(this.Lang_Select);
+      console.log(this.Lang_Humman);
+      let title = this.t("languages_human");
+      let lang_numb = this.Lang_Humman_Select.length;
+      let humman_activ = this.race_page.shown_humman_lang;
+      if (lang_numb !== 0 && !humman_activ) {
+        return `${title} (выбрано: ${lang_numb})`;
+      } else {
+        return title;
+      }
+    },
+
     Lang_Humman() {
       let arr = [];
       for (let i in this.languages) {
@@ -593,6 +598,18 @@ export default {
           arr.push(this.languages[i]);
         }
       }
+      return arr;
+    },
+
+    Lang_Humman_Select() {
+      let arr = [];
+      let lang = this.race_page.extra.languages;
+      for (let i in lang) {
+        if ((lang || {})[i].human) {
+          arr.push(lang[i]);
+        }
+      }
+      console.log('Челопук', arr);
       return arr;
     },
 
@@ -686,13 +703,12 @@ export default {
   },
 
   methods: {
-
     plus() {
       this.numb_foo++;
     },
 
     plusGrow() {
-      this.MY.height = this.Char_Height
+      this.MY.height = this.Char_Height;
       this.MY.height += 5;
     },
 
