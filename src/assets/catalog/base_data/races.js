@@ -31,6 +31,10 @@ export default {
 
           stats: { charisma: 1 },
 
+          // ТОЛЬКО ДЛЯ ОТЛАДКИ
+          hp_bonus: [1,1],
+          // ТОЛЬКО ДЛЯ ОТЛАДКИ
+
           fines: [
             {
               type: "plus",

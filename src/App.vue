@@ -380,6 +380,13 @@
         feet
         :icon="name"
       ></my-attribute>
+      <my-attribute 
+        v-if="MY.ethnos.hp_bonus"
+        title="hp_bonus"
+        :numb="hp_bonus"
+        plus
+        icon="hp_bonus"
+      ></my-attribute>
     </my-wrapper>
     <!-- qualities -->
 
@@ -524,6 +531,13 @@ export default {
 
     Foo_PS() {
       return this.numb_foo * 2;
+    },
+
+    hp_bonus() {
+      let increm_1 = this.MY.ethnos.hp_bonus[0];
+      let increm_2= this.MY.ethnos.hp_bonus[1];
+      let level = Math.ceil(this.MY.level / increm_1);
+      return level * increm_2;
     },
 
     Race_Set_Obj() {
