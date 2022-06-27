@@ -1,5 +1,5 @@
 <template>
-  <div class="gender_item" :class="{active: active_link === select_link}">
+  <div class="gender_item" :class="{active: active_link}">
     <img :src="get_Image" :alt="img" />
   </div>
 </template>
@@ -13,14 +13,11 @@ export default {
       default: null,
     },
     active_link: {
-      type: String,
-      default: null,
-    },
-    select_link: {
-      type: String,
-      default: null,
+      type: Boolean,
+      default: false,
     },
   },
+
   computed: {
     get_Image() {
       return require(`@/assets/img/icon/gender/${this.img}.svg`);

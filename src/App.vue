@@ -148,7 +148,7 @@
 
     <!-- Гендр -->
     <my-selection-box :shown="race_page.shown_gender">
-      <GenderChoice />
+      <GenderChoiceStore />
     </my-selection-box>
     <!-- Гендр -->
 
@@ -454,9 +454,15 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
+
+import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
+
 export default {
   name: "App",
   components: {
+    GenderChoiceStore,
+
+
     EthnosChoice,
     GenderChoice,
 
@@ -1293,6 +1299,8 @@ body {
   top: 0px;
   right: 16px;
 }
+
+
 
 .scroll-fade-enter-active {
   transition: all 0.8s ease-out;

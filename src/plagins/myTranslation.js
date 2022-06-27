@@ -14,7 +14,7 @@ export default {
                     return dic[this.lang][x];
                 },
             },
-            mounted() {},
+            // mounted() {},
             // ...
         });
     },

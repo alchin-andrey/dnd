@@ -1,14 +1,20 @@
 export default {
-    count (state) {
-        return state.news.length;
+    phisiologicalArr (state) {
+        return state.phisiological;
     },
-    all (state) {
-        return state.news;
+    feelArr (state) {
+        return state.feel;
     },
-    newsСategory(state) {
-        return state.news.filter(post => post.category === 'Анонс');
-    },  
-    newsById (state) {
-        return (id) => state.news.find(item => item.id === id);
-    }
+    lookArr (state) {
+        return state.look;
+    },
+
+
+
+    // newsСategory(state) {
+    //     return state.news.filter(post => post.category === 'Анонс');
+    // },  
+    // newsById (state) {
+    //     return (id) => state.news.find(item => item.id === id);
+    // }
 }

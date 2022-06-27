@@ -81,10 +81,10 @@ export default {
   },
   methods: {
     getGenderName() {
-      if (this.$root.MY.gender.feel === this.$root.genders.feel.cisgender) {
-        return this.t(this.$root.MY.gender.phisiological);
+      if (this.$root.MY.gender.feel === 'cisgender') {
+        return this.t(this.type);
       } else {
-        return `${this.t(this.$root.MY.gender.phisiological)} *`;
+        return `${this.t(this.type)} *`;
       }
     },
   },

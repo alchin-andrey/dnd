@@ -15,7 +15,7 @@ export default {
     alignment:null,
     gender:{
         phisiological: "male",
-        feel: "cisgender", 
+        feel: "cisgender",
         look: "as_phisiological",
         attraction:null,  
     },
