@@ -1080,9 +1080,9 @@ export default {
 
       color: {
         skin: [
+          color[2][1],
           color[1][0],
           color[2][0],
-          color[2][1],
           color[2][2],
           color[2][3],
           color[2][4],
@@ -1096,6 +1096,7 @@ export default {
           color[10][0],
         ],
         eyes: [
+          color[3][4],
           color[0][1],
           color[0][2],
           color[0][3],
@@ -1106,6 +1107,10 @@ export default {
           color[2][3],
           color[2][4],
           color[2][5],
+          color[3][1],
+          color[3][2],
+          color[3][3],
+          color[3][5],
           color[4][1],
           color[4][2],
           color[4][3],
@@ -1138,6 +1143,7 @@ export default {
           color[9][5],
         ],
         hair: [
+          color[2][5],
           color[0][0],
           color[0][1],
           color[0][2],
@@ -1157,7 +1163,6 @@ export default {
           color[2][2],
           color[2][3],
           color[2][4],
-          color[2][5],
           color[2][6],
           color[3][0],
           color[3][1],
@@ -1218,6 +1223,53 @@ export default {
     settings: {
       ethnos: {
 
+        high_elf: {
+          name: "high_elf",
+          details: "high_elf_details",
+
+          color: {
+            skin: [
+              color[2][1],
+            ],
+            eyes: [
+              color[3][4],
+              color[8][0],
+              color[0][5],
+            ],
+            hair: [
+              color[3][2],
+            ],
+          },
+
+          stats: {
+            wisdom: 1,
+          },
+          qualities: {
+            vision_night: 60,
+          },
+
+          proficiencies: {
+            weapons: [
+              weapon.long_swords,
+              weapon.short_swords,
+              weapon.long_bows,
+              weapon.short_bows,
+            ],
+            languages: [],
+          },
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "knowledge",
+              details: "any_cantrip_wizard",
+            },
+          ],
+
+          custom_languages: [1],
+          custom_spell: [1,0,"wizard"],
+        },
+
         forest: {
           name: "forest",
           details: "forest_elf_details",
@@ -1263,53 +1315,6 @@ export default {
               details: "stealth_in_wild_details",
             },
           ],
-        },
-
-        high_elf: {
-          name: "high_elf",
-          details: "high_elf_details",
-
-          color: {
-            skin: [
-              color[2][1],
-            ],
-            eyes: [
-              color[3][4],
-              color[8][0],
-              color[0][6],
-            ],
-            hair: [
-              color[3][2],
-            ],
-          },
-
-          stats: {
-            wisdom: 1,
-          },
-          qualities: {
-            vision_night: 60,
-          },
-
-          proficiencies: {
-            weapons: [
-              weapon.long_swords,
-              weapon.short_swords,
-              weapon.long_bows,
-              weapon.short_bows,
-            ],
-            languages: [],
-          },
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "knowledge",
-              details: "any_cantrip_wizard",
-            },
-          ],
-
-          custom_languages: [1],
-          custom_spell: [1,0,"wizard"],
         },
 
         dark: {
