@@ -94,10 +94,6 @@ export default {
     },
   },
 
-  created() {
-    
-  },
-
   computed: {
 
     t_Title() {
@@ -144,12 +140,10 @@ export default {
       }
     },
     hover(name) {
-      console.log(name);
       this.hower_link = name
     },
 
     hoverStop() {
-console.log(2);
       this.hower_link = null;
     },
   },

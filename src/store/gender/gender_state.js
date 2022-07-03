@@ -1,7 +1,7 @@
 export default function () {
     return {
         phisiological: [
-            { name: "male", details: "male_details",},
+            { name: "male", details: 'male_details',},
             { name: "intersex", details: "intersex_details",},
             { name: "female", details: "female_details",},
             { name: "demiboy", details: "demiboy_details",},

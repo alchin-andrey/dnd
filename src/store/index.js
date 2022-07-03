@@ -1,14 +1,16 @@
 import { createStore } from 'vuex'
 
-import attributesStore from './attributes';
+import statssStore from './stats';
 import genderStore from './gender';
 import racesStore from './races';
+import ethnosesStore from './ethnoses';
 
 const store = createStore({
   modules: {
-    attributes: attributesStore,
+    stats: statssStore,
     gender: genderStore,
     races: racesStore,
+    ethnoses: ethnosesStore,
   },
 });
 
