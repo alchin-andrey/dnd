@@ -270,4 +270,43 @@ export default {
             "material +"
         ],
     },
+
+    bird_breath:{
+
+        name: "bird_breath",
+        
+        lines: [
+
+            {
+                title: "some_title", // word from dic
+                subtitle: "some_subtitle", // word from dic
+                plus: false, 
+                base: 34, // number or formula
+                multiplicator: 2,
+                bonus: 2,
+                dice: null, // null or number
+                suffix: "foots",
+                squares_mana_solid: 2, // number or formula
+                squares_mana_outline: 2, // number or formula
+                squares_mana_plus: true,
+            },
+            
+            {
+                title: "some_title", //word from dic
+                subtitle: "some_subtitle", // word from dic 
+                plus: true,
+                base: 1, // number or formula
+                multiplicator: "level",
+                bonus: ["mastery",2,"stats.consitution.mod"],     // Formula: Value = base * multiplicator + bonus[0] + ... + bonus[n]
+                dice: 12, // null or number
+                suffix: "", // word from dic
+                squares_mana_solid: 2, // number or formula
+                squares_mana_outline: 2, // number or formula
+                squares_mana_plus: true,
+            }
+        ],
+
+        details: "bird_breath_details",
+
+    },
 }
