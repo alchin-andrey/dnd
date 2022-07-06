@@ -1,345 +1,199 @@
 class Spell {
+  name;
+  slot;
+  school;
+  tags;
+  details;
 
-    name;
-    slot;
-    school;
-    tags;
-    details;
-    
-    frequency;
-    components;
-    time;
-    concentration = Boolean;
+  frequency;
+  components;
+  time;
+  concentration = Boolean;
 
-    range;
-    area;
-    duration;
+  range;
+  area;
+  duration;
 
-    trial = {
-        stat:null,
-        complexity:null,
-    };
-    damage = {
-        type:null,
-        x:null,
-        dice:null,        
-    };
-    gain = {
-        x:null,
-        dice:null,
-    };
-
+  trial = {
+    stat: null,
+    complexity: null,
+  };
+  damage = {
+    type: null,
+    x: null,
+    dice: null,
+  };
+  gain = {
+    x: null,
+    dice: null,
+  };
 }
 
 export default {
 
-    bird:{
+  thaumaturgy: {
+    name: "thaumaturgy",
+    details: "thaumaturgy_details",
+  },
 
-        name: "thaumaturgy",
-        
-        lines: [
+  hellish_rebuke: {
+    name: "hellish_rebuke",
+    lines: [
+      {
+        title: "damage",
+        subtitle: "",
+        plus: false,
+        foo_met: "Just_numb", // return numb
+        numb_foo: 3,
+        dice: 10,
+        suffix: "",
+        squares_mana: false,
+        squares_mana_plus: false,
+      },
+    ],
+    details: "hellish_rebuke_details",
+  },
 
-            {
-                title: "some_title", // word from dic
-                subtitle: "some_subtitle", // word from dic
-                plus: false, 
-                base: 34, // number or formula
-                multiplicator: 2,
-                bonus: 2,
-                dice: null, // null or number
-                suffix: "foots",
-            },
-            
-            {
-                title: "some_title", //word from dic
-                subtitle: "some_subtitle", // word from dic 
-                plus: true,
-                base: 1, // number or formula
-                multiplicator: "level",
-                bonus: ["mastery",2,"stats.consitution.mod"],     // Formula: Value = base * multiplicator + bonus[0] + ... + bonus[n]
-                dice: 12, // null or number
-                suffix: "", // word from dic
-
-                squares_mana: false,
-                squares_mana_plus: false,
-            }
-        ],
-
-        details: "thaumaturgy_details",
-
-    },
-
-    thaumaturgy: {
-        slot: 0,
-        name: "thaumaturgy",
-        details: "thaumaturgy_details",
-        component: [
-            "verbal"
-        ],
-        school: "cantrip",
-        tags: [
-            "control",
-        ],
-    },
-
-    hellish_rebuke:{
-        slot: 0,
-        name: "hellish_rebuke",
-        details: "hellish_rebuke_details",
-        compomemt: [
-            "verbal",
-            "somatic",
-        ],
-
-        school: "evocation",
-
-        trial:{
-            stat: "dexterity",
-            complexity: 10,
+  fire_breath: {
+    name: "fire_breath",
+    lines: [
+        {
+          title: "damage",
+          subtitle: "fire_w",
+          plus: false,
+          foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
+          numb_foo: 2,
+          dice: 6,
+          suffix: "",
+          squares_mana: false,
+          squares_mana_plus: false,
         },
+      ],
+    details: "fire_breath_details"
+  },
 
-        damage: {
-            x:2,
-            dice:10,
+  cold_breath: {
+    name: "cold_breath",
+    lines: [
+        {
+          title: "damage",
+          subtitle: "cold_w",
+          plus: false,
+          foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
+          numb_foo: 2,
+          dice: 6,
+          suffix: "",
+          squares_mana: false,
+          squares_mana_plus: false,
         },
+      ],
+    details: "cold_breath_details"
+  },
 
-        gain: {
-            x:1,
-            dice:10,
+  electricity_breath: {
+    name: "electricity_breath",
+    lines: [
+        {
+          title: "damage",
+          subtitle: "electricity_w",
+          plus: false,
+          foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
+          numb_foo: 2,
+          dice: 6,
+          suffix: "",
+          squares_mana: false,
+          squares_mana_plus: false,
         },
-    },
+      ],
+    details: "electricity_breath_details"
+  },
 
-    fire_breath:{
-
-        name: "fire_breath",
-        details: "fire_breath_details",
-
-        compomemt: [
-            "verbal",
-        ],
-
-        school: "evocation",
-
-        trial:{
-            stat: "dexterity",
-            complexity: 10,
+  acid_breath: {
+    name: "acid_breath",
+    lines: [
+        {
+          title: "damage",
+          subtitle: "acid_w",
+          plus: false,
+          foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
+          numb_foo: 2,
+          dice: 6,
+          suffix: "",
+          squares_mana: false,
+          squares_mana_plus: false,
         },
+      ],
+    details: "acid_breath_details"
+  },
 
-        damage: {
-            x:2,
-            dice:6,
+  poison_breath: {
+    name: "poison_breath",
+    lines: [
+        {
+          title: "damage",
+          subtitle: "poison_w",
+          plus: false,
+          foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
+          numb_foo: 2,
+          dice: 6,
+          suffix: "",
+          squares_mana: false,
+          squares_mana_plus: false,
         },
+      ],
+    details: "poison_breath_details"
+  },
 
-        gain: {
-            x:1,
-            dice:6,
+  toy: {
+    name: "spell_toy",
+    details: "spell_toy_details",
+  },
+
+  lighter: {
+    name: "spell_lighter",
+    details: "spell_lighter_details",
+  },
+
+  music_box: {
+    name: "spell_music_box",
+    details: "spell_music_box_details",
+  },
+
+  small_illusion: {
+    name: "spell_small_illusion",
+    details: "spell_small_illusion_details",
+  },
+
+  enlargement: {
+    name: "spell_enlargement",
+    lines: [
+        {
+          title: "damage",
+          subtitle: "additional_m",
+          plus: false,
+          foo_met: "Just_numb", // return numb
+          numb_foo: 1,
+          dice: 4,
+          suffix: "",
+          squares_mana: false,
+          squares_mana_plus: false,
         },
-    },
+      ],
+    details: "spell_enlargement_details",
+  },
 
-    cold_breath:{
+  dancing_lights: {
+    name: "spell_dancing_lights",
+    details: "spell_dancing_lights_details"
+  },
 
-        name: "cold_breath",
-        details: "cold_breath_details",
+  invisibility: {
+    name: "spell_invisibility",
+    details: "spell_invisibility_details"
+  },
 
-        compomemt: [
-            "verbal",
-        ],
-
-        school: "evocation",
-
-        trial:{
-            stat: "constitution",
-            complexity: 10,
-        },
-
-        damage: {
-            x:2,
-            dice:6,
-        },
-
-        gain: {
-            x:1,
-            dice:6,
-        },
-    },
-
-    electricity_breath:{
-
-        name: "electricity_breath",
-        details: "electricity_breath_details",
-
-        compomemt: [
-            "verbal",
-        ],
-
-        school: "evocation",
-
-        trial:{
-            stat: "dexterity",
-            complexity: 10,
-        },
-
-        damage: {
-            x:2,
-            dice:6,
-        },
-
-        gain: {
-            x:1,
-            dice:6,
-        },
-    },
-
-    acid_breath:{
-
-        name: "acid_breath",
-        details: "acid_breath_details",
-
-        compomemt: [
-            "verbal",
-        ],
-
-        school: "evocation",
-
-        trial:{
-            stat: "dexterity",
-            complexity: 10,
-        },
-
-        damage: {
-            x:2,
-            dice:6,
-        },
-
-        gain: {
-            x:1,
-            dice:6,
-        },
-    },
-
-    poison_breath:{
-
-        name: "poison_breath",
-        details: "poison_breath_details",
-
-        compomemt: [
-            "verbal",
-        ],
-
-        school: "evocation",
-
-        trial:{
-            stat: "constitution",
-            complexity: 10,
-        },
-
-        damage: {
-            x:2,
-            dice:6,
-        },
-
-        gain: {
-            x:1,
-            dice:6,
-        },
-    },
-
-    toy:{
-        slot: 0,
-        name: "spell_toy",
-        details: "spell_toy_details",
-    },
-
-    lighter:{
-        slot: 0,
-        name: "spell_lighter",
-        details: "spell_lighter_details"
-    },
-
-    music_box:{
-        slot: 0,
-        name: "spell_music_box",
-        details: "spell_music_box_details",
-    },
-
-    small_illusion:{
-        slot:0,
-        name: "spell_small_illusion",
-        details: "spell_small_illusion_details",
-    },
-
-    enlargement:{
-        slot:0,
-        name: "spell_enlargement",
-        details: "spell_enlargement_details",
-        damage_additional: {
-            x:1,
-            dice:4,
-        },
-    },
-
-    dancing_lights: {
-        slot:0,
-        name: "spell_dancing_lights",
-        details: "spell_dancing_lights_details",
-        components: [
-            "verbal",
-            "somatic",
-            "material +"
-        ],
-    },
-
-    invisibility:{
-        slot:2,
-        name: "spell_invisibility",
-        details: "spell_invisibility_details",
-    },
-
-    darkness : {
-        slot: 2,
-        name: "darkness",
-        school: "evocation",
-        details: "darkness_details",
-
-        components: [
-            "verbal",
-            "material +"
-        ],
-    },
-
-    bird_breath:{
-
-        name: "bird_breath",
-        
-        lines: [
-
-            {
-                title: "some_title", // word from dic
-                subtitle: "some_subtitle", // word from dic
-                plus: false, 
-                base: 34, // number or formula
-                multiplicator: 2,
-                bonus: 2,
-                dice: null, // null or number
-                suffix: "foots",
-            },
-            
-            {
-                title: "some_title", //word from dic
-                subtitle: "some_subtitle", // word from dic 
-                plus: true,
-                base: 1, // number or formula
-                multiplicator: "level",
-                bonus: ["mastery",2,"stats.consitution.mod"],     // Formula: Value = base * multiplicator + bonus[0] + ... + bonus[n]
-                dice: 12, // null or number
-                suffix: "", // word from dic
-
-                squares_mana: false,
-                squares_mana_plus: false,
-            }
-        ],
-
-        details: "bird_breath_details",
-
-    },
-}
+  darkness: {
+    name: "darkness",
+    details: "darkness_details"
+  },
+};
