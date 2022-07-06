@@ -33,6 +33,42 @@ class Spell {
 
 export default {
 
+    bird:{
+
+        name: "thaumaturgy",
+        
+        lines: [
+
+            {
+                title: "some_title", // word from dic
+                subtitle: "some_subtitle", // word from dic
+                plus: false, 
+                base: 34, // number or formula
+                multiplicator: 2,
+                bonus: 2,
+                dice: null, // null or number
+                suffix: "foots",
+            },
+            
+            {
+                title: "some_title", //word from dic
+                subtitle: "some_subtitle", // word from dic 
+                plus: true,
+                base: 1, // number or formula
+                multiplicator: "level",
+                bonus: ["mastery",2,"stats.consitution.mod"],     // Formula: Value = base * multiplicator + bonus[0] + ... + bonus[n]
+                dice: 12, // null or number
+                suffix: "", // word from dic
+
+                squares_mana: false,
+                squares_mana_plus: false,
+            }
+        ],
+
+        details: "thaumaturgy_details",
+
+    },
+
     thaumaturgy: {
         slot: 0,
         name: "thaumaturgy",
@@ -286,9 +322,6 @@ export default {
                 bonus: 2,
                 dice: null, // null or number
                 suffix: "foots",
-                squares_mana_solid: 2, // number or formula
-                squares_mana_outline: 2, // number or formula
-                squares_mana_plus: true,
             },
             
             {
@@ -300,9 +333,9 @@ export default {
                 bonus: ["mastery",2,"stats.consitution.mod"],     // Formula: Value = base * multiplicator + bonus[0] + ... + bonus[n]
                 dice: 12, // null or number
                 suffix: "", // word from dic
-                squares_mana_solid: 2, // number or formula
-                squares_mana_outline: 2, // number or formula
-                squares_mana_plus: true,
+
+                squares_mana: false,
+                squares_mana_plus: false,
             }
         ],
 
