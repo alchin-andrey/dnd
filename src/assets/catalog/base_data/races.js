@@ -590,7 +590,7 @@ export default {
     qualities: { speed: 25 },
 
     proficiencies: {
-      weaponrys: [
+      weapons: [
         weaponry.battle_axes,
         weaponry.hand_axes,
         weaponry.battle_hammers,
@@ -1249,7 +1249,7 @@ export default {
           },
 
           proficiencies: {
-            weaponrys: [
+            weapons: [
               weaponry.long_swords,
               weaponry.short_swords,
               weaponry.long_bows,
@@ -1300,7 +1300,7 @@ export default {
           },
 
           proficiencies: {
-            weaponrys: [
+            weapons: [
               weaponry.long_swords,
               weaponry.short_swords,
               weaponry.long_bows,
@@ -1355,7 +1355,7 @@ export default {
           },
 
           proficiencies: {
-            weaponrys: [
+            weapons: [
               weaponry.rapires,
               weaponry.short_swords,
               weaponry.hand_arbalets,
