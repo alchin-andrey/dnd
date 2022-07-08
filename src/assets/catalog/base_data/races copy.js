@@ -4,7 +4,7 @@ import gender from "./genders.js";
 import lang from "./languages.js";
 import weapon from "./weaponry.jss";
 import tool from "./tools.js";
-import armor from "./armor.js";
+import armor from "./armory.js";
 
 export default {
   halfling: {

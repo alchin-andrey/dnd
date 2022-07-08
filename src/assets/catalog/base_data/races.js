@@ -4,7 +4,7 @@ import gender from "./genders.js";
 import lang from "./languages.js";
 import weaponry from "./weaponry.js";
 import tool from "./tools.js";
-import armor from "./armor.js";
+import armory from "./armory.js";
 
 export default {
   halfling: {
@@ -442,7 +442,7 @@ export default {
           qualities: { vision_night: 60 },
 
           proficiencies: {
-            armor: [armor.light, armor.medium],
+            armor: [armory.light, armory.medium],
           },
         },
 
