@@ -2,7 +2,7 @@ import color from "./colors.js";
 import spells from "./spells.js";
 import gender from "./genders.js";
 import lang from "./languages.js";
-import weapon from "./weapons.js";
+import weaponry from "./weaponry.js";
 import tool from "./tools.js";
 import armor from "./armor.js";
 
@@ -590,11 +590,11 @@ export default {
     qualities: { speed: 25 },
 
     proficiencies: {
-      weapons: [
-        weapon.battle_axes,
-        weapon.hand_axes,
-        weapon.battle_hammers,
-        weapon.light_hammers,
+      weaponrys: [
+        weaponry.battle_axes,
+        weaponry.hand_axes,
+        weaponry.battle_hammers,
+        weaponry.light_hammers,
       ],
       tools: [tool.blacksmith, tool.brewer, tool.mason],
       languages: [lang.common, lang.dwarf],
@@ -1249,11 +1249,11 @@ export default {
           },
 
           proficiencies: {
-            weapons: [
-              weapon.long_swords,
-              weapon.short_swords,
-              weapon.long_bows,
-              weapon.short_bows,
+            weaponrys: [
+              weaponry.long_swords,
+              weaponry.short_swords,
+              weaponry.long_bows,
+              weaponry.short_bows,
             ],
             languages: [],
           },
@@ -1300,11 +1300,11 @@ export default {
           },
 
           proficiencies: {
-            weapons: [
-              weapon.long_swords,
-              weapon.short_swords,
-              weapon.long_bows,
-              weapon.short_bows,
+            weaponrys: [
+              weaponry.long_swords,
+              weaponry.short_swords,
+              weaponry.long_bows,
+              weaponry.short_bows,
             ],
           },
 
@@ -1355,10 +1355,10 @@ export default {
           },
 
           proficiencies: {
-            weapons: [
-              weapon.rapires,
-              weapon.short_swords,
-              weapon.hand_arbalets,
+            weaponrys: [
+              weaponry.rapires,
+              weaponry.short_swords,
+              weaponry.hand_arbalets,
             ],
           },
           
@@ -1912,7 +1912,7 @@ export default {
       {
         type: "plus",
         keyword: "double_dice_damage",
-        details: "crit_hand_weapon",
+        details: "crit_hand_weaponry",
       },
       {
         type: "plus",

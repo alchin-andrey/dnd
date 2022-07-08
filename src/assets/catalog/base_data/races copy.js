@@ -2,7 +2,7 @@ import color from "./colors.js";
 import spells from "./spells.js";
 import gender from "./genders.js";
 import lang from "./languages.js";
-import weapon from "./weapons.js";
+import weapon from "./weaponry.jss";
 import tool from "./tools.js";
 import armor from "./armor.js";
 
