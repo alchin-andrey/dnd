@@ -69,6 +69,7 @@ export default {
             '• Обман\n' +
             '• Запугивание',
 
+            saving: "испытание",
 
     //Genders
 
@@ -310,7 +311,13 @@ export default {
                 armor:"доспехи",
 
                     armor_light: armor.light,
+                    armor_light_details: armor.light_details,
+
                     armor_medium: armor.medium,
+                    armor_medium_details: armor.medium_details,
+
+                    armor_shields: armor.shields,
+                    armor_shields_details: armor.shields_details,
                     // добавить описания
 
                 weapons:"оружие",
@@ -344,6 +351,12 @@ export default {
 
                     weapons_hand_arbalets: weapons.hand_arbalets,
                     weapons_hand_arbalets_details: weapons.hand_arbalets_details,
+
+                    weapons_simple: weapons.simple,
+                    weapons_simple_details: weapons.simple_details,
+
+                    weapons_military: weapons.military,
+                    weapons_military_details: weapons.military_details,
 
                 tools:"инструменты",
 
@@ -478,7 +491,7 @@ export default {
                 trans: "транс",
                 stealth_in_wild: "маскировка в дикой местности",
                 knowledge: "знание",
-                double_dice_damage:"2× Кость урона",
+                double_dice_damage:"+1 Кость урона",
                 persistence: "стойкость",
 
                 any_dice_1:"любого кубика при “1”",
@@ -511,7 +524,12 @@ export default {
                 stealth_in_wild_details:"— даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
                 any_cantrip_wizard: "1 любого заговора Волшебника",
                 crit_hand_weapon: "при крите рукопашным оружием",
-                persistence_details:"— когда HP опускается до 0 и вы при этом не убиты, оно становится = 1",
+                persistence_details: "— когда HP опускается до 0 и вы при этом не убиты, оно становится = 1",
+
+                no_armor_protection: "защита без доспехов",
+                armor_constitution: "— броня за счет Телосложения",
+
+
 
             //Умения - активньіе умения без урона
             abilities:"умения",
@@ -881,5 +899,7 @@ export default {
 
             spell_poison_breath: spells.poison_breath,
             spell_poison_breath_details: spells.poison_breath_details,
+
+            spell_fury: spells.fury,
 
 }

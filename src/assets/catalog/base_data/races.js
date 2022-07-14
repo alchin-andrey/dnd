@@ -1912,7 +1912,7 @@ export default {
       {
         type: "plus",
         keyword: "double_dice_damage",
-        details: "crit_hand_weaponry",
+        details: "crit_hand_weapon",
       },
       {
         type: "plus",

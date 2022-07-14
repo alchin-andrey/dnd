@@ -51,5 +51,14 @@ export default {
         details:"weapons_hand_arbalets_details",
     },
 
+    simple:{
+        name:"weapons_simple",
+        details:"weapons_simple_details",
+    },
+
+    military:{
+        name:"weapons_military",
+        details:"weapons_military_details",
+    }
 
 }
