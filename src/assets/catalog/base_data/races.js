@@ -32,7 +32,7 @@ export default {
           stats: { charisma: 1 },
 
           // ТОЛЬКО ДЛЯ ОТЛАДКИ
-          hp_bonus: [1,1],
+          // hp_bonus: [1,1],
           // ТОЛЬКО ДЛЯ ОТЛАДКИ
 
           fines: [
@@ -141,9 +141,9 @@ export default {
       },
 
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      custom_stats: [2, 1], // [колво, инкремент]
-      custom_skills: [2, "mastery"],
-      custom_languages: [2],
+      // custom_stats: [2, 1], // [колво, инкремент]
+      // custom_skills: [2, "mastery"],
+      // custom_languages: [2],
     },
 
     stats: { dexterity: 2 },
@@ -177,21 +177,21 @@ export default {
     spells: [
       //ТОЛЬКО ДЛЯ ОТЛАДКИ
 
-      {
-        level: 1,
-        spell: spells.thaumaturgy,
-      },
+      // {
+      //   level: 1,
+      //   spell: spells.thaumaturgy,
+      // },
 
-      {
-        level: 3,
-        spell: spells.hellish_rebuke,
-        gain: 2,
-      },
+      // {
+      //   level: 3,
+      //   spell: spells.hellish_rebuke,
+      //   gain: 2,
+      // },
 
-      {
-        level: 5,
-        spell: spells.darkness,
-      },
+      // {
+      //   level: 5,
+      //   spell: spells.darkness,
+      // },
     ],
   },
 
