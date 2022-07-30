@@ -558,7 +558,7 @@ export default {
             
             //Halfling
             
-            halfling:"полурослик",                   
+            halfling:"хафлинг",                   
             halfling_details: races.halfling,
 
             stout:"коренастый",
