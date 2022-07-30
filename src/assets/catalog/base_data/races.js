@@ -199,6 +199,9 @@ export default {
     name: "gnome",
     details: "gnome_details",
 
+    noimg_ethnos: true,
+    ethnos_preview: [300,0],
+
     settings: {
       ethnos: {
         rock: {
@@ -211,6 +214,7 @@ export default {
           color: {
             skin: [color[2][1], color[2][2], color[2][3], color[2][4]],
             eyes: [
+              color[7][4],
               color[0][1],
               color[2][0],
               color[2][1],
@@ -225,7 +229,7 @@ export default {
               color[7][0],
               color[7][1],
             ],
-            hair: [color[2][2], color[2][3]],
+            hair: [color[2][3], color[2][2]],
           },
 
           stats: { constitution: 1 },
@@ -253,6 +257,33 @@ export default {
             {
               level: 1,
               spell: spells.music_box,
+            },
+          ],
+        },
+
+        forest: {
+          name: "forest",
+          details: "forest_gnome_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503211188",
+          // link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][2]],
+            hair: [color[2][5]],
+          },
+
+          stats: { dexterity: 1 },
+          qualities: { vision_night: 60 },
+
+          proficiencies: {
+            languages: [lang.animal],
+          },
+
+          spells: [
+            {
+              level: 1,
+              spell: spells.small_illusion,
             },
           ],
         },
@@ -298,32 +329,6 @@ export default {
           ],
         },
 
-        forest: {
-          name: "forest",
-          details: "forest_gnome_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503211188",
-          // link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[8][2]],
-            hair: [color[2][5]],
-          },
-
-          stats: { dexterity: 1 },
-          qualities: { vision_night: 60 },
-
-          proficiencies: {
-            languages: [lang.animal],
-          },
-
-          spells: [
-            {
-              level: 1,
-              spell: spells.small_illusion,
-            },
-          ],
-        },
       },
 
       gender: gender,
