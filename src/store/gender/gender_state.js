@@ -21,7 +21,7 @@ export default function () {
             
             { name: "undecided", details: "undecided_details",},
             { name: "cisgender", details: "cisgender_details",},
-            { name: "transvestit", details: "transsexual_details",},
+            { name: "transvestit", details: "transvestit_details",},
             
             { name: "demigender", details: "demigender_details",},
             { name: "demitrans", details: "demitrans_details",},

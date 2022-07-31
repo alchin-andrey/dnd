@@ -28,9 +28,9 @@
         </my-button-gender>
       </div>
 
-      <div v-if="showFeel" class="gender__flex-1">
+      <div v-if="showFeel" class="gender__flex-3">
         <my-button-gender
-          v-for="item in arr.slice(5, 6)"
+          v-for="item in arr.slice(5, 8)"
           :key="item.name"
           @mouseover="hover(item)"
           @mouseleave="hoverStop()"
@@ -43,7 +43,7 @@
 
       <div v-if="showFeel" class="gender__flex-2">
         <my-button-gender
-          v-for="item in arr.slice(6, 8)"
+          v-for="item in arr.slice(8, 10)"
           :key="item.name"
           @mouseover="hover(item)"
           @mouseleave="hoverStop()"
@@ -110,7 +110,7 @@ export default {
 
     getSlice() {
       if (this.showFeel) {
-        return this.arr.slice(8, 11);
+        return this.arr.slice(10, 13);
       } else {
         return this.arr.slice(5, 8);
       }
