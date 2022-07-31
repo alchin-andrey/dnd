@@ -7,200 +7,12 @@ import tool from "./tools.js";
 import armory from "./armory.js";
 
 export default {
-  halfling: {
-    name: "halfling",
-    details: "halfling_details",
-
-    ethnos_preview: [300,0],
-
-    settings: {
-      ethnos: {
-
-        lightfoot: {
-          name: "lightfoot",
-          details: "lightfoot_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503210924",
-          link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[2][5]],
-            hair: [color[0][6]],
-          },
-
-          stats: { charisma: 1 },
-
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
-          // hp_bonus: [1,1],
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "stealth",
-              details: "behind_bigger_than_mid",
-            },
-          ],
-        },
-         
-        stout: {
-          name: "stout",
-          details: "stout_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503185616",
-          link_female: "https://www.heroforge.com/load_config%3D503211377",
-
-          color: {
-            skin: [color[2][0]],
-            eyes: [color[4][5]],
-            hair: [color[1][4]],
-          },
-
-          stats: { constitution: 1 },
-
-          fines: [
-            {
-              type: "advantage",
-              keyword: "advantage",
-              details: "poison_against",
-            },
-
-            {
-              type: "resistance",
-              keyword: "resistance",
-              details: "poison_damage",
-            },
-          ],
-        },
-
-        ghost: {
-          name: "ghost",
-          details: "ghost_halfling_details",
-          link_male: "https://www.heroforge.com/load_config%3D503211188",
-          link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[8][2]],
-            hair: [color[2][5]],
-          },
-
-          stats: { wisdom: 1 },
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "telepathy",
-              details: "known_languages",
-            },
-          ],
-
-          rare: "rare",
-        },
-      },
-
-      gender: gender,
-      color: {
-        skin: [
-          color[1][0],
-          color[2][0],
-          color[2][1],
-          color[2][2],
-          color[2][3],
-          color[2][4],
-          color[2][5],
-          color[2][6],
-          color[1][6],
-          color[0][6],
-          color[3][0],
-          color[12][0],
-          color[11][0],
-          color[10][0],
-        ],
-        eyes: [color[2][4], color[2][6]],
-        hair: [color[2][4], color[2][6], color[1][5], color[1][6]],
-      },
-
-      age: {
-        baby: 10,
-        young: 20,
-        mature: 45,
-        old: 100,
-        oldest: 150,
-      },
-
-      height: {
-        min: 90,
-        max: 120,
-      },
-
-      weight: {
-        min: 15,
-        max: 20,
-      },
-
-      // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      // custom_stats: [2, 1], // [колво, инкремент]
-      // custom_skills: [2, "mastery"],
-      // custom_languages: [2],
-    },
-
-    stats: { dexterity: 2 },
-
-    qualities: { speed: 25 },
-
-    proficiencies: {
-      languages: [lang.common, lang.halfling],
-    },
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "fear_against",
-      },
-
-      {
-        type: "plus",
-        keyword: "rethrow",
-        details: "any_dice_1",
-      },
-
-      {
-        type: "plus",
-        keyword: "slippage",
-        details: "among_bigger_than_mid",
-      },
-    ],
-
-    spells: [
-      //ТОЛЬКО ДЛЯ ОТЛАДКИ
-
-      // {
-      //   level: 1,
-      //   spell: spells.thaumaturgy,
-      // },
-
-      // {
-      //   level: 3,
-      //   spell: spells.hellish_rebuke,
-      //   gain: 2,
-      // },
-
-      // {
-      //   level: 5,
-      //   spell: spells.darkness,
-      // },
-    ],
-  },
-
   gnome: {
     name: "gnome",
     details: "gnome_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [300,0],
+    ethnos_preview: [300,-24],
 
     settings: {
       ethnos: {
@@ -402,9 +214,200 @@ export default {
     ],
   },
 
+  halfling: {
+    name: "halfling",
+    details: "halfling_details",
+
+    ethnos_preview: [300,-24],
+
+    settings: {
+      ethnos: {
+
+        lightfoot: {
+          name: "lightfoot",
+          details: "lightfoot_halfling_details",
+
+          link_male: "https://www.heroforge.com/load_config%3D503210924",
+          link_female: "https://www.heroforge.com/load_config%3D503211388",
+
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
+          stats: { charisma: 1 },
+
+          // ТОЛЬКО ДЛЯ ОТЛАДКИ
+          // hp_bonus: [1,1],
+          // ТОЛЬКО ДЛЯ ОТЛАДКИ
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "stealth",
+              details: "behind_bigger_than_mid",
+            },
+          ],
+        },
+         
+        stout: {
+          name: "stout",
+          details: "stout_halfling_details",
+
+          link_male: "https://www.heroforge.com/load_config%3D503185616",
+          link_female: "https://www.heroforge.com/load_config%3D503211377",
+
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[4][5]],
+            hair: [color[1][4]],
+          },
+
+          stats: { constitution: 1 },
+
+          fines: [
+            {
+              type: "advantage",
+              keyword: "advantage",
+              details: "poison_against",
+            },
+
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "poison_damage",
+            },
+          ],
+        },
+
+        ghost: {
+          name: "ghost",
+          details: "ghost_halfling_details",
+          link_male: "https://www.heroforge.com/load_config%3D503211188",
+          link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][2]],
+            hair: [color[2][5]],
+          },
+
+          stats: { wisdom: 1 },
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "telepathy",
+              details: "known_languages",
+            },
+          ],
+
+          rare: "rare",
+        },
+      },
+
+      gender: gender,
+      color: {
+        skin: [
+          color[1][0],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[1][6],
+          color[0][6],
+          color[3][0],
+          color[12][0],
+          color[11][0],
+          color[10][0],
+        ],
+        eyes: [color[2][4], color[2][6]],
+        hair: [color[2][4], color[2][6], color[1][5], color[1][6]],
+      },
+
+      age: {
+        baby: 10,
+        young: 20,
+        mature: 45,
+        old: 100,
+        oldest: 150,
+      },
+
+      height: {
+        min: 90,
+        max: 120,
+      },
+
+      weight: {
+        min: 15,
+        max: 20,
+      },
+
+      // ТОЛЬКО ДЛЯ ОТЛАДКИ
+      // custom_stats: [2, 1], // [колво, инкремент]
+      // custom_skills: [2, "mastery"],
+      // custom_languages: [2],
+    },
+
+    stats: { dexterity: 2 },
+
+    qualities: { speed: 25 },
+
+    proficiencies: {
+      languages: [lang.common, lang.halfling],
+    },
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "fear_against",
+      },
+
+      {
+        type: "plus",
+        keyword: "rethrow",
+        details: "any_dice_1",
+      },
+
+      {
+        type: "plus",
+        keyword: "slippage",
+        details: "among_bigger_than_mid",
+      },
+    ],
+
+    spells: [
+      //ТОЛЬКО ДЛЯ ОТЛАДКИ
+
+      // {
+      //   level: 1,
+      //   spell: spells.thaumaturgy,
+      // },
+
+      // {
+      //   level: 3,
+      //   spell: spells.hellish_rebuke,
+      //   gain: 2,
+      // },
+
+      // {
+      //   level: 5,
+      //   spell: spells.darkness,
+      // },
+    ],
+  },
+
   dwarf: {
     name: "dwarf",
     details: "dwarf_details",
+
+    noimg_ethnos: true,
+    ethnos_preview: [345,-30],
 
     settings: {
       ethnos: {
@@ -432,6 +435,7 @@ export default {
               color[2][5],
             ],
             hair: [
+              color[0][6],
               color[2][1],
               color[3][1],
               color[1][3],
@@ -449,6 +453,40 @@ export default {
           proficiencies: {
             armor: [armory.light, armory.medium],
           },
+        },
+
+        hill: {
+          name: "hill",
+          details: "hill_dwarf_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503211188",
+          // link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [
+              color[1][4],
+              color[1][5],
+              color[2][4],
+              color[2][5],
+              color[2][6],
+              color[1][6],
+              color[0][6],
+            ],
+            eyes: [color[2][4], color[2][5]],
+            hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
+          },
+
+          stats: { wisdom: 1 },
+          qualities: { vision_night: 60 },
+
+          hp_bonus: [1,1],
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "plus_1_to_maxhp",
+              details: "for_each_lvl_incl_1",
+            },
+          ],
         },
 
         grey: {
@@ -500,40 +538,6 @@ export default {
             {
               level: 5,
               spell: spells.invisibility,
-            },
-          ],
-        },
-
-        hill: {
-          name: "hill",
-          details: "hill_dwarf_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503211188",
-          // link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [
-              color[1][4],
-              color[1][5],
-              color[2][4],
-              color[2][5],
-              color[2][6],
-              color[1][6],
-              color[0][6],
-            ],
-            eyes: [color[2][4], color[2][5]],
-            hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
-          },
-
-          stats: { wisdom: 1 },
-          qualities: { vision_night: 60 },
-
-          hp_bonus: [1,1],
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "plus_1_to_maxhp",
-              details: "for_each_lvl_incl_1",
             },
           ],
         },
