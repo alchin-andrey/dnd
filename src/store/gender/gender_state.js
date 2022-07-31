@@ -15,11 +15,17 @@ export default function () {
             { name: "androgin", details: "androgin_details",},
             { name: "pangender", details: "pangender_details",},
             { name: "gender_fluid", details: "gender_fluid_details",},
-            { name: "demigender", details: "demigender_details",},
-            { name: "bigender", details: "bigender_details",},
-            { name: "cisgender", details: "cisgender_details",},
-            { name: "undecided", details: "undecided_details",},
+
             { name: "queer", details: "queer_details",},
+            { name: "bigender", details: "bigender_details",},
+            
+            { name: "undecided", details: "undecided_details",},
+            { name: "cisgender", details: "cisgender_details",},
+            { name: "transvestit", details: "transsexual_details",},
+            
+            { name: "demigender", details: "demigender_details",},
+            { name: "demitrans", details: "demitrans_details",},
+
             { name: "neutral_gender", details: "neutral_gender_details",},
             { name: "transsexual", details: "transsexual_details",},
             { name: "other_gender", details: "other_gender_details",},
