@@ -640,36 +640,6 @@ export default {
     settings: {
       ethnos: {
 
-        illuskian: {
-          color: {
-            skin: [color[2][0]],
-            eyes: [color[7][3]],
-            hair: [color[1][4], color[0][6], color[2][2]],
-          },
-
-          name: "illuskian",
-          details: "illuskian_details",
-
-          proficiencies: {
-            languages: [lang.illuskian],
-          },
-        },
-
-        ffolk: {
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[7][3]],
-            hair: [color[3][5]],
-          },
-
-          name: "ffolk",
-          details: "ffolk_details",
-
-          proficiencies: {
-            languages: [lang.vaelan],
-          },
-        },
-
         damarian: {
           color: {
             skin: [
@@ -688,6 +658,21 @@ export default {
 
           proficiencies: {
             languages: [lang.damarian],
+          },
+        },
+
+        ffolk: {
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[7][3]],
+            hair: [color[3][5]],
+          },
+
+          name: "ffolk",
+          details: "ffolk_details",
+
+          proficiencies: {
+            languages: [lang.vaelan],
           },
         },
 
@@ -945,6 +930,21 @@ export default {
             languages: [lang.rushum],
           },
         },
+
+        illuskian: {
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[7][3]],
+            hair: [color[1][4], color[0][6], color[2][2]],
+          },
+
+          name: "illuskian",
+          details: "illuskian_details",
+
+          proficiencies: {
+            languages: [lang.illuskian],
+          },
+        },
       },
 
       gender: gender,
@@ -1077,6 +1077,7 @@ export default {
     details: "halfelf_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [390,-36],
 
     settings: {
       ethnos: {
@@ -1228,6 +1229,9 @@ export default {
   elf: {
     name: "elf",
     details: "elf_details",
+
+    noimg_ethnos: true,
+    ethnos_preview: [390,-36],
 
     settings: {
       ethnos: {
