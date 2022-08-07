@@ -1628,6 +1628,7 @@ export default {
     details: "tiefling_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [390,-36],
 
     settings: {
       ethnos: {
@@ -1843,6 +1844,7 @@ export default {
     details:"halforc_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [435,-42],
 
     settings: {
       ethnos: {
@@ -1940,6 +1942,7 @@ export default {
     details:"dragonborn_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [435,-42],
 
     settings: {
       ethnos: {
