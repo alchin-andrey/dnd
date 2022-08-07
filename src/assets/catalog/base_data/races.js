@@ -1947,37 +1947,6 @@ export default {
     settings: {
       ethnos: {
 
-        red_dragonborn: {
-          
-          name:"red_dragonborn",
-          details:"red_dragonborn_details",
-
-          color: {
-            skin: [
-              color[1][4],
-            ],
-            eyes: [
-              color[1][3],
-            ],
-            hair: [
-              color[1][5],
-            ],
-          },
-          fines: [
-            {
-              type: "resistance",
-              keyword: "resistance",
-              details: "fire_damage",
-            },
-          ],
-          spells: [
-            {
-              level: 1,
-              spell: spells.fire_breath,
-            },
-          ],
-        },
-
         brass_dragonborn: {
           
           name:"brass_dragonborn",
@@ -1985,13 +1954,13 @@ export default {
 
           color: {
             skin: [
-              color[3][4],
+              color[2][1],
             ],
             eyes: [
-              color[1][3],
+              color[3][0],
             ],
             hair: [
-              color[1][4],
+              color[2][6],
             ],
           },
           fines: [
@@ -2019,10 +1988,41 @@ export default {
               color[3][5],
             ],
             eyes: [
+              color[3][4],
+            ],
+            hair: [
+              color[2][6],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "fire_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.fire_breath,
+            },
+          ],
+        },
+
+        red_dragonborn: {
+          
+          name:"red_dragonborn",
+          details:"red_dragonborn_details",
+
+          color: {
+            skin: [
+              color[1][4],
+            ],
+            eyes: [
               color[1][3],
             ],
             hair: [
-              color[1][4],
+              color[1][5],
             ],
           },
           fines: [
