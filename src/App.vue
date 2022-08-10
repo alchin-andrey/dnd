@@ -14,7 +14,7 @@
         >
         </my-slider>
         <!-- <div class="main_menu"> -->
-        <button @click="plusLvl()" type="">Увеличить Level на +1</button>
+        <!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
         <div class="selection_menu">
           <my-controller
             @click="show('shown_lvl')"
@@ -58,7 +58,7 @@
           </my-selection>
         </div>
 
-        <button @click="plusGrow()" type="">Увеличить рост +5</button>
+        <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
 
         <div class="selection_menu">
           <my-controller
@@ -116,11 +116,11 @@
           </my-selection>
         </div>
         <!-- </div> -->
-        <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>
+        <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
         <!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
-        <button @click="plus()" type="">
-          Увеличить входящий параметр на +1
-        </button>
+        <!-- <button @click="plus()" type=""> -->
+          <!-- Увеличить входящий параметр на +1 -->
+        <!-- </button> -->
       </div>
 
       <my-button
