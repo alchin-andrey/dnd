@@ -196,4 +196,8 @@ export default {
     name: "darkness",
     details: "darkness_details"
   },
+
+  fury : {
+    
+  },
 };

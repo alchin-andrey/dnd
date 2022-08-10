@@ -53,6 +53,8 @@ export default {
           //spells.fury
         ],
       },
+      //2
+      {},
     ],
 
     subclass_level: 3,
