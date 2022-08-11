@@ -16,12 +16,12 @@
         <!-- <div class="main_menu"> -->
         <!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
         <div class="selection_menu">
-          <my-controller
+          <!-- <my-controller
             @click="show('shown_lvl')"
             :active="race_page.shown_lvl"
             title="level"
             :value="MY.level"
-          ></my-controller>
+          ></my-controller> -->
           <my-selection
             @click="show('shown_ethnos')"
             :active="race_page.shown_ethnos"
@@ -29,6 +29,41 @@
             :type="MY.ethnos.name"
             :rare="MY.ethnos.rare"
           ></my-selection>
+        </div>
+
+        <div class="selection_menu"
+        v-if="MY.race.settings.custom_stats || MY.race.settings.custom_skills || MY.race.settings.custom_languages || MY.ethnos.custom_languages"
+        >
+          <my-selection
+            v-if="MY.race.settings.custom_stats"
+            @click="show('shown_characteristics')"
+            :active="race_page.shown_characteristics"
+            title="stats"
+            :type_arr="race_page.extra.stats"
+          ></my-selection>
+          <my-selection
+            v-if="MY.race.settings.custom_skills"
+            @click="show('shown_skills')"
+            :active="race_page.shown_skills"
+            title="skills"
+            :type_arr="race_page.extra.skills"
+          >
+          </my-selection>
+          <my-selection
+            v-if="
+              MY.race.settings.custom_languages || MY.ethnos.custom_languages
+            "
+            @click="show('shown_languages')"
+            :active="race_page.shown_languages"
+            title="languages"
+            :type_arr="Lang_Extra"
+          >
+          </my-selection>
+        </div>
+
+        <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
+
+        <div class="selection_menu">
           <my-selection
             @click="show('shown_gender')"
             :active="race_page.shown_gender"
@@ -56,11 +91,6 @@
             :type="getCharColor('hair').name"
           >
           </my-selection>
-        </div>
-
-        <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
-
-        <div class="selection_menu">
           <my-controller
             @click="show('shown_age')"
             :active="race_page.shown_age"
@@ -86,34 +116,6 @@
             note=""
           >
           </my-controller>
-        </div>
-
-        <div class="selection_menu">
-          <my-selection
-            v-if="MY.race.settings.custom_stats"
-            @click="show('shown_characteristics')"
-            :active="race_page.shown_characteristics"
-            title="stats"
-            :type_arr="race_page.extra.stats"
-          ></my-selection>
-          <my-selection
-            v-if="MY.race.settings.custom_skills"
-            @click="show('shown_skills')"
-            :active="race_page.shown_skills"
-            title="skills"
-            :type_arr="race_page.extra.skills"
-          >
-          </my-selection>
-          <my-selection
-            v-if="
-              MY.race.settings.custom_languages || MY.ethnos.custom_languages
-            "
-            @click="show('shown_languages')"
-            :active="race_page.shown_languages"
-            title="languages"
-            :type_arr="Lang_Extra"
-          >
-          </my-selection>
         </div>
         <!-- </div> -->
         <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
