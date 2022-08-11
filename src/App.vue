@@ -519,7 +519,7 @@ export default {
     this.getExtra(this.Stats_Pass, "stats");
     this.getExtra(this.Skills_Pass, "skills");
     this.getExtra(this.Lang_Pass, "languages");
-    // console.log(this[this.foo_met](this.numb_foo));
+    console.log(this[this.foo_met](this.numb_foo));
   },
 
   computed: {
