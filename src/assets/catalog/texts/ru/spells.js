@@ -99,3 +99,6 @@ export const poison_breath =
 
 export const poison_breath_details =
 'Конус 15 футов. Испытание Телосложения.';
+
+export const fury = 
+'Ярость';

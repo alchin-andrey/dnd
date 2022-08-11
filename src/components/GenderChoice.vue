@@ -72,9 +72,9 @@
           </my-button-gender>
       </div>
 
-      <div class="gender__flex-1">
+      <div class="gender__flex-3">
           <my-button-gender
-            v-for="item in feel_kay.slice(5, 6)"
+            v-for="item in feel_kay.slice(5, 8)"
           :key="item"
             @click="getFeelName(item)"
             :img="item"
@@ -86,7 +86,7 @@
 
       <div class="gender__flex-2">
           <my-button-gender
-            v-for="item in feel_kay.slice(6, 8)"
+            v-for="item in feel_kay.slice(8, 10)"
           :key="item"
             @click="getFeelName(item)"
             :img="item"
@@ -98,7 +98,7 @@
 
       <div class="gender__flex-3">
           <my-button-gender
-            v-for="item in feel_kay.slice(8, 11)"
+            v-for="item in feel_kay.slice(10, 13)"
           :key="item"
             @click="getFeelName(item)"
             :img="item"

@@ -29,4 +29,10 @@ export const weapons = {
     hand_arbalets: "ручные арбалеты",
     hand_arbalets_details: "—",
 
+    simple: "простое",
+    simple_details: "—",
+
+    military: "воинское",
+    military_details: "—",
+
 }

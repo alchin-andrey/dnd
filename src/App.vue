@@ -14,7 +14,7 @@
         >
         </my-slider>
         <!-- <div class="main_menu"> -->
-        <button @click="plusLvl()" type="">Увеличить Level на +1</button>
+        <!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
         <div class="selection_menu">
           <my-controller
             @click="show('shown_lvl')"
@@ -29,66 +29,11 @@
             :type="MY.ethnos.name"
             :rare="MY.ethnos.rare"
           ></my-selection>
-          <my-selection
-            @click="show('shown_gender')"
-            :active="race_page.shown_gender"
-            title="gender"
-            :type="MY.gender.phisiological"
-          ></my-selection>
-          <my-selection
-            @click="show('shown_skin_color', 'skin')"
-            :active="race_page.shown_skin_color"
-            title="color_skin"
-            :type="getCharColor('skin').name"
-          >
-          </my-selection>
-          <my-selection
-            @click="show('shown_eyes_color', 'eyes')"
-            :active="race_page.shown_eyes_color"
-            title="color_eyes"
-            :type="getCharColor('eyes').name"
-          >
-          </my-selection>
-          <my-selection
-            @click="show('shown_hair_color', 'hair')"
-            :active="race_page.shown_hair_color"
-            title="color_hair"
-            :type="getCharColor('hair').name"
-          >
-          </my-selection>
         </div>
 
-        <button @click="plusGrow()" type="">Увеличить рост +5</button>
-
-        <div class="selection_menu">
-          <my-controller
-            @click="show('shown_age')"
-            :active="race_page.shown_age"
-            title="age"
-            :value="race_page.age"
-            age
-            note="Взрослый"
-          ></my-controller>
-          <my-controller
-            @click="show('shown_growth')"
-            :active="race_page.shown_growth"
-            title="height"
-            :value="Char_Height"
-            unit="cm"
-            note="Маленький"
-          ></my-controller>
-          <my-controller
-            @click="show('shown_weight')"
-            :active="race_page.shown_weight"
-            title="weight"
-            :value="race_page.weight"
-            unit="kg"
-            note=""
-          >
-          </my-controller>
-        </div>
-
-        <div class="selection_menu">
+        <div class="selection_menu"
+        v-if="MY.race.settings.custom_stats || MY.race.settings.custom_skills || MY.race.settings.custom_languages || MY.ethnos.custom_languages"
+        >
           <my-selection
             v-if="MY.race.settings.custom_stats"
             @click="show('shown_characteristics')"
@@ -115,12 +60,70 @@
           >
           </my-selection>
         </div>
+
+        <div class="selection_menu">
+          <my-selection
+            @click="show('shown_gender')"
+            :active="race_page.shown_gender"
+            title="gender"
+            :type="MY.gender.phisiological"
+          ></my-selection>
+        
+          <my-selection
+            @click="show('shown_skin_color', 'skin')"
+            :active="race_page.shown_skin_color"
+            title="color_skin"
+            :type="getCharColor('skin').name"
+          >
+          </my-selection>
+          <my-selection
+            @click="show('shown_eyes_color', 'eyes')"
+            :active="race_page.shown_eyes_color"
+            title="color_eyes"
+            :type="getCharColor('eyes').name"
+          >
+          </my-selection>
+          <my-selection
+            @click="show('shown_hair_color', 'hair')"
+            :active="race_page.shown_hair_color"
+            title="color_hair"
+            :type="getCharColor('hair').name"
+          >
+          </my-selection>
+        
+          <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
+          <my-controller
+            @click="show('shown_age')"
+            :active="race_page.shown_age"
+            title="age"
+            :value="race_page.age"
+            age
+            note="Взрослый"
+          ></my-controller>
+          <my-controller
+            @click="show('shown_growth')"
+            :active="race_page.shown_growth"
+            title="height"
+            :value="Char_Height"
+            unit="cm"
+            note="Маленький"
+          ></my-controller>
+          <my-controller
+            @click="show('shown_weight')"
+            :active="race_page.shown_weight"
+            title="weight"
+            :value="race_page.weight"
+            unit="kg"
+            note=""
+          >
+          </my-controller>
+        </div>
         <!-- </div> -->
-        <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>
+        <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
         <!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
-        <button @click="plus()" type="">
-          Увеличить входящий параметр на +1
-        </button>
+        <!-- <button @click="plus()" type=""> -->
+          <!-- Увеличить входящий параметр на +1 -->
+        <!-- </button> -->
       </div>
 
       <my-button

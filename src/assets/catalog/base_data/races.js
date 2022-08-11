@@ -2,16 +2,223 @@ import color from "./colors.js";
 import spells from "./spells.js";
 import gender from "./genders.js";
 import lang from "./languages.js";
-import weapon from "./weapons.js";
+import weaponry from "./weaponry.js";
 import tool from "./tools.js";
-import armor from "./armor.js";
+import armory from "./armory.js";
 
 export default {
+  gnome: {
+    name: "gnome",
+    details: "gnome_details",
+
+    noimg_ethnos: true,
+    ethnos_preview: [300,-24],
+
+    settings: {
+      ethnos: {
+        rock: {
+          name: "rock",
+          details: "rock_gnome_details",
+
+          //link_male
+          //link_female
+
+          color: {
+            skin: [color[2][1], color[2][2], color[2][3], color[2][4]],
+            eyes: [
+              color[7][4],
+              color[0][1],
+              color[2][0],
+              color[2][1],
+              color[3][0],
+              color[3][1],
+              color[4][0],
+              color[4][1],
+              color[5][0],
+              color[5][1],
+              color[6][0],
+              color[6][1],
+              color[7][0],
+              color[7][1],
+            ],
+            hair: [color[2][3], color[2][2]],
+          },
+
+          stats: { constitution: 1 },
+          qualities: { vision_night: 60 },
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "proficiency_bonus",
+              details: "history_check_rock_gnome",
+            },
+          ],
+
+          spells: [
+            {
+              level: 1,
+              spell: spells.toy,
+            },
+
+            {
+              level: 1,
+              spell: spells.lighter,
+            },
+
+            {
+              level: 1,
+              spell: spells.music_box,
+            },
+          ],
+        },
+
+        forest: {
+          name: "forest",
+          details: "forest_gnome_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503211188",
+          // link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][2]],
+            hair: [color[2][5]],
+          },
+
+          stats: { dexterity: 1 },
+          qualities: { vision_night: 60 },
+
+          proficiencies: {
+            languages: [lang.animal],
+          },
+
+          spells: [
+            {
+              level: 1,
+              spell: spells.small_illusion,
+            },
+          ],
+        },
+
+        deep: {
+          name: "deep",
+          details: "deep_gnome_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503210924",
+          // link_female: "https://www.heroforge.com/load_config%3D503211388",
+
+          color: {
+            skin: [color[0][3], color[0][4], color[0][5], color[0][6]],
+            eyes: [color[7][2], color[7][3], color[7][4], color[7][5]],
+            hair: [color[8][1]],
+          },
+
+          age: {
+            min: 10,
+            young: 18,
+            mature: 25,
+            old: 200,
+            max: 250,
+          },
+
+          weight: {
+            min: 36,
+            max: 54,
+          },
+
+          stats: { dexterity: 1 },
+          qualities: { vision_night: 120 },
+
+          proficiencies: {
+            languages: [lang.undercommon],
+          },
+
+          fines: [
+            {
+              type: "advantage",
+              keyword: "advantage",
+              details: "stealth_in_stones",
+            },
+          ],
+        },
+
+      },
+
+      gender: gender,
+      color: {
+        skin: [
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[0][3],
+          color[0][4],
+          color[0][5],
+          color[0][6],
+        ],
+        eyes: [
+          color[0][1],
+          color[2][0],
+          color[2][1],
+          color[3][0],
+          color[3][1],
+          color[4][0],
+          color[4][1],
+          color[5][0],
+          color[5][1],
+          color[6][0],
+          color[6][1],
+          color[7][0],
+          color[7][1],
+          color[7][2],
+          color[7][3],
+          color[7][4],
+          color[7][5],
+          color[8][2],
+        ],
+        hair: [color[2][2], color[2][3], color[2][5], color[8][1]],
+      },
+
+      age: {
+        min: 10,
+        young: 18,
+        mature: 40,
+        old: 350,
+        max: 500,
+      },
+
+      height: {
+        min: 90,
+        max: 120,
+      },
+
+      weight: {
+        min: 15,
+        max: 20,
+      },
+    },
+
+    stats: { intelligence: 2 },
+
+    qualities: { speed: 25 },
+
+    proficiencies: {
+      languages: [lang.common, lang.gnome],
+    },
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "magic_against_int_wis_cha",
+      },
+    ],
+  },
+
   halfling: {
     name: "halfling",
     details: "halfling_details",
 
-    ethnos_preview: [300,0],
+    ethnos_preview: [300,-24],
 
     settings: {
       ethnos: {
@@ -32,7 +239,7 @@ export default {
           stats: { charisma: 1 },
 
           // ТОЛЬКО ДЛЯ ОТЛАДКИ
-          hp_bonus: [1,1],
+          // hp_bonus: [1,1],
           // ТОЛЬКО ДЛЯ ОТЛАДКИ
 
           fines: [
@@ -141,9 +348,9 @@ export default {
       },
 
       // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      custom_stats: [2, 1], // [колво, инкремент]
-      custom_skills: [2, "mastery"],
-      custom_languages: [2],
+      // custom_stats: [2, 1], // [колво, инкремент]
+      // custom_skills: [2, "mastery"],
+      // custom_languages: [2],
     },
 
     stats: { dexterity: 2 },
@@ -177,229 +384,30 @@ export default {
     spells: [
       //ТОЛЬКО ДЛЯ ОТЛАДКИ
 
-      {
-        level: 1,
-        spell: spells.thaumaturgy,
-      },
+      // {
+      //   level: 1,
+      //   spell: spells.thaumaturgy,
+      // },
 
-      {
-        level: 3,
-        spell: spells.hellish_rebuke,
-        gain: 2,
-      },
+      // {
+      //   level: 3,
+      //   spell: spells.hellish_rebuke,
+      //   gain: 2,
+      // },
 
-      {
-        level: 5,
-        spell: spells.darkness,
-      },
-    ],
-  },
-
-  gnome: {
-    name: "gnome",
-    details: "gnome_details",
-
-    settings: {
-      ethnos: {
-        rock: {
-          name: "rock",
-          details: "rock_gnome_details",
-
-          //link_male
-          //link_female
-
-          color: {
-            skin: [color[2][1], color[2][2], color[2][3], color[2][4]],
-            eyes: [
-              color[0][1],
-              color[2][0],
-              color[2][1],
-              color[3][0],
-              color[3][1],
-              color[4][0],
-              color[4][1],
-              color[5][0],
-              color[5][1],
-              color[6][0],
-              color[6][1],
-              color[7][0],
-              color[7][1],
-            ],
-            hair: [color[2][2], color[2][3]],
-          },
-
-          stats: { constitution: 1 },
-          qualities: { vision_night: 60 },
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "proficiency_bonus",
-              details: "history_check_rock_gnome",
-            },
-          ],
-
-          spells: [
-            {
-              level: 1,
-              spell: spells.toy,
-            },
-
-            {
-              level: 1,
-              spell: spells.lighter,
-            },
-
-            {
-              level: 1,
-              spell: spells.music_box,
-            },
-          ],
-        },
-
-        deep: {
-          name: "deep",
-          details: "deep_gnome_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503210924",
-          // link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[0][3], color[0][4], color[0][5], color[0][6]],
-            eyes: [color[7][2], color[7][3], color[7][4], color[7][5]],
-            hair: [color[8][1]],
-          },
-
-          age: {
-            min: 10,
-            young: 18,
-            mature: 25,
-            old: 200,
-            max: 250,
-          },
-
-          weight: {
-            min: 36,
-            max: 54,
-          },
-
-          stats: { dexterity: 1 },
-          qualities: { vision_night: 120 },
-
-          proficiencies: {
-            languages: [lang.undercommon],
-          },
-
-          fines: [
-            {
-              type: "advantage",
-              keyword: "advantage",
-              details: "stealth_in_stones",
-            },
-          ],
-        },
-
-        forest: {
-          name: "forest",
-          details: "forest_gnome_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503211188",
-          // link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[8][2]],
-            hair: [color[2][5]],
-          },
-
-          stats: { dexterity: 1 },
-          qualities: { vision_night: 60 },
-
-          proficiencies: {
-            languages: [lang.animal],
-          },
-
-          spells: [
-            {
-              level: 1,
-              spell: spells.small_illusion,
-            },
-          ],
-        },
-      },
-
-      gender: gender,
-      color: {
-        skin: [
-          color[2][1],
-          color[2][2],
-          color[2][3],
-          color[2][4],
-          color[0][3],
-          color[0][4],
-          color[0][5],
-          color[0][6],
-        ],
-        eyes: [
-          color[0][1],
-          color[2][0],
-          color[2][1],
-          color[3][0],
-          color[3][1],
-          color[4][0],
-          color[4][1],
-          color[5][0],
-          color[5][1],
-          color[6][0],
-          color[6][1],
-          color[7][0],
-          color[7][1],
-          color[7][2],
-          color[7][3],
-          color[7][4],
-          color[7][5],
-          color[8][2],
-        ],
-        hair: [color[2][2], color[2][3], color[2][5], color[8][1]],
-      },
-
-      age: {
-        min: 10,
-        young: 18,
-        mature: 40,
-        old: 350,
-        max: 500,
-      },
-
-      height: {
-        min: 90,
-        max: 120,
-      },
-
-      weight: {
-        min: 15,
-        max: 20,
-      },
-    },
-
-    stats: { intelligence: 2 },
-
-    qualities: { speed: 25 },
-
-    proficiencies: {
-      languages: [lang.common, lang.gnome],
-    },
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "magic_against_int_wis_cha",
-      },
+      // {
+      //   level: 5,
+      //   spell: spells.darkness,
+      // },
     ],
   },
 
   dwarf: {
     name: "dwarf",
     details: "dwarf_details",
+
+    noimg_ethnos: true,
+    ethnos_preview: [345,-30],
 
     settings: {
       ethnos: {
@@ -427,6 +435,7 @@ export default {
               color[2][5],
             ],
             hair: [
+              color[0][6],
               color[2][1],
               color[3][1],
               color[1][3],
@@ -442,8 +451,42 @@ export default {
           qualities: { vision_night: 60 },
 
           proficiencies: {
-            armor: [armor.light, armor.medium],
+            armor: [armory.light, armory.medium],
           },
+        },
+
+        hill: {
+          name: "hill",
+          details: "hill_dwarf_details",
+          // link_male: "https://www.heroforge.com/load_config%3D503211188",
+          // link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [
+              color[1][4],
+              color[1][5],
+              color[2][4],
+              color[2][5],
+              color[2][6],
+              color[1][6],
+              color[0][6],
+            ],
+            eyes: [color[2][4], color[2][5]],
+            hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
+          },
+
+          stats: { wisdom: 1 },
+          qualities: { vision_night: 60 },
+
+          hp_bonus: [1,1],
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "plus_1_to_maxhp",
+              details: "for_each_lvl_incl_1",
+            },
+          ],
         },
 
         grey: {
@@ -495,40 +538,6 @@ export default {
             {
               level: 5,
               spell: spells.invisibility,
-            },
-          ],
-        },
-
-        hill: {
-          name: "hill",
-          details: "hill_dwarf_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503211188",
-          // link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [
-              color[1][4],
-              color[1][5],
-              color[2][4],
-              color[2][5],
-              color[2][6],
-              color[1][6],
-              color[0][6],
-            ],
-            eyes: [color[2][4], color[2][5]],
-            hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
-          },
-
-          stats: { wisdom: 1 },
-          qualities: { vision_night: 60 },
-
-          hp_bonus: [1,1],
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "plus_1_to_maxhp",
-              details: "for_each_lvl_incl_1",
             },
           ],
         },
@@ -591,10 +600,10 @@ export default {
 
     proficiencies: {
       weapons: [
-        weapon.battle_axes,
-        weapon.hand_axes,
-        weapon.battle_hammers,
-        weapon.light_hammers,
+        weaponry.battle_axes,
+        weaponry.hand_axes,
+        weaponry.battle_hammers,
+        weaponry.light_hammers,
       ],
       tools: [tool.blacksmith, tool.brewer, tool.mason],
       languages: [lang.common, lang.dwarf],
@@ -631,36 +640,6 @@ export default {
     settings: {
       ethnos: {
 
-        illuskian: {
-          color: {
-            skin: [color[2][0]],
-            eyes: [color[7][3]],
-            hair: [color[1][4], color[0][6], color[2][2]],
-          },
-
-          name: "illuskian",
-          details: "illuskian_details",
-
-          proficiencies: {
-            languages: [lang.illuskian],
-          },
-        },
-
-        ffolk: {
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[7][3]],
-            hair: [color[3][5]],
-          },
-
-          name: "ffolk",
-          details: "ffolk_details",
-
-          proficiencies: {
-            languages: [lang.vaelan],
-          },
-        },
-
         damarian: {
           color: {
             skin: [
@@ -679,6 +658,21 @@ export default {
 
           proficiencies: {
             languages: [lang.damarian],
+          },
+        },
+
+        ffolk: {
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[7][3]],
+            hair: [color[3][5]],
+          },
+
+          name: "ffolk",
+          details: "ffolk_details",
+
+          proficiencies: {
+            languages: [lang.vaelan],
           },
         },
 
@@ -936,6 +930,21 @@ export default {
             languages: [lang.rushum],
           },
         },
+
+        illuskian: {
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[7][3]],
+            hair: [color[1][4], color[0][6], color[2][2]],
+          },
+
+          name: "illuskian",
+          details: "illuskian_details",
+
+          proficiencies: {
+            languages: [lang.illuskian],
+          },
+        },
       },
 
       gender: gender,
@@ -1068,6 +1077,7 @@ export default {
     details: "halfelf_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [390,-36],
 
     settings: {
       ethnos: {
@@ -1220,6 +1230,9 @@ export default {
     name: "elf",
     details: "elf_details",
 
+    noimg_ethnos: true,
+    ethnos_preview: [390,-36],
+
     settings: {
       ethnos: {
 
@@ -1250,10 +1263,10 @@ export default {
 
           proficiencies: {
             weapons: [
-              weapon.long_swords,
-              weapon.short_swords,
-              weapon.long_bows,
-              weapon.short_bows,
+              weaponry.long_swords,
+              weaponry.short_swords,
+              weaponry.long_bows,
+              weaponry.short_bows,
             ],
             languages: [],
           },
@@ -1301,10 +1314,10 @@ export default {
 
           proficiencies: {
             weapons: [
-              weapon.long_swords,
-              weapon.short_swords,
-              weapon.long_bows,
-              weapon.short_bows,
+              weaponry.long_swords,
+              weaponry.short_swords,
+              weaponry.long_bows,
+              weaponry.short_bows,
             ],
           },
 
@@ -1356,9 +1369,9 @@ export default {
 
           proficiencies: {
             weapons: [
-              weapon.rapires,
-              weapon.short_swords,
-              weapon.hand_arbalets,
+              weaponry.rapires,
+              weaponry.short_swords,
+              weaponry.hand_arbalets,
             ],
           },
           
@@ -1615,6 +1628,7 @@ export default {
     details: "tiefling_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [390,-36],
 
     settings: {
       ethnos: {
@@ -1830,6 +1844,7 @@ export default {
     details:"halforc_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [435,-42],
 
     settings: {
       ethnos: {
@@ -1927,40 +1942,10 @@ export default {
     details:"dragonborn_details",
 
     noimg_ethnos: true,
+    ethnos_preview: [435,-42],
 
     settings: {
       ethnos: {
-
-        red_dragonborn: {
-          
-          name:"red_dragonborn",
-          details:"red_dragonborn_details",
-
-          color: {
-            skin: [
-              color[1][4],
-            ],
-            eyes: [
-              color[1][3],
-            ],
-            hair: [
-              color[1][5],
-            ],
-          },
-          fines: [
-            {
-              type: "resistance",
-              keyword: "resistance",
-              details: "fire_damage",
-            },
-          ],
-          spells: [
-            {
-              level: 1,
-              spell: spells.fire_breath,
-            },
-          ],
-        },
 
         brass_dragonborn: {
           
@@ -1969,13 +1954,13 @@ export default {
 
           color: {
             skin: [
-              color[3][4],
+              color[2][1],
             ],
             eyes: [
-              color[1][3],
+              color[3][0],
             ],
             hair: [
-              color[1][4],
+              color[2][6],
             ],
           },
           fines: [
@@ -2003,10 +1988,41 @@ export default {
               color[3][5],
             ],
             eyes: [
+              color[3][4],
+            ],
+            hair: [
+              color[2][6],
+            ],
+          },
+          fines: [
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "fire_damage",
+            },
+          ],
+          spells: [
+            {
+              level: 1,
+              spell: spells.fire_breath,
+            },
+          ],
+        },
+
+        red_dragonborn: {
+          
+          name:"red_dragonborn",
+          details:"red_dragonborn_details",
+
+          color: {
+            skin: [
+              color[1][4],
+            ],
+            eyes: [
               color[1][3],
             ],
             hair: [
-              color[1][4],
+              color[1][5],
             ],
           },
           fines: [
@@ -2247,104 +2263,8 @@ export default {
 
       color: {
         skin: [],
-        eyes: [
-          color[0][2],
-          color[0][3],
-          color[0][4],
-
-          color[1][2],
-          color[1][3],
-          color[1][4],
-
-          color[3][2],
-          color[3][3],
-          color[3][4],
-
-          color[4][2],
-          color[4][3],
-          color[4][4],
-
-          color[5][2],
-          color[5][3],
-          color[5][4],
-
-          color[6][2],
-          color[6][3],
-          color[6][4],
-
-          color[7][2],
-          color[7][3],
-          color[7][4],
-
-          color[8][2],
-          color[8][3],
-          color[8][4],
-
-          color[9][2],
-          color[9][3],
-          color[9][4],
-
-          color[10][2],
-          color[10][3],
-          color[10][4],
-
-          color[11][2],
-          color[11][3],
-          color[11][4],
-
-          color[12][2],
-          color[12][3],
-          color[12][4],
-        ],
-        hair: [
-          color[0][5],
-          color[0][3],
-          color[0][4],
-
-          color[1][5],
-          color[1][3],
-          color[1][4],
-
-          color[3][5],
-          color[3][3],
-          color[3][4],
-
-          color[4][5],
-          color[4][3],
-          color[4][4],
-
-          color[5][5],
-          color[5][3],
-          color[5][4],
-
-          color[6][5],
-          color[6][3],
-          color[6][4],
-
-          color[7][5],
-          color[7][3],
-          color[7][4],
-
-          color[8][5],
-          color[8][3],
-          color[8][4],
-
-          color[9][5],
-          color[9][3],
-          color[9][4],
-
-          color[10][5],
-          color[10][3],
-          color[10][4],
-
-          color[11][5],
-          color[11][3],
-          color[11][4],
-
-          color[12][5],
-          color[12][3],
-          color[12][4],
-        ],
+        eyes: [],
+        hair: [],
       },
 
       age: {
