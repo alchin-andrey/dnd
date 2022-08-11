@@ -61,8 +61,6 @@
           </my-selection>
         </div>
 
-        <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
-
         <div class="selection_menu">
           <my-selection
             @click="show('shown_gender')"
@@ -70,6 +68,7 @@
             title="gender"
             :type="MY.gender.phisiological"
           ></my-selection>
+        
           <my-selection
             @click="show('shown_skin_color', 'skin')"
             :active="race_page.shown_skin_color"
@@ -91,6 +90,8 @@
             :type="getCharColor('hair').name"
           >
           </my-selection>
+        
+          <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
           <my-controller
             @click="show('shown_age')"
             :active="race_page.shown_age"
