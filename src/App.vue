@@ -16,12 +16,12 @@
         <!-- <div class="main_menu"> -->
         <!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
         <div class="selection_menu">
-          <!-- <my-controller
+          <my-controller
             @click="show('shown_lvl')"
             :active="race_page.shown_lvl"
             title="level"
             :value="MY.level"
-          ></my-controller> -->
+          ></my-controller>
           <my-selection
             @click="show('shown_ethnos')"
             :active="race_page.shown_ethnos"
