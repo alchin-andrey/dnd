@@ -7,6 +7,24 @@ import { armor } from './armor.js';
 
 export default {
 
+    
+    //Стартовое
+
+            welcome_title: "Создай своего персонажа для D&D",
+            welcome_message: 'Чтобы полноценно играть в D&D, достаточно придумать персонажа нужного уровня, а остальное устроит ваш Мастер. Этот очаровательный сайт поможет вам создать персонажа за 5 простых шагов:\nРаса, Класс, Типаж, Характеристики, Биография.\n\nЛучший подход для первого раза — расслабиться и выбирать по зову сердца. Здесь нет неправильных решений. В финале вы получите лист персонажа, с которым вы сможете начать игру!',
+            welcome_disclaimer: 'Материалы на этом сайте не заменяют необходимость приобретения официальных материалов. Система Dungeons & Dragons является собственностью корпорации Wizards of the Coast, графические материалы созданы с помощью <a href="https://www.heroforge.com">Hero Forge ↗</a>.',
+
+            authors: 
+            '<a href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — идея, дизайн, контент,' +
+            '\n<a href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код,' +
+            '\n<a href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер</a> - переводы, валидация.' +
+            '\nПо любым темам об этом сайте, пишите Диме.' +
+            '\n\nЕсли у вас есть желание задонатить, будем очень благодарны. Безжалостное и жестокое вторжение ₚосии в Украину продолжается, поэтому 80% донатов мы отправляем в фонд "<a href="https://savelife.in.ua">Повернись Живим</a>".',
+
+            donation_card: 'Карта  5375 4141 0613 7382',
+            donation_btc: 'BTC  1LnEyvMisSyUvdbJQUmAyaiHEeALQd793F',
+            donation_patreon:'<a href="https://www.patreon.com/dimalagoda">Patreon ↗</a>',
+
     //Общее        
     
             name:"имя",
@@ -18,6 +36,7 @@ export default {
             past:"предистория",
             level:"уровень",
                 level_unit:"й",
+                lvl:"LVL",
 
     //Stats
 

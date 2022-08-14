@@ -1015,6 +1015,10 @@ body {
   background-color: #0e1518;
 }
 
+a {
+  color: #fff;
+}
+
 .skill_marg {
   margin-top: 26px;
 }
