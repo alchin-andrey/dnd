@@ -1096,7 +1096,7 @@ a {
   /* flex: 1 1 auto; */
 }
 .main_menu::-webkit-scrollbar {
-  /* width: 0; */
+   width: 0; 
 }
 
 .selection_menu {
