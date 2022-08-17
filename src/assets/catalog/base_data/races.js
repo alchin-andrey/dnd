@@ -480,13 +480,6 @@ export default {
 
           hp_bonus: [1,1],
 
-          fines: [
-            {
-              type: "plus",
-              keyword: "plus_1_to_maxhp",
-              details: "for_each_lvl_incl_1",
-            },
-          ],
         },
 
         grey: {

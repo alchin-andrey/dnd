@@ -29,12 +29,95 @@ class Spell {
   };
 }
 
+/* 
+//Строение заклинания:
+
+// Мана (0-9) - группировать?
+
+name: //название
+details: // описание
+expanded: // полное описание 
+type: // Вьізов Воплощение Иллюзия Некромантия Ограждение Очарование Преобразование Прорицание
+classes: // ??
+
+// Время наложения (реакция | бонусное действие | действие | ритуал). Ритуал может бьіть входньім параметром (+10 мин)
+// Длительность наложения (минутьі, если ритуал)
+
+// нужен ли бросок на попадание
+// тип атаки (ближняя | дальнобойная)
+// ? бонус на попадание (меткость) - входной параметр
+// Цель (на себя | cущество | обьект | точка в пространстве)
+// Дальность (ф)
+// Тип области (точка | линия | конус | куб | цилиндр | сфера)
+// Размер области (если не точка)
+
+// Время заклинания (мгновенно | концентрация | протяженное)
+// Длительность заклинания (минутьі, если концентрация || протяженное)
+
+// Вербальньій компонент (да | нет)
+// Соматический (да | нет)
+// Материальньій (список) - фокусировка как входной параметр
+
+// Тип воздействия (без воздействия | урон | лечение)
+// Тип урона (без урона | дробящий | колющий | рубящий | огонь | холод | электричество | яд | кислота | звук | некротическая энергия | излучение | силовое поле | психическая энергия )
+// Характеристика (по классу бай дефолт)
+// ? Сложность - входной - 8 + Характеристика + мастерство + особьіе мод? - часть класса?
+// Размер воздействия / спас провален - рассчетньій параметр
+// Размер воздействия / спас пройден - рассчетньій параметр
+
+*/
+
 export default {
 
-  thaumaturgy: {
-    name: "thaumaturgy",
-    details: "thaumaturgy_details",
-  },
+  acid_splash: [
+    {//0
+
+      name: "acid_splach",
+      details: "acid_splach_details",
+      expanded: "acid_splach_expanded",
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+
+      aim_need: false,
+      aim_type: "ranged",
+      aim_target: "creature",
+      aim_range: 60,
+      aim_aoe: "point",
+      aim_aoe_size: null,
+
+      spell_time: "instant",
+      spell_duration: null,
+
+      component_verbal: true,
+      component_somatic: true,
+      component_material: false,
+
+      impact_type: "damage",
+      impact_damage_type: "acid",
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+
+      impact_size_fail_foo: "Plus_Level_6",
+      impact_size_fail_num: 1,  
+      impact_size_fail_dice: 6,  
+
+      impact_size_success_foo: null,
+      impact_size_success_num: null,  
+      impact_size_success_dice: null,  
+      
+    }
+  ],
+
+  thaumaturgy: [
+    { //0
+      name: "thaumaturgy",
+      details: "thaumaturgy_details",
+    },    
+  ],
 
   hellish_rebuke: {
     name: "hellish_rebuke",
