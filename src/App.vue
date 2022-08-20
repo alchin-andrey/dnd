@@ -68,30 +68,6 @@
             title="gender"
             :type="MY.gender.phisiological"
           ></my-selection>
-        
-          <my-selection
-            @click="show('shown_skin_color', 'skin')"
-            :active="race_page.shown_skin_color"
-            title="color_skin"
-            :type="getCharColor('skin').name"
-          >
-          </my-selection>
-          <my-selection
-            @click="show('shown_eyes_color', 'eyes')"
-            :active="race_page.shown_eyes_color"
-            title="color_eyes"
-            :type="getCharColor('eyes').name"
-          >
-          </my-selection>
-          <my-selection
-            @click="show('shown_hair_color', 'hair')"
-            :active="race_page.shown_hair_color"
-            title="color_hair"
-            :type="getCharColor('hair').name"
-          >
-          </my-selection>
-        
-          <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
           <my-controller
             @click="show('shown_age')"
             :active="race_page.shown_age"
@@ -116,7 +92,30 @@
             unit="kg"
             note=""
           >
-          </my-controller>
+          </my-controller>        
+          <my-selection
+            @click="show('shown_skin_color', 'skin')"
+            :active="race_page.shown_skin_color"
+            title="color_skin"
+            :type="getCharColor('skin').name"
+          >
+          </my-selection>
+          <my-selection
+            @click="show('shown_eyes_color', 'eyes')"
+            :active="race_page.shown_eyes_color"
+            title="color_eyes"
+            :type="getCharColor('eyes').name"
+          >
+          </my-selection>
+          <my-selection
+            @click="show('shown_hair_color', 'hair')"
+            :active="race_page.shown_hair_color"
+            title="color_hair"
+            :type="getCharColor('hair').name"
+          >
+          </my-selection>
+        
+          <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
         </div>
         <!-- </div> -->
         <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
