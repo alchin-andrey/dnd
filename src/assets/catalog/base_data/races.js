@@ -2028,7 +2028,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.fire_breath,
+              spell: spells.fire_breath_cone,
             },
           ],
         },

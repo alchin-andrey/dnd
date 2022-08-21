@@ -888,6 +888,9 @@ export default {
             action_bonus: "бонусное действие",
             action: "действие",
             ritual: "ритуал",
+            up_to: "до",
+            sec: "сек",
+            round: "раунд",
             min: "мин",
             hour: "ч",
             day: "дн",
@@ -958,6 +961,8 @@ export default {
             hellish_rebuke: spells.hellish_rebuke,
             hellish_rebuke_details: spells.hellish_rebuke_details,
             hellish_rebuke_expanded: spells.hellish_rebuke_expanded,
+            hellish_rebuke_details: spells.hellish_rebuke_tiefling_details,
+            hellish_rebuke_expanded: spells.hellish_rebuke_tiefling_expanded,
 
             darkness: spells.darkness,
             darkness_details: spells.darkness_details,
@@ -988,6 +993,7 @@ export default {
 
             spell_fire_breath: spells.fire_breath,
             spell_fire_breath_details: spells.fire_breath_details,
+            spell_breath_expanded: spells.breath_expanded,
 
             spell_cold_breath: spells.cold_breath,
             spell_cold_breath_details: spells.cold_breath_details,
