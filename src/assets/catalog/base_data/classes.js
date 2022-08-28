@@ -38,8 +38,8 @@ export default {
           ],
 
           equipment: [
-            [weapons.greataxe],
-            [weapons.handaxe]//x2
+            [weapons.greataxe,1],
+            [weapons.handaxe,2]//x2
           ]
         },
         fines: [

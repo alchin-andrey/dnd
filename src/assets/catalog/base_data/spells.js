@@ -1077,7 +1077,7 @@ export default {
 
   fury: [
     {
-
+      
     },
   ],
 };

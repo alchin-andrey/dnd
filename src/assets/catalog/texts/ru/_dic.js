@@ -352,6 +352,10 @@ export default {
 
                 weapons:"оружие",
 
+                    longsword: "длинный меч",
+                    
+                    greataxe: "секира",
+
                     weapons_battle_axes: weapons.battle_axes,
                     weapons_battle_axes_details: weapons.battle_axes_details,
 
@@ -387,6 +391,117 @@ export default {
 
                     weapons_military: weapons.military,
                     weapons_military_details: weapons.military_details,
+
+                    quarterstaff:weapons.quarterstaff,
+                    quarterstaff_details:weapons.quarterstaff_details,
+
+                    mace:weapons.mace,
+                    quarterstaff_details:weapons.mace_details,
+
+                    club:weapons.club,
+                    club_details:weapons.club_details,
+
+                    dagger:weapons.dagger,
+                    dagger_details:weapons.dagger_details,
+
+                    spear:weapons.spear,
+                    spear_details:weapons.spear_details,
+
+                    light_hammer:weapons.light_hammer,
+                    light_hammer_details:weapons.light_hammer_details,
+                    
+                    javelin:weapons.javelin,
+                    javelin_details:weapons.javelin_details,
+
+                    greatclub:weapons.greatclub,
+                    greatclub_details:weapons.greatclub_details,
+
+                    handaxe:weapons.handaxe,
+                    handaxe_details:weapons.handaxe_details,
+
+                    sickle:weapons.sickle,
+                    sickle_details:weapons.sickle_details,
+
+                    light_crossbow:weapons.light_crossbow,
+                    light_crossbow_details:weapons.light_crossbow_details,
+
+                    dart:weapons.dart,
+                    dart_details:weapons.dart_details,
+
+                    shortbow:weapons.shortbow,
+                    shortbow_details:weapons.shortbow_details,
+
+                    sling:weapons.sling,
+                    sling_details:weapons.sling_details,
+
+                    halberd:weapons.halberd,
+                    halberd_details:weapons.halberd_details,
+
+                    war_pick:weapons.war_pick,
+                    war_pick_details:weapons.war_pick_details,
+
+                    warhammer:weapons.warhammer,
+                    warhammer_details:weapons.warhammer_details,
+
+                    battleaxe:weapons.battleaxe,
+                    battleaxe_details:weapons.battleaxe_details,
+
+                    glaive:weapons.glaive,
+                    glaive_details:weapons.glaive_details,
+
+                    greatsword:weapons.greatsword,
+                    greatsword_details:weapons.greatsword_details,
+
+                    lance:weapons.lance,
+                    lance_details:weapons.lance_details,
+
+                    longsword:weapons.longsword,
+                    longsword_details:weapons.longsword_details,
+
+                    whip:weapons.whip,
+                    whip_details:weapons.whip_details,
+
+                    shortsword:weapons.shortsword,
+                    shortsword_details:weapons.shortsword_details,
+
+                    maul:weapons.maul,
+                    maul_details:weapons.maul_details,
+
+                    morningstar:weapons.morningstar,
+                    morningstar_details:weapons.morningstar_details,
+
+                    pike:weapons.pike,
+                    pike_details:weapons.pike_details,
+
+                    rapier:weapons.rapier,
+                    rapier_details:weapons.rapier_details,
+
+                    greataxe:weapons.greataxe,
+                    greataxe_details:weapons.greataxe_details,
+
+                    scimitar:weapons.scimitar,
+                    scimitar_details:weapons.scimitar_details,
+
+                    trident:weapons.trident,
+                    trident_details:weapons.trident_details,
+
+                    flail:weapons.flail,
+                    flail_details:weapons.flail_details,
+
+                    hand_crossbow:weapons.hand_crossbow,
+                    hand_crossbow_details:weapons.hand_crossbow_details,
+
+                    heavy_crossbow:weapons.heavy_crossbow,
+                    heavy_crossbow_details:weapons.heavy_crossbow_details,
+
+                    longbow:weapons.longbow,
+                    longbow_details:weapons.longbow_details,
+
+                    blowgun:weapons.blowgun,
+                    blowgun_details:weapons.blowgun_details,
+
+                    net:weapons.net,
+                    net_details:weapons.net_details,
 
                 tools:"инструменты",
 
