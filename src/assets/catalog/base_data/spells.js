@@ -1,114 +1,103 @@
-class Spell {
-  name;
-  slot;
-  school;
-  tags;
-  details;
-
-  frequency;
-  components;
-  time;
-  concentration = Boolean;
-
-  range;
-  area;
-  duration;
-
-  trial = {
-    stat: null,
-    complexity: null,
-  };
-  damage = {
-    type: null,
-    x: null,
-    dice: null,
-  };
-  gain = {
-    x: null,
-    dice: null,
-  };
-}
-
-/* 
-
-//Строение заклинания:
-
-// Мана (0-9) - группировать
-
-name: //название
-details: // описание
-expanded: // полное описание 
-type: // Вьізов Воплощение Иллюзия Некромантия Ограждение Очарование Преобразование Прорицание
-classes: // - фильтровать сразу?
-
-// Время наложения (реакция | бонусное действие | действие | ритуал). Ритуал может бьіть входньім параметром (+10 мин)
-// Длительность наложения (минутьі, если ритуал)
-
-// нужен ли бросок на попадание
-// тип атаки (ближняя | дальнобойная)
-// ? бонус на попадание (меткость) - входной параметр
-// Цель (на себя | cущество | обьект | точка в пространстве)
-// Дальность (ф)
-// Тип области (точка | линия | конус | куб | цилиндр | сфера)
-// Размер области (если не точка)
-
-// Время заклинания (мгновенно | концентрация | протяженное | пока не рассеится)
-// Длительность заклинания (минутьі, если концентрация || протяженное)
-
-// Вербальньій компонент (да | нет)
-// Соматический (да | нет)
-// Материальньій (список) - фокусировка как входной параметр
-// Материальньій с ценой (список) - не заменяется фокусировкой
-
-// Тип воздействия (без воздействия | урон | лечение)
-// Тип урона (без урона | дробящий | колющий | рубящий | огонь | холод | электричество | яд | кислота | звук | некротическая энергия | излучение | силовое поле | психическая энергия )
-// Характеристика (по классу бай дефолт)
-// ? Сложность - входной - 8 + Характеристика + мастерство + особьіе мод? - часть класса?
-// Размер воздействия / спас провален - рассчетньій параметр
-// Размер воздействия / спас пройден - рассчетньій параметр
-
-*/
-
 export default {
-  null: [
+  spell_name: [
+    // Мана {0-9} - группировать. Номер єлемента равно стоимость маньі
     {
       name: null,
       details: null,
-      expanded: null,
+      expanded: null, // полное описание
 
       type: null,
+      /*    
+            abjuration: "ограждение",
+            conjuration: "вызов",
+            divination: "прорицание",
+            enchantment: "чары",
+            evocation: "воплощение",
+            illusion: "иллюзия",
+            necromancy: "некромантия",
+            transmutation: "преобразование",            
+      */
 
       cast_time: null,
+      // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
       cast_duration: null,
+      // Длительность наложения
       cast_duration_units: null,
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
 
       aim_target: null,
+      // Цель ("self" | "creature" | "object" | "point")
       aim_type: null,
+      // тип атаки ("near" | "touch" | "in_distance")
+      // если in_distance - показать строку дальность
 
       parts: [null],
+      // Компонентьі
+      // "verbal" | "somatic" | "focus" | "[material]"
 
       spell_time: null,
+      // Время заклинания ( null | "instant" | "concentration" | "till_dissipate")
+      // Если concentration - добавить up_to
       spell_duration: null,
+      // Длительность заклинания
       cast_duration_units: null,
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
 
       aim_need: false,
+      // нужен ли бросок на попадание
+      // если true - показьівать строку "меткость" - входной параметр
+
       aim_range: null,
+      // Дальность (ф)
       aim_aoe: null,
-      aim_aoe_size: 5,
+      // Тип области ("point" | "line" | "cone" | "cube" | "cilinder" | "sphere")
+      aim_aoe_size: null,
+      // Размер области (ф)
 
       impact_type: null,
+      // Тип воздействия ( null | "damage" | "heal")
+      // Если null - не показьівать строки уронов
       impact_damage_type: null,
+      // Тип урона
+      /* 
+        bonus_w
+        poison_w:"🧪 Ядом",
+        fire_w:"🔥 Огнем",
+        cold_w:"❄️ Холодом",
+        electricity_w:"⚡️ Электричеством",
+        acid_w:"⚗️ Кислотой",
+        thunder_w: "🔊 Звуком",
+        radiant_w: "✨ Светом",
+        force_w: "🌈 Cиловым полем",
+
+        piercing_w: "🗡 колющий",
+        slashing_w: "🪓 рубящий",
+        bludgeoning_w: "🔨 дробящий",
+            
+        necrotic_w: "💀 Некротический",
+        psychic_w: "🧠 Психический",
+      */
 
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
+      // рассчет урона
 
-      saving_need: true,
+      saving_need: false,
+      // нужен ли cпасбросок
+      // если true - строка Испьітание цели - Сложность входной = 8 + Характеристика + мастерство + особьіе мод?
+
       saving_attribute: null,
+      // Характеристика ( null - бай дефолт из класса | характеристика)
 
       impact_size_saved_foo: null,
       impact_size_saved_num: null,
       impact_size_saved_dice: null,
+      // рассчет урона если спас пройден
+    },
+    {
+      //1
+      //любое из полей
     },
   ],
 
@@ -133,7 +122,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 60,
@@ -176,7 +165,7 @@ export default {
 
       spell_time: "up_to",
       spell_duration: 1,
-      cast_duration_units: "min",
+      spell_duration_units: "min",
 
       aim_need: false,
       aim_range: 30,
@@ -222,7 +211,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 60,
@@ -345,7 +334,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 60,
@@ -387,7 +376,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 0,
@@ -429,7 +418,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 0,
@@ -471,7 +460,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 0,
@@ -494,9 +483,9 @@ export default {
     },
   ],
 
-  cold_breath_line: [
+  cold_breath_cone: [
     {
-      name: "spell_fire_breath",
+      name: "spell_cold_breath",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
 
@@ -513,7 +502,7 @@ export default {
 
       spell_time: "instant",
       spell_duration: null,
-      cast_duration_units: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: 0,
@@ -528,6 +517,48 @@ export default {
       impact_size_dice: 6,
 
       saving_need: true,
+      saving_attribute: "constitution",
+
+      impact_size_saved_foo: "Plus_Level_5",
+      impact_size_saved_num: 1,
+      impact_size_saved_dice: 6,
+    },
+  ],
+
+  electricity_breath_line: [
+    {
+      name: "spell_electricity_breath",
+      details: "spell_breath_details",
+      expanded: "spell_breath_expanded",
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 0,
+      aim_aoe: "line",
+      aim_aoe_size: 30,
+
+      impact_type: "damage",
+      impact_damage_type: "electricity_w",
+
+      impact_size_foo: "Plus_Level_5",
+      impact_size_num: 2,
+      impact_size_dice: 6,
+
+      saving_need: true,
       saving_attribute: "dexterity",
 
       impact_size_saved_foo: "Plus_Level_5",
@@ -536,130 +567,518 @@ export default {
     },
   ],
 
-  cold_breath: {
-    name: "cold_breath",
-    lines: [
-      {
-        title: "damage",
-        subtitle: "cold_w",
-        plus: false,
-        foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
-        numb_foo: 2,
-        dice: 6,
-        suffix: "",
-        squares_mana: false,
-        squares_mana_plus: false,
-      },
-    ],
-    details: "cold_breath_details",
-  },
+  acid_breath_line: [
+    {
+      name: "spell_acid_breath",
+      details: "spell_breath_details",
+      expanded: "spell_breath_expanded",
 
-  electricity_breath: {
-    name: "electricity_breath",
-    lines: [
-      {
-        title: "damage",
-        subtitle: "electricity_w",
-        plus: false,
-        foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
-        numb_foo: 2,
-        dice: 6,
-        suffix: "",
-        squares_mana: false,
-        squares_mana_plus: false,
-      },
-    ],
-    details: "electricity_breath_details",
-  },
+      type: "evocation",
 
-  acid_breath: {
-    name: "acid_breath",
-    lines: [
-      {
-        title: "damage",
-        subtitle: "acid_w",
-        plus: false,
-        foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
-        numb_foo: 2,
-        dice: 6,
-        suffix: "",
-        squares_mana: false,
-        squares_mana_plus: false,
-      },
-    ],
-    details: "acid_breath_details",
-  },
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
-  poison_breath: {
-    name: "poison_breath",
-    lines: [
-      {
-        title: "damage",
-        subtitle: "poison_w",
-        plus: false,
-        foo_met: "Plus_Level_5", // return numb + (level-1)/5 (плюс 1 на 6 и 11 уровне)
-        numb_foo: 2,
-        dice: 6,
-        suffix: "",
-        squares_mana: false,
-        squares_mana_plus: false,
-      },
-    ],
-    details: "poison_breath_details",
-  },
+      aim_target: "point",
+      aim_type: "near",
 
-  toy: {
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 0,
+      aim_aoe: "line",
+      aim_aoe_size: 30,
+
+      impact_type: "damage",
+      impact_damage_type: "acid_w",
+
+      impact_size_foo: "Plus_Level_5",
+      impact_size_num: 2,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+
+      impact_size_saved_foo: "Plus_Level_5",
+      impact_size_saved_num: 1,
+      impact_size_saved_dice: 6,
+    },
+  ],
+
+  poison_breath_cone: [
+    {
+      name: "spell_poison_breath",
+      details: "spell_breath_details",
+      expanded: "spell_breath_expanded",
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 0,
+      aim_aoe: "cone",
+      aim_aoe_size: 15,
+
+      impact_type: "damage",
+      impact_damage_type: "poison_w",
+
+      impact_size_foo: "Plus_Level_5",
+      impact_size_num: 2,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+
+      impact_size_saved_foo: "Plus_Level_5",
+      impact_size_saved_num: 1,
+      impact_size_saved_dice: 6,
+    },
+  ],
+
+  darkness_tiefling: [
+    {
+      name: "darkness",
+      details: "darkness_tiefling_details",
+      expanded: "darkness_tiefling_details_expanded",
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal", "somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: "sphere",
+      aim_aoe_size: 15,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+    },
+  ],
+
+  enlargement: [
+    {
+      name: "spell_enlargement",
+      details: "spell_enlargement_details",
+      expanded: "spell_enlargement_expanded", // полное описание
+
+      type: "transmutation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+
+      parts: ["verbal", "somatic", "focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      cast_duration_units: "min",
+
+      aim_need: false,
+
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bobus_w",
+
+      impact_size_foo: null,
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: true,
+      saving_attribute: "intelligence",
+
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+    },
+  ],
+
+  invisibility_self: [
+    {
+      name: "spell_invisibility_self",
+      details: "spell_invisibility_self_details",
+      expanded: "spell_invisibility_self_expanded", // полное описание
+
+      type: "illusion",
+
+      cast_time: "action",
+      // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
+      cast_duration: null,
+      // Длительность наложения
+      cast_duration_units: null,
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
+
+      aim_target: "self",
+      // Цель ("self" | "creature" | "object" | "point")
+      aim_type: null,
+      // тип атаки ("near" | "touch" | "in_distance")
+      // если in_distance - показать строку дальность
+
+      parts: ["verbal","somatic"],
+      // Компонентьі
+      // "verbal" | "somatic" | "focus" | "[material]"
+
+      spell_time: "concentration",
+      // Время заклинания ( null | "instant" | "concentration" | "till_dissipate")
+      // Если concentration - добавить up_to
+      spell_duration: 1,
+      // Длительность заклинания
+      cast_duration_units: "hour",
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
+
+      aim_need: false,
+      // нужен ли бросок на попадание
+      // если true - показьівать строку "меткость" - входной параметр
+
+      aim_range: null,
+      // Дальность (ф)
+      aim_aoe: null,
+      // Тип области ("point" | "line" | "cone" | "cube" | "cilinder" | "sphere")
+      aim_aoe_size: null,
+      // Размер области
+
+      impact_type: null,
+      // Тип воздействия ( null | "damage" | "heal")
+      // Если null - не показьівать строку урона
+      impact_damage_type: null,
+      // Тип урона
+      /* 
+        bonus_w
+        poison_w:"🧪 Ядом",
+        fire_w:"🔥 Огнем",
+        cold_w:"❄️ Холодом",
+        electricity_w:"⚡️ Электричеством",
+        acid_w:"⚗️ Кислотой",
+        thunder_w: "🔊 Звуком",
+        radiant_w: "✨ Светом",
+        force_w: "🌈 Cиловым полем",
+
+        piercing_w: "🗡 колющий",
+        slashing_w: "🪓 рубящий",
+        bludgeoning_w: "🔨 дробящий",
+            
+        necrotic_w: "💀 Некротический",
+        psychic_w: "🧠 Психический",
+      */
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      // рассчет урона
+
+      saving_need: false,
+      // нужен ли cпасбросок
+      // если true - строка Испьітание цели - Сложность входной = 8 + Характеристика + мастерство + особьіе мод?
+
+      saving_attribute: null,
+      // Характеристика ( null - бай дефолт из класса | характеристика)
+
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+      // рассчет урона если спас пройден
+    },
+  ],
+
+  toy: [{
     name: "spell_toy",
     details: "spell_toy_details",
-  },
+    expanded: "spell_toy_expanded",
 
-  lighter: {
+    type: "other",
+
+    cast_time: "ritual",
+    cast_duration: 1,
+    cast_duration_units: "hour",
+    
+    aim_target: "object",
+    aim_type: "near",
+
+    parts: ["material_10gold"],
+
+    spell_time: null,
+    spell_duration: 24,
+    cast_duration_units: "hour",
+
+    aim_need: false,
+
+    aim_range: null,
+    aim_aoe: null,
+    aim_aoe_size: null,
+
+    impact_type: null,
+    impact_damage_type: null,
+    
+    impact_size_foo: null,
+    impact_size_num: null,
+    impact_size_dice: null,
+
+    saving_need: false,
+    saving_attribute: null,
+
+    impact_size_saved_foo: null,
+    impact_size_saved_num: null,
+    impact_size_saved_dice: null,
+  },],
+
+  lighter: [{
     name: "spell_lighter",
     details: "spell_lighter_details",
-  },
+    expanded: "spell_lighter_expanded",
 
-  music_box: {
+    type: "other",
+
+    cast_time: "ritual",
+    cast_duration: 1,
+    cast_duration_units: "hour",
+    
+    aim_target: "object",
+    aim_type: "near",
+
+    parts: ["material_10gold"],
+
+    spell_time: null,
+    spell_duration: 24,
+    cast_duration_units: "hour",
+
+    aim_need: false,
+
+    aim_range: null,
+    aim_aoe: null,
+    aim_aoe_size: null,
+
+    impact_type: null,
+    impact_damage_type: null,
+    
+    impact_size_foo: null,
+    impact_size_num: null,
+    impact_size_dice: null,
+
+    saving_need: false,
+    saving_attribute: null,
+
+    impact_size_saved_foo: null,
+    impact_size_saved_num: null,
+    impact_size_saved_dice: null,
+  },],
+
+  music_box: [{
     name: "spell_music_box",
     details: "spell_music_box_details",
-  },
+    expanded: "spell_music_box_expanded",
 
-  small_illusion: {
-    name: "spell_small_illusion",
-    details: "spell_small_illusion_details",
-  },
+    type: "other",
 
-  enlargement: {
-    name: "spell_enlargement",
-    lines: [
-      {
-        title: "damage",
-        subtitle: "additional_m",
-        plus: false,
-        foo_met: "Just_numb", // return numb
-        numb_foo: 1,
-        dice: 4,
-        suffix: "",
-        squares_mana: false,
-        squares_mana_plus: false,
-      },
-    ],
-    details: "spell_enlargement_details",
-  },
+    cast_time: "ritual",
+    cast_duration: 1,
+    cast_duration_units: "hour",
+    
+    aim_target: "object",
+    aim_type: "near",
 
-  dancing_lights: {
+    parts: ["material_10gold"],
+
+    spell_time: null,
+    spell_duration: 24,
+    cast_duration_units: "hour",
+
+    aim_need: false,
+
+    aim_range: null,
+    aim_aoe: null,
+    aim_aoe_size: null,
+
+    impact_type: null,
+    impact_damage_type: null,
+    
+    impact_size_foo: null,
+    impact_size_num: null,
+    impact_size_dice: null,
+
+    saving_need: false,
+    saving_attribute: null,
+
+    impact_size_saved_foo: null,
+    impact_size_saved_num: null,
+    impact_size_saved_dice: null,
+  },],
+
+  small_illusion: [
+    {
+      name: "spell_small_illusion",
+      details: "spell_small_illusion_details",
+      expanded: "spell_small_illusion_expanded", // полное описание
+
+      type: "illusion",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      cast_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      // рассчет урона
+
+      saving_need: true,
+      saving_attribute: "intelligence",
+      
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+      // рассчет урона если спас пройден      
+    },
+  ],
+
+  dancing_lights: [
+    {
     name: "spell_dancing_lights",
     details: "spell_dancing_lights_details",
-  },
+    expanded: "spell_dancing_lights_expanded", // полное описание
 
-  invisibility: {
-    name: "spell_invisibility",
-    details: "spell_invisibility_details",
-  },
+      type: "evocation",
 
-  darkness: {
-    name: "darkness",
-    details: "darkness_details",
-  },
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
-  fury: {},
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      cast_duration_units: "min",
+
+      aim_need: false,
+
+      aim_range: 120,
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+    },
+  ],
+
+  faerie_fire: [
+    {
+      name: "spell_faerie_fire",
+      details: "spell_faerie_fire_details",
+      expanded: "spell_faerie_fire_expanded", // полное описание
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      cast_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: "cube",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+      // рассчет урона если спас пройден
+    },
+  ],
+
+  fury: [
+    {
+      
+    },
+  ],
 };

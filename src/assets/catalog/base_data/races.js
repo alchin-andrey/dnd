@@ -397,7 +397,7 @@ export default {
 
       // {
       //   level: 5,
-      //   spell: spells.darkness,
+      //   spell: spells.darkness_tiefling,
       // },
     ],
   },
@@ -530,7 +530,7 @@ export default {
             },
             {
               level: 5,
-              spell: spells.invisibility,
+              spell: spells.invisibility_self,
             },
           ],
         },
@@ -1394,7 +1394,7 @@ export default {
       
             {
               level: 5,
-              spell: spells.darkness,
+              spell: spells.darkness_tiefling,
             },
           ],
 
@@ -1821,13 +1821,12 @@ export default {
 
       {
         level: 3,
-        spell: spells.hellish_rebuke,
-        gain: 2,
+        spell: spells.hellish_rebuke_tiefling,
       },
 
       {
         level: 5,
-        spell: spells.darkness,
+        spell: spells.darkness_tiefling,
       },
     ],
   },
@@ -2059,7 +2058,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.cold_breath,
+              spell: spells.cold_breath_cone,
             },
           ],
         },
@@ -2090,7 +2089,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.cold_breath,
+              spell: spells.cold_breath_cone,
             },
           ],
         },
@@ -2121,7 +2120,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.electricity_breath,
+              spell: spells.electricity_breath_line,
             },
           ],
         },
@@ -2152,7 +2151,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.electricity_breath,
+              spell: spells.electricity_breath_line,
             },
           ],
         },
@@ -2183,7 +2182,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.acid_breath,
+              spell: spells.acid_breath_line,
             },
           ],
         },
@@ -2214,7 +2213,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.acid_breath,
+              spell: spells.acid_breath_line,
             },
           ],
         },
@@ -2245,7 +2244,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.poison_breath,
+              spell: spells.poison_breath_cone,
             },
           ],
         },

@@ -881,11 +881,12 @@ export default {
             illusion: "иллюзия", //
             necromancy: "некромантия", //
             transmutation: "преобразование", //
+            other: "другое",
 
             //cast time
             cast: "каст",
             reaction: "реакция",
-            action_bonus: "бонусное действие",
+            bonus_action: "бонусное действие",
             action: "действие",
             ritual: "ритуал",
             up_to: "до",
@@ -904,14 +905,15 @@ export default {
             somatic:"жест",
             touch:"касание",
             focus: "фокус",
+            material_10gold: "материалы на сумму в 10 зм",
             hit: "попадание",
 
             //aim
             target: "цель",
             self: "на себя",
             creature: "cущество",
-            object: "",
-            point: "",
+            object: "объект",
+            point: "точка",
 
             near: "вблизи",
             in_distance: "на расстоянии",
@@ -925,6 +927,7 @@ export default {
             //impact
             damage: "урон",
             heal: "лечение",
+            bonus_w:"бонусный",
             poison_w:"🧪 Ядом",
             fire_w:"🔥 Огнем",
             cold_w:"❄️ Холодом",
@@ -965,47 +968,48 @@ export default {
             hellish_rebuke_expanded: spells.hellish_rebuke_tiefling_expanded,
 
             darkness: spells.darkness,
-            darkness_details: spells.darkness_details,
+            darkness_tiefling_details: spells.darkness_tiefling_details,
+            darkness_tiefling_expanded: spells.darkness_tiefling_expanded,
 
             spell_toy: spells.toy,
             spell_toy_details: spells.toy_details,
+            spell_toy_expanded: spells.toy_expanded,
 
             spell_lighter: spells.lighter,
             spell_lighter_details: spells.lighter_details,
+            spell_lighter_expanded: spells.lighter_expanded,
 
             spell_music_box: spells.music_box,
             spell_music_box_details: spells.music_box_details,
+            spell_music_box_expandeds: spells.music_box_expanded,
 
             spell_small_illusion: spells.small_illusion,
             spell_small_illusion_details: spells.small_illusion_details,
+            spell_small_illusion_expanded: spells.small_illusion_expanded,
 
             spell_enlargement: spells.enlargement,
             spell_enlargement_details: spells.enlargement_details,
+            spell_enlargement_expanded: spells.enlargement_expanded,
 
-            spell_invisibility: spells.invisibility,
-            spell_invisibility_details: spells.invisibility_details,
+            spell_invisibility_self: spells.invisibility_self,
+            spell_invisibility_self_details: spells.invisibility_self_details,
+            spell_invisibility_self_expanded: spells.invisibility_self_expanded,
 
             spell_dancing_lights: spells.dancing_lights,
             spell_dancing_lights_details: spells.dancing_lights_details,
+            spell_dancing_lights_expanded: spells.dancing_lights_expanded,
 
             spell_faerie_fire: spells.faerie_fire,
             spell_faerie_fire_details: spells.faerie_fire_details,
-
-            spell_fire_breath: spells.fire_breath,
-            spell_fire_breath_details: spells.fire_breath_details,
-            spell_breath_expanded: spells.breath_expanded,
-
-            spell_cold_breath: spells.cold_breath,
-            spell_cold_breath_details: spells.cold_breath_details,
-
-            spell_electricity_breath: spells.electricity_breath,
-            spell_electricity_breath_details: spells.electricity_breath_details,
-
-            spell_acid_breath: spells.acid_breath,
-            spell_acid_breath_details: spells.acid_breath_details,
+            spell_faerie_fire_expanded: spells.faerie_fire_expanded,
 
             spell_poison_breath: spells.poison_breath,
-            spell_poison_breath_details: spells.poison_breath_details,
+            spell_acid_breath: spells.acid_breath,
+            spell_electricity_breath: spells.electricity_breath,
+            spell_cold_breath: spells.cold_breath,
+            spell_fire_breath: spells.fire_breath,
+            spell_breath_details: spells.breath_details,
+            spell_breath_expanded: spells.breath_expanded,
 
             spell_fury: spells.fury,
 

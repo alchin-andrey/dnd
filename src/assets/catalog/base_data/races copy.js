@@ -190,7 +190,7 @@ export default {
 
       {
         level: 5,
-        spell: spells.darkness,
+        spell: spells.darkness_tiefling,
       },
     ],
   },
@@ -494,7 +494,7 @@ export default {
             },
             {
               level: 5,
-              spell: spells.invisibility,
+              spell: spells.invisibility_self,
             },
           ],
         },
@@ -1383,7 +1383,7 @@ export default {
       
             {
               level: 5,
-              spell: spells.darkness,
+              spell: spells.darkness_tiefling,
             },
           ],
 
@@ -1815,7 +1815,7 @@ export default {
 
       {
         level: 5,
-        spell: spells.darkness,
+        spell: spells.darkness_tiefling,
       },
     ],
   },
