@@ -18,6 +18,7 @@ export default {
     },
 
     saving: ["strength", "constitution"],
+    spell_attribute: "strength", // уточнить
 
     levels: [
       //1
@@ -54,10 +55,11 @@ export default {
         ],
       },
       //2
-      {},
+      {
+
+      },
     ],
 
-    subclass_level: 3,
     mastery_bonus: [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
 
     settings: {

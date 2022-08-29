@@ -180,7 +180,7 @@ export default {
         name: "light_hammer",
         detais: "light_hammer_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple,weaponry.light_hammers],
 
         range_min: 5,
         throwing: 20, // метательное
@@ -270,7 +270,7 @@ export default {
         name: "handaxe",
         detais: "handaxe_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple,weaponry.hand_axes],
 
         range_min: 5,
         throwing: 20,
@@ -390,7 +390,7 @@ export default {
         name: "shortbow",
         detais: "shortbow_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple,weaponry.short_bows],
 
         range_min: 80,
         throwing: null, // метательное
@@ -510,7 +510,7 @@ export default {
         name: "warhammer",
         detais: "warhammer_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.battle_hammers],
 
         range_min: 5,
         throwing: null, // метательное
@@ -540,7 +540,7 @@ export default {
         name: "battleaxe",
         detais: "battleaxe_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.battle_axes],
 
         range_min: 5,
         throwing: null, // метательное
@@ -660,7 +660,7 @@ export default {
         name: "longsword",
         detais: "longsword_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.long_swords],
 
         range_min: 5,
         throwing: null, // метательное
@@ -720,7 +720,7 @@ export default {
         name: "shortsword",
         detais: "shortsword_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.short_swords],
 
         range_min: 5,
         throwing: null, // метательное
@@ -840,7 +840,7 @@ export default {
         name: "rapier",
         detais: "rapier_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.rapires],
 
         range_min: 5,
         throwing: null, // метательное
@@ -990,7 +990,7 @@ export default {
         name: "hand_crossbow",
         detais: "hand_crossbow_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.hand_arbalets],
 
         range_min: 30,
         throwing: null, // метательное
@@ -1050,7 +1050,7 @@ export default {
         name: "longbow",
         detais: "longbow_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military,weaponry.long_bows],
 
         range_min: 150,
         throwing: null, // метательное
