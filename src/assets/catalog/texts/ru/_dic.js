@@ -352,9 +352,22 @@ export default {
 
                 weapons:"оружие",
 
-                    longsword: "длинный меч",
-                    
-                    greataxe: "секира",
+                    melee:"ближнее",
+                    ranged:"дальнобойное",
+                    throwing:"метательное",
+
+                    loading:"перезарязающееся",
+                    weapon_light:"легкое",
+                    weapon_universal:"универсальное",
+                    weapon_finesse:"фехтовальное",
+
+                    ammunition:"боеприпасы",
+                    bolt:"болт",
+                    arrow:"стрела",
+                    bullet:"снаряд",
+
+                    damage_1_hand:"одной рукой",
+                    damage_2_hand:"двумя руками",
 
                     weapons_battle_axes: weapons.battle_axes,
                     weapons_battle_axes_details: weapons.battle_axes_details,
@@ -999,7 +1012,7 @@ export default {
             other: "другое",
 
             //cast time
-            cast: "каст",
+            cast_time: "каст",
             reaction: "реакция",
             bonus_action: "бонусное действие",
             action: "действие",
@@ -1024,7 +1037,7 @@ export default {
             hit: "попадание",
 
             //aim
-            target: "цель",
+            aim_target: "цель",
             self: "на себя",
             creature: "cущество",
             object: "объект",
@@ -1060,7 +1073,7 @@ export default {
             psychic_w: "🧠 Психический",
 
             //area
-            area: "область",
+            aim_aoe: "область",
             line: "линия",
             cone: "конус",
             cube: "куб",
@@ -1069,6 +1082,7 @@ export default {
 
             saving_target: "испытание цели",
             aim_bonus: "меткость",
+            aim_range: "дальность",
 
             additional_m: "дополнительно",
             
