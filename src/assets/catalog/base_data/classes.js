@@ -27,22 +27,37 @@ export default {
 
           custom_skills: [
 
-            2,
-            "mastery",
+            [
+              2,
+              "mastery",
 
-            "athletics",
-            "insight",
-            "survival",
-            "intimidation",
-            "nature",
-            "animal_hanging",
+              "athletics",
+              "insight",
+              "survival",
+              "intimidation",
+              "nature",
+              "animal_hanging",
+            ],
+
           ],
 
           equipment: [
-            [weapons.greataxe,1],
-            [weapons.handaxe,2]//x2
+
+            [
+              [weapons.greataxe,1],
+              [],
+              []
+            ],
+
+            [
+              [weapons.handaxe,2],
+              [],
+              []
+            ]//x2
           ]
+
         },
+        
         fines: [
           {
             type: "resistance",
