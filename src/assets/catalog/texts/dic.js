@@ -1,4 +1,5 @@
 import ru_dic from './ru/_dic.js';
+import ua_dic from './ua/_dic.js';
 
 export default {
 
