@@ -356,10 +356,12 @@ export default {
                     ranged:"дальнобойное",
                     throwing:"метательное",
 
-                    loading:"перезарязающееся",
-                    weapon_light:"легкое",
-                    weapon_universal:"универсальное",
-                    weapon_finesse:"фехтовальное",
+                    loading:weapons.loading,
+                    weapon_light:weapons.light,
+                    weapon_heavy:weapons.heavy,
+                    loading_details:weapons.loading_details,
+                    weapon_light_details:weapons.light_details,
+                    weapon_heavy_details:weapons.heavy_details,
 
                     ammunition:"боеприпасы",
                     bolt:"болт",
@@ -368,6 +370,11 @@ export default {
 
                     damage_1_hand:"одной рукой",
                     damage_2_hand:"двумя руками",
+
+                    cost:"цена",
+                    coin_gold:"золотых монет",
+                    coin_silver:"серебряных монет",
+                    сoin_copper:"медных монет",
 
                     weapons_battle_axes: weapons.battle_axes,
                     weapons_battle_axes_details: weapons.battle_axes_details,
