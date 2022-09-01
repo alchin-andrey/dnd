@@ -32,7 +32,7 @@ export default {
     lvl_arr: [0, 5, 10, 15, 20],
 
     lvl: 2,
-    age: 35,
+    age: 70,
     growth: 91,
     weight: 15,
 };

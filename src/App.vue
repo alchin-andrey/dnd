@@ -181,6 +181,20 @@
     <!-- Рост -->
     <my-selection-box :shown="race_page.shown_growth">
       <div class="flex_options">
+        <div class="range-slider">
+          <!-- <div class="range__midle"> -->
+            <input type="range" class="vertical" min="0" max="210" step="1" value="90" orient="vertical">
+          <!-- </div> -->
+        <!-- <input type="range" class="vertical" min="0" max="210" step="1" value="90"> -->
+        <div class="range__bottom"></div>
+        <div class="range_value">100 см</div>
+      </div>
+        <mySizeGrowth />
+      </div>
+    </my-selection-box>
+
+    <!-- <my-selection-box :shown="race_page.shown_growth">
+      <div class="flex_options">
         <div class="slider_growth_back">
           <div class="slider_growth">
             <div class="slider_knob"></div>
@@ -189,7 +203,8 @@
         </div>
         <mySizeGrowth />
       </div>
-    </my-selection-box>
+    </my-selection-box> -->
+
     <!-- Рост -->
 
     <!-- Вес -->
@@ -320,7 +335,9 @@
     <!-- Языки -->
   </div>
   <!-- Персонаж -->
+  
   <div class="represent">
+
     <div
       class="character"
       :class="{
@@ -1231,6 +1248,116 @@ a {
 
 /* -------------slider-grwwth------------------- */
 
+/* -------------ПОЛЗУН------------------- */
+
+.range-slider {
+  width: 344px;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.62); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  /* padding-top: 6px;
+  padding-bottom: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 4px; */
+  position: relative;
+}
+
+
+/* input[type=range].vertical {
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);  
+  transform:rotate(-90deg);
+  width: 100%;
+} */
+
+
+input[type=range].vertical {
+    /* transform: rotateZ(-90deg); */
+    /* width: calc(100vh - 64px + 30px); */
+    /* width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px)); */
+    /* margin-bottom: calc(((100vh - 64px) / 210 * 90 - 30px) / 4); */
+    /* margin-bottom: calc((100vh - 32px * 2) / 2 - 16px / 2 - 164px); */
+    /* margin-bottom: calc((100vh - 32px * 2) / 2 - 16px / 2 - 164px); */
+    /* transform: rotate(270deg);
+    margin-bottom: calc((100vh - 64px - ((100vh - 64px) / 210 * 90)) / 2 - 15px);
+   width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px)); */
+  }
+
+  input[type=range].vertical {
+  -webkit-appearance: none;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+}
+
+::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.06);
+    height: 344px;
+}
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 344px;
+    background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
+    background-color: #ffffff;
+    box-shadow: -100vh 0 0 100vh #ffffff;
+    cursor: ns-resize;
+}
+
+.slider::-moz-range-thumb {
+    width: 30px;
+    height: 344px;
+    background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
+    background-color: #ffffff;
+    box-shadow: -100vh 0 0 100vh #ffffff;
+    cursor: ns-resize;
+}
+
+.range_value {
+  position: absolute;
+  left: 16px;
+  bottom: 11px;
+  height: 24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.range__bottom {
+  width: 344px;
+  height: calc((100vh - 64px) / 210 * 90 - 30px);
+  background-color: #ffffff;
+}
+
+input[type="range"] {
+   transform: rotate(270deg);
+   margin-bottom: calc((100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px)) / 2 - 172px - 1px);
+   width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px));
+}
+
+/* input[type="range"] {
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+  width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px));
+} */
+
+
+/* -------------ПОЛЗУН------------------- */
+
+
 .slider_growth_back {
   width: 344px;
   height: calc(100% / 700 * 396);
@@ -1242,7 +1369,7 @@ a {
 }
 .slider_growth {
   width: 100%;
-  height: calc(100% / 396 * (300 + 3.2 * 10));
+  height: calc(100% / 396 * (300 + 3.2 * 0));
   background: #ffffff;
   padding: 12px 16px 11px 16px;
   display: flex;
@@ -1271,6 +1398,7 @@ a {
 }
 
 .flex_options {
+
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -1305,8 +1433,6 @@ a {
   top: 0px;
   right: 16px;
 }
-
-
 
 .scroll-fade-enter-active {
   transition: all 0.8s ease-out;
