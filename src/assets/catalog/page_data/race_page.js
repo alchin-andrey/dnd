@@ -33,6 +33,6 @@ export default {
 
     lvl: 2,
     age: 70,
-    growth: 91,
+    // height: 90,
     weight: 15,
 };

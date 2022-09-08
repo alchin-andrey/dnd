@@ -115,7 +115,7 @@
           >
           </my-selection>
         
-          <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
+          <button @click="plusGrow()" type="">Увеличить рост +5</button>
         </div>
         <!-- </div> -->
         <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
@@ -179,19 +179,31 @@
     <!-- Возраст -->
 
     <!-- Рост -->
+
     <my-selection-box :shown="race_page.shown_growth">
       <div class="flex_options">
+        <myRange 
+        :max_range="max_Hight"
+        :min_range="min_Hight" 
+        v-model.number="MY.height" />
+        <mySizeGrowth />
+      </div>
+    </my-selection-box>
+    
+    
+    
+    
+    
+    <!-- <my-selection-box :shown="race_page.shown_growth">
+      <div class="flex_options">
         <div class="range-slider">
-          <!-- <div class="range__midle"> -->
             <input type="range" class="vertical" min="90" max="120" step="1" value="105" orient="vertical">
-          <!-- </div> -->
-        <!-- <input type="range" class="vertical" min="0" max="210" step="1" value="90"> -->
         <div class="range__bottom"></div>
         <div class="range_value">100 см</div>
       </div>
         <mySizeGrowth />
       </div>
-    </my-selection-box>
+    </my-selection-box> -->
 
     <!-- <my-selection-box :shown="race_page.shown_growth">
       <div class="flex_options">
@@ -535,6 +547,7 @@ export default {
       this.default_MY.race.settings.ethnos
     )[0];
     this.MY = this.default_MY;
+    this.MY.height = this.Get_Hight;
     this.getExtra(this.Stats_Pass, "stats");
     this.getExtra(this.Skills_Pass, "skills");
     this.getExtra(this.Lang_Pass, "languages");
@@ -549,6 +562,22 @@ export default {
     //     return this.Race_Set_Obj.custom_skills[1];
     //   }
     // },
+
+    min_Hight() {
+      return this.MY.race.settings.height.min;
+    },
+    max_Hight() {
+      return this.MY.race.settings.height.max;
+    },
+
+    Get_Hight() {
+      console.log(this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight)
+if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
+        return this.MY.height;
+      } else {
+        return (this.min_Hight + this.max_Hight) / 2;
+      }
+    },
 
     mastery() {
       return 1 + Math.ceil(this.MY.level / 4);
@@ -775,6 +804,7 @@ export default {
       this.getExtra(this.Stats_Pass, "stats");
       this.getExtra(this.Skills_Pass, "skills");
       this.getExtra(this.Lang_Pass, "languages");
+      this.MY.height = this.Get_Hight;
     },
 
     getFunction_2() {
@@ -782,6 +812,16 @@ export default {
       this.getExtra_Ethnos(this.Skills_Pass, "skills");
       this.getExtra_Ethnos(this.Lang_Pass, "languages");
     },
+
+    // getHight() {
+    //   if (this.MY.height) {
+    //     return this.MY.height;
+    //   } else if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
+    //     return this.MY.height;
+    //   } else {
+    //     return (this.min_Hight + this.max_Hight) / 2;
+    //   }
+    // },
 
     getNewEthnos() {
       this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
@@ -1250,9 +1290,9 @@ a {
 
 /* -------------ПОЛЗУН------------------- */
 
-.range-slider {
+/* .range-slider {
   width: 344px;
-  height: 100%;
+  height: 1000vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1295,6 +1335,10 @@ a {
     cursor: ns-resize;
 }
 
+::-ms-fill-lower { 
+    background: #ffffff;
+}
+
 .range_value {
   position: absolute;
   left: 16px;
@@ -1314,13 +1358,14 @@ a {
   width: 344px;
   height: calc((100vh - 64px) / 210 * 90 - 30px);
   background-color: #ffffff;
-}
 
-input[type="range"] {
+} */
+
+/* input[type="range"] {
   transform: rotate(270deg);
   margin-bottom: calc((100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * 120))) / 2 - 172px - 1px);
   width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * 120)));
-}
+} */
 
 /* -------------ПОЛЗУН------------------- */
 

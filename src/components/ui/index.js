@@ -17,6 +17,8 @@ import MyColorSelect from "@/components/ui/MyColorSelect.vue";
 import RaceBody from "@/components/ui/RaceBody.vue";
 import MySkale from "@/components/ui/MySkale.vue";
 import MySizeGrowth from "@/components/ui/MySizeGrowth.vue";
+import MyRange from "@/components/ui/MyRange.vue";
+
 import GenderCard from "@/components/GenderCard.vue";
 
 
@@ -41,4 +43,5 @@ export default [
   MySkale,
   MySizeGrowth,
   GenderCard,
+  MyRange,
 ];
