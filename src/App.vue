@@ -571,8 +571,7 @@ export default {
     },
 
     Get_Hight() {
-      console.log(this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight)
-if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
+      if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
         return this.MY.height;
       } else {
         return (this.min_Hight + this.max_Hight) / 2;
@@ -805,6 +804,7 @@ if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
       this.getExtra(this.Skills_Pass, "skills");
       this.getExtra(this.Lang_Pass, "languages");
       this.MY.height = this.Get_Hight;
+      // this.getHight();
     },
 
     getFunction_2() {
@@ -814,13 +814,8 @@ if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
     },
 
     // getHight() {
-    //   if (this.MY.height) {
-    //     return this.MY.height;
-    //   } else if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
-    //     return this.MY.height;
-    //   } else {
-    //     return (this.min_Hight + this.max_Hight) / 2;
-    //   }
+    //   console.log('Высота', this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight)
+    //     this.MY.height = this.min_Hight + this.race_page.height_kof;
     // },
 
     getNewEthnos() {

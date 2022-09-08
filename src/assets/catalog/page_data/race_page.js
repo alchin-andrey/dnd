@@ -33,6 +33,6 @@ export default {
 
     lvl: 2,
     age: 70,
-    // height: 90,
+    height_kof: null,
     weight: 15,
 };

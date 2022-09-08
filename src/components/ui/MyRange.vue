@@ -87,13 +87,18 @@ export default {
     }
   },
   watch: {
-    // "$root.MY.race": {
-    //   handler() {
-    //     console.log('изменилось свойство b')
-    //     this.inputValue = this.$root.MY.height;
-    //   },
-    //   immediate: true,
-    // },
+    "$root.MY.race": {
+      handler() {
+        setTimeout(() =>{
+          this.inputValue = this.$root.MY.height + 1;
+          this.$emit("update:modelValue", this.inputValue);
+          this.inputValue = this.$root.MY.height - 1;
+          this.$emit("update:modelValue", this.inputValue);
+    }, 1)
+        
+      },
+      immediate: true,
+    },
     // inputValue: {
     //   handler() {
     //     this.$root.MY.height = Number(this.inputValue);
@@ -107,12 +112,14 @@ export default {
         // this.maxRange = this.max_range;
         // console.log(this.modelValue, this.min_range, this.max_range)
         this.inputValue = this.modelValue;
+        this.$root.race_page.height_kof = this.max_range - this.inputValue
       },
       immediate: true,
     },
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
+        this.$root.race_page.height_kof = this.max_range - this.inputValue
       },
     },
   },
