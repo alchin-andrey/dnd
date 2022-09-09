@@ -115,7 +115,7 @@
           >
           </my-selection>
         
-          <button @click="plusGrow()" type="">Увеличить рост +5</button>
+          <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
         </div>
         <!-- </div> -->
         <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
@@ -547,7 +547,7 @@ export default {
       this.default_MY.race.settings.ethnos
     )[0];
     this.MY = this.default_MY;
-    this.MY.height = this.Get_Hight;
+    // this.MY.height = this.Get_Hight;
     this.getExtra(this.Stats_Pass, "stats");
     this.getExtra(this.Skills_Pass, "skills");
     this.getExtra(this.Lang_Pass, "languages");
@@ -571,8 +571,8 @@ export default {
     },
 
     Get_Hight() {
-      if (this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight) {
-        return this.MY.height;
+      if (this.MY.height) {
+        return this.MY.height = this.max_Hight - this.race_page.height_kof;
       } else {
         return (this.min_Hight + this.max_Hight) / 2;
       }
@@ -813,10 +813,9 @@ export default {
       this.getExtra_Ethnos(this.Lang_Pass, "languages");
     },
 
-    // getHight() {
-    //   console.log('Высота', this.min_Hight <= this.MY.height && this.MY.height <= this.max_Hight)
-    //     this.MY.height = this.min_Hight + this.race_page.height_kof;
-    // },
+    getHight() {
+        this.MY.height = this.max_Hight - this.race_page.height_kof;
+    },
 
     getNewEthnos() {
       this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
