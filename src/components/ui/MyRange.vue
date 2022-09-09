@@ -1,10 +1,10 @@
 <template>
   <div class="range_slider">
     <input
-    :style="{ 
-      'margin-bottom': Range_Margin,
-      'width': Range_Width 
-          }"
+      :style="{
+        'margin-bottom': Range_Margin,
+        width: Range_Width,
+      }"
       type="range"
       class="vertical"
       :min="min_range"
@@ -12,11 +12,12 @@
       v-model.number="inputValue"
       step="1"
     />
-    <div 
-    :style="{ 
-      height: Range_Bottom,
-          }"
-    class="range_bottom"></div>
+    <div
+      :style="{
+        height: Range_Bottom,
+      }"
+      class="range_bottom"
+    ></div>
     <div class="range_value">{{ t_Unit }}</div>
   </div>
 </template>
@@ -26,8 +27,6 @@ export default {
   name: "MyRange",
   data() {
     return {
-      // minRange: '',
-      // maxRange: '',
       inputValue: "",
     };
   },
@@ -44,91 +43,48 @@ export default {
       type: Number,
       default: null,
     },
-    // unit: {
-    //   type: String,
-    //   default: null,
-    // },
-    // value_range: {
-    //   type: Number,
-    //   default: null,
-    // },
   },
-  // mounted() {
-  //       this.inputValue = this.value_Range;
-  //   },
+
 
   computed: {
-    // min_Range() {
-    //   return this.$root.MY.race.settings.height.min;
-    // },
-    // max_Range() {
-    //   return this.$root.MY.race.settings.height.max;
-    // },
-    // value_Range() {
-    //   if (this.$root.MY.height) {
-    //     return this.$root.MY.height;
-    //   } else {
-    //     return (this.min_Range + this.max_Range) / 2;
-    //   }
-    // },
     t_Unit() {
-      return `${this.valueRange()} ${this.t("cm")}`;
+      return `${this.inputValue} ${this.t("cm")}`;
     },
     Range_Margin() {
-      console.log(this.min_range, this.max_range)
-      return `calc((100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range}))) / 2 - 172px - 1px)`
+      console.log(this.min_range, this.max_range);
+      return `calc((100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range}))) / 2 - 172px - 1px)`;
     },
     Range_Width() {
-      return `calc(100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range})))`
+      return `calc(100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range})))`;
     },
     Range_Bottom() {
-      return `calc((100vh - 64px) / 210 * ${this.min_range} - 30px)`
-    }
+      return `calc((100vh - 64px) / 210 * ${this.min_range} - 30px)`;
+    },
   },
   watch: {
     "$root.MY.race": {
       handler() {
-        setTimeout(() =>{
+        setTimeout(() => {
           this.inputValue = this.$root.MY.height + 1;
           this.$emit("update:modelValue", this.inputValue);
           this.inputValue = this.$root.MY.height - 1;
           this.$emit("update:modelValue", this.inputValue);
-    }, 1)
-        
+        }, 1);
       },
       immediate: true,
     },
-    // inputValue: {
-    //   handler() {
-    //     this.$root.MY.height = Number(this.inputValue);
-    //   },
-    //   immediate: true,
-    // },
-
     modelValue: {
       handler() {
-        // this.minRange = this.min_range;
-        // this.maxRange = this.max_range;
-        // console.log(this.modelValue, this.min_range, this.max_range)
         this.inputValue = this.modelValue;
-        this.$root.race_page.height_kof = this.max_range - this.inputValue
+        this.$root.race_page.height_kof = this.max_range - this.inputValue;
       },
       immediate: true,
     },
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
-        this.$root.race_page.height_kof = this.max_range - this.inputValue
+        this.$root.race_page.height_kof = this.max_range - this.inputValue;
       },
-    },
-  },
-  methods: {
-    valueRange() {
-      if (this.$root.MY.height) {
-        return this.$root.MY.height;
-      } else {
-        return (this.min_Range + this.max_Range) / 2;
-      }
     },
   },
 };
@@ -146,57 +102,6 @@ export default {
   overflow: hidden;
   position: relative;
 }
-/* 
-::-webkit-slider-runnable-track {
-  background: rgba(255, 255, 255, 0.06);
-  min-height: 344px;
-  border-radius: 0 12px 12px 0;
-  overflow: hidden;
-}
-
-::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 30px;
-  min-height: 344px;
-  background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
-  background-color: #ffffff;
-  box-shadow: -100vh 0 0 100vh #ffffff;
-  cursor: ns-resize;
-}
-
-.slider::-moz-range-thumb {
-  width: 30px;
-  min-height: 344px;
-  background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
-  background-color: #ffffff;
-  box-shadow: -100vh 0 0 100vh #ffffff;
-  cursor: ns-resize;
-}
-
-::-ms-fill-lower {
-  background: #ffffff;
-}
-
-.range_value {
-  position: absolute;
-  left: 16px;
-  bottom: 11px;
-  height: 24px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0.02em;
-  color: #000000;
-  background-color: #ffffff;
-}
-
-.range_bottom {
-  width: 344px;
-  height: calc((100vh - 64px) / 210 * 90 - 30px);
-  background-color: #ffffff;
-} */
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -211,20 +116,22 @@ input[type="range"] {
   width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * 120))); */
 }
 
-
 ::-webkit-slider-runnable-track {
   background: rgba(255, 255, 255, 0.06);
   min-height: 344px;
 }
 
 ::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 30px;
+  -webkit-appearance: none;
+  width: 30px;
   min-height: 344px;
   background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
   background-color: #ffffff;
-  box-shadow: -100vh 0 0 100vh #ffffff;
+  box-shadow: -100vh 0 0 100.01vh #ffffff;
   cursor: ns-resize;
+  border: 0px;
+  border-radius: 0 !important;
+  box-sizing: border-box;
 }
 
 ::-moz-range-track {
@@ -244,33 +151,33 @@ input[type="range"] {
   box-sizing: border-box;
 }
 
-::-ms-fill-lower { 
-  background: #ffffff
+::-ms-fill-lower {
+  background: #ffffff;
 }
 
-::-ms-thumb { 
-    background: #fff;
-    height: 344px;
-    box-sizing: border-box;
+::-ms-thumb {
+  background: #fff;
+  height: 344px;
+  box-sizing: border-box;
 }
 
-::-ms-ticks-after { 
-    display: none; 
+::-ms-ticks-after {
+  display: none;
 }
 
-::-ms-ticks-before { 
-    display: none; 
+::-ms-ticks-before {
+  display: none;
 }
 
-::-ms-track { 
-    background: #ddd;
-    color: transparent;
-    width: 344px;
-    border: none;
+::-ms-track {
+  background: #ddd;
+  color: transparent;
+  width: 344px;
+  border: none;
 }
 
-::-ms-tooltip { 
-    display: none;
+::-ms-tooltip {
+  display: none;
 }
 
 .range_value {
@@ -290,7 +197,7 @@ input[type="range"] {
 
 .range_bottom {
   width: 344px;
-  height: calc((100vh - 64px) / 210 * 90 - 30px);
+  /* height: calc((100vh - 64px) / 210 * 90 - 30px); */
   background-color: #ffffff;
 }
 </style>
