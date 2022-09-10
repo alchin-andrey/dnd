@@ -605,11 +605,7 @@ export default {
     },
 
     Hight_Note() {
-      if (this.Char_Height < 120) {
-        return this.t("size_small");
-      } else {
-        return this.t("size_medium");
-      }
+        return this.t(this.Race_Set_Obj.size);
     },
 
     min_Hight() {
