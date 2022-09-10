@@ -191,6 +191,8 @@ export default {
         max: 120,
       },
 
+      size:"size_small",
+
       weight: {
         min: 15,
         max: 20,
@@ -341,6 +343,8 @@ export default {
         min: 90,
         max: 120,
       },
+
+      size:"size_small",
 
       weight: {
         min: 15,
@@ -580,6 +584,8 @@ export default {
         min: 120,
         max: 150,
       },
+
+      size:"size_medium",
 
       weight: {
         min: 60,
@@ -1043,6 +1049,8 @@ export default {
         max: 180,
       },
 
+      size:"size_medium",
+
       weight: {
         min: 60,
         max: 90,
@@ -1186,6 +1194,8 @@ export default {
         min: 150,
         max: 180,
       },
+
+      size:"size_medium",
 
       weight: {
         min: 60,
@@ -1575,6 +1585,8 @@ export default {
         max: 180,
       },
 
+      size:"size_medium",
+
       weight: {
         min: 45,
         max: 65,
@@ -1791,6 +1803,8 @@ export default {
         max: 180,
       },
 
+      size:"size_medium",
+
       weight: {
         min: 60,
         max: 90,
@@ -1893,6 +1907,8 @@ export default {
         min: 180,
         max: 210,
       },
+
+      size:"size_medium",
 
       weight: {
         min: 80,
@@ -2271,6 +2287,8 @@ export default {
         min: 180,
         max: 210,
       },
+
+      size:"size_medium",
 
       weight: {
         min: 80,
