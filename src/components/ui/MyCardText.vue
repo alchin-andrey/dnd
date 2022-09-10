@@ -1,6 +1,10 @@
 <template>
 <div class="int-400">
-            <h3 class="title">{{ t_Title }}</h3>
+            <h3 class="title"
+            :class="{
+              only: !text,
+    }"
+            >{{ t_Title }} {{ title_postscript }}</h3>
             <p class="text">
               {{ t_Text }}
               <br v-if="rare" />
@@ -15,6 +19,10 @@ export default {
   name: "MyCardText",
   props: {
     title: {
+      type: String,
+      default: null,
+    },
+    title_postscript: {
       type: String,
       default: null,
     },
@@ -42,6 +50,7 @@ export default {
 </script>
 
 <style scoped>
+
 .title {
   font-family: "Inter";
   font-style: normal;
@@ -53,6 +62,9 @@ export default {
   margin-bottom: 4px;
 }
 
+.only {
+  margin-bottom: 0px;
+}
 
 .title:first-letter {
   text-transform: uppercase;

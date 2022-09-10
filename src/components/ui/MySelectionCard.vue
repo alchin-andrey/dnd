@@ -66,7 +66,7 @@ export default {
 
 .pasive_card {
   padding: 16px;
-  width: 394px;
+  /* width: 394px; */
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(60px);
   border-radius: 12px;

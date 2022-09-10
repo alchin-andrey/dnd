@@ -1,5 +1,9 @@
 export default {
+    shown_logo: false,
+    shown_lang: false,
     shown_lvl: false,
+
+
     shown_ethnos: false,
     shown_gender: false,
     shown_skin_color: false,
@@ -33,6 +37,6 @@ export default {
 
     lvl: 2,
     age: 70,
-    height_kof: null,
+    height_kof: (120-90)/2,
     weight: 15,
 };

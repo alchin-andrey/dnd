@@ -2,8 +2,26 @@
   <div class="sidebar_left">
     <div class="chapter">
       <div class="main_chapter">
-        <div class="logo" @click="showMY()">
-          <img alt="logo" src="@/assets/img/logo.svg" />
+        <div class="header" @click="showMY()">
+          <my-logo-card
+          @click="show('shown_logo')"
+          :active="race_page.shown_logo"
+          />
+          <!-- <div class="logo" @click="show('shown_logo')">
+            <img alt="logo" src="@/assets/img/logo_1.svg" />
+          </div> -->
+          <div class="header_col">
+            <my-header-card
+              @click="show('shown_lang')"
+              :active="race_page.shown_lang"
+              :slots="Char_Lang"
+            />
+            <my-header-card
+              @click="show('shown_lvl')"
+              :active="race_page.shown_lvl"
+              :slots="Char_Lvl"
+            />
+          </div>
         </div>
 
         <my-slider
@@ -16,12 +34,12 @@
         <!-- <div class="main_menu"> -->
         <!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
         <div class="selection_menu">
-          <my-controller
+          <!-- <my-controller
             @click="show('shown_lvl')"
             :active="race_page.shown_lvl"
             title="level"
             :value="MY.level"
-          ></my-controller>
+          ></my-controller> -->
           <my-selection
             @click="show('shown_ethnos')"
             :active="race_page.shown_ethnos"
@@ -142,6 +160,21 @@
       ></my-button-back>
     </div>
 
+    <!-- Превью -->
+    <my-selection-box :shown="race_page.shown_logo">
+      <my-card-text title="welcome_title" text="welcome_message" />
+      <my-selection-card passive>
+        <my-card-text title="credit_card" title_postscript="5375 4141 0613 7382" />
+      </my-selection-card>
+      <my-selection-card passive>
+        <my-card-text title_postscript="1LnEyvMisSyUvdbJQUmAyaiHEeALQd793F" />
+      </my-selection-card>
+      <my-selection-card passive>
+        <my-card-text title_postscript="Patreon ↗" />
+      </my-selection-card>
+    </my-selection-box>
+    <!-- Превью -->
+
     <!-- Уровень -->
     <my-selection-box :shown="race_page.shown_lvl">
       <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl />
@@ -248,7 +281,7 @@
           >
           </my-attribute>
         </my-wrapper>
-        <my-card-text :text="'stats_base_details'"> </my-card-text>
+        <my-card-text text="stats_base_details"> </my-card-text>
       </div>
       <my-selection-card
         v-for="name in Stats_Pass"
@@ -278,7 +311,7 @@
 
     <!-- Навыки -->
     <my-selection-box :shown="race_page.shown_skills">
-      <my-card-text :text="'skills_details'"> </my-card-text>
+      <my-card-text text="skills_details"> </my-card-text>
       <my-selection-card
         v-for="(val, name, i) in MY.skills"
         :key="name"
@@ -563,13 +596,21 @@ export default {
     //   }
     // },
 
+    Char_Lang() {
+      return this.t("lang_icon");
+    },
+
+    Char_Lvl() {
+      return `${this.t("lvl")} ${this.MY.level}`;
+    },
+
     Hight_Note() {
       if (this.Char_Height < 120) {
-        return this.t('size_small')
+        return this.t("size_small");
       } else {
-        return this.t('size_medium')
+        return this.t("size_medium");
       }
-    }, 
+    },
 
     min_Hight() {
       return this.MY.race.settings.height.min;
@@ -866,6 +907,8 @@ export default {
     },
 
     close() {
+      this.race_page.shown_logo = false;
+      this.race_page.shown_lang = false;
       this.race_page.shown_lvl = false;
       this.race_page.shown_ethnos = false;
       this.race_page.shown_gender = false;
@@ -1121,9 +1164,36 @@ a {
   color: #ffffff;
 }
 
+.header {
+  width: 256px;
+  height: 28px;
+  margin: 32px 0 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_col {
+  display: flex;
+  gap: 4px;
+}
+
 .logo {
-  height: 32px;
-  margin: 32px 0 18px 0;
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.header_col {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar_left {

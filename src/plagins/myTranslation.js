@@ -5,7 +5,7 @@ export default {
             data() {
                 return {
                     dic: dic,
-                    lang: "ru",
+                    lang: "ua",
                 };
             },
             methods: {
