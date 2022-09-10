@@ -31,8 +31,14 @@
           ></my-selection>
         </div>
 
-        <div class="selection_menu"
-        v-if="MY.race.settings.custom_stats || MY.race.settings.custom_skills || MY.race.settings.custom_languages || MY.ethnos.custom_languages"
+        <div
+          class="selection_menu"
+          v-if="
+            MY.race.settings.custom_stats ||
+            MY.race.settings.custom_skills ||
+            MY.race.settings.custom_languages ||
+            MY.ethnos.custom_languages
+          "
         >
           <my-selection
             v-if="MY.race.settings.custom_stats"
@@ -82,7 +88,7 @@
             title="height"
             :value="Char_Height"
             unit="cm"
-            note="Маленький"
+            :note="Hight_Note"
           ></my-controller>
           <my-controller
             @click="show('shown_weight')"
@@ -92,7 +98,7 @@
             unit="kg"
             note=""
           >
-          </my-controller>        
+          </my-controller>
           <my-selection
             @click="show('shown_skin_color', 'skin')"
             :active="race_page.shown_skin_color"
@@ -114,14 +120,14 @@
             :type="getCharColor('hair').name"
           >
           </my-selection>
-        
+
           <!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
         </div>
         <!-- </div> -->
         <!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
         <!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
         <!-- <button @click="plus()" type=""> -->
-          <!-- Увеличить входящий параметр на +1 -->
+        <!-- Увеличить входящий параметр на +1 -->
         <!-- </button> -->
       </div>
 
@@ -182,18 +188,15 @@
 
     <my-selection-box :shown="race_page.shown_growth">
       <div class="flex_options">
-        <myRange 
-        :max_range="max_Hight"
-        :min_range="min_Hight" 
-        v-model.number="MY.height" />
+        <myRange
+          :max_range="max_Hight"
+          :min_range="min_Hight"
+          v-model.number="MY.height"
+        />
         <mySizeGrowth />
       </div>
     </my-selection-box>
-    
-    
-    
-    
-    
+
     <!-- <my-selection-box :shown="race_page.shown_growth">
       <div class="flex_options">
         <div class="range-slider">
@@ -347,9 +350,8 @@
     <!-- Языки -->
   </div>
   <!-- Персонаж -->
-  
-  <div class="represent">
 
+  <div class="represent">
     <div
       class="character"
       :class="{
@@ -411,7 +413,7 @@
         feet
         :icon="name"
       ></my-attribute>
-      <my-attribute 
+      <my-attribute
         v-if="MY.ethnos.hp_bonus"
         title="hp_bonus"
         :numb="hp_bonus"
@@ -485,14 +487,12 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
-
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 
 export default {
   name: "App",
   components: {
     GenderChoiceStore,
-
 
     EthnosChoice,
     GenderChoice,
@@ -563,6 +563,14 @@ export default {
     //   }
     // },
 
+    Hight_Note() {
+      if (this.Char_Height < 120) {
+        return this.t('size_small')
+      } else {
+        return this.t('size_medium')
+      }
+    }, 
+
     min_Hight() {
       return this.MY.race.settings.height.min;
     },
@@ -572,7 +580,7 @@ export default {
 
     Get_Hight() {
       if (this.MY.height) {
-        return this.MY.height = this.max_Hight - this.race_page.height_kof;
+        return (this.MY.height = this.max_Hight - this.race_page.height_kof);
       } else {
         return (this.min_Hight + this.max_Hight) / 2;
       }
@@ -588,7 +596,7 @@ export default {
 
     hp_bonus() {
       let increm_1 = this.MY.ethnos.hp_bonus[0];
-      let increm_2= this.MY.ethnos.hp_bonus[1];
+      let increm_2 = this.MY.ethnos.hp_bonus[1];
       let level = Math.ceil(this.MY.level / increm_1);
       return level * increm_2;
     },
@@ -676,7 +684,7 @@ export default {
           arr.push(lang[i]);
         }
       }
-      console.log('Челопук', arr);
+      console.log("Челопук", arr);
       return arr;
     },
 
@@ -814,7 +822,7 @@ export default {
     },
 
     getHight() {
-        this.MY.height = this.max_Hight - this.race_page.height_kof;
+      this.MY.height = this.max_Hight - this.race_page.height_kof;
     },
 
     getNewEthnos() {
@@ -1146,7 +1154,7 @@ a {
   /* flex: 1 1 auto; */
 }
 .main_menu::-webkit-scrollbar {
-   width: 0; 
+  width: 0;
 }
 
 .selection_menu {
@@ -1363,7 +1371,6 @@ a {
 
 /* -------------ПОЛЗУН------------------- */
 
-
 .slider_growth_back {
   width: 344px;
   height: calc(100% / 700 * 396);
@@ -1404,7 +1411,6 @@ a {
 }
 
 .flex_options {
-
   height: 100%;
   display: flex;
   justify-content: space-between;
