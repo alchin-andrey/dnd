@@ -42,5 +42,6 @@ img {
   position: absolute;
   right: 16px;
   top: 16px;
+  cursor: pointer;
 }
 </style>
