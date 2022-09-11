@@ -3,6 +3,7 @@
     class="wrapp jbm-300"
     :class="{
       card_active: active,
+      card_hover: !active,
     }"
   >
   {{ slots }}
@@ -41,10 +42,10 @@ export default {
   text-transform: uppercase;
 }
 
-/* .wrapp:hover {
+.card_hover:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
-} */
+}
 
 .card_active {
   background: #FFFFFF;
