@@ -151,7 +151,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-img {
+.character img {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -163,7 +163,7 @@ img {
   transition-timing-function: ease-in-out;
 }
 
-svg {
+.character svg {
   position: absolute;
   bottom: 0;
   right: 50%;
