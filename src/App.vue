@@ -4,8 +4,8 @@
       <div class="main_chapter">
         <div class="header" @click="showMY()">
           <my-logo-card
-          @click="show('shown_logo')"
-          :active="race_page.shown_logo"
+            @click="show('shown_logo')"
+            :active="race_page.shown_logo"
           />
           <!-- <div class="logo" @click="show('shown_logo')">
             <img alt="logo" src="@/assets/img/logo_1.svg" />
@@ -162,19 +162,7 @@
 
     <!-- Превью -->
     <my-selection-box :shown="race_page.shown_logo">
-      <!-- <Welcome /> -->
       <Description />
-      <!-- <my-card-text title="welcome_title" text="welcome_message" /> -->
-      <!-- <div class="story int-400" v-html="t('authors')"></div>
-      <my-selection-card passive>
-        <my-card-text title="donation_card"/>
-      </my-selection-card>
-      <my-selection-card passive>
-        <my-card-text title="donation_btc" />
-      </my-selection-card>
-      <my-selection-card passive>
-        <my-card-text title_html="donation_patreon" />
-      </my-selection-card> -->
     </my-selection-box>
     <!-- Превью -->
 
@@ -398,9 +386,12 @@
         height: Char_Hight_Back,
       }"
     >
+
       <RaceBody body_part="skin" />
       <RaceBody body_part="eyes" />
       <RaceBody body_part="hair" />
+
+      <WelcomeBanner />
 
       <transition name="slide-fade">
         <mySizeGrowth v-if="hideRuler()" division zero skale_top />
@@ -523,10 +514,9 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
-
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
-import Welcome from "@/components/Welcome.vue";
 import Description from "./components/Description.vue";
+import WelcomeBanner from "./components/WelcomeBanner.vue";
 
 export default {
   name: "App",
@@ -535,9 +525,8 @@ export default {
     EthnosChoice,
     GenderChoice,
     AgeWeight,
-    Welcome,
-    Description
-},
+    WelcomeBanner,
+  },
   data() {
     return {
       MY: MY,
@@ -611,7 +600,7 @@ export default {
     },
 
     Hight_Note() {
-        return this.t(this.Race_Set_Obj.size);
+      return this.t(this.Race_Set_Obj.size);
     },
 
     min_Hight() {
@@ -961,10 +950,7 @@ export default {
     },
 
     hideRuler() {
-      if (
-        this.race_page.shown_home ||
-        this.race_page.shown_height
-      ) {
+      if (this.race_page.shown_home || this.race_page.shown_height) {
         return true;
       } else {
         return false;
@@ -1280,7 +1266,7 @@ a {
   transition-timing-function: ease-in-out;
 }
 
-.character img {
+/* .character img {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -1290,9 +1276,9 @@ a {
   transform: translate(-50%, 0%);
   transition-duration: 0.8s;
   transition-timing-function: ease-in-out;
-}
+} */
 
-.character svg {
+/* .character svg {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -1303,7 +1289,7 @@ a {
   transition-property: all, fill;
   transition-duration: 0.8s, 0.1s;
   transition-timing-function: ease-in-out;
-}
+} */
 
 /* .active_eyes .character img {
   top: 0;
@@ -1543,4 +1529,10 @@ a {
   opacity: 0;
 }
 /* -------------slider-grwwth------------------- */
+
+.wrapp_wel {
+  max-width: 394px;
+  height: 100%;
+  position: absolute;
+}
 </style>

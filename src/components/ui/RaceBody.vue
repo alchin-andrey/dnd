@@ -151,4 +151,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+img {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition-property: all, fill;
+  transition-duration: 0.8s, 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
 </style>
