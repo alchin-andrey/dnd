@@ -101,8 +101,8 @@
             note="Взрослый"
           ></my-controller>
           <my-controller
-            @click="show('shown_growth')"
-            :active="race_page.shown_growth"
+            @click="show('shown_height')"
+            :active="race_page.shown_height"
             title="height"
             :value="Char_Height"
             unit="cm"
@@ -162,16 +162,19 @@
 
     <!-- Превью -->
     <my-selection-box :shown="race_page.shown_logo">
-      <my-card-text title="welcome_title" text="welcome_message" />
+      <!-- <Welcome /> -->
+      <Description />
+      <!-- <my-card-text title="welcome_title" text="welcome_message" /> -->
+      <!-- <div class="story int-400" v-html="t('authors')"></div>
       <my-selection-card passive>
-        <my-card-text title="credit_card" title_postscript="5375 4141 0613 7382" />
+        <my-card-text title="donation_card"/>
       </my-selection-card>
       <my-selection-card passive>
-        <my-card-text title_postscript="1LnEyvMisSyUvdbJQUmAyaiHEeALQd793F" />
+        <my-card-text title="donation_btc" />
       </my-selection-card>
       <my-selection-card passive>
-        <my-card-text title_postscript="Patreon ↗" />
-      </my-selection-card>
+        <my-card-text title_html="donation_patreon" />
+      </my-selection-card> -->
     </my-selection-box>
     <!-- Превью -->
 
@@ -219,7 +222,7 @@
 
     <!-- Рост -->
 
-    <my-selection-box :shown="race_page.shown_growth">
+    <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
         <myRange
           :max_range="max_Hight"
@@ -230,7 +233,7 @@
       </div>
     </my-selection-box>
 
-    <!-- <my-selection-box :shown="race_page.shown_growth">
+    <!-- <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
         <div class="range-slider">
             <input type="range" class="vertical" min="90" max="120" step="1" value="105" orient="vertical">
@@ -241,7 +244,7 @@
       </div>
     </my-selection-box> -->
 
-    <!-- <my-selection-box :shown="race_page.shown_growth">
+    <!-- <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
         <div class="slider_growth_back">
           <div class="slider_growth">
@@ -520,18 +523,21 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
+
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
+import Welcome from "@/components/Welcome.vue";
+import Description from "./components/Description.vue";
 
 export default {
   name: "App",
   components: {
     GenderChoiceStore,
-
     EthnosChoice,
     GenderChoice,
-
     AgeWeight,
-  },
+    Welcome,
+    Description
+},
   data() {
     return {
       MY: MY,
@@ -912,7 +918,7 @@ export default {
       this.race_page.shown_eyes_color = false;
       this.race_page.shown_hair_color = false;
       this.race_page.shown_age = false;
-      this.race_page.shown_growth = false;
+      this.race_page.shown_height = false;
       this.race_page.shown_weight = false;
       this.race_page.shown_characteristics = false;
       this.race_page.shown_skills = false;
@@ -956,15 +962,26 @@ export default {
 
     hideRuler() {
       if (
-        this.race_page.shown_skin_color ||
-        this.race_page.shown_eyes_color ||
-        this.race_page.shown_hair_color
+        this.race_page.shown_home ||
+        this.race_page.shown_height
       ) {
-        return false;
-      } else {
         return true;
+      } else {
+        return false;
       }
     },
+
+    // hideRuler() {
+    //   if (
+    //     this.race_page.shown_skin_color ||
+    //     this.race_page.shown_eyes_color ||
+    //     this.race_page.shown_hair_color
+    //   ) {
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // },
 
     getCharColor(value) {
       if (this.MY.color[value] === null && this.MY.ethnos.name === "common") {

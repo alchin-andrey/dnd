@@ -10,7 +10,7 @@ export default {
     shown_eyes_color: false,
     shown_hair_color: false,
     shown_age: false,
-    shown_growth: false,
+    shown_height: false,
     shown_weight: false,
     shown_characteristics: false,
     shown_skills: false,

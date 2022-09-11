@@ -1,10 +1,11 @@
 <template>
 <div class="int-400">
-            <h3 class="title"
+  <div class="title" v-html="t_Html"></div>
+            <div class="title"
             :class="{
               only: !text,
     }"
-            >{{ t_Title }} {{ title_postscript }}</h3>
+    >{{ t_Title }}</div>
             <p class="text">
               {{ t_Text }}
               <br v-if="rare" />
@@ -22,7 +23,7 @@ export default {
       type: String,
       default: null,
     },
-    title_postscript: {
+    title_html: {
       type: String,
       default: null,
     },
@@ -39,12 +40,17 @@ export default {
     t_Title() {
       return this.t(this.title);
     },
+    t_Html() {
+      console.log(this.t("donation_patreon"));
+      return this.t(this.title_html);
+    },
     t_Text() {
       return this.t(this.text);
     },
     t_Rare() {
       return this.t(`${this.rare}_details`);
     },
+
   },
 };
 </script>
