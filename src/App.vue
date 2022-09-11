@@ -525,6 +525,7 @@ export default {
     EthnosChoice,
     GenderChoice,
     AgeWeight,
+    Description,
     WelcomeBanner,
   },
   data() {
