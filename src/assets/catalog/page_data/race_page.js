@@ -24,7 +24,6 @@ export default {
 
     shown_humman_lang: false,
 
-
     extra:{
         stats: null,
         skills: null,

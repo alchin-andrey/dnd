@@ -12,9 +12,9 @@ export default {
 
     
     //Стартовое
-            welcome_title: "Створи свого персонажа для D&D",
-            welcome_message: 'Щоб повноцінно грати в D&D, достатньо придумати персонажа потрібного рівня, а решту влаштує ваш Майстер. Цей чарівний сайт допоможе вам створити персонажа за 5 простих кроків: Раса, Клас, Типаж, Характеристики, Біографія.\n\nНайкращий підхід для першого разу — розслабитися і вибирати за покликом серця. Тут немає неправильних рішень. У фіналі ви отримаєте аркуш персонажа, з яким ви зможете розпочати гру!',
-            welcome_disclaimer: '<br /><p>Матеріали на цьому сайті не змінюють необхідності придбання офіційних матеріалів. Cистема Dungeons & Dragons є власністю корпорації Wizards of the Coast, графічні матеріали створені за допомогою <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a>.</p>',
+            welcome_title: "Create your own character for D&D",
+            welcome_message: 'To fully play D&D, all you have to do is come up with a character of the right level, and your Master will do the rest. This magical site will help you create a character in 5 easy steps: Race, Class, Type, Traits, Biography.\n\nThe best approach for the first time is to relax and choose according to your heart. There are no wrong decisions here. At the end, you`ll get a character sheet to start the game with!',
+            welcome_disclaimer: '<br /><p>Materials on this site do not replace the need to purchase official materials. The Dungeons & Dragons system is the property of Wizards of the Coast Corporation, graphic materials created with the help of <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a>.</p>',
 
             authors: 
             '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент,</p>' +
@@ -32,7 +32,7 @@ export default {
             name:"имя",
 
             race:"раса",
-            ethnos:"етнос",
+            ethnos:"этнос",
             class:"класс",
             subclass:"специализация",
             past:"предистория",

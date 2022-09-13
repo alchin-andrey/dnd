@@ -14,7 +14,7 @@
             <my-header-card
               @click="show('shown_lang')"
               :active="race_page.shown_lang"
-              :slots="Char_Lang"
+              :slots="dic.select_lang"
             />
             <my-header-card
               @click="show('shown_lvl')"
@@ -165,6 +165,21 @@
       <Description />
     </my-selection-box>
     <!-- Превью -->
+
+    <!-- Смена языка -->
+    <my-selection-box :shown="race_page.shown_lang">
+
+      <my-selection-card
+        v-for="item in dic.lang"
+        :key="item"
+        @click="getLangSite(item.mark)"
+        :select_link="item.mark"
+        :active_link="dic.select_lang"
+      >
+        <LangCard :title="item.icon" :text="item.name" />
+      </my-selection-card>
+    </my-selection-box>
+    <!-- Смена языка -->
 
     <!-- Уровень -->
     <my-selection-box :shown="race_page.shown_lvl">
@@ -497,6 +512,8 @@
 </template>
 
 <script>
+import dic from "@/assets/catalog/texts/dic.js";
+
 import MY from "@/assets/catalog/MY.js";
 import default_MY from "@/assets/catalog/default_MY.js";
 
@@ -530,6 +547,7 @@ export default {
   },
   data() {
     return {
+      dic: dic,
       MY: MY,
       default_MY: default_MY,
 
@@ -580,7 +598,7 @@ export default {
     this.getExtra(this.Stats_Pass, "stats");
     this.getExtra(this.Skills_Pass, "skills");
     this.getExtra(this.Lang_Pass, "languages");
-    console.log(this[this.foo_met](this.numb_foo));
+    // console.log(this[this.foo_met](this.numb_foo));
   },
 
   computed: {
@@ -811,6 +829,11 @@ export default {
   },
 
   methods: {
+
+    getLangSite(name) {
+      this.dic.select_lang = name;
+    },
+
     plus() {
       this.numb_foo++;
     },
@@ -947,7 +970,7 @@ export default {
     },
 
     showMY() {
-      console.log(this.MY, this.race_page);
+      // console.log(this.MY, this.race_page);
     },
 
     hideRuler() {

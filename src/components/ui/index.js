@@ -1,3 +1,5 @@
+import LangCard from "@/components/ui/LangCard.vue";
+
 import MySelection from "@/components/ui/MySelection.vue";
 import MyController from "@/components/ui/MyController.vue";
 import MySlider from "@/components/ui/MySlider.vue";
@@ -25,6 +27,7 @@ import GenderCard from "@/components/GenderCard.vue";
 
 
 export default [
+  LangCard,
   MySelection,
   MyController,
   MySlider,

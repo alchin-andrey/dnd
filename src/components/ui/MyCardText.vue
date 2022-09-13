@@ -41,7 +41,6 @@ export default {
       return this.t(this.title);
     },
     t_Html() {
-      console.log(this.t("donation_patreon"));
       return this.t(this.title_html);
     },
     t_Text() {

@@ -5,13 +5,15 @@ export default {
             data() {
                 return {
                     dic: dic,
-                    lang: "ua",
+                    // lang: dic.select_lang,
                 };
             },
             methods: {
                 t(x) {
                     // console.log(x);
-                    return dic[this.lang][x];
+                    let lang = this.dic.select_lang;
+                    return this.dic[lang][x];
+                    // return this.dic[this.lang][x];
                 },
             },
             // mounted() {},

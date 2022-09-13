@@ -43,6 +43,7 @@ export default {
   },
   computed: {
     get_Active() {
+      console
       if (this.active_link !== null) {
         return this.active_link === this.select_link;
       } else if (this.active_boll_link) {
