@@ -41,7 +41,6 @@
           :icon="name"
         >
         </my-attribute>
-        <!-- <div v-if="ethnos.hp_bonus"> -->
         <my-attribute
         v-if="ethnos.hp_bonus"
         title="hp_bonus"
@@ -49,15 +48,6 @@
         plus
         icon="hp_bonus"
       ></my-attribute>
-    <!-- </div> -->
-        <!-- <my-attribute
-        v-if="ethnos.hp_bonus"
-        :key="name"
-        title="hp_bonus"
-        :numb="hpBonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
-        plus
-        icon="hp_bonus"
-      ></my-attribute> -->
       </my-wrapper>
       <!-- Этнос_Карточка_stats + qualities-->
 
