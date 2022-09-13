@@ -41,6 +41,14 @@
           :icon="name"
         >
         </my-attribute>
+        <my-attribute
+        v-if="ethnos.hp_bonus"
+        :key="name"
+        title="hp_bonus"
+        :numb="hpBonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
+        plus
+        icon="hp_bonus"
+      ></my-attribute>
       </my-wrapper>
       <!-- Этнос_Карточка_stats + qualities-->
 
@@ -83,12 +91,17 @@
 export default {
   name: "EthnosCard",
   computed: {
+    
     etnos_Prof() {
 
 
     },
   },
   methods: {
+    hpBonus(increm_1, increm_2) {
+      let level = Math.ceil(this.$root.MY.level / increm_1);
+      return level * increm_2;
+    },
     getProfObjItem(obj, kay) {
       let arr = [];
       let ethnos_custom = (obj || {})[`custom_${kay}`];
