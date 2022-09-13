@@ -1,6 +1,6 @@
 <template>
   <div class="int-400">
-  <div class="title">{{this.t('welcome_title')}}</div>
+  <div class="title">{{t_Title}}</div>
   <!-- <img @click="close()" src="@/assets/img/icon/close.svg"/> -->
   <div class="text">{{t_Text}}</div>
   <div class="text_html" v-html="t_Html"></div>
