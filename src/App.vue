@@ -14,7 +14,7 @@
             <my-header-card
               @click="show('shown_lang')"
               :active="race_page.shown_lang"
-              :slots="dic.select_lang"
+              :slots="dic.select_lang_icon"
             />
             <my-header-card
               @click="show('shown_lvl')"
@@ -172,7 +172,7 @@
       <my-selection-card
         v-for="item in dic.lang"
         :key="item"
-        @click="getLangSite(item.mark)"
+        @click="getLangSite(item.mark, item.icon)"
         :select_link="item.mark"
         :active_link="dic.select_lang"
       >
@@ -610,9 +610,9 @@ export default {
     //   }
     // },
 
-    Char_Lang() {
-      return this.t("lang_icon");
-    },
+    // Char_Lang() {
+    //   return this.t("lang_icon");
+    // },
 
     Char_Lvl() {
       return `${this.t("lvl")} ${this.MY.level}`;
@@ -830,8 +830,9 @@ export default {
 
   methods: {
 
-    getLangSite(name) {
+    getLangSite(name, icon) {
       this.dic.select_lang = name;
+      this.dic.select_lang_icon = icon;
     },
 
     plus() {

@@ -6,10 +6,6 @@ import { tools } from './tools.js';
 import { armor } from './armor.js';
 
 export default {
-
-    lang_icon: "🇷🇺 🛳 🖕",
-    lang_name: "русский",
-    credit_card: "Карта",
     
     //Стартовое
             welcome_title: "Создай своего персонажа для D&D",

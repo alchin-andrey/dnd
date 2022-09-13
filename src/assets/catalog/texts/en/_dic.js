@@ -7,10 +7,6 @@ import { armor } from './armor.js';
 
 export default {
 
-    lang_icon: "🇺🇦",
-    lang_name: "Українська",
-
-    
     //Стартовое
             welcome_title: "Create your own character for D&D",
             welcome_message: 'To fully play D&D, all you have to do is come up with a character of the right level, and your Master will do the rest. This magical site will help you create a character in 5 easy steps: Race, Class, Type, Traits, Biography.\n\nThe best approach for the first time is to relax and choose according to your heart. There are no wrong decisions here. At the end, you`ll get a character sheet to start the game with!',
