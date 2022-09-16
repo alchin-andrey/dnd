@@ -9,8 +9,8 @@ export default {
 
     //Стартовое
             welcome_title: "Create your own character for D&D",
-            welcome_message: 'To fully play D&D, all you have to do is come up with a character of the right level, and your Master will do the rest. This magical site will help you create a character in 5 easy steps: Race, Class, Type, Traits, Biography.\n\nThe best approach for the first time is to relax and choose according to your heart. There are no wrong decisions here. At the end, you`ll get a character sheet to start the game with!',
-            welcome_disclaimer: '<br /><p>Materials on this site do not replace the need to purchase official materials. The Dungeons & Dragons system is the property of Wizards of the Coast Corporation, graphic materials created with the help of <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a>.</p>',
+            welcome_message: 'To fully play D&D, all you have to do is come up with a character of the right level, and your Master will do the rest. This wonderful site will help you create a character in 5 easy steps: Race, Class, Type, Traits, Biography.\n\nThe best approach for the first time is to relax and choose according to your heart. There are no wrong decisions here. At the end, you`ll get a character sheet to start the game with!',
+            welcome_disclaimer: '<br /><p>Materials on this site do not replace the need to purchase official materials. The Dungeons & Dragons system is the property of Wizards of the Coast Corporation, graphic materials created with the help of <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a></p>',
 
             authors: 
             '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент,</p>' +
