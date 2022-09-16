@@ -20,17 +20,17 @@ export default {
     lang: [
         {
             mark: "ua",
-            icon: "🇺🇦",
+            icon: "ua",
             name: "Українська",
         },
         {
             mark: "en",
-            icon: "🇬🇧",
+            icon: "en",
             name: "English",
         },
         {
             mark: "ru",
-            icon: "🇷🇺 🛳 🖕",
+            icon: "ru",
             name: "русский",
         },
     ],

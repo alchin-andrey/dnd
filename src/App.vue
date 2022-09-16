@@ -14,8 +14,9 @@
             <my-header-card
               @click="show('shown_lang')"
               :active="race_page.shown_lang"
-              :slots="dic.select_lang_icon"
-            />
+            >
+            <img class="header_icon" :src="Lang_Icon"/>
+            </my-header-card>
             <my-header-card
               @click="show('shown_lvl')"
               :active="race_page.shown_lvl"
@@ -614,6 +615,10 @@ export default {
     //   return this.t("lang_icon");
     // },
 
+    Lang_Icon() {
+        return require(`@/assets/img/icon/lang/icon_${this.dic.select_lang}.png`);
+    },
+
     Char_Lvl() {
       return `${this.t("lvl")} ${this.MY.level}`;
     },
@@ -1200,6 +1205,10 @@ a {
 .header_col {
   display: flex;
   gap: 4px;
+}
+
+.header_icon {
+  height: 18px;
 }
 
 .logo {

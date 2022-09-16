@@ -6,6 +6,7 @@
       card_hover: !active,
     }"
   >
+  <slot></slot>
   {{ slots }}
   </div>
 </template>

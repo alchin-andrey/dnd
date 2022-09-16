@@ -1,6 +1,6 @@
 <template>
   <div class="int-400">
-    <div class="title">{{ title }}</div>
+    <img class="title" :src="Lang_Icon"/>
     <div class="text">{{ text }}</div>
   </div>
 </template>
@@ -17,6 +17,11 @@ export default {
       type: String,
       default: null,
     },
+  },
+  computed: {
+  Lang_Icon() {
+        return require(`@/assets/img/icon/lang/icon_${this.title}.png`);
+    }
   },
 };
 </script>
