@@ -4,6 +4,7 @@ import router from './router';
 import store from './store';
 import components from "@/components/ui";
 import directives from "@/directives";
+import VueClipboard from "vue3-clipboard";
 
 import myTranslation from "@/plagins/myTranslation.js";
 
@@ -18,6 +19,10 @@ import myTranslation from "@/plagins/myTranslation.js";
 
 
 const app = createApp(App);
+app.use(VueClipboard, {
+    autoSetContainer: true,
+    appendToBody: true,
+});
 app.use(store);
 app.use(router);
 app.use(myTranslation);
@@ -31,3 +36,5 @@ directives.forEach(directive => {
 });
 
 app.mount('#app');
+
+

@@ -1,33 +1,63 @@
 <template>
   <div class="marg">
-  <Welcome />
+    <Welcome />
 
-  <div class="flex">
-    <div class="story int-400" v-html="t_Html"></div>
+    <div class="flex">
+      <div class="story int-400" v-html="t_Html"></div>
 
-    <my-selection-card passive>
-      <my-card-text title="donation_card" />
-    </my-selection-card>
+      <my-selection-card passive>
+        <my-card-text
+          class="cursor"
+          @click="doCopy(t_Card)"
+          title="donation_card"
+        />
+      </my-selection-card>
 
-    <my-selection-card passive>
-      <my-card-text title="donation_btc" />
-    </my-selection-card>
+      <my-selection-card passive>
+        <my-card-text
+          class="cursor"
+          @click="doCopy(t_Btc)"
+          title="donation_btc"
+        />
+      </my-selection-card>
 
-    <my-selection-card passive>
-      <my-card-text title_html="donation_patreon" />
-    </my-selection-card>
+      <my-selection-card passive>
+        <my-card-text title_html="donation_patreon" />
+      </my-selection-card>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import Welcome from "@/components/Welcome.vue";
+import { copyText } from "vue3-clipboard";
 
 export default {
   components: { Welcome },
   name: "Description",
 
+  setup() {
+    const doCopy = (name) => {
+      copyText(name, undefined, (error, event) => {
+        if (error) {
+          alert("Can not copy");
+          console.log(error);
+        } else {
+          alert("Copied: " + name);
+          console.log(event, name);
+        }
+      });
+    };
+    return { doCopy };
+  },
+
   computed: {
+    t_Card() {
+      return this.t("donation_card");
+    },
+    t_Btc() {
+      return this.t("donation_btc");
+    },
     t_Html() {
       return this.t("authors");
     },
@@ -37,37 +67,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* .title {
-  height: 15px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 26px;
+.cursor {
+  cursor: pointer;
 }
-
-.title:first-letter {
-  text-transform: uppercase;
-}
-
-.text {
-  color: rgba(255, 255, 255, 0.4);
-  text-align: start;
-  white-space: pre-line;
-}
-
-.text:first-letter,
-.text_html:first-letter {
-  text-transform: uppercase;
-}
-
-.text_html {
-  color: rgba(255, 255, 255, 0.2);
-  
-} */
 
 .marg {
   margin-left: 32px;
