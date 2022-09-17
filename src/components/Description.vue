@@ -6,14 +6,14 @@
       <div class="story int-400" v-html="t_Html"></div>
 <div class="flex_col title">
       <my-selection-card 
-      @click="doCopy(uan_numb, 'uan_copied')" 
+      @click="doCopy(uan_numb), copiedLink('uan_copied')" 
       copy 
       :copied="uan_copied">
         <div class="text">{{`UAN  ${uan_text}`}}</div>
       </my-selection-card>
 
       <my-selection-card 
-      @click="doCopy(btc_numb, 'btc_copied')" 
+      @click="doCopy(btc_numb), copiedLink('btc_copied')" 
       copy 
       :copied="btc_copied">
         <div class="text">{{`BTS  ${btc_numb}`}}</div>
@@ -45,25 +45,13 @@ export default {
     };
   },
 
-  props: {
-    uan_copied: {
-      type: Boolean,
-      default: false,
-    },
-    colors_card: {
-      type: Boolean,
-      btc_copied: false,
-    },
-  },
-
   setup() {
-    const doCopy = (copied, name) => {
+    const doCopy = (copied) => {
       copyText(copied, undefined, (error, event) => {
         if (error) {
           alert("Error");
           console.log(error);
         } else {
-          alert("Copied:");
           console.log(event);
         }
       });
@@ -73,7 +61,12 @@ export default {
 
   methods: {
     copiedLink(name) {
-      console.log(name);
+      this[name] = true
+      console.log(this[name]);
+      setTimeout(() => {
+        this[name] = false
+        }, 2000);
+      console.log(this[name]);
     }
   },
 
