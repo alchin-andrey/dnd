@@ -19,10 +19,6 @@ export default {
             '<p>По любым темам об этом сайте, пишите Диме.</p>' +
             '<br /><p>Если у вас есть желание задонатить, будем очень благодарны. Безжалостное и жестокое вторжение ₚосии в Украину продолжается, поэтому 80% донатов мы отправляем в фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 
-            donation_card: 'Карта  5375 4141 0613 7382',
-            donation_btc: 'BTC  1LnEyvMisSyUvdbJQUmAyaiHEeALQd793F',
-            donation_patreon:'<a target="_blank" href="https://www.patreon.com/dimalagoda">Patreon ↗</a>',
-
     //Общее        
     
             name:"имя",
