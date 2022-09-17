@@ -6,6 +6,9 @@
       colors_card: colors_card,
       basic: basic,
       selection_card_active: get_Active,
+      copy: copy && !copied,
+      copied: copied,
+      link: link,
     }"
   >
     <slot></slot>
@@ -15,6 +18,12 @@
 <script>
 export default {
   name: "MySelectionCard",
+  // data() {
+  //   return {
+  //     copy_icon: this.copy,
+  //     copied: false,
+  //   };
+  // },
   props: {
     passive: {
       type: Boolean,
@@ -25,6 +34,18 @@ export default {
       default: false,
     },
     basic: {
+      type: Boolean,
+      default: false,
+    },
+    copy: {
+      type: Boolean,
+      default: false,
+    },
+    copied: {
+      type: Boolean,
+      default: false,
+    },
+    link: {
       type: Boolean,
       default: false,
     },
@@ -90,4 +111,25 @@ export default {
   border: 2px solid #ffffff;
   padding: 14px !important;
 }
+
+.copy::after {
+  content: url(@/assets/img/icon/copy_passive.svg);
+  position: absolute;
+  right: 12px;
+}
+
+.copy:hover::after {
+  content: url(@/assets/img/icon/copy_active.svg);
+}
+
+.copied::after {
+  content: url(@/assets/img/icon/check.svg);
+  position: absolute;
+  right: 12px;
+}
+
+.link {
+  padding: 0px;
+}
+
 </style>
