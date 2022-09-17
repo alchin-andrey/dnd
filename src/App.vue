@@ -867,6 +867,9 @@ export default {
       this.closeColor("skin");
       this.closeColor("eyes");
       this.closeColor("hair");
+      this.getComonColor("skin");
+      this.getComonColor("eyes");
+      this.getComonColor("hair");
       this.closePar("shown_characteristics", "custom_stats");
       this.closePar("shown_skills", "custom_skills");
       this.closePar("shown_languages", "custom_languages");
@@ -881,6 +884,16 @@ export default {
       this.getExtra_Ethnos(this.Stats_Pass, "stats");
       this.getExtra_Ethnos(this.Skills_Pass, "skills");
       this.getExtra_Ethnos(this.Lang_Pass, "languages");
+    },
+
+    getComonColor(name) {
+      let select = this.$root.race_page.color_selected[name]
+      console.log(this.Race_Set_Obj.color[name][0])
+      if (this.Race_Set_Obj.color[name][0]) {
+        this.$root.MY.color[name] = select
+      } else {
+        this.$root.MY.color[name] = null
+      }
     },
 
     getHight() {
@@ -976,7 +989,7 @@ export default {
     },
 
     showMY() {
-      // console.log(this.MY, this.race_page);
+      console.log(this.MY, this.race_page);
     },
 
     hideRuler() {

@@ -22,6 +22,16 @@ export default {
     hair_hower: null,
     eyes_hower: null,
 
+    // skin_color_selected: null,
+    // hair_color_selected: null,
+    // eyes_color_selected: null,
+
+    color_selected: {
+        skin: null,
+        hair: null,
+        eyes: null,
+    },
+
     shown_humman_lang: false,
 
     extra:{

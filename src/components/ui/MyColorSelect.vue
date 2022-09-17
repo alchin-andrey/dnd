@@ -72,6 +72,7 @@ export default {
       this.$root.race_page[this.hower_link] = this.$root.color[i][j];
     },
     choiceColor(value, i, j) {
+      this.$root.race_page.color_selected[value] = this.$root.color[i][j];
       this.$root.MY.color[value] = this.$root.color[i][j];
     },
     getEthnosColor(obj, value) {
