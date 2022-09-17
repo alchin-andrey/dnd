@@ -6,11 +6,33 @@
       colors_card: colors_card,
       basic: basic,
       selection_card_active: get_Active,
-      copy: copy && !copied,
-      copied: copied,
       link: link,
     }"
   >
+  <div v-if="copy" class="copy_icon">
+    <transition name="mode-fade" mode="out-in">
+      <svg
+        v-if="!copied"
+        key="off"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="white"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 8H8V12H12V8ZM7 7V13H13V7H7Z" />
+        <path d="M6 6H10V7H11V5H5V11H7V10H6V6Z" />
+      </svg>
+
+      <img
+        v-else
+        key="on"
+        src="@/assets/img/icon/check.svg"
+      />
+    </transition>
+  </div>
     <slot></slot>
   </div>
 </template>
@@ -18,12 +40,6 @@
 <script>
 export default {
   name: "MySelectionCard",
-  // data() {
-  //   return {
-  //     copy_icon: this.copy,
-  //     copied: false,
-  //   };
-  // },
   props: {
     passive: {
       type: Boolean,
@@ -64,7 +80,7 @@ export default {
   },
   computed: {
     get_Active() {
-      console
+      console;
       if (this.active_link !== null) {
         return this.active_link === this.select_link;
       } else if (this.active_boll_link) {
@@ -80,10 +96,12 @@ export default {
 <style scoped>
 .active_card {
   cursor: pointer;
+  fill-opacity: 0.4;
 }
 
 .active_card:hover {
   background: rgba(255, 255, 255, 0.1);
+  fill-opacity: 1;
 }
 
 .pasive_card {
@@ -95,6 +113,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 26px;
+
 }
 
 .colors_card {
@@ -112,24 +131,27 @@ export default {
   padding: 14px !important;
 }
 
-.copy::after {
-  content: url(@/assets/img/icon/copy_passive.svg);
-  position: absolute;
-  right: 12px;
-}
-
-.copy:hover::after {
-  content: url(@/assets/img/icon/copy_active.svg);
-}
-
-.copied::after {
-  content: url(@/assets/img/icon/check.svg);
-  position: absolute;
-  right: 12px;
-}
-
 .link {
   padding: 0px;
 }
 
+.copy_icon {
+  height: 18px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  bottom: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.mode-fade-enter-active,
+.mode-fade-leave-active {
+  transition: opacity .2s ease
+}
+
+.mode-fade-enter-from, .mode-fade-leave-to {
+  opacity: 0
+}
 </style>
