@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "MyRange",
+  name: "MyRangeHight",
   data() {
     return {
       inputValue: "",
@@ -43,54 +43,47 @@ export default {
       type: Number,
       default: null,
     },
-    lvl: {
-      type: Boolean,
-      default: false,
-    }
   },
 
 
   computed: {
     t_Unit() {
-      if (this.lvl) {
-        return `${this.inputValue}${this.t('level_unit')} ${this.t('level')}`;
-      }
-
-    },
-    Range_Width() {
-      return `calc(100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 20 * ${this.max_range})))`;
+      return `${this.inputValue} ${this.t("cm")}`;
     },
     Range_Margin() {
       console.log(this.min_range, this.max_range);
-      return `calc((100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.max_range}))) / 2 - 172px)`;
+      return `calc((100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range}))) / 2 - 172px)`;
+    },
+    Range_Width() {
+      return `calc(100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range})))`;
     },
     Range_Bottom() {
-      return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)`;
+      return `calc((100vh - 64px) / 210 * ${this.min_range} - 30px)`;
     },
   },
   watch: {
-    // "$root.MY.race": {
-    //   handler() {
-    //     setTimeout(() => {
-    //       this.inputValue = this.$root.MY.height + 1;
-    //       this.$emit("update:modelValue", this.inputValue);
-    //       this.inputValue = this.$root.MY.height - 1;
-    //       this.$emit("update:modelValue", this.inputValue);
-    //     }, 1);
-    //   },
-    //   immediate: true,
-    // },
+    "$root.MY.race": {
+      handler() {
+        setTimeout(() => {
+          this.inputValue = this.$root.MY.height + 1;
+          this.$emit("update:modelValue", this.inputValue);
+          this.inputValue = this.$root.MY.height - 1;
+          this.$emit("update:modelValue", this.inputValue);
+        }, 1);
+      },
+      immediate: true,
+    },
     modelValue: {
       handler() {
         this.inputValue = this.modelValue;
-        // this.$root.race_page.height_kof = this.max_range - this.inputValue;
+        this.$root.race_page.height_kof = this.max_range - this.inputValue;
       },
       immediate: true,
     },
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
-        // this.$root.race_page.height_kof = this.max_range - this.inputValue;
+        this.$root.race_page.height_kof = this.max_range - this.inputValue;
       },
     },
   },
@@ -118,9 +111,11 @@ input[type="range"] {
   -webkit-transform:rotate(-90deg);
   -moz-transform:rotate(-90deg);
   -ms-transform:rotate(-90deg);  
-  transform:rotate(-90deg);  
+  transform:rotate(-90deg); 
   border-radius: 0 12px 12px 0;
   overflow: hidden;
+  /* margin-bottom: calc((100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * 120))) / 2 - 172px - 1px);
+  width: calc(100vh - 64px - ((100vh - 64px) / 210 * 90 - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * 120))); */
 }
 
 ::-webkit-slider-runnable-track {
@@ -204,6 +199,7 @@ input[type="range"] {
 
 .range_bottom {
   width: 344px;
+  /* height: calc((100vh - 64px) / 210 * 90 - 30px); */
   background-color: #ffffff;
 }
 </style>

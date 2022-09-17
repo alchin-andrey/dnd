@@ -184,7 +184,16 @@
 
     <!-- Уровень -->
     <my-selection-box :shown="race_page.shown_lvl">
-      <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl />
+      <!-- <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl /> -->
+      <div class="flex_options">
+        <MyRange
+          :max_range="max_lvl"
+          :min_range="min_lvl"
+          v-model.number="MY.level"
+          lvl
+        />
+        <mySizeGrowth />
+      </div>
     </my-selection-box>
     <!-- Уровень -->
 
@@ -228,7 +237,7 @@
 
     <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
-        <myRange
+        <MyRangeHight
           :max_range="max_Hight"
           :min_range="min_Hight"
           v-model.number="MY.height"
@@ -236,29 +245,6 @@
         <mySizeGrowth />
       </div>
     </my-selection-box>
-
-    <!-- <my-selection-box :shown="race_page.shown_height">
-      <div class="flex_options">
-        <div class="range-slider">
-            <input type="range" class="vertical" min="90" max="120" step="1" value="105" orient="vertical">
-        <div class="range__bottom"></div>
-        <div class="range_value">100 см</div>
-      </div>
-        <mySizeGrowth />
-      </div>
-    </my-selection-box> -->
-
-    <!-- <my-selection-box :shown="race_page.shown_height">
-      <div class="flex_options">
-        <div class="slider_growth_back">
-          <div class="slider_growth">
-            <div class="slider_knob"></div>
-            <div class="slider_value">100 см</div>
-          </div>
-        </div>
-        <mySizeGrowth />
-      </div>
-    </my-selection-box> -->
 
     <!-- Рост -->
 
@@ -561,6 +547,9 @@ export default {
       placeholder: placeholder,
 
       race_page: race_page,
+
+      min_lvl: 1,
+      max_lvl: 20,
 
       age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
       weight_arr: [0, "x", "x", 15, 20],

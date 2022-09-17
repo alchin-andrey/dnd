@@ -1,16 +1,14 @@
 <template>
   <div class="range_slider">
     <input
-      :style="{
-        'margin-bottom': Range_Margin,
-        width: Range_Width,
-      }"
+
       type="range"
-      class="vertical"
+      class="vertical range-slider"
       :min="min_range"
       :max="max_range"
       v-model.number="inputValue"
       step="1"
+      orient="vertical"
     />
     <div
       :style="{
@@ -57,13 +55,13 @@ export default {
       }
 
     },
-    Range_Width() {
-      return `calc(100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 20 * ${this.max_range})))`;
-    },
-    Range_Margin() {
-      console.log(this.min_range, this.max_range);
-      return `calc((100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.max_range}))) / 2 - 172px)`;
-    },
+    // Range_Width() {
+    //   return `calc(100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 20 * ${this.max_range})))`;
+    // },
+    // Range_Margin() {
+    //   console.log(this.min_range, this.max_range);
+    //   return `calc((100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.max_range}))) / 2 - 172px)`;
+    // },
     Range_Bottom() {
       return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)`;
     },
@@ -100,7 +98,7 @@ export default {
 <style scoped>
 .range_slider {
   width: 344px;
-  height: 1000vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -112,29 +110,82 @@ export default {
 
 input[type="range"] {
   -webkit-appearance: none;
-  height: 344px;
-  background: transparent;
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+  height: calc(100%);
+  width: 100%;
+  /* background: transparent; */
   cursor: pointer;
-  -webkit-transform:rotate(-90deg);
-  -moz-transform:rotate(-90deg);
-  -ms-transform:rotate(-90deg);  
-  transform:rotate(-90deg);  
   border-radius: 0 12px 12px 0;
   overflow: hidden;
 }
 
-::-webkit-slider-runnable-track {
+.range-slider input[type=range][orient=vertical]::-webkit-slider-runnable-track, .range-slider input[type=range][orient=vertical]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.range-slider input[type=range][orient=vertical]::-webkit-slider-runnable-track {
+  border: none;
+  background: #343440;
+  width: 4px;
+  border-color: #343440;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #3D3D4A;
+}
+.range-slider input[type=range][orient=vertical]::-moz-range-track {
+  border: none;
+  background: #343440;
+  width: 4px;
+  border-color: #343440;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #3D3D4A;
+}
+.range-slider input[type=range][orient=vertical]::-ms-track {
+  border: none;
+  background: #343440;
+  width: 4px;
+  border-color: #343440;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #3D3D4A;
+  color: transparent;
+  height: 100%;
+}
+.range-slider input[type=range][orient=vertical]::-ms-fill-lower, .range-slider input[type=range][orient=vertical]::-ms-fill-upper, .range-slider input[type=range][orient=vertical]::-ms-tooltip {
+  display: none;
+}
+.range-slider input[type=range][orient=vertical]::-webkit-slider-thumb {
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+}
+.range-slider input[type=range][orient=vertical]::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+}
+.range-slider input[type=range][orient=vertical]::-ms-thumb {
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+}
+
+
+
+
+
+
+
+/* ::-webkit-slider-runnable-track {
   background: rgba(255, 255, 255, 0.06);
-  min-height: 344px;
+width: 100%;
 }
 
 ::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 30px;
-  min-height: 344px;
+  height: 30px;
+  width: 100%;
   background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
   background-color: #ffffff;
-  box-shadow: -100vh 0 0 100vh #ffffff;
+  box-shadow: -100vh 100vh 0px 100vh #ffffff;
   cursor: ns-resize;
   border: 0px;
   border-radius: 0 !important;
@@ -143,15 +194,15 @@ input[type="range"] {
 
 ::-moz-range-track {
   background: rgba(255, 255, 255, 0.06);
-  min-height: 344px;
+  width: 100%;
 }
 
 ::-moz-range-thumb {
-  width: 30px;
-  height: 344px;
+  height: 30px;
+  width: 100%;
   background: url("@/assets/img/icon/slide_knob.svg") center center no-repeat;
   background-color: #ffffff;
-  box-shadow: -100vh 0 0 100vh #ffffff;
+  box-shadow: -100vh 100vh 0px 100vh #ffffff;
   cursor: ns-resize;
   border: 0px;
   border-radius: 0 !important;
@@ -164,7 +215,7 @@ input[type="range"] {
 
 ::-ms-thumb {
   background: #fff;
-  height: 344px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -179,13 +230,14 @@ input[type="range"] {
 ::-ms-track {
   background: #ddd;
   color: transparent;
-  width: 344px;
+  width: 1000%;
   border: none;
 }
 
 ::-ms-tooltip {
   display: none;
-}
+} */
+
 
 .range_value {
   position: absolute;
