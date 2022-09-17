@@ -182,21 +182,6 @@
     </my-selection-box>
     <!-- Смена языка -->
 
-    <!-- Уровень -->
-    <my-selection-box :shown="race_page.shown_lvl">
-      <!-- <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl /> -->
-      <div class="flex_options">
-        <MyRange
-          :max_range="max_lvl"
-          :min_range="min_lvl"
-          v-model.number="MY.level"
-          lvl
-        />
-        <mySizeGrowth />
-      </div>
-    </my-selection-box>
-    <!-- Уровень -->
-
     <!-- Этнос-->
     <my-selection-box :shown="race_page.shown_ethnos">
       <EthnosChoice />
@@ -226,6 +211,22 @@
       <my-color-select body_part="hair" />
     </my-selection-box>
     <!-- Цвет волос -->
+
+        <!-- Уровень -->
+        <my-selection-box :shown="race_page.shown_lvl">
+      <!-- <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl /> -->
+      <!-- <div class="flex_options"> -->
+        <MyRange
+          :max_range="max_lvl"
+          :min_range="min_lvl"
+          v-model.number="MY.level"
+          :arr="race_page.lvl_arr"
+          lvl
+        />
+        <!-- <mySizeGrowth /> -->
+      <!-- </div> -->
+    </my-selection-box>
+    <!-- Уровень -->
 
     <!-- Возраст -->
     <my-selection-box :shown="race_page.shown_age">

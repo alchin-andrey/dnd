@@ -1,5 +1,4 @@
 <template>
-  <div class="flex_options">
   <div class="range_slider">
     <input
       :style="{
@@ -21,14 +20,11 @@
     ></div>
     <div class="range_value">{{ t_Unit }}</div>
   </div>
-
   <div class="size_a_w">
     <div v-for="n in arr" :key="n" :class="{ passive: n === 'x' }">
       {{ n }}
     </div>
   </div>
-
-</div>
 </template>
 
 <script>
@@ -62,34 +58,22 @@ export default {
     },
   },
 
-
   computed: {
     t_Unit() {
       if (this.lvl) {
-        return `${this.inputValue}${this.t('level_unit')} ${this.t('level')}`;
+        return `${this.inputValue}${this.t("level_unit")} ${this.t("level")}`;
       }
-
     },
     Range_Width() {
-      return `calc((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px))`;
+      return `calc(100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 20 * ${this.max_range})))`;
     },
     Range_Margin() {
       console.log(this.min_range, this.max_range);
-      return `calc(((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)) / 2 - 172px - 1px)`;
+      return `calc((100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.max_range}))) / 2 - 172px)`;
     },
     Range_Bottom() {
       return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)`;
     },
-    // Range_Width() {
-    //   return `calc(100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 20 * ${this.max_range})))`;
-    // },
-    // Range_Margin() {
-    //   console.log(this.min_range, this.max_range);
-    //   return `calc((100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.max_range}))) / 2 - 172px)`;
-    // },
-    // Range_Bottom() {
-    //   return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)`;
-    // },
   },
   watch: {
     // "$root.MY.race": {
@@ -121,7 +105,6 @@ export default {
 </script>
 
 <style scoped>
-
 .size_a_w {
   width: 42px;
   font-family: "JetBrains Mono";
@@ -161,10 +144,10 @@ input[type="range"] {
   height: 344px;
   background: transparent;
   cursor: pointer;
-  -webkit-transform:rotate(-90deg);
-  -moz-transform:rotate(-90deg);
-  -ms-transform:rotate(-90deg);  
-  transform:rotate(-90deg);  
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   border-radius: 0 12px 12px 0;
   overflow: hidden;
 }
