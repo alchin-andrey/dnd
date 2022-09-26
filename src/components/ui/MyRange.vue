@@ -117,6 +117,12 @@ export default {
       }
     },
 
+    Kof_Weight () {
+      let min = this.$root.MY.race.settings.weight.min;
+      let max = this.$root.MY.race.settings.weight.max;
+      return (this.$root.MY.weight - min) / (max - min);
+    },
+
     // Выравнивание ползунка
     Range_Bottom() {
         return `calc((100vh - 64px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
@@ -129,30 +135,41 @@ export default {
     },
   },
   watch: {
-    // "$root.MY.race": {
-    //   handler() {
-    //     setTimeout(() => {
-    //       this.inputValue = this.$root.MY.height + 1;
-    //       this.$emit("update:modelValue", this.inputValue);
-    //       this.inputValue = this.$root.MY.height - 1;
-    //       this.$emit("update:modelValue", this.inputValue);
-    //     }, 1);
-    //   },
-    //   immediate: true,
-    // },
+    "$root.MY.race": {
+      handler() {
+        if (this.weight) {
+        setTimeout(() => {
+          this.inputValue = this.$root.MY.weight + 1;
+          this.$emit("update:modelValue", this.inputValue);
+          this.inputValue = this.$root.MY.weight - 1;
+          this.$emit("update:modelValue", this.inputValue);
+        }, 1);
+      }
+      },
+      immediate: true,
+    },
     modelValue: {
       handler() {
         this.inputValue = this.modelValue;
-        // this.$root.race_page.height_kof = this.max_range - this.inputValue;
+        if (this.weight) {
+          this.$root.race_page.weight_kof = this.Kof_Weight;
+        }
       },
       immediate: true,
     },
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
-        // this.$root.race_page.height_kof = this.max_range - this.inputValue;
+        if (this.weight) {
+          this.$root.race_page.weight_kof = this.Kof_Weight;
+        }
       },
     },
+  },
+  methods: {
+    // weighKof () {
+
+    // }
   },
 };
 </script>

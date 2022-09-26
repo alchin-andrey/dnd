@@ -47,6 +47,12 @@ export default {
 
 
   computed: {
+    Kof_Height () {
+      let min = this.$root.MY.race.settings.height.min;
+      let max = this.$root.MY.race.settings.height.max;
+      return (this.$root.MY.height - min) / (max - min);
+    },
+
     t_Unit() {
       return `${this.inputValue} ${this.t("cm")}`;
     },
@@ -76,14 +82,14 @@ export default {
     modelValue: {
       handler() {
         this.inputValue = this.modelValue;
-        this.$root.race_page.height_kof = this.max_range - this.inputValue;
+        this.$root.race_page.height_kof = this.Kof_Height;
       },
       immediate: true,
     },
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
-        this.$root.race_page.height_kof = this.max_range - this.inputValue;
+        this.$root.race_page.height_kof = this.Kof_Height;
       },
     },
   },

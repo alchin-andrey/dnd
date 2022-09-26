@@ -113,9 +113,9 @@
             @click="show('shown_weight')"
             :active="race_page.shown_weight"
             title="weight"
-            :value="race_page.weight"
+            :value="MY.weight"
             unit="kg"
-            note=""
+            :note="Weight_Note"
           >
           </my-controller>
           <my-selection
@@ -251,7 +251,7 @@
       /> -->
       <div class="flex_options">
         <MyRange
-          v-model.number="MY.level"
+          v-model.number="MY.weight"
           weight
         />
         <MyRangeSize weight/>
@@ -624,11 +624,37 @@ export default {
       return this.MY.race.settings.height.max;
     },
 
-    Get_Hight() {
-      if (this.MY.height) {
-        return (this.MY.height = this.max_Hight - this.race_page.height_kof);
+    Get_Height() {
+      let min = this.MY.race.settings.height.min;
+      let max = this.MY.race.settings.height.max;
+      let kof = this.race_page.height_kof;
+      return min + Math.round((max - min) * kof);
+    },
+
+    // Get_Height() {
+    //   let min = this.MY.race.settings.height.min;
+    //   let max = this.MY.race.settings.height.max;
+    //   let kof = this.race_page.height_kof;
+    //   if (this.MY.height) {
+    //     return this.max_Hight - this.race_page.height_kof;
+    //   } else {
+    //     return (this.min_Hight + this.max_Hight) / 2;
+    //   }
+    // },
+
+    Get_Weight() {
+      let min = this.MY.race.settings.weight.min;
+      let max = this.MY.race.settings.weight.max;
+      let kof = this.race_page.weight_kof;
+      return min + Math.round((max - min) * kof);
+    },
+
+    Weight_Note() {
+      let kof = this.race_page.weight_kof;
+      if (kof < 0.5) {
+        return this.t('skinny');
       } else {
-        return (this.min_Hight + this.max_Hight) / 2;
+        return this.t('fat');
       }
     },
 
@@ -866,7 +892,8 @@ export default {
       this.getExtra(this.Stats_Pass, "stats");
       this.getExtra(this.Skills_Pass, "skills");
       this.getExtra(this.Lang_Pass, "languages");
-      this.MY.height = this.Get_Hight;
+      this.MY.height = this.Get_Height;
+      this.MY.weight = this.Get_Weight;
       // this.getHight();
     },
 
@@ -886,9 +913,9 @@ export default {
       }
     },
 
-    getHight() {
-      this.MY.height = this.max_Hight - this.race_page.height_kof;
-    },
+    // getHight() {
+    //   this.MY.height = this.max_Hight - this.race_page.height_kof;
+    // },
 
     getNewEthnos() {
       this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];

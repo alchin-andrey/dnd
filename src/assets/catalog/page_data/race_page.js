@@ -48,6 +48,7 @@ export default {
 
     lvl: 2,
     age: 70,
-    height_kof: (120-90)/2,
-    weight: 15,
+    height_kof: 0.5,
+    weight_kof: 0.5,
+    age_kof: 0.5,
 };
