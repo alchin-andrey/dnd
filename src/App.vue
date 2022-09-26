@@ -234,10 +234,14 @@
 
     <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
-        <MyRangeHight
+        <!-- <MyRangeHight
           :max_range="max_Hight"
           :min_range="min_Hight"
           v-model.number="MY.height"
+        /> -->
+        <MyRange
+          v-model.number="MY.height"
+          height
         />
         <mySizeGrowth />
       </div>
@@ -613,9 +617,7 @@ export default {
       return `${this.t("lvl")} ${this.MY.level}`;
     },
 
-    Hight_Note() {
-      return this.t(this.Race_Set_Obj.size);
-    },
+    
 
     min_Hight() {
       return this.MY.race.settings.height.min;
@@ -629,6 +631,10 @@ export default {
       let max = this.MY.race.settings.height.max;
       let kof = this.race_page.height_kof;
       return min + Math.round((max - min) * kof);
+    },
+
+    Hight_Note() {
+      return this.t(this.Race_Set_Obj.size);
     },
 
     // Get_Height() {

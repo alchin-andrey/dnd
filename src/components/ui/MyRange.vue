@@ -40,23 +40,27 @@ export default {
       type: Number,
       default: null,
     },
-    min_range: {
-      type: Number,
-      default: null,
-    },
-    max_range: {
-      type: Number,
-      default: null,
-    },
+    // min_range: {
+    //   type: Number,
+    //   default: null,
+    // },
+    // max_range: {
+    //   type: Number,
+    //   default: null,
+    // },
     lvl: {
       type: Boolean,
       default: false,
     },
-    weight: {
+    age: {
       type: Boolean,
       default: false,
     },
-    age: {
+    height: {
+      type: Boolean,
+      default: false,
+    },
+    weight: {
       type: Boolean,
       default: false,
     },
@@ -84,10 +88,12 @@ export default {
     t_Unit() {
       if (this.lvl) {
         return `${this.inputValue}${this.t("level_unit")} ${this.t("level")}`;
-      } else if (this.weight) {
-        return `${this.inputValue} ${this.t("kg")}`;
       } else if (this.age) {
         return `${this.inputValue} ${this.t(this.Age_Units)}`;
+      } else if (this.height) {
+        return `${this.inputValue} ${this.t("cm")}`;
+      } else if (this.weight) {
+        return `${this.inputValue} ${this.t("kg")}`;
       } else {
         return null;
       }
@@ -96,10 +102,12 @@ export default {
     Max_Range() {
       if (this.lvl) {
         return this.max_lvl;
-      } else if (this.weight) {
-        return this.Race_Set_Obj.weight.max;
       } else if (this.age) {
         return this.Race_Set_Obj.age.max;
+      } else if (this.height) {
+        return this.Race_Set_Obj.height.max;
+      } else if (this.weight) {
+        return this.Race_Set_Obj.weight.max;
       } else {
         return null;
       }
@@ -108,49 +116,76 @@ export default {
     Min_Range() {
       if (this.lvl) {
         return this.min_lvl;
-      } else if (this.weight) {
-        return this.Race_Set_Obj.weight.min;
       } else if (this.age) {
         return this.Race_Set_Obj.age.min;
+      } else if (this.height) {
+        return this.Race_Set_Obj.height.min;
+      } else if (this.weight) {
+        return this.Race_Set_Obj.weight.min;
       } else {
         return null;
       }
     },
 
-    Kof_Weight () {
+    Kof_Weight() {
       let min = this.$root.MY.race.settings.weight.min;
       let max = this.$root.MY.race.settings.weight.max;
       return (this.$root.MY.weight - min) / (max - min);
     },
 
+    Kof_Height () {
+      let min = this.$root.MY.race.settings.height.min;
+      let max = this.$root.MY.race.settings.height.max;
+      return (this.$root.MY.height - min) / (max - min);
+    },
+
     // Выравнивание ползунка
     Range_Bottom() {
+      if (this.height) {
+        return `calc((100vh - 64px - 30px) / 210 * ${this.Min_Range})`;
+      } else {
         return `calc((100vh - 64px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
+      }
     },
     Range_Width() {
+      if (this.height) {
+        return `calc((100vh - 64px) - ${this.Range_Bottom} - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.Max_Range})))`;
+      } else {
         return `calc((100vh - 64px) - ${this.Range_Bottom})`;
+      }
     },
     Range_Margin() {
-        return `calc(((100vh - 64px) - ${this.Range_Bottom}) / 2 - 172px - 1px)`;
+        return `calc(${this.Range_Width} / 2 - 172px - 1px)`;
     },
   },
   watch: {
     "$root.MY.race": {
       handler() {
+        if (this.height) {
+          setTimeout(() => {
+            this.inputValue = this.$root.MY.height + 1;
+            this.$emit("update:modelValue", this.inputValue);
+            this.inputValue = this.$root.MY.height - 1;
+            this.$emit("update:modelValue", this.inputValue);
+          }, 1);
+        };
         if (this.weight) {
-        setTimeout(() => {
-          this.inputValue = this.$root.MY.weight + 1;
-          this.$emit("update:modelValue", this.inputValue);
-          this.inputValue = this.$root.MY.weight - 1;
-          this.$emit("update:modelValue", this.inputValue);
-        }, 1);
-      }
+          setTimeout(() => {
+            this.inputValue = this.$root.MY.weight + 1;
+            this.$emit("update:modelValue", this.inputValue);
+            this.inputValue = this.$root.MY.weight - 1;
+            this.$emit("update:modelValue", this.inputValue);
+          }, 1);
+        }
       },
       immediate: true,
     },
     modelValue: {
       handler() {
         this.inputValue = this.modelValue;
+        if (this.height) {
+          this.$root.race_page.height_kof = this.Kof_Height;
+        };
         if (this.weight) {
           this.$root.race_page.weight_kof = this.Kof_Weight;
         }
@@ -160,6 +195,9 @@ export default {
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
+        if (this.height) {
+          this.$root.race_page.height_kof = this.Kof_Height;
+        };
         if (this.weight) {
           this.$root.race_page.weight_kof = this.Kof_Weight;
         }
@@ -168,17 +206,12 @@ export default {
   },
   methods: {
     // weighKof () {
-
     // }
   },
 };
 </script>
 
 <style scoped>
-.passive {
-  color: rgba(255, 255, 255, 0);
-}
-
 .range_slider {
   width: 344px;
   height: 1000vh;

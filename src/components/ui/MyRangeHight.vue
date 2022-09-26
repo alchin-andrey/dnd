@@ -57,7 +57,6 @@ export default {
       return `${this.inputValue} ${this.t("cm")}`;
     },
     Range_Margin() {
-      console.log(this.min_range, this.max_range);
       return `calc((100vh - 64px - ((100vh - 64px) / 210 * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.max_range}))) / 2 - 172px - 1px)`;
     },
     Range_Width() {
