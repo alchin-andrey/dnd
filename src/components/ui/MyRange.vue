@@ -1,5 +1,5 @@
 <template>
-  <div class="flex_options">
+  <!-- <div class="flex_options"> -->
   <div class="range_slider">
     <input
       :style="{
@@ -8,8 +8,8 @@
       }"
       type="range"
       class="vertical"
-      :min="min_range"
-      :max="max_range"
+      :min="Min_Range"
+      :max="Max_Range"
       v-model.number="inputValue"
       step="1"
     />
@@ -21,8 +21,8 @@
     ></div>
     <div class="range_value">{{ t_Unit }}</div>
   </div>
-<MyRangeSize lvl/>
-</div>
+  <!-- <MyRangeSize lvl/>
+</div> -->
 </template>
 
 <script>
@@ -31,6 +31,8 @@ export default {
   data() {
     return {
       inputValue: "",
+      min_lvl: 1,
+      max_lvl: 20,
     };
   },
   props: {
@@ -50,28 +52,80 @@ export default {
       type: Boolean,
       default: false,
     },
-    // arr: {
-    //   type: Array,
-    //   default: [],
-    // },
+    weight: {
+      type: Boolean,
+      default: false,
+    },
+    age: {
+      type: Boolean,
+      default: false,
+    },
   },
 
-
   computed: {
+    Race_Set_Obj() {
+      return this.$root.MY.race.settings;
+    },
+
+    Age_Units() {
+      let mod10 = Math.abs(this.inputValue % 10);
+      let mod100 = Math.abs(this.inputValue % 100);
+      if (mod100 > 10 && mod100 < 20) {
+        return "years";
+      } else if (mod10 >= 2 && mod10 <= 4) {
+        return "yeara";
+      } else if (mod10 === 1) {
+        return "year";
+      } else {
+        return "years";
+      }
+    },
+
     t_Unit() {
       if (this.lvl) {
-        return `${this.inputValue}${this.t('level_unit')} ${this.t('level')}`;
+        return `${this.inputValue}${this.t("level_unit")} ${this.t("level")}`;
+      } else if (this.weight) {
+        return `${this.inputValue} ${this.t("kg")}`;
+      } else if (this.age) {
+        return `${this.inputValue} ${this.t(this.Age_Units)}`;
+      } else {
+        return null;
       }
+    },
 
+    Max_Range() {
+      if (this.lvl) {
+        return this.max_lvl;
+      } else if (this.weight) {
+        return this.Race_Set_Obj.weight.max;
+      } else if (this.age) {
+        return this.Race_Set_Obj.age.max;
+      } else {
+        return null;
+      }
+    },
+
+    Min_Range() {
+      if (this.lvl) {
+        return this.min_lvl;
+      } else if (this.weight) {
+        return this.Race_Set_Obj.weight.min;
+      } else if (this.age) {
+        return this.Race_Set_Obj.age.min;
+      } else {
+        return null;
+      }
+    },
+
+    // Выравнивание ползунка
+    Range_Bottom() {
+        return `calc((100vh - 64px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
     },
     Range_Width() {
-      return `calc((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range}))`;
+        return `calc((100vh - 64px) - ${this.Range_Bottom})`;
     },
     Range_Margin() {
-      return `calc(((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range})) / 2 - 172px - 1px)`;
-    },
-    Range_Bottom() {
-      return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range})`;
+        return `calc(((100vh - 64px) - ${this.Range_Bottom}) / 2 - 172px - 1px)`;
     },
   },
   watch: {
@@ -104,7 +158,6 @@ export default {
 </script>
 
 <style scoped>
-
 .passive {
   color: rgba(255, 255, 255, 0);
 }
@@ -126,10 +179,10 @@ input[type="range"] {
   height: 344px;
   background: transparent;
   cursor: pointer;
-  -webkit-transform:rotate(-90deg);
-  -moz-transform:rotate(-90deg);
-  -ms-transform:rotate(-90deg);  
-  transform:rotate(-90deg);  
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   border-radius: 0 12px 12px 0;
   overflow: hidden;
 }

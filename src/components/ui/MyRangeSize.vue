@@ -1,5 +1,5 @@
 <template>
-  <div class="pad_size">
+  <!-- <div class="pad_size"> -->
   <div 
   class="size jbm-300"
   >
@@ -16,7 +16,7 @@
         bottom: getBottom(n),
         }">{{n}}</div>
   </div>
-</div>
+<!-- </div> -->
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
   name: "MyRangeSize",
   data() {
     return {
-      skale_arr: [0, 5, 10, 15, 20],
+      // skale_arr: [0, 5, 10, 15, 20],
     }
   },
   props: {
@@ -80,7 +80,7 @@ export default {
   methods: {
     getBottom(numb) {
       let max_size = this.Skale_Arr[this.Skale_Arr.length - 1]
-      return `calc(100% / ${max_size} * ${numb} - 9px)`;
+      return `calc((100vh - 64px - 30px) / ${max_size} * ${numb} - 1px + 15px - 9px)`;
     }
   }
 };
@@ -102,5 +102,6 @@ export default {
 
 .skale {
   position: absolute;
+  /* bottom: 0px; */
 }
 </style>

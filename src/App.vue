@@ -214,16 +214,13 @@
 
         <!-- Уровень -->
         <my-selection-box :shown="race_page.shown_lvl">
-      <!-- <AgeWeight :value="MY.level" :arr="MY.level_arr" lvl /> -->
-      <!-- <div class="flex_options"> -->
+      <div class="flex_options">
         <MyRange
-          :max_range="max_lvl"
-          :min_range="min_lvl"
           v-model.number="MY.level"
           lvl
         />
-        <!-- <mySizeGrowth /> -->
-      <!-- </div> -->
+        <MyRangeSize lvl/>
+      </div>
     </my-selection-box>
     <!-- Уровень -->
 
@@ -250,11 +247,15 @@
 
     <!-- Вес -->
     <my-selection-box :shown="race_page.shown_weight">
-      <AgeWeight
-        :value="race_page.weight"
-        :arr="race_page.weight_arr"
-        unit="kg"
-      />
+      <!-- <AgeWeight :value="race_page.weight" :arr="race_page.weight_arr"unit="kg"
+      /> -->
+      <div class="flex_options">
+        <MyRange
+          v-model.number="MY.level"
+          weight
+        />
+        <MyRangeSize weight/>
+      </div>
     </my-selection-box>
     <!-- Вес -->
 
@@ -548,8 +549,8 @@ export default {
 
       race_page: race_page,
 
-      min_lvl: 1,
-      max_lvl: 20,
+      // min_lvl: 0,
+      // max_lvl: 20,
 
       age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
       weight_arr: [0, "x", "x", 15, 20],
