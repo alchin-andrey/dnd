@@ -920,7 +920,6 @@ export default {
 
     getComonColor(name) {
       let select = this.$root.race_page.color_selected[name]
-      console.log(this.Race_Set_Obj.color[name][0])
       if (this.Race_Set_Obj.color[name][0]) {
         this.$root.MY.color[name] = select
       } else {

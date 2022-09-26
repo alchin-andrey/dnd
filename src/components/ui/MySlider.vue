@@ -11,19 +11,11 @@
     </transition>
   </div>
   <div class="arrows">
-    <div>
-      <img
-        @click="getNameBack(arr, type)"
-        alt="arrow_left"
-        src="@/assets/img/icon/arrow_left.svg"
-      />
+    <div class="arrow_left" @click="getNameBack(arr, type)">
+      <img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg" />
     </div>
-    <div>
-      <img
-        @click="getNameForward(arr, type)"
-        alt="arrow_right"
-        src="@/assets/img/icon/arrow_right.svg"
-      />
+    <div class="arrow_right" @click="getNameForward(arr, type)">
+      <img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg" />
     </div>
   </div>
 
@@ -61,7 +53,6 @@ export default {
     },
   },
   methods: {
-
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
       if (j === 0) {
@@ -109,10 +100,34 @@ export default {
   margin-top: 18px;
   width: 52px;
   height: 18px;
+  /* margin: 22px; */
   display: flex;
   justify-content: space-between;
 }
+
+.arrows div {
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.arrow_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -7px;
+}
+
+.arrow_right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -7px;
+}
+
 .arrows img {
+  height: 18px;
+  width: 18px;
   cursor: pointer;
 }
 
