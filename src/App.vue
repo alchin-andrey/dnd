@@ -630,11 +630,28 @@ export default {
       }
     },
 
+    // Get_Age() {
+    //   let min = this.Race_Set_Obj.age.min;
+    //   let max = this.Race_Set_Obj.age.max;
+    //   let kof = this.race_page.age_kof;
+    //   return min + Math.round((max - min) * kof);
+    // },
+
     Get_Age() {
       let min = this.Race_Set_Obj.age.min;
       let max = this.Race_Set_Obj.age.max;
-      let kof = this.race_page.age_kof;
-      return min + Math.round((max - min) * kof);
+      let mature = this.Race_Set_Obj.age.mature;
+      if (this.MY.age) {
+        if (this.MY.age < min) {
+          return min;
+        } else if (this.MY.age > max) {
+          return max;
+        } else {
+          return this.MY.age;
+        }
+      } else {
+        return mature;
+      }
     },
 
     Age_Note() {
@@ -703,15 +720,15 @@ export default {
       return this.MY.race.settings.ethnos;
     },
 
-    Char_Height() {
-      if (this.MY.height === null) {
-        let max_height = this.MY.race.settings.height.max;
-        let min_height = this.MY.race.settings.height.min;
-        return (min_height + max_height) / 2;
-      } else {
-        return this.MY.height;
-      }
-    },
+    // Char_Height() {
+    //   if (this.MY.height === null) {
+    //     let max_height = this.MY.race.settings.height.max;
+    //     let min_height = this.MY.race.settings.height.min;
+    //     return (min_height + max_height) / 2;
+    //   } else {
+    //     return this.MY.height;
+    //   }
+    // },
 
     Lang_Not_Humman() {
       let arr = [];
@@ -858,10 +875,10 @@ export default {
       this.numb_foo++;
     },
 
-    plusGrow() {
-      this.MY.height = this.Char_Height;
-      this.MY.height += 5;
-    },
+    // plusGrow() {
+    //   this.MY.height = this.Char_Height;
+    //   this.MY.height += 5;
+    // },
 
     plusLvl() {
       this.MY.level++;
