@@ -46,7 +46,12 @@ export default {
   //       return this.$root.MY.height;
   //     }
   //   },
-  // }
+  // },
+  methods: {
+    getHeight(numb) {
+      this.$root.MY.height = numb
+    }
+  },
 };
 </script>
 

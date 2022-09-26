@@ -1,6 +1,7 @@
 <template>
   <div class="skale">
     <div
+      @click="getHeight(numb)"
       class="skale_numb_top"
       :class="{
         skale_numb_down: numb === 0,
@@ -114,6 +115,11 @@ export default {
     //   }
     // },
   },
+  methods: {
+    getHeight(numb) {
+      this.$root.MY.height = numb
+    }
+  },
 };
 </script>
 
@@ -128,6 +134,7 @@ export default {
   margin-top: -4px;
   align-self: flex-start;
   flex: 1 1 auto;
+  cursor: pointer;
 }
 .skale_numb_down {
   margin-bottom: -4px;
