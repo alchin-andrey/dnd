@@ -21,13 +21,7 @@
     ></div>
     <div class="range_value">{{ t_Unit }}</div>
   </div>
-
-  <div class="size_a_w">
-    <div v-for="n in arr" :key="n" :class="{ passive: n === 'x' }">
-      {{ n }}
-    </div>
-  </div>
-
+<MyRangeSize lvl/>
 </div>
 </template>
 
@@ -56,10 +50,10 @@ export default {
       type: Boolean,
       default: false,
     },
-    arr: {
-      type: Array,
-      default: [],
-    },
+    // arr: {
+    //   type: Array,
+    //   default: [],
+    // },
   },
 
 
@@ -71,25 +65,14 @@ export default {
 
     },
     Range_Width() {
-      return `calc((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px))`;
+      return `calc((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range}))`;
     },
     Range_Margin() {
-      console.log(this.min_range, this.max_range);
-      return `calc(((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)) / 2 - 172px - 1px)`;
+      return `calc(((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.min_range})) / 2 - 172px - 1px)`;
     },
     Range_Bottom() {
-      return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)`;
+      return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range})`;
     },
-    // Range_Width() {
-    //   return `calc(100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / 20 * ${this.max_range})))`;
-    // },
-    // Range_Margin() {
-    //   console.log(this.min_range, this.max_range);
-    //   return `calc((100vh - 64px - ((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px) - ((100vh - 64px) - ((100vh - 64px) / ${this.max_range} * ${this.max_range}))) / 2 - 172px)`;
-    // },
-    // Range_Bottom() {
-    //   return `calc((100vh - 64px) / ${this.max_range} * ${this.min_range} - 30px)`;
-    // },
   },
   watch: {
     // "$root.MY.race": {
@@ -121,24 +104,6 @@ export default {
 </script>
 
 <style scoped>
-
-.size_a_w {
-  width: 42px;
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 11.45px;
-  line-height: 18px;
-  text-align: right;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-  justify-content: space-between;
-  text-align: end;
-  height: 100%;
-}
 
 .passive {
   color: rgba(255, 255, 255, 0);

@@ -21,6 +21,7 @@ import RaceBody from "@/components/ui/RaceBody.vue";
 import MySkale from "@/components/ui/MySkale.vue";
 import MySizeGrowth from "@/components/ui/MySizeGrowth.vue";
 import MyRange from "@/components/ui/MyRange.vue";
+import MyRangeSize from "@/components/ui/MyRangeSize.vue";
 import MyRangeHight from "@/components/ui/MyRangeHight.vue";
 import MyHeaderCard from "@/components/ui/MyHeaderCard.vue";
 import MyLogoCard from "@/components/ui/MyLogoCard.vue";
@@ -52,6 +53,7 @@ export default [
   MySizeGrowth,
   GenderCard,
   MyRange,
+  MyRangeSize,
   MyRangeHight,
   MyHeaderCard,
   MyLogoCard,

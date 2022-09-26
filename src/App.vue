@@ -220,7 +220,6 @@
           :max_range="max_lvl"
           :min_range="min_lvl"
           v-model.number="MY.level"
-          :arr="race_page.lvl_arr"
           lvl
         />
         <!-- <mySizeGrowth /> -->

@@ -332,11 +332,11 @@ export default {
       },
 
       age: {
-        baby: 10,
+        min: 10,
         young: 20,
         mature: 45,
         old: 100,
-        oldest: 150,
+        max: 150,
       },
 
       height: {
