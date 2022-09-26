@@ -22,10 +22,6 @@ export default {
     hair_hower: null,
     eyes_hower: null,
 
-    // skin_color_selected: null,
-    // hair_color_selected: null,
-    // eyes_color_selected: null,
-
     color_selected: {
         skin: null,
         hair: null,
@@ -40,14 +36,6 @@ export default {
         languages: null,
     },
 
-    age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
-    // weight_arr: [0, "x", "x", 15, 20],
-    // lvl_arr: [0, 5, 10, 15, 20],
-
-    // lvl_arr: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-
-    // lvl: 2,
-    age: 70,
     height_kof: 0.5,
     weight_kof: 0.5,
     age_kof: 0.5,

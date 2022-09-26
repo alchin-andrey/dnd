@@ -109,6 +109,7 @@ export default {
   margin-left: 4px;
   position: relative;
   display: flex;
+  white-space: nowrap;
 }
 
 .note {

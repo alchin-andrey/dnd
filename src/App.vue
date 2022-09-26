@@ -97,15 +97,15 @@
             @click="show('shown_age')"
             :active="race_page.shown_age"
             title="age"
-            :value="race_page.age"
+            :value="MY.age"
             age
-            note="Взрослый"
+            :note="Age_Note"
           ></my-controller>
           <my-controller
             @click="show('shown_height')"
             :active="race_page.shown_height"
             title="height"
-            :value="Char_Height"
+            :value="MY.height"
             unit="cm"
             :note="Hight_Note"
           ></my-controller>
@@ -226,19 +226,19 @@
 
     <!-- Возраст -->
     <my-selection-box :shown="race_page.shown_age">
-      <AgeWeight :value="race_page.age" :arr="race_page.age_arr" age />
+      <div class="flex_options">
+        <MyRange
+          v-model.number="MY.age"
+          age
+        />
+        <MyRangeSize age/>
+      </div>
     </my-selection-box>
     <!-- Возраст -->
 
     <!-- Рост -->
-
     <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
-        <!-- <MyRangeHight
-          :max_range="max_Hight"
-          :min_range="min_Hight"
-          v-model.number="MY.height"
-        /> -->
         <MyRange
           v-model.number="MY.height"
           height
@@ -246,13 +246,10 @@
         <mySizeGrowth />
       </div>
     </my-selection-box>
-
     <!-- Рост -->
 
     <!-- Вес -->
     <my-selection-box :shown="race_page.shown_weight">
-      <!-- <AgeWeight :value="race_page.weight" :arr="race_page.weight_arr"unit="kg"
-      /> -->
       <div class="flex_options">
         <MyRange
           v-model.number="MY.weight"
@@ -553,17 +550,6 @@ export default {
 
       race_page: race_page,
 
-      // min_lvl: 0,
-      // max_lvl: 20,
-
-      age_arr: [0, 20, "x", "x", 75, "x", "x", 130, 150],
-      weight_arr: [0, "x", "x", 15, 20],
-
-      skale_arr: [0, 60, 90, 120, 150, 180, 210],
-      age: 34,
-      growth: 100,
-      weight: 15,
-
       foo_met: "getFoo",
       // foo_com: Foo_PS,
       numb_foo: 1,
@@ -617,18 +603,9 @@ export default {
       return `${this.t("lvl")} ${this.MY.level}`;
     },
 
-    
-
-    min_Hight() {
-      return this.MY.race.settings.height.min;
-    },
-    max_Hight() {
-      return this.MY.race.settings.height.max;
-    },
-
     Get_Height() {
-      let min = this.MY.race.settings.height.min;
-      let max = this.MY.race.settings.height.max;
+      let min = this.Race_Set_Obj.height.min;
+      let max = this.Race_Set_Obj.height.max;
       let kof = this.race_page.height_kof;
       return min + Math.round((max - min) * kof);
     },
@@ -637,20 +614,9 @@ export default {
       return this.t(this.Race_Set_Obj.size);
     },
 
-    // Get_Height() {
-    //   let min = this.MY.race.settings.height.min;
-    //   let max = this.MY.race.settings.height.max;
-    //   let kof = this.race_page.height_kof;
-    //   if (this.MY.height) {
-    //     return this.max_Hight - this.race_page.height_kof;
-    //   } else {
-    //     return (this.min_Hight + this.max_Hight) / 2;
-    //   }
-    // },
-
     Get_Weight() {
-      let min = this.MY.race.settings.weight.min;
-      let max = this.MY.race.settings.weight.max;
+      let min = this.Race_Set_Obj.weight.min;
+      let max = this.Race_Set_Obj.weight.max;
       let kof = this.race_page.weight_kof;
       return min + Math.round((max - min) * kof);
     },
@@ -661,6 +627,32 @@ export default {
         return this.t('skinny');
       } else {
         return this.t('fat');
+      }
+    },
+
+    Get_Age() {
+      let min = this.Race_Set_Obj.age.min;
+      let max = this.Race_Set_Obj.age.max;
+      let kof = this.race_page.age_kof;
+      return min + Math.round((max - min) * kof);
+    },
+
+    Age_Note() {
+      let baby = this.Race_Set_Obj.age.min;
+      let young = this.Race_Set_Obj.age.young;
+      let mature = this.Race_Set_Obj.age.mature;
+      let old = this.Race_Set_Obj.age.old;
+      let oldest = this.Race_Set_Obj.age.max;
+      if (baby <= this.MY.age && this.MY.age < young) {
+        return this.t('baby');
+      } else if (young <= this.MY.age && this.MY.age < mature) {
+        return this.t('young');
+      } else if (mature <= this.MY.age && this.MY.age < old) {
+        return this.t('mature');
+      } else if (old <= this.MY.age && this.MY.age < oldest) {
+        return this.t('old');
+      } else {
+        return this.t('oldest');
       }
     },
 
@@ -900,7 +892,7 @@ export default {
       this.getExtra(this.Lang_Pass, "languages");
       this.MY.height = this.Get_Height;
       this.MY.weight = this.Get_Weight;
-      // this.getHight();
+      this.MY.age = this.Get_Age;
     },
 
     getFunction_2() {
@@ -918,10 +910,6 @@ export default {
         this.$root.MY.color[name] = null
       }
     },
-
-    // getHight() {
-    //   this.MY.height = this.max_Hight - this.race_page.height_kof;
-    // },
 
     getNewEthnos() {
       this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
@@ -1022,18 +1010,6 @@ export default {
         return false;
       }
     },
-
-    // hideRuler() {
-    //   if (
-    //     this.race_page.shown_skin_color ||
-    //     this.race_page.shown_eyes_color ||
-    //     this.race_page.shown_hair_color
-    //   ) {
-    //     return false;
-    //   } else {
-    //     return true;
-    //   }
-    // },
 
     getCharColor(value) {
       if (this.MY.color[value] === null && this.MY.ethnos.name === "common") {
