@@ -40,14 +40,6 @@ export default {
       type: Number,
       default: null,
     },
-    // min_range: {
-    //   type: Number,
-    //   default: null,
-    // },
-    // max_range: {
-    //   type: Number,
-    //   default: null,
-    // },
     lvl: {
       type: Boolean,
       default: false,
@@ -67,6 +59,20 @@ export default {
   },
 
   computed: {
+    Target_Range() {
+      if (this.lvl) {
+        return 'lvl';
+      } else if (this.age) {
+        return 'age';
+      } else if (this.height) {
+        return 'height';
+      } else if (this.weight) {
+        return 'weight';
+      } else {
+        return null;
+      }
+    },
+
     Race_Set_Obj() {
       return this.$root.MY.race.settings;
     },
@@ -102,47 +108,33 @@ export default {
     Max_Range() {
       if (this.lvl) {
         return this.max_lvl;
-      } else if (this.age) {
-        return this.Race_Set_Obj.age.max;
-      } else if (this.height) {
-        return this.Race_Set_Obj.height.max;
-      } else if (this.weight) {
-        return this.Race_Set_Obj.weight.max;
       } else {
-        return null;
+        return this.Race_Set_Obj[this.Target_Range].max;
       }
     },
 
     Min_Range() {
       if (this.lvl) {
         return this.min_lvl;
-      } else if (this.age) {
-        return this.Race_Set_Obj.age.min;
-      } else if (this.height) {
-        return this.Race_Set_Obj.height.min;
-      } else if (this.weight) {
-        return this.Race_Set_Obj.weight.min;
       } else {
+        return this.Race_Set_Obj[this.Target_Range].min;
+      } 
+    },
+
+    Kof_Range() {
+      if (this.lvl) {
         return null;
-      }
-    },
-
-    Kof_Weight() {
-      let min = this.$root.MY.race.settings.weight.min;
-      let max = this.$root.MY.race.settings.weight.max;
-      return (this.$root.MY.weight - min) / (max - min);
-    },
-
-    Kof_Height () {
-      let min = this.$root.MY.race.settings.height.min;
-      let max = this.$root.MY.race.settings.height.max;
-      return (this.$root.MY.height - min) / (max - min);
+      } else {
+        let min = this.$root.MY.race.settings[this.Target_Range].min;
+        let max = this.$root.MY.race.settings[this.Target_Range].max;
+        return (this.$root.MY[this.Target_Range] - min) / (max - min);
+      } 
     },
 
     // Выравнивание ползунка
     Range_Bottom() {
       if (this.height) {
-        return `calc((100vh - 64px - 30px) / 210 * ${this.Min_Range})`;
+        return `calc((100vh - 64px) / 210 * ${this.Min_Range} - 30px)`;
       } else {
         return `calc((100vh - 64px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
       }
@@ -161,19 +153,13 @@ export default {
   watch: {
     "$root.MY.race": {
       handler() {
-        if (this.height) {
+        if (this.lvl) {
+          return null
+        } else {
           setTimeout(() => {
-            this.inputValue = this.$root.MY.height + 1;
+            this.inputValue = this.$root.MY[this.Target_Range] + 1;
             this.$emit("update:modelValue", this.inputValue);
-            this.inputValue = this.$root.MY.height - 1;
-            this.$emit("update:modelValue", this.inputValue);
-          }, 1);
-        };
-        if (this.weight) {
-          setTimeout(() => {
-            this.inputValue = this.$root.MY.weight + 1;
-            this.$emit("update:modelValue", this.inputValue);
-            this.inputValue = this.$root.MY.weight - 1;
+            this.inputValue = this.$root.MY[this.Target_Range] - 1;
             this.$emit("update:modelValue", this.inputValue);
           }, 1);
         }
@@ -183,11 +169,10 @@ export default {
     modelValue: {
       handler() {
         this.inputValue = this.modelValue;
-        if (this.height) {
-          this.$root.race_page.height_kof = this.Kof_Height;
-        };
-        if (this.weight) {
-          this.$root.race_page.weight_kof = this.Kof_Weight;
+        if (this.lvl) {
+          return null
+        } else {
+          this.$root.race_page[`${this.Target_Range}_kof`] = this.Kof_Range;
         }
       },
       immediate: true,
@@ -195,18 +180,14 @@ export default {
     inputValue: {
       handler() {
         this.$emit("update:modelValue", this.inputValue);
-        if (this.height) {
-          this.$root.race_page.height_kof = this.Kof_Height;
-        };
-        if (this.weight) {
-          this.$root.race_page.weight_kof = this.Kof_Weight;
+        if (this.lvl) {
+          return null
+        } else {
+          this.$root.race_page[`${this.Target_Range}_kof`] = this.Kof_Range;
         }
       },
+      immediate: true,
     },
-  },
-  methods: {
-    // weighKof () {
-    // }
   },
 };
 </script>
