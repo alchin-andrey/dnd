@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="flex_options"> -->
   <div class="range_slider">
     <input
       :style="{
@@ -14,6 +13,7 @@
       step="1"
     />
     <div
+    @click="getMin()"
       :style="{
         height: Range_Bottom,
       }"
@@ -21,8 +21,6 @@
     ></div>
     <div class="range_value">{{ t_Unit }}</div>
   </div>
-  <!-- <MyRangeSize lvl/>
-</div> -->
 </template>
 
 <script>
@@ -189,6 +187,11 @@ export default {
       immediate: true,
     },
   },
+  methods: {
+    getMin() {
+      this.inputValue = this.Min_Range
+    }
+  },
 };
 </script>
 
@@ -300,5 +303,6 @@ input[type="range"] {
 .range_bottom {
   width: 344px;
   background-color: #ffffff;
+  cursor: pointer;
 }
 </style>
