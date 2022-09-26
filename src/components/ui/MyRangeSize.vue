@@ -1,22 +1,15 @@
 <template>
-  <!-- <div class="pad_size"> -->
   <div 
   class="size jbm-300"
   >
-    <!-- <my-skale
-      v-for = "n in skale_arr"
-      :key="n"
-      :division = "division"
-      :zero = "zero"
-      :numb="n" /> -->
       <div class="skale" 
       v-for = "n in Skale_Arr"
       :key="n"
+      @click="getSize(n)"
       :style="{
         bottom: getBottom(n),
         }">{{n}}</div>
   </div>
-<!-- </div> -->
 </template>
 
 <script>
@@ -48,6 +41,26 @@ export default {
   computed: {
     Race_Set_Obj() {
       return this.$root.MY.race.settings;
+    },
+    Target_Range() {
+      if (this.lvl) {
+        return 'level';
+      } else if (this.age) {
+        return 'age';
+      } else if (this.height) {
+        return 'height';
+      } else if (this.weight) {
+        return 'weight';
+      } else {
+        return null;
+      }
+    },
+    Min_Range() {
+      if (this.lvl) {
+        return this.min_lvl;
+      } else {
+        return this.Race_Set_Obj[this.Target_Range].min;
+      } 
     },
     Level_Arr() {
       return [0, 5, 10, 15, 20]
@@ -81,6 +94,13 @@ export default {
     getBottom(numb) {
       let max_size = this.Skale_Arr[this.Skale_Arr.length - 1]
       return `calc((100vh - 64px - 30px) / ${max_size} * ${numb} - 1px + 15px - 9px)`;
+    },
+    getSize(numb) {
+      if (numb >= this.Min_Range) {
+        this.$root.MY[this.Target_Range] = numb
+      } else {
+        this.$root.MY[this.Target_Range] = this.Min_Range
+      }
     }
   }
 };
@@ -102,6 +122,7 @@ export default {
 
 .skale {
   position: absolute;
+  cursor: pointer;
   /* bottom: 0px; */
 }
 </style>
