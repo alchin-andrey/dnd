@@ -15,7 +15,7 @@
               @click="show('shown_lang')"
               :active="race_page.shown_lang"
             >
-              <img class="header_icon" :src="Lang_Icon" />
+            <img class="header_icon" :src="Lang_Icon"/>
             </my-header-card>
             <my-header-card
               @click="show('shown_lvl')"
@@ -160,21 +160,18 @@
         @click="showHome()"
       ></my-button-back>
     </div>
-  </div>
 
-  <!------- Выпадающее меню ------->
-  <div
-    class="sidebar_wrap"
-    :class="{ sidebar_wrap_open: !race_page.shown_home }"
-  >
     <!-- Превью -->
+    <transition name="slide-fade-show">
     <my-selection-box :shown="race_page.shown_logo">
       <Description />
     </my-selection-box>
+    </transition>
     <!-- Превью -->
 
     <!-- Смена языка -->
     <my-selection-box :shown="race_page.shown_lang">
+
       <my-selection-card
         v-for="item in dic.lang"
         :key="item"
@@ -217,11 +214,14 @@
     </my-selection-box>
     <!-- Цвет волос -->
 
-    <!-- Уровень -->
-    <my-selection-box :shown="race_page.shown_lvl">
+        <!-- Уровень -->
+        <my-selection-box :shown="race_page.shown_lvl">
       <div class="flex_options">
-        <MyRange v-model.number="MY.level" lvl />
-        <MyRangeSize lvl />
+        <MyRange
+          v-model.number="MY.level"
+          lvl
+        />
+        <MyRangeSize lvl/>
       </div>
     </my-selection-box>
     <!-- Уровень -->
@@ -229,8 +229,11 @@
     <!-- Возраст -->
     <my-selection-box :shown="race_page.shown_age">
       <div class="flex_options">
-        <MyRange v-model.number="MY.age" age />
-        <MyRangeSize age />
+        <MyRange
+          v-model.number="MY.age"
+          age
+        />
+        <MyRangeSize age/>
       </div>
     </my-selection-box>
     <!-- Возраст -->
@@ -238,7 +241,10 @@
     <!-- Рост -->
     <my-selection-box :shown="race_page.shown_height">
       <div class="flex_options">
-        <MyRange v-model.number="MY.height" height />
+        <MyRange
+          v-model.number="MY.height"
+          height
+        />
         <mySizeGrowth />
       </div>
     </my-selection-box>
@@ -247,8 +253,11 @@
     <!-- Вес -->
     <my-selection-box :shown="race_page.shown_weight">
       <div class="flex_options">
-        <MyRange v-model.number="MY.weight" weight />
-        <MyRangeSize weight />
+        <MyRange
+          v-model.number="MY.weight"
+          weight
+        />
+        <MyRangeSize weight/>
       </div>
     </my-selection-box>
     <!-- Вес -->
@@ -370,7 +379,6 @@
     </my-selection-box>
     <!-- Языки -->
   </div>
-  <div class="stripe"></div>
   <!-- Персонаж -->
 
   <div class="represent">
@@ -384,6 +392,7 @@
         height: Char_Hight_Back,
       }"
     >
+
       <RaceBody body_part="skin" />
       <RaceBody body_part="eyes" />
       <RaceBody body_part="hair" />
@@ -399,9 +408,9 @@
 
   <!-- sidebar_right -->
   <!-- <transition name="slide-fade"> -->
-  <div
-    class="sidebar_right"
-    :class="{ sidebar_right_close: !race_page.shown_home }"
+  <div 
+  class="sidebar_right"
+  :class="{ sidebar_right_close: !race_page.shown_home }"
   >
     <!-- stats -->
     <my-wrapper hr>
@@ -495,7 +504,7 @@
       </my-card-text>
     </div>
   </div>
-  <!-- </transition> -->
+<!-- </transition> -->
   <!-- sidebar_right -->
 </template>
 
@@ -595,7 +604,7 @@ export default {
     // },
 
     Lang_Icon() {
-      return require(`@/assets/img/icon/lang/icon_${this.dic.select_lang}.png`);
+        return require(`@/assets/img/icon/lang/icon_${this.dic.select_lang}.png`);
     },
 
     Char_Lvl() {
@@ -623,9 +632,9 @@ export default {
     Weight_Note() {
       let kof = this.race_page.weight_kof;
       if (kof < 0.5) {
-        return this.t("skinny");
+        return this.t('skinny');
       } else {
-        return this.t("fat");
+        return this.t('fat');
       }
     },
 
@@ -660,15 +669,15 @@ export default {
       let old = this.Race_Set_Obj.age.old;
       let oldest = this.Race_Set_Obj.age.max;
       if (baby <= this.MY.age && this.MY.age < young) {
-        return this.t("baby");
+        return this.t('baby');
       } else if (young <= this.MY.age && this.MY.age < mature) {
-        return this.t("young");
+        return this.t('young');
       } else if (mature <= this.MY.age && this.MY.age < old) {
-        return this.t("mature");
+        return this.t('mature');
       } else if (old <= this.MY.age && this.MY.age < oldest) {
-        return this.t("old");
+        return this.t('old');
       } else {
-        return this.t("oldest");
+        return this.t('oldest');
       }
     },
 
@@ -864,6 +873,7 @@ export default {
   },
 
   methods: {
+
     getLangSite(name, icon) {
       this.dic.select_lang = name;
       this.dic.select_lang_icon = icon;
@@ -917,11 +927,11 @@ export default {
     },
 
     getComonColor(name) {
-      let select = this.$root.race_page.color_selected[name];
+      let select = this.$root.race_page.color_selected[name]
       if (this.Race_Set_Obj.color[name][0]) {
-        this.$root.MY.color[name] = select;
+        this.$root.MY.color[name] = select
       } else {
-        this.$root.MY.color[name] = null;
+        this.$root.MY.color[name] = null
       }
     },
 
@@ -1259,9 +1269,7 @@ a {
 .sidebar_left {
   /* height: 100%; */
   display: flex;
-  background-color: #0e1518;
-  z-index: 100;
-  /* outline: 2px solid rgba(255, 255, 255, 0.1); */
+  outline: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .chapter {
@@ -1376,47 +1384,13 @@ a {
 
 /* ---------------------sidebar_right----------------------*/
 
-.sidebar_wrap {
-  height: 100%;
-  display: flex;
-  width: 0;
-  transition: all 0.4s ease-in-out;
-  position: relative;
-}
-
-.sidebar_wrap_open {
-  width: 426px;
-  /* padding: 32px 32px 32px 0; */
-  transition: all 1s ease-in-out;
-}
-
-/* .sidebar_selection {
-  height: 100%;
-  position: absolute;
-  left: -426px;
-  transition: all 0.4s ease-in-out;
-  opacity: 0;
-}
-
-.sidebar_selection::-webkit-scrollbar {
-  width: 0;
-}
-
-.sidebar_selection_open {
-  opacity: 1;
-  left: 0px;
-  transition: all 1s ease-in-out;
-} */
-
-/* ---------------------sidebar_right----------------------*/
-
 .sidebar_right {
   /* width: 426px; */
   min-width: 426px;
   max-width: 426px;
   padding: 32px;
   overflow-y: scroll;
-  transition: all 0.4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .sidebar_right::-webkit-scrollbar {
@@ -1557,10 +1531,5 @@ a {
   max-width: 394px;
   height: 100%;
   position: absolute;
-}
-
-.stripe {
-  width: 2px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 </style>
