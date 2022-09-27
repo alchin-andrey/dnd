@@ -1,7 +1,18 @@
 <template>
+  <!-- <div
+    class="sidebar_wrap"
+    :class="{ 
+      sidebar_selection: Sid_Sel && !Sid_Sel_Stay,
+      sidebar_selection_open: shown && Sid_Sel && !Sid_Sel_Stay,
+      sidebar_selection_stayed: Sid_Sel_Stay,
+      sidebar_selection_stayed_open: shown && Sid_Sel_Stay,
+      }"
+  > -->
   <div
-    class="sidebar_selection"
-    :class="{ sidebar_selection_open: shown }"
+  class="sidebar_selection"
+    :class="{ 
+      sidebar_selection_open: shown,
+      }"
   >
     <transition name="slide-fade-sidebar">
       <div v-if="shown" class="selection_box">
@@ -14,23 +25,50 @@
 <script>
 export default {
   name: "MySelectionBox",
+  data() {
+    return {
+      home_arr: this.$root.race_page.home_arr,
+    };
+  },
   props: {
     shown: {
       type: Boolean,
       default: false,
     },
   },
+  computed: {
+    Sid_Sel() {
+      console.log('Sid_Sel', !this.home_arr[0] && this.home_arr[1])
+      return !this.home_arr[0] && this.home_arr[1]
+    },
+    Sid_Sel_Stay() {
+      console.log('Sid_Sel_Stay', this.home_arr[0] && this.home_arr[1])
+      return this.home_arr[0] && this.home_arr[1]
+    },
+  },
+  methods: {
+  }
 };
 </script>
 
 <style scoped>
-  .sidebar_selection {
+  /* .sidebar_wrapers {
   height: 100%;
   position: absolute;
-  left: -426px;
-  opacity: 0;
   overflow-y: scroll;
-  padding: 0;
+}
+
+.sidebar_wrapers::-webkit-scrollbar {
+  width: 0;
+} */
+
+  .sidebar_selection {
+  height: 100%;
+  left: 426px;
+  opacity: 0;
+  position: absolute;
+  overflow-y: scroll;
+
   -webkit-transition: 0.4s ease-in-out;
   -moz-transition: 0.4s ease-in-out;
   -o-transition: 0.4s ease-in-out;
@@ -41,13 +79,25 @@ export default {
   width: 0;
 }
 
+/* .sidebar_selection_stayed {
+  height: 100%;
+  position: absolute;
+  left: 426px;
+  opacity: 0;
+  overflow-y: scroll;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+} */
+
 .sidebar_selection_open {
   opacity: 1;
   left: 0px;
-  -webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
+  -webkit-transition: 0.8s ease-in-out;
+  -moz-transition: 0.8s ease-in-out;
+  -o-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
 .selection_box {

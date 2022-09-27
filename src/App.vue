@@ -165,7 +165,7 @@
   <!------- Выпадающее меню ------->
   <div
     class="sidebar_wrap"
-    :class="{ sidebar_wrap_open: !race_page.shown_home }"
+    :class="{ sidebar_wrap_open: race_page.shown_selection }"
   >
     <!-- Превью -->
     <my-selection-box :shown="race_page.shown_logo">
@@ -553,18 +553,6 @@ export default {
       // foo_com: Foo_PS,
       numb_foo: 1,
 
-      attributes_race: [
-        {
-          name: "Акробатика",
-          value: 2,
-          icon: "dexterity",
-        },
-        {
-          name: "Анализ",
-          value: 2,
-          icon: "intelligence",
-        },
-      ],
     };
   },
 
@@ -861,6 +849,7 @@ export default {
       this.race_page.shown_humman_lang = false;
     },
     "MY.ethnos": "getFunction_2",
+    // "race_page.whtch_home": "getHome",
   },
 
   methods: {
@@ -934,10 +923,10 @@ export default {
         this.race_page.shown_ethnos === true &&
         this.MY.ethnos.name === "common"
       ) {
+        this.getHomeArr();
+        this.race_page.shown_selection = false;
         this.race_page.shown_ethnos = false;
         this.race_page.shown_home = true;
-      } else {
-        this.race_page.shown_ethnos === true;
       }
     },
 
@@ -946,10 +935,10 @@ export default {
         this.race_page[`shown_${name}_color`] === true &&
         this.MY.race.settings.color[name].length === 0
       ) {
+        this.getHomeArr();
+        this.race_page.shown_selection = false;
         this.race_page[`shown_${name}_color`] = false;
         this.race_page.shown_home = true;
-      } else {
-        this.race_page[`shown_${name}_color`] === true;
       }
     },
 
@@ -958,10 +947,10 @@ export default {
         this.race_page[name_1] === true &&
         this.MY.race.settings[name_2] === undefined
       ) {
+        this.getHomeArr();
+        this.race_page.shown_selection = false;
         this.race_page[name_1] = false;
         this.race_page.shown_home = true;
-      } else {
-        this.race_page[name_1] === true;
       }
     },
 
@@ -984,25 +973,43 @@ export default {
 
     show(name, key) {
       if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
-        this.race_page[name] === false;
+        this.race_page.shown_selection = false;
+        this.getHomeArr();
+        this.race_page[name] = false;
       } else if (
         name === `shown_${key}_color` &&
         this.MY.race.settings.color[key].length === 0
       ) {
-        this.race_page[name] === false;
+        this.race_page.shown_selection = false;
+        this.getHomeArr();
+        this.race_page[name] = false;
       } else if (this.race_page[name] === false) {
         this.close();
+        this.race_page.shown_selection = true;
+        this.getHomeArr();
         this.race_page[name] = true;
         this.race_page.shown_home = false;
       } else {
+        this.race_page.shown_selection = false;
+        this.getHomeArr();
         this.close();
         this.race_page.shown_home = true;
       }
     },
 
     showHome() {
+      this.race_page.shown_selection = false;
+      this.race_page.whtch_home = !this.race_page.whtch_home;
       this.close();
       this.race_page.shown_home = true;
+    },
+
+    getHomeArr() {
+      let arr = this.race_page.home_arr;
+      arr.splice(0, 1);
+      arr.push(this.race_page.shown_selection);
+      this.race_page.home_arr = arr
+      console.log(this.race_page.home_arr)
     },
 
     showSkroll(name) {
@@ -1317,6 +1324,8 @@ a {
   padding: 32px;
   flex: 1 1 auto;
   display: flex;
+  background-color: #0e1518;
+  z-index: 2;
   /* position: relative; */
   overflow: hidden;
 }
@@ -1387,7 +1396,7 @@ a {
 .sidebar_wrap_open {
   width: 426px;
   /* padding: 32px 32px 32px 0; */
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 /* .sidebar_selection {
@@ -1416,6 +1425,8 @@ a {
   max-width: 426px;
   padding: 32px;
   overflow-y: scroll;
+  background-color: #0e1518;
+  z-index: 2;
   transition: all 0.4s ease-in-out;
 }
 

@@ -16,7 +16,10 @@ export default {
     shown_skills: false,
     shown_languages: false,
 
+
+    shown_selection: false,
     shown_home: true,
+    home_arr: [false, false],
 
     skin_hower: null,
     hair_hower: null,
