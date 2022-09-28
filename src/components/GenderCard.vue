@@ -124,7 +124,7 @@ export default {
 
   methods: {
     getGeder(name) {
-      if (this.title === "fell") {
+      if (this.title === "feel") {
         this.changeLookName(name);
         this.$root.MY.gender[this.title] = name;
       } else {
