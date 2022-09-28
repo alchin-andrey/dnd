@@ -1,17 +1,20 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
-import statssStore from './stats';
-import genderStore from './gender';
-import racesStore from './races';
-import ethnosesStore from './ethnoses';
+
+// import genderStore from './gender';
+import genderMod from './modules/genderMod';
+import raceMod from './modules/raceMod';
+import colorMod from './modules/colorMod';
+
 
 const store = createStore({
   modules: {
-    stats: statssStore,
-    gender: genderStore,
-    races: racesStore,
-    ethnoses: ethnosesStore,
+    // gender: genderStore,
+    gender: genderMod,
+    race: raceMod,
+    color: colorMod,
+
   },
 });
 
-export default store
+export default store;

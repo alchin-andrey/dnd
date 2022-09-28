@@ -370,6 +370,8 @@
     </my-selection-box>
     <!-- Языки -->
   </div>
+
+
   <div class="stripe"></div>
   <!-- Персонаж -->
 
@@ -505,8 +507,8 @@ import dic from "@/assets/catalog/texts/dic.js";
 import MY from "@/assets/catalog/MY.js";
 import default_MY from "@/assets/catalog/default_MY.js";
 
-import color from "@/assets/catalog/base_data/colors.js";
-import genders from "@/assets/catalog/base_data/genders.js";
+// import color from "@/assets/catalog/base_data/colors.js";
+// import genders from "@/assets/catalog/base_data/genders.js";
 import race from "@/assets/catalog/base_data/races.js";
 import clas from "@/assets/catalog/base_data/classes.js";
 import past from "@/assets/catalog/base_data/pasts.js";
@@ -539,8 +541,8 @@ export default {
       MY: MY,
       default_MY: default_MY,
 
-      genders: genders,
-      color: color,
+      // genders: genders,
+      // color: color,
       race: race,
       clas: clas,
       past: past,
@@ -1021,7 +1023,10 @@ export default {
     },
 
     showMY() {
-      console.log(this.MY, this.race_page);
+      // console.log(this.MY, this.race_page);
+      // console.log('store', this.$store.state.color);
+      // console.log('root', this.$root.color);
+      // console.log(this.$store.state.races.proficiencies.languages);
     },
 
     hideRuler() {

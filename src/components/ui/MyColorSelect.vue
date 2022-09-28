@@ -1,38 +1,39 @@
 <template>
-<my-selection-card passive colors_card>
-  <div class="colors_box jbm-300" @mouseleave="hoverStop()">
-    <div v-for="(val, i) in $root.color" :key="i" class="colors_row">
-      <my-color-block
-        v-for="(val, j) in $root.color[i]"
-        :key="j"
-        @mouseover="hoverColor(i, j)"
-        @click="choiceColor(body_part, i, j)"
-        :color="$root.color[i][j].hex"
-        :active_link="$root.color[i][j].hex"
-        :select_link="Char_Color.hex"
-        :ethnos_color="getEthnosColor($root.color[i][j], body_part)"
-        :race_color="getRaceColor($root.color[i][j], body_part)"
-      >
-      </my-color-block>
+  <my-selection-card passive colors_card>
+    <div class="colors_box jbm-300" @mouseleave="hoverStop()">
+      <div v-for="(val, i) in color" :key="i" class="colors_row">
+        <my-color-block
+          v-for="(val, j) in color[i]"
+          :key="j"
+          @mouseover="hoverColor(i, j)"
+          @click="choiceColor(body_part, i, j)"
+          :color="color[i][j].hex"
+          :active_link="color[i][j].hex"
+          :select_link="Char_Color.hex"
+          :ethnos_color="getEthnosColor(color[i][j], body_part)"
+          :race_color="getRaceColor(color[i][j], body_part)"
+        >
+        </my-color-block>
+      </div>
     </div>
-  </div>
-  <my-card-text-color
-    :title="Hower ? Hower.name : Char_Color.name"
-    :ethnos_color="
-      Hower
-        ? getEthnosColor(Hower, body_part)
-        : getEthnosColor(Char_Color, body_part)
-    "
-    :race_color="
-      Hower
-        ? getRaceColor(Hower, body_part)
-        : getRaceColor(Char_Color, body_part)
-    "
-  ></my-card-text-color>
+    <my-card-text-color
+      :title="Hower ? Hower.name : Char_Color.name"
+      :ethnos_color="
+        Hower
+          ? getEthnosColor(Hower, body_part)
+          : getEthnosColor(Char_Color, body_part)
+      "
+      :race_color="
+        Hower
+          ? getRaceColor(Hower, body_part)
+          : getRaceColor(Char_Color, body_part)
+      "
+    ></my-card-text-color>
   </my-selection-card>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "MyColorSelect",
   props: {
@@ -41,14 +42,16 @@ export default {
       default: null,
     },
   },
-   data() {
+  data() {
     return {
       hower_link: `${this.body_part}_hower`,
-    }
+    };
   },
   computed: {
+    ...mapGetters(["color"]),
+
     Hower() {
-      return this.$root.race_page[this.hower_link]
+      return this.$root.race_page[this.hower_link];
     },
 
     Char_Color() {
@@ -69,11 +72,12 @@ export default {
       this.$root.race_page[this.hower_link] = null;
     },
     hoverColor(i, j) {
-      this.$root.race_page[this.hower_link] = this.$root.color[i][j];
+      console.log(this.color);
+      this.$root.race_page[this.hower_link] = this.color[i][j];
     },
     choiceColor(value, i, j) {
-      this.$root.race_page.color_selected[value] = this.$root.color[i][j];
-      this.$root.MY.color[value] = this.$root.color[i][j];
+      this.$root.race_page.color_selected[value] = this.color[i][j];
+      this.$root.MY.color[value] = this.color[i][j];
     },
     getEthnosColor(obj, value) {
       if (this.$root.MY.ethnos.name === "common") {
