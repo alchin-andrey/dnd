@@ -2,17 +2,19 @@ import { createStore } from 'vuex';
 
 
 // import genderStore from './gender';
-import genderMod from './modules/genderMod';
-import raceMod from './modules/raceMod';
-import colorMod from './modules/colorMod';
+import gender from './modules/genderMod';
+import race from './modules/raceMod';
+import color from './modules/colorMod';
+import lang from './modules/langMod';
 
 
 const store = createStore({
   modules: {
     // gender: genderStore,
-    gender: genderMod,
-    race: raceMod,
-    color: colorMod,
+    gender,
+    race,
+    color,
+    lang,
 
   },
 });
