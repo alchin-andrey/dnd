@@ -1,4 +1,5 @@
 <template>
+  <!-- section Левый бар -->
   <div class="sidebar_left">
     <div class="chapter">
       <div class="main_chapter">
@@ -15,7 +16,7 @@
               @click="show('shown_lang')"
               :active="race_page.shown_lang"
             >
-              <img class="header_icon" :src="Lang_Icon" />
+              <img class="header_icon" :src="Lang_Icon"  alt="Lang_Icon"/>
             </my-header-card>
             <my-header-card
               @click="show('shown_lvl')"
@@ -162,7 +163,7 @@
     </div>
   </div>
 
-  <!------- Выпадающее меню ------->
+<!-- section Выпадающее меню-->
   <div
     class="sidebar_wrap"
     :class="{ sidebar_wrap_open: race_page.shown_selection }"
@@ -1401,7 +1402,7 @@ a {
 .sidebar_wrap_open {
   width: 426px;
   /* padding: 32px 32px 32px 0; */
-  transition: all 0.8s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 /* .sidebar_selection {
@@ -1442,7 +1443,7 @@ a {
 .sidebar_right_close {
   margin-right: -426px;
   opacity: 0;
-  transition: all 1s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .story {
@@ -1542,15 +1543,15 @@ a {
 
 .skroll_list_closed::after {
   position: absolute;
-  content: url(@/assets/img/icon/arrow_down_small.svg);
-  top: 0px;
+  content: url(./assets/img/icon/arrow_down_small.svg);
+  top: 0;
   right: 16px;
 }
 
 .skroll_list_open::after {
   position: absolute;
-  content: url(@/assets/img/icon/arrow_top_small.svg);
-  top: 0px;
+  content: url(./assets/img/icon/arrow_top_small.svg);
+  top: 0;
   right: 16px;
 }
 

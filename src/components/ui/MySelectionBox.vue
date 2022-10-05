@@ -1,7 +1,7 @@
 <template>
   <!-- <div
     class="sidebar_wrap"
-    :class="{ 
+    :class="{
       sidebar_selection: Sid_Sel && !Sid_Sel_Stay,
       sidebar_selection_open: shown && Sid_Sel && !Sid_Sel_Stay,
       sidebar_selection_stayed: Sid_Sel_Stay,
@@ -10,7 +10,7 @@
   > -->
   <div
   class="sidebar_selection"
-    :class="{ 
+    :class="{
       sidebar_selection_open: shown,
       }"
   >
@@ -77,6 +77,7 @@ export default {
 
 .sidebar_selection::-webkit-scrollbar {
   width: 0;
+  display: none;
 }
 
 /* .sidebar_selection_stayed {
@@ -94,10 +95,10 @@ export default {
 .sidebar_selection_open {
   opacity: 1;
   left: 0px;
-  -webkit-transition: 0.8s ease-in-out;
-  -moz-transition: 0.8s ease-in-out;
-  -o-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .selection_box {
@@ -115,7 +116,7 @@ export default {
 }
 
 .slide-fade-sidebar-enter-active {
-  transition: all 0.8s ease-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .slide-fade-sidebar-leave-active {

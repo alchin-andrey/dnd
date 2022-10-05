@@ -174,16 +174,16 @@
       <div
         class="skroll_list jbm-300"
         :class="{
-          skroll_list_closed: !race_page.shown_humman_lang,
-          skroll_list_open: race_page.shown_humman_lang,
+          skroll_list_closed: !race_page.shown_human_lang,
+          skroll_list_open: race_page.shown_human_lang,
         }"
-        v-vpshow="race_page.shown_humman_lang"
+        v-vpshow="race_page.shown_human_lang"
         @click="showSkroll('shown_humman_lang')"
       >
         {{ Lang_Humman_Title }}
       </div>
       <transition name="scroll-fade">
-        <div v-if="race_page.shown_humman_lang" class="flex_gap-8">
+        <div v-if="race_page.shown_human_lang" class="flex_gap-8">
           <my-selection-card
             v-for="lang in Lang_Humman"
             :key="lang"
