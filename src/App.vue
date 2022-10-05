@@ -613,11 +613,20 @@ export default {
 
     Weight_Note() {
       let kof = this.race_page.weight_kof;
-      if (kof < 0.5) {
+      if (kof === 0) {
         return this.t("skinny");
-      } else {
+      } else if (kof === 1) {
         return this.t("fat");
+      } else {
+        return null;
       }
+
+      // let kof = this.race_page.weight_kof;
+      // if (kof < 0.5) {
+      //   return this.t("skinny");
+      // } else {
+      //   return this.t("fat");
+      // }
     },
 
     // Get_Age() {
