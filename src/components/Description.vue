@@ -36,7 +36,7 @@ export default {
   name: "Description",
   data() {
     return {
-      uan: 'UAN',
+      uan: 'UAH',
       uan_text: '5375 4141 0613 7382',
       uan_numb: 5375414106137382,
       uan_copied: false,

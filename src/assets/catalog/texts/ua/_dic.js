@@ -28,7 +28,7 @@ export default {
             class:"класс",
             subclass:"специализация",
             past:"предистория",
-            level:"уровень",
+            level:"рівень",
                 level_unit:"й",
                 lvl:"LVL",
 
