@@ -410,7 +410,7 @@ export default {
                     quarterstaff_details:weapons.quarterstaff_details,
 
                     mace:weapons.mace,
-                    quarterstaff_details:weapons.mace_details,
+                    mace_details:weapons.mace_details,
 
                     club:weapons.club,
                     club_details:weapons.club_details,
@@ -672,6 +672,17 @@ export default {
                 electricity_w:"⚡️ Электричеством",
                 acid_damage:"урону ⚗️ Кислотой",
                 acid_w:"⚗️ Кислотой",
+                thunder_w: "🔊 Звуком",
+                radiant_w: "✨ Светом",
+                force_w: "🌈 Cиловым полем",
+    
+                piercing_w: "🗡 колющий",
+                slashing_w: "🪓 рубящий",
+                bludgeoning_w: "🔨 дробящий",
+                
+                necrotic_w: "💀 Некротический",
+                psychic_w: "🧠 Психический",
+
                 history_check_rock_gnome:"к проверке Истории к магическому, алхимическому или технологическому предмету",
                 stealth_in_stones: "при Скрытности в каменистой местности",
                 magic_against_int_wis_cha: "против Магии: Интеллект, Мудрость, Харизма",
@@ -1057,21 +1068,6 @@ export default {
             damage: "урон",
             heal: "лечение",
             bonus_w:"бонусный",
-            poison_w:"🧪 Ядом",
-            fire_w:"🔥 Огнем",
-            cold_w:"❄️ Холодом",
-            electricity_w:"⚡️ Электричеством",
-            acid_w:"⚗️ Кислотой",
-            thunder_w: "🔊 Звуком",
-            radiant_w: "✨ Светом",
-            force_w: "🌈 Cиловым полем",
-
-            piercing_w: "🗡 колющий",
-            slashing_w: "🪓 рубящий",
-            bludgeoning_w: "🔨 дробящий",
-            
-            necrotic_w: "💀 Некротический",
-            psychic_w: "🧠 Психический",
 
             //area
             aim_aoe: "область",
@@ -1094,8 +1090,8 @@ export default {
             hellish_rebuke: spells.hellish_rebuke,
             hellish_rebuke_details: spells.hellish_rebuke_details,
             hellish_rebuke_expanded: spells.hellish_rebuke_expanded,
-            hellish_rebuke_details: spells.hellish_rebuke_tiefling_details,
-            hellish_rebuke_expanded: spells.hellish_rebuke_tiefling_expanded,
+            hellish_rebuke_tiefling_details: spells.hellish_rebuke_tiefling_details,
+            hellish_rebuke_tiefling_expanded: spells.hellish_rebuke_tiefling_expanded,
 
             darkness: spells.darkness,
             darkness_tiefling_details: spells.darkness_tiefling_details,
