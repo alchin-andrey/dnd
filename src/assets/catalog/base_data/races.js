@@ -220,6 +220,7 @@ export default {
     name: "halfling",
     details: "halfling_details",
 
+    noimg_ethnos: true,
     ethnos_preview: [300,-24],
 
     settings: {
