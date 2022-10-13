@@ -40,7 +40,7 @@ export default {
       // Если concentration - добавить up_to
       spell_duration: null,
       // Длительность заклинания
-      cast_duration_units: null,
+      spell_duration_units: null,
       // Единицьі измерения ("sec" | "round" | "min" | "hour")
 
       aim_need: false,
@@ -398,48 +398,6 @@ export default {
     },
   ],
 
-  fire_breath_cone: [
-    {
-      name: "spell_fire_breath",
-      details: "spell_breath_details",
-      expanded: "spell_breath_expanded",
-
-      type: "evocation",
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "point",
-      aim_type: "near",
-
-      parts: ["verbal"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: false,
-      aim_range: 0,
-      aim_aoe: "cone",
-      aim_aoe_size: 15,
-
-      impact_type: "damage",
-      impact_damage_type: "fire_w",
-
-      impact_size_foo: "Plus_Level_5",
-      impact_size_num: 2,
-      impact_size_dice: 6,
-
-      saving_need: true,
-      saving_attribute: "dexterity",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
-    },
-  ],
-
   fire_breath_line: [
     {
       name: "spell_fire_breath",
@@ -711,7 +669,7 @@ export default {
 
       spell_time: "concentration",
       spell_duration: 1,
-      cast_duration_units: "min",
+      spell_duration_units: "min",
 
       aim_need: false,
 
@@ -765,7 +723,7 @@ export default {
       // Если concentration - добавить up_to
       spell_duration: 1,
       // Длительность заклинания
-      cast_duration_units: "hour",
+      spell_duration_units: "hour",
       // Единицьі измерения ("sec" | "round" | "min" | "hour")
 
       aim_need: false,
@@ -840,7 +798,7 @@ export default {
 
     spell_time: null,
     spell_duration: 24,
-    cast_duration_units: "hour",
+    spell_duration_units: "hour",
 
     aim_need: false,
 
@@ -881,7 +839,7 @@ export default {
 
     spell_time: null,
     spell_duration: 24,
-    cast_duration_units: "hour",
+    spell_duration_units: "hour",
 
     aim_need: false,
 
@@ -922,7 +880,7 @@ export default {
 
     spell_time: null,
     spell_duration: 24,
-    cast_duration_units: "hour",
+    spell_duration_units: "hour",
 
     aim_need: false,
 
@@ -964,7 +922,7 @@ export default {
 
       spell_time: null,
       spell_duration: 1,
-      cast_duration_units: "min",
+      spell_duration_units: "min",
 
       aim_need: false,
       aim_range: 30,
@@ -1008,7 +966,7 @@ export default {
 
       spell_time: "concentration",
       spell_duration: 1,
-      cast_duration_units: "min",
+      spell_duration_units: "min",
 
       aim_need: false,
 
@@ -1051,7 +1009,7 @@ export default {
 
       spell_time: "concentration",
       spell_duration: 1,
-      cast_duration_units: "min",
+      spell_duration_units: "min",
 
       aim_need: false,
       aim_range: 60,
