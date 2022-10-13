@@ -1,20 +1,13 @@
 <template>
-	<div class="flex">
+	<div v-if="Show" class="flex">
 		<div class="side_stripe"></div>
-		<div class="int-400">
-			<div class="title" v-html="t_Html"></div>
-			<div class="title"
-				  :class="{
-			only: !text,
-			}"
-			>{{ t_Title }}
+		<div class="int-400 flex_col">
+<!--			<div class="title" v-html="t_Html"></div>-->
+			<div>
+				<div class="title">{{ t_Title }}</div>
+				<div class="text">{{ t_Text }}</div>
 			</div>
-			<p class="text">
-				{{ t_Text }}
-				<br v-if="rare"/>
-				<br v-if="rare"/>
-				<span v-if="rare">{{ t_Rare }}</span>
-			</p>
+			<div v-if="Spell_Index.impact_type" class="jbm-300">{{ t_Impact }}</div>
 		</div>
 	</div>
 </template>
@@ -22,37 +15,57 @@
 <script>
 export default {
 	name: "MySpellText",
+	data() {
+		return {
+
+		}
+	},
 	props: {
-		title: {
-			type: String,
+		// title: {
+		// 	type: String,
+		// 	default: null,
+		// },
+		// title_html: {
+		// 	type: String,
+		// 	default: null,
+		// },
+		// text: {
+		// 	type: String,
+		// 	default: null,
+		// },
+		lvl: {
+			type: Number,
 			default: null,
 		},
-		title_html: {
-			type: String,
-			default: null,
-		},
-		text: {
-			type: String,
-			default: null,
-		},
-		rare: {
-			type: String,
+		spell: {
+			type: Array,
 			default: null,
 		},
 	},
 	computed: {
-		t_Title() {
-			return this.t(this.title);
+		Index() {
+			return this.spell.findIndex(el => el.name)
 		},
-		t_Html() {
-			return this.t(this.title_html);
+		Spell_Index() {
+			return this.spell[this.Index]
+		},
+		Show() {
+			return this.lvl <= this.$root.MY.level
+		},
+		t_Title() {
+			return this.t(this.Spell_Index.name);
 		},
 		t_Text() {
-			return this.t(this.text);
+			return this.t(this.Spell_Index.details);
 		},
-		t_Rare() {
-			return this.t(`${this.rare}_details`);
+		t_Impact() {
+			if(this.Spell_Index.impact_type) {
+				return `${this.t(this.Spell_Index.impact_type)} ${this.t(this.Spell_Index.impact_damage_type)}`;
+			}
 		},
+		// t_Html() {
+		// 	return this.t(this.title_html);
+		// },
 
 	},
 };
@@ -64,6 +77,12 @@ export default {
 	display: flex;
 	gap: 18px;
 	height: 100%;
+}
+
+.flex_col {
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
 }
 
 .side_stripe {
@@ -87,9 +106,9 @@ export default {
 	margin-bottom: 4px;
 }
 
-.only {
-	margin-bottom: 0px;
-}
+/*.only {*/
+/*	margin-bottom: 0px;*/
+/*}*/
 
 .title:first-letter {
 	text-transform: uppercase;
