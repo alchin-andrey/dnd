@@ -491,15 +491,15 @@
       <my-spell-text
           v-for="item in MY.race.spells"
           :key="item"
-          :title="item.spell[0].name"
-          :text="item.spell[0].details"
+          :title="item.spell[getMannaNumb(item.spell, 'name')].name"
+          :text="item.spell[getMannaNumb(item.spell, 'details')].details"
       >
       </my-spell-text>
       <my-spell-text
           v-for="item in MY.ethnos.spells"
           :key="item"
-          :title="item.spell[0].name"
-          :text="item.spell[0].details"
+          :title="item.spell[getMannaNumb(item.spell, 'name')].name"
+          :text="item.spell[getMannaNumb(item.spell, 'details')].details"
       >
       </my-spell-text>
     </my-wrapper>
@@ -1040,7 +1040,7 @@ export default {
       arr.splice(0, 1);
       arr.push(this.race_page.shown_selection);
       this.race_page.home_arr = arr
-      console.log(this.race_page.home_arr)
+      // console.log(this.race_page.home_arr)
     },
 
     showSkroll(name) {
@@ -1203,6 +1203,11 @@ export default {
       }
       return false;
     },
+
+	  getMannaNumb(arr, name) {
+		  let index = arr.findIndex(el => el[name]);
+		 return index
+	  },
   },
 };
 </script>

@@ -42,7 +42,6 @@ export default {
 	},
 	computed: {
 		t_Title() {
-			console.log(this.$root.MY.ethnos.spells);
 			return this.t(this.title);
 		},
 		t_Html() {
