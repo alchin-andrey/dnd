@@ -13,6 +13,7 @@ import MyFines from "@/components/ui/MyFines.vue";
 import MySelectionBox from "@/components/ui/MySelectionBox.vue";
 import MySelectionCard from "@/components/ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/MyCardText.vue";
+import MySpellText from "@/components/ui/MySpellText.vue";
 import MyColorBlock from "@/components/ui/MyColorBlock.vue";
 import MyWrapper from "@/components/ui/MyWrapper.vue";
 import MyCardTextColor from "@/components/ui/MyCardTextColor.vue";
@@ -44,6 +45,7 @@ export default [
   MySelectionBox,
   MySelectionCard,
   MyCardText,
+  MySpellText,
   MyColorBlock,
   MyWrapper,
   MyCardTextColor,

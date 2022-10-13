@@ -1,5 +1,5 @@
 <template>
-  <!-- section Левый бар -->
+  <!-- Левый бар -->
   <div class="sidebar_left">
     <div class="chapter">
       <div class="main_chapter">
@@ -163,7 +163,7 @@
     </div>
   </div>
 
-<!-- section Выпадающее меню-->
+<!-- Выпадающее меню -->
   <div
     class="sidebar_wrap"
     :class="{ sidebar_wrap_open: race_page.shown_selection }"
@@ -485,6 +485,25 @@
       ></my-fines>
     </my-wrapper>
     <!-- fines -->
+
+    <!-- spells -->
+    <my-wrapper v-if="MY.race.spells || MY.ethnos.spells" gap_26 hr>
+      <my-spell-text
+          v-for="item in MY.race.spells"
+          :key="item"
+          :title="item.spell[0].name"
+          :text="item.spell[0].details"
+      >
+      </my-spell-text>
+      <my-spell-text
+          v-for="item in MY.ethnos.spells"
+          :key="item"
+          :title="item.spell[0].name"
+          :text="item.spell[0].details"
+      >
+      </my-spell-text>
+    </my-wrapper>
+    <!-- spells -->
 
     <!-- text -->
     <div class="story int-400">
@@ -887,8 +906,8 @@ export default {
       return this[foo](numb);
     },
 
-    getFoo(namb) {
-      return namb * 2;
+    getFoo(numb) {
+      return numb * 2;
     },
 
     getFunction() {
@@ -1195,6 +1214,10 @@ body {
 
 a {
   color: #fff;
+}
+
+.green {
+  color: green;
 }
 
 .skill_marg {
