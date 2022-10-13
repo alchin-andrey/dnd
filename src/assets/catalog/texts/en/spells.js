@@ -189,5 +189,5 @@ export const breath_expanded =
 
 // --------------------
 
-export const fury = 
+export const rage = 
 'Ярость';

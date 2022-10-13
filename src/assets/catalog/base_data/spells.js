@@ -1033,9 +1033,195 @@ export default {
     },
   ],
 
-  fury: [
+  rage: [
     {
-      
+      name: "spell_rage",
+      details: "spell_rage_details",
+      expanded: "spell_rage_expanded", // полное описание
+
+      type: "other",
+      /*    
+            abjuration: "ограждение",
+            conjuration: "вызов",
+            divination: "прорицание",
+            enchantment: "чары",
+            evocation: "воплощение",
+            illusion: "иллюзия",
+            necromancy: "некромантия",
+            transmutation: "преобразование",            
+      */
+
+      cast_time: "bonus_action",
+      // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
+      cast_duration: null,
+      // Длительность наложения
+      cast_duration_units: null,
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
+
+      aim_target: "self",
+      // Цель ("self" | "creature" | "object" | "point")
+      aim_type: null,
+      // тип атаки ("near" | "touch" | "in_distance")
+      // если in_distance - показать строку дальность
+
+      parts: ["none"],
+      // Компонентьі
+      // "verbal" | "somatic" | "focus" | "[material]" | "none"
+
+      spell_time: null,
+      // Время заклинания ( null | "instant" | "concentration" | "till_dissipate")
+      // Если concentration - добавить "up_to"
+      spell_duration: 1,
+      // Длительность заклинания
+      spell_duration_units: "min",
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
+
+      aim_need: false,
+      // нужен ли бросок на попадание
+      // если true - показьівать строку aim_bonus - "меткость" - входной параметр (мод характеристики + мастерство)
+
+      aim_range: null,
+      // Дальность (ф)
+      aim_aoe: null,
+      // Тип области ("point" | "line" | "cone" | "cube" | "cilinder" | "sphere")
+      aim_aoe_size: null,
+      // Размер области (ф)
+
+      impact_type: "damage",
+      // Тип воздействия ( null | "damage" | "heal")
+      // Если null - не показьівать строки уронов
+      impact_damage_type: "bonus_w",
+      // Тип урона
+      /* 
+        bonus_w
+        poison_w:"🧪 Ядом",
+        fire_w:"🔥 Огнем",
+        cold_w:"❄️ Холодом",
+        electricity_w:"⚡️ Электричеством",
+        acid_w:"⚗️ Кислотой",
+        thunder_w: "🔊 Звуком",
+        radiant_w: "✨ Светом",
+        force_w: "🌈 Cиловым полем",
+
+        piercing_w: "🗡 колющий",
+        slashing_w: "🪓 рубящий",
+        bludgeoning_w: "🔨 дробящий",
+            
+        necrotic_w: "💀 Некротический",
+        psychic_w: "🧠 Психический",
+      */
+
+      impact_size_foo: "Plus_num", // Добавить функцию
+      impact_size_num: null, // barbarian_rage_bonus[level],
+      impact_size_dice: null,
+      // рассчет урона
+
+      saving_need: false,
+      // нужен ли cпасбросок
+      // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
+      saving_attribute: null,
+      // Характеристика ( null - бай дефолт из класса | характеристика)
+
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+      // рассчет урона если спас пройден
     },
   ],
+
+  reckless_attack: [
+    {
+      name: "spell_reckless_attack",
+      details: "spell_reckless_attack_details",
+      expanded: "spell_reckless_attack_expanded", // полное описание
+
+      type: "other",
+      /*    
+            abjuration: "ограждение",
+            conjuration: "вызов",
+            divination: "прорицание",
+            enchantment: "чары",
+            evocation: "воплощение",
+            illusion: "иллюзия",
+            necromancy: "некромантия",
+            transmutation: "преобразование",            
+      */
+
+      cast_time: "instant",
+      // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
+      cast_duration: null,
+      // Длительность наложения
+      cast_duration_units: null,
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
+
+      aim_target: "self",
+      // Цель ("self" | "creature" | "object" | "point")
+      aim_type: null,
+      // тип атаки ("near" | "touch" | "in_distance")
+      // если in_distance - показать строку дальность
+
+      parts: ["none"],
+      // Компонентьі
+      // "verbal" | "somatic" | "focus" | "[material]"
+
+      spell_time: null,
+      // Время заклинания ( null | "instant" | "concentration" | "till_dissipate")
+      // Если concentration - добавить up_to
+      spell_duration: 1,
+      // Длительность заклинания
+      spell_duration_units: "round",
+      // Единицьі измерения ("sec" | "round" | "min" | "hour")
+
+      aim_need: false,
+      // нужен ли бросок на попадание
+      // если true - показьівать строку aim_bonus - "меткость" - входной параметр (мод характеристики + мастерство)
+
+      aim_range: null,
+      // Дальность (ф)
+      aim_aoe: null,
+      // Тип области ("point" | "line" | "cone" | "cube" | "cilinder" | "sphere")
+      aim_aoe_size: null,
+      // Размер области (ф)
+
+      impact_type: null,
+      // Тип воздействия ( null | "damage" | "heal")
+      // Если null - не показьівать строки уронов
+      impact_damage_type: null,
+      // Тип урона
+      /* 
+        bonus_w
+        poison_w:"🧪 Ядом",
+        fire_w:"🔥 Огнем",
+        cold_w:"❄️ Холодом",
+        electricity_w:"⚡️ Электричеством",
+        acid_w:"⚗️ Кислотой",
+        thunder_w: "🔊 Звуком",
+        radiant_w: "✨ Светом",
+        force_w: "🌈 Cиловым полем",
+
+        piercing_w: "🗡 колющий",
+        slashing_w: "🪓 рубящий",
+        bludgeoning_w: "🔨 дробящий",
+            
+        necrotic_w: "💀 Некротический",
+        psychic_w: "🧠 Психический",
+      */
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      // рассчет урона
+
+      saving_need: false,
+      // нужен ли cпасбросок
+      // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
+      saving_attribute: null,
+      // Характеристика ( null - бай дефолт из класса | характеристика)
+
+      impact_size_saved_foo: null,
+      impact_size_saved_num: null,
+      impact_size_saved_dice: null,
+      // рассчет урона если спас пройден
+    },
+  ]
 };
