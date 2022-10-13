@@ -610,9 +610,9 @@ export default {
 
   darkness_tiefling: [
     {
-      name: "darkness",
-      details: "darkness_tiefling_details",
-      expanded: "darkness_tiefling_details_expanded",
+      name: "spell_darkness",
+      details: "spell_darkness_tiefling_details",
+      expanded: "spell_darkness_tiefling_details_expanded",
 
       type: "evocation",
 
