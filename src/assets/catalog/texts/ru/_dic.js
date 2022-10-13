@@ -1138,6 +1138,6 @@ export default {
             spell_breath_details: spells.breath_details,
             spell_breath_expanded: spells.breath_expanded,
 
-            spell_fury: spells.fury,
+            spell_rage: spells.rage,
 
 }

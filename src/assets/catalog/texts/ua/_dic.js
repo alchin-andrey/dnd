@@ -15,7 +15,7 @@ export default {
             authors: 
             '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент,</p>' +
             '<p><a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код,</p>' +
-            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер</a> - переклади, валідація.</p>' +
+            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Найкращий Майстер</a> - переклади, валідація.</p>' +
             '<p>З будь яких тем по цьому сайту, пишіть Дімі.</p>' +
             '<br /><p>Якщо у вас є бажання задонатити, будемо дуже вдячні. Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 80% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 
@@ -517,13 +517,13 @@ export default {
                     net:weapons.net,
                     net_details:weapons.net_details,
 
-                tools:"инструменты",
+                tools:"інструменти",
 
                     tool_blacksmith: tools.blacksmith,
                     tool_brewer: tools.brewer,
                     tool_mason: tools.mason,
 
-                languages:"языки",
+                languages:"мови",
                 languages_human:"языки этносов людей",
                 
                     lang_common: langs.common,
@@ -643,6 +643,7 @@ export default {
                 advantage:"преимущество",
                 rethrow:"переброс",
                 resistance:"сопротивление",
+                immunity:"иммунитет",
                 telepathy:"телепатия",
                 proficiency_bonus:"2× Мастерства",
                 slippage: "проскальзывание",
@@ -690,8 +691,8 @@ export default {
                 perception_under_sun:"на восприятие под прямым солнечным светом",
                 attack_under_sun:"на атаку под прямым солнечным светом",
                 for_each_lvl_incl_1:"за каждый уровень включая первый",
-                charm_against: "против Очарования",
-                magic_sleep_against:"магическому Усыплению",
+                charm_against: "против 😍 Очарования",
+                magic_sleep_against:"магическому 🥱 Усыплению",
                 trans_details: "— глубокая медитация вместо сна, до 4 часов",
                 stealth_in_wild_details:"— даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
                 any_cantrip_wizard: "1 любого заговора Волшебника",
@@ -700,6 +701,8 @@ export default {
 
                 no_armor_protection: "защита без доспехов",
                 armor_constitution: "— броня за счет Телосложения",
+                saving_dex_visible: "на испытания Ловкости от видимых эффектов",
+                charmed_or_frightened_while_raging: "против 😱 Испуга и 😍 Очарования при Ярости",
 
 
 
@@ -1047,6 +1050,7 @@ export default {
             focus: "фокус",
             material_10gold: "материалы на сумму в 10 зм",
             hit: "попадание",
+            none: "не требуется",
 
             //aim
             aim_target: "цель",
@@ -1083,19 +1087,19 @@ export default {
 
             additional_m: "дополнительно",
             
-            thaumaturgy: spells.thaumaturgy,
-            thaumaturgy_details: spells.thaumaturgy_details,
-            thaumaturgy_expanded: spells.thaumaturgy_expanded,
+            spell_thaumaturgy: spells.thaumaturgy,
+            spell_thaumaturgy_details: spells.thaumaturgy_details,
+            spell_thaumaturgy_expanded: spells.thaumaturgy_expanded,
 
-            hellish_rebuke: spells.hellish_rebuke,
-            hellish_rebuke_details: spells.hellish_rebuke_details,
-            hellish_rebuke_expanded: spells.hellish_rebuke_expanded,
-            hellish_rebuke_tiefling_details: spells.hellish_rebuke_tiefling_details,
-            hellish_rebuke_tiefling_expanded: spells.hellish_rebuke_tiefling_expanded,
+            spell_hellish_rebuke: spells.hellish_rebuke,
+            spell_hellish_rebuke_details: spells.hellish_rebuke_details,
+            spell_hellish_rebuke_expanded: spells.hellish_rebuke_expanded,
+            spell_hellish_rebuke_tiefling_details: spells.hellish_rebuke_tiefling_details,
+            spell_hellish_rebuke_tiefling_expanded: spells.hellish_rebuke_tiefling_expanded,
 
-            darkness: spells.darkness,
-            darkness_tiefling_details: spells.darkness_tiefling_details,
-            darkness_tiefling_expanded: spells.darkness_tiefling_expanded,
+            spell_darkness: spells.darkness,
+            spell_darkness_tiefling_details: spells.darkness_tiefling_details,
+            spell_darkness_tiefling_expanded: spells.darkness_tiefling_expanded,
 
             spell_toy: spells.toy,
             spell_toy_details: spells.toy_details,
@@ -1137,6 +1141,12 @@ export default {
             spell_breath_details: spells.breath_details,
             spell_breath_expanded: spells.breath_expanded,
 
-            spell_fury: spells.fury,
+            spell_rage: spells.rage,
+            spell_rage_details: spells.rage_details,
+            spell_rage_expanded: spells.rage_expanded,
+
+            spell_reckless_attack: spells.reckless_attack,
+            spell_reckless_attack_details: spells.reckless_attack_details,
+            spell_reckless_attack_expanded: spells.reckless_attack_expanded,
 
 }

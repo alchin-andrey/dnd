@@ -2,6 +2,8 @@ import weaponry from "./weaponry.js";
 
 export default {
 
+// Простое рукопашное
+
       quarterstaff: 
       {
         name: "quarterstaff",
@@ -325,6 +327,8 @@ export default {
         weight: 2,
       },
 
+// Простое дальнобойное
+
       light_crossbow:
       {
         name: "light_crossbow",
@@ -444,6 +448,8 @@ export default {
         cost: 10,
         weight: 0.1,
       },
+
+// Воинское рукопашное
 
       halberd: 
       {
@@ -984,6 +990,8 @@ export default {
         cost: 1000,
         weight: 2,
       },
+
+// Воинское дальнобойное
 
       hand_crossbow:
       {

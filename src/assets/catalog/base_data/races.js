@@ -385,26 +385,6 @@ export default {
         details: "among_bigger_than_mid",
       },
     ],
-
-    spells: [
-      //ТОЛЬКО ДЛЯ ОТЛАДКИ
-
-      // {
-      //   level: 1,
-      //   spell: spells.thaumaturgy,
-      // },
-
-      // {
-      //   level: 3,
-      //   spell: spells.hellish_rebuke,
-      //   gain: 2,
-      // },
-
-      // {
-      //   level: 5,
-      //   spell: spells.darkness_tiefling,
-      // },
-    ],
   },
 
   dwarf: {
