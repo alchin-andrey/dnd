@@ -1,100 +1,119 @@
 <template>
-<div class="int-400">
-  <div class="title" v-html="t_Html"></div>
-            <div class="title"
-            :class="{
-              only: !text,
-    }"
-    >{{ t_Title }}</div>
-            <p class="text">
-              {{ t_Text }}
-              <br v-if="rare" />
-              <br v-if="rare" />
-              <span v-if="rare">{{ t_Rare }}</span>
-            </p>
-          </div>
+	<div class="flex">
+		<div class="side_stripe"></div>
+		<div class="int-400">
+			<div class="title" v-html="t_Html"></div>
+			<div class="title"
+				  :class="{
+			only: !text,
+			}"
+			>{{ t_Title }}
+			</div>
+			<p class="text">
+				{{ t_Text }}
+				<br v-if="rare"/>
+				<br v-if="rare"/>
+				<span v-if="rare">{{ t_Rare }}</span>
+			</p>
+		</div>
+	</div>
 </template>
 
 <script>
 export default {
-  name: "MySpellText",
-  props: {
-    title: {
-      type: String,
-      default: null,
-    },
-    title_html: {
-      type: String,
-      default: null,
-    },
-    text: {
-      type: String,
-      default: null,
-    },
-    rare: {
-      type: String,
-      default: null,
-    },
-  },
-    computed: {
-    t_Title() {
-      console.log(this.$root.MY.ethnos.spells);
-      return this.t(this.title);
-    },
-    t_Html() {
-      return this.t(this.title_html);
-    },
-    t_Text() {
-      return this.t(this.text);
-    },
-    t_Rare() {
-      return this.t(`${this.rare}_details`);
-    },
+	name: "MySpellText",
+	props: {
+		title: {
+			type: String,
+			default: null,
+		},
+		title_html: {
+			type: String,
+			default: null,
+		},
+		text: {
+			type: String,
+			default: null,
+		},
+		rare: {
+			type: String,
+			default: null,
+		},
+	},
+	computed: {
+		t_Title() {
+			console.log(this.$root.MY.ethnos.spells);
+			return this.t(this.title);
+		},
+		t_Html() {
+			return this.t(this.title_html);
+		},
+		t_Text() {
+			return this.t(this.text);
+		},
+		t_Rare() {
+			return this.t(`${this.rare}_details`);
+		},
 
-  },
+	},
 };
 </script>
 
 <style scoped>
 
+.flex {
+	display: flex;
+	gap: 18px;
+	height: 100%;
+}
+
+.side_stripe {
+	min-width: 4px;
+	min-height: 100%;
+	background: rgba(255, 255, 255, 0.2);
+	flex: none;
+	order: 0;
+	align-self: stretch;
+	flex-grow: 0;
+}
+
 .title {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 4px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+	color: #ffffff;
+	margin-bottom: 4px;
 }
 
 .only {
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 .title:first-letter {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
-
 
 
 .text {
-  color: rgba(255, 255, 255, 0.4);
-  text-align: start;
-  white-space: pre-line;
+	color: rgba(255, 255, 255, 0.4);
+	text-align: start;
+	white-space: pre-line;
 }
 
 .text:first-letter {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .text span {
-  color: #ffc93d;
-  margin-top: 20px;
+	color: #ffc93d;
+	margin-top: 20px;
 }
 
 .text span:first-letter {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 </style>
