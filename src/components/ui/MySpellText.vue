@@ -60,6 +60,7 @@ export default {
 		},
 		t_Impact() {
 			if(this.Spell_Index.impact_type) {
+				console.log(this.Spell_Index.impact_type);
 				return `${this.t(this.Spell_Index.impact_type)} ${this.t(this.Spell_Index.impact_damage_type)}`;
 			}
 		},

@@ -8,7 +8,7 @@ export default {
       expanded: null, // полное описание
 
       type: null,
-      /*    
+      /*
             abjuration: "ограждение",
             conjuration: "вызов",
             divination: "прорицание",
@@ -16,7 +16,7 @@ export default {
             evocation: "воплощение",
             illusion: "иллюзия",
             necromancy: "некромантия",
-            transmutation: "преобразование",            
+            transmutation: "преобразование",
       */
 
       cast_time: null,
@@ -60,7 +60,7 @@ export default {
       // Если null - не показьівать строки уронов
       impact_damage_type: null,
       // Тип урона
-      /* 
+      /*
         bonus_w
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
@@ -74,7 +74,7 @@ export default {
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
         bludgeoning_w: "🔨 дробящий",
-            
+
         necrotic_w: "💀 Некротический",
         psychic_w: "🧠 Психический",
       */
@@ -679,7 +679,7 @@ export default {
       aim_aoe_size: null,
 
       impact_type: "damage",
-      impact_damage_type: "bobus_w",
+      impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
       impact_size_num: 1,
@@ -743,7 +743,7 @@ export default {
       // Если null - не показьівать строку урона
       impact_damage_type: null,
       // Тип урона
-      /* 
+      /*
         bonus_w
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
@@ -757,7 +757,7 @@ export default {
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
         bludgeoning_w: "🔨 дробящий",
-            
+
         necrotic_w: "💀 Некротический",
         psychic_w: "🧠 Психический",
       */
@@ -791,7 +791,7 @@ export default {
     cast_time: "ritual",
     cast_duration: 1,
     cast_duration_units: "hour",
-    
+
     aim_target: "object",
     aim_type: "near",
 
@@ -809,7 +809,7 @@ export default {
 
     impact_type: null,
     impact_damage_type: null,
-    
+
     impact_size_foo: null,
     impact_size_num: null,
     impact_size_dice: null,
@@ -832,7 +832,7 @@ export default {
     cast_time: "ritual",
     cast_duration: 1,
     cast_duration_units: "hour",
-    
+
     aim_target: "object",
     aim_type: "near",
 
@@ -850,7 +850,7 @@ export default {
 
     impact_type: null,
     impact_damage_type: null,
-    
+
     impact_size_foo: null,
     impact_size_num: null,
     impact_size_dice: null,
@@ -873,7 +873,7 @@ export default {
     cast_time: "ritual",
     cast_duration: 1,
     cast_duration_units: "hour",
-    
+
     aim_target: "object",
     aim_type: "near",
 
@@ -891,7 +891,7 @@ export default {
 
     impact_type: null,
     impact_damage_type: null,
-    
+
     impact_size_foo: null,
     impact_size_num: null,
     impact_size_dice: null,
@@ -940,11 +940,11 @@ export default {
 
       saving_need: true,
       saving_attribute: "intelligence",
-      
+
       impact_size_saved_foo: null,
       impact_size_saved_num: null,
       impact_size_saved_dice: null,
-      // рассчет урона если спас пройден      
+      // рассчет урона если спас пройден
     },
   ],
 
@@ -984,7 +984,7 @@ export default {
 
       saving_need: false,
       saving_attribute: null,
-      
+
       impact_size_saved_foo: null,
       impact_size_saved_num: null,
       impact_size_saved_dice: null,
@@ -1041,7 +1041,7 @@ export default {
       expanded: "spell_rage_expanded", // полное описание
 
       type: "ability",
-      /*    
+      /*
             abjuration: "ограждение",
             conjuration: "вызов",
             divination: "прорицание",
@@ -1049,7 +1049,7 @@ export default {
             evocation: "воплощение",
             illusion: "иллюзия",
             necromancy: "некромантия",
-            transmutation: "преобразование",            
+            transmutation: "преобразование",
       */
 
       cast_time: "bonus_action",
@@ -1093,7 +1093,7 @@ export default {
       // Если null - не показьівать строки уронов
       impact_damage_type: "bonus_w",
       // Тип урона
-      /* 
+      /*
         bonus_w
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
@@ -1107,7 +1107,7 @@ export default {
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
         bludgeoning_w: "🔨 дробящий",
-            
+
         necrotic_w: "💀 Некротический",
         psychic_w: "🧠 Психический",
       */
@@ -1137,7 +1137,7 @@ export default {
       expanded: "spell_reckless_attack_expanded", // полное описание
 
       type: "ability",
-      /*    
+      /*
             abjuration: "ограждение",
             conjuration: "вызов",
             divination: "прорицание",
@@ -1145,7 +1145,7 @@ export default {
             evocation: "воплощение",
             illusion: "иллюзия",
             necromancy: "некромантия",
-            transmutation: "преобразование",            
+            transmutation: "преобразование",
       */
 
       cast_time: "instant",
@@ -1189,7 +1189,7 @@ export default {
       // Если null - не показьівать строки уронов
       impact_damage_type: null,
       // Тип урона
-      /* 
+      /*
         bonus_w
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
@@ -1203,7 +1203,7 @@ export default {
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
         bludgeoning_w: "🔨 дробящий",
-            
+
         necrotic_w: "💀 Некротический",
         psychic_w: "🧠 Психический",
       */
