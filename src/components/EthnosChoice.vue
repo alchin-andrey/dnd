@@ -46,8 +46,19 @@
         :details="item.details"
       ></my-fines>
     </my-wrapper>
+	  <!-- Этнос_fines -->
+	  <!-- Этнос_spells -->
+	  <my-wrapper v-if="showRaceSpells" gap_26>
+		  <my-spell-text
+			  v-for="item in this.$root.MY.race.spells"
+			  :key="item"
+			  :lvl="item.level"
+			  :spell="item.spell"
+		  >
+		  </my-spell-text>
+	  </my-wrapper>
+	  <!-- Этнос_spells -->
   </div>
-  <!-- Этнос_fines -->
 
   <!-- Этнос_Карточка -->
   <EthnosCard />
@@ -60,8 +71,17 @@ import EthnosCard from "@/components/EthnosCard.vue";
 export default {
   name: "EthnosChoice",
   components: {
-    EthnosCard,
+	  EthnosCard
   },
+
+	computed: {
+		showRaceSpells() {
+			let spells = this.$root.MY.race.spells;
+			let lvl = this.$root.MY.level;
+			let spells_lvl = ((spells || {})[0] || {}).level <= lvl
+			return spells && spells_lvl;
+		},
+	},
 
   methods: {
         getProfArr(obj, kay) {
