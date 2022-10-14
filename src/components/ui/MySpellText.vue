@@ -4,7 +4,10 @@
 		<div class="int-400 flex_col">
 <!--			<div class="title" v-html="t_Html"></div>-->
 			<div>
-				<div class="title_spell">{{ t_Title }}</div>
+				<div class="flex_title">
+					<div class="title_spell">{{ t_Title }}</div>
+					<img v-if="icon" class="icon_spell" src="@/assets/img/icon/arrow_right_small.svg" alt="arrow">
+				</div>
 				<div class="text_spell">{{ t_Text }}</div>
 			</div>
 			<magic-attribute
@@ -47,6 +50,10 @@ export default {
 		spell: {
 			type: Array,
 			default: null,
+		},
+		icon: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	computed: {
@@ -95,6 +102,16 @@ export default {
 	/*flex: 1 1 auto;*/
 }
 
+.flex_title {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 4px;
+}
+
+.icon_spell {
+	cursor: pointer;
+}
+
 .side_stripe {
 	min-width: 4px;
 	min-height: 100%;
@@ -106,6 +123,7 @@ export default {
 }
 
 .title_spell {
+	height: 18px;
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
@@ -113,7 +131,6 @@ export default {
 	line-height: 15px;
 	letter-spacing: 0.02em;
 	color: #ffffff;
-	margin-bottom: 4px;
 }
 
 /*.only {*/
@@ -126,7 +143,7 @@ export default {
 
 
 .text_spell {
-	color: rgba(255, 255, 255, 0.4);
+	/*color: rgba(255, 255, 255, 0.4);*/
 	text-align: start;
 	white-space: pre-line;
 }
