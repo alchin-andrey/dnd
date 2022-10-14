@@ -1,4 +1,4 @@
-import color from "./base_data/colors.js";
+import color from "./base_data/_colors.js";
 
 export default {
     

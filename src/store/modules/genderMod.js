@@ -1,4 +1,4 @@
-import gender from "@/assets/catalog/base_data/genders.js";
+import gender from "@/assets/catalog/base_data/list_genders.js";
 
 export default {
     namespaced: true,

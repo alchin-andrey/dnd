@@ -1,4 +1,4 @@
-import color from "@/assets/catalog/base_data/colors.js";
+import color from "@/assets/catalog/base_data/_colors.js";
 
 export default {
     // namespaced: true,

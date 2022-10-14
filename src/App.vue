@@ -529,11 +529,11 @@ import default_MY from "@/assets/catalog/default_MY.js";
 
 // import color from "@/assets/catalog/base_data/colors.js";
 // import genders from "@/assets/catalog/base_data/genders.js";
-import race from "@/assets/catalog/base_data/races.js";
-import clas from "@/assets/catalog/base_data/classes.js";
-import past from "@/assets/catalog/base_data/pasts.js";
-import languages from "@/assets/catalog/base_data/languages.js";
-import placeholder from "@/assets/catalog/base_data/placeholder.js";
+import race from "@/assets/catalog/base_data/step1_races.js";
+import clas from "@/assets/catalog/base_data/step2_classes.js";
+import past from "@/assets/catalog/base_data/step3_backstories.js";
+import languages from "@/assets/catalog/base_data/list_languages.js";
+import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
 import race_page from "@/assets/catalog/page_data/race_page.js";
 

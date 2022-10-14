@@ -1,4 +1,4 @@
-import race from "@/assets/catalog/base_data/races.js";
+import race from "@/assets/catalog/base_data/step1_races.js";
 
 export default {
 	namespaced: true,

@@ -1,4 +1,4 @@
-import weaponry from "./weaponry.js";
+import weaponry from "./kinds_weapons.js";
 
 export default {
 

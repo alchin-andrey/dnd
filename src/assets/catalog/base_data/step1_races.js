@@ -1,10 +1,10 @@
-import color from "./colors.js";
-import spells from "./spells.js";
-import gender from "./genders.js";
-import lang from "./languages.js";
-import weaponry from "./weaponry.js";
-import tool from "./tools.js";
-import armory from "./armory.js";
+import color from "./_colors.js";
+import spells from "./list_spells.js";
+import gender from "./list_genders.js";
+import lang from "./list_languages.js";
+import weaponry from "./kinds_weapons.js";
+import tool from "./kinds_tools.js";
+import armory from "./kinds_armor.js";
 
 export default {
   gnome: {

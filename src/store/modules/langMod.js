@@ -1,4 +1,4 @@
-import lang from "@/assets/catalog/base_data/languages.js";
+import lang from "@/assets/catalog/base_data/list_languages.js";
 
 export default {
     namespaced: true,
