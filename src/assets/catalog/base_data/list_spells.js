@@ -1,3 +1,4 @@
+
 export default {
   spell_name: [
     // Мана {0-9} - группировать. Номер єлемента равно стоимость маньі
@@ -785,7 +786,7 @@ export default {
     details: "spell_toy_details",
     expanded: "spell_toy_expanded",
 
-    type: "other",
+    type: "ability",
 
     cast_time: "ritual",
     cast_duration: 1,
@@ -826,7 +827,7 @@ export default {
     details: "spell_lighter_details",
     expanded: "spell_lighter_expanded",
 
-    type: "other",
+    type: "ability",
 
     cast_time: "ritual",
     cast_duration: 1,
@@ -867,7 +868,7 @@ export default {
     details: "spell_music_box_details",
     expanded: "spell_music_box_expanded",
 
-    type: "other",
+    type: "ability",
 
     cast_time: "ritual",
     cast_duration: 1,
@@ -1039,7 +1040,7 @@ export default {
       details: "spell_rage_details",
       expanded: "spell_rage_expanded", // полное описание
 
-      type: "other",
+      type: "ability",
       /*    
             abjuration: "ограждение",
             conjuration: "вызов",
@@ -1112,7 +1113,7 @@ export default {
       */
 
       impact_size_foo: "Plus_num", // Добавить функцию
-      impact_size_num: null, // barbarian_rage_bonus[level],
+      impact_size_num: null,//classes.barbarian_rage_bonus[MY.level], добавить параметр
       impact_size_dice: null,
       // рассчет урона
 
@@ -1135,7 +1136,7 @@ export default {
       details: "spell_reckless_attack_details",
       expanded: "spell_reckless_attack_expanded", // полное описание
 
-      type: "other",
+      type: "ability",
       /*    
             abjuration: "ограждение",
             conjuration: "вызов",

@@ -54,7 +54,7 @@ export default {
         damage_2_hand_dice: 8,
 
         cost: 20,
-        weight: 4,
+        weight: 2,
       },
 
       mace: 
@@ -84,7 +84,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 500,
-        weight: 4,
+        weight: 2,
       },
 
       club:
@@ -114,7 +114,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 10,
-        weight: 2,
+        weight: 1,
       },
 
       dagger:
@@ -144,7 +144,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 200,
-        weight: 1,
+        weight: 0.5,
       },
 
       spear:
@@ -174,7 +174,7 @@ export default {
         damage_2_hand_dice: 8,
 
         cost: 100,
-        weight: 3,
+        weight: 1.5,
       },
 
       light_hammer:
@@ -204,7 +204,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 200,
-        weight: 2,
+        weight: 1,
       },
       
       javelin:
@@ -234,7 +234,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 50,
-        weight: 2,
+        weight: 1,
       },
 
       greatclub:
@@ -264,7 +264,7 @@ export default {
         damage_2_hand_dice: 8,
 
         cost: 20,
-        weight: 10,
+        weight: 5,
       },
 
       handaxe: 
@@ -294,7 +294,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 50,
-        weight: 2,
+        weight: 1,
       },
 
       sickle: 
@@ -324,7 +324,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 100,
-        weight: 2,
+        weight: 1,
       },
 
 // Простое дальнобойное
@@ -356,7 +356,7 @@ export default {
         damage_2_hand_dice: 8,
 
         cost: 2500,
-        weight: 5,
+        weight: 2.5,
       },
 
       dart:
@@ -386,7 +386,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 5,
-        weight: 0.25,
+        weight: 0.125,
       },
 
       shortbow:
@@ -416,7 +416,7 @@ export default {
         damage_2_hand_dice: 6,
 
         cost: 2500,
-        weight: 2,
+        weight: 1,
       },
 
       sling:
@@ -446,7 +446,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 10,
-        weight: 0.1,
+        weight: 0.05,
       },
 
 // Воинское рукопашное
@@ -478,7 +478,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 200,
-        weight: 6,
+        weight: 3,
       },
 
       war_pick:
@@ -508,7 +508,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 500,
-        weight: 2,
+        weight: 1,
       },
 
       warhammer: 
@@ -538,7 +538,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 1500,
-        weight: 2,
+        weight: 1,
       },
 
       battleaxe: 
@@ -568,7 +568,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 1000,
-        weight: 4,
+        weight: 2,
       },
 
       glaive: 
@@ -598,7 +598,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 2000,
-        weight: 6,
+        weight: 3,
       },
 
       greatsword: 
@@ -628,7 +628,7 @@ export default {
         damage_2_hand_dice: 6,
 
         cost: 5000,
-        weight: 6,
+        weight: 3,
       },
 
       lance: 
@@ -658,7 +658,7 @@ export default {
         damage_2_hand_dice: 12,
 
         cost: 1000,
-        weight: 6,
+        weight: 3,
       },
 
       longsword: 
@@ -688,7 +688,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 1500,
-        weight: 3,
+        weight: 1.5,
       },
 
       whip: 
@@ -718,7 +718,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 2000,
-        weight: 3,
+        weight: 1.5,
       },
 
       shortsword: 
@@ -748,7 +748,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 1000,
-        weight: 2,
+        weight: 1,
       },
 
       maul: 
@@ -778,7 +778,7 @@ export default {
         damage_2_hand_dice: 6,
 
         cost: 1000,
-        weight: 10,
+        weight: 5,
       },
 
       morningstar: 
@@ -808,7 +808,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 1500,
-        weight: 4,
+        weight: 2,
       },
 
       pike: 
@@ -838,7 +838,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 500,
-        weight: 18,
+        weight: 9,
       },
 
       rapier: 
@@ -868,7 +868,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 2500,
-        weight: 2,
+        weight: 1,
       },
 
       greataxe: 
@@ -898,7 +898,7 @@ export default {
         damage_2_hand_dice: 12,
 
         cost: 3000,
-        weight: 7,
+        weight: 3.5,
       },
 
       scimitar: 
@@ -928,7 +928,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 2500,
-        weight: 3,
+        weight: 1.5,
       },
 
       trident: 
@@ -958,7 +958,7 @@ export default {
         damage_2_hand_dice: 8,
 
         cost: 500,
-        weight: 4,
+        weight: 2,
       },
 
       flail: 
@@ -988,7 +988,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 1000,
-        weight: 2,
+        weight: 1,
       },
 
 // Воинское дальнобойное
@@ -1020,7 +1020,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 7500,
-        weight: 3,
+        weight: 1.5,
       },
 
       heavy_crossbow:
@@ -1050,7 +1050,7 @@ export default {
         damage_2_hand_dice: 10,
 
         cost: 5000,
-        weight: 18,
+        weight: 9,
       },
 
       longbow:
@@ -1080,7 +1080,7 @@ export default {
         damage_2_hand_dice: 8,
 
         cost: 5000,
-        weight: 2,
+        weight: 1,
       },
 
       blowgun:
@@ -1110,7 +1110,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 1000,
-        weight: 1,
+        weight: 0.5,
       },
 
       net:
@@ -1140,7 +1140,7 @@ export default {
         damage_2_hand_dice: null,
 
         cost: 100,
-        weight: 3,
+        weight: 1.5,
       },
 
 

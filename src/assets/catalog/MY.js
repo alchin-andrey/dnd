@@ -8,7 +8,7 @@ export default {
     ethnos:null,
     class:null,
     subclass:null,
-    past:null,
+    backstory:null,
     level:null,
 
     //Character
@@ -150,10 +150,7 @@ export default {
     //Особенности - пассивньіе умения
     fines:null,
 
-    //Умения - активньіе умения без урона
-    abilities:null,
-
-    //Заклинания - активньіе умения с уроном
+    //Заклинания - активньіе умения
     spells:null,
 
     inventory:null,
@@ -165,7 +162,6 @@ export default {
     weapons:null,
 
     wallet:{
-        tripple_platina:0,
         platina:0,
         gold:0,
         silver:0,
