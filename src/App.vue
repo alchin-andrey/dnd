@@ -1321,7 +1321,7 @@ a {
 	/* height: 100%; */
 	display: flex;
 	background-color: #0e1518;
-	z-index: 100;
+	/*z-index: 10;*/
 	/* outline: 2px solid rgba(255, 255, 255, 0.1); */
 }
 
