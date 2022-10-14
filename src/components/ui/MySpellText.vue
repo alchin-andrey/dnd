@@ -1,13 +1,18 @@
 <template>
-	<div v-if="Show" class="flex">
+	<div v-if="Show" class="flex_spell">
 		<div class="side_stripe"></div>
 		<div class="int-400 flex_col">
 <!--			<div class="title" v-html="t_Html"></div>-->
 			<div>
-				<div class="title">{{ t_Title }}</div>
-				<div class="text">{{ t_Text }}</div>
+				<div class="title_spell">{{ t_Title }}</div>
+				<div class="text_spell">{{ t_Text }}</div>
 			</div>
-			<div v-if="Spell_Index.impact_type" class="jbm-300">{{ t_Impact }}</div>
+			<magic-attribute
+				v-if="Spell_Index.impact_type"
+				:title="t_Impact"
+				:numb="Spell_Index.impact_size_num"
+				:dice="Spell_Index.impact_size_dice"
+			/>
 		</div>
 	</div>
 </template>
@@ -15,6 +20,8 @@
 <script>
 export default {
 	name: "MySpellText",
+	components: {},
+
 	data() {
 		return {
 
@@ -60,7 +67,6 @@ export default {
 		},
 		t_Impact() {
 			if(this.Spell_Index.impact_type) {
-				console.log(this.Spell_Index.impact_type);
 				return `${this.t(this.Spell_Index.impact_type)} ${this.t(this.Spell_Index.impact_damage_type)}`;
 			}
 		},
@@ -74,16 +80,19 @@ export default {
 
 <style scoped>
 
-.flex {
+.flex_spell {
 	display: flex;
-	gap: 18px;
+	gap: 0 18px;
 	height: 100%;
+	width: 100%;
 }
 
 .flex_col {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 26px;
+	gap: 26px 0;
+	/*flex: 1 1 auto;*/
 }
 
 .side_stripe {
@@ -96,7 +105,7 @@ export default {
 	flex-grow: 0;
 }
 
-.title {
+.title_spell {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
@@ -111,27 +120,18 @@ export default {
 /*	margin-bottom: 0px;*/
 /*}*/
 
-.title:first-letter {
+.title_spell:first-letter {
 	text-transform: uppercase;
 }
 
 
-.text {
+.text_spell {
 	color: rgba(255, 255, 255, 0.4);
 	text-align: start;
 	white-space: pre-line;
 }
 
-.text:first-letter {
-	text-transform: uppercase;
-}
-
-.text span {
-	color: #ffc93d;
-	margin-top: 20px;
-}
-
-.text span:first-letter {
+.text_spell:first-letter {
 	text-transform: uppercase;
 }
 

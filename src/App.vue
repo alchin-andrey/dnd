@@ -880,7 +880,7 @@ export default {
 			let lvl = this.MY.level;
 			let race_lvl = ((race || {})[0] || {}).level <= lvl
 			let ethnos_lvl = ((ethnos || {})[0] || {}).level <= lvl
-			return !!(race || ethnos && race_lvl || ethnos_lvl);
+			return race || ethnos && race_lvl || ethnos_lvl;
 		},
 	},
 	watch: {
