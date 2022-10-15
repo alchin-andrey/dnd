@@ -39,7 +39,7 @@
 			:numb="numb_type"
 			plus
 		/>
-		<my-wrapper>
+		<my-wrapper v-if="Spell_Index.impact_type || Spell_Index.aim_range || Spell_Index.aim_aoe">
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
 				:title="Spell_Index.impact_type"
@@ -61,7 +61,7 @@
 				feet
 			/>
 		</my-wrapper>
-		<my-wrapper>
+		<my-wrapper v-if="Spell_Index.saving_need || Spell_Index.impact_type">
 			<magic-attribute
 				v-if="Spell_Index.saving_need"
 				title="saving_target"
