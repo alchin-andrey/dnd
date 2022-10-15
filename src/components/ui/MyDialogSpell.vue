@@ -1,8 +1,13 @@
 <template>
 	<div class="dialog" v-if="show" @click="hideDialog">
 		<!--		<transition name="modal" class="modal">-->
-		<div @click.stop class="dialog__content int-400">
-			<slot></slot>
+
+		<div @click.stop class="dialog__wrapp int-400">
+<!--			<div class="dialog__scroll">-->
+				<div class="dialog__content">
+					<slot></slot>
+				</div>
+<!--			</div>-->
 		</div>
 		<!--		</transition>-->
 	</div>
@@ -38,7 +43,7 @@ export default {
 	cursor: pointer;
 }
 
-.dialog__content {
+.dialog__wrapp {
 	position: absolute;
 	top: 4px;
 	right: 4px;
@@ -48,6 +53,24 @@ export default {
 	width: 418px;
 	z-index: 100;
 	cursor: auto;
+	overflow-y: scroll;
+	max-height: calc(100% - 8px);
+}
+
+.dialog__wrapp::-webkit-scrollbar {
+	width: 0;
+}
+
+/*.dialog__scroll {*/
+/*	overflow-y: scroll;*/
+/*	max-height: 100%;*/
+/*}*/
+
+/*.dialog__scroll::-webkit-scrollbar {*/
+/*	width: 0;*/
+/*}*/
+
+.dialog__content {
 	display: flex;
 	flex-direction: column;
 	gap: 26px;
