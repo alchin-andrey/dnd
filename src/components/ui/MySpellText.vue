@@ -6,8 +6,12 @@
 			<div>
 				<div class="flex_title">
 					<div class="title_spell h_18">{{ t_Title }}</div>
-					<img v-if="icon" @click="showDialog()" class="icon_spell" src="@/assets/img/icon/arrow_right_small.svg"
-						  alt="arrow">
+					<img v-if="icon"
+						@click="showDialog()"
+						class="icon_spell"
+						src="@/assets/img/icon/arrow_right_small.svg"
+						alt="arrow"
+					>
 				</div>
 				<div class="text_spell">{{ t_Text }}</div>
 			</div>
@@ -25,7 +29,18 @@
 			<div class="title_spell gray_2">{{ t_Type }} /</div>
 			<div class="title_spell">{{ t_Title }}</div>
 		</my-wrapper>
-		<div class="manna_numb jbm-300">0</div>
+		<div class="manna_flex jbm-300">
+			<div class="manna_bubble manna_bubble_choice"
+				v-for="n in Manna_Numbs" :key="n"
+				@click="choiceManna(n)"
+				:class="{
+					manna_bubble_passive: (n - 1) < Index,
+					manna_bubble_active: (n - 1) === manna_numb,
+					manna_bubble_hover: !((n - 1) < Index) && !((n - 1) === manna_numb)
+					}"
+			>{{ n - 1 }}
+			</div>
+		</div>
 		<div class="text_spell">{{ t_Text }}</div>
 		<my-wrapper gap_6>
 			<div class="col_spell">{{ t_Cast }}<span>:</span>{{ t_Cast_Value }}</div>
@@ -89,6 +104,7 @@ export default {
 		return {
 			dialogVisible: false,
 			numb_type: 0,
+			manna_numb: null,
 		}
 	},
 	props: {
@@ -111,6 +127,9 @@ export default {
 		},
 		Spell_Index() {
 			return this.spell[this.Index]
+		},
+		Manna_Numbs() {
+			return this.spell.length;
 		},
 		Show() {
 			return this.lvl <= this.$root.MY.level
@@ -206,6 +225,14 @@ export default {
 	methods: {
 		showDialog() {
 			this.dialogVisible = true;
+			this.manna_numb = this.Index;
+		},
+		choiceManna(numb) {
+			if((numb - 1) < this.Index){
+				return null;
+			} else {
+				this.manna_numb = numb - 1;
+			}
 		},
 		getSummNumb(name, item) {
 			let i = 0;
@@ -267,16 +294,41 @@ export default {
 	flex-grow: 0;
 }
 
-.manna_numb {
+.manna_flex {
+	display: flex;
+	gap: 4px;
+}
+
+.manna_bubble {
 	padding: 5px 12px;
 	width: 31px;
 	height: 28px;
-	background: #00E0FF;
 	border-radius: 100px;
-	color: #0E1518;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	cursor: pointer;
+}
+
+.manna_bubble_choice {
+	background: rgba(255, 255, 255, 0.06);
+	color: #FFFFFF;
+}
+
+.manna_bubble_hover:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.manna_bubble_active {
+	background: #00E0FF;
+	color: #0E1518;
+}
+
+.manna_bubble_passive {
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	color: rgba(255, 255, 255, 0.2);
+	cursor: auto;
 }
 
 .h_18 {
