@@ -59,8 +59,8 @@
 				v-if="Spell_Index.impact_type"
 				:title="Spell_Index.impact_type"
 				:addition="Spell_Index.impact_damage_type"
-				:numb="Spell_Index.impact_size_num"
-				:dice="Spell_Index.impact_size_dice"
+				:numb="Manna_Index.impact_size_num"
+				:dice="Manna_Index.impact_size_dice"
 			/>
 			<magic-attribute
 				v-if="Spell_Index.aim_range"
@@ -127,6 +127,9 @@ export default {
 		},
 		Spell_Index() {
 			return this.spell[this.Index]
+		},
+		Manna_Index() {
+			return this.spell[this.manna_numb]
 		},
 		Manna_Numbs() {
 			return this.spell.length;
