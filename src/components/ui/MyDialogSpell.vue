@@ -37,16 +37,20 @@ export default {
 	bottom: 0;
 	right: 0;
 	left: 0;
+	padding: 4px;
 	background: rgba(0, 0, 0, 0.8);
-	position: absolute;
+	position: fixed;
 	z-index: 100;
 	cursor: pointer;
+	display: inline-block;
+	text-align: end;
 }
 
 .dialog__wrapp {
-	position: absolute;
-	top: 4px;
-	right: 4px;
+	/*position: absolute;*/
+	/*top: 0px;*/
+	/*right: 0px;*/
+	margin: 0 0 0 auto;
 	padding: 28px;
 	background: #1C2326;
 	border-radius: 12px;
@@ -54,7 +58,7 @@ export default {
 	z-index: 100;
 	cursor: auto;
 	overflow-y: scroll;
-	max-height: calc(100% - 8px);
+	max-height: 100%;
 }
 
 .dialog__wrapp::-webkit-scrollbar {
