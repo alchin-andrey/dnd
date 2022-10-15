@@ -1,12 +1,12 @@
 <template>
 	<div class="column jbm-300">
-		<div class="column_value" :class="{ passive: numb == 0 }">
-			<div class="item">{{ title }}</div>
+		<div class="column_value" :class="{ passive: numb === 0 }">
+			<div class="item">{{ t_Title }} {{ t_Addition }}</div>
 			<div v-if="dice" class="numb small">
 				{{ numb }}d{{ dice }}
 			</div>
-			<div v-else class="numb" :class="{ passive: numb == 0 }">
-				{{ prefix }} {{ numb }} {{ suffix }}
+			<div v-else class="numb" :class="{ passive: numb === 0 }">
+				{{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
 			</div>
 		</div>
 		<div class="visual">
@@ -29,11 +29,11 @@ export default {
 		};
 	},
 	props: {
-		modelValue: {
-			type: Number,
+		title: {
+			type: String,
 			default: null,
 		},
-		title: {
+		addition: {
 			type: String,
 			default: null,
 		},
@@ -45,10 +45,10 @@ export default {
 			type: Number,
 			default: null,
 		},
-		type: {
-			type: String,
-			default: null,
-		},
+		// type: {
+		// 	type: String,
+		// 	default: null,
+		// },
 		icon: {
 			type: String,
 			default: null,
@@ -57,30 +57,46 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		prefix: {
+			type: String,
+			default: null,
+		},
 		feet: {
 			type: Boolean,
 			default: false,
 		},
-		cube_zero: {
-			type: Boolean,
-			default: false,
-		},
+		// cube_zero: {
+		// 	type: Boolean,
+		// 	default: false,
+		// },
 	},
 
 	computed: {
 		t_Title() {
-			return this.t(this.title);
+			if (this.numb === 0) {
+				return `/ ${this.t(this.title)}`;
+			} else {
+				return this.t(this.title);
+			}
 		},
 
-		t_Type() {
-			return this.t(this.type);
+		t_Addition() {
+			return this.t(this.addition);
 		},
 
-		prefix() {
+		// t_Type() {
+		// 	return this.t(this.type);
+		// },
+
+		Prefix() {
+			return this.prefix ? this.t(this.prefix) : "";
+		},
+
+		Plus() {
 			return this.plus ? "+" : "";
 		},
 
-		suffix() {
+		Suffix() {
 			return this.feet ? this.t("feet") : "";
 		},
 
@@ -100,30 +116,29 @@ export default {
 	},
 
 	methods: {
+		// getImage(name) {
+		// 	if (name === null) {
+		// 		return null;
+		// 	} else if (this.numb > 0) {
+		// 		return require(`@/assets/img/icon/atribute/${name}_active.svg`);
+		// 	} else {
+		// 		return require(`@/assets/img/icon/atribute/${name}_passive.svg`);
+		// 	}
+		// },
 
-		getImage(name) {
-			if (name === null) {
-				return null;
-			} else if (this.numb > 0) {
-				return require(`@/assets/img/icon/atribute/${name}_active.svg`);
-			} else {
-				return require(`@/assets/img/icon/atribute/${name}_passive.svg`);
-			}
-		},
+		// getCube(numb) {
+		// 	if (this.feet) {
+		// 		return Math.ceil(numb / 5);
+		// 	} else {
+		// 		return numb;
+		// 	}
+		// },
 
-		getCube(numb) {
-			if (this.feet) {
-				return Math.ceil(numb / 5);
-			} else {
-				return numb;
-			}
-		},
-
-		getCubeZero(numb) {
-			if (this.cube_zero) {
-				return numb < 6 ? 6 - numb : 0;
-			}
-		},
+		// getCubeZero(numb) {
+		// 	if (this.cube_zero) {
+		// 		return numb < 6 ? 6 - numb : 0;
+		// 	}
+		// },
 	},
 };
 </script>
@@ -147,21 +162,6 @@ export default {
 .small {
 	text-transform: lowercase;
 }
-
-/*.icon {*/
-/*  display: flex;*/
-/*  width: 18px;*/
-/*  height: 18px;*/
-/*}*/
-
-/*.item {*/
-/*  margin-left: 4px;*/
-/*}*/
-
-/*.item span {*/
-/*  margin-left: 8px;*/
-/*  color: rgba(255, 255, 255, 0.2);*/
-/*}*/
 
 .active {
 	color: #ffffff;

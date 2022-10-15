@@ -1063,7 +1063,8 @@ export default {
 		},
 
 		showMY() {
-			// console.log(this.MY, this.race_page);
+			console.log(this.MY);
+			// console.log(this.race_page);
 			// console.log('store', this.$store.state.color);
 			// console.log('root', this.$root.color);
 			// console.log(this.$store.state.races.proficiencies.languages);

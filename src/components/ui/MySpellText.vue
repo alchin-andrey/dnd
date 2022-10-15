@@ -2,17 +2,19 @@
 	<div v-if="Show" class="flex_spell">
 		<div class="side_stripe"></div>
 		<div class="int-400 flex_col">
-<!--			<div class="title" v-html="t_Html"></div>-->
+			<!--			<div class="title" v-html="t_Html"></div>-->
 			<div>
 				<div class="flex_title">
 					<div class="title_spell h_18">{{ t_Title }}</div>
-					<img v-if="icon" @click="showDialog()" class="icon_spell" src="@/assets/img/icon/arrow_right_small.svg" alt="arrow">
+					<img v-if="icon" @click="showDialog()" class="icon_spell" src="@/assets/img/icon/arrow_right_small.svg"
+						  alt="arrow">
 				</div>
 				<div class="text_spell">{{ t_Text }}</div>
 			</div>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
-				:title="t_Impact"
+				:title="Spell_Index.impact_type"
+				:addition="Spell_Index.impact_damage_type"
 				:numb="Spell_Index.impact_size_num"
 				:dice="Spell_Index.impact_size_dice"
 			/>
@@ -20,9 +22,10 @@
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
 		<my-wrapper>
-		<div class="title_spell gray_2">{{ t_Type }} /</div>
-		<div class="title_spell">{{ t_Title }}</div>
+			<div class="title_spell gray_2">{{ t_Type }} /</div>
+			<div class="title_spell">{{ t_Title }}</div>
 		</my-wrapper>
+		<div class="manna_numb jbm-300">0</div>
 		<div class="text_spell">{{ t_Text }}</div>
 		<my-wrapper gap_6>
 			<div class="col_spell">{{ t_Cast }}<span>:</span>{{ t_Cast_Value }}</div>
@@ -31,11 +34,47 @@
 			<div class="col_spell">{{ t_Time }}<span>:</span>{{ t_Time_Value }}</div>
 		</my-wrapper>
 		<magic-attribute
-			v-if="Spell_Index.impact_type"
-			:title="t_Impact"
-			:numb="Spell_Index.impact_size_num"
-			:dice="Spell_Index.impact_size_dice"
+			v-if="Spell_Index.aim_need"
+			title="aim_bonus"
+			:numb="numb_type"
+			plus
 		/>
+		<my-wrapper>
+			<magic-attribute
+				v-if="Spell_Index.impact_type"
+				:title="Spell_Index.impact_type"
+				:addition="Spell_Index.impact_damage_type"
+				:numb="Spell_Index.impact_size_num"
+				:dice="Spell_Index.impact_size_dice"
+			/>
+			<magic-attribute
+				v-if="Spell_Index.aim_range"
+				title="aim_range"
+				:numb="Spell_Index.aim_range"
+				feet
+			/>
+			<magic-attribute
+				v-if="Spell_Index.aim_aoe"
+				title="aim_aoe"
+				:prefix="Spell_Index.aim_aoe"
+				:numb="Spell_Index.aim_aoe_size"
+				feet
+			/>
+		</my-wrapper>
+		<my-wrapper>
+			<magic-attribute
+				v-if="Spell_Index.saving_need"
+				title="saving_target"
+				:prefix="Spell_Index.saving_attribute"
+				:numb="Saving_Numb"
+			/>
+			<magic-attribute
+				v-if="Spell_Index.impact_type"
+				:title="Spell_Index.impact_type"
+				:addition="Spell_Index.impact_damage_type"
+				:numb="numb_type"
+			/>
+		</my-wrapper>
 		<div class="hr"></div>
 		<div class="text_spell gray_4">{{ t_Expanded }}</div>
 	</my-dialog-spell>
@@ -49,6 +88,7 @@ export default {
 	data() {
 		return {
 			dialogVisible: false,
+			numb_type: 0,
 		}
 	},
 	props: {
@@ -85,11 +125,6 @@ export default {
 		t_Text() {
 			return this.t(this.Spell_Index.details);
 		},
-		t_Impact() {
-			if(this.Spell_Index.impact_type) {
-				return `${this.t(this.Spell_Index.impact_type)} ${this.t(this.Spell_Index.impact_damage_type)}`;
-			}
-		},
 		t_Cast() {
 			let string = this.t('cast_time');
 			return string.charAt(0).toUpperCase() + string.slice(1);
@@ -106,7 +141,7 @@ export default {
 			let value_1 = this.t(this.Spell_Index.aim_target);
 			let value_2 = this.t(this.Spell_Index.aim_type);
 			let string = null;
-			if(value_2) {
+			if (value_2) {
 				string = value_1 + ' ' + value_2;
 			} else {
 				string = value_1;
@@ -134,27 +169,61 @@ export default {
 			let value_2 = this.Spell_Index.spell_duration;
 			let value_3 = this.t(this.Spell_Index.spell_duration_units);
 			let string = null;
-			if(!value_1) {
+			if (!value_1) {
 				string = value_2 + ' ' + value_3;
-			} else if(value_2) {
+			} else if (value_2) {
 				string = value_1 + ' ' + value_2 + ' ' + value_3;
 			} else {
 				string = value_1;
 			}
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
-
+		Saving_Numb() {
+			let attribute = this.Spell_Index.saving_attribute
+			let attribute_numb = this.getSummNumb('stats', attribute)
+			return 8 + attribute_numb;
+		},
 		t_Expanded() {
 			return this.t(this.Spell_Index.expanded);
 		},
 		// t_Html() {
 		// 	return this.t(this.title_html);
 		// },
+		stats_Activ_Obj() {
+			let i = this.$root.MY.race.stats;
+			let j = this.$root.MY.ethnos.stats;
+			let arr = Object.assign({}, i, j);
+			return arr;
+		},
+		stats_Select() {
+			return this.$root.race_page.extra.stats;
+		},
+		Race_Set_Obj() {
+			return this.$root.MY.race.settings;
+		},
 
 	},
 	methods: {
 		showDialog() {
 			this.dialogVisible = true;
+		},
+		getSummNumb(name, item) {
+			let i = 0;
+			let activ_val = this[`${name}_Activ_Obj`][item];
+			if (activ_val) {
+				i = activ_val;
+			} else if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
+				let extr_bool = this[`${name}_Select`].includes(item);
+				let increment = this.Race_Set_Obj[`custom_${name}`][1];
+				if (extr_bool) {
+					i = increment;
+				} else {
+					i = 0;
+				}
+			} else {
+				i = 0;
+			}
+			return i;
 		},
 	},
 };
@@ -196,6 +265,18 @@ export default {
 	order: 0;
 	align-self: stretch;
 	flex-grow: 0;
+}
+
+.manna_numb {
+	padding: 5px 12px;
+	width: 31px;
+	height: 28px;
+	background: #00E0FF;
+	border-radius: 100px;
+	color: #0E1518;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .h_18 {
