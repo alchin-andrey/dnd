@@ -89,11 +89,8 @@ export default {
       // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
       saving_attribute: null,
       // Характеристика ( null - бай дефолт из класса | характеристика)
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
-      // рассчет урона если спас пройден
+      impact_size_saved: null,
+      // урон если спас пройден — "0", "÷2"
     },
     {
       //1
@@ -138,10 +135,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -181,10 +175,7 @@ export default {
 
       saving_need: false,
       saving_attribute: null,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
     },
   ],
 
@@ -227,90 +218,55 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 10,
+      impact_size_saved: "÷2",
     },
     {
       //2
       impact_size_foo: null,
       impact_size_num: 3,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 10,
     },
     {
       //3
       impact_size_foo: null,
       impact_size_num: 4,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 2,
-      impact_size_saved_dice: 10,
     },
     {
       //4
       impact_size_foo: null,
       impact_size_num: 5,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 2,
-      impact_size_saved_dice: 10,
     },
     {
       //5
       impact_size_foo: null,
       impact_size_num: 6,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 3,
-      impact_size_saved_dice: 10,
     },
     {
       //6
       impact_size_foo: null,
       impact_size_num: 7,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 3,
-      impact_size_saved_dice: 10,
     },
     {
       //7
       impact_size_foo: null,
       impact_size_num: 8,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 4,
-      impact_size_saved_dice: 10,
     },
     {
       //8
       impact_size_foo: null,
       impact_size_num: 9,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 4,
-      impact_size_saved_dice: 10,
     },
     {
       //9
       impact_size_foo: null,
       impact_size_num: 10,
       impact_size_dice: 10,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 5,
-      impact_size_saved_dice: 10,
     },
   ],
 
@@ -351,9 +307,7 @@ export default {
       saving_need: true,
       saving_attribute: "charisma",
 
-      impact_size_saved_foo: null,
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 10,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -392,10 +346,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -434,10 +385,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -476,10 +424,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "constitution",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -518,10 +463,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -560,10 +502,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -602,10 +541,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "constitution",
-
-      impact_size_saved_foo: "Plus_Level_5",
-      impact_size_saved_num: 1,
-      impact_size_saved_dice: 6,
+      impact_size_saved: "÷2",
     },
   ],
 
@@ -644,10 +580,7 @@ export default {
 
       saving_need: false,
       saving_attribute: null,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
     },
   ],
 
@@ -685,12 +618,9 @@ export default {
       impact_size_num: 1,
       impact_size_dice: 4,
 
-      saving_need: true,
-      saving_attribute: "intelligence",
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
     },
   ],
 
@@ -770,13 +700,9 @@ export default {
       saving_need: false,
       // нужен ли cпасбросок
       // если true - строка Испьітание цели - Сложность входной = 8 + Характеристика + мастерство + особьіе мод?
-
       saving_attribute: null,
       // Характеристика ( null - бай дефолт из класса | характеристика)
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
       // рассчет урона если спас пройден
     },
   ],
@@ -816,10 +742,7 @@ export default {
 
     saving_need: false,
     saving_attribute: null,
-
-    impact_size_saved_foo: null,
-    impact_size_saved_num: null,
-    impact_size_saved_dice: null,
+    impact_size_saved: null,
   },],
 
   lighter: [{
@@ -857,10 +780,7 @@ export default {
 
     saving_need: false,
     saving_attribute: null,
-
-    impact_size_saved_foo: null,
-    impact_size_saved_num: null,
-    impact_size_saved_dice: null,
+    impact_size_saved: null,
   },],
 
   music_box: [{
@@ -898,10 +818,7 @@ export default {
 
     saving_need: false,
     saving_attribute: null,
-
-    impact_size_saved_foo: null,
-    impact_size_saved_num: null,
-    impact_size_saved_dice: null,
+    impact_size_saved: null,
   },],
 
   small_illusion: [
@@ -940,11 +857,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "intelligence",
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
-      // рассчет урона если спас пройден
+      impact_size_saved: null,
     },
   ],
 
@@ -984,10 +897,7 @@ export default {
 
       saving_need: false,
       saving_attribute: null,
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
     },
   ],
 
@@ -1026,10 +936,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "dexterity",
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
       // рассчет урона если спас пройден
     },
   ],
@@ -1039,6 +946,9 @@ export default {
       name: "spell_rage",
       details: "spell_rage_details",
       expanded: "spell_rage_expanded", // полное описание
+
+      //level: 15,
+      //expanded: "spell_rage_expanded_15",
 
       type: "ability",
       /*
@@ -1112,7 +1022,7 @@ export default {
         psychic_w: "🧠 Психический",
       */
 
-      impact_size_foo: "Plus_num", // Добавить функцию
+      impact_size_foo: "num", // Добавить функцию
       impact_size_num: null,//classes.barbarian_rage_bonus[MY.level], добавить параметр
       impact_size_dice: null,
       // рассчет урона
@@ -1122,10 +1032,7 @@ export default {
       // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
       saving_attribute: null,
       // Характеристика ( null - бай дефолт из класса | характеристика)
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
       // рассчет урона если спас пройден
     },
   ],
@@ -1218,11 +1125,125 @@ export default {
       // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
       saving_attribute: null,
       // Характеристика ( null - бай дефолт из класса | характеристика)
-
-      impact_size_saved_foo: null,
-      impact_size_saved_num: null,
-      impact_size_saved_dice: null,
+      impact_size_saved: null,
       // рассчет урона если спас пройден
     },
+  ],
+
+  frenzy: [
+    {
+      name: "spell_frenzy",
+      details: "spell_frenzy_details",
+      expanded: "spell_frenzy_expanded", 
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["none"],
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+      
+    }
+  ],
+
+  intimidating_presence: [
+    {
+      name: "intimidating_presence",
+      details: "intimidating_presence_details",
+      expanded: "intimidating_presence_expanded", 
+
+      type: "ability",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creatue",
+      aim_type: "in_distance",
+      parts: ["none"],
+      spell_time: "till_dissipate",
+      spell_duration: 2,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: true,
+      saving_attribute: "wisdom", 
+      //Если оно может видеть или слышать вас, оно должно совершить успешный спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмы)
+      impact_size_saved: null,
+    }
+  ],
+
+  retaliation: [
+    {
+      name: "retaliation",
+      details: "retaliation_details",
+      expanded: "retaliation_expanded", 
+
+      type: "ability",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creatue",
+      aim_type: "near",
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 5,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      //Если оно может видеть или слышать вас, оно должно совершить успешный спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмы)
+      impact_size_saved: null,
+    }
+  ],
+
+  beast_sense_ritual: [
+    {
+      
+    }
   ]
 };

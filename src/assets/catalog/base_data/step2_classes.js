@@ -6,6 +6,7 @@ import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
 import MY from "@/assets/catalog/MY.js"
 import packs from "./list_packs.js";
+import { values } from "core-js/core/array";
 
 const barbarian_rage =       [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99];
 const barbarian_rage_bonus = [0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4];
@@ -24,7 +25,7 @@ export default {
 
     proficiencies: {
       armor: [armory.light, armory.medium, armory.shields],
-      weapons: [weaponry.simple, weaponry.military],
+      weapons: [weaponry.simple, weaponry.military], // all ?
     },
 
     fines: [
@@ -33,8 +34,11 @@ export default {
         type: "resistance",
         keyword: "no_armor_protection",
         details: "armor_constitution",
-        armor_bonus: "MY.stats.constitution.mod",
+        
         // when without heavy armor
+        condition: "if_no_heavy_armor",
+        key: "armor_bonus",
+        value: "MY.stats.constitution.mod",
       },
       {
         level: 2,
@@ -44,8 +48,11 @@ export default {
       },
       {
         level: 5,
-        speed_bonus: 10,
+
         // when without heavy armor
+        condition: "if_no_heavy_armor",
+        key: "speed_bonus",
+        value: "10",
       },
       {
         level: 7,
@@ -83,7 +90,7 @@ export default {
         level: 15,
         type: "plus",
         keyword: "rage_sustainability",
-        details: "only if uncontious",
+        details: "only_if_uncontious",
         // убрать из заклинания Ярость?
       },
       {
@@ -227,255 +234,221 @@ export default {
         },
       ],
 
-      subclasses: [
-        {
-          level: 3,
-          subclasses: {
-            berserker: {
-              name: "berserker",
-              details: "berserker_details",
-            },
+      subclasses: {
+        berserker: {
+          name: "berserker",
+          details: "berserker_details",
 
-            totem_warrior: {
-              name: "",
-              details: "",
+          spells:[
+            {
+              level: 3,
+              spell: spells.frenzy,
             },
-          },
+            {
+              level: 10,
+              spell: spells.intimidating_presence,
+            },
+            {
+              level: 14,
+              spell: spells.retaliation,
+            }
+          ],
+
+          fines: [
+            {
+              level: 6,
+              type: "resistance",
+              keyword: "immunity",
+              details: "charmed_or_frightened_while_raging",
+            },
+          ]
+
         },
-      ],
+
+        totem_warrior: {
+          name: "totem_warrior",
+          details: "totem_warrior_details",
+
+          spells: [
+            {
+              level: 3,
+              spell: spells.beast_sense_ritual,
+            },
+            {
+              level: 3,
+              spell: spells.speak_with_animals_ritual,
+            },
+            {
+              level: 10,
+              spell: spells.commune_with_nature_ritual,
+            }
+          ],
+
+          settings: {
+            custom: [
+              {
+                level: 3,
+                name: "totem_spirit",
+                delails: "totem_spirit_details",
+                list: [
+                  {
+                    name: "wolf",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "advantage",
+                        details: "near_friends_attack",
+                      },
+                    ]
+                  },
+                  {
+                    name: "bear",
+                    fines: [
+                      {
+                        type: "resistance",
+                        keyword: "resistance",
+                        details: "any_damage_but_psy",
+                      }
+                    ]
+                  },
+                  {
+                    name: "eagle",
+                    fines: [
+                      {
+                        type: "resistance",
+                        keyword: "advantage",
+                        details: "on_dodging_in_rage",
+
+                        condition: "if_no_heavy_armor",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "rush",
+                        details: "as_bonus_action",
+                      }
+                    ]
+                  },
+                  {
+                    name: "elk",
+                    fines: [
+                      {
+                        // when without heavy armor
+                        condition: "if_no_heavy_armor",
+                        key: "speed_bonus",
+                        value: "15",
+                      }
+                    ]
+                  },
+                  {
+                    name: "tiger",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "long_jumps",
+                        details: "in_rage",
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                level: 6,
+                name: "totem_aspect",
+                delails: "totem_aspect_details",
+                list: [
+                  {
+                    name: "wolf",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "fast_tempo",
+                        details: "while_following_prints",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "normal_tempo",
+                        details: "in_stealth",
+                      }
+                    ]
+                  },
+                  {
+                    name: "bear",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "double_fem",
+                        details: "weight_capacity",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "advantage",
+                        details: "str_check_on_move",
+                      }
+                    ]
+                  },
+                  {
+                    name: "eagle",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "to_see",
+                        details: "1_mile_100f_details",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "no_disadvantage",
+                        details: "on_perception_in_lowlight",
+                      }
+                    ]
+                  },
+                  {
+                    name: "elk",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "double_fem",
+                        details: "speed_of_travel",
+                        key: "speed_bonus_x",
+                        value: 2,
+                      }
+                    ]
+                  },
+                  {
+                    name: "tiger",
+                    settings: {
+                      skills: [
+                        {
+                          skills: [
+                            1,
+                            "mastery",
+                
+                            "athletics",
+                            "acrobatics",
+                            "stealth",
+                            "survival"
+                          ],
+                        },
+                      ],
+                    }
+                  }
+                ]
+              },
+              {
+                level: 14,
+                name: "totem_harmony",
+                delails: "totem_harmony_details",
+                list: [
+                  {
+                    name: "wolf",
+                    
+                  }
+                ]
+              }
+            ]
+          }
+        },
+      },
     },
   },
 
-  //---------------------------------------------------------------------------------------------------------
-
-  // barbarian_v1: {
-  //   name: "barbarian",
-  //   details: "barbarian_details",
-
-  //   HP_dice: 12,
-
-  //   proficiencies: {
-  //     armor: [armory.light, armory.medium, armory.shields],
-  //     weapons: [weaponry.simple, weaponry.military],
-  //   },
-
-  //   saving: ["strength", "constitution"],
-  //   spell_attribute: "strength", // уточнить
-
-  //   levels: [
-  //     {
-  //       //1
-  //       settings: {
-  //         custom_skills: [
-  //           [
-  //             2,
-  //             //mastery_bonus[1], // добавить логику привязки к уровню
-
-  //             "athletics",
-  //             "insight",
-  //             "survival",
-  //             "intimidation",
-  //             "nature",
-  //             "animal_hanging",
-  //           ],
-  //         ],
-
-  //         equipment: [
-  //           [
-  //             [weapons.greataxe, 1],
-  //             [weapons.halberd, 1],
-  //             [weapons.war_pick, 1],
-  //             [weapons.warhammer, 1],
-  //             [weapons.battleaxe, 1],
-  //             [weapons.glaive, 1],
-  //             [weapons.greatsword, 1],
-  //             [weapons.lance, 1],
-  //             [weapons.longsword, 1],
-  //             [weapons.whip, 1],
-  //             [weapons.shortsword, 1],
-  //             [weapons.maul, 1],
-  //             [weapons.morningstar, 1],
-  //             [weapons.pike, 1],
-  //             [weapons.rapier, 1],
-  //             [weapons.scimitar, 1],
-  //             [weapons.trident, 1],
-  //             [weapons.flail, 1],
-  //           ],
-
-  //           [
-  //             [weapons.handaxe, 2],
-  //             [weapons.quarterstaff, 1],
-  //             [weapons.mace, 1],
-  //             [weapons.club, 1],
-  //             [weapons.dagger, 1],
-  //             [weapons.spear, 1],
-  //             [weapons.light_hammer, 1],
-  //             [weapons.javelin, 1],
-  //             [weapons.greatclub, 1],
-  //             [weapons.sickle, 1],
-  //           ],
-  //         ],
-  //       },
-
-  //       equipment: [
-  //         [weapons.javelin, 4],
-  //         //[pack.explorer,1], // Добавить состав пака
-  //       ],
-
-  //       fines: [
-  //         {
-  //           type: "resistance",
-  //           keyword: "no_armor_protection",
-  //           details: "armor_constitution",
-  //         },
-  //       ],
-  //       spells: [
-  //         [spells.rage /*barbarian_rage[level]*/], // Добавить barbarian_rage[level]
-  //       ],
-  //     },
-
-  //     {
-  //       //2
-  //       fines: [
-  //         {
-  //           type: "plus",
-  //           keyword: "advantage",
-  //           details: "saving_dex_visible",
-  //         },
-  //       ],
-  //       spells: [[spells.reckless_attack]],
-  //     },
-
-  //     {
-  //       //3
-  //       settings: {
-  //         subclasses: [
-  //           {
-  //             berserker: {
-  //               name: "",
-  //               details: "",
-  //               levels: [
-  //                 {
-  //                   //1
-  //                 },
-  //                 {
-  //                   //2
-  //                 },
-  //                 {
-  //                   //3
-  //                   spells: [
-  //                     //[spell.frenzy]
-  //                   ],
-  //                 },
-  //                 {
-  //                   //4
-  //                 },
-  //                 {
-  //                   //5
-  //                 },
-  //                 {
-  //                   //6
-  //                   fines: [
-  //                     {
-  //                       type: "resistance",
-  //                       keyword: "immunity",
-  //                       details: "charmed_or_frightened_while_raging",
-  //                     },
-  //                   ],
-  //                 },
-  //                 {
-  //                   //7
-  //                 },
-  //                 {
-  //                   //8
-  //                 },
-  //                 {
-  //                   //9
-  //                 },
-  //                 {
-  //                   //10
-  //                   spells: [
-  //                     //[spell.пугающее присутствие]
-  //                   ],
-  //                 },
-  //                 {
-  //                   //11
-  //                 },
-  //                 {
-  //                   //12
-  //                 },
-  //                 {
-  //                   //13
-  //                 },
-  //                 {
-  //                   //14
-  //                   spells: [
-  //                     //[spell.ответньій удар]
-  //                   ],
-  //                 },
-  //               ],
-  //             },
-
-  //             totem_warrior: {
-  //               name: "",
-  //               details: "",
-  //               levels: [
-  //                 {
-  //                   //1
-  //                 },
-  //                 {
-  //                   //2
-  //                 },
-  //                 {
-  //                   //3
-  //                 },
-  //                 {
-  //                   //4
-  //                 },
-  //                 {
-  //                   //5
-  //                 },
-  //                 {
-  //                   //6
-  //                 },
-  //                 {
-  //                   //7
-  //                 },
-  //                 {
-  //                   //8
-  //                 },
-  //                 {
-  //                   //9
-  //                 },
-  //                 {
-  //                   //10
-  //                 },
-  //                 {
-  //                   //11
-  //                 },
-  //                 {
-  //                   //12
-  //                 },
-  //                 {
-  //                   //13
-  //                 },
-  //                 {
-  //                   //14
-  //                 },
-  //               ],
-  //             },
-  //           },
-  //         ],
-  //       },
-  //     },
-  //   ],
-
-  //   barbarian_rage_bonus: [
-  //     2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
-  //   ],
-  //   barbarian_rage: [
-  //     2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99,
-  //   ],
-  //   mastery_bonus: [2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
-  // },
-};
+}

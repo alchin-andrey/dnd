@@ -713,6 +713,8 @@ export default {
                 rage_persistence_details: "— когда во время Ярости HP опускается до 0, оно становится = 1 при успешном Испытании Силы со сложностью 10 (+5 за каждый следующий раз до долгого отдыха)",
                 saving_strength: "испытание Силы",
                 min_base_strengt: "минимум равно базовой Силе",
+                rage_sustainability: "Ярость не прекращается досрочно",
+                only_if_uncontious: "кроме потери сознания",
 
 
 
@@ -1160,6 +1162,18 @@ export default {
             spell_reckless_attack_details: spells.reckless_attack_details,
             spell_reckless_attack_expanded: spells.reckless_attack_expanded,
 
+            spell_frenzy: spells.frenzy,
+            spell_frenzy_details: spells.frenzy_details,
+            spell_frenzy_expanded: spells.frenzy_expanded,
+
+            spell_intimidating_presence: spells.intimidating_presence,
+            spell_intimidating_presence_details: spells.intimidating_presence_details,
+            spell_intimidating_presence_expanded: spells.intimidating_presence_expanded,
+
+            spell_retaliation: spells.retaliation,
+            spell_retaliation_details: spells.retaliation_details,
+            spell_retaliation_expanded: spells.retaliation_expanded,
+
             //14 Oct
 
             explorers_pack: "набор путещественника",
@@ -1191,5 +1205,11 @@ export default {
 
             barbarian: classes.barbarian,
             barbarian_details: classes.barbarian_details,
+
+            totem_warrior: classes.totem_warrior,
+            totem_warrior_details: classes.totem_warrior_details,
+
+
+
 
 }
