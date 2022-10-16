@@ -613,7 +613,7 @@ export default {
     {
       name: "spell_darkness",
       details: "spell_darkness_tiefling_details",
-      expanded: "spell_darkness_tiefling_details_expanded",
+      expanded: "spell_darkness_tiefling_expanded",
 
       type: "evocation",
 
