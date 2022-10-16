@@ -56,6 +56,12 @@ export default {
           ],
 
           spells: [
+            // ДЛЯ ОТЛАДКИ
+            {
+              level: 1,
+              spell: spells.hellish_rebuke,
+            },
+            // ДЛЯ ОТЛАДКИ
             {
               level: 1,
               spell: spells.toy,
@@ -253,7 +259,7 @@ export default {
             },
           ],
         },
-         
+
         stout: {
           name: "stout",
           details: "stout_halfling_details",
@@ -1358,7 +1364,7 @@ export default {
               weaponry.hand_arbalets,
             ],
           },
-          
+
           fines: [
             {
               type: "disadvantage",
@@ -1377,12 +1383,12 @@ export default {
               level: 1,
               spell: spells.dancing_lights,
             },
-      
+
             {
               level: 3,
               spell: spells.faerie_fire,
             },
-      
+
             {
               level: 5,
               spell: spells.darkness_tiefling,
@@ -1825,7 +1831,7 @@ export default {
       },
     ],
   },
- 
+
   halforc:{
     name:"halforc",
     details:"halforc_details",
@@ -1897,10 +1903,10 @@ export default {
       },
     },
 
-    stats: { 
+    stats: {
       strength: 2,
-      constitution: 1, 
-    },    
+      constitution: 1,
+    },
 
     skills: {
       intimidation: "mastery",
@@ -1937,7 +1943,7 @@ export default {
       ethnos: {
 
         brass_dragonborn: {
-          
+
           name:"brass_dragonborn",
           details:"brass_dragonborn_details",
 
@@ -1968,7 +1974,7 @@ export default {
         },
 
         golden_dragonborn: {
-          
+
           name:"golden_dragonborn",
           details:"golden_dragonborn_details",
 
@@ -1999,7 +2005,7 @@ export default {
         },
 
         red_dragonborn: {
-          
+
           name:"red_dragonborn",
           details:"red_dragonborn_details",
 
@@ -2030,10 +2036,10 @@ export default {
         },
 
         silver_dragonborn: {
-          
+
           name:"silver_dragonborn",
           details:"silver_dragonborn_details",
-  
+
           color: {
             skin: [
               color[8][0],
@@ -2059,12 +2065,12 @@ export default {
             },
           ],
         },
-  
+
         white_dragonborn: {
-            
+
           name:"white_dragonborn",
           details:"white_dragonborn_details",
-  
+
           color: {
             skin: [
               color[0][0],
@@ -2090,12 +2096,12 @@ export default {
             },
           ],
         },
-  
+
         blue_dragonborn: {
-            
+
           name:"blue_dragonborn",
           details:"blue_dragonborn_details",
-  
+
           color: {
             skin: [
               color[9][3],
@@ -2121,12 +2127,12 @@ export default {
             },
           ],
         },
-  
+
         bronze_dragonborn: {
-            
+
           name:"bronze_dragonborn",
           details:"bronze_dragonborn_details",
-  
+
           color: {
             skin: [
               color[2][5],
@@ -2152,12 +2158,12 @@ export default {
             },
           ],
         },
-  
+
         copper_dragonborn: {
-            
+
           name:"copper_dragonborn",
           details:"copper_dragonborn_details",
-  
+
           color: {
             skin: [
               color[2][3],
@@ -2183,12 +2189,12 @@ export default {
             },
           ],
         },
-  
+
         black_dragonborn: {
-            
+
           name:"black_dragonborn",
           details:"black_dragonborn_details",
-  
+
           color: {
             skin: [
               color[0][6],
@@ -2214,12 +2220,12 @@ export default {
             },
           ],
         },
-  
+
         green_dragonborn: {
-            
+
           name:"green_dragonborn",
           details:"green_dragonborn_details",
-  
+
           color: {
             skin: [
               color[5][4],
@@ -2277,10 +2283,10 @@ export default {
       },
     },
 
-    stats: { 
+    stats: {
       strength: 2,
-      charisma: 1, 
-    },  
+      charisma: 1,
+    },
 
     qualities: { speed: 30 },
 
