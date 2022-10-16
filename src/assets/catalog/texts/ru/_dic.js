@@ -651,7 +651,7 @@ export default {
                 trans: "транс",
                 stealth_in_wild: "маскировка в дикой местности",
                 knowledge: "знание",
-                double_dice_damage:"+1 Кость урона",
+                extra_dice_damage:"+1 Кость урона",
                 persistence: "стойкость",
 
                 //Обьект особенности
