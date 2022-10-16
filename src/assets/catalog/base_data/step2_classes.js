@@ -33,6 +33,8 @@ export default {
         type: "resistance",
         keyword: "no_armor_protection",
         details: "armor_constitution",
+        armor_bonus: "MY.stats.constitution.mod",
+        // when without heavy armor
       },
       {
         level: 2,
@@ -40,8 +42,71 @@ export default {
         keyword: "advantage",
         details: "saving_dex_visible",
       },
-      
+      {
+        level: 5,
+        speed_bonus: 10,
+        // when without heavy armor
+      },
+      {
+        level: 7,
+        type: "plus",
+        keyword: "advantage",
+        details: "on_initiative",
+      },
+      {
+        level: 7,
+        type: "plus",
+        keyword: "extra_movement",
+        details: "rage_half_speed",
+        // приписать к заклинанию Ярость?
+      },
+      {
+        level: 9,
+        type: "plus",
+        keyword: "extra_dice_damage",
+        details: "crit_hand_weapon",
+      },
+      {
+        level: 11,
+        type: "plus",
+        keyword: "rage_persistence",
+        details: "rage_persistence_details",
+        // приписать к заклинанию Ярость?
+      },
+      {
+        level: 13,
+        type: "plus",
+        keyword: "extra_dice_damage",
+        details: "crit_hand_weapon",
+      },
+      {
+        level: 15,
+        type: "plus",
+        keyword: "rage_sustainability",
+        details: "only if uncontious",
+        // убрать из заклинания Ярость?
+      },
+      {
+        level: 17,
+        type: "plus",
+        keyword: "extra_dice_damage",
+        details: "crit_hand_weapon",
+      },
+      {
+        level: 18,
+        type: "plus",
+        keyword: "saving_strength",
+        details: "min_base_strength",
+      },
     ],
+
+    stats: [ 
+      {
+        level: 20,
+        strength: 4,
+        constitution: 4, 
+      }
+    ], 
 
     spells: [
       {
@@ -61,7 +126,7 @@ export default {
         weapon: [
           [weapons.javelin, 4],
         ],
-        items: [
+        item: [
           [packs.explorers,1],
         ],
       },
@@ -99,7 +164,26 @@ export default {
             "animal_hanging",
           ],
         },
+        {
+          level: 10,
+          skills: [
+            1,
+            "mastery",
+
+            "athletics",
+            "insight",
+            "survival",
+            "intimidation",
+            "nature",
+            "animal_hanging",
+          ],
+        },
       ],
+
+      feats: {
+        // Cделать единым для всех
+        // level 4, 8, 12, 16 и 19
+      },
 
       equipment: [
         {
@@ -148,117 +232,13 @@ export default {
           level: 3,
           subclasses: {
             berserker: {
-              name: "",
-              details: "",
-              levels: [
-                {
-                  //1
-                },
-                {
-                  //2
-                },
-                {
-                  //3
-                  spells: [
-                    //[spell.frenzy]
-                  ],
-                },
-                {
-                  //4
-                },
-                {
-                  //5
-                },
-                {
-                  //6
-                  fines: [
-                    {
-                      type: "resistance",
-                      keyword: "immunity",
-                      details: "charmed_or_frightened_while_raging",
-                    },
-                  ],
-                },
-                {
-                  //7
-                },
-                {
-                  //8
-                },
-                {
-                  //9
-                },
-                {
-                  //10
-                  spells: [
-                    //[spell.пугающее присутствие]
-                  ],
-                },
-                {
-                  //11
-                },
-                {
-                  //12
-                },
-                {
-                  //13
-                },
-                {
-                  //14
-                  spells: [
-                    //[spell.ответньій удар]
-                  ],
-                },
-              ],
+              name: "berserker",
+              details: "berserker_details",
             },
 
             totem_warrior: {
               name: "",
               details: "",
-              levels: [
-                {
-                  //1
-                },
-                {
-                  //2
-                },
-                {
-                  //3
-                },
-                {
-                  //4
-                },
-                {
-                  //5
-                },
-                {
-                  //6
-                },
-                {
-                  //7
-                },
-                {
-                  //8
-                },
-                {
-                  //9
-                },
-                {
-                  //10
-                },
-                {
-                  //11
-                },
-                {
-                  //12
-                },
-                {
-                  //13
-                },
-                {
-                  //14
-                },
-              ],
             },
           },
         },

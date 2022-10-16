@@ -1915,7 +1915,7 @@ export default {
     fines: [
       {
         type: "plus",
-        keyword: "double_dice_damage",
+        keyword: "extra_dice_damage",
         details: "crit_hand_weapon",
       },
       {
