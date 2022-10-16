@@ -6,7 +6,6 @@ import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
 import MY from "@/assets/catalog/MY.js"
 import packs from "./list_packs.js";
-import { values } from "core-js/core/array";
 
 const barbarian_rage =       [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99];
 const barbarian_rage_bonus = [0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4];
