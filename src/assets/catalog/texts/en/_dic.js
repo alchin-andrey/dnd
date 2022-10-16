@@ -1111,7 +1111,7 @@ export default {
 
             spell_music_box: spells.music_box,
             spell_music_box_details: spells.music_box_details,
-            spell_music_box_expandeds: spells.music_box_expanded,
+            spell_music_box_expanded: spells.music_box_expanded,
 
             spell_small_illusion: spells.small_illusion,
             spell_small_illusion_details: spells.small_illusion_details,
