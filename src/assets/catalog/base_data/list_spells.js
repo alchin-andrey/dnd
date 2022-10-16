@@ -428,8 +428,8 @@ export default {
       impact_type: "damage",
       impact_damage_type: "fire_w",
 
-      impact_size_foo: "Plus_Level_5",
-      impact_size_num: 2,
+      impact_size_foo: "Plus_Level_5", //1lvl + 0, 6lvl + 1, 11lvl + 2, 16lvl + 3
+      impact_size_num: 2, //1 + 0, 6 + 1, 11 + 2, 16 + 3
       impact_size_dice: 6,
 
       saving_need: true,
