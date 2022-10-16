@@ -132,7 +132,7 @@ export default {
 }
 
 .delimiter {
-  width: 256px;
+  /*width: 256px;*/
   height: 1px;
   margin: 40px 0;
   background: rgba(255, 255, 255, 0.2);

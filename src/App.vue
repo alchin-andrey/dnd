@@ -1,7 +1,7 @@
 <template>
 	<!-- Левый бар -->
 	<div class="sidebar_left">
-		<div class="chapter">
+<!--		<div class="chapter">-->
 			<div class="main_chapter">
 				<div class="header" @click="showMY()">
 					<my-logo-card
@@ -35,13 +35,8 @@
 				</my-slider>
 				<!-- <div class="main_menu"> -->
 				<!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
+				<div class="selection_menu_wrap">
 				<div class="selection_menu">
-					<!-- <my-controller
-					  @click="show('shown_lvl')"
-					  :active="race_page.shown_lvl"
-					  title="level"
-					  :value="MY.level"
-					></my-controller> -->
 					<my-selection
 						@click="show('shown_ethnos')"
 						:active="race_page.shown_ethnos"
@@ -149,6 +144,7 @@
 				<!-- <button @click="plus()" type=""> -->
 				<!-- Увеличить входящий параметр на +1 -->
 				<!-- </button> -->
+				</div>
 			</div>
 
 			<my-button
@@ -160,7 +156,7 @@
 				v-if="!race_page.shown_home"
 				@click="showHome()"
 			></my-button-back>
-		</div>
+<!--		</div>-->
 	</div>
 
 	<!-- Выпадающее меню -->
@@ -1283,9 +1279,9 @@ a {
 }
 
 .header {
-	width: 256px;
+	/*width: 256px;*/
 	height: 28px;
-	margin: 32px 0 22px 0;
+	margin: 0 0 22px 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -1320,35 +1316,57 @@ a {
 
 .sidebar_left {
 	/* height: 100%; */
-	display: flex;
+	/*display: flex;*/
+	padding-top: 32px;
+	width: 320px;
 	background-color: #0e1518;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/*height: 100%;*/
 	/*z-index: 10;*/
 	/* outline: 2px solid rgba(255, 255, 255, 0.1); */
 }
 
 .chapter {
 	/* height: 100%; */
-	display: flex;
-	flex-direction: column;
+	/*display: flex;*/
+	/*flex-direction: column;*/
+	/*justify-content: space-between;*/
 	/* flex: 1 1 auto; */
 }
 
 .main_chapter {
 	/* height: 100%; */
-	width: 320px;
-	padding-left: 32px;
-	flex: 1 1 auto;
+	/*width: 320px;*/
+	padding: 0 32px 0 32px;
+	overflow-y: scroll;
+	max-height: 100%;
+
+	/*padding-left: 32px;*/
+	/*padding-top: 32px;*/
+	/*max-height: 100%;*/
+	/*flex: 1 1 auto;*/
+	/*overflow-y: scroll;*/
+	/*max-height: 100%;*/
 }
 
-.main_menu {
-	/* height: 100%; */
+.main_chapter::-webkit-scrollbar {
+	width: 0;
+}
+
+.selection_menu_wrap {
+	/*overflow-y: scroll;*/
 	display: flex;
 	flex-direction: column;
-	overflow-y: scroll;
-	/* flex: 1 1 auto; */
+	gap: 34px;
+	/*overflow-y: scroll;*/
+	/*height: 100px;*/
+	/*overflow: hidden;*/
+	/*max-height: 100%;*/
 }
 
-.main_menu::-webkit-scrollbar {
+.selection_menu_wrap::-webkit-scrollbar {
 	width: 0;
 }
 
@@ -1358,7 +1376,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	margin-bottom: 34px;
+	/*margin-bottom: 34px;*/
 }
 
 .ethnos_attributes {
