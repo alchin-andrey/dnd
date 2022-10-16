@@ -1,152 +1,154 @@
 <template>
 	<!-- Левый бар -->
 	<div class="sidebar_left">
-<!--		<div class="chapter">-->
-			<div class="main_chapter">
-				<div class="header" @click="showMY()">
-					<my-logo-card
-						@click="show('shown_logo')"
-						:active="race_page.shown_logo"
+		<!--		<div class="chapter">-->
+		<div class="main_chapter">
+			<div class="header" @click="showMY()">
+				<my-logo-card
+					@click="show('shown_logo')"
+					:active="race_page.shown_logo"
+				/>
+				<!-- <div class="logo" @click="show('shown_logo')">
+						<img alt="logo" src="@/assets/img/logo_1.svg" />
+					 </div> -->
+				<div class="header_col">
+					<my-header-card
+						@click="show('shown_lang')"
+						:active="race_page.shown_lang"
+					>
+						<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon"/>
+					</my-header-card>
+					<my-header-card
+						@click="show('shown_lvl')"
+						:active="race_page.shown_lvl"
+						:slots="Char_Lvl"
 					/>
-					<!-- <div class="logo" @click="show('shown_logo')">
-					  <img alt="logo" src="@/assets/img/logo_1.svg" />
-					</div> -->
-					<div class="header_col">
-						<my-header-card
-							@click="show('shown_lang')"
-							:active="race_page.shown_lang"
-						>
-							<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon"/>
-						</my-header-card>
-						<my-header-card
-							@click="show('shown_lvl')"
-							:active="race_page.shown_lvl"
-							:slots="Char_Lvl"
-						/>
-					</div>
-				</div>
-
-				<my-slider
-					numb="01"
-					title="race"
-					:arr="Object.values(this.race)"
-					:type="MY.race"
-				>
-				</my-slider>
-				<!-- <div class="main_menu"> -->
-				<!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
-				<div class="selection_menu_wrap">
-				<div class="selection_menu">
-					<my-selection
-						@click="show('shown_ethnos')"
-						:active="race_page.shown_ethnos"
-						title="ethnos"
-						:type="MY.ethnos.name"
-						:rare="MY.ethnos.rare"
-					></my-selection>
-				</div>
-
-				<div
-					class="selection_menu"
-					v-if="
-            MY.race.settings.custom_stats ||
-            MY.race.settings.custom_skills ||
-            MY.race.settings.custom_languages ||
-            MY.ethnos.custom_languages
-          "
-				>
-					<my-selection
-						v-if="MY.race.settings.custom_stats"
-						@click="show('shown_characteristics')"
-						:active="race_page.shown_characteristics"
-						title="stats"
-						:type_arr="race_page.extra.stats"
-					></my-selection>
-					<my-selection
-						v-if="MY.race.settings.custom_skills"
-						@click="show('shown_skills')"
-						:active="race_page.shown_skills"
-						title="skills"
-						:type_arr="race_page.extra.skills"
-					>
-					</my-selection>
-					<my-selection
-						v-if="
-              MY.race.settings.custom_languages || MY.ethnos.custom_languages
-            "
-						@click="show('shown_languages')"
-						:active="race_page.shown_languages"
-						title="languages"
-						:type_arr="Lang_Extra"
-					>
-					</my-selection>
-				</div>
-
-				<div class="selection_menu">
-					<my-selection
-						@click="show('shown_gender')"
-						:active="race_page.shown_gender"
-						title="gender"
-						:type="MY.gender.phisiological"
-					></my-selection>
-					<my-controller
-						@click="show('shown_age')"
-						:active="race_page.shown_age"
-						title="age"
-						:value="MY.age"
-						age
-						:note="Age_Note"
-					></my-controller>
-					<my-controller
-						@click="show('shown_height')"
-						:active="race_page.shown_height"
-						title="height"
-						:value="MY.height"
-						unit="cm"
-						:note="Hight_Note"
-					></my-controller>
-					<my-controller
-						@click="show('shown_weight')"
-						:active="race_page.shown_weight"
-						title="weight"
-						:value="MY.weight"
-						unit="kg"
-						:note="Weight_Note"
-					>
-					</my-controller>
-					<my-selection
-						@click="show('shown_skin_color', 'skin')"
-						:active="race_page.shown_skin_color"
-						title="color_skin"
-						:type="getCharColor('skin').name"
-					>
-					</my-selection>
-					<my-selection
-						@click="show('shown_eyes_color', 'eyes')"
-						:active="race_page.shown_eyes_color"
-						title="color_eyes"
-						:type="getCharColor('eyes').name"
-					>
-					</my-selection>
-					<my-selection
-						@click="show('shown_hair_color', 'hair')"
-						:active="race_page.shown_hair_color"
-						title="color_hair"
-						:type="getCharColor('hair').name"
-					>
-					</my-selection>
-
-					<!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
-				</div>
-				<!-- </div> -->
-				<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
-				<!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
-				<!-- <button @click="plus()" type=""> -->
-				<!-- Увеличить входящий параметр на +1 -->
-				<!-- </button> -->
 				</div>
 			</div>
 
+			<my-slider
+				numb="01"
+				title="race"
+				:arr="Object.values(this.race)"
+				:type="MY.race"
+			>
+			</my-slider>
+			<!-- <div class="main_menu"> -->
+			<!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
+		</div>
+		<div class="main_menu_wrap">
+			<div class="main_chapter_menu">
+				<div class="selection_menu_wrap">
+					<div class="selection_menu">
+						<my-selection
+							@click="show('shown_ethnos')"
+							:active="race_page.shown_ethnos"
+							title="ethnos"
+							:type="MY.ethnos.name"
+							:rare="MY.ethnos.rare"
+						></my-selection>
+					</div>
+
+					<div
+						class="selection_menu"
+						v-if="
+              MY.race.settings.custom_stats ||
+              MY.race.settings.custom_skills ||
+              MY.race.settings.custom_languages ||
+              MY.ethnos.custom_languages
+            "
+					>
+						<my-selection
+							v-if="MY.race.settings.custom_stats"
+							@click="show('shown_characteristics')"
+							:active="race_page.shown_characteristics"
+							title="stats"
+							:type_arr="race_page.extra.stats"
+						></my-selection>
+						<my-selection
+							v-if="MY.race.settings.custom_skills"
+							@click="show('shown_skills')"
+							:active="race_page.shown_skills"
+							title="skills"
+							:type_arr="race_page.extra.skills"
+						>
+						</my-selection>
+						<my-selection
+							v-if="
+                MY.race.settings.custom_languages || MY.ethnos.custom_languages
+              "
+							@click="show('shown_languages')"
+							:active="race_page.shown_languages"
+							title="languages"
+							:type_arr="Lang_Extra"
+						>
+						</my-selection>
+					</div>
+
+					<div class="selection_menu">
+						<my-selection
+							@click="show('shown_gender')"
+							:active="race_page.shown_gender"
+							title="gender"
+							:type="MY.gender.phisiological"
+						></my-selection>
+						<my-controller
+							@click="show('shown_age')"
+							:active="race_page.shown_age"
+							title="age"
+							:value="MY.age"
+							age
+							:note="Age_Note"
+						></my-controller>
+						<my-controller
+							@click="show('shown_height')"
+							:active="race_page.shown_height"
+							title="height"
+							:value="MY.height"
+							unit="cm"
+							:note="Hight_Note"
+						></my-controller>
+						<my-controller
+							@click="show('shown_weight')"
+							:active="race_page.shown_weight"
+							title="weight"
+							:value="MY.weight"
+							unit="kg"
+							:note="Weight_Note"
+						>
+						</my-controller>
+						<my-selection
+							@click="show('shown_skin_color', 'skin')"
+							:active="race_page.shown_skin_color"
+							title="color_skin"
+							:type="getCharColor('skin').name"
+						>
+						</my-selection>
+						<my-selection
+							@click="show('shown_eyes_color', 'eyes')"
+							:active="race_page.shown_eyes_color"
+							title="color_eyes"
+							:type="getCharColor('eyes').name"
+						>
+						</my-selection>
+						<my-selection
+							@click="show('shown_hair_color', 'hair')"
+							:active="race_page.shown_hair_color"
+							title="color_hair"
+							:type="getCharColor('hair').name"
+						>
+						</my-selection>
+
+						<!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
+					</div>
+					<!-- </div> -->
+					<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
+					<!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
+					<!-- <button @click="plus()" type=""> -->
+					<!-- Увеличить входящий параметр на +1 -->
+					<!-- </button> -->
+				</div>
+			</div>
 			<my-button
 				v-if="race_page.shown_home"
 				numb="02"
@@ -156,7 +158,8 @@
 				v-if="!race_page.shown_home"
 				@click="showHome()"
 			></my-button-back>
-<!--		</div>-->
+		</div>
+		<!--		</div>-->
 	</div>
 
 	<!-- Выпадающее меню -->
@@ -368,7 +371,6 @@
 		<!-- Языки -->
 	</div>
 
-
 	<div class="stripe"></div>
 	<!-- Персонаж -->
 
@@ -572,7 +574,6 @@ export default {
 			foo_met: "getFoo",
 			// foo_com: Foo_PS,
 			numb_foo: 1,
-
 		};
 	},
 
@@ -876,9 +877,9 @@ export default {
 			let race = this.MY.race.spells;
 			let ethnos = this.MY.ethnos.spells;
 			let lvl = this.MY.level;
-			let race_lvl = ((race || {})[0] || {}).level <= lvl
-			let ethnos_lvl = ((ethnos || {})[0] || {}).level <= lvl
-			return race || ethnos && race_lvl || ethnos_lvl;
+			let race_lvl = ((race || {})[0] || {}).level <= lvl;
+			let ethnos_lvl = ((ethnos || {})[0] || {}).level <= lvl;
+			return race || (ethnos && race_lvl) || ethnos_lvl;
 		},
 	},
 	watch: {
@@ -1046,7 +1047,7 @@ export default {
 			let arr = this.race_page.home_arr;
 			arr.splice(0, 1);
 			arr.push(this.race_page.shown_selection);
-			this.race_page.home_arr = arr
+			this.race_page.home_arr = arr;
 			// console.log(this.race_page.home_arr)
 		},
 
@@ -1213,8 +1214,8 @@ export default {
 		},
 
 		getMannaNumb(arr, name) {
-			let index = arr.findIndex(el => el[name]);
-			return index
+			let index = arr.findIndex((el) => el[name]);
+			return index;
 		},
 	},
 };
@@ -1320,12 +1321,26 @@ a {
 	padding-top: 32px;
 	width: 320px;
 	background-color: #0e1518;
+	/*min-height: 100%;*/
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/*justify-content: space-between;*/
 	/*height: 100%;*/
 	/*z-index: 10;*/
 	/* outline: 2px solid rgba(255, 255, 255, 0.1); */
+}
+
+.main_menu_wrap {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	overflow-y: scroll;
+	max-height: 100%;
+}
+
+.main_menu_wrap::-webkit-scrollbar {
+	width: 0;
 }
 
 .chapter {
@@ -1337,9 +1352,13 @@ a {
 }
 
 .main_chapter {
+	padding: 0 32px 0 32px;
+}
+
+.main_chapter_menu {
 	/* height: 100%; */
 	/*width: 320px;*/
-	padding: 0 32px 0 32px;
+	padding: 0 32px 32px 32px;
 	overflow-y: scroll;
 	max-height: 100%;
 
@@ -1351,7 +1370,7 @@ a {
 	/*max-height: 100%;*/
 }
 
-.main_chapter::-webkit-scrollbar {
+.main_chapter_menu::-webkit-scrollbar {
 	width: 0;
 }
 
