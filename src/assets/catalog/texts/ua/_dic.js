@@ -644,6 +644,7 @@ export default {
 
                 //Ключевые слова
                 advantage:"преимущество",
+                no_disadvantage: "нет помехи",
                 rethrow:"переброс",
                 resistance:"сопротивление",
                 immunity:"иммунитет",
@@ -715,7 +716,25 @@ export default {
                 min_base_strengt: "минимум равно базовой Силе",
                 rage_sustainability: "Ярость не прекращается досрочно",
                 only_if_uncontious: "кроме потери сознания",
-
+                near_friends_attack_in_rage: "на рукопашные атаки союзников рядом, при Ярости",
+                any_damage_but_psy: "любому урону кроме 🧠 Психического, при Ярости",
+                on_dodging_in_rage: "на уворот от провоцированных атак, при Ярости",
+                rush: "рывок",
+                as_bonus_action: "бонусным действием, при Ярости",
+                long_jumps: "прыжки +10ф в длину и +3ф в высоту",
+                in_rage: "при Ярости",
+                fast_tempo: "быстрый темп",
+                while_following_prints: "при движении по следу",
+                normal_tempo: "нормальный темп",
+                in_stealth: "при движении в скрытности",
+                double_weight: "2× Грузоподьемность",
+                weight_capacity: "включая максимальный вес нагрузки и подъёма",
+                str_check_on_move: "на Испытания Силы при передвижении / разрушении предметов",
+                to_see: "зоркость",
+                one_mile_100f_details: "до 1 мили, а на 100ф до мельчайших деталей",
+                on_perception_in_lowlight: "на Внимательность при тусклом свете",
+                double_speed: "2× Скорость",
+                travel_elk: "путешествия для вас и 10 ваших спутников в пределах 60ф",
 
 
     //Умения - активные умения без урона
@@ -1174,6 +1193,21 @@ export default {
             spell_retaliation_details: spells.retaliation_details,
             spell_retaliation_expanded: spells.retaliation_expanded,
 
+            spell_beast_sense: spells.beast_sense,
+            spell_beast_sense_details: spells.beast_sense_details,
+            spell_beast_sense_expanded: spells.beast_sense_expanded,
+
+            spell_speak_with_animals: spells.speak_with_animals,
+            spell_speak_with_animals_details: spells.speak_with_animals_details,
+            spell_speak_with_animals_expanded: spells.speak_with_animals_expanded,
+
+            spell_commune_with_nature: spells.commune_with_nature,
+            spell_commune_with_nature_details: spells.commune_with_nature_details,
+            spell_commune_with_nature_expanded: spells.commune_with_nature_expanded,
+
+            spell_wolf_knock: spells.wolf_knock,
+            spell_wolf_knock_details: spells.wolf_knock_details,
+
             //14 Oct
 
             explorers_pack: "набор путещественника",
@@ -1209,6 +1243,18 @@ export default {
             totem_warrior: classes.totem_warrior,
             totem_warrior_details: classes.totem_warrior_details,
 
+            totem_spirit: classes.totem_spirit,
+            totem_spirit_details: classes.totem_spirit_details,
+            totem_harmony: classes.totem_harmony,
+
+            totem: "тотем",
+            totem_details: "амулет или похожее украшение, содержащий мех или кожу, перья, когти, зубы или кости тотемного животного.",
+
+            wolf: "волк",
+            bear: "медведь",
+            eagle: "орел",
+            elk: "лось",
+            tiger: "тигр",
 
 
 

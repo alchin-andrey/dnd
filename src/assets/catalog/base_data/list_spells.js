@@ -164,7 +164,7 @@ export default {
       aim_need: false,
       aim_range: 30,
       aim_aoe: "sphere",
-      aim_aoe_size: 30,
+      aim_aoe_size: 5,
 
       impact_type: null,
       impact_damage_type: null,
@@ -569,7 +569,7 @@ export default {
       aim_need: false,
       aim_range: 60,
       aim_aoe: "sphere",
-      aim_aoe_size: 15,
+      aim_aoe_size: 30,
 
       impact_type: null,
       impact_damage_type: null,
@@ -925,7 +925,7 @@ export default {
       aim_need: false,
       aim_range: 60,
       aim_aoe: "cube",
-      aim_aoe_size: 20,
+      aim_aoe_size: 40,
 
       impact_type: null,
       impact_damage_type: null,
@@ -1169,9 +1169,9 @@ export default {
 
   intimidating_presence: [
     {
-      name: "intimidating_presence",
-      details: "intimidating_presence_details",
-      expanded: "intimidating_presence_expanded", 
+      name: "spell_intimidating_presence",
+      details: "spell_intimidating_presence_details",
+      expanded: "spell_intimidating_presence_expanded", 
 
       type: "ability",
 
@@ -1206,9 +1206,9 @@ export default {
 
   retaliation: [
     {
-      name: "retaliation",
-      details: "retaliation_details",
-      expanded: "retaliation_expanded", 
+      name: "spell_retaliation",
+      details: "spell_retaliation_details",
+      expanded: "spell_retaliation_expanded", 
 
       type: "ability",
 
@@ -1224,7 +1224,7 @@ export default {
       spell_duration_units: null,
 
       aim_need: false,
-      aim_range: 5,
+      aim_range: null,
       aim_aoe: null,
       aim_aoe_size: null,
       impact_type: null,
@@ -1241,9 +1241,273 @@ export default {
     }
   ],
 
+  beast_sense: [
+    {},
+    {},
+    {
+      name: "spell_beast_sense",
+      details: "spell_beast_sense_details",
+      expanded: "spell_beast_sense_expanded", 
+
+      type: "divination",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "touch",
+      parts: ["somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
+    }
+  ],
+
   beast_sense_ritual: [
     {
+      name: "spell_beast_sense",
+      details: "spell_beast_sense_details",
+      expanded: "spell_beast_sense_expanded", 
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "creature",
+      aim_type: "touch",
+      parts: ["somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
       
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
     }
-  ]
+  ],
+
+  speak_with_animals: [
+    {},
+    {
+      name: "spell_speak_with_animals",
+      details: "spell_speak_with_animals_details",
+      expanded: "spell_speak_with_animals_expanded", 
+
+      type: "divination",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
+    }
+  ],
+
+  speak_with_animals_ritual: [
+    {
+      name: "spell_speak_with_animals",
+      details: "spell_speak_with_animals_details",
+      expanded: "spell_speak_with_animals_expanded", 
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
+    }
+  ],
+
+  commune_with_nature: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_commune_with_nature",
+      details: "spell_commune_with_nature_details",
+      expanded: "spell_commune_with_nature_expanded", 
+
+      type: "divination",
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
+    }
+  ],
+
+  commune_with_nature_ritual: [
+    {
+      name: "spell_commune_with_nature",
+      details: "spell_commune_with_nature_details",
+      expanded: "spell_commune_with_nature_expanded", 
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
+    }
+  ],
+
+  wolf_knock: [
+    {
+      name: "spell_wolf_knock",
+      details: "spell_wolf_knock_details",
+      expanded: null, 
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "touch",
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null, 
+      impact_size_saved: null,
+    }
+  ],
+
+  
+
 };

@@ -6,6 +6,7 @@ import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
 import MY from "@/assets/catalog/MY.js"
 import packs from "./list_packs.js";
+import items from "./list_items.js";
 
 const barbarian_rage =       [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99];
 const barbarian_rage_bonus = [0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4];
@@ -268,6 +269,15 @@ export default {
           name: "totem_warrior",
           details: "totem_warrior_details",
 
+          equipment: [
+            {
+              level: 3,
+              item: [
+                [items.totem,1],
+              ],
+            },
+          ],
+
           spells: [
             {
               level: 3,
@@ -296,7 +306,7 @@ export default {
                       {
                         type: "plus",
                         keyword: "advantage",
-                        details: "near_friends_attack",
+                        details: "near_friends_attack_in_rage",
                       },
                     ]
                   },
@@ -324,6 +334,8 @@ export default {
                         type: "plus",
                         keyword: "rush",
                         details: "as_bonus_action",
+
+                        condition: "if_no_heavy_armor",
                       }
                     ]
                   },
@@ -375,8 +387,8 @@ export default {
                     fines: [
                       {
                         type: "plus",
-                        keyword: "double_fem",
-                        details: "weight_capacity",
+                        keyword: "double_weight",
+                        details: "weight_capacity_details",
                       },
                       {
                         type: "plus",
@@ -391,7 +403,7 @@ export default {
                       {
                         type: "plus",
                         keyword: "to_see",
-                        details: "1_mile_100f_details",
+                        details: "one_mile_100f_details",
                       },
                       {
                         type: "plus",
@@ -405,8 +417,8 @@ export default {
                     fines: [
                       {
                         type: "plus",
-                        keyword: "double_fem",
-                        details: "speed_of_travel",
+                        keyword: "double_speed",
+                        details: "travel_elk",
                         key: "speed_bonus_x",
                         value: 2,
                       }
@@ -435,11 +447,51 @@ export default {
               {
                 level: 14,
                 name: "totem_harmony",
-                delails: "totem_harmony_details",
+                delails: "totem_aspect_details",
                 list: [
                   {
                     name: "wolf",
-                    
+                    spells: [
+                      {
+                        spell: spells.wolf_knock,
+                      }
+                    ],
+                  },
+                  {
+                    name: "bear",
+                    fines: [
+                      {
+                        type: "resistance",
+                        keyword: "advantage",
+                        details: "on_dodging_in_rage_bear",
+                      }
+                    ]
+                  },
+                  {
+                    name: "eagle",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "flight_speed",
+                        details: "as_walking_speed_in_rage",
+                      }
+                    ],
+                  },
+                  {
+                    name: "elk",
+                    spells: [
+                      {
+                        spell: spells.elk_knock,
+                      }
+                    ]
+                  },
+                  {
+                    name: "tiger",
+                    spells: [
+                      {
+                        spell: spells.tiger_strike,
+                      }
+                    ]
                   }
                 ]
               }

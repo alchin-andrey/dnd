@@ -56,17 +56,16 @@ export default {
           ],
 
           spells: [
-            // ДЛЯ ОТЛАДКИ
+            // ДЛЯ ОТЛАДКИ ------
             {
               level: 1,
               spell: spells.hellish_rebuke,
             },
-            // ДЛЯ ОТЛАДКИ
+            // ------------------
             {
               level: 1,
               spell: spells.toy,
             },
-
             {
               level: 1,
               spell: spells.lighter,
