@@ -23,12 +23,11 @@ export default {
     //Общее        
     
             name:"имя",
-
             race:"раса",
             ethnos:"етнос",
             class:"класс",
             subclass:"специализация",
-            past:"предистория",
+            past:"предистория",           
             level:"рівень",
                 level_unit:"й",
                 lvl:"LVL",
