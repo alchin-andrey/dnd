@@ -472,7 +472,7 @@ export default {
                     fines: [
                       {
                         type: "plus",
-                        keyword: "flight_speed",
+                        keyword: "flight",
                         details: "as_walking_speed_in_rage",
                       }
                     ],

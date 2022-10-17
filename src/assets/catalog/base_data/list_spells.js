@@ -1508,6 +1508,77 @@ export default {
     }
   ],
 
-  
+  elk_knock: [
+    {
+      name: "spell_elk_knock",
+      details: "spell_elk_knock_details",
+      expanded: "spell_elk_knock_expanded", 
 
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "touch",
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: "damage",
+      impact_damage_type: "bludgeoning_w",
+      
+      impact_size_foo: "Plus_strength_mod",
+      impact_size_num: 1,
+      impact_size_dice: 12,
+      
+      saving_need: true,
+      saving_attribute: "strength", 
+      impact_size_saved: "0",
+    }
+  ],
+
+  tiger_strike: [
+    {
+      name: "spell_tiger_strike",
+      details: "spell_tiger_strike_details",
+      expanded: "spell_tiger_strike_expanded", 
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "touch",
+      parts: ["somatic"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+      
+    }
+  ],
 };

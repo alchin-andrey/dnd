@@ -735,7 +735,9 @@ export default {
                 on_perception_in_lowlight: "на Внимательность при тусклом свете",
                 double_speed: "2× Скорость",
                 travel_elk: "путешествия для вас и 10 ваших спутников в пределах 60ф",
-
+                on_dodging_in_rage_bear: "на уворот союзников рядом от атак врагов, видящих вас, при Ярости",
+                flight: "полет",
+                as_walking_speed_in_rage: "по скорости равный скорости передвижения, при Ярости",
 
     //Умения - активные умения без урона
 
@@ -1208,6 +1210,14 @@ export default {
             spell_wolf_knock: spells.wolf_knock,
             spell_wolf_knock_details: spells.wolf_knock_details,
 
+            spell_elk_knock: spells.elk_knock,
+            spell_elk_knock_details: spells.elk_knock_details,
+            spell_elk_knock_expanded: spells.elk_knock_expanded,
+
+            spell_tiger_strike: spells.tiger_strike,
+            spell_tiger_strike_details: spells.tiger_strike_details,
+            spell_tiger_strike_expanded: spells.tiger_strike_expanded,
+
             //14 Oct
 
             explorers_pack: "набор путещественника",
@@ -1255,7 +1265,5 @@ export default {
             eagle: "орел",
             elk: "лось",
             tiger: "тигр",
-
-
 
 }
