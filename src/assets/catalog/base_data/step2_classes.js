@@ -139,8 +139,6 @@ export default {
       },
     ],
 
-
-
     settings: {
       skills: [
         {
@@ -501,5 +499,9 @@ export default {
       },
     },
   },
+
+  rogue: {
+    
+  }
 
 }

@@ -170,6 +170,9 @@ export default {
         gold:0,
         silver:0,
         copper:0,
-    }
+    },
+
+    //Conditions
+    if_no_heavy_armor: true,
 
 };
