@@ -133,8 +133,8 @@ export default {
         weapon: [
           [weapons.javelin, 4],
         ],
-        item: [
-          [packs.explorers,1],
+        inventory: [
+          [packs.explorers,1], // нужно как-то распаковьівать 😅
         ],
       },
     ],
@@ -270,7 +270,7 @@ export default {
           equipment: [
             {
               level: 3,
-              item: [
+              inventory: [
                 [items.totem,1],
               ],
             },
@@ -501,7 +501,47 @@ export default {
   },
 
   rogue: {
-    
+    name: "rogue",
+    details: "rogue_details",
+
+    saving: ["dexterity", "intelligence"],
+    spell_attribute: "intelligence", // уточнить
+
+    hp_dice: 8,
+    hp_bonus: [8,5],
+    regen: [MY.level,8],
+
+    proficiencies: {
+      armor: [armory.light],
+      weapons: [weaponry.simple, weaponry.hand_arbalets, weaponry.long_swords, weaponry.rapires, weaponry.short_swords],
+      tools: [tool.thief],
+    },
+
+    settings: {
+      skills: [
+        {
+          level: 1,
+          skills: [
+            4,
+            "mastery",
+
+            "acrobatics",
+            "investigation",
+            "athletics",
+            "perception",
+            "performance",
+            "intimidation",
+            "sleight_of_hand",
+            "deception",
+            "insight",
+            "stealth",
+            "persuasion"
+          ],
+        }
+      ],
+
+
+    },
   }
 
 }

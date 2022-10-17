@@ -524,6 +524,7 @@ export default {
                     tool_blacksmith: tools.blacksmith,
                     tool_brewer: tools.brewer,
                     tool_mason: tools.mason,
+                    tool_thief: tools.thief,
 
                 languages:"мови",
                 languages_human:"языки этносов людей",
@@ -1081,7 +1082,7 @@ export default {
             somatic:"жест",
             touch:"касание",
             focus: "фокус",
-            material_10gold: "материалы на сумму в 10 зм",
+            material_10gold: "материалы на сумму в 10 🟡",
             hit: "попадание",
             none: "не требуется",
 
