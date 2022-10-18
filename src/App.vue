@@ -1371,7 +1371,7 @@ a {
 .main_chapter_menu {
 	/* height: 100%; */
 	/*width: 320px;*/
-	padding: 0 32px 32px 32px;
+	padding: 40px 32px 32px 32px;
 	overflow-y: scroll;
 	max-height: 100%;
 
