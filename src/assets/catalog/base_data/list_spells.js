@@ -29,12 +29,12 @@ export default {
       aim_target: null,
       // Цель ("self" | "creature" | "object" | "point")
       aim_type: null,
-      // тип атаки ("near" | "touch" | "in_distance")
+      // тип атаки ("near" | "in_distance")
       // если in_distance - показать строку дальность
 
       parts: [null],
       // Компонентьі
-      // "verbal" | "somatic" | "focus" | "[material]"
+      // "verbal" | "somatic" | "touch" | "focus" | "[material]"
 
       spell_time: null,
       // Время заклинания ( null | "instant" | "concentration" | "till_dissipate")
@@ -1023,7 +1023,7 @@ export default {
         psychic_w: "🧠 Психический",
       */
 
-      impact_size_foo: "num", // Добавить функцию
+      impact_size_foo: "barbarian_rage_bonus", // Добавить функцию
       impact_size_num: null,//classes.barbarian_rage_bonus[MY.level], добавить параметр
       impact_size_dice: null,
       // рассчет урона
@@ -1258,7 +1258,7 @@ export default {
 
       aim_target: "creature",
       aim_type: "near",
-      parts: ["somatic","touch"],
+      parts: ["touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -1295,7 +1295,7 @@ export default {
 
       aim_target: "creature",
       aim_type: "near",
-      parts: ["somatic","touch"],
+      parts: ["touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -1486,7 +1486,7 @@ export default {
 
       aim_target: "creature",
       aim_type: "near",
-      parts: ["somatic","touch"],
+      parts: ["touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1523,7 +1523,7 @@ export default {
 
       aim_target: "creature",
       aim_type: "near",
-      parts: ["somatic","touch"],
+      parts: ["touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1560,7 +1560,7 @@ export default {
 
       aim_target: "creature",
       aim_type: "near",
-      parts: ["somatic","touch"],
+      parts: ["touch"],
       spell_time: "instant",
       spell_duration: null,
       spell_duration_units: null,
