@@ -1,205 +1,222 @@
 <template>
-	<div class="column jbm-300">
-		<div class="column_value" :class="{ passive: numb === 0 }">
-			<div class="item">{{ t_Title }} {{ t_Addition }}</div>
-			<div v-if="dice" class="numb small">
-				{{ numb }}d{{ dice }}
-			</div>
-			<div v-else class="numb" :class="{ passive: numb === 0 }">
-				{{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
-			</div>
-		</div>
-		<div class="visual">
-			<div class="cube" v-for="n in get_Cube" :key="n"></div>
-			<div
-				class="cube_zero"
-				v-for="n in get_CubeZero"
-				:key="n"
-			></div>
-		</div>
-	</div>
+    <div class="column jbm-300">
+        <div class="column_value" :class="{ passive: numb === 0 }">
+            <div class="wrapp_atrib">{{ t_Title }} <emoji v-if="upd_Emoji" :data="emojiIndex" :emoji="upd_Emoji" set="apple" :size="14"></emoji>
+      {{ cut_Emoji }}</div>
+            <div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
+            <div v-else class="numb" :class="{ passive: numb === 0 }">
+                {{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
+            </div>
+        </div>
+        <div class="visual">
+            <div class="cube" v-for="n in get_Cube" :key="n"></div>
+            <div class="cube_zero" v-for="n in get_CubeZero" :key="n"></div>
+        </div>
+    </div>
 </template>
 
 <script>
+import emojiRegex from "emoji-regex";
+
+import dataEmo from "emoji-mart-vue-fast/data/all.json";
+import { Emoji, EmojiIndex } from "emoji-mart-vue-fast/src";
+import "emoji-mart-vue-fast/css/emoji-mart.css";
+
+let emojiIndex = new EmojiIndex(dataEmo);
+const unicodeEmojiRegex = emojiRegex();
+
 export default {
-	name: "MagicAttribute",
-	data() {
-		return {
-			inputValue: "",
-		};
-	},
-	props: {
-		title: {
-			type: String,
-			default: null,
-		},
-		addition: {
-			type: String,
-			default: null,
-		},
-		numb: {
-			type: Number,
-			default: null,
-		},
-		dice: {
-			type: Number,
-			default: null,
-		},
-		// type: {
-		// 	type: String,
-		// 	default: null,
-		// },
-		icon: {
-			type: String,
-			default: null,
-		},
-		plus: {
-			type: Boolean,
-			default: false,
-		},
-		prefix: {
-			type: String,
-			default: null,
-		},
-		feet: {
-			type: Boolean,
-			default: false,
-		},
-		// cube_zero: {
-		// 	type: Boolean,
-		// 	default: false,
-		// },
-	},
+    name: "MagicAttribute",
+    components: {
+        Emoji,
+    },
+    data() {
+        return {
+            emojiIndex: emojiIndex,
+            unicodeEmojiRegex: unicodeEmojiRegex,
+        };
+    },
+    props: {
+        title: {
+            type: String,
+            default: null,
+        },
+        addition: {
+            type: String,
+            default: null,
+        },
+        numb: {
+            type: Number,
+            default: null,
+        },
+        dice: {
+            type: Number,
+            default: null,
+        },
+        icon: {
+            type: String,
+            default: null,
+        },
+        plus: {
+            type: Boolean,
+            default: false,
+        },
+        prefix: {
+            type: String,
+            default: null,
+        },
+        feet: {
+            type: Boolean,
+            default: false,
+        },
+    },
 
-	computed: {
-		t_Title() {
-			if (this.numb === 0) {
-				return `/ ${this.t(this.title)}`;
-			} else {
-				return this.t(this.title);
-			}
-		},
+    computed: {
+        t_Title() {
+            console.log(this.wrapEmoji);
+            if (this.numb === 0) {
+                return `/ ${this.t(this.title)}`;
+            } else {
+                return this.t(this.title);
+            }
+        },
 
-		t_Addition() {
-			return this.t(this.addition);
-		},
+        t_Addition() {
+            return this.t(this.addition);
+        },
 
-		// t_Type() {
-		// 	return this.t(this.type);
-		// },
+        Prefix() {
+            return this.prefix ? this.t(this.prefix) : "";
+        },
 
-		Prefix() {
-			return this.prefix ? this.t(this.prefix) : "";
-		},
+        Plus() {
+            return this.plus ? "+" : "";
+        },
 
-		Plus() {
-			return this.plus ? "+" : "";
-		},
+        Suffix() {
+            return this.feet ? this.t("feet") : "";
+        },
 
-		Suffix() {
-			return this.feet ? this.t("feet") : "";
-		},
+        get_Cube() {
+            if (this.feet) {
+                return Math.ceil(this.numb / 5);
+            } else {
+                return this.numb;
+            }
+        },
 
-		get_Cube() {
-			if (this.feet) {
-				return Math.ceil(this.numb / 5);
-			} else {
-				return this.numb;
-			}
-		},
+        get_CubeZero() {
+            if (this.dice) {
+                return this.dice * this.numb - this.numb;
+            }
+        },
 
-		get_CubeZero() {
-			if (this.dice) {
-				return this.dice * this.numb - this.numb;
-			}
-		},
-	},
+        cut_Emoji() {
+            let str = this.t_Addition;
+            let reg = /(\p{Emoji_Presentation}|\p{Extended_Pictographic})/gu;
+            if (this.t_Addition) {
+                let cut = str.replace(reg, "");
+                return cut;
+            } else {
+                null;
+            }
+        },
 
-	methods: {
-		// getImage(name) {
-		// 	if (name === null) {
-		// 		return null;
-		// 	} else if (this.numb > 0) {
-		// 		return require(`@/assets/img/icon/atribute/${name}_active.svg`);
-		// 	} else {
-		// 		return require(`@/assets/img/icon/atribute/${name}_passive.svg`);
-		// 	}
-		// },
+        upd_Emoji() {
+            let text = this.t_Addition;
+            for (const match of text.matchAll(unicodeEmojiRegex)) {
+                const emoji = match[0];
+                return emoji;
+            }
+        },
 
-		// getCube(numb) {
-		// 	if (this.feet) {
-		// 		return Math.ceil(numb / 5);
-		// 	} else {
-		// 		return numb;
-		// 	}
-		// },
+        wrapEmoji() {
+            let text = this.t_Addition;
+            if (text) {
+                return text.replace(
+                    unicodeEmojiRegex,
+                    function (match, offset) {
+                        let emoji = emojiIndex.nativeEmoji(match);
+                        if (!emoji) {
+                            return match;
+                        }
+                  
+                        return emoji.native;
+                        // return `:${emoji.short_names[0]}:`;
+                    }
+                );
+            } else {
+                null;
+            }
+        },
+    },
 
-		// getCubeZero(numb) {
-		// 	if (this.cube_zero) {
-		// 		return numb < 6 ? 6 - numb : 0;
-		// 	}
-		// },
-	},
+    methods: {
+    },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.wrapp_atrib {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.emoji-mart-emoji {
+    padding: 2px 6px 0 6px;
+    line-height: 0;
+}
+
 .column {
-	width: 100%;
-	display: flex;
-	min-height: 18px;
-	justify-content: space-between;
+    width: 100%;
+    display: flex;
+    min-height: 18px;
+    justify-content: space-between;
 }
 
 .column_value {
-	display: flex;
-	justify-content: space-between;
-	flex: 1 1 auto;
-	/*width: 100%;*/
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    /*width: 100%;*/
 }
 
 .small {
-	text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 .active {
-	color: #ffffff;
+    color: #ffffff;
 }
 
 .passive {
-	color: rgba(255, 255, 255, 0.2);
-}
-
-.numb {
-	/*display: flex;*/
-	/*justify-content: space-between;*/
-	/*flex: 1 1 auto;*/
-	/*text-align: end;*/
+    color: rgba(255, 255, 255, 0.2);
 }
 
 .visual {
-	width: 98px;
-	display: flex;
-	align-items: center;
-	margin-left: 12px;
-	flex-wrap: wrap;
-	padding: 5px 0 5px 0;
-	gap: 2px;
+    width: 98px;
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    flex-wrap: wrap;
+    padding: 5px 0 5px 0;
+    gap: 2px;
 }
 
 .cube {
-	width: 8px;
-	height: 8px;
-	background: #ffffff;
-	box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
-	border-radius: 2px;
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
+    border-radius: 2px;
 }
 
 .cube_zero {
-	width: 8px;
-	height: 8px;
-	border-radius: 2px;
-	border: 1px solid #FFFFFF;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
 }
 </style>

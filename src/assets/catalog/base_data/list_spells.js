@@ -219,7 +219,7 @@ export default {
       aim_aoe_size: 5,
 
       impact_type: "damage",
-      impact_damage_type: "fire_w",
+      impact_damage_type: "slashing_w",
 
       impact_size_foo: null,
       impact_size_num: 2,
