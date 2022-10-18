@@ -20,7 +20,7 @@ export default {
       */
 
       cast_time: null,
-      // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
+      // Время наложения ("reacion" | "bonus_action" | "action" | "ritual").
       cast_duration: null,
       // Длительность наложения
       cast_duration_units: null,
@@ -1256,8 +1256,8 @@ export default {
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "touch",
-      parts: ["somatic"],
+      aim_type: "near",
+      parts: ["somatic","touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -1293,8 +1293,8 @@ export default {
       cast_duration_units: "min",
 
       aim_target: "creature",
-      aim_type: "touch",
-      parts: ["somatic"],
+      aim_type: "near",
+      parts: ["somatic","touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -1484,8 +1484,8 @@ export default {
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "touch",
-      parts: ["somatic"],
+      aim_type: "near",
+      parts: ["somatic","touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1521,8 +1521,8 @@ export default {
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "touch",
-      parts: ["somatic"],
+      aim_type: "near",
+      parts: ["somatic","touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1558,8 +1558,8 @@ export default {
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "touch",
-      parts: ["somatic"],
+      aim_type: "near",
+      parts: ["somatic","touch"],
       spell_time: "instant",
       spell_duration: null,
       spell_duration_units: null,

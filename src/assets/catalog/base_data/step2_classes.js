@@ -257,7 +257,13 @@ export default {
               level: 6,
               type: "resistance",
               keyword: "immunity",
-              details: "charmed_or_frightened_while_raging",
+              details: "charmed_while_raging",
+            },
+            {
+              level: 6,
+              type: "resistance",
+              keyword: "immunity",
+              details: "frightened_while_raging",
             },
           ]
 
@@ -505,7 +511,7 @@ export default {
     details: "rogue_details",
 
     saving: ["dexterity", "intelligence"],
-    spell_attribute: "intelligence", // уточнить
+    spell_attribute: "intelligence",
 
     hp_dice: 8,
     hp_bonus: [8,5],
