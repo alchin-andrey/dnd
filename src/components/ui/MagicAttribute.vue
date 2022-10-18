@@ -1,8 +1,16 @@
 <template>
     <div class="column jbm-300">
         <div class="column_value" :class="{ passive: numb === 0 }">
-            <div class="wrapp_atrib">{{ t_Title }} <emoji v-if="upd_Emoji" :data="emojiIndex" :emoji="upd_Emoji" :set="set_emoji" :size="14"></emoji>
-      {{ cut_Emoji }}</div>
+            <div class="wrapp_atrib">
+                {{ t_Title }}
+                <emoji
+                    v-if="upd_Emoji"
+                    :data="emojiIndex"
+                    :emoji="upd_Emoji"
+                    :set="set_emoji"
+                    :size="15"
+                />{{ cut_Emoji }}
+            </div>
             <div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
             <div v-else class="numb" :class="{ passive: numb === 0 }">
                 {{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
@@ -34,7 +42,7 @@ export default {
         return {
             emojiIndex: emojiIndex,
             unicodeEmojiRegex: unicodeEmojiRegex,
-            set_emoji: 'facebook',  // apple  twitter  google  facebook  
+            set_emoji: "google", // apple  twitter  google  facebook
         };
     },
     props: {
@@ -74,7 +82,7 @@ export default {
 
     computed: {
         t_Title() {
-            console.log(this.wrapEmoji);
+            // console.log(this.wrapEmoji);
             if (this.numb === 0) {
                 return `/ ${this.t(this.title)}`;
             } else {
@@ -116,8 +124,8 @@ export default {
             let str = this.t_Addition;
             let reg = /(\p{Emoji_Presentation}|\p{Extended_Pictographic})/gu;
             if (this.t_Addition) {
-                let cut = str.replace(reg, "");
-                return cut;
+                let cut_str = str.replace(reg, "");
+                return cut_str;
             } else {
                 null;
             }
@@ -125,9 +133,11 @@ export default {
 
         upd_Emoji() {
             let text = this.t_Addition;
-            for (const match of text.matchAll(unicodeEmojiRegex)) {
-                const emoji = match[0];
-                return emoji;
+            if (text) {
+                for (const match of text.matchAll(unicodeEmojiRegex)) {
+                    const emoji = match[0];
+                    return emoji;
+                }
             }
         },
 
@@ -141,7 +151,7 @@ export default {
                         if (!emoji) {
                             return match;
                         }
-                  
+
                         return emoji.native;
                         // return `:${emoji.short_names[0]}:`;
                     }
@@ -152,8 +162,7 @@ export default {
         },
     },
 
-    methods: {
-    },
+    methods: {},
 };
 </script>
 
@@ -163,10 +172,12 @@ export default {
     display: flex;
     /* align-items: center; */
     justify-content: center;
+    align-items: center;
+    white-space: pre;
 }
 
 .emoji-mart-emoji {
-    padding: 2px 6px 0 6px;
+    padding: 0;
     line-height: 0;
 }
 
@@ -175,6 +186,7 @@ export default {
     display: flex;
     min-height: 18px;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .column_value {
