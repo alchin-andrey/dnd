@@ -142,11 +142,15 @@
 						<!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
 					</div>
 					<!-- </div> -->
-					<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>  -->
-					<!-- <div class="jbm-300">{{`компьтед: ${foo_com}`}}</div> -->
-					<!-- <button @click="plus()" type=""> -->
-					<!-- Увеличить входящий параметр на +1 -->
-					<!-- </button> -->
+
+
+					<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div> 
+					<div class="jbm-300">{{`компьтед: ${this[foo_com]}`}}</div> -->
+					<!-- <button @click="plus()" type="">
+					Увеличить входящий параметр на +1
+					</button> -->
+
+
 				</div>
 			</div>
 			<my-button
@@ -572,7 +576,7 @@ export default {
 			race_page: race_page,
 
 			foo_met: "getFoo",
-			// foo_com: Foo_PS,
+			foo_com: "Foo_PS",
 			numb_foo: 1,
 		};
 	},
@@ -592,6 +596,11 @@ export default {
 	},
 
 	computed: {
+
+    Foo_PS() {
+			return this.numb_foo * 2;
+		},
+
     Mastery() {
       return Math.ceil(this.MY.level / 4);
     },
@@ -696,10 +705,6 @@ export default {
 			} else {
 				return this.t("oldest");
 			}
-		},
-
-		Foo_PS() {
-			return this.numb_foo * 2;
 		},
 
 		hp_bonus() {
