@@ -1,7 +1,7 @@
 <template>
-    <div v-if="Show" class="flex_spell" @click="showDialog()">
+    <div v-if="Show" class="flex_spell" :class="{ hover: !passive }" @click="showDialog()">
         <div class="side_stripe"
-				:class="{ active: dialogVisible }"
+				:class="{ active: dialogVisible && !passive }"
 				></div>
         <div class="int-400 flex_col">
             <!--			<div class="title" v-html="t_Html"></div>-->
@@ -9,7 +9,7 @@
                 <div class="flex_title">
                     <div class="title_spell h_18">{{ t_Title }}</div>
                     <img
-                        v-if="icon"
+                        v-if="!passive"
                         class="icon_spell"
                         src="@/assets/img/icon/arrow_right_small.svg"
                         alt="arrow"
@@ -135,7 +135,11 @@ export default {
             type: Array,
             default: null,
         },
-        icon: {
+        // icon: {
+        //     type: Boolean,
+        //     default: false,
+        // },
+				passive: {
             type: Boolean,
             default: false,
         },
@@ -307,6 +311,9 @@ export default {
     },
     methods: {
         showDialog() {
+					if(this.passive) {
+						return null
+					}
             this.dialogVisible = true;
             this.manna_numb = this.Index;
         },
@@ -377,7 +384,7 @@ export default {
     flex-grow: 0;
 }
 
-.flex_spell:hover .side_stripe{
+.hover:hover .side_stripe{
     background: #ffffff;
 }
 

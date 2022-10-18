@@ -82,6 +82,7 @@
 					:key="item"
 					:lvl="item.level"
 					:spell="item.spell"
+          passive
 				>
 				</my-spell-text>
 			</my-wrapper>
