@@ -76,7 +76,7 @@
 				feet
 			/>
 		</my-wrapper>
-		<my-wrapper v-if="Spell_Index.saving_need || Spell_Index.impact_type">
+		<my-wrapper v-if="Spell_Index.saving_need">
 			<magic-attribute
 				v-if="Spell_Index.saving_need"
 				title="saving_target"
@@ -152,7 +152,15 @@ export default {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Cast_Value() {
-			let string = this.t(this.Spell_Index.cast_time);
+			let string = null;
+      if(this.Spell_Index.cast_time === "ritual") {
+        let value = this.t(this.Spell_Index.cast_time);
+        let numb = this.Spell_Index.cast_duration;
+        let numb_units = this.t(this.Spell_Index.cast_duration_units);
+        string = value + ' ' + numb + ' ' + numb_units;
+      } else {
+        string = this.t(this.Spell_Index.cast_time);
+      }
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Target() {
@@ -187,7 +195,12 @@ export default {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Time_Value() {
-			let value_1 = this.t(this.Spell_Index.spell_time);
+			let value_1 = null;
+      if (this.Spell_Index.spell_time === "concentration") {
+        value_1 = this.t(this.Spell_Index.spell_time) + ' ' + this.t('up_to');
+      } else {
+        value_1 = this.t(this.Spell_Index.spell_time);
+      }
 			let value_2 = this.Spell_Index.spell_duration;
 			let value_3 = this.t(this.Spell_Index.spell_duration_units);
 			let string = null;

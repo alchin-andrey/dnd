@@ -204,7 +204,7 @@ export default {
       spell_duration: null,
       spell_duration_units: null,
 
-      aim_need: false,
+      aim_need: true,
       aim_range: 60,
       aim_aoe: "point",
       aim_aoe_size: 5,
@@ -246,6 +246,7 @@ export default {
     },
     {
       //6
+      name: "spell_hellish_rebuke",
       impact_size_foo: null,
       impact_size_num: 7,
       impact_size_dice: 10,
