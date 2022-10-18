@@ -23,12 +23,11 @@ export default {
     //Общее        
     
             name:"имя",
-
             race:"раса",
             ethnos:"етнос",
             class:"класс",
             subclass:"специализация",
-            past:"предистория",
+            past:"предистория",           
             level:"рівень",
                 level_unit:"й",
                 lvl:"LVL",
@@ -525,6 +524,7 @@ export default {
                     tool_blacksmith: tools.blacksmith,
                     tool_brewer: tools.brewer,
                     tool_mason: tools.mason,
+                    tool_thief: tools.thief,
 
                 languages:"мови",
                 languages_human:"языки этносов людей",
@@ -644,6 +644,7 @@ export default {
 
                 //Ключевые слова
                 advantage:"преимущество",
+                no_disadvantage: "нет помехи",
                 rethrow:"переброс",
                 resistance:"сопротивление",
                 immunity:"иммунитет",
@@ -713,8 +714,30 @@ export default {
                 rage_persistence_details: "— когда во время Ярости HP опускается до 0, оно становится = 1 при успешном Испытании Силы со сложностью 10 (+5 за каждый следующий раз до долгого отдыха)",
                 saving_strength: "испытание Силы",
                 min_base_strengt: "минимум равно базовой Силе",
-
-
+                rage_sustainability: "Ярость не прекращается досрочно",
+                only_if_uncontious: "кроме потери сознания",
+                near_friends_attack_in_rage: "на рукопашные атаки союзников рядом, при Ярости",
+                any_damage_but_psy: "любому урону кроме 🧠 Психического, при Ярости",
+                on_dodging_in_rage: "на уворот от провоцированных атак, при Ярости",
+                rush: "рывок",
+                as_bonus_action: "бонусным действием, при Ярости",
+                long_jumps: "прыжки +10ф в длину и +3ф в высоту",
+                in_rage: "при Ярости",
+                fast_tempo: "быстрый темп",
+                while_following_prints: "при движении по следу",
+                normal_tempo: "нормальный темп",
+                in_stealth: "при движении в скрытности",
+                double_weight: "2× Грузоподьемность",
+                weight_capacity: "включая максимальный вес нагрузки и подъёма",
+                str_check_on_move: "на Испытания Силы при передвижении / разрушении предметов",
+                to_see: "зоркость",
+                one_mile_100f_details: "до 1 мили, а на 100ф до мельчайших деталей",
+                on_perception_in_lowlight: "на Внимательность при тусклом свете",
+                double_speed: "2× Скорость",
+                travel_elk: "путешествия для вас и 10 ваших спутников в пределах 60ф",
+                on_dodging_in_rage_bear: "на уворот союзников рядом от атак врагов, видящих вас, при Ярости",
+                flight: "полет",
+                as_walking_speed_in_rage: "по скорости равный скорости передвижения, при Ярости",
 
     //Умения - активные умения без урона
 
@@ -1059,7 +1082,7 @@ export default {
             somatic:"жест",
             touch:"касание",
             focus: "фокус",
-            material_10gold: "материалы на сумму в 10 зм",
+            material_10gold: "материалы на сумму в 10 🟡",
             hit: "попадание",
             none: "не требуется",
 
@@ -1160,6 +1183,41 @@ export default {
             spell_reckless_attack_details: spells.reckless_attack_details,
             spell_reckless_attack_expanded: spells.reckless_attack_expanded,
 
+            spell_frenzy: spells.frenzy,
+            spell_frenzy_details: spells.frenzy_details,
+            spell_frenzy_expanded: spells.frenzy_expanded,
+
+            spell_intimidating_presence: spells.intimidating_presence,
+            spell_intimidating_presence_details: spells.intimidating_presence_details,
+            spell_intimidating_presence_expanded: spells.intimidating_presence_expanded,
+
+            spell_retaliation: spells.retaliation,
+            spell_retaliation_details: spells.retaliation_details,
+            spell_retaliation_expanded: spells.retaliation_expanded,
+
+            spell_beast_sense: spells.beast_sense,
+            spell_beast_sense_details: spells.beast_sense_details,
+            spell_beast_sense_expanded: spells.beast_sense_expanded,
+
+            spell_speak_with_animals: spells.speak_with_animals,
+            spell_speak_with_animals_details: spells.speak_with_animals_details,
+            spell_speak_with_animals_expanded: spells.speak_with_animals_expanded,
+
+            spell_commune_with_nature: spells.commune_with_nature,
+            spell_commune_with_nature_details: spells.commune_with_nature_details,
+            spell_commune_with_nature_expanded: spells.commune_with_nature_expanded,
+
+            spell_wolf_knock: spells.wolf_knock,
+            spell_wolf_knock_details: spells.wolf_knock_details,
+
+            spell_elk_knock: spells.elk_knock,
+            spell_elk_knock_details: spells.elk_knock_details,
+            spell_elk_knock_expanded: spells.elk_knock_expanded,
+
+            spell_tiger_strike: spells.tiger_strike,
+            spell_tiger_strike_details: spells.tiger_strike_details,
+            spell_tiger_strike_expanded: spells.tiger_strike_expanded,
+
             //14 Oct
 
             explorers_pack: "набор путещественника",
@@ -1191,5 +1249,21 @@ export default {
 
             barbarian: classes.barbarian,
             barbarian_details: classes.barbarian_details,
+
+            totem_warrior: classes.totem_warrior,
+            totem_warrior_details: classes.totem_warrior_details,
+
+            totem_spirit: classes.totem_spirit,
+            totem_spirit_details: classes.totem_spirit_details,
+            totem_harmony: classes.totem_harmony,
+
+            totem: "тотем",
+            totem_details: "амулет или похожее украшение, содержащий мех или кожу, перья, когти, зубы или кости тотемного животного.",
+
+            wolf: "волк",
+            bear: "медведь",
+            eagle: "орел",
+            elk: "лось",
+            tiger: "тигр",
 
 }

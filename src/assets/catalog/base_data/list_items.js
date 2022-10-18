@@ -56,4 +56,13 @@ export default {
     weight: 5,
   },
 
+  totem: {
+    name: "totem",
+    detais: "totem_details",
+    cost: 100,
+    weight: 0.5,
+  },
+
+  
+
 };

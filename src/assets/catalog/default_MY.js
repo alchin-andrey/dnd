@@ -4,11 +4,11 @@ export default {
     
     //Key selections
     name:null,
-    race: "halfling",
-    ethnos: "stout",
+    race: "gnome",
+    ethnos: "rock",
     class:null,
     subclass:null,
-    past:null,
+    backstory:null,
     level: 1,
 
     //Character
@@ -165,11 +165,12 @@ export default {
     weapons:null,
 
     wallet:{
-        tripple_platina:0,
-        platina:0,
         gold:0,
         silver:0,
         copper:0,
-    }
+    },
+
+    //Conditions
+    if_no_heavy_armor: true,
 
 };

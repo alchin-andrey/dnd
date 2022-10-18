@@ -8,4 +8,8 @@ export default {
   mason: {
     name: "tool_mason",
   },
+
+  thief: {
+    name: "tool_thief",
+  }
 };
