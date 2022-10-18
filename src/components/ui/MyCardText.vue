@@ -1,11 +1,11 @@
 <template>
 <div class="int-400">
   <div class="title" v-html="t_Html"></div>
-            <div class="title"
+            <h3 class="title"
             :class="{
               only: !text,
     }"
-    >{{ t_Title }}</div>
+    >{{ t_Title }}</h3>
             <p class="text">
               {{ t_Text }}
               <br v-if="rare" />
@@ -64,7 +64,7 @@ export default {
   line-height: 15px;
   letter-spacing: 0.02em;
   color: #ffffff;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .only {

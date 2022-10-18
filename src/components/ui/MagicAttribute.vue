@@ -1,7 +1,7 @@
 <template>
     <div class="column jbm-300">
         <div class="column_value" :class="{ passive: numb === 0 }">
-            <div class="wrapp_atrib">{{ t_Title }} <emoji v-if="upd_Emoji" :data="emojiIndex" :emoji="upd_Emoji" set="apple" :size="14"></emoji>
+            <div class="wrapp_atrib">{{ t_Title }} <emoji v-if="upd_Emoji" :data="emojiIndex" :emoji="upd_Emoji" :set="set_emoji" :size="14"></emoji>
       {{ cut_Emoji }}</div>
             <div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
             <div v-else class="numb" :class="{ passive: numb === 0 }">
@@ -34,6 +34,7 @@ export default {
         return {
             emojiIndex: emojiIndex,
             unicodeEmojiRegex: unicodeEmojiRegex,
+            set_emoji: 'facebook',  // apple  twitter  google  facebook  
         };
     },
     props: {
