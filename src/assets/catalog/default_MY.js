@@ -45,6 +45,7 @@ export default {
     HP_max:null,
     HP_dice:null,
 
+    mastery: null,
     proficiency:null,
     initiative:null,
     armor_class:null,

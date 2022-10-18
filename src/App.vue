@@ -309,7 +309,7 @@
 				:class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
 				:active_boll_link="skills_Select.includes(name)"
 			>
-				<my-attribute :title="name" plus :numb="mastery" :icon="val.mod">
+				<my-attribute :title="name" plus :numb="Skill_Mastery" :icon="val.mod">
 				</my-attribute>
 				<my-card-text title="" :text="`${name}_details`"></my-card-text>
 			</my-selection-card>
@@ -426,7 +426,7 @@
 				:key="name"
 				:title="name"
 				plus
-				:numb="mastery"
+				:numb="Skill_Mastery"
 				:icon="MY.skills[name].mod"
 			></my-attribute>
 		</my-wrapper>
@@ -583,6 +583,7 @@ export default {
 			this.default_MY.race.settings.ethnos
 		)[0];
 		this.MY = this.default_MY;
+    this.MY.mastery = this.Mastery;
 		// this.MY.height = this.Get_Hight;
 		this.getExtra(this.Stats_Pass, "stats");
 		this.getExtra(this.Skills_Pass, "skills");
@@ -591,6 +592,13 @@ export default {
 	},
 
 	computed: {
+    Mastery() {
+      return Math.ceil(this.MY.level / 4);
+    },
+
+    Skill_Mastery() {
+			return 1 + this.MY.mastery;
+		},
 		// mastery() {
 		//   if(this.Race_Set_Obj.custom_skills[1] === 'mastery') {
 		//     return 1 + Math.ceil(this.MY.level / 4);
@@ -688,10 +696,6 @@ export default {
 			} else {
 				return this.t("oldest");
 			}
-		},
-
-		mastery() {
-			return 1 + Math.ceil(this.MY.level / 4);
 		},
 
 		Foo_PS() {
@@ -888,6 +892,10 @@ export default {
 			this.race_page.shown_humman_lang = false;
 		},
 		"MY.ethnos": "getFunction_2",
+    "MY.level": "MY.mastery = Mastery",
+    'MY.level': function () {
+      this.MY.mastery = this.Mastery
+    },
 		// "race_page.whtch_home": "getHome",
 	},
 

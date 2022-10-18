@@ -51,7 +51,7 @@
 		<magic-attribute
 			v-if="Spell_Index.aim_need"
 			title="aim_bonus"
-			:numb="numb_type"
+			:numb="this.$root.MY.mastery"
 			plus
 		/>
 		<my-wrapper v-if="Spell_Index.impact_type || Spell_Index.aim_range || Spell_Index.aim_aoe">
@@ -213,29 +213,39 @@ export default {
 			}
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
-		Saving_Numb() {
-			let attribute = this.Spell_Index.saving_attribute
-			let attribute_numb = this.getSummNumb('stats', attribute)
-			return 8 + attribute_numb;
+		// Saving_Numb() {
+		// 	let attribute = this.Spell_Index.saving_attribute
+		// 	let attribute_numb = this.getSummNumb('stats', attribute)
+		// 	return 8 + attribute_numb;
+		// },
+
+    Saving_Numb() {
+      const KOF = 8;
+      let attribute = this.Spell_Index.saving_attribute;
+			let mastery = this.$root.MY.mastery;
+			let stats_mod = this.$root.MY.stats[attribute].mod;
+			return KOF + mastery + stats_mod;
 		},
+
+
 		t_Expanded() {
 			return this.t(this.Spell_Index.expanded);
 		},
 		// t_Html() {
 		// 	return this.t(this.title_html);
 		// },
-		stats_Activ_Obj() {
-			let i = this.$root.MY.race.stats;
-			let j = this.$root.MY.ethnos.stats;
-			let arr = Object.assign({}, i, j);
-			return arr;
-		},
-		stats_Select() {
-			return this.$root.race_page.extra.stats;
-		},
-		Race_Set_Obj() {
-			return this.$root.MY.race.settings;
-		},
+		// stats_Activ_Obj() {
+		// 	let i = this.$root.MY.race.stats;
+		// 	let j = this.$root.MY.ethnos.stats;
+		// 	let arr = Object.assign({}, i, j);
+		// 	return arr;
+		// },
+		// stats_Select() {
+		// 	return this.$root.race_page.extra.stats;
+		// },
+		// Race_Set_Obj() {
+		// 	return this.$root.MY.race.settings;
+		// },
 
 	},
 	methods: {
@@ -250,24 +260,24 @@ export default {
 				this.manna_numb = numb - 1;
 			}
 		},
-		getSummNumb(name, item) {
-			let i = 0;
-			let activ_val = this[`${name}_Activ_Obj`][item];
-			if (activ_val) {
-				i = activ_val;
-			} else if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
-				let extr_bool = this[`${name}_Select`].includes(item);
-				let increment = this.Race_Set_Obj[`custom_${name}`][1];
-				if (extr_bool) {
-					i = increment;
-				} else {
-					i = 0;
-				}
-			} else {
-				i = 0;
-			}
-			return i;
-		},
+	// 	getSummNumb(name, item) {
+	// 		let i = 0;
+	// 		let activ_val = this[`${name}_Activ_Obj`][item];
+	// 		if (activ_val) {
+	// 			i = activ_val;
+	// 		} else if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
+	// 			let extr_bool = this[`${name}_Select`].includes(item);
+	// 			let increment = this.Race_Set_Obj[`custom_${name}`][1];
+	// 			if (extr_bool) {
+	// 				i = increment;
+	// 			} else {
+	// 				i = 0;
+	// 			}
+	// 		} else {
+	// 			i = 0;
+	// 		}
+	// 		return i;
+	// 	},
 	},
 };
 </script>
