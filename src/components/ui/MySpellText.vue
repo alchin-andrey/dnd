@@ -1,6 +1,8 @@
 <template>
-    <div v-if="Show" class="flex_spell">
-        <div class="side_stripe"></div>
+    <div v-if="Show" class="flex_spell" @click="showDialog()">
+        <div class="side_stripe"
+				:class="{ active: dialogVisible }"
+				></div>
         <div class="int-400 flex_col">
             <!--			<div class="title" v-html="t_Html"></div>-->
             <div>
@@ -8,7 +10,6 @@
                     <div class="title_spell h_18">{{ t_Title }}</div>
                     <img
                         v-if="icon"
-                        @click="showDialog()"
                         class="icon_spell"
                         src="@/assets/img/icon/arrow_right_small.svg"
                         alt="arrow"
@@ -344,6 +345,7 @@ export default {
     gap: 0 18px;
     height: 100%;
     width: 100%;
+		cursor: pointer;
 }
 
 .flex_col {
@@ -361,9 +363,9 @@ export default {
     margin-bottom: 4px;
 }
 
-.icon_spell {
+/* .icon_spell {
     cursor: pointer;
-}
+} */
 
 .side_stripe {
     min-width: 4px;
@@ -373,6 +375,14 @@ export default {
     order: 0;
     align-self: stretch;
     flex-grow: 0;
+}
+
+.flex_spell:hover .side_stripe{
+    background: #ffffff;
+}
+
+.active {
+	background: #ffffff;
 }
 
 .manna_flex {
