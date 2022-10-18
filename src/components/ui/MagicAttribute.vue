@@ -8,7 +8,7 @@
                     :data="emojiIndex"
                     :emoji="upd_Emoji"
                     :set="set_emoji"
-                    :size="15"
+                    :size="16"
                 />{{ cut_Emoji }}
             </div>
             <div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
@@ -42,7 +42,7 @@ export default {
         return {
             emojiIndex: emojiIndex,
             unicodeEmojiRegex: unicodeEmojiRegex,
-            set_emoji: "google", // apple  twitter  google  facebook
+            set_emoji: "apple", // apple  twitter  google  facebook
         };
     },
     props: {

@@ -57,6 +57,12 @@ export default {
 
           spells: [
             // ДЛЯ ОТЛАДКИ ------
+
+            {
+              level: 1,
+              spell: spells.tiger_strike,
+            },
+
             {
               level: 1,
               spell: spells.hellish_rebuke,
