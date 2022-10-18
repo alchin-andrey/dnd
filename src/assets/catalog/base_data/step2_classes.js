@@ -4,7 +4,7 @@ import weaponry from "./kinds_weapons.js";
 import tool from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
-import MY from "@/assets/catalog/MY.js"
+import MY from "@/assets/catalog/MY.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
@@ -38,7 +38,7 @@ export default {
         // when without heavy armor
         condition: "if_no_heavy_armor",
         key: "armor_bonus",
-        value: "MY.stats.constitution.mod",
+        value: "this.$root.MY.stats.constitution.mod",
       },
       {
         level: 2,
