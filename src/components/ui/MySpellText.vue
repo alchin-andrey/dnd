@@ -152,7 +152,15 @@ export default {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Cast_Value() {
-			let string = this.t(this.Spell_Index.cast_time);
+			let string = null;
+      if(this.Spell_Index.cast_time === "ritual") {
+        let value = this.t(this.Spell_Index.cast_time);
+        let numb = this.Spell_Index.cast_duration;
+        let numb_units = this.t(this.Spell_Index.cast_duration_units);
+        string = value + ' ' + numb + ' ' + numb_units;
+      } else {
+        string = this.t(this.Spell_Index.cast_time);
+      }
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Target() {
