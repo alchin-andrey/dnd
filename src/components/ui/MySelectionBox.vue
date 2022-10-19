@@ -68,6 +68,7 @@ export default {
   opacity: 0;
   position: absolute;
   overflow-y: scroll;
+  scrollbar-width: none;
 
   -webkit-transition: 0.4s ease-in-out;
   -moz-transition: 0.4s ease-in-out;
@@ -109,6 +110,7 @@ export default {
   flex-direction: column;
   gap: 8px;
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .selection_box::-webkit-scrollbar {

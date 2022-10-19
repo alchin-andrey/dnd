@@ -1348,6 +1348,7 @@ a {
 	justify-content: space-between;
 	overflow-y: scroll;
 	max-height: 100%;
+  scrollbar-width: none;
 }
 
 .main_menu_wrap::-webkit-scrollbar {
@@ -1379,6 +1380,7 @@ a {
 	/*flex: 1 1 auto;*/
 	/*overflow-y: scroll;*/
 	/*max-height: 100%;*/
+  scrollbar-width: none;
 }
 
 .main_chapter_menu::-webkit-scrollbar {
@@ -1529,6 +1531,7 @@ a {
 	max-width: 426px;
 	padding: 32px;
 	overflow-y: scroll;
+  scrollbar-width: none;
 	background-color: #0e1518;
 	z-index: 2;
 	transition: all 0.4s ease-in-out;
