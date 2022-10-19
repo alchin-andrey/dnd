@@ -352,7 +352,7 @@ export default {
     gap: 0 18px;
     height: 100%;
     width: 100%;
-		cursor: pointer;
+		cursor: url('@/assets/img/icon/cursor_magic.png'), pointer;
 }
 
 .flex_col {
