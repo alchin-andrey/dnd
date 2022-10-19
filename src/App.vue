@@ -153,15 +153,17 @@
 
 				</div>
 			</div>
+      <transition name="btm-fade" mode="out-in">
 			<my-button
 				v-if="race_page.shown_home"
 				numb="02"
 				title="class"
 			></my-button>
 			<my-button-back
-				v-if="!race_page.shown_home"
+				v-else
 				@click="showHome()"
 			></my-button-back>
+    </transition>
 		</div>
 		<!--		</div>-->
 	</div>
@@ -1422,6 +1424,36 @@ a {
 .selection_card_active {
 	border: 2px solid #ffffff;
 	padding: 14px !important;
+}
+
+/* .mode-fade-enter-active, 
+.mode-fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.mode-fade-enter-from, 
+.mode-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+  
+} */
+
+.btm-fade-enter-active {
+  transition: all .2s ease-in-out;
+}
+
+.btm-fade-leave-active {
+  transition: all .2s ease-in-out;
+}
+
+/* .mode-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+} */
+
+.btm-fade-enter-from,
+.btm-fade-leave-to {
+  transform: translateX(-300px);
+  opacity: 0;
 }
 
 /* ---------------------characters----------------------*/
