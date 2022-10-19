@@ -359,7 +359,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 26px 0;
+    gap: 12px 0;
     /*flex: 1 1 auto;*/
 }
 
