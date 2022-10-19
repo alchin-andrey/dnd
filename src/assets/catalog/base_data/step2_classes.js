@@ -4,12 +4,15 @@ import weaponry from "./kinds_weapons.js";
 import tool from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
+import armor from "./list_armor.js";
 import MY from "@/assets/catalog/MY.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
 const barbarian_rage =       [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99];
 const barbarian_rage_bonus = [0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4];
+
+const rogue_sneaky_attack =[0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
 
 export default {
   barbarian: {
@@ -521,9 +524,85 @@ export default {
       armor: [armory.light],
       weapons: [weaponry.simple, weaponry.hand_arbalets, weaponry.long_swords, weaponry.rapires, weaponry.short_swords],
       tools: [tool.thief],
+      languages: [lang.thieves],
     },
 
+    equipment: [
+      {
+        level: 1,
+        armor: [
+          [armor.leather,1],
+        ],
+        weapon: [
+          [weapons.dagger, 2],
+        ],
+        inventory: [
+          [packs.thieves,1],
+        ],
+      },
+    ],
+
+    fines: [
+      {
+        level: 7,
+        type: "plus",
+        keyword: "fine_dodge",
+        details: "from_aoe_effects",
+      },
+      {
+        level: 11,
+        type: "advantage",
+        keyword: "min_10",
+        details: "on_dice_mastery_skill",
+      },
+      {
+        level: 14,
+        type: "plus",
+        keyword: "always_hear",
+        details: "invisible_creatures_10f",
+      },
+      {
+        level: 18,
+        type: "plus",
+        keyword: "no_advantage",
+        details: "on_attacks_on_you",
+      },
+      {
+        level: 20,
+        type: "advantage",
+        keyword: "min_20",
+        details: "on_dice_d20",
+      },
+    ],
+
+    stats: [
+      {
+        level: 15,
+        //wisdom.save: "mastery", - подключить MY?
+      },
+    ],
+
+    spells: [
+      {
+        level:1,
+        spell: spells.sneaky_attack,
+      },
+      {
+        level:2,
+        spell: spells.cunning_action,
+      },
+      {
+        level:3,
+        spell: spells.steady_aim,
+      },
+      {
+        level:5,
+        spell: spells.uncanny_dodge,
+      },
+    ],
+
     settings: {
+
       skills: [
         {
           level: 1,
@@ -543,9 +622,277 @@ export default {
             "stealth",
             "persuasion"
           ],
+        },
+      ],
+
+      equipment: [
+        {
+          level: 3,
+          weapon: [
+            [weapons.rapier, 1],
+            [weapons.shortsword, 1],
+          ],
+        },
+        {
+          level: 3,
+          inventory: [
+            [packs.burglars,1],
+            [packs.dungeoneers,1],
+            [packs.explorers,1],
+          ],
         }
       ],
 
+      custom: [
+        {
+          level: 1,
+          select: 2,
+          name: "skills",
+          list: [
+            {
+              name: "",
+              fines: [
+                {
+                  type: "plus",
+                  keyword: "proficiency_bonus",
+                  details: "on_thieves_tools",
+                },
+              ]
+            },
+            {
+              name: "",
+              skills: [
+                {
+                  acrobatics: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  investigation: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  athletics: "mastery",
+                }
+              ]
+            }, 
+            {
+              name: "",
+              skills: [
+                {
+                  perception: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  performance: "mastery",
+                }
+              ]
+            },   
+            {
+              name: "",
+              skills: [
+                {
+                  intimidation: "mastery",
+                }
+              ]
+            }, 
+            {
+              name: "",
+              skills: [
+                {
+                  acrobatics: "sleight_of_hand",
+                }
+              ]
+            },            
+            {
+              name: "",
+              skills: [
+                {
+                  deception: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  insight: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  stealth: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  persuasion: "mastery",
+                }
+              ]
+            },  
+          ]
+        },
+        {
+          level: 3,
+          name: "equipment",
+          list: [
+            {
+              name: "ranged_fight",
+              weapon: [
+                [weapons.shortbow, 1],
+              ],
+              inventory: [
+                [items.quiver,1],
+                [items.arrow,20]
+              ],
+            },
+            {
+              name: "melee_fight",
+              weapon: [
+                [weapons.shortsword, 1],
+              ],
+            },            
+          ]
+        },
+        {
+          level: 6,
+          select: 2,
+          name: "skills",
+          list: [
+            {
+              name: "",
+              fines: [
+                {
+                  type: "plus",
+                  keyword: "proficiency_bonus",
+                  details: "on_thieves_tools",
+                },
+              ]
+            },
+            {
+              name: "",
+              skills: [
+                {
+                  acrobatics: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  investigation: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  athletics: "mastery",
+                }
+              ]
+            }, 
+            {
+              name: "",
+              skills: [
+                {
+                  perception: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  performance: "mastery",
+                }
+              ]
+            },   
+            {
+              name: "",
+              skills: [
+                {
+                  intimidation: "mastery",
+                }
+              ]
+            }, 
+            {
+              name: "",
+              skills: [
+                {
+                  acrobatics: "sleight_of_hand",
+                }
+              ]
+            },            
+            {
+              name: "",
+              skills: [
+                {
+                  deception: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  insight: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  stealth: "mastery",
+                }
+              ]
+            },  
+            {
+              name: "",
+              skills: [
+                {
+                  persuasion: "mastery",
+                }
+              ]
+            },  
+          ]
+        },
+      ],
+
+      subclasses: {
+        thief: {
+          name: "thief",
+          details: "thief_details",
+        },
+        assasin: {
+          name: "assasin",
+          details: "assasin_details",
+        }
+      },
+
+      feats: {
+        // Cделать единым для всех
+        // level 4, 8, 12, 16 и 19
+      },
 
     },
   }
