@@ -4,6 +4,7 @@
     :class="{
       active_card: !passive && !basic,
       colors_card: colors_card,
+      no_blur: no_blur,
       basic: basic,
       selection_card_active: get_Active,
       link: link,
@@ -77,6 +78,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    no_blur: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     get_Active() {
@@ -114,6 +119,10 @@ export default {
   flex-direction: column;
   gap: 26px;
 
+}
+
+.no_blur {
+  backdrop-filter: none;
 }
 
 .colors_card {

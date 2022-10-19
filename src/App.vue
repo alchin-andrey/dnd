@@ -495,7 +495,6 @@
 				:key="item"
 				:lvl="item.level"
 				:spell="item.spell"
-				icon
 			>
 			</my-spell-text>
 			<my-spell-text
@@ -503,7 +502,6 @@
 				:key="item"
 				:lvl="item.level"
 				:spell="item.spell"
-				icon
 			>
 			</my-spell-text>
 		</my-wrapper>

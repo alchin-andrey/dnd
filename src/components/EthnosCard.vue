@@ -2,7 +2,8 @@
 	<div class="ethnos_cards_menu">
 		<my-selection-card
 			v-for="ethnos in $root.All_Ethnos_Obj"
-			:key="ethnos"
+			:key="ethnos" 
+      no_blur
 			@click="ethnosName(ethnos)"
 			:class="{ selection_card_active: $root.MY.ethnos.name === ethnos.name }"
 		>
@@ -82,7 +83,6 @@
 					:key="item"
 					:lvl="item.level"
 					:spell="item.spell"
-          passive
 				>
 				</my-spell-text>
 			</my-wrapper>
@@ -168,6 +168,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+  /* z-index: 100; */
 }
 
 .ethnos_char_back {
