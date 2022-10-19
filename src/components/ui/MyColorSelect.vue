@@ -1,5 +1,5 @@
 <template>
-  <my-selection-card passive colors_card>
+  <my-selection-card class="reletiv" passive colors_card>
     <div class="colors_box jbm-300" @mouseleave="hoverStop()">
       <div v-for="(val, i) in color" :key="i" class="colors_row">
         <my-color-block
@@ -29,6 +29,11 @@
           : getRaceColor(Char_Color, body_part)
       "
     ></my-card-text-color>
+    <transition name="fade">
+    <div class="reset_color" :class="{ reset_color_custom: !Color_Reset }">
+    <img @click="resetColor(body_part)" src="@/assets/img/icon/reset.svg" alt="reset"/>
+    </div>
+  </transition>
   </my-selection-card>
 </template>
 
@@ -45,6 +50,7 @@ export default {
   data() {
     return {
       hower_link: `${this.body_part}_hower`,
+      reset_color: false,
     };
   },
   computed: {
@@ -52,6 +58,10 @@ export default {
 
     Hower() {
       return this.$root.race_page[this.hower_link];
+    },
+
+    Color_Reset() {
+      return this.$root.race_page.color_selected[this.body_part]
     },
 
     Char_Color() {
@@ -72,12 +82,12 @@ export default {
       this.$root.race_page[this.hower_link] = null;
     },
     hoverColor(i, j) {
-      console.log(this.color);
       this.$root.race_page[this.hower_link] = this.color[i][j];
     },
     choiceColor(value, i, j) {
       this.$root.race_page.color_selected[value] = this.color[i][j];
       this.$root.MY.color[value] = this.color[i][j];
+      // this.reset_color = true;
     },
     getEthnosColor(obj, value) {
       if (this.$root.MY.ethnos.name === "common") {
@@ -89,12 +99,21 @@ export default {
     getRaceColor(obj, value) {
       return this.$root.MY.race.settings.color[value].includes(obj);
     },
+    resetColor(value) {
+      this.$root.race_page.color_selected[value] = null;
+      this.$root.MY.color[value] = null;
+      // this.reset_color = false;
+    }
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.reletiv {
+  position: relative;
+}
 .colors_box {
   display: flex;
   flex-direction: column;
@@ -109,4 +128,23 @@ export default {
   height: 100%;
   gap: 2px;
 }
+
+.reset_color {
+  width: 20px;
+  height: 20px;
+  bottom: 32px;
+  right: 15px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+
+.reset_color_custom {
+  opacity: 0;
+  transform: rotate(-180deg)
+}
+
 </style>

@@ -21,9 +21,9 @@ export default {
     shown_home: true,
     home_arr: [false, false],
 
-    skin_hower: null,
-    hair_hower: null,
-    eyes_hower: null,
+    // skin_hower: null,
+    // hair_hower: null,
+    // eyes_hower: null,
 
     color_selected: {
         skin: null,
