@@ -1,4 +1,3 @@
-
 export default {
   spell_name: [
     // Мана {0-9} - группировать. Номер єлемента равно стоимость маньі
@@ -646,7 +645,7 @@ export default {
       // тип атаки ("near" | "touch" | "in_distance")
       // если in_distance - показать строку дальность
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
       // Компонентьі
       // "verbal" | "somatic" | "focus" | "[material]"
 
@@ -708,119 +707,125 @@ export default {
     },
   ],
 
-  toy: [{
-    name: "spell_toy",
-    details: "spell_toy_details",
-    expanded: "spell_toy_expanded",
+  toy: [
+    {
+      name: "spell_toy",
+      details: "spell_toy_details",
+      expanded: "spell_toy_expanded",
 
-    type: "ability",
+      type: "ability",
 
-    cast_time: "ritual",
-    cast_duration: 1,
-    cast_duration_units: "hour",
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
 
-    aim_target: "object",
-    aim_type: "near",
+      aim_target: "object",
+      aim_type: "near",
 
-    parts: ["material_10gold"],
+      parts: ["material_10gold"],
 
-    spell_time: null,
-    spell_duration: 24,
-    spell_duration_units: "hour",
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
 
-    aim_need: false,
+      aim_need: false,
 
-    aim_range: null,
-    aim_aoe: null,
-    aim_aoe_size: null,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
 
-    impact_type: null,
-    impact_damage_type: null,
+      impact_type: null,
+      impact_damage_type: null,
 
-    impact_size_foo: null,
-    impact_size_num: null,
-    impact_size_dice: null,
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
 
-    saving_need: false,
-    saving_attribute: null,
-    impact_size_saved: null,
-  },],
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 
-  lighter: [{
-    name: "spell_lighter",
-    details: "spell_lighter_details",
-    expanded: "spell_lighter_expanded",
+  lighter: [
+    {
+      name: "spell_lighter",
+      details: "spell_lighter_details",
+      expanded: "spell_lighter_expanded",
 
-    type: "ability",
+      type: "ability",
 
-    cast_time: "ritual",
-    cast_duration: 1,
-    cast_duration_units: "hour",
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
 
-    aim_target: "object",
-    aim_type: "near",
+      aim_target: "object",
+      aim_type: "near",
 
-    parts: ["material_10gold"],
+      parts: ["material_10gold"],
 
-    spell_time: null,
-    spell_duration: 24,
-    spell_duration_units: "hour",
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
 
-    aim_need: false,
+      aim_need: false,
 
-    aim_range: null,
-    aim_aoe: null,
-    aim_aoe_size: null,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
 
-    impact_type: null,
-    impact_damage_type: null,
+      impact_type: null,
+      impact_damage_type: null,
 
-    impact_size_foo: null,
-    impact_size_num: null,
-    impact_size_dice: null,
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
 
-    saving_need: false,
-    saving_attribute: null,
-    impact_size_saved: null,
-  },],
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 
-  music_box: [{
-    name: "spell_music_box",
-    details: "spell_music_box_details",
-    expanded: "spell_music_box_expanded",
+  music_box: [
+    {
+      name: "spell_music_box",
+      details: "spell_music_box_details",
+      expanded: "spell_music_box_expanded",
 
-    type: "ability",
+      type: "ability",
 
-    cast_time: "ritual",
-    cast_duration: 1,
-    cast_duration_units: "hour",
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
 
-    aim_target: "object",
-    aim_type: "near",
+      aim_target: "object",
+      aim_type: "near",
 
-    parts: ["material_10gold"],
+      parts: ["material_10gold"],
 
-    spell_time: null,
-    spell_duration: 24,
-    spell_duration_units: "hour",
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
 
-    aim_need: false,
+      aim_need: false,
 
-    aim_range: null,
-    aim_aoe: null,
-    aim_aoe_size: null,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
 
-    impact_type: null,
-    impact_damage_type: null,
+      impact_type: null,
+      impact_damage_type: null,
 
-    impact_size_foo: null,
-    impact_size_num: null,
-    impact_size_dice: null,
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
 
-    saving_need: false,
-    saving_attribute: null,
-    impact_size_saved: null,
-  },],
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 
   small_illusion: [
     {
@@ -837,7 +842,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["somatic","focus"],
+      parts: ["somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -864,9 +869,9 @@ export default {
 
   dancing_lights: [
     {
-    name: "spell_dancing_lights",
-    details: "spell_dancing_lights_details",
-    expanded: "spell_dancing_lights_expanded", // полное описание
+      name: "spell_dancing_lights",
+      details: "spell_dancing_lights_details",
+      expanded: "spell_dancing_lights_expanded", // полное описание
 
       type: "evocation",
 
@@ -877,7 +882,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -1024,7 +1029,7 @@ export default {
       */
 
       impact_size_foo: "barbarian_rage_bonus", // Добавить функцию
-      impact_size_num: null,//classes.barbarian_rage_bonus[MY.level], добавить параметр
+      impact_size_num: null, //classes.barbarian_rage_bonus[MY.level], добавить параметр
       impact_size_dice: null,
       // рассчет урона
 
@@ -1135,7 +1140,7 @@ export default {
     {
       name: "spell_frenzy",
       details: "spell_frenzy_details",
-      expanded: "spell_frenzy_expanded", 
+      expanded: "spell_frenzy_expanded",
 
       type: "ability",
 
@@ -1156,23 +1161,22 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-      
-    }
+    },
   ],
 
   intimidating_presence: [
     {
       name: "spell_intimidating_presence",
       details: "spell_intimidating_presence_details",
-      expanded: "spell_intimidating_presence_expanded", 
+      expanded: "spell_intimidating_presence_expanded",
 
       type: "ability",
 
@@ -1193,23 +1197,23 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: true,
-      saving_attribute: "wisdom", 
+      saving_attribute: "wisdom",
       //Если оно может видеть или слышать вас, оно должно совершить успешный спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмы)
       impact_size_saved: null,
-    }
+    },
   ],
 
   retaliation: [
     {
       name: "spell_retaliation",
       details: "spell_retaliation_details",
-      expanded: "spell_retaliation_expanded", 
+      expanded: "spell_retaliation_expanded",
 
       type: "ability",
 
@@ -1230,16 +1234,16 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       //Если оно может видеть или слышать вас, оно должно совершить успешный спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмы)
       impact_size_saved: null,
-    }
+    },
   ],
 
   beast_sense: [
@@ -1248,7 +1252,7 @@ export default {
     {
       name: "spell_beast_sense",
       details: "spell_beast_sense_details",
-      expanded: "spell_beast_sense_expanded", 
+      expanded: "spell_beast_sense_expanded",
 
       type: "divination",
 
@@ -1270,22 +1274,22 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   beast_sense_ritual: [
     {
       name: "spell_beast_sense",
       details: "spell_beast_sense_details",
-      expanded: "spell_beast_sense_expanded", 
+      expanded: "spell_beast_sense_expanded",
 
       type: "ability",
 
@@ -1307,15 +1311,15 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   speak_with_animals: [
@@ -1323,7 +1327,7 @@ export default {
     {
       name: "spell_speak_with_animals",
       details: "spell_speak_with_animals_details",
-      expanded: "spell_speak_with_animals_expanded", 
+      expanded: "spell_speak_with_animals_expanded",
 
       type: "divination",
 
@@ -1333,7 +1337,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 10,
@@ -1345,22 +1349,22 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   speak_with_animals_ritual: [
     {
       name: "spell_speak_with_animals",
       details: "spell_speak_with_animals_details",
-      expanded: "spell_speak_with_animals_expanded", 
+      expanded: "spell_speak_with_animals_expanded",
 
       type: "ability",
 
@@ -1370,7 +1374,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 10,
@@ -1382,15 +1386,15 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   commune_with_nature: [
@@ -1402,7 +1406,7 @@ export default {
     {
       name: "spell_commune_with_nature",
       details: "spell_commune_with_nature_details",
-      expanded: "spell_commune_with_nature_expanded", 
+      expanded: "spell_commune_with_nature_expanded",
 
       type: "divination",
 
@@ -1412,7 +1416,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1424,22 +1428,22 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   commune_with_nature_ritual: [
     {
       name: "spell_commune_with_nature",
       details: "spell_commune_with_nature_details",
-      expanded: "spell_commune_with_nature_expanded", 
+      expanded: "spell_commune_with_nature_expanded",
 
       type: "ability",
 
@@ -1449,7 +1453,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1461,22 +1465,22 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   wolf_knock: [
     {
       name: "spell_wolf_knock",
       details: "spell_wolf_knock_details",
-      expanded: null, 
+      expanded: null,
 
       type: "ability",
 
@@ -1498,22 +1502,22 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+
       saving_need: false,
-      saving_attribute: null, 
+      saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   elk_knock: [
     {
       name: "spell_elk_knock",
       details: "spell_elk_knock_details",
-      expanded: "spell_elk_knock_expanded", 
+      expanded: "spell_elk_knock_expanded",
 
       type: "ability",
 
@@ -1535,22 +1539,22 @@ export default {
       aim_aoe_size: null,
       impact_type: "damage",
       impact_damage_type: "bludgeoning_w",
-      
+
       impact_size_foo: "Plus_strength_mod",
       impact_size_num: 1,
       impact_size_dice: 12,
-      
+
       saving_need: true,
-      saving_attribute: "strength", 
+      saving_attribute: "strength",
       impact_size_saved: "0",
-    }
+    },
   ],
 
   tiger_strike: [
     {
       name: "spell_tiger_strike",
       details: "spell_tiger_strike_details",
-      expanded: "spell_tiger_strike_expanded", 
+      expanded: "spell_tiger_strike_expanded",
 
       type: "ability",
 
@@ -1571,6 +1575,78 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  sneaky_attack: [
+    {
+      name: "spell_sneaky_attack",
+      details: "spell_sneaky_attack_details",
+      expanded: "spell_sneaky_attack_expanded",
+
+      type: "ability",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "plus_level_2", //на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  cunning_action: [
+    {
+      name: "spell_cunning_action",
+      details: "spell_cunning_action_details",
+      expanded: "spell_cunning_action_expanded", 
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
       
       impact_size_foo: null,
       impact_size_num: null,
@@ -1579,7 +1655,78 @@ export default {
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
+    }
+  ],
+
+  steady_aim: [
+    {
+      name: "spell_steady_aim",
+      details: "spell_steady_aim_details",
+      expanded: "spell_steady_aim_expanded", 
+
+      type: "ability",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
       
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  uncanny_dodge: [
+    {
+      name: "spell_uncanny_dodge",
+      details: "spell_uncanny_dodge_details",
+      expanded: "spell_uncanny_dodge_expanded", 
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
     }
   ],
 };
