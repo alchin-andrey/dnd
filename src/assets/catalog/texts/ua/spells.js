@@ -241,7 +241,7 @@ export const reckless_attack_expanded =
 export const frenzy = 'Безумие';
 
 export const frenzy_details = 
-'<span class="buff">• +1 Атака бонусным действием</span> при активной Ярости\n'+
+'<span class="buff">• +1 Атака бонусным действием</span> при Ярости\n'+
 '<span class="debuff">• +1 Усталость</span> после окончания Ярости';
 
 export const frenzy_expanded =
