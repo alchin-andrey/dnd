@@ -30,8 +30,8 @@
       "
     ></my-card-text-color>
     <transition name="fade">
-    <div class="reset_color" :class="{ reset_color_custom: !Color_Reset }">
-    <img @click="resetColor(body_part)" src="@/assets/img/icon/reset.svg" alt="reset"/>
+    <div class="reset_color" :class="{ reset_color_custom: !Color_Reset }" @click="resetColor(body_part)">
+    <img src="@/assets/img/icon/reset.svg" alt="reset"/>
     </div>
   </transition>
   </my-selection-card>
