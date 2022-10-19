@@ -42,7 +42,7 @@ export default {
       },
       {
         level: 2,
-        type: "plus",
+        type: "advantage",
         keyword: "advantage",
         details: "saving_dex_visible",
       },
@@ -56,7 +56,7 @@ export default {
       },
       {
         level: 7,
-        type: "plus",
+        type: "advantage",
         keyword: "advantage",
         details: "on_initiative",
       },
@@ -308,7 +308,7 @@ export default {
                     name: "wolf",
                     fines: [
                       {
-                        type: "plus",
+                        type: "advantage",
                         keyword: "advantage",
                         details: "near_friends_attack_in_rage",
                       },
@@ -328,7 +328,7 @@ export default {
                     name: "eagle",
                     fines: [
                       {
-                        type: "resistance",
+                        type: "advantage",
                         keyword: "advantage",
                         details: "on_dodging_in_rage",
 
@@ -395,7 +395,7 @@ export default {
                         details: "weight_capacity_details",
                       },
                       {
-                        type: "plus",
+                        type: "advantage",
                         keyword: "advantage",
                         details: "str_check_on_move",
                       }
@@ -410,7 +410,7 @@ export default {
                         details: "one_mile_100f_details",
                       },
                       {
-                        type: "plus",
+                        type: "advantage",
                         keyword: "no_disadvantage",
                         details: "on_perception_in_lowlight",
                       }
@@ -465,7 +465,7 @@ export default {
                     name: "bear",
                     fines: [
                       {
-                        type: "resistance",
+                        type: "advantage",
                         keyword: "advantage",
                         details: "on_dodging_in_rage_bear",
                       }
