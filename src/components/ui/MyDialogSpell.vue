@@ -58,6 +58,7 @@ export default {
 	z-index: 100;
 	cursor: auto;
 	overflow-y: scroll;
+  scrollbar-width: none;
 	max-height: 100%;
 }
 
