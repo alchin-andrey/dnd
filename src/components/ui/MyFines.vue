@@ -3,15 +3,21 @@
     <div class="icon">
       <img :src="getIcon(icon)" :alt="icon" />
     </div>
-    <div class="text int-400">
+    <div class="text int-400" :class="{ emoji_true: em_Upd }">
       <span
         :class="{
           positive: title !== 'disadvantage',
           negative: title === 'disadvantage',
         }"
         >{{ t_Title }}</span
-      >
-      {{ t_Details }}
+      > {{ em_Before
+				}}<emoji
+					v-if="em_Upd"
+					:data="emojiIndex"
+					:emoji="em_Upd"
+					:set="set_emoji"
+					:size="14"
+				/>{{ em_After }}
     </div>
   </div>
 </template>
@@ -44,6 +50,18 @@ export default {
     t_Details() {
 		return this.t(this.details);
 		},
+
+    em_Upd() {
+			return this.updEmoji(this.t_Details);
+		},
+
+		em_Before() {
+			return this.beforeEmoji(this.t_Details);
+		},
+
+		em_After() {
+			return this.afterEmoji(this.t_Details);
+		},
 	},
   methods: {
     getIcon(name) {
@@ -63,11 +81,15 @@ export default {
 .text {
   margin-left: 4px;
   padding: 2px 0 1px 0;
-  text-align: start;
 }
 
 .text:first-letter {
   text-transform: uppercase;
+}
+
+.emoji_true {
+  padding: 0 0 0 0;
+  margin-top: -1px;
 }
 
 .positive {
@@ -76,5 +98,11 @@ export default {
 
 .negative {
   color: #ff0000;
+}
+
+.emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+  top: 3px;
 }
 </style>

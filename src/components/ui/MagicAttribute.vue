@@ -1,186 +1,186 @@
 <template>
-    <div class="column jbm-300">
-        <div class="column_value" :class="{ passive: numb === 0 }">
-            <div class="wrapp_atrib">
-                {{ t_Title }} 
-                {{ em_Before }}<emoji
-                    v-if="em_Upd"
-                    :data="emojiIndex"
-                    :emoji="em_Upd"
-                    :set="set_emoji"
-                    :size="15"
-                />{{ em_After }}
-            </div>
-            <div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
-            <div v-else class="numb" :class="{ passive: numb === 0 }">
-                {{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
-            </div>
-        </div>
-        <div class="visual">
-            <div class="cube" v-for="n in get_Cube" :key="n"></div>
-            <div class="cube_zero" v-for="n in get_CubeZero" :key="n"></div>
-        </div>
-    </div>
+	<div class="column jbm-300">
+		<div class="column_value" :class="{ passive: numb === 0 }">
+			<div class="wrapp_atrib">
+				{{ t_Title }}
+				{{ em_Before
+				}}<emoji
+					v-if="em_Upd"
+					:data="emojiIndex"
+					:emoji="em_Upd"
+					:set="set_emoji"
+					:size="15"
+				/>{{ em_After }}
+			</div>
+			<div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
+			<div v-else class="numb" :class="{ passive: numb === 0 }">
+				{{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
+			</div>
+		</div>
+		<div class="visual">
+			<div class="cube" v-for="n in get_Cube" :key="n"></div>
+			<div class="cube_zero" v-for="n in get_CubeZero" :key="n"></div>
+		</div>
+	</div>
 </template>
 
 <script>
 export default {
-    name: "MagicAttribute",
-    props: {
-        title: {
-            type: String,
-            default: null,
-        },
-        addition: {
-            type: String,
-            default: null,
-        },
-        numb: {
-            type: Number,
-            default: null,
-        },
-        dice: {
-            type: Number,
-            default: null,
-        },
-        icon: {
-            type: String,
-            default: null,
-        },
-        plus: {
-            type: Boolean,
-            default: false,
-        },
-        prefix: {
-            type: String,
-            default: null,
-        },
-        feet: {
-            type: Boolean,
-            default: false,
-        },
-    },
+	name: "MagicAttribute",
+	props: {
+		title: {
+			type: String,
+			default: null,
+		},
+		addition: {
+			type: String,
+			default: null,
+		},
+		numb: {
+			type: Number,
+			default: null,
+		},
+		dice: {
+			type: Number,
+			default: null,
+		},
+		icon: {
+			type: String,
+			default: null,
+		},
+		plus: {
+			type: Boolean,
+			default: false,
+		},
+		prefix: {
+			type: String,
+			default: null,
+		},
+		feet: {
+			type: Boolean,
+			default: false,
+		},
+	},
 
-    computed: {
-      em_Upd() {
-        return this.updEmoji(this.t_Addition);
-      },
+	computed: {
+		em_Upd() {
+			return this.updEmoji(this.t_Addition);
+		},
 
-      em_Before() {
-        return this.beforeEmoji(this.t_Addition);
-      },
+		em_Before() {
+			return this.beforeEmoji(this.t_Addition);
+		},
 
-      em_After() {
-        return this.afterEmoji(this.t_Addition);
-      },
+		em_After() {
+			return this.afterEmoji(this.t_Addition);
+		},
 
-        t_Title() {
-            if (this.numb === 0) {
-                return `/ ${this.t(this.title)}`;
-            } else {
-                return this.t(this.title);
-            }
-        },
+		t_Title() {
+			if (this.numb === 0) {
+				return `/ ${this.t(this.title)}`;
+			} else {
+				return this.t(this.title);
+			}
+		},
 
-        t_Addition() {
-            return this.t(this.addition);
-        },
+		t_Addition() {
+			return this.t(this.addition);
+		},
 
-        Prefix() {
-            return this.prefix ? this.t(this.prefix) : "";
-        },
+		Prefix() {
+			return this.prefix ? this.t(this.prefix) : "";
+		},
 
-        Plus() {
-            return this.plus ? "+" : "";
-        },
+		Plus() {
+			return this.plus ? "+" : "";
+		},
 
-        Suffix() {
-            return this.feet ? this.t("feet") : "";
-        },
+		Suffix() {
+			return this.feet ? this.t("feet") : "";
+		},
 
-        get_Cube() {
-            if (this.feet) {
-                return Math.ceil(this.numb / 5);
-            } else {
-                return this.numb;
-            }
-        },
+		get_Cube() {
+			if (this.feet) {
+				return Math.ceil(this.numb / 5);
+			} else {
+				return this.numb;
+			}
+		},
 
-        get_CubeZero() {
-            if (this.dice) {
-                return this.dice * this.numb - this.numb;
-            }
-        },
+		get_CubeZero() {
+			if (this.dice) {
+				return this.dice * this.numb - this.numb;
+			}
+		},
+	},
 
-    },
-
-    methods: {},
+	methods: {},
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .wrapp_atrib {
-    display: flex;
-    align-items: center;
-    white-space: pre;
+	display: flex;
+	align-items: center;
+	white-space: pre;
 }
 
 .emoji-mart-emoji {
-    padding: 0;
-    padding-bottom: 1px;
-    line-height: 0;
+	padding: 0;
+  bottom: 1px;
+	line-height: 0;
 }
 
 .column {
-    width: 100%;
-    display: flex;
-    min-height: 18px;
-    justify-content: space-between;
-    align-items: flex-start;
+	width: 100%;
+	display: flex;
+	min-height: 18px;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .column_value {
-    display: flex;
-    justify-content: space-between;
-    flex: 1 1 auto;
-    /*width: 100%;*/
+	display: flex;
+	justify-content: space-between;
+	flex: 1 1 auto;
+	/*width: 100%;*/
 }
 
 .small {
-    text-transform: lowercase;
+	text-transform: lowercase;
 }
 
 .active {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 .passive {
-    color: rgba(255, 255, 255, 0.2);
+	color: rgba(255, 255, 255, 0.2);
 }
 
 .visual {
-    width: 98px;
-    display: flex;
-    align-items: center;
-    margin-left: 12px;
-    flex-wrap: wrap;
-    padding: 5px 0 5px 0;
-    gap: 2px;
+	width: 98px;
+	display: flex;
+	align-items: center;
+	margin-left: 12px;
+	flex-wrap: wrap;
+	padding: 5px 0 5px 0;
+	gap: 2px;
 }
 
 .cube {
-    width: 8px;
-    height: 8px;
-    background: #ffffff;
-    box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
-    border-radius: 2px;
+	width: 8px;
+	height: 8px;
+	background: #ffffff;
+	box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
+	border-radius: 2px;
 }
 
 .cube_zero {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    border: 1px solid #ffffff;
+	width: 8px;
+	height: 8px;
+	border-radius: 2px;
+	border: 1px solid #ffffff;
 }
 </style>
