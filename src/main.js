@@ -7,6 +7,7 @@ import directives from "@/directives";
 import VueClipboard from "vue3-clipboard";
 
 import myTranslation from "@/plagins/myTranslation.js";
+import EmojiChenge from "@/plagins/EmojiChenge.js";
 
 // import genders from "@/assets/catalog/base_data/genders.js";
 
@@ -26,6 +27,7 @@ app.use(VueClipboard, {
 app.use(store);
 app.use(router);
 app.use(myTranslation);
+app.use(EmojiChenge);
 
 components.forEach(component => {
     app.component(component.name, component);

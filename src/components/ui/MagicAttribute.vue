@@ -2,14 +2,14 @@
     <div class="column jbm-300">
         <div class="column_value" :class="{ passive: numb === 0 }">
             <div class="wrapp_atrib">
-                {{ t_Title }}
-                <emoji
-                    v-if="upd_Emoji"
+                {{ t_Title }} 
+                {{ em_Before }}<emoji
+                    v-if="em_Upd"
                     :data="emojiIndex"
-                    :emoji="upd_Emoji"
+                    :emoji="em_Upd"
                     :set="set_emoji"
-                    :size="16"
-                />{{ cut_Emoji }}
+                    :size="15"
+                />{{ em_After }}
             </div>
             <div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
             <div v-else class="numb" :class="{ passive: numb === 0 }">
@@ -24,27 +24,8 @@
 </template>
 
 <script>
-import emojiRegex from "emoji-regex";
-
-import dataEmo from "emoji-mart-vue-fast/data/all.json";
-import { Emoji, EmojiIndex } from "emoji-mart-vue-fast/src";
-import "emoji-mart-vue-fast/css/emoji-mart.css";
-
-let emojiIndex = new EmojiIndex(dataEmo);
-const unicodeEmojiRegex = emojiRegex();
-
 export default {
     name: "MagicAttribute",
-    components: {
-        Emoji,
-    },
-    data() {
-        return {
-            emojiIndex: emojiIndex,
-            unicodeEmojiRegex: unicodeEmojiRegex,
-            set_emoji: "apple", // apple  twitter  google  facebook
-        };
-    },
     props: {
         title: {
             type: String,
@@ -81,8 +62,19 @@ export default {
     },
 
     computed: {
+      em_Upd() {
+        return this.updEmoji(this.t_Addition);
+      },
+
+      em_Before() {
+        return this.beforeEmoji(this.t_Addition);
+      },
+
+      em_After() {
+        return this.afterEmoji(this.t_Addition);
+      },
+
         t_Title() {
-            // console.log(this.wrapEmoji);
             if (this.numb === 0) {
                 return `/ ${this.t(this.title)}`;
             } else {
@@ -120,46 +112,6 @@ export default {
             }
         },
 
-        cut_Emoji() {
-            let str = this.t_Addition;
-            let reg = /(\p{Emoji_Presentation}|\p{Extended_Pictographic})/gu;
-            if (this.t_Addition) {
-                let cut_str = str.replace(reg, "");
-                return cut_str;
-            } else {
-                null;
-            }
-        },
-
-        upd_Emoji() {
-            let text = this.t_Addition;
-            if (text) {
-                for (const match of text.matchAll(unicodeEmojiRegex)) {
-                    const emoji = match[0];
-                    return emoji;
-                }
-            }
-        },
-
-        wrapEmoji() {
-            let text = this.t_Addition;
-            if (text) {
-                return text.replace(
-                    unicodeEmojiRegex,
-                    function (match, offset) {
-                        let emoji = emojiIndex.nativeEmoji(match);
-                        if (!emoji) {
-                            return match;
-                        }
-
-                        return emoji.native;
-                        // return `:${emoji.short_names[0]}:`;
-                    }
-                );
-            } else {
-                null;
-            }
-        },
     },
 
     methods: {},
@@ -170,14 +122,13 @@ export default {
 <style scoped>
 .wrapp_atrib {
     display: flex;
-    /* align-items: center; */
-    justify-content: center;
     align-items: center;
     white-space: pre;
 }
 
 .emoji-mart-emoji {
     padding: 0;
+    padding-bottom: 1px;
     line-height: 0;
 }
 

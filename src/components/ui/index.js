@@ -1,3 +1,5 @@
+import {Emoji} from "emoji-mart-vue-fast/src";
+
 import LangCard from "@/components/ui/LangCard.vue";
 import DonatCard from "@/components/ui/DonatCard.vue";
 
@@ -32,9 +34,14 @@ import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import GenderCard from "@/components/GenderCard.vue";
 
 
+
+
 export default [
+  Emoji,
+
   LangCard,
   DonatCard,
+  
   MySelection,
   MyController,
   MySlider,

@@ -7,7 +7,17 @@
             <!--			<div class="title" v-html="t_Html"></div>-->
             <div>
                 <div class="flex_title">
-                    <div class="title_spell h_18">{{ t_Title }}</div>
+                    <!-- <div class="title_spell h_18">
+                    {{ t_Title }}
+                    </div> -->
+                    <div class="title_spell h_18">{{ em_Before }}<emoji
+                    v-if="em_Upd"
+                    :data="emojiIndex"
+                    :emoji="em_Upd"
+                    :set="set_emoji"
+                    :size="emoji_size"
+                />{{ em_After }}
+                    </div>
                     <img
                         v-if="!passive"
                         class="icon_spell"
@@ -29,7 +39,13 @@
     <my-dialog-spell v-model:show="dialogVisible">
         <my-wrapper>
             <div class="title_spell gray_2">{{ t_Type }} /</div>
-            <div class="title_spell">{{ t_Title }}</div>
+            <div class="title_spell">{{ em_Before }}<emoji
+                    v-if="em_Upd"
+                    :data="emojiIndex"
+                    :emoji="em_Upd"
+                    :set="set_emoji"
+                    :size="emoji_size"
+                />{{ em_After }}</div>
         </my-wrapper>
         <div class="manna_flex jbm-300">
             <div
@@ -124,6 +140,7 @@ export default {
             dialogVisible: false,
             numb_type: 0,
             manna_numb: null,
+            emoji_size: 16,
         };
     },
     props: {
@@ -197,6 +214,18 @@ export default {
         Show() {
             return this.lvl <= this.$root.MY.level;
         },
+        em_Upd() {
+        return this.updEmoji(this.t_Title);
+      },
+
+      em_Before() {
+        return this.beforeEmoji(this.t_Title);
+      },
+
+      em_After() {
+        return this.afterEmoji(this.t_Title);
+      },
+
         t_Title() {
             return this.t(this.Spell_Index.name);
         },
@@ -444,6 +473,7 @@ export default {
     color: #ffffff;
     display: flex;
     align-items: center;
+    white-space: pre;
 }
 
 .title_spell:first-letter {
@@ -488,5 +518,10 @@ export default {
 .hr {
     height: 1px;
     background: rgba(255, 255, 255, 0.2);
+}
+
+.emoji-mart-emoji {
+    padding: 0;
+    line-height: 0;
 }
 </style>
