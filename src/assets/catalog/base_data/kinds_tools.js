@@ -9,7 +9,13 @@ export default {
     name: "tool_mason",
   },
 
-  thief: {
-    name: "tool_thief",
-  }
+  disguise: {
+    name: "tool_disguise",
+  },
+
+  poisoner: {
+    name: "tool_poisoner",
+  },
+
+  
 };

@@ -1370,6 +1370,18 @@ export default {
             spell_uncanny_dodge_details: spells.uncanny_dodge_details,
             spell_uncanny_dodge_expanded: spells.uncanny_dodge_expanded,
 
+            spell_fast_hands: spells.fast_hands,
+            spell_fast_hands_details: spells.fast_hands_details,
+            spell_fast_hands_expanded: spells.fast_hands_expanded,
+
+            spell_fake_identity: spells.fake_identity,
+            spell_fake_identity_details: spells.fake_identity_details,
+            spell_fake_identity_expanded: spells.fake_identity_expanded,
+
+            spell_fake_presence: spells.fake_presence,
+            spell_fake_presence_details: spells.fake_presence_details,
+            spell_fake_presence_expanded: spells.fake_presence_expanded,
+
             fine_dodge: "увёртливость",
             from_aoe_effects: "от зональных эффектов с Испытанием Ловкости.",
 
@@ -1389,8 +1401,34 @@ export default {
             thief_details: classes.thief_details,
             assasin: classes.assasin,
             assasin_details: classes.assasin_details,
-            
- 
 
+            climbing: "лазание",
+            without_speed_fee: "без штрафа скорости",
+
+            dex_bonus: "бонус Ловкости",
+            on_size_jumps: "на прыжки с разбега",
+
+            ability: "способность",
+            to_use_magic_items: "использовать любые магические предметы и свитки",
+
+            bonus_move: "Бонусный полный ход",
+            in_first_round: "на первом раунде боя (с -10 Инициативы)",
+
+            tool_disguise: "гримировальные",
+            tool_poisoner: "отравителя",
+
+            on_not_moved: "на атаки по существам, еще не сделавшим ход в этом раунде",
+
+            double_damage: "2× урон",
+            on_sudden_attack: "по существам, захваченным врасплох",
+            on_sudden_attack: "дополнительно! по существам, захваченным врасплох, если они провалили Испытание Телосложения",
+
+            days: "дней",
+            hours: "часов",
+
+            gold_25: "25 🟡",
+
+
+            
 
 }

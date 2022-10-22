@@ -65,6 +65,11 @@ export default {
 
             {
               level: 1,
+              spell: spells.fake_presence,
+            },
+
+            {
+              level: 1,
               spell: spells.hellish_rebuke,
             },
             // ------------------
