@@ -35,6 +35,6 @@ export default {
         },
     ],
 
-    select_lang: "ua",
+    select_lang: "ru",
     // select_lang_icon: "🇺🇦",
 }
