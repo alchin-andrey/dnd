@@ -912,7 +912,7 @@ export default {
             {
               level: 13,
               type: "plus",
-              keyword: "ability",
+              keyword: "an_ability",
               details: "to_use_magic_items",
             },
             {
