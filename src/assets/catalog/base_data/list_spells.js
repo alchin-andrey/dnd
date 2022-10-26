@@ -97,179 +97,6 @@ export default {
     },
   ],
 
-  acid_splash: [
-    {
-      //0
-
-      name: "spell_acid_splach",
-      details: "spell_acid_splach_details",
-      expanded: "spell_acid_splach_expanded",
-
-      type: "evocation",
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "creature",
-      aim_type: "in_distance",
-
-      parts: ["somatic", "verbal"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: false,
-      aim_range: 60,
-      aim_aoe: "point",
-      aim_aoe_size: 5,
-
-      impact_type: "damage",
-      impact_damage_type: "acid_w",
-
-      impact_size_foo: "Plus_Level_6",
-      impact_size_num: 1,
-      impact_size_dice: 6,
-
-      saving_need: true,
-      saving_attribute: "dexterity",
-      impact_size_saved: "÷2",
-    },
-  ],
-
-  thaumaturgy: [
-    {
-      //0
-      name: "spell_thaumaturgy",
-      details: "spell_thaumaturgy_details",
-      expanded: "spell_thaumaturgy_expanded",
-
-      type: "transmutation",
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "point",
-      aim_type: "in_distance",
-
-      parts: ["verbal"],
-
-      spell_time: "up_to",
-      spell_duration: 1,
-      spell_duration_units: "min",
-
-      aim_need: false,
-      aim_range: 30,
-      aim_aoe: "sphere",
-      aim_aoe_size: 5,
-
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_num: null,
-      impact_size_dice: null,
-
-      saving_need: false,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-  ],
-
-  hellish_rebuke: [
-    {
-      //0
-    },
-    {
-      //1
-      name: "spell_hellish_rebuke",
-      details: "spell_hellish_rebuke_details",
-      expanded: "spell_hellish_rebuke_expanded",
-
-      type: "evocation",
-
-      cast_time: "reaction",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "creature",
-      aim_type: "in_distance",
-
-      parts: ["somatic", "verbal"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: true,
-      aim_range: 60,
-      aim_aoe: "point",
-      aim_aoe_size: 5,
-
-      impact_type: "damage",
-      impact_damage_type: "slashing_w",
-
-      impact_size_foo: null,
-      impact_size_num: 2,
-      impact_size_dice: 10,
-
-      saving_need: true,
-      saving_attribute: "dexterity",
-      impact_size_saved: "÷2",
-    },
-    {
-      //2
-      impact_size_foo: null,
-      impact_size_num: 3,
-      impact_size_dice: 10,
-    },
-    {
-      //3
-      impact_size_foo: null,
-      impact_size_num: 4,
-      impact_size_dice: 10,
-    },
-    {
-      //4
-      impact_size_foo: null,
-      impact_size_num: 5,
-      impact_size_dice: 10,
-    },
-    {
-      //5
-      impact_size_foo: null,
-      impact_size_num: 6,
-      impact_size_dice: 10,
-    },
-    {
-      //6
-      name: "spell_hellish_rebuke",
-      impact_size_foo: null,
-      impact_size_num: 7,
-      impact_size_dice: 10,
-    },
-    {
-      //7
-      impact_size_foo: null,
-      impact_size_num: 8,
-      impact_size_dice: 10,
-    },
-    {
-      //8
-      impact_size_foo: null,
-      impact_size_num: 9,
-      impact_size_dice: 10,
-    },
-    {
-      //9
-      impact_size_foo: null,
-      impact_size_num: 10,
-      impact_size_dice: 10,
-    },
-  ],
-
   hellish_rebuke_tiefling: [
     {
       //0
@@ -1812,7 +1639,7 @@ export default {
 
       cast_time: "ritual",
       cast_duration: 3,
-      cast_duration_units: "hours",
+      cast_duration_units: "hour",
 
       aim_target: "self",
       aim_type: null,
@@ -1837,4 +1664,344 @@ export default {
       impact_size_saved: null,
     },
   ],
+
+  // All spells / 0
+
+  acid_splash: [
+    {
+      //0
+
+      name: "spell_acid_splash",
+      details: "spell_acid_splash_details",
+      expanded: "spell_acid_splash_expanded",
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: "point",
+      aim_aoe_size: 5,
+
+      impact_type: "damage",
+      impact_damage_type: "acid_w",
+
+      impact_size_foo: "Plus_Level_6",
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  mage_hand: [
+    {
+      //0
+
+      name: "spell_mage_hand",
+      details: "spell_mage_hand_details",
+      expanded: "spell_mage_hand_expanded",
+
+      type: "conjuration",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  friends: [
+    {
+      //0
+
+      name: "spell_friends",
+      details: "spell_friends_details",
+      expanded: "spell_friends_expanded",
+
+      type: "enchantment",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+
+      parts: ["somatic", "focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  thaumaturgy: [
+    {
+      //0
+      name: "spell_thaumaturgy",
+      details: "spell_thaumaturgy_details",
+      expanded: "spell_thaumaturgy_expanded",
+
+      type: "transmutation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: "sphere",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  shillelagh: [
+    {
+      //0
+      name: "spell_shillelagh",
+      details: "spell_shillelagh_details",
+      expanded: "spell_shillelagh_expanded",
+
+      type: "transmutation",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "material_shillelagh",
+      aim_type: null,
+
+      parts: ["verbal", "somatic", "focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "new_w",
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  blade_ward: [
+    {
+      //0
+      name: "spell_blade_ward",
+      details: "spell_blade_ward_details",
+      expanded: "spell_blade_ward_expanded",
+
+      type: "abjuration",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+
+      parts: ["verbal", "somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // All spells / 1
+
+  hellish_rebuke: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_hellish_rebuke",
+      details: "spell_hellish_rebuke_details",
+      expanded: "spell_hellish_rebuke_expanded",
+
+      type: "evocation",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+      aim_range: 60,
+      aim_aoe: "point",
+      aim_aoe_size: 5,
+
+      impact_type: "damage",
+      impact_damage_type: "slashing_w",
+
+      impact_size_foo: null,
+      impact_size_num: 2,
+      impact_size_dice: 10,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+    {
+      //2
+      impact_size_foo: null,
+      impact_size_num: 3,
+      impact_size_dice: 10,
+    },
+    {
+      //3
+      impact_size_foo: null,
+      impact_size_num: 4,
+      impact_size_dice: 10,
+    },
+    {
+      //4
+      impact_size_foo: null,
+      impact_size_num: 5,
+      impact_size_dice: 10,
+    },
+    {
+      //5
+      impact_size_foo: null,
+      impact_size_num: 6,
+      impact_size_dice: 10,
+    },
+    {
+      //6
+      name: "spell_hellish_rebuke",
+      impact_size_foo: null,
+      impact_size_num: 7,
+      impact_size_dice: 10,
+    },
+    {
+      //7
+      impact_size_foo: null,
+      impact_size_num: 8,
+      impact_size_dice: 10,
+    },
+    {
+      //8
+      impact_size_foo: null,
+      impact_size_num: 9,
+      impact_size_dice: 10,
+    },
+    {
+      //9
+      impact_size_foo: null,
+      impact_size_num: 10,
+      impact_size_dice: 10,
+    },
+  ],
+
 };

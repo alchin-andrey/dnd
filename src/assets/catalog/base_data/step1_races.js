@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.tiger_strike,
+              spell: spells.blade_ward,
             },
 
             {

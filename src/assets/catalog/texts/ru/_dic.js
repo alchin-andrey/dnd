@@ -1429,6 +1429,27 @@ export default {
 
     gold_25: "25 🟡",
 
-    
+    spell_acid_splash: spells.acid_splash,
+    spell_acid_splash_details: spells.acid_splash_details,
+    spell_acid_splash_expanded: spells.acid_splash_expanded,
+
+    spell_mage_hand: spells.mage_hand,
+    spell_mage_hand_details: spells.mage_hand_details,
+    spell_mage_hand_expanded: spells.mage_hand_expanded,
+
+    spell_friends: spells.friends,
+    spell_friends_details: spells.friends_details,
+    spell_friends_expanded: spells.friends_expanded,
+
+    spell_shillelagh: spells.shillelagh,
+    spell_shillelagh_details: spells.shillelagh_details,
+    spell_shillelagh_expanded: spells.shillelagh_expanded,
+
+    material_shillelagh: "дубинка или посох",
+    new_w: "новый",
+
+    spell_blade_ward: spells.blade_ward,
+    spell_blade_ward_details: spells.blade_ward_details,
+    spell_blade_ward_expanded: spells.blade_ward_expanded,
 
 }
