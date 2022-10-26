@@ -20,6 +20,15 @@ export default {
     details: "barbarian_details",
 
     saving: ["strength", "constitution"],
+    stats_base: 
+      [
+        "strength", // 15
+        "constitution", // 14
+        "dexterity", // 13
+        "charisma", // 12
+        "wisdom", // 10
+        "intelligence" // 8
+      ],
     spell_attribute: "strength", // уточнить
 
     hp_dice: 12,
@@ -113,8 +122,12 @@ export default {
     stats: [ 
       {
         level: 20,
+
+        strength_max: 24,
         strength: 4,
-        constitution: 4, 
+
+        constitution_max: 24, 
+        constitution: 4,
       }
     ], 
 
@@ -514,6 +527,15 @@ export default {
     details: "rogue_details",
 
     saving: ["dexterity", "intelligence"],
+    stats_base: 
+      [
+        "dexterity",
+        "charisma",
+        "wisdom",
+        "constitution",
+        "strength",
+        "intelligence"
+      ],
     spell_attribute: "intelligence",
 
     hp_dice: 8,
@@ -882,17 +904,93 @@ export default {
         thief: {
           name: "thief",
           details: "thief_details",
+
+          spells: [
+            {
+              level: 3,
+              spell: spells.fast_hands,
+            }
+          ],
+
+          fines: [
+            {
+              level: 3,
+              type: "plus",
+              keyword: "climbing",
+              details: "without_speed_fee",
+            },
+            {
+              level: 3,
+              type: "plus",
+              keyword: "dex_bonus",
+              details: "on_size_jumps",
+            },
+            {
+              level: 9,
+              type: "advantage",
+              keyword: "advantage",
+              details: "on_size_jumps",
+            },
+            {
+              level: 13,
+              type: "plus",
+              keyword: "an_ability",
+              details: "to_use_magic_items",
+            },
+            {
+              level: 17,
+              type: "plus",
+              keyword: "bonus_move",
+              details: "to_use_magic_items",
+            },
+          ],
         },
         assasin: {
           name: "assasin",
           details: "assasin_details",
+
+          proficiencies: {
+            tools: [tool.disguise, tool.poisoner],
+          },
+
+          fines: [
+            {
+              level: 3,
+              type: "advantage",
+              keyword: "advantage",
+              details: "on_not_moved", 
+            },
+            {
+              level: 3,
+              type: "plus",
+              keyword: "double_damage",
+              details: "on_sudden_attack", 
+            },
+            {
+              level: 17,
+              type: "plus",
+              keyword: "double_damage",
+              details: "on_sudden_attack_extra", 
+            },
+          ],
+
+          spells: [
+            {
+              level: 9,
+              spell: spells.fake_identity,
+            },
+            {
+              level: 13,
+              spell: spells.fake_presence,
+            }
+          ]
         }
       },
 
       feats: {
         // Cделать единым для всех
         // level 4, 8, 12, 16 и 19
-      },
+      },   
 
     },
   }

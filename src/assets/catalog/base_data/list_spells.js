@@ -1729,4 +1729,112 @@ export default {
       impact_size_saved: null,
     }
   ],
+
+  fast_hands: [
+    {
+      name: "spell_fast_hands",
+      details: "spell_fast_hands_details",
+      expanded: "spell_fast_hands_expanded", 
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fake_identity: [
+    {
+      name: "spell_fake_identity",
+      details: "spell_fake_identity_details",
+      expanded: "spell_fake_identity_expanded", 
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 7,
+      cast_duration_units: "days",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["gold_25"],
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fake_presence: [
+    {
+      name: "spell_fake_presence",
+      details: "spell_fake_presence_details",
+      expanded: "spell_fake_presence_expanded", 
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 3,
+      cast_duration_units: "hours",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["creature"],
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 };

@@ -58,22 +58,22 @@ export default {
     stats:{
         
         strength:
-        { base: 0, total:0, mod:0, save:0 },
+        { base: 0, bonus: 0, total:0, mod:0, save:0 },
 
         dexterity:
-        { base: 0, total:0, mod:0, save:0 },
+        { base: 0, bonus: 0, total:0, mod:0, save:0 },
 
         constitution:
-        { base: 0, total:0, mod:0, save:0 },
+        { base: 0, bonus: 0, total:0, mod:0, save:0 },
 
         intelligence:
-        { base: 0, total:0, mod:0, save:0 },
+        { base: 0, bonus: 0, total:0, mod:0, save:0 },
 
         wisdom:
-        { base: 0, total:0, mod:0, save:0 },
+        { base: 0, bonus: 0, total:0, mod:0, save:0 },
     
         charisma:
-        { base: 0, total:0, mod:0, save:0 }
+        { base: 0, bonus: 0, total:0, mod:0, save:0 }
     },
     
     skills:{
