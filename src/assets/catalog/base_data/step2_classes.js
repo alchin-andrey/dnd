@@ -20,6 +20,15 @@ export default {
     details: "barbarian_details",
 
     saving: ["strength", "constitution"],
+    stats_base: 
+      [
+        "strength", // 15
+        "constitution", // 14
+        "dexterity", // 13
+        "charisma", // 12
+        "wisdom", // 10
+        "intelligence" // 8
+      ],
     spell_attribute: "strength", // уточнить
 
     hp_dice: 12,
@@ -113,8 +122,12 @@ export default {
     stats: [ 
       {
         level: 20,
+
+        strength_max: 24,
         strength: 4,
-        constitution: 4, 
+
+        constitution_max: 24, 
+        constitution: 4,
       }
     ], 
 
@@ -514,6 +527,15 @@ export default {
     details: "rogue_details",
 
     saving: ["dexterity", "intelligence"],
+    stats_base: 
+      [
+        "dexterity",
+        "charisma",
+        "wisdom",
+        "constitution",
+        "strength",
+        "intelligence"
+      ],
     spell_attribute: "intelligence",
 
     hp_dice: 8,
