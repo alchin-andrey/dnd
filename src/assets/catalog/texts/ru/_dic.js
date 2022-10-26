@@ -1452,4 +1452,34 @@ export default {
     spell_blade_ward_details: spells.blade_ward_details,
     spell_blade_ward_expanded: spells.blade_ward_expanded,
 
+    spell_vicious_mockery: spells.vicious_mockery,
+    spell_vicious_mockery_details: spells.vicious_mockery_details,
+    spell_vicious_mockery_expanded: spells.vicious_mockery_expanded,
+
+    spell_druidcraft: spells.druidcraft,
+    spell_druidcraft_details: spells.druidcraft_details,
+    spell_druidcraft_expanded: spells.druidcraft_expanded,
+
+    spell_chill_touch: spells.chill_touch,
+    spell_chill_touch_details: spells.chill_touch_details,
+    spell_chill_touch_expanded: spells.chill_touch_expanded,
+
+    spell_true_strike: spells.true_strike,
+    spell_true_strike_details: spells.true_strike_details,
+    spell_true_strike_expanded: spells.true_strike_expanded,
+
+    rounda: "раунда",
+
+    spell_eldritch_blast: spells.eldritch_blast,
+    spell_eldritch_blast_details: spells.eldritch_blast_details,
+    spell_eldritch_blast_expanded: spells.eldritch_blast_expanded,
+
+    spell_fire_bolt: spells.fire_bolt,
+    spell_fire_bolt_details: spells.fire_bolt_details,
+    spell_fire_bolt_expanded: spells.fire_bolt_expanded,
+
+    spell_mending: spells.mending,
+    spell_mending_details: spells.mending_details,
+    spell_mending_expanded: spells.mending_expanded,
+
 }

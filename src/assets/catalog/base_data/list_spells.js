@@ -654,86 +654,6 @@ export default {
     },
   ],
 
-  small_illusion: [
-    {
-      name: "spell_small_illusion",
-      details: "spell_small_illusion_details",
-      expanded: "spell_small_illusion_expanded", // полное описание
-
-      type: "illusion",
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "point",
-      aim_type: "in_distance",
-
-      parts: ["somatic", "focus"],
-
-      spell_time: null,
-      spell_duration: 1,
-      spell_duration_units: "min",
-
-      aim_need: false,
-      aim_range: 30,
-      aim_aoe: "cube",
-      aim_aoe_size: 5,
-
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_num: null,
-      impact_size_dice: null,
-      // рассчет урона
-
-      saving_need: true,
-      saving_attribute: "intelligence",
-      impact_size_saved: null,
-    },
-  ],
-
-  dancing_lights: [
-    {
-      name: "spell_dancing_lights",
-      details: "spell_dancing_lights_details",
-      expanded: "spell_dancing_lights_expanded", // полное описание
-
-      type: "evocation",
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "point",
-      aim_type: "in_distance",
-
-      parts: ["verbal", "somatic", "focus"],
-
-      spell_time: "concentration",
-      spell_duration: 1,
-      spell_duration_units: "min",
-
-      aim_need: false,
-
-      aim_range: 120,
-      aim_aoe: "sphere",
-      aim_aoe_size: 20,
-
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_num: null,
-      impact_size_dice: null,
-
-      saving_need: false,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-  ],
-
   faerie_fire: [
     {
       name: "spell_faerie_fire",
@@ -1676,6 +1596,7 @@ export default {
       expanded: "spell_acid_splash_expanded",
 
       type: "evocation",
+      classes: ["sorcerer","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -1708,31 +1629,31 @@ export default {
     },
   ],
 
-  mage_hand: [
+  blade_ward: [
     {
       //0
+      name: "spell_blade_ward",
+      details: "spell_blade_ward_details",
+      expanded: "spell_blade_ward_expanded",
 
-      name: "spell_mage_hand",
-      details: "spell_mage_hand_details",
-      expanded: "spell_mage_hand_expanded",
-
-      type: "conjuration",
+      type: "abjuration",
+      classes: ["warlock","wizard"],
 
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "point",
-      aim_type: "in_distance",
+      aim_target: "self",
+      aim_type: null,
 
-      parts: ["somatic", "verbal"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
-      spell_duration_units: "min",
+      spell_duration_units: "round",
 
       aim_need: false,
-      aim_range: 30,
+      aim_range: null,
       aim_aoe: null,
       aim_aoe_size: null,
 
@@ -1749,6 +1670,214 @@ export default {
     },
   ],
 
+  chill_touch: [
+    {
+      //0
+
+      name: "spell_chill_touch",
+      details: "spell_chill_touch_details",
+      expanded: "spell_chill_touch_expanded",
+
+      type: "evocation",
+      classes: ["sorcerer","warlock","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: true,
+      aim_range: 120,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dancing_lights: [
+    {
+      name: "spell_dancing_lights",
+      details: "spell_dancing_lights_details",
+      expanded: "spell_dancing_lights_expanded", // полное описание
+
+      type: "evocation",
+      classes: ["artificer","bard","sorcerer","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal", "somatic", "focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_range: 120,
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  druidcraft: [
+    {
+      //0
+      name: "spell_druidcraft",
+      details: "spell_druidcraft_details",
+      expanded: "spell_druidcraft_expanded",
+
+      type: "transmutation",
+      classes: ["druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal", "somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  eldritch_blast: [
+    {
+      //0
+
+      name: "spell_eldritch_blast",
+      details: "spell_eldritch_blast_details",
+      expanded: "spell_eldritch_blast_expanded",
+
+      type: "evocation",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+      aim_range: 120,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "force_w",
+
+      impact_size_foo: "X_level_5_11_17", //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
+      impact_size_num: 1,
+      impact_size_dice: 10,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fire_bolt: [
+    {
+      //0
+
+      name: "spell_fire_bolt",
+      details: "spell_fire_bolt_details",
+      expanded: "spell_fire_bolt_expanded",
+
+      type: "evocation",
+      classes: ["artificer","sorcerer","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+      aim_range: 120,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 10,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   friends: [
     {
       //0
@@ -1758,6 +1887,7 @@ export default {
       expanded: "spell_friends_expanded",
 
       type: "enchantment",
+      classes: ["bard","sorcerer","warlock","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -1790,14 +1920,16 @@ export default {
     },
   ],
 
-  thaumaturgy: [
+  mage_hand: [
     {
       //0
-      name: "spell_thaumaturgy",
-      details: "spell_thaumaturgy_details",
-      expanded: "spell_thaumaturgy_expanded",
 
-      type: "transmutation",
+      name: "spell_mage_hand",
+      details: "spell_mage_hand_details",
+      expanded: "spell_mage_hand_expanded",
+
+      type: "conjuration",
+      classes: ["bard","sorcerer","warlock","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -1806,16 +1938,16 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal"],
+      parts: ["somatic", "verbal"],
 
-      spell_time: "up_to",
+      spell_time: null,
       spell_duration: 1,
       spell_duration_units: "min",
 
       aim_need: false,
       aim_range: 30,
-      aim_aoe: "sphere",
-      aim_aoe_size: 5,
+      aim_aoe: null,
+      aim_aoe_size: null,
 
       impact_type: null,
       impact_damage_type: null,
@@ -1823,6 +1955,89 @@ export default {
       impact_size_foo: null,
       impact_size_num: null,
       impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  mending: [
+    {
+      //0
+      name: "spell_mending",
+      details: "spell_mending_details",
+      expanded: "spell_mending_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","cleric","druid","sorcerer","wizard"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "near",
+
+      parts: ["verbal","somatic","touch","focus"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  ray_of_frost: [
+    {
+      //0
+
+      name: "spell_ray_of_frost",
+      details: "spell_ray_of_frost_details",
+      expanded: "spell_ray_of_frost_expanded",
+
+      type: "evocation",
+      classes: ["artificer","druid","sorcerer","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+      aim_range: 60,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "cold_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 8,
 
       saving_need: false,
       saving_attribute: null,
@@ -1838,6 +2053,7 @@ export default {
       expanded: "spell_shillelagh_expanded",
 
       type: "transmutation",
+      classes: ["druid"],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1870,30 +2086,113 @@ export default {
     },
   ],
 
-  blade_ward: [
+  small_illusion: [
     {
-      //0
-      name: "spell_blade_ward",
-      details: "spell_blade_ward_details",
-      expanded: "spell_blade_ward_expanded",
+      name: "spell_small_illusion",
+      details: "spell_small_illusion_details",
+      expanded: "spell_small_illusion_expanded", // полное описание
 
-      type: "abjuration",
+      type: "illusion",
+      classes: ["bard","sorcerer","warlock","wizard"],
 
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
-      aim_type: null,
+      aim_target: "point",
+      aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "focus"],
 
       spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      // рассчет урона
+
+      saving_need: true,
+      saving_attribute: "intelligence",
+      impact_size_saved: null,
+    },
+  ],
+
+  thaumaturgy: [
+    {
+      //0
+      name: "spell_thaumaturgy",
+      details: "spell_thaumaturgy_details",
+      expanded: "spell_thaumaturgy_expanded",
+
+      type: "transmutation",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: "sphere",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  true_strike: [
+    {
+      //0
+      name: "spell_true_strike",
+      details: "spell_true_strike_details",
+      expanded: "spell_true_strike_expanded",
+
+      type: "divination",
+      classes: ["bard","sorcerer","warlock","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["somatic"],
+
+      spell_time: "concentration",
       spell_duration: 1,
       spell_duration_units: "round",
 
       aim_need: false,
-      aim_range: null,
+      aim_range: 30,
       aim_aoe: null,
       aim_aoe_size: null,
 
@@ -1907,6 +2206,48 @@ export default {
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
+    },
+  ],
+
+  vicious_mockery: [
+    {
+      //0
+
+      name: "spell_vicious_mockery",
+      details: "spell_vicious_mockery_details",
+      expanded: "spell_vicious_mockery_expanded",
+
+      type: "enchantment",
+      classes: ["bard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: "0",
     },
   ],
 
