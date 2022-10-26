@@ -1,12 +1,12 @@
 <template>
   <div
-    class="wrapp jbm-300"
+    class="wrapp_head jbm-300"
     :class="{
       card_active: active,
       card_hover: !active,
     }"
   >
-  <slot></slot>
+  <slot class="flex_head"></slot>
   {{ slots }}
   </div>
 </template>
@@ -29,18 +29,24 @@ export default {
 
 <style scoped>
 
-.wrapp {
+.wrapp_head {
   padding: 0 12px 0 12px;
   height: 100%;
   /* width: 394px; */
   background: rgba(255, 255, 255, 0.06);
-  /* backdrop-filter: blur(60px); */
+  backdrop-filter: blur(60px);
   border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  gap: 5px;
   text-transform: uppercase;
+}
+
+.flex_head {
+  display: flex;
+  align-items: center;
 }
 
 .card_hover:hover {

@@ -3,29 +3,7 @@
 	<div class="sidebar_left">
 		<!--		<div class="chapter">-->
 		<div class="main_chapter">
-			<div class="header" @click="showMY()">
-				<my-logo-card
-					@click="show('shown_logo')"
-					:active="race_page.shown_logo"
-				/>
-				<!-- <div class="logo" @click="show('shown_logo')">
-						<img alt="logo" src="@/assets/img/logo_1.svg" />
-					 </div> -->
-				<div class="header_col">
-					<my-header-card
-						@click="show('shown_lang')"
-						:active="race_page.shown_lang"
-					>
-						<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon"/>
-					</my-header-card>
-					<my-header-card
-						@click="show('shown_lvl')"
-						:active="race_page.shown_lvl"
-						:slots="Char_Lvl"
-					/>
-				</div>
-			</div>
-
+    <Header/>
 			<my-slider
 				numb="01"
 				title="race"
@@ -33,9 +11,8 @@
 				:type="MY.race"
 			>
 			</my-slider>
-			<!-- <div class="main_menu"> -->
-			<!-- <button @click="plusLvl()" type="">Увеличить Level на +1</button> -->
 		</div>
+
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
 				<div class="selection_menu_wrap">
@@ -144,7 +121,7 @@
 					<!-- </div> -->
 
 
-					<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div> 
+					<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>
 					<div class="jbm-300">{{`компьтед: ${this[foo_com]}`}}</div> -->
 					<!-- <button @click="plus()" type="">
 					Увеличить входящий параметр на +1
@@ -188,7 +165,7 @@
 				:select_link="item.mark"
 				:active_link="dic.select_lang"
 			>
-				<LangCard :title="item.icon" :text="item.name"/>
+				<LangCard :title="item.icon" :text="item.name" :mark="item.mark"/>
 			</my-selection-card>
 		</my-selection-box>
 		<!-- Смена языка -->
@@ -548,17 +525,19 @@ import AgeWeight from "@/components/AgeWeight.vue";
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
+import Header from "./components/Header.vue";
 
 export default {
 	name: "App",
 	components: {
-		GenderChoiceStore,
-		EthnosChoice,
-		GenderChoice,
-		AgeWeight,
-		Description,
-		WelcomeBanner,
-	},
+    GenderChoiceStore,
+    EthnosChoice,
+    GenderChoice,
+    AgeWeight,
+    Description,
+    WelcomeBanner,
+    Header
+},
 	data() {
 		return {
 			dic: dic,
@@ -607,25 +586,6 @@ export default {
 
     Skill_Mastery() {
 			return 1 + this.MY.mastery;
-		},
-		// mastery() {
-		//   if(this.Race_Set_Obj.custom_skills[1] === 'mastery') {
-		//     return 1 + Math.ceil(this.MY.level / 4);
-		//   } else {
-		//     return this.Race_Set_Obj.custom_skills[1];
-		//   }
-		// },
-
-		// Char_Lang() {
-		//   return this.t("lang_icon");
-		// },
-
-		Lang_Icon() {
-			return require(`@/assets/img/icon/lang/icon_${this.dic.select_lang}.png`);
-		},
-
-		Char_Lvl() {
-			return `${this.t("lvl")} ${this.MY.level}`;
 		},
 
 		Get_Height() {
@@ -745,16 +705,6 @@ export default {
 		All_Ethnos_Obj() {
 			return this.MY.race.settings.ethnos;
 		},
-
-		// Char_Height() {
-		//   if (this.MY.height === null) {
-		//     let max_height = this.MY.race.settings.height.max;
-		//     let min_height = this.MY.race.settings.height.min;
-		//     return (min_height + max_height) / 2;
-		//   } else {
-		//     return this.MY.height;
-		//   }
-		// },
 
 		Lang_Not_Humman() {
 			let arr = [];
@@ -914,11 +864,6 @@ export default {
 			this.numb_foo++;
 		},
 
-		// plusGrow() {
-		//   this.MY.height = this.Char_Height;
-		//   this.MY.height += 5;
-		// },
-
 		plusLvl() {
 			this.MY.level++;
 		},
@@ -1070,14 +1015,6 @@ export default {
 			} else {
 				this.race_page[name] = false;
 			}
-		},
-
-		showMY() {
-			console.log(this.MY);
-			// console.log(this.race_page);
-			// console.log('store', this.$store.state.color);
-			// console.log('root', this.$root.color);
-			// console.log(this.$store.state.races.proficiencies.languages);
 		},
 
 		hideRuler() {
@@ -1292,42 +1229,6 @@ a {
 	color: #ffffff;
 }
 
-.header {
-	/*width: 256px;*/
-	height: 28px;
-	margin: 0 0 22px 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.header_col {
-	display: flex;
-	gap: 4px;
-}
-
-.header_icon {
-	height: 18px;
-}
-
-.logo {
-	margin-left: -8px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 41px;
-	height: 41px;
-	background-color: #ffffff;
-	border-radius: 100%;
-	cursor: pointer;
-}
-
-.header_col {
-	height: 100%;
-	display: flex;
-	align-items: center;
-}
-
 .sidebar_left {
 	/* height: 100%; */
 	/*display: flex;*/
@@ -1426,16 +1327,16 @@ a {
 	padding: 14px !important;
 }
 
-/* .mode-fade-enter-active, 
+/* .mode-fade-enter-active,
 .mode-fade-leave-active {
   transition: opacity .3s ease;
 }
 
-.mode-fade-enter-from, 
+.mode-fade-enter-from,
 .mode-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
-  
+
 } */
 
 .btm-fade-enter-active {
