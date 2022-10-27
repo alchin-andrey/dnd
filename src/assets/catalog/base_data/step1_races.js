@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.mending,
+              spell: spells.shocking_grasp,
             },
 
             {

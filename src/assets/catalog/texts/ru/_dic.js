@@ -1464,6 +1464,10 @@ export default {
     spell_chill_touch_details: spells.chill_touch_details,
     spell_chill_touch_expanded: spells.chill_touch_expanded,
 
+    spell_ray_of_frost: spells.ray_of_frost,
+    spell_ray_of_frost_details: spells.ray_of_frost_details,
+    spell_ray_of_frost_expanded: spells.ray_of_frost_expanded,
+
     spell_true_strike: spells.true_strike,
     spell_true_strike_details: spells.true_strike_details,
     spell_true_strike_expanded: spells.true_strike_expanded,
@@ -1481,5 +1485,47 @@ export default {
     spell_mending: spells.mending,
     spell_mending_details: spells.mending_details,
     spell_mending_expanded: spells.mending_expanded,
+
+    spell_light: spells.light,
+    spell_light_details: spells.light_details,
+    spell_light_expanded: spells.light_expanded,
+
+    spell_sacred_flame: spells.sacred_flame,
+    spell_sacred_flame_details: spells.sacred_flame_details,
+    spell_sacred_flame_expanded: spells.sacred_flame_expanded,
+
+    spell_message: spells.message,
+    spell_message_details: spells.message_details,
+    spell_message_expanded: spells.message_expanded,
+
+    spell_resistance: spells.resistance,
+    spell_resistance_details: spells.resistance_details,
+    spell_resistance_expanded: spells.resistance_expanded,
+
+    dice_throw: "бросок",
+
+    spell_produce_flame: spells.produce_flame,
+    spell_produce_flame_details: spells.produce_flame_details,
+    spell_produce_flame_expanded: spells.produce_flame_expanded,
+
+    spell_thorn_whip: spells.thorn_whip,
+    spell_thorn_whip_details: spells.thorn_whip_details,
+    spell_thorn_whip_expanded: spells.thorn_whip_expanded,
+
+    spell_guidance: spells.guidance,
+    spell_guidance_details: spells.guidance_details,
+    spell_guidance_expanded: spells.guidance_expanded,
+
+    spell_spare_the_dying: spells.spare_the_dying,
+    spell_spare_the_dying_details: spells.spare_the_dying_details,
+    spell_spare_the_dying_expanded: spells.spare_the_dying_expanded,
+
+    spell_prestidigitation: spells.prestidigitation,
+    spell_prestidigitation_details: spells.prestidigitation_details,
+    spell_prestidigitation_expanded: spells.prestidigitation_expanded,
+
+    spell_shocking_grasp: spells.shocking_grasp,
+    spell_shocking_grasp_details: spells.shocking_grasp_details,
+    spell_shocking_grasp_expanded: spells.shocking_grasp_expanded,
 
 }

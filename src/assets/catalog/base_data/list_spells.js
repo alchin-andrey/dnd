@@ -1619,7 +1619,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "acid_w",
 
-      impact_size_foo: "Plus_Level_6",
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_num: 1,
       impact_size_dice: 6,
 
@@ -1920,6 +1920,89 @@ export default {
     },
   ],
 
+  guidance: [
+    {
+      //0
+      name: "spell_guidance",
+      details: "spell_guidance_details",
+      expanded: "spell_guidance_expanded",
+
+      type: "divination",
+      classes: ["cleric","druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+
+      parts: ["verbal","somatic","touch"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "dice_throw",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  light: [
+    {
+      //0
+
+      name: "spell_light",
+      details: "spell_light_details",
+      expanded: "spell_light_expanded",
+
+      type: "evocation",
+      classes: ["artificer","bard","cleric","sorcerer","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+
+      parts: ["verbal","touch","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+  ],
+
   mage_hand: [
     {
       //0
@@ -2003,6 +2086,212 @@ export default {
     },
   ],
 
+  message: [
+    {
+      //0
+      name: "spell_message",
+      details: "spell_message_details",
+      expanded: "spell_message_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","sorcerer","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_range: 120,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  poison_spray: [
+    {
+      //0
+
+      name: "spell_poison_spray",
+      details: "spell_poison_spray_details",
+      expanded: "spell_poison_spray_expanded",
+
+      type: "conjuration",
+      classes: ["sorcerer","warlock","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 10,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "poison_w",
+
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 12,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "0",
+    },
+  ],
+
+  prestidigitation: [
+    {
+      //0
+      name: "spell_prestidigitation",
+      details: "spell_prestidigitation_details",
+      expanded: "spell_prestidigitation_expanded",
+
+      type: "transmutation",
+      classes: ["bard","sorcerer","warlock","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  produce_flame: [
+    {
+      //0
+      name: "spell_produce_flame",
+      details: "spell_produce_flame_details",
+      expanded: "spell_produce_flame_expanded",
+
+      type: "conjuration",
+      classes: ["druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic","touch","focus"],
+
+      spell_time: "up_to",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: true,
+      aim_range: 30,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  resistance: [
+    {
+      //0
+      name: "spell_resistance",
+      details: "spell_resistance_details",
+      expanded: "spell_resistance_expanded",
+
+      type: "abjuration",
+      classes: ["artificer","cleric","druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+
+      parts: ["verbal","somatic","touch","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "dice_throw",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   ray_of_frost: [
     {
       //0
@@ -2045,6 +2334,48 @@ export default {
     },
   ],
 
+  sacred_flame: [
+    {
+      //0
+
+      name: "spell_sacred_flame",
+      details: "spell_sacred_flame_details",
+      expanded: "spell_sacred_flame_expanded",
+
+      type: "evocation",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 8,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "0",
+    },
+  ],
+
   shillelagh: [
     {
       //0
@@ -2078,6 +2409,48 @@ export default {
 
       impact_size_foo: null,
       impact_size_num: null,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  shocking_grasp: [
+    {
+      //0
+
+      name: "spell_shocking_grasp",
+      details: "spell_shocking_grasp_details",
+      expanded: "spell_shocking_grasp_expanded",
+
+      type: "evocation",
+      classes: ["sorcerer","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+
+      parts: ["verbal","somatic","touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "electricity_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
       impact_size_dice: 8,
 
       saving_need: false,
@@ -2123,6 +2496,47 @@ export default {
 
       saving_need: true,
       saving_attribute: "intelligence",
+      impact_size_saved: null,
+    },
+  ],
+
+  spare_the_dying: [
+    {
+      //0
+      name: "spell_spare_the_dying",
+      details: "spell_spare_the_dying_details",
+      expanded: "spell_spare_the_dying_expanded",
+
+      type: "necromancy",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+
+      parts: ["verbal","somatic","touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],
@@ -2248,6 +2662,47 @@ export default {
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: "0",
+    },
+  ],
+
+  thorn_whip: [
+    {
+      //0
+      name: "spell_thorn_whip",
+      details: "spell_thorn_whip_details",
+      expanded: "spell_thorn_whip_expanded",
+
+      type: "transmutation",
+      classes: ["druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+      aim_range: 30,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "piersing_w",
+
+      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
     },
   ],
 
