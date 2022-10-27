@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.shocking_grasp,
+              spell: spells.hail_of_thorns,
             },
 
             {

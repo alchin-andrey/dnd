@@ -1528,4 +1528,50 @@ export default {
     spell_shocking_grasp_details: spells.shocking_grasp_details,
     spell_shocking_grasp_expanded: spells.shocking_grasp_expanded,
 
+    spell_poison_spray: spells.poison_spray,
+    spell_poison_spray_details: spells.poison_spray_details,
+    spell_poison_spray_expanded: spells.poison_spray_expanded,
+
+    spell_silent_image: spells.silent_image,
+    spell_silent_image_details: spells.silent_image_details,
+    spell_silent_image_expanded: spells.silent_image_expanded,
+
+    spell_bless: spells.bless,
+    spell_bless_details: spells.bless_details,
+    spell_bless_expanded: spells.bless_expanded,
+
+    spell_divine_favor: spells.divine_favor,
+    spell_divine_favor_details: spells.divine_favor_details,
+    spell_divine_favor_expanded: spells.divine_favor_expanded,
+
+    spell_witch_bolt: spells.witch_bolt,
+    spell_witch_bolt_details: spells.witch_bolt_details,
+    spell_witch_bolt_expanded: spells.witch_bolt_expanded,
+
+    spell_thunderwave: spells.thunderwave,
+    spell_thunderwave_details: spells.thunderwave_details,
+    spell_thunderwave_expanded: spells.thunderwave_expanded,
+
+    spell_magic_missile: spells.magic_missile,
+    spell_magic_missile_details: spells.magic_missile_details,
+    spell_magic_missile_expanded: spells.magic_missile_expanded,
+
+    spell_compelled_duel: spells.compelled_duel,
+    spell_compelled_duel_details: spells.compelled_duel_details,
+    spell_compelled_duel_expanded: spells.compelled_duel_expanded,
+
+    temporary: "временное",
+
+    spell_heroism: spells.heroism,
+    spell_heroism_details: spells.heroism_details,
+    spell_heroism_expanded: spells.heroism_expanded,
+
+    spell_wrathful_smite: spells.wrathful_smite,
+    spell_wrathful_smite_details: spells.wrathful_smite_details,
+    spell_wrathful_smite_expanded: spells.wrathful_smite_expanded,
+
+    spell_hail_of_thorns: spells.hail_of_thorns,
+    spell_hail_of_thorns_details: spells.hail_of_thorns_details,
+    spell_hail_of_thorns_expanded: spells.hail_of_thorns_expanded,
+
 }
