@@ -2694,7 +2694,7 @@ export default {
       aim_aoe_size: null,
 
       impact_type: "damage",
-      impact_damage_type: "piersing_w",
+      impact_damage_type: "piercing_w",
 
       impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_num: 1,
