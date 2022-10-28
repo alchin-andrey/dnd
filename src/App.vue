@@ -1208,6 +1208,10 @@ a {
 	overflow: hidden;
 }
 
+.buff {
+  color: #05ff00;
+}
+
 .jbm-300 {
 	font-family: "JetBrains Mono";
 	font-style: normal;

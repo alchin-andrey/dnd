@@ -33,7 +33,8 @@
 						alt="arrow"
 					/>
 				</div>
-				<div class="text_spell">{{ t_Text }}</div>
+				<!-- <div class="text_spell">{{ t_Text }}</div> -->
+        <div class="text_spell" v-html="t_Text"></div>
 			</div>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
@@ -74,7 +75,8 @@
 				{{ n - 1 }}
 			</div>
 		</div>
-		<div class="text_spell">{{ t_Text }}</div>
+		<!-- <div class="text_spell">{{ t_Text }}</div> -->
+    <div class="text_spell" v-html="t_Text"></div>
 		<my-wrapper gap_6>
 			<div class="col_spell">
 				{{ t_Cast }}<span class="spell_dahs">:</span>{{ t_Cast_Value }}
@@ -357,6 +359,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .flex_spell {
 	display: flex;
 	gap: 0 18px;
