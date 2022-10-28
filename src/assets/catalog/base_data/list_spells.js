@@ -3907,6 +3907,231 @@ export default {
     {},{},{},{},{},{},{},{},
   ],
 
+  illusory_script: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_illusory_script",
+      details: "spell_illusory_script_details",
+      expanded: "spell_illusory_script_expanded",
+
+      type: "illusion",
+      classes: ["bard","warlock","wizard"],
+      
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic","material_ink_10gold"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  unseen_servant: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_unseen_servant",
+      details: "spell_unseen_servant_details",
+      expanded: "spell_unseen_servant_expanded",
+
+      type: "conjuration",
+      classes: ["bard","warlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  detect_poison_and_disease: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_detect_poison_and_disease",
+      details: "spell_detect_poison_and_disease_details",
+      expanded: "spell_detect_poison_and_disease_expanded",
+
+      type: "divination",
+      classes: ["cleric","druid","paladin","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  detect_evil_and_good: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_detect_evil_and_good",
+      details: "spell_detect_evil_and_good_details",
+      expanded: "spell_detect_evil_and_good_expanded",
+
+      type: "divination",
+      classes: ["cleric","paladin"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  detect_magic: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_detect_magic",
+      details: "spell_detect_magic_details",
+      expanded: "spell_detect_magic_expanded",
+
+      type: "divination",
+      classes: ["bard","warlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "contentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   placeholder: [
     {
       //0

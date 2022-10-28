@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.guiding_bolt,
+              spell: spells.detect_magic,
             },
 
             {

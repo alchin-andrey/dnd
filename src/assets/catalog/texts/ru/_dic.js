@@ -1627,4 +1627,26 @@ export default {
     spell_guiding_bolt: spells.guiding_bolt,
     spell_guiding_bolt_details: spells.guiding_bolt_details,
     spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
+
+    material_ink_10gold: "чернила за минимум 10 🟡",
+
+    spell_illusory_script: spells.illusory_script,
+    spell_illusory_script_details: spells.illusory_script_details,
+    spell_illusory_script_expanded: spells.illusory_script_expanded,
+
+    spell_unseen_servant: spells.unseen_servant,
+    spell_unseen_servant_details: spells.unseen_servant_details,
+    spell_unseen_servant_expanded: spells.unseen_servant_expanded,
+
+    spell_detect_poison_and_disease: spells.detect_poison_and_disease,
+    spell_detect_poison_and_disease_details: spells.detect_poison_and_disease_details,
+    spell_detect_poison_and_disease_expanded: spells.detect_poison_and_disease_expanded,
+
+    spell_detect_evil_and_good: spells.detect_evil_and_good,
+    spell_detect_evil_and_good_details: spells.detect_evil_and_good_details,
+    spell_detect_evil_and_good_expanded: spells.detect_evil_and_good_expanded,
+
+    spell_detect_magic: spells.detect_magic,
+    spell_detect_magic_details: spells.detect_magic_details,
+    spell_detect_magic_expanded: spells.detect_magic_expanded,
 }
