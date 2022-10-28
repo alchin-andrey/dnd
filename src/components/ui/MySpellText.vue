@@ -470,6 +470,7 @@ export default {
 }
 
 .text_spell {
+  width: 340px;
 	/*color: rgba(255, 255, 255, 0.4);*/
 	text-align: start;
 	white-space: pre-line;
