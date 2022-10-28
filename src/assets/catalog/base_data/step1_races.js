@@ -60,12 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.hail_of_thorns,
-            },
-
-            {
-              level: 1,
-              spell: spells.fake_presence,
+              spell: spells.guiding_bolt,
             },
 
             {

@@ -1574,4 +1574,57 @@ export default {
     spell_hail_of_thorns_details: spells.hail_of_thorns_details,
     spell_hail_of_thorns_expanded: spells.hail_of_thorns_expanded,
 
+    spell_thunderous_smite: spells.thunderous_smite,
+    spell_thunderous_smite_details: spells.thunderous_smite_details,
+    spell_thunderous_smite_expanded: spells.thunderous_smite_expanded,
+
+    spell_dissonant_whispers: spells.dissonant_whispers,
+    spell_dissonant_whispers_details: spells.dissonant_whispers_details,
+    spell_dissonant_whispers_expanded: spells.dissonant_whispers_expanded,
+
+    spell_armor_of_agathys: spells.armor_of_agathys,
+    spell_armor_of_agathys_details: spells.armor_of_agathys_details,
+    spell_armor_of_agathys_expanded: spells.armor_of_agathys_expanded,
+
+    spell_mage_armor: spells.mage_armor,
+    spell_mage_armor_details: spells.mage_armor_details,
+    spell_mage_armor_expanded: spells.mage_armor_expanded,
+
+    spell_animal_friendship: spells.animal_friendship,
+    spell_animal_friendship_details: spells.animal_friendship_details,
+    spell_animal_friendship_expanded: spells.animal_friendship_expanded,
+
+    targets_number: "целей",
+
+    spell_protection_from_evil_and_good: spells.protection_from_evil_and_good,
+    spell_protection_from_evil_and_good_details: spells.protection_from_evil_and_good_details,
+    spell_protection_from_evil_and_good_expanded: spells.protection_from_evil_and_good_expanded,
+
+    spell_healing_word: spells.healing_word,
+    spell_healing_word_details: spells.healing_word_details,
+    spell_healing_word_expanded: spells.healing_word_expanded,
+
+    spell_cure_wounds: spells.cure_wounds,
+    spell_cure_wounds_details: spells.cure_wounds_details,
+    spell_cure_wounds_expanded: spells.cure_wounds_expanded,
+
+    spell_ray_of_sickness: spells.ray_of_sickness,
+    spell_ray_of_sickness_details: spells.ray_of_sickness_details,
+    spell_ray_of_sickness_expanded: spells.ray_of_sickness_expanded,
+
+    spell_disguise_self: spells.disguise_self,
+    spell_disguise_self_details: spells.disguise_self_details,
+    spell_disguise_self_expanded: spells.disguise_self_expanded,
+
+    spell_hunters_mark: spells.hunters_mark,
+    spell_hunters_mark_details: spells.hunters_mark_details,
+    spell_hunters_mark_expanded: spells.hunters_mark_expanded,
+
+    spell_inflict_wounds: spells.inflict_wounds,
+    spell_inflict_wounds_details: spells.inflict_wounds_details,
+    spell_inflict_wounds_expanded: spells.inflict_wounds_expanded,
+
+    spell_guiding_bolt: spells.guiding_bolt,
+    spell_guiding_bolt_details: spells.guiding_bolt_details,
+    spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
 }
