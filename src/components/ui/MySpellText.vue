@@ -78,26 +78,30 @@
 		<!-- <div class="text_spell">{{ t_Text }}</div> -->
     <div class="text_spell" v-html="t_Text"></div>
 		<my-wrapper gap_6>
-			<div class="col_spell">
-				{{ t_Cast }}<span class="spell_dahs">:</span>{{ t_Cast_Value }}
+			<div class="col">
+				<div class="col_title">{{ t_Cast }}<span>:</span></div>
+        <div class="col_text">{{ t_Cast_Value }}</div>
 			</div>
-			<div class="col_spell">
-				{{ t_Target }}<span class="spell_dahs">:</span
-				>{{ t_Target_Value }}
+			<div class="col">
+				<div class="col_title">{{ t_Target }}<span>:</span></div>
+        <div class="col_text">{{ t_Target_Value }}</div>
 			</div>
-			<div class="col_spell">
-				{{ t_Parts }}<span class="spell_dahs">:</span
-				>{{ beforeEmoji(t_Parts_Value)
-				}}<emoji
-					v-if="updEmoji(t_Parts_Value)"
-					:data="emojiIndex"
-					:emoji="updEmoji(t_Parts_Value)"
-					:set="set_emoji"
-					:size="14"
-				/>{{ afterEmoji(t_Parts_Value) }}
+			<div class="col">
+				<div class="col_title">{{ t_Parts }}<span>:</span></div>
+        <div class="col_text">
+          {{ beforeEmoji(t_Parts_Value)
+  				}}<emoji
+  					v-if="updEmoji(t_Parts_Value)"
+  					:data="emojiIndex"
+  					:emoji="updEmoji(t_Parts_Value)"
+  					:set="set_emoji"
+  					:size="13"
+  				/>{{ afterEmoji(t_Parts_Value) }}
+        </div>
 			</div>
-			<div class="col_spell">
-				{{ t_Time }}<span class="spell_dahs">:</span>{{ t_Time_Value }}
+			<div class="col">
+				<div class="col_title">{{ t_Time }}<span>:</span></div>
+        <div class="col_text">{{ t_Time_Value }}</div>
 			</div>
 		</my-wrapper>
 		<my-wrapper
@@ -473,29 +477,47 @@ export default {
   width: 340px;
 	/*color: rgba(255, 255, 255, 0.4);*/
 	text-align: start;
-	white-space: pre-line;
+	/* white-space: pre-line; */
 }
 
 .text_spell:first-letter {
 	text-transform: uppercase;
 }
 
-.col_spell {
-	height: 18px;
+/* .col_spell {
+	min-height: 18px;
 	display: flex;
-	align-items: center;
 	text-align: start;
-	white-space: pre;
+} */
+
+.col {
+  min-height: 18px;
+	display: flex;
+  align-items: flex-start;
 }
 
-.spell_dahs {
+.col_title {
+  margin-right: 14px;
+  display: flex;
+}
+
+.col_title span {
+  color: rgba(255, 255, 255, 0.4);
+  min-width: 5px;
+}
+
+.col_text {
+  text-align: start;
+}
+
+/* .spell_dahs {
 	width: 7px;
 	color: rgba(255, 255, 255, 0.4);
 	margin-right: 12px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+} */
 
 .hr {
 	height: 1px;
@@ -504,6 +526,8 @@ export default {
 
 .emoji-mart-emoji {
 	padding: 0;
+  /* top: 2px; */
 	line-height: 0;
+  vertical-align: text-top;
 }
 </style>
