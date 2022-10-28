@@ -80,10 +80,12 @@
 				{{ t_Cast }}<span class="spell_dahs">:</span>{{ t_Cast_Value }}
 			</div>
 			<div class="col_spell">
-				{{ t_Target }}<span class="spell_dahs">:</span>{{ t_Target_Value }}
+				{{ t_Target }}<span class="spell_dahs">:</span
+				>{{ t_Target_Value }}
 			</div>
 			<div class="col_spell">
-				{{ t_Parts }}<span class="spell_dahs">:</span>{{ beforeEmoji(t_Parts_Value)
+				{{ t_Parts }}<span class="spell_dahs">:</span
+				>{{ beforeEmoji(t_Parts_Value)
 				}}<emoji
 					v-if="updEmoji(t_Parts_Value)"
 					:data="emojiIndex"
@@ -96,19 +98,20 @@
 				{{ t_Time }}<span class="spell_dahs">:</span>{{ t_Time_Value }}
 			</div>
 		</my-wrapper>
-		<magic-attribute
-			v-if="Spell_Index.aim_need"
-			title="aim_bonus"
-			:numb="this.$root.MY.mastery"
-			plus
-		/>
 		<my-wrapper
 			v-if="
+				Spell_Index.aim_need ||
 				Spell_Index.impact_type ||
 				Spell_Index.aim_range ||
 				Spell_Index.aim_aoe
 			"
 		>
+			<magic-attribute
+				v-if="Spell_Index.aim_need"
+				title="aim_bonus"
+				:numb="this.$root.MY.mastery"
+				plus
+			/>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
 				:title="Spell_Index.impact_type"
@@ -498,5 +501,4 @@ export default {
 	padding: 0;
 	line-height: 0;
 }
-
 </style>
