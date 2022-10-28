@@ -678,7 +678,7 @@ export default {
       aim_need: false,
       aim_range: 60,
       aim_aoe: "cube",
-      aim_aoe_size: 40,
+      aim_aoe_size: 20,
 
       impact_type: null,
       impact_damage_type: null,
@@ -4128,6 +4128,183 @@ export default {
 
       saving_need: false,
       saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  burning_hands: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_burning_hands",
+      details: "spell_burning_hands_details",
+      expanded: "spell_burning_hands_expanded",
+
+      type: "evocation",
+      classes: ["sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cone",
+      aim_aoe_size: 15,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 3,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  faerie_fire_1: [
+    {},
+    {
+      name: "spell_faerie_fire",
+      details: "spell_faerie_fire_details",
+      expanded: "spell_faerie_fire_expanded", // полное описание
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: "cube",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+      // рассчет урона если спас пройден
+    },
+  ],
+
+  identify: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_identify",
+      details: "spell_identify_details",
+      expanded: "spell_identify_expanded",
+
+      type: "divination",
+      classes: ["artificer","bard","wizard"],
+      
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["material_pearl_100gold","verbal","somatic","touch","focus"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  entangle: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_entangle",
+      details: "spell_entangle_details",
+      expanded: "spell_entangle_expanded",
+
+      type: "conjuration",
+      classes: ["druid","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "square",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
       impact_size_saved: null,
     },
   ],

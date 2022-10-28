@@ -1649,4 +1649,18 @@ export default {
     spell_detect_magic: spells.detect_magic,
     spell_detect_magic_details: spells.detect_magic_details,
     spell_detect_magic_expanded: spells.detect_magic_expanded,
+
+    material_pearl_100gold: "жемчужина за минимум 100 🟡",
+
+    spell_burning_hands: spells.burning_hands,
+    spell_burning_hands_details: spells.burning_hands_details,
+    spell_burning_hands_expanded: spells.burning_hands_expanded,
+
+    spell_identify: spells.identify,
+    spell_identify_details: spells.identify_details,
+    spell_identify_expanded: spells.identify_expanded,
+
+    square: "квадрат",
+
+    
 }
