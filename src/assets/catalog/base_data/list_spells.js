@@ -1585,7 +1585,7 @@ export default {
     },
   ],
 
-  // All spells / 0
+  // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [
     {
@@ -1928,7 +1928,7 @@ export default {
       expanded: "spell_guidance_expanded",
 
       type: "divination",
-      classes: ["cleric","druid"],
+      classes: ["artificer","cleric","druid"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2136,7 +2136,7 @@ export default {
       expanded: "spell_poison_spray_expanded",
 
       type: "conjuration",
-      classes: ["sorcerer","warlock","wizard"],
+      classes: ["artificer","sorcerer","warlock","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2177,7 +2177,7 @@ export default {
       expanded: "spell_prestidigitation_expanded",
 
       type: "transmutation",
-      classes: ["bard","sorcerer","warlock","wizard"],
+      classes: ["artificer","bard","sorcerer","warlock","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2426,7 +2426,7 @@ export default {
       expanded: "spell_shocking_grasp_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","wizard"],
+      classes: ["artificer","sorcerer","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2508,7 +2508,7 @@ export default {
       expanded: "spell_spare_the_dying_expanded",
 
       type: "necromancy",
-      classes: ["cleric"],
+      classes: ["artificer","cleric"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2673,7 +2673,7 @@ export default {
       expanded: "spell_thorn_whip_expanded",
 
       type: "transmutation",
-      classes: ["druid"],
+      classes: ["artificer","druid"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2706,7 +2706,7 @@ export default {
     },
   ],
 
-  // All spells / 1
+  // All spells / 1 -----------------------------------------------------------
 
   hellish_rebuke: [
     {
@@ -3231,8 +3231,8 @@ export default {
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "object",
-      aim_type: "near",
+      aim_target: "self",
+      aim_type: null,
       aim_range: null,
 
       parts: ["verbal"],
@@ -3258,6 +3258,653 @@ export default {
       impact_size_saved: null,
     },
     {},{},{},{},{}
+  ],
+
+  thunderous_smite: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_thunderous_smite",
+      details: "spell_thunderous_smite_details",
+      expanded: "spell_thunderous_smite_expanded",
+
+      type: "evocation",
+      classes: ["paladin"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "thunder_w",
+      
+      impact_size_foo: null,
+      impact_size_num: 2,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    },
+  ],
+
+  dissonant_whispers: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_dissonant_whispers",
+      details: "spell_dissonant_whispers_details",
+      expanded: "spell_dissonant_whispers_expanded",
+
+      type: "enchantment",
+      classes: ["bard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 3,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: "÷2",
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  armor_of_agathys: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_armor_of_agathys",
+      details: "spell_armor_of_agathys_details",
+      expanded: "spell_armor_of_agathys_expanded",
+
+      type: "abjuration",
+      classes: ["warlock"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "temporary",
+      
+      impact_size_foo: "Dmg_nodice_plus_5", //spell{1} = 5, spell{2} = 10, spell{3} = 15
+      impact_size_num: 5,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  mage_armor: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_mage_armor",
+      details: "spell_mage_armor_details",
+      expanded: "spell_mage_armor_expanded",
+
+      type: "abjuration",
+      classes: ["sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "armor_class",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Num_plus_DEX",
+      impact_size_num: 13,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  animal_friendship: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_animal_friendship",
+      details: "spell_animal_friendship_details",
+      expanded: "spell_animal_friendship_expanded",
+
+      type: "enchantment",
+      classes: ["bard","druid","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null, 
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  tashas_hideous_laughter: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_tashas_hideous_laughter",
+      details: "spell_tashas_hideous_laughter_details",
+      expanded: "spell_tashas_hideous_laughter_expanded",
+
+      type: "enchantment",
+      classes: ["bard","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  protection_from_evil_and_good: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_protection_from_evil_and_good",
+      details: "spell_protection_from_evil_and_good_details",
+      expanded: "spell_protection_from_evil_and_good_expanded",
+
+      type: "abjuration",
+      classes: ["druid","cleric","paladin","warlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","touch","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+
+  ],
+
+  healing_word: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_healing_word",
+      details: "spell_healing_word_details",
+      expanded: "spell_healing_word_expanded",
+
+      type: "evocation",
+      classes: ["bard","cleric","druid"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1_and_base_mod", //spell{1} = 1d4+<модификатор базовой характеристики>, spell{2} = 2d4+<модификатор базовой характеристики> ...
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  cure_wounds: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_cure_wounds",
+      details: "spell_cure_wounds_details",
+      expanded: "spell_cure_wounds_expanded",
+
+      type: "evocation",
+      classes: ["artificer","bard","cleric","druid","paladin","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1_and_base_mod", //spell{1} = 1d4+<модификатор базовой характеристики>, spell{2} = 2d4+<модификатор базовой характеристики> ...
+      impact_size_num: 1,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  ray_of_sickness: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_ray_of_sickness",
+      details: "spell_ray_of_sickness_details",
+      expanded: "spell_ray_of_sickness_expanded",
+
+      type: "necromancy",
+      classes: ["sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "poison_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 2,
+      impact_size_dice: 8,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  disguise_self: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_disguise_self",
+      details: "spell_disguise_self_details",
+      expanded: "spell_disguise_self_expanded",
+
+      type: "illusion",
+      classes: ["artificer","bard","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "intelligence",
+      impact_size_saved: null,
+    },
+  ],
+
+  hunters_mark: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_hunters_mark",
+      details: "spell_hunters_mark_details",
+      expanded: "spell_hunters_mark_expanded",
+
+      type: "divination",
+      classes: ["ranger"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+      
+      impact_size_foo: null,
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {
+      spell_duration: 8,
+    },
+    {},
+    {
+      spell_duration: 24,
+    }
+  ],
+
+  inflict_wounds: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_inflict_wounds",
+      details: "spell_inflict_wounds_details",
+      expanded: "spell_inflict_wounds_expanded",
+
+      type: "necromancy",
+      classes: ["cleric"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 3,
+      impact_size_dice: 10,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  guiding_bolt: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_guiding_bolt",
+      details: "spell_guiding_bolt_details",
+      expanded: "spell_guiding_bolt_expanded",
+
+      type: "evocation",
+      classes: ["cleric"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 4,
+      impact_size_dice: 6,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
   ],
 
   placeholder: [
@@ -3304,6 +3951,24 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
+      /*
+        bonus_w
+        poison_w:"🧪 Ядом",
+        fire_w:"🔥 Огнем",
+        cold_w:"❄️ Холодом",
+        electricity_w:"⚡️ Электричеством",
+        acid_w:"⚗️ Кислотой",
+        thunder_w: "🔊 Звуком",
+        radiant_w: "✨ Светом",
+        force_w: "🌈 Cиловым полем",
+
+        piercing_w: "🗡 колющий",
+        slashing_w: "🪓 рубящий",
+        bludgeoning_w: "🔨 дробящий",
+
+        necrotic_w: "💀 Некротический",
+        psychic_w: "🧠 Психический",
+      */
       
       impact_size_foo: null,
       impact_size_num: null,
