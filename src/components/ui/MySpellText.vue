@@ -10,12 +10,8 @@
 			:class="{ active: dialogVisible && !passive }"
 		></div>
 		<div class="int-400 flex_col">
-			<!--			<div class="title" v-html="t_Html"></div>-->
 			<div>
 				<div class="flex_title">
-					<!-- <div class="title_spell h_18">
-                    {{ t_Title }}
-                    </div> -->
 					<div class="title_spell h_18">
 						{{ em_Before
 						}}<emoji
@@ -34,7 +30,7 @@
 					/>
 				</div>
 				<!-- <div class="text_spell">{{ t_Text }}</div> -->
-        <div class="text_spell" v-html="t_Text"></div>
+				<div class="text_spell" v-html="t_Text"></div>
 			</div>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
@@ -76,33 +72,12 @@
 			</div>
 		</div>
 		<!-- <div class="text_spell">{{ t_Text }}</div> -->
-    <div class="text_spell" v-html="t_Text"></div>
+		<div class="text_spell" v-html="t_Text"></div>
 		<my-wrapper gap_6>
-			<div class="col">
-				<div class="col_title">{{ t_Cast }}<span>:</span></div>
-        <div class="col_text">{{ t_Cast_Value }}</div>
-			</div>
-			<div class="col">
-				<div class="col_title">{{ t_Target }}<span>:</span></div>
-        <div class="col_text">{{ t_Target_Value }}</div>
-			</div>
-			<div class="col">
-				<div class="col_title">{{ t_Parts }}<span>:</span></div>
-        <div class="col_text">
-          {{ beforeEmoji(t_Parts_Value)
-  				}}<emoji
-  					v-if="updEmoji(t_Parts_Value)"
-  					:data="emojiIndex"
-  					:emoji="updEmoji(t_Parts_Value)"
-  					:set="set_emoji"
-  					:size="13"
-  				/>{{ afterEmoji(t_Parts_Value) }}
-        </div>
-			</div>
-			<div class="col">
-				<div class="col_title">{{ t_Time }}<span>:</span></div>
-        <div class="col_text">{{ t_Time_Value }}</div>
-			</div>
+			<my-spell-main title="cast_time" :text="t_Cast_Value" />
+			<my-spell-main title="aim_target" :text="t_Target_Value" />
+			<my-spell-main title="parts" :text="t_Parts_Value" emoji />
+			<my-spell-main title="time" :text="t_Time_Value" />
 		</my-wrapper>
 		<my-wrapper
 			v-if="
@@ -179,10 +154,6 @@ export default {
 			type: Array,
 			default: null,
 		},
-		// icon: {
-		//     type: Boolean,
-		//     default: false,
-		// },
 		passive: {
 			type: Boolean,
 			default: false,
@@ -263,10 +234,6 @@ export default {
 		t_Text() {
 			return this.t(this.Spell_Index.details);
 		},
-		t_Cast() {
-			let string = this.t("cast_time");
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
 		t_Cast_Value() {
 			let string = null;
 			if (this.Spell_Index.cast_time === "ritual") {
@@ -277,10 +244,6 @@ export default {
 			} else {
 				string = this.t(this.Spell_Index.cast_time);
 			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-		t_Target() {
-			let string = this.t("aim_target");
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Target_Value() {
@@ -294,10 +257,6 @@ export default {
 			}
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
-		t_Parts() {
-			let string = this.t("parts");
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
 		t_Parts_Value() {
 			let parts = this.Spell_Index.parts;
 			let arr = [];
@@ -307,10 +266,6 @@ export default {
 			return arr
 				.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`)
 				.join(", ");
-		},
-		t_Time() {
-			let string = this.t("time");
-			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 		t_Time_Value() {
 			let value_1 = null;
@@ -363,8 +318,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .flex_spell {
 	display: flex;
 	gap: 0 18px;
@@ -474,7 +427,7 @@ export default {
 }
 
 .text_spell {
-  width: 340px;
+	width: 340px;
 	/*color: rgba(255, 255, 255, 0.4);*/
 	text-align: start;
 	/* white-space: pre-line; */
@@ -484,41 +437,6 @@ export default {
 	text-transform: uppercase;
 }
 
-/* .col_spell {
-	min-height: 18px;
-	display: flex;
-	text-align: start;
-} */
-
-.col {
-  min-height: 18px;
-	display: flex;
-  align-items: flex-start;
-}
-
-.col_title {
-  margin-right: 14px;
-  display: flex;
-}
-
-.col_title span {
-  color: rgba(255, 255, 255, 0.4);
-  min-width: 5px;
-}
-
-.col_text {
-  text-align: start;
-}
-
-/* .spell_dahs {
-	width: 7px;
-	color: rgba(255, 255, 255, 0.4);
-	margin-right: 12px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
-
 .hr {
 	height: 1px;
 	background: rgba(255, 255, 255, 0.2);
@@ -526,8 +444,7 @@ export default {
 
 .emoji-mart-emoji {
 	padding: 0;
-  /* top: 2px; */
 	line-height: 0;
-  vertical-align: text-top;
+	vertical-align: text-top;
 }
 </style>

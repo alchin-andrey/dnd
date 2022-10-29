@@ -30,6 +30,7 @@ import MyHeaderCard from "@/components/ui/MyHeaderCard.vue";
 import MyLogoCard from "@/components/ui/MyLogoCard.vue";
 import MagicAttribute from "@/components/ui/MagicAttribute.vue";
 import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
+import MySpellMain from "@/components/ui/MySpellMain.vue";
 
 import GenderCard from "@/components/GenderCard.vue";
 
@@ -70,4 +71,5 @@ export default [
   MyLogoCard,
   MagicAttribute,
   MyDialogSpell,
+  MySpellMain,
 ];
