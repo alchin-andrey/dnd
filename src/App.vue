@@ -1,9 +1,8 @@
 <template>
 	<!-- Левый бар -->
 	<div class="sidebar_left">
-		<!--		<div class="chapter">-->
 		<div class="main_chapter">
-    <Header/>
+			<Header />
 			<my-slider
 				numb="01"
 				title="race"
@@ -29,11 +28,11 @@
 					<div
 						class="selection_menu"
 						v-if="
-              MY.race.settings.custom_stats ||
-              MY.race.settings.custom_skills ||
-              MY.race.settings.custom_languages ||
-              MY.ethnos.custom_languages
-            "
+							MY.race.settings.custom_stats ||
+							MY.race.settings.custom_skills ||
+							MY.race.settings.custom_languages ||
+							MY.ethnos.custom_languages
+						"
 					>
 						<my-selection
 							v-if="MY.race.settings.custom_stats"
@@ -52,8 +51,9 @@
 						</my-selection>
 						<my-selection
 							v-if="
-                MY.race.settings.custom_languages || MY.ethnos.custom_languages
-              "
+								MY.race.settings.custom_languages ||
+								MY.ethnos.custom_languages
+							"
 							@click="show('shown_languages')"
 							:active="race_page.shown_languages"
 							title="languages"
@@ -115,34 +115,18 @@
 							:type="getCharColor('hair').name"
 						>
 						</my-selection>
-
-						<!-- <button @click="plusGrow()" type="">Увеличить рост +5</button> -->
 					</div>
-					<!-- </div> -->
-
-
-					<!-- <div class="jbm-300">{{ "методс:" + F(foo_met, numb_foo) }}</div>
-					<div class="jbm-300">{{`компьтед: ${this[foo_com]}`}}</div> -->
-					<!-- <button @click="plus()" type="">
-					Увеличить входящий параметр на +1
-					</button> -->
-
-
 				</div>
 			</div>
-      <transition name="btm-fade" mode="out-in">
-			<my-button
-				v-if="race_page.shown_home"
-				numb="02"
-				title="class"
-			></my-button>
-			<my-button-back
-				v-else
-				@click="showHome()"
-			></my-button-back>
-    </transition>
+			<transition name="btm-fade" mode="out-in">
+				<my-button
+					v-if="race_page.shown_home"
+					numb="02"
+					title="class"
+				></my-button>
+				<my-button-back v-else @click="showHome()"></my-button-back>
+			</transition>
 		</div>
-		<!--		</div>-->
 	</div>
 
 	<!-- Выпадающее меню -->
@@ -152,7 +136,7 @@
 	>
 		<!-- Превью -->
 		<my-selection-box :shown="race_page.shown_logo">
-			<Description/>
+			<Description />
 		</my-selection-box>
 		<!-- Превью -->
 
@@ -165,46 +149,50 @@
 				:select_link="item.mark"
 				:active_link="dic.select_lang"
 			>
-				<LangCard :title="item.icon" :text="item.name" :mark="item.mark"/>
+				<LangCard
+					:title="item.icon"
+					:text="item.name"
+					:mark="item.mark"
+				/>
 			</my-selection-card>
 		</my-selection-box>
 		<!-- Смена языка -->
 
 		<!-- Этнос-->
 		<my-selection-box :shown="race_page.shown_ethnos">
-			<EthnosChoice/>
+			<EthnosChoice />
 		</my-selection-box>
 		<!-- Этнос -->
 
 		<!-- Гендр -->
 		<my-selection-box :shown="race_page.shown_gender">
-			<GenderChoiceStore/>
+			<GenderChoiceStore />
 		</my-selection-box>
 		<!-- Гендр -->
 
 		<!-- Цвет кожи -->
 		<my-selection-box :shown="race_page.shown_skin_color">
-			<my-color-select body_part="skin"/>
+			<my-color-select body_part="skin" />
 		</my-selection-box>
 		<!-- Цвет кожи -->
 
 		<!-- Цвет глаз -->
 		<my-selection-box :shown="race_page.shown_eyes_color">
-			<my-color-select body_part="eyes"/>
+			<my-color-select body_part="eyes" />
 		</my-selection-box>
 		<!-- Цвет глаз -->
 
 		<!-- Цвет волос -->
 		<my-selection-box :shown="race_page.shown_hair_color">
-			<my-color-select body_part="hair"/>
+			<my-color-select body_part="hair" />
 		</my-selection-box>
 		<!-- Цвет волос -->
 
 		<!-- Уровень -->
 		<my-selection-box :shown="race_page.shown_lvl">
 			<div class="flex_options">
-				<MyRange v-model.number="MY.level" lvl/>
-				<MyRangeSize lvl/>
+				<MyRange v-model.number="MY.level" lvl />
+				<MyRangeSize lvl />
 			</div>
 		</my-selection-box>
 		<!-- Уровень -->
@@ -212,8 +200,8 @@
 		<!-- Возраст -->
 		<my-selection-box :shown="race_page.shown_age">
 			<div class="flex_options">
-				<MyRange v-model.number="MY.age" age/>
-				<MyRangeSize age/>
+				<MyRange v-model.number="MY.age" age />
+				<MyRangeSize age />
 			</div>
 		</my-selection-box>
 		<!-- Возраст -->
@@ -221,8 +209,8 @@
 		<!-- Рост -->
 		<my-selection-box :shown="race_page.shown_height">
 			<div class="flex_options">
-				<MyRange v-model.number="MY.height" height/>
-				<mySizeGrowth/>
+				<MyRange v-model.number="MY.height" height />
+				<mySizeGrowth />
 			</div>
 		</my-selection-box>
 		<!-- Рост -->
@@ -230,8 +218,8 @@
 		<!-- Вес -->
 		<my-selection-box :shown="race_page.shown_weight">
 			<div class="flex_options">
-				<MyRange v-model.number="MY.weight" weight/>
-				<MyRangeSize weight/>
+				<MyRange v-model.number="MY.weight" weight />
+				<MyRangeSize weight />
 			</div>
 		</my-selection-box>
 		<!-- Вес -->
@@ -258,13 +246,13 @@
 				v-for="name in Stats_Pass"
 				:key="name"
 				@click="
-          getExtraActiv(
-            Stats_Activ.includes(name),
-            stats_Select.includes(name),
-            name,
-            'stats'
-          )
-        "
+					getExtraActiv(
+						Stats_Activ.includes(name),
+						stats_Select.includes(name),
+						name,
+						'stats'
+					)
+				"
 				:active_boll_link="stats_Select.includes(name)"
 			>
 				<my-attribute
@@ -287,12 +275,22 @@
 				v-for="(val, name, i) in MY.skills"
 				:key="name"
 				@click="
-          getExtraActiv(false, skills_Select.includes(name), name, 'skills')
-        "
+					getExtraActiv(
+						false,
+						skills_Select.includes(name),
+						name,
+						'skills'
+					)
+				"
 				:class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
 				:active_boll_link="skills_Select.includes(name)"
 			>
-				<my-attribute :title="name" plus :numb="Skill_Mastery" :icon="val.mod">
+				<my-attribute
+					:title="name"
+					plus
+					:numb="Skill_Mastery"
+					:icon="val.mod"
+				>
 				</my-attribute>
 				<my-card-text title="" :text="`${name}_details`"></my-card-text>
 			</my-selection-card>
@@ -305,25 +303,28 @@
 				v-for="lang in Lang_Not_Humman"
 				:key="lang"
 				@click="
-          getExtraActiv(
-            Lang_Activ.includes(lang),
-            Lang_Select.includes(lang),
-            lang,
-            'languages'
-          )
-        "
+					getExtraActiv(
+						Lang_Activ.includes(lang),
+						Lang_Select.includes(lang),
+						lang,
+						'languages'
+					)
+				"
 				:active_boll_link="Lang_Select.includes(lang)"
 				:basic="Lang_Activ.includes(lang)"
 			>
-				<my-card-text :title="lang.name" :text="lang.details"></my-card-text>
+				<my-card-text
+					:title="lang.name"
+					:text="lang.details"
+				></my-card-text>
 			</my-selection-card>
 
 			<div
 				class="skroll_list jbm-300"
 				:class="{
-          skroll_list_closed: !race_page.shown_humman_lang,
-          skroll_list_open: race_page.shown_humman_lang,
-        }"
+					skroll_list_closed: !race_page.shown_humman_lang,
+					skroll_list_open: race_page.shown_humman_lang,
+				}"
 				v-vpshow="race_page.shown_humman_lang"
 				@click="showSkroll('shown_humman_lang')"
 			>
@@ -335,13 +336,13 @@
 						v-for="lang in Lang_Humman"
 						:key="lang"
 						@click="
-              getExtraActiv(
-                Lang_Activ.includes(lang),
-                Lang_Select.includes(lang),
-                lang,
-                'languages'
-              )
-            "
+							getExtraActiv(
+								Lang_Activ.includes(lang),
+								Lang_Select.includes(lang),
+								lang,
+								'languages'
+							)
+						"
 						:active_boll_link="Lang_Select.includes(lang)"
 						:basic="Lang_Activ.includes(lang)"
 					>
@@ -361,21 +362,22 @@
 		<div
 			class="character"
 			:class="{
-        active_eyes: race_page.shown_eyes_color || race_page.shown_hair_color,
-        active_skin: race_page.shown_skin_color,
-      }"
+				active_eyes:
+					race_page.shown_eyes_color || race_page.shown_hair_color,
+				active_skin: race_page.shown_skin_color,
+			}"
 			:style="{
-        height: Char_Hight_Back,
-      }"
+				height: Char_Hight_Back,
+			}"
 		>
-			<RaceBody body_part="skin"/>
-			<RaceBody body_part="eyes"/>
-			<RaceBody body_part="hair"/>
+			<RaceBody body_part="skin" />
+			<RaceBody body_part="eyes" />
+			<RaceBody body_part="hair" />
 
-			<WelcomeBanner/>
+			<WelcomeBanner />
 
 			<transition name="slide-fade">
-				<mySizeGrowth v-if="hideRuler()" division zero skale_top/>
+				<mySizeGrowth v-if="hideRuler()" division zero skale_top />
 			</transition>
 		</div>
 	</div>
@@ -530,14 +532,14 @@ import Header from "./components/Header.vue";
 export default {
 	name: "App",
 	components: {
-    GenderChoiceStore,
-    EthnosChoice,
-    GenderChoice,
-    AgeWeight,
-    Description,
-    WelcomeBanner,
-    Header
-},
+		GenderChoiceStore,
+		EthnosChoice,
+		GenderChoice,
+		AgeWeight,
+		Description,
+		WelcomeBanner,
+		Header,
+	},
 	data() {
 		return {
 			dic: dic,
@@ -566,7 +568,7 @@ export default {
 			this.default_MY.race.settings.ethnos
 		)[0];
 		this.MY = this.default_MY;
-    this.MY.mastery = this.Mastery;
+		this.MY.mastery = this.Mastery;
 		// this.MY.height = this.Get_Hight;
 		this.getExtra(this.Stats_Pass, "stats");
 		this.getExtra(this.Skills_Pass, "skills");
@@ -575,16 +577,15 @@ export default {
 	},
 
 	computed: {
-
-    Foo_PS() {
+		Foo_PS() {
 			return this.numb_foo * 2;
 		},
 
-    Mastery() {
-      return Math.ceil(this.MY.level / 4);
-    },
+		Mastery() {
+			return Math.ceil(this.MY.level / 4);
+		},
 
-    Skill_Mastery() {
+		Skill_Mastery() {
 			return 1 + this.MY.mastery;
 		},
 
@@ -847,10 +848,10 @@ export default {
 			this.race_page.shown_humman_lang = false;
 		},
 		"MY.ethnos": "getFunction_2",
-    "MY.level": "MY.mastery = Mastery",
-    'MY.level': function () {
-      this.MY.mastery = this.Mastery
-    },
+		"MY.level": "MY.mastery = Mastery",
+		"MY.level": function () {
+			this.MY.mastery = this.Mastery;
+		},
 		// "race_page.whtch_home": "getHome",
 	},
 
@@ -1026,7 +1027,10 @@ export default {
 		},
 
 		getCharColor(value) {
-			if (this.MY.color[value] === null && this.MY.ethnos.name === "common") {
+			if (
+				this.MY.color[value] === null &&
+				this.MY.ethnos.name === "common"
+			) {
 				return this.MY.race.settings.color[value][0];
 			} else if (this.MY.color[value] === null) {
 				return this.MY.ethnos.color[value][0];
@@ -1209,7 +1213,7 @@ a {
 }
 
 .buff {
-  color: #05ff00;
+	color: #05ff00;
 }
 
 .jbm-300 {
@@ -1255,7 +1259,7 @@ a {
 	justify-content: space-between;
 	overflow-y: scroll;
 	max-height: 100%;
-  scrollbar-width: none;
+	scrollbar-width: none;
 }
 
 .main_menu_wrap::-webkit-scrollbar {
@@ -1287,7 +1291,7 @@ a {
 	/*flex: 1 1 auto;*/
 	/*overflow-y: scroll;*/
 	/*max-height: 100%;*/
-  scrollbar-width: none;
+	scrollbar-width: none;
 }
 
 .main_chapter_menu::-webkit-scrollbar {
@@ -1344,11 +1348,11 @@ a {
 } */
 
 .btm-fade-enter-active {
-  transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .btm-fade-leave-active {
-  transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 /* .mode-fade-leave-active {
@@ -1357,8 +1361,8 @@ a {
 
 .btm-fade-enter-from,
 .btm-fade-leave-to {
-  transform: translateX(-300px);
-  opacity: 0;
+	transform: translateX(-300px);
+	opacity: 0;
 }
 
 /* ---------------------characters----------------------*/
@@ -1468,7 +1472,7 @@ a {
 	max-width: 426px;
 	padding: 32px;
 	overflow-y: scroll;
-  scrollbar-width: none;
+	scrollbar-width: none;
 	background-color: #0e1518;
 	z-index: 2;
 	transition: all 0.4s ease-in-out;
