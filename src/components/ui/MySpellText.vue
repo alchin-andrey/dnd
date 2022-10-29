@@ -129,7 +129,7 @@
 			/>
 		</my-wrapper>
 		<div class="hr"></div>
-		<div class="text_spell gray_4">{{ t_Expanded }}</div>
+		<div class="text_spell gray_4" v-html="t_Expanded"></div>
 	</my-dialog-spell>
 </template>
 

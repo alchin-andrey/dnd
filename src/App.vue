@@ -529,6 +529,8 @@ import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 import Header from "./components/Header.vue";
 
+import {mapActions, mapMutations} from "vuex"
+
 export default {
 	name: "App",
 	components: {
@@ -995,11 +997,23 @@ export default {
 			}
 		},
 
+		...mapMutations({
+			GET_HOME_ARR: 'race_page/GET_HOME_ARR'
+		}),
+
+		...mapActions({
+			shownHome: 'race_page/shownHome'
+		}),
+
 		showHome() {
 			this.race_page.shown_selection = false;
 			this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
+      // this.shownHome();
+      // this.$store.commit('race_page/SHOW_HOME')
+		// 	GET_HOME_ARR
+      // this.$store.dispatch('race_page/showHome')
 		},
 
 		getHomeArr() {
@@ -1007,6 +1021,8 @@ export default {
 			arr.splice(0, 1);
 			arr.push(this.race_page.shown_selection);
 			this.race_page.home_arr = arr;
+			// this.GET_HOME_ARR();
+			// this.$store.commit('race_page/GET_HOME_ARR')
 			// console.log(this.race_page.home_arr)
 		},
 

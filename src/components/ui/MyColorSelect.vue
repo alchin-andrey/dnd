@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       hower_link: `${this.body_part}_hower`,
-      reset_color: false,
+      // reset_color: false,
     };
   },
   computed: {
@@ -108,7 +108,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 .reletiv {
