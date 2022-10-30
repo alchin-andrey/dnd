@@ -850,7 +850,7 @@ export default {
 			this.race_page.shown_humman_lang = false;
 		},
 		"MY.ethnos": "getFunction_2",
-		"MY.level": "MY.mastery = Mastery",
+		// "MY.level": "MY.mastery = Mastery",
 		"MY.level": function () {
 			this.MY.mastery = this.Mastery;
 		},
@@ -998,7 +998,8 @@ export default {
 		},
 
 		...mapMutations({
-			GET_HOME_ARR: 'race_page/GET_HOME_ARR'
+			GET_HOME_ARR: 'race_page/GET_HOME_ARR',
+			SHOW_SCROLL: 'race_page/SHOW_SCROLL'
 		}),
 
 		...mapActions({
@@ -1010,6 +1011,7 @@ export default {
 			this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
+			// this.SHOW_SKROLL('shown_humman_lang')
       // this.shownHome();
       // this.$store.commit('race_page/SHOW_HOME')
 		// 	GET_HOME_ARR

@@ -80,6 +80,11 @@ export default {
 			state.home_arr = arr;
 			console.log("GET_HOME_ARR");
 		},
+
+    SHOW_SCROLL(state, name) {
+			console.log("SHOW_SCROLL", name);
+			state[name] = state[name] === false;
+		},
 	},
 	actions: {
 		shownHome({ commit }) {

@@ -54,7 +54,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["color"]),
+	  ...mapGetters({color: 'color/color',}),
 
     Hower() {
       return this.$root.race_page[this.hower_link];
