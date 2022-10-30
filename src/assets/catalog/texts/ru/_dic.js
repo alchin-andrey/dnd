@@ -1662,5 +1662,53 @@ export default {
 
     square: "квадрат",
 
-    
+    spell_entangle: spells.entangle,
+    spell_entangle_details: spells.entangle_details,
+    spell_entangle_expanded: spells.entangle_expanded,
+
+    spell_ensnaring_strike: spells.ensnaring_strike,
+    spell_ensnaring_strike_details: spells.ensnaring_strike_details,
+    spell_ensnaring_strike_expanded: spells.ensnaring_strike_expanded,
+
+    spell_charm_person: spells.charm_person,
+    spell_charm_person_details: spells.charm_person_details,
+    spell_charm_person_expanded: spells.charm_person_expanded,
+
+    spell_purify_food_and_drink: spells.purify_food_and_drink,
+    spell_purify_food_and_drink_details: spells.purify_food_and_drink_details,
+    spell_purify_food_and_drink_expanded: spells.purify_food_and_drink_expanded,
+
+    spell_feather_fell: spells.feather_fell,
+    spell_feather_fell_details: spells.feather_fell_details,
+    spell_feather_fell_expanded: spells.feather_fell_expanded,
+
+    spell_searing_smite: spells.searing_smite,
+    spell_searing_smite_details: spells.searing_smite_details,
+    spell_searing_smite_expanded: spells.searing_smite_expanded,
+
+    material_familiar_10gold:"уголь + благовония + жаровня за 10 🟡",
+
+    spell_find_familiar: spells.find_familiar,
+    spell_find_familiar_details: spells.find_familiar_details,
+    spell_find_familiar_expanded: spells.find_familiar_expanded,
+
+    spell_comprehend_languages: spells.comprehend_languages,
+    spell_comprehend_languages_details: spells.comprehend_languages_details,
+    spell_comprehend_languages_expanded: spells.comprehend_languages_expanded,
+
+    spell_bane: spells.bane,
+    spell_bane_details: spells.bane_details,
+    spell_bane_expanded: spells.bane_expanded,
+
+    spell_expeditious_retreat: spells.expeditious_retreat,
+    spell_expeditious_retreat_details: spells.expeditious_retreat_details,
+    spell_expeditious_retreat_expanded: spells.expeditious_retreat_expanded,
+
+    spell_command: spells.command,
+    spell_command_details: spells.command_details,
+    spell_command_expanded: spells.command_expanded,
+
+    spell_jump: spells.jump,
+    spell_jump_details: spells.jump_details,
+    spell_jump_expanded: spells.jump_expanded,
 }

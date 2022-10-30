@@ -4309,6 +4309,506 @@ export default {
     },
   ],
 
+  ensnaring_strike: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_ensnaring_strike",
+      details: "spell_ensnaring_strike_details",
+      expanded: "spell_ensnaring_strike_expanded",
+
+      type: "conjuration",
+      classes: ["ranger"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "piercing_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  charm_person: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_charm_person",
+      details: "spell_charm_person_details",
+      expanded: "spell_charm_person_expanded",
+
+      type: "enchantment",
+      classes: ["bard","druid","sorcerer","warlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  purify_food_and_drink: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_purify_food_and_drink",
+      details: "spell_purify_food_and_drink_details",
+      expanded: "spell_purify_food_and_drink_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","cleric","druid","paladin"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 10,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  feather_fell: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_feather_fell",
+      details: "spell_feather_fell_details",
+      expanded: "spell_feather_fell_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","sorcerer","wizard"],
+      
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  searing_smite: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_searing_smite",
+      details: "spell_searing_smite_details",
+      expanded: "spell_searing_smite_expanded",
+
+      type: "evocation",
+      classes: ["paladin","ranger"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  find_familiar: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_find_familiar",
+      details: "spell_find_familiar_details",
+      expanded: "spell_find_familiar_expanded",
+
+      type: "conjuration",
+      classes: ["wizard"],
+      
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["verbal","somatic","material_familiar_10gold"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  comprehend_languages: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_comprehend_languages",
+      details: "spell_comprehend_languages_details",
+      expanded: "spell_comprehend_languages_expanded",
+
+      type: "divination",
+      classes: ["bard","sorcerer","wwarlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  bane: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_bane",
+      details: "spell_bane_details",
+      expanded: "spell_bane_expanded",
+
+      type: "enchantment",
+      classes: ["bard","cleric"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 3,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  expeditious_retreat: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_expeditious_retreat",
+      details: "spell_expeditious_retreat_details",
+      expanded: "spell_expeditious_retreat_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","sorcerer","warlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  command: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_command",
+      details: "spell_command_details",
+      expanded: "spell_command_expanded",
+
+      type: "enchantment",
+      classes: ["bard","cleric","paladin"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  jump: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_jump",
+      details: "spell_jump_details",
+      expanded: "spell_jump_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","druid","ranger","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","touch","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   placeholder: [
     {
       //0
