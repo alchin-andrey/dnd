@@ -1711,4 +1711,26 @@ export default {
     spell_jump: spells.jump,
     spell_jump_details: spells.jump_details,
     spell_jump_expanded: spells.jump_expanded,
+
+    spell_false_life: spells.false_life,
+    spell_false_life_details: spells.false_life_details,
+    spell_false_life_expanded: spells.false_life_expanded,
+
+    spell_arms_of_hadar: spells.arms_of_hadar,
+    spell_arms_of_hadar_details: spells.arms_of_hadar_details,
+    spell_arms_of_hadar_expanded: spells.arms_of_hadar_expanded,
+
+    sum_w:"суммарное",
+
+    spell_color_spray: spells.color_spray,
+    spell_color_spray_details: spells.color_spray_details,
+    spell_color_spray_expanded: spells.color_spray_expanded,
+
+    spell_hex: spells.hex,
+    spell_hex_details: spells.hex_details,
+    spell_hex_expanded: spells.hex_expanded,
+
+    spell_alarm: spells.alarm,
+    spell_alarm_details: spells.alarm_details,
+    spell_alarm_expanded: spells.alarm_expanded,
 }

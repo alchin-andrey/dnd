@@ -1069,44 +1069,6 @@ export default {
     },
   ],
 
-  speak_with_animals: [
-    {},
-    {
-      name: "spell_speak_with_animals",
-      details: "spell_speak_with_animals_details",
-      expanded: "spell_speak_with_animals_expanded",
-
-      type: "divination",
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "self",
-      aim_type: null,
-      parts: ["verbal", "somatic"],
-
-      spell_time: null,
-      spell_duration: 10,
-      spell_duration_units: "min",
-
-      aim_need: false,
-      aim_range: null,
-      aim_aoe: null,
-      aim_aoe_size: null,
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_num: null,
-      impact_size_dice: null,
-
-      saving_need: false,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-  ],
-
   speak_with_animals_ritual: [
     {
       name: "spell_speak_with_animals",
@@ -4795,6 +4757,282 @@ export default {
 
       aim_aoe: null,
       aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  false_life: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_false_life",
+      details: "spell_false_life_details",
+      expanded: "spell_false_life_expanded",
+
+      type: "necromancy",
+      classes: ["artificer","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "temporary",
+      
+      impact_size_foo: "Plus_4_plus_5", //spell{1}=1d4+4, spell{2}=1d4+9, spell{3}=1d4+14 ...
+      //вы получаете 1к4 + 4 временных хита на время длительности заклинания. На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы получаете 5 дополнительных временных хитов за каждый уровень ячейки выше первого.
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  speak_with_animals: [
+    {},
+    {
+      name: "spell_speak_with_animals",
+      details: "spell_speak_with_animals_details",
+      expanded: "spell_speak_with_animals_expanded",
+
+      type: "divination",
+      classes: ["bard","druid","ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal", "somatic"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  arms_of_hadar: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_arms_of_hadar",
+      details: "spell_arms_of_hadar_details",
+      expanded: "spell_arms_of_hadar_expanded",
+
+      type: "conjuration",
+      classes: ["warlock"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 2,
+      impact_size_dice: 6,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: "÷2",
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  color_spray: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_color_spray",
+      details: "spell_color_spray_details",
+      expanded: "spell_color_spray_expanded",
+
+      type: "illusion",
+      classes: ["sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: "cone",
+      aim_aoe_size: 15,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "sum_w",
+      
+      impact_size_foo: "Dmg_plus_2",
+      impact_size_num: 6,
+      impact_size_dice: 10,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  hex: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_hex",
+      details: "spell_hex_details",
+      expanded: "spell_hex_expanded",
+
+      type: "enchantment",
+      classes: ["warlock"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+      
+      impact_size_foo: null,
+      impact_size_num: 1,
+      impact_size_dice: 6,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {
+      spell_duration: 8,
+    },
+    {},
+    {
+      spell_duration: 24,
+    },
+  ],
+
+  alarm: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_alarm",
+      details: "spell_alarm_details",
+      expanded: "spell_alarm_expanded",
+
+      type: "abjuration",
+      classes: ["artificer","wizard"],
+      
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 20,
 
       impact_type: null,
       impact_damage_type: null,

@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.jump,
+              spell: spells.alarm,
             },
 
             {
