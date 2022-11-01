@@ -1733,4 +1733,44 @@ export default {
     spell_alarm: spells.alarm,
     spell_alarm_details: spells.alarm_details,
     spell_alarm_expanded: spells.alarm_expanded,
+
+    spell_grease: spells.grease,
+    spell_grease_details: spells.grease_details,
+    spell_grease_expanded: spells.grease_expanded,
+
+    liters_number:"литров воды",
+
+    spell_tensers_floating_disk: spells.tensers_floating_disk,
+    spell_tensers_floating_disk_details: spells.tensers_floating_disk_details,
+    spell_tensers_floating_disk_expanded: spells.tensers_floating_disk_expanded,
+
+    spell_fog_cloud: spells.fog_cloud,
+    spell_fog_cloud_details: spells.fog_cloud_details,
+    spell_fog_cloud_expanded: spells.fog_cloud_expanded,
+
+    spell_sanctuary: spells.sanctuary,
+    spell_sanctuary_details: spells.sanctuary_details,
+    spell_sanctuary_expanded: spells.sanctuary_expanded,
+
+    spell_sleep: spells.sleep,
+    spell_sleep_details: spells.sleep_details,
+    spell_sleep_expanded: spells.sleep_expanded,
+
+    material_diamond_50gold:"алмаз за минимум 50 🟡",
+
+    spell_chromatic_orb: spells.chromatic_orb,
+    spell_chromatic_orb_details: spells.chromatic_orb_details,
+    spell_chromatic_orb_expanded: spells.chromatic_orb_expanded,
+
+    spell_goodberry: spells.goodberry,
+    spell_goodberry_details: spells.goodberry_details,
+    spell_goodberry_expanded: spells.goodberry_expanded,
+
+    spell_shield: spells.shield,
+    spell_shield_details: spells.shield_details,
+    spell_shield_expanded: spells.shield_expanded,
+
+    spell_shield_of_faith: spells.shield_of_faith,
+    spell_shield_of_faith_details: spells.shield_of_faith_details,
+    spell_shield_of_faith_expanded: spells.shield_of_faith_expanded,
 }

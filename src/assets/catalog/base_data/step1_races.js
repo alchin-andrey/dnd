@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.alarm,
+              spell: spells.shield_of_faith,
             },
 
             {
@@ -1216,7 +1216,7 @@ export default {
       {
         type: "resistance",
         keyword: "resistance",
-        details: "magic_sleep_against",
+        details: "magic_chromatic_orb_against",
       },
     ],
   },
@@ -1610,7 +1610,7 @@ export default {
       {
         type: "resistance",
         keyword: "resistance",
-        details: "magic_sleep_against",
+        details: "magic_chromatic_orb_against",
       },
       {
         type: "plus",

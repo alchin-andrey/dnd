@@ -5047,6 +5047,552 @@ export default {
     },
   ],
 
+  grease: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_grease",
+      details: "spell_grease_details",
+      expanded: "spell_grease_expanded",
+
+      type: "conjuration",
+      classes: ["artificer","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "square",
+      aim_aoe_size: 10,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+  ],
+
+  longstrider: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_longstrider",
+      details: "spell_longstrider_details",
+      expanded: "spell_longstrider_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","druid","ranger","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","touch"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "target_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  create_or_destroy_water: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_create_or_destroy_water",
+      details: "spell_create_or_destroy_water_details",
+      expanded: "spell_create_or_destroy_water_expanded",
+
+      type: "transmutation",
+      classes: ["cleric","druid"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 30,
+
+      impact_type: "liters_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_40",
+      impact_size_num: 40,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {
+      aim_aoe_size: 35,
+    },
+    {
+      aim_aoe_size: 40,
+    },
+    {
+      aim_aoe_size: 45,
+    },
+    {
+      aim_aoe_size: 50,
+    },
+    {
+      aim_aoe_size: 55,
+    },
+    {
+      aim_aoe_size: 60,
+    },
+    {
+      aim_aoe_size: 65,
+    },
+    {
+      aim_aoe_size: 70,
+    },
+  ],
+
+  tensers_floating_disk: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_tensers_floating_disk",
+      details: "spell_tensers_floating_disk_details",
+      expanded: "spell_tensers_floating_disk_expanded",
+
+      type: "conjuration",
+      classes: ["wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "cilinder",
+      aim_aoe_size: 3,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fog_cloud: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_fog_cloud",
+      details: "spell_fog_cloud_details",
+      expanded: "spell_fog_cloud_expanded",
+
+      type: "conjuration",
+      classes: ["druid","ranger","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {
+      aim_aoe_size: 80,
+    },
+    {
+      aim_aoe_size: 120,
+    },
+    {
+      aim_aoe_size: 160,
+    },
+    {
+      aim_aoe_size: 200,
+    },
+    {
+      aim_aoe_size: 240,
+    },
+    {
+      aim_aoe_size: 280,
+    },
+    {
+      aim_aoe_size: 320,
+    },
+    {
+      aim_aoe_size: 360,
+    },
+  ],
+
+  sanctuary: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_sanctuary",
+      details: "spell_sanctuary_details",
+      expanded: "spell_sanctuary_expanded",
+
+      type: "abjuration",
+      classes: ["artificer","cleric"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  sleep: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_sleep",
+      details: "spell_sleep_details",
+      expanded: "spell_sleep_expanded",
+
+      type: "enchantment",
+      classes: ["bard","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "sum_w",
+      
+      impact_size_foo: "Dmg_plus_2",
+      impact_size_num: 5,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  chromatic_orb: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_chromatic_orb",
+      details: "spell_chromatic_orb_details",
+      expanded: "spell_chromatic_orb_expanded",
+
+      type: "evocation",
+      classes: ["sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["verbal","somatic","material_diamond_50gold"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 3,
+      impact_size_dice: 8,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{},
+  ],
+
+  goodberry: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_goodberry",
+      details: "spell_goodberry_details",
+      expanded: "spell_goodberry_expanded",
+
+      type: "transmutation",
+      classes: ["druid","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+      
+      impact_size_foo: "X_10",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  shield: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_shield",
+      details: "spell_shield_details",
+      expanded: "spell_shield_expanded",
+
+      type: "abjuration",
+      classes: ["sorcerer","wizard"],
+      
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "armor_class",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Plus",
+      impact_size_num: 5,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  shield_of_faith: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_shield_of_faith",
+      details: "spell_shield_of_faith_details",
+      expanded: "spell_shield_of_faith_expanded",
+
+      type: "abjuration",
+      classes: ["cleric","paladin"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "armor_class",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Plus",
+      impact_size_num: 2,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   placeholder: [
     {
       //0
