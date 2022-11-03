@@ -1773,4 +1773,145 @@ export default {
     spell_shield_of_faith: spells.shield_of_faith,
     spell_shield_of_faith_details: spells.shield_of_faith_details,
     spell_shield_of_faith_expanded: spells.shield_of_faith_expanded,
+
+    spell_pass_without_trace: spells.pass_without_trace,
+    spell_pass_without_trace_details: spells.pass_without_trace_details,
+    spell_pass_without_trace_expanded: spells.pass_without_trace_expanded,
+
+    spell_spiritual_weapon: spells.spiritual_weapon,
+    spell_spiritual_weapon_details: spells.spiritual_weapon_details,
+    spell_spiritual_weapon_expanded: spells.spiritual_weapon_expanded,
+
+    material_flave_ruby_50gold: "порошок рубина за 50 🟡 ( расходуемый заклинанием )",
+
+    spell_continual_flame: spells.continual_flame,
+    spell_continual_flame_details: spells.continual_flame_details,
+    spell_continual_flame_expanded: spells.continual_flame_expanded,
+
+    spell_see_invisibility: spells.see_invisibility,
+    spell_see_invisibility_details: spells.see_invisibility_details,
+    spell_see_invisibility_expanded: spells.see_invisibility_expanded,
+
+    spell_suggestion: spells.suggestion,
+    spell_suggestion_details: spells.suggestion_details,
+    spell_suggestion_expanded: spells.suggestion_expanded,
+
+    material_magic_mouth_50gold: "Кусочек медовых сот и порошок нефрита за минимум 10 🟡 (расходуемые заклинанием)",
+
+    spell_magic_mouth: spells.magic_mouth,
+    spell_magic_mouth_details: spells.magic_mouth_details,
+    spell_magic_mouth_expanded: spells.magic_mouth_expanded,
+
+    material_golden_dust_25gold: "Золотая пыль за минимум 25 🟡 (расходуемая заклинанием)",
+
+    spell_arcane_lock: spells.arcane_lock,
+    spell_arcane_lock_details: spells.arcane_lock_details,
+    spell_arcane_lock_expanded: spells.arcane_lock_expanded,
+
+    spell_phantasmal_force: spells.phantasmal_force,
+    spell_phantasmal_force_details: spells.phantasmal_force_details,
+    spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
+
+    material_augury_25gold: "Особые палочки, костяшки или фигурки с отметинами за минимум 25 🟡",
+
+    spell_augury: spells.augury,
+    spell_augury_details: spells.augury_details,
+    spell_augury_expanded: spells.augury_expanded,
+
+    spell_blindness_deafness: spells.blindness_deafness,
+    spell_blindness_deafness_details: spells.blindness_deafness_details,
+    spell_blindness_deafness_expanded: spells.blindness_deafness_expanded,
+
+    spell_flame_blade: spells.flame_blade,
+    spell_flame_blade_details: spells.flame_blade_details,
+    spell_flame_blade_expanded: spells.flame_blade_expanded,
+
+    spell_shatter: spells.shatter,
+    spell_shatter_details: spells.shatter_details,
+    spell_shatter_expanded: spells.shatter_expanded,
+
+    spell_barkskin: spells.barkskin,
+    spell_barkskin_details: spells.barkskin_details,
+    spell_barkskin_expanded: spells.barkskin_expanded,
+
+    bullets: "снаряды",
+
+    spell_cordon_of_arrows: spells.cordon_of_arrows,
+    spell_cordon_of_arrows_details: spells.cordon_of_arrows_details,
+    spell_cordon_of_arrows_expanded: spells.cordon_of_arrows_expanded,
+
+    spell_protection_from_poison: spells.protection_from_poison,
+    spell_protection_from_poison_details: spells.protection_from_poison_details,
+    spell_protection_from_poison_expanded: spells.protection_from_poison_expanded,
+
+    spell_branding_smite: spells.branding_smite,
+    spell_branding_smite_details: spells.branding_smite_details,
+    spell_branding_smite_expanded: spells.branding_smite_expanded,
+
+    spell_levitate: spells.levitate,
+    spell_levitate_details: spells.levitate_details,
+    spell_levitate_expanded: spells.levitate_expanded,
+
+    spell_moonbeam: spells.moonbeam,
+    spell_moonbeam_details: spells.moonbeam_details,
+    spell_moonbeam_expanded: spells.moonbeam_expanded,
+
+    spell_ray_of_enfeeblement: spells.ray_of_enfeeblement,
+    spell_ray_of_enfeeblement_details: spells.ray_of_enfeeblement_details,
+    spell_ray_of_enfeeblement_expanded: spells.ray_of_enfeeblement_expanded,
+
+    spell_magic_weapon: spells.magic_weapon,
+    spell_magic_weapon_details: spells.magic_weapon_details,
+    spell_magic_weapon_expanded: spells.magic_weapon_expanded,
+
+    spell_lesser_restoration: spells.lesser_restoration,
+    spell_lesser_restoration_details: spells.lesser_restoration_details,
+    spell_lesser_restoration_expanded: spells.lesser_restoration_expanded,
+
+    spell_melfs_acid_arrow: spells.melfs_acid_arrow,
+    spell_melfs_acid_arrow_details: spells.melfs_acid_arrow_details,
+    spell_melfs_acid_arrow_expanded: spells.melfs_acid_arrow_expanded,
+
+    spell_prayer_of_healing: spells.prayer_of_healing,
+    spell_prayer_of_healing_details: spells.prayer_of_healing_details,
+    spell_prayer_of_healing_expanded: spells.prayer_of_healing_expanded,
+
+    spell_invisibility: spells.invisibility,
+    spell_invisibility_details: spells.invisibility_details,
+    spell_invisibility_expanded: spells.invisibility_expanded,
+
+    spell_gentle_repose: spells.gentle_repose,
+    spell_gentle_repose_details: spells.gentle_repose_details,
+    spell_gentle_repose_expanded: spells.gentle_repose_expanded,
+
+    spell_nystuls_magic_aura: spells.nystuls_magic_aura,
+    spell_nystuls_magic_aura_details: spells.nystuls_magic_aura_details,
+    spell_nystuls_magic_aura_expanded: spells.nystuls_magic_aura_expanded,
+
+    spell_cloud_of_daggers: spells.cloud_of_daggers,
+    spell_cloud_of_daggers_details: spells.cloud_of_daggers_details,
+    spell_cloud_of_daggers_expanded: spells.cloud_of_daggers_expanded,
+
+    spell_zone_of_truth: spells.zone_of_truth,
+    spell_zone_of_truth_details: spells.zone_of_truth_details,
+    spell_zone_of_truth_expanded: spells.zone_of_truth_expanded,
+
+    spell_detect_thoughts: spells.detect_thoughts,
+    spell_detect_thoughts_details: spells.detect_thoughts_details,
+    spell_detect_thoughts_expanded: spells.detect_thoughts_expanded,
+
+    spell_knock: spells.knock,
+    spell_knock_details: spells.knock_details,
+    spell_knock_expanded: spells.knock_expanded,
+
+    spell_mirror_image: spells.mirror_image,
+    spell_mirror_image_details: spells.mirror_image_details,
+    spell_mirror_image_expanded: spells.mirror_image_expanded,
+
+    material_warding_bond_50gold: "Пара платиновых колец за минимум 50 🟡",
+    bonus: "бонус",
+
+    spell_warding_bond: spells.warding_bond,
+    spell_warding_bond_details: spells.warding_bond_details,
+    spell_warding_bond_expanded: spells.warding_bond_expanded,
 }

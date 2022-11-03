@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.shield_of_faith,
+              spell: spells.warding_bond,
             },
 
             {
@@ -526,7 +526,7 @@ export default {
             },
             {
               level: 5,
-              spell: spells.invisibility_self,
+              spell: spells.warding_bond_self,
             },
           ],
         },
