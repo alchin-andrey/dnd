@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.alter_self,
+              spell: spells.locate_animals_or_plants,
             },
 
             {
