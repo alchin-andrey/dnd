@@ -7845,6 +7845,151 @@ export default {
     }
   ],
 
+  heat_metal: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_heat_metal",
+      details: "spell_heat_metal_details",
+      expanded: "spell_heat_metal_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","druid"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 2,
+      impact_size_dice: 8,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},
+  ],
+
+  enthrall: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_enthrall",
+      details: "spell_enthrall_details",
+      expanded: "spell_enthrall_expanded",
+
+      type: "enchantment",
+      classes: ["bard","warlock"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  alter_self: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_alter_self",
+      details: "spell_alter_self_details",
+      expanded: "spell_alter_self_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   placeholder: [
     {
       //0

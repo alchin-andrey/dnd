@@ -1964,4 +1964,16 @@ export default {
     spell_blur: spells.blur,
     spell_blur_details: spells.blur_details,
     spell_blur_expanded: spells.blur_expanded,
+
+    spell_heat_metal: spells.heat_metal,
+    spell_heat_metal_details: spells.heat_metal_details,
+    spell_heat_metal_expanded: spells.heat_metal_expanded,
+
+    spell_enthrall: spells.enthrall,
+    spell_enthrall_details: spells.enthrall_details,
+    spell_enthrall_expanded: spells.enthrall_expanded,
+
+    spell_alter_self: spells.alter_self,
+    spell_alter_self_details: spells.alter_self_details,
+    spell_alter_self_expanded: spells.alter_self_expanded,
 }

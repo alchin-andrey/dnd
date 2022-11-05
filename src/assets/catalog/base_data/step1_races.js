@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.blur,
+              spell: spells.alter_self,
             },
 
             {
