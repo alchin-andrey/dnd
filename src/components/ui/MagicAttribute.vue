@@ -14,7 +14,7 @@
 			</div>
 			<div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
 			<div v-else class="numb" :class="{ passive: numb === 0 }">
-				{{ Prefix }} {{ Plus }}{{ numb }} {{ Suffix }}
+				{{ Prefix }} {{ Plus }}{{ Value }} {{ t_Suffix }}
 			</div>
 		</div>
 		<div class="visual">
@@ -95,35 +95,57 @@ export default {
 			return this.plus ? "+" : "";
 		},
 
+    Miles() {
+			return this.numb % 5280 === 0;
+		},
+
+    Distance() {
+      return this.title === ("aim_range" || "aim_aoe");
+    },
+
+		Value() {
+			if (this.Miles) {
+				return this.numb / 5280;
+			} else {
+				return this.numb;
+			}
+		},
+
 		Suffix() {
-			if (this.title === ("aim_range" || "aim_aoe")) {
-				if (numb % 0) {
-					let mod10 = Math.abs(this.numb % 10);
-					let mod100 = Math.abs(this.numb % 100);
+			if (this.Distance) {
+				if (this.Miles) {
+					let mod10 = Math.abs(this.Value % 10);
+					let mod100 = Math.abs(this.Value % 100);
 					if (mod100 > 10 && mod100 < 20) {
-						return this.t("miles");
+						return "miles";
 					} else if (mod10 >= 2 && mod10 <= 4) {
-						return this.t("milei");
+						return "milei";
 					} else if (mod10 === 1) {
-						return this.t("milea");
+						return "milea";
 					} else {
-						return this.t("miles");
+						return "miles";
 					}
 				} else {
-					return this.t("feet");
+					return "feet";
 				}
 			} else {
 				return null;
 			}
 		},
 
+    t_Suffix() {
+      this.t(this.Suffix)
+    },
+
 		// Suffix() {
 		// 	return this.feet ? this.t("feet") : "";
 		// },
 
 		get_Cube() {
-			if (this.feet) {
+			if (this.Suffix === "feet") {
 				return Math.ceil(this.numb / 5);
+			} else if (this.Miles) {
+				return this.Value;
 			} else {
 				return this.numb;
 			}
