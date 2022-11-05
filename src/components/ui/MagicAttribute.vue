@@ -1,6 +1,6 @@
 <template>
 	<div class="column jbm-300">
-		<div class="column_value" :class="{ passive: numb === 0 }">
+		<div class="column_value" :class="{ passive: save }">
 			<div class="wrapp_atrib">
 				{{ t_Title }}
 				{{ em_Before
@@ -13,8 +13,8 @@
 				/>{{ em_After }}
 			</div>
 			<div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
-			<div v-else class="numb" :class="{ passive: numb === 0 }">
-				{{ Prefix }} {{ Plus }}{{ Value }} {{ t_Suffix }}
+			<div v-else class="numb" :class="{ passive: save }">
+				{{ Prefix }} {{ Plus }}{{ Value }}{{ save }} {{ t_Suffix }}
 			</div>
 		</div>
 		<div class="visual">
@@ -61,10 +61,10 @@ export default {
 			type: String,
 			default: null,
 		},
-		feet: {
-			type: Boolean,
-			default: false,
-		},
+    save: {
+      type: String,
+			default: null,
+    },
 	},
 
 	computed: {
@@ -81,7 +81,7 @@ export default {
 		},
 
 		t_Title() {
-			if (this.numb === 0) {
+			if (this.save) {
 				return `/ ${this.t(this.title)}`;
 			} else {
 				return this.t(this.title);
@@ -108,13 +108,24 @@ export default {
 			return this.title === "aim_range" || this.title === "aim_aoe";
 		},
 
-		Value() {
-			if (this.Miles) {
+    Value() {
+			if (this.save) {
+				return null;
+			} else if (this.Miles) {
+        console.log(this.save)
 				return this.numb / 5280;
 			} else {
-				return this.numb;
-			}
+        return this.numb;
+      }
 		},
+
+		// Value() {
+		// 	if (this.Miles) {
+		// 		return this.numb / 5280;
+		// 	} else {
+		// 		return this.numb;
+		// 	}
+		// },
 
 		Suffix() {
 			if (this.Distance) {
@@ -141,10 +152,6 @@ export default {
 		t_Suffix() {
 			return this.t(this.Suffix);
 		},
-
-		// Suffix() {
-		// 	return this.feet ? this.t("feet") : "";
-		// },
 
 		get_Cube() {
 			if (this.Suffix === "feet") {

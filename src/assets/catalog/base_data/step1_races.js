@@ -65,6 +65,11 @@ export default {
 
             {
               level: 1,
+              spell: spells.poison_breath_cone,
+            },
+
+            {
+              level: 1,
               spell: spells.hellish_rebuke,
             },
             // ------------------
