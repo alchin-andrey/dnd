@@ -112,20 +112,11 @@ export default {
 			if (this.save) {
 				return null;
 			} else if (this.Miles) {
-        console.log(this.save)
 				return this.numb / 5280;
 			} else {
         return this.numb;
       }
 		},
-
-		// Value() {
-		// 	if (this.Miles) {
-		// 		return this.numb / 5280;
-		// 	} else {
-		// 		return this.numb;
-		// 	}
-		// },
 
 		Suffix() {
 			if (this.Distance) {
@@ -169,8 +160,6 @@ export default {
 			}
 		},
 	},
-
-	methods: {},
 };
 </script>
 
