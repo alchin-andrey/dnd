@@ -96,8 +96,30 @@ export default {
 		},
 
 		Suffix() {
-			return this.feet ? this.t("feet") : "";
+			if (this.title === ("aim_range" || "aim_aoe")) {
+				if (numb % 0) {
+					let mod10 = Math.abs(this.numb % 10);
+					let mod100 = Math.abs(this.numb % 100);
+					if (mod100 > 10 && mod100 < 20) {
+						return this.t("miles");
+					} else if (mod10 >= 2 && mod10 <= 4) {
+						return this.t("milei");
+					} else if (mod10 === 1) {
+						return this.t("milea");
+					} else {
+						return this.t("miles");
+					}
+				} else {
+					return this.t("feet");
+				}
+			} else {
+				return null;
+			}
 		},
+
+		// Suffix() {
+		// 	return this.feet ? this.t("feet") : "";
+		// },
 
 		get_Cube() {
 			if (this.feet) {
@@ -128,7 +150,7 @@ export default {
 
 .emoji-mart-emoji {
 	padding: 0;
-  bottom: 1px;
+	bottom: 1px;
 	line-height: 0;
 }
 
