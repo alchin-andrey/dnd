@@ -113,6 +113,7 @@ export default {
 
 		Suffix() {
 			if (this.Distance) {
+        console.log(this.Distance, this.Value % 10)
 				if (this.Miles) {
 					let mod10 = Math.abs(this.Value % 10);
 					let mod100 = Math.abs(this.Value % 100);
@@ -134,7 +135,7 @@ export default {
 		},
 
     t_Suffix() {
-      this.t(this.Suffix)
+      return this.t(this.Suffix)
     },
 
 		// Suffix() {
