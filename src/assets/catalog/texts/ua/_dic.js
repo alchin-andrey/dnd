@@ -1154,9 +1154,9 @@ export default {
             spell_small_illusion_details: spells.small_illusion_details,
             spell_small_illusion_expanded: spells.small_illusion_expanded,
 
-            spell_enlargement: spells.enlargement,
-            spell_enlargement_details: spells.enlargement_details,
-            spell_enlargement_expanded: spells.enlargement_expanded,
+            spell_enlargement_self: spells.enlargement_self,
+            spell_enlargement_self_details: spells.enlargement_self_details,
+            spell_enlargement_self_expanded: spells.enlargement_self_expanded,
 
             spell_invisibility_self: spells.invisibility_self,
             spell_invisibility_self_details: spells.invisibility_self_details,
