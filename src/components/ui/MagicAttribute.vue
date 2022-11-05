@@ -18,7 +18,12 @@
 			</div>
 		</div>
 		<div class="visual">
-			<div class="cube" v-for="n in get_Cube" :key="n"></div>
+			<div
+				class="cube"
+				:class="{ cube_dash: Miles }"
+				v-for="n in get_Cube"
+				:key="n"
+			></div>
 			<div class="cube_zero" v-for="n in get_CubeZero" :key="n"></div>
 		</div>
 	</div>
@@ -95,13 +100,13 @@ export default {
 			return this.plus ? "+" : "";
 		},
 
-    Miles() {
+		Miles() {
 			return this.numb % 5280 === 0;
 		},
 
-    Distance() {
-      return this.title === ("aim_range" || "aim_aoe");
-    },
+		Distance() {
+			return this.title === "aim_range" || this.title === "aim_aoe";
+		},
 
 		Value() {
 			if (this.Miles) {
@@ -113,7 +118,6 @@ export default {
 
 		Suffix() {
 			if (this.Distance) {
-        console.log(this.Distance, this.Value % 10)
 				if (this.Miles) {
 					let mod10 = Math.abs(this.Value % 10);
 					let mod100 = Math.abs(this.Value % 100);
@@ -134,9 +138,9 @@ export default {
 			}
 		},
 
-    t_Suffix() {
-      return this.t(this.Suffix)
-    },
+		t_Suffix() {
+			return this.t(this.Suffix);
+		},
 
 		// Suffix() {
 		// 	return this.feet ? this.t("feet") : "";
@@ -220,6 +224,10 @@ export default {
 	background: #ffffff;
 	box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
 	border-radius: 2px;
+}
+
+.cube_dash {
+	width: 100%;
 }
 
 .cube_zero {
