@@ -24,10 +24,12 @@ app.use(VueClipboard, {
     autoSetContainer: true,
     appendToBody: true,
 });
-app.use(store);
-app.use(router);
 app.use(myTranslation);
 app.use(EmojiChenge);
+app.use(store);
+app.use(router);
+// app.use(myTranslation);
+// app.use(EmojiChenge);
 
 components.forEach(component => {
     app.component(component.name, component);

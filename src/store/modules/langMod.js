@@ -41,7 +41,7 @@ export default {
                     arr.push(lang[i]);
                 }
             }
-            console.log("Челопук", arr);
+            // console.log("Челопук", arr);
             return arr;
         },
 

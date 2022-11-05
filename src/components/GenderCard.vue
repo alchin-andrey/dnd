@@ -117,7 +117,7 @@ export default {
     },
 
     genderSelect() {
-      console.log(this.$root.MY.gender[this.title]);
+      // console.log(this.$root.MY.gender[this.title]);
       return this.$root.MY.gender[this.title];
     }
   },

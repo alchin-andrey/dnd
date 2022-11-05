@@ -1,5 +1,7 @@
 import { createStore } from 'vuex';
 
+// import dic from './modules/dicMod';
+
 
 // import genderStore from './gender';
 import gender from './modules/genderMod';
@@ -7,6 +9,8 @@ import race from './modules/raceMod';
 import color from './modules/colorMod';
 import lang from './modules/langMod';
 import race_page from './modules/pageRace';
+
+import MY from './modules/MyMod';
 
 
 const store = createStore({
@@ -19,7 +23,7 @@ const store = createStore({
 
     // pages
     race_page,
-
+    MY,
   },
 });
 

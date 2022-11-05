@@ -1,22 +1,22 @@
-import color from "./base_data/_colors.js";
+// import color from "./base_data/_colors.js";
+import races from "./base_data/step1_races.js";
 
-export default {
-
+const user = {
     //Key selections
     name:null,
-    race:null,
-    ethnos:null,
-    class:null,
+    race: Object.values(races)[0],
+    ethnos: Object.values(Object.values(races)[0].settings.ethnos)[0],
+    class: null,
     subclass:null,
     backstory:null,
-    level:null,
+    level:1,
 
     //Character
     alignment:null,
     gender:{
-        phisiological:null,
-        feel:null,
-        look:null,
+        phisiological: "male",
+        feel: "cisgender",
+        look: "as_phisiological",
         attraction:null,
     },
     faith:null,
@@ -169,5 +169,12 @@ export default {
 
     //Conditions
     if_no_heavy_armor: null,
-
 }
+
+const user_tru = user;
+const user_save = user;
+const user_def = user;
+
+export const MY = user_tru
+export const MY_save = user_save
+export const MY_def = user_def

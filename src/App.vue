@@ -529,7 +529,7 @@ import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 import Header from "./components/Header.vue";
 
-import {mapActions, mapMutations} from "vuex"
+import { mapGetters, mapActions, mapMutations} from "vuex"
 
 export default {
 	name: "App",
@@ -579,6 +579,9 @@ export default {
 	},
 
 	computed: {
+		...mapGetters({
+			MY_race: 'MY/race'
+		}),
 		Foo_PS() {
 			return this.numb_foo * 2;
 		},
@@ -971,7 +974,22 @@ export default {
 			this.race_page.shown_languages = false;
 		},
 
+		...mapMutations({
+			GET_HOME_ARR: 'race_page/GET_HOME_ARR',
+			SHOW_SCROLL: 'race_page/SHOW_SCROLL',
+			SHOW_HOME: 'race_page/SHOW_HOME',
+			MY_DEF: 'MY/MY_DEF'
+		}),
+
+		...mapActions({
+			goHome: 'race_page/goHome',
+			def: 'MY/def'
+		}),
+
 		show(name, key) {
+			// this.MY_DEF();
+			this.goHome();
+			this.MY_race;
 			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
 				this.race_page.shown_selection = false;
 				this.getHomeArr();
@@ -995,22 +1013,16 @@ export default {
 				this.close();
 				this.race_page.shown_home = true;
 			}
+
 		},
-
-		...mapMutations({
-			GET_HOME_ARR: 'race_page/GET_HOME_ARR',
-			SHOW_SCROLL: 'race_page/SHOW_SCROLL'
-		}),
-
-		...mapActions({
-			shownHome: 'race_page/shownHome'
-		}),
 
 		showHome() {
 			this.race_page.shown_selection = false;
 			this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
+			this.def();
+			this.MY_race;
 			// this.SHOW_SKROLL('shown_humman_lang')
       // this.shownHome();
       // this.$store.commit('race_page/SHOW_HOME')
