@@ -7455,7 +7455,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      aim_range: 26400,
+      aim_range: 5 * 5280,
 
       parts: ["verbal","somatic","focus"],
 
