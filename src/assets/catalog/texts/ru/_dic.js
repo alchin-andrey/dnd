@@ -16,7 +16,7 @@ export default {
             authors: 
             '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — идея, дизайн, контент,</p>' +
             '<p><a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код,</p>' +
-            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер</a> - переводы, валидация.</p>' +
+            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер</a> — переводы, валидация.</p>' +
             '<p>По любым темам об этом сайте, пишите Диме.</p>' +
             '<br /><p>Если у вас есть желание задонатить, будем очень благодарны. Безжалостное и жестокое вторжение ₚосии в Украину продолжается, поэтому 80% донатов мы отправляем в фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 
@@ -186,6 +186,8 @@ export default {
     speed:"скорость",
         feet: "футов",
         miles: "миль",
+        milei: "мили",
+        milea: "миля",
     vision_day:"зрение",
     vision_night:"темное зрение",
     hp_bonus: "здоровье",
@@ -1711,4 +1713,267 @@ export default {
     spell_jump: spells.jump,
     spell_jump_details: spells.jump_details,
     spell_jump_expanded: spells.jump_expanded,
+
+    spell_false_life: spells.false_life,
+    spell_false_life_details: spells.false_life_details,
+    spell_false_life_expanded: spells.false_life_expanded,
+
+    spell_arms_of_hadar: spells.arms_of_hadar,
+    spell_arms_of_hadar_details: spells.arms_of_hadar_details,
+    spell_arms_of_hadar_expanded: spells.arms_of_hadar_expanded,
+
+    sum_w:"суммарное",
+
+    spell_color_spray: spells.color_spray,
+    spell_color_spray_details: spells.color_spray_details,
+    spell_color_spray_expanded: spells.color_spray_expanded,
+
+    spell_hex: spells.hex,
+    spell_hex_details: spells.hex_details,
+    spell_hex_expanded: spells.hex_expanded,
+
+    spell_alarm: spells.alarm,
+    spell_alarm_details: spells.alarm_details,
+    spell_alarm_expanded: spells.alarm_expanded,
+
+    spell_grease: spells.grease,
+    spell_grease_details: spells.grease_details,
+    spell_grease_expanded: spells.grease_expanded,
+
+    liters_number:"литров воды",
+
+    spell_tensers_floating_disk: spells.tensers_floating_disk,
+    spell_tensers_floating_disk_details: spells.tensers_floating_disk_details,
+    spell_tensers_floating_disk_expanded: spells.tensers_floating_disk_expanded,
+
+    spell_fog_cloud: spells.fog_cloud,
+    spell_fog_cloud_details: spells.fog_cloud_details,
+    spell_fog_cloud_expanded: spells.fog_cloud_expanded,
+
+    spell_sanctuary: spells.sanctuary,
+    spell_sanctuary_details: spells.sanctuary_details,
+    spell_sanctuary_expanded: spells.sanctuary_expanded,
+
+    spell_sleep: spells.sleep,
+    spell_sleep_details: spells.sleep_details,
+    spell_sleep_expanded: spells.sleep_expanded,
+
+    material_diamond_50gold:"алмаз за минимум 50 🟡",
+
+    spell_chromatic_orb: spells.chromatic_orb,
+    spell_chromatic_orb_details: spells.chromatic_orb_details,
+    spell_chromatic_orb_expanded: spells.chromatic_orb_expanded,
+
+    spell_goodberry: spells.goodberry,
+    spell_goodberry_details: spells.goodberry_details,
+    spell_goodberry_expanded: spells.goodberry_expanded,
+
+    spell_shield: spells.shield,
+    spell_shield_details: spells.shield_details,
+    spell_shield_expanded: spells.shield_expanded,
+
+    spell_shield_of_faith: spells.shield_of_faith,
+    spell_shield_of_faith_details: spells.shield_of_faith_details,
+    spell_shield_of_faith_expanded: spells.shield_of_faith_expanded,
+
+    spell_pass_without_trace: spells.pass_without_trace,
+    spell_pass_without_trace_details: spells.pass_without_trace_details,
+    spell_pass_without_trace_expanded: spells.pass_without_trace_expanded,
+
+    spell_spiritual_weapon: spells.spiritual_weapon,
+    spell_spiritual_weapon_details: spells.spiritual_weapon_details,
+    spell_spiritual_weapon_expanded: spells.spiritual_weapon_expanded,
+
+    material_flave_ruby_50gold: "порошок рубина за 50 🟡 ( расходуемый заклинанием )",
+
+    spell_continual_flame: spells.continual_flame,
+    spell_continual_flame_details: spells.continual_flame_details,
+    spell_continual_flame_expanded: spells.continual_flame_expanded,
+
+    spell_see_invisibility: spells.see_invisibility,
+    spell_see_invisibility_details: spells.see_invisibility_details,
+    spell_see_invisibility_expanded: spells.see_invisibility_expanded,
+
+    spell_suggestion: spells.suggestion,
+    spell_suggestion_details: spells.suggestion_details,
+    spell_suggestion_expanded: spells.suggestion_expanded,
+
+    material_magic_mouth_50gold: "Кусочек медовых сот и порошок нефрита за минимум 10 🟡 (расходуемые заклинанием)",
+
+    spell_magic_mouth: spells.magic_mouth,
+    spell_magic_mouth_details: spells.magic_mouth_details,
+    spell_magic_mouth_expanded: spells.magic_mouth_expanded,
+
+    material_golden_dust_25gold: "Золотая пыль за минимум 25 🟡 (расходуемая заклинанием)",
+
+    spell_arcane_lock: spells.arcane_lock,
+    spell_arcane_lock_details: spells.arcane_lock_details,
+    spell_arcane_lock_expanded: spells.arcane_lock_expanded,
+
+    spell_phantasmal_force: spells.phantasmal_force,
+    spell_phantasmal_force_details: spells.phantasmal_force_details,
+    spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
+
+    material_augury_25gold: "Особые палочки, костяшки или фигурки с отметинами за минимум 25 🟡",
+
+    spell_augury: spells.augury,
+    spell_augury_details: spells.augury_details,
+    spell_augury_expanded: spells.augury_expanded,
+
+    spell_blindness_deafness: spells.blindness_deafness,
+    spell_blindness_deafness_details: spells.blindness_deafness_details,
+    spell_blindness_deafness_expanded: spells.blindness_deafness_expanded,
+
+    spell_flame_blade: spells.flame_blade,
+    spell_flame_blade_details: spells.flame_blade_details,
+    spell_flame_blade_expanded: spells.flame_blade_expanded,
+
+    spell_shatter: spells.shatter,
+    spell_shatter_details: spells.shatter_details,
+    spell_shatter_expanded: spells.shatter_expanded,
+
+    spell_barkskin: spells.barkskin,
+    spell_barkskin_details: spells.barkskin_details,
+    spell_barkskin_expanded: spells.barkskin_expanded,
+
+    bullets: "снаряды",
+
+    spell_cordon_of_arrows: spells.cordon_of_arrows,
+    spell_cordon_of_arrows_details: spells.cordon_of_arrows_details,
+    spell_cordon_of_arrows_expanded: spells.cordon_of_arrows_expanded,
+
+    spell_protection_from_poison: spells.protection_from_poison,
+    spell_protection_from_poison_details: spells.protection_from_poison_details,
+    spell_protection_from_poison_expanded: spells.protection_from_poison_expanded,
+
+    spell_branding_smite: spells.branding_smite,
+    spell_branding_smite_details: spells.branding_smite_details,
+    spell_branding_smite_expanded: spells.branding_smite_expanded,
+
+    spell_levitate: spells.levitate,
+    spell_levitate_details: spells.levitate_details,
+    spell_levitate_expanded: spells.levitate_expanded,
+
+    spell_moonbeam: spells.moonbeam,
+    spell_moonbeam_details: spells.moonbeam_details,
+    spell_moonbeam_expanded: spells.moonbeam_expanded,
+
+    spell_ray_of_enfeeblement: spells.ray_of_enfeeblement,
+    spell_ray_of_enfeeblement_details: spells.ray_of_enfeeblement_details,
+    spell_ray_of_enfeeblement_expanded: spells.ray_of_enfeeblement_expanded,
+
+    spell_magic_weapon: spells.magic_weapon,
+    spell_magic_weapon_details: spells.magic_weapon_details,
+    spell_magic_weapon_expanded: spells.magic_weapon_expanded,
+
+    spell_lesser_restoration: spells.lesser_restoration,
+    spell_lesser_restoration_details: spells.lesser_restoration_details,
+    spell_lesser_restoration_expanded: spells.lesser_restoration_expanded,
+
+    spell_melfs_acid_arrow: spells.melfs_acid_arrow,
+    spell_melfs_acid_arrow_details: spells.melfs_acid_arrow_details,
+    spell_melfs_acid_arrow_expanded: spells.melfs_acid_arrow_expanded,
+
+    spell_prayer_of_healing: spells.prayer_of_healing,
+    spell_prayer_of_healing_details: spells.prayer_of_healing_details,
+    spell_prayer_of_healing_expanded: spells.prayer_of_healing_expanded,
+
+    spell_invisibility: spells.invisibility,
+    spell_invisibility_details: spells.invisibility_details,
+    spell_invisibility_expanded: spells.invisibility_expanded,
+
+    spell_gentle_repose: spells.gentle_repose,
+    spell_gentle_repose_details: spells.gentle_repose_details,
+    spell_gentle_repose_expanded: spells.gentle_repose_expanded,
+
+    spell_nystuls_magic_aura: spells.nystuls_magic_aura,
+    spell_nystuls_magic_aura_details: spells.nystuls_magic_aura_details,
+    spell_nystuls_magic_aura_expanded: spells.nystuls_magic_aura_expanded,
+
+    spell_cloud_of_daggers: spells.cloud_of_daggers,
+    spell_cloud_of_daggers_details: spells.cloud_of_daggers_details,
+    spell_cloud_of_daggers_expanded: spells.cloud_of_daggers_expanded,
+
+    spell_zone_of_truth: spells.zone_of_truth,
+    spell_zone_of_truth_details: spells.zone_of_truth_details,
+    spell_zone_of_truth_expanded: spells.zone_of_truth_expanded,
+
+    spell_detect_thoughts: spells.detect_thoughts,
+    spell_detect_thoughts_details: spells.detect_thoughts_details,
+    spell_detect_thoughts_expanded: spells.detect_thoughts_expanded,
+
+    spell_knock: spells.knock,
+    spell_knock_details: spells.knock_details,
+    spell_knock_expanded: spells.knock_expanded,
+
+    spell_mirror_image: spells.mirror_image,
+    spell_mirror_image_details: spells.mirror_image_details,
+    spell_mirror_image_expanded: spells.mirror_image_expanded,
+
+    material_warding_bond_50gold: "Пара платиновых колец за минимум 50 🟡",
+    bonus: "бонус",
+
+    spell_warding_bond: spells.warding_bond,
+    spell_warding_bond_details: spells.warding_bond_details,
+    spell_warding_bond_expanded: spells.warding_bond_expanded,
+
+    spell_scorching_ray: spells.scorching_ray,
+    spell_scorching_ray_details: spells.scorching_ray_details,
+    spell_scorching_ray_expanded: spells.scorching_ray_expanded,
+
+    spell_spider_climb: spells.spider_climb,
+    spell_spider_climb_details: spells.spider_climb_details,
+    spell_spider_climb_expanded: spells.spider_climb_expanded,
+
+    spell_web: spells.web,
+    spell_web_details: spells.web_details,
+    spell_web_expanded: spells.web_expanded,
+
+    spell_aid: spells.aid,
+    spell_aid_details: spells.aid_details,
+    spell_aid_expanded: spells.aid_expanded,
+
+    spell_locate_animals_or_plants: spells.locate_animals_or_plants,
+    spell_locate_animals_or_plants_details: spells.locate_animals_or_plants_details,
+    spell_locate_animals_or_plants_expanded: spells.locate_animals_or_plants_expanded,
+
+    spell_find_traps: spells.find_traps,
+    spell_find_traps_details: spells.find_traps_details,
+    spell_find_traps_expanded: spells.find_traps_expanded,
+
+    spell_locate_object: spells.locate_object,
+    spell_locate_object_details: spells.locate_object_details,
+    spell_locate_object_expanded: spells.locate_object_expanded,
+
+    spell_find_steed: spells.find_steed,
+    spell_find_steed_details: spells.find_steed_details,
+    spell_find_steed_expanded: spells.find_steed_expanded,
+
+    spell_gust_of_wind: spells.gust_of_wind,
+    spell_gust_of_wind_details: spells.gust_of_wind_details,
+    spell_gust_of_wind_expanded: spells.gust_of_wind_expanded,
+
+    spell_animal_messenger: spells.animal_messenger,
+    spell_animal_messenger_details: spells.animal_messenger_details,
+    spell_animal_messenger_expanded: spells.animal_messenger_expanded,
+
+    spell_flaming_sphere: spells.flaming_sphere,
+    spell_flaming_sphere_details: spells.flaming_sphere_details,
+    spell_flaming_sphere_expanded: spells.flaming_sphere_expanded,
+
+    spell_blur: spells.blur,
+    spell_blur_details: spells.blur_details,
+    spell_blur_expanded: spells.blur_expanded,
+
+    spell_heat_metal: spells.heat_metal,
+    spell_heat_metal_details: spells.heat_metal_details,
+    spell_heat_metal_expanded: spells.heat_metal_expanded,
+
+    spell_enthrall: spells.enthrall,
+    spell_enthrall_details: spells.enthrall_details,
+    spell_enthrall_expanded: spells.enthrall_expanded,
+
+    spell_alter_self: spells.alter_self,
+    spell_alter_self_details: spells.alter_self_details,
+    spell_alter_self_expanded: spells.alter_self_expanded,
 }
