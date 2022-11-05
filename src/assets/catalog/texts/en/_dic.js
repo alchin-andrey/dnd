@@ -15,7 +15,7 @@ export default {
             authors: 
             '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент,</p>' +
             '<p><a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код,</p>' +
-            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер</a> - переклади, валідація.</p>' +
+            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер</a> — переклади, валідація.</p>' +
             '<p>З будь яких тем по цьому сайту, пишіть Дімі.</p>' +
             '<br /><p>Якщо у вас є бажання задонатити, будемо дуже вдячні. Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 80% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 

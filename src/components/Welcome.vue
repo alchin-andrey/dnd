@@ -44,7 +44,7 @@ export default {
 }
 
 .text {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 1);
   text-align: start;
   white-space: pre-line;
 }
@@ -55,7 +55,7 @@ export default {
 }
 
 .text_html {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.4);
   
 }
 </style>
