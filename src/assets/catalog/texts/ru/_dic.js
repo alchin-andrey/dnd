@@ -186,6 +186,8 @@ export default {
     speed:"скорость",
         feet: "футов",
         miles: "миль",
+        milei: "мили",
+        milea: "миля",
     vision_day:"зрение",
     vision_night:"темное зрение",
     hp_bonus: "здоровье",
@@ -1914,4 +1916,52 @@ export default {
     spell_warding_bond: spells.warding_bond,
     spell_warding_bond_details: spells.warding_bond_details,
     spell_warding_bond_expanded: spells.warding_bond_expanded,
+
+    spell_scorching_ray: spells.scorching_ray,
+    spell_scorching_ray_details: spells.scorching_ray_details,
+    spell_scorching_ray_expanded: spells.scorching_ray_expanded,
+
+    spell_spider_climb: spells.spider_climb,
+    spell_spider_climb_details: spells.spider_climb_details,
+    spell_spider_climb_expanded: spells.spider_climb_expanded,
+
+    spell_web: spells.web,
+    spell_web_details: spells.web_details,
+    spell_web_expanded: spells.web_expanded,
+
+    spell_aid: spells.aid,
+    spell_aid_details: spells.aid_details,
+    spell_aid_expanded: spells.aid_expanded,
+
+    spell_locate_animals_or_plants: spells.locate_animals_or_plants,
+    spell_locate_animals_or_plants_details: spells.locate_animals_or_plants_details,
+    spell_locate_animals_or_plants_expanded: spells.locate_animals_or_plants_expanded,
+
+    spell_find_traps: spells.find_traps,
+    spell_find_traps_details: spells.find_traps_details,
+    spell_find_traps_expanded: spells.find_traps_expanded,
+
+    spell_locate_object: spells.locate_object,
+    spell_locate_object_details: spells.locate_object_details,
+    spell_locate_object_expanded: spells.locate_object_expanded,
+
+    spell_find_steed: spells.find_steed,
+    spell_find_steed_details: spells.find_steed_details,
+    spell_find_steed_expanded: spells.find_steed_expanded,
+
+    spell_gust_of_wind: spells.gust_of_wind,
+    spell_gust_of_wind_details: spells.gust_of_wind_details,
+    spell_gust_of_wind_expanded: spells.gust_of_wind_expanded,
+
+    spell_animal_messenger: spells.animal_messenger,
+    spell_animal_messenger_details: spells.animal_messenger_details,
+    spell_animal_messenger_expanded: spells.animal_messenger_expanded,
+
+    spell_flaming_sphere: spells.flaming_sphere,
+    spell_flaming_sphere_details: spells.flaming_sphere_details,
+    spell_flaming_sphere_expanded: spells.flaming_sphere_expanded,
+
+    spell_blur: spells.blur,
+    spell_blur_details: spells.blur_details,
+    spell_blur_expanded: spells.blur_expanded,
 }

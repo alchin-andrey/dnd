@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.warding_bond,
+              spell: spells.blur,
             },
 
             {
@@ -526,7 +526,7 @@ export default {
             },
             {
               level: 5,
-              spell: spells.warding_bond_self,
+              spell: spells.invisibility_self,
             },
           ],
         },
