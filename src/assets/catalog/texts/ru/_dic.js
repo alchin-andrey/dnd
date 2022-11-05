@@ -1157,9 +1157,9 @@ export default {
     spell_small_illusion_details: spells.small_illusion_details,
     spell_small_illusion_expanded: spells.small_illusion_expanded,
 
-    spell_enlargement: spells.enlargement,
-    spell_enlargement_details: spells.enlargement_details,
-    spell_enlargement_expanded: spells.enlargement_expanded,
+    spell_enlargement_self: spells.enlargement_self,
+    spell_enlargement_self_details: spells.enlargement_self_details,
+    spell_enlargement_self_expanded: spells.enlargement_self_expanded,
 
     spell_invisibility_self: spells.invisibility_self,
     spell_invisibility_self_details: spells.invisibility_self_details,
@@ -1976,4 +1976,19 @@ export default {
     spell_alter_self: spells.alter_self,
     spell_alter_self_details: spells.alter_self_details,
     spell_alter_self_expanded: spells.alter_self_expanded,
+
+    spell_darkvision: spells.darkvision,
+    spell_darkvision_details: spells.darkvision_details,
+    spell_darkvision_expanded: spells.darkvision_expanded,
+
+    spell_rope_trick: spells.rope_trick,
+    spell_rope_trick_details: spells.rope_trick_details,
+    spell_rope_trick_expanded: spells.rope_trick_expanded,
+
+    spell_misty_step: spells.misty_step,
+    spell_misty_step_details: spells.misty_step_details,
+    spell_misty_step_expanded: spells.misty_step_expanded,
+
+    spell_darkness_details: spells.darkness_details,
+    spell_darkness_expanded: spells.darkness_expanded,
 }

@@ -411,11 +411,11 @@ export default {
     },
   ],
 
-  enlargement: [
+  enlargement_self: [
     {
-      name: "spell_enlargement",
-      details: "spell_enlargement_details",
-      expanded: "spell_enlargement_expanded", // полное описание
+      name: "spell_enlargement_self",
+      details: "spell_enlargement_self_details",
+      expanded: "spell_enlargement_self_expanded", // полное описание
 
       type: "transmutation",
 
@@ -7988,6 +7988,239 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     }
+  ],
+
+  darkvision: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_darkvision",
+      details: "spell_darkvision_details",
+      expanded: "spell_darkvision_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","druid","ranger","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus","touch"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  silence: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_silence",
+      details: "spell_silence_details",
+      expanded: "spell_silence_expanded",
+
+      type: "illusion",
+      classes: ["bard","cleric","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  rope_trick: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_rope_trick",
+      details: "spell_rope_trick_details",
+      expanded: "spell_rope_trick_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus","touch"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  misty_step: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_misty_step",
+      details: "spell_misty_step_details",
+      expanded: "spell_misty_step_expanded",
+
+      type: "conjuration",
+      classes: ["sorcerer","warlock","wizard"],
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  darkness: [
+    {},
+    {},
+    {
+      name: "spell_darkness",
+      details: "spell_darkness_details",
+      expanded: "spell_darkness_expanded",
+
+      type: "evocation",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["verbal", "somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: "sphere",
+      aim_aoe_size: 30,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   placeholder: [

@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.locate_animals_or_plants,
+              spell: spells.darkness,
             },
 
             {
@@ -527,7 +527,7 @@ export default {
           spells: [
             {
               level: 3,
-              spell: spells.enlargement,
+              spell: spells.enlargement_self,
             },
             {
               level: 5,
