@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.darkness,
+              spell: spells.spike_growth,
             },
 
             {

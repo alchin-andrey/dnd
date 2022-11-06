@@ -8223,6 +8223,248 @@ export default {
     },
   ],
 
+  enlarge: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_enlarge",
+      details: "spell_enlarge_details",
+      expanded: "spell_enlarge_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","druid","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_num: 1,
+      impact_size_dice: 4,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    }
+  ],
+
+  hold_person: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_hold_person",
+      details: "spell_hold_person_details",
+      expanded: "spell_hold_person_expanded",
+
+      type: "enchantment",
+      classes: ["bard","cleric","druid","sorcerer","warlock","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_disttance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},
+  ],
+
+  enhance_ability: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_enhance_ability",
+      details: "spell_enhance_ability_details",
+      expanded: "spell_enhance_ability_expanded",
+
+      type: "transmutation",
+      classes: ["artificer","bard","cleric","druid","ranger","sorcerer","wizard"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus","touch"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+      
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 1,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},
+  ],
+
+  calm_emotions: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_calm_emotions",
+      details: "spell_calm_emotions_details",
+      expanded: "spell_calm_emotions_expanded",
+
+      type: "enchantment",
+      classes: ["bard","cleric"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    }
+  ],
+
+  spike_growth: [
+    {
+      //0
+    },
+    {
+      //1
+    },
+    {
+      //2
+      name: "spell_spike_growth",
+      details: "spell_spike_growth_details",
+      expanded: "spell_spike_growth_expanded",
+
+      type: "transmutation",
+      classes: ["druid","ranger"],
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 150,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "cilinder",
+      aim_aoe_size: 40,
+
+      impact_type: "damage",
+      impact_damage_type: "piercing_w",
+      
+      impact_size_foo: null,
+      impact_size_num: 2,
+      impact_size_dice: 4,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   placeholder: [
     {
       //0

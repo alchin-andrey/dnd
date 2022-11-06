@@ -1991,4 +1991,24 @@ export default {
 
     spell_darkness_details: spells.darkness_details,
     spell_darkness_expanded: spells.darkness_expanded,
+
+    spell_enlarge: spells.enlarge,
+    spell_enlarge_details: spells.enlarge_details,
+    spell_enlarge_expanded: spells.enlarge_expanded,
+
+    spell_hold_person: spells.hold_person,
+    spell_hold_person_details: spells.hold_person_details,
+    spell_hold_person_expanded: spells.hold_person_expanded,
+
+    spell_enhance_ability: spells.enhance_ability,
+    spell_enhance_ability_details: spells.enhance_ability_details,
+    spell_enhance_ability_expanded: spells.enhance_ability_expanded,
+
+    spell_calm_emotions: spells.calm_emotions,
+    spell_calm_emotions_details: spells.calm_emotions_details,
+    spell_calm_emotions_expanded: spells.calm_emotions_expanded,
+
+    spell_spike_growth: spells.spike_growth,
+    spell_spike_growth_details: spells.spike_growth_details,
+    spell_spike_growth_expanded: spells.spike_growth_expanded,
 }
