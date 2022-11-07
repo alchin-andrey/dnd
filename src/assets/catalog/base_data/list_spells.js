@@ -1508,6 +1508,416 @@ export default {
     },
   ],
 
+  divine_sense: [
+    {
+      //0
+      name: "spell_divine_sense",
+      details: "spell_divine_sense_details",
+      expanded: "spell_divine_sense_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 2,
+      spell_duration_units: "rounda",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  lay_on_hands: [
+    {
+      //0
+      name: "spell_lay_on_hands",
+      details: "spell_lay_on_hands_details",
+      expanded: "spell_lay_on_hands_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: "stock",
+      
+      impact_size_foo: "levelx",
+      impact_size_num: 5,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  side_pary: [
+    {
+      //0
+      name: "spell_side_pary",
+      details: "spell_side_pary_details",
+      expanded: "spell_side_pary_expanded",
+
+      type: "ability",
+      
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["shield"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_mana: [
+    {
+      //0
+      name: "spell_divine_channel_mana",
+      details: "spell_divine_channel_mana_details",
+      expanded: "spell_divine_channel_mana_expanded",
+
+      type: "ability",
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_devotion_1: [
+    {
+      //0
+      name: "spell_divine_channel_devotion_1",
+      details: "spell_divine_channel_devotion_1_details",
+      expanded: "spell_divine_channel_devotion_1_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "weapons",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "aim_bonus",
+      impact_damage_type: "bonus",
+      
+      impact_size_foo: "cha_mod",
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_devotion_2: [
+    {
+      //0
+      name: "spell_divine_channel_devotion_2",
+      details: "spell_divine_channel_devotion_2_details",
+      expanded: "spell_divine_channel_devotion_2_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_antients_1: [
+    {
+      //0
+      name: "spell_divine_channel_antients_1",
+      details: "spell_divine_channel_antients_1_details",
+      expanded: "spell_divine_channel_antients_1_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_antients_2: [
+    {
+      //0
+      name: "spell_divine_channel_antients_2",
+      details: "spell_divine_channel_antients_2_details",
+      expanded: "spell_divine_channel_antients_2_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_vengence_1: [
+    {
+      //0
+      name: "spell_divine_channel_vengence_1",
+      details: "spell_divine_channel_vengence_1_details",
+      expanded: "spell_divine_channel_vengence_1_expanded",
+
+      type: "ability",
+      
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal","somatic","focus"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_vengence_2: [
+    {
+      //0
+      name: "spell_divine_channel_vengence_2",
+      details: "spell_divine_channel_vengence_2_details",
+      expanded: "spell_divine_channel_vengence_2_expanded",
+
+      type: "ability",
+      
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["verbal"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+      
+      impact_size_foo: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [
@@ -8465,43 +8875,29 @@ export default {
     }
   ],
 
-  placeholder: [
+  paladin_divine_smite: [
     {
       //0
     },
     {
       //1
-    },
-    {
-      //2
-      name: "spell_placeholder",
-      details: "spell_placeholder_details",
-      expanded: "spell_placeholder_expanded",
+      name: "spell_paladin_divine_smite",
+      details: "spell_paladin_divine_smite_details",
+      expanded: "spell_paladin_divine_smite_expanded",
 
-      type: null,
-      /*
-            "abjuration": "ограждение",
-            "conjuration": "вызов",
-            "divination": "прорицание",
-            "enchantment": "чары",
-            "evocation": "воплощение",
-            "illusion": "иллюзия",
-            "necromancy": "некромантия",
-            "transmutation": "преобразование",
-      */
-      classes: [],
+      type: "ability",
       
-      cast_time: null,
+      cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: null,
-      aim_type: null,
+      aim_target: "creature",
+      aim_type: "near",
       aim_range: null,
 
-      parts: [null],
+      parts: ["none"],
 
-      spell_time: null,
+      spell_time: "instant",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -8510,35 +8906,17 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
-      impact_damage_type: null,
-      /*
-        bonus_w
-        poison_w:"🧪 Ядом",
-        fire_w:"🔥 Огнем",
-        cold_w:"❄️ Холодом",
-        electricity_w:"⚡️ Электричеством",
-        acid_w:"⚗️ Кислотой",
-        thunder_w: "🔊 Звуком",
-        radiant_w: "✨ Светом",
-        force_w: "🌈 Cиловым полем",
-
-        piercing_w: "🗡 колющий",
-        slashing_w: "🪓 рубящий",
-        bludgeoning_w: "🔨 дробящий",
-
-        necrotic_w: "💀 Некротический",
-        psychic_w: "🧠 Психический",
-      */
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
       
-      impact_size_foo: null,
-      impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_foo: "Dmg_plus_1",
+      impact_size_num: 2,
+      impact_size_dice: 8,
 
-      saving_need: false,
+      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},{},{},
   ],
 };

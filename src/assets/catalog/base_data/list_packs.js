@@ -68,5 +68,22 @@ export default {
             [items.scissors,1],
             [items.tweezers,1]
         ]
-    }
+    },
+
+    priests: {
+        name: "priests_pack",
+        details: "priests_pack_details",
+        items: [
+            [items.backpack,1],
+            [items.blanket,1],
+            [items.candle,10],
+            [items.tinderbox,1],
+            [items.donation_box,1]
+            [items.incense,2],
+            [items.censer,1],
+            [items.vestment,1]
+            [items.ration,2],
+            [items.waterskin,1],
+        ]
+    },
 }

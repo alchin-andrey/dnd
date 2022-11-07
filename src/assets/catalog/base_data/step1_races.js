@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.spike_growth,
+              spell: spells.divine_channel_antients_2,
             },
 
             {

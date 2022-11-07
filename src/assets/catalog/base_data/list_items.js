@@ -175,4 +175,45 @@ export default {
     weight: 0.1,
   },
 
+  holy_symbol: {
+    name: "holy_symbol",
+    details: "holy_symbol_details",
+    cost: 100,
+    weight: 0.1,
+  },
+
+  blanket: {
+    name: "blanket",
+    details: "blanket_details",
+    cost: 1900,
+    weight: 7.5,
+  },
+
+  donation_box: {
+    name: "donation_box",
+    details: "donation_box_details",
+    cost: 100,
+    weight: 0.5,
+  },
+
+  incense: {
+    name: "incense",
+    details: "incense_details",
+    cost: 50,
+    weight: 0.25,
+  },
+
+  censer: {
+    name: "censer",
+    details: "censer_details",
+    cost: 200,
+    weight: 0.5,
+  },
+
+  vestment: {
+    name: "vestment",
+    details: "vestment_details",
+    cost: 200,
+    weight: 0.5,
+  },
 };
