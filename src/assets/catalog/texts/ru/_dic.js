@@ -2102,4 +2102,12 @@ export default {
     spell_divine_channel_antients_2: spells.divine_channel_antients_2,
     spell_divine_channel_antients_2_details: spells.divine_channel_antients_2_details,
     spell_divine_channel_antients_2_expanded: spells.divine_channel_antients_2_expanded,
+
+    spell_divine_channel_vengence_1: spells.divine_channel_vengence_1,
+    spell_divine_channel_vengence_1_details: spells.divine_channel_vengence_1_details,
+    spell_divine_channel_vengence_1_expanded: spells.divine_channel_vengence_1_expanded,
+
+    spell_divine_channel_vengence_2: spells.divine_channel_vengence_2,
+    spell_divine_channel_vengence_2_details: spells.divine_channel_vengence_2_details,
+    spell_divine_channel_vengence_2_expanded: spells.divine_channel_vengence_2_expanded,
 }

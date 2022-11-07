@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.divine_channel_antients_2,
+              spell: spells.divine_channel_vengence_2,
             },
 
             {
