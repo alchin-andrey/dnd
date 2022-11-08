@@ -974,21 +974,21 @@ export default {
 			this.race_page.shown_languages = false;
 		},
 
-		...mapMutations({
-			GET_HOME_ARR: 'race_page/GET_HOME_ARR',
-			SHOW_SCROLL: 'race_page/SHOW_SCROLL',
-			SHOW_HOME: 'race_page/SHOW_HOME',
-			MY_DEF: 'MY/MY_DEF'
-		}),
 
 		...mapActions({
 			goHome: 'race_page/goHome',
 			def: 'MY/def'
 		}),
+		...mapMutations({
+			GET_HOME_ARR: 'race_page/GET_HOME_ARR',
+			SHOW_SCROLL: 'race_page/SHOW_SCROLL',
+			SHOW_HOME: 'race_page/SHOW_HOME',
+			MY_DEF: 'MY/MY_DEF',
+			TEST_1_CHANGE: 'MY/TEST_1_CHANGE'
+		}),
 
 		show(name, key) {
-			// this.MY_DEF();
-			this.goHome();
+			this.TEST_1_CHANGE();
 			this.MY_race;
 			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
 				this.race_page.shown_selection = false;
@@ -1013,7 +1013,6 @@ export default {
 				this.close();
 				this.race_page.shown_home = true;
 			}
-
 		},
 
 		showHome() {
