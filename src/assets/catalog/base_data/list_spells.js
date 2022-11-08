@@ -79,9 +79,12 @@ export default {
       */
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
+
+      impact_size_plus: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -113,7 +116,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -128,8 +131,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "charisma",
@@ -168,8 +173,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Plus_Level_5",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -207,8 +214,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Plus_Level_5", //1lvl + 0, 6lvl + 1, 11lvl + 2, 16lvl + 3
+      impact_size_string: null,
       impact_size_num: 2, //1 + 0, 6 + 1, 11 + 2, 16 + 3
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -246,8 +255,10 @@ export default {
       impact_damage_type: "cold_w",
 
       impact_size_foo: "Plus_Level_5",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -285,8 +296,10 @@ export default {
       impact_damage_type: "electricity_w",
 
       impact_size_foo: "Plus_Level_5",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -324,8 +337,10 @@ export default {
       impact_damage_type: "acid_w",
 
       impact_size_foo: "Plus_Level_5",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -362,9 +377,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "poison_w",
 
-      impact_size_foo: "Plus_Level_5",
+      impact_size_foo: "Plus_Level_5", //done
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -402,8 +419,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -442,8 +461,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -520,9 +541,12 @@ export default {
       */
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
+
+      impact_size_plus: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -565,8 +589,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -605,8 +631,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -645,8 +673,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -684,8 +714,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -775,10 +807,11 @@ export default {
         psychic_w: "🧠 Психический",
       */
 
-      impact_size_foo: "barbarian_rage_bonus", // Добавить функцию
-      impact_size_num: null, //classes.barbarian_rage_bonus[MY.level], добавить параметр
+      impact_size_foo: "Barbarian_Rage_Bonus", //done
+      impact_size_string: null,
+      impact_size_num: null, //this.$root.step2_classes.barbarian_rage_bonus[this.$root.MY.level],
       impact_size_dice: null,
-      // рассчет урона
+      impact_size_plus: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -869,9 +902,12 @@ export default {
       */
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
+
+      impact_size_plus: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -910,8 +946,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -946,8 +984,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -983,8 +1023,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1021,8 +1063,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1058,8 +1102,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1100,8 +1146,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1137,8 +1185,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1174,8 +1224,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1210,9 +1262,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "bludgeoning_w",
 
-      impact_size_foo: "Plus_strength_mod",
+      impact_size_foo: "Plus_strength_mod", //need update
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 12,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -1247,8 +1301,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1279,24 +1335,27 @@ export default {
       aim_range: null,
       aim_aoe: null,
       aim_aoe_size: null,
-      impact_type: null,
-      impact_damage_type: null,
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
 
-      impact_size_foo: "plus_level_2", //на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
+      impact_size_foo: "Plus_Level_2", //done
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
+    {}
   ],
 
   cunning_action: [
     {
       name: "spell_cunning_action",
       details: "spell_cunning_action_details",
-      expanded: "spell_cunning_action_expanded", 
+      expanded: "spell_cunning_action_expanded",
 
       type: "ability",
 
@@ -1317,22 +1376,24 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+      impact_size_plus: null,
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   steady_aim: [
     {
       name: "spell_steady_aim",
       details: "spell_steady_aim_details",
-      expanded: "spell_steady_aim_expanded", 
+      expanded: "spell_steady_aim_expanded",
 
       type: "ability",
 
@@ -1353,22 +1414,24 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+      impact_size_plus: null,
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   uncanny_dodge: [
     {
       name: "spell_uncanny_dodge",
       details: "spell_uncanny_dodge_details",
-      expanded: "spell_uncanny_dodge_expanded", 
+      expanded: "spell_uncanny_dodge_expanded",
 
       type: "ability",
 
@@ -1389,22 +1452,24 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+      impact_size_plus: null,
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   fast_hands: [
     {
       name: "spell_fast_hands",
       details: "spell_fast_hands_details",
-      expanded: "spell_fast_hands_expanded", 
+      expanded: "spell_fast_hands_expanded",
 
       type: "ability",
 
@@ -1425,11 +1490,13 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+      impact_size_plus: null,
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
@@ -1440,7 +1507,7 @@ export default {
     {
       name: "spell_fake_identity",
       details: "spell_fake_identity_details",
-      expanded: "spell_fake_identity_expanded", 
+      expanded: "spell_fake_identity_expanded",
 
       type: "ability",
 
@@ -1461,11 +1528,13 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+      impact_size_plus: null,
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
@@ -1476,7 +1545,7 @@ export default {
     {
       name: "spell_fake_presence",
       details: "spell_fake_presence_details",
-      expanded: "spell_fake_presence_expanded", 
+      expanded: "spell_fake_presence_expanded",
 
       type: "ability",
 
@@ -1497,11 +1566,13 @@ export default {
       aim_aoe_size: null,
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
-      
+      impact_size_plus: null,
+
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
@@ -1516,7 +1587,7 @@ export default {
       expanded: "spell_divine_sense_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1538,15 +1609,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   lay_on_hands: [
@@ -1557,7 +1630,7 @@ export default {
       expanded: "spell_lay_on_hands_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1579,15 +1652,17 @@ export default {
 
       impact_type: "heal",
       impact_damage_type: "stock",
-      
-      impact_size_foo: "levelx",
+
+      impact_size_foo: "Levelx", //done
+      impact_size_string: null,
       impact_size_num: 5,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   side_pary: [
@@ -1598,7 +1673,7 @@ export default {
       expanded: "spell_side_pary_expanded",
 
       type: "ability",
-      
+
       cast_time: "reaction",
       cast_duration: null,
       cast_duration_units: null,
@@ -1620,15 +1695,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_mana: [
@@ -1639,7 +1716,7 @@ export default {
       expanded: "spell_divine_channel_mana_expanded",
 
       type: "ability",
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1648,7 +1725,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1661,15 +1738,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_devotion_1: [
@@ -1680,7 +1759,7 @@ export default {
       expanded: "spell_divine_channel_devotion_1_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1702,15 +1781,17 @@ export default {
 
       impact_type: "aim_bonus",
       impact_damage_type: "bonus",
-      
-      impact_size_foo: "cha_mod",
+
+      impact_size_foo: "Cha_Mod", //add "+"
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_devotion_2: [
@@ -1721,7 +1802,7 @@ export default {
       expanded: "spell_divine_channel_devotion_2_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1730,7 +1811,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -1743,15 +1824,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_antients_1: [
@@ -1762,7 +1845,7 @@ export default {
       expanded: "spell_divine_channel_antients_1_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1784,15 +1867,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_antients_2: [
@@ -1803,7 +1888,7 @@ export default {
       expanded: "spell_divine_channel_antients_2_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1812,7 +1897,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -1825,15 +1910,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_vengence_1: [
@@ -1844,7 +1931,7 @@ export default {
       expanded: "spell_divine_channel_vengence_1_expanded",
 
       type: "ability",
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1853,7 +1940,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -1866,15 +1953,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
-    }
+    },
   ],
 
   divine_channel_vengence_2: [
@@ -1885,7 +1974,7 @@ export default {
       expanded: "spell_divine_channel_vengence_2_expanded",
 
       type: "ability",
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -1907,15 +1996,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   // All spells / 0 ----------------------------------------------------------
@@ -1929,7 +2020,7 @@ export default {
       expanded: "spell_acid_splash_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","wizard"],
+      classes: ["sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -1938,7 +2029,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1953,8 +2044,10 @@ export default {
       impact_damage_type: "acid_w",
 
       impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -1970,7 +2063,7 @@ export default {
       expanded: "spell_blade_ward_expanded",
 
       type: "abjuration",
-      classes: ["warlock","wizard"],
+      classes: ["warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -1994,8 +2087,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2012,7 +2107,7 @@ export default {
       expanded: "spell_chill_touch_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","warlock","wizard"],
+      classes: ["sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2021,7 +2116,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -2035,9 +2130,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "necrotic_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2052,7 +2149,7 @@ export default {
       expanded: "spell_dancing_lights_expanded", // полное описание
 
       type: "evocation",
-      classes: ["artificer","bard","sorcerer","wizard"],
+      classes: ["artificer", "bard", "sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2077,8 +2174,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2118,8 +2217,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2145,7 +2246,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2159,9 +2260,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "force_w",
 
-      impact_size_foo: "X_level_5_11_17", //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
+      impact_size_foo: "X_Level_5_11_17", //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2178,7 +2281,7 @@ export default {
       expanded: "spell_fire_bolt_expanded",
 
       type: "evocation",
-      classes: ["artificer","sorcerer","wizard"],
+      classes: ["artificer", "sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2187,7 +2290,7 @@ export default {
       aim_target: "object",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2201,9 +2304,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "fire_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2220,7 +2325,7 @@ export default {
       expanded: "spell_friends_expanded",
 
       type: "enchantment",
-      classes: ["bard","sorcerer","warlock","wizard"],
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2244,8 +2349,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2261,7 +2368,7 @@ export default {
       expanded: "spell_guidance_expanded",
 
       type: "divination",
-      classes: ["artificer","cleric","druid"],
+      classes: ["artificer", "cleric", "druid"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2270,7 +2377,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -2285,8 +2392,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2303,7 +2412,7 @@ export default {
       expanded: "spell_light_expanded",
 
       type: "evocation",
-      classes: ["artificer","bard","cleric","sorcerer","wizard"],
+      classes: ["artificer", "bard", "cleric", "sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2312,7 +2421,7 @@ export default {
       aim_target: "object",
       aim_type: "near",
 
-      parts: ["verbal","touch","focus"],
+      parts: ["verbal", "touch", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -2327,8 +2436,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -2345,7 +2456,7 @@ export default {
       expanded: "spell_mage_hand_expanded",
 
       type: "conjuration",
-      classes: ["bard","sorcerer","warlock","wizard"],
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2354,7 +2465,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -2369,8 +2480,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2386,7 +2499,7 @@ export default {
       expanded: "spell_mending_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","cleric","druid","sorcerer","wizard"],
+      classes: ["artificer", "bard", "cleric", "druid", "sorcerer", "wizard"],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -2395,7 +2508,7 @@ export default {
       aim_target: "object",
       aim_type: "near",
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2410,8 +2523,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2427,7 +2542,7 @@ export default {
       expanded: "spell_message_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","sorcerer","wizard"],
+      classes: ["artificer", "bard", "sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2436,7 +2551,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -2451,8 +2566,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2469,7 +2586,7 @@ export default {
       expanded: "spell_poison_spray_expanded",
 
       type: "conjuration",
-      classes: ["artificer","sorcerer","warlock","wizard"],
+      classes: ["artificer", "sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2478,7 +2595,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2493,8 +2610,10 @@ export default {
       impact_damage_type: "poison_w",
 
       impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 12,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -2510,7 +2629,7 @@ export default {
       expanded: "spell_prestidigitation_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","sorcerer","warlock","wizard"],
+      classes: ["artificer", "bard", "sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2519,7 +2638,7 @@ export default {
       aim_target: "point",
       aim_type: "near",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -2534,8 +2653,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2560,7 +2681,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: "up_to",
       spell_duration: 10,
@@ -2574,9 +2695,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "fire_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2592,7 +2715,7 @@ export default {
       expanded: "spell_resistance_expanded",
 
       type: "abjuration",
-      classes: ["artificer","cleric","druid"],
+      classes: ["artificer", "cleric", "druid"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2601,7 +2724,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -2616,8 +2739,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2634,7 +2759,7 @@ export default {
       expanded: "spell_ray_of_frost_expanded",
 
       type: "evocation",
-      classes: ["artificer","druid","sorcerer","wizard"],
+      classes: ["artificer", "druid", "sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2643,7 +2768,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2657,9 +2782,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "cold_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2685,7 +2812,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2699,9 +2826,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "radiant_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -2741,8 +2870,10 @@ export default {
       impact_damage_type: "new_w",
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2759,7 +2890,7 @@ export default {
       expanded: "spell_shocking_grasp_expanded",
 
       type: "evocation",
-      classes: ["artificer","sorcerer","wizard"],
+      classes: ["artificer", "sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2768,7 +2899,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2782,9 +2913,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "electricity_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2799,7 +2932,7 @@ export default {
       expanded: "spell_small_illusion_expanded", // полное описание
 
       type: "illusion",
-      classes: ["bard","sorcerer","warlock","wizard"],
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2823,9 +2956,12 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
+
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -2841,7 +2977,7 @@ export default {
       expanded: "spell_spare_the_dying_expanded",
 
       type: "necromancy",
-      classes: ["artificer","cleric"],
+      classes: ["artificer", "cleric"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2850,7 +2986,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -2865,8 +3001,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2906,8 +3044,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2923,7 +3063,7 @@ export default {
       expanded: "spell_true_strike_expanded",
 
       type: "divination",
-      classes: ["bard","sorcerer","warlock","wizard"],
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -2947,8 +3087,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2988,9 +3130,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "psychic_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3006,7 +3150,7 @@ export default {
       expanded: "spell_thorn_whip_expanded",
 
       type: "transmutation",
-      classes: ["artificer","druid"],
+      classes: ["artificer", "druid"],
 
       cast_time: "action",
       cast_duration: null,
@@ -3015,7 +3159,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3029,9 +3173,11 @@ export default {
       impact_type: "damage",
       impact_damage_type: "piercing_w",
 
-      impact_size_foo: "Plus_level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_foo: "Plus_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3061,7 +3207,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3076,8 +3222,10 @@ export default {
       impact_damage_type: "slashing_w",
 
       impact_size_foo: "Dmg_plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -3086,50 +3234,50 @@ export default {
     {
       //2
       // impact_size_foo: null,
-      // impact_size_num: 3,
+      // impact_size_string: null, impact_size_num: 3,
       // impact_size_dice: 10,
     },
     {
       //3
       // impact_size_foo: null,
-      // impact_size_num: 4,
+      // impact_size_string: null, impact_size_num: 4,
       // impact_size_dice: 10,
     },
     {
       //4
       // impact_size_foo: null,
-      // impact_size_num: 5,
+      // impact_size_string: null, impact_size_num: 5,
       // impact_size_dice: 10,
     },
     {
       //5
       // impact_size_foo: null,
-      // impact_size_num: 6,
+      // impact_size_string: null, impact_size_num: 6,
       // impact_size_dice: 10,
     },
     {
       //6
       // name: "spell_hellish_rebuke",
       // impact_size_foo: null,
-      // impact_size_num: 7,
+      // impact_size_string: null, impact_size_num: 7,
       // impact_size_dice: 10,
     },
     {
       //7
       // impact_size_foo: null,
-      // impact_size_num: 8,
+      // impact_size_string: null, impact_size_num: 8,
       // impact_size_dice: 10,
     },
     {
       //8
       // impact_size_foo: null,
-      // impact_size_num: 9,
+      // impact_size_string: null, impact_size_num: 9,
       // impact_size_dice: 10,
     },
     {
       //9
       // impact_size_foo: null,
-      // impact_size_num: 10,
+      // impact_size_string: null, impact_size_num: 10,
       // impact_size_dice: 10,
     },
   ],
@@ -3145,7 +3293,7 @@ export default {
       expanded: "spell_silent_image_expanded",
 
       type: "illusion",
-      classes: ["sorcerer","wizard"],
+      classes: ["sorcerer", "wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -3154,7 +3302,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -3169,8 +3317,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -3189,8 +3339,8 @@ export default {
       expanded: "spell_bless_expanded",
 
       type: "enchantment",
-      classes: ["cleric","paladin"],
-      
+      classes: ["cleric", "paladin"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3198,7 +3348,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -3213,16 +3363,25 @@ export default {
 
       impact_type: "dice_throw",
       impact_damage_type: "bonus_w",
-      
-      impact_size_foo: "X3_plus_1", //spell{1} = 3×, spell{2} = 4×, spell{3} = 5× ...
+
+      impact_size_foo: "X_plus_1", //spell{1} = 3×, spell{2} = 4×, spell{3} = 5× ...
+      impact_size_string: 3,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   divine_favor: [
@@ -3237,7 +3396,7 @@ export default {
 
       type: "evocation",
       classes: ["paladin"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3245,7 +3404,7 @@ export default {
       aim_target: "self",
       aim_type: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -3260,10 +3419,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "bonus_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3282,8 +3443,8 @@ export default {
       expanded: "spell_witch_bolt_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","warlock"],
-      
+      classes: ["sorcerer", "warlock"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3292,7 +3453,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -3305,16 +3466,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "electricity_w",
-      
+
       impact_size_foo: "Dmg_plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 12,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   thunderwave: [
@@ -3328,8 +3498,8 @@ export default {
       expanded: "spell_thunderwave_expanded",
 
       type: "evocation",
-      classes: ["bard","druid","sorcerer","wizard"],
-      
+      classes: ["bard", "druid", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3338,7 +3508,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3351,16 +3521,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "sound_w",
-      
+
       impact_size_foo: "Dmg_plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   magic_missile: [
@@ -3374,8 +3553,8 @@ export default {
       expanded: "spell_magic_missile_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3384,7 +3563,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3397,16 +3576,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "force_w",
-      
-      impact_size_foo: "X3_plus_1_plus1", //spell{1} = 3× 1d4+1 , spell{2} = 4× 1d4+1, spell{3} = 5× 1d4+1
+
+      impact_size_foo: "X_plus_1", //spell{1} = 3× 1d4+1 , spell{2} = 4× 1d4+1, spell{3} = 5× 1d4+1
+      impact_size_string: 3,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: 1,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   compelled_duel: [
@@ -3421,7 +3609,7 @@ export default {
 
       type: "enchantment",
       classes: ["paladin"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3443,10 +3631,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3465,8 +3655,8 @@ export default {
       expanded: "spell_heroism_expanded",
 
       type: "enchantment",
-      classes: ["bard","paladin"],
-      
+      classes: ["bard", "paladin"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3475,7 +3665,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -3488,18 +3678,27 @@ export default {
 
       impact_type: "hp_bonus",
       impact_damage_type: "temporary",
-      
-      impact_size_foo: "X1_plus_1_base_stat_mod",
+
+      impact_size_foo: "X_plus_1_base_stat_mod",
       //Cущество в начале каждого своего хода получает временные хиты, равные модификатору вашей базовой характеристики.
       //Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы можете сделать целью одно дополнительное существо за каждый уровень ячейки выше первого.
+      impact_size_string: 1,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   wrathful_smite: [
@@ -3514,7 +3713,7 @@ export default {
 
       type: "evocation",
       classes: ["paladin"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3536,10 +3735,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "psychic_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3559,7 +3760,7 @@ export default {
 
       type: "conjuration",
       classes: ["ranger"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3581,16 +3782,22 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "piercing_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
-    {},{},{},{},{}
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   thunderous_smite: [
@@ -3605,7 +3812,7 @@ export default {
 
       type: "evocation",
       classes: ["paladin"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3627,10 +3834,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "thunder_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -3650,7 +3859,7 @@ export default {
 
       type: "enchantment",
       classes: ["bard"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3672,16 +3881,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "psychic_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   armor_of_agathys: [
@@ -3696,7 +3914,7 @@ export default {
 
       type: "abjuration",
       classes: ["warlock"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3705,7 +3923,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -3718,16 +3936,25 @@ export default {
 
       impact_type: "hp_bonus",
       impact_damage_type: "temporary",
-      
-      impact_size_foo: "Dmg_nodice_plus_5", //spell{1} = 5, spell{2} = 10, spell{3} = 15
-      impact_size_num: 5,
+
+      impact_size_foo: "Pls_plus_5", 
+      impact_size_string: null,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: 5,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   mage_armor: [
@@ -3741,8 +3968,8 @@ export default {
       expanded: "spell_mage_armor_expanded",
 
       type: "abjuration",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3751,7 +3978,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 8,
@@ -3764,10 +3991,12 @@ export default {
 
       impact_type: "armor_class",
       impact_damage_type: null,
-      
-      impact_size_foo: "Num_plus_DEX",
-      impact_size_num: 13,
+
+      impact_size_foo: null,
+      impact_size_string: null,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: 3,
 
       saving_need: false,
       saving_attribute: null,
@@ -3786,8 +4015,8 @@ export default {
       expanded: "spell_animal_friendship_expanded",
 
       type: "enchantment",
-      classes: ["bard","druid","ranger"],
-      
+      classes: ["bard", "druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3796,7 +4025,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 24,
@@ -3804,21 +4033,30 @@ export default {
 
       aim_need: false,
 
-      aim_aoe: null, 
+      aim_aoe: null,
       aim_aoe_size: null,
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   tashas_hideous_laughter: [
@@ -3832,8 +4070,8 @@ export default {
       expanded: "spell_tashas_hideous_laughter_expanded",
 
       type: "enchantment",
-      classes: ["bard","wizard"],
-      
+      classes: ["bard", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3842,7 +4080,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -3855,10 +4093,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3877,8 +4117,8 @@ export default {
       expanded: "spell_protection_from_evil_and_good_expanded",
 
       type: "abjuration",
-      classes: ["druid","cleric","paladin","warlock","wizard"],
-      
+      classes: ["druid", "cleric", "paladin", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3887,7 +4127,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -3900,16 +4140,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-
   ],
 
   healing_word: [
@@ -3923,8 +4164,8 @@ export default {
       expanded: "spell_healing_word_expanded",
 
       type: "evocation",
-      classes: ["bard","cleric","druid"],
-      
+      classes: ["bard", "cleric", "druid"],
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3946,16 +4187,30 @@ export default {
 
       impact_type: "heal",
       impact_damage_type: null,
-      
-      impact_size_foo: "Dmg_plus_1_and_base_mod", //spell{1} = 1d4+<модификатор базовой характеристики>, spell{2} = 2d4+<модификатор базовой характеристики> ...
+
+      impact_size_foo: "Dmg_plus_1_base_stat_mod",
+      //Example: 
+        //base_stat = strenth
+        //num = base_stat_mod = strength.mod = 3
+        //spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
+        //spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   cure_wounds: [
@@ -3969,8 +4224,8 @@ export default {
       expanded: "spell_cure_wounds_expanded",
 
       type: "evocation",
-      classes: ["artificer","bard","cleric","druid","paladin","ranger"],
-      
+      classes: ["artificer", "bard", "cleric", "druid", "paladin", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -3979,7 +4234,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3992,16 +4247,25 @@ export default {
 
       impact_type: "heal",
       impact_damage_type: null,
-      
-      impact_size_foo: "Dmg_plus_1_and_base_mod", //spell{1} = 1d4+<модификатор базовой характеристики>, spell{2} = 2d4+<модификатор базовой характеристики> ...
+
+      impact_size_foo: "Dmg_plus_1_base_stat_mod",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   ray_of_sickness: [
@@ -4015,8 +4279,8 @@ export default {
       expanded: "spell_ray_of_sickness_expanded",
 
       type: "necromancy",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4025,7 +4289,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4038,16 +4302,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "poison_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   disguise_self: [
@@ -4061,8 +4334,8 @@ export default {
       expanded: "spell_disguise_self_expanded",
 
       type: "illusion",
-      classes: ["artificer","bard","sorcerer","wizard"],
-      
+      classes: ["artificer", "bard", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4071,7 +4344,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4084,10 +4357,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -4107,7 +4382,7 @@ export default {
 
       type: "divination",
       classes: ["ranger"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4129,10 +4404,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "bonus_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4145,7 +4422,7 @@ export default {
     {},
     {
       spell_duration: 24,
-    }
+    },
   ],
 
   inflict_wounds: [
@@ -4160,7 +4437,7 @@ export default {
 
       type: "necromancy",
       classes: ["cleric"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4169,7 +4446,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4182,16 +4459,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "necrotic_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   guiding_bolt: [
@@ -4206,7 +4492,7 @@ export default {
 
       type: "evocation",
       classes: ["cleric"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4215,7 +4501,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4228,16 +4514,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "radiant_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 4,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   illusory_script: [
@@ -4251,8 +4546,8 @@ export default {
       expanded: "spell_illusory_script_expanded",
 
       type: "illusion",
-      classes: ["bard","warlock","wizard"],
-      
+      classes: ["bard", "warlock", "wizard"],
+
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
@@ -4261,7 +4556,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["somatic","material_ink_10gold"],
+      parts: ["somatic", "material_ink_10gold"],
 
       spell_time: null,
       spell_duration: 10,
@@ -4274,10 +4569,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4296,8 +4593,8 @@ export default {
       expanded: "spell_unseen_servant_expanded",
 
       type: "conjuration",
-      classes: ["bard","warlock","wizard"],
-      
+      classes: ["bard", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4306,7 +4603,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4319,10 +4616,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4341,8 +4640,8 @@ export default {
       expanded: "spell_detect_poison_and_disease_expanded",
 
       type: "divination",
-      classes: ["cleric","druid","paladin","ranger"],
-      
+      classes: ["cleric", "druid", "paladin", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4351,7 +4650,7 @@ export default {
       aim_type: null,
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -4364,10 +4663,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4386,8 +4687,8 @@ export default {
       expanded: "spell_detect_evil_and_good_expanded",
 
       type: "divination",
-      classes: ["cleric","paladin"],
-      
+      classes: ["cleric", "paladin"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4396,7 +4697,7 @@ export default {
       aim_type: null,
       aim_range: 30,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -4409,10 +4710,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4431,8 +4734,8 @@ export default {
       expanded: "spell_detect_magic_expanded",
 
       type: "divination",
-      classes: ["bard","warlock","wizard"],
-      
+      classes: ["bard", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4441,7 +4744,7 @@ export default {
       aim_type: null,
       aim_range: 30,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "contentration",
       spell_duration: 10,
@@ -4454,10 +4757,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4476,8 +4781,8 @@ export default {
       expanded: "spell_burning_hands_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4486,7 +4791,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4499,16 +4804,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "fire_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   faerie_fire_1: [
@@ -4542,8 +4856,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -4563,8 +4879,8 @@ export default {
       expanded: "spell_identify_expanded",
 
       type: "divination",
-      classes: ["artificer","bard","wizard"],
-      
+      classes: ["artificer", "bard", "wizard"],
+
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
@@ -4573,7 +4889,7 @@ export default {
       aim_type: "in_distance",
       aim_range: null,
 
-      parts: ["material_pearl_100gold","verbal","somatic","touch","focus"],
+      parts: ["material_pearl_100gold", "verbal", "somatic", "touch", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4586,10 +4902,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4608,8 +4926,8 @@ export default {
       expanded: "spell_entangle_expanded",
 
       type: "conjuration",
-      classes: ["druid","ranger"],
-      
+      classes: ["druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4618,7 +4936,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -4631,10 +4949,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -4654,7 +4974,7 @@ export default {
 
       type: "conjuration",
       classes: ["ranger"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4676,16 +4996,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "piercing_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   charm_person: [
@@ -4699,8 +5028,8 @@ export default {
       expanded: "spell_charm_person_expanded",
 
       type: "enchantment",
-      classes: ["bard","druid","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "druid", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4709,7 +5038,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4722,16 +5051,25 @@ export default {
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   purify_food_and_drink: [
@@ -4745,8 +5083,8 @@ export default {
       expanded: "spell_purify_food_and_drink_expanded",
 
       type: "transmutation",
-      classes: ["artificer","cleric","druid","paladin"],
-      
+      classes: ["artificer", "cleric", "druid", "paladin"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4755,7 +5093,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 10,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4768,10 +5106,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4790,8 +5130,8 @@ export default {
       expanded: "spell_feather_fell_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","sorcerer","wizard"],
-      
+      classes: ["artificer", "bard", "sorcerer", "wizard"],
+
       cast_time: "reaction",
       cast_duration: null,
       cast_duration_units: null,
@@ -4800,7 +5140,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","focus"],
+      parts: ["verbal", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4813,10 +5153,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4835,8 +5177,8 @@ export default {
       expanded: "spell_searing_smite_expanded",
 
       type: "evocation",
-      classes: ["paladin","ranger"],
-      
+      classes: ["paladin", "ranger"],
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4858,16 +5200,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "fire_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   find_familiar: [
@@ -4882,7 +5233,7 @@ export default {
 
       type: "conjuration",
       classes: ["wizard"],
-      
+
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "hour",
@@ -4891,7 +5242,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 10,
 
-      parts: ["verbal","somatic","material_familiar_10gold"],
+      parts: ["verbal", "somatic", "material_familiar_10gold"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4904,10 +5255,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4926,8 +5279,8 @@ export default {
       expanded: "spell_comprehend_languages_expanded",
 
       type: "divination",
-      classes: ["bard","sorcerer","wwarlock","wizard"],
-      
+      classes: ["bard", "sorcerer", "wwarlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4936,7 +5289,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4949,10 +5302,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4971,8 +5326,8 @@ export default {
       expanded: "spell_bane_expanded",
 
       type: "enchantment",
-      classes: ["bard","cleric"],
-      
+      classes: ["bard", "cleric"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -4981,7 +5336,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -4994,16 +5349,25 @@ export default {
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   expeditious_retreat: [
@@ -5017,8 +5381,8 @@ export default {
       expanded: "spell_expeditious_retreat_expanded",
 
       type: "transmutation",
-      classes: ["artificer","sorcerer","warlock","wizard"],
-      
+      classes: ["artificer", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5027,7 +5391,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -5040,10 +5404,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5062,8 +5428,8 @@ export default {
       expanded: "spell_command_expanded",
 
       type: "enchantment",
-      classes: ["bard","cleric","paladin"],
-      
+      classes: ["bard", "cleric", "paladin"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5085,16 +5451,25 @@ export default {
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   jump: [
@@ -5108,8 +5483,8 @@ export default {
       expanded: "spell_jump_expanded",
 
       type: "transmutation",
-      classes: ["artificer","druid","ranger","sorcerer","wizard"],
-      
+      classes: ["artificer", "druid", "ranger", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5118,7 +5493,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5131,10 +5506,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5153,8 +5530,8 @@ export default {
       expanded: "spell_false_life_expanded",
 
       type: "necromancy",
-      classes: ["artificer","sorcerer","wizard"],
-      
+      classes: ["artificer", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5163,7 +5540,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5176,17 +5553,29 @@ export default {
 
       impact_type: "hp_bonus",
       impact_damage_type: "temporary",
-      
-      impact_size_foo: "Plus_4_plus_5", //spell{1}=1d4+4, spell{2}=1d4+9, spell{3}=1d4+14 ...
-      //вы получаете 1к4 + 4 временных хита на время длительности заклинания. На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы получаете 5 дополнительных временных хитов за каждый уровень ячейки выше первого.
+
+      impact_size_foo: "Pls_plus_5", 
+      //return to: impact_size_plus
+        //Exapmle: pls = 4
+        //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
+        //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: 4,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   speak_with_animals: [
@@ -5197,7 +5586,7 @@ export default {
       expanded: "spell_speak_with_animals_expanded",
 
       type: "divination",
-      classes: ["bard","druid","ranger"],
+      classes: ["bard", "druid", "ranger"],
 
       cast_time: "action",
       cast_duration: null,
@@ -5219,8 +5608,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5240,7 +5631,7 @@ export default {
 
       type: "conjuration",
       classes: ["warlock"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5249,7 +5640,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5262,16 +5653,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "necrotic_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   color_spray: [
@@ -5285,8 +5685,8 @@ export default {
       expanded: "spell_color_spray_expanded",
 
       type: "illusion",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5295,7 +5695,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5308,16 +5708,25 @@ export default {
 
       impact_type: "hp_bonus",
       impact_damage_type: "sum_w",
-      
+
       impact_size_foo: "Dmg_plus_2",
+      impact_size_string: null,
       impact_size_num: 6,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   hex: [
@@ -5332,7 +5741,7 @@ export default {
 
       type: "enchantment",
       classes: ["warlock"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5341,7 +5750,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5354,10 +5763,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "necrotic_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5384,8 +5795,8 @@ export default {
       expanded: "spell_alarm_expanded",
 
       type: "abjuration",
-      classes: ["artificer","wizard"],
-      
+      classes: ["artificer", "wizard"],
+
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
@@ -5394,7 +5805,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 8,
@@ -5407,10 +5818,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5429,8 +5842,8 @@ export default {
       expanded: "spell_grease_expanded",
 
       type: "conjuration",
-      classes: ["artificer","sorcerer","wizard"],
-      
+      classes: ["artificer", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5439,7 +5852,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5452,10 +5865,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -5474,8 +5889,8 @@ export default {
       expanded: "spell_longstrider_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","druid","ranger","wizard"],
-      
+      classes: ["artificer", "bard", "druid", "ranger", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5484,7 +5899,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5497,16 +5912,25 @@ export default {
 
       impact_type: "target_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   create_or_destroy_water: [
@@ -5520,8 +5944,8 @@ export default {
       expanded: "spell_create_or_destroy_water_expanded",
 
       type: "transmutation",
-      classes: ["cleric","druid"],
-      
+      classes: ["cleric", "druid"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5530,7 +5954,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5543,10 +5967,12 @@ export default {
 
       impact_type: "liters_number",
       impact_damage_type: null,
-      
-      impact_size_foo: "Dmg_plus_40",
-      impact_size_num: 40,
+
+      impact_size_foo: "Str_plus_40",
+      impact_size_string: 40,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5590,7 +6016,7 @@ export default {
 
       type: "conjuration",
       classes: ["wizard"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5599,7 +6025,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5612,10 +6038,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5634,8 +6062,8 @@ export default {
       expanded: "spell_fog_cloud_expanded",
 
       type: "conjuration",
-      classes: ["druid","ranger","sorcerer","wizard"],
-      
+      classes: ["druid", "ranger", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5644,7 +6072,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5657,10 +6085,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5703,8 +6133,8 @@ export default {
       expanded: "spell_sanctuary_expanded",
 
       type: "abjuration",
-      classes: ["artificer","cleric"],
-      
+      classes: ["artificer", "cleric"],
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5713,7 +6143,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5726,10 +6156,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -5748,8 +6180,8 @@ export default {
       expanded: "spell_sleep_expanded",
 
       type: "enchantment",
-      classes: ["bard","sorcerer","wizard"],
-      
+      classes: ["bard", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5758,7 +6190,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5771,16 +6203,25 @@ export default {
 
       impact_type: "hp_bonus",
       impact_damage_type: "sum_w",
-      
+
       impact_size_foo: "Dmg_plus_2",
+      impact_size_string: null,
       impact_size_num: 5,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   chromatic_orb: [
@@ -5794,8 +6235,8 @@ export default {
       expanded: "spell_chromatic_orb_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5804,7 +6245,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal","somatic","material_diamond_50gold"],
+      parts: ["verbal", "somatic", "material_diamond_50gold"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5817,16 +6258,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   goodberry: [
@@ -5840,8 +6290,8 @@ export default {
       expanded: "spell_goodberry_expanded",
 
       type: "transmutation",
-      classes: ["druid","ranger"],
-      
+      classes: ["druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5850,7 +6300,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5863,10 +6313,12 @@ export default {
 
       impact_type: "heal",
       impact_damage_type: null,
-      
-      impact_size_foo: "X10",
+
+      impact_size_foo: null,
+      impact_size_string: 10,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5885,8 +6337,8 @@ export default {
       expanded: "spell_shield_expanded",
 
       type: "abjuration",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "reaction",
       cast_duration: null,
       cast_duration_units: null,
@@ -5895,7 +6347,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5908,10 +6360,12 @@ export default {
 
       impact_type: "armor_class",
       impact_damage_type: null,
-      
-      impact_size_foo: "Plus",
-      impact_size_num: 5,
+
+      impact_size_foo: null,
+      impact_size_string: null,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: 5,
 
       saving_need: false,
       saving_attribute: null,
@@ -5930,8 +6384,8 @@ export default {
       expanded: "spell_shield_of_faith_expanded",
 
       type: "abjuration",
-      classes: ["cleric","paladin"],
-      
+      classes: ["cleric", "paladin"],
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5940,7 +6394,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -5953,10 +6407,12 @@ export default {
 
       impact_type: "armor_class",
       impact_damage_type: null,
-      
-      impact_size_foo: "Plus",
-      impact_size_num: 2,
+
+      impact_size_foo: null,
+      impact_size_string: null,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: 2,
 
       saving_need: false,
       saving_attribute: null,
@@ -5980,8 +6436,8 @@ export default {
       expanded: "spell_pass_without_trace_expanded",
 
       type: "abjuration",
-      classes: ["druid","ranger"],
-      
+      classes: ["druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -5990,7 +6446,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6003,10 +6459,12 @@ export default {
 
       impact_type: "stealth",
       impact_damage_type: null,
-      
-      impact_size_foo: "Plus",
-      impact_size_num: 10,
+
+      impact_size_foo: null,
+      impact_size_string: null,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: 10,
 
       saving_need: false,
       saving_attribute: null,
@@ -6029,7 +6487,7 @@ export default {
 
       type: "evocation",
       classes: ["cleric"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6038,7 +6496,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6051,16 +6509,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "force_w",
-      
+
       impact_size_foo: "Dmg_plus_1_base_stat_mod",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   continual_flame: [
@@ -6077,8 +6543,8 @@ export default {
       expanded: "spell_continual_flame_expanded",
 
       type: "evocation",
-      classes: ["artificer","cleric","wizard"],
-      
+      classes: ["artificer", "cleric", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6087,7 +6553,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","material_flave_ruby_50gold"],
+      parts: ["verbal", "somatic", "touch", "material_flave_ruby_50gold"],
 
       spell_time: "till_dissipate",
       spell_duration: null,
@@ -6100,10 +6566,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6125,8 +6593,8 @@ export default {
       expanded: "spell_see_invisibility_expanded",
 
       type: "divination",
-      classes: ["artificer","bard","sorcerer","wizard"],
-      
+      classes: ["artificer", "bard", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6135,7 +6603,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6148,10 +6616,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6173,8 +6643,8 @@ export default {
       expanded: "spell_suggestion_expanded",
 
       type: "enchantment",
-      classes: ["bard","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6183,7 +6653,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","focus"],
+      parts: ["verbal", "focus"],
 
       spell_time: "concentration",
       spell_duration: 8,
@@ -6196,10 +6666,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -6221,7 +6693,7 @@ export default {
       expanded: "spell_magic_mouth_expanded",
 
       type: "illusion",
-      classes: ["bard","wizard"],
+      classes: ["bard", "wizard"],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -6231,7 +6703,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","material_magic_mouth_50gold"],
+      parts: ["verbal", "somatic", "material_magic_mouth_50gold"],
 
       spell_time: "till_dissipate",
       spell_duration: null,
@@ -6244,10 +6716,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6269,8 +6743,8 @@ export default {
       expanded: "spell_arcane_lock_expanded",
 
       type: "abjuration",
-      classes: ["artificer","wizard"],
-      
+      classes: ["artificer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6279,7 +6753,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","material_golden_dust_25gold"],
+      parts: ["verbal", "somatic", "touch", "material_golden_dust_25gold"],
 
       spell_time: "till_dissipate",
       spell_duration: null,
@@ -6292,10 +6766,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6317,8 +6793,8 @@ export default {
       expanded: "spell_phantasmal_force_expanded",
 
       type: "illusion",
-      classes: ["bard","sorcerer","wizard"],
-      
+      classes: ["bard", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6327,7 +6803,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6340,10 +6816,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -6366,7 +6844,7 @@ export default {
 
       type: "divination",
       classes: ["cleric"],
-      
+
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
@@ -6375,7 +6853,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","material_augury_25gold"],
+      parts: ["verbal", "somatic", "material_augury_25gold"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6388,10 +6866,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6413,8 +6893,8 @@ export default {
       expanded: "spell_blindness_deafness_expanded",
 
       type: "necromancy",
-      classes: ["bard","cleric","sorcerer","wizard"],
-      
+      classes: ["bard", "cleric", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6436,16 +6916,24 @@ export default {
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   flame_blade: [
@@ -6463,7 +6951,7 @@ export default {
 
       type: "evocation",
       classes: ["druid"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6472,7 +6960,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -6485,10 +6973,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "fire_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6497,18 +6987,21 @@ export default {
     {},
     {
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 4,
       impact_size_dice: 6,
     },
     {},
     {
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 5,
       impact_size_dice: 6,
     },
     {},
     {
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 6,
       impact_size_dice: 6,
     },
@@ -6528,8 +7021,8 @@ export default {
       expanded: "spell_shatter_expanded",
 
       type: "evocation",
-      classes: ["bard","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6538,7 +7031,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6551,16 +7044,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "thunder_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   barkskin: [
@@ -6577,8 +7078,8 @@ export default {
       expanded: "spell_barkskin_expanded",
 
       type: "transmutation",
-      classes: ["druid","ranger"],
-      
+      classes: ["druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6587,7 +7088,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6600,10 +7101,12 @@ export default {
 
       impact_type: "armor_class",
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 16,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6641,8 +7144,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6665,7 +7170,7 @@ export default {
 
       type: "transmutation",
       classes: ["ranger"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6674,7 +7179,7 @@ export default {
       aim_type: "near",
       aim_range: 5,
 
-      parts: ["verbal","somatic","bullets"],
+      parts: ["verbal", "somatic", "bullets"],
 
       spell_time: null,
       spell_duration: 8,
@@ -6687,17 +7192,25 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "piercing_w",
-      
-      impact_size_foo: "X4_plus_2",
+
+      impact_size_foo: "X_plus_2",
       //Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, количество боеприпасов увеличивается на два за каждый уровень ячейки выше второго.
+      impact_size_string: 4,
       impact_size_num: 1,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "0",
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   protection_from_poison: [
@@ -6714,8 +7227,8 @@ export default {
       expanded: "spell_protection_from_poison_expanded",
 
       type: "abjuration",
-      classes: ["artificer","druid","cleric","paladin","ranger"],
-      
+      classes: ["artificer", "druid", "cleric", "paladin", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6724,7 +7237,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6737,10 +7250,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6763,7 +7278,7 @@ export default {
 
       type: "evocation",
       classes: ["paladin"],
-      
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6785,16 +7300,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "radiant_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   crown_of_madness: [
@@ -6811,8 +7334,8 @@ export default {
       expanded: "spell_crown_of_madness_expanded",
 
       type: "enchantment",
-      classes: ["bard","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6821,7 +7344,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6834,10 +7357,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -6859,8 +7384,8 @@ export default {
       expanded: "spell_levitate_expanded",
 
       type: "transmutation",
-      classes: ["artificer","sorcerer","wizard"],
-      
+      classes: ["artificer", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6869,7 +7394,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -6882,10 +7407,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -6908,7 +7435,7 @@ export default {
 
       type: "evocation",
       classes: ["druid"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6917,7 +7444,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6930,16 +7457,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "radiant_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 10,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   ray_of_enfeeblement: [
@@ -6956,8 +7491,8 @@ export default {
       expanded: "spell_ray_of_enfeeblement_expanded",
 
       type: "necromancy",
-      classes: ["warlock","wizard"],
-      
+      classes: ["warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -6966,7 +7501,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6979,10 +7514,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -7004,8 +7541,8 @@ export default {
       expanded: "spell_magic_weapon_expanded",
 
       type: "transmutation",
-      classes: ["artificer","paladin","ranger","sorcerer","wizard"],
-      
+      classes: ["artificer", "paladin", "ranger", "sorcerer", "wizard"],
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7014,7 +7551,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7027,10 +7564,12 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "bonus_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7038,12 +7577,14 @@ export default {
     },
     {},
     {
+      impact_size_string: null,
       impact_size_num: 2,
     },
     {},
     {
+      impact_size_string: null,
       impact_size_num: 3,
-    }
+    },
   ],
 
   lesser_restoration: [
@@ -7060,8 +7601,8 @@ export default {
       expanded: "spell_lesser_restoration_expanded",
 
       type: "abjuration",
-      classes: ["artificer","bard","cleric","druid","paladin","ranger"],
-      
+      classes: ["artificer", "bard", "cleric", "druid", "paladin", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7070,7 +7611,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch"],
+      parts: ["verbal", "somatic", "touch"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7083,10 +7624,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7109,7 +7652,7 @@ export default {
 
       type: "evocation",
       classes: ["wizard"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7118,7 +7661,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7131,16 +7674,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "acid_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 4,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: "÷2",
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   prayer_of_healing: [
@@ -7158,7 +7709,7 @@ export default {
 
       type: "evocation",
       classes: ["cleric"],
-      
+
       cast_time: "ritual",
       cast_duration: 10,
       cast_duration_units: "min",
@@ -7198,18 +7749,26 @@ export default {
         necrotic_w: "💀 Некротический",
         psychic_w: "🧠 Психический",
       */
-      
-      impact_size_foo: "X6_dmg_plus_1_base_stat_mod",
+
+      impact_size_foo: "Dmg_plus_1_base_stat_mod",
       // Каждое из шести существ на ваш выбор, видимых в пределах дистанции, восстанавливает количество хитов, равное 2к8 + модификатор вашей базовой характеристики.
       // На более высоких уровнях: Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, лечение увеличивается на 1к8 за каждый уровень ячейки выше второго.
+      impact_size_string: 6,
       impact_size_num: 2,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   invisibility: [
@@ -7226,8 +7785,8 @@ export default {
       expanded: "spell_invisibility_expanded",
 
       type: "illusion",
-      classes: ["artificer","bard","sorcerer","warlock","wizard"],
-      
+      classes: ["artificer", "bard", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7236,7 +7795,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus","touch"],
+      parts: ["verbal", "somatic", "focus", "touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7251,14 +7810,22 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   gentle_repose: [
@@ -7275,8 +7842,8 @@ export default {
       expanded: "spell_gentle_repose_expanded",
 
       type: "necromancy",
-      classes: ["cleric","wizard"],
-      
+      classes: ["cleric", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7285,7 +7852,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: null,
       spell_duration: 10,
@@ -7298,16 +7865,24 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   nystuls_magic_aura: [
@@ -7325,7 +7900,7 @@ export default {
 
       type: "illusion",
       classes: ["wizard"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7334,7 +7909,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","focus"],
+      parts: ["verbal", "somatic", "touch", "focus"],
 
       spell_time: null,
       spell_duration: 24,
@@ -7347,15 +7922,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   cloud_of_daggers: [
@@ -7372,8 +7949,8 @@ export default {
       expanded: "spell_cloud_of_daggers_expanded",
 
       type: "conjuration",
-      classes: ["bard","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7382,7 +7959,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7395,16 +7972,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "slashing_w",
-      
+
       impact_size_foo: "Dmg_plus_2",
+      impact_size_string: null,
       impact_size_num: 4,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   zone_of_truth: [
@@ -7421,8 +8006,8 @@ export default {
       expanded: "spell_zone_of_truth_expanded",
 
       type: "enchantment",
-      classes: ["bard","cleric","paladin"],
-      
+      classes: ["bard", "cleric", "paladin"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7431,7 +8016,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 10,
@@ -7444,15 +8029,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
-    }
+    },
   ],
 
   detect_thoughts: [
@@ -7469,8 +8056,8 @@ export default {
       expanded: "spell_detect_thoughts_expanded",
 
       type: "divination",
-      classes: ["bard","sorcerer","wizard"],
-      
+      classes: ["bard", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7479,7 +8066,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7492,10 +8079,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -7517,8 +8106,8 @@ export default {
       expanded: "spell_knock_expanded",
 
       type: "transmutation",
-      classes: ["bard","sorcerer","wizard"],
-      
+      classes: ["bard", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7540,15 +8129,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   mirror_image: [
@@ -7565,8 +8156,8 @@ export default {
       expanded: "spell_mirror_image_expanded",
 
       type: "illusion",
-      classes: ["bard","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7575,7 +8166,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7588,15 +8179,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   warding_bond: [
@@ -7614,7 +8207,7 @@ export default {
 
       type: "abjuration",
       classes: ["cleric"],
-      
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7623,7 +8216,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","touch","material_warding_bond_50gold"],
+      parts: ["verbal", "somatic", "touch", "material_warding_bond_50gold"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7636,10 +8229,12 @@ export default {
 
       impact_type: "bonus",
       impact_damage_type: null,
-      
-      impact_size_foo: "Plus",
-      impact_size_num: 1,
+
+      impact_size_foo: null,
+      impact_size_string: null,
+      impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: 1,
 
       saving_need: false,
       saving_attribute: null,
@@ -7661,8 +8256,8 @@ export default {
       expanded: "spell_scorching_ray_expanded",
 
       type: "evocation",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7671,7 +8266,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7684,18 +8279,26 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "fire_w",
-      
-      impact_size_foo: "X3_plus_1",
-      //Вы создаёте три огненных луча и направляете их на целей, находящихся в пределах дистанции. 
+
+      impact_size_foo: "X_plus_1",
+      //Вы создаёте три огненных луча и направляете их на целей, находящихся в пределах дистанции.
       //Вы создаёте один дополнительный луч за каждый уровень ячейки выше второго.
+      impact_size_string: 3,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   spider_climb: [
@@ -7712,8 +8315,8 @@ export default {
       expanded: "spell_spider_climb_expanded",
 
       type: "transmutation",
-      classes: ["artificer","warlock","wizard"],
-      
+      classes: ["artificer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7722,7 +8325,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7735,15 +8338,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   web: [
@@ -7760,8 +8365,8 @@ export default {
       expanded: "spell_web_expanded",
 
       type: "conjuration",
-      classes: ["sorcerer","wizard"],
-      
+      classes: ["sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7770,7 +8375,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7783,15 +8388,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
-    }
+    },
   ],
 
   aid: [
@@ -7808,8 +8415,8 @@ export default {
       expanded: "spell_aid_expanded",
 
       type: "abjuration",
-      classes: ["artificer","bard","cleric","paladin","ranger"],
-      
+      classes: ["artificer", "bard", "cleric", "paladin", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7818,7 +8425,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 8,
@@ -7831,16 +8438,24 @@ export default {
 
       impact_type: "heal",
       impact_damage_type: null,
-      
-      impact_size_foo: "Plus_plus_5",
+
+      impact_size_foo: "Dmg_plus_5",
+      impact_size_string: 3,
       impact_size_num: 5,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   locate_animals_or_plants: [
@@ -7857,8 +8472,8 @@ export default {
       expanded: "spell_locate_animals_or_plants_expanded",
 
       type: "divination",
-      classes: ["bard","druid","ranger"],
-      
+      classes: ["bard", "druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7867,7 +8482,7 @@ export default {
       aim_type: null,
       aim_range: 5 * 5280,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7880,15 +8495,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   find_traps: [
@@ -7905,8 +8522,8 @@ export default {
       expanded: "spell_find_traps_expanded",
 
       type: "divination",
-      classes: ["cleric","druid","ranger"],
-      
+      classes: ["cleric", "druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7915,7 +8532,7 @@ export default {
       aim_type: null,
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7928,15 +8545,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   locate_object: [
@@ -7953,8 +8572,8 @@ export default {
       expanded: "spell_locate_object_expanded",
 
       type: "divination",
-      classes: ["bard","cleric","druid","paladin","ranger","wizard"],
-      
+      classes: ["bard", "cleric", "druid", "paladin", "ranger", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -7963,7 +8582,7 @@ export default {
       aim_type: null,
       aim_range: 1000,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -7976,15 +8595,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   find_steed: [
@@ -8002,7 +8623,7 @@ export default {
 
       type: "conjuration",
       classes: ["paladin"],
-      
+
       cast_time: "ritual",
       cast_duration: 10,
       cast_duration_units: "min",
@@ -8011,7 +8632,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -8024,15 +8645,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   gust_of_wind: [
@@ -8049,8 +8672,8 @@ export default {
       expanded: "spell_gust_of_wind_expanded",
 
       type: "evocation",
-      classes: ["druid","ranger","sorcerer","wizard"],
-      
+      classes: ["druid", "ranger", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8059,7 +8682,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8072,15 +8695,17 @@ export default {
 
       impact_type: "push",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Feet",
+      impact_size_string: null,
       impact_size_num: 15,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
-    }
+    },
   ],
 
   animal_messenger: [
@@ -8097,8 +8722,8 @@ export default {
       expanded: "spell_animal_messenger_expanded",
 
       type: "enchantment",
-      classes: ["bard","druid","ranger"],
-      
+      classes: ["bard", "druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8107,7 +8732,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8120,10 +8745,12 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8145,9 +8772,7 @@ export default {
       spell_duration: 9,
       spell_duration_units: "day",
     },
-    {
-
-    },
+    {},
     {
       spell_duration: 11,
       spell_duration_units: "day",
@@ -8172,8 +8797,8 @@ export default {
       expanded: "spell_flaming_sphere_expanded",
 
       type: "conjuration",
-      classes: ["druid","sorcerer","wizard"],
-      
+      classes: ["druid", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8182,7 +8807,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8195,16 +8820,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "fire_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 6,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   blur: [
@@ -8221,8 +8854,8 @@ export default {
       expanded: "spell_blur_expanded",
 
       type: "illusion",
-      classes: ["artificer","sorcerer","wizard"],
-      
+      classes: ["artificer", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8244,15 +8877,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   heat_metal: [
@@ -8269,8 +8904,8 @@ export default {
       expanded: "spell_heat_metal_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","druid"],
-      
+      classes: ["artificer", "bard", "druid"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8279,7 +8914,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8292,16 +8927,24 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "fire_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   enthrall: [
@@ -8318,8 +8961,8 @@ export default {
       expanded: "spell_enthrall_expanded",
 
       type: "enchantment",
-      classes: ["bard","warlock"],
-      
+      classes: ["bard", "warlock"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8328,7 +8971,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8341,15 +8984,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
-    }
+    },
   ],
 
   alter_self: [
@@ -8366,8 +9011,8 @@ export default {
       expanded: "spell_alter_self_expanded",
 
       type: "transmutation",
-      classes: ["artificer","sorcerer","wizard"],
-      
+      classes: ["artificer", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8376,7 +9021,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8389,15 +9034,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   darkvision: [
@@ -8414,8 +9061,8 @@ export default {
       expanded: "spell_darkvision_expanded",
 
       type: "transmutation",
-      classes: ["artificer","druid","ranger","sorcerer","wizard"],
-      
+      classes: ["artificer", "druid", "ranger", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8424,7 +9071,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus","touch"],
+      parts: ["verbal", "somatic", "focus", "touch"],
 
       spell_time: null,
       spell_duration: 8,
@@ -8437,15 +9084,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   silence: [
@@ -8462,8 +9111,8 @@ export default {
       expanded: "spell_silence_expanded",
 
       type: "illusion",
-      classes: ["bard","cleric","ranger"],
-      
+      classes: ["bard", "cleric", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8472,7 +9121,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -8485,15 +9134,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   rope_trick: [
@@ -8510,8 +9161,8 @@ export default {
       expanded: "spell_rope_trick_expanded",
 
       type: "transmutation",
-      classes: ["artificer","wizard"],
-      
+      classes: ["artificer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8520,7 +9171,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus","touch"],
+      parts: ["verbal", "somatic", "focus", "touch"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8533,15 +9184,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   misty_step: [
@@ -8558,8 +9211,8 @@ export default {
       expanded: "spell_misty_step_expanded",
 
       type: "conjuration",
-      classes: ["sorcerer","warlock","wizard"],
-      
+      classes: ["sorcerer", "warlock", "wizard"],
+
       cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8581,15 +9234,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   darkness: [
@@ -8624,8 +9279,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8647,8 +9304,8 @@ export default {
       expanded: "spell_enlarge_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","druid","sorcerer","wizard"],
-      
+      classes: ["artificer", "bard", "druid", "sorcerer", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8657,7 +9314,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8672,13 +9329,15 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
-    }
+    },
   ],
 
   hold_person: [
@@ -8695,8 +9354,8 @@ export default {
       expanded: "spell_hold_person_expanded",
 
       type: "enchantment",
-      classes: ["bard","cleric","druid","sorcerer","warlock","wizard"],
-      
+      classes: ["bard", "cleric", "druid", "sorcerer", "warlock", "wizard"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8705,7 +9364,7 @@ export default {
       aim_type: "in_disttance",
       aim_range: 60,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8718,16 +9377,24 @@ export default {
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   enhance_ability: [
@@ -8744,8 +9411,16 @@ export default {
       expanded: "spell_enhance_ability_expanded",
 
       type: "transmutation",
-      classes: ["artificer","bard","cleric","druid","ranger","sorcerer","wizard"],
-      
+      classes: [
+        "artificer",
+        "bard",
+        "cleric",
+        "druid",
+        "ranger",
+        "sorcerer",
+        "wizard",
+      ],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8754,7 +9429,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal","somatic","focus","touch"],
+      parts: ["verbal", "somatic", "focus", "touch"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8767,16 +9442,24 @@ export default {
 
       impact_type: "targets_number",
       impact_damage_type: null,
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},{},{},{},{},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   calm_emotions: [
@@ -8793,8 +9476,8 @@ export default {
       expanded: "spell_calm_emotions_expanded",
 
       type: "enchantment",
-      classes: ["bard","cleric"],
-      
+      classes: ["bard", "cleric"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8803,7 +9486,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal","somatic"],
+      parts: ["verbal", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8816,15 +9499,17 @@ export default {
 
       impact_type: null,
       impact_damage_type: null,
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: null,
       impact_size_dice: null,
+      impact_size_plus: null,
 
       saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
-    }
+    },
   ],
 
   spike_growth: [
@@ -8841,8 +9526,8 @@ export default {
       expanded: "spell_spike_growth_expanded",
 
       type: "transmutation",
-      classes: ["druid","ranger"],
-      
+      classes: ["druid", "ranger"],
+
       cast_time: "action",
       cast_duration: null,
       cast_duration_units: null,
@@ -8851,7 +9536,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 150,
 
-      parts: ["verbal","somatic","focus"],
+      parts: ["verbal", "somatic", "focus"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -8864,15 +9549,17 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "piercing_w",
-      
+
       impact_size_foo: null,
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 4,
+      impact_size_plus: null,
 
       saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
-    }
+    },
   ],
 
   paladin_divine_smite: [
@@ -8886,7 +9573,7 @@ export default {
       expanded: "spell_paladin_divine_smite_expanded",
 
       type: "ability",
-      
+
       cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
@@ -8908,15 +9595,19 @@ export default {
 
       impact_type: "damage",
       impact_damage_type: "radiant_w",
-      
+
       impact_size_foo: "Dmg_plus_1",
+      impact_size_string: null,
       impact_size_num: 2,
       impact_size_dice: 8,
+      impact_size_plus: null,
 
       saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},{},{},
+    {},
+    {},
+    {},
   ],
 };

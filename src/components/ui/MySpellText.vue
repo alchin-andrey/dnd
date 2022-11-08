@@ -197,6 +197,45 @@ export default {
 			return impact_size + kof;
 		},
 
+		// -----------------------------------
+
+		Plus_Level_2() {
+        	let num = this.Spell_Index.impact_size_num;
+			let lvl = this.$root.MY.level;
+
+  		    return num + ( lvl - 1 ) / 2;
+        	//Например num = 1.
+        	//на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
+    	},
+
+		Levelx()
+    {
+        let num = this.Spell_Index.impact_size_num;
+		let lvl = this.$root.MY.level;
+
+        return num * lvl;
+    },
+
+	Plus_Level_5_11_17()
+    {
+        let num = this.Spell_Index.impact_size_num;
+        let lvl = this.$root.MY.level;
+        let kof = 0;
+
+        if (lvl < 5) {
+            kof = 0;
+        } else if (lvl < 11) {
+            kof = 1;
+        } else if (lvl < 17) {
+            kof = 2;
+        } else {
+            kof = 3;
+        }
+        return num + kof;
+    },
+
+		// -----------------------------------
+
 		Size_Numb() {
 			let impact_size = this.Spell_Index.impact_size_num;
 			if (this.Spell_Index.impact_size_foo) {

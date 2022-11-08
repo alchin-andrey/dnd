@@ -2110,4 +2110,6 @@ export default {
     spell_divine_channel_vengence_2: spells.divine_channel_vengence_2,
     spell_divine_channel_vengence_2_details: spells.divine_channel_vengence_2_details,
     spell_divine_channel_vengence_2_expanded: spells.divine_channel_vengence_2_expanded,
+
+    push: "толчок",
 }

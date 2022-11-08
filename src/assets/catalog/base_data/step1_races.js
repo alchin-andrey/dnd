@@ -60,7 +60,17 @@ export default {
 
             {
               level: 1,
-              spell: spells.divine_channel_vengence_2,
+              spell: spells.chill_touch,
+            },
+
+            {
+              level: 1,
+              spell: spells.lay_on_hands,
+            },
+
+            {
+              level: 1,
+              spell: spells.sneaky_attack,
             },
 
             {
