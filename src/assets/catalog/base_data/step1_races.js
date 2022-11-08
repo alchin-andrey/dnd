@@ -122,6 +122,11 @@ export default {
 
             {
               level: 1,
+              spell: spells.flame_blade,
+            },
+
+            {
+              level: 1,
               spell: spells.hellish_rebuke,
             },
 
@@ -161,6 +166,30 @@ export default {
               level: 1,
               spell: spells.divine_channel_devotion_1,
             },
+
+            //Скобочки
+
+            {
+              level: 1,
+              spell: spells.hunters_mark, //spell_duration
+            },
+
+            {
+              level: 1,
+              spell: spells.hex, //spell_duration
+            },
+
+            {
+              level: 1,
+              spell: spells.fog_cloud, //aoe_size
+            },
+
+            {
+              level: 1,
+              spell: spells.animal_messenger, //spell_duration
+            },
+
+
 
             // ------------------
 

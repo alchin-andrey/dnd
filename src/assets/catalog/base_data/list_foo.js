@@ -4,7 +4,7 @@ export default {
 
     // Num_Plus_Level_2()
     // {
-    //     let num = this.Spell_index.impact_size_num;
+    //     let num = this.Spell_Index.impact_size_num;
 
     //     return num + (this.$root.MY.level-1)/2;
     //     //Например num = 1.
@@ -13,14 +13,14 @@ export default {
 
     // Num_LevelX()
     // {
-    //     let num = this.Spell_index.impact_size_num;
+    //     let num = this.Spell_Index.impact_size_num;
 
     //     return num * this.$root.MY.level;
     // },
 
     // Num_Level_5_11_17()
     // {
-    //     let num = this.Spell_index.impact_size_num;
+    //     let num = this.Spell_Index.impact_size_num;
     //     let lvl = this.$root.MY.level;
     //     let kof = 0;
 
@@ -54,9 +54,9 @@ export default {
 
     Str_X_Plus_1()
     {
-        let str = this.Spell_index.impact_size_string;
+        let str = this.Spell_Index.impact_size_string;
 
-        return str + this.mana - 1;
+        return str + this.mana - this.Spell_Index.min_mana;
         //return to: impact_size_string
         //Exapmle: str = 3
         //spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
@@ -66,9 +66,9 @@ export default {
 
     Str_X_Plus_2()
     {
-        let str = this.Spell_index.impact_size_string;
+        let str = this.Spell_Index.impact_size_string;
 
-        return str + (this.mana - 1) * 2;
+        return str + (this.mana - this.Spell_Index.min_mana) * 2;
         //return to: impact_size_string
         //Exapmle: str = 3
         //spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
@@ -91,9 +91,9 @@ export default {
     {
         //не добавлять "×"
 
-        let str = this.Spell_index.impact_size_string;
+        let str = this.Spell_Index.impact_size_string;
 
-        return str + (this.mana - 1) * 40;
+        return str + (this.mana - this.Spell_Index.min_mana) * 40;
         //Example: 
         //str = 40
         //spell{1} = 40
@@ -104,6 +104,16 @@ export default {
     },
 
     //Num
+
+    Num_Plus_05()
+    {
+        //return to: impact_size_num
+        //spell{1} = num, spell{2} = num, spell{3} = num+1 ...
+        //Example: 
+        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+        //spell{2}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+        //spell{3}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+    },
 
     Num_Plus_1()
     {
@@ -125,9 +135,9 @@ export default {
 
     Num_Plus_5()
     {
-        let num = this.Spell_index.impact_size_num;
+        let num = this.Spell_Index.impact_size_num;
 
-        return num + (this.mana-1)*5;
+        return num + (this.mana - this.Spell_Index.min_mana)*5;
         //return to: impact_size_num
         //spell{1} = num, spell{2} = num+5, spell{3} = num+10 ...
         //Example: 
@@ -155,9 +165,9 @@ export default {
 
     Pls_Plus_5()
     {
-        let pls = this.Spell_index.impact_size_plus;
+        let pls = this.Spell_Index.impact_size_plus;
 
-        return pls + (this.mana - 1) * 5;
+        return pls + (this.mana - this.Spell_Index.min_mana) * 5;
         //return to: impact_size_plus
         //Exapmle: pls = 4
         //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳

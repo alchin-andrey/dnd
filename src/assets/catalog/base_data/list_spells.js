@@ -1348,7 +1348,6 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {}
   ],
 
   cunning_action: [
@@ -6974,7 +6973,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "fire_w",
 
-      impact_size_foo: null,
+      impact_size_foo: "Num_Plus_05",
       impact_size_string: null,
       impact_size_num: 3,
       impact_size_dice: 6,
@@ -6985,26 +6984,11 @@ export default {
       impact_size_saved: null,
     },
     {},
-    {
-      impact_size_foo: null,
-      impact_size_string: null,
-      impact_size_num: 4,
-      impact_size_dice: 6,
-    },
     {},
-    {
-      impact_size_foo: null,
-      impact_size_string: null,
-      impact_size_num: 5,
-      impact_size_dice: 6,
-    },
     {},
-    {
-      impact_size_foo: null,
-      impact_size_string: null,
-      impact_size_num: 6,
-      impact_size_dice: 6,
-    },
+    {},
+    {},
+    {},
   ],
 
   shatter: [
@@ -7565,7 +7549,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "bonus_w",
 
-      impact_size_foo: null,
+      impact_size_foo: "Num_Plus_05",
       impact_size_string: null,
       impact_size_num: 1,
       impact_size_dice: null,
@@ -7576,15 +7560,9 @@ export default {
       impact_size_saved: null,
     },
     {},
-    {
-      impact_size_string: null,
-      impact_size_num: 2,
-    },
     {},
-    {
-      impact_size_string: null,
-      impact_size_num: 3,
-    },
+    {},
+    {},
   ],
 
   lesser_restoration: [
@@ -8758,28 +8736,22 @@ export default {
     },
     {
       spell_duration: 3,
-      spell_duration_units: "day",
     },
     {
       spell_duration: 5,
-      spell_duration_units: "day",
     },
     {
       spell_duration: 7,
-      spell_duration_units: "day",
     },
     {
       spell_duration: 9,
-      spell_duration_units: "day",
     },
     {},
     {
       spell_duration: 11,
-      spell_duration_units: "day",
     },
     {
       spell_duration: 13,
-      spell_duration_units: "day",
     },
   ],
 
