@@ -58,9 +58,10 @@ export default {
           spells: [
             // ДЛЯ ОТЛАДКИ ------
 
+            // По левелу перса
             {
               level: 1,
-              spell: spells.chill_touch,
+              spell: spells.sneaky_attack,
             },
 
             {
@@ -70,7 +71,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.sneaky_attack,
+              spell: spells.chill_touch,
             },
 
             {
@@ -78,24 +79,105 @@ export default {
               spell: spells.poison_breath_cone,
             },
 
+            // По классовой бабуйне
+
             {
               level: 1,
-              spell: spells.hellish_rebuke,
+              spell: spells.rage,
             },
-            // ------------------
+
+            // String (первая часть, которая чаще всего с "×")
+
             {
               level: 1,
-              spell: spells.toy,
-            },
-            {
-              level: 1,
-              spell: spells.lighter,
+              spell: spells.acid_splash,
             },
 
             {
               level: 1,
-              spell: spells.music_box,
+              spell: spells.eldritch_blast,
             },
+
+            {
+              level: 1,
+              spell: spells.bless,
+            },
+
+            {
+              level: 1,
+              spell: spells.cordon_of_arrows,
+            },
+
+            {
+              level: 1,
+              spell: spells.heroism,
+            },
+
+            {
+              level: 1,
+              spell: spells.create_or_destroy_water,
+            },
+
+            //Num
+
+            {
+              level: 1,
+              spell: spells.hellish_rebuke,
+            },
+
+            {
+              level: 1,
+              spell: spells.color_spray,
+            },
+
+            {
+              level: 1,
+              spell: spells.aid,
+            },
+
+            {
+              level: 1,
+              spell: spells.prayer_of_healing,
+            },
+
+            {
+              level: 1,
+              spell: spells.gust_of_wind,
+            },
+
+            //Pls
+
+            {
+              level: 1,
+              spell: spells.armor_of_agathys,
+            },
+
+            {
+              level: 1,
+              spell: spells.elk_knock,
+            },
+
+            {
+              level: 1,
+              spell: spells.divine_channel_devotion_1,
+            },
+
+            // ------------------
+
+            //АКТУАЛЬНІ! Разкомментировать после отладки
+            // {
+            //   level: 1,
+            //   spell: spells.toy,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.lighter,
+            // },
+
+            // {
+            //   level: 1,
+            //   spell: spells.music_box,
+            // },
           ],
         },
 

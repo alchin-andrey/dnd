@@ -2112,4 +2112,8 @@ export default {
     spell_divine_channel_vengence_2_expanded: spells.divine_channel_vengence_2_expanded,
 
     push: "толчок",
+
+    spell_create_or_destroy_water: spells.create_or_destroy_water,
+    spell_create_or_destroy_water_details: spells.create_or_destroy_water_details,
+    spell_create_or_destroy_water_expanded: spells.create_or_destroy_water_expanded,
 }

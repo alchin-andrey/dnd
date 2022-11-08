@@ -181,7 +181,7 @@ export default {
 		//     return impact_size;
 		// },
 
-		Plus_Level_5() {
+		Num_Level_6_11_16() {
 			let impact_size = this.Spell_Index.impact_size_num;
 			let lvl = this.$root.MY.level;
 			let kof = null;
@@ -199,7 +199,7 @@ export default {
 
 		// -----------------------------------
 
-		Plus_Level_2() {
+		Num_Plus_Level_2() {
         	let num = this.Spell_Index.impact_size_num;
 			let lvl = this.$root.MY.level;
 
@@ -208,7 +208,7 @@ export default {
         	//на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
     	},
 
-		Levelx()
+		Num_LevelX()
     {
         let num = this.Spell_Index.impact_size_num;
 		let lvl = this.$root.MY.level;
@@ -216,7 +216,7 @@ export default {
         return num * lvl;
     },
 
-	Plus_Level_5_11_17()
+	Num_Level_5_11_17()
     {
         let num = this.Spell_Index.impact_size_num;
         let lvl = this.$root.MY.level;
