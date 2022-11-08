@@ -5,6 +5,9 @@ export default {
     medium: {
         name:"armor_medium",
     },
+    heavy: {
+        name:"armor_heavy",
+    },
     shields: {
         name:"armor_shields",
     }

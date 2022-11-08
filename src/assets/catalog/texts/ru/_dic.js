@@ -346,6 +346,9 @@ export default {
             armor_medium: armor.medium,
             armor_medium_details: armor.medium_details,
 
+            armor_heavy: armor.heavy,
+            armor_heavy_details: armor.heavy_details,
+
             armor_shields: armor.shields,
             armor_shields_details: armor.shields_details,
             // добавить описания
@@ -700,7 +703,7 @@ export default {
         attack_under_sun:"на атаку под прямым солнечным светом",
         for_each_lvl_incl_1:"за каждый уровень включая первый",
         charm_against: "против 😍 Очарования",
-        magic_sleep_against:"магическому 🥱 Усыплению",
+        magic_sleep_against:"к магическому 🥱 Усыплению",
         trans_details: "— глубокая медитация вместо сна, до 4 часов",
         stealth_in_wild_details:"— даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
         any_cantrip_wizard: "1 любого заговора Волшебника",
@@ -1070,7 +1073,7 @@ export default {
     cast_time: "каст",
     reaction: "реакция",
     bonus_action: "бонусное действие",
-    action: "действие",
+    action: "основное действие",
     ritual: "ритуал",
     up_to: "до",
     sec: "сек",
@@ -1991,4 +1994,120 @@ export default {
 
     spell_darkness_details: spells.darkness_details,
     spell_darkness_expanded: spells.darkness_expanded,
+
+    spell_enlarge: spells.enlarge,
+    spell_enlarge_details: spells.enlarge_details,
+    spell_enlarge_expanded: spells.enlarge_expanded,
+
+    spell_hold_person: spells.hold_person,
+    spell_hold_person_details: spells.hold_person_details,
+    spell_hold_person_expanded: spells.hold_person_expanded,
+
+    spell_enhance_ability: spells.enhance_ability,
+    spell_enhance_ability_details: spells.enhance_ability_details,
+    spell_enhance_ability_expanded: spells.enhance_ability_expanded,
+
+    spell_calm_emotions: spells.calm_emotions,
+    spell_calm_emotions_details: spells.calm_emotions_details,
+    spell_calm_emotions_expanded: spells.calm_emotions_expanded,
+
+    spell_spike_growth: spells.spike_growth,
+    spell_spike_growth_details: spells.spike_growth_details,
+    spell_spike_growth_expanded: spells.spike_growth_expanded,
+
+    rogue: classes.rogue,
+    rogue_details: classes.rogue_details,
+
+    paladin: classes.paladin,
+    paladin_details: classes.paladin_details,
+
+    oath_of_devotion: classes.oath_of_devotion,
+    oath_of_devotion_details: classes.oath_of_devotion_details,
+
+    oath_of_antients: classes.oath_of_antients,
+    oath_of_antients_details: classes.oath_of_antients_details,
+
+    oath_of_vengence: classes.oath_of_vengence,
+    oath_of_vengence_details: classes.oath_of_vengence_details,
+
+    holy_symbol: "священный символ",
+    holy_symbol_details: "Может быть использован как Фокус для заклинаний.",
+
+    priests_pack: "набор священника",
+    priests_pack_details: "-",
+
+    armor_shield: "щит",
+    armor_shield_details: "Щит изготавливается из дерева или металла, и несётся одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.",
+
+    blanket: "одеяло",
+    blanket_details: "-",
+
+    donation_box: "коробка для пожертвований",
+    donation_box_details: "-",
+
+    incense: "благовония",
+    incense_details: "-",
+
+    censer: "кадило",
+    censer_details: "-",
+
+    vestment: "облачение",
+    vestment_details: "-",
+
+    spell_divine_sense: spells.divine_sense,
+    spell_divine_sense_details: spells.divine_sense_details,
+    spell_divine_sense_expanded: spells.divine_sense_expanded,
+
+    stock: "запас",
+
+    spell_lay_on_hands: spells.lay_on_hands,
+    spell_lay_on_hands_details: spells.lay_on_hands_details,
+    spell_lay_on_hands_expanded: spells.lay_on_hands_expanded,
+
+    battle_style: "боевой стиль",
+
+    style_dueling: "дуэлянт",
+    style_protection: "защита",
+    style_defence: "оборона",
+    style_great_weapon: "большое оружие",
+
+    on_attack_signle_one_handed: "+2 на урон ближних атак одной рукой",
+
+    spell_side_pary: spells.side_pary,
+    spell_side_pary_details: spells.side_pary_details,
+    spell_side_pary_expanded: spells.side_pary_expanded,
+
+    on_armor_if_armor: "+1 на броню при одетых доспехах",
+
+    if_1_or_2_on_two_handed_weapon: "урона двуручного оружия, если выпало 1 или 2",
+
+    on_sick: "к болезням",
+
+    spell_divine_channel_devotion_1: spells.divine_channel_devotion_1,
+    spell_divine_channel_devotion_1_details: spells.divine_channel_devotion_1_details,
+    spell_divine_channel_devotion_1_expanded: spells.divine_channel_devotion_1_expanded,
+
+    spell_divine_channel_devotion_2: spells.divine_channel_devotion_2,
+    spell_divine_channel_devotion_2_details: spells.divine_channel_devotion_2_details,
+    spell_divine_channel_devotion_2_expanded: spells.divine_channel_devotion_2_expanded,
+
+    spell_divine_channel_mana: spells.divine_channel_mana,
+    spell_divine_channel_mana_details: spells.divine_channel_mana_details,
+    spell_divine_channel_mana_expanded: spells.divine_channel_mana_expanded,
+
+    spell_divine_channel_antients_1: spells.divine_channel_antients_1,
+    spell_divine_channel_antients_1_details: spells.divine_channel_antients_1_details,
+    spell_divine_channel_antients_1_expanded: spells.divine_channel_antients_1_expanded,
+
+    spell_divine_channel_antients_2: spells.divine_channel_antients_2,
+    spell_divine_channel_antients_2_details: spells.divine_channel_antients_2_details,
+    spell_divine_channel_antients_2_expanded: spells.divine_channel_antients_2_expanded,
+
+    spell_divine_channel_vengence_1: spells.divine_channel_vengence_1,
+    spell_divine_channel_vengence_1_details: spells.divine_channel_vengence_1_details,
+    spell_divine_channel_vengence_1_expanded: spells.divine_channel_vengence_1_expanded,
+
+    spell_divine_channel_vengence_2: spells.divine_channel_vengence_2,
+    spell_divine_channel_vengence_2_details: spells.divine_channel_vengence_2_details,
+    spell_divine_channel_vengence_2_expanded: spells.divine_channel_vengence_2_expanded,
 }

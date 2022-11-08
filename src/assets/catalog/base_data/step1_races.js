@@ -60,7 +60,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.darkness,
+              spell: spells.divine_channel_vengence_2,
             },
 
             {
@@ -1220,8 +1220,8 @@ export default {
       },
       {
         type: "resistance",
-        keyword: "resistance",
-        details: "magic_chromatic_orb_against",
+        keyword: "immunity",
+        details: "magic_sleep_against",
       },
     ],
   },
@@ -1614,8 +1614,8 @@ export default {
       },
       {
         type: "resistance",
-        keyword: "resistance",
-        details: "magic_chromatic_orb_against",
+        keyword: "immunity",
+        details: "magic_sleep_against",
       },
       {
         type: "plus",
