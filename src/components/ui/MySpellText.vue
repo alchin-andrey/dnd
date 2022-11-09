@@ -253,7 +253,7 @@ export default {
 		// ------ NUM -----------
 		// ------ STR -----------
 		Str_X_Level_5_11_17() {
-			let str = this.Spell_Index.impact_size_string;
+			let str = this.Spell_Index.impact_size_str;
 			let lvl = this.$root.MY.level;
 			let kof = null;
 			if (lvl < 5) {
@@ -266,16 +266,16 @@ export default {
 				kof = 4;
 			}
 			return str + kof;
-			//return to: impact_size_string
+			//return to: impact_size_str
 			//1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
 			//Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
 		},
 
 		Str_X_Plus_1() {
-			let str = this.Spell_Index.impact_size_string;
+			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Manna_Numb;
 			return str + mana;
-			//return to: impact_size_string
+			//return to: impact_size_str
 			//Exapmle: str = 3
 			//spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
 			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
@@ -283,10 +283,10 @@ export default {
 		},
 
 		Str_X_Plus_2() {
-			let str = this.Spell_Index.impact_size_string;
+			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Manna_Numb;
 			return str + mana * 2;
-			//return to: impact_size_string
+			//return to: impact_size_str
 			//Exapmle: str = 3
 			//spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
 			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
@@ -443,7 +443,8 @@ export default {
 		},
 
 		gat_Value_Foo(val) {
-			let num = this.Spell_Index.impact_size_num;
+      let low_val = val.toLowerCase()
+			let num = this.Spell_Index[`impact_size_${low_val}`];
 			let sub_foo_1 = this.gat_Sub_Foo(1, val);
 			let sub_foo_2 = this.gat_Sub_Foo(2, val);
 			let sub_foo_3 = this.gat_Sub_Foo(3, val);

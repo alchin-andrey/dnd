@@ -47,17 +47,17 @@ export default {
 //DONE
     Str_X_Level_5_11_17()
     {
-        //return to: impact_size_string
+        //return to: impact_size_str
         //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
         //Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
     },
 //DONE
     Str_X_Plus_1()
     {
-        let str = this.Spell_Index.impact_size_string;
+        let str = this.Spell_Index.impact_size_str;
 
         return str + this.mana - this.Spell_Index.min_mana;
-        //return to: impact_size_string
+        //return to: impact_size_str
         //Exapmle: str = 3
         //spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
         //spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
@@ -66,10 +66,10 @@ export default {
 //DONE
     Str_X_Plus_2()
     {
-        let str = this.Spell_Index.impact_size_string;
+        let str = this.Spell_Index.impact_size_str;
 
         return str + (this.mana - this.Spell_Index.min_mana) * 2;
-        //return to: impact_size_string
+        //return to: impact_size_str
         //Exapmle: str = 3
         //spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
         //spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
@@ -91,7 +91,7 @@ export default {
     {
         //не добавлять "×"
 
-        let str = this.Spell_Index.impact_size_string;
+        let str = this.Spell_Index.impact_size_str;
 
         return str + (this.mana - this.Spell_Index.min_mana) * 40;
         //Example: 
@@ -165,10 +165,10 @@ export default {
 
     Pls_Plus_5()
     {
-        let pls = this.Spell_Index.impact_size_plus;
+        let pls = this.Spell_Index.impact_size_pls;
 
         return pls + (this.mana - this.Spell_Index.min_mana) * 5;
-        //return to: impact_size_plus
+        //return to: impact_size_pls
         //Exapmle: pls = 4
         //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
         //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
@@ -179,7 +179,7 @@ export default {
         let pls = this.$root.MY.stats.strength.mod;
         return pls; 
 
-        //return to: impact_size_plus
+        //return to: impact_size_pls
         //if < 0 then 0
         // Example: +3 ⬜️⬜️⬜️
     },
@@ -189,7 +189,7 @@ export default {
         let pls = this.$root.MY.stats.charisma.mod;
         return pls; 
 
-        //return to: impact_size_plus
+        //return to: impact_size_pls
         //if < 0 then 0
         //Example: +4 ⬜️⬜️⬜️⬜️
     },
