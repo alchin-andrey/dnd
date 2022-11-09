@@ -81,10 +81,10 @@ export default {
 
             // По классовой бабуйне
 
-            {
-              level: 1,
-              spell: spells.rage,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.rage,
+            // },
 
             // String (первая часть, которая чаще всего с "×")
 
@@ -113,81 +113,81 @@ export default {
               spell: spells.heroism,
             },
 
-            {
-              level: 1,
-              spell: spells.create_or_destroy_water,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.create_or_destroy_water,
+            // },
 
             //Num
 
-            {
-              level: 1,
-              spell: spells.flame_blade,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.flame_blade,
+            // },
 
-            {
-              level: 1,
-              spell: spells.hellish_rebuke,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hellish_rebuke,
+            // },
 
-            {
-              level: 1,
-              spell: spells.color_spray,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.color_spray,
+            // },
 
-            {
-              level: 1,
-              spell: spells.aid,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.aid,
+            // },
 
-            {
-              level: 1,
-              spell: spells.prayer_of_healing,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.prayer_of_healing,
+            // },
 
-            {
-              level: 1,
-              spell: spells.gust_of_wind,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.gust_of_wind,
+            // },
 
             //Pls
 
-            {
-              level: 1,
-              spell: spells.armor_of_agathys,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.armor_of_agathys,
+            // },
 
-            {
-              level: 1,
-              spell: spells.elk_knock,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.elk_knock,
+            // },
 
-            {
-              level: 1,
-              spell: spells.divine_channel_devotion_1,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.divine_channel_devotion_1,
+            // },
 
             //Скобочки
 
-            {
-              level: 1,
-              spell: spells.hunters_mark, //spell_duration
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hunters_mark, //spell_duration
+            // },
 
-            {
-              level: 1,
-              spell: spells.hex, //spell_duration
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hex, //spell_duration
+            // },
 
-            {
-              level: 1,
-              spell: spells.fog_cloud, //aoe_size
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.fog_cloud, //aoe_size
+            // },
 
-            {
-              level: 1,
-              spell: spells.animal_messenger, //spell_duration
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.animal_messenger, //spell_duration
+            // },
 
 
 

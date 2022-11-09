@@ -12,7 +12,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-			<div v-if="dice" class="numb small">{{ numb }}d{{ dice }}</div>
+			<div v-if="main" class="numb small">{{ Str }} {{ numb }}{{ Dice }}{{ Pls }}</div>
 			<div v-else class="numb" :class="{ passive: save }">
 				{{ Prefix }} {{ Plus }}{{ Value }}{{ save }} {{ t_Suffix }}
 			</div>
@@ -41,11 +41,23 @@ export default {
 			type: String,
 			default: null,
 		},
+    main: {
+			type: Boolean,
+			default: false,
+		},
+    str: {
+			type: Number,
+			default: null,
+		},
 		numb: {
 			type: Number,
 			default: null,
 		},
 		dice: {
+			type: Number,
+			default: null,
+		},
+    pls: {
 			type: Number,
 			default: null,
 		},
@@ -92,12 +104,24 @@ export default {
 			return this.t(this.addition);
 		},
 
+    Dice() {
+		return this.dice ? `d${this.dice}` : null;
+    },
+
+    Pls() {
+      return this.pls ? `+${this.pls}` : null;
+    },
+
+    Str() {
+      return this.str ? `${this.str}×` : null;
+    },
+
 		Prefix() {
-			return this.prefix ? this.t(this.prefix) : "";
+			return this.prefix ? this.t(this.prefix) : null;
 		},
 
 		Plus() {
-			return this.plus ? "+" : "";
+			return this.plus ? "+" : null;
 		},
 
 		Miles() {

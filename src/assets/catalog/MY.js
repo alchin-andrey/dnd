@@ -1,173 +1,148 @@
 import color from "./base_data/_colors.js";
+import races from "./base_data/step1_races.js";
+
+// let race_1 = Object.values(races)[0];
+// let ethnos_1 = Object.values(race_1.settings.ethnos)[0];
 
 export default {
+	//Key selections
+	name: null,
+	race: Object.values(races)[0],
+	ethnos: null,
+	class: null,
+	subclass: null,
+	backstory: null,
+	level: 1,
 
-    //Key selections
-    name:null,
-    race:null,
-    ethnos:null,
-    class:null,
-    subclass:null,
-    backstory:null,
-    level:null,
+	//Character
+	alignment: null,
+	gender: {
+		phisiological: "male",
+		feel: "cisgender",
+		look: "as_phisiological",
+		attraction: null,
+	},
+	faith: null,
 
-    //Character
-    alignment:null,
-    gender:{
-        phisiological:null,
-        feel:null,
-        look:null,
-        attraction:null,
-    },
-    faith:null,
+	personality: null,
+	ideals: null,
+	bonds: null,
+	flaws: null,
+	appearance: null,
+	story: null,
 
-    personality:null,
-    ideals:null,
-    bonds:null,
-    flaws:null,
-    appearance:null,
-    story:null,
+	//Race secondary adjustments
+	age: null,
+	weight: null,
+	height: null,
+	color: {
+		skin: null,
+		eyes: null,
+		hair: null,
+	},
 
-    //Race secondary adjustments
-    age:null,
-    weight:null,
-    height:null,
-    color:{
-        skin: null,
-        eyes: null,
-        hair: null,
-    },
+	//Calculated
+	maturity: null,
+	size: null,
 
-    //Calculated
-    maturity:null,
-    size:null,
+	HP_max: null,
+	HP_dice: null,
 
-    HP_max:null,
-    HP_dice:null,
+	mastery: null,
+	initiative: null,
+	armor_class: null,
 
-    mastery:null,
-    initiative:null,
-    armor_class:null,
+	qualities: {
+		speed: null,
+		// vision_day:null,
+		vision_night: null,
+	},
 
-    qualities:{
-        speed:null,
-        // vision_day:null,
-        vision_night:null,
-    },
+	stats: {
+		strength: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
 
-    stats:{
+		dexterity: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
 
-        strength:
-        { base: 0, bonus: 0, total:0, mod:0, save:0 },
+		constitution: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
 
-        dexterity:
-        { base: 0, bonus: 0, total:0, mod:0, save:0 },
+		intelligence: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
 
-        constitution:
-        { base: 0, bonus: 0, total:0, mod:0, save:0 },
+		wisdom: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
 
-        intelligence:
-        { base: 0, bonus: 0, total:0, mod:0, save:0 },
+		charisma: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+	},
 
-        wisdom:
-        { base: 0, bonus: 0, total:0, mod:0, save:0 },
+	skills: {
+		athletics: { bonus: 0, mod: "strength" },
 
-        charisma:
-        { base: 0, bonus: 0, total:0, mod:0, save:0 }
-    },
+		acrobatics: { bonus: 0, mod: "dexterity" },
 
-    skills:{
+		sleight_of_hand: { bonus: 0, mod: "dexterity" },
 
-        athletics:
-        { bonus:0, mod:"strength" },
+		stealth: { bonus: 0, mod: "dexterity" },
 
-        acrobatics:
-        { bonus:0, mod:"dexterity" },
+		investigation: { bonus: 0, mod: "intelligence" },
 
-        sleight_of_hand:
-        { bonus:0, mod:"dexterity" },
+		history: { bonus: 0, mod: "intelligence" },
 
-        stealth:
-        { bonus:0, mod:"dexterity" },
+		religion: { bonus: 0, mod: "intelligence" },
 
-        investigation:
-        { bonus:0, mod:"intelligence" },
+		arcana: { bonus: 0, mod: "intelligence" },
 
-        history:
-        { bonus:0, mod:"intelligence" },
+		nature: { bonus: 0, mod: "intelligence" },
 
-        religion:
-        { bonus:0, mod:"intelligence" },
+		survival: { bonus: 0, mod: "wisdom" },
 
-        arcana:
-        { bonus:0, mod:"intelligence" },
+		perception: { bonus: 0, mod: "wisdom" },
 
-        nature:
-        { bonus:0, mod:"intelligence" },
+		insight: { bonus: 0, mod: "wisdom" },
 
-        survival:
-        { bonus:0, mod:"wisdom" },
+		medicine: { bonus: 0, mod: "wisdom" },
 
-        perception:
-        { bonus:0, mod:"wisdom" },
+		animal_hanging: { bonus: 0, mod: "wisdom" },
 
-        insight:
-        { bonus:0, mod:"wisdom" },
+		performance: { bonus: 0, mod: "charisma" },
 
-        medicine:
-        { bonus:0, mod:"wisdom" },
+		persuasion: { bonus: 0, mod: "charisma" },
 
-        animal_hanging:
-        { bonus:0, mod:"wisdom" },
+		deception: { bonus: 0, mod: "charisma" },
 
-        performance:
-        { bonus:0, mod:"charisma" },
+		intimidation: { bonus: 0, mod: "charisma" },
+	},
 
-        persuasion:
-        { bonus:0, mod:"charisma" },
+	//Владения - с чем умеешь обращаться
+	proficiencies: {
+		armor: null,
+		weapons: null,
+		tools: null,
+		languages: null,
+	},
 
-        deception:
-        { bonus:0, mod:"charisma" },
+	//доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
+	custom_stats: null,
+	custom_skills: null,
+	custom_languages: null,
 
-        intimidation:
-        { bonus:0, mod:"charisma" },
+	//Особенности - пассивньіе умения
+	fines: null,
 
-    },
+	//Заклинания - активньіе умения
+	spells: null,
 
-    //Владения - с чем умеешь обращаться
-    proficiencies:{
-        armor:null,
-        weapons:null,
-        tools:null,
-        languages:null,
-    },
+	inventory: null,
 
-    //доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
-    custom_stats:null,
-    custom_skills:null,
-    custom_languages:null,
+	armor: null,
+	shield: null,
 
-    //Особенности - пассивньіе умения
-    fines:null,
+	//Оружие - предметы с уроном
+	weapons: null,
 
-    //Заклинания - активньіе умения
-    spells:null,
+	wallet: {
+		gold: 0,
+		silver: 0,
+		copper: 0,
+	},
 
-    inventory:null,
-
-    armor:null,
-    shield:null,
-
-    //Оружие - предметы с уроном
-    weapons:null,
-
-    wallet:{
-        gold:0,
-        silver:0,
-        copper:0,
-    },
-
-    //Conditions
-    if_no_heavy_armor: null,
-
-}
+	//Conditions
+	if_no_heavy_armor: null,
+};

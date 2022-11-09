@@ -79,12 +79,12 @@ export default {
       */
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
 
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -131,10 +131,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "charisma",
@@ -173,10 +173,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Level_6_11_16",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -214,10 +214,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Level_6_11_16", //1lvl + 0, 6lvl + 1, 11lvl + 2, 16lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2, //1 + 0, 6 + 1, 11 + 2, 16 + 3
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -255,10 +255,10 @@ export default {
       impact_damage_type: "cold_w",
 
       impact_size_foo: "Num_Level_6_11_16",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -296,10 +296,10 @@ export default {
       impact_damage_type: "electricity_w",
 
       impact_size_foo: "Num_Level_6_11_16",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -337,10 +337,10 @@ export default {
       impact_damage_type: "acid_w",
 
       impact_size_foo: "Num_Level_6_11_16",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -378,10 +378,10 @@ export default {
       impact_damage_type: "poison_w",
 
       impact_size_foo: "Num_Level_6_11_16", //done
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -419,10 +419,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -461,10 +461,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -541,12 +541,12 @@ export default {
       */
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
 
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -589,10 +589,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -631,10 +631,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -673,10 +673,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -714,10 +714,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -808,10 +808,10 @@ export default {
       */
 
       impact_size_foo: "Num_Barbarian_Rage_Bonus", //done
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null, //this.$root.step2_classes.barbarian_rage_bonus[this.$root.MY.level],
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -902,12 +902,12 @@ export default {
       */
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
 
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       // нужен ли cпасбросок
@@ -946,10 +946,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -984,10 +984,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -1023,10 +1023,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1063,10 +1063,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1102,10 +1102,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1146,10 +1146,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1185,10 +1185,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1224,10 +1224,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1263,10 +1263,10 @@ export default {
       impact_damage_type: "bludgeoning_w",
 
       impact_size_foo: "Pls_STR", //need update
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 12,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -1301,10 +1301,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1339,10 +1339,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: "Num_Plus_Level_2", //done
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1377,10 +1377,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1415,10 +1415,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1453,10 +1453,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1491,10 +1491,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1529,10 +1529,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1567,10 +1567,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1610,10 +1610,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1653,10 +1653,10 @@ export default {
       impact_damage_type: "stock",
 
       impact_size_foo: "Num_LevelX", //done
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 5,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1696,10 +1696,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1739,10 +1739,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: null,
       saving_attribute: null,
@@ -1782,10 +1782,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Pls_CHA", 
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -1825,10 +1825,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -1868,10 +1868,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -1911,10 +1911,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -1954,10 +1954,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -1997,10 +1997,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: null,
       saving_attribute: null,
@@ -2043,10 +2043,10 @@ export default {
       impact_damage_type: "acid_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -2086,10 +2086,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2130,10 +2130,10 @@ export default {
       impact_damage_type: "necrotic_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2173,10 +2173,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2216,10 +2216,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2260,10 +2260,10 @@ export default {
       impact_damage_type: "force_w",
 
       impact_size_foo: "Str_X_Level_5_11_17", //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2304,10 +2304,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2348,10 +2348,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2391,10 +2391,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2435,10 +2435,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -2479,10 +2479,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2522,10 +2522,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2565,10 +2565,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2609,10 +2609,10 @@ export default {
       impact_damage_type: "poison_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 12,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -2652,10 +2652,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2695,10 +2695,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2738,10 +2738,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2782,10 +2782,10 @@ export default {
       impact_damage_type: "cold_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2826,10 +2826,10 @@ export default {
       impact_damage_type: "radiant_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -2869,10 +2869,10 @@ export default {
       impact_damage_type: "new_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2913,10 +2913,10 @@ export default {
       impact_damage_type: "electricity_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -2955,12 +2955,12 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
       // рассчет урона
 
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -3000,10 +3000,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3043,10 +3043,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3086,10 +3086,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3130,10 +3130,10 @@ export default {
       impact_damage_type: "psychic_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3173,10 +3173,10 @@ export default {
       impact_damage_type: "piercing_w",
 
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3221,10 +3221,10 @@ export default {
       impact_damage_type: "slashing_w",
 
       impact_size_foo: "Num_Plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -3233,50 +3233,50 @@ export default {
     {
       //2
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 3,
+      // impact_size_str: null, impact_size_num: 3,
       // impact_size_dice: 10,
     },
     {
       //3
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 4,
+      // impact_size_str: null, impact_size_num: 4,
       // impact_size_dice: 10,
     },
     {
       //4
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 5,
+      // impact_size_str: null, impact_size_num: 5,
       // impact_size_dice: 10,
     },
     {
       //5
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 6,
+      // impact_size_str: null, impact_size_num: 6,
       // impact_size_dice: 10,
     },
     {
       //6
       // name: "spell_hellish_rebuke",
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 7,
+      // impact_size_str: null, impact_size_num: 7,
       // impact_size_dice: 10,
     },
     {
       //7
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 8,
+      // impact_size_str: null, impact_size_num: 8,
       // impact_size_dice: 10,
     },
     {
       //8
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 9,
+      // impact_size_str: null, impact_size_num: 9,
       // impact_size_dice: 10,
     },
     {
       //9
       // impact_size_foo: null,
-      // impact_size_string: null, impact_size_num: 10,
+      // impact_size_str: null, impact_size_num: 10,
       // impact_size_dice: 10,
     },
   ],
@@ -3316,10 +3316,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -3364,10 +3364,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3×, spell{2} = 4×, spell{3} = 5× ...
-      impact_size_string: 3,
+      impact_size_str: 2,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3420,10 +3420,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3467,10 +3467,10 @@ export default {
       impact_damage_type: "electricity_w",
 
       impact_size_foo: "Num_Plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 12,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3522,10 +3522,10 @@ export default {
       impact_damage_type: "sound_w",
 
       impact_size_foo: "Num_Plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -3577,10 +3577,10 @@ export default {
       impact_damage_type: "force_w",
 
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3× 1d4+1 , spell{2} = 4× 1d4+1, spell{3} = 5× 1d4+1
-      impact_size_string: 3,
+      impact_size_str: 2,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: 1,
+      impact_size_pls: 1,
 
       saving_need: false,
       saving_attribute: null,
@@ -3632,10 +3632,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3678,13 +3678,13 @@ export default {
       impact_type: "hp_bonus",
       impact_damage_type: "temporary",
 
-      impact_size_foo: "Str_X_Plus_1_Num_MOD",
+      impact_size_foo: "Str_X_Plus_1__Num_MOD",
       //Cущество в начале каждого своего хода получает временные хиты, равные модификатору вашей базовой характеристики.
       //Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы можете сделать целью одно дополнительное существо за каждый уровень ячейки выше первого.
-      impact_size_string: 1,
+      impact_size_str: 1,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -3736,10 +3736,10 @@ export default {
       impact_damage_type: "psychic_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3783,10 +3783,10 @@ export default {
       impact_damage_type: "piercing_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -3835,10 +3835,10 @@ export default {
       impact_damage_type: "thunder_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -3882,10 +3882,10 @@ export default {
       impact_damage_type: "psychic_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -3937,10 +3937,10 @@ export default {
       impact_damage_type: "temporary",
 
       impact_size_foo: "Pls_Plus_5", 
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: 5,
+      impact_size_pls: 5,
 
       saving_need: false,
       saving_attribute: null,
@@ -3992,10 +3992,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: 3,
+      impact_size_pls: 3,
 
       saving_need: false,
       saving_attribute: null,
@@ -4039,10 +4039,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -4094,10 +4094,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -4141,10 +4141,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4193,10 +4193,10 @@ export default {
         //num = base_stat_mod = strength.mod = 3
         //spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
         //spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4248,10 +4248,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1_Pls_MOD",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4303,10 +4303,10 @@ export default {
       impact_damage_type: "poison_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -4358,10 +4358,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -4405,10 +4405,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4460,10 +4460,10 @@ export default {
       impact_damage_type: "necrotic_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4515,10 +4515,10 @@ export default {
       impact_damage_type: "radiant_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 4,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4570,10 +4570,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4617,10 +4617,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4664,10 +4664,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4711,10 +4711,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4758,10 +4758,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4805,10 +4805,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -4855,10 +4855,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -4903,10 +4903,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -4950,10 +4950,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -4997,10 +4997,10 @@ export default {
       impact_damage_type: "piercing_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -5052,10 +5052,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -5107,10 +5107,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5154,10 +5154,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5201,10 +5201,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -5256,10 +5256,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5303,10 +5303,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5350,10 +5350,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "charisma",
@@ -5405,10 +5405,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5452,10 +5452,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -5507,10 +5507,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5554,14 +5554,14 @@ export default {
       impact_damage_type: "temporary",
 
       impact_size_foo: "Pls_Plus_5", 
-      //return to: impact_size_plus
+      //return to: impact_size_pls
         //Exapmle: pls = 4
         //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
         //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: 4,
+      impact_size_pls: 4,
 
       saving_need: false,
       saving_attribute: null,
@@ -5607,10 +5607,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5654,10 +5654,10 @@ export default {
       impact_damage_type: "necrotic_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -5709,10 +5709,10 @@ export default {
       impact_damage_type: "sum_w",
 
       impact_size_foo: "Num_Plus_2",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 6,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5764,10 +5764,10 @@ export default {
       impact_damage_type: "necrotic_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5819,10 +5819,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5866,10 +5866,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -5913,10 +5913,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -5968,10 +5968,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Str_Plus_40",
-      impact_size_string: 40,
+      impact_size_str: 40,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6039,10 +6039,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6086,10 +6086,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6157,10 +6157,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -6204,10 +6204,10 @@ export default {
       impact_damage_type: "sum_w",
 
       impact_size_foo: "Num_Plus_2",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 5,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6259,10 +6259,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6314,10 +6314,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: 10,
+      impact_size_str: 10,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6361,10 +6361,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: 5,
+      impact_size_pls: 5,
 
       saving_need: false,
       saving_attribute: null,
@@ -6408,10 +6408,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: 2,
+      impact_size_pls: 2,
 
       saving_need: false,
       saving_attribute: null,
@@ -6460,10 +6460,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: 10,
+      impact_size_pls: 10,
 
       saving_need: false,
       saving_attribute: null,
@@ -6510,10 +6510,10 @@ export default {
       impact_damage_type: "force_w",
 
       impact_size_foo: "Num_Plus_1_Pls_MOD",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6567,10 +6567,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6617,10 +6617,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6667,10 +6667,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -6717,10 +6717,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6767,10 +6767,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6817,10 +6817,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "intelligence",
@@ -6867,10 +6867,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -6917,10 +6917,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -6974,10 +6974,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Plus_05",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7030,10 +7030,10 @@ export default {
       impact_damage_type: "thunder_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 3,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -7087,10 +7087,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 16,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7128,10 +7128,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7179,10 +7179,10 @@ export default {
 
       impact_size_foo: "Str_X_Plus_2",
       //Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, количество боеприпасов увеличивается на два за каждый уровень ячейки выше второго.
-      impact_size_string: 4,
+      impact_size_str: 1,
       impact_size_num: 1,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -7236,10 +7236,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7286,10 +7286,10 @@ export default {
       impact_damage_type: "radiant_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7343,10 +7343,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -7393,10 +7393,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -7443,10 +7443,10 @@ export default {
       impact_damage_type: "radiant_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 10,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -7500,10 +7500,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -7550,10 +7550,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: "Num_Plus_05",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7604,10 +7604,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7654,10 +7654,10 @@ export default {
       impact_damage_type: "acid_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 4,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7731,10 +7731,10 @@ export default {
       impact_size_foo: "Num_Plus_1_Pls_MOD",
       // Каждое из шести существ на ваш выбор, видимых в пределах дистанции, восстанавливает количество хитов, равное 2к8 + модификатор вашей базовой характеристики.
       // На более высоких уровнях: Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, лечение увеличивается на 1к8 за каждый уровень ячейки выше второго.
-      impact_size_string: 6,
+      impact_size_str: 6,
       impact_size_num: 2,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7788,10 +7788,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7845,10 +7845,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7902,10 +7902,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -7952,10 +7952,10 @@ export default {
       impact_damage_type: "slashing_w",
 
       impact_size_foo: "Num_Plus_2",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 4,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8009,10 +8009,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "charisma",
@@ -8059,10 +8059,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -8109,10 +8109,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8159,10 +8159,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8209,10 +8209,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: 1,
+      impact_size_pls: 1,
 
       saving_need: false,
       saving_attribute: null,
@@ -8261,10 +8261,10 @@ export default {
       impact_size_foo: "Str_X_Plus_1",
       //Вы создаёте три огненных луча и направляете их на целей, находящихся в пределах дистанции.
       //Вы создаёте один дополнительный луч за каждый уровень ячейки выше второго.
-      impact_size_string: 3,
+      impact_size_str: 2,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8318,10 +8318,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8368,10 +8368,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -8418,10 +8418,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_5",
-      impact_size_string: 3,
+      impact_size_str: 3,
       impact_size_num: 5,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8475,10 +8475,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8525,10 +8525,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8575,10 +8575,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8625,10 +8625,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8675,10 +8675,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Feet",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 15,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "strength",
@@ -8725,10 +8725,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8794,10 +8794,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 6,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "dexterity",
@@ -8851,10 +8851,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -8901,10 +8901,10 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -8958,10 +8958,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -9008,10 +9008,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9058,10 +9058,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9108,10 +9108,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9158,10 +9158,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9208,10 +9208,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9251,10 +9251,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9301,10 +9301,10 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "constitution",
@@ -9351,10 +9351,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "wisdom",
@@ -9416,10 +9416,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
@@ -9473,10 +9473,10 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: true,
       saving_attribute: "charisma",
@@ -9523,10 +9523,10 @@ export default {
       impact_damage_type: "piercing_w",
 
       impact_size_foo: null,
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 4,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: null,
       saving_attribute: null,
@@ -9569,10 +9569,10 @@ export default {
       impact_damage_type: "radiant_w",
 
       impact_size_foo: "Num_Plus_1",
-      impact_size_string: null,
+      impact_size_str: null,
       impact_size_num: 2,
       impact_size_dice: 8,
-      impact_size_plus: null,
+      impact_size_pls: null,
 
       saving_need: null,
       saving_attribute: null,
