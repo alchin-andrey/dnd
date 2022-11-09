@@ -21,9 +21,14 @@ export default {
 			type: Boolean,
 			default: false
 		},
+    mana: {
+			type: Number,
+			default: null
+		},
 	},
 	methods: {
 		hideDialog() {
+      this.$emit('update:mana', null)
 			this.$emit('update:show', false)
 		},
 	},
