@@ -120,30 +120,30 @@ export default {
 
             //Num
 
-            // {
-            //   level: 1,
-            //   spell: spells.flame_blade,
-            // },
+            {
+              level: 1,
+              spell: spells.flame_blade,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.hellish_rebuke,
-            // },
+            {
+              level: 1,
+              spell: spells.hellish_rebuke,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.color_spray,
-            // },
+            {
+              level: 1,
+              spell: spells.color_spray,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.aid,
-            // },
+            {
+              level: 1,
+              spell: spells.aid,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.prayer_of_healing,
-            // },
+            {
+              level: 1,
+              spell: spells.prayer_of_healing,
+            },
 
             // {
             //   level: 1,
@@ -152,10 +152,10 @@ export default {
 
             //Pls
 
-            // {
-            //   level: 1,
-            //   spell: spells.armor_of_agathys,
-            // },
+            {
+              level: 1,
+              spell: spells.armor_of_agathys,
+            },
 
             // {
             //   level: 1,

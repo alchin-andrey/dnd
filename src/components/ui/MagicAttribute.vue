@@ -12,7 +12,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-			<div v-if="main" class="numb small">{{ str }} {{ numb }}{{ Dice }}{{ Pls }}</div>
+			<div v-if="main" class="numb small">{{ Str }} {{ numb }}{{ Dice }}{{ Pls }}</div>
 			<div v-else class="numb" :class="{ passive: save }">
 				{{ Prefix }} {{ Plus }}{{ Value }}{{ save }} {{ t_Suffix }}
 			</div>
@@ -45,14 +45,14 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    str: {
-			type: String,
-			default: null,
-		},
     // str: {
-		// 	type: Number,
+		// 	type: String,
 		// 	default: null,
 		// },
+    str: {
+			type: Number,
+			default: null,
+		},
 		numb: {
 			type: Number,
 			default: null,
@@ -116,8 +116,20 @@ export default {
       return this.pls ? `+${this.pls}` : null;
     },
 
+    // Str() {
+    //   return this.str ? `${this.str}×` : null;
+    // },
+
     Str() {
-      return this.str ? `${this.str}×` : null;
+      if(this.str) {
+        if(this.title === "liters_number") {
+          return this.str;
+        } else {
+          return `${this.str}×`;
+        }
+      } else {
+        return null;
+      }
     },
 
 		Prefix() {
@@ -128,8 +140,14 @@ export default {
 			return this.plus ? "+" : null;
 		},
 
-		Miles() {
-			return this.numb % 5280 === 0;
+		// Miles() {
+		// 	return this.numb % 5280 === 0;
+		// },
+
+    Miles() {
+      let num = this.numb % 5280 === 0;
+      let not_0 = this.numb !== null;
+			return num && not_0;
 		},
 
 		Distance() {
@@ -148,7 +166,7 @@ export default {
 
 		Suffix() {
 			if (this.Distance) {
-				if (this.Miles && this.Value !== 0) {
+				if (this.Miles) {
 					let mod10 = Math.abs(this.Value % 10);
 					let mod100 = Math.abs(this.Value % 100);
 					if (mod100 > 10 && mod100 < 20) {
@@ -178,7 +196,7 @@ export default {
 			} else if (this.Miles) {
 				return this.Value;
 			} else {
-				return this.numb;
+				return this.numb + this.pls;
 			}
 		},
 

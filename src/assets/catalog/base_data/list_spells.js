@@ -3364,7 +3364,7 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3×, spell{2} = 4×, spell{3} = 5× ...
-      impact_size_str: 2,
+      impact_size_str: 3,
       impact_size_num: 1,
       impact_size_dice: 4,
       impact_size_pls: null,
@@ -3577,7 +3577,7 @@ export default {
       impact_damage_type: "force_w",
 
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3× 1d4+1 , spell{2} = 4× 1d4+1, spell{3} = 5× 1d4+1
-      impact_size_str: 2,
+      impact_size_str: 3,
       impact_size_num: 1,
       impact_size_dice: 4,
       impact_size_pls: 1,
@@ -4187,7 +4187,7 @@ export default {
       impact_type: "heal",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Plus_1_Pls_MOD",
+      impact_size_foo: "Num_Plus_1__Pls_MOD",
       //Example: 
         //base_stat = strenth
         //num = base_stat_mod = strength.mod = 3
@@ -4247,7 +4247,7 @@ export default {
       impact_type: "heal",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Plus_1_Pls_MOD",
+      impact_size_foo: "Num_Plus_1__Pls_MOD",
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
@@ -6509,7 +6509,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "force_w",
 
-      impact_size_foo: "Num_Plus_1_Pls_MOD",
+      impact_size_foo: "Num_Plus_1__Pls_MOD",
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dice: 8,
@@ -7179,7 +7179,7 @@ export default {
 
       impact_size_foo: "Str_X_Plus_2",
       //Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, количество боеприпасов увеличивается на два за каждый уровень ячейки выше второго.
-      impact_size_str: 1,
+      impact_size_str: 3,
       impact_size_num: 1,
       impact_size_dice: 6,
       impact_size_pls: null,
@@ -7728,7 +7728,7 @@ export default {
         psychic_w: "🧠 Психический",
       */
 
-      impact_size_foo: "Num_Plus_1_Pls_MOD",
+      impact_size_foo: "Num_Plus_1__Pls_MOD",
       // Каждое из шести существ на ваш выбор, видимых в пределах дистанции, восстанавливает количество хитов, равное 2к8 + модификатор вашей базовой характеристики.
       // На более высоких уровнях: Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, лечение увеличивается на 1к8 за каждый уровень ячейки выше второго.
       impact_size_str: 6,
@@ -8261,7 +8261,7 @@ export default {
       impact_size_foo: "Str_X_Plus_1",
       //Вы создаёте три огненных луча и направляете их на целей, находящихся в пределах дистанции.
       //Вы создаёте один дополнительный луч за каждый уровень ячейки выше второго.
-      impact_size_str: 2,
+      impact_size_str: 3,
       impact_size_num: 2,
       impact_size_dice: 6,
       impact_size_pls: null,

@@ -196,8 +196,70 @@ export default {
 		},
 
 		// -----------------------------------
+		// ------ STR -----------
+		Str_X_Level_5_11_17() {
+			let str = this.Spell_Index.impact_size_str;
+			let lvl = this.$root.MY.level;
+			let kof = null;
+			if (lvl < 5) {
+				kof = 1;
+			} else if (lvl < 11) {
+				kof = 2;
+			} else if (lvl < 17) {
+				kof = 3;
+			} else {
+				kof = 4;
+			}
+			let res = str + kof;
+			return res;
+			//return to: impact_size_str
+			//1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
+			//Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
 
-		// ------ NUM -----------
+		Str_X_Plus_1() {
+			let str = this.Spell_Index.impact_size_str;
+			let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+			let res = str + (mana - mana_min);
+			return res;
+			//return to: impact_size_str
+			//Exapmle: str = 3
+			//spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
+			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			//spell{2}: 4× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
+
+		Str_X_Plus_2() {
+			let str = this.Spell_Index.impact_size_str;
+			let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+			let res = str + (mana - mana_min) * 2;
+			return res;
+			//return to: impact_size_str
+			//Exapmle: str = 3
+			//spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
+			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			//spell{2}: 5× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
+
+		Str_Plus_40() {
+			//не добавлять "×"
+
+			let str = this.Spell_Index.impact_size_str;
+			let mana = this.Mana_Numb;
+			let res = str * mana;
+			return res;
+			//Example:
+			//str = 40
+			//spell{1} = 40
+			//spell{2} = 80
+			//spell{3} = 120
+
+			// + aoe size через скобочки
+		},
+		// ------ STR -----------
+    		// ------ NUM -----------
 
 		Num_Plus_Level_2() {
 			let num = this.Spell_Index.impact_size_num;
@@ -247,75 +309,92 @@ export default {
 		},
 
 		Num_MOD() {
-			let num = this.$root.MY.stats.strength.mod;
+      let num = this.Spell_Index.impact_size_num;
+			let mod = this.$root.MY.stats.strength.mod;
 			// console.log('Str_X_Plus_1_Num_MOD', num)
+
 			let lvl = this.$root.MY.level;
-			return num + lvl;
-			// return num;
+			return num + mod + lvl;
+			// return num + mod;
 		},
+    Num_Plus_05() {
+      let num = this.Spell_Index.impact_size_num;
+      let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+      let res = num + Math.floor((mana - mana_min) / 2);
+      return res;
+        //spell{1} = num, spell{2} = num, spell{3} = num+1 ...
+        //Example: 
+        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+        //spell{2}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+        //spell{3}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+    },
+    Num_Plus_1() {
+      let num = this.Spell_Index.impact_size_num;
+      let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+      let res = num + (mana - mana_min);
+      return res;
+        //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
+        //Example: 
+        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+        //spell{2}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+    },
+
+    Num_Plus_2() {
+      let num = this.Spell_Index.impact_size_num;
+      let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+      let res = num + (mana - mana_min) * 2;
+      return res;
+        //spell{1} = num, spell{2} = num+2, spell{3} = num+4 ...
+        //Example: 
+        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+        //spell{2}: 3d10 ⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+    },
+
+    Num_Plus_5() {
+      let num = this.Spell_Index.impact_size_num;
+      let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+      let res = num + (mana - mana_min) * 5;
+      return res;
+        //return to: impact_size_num
+        //spell{1} = num, spell{2} = num+5, spell{3} = num+10 ...
+        //Example: 
+        //spell{1}: 1d4 ⬜️🔳🔳🔳
+        //spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+    },
 		// ------ NUM -----------
-		// ------ STR -----------
-		Str_X_Level_5_11_17() {
-			let str = this.Spell_Index.impact_size_str;
+    // ------ PLS -----------
+    Pls_MOD() {
+      let pls = this.Spell_Index.impact_size_pls;
+      let mod = this.$root.MY.stats.strength.mod;
+			// console.log('Str_X_Plus_1_Num_MOD', num)
+
 			let lvl = this.$root.MY.level;
-			let kof = null;
-			if (lvl < 5) {
-				kof = 1;
-			} else if (lvl < 11) {
-				kof = 2;
-			} else if (lvl < 17) {
-				kof = 3;
-			} else {
-				kof = 4;
-			}
-			let res = str + kof;
-			return `${res}×`;
-			//return to: impact_size_str
-			//1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
-			//Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
+			return pls + mod + lvl;
+			// return num + mod;
 
-		Str_X_Plus_1() {
-			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Mana_Numb;
-			let res = str + mana;
-			return `${res}×`;
-			//return to: impact_size_str
-			//Exapmle: str = 3
-			//spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
-			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 4× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Str_X_Plus_2() {
-			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Mana_Numb;
-			let res = str + mana * 2;
-			return `${res}×`;
-			//return to: impact_size_str
-			//Exapmle: str = 3
-			//spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
-			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 5× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Str_Plus_40() {
-			//не добавлять "×"
-
-			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Mana_Numb;
-			let res = mana * 40;
-			return `${res}`;
-			//Example:
-			//str = 40
-			//spell{1} = 40
-			//spell{2} = 80
-			//spell{3} = 120
-
-			// + aoe size через скобочки
-		},
-		// ------ STR -----------
-
+        //Example: 
+        //base_stat = strenth
+        //pls = base_stat_mod = strength.mod = 3
+        //spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
+        //spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
+    },
+    Pls_Plus_5()
+    {
+      let pls = this.Spell_Index.impact_size_pls;
+      let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+      let res = pls + (mana - mana_min) * 5;
+      return res;
+        //return to: impact_size_pls
+        //Exapmle: pls = 4
+        //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
+        //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
+    },
+    // ------ PLS -----------
 		// -----------------------------------
 
 		// ------ FOO -----------
