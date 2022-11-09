@@ -2160,7 +2160,7 @@ export default {
     feat_mounted_combatant: "Верховой боец",
     feat_mounted_combatant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
 
-    on_mounted_attack: "на атаки по существам не верхом и меньше вашего скакуна.",
+    on_mounted_attack: "на верховые атаки по существам не верхом и меньше вашего скакуна.",
 
     redirect_attack: "перенаправить атаку",
     from_mount_on_self: "со скакуна на себя",
@@ -2169,5 +2169,15 @@ export default {
     on_mount_save_dex: "скакуну при Испытаниях Ловкости",
 
     feat_observant: "Внимательный",
-    feat_observant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
+    feat_observant_details: "Вы быстро улавливаете мелкие подробности.",
+
+    lips_read: "чтение по губам",
+    on_known_languages: "на выученных языках",
+
+    feat_martial_adept: "Воинский адепт",
+    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приёмы.",
+
+    plus_1: "+1",
+    supremacy_dice: "кость превосходства d6."
+
 }
