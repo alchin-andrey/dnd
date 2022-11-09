@@ -186,6 +186,41 @@ export default {
         ]
     },
 
+    observant:
+    {
+        name: "feat_observant",
+        details: "feat_observant_details",
+
+        stats: 
+        [
+            {
+                intelligence: 1,
+                wisdom: 1,
+                perception_passive: 5,
+                investigation_passive: 5,
+            },
+        ],
+
+        fines:
+        [
+            {
+                type: "plus",
+                keyword: "lips_read",
+                details: "on_known_languages",
+            },
+        ]
+    },
+
+    martial_adept: // доработать
+    {
+        name: "feat_martial_adept",
+        details: "feat_martial_adept_details",
+
+        // остановился здесь
+    },
+
+    
+
     example:
     {
         name: "feat_example",
