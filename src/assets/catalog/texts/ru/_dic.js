@@ -2116,4 +2116,58 @@ export default {
     spell_create_or_destroy_water: spells.create_or_destroy_water,
     spell_create_or_destroy_water_details: spells.create_or_destroy_water_details,
     spell_create_or_destroy_water_expanded: spells.create_or_destroy_water_expanded,
+
+    short_run: "короткий разбег",
+
+    feat_athlete: "Атлет",
+    feat_athlete_details: "Вы прошли интенсивную физическую подготовку.",
+
+    quicko: "быстрое",
+    getting_up: "втавание на ноги",
+
+    feat_alert: "Бдительный",
+    feat_alert_details: "Вы всегда готовы к опасностям.",
+
+    on_sudden: "к заставанию расплох",
+
+    on_stealth: "на атаки из скрытности по вам",
+
+    feat_war_caster: "Боевой заклинатель",
+    feat_war_caster_details: "Вы научились накладывать заклинания в пылу сражения и узнали магические техники.",
+
+    on_con_save_while_concentrating: "на Испытания Телосложения при концентрации",
+
+    use_somatic: "Использование Жестов",
+    in_taken_hands: "занятыми руками",
+
+    cast_reaction: "Реакция как Каст",
+    for_spells_action: "для заклинаний с Кастом Бонусное или Основное действие",
+
+    feat_grappler: "Борец",
+    feat_grappler_details: "Вы развили навыки, нужные для тесного захвата противников.",
+
+    on_attack_grapple: "на атаки цели, которую вы держите в захвате",
+
+    restrain: "Опутывание",
+    creature_on_addititonal_grapple: "сущетсва при дополнительном захвате",
+
+    feat_lucky: "Везунчик",
+    feat_lucky_details: "Вам непонятным образом везёт как раз тогда, когда это нужно.",
+
+    advantage_x3: "3 преимущества в день",
+    on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам",
+
+    feat_mounted_combatant: "Верховой боец",
+    feat_mounted_combatant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
+
+    on_mounted_attack: "на атаки по существам не верхом и меньше вашего скакуна.",
+
+    redirect_attack: "перенаправить атаку",
+    from_mount_on_self: "со скакуна на себя",
+
+    reduce_damage: "уменьшение урона",
+    on_mount_save_dex: "скакуну при Испытаниях Ловкости",
+
+    feat_observant: "Внимательный",
+    feat_observant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
 }

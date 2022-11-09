@@ -29,6 +29,163 @@ export default {
         ]
     },
 
+    athlete:
+    {
+        name: "feat_athlete",
+        details: "feat_athlete_details",
+
+        stats: 
+        [
+            {
+                strength: 1,
+                dexterity: 1,
+            },
+        ],
+
+        fines:
+        [
+            {
+                type: "plus",
+                keyword: "quicko",
+                details: "getting_up",
+            },
+            {
+                type: "plus",
+                keyword: "climbing",
+                details: "without_speed_fee",
+            },
+            {
+                type: "plus",
+                keyword: "short_run",
+                details: "on_size_jupms",
+            },
+        ]
+    },
+
+    alert:
+    {
+        name: "feat_alert",
+        details: "feat_alert_details",
+
+        stats: 
+        [
+            {
+                initiative: 5,
+            },
+        ],
+
+        fines:
+        [
+            {
+                type: "advantage",
+                keyword: "immunity",
+                details: "on_sudden",
+            },
+            {
+                type: "advantage",
+                keyword: "no_advantage",
+                details: "without_speed_fee",
+            },
+        ]
+    },
+
+    war_caster:
+    {
+        name: "feat_war_caster",
+        details: "feat_war_caster_details",
+
+        condition: "spell_attribute",
+        //Требования: Способность накладывать хотя бы одно заклинание
+
+        fines:
+        [
+            {
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_con_save_while_concentrating",
+            },
+            {
+                type: "plus",
+                keyword: "use_somatic",
+                details: "in_taken_hands",
+            },
+            {
+                type: "plus",
+                keyword: "cast_reaction",
+                details: "for_spells_action",
+            },
+        ]
+    },
+
+    grappler:
+    {
+        name: "feat_grappler",
+        details: "feat_grappler_details",
+
+        condition: "strength > 12",
+        //Требования: Сила 13 или выше
+
+        fines:
+        [
+            {
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_attack_grapple",
+            },
+            {
+                type: "plus",
+                keyword: "restrain",
+                details: "creature_on_addititonal_grapple",
+            },
+        ]
+    },
+
+    lucky:
+    {
+        name: "feat_lucky",
+        details: "feat_lucky_details",
+
+        condition: "strength > 12",
+        //Требования: Сила 13 или выше
+
+        fines:
+        [
+            {
+                type: "advantage",
+                keyword: "advantage_x3",
+                details: "on_attack_grapple",
+            },
+        ]
+    },
+
+    mounted_combatant:
+    {
+        name: "feat_mounted_combatant",
+        details: "feat_mounted_combatant_details",
+
+        condition: "strength > 12",
+        //Требования: Сила 13 или выше
+
+        fines:
+        [
+            {
+                type: "advantage",
+                keyword: "advantage_x3",
+                details: "on_mounted_attack",
+            },
+            {
+                type: "resistance",
+                keyword: "redirect_attack",
+                details: "from_mount_on_self",
+            },
+            {
+                type: "resistance",
+                keyword: "reduce_damage",
+                details: "on_mount_save_dex",
+            },
+        ]
+    },
+
     example:
     {
         name: "feat_example",
