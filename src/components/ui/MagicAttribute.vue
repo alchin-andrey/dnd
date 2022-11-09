@@ -12,7 +12,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-			<div v-if="main" class="numb small">{{ Str }} {{ numb }}{{ Dice }}{{ Pls }}</div>
+			<div v-if="main" class="numb small">{{ str }} {{ numb }}{{ Dice }}{{ Pls }}</div>
 			<div v-else class="numb" :class="{ passive: save }">
 				{{ Prefix }} {{ Plus }}{{ Value }}{{ save }} {{ t_Suffix }}
 			</div>
@@ -46,9 +46,13 @@ export default {
 			default: false,
 		},
     str: {
-			type: Number,
+			type: String,
 			default: null,
 		},
+    // str: {
+		// 	type: Number,
+		// 	default: null,
+		// },
 		numb: {
 			type: Number,
 			default: null,
@@ -144,7 +148,7 @@ export default {
 
 		Suffix() {
 			if (this.Distance) {
-				if (this.Miles) {
+				if (this.Miles && this.Value !== 0) {
 					let mod10 = Math.abs(this.Value % 10);
 					let mod100 = Math.abs(this.Value % 100);
 					if (mod100 > 10 && mod100 < 20) {

@@ -44,7 +44,7 @@
 			/>
 		</div>
 	</div>
-	<my-dialog-spell v-model:show="dialogVisible">
+	<my-dialog-spell v-model:show="dialogVisible" v-model:mana="mana_numb">
 		<my-wrapper>
 			<div class="title_spell gray_2">{{ t_Type }} /</div>
 			<div class="title_spell">
@@ -66,9 +66,9 @@
 				@click="choiceManna(n)"
 				:class="{
 					manna_bubble_passive: n - 1 < Index,
-					manna_bubble_active: n - 1 === manna_numb,
+					manna_bubble_active: n - 1 === mana_numb,
 					manna_bubble_hover:
-						!(n - 1 < Index) && !(n - 1 === manna_numb),
+						!(n - 1 < Index) && !(n - 1 === mana_numb),
 				}"
 			>
 				{{ n - 1 }}
@@ -122,7 +122,7 @@
 				v-if="Spell_Index.aim_aoe"
 				title="aim_aoe"
 				:prefix="Spell_Index.aim_aoe"
-				:numb="Spell_Index.aim_aoe_size"
+				:numb="by_Mana('aim_aoe_size')"
 			/>
 		</my-wrapper>
 		<my-wrapper v-if="Spell_Index.saving_need">
@@ -152,7 +152,7 @@ export default {
 		return {
 			dialogVisible: false,
 			numb_type: 0,
-			manna_numb: null,
+			mana_numb: null,
 			emoji_size: 16,
 		};
 	},
@@ -177,15 +177,18 @@ export default {
 		Spell_Index() {
 			return this.spell[this.Index];
 		},
-		Manna_Index() {
-			return this.spell[this.manna_numb];
-		},
-		Manna_Numb() {
-			if (this.manna_numb) {
-				return this.manna_numb;
+		// Manna_Index() {
+		// 	return this.spell[this.mana_numb];
+		// },
+		Mana_Numb() {
+			if (this.mana_numb) {
+				return this.mana_numb;
 			} else {
 				return this.Index;
 			}
+		},
+		Manna_Index() {
+			return this.spell[this.Mana_Numb];
 		},
 		Manna_Length() {
 			// console.log('Manna_Length', this.spell.length)
@@ -265,7 +268,8 @@ export default {
 			} else {
 				kof = 4;
 			}
-			return str + kof;
+			let res = str + kof;
+			return `${res}×`;
 			//return to: impact_size_str
 			//1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
 			//Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
@@ -273,8 +277,9 @@ export default {
 
 		Str_X_Plus_1() {
 			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Manna_Numb;
-			return str + mana;
+			let mana = this.Mana_Numb;
+			let res = str + mana;
+			return `${res}×`;
 			//return to: impact_size_str
 			//Exapmle: str = 3
 			//spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
@@ -284,13 +289,30 @@ export default {
 
 		Str_X_Plus_2() {
 			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Manna_Numb;
-			return str + mana * 2;
+			let mana = this.Mana_Numb;
+			let res = str + mana * 2;
+			return `${res}×`;
 			//return to: impact_size_str
 			//Exapmle: str = 3
 			//spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
 			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
 			//spell{2}: 5× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
+
+		Str_Plus_40() {
+			//не добавлять "×"
+
+			let str = this.Spell_Index.impact_size_str;
+			let mana = this.Mana_Numb;
+			let res = mana * 40;
+			return `${res}`;
+			//Example:
+			//str = 40
+			//spell{1} = 40
+			//spell{2} = 80
+			//spell{3} = 120
+
+			// + aoe size через скобочки
 		},
 		// ------ STR -----------
 
@@ -421,13 +443,13 @@ export default {
 				return null;
 			}
 			this.dialogVisible = true;
-			this.manna_numb = this.Index;
+			this.mana_numb = this.Index;
 		},
 		choiceManna(numb) {
 			if (numb - 1 < this.Index) {
 				return null;
 			} else {
-				this.manna_numb = numb - 1;
+				this.mana_numb = numb - 1;
 			}
 		},
 
@@ -443,7 +465,7 @@ export default {
 		},
 
 		gat_Value_Foo(val) {
-      let low_val = val.toLowerCase()
+			let low_val = val.toLowerCase();
 			let num = this.Spell_Index[`impact_size_${low_val}`];
 			let sub_foo_1 = this.gat_Sub_Foo(1, val);
 			let sub_foo_2 = this.gat_Sub_Foo(2, val);
@@ -461,6 +483,24 @@ export default {
 				return num_foo;
 			}
 			return num;
+		},
+
+		by_Mana(str) {
+      let val = this.Manna_Index[str];
+			if (val) {
+				return val;
+			} else {
+        let main_num = this.Index;
+        let num = this.Mana_Numb;
+        let res = null
+				for (let i = num; i > main_num - 1; i--) {
+					if(this.spell[i].hasOwnProperty(str)){
+            res = this.spell[i][str];
+            break
+          }
+				}
+				return res;
+			}
 		},
 	},
 };

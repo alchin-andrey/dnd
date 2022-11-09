@@ -113,10 +113,10 @@ export default {
               spell: spells.heroism,
             },
 
-            // {
-            //   level: 1,
-            //   spell: spells.create_or_destroy_water,
-            // },
+            {
+              level: 1,
+              spell: spells.create_or_destroy_water,
+            },
 
             //Num
 
