@@ -558,33 +558,28 @@ export default {
 
 			race_page: race_page,
 
-			foo_met: "getFoo",
-			foo_com: "Foo_PS",
 			numb_foo: 1,
 		};
 	},
 
 	created() {
-		this.default_MY.race = Object.values(this.race)[0];
-		this.default_MY.ethnos = Object.values(
-			this.default_MY.race.settings.ethnos
-		)[0];
-		this.MY = this.default_MY;
+		// this.MY.race = Object.values(this.race)[0];
+		// this.MY.ethnos = Object.values(
+		// 	this.MY.race.settings.ethnos
+		// )[0];
+		// this.MY = this.default_MY;
 		this.MY.mastery = this.Mastery;
-		// this.MY.height = this.Get_Hight;
-		this.getExtra(this.Stats_Pass, "stats");
-		this.getExtra(this.Skills_Pass, "skills");
-		this.getExtra(this.Lang_Pass, "languages");
-		// console.log(this[this.foo_met](this.numb_foo));
+
+		// this.getExtra(this.Stats_Pass, "stats");
+		// this.getExtra(this.Skills_Pass, "skills");
+		// this.getExtra(this.Lang_Pass, "languages");
+    this.getFunction();
 	},
 
 	computed: {
 		...mapGetters({
 			MY_race: 'MY/race'
 		}),
-		Foo_PS() {
-			return this.numb_foo * 2;
-		},
 
 		Mastery() {
 			return Math.ceil(this.MY.level / 4);
@@ -866,22 +861,6 @@ export default {
 			this.dic.select_lang_icon = icon;
 		},
 
-		plus() {
-			this.numb_foo++;
-		},
-
-		plusLvl() {
-			this.MY.level++;
-		},
-
-		F(foo, numb) {
-			return this[foo](numb);
-		},
-
-		getFoo(numb) {
-			return numb * 2;
-		},
-
 		getFunction() {
 			this.getNewEthnos();
 			this.closeEthnos();
@@ -988,7 +967,7 @@ export default {
 		}),
 
 		show(name, key) {
-			this.TEST_1_CHANGE();
+			// this.TEST_1_CHANGE();
 			this.MY_race;
 			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
 				this.race_page.shown_selection = false;

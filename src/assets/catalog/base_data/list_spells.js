@@ -3364,7 +3364,7 @@ export default {
       impact_damage_type: "bonus_w",
 
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3×, spell{2} = 4×, spell{3} = 5× ...
-      impact_size_string: 3,
+      impact_size_string: 2,
       impact_size_num: 1,
       impact_size_dice: 4,
       impact_size_plus: null,
@@ -3577,7 +3577,7 @@ export default {
       impact_damage_type: "force_w",
 
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3× 1d4+1 , spell{2} = 4× 1d4+1, spell{3} = 5× 1d4+1
-      impact_size_string: 3,
+      impact_size_string: 2,
       impact_size_num: 1,
       impact_size_dice: 4,
       impact_size_plus: 1,
@@ -3678,7 +3678,7 @@ export default {
       impact_type: "hp_bonus",
       impact_damage_type: "temporary",
 
-      impact_size_foo: "Str_X_Plus_1_Num_MOD",
+      impact_size_foo: "Str_X_Plus_1__Num_MOD",
       //Cущество в начале каждого своего хода получает временные хиты, равные модификатору вашей базовой характеристики.
       //Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы можете сделать целью одно дополнительное существо за каждый уровень ячейки выше первого.
       impact_size_string: 1,
@@ -7179,7 +7179,7 @@ export default {
 
       impact_size_foo: "Str_X_Plus_2",
       //Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, количество боеприпасов увеличивается на два за каждый уровень ячейки выше второго.
-      impact_size_string: 4,
+      impact_size_string: 1,
       impact_size_num: 1,
       impact_size_dice: 6,
       impact_size_plus: null,
@@ -8261,7 +8261,7 @@ export default {
       impact_size_foo: "Str_X_Plus_1",
       //Вы создаёте три огненных луча и направляете их на целей, находящихся в пределах дистанции.
       //Вы создаёте один дополнительный луч за каждый уровень ячейки выше второго.
-      impact_size_string: 3,
+      impact_size_string: 2,
       impact_size_num: 2,
       impact_size_dice: 6,
       impact_size_plus: null,

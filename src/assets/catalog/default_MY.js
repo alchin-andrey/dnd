@@ -1,11 +1,14 @@
 import color from "./base_data/_colors.js";
+import races from "./base_data/step1_races.js";
 
 export default {
     
     //Key selections
     name:null,
-    race: "gnome",
-    ethnos: "rock",
+    // race: Object.values(races)[0],
+    // ethnos: Object.values(Object.values(races)[0].settings.ethnos)[0],
+    race: races.gnome,
+    ethnos: races.gnome.settings.ethnos.rock,
     class:null,
     subclass:null,
     backstory:null,

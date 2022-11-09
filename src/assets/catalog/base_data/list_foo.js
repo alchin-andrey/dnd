@@ -44,14 +44,14 @@ export default {
     },
 
     //Str
-
+//DONE
     Str_X_Level_5_11_17()
     {
         //return to: impact_size_string
         //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
         //Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
     },
-
+//DONE
     Str_X_Plus_1()
     {
         let str = this.Spell_Index.impact_size_string;
@@ -63,7 +63,7 @@ export default {
         //spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
         //spell{2}: 4× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
     },
-
+//DONE
     Str_X_Plus_2()
     {
         let str = this.Spell_Index.impact_size_string;
