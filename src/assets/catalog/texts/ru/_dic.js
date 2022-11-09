@@ -2157,4 +2157,17 @@ export default {
     advantage_x3: "3 преимущества в день",
     on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам",
 
+    feat_mounted_combatant: "Верховой боец",
+    feat_mounted_combatant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
+
+    on_mounted_attack: "на атаки по существам не верхом и меньше вашего скакуна.",
+
+    redirect_attack: "перенаправить атаку",
+    from_mount_on_self: "со скакуна на себя",
+
+    reduce_damage: "уменьшение урона",
+    on_mount_save_dex: "скакуну при Испытаниях Ловкости",
+
+    feat_observant: "Внимательный",
+    feat_observant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
 }

@@ -158,6 +158,34 @@ export default {
         ]
     },
 
+    mounted_combatant:
+    {
+        name: "feat_mounted_combatant",
+        details: "feat_mounted_combatant_details",
+
+        condition: "strength > 12",
+        //Требования: Сила 13 или выше
+
+        fines:
+        [
+            {
+                type: "advantage",
+                keyword: "advantage_x3",
+                details: "on_mounted_attack",
+            },
+            {
+                type: "resistance",
+                keyword: "redirect_attack",
+                details: "from_mount_on_self",
+            },
+            {
+                type: "resistance",
+                keyword: "reduce_damage",
+                details: "on_mount_save_dex",
+            },
+        ]
+    },
+
     example:
     {
         name: "feat_example",
