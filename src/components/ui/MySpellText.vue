@@ -133,7 +133,7 @@
 				:numb="Saving_Numb"
 			/>
 			<magic-attribute
-				v-if="Spell_Index.impact_type"
+				v-if="Spell_Index.impact_size_saved"
 				:title="Spell_Index.impact_type"
 				:addition="Spell_Index.impact_damage_type"
 				:save="Spell_Index.impact_size_saved"
@@ -415,6 +415,32 @@ export default {
 			//spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
 			//spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
 		},
+
+    Pls_STR() 
+    {
+      let pls = this.Spell_Index.impact_size_pls;
+			let mod = this.$root.MY.stats.strength.mod;
+
+			let lvl = this.$root.MY.level;
+			return pls + mod + lvl;
+
+        //return to: impact_size_pls
+        //if < 0 then 0
+        // Example: +3 ⬜️⬜️⬜️
+    },
+
+    Pls_CHA()
+    {
+      let pls = this.Spell_Index.impact_size_pls;
+			let mod = this.$root.MY.stats.charisma.mod;
+
+			let lvl = this.$root.MY.level;
+			return pls + mod + lvl;
+
+        //return to: impact_size_pls
+        //if < 0 then 0
+        //Example: +4 ⬜️⬜️⬜️⬜️
+    },
 		// ------ PLS -----------
 		// -----------------------------------
 

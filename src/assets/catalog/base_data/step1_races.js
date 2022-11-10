@@ -145,10 +145,10 @@ export default {
               spell: spells.prayer_of_healing,
             },
 
-            // {
-            //   level: 1,
-            //   spell: spells.gust_of_wind,
-            // },
+            {
+              level: 1,
+              spell: spells.gust_of_wind,
+            },
 
             //Pls
 
@@ -157,15 +157,15 @@ export default {
               spell: spells.armor_of_agathys,
             },
 
-            // {
-            //   level: 1,
-            //   spell: spells.elk_knock,
-            // },
+            {
+              level: 1,
+              spell: spells.elk_knock,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.divine_channel_devotion_1,
-            // },
+            {
+              level: 1,
+              spell: spells.divine_channel_devotion_1,
+            },
 
             //Скобочки
 

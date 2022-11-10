@@ -8675,7 +8675,8 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      // impact_size_foo: "Num_Feet",
+      impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 15,
       impact_size_dice: null,

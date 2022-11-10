@@ -155,7 +155,7 @@ export default {
         //spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
         //spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
     },
-
+//DONE
     Num_Feet()
     {
         //превратить num в футы
@@ -173,7 +173,7 @@ export default {
         //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
         //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
     },
-
+//DONE
     Pls_STR() 
     {
         let pls = this.$root.MY.stats.strength.mod;
@@ -183,7 +183,7 @@ export default {
         //if < 0 then 0
         // Example: +3 ⬜️⬜️⬜️
     },
-
+//DONE
     Pls_CHA()
     {
         let pls = this.$root.MY.stats.charisma.mod;

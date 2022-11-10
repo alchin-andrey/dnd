@@ -12,7 +12,10 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-			<div v-if="main" class="numb small">{{ Str }} {{ numb }}{{ Dice }}{{ Pls }}</div>
+			<div v-if="main" class="numb" :class="{ passive: save }">
+				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
+				>{{ Pls }} {{ t_Suffix }}
+			</div>
 			<div v-else class="numb" :class="{ passive: save }">
 				{{ Prefix }} {{ Plus }}{{ Value }}{{ save }} {{ t_Suffix }}
 			</div>
@@ -41,15 +44,15 @@ export default {
 			type: String,
 			default: null,
 		},
-    main: {
+		main: {
 			type: Boolean,
 			default: false,
 		},
-    // str: {
+		// str: {
 		// 	type: String,
 		// 	default: null,
 		// },
-    str: {
+		str: {
 			type: Number,
 			default: null,
 		},
@@ -61,7 +64,7 @@ export default {
 			type: Number,
 			default: null,
 		},
-    pls: {
+		pls: {
 			type: Number,
 			default: null,
 		},
@@ -77,10 +80,10 @@ export default {
 			type: String,
 			default: null,
 		},
-    save: {
-      type: String,
+		save: {
+			type: String,
 			default: null,
-    },
+		},
 	},
 
 	computed: {
@@ -108,29 +111,29 @@ export default {
 			return this.t(this.addition);
 		},
 
-    Dice() {
-		return this.dice ? `d${this.dice}` : null;
-    },
+		Dice() {
+			return this.dice ? `d${this.dice}` : null;
+		},
 
-    Pls() {
-      return this.pls ? `+${this.pls}` : null;
-    },
+		Pls() {
+			return this.pls ? `+${this.pls}` : null;
+		},
 
-    // Str() {
-    //   return this.str ? `${this.str}×` : null;
-    // },
+		// Str() {
+		//   return this.str ? `${this.str}×` : null;
+		// },
 
-    Str() {
-      if(this.str) {
-        if(this.title === "liters_number") {
-          return this.str;
-        } else {
-          return `${this.str}×`;
-        }
-      } else {
-        return null;
-      }
-    },
+		Str() {
+			if (this.str) {
+				if (this.title === "liters_number") {
+					return this.str;
+				} else {
+					return `${this.str}×`;
+				}
+			} else {
+				return null;
+			}
+		},
 
 		Prefix() {
 			return this.prefix ? this.t(this.prefix) : null;
@@ -144,24 +147,28 @@ export default {
 		// 	return this.numb % 5280 === 0;
 		// },
 
-    Miles() {
-      let num = this.numb % 5280 === 0;
-      let not_0 = this.numb !== null;
+		Miles() {
+			let num = this.numb % 5280 === 0;
+			let not_0 = this.numb !== null;
 			return num && not_0;
 		},
 
 		Distance() {
-			return this.title === "aim_range" || this.title === "aim_aoe";
+			return (
+				this.title === "aim_range" ||
+				this.title === "aim_aoe" ||
+				this.title === "push" && !this.save
+			);
 		},
 
-    Value() {
+		Value() {
 			if (this.save) {
 				return null;
 			} else if (this.Miles) {
 				return this.numb / 5280;
 			} else {
-        return this.numb;
-      }
+				return this.numb;
+			}
 		},
 
 		Suffix() {
