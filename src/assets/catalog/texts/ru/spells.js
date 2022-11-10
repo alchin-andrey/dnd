@@ -203,7 +203,7 @@ export const rage =
 export const rage_details = 
 '<span class="buff">• Преимущество</span> на проверки Силы<br/>'+
 '<span class="buff">• Бонусный урон</span> ближним оружием<br/>' +
-'<span class="buff">• Сопротивление</span> дробящему, колющему, рубящему урону<br/>'
+'<span class="buff">• Сопротивление</span> дробящему, колющему, рубящему урону<br/>' +
 '<span class="debuff">• Нельзя</span> использовать заклинания';
 
 export const rage_expanded = 

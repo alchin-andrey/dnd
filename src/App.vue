@@ -1224,6 +1224,10 @@ a {
 	color: #05ff00;
 }
 
+.debuff {
+  color: #FF0000;
+}
+
 .jbm-300 {
 	font-family: "JetBrains Mono";
 	font-style: normal;
