@@ -145,6 +145,8 @@
 </template>
 
 <script>
+import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
+
 export default {
 	name: "MySpellText",
 
@@ -220,7 +222,7 @@ export default {
 		Str_X_Plus_1() {
 			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Mana_Numb;
-      let mana_min = this.Index;
+			let mana_min = this.Index;
 			let res = str + (mana - mana_min);
 			return res;
 			//return to: impact_size_str
@@ -233,7 +235,7 @@ export default {
 		Str_X_Plus_2() {
 			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Mana_Numb;
-      let mana_min = this.Index;
+			let mana_min = this.Index;
 			let res = str + (mana - mana_min) * 2;
 			return res;
 			//return to: impact_size_str
@@ -259,7 +261,13 @@ export default {
 			// + aoe size через скобочки
 		},
 		// ------ STR -----------
-    		// ------ NUM -----------
+		// ------ NUM -----------
+
+		Num_Barbarian_Rage_Bonus() {
+      
+			console.log('barbarian_rage_bonus:', barbarian_rage_bonus[this.$root.MY.level])
+			return barbarian_rage_bonus[this.$root.MY.level]; // convert to store
+		},
 
 		Num_Plus_Level_2() {
 			let num = this.Spell_Index.impact_size_num;
@@ -274,6 +282,20 @@ export default {
 			let lvl = this.$root.MY.level;
 
 			return num * lvl;
+		},
+
+    Num_Level_9_16() {
+			let num = this.Spell_Index.impact_size_num;
+			let lvl = this.$root.MY.level;
+			let kof = 0;
+			if (lvl < 9) {
+				kof = 0;
+			} else if (lvl < 16) {
+				kof = 1;
+			} else {
+				kof = 2;
+			}
+			return num + kof;
 		},
 
 		Num_Level_5_11_17() {
@@ -309,7 +331,7 @@ export default {
 		},
 
 		Num_MOD() {
-      let num = this.Spell_Index.impact_size_num;
+			let num = this.Spell_Index.impact_size_num;
 			let mod = this.$root.MY.stats.strength.mod;
 			// console.log('Str_X_Plus_1_Num_MOD', num)
 
@@ -317,84 +339,83 @@ export default {
 			return num + mod + lvl;
 			// return num + mod;
 		},
-    Num_Plus_05() {
-      let num = this.Spell_Index.impact_size_num;
-      let mana = this.Mana_Numb;
-      let mana_min = this.Index;
-      let res = num + Math.floor((mana - mana_min) / 2);
-      return res;
-        //spell{1} = num, spell{2} = num, spell{3} = num+1 ...
-        //Example: 
-        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-        //spell{2}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-        //spell{3}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-    },
-    Num_Plus_1() {
-      let num = this.Spell_Index.impact_size_num;
-      let mana = this.Mana_Numb;
-      let mana_min = this.Index;
-      let res = num + (mana - mana_min);
-      return res;
-        //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
-        //Example: 
-        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-        //spell{2}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-    },
+		Num_Plus_05() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			let res = num + Math.floor((mana - mana_min) / 2);
+			return res;
+			//spell{1} = num, spell{2} = num, spell{3} = num+1 ...
+			//Example:
+			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			//spell{2}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			//spell{3}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
+		Num_Plus_1() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			let res = num + (mana - mana_min);
+			return res;
+			//spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
+			//Example:
+			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			//spell{2}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
 
-    Num_Plus_2() {
-      let num = this.Spell_Index.impact_size_num;
-      let mana = this.Mana_Numb;
-      let mana_min = this.Index;
-      let res = num + (mana - mana_min) * 2;
-      return res;
-        //spell{1} = num, spell{2} = num+2, spell{3} = num+4 ...
-        //Example: 
-        //spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-        //spell{2}: 3d10 ⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-    },
+		Num_Plus_2() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			let res = num + (mana - mana_min) * 2;
+			return res;
+			//spell{1} = num, spell{2} = num+2, spell{3} = num+4 ...
+			//Example:
+			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			//spell{2}: 3d10 ⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
 
-    Num_Plus_5() {
-      let num = this.Spell_Index.impact_size_num;
-      let mana = this.Mana_Numb;
-      let mana_min = this.Index;
-      let res = num + (mana - mana_min) * 5;
-      return res;
-        //return to: impact_size_num
-        //spell{1} = num, spell{2} = num+5, spell{3} = num+10 ...
-        //Example: 
-        //spell{1}: 1d4 ⬜️🔳🔳🔳
-        //spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-    },
+		Num_Plus_5() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			let res = num + (mana - mana_min) * 5;
+			return res;
+			//return to: impact_size_num
+			//spell{1} = num, spell{2} = num+5, spell{3} = num+10 ...
+			//Example:
+			//spell{1}: 1d4 ⬜️🔳🔳🔳
+			//spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+		},
 		// ------ NUM -----------
-    // ------ PLS -----------
-    Pls_MOD() {
-      let pls = this.Spell_Index.impact_size_pls;
-      let mod = this.$root.MY.stats.strength.mod;
+		// ------ PLS -----------
+		Pls_MOD() {
+			let pls = this.Spell_Index.impact_size_pls;
+			let mod = this.$root.MY.stats.strength.mod;
 			// console.log('Str_X_Plus_1_Num_MOD', num)
 
 			let lvl = this.$root.MY.level;
 			return pls + mod + lvl;
 			// return num + mod;
 
-        //Example: 
-        //base_stat = strenth
-        //pls = base_stat_mod = strength.mod = 3
-        //spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
-        //spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
-    },
-    Pls_Plus_5()
-    {
-      let pls = this.Spell_Index.impact_size_pls;
-      let mana = this.Mana_Numb;
-      let mana_min = this.Index;
-      let res = pls + (mana - mana_min) * 5;
-      return res;
-        //return to: impact_size_pls
-        //Exapmle: pls = 4
-        //spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
-        //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
-    },
-    // ------ PLS -----------
+			//Example:
+			//base_stat = strenth
+			//pls = base_stat_mod = strength.mod = 3
+			//spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
+			//spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
+		},
+		Pls_Plus_5() {
+			let pls = this.Spell_Index.impact_size_pls;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			let res = pls + (mana - mana_min) * 5;
+			return res;
+			//return to: impact_size_pls
+			//Exapmle: pls = 4
+			//spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
+			//spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
+		},
+		// ------ PLS -----------
 		// -----------------------------------
 
 		// ------ FOO -----------
@@ -494,7 +515,7 @@ export default {
 				value_1 = this.t(this.Spell_Index.spell_time);
 			}
 			// let value_2 = this.Spell_Index.spell_duration;
-      let value_2 = this.by_Mana('spell_duration');
+			let value_2 = this.by_Mana("spell_duration");
 			let value_3 = this.t(this.Spell_Index.spell_duration_units);
 			let string = null;
 			if (!value_1) {
@@ -566,18 +587,18 @@ export default {
 		},
 
 		by_Mana(str) {
-      let val = this.Manna_Index[str];
+			let val = this.Manna_Index[str];
 			if (val) {
 				return val;
 			} else {
-        let main_num = this.Index;
-        let num = this.Mana_Numb;
-        let res = null
+				let main_num = this.Index;
+				let num = this.Mana_Numb;
+				let res = null;
 				for (let i = num; i > main_num - 1; i--) {
-					if(this.spell[i].hasOwnProperty(str)){
-            res = this.spell[i][str];
-            break
-          }
+					if (this.spell[i].hasOwnProperty(str)) {
+						res = this.spell[i][str];
+						break;
+					}
 				}
 				return res;
 			}

@@ -81,10 +81,10 @@ export default {
 
             // По классовой бабуйне
 
-            // {
-            //   level: 1,
-            //   spell: spells.rage,
-            // },
+            {
+              level: 1,
+              spell: spells.rage,
+            },
 
             // String (первая часть, которая чаще всего с "×")
 

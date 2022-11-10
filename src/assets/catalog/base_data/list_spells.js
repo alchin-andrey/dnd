@@ -806,10 +806,11 @@ export default {
         necrotic_w: "💀 Некротический",
         psychic_w: "🧠 Психический",
       */
-
-      impact_size_foo: "Num_Barbarian_Rage_Bonus", //done
+      // impact_size_foo: "Num_Barbarian_Rage_Bonus", //done
+      impact_size_foo: "Num_Level_9_16", //done
       impact_size_str: null,
-      impact_size_num: null, //this.$root.step2_classes.barbarian_rage_bonus[this.$root.MY.level],
+      impact_size_num: 2,
+      // impact_size_num: null, //this.$root.step2_classes.barbarian_rage_bonus[this.$root.MY.level],
       impact_size_dice: null,
       impact_size_pls: null,
 
