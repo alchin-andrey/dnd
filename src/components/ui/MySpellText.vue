@@ -652,7 +652,7 @@ export default {
 
 .manna_flex {
 	display: flex;
-	gap: 4px;
+	gap: 3px;
 }
 
 .manna_bubble {
