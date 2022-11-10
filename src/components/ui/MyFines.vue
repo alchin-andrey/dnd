@@ -97,7 +97,8 @@ export default {
 }
 
 .negative {
-  color: #ff0000;
+  color: #FF0000;
+  /* font-weight: 600; */
 }
 
 .emoji-mart-emoji {

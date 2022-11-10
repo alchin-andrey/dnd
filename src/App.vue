@@ -529,7 +529,7 @@ import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 import Header from "./components/Header.vue";
 
-import { mapGetters, mapActions, mapMutations} from "vuex"
+import { mapGetters, mapActions, mapMutations } from "vuex";
 
 export default {
 	name: "App",
@@ -573,12 +573,12 @@ export default {
 		// this.getExtra(this.Stats_Pass, "stats");
 		// this.getExtra(this.Skills_Pass, "skills");
 		// this.getExtra(this.Lang_Pass, "languages");
-    this.getFunction();
+		this.getFunction();
 	},
 
 	computed: {
 		...mapGetters({
-			MY_race: 'MY/race'
+			MY_race: "MY/race",
 		}),
 
 		Mastery() {
@@ -953,17 +953,16 @@ export default {
 			this.race_page.shown_languages = false;
 		},
 
-
 		...mapActions({
-			goHome: 'race_page/goHome',
-			def: 'MY/def'
+			goHome: "race_page/goHome",
+			def: "MY/def",
 		}),
 		...mapMutations({
-			GET_HOME_ARR: 'race_page/GET_HOME_ARR',
-			SHOW_SCROLL: 'race_page/SHOW_SCROLL',
-			SHOW_HOME: 'race_page/SHOW_HOME',
-			MY_DEF: 'MY/MY_DEF',
-			TEST_1_CHANGE: 'MY/TEST_1_CHANGE'
+			GET_HOME_ARR: "race_page/GET_HOME_ARR",
+			SHOW_SCROLL: "race_page/SHOW_SCROLL",
+			SHOW_HOME: "race_page/SHOW_HOME",
+			MY_DEF: "MY/MY_DEF",
+			TEST_1_CHANGE: "MY/TEST_1_CHANGE",
 		}),
 
 		show(name, key) {
@@ -1002,10 +1001,10 @@ export default {
 			this.def();
 			this.MY_race;
 			// this.SHOW_SKROLL('shown_humman_lang')
-      // this.shownHome();
-      // this.$store.commit('race_page/SHOW_HOME')
-		// 	GET_HOME_ARR
-      // this.$store.dispatch('race_page/showHome')
+			// this.shownHome();
+			// this.$store.commit('race_page/SHOW_HOME')
+			// 	GET_HOME_ARR
+			// this.$store.dispatch('race_page/showHome')
 		},
 
 		getHomeArr() {
@@ -1222,10 +1221,12 @@ a {
 
 .buff {
 	color: #05ff00;
+	/* font-weight: 600; */
 }
 
 .debuff {
-  color: #FF0000;
+	color: #ff0000;
+	/* font-weight: 600; */
 }
 
 .jbm-300 {
