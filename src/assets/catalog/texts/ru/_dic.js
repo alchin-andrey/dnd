@@ -2178,6 +2178,8 @@ export default {
     feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приёмы.",
 
     plus_1: "+1",
-    supremacy_dice: "кость превосходства d6."
+    supremacy_dice: "кость превосходства d6.",
+
+    if_succeed: "при успехе",
 
 }
