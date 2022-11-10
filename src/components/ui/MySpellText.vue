@@ -403,15 +403,15 @@ export default {
 		},
 
 		Foo_1() {
-			return this.Foo.split("__")[0];
+			return this.Foo ? this.Foo.split("__")[0] : null;
 		},
 
 		Foo_2() {
-			return this.Foo.split("__")[1];
+			return this.Foo ? this.Foo.split("__")[1] : null;
 		},
 
 		Foo_3() {
-			return this.Foo.split("__")[2];
+			return this.Foo ? this.Foo.split("__")[2] : null;
 		},
 
 		Value_Num() {
@@ -493,7 +493,8 @@ export default {
 			} else {
 				value_1 = this.t(this.Spell_Index.spell_time);
 			}
-			let value_2 = this.Spell_Index.spell_duration;
+			// let value_2 = this.Spell_Index.spell_duration;
+      let value_2 = this.by_Mana('spell_duration');
 			let value_3 = this.t(this.Spell_Index.spell_duration_units);
 			let string = null;
 			if (!value_1) {

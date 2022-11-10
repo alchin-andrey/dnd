@@ -169,25 +169,25 @@ export default {
 
             //Скобочки
 
-            // {
-            //   level: 1,
-            //   spell: spells.hunters_mark, //spell_duration
-            // },
+            {
+              level: 1,
+              spell: spells.hunters_mark, //spell_duration
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.hex, //spell_duration
-            // },
+            {
+              level: 1,
+              spell: spells.hex, //spell_duration
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.fog_cloud, //aoe_size
-            // },
+            {
+              level: 1,
+              spell: spells.fog_cloud, //aoe_size
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.animal_messenger, //spell_duration
-            // },
+            {
+              level: 1,
+              spell: spells.animal_messenger, //spell_duration
+            },
 
 
 
