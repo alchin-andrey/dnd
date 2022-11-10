@@ -9,7 +9,7 @@ import MY from "@/assets/catalog/MY.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
-const barbarian_rage =       [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99];
+const barbarian_rage =              [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 99];
 export const barbarian_rage_bonus = [0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4];
 
 export default {

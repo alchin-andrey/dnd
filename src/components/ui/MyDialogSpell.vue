@@ -59,7 +59,7 @@ export default {
 	padding: 28px;
 	background: #1C2326;
 	border-radius: 12px;
-	width: 418px;
+	width: 396px;
 	z-index: 100;
 	cursor: auto;
 	overflow-y: scroll;
