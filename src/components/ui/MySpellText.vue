@@ -723,9 +723,9 @@ export default {
 	/* white-space: pre-line; */
 }
 
-.text_spell:first-letter {
+/* .text_spell:first-letter {
 	text-transform: uppercase;
-}
+} */
 
 .hr {
 	height: 1px;
