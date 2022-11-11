@@ -8748,12 +8748,14 @@ export default {
     {
       spell_duration: 9,
     },
-    {},
     {
       spell_duration: 11,
     },
     {
       spell_duration: 13,
+    },
+    {
+      spell_duration: 15,
     },
   ],
 
