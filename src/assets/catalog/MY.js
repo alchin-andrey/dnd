@@ -1,8 +1,10 @@
 import color from "./base_data/_colors.js";
 import races from "./base_data/step1_races.js";
+// import classes from "./base_data/step2_classes.js";
 
-// let race_1 = Object.values(races)[0];
-// let ethnos_1 = Object.values(race_1.settings.ethnos)[0];
+// let race_def = Object.values(races)[0];
+// let ethnos_def = Object.values(race_def.settings.ethnos)[0];
+// let class_def = Object.values(classes)[0];
 
 export default {
 	//Key selections

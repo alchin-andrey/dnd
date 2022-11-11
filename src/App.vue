@@ -568,6 +568,7 @@ export default {
 		// 	this.MY.race.settings.ethnos
 		// )[0];
 		// this.MY = this.default_MY;
+    this.MY.class = Object.values(clas)[1];
 		this.MY.mastery = this.Mastery;
 
 		// this.getExtra(this.Stats_Pass, "stats");

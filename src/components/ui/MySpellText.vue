@@ -134,8 +134,7 @@
 			/>
 			<magic-attribute
 				v-if="Spell_Index.impact_size_saved"
-				:title="Spell_Index.impact_type"
-				:addition="Spell_Index.impact_damage_type"
+				title="if_succeed"
 				:save="Spell_Index.impact_size_saved"
 			/>
 		</my-wrapper>
@@ -555,9 +554,10 @@ export default {
 		},
 		Saving_Numb() {
 			const KOF = 8;
-			let attribute = this.Spell_Index.saving_attribute;
+			let attribute = this.$root.MY.class.spell_attribute;
 			let mastery = this.$root.MY.mastery;
 			let stats_mod = this.$root.MY.stats[attribute].mod;
+      console.log(attribute, mastery, stats_mod)
 			return KOF + mastery + stats_mod;
 		},
 		t_Expanded() {
