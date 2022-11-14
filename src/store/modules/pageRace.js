@@ -55,24 +55,20 @@ export default {
 
 		SHOW(name, key) {
 			if (name === "ethnos" && this.MY.ethnos.name === "common") {
-				this.race_page.shown_selection = false;
 				this.getHomeArr();
 				this.race_page[name] = false;
 			} else if (
 				name === `${key}_color` &&
 				this.MY.race.settings.color[key].length === 0
 			) {
-				this.race_page.shown_selection = false;
 				this.getHomeArr();
 				this.race_page[name] = false;
 			} else if (this.race_page[name] === false) {
 				this.close();
-				this.race_page.shown_selection = true;
 				this.getHomeArr();
 				this.race_page[name] = true;
 				this.race_page.shown_home = false;
 			} else {
-				this.race_page.shown_selection = false;
 				this.getHomeArr();
 				this.close();
 				this.race_page.shown_home = true;
@@ -133,21 +129,18 @@ export default {
 				rootState.MY.MY.race.settings.color[key].length === 0
 			);
 			if (ethnos_common || color_common) {
-				return null
+				return null;
 			} else if (state.race_page[name] === false) {
 				commit("CLOSE");
 				// this.close();
-				commit("PAGE", "selection", true);
-				// this.race_page.shown_selection = true;
 				commit("PAGE", name, true);
 				// this.race_page[name] = true;
 				commit("PAGE", "home", false);
 				// this.race_page.shown_home = false;
 			} else {
-				this.race_page.shown_selection = false;
-				commit("CLOSE");
+        commit("SHOW_HOME");
 				// this.close();
-				this.race_page.shown_home = true;
+				// this.race_page.shown_home = true;
 			}
 		},
 

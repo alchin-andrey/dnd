@@ -35,7 +35,7 @@ export default {
     },
 
 
-    shown_selection: false,
+    // shown_selection: false,
     shown_home: true,
     // home_arr: [false, false],
 

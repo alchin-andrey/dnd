@@ -2,7 +2,7 @@
 	<!-- Левый бар -->
 	<div class="sidebar_left">
 		<div class="main_chapter">
-			<Header @getShow="show"/>
+			<Header @getShow="show" />
 			<my-slider
 				numb="01"
 				title="race"
@@ -132,7 +132,7 @@
 	<!-- Выпадающее меню -->
 	<div
 		class="sidebar_wrap"
-		:class="{ sidebar_wrap_open: race_page.shown_selection }"
+		:class="{ sidebar_wrap_open: Shown_Selection }"
 	>
 		<!-- Превью -->
 		<my-selection-box :shown="race_page.shown.logo">
@@ -570,7 +570,7 @@ export default {
 		// 	this.MY.race.settings.ethnos
 		// )[0];
 		// this.MY = this.default_MY;
-    this.MY.class = Object.values(clas)[1];
+		this.MY.class = Object.values(clas)[1];
 		this.MY.mastery = this.Mastery;
 
 		// this.getExtra(this.Stats_Pass, "stats");
@@ -580,10 +580,20 @@ export default {
 	},
 
 	computed: {
-		...mapGetters({
-		}),
+		...mapGetters({}),
 
-
+		Shown_Selection() {
+			let res = false;
+			const obj = this.race_page.shown;
+			const keys = Object.keys(obj);
+			keys.forEach((key) => {
+        if (this.race_page.shown[key] === true) {
+          res = true;
+        }
+			});
+      console.log("Shown_Selection", res);
+      return res;
+		},
 
 		Mastery() {
 			return Math.ceil(this.MY.level / 4);
@@ -909,7 +919,7 @@ export default {
 				this.MY.ethnos.name === "common"
 			) {
 				// this.getHomeArr();
-				this.race_page.shown_selection = false;
+				// this.race_page.shown_selection = false;
 				this.race_page.shown.ethnos = false;
 				this.race_page.shown_home = true;
 			}
@@ -921,7 +931,7 @@ export default {
 				this.MY.race.settings.color[name].length === 0
 			) {
 				// this.getHomeArr();
-				this.race_page.shown_selection = false;
+				// this.race_page.shown_selection = false;
 				this.race_page.shown[`${name}_color`] = false;
 				this.race_page.shown_home = true;
 			}
@@ -933,7 +943,7 @@ export default {
 				this.MY.race.settings[name_2] === undefined
 			) {
 				// this.getHomeArr();
-				this.race_page.shown_selection = false;
+				// this.race_page.shown_selection = false;
 				this.race_page.shown[name_1] = false;
 				this.race_page.shown_home = true;
 			}
@@ -942,7 +952,7 @@ export default {
 		close() {
 			const obj = this.race_page.shown;
 			const keys = Object.keys(obj);
-			keys.forEach(key => {
+			keys.forEach((key) => {
 				this.race_page.shown[key] = false;
 			});
 			// this.race_page.shown.logo = false;
@@ -972,29 +982,31 @@ export default {
 		}),
 
 		show(name, key) {
-			console.log('show')
-			let ethnos_common = name === "ethnos" && this.MY.ethnos.name === "common";
-			let color_common = name === `${key}_color` &&
-				this.MY.race.settings.color[key].length === 0;
+			let ethnos_common =
+				(name === "ethnos" && this.MY.ethnos.name === "common");
+			let color_common =
+				(name === `${key}_color` &&
+				this.MY.race.settings.color[key].length === 0);
 			if (ethnos_common || color_common) {
 				// this.race_page.shown_selection = false;
 				// this.race_page[name] = false;
-				return null
+				return null;
 			} else if (this.race_page.shown[name] === false) {
 				this.close();
-				this.race_page.shown_selection = true;
+				// this.race_page.shown_selection = true;
 				this.race_page.shown[name] = true;
 				this.race_page.shown_home = false;
 			} else {
-				this.race_page.shown_selection = false;
-				this.close();
-				this.race_page.shown_home = true;
+				// this.race_page.shown_selection = false;
+        this.showHome()
+				// this.close();
+				// this.race_page.shown_home = true;
 			}
 		},
 
 		showHome() {
-			this.race_page.shown_selection = false;
-			this.race_page.whtch_home = !this.race_page.whtch_home;
+			// this.race_page.shown_selection = false;
+			// this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
 			// this.SHOW_SKROLL('shown_humman_lang')
@@ -1004,15 +1016,12 @@ export default {
 			// this.$store.dispatch('race_page/showHome')
 		},
 
-		getHomeArr() {
-			let arr = this.race_page.shown_home_arr;
-			arr.splice(0, 1);
-			arr.push(this.race_page.shown_selection);
-			this.race_page.shown_home_arr = arr;
-			// this.GET_HOME_ARR();
-			// this.$store.commit('race_page/GET_HOME_ARR')
-			// console.log(this.race_page.shown_home_arr)
-		},
+		// getHomeArr() {
+		// 	let arr = this.race_page.shown_home_arr;
+		// 	arr.splice(0, 1);
+		// 	arr.push(this.race_page.shown_selection);
+		// 	this.race_page.shown_home_arr = arr;
+		// },
 
 		showSkroll(name) {
 			this.race_page[name] = this.race_page[name] === false;
