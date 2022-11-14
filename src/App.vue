@@ -322,16 +322,16 @@
 			<div
 				class="skroll_list jbm-300"
 				:class="{
-					skroll_list_closed: !race_page.shown.humman_lang,
-					skroll_list_open: race_page.shown.humman_lang,
+					skroll_list_closed: !race_page.shown_humman_lang,
+					skroll_list_open: race_page.shown_humman_lang,
 				}"
-				v-vpshow="race_page.shown.humman_lang"
-				@click="showSkroll('humman_lang')"
+				v-vpshow="race_page.shown_humman_lang"
+				@click="showSkroll('shown_humman_lang')"
 			>
 				{{ Lang_Humman_Title }}
 			</div>
 			<transition name="scroll-fade">
-				<div v-if="race_page.shown.humman_lang" class="flex_gap-8">
+				<div v-if="race_page.shown_humman_lang" class="flex_gap-8">
 					<my-selection-card
 						v-for="lang in Lang_Humman"
 						:key="lang"
@@ -583,6 +583,8 @@ export default {
 		...mapGetters({
 		}),
 
+
+
 		Mastery() {
 			return Math.ceil(this.MY.level / 4);
 		},
@@ -724,7 +726,7 @@ export default {
 			console.log(this.Lang_Humman);
 			let title = this.t("languages_human");
 			let lang_numb = this.Lang_Humman_Select.length;
-			let humman_activ = this.race_page.shown.humman_lang;
+			let humman_activ = this.race_page.shown_humman_lang;
 			if (lang_numb !== 0 && !humman_activ) {
 				return `${title} (выбрано: ${lang_numb})`;
 			} else {
@@ -846,7 +848,7 @@ export default {
 	watch: {
 		"MY.race": "getFunction",
 		"race_page.shown.languages": function (val, oldVal) {
-			this.race_page.shown.humman_lang = false;
+			this.race_page.shown_humman_lang = false;
 		},
 		"MY.ethnos": "getFunction_2",
 		// "MY.level": "MY.mastery = Mastery",
@@ -943,20 +945,20 @@ export default {
 			keys.forEach(key => {
 				this.race_page.shown[key] = false;
 			});
-			this.race_page.shown.logo = false;
-			this.race_page.shown.lang = false;
-			this.race_page.shown.lvl = false;
-			this.race_page.shown.ethnos = false;
-			this.race_page.shown.gender = false;
-			this.race_page.shown.skin_color = false;
-			this.race_page.shown.eyes_color = false;
-			this.race_page.shown.hair_color = false;
-			this.race_page.shown.age = false;
-			this.race_page.shown.height = false;
-			this.race_page.shown.weight = false;
-			this.race_page.shown.characteristics = false;
-			this.race_page.shown.skills = false;
-			this.race_page.shown.languages = false;
+			// this.race_page.shown.logo = false;
+			// this.race_page.shown.lang = false;
+			// this.race_page.shown.lvl = false;
+			// this.race_page.shown.ethnos = false;
+			// this.race_page.shown.gender = false;
+			// this.race_page.shown.skin_color = false;
+			// this.race_page.shown.eyes_color = false;
+			// this.race_page.shown.hair_color = false;
+			// this.race_page.shown.age = false;
+			// this.race_page.shown.height = false;
+			// this.race_page.shown.weight = false;
+			// this.race_page.shown.characteristics = false;
+			// this.race_page.shown.skills = false;
+			// this.race_page.shown.languages = false;
 		},
 
 		...mapActions({
@@ -990,42 +992,12 @@ export default {
 			}
 		},
 
-		// show(name, key) {
-		// 	console.log('show')
-		// 	let ethnos_common = name === "ethnos" && this.MY.ethnos.name === "common";
-		// 	let color_common = name === `${key}_color` &&
-		// 		this.MY.race.settings.color[key].length === 0;
-		// 	if (ethnos_common || color_common) {
-		// 		this.race_page.shown_selection = false;
-		// 		// this.getHomeArr();
-		// 		this.race_page[name] = false;
-		// 		// } else if (
-		// 		// 	name === `${key}_color` &&
-		// 		// 	this.MY.race.settings.color[key].length === 0
-		// 		// ) {
-		// 		// 	this.race_page.shown_selection = false;
-		// 		// 	this.getHomeArr();
-		// 		// 	this.race_page[name] = false;
-		// 	} else if (this.race_page[name] === false) {
-		// 		this.close();
-		// 		this.race_page.shown_selection = true;
-		// 		// this.getHomeArr();
-		// 		this.race_page[name] = true;
-		// 		this.race_page.shown_home = false;
-		// 	} else {
-		// 		this.race_page.shown_selection = false;
-		// 		// this.getHomeArr();
-		// 		this.close();
-		// 		this.race_page.shown_home = true;
-		// 	}
-		// },
-
 		showHome() {
 			this.race_page.shown_selection = false;
 			this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
-			// this.SHOW_SKROLL('humman_lang')
+			// this.SHOW_SKROLL('shown_humman_lang')
 			// this.shownHome();
 			// this.$store.commit('race_page/SHOW_HOME')
 			// 	GET_HOME_ARR

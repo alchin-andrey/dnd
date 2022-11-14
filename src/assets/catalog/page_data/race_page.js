@@ -49,7 +49,7 @@ export default {
         eyes: null,
     },
 
-    humman_lang: false,
+    shown_humman_lang: false,
 
     extra:{
         stats: null,
