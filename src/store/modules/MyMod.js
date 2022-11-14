@@ -5,7 +5,7 @@ import MY_DEF from "@/assets/catalog/MY_DEF.js";
 export default {
 	namespaced: true,
 	state: () => ({
-		MY: MY,
+		MY,
 		MY_SAVE: MY_SAVE,
 		MY_DEF: MY_DEF,
 	}),

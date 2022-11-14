@@ -27,7 +27,7 @@ export default {
   name: "MySelectionBox",
   data() {
     return {
-      home_arr: this.$root.race_page.home_arr,
+      // home_arr: this.$root.race_page.home_arr,
     };
   },
   props: {
@@ -37,14 +37,14 @@ export default {
     },
   },
   computed: {
-    Sid_Sel() {
-      console.log('Sid_Sel', !this.home_arr[0] && this.home_arr[1])
-      return !this.home_arr[0] && this.home_arr[1]
-    },
-    Sid_Sel_Stay() {
-      console.log('Sid_Sel_Stay', this.home_arr[0] && this.home_arr[1])
-      return this.home_arr[0] && this.home_arr[1]
-    },
+    // Sid_Sel() {
+    //   console.log('Sid_Sel', !this.home_arr[0] && this.home_arr[1])
+    //   return !this.home_arr[0] && this.home_arr[1]
+    // },
+    // Sid_Sel_Stay() {
+    //   console.log('Sid_Sel_Stay', this.home_arr[0] && this.home_arr[1])
+    //   return this.home_arr[0] && this.home_arr[1]
+    // },
   },
   methods: {
   }

@@ -16,10 +16,28 @@ export default {
     shown_skills: false,
     shown_languages: false,
 
+    shown: {
+        logo: false,
+        lang: false,
+        lvl: false,
+
+        ethnos: false,
+        gender: false,
+        skin_color: false,
+        eyes_color: false,
+        hair_color: false,
+        age: false,
+        height: false,
+        weight: false,
+        characteristics: false,
+        skills: false,
+        languages: false,
+    },
+
 
     shown_selection: false,
     shown_home: true,
-    home_arr: [false, false],
+    // home_arr: [false, false],
 
     // skin_hower: null,
     // hair_hower: null,

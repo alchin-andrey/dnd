@@ -1,13 +1,13 @@
 <template>
 	<div class="header" @click="Show_MY()">
 		<my-logo-card
-			@click="show_page('shown_logo')"
-			:active="race_page.shown_logo"
+			@click="$root.show('shown_logo')"
+			:active="shown_logo"
 		/>
 		<div class="header_col">
 			<my-header-card
-				@click="show_page('shown_lang')"
-				:active="race_page.shown_lang"
+				@click="$root.show('shown_lang')"
+				:active="shown_lang"
 			>
 				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
@@ -18,8 +18,8 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="show_page('shown_lvl')"
-				:active="race_page.shown_lvl"
+				@click="$root.show('shown_lvl')"
+				:active="shown_lvl"
 				:slots="Char_Lvl"
 			/>
 		</div>
@@ -27,49 +27,40 @@
 </template>
 
 <script>
-import MY from "@/assets/catalog/MY.js";
-import dic from "@/assets/catalog/texts/dic";
-import race_page from "@/assets/catalog/page_data/race_page";
-
-// import { t } from "@/plagins/myFunction.js"
+import { mapState, mapGetters, mapActions, mapMutations } from "vuex";
 export default {
 	name: "Header",
-	data() {
-		return {
-			dic: dic,
-			MY: MY,
-			race_page: race_page,
-		};
-	},
+
 	computed: {
+	...mapState({
+		MY: state => state.MY.MY,
+		MY_level: state => state.MY.MY.level,
+		//race_page
+		shown_logo: state => state.race_page.race_page.shown_logo,
+		shown_lang: state => state.race_page.race_page.shown_lang,
+		shown_lvl: state => state.race_page.race_page.shown_lvl,
+	}),
     Select_Lang () {
-      return this.dic.select_lang
+      return this.$root.dic.select_lang
     },
 
     em_Icon() {
-			return this.dic.lang.find(icon => icon.mark === this.Select_Lang).icon;
+			return this.$root.dic.lang.find(icon => icon.mark === this.Select_Lang).icon;
 		},
 
     Lang_Icon() {
 			return require(`@/assets/img/icon/lang/icon_${this.Select_Lang}.png`);
 		},
 
-		Char_Lvl() {
-			return `lvl ${this.MY.level}`;
+    Char_Lvl() {
+			return `${this.t("lvl")} ${this.MY_level}`;
 		},
-
-    // Char_Lvl() {
-		// 	return `${t("lvl")} ${this.MY.level}`;
-		// },
 	},
 
   methods: {
     Show_MY() {
-		 console.log(this.MY);
+			console.log(this.MY);
 		},
-	  show_page(name) {
-		  this.$emit('getShow', name)
-	  },
   },
 };
 </script>

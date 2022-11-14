@@ -1,6 +1,6 @@
 import { createStore } from 'vuex';
 
-// import dic from './modules/dicMod';
+import dic from './modules/dicMod';
 
 
 // import genderStore from './gender';
@@ -24,6 +24,7 @@ const store = createStore({
     // pages
     race_page,
     MY,
+    dic,
   },
 });
 

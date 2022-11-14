@@ -2,7 +2,7 @@
 	<!-- Левый бар -->
 	<div class="sidebar_left">
 		<div class="main_chapter">
-			<Header />
+			<Header @getShow="show"/>
 			<my-slider
 				numb="01"
 				title="race"
@@ -527,7 +527,11 @@ import AgeWeight from "@/components/AgeWeight.vue";
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
+
+// store components
+// import Header from "./components/store/Header.vue";
 import Header from "./components/Header.vue";
+// store components
 
 import { mapGetters, mapActions, mapMutations } from "vuex";
 
@@ -577,7 +581,6 @@ export default {
 
 	computed: {
 		...mapGetters({
-			MY_race: "MY/race",
 		}),
 
 		Mastery() {
@@ -747,7 +750,6 @@ export default {
 					arr.push(lang[i]);
 				}
 			}
-			console.log("Челопук", arr);
 			return arr;
 		},
 
@@ -904,7 +906,7 @@ export default {
 				this.race_page.shown_ethnos === true &&
 				this.MY.ethnos.name === "common"
 			) {
-				this.getHomeArr();
+				// this.getHomeArr();
 				this.race_page.shown_selection = false;
 				this.race_page.shown_ethnos = false;
 				this.race_page.shown_home = true;
@@ -916,7 +918,7 @@ export default {
 				this.race_page[`shown_${name}_color`] === true &&
 				this.MY.race.settings.color[name].length === 0
 			) {
-				this.getHomeArr();
+				// this.getHomeArr();
 				this.race_page.shown_selection = false;
 				this.race_page[`shown_${name}_color`] = false;
 				this.race_page.shown_home = true;
@@ -928,7 +930,7 @@ export default {
 				this.race_page[name_1] === true &&
 				this.MY.race.settings[name_2] === undefined
 			) {
-				this.getHomeArr();
+				// this.getHomeArr();
 				this.race_page.shown_selection = false;
 				this.race_page[name_1] = false;
 				this.race_page.shown_home = true;
@@ -936,6 +938,11 @@ export default {
 		},
 
 		close() {
+			const obj = this.race_page.shown;
+			const keys = Object.keys(obj);
+			keys.forEach(key => {
+				this.race_page.shown[key] = false;
+			});
 			this.race_page.shown_logo = false;
 			this.race_page.shown_lang = false;
 			this.race_page.shown_lvl = false;
@@ -963,39 +970,61 @@ export default {
 		}),
 
 		show(name, key) {
-			this.MY_race;
-			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
-				this.race_page.shown_selection = false;
-				this.getHomeArr();
-				this.race_page[name] = false;
-			} else if (
-				name === `shown_${key}_color` &&
-				this.MY.race.settings.color[key].length === 0
-			) {
-				this.race_page.shown_selection = false;
-				this.getHomeArr();
-				this.race_page[name] = false;
+			console.log('show')
+			let ethnos_common = name === "shown_ethnos" && this.MY.ethnos.name === "common";
+			let color_common = name === `shown_${key}_color` &&
+				this.MY.race.settings.color[key].length === 0;
+			if (ethnos_common || color_common) {
+				// this.race_page.shown_selection = false;
+				// this.race_page[name] = false;
+				return null
 			} else if (this.race_page[name] === false) {
 				this.close();
 				this.race_page.shown_selection = true;
-				this.getHomeArr();
 				this.race_page[name] = true;
 				this.race_page.shown_home = false;
 			} else {
 				this.race_page.shown_selection = false;
-				this.getHomeArr();
 				this.close();
 				this.race_page.shown_home = true;
 			}
 		},
+
+		// show(name, key) {
+		// 	console.log('show')
+		// 	let ethnos_common = name === "shown_ethnos" && this.MY.ethnos.name === "common";
+		// 	let color_common = name === `shown_${key}_color` &&
+		// 		this.MY.race.settings.color[key].length === 0;
+		// 	if (ethnos_common || color_common) {
+		// 		this.race_page.shown_selection = false;
+		// 		// this.getHomeArr();
+		// 		this.race_page[name] = false;
+		// 		// } else if (
+		// 		// 	name === `shown_${key}_color` &&
+		// 		// 	this.MY.race.settings.color[key].length === 0
+		// 		// ) {
+		// 		// 	this.race_page.shown_selection = false;
+		// 		// 	this.getHomeArr();
+		// 		// 	this.race_page[name] = false;
+		// 	} else if (this.race_page[name] === false) {
+		// 		this.close();
+		// 		this.race_page.shown_selection = true;
+		// 		// this.getHomeArr();
+		// 		this.race_page[name] = true;
+		// 		this.race_page.shown_home = false;
+		// 	} else {
+		// 		this.race_page.shown_selection = false;
+		// 		// this.getHomeArr();
+		// 		this.close();
+		// 		this.race_page.shown_home = true;
+		// 	}
+		// },
 
 		showHome() {
 			this.race_page.shown_selection = false;
 			this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
-			this.def();
-			this.MY_race;
 			// this.SHOW_SKROLL('shown_humman_lang')
 			// this.shownHome();
 			// this.$store.commit('race_page/SHOW_HOME')
@@ -1014,11 +1043,7 @@ export default {
 		},
 
 		showSkroll(name) {
-			if (this.race_page[name] === false) {
-				this.race_page[name] = true;
-			} else {
-				this.race_page[name] = false;
-			}
+			this.race_page[name] = this.race_page[name] === false;
 		},
 
 		hideRuler() {

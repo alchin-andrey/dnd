@@ -47,6 +47,38 @@ export default {
 	}),
 	getters: {},
 	mutations: {
+
+		PAGE(state, name, bool) {
+			state.race_page[name] = bool
+		},
+
+
+		SHOW(name, key) {
+			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
+				this.race_page.shown_selection = false;
+				this.getHomeArr();
+				this.race_page[name] = false;
+			} else if (
+				name === `shown_${key}_color` &&
+				this.MY.race.settings.color[key].length === 0
+			) {
+				this.race_page.shown_selection = false;
+				this.getHomeArr();
+				this.race_page[name] = false;
+			} else if (this.race_page[name] === false) {
+				this.close();
+				this.race_page.shown_selection = true;
+				this.getHomeArr();
+				this.race_page[name] = true;
+				this.race_page.shown_home = false;
+			} else {
+				this.race_page.shown_selection = false;
+				this.getHomeArr();
+				this.close();
+				this.race_page.shown_home = true;
+			}
+		},
+
 		SHOW_HOME(state) {
 			console.log("SHOW_HOME");
 			state.shown_selection = false;
@@ -73,14 +105,13 @@ export default {
 			console.log("CLOSE");
 		},
 
-		GET_HOME_ARR(state) {
-			let arr = state.home_arr;
-			arr.splice(0, 1);
-			arr.push(state.shown_selection);
-			state.home_arr = arr;
-			console.log("GET_HOME_ARR");
-			// console.log(this.t("languages_human"));
-		},
+		// GET_HOME_ARR(state) {
+		// 	let arr = state.race_page.home_arr;
+		// 	arr.splice(0, 1);
+		// 	arr.push(state.race_page.shown_selection);
+		// 	state.race_page.home_arr = arr;
+		// 	console.log("GET_HOME_ARR");
+		// },
 
     SHOW_SCROLL(state, name) {
 			console.log("SHOW_SCROLL", name);
@@ -88,13 +119,42 @@ export default {
 		},
 	},
 	actions: {
-		goHome({ commit, rootGetters }) {
-      console.log(1);
+		go({ commit, rootGetters }) {
+			console.log(1);
 			// console.log(rootGetters["MY/race"]);
 			// console.log(t("languages_human"));
-			// commit("SHOW_HOME");
-			// commit("CLOSE");
-			commit("MY/MY_RACE", null, { root: true });
+			// commit("MY/MY_RACE", null, { root: true });
+		},
+
+		show({ commit, state, rootState, rootGetters }, name){
+			let ethnos_common = (name === "shown_ethnos" && rootState.MY.MY.ethnos.name === "common");
+			let color_common = (
+				name === `shown_${key}_color` &&
+				rootState.MY.MY.race.settings.color[key].length === 0
+			);
+			if (ethnos_common || color_common) {
+				return null
+			} else if (state.race_page[name] === false) {
+				commit("CLOSE");
+				// this.close();
+				commit("PAGE", "shown_selection", true);
+				// this.race_page.shown_selection = true;
+				commit("PAGE", name, true);
+				// this.race_page[name] = true;
+				commit("PAGE", "shown_home", false);
+				// this.race_page.shown_home = false;
+			} else {
+				this.race_page.shown_selection = false;
+				commit("CLOSE");
+				// this.close();
+				this.race_page.shown_home = true;
+			}
+		},
+
+		goHome({ commit, rootGetters }) {
+      console.log(1);
+			commit("SHOW_HOME");
+			commit("CLOSE");
 		},
 	},
 };
