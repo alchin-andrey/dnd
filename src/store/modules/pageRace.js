@@ -1,7 +1,5 @@
 import race_page from "@/assets/catalog/page_data/race_page.js";
 
-import { t } from "@/plagins/myFunction.js"
-
 
 export default {
 	namespaced: true,
@@ -45,84 +43,52 @@ export default {
 		// weight_kof: 0.5,
 		// age_kof: 0.5,
 	}),
-	getters: {},
+	getters: {
+    Shown_Selection(state) {
+			const obj = state.race_page.shown;
+			const values = Object.values(obj);
+			return values.some(el => el === true);
+		},
+  },
+
 	mutations: {
-
-		PAGE(state, name, bool) {
-			state.race_page[name] = bool
+		PAGE(state, data) {
+			state.race_page.shown[data.name] = data.bool;
 		},
 
-
-		SHOW(name, key) {
-			if (name === "ethnos" && this.MY.ethnos.name === "common") {
-				this.getHomeArr();
-				this.race_page[name] = false;
-			} else if (
-				name === `${key}_color` &&
-				this.MY.race.settings.color[key].length === 0
-			) {
-				this.getHomeArr();
-				this.race_page[name] = false;
-			} else if (this.race_page[name] === false) {
-				this.close();
-				this.getHomeArr();
-				this.race_page[name] = true;
-				this.race_page.shown_home = false;
-			} else {
-				this.getHomeArr();
-				this.close();
-				this.race_page.shown_home = true;
-			}
+		NEG_PAGE(state, name) {
+			state.race_page.shown[name] = !state.race_page.shown[name];
 		},
 
-		SHOW_HOME(state) {
-			console.log("SHOW_HOME");
-			state.selection = false;
-			state.whtch_home = !state.whtch_home;
-			// this.commit("race_page/CLOSE");
-			state.home = true;
+		CLOSE_HOME(state) {
+			state.race_page.shown_home = false;
+		},
+
+		OPEN_HOME(state) {
+			state.race_page.shown_home = true;
 		},
 
 		CLOSE(state) {
-			state.logo = false;
-			state.lang = false;
-			state.lvl = false;
-			state.ethnos = false;
-			state.gender = false;
-			state.skin_color = false;
-			state.eyes_color = false;
-			state.hair_color = false;
-			state.age = false;
-			state.height = false;
-			state.weight = false;
-			state.characteristics = false;
-			state.skills = false;
-			state.languages = false;
-			console.log("CLOSE");
+			const obj = state.race_page.shown;
+			const keys = Object.keys(obj);
+			keys.forEach((key) => {
+				state.race_page.shown[key] = false;
+			});
 		},
 
-		// GET_HOME_ARR(state) {
-		// 	let arr = state.race_page.shown_home_arr;
-		// 	arr.splice(0, 1);
-		// 	arr.push(state.race_page.shown_selection);
-		// 	state.race_page.shown_home_arr = arr;
-		// 	console.log("GET_HOME_ARR");
-		// },
-
     SHOW_SCROLL(state, name) {
-			console.log("SHOW_SCROLL", name);
 			state[name] = state[name] === false;
 		},
 	},
 	actions: {
-		go({ commit, rootGetters }) {
+		go({}) {
 			console.log(1);
 			// console.log(rootGetters["MY/race"]);
 			// console.log(t("languages_human"));
 			// commit("MY/MY_RACE", null, { root: true });
 		},
 
-		show({ commit, state, rootState, rootGetters }, name){
+		show({ commit, dispatch, state, rootState }, name, key){
 			let ethnos_common = (name === "ethnos" && rootState.MY.MY.ethnos.name === "common");
 			let color_common = (
 				name === `${key}_color` &&
@@ -130,24 +96,19 @@ export default {
 			);
 			if (ethnos_common || color_common) {
 				return null;
-			} else if (state.race_page[name] === false) {
+			} else if (state.race_page.shown[name] === false) {
 				commit("CLOSE");
-				// this.close();
-				commit("PAGE", name, true);
-				// this.race_page[name] = true;
-				commit("PAGE", "home", false);
-				// this.race_page.shown_home = false;
+				commit("NEG_PAGE", name);
+				commit("CLOSE_HOME");
+				// commit("PAGE", {name:"home", bool: false});
 			} else {
-        commit("SHOW_HOME");
-				// this.close();
-				// this.race_page.shown_home = true;
+				dispatch("goHome");
 			}
 		},
 
-		goHome({ commit, rootGetters }) {
-      console.log(1);
-			commit("SHOW_HOME");
+		goHome({ commit }) {
 			commit("CLOSE");
+			commit("OPEN_HOME");
 		},
 	},
 };

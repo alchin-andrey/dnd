@@ -7,8 +7,8 @@ export default {
 
     }),
     getters: {
-        languages(state) {
-            return state.lang;
+        Select_Lang (state) {
+            return state.dic.select_lang
         },
     },
 };

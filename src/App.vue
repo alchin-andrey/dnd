@@ -509,7 +509,6 @@ import dic from "@/assets/catalog/texts/dic.js";
 
 import MY from "@/assets/catalog/MY.js";
 // import default_MY from "@/assets/catalog/default_MY.js";
-
 // import color from "@/assets/catalog/base_data/colors.js";
 // import genders from "@/assets/catalog/base_data/genders.js";
 import race from "@/assets/catalog/base_data/step1_races.js";
@@ -529,11 +528,11 @@ import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 
 // store components
-// import Header from "./components/store/Header.vue";
-import Header from "./components/Header.vue";
+// import Header from "./components/root_store/Header.vue";
+import Header from "./components/store/Header.vue";
+// import Header from "./components/Header.vue";
 // store components
-
-import { mapGetters, mapActions, mapMutations } from "vuex";
+import {mapActions, mapGetters, mapMutations} from "vuex";
 
 export default {
 	name: "App",
@@ -582,17 +581,10 @@ export default {
 	computed: {
 		...mapGetters({}),
 
-		Shown_Selection() {
-			let res = false;
+    Shown_Selection() {
 			const obj = this.race_page.shown;
-			const keys = Object.keys(obj);
-			keys.forEach((key) => {
-        if (this.race_page.shown[key] === true) {
-          res = true;
-        }
-			});
-      console.log("Shown_Selection", res);
-      return res;
+			const values = Object.values(obj);
+		 return values.some(el => el === true);
 		},
 
 		Mastery() {
@@ -955,6 +947,7 @@ export default {
 			keys.forEach((key) => {
 				this.race_page.shown[key] = false;
 			});
+
 			// this.race_page.shown.logo = false;
 			// this.race_page.shown.lang = false;
 			// this.race_page.shown.lvl = false;
@@ -988,19 +981,13 @@ export default {
 				(name === `${key}_color` &&
 				this.MY.race.settings.color[key].length === 0);
 			if (ethnos_common || color_common) {
-				// this.race_page.shown_selection = false;
-				// this.race_page[name] = false;
 				return null;
 			} else if (this.race_page.shown[name] === false) {
 				this.close();
-				// this.race_page.shown_selection = true;
 				this.race_page.shown[name] = true;
 				this.race_page.shown_home = false;
 			} else {
-				// this.race_page.shown_selection = false;
         this.showHome()
-				// this.close();
-				// this.race_page.shown_home = true;
 			}
 		},
 

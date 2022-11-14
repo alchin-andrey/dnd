@@ -1,12 +1,12 @@
 <template>
-	<div class="header" @click="showMY()">
+	<div class="header" @click="Show_MY()">
 		<my-logo-card
-			@click="show_page('logo')"
+			@click="show('logo')"
 			:active="race_page.shown.logo"
 		/>
 		<div class="header_col">
 			<my-header-card
-				@click="show_page('lang')"
+				@click="show('lang')"
 				:active="race_page.shown.lang"
 			>
 				<!-- <emoji v-for="n in em_Icon" :key="n"
@@ -18,7 +18,7 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="show_page('lvl')"
+				@click="show('lvl')"
 				:active="race_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
@@ -30,6 +30,7 @@
 import MY from "@/assets/catalog/MY.js";
 import dic from "@/assets/catalog/texts/dic";
 import race_page from "@/assets/catalog/page_data/race_page";
+import {mapActions} from "vuex";
 export default {
 	name: "Header",
 	data() {
@@ -58,13 +59,13 @@ export default {
 	},
 
   methods: {
-    showMY() {
+	  ...mapActions({
+		  show: "race_page/show",
+	  }),
+
+    Show_MY() {
 		 console.log(this.MY);
 		},
-
-	  show_page(name) {
-		  this.$emit('getShow', name)
-	  },
   },
 };
 </script>
