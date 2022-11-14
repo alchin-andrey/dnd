@@ -508,7 +508,7 @@
 import dic from "@/assets/catalog/texts/dic.js";
 
 import MY from "@/assets/catalog/MY.js";
-import default_MY from "@/assets/catalog/default_MY.js";
+// import default_MY from "@/assets/catalog/default_MY.js";
 
 // import color from "@/assets/catalog/base_data/colors.js";
 // import genders from "@/assets/catalog/base_data/genders.js";
@@ -546,7 +546,7 @@ export default {
 		return {
 			dic: dic,
 			MY: MY,
-			default_MY: default_MY,
+			// default_MY: default_MY,
 
 			// genders: genders,
 			// color: color,
@@ -557,8 +557,6 @@ export default {
 			placeholder: placeholder,
 
 			race_page: race_page,
-
-			numb_foo: 1,
 		};
 	},
 
@@ -956,18 +954,15 @@ export default {
 
 		...mapActions({
 			goHome: "race_page/goHome",
-			def: "MY/def",
 		}),
 		...mapMutations({
 			GET_HOME_ARR: "race_page/GET_HOME_ARR",
 			SHOW_SCROLL: "race_page/SHOW_SCROLL",
 			SHOW_HOME: "race_page/SHOW_HOME",
 			MY_DEF: "MY/MY_DEF",
-			TEST_1_CHANGE: "MY/TEST_1_CHANGE",
 		}),
 
 		show(name, key) {
-			// this.TEST_1_CHANGE();
 			this.MY_race;
 			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
 				this.race_page.shown_selection = false;
