@@ -1,13 +1,13 @@
 <template>
 	<div class="header" @click="Show_MY()">
 		<my-logo-card
-			@click="show_page('shown_logo')"
-			:active="race_page.shown_logo"
+			@click="show_page('logo')"
+			:active="race_page.shown.logo"
 		/>
 		<div class="header_col">
 			<my-header-card
-				@click="show_page('shown_lang')"
-				:active="race_page.shown_lang"
+				@click="show_page('lang')"
+				:active="race_page.shown.lang"
 			>
 				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
@@ -18,8 +18,8 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="show_page('shown_lvl')"
-				:active="race_page.shown_lvl"
+				@click="show_page('lvl')"
+				:active="race_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
 		</div>

@@ -17,8 +17,8 @@
 				<div class="selection_menu_wrap">
 					<div class="selection_menu">
 						<my-selection
-							@click="show('shown_ethnos')"
-							:active="race_page.shown_ethnos"
+							@click="show('ethnos')"
+							:active="race_page.shown.ethnos"
 							title="ethnos"
 							:type="MY.ethnos.name"
 							:rare="MY.ethnos.rare"
@@ -36,15 +36,15 @@
 					>
 						<my-selection
 							v-if="MY.race.settings.custom_stats"
-							@click="show('shown_characteristics')"
-							:active="race_page.shown_characteristics"
+							@click="show('characteristics')"
+							:active="race_page.shown.characteristics"
 							title="stats"
 							:type_arr="race_page.extra.stats"
 						></my-selection>
 						<my-selection
 							v-if="MY.race.settings.custom_skills"
-							@click="show('shown_skills')"
-							:active="race_page.shown_skills"
+							@click="show('skills')"
+							:active="race_page.shown.skills"
 							title="skills"
 							:type_arr="race_page.extra.skills"
 						>
@@ -54,8 +54,8 @@
 								MY.race.settings.custom_languages ||
 								MY.ethnos.custom_languages
 							"
-							@click="show('shown_languages')"
-							:active="race_page.shown_languages"
+							@click="show('languages')"
+							:active="race_page.shown.languages"
 							title="languages"
 							:type_arr="Lang_Extra"
 						>
@@ -64,30 +64,30 @@
 
 					<div class="selection_menu">
 						<my-selection
-							@click="show('shown_gender')"
-							:active="race_page.shown_gender"
+							@click="show('gender')"
+							:active="race_page.shown.gender"
 							title="gender"
 							:type="MY.gender.phisiological"
 						></my-selection>
 						<my-controller
-							@click="show('shown_age')"
-							:active="race_page.shown_age"
+							@click="show('age')"
+							:active="race_page.shown.age"
 							title="age"
 							:value="MY.age"
 							age
 							:note="Age_Note"
 						></my-controller>
 						<my-controller
-							@click="show('shown_height')"
-							:active="race_page.shown_height"
+							@click="show('height')"
+							:active="race_page.shown.height"
 							title="height"
 							:value="MY.height"
 							unit="cm"
 							:note="Hight_Note"
 						></my-controller>
 						<my-controller
-							@click="show('shown_weight')"
-							:active="race_page.shown_weight"
+							@click="show('weight')"
+							:active="race_page.shown.weight"
 							title="weight"
 							:value="MY.weight"
 							unit="kg"
@@ -95,22 +95,22 @@
 						>
 						</my-controller>
 						<my-selection
-							@click="show('shown_skin_color', 'skin')"
-							:active="race_page.shown_skin_color"
+							@click="show('skin_color', 'skin')"
+							:active="race_page.shown.skin_color"
 							title="color_skin"
 							:type="getCharColor('skin').name"
 						>
 						</my-selection>
 						<my-selection
-							@click="show('shown_eyes_color', 'eyes')"
-							:active="race_page.shown_eyes_color"
+							@click="show('eyes_color', 'eyes')"
+							:active="race_page.shown.eyes_color"
 							title="color_eyes"
 							:type="getCharColor('eyes').name"
 						>
 						</my-selection>
 						<my-selection
-							@click="show('shown_hair_color', 'hair')"
-							:active="race_page.shown_hair_color"
+							@click="show('hair_color', 'hair')"
+							:active="race_page.shown.hair_color"
 							title="color_hair"
 							:type="getCharColor('hair').name"
 						>
@@ -135,13 +135,13 @@
 		:class="{ sidebar_wrap_open: race_page.shown_selection }"
 	>
 		<!-- Превью -->
-		<my-selection-box :shown="race_page.shown_logo">
+		<my-selection-box :shown="race_page.shown.logo">
 			<Description />
 		</my-selection-box>
 		<!-- Превью -->
 
 		<!-- Смена языка -->
-		<my-selection-box :shown="race_page.shown_lang">
+		<my-selection-box :shown="race_page.shown.lang">
 			<my-selection-card
 				v-for="item in dic.lang"
 				:key="item"
@@ -159,37 +159,37 @@
 		<!-- Смена языка -->
 
 		<!-- Этнос-->
-		<my-selection-box :shown="race_page.shown_ethnos">
+		<my-selection-box :shown="race_page.shown.ethnos">
 			<EthnosChoice />
 		</my-selection-box>
 		<!-- Этнос -->
 
 		<!-- Гендр -->
-		<my-selection-box :shown="race_page.shown_gender">
+		<my-selection-box :shown="race_page.shown.gender">
 			<GenderChoiceStore />
 		</my-selection-box>
 		<!-- Гендр -->
 
 		<!-- Цвет кожи -->
-		<my-selection-box :shown="race_page.shown_skin_color">
+		<my-selection-box :shown="race_page.shown.skin_color">
 			<my-color-select body_part="skin" />
 		</my-selection-box>
 		<!-- Цвет кожи -->
 
 		<!-- Цвет глаз -->
-		<my-selection-box :shown="race_page.shown_eyes_color">
+		<my-selection-box :shown="race_page.shown.eyes_color">
 			<my-color-select body_part="eyes" />
 		</my-selection-box>
 		<!-- Цвет глаз -->
 
 		<!-- Цвет волос -->
-		<my-selection-box :shown="race_page.shown_hair_color">
+		<my-selection-box :shown="race_page.shown.hair_color">
 			<my-color-select body_part="hair" />
 		</my-selection-box>
 		<!-- Цвет волос -->
 
 		<!-- Уровень -->
-		<my-selection-box :shown="race_page.shown_lvl">
+		<my-selection-box :shown="race_page.shown.lvl">
 			<div class="flex_options">
 				<MyRange v-model.number="MY.level" lvl />
 				<MyRangeSize lvl />
@@ -198,7 +198,7 @@
 		<!-- Уровень -->
 
 		<!-- Возраст -->
-		<my-selection-box :shown="race_page.shown_age">
+		<my-selection-box :shown="race_page.shown.age">
 			<div class="flex_options">
 				<MyRange v-model.number="MY.age" age />
 				<MyRangeSize age />
@@ -207,7 +207,7 @@
 		<!-- Возраст -->
 
 		<!-- Рост -->
-		<my-selection-box :shown="race_page.shown_height">
+		<my-selection-box :shown="race_page.shown.height">
 			<div class="flex_options">
 				<MyRange v-model.number="MY.height" height />
 				<mySizeGrowth />
@@ -216,7 +216,7 @@
 		<!-- Рост -->
 
 		<!-- Вес -->
-		<my-selection-box :shown="race_page.shown_weight">
+		<my-selection-box :shown="race_page.shown.weight">
 			<div class="flex_options">
 				<MyRange v-model.number="MY.weight" weight />
 				<MyRangeSize weight />
@@ -225,7 +225,7 @@
 		<!-- Вес -->
 
 		<!-- Характеристики -->
-		<my-selection-box :shown="race_page.shown_characteristics">
+		<my-selection-box :shown="race_page.shown.characteristics">
 			<div class="ethnos_attributes">
 				<!-- Этнос_stats -->
 				<my-wrapper>
@@ -269,7 +269,7 @@
 		<!-- Характеристики -->
 
 		<!-- Навыки -->
-		<my-selection-box :shown="race_page.shown_skills">
+		<my-selection-box :shown="race_page.shown.skills">
 			<my-card-text text="skills_details"></my-card-text>
 			<my-selection-card
 				v-for="(val, name, i) in MY.skills"
@@ -298,7 +298,7 @@
 		<!-- Навыки -->
 
 		<!-- Языки -->
-		<my-selection-box :shown="race_page.shown_languages">
+		<my-selection-box :shown="race_page.shown.languages">
 			<my-selection-card
 				v-for="lang in Lang_Not_Humman"
 				:key="lang"
@@ -322,16 +322,16 @@
 			<div
 				class="skroll_list jbm-300"
 				:class="{
-					skroll_list_closed: !race_page.shown_humman_lang,
-					skroll_list_open: race_page.shown_humman_lang,
+					skroll_list_closed: !race_page.shown.humman_lang,
+					skroll_list_open: race_page.shown.humman_lang,
 				}"
-				v-vpshow="race_page.shown_humman_lang"
-				@click="showSkroll('shown_humman_lang')"
+				v-vpshow="race_page.shown.humman_lang"
+				@click="showSkroll('humman_lang')"
 			>
 				{{ Lang_Humman_Title }}
 			</div>
 			<transition name="scroll-fade">
-				<div v-if="race_page.shown_humman_lang" class="flex_gap-8">
+				<div v-if="race_page.shown.humman_lang" class="flex_gap-8">
 					<my-selection-card
 						v-for="lang in Lang_Humman"
 						:key="lang"
@@ -363,8 +363,8 @@
 			class="character"
 			:class="{
 				active_eyes:
-					race_page.shown_eyes_color || race_page.shown_hair_color,
-				active_skin: race_page.shown_skin_color,
+					race_page.shown.eyes_color || race_page.shown.hair_color,
+				active_skin: race_page.shown.skin_color,
 			}"
 			:style="{
 				height: Char_Hight_Back,
@@ -696,8 +696,8 @@ export default {
 				kof = 3.1;
 			}
 			if (
-				this.$root.race_page.shown_eyes_color ||
-				this.$root.race_page.shown_hair_color
+				this.$root.race_page.shown.eyes_color ||
+				this.$root.race_page.shown.hair_color
 			) {
 				return `calc((100% / 210 * ${mein_height})*${kof})`;
 			} else {
@@ -724,7 +724,7 @@ export default {
 			console.log(this.Lang_Humman);
 			let title = this.t("languages_human");
 			let lang_numb = this.Lang_Humman_Select.length;
-			let humman_activ = this.race_page.shown_humman_lang;
+			let humman_activ = this.race_page.shown.humman_lang;
 			if (lang_numb !== 0 && !humman_activ) {
 				return `${title} (выбрано: ${lang_numb})`;
 			} else {
@@ -845,8 +845,8 @@ export default {
 	},
 	watch: {
 		"MY.race": "getFunction",
-		"race_page.shown_languages": function (val, oldVal) {
-			this.race_page.shown_humman_lang = false;
+		"race_page.shown.languages": function (val, oldVal) {
+			this.race_page.shown.humman_lang = false;
 		},
 		"MY.ethnos": "getFunction_2",
 		// "MY.level": "MY.mastery = Mastery",
@@ -871,9 +871,9 @@ export default {
 			this.getComonColor("skin");
 			this.getComonColor("eyes");
 			this.getComonColor("hair");
-			this.closePar("shown_characteristics", "custom_stats");
-			this.closePar("shown_skills", "custom_skills");
-			this.closePar("shown_languages", "custom_languages");
+			this.closePar("characteristics", "custom_stats");
+			this.closePar("skills", "custom_skills");
+			this.closePar("languages", "custom_languages");
 			this.getExtra(this.Stats_Pass, "stats");
 			this.getExtra(this.Skills_Pass, "skills");
 			this.getExtra(this.Lang_Pass, "languages");
@@ -903,36 +903,36 @@ export default {
 
 		closeEthnos() {
 			if (
-				this.race_page.shown_ethnos === true &&
+				this.race_page.shown.ethnos === true &&
 				this.MY.ethnos.name === "common"
 			) {
 				// this.getHomeArr();
 				this.race_page.shown_selection = false;
-				this.race_page.shown_ethnos = false;
+				this.race_page.shown.ethnos = false;
 				this.race_page.shown_home = true;
 			}
 		},
 
 		closeColor(name) {
 			if (
-				this.race_page[`shown_${name}_color`] === true &&
+				this.race_page.shown[`${name}_color`] === true &&
 				this.MY.race.settings.color[name].length === 0
 			) {
 				// this.getHomeArr();
 				this.race_page.shown_selection = false;
-				this.race_page[`shown_${name}_color`] = false;
+				this.race_page.shown[`${name}_color`] = false;
 				this.race_page.shown_home = true;
 			}
 		},
 
 		closePar(name_1, name_2) {
 			if (
-				this.race_page[name_1] === true &&
+				this.race_page.shown[name_1] === true &&
 				this.MY.race.settings[name_2] === undefined
 			) {
 				// this.getHomeArr();
 				this.race_page.shown_selection = false;
-				this.race_page[name_1] = false;
+				this.race_page.shown[name_1] = false;
 				this.race_page.shown_home = true;
 			}
 		},
@@ -943,20 +943,20 @@ export default {
 			keys.forEach(key => {
 				this.race_page.shown[key] = false;
 			});
-			this.race_page.shown_logo = false;
-			this.race_page.shown_lang = false;
-			this.race_page.shown_lvl = false;
-			this.race_page.shown_ethnos = false;
-			this.race_page.shown_gender = false;
-			this.race_page.shown_skin_color = false;
-			this.race_page.shown_eyes_color = false;
-			this.race_page.shown_hair_color = false;
-			this.race_page.shown_age = false;
-			this.race_page.shown_height = false;
-			this.race_page.shown_weight = false;
-			this.race_page.shown_characteristics = false;
-			this.race_page.shown_skills = false;
-			this.race_page.shown_languages = false;
+			this.race_page.shown.logo = false;
+			this.race_page.shown.lang = false;
+			this.race_page.shown.lvl = false;
+			this.race_page.shown.ethnos = false;
+			this.race_page.shown.gender = false;
+			this.race_page.shown.skin_color = false;
+			this.race_page.shown.eyes_color = false;
+			this.race_page.shown.hair_color = false;
+			this.race_page.shown.age = false;
+			this.race_page.shown.height = false;
+			this.race_page.shown.weight = false;
+			this.race_page.shown.characteristics = false;
+			this.race_page.shown.skills = false;
+			this.race_page.shown.languages = false;
 		},
 
 		...mapActions({
@@ -971,17 +971,17 @@ export default {
 
 		show(name, key) {
 			console.log('show')
-			let ethnos_common = name === "shown_ethnos" && this.MY.ethnos.name === "common";
-			let color_common = name === `shown_${key}_color` &&
+			let ethnos_common = name === "ethnos" && this.MY.ethnos.name === "common";
+			let color_common = name === `${key}_color` &&
 				this.MY.race.settings.color[key].length === 0;
 			if (ethnos_common || color_common) {
 				// this.race_page.shown_selection = false;
 				// this.race_page[name] = false;
 				return null
-			} else if (this.race_page[name] === false) {
+			} else if (this.race_page.shown[name] === false) {
 				this.close();
 				this.race_page.shown_selection = true;
-				this.race_page[name] = true;
+				this.race_page.shown[name] = true;
 				this.race_page.shown_home = false;
 			} else {
 				this.race_page.shown_selection = false;
@@ -992,15 +992,15 @@ export default {
 
 		// show(name, key) {
 		// 	console.log('show')
-		// 	let ethnos_common = name === "shown_ethnos" && this.MY.ethnos.name === "common";
-		// 	let color_common = name === `shown_${key}_color` &&
+		// 	let ethnos_common = name === "ethnos" && this.MY.ethnos.name === "common";
+		// 	let color_common = name === `${key}_color` &&
 		// 		this.MY.race.settings.color[key].length === 0;
 		// 	if (ethnos_common || color_common) {
 		// 		this.race_page.shown_selection = false;
 		// 		// this.getHomeArr();
 		// 		this.race_page[name] = false;
 		// 		// } else if (
-		// 		// 	name === `shown_${key}_color` &&
+		// 		// 	name === `${key}_color` &&
 		// 		// 	this.MY.race.settings.color[key].length === 0
 		// 		// ) {
 		// 		// 	this.race_page.shown_selection = false;
@@ -1025,7 +1025,7 @@ export default {
 			this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
 			this.race_page.shown_home = true;
-			// this.SHOW_SKROLL('shown_humman_lang')
+			// this.SHOW_SKROLL('humman_lang')
 			// this.shownHome();
 			// this.$store.commit('race_page/SHOW_HOME')
 			// 	GET_HOME_ARR
@@ -1033,13 +1033,13 @@ export default {
 		},
 
 		getHomeArr() {
-			let arr = this.race_page.home_arr;
+			let arr = this.race_page.shown_home_arr;
 			arr.splice(0, 1);
 			arr.push(this.race_page.shown_selection);
-			this.race_page.home_arr = arr;
+			this.race_page.shown_home_arr = arr;
 			// this.GET_HOME_ARR();
 			// this.$store.commit('race_page/GET_HOME_ARR')
-			// console.log(this.race_page.home_arr)
+			// console.log(this.race_page.shown_home_arr)
 		},
 
 		showSkroll(name) {
@@ -1047,7 +1047,7 @@ export default {
 		},
 
 		hideRuler() {
-			if (this.race_page.shown_home || this.race_page.shown_height) {
+			if (this.race_page.shown_home || this.race_page.shown.height) {
 				return true;
 			} else {
 				return false;

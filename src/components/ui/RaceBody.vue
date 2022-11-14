@@ -107,9 +107,9 @@ export default {
 
     Calc_Img() {
       if (
-        this.$root.race_page.shown_skin_color ||
-        this.$root.race_page.shown_eyes_color ||
-        this.$root.race_page.shown_hair_color
+        this.$root.race_page.shown.skin_color ||
+        this.$root.race_page.shown.eyes_color ||
+        this.$root.race_page.shown.hair_color
       ) {
         return `100%`;
       } else {

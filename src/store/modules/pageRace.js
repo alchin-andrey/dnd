@@ -7,24 +7,24 @@ export default {
 	namespaced: true,
 	state: () => ({
 		race_page,
-		// shown_logo: false,
-		// shown_lang: false,
-		// shown_lvl: false,
+		// logo: false,
+		// lang: false,
+		// lvl: false,
 		//
-		// shown_ethnos: false,
-		// shown_gender: false,
-		// shown_skin_color: false,
-		// shown_eyes_color: false,
-		// shown_hair_color: false,
-		// shown_age: false,
-		// shown_height: false,
-		// shown_weight: false,
-		// shown_characteristics: false,
-		// shown_skills: false,
-		// shown_languages: false,
+		// ethnos: false,
+		// gender: false,
+		// skin_color: false,
+		// eyes_color: false,
+		// hair_color: false,
+		// age: false,
+		// height: false,
+		// weight: false,
+		// characteristics: false,
+		// skills: false,
+		// languages: false,
 		//
-		// shown_selection: false,
-		// shown_home: true,
+		// selection: false,
+		// home: true,
 		// home_arr: [false, false],
 		//
 		// color_selected: {
@@ -33,7 +33,7 @@ export default {
 		// 	eyes: null,
 		// },
 		//
-		// shown_humman_lang: false,
+		// humman_lang: false,
 		//
 		// extra: {
 		// 	stats: null,
@@ -54,12 +54,12 @@ export default {
 
 
 		SHOW(name, key) {
-			if (name === "shown_ethnos" && this.MY.ethnos.name === "common") {
+			if (name === "ethnos" && this.MY.ethnos.name === "common") {
 				this.race_page.shown_selection = false;
 				this.getHomeArr();
 				this.race_page[name] = false;
 			} else if (
-				name === `shown_${key}_color` &&
+				name === `${key}_color` &&
 				this.MY.race.settings.color[key].length === 0
 			) {
 				this.race_page.shown_selection = false;
@@ -81,35 +81,35 @@ export default {
 
 		SHOW_HOME(state) {
 			console.log("SHOW_HOME");
-			state.shown_selection = false;
+			state.selection = false;
 			state.whtch_home = !state.whtch_home;
 			// this.commit("race_page/CLOSE");
-			state.shown_home = true;
+			state.home = true;
 		},
 
 		CLOSE(state) {
-			state.shown_logo = false;
-			state.shown_lang = false;
-			state.shown_lvl = false;
-			state.shown_ethnos = false;
-			state.shown_gender = false;
-			state.shown_skin_color = false;
-			state.shown_eyes_color = false;
-			state.shown_hair_color = false;
-			state.shown_age = false;
-			state.shown_height = false;
-			state.shown_weight = false;
-			state.shown_characteristics = false;
-			state.shown_skills = false;
-			state.shown_languages = false;
+			state.logo = false;
+			state.lang = false;
+			state.lvl = false;
+			state.ethnos = false;
+			state.gender = false;
+			state.skin_color = false;
+			state.eyes_color = false;
+			state.hair_color = false;
+			state.age = false;
+			state.height = false;
+			state.weight = false;
+			state.characteristics = false;
+			state.skills = false;
+			state.languages = false;
 			console.log("CLOSE");
 		},
 
 		// GET_HOME_ARR(state) {
-		// 	let arr = state.race_page.home_arr;
+		// 	let arr = state.race_page.shown_home_arr;
 		// 	arr.splice(0, 1);
 		// 	arr.push(state.race_page.shown_selection);
-		// 	state.race_page.home_arr = arr;
+		// 	state.race_page.shown_home_arr = arr;
 		// 	console.log("GET_HOME_ARR");
 		// },
 
@@ -127,9 +127,9 @@ export default {
 		},
 
 		show({ commit, state, rootState, rootGetters }, name){
-			let ethnos_common = (name === "shown_ethnos" && rootState.MY.MY.ethnos.name === "common");
+			let ethnos_common = (name === "ethnos" && rootState.MY.MY.ethnos.name === "common");
 			let color_common = (
-				name === `shown_${key}_color` &&
+				name === `${key}_color` &&
 				rootState.MY.MY.race.settings.color[key].length === 0
 			);
 			if (ethnos_common || color_common) {
@@ -137,11 +137,11 @@ export default {
 			} else if (state.race_page[name] === false) {
 				commit("CLOSE");
 				// this.close();
-				commit("PAGE", "shown_selection", true);
+				commit("PAGE", "selection", true);
 				// this.race_page.shown_selection = true;
 				commit("PAGE", name, true);
 				// this.race_page[name] = true;
-				commit("PAGE", "shown_home", false);
+				commit("PAGE", "home", false);
 				// this.race_page.shown_home = false;
 			} else {
 				this.race_page.shown_selection = false;

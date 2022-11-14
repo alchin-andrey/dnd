@@ -5,7 +5,7 @@ export default {
     state: () => ({
         lang: lang,
 
-        shown_humman_lang: false,
+        humman_lang: false,
         extra_lang: null,
     }),
     getters: {
@@ -48,7 +48,7 @@ export default {
         lang_Humman_Title(state, getters) {
             let title = this.t("languages_human");
             let lang_numb = getters.lang_Humman_Select.length;
-            let humman_activ = state.shown_humman_lang;
+            let humman_activ = state.humman_lang;
             if (lang_numb !== 0 && !humman_activ) {
                 return `${title} (выбрано: ${lang_numb})`;
             } else {

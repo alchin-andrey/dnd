@@ -1,5 +1,5 @@
 <template>
-  <div v-if="shown_welcome" class="wrapp">
+  <div v-if="welcome" class="wrapp">
     <my-selection-card passive>
       <Welcome />
       <img @click="close()" src="@/assets/img/icon/close.svg"/>
@@ -15,12 +15,12 @@ export default {
   name: "WelcomeBanner",
   data() {
     return {
-      shown_welcome: true,
+      welcome: true,
     };
   },
   methods: {
     close() {
-        this.shown_welcome = false;
+        this.welcome = false;
       }
   },
 };

@@ -27,7 +27,7 @@ export default {
   name: "MySelectionBox",
   data() {
     return {
-      // home_arr: this.$root.race_page.home_arr,
+      // home_arr: this.$root.race_page.shown_home_arr,
     };
   },
   props: {

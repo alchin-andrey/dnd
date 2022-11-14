@@ -1,13 +1,13 @@
 <template>
 	<div class="header" @click="Show_MY()">
 		<my-logo-card
-			@click="$root.show('shown_logo')"
-			:active="shown_logo"
+			@click="$root.show('logo')"
+			:active="logo"
 		/>
 		<div class="header_col">
 			<my-header-card
-				@click="$root.show('shown_lang')"
-				:active="shown_lang"
+				@click="$root.show('lang')"
+				:active="lang"
 			>
 				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
@@ -18,8 +18,8 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="$root.show('shown_lvl')"
-				:active="shown_lvl"
+				@click="$root.show('lvl')"
+				:active="lvl"
 				:slots="Char_Lvl"
 			/>
 		</div>
@@ -36,9 +36,9 @@ export default {
 		MY: state => state.MY.MY,
 		MY_level: state => state.MY.MY.level,
 		//race_page
-		shown_logo: state => state.race_page.race_page.shown_logo,
-		shown_lang: state => state.race_page.race_page.shown_lang,
-		shown_lvl: state => state.race_page.race_page.shown_lvl,
+		logo: state => state.race_page.race_page.shown.logo,
+		lang: state => state.race_page.race_page.shown.lang,
+		lvl: state => state.race_page.race_page.shown.lvl,
 	}),
     Select_Lang () {
       return this.$root.dic.select_lang
