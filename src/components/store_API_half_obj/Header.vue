@@ -1,8 +1,8 @@
 <template>
 	<div class="header" @click="showMY()">
-		<my-logo-card @click="show('logo')" :active="logo" />
+		<my-logo-card @click="show('logo')" :active="race_page.shown.logo" />
 		<div class="header_col">
-			<my-header-card @click="show('lang')" :active="lang">
+			<my-header-card @click="show('lang')" :active="race_page.shown.lang">
 				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
@@ -13,7 +13,7 @@
 			</my-header-card>
 			<my-header-card
 				@click="show('lvl')"
-				:active="lvl"
+				:active="race_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
 		</div>
@@ -21,26 +21,35 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { computed, reactive, ref } from 'vue'
+import { useStore } from "vuex";
 export default {
 	name: "Header",
-	computed: {
-		...mapState({
-			MY: (state) => state.MY.MY,
-			MY_level: (state) => state.MY.MY.level,
-			//race_page
-			logo: (state) => state.race_page.race_page.shown.logo,
-			lang: (state) => state.race_page.race_page.shown.lang,
-			lvl: (state) => state.race_page.race_page.shown.lvl,
-			dic_lang: (state) => state.dic.dic.lang,
-		}),
-		...mapGetters({
-			Select_Lang: "dic/Select_Lang",
-		}),
+  setup() {
+    const store = useStore()
 
+    // const MY = reactive(store.state.MY.MY)
+    const MY = computed(() => store.state.MY.MY)
+    const race_page = reactive(store.state.race_page.race_page)
+    const dic = reactive(store.state.dic.dic)
+
+    const Select_Lang = computed(() => store.getters["dic/Select_Lang"])
+
+    function show(name) {
+      store.dispatch("race_page/show", name)
+    }
+
+    return {
+      dic,
+      MY,
+      race_page,
+      Select_Lang, 
+      show
+    }
+  },
+	computed: {
 		em_Icon() {
-			return this.dic_lang.find((icon) => icon.mark === this.Select_Lang)
-				.icon;
+			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang).icon;
 		},
 
 		Lang_Icon() {
@@ -48,15 +57,11 @@ export default {
 		},
 
 		Char_Lvl() {
-			return `lvl ${this.MY_level}`;
-		},
+      return `lvl ${this.MY.level}`;
+    },
 	},
 
 	methods: {
-		...mapActions({
-			show: "race_page/show",
-		}),
-
 		showMY() {
 			console.log(this.MY);
 		},

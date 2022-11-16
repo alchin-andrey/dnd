@@ -528,8 +528,14 @@ import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 
 // store components
+// import Header from "./components/store_API_cleen_obj_reactive/Header.vue";
+// import Header from "./components/store_API_cleen_obj/Header.vue";
+// import Header from "./components/store_API_cleen/Header.vue";
+// import Header from "./components/store_API_half_obj/Header.vue";
+// import Header from "./components/store_API_half/Header.vue";
 // import Header from "./components/root_store/Header.vue";
-import Header from "./components/store/Header.vue";
+import Header from "./components/store_obj/Header.vue";
+// import Header from "./components/store/Header.vue";
 // import Header from "./components/Header.vue";
 // store components
 import {mapActions, mapGetters, mapMutations} from "vuex";

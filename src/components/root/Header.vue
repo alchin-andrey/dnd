@@ -1,9 +1,12 @@
 <template>
-	<div class="header" @click="Show_MY()">
-		<my-logo-card @click="show('logo')" :active="race_page.shown.logo" />
+	<div class="header" @click="showMY()">
+		<my-logo-card
+			@click="show_page('logo')"
+			:active="race_page.shown.logo"
+		/>
 		<div class="header_col">
 			<my-header-card
-				@click="show('lang')"
+				@click="show_page('lang')"
 				:active="race_page.shown.lang"
 			>
 				<!-- <emoji v-for="n in em_Icon" :key="n"
@@ -15,7 +18,7 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="show('lvl')"
+				@click="show_page('lvl')"
 				:active="race_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
@@ -27,7 +30,6 @@
 import MY from "@/assets/catalog/MY.js";
 import dic from "@/assets/catalog/texts/dic";
 import race_page from "@/assets/catalog/page_data/race_page";
-import { mapActions } from "vuex";
 export default {
 	name: "Header",
 	data() {
@@ -38,16 +40,15 @@ export default {
 		};
 	},
 	computed: {
-		Select_Lang() {
-			return this.dic.select_lang;
+    Select_Lang () {
+      return this.dic.select_lang
+    },
+
+    em_Icon() {
+			return this.dic.lang.find(icon => icon.mark === this.Select_Lang).icon;
 		},
 
-		em_Icon() {
-			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang)
-				.icon;
-		},
-
-		Lang_Icon() {
+    Lang_Icon() {
 			return require(`@/assets/img/icon/lang/icon_${this.Select_Lang}.png`);
 		},
 
@@ -56,15 +57,15 @@ export default {
 		},
 	},
 
-	methods: {
-		...mapActions({
-			show: "race_page/show",
-		}),
-
-		Show_MY() {
-			console.log(this.MY);
+  methods: {
+    showMY() {
+		 console.log(this.MY);
 		},
-	},
+
+	  show_page(name) {
+		  this.$emit('getShow', name)
+	  },
+  },
 };
 </script>
 
@@ -78,7 +79,7 @@ export default {
 }
 
 .header_col {
-	height: 100%;
+  height: 100%;
 	display: flex;
 	gap: 4px;
 }

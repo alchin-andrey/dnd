@@ -5,43 +5,6 @@ export default {
 	namespaced: true,
 	state: () => ({
 		race_page,
-		// logo: false,
-		// lang: false,
-		// lvl: false,
-		//
-		// ethnos: false,
-		// gender: false,
-		// skin_color: false,
-		// eyes_color: false,
-		// hair_color: false,
-		// age: false,
-		// height: false,
-		// weight: false,
-		// characteristics: false,
-		// skills: false,
-		// languages: false,
-		//
-		// selection: false,
-		// home: true,
-		// home_arr: [false, false],
-		//
-		// color_selected: {
-		// 	skin: null,
-		// 	hair: null,
-		// 	eyes: null,
-		// },
-		//
-		// shown_humman_lang: false,
-		//
-		// extra: {
-		// 	stats: null,
-		// 	skills: null,
-		// 	languages: null,
-		// },
-		//
-		// height_kof: 0.5,
-		// weight_kof: 0.5,
-		// age_kof: 0.5,
 	}),
 	getters: {
     Shown_Selection(state) {
@@ -53,6 +16,7 @@ export default {
 
 	mutations: {
 		PAGE(state, data) {
+      console.log(1);
 			state.race_page.shown[data.name] = data.bool;
 		},
 

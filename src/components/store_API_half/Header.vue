@@ -21,23 +21,39 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { computed } from 'vue'
+import { useStore } from "vuex";
 export default {
 	name: "Header",
-	computed: {
-		...mapState({
-			MY: (state) => state.MY.MY,
-			MY_level: (state) => state.MY.MY.level,
-			//race_page
-			logo: (state) => state.race_page.race_page.shown.logo,
-			lang: (state) => state.race_page.race_page.shown.lang,
-			lvl: (state) => state.race_page.race_page.shown.lvl,
-			dic_lang: (state) => state.dic.dic.lang,
-		}),
-		...mapGetters({
-			Select_Lang: "dic/Select_Lang",
-		}),
+  setup() {
+    const store = useStore()
 
+    const logo = computed(() => store.state.race_page.race_page.shown.logo)
+    const lang = computed(() => store.state.race_page.race_page.shown.lang)
+    const lvl = computed(() => store.state.race_page.race_page.shown.lvl)
+    const dic_lang = computed(() => store.state.dic.dic.lang)
+
+    const MY = computed(() => store.state.MY.MY)
+    const MY_level = computed(() => store.state.MY.MY.level)
+
+    const Select_Lang = computed(() => store.getters["dic/Select_Lang"])
+
+    function show(name) {
+      store.dispatch("race_page/show", name)
+    }
+
+    return {
+      logo,
+      lang,
+      lvl,
+      dic_lang,
+      MY, 
+      MY_level, 
+      Select_Lang, 
+      show
+    }
+  },
+	computed: {
 		em_Icon() {
 			return this.dic_lang.find((icon) => icon.mark === this.Select_Lang)
 				.icon;
@@ -53,10 +69,6 @@ export default {
 	},
 
 	methods: {
-		...mapActions({
-			show: "race_page/show",
-		}),
-
 		showMY() {
 			console.log(this.MY);
 		},
