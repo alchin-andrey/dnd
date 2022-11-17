@@ -534,7 +534,11 @@ import WelcomeBanner from "./components/WelcomeBanner.vue";
 // import Header from "./components/store_API_half_obj/Header.vue";
 // import Header from "./components/store_API_half/Header.vue";
 // import Header from "./components/root_store/Header.vue";
+
 import Header from "./components/store_obj/Header.vue";
+// import Header from "./components/store_API_root/Header.vue";
+
+// import Header from "./components/store_API_root_mok/Header.vue";
 // import Header from "./components/store/Header.vue";
 // import Header from "./components/Header.vue";
 // store components
@@ -590,7 +594,7 @@ export default {
     Shown_Selection() {
 			const obj = this.race_page.shown;
 			const values = Object.values(obj);
-		 return values.some(el => el === true);
+      return values.some(el => el === true);
 		},
 
 		Mastery() {
@@ -953,21 +957,6 @@ export default {
 			keys.forEach((key) => {
 				this.race_page.shown[key] = false;
 			});
-
-			// this.race_page.shown.logo = false;
-			// this.race_page.shown.lang = false;
-			// this.race_page.shown.lvl = false;
-			// this.race_page.shown.ethnos = false;
-			// this.race_page.shown.gender = false;
-			// this.race_page.shown.skin_color = false;
-			// this.race_page.shown.eyes_color = false;
-			// this.race_page.shown.hair_color = false;
-			// this.race_page.shown.age = false;
-			// this.race_page.shown.height = false;
-			// this.race_page.shown.weight = false;
-			// this.race_page.shown.characteristics = false;
-			// this.race_page.shown.skills = false;
-			// this.race_page.shown.languages = false;
 		},
 
 		...mapActions({
@@ -1021,11 +1010,7 @@ export default {
 		},
 
 		hideRuler() {
-			if (this.race_page.shown_home || this.race_page.shown.height) {
-				return true;
-			} else {
-				return false;
-			}
+			return this.race_page.shown_home || this.race_page.shown.height;
 		},
 
 		getCharColor(value) {

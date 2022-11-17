@@ -2,7 +2,10 @@
 	<div class="header" @click="showMY()">
 		<my-logo-card @click="show('logo')" :active="race_page.shown.logo" />
 		<div class="header_col">
-			<my-header-card @click="show('lang')" :active="race_page.shown.lang">
+			<my-header-card
+				@click="show('lang')"
+				:active="race_page.shown.lang"
+			>
 				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
@@ -21,35 +24,36 @@
 </template>
 
 <script>
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive, ref } from "vue";
 import { useStore } from "vuex";
 export default {
 	name: "Header",
-  setup() {
-    const store = useStore()
+	setup() {
+		const store = useStore();
 
-    // const MY = reactive(store.state.MY.MY)
-    const MY = computed(() => store.state.MY.MY)
-    const race_page = reactive(store.state.race_page.race_page)
-    const dic = reactive(store.state.dic.dic)
+		// const MY = reactive(store.state.MY.MY)
+		const MY = computed(() => store.state.MY.MY);
+		const race_page = reactive(store.state.race_page.race_page);
+		const dic = reactive(store.state.dic.dic);
 
-    const Select_Lang = computed(() => store.getters["dic/Select_Lang"])
+		const Select_Lang = computed(() => store.getters["dic/Select_Lang"]);
 
-    function show(name) {
-      store.dispatch("race_page/show", name)
-    }
+		function show(name) {
+			store.dispatch("race_page/show", name);
+		}
 
-    return {
-      dic,
-      MY,
-      race_page,
-      Select_Lang, 
-      show
-    }
-  },
+		return {
+			dic,
+			MY,
+			race_page,
+			Select_Lang,
+			show,
+		};
+	},
 	computed: {
 		em_Icon() {
-			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang).icon;
+			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang)
+				.icon;
 		},
 
 		Lang_Icon() {
@@ -57,8 +61,8 @@ export default {
 		},
 
 		Char_Lvl() {
-      return `lvl ${this.MY.level}`;
-    },
+			return `lvl ${this.MY.level}`;
+		},
 	},
 
 	methods: {

@@ -43,8 +43,7 @@ export default {
 		},
 
 		em_Icon() {
-			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang)
-				.icon;
+			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang).icon;
 		},
 
 		Lang_Icon() {

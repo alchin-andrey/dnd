@@ -24,25 +24,42 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { useShow } from "@/hooks/useShow";
+import { reactive } from "vue";
+import { useStore } from "vuex";
 export default {
 	name: "Header",
+	setup() {
+		const store = useStore();
+
+		const MY = reactive(store.state.MY.MY);
+		const race_page = reactive(store.state.race_page.race_page);
+		const dic = reactive(store.state.dic.dic);
+
+		console.log("race_page", race_page);
+
+		// const Select_Lang = computed(() => store.getters["dic/Select_Lang"]);
+
+		// const { show } = useShow();
+
+		return {
+			dic,
+			MY,
+			race_page,
+			// Select_Lang,
+			// show,
+			...useShow(),
+		};
+	},
 	computed: {
-		...mapState({
-			MY: (state) => state.MY.MY,
-			dic: (state) => state.dic.dic,
-			race_page: (state) => state.race_page.race_page,
-		}),
-
-		// ...mapState("MY", { MY: (state) => state.MY }),
-		// ...mapState("dic", { dic: (state) => state.dic }),
-		// ...mapState("race_page", { race_page: (state) => state.race_page }),
-
-		...mapGetters("dic", ["Select_Lang"]),
+		Select_Lang() {
+			return this.dic.select_lang;
+		},
 
 		em_Icon() {
-			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang)
-				.icon;
+			return this.dic.lang.find(
+				(icon) => icon.mark === this.Select_Lang
+			).icon;
 		},
 
 		Lang_Icon() {
@@ -55,8 +72,6 @@ export default {
 	},
 
 	methods: {
-		...mapActions("race_page", ["show"]),
-
 		showMY() {
 			console.log(this.MY);
 		},

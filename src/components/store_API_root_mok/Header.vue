@@ -24,25 +24,38 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import _MY from "@/assets/catalog/MY.js";
+import _dic from "@/assets/catalog/texts/dic";
+import _race_page from "@/assets/catalog/page_data/race_page";
+
+import { useShow } from "@/hooks/useShow";
+import { reactive } from "vue";
 export default {
 	name: "Header",
+	setup() {
+		const MY = reactive(_MY);
+		const race_page = reactive(_race_page);
+		const dic = reactive(_dic);
+
+    // const { show } = useShow()
+
+		return {
+			dic,
+			MY,
+			race_page,
+      // show,
+			...useShow(),
+		};
+	},
 	computed: {
-		...mapState({
-			MY: (state) => state.MY.MY,
-			dic: (state) => state.dic.dic,
-			race_page: (state) => state.race_page.race_page,
-		}),
-
-		// ...mapState("MY", { MY: (state) => state.MY }),
-		// ...mapState("dic", { dic: (state) => state.dic }),
-		// ...mapState("race_page", { race_page: (state) => state.race_page }),
-
-		...mapGetters("dic", ["Select_Lang"]),
+		Select_Lang() {
+			return this.dic.select_lang;
+		},
 
 		em_Icon() {
-			return this.dic.lang.find((icon) => icon.mark === this.Select_Lang)
-				.icon;
+			return this.dic.lang.find(
+				(icon) => icon.mark === this.Select_Lang
+			).icon;
 		},
 
 		Lang_Icon() {
@@ -55,8 +68,6 @@ export default {
 	},
 
 	methods: {
-		...mapActions("race_page", ["show"]),
-
 		showMY() {
 			console.log(this.MY);
 		},
