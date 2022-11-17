@@ -7,8 +7,8 @@ export default {
 
     }),
     getters: {
-        Select_Lang (state) {
-            return state.dic.select_lang;
+        Em_Icon(state) {
+          return state.dic.lang.find((icon) => icon.mark === state.dic.select_lang).icon;
         },
     },
 };

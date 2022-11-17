@@ -1,19 +1,22 @@
 <template>
 	<div class="header" @click="showMY()">
-		<my-logo-card @click="show('logo')" :active="logo" />
+		<my-logo-card @click="show('logo')" :active="race_page.shown.logo" />
 		<div class="header_col">
-			<my-header-card @click="show('lang')" :active="lang">
-				<!-- <emoji v-for="n in em_Icon" :key="n"
+			<my-header-card
+				@click="show('lang')"
+				:active="race_page.shown.lang"
+			>
+				<emoji v-for="n in Em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
 					:set="set_emoji"
 					:size="15"
-				/> -->
-				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
+				/>
+				<!-- <img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" /> -->
 			</my-header-card>
 			<my-header-card
 				@click="show('lvl')"
-				:active="lvl"
+				:active="race_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
 		</div>
@@ -25,37 +28,55 @@ import { mapState, mapGetters, mapActions } from "vuex";
 export default {
 	name: "Header",
 	computed: {
-		...mapState({
-			MY: (state) => state.MY.MY,
-			MY_level: (state) => state.MY.MY.level,
-			//race_page
-			logo: (state) => state.race_page.race_page.shown.logo,
-			lang: (state) => state.race_page.race_page.shown.lang,
-			lvl: (state) => state.race_page.race_page.shown.lvl,
-			dic_lang: (state) => state.dic.dic.lang,
-		}),
-		...mapGetters({
-			Select_Lang: "dic/Select_Lang",
-		}),
+    ...mapState("dic", { 
+      dic: (state) => state.dic 
+    }),
 
-		em_Icon() {
-			return this.dic_lang.find((icon) => icon.mark === this.Select_Lang)
-				.icon;
+    // ...mapState("dic", 
+    // { dic_lang: (state) => state.dic.lang },
+    // { select_lang: (state) => state.dic.select_lang },
+    // ),
+
+    ...mapGetters("dic", ["Em_Icon"]),
+
+		// Em_Icon() {
+		// 	return this.dic.lang.find((icon) => icon.mark === this.dic.select_lang).icon;
+		// },
+
+    Lang_Icon() {
+			return require(`@/assets/img/icon/lang/icon_${this.dic.select_lang}.png`);
 		},
 
-		Lang_Icon() {
-			return require(`@/assets/img/icon/lang/icon_${this.Select_Lang}.png`);
+    ...mapState("MY", { 
+      MY: (state) => state.MY 
+    }),
+
+    Char_Lvl() {
+			return `lvl ${this.MY.level}`;
 		},
 
-		Char_Lvl() {
-			return `lvl ${this.MY_level}`;
-		},
+    ...mapState("race_page", { 
+      race_page: (state) => state.race_page 
+    }),
+
+		// ...mapState({
+		// 	MY: (state) => state.MY.MY,
+		// 	dic: (state) => state.dic.dic,
+		// 	race_page: (state) => state.race_page.race_page,
+		// }),
+
+		// ...mapState("MY", { MY: (state) => state.MY }),
+		// ...mapState("dic", { dic: (state) => state.dic }),
+		// ...mapState("race_page", { race_page: (state) => state.race_page }),
+
+		// ...mapGetters("dic", ["Select_Lang"]),
+
+
+
 	},
 
 	methods: {
-		...mapActions({
-			show: "race_page/show",
-		}),
+		...mapActions("race_page", ["show"]),
 
 		showMY() {
 			console.log(this.MY);

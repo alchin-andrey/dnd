@@ -11,7 +11,6 @@ export default {
 			const values = Object.values(obj);
 			return values.some(el => el === true);
 		},
-
   },
 
 	mutations: {
