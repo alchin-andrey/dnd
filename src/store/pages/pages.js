@@ -2,7 +2,7 @@ import racePage from './modules/pageRace';
 
 // import main from "@/assets/catalog/page_data/race_page.js";
 
-import { race_page } from "@/assets/catalog/page_data/race_page.js";
+import { main_page } from "@/assets/catalog/page_data/race_page.js";
 
 export default {
 	namespaced: true,
@@ -10,7 +10,7 @@ export default {
     race_page: racePage,
   },
 	state: () => ({
-    main: race_page,
+    main_page,
     // main: {
     //   shown: {
     //     logo: false,
@@ -27,20 +27,20 @@ export default {
 	mutations: {
     CLOSE_HEADER_SETING(state, name) {
       console.log("CLOSE_HEADER_SETING", name);
-			state.main.shown[name] = false;
+			state.main_page.shown[name] = false;
 		},
 
     OPEN_HEADER_SETING(state, name) {
       console.log("OPEN_HEADER_SETING", name);
-			state.main.shown[name] = true;
+			state.main_page.shown[name] = true;
 		},
 
 		CLOSE_HOME(state) {
-			state.main.shown_home = false;
+			state.main_page.shown_home = false;
 		},
 
 		OPEN_HOME(state) {
-			state.main.shown_home = true;
+			state.main_page.shown_home = true;
 		},
 
     SHOW_SCROLL(state, name) {
@@ -50,14 +50,15 @@ export default {
 	actions: {
 
     showHederSetings({ commit, dispatch, state }, name){
-      console.log("showHederSetings", state.kof)
-      if (state.main.shown[name] === false) {
+      console.log("showHederSetings", state)
+      if (state.main_page.shown[name] === false) {
         dispatch("closeHederSetings");
 				dispatch("closeRaceSetings");
 				commit("OPEN_HEADER_SETING", name);
 				commit("CLOSE_HOME");
 			} else {
-				dispatch("goHome");
+				dispatch("closeHederSetings");
+        commit("OPEN_HOME");
 			}
 		},
 
@@ -88,7 +89,7 @@ export default {
 
     closeHederSetings({ commit, state }) {
       console.log("closeHederSetings")
-			const obj = state.main.shown;
+			const obj = state.main_page.shown;
       for (const [key, value] of Object.entries(obj)) {
         if (value) {
           commit("CLOSE_HEADER_SETING", key);

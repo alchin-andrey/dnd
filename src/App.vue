@@ -120,7 +120,7 @@
 			</div>
 			<transition name="btm-fade" mode="out-in">
 				<my-button
-					v-if="race_page.shown_home"
+					v-if="main_page.shown_home"
 					numb="02"
 					title="class"
 				></my-button>
@@ -135,13 +135,13 @@
 		:class="{ sidebar_wrap_open: Shown_Selection }"
 	>
 		<!-- Превью -->
-		<my-selection-box :shown="race_page.shown.logo">
+		<my-selection-box :shown="main_page.shown.logo">
 			<Description />
 		</my-selection-box>
 		<!-- Превью -->
 
 		<!-- Смена языка -->
-		<my-selection-box :shown="race_page.shown.lang">
+		<my-selection-box :shown="main_page.shown.lang">
 			<my-selection-card
 				v-for="item in dic.lang"
 				:key="item"
@@ -157,6 +157,15 @@
 			</my-selection-card>
 		</my-selection-box>
 		<!-- Смена языка -->
+
+    <!-- Уровень -->
+		<my-selection-box :shown="main_page.shown.lvl">
+			<div class="flex_options">
+				<MyRange v-model.number="MY.level" lvl />
+				<MyRangeSize lvl />
+			</div>
+		</my-selection-box>
+		<!-- Уровень -->
 
 		<!-- Этнос-->
 		<my-selection-box :shown="race_page.shown.ethnos">
@@ -187,15 +196,6 @@
 			<my-color-select body_part="hair" />
 		</my-selection-box>
 		<!-- Цвет волос -->
-
-		<!-- Уровень -->
-		<my-selection-box :shown="race_page.shown.lvl">
-			<div class="flex_options">
-				<MyRange v-model.number="MY.level" lvl />
-				<MyRangeSize lvl />
-			</div>
-		</my-selection-box>
-		<!-- Уровень -->
 
 		<!-- Возраст -->
 		<my-selection-box :shown="race_page.shown.age">
@@ -387,7 +387,7 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: !race_page.shown_home }"
+		:class="{ sidebar_right_close: !main_page.shown_home }"
 	>
 		<!-- stats -->
 		<my-wrapper hr>
@@ -517,7 +517,7 @@ import past from "@/assets/catalog/base_data/step3_backstories.js";
 import languages from "@/assets/catalog/base_data/list_languages.js";
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
-import {race_page} from "@/assets/catalog/page_data/race_page.js";
+import {race_page, main_page} from "@/assets/catalog/page_data/race_page.js";
 
 import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
@@ -570,6 +570,7 @@ export default {
 			placeholder: placeholder,
 
 			race_page: race_page,
+      main_page: main_page,
 		};
 	},
 
@@ -591,10 +592,20 @@ export default {
 	computed: {
 		...mapGetters({}),
 
-    Shown_Selection() {
+    Main_Selection() {
 			const obj = this.race_page.shown;
 			const values = Object.values(obj);
       return values.some(el => el === true);
+		},
+
+    Race_Selection() {
+			const obj = this.main_page.shown;
+			const values = Object.values(obj);
+      return values.some(el => el === true);
+		},
+
+    Shown_Selection() {
+      return this.Main_Selection || this.Race_Selection;
 		},
 
 		Mastery() {
@@ -923,7 +934,7 @@ export default {
 				// this.getHomeArr();
 				// this.race_page.shown_selection = false;
 				this.race_page.shown.ethnos = false;
-				this.race_page.shown_home = true;
+				this.main_page.shown_home = true;
 			}
 		},
 
@@ -935,7 +946,7 @@ export default {
 				// this.getHomeArr();
 				// this.race_page.shown_selection = false;
 				this.race_page.shown[`${name}_color`] = false;
-				this.race_page.shown_home = true;
+				this.main_page.shown_home = true;
 			}
 		},
 
@@ -947,15 +958,20 @@ export default {
 				// this.getHomeArr();
 				// this.race_page.shown_selection = false;
 				this.race_page.shown[name_1] = false;
-				this.race_page.shown_home = true;
+				this.main_page.shown_home = true;
 			}
 		},
 
 		close() {
-			const obj = this.race_page.shown;
-			const keys = Object.keys(obj);
-			keys.forEach((key) => {
-				this.race_page.shown[key] = false;
+			const obj_race = this.race_page.shown;
+			const keys_race = Object.keys(obj_race);
+			keys_race.forEach((keys) => {
+				this.race_page.shown[keys] = false;
+			});
+      const obj_main = this.main_page.shown;
+			const keys_main = Object.keys(obj_main);
+			keys_main.forEach((keys) => {
+				this.main_page.shown[keys] = false;
 			});
 		},
 
@@ -980,7 +996,7 @@ export default {
 			} else if (this.race_page.shown[name] === false) {
 				this.close();
 				this.race_page.shown[name] = true;
-				this.race_page.shown_home = false;
+				this.main_page.shown_home = false;
 			} else {
         this.showHome()
 			}
@@ -990,7 +1006,7 @@ export default {
 			// this.race_page.shown_selection = false;
 			// this.race_page.whtch_home = !this.race_page.whtch_home;
 			this.close();
-			this.race_page.shown_home = true;
+			this.main_page.shown_home = true;
 			// this.SHOW_SKROLL('shown_humman_lang')
 			// this.shownHome();
 			// this.$store.commit('race_page/SHOW_HOME')
@@ -999,10 +1015,10 @@ export default {
 		},
 
 		// getHomeArr() {
-		// 	let arr = this.race_page.shown_home_arr;
+		// 	let arr = this.main_page.shown_home_arr;
 		// 	arr.splice(0, 1);
 		// 	arr.push(this.race_page.shown_selection);
-		// 	this.race_page.shown_home_arr = arr;
+		// 	this.main_page.shown_home_arr = arr;
 		// },
 
 		showSkroll(name) {
@@ -1010,7 +1026,7 @@ export default {
 		},
 
 		hideRuler() {
-			return this.race_page.shown_home || this.race_page.shown.height;
+			return this.main_page.shown_home || this.race_page.shown.height;
 		},
 
 		getCharColor(value) {
