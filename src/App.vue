@@ -517,7 +517,7 @@ import past from "@/assets/catalog/base_data/step3_backstories.js";
 import languages from "@/assets/catalog/base_data/list_languages.js";
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
-import race_page from "@/assets/catalog/page_data/race_page.js";
+import {race_page} from "@/assets/catalog/page_data/race_page.js";
 
 import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";

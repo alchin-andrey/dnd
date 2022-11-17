@@ -10,6 +10,8 @@ import color from './modules/colorMod';
 import lang from './modules/langMod';
 import race_page from './modules/pageRace';
 
+import pages from './pages/pages';
+
 import MY from './modules/MyMod';
 
 
@@ -21,6 +23,8 @@ const store = createStore({
     color,
     lang,
 
+    
+    pages,
     // pages
     race_page,
     MY,

@@ -1,4 +1,4 @@
-import race_page from "@/assets/catalog/page_data/race_page.js";
+import {race_page} from "@/assets/catalog/page_data/race_page.js";
 
 export default {
 	namespaced: true,

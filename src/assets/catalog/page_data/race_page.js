@@ -1,63 +1,86 @@
 export default {
-    // logo: false,
-    // lang: false,
-    // lvl: false,
-    //
-    //
-    // ethnos: false,
-    // gender: false,
-    // skin_color: false,
-    // eyes_color: false,
-    // hair_color: false,
-    // age: false,
-    // height: false,
-    // weight: false,
-    // characteristics: false,
-    // skills: false,
-    // languages: false,
+	shown: {
+		logo: false,
+		lang: false,
+		lvl: false,
 
-    shown: {
-        logo: false,
-        lang: false,
-        lvl: false,
+		ethnos: false,
+		gender: false,
+		skin_color: false,
+		eyes_color: false,
+		hair_color: false,
+		age: false,
+		height: false,
+		weight: false,
+		characteristics: false,
+		skills: false,
+		languages: false,
+	},
 
-        ethnos: false,
-        gender: false,
-        skin_color: false,
-        eyes_color: false,
-        hair_color: false,
-        age: false,
-        height: false,
-        weight: false,
-        characteristics: false,
-        skills: false,
-        languages: false,
-    },
+	shown_home: true,
 
+	color_selected: {
+		skin: null,
+		hair: null,
+		eyes: null,
+	},
 
-    // shown_selection: false,
-    shown_home: true,
-    // home_arr: [false, false],
+	shown_humman_lang: false,
 
-    // skin_hower: null,
-    // hair_hower: null,
-    // eyes_hower: null,
+	extra: {
+		stats: null,
+		skills: null,
+		languages: null,
+	},
 
-    color_selected: {
-        skin: null,
-        hair: null,
-        eyes: null,
-    },
+	height_kof: 0.5,
+	weight_kof: 0.5,
+	age_kof: 0.5,
+};
 
-    shown_humman_lang: false,
+export const main_page = {
+	shown: {
+		logo: false,
+		lang: false,
+		lvl: false,
+	},
+	shown_home: true,
+};
 
-    extra:{
-        stats: null,
-        skills: null,
-        languages: null,
-    },
+export const race_page = {
+  shown_home: true,
+	shown: {
+		logo: false,
+		lang: false,
+		lvl: false,
 
-    height_kof: 0.5,
-    weight_kof: 0.5,
-    age_kof: 0.5,
+		ethnos: false,
+		gender: false,
+		skin_color: false,
+		eyes_color: false,
+		hair_color: false,
+		age: false,
+		height: false,
+		weight: false,
+		characteristics: false,
+		skills: false,
+		languages: false,
+	},
+	color_selected: {
+		skin: null,
+		hair: null,
+		eyes: null,
+	},
+
+	shown_humman_lang: false,
+
+	extra: {
+		stats: null,
+		skills: null,
+		languages: null,
+	},
+
+	height_kof: 0.5,
+	weight_kof: 0.5,
+	age_kof: 0.5,
 };

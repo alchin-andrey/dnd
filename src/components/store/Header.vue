@@ -6,13 +6,13 @@
 				@click="show('lang')"
 				:active="race_page.shown.lang"
 			>
-				<emoji v-for="n in Em_Icon" :key="n"
+				<!-- <emoji v-for="n in Em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
 					:set="set_emoji"
 					:size="15"
-				/>
-				<!-- <img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" /> -->
+				/> -->
+				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
 				@click="show('lvl')"
@@ -28,55 +28,26 @@ import { mapState, mapGetters, mapActions } from "vuex";
 export default {
 	name: "Header",
 	computed: {
-    ...mapState("dic", { 
-      dic: (state) => state.dic 
-    }),
+		...mapState({
+			MY: (state) => state.MY.MY,
+			race_page: (state) => state.pages.race_page.race_page,
+			dic: (state) => state.dic.dic,
+		}),
+		// ...mapState("race_page", { race_page: (state) => state.race_page }),
+		// ...mapState("dic", { dic: (state) => state.dic }),
+		// ...mapState("MY", { MY: (state) => state.MY }),
 
-    // ...mapState("dic", 
-    // { dic_lang: (state) => state.dic.lang },
-    // { select_lang: (state) => state.dic.select_lang },
-    // ),
+		...mapGetters("dic", ["Em_Icon", "Lang_Icon"]),
 
-    ...mapGetters("dic", ["Em_Icon"]),
-
-		// Em_Icon() {
-		// 	return this.dic.lang.find((icon) => icon.mark === this.dic.select_lang).icon;
-		// },
-
-    Lang_Icon() {
-			return require(`@/assets/img/icon/lang/icon_${this.dic.select_lang}.png`);
-		},
-
-    ...mapState("MY", { 
-      MY: (state) => state.MY 
-    }),
-
-    Char_Lvl() {
+		Char_Lvl() {
 			return `lvl ${this.MY.level}`;
 		},
-
-    ...mapState("race_page", { 
-      race_page: (state) => state.race_page 
-    }),
-
-		// ...mapState({
-		// 	MY: (state) => state.MY.MY,
-		// 	dic: (state) => state.dic.dic,
-		// 	race_page: (state) => state.race_page.race_page,
-		// }),
-
-		// ...mapState("MY", { MY: (state) => state.MY }),
-		// ...mapState("dic", { dic: (state) => state.dic }),
-		// ...mapState("race_page", { race_page: (state) => state.race_page }),
-
-		// ...mapGetters("dic", ["Select_Lang"]),
-
-
-
 	},
 
 	methods: {
-		...mapActions("race_page", ["show"]),
+    // ...mapActions("pages", ["showHederSetings"]),
+    ...mapActions({show: "pages/showHederSetings"}),
+		// ...mapActions("race_page", ["show"]),
 
 		showMY() {
 			console.log(this.MY);
