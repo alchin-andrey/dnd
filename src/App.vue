@@ -591,8 +591,8 @@ export default {
 
 	computed: {
     ...mapState("pages", {
-      main_page: (state) => state.main_page, 
-      race_page: (state) => state.race_page 
+      main_page: (state) => state.main_page,
+      race_page: (state) => state.race_page
     }),
 
 		...mapGetters({}),
@@ -980,17 +980,17 @@ export default {
 			});
 		},
 
-		...mapActions({
-			goHome: "race_page/goHome",
-		}),
+		// ...mapActions({show: "pages/showRaceSetings"}),
+    ...mapActions("pages", ["showRaceSetings"]),
 		...mapMutations({
-			GET_HOME_ARR: "race_page/GET_HOME_ARR",
-			SHOW_SCROLL: "race_page/SHOW_SCROLL",
-			SHOW_HOME: "race_page/SHOW_HOME",
-			MY_DEF: "MY/MY_DEF",
 		}),
 
-		show(name, key) {
+    show(name, key) {
+      let data = {name: name, key: key}
+      this.showRaceSetings(data)
+    },
+
+		show_1(name, key) {
 			let ethnos_common =
 				(name === "ethnos" && this.MY.ethnos.name === "common");
 			let color_common =

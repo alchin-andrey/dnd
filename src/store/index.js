@@ -8,7 +8,6 @@ import gender from './modules/genderMod';
 import race from './modules/raceMod';
 import color from './modules/colorMod';
 import lang from './modules/langMod';
-import race_page from './modules/pageRace';
 
 import pages from './pages/pages';
 
@@ -25,8 +24,6 @@ const store = createStore({
 
     
     pages,
-    // pages
-    race_page,
     MY,
     dic,
   },

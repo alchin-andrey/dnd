@@ -1,16 +1,11 @@
 import racePage from './modules/pageRace';
 
-// import main from "@/assets/catalog/page_data/race_page.js";
-
-// import { main_page } from "@/assets/catalog/page_data/race_page.js";
-
 export default {
 	namespaced: true,
   modules: {
     race_page: racePage,
   },
 	state: () => ({
-    // main_page,
     main_page: {
       shown: {
         logo: false,
@@ -24,19 +19,14 @@ export default {
 	getters: {
   },
 
-  // console.log(rootGetters["MY/race"]);
-			// console.log(t("languages_human"));
-			// commit("MY/MY_RACE", null, { root: true });
-			// commit("PAGE", {name:"home", bool: false});
-
 	mutations: {
-    CLOSE_HEADER_SETING(state, name) {
-			state.main_page.shown[name] = false;
-		},
-
-    OPEN_HEADER_SETING(state, name) {
-			state.main_page.shown[name] = true;
-		},
+    // CLOSE_HEADER_SETING(state, name) {
+		// 	state.main_page.shown[name] = false;
+		// },
+		//
+    // OPEN_HEADER_SETING(state, name) {
+		// 	state.main_page.shown[name] = true;
+		// },
 
     CLOSE_SETING(state, {page, name}) {
       state[page].shown[name] = false;
@@ -55,7 +45,7 @@ export default {
 		},
 
     SHOW_SCROLL(state, name) {
-			state[name] = state[name] === false;
+			state.main_page[name] = state.main_page[name] === false;
 		},
 	},
 	actions: {
@@ -65,14 +55,15 @@ export default {
         dispatch("closeSetings", {page: "main_page"});
         dispatch("closeSetings", {page: "race_page"});
 				// dispatch("closeRaceSetings");
-				commit("OPEN_HEADER_SETING", name);
+        commit("OPEN_SETING", {page: "main_page", name: name});
+				// commit("OPEN_HEADER_SETING", name);
 				commit("CLOSE_HOME");
 			} else {
 				dispatch("goHome");
 			}
 		},
 
-		show({ commit, dispatch, state, rootState }, name, key){
+		show({ commit, dispatch, state, rootState }, {name, key}){
       let common = rootState.MY.MY.ethnos.name === "common";
 			let ethnos_common = (name === "ethnos" && common);
 
@@ -81,8 +72,10 @@ export default {
 			if (ethnos_common || color_common) {
 				return null;
 			} else if (state.race_page.shown[name] === false) {
-				dispatch("closeRaceSetings");
-				commit("OPEN_RACE_SETING", name);
+        dispatch("closeSetings", {page: "main_page"});
+				dispatch("closeSetings", {page: "race_page"});
+        commit("OPEN_SETING", {page: "race_page", name: name});
+				// commit("OPEN_RACE_SETING", name);
 				commit("CLOSE_HOME");
 
 			} else {
