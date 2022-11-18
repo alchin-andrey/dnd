@@ -1,9 +1,6 @@
-// import { race_page } from "@/assets/catalog/page_data/race_page.js";
-
 export default {
 	// namespaced: true,
 	state: () => ({
-		// race_page,
 		shown: {
 			ethnos: false,
 			gender: false,
@@ -36,7 +33,7 @@ export default {
 		age_kof: 0.5,
 	}),
 	getters: {
-		Shown_Selection(state) {
+		Shown_Race_Selection(state) {
 			const obj = state.shown;
 			const values = Object.values(obj);
 			return values.some((el) => el === true);
@@ -44,17 +41,9 @@ export default {
 	},
 
 	mutations: {
-		CLOSE_RACE_SETING(state, name) {
-			state.shown[name] = false;
-		},
-
-		OPEN_RACE_SETING(state, name) {
-			state.shown[name] = true;
-		},
 	},
 	actions: {
     showRaceSetings({ commit, dispatch, state, rootState }, {name, key}){
-      console.log("showRace", name, key)
       let common = rootState.MY.MY.ethnos.name === "common";
 			let ethnos_common = (name === "ethnos" && common);
 
@@ -66,20 +55,10 @@ export default {
         dispatch("closeSetings", {page: "main_page"});
 				dispatch("closeSetings", {page: "race_page"});
         commit("OPEN_SETING", {page: "race_page", name: name});
-				// commit("OPEN_RACE_SETING", name);
 				commit("CLOSE_HOME");
 
 			} else {
 				dispatch("goHome");
-			}
-		},
-
-		closeRaceSetings({ commit, state }) {
-			const obj = state.shown;
-			for (const [key, value] of Object.entries(obj)) {
-				if (value) {
-					commit("CLOSE_RACE_SETING", key);
-				}
 			}
 		},
 	},

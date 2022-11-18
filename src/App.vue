@@ -2,7 +2,7 @@
 	<!-- Левый бар -->
 	<div class="sidebar_left">
 		<div class="main_chapter">
-			<Header @getShow="show" />
+			<Header />
 			<my-slider
 				numb="01"
 				title="race"
@@ -990,22 +990,22 @@ export default {
       this.showRaceSetings(data)
     },
 
-		show_1(name, key) {
-			let ethnos_common =
-				(name === "ethnos" && this.MY.ethnos.name === "common");
-			let color_common =
-				(name === `${key}_color` &&
-				this.MY.race.settings.color[key].length === 0);
-			if (ethnos_common || color_common) {
-				return null;
-			} else if (this.race_page.shown[name] === false) {
-				this.close();
-				this.race_page.shown[name] = true;
-				this.main_page.shown_home = false;
-			} else {
-        this.showHome()
-			}
-		},
+		// show_1(name, key) {
+		// 	let ethnos_common =
+		// 		(name === "ethnos" && this.MY.ethnos.name === "common");
+		// 	let color_common =
+		// 		(name === `${key}_color` &&
+		// 		this.MY.race.settings.color[key].length === 0);
+		// 	if (ethnos_common || color_common) {
+		// 		return null;
+		// 	} else if (this.race_page.shown[name] === false) {
+		// 		this.close();
+		// 		this.race_page.shown[name] = true;
+		// 		this.main_page.shown_home = false;
+		// 	} else {
+    //     this.showHome()
+		// 	}
+		// },
 
 		showHome() {
 			// this.race_page.shown_selection = false;

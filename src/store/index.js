@@ -9,7 +9,7 @@ import race from './modules/raceMod';
 import color from './modules/colorMod';
 import lang from './modules/langMod';
 
-import pages from './pages/pages';
+import pages from './pages/pages_Mod';
 
 import MY from './modules/MyMod';
 

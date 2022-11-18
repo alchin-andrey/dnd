@@ -1,10 +1,10 @@
 <template>
 	<div class="header" @click="showMY()">
-		<my-logo-card @click="show('logo')" :active="race_page.shown.logo" />
+		<my-logo-card @click="show('logo')" :active="main_page.shown.logo" />
 		<div class="header_col">
 			<my-header-card
 				@click="show('lang')"
-				:active="race_page.shown.lang"
+				:active="main_page.shown.lang"
 			>
 				<!-- <emoji v-for="n in Em_Icon" :key="n"
 					:data="emojiIndex"
@@ -16,7 +16,7 @@
 			</my-header-card>
 			<my-header-card
 				@click="show('lvl')"
-				:active="race_page.shown.lvl"
+				:active="main_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
 		</div>
@@ -30,10 +30,10 @@ export default {
 	computed: {
 		...mapState({
 			MY: (state) => state.MY.MY,
-			race_page: (state) => state.pages.race_page,
+			main_page: (state) => state.pages.main_page,
 			dic: (state) => state.dic.dic,
 		}),
-		// ...mapState("race_page", { race_page: (state) => state.race_page }),
+		// ...mapState("main_page", { main_page: (state) => state.main_page }),
 		// ...mapState("dic", { dic: (state) => state.dic }),
 		// ...mapState("MY", { MY: (state) => state.MY }),
 
@@ -45,9 +45,9 @@ export default {
 	},
 
 	methods: {
-    // ...mapActions("pages", ["showHederSetings"]),
-    ...mapActions({show: "pages/showHederSetings"}),
-		// ...mapActions("race_page", ["show"]),
+    // ...mapActions("pages", ["showMainSetings"]),
+    ...mapActions({show: "pages/showMainSetings"}),
+		// ...mapActions("main_page", ["show"]),
 
 		showMY() {
 			console.log(this.MY);
