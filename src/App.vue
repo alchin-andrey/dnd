@@ -124,7 +124,7 @@
 					numb="02"
 					title="class"
 				></my-button>
-				<my-button-back v-else @click="showHome()"></my-button-back>
+				<my-button-back v-else @click="showHome('race_page')"></my-button-back>
 			</transition>
 		</div>
 	</div>
@@ -967,18 +967,18 @@ export default {
 			}
 		},
 
-		close() {
-			const obj_race = this.race_page.shown;
-			const keys_race = Object.keys(obj_race);
-			keys_race.forEach((keys) => {
-				this.race_page.shown[keys] = false;
-			});
-      const obj_main = this.main_page.shown;
-			const keys_main = Object.keys(obj_main);
-			keys_main.forEach((keys) => {
-				this.main_page.shown[keys] = false;
-			});
-		},
+		// close() {
+		// 	const obj_race = this.race_page.shown;
+		// 	const keys_race = Object.keys(obj_race);
+		// 	keys_race.forEach((keys) => {
+		// 		this.race_page.shown[keys] = false;
+		// 	});
+    //   const obj_main = this.main_page.shown;
+		// 	const keys_main = Object.keys(obj_main);
+		// 	keys_main.forEach((keys) => {
+		// 		this.main_page.shown[keys] = false;
+		// 	});
+		// },
 
 		// ...mapActions({show: "pages/showRaceSettings"}),
     ...mapActions("pages", ["showRaceSettings", ]),
@@ -990,6 +990,7 @@ export default {
 
     ...mapActions("pages", {
       show: "showRaceSettings",
+      showHome: "goHome"
     }),
 
 		...mapMutations({
@@ -1017,17 +1018,10 @@ export default {
 		// 	}
 		// },
 
-		showHome() {
-			// this.race_page.shown_selection = false;
-			// this.race_page.whtch_home = !this.race_page.whtch_home;
-			this.close();
-			this.main_page.shown_home = true;
-			// this.SHOW_SKROLL('shown_humman_lang')
-			// this.shownHome();
-			// this.$store.commit('race_page/SHOW_HOME')
-			// 	GET_HOME_ARR
-			// this.$store.dispatch('race_page/showHome')
-		},
+		// showHome() {
+		// 	this.close();
+		// 	this.main_page.shown_home = true;
+		// },
 
 		// getHomeArr() {
 		// 	let arr = this.main_page.shown_home_arr;

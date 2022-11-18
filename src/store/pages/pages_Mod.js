@@ -8,7 +8,22 @@ export default {
     race_page: racePage,
   },
 
+  state: () => ({
+		pages: {
+      race: true,
+      clas: false
+    }
+	}),
+
 	getters: {
+    activePage( state ) {
+      const obj = state[page].shown;
+      for (const [key, value] of Object.entries(obj)) {
+        if (value) {
+          return key;
+        }
+      }
+		},
   },
 
 	mutations: {
@@ -37,6 +52,11 @@ export default {
     closeAllSetting({ dispatch }, page) {
       dispatch("closeSettings", {page: "main_page"});
       dispatch("closeSettings", {page: page});
+    },
+
+    closeAllSetting_1({ dispatch }) {
+      dispatch("closeSettings", {page: "main_page"});
+      dispatch("closeSettings", {page: "race_page"});
     },
 
     goSetting({ commit, dispatch }, {page, name}) {

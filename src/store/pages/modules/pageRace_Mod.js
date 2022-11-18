@@ -42,7 +42,7 @@ export default {
 
 	mutations: {
 	},
-  
+
 	actions: {
     showRaceSettings({ rootGetters, dispatch, rootState }, name){
       // let ethnos_common = rootGetters["MY/MY_Race_Common"];
