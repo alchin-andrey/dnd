@@ -48,11 +48,11 @@ export const main_page = {
 };
 
 export const race_page = {
-  shown_home: true,
+  // shown_home: true,
 	shown: {
-		logo: false,
-		lang: false,
-		lvl: false,
+		// logo: false,
+		// lang: false,
+		// lvl: false,
 
 		ethnos: false,
 		gender: false,

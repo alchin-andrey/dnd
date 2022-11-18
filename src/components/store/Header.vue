@@ -30,7 +30,7 @@ export default {
 	computed: {
 		...mapState({
 			MY: (state) => state.MY.MY,
-			race_page: (state) => state.pages.race_page.race_page,
+			race_page: (state) => state.pages.race_page,
 			dic: (state) => state.dic.dic,
 		}),
 		// ...mapState("race_page", { race_page: (state) => state.race_page }),

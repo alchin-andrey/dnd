@@ -2,7 +2,7 @@ import racePage from './modules/pageRace';
 
 // import main from "@/assets/catalog/page_data/race_page.js";
 
-import { main_page } from "@/assets/catalog/page_data/race_page.js";
+// import { main_page } from "@/assets/catalog/page_data/race_page.js";
 
 export default {
 	namespaced: true,
@@ -10,29 +10,40 @@ export default {
     race_page: racePage,
   },
 	state: () => ({
-    main_page,
-    // main: {
-    //   shown: {
-    //     logo: false,
-    //     lang: false,
-    //     lvl: false,
-    //   },
-    //   shown_home: true,
-    // }
+    // main_page,
+    main_page: {
+      shown: {
+        logo: false,
+        lang: false,
+        lvl: false,
+      },
+      shown_home: true,
+    }
 	}),
 
 	getters: {
   },
 
+  // console.log(rootGetters["MY/race"]);
+			// console.log(t("languages_human"));
+			// commit("MY/MY_RACE", null, { root: true });
+			// commit("PAGE", {name:"home", bool: false});
+
 	mutations: {
     CLOSE_HEADER_SETING(state, name) {
-      console.log("CLOSE_HEADER_SETING", name);
 			state.main_page.shown[name] = false;
 		},
 
     OPEN_HEADER_SETING(state, name) {
-      console.log("OPEN_HEADER_SETING", name);
 			state.main_page.shown[name] = true;
+		},
+
+    CLOSE_SETING(state, {page, name}) {
+      state[page].shown[name] = false;
+		},
+
+    OPEN_SETING(state, {page, name}) {
+			state[page].shown[name] = true;
 		},
 
 		CLOSE_HOME(state) {
@@ -50,21 +61,18 @@ export default {
 	actions: {
 
     showHederSetings({ commit, dispatch, state }, name){
-      console.log("showHederSetings", state)
       if (state.main_page.shown[name] === false) {
-        dispatch("closeHederSetings");
-				dispatch("closeRaceSetings");
+        dispatch("closeSetings", {page: "main_page"});
+        dispatch("closeSetings", {page: "race_page"});
+				// dispatch("closeRaceSetings");
 				commit("OPEN_HEADER_SETING", name);
 				commit("CLOSE_HOME");
 			} else {
-				dispatch("closeHederSetings");
-        commit("OPEN_HOME");
+				dispatch("goHome");
 			}
 		},
 
 		show({ commit, dispatch, state, rootState }, name, key){
-      console.log("state.kof", state.kof)
-      console.log("state", state.race_page)
       let common = rootState.MY.MY.ethnos.name === "common";
 			let ethnos_common = (name === "ethnos" && common);
 
@@ -72,7 +80,7 @@ export default {
 			let color_common = (name === `${key}_color` && color_length);
 			if (ethnos_common || color_common) {
 				return null;
-			} else if (state.race_page.race_page.shown[name] === false) {
+			} else if (state.race_page.shown[name] === false) {
 				dispatch("closeRaceSetings");
 				commit("OPEN_RACE_SETING", name);
 				commit("CLOSE_HOME");
@@ -83,16 +91,18 @@ export default {
 		},
 
     goHome({ commit, dispatch }) {
-			dispatch("closeRaceSetings");
+      dispatch("closeSetings", {page: "main_page"});
+      dispatch("closeSetings", {page: "race_page"});
+			// dispatch("closeRaceSetings");
 			commit("OPEN_HOME");
 		},
 
-    closeHederSetings({ commit, state }) {
-      console.log("closeHederSetings")
-			const obj = state.main_page.shown;
+    closeSetings({ commit, state }, data) {
+      const obj = state[data.page].shown;
       for (const [key, value] of Object.entries(obj)) {
         if (value) {
-          commit("CLOSE_HEADER_SETING", key);
+          // commit("CLOSE_HEADER_SETING", key);
+          commit("CLOSE_SETING", {page: data.page, name: key});
         }
       }
 		},

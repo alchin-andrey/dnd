@@ -542,7 +542,7 @@ import Header from "./components/store/Header.vue";
 // import Header from "./components/arcive/store_cleen/Header.vue";
 // import Header from "./components/arcive/root/Header.vue";
 // store components
-import {mapActions, mapGetters, mapMutations} from "vuex";
+import {mapActions, mapGetters, mapState, mapMutations} from "vuex";
 
 export default {
 	name: "App",
@@ -569,8 +569,8 @@ export default {
 			languages: languages,
 			placeholder: placeholder,
 
-			race_page: race_page,
-      main_page: main_page,
+			// race_page: race_page,
+      // main_page: main_page,
 		};
 	},
 
@@ -590,6 +590,11 @@ export default {
 	},
 
 	computed: {
+    ...mapState("pages", {
+      main_page: (state) => state.main_page, 
+      race_page: (state) => state.race_page 
+    }),
+
 		...mapGetters({}),
 
     Main_Selection() {
