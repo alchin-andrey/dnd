@@ -120,11 +120,11 @@
 			</div>
 			<transition name="btm-fade" mode="out-in">
 				<my-button
-					v-if="main_page.shown_home"
+					v-if="pages.shown_home"
 					numb="02"
 					title="class"
 				></my-button>
-				<my-button-back v-else @click="showHome('race_page')"></my-button-back>
+				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
 		</div>
 	</div>
@@ -387,7 +387,7 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: !main_page.shown_home }"
+		:class="{ sidebar_right_close: !pages.shown_home }"
 	>
 		<!-- stats -->
 		<my-wrapper hr>
@@ -591,6 +591,7 @@ export default {
 
 	computed: {
     ...mapState("pages", {
+      pages: (state) => state,
       main_page: (state) => state.main_page,
       race_page: (state) => state.race_page
     }),
