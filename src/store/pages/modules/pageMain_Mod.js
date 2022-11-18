@@ -28,10 +28,10 @@ export default {
 	},
 	actions: {
 
-    showMainSetings({ commit, dispatch, state }, name){
+    showMainSettings({ commit, dispatch, state }, name){
       if (state.shown[name] === false) {
-        dispatch("closeSetings", {page: "main_page"});
-        dispatch("closeSetings", {page: "race_page"});
+        dispatch("closeSettings", {page: "main_page"});
+        dispatch("closeSettings", {page: "race_page"});
         commit("OPEN_SETING", {page: "main_page", name: name});
 				commit("CLOSE_HOME");
 			} else {

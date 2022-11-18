@@ -10,6 +10,11 @@ export default {
 		MY_DEF: MY_DEF,
 	}),
 	getters: {
+    //race_page
+    MY_Race_Common(state){
+			return state.MY.ethnos.name === "common";
+		},
+
 		MY_race(state){
 			return state.MY.race
 		},

@@ -95,21 +95,21 @@
 						>
 						</my-controller>
 						<my-selection
-							@click="show('skin_color', 'skin')"
+							@click="show('skin_color')"
 							:active="race_page.shown.skin_color"
 							title="color_skin"
 							:type="getCharColor('skin').name"
 						>
 						</my-selection>
 						<my-selection
-							@click="show('eyes_color', 'eyes')"
+							@click="show('eyes_color')"
 							:active="race_page.shown.eyes_color"
 							title="color_eyes"
 							:type="getCharColor('eyes').name"
 						>
 						</my-selection>
 						<my-selection
-							@click="show('hair_color', 'hair')"
+							@click="show('hair_color')"
 							:active="race_page.shown.hair_color"
 							title="color_hair"
 							:type="getCharColor('hair').name"
@@ -980,15 +980,25 @@ export default {
 			});
 		},
 
-		// ...mapActions({show: "pages/showRaceSetings"}),
-    ...mapActions("pages", ["showRaceSetings"]),
+		// ...mapActions({show: "pages/showRaceSettings"}),
+    ...mapActions("pages", ["showRaceSettings", ]),
+    // ...mapActions("pages", {
+    //   showEthnos: "showRaceSettings__Ethnos",
+    //   showColor: "showRaceSettings__Color",
+    //   show: "showRaceSettings",
+    // }),
+
+    ...mapActions("pages", {
+      show: "showRaceSettings",
+    }),
+
 		...mapMutations({
 		}),
 
-    show(name, key) {
-      let data = {name: name, key: key}
-      this.showRaceSetings(data)
-    },
+    // show(name, key) {
+    //   let data = {name: name, key: key}
+    //   this.showRaceSettings(data)
+    // },
 
 		// show_1(name, key) {
 		// 	let ethnos_common =

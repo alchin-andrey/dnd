@@ -45,8 +45,8 @@ export default {
 	},
 
 	methods: {
-    // ...mapActions("pages", ["showMainSetings"]),
-    ...mapActions({show: "pages/showMainSetings"}),
+    // ...mapActions("pages", ["showMainSettings"]),
+    ...mapActions({show: "pages/showMainSettings"}),
 		// ...mapActions("main_page", ["show"]),
 
 		showMY() {

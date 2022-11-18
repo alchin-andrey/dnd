@@ -25,19 +25,37 @@ export default {
 		},
 	},
 	actions: {
-    goHome({ commit, dispatch }) {
-      dispatch("closeSetings", {page: "main_page"});
-      dispatch("closeSetings", {page: "race_page"});
-			commit("OPEN_HOME");
-		},
-
-    closeSetings({ commit, state }, data) {
-      const obj = state[data.page].shown;
+    closeSettings({ commit, state }, {page}) {
+      const obj = state[page].shown;
       for (const [key, value] of Object.entries(obj)) {
         if (value) {
-          commit("CLOSE_SETING", {page: data.page, name: key});
+          commit("CLOSE_SETING", {page: page, name: key});
         }
       }
 		},
+
+    closeAllSetting({ dispatch }, page) {
+      dispatch("closeSettings", {page: "main_page"});
+      dispatch("closeSettings", {page: page});
+    },
+
+    goSetting({ commit, dispatch }, {page, name}) {
+      dispatch("closeAllSetting", page);
+      commit("OPEN_SETING", {page: page, name: name});
+      commit("CLOSE_HOME");
+    },
+
+    goHome({ commit, dispatch }, page) {
+      dispatch("closeAllSetting", page);
+			commit("OPEN_HOME");
+		},
+
+    showSettings({ dispatch, state }, {page, name}){
+			if (state[page].shown[name] === false) {
+        dispatch("goSetting", {page: page, name: name});
+			} else {
+				dispatch("goHome", page);
+			}
+    },
 	},
 };
