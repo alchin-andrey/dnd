@@ -36,8 +36,8 @@
 					>
 						<my-selection
 							v-if="MY.race.settings.custom_stats"
-							@click="show('characteristics')"
-							:active="race_page.shown.characteristics"
+							@click="show('stats')"
+							:active="race_page.shown.stats"
 							title="stats"
 							:type_arr="race_page.extra.stats"
 						></my-selection>
@@ -225,7 +225,7 @@
 		<!-- Вес -->
 
 		<!-- Характеристики -->
-		<my-selection-box :shown="race_page.shown.characteristics">
+		<my-selection-box :shown="race_page.shown.stats">
 			<div class="ethnos_attributes">
 				<!-- Этнос_stats -->
 				<my-wrapper>
@@ -751,8 +751,6 @@ export default {
 		},
 
 		Lang_Humman_Title() {
-			console.log(this.Lang_Select);
-			console.log(this.Lang_Humman);
 			let title = this.t("languages_human");
 			let lang_numb = this.Lang_Humman_Select.length;
 			let humman_activ = this.race_page.shown_humman_lang;
@@ -902,9 +900,9 @@ export default {
 			this.getComonColor("skin");
 			this.getComonColor("eyes");
 			this.getComonColor("hair");
-			this.closePar("characteristics", "custom_stats");
-			this.closePar("skills", "custom_skills");
-			this.closePar("languages", "custom_languages");
+			this.closePar("stats");
+			this.closePar("skills");
+			this.closePar("languages");
 			this.getExtra(this.Stats_Pass, "stats");
 			this.getExtra(this.Skills_Pass, "skills");
 			this.getExtra(this.Lang_Pass, "languages");
@@ -932,41 +930,36 @@ export default {
 			this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
 		},
 
-		closeEthnos() {
-			if (
-				this.race_page.shown.ethnos === true &&
-				this.MY.ethnos.name === "common"
-			) {
-				// this.getHomeArr();
-				// this.race_page.shown_selection = false;
-				this.race_page.shown.ethnos = false;
-				this.main_page.shown_home = true;
-			}
-		},
+		// closeEthnos() {
+		// 	if (
+		// 		this.race_page.shown.ethnos === true &&
+		// 		this.MY.ethnos.name === "common"
+		// 	) {
+		// 		this.race_page.shown.ethnos = false;
+		// 		this.main_page.shown_home = true;
+		// 	}
+		// },
 
-		closeColor(name) {
-			if (
-				this.race_page.shown[`${name}_color`] === true &&
-				this.MY.race.settings.color[name].length === 0
-			) {
-				// this.getHomeArr();
-				// this.race_page.shown_selection = false;
-				this.race_page.shown[`${name}_color`] = false;
-				this.main_page.shown_home = true;
-			}
-		},
+		// closeColor(name) {
+		// 	if (
+		// 		this.race_page.shown[`${name}_color`] === true &&
+		// 		this.MY.race.settings.color[name].length === 0
+		// 	) {
+		// 		this.race_page.shown[`${name}_color`] = false;
+		// 		this.main_page.shown_home = true;
+		// 	}
+		// },
 
-		closePar(name_1, name_2) {
-			if (
-				this.race_page.shown[name_1] === true &&
-				this.MY.race.settings[name_2] === undefined
-			) {
-				// this.getHomeArr();
-				// this.race_page.shown_selection = false;
-				this.race_page.shown[name_1] = false;
-				this.main_page.shown_home = true;
-			}
-		},
+		// closePar(name_1, name_2) {
+		// 	if (
+		// 		this.race_page.shown[name_1] === true &&
+		// 		this.MY.race.settings[name_2] === undefined &&
+		// 		this.MY.ethnos[name_2] === undefined
+		// 	) {
+		// 		this.race_page.shown[name_1] = false;
+		// 		this.pages.shown_home = true;
+		// 	}
+		// },
 
 		// close() {
 		// 	const obj_race = this.race_page.shown;
@@ -982,7 +975,7 @@ export default {
 		// },
 
 		// ...mapActions({show: "pages/showRaceSettings"}),
-    ...mapActions("pages", ["showRaceSettings", ]),
+    // ...mapActions("pages", ["showRaceSettings", ]),
     // ...mapActions("pages", {
     //   showEthnos: "showRaceSettings__Ethnos",
     //   showColor: "showRaceSettings__Color",
@@ -991,7 +984,10 @@ export default {
 
     ...mapActions("pages", {
       show: "showRaceSettings",
-      showHome: "goHome"
+      showHome: "goHome",
+      closeEthnos: "closeEthnos",
+      closeColor: "closeColor",
+      closePar: "closePar"
     }),
 
 		...mapMutations({
