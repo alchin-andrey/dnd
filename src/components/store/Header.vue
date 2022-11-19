@@ -1,9 +1,9 @@
 <template>
 	<div class="header" @click="showMY()">
-		<my-logo-card @click="show('logo')" :active="main_page.shown.logo" />
+		<my-logo-card @click="showSettings('logo')" :active="main_page.shown.logo" />
 		<div class="header_col">
 			<my-header-card
-				@click="show('lang')"
+				@click="showSettings('lang')"
 				:active="main_page.shown.lang"
 			>
 				<!-- <emoji v-for="n in Em_Icon" :key="n"
@@ -15,7 +15,7 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="show('lvl')"
+				@click="showSettings('lvl')"
 				:active="main_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
@@ -46,11 +46,11 @@ export default {
 
 	methods: {
     // ...mapActions("pages", ["showMainSettings"]),
-    ...mapActions({show: "pages/showMainSettings"}),
-		// ...mapActions("main_page", ["show"]),
+    ...mapActions({showSettings: "pages/showMainSettings"}),
+		// ...mapActions("main_page", ["showSettings"]),
 
 		showMY() {
-			console.log(this.MY);
+			// console.log(this.MY);
 		},
 	},
 };

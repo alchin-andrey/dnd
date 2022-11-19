@@ -58,31 +58,7 @@ export default {
 			}
 		},
 
-
-    // closeSettings_Par({ state, dispatch, rootState }, name){
-    //   const page_shown = state.shown[name] === true;
-    //   const str_1 = name.split("_")[0];
-    //   const str_2 = name.split("_")[1];
-      
-    //   const ethnos_common = rootState.MY.MY.ethnos.name === "common";
-    //   let custom_ethnos = page_shown && ethnos_common;
-
-          
-    //   const color_length = rootState.MY.MY.race.settings.color[str]?.length === 0;
-    //   let custom_color = page_shown && color_length;
-
-    //   const null_par = rootState.MY.MY.race.settings[str_2] === undefined;
-    //   let custom_par = page_shown && null_par;
-    //   console.log('str:', str_1, str_2);
-    //   console.log('custom_par:', rootState.MY.MY.race.settings[str_2]);
-    //   if (custom_ethnos || custom_color || custom_par) {
-		// 		dispatch("goHome");
-		// 	}
-    // },
-
-
-
-    closeEthnos({ state, dispatch, rootState }) {
+    closeRaceEthnos({ state, dispatch, rootState }) {
       const ethnos_show = state.shown.ethnos === true;
       const ethnos_common = rootState.MY.MY.ethnos.name === "common";
 			if (ethnos_show && ethnos_common) {
@@ -90,7 +66,7 @@ export default {
 			}
 		},
 
-    closeColor({ state, dispatch, rootState }, name) {
+    closeRaceColor({ state, dispatch, rootState }, name) {
       const color_page = state.shown[`${name}_color`] === true;
       const color_length = rootState.MY.MY.race.settings.color[name].length === 0;
 			if (color_page && color_length) {
@@ -98,13 +74,17 @@ export default {
 			}
 		},
 
-    closePar({ state, dispatch, rootState }, name) {
+    closeRacePar({ state, dispatch, rootState }, name) {
       const page_shown = state.shown[name] === true;
       const null_race_par = rootState.MY.MY.race.settings[`custom_${name}`] === undefined;
       const null_ethnos_par = rootState.MY.MY.ethnos[`custom_${name}`] === undefined;
 			if (page_shown && null_race_par && null_ethnos_par) {
 				dispatch("goHome");
 			}
+		},
+
+    showRaceSkroll({ commit }, name) {
+			commit("SHOW_SCROLL", {page: "race_page", name: name});
 		},
 	},
 };

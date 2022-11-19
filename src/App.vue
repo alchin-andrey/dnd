@@ -14,109 +14,7 @@
 
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
-				<div class="selection_menu_wrap">
-					<div class="selection_menu">
-						<my-selection
-							@click="show('ethnos')"
-							:active="race_page.shown.ethnos"
-							title="ethnos"
-							:type="MY.ethnos.name"
-							:rare="MY.ethnos.rare"
-						></my-selection>
-					</div>
-
-					<div
-						class="selection_menu"
-						v-if="
-							MY.race.settings.custom_stats ||
-							MY.race.settings.custom_skills ||
-							MY.race.settings.custom_languages ||
-							MY.ethnos.custom_languages
-						"
-					>
-						<my-selection
-							v-if="MY.race.settings.custom_stats"
-							@click="show('stats')"
-							:active="race_page.shown.stats"
-							title="stats"
-							:type_arr="race_page.extra.stats"
-						></my-selection>
-						<my-selection
-							v-if="MY.race.settings.custom_skills"
-							@click="show('skills')"
-							:active="race_page.shown.skills"
-							title="skills"
-							:type_arr="race_page.extra.skills"
-						>
-						</my-selection>
-						<my-selection
-							v-if="
-								MY.race.settings.custom_languages ||
-								MY.ethnos.custom_languages
-							"
-							@click="show('languages')"
-							:active="race_page.shown.languages"
-							title="languages"
-							:type_arr="Lang_Extra"
-						>
-						</my-selection>
-					</div>
-
-					<div class="selection_menu">
-						<my-selection
-							@click="show('gender')"
-							:active="race_page.shown.gender"
-							title="gender"
-							:type="MY.gender.phisiological"
-						></my-selection>
-						<my-controller
-							@click="show('age')"
-							:active="race_page.shown.age"
-							title="age"
-							:value="MY.age"
-							age
-							:note="Age_Note"
-						></my-controller>
-						<my-controller
-							@click="show('height')"
-							:active="race_page.shown.height"
-							title="height"
-							:value="MY.height"
-							unit="cm"
-							:note="Hight_Note"
-						></my-controller>
-						<my-controller
-							@click="show('weight')"
-							:active="race_page.shown.weight"
-							title="weight"
-							:value="MY.weight"
-							unit="kg"
-							:note="Weight_Note"
-						>
-						</my-controller>
-						<my-selection
-							@click="show('skin_color')"
-							:active="race_page.shown.skin_color"
-							title="color_skin"
-							:type="getCharColor('skin').name"
-						>
-						</my-selection>
-						<my-selection
-							@click="show('eyes_color')"
-							:active="race_page.shown.eyes_color"
-							title="color_eyes"
-							:type="getCharColor('eyes').name"
-						>
-						</my-selection>
-						<my-selection
-							@click="show('hair_color')"
-							:active="race_page.shown.hair_color"
-							title="color_hair"
-							:type="getCharColor('hair').name"
-						>
-						</my-selection>
-					</div>
-				</div>
+        <RaceMenuSettings />
 			</div>
 			<transition name="btm-fade" mode="out-in">
 				<my-button
@@ -226,45 +124,7 @@
 
 		<!-- Характеристики -->
 		<my-selection-box :shown="race_page.shown.stats">
-			<div class="ethnos_attributes">
-				<!-- Этнос_stats -->
-				<my-wrapper>
-					<my-attribute
-						v-for="name in Stats_Keys"
-						:key="name"
-						:title="name"
-						:type="`${name}_base`"
-						plus
-						:numb="getSummNumb('stats', name)"
-						:icon="name"
-					>
-					</my-attribute>
-				</my-wrapper>
-				<my-card-text text="stats_base_details"></my-card-text>
-			</div>
-			<my-selection-card
-				v-for="name in Stats_Pass"
-				:key="name"
-				@click="
-					getExtraActiv(
-						Stats_Activ.includes(name),
-						stats_Select.includes(name),
-						name,
-						'stats'
-					)
-				"
-				:active_boll_link="stats_Select.includes(name)"
-			>
-				<my-attribute
-					:title="name"
-					:type="`${name}_base`"
-					plus
-					:numb="Race_Set_Obj.custom_stats[1]"
-					:icon="name"
-				>
-				</my-attribute>
-				<my-card-text title="" :text="`${name}_details`"></my-card-text>
-			</my-selection-card>
+      <RaceCustomStats />
 		</my-selection-box>
 		<!-- Характеристики -->
 
@@ -507,7 +367,7 @@
 <script>
 import dic from "@/assets/catalog/texts/dic.js";
 
-import MY from "@/assets/catalog/MY.js";
+// import MY from "@/assets/catalog/MY.js";
 // import default_MY from "@/assets/catalog/default_MY.js";
 // import color from "@/assets/catalog/base_data/colors.js";
 // import genders from "@/assets/catalog/base_data/genders.js";
@@ -517,7 +377,6 @@ import past from "@/assets/catalog/base_data/step3_backstories.js";
 import languages from "@/assets/catalog/base_data/list_languages.js";
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
-import {race_page, main_page} from "@/assets/catalog/page_data/race_page.js";
 
 import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
@@ -527,20 +386,16 @@ import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 
-// store components
-// import Header from "./components/arcive/store_API_cleen_obj_reactive/Header.vue";
-// import Header from "./components/arcive/store_API_cleen_obj/Header.vue";
-// import Header from "./components/arcive/store_API_cleen/Header.vue";
-// import Header from "./components/arcive/store_API_half_obj/Header.vue";
-// import Header from "./components/arcive/store_API_half/Header.vue";
-// import Header from "./components/arcive/root_store/Header.vue";
 
+
+
+// STORE
 import Header from "./components/store/Header.vue";
-// import Header from "./components/arcive/store_API_root/Header.vue";
+import RaceMenuSettings from "./components/store/RaceMenuSettings.vue";
+import RaceCustomStats from "./components/store/RaceCustomStats.vue";
+// STORE
 
-// import Header from "./components/arcive/store_API_root_mok/Header.vue";
-// import Header from "./components/arcive/store_cleen/Header.vue";
-// import Header from "./components/arcive/root/Header.vue";
+
 // store components
 import {mapActions, mapGetters, mapState, mapMutations} from "vuex";
 
@@ -553,12 +408,20 @@ export default {
 		AgeWeight,
 		Description,
 		WelcomeBanner,
+
+    // ГОТОВ
 		Header,
+    // ГОТОВ
+
+    // НА ОБРАБОТКЕ
+    RaceMenuSettings,
+    RaceCustomStats,
+    // НА ОБРАБОТКЕ
 	},
 	data() {
 		return {
 			dic: dic,
-			MY: MY,
+			// MY: MY,
 			// default_MY: default_MY,
 
 			// genders: genders,
@@ -590,6 +453,10 @@ export default {
 	},
 
 	computed: {
+    ...mapState({
+			MY: (state) => state.MY.MY,
+		}),
+
     ...mapState("pages", {
       pages: (state) => state,
       main_page: (state) => state.main_page,
@@ -629,9 +496,9 @@ export default {
 			return min + Math.round((max - min) * kof);
 		},
 
-		Hight_Note() {
-			return this.t(this.Race_Set_Obj.size);
-		},
+		// Hight_Note() {
+		// 	return this.t(this.Race_Set_Obj.size);
+		// },
 
 		Get_Weight() {
 			let min = this.Race_Set_Obj.weight.min;
@@ -640,15 +507,15 @@ export default {
 			return min + Math.round((max - min) * kof);
 		},
 
-		Weight_Note() {
-			let kof = this.race_page.weight_kof;
-			if (kof === 0) {
-				return this.t("skinny");
-			} else if (kof === 1) {
-				return this.t("fat");
-			} else {
-				return null;
-			}
+		// Weight_Note() {
+		// 	let kof = this.race_page.weight_kof;
+		// 	if (kof === 0) {
+		// 		return this.t("skinny");
+		// 	} else if (kof === 1) {
+		// 		return this.t("fat");
+		// 	} else {
+		// 		return null;
+		// 	}
 
 			// let kof = this.race_page.weight_kof;
 			// if (kof < 0.5) {
@@ -656,7 +523,7 @@ export default {
 			// } else {
 			//   return this.t("fat");
 			// }
-		},
+		// },
 
 		// Get_Age() {
 		//   let min = this.Race_Set_Obj.age.min;
@@ -682,24 +549,24 @@ export default {
 			}
 		},
 
-		Age_Note() {
-			let baby = this.Race_Set_Obj.age.min;
-			let young = this.Race_Set_Obj.age.young;
-			let mature = this.Race_Set_Obj.age.mature;
-			let old = this.Race_Set_Obj.age.old;
-			let oldest = this.Race_Set_Obj.age.max;
-			if (baby <= this.MY.age && this.MY.age < young) {
-				return this.t("baby");
-			} else if (young <= this.MY.age && this.MY.age < mature) {
-				return this.t("young");
-			} else if (mature <= this.MY.age && this.MY.age < old) {
-				return this.t("mature");
-			} else if (old <= this.MY.age && this.MY.age < oldest) {
-				return this.t("old");
-			} else {
-				return this.t("oldest");
-			}
-		},
+		// Age_Note() {
+		// 	let baby = this.Race_Set_Obj.age.min;
+		// 	let young = this.Race_Set_Obj.age.young;
+		// 	let mature = this.Race_Set_Obj.age.mature;
+		// 	let old = this.Race_Set_Obj.age.old;
+		// 	let oldest = this.Race_Set_Obj.age.max;
+		// 	if (baby <= this.MY.age && this.MY.age < young) {
+		// 		return this.t("baby");
+		// 	} else if (young <= this.MY.age && this.MY.age < mature) {
+		// 		return this.t("young");
+		// 	} else if (mature <= this.MY.age && this.MY.age < old) {
+		// 		return this.t("mature");
+		// 	} else if (old <= this.MY.age && this.MY.age < oldest) {
+		// 		return this.t("old");
+		// 	} else {
+		// 		return this.t("oldest");
+		// 	}
+		// },
 
 		hp_bonus() {
 			let increm_1 = this.MY.ethnos.hp_bonus[0];
@@ -804,14 +671,14 @@ export default {
 			return this.race_page.extra.languages;
 		},
 
-		Lang_Extra() {
-			let arr = [];
-			let obj = this.race_page.extra.languages;
-			for (let i in obj) {
-				arr.push(obj[i].name);
-			}
-			return arr;
-		},
+		// Lang_Extra() {
+		// 	let arr = [];
+		// 	let obj = this.race_page.extra.languages;
+		// 	for (let i in obj) {
+		// 		arr.push(obj[i].name);
+		// 	}
+		// 	return arr;
+		// },
 
 		Stats_Keys() {
 			return Object.keys(this.MY.stats);
@@ -974,26 +841,27 @@ export default {
 		// 	});
 		// },
 
-		// ...mapActions({show: "pages/showRaceSettings"}),
+		// ...mapActions({showSettings: "pages/showRaceSettings"}),
     // ...mapActions("pages", ["showRaceSettings", ]),
     // ...mapActions("pages", {
     //   showEthnos: "showRaceSettings__Ethnos",
     //   showColor: "showRaceSettings__Color",
-    //   show: "showRaceSettings",
+    //   showSettings: "showRaceSettings",
     // }),
 
     ...mapActions("pages", {
-      show: "showRaceSettings",
+      showSettings: "showRaceSettings",
       showHome: "goHome",
-      closeEthnos: "closeEthnos",
-      closeColor: "closeColor",
-      closePar: "closePar"
+      closeEthnos: "closeRaceEthnos",
+      closeColor: "closeRaceColor",
+      closePar: "closeRacePar",
+      showSkroll: "showRaceSkroll"
     }),
 
 		...mapMutations({
 		}),
 
-    // show(name, key) {
+    // showSettings(name, key) {
     //   let data = {name: name, key: key}
     //   this.showRaceSettings(data)
     // },
@@ -1027,26 +895,26 @@ export default {
 		// 	this.main_page.shown_home_arr = arr;
 		// },
 
-		showSkroll(name) {
-			this.race_page[name] = this.race_page[name] === false;
-		},
+		// showSkroll(name) {
+		// 	this.race_page[name] = this.race_page[name] === false;
+		// },
 
 		hideRuler() {
 			return this.main_page.shown_home || this.race_page.shown.height;
 		},
 
-		getCharColor(value) {
-			if (
-				this.MY.color[value] === null &&
-				this.MY.ethnos.name === "common"
-			) {
-				return this.MY.race.settings.color[value][0];
-			} else if (this.MY.color[value] === null) {
-				return this.MY.ethnos.color[value][0];
-			} else {
-				return this.MY.color[value];
-			}
-		},
+		// getCharColor(value) {
+		// 	if (
+		// 		this.MY.color[value] === null &&
+		// 		this.MY.ethnos.name === "common"
+		// 	) {
+		// 		return this.MY.race.settings.color[value][0];
+		// 	} else if (this.MY.color[value] === null) {
+		// 		return this.MY.ethnos.color[value][0];
+		// 	} else {
+		// 		return this.MY.color[value];
+		// 	}
+		// },
 
 		getProficienciesItem(name) {
 			let arr = [];

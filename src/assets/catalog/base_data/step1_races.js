@@ -334,6 +334,11 @@ export default {
         min: 15,
         max: 20,
       },
+      // ДЛЯ ОТЛАДКИ
+      custom_stats: [2, 1],
+      custom_skills: [2, "mastery"],
+      custom_languages: [1],
+      // ДЛЯ ОТЛАДКИ
     },
 
     stats: { intelligence: 2 },
