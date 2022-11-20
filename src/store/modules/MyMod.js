@@ -10,23 +10,98 @@ export default {
 		MY_DEF: MY_DEF,
 	}),
 	getters: {
-    //race_page
-    MY_Race_Common(state){
-			return state.MY.ethnos.name === "common";
+		// newsPosts(state) {
+		//     return state.posts.filter(post => post.type === 'news');
+		// },
+		// postById (state) {
+		//     return (id) => state.posts.find(item => item.id === id);
+		// }
+
+		// MY_Race_Obj(state, getters, rootState) {
+		// 	const obj = rootState.race.race;
+		// 	const race_name = state.MY.race_name;
+		// 	return obj[race_name];
+		// },
+
+		MY_Race_Stats(state) {
+			return state.MY.race.stats;
 		},
 
-		MY_race(state){
-			return state.MY.race
+		MY_Etnos_Stats(state) {
+			return state.MY.ethnos.stats;
+		},
+
+		MY_Stats(state) {
+			return state.MY.stats;
+		},
+
+		MY_Race(state) {
+			return state.MY.race;
+		},
+
+		Race_Settings(state) {
+			return state.MY.race.settings;
+		},
+
+		MY_Ethnos(state) {
+			return state.MY.ethnos;
+		},
+
+		Stats_Keys(state) {
+			return Object.keys(state.MY.stats);
+		},
+
+		Stats_Activ_Obj_RE(state) {
+			let i = state.MY.race.stats;
+			let j = state.MY.ethnos.stats;
+			let obj = { key: 1, name: 2 };
+			// obj = obj + i;
+			// console.log('i:',i)
+			// console.log('obj:', obj)
+			// console.log('assign:', Object.assign({}, obj, i, j))
+			return Object.assign({}, i, j);
+		},
+
+		Stats_Activ_RE(state, getters) {
+			return Object.keys(getters.Stats_Activ_Obj_RE);
+		},
+
+		Stats_Pass_RE(state, getters) {
+			return Object.keys(state.MY.stats).filter(
+				(el) => !getters.Stats_Activ_RE.includes(el)
+			);
+		},
+
+		//race_page
+		MY_Race_Common(state) {
+			return state.MY.ethnos.name === "common";
 		},
 	},
 	mutations: {
-		MY_DEF(state) {
-			state.MY = state.MY_DEF;
+		GET_ETHNOS(state) {
+			state.MY.ethnos = Object.values(state.MY.race.settings.ethnos)[0];
+		},
+
+		CHANGE_STATS(state, { key, name, value }) {
+			state.MY.stats[key][name] = value;
 		},
 	},
 	actions: {
-		def({ commit }) {
-
-		}
+		getStatsNumb({ state, getters, commit }, name) {
+			const keys = getters.Stats_Keys;
+			keys.forEach((key) => {
+				commit("CHANGE_STATS", { key: key, name: name, value: 0 });
+			});
+			const obj = state.MY[name].stats;
+			if (obj) {
+				for (const [key, value] of Object.entries(obj)) {
+					commit("CHANGE_STATS", {
+						key: key,
+						name: name,
+						value: value,
+					});
+				}
+			}
+		},
 	},
 };

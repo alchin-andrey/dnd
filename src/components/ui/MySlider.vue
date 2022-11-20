@@ -42,6 +42,10 @@ export default {
       type: Array,
       default: [],
     },
+    arr_keys: {
+      type: Array,
+      default: [],
+    },
   },
 
   computed: {
@@ -51,22 +55,27 @@ export default {
     t_Type() {
       return this.t(this.type.name);
     },
+
   },
   methods: {
     getNameBack(arr, i) {
       let j = arr.indexOf(i);
       if (j === 0) {
         this.$root.MY.race = arr[arr.length - 1];
+        this.$root.MY.race_name = this.arr_keys[this.arr_keys.length - 1];
       } else {
         this.$root.MY.race = arr[j - 1];
+        this.$root.MY.race_name = this.arr_keys[j - 1];
       }
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
       if (j === arr.length - 1) {
         this.$root.MY.race = arr[0];
+        this.$root.MY.race_name = this.arr_keys[0];
       } else {
         this.$root.MY.race = arr[j + 1];
+        this.$root.MY.race_name = this.arr_keys[j + 1];
       }
     },
   },

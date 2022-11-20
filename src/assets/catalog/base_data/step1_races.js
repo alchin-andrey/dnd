@@ -335,8 +335,14 @@ export default {
         max: 20,
       },
       // ДЛЯ ОТЛАДКИ
+    //   custom: {
+    //     stats: [2, 1],
+    //     skills: [2, "Skill_Mastery"],
+    //     languages: [1],
+    // },
+
       custom_stats: [2, 1],
-      custom_skills: [2, "mastery"],
+      custom_skills: [2, "Skill_Mastery"],
       custom_languages: [1],
       // ДЛЯ ОТЛАДКИ
     },
@@ -382,10 +388,6 @@ export default {
           },
 
           stats: { charisma: 1 },
-
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
-          // hp_bonus: [1,1],
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
 
           fines: [
             {
@@ -494,10 +496,6 @@ export default {
         max: 20,
       },
 
-      // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      // custom_stats: [2, 1], // [колво, инкремент]
-      // custom_skills: [2, "mastery"],
-      // custom_languages: [2],
     },
 
     stats: { dexterity: 2 },

@@ -10,7 +10,9 @@ export default {
 	//Key selections
 	name: null,
 	race: Object.values(races)[0],
+  race_name: Object.values(races)[0].name,
 	ethnos: null,
+  ethnos_name: null,
 	class: null,
 	subclass: null,
 	backstory: null,
@@ -61,17 +63,71 @@ export default {
 	},
 
 	stats: {
-		strength: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		strength: {
+			race: 0,
+			ethnos: 0,
+      custom_race: 0,
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		dexterity: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		dexterity: {
+			race: 0,
+			ethnos: 0,
+      custom_race: 0,
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		constitution: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		constitution: {
+			race: 0,
+			ethnos: 0,
+      custom_race: 0,
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		intelligence: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		intelligence: {
+			race: 0,
+			ethnos: 0,
+      custom_race: 0,
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		wisdom: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		wisdom: {
+			race: 0,
+			ethnos: 0,
+      custom_race: 0,
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		charisma: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		charisma: {
+			race: 0,
+			ethnos: 0,
+      custom_race: 0,
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 	},
 
 	skills: {
@@ -121,6 +177,28 @@ export default {
 	},
 
 	//доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
+  custom_race: {
+    stats: null,
+    skills:null,
+    languages: null,
+},
+
+  custom_step1: {
+    stats: {
+      race: null,
+      ethnos: null,
+    },
+    skills: {
+      race: null,
+      ethnos: null,
+    },
+    languages: {
+      race: null,
+      ethnos: null,
+    },
+},
+
+
 	custom_stats: null,
 	custom_skills: null,
 	custom_languages: null,

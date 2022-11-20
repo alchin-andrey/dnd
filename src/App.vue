@@ -7,6 +7,7 @@
 				numb="01"
 				title="race"
 				:arr="Object.values(this.race)"
+        :arr_keys="Object.keys(this.race)"
 				:type="MY.race"
 			>
 			</my-slider>
@@ -14,7 +15,7 @@
 
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
-        <RaceMenuSettings />
+				<RaceMenuSettings />
 			</div>
 			<transition name="btm-fade" mode="out-in">
 				<my-button
@@ -28,10 +29,7 @@
 	</div>
 
 	<!-- Выпадающее меню -->
-	<div
-		class="sidebar_wrap"
-		:class="{ sidebar_wrap_open: Shown_Selection }"
-	>
+	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: Shown_Selection }">
 		<!-- Превью -->
 		<my-selection-box :shown="main_page.shown.logo">
 			<Description />
@@ -56,7 +54,7 @@
 		</my-selection-box>
 		<!-- Смена языка -->
 
-    <!-- Уровень -->
+		<!-- Уровень -->
 		<my-selection-box :shown="main_page.shown.lvl">
 			<div class="flex_options">
 				<MyRange v-model.number="MY.level" lvl />
@@ -124,7 +122,7 @@
 
 		<!-- Характеристики -->
 		<my-selection-box :shown="race_page.shown.stats">
-      <RaceCustomStats />
+			<RaceCustomStats />
 		</my-selection-box>
 		<!-- Характеристики -->
 
@@ -377,7 +375,6 @@ import past from "@/assets/catalog/base_data/step3_backstories.js";
 import languages from "@/assets/catalog/base_data/list_languages.js";
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
-
 import EthnosChoice from "@/components/EthnosChoice.vue";
 import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
@@ -386,18 +383,14 @@ import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 
-
-
-
 // STORE
 import Header from "./components/store/Header.vue";
 import RaceMenuSettings from "./components/store/RaceMenuSettings.vue";
 import RaceCustomStats from "./components/store/RaceCustomStats.vue";
 // STORE
 
-
 // store components
-import {mapActions, mapGetters, mapState, mapMutations} from "vuex";
+import { mapActions, mapGetters, mapState, mapMutations } from "vuex";
 
 export default {
 	name: "App",
@@ -409,14 +402,14 @@ export default {
 		Description,
 		WelcomeBanner,
 
-    // ГОТОВ
+		// ГОТОВ
 		Header,
-    // ГОТОВ
+		// ГОТОВ
 
-    // НА ОБРАБОТКЕ
-    RaceMenuSettings,
-    RaceCustomStats,
-    // НА ОБРАБОТКЕ
+		// НА ОБРАБОТКЕ
+		RaceMenuSettings,
+		RaceCustomStats,
+		// НА ОБРАБОТКЕ
 	},
 	data() {
 		return {
@@ -433,7 +426,7 @@ export default {
 			placeholder: placeholder,
 
 			// race_page: race_page,
-      // main_page: main_page,
+			// main_page: main_page,
 		};
 	},
 
@@ -453,32 +446,32 @@ export default {
 	},
 
 	computed: {
-    ...mapState({
+		...mapState({
 			MY: (state) => state.MY.MY,
 		}),
 
-    ...mapState("pages", {
-      pages: (state) => state,
-      main_page: (state) => state.main_page,
-      race_page: (state) => state.race_page
-    }),
+		...mapState("pages", {
+			pages: (state) => state,
+			main_page: (state) => state.main_page,
+			race_page: (state) => state.race_page,
+		}),
 
 		...mapGetters({}),
 
-    Main_Selection() {
+		Main_Selection() {
 			const obj = this.race_page.shown;
 			const values = Object.values(obj);
-      return values.some(el => el === true);
+			return values.some((el) => el === true);
 		},
 
-    Race_Selection() {
+		Race_Selection() {
 			const obj = this.main_page.shown;
 			const values = Object.values(obj);
-      return values.some(el => el === true);
+			return values.some((el) => el === true);
 		},
 
-    Shown_Selection() {
-      return this.Main_Selection || this.Race_Selection;
+		Shown_Selection() {
+			return this.Main_Selection || this.Race_Selection;
 		},
 
 		Mastery() {
@@ -490,19 +483,19 @@ export default {
 		},
 
 		Get_Height() {
-			let min = this.Race_Set_Obj.height.min;
-			let max = this.Race_Set_Obj.height.max;
+			let min = this.Race_Settings.height.min;
+			let max = this.Race_Settings.height.max;
 			let kof = this.race_page.height_kof;
 			return min + Math.round((max - min) * kof);
 		},
 
 		// Hight_Note() {
-		// 	return this.t(this.Race_Set_Obj.size);
+		// 	return this.t(this.Race_Settings.size);
 		// },
 
 		Get_Weight() {
-			let min = this.Race_Set_Obj.weight.min;
-			let max = this.Race_Set_Obj.weight.max;
+			let min = this.Race_Settings.weight.min;
+			let max = this.Race_Settings.weight.max;
 			let kof = this.race_page.weight_kof;
 			return min + Math.round((max - min) * kof);
 		},
@@ -517,25 +510,25 @@ export default {
 		// 		return null;
 		// 	}
 
-			// let kof = this.race_page.weight_kof;
-			// if (kof < 0.5) {
-			//   return this.t("skinny");
-			// } else {
-			//   return this.t("fat");
-			// }
+		// let kof = this.race_page.weight_kof;
+		// if (kof < 0.5) {
+		//   return this.t("skinny");
+		// } else {
+		//   return this.t("fat");
+		// }
 		// },
 
 		// Get_Age() {
-		//   let min = this.Race_Set_Obj.age.min;
-		//   let max = this.Race_Set_Obj.age.max;
+		//   let min = this.Race_Settings.age.min;
+		//   let max = this.Race_Settings.age.max;
 		//   let kof = this.race_page.age_kof;
 		//   return min + Math.round((max - min) * kof);
 		// },
 
 		Get_Age() {
-			let min = this.Race_Set_Obj.age.min;
-			let max = this.Race_Set_Obj.age.max;
-			let mature = this.Race_Set_Obj.age.mature;
+			let min = this.Race_Settings.age.min;
+			let max = this.Race_Settings.age.max;
+			let mature = this.Race_Settings.age.mature;
 			if (this.MY.age) {
 				if (this.MY.age < min) {
 					return min;
@@ -550,11 +543,11 @@ export default {
 		},
 
 		// Age_Note() {
-		// 	let baby = this.Race_Set_Obj.age.min;
-		// 	let young = this.Race_Set_Obj.age.young;
-		// 	let mature = this.Race_Set_Obj.age.mature;
-		// 	let old = this.Race_Set_Obj.age.old;
-		// 	let oldest = this.Race_Set_Obj.age.max;
+		// 	let baby = this.Race_Settings.age.min;
+		// 	let young = this.Race_Settings.age.young;
+		// 	let mature = this.Race_Settings.age.mature;
+		// 	let old = this.Race_Settings.age.old;
+		// 	let oldest = this.Race_Settings.age.max;
 		// 	if (baby <= this.MY.age && this.MY.age < young) {
 		// 		return this.t("baby");
 		// 	} else if (young <= this.MY.age && this.MY.age < mature) {
@@ -575,7 +568,7 @@ export default {
 			return level * increm_2;
 		},
 
-		Race_Set_Obj() {
+		Race_Settings() {
 			return this.MY.race.settings;
 		},
 
@@ -753,6 +746,8 @@ export default {
 	},
 
 	methods: {
+
+
 		getLangSite(name, icon) {
 			this.dic.select_lang = name;
 			this.dic.select_lang_icon = icon;
@@ -773,29 +768,137 @@ export default {
 			this.getExtra(this.Stats_Pass, "stats");
 			this.getExtra(this.Skills_Pass, "skills");
 			this.getExtra(this.Lang_Pass, "languages");
+      this.getCustomRace("stats");
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
+      this.getStatsNumb('race');
 		},
 
 		getFunction_2() {
 			this.getExtra_Ethnos(this.Stats_Pass, "stats");
 			this.getExtra_Ethnos(this.Skills_Pass, "skills");
 			this.getExtra_Ethnos(this.Lang_Pass, "languages");
+      this.getStatsNumb('ethnos');
 		},
+
+    getExtra_Ethnos(arr_obj, name) {
+			let arr = [];
+			let race_custom = (this.Race_Settings || {})[`custom_${name}`];
+			let ethnos_custom = (this.MY.ethnos || {})[`custom_${name}`];
+			if (ethnos_custom) {
+				let i = ethnos_custom[0];  //2
+				arr = arr_obj.slice(0, i);
+				this.race_page.extra[name] = arr;
+			} else if (!race_custom && !ethnos_custom) {
+				this.race_page.extra[name] = arr;
+			} else {
+				return null;
+			}
+		},
+
+    getExtra(arr_obj, name) {
+      let race_custom = this.Race_Settings[`custom_${name}`];
+			let ethnos_custom = this.MY.ethnos[`custom_${name}`];
+			let arr = [];
+			if (race_custom) {
+				let i = this.Race_Settings[`custom_${name}`][0];
+				arr = arr_obj.slice(0, i);
+			}
+			if (ethnos_custom) {
+				let i = this.MY.ethnos[`custom_${name}`][0];
+				arr = arr_obj.slice(0, i);
+			}
+			this.race_page.extra[name] = arr;
+		},
+
+    getCustomAll(name) {
+      const upp_name = name.charAt(0).toUpperCase() + name.slice(1)
+      let arr_free = this[`${upp_name}_Pass`]
+			let arr = [];
+      let race_custom = this.Race_Settings[`custom_${name}`];
+			let ethnos_custom = this.MY.ethnos[`custom_${name}`];
+			if (race_custom) {
+				let i = this.Race_Settings[`custom_${name}`][0];
+				arr = arr_free.slice(0, i);
+			}
+			if (ethnos_custom) {
+				let i = this.MY.ethnos[`custom_${name}`][0];
+				arr = arr_free.slice(0, i);
+			}
+			this.MY.custom_race[name] = arr;
+		},
+
+    getCustomRace(name) {
+      const upp_name = name.charAt(0).toUpperCase() + name.slice(1)
+      let arr_free = this[`${upp_name}_Pass`]
+			let arr = [];
+      let race_custom = this.Race_Settings[`custom_${name}`];
+			if (race_custom) {
+				let i = race_custom[0];
+				arr = arr_free.slice(0, i);
+        this.MY.custom_race[name] = arr;
+			} else {
+        return null
+      }
+			// this.MY.custom_race[name] = arr;
+		},
+
+    getCustomEthnos(name) {
+      const upp_name = name.charAt(0).toUpperCase() + name.slice(1)
+      let arr_free = this[`${upp_name}_Pass`]
+			let arr = [];
+			let ethnos_custom = this.MY.ethnos[`custom_${name}`];
+			if (ethnos_custom) {
+				let i = ethnos_custom[0];
+				arr = arr_free.slice(0, i);
+			}
+			this.MY.custom_race[name] = arr;
+		},
+
+
+
+    // getStatsNumb(name) {
+		// 	const keys = Object.keys(this.MY.stats);
+		// 	keys.forEach((key) => {
+		// 		this.MY.stats[key][name] = 0;
+		// 	});
+		// 	const obj = this.MY[name].stats;
+		// 	for (const [key, value] of Object.entries(obj)) {
+		// 		this.MY.stats[key][name] = value;
+		// 	}
+		// },
+
+    ...mapMutations("MY", {
+      getNewEthnos: "GET_ETHNOS",
+    }),
+
+    ...mapActions("MY", {
+			getStatsNumb: "getStatsNumb",
+      // getNewEthnos: "getNewEthnos",
+		}),
+
+    ...mapActions("pages", {
+			showSettings: "showRaceSettings",
+			showHome: "goHome",
+			closeEthnos: "closeRaceEthnos",
+			closeColor: "closeRaceColor",
+			closePar: "closeRacePar",
+			showSkroll: "showRaceSkroll",
+		}),
 
 		getComonColor(name) {
 			let select = this.$root.race_page.color_selected[name];
-			if (this.Race_Set_Obj.color[name][0]) {
+			if (this.Race_Settings.color[name][0]) {
 				this.$root.MY.color[name] = select;
 			} else {
 				this.$root.MY.color[name] = null;
 			}
 		},
 
-		getNewEthnos() {
-			this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
-		},
+		// getNewEthnos() {
+		// 	this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
+		// },
 
 		// closeEthnos() {
 		// 	if (
@@ -834,7 +937,7 @@ export default {
 		// 	keys_race.forEach((keys) => {
 		// 		this.race_page.shown[keys] = false;
 		// 	});
-    //   const obj_main = this.main_page.shown;
+		//   const obj_main = this.main_page.shown;
 		// 	const keys_main = Object.keys(obj_main);
 		// 	keys_main.forEach((keys) => {
 		// 		this.main_page.shown[keys] = false;
@@ -842,29 +945,17 @@ export default {
 		// },
 
 		// ...mapActions({showSettings: "pages/showRaceSettings"}),
-    // ...mapActions("pages", ["showRaceSettings", ]),
-    // ...mapActions("pages", {
-    //   showEthnos: "showRaceSettings__Ethnos",
-    //   showColor: "showRaceSettings__Color",
-    //   showSettings: "showRaceSettings",
-    // }),
+		// ...mapActions("pages", ["showRaceSettings", ]),
+		// ...mapActions("pages", {
+		//   showEthnos: "showRaceSettings__Ethnos",
+		//   showColor: "showRaceSettings__Color",
+		//   showSettings: "showRaceSettings",
+		// }),
 
-    ...mapActions("pages", {
-      showSettings: "showRaceSettings",
-      showHome: "goHome",
-      closeEthnos: "closeRaceEthnos",
-      closeColor: "closeRaceColor",
-      closePar: "closeRacePar",
-      showSkroll: "showRaceSkroll"
-    }),
-
-		...mapMutations({
-		}),
-
-    // showSettings(name, key) {
-    //   let data = {name: name, key: key}
-    //   this.showRaceSettings(data)
-    // },
+		// showSettings(name, key) {
+		//   let data = {name: name, key: key}
+		//   this.showRaceSettings(data)
+		// },
 
 		// show_1(name, key) {
 		// 	let ethnos_common =
@@ -879,7 +970,7 @@ export default {
 		// 		this.race_page.shown[name] = true;
 		// 		this.main_page.shown_home = false;
 		// 	} else {
-    //     this.showHome()
+		//     this.showHome()
 		// 	}
 		// },
 
@@ -972,9 +1063,9 @@ export default {
 			let activ_val = this[`${name}_Activ_Obj`][item];
 			if (activ_val) {
 				i = activ_val;
-			} else if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
+			} else if ((this.Race_Settings || {})[`custom_${name}`]) {
 				let extr_bool = this[`${name}_Select`].includes(item);
-				let increment = this.Race_Set_Obj[`custom_${name}`][1];
+				let increment = this.Race_Settings[`custom_${name}`][1];
 				if (extr_bool) {
 					i = increment;
 				} else {
@@ -984,34 +1075,6 @@ export default {
 				i = 0;
 			}
 			return i;
-		},
-
-		getExtra(arr_obj, name) {
-			let arr = [];
-			if ((this.Race_Set_Obj || {})[`custom_${name}`]) {
-				let i = this.Race_Set_Obj[`custom_${name}`][0];
-				arr = arr_obj.slice(0, i);
-			}
-			if ((this.MY.ethnos || {})[`custom_${name}`]) {
-				let i = this.MY.ethnos[`custom_${name}`][0];
-				arr = arr_obj.slice(0, i);
-			}
-			this.race_page.extra[name] = arr;
-		},
-
-		getExtra_Ethnos(arr_obj, name) {
-			let arr = [];
-			let race_custom = (this.Race_Set_Obj || {})[`custom_${name}`];
-			let ethnos_custom = (this.MY.ethnos || {})[`custom_${name}`];
-			if (ethnos_custom) {
-				let i = ethnos_custom[0];
-				arr = arr_obj.slice(0, i);
-				this.race_page.extra[name] = arr;
-			} else if (!race_custom && !ethnos_custom) {
-				this.race_page.extra[name] = arr;
-			} else {
-				return null;
-			}
 		},
 
 		getExtraActiv(active, selekt, item, name) {
