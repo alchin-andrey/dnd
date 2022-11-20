@@ -25,7 +25,7 @@
 			:title="name"
 			:type="`${name}_base`"
 			plus
-			:numb="Race_Settings.custom_stats[1]"
+			:numb="race_Settings.custom_stats[1]"
 			:icon="name"
 		>
 		</my-attribute>
@@ -44,14 +44,14 @@ export default {
 		}),
 
 		...mapGetters("MY", [
-      "Race_Settings", 
+      "race_Settings", 
       "Stats_Keys",
       "Stats_Activ_Obj_RE", 
       "Stats_Activ_RE",
       "Stats_Pass_RE",
     ]),
 
-		// Race_Settings() {
+		// race_Settings() {
 		// 	return this.MY.race.settings;
 		// },
 
@@ -92,7 +92,7 @@ export default {
       const upp_item = item.charAt(0).toUpperCase() + item.slice(1)
 			let i = 0;
 			let activ_val = this[`${upp_item}_Activ_Obj_RE`][name];
-      let custom_set = this.Race_Settings[`custom_${item}`]
+      let custom_set = this.race_Settings[`custom_${item}`]
       // console.log(custom_set)
 			if (activ_val) {
 				i = activ_val;

@@ -2,16 +2,16 @@ import color from "./base_data/_colors.js";
 import races from "./base_data/step1_races.js";
 // import classes from "./base_data/step2_classes.js";
 
-// let race_def = Object.values(races)[0];
-// let ethnos_def = Object.values(race_def.settings.ethnos)[0];
-// let class_def = Object.values(classes)[0];
+// const race_def = Object.values(races)[0];
+// const ethnos_def = Object.values(race_def.settings.ethnos)[0];
+// const class_def = Object.values(classes)[0];
 
 export default {
 	//Key selections
 	name: null,
 	race: Object.values(races)[0],
   race_name: Object.values(races)[0].name,
-	ethnos: null,
+	ethnos: Object.values(Object.values(races)[0].settings.ethnos)[0],
   ethnos_name: null,
 	class: null,
 	subclass: null,
@@ -182,22 +182,6 @@ export default {
     skills:null,
     languages: null,
 },
-
-  custom_step1: {
-    stats: {
-      race: null,
-      ethnos: null,
-    },
-    skills: {
-      race: null,
-      ethnos: null,
-    },
-    languages: {
-      race: null,
-      ethnos: null,
-    },
-},
-
 
 	custom_stats: null,
 	custom_skills: null,

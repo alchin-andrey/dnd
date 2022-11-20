@@ -39,7 +39,7 @@ export default {
 			return state.MY.race;
 		},
 
-		Race_Settings(state) {
+		race_Settings(state) {
 			return state.MY.race.settings;
 		},
 
@@ -87,11 +87,16 @@ export default {
 		},
 	},
 	actions: {
-		getStatsNumb({ state, getters, commit }, name) {
-			const keys = getters.Stats_Keys;
+
+    zeroStatsNumb({ state, getters, commit }, name)  {
+      const keys = getters.Stats_Keys;
 			keys.forEach((key) => {
 				commit("CHANGE_STATS", { key: key, name: name, value: 0 });
 			});
+    },
+
+		getStatsNumb({ state, commit, dispatch }, name) {
+			dispatch("zeroStatsNumb", name);
 			const obj = state.MY[name].stats;
 			if (obj) {
 				for (const [key, value] of Object.entries(obj)) {
@@ -102,6 +107,17 @@ export default {
 					});
 				}
 			}
+		},
+
+    getStatsNumb_Custom({ state, getters, commit, dispatch }, name) {
+			dispatch("zeroStatsNumb", name);
+			const arr = state.MY.custom_race.stats;
+      if (arr) {
+      arr.forEach((key) => {
+        const increment = getters.race_Settings.custom_stats[1];
+				commit("CHANGE_STATS", { key: key, name: name, value: increment });
+			});
+    }
 		},
 	},
 };
