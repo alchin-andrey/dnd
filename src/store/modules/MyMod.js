@@ -17,6 +17,14 @@ export default {
 		//     return (id) => state.posts.find(item => item.id === id);
 		// }
 
+    summ_Stats_Numb_REC: (state) => (name) => {
+      console.log(name)
+      let i = state.MY.stats[name].race;
+      let j = state.MY.stats[name].ethnos;
+      let k = state.MY.stats[name].custom_race;
+			return i + j + k;
+      },
+
 		// MY_Race_Obj(state, getters, rootState) {
 		// 	const obj = rootState.race.race;
 		// 	const race_name = state.MY.race_name;
@@ -43,32 +51,28 @@ export default {
 			return state.MY.race.settings;
 		},
 
-		MY_Ethnos(state) {
+    ethnos_Settings(state) {
 			return state.MY.ethnos;
 		},
 
-		Stats_Keys(state) {
+		stats_Keys(state) {
 			return Object.keys(state.MY.stats);
 		},
 
-		Stats_Activ_Obj_RE(state) {
+		stats_Activ_Obj_RE(state) {
 			let i = state.MY.race.stats;
 			let j = state.MY.ethnos.stats;
 			let obj = { key: 1, name: 2 };
-			// obj = obj + i;
-			// console.log('i:',i)
-			// console.log('obj:', obj)
-			// console.log('assign:', Object.assign({}, obj, i, j))
 			return Object.assign({}, i, j);
 		},
 
-		Stats_Activ_RE(state, getters) {
-			return Object.keys(getters.Stats_Activ_Obj_RE);
+		stats_Activ_RE(state, getters) {
+			return Object.keys(getters.stats_Activ_Obj_RE);
 		},
 
-		Stats_Pass_RE(state, getters) {
+		stats_Pass_RE(state, getters) {
 			return Object.keys(state.MY.stats).filter(
-				(el) => !getters.Stats_Activ_RE.includes(el)
+				(el) => !getters.stats_Activ_RE.includes(el)
 			);
 		},
 
@@ -85,39 +89,72 @@ export default {
 		CHANGE_STATS(state, { key, name, value }) {
 			state.MY.stats[key][name] = value;
 		},
+
+    CHANGE_CUSTOM_RACE(state, {item, value}) {
+			state.MY.custom_race[item] = value;
+		},
 	},
 	actions: {
-
-    zeroStatsNumb({ state, getters, commit }, name)  {
-      const keys = getters.Stats_Keys;
+		zeroStatsNumb({ state, getters, commit }, name) {
+			const keys = getters.stats_Keys;
 			keys.forEach((key) => {
 				commit("CHANGE_STATS", { key: key, name: name, value: 0 });
 			});
-    },
+		},
 
-		getStatsNumb({ state, commit, dispatch }, name) {
+		getStatsNumb({ state, getters, commit, dispatch }, name) {
 			dispatch("zeroStatsNumb", name);
-			const obj = state.MY[name].stats;
-			if (obj) {
-				for (const [key, value] of Object.entries(obj)) {
-					commit("CHANGE_STATS", {
-						key: key,
-						name: name,
-						value: value,
+			const origin = state.MY[name].stats;
+			if (origin) {
+				if (name === "custom_race") {
+					origin.forEach((key) => {
+						const increment = getters.race_Settings.custom_stats[1];
+						commit("CHANGE_STATS", {
+							key: key,
+							name: name,
+							value: increment,
+						});
 					});
+				} else {
+					for (const [key, value] of Object.entries(origin)) {
+						commit("CHANGE_STATS", {
+							key: key,
+							name: name,
+							value: value,
+						});
+					}
 				}
 			}
 		},
 
-    getStatsNumb_Custom({ state, getters, commit, dispatch }, name) {
-			dispatch("zeroStatsNumb", name);
-			const arr = state.MY.custom_race.stats;
-      if (arr) {
-      arr.forEach((key) => {
-        const increment = getters.race_Settings.custom_stats[1];
-				commit("CHANGE_STATS", { key: key, name: name, value: increment });
-			});
-    }
+    getCustomRE({ getters, commit }, name ) {
+			const arr_free = getters[`${name}_Pass_RE`];
+			let arr = [];
+			const race_custom = getters.race_Settings[`custom_${name}`];
+      const ethnos_custom = getters.ethnos_Settings[`custom_${name}`];
+			if (race_custom) {
+				let i = race_custom[0];
+				arr = arr_free.slice(0, i);
+			}
+      if (ethnos_custom) {
+				let i = ethnos_custom[0];
+				arr = arr_free.slice(0, i);
+			}
+			commit("CHANGE_CUSTOM_RACE", { item: name, value: arr });
+		},
+
+		getCustomActiv({ state, getters, commit }, { item, name }) {
+			const selekt = state.MY.custom_race[item];
+			const active = getters[`${item}_Activ_RE`].includes(name);
+			const passive = selekt.includes(name);
+			if (active || passive) {
+				return null;
+			} else {
+				let arr = selekt;
+				arr.splice(0, 1);
+				arr.push(name);
+        commit("CHANGE_CUSTOM_RACE", { item: item, value: arr });
+			}
 		},
 	},
 };

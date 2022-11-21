@@ -3,12 +3,12 @@
 		<!-- Этнос_stats -->
 		<my-wrapper>
 			<my-attribute
-				v-for="name in Stats_Keys"
+				v-for="name in stats_Keys"
 				:key="name"
 				:title="name"
 				:type="`${name}_base`"
 				plus
-				:numb="getSummNumb('stats', name)"
+				:numb="summ_Stats_Numb_REC(name)"
 				:icon="name"
 			>
 			</my-attribute>
@@ -16,10 +16,10 @@
 		<my-card-text text="stats_base_details"></my-card-text>
 	</div>
 	<my-selection-card
-		v-for="name in Stats_Pass_RE"
+		v-for="name in stats_Pass_RE"
 		:key="name"
-		@click="getExtraActiv('stats', name)"
-		:active_boll_link="Stats_Select.includes(name)"
+		@click="getCustomActiv('stats', name)"
+		:active_boll_link="stats_Select.includes(name)"
 	>
 		<my-attribute
 			:title="name"
@@ -44,18 +44,19 @@ export default {
 		}),
 
 		...mapGetters("MY", [
-      "race_Settings", 
-      "Stats_Keys",
-      "Stats_Activ_Obj_RE", 
-      "Stats_Activ_RE",
-      "Stats_Pass_RE",
+      "race_Settings",
+      "stats_Keys",
+      "stats_Activ_Obj_RE",
+      "stats_Activ_RE",
+      "stats_Pass_RE",
+      "summ_Stats_Numb_REC"
     ]),
 
 		// race_Settings() {
 		// 	return this.MY.race.settings;
 		// },
 
-		// Stats_Keys() {
+		// stats_Keys() {
 		// 	return Object.keys(this.MY.stats);
 		// },
 
@@ -66,38 +67,43 @@ export default {
 		// 	return arr;
 		// },
 
-		// Stats_Activ_RE() {
+		// stats_Activ_RE() {
 		// 	return Object.keys(this.stats_Activ_Obj);
 		// },
 
-		// Stats_Pass_RE() {
+		// stats_Pass_RE() {
 		// 	return Object.keys(this.MY.stats).filter(
-		// 		(el) => !this.Stats_Activ_RE.includes(el)
+		// 		(el) => !this.stats_Activ_RE.includes(el)
 		// 	);
 		// },
 
-		Stats_Select() {
-			return this.race_page.extra.stats;
+		stats_Select() {
+			return this.MY.custom_race.stats;
 		},
 	},
 
 	methods: {
 		// ...mapActions("pages", ["showMainSettings"]),
-		...mapActions({ showSettings: "pages/showMainSettings" }),
+		...mapActions("MY", {
+      getActiv: "getCustomActiv"
+    }),
 		// ...mapActions("main_page", ["showSettings"]),
 
-		getSummNumb(item, name) {
-      // this.getSummNumb_2(name)
-      console.log('getSummNumb_2')
-      const upp_item = item.charAt(0).toUpperCase() + item.slice(1)
+		getSummStatsNumb_REC(name) {
+			let i = this.MY.stats[name].race;
+      	let j = this.MY.stats[name].ethnos;
+      	let k = this.MY.stats[name].custom_race;
+			return i + j + k;
+		},
+
+    getSummNumb(item, name) {
 			let i = 0;
-			let activ_val = this[`${upp_item}_Activ_Obj_RE`][name];
+			let activ_val = this[`${item}_Activ_Obj_RE`][name];
       let custom_set = this.race_Settings[`custom_${item}`]
-      // console.log(custom_set)
 			if (activ_val) {
 				i = activ_val;
 			} else if (custom_set) {
-				let extr_bool = this[`${upp_item}_Select`].includes(name);
+				let extr_bool = this[`${item}_Select`].includes(name);
 				let increment = custom_set[1];
         extr_bool ? i = increment : i = 0;
 			} else {
@@ -106,35 +112,38 @@ export default {
 			return i;
 		},
 
-    getCustomActiv(item, name) {
-      const selekt = this.race_page.extra[item];
-      const upp_item = item.charAt(0).toUpperCase() + item.slice(1)
-      const active = this[`${upp_item}_Activ_RE`].includes(name);
-      const passive = selekt.includes(name);
-			if (active || passive) {
-				return null;
-			} else {
-				let arr = selekt;
-				arr.splice(0, 1);
-				arr.push(name);
-				return (this.race_page.extra[item] = arr);
-			}
-		},
+    getCustomActiv (item, name) {
+      this.getActiv({item: item, name: name})
+    },
 
-    getExtraActiv(item, name) {
-      const selekt = this.race_page.extra[item];
-      const upp_item = item.charAt(0).toUpperCase() + item.slice(1)
-      const active = this[`${upp_item}_Activ_RE`].includes(name);
-      const passive = selekt.includes(name);
-			if (active || passive) {
-				return null;
-			} else {
-				let arr = selekt;
-				arr.splice(0, 1);
-				arr.push(name);
-				return (this.race_page.extra[item] = arr);
-			}
-		},
+    // getCustomActiv(item, name) {
+    //   const selekt = this.MY.custom_race[item];
+    //   const active = this[`${item}_Activ_RE`].includes(name);
+    //   const passive = selekt.includes(name);
+		// 	if (active || passive) {
+		// 		return null;
+		// 	} else {
+		// 		let arr = selekt;
+		// 		arr.splice(0, 1);
+		// 		arr.push(name);
+		// 		this.MY.custom_race[item] = arr;
+		// 	}
+		// },
+
+    // getExtraActiv(item, name) {
+    //   const selekt = this.race_page.extra[item];
+    //   const upp_item = item.charAt(0).toUpperCase() + item.slice(1)
+    //   const active = this[`${upp_item}_Activ_RE`].includes(name);
+    //   const passive = selekt.includes(name);
+		// 	if (active || passive) {
+		// 		return null;
+		// 	} else {
+		// 		let arr = selekt;
+		// 		arr.splice(0, 1);
+		// 		arr.push(name);
+		// 		return (this.race_page.extra[item] = arr);
+		// 	}
+		// },
 	},
 };
 </script>

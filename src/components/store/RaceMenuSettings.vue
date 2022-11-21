@@ -20,7 +20,7 @@
 				@click="showSettings('stats')"
 				:active="race_page.shown.stats"
 				title="stats"
-				:type_arr="race_page.extra.stats"
+				:type_arr="MY.custom_race.stats"
 			></my-selection>
 			<my-selection
 				v-if="MY.race.settings.custom_skills"

@@ -10,15 +10,8 @@ export function useShowSettings() {
 	const CLOSE_HOME = () => store.commit("pages/CLOSE_HOME")
 	const OPEN_HOME = () => store.commit("pages/OPEN_HOME")
 
-	const CLOSE_SETING = (page, name) =>
-		store.commit("pages/CLOSE_SETING", { page: page, name: name })
-
-	const OPEN_SETING = (page, name) =>
-		store.commit("pages/OPEN_SETING", { page: page, name: name })
-
-	// function OPEN_SETING(page, name) {
-	// 	store.commit("pages/OPEN_SETING", { page: page, name: name })
-	// }
+	const CLOSE_SETING = (page, name) => store.commit("pages/CLOSE_SETING", { page: page, name: name })
+	const OPEN_SETING = (page, name) => store.commit("pages/OPEN_SETING", { page: page, name: name })
 
 	function closeSettings(page) {
 		const obj = pages[page].shown;

@@ -25,6 +25,12 @@ export default {
 				}
 			}
 		},
+
+		shown_Home(state) {
+			// console.log("shown_Home(state)", state.shown_home)
+			return state.shown_home;
+		},
+
 	},
 
 	mutations: {

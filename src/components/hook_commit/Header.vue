@@ -1,12 +1,12 @@
 <template>
 	<div class="header">
-		<my-logo-card @click="showSettings('logo')" :active="main_page.shown.logo" />
+		<my-logo-card @click="showSettings_Main('logo')" :active="main_page.shown.logo" />
 		<div class="header_col">
 			<my-header-card
-				@click="showSettings('lang')"
+				@click="showSettings_Main('lang')"
 				:active="main_page.shown.lang"
 			>
-				<!-- <emoji v-for="n in Em_Icon" :key="n"
+				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
 					:set="set_emoji"
@@ -15,7 +15,7 @@
 				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
-				@click="showSettings('lvl')"
+				@click="showSettings_Main('lvl')"
 				:active="main_page.shown.lvl"
 				:slots="Char_Lvl"
 			/>
@@ -24,9 +24,19 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings";
+import { mapState, mapGetters } from "vuex";
 export default {
 	name: "Header",
+	setup() {
+    const { showSettings } = useShowSettings();
+    // const showSettings_Main = (name) => showSettings("main_page", name)
+    function showSettings_Main (name) {
+      showSettings("main_page", name)
+    }
+
+		return {showSettings_Main,};
+	},
 	computed: {
 		...mapState({
 			MY: (state) => state.MY.MY,
@@ -39,10 +49,6 @@ export default {
 		Char_Lvl() {
 			return `lvl ${this.MY.level}`;
 		},
-	},
-
-	methods: {
-    ...mapActions({showSettings: "pages/showMainSettings"}),
 	},
 };
 </script>

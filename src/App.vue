@@ -250,7 +250,7 @@
 		<!-- stats -->
 		<my-wrapper hr>
 			<my-attribute
-				v-for="name in Stats_Keys"
+				v-for="name in stats_Keys"
 				:key="name"
 				:title="name"
 				:type="`${name}_base`"
@@ -384,10 +384,15 @@ import Description from "./components/Description.vue";
 import WelcomeBanner from "./components/WelcomeBanner.vue";
 
 // STORE
-import Header from "./components/store/Header.vue";
+// import Header from "./components/store/Header.vue";
 import RaceMenuSettings from "./components/store/RaceMenuSettings.vue";
 import RaceCustomStats from "./components/store/RaceCustomStats.vue";
 // STORE
+
+// STORE_HOOK
+import Header from "./components/hook_commit/Header.vue";
+
+// STORE_HOOK
 
 // store components
 import { mapActions, mapGetters, mapState, mapMutations } from "vuex";
@@ -442,10 +447,16 @@ export default {
 
 
 		this.getFunction();
-    this.getCustomAllRE("stats");
-    this.getCustomAllRE("skills");
-    this.getCustomAllRE("languages");
-    this.getStatsNumb_Custom("custom_race");
+
+    this.getStatsNumb("ethnos");
+
+    this.getCustomRE("stats");
+    // this.getCustomRE("skills");
+    // this.getCustomRE("languages");
+    this.getStatsNumb("custom_race");
+    this.$watch('MY.custom_race.stats', () => {
+      console.log('Заметка обновилась!')
+    })
 	},
 
 	computed: {
@@ -680,7 +691,7 @@ export default {
 		// 	return arr;
 		// },
 
-		Stats_Keys() {
+		stats_Keys() {
 			return Object.keys(this.MY.stats);
 		},
 
@@ -746,67 +757,34 @@ export default {
 		},
 
   "MY.race.settings.custom_stats" () {
-		this.getCustomAllRE("stats");
-    this.getStatsNumb_Custom("custom_race");
+		this.getCustomRE("stats");
   },
 
-  "MY.race.settings.custom_skills" () {
-		this.getCustomAllRE("skills");
-  },
+  "MY.custom_race.stats": {
+      handler(val, oldVal) {
+        this.getStatsNumb("custom_race");
+      },
+      deep: true
+    },
 
-  "MY.race.settings.custom_languages" () {
-		this.getCustomAllRE("languages");
-  },
+  // "MY.race.settings.custom_skills" () {
+	// 	this.getCustomRE("skills");
+  // },
+
+  // "MY.race.settings.custom_languages" () {
+	// 	this.getCustomRE("languages");
+  // },
+
+  "MY.ethnos": "getFunction_2",
 
   "MY.ethnos.custom_stats" () {
-		this.getCustomAllRE("stats");
-    this.getStatsNumb_Custom("custom_race");
+		this.getCustomRE("stats");
+    this.getStatsNumb("custom_race");
   },
 
-  "MY.ethnos.custom_skills" () {
-		this.getCustomAllRE("skills");
-  },
-
-  "MY.ethnos.custom_languages" () {
-		this.getCustomAllRE("languages");
-  },
-
-  // "MY.race.settings" (val, oldVal) {
-	// 		console.log('val.custom_stats:', val.custom_stats)
-	// 		console.log('oldVal.custom_stats:', oldVal.custom_stats)
-	// 		if (val === oldVal) {
-  //       return null
-	// 		} else {
-	// 			this.getCustomAllRE("stats"); //??????????
-	// 		}
-  // },
 
 
 
-
-	// 	"MY.race.settings.custom_stats" (val, oldVal) {
-	// 		console.log('val:', val)
-	// 		console.log('oldVal:', oldVal)
-	// 		if (val === oldVal) {
-  //       return null
-	// 		} else {
-	// 			this.getCustomAllRE("stats"); //??????????
-	// 		}
-  // },
-
-
-
-
-		// "MY.race.settings.custom_stats": function (val, oldVal) {
-		// console.log('oldVal:', oldVal)
-		// console.log('val:', val)
-		// },
-		// "MY.race.settings.custom_stats": function (val, oldVal) {
-		// console.log('oldVal:', oldVal)
-		// console.log('val:', val)
-		// },
-
-		"MY.ethnos": "getFunction_2",
 		// "MY.level": "MY.mastery = Mastery",
 		"MY.level": function () {
 			this.MY.mastery = this.Mastery;
@@ -839,16 +817,16 @@ export default {
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 			this.getStatsNumb("race");
-      this.getStatsNumb("ethnos");
-      
+
+
 
 			// this.getCustomRace("stats");
 			// this.getCustomRace("skills");
 			// this.getCustomRace("languages");
 
-			// this.getCustomAllRE("stats");
-			// this.getCustomAllRE("skills");
-			// this.getCustomAllRE("languages");
+			// this.getCustomRE("stats");
+			// this.getCustomRE("skills");
+			// this.getCustomRE("languages");
 		},
 
 		getFunction_2() {
@@ -892,72 +870,27 @@ export default {
 			this.race_page.extra[name] = arr;
 		},
 
-		// getCustomRace(name) {
+
+		// getCustomRE(item, name) {
 		// 	const upp_name = name.charAt(0).toUpperCase() + name.slice(1);
 		// 	let arr_free = this[`${upp_name}_Pass`];
 		// 	let arr = [];
-		// 	let race_custom = this.race_Settings[`custom_${name}`];
-		// 	if (race_custom) {
-		// 		let i = race_custom[0];
+		// 	let custom = this[`${item}_Settings`][`custom_${name}`];
+		// 	if (custom) {
+		// 		let i = custom[0];
 		// 		arr = arr_free.slice(0, i);
 		// 	}
-		// 	this.MY.custom_step1[name].race = arr;
+		// 	return arr;
 		// },
 
-		// getCustomAll(name) {
-		// 	const upp_name = name.charAt(0).toUpperCase() + name.slice(1);
-		// 	let arr_free = this[`${upp_name}_Pass`];
-		// 	let arr = [];
-		// 	let race_custom = this.race_Settings[`custom_${name}`];
-		// 	let ethnos_custom = this.MY.ethnos[`custom_${name}`];
-		// 	if (race_custom) {
-		// 		let i = this.race_Settings[`custom_${name}`][0];
-		// 		arr = arr_free.slice(0, i);
-		// 	}
-		// 	if (ethnos_custom) {
-		// 		let i = this.MY.ethnos[`custom_${name}`][0];
-		// 		arr = arr_free.slice(0, i);
-		// 	}
-		// 	this.MY.custom_race[name] = arr;
-		// },
-
-		// getCustomEthnos(name) {
-		// 	const upp_name = name.charAt(0).toUpperCase() + name.slice(1);
-		// 	let arr_free = this[`${upp_name}_Pass`];
-		// 	let arr = [];
-		// 	let ethnos_custom = this.MY.ethnos[`custom_${name}`];
-		// 	if (ethnos_custom) {
-		// 		let i = ethnos_custom[0];
-		// 		arr = arr_free.slice(0, i);
-		// 	}
-		// 	this.MY.custom_race[name] = arr;
-		// },
-
-		getCustomRE(item, name) {
-			const upp_name = name.charAt(0).toUpperCase() + name.slice(1);
-			let arr_free = this[`${upp_name}_Pass`];
-			let arr = [];
-			let custom = this[`${item}_Settings`][`custom_${name}`];
-			if (custom) {
-				let i = custom[0];
-				arr = arr_free.slice(0, i);
-			}
-			return arr;
-		},
-
-		getCustomAllRE(name) {
-			let custom_race = this.getCustomRE("race", name);
-			let custom_ethnos = this.getCustomRE("ethnos", name);
-			let arr = custom_race.concat(custom_ethnos);
-			this.MY.custom_race[name] = arr;
-		},
-
-		// getCustomAllErhnos(name) {
+		// getCustomRE(name) {
 		// 	let custom_race = this.getCustomRE("race", name);
 		// 	let custom_ethnos = this.getCustomRE("ethnos", name);
 		// 	let arr = custom_race.concat(custom_ethnos);
 		// 	this.MY.custom_race[name] = arr;
 		// },
+
+
 
 		...mapMutations("MY", {
 			getNewEthnos: "GET_ETHNOS",
@@ -965,7 +898,8 @@ export default {
 
 		...mapActions("MY", {
 			getStatsNumb: "getStatsNumb",
-      getStatsNumb_Custom: "getStatsNumb_Custom",
+      getCustomRE: "getCustomRE"
+      // getStatsNumb_Custom: "getStatsNumb_Custom",
 			// getNewEthnos: "getNewEthnos",
 		}),
 
