@@ -1863,68 +1863,6 @@ export default {
         ],
       },
     ],
-
-    settings: {
-      subclasses: {
-        totem_warrior: {
-          settings: {
-            custom: [
-              {
-                level: 14,
-                name: "totem_harmony",
-                delails: "totem_aspect_details",
-                list: [
-                  {
-                    name: "wolf",
-                    spells: [
-                      {
-                        spell: spells.wolf_knock,
-                      },
-                    ],
-                  },
-                  {
-                    name: "bear",
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "on_dodging_in_rage_bear",
-                      },
-                    ],
-                  },
-                  {
-                    name: "eagle",
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "flight",
-                        details: "as_walking_speed_in_rage",
-                      },
-                    ],
-                  },
-                  {
-                    name: "elk",
-                    spells: [
-                      {
-                        spell: spells.elk_knock,
-                      },
-                    ],
-                  },
-                  {
-                    name: "tiger",
-                    spells: [
-                      {
-                        spell: spells.tiger_strike,
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        },
-      },
-    },
   },
 
   // -------------------------------------------------------------------------
@@ -2229,15 +2167,10 @@ export default {
           [packs.explorers, 1],
         ],
       },
+      {
+        //spells / paladin
+      }
     ],
-
-    settings: {
-      spells: [
-        {
-          select: 33, //spell_stock,
-        },
-      ],
-    },
   },
 
   // -------------------------------------------------------------------------
