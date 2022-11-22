@@ -163,7 +163,7 @@
 					skroll_list_open: race_page.shown_humman_lang,
 				}"
 				v-vpshow="race_page.shown_humman_lang"
-				@click="showScroll('shown_humman_lang')"
+				@click="showRaceScroll('shown_humman_lang')"
 			>
 				{{ Lang_Humman_Title }}
 			</div>
@@ -382,7 +382,7 @@ import { useStore } from "vuex";
 
 export default {
 	setup() {
-		const { showHome, closeEthnos, closeColor, closePar } = useShowSettings();
+		const { showHome, closeEthnos, closeColor, closePar, showRaceScroll } = useShowSettings();
 		// console.log('closeEthnos:', closeEthnos)
 		const store = useStore();
 
@@ -402,7 +402,7 @@ export default {
 			closePar("languages");
 		});
 
-		return { showHome };
+		return { showHome, showRaceScroll };
 	},
 	name: "App",
 	components: {
@@ -907,7 +907,7 @@ export default {
 			// closeEthnos: "closeRaceEthnos",
 			// closeColor: "closeRaceColor",
 			// closePar: "closeRacePar",
-			showScroll: "showRaceScroll",
+			// showRaceScroll: "showRaceScroll",
 		}),
 
 		getComonColor(name) {

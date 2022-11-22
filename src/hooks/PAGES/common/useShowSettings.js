@@ -20,11 +20,11 @@ export function useShowSettings() {
 	const OPEN_SETTING = (page, name) =>
 		store.commit("pages/OPEN_SETTING", { page: page, name: name });
 
+    const SHOW_SCROLL = (page, name) =>
+		store.commit("pages/SHOW_SCROLL", { page: page, name: name });
+
 
 	function showHome() {
-    console.log('showHome:')
-    console.log('showHome:', page_open.value)
-    console.log('showHome:', setting_open.value)
 		CLOSE_SETTING(page_open.value, setting_open.value);
 		OPEN_HOME();
 		OPEN_PAGE_NAME(null);
@@ -70,7 +70,7 @@ export function useShowSettings() {
   }
 
   function closeEthnos() {
-    const ethnos_show = race_page.value.shown_ethnos;
+    const ethnos_show = race_page.value.shown.ethnos;
     const ethnos_common = MY.value.ethnos.name === "common";
     if (ethnos_show && ethnos_common) {
       showHome();
@@ -94,6 +94,10 @@ export function useShowSettings() {
     }
   }
 
+  function showRaceScroll(name) {
+    SHOW_SCROLL("race_page", name);
+  }
+
 
 	return { 
     showHome, 
@@ -102,6 +106,7 @@ export function useShowSettings() {
     showSettings__Race,
     closeEthnos,
     closeColor,
-    closePar
+    closePar,
+    showRaceScroll,
   };
 }
