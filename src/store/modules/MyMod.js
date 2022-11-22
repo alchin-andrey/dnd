@@ -18,7 +18,6 @@ export default {
 		// }
 
     summ_Stats_Numb_REC: (state) => (name) => {
-      console.log(name)
       let i = state.MY.stats[name].race;
       let j = state.MY.stats[name].ethnos;
       let k = state.MY.stats[name].custom_race;

@@ -18,18 +18,14 @@
 				<RaceMenuSettings />
 			</div>
 			<transition name="btm-fade" mode="out-in">
-				<my-button
-					v-if="pages.shown_home"
-					numb="02"
-					title="class"
-				></my-button>
+				<my-button v-if="pages.shown_home" numb="02" title="class"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
 		</div>
 	</div>
 
 	<!-- Выпадающее меню -->
-	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: Shown_Selection }">
+	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: pages.setting_open }">
 		<!-- Превью -->
 		<my-selection-box :shown="main_page.shown.logo">
 			<Description />
@@ -45,11 +41,7 @@
 				:select_link="item.mark"
 				:active_link="dic.select_lang"
 			>
-				<LangCard
-					:title="item.icon"
-					:text="item.name"
-					:mark="item.mark"
-				/>
+				<LangCard :title="item.icon" :text="item.name" :mark="item.mark" />
 			</my-selection-card>
 		</my-selection-box>
 		<!-- Смена языка -->
@@ -133,22 +125,12 @@
 				v-for="(val, name, i) in MY.skills"
 				:key="name"
 				@click="
-					getExtraActiv(
-						false,
-						skills_Select.includes(name),
-						name,
-						'skills'
-					)
+					getExtraActiv(false, skills_Select.includes(name), name, 'skills')
 				"
 				:class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
 				:active_boll_link="skills_Select.includes(name)"
 			>
-				<my-attribute
-					:title="name"
-					plus
-					:numb="Skill_Mastery"
-					:icon="val.mod"
-				>
+				<my-attribute :title="name" plus :numb="Skill_Mastery" :icon="val.mod">
 				</my-attribute>
 				<my-card-text title="" :text="`${name}_details`"></my-card-text>
 			</my-selection-card>
@@ -171,10 +153,7 @@
 				:active_boll_link="Lang_Select.includes(lang)"
 				:basic="Lang_Activ.includes(lang)"
 			>
-				<my-card-text
-					:title="lang.name"
-					:text="lang.details"
-				></my-card-text>
+				<my-card-text :title="lang.name" :text="lang.details"></my-card-text>
 			</my-selection-card>
 
 			<div
@@ -184,7 +163,7 @@
 					skroll_list_open: race_page.shown_humman_lang,
 				}"
 				v-vpshow="race_page.shown_humman_lang"
-				@click="showSkroll('shown_humman_lang')"
+				@click="showScroll('shown_humman_lang')"
 			>
 				{{ Lang_Humman_Title }}
 			</div>
@@ -220,8 +199,7 @@
 		<div
 			class="character"
 			:class="{
-				active_eyes:
-					race_page.shown.eyes_color || race_page.shown.hair_color,
+				active_eyes: race_page.shown.eyes_color || race_page.shown.hair_color,
 				active_skin: race_page.shown.skin_color,
 			}"
 			:style="{
@@ -380,24 +358,52 @@ import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
-import Description from "./components/Description.vue";
-import WelcomeBanner from "./components/WelcomeBanner.vue";
+import Description from "@/components/Description.vue";
+import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
 // STORE
 // import Header from "./components/store/Header.vue";
-import RaceMenuSettings from "./components/store/RaceMenuSettings.vue";
-import RaceCustomStats from "./components/store/RaceCustomStats.vue";
+import RaceMenuSettings from "@/components/store/RaceMenuSettings.vue";
+// import RaceCustomStats from "@/components/store/RaceCustomStats.vue";
 // STORE
 
 // STORE_HOOK
-import Header from "./components/hook_commit/Header.vue";
+import Header from "@/components/hook_commit/Header.vue";
+import RaceCustomStats from "@/components/hook_commit/RaceCustomStats.vue";
 
 // STORE_HOOK
 
 // store components
 import { mapActions, mapGetters, mapState, mapMutations } from "vuex";
 
+import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
+import { watch, computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
+	setup() {
+		const { showHome, closeEthnos, closeColor, closePar } = useShowSettings();
+		// console.log('closeEthnos:', closeEthnos)
+		const store = useStore();
+
+		const MY_race = computed(() => store.state.MY.MY.race);
+		const GET_ETHNOS = () => store.commit("MY/GET_ETHNOS");
+
+		watch(MY_race, () => {
+			console.log("Заметка обновилась!");
+			// console.log('closeEthnos:', closeEthnos)
+			GET_ETHNOS();
+			closeEthnos();
+			closeColor("skin");
+			closeColor("eyes");
+			closeColor("hair");
+			closePar("stats");
+			closePar("skills");
+			closePar("languages");
+		});
+
+		return { showHome };
+	},
 	name: "App",
 	components: {
 		GenderChoiceStore,
@@ -416,6 +422,7 @@ export default {
 		RaceCustomStats,
 		// НА ОБРАБОТКЕ
 	},
+
 	data() {
 		return {
 			dic: dic,
@@ -445,48 +452,47 @@ export default {
 		this.MY.class = Object.values(clas)[1];
 		this.MY.mastery = this.Mastery;
 
-
 		this.getFunction();
 
-    this.getStatsNumb("ethnos");
+		this.getStatsNumb("ethnos");
 
-    this.getCustomRE("stats");
-    // this.getCustomRE("skills");
-    // this.getCustomRE("languages");
-    this.getStatsNumb("custom_race");
-    this.$watch('MY.custom_race.stats', () => {
-      console.log('Заметка обновилась!')
-    })
+		this.getCustomRE("stats");
+		// this.getCustomRE("skills");
+		// this.getCustomRE("languages");
+		this.getStatsNumb("custom_race");
+		this.$watch("MY.custom_race.stats", () => {
+			// console.log("Заметка обновилась!");
+		});
 	},
 
 	computed: {
 		...mapState({
-			MY: (state) => state.MY.MY,
+			MY: state => state.MY.MY,
 		}),
 
 		...mapState("pages", {
-			pages: (state) => state,
-			main_page: (state) => state.main_page,
-			race_page: (state) => state.race_page,
+			pages: state => state,
+			main_page: state => state.main_page,
+			race_page: state => state.race_page,
 		}),
 
-		...mapGetters({}),
+		// ...mapGetters("pages", ["Shown_Selection"]),
 
 		Main_Selection() {
 			const obj = this.race_page.shown;
 			const values = Object.values(obj);
-			return values.some((el) => el === true);
+			return values.some(el => el === true);
 		},
 
 		Race_Selection() {
 			const obj = this.main_page.shown;
 			const values = Object.values(obj);
-			return values.some((el) => el === true);
+			return values.some(el => el === true);
 		},
 
-		Shown_Selection() {
-			return this.Main_Selection || this.Race_Selection;
-		},
+		// Shown_Selection() {
+		// 	return this.Main_Selection || this.Race_Selection;
+		// },
 
 		Mastery() {
 			return Math.ceil(this.MY.level / 4);
@@ -674,7 +680,7 @@ export default {
 
 		Languages_Pass() {
 			return Object.values(this.languages).filter(
-				(el) => !this.Lang_Activ.includes(el)
+				el => !this.Lang_Activ.includes(el)
 			);
 		},
 
@@ -708,7 +714,7 @@ export default {
 
 		Stats_Pass() {
 			return Object.keys(this.MY.stats).filter(
-				(el) => !this.Stats_Activ.includes(el)
+				el => !this.Stats_Activ.includes(el)
 			);
 		},
 
@@ -729,7 +735,7 @@ export default {
 
 		Skills_Pass() {
 			return Object.keys(this.MY.skills).filter(
-				(el) => !this.Skills_Activ.includes(el)
+				el => !this.Skills_Activ.includes(el)
 			);
 		},
 
@@ -756,34 +762,31 @@ export default {
 			this.race_page.shown_humman_lang = false;
 		},
 
-  "MY.race.settings.custom_stats" () {
-		this.getCustomRE("stats");
-  },
+		"MY.race.settings.custom_stats"() {
+			this.getCustomRE("stats");
+		},
 
-  "MY.custom_race.stats": {
-      handler(val, oldVal) {
-        this.getStatsNumb("custom_race");
-      },
-      deep: true
-    },
+		"MY.custom_race.stats": {
+			handler(val, oldVal) {
+				this.getStatsNumb("custom_race");
+			},
+			deep: true,
+		},
 
-  // "MY.race.settings.custom_skills" () {
-	// 	this.getCustomRE("skills");
-  // },
+		// "MY.race.settings.custom_skills" () {
+		// 	this.getCustomRE("skills");
+		// },
 
-  // "MY.race.settings.custom_languages" () {
-	// 	this.getCustomRE("languages");
-  // },
+		// "MY.race.settings.custom_languages" () {
+		// 	this.getCustomRE("languages");
+		// },
 
-  "MY.ethnos": "getFunction_2",
+		"MY.ethnos": "getFunction_2",
 
-  "MY.ethnos.custom_stats" () {
-		this.getCustomRE("stats");
-    this.getStatsNumb("custom_race");
-  },
-
-
-
+		"MY.ethnos.custom_stats"() {
+			this.getCustomRE("stats");
+			this.getStatsNumb("custom_race");
+		},
 
 		// "MY.level": "MY.mastery = Mastery",
 		"MY.level": function () {
@@ -799,17 +802,17 @@ export default {
 		},
 
 		getFunction() {
-			this.getNewEthnos();
-			this.closeEthnos();
-			this.closeColor("skin");
-			this.closeColor("eyes");
-			this.closeColor("hair");
+			// this.getNewEthnos();
+			// this.closeEthnos();
+			// this.closeColor("skin");
+			// this.closeColor("eyes");
+			// this.closeColor("hair");
 			this.getComonColor("skin");
 			this.getComonColor("eyes");
 			this.getComonColor("hair");
-			this.closePar("stats");
-			this.closePar("skills");
-			this.closePar("languages");
+			// this.closePar("stats");
+			// this.closePar("skills");
+			// this.closePar("languages");
 			this.getExtra(this.Stats_Pass, "stats");
 			this.getExtra(this.Skills_Pass, "skills");
 			this.getExtra(this.Languages_Pass, "languages");
@@ -817,8 +820,6 @@ export default {
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 			this.getStatsNumb("race");
-
-
 
 			// this.getCustomRace("stats");
 			// this.getCustomRace("skills");
@@ -870,7 +871,6 @@ export default {
 			this.race_page.extra[name] = arr;
 		},
 
-
 		// getCustomRE(item, name) {
 		// 	const upp_name = name.charAt(0).toUpperCase() + name.slice(1);
 		// 	let arr_free = this[`${upp_name}_Pass`];
@@ -890,26 +890,24 @@ export default {
 		// 	this.MY.custom_race[name] = arr;
 		// },
 
-
-
-		...mapMutations("MY", {
-			getNewEthnos: "GET_ETHNOS",
-		}),
+		// ...mapMutations("MY", {
+		// 	getNewEthnos: "GET_ETHNOS",
+		// }),
 
 		...mapActions("MY", {
 			getStatsNumb: "getStatsNumb",
-      getCustomRE: "getCustomRE"
-      // getStatsNumb_Custom: "getStatsNumb_Custom",
+			getCustomRE: "getCustomRE",
+			// getStatsNumb_Custom: "getStatsNumb_Custom",
 			// getNewEthnos: "getNewEthnos",
 		}),
 
 		...mapActions("pages", {
-			showSettings: "showRaceSettings",
-			showHome: "goHome",
-			closeEthnos: "closeRaceEthnos",
-			closeColor: "closeRaceColor",
-			closePar: "closeRacePar",
-			showSkroll: "showRaceSkroll",
+			// showSettings: "showRaceSettings",
+			// showHome: "goHome",
+			// closeEthnos: "closeRaceEthnos",
+			// closeColor: "closeRaceColor",
+			// closePar: "closeRacePar",
+			showScroll: "showRaceScroll",
 		}),
 
 		getComonColor(name) {
@@ -1011,7 +1009,7 @@ export default {
 		// 	this.main_page.shown_home_arr = arr;
 		// },
 
-		// showSkroll(name) {
+		// showScroll(name) {
 		// 	this.race_page[name] = this.race_page[name] === false;
 		// },
 
@@ -1133,7 +1131,7 @@ export default {
 		},
 
 		getMannaNumb(arr, name) {
-			let index = arr.findIndex((el) => el[name]);
+			let index = arr.findIndex(el => el[name]);
 			return index;
 		},
 	},

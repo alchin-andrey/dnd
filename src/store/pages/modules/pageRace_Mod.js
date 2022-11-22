@@ -33,11 +33,11 @@ export default {
 		age_kof: 0.5,
 	}),
 	getters: {
-		Shown_Race_Selection(state) {
-			const obj = state.shown;
-			const values = Object.values(obj);
-			return values.some((el) => el === true);
-		},
+		// Shown_Race_Selection(state) {
+		// 	const obj = state.shown;
+		// 	const values = Object.values(obj);
+		// 	return values.some((el) => el === true);
+		// },
 	},
 
 	mutations: {
@@ -61,6 +61,7 @@ export default {
     closeRaceEthnos({ state, dispatch, rootState }) {
       const ethnos_show = state.shown.ethnos === true;
       const ethnos_common = rootState.MY.MY.ethnos.name === "common";
+			console.log('ethnos_show:', ethnos_show && ethnos_common)
 			if (ethnos_show && ethnos_common) {
 				dispatch("goHome");
 			}
@@ -83,7 +84,7 @@ export default {
 			}
 		},
 
-    showRaceSkroll({ commit }, name) {
+    showRaceScroll({ commit }, name) {
 			commit("SHOW_SCROLL", {page: "race_page", name: name});
 		},
 	},

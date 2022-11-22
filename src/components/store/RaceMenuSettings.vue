@@ -3,7 +3,7 @@
 	<div class="selection_menu_wrap">
 		<div class="selection_menu">
 			<my-selection
-				@click="showSettings('ethnos')"
+				@click="showSettings__Race('ethnos')"
 				:active="race_page.shown.ethnos"
 				title="ethnos"
 				:type="MY.ethnos.name"
@@ -17,14 +17,14 @@
 		>
 			<my-selection
 				v-if="MY.race.settings.custom_stats"
-				@click="showSettings('stats')"
+				@click="showSettings__Race('stats')"
 				:active="race_page.shown.stats"
 				title="stats"
 				:type_arr="MY.custom_race.stats"
 			></my-selection>
 			<my-selection
 				v-if="MY.race.settings.custom_skills"
-				@click="showSettings('skills')"
+				@click="showSettings__Race('skills')"
 				:active="race_page.shown.skills"
 				title="skills"
 				:type_arr="race_page.extra.skills"
@@ -35,7 +35,7 @@
 					MY.race.settings.custom_languages ||
 					MY.ethnos.custom_languages
 				"
-				@click="showSettings('languages')"
+				@click="showSettings__Race('languages')"
 				:active="race_page.shown.languages"
 				title="languages"
 				:type_arr="Lang_Extra"
@@ -45,13 +45,13 @@
 
 		<div class="selection_menu">
 			<my-selection
-				@click="showSettings('gender')"
+				@click="showSettings__Race('gender')"
 				:active="race_page.shown.gender"
 				title="gender"
 				:type="MY.gender.phisiological"
 			></my-selection>
 			<my-controller
-				@click="showSettings('age')"
+				@click="showSettings__Race('age')"
 				:active="race_page.shown.age"
 				title="age"
 				:value="MY.age"
@@ -59,7 +59,7 @@
 				:note="Age_Note"
 			></my-controller>
 			<my-controller
-				@click="showSettings('height')"
+				@click="showSettings__Race('height')"
 				:active="race_page.shown.height"
 				title="height"
 				:value="MY.height"
@@ -67,7 +67,7 @@
 				:note="Hight_Note"
 			></my-controller>
 			<my-controller
-				@click="showSettings('weight')"
+				@click="showSettings__Race('weight')"
 				:active="race_page.shown.weight"
 				title="weight"
 				:value="MY.weight"
@@ -76,21 +76,21 @@
 			>
 			</my-controller>
 			<my-selection
-				@click="showSettings('skin_color')"
+				@click="showSettings__Race('skin_color')"
 				:active="race_page.shown.skin_color"
 				title="color_skin"
 				:type="getCharColor('skin').name"
 			>
 			</my-selection>
 			<my-selection
-				@click="showSettings('eyes_color')"
+				@click="showSettings__Race('eyes_color')"
 				:active="race_page.shown.eyes_color"
 				title="color_eyes"
 				:type="getCharColor('eyes').name"
 			>
 			</my-selection>
 			<my-selection
-				@click="showSettings('hair_color')"
+				@click="showSettings__Race('hair_color')"
 				:active="race_page.shown.hair_color"
 				title="color_hair"
 				:type="getCharColor('hair').name"
@@ -100,6 +100,11 @@
 	</div>
 	<!-- </div> -->
 </template>
+
+<script setup>
+import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
+const { showSettings__Race } = useShowSettings();
+</script>
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex";
@@ -116,7 +121,7 @@ export default {
 			race_page: (state) => state.pages.race_page,
 		}),
 
-		// ...mapGetters("dic", ["Em_Icon", "Lang_Icon"]),
+		// ...mapGetters("pages", ["shown_Home"]),
 
     Castom_Race_Settings_Visib() {
       return this.MY.race.settings.custom_stats ||
@@ -179,7 +184,7 @@ export default {
 
 	methods: {
 		...mapActions("pages", {
-			showSettings: "showRaceSettings",
+			// showSettings: "showRaceSettings",
 			showHome: "goHome",
 			closeEthnos: "closeRaceEthnos",
 			closeColor: "closeRaceColor",
