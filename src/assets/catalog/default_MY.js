@@ -50,13 +50,13 @@ export default {
 
     mastery: null,
     proficiency:null,
-    initiative:null,
-    armor_class:null,
 
     qualities:{
         speed:null,
         // vision_day:null,
         vision_night:null,
+        //initiative: null,
+	    //armor_class: null,
     },
 
     stats:{

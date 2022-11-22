@@ -219,7 +219,7 @@ export default {
         // остановился здесь
     },
 
-    
+
 
     example:
     {
@@ -262,6 +262,8 @@ export default {
                 mana9: 1,
                 sorcery_points: 5,
                 chi_points: 34,
+                divine_channel: 2,
+                supremacy_points: 6,
             }
         ],
 

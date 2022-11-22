@@ -46,8 +46,8 @@ const user = {
     HP_dice:null,
 
     mastery:null,
-    initiative:null,
-    armor_class:null,
+    //initiative:null,
+    //armor_class:null,
 
     qualities:{
         speed:null,
