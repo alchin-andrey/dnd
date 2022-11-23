@@ -18,6 +18,7 @@ export default {
 		// }
 
     summ_Stats_Numb_REC: (state) => (name) => {
+      console.log('summ_Stats_Numb_REC:')
       let i = state.MY.stats[name].race;
       let j = state.MY.stats[name].ethnos;
       let k = state.MY.stats[name].custom_race;
@@ -81,7 +82,26 @@ export default {
 		},
 	},
 	mutations: {
+
+    GET_RACE_OBJ(state, name) {
+			state.MY.race_name = name;
+		},
+
+    GET_RACE_NAME(state, name) {
+			state.MY.race_name = name;
+		},
+
 		GET_ETHNOS(state) {
+			state.MY.ethnos = Object.values(state.MY.race.settings.ethnos)[0];
+		},
+
+    GET_ETHNOS_FOR_RACE_NAME(state) {
+      console.log('GET_ETHNOS_FOR_RACE_NAME:', Object.values(state.MY.race.settings.ethnos)[0])
+
+			state.MY.ethnos = Object.values(state.MY.race.settings.ethnos)[0];
+		},
+
+    GET_ETHNOS_NAME(state) {
 			state.MY.ethnos = Object.values(state.MY.race.settings.ethnos)[0];
 		},
 

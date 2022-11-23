@@ -7,6 +7,17 @@ export default {
 
     }),
     getters: {
+
+
+
+      // t: (state) => (name) => state.dic[state.dic.select_lang][name],
+
+        t(state) {
+          let lang_sel = state.dic.select_lang;
+          console.log('lang_sel:')
+          return (name) => state.dic[lang_sel][name];
+        },
+
         Em_Icon(state) {
           return state.dic.lang.find((icon) => icon.mark === state.dic.select_lang).icon;
         },

@@ -4,7 +4,7 @@
 		<div class="main_chapter">
 			<Header />
 			<my-slider
-        numb="01"
+				numb="01"
 				title="race"
 				:arr="Object.values(this.race)"
 				:arr_keys="Object.keys(this.race)"
@@ -901,6 +901,15 @@ export default {
 			// getNewEthnos: "getNewEthnos",
 		}),
 
+		...mapActions("pages", {
+			// showSettings: "showRaceSettings",
+			// showHome: "goHome",
+			// closeEthnos: "closeRaceEthnos",
+			// closeColor: "closeRaceColor",
+			// closePar: "closeRacePar",
+			// showRaceScroll: "showRaceScroll",
+		}),
+
 		getComonColor(name) {
 			let select = this.$root.race_page.color_selected[name];
 			if (this.race_Settings.color[name][0]) {
@@ -909,6 +918,100 @@ export default {
 				this.$root.MY.color[name] = null;
 			}
 		},
+
+		// getNewEthnos() {
+		// 	this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
+		// },
+
+		// closeEthnos() {
+		// 	if (
+		// 		this.race_page.shown.ethnos === true &&
+		// 		this.MY.ethnos.name === "common"
+		// 	) {
+		// 		this.race_page.shown.ethnos = false;
+		// 		this.main_page.shown_home = true;
+		// 	}
+		// },
+
+		// closeColor(name) {
+		// 	if (
+		// 		this.race_page.shown[`${name}_color`] === true &&
+		// 		this.MY.race.settings.color[name].length === 0
+		// 	) {
+		// 		this.race_page.shown[`${name}_color`] = false;
+		// 		this.main_page.shown_home = true;
+		// 	}
+		// },
+
+		// closePar(name_1, name_2) {
+		// 	if (
+		// 		this.race_page.shown[name_1] === true &&
+		// 		this.MY.race.settings[name_2] === undefined &&
+		// 		this.MY.ethnos[name_2] === undefined
+		// 	) {
+		// 		this.race_page.shown[name_1] = false;
+		// 		this.pages.shown_home = true;
+		// 	}
+		// },
+
+		// close() {
+		// 	const obj_race = this.race_page.shown;
+		// 	const keys_race = Object.keys(obj_race);
+		// 	keys_race.forEach((keys) => {
+		// 		this.race_page.shown[keys] = false;
+		// 	});
+		//   const obj_main = this.main_page.shown;
+		// 	const keys_main = Object.keys(obj_main);
+		// 	keys_main.forEach((keys) => {
+		// 		this.main_page.shown[keys] = false;
+		// 	});
+		// },
+
+		// ...mapActions({showSettings: "pages/showRaceSettings"}),
+		// ...mapActions("pages", ["showRaceSettings", ]),
+		// ...mapActions("pages", {
+		//   showEthnos: "showRaceSettings__Ethnos",
+		//   showColor: "showRaceSettings__Color",
+		//   showSettings: "showRaceSettings",
+		// }),
+
+		// showSettings(name, key) {
+		//   let data = {name: name, key: key}
+		//   this.showRaceSettings(data)
+		// },
+
+		// show_1(name, key) {
+		// 	let ethnos_common =
+		// 		(name === "ethnos" && this.MY.ethnos.name === "common");
+		// 	let color_common =
+		// 		(name === `${key}_color` &&
+		// 		this.MY.race.settings.color[key].length === 0);
+		// 	if (ethnos_common || color_common) {
+		// 		return null;
+		// 	} else if (this.race_page.shown[name] === false) {
+		// 		this.close();
+		// 		this.race_page.shown[name] = true;
+		// 		this.main_page.shown_home = false;
+		// 	} else {
+		//     this.showHome()
+		// 	}
+		// },
+
+		// showHome() {
+		// 	this.close();
+		// 	this.main_page.shown_home = true;
+		// },
+
+		// getHomeArr() {
+		// 	let arr = this.main_page.shown_home_arr;
+		// 	arr.splice(0, 1);
+		// 	arr.push(this.race_page.shown_selection);
+		// 	this.main_page.shown_home_arr = arr;
+		// },
+
+		// showScroll(name) {
+		// 	this.race_page[name] = this.race_page[name] === false;
+		// },
 
 		hideRuler() {
 			return this.main_page.shown_home || this.race_page.shown.height;

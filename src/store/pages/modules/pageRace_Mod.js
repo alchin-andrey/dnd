@@ -14,13 +14,14 @@ export default {
 			skills: false,
 			languages: false,
 		},
-		color_selected: {
+
+    shown_humman_lang: false,
+		
+    color_selected: {
 			skin: null,
 			hair: null,
 			eyes: null,
 		},
-
-		shown_humman_lang: false,
 
 		extra: {
 			stats: null,
@@ -84,8 +85,8 @@ export default {
 		// 	}
 		// },
 
-    showRaceScroll({ commit }, name) {
-			commit("SHOW_SCROLL", {page: "race_page", name: name});
-		},
+    // showRaceScroll({ commit }, name) {
+		// 	commit("SHOW_SCROLL", {page: "race_page", name: name});
+		// },
 	},
 };
