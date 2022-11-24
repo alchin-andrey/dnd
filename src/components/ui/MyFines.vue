@@ -65,7 +65,7 @@ export default {
 	},
   methods: {
     getIcon(name) {
-      return require(`@/assets/img/icon/fines/${name}.svg`);
+      return `src/assets/img/icon/fines/${name}.svg`;
     },
   },
 };

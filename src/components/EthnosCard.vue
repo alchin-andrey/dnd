@@ -10,7 +10,7 @@
 			<div
 				class="ethnos_char_back"
 				:style="{
-          'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
+          'background-image': `url(${'src/assets/img/characters/halfling/ethhnos/image.png'})`,
         }"
 			>
 				<race-body body_part="skin" :ethnos_name="ethnos.name"></race-body>

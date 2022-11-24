@@ -32,7 +32,7 @@ export default {
 	},
 	computed: {
 		Lang_Icon() {
-			return require(`@/assets/img/icon/lang/icon_${this.mark}.png`);
+			return `src/assets/img/icon/lang/icon_${this.mark}.png`;
 		},
 	},
 };

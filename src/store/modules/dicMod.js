@@ -23,7 +23,11 @@ export default {
         },
 
         Lang_Icon(state) {
-          return require(`@/assets/img/icon/lang/icon_${state.dic.select_lang}.png`);
+          return `src/assets/img/icon/lang/icon_${state.dic.select_lang}.png`;
         },
+
+        // Lang_Icon(state) {
+        //   return require(`@/assets/img/icon/lang/icon_${state.dic.select_lang}.png`);
+        // },
     },
 };

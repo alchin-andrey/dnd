@@ -104,9 +104,9 @@ export default {
       if (name === null) {
         return null;
       } else if (this.numb > 0) {
-        return require(`@/assets/img/icon/atribute/${name}_active.svg`);
+        return `src/assets/img/icon/atribute/${name}_active.svg`;
       } else {
-        return require(`@/assets/img/icon/atribute/${name}_passive.svg`);
+        return `src/assets/img/icon/atribute/${name}_passive.svg`;
       }
     },
 

@@ -95,7 +95,7 @@ export default {
         sex = "male";
       }
       try {
-        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${body}/${img}.png`);
+        result = `src/assets/img/characters/${race}${ethnos}/${sex}/${body}/${img}.png`;
       } catch (e) {
         if (e.code !== "MODULE_NOT_FOUND") {
           throw e;
