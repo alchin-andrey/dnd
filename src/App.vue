@@ -911,7 +911,7 @@ export default {
 		},
 
 		hideRuler() {
-			return this.main_page.shown_home || this.race_page.shown.height;
+			return this.pages.shown_home || this.race_page.shown.height;
 		},
 
 		// getCharColor(value) {
