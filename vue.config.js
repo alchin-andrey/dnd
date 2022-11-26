@@ -5,7 +5,3 @@ module.exports = defineConfig({
   // publicPath: '/dnd/',
   transpileDependencies: true
 })
-
-// module.exports = {
-//   publicPath: process.env.NODE_ENV === 'production' ? '/my-project/' : '/'
-// }

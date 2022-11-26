@@ -59,154 +59,154 @@ export default {
             // ДЛЯ ОТЛАДКИ ------
 
             // По левелу перса
-            {
-              level: 1,
-              spell: spells.sneaky_attack,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.sneaky_attack,
+            // },
 
-            {
-              level: 1,
-              spell: spells.lay_on_hands,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.lay_on_hands,
+            // },
 
-            {
-              level: 1,
-              spell: spells.chill_touch,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.chill_touch,
+            // },
 
-            {
-              level: 1,
-              spell: spells.poison_breath_cone,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.poison_breath_cone,
+            // },
 
-            // По классовой бабуйне
+            // // По классовой бабуйне
 
-            {
-              level: 1,
-              spell: spells.rage,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.rage,
+            // },
 
-            // String (первая часть, которая чаще всего с "×")
+            // // String (первая часть, которая чаще всего с "×")
 
-            {
-              level: 1,
-              spell: spells.acid_splash,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.acid_splash,
+            // },
 
-            {
-              level: 1,
-              spell: spells.eldritch_blast,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.eldritch_blast,
+            // },
 
-            {
-              level: 1,
-              spell: spells.bless,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.bless,
+            // },
 
-            {
-              level: 1,
-              spell: spells.cordon_of_arrows,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.cordon_of_arrows,
+            // },
 
-            {
-              level: 1,
-              spell: spells.heroism,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.heroism,
+            // },
 
-            {
-              level: 1,
-              spell: spells.create_or_destroy_water,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.create_or_destroy_water,
+            // },
 
-            //Num
+            // //Num
 
-            {
-              level: 1,
-              spell: spells.flame_blade,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.flame_blade,
+            // },
 
-            {
-              level: 1,
-              spell: spells.hellish_rebuke,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hellish_rebuke,
+            // },
 
-            {
-              level: 1,
-              spell: spells.color_spray,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.color_spray,
+            // },
 
-            {
-              level: 1,
-              spell: spells.aid,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.aid,
+            // },
 
-            {
-              level: 1,
-              spell: spells.prayer_of_healing,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.prayer_of_healing,
+            // },
 
-            {
-              level: 1,
-              spell: spells.gust_of_wind,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.gust_of_wind,
+            // },
 
-            //Pls
+            // //Pls
 
-            {
-              level: 1,
-              spell: spells.armor_of_agathys,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.armor_of_agathys,
+            // },
 
-            {
-              level: 1,
-              spell: spells.elk_knock,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.elk_knock,
+            // },
 
-            {
-              level: 1,
-              spell: spells.divine_channel_devotion_1,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.divine_channel_devotion_1,
+            // },
 
-            //Скобочки
+            // //Скобочки
 
-            {
-              level: 1,
-              spell: spells.hunters_mark, //spell_duration
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hunters_mark, //spell_duration
+            // },
 
-            {
-              level: 1,
-              spell: spells.hex, //spell_duration
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hex, //spell_duration
+            // },
 
-            {
-              level: 1,
-              spell: spells.fog_cloud, //aoe_size
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.fog_cloud, //aoe_size
+            // },
 
-            {
-              level: 1,
-              spell: spells.animal_messenger, //spell_duration
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.animal_messenger, //spell_duration
+            // },
 
 
 
             // ------------------
 
             //АКТУАЛЬНІ! Разкомментировать после отладки
-            // {
-            //   level: 1,
-            //   spell: spells.toy,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.lighter,
-            // },
+            {
+              level: 1,
+              spell: spells.toy,
+            },
+            {
+              level: 1,
+              spell: spells.lighter,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.music_box,
-            // },
+            {
+              level: 1,
+              spell: spells.music_box,
+            },
           ],
         },
 
@@ -341,9 +341,9 @@ export default {
     //     languages: [1],
     // },
 
-      custom_stats: [2, 1],
-      custom_skills: [2, "Skill_Mastery"],
-      custom_languages: [1],
+      // custom_stats: [2, 1],
+      // custom_skills: [2, "Skill_Mastery"],
+      // custom_languages: [1],
       // ДЛЯ ОТЛАДКИ
     },
 
