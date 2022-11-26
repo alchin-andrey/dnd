@@ -71,7 +71,7 @@
 						!(n - 1 < Index) && !(n - 1 === mana_numb),
 				}"
 			>
-				{{ n - 1 }}
+				{{ Spell_Index.slot_type ? t(Spell_Index.slot_type) : n - 1 }}
 			</div>
 		</div>
 		<!-- <div class="text_spell">{{ t_Text }}</div> -->
@@ -683,7 +683,7 @@ export default {
 
 .manna_bubble {
 	padding: 5px 12px;
-	width: 31px;
+	min-width: 31px;
 	height: 28px;
 	border-radius: 100px;
 	display: flex;

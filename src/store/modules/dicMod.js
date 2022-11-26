@@ -14,7 +14,6 @@ export default {
 
         t(state) {
           let lang_sel = state.dic.select_lang;
-          console.log('lang_sel:')
           return (name) => state.dic[lang_sel][name];
         },
 

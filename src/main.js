@@ -8,18 +8,17 @@ import VueClipboard from "vue3-clipboard";
 
 import myTranslation from "@/plagins/myTranslation.js";
 import EmojiChenge from "@/plagins/EmojiChenge.js";
+import { createPinia } from 'pinia'
 
 // import genders from "@/assets/catalog/base_data/genders.js";
 
 
-
-
-
-
-
-
-
+const pinia = createPinia();
+// const app = createApp(App).use(createPinia());
 const app = createApp(App);
+
+app.use(pinia);
+
 app.use(VueClipboard, {
     autoSetContainer: true,
     appendToBody: true,

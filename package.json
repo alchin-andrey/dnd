@@ -10,6 +10,7 @@
     "core-js": "^3.8.3",
     "emoji-mart-vue-fast": "^11.2.0",
     "emoji-regex": "^10.2.1",
+    "pinia": "^2.0.23",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue3-clipboard": "^1.0.0",
@@ -19,7 +20,8 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "vue-cli-plugin-pinia": "~0.2.1"
   },
   "browserslist": [
     "> 1%",

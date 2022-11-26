@@ -18,14 +18,14 @@
 				<RaceMenuSettings />
 			</div>
 			<transition name="btm-fade" mode="out-in">
-				<my-button v-if="pages.shown_home" numb="02" title="class"></my-button>
+				<my-button v-if="pagesStore.shown_home" numb="02" title="class"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
 		</div>
 	</div>
 
 	<!-- Выпадающее меню -->
-	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: pages.setting_open }">
+	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: pagesStore.setting_open }">
 		<!-- Превью -->
 		<my-selection-box :shown="main_page.shown.logo">
 			<Description />
@@ -223,7 +223,7 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: !pages.shown_home }"
+		:class="{ sidebar_right_close: !pagesStore.shown_home }"
 	>
 		<!-- stats -->
 		<my-wrapper hr>
@@ -363,36 +363,59 @@ import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
 // STORE
 // import Header from "./components/store/Header.vue";
-import RaceMenuSettings from "@/components/store/RaceMenuSettings.vue";
+// import RaceMenuSettings from "@/components/store/RaceMenuSettings.vue";
 // import RaceCustomStats from "@/components/store/RaceCustomStats.vue";
 // STORE
 
 // STORE_HOOK
-import Header from "@/components/hook_commit/Header.vue";
-import RaceCustomStats from "@/components/hook_commit/RaceCustomStats.vue";
-
+// import Header from "@/components/hook_commit/Header.vue";
+// import RaceCustomStats from "@/components/hook_commit/RaceCustomStats.vue";
 // STORE_HOOK
+
+// PINIA
+// import Header from "@/components/pinia/Header.vue";
+import RaceMenuSettings from "@/components/pinia/RaceMenuSettings.vue";
+import RaceCustomStats from "@/components/pinia/RaceCustomStats.vue";
+// PINIA
+
+
+// PINIA_OPTION_API
+// import Header from "@/components/pinia_option_API/Header.vue";
+// import Header from "@/components/pinia_option_API_setup/Header.vue";
+import Header from "@/components/pinia_option_API_setup_2/Header.vue";
+// PINIA_OPTION_API
 
 // store components
 import { mapActions, mapGetters, mapState, mapMutations } from "vuex";
 
-import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
+// import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
 import { watch, computed } from "vue";
 import { useStore } from "vuex";
 
+import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	setup() {
-		const { showHome, closeEthnos, closeColor, closePar, showRaceScroll } = useShowSettings();
+    // PINIA
+    const pagesStore = usePagesStore();
+    const { main_page, race_page } = usePagesStore();
+    const { showHome, closeEthnos, closeColor, closePar, showRaceScroll } = usePagesStore();
+    const { MY } = useMYStore();
+    const { getEthnos } = useMYStore();
+    // PINIA
+
+
+		// const { showHome, closeEthnos, closeColor, closePar, showRaceScroll } = useShowSettings();
 		// console.log('closeEthnos:', closeEthnos)
-		const store = useStore();
+		// const store = useStore();
 
-		const MY_race = computed(() => store.state.MY.MY.race);
-		const GET_ETHNOS = () => store.commit("MY/GET_ETHNOS");
+		// const MY_race = computed(() => MY.race);
+		// const GET_ETHNOS = () => store.commit("MY/GET_ETHNOS");
 
-		watch(MY_race, () => {
+		watch(() => MY.race, () => {
 			console.log("Заметка обновилась!");
 			// console.log('closeEthnos:', closeEthnos)
-			GET_ETHNOS();
+			getEthnos();
 			closeEthnos();
 			closeColor("skin");
 			closeColor("eyes");
@@ -402,7 +425,15 @@ export default {
 			closePar("languages");
 		});
 
-		return { showHome, showRaceScroll };
+		return { 
+      showHome, 
+      showRaceScroll, 
+
+      // PINIA
+      pagesStore, 
+      main_page,
+      race_page, 
+    };
 	},
 	name: "App",
 	components: {
@@ -472,8 +503,8 @@ export default {
 
 		...mapState("pages", {
 			pages: state => state,
-			main_page: state => state.main_page,
-			race_page: state => state.race_page,
+			// main_page: state => state.main_page,
+			// race_page: state => state.race_page,
 		}),
 
 		// ...mapGetters("pages", ["Shown_Selection"]),
@@ -911,7 +942,7 @@ export default {
 		},
 
 		hideRuler() {
-			return this.pages.shown_home || this.race_page.shown.height;
+			return this.pagesStore.shown_home || this.race_page.shown.height;
 		},
 
 		// getCharColor(value) {
