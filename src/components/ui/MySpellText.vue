@@ -420,7 +420,7 @@ export default {
       let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.$root.MY.stats.strength.mod;
 
-			let lvl = this.$root.MY.level;
+			let lvl = this.$root.MY.level; // Dima: не уверен шо тут нужно плюсовать левел
 			return pls + mod + lvl;
 
         //return to: impact_size_pls

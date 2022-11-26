@@ -736,6 +736,7 @@ export default {
       //expanded: "spell_rage_expanded_15",
 
       type: "ability",
+      slot_type: "rage_slot",
       /*
             abjuration: "ограждение",
             conjuration: "вызов",
@@ -1596,7 +1597,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["none"],
+      parts: ["divine_sense_slot"],
 
       spell_time: null,
       spell_duration: 2,
@@ -1716,6 +1717,7 @@ export default {
       expanded: "spell_divine_channel_mana_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1759,6 +1761,7 @@ export default {
       expanded: "spell_divine_channel_devotion_1_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "action",
       cast_duration: null,
@@ -1802,6 +1805,7 @@ export default {
       expanded: "spell_divine_channel_devotion_2_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "action",
       cast_duration: null,
@@ -1845,6 +1849,7 @@ export default {
       expanded: "spell_divine_channel_antients_1_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "action",
       cast_duration: null,
@@ -1888,6 +1893,7 @@ export default {
       expanded: "spell_divine_channel_antients_2_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "action",
       cast_duration: null,
@@ -1931,6 +1937,7 @@ export default {
       expanded: "spell_divine_channel_vengence_1_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "action",
       cast_duration: null,
@@ -1974,6 +1981,7 @@ export default {
       expanded: "spell_divine_channel_vengence_2_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2007,6 +2015,264 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  maneuver_ambush: [
+    {
+      name: "spell_maneuver_ambush",
+      details: "spell_maneuver_ambush_details",
+      expanded: "spell_maneuver_ambush_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_evasive_footwork: [
+    {
+      name: "spell_maneuver_evasive_footwork",
+      details: "spell_maneuver_evasive_footwork_details",
+      expanded: "spell_maneuver_evasive_footwork_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_lunging_attack: [
+    {
+      name: "spell_maneuver_lunging_attack",
+      details: "spell_maneuver_lunging_attack_details",
+      expanded: "spell_maneuver_lunging_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_maneuvering_attack: [
+    {
+      name: "spell_maneuver_maneuvering_attack",
+      details: "spell_maneuver_maneuvering_attack_details",
+      expanded: "spell_maneuver_maneuvering_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_menacing_attack: [
+    {
+      name: "spell_maneuver_menacing_attack",
+      details: "spell_maneuver_menacing_attack_details",
+      expanded: "spell_maneuver_menacing_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_feinting_attack: [
+    {
+      name: "spell_maneuver_feinting_attack",
+      details: "spell_maneuver_feinting_attack_details",
+      expanded: "spell_maneuver_feinting_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
   ],
 
   // All spells / 0 ----------------------------------------------------------

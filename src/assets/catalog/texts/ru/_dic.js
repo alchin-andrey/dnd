@@ -2182,4 +2182,44 @@ export default {
 
     if_succeed: "при успехе",
 
+    superiority_dice_slots: "Маневры",
+    superiority_dice_slots_feat: "Маневры / Воинский адепт",
+    superiority_dice_slot: "1× Маневр",
+    maneuvers: "маневры",
+    maneuver: "маневр",
+
+    divine_sense_slots: "Божественное чувство",
+    divine_sense_slot: "1× Божественное чувство",
+
+    divine_channel_slots: "Божественный канал",
+    divine_channel_slot: "1× Божественный канал",
+
+    rage_slots: "Ячейки Ярости",
+    rage_slot: "1× Ячейка Ярости",
+
+    movement: "перемещение",
+
+    spell_maneuver_ambush: spells.maneuver_ambush,
+    spell_maneuver_ambush_details: spells.maneuver_ambush_details,
+    spell_maneuver_ambush_expanded: spells.maneuver_ambush_expanded,
+
+    spell_maneuver_evasive_footwork: spells.maneuver_evasive_footwork,
+    spell_maneuver_evasive_footwork_details: spells.maneuver_evasive_footwork_details,
+    spell_maneuver_evasive_footwork_expanded: spells.maneuver_evasive_footwork_expanded,
+
+    spell_maneuver_lunging_attack: spells.maneuver_lunging_attack,
+    spell_maneuver_lunging_attack_details: spells.maneuver_lunging_attack_details,
+    spell_maneuver_lunging_attack_expanded: spells.maneuver_lunging_attack_expanded,
+
+    spell_maneuver_maneuvering_attack: spells.maneuver_maneuvering_attack,
+    spell_maneuver_maneuvering_attack_details: spells.maneuver_maneuvering_attack_details,
+    spell_maneuver_maneuvering_attack_expanded: spells.maneuver_maneuvering_attack_expanded,
+
+    spell_maneuver_menacing_attack: spells.maneuver_menacing_attack,
+    spell_maneuver_menacing_attack_details: spells.maneuver_menacing_attack_details,
+    spell_maneuver_menacing_attack_expanded: spells.maneuver_menacing_attack_expanded,
+
+    spell_maneuver_feinting_attack: spells.maneuver_feinting_attack,
+    spell_maneuver_feinting_attack_details: spells.maneuver_feinting_attack_details,
+    spell_maneuver_feinting_attack_expanded: spells.maneuver_feinting_attack_expanded,
 }

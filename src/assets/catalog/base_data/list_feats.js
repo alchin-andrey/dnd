@@ -211,12 +211,35 @@ export default {
         ]
     },
 
-    martial_adept: // доработать
+    martial_adept:
     {
         name: "feat_martial_adept",
         details: "feat_martial_adept_details",
 
-        // остановился здесь
+        charges: [
+            {
+              name: "superiority_dice_feat",
+              list: [
+                ["",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+              ]
+            }
+        ],
+
+        settings:
+        [
+            {
+                level: 1,
+                type: "spells",
+                name: "maneuvers",
+                select: 2,
+                list: 
+                [
+                    spells.evasive_footwork, 
+                    spells.lunning_attack,
+                    spells.maneuvering_attack,
+                ],
+            },
+        ]
     },
 
 

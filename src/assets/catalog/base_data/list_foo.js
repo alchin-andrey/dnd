@@ -193,4 +193,17 @@ export default {
         //if < 0 then 0
         //Example: +4 ⬜️⬜️⬜️⬜️
     },
+
+    Str_Plus_CHA(str)
+    {
+        return str + this.$root.MY.stats.charisma.mod;
+    },
+
+    Str_05Lvl_Plus_CHA ()
+    {
+        let str = this.$root.MY.stats.charisma.mod + Math.floor(lvl/2);
+
+        if (str >= 1) { return str }
+        else return 1
+    }
 }
