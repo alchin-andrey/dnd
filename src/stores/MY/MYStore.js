@@ -91,8 +91,6 @@ export const useMYStore = defineStore({
 
 		stats_RE_Numb: state => name => {
 			let stats_name = state.stats_Activ_Obj_RE[name];
-      console.log('stats_name:', stats_name)
-
 			return stats_name ? stats_name : 0;
 		},
 
@@ -118,8 +116,8 @@ export const useMYStore = defineStore({
     },
 
 
-    // SECTION //^ CUSTOM GETTERS (name: "stats")
-    custom_RE_Quant: (state) => (name) => {
+    // SECTION //^ option_Custom (name: "stats")
+    option_Custom_RE_Quant: (state) => (name) => {
 			let i = 0;
 			const race_custom = state.MY.race.settings[`custom_${name}`];
 			const ethnos_custom = state.MY.race.settings.ethnos[`custom_${name}`];
@@ -132,13 +130,13 @@ export const useMYStore = defineStore({
 			return i;
 		},
 
-    custom_Arr_RE: (state) => (name) => {
+    option_Custom_Arr_RE: (state) => (name) => {
 			let custom_arr = [];
 			const selected_arr = state.MY.custom_selected_race_page[name];
 			const activ_arr = state[`${name}_Activ_Arr_RE`];
 			let pass_selected_arr = selected_arr.filter(el => !activ_arr.includes(el));
       let pass_arr = state[`${name}_Keys`].filter(el => !activ_arr.includes(el));
-			const increment = state.custom_RE_Quant(name);
+			const increment = state.option_Custom_RE_Quant(name);
 			if (increment === 0) {
 				return custom_arr;
 			} else {
@@ -157,6 +155,32 @@ export const useMYStore = defineStore({
 				return custom_arr;
 			}
 		},
+
+    option_RE_Numb: state => (item, name) => {
+			let option_value = state[`${item}_Activ_Obj_RE`][name];
+			return option_value ? option_value : 0;
+		},
+
+		option_Custom_RE_Numb: state => (item, name) => {
+			let custom_option = state.MY.race.settings[`custom_${item}`];
+			if (custom_option) {
+				let option_true = state[`${item}_Custom_Arr_RE`].includes(name);
+				if (option_true) {
+					let increment = custom_option[1];
+					return increment;
+				} else {
+					return 0;
+				}
+			} else {
+				return 0;
+			}
+		},
+
+    option_Race_Page_Numb: state => (item, name) => {
+      const RE = state.option_RE_Numb(item, name);
+      const custom = state.option_Custom_RE_Numb(item, name);
+      return RE + custom;
+    },
 
 	},
 	actions: {
