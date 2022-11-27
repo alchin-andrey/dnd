@@ -2017,49 +2017,6 @@ export default {
     },
   ],
 
-  maneuver_ambush: [
-    {
-      name: "spell_maneuver_ambush",
-      details: "spell_maneuver_ambush_details",
-      expanded: "spell_maneuver_ambush_expanded",
-
-      type: "maneuver",
-      slot_type: "superiority_dice_slot",
-
-      cast_time: "none",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "self",
-      aim_type: null,
-      aim_range: null,
-
-      parts: ["none"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: false,
-
-      aim_aoe: null,
-      aim_aoe_size: null,
-
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dice: null,
-      impact_size_pls: null,
-
-      saving_need: null,
-      saving_attribute: null,
-      impact_size_saved: null,
-    }
-  ],
-
   maneuver_evasive_footwork: [
     {
       name: "spell_maneuver_evasive_footwork",
@@ -2088,13 +2045,13 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
-      impact_damage_type: null,
+      impact_type: "armor_class",
+      impact_damage_type: "bonus_w_fem",
 
       impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2131,13 +2088,13 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
-      impact_damage_type: null,
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2174,13 +2131,13 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
-      impact_damage_type: null,
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2217,13 +2174,13 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
-      impact_damage_type: null,
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
 
       impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2260,13 +2217,486 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_disarming_attack: [
+    {
+      name: "spell_maneuver_disarming_attack",
+      details: "spell_maneuver_disarming_attack_details",
+      expanded: "spell_maneuver_disarming_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_trip_attack: [
+    {
+      name: "spell_maneuver_trip_attack",
+      details: "spell_maneuver_trip_attack_details",
+      expanded: "spell_maneuver_trip_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_riposte: [
+    {
+      name: "spell_maneuver_riposte",
+      details: "spell_maneuver_riposte_details",
+      expanded: "spell_maneuver_riposte_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_distracting_strike: [
+    {
+      name: "spell_maneuver_distracting_strike",
+      details: "spell_maneuver_distracting_strike_details",
+      expanded: "spell_maneuver_distracting_strike_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_parry: [
+    {
+      name: "spell_maneuver_parry",
+      details: "spell_maneuver_parry_details",
+      expanded: "spell_maneuver_parry_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "reduction_w",
+
+      impact_size_foo: "Pls_DEX",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_goading_attack: [
+    {
+      name: "spell_maneuver_goading_attack",
+      details: "spell_maneuver_goading_attack_details",
+      expanded: "spell_maneuver_goading_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 2,
+      spell_duration_units: "rounda",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_rally: [
+    {
+      name: "spell_maneuver_rally",
+      details: "spell_maneuver_rally_details",
+      expanded: "spell_maneuver_rally_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "temporary",
+
+      impact_size_foo: "Pls_CHA",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_pushing_attack: [
+    {
+      name: "spell_maneuver_pushing_attack",
+      details: "spell_maneuver_pushing_attack_details",
+      expanded: "spell_maneuver_pushing_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_precision_attack: [
+    {
+      name: "spell_maneuver_precision_attack",
+      details: "spell_maneuver_precision_attack_details",
+      expanded: "spell_maneuver_precision_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "aim_bonus",
+      impact_damage_type: "bonus_w_fem",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_commanders_strike: [
+    {
+      name: "spell_maneuver_commanders_strike",
+      details: "spell_maneuver_commanders_strike_details",
+      expanded: "spell_maneuver_commanders_strike_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  maneuver_sweeping_attack: [
+    {
+      name: "spell_maneuver_sweeping_attack",
+      details: "spell_maneuver_sweeping_attack_details",
+      expanded: "spell_maneuver_sweeping_attack_expanded",
+
+      type: "maneuver",
+      slot_type: "superiority_dice_slot",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
       impact_damage_type: null,
 
       impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
       impact_size_pls: null,
 
       saving_need: null,

@@ -145,16 +145,23 @@ export default {
         name: "feat_lucky",
         details: "feat_lucky_details",
 
-        condition: "strength > 12",
-        //Требования: Сила 13 или выше
-
         fines:
         [
             {
                 type: "advantage",
-                keyword: "advantage_x3",
-                details: "on_attack_grapple",
+                keyword: "advantage",
+                details: "on_any_d20",
             },
+        ],
+
+        charges:
+        [
+            {
+                name: "luck_slot",
+                list: [
+                  ["d20",3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
+                ]
+              }
         ]
     },
 
@@ -162,9 +169,6 @@ export default {
     {
         name: "feat_mounted_combatant",
         details: "feat_mounted_combatant_details",
-
-        condition: "strength > 12",
-        //Требования: Сила 13 или выше
 
         fines:
         [
@@ -237,6 +241,20 @@ export default {
                     spells.evasive_footwork, 
                     spells.lunning_attack,
                     spells.maneuvering_attack,
+                    spells.maneuver_menacing_attack,
+                    spells.maneuver_feinting_attack,
+                    spells.maneuver_disarming_attack,
+                    spells.maneuver_disarming_attack,
+                    spells.maneuver_trip_attack,
+                    spells.maneuver_riposte,
+                    spells.maneuver_distracting_strike,
+                    spells.maneuver_parry,
+                    spells.maneuver_goading_attack,
+                    spells.maneuver_rally,
+                    spells.maneuver_pushing_attack,
+                    spells.maneuver_precision_attack,
+                    spells.maneuver_commanders_strike,
+                    spells.maneuver_sweeping_attack
                 ],
             },
         ]

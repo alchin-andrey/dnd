@@ -2155,7 +2155,7 @@ export default {
     feat_lucky_details: "Вам непонятным образом везёт как раз тогда, когда это нужно.",
 
     advantage_x3: "3 преимущества в день",
-    on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам",
+    on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам. Использует 1× Ячейку удачи.",
 
     feat_mounted_combatant: "Верховой боец",
     feat_mounted_combatant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
@@ -2175,10 +2175,9 @@ export default {
     on_known_languages: "на выученных языках",
 
     feat_martial_adept: "Воинский адепт",
-    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приёмы.",
+    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приёмы. Если у вас уже есть Маневры, вы получаете ещё один (d8). В противном случае вы получаете один Маневр (d6).",
 
     plus_1: "+1",
-    supremacy_dice: "кость превосходства d6.",
 
     if_succeed: "при успехе",
 
@@ -2207,6 +2206,8 @@ export default {
     spell_maneuver_evasive_footwork_details: spells.maneuver_evasive_footwork_details,
     spell_maneuver_evasive_footwork_expanded: spells.maneuver_evasive_footwork_expanded,
 
+    bonus_w_fem: "бонусная",
+
     spell_maneuver_lunging_attack: spells.maneuver_lunging_attack,
     spell_maneuver_lunging_attack_details: spells.maneuver_lunging_attack_details,
     spell_maneuver_lunging_attack_expanded: spells.maneuver_lunging_attack_expanded,
@@ -2222,4 +2223,46 @@ export default {
     spell_maneuver_feinting_attack: spells.maneuver_feinting_attack,
     spell_maneuver_feinting_attack_details: spells.maneuver_feinting_attack_details,
     spell_maneuver_feinting_attack_expanded: spells.maneuver_feinting_attack_expanded,
+
+    spell_maneuver_disarming_attack: spells.maneuver_disarming_attack,
+    spell_maneuver_disarming_attack_details: spells.maneuver_disarming_attack_details,
+    spell_maneuver_disarming_attack_expanded: spells.maneuver_disarming_attack_expanded,
+
+    spell_maneuver_trip_attack: spells.maneuver_trip_attack,
+    spell_maneuver_trip_attack_details: spells.maneuver_trip_attack_details,
+    spell_maneuver_trip_attack_expanded: spells.maneuver_trip_attack_expanded,
+
+    spell_maneuver_riposte: spells.maneuver_riposte,
+    spell_maneuver_riposte_details: spells.maneuver_riposte_details,
+    spell_maneuver_riposte_expanded: spells.maneuver_riposte_expanded,
+
+    reduction_w: "снижение",
+
+    spell_maneuver_parry: spells.maneuver_parry,
+    spell_maneuver_parry_details: spells.maneuver_parry_details,
+    spell_maneuver_parry_expanded: spells.maneuver_parry_expanded,
+
+    spell_maneuver_goading_attack: spells.maneuver_goading_attack,
+    spell_maneuver_goading_attack_details: spells.maneuver_goading_attack_details,
+    spell_maneuver_goading_attack_expanded: spells.maneuver_goading_attack_expanded,
+
+    spell_maneuver_rally: spells.maneuver_rally,
+    spell_maneuver_rally_details: spells.maneuver_rally_details,
+    spell_maneuver_rally_expanded: spells.maneuver_rally_expanded,
+
+    spell_maneuver_pushing_attack: spells.maneuver_pushing_attack,
+    spell_maneuver_pushing_attack_details: spells.maneuver_pushing_attack_details,
+    spell_maneuver_pushing_attack_expanded: spells.maneuver_pushing_attack_expanded,
+
+    spell_maneuver_precision_attack: spells.maneuver_precision_attack,
+    spell_maneuver_precision_attack_details: spells.maneuver_precision_attack_details,
+    spell_maneuver_precision_attack_expanded: spells.maneuver_precision_attack_expanded,
+
+    spell_maneuver_commanders_strike: spells.maneuver_commanders_strike,
+    spell_maneuver_commanders_strike_details: spells.maneuver_commanders_strike_details,
+    spell_maneuver_commanders_strike_expanded: spells.maneuver_commanders_strike_expanded,
+
+    spell_maneuver_sweeping_attack: spells.maneuver_sweeping_attack,
+    spell_maneuver_sweeping_attack_details: spells.maneuver_sweeping_attack_details,
+    spell_maneuver_sweeping_attack_expanded: spells.maneuver_sweeping_attack_expanded,
 }

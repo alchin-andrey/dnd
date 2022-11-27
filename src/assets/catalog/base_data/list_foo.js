@@ -194,6 +194,8 @@ export default {
         //Example: +4 ⬜️⬜️⬜️⬜️
     },
 
+    //NEW - Nov 22
+
     Str_Plus_CHA(str)
     {
         return str + this.$root.MY.stats.charisma.mod;
@@ -205,5 +207,11 @@ export default {
 
         if (str >= 1) { return str }
         else return 1
+    },
+
+    Pls_DEX ()
+    {
+        let pls = this.$root.MY.stats.dexterity.mod;
+        return pls; 
     }
 }
