@@ -26,35 +26,25 @@
 	</div>
 </template>
 
-<script>
-import { mapState, mapActions } from "pinia";
+<script setup>
+import { computed } from "vue";
+import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useDicStore } from "@/stores/DicStore";
 import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
 
-export default {
-	computed: {
-		...mapState(usePagesStore, ["main_page"]),
-		...mapState(useDicStore, ["dic"]),
-    ...mapState(useMYStore, ["MY"]),
+const { dic } = useDicStore();
+const Em_Icon = computed(
+	() => dic.lang.find(icon => icon.mark === dic.select_lang).icon
+);
+const Lang_Icon = computed(() =>
+	require(`@/assets/img/icon/lang/icon_${dic.select_lang}.png`)
+);
 
-		Lang_Icon(store) {
-			return require(`@/assets/img/icon/lang/icon_${store.dic.select_lang}.png`)
-    },
-		
-    Em_Icon(store) {
-			return store.dic.lang.find(icon => icon.mark === store.dic.select_lang).icon
-    },
+const { MY } = useMYStore();
+const Char_Lvl = computed(() => `lvl ${MY.level}`);
 
-		Char_Lvl(store) {
-      return `lvl ${store.MY.level}`
-    },
-	},
-
-	methods: {
-		...mapActions(usePagesStore, ["showSettings__Main"]),
-	},
-};
+const { main_page } = usePagesStore();
+const { showSettings__Main } = usePagesStore();
 </script>
 
 <style scoped>

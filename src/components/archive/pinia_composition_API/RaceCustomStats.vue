@@ -16,10 +16,10 @@
 		<my-card-text text="stats_base_details"></my-card-text>
 	</div>
 	<my-selection-card
-		v-for="name in stats_Pass_Arr_RE"
+		v-for="name in stats_Pass_RE"
 		:key="name"
-		@click="getCustomActi_Pinia('stats', name)"
-		:active_boll_link="stats_Custom_Arr_RE.includes(name)"
+		@click="getCustomActiv('stats', name)"
+		:active_boll_link="stats_Select.includes(name)"
 	>
 		<my-attribute
 			:title="name"
@@ -35,37 +35,26 @@
 
 <script>
 import { useStats } from "@/hooks/MY/stats/useStats.js";
-import { mapGetters } from "vuex";
-
-import { mapState, mapActions } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+import { mapState, mapGetters, mapActions } from "vuex";
 export default {
 	name: "RaceCustomStats",
-  setup() {
-    return { };
+  setup(props) {
+
+	  // const { openHook } = useStats();
+    return {...useStats()};
   },
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
-    ...mapState(usePagesStore, ["race_page"]),
-		// ...mapState({
-		// 	MY: (state) => state.MY.MY,
-		// 	race_page: (state) => state.pages.race_page,
-		// }),
-
-    ...mapState(useMYStore, [
-      "stats_Keys",
-      "stats_Activ_Obj_RE",
-      "stats_Pass_Arr_RE",
-      "stats_Custom_Arr_RE",
-    ]),
+		...mapState({
+			MY: (state) => state.MY.MY,
+			race_page: (state) => state.pages.race_page,
+		}),
 
 		...mapGetters("MY", [
       "race_Settings",
-      // "stats_Keys",
-      // "stats_Activ_Obj_RE",
-      // "stats_Activ_RE",
-      // "stats_Pass_RE",
+      "stats_Keys",
+      "stats_Activ_Obj_RE",
+      "stats_Activ_RE",
+      "stats_Pass_RE",
       "summ_Stats_Numb_REC"
     ]),
 
@@ -101,7 +90,9 @@ export default {
 
 	methods: {
 		// ...mapActions("pages", ["showMainSettings"]),
-		...mapActions(useMYStore, ["getCustomActi_Pinia"]),
+		...mapActions("MY", {
+      getActiv: "getCustomActiv"
+    }),
 		// ...mapActions("main_page", ["showSettings"]),
 
 		getSummStatsNumb_REC(name) {

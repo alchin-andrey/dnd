@@ -373,17 +373,10 @@ import WelcomeBanner from "@/components/WelcomeBanner.vue";
 // STORE_HOOK
 
 // PINIA
-// import Header from "@/components/pinia/Header.vue";
+import Header from "@/components/pinia/Header.vue";
 import RaceMenuSettings from "@/components/pinia/RaceMenuSettings.vue";
 import RaceCustomStats from "@/components/pinia/RaceCustomStats.vue";
 // PINIA
-
-
-// PINIA_OPTION_API
-// import Header from "@/components/pinia_option_API/Header.vue";
-// import Header from "@/components/pinia_option_API_setup/Header.vue";
-import Header from "@/components/pinia_option_API_setup_2/Header.vue";
-// PINIA_OPTION_API
 
 // store components
 import { mapActions, mapGetters, mapState, mapMutations } from "vuex";

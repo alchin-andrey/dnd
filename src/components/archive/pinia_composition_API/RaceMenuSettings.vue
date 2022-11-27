@@ -20,7 +20,7 @@
 				@click="showSettings__Race('stats')"
 				:active="race_page.shown.stats"
 				title="stats"
-				:type_arr="stats_Custom_Arr_RE"
+				:type_arr="MY.custom_race.stats"
 			></my-selection>
 			<my-selection
 				v-if="MY.race.settings.custom_skills"
@@ -101,10 +101,19 @@
 	<!-- </div> -->
 </template>
 
-<script>
-import { mapState, mapActions } from "pinia";
+<script setup>
+// import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
 import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
+// const pagesStore = usePagesStore();
+const { race_page } = usePagesStore();
+const { showSettings__Race } = usePagesStore();
+
+// const { showSettings__Race } = useShowSettings();
+
+</script>
+
+<script>
+import { mapState, mapGetters, mapActions } from "vuex";
 export default {
 	name: "RaceMenuSettings",
   data() {
@@ -113,9 +122,11 @@ export default {
     }
   },
 	computed: {
-		...mapState(usePagesStore, ["race_page"]),
-    ...mapState(useMYStore, ["MY"]),
-    ...mapState(useMYStore, ["stats_Custom_Arr_RE"]),
+		...mapState({
+			MY: (state) => state.MY.MY,
+			// race_page: (state) => state.pages.race_page,
+		}),
+
 		// ...mapGetters("pages", ["shown_Home"]),
 
     Castom_Race_Settings_Visib() {
@@ -178,7 +189,13 @@ export default {
 	},
 
 	methods: {
-    ...mapActions(usePagesStore, ["showSettings__Race"]),
+		...mapActions("pages", {
+			// showSettings: "showRaceSettings",
+			showHome: "goHome",
+			closeEthnos: "closeRaceEthnos",
+			closeColor: "closeRaceColor",
+			closePar: "closeRacePar",
+		}),
 
 		getCharColor(value) {
 			if (

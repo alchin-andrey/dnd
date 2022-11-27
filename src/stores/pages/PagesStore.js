@@ -1,15 +1,10 @@
 // import { ref, computed } from "vue";
 
-import { defineStore } from "pinia";
+import { defineStore, storeToRefs } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
-
 
 export const usePagesStore = defineStore({
 	id: 'PagesStore',
-  setup() {
-    const  { MY } = useMYStore();
-    return { MY }
-  },
 	state: () => ({
 		main_page: {
 			shown: {
@@ -70,7 +65,6 @@ export const usePagesStore = defineStore({
 		},
 
 		showSettings(page, name) {
-      console.log('showSettings:', page, name);
 			if (this.setting_open !== name) {
 				if (this.setting_open) {
 					this[this.page_open].shown[this.setting_open] = false;
@@ -88,15 +82,15 @@ export const usePagesStore = defineStore({
 			this.showSettings("main_page", name);
 		},
     
-    //! Race_Page
+    // ANCHOR //^ Race Page: Shown settings
+
     showSettings__Race(name){
-      // const  { MY } = useMYStore();
+      const MYStore = useMYStore();
       const ethnos = name === "ethnos";
-      const ethnos_common = this.MY.ethnos.name === "common";
+      const ethnos_common = MYStore.MY.ethnos.name === "common";
       let custom_ethnos = ethnos && ethnos_common;
-      
       const str = name.split("_")[0];
-      let color_length = this.MY.race.settings.color[str]?.length === 0;
+      let color_length = MYStore.MY.race.settings.color[str]?.length === 0;
       
       if (custom_ethnos || color_length) {
         return null;
@@ -106,28 +100,28 @@ export const usePagesStore = defineStore({
     },
 
     closeEthnos() {
-      const  { MY } = useMYStore();
+      const MYStore = useMYStore();
       const ethnos_show = this.race_page.shown.ethnos;
-      const ethnos_common = MY.ethnos.name === "common";
+      const ethnos_common = MYStore.MY.ethnos.name === "common";
       if (ethnos_show && ethnos_common) {
         this.showHome();
       }
     },
   
     closeColor(name) {
-      const  { MY } = useMYStore();
+      const MYStore = useMYStore();
       const color_page = this.race_page.shown[`${name}_color`] === true;
-      const color_length = MY.race.settings.color[name].length === 0;
+      const color_length = MYStore.MY.race.settings.color[name].length === 0;
       if (color_page && color_length) {
         this.showHome();
       }
     },
   
     closePar(name) {
-      const  { MY } = useMYStore();
+      const MYStore = useMYStore();
       const page_shown = this.race_page.shown[name] === true;
-      const null_race_par = MY.race.settings[`custom_${name}`] === undefined;
-      const null_ethnos_par = MY.ethnos[`custom_${name}`] === undefined;
+      const null_race_par = MYStore.MY.race.settings[`custom_${name}`] === undefined;
+      const null_ethnos_par = MYStore.MY.ethnos[`custom_${name}`] === undefined;
       if (page_shown && null_race_par && null_ethnos_par) {
         this.showHome();
       }
@@ -136,6 +130,8 @@ export const usePagesStore = defineStore({
     showRaceScroll(name) {
       this.race_page[name] = !this.race_page[name]
     },
+
+    // ^ Race Page: Shown settings
 
 	},
 });

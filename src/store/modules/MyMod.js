@@ -30,11 +30,12 @@ export default {
 		// 	const race_name = state.MY.race_name;
 		// 	return obj[race_name];
 		// },
-
+    
+    //* DONE
 		MY_Race_Stats(state) {
 			return state.MY.race.stats;
 		},
-
+//* DONE
 		MY_Etnos_Stats(state) {
 			return state.MY.ethnos.stats;
 		},
@@ -84,7 +85,7 @@ export default {
 	mutations: {
 
     GET_RACE_OBJ(state, name) {
-			state.MY.race_name = name;
+			state.MY.race = name;
 		},
 
     GET_RACE_NAME(state, name) {

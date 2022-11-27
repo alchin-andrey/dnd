@@ -183,6 +183,12 @@ export default {
     languages: null,
 },
 
+custom_selected_race_page: {
+  stats: [],
+  skills: [],
+  languages: [],
+},
+
 	custom_stats: null,
 	custom_skills: null,
 	custom_languages: null,

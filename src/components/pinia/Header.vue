@@ -9,42 +9,52 @@
 				@click="showSettings__Main('lang')"
 				:active="main_page.shown.lang"
 			>
-				<!-- <emoji v-for="n in Em_Icon" :key="n"
+				<!-- <emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
 					:set="set_emoji"
 					:size="15"
 				/> -->
-				<img class="header_icon" :src="Lang_Icon" alt="Lang_Icon" />
+				<img class="header_icon" :src="lang_Icon" alt="Lang_Icon" />
 			</my-header-card>
 			<my-header-card
 				@click="showSettings__Main('lvl')"
 				:active="main_page.shown.lvl"
-				:slots="Char_Lvl"
+				:slots="char_Lvl"
 			/>
 		</div>
 	</div>
 </template>
 
-<script setup>
-import { computed } from "vue";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+<script>
+import { mapState, mapActions } from "pinia";
 import { useDicStore } from "@/stores/DicStore";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/pages/PagesStore";
 
-const { dic } = useDicStore();
-const Em_Icon = computed(
-	() => dic.lang.find(icon => icon.mark === dic.select_lang).icon
-);
-const Lang_Icon = computed(() =>
-	require(`@/assets/img/icon/lang/icon_${dic.select_lang}.png`)
-);
+export default {
+	computed: {
+		...mapState(usePagesStore, ["main_page"]),
+		...mapState(useDicStore, ["dic"]),
+    ...mapState(useMYStore, ["MY"]),
 
-const { MY } = useMYStore();
-const Char_Lvl = computed(() => `lvl ${MY.level}`);
+		lang_Icon(store) {
+			return require(`@/assets/img/icon/lang/icon_${store.dic.select_lang}.png`)
+    },
+		
+    em_Icon(store) {
+			return store.dic.lang.find(icon => icon.mark === store.dic.select_lang).icon
+    },
 
-const { main_page } = usePagesStore();
-const { showSettings__Main } = usePagesStore();
+		char_Lvl(store) {
+      return `lvl ${store.MY.level}`
+    },
+	},
+
+	methods: {
+		...mapActions(usePagesStore, ["showSettings__Main"]),
+	},
+};
 </script>
 
 <style scoped>

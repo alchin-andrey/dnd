@@ -341,9 +341,9 @@ export default {
     //     languages: [1],
     // },
 
-      // custom_stats: [2, 1],
-      // custom_skills: [2, "Skill_Mastery"],
-      // custom_languages: [1],
+      custom_stats: [2, 1],
+      custom_skills: [2, "Skill_Mastery"],
+      custom_languages: [1],
       // ДЛЯ ОТЛАДКИ
     },
 
