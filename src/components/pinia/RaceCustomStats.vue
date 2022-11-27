@@ -8,7 +8,7 @@
 				:title="name"
 				:type="`${name}_base`"
 				plus
-				:numb="summ_Stats_Numb_REC(name)"
+				:numb="stats_Race_Page_Numb(name)"
 				:icon="name"
 			>
 			</my-attribute>
@@ -19,7 +19,7 @@
 		v-for="name in stats_Pass_Arr_RE"
 		:key="name"
 		@click="getCustomActi_Pinia('stats', name)"
-		:active_boll_link="stats_Custom_Arr_RE.includes(name)"
+		:active_boll_link="custom_Arr_RE('stats').includes(name)"
 	>
 		<my-attribute
 			:title="name"
@@ -48,16 +48,15 @@ export default {
 	computed: {
     ...mapState(useMYStore, ["MY"]),
     ...mapState(usePagesStore, ["race_page"]),
-		// ...mapState({
-		// 	MY: (state) => state.MY.MY,
-		// 	race_page: (state) => state.pages.race_page,
-		// }),
 
     ...mapState(useMYStore, [
       "stats_Keys",
       "stats_Activ_Obj_RE",
       "stats_Pass_Arr_RE",
-      "stats_Custom_Arr_RE",
+      // "stats_Custom_Arr_RE",
+      "stats_Race_Page_Numb",
+
+      "custom_Arr_RE",
     ]),
 
 		...mapGetters("MY", [
@@ -101,7 +100,10 @@ export default {
 
 	methods: {
 		// ...mapActions("pages", ["showMainSettings"]),
-		...mapActions(useMYStore, ["getCustomActi_Pinia"]),
+		...mapActions(useMYStore, [
+      "getCustomActi_Pinia",
+      "getStatsRacePageNumb"
+    ]),
 		// ...mapActions("main_page", ["showSettings"]),
 
 		getSummStatsNumb_REC(name) {

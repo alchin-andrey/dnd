@@ -49,19 +49,7 @@ export const useMYStore = defineStore({
 			);
 		},
 
-		// custom_RE_Quant: state => name => {
-		// 	let i = 0;
-		// 	const race_custom = state.MY.race.settings[`custom_${name}`];
-		// 	const ethnos_custom = state.MY.race.ethnos[`custom_${name}`];
-		// 	if (race_custom) {
-		// 		i += race_custom[0];
-		// 	}
-		// 	if (ethnos_custom) {
-		// 		i += ethnos_custom[0];
-		// 	}
-		// 	return i;
-		// },
-
+    // SECTION //^ stats_Custom GETTERS
     stats_Custom_RE_Quant(state) {
 			let i = 0;
 			const race_custom = state.MY.race.settings.custom_stats;
@@ -101,42 +89,17 @@ export const useMYStore = defineStore({
 			}
 		},
 
-		// stats_Custom_Arr_RE: (state) => (name) => {
-		//   let custom_arr = [];
-		//   let selected_arr = state.MY.custom_selected_race_page[name];
-		//   let activ_arr = this.stats_Activ_Arr_RE;
-		// 	let pass_arr = this.stats_Pass_Arr_RE;
-		//   const increment = this.custom_RE_Quant(name);
-		//   if (increment === 0) {
-		//     return custom_arr;
-		//   } else {
-		//     if (selected_arr.length === increment) {
-		//       custom_arr = selected_arr;
-		//     } else if (selected_arr.length < increment) {
-		//       activ_arr = activ_arr.push(selected_arr);
-		//       pass_arr = this.stats_Keys.filter((el) => !activ_full_arr.includes(el));
-		//       const i = increment - selected_arr.length;
-		//       custom_arr = selected_arr.push(pass_arr.slice(0, i));
-		//     } else if (selected_arr.length > increment) {
-		//       selected_arr = selected_arr.splice(0, increment);
-		//       activ_arr = activ_arr.push(selected_arr);
-		//       pass_arr = this.stats_Keys.filter((el) => !activ_full_arr.includes(el));
-		//       const i = increment;
-		//       custom_arr = selected_arr.push(pass_arr.slice(0, i));
-		//     }
-		//     return custom_arr;
-		//   }
-		// },
-
 		stats_RE_Numb: state => name => {
-			let stats_name = this.stats_Activ_Obj_RE[name];
+			let stats_name = state.stats_Activ_Obj_RE[name];
+      console.log('stats_name:', stats_name)
+
 			return stats_name ? stats_name : 0;
 		},
 
-		stats_Custom_RE_Numb: state => name => {
+		stats_Custom_RE_Numb: state => (name) => {
 			let custom_stats = state.MY.race.settings.custom_stats;
 			if (custom_stats) {
-				let stats_true = state.MY.custom_race.stats.includes(name);
+				let stats_true = state.stats_Custom_Arr_RE.includes(name);
 				if (stats_true) {
 					let increment = custom_stats[1];
 					return increment;
@@ -147,6 +110,54 @@ export const useMYStore = defineStore({
 				return 0;
 			}
 		},
+
+    stats_Race_Page_Numb: state => name => {
+      const RE = state.stats_RE_Numb(name);
+      const custom = state.stats_Custom_RE_Numb(name);
+      return RE + custom;
+    },
+
+
+    // SECTION //^ CUSTOM GETTERS (name: "stats")
+    custom_RE_Quant: (state) => (name) => {
+			let i = 0;
+			const race_custom = state.MY.race.settings[`custom_${name}`];
+			const ethnos_custom = state.MY.race.settings.ethnos[`custom_${name}`];
+			if (race_custom) {
+				i += race_custom[0];
+			}
+			if (ethnos_custom) {
+				i += ethnos_custom[0];
+			}
+			return i;
+		},
+
+    custom_Arr_RE: (state) => (name) => {
+			let custom_arr = [];
+			const selected_arr = state.MY.custom_selected_race_page[name];
+			const activ_arr = state[`${name}_Activ_Arr_RE`];
+			let pass_selected_arr = selected_arr.filter(el => !activ_arr.includes(el));
+      let pass_arr = state[`${name}_Keys`].filter(el => !activ_arr.includes(el));
+			const increment = state.custom_RE_Quant(name);
+			if (increment === 0) {
+				return custom_arr;
+			} else {
+				if (pass_selected_arr.length === increment) {
+					custom_arr = pass_selected_arr;
+				} else if (pass_selected_arr.length < increment) {
+					const activ_full_arr = activ_arr.concat(pass_selected_arr);
+					pass_arr = state[`${name}_Keys`].filter(el => !activ_full_arr.includes(el));
+					const i = increment - pass_selected_arr.length;
+					custom_arr = pass_selected_arr.concat(pass_arr.slice(0, i));
+				} else if (pass_selected_arr.length > increment) {
+          const i = pass_selected_arr.length - increment;
+					pass_selected_arr.splice(0, i);
+          custom_arr = pass_selected_arr;
+				}
+				return custom_arr;
+			}
+		},
+
 	},
 	actions: {
 		getRaceObj(name) {

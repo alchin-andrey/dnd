@@ -233,7 +233,7 @@
 				:title="name"
 				:type="`${name}_base`"
 				plus
-				:numb="getSummNumb('stats', name)"
+				:numb="stats_Race_Page_Numb(name)"
 				:icon="name"
 			>
 			</my-attribute>
@@ -379,12 +379,12 @@ import RaceCustomStats from "@/components/pinia/RaceCustomStats.vue";
 // PINIA
 
 // store components
-import { mapActions, mapGetters, mapState, mapMutations } from "vuex";
+import { mapActions } from "vuex";
 
 // import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
 import { watch, computed } from "vue";
 import { useStore } from "vuex";
-
+import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
 export default {
@@ -425,7 +425,8 @@ export default {
       // PINIA
       pagesStore, 
       main_page,
-      race_page, 
+      race_page,
+      MY 
     };
 	},
 	name: "App",
@@ -490,15 +491,22 @@ export default {
 	},
 
 	computed: {
-		...mapState({
-			MY: state => state.MY.MY,
-		}),
+    ...mapState(useMYStore, [
+      "stats_Keys",
+      // "stats_Activ_Obj_RE",
+      // "stats_Pass_Arr_RE",
+      // "stats_Custom_Arr_RE",
+      "stats_Race_Page_Numb",
+    ]),
+		// ...mapState({
+		// 	MY: state => state.MY.MY,
+		// }),
 
-		...mapState("pages", {
-			pages: state => state,
+		// ...mapState("pages", {
+		// 	pages: state => state,
 			// main_page: state => state.main_page,
 			// race_page: state => state.race_page,
-		}),
+		// }),
 
 		// ...mapGetters("pages", ["Shown_Selection"]),
 
@@ -721,9 +729,9 @@ export default {
 		// 	return arr;
 		// },
 
-		stats_Keys() {
-			return Object.keys(this.MY.stats);
-		},
+		// stats_Keys() {
+		// 	return Object.keys(this.MY.stats);
+		// },
 
 		stats_Activ_Obj() {
 			let i = this.MY.race.stats;
