@@ -127,7 +127,7 @@ export default {
 .text {
   width: 300px;
   white-space: pre;
-  overflow: hidden; /* Обрезаем всё за пределами блока */
+  overflow: hidden; /* Обрезаем все за пределами блока */
   text-overflow: ellipsis;
 }
 

@@ -116,7 +116,7 @@ export default {
   margin-left: 8px;
   color: rgba(255, 255, 255, 0.2);
   white-space: nowrap; /* Текст не переносится */
-  overflow: hidden; /* Обрезаем всё за пределами блока */
+  overflow: hidden; /* Обрезаем все за пределами блока */
   text-overflow: ellipsis;
 }
 

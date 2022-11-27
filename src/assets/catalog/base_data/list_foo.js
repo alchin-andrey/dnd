@@ -213,5 +213,11 @@ export default {
     {
         let pls = this.$root.MY.stats.dexterity.mod;
         return pls; 
-    }
+    },
+
+    Num_Lvl_Plus_CHA ()
+    {
+        let num = this.$root.MY.stats.charisma.mod + lvl;
+        return num
+    },
 }

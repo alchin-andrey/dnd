@@ -9,9 +9,7 @@ import MY from "@/assets/catalog/MY.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
-export const barbarian_rage_bonus = [
-  0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
-];
+export const barbarian_rage_bonus = [0,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4]
 
 export default {
 

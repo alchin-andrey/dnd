@@ -736,7 +736,7 @@ export default {
         normal_tempo: "нормальный темп",
         in_stealth: "при движении в скрытности",
         double_weight: "2× Грузоподьемность",
-        weight_capacity: "включая максимальный вес нагрузки и подъёма",
+        weight_capacity: "включая максимальный вес нагрузки и подъема",
         str_check_on_move: "на Испытания Силы при передвижении / разрушении предметов",
         to_see: "зоркость",
         one_mile_100f_details: "до 1 мили, а на 100ф до мельчайших деталей",
@@ -857,7 +857,7 @@ export default {
     tuigan:"туйган",
     tuigan_details: races.tuigan_human,
 
-    terami:"тёрами",
+    terami:"терами",
     terami_details: races.terami_human,
 
     ulutiune:"улутиун",
@@ -1233,7 +1233,7 @@ export default {
     explorers_pack_details: "Любой искатель приключений может быть призван пройти долгий путь, выполняя задание, но те, кто выбрал жизнь исследователя, особенно хорошо подготовлены к путешествию.",
 
     backpack: "рюкзак",
-    backpack_details: "Вместимость: 1 кубический фут / 15 кг. Вы также можете привязывать такие предметы как спальники и верёвки снаружи рюкзака.",
+    backpack_details: "Вместимость: 1 кубический фут / 15 кг. Вы также можете привязывать такие предметы как спальники и веревки снаружи рюкзака.",
 
     bedroll: "спальник",
     bedroll_details: "Используется для длительного и короткого отдыха.",
@@ -1245,7 +1245,7 @@ export default {
     tinderbox_details: "В этом небольшом контейнере находится кремень, кресало и трут (обычно это сухая тряпка, вымоченная в масле), используемые для разжигания огня. Использование его для разжигания факела — или чего-нибудь другого, легковоспламеняющегося — требует одного действия. Разжигание другого огня требует 1 минуты.",
 
     torch: "факел",
-    torch_details: "Факел горит 1 час, испуская яркий свет в пределах 20 футов и тусклый свет в пределах ещё 20 футов. Если вы совершаете рукопашную атаку горящим факелом и попадаете, он причиняет урон огнём 1.",
+    torch_details: "Факел горит 1 час, испуская яркий свет в пределах 20 футов и тусклый свет в пределах еще 20 футов. Если вы совершаете рукопашную атаку горящим факелом и попадаете, он причиняет урон огнем 1.",
 
     ration: "дневной рацион",
     ration_details: "Рационы состоят из обезвоженной пищи, подходящей для путешествий, включая вяленое мясо, сухофрукты, галеты и орехи.",
@@ -1254,7 +1254,7 @@ export default {
     waterskin_details: "Вместимость: 2 литра",
 
     hempen_rope: "пеньковая веревка 50ф",
-    hempen_rope_details: "сделана из пеньки или шёлка. У неё 2 HP, и её можно порвать Испытанием Силы сложностью 17.",
+    hempen_rope_details: "сделана из пеньки или шелка. У нее 2 HP, и ее можно порвать Испытанием Силы сложностью 17.",
 
     barbarian: classes.barbarian,
     barbarian_details: classes.barbarian_details,
@@ -1315,7 +1315,7 @@ export default {
     bell_details: "небольшой и звонкий колокольчик с колечком вверху",
 
     candle: "свеча",
-    candle_details: "В течение 1 часа свеча испускает яркий свет в пределах радиуса 5 футов и тусклый свет в пределах ещё 5 футов.",
+    candle_details: "В течение 1 часа свеча испускает яркий свет в пределах радиуса 5 футов и тусклый свет в пределах еще 5 футов.",
 
     crowbar: "ломик",
     crowbar_details: "использование ломика позволяет совершать проверки Силы с преимуществом, если рычаг должен помочь.",
@@ -1327,14 +1327,14 @@ export default {
     item_piton_details: "может быть использован для расклинивания чего-либо.",
 
     hooded_lantern: "закрытый фонарь",
-    hooded_lantern_details: "Испускает яркий свет в пределах 30 футов и тусклый свет в пределах ещё 30 футов. Зажжённый фонарь горит 6 часов от одной фляги (1 пинта [0,5 литра]) масла. Вы можете действием опустить козырёк, уменьшив освещение до тусклого света в пределах 5 футов.",
+    hooded_lantern_details: "Испускает яркий свет в пределах 30 футов и тусклый свет в пределах еще 30 футов. Зажженный фонарь горит 6 часов от одной фляги (1 пинта [0,5 литра]) масла. Вы можете действием опустить козырек, уменьшив освещение до тусклого света в пределах 5 футов.",
     
     oil_flask: "Фляга с маслом",
-    oil_flask_details: 'Обычно масло продаётся в глиняных флягах по 1 пинте (0,5 литра). Вы можете действием облить маслом из фляги существо, находящееся в пределах 5 футов, или кинуть её на 20 футов, ломая при ударе.\n\n'+
+    oil_flask_details: 'Обычно масло продается в глиняных флягах по 1 пинте (0,5 литра). Вы можете действием облить маслом из фляги существо, находящееся в пределах 5 футов, или кинуть ее на 20 футов, ломая при ударе.\n\n'+
 
-    'Совершите дальнобойную атаку по целевому существу или предмету, считая масло импровизированным оружием. При попадании цель покрывается маслом. Если цель получает урон огнём, пока масло не высохло (1 минута), она получает дополнительный урон огнём 5 от горящего масла.\n\n'+
+    'Совершите дальнобойную атаку по целевому существу или предмету, считая масло импровизированным оружием. При попадании цель покрывается маслом. Если цель получает урон огнем, пока масло не высохло (1 минута), она получает дополнительный урон огнем 5 от горящего масла.\n\n'+
     
-    'Вы можете также вылить фляжку масла на землю, покрыв площадь 5 × 5 футов, при условии, что пол ровный. Если теперь масло поджечь, оно горит 2 раунда и причиняет урон огнём 5 всем существам, входящим в эту область или оканчивающим в ней ход. Существо может получить этот урон только один раз за ход.',
+    'Вы можете также вылить фляжку масла на землю, покрыв площадь 5 × 5 футов, при условии, что пол ровный. Если теперь масло поджечь, оно горит 2 раунда и причиняет урон огнем 5 всем существам, входящим в эту область или оканчивающим в ней ход. Существо может получить этот урон только один раз за ход.',
 
     dungeoneers_pack: "набор исследователя подземелий",
     dungeoneers_pack_details: "Cодержит основное снаряжение для погружения в темноту в поисках сокровищ.",
@@ -1388,7 +1388,7 @@ export default {
     spell_fake_presence_details: spells.fake_presence_details,
     spell_fake_presence_expanded: spells.fake_presence_expanded,
 
-    fine_dodge: "увёртливость",
+    fine_dodge: "увертливость",
     from_aoe_effects: "от зональных эффектов с Испытанием Ловкости.",
 
     min_10: "Минимум 10",
@@ -2037,7 +2037,7 @@ export default {
     priests_pack_details: "-",
 
     armor_shield: "щит",
-    armor_shield_details: "Щит изготавливается из дерева или металла, и несётся одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.",
+    armor_shield_details: "Щит изготавливается из дерева или металла, и несется одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.",
 
     blanket: "одеяло",
     blanket_details: "-",
@@ -2152,7 +2152,7 @@ export default {
     creature_on_addititonal_grapple: "сущетсва при дополнительном захвате",
 
     feat_lucky: "Везунчик",
-    feat_lucky_details: "Вам непонятным образом везёт как раз тогда, когда это нужно.",
+    feat_lucky_details: "Вам непонятным образом везет как раз тогда, когда это нужно.",
 
     advantage_x3: "3 преимущества в день",
     on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам. Использует 1× Ячейку удачи.",
@@ -2175,7 +2175,7 @@ export default {
     on_known_languages: "на выученных языках",
 
     feat_martial_adept: "Воинский адепт",
-    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приёмы. Если у вас уже есть Маневры, вы получаете ещё один (d8). В противном случае вы получаете один Маневр (d6).",
+    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приемы. Если у вас уже есть Маневры, вы получаете еще один (d8). В противном случае вы получаете один Маневр (d6).",
 
     plus_1: "+1",
 
@@ -2265,4 +2265,148 @@ export default {
     spell_maneuver_sweeping_attack: spells.maneuver_sweeping_attack,
     spell_maneuver_sweeping_attack_details: spells.maneuver_sweeping_attack_details,
     spell_maneuver_sweeping_attack_expanded: spells.maneuver_sweeping_attack_expanded,
+
+    spell_inspiration: spells.inspiration,
+    spell_inspiration_details: spells.inspiration_details,
+    spell_inspiration_expanded: spells.inspiration_expanded,
+
+    feat_inspiring_leader: "Воодушевляющий лидер",
+    feat_inspiring_leader_details: "Вы можете воодушевить спутников, укрепив их решимость.",
+
+    savage_attacker: "Дикий атакующий",
+    savage_attacker_details: "Ваши атаки наносят больше урона.",
+
+    of_damage_dice_once_per_move: "урона атаки один раз в ход",
+
+    weapons_improvised: weapons.improvised,
+    weapons_improvised_details: weapons.improvised_details,
+
+    spell_grapple: spells.grapple,
+    spell_grapple_details: spells.grapple_details,
+    spell_grapple_expanded: spells.grapple_expanded,
+
+    feat_lightly_armored: "Знаток легких доспехов",
+    feat_lightly_armored_details: "Вы обучились ношению легких доспехов.",
+
+    feat_moderately_armored: "Знаток средних доспехов",
+    feat_moderately_armored_details: "Вы обучились ношению средних доспехов.",
+
+    feat_heavily_armored: "Знаток тяжелых доспехов",
+    feat_heavily_armored_details: "Вы обучились ношению тяжелых доспехов.",
+
+    feat_dual_wielder: "Боец двумя оружиями",
+    feat_dual_wielder_details: "Вы знаете как использовать сразу два оружия.",
+
+    on_armor_if_two_weapons: "+1 к броне при двух ближних оружиях",
+
+    use_of_two_weapons: "Использование двух оружий",
+    heavier_than_light: "тяжелее чем легкое",
+
+    quick_take: "Быстроe вынимание",
+    of_two_weapons: "и убирание двух оружий одновременно",
+
+    feat_dungeon_delver: "Искатель подземелий",
+    feat_dungeon_delver_details: "Вы научилить искать скрытые ловушки и потайные двери в подземельях.",
+
+    on_hidden_doors: "на поиск тайных дверей",
+    on_trap_evasion: "на избегание ловушек и эффектов от них",
+    on_trap_damage: "урону от ловушек",
+    on_passive_perception_on_quick_move: "на пассивную Внимательность при быстром перемещении",
+
+    feat_durable: "Крепкий",
+    feat_durable_details: "Вы чувствуете в себе больше жизненных сил c каждым уровнем.",
+
+    feat_healer: "Лекарь",
+    feat_healer_details: "Вы способный медик, что позволяет быстро залечивать раны и возвращать союзников в строй.",
+
+    plus_1_to_hp: "Восстановление 1 HP",
+    on_use_of_medical_tools: "при исползовании комплекта целителя для стабилизации умирающего",
+
+    spell_healer_tooling: spells.healer_tooling,
+    spell_healer_tooling_details: spells.healer_tooling_details,
+    spell_healer_tooling_expanded: spells.healer_tooling_expanded,
+
+    healers_tool_slot: "1× Комплект целителя",
+    healers_tool: "Комплект целителя",
+
+    feat_great_weapon_master: "Мастер большого оружия",
+    feat_great_weapon_master_details: "Вы научились использовать вес своего оружия, позволяя инерции усиливать ваши атаки.",
+
+    feat_polearm_master: "Мастер древкового оружия",
+    feat_polearm_master_details: "Вы можете сдерживать врагов оружием со свойством «досягаемость».",
+
+    spell_extra_strike: spells.extra_strike,
+    spell_extra_strike_details: spells.extra_strike_details,
+    spell_extra_strike_expanded: spells.extra_strike_expanded,
+
+    spell_heavy_strike: spells.heavy_strike,
+    spell_heavy_strike_details: spells.heavy_strike_details,
+    spell_heavy_strike_expanded: spells.heavy_strike_expanded,
+
+    spell_polearm_strike: spells.polearm_strike,
+    spell_polearm_strike_details: spells.polearm_strike_details,
+    spell_polearm_strike_expanded: spells.polearm_strike_expanded,
+
+    provoked_attack: "Провоцированная атака",
+    on_polearm_reach: "в пределах досягаемости древка",
+
+    feat_weapon_master: "Мастер оружия",
+    feat_weapon_master_details: "Вы знаете как пользоваться множеством видов оружия.",
+
+    on_stealth_in_medium_armor: "на Скрытность при надетых средних доспехах",
+    on_medium_armor: "+1 на Броню средних доспехов, при Базовой Ловкости 16+",
+
+    feat_medium_armor_master: "Мастер средних доспехов",
+    feat_medium_armor_master_details: "Вы привыкли к перемещению в средних доспехах.",
+
+    feat_heavy_armor_master: "Мастер тяжелых доспехов",
+    feat_heavy_armor_master_details: "Вы можете своим доспехом отклонять удары, которые других убили бы.",
+
+    damage_reduction: "Снижение механического урона",
+    on_3_in_heavy_armor: "на 3 в тяжелых доспехах",
+
+    feat_shield_master: "Мастер щитов",
+    feat_shield_master_details: "Вы используете щиты не только для обороны, но и для нападения.",
+
+    spell_shield_push: spells.shield_push,
+    spell_shield_push_details: spells.shield_push_details,
+    spell_shield_push_expanded: spells.shield_push_expanded,
+
+    on_dex_check_in_shield: "+2 от щита при Испытаниях Ловкости от эффектов, нацеленных только на вас",
+
+    feat_spell_sniper: "Меткий заклинатель",
+    feat_spell_sniper_details: "Вы узнали технику, улучшающую атаку некоторыми видами заклинаний.",
+
+    double_range: "2× дальность",
+    on_spells_with_aim: "для заклинаний с прицеливанием",
+
+    ignoring: "Игнорирование",
+    on_covers_spells: "укрытий на половину и на 3/4, при использовании заклинаний c прицеливанием",
+
+    feat_sharpshooter: "Меткий стрелок",
+    feat_sharpshooter_details: "Вы овладели дальнобойным оружием и можете совершать выстрелы, которые другие считали невозможными.",
+
+    on_shots_in_max_distance: "на выстрелы с максимальной дистанции",
+    on_covers: "укрытий на половину и на 3/4, при дальнобойных атаках",
+
+    spell_charge_attack: spells.charge_attack,
+    spell_charge_attack_details: spells.charge_attack_details,
+    spell_charge_attack_expanded: spells.charge_attack_expanded,
+
+    spell_charge_push: spells.charge_push,
+    spell_charge_push_details: spells.charge_push_details,
+    spell_charge_push_expanded: spells.charge_push_expanded,
+
+    spell_heavy_shot: spells.heavy_shot,
+    spell_heavy_shot_details: spells.heavy_shot_details,
+    spell_heavy_shot_expanded: spells.heavy_shot_expanded,
+
+    feat_charger: "Налетчик",
+    feat_charger_details: "Вы много двигаетесь в бою.",
+
+    mastery_bonus: "Бонуc мастерства",
+    on_armor_finesse: "к Броне при Реакции на атаку, если у вас фехтовальное оружие",
+
+    feat_defensive_duelist: "Оборонительный дуэлянт",
+    feat_defensive_duelist_details: "Вы мастерски обороняетесь фехтовальным оружием.",
 }

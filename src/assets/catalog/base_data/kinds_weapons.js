@@ -59,6 +59,11 @@ export default {
     military:{
         name:"weapons_military",
         details:"weapons_military_details",
-    }
+    },
+
+    improvised:{
+        name:"weapons_improvised",
+        details:"weapons_improvised_details",
+    },
 
 }

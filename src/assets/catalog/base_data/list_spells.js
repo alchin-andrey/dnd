@@ -2705,6 +2705,469 @@ export default {
     }
   ],
 
+  inspiration: [
+    {
+      name: "spell_inspiration",
+      details: "spell_inspiration_details",
+      expanded: "spell_inspiration_expanded",
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 30,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "temporary",
+
+      impact_size_foo: "Num_Lvl_Plus_CHA",
+      impact_size_str: 6,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  grapple: [
+    {
+      name: "spell_grapple",
+      details: "spell_grapple_details",
+      expanded: "spell_grapple_expanded",
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  healer_tooling: [
+    {
+      name: "spell_healer_tooling",
+      details: "spell_healer_tooling_details",
+      expanded: "spell_healer_tooling_expanded",
+
+      type: "ability",
+      slot_type: "healers_tool_slot",
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["healers_tool"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 6,
+      impact_size_pls: 4,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  extra_strike: [
+    {
+      name: "spell_extra_strike",
+      details: "spell_extra_strike_details",
+      expanded: "spell_extra_strike_expanded",
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  heavy_strike: [
+    {
+      name: "spell_heavy_strike",
+      details: "spell_heavy_strike_details",
+      expanded: "spell_heavy_strike_expanded",
+
+      type: "ability",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  polearm_strike: [
+    {
+      name: "spell_polearm_strike",
+      details: "spell_polearm_strike_details",
+      expanded: "spell_polearm_strike_expanded",
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: 10,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bludgeoning_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 4,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  shield_push: [
+    {
+      name: "spell_shield_push",
+      details: "spell_shield_push_details",
+      expanded: "spell_shield_push_expanded",
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  shield_block: [
+    {
+      name: "spell_shield_block",
+      details: "spell_shield_block_details",
+      expanded: "spell_shield_block_expanded",
+
+      type: "ability",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  heavy_shot: [
+    {
+      name: "spell_heavy_shot",
+      details: "spell_heavy_shot_details",
+      expanded: "spell_heavy_shot_expanded",
+
+      type: "ability",
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  charge_attack: [
+    {
+      name: "spell_charge_attack",
+      details: "spell_charge_attack_details",
+      expanded: "spell_charge_attack_expanded",
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  charge_push: [
+    {
+      name: "spell_charge_push",
+      details: "spell_charge_push_details",
+      expanded: "spell_charge_push_expanded",
+
+      type: "ability",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [
@@ -8956,8 +9419,8 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Str_X_Plus_1",
-      //Вы создаёте три огненных луча и направляете их на целей, находящихся в пределах дистанции.
-      //Вы создаёте один дополнительный луч за каждый уровень ячейки выше второго.
+      //Вы создаете три огненных луча и направляете их на целей, находящихся в пределах дистанции.
+      //Вы создаете один дополнительный луч за каждый уровень ячейки выше второго.
       impact_size_str: 3,
       impact_size_num: 2,
       impact_size_dice: 6,

@@ -801,7 +801,7 @@ export default {
             tuigan:"туйган",
             tuigan_details: races.tuigan_human,
 
-            terami:"тёрами",
+            terami:"терами",
             terami_details: races.terami_human,
 
             ulutiune:"улутиун",

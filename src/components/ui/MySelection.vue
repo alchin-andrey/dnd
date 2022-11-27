@@ -143,7 +143,7 @@ export default {
 
 .column_link div {
   white-space: nowrap; /* Текст не переносится */
-  overflow: hidden; /* Обрезаем всё за пределами блока */
+  overflow: hidden; /* Обрезаем все за пределами блока */
   text-overflow: ellipsis;
 }
 

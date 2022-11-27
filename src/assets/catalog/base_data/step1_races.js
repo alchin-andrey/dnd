@@ -61,7 +61,7 @@ export default {
             // По левелу перса
             {
               level: 1,
-              spell: spells.maneuver_rally,
+              spell: spells.inspiration,
             },
 
             {
