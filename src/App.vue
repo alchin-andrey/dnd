@@ -233,7 +233,7 @@
 				:title="name"
 				:type="`${name}_base`"
 				plus
-				:numb="stats_Race_Page_Numb(name)"
+				:numb="option_Race_Page_Numb('stats', name)"
 				:icon="name"
 			>
 			</my-attribute>
@@ -496,7 +496,7 @@ export default {
       // "stats_Activ_Obj_RE",
       // "stats_Pass_Arr_RE",
       // "stats_Custom_Arr_RE",
-      "stats_Race_Page_Numb",
+      "option_Race_Page_Numb",
     ]),
 		// ...mapState({
 		// 	MY: state => state.MY.MY,

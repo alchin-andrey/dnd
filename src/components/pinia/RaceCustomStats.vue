@@ -8,7 +8,7 @@
 				:title="name"
 				:type="`${name}_base`"
 				plus
-				:numb="option_Race_Page_Numb('stats', name)"
+				:numb="stats_Race_Page_Numb(name)"
 				:icon="name"
 			>
 			</my-attribute>
@@ -19,7 +19,7 @@
 		v-for="name in stats_Pass_Arr_RE"
 		:key="name"
 		@click="getCustomActi_Pinia('stats', name)"
-		:active_boll_link="option_Custom_Arr_RE('stats').includes(name)"
+		:active_boll_link="stats_Custom_Arr_RE.includes(name)"
 	>
 		<my-attribute
 			:title="name"
@@ -53,9 +53,9 @@ export default {
       "stats_Keys",
       "stats_Activ_Obj_RE",
       "stats_Pass_Arr_RE",
-      // "stats_Custom_Arr_RE",
+      "stats_Custom_Arr_RE",
       "stats_Race_Page_Numb",
-      "option_Race_Page_Numb",
+      // "option_Race_Page_Numb",
       "option_Custom_Arr_RE",
     ]),
 
