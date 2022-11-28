@@ -1,8 +1,5 @@
 import {Emoji} from "emoji-mart-vue-fast/src";
 
-import LangCard from "@/components/ui/LangCard.vue";
-import DonatCard from "@/components/ui/DonatCard.vue";
-
 import MySelection from "@/components/ui/MySelection.vue";
 import MyController from "@/components/ui/MyController.vue";
 import MySlider from "@/components/ui/MySlider.vue";
@@ -32,16 +29,12 @@ import MagicAttribute from "@/components/ui/MagicAttribute.vue";
 import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import MySpellMain from "@/components/ui/MySpellMain.vue";
 
-import GenderCard from "@/components/GenderCard.vue";
 
 
 
 
 export default [
   Emoji,
-
-  LangCard,
-  DonatCard,
   
   MySelection,
   MyController,
@@ -63,7 +56,6 @@ export default [
   RaceBody,
   MySkale,
   MySizeGrowth,
-  GenderCard,
   MyRange,
   MyRangeSize,
   MyRangeHight,

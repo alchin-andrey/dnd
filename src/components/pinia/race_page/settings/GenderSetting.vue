@@ -15,9 +15,7 @@ import { useMYStore } from "@/stores/MY/MYStore";
 import { useGenderStore } from "@/stores/modules/GenderStore";
 export default {
   name: "GenderChoiceStore",
-  components: {
-    GenderCard,
-  },
+  components: { GenderCard, },
   computed: {
     ...mapState(useMYStore, ["MY"]),
 
