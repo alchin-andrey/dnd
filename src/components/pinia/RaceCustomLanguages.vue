@@ -37,35 +37,19 @@
 </template>
 
 <script>
-import languages from "@/assets/catalog/base_data/list_languages.js";
-
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 export default {
 	name: "RaceCustomLanguages",
-  data() {
-		return {
-			languages: languages,
-		};
-	},
 	computed: {
+    // STORES
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["race_page"]),
-
-		...mapState(useMYStore, [
-			"stats_Keys",
-      "languages_Arr_Not_Humman",
-      "languages_Arr_Humman",
-      "languages_Activ_Arr_RE",
-			// "stats_Activ_Obj_RE",
-			// "skills_Pass_Arr_RE",
-			"languages_Custom_Arr_RE",
-			// "stats_Race_Page_Numb",
-			// "option_Race_Page_Numb",
-			// "option_Custom_Arr_RE",
-		]),
-
+    // GETTERS
+    ...mapState(useLanguagesStore, ["languages_Arr_Humman", "languages_Arr_Not_Humman",]),
+		...mapState(useMYStore, ["languages_Activ_Arr_RE", "languages_Custom_Arr_RE",]),
 
     Lang_Humman_Title() {
 			let title = this.t("languages_human");
@@ -95,7 +79,6 @@ export default {
 	methods: {
 		...mapActions(useMYStore, ["getCustomSelect_RE"]),
     ...mapActions(usePagesStore, ["showRaceScroll"]),
-
 	},
 };
 </script>

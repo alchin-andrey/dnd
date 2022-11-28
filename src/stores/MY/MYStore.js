@@ -102,25 +102,25 @@ export const useMYStore = defineStore({
 		},
   
     // ANCHOR //^ languages GETTERS
-    languages_Arr_Humman() {
-			let arr = [];
-			for (let i in this.languages) {
-				if (this.languages[i]?.human) {
-					arr.push(this.languages[i].name);
-				}
-			}
-			return arr;
-		},
+    // languages_Arr_Humman() {
+		// 	let arr = [];
+		// 	for (let i in this.languages) {
+		// 		if (this.languages[i]?.human) {
+		// 			arr.push(this.languages[i].name);
+		// 		}
+		// 	}
+		// 	return arr;
+		// },
 
-    languages_Arr_Not_Humman() {
-			let arr = [];
-			for (let i in this.languages) {
-				if (!this.languages[i]?.human) {
-					arr.push(this.languages[i].name);
-				}
-			}
-			return arr;
-		},
+    // languages_Arr_Not_Humman() {
+		// 	let arr = [];
+		// 	for (let i in this.languages) {
+		// 		if (!this.languages[i]?.human) {
+		// 			arr.push(this.languages[i].name);
+		// 		}
+		// 	}
+		// 	return arr;
+		// },
 
     // ANCHOR //TODO SKILL GETTERS
 
