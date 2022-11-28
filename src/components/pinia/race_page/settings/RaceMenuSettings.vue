@@ -13,17 +13,17 @@
 
 		<div
 			class="selection_menu"
-			v-if="Castom_Race_Settings_Visib"
+			v-if="custom_Race_Settings_Visib"
 		>
 			<my-selection
-				v-if="MY.race.settings.custom_stats"
+				v-if="stats_Custom_Arr_RE"
 				@click="showSettings__Race('stats')"
 				:active="race_page.shown.stats"
 				title="stats"
 				:type_arr="stats_Custom_Arr_RE"
 			></my-selection>
 			<my-selection
-				v-if="MY.race.settings.custom_skills"
+				v-if="skills_Custom_Arr_RE"
 				@click="showSettings__Race('skills')"
 				:active="race_page.shown.skills"
 				title="skills"
@@ -31,10 +31,7 @@
 			>
 			</my-selection>
 			<my-selection
-				v-if="
-					MY.race.settings.custom_languages ||
-					MY.ethnos.custom_languages
-				"
+				v-if="languages_Custom_Arr_RE"
 				@click="showSettings__Race('languages')"
 				:active="race_page.shown.languages"
 				title="languages"
@@ -107,29 +104,21 @@ import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "RaceMenuSettings",
-  data() {
-    return {
-      custom_settings: ["stats", "skills", "languages"],
-    }
-  },
 	computed: {
+    // STORE
 		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY"]),
+    // GETTERS
     ...mapState(useMYStore, [
-      "option_Custom_Arr_RE",
       "stats_Custom_Arr_RE",
       "skills_Custom_Arr_RE",
       "languages_Custom_Arr_RE",
     ]),
-		// ...mapGetters("pages", ["shown_Home"]),
 
-    Castom_Race_Settings_Visib() {
-      return this.MY.race.settings.custom_stats ||
-      this.MY.ethnos.custom_stats ||
-			this.MY.race.settings.custom_skills ||
-      this.MY.ethnos.custom_skills ||
-			this.MY.race.settings.custom_languages ||
-			this.MY.ethnos.custom_languages;
+    custom_Race_Settings_Visib() {
+      return this.stats_Custom_Arr_RE ||
+			this.skills_Custom_Arr_RE ||
+      this.languages_Custom_Arr_RE;
 		},
 
 		Race_Set_Obj() {

@@ -63,7 +63,7 @@
 
 		<!-- Гендр -->
 		<my-selection-box :shown="race_page.shown.gender">
-			<GenderChoiceStore />
+      <GenderSetting />
 		</my-selection-box>
 		<!-- Гендр -->
 
@@ -126,56 +126,7 @@
 
 		<!-- Языки -->
 		<my-selection-box :shown="race_page.shown.languages">
-    <RaceCustomLanguages />
-			<!-- <my-selection-card
-				v-for="lang in Lang_Not_Humman"
-				:key="lang"
-				@click="
-					getExtraActiv(
-						Lang_Activ.includes(lang),
-						Lang_Select.includes(lang),
-						lang,
-						'languages'
-					)
-				"
-				:active_boll_link="Lang_Select.includes(lang)"
-				:basic="Lang_Activ.includes(lang)"
-			>
-				<my-card-text :title="lang.name" :text="lang.details"></my-card-text>
-			</my-selection-card>
-
-			<div
-				class="skroll_list jbm-300"
-				:class="{
-					skroll_list_closed: !race_page.shown_humman_lang,
-					skroll_list_open: race_page.shown_humman_lang,
-				}"
-				v-vpshow="race_page.shown_humman_lang"
-				@click="showRaceScroll('shown_humman_lang')"
-			>
-				{{ Lang_Humman_Title }}
-			</div>
-			<transition name="scroll-fade">
-				<div v-if="race_page.shown_humman_lang" class="flex_gap-8">
-					<my-selection-card
-						v-for="lang in Lang_Humman"
-						:key="lang"
-						@click="
-							getExtraActiv(
-								Lang_Activ.includes(lang),
-								Lang_Select.includes(lang),
-								lang,
-								'languages'
-							)
-						"
-						:active_boll_link="Lang_Select.includes(lang)"
-						:basic="Lang_Activ.includes(lang)"
-					>
-						<my-card-text :title="lang.name" :text="lang.details">
-						</my-card-text>
-					</my-selection-card>
-				</div>
-			</transition> -->
+      <RaceCustomLanguages />
 		</my-selection-box>
 		<!-- Языки -->
 	</div>
@@ -342,10 +293,10 @@ import languages from "@/assets/catalog/base_data/list_languages.js";
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
 import EthnosChoice from "@/components/EthnosChoice.vue";
-import GenderChoice from "@/components/GenderChoice.vue";
+
 import AgeWeight from "@/components/AgeWeight.vue";
 
-import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
+// import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 import Description from "@/components/Description.vue";
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
@@ -353,10 +304,13 @@ import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
 // PINIA
 import Header from "@/components/pinia/Header.vue";
-import RaceMenuSettings from "@/components/pinia/RaceMenuSettings.vue";
-import RaceCustomStats from "@/components/pinia/RaceCustomStats.vue";
-import RaceCustomSkills from "@/components/pinia/RaceCustomSkills.vue";
-import RaceCustomLanguages from "@/components/pinia/RaceCustomLanguages.vue";
+import RaceMenuSettings from "@/components/pinia/race_page/settings/RaceMenuSettings.vue";
+
+import RaceCustomStats from "@/components/pinia/race_page/settings/RaceCustomStats.vue";
+import RaceCustomSkills from "@/components/pinia/race_page/settings/RaceCustomSkills.vue";
+import RaceCustomLanguages from "@/components/pinia/race_page/settings/RaceCustomLanguages.vue";
+
+import GenderSetting from "@/components/pinia/race_page/settings/GenderSetting.vue";
 // PINIA
 
 
@@ -401,18 +355,19 @@ export default {
 	},
 	name: "App",
 	components: {
-		GenderChoiceStore,
+		// GenderChoiceStore,
 		EthnosChoice,
-		GenderChoice,
 		AgeWeight,
 		Description,
 		WelcomeBanner,
-
 		// ГОТОВ
-		Header,
-    RaceCustomStats,
+		Header, //^ DONE
+    
+    RaceCustomStats, //^ DONE
     RaceCustomSkills, //TODO: Перенести Skill_Mastery
-    RaceCustomLanguages,
+    RaceCustomLanguages, //^ DONE
+    
+    GenderSetting, //^ DONE
 		// ГОТОВ
 
 		// НА ОБРАБОТКЕ
