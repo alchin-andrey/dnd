@@ -27,5 +27,10 @@ export const useDicStore = defineStore({
       let lang_sel = this.dic.select_lang;
       return this.dic[lang_sel][name];
     },
+
+    getLangSite(name, icon) {
+			this.dic.select_lang = name;
+			this.dic.select_lang_icon = icon;
+		},
 	},
 });

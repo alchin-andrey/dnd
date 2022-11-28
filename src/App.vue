@@ -34,15 +34,7 @@
 
 		<!-- Смена языка -->
 		<my-selection-box :shown="main_page.shown.lang">
-			<my-selection-card
-				v-for="item in dic.lang"
-				:key="item"
-				@click="getLangSite(item.mark, item.icon)"
-				:select_link="item.mark"
-				:active_link="dic.select_lang"
-			>
-				<LangCard :title="item.icon" :text="item.name" :mark="item.mark" />
-			</my-selection-card>
+      <LangSetting />
 		</my-selection-box>
 		<!-- Смена языка -->
 
@@ -282,10 +274,7 @@
 <script>
 import dic from "@/assets/catalog/texts/dic.js";
 
-// import MY from "@/assets/catalog/MY.js";
-// import default_MY from "@/assets/catalog/default_MY.js";
-// import color from "@/assets/catalog/base_data/colors.js";
-// import genders from "@/assets/catalog/base_data/genders.js";
+
 import race from "@/assets/catalog/base_data/step1_races.js";
 import clas from "@/assets/catalog/base_data/step2_classes.js";
 import past from "@/assets/catalog/base_data/step3_backstories.js";
@@ -296,7 +285,7 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 
 import AgeWeight from "@/components/AgeWeight.vue";
 
-// import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
+
 import Description from "@/components/Description.vue";
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
@@ -304,6 +293,9 @@ import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
 // PINIA
 import Header from "@/components/pinia/Header.vue";
+
+import LangSetting from "@/components/pinia/LangSetting.vue";
+
 import RaceMenuSettings from "@/components/pinia/race_page/settings/RaceMenuSettings.vue";
 
 import RaceCustomStats from "@/components/pinia/race_page/settings/RaceCustomStats.vue";
@@ -360,8 +352,12 @@ export default {
 		AgeWeight,
 		Description,
 		WelcomeBanner,
+
+
 		// ГОТОВ
 		Header, //^ DONE
+    
+    LangSetting, //^ DONE
     
     RaceCustomStats, //^ DONE
     RaceCustomSkills, //TODO: Перенести Skill_Mastery
@@ -378,11 +374,6 @@ export default {
 	data() {
 		return {
 			dic: dic,
-			// MY: MY,
-			// default_MY: default_MY,
-
-			// genders: genders,
-			// color: color,
 			race: race,
 			clas: clas,
 			past: past,
@@ -562,78 +553,6 @@ export default {
 			return this.MY.race.settings.ethnos;
 		},
 
-		Lang_Not_Humman() {
-			let arr = [];
-			for (let i in this.languages) {
-				if (!(this.languages || {})[i].human) {
-					arr.push(this.languages[i]);
-				}
-			}
-			return arr;
-		},
-
-		Lang_Humman_Title() {
-			let title = this.t("languages_human");
-			let lang_numb = this.Lang_Humman_Select.length;
-			let humman_activ = this.race_page.shown_humman_lang;
-			if (lang_numb !== 0 && !humman_activ) {
-				return `${title} (выбрано: ${lang_numb})`;
-			} else {
-				return title;
-			}
-		},
-
-		Lang_Humman() {
-			let arr = [];
-			for (let i in this.languages) {
-				if ((this.languages || {})[i].human) {
-					arr.push(this.languages[i]);
-				}
-			}
-			return arr;
-		},
-
-		Lang_Humman_Select() {
-			let arr = [];
-			let lang = this.race_page.extra.languages;
-			for (let i in lang) {
-				if ((lang || {})[i].human) {
-					arr.push(lang[i]);
-				}
-			}
-			return arr;
-		},
-
-		Lang_Activ() {
-			let i = [];
-			let j = [];
-			if ((this.MY.race.proficiencies || {}).languages) {
-				i = Object.values(this.MY.race.proficiencies.languages);
-			}
-			if ((this.MY.ethnos.proficiencies || {}).languages) {
-				j = Object.values(this.MY.ethnos.proficiencies.languages);
-			}
-			return i.concat(j);
-		},
-
-		Languages_Pass() {
-			return Object.values(this.languages).filter(
-				el => !this.Lang_Activ.includes(el)
-			);
-		},
-
-		Lang_Select() {
-			return this.race_page.extra.languages;
-		},
-
-		// Lang_Extra() {
-		// 	let arr = [];
-		// 	let obj = this.race_page.extra.languages;
-		// 	for (let i in obj) {
-		// 		arr.push(obj[i].name);
-		// 	}
-		// 	return arr;
-		// },
 
 		showSpells() {
 			let race = this.MY.race.spells;
@@ -650,61 +569,20 @@ export default {
 			this.race_page.shown_humman_lang = false;
 		},
 
-		"MY.ethnos": "getFunction_2",
-
 		"MY.level": function () {
 			this.MY.mastery = this.Mastery;
 		},
 	},
 
 	methods: {
-		getLangSite(name, icon) {
-			this.dic.select_lang = name;
-			this.dic.select_lang_icon = icon;
-		},
-
 		getFunction() {
 			this.getComonColor("skin");
 			this.getComonColor("eyes");
 			this.getComonColor("hair");
-			this.getExtra(this.Languages_Pass, "languages");
+
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
-		},
-
-		getFunction_2() {
-			this.getExtra_Ethnos(this.Languages_Pass, "languages");
-		},
-
-		getExtra_Ethnos(arr_obj, name) {
-			let arr = [];
-			let race_custom = (this.race_Settings || {})[`custom_${name}`];
-			let ethnos_custom = (this.MY.ethnos || {})[`custom_${name}`];
-			if (ethnos_custom) {
-				let i = ethnos_custom[0]; //2
-				arr = arr_obj.slice(0, i);
-				this.race_page.extra[name] = arr;
-			} else if (!race_custom && !ethnos_custom) {
-				this.race_page.extra[name] = arr;
-			} else {
-				return null;
-			}
-		},
-
-		getExtra(arr_obj, name) {
-			let race_custom = this.race_Settings[`custom_${name}`];
-			let ethnos_custom = this.MY.ethnos[`custom_${name}`];
-			let arr = [];
-			if (race_custom) {
-				let i = this.race_Settings[`custom_${name}`][0];
-				arr = arr_obj.slice(0, i);
-			}
-			if (ethnos_custom) {
-				let i = this.MY.ethnos[`custom_${name}`][0];
-				arr = arr_obj.slice(0, i);
-			}
-			this.race_page.extra[name] = arr;
 		},
 
 		getComonColor(name) {
@@ -786,55 +664,6 @@ export default {
 				j = this.MY.ethnos[par_1][par_2];
 			}
 			return i + j;
-		},
-
-		getSummNumb(name, item) {
-			let i = 0;
-			let activ_val = this[`${name}_Activ_Obj`][item];
-			if (activ_val) {
-				i = activ_val;
-			} else if ((this.race_Settings || {})[`custom_${name}`]) {
-				let extr_bool = this[`${name}_Select`].includes(item);
-				let increment = this.race_Settings[`custom_${name}`][1];
-				if (extr_bool) {
-					i = increment;
-				} else {
-					i = 0;
-				}
-			} else {
-				i = 0;
-			}
-			return i;
-		},
-
-		getExtraActiv(active, selekt, item, name) {
-			if (active || selekt) {
-				return null;
-			} else {
-				let arr = this.race_page.extra[name];
-				arr.splice(0, 1);
-				arr.push(item);
-				return (this.race_page.extra[name] = arr);
-			}
-		},
-
-		getSelectLang() {
-			if (this.race_page.extra.languages) {
-				return this.race_page.extra.languages;
-			} else {
-				return this.Languages_Pass[0].name;
-			}
-		},
-
-		getSkillMarg(i, name, k) {
-			if (i === 0) {
-				return true;
-			}
-			let obj = Object.values(name);
-			if (obj[i].mod !== obj[i - 1].mod) {
-				return true;
-			}
-			return false;
 		},
 
 		getMannaNumb(arr, name) {
