@@ -1,10 +1,12 @@
 <template>
-	<div class="wrapper"
-		  :class="{
-	 gap_6: gap_6,
-    gap_8: gap_8,
-    gap_26: gap_26
-    }">
+	<div
+		class="wrapper"
+		:class="{
+			gap_6: gap_6,
+			gap_8: gap_8,
+			gap_26: gap_26,
+		}"
+	>
 		<slot></slot>
 	</div>
 	<div v-if="hr" class="hr"></div>

@@ -144,7 +144,7 @@
 			<WelcomeBanner />
 
 			<transition name="slide-fade">
-				<mySizeGrowth v-if="hideRuler()" division zero skale_top />
+				<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
 			</transition>
 		</div>
 	</div>
@@ -277,22 +277,19 @@ import dic from "@/assets/catalog/texts/dic.js";
 
 import race from "@/assets/catalog/base_data/step1_races.js";
 import clas from "@/assets/catalog/base_data/step2_classes.js";
-import past from "@/assets/catalog/base_data/step3_backstories.js";
-import languages from "@/assets/catalog/base_data/list_languages.js";
-import placeholder from "@/assets/catalog/base_data/_placeholder.js";
+// import past from "@/assets/catalog/base_data/step3_backstories.js";
+// import languages from "@/assets/catalog/base_data/list_languages.js";
+// import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
 import EthnosChoice from "@/components/EthnosChoice.vue";
 
-import AgeWeight from "@/components/AgeWeight.vue";
-
-
-import Description from "@/components/pinia/Description.vue";
-import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
-
+// import AgeWeight from "@/components/AgeWeight.vue";
 
 
 // PINIA
 import Header from "@/components/pinia/Header.vue";
+import Description from "@/components/pinia/Description.vue";
+import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
 
 import LangSetting from "@/components/pinia/LangSetting.vue";
 
@@ -307,7 +304,7 @@ import GenderSetting from "@/components/pinia/race_page/settings/GenderSetting.v
 
 
 
-import { watch, computed } from "vue";
+import { watch } from "vue";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
@@ -350,7 +347,7 @@ export default {
 	components: {
 		// GenderChoiceStore,
 		EthnosChoice,
-		AgeWeight,
+		// AgeWeight,
     
 		// ГОТОВ
 		WelcomeBanner, //^ DONE
@@ -367,7 +364,7 @@ export default {
 		// ГОТОВ
 
 		// НА ОБРАБОТКЕ
-		RaceMenuSettings,
+		RaceMenuSettings, //TODO: Сылки на рост, вес, возраст
 		// НА ОБРАБОТКЕ
 	},
 
@@ -376,9 +373,9 @@ export default {
 			dic: dic,
 			race: race,
 			clas: clas,
-			past: past,
-			languages: languages,
-			placeholder: placeholder,
+			// past: past,
+			// languages: languages,
+			// placeholder: placeholder,
 
 		};
 	},
@@ -406,28 +403,16 @@ export default {
       "skills_All_RE"
     ]),
 
-		Main_Selection() {
-			const obj = this.race_page.shown;
-			const values = Object.values(obj);
-			return values.some(el => el === true);
-		},
-
-		Race_Selection() {
-			const obj = this.main_page.shown;
-			const values = Object.values(obj);
-			return values.some(el => el === true);
-		},
-
-		// Shown_Selection() {
-		// 	return this.Main_Selection || this.Race_Selection;
-		// },
-
 		Mastery() {
 			return Math.ceil(this.MY.level / 4);
 		},
 
 		Skill_Mastery() {
 			return 1 + this.MY.mastery;
+		},
+
+    hide_Ruler() {
+			return this.pagesStore.shown_home || this.race_page.shown.height;
 		},
 
 		Get_Height() {
@@ -437,41 +422,12 @@ export default {
 			return min + Math.round((max - min) * kof);
 		},
 
-		// Hight_Note() {
-		// 	return this.t(this.race_Settings.size);
-		// },
-
 		Get_Weight() {
 			let min = this.race_Settings.weight.min;
 			let max = this.race_Settings.weight.max;
 			let kof = this.race_page.weight_kof;
 			return min + Math.round((max - min) * kof);
 		},
-
-		// Weight_Note() {
-		// 	let kof = this.race_page.weight_kof;
-		// 	if (kof === 0) {
-		// 		return this.t("skinny");
-		// 	} else if (kof === 1) {
-		// 		return this.t("fat");
-		// 	} else {
-		// 		return null;
-		// 	}
-
-		// let kof = this.race_page.weight_kof;
-		// if (kof < 0.5) {
-		//   return this.t("skinny");
-		// } else {
-		//   return this.t("fat");
-		// }
-		// },
-
-		// Get_Age() {
-		//   let min = this.race_Settings.age.min;
-		//   let max = this.race_Settings.age.max;
-		//   let kof = this.race_page.age_kof;
-		//   return min + Math.round((max - min) * kof);
-		// },
 
 		Get_Age() {
 			let min = this.race_Settings.age.min;
@@ -489,25 +445,6 @@ export default {
 				return mature;
 			}
 		},
-
-		// Age_Note() {
-		// 	let baby = this.race_Settings.age.min;
-		// 	let young = this.race_Settings.age.young;
-		// 	let mature = this.race_Settings.age.mature;
-		// 	let old = this.race_Settings.age.old;
-		// 	let oldest = this.race_Settings.age.max;
-		// 	if (baby <= this.MY.age && this.MY.age < young) {
-		// 		return this.t("baby");
-		// 	} else if (young <= this.MY.age && this.MY.age < mature) {
-		// 		return this.t("young");
-		// 	} else if (mature <= this.MY.age && this.MY.age < old) {
-		// 		return this.t("mature");
-		// 	} else if (old <= this.MY.age && this.MY.age < oldest) {
-		// 		return this.t("old");
-		// 	} else {
-		// 		return this.t("oldest");
-		// 	}
-		// },
 
 		hp_bonus() {
 			let increm_1 = this.MY.ethnos.hp_bonus[0];
@@ -575,56 +512,26 @@ export default {
 
 	methods: {
 		getFunction() {
-			// this.getComonColor("skin");
-			// this.getComonColor("eyes");
-			// this.getComonColor("hair");
-
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 		},
 
-		// getComonColor(name) {
-		// 	let select = this.$root.race_page.color_selected[name];
-		// 	if (this.race_Settings.color[name][0]) {
-		// 		this.$root.MY.color_selected[name] = select;
-		// 	} else {
-		// 		this.$root.MY.color_selected[name] = null;
+		// getProficienciesItem(name) {
+		// 	let arr = [];
+		// 	for (let i in this.MY.race.proficiencies[name]) {
+		// 		arr.push(this.MY.race.proficiencies[name][i].name);
 		// 	}
+		// 	return arr;
 		// },
 
-		hideRuler() {
-			return this.pagesStore.shown_home || this.race_page.shown.height;
-		},
-
-		// getCharColor(value) {
-		// 	if (
-		// 		this.MY.color_selected[value] === null &&
-		// 		this.MY.ethnos.name === "common"
-		// 	) {
-		// 		return this.MY.race.settings.color[value][0];
-		// 	} else if (this.MY.color_selected[value] === null) {
-		// 		return this.MY.ethnos.color[value][0];
-		// 	} else {
-		// 		return this.MY.color_selected[value];
+		// getProficienciesEthnosItem(obj, name) {
+		// 	let arr = [];
+		// 	for (let i in this.All_Ethnos_Obj[obj].proficiencies[name]) {
+		// 		arr.push(this.All_Ethnos_Obj[obj].proficiencies[name][i].name);
 		// 	}
+		// 	return arr;
 		// },
-
-		getProficienciesItem(name) {
-			let arr = [];
-			for (let i in this.MY.race.proficiencies[name]) {
-				arr.push(this.MY.race.proficiencies[name][i].name);
-			}
-			return arr;
-		},
-
-		getProficienciesEthnosItem(obj, name) {
-			let arr = [];
-			for (let i in this.All_Ethnos_Obj[obj].proficiencies[name]) {
-				arr.push(this.All_Ethnos_Obj[obj].proficiencies[name][i].name);
-			}
-			return arr;
-		},
 
 		getProf_Item(obj, kay) {
 			let arr = [];

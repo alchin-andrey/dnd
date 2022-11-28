@@ -1,5 +1,7 @@
 <template>
 	<!-- <div class="main_chapter_menu"> -->
+    
+    <!-- RACE ETHNOS -->
 	<div class="selection_menu_wrap">
 		<div class="selection_menu">
 			<my-selection
@@ -10,7 +12,9 @@
 				:rare="MY.ethnos.rare"
 			></my-selection>
 		</div>
+    <!-- RACE ETHNOS -->
 
+    <!-- RACE CUSTTOM -->
 		<div
 			class="selection_menu"
 			v-if="custom_Race_Settings_Visib"
@@ -39,7 +43,9 @@
 			>
 			</my-selection>
 		</div>
+    <!-- RACE CUSTTOM -->
 
+    <!-- OTHER RACE SETTINGS -->
 		<div class="selection_menu">
 			<my-selection
 				@click="showSettings__Race('gender')"
@@ -94,6 +100,7 @@
 			>
 			</my-selection>
 		</div>
+    <!-- OTHER RACE SETTINGS -->
 	</div>
 	<!-- </div> -->
 </template>
@@ -122,15 +129,10 @@ export default {
       "languages_Custom_Arr_RE",
     ]),
 
-
     custom_Race_Settings_Visib() {
       return !this.stats_Custom_Arr_RE.length == 0 ||
 			!this.skills_Custom_Arr_RE.length == 0 ||
       !this.languages_Custom_Arr_RE.length == 0;
-		},
-
-		Race_Set_Obj() {
-			return this.MY.race.settings;
 		},
 
 		Age_Note() {
@@ -166,32 +168,21 @@ export default {
 		},
 
 		Hight_Note() {
-			return this.t(this.Race_Set_Obj.size);
+			return this.t(this.MY.race.settings.size);
 		},
 
 	},
-
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Race"]),
-
 	},
 };
 </script>
 
 <style scoped>
 .main_chapter_menu {
-	/* height: 100%; */
-	/*width: 320px;*/
 	padding: 40px 32px 32px 32px;
 	overflow-y: scroll;
 	max-height: 100%;
-
-	/*padding-left: 32px;*/
-	/*padding-top: 32px;*/
-	/*max-height: 100%;*/
-	/*flex: 1 1 auto;*/
-	/*overflow-y: scroll;*/
-	/*max-height: 100%;*/
 	scrollbar-width: none;
 }
 
@@ -200,14 +191,9 @@ export default {
 }
 
 .selection_menu_wrap {
-	/*overflow-y: scroll;*/
 	display: flex;
 	flex-direction: column;
 	gap: 34px;
-	/*overflow-y: scroll;*/
-	/*height: 100px;*/
-	/*overflow: hidden;*/
-	/*max-height: 100%;*/
 }
 
 .selection_menu_wrap::-webkit-scrollbar {
@@ -215,11 +201,9 @@ export default {
 }
 
 .selection_menu {
-	/* height: 100%; */
 	width: 256px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	/*margin-bottom: 34px;*/
 }
 </style>

@@ -15,11 +15,12 @@
         :height="Calc_Img"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
-        v-html="$root.placeholder[body_part]"
+        v-html="placeholder[body_part]"
       ></svg>
 </template>
 
 <script>
+import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 import { mapState } from "pinia";
 import { useColorStore } from "@/stores/modules/ColorStore";
 export default {
@@ -37,6 +38,7 @@ export default {
   data() {
     return {
       hower_link: `${this.body_part}_hower`,
+      placeholder: placeholder,
     }
   },
   computed: {
