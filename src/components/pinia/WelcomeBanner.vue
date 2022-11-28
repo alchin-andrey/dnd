@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Welcome from "@/components/Welcome.vue";
+import Welcome from "@/components/pinia/Welcome.vue";
 
 export default {
   components: { Welcome },

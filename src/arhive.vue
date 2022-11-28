@@ -358,8 +358,8 @@ import GenderChoice from "@/components/GenderChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
 import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
-import Description from "@/components/Description.vue";
-import WelcomeBanner from "@/components/WelcomeBanner.vue";
+import Description from "@/components/pinia/Description.vue";
+import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
 
 // STORE
 // import Header from "./components/store/Header.vue";

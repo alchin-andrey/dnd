@@ -286,8 +286,8 @@ import EthnosChoice from "@/components/EthnosChoice.vue";
 import AgeWeight from "@/components/AgeWeight.vue";
 
 
-import Description from "@/components/Description.vue";
-import WelcomeBanner from "@/components/WelcomeBanner.vue";
+import Description from "@/components/pinia/Description.vue";
+import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
 
 
 
@@ -350,12 +350,11 @@ export default {
 		// GenderChoiceStore,
 		EthnosChoice,
 		AgeWeight,
-		Description,
-		WelcomeBanner,
-
-
+    
 		// ГОТОВ
+		WelcomeBanner, //^ DONE
 		Header, //^ DONE
+		Description, //^ DONE
     
     LangSetting, //^ DONE
     
