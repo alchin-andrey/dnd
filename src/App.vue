@@ -311,6 +311,7 @@ import { watch, computed } from "vue";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useColorStore } from "@/stores/modules/ColorStore";
 export default {
 	setup() {
     // PINIA
@@ -396,13 +397,12 @@ export default {
 	},
 
 	computed: {
+    // ...mapState(useMYStore, ["MY"]),
+    ...mapState(useColorStore, ["color_Char_Сommon"]),
     ...mapState(useMYStore, [
       "stats_Keys",
-      // "stats_Activ_Obj_RE",
-      // "stats_Pass_Arr_RE",
       "languages_Custom_Arr_RE",
       "option_Race_Page_Numb",
-
       "skills_All_RE"
     ]),
 
@@ -575,23 +575,23 @@ export default {
 
 	methods: {
 		getFunction() {
-			this.getComonColor("skin");
-			this.getComonColor("eyes");
-			this.getComonColor("hair");
+			// this.getComonColor("skin");
+			// this.getComonColor("eyes");
+			// this.getComonColor("hair");
 
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 		},
 
-		getComonColor(name) {
-			let select = this.$root.race_page.color_selected[name];
-			if (this.race_Settings.color[name][0]) {
-				this.$root.MY.color[name] = select;
-			} else {
-				this.$root.MY.color[name] = null;
-			}
-		},
+		// getComonColor(name) {
+		// 	let select = this.$root.race_page.color_selected[name];
+		// 	if (this.race_Settings.color[name][0]) {
+		// 		this.$root.MY.color_selected[name] = select;
+		// 	} else {
+		// 		this.$root.MY.color_selected[name] = null;
+		// 	}
+		// },
 
 		hideRuler() {
 			return this.pagesStore.shown_home || this.race_page.shown.height;
@@ -599,14 +599,14 @@ export default {
 
 		// getCharColor(value) {
 		// 	if (
-		// 		this.MY.color[value] === null &&
+		// 		this.MY.color_selected[value] === null &&
 		// 		this.MY.ethnos.name === "common"
 		// 	) {
 		// 		return this.MY.race.settings.color[value][0];
-		// 	} else if (this.MY.color[value] === null) {
+		// 	} else if (this.MY.color_selected[value] === null) {
 		// 		return this.MY.ethnos.color[value][0];
 		// 	} else {
-		// 		return this.MY.color[value];
+		// 		return this.MY.color_selected[value];
 		// 	}
 		// },
 

@@ -76,21 +76,21 @@
 				@click="showSettings__Race('skin_color')"
 				:active="race_page.shown.skin_color"
 				title="color_skin"
-				:type="getCharColor('skin').name"
+				:type="skin_color_Char_Body.name"
 			>
 			</my-selection>
 			<my-selection
 				@click="showSettings__Race('eyes_color')"
 				:active="race_page.shown.eyes_color"
 				title="color_eyes"
-				:type="getCharColor('eyes').name"
+				:type="eyes_color_Char_Body.name"
 			>
 			</my-selection>
 			<my-selection
 				@click="showSettings__Race('hair_color')"
 				:active="race_page.shown.hair_color"
 				title="color_hair"
-				:type="getCharColor('hair').name"
+				:type="hair_color_Char_Body.name"
 			>
 			</my-selection>
 		</div>
@@ -102,6 +102,7 @@
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useColorStore } from "@/stores/modules/ColorStore";
 export default {
 	name: "RaceMenuSettings",
 	computed: {
@@ -109,11 +110,18 @@ export default {
 		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY"]),
     // GETTERS
+    ...mapState(useColorStore, [
+      // "color_Char_Сommon",
+      "skin_color_Char_Body",
+      "eyes_color_Char_Body",
+      "hair_color_Char_Body"
+    ]),
     ...mapState(useMYStore, [
       "stats_Custom_Arr_RE",
       "skills_Custom_Arr_RE",
       "languages_Custom_Arr_RE",
     ]),
+
 
     custom_Race_Settings_Visib() {
       return !this.stats_Custom_Arr_RE.length == 0 ||
@@ -161,31 +169,11 @@ export default {
 			return this.t(this.Race_Set_Obj.size);
 		},
 
-		Lang_Extra() {
-			let arr = [];
-			let obj = this.race_page.extra.languages;
-			for (let i in obj) {
-				arr.push(obj[i].name);
-			}
-			return arr;
-		},
 	},
 
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Race"]),
 
-		getCharColor(value) {
-			if (
-				this.MY.color[value] === null &&
-				this.MY.ethnos.name === "common"
-			) {
-				return this.MY.race.settings.color[value][0];
-			} else if (this.MY.color[value] === null) {
-				return this.MY.ethnos.color[value][0];
-			} else {
-				return this.MY.color[value];
-			}
-		},
 	},
 };
 </script>

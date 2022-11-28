@@ -1,14 +1,12 @@
 // import { ref, computed } from "vue";
-import languages from "@/assets/catalog/base_data/list_languages.js";
-
 import { defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
+import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 
 export const useMYStore = defineStore({
 	id: "MYStore",
 	state: () => ({
 		MY: MY,
-    languages: languages,
 	}),
 	getters: {
 		// race_Settings(state) {
@@ -41,9 +39,10 @@ export const useMYStore = defineStore({
 		},
 
     languages_Keys(state) {
+      const {languages} = useLanguagesStore();
       let arr = [];
-      for (let key in this.languages) {
-        arr.push(this.languages[key].name)
+      for (let key in languages) {
+        arr.push(languages[key].name)
       }
 			return arr;
 		},
@@ -102,25 +101,6 @@ export const useMYStore = defineStore({
 		},
   
     // ANCHOR //^ languages GETTERS
-    // languages_Arr_Humman() {
-		// 	let arr = [];
-		// 	for (let i in this.languages) {
-		// 		if (this.languages[i]?.human) {
-		// 			arr.push(this.languages[i].name);
-		// 		}
-		// 	}
-		// 	return arr;
-		// },
-
-    // languages_Arr_Not_Humman() {
-		// 	let arr = [];
-		// 	for (let i in this.languages) {
-		// 		if (!this.languages[i]?.human) {
-		// 			arr.push(this.languages[i].name);
-		// 		}
-		// 	}
-		// 	return arr;
-		// },
 
     // ANCHOR //TODO SKILL GETTERS
 

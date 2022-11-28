@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useColorStore } from "@/stores/modules/ColorStore";
 export default {
   name: "RaceBody",
   props: {
@@ -38,6 +40,8 @@ export default {
     }
   },
   computed: {
+    ...mapState(useColorStore, ["color_Char_Сommon"]),
+
     growth() {
       if (this.$root.MY.height === null) {
       let max_height = this.$root.MY.race.settings.height.max
@@ -60,24 +64,30 @@ export default {
       }
     },
 
-    Char_Color() {
-      if (
-        this.$root.MY.color[this.body_part] === null &&
-        this.$root.MY.ethnos.name === "common"
-      ) {
-        return this.$root.MY.race.settings.color[this.body_part][0];
-      } else if (this.$root.MY.color[this.body_part] === null) {
-        return this.$root.MY.ethnos.color[this.body_part][0];
-      } else {
-        return this.$root.MY.color[this.body_part];
-      }
+    color_Char_Body() {
+      return this.color_Char_Сommon(this.body_part)
     },
+
+    // color_Char_Body() {
+    //   console.log('color_Char_Body:')
+
+    //   if (
+    //     this.$root.MY.color_selected[this.body_part] === null &&
+    //     this.$root.MY.ethnos.name === "common"
+    //   ) {
+    //     return this.$root.MY.race.settings.color[this.body_part][0];
+    //   } else if (this.$root.MY.color_selected[this.body_part] === null) {
+    //     return this.$root.MY.ethnos.color[this.body_part][0];
+    //   } else {
+    //     return this.$root.MY.color_selected[this.body_part];
+    //   }
+    // },
 
     Char_Img_Numb() {
       if(this.ethnos_name) {
         return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
       } else {
-        return this.Hower ? this.Hower.img : this.Char_Color.img;
+        return this.Hower ? this.Hower.img : this.color_Char_Body.img;
       }
     },
 
@@ -139,7 +149,7 @@ export default {
       if (this.ethnos_name && !this.Char_Img) {
         return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].hex;
       } else {
-        let hex = hower ? hower.hex : this.Char_Color.hex;
+        let hex = hower ? hower.hex : this.color_Char_Body.hex;
       return hex;
       }
     },

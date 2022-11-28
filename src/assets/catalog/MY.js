@@ -39,7 +39,8 @@ export default {
 	age: null,
 	weight: null,
 	height: null,
-	color: {
+  
+	color_selected: {
 		skin: null,
 		eyes: null,
 		hair: null,
@@ -64,9 +65,6 @@ export default {
 
 	stats: {
 		strength: {
-			race: 0,
-			ethnos: 0,
-      custom_race: 0,
 			base: 0,
 			bonus: 0,
 			total: 0,
@@ -75,9 +73,6 @@ export default {
 		},
 
 		dexterity: {
-			race: 0,
-			ethnos: 0,
-      custom_race: 0,
 			base: 0,
 			bonus: 0,
 			total: 0,
@@ -86,9 +81,6 @@ export default {
 		},
 
 		constitution: {
-			race: 0,
-			ethnos: 0,
-      custom_race: 0,
 			base: 0,
 			bonus: 0,
 			total: 0,
@@ -97,9 +89,6 @@ export default {
 		},
 
 		intelligence: {
-			race: 0,
-			ethnos: 0,
-      custom_race: 0,
 			base: 0,
 			bonus: 0,
 			total: 0,
@@ -108,9 +97,6 @@ export default {
 		},
 
 		wisdom: {
-			race: 0,
-			ethnos: 0,
-      custom_race: 0,
 			base: 0,
 			bonus: 0,
 			total: 0,
@@ -119,9 +105,6 @@ export default {
 		},
 
 		charisma: {
-			race: 0,
-			ethnos: 0,
-      custom_race: 0,
 			base: 0,
 			bonus: 0,
 			total: 0,
@@ -177,21 +160,11 @@ export default {
 	},
 
 	//доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
-  custom_race: {
-    stats: null,
-    skills:null,
-    languages: null,
-},
-
 custom_selected_race_page: {
   stats: [],
   skills: [],
   languages: [],
 },
-
-	custom_stats: null,
-	custom_skills: null,
-	custom_languages: null,
 
 	//Особенности - пассивньіе умения
 	fines: null,
