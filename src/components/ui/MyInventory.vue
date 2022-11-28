@@ -44,8 +44,8 @@ export default {
       } else {
         let arr = []
         for (let i in this.item) {
-          if (this.t(this.item[i].name)) {
-            arr.push(this.t(this.item[i].name))
+          if (this.t(this.item[i])) {
+            arr.push(this.t(this.item[i]))
           } else {
             arr.push(this.item[i])
           }

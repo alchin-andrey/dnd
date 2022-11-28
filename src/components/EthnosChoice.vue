@@ -68,6 +68,9 @@
 <script>
 import EthnosCard from "@/components/EthnosCard.vue";
 
+import { mapState, mapActions } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/pages/PagesStore";
 export default {
 	name: "EthnosChoice",
 	components: {
@@ -81,13 +84,16 @@ export default {
 			let spells_lvl = ((spells || {})[0] || {}).level <= lvl
 			return spells && spells_lvl;
 		},
+    ...mapState(useMYStore, [
+			"languages_Custom_Arr_RE",
+		]),
 	},
 
 	methods: {
 		getProfArr(obj, kay) {
 			let arr = [];
-			if ((obj || {})[kay]) {
-				arr = Object.values(obj[kay]);
+			if (obj?.[kay]) {
+        arr = obj[kay].map(x => x.name)
 			}
 			return arr;
 		},
@@ -96,8 +102,9 @@ export default {
 			let i = this.getProfArr(this.$root.MY.race.proficiencies, kay);
 			let k = []
 			let ethnos_custom = (this.$root.MY.ethnos || {})[`custom_${kay}`]
-			if (!ethnos_custom) {
-				k = this.getProfArr(this.$root.race_page.extra, kay);
+			// console.log('ethnos_custom:', kay, ethnos_custom)
+			if (!ethnos_custom && kay === "languages" ) {
+				k = this[`${kay}_Custom_Arr_RE`];
 			}
 
 			return i.concat(k);

@@ -108,16 +108,10 @@ export default {
       let j = arr.indexOf(type);
       if (j === 0) {
         this.$root.MY.race = arr[arr.length - 1];
-        console.log('arr:', arr)
-        console.log('arr length - 1:', arr.length - 1)
         this.$root.MY.race_name = this.arr_keys[this.arr_keys.length - 1];
-        console.log('arr_keys:', this.arr_keys)
-        console.log('arr_keys length - 1:', this.arr_keys.length - 1)
       } else {
         this.$root.MY.race = arr[j - 1];
         this.$root.MY.race_name = this.arr_keys[j - 1];
-        console.log('arr[j - 1]:', arr, arr[j - 1])
-        console.log('arr_keys[j - 1]:', this.arr_keys, this.arr_keys[j - 1])
       } 
     },
     getNameForward(arr, i) {

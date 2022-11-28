@@ -1,4 +1,6 @@
 // import { ref, computed } from "vue";
+import languages from "@/assets/catalog/base_data/list_languages.js";
+
 import { defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
 
@@ -6,6 +8,7 @@ export const useMYStore = defineStore({
 	id: "MYStore",
 	state: () => ({
 		MY: MY,
+    languages: languages,
 	}),
 	getters: {
 		// race_Settings(state) {
@@ -37,6 +40,14 @@ export const useMYStore = defineStore({
 			return Object.keys(state.MY.skills);
 		},
 
+    languages_Keys(state) {
+      let arr = [];
+      for (let key in this.languages) {
+        arr.push(this.languages[key].name)
+      }
+			return arr;
+		},
+
 		stats_Activ_Obj_RE(state) {
 			let i = state.MY.race.stats;
 			let j = state.MY.ethnos.stats;
@@ -57,6 +68,23 @@ export const useMYStore = defineStore({
 			return Object.keys(this.skills_Activ_Obj_RE);
 		},
 
+    languages_Activ_Arr_RE() {
+      let i = [];
+      let j = [];
+			if (this.MY.race.proficiencies?.languages) {
+				i = Object.values(this.MY.race.proficiencies?.languages);
+			}
+			if (this.MY.ethnos.proficiencies?.languages) {
+				j = Object.values(this.MY.ethnos.proficiencies?.languages);
+			}
+      let arr_obj = i.concat(j);
+      let arr = [];
+      for (let indx in arr_obj) {
+        arr.push(arr_obj[indx].name)
+      }
+			return arr;
+		},
+
 		stats_Pass_Arr_RE(state) {
 			return this.stats_Keys.filter(
 				el => !this.stats_Activ_Arr_RE.includes(el)
@@ -71,6 +99,27 @@ export const useMYStore = defineStore({
 
     skills_All_RE() {
 			return this.skills_Activ_Arr_RE.concat(this.skills_Custom_Arr_RE);
+		},
+  
+    // ANCHOR //^ languages GETTERS
+    languages_Arr_Humman() {
+			let arr = [];
+			for (let i in this.languages) {
+				if (this.languages[i]?.human) {
+					arr.push(this.languages[i].name);
+				}
+			}
+			return arr;
+		},
+
+    languages_Arr_Not_Humman() {
+			let arr = [];
+			for (let i in this.languages) {
+				if (!this.languages[i]?.human) {
+					arr.push(this.languages[i].name);
+				}
+			}
+			return arr;
 		},
 
     // ANCHOR //TODO SKILL GETTERS
@@ -146,7 +195,8 @@ export const useMYStore = defineStore({
     option_Custom_RE_Quant: (state) => (name) => {
 			let i = 0;
 			const race_custom = state.MY.race.settings[`custom_${name}`];
-			const ethnos_custom = state.MY.race.settings.ethnos[`custom_${name}`];
+			const ethnos_custom = state.MY.ethnos[`custom_${name}`];
+
 			if (race_custom) {
 				i += race_custom[0];
 			}
@@ -161,7 +211,7 @@ export const useMYStore = defineStore({
 			const selected_arr = state.MY.custom_selected_race_page[name];
 			const activ_arr = state[`${name}_Activ_Arr_RE`];
 			let pass_selected_arr = selected_arr.filter(el => !activ_arr.includes(el));
-      let pass_arr = state[`${name}_Keys`].filter(el => !activ_arr.includes(el));
+      // let pass_arr = state[`${name}_Keys`].filter(el => !activ_arr.includes(el));
 			const increment = state.option_Custom_RE_Quant(name);
 			if (increment === 0) {
 				return custom_arr;
@@ -170,7 +220,7 @@ export const useMYStore = defineStore({
 					custom_arr = pass_selected_arr;
 				} else if (pass_selected_arr.length < increment) {
 					const activ_full_arr = activ_arr.concat(pass_selected_arr);
-					pass_arr = state[`${name}_Keys`].filter(el => !activ_full_arr.includes(el));
+					let pass_arr = state[`${name}_Keys`].filter(el => !activ_full_arr.includes(el));
 					const i = increment - pass_selected_arr.length;
 					custom_arr = pass_selected_arr.concat(pass_arr.slice(0, i));
 				} else if (pass_selected_arr.length > increment) {
@@ -214,6 +264,10 @@ export const useMYStore = defineStore({
 
     skills_Custom_Arr_RE() {
       return this.option_Custom_Arr_RE('skills');
+    },
+
+    languages_Custom_Arr_RE() {
+      return this.option_Custom_Arr_RE('languages');
     },
 
     stats_Race_Page_Numb: (state) => (name) => {

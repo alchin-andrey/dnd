@@ -38,7 +38,7 @@
 				@click="showSettings__Race('languages')"
 				:active="race_page.shown.languages"
 				title="languages"
-				:type_arr="Lang_Extra"
+				:type_arr="languages_Custom_Arr_RE"
 			>
 			</my-selection>
 		</div>
@@ -119,6 +119,7 @@ export default {
       "option_Custom_Arr_RE",
       "stats_Custom_Arr_RE",
       "skills_Custom_Arr_RE",
+      "languages_Custom_Arr_RE",
     ]),
 		// ...mapGetters("pages", ["shown_Home"]),
 

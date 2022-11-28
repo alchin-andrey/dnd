@@ -120,7 +120,7 @@ export default {
 			let ethnos_custom = (obj || {})[`custom_${kay}`];
 			if ((obj.proficiencies || {})[kay]) {
 				for (let i in obj.proficiencies[kay]) {
-					arr.push(obj.proficiencies[kay][i]);
+					arr.push(obj.proficiencies[kay][i].name);
 				}
 			}
 			if (ethnos_custom) {

@@ -33,10 +33,6 @@ export default {
 			// "option_Custom_Arr_RE",
 		]),
 
-		skills_Select() {
-			return this.race_page.extra.skills;
-		},
-
 		Skill_Mastery() {
 			return 1 + this.MY.mastery;
 		},
@@ -44,17 +40,6 @@ export default {
 
 	methods: {
 		...mapActions(useMYStore, ["getCustomSelect_RE"]),
-
-		getExtraActiv(active, selekt, item, name) {
-			if (active || selekt) {
-				return null;
-			} else {
-				let arr = this.race_page.extra[name];
-				arr.splice(0, 1);
-				arr.push(item);
-				return (this.race_page.extra[name] = arr);
-			}
-		},
 
 		getSkillMarg(i, name) {
 			if (i === 0) {
@@ -71,14 +56,6 @@ export default {
 </script>
 
 <style scoped>
-/* .ethnos_attributes {
-	color: rgba(255, 255, 255, 0.2);
-	display: flex;
-	flex-direction: column;
-	gap: 26px;
-	margin: 0 0 26px 16px;
-} */
-
 .skill_marg {
 	margin-top: 26px;
 }

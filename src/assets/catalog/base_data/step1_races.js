@@ -56,7 +56,7 @@ export default {
           ],
 
           spells: [
-            // ДЛЯ ОТЛАДКИ ------
+            //! ДЛЯ ОТЛАДКИ ------
 
             // По левелу перса
             // {
@@ -193,7 +193,7 @@ export default {
 
             // ------------------
 
-            //АКТУАЛЬНІ! Разкомментировать после отладки
+            //* АКТУАЛЬНІ! Разкомментировать после отладки
             {
               level: 1,
               spell: spells.toy,
@@ -334,7 +334,7 @@ export default {
         min: 15,
         max: 20,
       },
-      // ДЛЯ ОТЛАДКИ
+      //! ДЛЯ ОТЛАДКИ
     //   custom: {
     //     stats: [2, 1],
     //     skills: [2, "Skill_Mastery"],
@@ -344,7 +344,7 @@ export default {
       custom_stats: [2, 1],
       custom_skills: [2, "Skill_Mastery"],
       custom_languages: [1],
-      // ДЛЯ ОТЛАДКИ
+      //! ДЛЯ ОТЛАДКИ
     },
 
     stats: { intelligence: 2 },

@@ -126,7 +126,8 @@
 
 		<!-- Языки -->
 		<my-selection-box :shown="race_page.shown.languages">
-			<my-selection-card
+    <RaceCustomLanguages />
+			<!-- <my-selection-card
 				v-for="lang in Lang_Not_Humman"
 				:key="lang"
 				@click="
@@ -174,7 +175,7 @@
 						</my-card-text>
 					</my-selection-card>
 				</div>
-			</transition>
+			</transition> -->
 		</my-selection-box>
 		<!-- Языки -->
 	</div>
@@ -348,30 +349,19 @@ import GenderChoiceStore from "@/components/GenderChoiceStore.vue";
 import Description from "@/components/Description.vue";
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
-// STORE
-// import Header from "./components/store/Header.vue";
-// import RaceMenuSettings from "@/components/store/RaceMenuSettings.vue";
-// import RaceCustomStats from "@/components/store/RaceCustomStats.vue";
-// STORE
 
-// STORE_HOOK
-// import Header from "@/components/hook_commit/Header.vue";
-// import RaceCustomStats from "@/components/hook_commit/RaceCustomStats.vue";
-// STORE_HOOK
 
 // PINIA
 import Header from "@/components/pinia/Header.vue";
 import RaceMenuSettings from "@/components/pinia/RaceMenuSettings.vue";
 import RaceCustomStats from "@/components/pinia/RaceCustomStats.vue";
 import RaceCustomSkills from "@/components/pinia/RaceCustomSkills.vue";
+import RaceCustomLanguages from "@/components/pinia/RaceCustomLanguages.vue";
 // PINIA
 
-// store components
-import { mapActions } from "vuex";
 
-// import { useShowSettings } from "@/hooks/PAGES/common/useShowSettings.js";
+
 import { watch, computed } from "vue";
-import { useStore } from "vuex";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
@@ -384,14 +374,6 @@ export default {
     const { MY } = useMYStore();
     const { getEthnos } = useMYStore();
     // PINIA
-
-
-		// const { showHome, closeEthnos, closeColor, closePar, showRaceScroll } = useShowSettings();
-		// console.log('closeEthnos:', closeEthnos)
-		// const store = useStore();
-
-		// const MY_race = computed(() => MY.race);
-		// const GET_ETHNOS = () => store.commit("MY/GET_ETHNOS");
 
 		watch(() => MY.race, () => {
 			console.log("Заметка обновилась!");
@@ -429,11 +411,12 @@ export default {
 		// ГОТОВ
 		Header,
     RaceCustomStats,
+    RaceCustomSkills,
 		// ГОТОВ
 
 		// НА ОБРАБОТКЕ
 		RaceMenuSettings,
-    RaceCustomSkills,
+    RaceCustomLanguages,
 		// НА ОБРАБОТКЕ
 	},
 
@@ -451,8 +434,6 @@ export default {
 			languages: languages,
 			placeholder: placeholder,
 
-			// race_page: race_page,
-			// main_page: main_page,
 		};
 	},
 
@@ -467,16 +448,6 @@ export default {
 		this.MY.mastery = this.Mastery;
 
 		this.getFunction();
-
-		this.getStatsNumb("ethnos");
-
-		this.getCustomRE("stats");
-		// this.getCustomRE("skills");
-		// this.getCustomRE("languages");
-		this.getStatsNumb("custom_race");
-		this.$watch("MY.custom_race.stats", () => {
-			// console.log("Заметка обновилась!");
-		});
 	},
 
 	computed: {
@@ -484,22 +455,11 @@ export default {
       "stats_Keys",
       // "stats_Activ_Obj_RE",
       // "stats_Pass_Arr_RE",
-      // "stats_Custom_Arr_RE",
+      "languages_Custom_Arr_RE",
       "option_Race_Page_Numb",
 
       "skills_All_RE"
     ]),
-		// ...mapState({
-		// 	MY: state => state.MY.MY,
-		// }),
-
-		// ...mapState("pages", {
-		// 	pages: state => state,
-			// main_page: state => state.main_page,
-			// race_page: state => state.race_page,
-		// }),
-
-		// ...mapGetters("pages", ["Shown_Selection"]),
 
 		Main_Selection() {
 			const obj = this.race_page.shown;
@@ -720,56 +680,6 @@ export default {
 		// 	return arr;
 		// },
 
-		// stats_Keys() {
-		// 	return Object.keys(this.MY.stats);
-		// },
-
-		stats_Activ_Obj() {
-			let i = this.MY.race.stats;
-			let j = this.MY.ethnos.stats;
-			let arr = Object.assign({}, i, j);
-			return arr;
-		},
-
-		Stats_Activ() {
-			return Object.keys(this.stats_Activ_Obj);
-		},
-
-		Stats_Pass() {
-			return Object.keys(this.MY.stats).filter(
-				el => !this.Stats_Activ.includes(el)
-			);
-		},
-
-		stats_Select() {
-			return this.race_page.extra.stats;
-		},
-
-		skills_Activ_Obj() {
-			let i = this.MY.race.skills;
-			let j = this.MY.ethnos.skills;
-			let arr = Object.assign({}, i, j);
-			return arr;
-		},
-
-		Skills_Activ() {
-			return Object.keys(this.skills_Activ_Obj);
-		},
-
-		Skills_Pass() {
-			return Object.keys(this.MY.skills).filter(
-				el => !this.Skills_Activ.includes(el)
-			);
-		},
-
-		skills_Select() {
-			return this.race_page.extra.skills;
-		},
-
-		Skills_All_Chose() {
-			return this.Skills_Activ.concat(this.skills_Select);
-		},
-
 		showSpells() {
 			let race = this.MY.race.spells;
 			let ethnos = this.MY.ethnos.spells;
@@ -785,37 +695,11 @@ export default {
 			this.race_page.shown_humman_lang = false;
 		},
 
-		"MY.race.settings.custom_stats"() {
-			this.getCustomRE("stats");
-		},
-
-		"MY.custom_race.stats": {
-			handler(val, oldVal) {
-				this.getStatsNumb("custom_race");
-			},
-			deep: true,
-		},
-
-		// "MY.race.settings.custom_skills" () {
-		// 	this.getCustomRE("skills");
-		// },
-
-		// "MY.race.settings.custom_languages" () {
-		// 	this.getCustomRE("languages");
-		// },
-
 		"MY.ethnos": "getFunction_2",
 
-		"MY.ethnos.custom_stats"() {
-			this.getCustomRE("stats");
-			this.getStatsNumb("custom_race");
-		},
-
-		// "MY.level": "MY.mastery = Mastery",
 		"MY.level": function () {
 			this.MY.mastery = this.Mastery;
 		},
-		// "race_page.whtch_home": "getHome",
 	},
 
 	methods: {
@@ -825,43 +709,17 @@ export default {
 		},
 
 		getFunction() {
-			// this.getNewEthnos();
-			// this.closeEthnos();
-			// this.closeColor("skin");
-			// this.closeColor("eyes");
-			// this.closeColor("hair");
 			this.getComonColor("skin");
 			this.getComonColor("eyes");
 			this.getComonColor("hair");
-			// this.closePar("stats");
-			// this.closePar("skills");
-			// this.closePar("languages");
-			this.getExtra(this.Stats_Pass, "stats");
-			this.getExtra(this.Skills_Pass, "skills");
 			this.getExtra(this.Languages_Pass, "languages");
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
-			this.getStatsNumb("race");
-
-			// this.getCustomRace("stats");
-			// this.getCustomRace("skills");
-			// this.getCustomRace("languages");
-
-			// this.getCustomRE("stats");
-			// this.getCustomRE("skills");
-			// this.getCustomRE("languages");
 		},
 
 		getFunction_2() {
-			this.getExtra_Ethnos(this.Stats_Pass, "stats");
-			this.getExtra_Ethnos(this.Skills_Pass, "skills");
 			this.getExtra_Ethnos(this.Languages_Pass, "languages");
-			this.getStatsNumb("ethnos");
-
-			// this.getCustomEthnos("stats");
-			// this.getCustomEthnos("skills");
-			// this.getCustomEthnos("languages");
 		},
 
 		getExtra_Ethnos(arr_obj, name) {
@@ -893,36 +751,6 @@ export default {
 			}
 			this.race_page.extra[name] = arr;
 		},
-
-		// getCustomRE(item, name) {
-		// 	const upp_name = name.charAt(0).toUpperCase() + name.slice(1);
-		// 	let arr_free = this[`${upp_name}_Pass`];
-		// 	let arr = [];
-		// 	let custom = this[`${item}_Settings`][`custom_${name}`];
-		// 	if (custom) {
-		// 		let i = custom[0];
-		// 		arr = arr_free.slice(0, i);
-		// 	}
-		// 	return arr;
-		// },
-
-		// getCustomRE(name) {
-		// 	let custom_race = this.getCustomRE("race", name);
-		// 	let custom_ethnos = this.getCustomRE("ethnos", name);
-		// 	let arr = custom_race.concat(custom_ethnos);
-		// 	this.MY.custom_race[name] = arr;
-		// },
-
-		// ...mapMutations("MY", {
-		// 	getNewEthnos: "GET_ETHNOS",
-		// }),
-
-		...mapActions("MY", {
-			getStatsNumb: "getStatsNumb",
-			getCustomRE: "getCustomRE",
-			// getStatsNumb_Custom: "getStatsNumb_Custom",
-			// getNewEthnos: "getNewEthnos",
-		}),
 
 		getComonColor(name) {
 			let select = this.$root.race_page.color_selected[name];
@@ -976,8 +804,8 @@ export default {
 
 		getProfArr(obj, kay) {
 			let arr = [];
-			if ((obj || {})[kay]) {
-				arr = Object.values(obj[kay]);
+			if (obj?.[kay]) {
+        arr = obj[kay].map(x => x.name)
 			}
 			return arr;
 		},
@@ -985,7 +813,11 @@ export default {
 		getProf_REX(kay) {
 			let i = this.getProfArr(this.MY.race.proficiencies, kay);
 			let j = this.getProfArr(this.MY.ethnos.proficiencies, kay);
-			let k = this.getProfArr(this.race_page.extra, kay);
+      let k = []
+      if (kay === "languages") {
+			k = this[`${kay}_Custom_Arr_RE`];
+    }
+			// let k = this.getProfArr(this.race_page.extra, kay);
 			return i.concat(j).concat(k);
 		},
 
