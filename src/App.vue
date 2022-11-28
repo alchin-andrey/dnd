@@ -120,20 +120,7 @@
 
 		<!-- Навыки -->
 		<my-selection-box :shown="race_page.shown.skills">
-			<my-card-text text="skills_details"></my-card-text>
-			<my-selection-card
-				v-for="(val, name, i) in MY.skills"
-				:key="name"
-				@click="
-					getExtraActiv(false, skills_Select.includes(name), name, 'skills')
-				"
-				:class="{ skill_marg: getSkillMarg(i, MY.skills, name) }"
-				:active_boll_link="skills_Select.includes(name)"
-			>
-				<my-attribute :title="name" plus :numb="Skill_Mastery" :icon="val.mod">
-				</my-attribute>
-				<my-card-text title="" :text="`${name}_details`"></my-card-text>
-			</my-selection-card>
+      <RaceCustomSkills />
 		</my-selection-box>
 		<!-- Навыки -->
 
@@ -241,9 +228,9 @@
 		<!-- stats -->
 
 		<!-- attributes_race -->
-		<my-wrapper hr v-if="Skills_All_Chose.length !== 0">
+		<my-wrapper hr v-if="skills_All_RE.length !== 0">
 			<my-attribute
-				v-for="name in Skills_All_Chose"
+				v-for="name in skills_All_RE"
 				:key="name"
 				:title="name"
 				plus
@@ -376,6 +363,7 @@ import WelcomeBanner from "@/components/WelcomeBanner.vue";
 import Header from "@/components/pinia/Header.vue";
 import RaceMenuSettings from "@/components/pinia/RaceMenuSettings.vue";
 import RaceCustomStats from "@/components/pinia/RaceCustomStats.vue";
+import RaceCustomSkills from "@/components/pinia/RaceCustomSkills.vue";
 // PINIA
 
 // store components
@@ -440,11 +428,12 @@ export default {
 
 		// ГОТОВ
 		Header,
+    RaceCustomStats,
 		// ГОТОВ
 
 		// НА ОБРАБОТКЕ
 		RaceMenuSettings,
-		RaceCustomStats,
+    RaceCustomSkills,
 		// НА ОБРАБОТКЕ
 	},
 
@@ -497,6 +486,8 @@ export default {
       // "stats_Pass_Arr_RE",
       // "stats_Custom_Arr_RE",
       "option_Race_Page_Numb",
+
+      "skills_All_RE"
     ]),
 		// ...mapState({
 		// 	MY: state => state.MY.MY,

@@ -8,29 +8,33 @@ export const useMYStore = defineStore({
 		MY: MY,
 	}),
 	getters: {
-		race_Settings(state) {
-			return state.MY.race.settings;
-		},
+		// race_Settings(state) {
+		// 	return state.MY.race.settings;
+		// },
 
-		ethnos_Settings(state) {
-			return state.MY.ethnos;
-		},
+		// ethnos_Settings(state) {
+		// 	return state.MY.ethnos;
+		// },
 
-		// SECTION //^ STATS GETTERS
-		MY_Stats(state) {
-			return state.MY.stats;
-		},
+		// ANCHOR //^ STATS GETTERS
+		// MY_Stats(state) {
+		// 	return state.MY.stats;
+		// },
 
-		MY_Race_Stats(state) {
-			return state.MY.race.stats;
-		},
+		// MY_Race_Stats(state) {
+		// 	return state.MY.race.stats;
+		// },
 
-		MY_Etnos_Stats(state) {
-			return state.MY.ethnos.stats;
-		},
+		// MY_Etnos_Stats(state) {
+		// 	return state.MY.ethnos.stats;
+		// },
 
 		stats_Keys(state) {
 			return Object.keys(state.MY.stats);
+		},
+
+    skills_Keys(state) {
+			return Object.keys(state.MY.skills);
 		},
 
 		stats_Activ_Obj_RE(state) {
@@ -39,8 +43,18 @@ export const useMYStore = defineStore({
 			return Object.assign({}, i, j);
 		},
 
+    skills_Activ_Obj_RE(state) {
+			let i = state.MY.race.skills;
+			let j = state.MY.ethnos.skills;
+			return Object.assign({}, i, j);
+		},
+
 		stats_Activ_Arr_RE() {
 			return Object.keys(this.stats_Activ_Obj_RE);
+		},
+
+    skills_Activ_Arr_RE() {
+			return Object.keys(this.skills_Activ_Obj_RE);
 		},
 
 		stats_Pass_Arr_RE(state) {
@@ -49,7 +63,19 @@ export const useMYStore = defineStore({
 			);
 		},
 
-    // SECTION //^ stats_Custom GETTERS
+    skills_Pass_Arr_RE(state) {
+			return this.skills_Keys.filter(
+				el => !this.skills_Activ_Arr_RE.includes(el)
+			);
+		},
+
+    skills_All_RE() {
+			return this.skills_Activ_Arr_RE.concat(this.skills_Custom_Arr_RE);
+		},
+
+    // ANCHOR //TODO SKILL GETTERS
+
+    // ANCHOR //^ stats_Custom GETTERS
     // stats_Custom_RE_Quant(state) {
 		// 	let i = 0;
 		// 	const race_custom = state.MY.race.settings.custom_stats;
@@ -114,9 +140,9 @@ export const useMYStore = defineStore({
     //   const custom = state.stats_Custom_RE_Numb(name);
     //   return RE + custom;
     // },
-    // SECTION //^ stats_Custom GETTERS
+    // ANCHOR //^ stats_Custom GETTERS
 
-    // SECTION //^ option_Custom (name: "stats")
+    // ANCHOR //^ option_Custom (name: "stats")
     option_Custom_RE_Quant: (state) => (name) => {
 			let i = 0;
 			const race_custom = state.MY.race.settings[`custom_${name}`];
@@ -186,6 +212,10 @@ export const useMYStore = defineStore({
       return this.option_Custom_Arr_RE('stats');
     },
 
+    skills_Custom_Arr_RE() {
+      return this.option_Custom_Arr_RE('skills');
+    },
+
     stats_Race_Page_Numb: (state) => (name) => {
       return state.option_Race_Page_Numb('stats', name);
     },
@@ -224,9 +254,9 @@ export const useMYStore = defineStore({
 			this.MY.custom_race[name] = arr;
 		},
 
-		getCustomActi_Pinia(item, name) {
+		getCustomSelect_RE(item, name) {
 			const selekt = this.option_Custom_Arr_RE(item);
-			const active = this.stats_Activ_Arr_RE.includes(name);
+			const active = this[`${item}_Activ_Arr_RE`].includes(name);
 			const passive = selekt.includes(name);
 			if (active || passive) {
 				return null;
@@ -238,6 +268,6 @@ export const useMYStore = defineStore({
 			}
 		},
 
-		// SECTION //^ STATS ACTIONS
+		// ANCHOR //^ STATS ACTIONS
 	},
 });

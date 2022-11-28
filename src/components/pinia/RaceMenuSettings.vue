@@ -20,14 +20,14 @@
 				@click="showSettings__Race('stats')"
 				:active="race_page.shown.stats"
 				title="stats"
-				:type_arr="option_Custom_Arr_RE('stats')"
+				:type_arr="stats_Custom_Arr_RE"
 			></my-selection>
 			<my-selection
 				v-if="MY.race.settings.custom_skills"
 				@click="showSettings__Race('skills')"
 				:active="race_page.shown.skills"
 				title="skills"
-				:type_arr="race_page.extra.skills"
+				:type_arr="skills_Custom_Arr_RE"
 			>
 			</my-selection>
 			<my-selection
@@ -115,7 +115,11 @@ export default {
 	computed: {
 		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY"]),
-    ...mapState(useMYStore, ["option_Custom_Arr_RE"]),
+    ...mapState(useMYStore, [
+      "option_Custom_Arr_RE",
+      "stats_Custom_Arr_RE",
+      "skills_Custom_Arr_RE",
+    ]),
 		// ...mapGetters("pages", ["shown_Home"]),
 
     Castom_Race_Settings_Visib() {
