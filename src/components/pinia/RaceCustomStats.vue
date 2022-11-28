@@ -40,25 +40,20 @@ import { usePagesStore } from "@/stores/pages/PagesStore";
 export default {
 	name: "RaceCustomStats",
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
-    ...mapState(usePagesStore, ["race_page"]),
-
-    ...mapState(useMYStore, [
-      "stats_Keys",
-      // "stats_Activ_Obj_RE",
-      "stats_Pass_Arr_RE",
-      "stats_Custom_Arr_RE",
-      "stats_Race_Page_Numb",
-      // "option_Race_Page_Numb",
-      // "option_Custom_Arr_RE",
-    ]),
+		// STORES
+		...mapState(useMYStore, ["MY"]),
+		...mapState(usePagesStore, ["race_page"]),
+		// GETTERS
+		...mapState(useMYStore, [
+			"stats_Keys",
+			"stats_Pass_Arr_RE",
+			"stats_Custom_Arr_RE",
+			"stats_Race_Page_Numb",
+		]),
 	},
 
 	methods: {
-		...mapActions(useMYStore, [
-      "getCustomSelect_RE",
-      "getStatsRacePageNumb"
-    ]),
+		...mapActions(useMYStore, ["getCustomSelect_RE", "getStatsRacePageNumb"]),
 	},
 };
 </script>

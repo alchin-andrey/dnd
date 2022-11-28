@@ -411,12 +411,12 @@ export default {
 		// ГОТОВ
 		Header,
     RaceCustomStats,
-    RaceCustomSkills,
+    RaceCustomSkills, //TODO: Перенести Skill_Mastery
+    RaceCustomLanguages,
 		// ГОТОВ
 
 		// НА ОБРАБОТКЕ
 		RaceMenuSettings,
-    RaceCustomLanguages,
 		// НА ОБРАБОТКЕ
 	},
 
