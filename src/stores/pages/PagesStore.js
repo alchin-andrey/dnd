@@ -44,12 +44,6 @@ export const usePagesStore = defineStore({
         eyes: null,
       },
   
-      extra: {
-        stats: null,
-        skills: null,
-        languages: null,
-      },
-  
       height_kof: 0.5,
       weight_kof: 0.5,
       age_kof: 0.5,

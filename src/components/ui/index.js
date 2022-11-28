@@ -1,5 +1,14 @@
 import {Emoji} from "emoji-mart-vue-fast/src";
 
+
+// PINIA
+import MyColorBlock from "@/components/ui/pinia_ui/MyColorBlock.vue";
+import MyCardTextColor from "@/components/ui/pinia_ui/MyCardTextColor.vue";
+import MyColorSelect from "@/components/ui/pinia_ui/MyColorSelect.vue";
+
+// PINIA
+
+
 import MySelection from "@/components/ui/MySelection.vue";
 import MyController from "@/components/ui/MyController.vue";
 import MySlider from "@/components/ui/MySlider.vue";
@@ -13,10 +22,7 @@ import MySelectionBox from "@/components/ui/MySelectionBox.vue";
 import MySelectionCard from "@/components/ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/MyCardText.vue";
 import MySpellText from "@/components/ui/MySpellText.vue";
-import MyColorBlock from "@/components/ui/MyColorBlock.vue";
 import MyWrapper from "@/components/ui/MyWrapper.vue";
-import MyCardTextColor from "@/components/ui/MyCardTextColor.vue";
-import MyColorSelect from "@/components/ui/MyColorSelect.vue";
 import RaceBody from "@/components/ui/RaceBody.vue";
 import MySkale from "@/components/ui/MySkale.vue";
 import MySizeGrowth from "@/components/ui/MySizeGrowth.vue";
@@ -35,6 +41,11 @@ import MySpellMain from "@/components/ui/MySpellMain.vue";
 
 export default [
   Emoji,
+
+  MyColorBlock,
+  MyColorSelect,
+  MyCardTextColor,
+
   
   MySelection,
   MyController,
@@ -49,10 +60,7 @@ export default [
   MySelectionCard,
   MyCardText,
   MySpellText,
-  MyColorBlock,
   MyWrapper,
-  MyCardTextColor,
-  MyColorSelect,
   RaceBody,
   MySkale,
   MySizeGrowth,
