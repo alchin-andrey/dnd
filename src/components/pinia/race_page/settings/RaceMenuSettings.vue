@@ -16,14 +16,14 @@
 			v-if="custom_Race_Settings_Visib"
 		>
 			<my-selection
-				v-if="stats_Custom_Arr_RE"
+				v-if="!stats_Custom_Arr_RE.length == 0"
 				@click="showSettings__Race('stats')"
 				:active="race_page.shown.stats"
 				title="stats"
 				:type_arr="stats_Custom_Arr_RE"
 			></my-selection>
 			<my-selection
-				v-if="skills_Custom_Arr_RE"
+				v-if="!skills_Custom_Arr_RE.length == 0"
 				@click="showSettings__Race('skills')"
 				:active="race_page.shown.skills"
 				title="skills"
@@ -31,7 +31,7 @@
 			>
 			</my-selection>
 			<my-selection
-				v-if="languages_Custom_Arr_RE"
+				v-if="!languages_Custom_Arr_RE.length == 0"
 				@click="showSettings__Race('languages')"
 				:active="race_page.shown.languages"
 				title="languages"
@@ -116,9 +116,9 @@ export default {
     ]),
 
     custom_Race_Settings_Visib() {
-      return this.stats_Custom_Arr_RE ||
-			this.skills_Custom_Arr_RE ||
-      this.languages_Custom_Arr_RE;
+      return !this.stats_Custom_Arr_RE.length == 0 ||
+			!this.skills_Custom_Arr_RE.length == 0 ||
+      !this.languages_Custom_Arr_RE.length == 0;
 		},
 
 		Race_Set_Obj() {
