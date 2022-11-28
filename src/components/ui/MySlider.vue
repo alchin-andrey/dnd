@@ -22,13 +22,13 @@
   <div class="delimiter"></div>
 </template>
 
-<script setup>
-import { computed } from "vue";
-import { useStore } from "vuex";
-const props = defineProps({
-  numb: {
+<script>
+export default {
+  name: "MySlider",
+  props: {
+    numb: {
       type: String,
-      default: "!!-- page number --!!",
+      default: null,
     },
     title: {
       type: String,
@@ -46,61 +46,15 @@ const props = defineProps({
       type: Array,
       default: [],
     },
-})
-
-const store = useStore();
-
-// const t = (name) => computed(() => store.getters["dic/t"](name))
-
-function t(name) {
-  const tr = computed(() => store.getters["dic/t"](name))
-  return tr.value
-} 
-
-
-const t_Title = computed(() => t(props.title));
-const t_Type = computed(() => t(props.type.name));
-
-// const t_Title = t(props.title);
-// const t_Type = t(props.type.name);
-
-
-
-</script>
-
-<script>
-export default {
-  name: "MySlider",
-  // props: {
-  //   numb: {
-  //     type: String,
-  //     default: null,
-  //   },
-  //   title: {
-  //     type: String,
-  //     default: null,
-  //   },
-  //   type: {
-  //     type: Object,
-  //     default: {},
-  //   },
-  //   arr: {
-  //     type: Array,
-  //     default: [],
-  //   },
-  //   arr_keys: {
-  //     type: Array,
-  //     default: [],
-  //   },
-  // },
+  },
 
   computed: {
-    // t_Title() {
-    //   return this.t(this.title);
-    // },
-    // t_Type() {
-    //   return this.t(this.type.name);
-    // },
+    t_Title() {
+      return this.t(this.title);
+    },
+    t_Type() {
+      return this.t(this.type.name);
+    },
 
   },
   methods: {

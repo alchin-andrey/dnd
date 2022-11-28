@@ -1,16 +1,13 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store';
 import components from "@/components/ui";
 import directives from "@/directives";
 import VueClipboard from "vue3-clipboard";
 
 import myTranslation from "@/plagins/myTranslation.js";
 import EmojiChenge from "@/plagins/EmojiChenge.js";
-import { createPinia } from 'pinia'
-
-// import genders from "@/assets/catalog/base_data/genders.js";
+import { createPinia } from 'pinia';
 
 
 const pinia = createPinia();
@@ -25,10 +22,7 @@ app.use(VueClipboard, {
 });
 app.use(myTranslation);
 app.use(EmojiChenge);
-app.use(store);
 app.use(router);
-// app.use(myTranslation);
-// app.use(EmojiChenge);
 
 components.forEach(component => {
     app.component(component.name, component);
