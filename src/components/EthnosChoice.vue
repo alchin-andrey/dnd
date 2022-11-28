@@ -1,9 +1,9 @@
 <template>
 	<div class="ethnos_attributes">
 		<!-- Этнос_stats + qualities -->
-		<my-wrapper v-if="$root.MY.race.stats || $root.MY.race.qualities">
+		<my-wrapper v-if="MY.race.stats || MY.race.qualities">
 			<my-attribute
-				v-for="(val, name) in $root.MY.race.stats"
+				v-for="(val, name) in MY.race.stats"
 				:key="name"
 				:title="name"
 				:type="`${name}_base`"
@@ -13,7 +13,7 @@
 			>
 			</my-attribute>
 			<my-attribute
-				v-for="(val, name) in $root.MY.race.qualities"
+				v-for="(val, name) in MY.race.qualities"
 				:key="name"
 				:title="name"
 				:numb="val"
@@ -25,9 +25,9 @@
 		<!-- Этнос_stats + qualities -->
 
 		<!-- Этнос_proficiencies -->
-		<my-wrapper v-if="$root.MY.race.proficiencies">
+		<my-wrapper v-if="MY.race.proficiencies">
 			<my-inventory
-				v-for="(val, name) in $root.MY.race.proficiencies"
+				v-for="(val, name) in MY.race.proficiencies"
 				:key="name"
 				:title="name"
 				:item="getProf_RX(val, name)"
@@ -37,9 +37,9 @@
 		<!-- Этнос_proficiencies -->
 
 		<!-- Этнос_fines -->
-		<my-wrapper v-if="$root.MY.race.fines" gap_8>
+		<my-wrapper v-if="MY.race.fines" gap_8>
 			<my-fines
-				v-for="item in $root.MY.race.fines"
+				v-for="item in MY.race.fines"
 				:key="item"
 				:icon="item.type"
 				:title="item.keyword"
@@ -50,7 +50,7 @@
 		<!-- Этнос_spells -->
 		<my-wrapper v-if="showRaceSpells" gap_26>
 			<my-spell-text
-				v-for="item in this.$root.MY.race.spells"
+				v-for="item in MY.race.spells"
 				:key="item"
 				:lvl="item.level"
 				:spell="item.spell"
@@ -70,7 +70,6 @@ import EthnosCard from "@/components/EthnosCard.vue";
 
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
 export default {
 	name: "EthnosChoice",
 	components: {
@@ -78,15 +77,15 @@ export default {
 	},
 
 	computed: {
+    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["languages_Custom_Arr_RE",]),
+
 		showRaceSpells() {
-			let spells = this.$root.MY.race.spells;
-			let lvl = this.$root.MY.level;
+			let spells = this.MY.race.spells;
+			let lvl = this.MY.level;
 			let spells_lvl = ((spells || {})[0] || {}).level <= lvl
 			return spells && spells_lvl;
 		},
-    ...mapState(useMYStore, [
-			"languages_Custom_Arr_RE",
-		]),
 	},
 
 	methods: {
@@ -99,21 +98,18 @@ export default {
 		},
 
 		getProf_RX(obj, kay) {
-			let i = this.getProfArr(this.$root.MY.race.proficiencies, kay);
+			let i = this.getProfArr(this.MY.race.proficiencies, kay);
 			let k = []
-			let ethnos_custom = (this.$root.MY.ethnos || {})[`custom_${kay}`]
-			// console.log('ethnos_custom:', kay, ethnos_custom)
+			let ethnos_custom = (this.MY.ethnos || {})[`custom_${kay}`]
 			if (!ethnos_custom && kay === "languages" ) {
 				k = this[`${kay}_Custom_Arr_RE`];
 			}
-
 			return i.concat(k);
 		},
 	}
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .ethnos_attributes {
 	color: rgba(255, 255, 255, 0.2);

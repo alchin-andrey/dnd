@@ -1,11 +1,11 @@
 <template>
 	<div class="ethnos_cards_menu">
 		<my-selection-card
-			v-for="ethnos in $root.All_Ethnos_Obj"
+			v-for="ethnos in MY.race.settings.ethnos"
 			:key="ethnos" 
       no_blur
 			@click="ethnosName(ethnos)"
-			:class="{ selection_card_active: $root.MY.ethnos.name === ethnos.name }"
+			:class="{ selection_card_active: MY.ethnos.name === ethnos.name }"
 		>
 			<div
 				class="ethnos_char_back"
@@ -13,11 +13,9 @@
           'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
         }"
 			>
-				<race-body body_part="skin" :ethnos_name="ethnos.name"></race-body>
-
-				<race-body body_part="hair" :ethnos_name="ethnos.name"></race-body>
-
-				<race-body body_part="eyes" :ethnos_name="ethnos.name"></race-body>
+				<RaceBody body_part="skin" :ethnos_name="ethnos.name" />
+				<RaceBody body_part="hair" :ethnos_name="ethnos.name" />
+				<RaceBody body_part="eyes" :ethnos_name="ethnos.name" />
 			</div>
 
 			<!-- Этнос_Карточка_stats + qualities -->
@@ -101,18 +99,16 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "EthnosCard",
 	computed: {
-
-		etnos_Prof() {
-
-
-		},
+    ...mapState(useMYStore, ["MY"]),
 	},
 	methods: {
 		hpBonus(increm_1, increm_2) {
-			let level = Math.ceil(this.$root.MY.level / increm_1);
+			let level = Math.ceil(this.MY.level / increm_1);
 			return level * increm_2;
 		},
 		getProfObjItem(obj, kay) {
@@ -131,11 +127,11 @@ export default {
 		},
 
 		ethnosName(obj) {
-			this.$root.MY.ethnos = obj;
+			this.MY.ethnos = obj;
 		},
 
 		showEthnosSpells(spells) {
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			let spells_lvl = ((spells || {})[0] || {}).level <= lvl
 			return spells && spells_lvl;
 		},
@@ -143,7 +139,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .ethnos_cards_menu {
 	display: flex;

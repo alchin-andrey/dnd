@@ -13,13 +13,10 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
   name: "MyRangeSize",
-  data() {
-    return {
-      // skale_arr: [0, 5, 10, 15, 20],
-    }
-  },
   props: {
     arr: {
       type: Array,
@@ -39,9 +36,8 @@ export default {
     },
   },
   computed: {
-    Race_Set_Obj() {
-      return this.$root.MY.race.settings;
-    },
+    ...mapState(useMYStore, ["MY"]),
+
     Target_Range() {
       if (this.lvl) {
         return 'level';
@@ -59,23 +55,23 @@ export default {
       if (this.lvl) {
         return this.min_lvl;
       } else {
-        return this.Race_Set_Obj[this.Target_Range].min;
+        return this.MY.race.settings[this.Target_Range].min;
       } 
     },
     Level_Arr() {
       return [0, 5, 10, 15, 20]
     },
     Weight_Arr() {
-      let min = this.Race_Set_Obj.weight.min
-      let max = this.Race_Set_Obj.weight.max
+      let min = this.MY.race.settings.weight.min
+      let max = this.MY.race.settings.weight.max
       return [0, min, max]
     },
     Age_Arr() {
-      let baby = this.Race_Set_Obj.age.min
-      let young = this.Race_Set_Obj.age.young
-      let mature = this.Race_Set_Obj.age.mature
-      let old = this.Race_Set_Obj.age.old
-      let oldest = this.Race_Set_Obj.age.max
+      let baby = this.MY.race.settings.age.min
+      let young = this.MY.race.settings.age.young
+      let mature = this.MY.race.settings.age.mature
+      let old = this.MY.race.settings.age.old
+      let oldest = this.MY.race.settings.age.max
       return [0, baby, young, mature, old, oldest]
     },
     Skale_Arr() {
@@ -97,9 +93,9 @@ export default {
     },
     getSize(numb) {
       if (numb >= this.Min_Range) {
-        this.$root.MY[this.Target_Range] = numb
+        this.MY[this.Target_Range] = numb
       } else {
-        this.$root.MY[this.Target_Range] = this.Min_Range
+        this.MY[this.Target_Range] = this.Min_Range
       }
     }
   }

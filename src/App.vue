@@ -476,8 +476,8 @@ export default {
 				kof = 3.1;
 			}
 			if (
-				this.$root.race_page.shown.eyes_color ||
-				this.$root.race_page.shown.hair_color
+				this.race_page.shown.eyes_color ||
+				this.race_page.shown.hair_color
 			) {
 				return `calc((100% / 210 * ${mein_height})*${kof})`;
 			} else {

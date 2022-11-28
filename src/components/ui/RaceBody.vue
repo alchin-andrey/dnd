@@ -22,6 +22,8 @@
 <script>
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 import { mapState } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useColorStore } from "@/stores/modules/ColorStore";
 export default {
   name: "RaceBody",
@@ -42,27 +44,33 @@ export default {
     }
   },
   computed: {
+    ...mapState(useMYStore, ["MY"]),
+    ...mapState(usePagesStore, ["race_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
 
-    growth() {
-      if (this.$root.MY.height === null) {
-      let max_height = this.$root.MY.race.settings.height.max
-      let min_height = this.$root.MY.race.settings.height.min
+    All_Ethnos_Obj() {
+			return this.MY.race.settings.ethnos;
+		},
+
+    growth_Char() {
+      if (this.MY.height === null) {
+      let max_height = this.MY.race.settings.height.max
+      let min_height = this.MY.race.settings.height.min
         return (min_height + max_height) / 2;
       } else {
-        return this.$root.MY.height;
+        return this.MY.height;
       }
     },
 
     Hower() {
-      return this.$root.race_page[this.hower_link]
+      return this.race_page[this.hower_link]
     },
 
     Char_Ethnos() {
       if(this.ethnos_name) {
-        return this.$root.MY.race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
+        return this.MY.race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
       } else {
-        return this.$root.MY.race.noimg_ethnos ? "" : `/${this.$root.MY.ethnos.name}`;
+        return this.MY.race.noimg_ethnos ? "" : `/${this.MY.ethnos.name}`;
       }
     },
 
@@ -70,33 +78,18 @@ export default {
       return this.color_Char_Сommon(this.body_part)
     },
 
-    // color_Char_Body() {
-    //   console.log('color_Char_Body:')
-
-    //   if (
-    //     this.$root.MY.color_selected[this.body_part] === null &&
-    //     this.$root.MY.ethnos.name === "common"
-    //   ) {
-    //     return this.$root.MY.race.settings.color[this.body_part][0];
-    //   } else if (this.$root.MY.color_selected[this.body_part] === null) {
-    //     return this.$root.MY.ethnos.color[this.body_part][0];
-    //   } else {
-    //     return this.$root.MY.color_selected[this.body_part];
-    //   }
-    // },
-
     Char_Img_Numb() {
       if(this.ethnos_name) {
-        return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
+        return this.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
       } else {
         return this.Hower ? this.Hower.img : this.color_Char_Body.img;
       }
     },
 
     Char_Img() {
-      let race = this.$root.MY.race.name;
+      let race = this.MY.race.name;
       let ethnos = this.Char_Ethnos;
-      let phisiological = this.$root.MY.gender.phisiological;
+      let phisiological = this.MY.gender.phisiological;
       let img = this.Char_Img_Numb;
       let sex;
       let body = this.body_part;
@@ -119,19 +112,19 @@ export default {
 
     Calc_Img() {
       if (
-        this.$root.race_page.shown.skin_color ||
-        this.$root.race_page.shown.eyes_color ||
-        this.$root.race_page.shown.hair_color
+        this.race_page.shown.skin_color ||
+        this.race_page.shown.eyes_color ||
+        this.race_page.shown.hair_color
       ) {
         return `100%`;
       } else {
-        return `calc(100% / 210 * ${this.growth})`;
+        return `calc(100% / 210 * ${this.growth_Char})`;
       }
     },
 
     Char_Hight() {
       if(this.ethnos_name) {
-        return `${this.$root.MY.race.ethnos_preview[0]}px`;
+        return `${this.MY.race.ethnos_preview[0]}px`;
       } else {
         return this.Calc_Img;
       }
@@ -139,7 +132,7 @@ export default {
 
     Char_Left() {
       if(this.ethnos_name) {
-        return `${this.$root.MY.race.ethnos_preview[1]}px`;
+        return `${this.MY.race.ethnos_preview[1]}px`;
       } else {
         return `50%`;
       }
@@ -149,7 +142,7 @@ export default {
   methods: {
     getCharColorHex(hower) {
       if (this.ethnos_name && !this.Char_Img) {
-        return this.$root.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].hex;
+        return this.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].hex;
       } else {
         let hex = hower ? hower.hex : this.color_Char_Body.hex;
       return hex;
