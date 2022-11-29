@@ -48,7 +48,7 @@
 		</my-wrapper>
 		<!-- Этнос_fines -->
 		<!-- Этнос_spells -->
-		<my-wrapper v-if="showRaceSpells" gap_26>
+		<my-wrapper v-if="show_Race_Spells" gap_26>
 			<my-spell-text
 				v-for="item in MY.race.spells"
 				:key="item"
@@ -80,7 +80,7 @@ export default {
     ...mapState(useMYStore, ["MY"]),
     ...mapState(useMYStore, ["languages_Custom_Arr_RE",]),
 
-		showRaceSpells() {
+		show_Race_Spells() {
 			let spells = this.MY.race.spells;
 			let lvl = this.MY.level;
 			let spells_lvl = ((spells || {})[0] || {}).level <= lvl

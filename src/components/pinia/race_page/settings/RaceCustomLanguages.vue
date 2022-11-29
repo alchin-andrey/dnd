@@ -2,7 +2,7 @@
 			<my-selection-card
 				v-for="lang in languages_Arr_Not_Humman"
 				:key="lang"
-				@click="getCustomSelect_RE('languages', lang)"
+				@click="getCustomSelect_Languages_RE(lang)"
 				:active_boll_link="languages_Custom_Arr_RE.includes(lang)"
 				:basic="languages_Activ_Arr_RE.includes(lang)"
 			>
@@ -25,7 +25,7 @@
 					<my-selection-card
 						v-for="lang in languages_Arr_Humman"
 						:key="lang"
-						@click="getCustomSelect_RE('languages', lang)"
+						@click="getCustomSelect_Languages_RE(lang)"
 						:active_boll_link="languages_Custom_Arr_RE.includes(lang)"
 						:basic="languages_Activ_Arr_RE.includes(lang)"
 					>
@@ -77,7 +77,7 @@ export default {
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_RE"]),
+		...mapActions(useMYStore, ["getCustomSelect_Languages_RE"]),
     ...mapActions(usePagesStore, ["showRaceScroll"]),
 	},
 };

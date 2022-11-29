@@ -3,7 +3,7 @@
 	<my-selection-card
 		v-for="(name, i) in skills_Keys"
 		:key="name"
-		@click="getCustomSelect_RE('skills', name)"
+		@click="getCustomSelect_Skills_RE(name)"
 		:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
 		:active_boll_link="skills_Custom_Arr_RE.includes(name)"
 	>
@@ -37,7 +37,7 @@ export default {
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_RE"]),
+		...mapActions(useMYStore, ["getCustomSelect_Skills_RE"]),
 
 		getSkillMarg(i, name) {
 			if (i === 0) {

@@ -164,7 +164,7 @@
 				:title="name"
 				:type="`${name}_base`"
 				plus
-				:numb="option_Race_Page_Numb('stats', name)"
+				:numb="stats_Race_Page_Numb(name)"
 				:icon="name"
 			>
 			</my-attribute>
@@ -399,7 +399,7 @@ export default {
     ...mapState(useMYStore, [
       "stats_Keys",
       "languages_Custom_Arr_RE",
-      "option_Race_Page_Numb",
+      "stats_Race_Page_Numb",
       "skills_All_RE"
     ]),
 

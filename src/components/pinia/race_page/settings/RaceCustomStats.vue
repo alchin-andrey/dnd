@@ -18,7 +18,7 @@
 	<my-selection-card
 		v-for="name in stats_Pass_Arr_RE"
 		:key="name"
-		@click="getCustomSelect_RE('stats', name)"
+		@click="getCustomSelect_Stats_RE(name)"
 		:active_boll_link="stats_Custom_Arr_RE.includes(name)"
 	>
 		<my-attribute
@@ -53,7 +53,7 @@ export default {
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_RE", "getStatsRacePageNumb"]),
+		...mapActions(useMYStore, ["getCustomSelect_Stats_RE"]),
 	},
 };
 </script>
