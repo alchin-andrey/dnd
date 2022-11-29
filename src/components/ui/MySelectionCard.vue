@@ -132,12 +132,12 @@ export default {
 
 .basic {
   border: 2px solid rgba(255, 255, 255, 0.2);
-  padding: 14px !important;
+  padding: 14px;
 }
 
 .selection_card_active {
   border: 2px solid #ffffff;
-  padding: 14px !important;
+  padding: 14px;
 }
 
 .link {

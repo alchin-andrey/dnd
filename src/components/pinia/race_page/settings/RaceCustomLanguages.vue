@@ -84,6 +84,18 @@ export default {
 </script>
 
 <style scoped>
+.flex_gap-8 {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.skroll_list {
+	position: relative;
+	padding-left: 16px;
+	height: 18px;
+	margin: 34px 0;
+	cursor: pointer;
+}
 .skroll_list_closed::after {
 	position: absolute;
 	content: url(@/assets/img/icon/arrow_down_small.svg);

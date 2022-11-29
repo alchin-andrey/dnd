@@ -5,7 +5,7 @@
 			:key="ethnos"
 			no_blur
 			@click="getEthnosObj(ethnos)"
-			:class="{ selection_card_active: MY.ethnos.name === ethnos.name }"
+      :active_boll_link="MY.ethnos.name === ethnos.name"
 		>
 			<div
 				class="ethnos_char_back"
