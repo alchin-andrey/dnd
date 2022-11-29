@@ -23,7 +23,7 @@ import MySelectionCard from "@/components/ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/MyCardText.vue";
 import MySpellText from "@/components/ui/MySpellText.vue";
 import MyWrapper from "@/components/ui/MyWrapper.vue";
-import RaceBody from "@/components/ui/RaceBody.vue";
+import RaceBody from "@/components/ui/pinia_ui/RaceBody.vue";
 import MySkale from "@/components/ui/pinia_ui/MySkale.vue";
 import MySizeGrowth from "@/components/ui/pinia_ui/MySizeGrowth.vue";
 import MyRange from "@/components/ui/pinia_ui/MyRange.vue";

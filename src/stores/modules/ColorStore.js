@@ -27,15 +27,15 @@ export const useColorStore = defineStore({
     },
 
     skin_color_Char_Body() {
-      return this.color_Char_Сommon("skin")
+      return this.color_Char_Сommon("skin");
     },
 
     eyes_color_Char_Body() {
-      return this.color_Char_Сommon("eyes")
+      return this.color_Char_Сommon("eyes");
     },
 
     hair_color_Char_Body() {
-      return this.color_Char_Сommon("hair")
+      return this.color_Char_Сommon("hair");
     },
 
 	},

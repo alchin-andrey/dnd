@@ -1,18 +1,18 @@
 <template>
   <img
-        v-if="Char_Img"
+        v-if="img_Char"
         :style="{ 
-          height: Char_Hight,
-          left: Char_Left 
+          height: hight_Char,
+          left: left_Char 
           }"
-        :src="Char_Img"
+        :src="img_Char"
         :alt="body_part"
       />
 
       <svg
-        v-if="!Char_Img"
-        :fill="getCharColorHex(Hower)"
-        :height="Calc_Img"
+        v-if="!img_Char"
+        :fill="placeholder_Color_Hex"
+        :height="calc_Img"
         viewBox="0 0 197 400"
         xmlns="http://www.w3.org/2000/svg"
         v-html="placeholder[body_part]"
@@ -48,10 +48,6 @@ export default {
     ...mapState(usePagesStore, ["race_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
 
-    All_Ethnos_Obj() {
-			return this.MY.race.settings.ethnos;
-		},
-
     growth_Char() {
       if (this.MY.height === null) {
       let max_height = this.MY.race.settings.height.max
@@ -66,7 +62,7 @@ export default {
       return this.race_page[this.hower_link]
     },
 
-    Char_Ethnos() {
+    ethnos_Char() {
       if(this.ethnos_name) {
         return this.MY.race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
       } else {
@@ -78,19 +74,19 @@ export default {
       return this.color_Char_Сommon(this.body_part)
     },
 
-    Char_Img_Numb() {
+    img_Char_Numb() {
       if(this.ethnos_name) {
-        return this.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].img;
+        return this.MY.race.settings.ethnos[this.ethnos_name].color[this.body_part][0].img;
       } else {
         return this.Hower ? this.Hower.img : this.color_Char_Body.img;
       }
     },
 
-    Char_Img() {
+    img_Char() {
       let race = this.MY.race.name;
-      let ethnos = this.Char_Ethnos;
+      let ethnos = this.ethnos_Char;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.Char_Img_Numb;
+      let img = this.img_Char_Numb;
       let sex;
       let body = this.body_part;
       let result;
@@ -110,7 +106,7 @@ export default {
       return result;
     },
 
-    Calc_Img() {
+    calc_Img() {
       if (
         this.race_page.shown.skin_color ||
         this.race_page.shown.eyes_color ||
@@ -122,34 +118,32 @@ export default {
       }
     },
 
-    Char_Hight() {
+    hight_Char() {
       if(this.ethnos_name) {
         return `${this.MY.race.ethnos_preview[0]}px`;
       } else {
-        return this.Calc_Img;
+        return this.calc_Img;
       }
     },
 
-    Char_Left() {
+    left_Char() {
       if(this.ethnos_name) {
         return `${this.MY.race.ethnos_preview[1]}px`;
       } else {
         return `50%`;
       }
     },
-  },
 
-  methods: {
-    getCharColorHex(hower) {
-      if (this.ethnos_name && !this.Char_Img) {
-        return this.All_Ethnos_Obj[this.ethnos_name].color[this.body_part][0].hex;
+    placeholder_Color_Hex() {
+      if (this.ethnos_name && !this.img_Char) {
+        return this.MY.race.settings.ethnos[this.ethnos_name].color[this.body_part][0].hex;
       } else {
-        let hex = hower ? hower.hex : this.color_Char_Body.hex;
+        let hex = this.Hower ? this.Hower.hex : this.color_Char_Body.hex;
       return hex;
       }
     },
-
   },
+
 };
 </script>
 
