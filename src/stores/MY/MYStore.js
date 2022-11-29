@@ -14,13 +14,13 @@ export const useMYStore = defineStore({
 	getters: {
 		//SECTION - COMMON
 		//NOTE - COMMON (stats, skills, languages)
-		COMMON_Custom_Arr_RE: state => name => {
+		COMMON_Custom_Arr_RE: (state) => (name) => {
 			let custom_arr = [];
 			const selected_arr = state.MY.custom_selected_race_page[name];
 			const ACTIV_ARR = state[`${name}_Activ_Arr_RE`];
 			const KEYS = state[`${name}_Keys`];
 			let pass_selected_arr = selected_arr.filter(
-				el => !ACTIV_ARR.includes(el)
+				(el) => !ACTIV_ARR.includes(el)
 			);
 			const increment = state.option_Custom_RE_Quant(name);
 			if (increment === 0) {
@@ -30,7 +30,7 @@ export const useMYStore = defineStore({
 					custom_arr = pass_selected_arr;
 				} else if (pass_selected_arr.length < increment) {
 					const activ_full_arr = ACTIV_ARR.concat(pass_selected_arr);
-					let pass_arr = KEYS.filter(el => !activ_full_arr.includes(el));
+					let pass_arr = KEYS.filter((el) => !activ_full_arr.includes(el));
 					const i = increment - pass_selected_arr.length;
 					custom_arr = pass_selected_arr.concat(pass_arr.slice(0, i));
 				} else if (pass_selected_arr.length > increment) {
@@ -42,7 +42,7 @@ export const useMYStore = defineStore({
 			}
 		},
 
-		option_Custom_RE_Quant: state => name => {
+		option_Custom_RE_Quant: (state) => (name) => {
 			let i = 0;
 			const race_custom = state.MY.race.settings[`custom_${name}`];
 			const ethnos_custom = state.MY.ethnos[`custom_${name}`];
@@ -75,7 +75,7 @@ export const useMYStore = defineStore({
 
 		stats_Pass_Arr_RE(state) {
 			return this.stats_Keys.filter(
-				el => !this.stats_Activ_Arr_RE.includes(el)
+				(el) => !this.stats_Activ_Arr_RE.includes(el)
 			);
 		},
 
@@ -84,12 +84,12 @@ export const useMYStore = defineStore({
 		},
 
 		//ANCHOR - STATS (NUMB)
-		stats_RE_Numb: state => name => {
+		stats_RE_Numb: (state) => (name) => {
 			let option_value = state.stats_Activ_Obj_RE[name];
 			return option_value ? option_value : 0;
 		},
 
-		stats_Custom_RE_Numb: state => name => {
+		stats_Custom_RE_Numb: (state) => (name) => {
 			let custom_option = state.MY.race.settings.custom_stats;
 			if (custom_option) {
 				let option_true = state.COMMON_Custom_Arr_RE("stats").includes(name);
@@ -104,7 +104,7 @@ export const useMYStore = defineStore({
 			}
 		},
 
-		stats_Race_Page_Numb: state => name => {
+		stats_Race_Page_Numb: (state) => (name) => {
 			const RE = state.stats_RE_Numb(name);
 			const custom = state.stats_Custom_RE_Numb(name);
 			return RE + custom;
@@ -130,7 +130,7 @@ export const useMYStore = defineStore({
 
 		skills_Pass_Arr_RE() {
 			return this.skills_Keys.filter(
-				el => !this.skills_Activ_Arr_RE.includes(el)
+				(el) => !this.skills_Activ_Arr_RE.includes(el)
 			);
 		},
 
@@ -143,7 +143,7 @@ export const useMYStore = defineStore({
 		},
 		//!SECTION - SKILLS
 
-		//SECTION - LANGUEGES
+		//SECTION - //LANGUEGES
 		languages_Keys(state) {
 			const { languages } = useLanguagesStore();
 			let arr = [];
@@ -181,7 +181,7 @@ export const useMYStore = defineStore({
 	},
 	//!SECTION - GETTERS
 
-	//SECTION - ACTIONS
+	//SECTION - //? ACTIONS
 	actions: {
 		getRaceObj(name) {
 			this.MY.race = name;

@@ -281,7 +281,7 @@ import clas from "@/assets/catalog/base_data/step2_classes.js";
 // import languages from "@/assets/catalog/base_data/list_languages.js";
 // import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 
-import EthnosChoice from "@/components/EthnosChoice.vue";
+import EthnosChoice from "@/components/pinia/race_page/settings/EthnosChoice.vue";
 
 // import AgeWeight from "@/components/AgeWeight.vue";
 

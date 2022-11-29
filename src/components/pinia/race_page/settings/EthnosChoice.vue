@@ -21,7 +21,6 @@
 				:icon="name"
 			></my-attribute>
 		</my-wrapper>
-
 		<!-- Этнос_stats + qualities -->
 
 		<!-- Этнос_proficiencies -->
@@ -30,7 +29,7 @@
 				v-for="(val, name) in MY.race.proficiencies"
 				:key="name"
 				:title="name"
-				:item="getProf_RX(val, name)"
+				:item="proficiencies_Arr_Race(name)"
 			>
 			</my-inventory>
 		</my-wrapper>
@@ -48,7 +47,7 @@
 		</my-wrapper>
 		<!-- Этнос_fines -->
 		<!-- Этнос_spells -->
-		<my-wrapper v-if="show_Race_Spells" gap_26>
+		<my-wrapper v-if="shown_Race_Spells" gap_26>
 			<my-spell-text
 				v-for="item in MY.race.spells"
 				:key="item"
@@ -61,52 +60,37 @@
 	</div>
 
 	<!-- Этнос_Карточка -->
-	<EthnosCard/>
+	<EthnosCard />
 	<!-- Этнос_Карточка -->
 </template>
 
 <script>
-import EthnosCard from "@/components/EthnosCard.vue";
+import EthnosCard from "@/components/pinia/race_page/settings/EthnosCard.vue";
 
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "EthnosChoice",
 	components: {
-		EthnosCard
+		EthnosCard,
 	},
 
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
-    ...mapState(useMYStore, ["languages_Custom_Arr_RE",]),
+		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["languages_Custom_Arr_RE"]),
 
-		show_Race_Spells() {
-			let spells = this.MY.race.spells;
+		shown_Race_Spells() {
+			let race_spells = this.MY.race.spells;
 			let lvl = this.MY.level;
-			let spells_lvl = ((spells || {})[0] || {}).level <= lvl
-			return spells && spells_lvl;
+			let spells_lvl = race_spells?.[0].level <= lvl;
+			return race_spells && spells_lvl;
+		},
+
+		proficiencies_Arr_Race() {
+			let obj = this.MY.race.proficiencies;
+			return (kay) => obj?.[kay].map((x) => x.name);
 		},
 	},
-
-	methods: {
-		getProfArr(obj, kay) {
-			let arr = [];
-			if (obj?.[kay]) {
-        arr = obj[kay].map(x => x.name)
-			}
-			return arr;
-		},
-
-		getProf_RX(obj, kay) {
-			let i = this.getProfArr(this.MY.race.proficiencies, kay);
-			let k = []
-			let ethnos_custom = (this.MY.ethnos || {})[`custom_${kay}`]
-			if (!ethnos_custom && kay === "languages" ) {
-				k = this[`${kay}_Custom_Arr_RE`];
-			}
-			return i.concat(k);
-		},
-	}
 };
 </script>
 
@@ -118,5 +102,4 @@ export default {
 	gap: 26px;
 	margin: 0 0 26px 16px;
 }
-
 </style>

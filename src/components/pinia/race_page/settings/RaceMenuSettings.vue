@@ -110,6 +110,8 @@ import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { useColorStore } from "@/stores/modules/ColorStore";
+
+import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "RaceMenuSettings",
 	computed: {
@@ -128,6 +130,8 @@ export default {
       "skills_Custom_Arr_RE",
       "languages_Custom_Arr_RE",
     ]),
+
+    // ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
 
     custom_Race_Settings_Visib() {
       return !this.stats_Custom_Arr_RE.length == 0 ||

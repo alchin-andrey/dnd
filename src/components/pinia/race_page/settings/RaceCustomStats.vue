@@ -37,6 +37,8 @@
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
+
+import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "RaceCustomStats",
 	computed: {
@@ -44,16 +46,23 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
-		...mapState(useMYStore, [
+    ...mapState(useMYStore, [
 			"stats_Keys",
 			"stats_Pass_Arr_RE",
 			"stats_Custom_Arr_RE",
 			"stats_Race_Page_Numb",
 		]),
+		// ...mapState(useStatsStore, [
+		// 	"stats_Keys",
+		// 	"stats_Pass_Arr_RE",
+		// 	"stats_Custom_Arr_RE",
+		// 	"stats_Race_Page_Numb",
+		// ]),
 	},
 
 	methods: {
 		...mapActions(useMYStore, ["getCustomSelect_Stats_RE"]),
+    // ...mapActions(useStatsStore, ["getCustomSelect_Stats_RE"]),
 	},
 };
 </script>

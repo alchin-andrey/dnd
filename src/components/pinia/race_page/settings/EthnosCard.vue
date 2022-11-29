@@ -2,16 +2,16 @@
 	<div class="ethnos_cards_menu">
 		<my-selection-card
 			v-for="ethnos in MY.race.settings.ethnos"
-			:key="ethnos" 
-      no_blur
-			@click="ethnosName(ethnos)"
+			:key="ethnos"
+			no_blur
+			@click="getEthnosObj(ethnos)"
 			:class="{ selection_card_active: MY.ethnos.name === ethnos.name }"
 		>
 			<div
 				class="ethnos_char_back"
 				:style="{
-          'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
-        }"
+					'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
+				}"
 			>
 				<RaceBody body_part="skin" :ethnos_name="ethnos.name" />
 				<RaceBody body_part="hair" :ethnos_name="ethnos.name" />
@@ -43,7 +43,7 @@
 				<my-attribute
 					v-if="ethnos.hp_bonus"
 					title="hp_bonus"
-					:numb="hpBonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
+					:numb="hp_Bonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
 					plus
 					icon="hp_bonus"
 				></my-attribute>
@@ -56,7 +56,7 @@
 					v-for="(val, name) in ethnos.proficiencies"
 					:key="name"
 					:title="name"
-					:item="getProfObjItem(ethnos, name)"
+					:item="proficiencies_Arr_Ethnos(ethnos, name)"
 				>
 				</my-inventory>
 			</my-wrapper>
@@ -75,7 +75,7 @@
 			<!-- Этнос_Карточка_fines -->
 
 			<!-- Этнос_Карточка_spells -->
-			<my-wrapper v-if="showEthnosSpells(ethnos.spells)" gap_26>
+			<my-wrapper v-if="shown_Ethnos_Spells(ethnos.spells)" gap_26>
 				<my-spell-text
 					v-for="item in ethnos.spells"
 					:key="item"
@@ -104,36 +104,30 @@ import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "EthnosCard",
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
-	},
-	methods: {
-		hpBonus(increm_1, increm_2) {
-			let level = Math.ceil(this.MY.level / increm_1);
+		...mapState(useMYStore, ["MY"]),
+
+		shown_Ethnos_Spells: (state) => (spells) => {
+			let ethnos_spells = spells;
+			let lvl = state.MY.level;
+			let spells_lvl = ethnos_spells?.[0].level <= lvl;
+			return ethnos_spells && spells_lvl;
+		},
+
+		hp_Bonus: (state) => (increm_1, increm_2) => {
+			let level = Math.ceil(state.MY.level / increm_1);
 			return level * increm_2;
 		},
-		getProfObjItem(obj, kay) {
-			let arr = [];
-			let ethnos_custom = (obj || {})[`custom_${kay}`];
-			if ((obj.proficiencies || {})[kay]) {
-				for (let i in obj.proficiencies[kay]) {
-					arr.push(obj.proficiencies[kay][i].name);
-				}
-			}
-			if (ethnos_custom) {
-				let incr = obj[`custom_${kay}`][0]
-				arr.push(`+${incr}`);
-			}
-			return arr;
-		},
 
-		ethnosName(obj) {
+		proficiencies_Arr_Ethnos: (state) => (obj, kay) => {
+			let ethnos_arr = obj.proficiencies?.[kay].map((x) => x.name);
+			let incr = obj[`custom_${kay}`]?.[0];
+			ethnos_arr.push(`+${incr}`);
+			return ethnos_arr;
+		},
+	},
+	methods: {
+		getEthnosObj(obj) {
 			this.MY.ethnos = obj;
-		},
-
-		showEthnosSpells(spells) {
-			let lvl = this.MY.level;
-			let spells_lvl = ((spells || {})[0] || {}).level <= lvl
-			return spells && spells_lvl;
 		},
 	},
 };
@@ -144,7 +138,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-  /* z-index: 100; */
+	/* z-index: 100; */
 }
 
 .ethnos_char_back {
