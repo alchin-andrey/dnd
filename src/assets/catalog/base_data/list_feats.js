@@ -1,6 +1,7 @@
 import spells from "./list_spells.js";
 import weaponry from "./kinds_weapons.js";
-import armory from "./kinds_armor.js";
+import armory from "./kinds_armor.js"
+import tools from "./kinds_tools.js"
 
 export default {
   actor: {
@@ -687,9 +688,394 @@ export default {
       ],
   },
 
+  skilled: {
+    name: "feat_skilled",
+    details: "feat_skilled_details",
 
+    settings: [
+        {
+            type: "custom",
+            name: "proficiencies",
+            select: 3,
+            list: 
+            [
+                {
+                    skills: 
+                    {
+                        athletics: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        acrobatics: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        sleight_of_hand: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        stealth: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        investigation: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        history: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        religion: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        arcana: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        nature: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        survival: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        perception: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        insight: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        medicine: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        animal_hanging: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        performance: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        persuasion: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        deception: "mastery",
+                    },
+                },
+                {
+                    skills: 
+                    {
+                        intimidation: "mastery",
+                    },
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.alchemists_supplies],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.blacksmith],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.brewer],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.calligraphers_supplies],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.carpenters_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.cartographers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.cobblers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.cooks_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.disguise],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.glassblowers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.jewelers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.leatherworkers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.mason],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.navigators_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.painters_supplies],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.poisoner],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.potters_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.tinkers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.weavers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.woodcarvers_tools],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_bagpipes],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_drums],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_dulcimer],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_flute],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_horn],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_lute],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_lyre],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_pan_flute],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_shawm],
+                        }
+                      ],
+                },
+                {
+                    proficiencies: [
+                        {
+                          tools: [tools.music_viol],
+                        }
+                      ],
+                },
+            ],
+        },
+      ],
+  },
 
+  keen_mind: {
+    name: "feat_keen_mind",
+    details: "feat_keen_mind_details",
 
+    stats:
+    [
+        {
+            intelligence: 1,
+        }
+    ],
+
+    fines: [
+        {
+          type: "plus",
+          keyword: "always",
+          details: "know_north",
+        },
+        {
+            type: "plus",
+            keyword: "always",
+            details: "know_time",
+          },
+          {
+            type: "plus",
+            keyword: "clear_memory",
+            details: "about_xp_1month",
+          },
+      ],
+  },
+
+  mobile: {
+    name: "feat_mobile",
+    details: "feat_mobile_details",
+
+    stats:
+    [
+        {
+            speed_bonus: 10,
+        }
+    ],
+
+    fines: [
+        {
+          type: "plus",
+          keyword: "no_fee",
+          details: "on_hard_area_dash",
+        },
+        {
+            type: "plus",
+            keyword: "no_provocation",
+            details: "in_this_move_after_attack",
+          },
+      ],
+  },
 
   example: {
     name: "feat_example",
@@ -710,6 +1096,30 @@ export default {
         wisdom: 45,
         charisma: 21,
       },
+    ],
+
+    skills: [
+        {
+            athletics: "mastery",
+            acrobatics: "mastery",
+            sleight_of_hand: "mastery",
+            stealth: "mastery",
+            investigation: "mastery",
+            history: "mastery",
+            religion: "mastery",
+            religion: "mastery",
+            arcana: "mastery",
+            nature: "mastery",
+            survival: "mastery",
+            perception: "mastery",
+            insight: "mastery",
+            medicine: "mastery",
+            animal_hanging: "mastery",
+            performance: "mastery",
+            persuasion: "mastery",
+            deception: "mastery",
+            intimidation: "mastery",
+        }
     ],
 
     qualities: [

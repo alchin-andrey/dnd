@@ -532,6 +532,32 @@ export default {
             tool_brewer: tools.brewer,
             tool_mason: tools.mason,
             tool_thief: tools.thief,
+            tool_alchemists_supplies: tools.alchemists_supplies,
+            tool_potters_tools: tools.potters_tools,
+            tool_tinkers_tools: tools.tinkers_tools,
+            tool_calligraphers_supplies: tools.calligraphers_supplies,
+            tool_cartographers_tools: tools.cartographers_tools,
+            tool_leatherworkers_tools: tools.leatherworkers_tools,
+            tool_navigators_tools: tools.navigators_tools,
+            tool_carpenters_tools: tools.carpenters_tools,
+            tool_cooks_tools: tools.cooks_tools,
+            tool_woodcarvers_tools: tools.woodcarvers_tools,
+            tool_cobblers_tools: tools.cobblers_tools,
+            tool_glassblowers_tools: tools.glassblowers_tools,
+            tool_weavers_tools: tools.weavers_tools,
+            tool_painters_supplies: tools.painters_supplies,
+            tool_jewelers_tools: tools.jewelers_tools,
+            tool_music_drums: tools.music_drums,
+            tool_music_viol: tools.music_viol,
+            tool_music_bagpipes: tools.music_bagpipes,
+            tool_music_lyre: tools.music_lyre,
+            tool_music_lute: tools.music_lute,
+            tool_music_horn: tools.music_horn,
+            tool_music_pan_flute: tools.music_pan_flute,
+            tool_music_flute: tools.music_flute,
+            tool_music_dulcimer: tools.music_dulcimer,
+            tool_music_shawm: tools.music_shawm,
+
 
         languages:"языки",
         languages_human:"языки этносов людей",
@@ -2409,4 +2435,23 @@ export default {
 
     feat_defensive_duelist: "Оборонительный дуэлянт",
     feat_defensive_duelist_details: "Вы мастерски обороняетесь фехтовальным оружием.",
+
+    feat_keen_mind: "Отличная память",
+    feat_keen_mind_details: "Вы с невероятной точностью можете отслеживать время, направление и подробности.",
+
+    always: "всегда",
+    know_north: "известна сторона света",
+    know_time: "известно время рассвета/заката",
+    clear_memory: "точные воспоминания",
+    about_xp_1month: "о всем прожитом за последний месяц",
+
+    feat_mobile: "Подвижный",
+    feat_mobile_details: "Вы невероятно быстры и ловки.",
+
+    on_hard_area_dash: "на Рывок в труднопроходимой местности",
+
+    no_provocation: "нет провокации",
+    in_this_move_after_attack: "от существа, которого вы попытались атаковать в этом ходу, ближним оружием"
+
+
 }
