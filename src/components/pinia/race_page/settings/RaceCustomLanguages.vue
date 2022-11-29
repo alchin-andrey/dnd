@@ -73,7 +73,12 @@ export default {
       }
       return arr;
     },
+	},
 
+  watch: {
+		"race_page.shown.languages": function () {
+			this.race_page.shown_humman_lang = false;
+		},
 	},
 
 	methods: {

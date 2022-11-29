@@ -19,21 +19,14 @@
 			</div>
 
 			<transition name="btm-fade" mode="out-in">
-				<my-button
-					v-if="pagesStore.shown_home"
-					numb="02"
-					title="class"
-				></my-button>
+				<my-button v-if="shown_home" numb="02" title="class"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
 		</div>
 	</div>
 
 	<!-- Выпадающее меню -->
-	<div
-		class="sidebar_wrap"
-		:class="{ sidebar_wrap_open: pagesStore.setting_open }"
-	>
+	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: setting_open }">
 		<HeaderSettings />
 		<RaceSettings />
 	</div>
@@ -67,10 +60,7 @@
 
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->
-	<div
-		class="sidebar_right"
-		:class="{ sidebar_right_close: !pagesStore.shown_home }"
-	>
+	<div class="sidebar_right" :class="{ sidebar_right_close: !shown_home }">
 		<RaceParameters />
 	</div>
 	<!-- </transition> -->
@@ -92,49 +82,10 @@ import RaceSettings from "@/components/pinia/race_page/settings/RaceSettings.vue
 import RaceParameters from "@/components/pinia/race_page/RaceParameters.vue";
 // RACE_PAGE
 
-import { watch } from "vue";
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
-import { useColorStore } from "@/stores/modules/ColorStore";
 export default {
-	setup() {
-		// PINIA
-		const pagesStore = usePagesStore();
-		const { main_page, race_page } = usePagesStore();
-		const { showHome, closeEthnos, closeColor, closePar, showRaceScroll } =
-			usePagesStore();
-		const { MY } = useMYStore();
-		const { getEthnos } = useMYStore();
-		// PINIA
-
-		watch(
-			() => MY.race,
-			() => {
-				console.log("Заметка обновилась!");
-				// console.log('closeEthnos:', closeEthnos)
-				getEthnos();
-				closeEthnos();
-				closeColor("skin");
-				closeColor("eyes");
-				closeColor("hair");
-				closePar("stats");
-				closePar("skills");
-				closePar("languages");
-			}
-		);
-
-		return {
-			showHome,
-			showRaceScroll,
-
-			// PINIA
-			pagesStore,
-			main_page,
-			race_page,
-			MY,
-		};
-	},
 	name: "App",
 	components: {
 		WelcomeBanner,
@@ -146,7 +97,6 @@ export default {
 		RaceSettings,
 		RaceParameters,
 		// RACE_PAGE
-
 	},
 
 	data() {
@@ -159,26 +109,21 @@ export default {
 	created() {
 		this.MY.class = Object.values(clas)[1];
 		this.MY.mastery = this.Mastery;
-
-		this.getFunction();
+		this.getCreated();
 	},
 
 	computed: {
-		// ...mapState(useMYStore, ["MY"]),
-		...mapState(useColorStore, ["color_Char_Сommon"]),
-		...mapState(useMYStore, [
-			"stats_Keys",
-			"languages_Custom_Arr_RE",
-			"stats_Race_Page_Numb",
-			"skills_All_RE",
-		]),
+		//STORES
+		...mapState(useMYStore, ["MY"]),
+		...mapState(usePagesStore, ["race_page", "shown_home", "setting_open"]),
+		//GETTERS
 
 		Mastery() {
 			return Math.ceil(this.MY.level / 4);
 		},
 
 		hide_Ruler() {
-			return this.pagesStore.shown_home || this.race_page.shown.height;
+			return this.shown_home || this.race_page.shown.height;
 		},
 
 		Get_Height() {
@@ -238,10 +183,7 @@ export default {
 		},
 	},
 	watch: {
-		"MY.race": "getFunction",
-		"race_page.shown.languages": function (val, oldVal) {
-			this.race_page.shown_humman_lang = false;
-		},
+		"MY.race": "getWatch",
 
 		"MY.level": function () {
 			this.MY.mastery = this.Mastery;
@@ -249,7 +191,30 @@ export default {
 	},
 
 	methods: {
-		getFunction() {
+		...mapActions(usePagesStore, [
+			"showHome",
+			"closeEthnos",
+			"closeColor",
+			"closePar",
+			"showRaceScroll",
+		]),
+		...mapActions(useMYStore, ["getEthnos"]),
+
+		getCreated() {
+			this.MY.height = this.Get_Height;
+			this.MY.weight = this.Get_Weight;
+			this.MY.age = this.Get_Age;
+		},
+
+		getWatch() {
+			this.getEthnos();
+			this.closeEthnos();
+			this.closeColor("skin");
+			this.closeColor("eyes");
+			this.closeColor("hair");
+			this.closePar("stats");
+			this.closePar("skills");
+			this.closePar("languages");
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
