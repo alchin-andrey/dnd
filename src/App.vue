@@ -312,6 +312,11 @@ a {
 	color: #ffffff;
 }
 
+.stripe {
+	width: 2px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
 .sidebar_left {
 	padding-top: 32px;
 	width: 320px;
