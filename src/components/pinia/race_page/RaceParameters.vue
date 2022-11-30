@@ -21,7 +21,7 @@
 				:key="name"
 				:title="name"
 				plus
-				:numb="Skill_Mastery"
+				:numb="skills_Mastery"
 				:icon="MY.skills[name].mod"
 			></my-attribute>
 		</my-wrapper>
@@ -33,7 +33,7 @@
 				v-for="(val, name) in MY.qualities"
 				:key="name"
 				:title="name"
-				:numb="getParNumb('qualities', name)"
+				:numb="qualities_Numb_RE(name)"
 				feet
 				:icon="name"
 			></my-attribute>
@@ -53,7 +53,7 @@
 				v-for="(val, name) in MY.proficiencies"
 				:key="name"
 				:title="name"
-				:item="getProf_REX(name)"
+				:item="proficiencies_Arr_REC(name)"
 			>
 			</my-inventory>
 		</my-wrapper>
@@ -80,7 +80,7 @@
 		<!-- fines -->
 
 		<!-- spells -->
-		<my-wrapper v-if="showSpells" gap_26 hr>
+		<my-wrapper v-if="shown_Spells_RE" gap_26 hr>
 			<my-spell-text
 				v-for="item in MY.race.spells"
 				:key="item"
@@ -124,22 +124,22 @@ export default {
     // GETTERS
     ...mapState(useMYStore, [
       "stats_Keys",
-      "languages_Custom_Arr_RE",
       "stats_Race_Page_Numb",
-      "skills_All_RE"
+      "skills_All_RE",
+      "languages_Custom_Arr_RE",
     ]),
 
-    Skill_Mastery() {
+    skills_Mastery() {
 			return 1 + this.MY.mastery;
 		},
 
-    showSpells() {
-			let race = this.MY.race.spells;
-			let ethnos = this.MY.ethnos.spells;
+    shown_Spells_RE() {
+			let race_spells = this.MY.race.spells;
+			let ethnos_spells = this.MY.ethnos.spells;
 			let lvl = this.MY.level;
-			let race_lvl = ((race || {})[0] || {}).level <= lvl;
-			let ethnos_lvl = ((ethnos || {})[0] || {}).level <= lvl;
-			return race || (ethnos && race_lvl) || ethnos_lvl;
+			let race_lvl = race_spells?.[0].level <= lvl;
+			let ethnos_lvl = ethnos_spells?.[0].level <= lvl;
+			return ethnos_spells && ethnos_lvl || race_spells && race_lvl;
 		},
 
     hp_Bonus() {
@@ -149,42 +149,28 @@ export default {
 			return level * increm_2;
 		},
 
-
-	},
-	methods: {
-    getParNumb(par_1, par_2) {
-			let i = 0;
-			let j = 0;
-			if (((this.MY.race || {})[par_1] || {})[par_2]) {
-				i = this.MY.race[par_1][par_2];
-			}
-			if (((this.MY.ethnos || {})[par_1] || {})[par_2]) {
-				j = this.MY.ethnos[par_1][par_2];
-			}
-			return i + j;
+    qualities_Numb_RE: (state) => (name) => {
+			let summ = 0;
+      let race_numb = state.MY.race.qualities?.[name];
+			let ethnos_numb = state.MY.ethnos.qualities?.[name];
+			race_numb ? summ += race_numb : 0
+			ethnos_numb ? summ += ethnos_numb : 0
+			return summ;
 		},
 
-    getProfArr(obj, kay) {
+    proficiencies_Arr: (state) => (obj, kay) => {
 			let arr = [];
-			if (obj?.[kay]) {
-        arr = obj[kay].map(x => x.name)
-			}
+			obj?.[kay] ? arr = obj[kay].map(x => x.name) : null
 			return arr;
 		},
 
-		getProf_REX(kay) {
-			let i = this.getProfArr(this.MY.race.proficiencies, kay);
-			let j = this.getProfArr(this.MY.ethnos.proficiencies, kay);
-      let k = []
-      if (kay === "languages") {
-			k = this.languages_Custom_Arr_RE;
-    }
-			// let k = this.getProfArr(this.race_page.extra, kay);
-			return i.concat(j).concat(k);
+    proficiencies_Arr_REC: (state) => (kay) => {
+      let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay)
+      let ethnos_prof = state.proficiencies_Arr(state.MY.ethnos.proficiencies, kay)
+      let custom_prof = []
+      kay === "languages" ? custom_prof = state.languages_Custom_Arr_RE : null
+			return race_prof.concat(ethnos_prof).concat(custom_prof);
 		},
 	},
 };
 </script>
-
-<style scoped>
-</style>

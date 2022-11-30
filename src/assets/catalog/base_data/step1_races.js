@@ -337,12 +337,12 @@ export default {
       //! ДЛЯ ОТЛАДКИ
     //   custom: {
     //     stats: [2, 1],
-    //     skills: [2, "Skill_Mastery"],
+    //     skills: [2, "skills_Mastery"],
     //     languages: [1],
     // },
 
       custom_stats: [2, 1],
-      custom_skills: [2, "Skill_Mastery"],
+      custom_skills: [2, "skills_Mastery"],
       custom_languages: [1],
       //! ДЛЯ ОТЛАДКИ
     },

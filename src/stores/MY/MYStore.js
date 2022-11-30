@@ -12,6 +12,9 @@ export const useMYStore = defineStore({
 	}),
 	//SECTION - GETTERS
 	getters: {
+		Mastery(state) {
+			return Math.ceil(state.MY.level / 4);
+		},
 		//SECTION - COMMON
 		//NOTE - COMMON (stats, skills, languages)
 		COMMON_Custom_Arr_RE: (state) => (name) => {

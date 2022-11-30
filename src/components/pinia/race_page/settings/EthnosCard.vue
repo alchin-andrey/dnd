@@ -75,7 +75,7 @@
 			<!-- Этнос_Карточка_fines -->
 
 			<!-- Этнос_Карточка_spells -->
-			<my-wrapper v-if="shown_Ethnos_Spells(ethnos.spells)" gap_26>
+			<my-wrapper v-if="shown_Spells_Ethnos(ethnos.spells)" gap_26>
 				<my-spell-text
 					v-for="item in ethnos.spells"
 					:key="item"
@@ -106,7 +106,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 
-		shown_Ethnos_Spells: (state) => (spells) => {
+		shown_Spells_Ethnos: (state) => (spells) => {
 			let ethnos_spells = spells;
 			let lvl = state.MY.level;
 			let spells_lvl = ethnos_spells?.[0].level <= lvl;

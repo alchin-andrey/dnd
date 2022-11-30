@@ -10,7 +10,7 @@
 		<my-attribute
 			:title="name"
 			plus
-			:numb="Skill_Mastery"
+			:numb="skills_Mastery"
 			:icon="MY.skills[name].mod"
 		>
 		</my-attribute>
@@ -31,7 +31,7 @@ export default {
 		// GETTERS
 		...mapState(useMYStore, ["skills_Keys", "skills_Custom_Arr_RE"]),
 
-		Skill_Mastery() {
+		skills_Mastery() {
 			return 1 + this.MY.mastery;
 		},
 	},
