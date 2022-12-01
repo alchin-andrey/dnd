@@ -216,4 +216,18 @@ export default {
     cost: 200,
     weight: 0.5,
   },
+
+  vestment: {
+    name: "vestment",
+    details: "vestment_details",
+    cost: 200,
+    weight: 0.5,
+  },
+
+  ritual_book: {
+    name: "ritual_book",
+    details: "ritual_book_details",
+    cost: 5000,
+    weight: 1,
+  },
 };

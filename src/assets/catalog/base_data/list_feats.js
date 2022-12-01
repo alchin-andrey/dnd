@@ -1,7 +1,7 @@
 import spells from "./list_spells.js";
 import weaponry from "./kinds_weapons.js";
-import armory from "./kinds_armor.js"
-import tools from "./kinds_tools.js"
+import armory from "./kinds_armor.js";
+import tools from "./kinds_tools.js";
 
 export default {
   actor: {
@@ -394,9 +394,9 @@ export default {
     ],
   },
 
-  durable: {
-    name: "feat_durable",
-    details: "feat_durable_details",
+  tough: {
+    name: "feat_tough",
+    details: "feat_tough_details",
 
     stats: [
       {
@@ -572,12 +572,12 @@ export default {
     ],
 
     fines: [
-        {
-          type: "plus",
-          keyword: "damage_reduction",
-          details: "on_3_in_heavy_armor",
-        },
-      ],
+      {
+        type: "plus",
+        keyword: "damage_reduction",
+        details: "on_3_in_heavy_armor",
+      },
+    ],
   },
 
   shield_master: {
@@ -585,21 +585,21 @@ export default {
     details: "feat_shield_master_details",
 
     fines: [
-        {
-          type: "plus",
-          keyword: "bonus",
-          details: "on_dex_check_in_shield",
-        },
-      ],
+      {
+        type: "plus",
+        keyword: "bonus",
+        details: "on_dex_check_in_shield",
+      },
+    ],
 
     spells: [
-        {
-          spell: spells.shield_push
-        },
-        {
-          spell: spells.shield_block
-        },
-      ],
+      {
+        spell: spells.shield_push,
+      },
+      {
+        spell: spells.shield_block,
+      },
+    ],
   },
 
   spell_sniper: {
@@ -610,26 +610,25 @@ export default {
     //Требования: Способность накладывать хотя бы одно заклинание
 
     fines: [
-        {
-          type: "plus",
-          keyword: "double_range",
-          details: "on_spells_with_aim",
-        },
-        {
-            type: "plus",
-            keyword: "ignoring",
-            details: "on_covers_spells",
-        },
-      ],
+      {
+        type: "plus",
+        keyword: "double_range",
+        details: "on_spells_with_aim",
+      },
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "on_covers_spells",
+      },
+    ],
 
-      settings: 
-      [
-        {
-            type: "spells",
-            select: 1,
-            filter: "mana_0",
-        }
-      ]
+    settings: [
+      {
+        type: "spells",
+        select: 1,
+        filter: "mana_0",
+      },
+    ],
   },
 
   sharpshooter: {
@@ -637,39 +636,37 @@ export default {
     details: "feat_sharpshooter_details",
 
     fines: [
-        {
-          type: "plus",
-          keyword: "no_fee",
-          details: "on_shots_in_max_distance",
-        },
-        {
-            type: "plus",
-            keyword: "ignoring",
-            details: "on_covers",
-        },
-      ],
+      {
+        type: "plus",
+        keyword: "no_fee",
+        details: "on_shots_in_max_distance",
+      },
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "on_covers",
+      },
+    ],
 
-    spells:
-    [
-        {
-            spell: spells.heavy_shot
-        }
-    ]
+    spells: [
+      {
+        spell: spells.heavy_shot,
+      },
+    ],
   },
 
   charger: {
     name: "feat_charger",
     details: "feat_charger_details",
 
-    spells:
-    [
-        {
-            spell: spells.charge_attack
-        },
-        {
-            spell: spells.charge_push
-        },
-    ]
+    spells: [
+      {
+        spell: spells.charge_attack,
+      },
+      {
+        spell: spells.charge_push,
+      },
+    ],
   },
 
   defensive_duelist: {
@@ -680,12 +677,12 @@ export default {
     //Требования: Ловкость 13 или выше
 
     fines: [
-        {
-          type: "plus",
-          keyword: "mastery_bonus",
-          details: "on_armor_finesse",
-        },
-      ],
+      {
+        type: "plus",
+        keyword: "mastery_bonus",
+        details: "on_armor_finesse",
+      },
+    ],
   },
 
   skilled: {
@@ -693,388 +690,1082 @@ export default {
     details: "feat_skilled_details",
 
     settings: [
-        {
-            type: "custom",
-            name: "proficiencies",
-            select: 3,
-            list: 
-            [
-                {
-                    skills: 
-                    {
-                        athletics: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        acrobatics: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        sleight_of_hand: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        stealth: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        investigation: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        history: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        religion: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        arcana: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        nature: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        survival: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        perception: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        insight: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        medicine: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        animal_hanging: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        performance: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        persuasion: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        deception: "mastery",
-                    },
-                },
-                {
-                    skills: 
-                    {
-                        intimidation: "mastery",
-                    },
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.alchemists_supplies],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.blacksmith],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.brewer],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.calligraphers_supplies],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.carpenters_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.cartographers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.cobblers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.cooks_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.disguise],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.glassblowers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.jewelers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.leatherworkers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.mason],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.navigators_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.painters_supplies],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.poisoner],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.potters_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.tinkers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.weavers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.woodcarvers_tools],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_bagpipes],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_drums],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_dulcimer],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_flute],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_horn],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_lute],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_lyre],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_pan_flute],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_shawm],
-                        }
-                      ],
-                },
-                {
-                    proficiencies: [
-                        {
-                          tools: [tools.music_viol],
-                        }
-                      ],
-                },
+      {
+        type: "custom",
+        name: "proficiencies",
+        select: 3,
+        list: [
+          {
+            skills: {
+              athletics: "mastery",
+            },
+          },
+          {
+            skills: {
+              acrobatics: "mastery",
+            },
+          },
+          {
+            skills: {
+              sleight_of_hand: "mastery",
+            },
+          },
+          {
+            skills: {
+              stealth: "mastery",
+            },
+          },
+          {
+            skills: {
+              investigation: "mastery",
+            },
+          },
+          {
+            skills: {
+              history: "mastery",
+            },
+          },
+          {
+            skills: {
+              religion: "mastery",
+            },
+          },
+          {
+            skills: {
+              arcana: "mastery",
+            },
+          },
+          {
+            skills: {
+              nature: "mastery",
+            },
+          },
+          {
+            skills: {
+              survival: "mastery",
+            },
+          },
+          {
+            skills: {
+              perception: "mastery",
+            },
+          },
+          {
+            skills: {
+              insight: "mastery",
+            },
+          },
+          {
+            skills: {
+              medicine: "mastery",
+            },
+          },
+          {
+            skills: {
+              animal_hanging: "mastery",
+            },
+          },
+          {
+            skills: {
+              performance: "mastery",
+            },
+          },
+          {
+            skills: {
+              persuasion: "mastery",
+            },
+          },
+          {
+            skills: {
+              deception: "mastery",
+            },
+          },
+          {
+            skills: {
+              intimidation: "mastery",
+            },
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.alchemists_supplies],
+              },
             ],
-        },
-      ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.blacksmith],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.brewer],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.calligraphers_supplies],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.carpenters_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.cartographers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.cobblers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.cooks_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.disguise],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.glassblowers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.jewelers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.leatherworkers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.mason],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.navigators_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.painters_supplies],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.poisoner],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.potters_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.tinkers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.weavers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.woodcarvers_tools],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_bagpipes],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_drums],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_dulcimer],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_flute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_horn],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_lute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_lyre],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_pan_flute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_shawm],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_viol],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
 
   keen_mind: {
     name: "feat_keen_mind",
     details: "feat_keen_mind_details",
 
-    stats:
-    [
-        {
-            intelligence: 1,
-        }
+    stats: [
+      {
+        intelligence: 1,
+      },
     ],
 
     fines: [
-        {
-          type: "plus",
-          keyword: "always",
-          details: "know_north",
-        },
-        {
-            type: "plus",
-            keyword: "always",
-            details: "know_time",
-          },
-          {
-            type: "plus",
-            keyword: "clear_memory",
-            details: "about_xp_1month",
-          },
-      ],
+      {
+        type: "plus",
+        keyword: "always",
+        details: "know_north",
+      },
+      {
+        type: "plus",
+        keyword: "always",
+        details: "know_time",
+      },
+      {
+        type: "plus",
+        keyword: "clear_memory",
+        details: "about_xp_1month",
+      },
+    ],
   },
 
   mobile: {
     name: "feat_mobile",
     details: "feat_mobile_details",
 
-    stats:
-    [
-        {
-            speed_bonus: 10,
-        }
+    stats: [
+      {
+        speed_bonus: 10,
+      },
     ],
 
     fines: [
+      {
+        type: "plus",
+        keyword: "no_fee",
+        details: "on_hard_area_dash",
+      },
+      {
+        type: "plus",
+        keyword: "no_provocation",
+        details: "in_this_move_after_attack",
+      },
+    ],
+  },
+
+  magic_initiate_cleric: {
+    name: "feat_magic_initiate_cleric",
+    details: "feat_magic_initiate_details_cleric",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "use_no_mana",
+        details: "one_spell_cleric",
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_0",
+        select: 2,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["cleric"],
+      },
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 1,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["cleric"],
+      },
+    ],
+  },
+
+  magic_initiate_druid: {
+    name: "feat_magic_initiate_druid",
+    details: "feat_magic_initiate_details_druid",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "use_no_mana",
+        details: "one_spell_druid",
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_0",
+        select: 2,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["druid"],
+      },
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 1,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["druid"],
+      },
+    ],
+  },
+
+  magic_initiate_warlock: {
+    name: "feat_magic_initiate_warlock",
+    details: "feat_magic_initiate_details_warlock",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "use_no_mana",
+        details: "one_spell_warlock",
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_0",
+        select: 2,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["warlock"],
+      },
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 1,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["warlock"],
+      },
+    ],
+  },
+
+  magic_initiate_sorcerer: {
+    name: "feat_magic_initiate_sorcerer",
+    details: "feat_magic_initiate_details_sorcerer",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "use_no_mana",
+        details: "one_spell_sorcerer",
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_0",
+        select: 2,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["sorcerer"],
+      },
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 1,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["sorcerer"],
+      },
+    ],
+  },
+
+  magic_initiate_wizard: {
+    name: "feat_magic_initiate_wizard",
+    details: "feat_magic_initiate_details_wizard",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "use_no_mana",
+        details: "one_spell_wizard",
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_0",
+        select: 2,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["wizard"],
+      },
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 1,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["wizard"],
+      },
+    ],
+  },
+
+  magic_initiate_bard: {
+    name: "feat_magic_initiate_bard",
+    details: "feat_magic_initiate_details_bard",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "use_no_mana",
+        details: "one_spell_bard",
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_0",
+        select: 2,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard"],
+      },
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 1,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["bard"],
+      },
+    ],
+  },
+
+  skulker: {
+    name: "feat_skulker",
+    details: "feat_skulker_details",
+
+    condition: "dexterity > 12",
+    //Требования: Ловкость 13 или выше
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ability_to_hide",
+        details: "if_small_cover",
+      },
+      {
+        type: "plus",
+        keyword: "no_reveal",
+        details: "if_missed",
+      },
+      {
+        type: "plus",
+        keyword: "no_disadvantage",
+        details: "on_perception_sight",
+      },
+    ],
+  },
+
+  ritual_caster_cleric: {
+    name: "feat_ritual_caster_cleric",
+    details: "feat_ritual_caster_details_cleric",
+
+    condition: "intelligence > 12 || wisdom > 12",
+    //Требования: Ловкость 13 или выше
+
+    spells: [
+      {
+        spell: spells.learn_ritual,
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[item.ritual_book, 1]],
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 2,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["cleric"],
+        cast_time: "ritual",
+      },
+    ],
+  },
+
+  ritual_caster_druid: {
+    name: "feat_ritual_caster_druid",
+    details: "feat_ritual_caster_details_druid",
+
+    condition: "intelligence > 12 || wisdom > 12",
+    //Требования: Ловкость 13 или выше
+
+    spells: [
+      {
+        spell: spells.learn_ritual,
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[item.ritual_book, 1]],
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 2,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["druid"],
+        cast_time: "ritual",
+      },
+    ],
+  },
+
+  ritual_caster_warlock: {
+    name: "feat_ritual_caster_warlock",
+    details: "feat_ritual_caster_details_warlock",
+
+    condition: "intelligence > 12 || wisdom > 12",
+    //Требования: Ловкость 13 или выше
+
+    spells: [
+      {
+        spell: spells.learn_ritual,
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[item.ritual_book, 1]],
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 2,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["warlock"],
+        cast_time: "ritual",
+      },
+    ],
+  },
+
+  ritual_caster_sorcerer: {
+    name: "feat_ritual_caster_sorcerer",
+    details: "feat_ritual_caster_details_sorcerer",
+
+    condition: "intelligence > 12 || wisdom > 12",
+    //Требования: Ловкость 13 или выше
+
+    spells: [
+      {
+        spell: spells.learn_ritual,
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[item.ritual_book, 1]],
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 2,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["sorcerer"],
+        cast_time: "ritual",
+      },
+    ],
+  },
+
+  ritual_caster_wizard: {
+    name: "feat_ritual_caster_wizard",
+    details: "feat_ritual_caster_details_wizard",
+
+    condition: "intelligence > 12 || wisdom > 12",
+    //Требования: Ловкость 13 или выше
+
+    spells: [
+      {
+        spell: spells.learn_ritual,
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[item.ritual_book, 1]],
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 2,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["wizard"],
+        cast_time: "ritual",
+      },
+    ],
+  },
+
+  ritual_caster_bard: {
+    name: "feat_ritual_caster_bard",
+    details: "feat_ritual_caster_details_bard",
+
+    condition: "intelligence > 12 || wisdom > 12",
+    //Требования: Ловкость 13 или выше
+
+    spells: [
+      {
+        spell: spells.learn_ritual,
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[item.ritual_book, 1]],
+      },
+    ],
+
+    settings: [
+      {
+        type: "spells",
+        name: "spells_1",
+        details: "no_mana_but_once_a_day",
+        select: 2,
+        mana_min: 1,
+        mana_max: 1,
+        classes: ["bard"],
+        cast_time: "ritual",
+      },
+    ],
+  },
+
+  elemental_adept_sound: {
+    name: "feat_elemental_adept_sound",
+    details: "feat_elemental_adept_sound_details",
+
+    condition: "spell_attribute",
+    //Требования: Способность накладывать хотя бы одно заклинание
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "of_resistanse_sound",
+      },
+      {
+        type: "plus",
+        keyword: "two_min",
+        details: "on_damage_dice_of_sound",
+      },
+    ],
+  },
+
+  elemental_adept_acid: {
+    name: "feat_elemental_adept_acid",
+    details: "feat_elemental_adept_acid_details",
+
+    condition: "spell_attribute",
+    //Требования: Способность накладывать хотя бы одно заклинание
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "of_resistanse_acid",
+      },
+      {
+        type: "plus",
+        keyword: "two_min",
+        details: "on_damage_dice_of_acid",
+      },
+    ],
+  },
+
+  elemental_adept_fire: {
+    name: "feat_elemental_adept_fire",
+    details: "feat_elemental_adept_fire_details",
+
+    condition: "spell_attribute",
+    //Требования: Способность накладывать хотя бы одно заклинание
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "of_resistanse_fire",
+      },
+      {
+        type: "plus",
+        keyword: "two_min",
+        details: "on_damage_dice_of_fire",
+      },
+    ],
+  },
+
+  elemental_adept_cold: {
+    name: "feat_elemental_adept_cold",
+    details: "feat_elemental_adept_cold_details",
+
+    condition: "spell_attribute",
+    //Требования: Способность накладывать хотя бы одно заклинание
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "of_resistanse_cold",
+      },
+      {
+        type: "plus",
+        keyword: "two_min",
+        details: "on_damage_dice_of_cold",
+      },
+    ],
+  },
+
+  elemental_adept_electricity: {
+    name: "feat_elemental_adept_electricity",
+    details: "feat_elemental_adept_electricity_details",
+
+    condition: "spell_attribute",
+    //Требования: Способность накладывать хотя бы одно заклинание
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "of_resistanse_electricity",
+      },
+      {
+        type: "plus",
+        keyword: "two_min",
+        details: "on_damage_dice_of_electricity",
+      },
+    ],
+  },
+
+  durable: {
+    name: "feat_durable",
+    details: "feat_durable_details",
+
+    stats: [
+      {
+        consitution: 1,
+      },
+    ],
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "double_CON",
+        details: "on_regen_min_2",
+      },
+    ],
+  },
+
+  sentinel: {
+    name: "feat_sentinel",
+    details: "feat_sentinel_details",
+    
+    fines: [
+      {
+        type: "plus",
+        keyword: "provocation",
+        details: "on_disengage",
+      },
+      {
+        type: "plus",
+        keyword: "provocation",
+        details: "on_ally_attack",
+      },
+      {
+        type: "plus",
+        keyword: "stopka",
+        details: "creature_affected_provoked_attack",
+      },
+    ],
+  },
+
+  mage_slayer: {
+    name: "feat_mage_slayer",
+    details: "feat_mage_slayer_details",
+    
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_save_spells_near",
+      },
+      {
+        type: "plus",
+        keyword: "disadvantage",
+        details: "on_concentration_to_attacked_creature",
+      },
+      {
+        type: "plus",
+        keyword: "provocation",
+        details: "on_casting_near",
+      },
+    ],
+  },
+
+  resilient_strength: {
+    name: "feat_resilient_strength",
+    details: "strength_details",
+
+    stats: [
+      {
+        strength: 1,
+        strength_saving: 1,
+      },
+    ],
+  },
+
+  resilient_dexterity: {
+    name: "feat_resilient_dexterity",
+    details: "dexterity_details",
+
+    stats: [
+      {
+        dexterity: 1,
+        dexterity_saving: 1,
+      },
+    ],
+  },
+
+  resilient_constitution: {
+    name: "feat_resilient_constitution",
+    details: "constitution_details",
+
+    stats: [
+      {
+        constitution: 1,
+        constitution_saving: 1,
+      },
+    ],
+  },
+
+  resilient_intelligence: {
+    name: "feat_resilient_intelligence",
+    details: "intelligence_details",
+
+    stats: [
+      {
+        intelligence: 1,
+        intelligence_saving: 1,
+      },
+    ],
+  },
+
+  resilient_wisdom: {
+    name: "feat_resilient_wisdom",
+    details: "wisdom_details",
+
+    stats: [
+      {
+        wisdom: 1,
+        wisdom_saving: 1,
+      },
+    ],
+  },
+
+  resilient_charisma: {
+    name: "feat_resilient_charisma",
+    details: "charisma_details",
+
+    stats: [
+      {
+        charisma: 1,
+        charisma_saving: 1,
+      },
+    ],
+  },
+
+  crossbow_expert: {
+    name: "feat_crossbow_expert",
+    details: "feat_crossbow_expert_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "recharge_on_arbalets",
+      },
+      {
+        type: "plus",
+        keyword: "no_disadvantage",
+        details: "near_target_arbalet",
+      },
+    ],
+
+    spells:[
         {
-          type: "plus",
-          keyword: "no_fee",
-          details: "on_hard_area_dash",
-        },
+            spell: spells.crossbow_shot,
+        }
+    ]
+  },
+
+  linguist: {
+    name: "feat_linguist",
+    details: "feat_linguist_details",
+
+    stats: [
+      {
+        intelligence: 1,
+      },
+    ],
+
+    spells: [
         {
-            type: "plus",
-            keyword: "no_provocation",
-            details: "in_this_move_after_attack",
-          },
+            spell: spells.create_crypt,
+        }
+    ],
+
+    settings: [
+        {
+          type: "languages",
+          select: 3,
+          filter: "no_used",
+        }
       ],
+
+    
   },
 
   example: {
@@ -1099,27 +1790,27 @@ export default {
     ],
 
     skills: [
-        {
-            athletics: "mastery",
-            acrobatics: "mastery",
-            sleight_of_hand: "mastery",
-            stealth: "mastery",
-            investigation: "mastery",
-            history: "mastery",
-            religion: "mastery",
-            religion: "mastery",
-            arcana: "mastery",
-            nature: "mastery",
-            survival: "mastery",
-            perception: "mastery",
-            insight: "mastery",
-            medicine: "mastery",
-            animal_hanging: "mastery",
-            performance: "mastery",
-            persuasion: "mastery",
-            deception: "mastery",
-            intimidation: "mastery",
-        }
+      {
+        athletics: "mastery",
+        acrobatics: "mastery",
+        sleight_of_hand: "mastery",
+        stealth: "mastery",
+        investigation: "mastery",
+        history: "mastery",
+        religion: "mastery",
+        religion: "mastery",
+        arcana: "mastery",
+        nature: "mastery",
+        survival: "mastery",
+        perception: "mastery",
+        insight: "mastery",
+        medicine: "mastery",
+        animal_hanging: "mastery",
+        performance: "mastery",
+        persuasion: "mastery",
+        deception: "mastery",
+        intimidation: "mastery",
+      },
     ],
 
     qualities: [

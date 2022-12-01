@@ -5,6 +5,7 @@ import lang from "./list_languages.js";
 import weaponry from "./kinds_weapons.js";
 import tool from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
+import { divine_channel_antients_2 } from "../texts/ua/spells.js";
 
 export default {
   gnome: {
@@ -14,7 +15,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [300,-24],
 
-    settings: {
+    race_settigs: {
       ethnos: {
         rock: {
           name: "rock",
@@ -61,7 +62,7 @@ export default {
             // По левелу перса
             {
               level: 1,
-              spell: spells.learn_ritual,
+              spell: spells.inspiration,
             },
 
             {
@@ -360,7 +361,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [300,-24],
 
-    settings: {
+    race_settigs: {
       ethnos: {
 
         lightfoot: {
@@ -531,7 +532,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [345,-30],
 
-    settings: {
+    race_settigs: {
       ethnos: {
         mountain: {
           name: "mountain",
@@ -754,7 +755,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    settings: {
+    race_settigs: {
       ethnos: {
 
         damarian: {
@@ -1198,10 +1199,32 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    settings: {
+    race_settigs: {
       ethnos: {
         common: {
           name: "common",
+          settings: [
+            {
+              type: "stats",
+              name: "stats",
+              select: 2,
+              filter: "no_used",
+              num: 1,
+            },
+            {
+              type: "skills",
+              name: "skills",
+              select: 2,
+              filter: "no_used",
+              num: "mastery"
+            },
+            {
+              type: "languages",
+              name: "languages",
+              select: 1,
+              filter: "no_used",
+            }
+          ]
         },
       },
 
@@ -1319,10 +1342,6 @@ export default {
         min: 60,
         max: 90,
       },
-
-      custom_stats: [2, 1],
-      custom_skills: [2, "mastery"],
-      custom_languages: [1],
     },
 
     stats: { charisma: 2 },
@@ -1354,7 +1373,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    settings: {
+    race_settigs: {
       ethnos: {
 
         high_elf: {
@@ -1400,8 +1419,21 @@ export default {
             },
           ],
 
-          custom_languages: [1],
-          custom_spell: [1,0,"wizard"],
+          settings: [
+            {
+              type: "spells",
+              name: "spells",
+              select: 2,
+              mana_min: 0,
+              mana_max: 0,
+              classes: ["wizard"],
+            },
+            {
+              type: "languages",
+              select: 1,
+              filter: "no_used",
+            }
+          ],
         },
 
         forest: {
@@ -1753,7 +1785,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    settings: {
+    race_settigs: {
       ethnos: {
         common: {
           name: "common",
@@ -1970,7 +2002,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [435,-42],
 
-    settings: {
+    race_settigs: {
       ethnos: {
         common: {
           name: "common",
@@ -2070,7 +2102,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [435,-42],
 
-    settings: {
+    race_settigs: {
       ethnos: {
 
         brass_dragonborn: {

@@ -1490,10 +1490,18 @@ export default {
         select: 2,
         list: 
         [
-
+          {
+            name: "1",
+          }
         ],
       },
+      {
+        level: 1,
+        type: "spells",
+        name: "",
+        select: 2,
+        filter: [0, "wizard"]
+      },
     ],
-
 }
 };
