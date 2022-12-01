@@ -4,11 +4,10 @@
 		<div class="main_chapter">
 			<Header />
 			<my-slider
+      v-if="pages.race_page"
 				numb="01"
-				title="race"
-				:arr="Object.values(this.race)"
-				:arr_keys="Object.keys(this.race)"
-				:type="MY.race"
+				name="race"
+        :slides="MY.race.name"
 			>
 			</my-slider>
 		</div>
@@ -19,7 +18,7 @@
 			</div>
 
 			<transition name="btm-fade" mode="out-in">
-				<my-button v-if="shown_home" numb="02" title="class"></my-button>
+				<my-button v-if="shown_home" numb="02" title="class" @click="classPage()"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
 		</div>
@@ -114,7 +113,7 @@ export default {
 	computed: {
 		//STORES
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["race_page", "shown_home", "setting_open"]),
+		...mapState(usePagesStore, ["race_page", "shown_home", "setting_open", "pages"]),
 		//GETTERS
 
 		Mastery() {
@@ -194,6 +193,12 @@ export default {
 			"showRaceScroll",
 		]),
 		...mapActions(useMYStore, ["getEthnos"]),
+
+    classPage() {
+      this.pages.race_page = !this.pages.race_page
+      // this.pages.race_page = false
+      // this.pages.clas_page = true
+    },
 
 		getCreated() {
 			this.MY.height = this.Get_Height;
