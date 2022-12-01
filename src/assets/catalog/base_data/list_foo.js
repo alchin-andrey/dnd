@@ -220,4 +220,20 @@ export default {
         let num = this.$root.MY.stats.charisma.mod + lvl;
         return num
     },
+
+    Str_CHA_min1(){},
+
+    Num_Paladin_max_spell_slot(){},
+
+    Str_Bard_Cantrips(){},
+
+    Str_Bard_Spells(){},
+
+    Num_Bard_max_spell_slot(){},
+
+    Dice_16_58_1010_1512(){},
+
+    Dice_16_98_1310_1712(){},
+
+    
 }

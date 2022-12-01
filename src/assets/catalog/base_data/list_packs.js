@@ -86,4 +86,38 @@ export default {
             [items.waterskin,1],
         ]
     },
+
+    diplomats: {
+        name: "diplomats_pack",
+        details: "diplomats_pack_details",
+        items:
+        [
+            [items.chest,1],//
+            [items.scroll_tube,2],//
+            [items.fine_clothes,1], //
+            [items.ink,1], //
+            [items.ink_pen,1], //
+            [items.lamp,1], //
+            [items.oil_flask,2],
+            [items.paper,5], //
+            [items.perfume,1], //
+            [items.vax,1], //
+            [items.soap,1] //
+        ]
+    },
+
+    entertainers: {
+        name: "entertainers_pack",
+        details: "entertainers_pack_details",
+        items:
+        [
+            [items.backpack,1],
+            [items.bedroll,1],
+            [items.costume,2], //
+            [items.candle,5],
+            [items.ration,5],
+            [items.waterskin,1],
+            [items.disguise_kit,5],
+        ]
+    },
 }

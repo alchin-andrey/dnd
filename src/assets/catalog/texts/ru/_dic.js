@@ -2611,5 +2611,96 @@ export default {
     spell_create_crypt_details: spells.create_crypt_details,
     spell_create_crypt_expanded: spells.create_crypt_expanded,
 
+    packs: "наборы",
 
+    chest: "Сундук",
+    chest_details: "Контейнер вместимостью 340 л.",
+
+    scroll_tube: "Тубус",
+    scroll_tube_details: "Контейнер для свитков или карт.",
+
+    fine_clothes: "Дорогая одежда",
+    fine_clothes_details: "Изысканный наряд из дорогих материалов, который даже может быть украшен шёлковыми нитями и драгоценными камнями. Надейвайте её, когда вам нужно произвести впечатление на дворян, участвовать в дипломатии или запугать бедных людей. Не надевайте её, когда отправляетесь в приключение — модные ткани слишком тонки для опасностей подземелий, а всякие побрякушки могут привлечь неприятных существ!",
+
+    ink: "Чернила",
+    ink_details: "Бутылочка чернил",
+
+    ink_pen: "Перо",
+    ink_pen_details: "Перо для использования чернил.",
+
+    lamp: "Масляная лампа",
+    lamp_details: "испускает яркий свет в пределах 15 фт и тусклый свет в пределах ещё 30 фт. Горит 6 ч от одной фляги масла.",
+
+    perfume: "Духи",
+    perfume_details: "Флакон ароматных духов.",
+
+    paper: "Бумага",
+    paper_details: "Лист бумаги.",
+
+    sealing_wax: "Красный воск",
+    sealing_wax_details: "Воск для опечатывания.",
+
+    soap: "Мыло",
+    soap_details: "Кусочек ароматного мыла.",
+
+    costume: "Сценический костюм",
+    costume_details: "Вещь, в которую могут одеваться персонажи.",
+
+    disguise_kit: "Набор для грима",
+    disguise_kit_details: "Косметика и бутафория, позволяющая менять облик и преуспевать в Обмане / Запугивании / Выступлении / Убеждении, а также скрыть травмы или распознать чужой грим.<br/><br/>Как часть длинного отдыха Вы можете создать обличье для маскировки. На надевание обличья после его создания требуется 1 минута. Вы можете одновременно иметь при себе только одно такое обличье, не привлекая ненужного внимания, если только у вас нет Сумки хранения (Bag of holding) или другого подобного способа оставить их незамеченными. Каждое такое обличье весит 1 фунт. В других случаях требуется 10 минут на создание обличья, которое немного изменяет вашу внешность и 30 минут, если требуются более обширные изменения.",
+
+    item_music_drums: "барабан",
+    item_music_viol: "виола",
+    item_music_bagpipes: "волынка",
+    item_music_lyre: "лира",
+    item_music_lute: "лютня",
+    item_music_horn: "рожок",
+    item_music_pan_flute: "свирель",
+    item_music_flute: "флейта",
+    item_music_dulcimer: "цимбалы",
+    item_music_shawm: "шалмей",
+
+    item_music_drums_details: "",
+    item_music_viol_details: "",
+    item_music_bagpipes_details: "",
+    item_music_lyre_details: "",
+    item_music_lute_details: "",
+    item_music_horn_details: "",
+    item_music_pan_flute_details: "",
+    item_music_flute_details: "",
+    item_music_dulcimer_details: "",
+    item_music_shawm_details: "",
+ 
+    bard: classes.bard,
+    bard_details: classes.bard_details,
+
+    bardic_inspiration_slots: "Ячейки вдохновения",
+    bardic_inspiration_slot: "Ячейка вдохновения",
+
+    dice: "кубик",
+
+    spell_bardic_inspiration: spells.bardic_inspiration,
+    spell_bardic_inspiration_details: spells.bardic_inspiration_details,
+    spell_bardic_inspiration_expanded: spells.bardic_inspiration_expanded,
+
+    spell_focus: "Фокус заклинаний",
+    as_musical_instrument: "в виде музыкального инструмента",
+
+    bonus_o_w: "бонусное",
+
+    spell_song_of_rest: spells.song_of_rest,
+    spell_song_of_rest_details: spells.song_of_rest_details,
+    spell_song_of_rest_expanded: spells.song_of_rest_expanded,
+
+    restoring: "Восстановление",
+    of_inspiration_slots_on_short_rest: "Ячеек Вдохновения чисто за короткий отдых",
+
+    college_valor: classes.college_valor,
+    college_valor_details: classes.college_valor_details,
+
+    on_damage_and_ac: "можно использовать для урона и брони",
+
+    spell_cutting_word: spells.cutting_word,
+    spell_cutting_word_details: spells.cutting_word_details,
+    spell_cutting_word_expanded: spells.cutting_word_expanded,
 }

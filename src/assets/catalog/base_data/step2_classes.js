@@ -1,7 +1,7 @@
 import spells from "./list_spells.js";
 import lang from "./list_languages.js";
 import weaponry from "./kinds_weapons.js";
-import tool from "./kinds_tools.js";
+import tools from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
 import armors from "./list_armor.js";
@@ -9,17 +9,18 @@ import MY from "@/assets/catalog/MY.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
-export const barbarian_rage_bonus = [0,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4]
+export const barbarian_rage_bonus = [
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
+];
 
 export default {
-
   barbarian: {
     name: "barbarian",
     details: "barbarian_details",
 
     hp_dice: 12,
     // x: hp_dice/2 + 1;
-    // hp_bonus: (x+con.mod)*lvl + hp_dice - x
+    // hp_bonus: hp_dice + con.mod + ( x + con.mod(min=1) ) * ( lvl  - 1 )
     //regen: = lvl * hp_dice
 
     proficiencies: {
@@ -132,9 +133,8 @@ export default {
     charges: [
       {
         name: "rage_slots",
-        list:
-        [
-          ["", 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, "inf"]
+        list: [
+          ["", 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, "inf"],
         ],
       },
     ],
@@ -594,28 +594,28 @@ export default {
         name: "divine_sense_slots",
         foo: "Str_Plus_CHA",
         list: [
-          ["",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-        ]
+          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
       },
       {
         level: 1,
         name: "divine_channel_slots",
         list: [
-          ["",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-        ]
+          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
       },
       {
         level: 1,
         name: "spell_slots",
         list: [
-          ["0",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-          ["1",0,2,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4],
-          ["2",0,0,0,0,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3],
-          ["3",0,0,0,0,0,0,0,0,2,2,3,3,3,3,3,3,3,3,3,3],
-          ["4",0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2,3,3,3,3],
-          ["5",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2],
-        ]
-      }
+          ["0", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          ["1", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["2", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["3", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["4", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
+          ["5", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
+        ],
+      },
     ],
 
     spells: [
@@ -630,15 +630,6 @@ export default {
       {
         level: 2,
         spell: spells.paladin_divine_smite,
-      },
-    ],
-
-    stats: [
-      {
-        level: 2,
-        mama_1: 2,
-        spell_stock: MY.stats.charisma.mod + MY.level / 2,
-        //вы выбираете число заклинаний паладина из списка заклинаний паладина, равное модификатору Харизмы + половина уровня паладина, округляя в меньшую сторону (минимум одно заклинание).
       },
     ],
 
@@ -881,9 +872,12 @@ export default {
       {
         level: 2,
         type: "spells",
+        name: "spells",
         select: "Str_05Lvl_Plus_CHA",
-        list: "paladin", //only spells (evocation etc.)
-      }
+        mana_min: 1,
+        mana_max: "Num_Paladin_max_spell_slot", // по
+        classes: ["paladin"],
+      },
     ],
   },
 
@@ -904,7 +898,7 @@ export default {
         weaponry.rapires,
         weaponry.hand_arbalets,
       ],
-      tools: [tool.thief],
+      tools: [tools.thief],
       languages: [lang.thieves],
     },
 
@@ -1042,7 +1036,7 @@ export default {
             details: "assasin_details",
 
             proficiencies: {
-              tools: [tool.disguise, tool.poisoner],
+              tools: [tools.disguise, tools.poisoner],
             },
 
             fines: [
@@ -1364,9 +1358,336 @@ export default {
 
   // -------------------------------------------------------------------------
 
-  object_example: {
+  bard: {
+    name: "bard",
+    details: "bard_details",
 
-    name:"",
+    hp_dice: 8,
+    // x: hp_dice/2 + 1;
+    // hp_bonus: (x+con.mod)*lvl + hp_dice - x
+    //regen: = lvl * hp_dice
+
+    proficiencies: {
+      armor: [armory.light],
+      weapons: [
+        weaponry.simple,
+        weaponry.short_swords,
+        weaponry.long_swords,
+        weaponry.rapires,
+        weaponry.hand_arbalets,
+      ],
+    },
+
+    saving: ["dexterity", "charisma"],
+    stats_base: [
+      "charisma",
+      "dexterity",
+      "constitution",
+      "wisdom",
+      "intelligence",
+      "strength",
+    ],
+    spell_attribute: "charisma",
+
+    equipment: [
+      {
+        level: 1,
+        armor: [[armors.leather, 1]],
+        weapon: [[weapons.dagger, 1]],
+      },
+    ],
+
+    skills: [
+      {
+        lelel: 2,
+        condition: "no_mastery",
+        num: "mastery/2",
+      },
+    ],
+
+    charges: [
+      {
+        level: 1,
+        name: "bardic_inspiration_slots",
+        foo: "Str_CHA_min1",
+      },
+      {
+        level: 1,
+        name: "spell_slots",
+        list: [
+          ["0", 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["1", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["2", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["3", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["4", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["5", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["6", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["7", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["8", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["9", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+    ],
+
+    spells: [
+      {
+        spell: spells.bardic_inspiration,
+      },
+      {
+        level: 2,
+        spell: spells.song_of_rest,
+      },
+    ],
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "spell_focus",
+        details: "as_musical_instrument",
+      },
+      {
+        level: 5,
+        type: "plus",
+        keyword: "restoring",
+        details: "of_inspiration_slots_on_short_rest",
+      },
+    ],
+
+    settings: [
+      {
+        level: 3,
+        type: "subclasses",
+        select: 1,
+        list: [
+          {
+            name: "college_valor",
+            details: "college_valor_details",
+
+            proficiencies: {
+              armor: [armory.medium, armory.shields],
+              weapons: [weaponry.military],
+            },
+
+            fines: 
+            [
+              {
+                type: "plus",
+                keyword: "spell_bardic_inspiration",
+                details: "on_damage_and_ac",
+              },
+            ]
+          },
+          {
+            name: "college_lore",
+            details: "college_lore_details",
+
+            settings: [
+              {
+                type: "skills",
+                name: "skills",
+                select: 3,
+                num: "mastery",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "skills",
+        name: "skills",
+        select: 3,
+        num: "mastery",
+        list: [
+          "performance",
+          "athletics",
+          "acrobatics",
+          "sleight_of_hand",
+          "stealth",
+          "arcana",
+          "history",
+          "investigation",
+          "nature",
+          "religion",
+          "animal_hanging",
+          "insight",
+          "medicine",
+          "perception",
+          "survival",
+          "deception",
+          "intimidation",
+          "persuasion",
+        ],
+      },
+      {
+        type: "custom",
+        name: "proficiencies",
+        select: 3,
+        list: [
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_bagpipes],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_drums],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_dulcimer],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_flute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_horn],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_lute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_lyre],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_pan_flute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_shawm],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_viol],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "weapons",
+        name: "weapons",
+        select: 1,
+        list: [
+          [weapons.rapier, 1],
+          [weapons.longsword, 1],
+          [weapons.quarterstaff, 1],
+          [weapons.mace, 1],
+          [weapons.club, 1],
+          [weapons.dagger, 1],
+          [weapons.spear, 1],
+          [weapons.light_hammer, 1],
+          [weapons.javelin, 1],
+          [weapons.greatclub, 1],
+          [weapons.sickle, 1],
+        ],
+      },
+      {
+        type: "packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.diplomats, 1],
+          [items.entertainers, 1],
+        ],
+      },
+      {
+        type: "items",
+        name: "tools",
+        select: 1,
+        list: [
+          [packs.diplomats, 1],
+          [items.entertainers, 1],
+        ],
+      },
+      {
+        type: "spells",
+        name: "spells_0",
+        select: "Str_Bard_Cantrips", //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard"],
+      },
+      {
+        type: "spells",
+        name: "spells",
+        select: "Str_Bard_Spells", //4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22
+        mana_min: 1,
+        mana_max: "Num_Bard_max_spell_slot",
+        classes: ["bard"],
+      },
+      {
+        level: 3,
+        type: "skills",
+        name: "skills",
+        select: 2,
+        filter: "mastery",
+        num: "mastery",
+      },
+      {
+        level: 10,
+        type: "skills",
+        name: "skills",
+        select: 2,
+        filter: "mastery",
+        num: "mastery",
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+    ],
+  },
+
+  object_example: {
+    name: "",
     details: "",
 
     proficiencies: [
@@ -1376,7 +1697,7 @@ export default {
         weaponry: [],
         tools: [],
         languages: [],
-      }
+      },
     ],
 
     qualities: [
@@ -1393,19 +1714,19 @@ export default {
         passive_perception: 1,
         passive_investigation: 1,
         passive_insight: 1,
-      }
+      },
     ],
 
     stats: [
       {
         level: 1,
-        strength:     { base: 0, bonus: 0, mod: 0, save: 0 },
-        dexterity:    { base: 0, bonus: 0, mod: 0, save: 0 },
+        strength: { base: 0, bonus: 0, mod: 0, save: 0 },
+        dexterity: { base: 0, bonus: 0, mod: 0, save: 0 },
         constitution: { base: 0, bonus: 0, mod: 0, save: 0 },
         intelligence: { base: 0, bonus: 0, mod: 0, save: 0 },
-        wisdom:       { base: 0, bonus: 0, mod: 0, save: 0 },
-        charisma:     { base: 0, bonus: 0, mod: 0, save: 0 },
-      }
+        wisdom: { base: 0, bonus: 0, mod: 0, save: 0 },
+        charisma: { base: 0, bonus: 0, mod: 0, save: 0 },
+      },
     ],
 
     skills: [
@@ -1429,7 +1750,7 @@ export default {
         persuasion: 1,
         deception: 1,
         intimidation: 1,
-      }
+      },
     ],
 
     equipment: [
@@ -1438,7 +1759,7 @@ export default {
         armor: [[armors.leather, 1]],
         weapon: [[weapons.dagger, 2]],
         inventory: [[packs.thieves, 1]],
-      }
+      },
     ],
 
     charges: [
@@ -1446,18 +1767,18 @@ export default {
         level: 1,
         name: "spell_slots",
         list: [
-          ["0",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["1",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["2",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["3",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["4",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["5",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["6",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["7",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["8",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-          ["9",1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,"inf"],
-        ]
-      }
+          ["0", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["1", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["2", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["3", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["4", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["5", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["6", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["7", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["8", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+          ["9", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
+        ],
+      },
     ],
 
     fines: [
@@ -1472,14 +1793,14 @@ export default {
         condition: "if_no_heavy_armor",
         key: "armor_bonus",
         value: "stats.constitution.mod",
-      }
+      },
     ],
 
     spells: [
       {
         level: 1,
         spell: spells.acid_breath_line,
-      }
+      },
     ],
 
     settings: [
@@ -1488,11 +1809,10 @@ export default {
         type: "custom",
         name: "",
         select: 2,
-        list: 
-        [
+        list: [
           {
             name: "1",
-          }
+          },
         ],
       },
       {
@@ -1500,8 +1820,8 @@ export default {
         type: "spells",
         name: "",
         select: 2,
-        filter: [0, "wizard"]
+        filter: [0, "wizard"],
       },
     ],
-}
+  },
 };

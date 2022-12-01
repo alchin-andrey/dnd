@@ -7,7 +7,7 @@ export default {
       quarterstaff: 
       {
         name: "quarterstaff",
-        detais: "quarterstaff_details",
+        details: "quarterstaff_details",
 
         type: [weaponry.simple],
 
@@ -60,7 +60,7 @@ export default {
       mace: 
       {
         name: "mace",
-        detais: "mace_details",
+        details: "mace_details",
 
         type: [weaponry.simple],
 
@@ -90,7 +90,7 @@ export default {
       club:
       {
         name: "club",
-        detais: "club_details",
+        details: "club_details",
 
         type: [weaponry.simple],
 
@@ -120,7 +120,7 @@ export default {
       dagger:
       {
         name: "dagger",
-        detais: "dagger_details",
+        details: "dagger_details",
 
         type: [weaponry.simple],
 
@@ -150,7 +150,7 @@ export default {
       spear:
       {
         name: "spear",
-        detais: "spear_details",
+        details: "spear_details",
 
         type: [weaponry.simple],
 
@@ -180,7 +180,7 @@ export default {
       light_hammer:
       {
         name: "light_hammer",
-        detais: "light_hammer_details",
+        details: "light_hammer_details",
 
         type: [weaponry.simple,weaponry.light_hammers],
 
@@ -210,7 +210,7 @@ export default {
       javelin:
       {
         name: "javelin",
-        detais: "javelin_details",
+        details: "javelin_details",
 
         type: [weaponry.simple],
 
@@ -240,7 +240,7 @@ export default {
       greatclub:
       {
         name: "greatclub",
-        detais: "greatclub_details",
+        details: "greatclub_details",
 
         type: [weaponry.simple],
 
@@ -270,7 +270,7 @@ export default {
       handaxe: 
       {
         name: "handaxe",
-        detais: "handaxe_details",
+        details: "handaxe_details",
 
         type: [weaponry.simple,weaponry.hand_axes],
 
@@ -300,7 +300,7 @@ export default {
       sickle: 
       {
         name: "sickle",
-        detais: "sickle_details",
+        details: "sickle_details",
 
         type: [weaponry.simple],
 
@@ -332,7 +332,7 @@ export default {
       light_crossbow:
       {
         name: "light_crossbow",
-        detais: "light_crossbow_details",
+        details: "light_crossbow_details",
 
         type: [weaponry.simple],
 
@@ -362,7 +362,7 @@ export default {
       dart:
       {
         name: "dart",
-        detais: "dart_details",
+        details: "dart_details",
 
         type: [weaponry.simple],
 
@@ -392,7 +392,7 @@ export default {
       shortbow:
       {
         name: "shortbow",
-        detais: "shortbow_details",
+        details: "shortbow_details",
 
         type: [weaponry.simple,weaponry.short_bows],
 
@@ -422,7 +422,7 @@ export default {
       sling:
       {
         name: "shortbow",
-        detais: "shortbow_details",
+        details: "shortbow_details",
 
         type: [weaponry.simple],
 
@@ -454,7 +454,7 @@ export default {
       halberd: 
       {
         name: "halberd",
-        detais: "halberd_details",
+        details: "halberd_details",
 
         type: [weaponry.military],
 
@@ -484,7 +484,7 @@ export default {
       war_pick:
       {
         name: "war_pick",
-        detais: "war_pick_details",
+        details: "war_pick_details",
 
         type: [weaponry.military],
 
@@ -514,7 +514,7 @@ export default {
       warhammer: 
       {
         name: "warhammer",
-        detais: "warhammer_details",
+        details: "warhammer_details",
 
         type: [weaponry.military,weaponry.battle_hammers],
 
@@ -544,7 +544,7 @@ export default {
       battleaxe: 
       {
         name: "battleaxe",
-        detais: "battleaxe_details",
+        details: "battleaxe_details",
 
         type: [weaponry.military,weaponry.battle_axes],
 
@@ -574,7 +574,7 @@ export default {
       glaive: 
       {
         name: "glaive",
-        detais: "glaive_details",
+        details: "glaive_details",
 
         type: [weaponry.military],
 
@@ -604,7 +604,7 @@ export default {
       greatsword: 
       {
         name: "greatsword",
-        detais: "greatsword_details",
+        details: "greatsword_details",
 
         type: [weaponry.military],
 
@@ -634,7 +634,7 @@ export default {
       lance: 
       {
         name: "lance",
-        detais: "lance_details",
+        details: "lance_details",
 
         type: [weaponry.military],
 
@@ -664,7 +664,7 @@ export default {
       longsword: 
       {
         name: "longsword",
-        detais: "longsword_details",
+        details: "longsword_details",
 
         type: [weaponry.military,weaponry.long_swords],
 
@@ -694,7 +694,7 @@ export default {
       whip: 
       {
         name: "whip",
-        detais: "whip_details",
+        details: "whip_details",
 
         type: [weaponry.military],
 
@@ -724,7 +724,7 @@ export default {
       shortsword: 
       {
         name: "shortsword",
-        detais: "shortsword_details",
+        details: "shortsword_details",
 
         type: [weaponry.military,weaponry.short_swords],
 
@@ -754,7 +754,7 @@ export default {
       maul: 
       {
         name: "maul",
-        detais: "maul_details",
+        details: "maul_details",
 
         type: [weaponry.military],
 
@@ -784,7 +784,7 @@ export default {
       morningstar: 
       {
         name: "morningstar",
-        detais: "morningstar_details",
+        details: "morningstar_details",
 
         type: [weaponry.military],
 
@@ -814,7 +814,7 @@ export default {
       pike: 
       {
         name: "pike",
-        detais: "pike_details",
+        details: "pike_details",
 
         type: [weaponry.military],
 
@@ -844,7 +844,7 @@ export default {
       rapier: 
       {
         name: "rapier",
-        detais: "rapier_details",
+        details: "rapier_details",
 
         type: [weaponry.military,weaponry.rapires],
 
@@ -874,7 +874,7 @@ export default {
       greataxe: 
       {
         name: "greataxe",
-        detais: "greataxe_details",
+        details: "greataxe_details",
 
         type: [weaponry.military],
 
@@ -904,7 +904,7 @@ export default {
       scimitar: 
       {
         name: "scimitar",
-        detais: "scimitar_details",
+        details: "scimitar_details",
 
         type: [weaponry.military],
 
@@ -934,7 +934,7 @@ export default {
       trident: 
       {
         name: "trident",
-        detais: "trident_details",
+        details: "trident_details",
 
         type: [weaponry.military],
 
@@ -964,7 +964,7 @@ export default {
       flail: 
       {
         name: "flail",
-        detais: "flail_details",
+        details: "flail_details",
 
         type: [weaponry.military],
 
@@ -996,7 +996,7 @@ export default {
       hand_crossbow:
       {
         name: "hand_crossbow",
-        detais: "hand_crossbow_details",
+        details: "hand_crossbow_details",
 
         type: [weaponry.military,weaponry.hand_arbalets],
 
@@ -1026,7 +1026,7 @@ export default {
       heavy_crossbow:
       {
         name: "heavy_crossbow",
-        detais: "heavy_crossbow_details",
+        details: "heavy_crossbow_details",
 
         type: [weaponry.military],
 
@@ -1056,7 +1056,7 @@ export default {
       longbow:
       {
         name: "longbow",
-        detais: "longbow_details",
+        details: "longbow_details",
 
         type: [weaponry.military,weaponry.long_bows],
 
@@ -1086,7 +1086,7 @@ export default {
       blowgun:
       {
         name: "blowgun",
-        detais: "blowgun_details",
+        details: "blowgun_details",
 
         type: [weaponry.military],
 
@@ -1116,7 +1116,7 @@ export default {
       net:
       {
         name: "net",
-        detais: "net_details",
+        details: "net_details",
 
         type: [weaponry.military],
 

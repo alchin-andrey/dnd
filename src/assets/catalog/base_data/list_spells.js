@@ -3294,6 +3294,134 @@ export default {
     }
   ],
 
+  bardic_inspiration: [
+    {
+      name: "spell_bardic_inspiration",
+      details: "spell_bardic_inspiration_details",
+      expanded: "spell_bardic_inspiration_expanded",
+
+      type: "ability",
+      slot_type: "bardic_inspiration_slot",
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "dice",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Dice_16_58_1010_1512",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 6,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  song_of_rest: [
+    {
+      name: "spell_song_of_rest",
+      details: "spell_song_of_rest_details",
+      expanded: "spell_song_of_rest_expanded",
+
+      type: "ability",
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: "heal",
+      impact_damage_type: "bonus_o_w",
+
+      impact_size_foo: "Dice_16_98_1310_1712",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 6,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  cutting_word: [
+    {
+      name: "spell_cutting_word",
+      details: "spell_cutting_word_details",
+      expanded: "spell_cutting_word_expanded",
+
+      type: "ability",
+      slot_type: "bardic_inspiration_slot",
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "reduction_w",
+      impact_damage_type: null,
+
+      impact_size_foo: "Dice_16_58_1010_1512",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 6,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [

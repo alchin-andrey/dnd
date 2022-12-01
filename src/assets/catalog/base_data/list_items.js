@@ -2,63 +2,63 @@ export default {
 
   backpack: {
     name: "backpack",
-    detais: "backpack_details",
+    details: "backpack_details",
     cost: 200,
     weight: 2.5,
   },
 
   bedroll: {
     name: "bedroll",
-    detais: "bedroll_details",
+    details: "bedroll_details",
     cost: 100,
     weight: 3.5,
   },
 
   mess_kit: {
     name: "mess_kit",
-    detais: "mess_kit_details",
+    details: "mess_kit_details",
     cost: 20,
     weight: 0.5,
   },
 
   tinderbox: {
     name: "tinderbox",
-    detais: "tinderbox_details",
+    details: "tinderbox_details",
     cost: 50,
     weight: 0.5,
   },
 
   torch: {
     name: "torch",
-    detais: "torch_details",
+    details: "torch_details",
     cost: 1,
     weight: 0.5,
   },
 
   ration: {
     name: "ration",
-    detais: "ration_details",
+    details: "ration_details",
     cost: 50,
     weight: 1,
   },
 
   waterskin: {
     name: "waterskin",
-    detais: "waterskin_details",
+    details: "waterskin_details",
     cost: 20,
     weight: 2.5,
   },
 
   hempen_rope: {
     name: "hempen_rope",
-    detais: "hempen_rope_details",
+    details: "hempen_rope_details",
     cost: 100,
     weight: 5,
   },
 
   totem: {
     name: "totem",
-    detais: "totem_details",
+    details: "totem_details",
     cost: 100,
     weight: 0.5,
   },
@@ -229,5 +229,159 @@ export default {
     details: "ritual_book_details",
     cost: 5000,
     weight: 1,
+  },
+
+  chest: {
+    name: "chest",
+    details: "chest_details",
+    cost: 500,
+    weight: 11.5,
+  },
+
+  scroll_tube: {
+    name: "scroll_tube",
+    details: "scroll_tube_details",
+    cost: 100,
+    weight: 0.5,
+  },
+
+  fine_clothes: {
+    name: "fine_clothes",
+    details: "fine_clothes_details",
+    cost: 1500,
+    weight: 2.7,
+  },
+
+  ink: {
+    name: "ink",
+    details: "ink_details",
+    cost: 1000,
+    weight: 0.1,
+  },
+
+  ink_pen: {
+    name: "ink_pen",
+    details: "ink_pen_details",
+    cost: 2,
+    weight: 0,
+  },
+
+  lamp: {
+    name: "lamp",
+    details: "lamp_details",
+    cost: 50,
+    weight: 0.5,
+  },
+
+  perfume: {
+    name: "perfume",
+    details: "perfume_details",
+    cost: 500,
+    weight: 0.1,
+  },
+
+  paper: {
+    name: "paper",
+    details: "paper_details",
+    cost: 20,
+    weight: 0.1,
+  },
+
+  sealing_wax: {
+    name: "sealing_wax",
+    details: "sealing_wax_details",
+    cost: 50,
+    weight: 0.1,
+  },
+
+  soap: {
+    name: "soap",
+    details: "soap_details",
+    cost: 2,
+    weight: 0.1,
+  },
+
+  costume: {
+    name: "costume",
+    details: "costume_details",
+    cost: 500,
+    weight: 1.8,
+  },
+
+  disguise_kit: {
+    name: "disguise_kit",
+    details: "disguise_kit_details",
+    cost: 2500,
+    weight: 1.4,
+  },
+
+  music_drums: {
+    name: "item_music_drums",
+    details: "item_music_drums_details",
+    cost: 600,
+    weight: 1.4,
+  },
+
+  music_viol: {
+    name: "item_music_viol",
+    details: "item_music_viol_details",
+    cost: 3000,
+    weight: 0.5,
+  },
+
+  music_bagpipes: {
+    name: "item_music_bagpipes",
+    details: "item_music_bagpipes_details",
+    cost: 3000,
+    weight: 2.7,
+  },
+
+  music_lyre: {
+    name: "item_music_lyre",
+    details: "item_music_lyre_details",
+    cost: 3000,
+    weight: 1,
+  },
+
+  music_lute: {
+    name: "item_music_lute",
+    details: "item_music_lute_details",
+    cost: 3500,
+    weight: 1,
+  },
+
+  music_horn: {
+    name: "item_music_horn",
+    details: "item_music_horn_details",
+    cost: 300,
+    weight: 1,
+  },
+
+  music_pan_flute: {
+    name: "item_music_pan_flute",
+    details: "item_music_pan_flute_details",
+    cost: 1200,
+    weight: 1,
+  },
+
+  music_flute: {
+    name: "item_music_flute",
+    details: "item_music_flute_details",
+    cost: 200,
+    weight: 0.5,
+  },
+
+  music_dulcimer: {
+    name: "item_music_dulcimer",
+    details: "item_music_dulcimer_details",
+    cost: 2500,
+    weight: 4.5,
+  },
+
+  music_shawm: {
+    name: "item_music_shawm",
+    details: "item_music_shawm_details",
+    cost: 200,
+    weight: 0.5,
   },
 };
