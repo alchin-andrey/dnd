@@ -25,7 +25,7 @@
 <script>
 import race from "@/assets/catalog/base_data/step1_races.js";
 
-import { mapState, mapActions } from "pinia";
+import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 
@@ -93,10 +93,12 @@ export default {
 
     listenerUp(event) {
 			if (event.code == "ArrowRight") {
+        console.log('key press:', event.code)
 				this.getSlideNext();
         this.$refs.next.classList.remove("push");
 			}
 			if (event.code == "ArrowLeft") {
+        console.log('key press:', event.code)
 				this.getSlideBack();
         this.$refs.back.classList.remove("push");
 			}
@@ -168,10 +170,6 @@ export default {
 	margin: -7px;
 }
 
-/* .arrow_left img:hover {
-  width: 15px;
-} */
-
 .arrow_right {
 	display: flex;
 	justify-content: center;
@@ -185,7 +183,11 @@ export default {
 	cursor: pointer;
 }
 
-.arrows img:active {
+.arrow_left:active img {
+	width: 15px;
+}
+
+.arrow_right:active img {
 	width: 15px;
 }
 
