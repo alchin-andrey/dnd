@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
   name: "MySlider",
   props: {
@@ -49,6 +51,7 @@ export default {
   },
 
   computed: {
+    ...mapState(useMYStore, ["MY"]),
     t_Title() {
       return this.t(this.title);
     },
@@ -61,21 +64,21 @@ export default {
     getNameBack(arr, type) {
       let j = arr.indexOf(type);
       if (j === 0) {
-        this.$root.MY.race = arr[arr.length - 1];
-        this.$root.MY.race_name = this.arr_keys[this.arr_keys.length - 1];
+        this.MY.race = arr[arr.length - 1];
+        this.MY.race_name = this.arr_keys[this.arr_keys.length - 1];
       } else {
-        this.$root.MY.race = arr[j - 1];
-        this.$root.MY.race_name = this.arr_keys[j - 1];
+        this.MY.race = arr[j - 1];
+        this.MY.race_name = this.arr_keys[j - 1];
       } 
     },
     getNameForward(arr, i) {
       let j = arr.indexOf(i);
       if (j === arr.length - 1) {
-        this.$root.MY.race = arr[0];
-        this.$root.MY.race_name = this.arr_keys[0];
+        this.MY.race = arr[0];
+        this.MY.race_name = this.arr_keys[0];
       } else {
-        this.$root.MY.race = arr[j + 1];
-        this.$root.MY.race_name = this.arr_keys[j + 1];
+        this.MY.race = arr[j + 1];
+        this.MY.race_name = this.arr_keys[j + 1];
       }
     },
   },

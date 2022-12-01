@@ -55,7 +55,6 @@ export default {
 </script>
 
 <style scoped>
-
 .title {
   font-family: "Inter";
   font-style: normal;
@@ -74,8 +73,6 @@ export default {
 .title:first-letter {
   text-transform: uppercase;
 }
-
-
 
 .text {
   color: rgba(255, 255, 255, 0.4);

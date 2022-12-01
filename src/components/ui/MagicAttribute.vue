@@ -24,10 +24,10 @@
 			<div
 				class="cube"
 				:class="{ cube_dash: Miles }"
-				v-for="n in get_Cube"
+				v-for="n in spell_Cube_Numb"
 				:key="n"
 			></div>
-			<div class="cube_zero" v-for="n in get_CubeZero" :key="n"></div>
+			<div class="cube_zero" v-for="n in spell_Cube_Numb_Zero" :key="n"></div>
 		</div>
 	</div>
 </template>
@@ -48,10 +48,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		// str: {
-		// 	type: String,
-		// 	default: null,
-		// },
 		str: {
 			type: Number,
 			default: null,
@@ -100,11 +96,7 @@ export default {
 		},
 
 		t_Title() {
-			if (this.save) {
-				return `/ ${this.t(this.title)}`;
-			} else {
-				return this.t(this.title);
-			}
+			return this.save ? `/ ${this.t(this.title)}` : this.t(this.title);
 		},
 
 		t_Addition() {
@@ -119,19 +111,9 @@ export default {
 			return this.pls ? `+${this.pls}` : null;
 		},
 
-		// Str() {
-		//   return this.str ? `${this.str}×` : null;
-		// },
-
 		Str() {
 			if (this.str) {
-				if (this.title === "liters_number") {
-					return this.str;
-				} else {
-					return `${this.str}×`;
-				}
-			} else {
-				return null;
+				return this.title === "liters_number" ? this.str : `${this.str}×`;
 			}
 		},
 
@@ -143,10 +125,6 @@ export default {
 			return this.plus ? "+" : null;
 		},
 
-		// Miles() {
-		// 	return this.numb % 5280 === 0;
-		// },
-
 		Miles() {
 			let num = this.numb % 5280 === 0;
 			let not_0 = this.numb !== null;
@@ -157,7 +135,7 @@ export default {
 			return (
 				this.title === "aim_range" ||
 				this.title === "aim_aoe" ||
-				this.title === "push" && !this.save
+				(this.title === "push" && !this.save)
 			);
 		},
 
@@ -197,7 +175,7 @@ export default {
 			return this.t(this.Suffix);
 		},
 
-		get_Cube() {
+		spell_Cube_Numb() {
 			if (this.Suffix === "feet") {
 				return Math.ceil(this.numb / 5);
 			} else if (this.Miles) {
@@ -207,7 +185,7 @@ export default {
 			}
 		},
 
-		get_CubeZero() {
+		spell_Cube_Numb_Zero() {
 			if (this.dice) {
 				return this.dice * this.numb - this.numb;
 			}
@@ -216,7 +194,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .wrapp_atrib {
 	display: flex;

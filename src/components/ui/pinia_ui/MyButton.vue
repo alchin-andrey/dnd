@@ -9,7 +9,7 @@
 			<div>
 				{{ t_Title }}
 			</div>
-			<div><img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg"/></div>
+			<div><img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg" /></div>
 		</div>
 	</div>
 </template>

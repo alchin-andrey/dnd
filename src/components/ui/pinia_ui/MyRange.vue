@@ -76,7 +76,7 @@ export default {
 			}
 		},
 
-		Age_Units() {
+		age_Units() {
 			let mod10 = Math.abs(this.inputValue % 10);
 			let mod100 = Math.abs(this.inputValue % 100);
 			if (mod100 > 10 && mod100 < 20) {
@@ -94,7 +94,7 @@ export default {
 			if (this.lvl) {
 				return `${this.inputValue}${this.t("level_unit")} ${this.t("level")}`;
 			} else if (this.age) {
-				return `${this.inputValue} ${this.t(this.Age_Units)}`;
+				return `${this.inputValue} ${this.t(this.age_Units)}`;
 			} else if (this.height) {
 				return `${this.inputValue} ${this.t("cm")}`;
 			} else if (this.weight) {

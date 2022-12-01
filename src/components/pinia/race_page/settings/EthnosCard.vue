@@ -81,6 +81,7 @@
 					:key="item"
 					:lvl="item.level"
 					:spell="item.spell"
+          select
 				>
 				</my-spell-text>
 			</my-wrapper>
@@ -121,7 +122,7 @@ export default {
 		proficiencies_Arr_Ethnos: (state) => (obj, kay) => {
 			let ethnos_arr = obj.proficiencies?.[kay].map((x) => x.name);
 			let incr = obj[`custom_${kay}`]?.[0];
-			ethnos_arr.push(`+${incr}`);
+			obj[`custom_${kay}`] ? ethnos_arr.push(`+${incr}`) : null;
 			return ethnos_arr;
 		},
 	},

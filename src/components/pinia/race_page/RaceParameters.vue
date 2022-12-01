@@ -100,7 +100,7 @@
 
 		<!-- text -->
 		<div class="story int-400">
-			<div v-html="t(MY.race.details)"></div>
+			<div v-html="t_Story"></div>
 			<my-card-text
 				v-if="MY.ethnos.name !== 'common'"
 				:title="MY.ethnos.name"
@@ -128,6 +128,10 @@ export default {
       "skills_All_RE",
       "languages_Custom_Arr_RE",
     ]),
+
+    t_Story() {
+      return this.t(this.MY.race.details)
+    },
 
     skills_Mastery() {
 			return 1 + this.MY.mastery;

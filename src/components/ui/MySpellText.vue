@@ -2,12 +2,13 @@
 	<div
 		v-if="Show"
 		class="flex_spell"
-		:class="{ hover: !passive }"
-		@click="showDialog()"
+    @mouseover="hoverIn_Full()"
+    @mouseleave="hoverOut()"
+		@click="showDialog_Full()"
 	>
-		<div
-			class="side_stripe"
-			:class="{ active: dialogVisible && !passive }"
+		<div 
+    ref="stripe"
+		class="side_stripe"
 		></div>
 		<div class="int-400 flex_col">
 			<div>
@@ -23,10 +24,12 @@
 						/>{{ em_After }}
 					</div>
 					<img
-						v-if="!passive"
+            @mouseover="hoverIn_Select()"
+            @mouseleave="hoverOut()"
 						class="icon_spell"
 						src="@/assets/img/icon/arrow_right_small.svg"
 						alt="arrow"
+            @click="showDialog_Select()"
 					/>
 				</div>
 				<!-- <div class="text_spell">{{ t_Text }}</div> -->
@@ -93,7 +96,7 @@
 			<magic-attribute
 				v-if="Spell_Index.aim_need"
 				title="aim_bonus"
-				:numb="this.$root.MY.mastery"
+				:numb="this.MY.mastery"
 				plus
 			/>
 			<!-- <magic-attribute
@@ -145,7 +148,8 @@
 
 <script>
 import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
-
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "MySpellText",
 
@@ -166,21 +170,20 @@ export default {
 			type: Array,
 			default: null,
 		},
-		passive: {
+		select: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	computed: {
+    ...mapState(useMYStore, ["MY"]),
+
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
 		Spell_Index() {
 			return this.spell[this.Index];
 		},
-		// Manna_Index() {
-		// 	return this.spell[this.mana_numb];
-		// },
 		Mana_Numb() {
 			if (this.mana_numb) {
 				return this.mana_numb;
@@ -192,7 +195,6 @@ export default {
 			return this.spell[this.Mana_Numb];
 		},
 		Manna_Length() {
-			// console.log('Manna_Length', this.spell.length)
 			return this.spell.length;
 		},
 
@@ -200,7 +202,7 @@ export default {
 		// ------ STR -----------
 		Str_X_Level_5_11_17() {
 			let str = this.Spell_Index.impact_size_str;
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			let kof = null;
 			if (lvl < 5) {
 				kof = 1;
@@ -263,14 +265,12 @@ export default {
 		// ------ NUM -----------
 
 		Num_Barbarian_Rage_Bonus() {
-      
-			console.log('barbarian_rage_bonus:', barbarian_rage_bonus[this.$root.MY.level])
-			return barbarian_rage_bonus[this.$root.MY.level]; // convert to store
+			return barbarian_rage_bonus[this.MY.level]; // convert to store
 		},
 
 		Num_Plus_Level_2() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			return num + Math.floor((lvl - 1) / 2);
 			//Например num = 1.
 			//на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
@@ -278,14 +278,14 @@ export default {
 
 		Num_LevelX() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 
 			return num * lvl;
 		},
 
     Num_Level_9_16() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			let kof = 0;
 			if (lvl < 9) {
 				kof = 0;
@@ -299,7 +299,7 @@ export default {
 
 		Num_Level_5_11_17() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			let kof = 0;
 			if (lvl < 5) {
 				kof = 0;
@@ -315,7 +315,7 @@ export default {
 
 		Num_Level_6_11_16() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			let kof = null;
 			if (lvl < 6) {
 				kof = 0;
@@ -331,10 +331,10 @@ export default {
 
 		Num_MOD() {
 			let num = this.Spell_Index.impact_size_num;
-			let mod = this.$root.MY.stats.strength.mod;
+			let mod = this.MY.stats.strength.mod;
 			// console.log('Str_X_Plus_1_Num_MOD', num)
 
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			return num + mod + lvl;
 			// return num + mod;
 		},
@@ -390,10 +390,10 @@ export default {
 		// ------ PLS -----------
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.$root.MY.stats.strength.mod;
+			let mod = this.MY.stats.strength.mod;
 			// console.log('Str_X_Plus_1_Num_MOD', num)
 
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			return pls + mod + lvl;
 			// return num + mod;
 
@@ -418,9 +418,9 @@ export default {
     Pls_STR() 
     {
       let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.$root.MY.stats.strength.mod;
+			let mod = this.MY.stats.strength.mod;
 
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			return pls + mod + lvl;
 
         //return to: impact_size_pls
@@ -431,9 +431,9 @@ export default {
     Pls_CHA()
     {
       let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.$root.MY.stats.charisma.mod;
+			let mod = this.MY.stats.charisma.mod;
 
-			let lvl = this.$root.MY.level;
+			let lvl = this.MY.level;
 			return pls + mod + lvl;
 
         //return to: impact_size_pls
@@ -474,7 +474,7 @@ export default {
 		// ------ FOO -----------
 
 		Show() {
-			return this.lvl <= this.$root.MY.level;
+			return this.lvl <= this.MY.level;
 		},
 		em_Upd() {
 			return this.updEmoji(this.t_Title);
@@ -554,9 +554,9 @@ export default {
 		},
 		Saving_Numb() {
 			const KOF = 8;
-			let attribute = this.$root.MY.class.spell_attribute;
-			let mastery = this.$root.MY.mastery;
-			let stats_mod = this.$root.MY.stats[attribute].mod;
+			let attribute = this.MY.class.spell_attribute;
+			let mastery = this.MY.mastery;
+			let stats_mod = this.MY.stats[attribute].mod;
       console.log(attribute, mastery, stats_mod)
 			return KOF + mastery + stats_mod;
 		},
@@ -564,14 +564,41 @@ export default {
 			return this.t(this.Spell_Index.expanded);
 		},
 	},
+  watch: {
+    dialogVisible(val) {
+      if (val === false) {
+        this.$refs.stripe.classList.remove('active')
+      }
+    } 
+  },
 	methods: {
-		showDialog() {
-			if (this.passive) {
-				return null;
+    hoverIn_Select(){
+      if (this.select) {
+      this.$refs.stripe.classList.add('active')
+      } 
+    },
+    hoverOut(){
+      if(!this.dialogVisible) {
+        this.$refs.stripe.classList.remove('active')
+      }
+    },
+    hoverIn_Full(){
+      if (!this.select) {
+        this.$refs.stripe.classList.add('active')
 			}
-			this.dialogVisible = true;
-			this.mana_numb = this.Index;
+    },
+		showDialog_Full() {
+			if (!this.select) {
+        this.dialogVisible = true;
+        this.mana_numb = this.Index;
+			} 
 		},
+
+    showDialog_Select() {
+        this.dialogVisible = true;
+        this.mana_numb = this.Index;
+		},
+
 		choiceManna(numb) {
 			if (numb - 1 < this.Index) {
 				return null;
@@ -666,10 +693,6 @@ export default {
 	order: 0;
 	align-self: stretch;
 	flex-grow: 0;
-}
-
-.hover:hover .side_stripe {
-	background: #ffffff;
 }
 
 .active {

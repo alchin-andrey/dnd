@@ -1,10 +1,10 @@
 <template>
 	<div class="col">
 		<div class="col_title">{{ t_Title }}<span>:</span></div>
-    <div v-if="!emoji" class="col_text"> {{ text }} </div>
+		<div v-if="!emoji" class="col_text">{{ text }}</div>
 		<div v-else class="col_text">
 			{{ em_Before }}
-      <emoji
+			<emoji
 				v-if="em_Upd"
 				:data="emojiIndex"
 				:emoji="em_Upd"
@@ -46,8 +46,8 @@ export default {
 		},
 
 		t_Title() {
-      let string = this.t(this.title);
-			return string.charAt(0).toUpperCase() + string.slice(1)
+			let string = this.t(this.title);
+			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 	},
 };
