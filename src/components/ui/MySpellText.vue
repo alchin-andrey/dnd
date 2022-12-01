@@ -2,14 +2,11 @@
 	<div
 		v-if="Show"
 		class="flex_spell"
-    @mouseover="hoverIn_Full()"
-    @mouseleave="hoverOut()"
+		@mouseover="hoverIn_Full()"
+		@mouseleave="hoverOut()"
 		@click="showDialog_Full()"
 	>
-		<div 
-    ref="stripe"
-		class="side_stripe"
-		></div>
+		<div ref="stripe" class="side_stripe"></div>
 		<div class="int-400 flex_col">
 			<div>
 				<div class="flex_title">
@@ -24,12 +21,12 @@
 						/>{{ em_After }}
 					</div>
 					<img
-            @mouseover="hoverIn_Select()"
-            @mouseleave="hoverOut()"
 						class="icon_spell"
 						src="@/assets/img/icon/arrow_right_small.svg"
 						alt="arrow"
-            @click="showDialog_Select()"
+						@mouseover="hoverIn_Select()"
+						@mouseleave="hoverOut()"
+						@click="showDialog_Select()"
 					/>
 				</div>
 				<!-- <div class="text_spell">{{ t_Text }}</div> -->
@@ -70,8 +67,7 @@
 				:class="{
 					manna_bubble_passive: n - 1 < Index,
 					manna_bubble_active: n - 1 === mana_numb,
-					manna_bubble_hover:
-						!(n - 1 < Index) && !(n - 1 === mana_numb),
+					manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === mana_numb),
 				}"
 			>
 				{{ Spell_Index.slot_type ? t(Spell_Index.slot_type) : n - 1 }}
@@ -96,16 +92,9 @@
 			<magic-attribute
 				v-if="Spell_Index.aim_need"
 				title="aim_bonus"
-				:numb="this.MY.mastery"
+				:numb="this.Mastery"
 				plus
 			/>
-			<!-- <magic-attribute
-				v-if="Spell_Index.impact_type"
-				:title="Spell_Index.impact_type"
-				:addition="Spell_Index.impact_damage_type"
-				:numb="Manna_Index.impact_size_num"
-				:dice="Manna_Index.impact_size_dice"
-			/> -->
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
 				:title="Spell_Index.impact_type"
@@ -152,7 +141,6 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "MySpellText",
-
 	data() {
 		return {
 			dialogVisible: false,
@@ -176,8 +164,7 @@ export default {
 		},
 	},
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
-
+		...mapState(useMYStore, ["MY", "Mastery"]),
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
@@ -198,8 +185,26 @@ export default {
 			return this.spell.length;
 		},
 
+    by_Mana: (state) => (str) => {
+			let val = state.Manna_Index[str];
+			if (val) {
+				return val;
+			} else {
+				let main_num = state.Index;
+				let num = state.Mana_Numb;
+				let res = null;
+				for (let i = num; i > main_num - 1; i--) {
+					if (state.spell[i].hasOwnProperty(str)) {
+						res = state.spell[i][str];
+						break;
+					}
+				}
+				return res;
+			}
+		},
+
 		// -----------------------------------
-		// ------ STR -----------
+		//ANCHOR - STR
 		Str_X_Level_5_11_17() {
 			let str = this.Spell_Index.impact_size_str;
 			let lvl = this.MY.level;
@@ -261,9 +266,8 @@ export default {
 
 			// + aoe size через скобочки
 		},
-		// ------ STR -----------
-		// ------ NUM -----------
 
+		//ANCHOR - NUM
 		Num_Barbarian_Rage_Bonus() {
 			return barbarian_rage_bonus[this.MY.level]; // convert to store
 		},
@@ -283,7 +287,7 @@ export default {
 			return num * lvl;
 		},
 
-    Num_Level_9_16() {
+		Num_Level_9_16() {
 			let num = this.Spell_Index.impact_size_num;
 			let lvl = this.MY.level;
 			let kof = 0;
@@ -386,8 +390,8 @@ export default {
 			//spell{1}: 1d4 ⬜️🔳🔳🔳
 			//spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
 		},
-		// ------ NUM -----------
-		// ------ PLS -----------
+
+		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.MY.stats.strength.mod;
@@ -415,61 +419,54 @@ export default {
 			//spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
 		},
 
-    Pls_STR() 
-    {
-      let pls = this.Spell_Index.impact_size_pls;
+		Pls_STR() {
+			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.MY.stats.strength.mod;
 
 			let lvl = this.MY.level;
 			return pls + mod + lvl;
 
-        //return to: impact_size_pls
-        //if < 0 then 0
-        // Example: +3 ⬜️⬜️⬜️
-    },
+			//return to: impact_size_pls
+			//if < 0 then 0
+			// Example: +3 ⬜️⬜️⬜️
+		},
 
-    Pls_CHA()
-    {
-      let pls = this.Spell_Index.impact_size_pls;
+		Pls_CHA() {
+			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.MY.stats.charisma.mod;
 
 			let lvl = this.MY.level;
 			return pls + mod + lvl;
 
-        //return to: impact_size_pls
-        //if < 0 then 0
-        //Example: +4 ⬜️⬜️⬜️⬜️
+			//return to: impact_size_pls
+			//if < 0 then 0
+			//Example: +4 ⬜️⬜️⬜️⬜️
+		},
+
+		//ANCHOR - FOO
+    Value_Foo: (state) => (Val) => {
+      let low_val = Val.toLowerCase();
+			let num = state.Spell_Index[`impact_size_${low_val}`];
+			let foo = state.Spell_Index.impact_size_foo;
+			if (foo) {
+        let str = foo.split("__");
+				for (let i in str) {
+          str[i].substr(0, 3) === Val ? num = state[str[i]] : null;
+				}
+			}
+			return num;
+		},
+    
+    Value_Str() {
+      return this.Value_Foo("Str");
     },
-		// ------ PLS -----------
-		// -----------------------------------
 
-		// ------ FOO -----------
-		Foo() {
-			return this.Spell_Index.impact_size_foo;
-		},
-
-		Foo_1() {
-			return this.Foo ? this.Foo.split("__")[0] : null;
-		},
-
-		Foo_2() {
-			return this.Foo ? this.Foo.split("__")[1] : null;
-		},
-
-		Foo_3() {
-			return this.Foo ? this.Foo.split("__")[2] : null;
-		},
-
-		Value_Num() {
-			return this.gat_Value_Foo("Num");
-		},
-
-		Value_Str() {
-			return this.gat_Value_Foo("Str");
-		},
+    Value_Num() {
+      return this.Value_Foo("Num");
+    },
 
 		Value_Pls() {
-			return this.gat_Value_Foo("Pls");
+			return this.Value_Foo("Pls");
 		},
 		// ------ FOO -----------
 
@@ -491,170 +488,119 @@ export default {
 		t_Title() {
 			return this.t(this.Spell_Index.name);
 		},
+
 		t_Type() {
 			let string = this.t(this.Spell_Index.type);
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
+
 		t_Text() {
 			return this.t(this.Spell_Index.details);
 		},
+
 		t_Cast_Value() {
 			let string = null;
 			if (this.Spell_Index.cast_time === "ritual") {
 				let value = this.t(this.Spell_Index.cast_time);
 				let numb = this.Spell_Index.cast_duration;
 				let numb_units = this.t(this.Spell_Index.cast_duration_units);
-				string = value + " " + numb + " " + numb_units;
+				string = `${value} ${numb} ${numb_units}`;
 			} else {
 				string = this.t(this.Spell_Index.cast_time);
 			}
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
+
 		t_Target_Value() {
 			let value_1 = this.t(this.Spell_Index.aim_target);
 			let value_2 = this.t(this.Spell_Index.aim_type);
 			let string = null;
 			if (value_2) {
-				string = value_1 + " " + value_2;
+				string = `${value_1} ${value_2}`;
 			} else {
 				string = value_1;
 			}
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
+
 		t_Parts_Value() {
 			let parts = this.Spell_Index.parts;
 			let arr = [];
 			for (let i in parts) {
 				arr.push(this.t(parts[i]));
 			}
-			return arr
-				.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`)
-				.join(", ");
+			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
+
 		t_Time_Value() {
 			let value_1 = null;
 			if (this.Spell_Index.spell_time === "concentration") {
-				value_1 =
-					this.t(this.Spell_Index.spell_time) + " " + this.t("up_to");
+				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
 			} else {
 				value_1 = this.t(this.Spell_Index.spell_time);
 			}
-			// let value_2 = this.Spell_Index.spell_duration;
 			let value_2 = this.by_Mana("spell_duration");
 			let value_3 = this.t(this.Spell_Index.spell_duration_units);
 			let string = null;
 			if (!value_1) {
-				string = value_2 + " " + value_3;
+				string = `${value_2} ${value_3}`;
 			} else if (value_2) {
-				string = value_1 + " " + value_2 + " " + value_3;
+				string = `${value_1} ${value_2} ${value_3}`;
 			} else {
 				string = value_1;
 			}
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
+
 		Saving_Numb() {
 			const KOF = 8;
 			let attribute = this.MY.class.spell_attribute;
-			let mastery = this.MY.mastery;
+			let mastery = this.Mastery;
 			let stats_mod = this.MY.stats[attribute].mod;
-      console.log(attribute, mastery, stats_mod)
 			return KOF + mastery + stats_mod;
 		},
+
 		t_Expanded() {
 			return this.t(this.Spell_Index.expanded);
 		},
 	},
-  watch: {
-    dialogVisible(val) {
-      if (val === false) {
-        this.$refs.stripe.classList.remove('active')
-      }
-    } 
-  },
-	methods: {
-    hoverIn_Select(){
-      if (this.select) {
-      this.$refs.stripe.classList.add('active')
-      } 
-    },
-    hoverOut(){
-      if(!this.dialogVisible) {
-        this.$refs.stripe.classList.remove('active')
-      }
-    },
-    hoverIn_Full(){
-      if (!this.select) {
-        this.$refs.stripe.classList.add('active')
+	watch: {
+		dialogVisible(val) {
+			if (val === false) {
+				this.$refs.stripe.classList.remove("active");
 			}
-    },
+		},
+	},
+	methods: {
+		hoverIn_Select() {
+			if (this.select) {
+				this.$refs.stripe.classList.add("active");
+			}
+		},
+		hoverOut() {
+			if (!this.dialogVisible) {
+				this.$refs.stripe.classList.remove("active");
+			}
+		},
+		hoverIn_Full() {
+			if (!this.select) {
+				this.$refs.stripe.classList.add("active");
+			}
+		},
 		showDialog_Full() {
 			if (!this.select) {
-        this.dialogVisible = true;
-        this.mana_numb = this.Index;
-			} 
-		},
-
-    showDialog_Select() {
-        this.dialogVisible = true;
-        this.mana_numb = this.Index;
-		},
-
-		choiceManna(numb) {
-			if (numb - 1 < this.Index) {
-				return null;
-			} else {
-				this.mana_numb = numb - 1;
+				this.dialogVisible = true;
+				this.mana_numb = this.Index;
 			}
 		},
 
-		gat_Sub_Foo(num, val) {
-			let foo = this[`Foo_${num}`];
-
-			if (foo) {
-				let sub_foo = foo.substr(0, 3) === val;
-				return sub_foo;
-			} else {
-				return null;
-			}
+		showDialog_Select() {
+			this.dialogVisible = true;
+			this.mana_numb = this.Index;
 		},
 
-		gat_Value_Foo(val) {
-			let low_val = val.toLowerCase();
-			let num = this.Spell_Index[`impact_size_${low_val}`];
-			let sub_foo_1 = this.gat_Sub_Foo(1, val);
-			let sub_foo_2 = this.gat_Sub_Foo(2, val);
-			let sub_foo_3 = this.gat_Sub_Foo(3, val);
-			if (sub_foo_1) {
-				let num_foo = this[this.Foo_1];
-				return num_foo;
-			}
-			if (sub_foo_2) {
-				let num_foo = this[this.Foo_2];
-				return num_foo;
-			}
-			if (sub_foo_3) {
-				let num_foo = this[this.Foo_3];
-				return num_foo;
-			}
-			return num;
-		},
-
-		by_Mana(str) {
-			let val = this.Manna_Index[str];
-			if (val) {
-				return val;
-			} else {
-				let main_num = this.Index;
-				let num = this.Mana_Numb;
-				let res = null;
-				for (let i = num; i > main_num - 1; i--) {
-					if (this.spell[i].hasOwnProperty(str)) {
-						res = this.spell[i][str];
-						break;
-					}
-				}
-				return res;
-			}
+    choiceManna(numb) {
+			return numb - 1 < this.Index ? null : this.mana_numb = numb - 1
 		},
 	},
 };

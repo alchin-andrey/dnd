@@ -115,6 +115,7 @@
 import { mapState} from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 export default {
 	name: "RaceParameters",
 	computed: {
@@ -122,6 +123,7 @@ export default {
 		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY"]),
     // GETTERS
+    ...mapState(useSkillsStore, ["skills_Mastery"]),
     ...mapState(useMYStore, [
       "stats_Keys",
       "stats_Race_Page_Numb",
@@ -133,9 +135,9 @@ export default {
       return this.t(this.MY.race.details)
     },
 
-    skills_Mastery() {
-			return 1 + this.MY.mastery;
-		},
+    // skills_Mastery() {
+		// 	return 1 + this.MY.mastery;
+		// },
 
     shown_Spells_RE() {
 			let race_spells = this.MY.race.spells;

@@ -63,7 +63,6 @@ export const useStatsStore = defineStore({
 		},
 
     stats_Custom_Arr_RE(state) {
-      console.log('stats_Custom_Arr_RE:')
       const MYStore = useMYStore();
 			let custom_arr = [];
 			const selected_arr = MYStore.MY.custom_selected_race_page.stats;
@@ -116,7 +115,6 @@ export const useStatsStore = defineStore({
 		},
 
 		stats_Race_Page_Numb: state => name => {
-      console.log('s:')
 			const RE = state.stats_RE_Numb(name);
 			const custom = state.stats_Custom_RE_Numb(name);
 			return RE + custom;

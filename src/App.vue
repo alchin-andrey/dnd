@@ -108,7 +108,6 @@ export default {
 
 	created() {
 		this.MY.class = Object.values(clas)[1];
-		this.MY.mastery = this.Mastery;
 		this.getCreated();
 	},
 
@@ -184,10 +183,6 @@ export default {
 	},
 	watch: {
 		"MY.race": "getWatch",
-
-		"MY.level": function () {
-			this.MY.mastery = this.Mastery;
-		},
 	},
 
 	methods: {

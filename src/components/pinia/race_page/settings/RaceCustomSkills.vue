@@ -22,6 +22,7 @@
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 export default {
 	name: "RaceCustomSkills",
 	computed: {
@@ -30,10 +31,11 @@ export default {
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
 		...mapState(useMYStore, ["skills_Keys", "skills_Custom_Arr_RE"]),
+    ...mapState(useSkillsStore, ["skills_Mastery"]),
 
-		skills_Mastery() {
-			return 1 + this.MY.mastery;
-		},
+		// skills_Mastery() {
+		// 	return 1 + this.MY.mastery;
+		// },
 	},
 
 	methods: {
