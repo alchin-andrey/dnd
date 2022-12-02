@@ -11,7 +11,7 @@ import MyColorSelect from "@/components/ui/pinia_ui/MyColorSelect.vue";
 
 import MySelection from "@/components/ui/pinia_ui/MySelection.vue";
 import MyController from "@/components/ui/pinia_ui/MyController.vue";
-import MySlider from "@/components/ui/MySlider.vue";
+import MySlider from "@/components/ui/pinia_ui/MySlider.vue";
 import MyButton from "@/components/ui/pinia_ui/MyButton.vue";
 import MyButtonBack from "@/components/ui/pinia_ui/MyButtonBack.vue";
 import MyButtonGender from "@/components/ui/pinia_ui/MyButtonGender.vue";

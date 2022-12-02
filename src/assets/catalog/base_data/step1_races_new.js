@@ -1430,6 +1430,7 @@ export default {
             },
             {
               type: "languages",
+              name: "languages",
               select: 1,
               filter: "no_used",
             }
