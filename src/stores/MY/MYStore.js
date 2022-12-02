@@ -268,6 +268,23 @@ export const useMYStore = defineStore({
 		spells_Custom_Arr_RE() {
 			return this.COMMON_Custom_Arr_RE("spells");
 		},
+
+		spells_Custom_Obj_RE() {
+			let arr = [];
+			let pass_obj = this.spells_Pass_Obj_RE;
+			console.log('this.spells_Pass_Obj_RE:', this.spells_Pass_Obj_RE)
+			let cusstom_arr = this.spells_Custom_Arr_RE;
+			for (let i in pass_obj) {
+        for (let j in pass_obj[i]) {
+				for (let item in cusstom_arr)
+					if (pass_obj[i][j].name == cusstom_arr[item]) {
+						arr.push(pass_obj[i]);
+					}
+        }
+			}
+			return arr;
+		},
+
 		//!SECTION - SPELLS
 	},
 	//!SECTION - GETTERS

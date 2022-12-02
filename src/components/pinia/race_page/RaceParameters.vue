@@ -95,6 +95,13 @@
 				:spell="item.spell"
 			>
 			</my-spell-text>
+      <my-spell-text
+				v-for="item in spells_Custom_Obj_RE"
+				:key="item"
+				:lvl="1"
+				:spell="item"
+			>
+			</my-spell-text>
 		</my-wrapper>
 		<!-- spells -->
 
@@ -129,6 +136,7 @@ export default {
       "stats_Race_Page_Numb",
       "skills_All_RE",
       "languages_Custom_Arr_RE",
+      "spells_Custom_Obj_RE",
     ]),
 
     t_Story() {

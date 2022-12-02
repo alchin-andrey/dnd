@@ -5,7 +5,6 @@ import lang from "./list_languages.js";
 import weaponry from "./kinds_weapons.js";
 import tool from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
-// import { divine_channel_antients_2 } from "../texts/ua/spells.js";
 
 export default {
   gnome: {
@@ -15,7 +14,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [300,-24],
 
-    race_settings: {
+    settings: {
       ethnos: {
         rock: {
           name: "rock",
@@ -23,38 +22,6 @@ export default {
 
           //link_male
           //link_female
-//NOTE - Для отладки
-          settings: [
-            {
-              type: "stats",
-              name: "stats",
-              select: 2,
-              filter: "no_used",
-              num: 1,
-            },
-            {
-              type: "skills",
-              name: "skills",
-              select: 2,
-              filter: "no_used",
-              num: "mastery"
-            },
-            {
-              type: "languages",
-              name: "languages",
-              select: 1,
-              filter: "no_used",
-            },
-            {
-              type: "spells",
-              name: "spells",
-              select: 2,
-              mana_min: 0,
-              mana_max: 0,
-              classes: ["wizard"],
-            },
-          ],
-//NOTE - Для отладки
 
           color: {
             skin: [color[2][1], color[2][2], color[2][3], color[2][4]],
@@ -89,9 +56,13 @@ export default {
           ],
 
           spells: [
-            // ДЛЯ ОТЛАДКИ ------
+            //! ДЛЯ ОТЛАДКИ ------
 
             // По левелу перса
+            {
+              level: 1,
+              spell: spells.sneaky_attack,
+            },
 
             {
               level: 1,
@@ -222,20 +193,20 @@ export default {
 
             // ------------------
 
-            //АКТУАЛЬНІ! Разкомментировать после отладки
-            // {
-            //   level: 1,
-            //   spell: spells.toy,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.lighter,
-            // },
+            //* АКТУАЛЬНІ! Разкомментировать после отладки
+            {
+              level: 1,
+              spell: spells.toy,
+            },
+            {
+              level: 1,
+              spell: spells.lighter,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.music_box,
-            // },
+            {
+              level: 1,
+              spell: spells.music_box,
+            },
           ],
         },
 
@@ -363,6 +334,17 @@ export default {
         min: 15,
         max: 20,
       },
+      //! ДЛЯ ОТЛАДКИ
+    //   custom: {
+    //     stats: [2, 1],
+    //     skills: [2, "skills_Mastery"],
+    //     languages: [1],
+    // },
+
+      custom_stats: [2, 1],
+      custom_skills: [2, "skills_Mastery"],
+      custom_languages: [1],
+      //! ДЛЯ ОТЛАДКИ
     },
 
     stats: { intelligence: 2 },
@@ -389,7 +371,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [300,-24],
 
-    race_settings: {
+    settings: {
       ethnos: {
 
         lightfoot: {
@@ -406,10 +388,6 @@ export default {
           },
 
           stats: { charisma: 1 },
-
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
-          // hp_bonus: [1,1],
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
 
           fines: [
             {
@@ -518,10 +496,6 @@ export default {
         max: 20,
       },
 
-      // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      // custom_stats: [2, 1], // [колво, инкремент]
-      // custom_skills: [2, "mastery"],
-      // custom_languages: [2],
     },
 
     stats: { dexterity: 2 },
@@ -560,7 +534,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [345,-30],
 
-    race_settings: {
+    settings: {
       ethnos: {
         mountain: {
           name: "mountain",
@@ -783,7 +757,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    race_settings: {
+    settings: {
       ethnos: {
 
         damarian: {
@@ -1227,32 +1201,10 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    race_settings: {
+    settings: {
       ethnos: {
         common: {
           name: "common",
-          settings: [
-            {
-              type: "stats",
-              name: "stats",
-              select: 2,
-              filter: "no_used",
-              num: 1,
-            },
-            {
-              type: "skills",
-              name: "skills",
-              select: 2,
-              filter: "no_used",
-              num: "mastery"
-            },
-            {
-              type: "languages",
-              name: "languages",
-              select: 1,
-              filter: "no_used",
-            }
-          ]
         },
       },
 
@@ -1370,6 +1322,10 @@ export default {
         min: 60,
         max: 90,
       },
+
+      custom_stats: [2, 1],
+      custom_skills: [2, "mastery"],
+      custom_languages: [1],
     },
 
     stats: { charisma: 2 },
@@ -1401,7 +1357,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    race_settings: {
+    settings: {
       ethnos: {
 
         high_elf: {
@@ -1436,6 +1392,7 @@ export default {
               weaponry.long_bows,
               weaponry.short_bows,
             ],
+            languages: [],
           },
 
           fines: [
@@ -1446,22 +1403,8 @@ export default {
             },
           ],
 
-          settings: [
-            {
-              type: "spells",
-              name: "spells",
-              select: 2,
-              mana_min: 0,
-              mana_max: 0,
-              classes: ["wizard"],
-            },
-            {
-              type: "languages",
-              name: "languages",
-              select: 1,
-              filter: "no_used",
-            }
-          ],
+          custom_languages: [1],
+          custom_spell: [1,0,"wizard"],
         },
 
         forest: {
@@ -1813,7 +1756,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [390,-36],
 
-    race_settings: {
+    settings: {
       ethnos: {
         common: {
           name: "common",
@@ -2030,7 +1973,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [435,-42],
 
-    race_settings: {
+    settings: {
       ethnos: {
         common: {
           name: "common",
@@ -2130,7 +2073,7 @@ export default {
     noimg_ethnos: true,
     ethnos_preview: [435,-42],
 
-    race_settings: {
+    settings: {
       ethnos: {
 
         brass_dragonborn: {

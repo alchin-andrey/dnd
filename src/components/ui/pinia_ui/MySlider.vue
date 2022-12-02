@@ -23,8 +23,7 @@
 </template>
 
 <script>
-// import race from "@/assets/catalog/base_data/step1_races.js";
-import race from "@/assets/catalog/base_data/step1_races_new.js";
+import race from "@/assets/catalog/base_data/step1_races.js";
 
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";

@@ -1,6 +1,6 @@
 import color from "@/assets/catalog/base_data/_colors.js";
 // import races from "@/assets/catalog/base_data/step1_races.js";
-import races from "@/assets/catalog/base_data/step1_races_new.js";
+import races from "@/assets/catalog/base_data/step1_races.js";
 import clas from "@/assets/catalog/base_data/step2_classes";
 
 const race_def = Object.values(races)[0];
