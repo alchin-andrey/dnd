@@ -1,10 +1,10 @@
 import color from "@/assets/catalog/base_data/_colors.js";
-import races from "@/assets/catalog/base_data/step1_races.js";
+// import races from "@/assets/catalog/base_data/step1_races.js";
+import races from "@/assets/catalog/base_data/step1_races_new.js";
 import clas from "@/assets/catalog/base_data/step2_classes";
 
 const race_def = Object.values(races)[0];
-const ethnos_def = Object.values(race_def.settings.ethnos)[0];
-
+const ethnos_def = Object.values(race_def.race_settings.ethnos)[0];
 
 export default {
 	//Key selections
@@ -164,6 +164,7 @@ custom_selected_race_page: {
   stats: [],
   skills: [],
   languages: [],
+  spells: [],
 },
 
 	//Особенности - пассивньіе умения

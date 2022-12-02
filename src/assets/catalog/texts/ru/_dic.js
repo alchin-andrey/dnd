@@ -10,7 +10,7 @@ export default {
     
     //Стартовое
             welcome_title: "Создай своего персонажа для D&D",
-            welcome_message: 'Чтобы полноценно играть в D&D, достаточно придумать персонажа нужного уровня, а остальное устроит ваш Мастер. Этот сайт поможет вам создать персонажа за 4 простых шага:\nРаса, Класс, Типаж, Биография.\n\nЛучший подход для первого раза — расслабиться и выбирать по зову сердца. Здесь нет неправильных решений. В финале вы получите лист персонажа, с которым вы сможете начать игру!',
+            welcome_message: 'Чтобы полноценно играть в D&D, достаточно придумать персонажа нужного уровня, а остальное устроит ваш Мастер. Этот сайт поможет вам создать персонажа за 3 простых шага:\nРаса, Класс и Типаж.\n\nЛучший подход для первого раза — расслабиться и выбирать по зову сердца. Здесь нет неправильных решений. В финале вы получите лист персонажа, с которым вы сможете начать игру!',
             welcome_disclaimer: '<br /><p>Материалы на этом сайте не заменяют необходимость приобретения официальных материалов. Система Dungeons & Dragons является собственностью Wizards of the Coast, графические материалы созданы с помощью <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a></p>',
 
             authors: 
@@ -532,6 +532,32 @@ export default {
             tool_brewer: tools.brewer,
             tool_mason: tools.mason,
             tool_thief: tools.thief,
+            tool_alchemists_supplies: tools.alchemists_supplies,
+            tool_potters_tools: tools.potters_tools,
+            tool_tinkers_tools: tools.tinkers_tools,
+            tool_calligraphers_supplies: tools.calligraphers_supplies,
+            tool_cartographers_tools: tools.cartographers_tools,
+            tool_leatherworkers_tools: tools.leatherworkers_tools,
+            tool_navigators_tools: tools.navigators_tools,
+            tool_carpenters_tools: tools.carpenters_tools,
+            tool_cooks_tools: tools.cooks_tools,
+            tool_woodcarvers_tools: tools.woodcarvers_tools,
+            tool_cobblers_tools: tools.cobblers_tools,
+            tool_glassblowers_tools: tools.glassblowers_tools,
+            tool_weavers_tools: tools.weavers_tools,
+            tool_painters_supplies: tools.painters_supplies,
+            tool_jewelers_tools: tools.jewelers_tools,
+            tool_music_drums: tools.music_drums,
+            tool_music_viol: tools.music_viol,
+            tool_music_bagpipes: tools.music_bagpipes,
+            tool_music_lyre: tools.music_lyre,
+            tool_music_lute: tools.music_lute,
+            tool_music_horn: tools.music_horn,
+            tool_music_pan_flute: tools.music_pan_flute,
+            tool_music_flute: tools.music_flute,
+            tool_music_dulcimer: tools.music_dulcimer,
+            tool_music_shawm: tools.music_shawm,
+
 
         languages:"языки",
         languages_human:"языки этносов людей",
@@ -736,7 +762,7 @@ export default {
         normal_tempo: "нормальный темп",
         in_stealth: "при движении в скрытности",
         double_weight: "2× Грузоподьемность",
-        weight_capacity: "включая максимальный вес нагрузки и подъёма",
+        weight_capacity: "включая максимальный вес нагрузки и подъема",
         str_check_on_move: "на Испытания Силы при передвижении / разрушении предметов",
         to_see: "зоркость",
         one_mile_100f_details: "до 1 мили, а на 100ф до мельчайших деталей",
@@ -857,7 +883,7 @@ export default {
     tuigan:"туйган",
     tuigan_details: races.tuigan_human,
 
-    terami:"тёрами",
+    terami:"терами",
     terami_details: races.terami_human,
 
     ulutiune:"улутиун",
@@ -1137,10 +1163,12 @@ export default {
     spell_hellish_rebuke: spells.hellish_rebuke,
     spell_hellish_rebuke_details: spells.hellish_rebuke_details,
     spell_hellish_rebuke_expanded: spells.hellish_rebuke_expanded,
+    spell_hellish_rebuke_tiefling: spells.hellish_rebuke_tiefling,
     spell_hellish_rebuke_tiefling_details: spells.hellish_rebuke_tiefling_details,
     spell_hellish_rebuke_tiefling_expanded: spells.hellish_rebuke_tiefling_expanded,
 
     spell_darkness: spells.darkness,
+    spell_darkness_tiefling: spells.darkness_tiefling,
     spell_darkness_tiefling_details: spells.darkness_tiefling_details,
     spell_darkness_tiefling_expanded: spells.darkness_tiefling_expanded,
 
@@ -1173,6 +1201,7 @@ export default {
     spell_dancing_lights_expanded: spells.dancing_lights_expanded,
 
     spell_faerie_fire: spells.faerie_fire,
+    spell_faerie_fire_1: spells.faerie_fire_1,
     spell_faerie_fire_details: spells.faerie_fire_details,
     spell_faerie_fire_expanded: spells.faerie_fire_expanded,
 
@@ -1181,6 +1210,8 @@ export default {
     spell_electricity_breath: spells.electricity_breath,
     spell_cold_breath: spells.cold_breath,
     spell_fire_breath: spells.fire_breath,
+    spell_fire_breath_cone: spells.fire_breath_cone,
+    spell_fire_breath_line: spells.fire_breath_line,
     spell_breath_details: spells.breath_details,
     spell_breath_expanded: spells.breath_expanded,
 
@@ -1209,10 +1240,12 @@ export default {
     spell_beast_sense_expanded: spells.beast_sense_expanded,
 
     spell_speak_with_animals: spells.speak_with_animals,
+    spell_speak_with_animals_ritual: spells.speak_with_animals_ritual,
     spell_speak_with_animals_details: spells.speak_with_animals_details,
     spell_speak_with_animals_expanded: spells.speak_with_animals_expanded,
 
     spell_commune_with_nature: spells.commune_with_nature,
+    spell_commune_with_nature_ritual: spells.commune_with_nature_ritual,
     spell_commune_with_nature_details: spells.commune_with_nature_details,
     spell_commune_with_nature_expanded: spells.commune_with_nature_expanded,
 
@@ -1233,7 +1266,7 @@ export default {
     explorers_pack_details: "Любой искатель приключений может быть призван пройти долгий путь, выполняя задание, но те, кто выбрал жизнь исследователя, особенно хорошо подготовлены к путешествию.",
 
     backpack: "рюкзак",
-    backpack_details: "Вместимость: 1 кубический фут / 15 кг. Вы также можете привязывать такие предметы как спальники и верёвки снаружи рюкзака.",
+    backpack_details: "Вместимость: 1 кубический фут / 15 кг. Вы также можете привязывать такие предметы как спальники и веревки снаружи рюкзака.",
 
     bedroll: "спальник",
     bedroll_details: "Используется для длительного и короткого отдыха.",
@@ -1245,7 +1278,7 @@ export default {
     tinderbox_details: "В этом небольшом контейнере находится кремень, кресало и трут (обычно это сухая тряпка, вымоченная в масле), используемые для разжигания огня. Использование его для разжигания факела — или чего-нибудь другого, легковоспламеняющегося — требует одного действия. Разжигание другого огня требует 1 минуты.",
 
     torch: "факел",
-    torch_details: "Факел горит 1 час, испуская яркий свет в пределах 20 футов и тусклый свет в пределах ещё 20 футов. Если вы совершаете рукопашную атаку горящим факелом и попадаете, он причиняет урон огнём 1.",
+    torch_details: "Факел горит 1 час, испуская яркий свет в пределах 20 футов и тусклый свет в пределах еще 20 футов. Если вы совершаете рукопашную атаку горящим факелом и попадаете, он причиняет урон огнем 1.",
 
     ration: "дневной рацион",
     ration_details: "Рационы состоят из обезвоженной пищи, подходящей для путешествий, включая вяленое мясо, сухофрукты, галеты и орехи.",
@@ -1254,7 +1287,7 @@ export default {
     waterskin_details: "Вместимость: 2 литра",
 
     hempen_rope: "пеньковая веревка 50ф",
-    hempen_rope_details: "сделана из пеньки или шёлка. У неё 2 HP, и её можно порвать Испытанием Силы сложностью 17.",
+    hempen_rope_details: "сделана из пеньки или шелка. У нее 2 HP, и ее можно порвать Испытанием Силы сложностью 17.",
 
     barbarian: classes.barbarian,
     barbarian_details: classes.barbarian_details,
@@ -1315,7 +1348,7 @@ export default {
     bell_details: "небольшой и звонкий колокольчик с колечком вверху",
 
     candle: "свеча",
-    candle_details: "В течение 1 часа свеча испускает яркий свет в пределах радиуса 5 футов и тусклый свет в пределах ещё 5 футов.",
+    candle_details: "В течение 1 часа свеча испускает яркий свет в пределах радиуса 5 футов и тусклый свет в пределах еще 5 футов.",
 
     crowbar: "ломик",
     crowbar_details: "использование ломика позволяет совершать проверки Силы с преимуществом, если рычаг должен помочь.",
@@ -1327,14 +1360,14 @@ export default {
     item_piton_details: "может быть использован для расклинивания чего-либо.",
 
     hooded_lantern: "закрытый фонарь",
-    hooded_lantern_details: "Испускает яркий свет в пределах 30 футов и тусклый свет в пределах ещё 30 футов. Зажжённый фонарь горит 6 часов от одной фляги (1 пинта [0,5 литра]) масла. Вы можете действием опустить козырёк, уменьшив освещение до тусклого света в пределах 5 футов.",
+    hooded_lantern_details: "Испускает яркий свет в пределах 30 футов и тусклый свет в пределах еще 30 футов. Зажженный фонарь горит 6 часов от одной фляги (1 пинта [0,5 литра]) масла. Вы можете действием опустить козырек, уменьшив освещение до тусклого света в пределах 5 футов.",
     
     oil_flask: "Фляга с маслом",
-    oil_flask_details: 'Обычно масло продаётся в глиняных флягах по 1 пинте (0,5 литра). Вы можете действием облить маслом из фляги существо, находящееся в пределах 5 футов, или кинуть её на 20 футов, ломая при ударе.\n\n'+
+    oil_flask_details: 'Обычно масло продается в глиняных флягах по 1 пинте (0,5 литра). Вы можете действием облить маслом из фляги существо, находящееся в пределах 5 футов, или кинуть ее на 20 футов, ломая при ударе.\n\n'+
 
-    'Совершите дальнобойную атаку по целевому существу или предмету, считая масло импровизированным оружием. При попадании цель покрывается маслом. Если цель получает урон огнём, пока масло не высохло (1 минута), она получает дополнительный урон огнём 5 от горящего масла.\n\n'+
+    'Совершите дальнобойную атаку по целевому существу или предмету, считая масло импровизированным оружием. При попадании цель покрывается маслом. Если цель получает урон огнем, пока масло не высохло (1 минута), она получает дополнительный урон огнем 5 от горящего масла.\n\n'+
     
-    'Вы можете также вылить фляжку масла на землю, покрыв площадь 5 × 5 футов, при условии, что пол ровный. Если теперь масло поджечь, оно горит 2 раунда и причиняет урон огнём 5 всем существам, входящим в эту область или оканчивающим в ней ход. Существо может получить этот урон только один раз за ход.',
+    'Вы можете также вылить фляжку масла на землю, покрыв площадь 5 × 5 футов, при условии, что пол ровный. Если теперь масло поджечь, оно горит 2 раунда и причиняет урон огнем 5 всем существам, входящим в эту область или оканчивающим в ней ход. Существо может получить этот урон только один раз за ход.',
 
     dungeoneers_pack: "набор исследователя подземелий",
     dungeoneers_pack_details: "Cодержит основное снаряжение для погружения в темноту в поисках сокровищ.",
@@ -1388,7 +1421,7 @@ export default {
     spell_fake_presence_details: spells.fake_presence_details,
     spell_fake_presence_expanded: spells.fake_presence_expanded,
 
-    fine_dodge: "увёртливость",
+    fine_dodge: "увертливость",
     from_aoe_effects: "от зональных эффектов с Испытанием Ловкости.",
 
     min_10: "Минимум 10",
@@ -2037,7 +2070,7 @@ export default {
     priests_pack_details: "-",
 
     armor_shield: "щит",
-    armor_shield_details: "Щит изготавливается из дерева или металла, и несётся одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.",
+    armor_shield_details: "Щит изготавливается из дерева или металла, и несется одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.",
 
     blanket: "одеяло",
     blanket_details: "-",
@@ -2152,10 +2185,10 @@ export default {
     creature_on_addititonal_grapple: "сущетсва при дополнительном захвате",
 
     feat_lucky: "Везунчик",
-    feat_lucky_details: "Вам непонятным образом везёт как раз тогда, когда это нужно.",
+    feat_lucky_details: "Вам непонятным образом везет как раз тогда, когда это нужно.",
 
     advantage_x3: "3 преимущества в день",
-    on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам",
+    on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам. Использует 1× Ячейку удачи.",
 
     feat_mounted_combatant: "Верховой боец",
     feat_mounted_combatant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
@@ -2175,11 +2208,506 @@ export default {
     on_known_languages: "на выученных языках",
 
     feat_martial_adept: "Воинский адепт",
-    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приёмы.",
+    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приемы. Если у вас уже есть Маневры, вы получаете еще один (d8). В противном случае вы получаете один Маневр (d6).",
 
     plus_1: "+1",
-    supremacy_dice: "кость превосходства d6.",
 
     if_succeed: "при успехе",
 
+    superiority_dice_slots: "Маневры",
+    superiority_dice_slots_feat: "Маневры / Воинский адепт",
+    superiority_dice_slot: "1× Маневр",
+    maneuvers: "маневры",
+    maneuver: "маневр",
+
+    divine_sense_slots: "Божественное чувство",
+    divine_sense_slot: "1× Божественное чувство",
+
+    divine_channel_slots: "Божественный канал",
+    divine_channel_slot: "1× Божественный канал",
+
+    rage_slots: "Ячейки Ярости",
+    rage_slot: "1× Ячейка Ярости",
+
+    movement: "перемещение",
+
+    spell_maneuver_ambush: spells.maneuver_ambush,
+    spell_maneuver_ambush_details: spells.maneuver_ambush_details,
+    spell_maneuver_ambush_expanded: spells.maneuver_ambush_expanded,
+
+    spell_maneuver_evasive_footwork: spells.maneuver_evasive_footwork,
+    spell_maneuver_evasive_footwork_details: spells.maneuver_evasive_footwork_details,
+    spell_maneuver_evasive_footwork_expanded: spells.maneuver_evasive_footwork_expanded,
+
+    bonus_w_fem: "бонусная",
+
+    spell_maneuver_lunging_attack: spells.maneuver_lunging_attack,
+    spell_maneuver_lunging_attack_details: spells.maneuver_lunging_attack_details,
+    spell_maneuver_lunging_attack_expanded: spells.maneuver_lunging_attack_expanded,
+
+    spell_maneuver_maneuvering_attack: spells.maneuver_maneuvering_attack,
+    spell_maneuver_maneuvering_attack_details: spells.maneuver_maneuvering_attack_details,
+    spell_maneuver_maneuvering_attack_expanded: spells.maneuver_maneuvering_attack_expanded,
+
+    spell_maneuver_menacing_attack: spells.maneuver_menacing_attack,
+    spell_maneuver_menacing_attack_details: spells.maneuver_menacing_attack_details,
+    spell_maneuver_menacing_attack_expanded: spells.maneuver_menacing_attack_expanded,
+
+    spell_maneuver_feinting_attack: spells.maneuver_feinting_attack,
+    spell_maneuver_feinting_attack_details: spells.maneuver_feinting_attack_details,
+    spell_maneuver_feinting_attack_expanded: spells.maneuver_feinting_attack_expanded,
+
+    spell_maneuver_disarming_attack: spells.maneuver_disarming_attack,
+    spell_maneuver_disarming_attack_details: spells.maneuver_disarming_attack_details,
+    spell_maneuver_disarming_attack_expanded: spells.maneuver_disarming_attack_expanded,
+
+    spell_maneuver_trip_attack: spells.maneuver_trip_attack,
+    spell_maneuver_trip_attack_details: spells.maneuver_trip_attack_details,
+    spell_maneuver_trip_attack_expanded: spells.maneuver_trip_attack_expanded,
+
+    spell_maneuver_riposte: spells.maneuver_riposte,
+    spell_maneuver_riposte_details: spells.maneuver_riposte_details,
+    spell_maneuver_riposte_expanded: spells.maneuver_riposte_expanded,
+
+    reduction_w: "снижение",
+
+    spell_maneuver_parry: spells.maneuver_parry,
+    spell_maneuver_parry_details: spells.maneuver_parry_details,
+    spell_maneuver_parry_expanded: spells.maneuver_parry_expanded,
+
+    spell_maneuver_goading_attack: spells.maneuver_goading_attack,
+    spell_maneuver_goading_attack_details: spells.maneuver_goading_attack_details,
+    spell_maneuver_goading_attack_expanded: spells.maneuver_goading_attack_expanded,
+
+    spell_maneuver_rally: spells.maneuver_rally,
+    spell_maneuver_rally_details: spells.maneuver_rally_details,
+    spell_maneuver_rally_expanded: spells.maneuver_rally_expanded,
+
+    spell_maneuver_pushing_attack: spells.maneuver_pushing_attack,
+    spell_maneuver_pushing_attack_details: spells.maneuver_pushing_attack_details,
+    spell_maneuver_pushing_attack_expanded: spells.maneuver_pushing_attack_expanded,
+
+    spell_maneuver_precision_attack: spells.maneuver_precision_attack,
+    spell_maneuver_precision_attack_details: spells.maneuver_precision_attack_details,
+    spell_maneuver_precision_attack_expanded: spells.maneuver_precision_attack_expanded,
+
+    spell_maneuver_commanders_strike: spells.maneuver_commanders_strike,
+    spell_maneuver_commanders_strike_details: spells.maneuver_commanders_strike_details,
+    spell_maneuver_commanders_strike_expanded: spells.maneuver_commanders_strike_expanded,
+
+    spell_maneuver_sweeping_attack: spells.maneuver_sweeping_attack,
+    spell_maneuver_sweeping_attack_details: spells.maneuver_sweeping_attack_details,
+    spell_maneuver_sweeping_attack_expanded: spells.maneuver_sweeping_attack_expanded,
+
+    spell_inspiration: spells.inspiration,
+    spell_inspiration_details: spells.inspiration_details,
+    spell_inspiration_expanded: spells.inspiration_expanded,
+
+    feat_inspiring_leader: "Воодушевляющий лидер",
+    feat_inspiring_leader_details: "Вы можете воодушевить спутников, укрепив их решимость.",
+
+    savage_attacker: "Дикий атакующий",
+    savage_attacker_details: "Ваши атаки наносят больше урона.",
+
+    of_damage_dice_once_per_move: "урона атаки один раз в ход",
+
+    weapons_improvised: weapons.improvised,
+    weapons_improvised_details: weapons.improvised_details,
+
+    spell_grapple: spells.grapple,
+    spell_grapple_details: spells.grapple_details,
+    spell_grapple_expanded: spells.grapple_expanded,
+
+    feat_lightly_armored: "Знаток легких доспехов",
+    feat_lightly_armored_details: "Вы обучились ношению легких доспехов.",
+
+    feat_moderately_armored: "Знаток средних доспехов",
+    feat_moderately_armored_details: "Вы обучились ношению средних доспехов.",
+
+    feat_heavily_armored: "Знаток тяжелых доспехов",
+    feat_heavily_armored_details: "Вы обучились ношению тяжелых доспехов.",
+
+    feat_dual_wielder: "Боец двумя оружиями",
+    feat_dual_wielder_details: "Вы знаете как использовать сразу два оружия.",
+
+    on_armor_if_two_weapons: "+1 к броне при двух ближних оружиях",
+
+    use_of_two_weapons: "Использование двух оружий",
+    heavier_than_light: "тяжелее чем легкое",
+
+    quick_take: "Быстроe вынимание",
+    of_two_weapons: "и убирание двух оружий одновременно",
+
+    feat_dungeon_delver: "Искатель подземелий",
+    feat_dungeon_delver_details: "Вы научилить искать скрытые ловушки и потайные двери в подземельях.",
+
+    on_hidden_doors: "на поиск тайных дверей",
+    on_trap_evasion: "на избегание ловушек и эффектов от них",
+    on_trap_damage: "урону от ловушек",
+    on_passive_perception_on_quick_move: "на пассивную Внимательность при быстром перемещении",
+
+    feat_tough: "Крепкий",
+    feat_tough_details: "Вы чувствуете в себе больше жизненных сил c каждым уровнем.",
+
+    feat_healer: "Лекарь",
+    feat_healer_details: "Вы способный медик, что позволяет быстро залечивать раны и возвращать союзников в строй.",
+
+    plus_1_to_hp: "Восстановление 1 HP",
+    on_use_of_medical_tools: "при исползовании комплекта целителя для стабилизации умирающего",
+
+    spell_healer_tooling: spells.healer_tooling,
+    spell_healer_tooling_details: spells.healer_tooling_details,
+    spell_healer_tooling_expanded: spells.healer_tooling_expanded,
+
+    healers_tool_slot: "1× Комплект целителя",
+    healers_tool: "Комплект целителя",
+
+    feat_great_weapon_master: "Мастер большого оружия",
+    feat_great_weapon_master_details: "Вы научились использовать вес своего оружия, позволяя инерции усиливать ваши атаки.",
+
+    feat_polearm_master: "Мастер древкового оружия",
+    feat_polearm_master_details: "Вы можете сдерживать врагов оружием со свойством «досягаемость».",
+
+    spell_extra_strike: spells.extra_strike,
+    spell_extra_strike_details: spells.extra_strike_details,
+    spell_extra_strike_expanded: spells.extra_strike_expanded,
+
+    spell_heavy_strike: spells.heavy_strike,
+    spell_heavy_strike_details: spells.heavy_strike_details,
+    spell_heavy_strike_expanded: spells.heavy_strike_expanded,
+
+    spell_polearm_strike: spells.polearm_strike,
+    spell_polearm_strike_details: spells.polearm_strike_details,
+    spell_polearm_strike_expanded: spells.polearm_strike_expanded,
+
+    provoked_attack: "Провоцированная атака",
+    on_polearm_reach: "в пределах досягаемости древка",
+
+    feat_weapon_master: "Мастер оружия",
+    feat_weapon_master_details: "Вы знаете как пользоваться множеством видов оружия.",
+
+    on_stealth_in_medium_armor: "на Скрытность при надетых средних доспехах",
+    on_medium_armor: "+1 на Броню средних доспехов, при Базовой Ловкости 16+",
+
+    feat_medium_armor_master: "Мастер средних доспехов",
+    feat_medium_armor_master_details: "Вы привыкли к перемещению в средних доспехах.",
+
+    feat_heavy_armor_master: "Мастер тяжелых доспехов",
+    feat_heavy_armor_master_details: "Вы можете своим доспехом отклонять удары, которые других убили бы.",
+
+    damage_reduction: "Снижение механического урона",
+    on_3_in_heavy_armor: "на 3 в тяжелых доспехах",
+
+    feat_shield_master: "Мастер щитов",
+    feat_shield_master_details: "Вы используете щиты не только для обороны, но и для нападения.",
+
+    spell_shield_push: spells.shield_push,
+    spell_shield_push_details: spells.shield_push_details,
+    spell_shield_push_expanded: spells.shield_push_expanded,
+
+    on_dex_check_in_shield: "+2 от щита при Испытаниях Ловкости от эффектов, нацеленных только на вас",
+
+    feat_spell_sniper: "Меткий заклинатель",
+    feat_spell_sniper_details: "Вы узнали технику, улучшающую атаку некоторыми видами заклинаний.",
+
+    double_range: "2× дальность",
+    on_spells_with_aim: "для заклинаний с прицеливанием",
+
+    ignoring: "Игнорирование",
+    on_covers_spells: "укрытий на половину и на 3/4, при использовании заклинаний c прицеливанием",
+
+    feat_sharpshooter: "Меткий стрелок",
+    feat_sharpshooter_details: "Вы овладели дальнобойным оружием и можете совершать выстрелы, которые другие считали невозможными.",
+
+    on_shots_in_max_distance: "на выстрелы с максимальной дистанции",
+    on_covers: "укрытий на половину и на 3/4, при дальнобойных атаках",
+
+    spell_charge_attack: spells.charge_attack,
+    spell_charge_attack_details: spells.charge_attack_details,
+    spell_charge_attack_expanded: spells.charge_attack_expanded,
+
+    spell_charge_push: spells.charge_push,
+    spell_charge_push_details: spells.charge_push_details,
+    spell_charge_push_expanded: spells.charge_push_expanded,
+
+    spell_heavy_shot: spells.heavy_shot,
+    spell_heavy_shot_details: spells.heavy_shot_details,
+    spell_heavy_shot_expanded: spells.heavy_shot_expanded,
+
+    feat_charger: "Налетчик",
+    feat_charger_details: "Вы много двигаетесь в бою.",
+
+    mastery_bonus: "Бонуc мастерства",
+    on_armor_finesse: "к Броне при Реакции на атаку, если у вас фехтовальное оружие",
+
+    feat_defensive_duelist: "Оборонительный дуэлянт",
+    feat_defensive_duelist_details: "Вы мастерски обороняетесь фехтовальным оружием.",
+
+    feat_keen_mind: "Отличная память",
+    feat_keen_mind_details: "Вы с невероятной точностью можете отслеживать время, направление и подробности.",
+
+    always: "всегда",
+    know_north: "известна сторона света",
+    know_time: "известно время рассвета/заката",
+    clear_memory: "точные воспоминания",
+    about_xp_1month: "о всем прожитом за последний месяц",
+
+    feat_mobile: "Подвижный",
+    feat_mobile_details: "Вы невероятно быстры и ловки.",
+
+    on_hard_area_dash: "на Рывок в труднопроходимой местности",
+
+    no_provocation: "нет провокации",
+    in_this_move_after_attack: "от существа, которого вы попытались атаковать в этом ходу, ближним оружием",
+
+    feat_magic_initiate_cleric: "Посвящённый в магию жреца",
+    feat_magic_initiate_details_cleric: "Вы узнаёте два заклинания жреца, не требующие маны, и одно заклинание, требующее 1 ману (его вы можете использовать без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами).",
+
+    feat_magic_initiate_druid: "Посвящённый в магию друида",
+    feat_magic_initiate_details_druid: "Вы узнаёте два заклинания друида, не требующие маны, и одно заклинание, требующее 1 ману (его вы можете использовать без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами).",
+
+    feat_magic_initiate_warlock: "Посвящённый в магию колдуна",
+    feat_magic_initiate_details_warlock: "Вы узнаёте два заклинания колдуна, не требующие маны, и одно заклинание, требующее 1 ману (его вы можете использовать без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами).",
+
+    feat_magic_initiate_sorcerer: "Посвящённый в магию чародея",
+    feat_magic_initiate_details_sorcerer: "Вы узнаёте два заклинания чародея, не требующие маны, и одно заклинание, требующее 1 ману (его вы можете использовать без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами).",
+
+    feat_magic_initiate_wizard: "Посвящённый в магию волшебника",
+    feat_magic_initiate_details_wizard: "Вы узнаёте два заклинания волшебника, не требующие маны, и одно заклинание, требующее 1 ману (его вы можете использовать без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами).",
+
+    feat_magic_initiate_bard: "Посвящённый в магию барда",
+    feat_magic_initiate_details_bard: "Вы узнаёте два заклинания барда, не требующие маны, и одно заклинание, требующее 1 ману (его вы можете использовать без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами).",
+
+    spells_0: "заклинания [0]",
+    spells_1: "заклинания [1]",
+
+    no_mana_but_once_a_day: "Вы сможете использовать выбранное заклинание без маны, но накладывать его на минимально возможном уровне, и один раз мажду продолжительными отдыхами.",
+
+    use_no_mana: "использование без маны",
+    one_spell_cleric: "одного заклинания жреца (один раз в день)",
+    one_spell_druid: "одного заклинания друида (один раз в день)",
+    one_spell_warlock: "одного заклинания колдуна (один раз в день)",
+    one_spell_sorcerer: "одного заклинания чародея (один раз в день)",
+    one_spell_wizard: "одного заклинания волшебника (один раз в день)",
+    one_spell_bard: "одного заклинания барда (один раз в день)",
+
+    feat_skulker: "Проныра",
+    feat_skulker_details: "Вы знаете, как сливаться с тенями.",
+
+    ability_to_hide: "возможность спрятаться",
+    if_small_cover: "даже если слабо заслонены",
+    no_reveal: "сохранение скрытности",
+    if_missed: "при промахе дальней атакой",
+    on_perception_sight: "на Внимательность, основанной на зрении",
+
+    no_mana_but_once_a_day: "Вы сможете использовать выбранное заклинание без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу.",
+
+    ritual_book: "ритуальная книга",
+    ritual_book_details: "",
+
+    spell_learn_ritual: spells.learn_ritual,
+    spell_learn_ritual_details: spells.learn_ritual_details,
+    spell_learn_ritual_expanded: spells.learn_ritual_expanded,
+
+    hour_per_lvl: "ч / ур",
+    gold50_per_lvl: "чернила и др за 50 🟡 / ур",
+
+    feat_ritual_caster_cleric: "Ритуальный заклинатель: жрец",
+    feat_ritual_caster_details_cleric: "Вы узнаёте два ритуала жреца. Вы сможете использовать их без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу. Также вы можете изучать другие найденные ритуальные заклинания жреца.",
+
+    feat_ritual_caster_druid: "Ритуальный заклинатель: друид",
+    feat_ritual_caster_details_druid: "Вы узнаёте два ритуала друида. Вы сможете использовать их без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу. Также вы можете изучать другие найденные ритуальные заклинания друида.",
+
+    feat_ritual_caster_warlock: "Ритуальный заклинатель: колдун",
+    feat_ritual_caster_details_warlock: "Вы узнаёте два ритуала колдуна. Вы сможете использовать их без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу. Также вы можете изучать другие найденные ритуальные заклинания колдуна.",
+
+    feat_ritual_caster_sorcerer: "Ритуальный заклинатель: чародей",
+    feat_ritual_caster_details_sorcerer: "Вы узнаёте два ритуала чародея. Вы сможете использовать их без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу. Также вы можете изучать другие найденные ритуальные заклинания чародея.",
+
+    feat_ritual_caster_wizard: "Ритуальный заклинатель: волшебник",
+    feat_ritual_caster_details_wizard: "Вы узнаёте два ритуала волшебника. Вы сможете использовать их без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу. Также вы можете изучать другие найденные ритуальные заклинания волшебника.",
+
+    feat_ritual_caster_bard: "Ритуальный заклинатель: бард",
+    feat_ritual_caster_details_bard: "Вы узнаёте два ритуала барда. Вы сможете использовать их без маны, но накладывать его на 10 минут дольше, и держа в руке свою ритуальную книгу. Также вы можете изучать другие найденные ритуальные заклинания барда.",
+
+    feat_elemental_adept_sound: "Стихийный адепт 🔊 Звука",
+    feat_elemental_adept_sound_details: "Вы уверенно пользуетесь заклинанием определенной стихии.", 
+    of_resistanse_sound: "сопротивлению урону 🔊 Звуком",
+    two_min: "2 как минимальный результат",
+    on_damage_dice_of_sound: "на каждом кубике урона 🔊 Звуком",
+
+    feat_elemental_adept_acid: "Стихийный адепт ⚗️ Кислоты",
+    feat_elemental_adept_acid_details: "Вы уверенно пользуетесь заклинанием определенной стихии.", 
+    of_resistanse_acid: "сопротивлению урону ⚗️ Кислотой",
+    two_min: "2 как минимальный результат",
+    on_damage_dice_of_acid: "на каждом кубике урона ⚗️ Кислотой",
+
+    feat_elemental_adept_fire: "Стихийный адепт 🔥 Огня",
+    feat_elemental_adept_fire_details: "Вы уверенно пользуетесь заклинанием определенной стихии.", 
+    of_resistanse_fire: "сопротивлению урону 🔥 Огнем",
+    two_min: "2 как минимальный результат",
+    on_damage_dice_of_fire: "на каждом кубике урона 🔥 Огнем",
+
+    feat_elemental_adept_cold: "Стихийный адепт ❄️ Холода",
+    feat_elemental_adept_cold_details: "Вы уверенно пользуетесь заклинанием определенной стихии.", 
+    of_resistanse_cold: "сопротивлению урону ❄️ Холодом",
+    two_min: "2 как минимальный результат",
+    on_damage_dice_of_cold: "на каждом кубике урона ❄️ Холодом",
+
+    feat_elemental_adept_electricity: "Стихийный адепт ⚡ Электричества",
+    feat_elemental_adept_electricity_details: "Вы уверенно пользуетесь заклинанием определенной стихии.", 
+    of_resistanse_electricity: "сопротивлению урону ⚡ Электричеством",
+    two_min: "2 как минимальный результат",
+    on_damage_dice_of_electricity: "на каждом кубике урона ⚡ Электричеством",
+
+    double_CON: "2× Телосложение",
+    on_regen_min_2: "при регене (минимум 2)",
+
+    feat_durable: "Стойкий",
+    feat_durable_details: "Вы очень живучий.",
+    
+    feat_sentinel: "Страж",
+    feat_sentinel_details: "Вы овладели техникой, позволяющей пользоваться всеми брешами в обороне противника.",
+
+    provocation: "Провокация",
+    on_disengage: "при выходе из вашей досягаемости, даже при Отходе",
+    on_ally_attack: "если атакуют другого рядом с вами",
+
+    stopka: "Остановка",
+    creature_affected_provoked_attack: "существа при попадании провоцированной атакой",
+
+    feat_mage_slayer: "Убийца магов",
+    feat_mage_slayer_details: "Вы разработали техники, полезные в рукопашном сражении с заклинателями.",
+
+    on_save_spells_near: "на Испытания от заклинаний, наложенных рядом",
+    on_concentration_to_attacked_creature: "на концентрацию существа, пораженного вашей атака",
+    on_casting_near: "на создающего рядом заклинание",
+
+    feat_resilient_strength: "Устойчивый: Сила",
+    feat_resilient_strength_details: "",
+
+    feat_resilient_dexterity: "Устойчивый: Ловкость",
+    feat_resilient_dexterity_details: "",
+
+    feat_resilient_constitution: "Устойчивый: Телосложение",
+    feat_resilient_constitution_details: "",
+
+    feat_resilient_intelligence: "Устойчивый: Интеллект",
+    feat_resilient_intelligence_details: "",
+
+    feat_resilient_wisdom: "Устойчивый: Мудрость",
+    feat_resilient_wisdom_details: "",
+
+    feat_resilient_charisma: "Устойчивый: Харизма",
+    feat_resilient_charisma_details: "",
+
+    feat_crossbow_expert: "Эксперт в арбалетах",
+    feat_crossbow_expert_details: "Вы обладаете обширной практикой с арбалетом.",
+
+    recharge_on_arbalets: "перезарядки на арбалете",
+    near_target_arbalet: "на ближнюю цель арбалета",
+
+    spell_crossbow_shot: spells.crossbow_shot,
+    spell_crossbow_shot_details: spells.crossbow_shot_details,
+    spell_crossbow_shot_expanded: spells.crossbow_shot_expanded,
+
+    feat_linguist: "Языковед",
+    feat_linguist_details: "Вы изучали языки и способы кодирования текстов.",
+
+    spell_create_crypt: spells.create_crypt,
+    spell_create_crypt_details: spells.create_crypt_details,
+    spell_create_crypt_expanded: spells.create_crypt_expanded,
+
+    packs: "наборы",
+
+    chest: "Сундук",
+    chest_details: "Контейнер вместимостью 340 л.",
+
+    scroll_tube: "Тубус",
+    scroll_tube_details: "Контейнер для свитков или карт.",
+
+    fine_clothes: "Дорогая одежда",
+    fine_clothes_details: "Изысканный наряд из дорогих материалов, который даже может быть украшен шёлковыми нитями и драгоценными камнями. Надейвайте её, когда вам нужно произвести впечатление на дворян, участвовать в дипломатии или запугать бедных людей. Не надевайте её, когда отправляетесь в приключение — модные ткани слишком тонки для опасностей подземелий, а всякие побрякушки могут привлечь неприятных существ!",
+
+    ink: "Чернила",
+    ink_details: "Бутылочка чернил",
+
+    ink_pen: "Перо",
+    ink_pen_details: "Перо для использования чернил.",
+
+    lamp: "Масляная лампа",
+    lamp_details: "испускает яркий свет в пределах 15 фт и тусклый свет в пределах ещё 30 фт. Горит 6 ч от одной фляги масла.",
+
+    perfume: "Духи",
+    perfume_details: "Флакон ароматных духов.",
+
+    paper: "Бумага",
+    paper_details: "Лист бумаги.",
+
+    sealing_wax: "Красный воск",
+    sealing_wax_details: "Воск для опечатывания.",
+
+    soap: "Мыло",
+    soap_details: "Кусочек ароматного мыла.",
+
+    costume: "Сценический костюм",
+    costume_details: "Вещь, в которую могут одеваться персонажи.",
+
+    disguise_kit: "Набор для грима",
+    disguise_kit_details: "Косметика и бутафория, позволяющая менять облик и преуспевать в Обмане / Запугивании / Выступлении / Убеждении, а также скрыть травмы или распознать чужой грим.<br/><br/>Как часть длинного отдыха Вы можете создать обличье для маскировки. На надевание обличья после его создания требуется 1 минута. Вы можете одновременно иметь при себе только одно такое обличье, не привлекая ненужного внимания, если только у вас нет Сумки хранения (Bag of holding) или другого подобного способа оставить их незамеченными. Каждое такое обличье весит 1 фунт. В других случаях требуется 10 минут на создание обличья, которое немного изменяет вашу внешность и 30 минут, если требуются более обширные изменения.",
+
+    item_music_drums: "барабан",
+    item_music_viol: "виола",
+    item_music_bagpipes: "волынка",
+    item_music_lyre: "лира",
+    item_music_lute: "лютня",
+    item_music_horn: "рожок",
+    item_music_pan_flute: "свирель",
+    item_music_flute: "флейта",
+    item_music_dulcimer: "цимбалы",
+    item_music_shawm: "шалмей",
+
+    item_music_drums_details: "",
+    item_music_viol_details: "",
+    item_music_bagpipes_details: "",
+    item_music_lyre_details: "",
+    item_music_lute_details: "",
+    item_music_horn_details: "",
+    item_music_pan_flute_details: "",
+    item_music_flute_details: "",
+    item_music_dulcimer_details: "",
+    item_music_shawm_details: "",
+ 
+    bard: classes.bard,
+    bard_details: classes.bard_details,
+
+    bardic_inspiration_slots: "Ячейки вдохновения",
+    bardic_inspiration_slot: "Ячейка вдохновения",
+
+    dice: "кубик",
+
+    spell_bardic_inspiration: spells.bardic_inspiration,
+    spell_bardic_inspiration_details: spells.bardic_inspiration_details,
+    spell_bardic_inspiration_expanded: spells.bardic_inspiration_expanded,
+
+    spell_focus: "Фокус заклинаний",
+    as_musical_instrument: "в виде музыкального инструмента",
+
+    bonus_o_w: "бонусное",
+
+    spell_song_of_rest: spells.song_of_rest,
+    spell_song_of_rest_details: spells.song_of_rest_details,
+    spell_song_of_rest_expanded: spells.song_of_rest_expanded,
+
+    restoring: "Восстановление",
+    of_inspiration_slots_on_short_rest: "Ячеек Вдохновения чисто за короткий отдых",
+
+    college_valor: classes.college_valor,
+    college_valor_details: classes.college_valor_details,
+
+    on_damage_and_ac: "можно использовать для урона и брони",
+
+    spell_cutting_word: spells.cutting_word,
+    spell_cutting_word_details: spells.cutting_word_details,
+    spell_cutting_word_expanded: spells.cutting_word_expanded,
 }

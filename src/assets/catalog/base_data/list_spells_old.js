@@ -97,10 +97,9 @@ const spell_name = [
     //1
     //любое из полей
   },
-];
+]
 
 export default {
-
   hellish_rebuke_tiefling: [
     {
       //0
@@ -109,7 +108,6 @@ export default {
       expanded: "spell_hellish_rebuke_tiefling_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -152,7 +150,6 @@ export default {
       expanded: "spell_breath_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -194,7 +191,6 @@ export default {
       expanded: "spell_breath_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -236,7 +232,6 @@ export default {
       expanded: "spell_breath_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -278,7 +273,6 @@ export default {
       expanded: "spell_breath_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -320,7 +314,6 @@ export default {
       expanded: "spell_breath_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -362,7 +355,6 @@ export default {
       expanded: "spell_breath_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -404,7 +396,6 @@ export default {
       expanded: "spell_darkness_tiefling_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -446,7 +437,6 @@ export default {
       expanded: "spell_enlargement_self_expanded", // полное описание
 
       type: "transmutation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -489,7 +479,6 @@ export default {
       expanded: "spell_invisibility_self_expanded", // полное описание
 
       type: "illusion",
-      classes: [],
 
       cast_time: "action",
       // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
@@ -576,7 +565,6 @@ export default {
       expanded: "spell_toy_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -619,7 +607,6 @@ export default {
       expanded: "spell_lighter_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -662,7 +649,6 @@ export default {
       expanded: "spell_music_box_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -705,7 +691,6 @@ export default {
       expanded: "spell_faerie_fire_expanded", // полное описание
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -752,7 +737,16 @@ export default {
 
       type: "ability",
       slot_type: "rage_slot",
-      classes: [],
+      /*
+            abjuration: "ограждение",
+            conjuration: "вызов",
+            divination: "прорицание",
+            enchantment: "чары",
+            evocation: "воплощение",
+            illusion: "иллюзия",
+            necromancy: "некромантия",
+            transmutation: "преобразование",
+      */
 
       cast_time: "bonus_action",
       // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
@@ -838,7 +832,16 @@ export default {
       expanded: "spell_reckless_attack_expanded", // полное описание
 
       type: "ability",
-      classes: [],
+      /*
+            abjuration: "ограждение",
+            conjuration: "вызов",
+            divination: "прорицание",
+            enchantment: "чары",
+            evocation: "воплощение",
+            illusion: "иллюзия",
+            necromancy: "некромантия",
+            transmutation: "преобразование",
+      */
 
       cast_time: "instant",
       // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
@@ -925,7 +928,6 @@ export default {
       expanded: "spell_frenzy_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -964,7 +966,6 @@ export default {
       expanded: "spell_intimidating_presence_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1004,7 +1005,6 @@ export default {
       expanded: "spell_retaliation_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -1044,7 +1044,6 @@ export default {
       expanded: "spell_beast_sense_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -1084,7 +1083,6 @@ export default {
       expanded: "spell_speak_with_animals_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -1129,7 +1127,6 @@ export default {
       expanded: "spell_commune_with_nature_expanded",
 
       type: "divination",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -1169,7 +1166,6 @@ export default {
       expanded: "spell_commune_with_nature_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -1209,7 +1205,6 @@ export default {
       expanded: null,
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1249,7 +1244,6 @@ export default {
       expanded: "spell_elk_knock_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1289,7 +1283,6 @@ export default {
       expanded: "spell_tiger_strike_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1328,7 +1321,6 @@ export default {
       expanded: "spell_sneaky_attack_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -1367,7 +1359,6 @@ export default {
       expanded: "spell_cunning_action_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1406,7 +1397,6 @@ export default {
       expanded: "spell_steady_aim_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -1445,7 +1435,6 @@ export default {
       expanded: "spell_uncanny_dodge_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1484,7 +1473,6 @@ export default {
       expanded: "spell_fast_hands_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1523,7 +1511,6 @@ export default {
       expanded: "spell_fake_identity_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 7,
@@ -1562,7 +1549,6 @@ export default {
       expanded: "spell_fake_presence_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 3,
@@ -1602,7 +1588,6 @@ export default {
       expanded: "spell_divine_sense_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1646,7 +1631,6 @@ export default {
       expanded: "spell_lay_on_hands_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1690,7 +1674,6 @@ export default {
       expanded: "spell_side_pary_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -1735,7 +1718,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -1780,7 +1762,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1825,7 +1806,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1870,7 +1850,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1915,7 +1894,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -1960,7 +1938,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -2005,7 +1982,6 @@ export default {
 
       type: "ability",
       slot_type: "divine_channel_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2049,7 +2025,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2093,7 +2068,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2137,7 +2111,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2181,7 +2154,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2225,7 +2197,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2269,7 +2240,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2313,7 +2283,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2357,7 +2326,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -2401,7 +2369,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2445,7 +2412,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -2489,7 +2455,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2533,7 +2498,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2577,7 +2541,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2621,7 +2584,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2665,7 +2627,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2709,7 +2670,6 @@ export default {
 
       type: "ability",
       slot_type: "superiority_dice_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2752,7 +2712,6 @@ export default {
       expanded: "spell_inspiration_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -2795,7 +2754,6 @@ export default {
       expanded: "spell_grapple_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2839,7 +2797,6 @@ export default {
 
       type: "ability",
       slot_type: "healers_tool_slot",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -2882,7 +2839,6 @@ export default {
       expanded: "spell_extra_strike_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -2925,7 +2881,6 @@ export default {
       expanded: "spell_heavy_strike_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -2968,7 +2923,6 @@ export default {
       expanded: "spell_polearm_strike_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -3011,7 +2965,6 @@ export default {
       expanded: "spell_shield_push_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -3054,7 +3007,6 @@ export default {
       expanded: "spell_shield_block_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -3097,7 +3049,6 @@ export default {
       expanded: "spell_heavy_shot_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,
@@ -3140,7 +3091,6 @@ export default {
       expanded: "spell_charge_attack_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -3183,7 +3133,6 @@ export default {
       expanded: "spell_charge_push_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -3226,7 +3175,6 @@ export default {
       expanded: "spell_learn_ritual_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 2,
@@ -3269,7 +3217,6 @@ export default {
       expanded: "spell_crossbow_shot_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -3312,7 +3259,6 @@ export default {
       expanded: "spell_create_crypt_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -3356,7 +3302,6 @@ export default {
 
       type: "ability",
       slot_type: "bardic_inspiration_slot",
-      classes: [],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -3399,7 +3344,6 @@ export default {
       expanded: "spell_song_of_rest_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -3443,7 +3387,6 @@ export default {
 
       type: "ability",
       slot_type: "bardic_inspiration_slot",
-      classes: [],
 
       cast_time: "reaction",
       cast_duration: null,
@@ -6303,7 +6246,6 @@ export default {
       expanded: "spell_faerie_fire_expanded", // полное описание
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -8579,7 +8521,6 @@ export default {
       expanded: "spell_beast_sense_expanded",
 
       type: "divination",
-      classes: [],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -10704,7 +10645,6 @@ export default {
       expanded: "spell_darkness_expanded",
 
       type: "evocation",
-      classes: [],
 
       cast_time: "action",
       cast_duration: null,
@@ -11022,7 +10962,6 @@ export default {
       expanded: "spell_paladin_divine_smite_expanded",
 
       type: "ability",
-      classes: [],
 
       cast_time: "none",
       cast_duration: null,

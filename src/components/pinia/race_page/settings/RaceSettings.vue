@@ -73,6 +73,12 @@
       <RaceCustomLanguages />
 		</my-selection-box>
 		<!-- Языки -->
+
+    <!-- Заклинания -->
+		<my-selection-box :shown="race_page.shown.spells">
+      <RaceCustomSpells />
+		</my-selection-box>
+		<!-- Заклинания -->
 </template>
 
 <script>
@@ -85,6 +91,7 @@ import EthnosChoice from "@/components/pinia/race_page/settings/EthnosChoice.vue
 import RaceCustomStats from "@/components/pinia/race_page/settings/RaceCustomStats.vue";
 import RaceCustomSkills from "@/components/pinia/race_page/settings/RaceCustomSkills.vue";
 import RaceCustomLanguages from "@/components/pinia/race_page/settings/RaceCustomLanguages.vue";
+import RaceCustomSpells from "@/components/pinia/race_page/settings/RaceCustomSpells.vue";
 
 import GenderSetting from "@/components/pinia/race_page/settings/GenderSetting.vue";
 
@@ -95,6 +102,7 @@ export default {
     RaceCustomStats,
     RaceCustomSkills, //TODO: Перенести skills_Mastery
     RaceCustomLanguages,
+    RaceCustomSpells,
     GenderSetting,
 	},
 	computed: {

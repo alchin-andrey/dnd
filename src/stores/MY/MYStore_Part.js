@@ -51,7 +51,7 @@ export const useMYStore_Part = defineStore({
 
     option_Custom_RE_Quant: (state) => (name) => {
 			let i = 0;
-			const race_custom = state.MY.race.settings[`custom_${name}`];
+			const race_custom = state.MY.race.race_settings[`custom_${name}`];
 			const ethnos_custom = state.MY.ethnos[`custom_${name}`];
 			if (race_custom) {
 				i += race_custom[0];
@@ -73,11 +73,11 @@ export const useMYStore_Part = defineStore({
 		},
 
 		getEthnos() {
-			this.MY.ethnos = Object.values(this.MY.race.settings.ethnos)[0];
+			this.MY.ethnos = Object.values(this.MY.race.race_settings.ethnos)[0];
 		},
 
 		getEthnosName() {
-			this.MY.ethnos_name = Object.values(this.MY.race.settings.ethnos)[0].name;
+			this.MY.ethnos_name = Object.values(this.MY.race.race_settings.ethnos)[0].name;
 		},
 
 		getCustomSelect_RE(item, name) {

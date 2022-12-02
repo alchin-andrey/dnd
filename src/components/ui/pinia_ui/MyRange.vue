@@ -108,7 +108,7 @@ export default {
 			if (this.lvl) {
 				return this.max_lvl;
 			} else {
-				return this.MY.race.settings[this.Target_Range].max;
+				return this.MY.race.race_settings[this.Target_Range].max;
 			}
 		},
 
@@ -116,7 +116,7 @@ export default {
 			if (this.lvl) {
 				return this.min_lvl;
 			} else {
-				return this.MY.race.settings[this.Target_Range].min;
+				return this.MY.race.race_settings[this.Target_Range].min;
 			}
 		},
 
@@ -124,8 +124,8 @@ export default {
 			if (this.lvl) {
 				return null;
 			} else {
-				let min = this.MY.race.settings[this.Target_Range].min;
-				let max = this.MY.race.settings[this.Target_Range].max;
+				let min = this.MY.race.race_settings[this.Target_Range].min;
+				let max = this.MY.race.race_settings[this.Target_Range].max;
 				return (this.MY[this.Target_Range] - min) / (max - min);
 			}
 		},

@@ -42,6 +42,14 @@
 				:type_arr="languages_Custom_Arr_RE"
 			>
 			</my-selection>
+      <my-selection
+				v-if="!spells_Custom_Arr_RE.length == 0"
+				@click="showSettings__Race('spells')"
+				:active="race_page.shown.spells"
+				title="spells"
+				:type_arr="spells_Custom_Arr_RE"
+			>
+			</my-selection>
 		</div>
     <!-- RACE CUSTTOM -->
 
@@ -129,6 +137,7 @@ export default {
       "stats_Custom_Arr_RE",
       "skills_Custom_Arr_RE",
       "languages_Custom_Arr_RE",
+      "spells_Custom_Arr_RE",
     ]),
 
     // ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
@@ -136,11 +145,12 @@ export default {
     custom_Race_Settings_Visib() {
       return !this.stats_Custom_Arr_RE.length == 0 ||
 			!this.skills_Custom_Arr_RE.length == 0 ||
-      !this.languages_Custom_Arr_RE.length == 0;
+      !this.languages_Custom_Arr_RE.length == 0 ||
+      !this.spells_Custom_Arr_RE.length == 0;
 		},
 
 		Age_Note() {
-      let age = this.MY.race.settings.age;
+      let age = this.MY.race.race_settings.age;
 			let baby = age.min;
 			let young = age.young;
 			let mature = age.mature;
@@ -172,7 +182,7 @@ export default {
 		},
 
 		Hight_Note() {
-			return this.t(this.MY.race.settings.size);
+			return this.t(this.MY.race.race_settings.size);
 		},
 
 	},

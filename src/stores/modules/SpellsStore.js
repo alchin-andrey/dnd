@@ -12,7 +12,7 @@ export const useSpellsStore = defineStore({
 	}),
 
   getters: {
-
+    
   },
   actions: {
   }

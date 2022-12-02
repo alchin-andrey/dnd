@@ -2,7 +2,6 @@
 import { defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-import { useSpellsStore } from "@/stores/modules/SpellsStore";
 // import { useStatsStore } from "@/stores/modules/StatsStore";
 // import { useSkillsStore } from "@/stores/modules/SkillsStore";
 
@@ -15,11 +14,6 @@ export const useMYStore = defineStore({
 	getters: {
 		Mastery(state) {
 			return Math.ceil(state.MY.level / 4);
-		},
-
-		ethnos_Setting(state) {
-			return (name) =>
-				state.MY.ethnos.settings?.find((item) => item.type == name);
 		},
 
 		//SECTION - COMMON
@@ -53,8 +47,17 @@ export const useMYStore = defineStore({
 		},
 
 		option_Custom_RE_Quant: (state) => (name) => {
-			const ethnos_settings = state.ethnos_Setting(name);
-			return ethnos_settings ? ethnos_settings.select : 0;
+			let i = 0;
+			const race_custom = state.MY.race.race_settings[`custom_${name}`];
+			const ethnos_custom = state.MY.ethnos[`custom_${name}`];
+
+			if (race_custom) {
+				i += race_custom[0];
+			}
+			if (ethnos_custom) {
+				i += ethnos_custom[0];
+			}
+			return i;
 		},
 		//!NOTE - COMMON (stats, skills, languages)
 		//!SECTION - COMMON
@@ -91,11 +94,11 @@ export const useMYStore = defineStore({
 		},
 
 		stats_Custom_RE_Numb: (state) => (name) => {
-			let settings_stats = state.ethnos_Setting("stats");
-			if (settings_stats) {
+			let custom_option = state.MY.race.race_settings.custom_stats;
+			if (custom_option) {
 				let option_true = state.COMMON_Custom_Arr_RE("stats").includes(name);
 				if (option_true) {
-					let increment = settings_stats.num;
+					let increment = custom_option[1];
 					return increment;
 				} else {
 					return 0;
@@ -179,96 +182,6 @@ export const useMYStore = defineStore({
 			return this.COMMON_Custom_Arr_RE("languages");
 		},
 		//!SECTION - LANGUEGES
-		//SECTION  - SPELLS
-
-		// spells_Keys(state) {
-		//   const { spells } = useSpellsStore();
-		//   let arr = [];
-		// 	for (let key in spells) {
-		// 		arr.push(spells[key].find(item => item.name).name);
-		// 	}
-		// 	return arr;
-		// },
-
-		spells_Activ_Obj_RE(state) {
-			let arr = [];
-			let i = [];
-			let j = [];
-			state.MY.race.spells ? (i = state.MY.race.spells) : null;
-			state.MY.ethnos.spells ? (j = state.MY.ethnos.spells) : null;
-			i.concat(j).forEach((el) => arr.push(el.spell));
-			return arr;
-			// return i.concat(j);
-		},
-
-		spells_Activ_Arr_RE(state) {
-			let arr = [];
-			this.spells_Activ_Obj_RE.forEach((el) =>
-				arr.push(el.find((x) => x.name).name)
-			);
-			return arr;
-		},
-
-		spells_Settings_Obj_RE() {
-			const { spells } = useSpellsStore();
-			let arr = [];
-			let spells_settings = this.ethnos_Setting("spells");
-			if (spells_settings) {
-				let mana_min = spells_settings.mana_min;
-				let mana_max = spells_settings.mana_max;
-				let classes = spells_settings.classes;
-				for (let kay in spells) {
-					for (let j = mana_min; j == mana_max; j++) {
-						let name = spells[kay][j]?.name;
-						if (name) {
-							for (let i in classes) {
-								let check = spells[kay][j].classes.includes(classes[i]);
-								if (check) {
-									let unique = !arr.includes(spells[kay]);
-									if (unique) {
-										arr.push(spells[kay]);
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			return arr;
-		},
-
-		spells_Pass_Obj_RE() {
-			return this.spells_Settings_Obj_RE.filter(
-				(el) => !this.spells_Activ_Obj_RE.includes(el)
-			);
-		},
-
-		spells_Keys(state) {
-			let arr = [];
-			this.spells_Settings_Obj_RE.forEach((el) =>
-				arr.push(el.find((x) => x.name).name)
-			);
-			return arr;
-		},
-
-		spells_Pass_Arr_RE(state) {
-			let arr = [];
-			this.spells_Pass_Obj_RE.forEach((el) =>
-				arr.push(el.find((x) => x.name).name)
-			);
-			return arr;
-		},
-
-		spells_Pass_Arr_RE_ALL() {
-			return this.spells_Keys.filter(
-				(el) => !this.spells_Activ_Arr_RE.includes(el)
-			);
-		},
-
-		spells_Custom_Arr_RE() {
-			return this.COMMON_Custom_Arr_RE("spells");
-		},
-		//!SECTION - SPELLS
 	},
 	//!SECTION - GETTERS
 
@@ -287,9 +200,7 @@ export const useMYStore = defineStore({
 		},
 
 		getEthnosName() {
-			this.MY.ethnos_name = Object.values(
-				this.MY.race.race_settings.ethnos
-			)[0].name;
+			this.MY.ethnos_name = Object.values(this.MY.race.race_settings.ethnos)[0].name;
 		},
 
 		getCustomSelect_COMMON_RE(item, name) {
@@ -316,10 +227,6 @@ export const useMYStore = defineStore({
 
 		getCustomSelect_Languages_RE(name) {
 			this.getCustomSelect_COMMON_RE("languages", name);
-		},
-
-		getCustomSelect_Spells_RE(name) {
-			this.getCustomSelect_COMMON_RE("spells", name);
 		},
 	},
 });

@@ -52,9 +52,9 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 		pass_Link() {
-			let skin = this.MY.race.settings.color.skin.length;
-			let eyes = this.MY.race.settings.color.eyes.length;
-			let hair = this.MY.race.settings.color.hair.length;
+			let skin = this.MY.race.race_settings.color.skin.length;
+			let eyes = this.MY.race.race_settings.color.eyes.length;
+			let hair = this.MY.race.race_settings.color.hair.length;
 			let fact_1 = this.type == "common";
 			let fact_2 = this.title == "color_skin" && skin == 0;
 			let fact_3 = this.title == "color_eyes" && eyes == 0;

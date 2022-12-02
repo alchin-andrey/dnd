@@ -86,7 +86,7 @@ export default {
 		},
 
 		race_Colors() {
-			return (obj, value) => this.MY.race.settings.color[value].includes(obj);
+			return (obj, value) => this.MY.race.race_settings.color[value].includes(obj);
 		},
 	},
 	methods: {

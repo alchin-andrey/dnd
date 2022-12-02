@@ -34,6 +34,7 @@ export const usePagesStore = defineStore({
         stats: false,
         skills: false,
         languages: false,
+        spells: false,
       },
   
       shown_humman_lang: false,
@@ -84,7 +85,7 @@ export const usePagesStore = defineStore({
       const ethnos_common = MYStore.MY.ethnos.name === "common";
       let custom_ethnos = ethnos && ethnos_common;
       const str = name.split("_")[0];
-      let color_length = MYStore.MY.race.settings.color[str]?.length === 0;
+      let color_length = MYStore.MY.race.race_settings.color[str]?.length === 0;
       
       if (custom_ethnos || color_length) {
         return null;
@@ -105,7 +106,7 @@ export const usePagesStore = defineStore({
     closeColor(name) {
       const MYStore = useMYStore();
       const color_page = this.race_page.shown[`${name}_color`] === true;
-      const color_length = MYStore.MY.race.settings.color[name].length === 0;
+      const color_length = MYStore.MY.race.race_settings.color[name].length === 0;
       if (color_page && color_length) {
         this.showHome();
       }
@@ -114,7 +115,7 @@ export const usePagesStore = defineStore({
     closePar(name) {
       const MYStore = useMYStore();
       const page_shown = this.race_page.shown[name] === true;
-      const null_race_par = MYStore.MY.race.settings[`custom_${name}`] === undefined;
+      const null_race_par = MYStore.MY.race.race_settings[`custom_${name}`] === undefined;
       const null_ethnos_par = MYStore.MY.ethnos[`custom_${name}`] === undefined;
       if (page_shown && null_race_par && null_ethnos_par) {
         this.showHome();

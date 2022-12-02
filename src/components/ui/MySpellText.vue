@@ -165,6 +165,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
+
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
@@ -183,6 +184,100 @@ export default {
 		},
 		Manna_Length() {
 			return this.spell.length;
+		},
+
+    Show() {
+			return this.lvl <= this.MY.level;
+		},
+		em_Upd() {
+			return this.updEmoji(this.t_Title);
+		},
+
+		em_Before() {
+			return this.beforeEmoji(this.t_Title);
+		},
+
+		em_After() {
+			return this.afterEmoji(this.t_Title);
+		},
+
+		t_Title() {
+			return this.t(this.Spell_Index.name);
+		},
+
+		t_Type() {
+			let string = this.t(this.Spell_Index.type);
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		},
+
+		t_Text() {
+			return this.t(this.Spell_Index.details);
+		},
+
+		t_Cast_Value() {
+			let string = null;
+			if (this.Spell_Index.cast_time === "ritual") {
+				let value = this.t(this.Spell_Index.cast_time);
+				let numb = this.Spell_Index.cast_duration;
+				let numb_units = this.t(this.Spell_Index.cast_duration_units);
+				string = `${value} ${numb} ${numb_units}`;
+			} else {
+				string = this.t(this.Spell_Index.cast_time);
+			}
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		},
+
+		t_Target_Value() {
+			let value_1 = this.t(this.Spell_Index.aim_target);
+			let value_2 = this.t(this.Spell_Index.aim_type);
+			let string = null;
+			if (value_2) {
+				string = `${value_1} ${value_2}`;
+			} else {
+				string = value_1;
+			}
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		},
+
+		t_Parts_Value() {
+			let parts = this.Spell_Index.parts;
+			let arr = [];
+			for (let i in parts) {
+				arr.push(this.t(parts[i]));
+			}
+			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+		},
+
+		t_Time_Value() {
+			let value_1 = null;
+			if (this.Spell_Index.spell_time === "concentration") {
+				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
+			} else {
+				value_1 = this.t(this.Spell_Index.spell_time);
+			}
+			let value_2 = this.by_Mana("spell_duration");
+			let value_3 = this.t(this.Spell_Index.spell_duration_units);
+			let string = null;
+			if (!value_1) {
+				string = `${value_2} ${value_3}`;
+			} else if (value_2) {
+				string = `${value_1} ${value_2} ${value_3}`;
+			} else {
+				string = value_1;
+			}
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		},
+
+		Saving_Numb() {
+			const KOF = 8;
+			let attribute = this.MY.class.spell_attribute;
+			let mastery = this.Mastery;
+			let stats_mod = this.MY.stats[attribute].mod;
+			return KOF + mastery + stats_mod;
+		},
+
+		t_Expanded() {
+			return this.t(this.Spell_Index.expanded);
 		},
 
     by_Mana: (state) => (str) => {
@@ -470,99 +565,6 @@ export default {
 		},
 		// ------ FOO -----------
 
-		Show() {
-			return this.lvl <= this.MY.level;
-		},
-		em_Upd() {
-			return this.updEmoji(this.t_Title);
-		},
-
-		em_Before() {
-			return this.beforeEmoji(this.t_Title);
-		},
-
-		em_After() {
-			return this.afterEmoji(this.t_Title);
-		},
-
-		t_Title() {
-			return this.t(this.Spell_Index.name);
-		},
-
-		t_Type() {
-			let string = this.t(this.Spell_Index.type);
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		t_Text() {
-			return this.t(this.Spell_Index.details);
-		},
-
-		t_Cast_Value() {
-			let string = null;
-			if (this.Spell_Index.cast_time === "ritual") {
-				let value = this.t(this.Spell_Index.cast_time);
-				let numb = this.Spell_Index.cast_duration;
-				let numb_units = this.t(this.Spell_Index.cast_duration_units);
-				string = `${value} ${numb} ${numb_units}`;
-			} else {
-				string = this.t(this.Spell_Index.cast_time);
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		t_Target_Value() {
-			let value_1 = this.t(this.Spell_Index.aim_target);
-			let value_2 = this.t(this.Spell_Index.aim_type);
-			let string = null;
-			if (value_2) {
-				string = `${value_1} ${value_2}`;
-			} else {
-				string = value_1;
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		t_Parts_Value() {
-			let parts = this.Spell_Index.parts;
-			let arr = [];
-			for (let i in parts) {
-				arr.push(this.t(parts[i]));
-			}
-			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
-		},
-
-		t_Time_Value() {
-			let value_1 = null;
-			if (this.Spell_Index.spell_time === "concentration") {
-				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
-			} else {
-				value_1 = this.t(this.Spell_Index.spell_time);
-			}
-			let value_2 = this.by_Mana("spell_duration");
-			let value_3 = this.t(this.Spell_Index.spell_duration_units);
-			let string = null;
-			if (!value_1) {
-				string = `${value_2} ${value_3}`;
-			} else if (value_2) {
-				string = `${value_1} ${value_2} ${value_3}`;
-			} else {
-				string = value_1;
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		Saving_Numb() {
-			const KOF = 8;
-			let attribute = this.MY.class.spell_attribute;
-			let mastery = this.Mastery;
-			let stats_mod = this.MY.stats[attribute].mod;
-			return KOF + mastery + stats_mod;
-		},
-
-		t_Expanded() {
-			return this.t(this.Spell_Index.expanded);
-		},
 	},
 	watch: {
 		dialogVisible(val) {

@@ -156,12 +156,12 @@ export default {
 		},
 
 		race_Settings() {
-			return this.MY.race.settings;
+			return this.MY.race.race_settings;
 		},
 
 		Char_Hight_Back() {
-			let max_height = this.MY.race.settings.height.max;
-			let min_height = this.MY.race.settings.height.min;
+			let max_height = this.MY.race.race_settings.height.max;
+			let min_height = this.MY.race.race_settings.height.min;
 			let mein_height = (min_height + max_height) / 2;
 			let kof = 0;
 			if (mein_height == 105) {
@@ -215,6 +215,7 @@ export default {
 			this.closePar("stats");
 			this.closePar("skills");
 			this.closePar("languages");
+      this.closePar("spells");
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;

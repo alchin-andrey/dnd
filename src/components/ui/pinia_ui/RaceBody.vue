@@ -50,8 +50,8 @@ export default {
 
     growth_Char() {
       if (this.MY.height === null) {
-      let max_height = this.MY.race.settings.height.max
-      let min_height = this.MY.race.settings.height.min
+      let max_height = this.MY.race.race_settings.height.max
+      let min_height = this.MY.race.race_settings.height.min
         return (min_height + max_height) / 2;
       } else {
         return this.MY.height;
@@ -76,7 +76,7 @@ export default {
 
     img_Char_Numb() {
       if(this.ethnos_name) {
-        return this.MY.race.settings.ethnos[this.ethnos_name].color[this.body_part][0].img;
+        return this.MY.race.race_settings.ethnos[this.ethnos_name].color[this.body_part][0].img;
       } else {
         return this.Hower ? this.Hower.img : this.color_Char_Body.img;
       }
@@ -136,7 +136,7 @@ export default {
 
     placeholder_Color_Hex() {
       if (this.ethnos_name && !this.img_Char) {
-        return this.MY.race.settings.ethnos[this.ethnos_name].color[this.body_part][0].hex;
+        return this.MY.race.race_settings.ethnos[this.ethnos_name].color[this.body_part][0].hex;
       } else {
         let hex = this.Hower ? this.Hower.hex : this.color_Char_Body.hex;
       return hex;

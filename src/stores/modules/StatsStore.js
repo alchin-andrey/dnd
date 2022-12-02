@@ -51,7 +51,7 @@ export const useStatsStore = defineStore({
     stats_Custom_RE_Quant(state) {
       const MYStore = useMYStore();
 			let i = 0;
-			const race_custom = MYStore.MY.race.settings.custom_stats;
+			const race_custom = MYStore.MY.race.race_settings.custom_stats;
 			const ethnos_custom = MYStore.MY.ethnos.custom_stats;
 			if (race_custom) {
 				i += race_custom[0];
@@ -100,7 +100,7 @@ export const useStatsStore = defineStore({
 
 		stats_Custom_RE_Numb: state => name => {
       const MYStore = useMYStore();
-			let custom_option = MYStore.MY.race.settings.custom_stats;
+			let custom_option = MYStore.MY.race.race_settings.custom_stats;
 			if (custom_option) {
 				let option_true = state.stats_Custom_Arr_RE.includes(name);
 				if (option_true) {

@@ -1,7 +1,7 @@
 <template>
 	<div class="ethnos_cards_menu">
 		<my-selection-card
-			v-for="ethnos in MY.race.settings.ethnos"
+			v-for="ethnos in MY.race.race_settings.ethnos"
 			:key="ethnos"
 			no_blur
 			@click="getEthnosObj(ethnos)"
@@ -121,8 +121,8 @@ export default {
 
 		proficiencies_Arr_Ethnos: (state) => (obj, kay) => {
 			let ethnos_arr = obj.proficiencies?.[kay].map((x) => x.name);
-			let incr = obj[`custom_${kay}`]?.[0];
-			obj[`custom_${kay}`] ? ethnos_arr.push(`+${incr}`) : null;
+			// let incr = obj[`custom_${kay}`]?.[0];
+			// obj[`custom_${kay}`] ? ethnos_arr.push(`+${incr}`) : null;
 			return ethnos_arr;
 		},
 	},

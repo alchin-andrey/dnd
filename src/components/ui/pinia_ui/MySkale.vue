@@ -52,8 +52,8 @@ export default {
 
 		growth_Char() {
 			if (this.MY.height === null) {
-				let max_height = this.MY.race.settings.height.max;
-				let min_height = this.MY.race.settings.height.min;
+				let max_height = this.MY.race.race_settings.height.max;
+				let min_height = this.MY.race.race_settings.height.min;
 				return (min_height + max_height) / 2;
 			} else {
 				return this.MY.height;
@@ -65,8 +65,8 @@ export default {
 		},
 
 		show_Numb() {
-			let max_height = this.MY.race.settings.height.max;
-			let min_height = this.MY.race.settings.height.min;
+			let max_height = this.MY.race.race_settings.height.max;
+			let min_height = this.MY.race.race_settings.height.min;
 			return this.numb >= min_height && this.numb <= max_height;
 		},
 

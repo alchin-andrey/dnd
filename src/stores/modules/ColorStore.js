@@ -12,13 +12,13 @@ export const useColorStore = defineStore({
 	getters: {
     color_Char_Сommon: (store) => (body_part) => {
       const MYStore = useMYStore();
-      if (MYStore.MY.race.settings.color[body_part].length == 0) {
+      if (MYStore.MY.race.race_settings.color[body_part].length == 0) {
         return MYStore.MY.ethnos.color[body_part][0];
       } else if (
         MYStore.MY.color_selected[body_part] === null &&
         MYStore.MY.ethnos.name === "common" 
       ) {
-        return MYStore.MY.race.settings.color[body_part][0];
+        return MYStore.MY.race.race_settings.color[body_part][0];
       } else if (MYStore.MY.color_selected[body_part] === null) {
         return MYStore.MY.ethnos.color[body_part][0];
       } else {

@@ -25,7 +25,7 @@
 			:title="name"
 			:type="`${name}_base`"
 			plus
-			:numb="MY.race.settings.custom_stats[1]"
+			:numb="ethnos_Setting('stats').num"
 			:icon="name"
 		>
 		</my-attribute>
@@ -51,6 +51,7 @@ export default {
 			"stats_Pass_Arr_RE",
 			"stats_Custom_Arr_RE",
 			"stats_Race_Page_Numb",
+      "ethnos_Setting",
 		]),
 		// ...mapState(useStatsStore, [
 		// 	"stats_Keys",
