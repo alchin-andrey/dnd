@@ -752,7 +752,7 @@ export default {
 
       type: "ability",
       slot_type: "rage_slot",
-      
+      classes: [],
 
       cast_time: "bonus_action",
       // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
@@ -838,7 +838,7 @@ export default {
       expanded: "spell_reckless_attack_expanded", // полное описание
 
       type: "ability",
-      
+      classes: [],
 
       cast_time: "instant",
       // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
