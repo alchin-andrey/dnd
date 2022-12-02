@@ -1163,10 +1163,12 @@ export default {
     spell_hellish_rebuke: spells.hellish_rebuke,
     spell_hellish_rebuke_details: spells.hellish_rebuke_details,
     spell_hellish_rebuke_expanded: spells.hellish_rebuke_expanded,
+    spell_hellish_rebuke_tiefling: spells.hellish_rebuke_tiefling,
     spell_hellish_rebuke_tiefling_details: spells.hellish_rebuke_tiefling_details,
     spell_hellish_rebuke_tiefling_expanded: spells.hellish_rebuke_tiefling_expanded,
 
     spell_darkness: spells.darkness,
+    spell_darkness_tiefling: spells.darkness_tiefling,
     spell_darkness_tiefling_details: spells.darkness_tiefling_details,
     spell_darkness_tiefling_expanded: spells.darkness_tiefling_expanded,
 
@@ -1199,6 +1201,7 @@ export default {
     spell_dancing_lights_expanded: spells.dancing_lights_expanded,
 
     spell_faerie_fire: spells.faerie_fire,
+    spell_faerie_fire_1: spells.faerie_fire_1,
     spell_faerie_fire_details: spells.faerie_fire_details,
     spell_faerie_fire_expanded: spells.faerie_fire_expanded,
 
@@ -1207,6 +1210,8 @@ export default {
     spell_electricity_breath: spells.electricity_breath,
     spell_cold_breath: spells.cold_breath,
     spell_fire_breath: spells.fire_breath,
+    spell_fire_breath_cone: spells.fire_breath_cone,
+    spell_fire_breath_line: spells.fire_breath_line,
     spell_breath_details: spells.breath_details,
     spell_breath_expanded: spells.breath_expanded,
 
@@ -1235,10 +1240,12 @@ export default {
     spell_beast_sense_expanded: spells.beast_sense_expanded,
 
     spell_speak_with_animals: spells.speak_with_animals,
+    spell_speak_with_animals_ritual: spells.speak_with_animals_ritual,
     spell_speak_with_animals_details: spells.speak_with_animals_details,
     spell_speak_with_animals_expanded: spells.speak_with_animals_expanded,
 
     spell_commune_with_nature: spells.commune_with_nature,
+    spell_commune_with_nature_ritual: spells.commune_with_nature_ritual,
     spell_commune_with_nature_details: spells.commune_with_nature_details,
     spell_commune_with_nature_expanded: spells.commune_with_nature_expanded,
 

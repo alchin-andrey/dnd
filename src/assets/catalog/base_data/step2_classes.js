@@ -883,6 +883,336 @@ export default {
 
   // -------------------------------------------------------------------------
 
+  bard: {
+    name: "bard",
+    details: "bard_details",
+
+    hp_dice: 8,
+    // x: hp_dice/2 + 1;
+    // hp_bonus: (x+con.mod)*lvl + hp_dice - x
+    //regen: = lvl * hp_dice
+
+    proficiencies: {
+      armor: [armory.light],
+      weapons: [
+        weaponry.simple,
+        weaponry.short_swords,
+        weaponry.long_swords,
+        weaponry.rapires,
+        weaponry.hand_arbalets,
+      ],
+    },
+
+    saving: ["dexterity", "charisma"],
+    stats_base: [
+      "charisma",
+      "dexterity",
+      "constitution",
+      "wisdom",
+      "intelligence",
+      "strength",
+    ],
+    spell_attribute: "charisma",
+
+    equipment: [
+      {
+        level: 1,
+        armor: [[armors.leather, 1]],
+        weapon: [[weapons.dagger, 1]],
+      },
+    ],
+
+    skills: [
+      {
+        lelel: 2,
+        condition: "no_mastery",
+        num: "mastery/2",
+      },
+    ],
+
+    charges: [
+      {
+        level: 1,
+        name: "bardic_inspiration_slots",
+        foo: "Str_CHA_min1",
+      },
+      {
+        level: 1,
+        name: "spell_slots",
+        list: [
+          ["0", 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["1", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["2", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["3", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["4", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["5", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["6", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["7", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["8", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["9", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+    ],
+
+    spells: [
+      {
+        spell: spells.bardic_inspiration,
+      },
+      {
+        level: 2,
+        spell: spells.song_of_rest,
+      },
+    ],
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "spell_focus",
+        details: "as_musical_instrument",
+      },
+      {
+        level: 5,
+        type: "plus",
+        keyword: "restoring",
+        details: "of_inspiration_slots_on_short_rest",
+      },
+    ],
+
+    settings: [
+      {
+        level: 3,
+        type: "subclasses",
+        select: 1,
+        list: [
+          {
+            name: "college_valor",
+            details: "college_valor_details",
+
+            proficiencies: {
+              armor: [armory.medium, armory.shields],
+              weapons: [weaponry.military],
+            },
+
+            fines: 
+            [
+              {
+                type: "plus",
+                keyword: "spell_bardic_inspiration",
+                details: "on_damage_and_ac",
+              },
+            ]
+          },
+          {
+            name: "college_lore",
+            details: "college_lore_details",
+
+            settings: [
+              {
+                type: "skills",
+                name: "skills",
+                select: 3,
+                num: "mastery",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "skills",
+        name: "skills",
+        select: 3,
+        num: "mastery",
+        list: [
+          "performance",
+          "athletics",
+          "acrobatics",
+          "sleight_of_hand",
+          "stealth",
+          "arcana",
+          "history",
+          "investigation",
+          "nature",
+          "religion",
+          "animal_hanging",
+          "insight",
+          "medicine",
+          "perception",
+          "survival",
+          "deception",
+          "intimidation",
+          "persuasion",
+        ],
+      },
+      {
+        type: "custom",
+        name: "proficiencies",
+        select: 3,
+        list: [
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_bagpipes],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_drums],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_dulcimer],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_flute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_horn],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_lute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_lyre],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_pan_flute],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_shawm],
+              },
+            ],
+          },
+          {
+            proficiencies: [
+              {
+                tools: [tools.music_viol],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "weapons",
+        name: "weapons",
+        select: 1,
+        list: [
+          [weapons.rapier, 1],
+          [weapons.longsword, 1],
+          [weapons.quarterstaff, 1],
+          [weapons.mace, 1],
+          [weapons.club, 1],
+          [weapons.dagger, 1],
+          [weapons.spear, 1],
+          [weapons.light_hammer, 1],
+          [weapons.javelin, 1],
+          [weapons.greatclub, 1],
+          [weapons.sickle, 1],
+        ],
+      },
+      {
+        type: "packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.diplomats, 1],
+          [items.entertainers, 1],
+        ],
+      },
+      {
+        type: "items",
+        name: "tools",
+        select: 1,
+        list: [
+          [packs.diplomats, 1],
+          [items.entertainers, 1],
+        ],
+      },
+      {
+        type: "spells",
+        name: "spells_0",
+        select: "Str_Bard_Cantrips", //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard"],
+      },
+      {
+        type: "spells",
+        name: "spells",
+        select: "Str_Bard_Spells", //4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22
+        mana_min: 1,
+        mana_max: "Num_Bard_max_spell_slot",
+        classes: ["bard"],
+      },
+      {
+        level: 3,
+        type: "skills",
+        name: "skills",
+        select: 2,
+        filter: "mastery",
+        num: "mastery",
+      },
+      {
+        level: 10,
+        type: "skills",
+        name: "skills",
+        select: 2,
+        filter: "mastery",
+        num: "mastery",
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+    ],
+  },
+
+  // -------------------------------------------------------------------------
+
   rogue: {
     name: "rogue",
     details: "rogue_details",
@@ -1357,334 +1687,6 @@ export default {
   },
 
   // -------------------------------------------------------------------------
-
-  bard: {
-    name: "bard",
-    details: "bard_details",
-
-    hp_dice: 8,
-    // x: hp_dice/2 + 1;
-    // hp_bonus: (x+con.mod)*lvl + hp_dice - x
-    //regen: = lvl * hp_dice
-
-    proficiencies: {
-      armor: [armory.light],
-      weapons: [
-        weaponry.simple,
-        weaponry.short_swords,
-        weaponry.long_swords,
-        weaponry.rapires,
-        weaponry.hand_arbalets,
-      ],
-    },
-
-    saving: ["dexterity", "charisma"],
-    stats_base: [
-      "charisma",
-      "dexterity",
-      "constitution",
-      "wisdom",
-      "intelligence",
-      "strength",
-    ],
-    spell_attribute: "charisma",
-
-    equipment: [
-      {
-        level: 1,
-        armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 1]],
-      },
-    ],
-
-    skills: [
-      {
-        lelel: 2,
-        condition: "no_mastery",
-        num: "mastery/2",
-      },
-    ],
-
-    charges: [
-      {
-        level: 1,
-        name: "bardic_inspiration_slots",
-        foo: "Str_CHA_min1",
-      },
-      {
-        level: 1,
-        name: "spell_slots",
-        list: [
-          ["0", 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-          ["1", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-          ["2", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["3", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["4", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["5", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
-          ["6", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
-          ["7", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
-          ["8", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
-          ["9", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-        ],
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.bardic_inspiration,
-      },
-      {
-        level: 2,
-        spell: spells.song_of_rest,
-      },
-    ],
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "spell_focus",
-        details: "as_musical_instrument",
-      },
-      {
-        level: 5,
-        type: "plus",
-        keyword: "restoring",
-        details: "of_inspiration_slots_on_short_rest",
-      },
-    ],
-
-    settings: [
-      {
-        level: 3,
-        type: "subclasses",
-        select: 1,
-        list: [
-          {
-            name: "college_valor",
-            details: "college_valor_details",
-
-            proficiencies: {
-              armor: [armory.medium, armory.shields],
-              weapons: [weaponry.military],
-            },
-
-            fines: 
-            [
-              {
-                type: "plus",
-                keyword: "spell_bardic_inspiration",
-                details: "on_damage_and_ac",
-              },
-            ]
-          },
-          {
-            name: "college_lore",
-            details: "college_lore_details",
-
-            settings: [
-              {
-                type: "skills",
-                name: "skills",
-                select: 3,
-                num: "mastery",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "skills",
-        name: "skills",
-        select: 3,
-        num: "mastery",
-        list: [
-          "performance",
-          "athletics",
-          "acrobatics",
-          "sleight_of_hand",
-          "stealth",
-          "arcana",
-          "history",
-          "investigation",
-          "nature",
-          "religion",
-          "animal_hanging",
-          "insight",
-          "medicine",
-          "perception",
-          "survival",
-          "deception",
-          "intimidation",
-          "persuasion",
-        ],
-      },
-      {
-        type: "custom",
-        name: "proficiencies",
-        select: 3,
-        list: [
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_bagpipes],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_drums],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_dulcimer],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_flute],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_horn],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_lute],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_lyre],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_pan_flute],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_shawm],
-              },
-            ],
-          },
-          {
-            proficiencies: [
-              {
-                tools: [tools.music_viol],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "weapons",
-        name: "weapons",
-        select: 1,
-        list: [
-          [weapons.rapier, 1],
-          [weapons.longsword, 1],
-          [weapons.quarterstaff, 1],
-          [weapons.mace, 1],
-          [weapons.club, 1],
-          [weapons.dagger, 1],
-          [weapons.spear, 1],
-          [weapons.light_hammer, 1],
-          [weapons.javelin, 1],
-          [weapons.greatclub, 1],
-          [weapons.sickle, 1],
-        ],
-      },
-      {
-        type: "packs",
-        name: "packs",
-        select: 1,
-        list: [
-          [packs.diplomats, 1],
-          [items.entertainers, 1],
-        ],
-      },
-      {
-        type: "items",
-        name: "tools",
-        select: 1,
-        list: [
-          [packs.diplomats, 1],
-          [items.entertainers, 1],
-        ],
-      },
-      {
-        type: "spells",
-        name: "spells_0",
-        select: "Str_Bard_Cantrips", //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["bard"],
-      },
-      {
-        type: "spells",
-        name: "spells",
-        select: "Str_Bard_Spells", //4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22
-        mana_min: 1,
-        mana_max: "Num_Bard_max_spell_slot",
-        classes: ["bard"],
-      },
-      {
-        level: 3,
-        type: "skills",
-        name: "skills",
-        select: 2,
-        filter: "mastery",
-        num: "mastery",
-      },
-      {
-        level: 10,
-        type: "skills",
-        name: "skills",
-        select: 2,
-        filter: "mastery",
-        num: "mastery",
-      },
-      {
-        level: 4,
-        type: "feats",
-      },
-      {
-        level: 8,
-        type: "feats",
-      },
-      {
-        level: 12,
-        type: "feats",
-      },
-      {
-        level: 16,
-        type: "feats",
-      },
-      {
-        level: 19,
-        type: "feats",
-      },
-    ],
-  },
 
   object_example: {
     name: "",

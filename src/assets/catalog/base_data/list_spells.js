@@ -103,7 +103,7 @@ export default {
   hellish_rebuke_tiefling: [
     {
       //0
-      name: "spell_hellish_rebuke",
+      name: "spell_hellish_rebuke_tiefling",
       details: "spell_hellish_rebuke_tiefling_details",
       expanded: "spell_hellish_rebuke_tiefling_expanded",
 
@@ -145,7 +145,7 @@ export default {
 
   fire_breath_cone: [
     {
-      name: "spell_fire_breath",
+      name: "spell_fire_breath_cone",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
 
@@ -186,7 +186,7 @@ export default {
 
   fire_breath_line: [
     {
-      name: "spell_fire_breath",
+      name: "spell_fire_breath_line",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
 
@@ -391,7 +391,7 @@ export default {
 
   darkness_tiefling: [
     {
-      name: "spell_darkness",
+      name: "spell_darkness_tiefling",
       details: "spell_darkness_tiefling_details",
       expanded: "spell_darkness_tiefling_expanded",
 
@@ -1039,7 +1039,7 @@ export default {
 
   beast_sense_ritual: [
     {
-      name: "spell_beast_sense",
+      name: "spell_beast_sense_ritual",
       details: "spell_beast_sense_details",
       expanded: "spell_beast_sense_expanded",
 
@@ -1078,7 +1078,7 @@ export default {
 
   speak_with_animals_ritual: [
     {
-      name: "spell_speak_with_animals",
+      name: "spell_speak_with_animals_ritual",
       details: "spell_speak_with_animals_details",
       expanded: "spell_speak_with_animals_expanded",
 
@@ -1161,7 +1161,7 @@ export default {
 
   commune_with_nature_ritual: [
     {
-      name: "spell_commune_with_nature",
+      name: "spell_commune_with_nature_ritual",
       details: "spell_commune_with_nature_details",
       expanded: "spell_commune_with_nature_expanded",
 
@@ -6241,7 +6241,7 @@ export default {
   faerie_fire_1: [
     {},
     {
-      name: "spell_faerie_fire",
+      name: "spell_faerie_fire_1",
       details: "spell_faerie_fire_details",
       expanded: "spell_faerie_fire_expanded", // полное описание
 
