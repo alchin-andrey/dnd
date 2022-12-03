@@ -2754,5 +2754,11 @@ export default {
     champion_details: classes.champion_details,
 
     ctit_damage: "Двойной урон",
-    on_dice_19_20: "не только при 20, но и при 19"
+    on_dice_19_20: "не только при 20, но и при 19",
+
+    command_back: "назад",
+    on_choice: "на выбор",
+    choose_variant: "вариант",
+    choose_varianta: "варианта",
+    choose_variants: "вариантов",
 }
