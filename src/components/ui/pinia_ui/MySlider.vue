@@ -1,25 +1,25 @@
 <template>
-	<div class="numb jbm-300">
-		<div>{{ numb }}</div>
-	</div>
-	<div class="name jbm-300">
-		<div>{{ t_name }}</div>
-	</div>
-	<div class="main">
-		<transition mode="out-in" name="type">
-			<div :key="t_Type">{{ t_Type }}</div>
-		</transition>
-	</div>
-	<div class="arrows">
-		<div ref="back" class="arrow_left" @click="getSlideBack()">
-			<img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg" />
+	<div class="mg-18">
+		<div class="numb jbm-300">
+			<div>{{ numb }}</div>
 		</div>
-		<div ref="next" class="arrow_right" @click="getSlideNext()">
-			<img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg" />
+		<div class="name jbm-300">
+			<div>{{ t_name }}</div>
+		</div>
+		<div class="main">
+			<transition mode="out-in" name="type">
+				<div :key="t_Type">{{ t_Type }}</div>
+			</transition>
+		</div>
+		<div class="arrows">
+			<div ref="back" class="arrow_left" @click="getSlideBack()">
+				<img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg" />
+			</div>
+			<div ref="next" class="arrow_right" @click="getSlideNext()">
+				<img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg" />
+			</div>
 		</div>
 	</div>
-
-	<div class="delimiter"></div>
 </template>
 
 <script>
@@ -50,22 +50,22 @@ export default {
 	data() {
 		return {
 			race: race,
-      class: classes,
+			class: classes,
 		};
 	},
 
 	mounted() {
-    document.addEventListener("keydown", this.listenerDown);
-    document.addEventListener("keyup", this.listenerUp);
+		document.addEventListener("keydown", this.listenerDown);
+		document.addEventListener("keyup", this.listenerUp);
 	},
 
 	beforeUnmount() {
 		document.removeEventListener("keydown", this.listenerDown);
-    document.removeEventListener("keyup", this.listenerUp);
+		document.removeEventListener("keyup", this.listenerUp);
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-    ...mapState(usePagesStore, ["pages"]),
+		...mapState(usePagesStore, ["pages"]),
 
 		t_name() {
 			return this.t(this.name);
@@ -84,7 +84,7 @@ export default {
 		},
 	},
 	methods: {
-    listenerDown(event) {
+		listenerDown(event) {
 			if (event.code == "ArrowRight") {
 				this.$refs.next.classList.add("push");
 			}
@@ -93,16 +93,14 @@ export default {
 			}
 		},
 
-    listenerUp(event) {
+		listenerUp(event) {
 			if (event.code == "ArrowRight") {
-        console.log('key press:', event.code)
 				this.getSlideNext();
-        this.$refs.next.classList.remove("push");
+				this.$refs.next.classList.remove("push");
 			}
 			if (event.code == "ArrowLeft") {
-        console.log('key press:', event.code)
 				this.getSlideBack();
-        this.$refs.back.classList.remove("push");
+				this.$refs.back.classList.remove("push");
 			}
 		},
 
@@ -112,8 +110,6 @@ export default {
 			i++;
 			i == this.kay_Slider.length ? (i = 0) : null;
 			this.MY[this.name] = this[this.name][arr[i]];
-
-      
 		},
 
 		getSlideBack() {
@@ -128,6 +124,10 @@ export default {
 </script>
 
 <style scoped>
+
+.mg-18 {
+  margin-bottom: 18px;
+}
 .numb {
 	height: 18px;
 }
@@ -194,11 +194,10 @@ export default {
 }
 
 .push img {
-  width: 15px;
+	width: 15px;
 }
 
 .delimiter {
-	/*width: 256px;*/
 	height: 1px;
 	margin: 40px 0 0 0;
 	background: rgba(255, 255, 255, 0.2);

@@ -36,6 +36,7 @@ import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import MySpellMain from "@/components/ui/MySpellMain.vue";
 
 import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
+import MyBackPage from "@/components/ui/pinia_ui/MyBackPage.vue";
 
 
 
@@ -43,6 +44,8 @@ import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
 
 export default [
   Emoji,
+
+  MyBackPage,
 
   MyColorBlock,
   MyColorSelect,
