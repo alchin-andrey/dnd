@@ -1,16 +1,18 @@
-import color from "./base_data/_colors.js";
-import races from "./base_data/step1_races.js";
-// import classes from "./base_data/step2_classes.js";
+import color from "@/assets/catalog/base_data/_colors.js";
+// import races from "@/assets/catalog/base_data/step1_races.js";
+import races from "@/assets/catalog/base_data/step1_races.js";
+import clas from "@/assets/catalog/base_data/step2_classes";
 
-// let race_def = Object.values(races)[0];
-// let ethnos_def = Object.values(race_def.settings.ethnos)[0];
-// let class_def = Object.values(classes)[0];
+const race_def = Object.values(races)[0];
+const ethnos_def = Object.values(race_def.race_settings.ethnos)[0];
 
 export default {
 	//Key selections
 	name: null,
-	race: Object.values(races)[0],
-	ethnos: null,
+	race: race_def,
+  race_name: race_def.name,
+	ethnos: ethnos_def,
+  ethnos_name: ethnos_def.name,
 	class: null,
 	subclass: null,
 	backstory: null,
@@ -37,7 +39,8 @@ export default {
 	age: null,
 	weight: null,
 	height: null,
-	color: {
+  
+	color_selected: {
 		skin: null,
 		eyes: null,
 		hair: null,
@@ -61,17 +64,53 @@ export default {
 	},
 
 	stats: {
-		strength: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		strength: {
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		dexterity: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		dexterity: {
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		constitution: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		constitution: {
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		intelligence: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		intelligence: {
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		wisdom: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		wisdom: {
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 
-		charisma: { base: 0, bonus: 0, total: 0, mod: 0, save: 0 },
+		charisma: {
+			base: 0,
+			bonus: 0,
+			total: 0,
+			mod: 0,
+			save: 0,
+		},
 	},
 
 	skills: {
@@ -121,9 +160,12 @@ export default {
 	},
 
 	//доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
-	custom_stats: null,
-	custom_skills: null,
-	custom_languages: null,
+custom_selected_race_page: {
+  stats: [],
+  skills: [],
+  languages: [],
+  spells: [],
+},
 
 	//Особенности - пассивньіе умения
 	fines: null,

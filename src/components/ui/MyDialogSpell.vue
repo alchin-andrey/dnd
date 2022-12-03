@@ -1,16 +1,13 @@
 <template>
-	<div class="dialog" v-if="show" @click="hideDialog">
-		<!--		<transition name="modal" class="modal">-->
-
-		<div @click.stop class="dialog__wrapp int-400">
-<!--			<div class="dialog__scroll">-->
+	<Transition duration="550" name="nested">
+		<div class="dialog" v-if="show" @click="hideDialog">
+			<div @click.stop class="dialog__wrapp int-400">
 				<div class="dialog__content">
 					<slot></slot>
 				</div>
-<!--			</div>-->
+			</div>
 		</div>
-		<!--		</transition>-->
-	</div>
+	</Transition>
 </template>
 
 <script>
@@ -19,24 +16,23 @@ export default {
 	props: {
 		show: {
 			type: Boolean,
-			default: false
+			default: false,
 		},
-    mana: {
+		mana: {
 			type: Number,
-			default: null
+			default: null,
 		},
 	},
 	methods: {
 		hideDialog() {
-      this.$emit('update:mana', null)
-			this.$emit('update:show', false)
+			this.$emit("update:mana", null);
+			this.$emit("update:show", false);
 		},
 	},
 };
 </script>
 
 <style scoped>
-
 .dialog {
 	top: 0;
 	bottom: 0;
@@ -52,18 +48,15 @@ export default {
 }
 
 .dialog__wrapp {
-	/*position: absolute;*/
-	/*top: 0px;*/
-	/*right: 0px;*/
 	margin: 0 0 0 auto;
 	padding: 28px;
-	background: #1C2326;
+	background: #1c2326;
 	border-radius: 12px;
 	width: 396px;
 	z-index: 100;
 	cursor: auto;
 	overflow-y: scroll;
-  scrollbar-width: none;
+	scrollbar-width: none;
 	max-height: 100%;
 }
 
@@ -71,19 +64,37 @@ export default {
 	width: 0;
 }
 
-/*.dialog__scroll {*/
-/*	overflow-y: scroll;*/
-/*	max-height: 100%;*/
-/*}*/
-
-/*.dialog__scroll::-webkit-scrollbar {*/
-/*	width: 0;*/
-/*}*/
-
 .dialog__content {
 	display: flex;
 	flex-direction: column;
 	gap: 26px;
 }
 
+.nested-enter-active,
+.nested-leave-active {
+	transition: all 0.3s ease-in-out;
+}
+/* delay leave of parent element */
+.nested-leave-active {
+	transition-delay: 0.25s;
+}
+
+.nested-enter-from,
+.nested-leave-to {
+	opacity: 0;
+}
+
+.nested-enter-active .dialog__wrapp,
+.nested-leave-active .dialog__wrapp {
+	transition: all 0.3s ease-out;
+}
+.nested-enter-active .dialog__wrapp {
+	transition-delay: 0.25s ease-in;
+}
+
+.nested-enter-from .dialog__wrapp,
+.nested-leave-to .dialog__wrapp {
+	transform: translateY(50px);
+	opacity: 0.001;
+}
 </style>
