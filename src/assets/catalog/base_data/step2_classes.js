@@ -5,7 +5,6 @@ import tools from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
 import weapons from "./list_weapons.js";
 import armors from "./list_armor.js";
-import MY from "@/assets/catalog/MY.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
@@ -152,6 +151,7 @@ export const barbarian_rage_bonus = [
 ];
 
 export default {
+
   barbarian: {
     name: "barbarian",
     details: "barbarian_details",
