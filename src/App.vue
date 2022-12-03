@@ -117,7 +117,7 @@ export default {
 	},
 
 	created() {
-		this.MY.class = Object.values(clas)[1];
+		this.MY.class = Object.values(clas)[0];
 		this.getCreated();
 	},
 
@@ -132,7 +132,7 @@ export default {
 		},
 
 		hide_Ruler() {
-			return this.shown_home || this.race_page.shown.height;
+			return this.pages.race_page && (this.shown_home || this.race_page.shown.height);
 		},
 
 		Get_Height() {
