@@ -86,7 +86,7 @@ export default {
       let race = this.MY.race.name;
       let ethnos = this.ethnos_Char;
       let phisiological = this.MY.gender.phisiological;
-      let img = this.img_Char_Numb;
+      let img;
       let sex;
       let body = this.body_part;
       let result;
@@ -94,6 +94,11 @@ export default {
         sex = "female";
       } else {
         sex = "male";
+      }
+      if (this.body_part == "class") {
+        img = this.MY.class.name;
+      } else {
+        img = this.img_Char_Numb;
       }
       try {
         result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${body}/${img}.png`);

@@ -21,13 +21,13 @@
 
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
-				<RaceMenuSettings />
+				<RaceMenuSettings v-if="pages.race_page"/>
 			</div>
-      <transition v-if="this.pages.race_page" name="btm-fade" mode="out-in">
+      <transition v-if="pages.race_page" name="btm-fade" mode="out-in">
 				<my-button v-if="shown_home" numb="02" title="class" @click="classPage()"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
-			<transition v-if="!this.pages.race_page" name="btm-fade" mode="out-in">
+			<transition v-if="!pages.race_page" name="btm-fade" mode="out-in">
 				<my-button v-if="shown_home" numb="01" title="race" @click="classPage()"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
@@ -37,7 +37,7 @@
 	<!-- Выпадающее меню -->
 	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: setting_open }">
 		<HeaderSettings />
-		<RaceSettings />
+		<RaceSettings v-if="pages.race_page"/>
 	</div>
 
 	<div class="stripe"></div>
@@ -59,6 +59,7 @@
 			<RaceBody body_part="skin" />
 			<RaceBody body_part="eyes" />
 			<RaceBody body_part="hair" />
+      <RaceBody body_part="class" v-if="!pages.race_page"/>
 
 			<transition name="slide-fade">
 				<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
@@ -70,7 +71,7 @@
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->
 	<div class="sidebar_right" :class="{ sidebar_right_close: !shown_home }">
-		<RaceParameters />
+		<RaceParameters v-if="this.pages.race_page"/>
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
