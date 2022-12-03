@@ -1138,7 +1138,7 @@ export default {
     till_dissipate: "поки не розсіється",
 
     //impact
-    damage: "по",
+    damage: "пошкодження",
     heal: "лечение",
     bonus_w:"бонусный",
 
