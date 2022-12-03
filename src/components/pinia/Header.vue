@@ -60,7 +60,7 @@ export default {
 <style scoped>
 .header {
 	height: 28px;
-	margin: 0 0 22px 0;
+	/* margin: 0 0 22px 0; */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

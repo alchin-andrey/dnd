@@ -3,33 +3,58 @@
 	<div class="sidebar_left">
 		<div class="main_chapter">
 			<Header />
+
+			<MyBackPage 
+      v-if="pages.class_page" 
+      :text_arr="arr_Name_RE" 
+      @click="racePage()" />
+
+			<div v-if="!pages.race_page" class="delimiter"></div>
 			<my-slider
-      v-if="pages.race_page"
+				v-if="pages.race_page"
 				numb="01"
 				name="race"
-        :slides="MY.race.name"
+				:slides="MY.race.name"
 			>
 			</my-slider>
-      <my-slider
-      v-if="!pages.race_page"
+			<my-slider
+				v-if="pages.class_page"
 				numb="02"
 				name="class"
-        :slides="MY.class.name"
+				:slides="MY.class.name"
 			>
 			</my-slider>
+			<div class="delimiter"></div>
 		</div>
 
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
-				<RaceMenuSettings v-if="pages.race_page"/>
+				<RaceMenuSettings v-if="pages.race_page" />
 			</div>
-      <transition v-if="pages.race_page" name="btm-fade" mode="out-in">
-				<my-button v-if="shown_home" numb="02" title="class" @click="classPage()"></my-button>
-				<my-button-back v-else title="command_back" @click="showHome()"></my-button-back>
+			<transition v-if="pages.race_page" name="btm-fade" mode="out-in">
+				<my-button
+					v-if="shown_home"
+					numb="02"
+					title="class"
+					@click="classPage()"
+				></my-button>
+				<my-button-back
+					v-else
+					title="command_back"
+					@click="showHome()"
+				></my-button-back>
 			</transition>
-			<transition v-if="!pages.race_page" name="btm-fade" mode="out-in">
-				<my-button v-if="shown_home" numb="01" title="race" @click="classPage()"></my-button>
-				<my-button-back v-else title="command_back" @click="showHome()"></my-button-back>
+			<transition v-if="pages.class_page" name="btm-fade" mode="out-in">
+				<my-button
+					v-if="shown_home"
+					numb="03"
+					title="step_background"
+					@click="classPage()"
+				></my-button>
+				<my-button-back
+					v-else
+					title="command_back"
+				></my-button-back>
 			</transition>
 		</div>
 	</div>
@@ -37,7 +62,7 @@
 	<!-- Выпадающее меню -->
 	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: setting_open }">
 		<HeaderSettings />
-		<RaceSettings v-if="pages.race_page"/>
+		<RaceSettings v-if="pages.race_page" />
 	</div>
 
 	<div class="stripe"></div>
@@ -59,7 +84,7 @@
 			<RaceBody body_part="skin" />
 			<RaceBody body_part="eyes" />
 			<RaceBody body_part="hair" />
-      <RaceBody body_part="class" v-if="!pages.race_page"/>
+			<RaceBody body_part="class" v-if="!pages.race_page" />
 
 			<transition name="slide-fade">
 				<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
@@ -70,7 +95,10 @@
 
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->
-	<div  class="sidebar_right" :class="{ sidebar_right_close: !shown_home || !pages.race_page }">
+	<div
+		class="sidebar_right"
+		:class="{ sidebar_right_close: !shown_home || !pages.race_page }"
+	>
 		<RaceParameters />
 	</div>
 	<!-- </transition> -->
@@ -124,7 +152,12 @@ export default {
 	computed: {
 		//STORES
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["race_page", "shown_home", "setting_open", "pages"]),
+		...mapState(usePagesStore, [
+			"race_page",
+			"shown_home",
+			"setting_open",
+			"pages",
+		]),
 		//GETTERS
 
 		Mastery() {
@@ -132,7 +165,9 @@ export default {
 		},
 
 		hide_Ruler() {
-			return this.pages.race_page && (this.shown_home || this.race_page.shown.height);
+			return (
+				this.pages.race_page && (this.shown_home || this.race_page.shown.height)
+			);
 		},
 
 		Get_Height() {
@@ -164,6 +199,13 @@ export default {
 			} else {
 				return mature;
 			}
+		},
+
+		arr_Name_RE() {
+			let arr = [];
+			arr.push(this.MY.race.name);
+			arr.push(this.MY.ethnos.name);
+			return arr;
 		},
 
 		race_Settings() {
@@ -205,11 +247,17 @@ export default {
 		]),
 		...mapActions(useMYStore, ["getEthnos"]),
 
-    classPage() {
-      this.pages.race_page = !this.pages.race_page
-      // this.pages.race_page = false
-      // this.pages.clas_page = true
-    },
+		classPage() {
+			// this.pages.race_page = !this.pages.race_page;
+			this.pages.race_page = false
+			this.pages.class_page = true
+		},
+
+    racePage() {
+			// this.pages.race_page = !this.pages.race_page;
+			this.pages.class_page = false
+			this.pages.race_page = true
+		},
 
 		getCreated() {
 			this.MY.height = this.Get_Height;
@@ -226,7 +274,7 @@ export default {
 			this.closePar("stats");
 			this.closePar("skills");
 			this.closePar("languages");
-      this.closePar("spells");
+			this.closePar("spells");
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
@@ -256,6 +304,12 @@ a {
 	-ms-user-select: none;
 	user-select: none;
 	overflow: hidden;
+}
+
+.delimiter {
+	height: 1px;
+	/* margin: 40px 0 0 0; */
+	background: rgba(255, 255, 255, 0.2);
 }
 
 .buff {
@@ -318,6 +372,9 @@ a {
 
 .main_chapter {
 	padding: 0 32px 0 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
 }
 
 .main_chapter_menu {

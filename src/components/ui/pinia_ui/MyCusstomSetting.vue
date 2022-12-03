@@ -28,7 +28,6 @@ export default {
 
 	computed: {
 		t_Title() {
-			console.log('this.title:', this.title)
 			return this.t(this.title);
 		},
 
