@@ -1,13 +1,13 @@
 <template>
 	<my-selection-card
-		v-for="(item, i) in spells_Pass_Obj_RE"
+		v-for="item in spells_Pass_Obj_RE"
 		:key="item"
 		@click="getCustomSelect_Spells_RE(name_Find(item))"
 		:active_boll_link="spells_Custom_Arr_RE.includes(name_Find(item))"
     no_blur
 	>
   <my-spell-text
-				:lvl="1"
+				:lvl="ethnos_Setting('spells').level"
 				:spell="item"
         select
 			>
@@ -25,11 +25,9 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		// GETTERS
 		...mapState(useMYStore, [
-      "spells_Keys",
-      "spells_Activ_Obj_RE",
-      "spells_Settings_Obj_RE", 
+      "ethnos_Setting",
       "spells_Pass_Obj_RE", 
-      "spells_Custom_Arr_RE"
+      "spells_Custom_Arr_RE",
     ]),
 
     // Index() {

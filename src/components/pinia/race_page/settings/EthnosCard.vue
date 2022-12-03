@@ -86,6 +86,18 @@
 				</my-spell-text>
 			</my-wrapper>
 			<!-- Этнос_Карточка_spells -->
+			
+      <my-wrapper v-if="ethnos.settings">
+				<MyCusstomSetting
+					v-for="item in ethnos.settings"
+					:key="item"
+					:title="item.name"
+					:select="item.select"
+					:sum="select_Sum(item.type)"
+				>
+				</MyCusstomSetting>
+			</my-wrapper>
+
 
 			<!-- Этнос_Карточка_текст -->
 			<my-card-text
@@ -106,6 +118,15 @@ export default {
 	name: "EthnosCard",
 	computed: {
 		...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, [
+      "stats_Pass_Arr_RE",
+      "skills_Pass_Arr_RE",
+      "languages_Pass_Arr_RE",
+      "spells_Pass_Arr_RE"]),
+
+    select_Sum() {
+      return (name) => this[`${name}_Pass_Arr_RE`].length
+    },
 
 		shown_Spells_Ethnos: (state) => (spells) => {
 			let ethnos_spells = spells;
@@ -163,4 +184,16 @@ export default {
 	top: 16px;
 	left: 0;
 }
+
+/* .flex_custom {
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap_4 {
+  display: flex;
+  gap: 4px;
+} */
 </style>

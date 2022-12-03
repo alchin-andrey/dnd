@@ -175,6 +175,13 @@ export const useMYStore = defineStore({
 			return arr;
 		},
 
+    languages_Pass_Arr_RE() {
+			return this.languages_Keys.filter(
+				(el) => !this.languages_Activ_Arr_RE.includes(el)
+			);
+		},
+
+
 		languages_Custom_Arr_RE() {
 			return this.COMMON_Custom_Arr_RE("languages");
 		},
@@ -272,7 +279,6 @@ export const useMYStore = defineStore({
 		spells_Custom_Obj_RE() {
 			let arr = [];
 			let pass_obj = this.spells_Pass_Obj_RE;
-			console.log('this.spells_Pass_Obj_RE:', this.spells_Pass_Obj_RE)
 			let cusstom_arr = this.spells_Custom_Arr_RE;
 			for (let i in pass_obj) {
         for (let j in pass_obj[i]) {

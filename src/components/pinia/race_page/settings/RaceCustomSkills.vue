@@ -1,7 +1,7 @@
 <template>
 	<my-card-text text="skills_details"></my-card-text>
 	<my-selection-card
-		v-for="(name, i) in skills_Keys"
+		v-for="(name, i) in skills_Pass_Arr_RE"
 		:key="name"
 		@click="getCustomSelect_Skills_RE(name)"
 		:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
@@ -30,7 +30,7 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
-		...mapState(useMYStore, ["skills_Keys", "skills_Custom_Arr_RE"]),
+		...mapState(useMYStore, ["skills_Pass_Arr_RE", "skills_Custom_Arr_RE"]),
     ...mapState(useSkillsStore, ["skills_Mastery"]),
 
 		// skills_Mastery() {

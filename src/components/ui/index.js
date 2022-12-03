@@ -35,6 +35,8 @@ import MagicAttribute from "@/components/ui/MagicAttribute.vue";
 import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import MySpellMain from "@/components/ui/MySpellMain.vue";
 
+import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
+
 
 
 
@@ -72,4 +74,6 @@ export default [
   MagicAttribute,
   MyDialogSpell,
   MySpellMain,
+
+  MyCusstomSetting,
 ];

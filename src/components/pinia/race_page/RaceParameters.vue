@@ -80,7 +80,7 @@
 		<!-- fines -->
 
 		<!-- spells -->
-		<my-wrapper v-if="shown_Spells_RE" gap_26 hr>
+		<my-wrapper v-if="(shown_Spells_RE || spells_Custom_Obj_RE)" gap_26 hr>
 			<my-spell-text
 				v-for="item in MY.race.spells"
 				:key="item"

@@ -48,6 +48,7 @@ export default {
             {
               type: "spells",
               name: "spells",
+              level: 1,
               select: 2,
               mana_min: 0,
               mana_max: 0,
@@ -1456,6 +1457,7 @@ export default {
             {
               type: "languages",
               name: "languages",
+              level: 1,
               select: 1,
               filter: "no_used",
             }
