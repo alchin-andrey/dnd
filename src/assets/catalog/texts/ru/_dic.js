@@ -2103,6 +2103,8 @@ export default {
     style_protection: "защита",
     style_defence: "оборона",
     style_great_weapon: "большое оружие",
+    style_double_weapon: "два оружия",
+    style_archery: "стрельба",
 
     on_attack_signle_one_handed: "+2 на урон ближних атак одной рукой",
 
@@ -2710,4 +2712,44 @@ export default {
     spell_cutting_word: spells.cutting_word,
     spell_cutting_word_details: spells.cutting_word_details,
     spell_cutting_word_expanded: spells.cutting_word_expanded,
+
+    fighter: classes.fighter,
+    fighter_details: classes.fighter_details,
+
+    armor_chainmail:"кольчуга",
+    armor_chainmail_details: "",
+
+    on_damage_second_attack:"к урону и от второй атаки в ходу",
+    plus_2_on_ranged: "+2 на дальнобойные атаки",
+
+    spell_second_wind: spells.second_wind,
+    spell_second_wind_details: spells.second_wind_details,
+    spell_second_wind_expanded: spells.second_wind_expanded,
+
+    second_wind_slots: "Вторые дыхания",
+    second_wind_slot: "Второе дыхание",
+
+    spell_action_surge: spells.action_surge,
+    spell_action_surge_details: spells.action_surge_details,
+    spell_action_surge_expanded: spells.action_surge_expanded,
+
+    action_surge_slots: "Всплески действий",
+    action_surge_slot: "Всплеск действий",
+
+    battle_master: classes.battle_master,
+    battle_master_details: classes.battle_master_details,
+
+    spell_weapon_bond: spells.weapon_bond,
+    spell_weapon_bond_details: spells.weapon_bond_details,
+    spell_weapon_bond_expanded: spells.weapon_bond_expanded,
+
+    spell_call_bonbed_weapon: spells.call_bonbed_weapon,
+    spell_call_bonbed_weapon_details: spells.call_bonbed_weapon_details,
+    spell_call_bonbed_weapon_expanded: spells.call_bonbed_weapon_expanded,
+
+    eldritch_knight: classes.eldritch_knight,
+    eldritch_knight_details: classes.eldritch_knight_details,
+
+    ctit_damage: "Двойной урон",
+    on_dice_19_20: "не только при 20, но и при 19"
 }

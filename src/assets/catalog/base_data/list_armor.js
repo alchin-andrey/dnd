@@ -5,7 +5,7 @@ export default {
         name: "armor_leather",
         details: "armor_leather_details",
         type: [armory.light],
-        armor_bonus: 1,
+        armor_bonus: 1, // 11 + DEX
         cost: 1000,
         weight: 5,
     },
@@ -16,5 +16,13 @@ export default {
         armor_bonus: 2,
         cost: 1000,
         weight: 6,
-    }
+    },
+    chainmail: {
+        name: "armor_chainmail",
+        details: "armor_chainmail_details",
+        type: [armory.heavy],
+        armor_bonus: 16,
+        cost: 1000,
+        weight: 6,
+    },
 }

@@ -1411,14 +1411,6 @@ export default {
             languages: [],
           },
 
-          fines: [
-            {
-              type: "plus",
-              keyword: "knowledge",
-              details: "any_cantrip_wizard",
-            },
-          ],
-
           settings: [
             {
               type: "spells",

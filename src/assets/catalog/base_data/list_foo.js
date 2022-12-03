@@ -235,5 +235,7 @@ export default {
 
     Dice_16_98_1310_1712(){},
 
+    Pls_Lvl(){},
+
     
 }

@@ -3479,6 +3479,180 @@ export default {
     }
   ],
 
+  second_wind: [
+    {
+      name: "spell_second_wind",
+      details: "spell_second_wind_details",
+      expanded: "spell_second_wind_expanded",
+
+      type: "ability",
+      slot_type: "second_wind_slot",
+      classes: [],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Pls_Lvl",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 10,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  action_surge: [
+    {
+      name: "spell_action_surge",
+      details: "spell_action_surge_details",
+      expanded: "spell_action_surge_expanded",
+
+      type: "ability",
+      slot_type: "action_surge_slot",
+      classes: [],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  weapon_bond: [
+    {
+      name: "spell_weapon_bond",
+      details: "spell_weapon_bond_details",
+      expanded: "spell_weapon_bond_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  call_bonbed_weapon: [
+    {
+      name: "spell_call_bonbed_weapon",
+      details: "spell_call_bonbed_weapon_details",
+      expanded: "spell_call_bonbed_weapon_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [

@@ -202,7 +202,7 @@ export default {
 
     charges: [
       {
-        name: "superiority_dice_feat",
+        name: "superiority_dice_slots_feat",
         list: [
           ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],

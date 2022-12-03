@@ -163,7 +163,7 @@ export default {
     settings: [
       {
         level: 3,
-        type: "subclasses",
+        type: "custom",
         select: 1,
         list: [
           {
@@ -608,7 +608,6 @@ export default {
         level: 1,
         name: "spell_slots",
         list: [
-          ["0", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           ["1", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["2", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
           ["3", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -636,7 +635,7 @@ export default {
     settings: [
       {
         level: 3,
-        type: "subclasses",
+        type: "custom",
         select: 1,
         list: [
           {
@@ -672,12 +671,10 @@ export default {
               {
                 level: 3,
                 spell: spells.divine_channel_antients_1,
-                charges: 1,
               },
               {
                 level: 3,
                 spell: spells.divine_channel_antients_2,
-                charges: 1,
               },
               {
                 level: 3,
@@ -700,12 +697,10 @@ export default {
               {
                 level: 3,
                 spell: spells.divine_channel_vengence_1,
-                charges: 1,
               },
               {
                 level: 3,
                 spell: spells.divine_channel_vengence_2,
-                charges: 1,
               },
               {
                 level: 3,
@@ -940,7 +935,6 @@ export default {
         level: 1,
         name: "spell_slots",
         list: [
-          ["0", 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["1", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["2", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
           ["3", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -981,7 +975,7 @@ export default {
     settings: [
       {
         level: 3,
-        type: "subclasses",
+        type: "custom",
         select: 1,
         list: [
           {
@@ -993,14 +987,13 @@ export default {
               weapons: [weaponry.military],
             },
 
-            fines: 
-            [
+            fines: [
               {
                 type: "plus",
                 keyword: "spell_bardic_inspiration",
                 details: "on_damage_and_ac",
               },
-            ]
+            ],
           },
           {
             name: "college_lore",
@@ -1157,9 +1150,28 @@ export default {
         ],
       },
       {
+        level: 1,
         type: "spells",
         name: "spells_0",
-        select: "Str_Bard_Cantrips", //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
+        select: 2, //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard"],
+      },
+      {
+        level: 4,
+        type: "spells",
+        name: "spells_0",
+        select: 1, //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard"],
+      },
+      {
+        level: 10,
+        type: "spells",
+        name: "spells_0",
+        select: 1, //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
         mana_min: 0,
         mana_max: 0,
         classes: ["bard"],
@@ -1314,7 +1326,7 @@ export default {
     settings: [
       {
         level: 3,
-        type: "subclasses",
+        type: "custom",
         select: 1,
         list: [
           {
@@ -1688,6 +1700,688 @@ export default {
 
   // -------------------------------------------------------------------------
 
+  fighter: {
+    name: "fighter",
+    details: "fighter_details",
+
+    hp_dice: 10,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.heavy, armory.shields],
+      weapons: [weaponry.simple, weaponry.military],
+      tools: [],
+      languages: [],
+    },
+
+    saving: ["strength", "constitution"],
+    stats_base: [
+      "strength",
+      "constitution",
+      "dexterity",
+      "charisma",
+      "wisdom",
+      "intelligence",
+    ],
+    spell_attribute: "intelligence",
+
+    charges: [
+      {
+        level: 1,
+        name: "second_wind_slots",
+        list: [
+          ["d10", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+      {
+        level: 2,
+        name: "action_surge_slots",
+        list: [
+          ["", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2],
+        ],
+      },
+    ],
+
+    spells: [
+      {
+        level: 1,
+        spell: spells.second_wind,
+      },
+    ],
+
+    settings: [
+      {
+        level: 3,
+        type: "custom",
+        select: 1,
+        list: [
+          {
+            name: "battle_master",
+            details: "battle_master_details",
+
+            spell_attribute: "strength",
+
+            charges: [
+              {
+                level: 3,
+                name: "superiority_dice_slots",
+                list: [
+                  ["d8", 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6],
+                ],
+              },
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "spells",
+                name: "maneuvers",
+                select: 3,
+                list: [
+                  spells.evasive_footwork,
+                  spells.lunning_attack,
+                  spells.maneuvering_attack,
+                  spells.maneuver_menacing_attack,
+                  spells.maneuver_feinting_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_trip_attack,
+                  spells.maneuver_riposte,
+                  spells.maneuver_distracting_strike,
+                  spells.maneuver_parry,
+                  spells.maneuver_goading_attack,
+                  spells.maneuver_rally,
+                  spells.maneuver_pushing_attack,
+                  spells.maneuver_precision_attack,
+                  spells.maneuver_commanders_strike,
+                  spells.maneuver_sweeping_attack,
+                ],
+              },
+              {
+                level: 7,
+                type: "spells",
+                name: "maneuvers",
+                select: 2,
+                list: [
+                  spells.evasive_footwork,
+                  spells.lunning_attack,
+                  spells.maneuvering_attack,
+                  spells.maneuver_menacing_attack,
+                  spells.maneuver_feinting_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_trip_attack,
+                  spells.maneuver_riposte,
+                  spells.maneuver_distracting_strike,
+                  spells.maneuver_parry,
+                  spells.maneuver_goading_attack,
+                  spells.maneuver_rally,
+                  spells.maneuver_pushing_attack,
+                  spells.maneuver_precision_attack,
+                  spells.maneuver_commanders_strike,
+                  spells.maneuver_sweeping_attack,
+                ],
+              },
+              {
+                level: 10,
+                type: "spells",
+                name: "maneuvers",
+                select: 2,
+                list: [
+                  spells.evasive_footwork,
+                  spells.lunning_attack,
+                  spells.maneuvering_attack,
+                  spells.maneuver_menacing_attack,
+                  spells.maneuver_feinting_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_trip_attack,
+                  spells.maneuver_riposte,
+                  spells.maneuver_distracting_strike,
+                  spells.maneuver_parry,
+                  spells.maneuver_goading_attack,
+                  spells.maneuver_rally,
+                  spells.maneuver_pushing_attack,
+                  spells.maneuver_precision_attack,
+                  spells.maneuver_commanders_strike,
+                  spells.maneuver_sweeping_attack,
+                ],
+              },
+              {
+                level: 15,
+                type: "spells",
+                name: "maneuvers",
+                select: 2,
+                list: [
+                  spells.evasive_footwork,
+                  spells.lunning_attack,
+                  spells.maneuvering_attack,
+                  spells.maneuver_menacing_attack,
+                  spells.maneuver_feinting_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_disarming_attack,
+                  spells.maneuver_trip_attack,
+                  spells.maneuver_riposte,
+                  spells.maneuver_distracting_strike,
+                  spells.maneuver_parry,
+                  spells.maneuver_goading_attack,
+                  spells.maneuver_rally,
+                  spells.maneuver_pushing_attack,
+                  spells.maneuver_precision_attack,
+                  spells.maneuver_commanders_strike,
+                  spells.maneuver_sweeping_attack,
+                ],
+              },
+              {
+                level: 3,
+                type: "custom",
+                name: "profinciencies",
+                select: 1,
+                list: [
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.alchemists_supplies],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.blacksmith],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.brewer],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.calligraphers_supplies],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.carpenters_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.cartographers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.cobblers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.cooks_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.disguise],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.glassblowers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.jewelers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.leatherworkers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.mason],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.navigators_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.painters_supplies],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.poisoner],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.potters_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.tinkers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.weavers_tools],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.woodcarvers_tools],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "eldritch_knight",
+            details: "eldritch_knight_details",
+
+            spells: [
+              {
+                spell: spells.weapon_bond,
+              },
+              {
+                spell: spells.call_bonbed_weapon,
+              }
+            ],
+
+            charges: [
+              {
+                level: 1,
+                name: "spell_slots",
+                list: [
+                  ["1", 0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+                  ["2", 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                  ["3", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3],
+                  ["4", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+                ],
+              },
+            ],
+            
+            settings:
+            [
+              {
+                level: 3,
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["wizard"],
+              },
+              {
+                level: 10,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["wizard"],
+              },
+              {
+                level: 3, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 3,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 4, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 7, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 8, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+              },
+              {
+                level: 10, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 11, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 13, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 14, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+              },
+              {
+                level: 16, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 19, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+                filter: "type: [abjuration,evocation]",
+              },
+              {
+                level: 20, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                type: "spells",
+                name: "spells",
+                select: 1,
+                mana_min: 1,
+                mana_max: "Num_Fighter_max_spell_slot",
+                classes: ["wizard"],
+              },
+            ]
+          },
+          {
+            name: "champion",
+            details: "champion_details",
+
+            fines:
+            [
+              {
+                level:3,
+                type: "plus",
+                keyword: "ctit_damage",
+                details: "on_dice_19_20",
+              }
+            ]
+          }
+        ],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+      {
+        level: 1,
+        type: "skills",
+        select: 4,
+        bonus: "mastery",
+        list: [
+          "acrobatics",
+          "athletics",
+          "perception",
+          "survival",
+          "intimidation",
+          "history",
+          "animal_handing",
+          "insight",
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        select: 1,
+        list: [
+          {
+            equipment: [
+              {
+                armor: [[armors.chainmail, 1]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                level: 1,
+                armor: [[armors.leather, 1]],
+                weapon: [[weapons.longbow, 1]],
+                inventory: [
+                  [items.arrow, 20],
+                  [items.quiver, 20],
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "weapons",
+        select: 2,
+        list: [
+          [armors.shield, 1],
+          [weapons.greataxe, 1],
+          [weapons.halberd, 1],
+          [weapons.war_pick, 1],
+          [weapons.warhammer, 1],
+          [weapons.battleaxe, 1],
+          [weapons.glaive, 1],
+          [weapons.greatsword, 1],
+          [weapons.lance, 1],
+          [weapons.longsword, 1],
+          [weapons.whip, 1],
+          [weapons.shortsword, 1],
+          [weapons.maul, 1],
+          [weapons.morningstar, 1],
+          [weapons.pike, 1],
+          [weapons.rapier, 1],
+          [weapons.scimitar, 1],
+          [weapons.trident, 1],
+          [weapons.flail, 1],
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        select: 1,
+        list: [
+          {
+            equipment: [{ weapon: [[weapons.handaxe, 2]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "equipment",
+        select: 1,
+        list: [
+          [packs.dungeoneers, 1],
+          [packs.explorers, 1],
+        ],
+      },
+      {
+        level: 2,
+        type: "custom",
+        name: "battle_style",
+        select: 1,
+        list: [
+          {
+            name: "style_dueling",
+            fines: [
+              {
+                type: "plus",
+                keyword: "bonus",
+                details: "on_attack_signle_one_handed",
+              },
+            ],
+          },
+          {
+            name: "style_protection",
+            spells: [
+              {
+                spell: spells.side_pary,
+              },
+            ],
+          },
+          {
+            name: "style_defence",
+            fines: [
+              {
+                type: "plus",
+                keyword: "bonus",
+                details: "on_armor_if_armor",
+
+                // when without heavy armor
+                condition: "if_armor",
+                key: "armor_bonus",
+                value: 1,
+              },
+            ],
+          },
+          {
+            name: "style_great_weapon",
+            fines: [
+              {
+                type: "advantage",
+                keyword: "rethrow",
+                details: "if_1_or_2_on_two_handed_weapon",
+              },
+            ],
+          },
+          {
+            name: "style_double_weapon",
+            fines: [
+              {
+                type: "plus",
+                keyword: "bonus",
+                details: "on_damage_second_attack",
+              },
+            ],
+          },
+          {
+            name: "style_archery",
+            fines: [
+              {
+                type: "plus",
+                keyword: "aim_bonus",
+                details: "plus_2_on_ranged",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
   object_example: {
     name: "",
     details: "",
@@ -1769,7 +2463,6 @@ export default {
         level: 1,
         name: "spell_slots",
         list: [
-          ["0", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
           ["1", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
           ["2", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
           ["3", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
