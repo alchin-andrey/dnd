@@ -27,5 +27,5 @@ export default {
         },
     ],
 
-    select_lang: "ru",
+    select_lang: "ua",
 };
