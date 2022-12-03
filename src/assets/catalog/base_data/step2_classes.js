@@ -2018,6 +2018,27 @@ export default {
                   {
                     proficiencies: [
                       {
+                        tools: [tools.blacksmith],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.brewer],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
+                        tools: [tools.mason],
+                      },
+                    ],
+                  },
+                  {
+                    proficiencies: [
+                      {
                         tools: [tools.alchemists_supplies],
                       },
                     ],
