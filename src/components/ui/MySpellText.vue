@@ -1,13 +1,13 @@
 <template>
 	<div
-		v-if="Show"
+		v-if="lvl_Show"
 		class="flex_spell"
 		@mouseover="hoverIn_Full()"
 		@mouseleave="hoverOut()"
 		@click="showDialog_Full()"
 	>
 		<div ref="stripe" class="side_stripe"></div>
-		<div class="int-400 flex_col">
+		<div class="int-400 flex_col" :class="{ passive: passive }">
 			<div>
 				<div class="flex_title">
 					<div class="title_spell h_18">
@@ -21,6 +21,7 @@
 						/>{{ em_After }}
 					</div>
 					<img
+          v-if="!passive"
 						class="icon_spell"
 						src="@/assets/img/icon/arrow_right_small.svg"
 						alt="arrow"
@@ -162,6 +163,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    passive: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
@@ -169,9 +174,11 @@ export default {
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
+
 		Spell_Index() {
 			return this.spell[this.Index];
 		},
+
 		Mana_Numb() {
 			if (this.mana_numb) {
 				return this.mana_numb;
@@ -179,16 +186,19 @@ export default {
 				return this.Index;
 			}
 		},
+
 		Manna_Index() {
 			return this.spell[this.Mana_Numb];
 		},
+
 		Manna_Length() {
 			return this.spell.length;
 		},
 
-    Show() {
+    lvl_Show() {
 			return this.lvl <= this.MY.level;
 		},
+
 		em_Upd() {
 			return this.updEmoji(this.t_Title);
 		},
@@ -575,30 +585,32 @@ export default {
 	},
 	methods: {
 		hoverIn_Select() {
-			if (this.select) {
+			if (this.select && !this.passive) {
 				this.$refs.stripe.classList.add("active");
 			}
 		},
 		hoverOut() {
-			if (!this.dialogVisible) {
+			if (!this.dialogVisible && !this.passive) {
 				this.$refs.stripe.classList.remove("active");
 			}
 		},
 		hoverIn_Full() {
-			if (!this.select) {
+			if (!this.select && !this.passive) {
 				this.$refs.stripe.classList.add("active");
 			}
 		},
 		showDialog_Full() {
-			if (!this.select) {
+			if (!this.select && !this.passive) {
 				this.dialogVisible = true;
 				this.mana_numb = this.Index;
 			}
 		},
 
 		showDialog_Select() {
+      if (!this.passive) {
 			this.dialogVisible = true;
 			this.mana_numb = this.Index;
+      }
 		},
 
     choiceManna(numb) {
@@ -733,5 +745,10 @@ export default {
 	padding: 0;
 	line-height: 0;
 	vertical-align: text-top;
+}
+
+.passive {
+  opacity: 0.2;
+  cursor: auto;
 }
 </style>

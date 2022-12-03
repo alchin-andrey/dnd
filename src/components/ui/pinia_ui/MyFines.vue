@@ -1,7 +1,7 @@
 <template>
-	<div class="column">
+	<div v-if="lvl_Show" class="column" :class="{ passive: passive }">
 		<div class="icon">
-			<img :src="src_Icon(icon)" :alt="icon" />
+			<img :src="src_Icon" :alt="icon" />
 		</div>
 		<div class="text int-400" :class="{ emoji_true: em_Upd }">
 			<span
@@ -25,12 +25,14 @@
 </template>
 
 <script>
+import { mapState} from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "MyFines",
 	props: {
-		modelValue: {
+    lvl: {
 			type: Number,
-			default: null,
+			default: 1,
 		},
 		title: {
 			type: String,
@@ -44,8 +46,18 @@ export default {
 			type: String,
 			default: null,
 		},
+		passive: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
+    ...mapState(useMYStore, ["MY"]),
+
+    lvl_Show() {
+			return this.lvl <= this.MY.level;
+		},
+
 		Negative() {
 			return this.title === "disadvantage";
 		},
@@ -71,7 +83,7 @@ export default {
 		},
 
 		src_Icon() {
-			return (name) => require(`@/assets/img/icon/fines/${name}.svg`);
+			return require(`@/assets/img/icon/fines/${this.icon}.svg`);
 		},
 	},
 };
@@ -110,5 +122,9 @@ export default {
 	padding: 0;
 	line-height: 0;
 	top: 3px;
+}
+
+.passive {
+  opacity: 0.2;
 }
 </style>
