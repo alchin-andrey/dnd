@@ -47,20 +47,26 @@
 		</my-wrapper> -->
 	<!-- qualities -->
 
-	<!-- proficiencies -->
-	<!-- <my-wrapper gap_8 hr>
-			<my-inventory
-				v-for="(val, name) in MY.proficiencies"
-				:key="name"
-				:title="name"
-				:item="proficiencies_Arr_REC(name)"
-			>
-			</my-inventory>
-		</my-wrapper> -->
-	<!-- proficiencies -->
+	<!-- //NOTE - proficiencies -->
+	<my-wrapper gap_8 hr>
+		<my-inventory
+			v-for="(val, name) in MY.proficiencies"
+			:key="name"
+			:title="name"
+			:item="proficiencies_Arr_Class(name)"
+			:item_old="proficiencies_Arr_REC(name)"
+		>
+		</my-inventory>
+	</my-wrapper>
+	<!-- //!NOTE - proficiencies -->
 
-	<!-- fines -->
-	<my-wrapper v-if="MY.race.fines || MY.ethnos.fines" gap_8 hr>
+	<!-- //NOTE - fines -->
+	<my-wrapper
+		v-if="MY.race.fines || MY.ethnos.fines || MY.class.fines"
+		gap_8
+		hr
+	>
+		<!-- RACE -->
 		<my-fines
 			v-for="item in MY.race.fines"
 			:key="item"
@@ -78,6 +84,9 @@
 			:details="item.details"
 			passive
 		></my-fines>
+		<!-- RACE -->
+		<!-- RACE -->
+		<!-- CLASS -->
 		<my-fines
 			v-for="item in MY.class.fines"
 			:key="item"
@@ -86,16 +95,13 @@
 			:title="item.keyword"
 			:details="item.details"
 		></my-fines>
+		<!-- CLASS -->
 	</my-wrapper>
-	<!-- fines -->
+	<!-- //!NOTE - fines -->
 
 	<!-- //NOTE - spells -->
 	<!-- RACE -->
-	<my-wrapper
-		v-if="shown_Spells_All"
-		gap_26
-		hr
-	>
+	<my-wrapper v-if="shown_Spells_All" gap_26 hr>
 		<my-spell-text
 			v-for="item in MY.race.spells"
 			:key="item"
@@ -184,23 +190,25 @@ export default {
 			return (ethnos_spells && ethnos_lvl) || (race_spells && race_lvl);
 		},
 
-    shown_Spells_Class() {
+		shown_Spells_Class() {
 			let class_spells = this.MY.class.spells;
 			let lvl = this.MY.level;
 			let class_lvl = class_spells?.[0].level <= lvl;
-			return (class_spells && class_lvl);
+			return class_spells && class_lvl;
 		},
 
-    shown_Spells_RE_Custom() {
+		shown_Spells_RE_Custom() {
 			let custom_spells = this.spells_Custom_Obj_RE;
-			let lvl = this.MY.level;
-			let custom_lvl = custom_spells?.[0].level <= lvl;
-			return (custom_spells.length !== 0 && custom_lvl);
+			return custom_spells.length !== 0;
 		},
 
-    shown_Spells_All() {
-      return (this.shown_Spells_RE || this.shown_Spells_Class || this.shown_Spells_RE_Custom)
-    },
+		shown_Spells_All() {
+			return (
+				this.shown_Spells_RE ||
+				this.shown_Spells_Class ||
+				this.shown_Spells_RE_Custom
+			);
+		},
 
 		// hp_Bonus() {
 		// 	let increm_1 = this.MY.ethnos.hp_bonus[0];
@@ -218,19 +226,29 @@ export default {
 		// 	return summ;
 		// },
 
-		// proficiencies_Arr: (state) => (obj, kay) => {
-		// 	let arr = [];
-		// 	obj?.[kay] ? arr = obj[kay].map(x => x.name) : null
-		// 	return arr;
-		// },
+		proficiencies_Arr: (state) => (obj, kay) => {
+			let arr = [];
+			obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
+			return arr;
+		},
 
-		// proficiencies_Arr_REC: (state) => (kay) => {
-		//   let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay)
-		//   let ethnos_prof = state.proficiencies_Arr(state.MY.ethnos.proficiencies, kay)
-		//   let custom_prof = []
-		//   kay === "languages" ? custom_prof = state.languages_Custom_Arr_RE : null
-		// 	return race_prof.concat(ethnos_prof).concat(custom_prof);
-		// },
+		proficiencies_Arr_REC: (state) => (kay) => {
+			let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay);
+			let ethnos_prof = state.proficiencies_Arr(
+				state.MY.ethnos.proficiencies,
+				kay
+			);
+			let custom_prof = [];
+			kay === "languages"
+				? (custom_prof = state.languages_Custom_Arr_RE)
+				: null;
+			return race_prof.concat(ethnos_prof).concat(custom_prof);
+		},
+
+    proficiencies_Arr_Class: (state) => (kay) => {
+			let class_prof = state.proficiencies_Arr(state.MY.class.proficiencies, kay);
+			return class_prof;
+		},
 	},
 };
 </script>

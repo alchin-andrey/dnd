@@ -4,13 +4,15 @@
 			class="title jbm-300"
 			:class="{
 				passive: passive_Link,
-				icon: !passive_Link,
+				icon: !passive_Link_Full,
 			}"
 		>
 			{{ t_Title }}<span>:</span>
 		</div>
 		<div class="item int-400" :class="{ passive: passive_Link }">
-			{{ t_Item }}
+			<span>{{ t_Item }} </span>
+			<span v-if="item.length !== 0 && item_old.length !== 0">, </span>
+			<span class="passive">{{ t_Item_Old }}</span>
 		</div>
 	</div>
 </template>
@@ -25,7 +27,11 @@ export default {
 		},
 		item: {
 			type: Array,
-			default: null,
+			default: [],
+		},
+		item_old: {
+			type: Array,
+			default: [],
 		},
 	},
 	computed: {
@@ -33,8 +39,20 @@ export default {
 			return this.t(this.title);
 		},
 
+		t_Item_Old() {
+			let arr = [];
+			for (let i in this.item_old) {
+				if (this.t(this.item_old[i])) {
+					arr.push(this.t(this.item_old[i]));
+				} else {
+					arr.push(this.item_old[i]);
+				}
+			}
+			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+		},
+
 		t_Item() {
-			if (this.item.length === 0) {
+			if (this.item.length === 0 && this.item_old.length === 0) {
 				return "—";
 			} else {
 				let arr = [];
@@ -51,6 +69,10 @@ export default {
 
 		passive_Link() {
 			return this.item.length === 0;
+		},
+
+    passive_Link_Full() {
+			return this.item.length === 0 && this.item_old.length === 0;
 		},
 	},
 };
@@ -80,6 +102,10 @@ export default {
 	left: -22px;
 }
 
+/* .icon::before {
+	opacity: 0.2;
+} */
+
 .item {
 	width: 100%;
 	min-height: 11px;
@@ -90,5 +116,9 @@ export default {
 
 .passive {
 	color: rgba(255, 255, 255, 0.2);
+}
+
+.passive::before {
+	opacity: 0.2;
 }
 </style>
