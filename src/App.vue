@@ -117,7 +117,7 @@ export default {
 	},
 
 	created() {
-		this.MY.class = Object.values(clas)[0];
+		// this.MY.class = Object.values(clas)[0];
 		this.getCreated();
 	},
 

@@ -1,10 +1,11 @@
 import color from "@/assets/catalog/base_data/_colors.js";
 // import races from "@/assets/catalog/base_data/step1_races.js";
 import races from "@/assets/catalog/base_data/step1_races.js";
-import clas from "@/assets/catalog/base_data/step2_classes";
+import classes from "@/assets/catalog/base_data/step2_classes";
 
 const race_def = Object.values(races)[0];
 const ethnos_def = Object.values(race_def.race_settings.ethnos)[0];
+const class_def = Object.values(classes)[0];
 
 export default {
 	//Key selections
@@ -13,7 +14,7 @@ export default {
   race_name: race_def.name,
 	ethnos: ethnos_def,
   ethnos_name: ethnos_def.name,
-	class: null,
+	class: class_def,
 	subclass: null,
 	backstory: null,
 	level: 1,
