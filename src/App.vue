@@ -97,9 +97,10 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: !shown_home || !pages.race_page }"
+		:class="{ sidebar_right_close: !shown_home }"
 	>
-		<RaceParameters />
+		<RaceParameters v-if="pages.race_page" />
+    <ClassParameters v-if="pages.class_page" />
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
@@ -118,7 +119,8 @@ import HeaderSettings from "@/components/pinia/HeaderSettings.vue";
 import RaceMenuSettings from "@/components/pinia/race_page/settings/RaceMenuSettings.vue";
 import RaceSettings from "@/components/pinia/race_page/settings/RaceSettings.vue";
 import RaceParameters from "@/components/pinia/race_page/RaceParameters.vue";
-// RACE_PAGE
+// CLASS_PAGE
+import ClassParameters from "@/components/pinia/class_page/ClassParameters.vue";
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
@@ -134,7 +136,9 @@ export default {
 		RaceMenuSettings, //TODO: Сылки на рост, вес, возраст
 		RaceSettings,
 		RaceParameters,
-		// RACE_PAGE
+    // CLASS_PAGE
+    ClassParameters,
+
 	},
 
 	data() {
