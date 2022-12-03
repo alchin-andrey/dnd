@@ -1437,13 +1437,13 @@ export default {
             ],
           },
 
-          fines: [
-            {
-              type: "plus",
-              keyword: "knowledge",
-              details: "any_cantrip_wizard",
-            },
-          ],
+          // fines: [
+          //   {
+          //     type: "plus",
+          //     keyword: "knowledge",
+          //     details: "any_cantrip_wizard",
+          //   },
+          // ],
 
           settings: [
             {
