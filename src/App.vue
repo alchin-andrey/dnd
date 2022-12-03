@@ -10,15 +10,25 @@
         :slides="MY.race.name"
 			>
 			</my-slider>
+      <my-slider
+      v-if="!pages.race_page"
+				numb="02"
+				name="class"
+        :slides="MY.class.name"
+			>
+			</my-slider>
 		</div>
 
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
 				<RaceMenuSettings />
 			</div>
-
-			<transition name="btm-fade" mode="out-in">
+      <transition v-if="this.pages.race_page" name="btm-fade" mode="out-in">
 				<my-button v-if="shown_home" numb="02" title="class" @click="classPage()"></my-button>
+				<my-button-back v-else @click="showHome()"></my-button-back>
+			</transition>
+			<transition v-if="!this.pages.race_page" name="btm-fade" mode="out-in">
+				<my-button v-if="shown_home" numb="01" title="race" @click="classPage()"></my-button>
 				<my-button-back v-else @click="showHome()"></my-button-back>
 			</transition>
 		</div>
