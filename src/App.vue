@@ -25,11 +25,11 @@
 			</div>
       <transition v-if="pages.race_page" name="btm-fade" mode="out-in">
 				<my-button v-if="shown_home" numb="02" title="class" @click="classPage()"></my-button>
-				<my-button-back v-else @click="showHome()"></my-button-back>
+				<my-button-back v-else title="command_back" @click="showHome()"></my-button-back>
 			</transition>
 			<transition v-if="!pages.race_page" name="btm-fade" mode="out-in">
 				<my-button v-if="shown_home" numb="01" title="race" @click="classPage()"></my-button>
-				<my-button-back v-else @click="showHome()"></my-button-back>
+				<my-button-back v-else title="command_back" @click="showHome()"></my-button-back>
 			</transition>
 		</div>
 	</div>
