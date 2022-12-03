@@ -1465,7 +1465,7 @@ export default {
       {
         type: "spells",
         name: "spells_1",
-        details: "no_mana_but_once_a_day",
+        details: "no_mana_but_ritual",
         select: 2,
         mana_min: 1,
         mana_max: 1,
