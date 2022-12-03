@@ -118,10 +118,10 @@ export default {
 
             // String (первая часть, которая чаще всего с "×")
 
-            {
-              level: 1,
-              spell: spells.acid_splash,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.acid_splash,
+            // },
 
             // {
             //   level: 1,

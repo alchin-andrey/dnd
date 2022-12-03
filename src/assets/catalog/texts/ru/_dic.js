@@ -2753,4 +2753,6 @@ export default {
     choose_variant: "вариант",
     choose_varianta: "варианта",
     choose_variants: "вариантов",
+
+    step_background: "типаж",
 }
