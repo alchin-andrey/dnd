@@ -2750,6 +2750,9 @@ export default {
     eldritch_knight: classes.eldritch_knight,
     eldritch_knight_details: classes.eldritch_knight_details,
 
+    champion: classes.champion,
+    champion_details: classes.champion_details,
+
     ctit_damage: "Двойной урон",
     on_dice_19_20: "не только при 20, но и при 19"
 }
