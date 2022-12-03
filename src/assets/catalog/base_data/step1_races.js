@@ -1449,7 +1449,7 @@ export default {
             {
               type: "spells",
               name: "spells",
-              select: 2,
+              select: 1,
               mana_min: 0,
               mana_max: 0,
               classes: ["wizard"],
