@@ -70,8 +70,8 @@
 
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->
-	<div class="sidebar_right" :class="{ sidebar_right_close: !shown_home }">
-		<RaceParameters v-if="this.pages.race_page"/>
+	<div  class="sidebar_right" :class="{ sidebar_right_close: !shown_home || !pages.race_page }">
+		<RaceParameters />
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->

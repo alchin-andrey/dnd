@@ -24,37 +24,37 @@ export default {
           //link_male
           //link_female
 //NOTE - Для отладки
-          settings: [
-            {
-              type: "stats",
-              name: "stats",
-              select: 2,
-              filter: "no_used",
-              num: 1,
-            },
-            {
-              type: "skills",
-              name: "skills",
-              select: 2,
-              filter: "no_used",
-              num: "mastery"
-            },
-            {
-              type: "languages",
-              name: "languages",
-              select: 1,
-              filter: "no_used",
-            },
-            {
-              type: "spells",
-              name: "spells",
-              level: 1,
-              select: 2,
-              mana_min: 0,
-              mana_max: 0,
-              classes: ["wizard"],
-            },
-          ],
+          // settings: [
+          //   {
+          //     type: "stats",
+          //     name: "stats",
+          //     select: 2,
+          //     filter: "no_used",
+          //     num: 1,
+          //   },
+          //   {
+          //     type: "skills",
+          //     name: "skills",
+          //     select: 2,
+          //     filter: "no_used",
+          //     num: "mastery"
+          //   },
+          //   {
+          //     type: "languages",
+          //     name: "languages",
+          //     select: 1,
+          //     filter: "no_used",
+          //   },
+          //   {
+          //     type: "spells",
+          //     name: "spells",
+          //     level: 1,
+          //     select: 2,
+          //     mana_min: 0,
+          //     mana_max: 0,
+          //     classes: ["wizard"],
+          //   },
+          // ],
 //NOTE - Для отладки
 
           color: {
