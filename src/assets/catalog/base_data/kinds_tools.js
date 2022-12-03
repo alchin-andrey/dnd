@@ -17,6 +17,10 @@ export default {
     name: "tool_poisoner",
   },
 
+  thief: {
+    name: "tool_thief",
+  },
+
   // ------------
 
   alchemists_supplies: {
