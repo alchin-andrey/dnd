@@ -6,13 +6,24 @@
 				src="@/assets/img/icon/arrow_left_small.svg"
 			/>
 		</div>
-		<div class="title">Назад</div>
+		<div class="title">{{t_Title}}</div>
 	</div>
 </template>
 
 <script>
 export default {
 	name: "MyButtonBack",
+  props: {
+    title: {
+      type: String,
+      default: null,
+    },
+  },
+  computed: {
+    t_Title() {
+			return this.t(this.title);
+		},
+  }
 };
 </script>
 
