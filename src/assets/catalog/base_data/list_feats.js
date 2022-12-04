@@ -261,7 +261,7 @@ export default {
     fines: [
       {
         type: "advantage",
-        keyword: "advantage_x3",
+        keyword: "advantage",
         details: "on_mounted_attack",
       },
       {
@@ -294,7 +294,7 @@ export default {
       {
         type: "plus",
         keyword: "lips_read",
-        details: "on_known_languages",
+        details: "known_languages",
       },
     ],
   },

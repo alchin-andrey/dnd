@@ -1,15 +1,15 @@
 export const armor = {
 
-    light: "легкие",
+    light: "легкі",
     light_details: "—",
 
-    medium: "средние",
+    medium: "середні",
     medium_details: "—",
 
-    heavy: "тяжелые",
+    heavy: "важкі",
     heavy_details: "—",
 
-    shields: "щиты",
+    shields: "щити",
     shields_details: "—",
 
 }

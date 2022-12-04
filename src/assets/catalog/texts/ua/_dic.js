@@ -678,7 +678,7 @@ export default {
         //Ключевые слова
         advantage:"перевага",
         no_disadvantage: "немає перешкоди",
-        rethrow:"переброс",
+        rethrow:"перекид куба",
         resistance:"стійкість",
         immunity:"імунітет",
         telepathy:"телепатія",
@@ -2060,30 +2060,28 @@ export default {
     oath_of_vengence: classes.oath_of_vengence,
     oath_of_vengence_details: classes.oath_of_vengence_details,
 
-    //NOTE - зупинився тута
+    holy_symbol: "священний символ",
+    holy_symbol_details: "Може бути використаний як фокус для заклять.",
 
-    holy_symbol: "священный символ",
-    holy_symbol_details: "Может быть использован как Фокус для заклинаний.",
-
-    priests_pack: "набор священника",
+    priests_pack: "набір священика",
     priests_pack_details: "-",
 
     armor_shield: "щит",
-    armor_shield_details: "Щит изготавливается из дерева или металла, и несется одной рукой. Использование щита увеличивает КД на 2. Вы получаете преимущество только от одного щита одновременно.",
+    armor_shield_details: "Щит виготовляється з дерева чи металу, і використовується однією рукою. Збільшує Броню на 2. Ви отримуєте перевагу лише від одного щита одночасно.",
 
-    blanket: "одеяло",
+    blanket: "ковдра",
     blanket_details: "-",
 
-    donation_box: "коробка для пожертвований",
+    donation_box: "коробка для пожертв",
     donation_box_details: "-",
 
-    incense: "благовония",
+    incense: "пахощі",
     incense_details: "-",
 
     censer: "кадило",
     censer_details: "-",
 
-    vestment: "облачение",
+    vestment: "вбрання",
     vestment_details: "-",
 
     spell_divine_sense: spells.divine_sense,
@@ -2096,26 +2094,26 @@ export default {
     spell_lay_on_hands_details: spells.lay_on_hands_details,
     spell_lay_on_hands_expanded: spells.lay_on_hands_expanded,
 
-    battle_style: "боевой стиль",
+    battle_style: "бойовий стиль",
 
-    style_dueling: "дуэлянт",
-    style_protection: "защита",
+    style_dueling: "дуелянт",
+    style_protection: "захист",
     style_defence: "оборона",
-    style_great_weapon: "большое оружие",
-    style_double_weapon: "два оружия",
-    style_archery: "стрельба",
+    style_great_weapon: "велика збооя",
+    style_double_weapon: "дві зброї",
+    style_archery: "стрільба",
 
-    on_attack_signle_one_handed: "+2 на урон ближних атак одной рукой",
+    on_attack_signle_one_handed: "+2 на пошкодження від ближніх атак однією рукою",
 
     spell_side_pary: spells.side_pary,
     spell_side_pary_details: spells.side_pary_details,
     spell_side_pary_expanded: spells.side_pary_expanded,
 
-    on_armor_if_armor: "+1 на броню при одетых доспехах",
+    on_armor_if_armor: "+1 на Броню при одягнених обладунках",
 
-    if_1_or_2_on_two_handed_weapon: "урона двуручного оружия, если выпало 1 или 2",
+    if_1_or_2_on_two_handed_weapon: "пошкодження дворучної зброї, якщо випало 1 або 2",
 
-    on_sick: "к болезням",
+    on_sick: "до хвороб",
 
     spell_divine_channel_devotion_1: spells.divine_channel_devotion_1,
     spell_divine_channel_devotion_1_details: spells.divine_channel_devotion_1_details,
@@ -2145,92 +2143,90 @@ export default {
     spell_divine_channel_vengence_2_details: spells.divine_channel_vengence_2_details,
     spell_divine_channel_vengence_2_expanded: spells.divine_channel_vengence_2_expanded,
 
-    push: "толчок",
+    push: "поштовх",
 
     spell_create_or_destroy_water: spells.create_or_destroy_water,
     spell_create_or_destroy_water_details: spells.create_or_destroy_water_details,
     spell_create_or_destroy_water_expanded: spells.create_or_destroy_water_expanded,
 
-    short_run: "короткий разбег",
+    short_run: "короткий розбіг",
 
     feat_athlete: "Атлет",
-    feat_athlete_details: "Вы прошли интенсивную физическую подготовку.",
+    feat_athlete_details: "Ви пройшли інтенсивну фізичну підготовку.",
 
-    quicko: "быстрое",
-    getting_up: "втавание на ноги",
+    quicko: "швидке",
+    getting_up: "встання на ноги",
 
-    feat_alert: "Бдительный",
-    feat_alert_details: "Вы всегда готовы к опасностям.",
+    feat_alert: "Пильний",
+    feat_alert_details: "Ви завжди готові до небезпек.",
 
-    on_sudden: "к заставанию расплох",
+    on_sudden: "до застання зненацька",
 
-    on_stealth: "на атаки из скрытности по вам",
+    on_stealth: "на атаки по вас із непомітності",
 
-    feat_war_caster: "Боевой заклинатель",
-    feat_war_caster_details: "Вы научились накладывать заклинания в пылу сражения и узнали магические техники.",
+    feat_war_caster: "Бойовий заклинач",
+    feat_war_caster_details: "Ви вивчили магічні техніки, і навчилися накладати закляття в запалі битви.",
 
-    on_con_save_while_concentrating: "на Испытания Телосложения при концентрации",
+    on_con_save_while_concentrating: "на Випробування Статури при концентрації",
 
-    use_somatic: "Использование Жестов",
-    in_taken_hands: "занятыми руками",
+    use_somatic: "Використання Жестів",
+    in_taken_hands: "зайнятими руками",
 
-    cast_reaction: "Реакция как Каст",
-    for_spells_action: "для заклинаний с Кастом Бонусное или Основное действие",
+    cast_reaction: "Реакція як Каст",
+    for_spells_action: "для заклять з Кастом Основна або Бонусна дія",
 
-    feat_grappler: "Борец",
-    feat_grappler_details: "Вы развили навыки, нужные для тесного захвата противников.",
+    feat_grappler: "Борець",
+    feat_grappler_details: "Ви розвинули навички, потрібні для міцного cхоплення супротивників.",
 
-    on_attack_grapple: "на атаки цели, которую вы держите в захвате",
+    on_attack_grapple: "на атаки цілі, яку ви тримаєте у cхопленні",
 
-    restrain: "Опутывание",
-    creature_on_addititonal_grapple: "сущетсва при дополнительном захвате",
+    restrain: "Обплутування",
+    creature_on_addititonal_grapple: "істоти при додатковому схопленні",
 
-    feat_lucky: "Везунчик",
-    feat_lucky_details: "Вам непонятным образом везет как раз тогда, когда это нужно.",
+    feat_lucky: "Щасливчик",
+    feat_lucky_details: "Вам якимось чином щастить саме тоді, коли це потрібно.",
 
-    advantage_x3: "3 преимущества в день",
-    on_any_d20: "на любой бросок d20, даже на вражеский бросок атаки по вам. Использует 1× Ячейку удачи.",
+    on_any_d20: "на будь-який кидок d20, навіть на ворожий кидок атаки на вас. Використовує 1× Слот удачі.",
 
-    feat_mounted_combatant: "Верховой боец",
-    feat_mounted_combatant_details: "Вы — опасный враг, когда вы верхом на скакуне.",
+    feat_mounted_combatant: "Верховий боєць",
+    feat_mounted_combatant_details: "Ви небезпечний ворог, коли ви верхи на скакуні.",
 
-    on_mounted_attack: "на верховые атаки по существам не верхом и меньше вашего скакуна.",
+    on_mounted_attack: "на верхові атаки по істотах не верхи і менших за вашого скакуна.",
 
-    redirect_attack: "перенаправить атаку",
-    from_mount_on_self: "со скакуна на себя",
+    redirect_attack: "переспрямувати атаку",
+    from_mount_on_self: "зі скакуна на себе",
 
-    reduce_damage: "уменьшение урона",
-    on_mount_save_dex: "скакуну при Испытаниях Ловкости",
+    reduce_damage: "зменшення пошкодження",
+    on_mount_save_dex: "по скакуну при Випробуваннях Спритності",
 
-    feat_observant: "Внимательный",
-    feat_observant_details: "Вы быстро улавливаете мелкие подробности.",
+    feat_observant: "Уважний",
+    feat_observant_details: "Ви швидко вловлюєте дрібні подробиці.",
 
-    lips_read: "чтение по губам",
-    on_known_languages: "на выученных языках",
+    lips_read: "читання по губах",
 
-    feat_martial_adept: "Воинский адепт",
-    feat_martial_adept_details: "Вы прошли военную подготовку, позволяющую совершать особые боевые приемы. Если у вас уже есть Маневры, вы получаете еще один (d8). В противном случае вы получаете один Маневр (d6).",
+    feat_martial_adept: "Військовий адепт",
+    feat_martial_adept_details: "Ви пройшли військову підготовку, що дозволяє здійснювати спеціальні бойові прийоми. Якщо у вас є Маневри, ви отримуєте ще один (d8). В іншому випадку ви отримуєте один слабший Маневр (d6).",
 
     plus_1: "+1",
 
-    if_succeed: "при успехе",
+    if_succeed: "при успіху",
 
-    superiority_dice_slots: "Маневры",
-    superiority_dice_slots_feat: "Маневры / Воинский адепт",
+    superiority_dice_slots: "Маневри",
+    superiority_dice_slots_feat: "Маневри / Військовий адепт",
     superiority_dice_slot: "1× Маневр",
-    maneuvers: "маневры",
+    maneuvers: "маневри",
     maneuver: "маневр",
 
-    divine_sense_slots: "Божественное чувство",
-    divine_sense_slot: "1× Божественное чувство",
+    divine_sense_slots: "Божественне відчуття",
+    divine_sense_slot: "1× Божественне відчуття",
 
-    divine_channel_slots: "Божественный канал",
-    divine_channel_slot: "1× Божественный канал",
+    divine_channel_slots: "Божественний канал",
+    divine_channel_slot: "1× Божественний канал",
 
-    rage_slots: "Ячейки Ярости",
-    rage_slot: "1× Ячейка Ярости",
+    rage_slots: "Слот Люті",
+    rage_slot: "1× Слот Люті",
 
-    movement: "перемещение",
+    movement: "пересування",
 
     spell_maneuver_ambush: spells.maneuver_ambush,
     spell_maneuver_ambush_details: spells.maneuver_ambush_details,
@@ -2240,7 +2236,7 @@ export default {
     spell_maneuver_evasive_footwork_details: spells.maneuver_evasive_footwork_details,
     spell_maneuver_evasive_footwork_expanded: spells.maneuver_evasive_footwork_expanded,
 
-    bonus_w_fem: "бонусная",
+    bonus_w_fem: "бонусна",
 
     spell_maneuver_lunging_attack: spells.maneuver_lunging_attack,
     spell_maneuver_lunging_attack_details: spells.maneuver_lunging_attack_details,
@@ -2270,7 +2266,7 @@ export default {
     spell_maneuver_riposte_details: spells.maneuver_riposte_details,
     spell_maneuver_riposte_expanded: spells.maneuver_riposte_expanded,
 
-    reduction_w: "снижение",
+    reduction_w: "зменшення",
 
     spell_maneuver_parry: spells.maneuver_parry,
     spell_maneuver_parry_details: spells.maneuver_parry_details,
@@ -2303,6 +2299,8 @@ export default {
     spell_inspiration: spells.inspiration,
     spell_inspiration_details: spells.inspiration_details,
     spell_inspiration_expanded: spells.inspiration_expanded,
+
+    //NOTE - зупинився тута
 
     feat_inspiring_leader: "Воодушевляющий лидер",
     feat_inspiring_leader_details: "Вы можете воодушевить спутников, укрепив их решимость.",
