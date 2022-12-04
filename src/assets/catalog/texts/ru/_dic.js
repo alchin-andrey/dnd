@@ -1419,19 +1419,19 @@ export default {
     spell_fake_presence_expanded: spells.fake_presence_expanded,
 
     fine_dodge: "увертливость",
-    from_aoe_effects: "от зональных эффектов с Испытанием Ловкости.",
+    from_aoe_effects: "от зональных эффектов с Испытанием Ловкости",
 
     min_10: "Минимум 10",
     on_dice_mastery_skill: "на d20 при проверке навыков и характеристик с мастерством",
 
     always_hear: "всегда слышно",
-    invisible_creatures_10f: "всех скрытых и невидимых существ в пределах 10ф от себя.",
+    invisible_creatures_10f: "всех скрытых и невидимых существ в пределах 10ф от себя",
 
     no_advantage: "нет преимущества",
-    on_attacks_on_you: "на любые атаки по вам, если вы дееспособны.",
+    on_attacks_on_you: "на любые атаки по вам, если вы дееспособны",
 
     min_20: "Минимум 20",
-    on_dice_d20: "на d20, но без крита если это бросок атаки. Один раз. Восстанавливается после короткого отдыха.",
+    on_dice_d20: "на d20, но без крита если это бросок атаки. Один раз. Восстанавливается после короткого отдыха",
 
     thief: classes.thief,
     thief_details: classes.thief_details,
