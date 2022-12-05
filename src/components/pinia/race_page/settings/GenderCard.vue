@@ -166,7 +166,7 @@ export default {
   color: rgba(255, 255, 255, 0.2);
 }
 
-.gender_item {
+/* .gender_item {
   width: 72px;
   height: 72px;
   background: rgba(255, 255, 255, 0.06);
@@ -175,7 +175,7 @@ export default {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
+} */
 
 .gender__flex {
   display: flex;

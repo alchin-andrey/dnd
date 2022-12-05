@@ -1,7 +1,19 @@
 <template>
 	<div v-if="lvl_Show" class="column" :class="{ passive: passive }">
 		<div class="icon">
-			<img :src="src_Icon" :alt="icon" />
+      <svg
+      :class="{
+					positive: !Negative,
+					negative: Negative,
+				}"
+        width="18"
+        height="18"
+        fill-opacity="1"
+        viewBox="0 0 18 18"
+        xmlns="http://www.w3.org/2000/svg"
+        v-html="fines_icon[icon]"
+      />
+			<!-- <img :src="src_Icon" :alt="icon" /> -->
 		</div>
 		<div class="text int-400" :class="{ emoji_true: em_Upd }">
 			<span
@@ -25,10 +37,16 @@
 </template>
 
 <script>
+import fines_icon from "@/assets/catalog/icon/fines_icon";
 import { mapState} from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "MyFines",
+  data() {
+    return {
+      fines_icon: fines_icon,
+    }
+  },
 	props: {
     lvl: {
 			type: Number,
@@ -82,9 +100,9 @@ export default {
 			return this.afterEmoji(this.t_Details);
 		},
 
-		src_Icon() {
-			return require(`@/assets/img/icon/fines/${this.icon}.svg`);
-		},
+		// src_Icon() {
+		// 	return require(`@/assets/img/icon/fines/${this.icon}.svg`);
+		// },
 	},
 };
 </script>
@@ -112,10 +130,12 @@ export default {
 
 .positive {
 	color: #05ff00;
+  fill: #05ff00;
 }
 
 .negative {
 	color: #ff0000;
+  fill: #ff0000;
 }
 
 .emoji-mart-emoji {

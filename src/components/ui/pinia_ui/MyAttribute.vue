@@ -1,13 +1,21 @@
 <template>
-	<div class="column jbm-300">
+	<div class="column jbm-300" :class="{ passive: numb == 0 }">
 		<div class="column_value">
 			<div class="icon">
-				<img :src="icon_Image" :alt="icon" />
+        <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        v-html="atribute_icon[icon]"
+      />
+				<!-- <img :src="icon_Image" :alt="icon" /> -->
 			</div>
-			<div class="item" :class="{ passive: numb == 0 }">
+			<div class="item">
 				{{ t_Title }}<span>{{ t_Type }}</span>
 			</div>
-			<div class="numb" :class="{ passive: numb == 0 }">
+			<div class="numb">
 				{{ Prefix }}{{ numb }} {{ Suffix }}
 			</div>
 		</div>
@@ -19,8 +27,14 @@
 </template>
 
 <script>
+import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 export default {
 	name: "MyAttribute",
+  data() {
+    return {
+      atribute_icon: atribute_icon,
+    }
+  },
 	props: {
 		title: {
 			type: String,
@@ -69,15 +83,15 @@ export default {
 			return this.feet ? this.t("feet") : "";
 		},
 
-		icon_Image() {
-			if (this.icon === null) {
-				return null;
-			} else if (this.numb > 0) {
-				return require(`@/assets/img/icon/atribute/${this.icon}_active.svg`);
-			} else {
-				return require(`@/assets/img/icon/atribute/${this.icon}_passive.svg`);
-			}
-		},
+		// icon_Image() {
+		// 	if (this.icon === null) {
+		// 		return null;
+		// 	} else if (this.numb > 0) {
+		// 		return require(`@/assets/img/icon/atribute/${this.icon}_active.svg`);
+		// 	} else {
+		// 		return require(`@/assets/img/icon/atribute/${this.icon}_passive.svg`);
+		// 	}
+		// },
 
 		cube_Numb() {
 			if (this.feet) {
@@ -129,6 +143,8 @@ export default {
 
 .passive {
 	color: rgba(255, 255, 255, 0.2);
+  fill-opacity: 0.2;
+  stroke-opacity: 0.2;
 }
 
 .numb {
