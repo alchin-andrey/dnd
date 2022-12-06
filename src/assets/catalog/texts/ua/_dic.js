@@ -2300,15 +2300,13 @@ export default {
     spell_inspiration_details: spells.inspiration_details,
     spell_inspiration_expanded: spells.inspiration_expanded,
 
-    //NOTE - зупинився тута
+    feat_inspiring_leader: "Надихаючий лідер",
+    feat_inspiring_leader_details: "Ви можете додати наснаги супутникам, зміцнивши їхню рішучість.",
 
-    feat_inspiring_leader: "Воодушевляющий лидер",
-    feat_inspiring_leader_details: "Вы можете воодушевить спутников, укрепив их решимость.",
+    savage_attacker: "Дикий атакуючий",
+    savage_attacker_details: "Ваші атаки завдають більше пошкодження.",
 
-    savage_attacker: "Дикий атакующий",
-    savage_attacker_details: "Ваши атаки наносят больше урона.",
-
-    of_damage_dice_once_per_move: "урона атаки один раз в ход",
+    of_damage_dice_once_per_move: "пошкодження від атаки один раз на хід",
 
     weapons_improvised: weapons.improvised,
     weapons_improvised_details: weapons.improvised_details,
@@ -2317,55 +2315,55 @@ export default {
     spell_grapple_details: spells.grapple_details,
     spell_grapple_expanded: spells.grapple_expanded,
 
-    feat_lightly_armored: "Знаток легких доспехов",
-    feat_lightly_armored_details: "Вы обучились ношению легких доспехов.",
+    feat_lightly_armored: "Знавець легких обладунків",
+    feat_lightly_armored_details: "Ви навчилися носити легкі обладунки.",
 
-    feat_moderately_armored: "Знаток средних доспехов",
-    feat_moderately_armored_details: "Вы обучились ношению средних доспехов.",
+    feat_moderately_armored: "Знавець середніх обладунків",
+    feat_moderately_armored_details: "Ви навчилися носити середні обладунки.",
 
-    feat_heavily_armored: "Знаток тяжелых доспехов",
-    feat_heavily_armored_details: "Вы обучились ношению тяжелых доспехов.",
+    feat_heavily_armored: "Знавець важких обладунків",
+    feat_heavily_armored_details: "Ви навчилися носити важкі обладунки.",
 
-    feat_dual_wielder: "Боец двумя оружиями",
-    feat_dual_wielder_details: "Вы знаете как использовать сразу два оружия.",
+    feat_dual_wielder: "Боєць двома зброями",
+    feat_dual_wielder_details: "Ви знаєте, як використовувати відразу дві зброї.",
 
-    on_armor_if_two_weapons: "+1 к броне при двух ближних оружиях",
+    on_armor_if_two_weapons: "+1 до Броні при використання двох зброй",
 
-    use_of_two_weapons: "Использование двух оружий",
-    heavier_than_light: "тяжелее чем легкое",
+    use_of_two_weapons: "Використання двох зброй,",
+    heavier_than_light: "що важчі ніж легкі",
 
-    quick_take: "Быстроe вынимание",
-    of_two_weapons: "и убирание двух оружий одновременно",
+    quick_take: "Швидке озброєння",
+    of_two_weapons: "та прибирання двох зброй одночасно",
 
-    feat_dungeon_delver: "Искатель подземелий",
-    feat_dungeon_delver_details: "Вы научилить искать скрытые ловушки и потайные двери в подземельях.",
+    feat_dungeon_delver: "Шукач підземель",
+    feat_dungeon_delver_details: "Ви навчити шукати приховані пастки та потаємні двері у підземеллях.",
 
-    on_hidden_doors: "на поиск тайных дверей",
-    on_trap_evasion: "на избегание ловушек и эффектов от них",
-    on_trap_damage: "урону от ловушек",
-    on_passive_perception_on_quick_move: "на пассивную Внимательность при быстром перемещении",
+    on_hidden_doors: "на пошук таємних дверей",
+    on_trap_evasion: "на уникнення пасток та ефектів від них",
+    on_trap_damage: "до пошкодження від пасток",
+    on_passive_perception_on_quick_move: "на пасивну Уважність при швидкому переміщенні",
 
-    feat_tough: "Крепкий",
-    feat_tough_details: "Вы чувствуете в себе больше жизненных сил c каждым уровнем.",
+    feat_tough: "Міцний",
+    feat_tough_details: "Ви відчуваєте більше життєвих сил з кожним рівнем.",
 
-    feat_healer: "Лекарь",
-    feat_healer_details: "Вы способный медик, что позволяет быстро залечивать раны и возвращать союзников в строй.",
+    feat_healer: "Лікар",
+    feat_healer_details: "Ви здібний медик, що дозволяє швидко заліковувати рани та повертати союзників до ладу.",
 
-    plus_1_to_hp: "Восстановление 1 HP",
-    on_use_of_medical_tools: "при исползовании комплекта целителя для стабилизации умирающего",
+    plus_1_to_hp: "Відновлення 1 HP",
+    on_use_of_medical_tools: "при використанні набору цілителя для стабілізації вмираючого",
 
     spell_healer_tooling: spells.healer_tooling,
     spell_healer_tooling_details: spells.healer_tooling_details,
     spell_healer_tooling_expanded: spells.healer_tooling_expanded,
 
-    healers_tool_slot: "1× Комплект целителя",
-    healers_tool: "Комплект целителя",
+    healers_tool_slot: "1× Набір цілителя",
+    healers_tool: "Набір цілителя",
 
-    feat_great_weapon_master: "Мастер большого оружия",
-    feat_great_weapon_master_details: "Вы научились использовать вес своего оружия, позволяя инерции усиливать ваши атаки.",
+    feat_great_weapon_master: "Майстер великої зброї",
+    feat_great_weapon_master_details: "Ви навчилися використовувати вагу своєї зброї, дозволяючи інерції посилювати ваші атаки.",
 
-    feat_polearm_master: "Мастер древкового оружия",
-    feat_polearm_master_details: "Вы можете сдерживать врагов оружием со свойством «досягаемость».",
+    feat_polearm_master: "Майстер древкової зброї",
+    feat_polearm_master_details: "Ви можете стримувати ворогів зброєю із властивістю «досяжність».",
 
     spell_extra_strike: spells.extra_strike,
     spell_extra_strike_details: spells.extra_strike_details,
@@ -2379,47 +2377,47 @@ export default {
     spell_polearm_strike_details: spells.polearm_strike_details,
     spell_polearm_strike_expanded: spells.polearm_strike_expanded,
 
-    provoked_attack: "Провоцированная атака",
-    on_polearm_reach: "в пределах досягаемости древка",
+    provoked_attack: "Провокована атака",
+    on_polearm_reach: "в межах досяжності древка",
 
-    feat_weapon_master: "Мастер оружия",
-    feat_weapon_master_details: "Вы знаете как пользоваться множеством видов оружия.",
+    feat_weapon_master: "Майстер зброї",
+    feat_weapon_master_details: "Ви знаєте, як користуватися безліччю видів зброї.",
 
-    on_stealth_in_medium_armor: "на Скрытность при надетых средних доспехах",
-    on_medium_armor: "+1 на Броню средних доспехов, при Базовой Ловкости 16+",
+    on_stealth_in_medium_armor: "на Непомітність у одягнених середніх обладунках",
+    on_medium_armor: "+1 на Броню середніх обладунків, при Базовій Спритності 16+",
 
-    feat_medium_armor_master: "Мастер средних доспехов",
-    feat_medium_armor_master_details: "Вы привыкли к перемещению в средних доспехах.",
+    feat_medium_armor_master: "Майстер середніх обладунків",
+    feat_medium_armor_master_details: "Ви звикли до переміщення в середніх обладунках.",
 
-    feat_heavy_armor_master: "Мастер тяжелых доспехов",
-    feat_heavy_armor_master_details: "Вы можете своим доспехом отклонять удары, которые других убили бы.",
+    feat_heavy_armor_master: "Майстер важких обладунків",
+    feat_heavy_armor_master_details: "Ви можете своїм обладунком відхиляти удари, які б інших вбили.",
 
-    damage_reduction: "Снижение механического урона",
-    on_3_in_heavy_armor: "на 3 в тяжелых доспехах",
+    damage_reduction: "Зниження механічних пошкоджень",
+    on_3_in_heavy_armor: "на -3, у важких обладунках",
 
-    feat_shield_master: "Мастер щитов",
-    feat_shield_master_details: "Вы используете щиты не только для обороны, но и для нападения.",
+    feat_shield_master: "Майстер щитів",
+    feat_shield_master_details: "Ви використовуєте щити не лише для захисту, а й для нападу.",
 
     spell_shield_push: spells.shield_push,
     spell_shield_push_details: spells.shield_push_details,
     spell_shield_push_expanded: spells.shield_push_expanded,
 
-    on_dex_check_in_shield: "+2 от щита при Испытаниях Ловкости от эффектов, нацеленных только на вас",
+    on_dex_check_in_shield: "+2 від щита, при Випробуваннях Спритності від ефектів, націлених тільки на вас",
 
-    feat_spell_sniper: "Меткий заклинатель",
-    feat_spell_sniper_details: "Вы узнали технику, улучшающую атаку некоторыми видами заклинаний.",
+    feat_spell_sniper: "Влучний заклинач",
+    feat_spell_sniper_details: "Ви отримали знання про техніку, яка покращує атаку деякими видами заклять.",
 
-    double_range: "2× дальность",
-    on_spells_with_aim: "для заклинаний с прицеливанием",
+    double_range: "2× дальність",
+    on_spells_with_aim: "для заклять із прицілюванням",
 
-    ignoring: "Игнорирование",
-    on_covers_spells: "укрытий на половину и на 3/4, при использовании заклинаний c прицеливанием",
+    ignoring: "Ігнорування",
+    on_covers_spells: "укриттів на 1/2 і на 3/4, при використанні заклять із прицілюванням",
 
-    feat_sharpshooter: "Меткий стрелок",
-    feat_sharpshooter_details: "Вы овладели дальнобойным оружием и можете совершать выстрелы, которые другие считали невозможными.",
+    feat_sharpshooter: "Влучний стрілець",
+    feat_sharpshooter_details: "Ви опанували далекобійну зброю і можете робити постріли, які інші вважали неможливими.",
 
-    on_shots_in_max_distance: "на выстрелы с максимальной дистанции",
-    on_covers: "укрытий на половину и на 3/4, при дальнобойных атаках",
+    on_shots_in_max_distance: "на постріли з максимальної дистанції зброї",
+    on_covers: "укриттів на 1/2 і на 3/4, при далекобійних атаках",
 
     spell_charge_attack: spells.charge_attack,
     spell_charge_attack_details: spells.charge_attack_details,
@@ -2433,28 +2431,30 @@ export default {
     spell_heavy_shot_details: spells.heavy_shot_details,
     spell_heavy_shot_expanded: spells.heavy_shot_expanded,
 
-    feat_charger: "Налетчик",
-    feat_charger_details: "Вы много двигаетесь в бою.",
+    feat_charger: "Нападник",
+    feat_charger_details: "Ви багато рухаєтеся у бою.",
 
-    mastery_bonus: "Бонуc мастерства",
-    on_armor_finesse: "к Броне при Реакции на атаку, если у вас фехтовальное оружие",
+    mastery_bonus: "Бонус Майстерності",
+    on_armor_finesse: "до Броні, при Реакції на атаку, якщо у вас фехтувальна зброя",
 
-    feat_defensive_duelist: "Оборонительный дуэлянт",
-    feat_defensive_duelist_details: "Вы мастерски обороняетесь фехтовальным оружием.",
+    feat_defensive_duelist: "Оборонний дуелянт",
+    feat_defensive_duelist_details: "Ви майстерно захищаєтесь фехтувальною зброєю.",
 
-    feat_keen_mind: "Отличная память",
-    feat_keen_mind_details: "Вы с невероятной точностью можете отслеживать время, направление и подробности.",
+    feat_keen_mind: "Чудова пам'ять",
+    feat_keen_mind_details: "Ви з неймовірною точністю можете відстежувати час, напрямок та деталі минулого.",
 
-    always: "всегда",
-    know_north: "известна сторона света",
-    know_time: "известно время рассвета/заката",
-    clear_memory: "точные воспоминания",
-    about_xp_1month: "о всем прожитом за последний месяц",
+    always: "завжди",
+    know_north: "відома сторона світу",
+    know_time: "відомий час світанку/заходу сонця",
+    clear_memory: "точні спогади",
+    about_xp_1month: "про все прожите за останній місяць",
 
-    feat_mobile: "Подвижный",
-    feat_mobile_details: "Вы невероятно быстры и ловки.",
+    feat_mobile: "Рухливий",
+    feat_mobile_details: "Ви неймовірно швидкі та спритні.",
 
-    on_hard_area_dash: "на Рывок в труднопроходимой местности",
+    on_hard_area_dash: "на Ривок у важкопрохідній місцевості",
+
+    //NOTE - зупинився тута
 
     no_provocation: "нет провокации",
     in_this_move_after_attack: "от существа, которого вы попытались атаковать в этом ходу, ближним оружием",
