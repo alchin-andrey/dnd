@@ -3,7 +3,7 @@ export const tools = {
     blacksmith: "кузнеца",
     brewer: "пивовара",
     mason: "каменщика",
-    thief: "воровские",
+    thief: "крадійскі",
 
     alchemists_supplies: "алхимика",
     potters_tools: "гончара",
