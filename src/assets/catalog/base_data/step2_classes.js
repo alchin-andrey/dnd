@@ -158,7 +158,7 @@ export default {
 
     hp_dice: 12,
     // x: hp_dice/2 + 1;
-    // hp_bonus: hp_dice + con.mod + ( x + con.mod(min=1) ) * ( lvl  - 1 )
+    // hp_max: hp_dice + con.mod + ( x + con.mod(min=1) ) * ( lvl - 1 ) + hp_bonus
     //regen: = lvl * hp_dice
 
     proficiencies: {
@@ -176,6 +176,13 @@ export default {
       "intelligence", // 8
     ],
     spell_attribute: "strength",
+
+    qualities: [
+      {
+        level: 5,
+        speed_bonus: 10,
+      }
+    ],
 
     fines: [
       {
@@ -197,11 +204,9 @@ export default {
       },
       {
         level: 5,
-
-        // when without heavy armor
-        condition: "if_no_heavy_armor",
-        key: "speed_bonus",
-        value: "10",
+        type: "plus",
+        keyword: "speed_plus_10",
+        details: "if_no_heavy_armor (applied)",
       },
       {
         level: 7,
