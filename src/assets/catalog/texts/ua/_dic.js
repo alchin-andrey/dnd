@@ -2362,7 +2362,7 @@ export default {
     feat_great_weapon_master: "Майстер великої зброї",
     feat_great_weapon_master_details: "Ви навчилися використовувати вагу своєї зброї, дозволяючи інерції посилювати ваші атаки.",
 
-    feat_polearm_master: "Майстер древкової зброї",
+    feat_polearm_master: "Майстер держакової зброї",
     feat_polearm_master_details: "Ви можете стримувати ворогів зброєю із властивістю «досяжність».",
 
     spell_extra_strike: spells.extra_strike,
