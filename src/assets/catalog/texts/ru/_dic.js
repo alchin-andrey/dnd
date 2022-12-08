@@ -2755,4 +2755,6 @@ export default {
     choose_variants: "вариантов",
 
     step_background: "типаж",
+
+    modifier: "модификатор",
 }
