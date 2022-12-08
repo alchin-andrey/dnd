@@ -32,6 +32,7 @@
 				<RaceMenuSettings v-if="pages.race_page" />
         <ClassMenuSettings v-if="pages.class_page"/>
 			</div>
+
 			<transition v-if="pages.race_page" name="btm-fade" mode="out-in">
 				<my-button
 					v-if="shown_home"
@@ -45,6 +46,7 @@
 					@click="showHome()"
 				></my-button-back>
 			</transition>
+
 			<transition v-if="pages.class_page" name="btm-fade" mode="out-in">
 				<my-button
 					v-if="shown_home"
@@ -58,6 +60,7 @@
           @click="showHome()"
 				></my-button-back>
 			</transition>
+      
 		</div>
 	</div>
 
@@ -110,9 +113,6 @@
 </template>
 
 <script>
-// import race from "@/assets/catalog/base_data/step1_races.js";
-// import clas from "@/assets/catalog/base_data/step2_classes.js";
-
 import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
 
 import Header from "@/components/pinia/Header.vue";
@@ -146,13 +146,6 @@ export default {
     ClassSettings,
     ClassParameters,
 
-	},
-
-	data() {
-		return {
-			// race: race,
-			// clas: clas,
-		};
 	},
 
 	created() {

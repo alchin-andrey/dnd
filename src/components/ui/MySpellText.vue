@@ -21,7 +21,6 @@
 						/>{{ em_After }}
 					</div>
 					<img
-          v-if="!passive"
 						class="icon_spell"
 						src="@/assets/img/icon/arrow_right_small.svg"
 						alt="arrow"
@@ -30,8 +29,9 @@
 						@click="showDialog_Select()"
 					/>
 				</div>
-				<!-- <div class="text_spell">{{ t_Text }}</div> -->
+
 				<div class="text_spell" v-html="t_Text"></div>
+
 			</div>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
@@ -74,8 +74,9 @@
 				{{ Spell_Index.slot_type ? t(Spell_Index.slot_type) : n - 1 }}
 			</div>
 		</div>
-		<!-- <div class="text_spell">{{ t_Text }}</div> -->
+
 		<div class="text_spell" v-html="t_Text"></div>
+
 		<my-wrapper gap_6>
 			<my-spell-main title="cast_time" :text="t_Cast_Value" />
 			<my-spell-main title="aim_target" :text="t_Target_Value" />
@@ -585,32 +586,30 @@ export default {
 	},
 	methods: {
 		hoverIn_Select() {
-			if (this.select && !this.passive) {
+			if (this.select) {
 				this.$refs.stripe.classList.add("active");
 			}
 		},
 		hoverOut() {
-			if (!this.dialogVisible && !this.passive) {
+			if (!this.dialogVisible) {
 				this.$refs.stripe.classList.remove("active");
 			}
 		},
 		hoverIn_Full() {
-			if (!this.select && !this.passive) {
+			if (!this.select) {
 				this.$refs.stripe.classList.add("active");
 			}
 		},
 		showDialog_Full() {
-			if (!this.select && !this.passive) {
+			if (!this.select) {
 				this.dialogVisible = true;
 				this.mana_numb = this.Index;
 			}
 		},
 
 		showDialog_Select() {
-      if (!this.passive) {
 			this.dialogVisible = true;
 			this.mana_numb = this.Index;
-      }
 		},
 
     choiceManna(numb) {
@@ -727,14 +726,8 @@ export default {
 
 .text_spell {
 	width: 340px;
-	/*color: rgba(255, 255, 255, 0.4);*/
 	text-align: start;
-	/* white-space: pre-line; */
 }
-
-/* .text_spell:first-letter {
-	text-transform: uppercase;
-} */
 
 .hr {
 	height: 1px;
@@ -749,6 +742,6 @@ export default {
 
 .passive {
   opacity: 0.2;
-  cursor: auto;
+  /* cursor: auto; */
 }
 </style>
