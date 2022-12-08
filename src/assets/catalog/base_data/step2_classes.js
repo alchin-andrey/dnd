@@ -206,7 +206,7 @@ export default {
         level: 5,
         type: "plus",
         keyword: "speed_plus_10",
-        details: "if_no_heavy_armor (applied)",
+        details: "if_no_heavy_armor_applied",
       },
       {
         level: 7,
