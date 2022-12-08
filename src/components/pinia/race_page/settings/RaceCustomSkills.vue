@@ -10,7 +10,7 @@
 		<my-attribute
 			:title="name"
 			plus
-			:numb="skills_Mastery"
+			:numb="Mastery"
 			:icon="MY.skills[name].mod"
 		>
 		</my-attribute>
@@ -27,11 +27,10 @@ export default {
 	name: "RaceCustomSkills",
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "Mastery"]),
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
 		...mapState(useSkillsStore, [
-			"skills_Mastery",
 			"skills_Pass_Arr_RE",
 			"skills_Custom_Arr_RE",
 		]),

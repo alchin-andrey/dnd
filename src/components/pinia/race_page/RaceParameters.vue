@@ -21,7 +21,7 @@
 				:key="name"
 				:title="name"
 				plus
-				:numb="skills_Mastery"
+				:numb="Mastery"
 				:icon="MY.skills[name].mod"
 			></my-attribute>
 		</my-wrapper>
@@ -132,10 +132,10 @@ export default {
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["race_page"]),
-    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["MY", "Mastery"]),
     // GETTERS
     ...mapState(useStatsStore, ["stats_Keys", "stats_Race_Page_Numb",]),
-    ...mapState(useSkillsStore, ["skills_Mastery", "skills_All_RE",]),
+    ...mapState(useSkillsStore, ["skills_All_RE",]),
     ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
     ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
 

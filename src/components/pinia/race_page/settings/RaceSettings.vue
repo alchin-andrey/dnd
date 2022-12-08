@@ -100,7 +100,7 @@ export default {
   components: {
 		EthnosChoice,
     RaceCustomStats,
-    RaceCustomSkills, //TODO: Перенести skills_Mastery
+    RaceCustomSkills,
     RaceCustomLanguages,
     RaceCustomSpells,
     GenderSetting,

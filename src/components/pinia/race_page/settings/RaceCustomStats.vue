@@ -1,5 +1,5 @@
 <template>
-	<div class="ethnos_attributes" @click="openHook()">
+	<div class="ethnos_attributes">
 		<!-- Этнос_stats -->
 		<my-wrapper>
 			<my-attribute

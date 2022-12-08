@@ -6,7 +6,7 @@
 				@click="showSettings__Class('stats')"
 				:active="class_page.shown.stats"
 				title="stats"
-				:type_arr="stats_Custom_Arr_RE"
+				:t_type="stats_Base_Settings_Two_T"
 			></my-selection>
 		</div>
     <!-- RACE ETHNOS -->
@@ -24,7 +24,7 @@ export default {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),
     // GETTERS
-    ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
+    ...mapState(useStatsStore, ["stats_Custom_Arr_RE", "stats_Base_Settings_Two_T"]),
 
 	},
 	methods: {

@@ -32,6 +32,10 @@ export default {
 			type: String,
 			default: null,
 		},
+    t_type: {
+			type: String,
+			default: null,
+		},
 		type: {
 			type: String,
 			default: null,
@@ -66,7 +70,9 @@ export default {
 			return this.t(this.title);
 		},
 		t_Type() {
-			if (this.type) {
+      if(this.t_type) {
+        return this.t_type;
+      } else if (this.type) {
 				return this.title === "gender" ? this.gender_Name : this.t(this.type);
 			} else if (this.type_arr.length === 0) {
 				return "—";

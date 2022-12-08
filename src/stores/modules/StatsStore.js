@@ -1,6 +1,9 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useDicStore } from "@/stores/DicStore";
+
+
 
 export const useStatsStore = defineStore({
 	id: 'StatsStore',
@@ -90,6 +93,58 @@ export const useStatsStore = defineStore({
       return stats_arr_save ? stats_arr_save : stats_arr_base;
     },
 
+    stats_Class_Page_Numb: (state) => (name) => {
+      const REC = state.stats_Race_Page_Numb(name);
+      let index = state.stats_Base_Arr.indexOf(name);
+      const base = state.stats_base_numb[index];
+      return REC + base;
+    },
+
+    stats_Mod: (state) => (name) => {
+      let base_numb = state.stats_Class_Page_Numb(name);
+      return Math.floor((base_numb - 10)/2);
+    },
+
+    stats_Save: (state) => (name) => {
+      const MYStore = useMYStore();
+      let save = MYStore.MY.class.saving.includes(name)
+      return save ? MYStore.Mastery : null;
+    },
+
+    stats_Save_Mod: (state) => (name) => {
+      let mod = state.stats_Mod(name);
+      let save = state.stats_Save(name);
+      return mod + save;
+    },
+
+    stats_Base_Settings_Full_T(state) {
+      const { t } = useDicStore();
+      let base_arr = this.stats_Base_Arr;
+      let arr = [];
+      for (let kay in base_arr) {
+        let index = base_arr.indexOf(base_arr[kay]);
+        let numb = state.stats_base_numb[index];
+        let str = t(base_arr[kay]).slice(0, 3);
+        let new_Str = str[0].toUpperCase() + str.slice(1);
+        arr.push(`${numb} ${new_Str}`);
+      }
+      return arr.map((n) => n).join(", ");
+    },
+
+    stats_Base_Settings_Two_T(state) {
+      const { t } = useDicStore();
+      let base_arr = this.stats_Base_Arr;
+      let arr = [];
+      for (let i = 0; i < 2; i++) {
+        let index = base_arr.indexOf(base_arr[i]);
+        let numb = state.stats_base_numb[index];
+        let str = t(base_arr[i]).slice(0, 3);
+        let new_Str = str[0].toUpperCase() + str.slice(1);
+        arr.push(`${numb} ${new_Str}`);
+      }
+      let text = arr.map((n) => n).join(", ")
+      return `${text}, ...`;
+    },
   },
   
   actions: {

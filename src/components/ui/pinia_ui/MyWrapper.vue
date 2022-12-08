@@ -4,6 +4,7 @@
 		:class="{
 			gap_6: gap_6,
 			gap_8: gap_8,
+			gap_16: gap_16,
 			gap_26: gap_26,
 		}"
 	>
@@ -21,6 +22,10 @@ export default {
 			default: false,
 		},
 		gap_8: {
+			type: Boolean,
+			default: false,
+		},
+    gap_16: {
 			type: Boolean,
 			default: false,
 		},
@@ -55,6 +60,10 @@ export default {
 
 .gap_8 {
 	gap: 8px;
+}
+
+.gap_16 {
+	gap: 16px;
 }
 
 .gap_26 {

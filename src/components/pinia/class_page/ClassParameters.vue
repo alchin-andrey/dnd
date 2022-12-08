@@ -1,17 +1,8 @@
 <template>
 	<!-- stats -->
-	<!-- <my-wrapper hr>
-			<my-attribute
-				v-for="name in stats_Keys"
-				:key="name"
-				:title="name"
-				:type="`${name}_base`"
-				plus
-				:numb="stats_Race_Page_Numb(name)"
-				:icon="name"
-			>
-			</my-attribute>
-		</my-wrapper> -->
+	<my-wrapper gap_16 hr>
+			<ClassStatsTable />
+	</my-wrapper>
 	<!-- stats -->
 
 	<!-- attributes_race -->
@@ -21,7 +12,7 @@
 				:key="name"
 				:title="name"
 				plus
-				:numb="skills_Mastery"
+				:numb="Mastery"
 				:icon="MY.skills[name].mod"
 			></my-attribute>
 		</my-wrapper> -->
@@ -153,6 +144,8 @@
 </template>
 
 <script>
+import ClassStatsTable from "@/components/pinia/class_page/settings/ClassStatsTable.vue";
+
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
@@ -163,13 +156,16 @@ import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "ClassParameters",
+  components: {
+		ClassStatsTable,
+	},
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["race_page"]),
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "Mastery"]),
 		// GETTERS
     ...mapState(useStatsStore, ["stats_Keys", "stats_Race_Page_Numb",]),
-    ...mapState(useSkillsStore, ["skills_Mastery", "skills_All_RE",]),
+    ...mapState(useSkillsStore, ["skills_All_RE",]),
     ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
     ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
 

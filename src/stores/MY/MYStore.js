@@ -15,7 +15,7 @@ export const useMYStore = defineStore({
 	//SECTION - GETTERS
 	getters: {
 		Mastery(state) {
-			return Math.ceil(state.MY.level / 4);
+			return 1 + Math.ceil(state.MY.level / 4);
 		},
 
 		ethnos_Setting(state) {

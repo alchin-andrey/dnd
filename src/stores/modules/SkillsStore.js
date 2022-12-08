@@ -28,10 +28,10 @@ export const useSkillsStore = defineStore({
 	}),
 
   getters: {
-    skills_Mastery() {
-      const MYStore = useMYStore();
-			return 1 + MYStore.Mastery;
-		},
+    // skills_Mastery() {
+    //   const MYStore = useMYStore();
+		// 	return MYStore.Mastery;
+		// },
 
     skills_Keys() {
       const MYStore = useMYStore();
