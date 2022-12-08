@@ -5,7 +5,7 @@
 			:key="ethnos"
 			no_blur
 			@click="getEthnosObj(ethnos)"
-      :active_boll_link="MY.ethnos.name === ethnos.name"
+			:active_boll_link="MY.ethnos.name === ethnos.name"
 		>
 			<div
 				class="ethnos_char_back"
@@ -81,13 +81,13 @@
 					:key="item"
 					:lvl="item.level"
 					:spell="item.spell"
-          select
+					select
 				>
 				</my-spell-text>
 			</my-wrapper>
 			<!-- Этнос_Карточка_spells -->
-			
-      <my-wrapper v-if="ethnos.settings">
+
+			<my-wrapper v-if="ethnos.settings">
 				<MyCusstomSetting
 					v-for="item in ethnos.settings"
 					:key="item"
@@ -97,7 +97,6 @@
 				>
 				</MyCusstomSetting>
 			</my-wrapper>
-
 
 			<!-- Этнос_Карточка_текст -->
 			<my-card-text
@@ -114,19 +113,24 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
+import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "EthnosCard",
 	computed: {
+		// STORE
 		...mapState(useMYStore, ["MY"]),
-    ...mapState(useMYStore, [
-      "stats_Pass_Arr_RE",
-      "skills_Pass_Arr_RE",
-      "languages_Pass_Arr_RE",
-      "spells_Pass_Arr_RE"]),
+		// GETTERS
+		...mapState(useStatsStore, ["stats_Pass_Arr_RE"]),
+		...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
+		...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
+		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
 
-    select_Sum() {
-      return (name) => this[`${name}_Pass_Arr_RE`].length
-    },
+		select_Sum() {
+			return (name) => this[`${name}_Pass_Arr_RE`].length;
+		},
 
 		shown_Spells_Ethnos: (state) => (spells) => {
 			let ethnos_spells = spells;
@@ -142,8 +146,6 @@ export default {
 
 		proficiencies_Arr_Ethnos: (state) => (obj, kay) => {
 			let ethnos_arr = obj.proficiencies?.[kay].map((x) => x.name);
-			// let incr = obj[`custom_${kay}`]?.[0];
-			// obj[`custom_${kay}`] ? ethnos_arr.push(`+${incr}`) : null;
 			return ethnos_arr;
 		},
 	},

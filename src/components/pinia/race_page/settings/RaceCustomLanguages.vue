@@ -38,18 +38,20 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 export default {
 	name: "RaceCustomLanguages",
 	computed: {
     // STORES
-		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["race_page"]),
     // GETTERS
-    ...mapState(useLanguagesStore, ["languages_Arr_Humman", "languages_Arr_Not_Humman",]),
-		...mapState(useMYStore, ["languages_Activ_Arr_RE", "languages_Custom_Arr_RE",]),
+    ...mapState(useLanguagesStore, [
+      "languages_Arr_Humman",
+      "languages_Arr_Not_Humman",
+      "languages_Activ_Arr_RE",
+      "languages_Custom_Arr_RE",
+    ]),
 
     Lang_Humman_Title() {
 			let title = this.t("languages_human");
@@ -82,7 +84,7 @@ export default {
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_Languages_RE"]),
+		...mapActions(useLanguagesStore, ["getCustomSelect_Languages_RE"]),
     ...mapActions(usePagesStore, ["showRaceScroll"]),
 	},
 };

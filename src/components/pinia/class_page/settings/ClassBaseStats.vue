@@ -3,7 +3,7 @@
 		<BaseStatsCard :stats_name="name" />
 	</my-selection-card>
   <my-selection-card 
-  v-if="class_page.stats_base_save[MY.class.name]"
+  v-if="stats_base_save[MY.class.name]"
   @click="defaultStats()"
   class="jbm-300 btm_text">
     {{t(MY.class.name)}} по дефолту
@@ -13,9 +13,9 @@
 <script>
 import BaseStatsCard from "@/components/pinia/class_page/settings/BaseStatsCard.vue";
 
-import { mapState, mapActions } from "pinia";
+import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "ClassBaseStats",
 	components: {
@@ -23,16 +23,15 @@ export default {
 	},
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY", "stats_Keys"]),
-		...mapState(usePagesStore, ["class_page"]),
+		...mapState(useMYStore, ["MY"]),
+    ...mapState(useStatsStore, ["stats_base_save"]),
 		// GETTERS
-    ...mapState(useMYStore, ["stats_Keys"]),
+    ...mapState(useStatsStore, ["stats_Keys"]),
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_Languages_RE"]),
     defaultStats() {
-      this.class_page.stats_base_save[this.MY.class.name] = null;
+      this.stats_base_save[this.MY.class.name] = null;
     },
 	},
 };

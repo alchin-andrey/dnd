@@ -39,10 +39,10 @@ export const useLanguagesStore = defineStore({
 			return arr;
 		},
 
-    languages_Activ_Obj_RE() {
+		languages_Activ_Obj_RE(state) {
       const MYStore = useMYStore();
-      let i = [];
-      let j = [];
+			let i = [];
+			let j = [];
 			if (MYStore.MY.race.proficiencies?.languages) {
 				i = Object.values(MYStore.MY.race.proficiencies?.languages);
 			}
@@ -52,24 +52,31 @@ export const useLanguagesStore = defineStore({
 			return i.concat(j);
 		},
 
-    languages_Activ_Arr_RE() {
-      let arr_obj = this.languages_Activ_Obj_RE;
-      let arr = [];
-      for (let indx in arr_obj) {
-        arr.push(arr_obj[indx].name);
-      }
+		languages_Activ_Arr_RE() {
+			let arr_obj = this.languages_Activ_Obj_RE;
+			let arr = [];
+			for (let indx in arr_obj) {
+				arr.push(arr_obj[indx].name);
+			}
 			return arr;
 		},
 
     languages_Pass_Arr_RE() {
 			return this.languages_Keys.filter(
-				el => !this.languages_Activ_Arr_RE.includes(el)
+				(el) => !this.languages_Activ_Arr_RE.includes(el)
 			);
 		},
 
-    languages_Custom_Arr_RE() {
+		languages_Custom_Arr_RE() {
       const MYStore = useMYStore();
-      return MYStore.COMMON_Custom_Arr_RE('languages');
-    },
+			return MYStore.COMMON_Custom_Arr_RE("languages");
+		},
   },
+
+  actions: {
+    getCustomSelect_Languages_RE(name) {
+      const MYStore = useMYStore();
+			MYStore.getCustomSelect_COMMON_RE("languages", name);
+		},
+  }
 });

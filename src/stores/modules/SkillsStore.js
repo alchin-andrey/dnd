@@ -33,35 +33,42 @@ export const useSkillsStore = defineStore({
 			return 1 + MYStore.Mastery;
 		},
 
-    // skills_Keys() {
-    //   const MYStore = useMYStore();
-		// 	return Object.keys(MYStore.MY.skills);
-		// },
+    skills_Keys() {
+      const MYStore = useMYStore();
+			return Object.keys(MYStore.MY.skills);
+		},
 
-    // skills_Activ_Obj_RE() {
-    //   const MYStore = useMYStore();
-		// 	let i = MYStore.MY.race.skills;
-		// 	let j = MYStore.MY.ethnos.skills;
-		// 	return Object.assign({}, i, j);
-		// },
+		skills_Activ_Obj_RE(state) {
+      const MYStore = useMYStore();
+			let i = MYStore.MY.race.skills;
+			let j = MYStore.MY.ethnos.skills;
+			return Object.assign({}, i, j);
+		},
 
-    // skills_Activ_Arr_RE() {
-		// 	return Object.keys(this.skills_Activ_Obj_RE);
-		// },
+		skills_Activ_Arr_RE() {
+			return Object.keys(this.skills_Activ_Obj_RE);
+		},
 
-    // skills_Pass_Arr_RE() {
-		// 	return this.skills_Keys.filter(
-		// 		el => !this.skills_Activ_Arr_RE.includes(el)
-		// 	);
-		// },
+		skills_Pass_Arr_RE() {
+			return this.skills_Keys.filter(
+				(el) => !this.skills_Activ_Arr_RE.includes(el)
+			);
+		},
 
-    // skills_All_RE() {
-		// 	return this.skills_Activ_Arr_RE.concat(this.skills_Custom_Arr_RE);
-		// },
+		skills_All_RE() {
+			return this.skills_Activ_Arr_RE.concat(this.skills_Custom_Arr_RE);
+		},
 
-    // skills_Custom_Arr_RE() {
-    //   const MYStore = useMYStore();
-    //   return MYStore.COMMON_Custom_Arr_RE('skills');
-    // },
+		skills_Custom_Arr_RE() {
+      const MYStore = useMYStore();
+			return MYStore.COMMON_Custom_Arr_RE("skills");
+		},
   },
+
+  actions: {
+    getCustomSelect_Skills_RE(name) {
+      const MYStore = useMYStore();
+			MYStore.getCustomSelect_COMMON_RE("skills", name);
+		},
+  }
 });

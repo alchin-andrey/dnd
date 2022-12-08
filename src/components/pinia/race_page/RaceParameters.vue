@@ -122,7 +122,11 @@
 import { mapState} from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 import { useMYStore } from "@/stores/MY/MYStore";
+
+import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
+import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "RaceParameters",
 	computed: {
@@ -130,22 +134,14 @@ export default {
 		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY"]),
     // GETTERS
-    ...mapState(useSkillsStore, ["skills_Mastery"]),
-    ...mapState(useMYStore, [
-      "stats_Keys",
-      "stats_Race_Page_Numb",
-      "skills_All_RE",
-      "languages_Custom_Arr_RE",
-      "spells_Custom_Obj_RE",
-    ]),
+    ...mapState(useStatsStore, ["stats_Keys", "stats_Race_Page_Numb",]),
+    ...mapState(useSkillsStore, ["skills_Mastery", "skills_All_RE",]),
+    ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
+    ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
 
     t_Story() {
       return this.t(this.MY.race.details)
     },
-
-    // skills_Mastery() {
-		// 	return 1 + this.MY.mastery;
-		// },
 
     shown_Spells_RE() {
 			let race_spells = this.MY.race.spells;

@@ -54,16 +54,6 @@ export const usePagesStore = defineStore({
       shown: {
         stats: false,
       },
-
-      stats_base_numb: [15, 14, 13, 12, 10, 8],
-
-      stats_base_save: {
-        barbarian: null,
-        paladin: null,
-        bard: null,
-        rogue: null,
-        fighter: null,
-      }
     },
 
     

@@ -120,27 +120,26 @@ import { useMYStore } from "@/stores/MY/MYStore";
 import { useColorStore } from "@/stores/modules/ColorStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
+import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "RaceMenuSettings",
 	computed: {
     // STORE
-		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY"]),
+		...mapState(usePagesStore, ["race_page"]),
     // GETTERS
     ...mapState(useColorStore, [
-      // "color_Char_Сommon",
       "skin_color_Char_Body",
       "eyes_color_Char_Body",
       "hair_color_Char_Body"
     ]),
-    ...mapState(useMYStore, [
-      "stats_Custom_Arr_RE",
-      "skills_Custom_Arr_RE",
-      "languages_Custom_Arr_RE",
-      "spells_Custom_Arr_RE",
-    ]),
 
-    // ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
+    ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
+    ...mapState(useSkillsStore, ["skills_Custom_Arr_RE"]),
+    ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
+    ...mapState(useSpellsStore, ["spells_Custom_Arr_RE"]),
 
     custom_Race_Settings_Visib() {
       return !this.stats_Custom_Arr_RE.length == 0 ||

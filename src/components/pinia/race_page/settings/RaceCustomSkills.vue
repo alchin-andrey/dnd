@@ -30,16 +30,15 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
-		...mapState(useMYStore, ["skills_Pass_Arr_RE", "skills_Custom_Arr_RE"]),
-    ...mapState(useSkillsStore, ["skills_Mastery"]),
-
-		// skills_Mastery() {
-		// 	return 1 + this.MY.mastery;
-		// },
+		...mapState(useSkillsStore, [
+			"skills_Mastery",
+			"skills_Pass_Arr_RE",
+			"skills_Custom_Arr_RE",
+		]),
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_Skills_RE"]),
+		...mapActions(useSkillsStore, ["getCustomSelect_Skills_RE"]),
 
 		getSkillMarg(i, name) {
 			if (i === 0) {

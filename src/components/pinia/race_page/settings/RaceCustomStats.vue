@@ -46,24 +46,17 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
-    ...mapState(useMYStore, [
+    ...mapState(useMYStore, ["ethnos_Setting"]),
+		...mapState(useStatsStore, [
 			"stats_Keys",
 			"stats_Pass_Arr_RE",
 			"stats_Custom_Arr_RE",
 			"stats_Race_Page_Numb",
-      "ethnos_Setting",
 		]),
-		// ...mapState(useStatsStore, [
-		// 	"stats_Keys",
-		// 	"stats_Pass_Arr_RE",
-		// 	"stats_Custom_Arr_RE",
-		// 	"stats_Race_Page_Numb",
-		// ]),
 	},
 
 	methods: {
-		...mapActions(useMYStore, ["getCustomSelect_Stats_RE"]),
-    // ...mapActions(useStatsStore, ["getCustomSelect_Stats_RE"]),
+    ...mapActions(useStatsStore, ["getCustomSelect_Stats_RE"]),
 	},
 };
 </script>

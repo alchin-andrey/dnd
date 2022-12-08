@@ -24,7 +24,7 @@
 				:key="numb"
 				@click="arr_StatsNeW(numb)"
 				:class="{
-					active: numb == class_page.stats_base_numb[stats_Index],
+					active: numb == stats_base_numb[stats_Index],
 				}"
 			>
 				{{ numb }}
@@ -36,18 +36,14 @@
 <script>
 import stats_icon from "@/assets/catalog/icon/stats_icon";
 
-import { mapState} from "pinia";
+import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useClassStore } from "@/stores/modules/ClassStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "BaseStatsCard",
 	data() {
 		return {
 			stats_icon: stats_icon,
-      stats_numb: [15, 14, 13, 12, 10, 8],
-			base_numb: [8, 10, 12, 13, 14, 15],
-			// active_stats: 14
 		};
 	},
 	props: {
@@ -58,11 +54,12 @@ export default {
 	},
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY", "stats_Keys", "stats_Base_Arr"]),
-		...mapState(usePagesStore, ["class_page"]),
-    ...mapState(useClassStore, ["class"]),
+		...mapState(useMYStore, ["MY"]),
+    ...mapState(useStatsStore, ["stats_base_numb", "stats_base_save"]),
 		// GETTERS
-		t_Title() {
+    ...mapState(useStatsStore, ["stats_Keys", "stats_Base_Arr"]),
+		
+    t_Title() {
 			return this.t(this.stats_name);
 		},
 
@@ -70,7 +67,7 @@ export default {
 			return this.t(`${this.stats_name}_base`);
 		},
     revers_Stats_Numb() {
-      let arr = this.class_page.stats_base_numb.slice(0)
+      let arr = this.stats_base_numb.slice(0)
       return arr.reverse()
     },
 
@@ -86,16 +83,16 @@ export default {
 		arr_StatsNeW(numb) {
       let arr_base = this.MY.class.stats_base.slice(0);
       let arr = this.stats_Base_Arr.slice(0);
-      let new_index = this.class_page.stats_base_numb.indexOf(numb);
+      let new_index = this.stats_base_numb.indexOf(numb);
       let old_index = this.stats_Index;
       let new_elem = arr[old_index];
       let old_elem = arr[new_index];
       arr.splice(old_index, 1, old_elem);
       arr.splice(new_index, 1, new_elem);
       if(arr.length == arr_base.length && arr.every((el, i) => arr_base[i] == el)) {
-        this.class_page.stats_base_save[this.MY.class.name] = null;
+        this.stats_base_save[this.MY.class.name] = null;
       } else {
-        this.class_page.stats_base_save[this.MY.class.name] = arr;
+        this.stats_base_save[this.MY.class.name] = arr;
       }
 		},
 	},
