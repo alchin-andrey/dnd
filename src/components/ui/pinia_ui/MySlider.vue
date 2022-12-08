@@ -24,11 +24,12 @@
 
 <script>
 import race from "@/assets/catalog/base_data/step1_races.js";
-import classes from "@/assets/catalog/base_data/step2_classes.js";
+// import classes from "@/assets/catalog/base_data/step2_classes.js";
 
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useClassStore } from "@/stores/modules/ClassStore";
 
 export default {
 	name: "MySlider",
@@ -50,7 +51,7 @@ export default {
 	data() {
 		return {
 			race: race,
-			class: classes,
+			// class: classes,
 		};
 	},
 
@@ -66,6 +67,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["pages"]),
+    ...mapState(useClassStore, ["class"]),
 
 		t_name() {
 			return this.t(this.name);

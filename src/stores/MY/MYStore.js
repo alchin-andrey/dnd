@@ -5,6 +5,7 @@ import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 // import { useStatsStore } from "@/stores/modules/StatsStore";
 // import { useSkillsStore } from "@/stores/modules/SkillsStore";
+import { usePagesStore } from "@/stores/pages/PagesStore";
 
 export const useMYStore = defineStore({
 	id: "MYStore",
@@ -83,6 +84,13 @@ export const useMYStore = defineStore({
 		stats_Custom_Arr_RE() {
 			return this.COMMON_Custom_Arr_RE("stats");
 		},
+
+    stats_Base_Arr() {
+      const PagesStore = usePagesStore();
+      let stats_arr_base = this.MY.class.stats_base;
+      let stats_arr_save = PagesStore.class_page.stats_base_save[this.MY.class.name];
+      return stats_arr_save ? stats_arr_save : stats_arr_base;
+    },
 
 		//ANCHOR - STATS (NUMB)
 		stats_RE_Numb: (state) => (name) => {

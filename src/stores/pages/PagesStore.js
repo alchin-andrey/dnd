@@ -14,8 +14,8 @@ export const usePagesStore = defineStore({
 			},
 		},
 		pages: {
-			race_page: true,
-			class_page: false,
+			race_page: false,
+			class_page: true,
 		},
 		page_open: null,
 		setting_open: null,
@@ -36,7 +36,7 @@ export const usePagesStore = defineStore({
         languages: false,
         spells: false,
       },
-  
+
       shown_humman_lang: false,
       
       color_selected: {
@@ -48,7 +48,25 @@ export const usePagesStore = defineStore({
       height_kof: 0.5,
       weight_kof: 0.5,
       age_kof: 0.5,
-    }
+    },
+
+    class_page: {
+      shown: {
+        stats: false,
+      },
+
+      stats_base_numb: [15, 14, 13, 12, 10, 8],
+
+      stats_base_save: {
+        barbarian: null,
+        paladin: null,
+        bard: null,
+        rogue: null,
+        fighter: null,
+      }
+    },
+
+    
 	}),
 	
   actions: {
@@ -93,6 +111,10 @@ export const usePagesStore = defineStore({
         this.showSettings("race_page", name);
       }
     },
+
+    showSettings__Class(name) {
+			this.showSettings("class_page", name);
+		},
 
     closeEthnos() {
       const MYStore = useMYStore();

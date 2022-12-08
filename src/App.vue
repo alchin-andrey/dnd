@@ -30,6 +30,7 @@
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
 				<RaceMenuSettings v-if="pages.race_page" />
+        <ClassMenuSettings v-if="pages.class_page"/>
 			</div>
 			<transition v-if="pages.race_page" name="btm-fade" mode="out-in">
 				<my-button
@@ -54,6 +55,7 @@
 				<my-button-back
 					v-else
 					title="command_back"
+          @click="showHome()"
 				></my-button-back>
 			</transition>
 		</div>
@@ -63,6 +65,7 @@
 	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: setting_open }">
 		<HeaderSettings />
 		<RaceSettings v-if="pages.race_page" />
+		<ClassSettings v-if="pages.class_page" />
 	</div>
 
 	<div class="stripe"></div>
@@ -107,8 +110,8 @@
 </template>
 
 <script>
-import race from "@/assets/catalog/base_data/step1_races.js";
-import clas from "@/assets/catalog/base_data/step2_classes.js";
+// import race from "@/assets/catalog/base_data/step1_races.js";
+// import clas from "@/assets/catalog/base_data/step2_classes.js";
 
 import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
 
@@ -120,6 +123,8 @@ import RaceMenuSettings from "@/components/pinia/race_page/settings/RaceMenuSett
 import RaceSettings from "@/components/pinia/race_page/settings/RaceSettings.vue";
 import RaceParameters from "@/components/pinia/race_page/RaceParameters.vue";
 // CLASS_PAGE
+import ClassMenuSettings from "@/components/pinia/class_page/settings/ClassMenuSettings.vue";
+import ClassSettings from "@/components/pinia/class_page/settings/ClassSettings.vue";
 import ClassParameters from "@/components/pinia/class_page/ClassParameters.vue";
 
 import { mapState, mapActions } from "pinia";
@@ -137,14 +142,16 @@ export default {
 		RaceSettings,
 		RaceParameters,
     // CLASS_PAGE
+    ClassMenuSettings,
+    ClassSettings,
     ClassParameters,
 
 	},
 
 	data() {
 		return {
-			race: race,
-			clas: clas,
+			// race: race,
+			// clas: clas,
 		};
 	},
 
@@ -330,7 +337,7 @@ a {
 	font-family: "JetBrains Mono";
 	font-style: normal;
 	font-weight: 300;
-	font-size: 10.95px;
+	font-size: 11px;
 	line-height: 18px;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
