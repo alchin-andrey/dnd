@@ -2,7 +2,7 @@
   <div class="column_value jbm-300">
     <div class="base pad-52 grey">{{t_Base}}</div>
     <div class="mod">{{t_Save}}</div>
-    <div class="mod">модификатор</div>
+    <div class="mod">{{t_Mod}}</div>
   </div>
   <my-wrapper>
 	<div class="column_value jbm-300" v-for="name in stats_Keys" :key="name">
@@ -78,6 +78,10 @@ export default {
 
     t_Save() {
 			return this.t("saving");
+		},
+
+    t_Mod() {
+			return this.t("modifier");
 		},
 
 		t_Stats_Name() {
