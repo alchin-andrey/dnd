@@ -892,7 +892,7 @@ export default {
     ffolk:"ффолк",
     ffolk_details: races.ffolk_human,
 
-    halruanian:"халруанин",
+    halruanian:"халруанець",
     halruanian_details: races.halruanian_human,
 
     chondatan:"чондатанець",
