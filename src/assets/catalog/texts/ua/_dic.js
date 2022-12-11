@@ -1112,7 +1112,7 @@ export default {
     mana:"мана",
 
     //parts
-    parts: "части",
+    parts: "умови",
     verbal:"слово",
     somatic:"жест",
     touch:"дотик ціли",
