@@ -62,6 +62,7 @@ export default {
 
 .col_title {
 	margin-right: 14px;
+  width: 45px;
 	display: flex;
 }
 
