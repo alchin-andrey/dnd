@@ -219,7 +219,6 @@ export default {
         type: "plus",
         keyword: "extra_movement",
         details: "rage_half_speed",
-        // приписать к заклинанию Ярость?
       },
       {
         level: 9,
@@ -232,7 +231,6 @@ export default {
         type: "plus",
         keyword: "rage_persistence",
         details: "rage_persistence_details",
-        // приписать к заклинанию Ярость?
       },
       {
         level: 13,
@@ -245,7 +243,6 @@ export default {
         type: "plus",
         keyword: "rage_sustainability",
         details: "only_if_uncontious",
-        // убрать из заклинания Ярость?
       },
       {
         level: 17,
