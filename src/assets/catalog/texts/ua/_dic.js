@@ -839,7 +839,7 @@ export default {
     grey:"сірий",
     grey_dwarf_details: races.grey_dwarf,
 
-    hill:"холмовий",
+    hill:"пагорбовий",
     hill_dwarf_details: races.hill_dwarf,
 
     //Human
