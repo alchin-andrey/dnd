@@ -194,6 +194,8 @@ export default {
         //Example: +4 ⬜️⬜️⬜️⬜️
     },
 
+    // --------------- NOT A SPELL FOO BELOW --------------------------
+
     //NEW - Nov 22
 
     Str_Plus_CHA(str)
@@ -237,5 +239,7 @@ export default {
 
     Pls_Lvl(){},
 
-    
+    // New - Dec 13
+
+    Num_CON(){},
 }

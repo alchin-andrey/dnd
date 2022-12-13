@@ -176,8 +176,8 @@ export default {
         size_medium:"середній",
         size_big:"великий",
 
-    HP_max:"max HP",
-    HP_dice:"реген",
+    hp_max:"max HP",
+    hp_dice:"реген",
 
     proficiency:"майстерність",
     initiative:"ініціатива",
@@ -1150,7 +1150,7 @@ export default {
     cilinder: "циліндр",
     sphere: "сфера",
 
-    saving_target: "випробування цілі",
+    saving_target: "випробування",
     aim_bonus: "влучність",
     aim_range: "дальність",
 
@@ -2087,6 +2087,10 @@ export default {
     spell_divine_sense: spells.divine_sense,
     spell_divine_sense_details: spells.divine_sense_details,
     spell_divine_sense_expanded: spells.divine_sense_expanded,
+
+    spell_paladin_divine_smite: spells.paladin_divine_smite,
+    spell_paladin_divine_smite_details: spells.paladin_divine_smite_details,
+    spell_paladin_divine_smite_expanded: spells.paladin_divine_smite_expanded,
 
     stock: "запас",
 

@@ -176,8 +176,8 @@ export default {
         size_medium:"средний",
         size_big:"большой",
 
-    HP_max:"max HP",
-    HP_dice:"кости хитов",
+    hp_max:"max HP",
+    hp_dice:"реген",
 
     proficiency:"мастерство",
     initiative:"инициатива",
@@ -1150,7 +1150,7 @@ export default {
     cilinder: "цилиндр",
     sphere: "сфера",
 
-    saving_target: "испытание цели",
+    saving_target: "испытание",
     aim_bonus: "меткость",
     aim_range: "дальность",
 
