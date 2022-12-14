@@ -54,19 +54,6 @@ const example = {
       speed_bonus: 10,
       initiative: 2,
       armor_class: 2,
-      mana1: 4,
-      mana2: 3,
-      mana3: 2,
-      mana4: 1,
-      mana5: 1,
-      mana6: 1,
-      mana7: 1,
-      mana8: 1,
-      mana9: 1,
-      sorcery_points: 5,
-      chi_points: 34,
-      divine_channel: 2,
-      supremacy_points: 6,
     },
   ],
 
@@ -167,7 +154,7 @@ export default {
 
     stats: [
       {
-        initiative: 5,
+        initiative_bonus: 5,
       },
     ],
 

@@ -1206,7 +1206,7 @@ export default {
     {
       name: "spell_wolf_knock",
       details: "spell_wolf_knock_details",
-      expanded: null,
+      expanded: "spell_wolf_knock_expanded",
 
       type: "ability",
       classes: [],
@@ -1408,7 +1408,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "reaction",
+      cast_time: "bonus_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -1447,7 +1447,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "bonus_action",
+      cast_time: "reaction",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5148,8 +5148,8 @@ export default {
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
-      aim_type: null,
+      aim_target: "point",
+      aim_type: "near",
       aim_range: null,
 
       parts: ["verbal", "somatic"],

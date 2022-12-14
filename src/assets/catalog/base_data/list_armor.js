@@ -21,7 +21,7 @@ export default {
         name: "armor_chainmail",
         details: "armor_chainmail_details",
         type: [armory.heavy],
-        armor_bonus: 16,
+        armor_class: 16,
         cost: 1000,
         weight: 6,
     },

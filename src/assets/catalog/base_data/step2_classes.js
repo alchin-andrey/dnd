@@ -179,6 +179,10 @@ export default {
 
     qualities: [
       {
+        level:1,
+        armor_bonus: "Num_CON",
+      },
+      {
         level: 5,
         speed_bonus: 10,
       }
@@ -190,11 +194,6 @@ export default {
         type: "resistance",
         keyword: "no_armor_protection",
         details: "armor_constitution",
-
-        // when without heavy armor
-        condition: "if_no_heavy_armor",
-        key: "armor_bonus",
-        value: "this.$root.MY.stats.constitution.mod",
       },
       {
         level: 2,
