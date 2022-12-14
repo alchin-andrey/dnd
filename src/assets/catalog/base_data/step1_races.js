@@ -94,10 +94,10 @@ export default {
 
             // По левелу перса
 
-            // {
-            //   level: 1,
-            //   spell: spells.lay_on_hands,
-            // },
+            {
+              level: 1,
+              spell: spells.cure_wounds,
+            },
 
             // {
             //   level: 1,
