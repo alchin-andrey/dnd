@@ -78,10 +78,10 @@
 		<div class="text_spell" v-html="t_Text"></div>
 
 		<my-wrapper gap_6>
-			<my-spell-main title="cast_time" :text="t_Cast_Value" />
-			<my-spell-main title="aim_target" :text="t_Target_Value" />
 			<my-spell-main title="parts" :text="t_Parts_Value" emoji />
+			<my-spell-main title="cast_time" :text="t_Cast_Value" />
 			<my-spell-main title="time" :text="t_Time_Value" />
+			<my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save"/>
 		</my-wrapper>
 		<my-wrapper
 			v-if="
@@ -91,12 +91,6 @@
 				Spell_Index.aim_aoe
 			"
 		>
-			<magic-attribute
-				v-if="Spell_Index.aim_need"
-				title="aim_bonus"
-				:numb="this.Mastery"
-				plus
-			/>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
 				:title="Spell_Index.impact_type"
@@ -108,21 +102,28 @@
 				main
 			/>
 			<magic-attribute
-				v-if="Spell_Index.aim_range"
-				title="aim_range"
-				:numb="Spell_Index.aim_range"
-			/>
-			<magic-attribute
 				v-if="Spell_Index.aim_aoe"
 				title="aim_aoe"
 				:prefix="Spell_Index.aim_aoe"
 				:numb="by_Mana('aim_aoe_size')"
 			/>
+    <!-- Меткость -->
+			<magic-attribute
+				v-if="Spell_Index.aim_need"
+				title="aim_bonus"
+				:numb="Mastery"
+				plus
+			/>
+			<magic-attribute
+				v-if="Spell_Index.aim_range"
+				title="aim_range"
+				:numb="Spell_Index.aim_range"
+			/>
 		</my-wrapper>
-		<my-wrapper v-if="Spell_Index.saving_need">
+		<!-- <my-wrapper v-if="Spell_Index.saving_need">
 			<magic-attribute
 				v-if="Spell_Index.saving_need"
-				title="saving_target"
+				title="saving"
 				:prefix="Spell_Index.saving_attribute"
 				:numb="Saving_Numb"
 			/>
@@ -131,7 +132,7 @@
 				title="if_succeed"
 				:save="Spell_Index.impact_size_saved"
 			/>
-		</my-wrapper>
+		</my-wrapper> -->
 		<div class="hr"></div>
 		<div class="text_spell gray_4" v-html="t_Expanded"></div>
 	</my-dialog-spell>
@@ -286,6 +287,14 @@ export default {
 			let stats_mod = this.MY.stats[attribute].mod;
 			return KOF + mastery + stats_mod;
 		},
+
+    t_Save() {
+      if (this.Spell_Index.saving_attribute) {
+        return `${this.T("saving")} ${this.T(this.Spell_Index.saving_attribute)} ${this.Saving_Numb} — ${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved}`;
+      } else {
+        return null;
+      }
+    },
 
 		t_Expanded() {
 			return this.t(this.Spell_Index.expanded);

@@ -158,7 +158,7 @@ export default {
 
     hp_dice: 12,
     // x: hp_dice/2 + 1;
-    // hp_max: hp_dice + con.mod + ( x + con.mod(min=1) ) * ( lvl - 1 ) + hp_bonus
+    // hp_max: hp_dice + con.mod + ( x + con.mod ) * ( lvl - 1 ) + hp_bonus
     //regen: = lvl * hp_dice
 
     proficiencies: {
