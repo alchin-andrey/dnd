@@ -8,6 +8,7 @@
 			basic: basic,
 			selection_card_active: get_Active,
 			link: link,
+      copy_card: copy,
 		}"
 	>
 		<div v-if="copy" class="copy_icon">
@@ -97,11 +98,16 @@ export default {
 <style scoped>
 .active_card {
 	cursor: pointer;
-	fill-opacity: 0.4;
 }
 
 .active_card:hover {
 	background: rgba(255, 255, 255, 0.1);
+}
+.copy_card {
+  fill-opacity: 0.4;
+}
+
+.copy_card:hover {
 	fill-opacity: 1;
 }
 

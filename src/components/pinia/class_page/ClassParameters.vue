@@ -1,146 +1,221 @@
 <template>
-	<!-- stats -->
-	<my-wrapper gap_16 hr>
+  <transition name="mode-fade" mode="out-in">
+	<section v-if="!class_page.shown.stats">
+		<!-- stats -->
+		<my-wrapper gap_16 hr>
 			<ClassStatsTable />
-	</my-wrapper>
-	<!-- stats -->
+		</my-wrapper>
+		<!-- stats -->
 
-	<!-- attributes_race -->
-	<!-- <my-wrapper hr v-if="skills_All_RE.length !== 0">
+		<!-- attributes -->
+		<my-wrapper hr v-if="skills_All_RE.length !== 0">
 			<my-attribute
 				v-for="name in skills_All_RE"
 				:key="name"
 				:title="name"
 				plus
-				:numb="Mastery"
+				:numb="null"
+				:old_numb="skills_Old_Numb(MY.skills[name].mod)"
 				:icon="MY.skills[name].mod"
+				:save="MY.class.saving"
 			></my-attribute>
-		</my-wrapper> -->
-	<!-- attributes_race -->
+		</my-wrapper>
+		<!-- attributes -->
 
-	<!-- qualities -->
-	<!-- <my-wrapper hr>
+		<!-- qualities -->
+		<my-wrapper hr all>
 			<my-attribute
-				v-for="(val, name) in MY.qualities"
+				v-if="initiative_Numb"
+				title="initiative"
+				:numb="initiative_Numb"
+				plus
+			></my-attribute>
+			<my-attribute
+				v-if="qualities_Numb_Class('speed')"
+				title="speed"
+				:numb="qualities_Numb_Class('speed')"
+				feet
+			></my-attribute>
+			<my-attribute
+				v-if="qualities_Numb_Class('vision_night')"
+				title="vision_night"
+				:numb="qualities_Numb_Class('vision_night')"
+				feet
+			></my-attribute>
+			<!-- <my-attribute
+  				v-for="(val, name) in MY.qualities"
+  				:key="name"
+  				:title="name"
+  				:numb="qualities_Numb_Class(name)"
+  				feet
+  			></my-attribute> -->
+			<my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
+			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
+			<my-attribute
+				title="hp_dice"
+				:numb="MY.level"
+				:dice="MY.class.hp_dice"
+			></my-attribute>
+		</my-wrapper>
+		<!-- qualities -->
+
+		<!-- //NOTE - proficiencies -->
+		<my-wrapper gap_8 hr>
+			<my-inventory
+				v-for="(val, name) in MY.proficiencies"
 				:key="name"
 				:title="name"
-				:numb="qualities_Numb_RE(name)"
-				feet
-				:icon="name"
+				:item="proficiencies_Arr_Class(name)"
+				:item_old="proficiencies_Arr_REC(name)"
+			>
+			</my-inventory>
+		</my-wrapper>
+		<!-- //!NOTE - proficiencies -->
+
+		<!-- //NOTE - fines -->
+		<my-wrapper
+			v-if="MY.race.fines || MY.ethnos.fines || MY.class.fines"
+			gap_8
+			hr
+		>
+			<!-- RACE -->
+			<my-fines
+				v-for="item in MY.race.fines"
+				:key="item"
+				:icon="item.type"
+				:title="item.keyword"
+				:details="item.details"
+				passive
+			></my-fines>
+
+			<my-fines
+				v-for="item in MY.ethnos.fines"
+				:key="item"
+				:icon="item.type"
+				:title="item.keyword"
+				:details="item.details"
+				passive
+			></my-fines>
+			<!-- RACE -->
+			<!-- CLASS -->
+			<my-fines
+				v-for="item in MY.class.fines"
+				:key="item"
+				:lvl="item.level"
+				:icon="item.type"
+				:title="item.keyword"
+				:details="item.details"
+			></my-fines>
+			<!-- CLASS -->
+		</my-wrapper>
+		<!-- //!NOTE - fines -->
+
+		<!-- //NOTE - spells -->
+		<!-- RACE -->
+		<my-wrapper v-if="shown_Spells_All" gap_26 hr>
+			<my-spell-text
+				v-for="item in MY.race.spells"
+				:key="item"
+				:lvl="item.level"
+				:spell="item.spell"
+				passive
+			>
+			</my-spell-text>
+			<my-spell-text
+				v-for="item in MY.ethnos.spells"
+				:key="item"
+				:lvl="item.level"
+				:spell="item.spell"
+				passive
+			>
+			</my-spell-text>
+			<my-spell-text
+				v-for="item in spells_Custom_Obj_RE"
+				:key="item"
+				:lvl="1"
+				:spell="item"
+				passive
+			>
+			</my-spell-text>
+			<!-- RACE -->
+			<!-- CLASS -->
+			<my-spell-text
+				v-for="item in MY.class.spells"
+				:key="item"
+				:lvl="item.level"
+				:spell="item.spell"
+			>
+			</my-spell-text>
+			<!-- CLASS -->
+		</my-wrapper>
+		<!-- //!NOTE - spells -->
+
+		<!-- //NOTE - text -->
+		<div class="story int-400">
+			<div v-html="t_Story"></div>
+			<!-- <my-card-text
+  				v-if="MY.ethnos.name !== 'common'"
+  				:title="MY.ethnos.name"
+  				:text="MY.ethnos.details"
+  				:rare="MY.ethnos.rare"
+  			>
+  			</my-card-text> -->
+		</div>
+	</section>
+
+  <section v-else>
+		<!-- qualities-stats -->
+		<my-wrapper hr>
+			<my-attribute
+				v-if="initiative_Numb"
+				title="initiative"
+				:numb="initiative_Numb"
+				plus
 			></my-attribute>
 			<my-attribute
-				v-if="MY.ethnos.hp_bonus"
-				title="hp_bonus"
-				:numb="hp_Bonus"
-				plus
-				icon="hp_bonus"
+				v-if="qualities_Numb_Class('speed')"
+				title="speed"
+				:numb="qualities_Numb_Class('speed')"
+				feet
 			></my-attribute>
-		</my-wrapper> -->
-	<!-- qualities -->
-
-	<!-- //NOTE - proficiencies -->
-	<my-wrapper gap_8 hr>
-		<my-inventory
-			v-for="(val, name) in MY.proficiencies"
-			:key="name"
-			:title="name"
-			:item="proficiencies_Arr_Class(name)"
-			:item_old="proficiencies_Arr_REC(name)"
-		>
-		</my-inventory>
-	</my-wrapper>
-	<!-- //!NOTE - proficiencies -->
-
-	<!-- //NOTE - fines -->
-	<my-wrapper
-		v-if="MY.race.fines || MY.ethnos.fines || MY.class.fines"
-		gap_8
-		hr
-	>
-		<!-- RACE -->
-		<my-fines
-			v-for="item in MY.race.fines"
-			:key="item"
-			:icon="item.type"
-			:title="item.keyword"
-			:details="item.details"
-			passive
-		></my-fines>
-
-		<my-fines
-			v-for="item in MY.ethnos.fines"
-			:key="item"
-			:icon="item.type"
-			:title="item.keyword"
-			:details="item.details"
-			passive
-		></my-fines>
-		<!-- RACE -->
-		<!-- RACE -->
-		<!-- CLASS -->
-		<my-fines
-			v-for="item in MY.class.fines"
-			:key="item"
-			:lvl="item.level"
-			:icon="item.type"
-			:title="item.keyword"
-			:details="item.details"
-		></my-fines>
-		<!-- CLASS -->
-	</my-wrapper>
-	<!-- //!NOTE - fines -->
-
-	<!-- //NOTE - spells -->
-	<!-- RACE -->
-	<my-wrapper v-if="shown_Spells_All" gap_26 hr>
-		<my-spell-text
-			v-for="item in MY.race.spells"
-			:key="item"
-			:lvl="item.level"
-			:spell="item.spell"
-			passive
-		>
-		</my-spell-text>
-		<my-spell-text
-			v-for="item in MY.ethnos.spells"
-			:key="item"
-			:lvl="item.level"
-			:spell="item.spell"
-			passive
-		>
-		</my-spell-text>
-		<my-spell-text
-			v-for="item in spells_Custom_Obj_RE"
-			:key="item"
-			:lvl="1"
-			:spell="item"
-			passive
-		>
-		</my-spell-text>
-		<!-- RACE -->
-		<!-- CLASS -->
-		<my-spell-text
-			v-for="item in MY.class.spells"
-			:key="item"
-			:lvl="item.level"
-			:spell="item.spell"
-		>
-		</my-spell-text>
-		<!-- CLASS -->
-	</my-wrapper>
-	<!-- //!NOTE - spells -->
-
-	<!-- //NOTE - text -->
-	<div class="story int-400">
-		<div v-html="t_Story"></div>
-		<!-- <my-card-text
-				v-if="MY.ethnos.name !== 'common'"
-				:title="MY.ethnos.name"
-				:text="MY.ethnos.details"
-				:rare="MY.ethnos.rare"
-			>
-			</my-card-text> -->
-	</div>
+			<my-attribute
+				v-if="qualities_Numb_Class('vision_night')"
+				title="vision_night"
+				:numb="qualities_Numb_Class('vision_night')"
+				feet
+			></my-attribute>
+			<!-- <my-attribute
+        v-for="(val, name) in MY.qualities"
+        :key="name"
+        :title="name"
+        :numb="qualities_Numb_Class(name)"
+        feet
+      ></my-attribute> -->
+			<my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
+			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
+			<my-attribute
+				title="hp_dice"
+				:numb="MY.level"
+				:dice="MY.class.hp_dice"
+			></my-attribute>
+		</my-wrapper>
+		<!-- qualities-stats -->
+		<!-- attributes-stats -->
+		<my-wrapper>
+			<my-attribute
+				v-for="(name, i) in skills_Keys"
+				:key="name"
+				:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
+				:title="name"
+				plus
+				:numb="stats_Mod(MY.skills[name].mod)"
+				:icon="MY.skills[name].mod"
+				:save="MY.class.saving"
+			></my-attribute>
+		</my-wrapper>
+		<!-- attributes-stats -->
+	</section>
+</transition>
 </template>
 
 <script>
@@ -156,18 +231,22 @@ import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "ClassParameters",
-  components: {
+	components: {
 		ClassStatsTable,
 	},
 	computed: {
 		// STORE
-		...mapState(usePagesStore, ["race_page"]),
+		...mapState(usePagesStore, ["race_page", "class_page"]),
 		...mapState(useMYStore, ["MY", "Mastery"]),
 		// GETTERS
-    ...mapState(useStatsStore, ["stats_Keys", "stats_Race_Page_Numb",]),
-    ...mapState(useSkillsStore, ["skills_All_RE",]),
-    ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
-    ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
+		...mapState(useStatsStore, [
+			"stats_Keys",
+			"stats_Race_Page_Numb",
+			"stats_Mod",
+		]),
+		...mapState(useSkillsStore, ["skills_All_RE", "skills_Keys"]),
+		...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
+		...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
 
 		t_Story() {
 			return this.t(this.MY.class.details);
@@ -202,21 +281,82 @@ export default {
 			);
 		},
 
-		// hp_Bonus() {
-		// 	let increm_1 = this.MY.ethnos.hp_bonus[0];
-		// 	let increm_2 = this.MY.ethnos.hp_bonus[1];
-		// 	let level = Math.ceil(this.MY.level / increm_1);
-		// 	return level * increm_2;
-		// },
+		getSkillMarg: () => (i, name) => {
+			if (i === 0) {
+				return true;
+			}
+			let obj = Object.values(name);
+			if (obj[i].mod !== obj[i - 1].mod) {
+				return true;
+			}
+			return false;
+		},
 
-		// qualities_Numb_RE: (state) => (name) => {
-		// 	let summ = 0;
-		//   let race_numb = state.MY.race.qualities?.[name];
-		// 	let ethnos_numb = state.MY.ethnos.qualities?.[name];
-		// 	race_numb ? summ += race_numb : 0
-		// 	ethnos_numb ? summ += ethnos_numb : 0
-		// 	return summ;
-		// },
+		hp_Bonus() {
+			if (this.MY.ethnos.hp_bonus) {
+				let increm_1 = this.MY.ethnos.hp_bonus[0];
+				let increm_2 = this.MY.ethnos.hp_bonus[1];
+				let level = Math.ceil(this.MY.level / increm_1);
+				return level * increm_2;
+			} else {
+				return 0;
+			}
+		},
+
+		skills_Old_Numb: (state) => (name) => {
+			let mod = state.stats_Mod(name);
+			return state.Mastery + mod;
+		},
+
+		armor_Numb() {
+			let dex_mod = this.stats_Mod("dexterity");
+			return 10 + dex_mod;
+		},
+
+		hp_Max() {
+			let hp_dice = this.MY.class.hp_dice;
+			let x = Math.ceil(hp_dice / 2) + 1;
+			let con_mod = this.stats_Mod("constitution");
+			let lvl = this.MY.level;
+			let hp_bonus = this.hp_Bonus;
+			return hp_dice + con_mod + (x + con_mod) * (lvl - 1) + hp_bonus;
+		},
+
+		initiative_Numb() {
+			return this.stats_Mod("dexterity");
+		},
+
+		regen_Numb() {
+			let hp_dice = this.MY.class.hp_dice;
+			let lvl = this.MY.level;
+			return hp_dice * lvl;
+		},
+
+		qualities_Numb_RE: (state) => (name) => {
+			let summ = 0;
+			let race_numb = state.MY.race.qualities?.[name];
+			let ethnos_numb = state.MY.ethnos.qualities?.[name];
+			race_numb ? (summ += race_numb) : 0;
+			ethnos_numb ? (summ += ethnos_numb) : 0;
+			return summ;
+		},
+
+		qualities_Find(state) {
+			return (name) => state.MY.class.qualities?.find((item) => item[name]);
+		},
+
+		qualities_Numb_Class: (state) => (name) => {
+			let numb_RE = state.qualities_Numb_RE(name);
+			let qual_obj = state.qualities_Find(`${name}_bonus`);
+			let numb_bonus = 0;
+			let lvl = state.MY.level;
+			if (qual_obj) {
+				let qual_bonus = qual_obj[`${name}_bonus`];
+				let qual_lvl = qual_obj.level;
+				lvl >= qual_lvl ? (numb_bonus = qual_bonus) : 0;
+			}
+			return numb_RE + numb_bonus;
+		},
 
 		proficiencies_Arr: (state) => (obj, kay) => {
 			let arr = [];
@@ -237,10 +377,27 @@ export default {
 			return race_prof.concat(ethnos_prof).concat(custom_prof);
 		},
 
-    proficiencies_Arr_Class: (state) => (kay) => {
-			let class_prof = state.proficiencies_Arr(state.MY.class.proficiencies, kay);
+		proficiencies_Arr_Class: (state) => (kay) => {
+			let class_prof = state.proficiencies_Arr(
+				state.MY.class.proficiencies,
+				kay
+			);
 			return class_prof;
 		},
 	},
 };
 </script>
+
+<style scoped>
+.skill_marg:not(:first-child) {
+	margin-top: 16px;
+}
+
+.mode-fade-enter-active, .mode-fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+.mode-fade-enter-from, .mode-fade-leave-to {
+  opacity: 0;
+}
+</style>

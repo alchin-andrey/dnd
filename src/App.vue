@@ -4,10 +4,11 @@
 		<div class="main_chapter">
 			<Header />
 
-			<MyBackPage 
-      v-if="pages.class_page" 
-      :text_arr="arr_Name_RE" 
-      @click="racePage()" />
+			<MyBackPage
+				v-if="pages.class_page"
+				:text_arr="arr_Name_RE"
+				@click="racePage()"
+			/>
 
 			<div v-if="!pages.race_page" class="delimiter"></div>
 			<my-slider
@@ -30,7 +31,7 @@
 		<div class="main_menu_wrap">
 			<div class="main_chapter_menu">
 				<RaceMenuSettings v-if="pages.race_page" />
-        <ClassMenuSettings v-if="pages.class_page"/>
+				<ClassMenuSettings v-if="pages.class_page" />
 			</div>
 
 			<transition v-if="pages.race_page" name="btm-fade" mode="out-in">
@@ -57,10 +58,9 @@
 				<my-button-back
 					v-else
 					title="command_back"
-          @click="showHome()"
+					@click="showHome()"
 				></my-button-back>
 			</transition>
-      
 		</div>
 	</div>
 
@@ -75,6 +75,7 @@
 	<!-- Персонаж -->
 
 	<div class="represent">
+  <transition name="fade-body">
 		<div
 			class="character"
 			:class="{
@@ -87,15 +88,16 @@
 		>
 			<WelcomeBanner />
 
-			<RaceBody body_part="skin" />
-			<RaceBody body_part="eyes" />
-			<RaceBody body_part="hair" />
-			<RaceBody body_part="class" v-if="!pages.race_page" />
+					<RaceBody body_part="skin" />
+					<RaceBody body_part="eyes" />
+					<RaceBody body_part="hair" />
+					<RaceBody body_part="class" v-if="!pages.race_page" />
 
 			<transition name="slide-fade">
 				<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
 			</transition>
 		</div>
+  </transition>
 	</div>
 	<!-- Персонаж -->
 
@@ -103,10 +105,10 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: !shown_home }"
+		:class="{ sidebar_right_close: !shown_home && !class_page.shown.stats }"
 	>
 		<RaceParameters v-if="pages.race_page" />
-    <ClassParameters v-if="pages.class_page" />
+		<ClassParameters v-if="pages.class_page" />
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
@@ -141,11 +143,10 @@ export default {
 		RaceMenuSettings, //TODO: Сылки на рост, вес, возраст
 		RaceSettings,
 		RaceParameters,
-    // CLASS_PAGE
-    ClassMenuSettings,
-    ClassSettings,
-    ClassParameters,
-
+		// CLASS_PAGE
+		ClassMenuSettings,
+		ClassSettings,
+		ClassParameters,
 	},
 
 	created() {
@@ -158,13 +159,14 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, [
 			"race_page",
+			"class_page",
 			"shown_home",
 			"setting_open",
 			"pages",
 		]),
 		//GETTERS
 
-		Mastery() {
+		Mastery() {    
 			return Math.ceil(this.MY.level / 4);
 		},
 
@@ -253,14 +255,14 @@ export default {
 
 		classPage() {
 			// this.pages.race_page = !this.pages.race_page;
-			this.pages.race_page = false
-			this.pages.class_page = true
+			this.pages.race_page = false;
+			this.pages.class_page = true;
 		},
 
-    racePage() {
+		racePage() {
 			// this.pages.race_page = !this.pages.race_page;
-			this.pages.class_page = false
-			this.pages.race_page = true
+			this.pages.class_page = false;
+			this.pages.race_page = true;
 		},
 
 		getCreated() {
@@ -508,6 +510,16 @@ a {
 	color: #ffffff;
 	margin-top: 25px;
 	margin-bottom: 5px;
+}
+
+.fade-body-enter-active,
+.fade-body-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-body-enter-from,
+.fade-body-leave-to {
+  opacity: 0;
 }
 
 .slide-fade-enter-active {

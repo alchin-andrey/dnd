@@ -3,12 +3,17 @@
 		<div class="column_value">
 			<div class="icon">
         <svg
+        class="active_svg"
+        :class="{
+          not_save_svg: save.length !== 0 && !save.includes(icon) && !numb == 0,
+					save_svg: save.includes(icon),
+				}"
         width="18"
         height="18"
         viewBox="0 0 18 18"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        v-html="atribute_icon[icon]"
+        v-html="atribute_icon[icon_Image]"
       />
 				<!-- <img :src="icon_Image" :alt="icon" /> -->
 			</div>
@@ -16,11 +21,14 @@
 				{{ t_Title }}<span>{{ t_Type }}</span>
 			</div>
 			<div class="numb">
-				{{ Prefix }}{{ numb }} {{ Suffix }}
+				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span
+				> {{ Suffix }}
 			</div>
 		</div>
 		<div class="visual">
 			<div class="cube" v-for="n in cube_Numb" :key="n"></div>
+      <div class="cube_neg" v-for="n in cube_Negative" :key="n"></div>
+      <div class="cube_old" v-for="n in old_numb" :key="n"></div>
 			<div class="cube_zero" v-for="n in cube_Numb_Zero" :key="n"></div>
 		</div>
 	</div>
@@ -28,6 +36,8 @@
 
 <script>
 import atribute_icon from "@/assets/catalog/icon/atribute_icon";
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 export default {
 	name: "MyAttribute",
   data() {
@@ -41,6 +51,14 @@ export default {
 			default: null,
 		},
 		numb: {
+			type: Number,
+			default: null,
+		},
+    old_numb: {
+			type: Number,
+			default: null,
+		},
+    dice: {
 			type: Number,
 			default: null,
 		},
@@ -60,13 +78,20 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		cube_zero: {
-			type: Boolean,
-			default: false,
+    save: {
+			type: Array,
+			default: [],
 		},
+		// cube_zero: {
+		// 	type: Boolean,
+		// 	default: false,
+		// },
 	},
 
 	computed: {
+    // STORES
+		...mapState(useMYStore, ["MY"]),
+
 		t_Title() {
 			return this.t(this.title);
 		},
@@ -76,11 +101,23 @@ export default {
 		},
 
 		Prefix() {
-			return this.plus ? "+" : "";
+			return (this.plus && this.Numb > 0) ? "+" : "";
 		},
+
+    Numb() {
+      return this.old_numb ? this.old_numb + this.numb : this.numb;
+    },
 
 		Suffix() {
 			return this.feet ? this.t("feet") : "";
+		},
+
+    icon_Image() {
+      return this.icon ? this.icon : this.title;
+    },
+
+    Dice() {
+			return this.dice ? `d${this.dice}` : null;
 		},
 
 		// icon_Image() {
@@ -96,16 +133,31 @@ export default {
 		cube_Numb() {
 			if (this.feet) {
 				return Math.ceil(this.numb / 5);
+      } else if(this.numb < 0) {
+        return null;
 			} else {
 				return this.numb;
 			}
 		},
 
-		cube_Numb_Zero() {
-			if (this.cube_zero) {
-				return this.numb < 6 ? 6 - this.numb : 0;
-			}
+    cube_Negative() {
+			return this.numb < 0 ? Math.abs(this.numb) : null;
 		},
+
+    cube_Numb_Zero() {
+      if (this.dice) {
+        return this.dice * this.numb - this.numb;
+      }
+		},
+
+		// cube_Numb_Zero() {
+		// 	console.log('this.cube_zero:', this.cube_zero)
+		// 	if (this.cube_zero) {
+		// 		return this.numb < 6 ? 6 - this.numb : 0;
+		// 	} else if (this.dice) {
+    //     return this.dice * this.numb - this.numb;
+    //   }
+		// },
 	},
 };
 </script>
@@ -125,6 +177,18 @@ export default {
 	display: flex;
 	width: 18px;
 	height: 18px;
+}
+
+.active_svg{
+  stroke: white;
+}
+
+.save_svg {
+  fill: white;
+}
+
+.not_save_svg {
+  opacity: 0.2;
 }
 
 .item {
@@ -169,10 +233,28 @@ export default {
 	border-radius: 2px;
 }
 
+.cube_old {
+  width: 8px;
+	height: 8px;
+	background: rgba(255, 255, 255, 0.2);;
+	border-radius: 2px;
+}
+
+.cube_neg {
+  width: 8px;
+	height: 8px;
+  border-radius: 2px;
+  border: 1px solid #ff0000;
+}
+
 .cube_zero {
 	width: 8px;
 	height: 8px;
 	border-radius: 2px;
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 1px solid #ffffff;
+}
+
+.small {
+	text-transform: lowercase;
 }
 </style>

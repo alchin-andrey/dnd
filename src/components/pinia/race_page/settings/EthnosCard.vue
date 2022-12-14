@@ -27,7 +27,6 @@
 					:type="`${name}_base`"
 					plus
 					:numb="val"
-					:icon="name"
 				>
 				</my-attribute>
 				<my-attribute
@@ -37,7 +36,6 @@
 					:type="`${name}_base`"
 					feet
 					:numb="val"
-					:icon="name"
 				>
 				</my-attribute>
 				<my-attribute

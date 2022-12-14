@@ -9,7 +9,6 @@
 				:type="`${name}_base`"
 				plus
 				:numb="val"
-				:icon="name"
 			>
 			</my-attribute>
 			<my-attribute
@@ -18,7 +17,6 @@
 				:title="name"
 				:numb="val"
 				feet
-				:icon="name"
 			></my-attribute>
 		</my-wrapper>
 		<!-- Этнос_stats + qualities -->

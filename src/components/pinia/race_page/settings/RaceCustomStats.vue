@@ -9,7 +9,6 @@
 				:type="`${name}_base`"
 				plus
 				:numb="stats_Race_Page_Numb(name)"
-				:icon="name"
 			>
 			</my-attribute>
 		</my-wrapper>
@@ -26,7 +25,6 @@
 			:type="`${name}_base`"
 			plus
 			:numb="ethnos_Setting('stats').num"
-			:icon="name"
 		>
 		</my-attribute>
 		<my-card-text title="" :text="`${name}_details`"></my-card-text>

@@ -8,7 +8,6 @@
 				:type="`${name}_base`"
 				plus
 				:numb="stats_Race_Page_Numb(name)"
-				:icon="name"
 			>
 			</my-attribute>
 		</my-wrapper>
