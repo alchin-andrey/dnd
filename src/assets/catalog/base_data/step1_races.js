@@ -96,7 +96,7 @@ export default {
 
             // {
             //   level: 1,
-            //   spell: spells.cure_wounds,
+            //   spell: spells.bane,
             // },
 
             // {
