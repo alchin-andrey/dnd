@@ -96,7 +96,7 @@ export default {
 
             // {
             //   level: 1,
-            //   spell: spells.lay_on_hands,
+            //   spell: spells.bane,
             // },
 
             // {
