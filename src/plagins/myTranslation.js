@@ -8,14 +8,31 @@ export default {
                     // lang: dic.select_lang,
                 };
             },
-            methods: {
-                t(x) {
-                    // console.log(x);
-                    let lang = this.dic_.select_lang;
-                    return this.dic_[lang][x];
-                    // return this.dic[this.lang][x];
-                },
+
+            computed: {
+              t() {
+                  let lang = this.dic_.select_lang;
+                  return (x) => this.dic_[lang][x];
+              },
+
+              T: (state) => (str) => {
+                let t_str = state.t(str);
+                return t_str.charAt(0).toUpperCase() + t_str.slice(1);
             },
+          }
+            
+            // methods: {
+            //     t(x) {
+            //         let lang = this.dic_.select_lang;
+            //         return this.dic_[lang][x];
+            //     },
+
+            //     T(str) {
+            //       let t_str = this.t(str);
+            //       return t_str.charAt(0).toUpperCase() + t_str.slice(1);
+            //   },
+
+            // },
             // mounted() {},
             // ...
         });

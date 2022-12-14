@@ -12,6 +12,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
+      <div class="shrink passive">...</div>
 			<div v-if="main" class="numb" :class="{ passive: save }">
 				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
 				>{{ Pls }} {{ t_Suffix }}
@@ -196,9 +197,11 @@ export default {
 
 <style scoped>
 .wrapp_atrib {
+  /* max-width: 192px; */
 	display: flex;
 	align-items: center;
 	white-space: pre;
+  /* overflow: hidden; */
 }
 
 .emoji-mart-emoji {
@@ -207,8 +210,23 @@ export default {
 	line-height: 0;
 }
 
+/* .shrink {
+  flex-shrink: 2;
+} */
+
+/* .wrapp_atrib::after {
+  content:' . . . . . . . . ';
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+} */
+
+/* .numb {
+  overflow: hidden;
+} */
+
 .column {
-	width: 100%;
+	width: 340px;
 	display: flex;
 	min-height: 18px;
 	justify-content: space-between;
