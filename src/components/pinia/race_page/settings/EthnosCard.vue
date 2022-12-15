@@ -30,6 +30,13 @@
 				>
 				</my-attribute>
 				<my-attribute
+					v-if="ethnos.hp_bonus"
+					title="hp_bonus"
+					:numb="hp_Bonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
+					plus
+					icon="hp_bonus"
+				></my-attribute>
+				<my-attribute
 					v-for="(val, name) in ethnos.qualities"
 					:key="name"
 					:title="name"
@@ -38,13 +45,6 @@
 					:numb="val"
 				>
 				</my-attribute>
-				<my-attribute
-					v-if="ethnos.hp_bonus"
-					title="hp_bonus"
-					:numb="hp_Bonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
-					plus
-					icon="hp_bonus"
-				></my-attribute>
 			</my-wrapper>
 			<!-- Этнос_Карточка_stats + qualities-->
 

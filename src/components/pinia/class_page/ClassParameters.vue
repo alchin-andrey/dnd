@@ -23,7 +23,14 @@
 		<!-- attributes -->
 
 		<!-- qualities -->
-		<my-wrapper hr all>
+		<my-wrapper hr>
+      <my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
+			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
+      <my-attribute
+				title="hp_dice"
+				:numb="MY.level"
+				:dice="MY.class.hp_dice"
+			></my-attribute>
 			<my-attribute
 				v-if="initiative_Numb"
 				title="initiative"
@@ -43,19 +50,12 @@
 				feet
 			></my-attribute>
 			<!-- <my-attribute
-  				v-for="(val, name) in MY.qualities"
-  				:key="name"
-  				:title="name"
-  				:numb="qualities_Numb_Class(name)"
-  				feet
-  			></my-attribute> -->
-			<my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
-			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
-			<my-attribute
-				title="hp_dice"
-				:numb="MY.level"
-				:dice="MY.class.hp_dice"
-			></my-attribute>
+        v-for="(val, name) in MY.qualities"
+        :key="name"
+        :title="name"
+        :numb="qualities_Numb_Class(name)"
+        feet
+      ></my-attribute> -->
 		</my-wrapper>
 		<!-- qualities -->
 
@@ -166,6 +166,13 @@
   <section v-else>
 		<!-- qualities-stats -->
 		<my-wrapper hr>
+      <my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
+			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
+      <my-attribute
+				title="hp_dice"
+				:numb="MY.level"
+				:dice="MY.class.hp_dice"
+			></my-attribute>
 			<my-attribute
 				v-if="initiative_Numb"
 				title="initiative"
@@ -191,13 +198,6 @@
         :numb="qualities_Numb_Class(name)"
         feet
       ></my-attribute> -->
-			<my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
-			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
-			<my-attribute
-				title="hp_dice"
-				:numb="MY.level"
-				:dice="MY.class.hp_dice"
-			></my-attribute>
 		</my-wrapper>
 		<!-- qualities-stats -->
 		<!-- attributes-stats -->

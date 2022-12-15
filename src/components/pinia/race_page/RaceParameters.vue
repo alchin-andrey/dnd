@@ -29,19 +29,19 @@
 		<!-- qualities -->
 		<my-wrapper hr>
 			<my-attribute
+				v-if="MY.ethnos.hp_bonus"
+				title="hp_bonus"
+				:numb="hp_Bonus"
+				plus
+				icon="hp_bonus"
+			></my-attribute>
+			<my-attribute
 				v-for="(val, name) in MY.qualities"
 				:key="name"
 				:title="name"
 				:numb="qualities_Numb_RE(name)"
 				feet
 				:icon="name"
-			></my-attribute>
-			<my-attribute
-				v-if="MY.ethnos.hp_bonus"
-				title="hp_bonus"
-				:numb="hp_Bonus"
-				plus
-				icon="hp_bonus"
 			></my-attribute>
 		</my-wrapper>
 		<!-- qualities -->

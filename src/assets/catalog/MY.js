@@ -154,11 +154,18 @@ export default {
 
 	//Владения - с чем умеешь обращаться
 	proficiencies: {
-		armor: null,
-		weapons: null,
-		tools: null,
 		languages: null,
+		weapons: null,
+		armor: null,
+		tools: null,
 	},
+
+  // proficiencies: {
+	// 	armor: null,
+	// 	weapons: null,
+	// 	tools: null,
+	// 	languages: null,
+	// },
 
 	//доп вьіборьі, как у полуєльфа. дальше у класса будет похожее, так что можно тут ожидать массивьі
 custom_selected_race_page: {
