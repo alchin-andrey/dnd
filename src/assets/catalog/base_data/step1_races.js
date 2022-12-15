@@ -96,7 +96,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.chromatic_orb,
+              spell: spells.phantasmal_force,
             },
 
             // {

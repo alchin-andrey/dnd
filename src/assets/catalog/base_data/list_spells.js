@@ -8460,7 +8460,7 @@ export default {
       aim_aoe_size: 10,
 
       impact_type: "damage",
-      impact_damage_type: null,
+      impact_damage_type: "psychic_w",
 
       impact_size_foo: null,
       impact_size_str: null,
