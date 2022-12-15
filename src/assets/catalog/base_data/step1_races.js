@@ -744,6 +744,7 @@ export default {
     qualities: { speed: 25 },
 
     proficiencies: {
+      languages: [lang.common, lang.dwarf],
       weapons: [
         weaponry.battle_axes,
         weaponry.hand_axes,
@@ -751,7 +752,6 @@ export default {
         weaponry.light_hammers,
       ],
       tools: [tool.blacksmith, tool.brewer, tool.mason],
-      languages: [lang.common, lang.dwarf],
     },
 
     fines: [
