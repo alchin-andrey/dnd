@@ -290,7 +290,13 @@ export default {
 
     t_Save() {
       if (this.Spell_Index.saving_attribute) {
-        return `${this.T("saving")} ${this.T(this.Spell_Index.saving_attribute)} ${this.Saving_Numb} — ${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved}`;
+        let test = `${this.T("saving")} ${this.T(this.Spell_Index.saving_attribute)} ${this.Saving_Numb}`;
+        let success = `${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved}`;
+        if(this.Spell_Index.impact_size_saved) {
+          return `${test} — ${success}`;
+        } else {
+          return test;
+        }
       } else {
         return null;
       }
