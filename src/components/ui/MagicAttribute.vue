@@ -2,8 +2,7 @@
 	<div class="column jbm-300">
 		<div class="column_value" :class="{ passive: save }">
 			<div class="wrapp_atrib">
-				{{ t_Title }}
-				{{ em_Before
+				{{ t_Title }}{{ em_Before
 				}}<emoji
 					v-if="em_Upd"
 					:data="emojiIndex"
@@ -12,7 +11,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-      <div class="shrink passive"></div>
+      <div class="dotted passive">..................................</div>
 			<div v-if="main" class="numb" :class="{ passive: save }">
 				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
 				>{{ Pls }} {{ t_Suffix }}
@@ -81,6 +80,10 @@ export default {
 			type: String,
 			default: null,
 		},
+    not_dot: {
+			type: Boolean,
+			default: true,
+		},
 	},
 
 	computed: {
@@ -89,15 +92,19 @@ export default {
 		},
 
 		em_Before() {
-			return this.beforeEmoji(this.t_Addition);
+      return this.beforeEmoji(this.t_Addition);
 		},
 
 		em_After() {
-			return this.afterEmoji(this.t_Addition);
+        return this.afterEmoji(this.t_Addition);
 		},
 
 		t_Title() {
-			return this.save ? `/ ${this.t(this.title)}` : this.t(this.title);
+      if (this.em_Before || this.em_After) {
+        return this.t(this.title) + ' ';
+      } else {
+        return this.t(this.title)
+      }
 		},
 
 		t_Addition() {
@@ -201,7 +208,6 @@ export default {
 	display: flex;
 	align-items: center;
 	white-space: pre;
-  /* overflow: hidden; */
 }
 
 .emoji-mart-emoji {
@@ -210,26 +216,11 @@ export default {
 	line-height: 0;
 }
 
-/* .shrink {
-  flex-shrink: 2;
-} */
-
-/* .wrapp_atrib::after {
-  content:' . . . . . . . . ';
-  display: block;
+.dotted {
+  flex: 1 0;
+  margin: 0 .6em;
   white-space: nowrap;
   overflow: hidden;
-} */
-
-/* .numb {
-  overflow: hidden;
-} */
-
-.shrink {
-  flex: 1 0;
-  border-bottom: 2px dotted rgba(255, 255, 255, 0.2);
-  height: 1em;
-  margin: 0 .5em;
 }
 
 .column {
@@ -241,6 +232,7 @@ export default {
 }
 
 .column_value {
+  width: 230px;
 	display: flex;
 	justify-content: space-between;
 	flex: 1 1 auto;
