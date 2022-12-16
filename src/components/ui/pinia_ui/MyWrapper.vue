@@ -1,6 +1,4 @@
 <template>
-	<!-- <transition name="fade"> -->
-		<!-- <div v-if="shown_Stats"> -->
 			<div
 				class="wrapper"
 				:class="{
@@ -13,13 +11,9 @@
 				<slot></slot>
 			</div>
 			<div v-if="hr" class="hr"></div>
-		<!-- </div>
-	</transition> -->
 </template>
 
 <script>
-import { mapState } from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
 export default {
 	name: "MyWrapper",
 	props: {
@@ -43,26 +37,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		base_stats: {
-			type: Boolean,
-			default: false,
-		},
-    all: {
-			type: Boolean,
-			default: false,
-		},
-	},
-	computed: {
-		...mapState(usePagesStore, ["class_page"]),
-    // shown_Stats() {
-    //   if (this.base_stats) {
-    //     return this.class_page.shown.stats && this.base_stats
-    //   } else if (this.all) {
-    //     return true
-    //   } else {
-    //     return !this.class_page.shown.stats
-    //   }
-    // }
 	},
 };
 </script>
@@ -94,15 +68,5 @@ export default {
 
 .gap_26 {
 	gap: 26px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.3s ease-in-out;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-	opacity: 0;
 }
 </style>

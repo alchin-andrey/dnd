@@ -23,40 +23,7 @@
 		<!-- attributes -->
 
 		<!-- qualities -->
-		<my-wrapper hr>
-      <my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
-			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
-      <my-attribute
-				title="hp_dice"
-				:numb="MY.level"
-				:dice="MY.class.hp_dice"
-			></my-attribute>
-			<my-attribute
-				v-if="initiative_Numb"
-				title="initiative"
-				:numb="initiative_Numb"
-				plus
-			></my-attribute>
-			<my-attribute
-				v-if="qualities_Numb_Class('speed')"
-				title="speed"
-				:numb="qualities_Numb_Class('speed')"
-				feet
-			></my-attribute>
-			<my-attribute
-				v-if="qualities_Numb_Class('vision_night')"
-				title="vision_night"
-				:numb="qualities_Numb_Class('vision_night')"
-				feet
-			></my-attribute>
-			<!-- <my-attribute
-        v-for="(val, name) in MY.qualities"
-        :key="name"
-        :title="name"
-        :numb="qualities_Numb_Class(name)"
-        feet
-      ></my-attribute> -->
-		</my-wrapper>
+    <ClassQualitiesParam/>
 		<!-- qualities -->
 
 		<!-- //NOTE - proficiencies -->
@@ -165,40 +132,7 @@
 
   <section v-else>
 		<!-- qualities-stats -->
-		<my-wrapper hr>
-      <my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
-			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
-      <my-attribute
-				title="hp_dice"
-				:numb="MY.level"
-				:dice="MY.class.hp_dice"
-			></my-attribute>
-			<my-attribute
-				v-if="initiative_Numb"
-				title="initiative"
-				:numb="initiative_Numb"
-				plus
-			></my-attribute>
-			<my-attribute
-				v-if="qualities_Numb_Class('speed')"
-				title="speed"
-				:numb="qualities_Numb_Class('speed')"
-				feet
-			></my-attribute>
-			<my-attribute
-				v-if="qualities_Numb_Class('vision_night')"
-				title="vision_night"
-				:numb="qualities_Numb_Class('vision_night')"
-				feet
-			></my-attribute>
-			<!-- <my-attribute
-        v-for="(val, name) in MY.qualities"
-        :key="name"
-        :title="name"
-        :numb="qualities_Numb_Class(name)"
-        feet
-      ></my-attribute> -->
-		</my-wrapper>
+    <ClassQualitiesParam/>
 		<!-- qualities-stats -->
 		<!-- attributes-stats -->
 		<my-wrapper>
@@ -220,6 +154,8 @@
 
 <script>
 import ClassStatsTable from "@/components/pinia/class_page/settings/ClassStatsTable.vue";
+import ClassQualitiesParam from "@/components/pinia/class_page/parameters/ClassQualitiesParam.vue";
+
 
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
@@ -233,6 +169,7 @@ export default {
 	name: "ClassParameters",
 	components: {
 		ClassStatsTable,
+    ClassQualitiesParam,
 	},
 	computed: {
 		// STORE
