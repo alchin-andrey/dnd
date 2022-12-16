@@ -1,6 +1,7 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useDicStore } from "@/stores/DicStore";
 
 import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
 import spells from "@/assets/catalog/base_data/list_spells.js";
@@ -65,6 +66,15 @@ export const useSpellsStore = defineStore({
 				(el) => !this.spells_Activ_Obj_RE.includes(el)
 			);
 		},
+
+    spells_Pass_Obj_RE_Sort() {
+      const { t } = useDicStore();
+      if (this.spells_Pass_Obj_RE) {
+        return this.spells_Pass_Obj_RE.sort((x, y) => t(x[0].name).localeCompare(t(y[0].name)));
+      }
+		},
+
+
 
 		spells_Keys(state) {
 			let arr = [];

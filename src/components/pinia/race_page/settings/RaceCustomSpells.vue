@@ -1,6 +1,6 @@
 <template>
 	<my-selection-card
-		v-for="item in spells_Pass_Obj_RE"
+		v-for="item in spells_Pass_Obj_RE_Sort"
 		:key="item"
 		@click="getCustomSelect_Spells_RE(name_Find(item))"
 		:active_boll_link="spells_Custom_Arr_RE.includes(name_Find(item))"
@@ -20,7 +20,7 @@ export default {
 	computed: {
 		// GETTERS
 		...mapState(useMYStore, ["ethnos_Setting"]),
-		...mapState(useSpellsStore, ["spells_Pass_Obj_RE", "spells_Custom_Arr_RE"]),
+		...mapState(useSpellsStore, ["spells_Pass_Obj_RE", "spells_Custom_Arr_RE", "spells_Pass_Obj_RE_Sort"]),
 
 		name_Find() {
 			return (item) => item.find((el) => el.name).name;
