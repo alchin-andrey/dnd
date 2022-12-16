@@ -11,7 +11,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-      <div class="dotted passive">..................................</div>
+      <div v-if="!not_dot" class="dotted passive">..................................</div>
 			<div v-if="main" class="numb" :class="{ passive: save }">
 				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
 				>{{ Pls }} {{ t_Suffix }}
@@ -82,7 +82,7 @@ export default {
 		},
     not_dot: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 	},
 

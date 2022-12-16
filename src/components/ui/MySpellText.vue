@@ -42,6 +42,7 @@
 				:dice="Spell_Index.impact_size_dice"
 				:pls="Value_Pls"
 				main
+        not_dot
 			/>
 		</div>
 	</div>
