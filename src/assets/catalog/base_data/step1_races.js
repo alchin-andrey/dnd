@@ -96,7 +96,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.phantasmal_force,
+              spell: spells.barkskin,
             },
 
             // {

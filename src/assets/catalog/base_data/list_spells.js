@@ -118,7 +118,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -413,7 +413,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -455,7 +455,7 @@ export default {
       aim_target: "self",
       aim_type: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -504,7 +504,7 @@ export default {
       // тип атаки ("near" | "touch" | "in_distance")
       // если in_distance - показать строку дальность
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
       // Компонентьі
       // "verbal" | "somatic" | "focus" | "[material]"
 
@@ -1092,7 +1092,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 10,
@@ -1137,7 +1137,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1177,7 +1177,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1745,7 +1745,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -1835,7 +1835,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -1925,7 +1925,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -1970,7 +1970,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -3673,7 +3673,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3716,7 +3716,7 @@ export default {
       aim_target: "self",
       aim_type: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -3760,7 +3760,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -3802,7 +3802,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -3846,7 +3846,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -3890,7 +3890,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3934,7 +3934,7 @@ export default {
       aim_target: "object",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -3978,7 +3978,7 @@ export default {
       aim_target: "creature",
       aim_type: null,
 
-      parts: ["somatic", "focus"],
+      parts: ["focus", "somatic"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -4021,7 +4021,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -4065,7 +4065,7 @@ export default {
       aim_target: "object",
       aim_type: "near",
 
-      parts: ["verbal", "touch", "focus"],
+      parts: ["focus", "touch", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4109,7 +4109,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4152,7 +4152,7 @@ export default {
       aim_target: "object",
       aim_type: "near",
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4195,7 +4195,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4239,7 +4239,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4282,7 +4282,7 @@ export default {
       aim_target: "point",
       aim_type: "near",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "up_to",
       spell_duration: 1,
@@ -4325,7 +4325,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "up_to",
       spell_duration: 10,
@@ -4368,7 +4368,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -4412,7 +4412,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4456,7 +4456,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4499,7 +4499,7 @@ export default {
       aim_target: "material_shillelagh",
       aim_type: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4543,7 +4543,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4585,7 +4585,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["somatic", "focus"],
+      parts: ["focus", "somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -4630,7 +4630,7 @@ export default {
       aim_target: "creature",
       aim_type: "near",
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4803,7 +4803,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4851,7 +4851,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -4946,7 +4946,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -4992,7 +4992,7 @@ export default {
       aim_target: "creature",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5048,7 +5048,7 @@ export default {
       aim_target: "self",
       aim_type: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5097,7 +5097,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5152,7 +5152,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5207,7 +5207,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5309,7 +5309,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5567,7 +5567,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -5622,7 +5622,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 8,
@@ -5669,7 +5669,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 24,
@@ -5724,7 +5724,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -5771,7 +5771,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -5878,7 +5878,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5933,7 +5933,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -5988,7 +5988,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6090,7 +6090,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6145,7 +6145,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6200,7 +6200,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["somatic", "material_ink_10gold"],
+      parts: ["material_ink_10gold", "somatic"],
 
       spell_time: null,
       spell_duration: 10,
@@ -6247,7 +6247,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6294,7 +6294,7 @@ export default {
       aim_type: null,
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -6341,7 +6341,7 @@ export default {
       aim_type: null,
       aim_range: 30,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -6388,7 +6388,7 @@ export default {
       aim_type: null,
       aim_range: 30,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "contentration",
       spell_duration: 10,
@@ -6435,7 +6435,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6534,7 +6534,7 @@ export default {
       aim_type: "in_distance",
       aim_range: null,
 
-      parts: ["material_pearl_100gold", "verbal", "somatic", "touch", "focus"],
+      parts: ["material_pearl_100gold", "focus", "touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6581,7 +6581,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -6683,7 +6683,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6738,7 +6738,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 10,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6785,7 +6785,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "focus"],
+      parts: ["focus", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6887,7 +6887,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 10,
 
-      parts: ["verbal", "somatic", "material_familiar_10gold"],
+      parts: ["material_familiar_10gold", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -6934,7 +6934,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -6981,7 +6981,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7036,7 +7036,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -7138,7 +7138,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7185,7 +7185,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7239,7 +7239,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 10,
@@ -7285,7 +7285,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7340,7 +7340,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7395,7 +7395,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7450,7 +7450,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 8,
@@ -7497,7 +7497,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7544,7 +7544,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7599,7 +7599,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7670,7 +7670,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7717,7 +7717,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -7788,7 +7788,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7835,7 +7835,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7890,7 +7890,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal", "somatic", "material_diamond_50gold"],
+      parts: ["material_diamond_50gold", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7945,7 +7945,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7992,7 +7992,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8039,7 +8039,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -8091,7 +8091,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8141,7 +8141,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8198,7 +8198,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "material_flave_ruby_50gold"],
+      parts: ["material_flave_ruby_50gold", "touch", "somatic", "verbal"],
 
       spell_time: "till_dissipate",
       spell_duration: null,
@@ -8248,7 +8248,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8298,7 +8298,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "focus"],
+      parts: ["focus", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 8,
@@ -8348,7 +8348,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "material_magic_mouth_50gold"],
+      parts: ["material_magic_mouth_50gold", "somatic", "verbal"],
 
       spell_time: "till_dissipate",
       spell_duration: null,
@@ -8398,7 +8398,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "material_golden_dust_25gold"],
+      parts: ["material_golden_dust_25gold", "touch", "somatic", "verbal"],
 
       spell_time: "till_dissipate",
       spell_duration: null,
@@ -8448,7 +8448,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8498,7 +8498,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "material_augury_25gold"],
+      parts: ["material_augury_25gold", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -8605,7 +8605,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -8661,7 +8661,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -8718,7 +8718,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -8810,7 +8810,7 @@ export default {
       aim_type: "near",
       aim_range: 5,
 
-      parts: ["verbal", "somatic", "bullets"],
+      parts: ["bullets", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 8,
@@ -8868,7 +8868,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -8975,7 +8975,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9025,7 +9025,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -9075,7 +9075,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9132,7 +9132,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9182,7 +9182,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9236,7 +9236,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch"],
+      parts: ["touch", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -9286,7 +9286,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 90,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -9420,7 +9420,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus", "touch"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9477,7 +9477,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 10,
@@ -9534,7 +9534,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "focus"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 24,
@@ -9584,7 +9584,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9641,7 +9641,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 10,
@@ -9691,7 +9691,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -9791,7 +9791,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -9841,7 +9841,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "touch", "material_warding_bond_50gold"],
+      parts: ["material_warding_bond_50gold", "touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -9891,7 +9891,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -9950,7 +9950,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10000,7 +10000,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10050,7 +10050,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 8,
@@ -10107,7 +10107,7 @@ export default {
       aim_type: null,
       aim_range: 5 * 5280,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -10157,7 +10157,7 @@ export default {
       aim_type: null,
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -10207,7 +10207,7 @@ export default {
       aim_type: null,
       aim_range: 1000,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -10257,7 +10257,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -10307,7 +10307,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10358,7 +10358,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -10429,7 +10429,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10536,7 +10536,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10593,7 +10593,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -10643,7 +10643,7 @@ export default {
       aim_type: null,
       aim_range: null,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10693,7 +10693,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus", "touch"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 8,
@@ -10743,7 +10743,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 120,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -10793,7 +10793,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus", "touch"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: null,
       spell_duration: 1,
@@ -10887,7 +10887,7 @@ export default {
       aim_target: "point",
       aim_type: "in_distance",
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
@@ -10937,7 +10937,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -10987,7 +10987,7 @@ export default {
       aim_type: "in_disttance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -11052,7 +11052,7 @@ export default {
       aim_type: "near",
       aim_range: null,
 
-      parts: ["verbal", "somatic", "focus", "touch"],
+      parts: ["focus", "touch", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -11109,7 +11109,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 60,
 
-      parts: ["verbal", "somatic"],
+      parts: ["somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 1,
@@ -11159,7 +11159,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 150,
 
-      parts: ["verbal", "somatic", "focus"],
+      parts: ["focus", "somatic", "verbal"],
 
       spell_time: "concentration",
       spell_duration: 10,
