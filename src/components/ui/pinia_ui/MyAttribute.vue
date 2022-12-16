@@ -3,8 +3,8 @@
 		<div class="column_value">
 			<div class="icon">
         <svg
-        class="active_svg"
         :class="{
+          active_svg: stats_Keys.includes(title) || stats_Keys.includes(icon),
           not_save_svg: save.length !== 0 && !save.includes(icon) && !numb == 0,
 					save_svg: save.includes(icon),
 				}"
@@ -38,6 +38,7 @@
 import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "MyAttribute",
   data() {
@@ -91,6 +92,7 @@ export default {
 	computed: {
     // STORES
 		...mapState(useMYStore, ["MY"]),
+    ...mapState(useStatsStore, ["stats_Keys"]),
 
 		t_Title() {
 			return this.t(this.title);
