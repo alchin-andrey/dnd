@@ -12,7 +12,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-      <div class="shrink passive"></div>
+      <div class="dotted passive"></div>
 			<div v-if="main" class="numb" :class="{ passive: save }">
 				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
 				>{{ Pls }} {{ t_Suffix }}
@@ -225,11 +225,11 @@ export default {
   overflow: hidden;
 } */
 
-.shrink {
+.dotted {
   flex: 1 0;
   border-bottom: 2px dotted rgba(255, 255, 255, 0.2);
-  height: 1em;
-  margin: 0 .5em;
+  height: 13px;
+  margin: 0 0.5em;
 }
 
 .column {
