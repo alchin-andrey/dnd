@@ -94,10 +94,10 @@ export default {
 
             // По левелу перса
 
-            // {
-            //   level: 1,
-            //   spell: spells.bane,
-            // },
+            {
+              level: 1,
+              spell: spells.phantasmal_force,
+            },
 
             // {
             //   level: 1,
@@ -118,10 +118,10 @@ export default {
 
             // String (первая часть, которая чаще всего с "×")
 
-            {
-              level: 1,
-              spell: spells.acid_splash,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.acid_splash,
+            // },
 
             // {
             //   level: 1,

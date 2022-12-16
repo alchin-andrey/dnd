@@ -712,7 +712,7 @@ export default {
         acid_w:"⚗️ Кислотою",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Світлом",
-        force_w: "🌈 Cиловим полем",
+        force_w: "🌈 Силою",
 
         piercing_w: "🗡️ колоте",
         slashing_w: "🪓 рубане",
@@ -747,7 +747,6 @@ export default {
         rage_persistence: "люта стійкість",
         rage_persistence_details: "— коли при Люті Здоровʼя опускається до 0 і ви при цьому не вбиті, воно стає = 1, при успішному Випробуванні Сили зі складністю 10 (+5 за кожний наступний раз до тривалого відпочинку)",
         saving_strength: "результат Випробування Сили",
-        min_base_strengt: "дорівнює мінімум базовій Силі",
         rage_sustainability: "Лють не припиняється достроково",
         only_if_uncontious: "крім втрати свідомості",
         near_friends_attack_in_rage: "на ближні атаки союзників поруч, при Люті",
@@ -1104,7 +1103,7 @@ export default {
     up_to: "до",
     sec: "сек",
     round: "раунд",
-    min: "мін",
+    min: "хв",
     hour: "г",
     day: "дн",
 
@@ -1663,7 +1662,7 @@ export default {
     spell_guiding_bolt_details: spells.guiding_bolt_details,
     spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
 
-    material_ink_10gold: "чорнило за мінімум 10 🟡",
+    material_ink_10gold: "чорнило за 10 🟡",
 
     spell_illusory_script: spells.illusory_script,
     spell_illusory_script_details: spells.illusory_script_details,
@@ -1685,7 +1684,7 @@ export default {
     spell_detect_magic_details: spells.detect_magic_details,
     spell_detect_magic_expanded: spells.detect_magic_expanded,
 
-    material_pearl_100gold: "перлина за мінімум 10 🟡",
+    material_pearl_100gold: "перлина за 10 🟡",
 
     spell_burning_hands: spells.burning_hands,
     spell_burning_hands_details: spells.burning_hands_details,
@@ -1791,7 +1790,7 @@ export default {
     spell_sleep_details: spells.sleep_details,
     spell_sleep_expanded: spells.sleep_expanded,
 
-    material_diamond_50gold:"діамант за мінімум 50 🟡",
+    material_diamond_50gold:"діамант за 50 🟡",
 
     spell_chromatic_orb: spells.chromatic_orb,
     spell_chromatic_orb_details: spells.chromatic_orb_details,
@@ -1831,13 +1830,13 @@ export default {
     spell_suggestion_details: spells.suggestion_details,
     spell_suggestion_expanded: spells.suggestion_expanded,
 
-    material_magic_mouth_50gold: "Шматочок медових сот і порошок нефриту за мінімум 10 🟡 ( витрачаються )",
+    material_magic_mouth_50gold: "Шматочок медових сот і порошок нефриту за 10 🟡 ( витрачаються )",
 
     spell_magic_mouth: spells.magic_mouth,
     spell_magic_mouth_details: spells.magic_mouth_details,
     spell_magic_mouth_expanded: spells.magic_mouth_expanded,
 
-    material_golden_dust_25gold: "Золотий пил за мінімум 25 🟡 ( витрачається ).",
+    material_golden_dust_25gold: "Золотий пил за 25 🟡 ( витрачається ).",
 
     spell_arcane_lock: spells.arcane_lock,
     spell_arcane_lock_details: spells.arcane_lock_details,
@@ -1847,7 +1846,7 @@ export default {
     spell_phantasmal_force_details: spells.phantasmal_force_details,
     spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
 
-    material_augury_25gold: "Особливі палички, кісточки або фігурки з мітками за мінімум 25 🟡",
+    material_augury_25gold: "Особливі палички, кісточки або фігурки з мітками за 25 🟡",
 
     spell_augury: spells.augury,
     spell_augury_details: spells.augury_details,
@@ -1943,7 +1942,7 @@ export default {
     spell_mirror_image_details: spells.mirror_image_details,
     spell_mirror_image_expanded: spells.mirror_image_expanded,
 
-    material_warding_bond_50gold: "Пара платинових кілець за мінімум 50 🟡",
+    material_warding_bond_50gold: "Пара платинових кілець за 50 🟡",
     bonus: "бонус",
 
     spell_warding_bond: spells.warding_bond,
