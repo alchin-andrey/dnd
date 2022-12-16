@@ -12,7 +12,7 @@
 					:size="15"
 				/>{{ em_After }}
 			</div>
-      <div class="shrink passive">...</div>
+      <div class="shrink passive"></div>
 			<div v-if="main" class="numb" :class="{ passive: save }">
 				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
 				>{{ Pls }} {{ t_Suffix }}
@@ -224,6 +224,13 @@ export default {
 /* .numb {
   overflow: hidden;
 } */
+
+.shrink {
+  flex: 1 0;
+  border-bottom: 2px dotted rgba(255, 255, 255, 0.2);
+  height: 1em;
+  margin: 0 .5em;
+}
 
 .column {
 	width: 340px;
