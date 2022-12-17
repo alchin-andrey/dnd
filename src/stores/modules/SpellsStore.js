@@ -74,8 +74,6 @@ export const useSpellsStore = defineStore({
       }
 		},
 
-
-
 		spells_Keys(state) {
 			let arr = [];
 			this.spells_Settings_Obj_RE.forEach((el) =>
@@ -118,6 +116,7 @@ export const useSpellsStore = defineStore({
 			return arr;
 		},
   },
+  
   actions: {
     getCustomSelect_Spells_RE(name) {
       const MYStore = useMYStore();
