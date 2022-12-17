@@ -17,7 +17,8 @@ export const usePagesStore = defineStore({
 			race_page: false,
 			class_page: true, 
 		},
-		page_open: null,
+		// page_open: "race_page",
+		page_setting_open: null,
 		setting_open: null,
 		shown_home: true,
 
@@ -60,20 +61,30 @@ export const usePagesStore = defineStore({
 	}),
 	
   actions: {
+    goPage(page_name) {
+			for (const [key, value] of Object.entries(this.pages)) {
+				value == true ? this.pages[key] = false : null;
+				}
+      this.pages[page_name] = true;
+			if (this.page_setting_open !== "main_page") {
+				this.showHome();
+			}
+		},
+
 		showHome() {
-			this[this.page_open].shown[this.setting_open] = false;
+			this[this.page_setting_open].shown[this.setting_open] = false;
 			this.shown_home = true;
-			this.page_open = null;
+			this.page_setting_open = null;
 			this.setting_open = null;
 		},
 
 		showSettings(page, name) {
 			if (this.setting_open !== name) {
 				if (this.setting_open) {
-					this[this.page_open].shown[this.setting_open] = false;
+					this[this.page_setting_open].shown[this.setting_open] = false;
 				}
 				this[page].shown[name] = true;
-				this.page_open = page;
+				this.page_setting_open = page;
 				this.setting_open = name;
 				this.shown_home = false;
 			} else {

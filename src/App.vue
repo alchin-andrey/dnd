@@ -7,7 +7,7 @@
 			<MyBackPage
 				v-if="pages.class_page"
 				:text_arr="arr_Name_RE"
-				@click="racePage()"
+				@click="goPage('race_page')"
 			/>
 
 			<div v-if="!pages.race_page" class="delimiter"></div>
@@ -39,7 +39,7 @@
 					v-if="shown_home"
 					numb="02"
 					title="class"
-					@click="classPage()"
+					@click="goPage('class_page')"
 				></my-button>
 				<my-button-back
 					v-else
@@ -53,7 +53,7 @@
 					v-if="shown_home"
 					numb="03"
 					title="step_background"
-					@click="classPage()"
+					@click="goPage('class_page')"
 				></my-button>
 				<my-button-back
 					v-else
@@ -75,29 +75,29 @@
 	<!-- Персонаж -->
 
 	<div class="represent">
-  <transition name="fade-body">
-		<div
-			class="character"
-			:class="{
-				active_eyes: race_page.shown.eyes_color || race_page.shown.hair_color,
-				active_skin: race_page.shown.skin_color,
-			}"
-			:style="{
-				height: Char_Hight_Back,
-			}"
-		>
-			<WelcomeBanner />
+		<transition name="fade-body">
+			<div
+				class="character"
+				:class="{
+					active_eyes: race_page.shown.eyes_color || race_page.shown.hair_color,
+					active_skin: race_page.shown.skin_color,
+				}"
+				:style="{
+					height: Char_Hight_Back,
+				}"
+			>
+				<WelcomeBanner />
 
-					<RaceBody body_part="skin" />
-					<RaceBody body_part="eyes" />
-					<RaceBody body_part="hair" />
-					<RaceBody body_part="class" v-if="!pages.race_page" />
+				<RaceBody body_part="skin" />
+				<RaceBody body_part="eyes" />
+				<RaceBody body_part="hair" />
+				<RaceBody body_part="class" v-if="!pages.race_page" />
 
-			<transition name="slide-fade">
-				<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
-			</transition>
-		</div>
-  </transition>
+				<transition name="slide-fade">
+					<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
+				</transition>
+			</div>
+		</transition>
 	</div>
 	<!-- Персонаж -->
 
@@ -161,12 +161,13 @@ export default {
 			"race_page",
 			"class_page",
 			"shown_home",
+      "page_setting_open",
 			"setting_open",
 			"pages",
 		]),
 		//GETTERS
 
-		Mastery() {    
+		Mastery() {
 			return Math.ceil(this.MY.level / 4);
 		},
 
@@ -249,21 +250,9 @@ export default {
 			"closeEthnos",
 			"closeColor",
 			"closePar",
-			"showRaceScroll",
+      "goPage",
 		]),
 		...mapActions(useMYStore, ["getEthnos"]),
-
-		classPage() {
-			// this.pages.race_page = !this.pages.race_page;
-			this.pages.race_page = false;
-			this.pages.class_page = true;
-		},
-
-		racePage() {
-			// this.pages.race_page = !this.pages.race_page;
-			this.pages.class_page = false;
-			this.pages.race_page = true;
-		},
 
 		getCreated() {
 			this.MY.height = this.Get_Height;
@@ -514,12 +503,12 @@ a {
 
 .fade-body-enter-active,
 .fade-body-leave-active {
-  transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .fade-body-enter-from,
 .fade-body-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 
 .slide-fade-enter-active {
