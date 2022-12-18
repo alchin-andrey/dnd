@@ -96,7 +96,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.moonbeam,
+              spell: spells.mirror_image,
             },
 
             // {
