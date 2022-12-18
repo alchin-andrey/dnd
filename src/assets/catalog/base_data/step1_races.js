@@ -96,7 +96,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.mirror_image,
+              spell: spells.enhance_ability,
             },
 
             // {
