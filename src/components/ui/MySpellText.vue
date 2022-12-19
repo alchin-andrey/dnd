@@ -143,6 +143,7 @@
 import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "MySpellText",
 	data() {
@@ -173,6 +174,8 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
+    	// GETTERS
+		...mapState(useStatsStore, ["stats_Mod"]),
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
@@ -513,6 +516,10 @@ export default {
 			//spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
 		},
 
+    Num_Mastery_05(){
+      return Math.floor(this.Mastery/2);
+    },
+
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
@@ -543,10 +550,9 @@ export default {
 
 		Pls_STR() {
 			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.MY.stats.strength.mod;
-
-			let lvl = this.MY.level;
-			return pls + mod + lvl;
+			let mod = this.stats_Mod("strength");
+      let res = pls + mod;
+			return res;
 
 			//return to: impact_size_pls
 			//if < 0 then 0
@@ -555,10 +561,9 @@ export default {
 
 		Pls_CHA() {
 			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.MY.stats.charisma.mod;
-
-			let lvl = this.MY.level;
-			return pls + mod + lvl;
+			let mod = this.stats_Mod("charisma");
+      let res = pls + mod;
+			return res <= 0 ? 1 : res;
 
 			//return to: impact_size_pls
 			//if < 0 then 0
