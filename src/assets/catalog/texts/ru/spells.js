@@ -1628,7 +1628,7 @@ export const divine_channel_vengence_2_expanded =
 
 export const maneuver_ambush = "Засада";
 
-export const maneuver_ambush_details = 'Разовый бонус на проверку Скрытности или Инициативы.';
+export const maneuver_ambush_details = 'Разовый <span class="buff">бонус</span> на проверку Скрытности или Инициативы.';
 
 export const maneuver_ambush_expanded = 
 'Когда Вы совершаете проверку Ловкости (Скрытность) или бросок инициативы, то можете добавить Кость превосходства к броску, если Вы дееспособны.';
