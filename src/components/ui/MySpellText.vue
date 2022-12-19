@@ -517,7 +517,7 @@ export default {
 		},
 
     Num_Mastery_05() {
-      return Math.floor(this.Mastery/2);
+      return Math.floor(this.Mastery / 2);
     },
 
 		//ANCHOR - PLS
