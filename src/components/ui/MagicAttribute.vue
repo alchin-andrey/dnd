@@ -116,7 +116,11 @@ export default {
 		},
 
 		Pls() {
-			return this.pls ? `+${this.pls}` : null;
+      if (this.pls) {
+        let symbol = this.pls >=0 ? '+' : null;
+        return symbol + this.pls;
+      }
+      return null
 		},
 
 		Str() {
@@ -237,6 +241,10 @@ export default {
 	justify-content: space-between;
 	flex: 1 1 auto;
 	/*width: 100%;*/
+}
+
+.numb {
+  white-space: nowrap;
 }
 
 .small {

@@ -118,10 +118,10 @@ export default {
 
             // String (первая часть, которая чаще всего с "×")
 
-            {
-              level: 1,
-              spell: spells.acid_splash,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.acid_splash,
+            // },
 
             // {
             //   level: 1,
@@ -187,15 +187,15 @@ export default {
             //   spell: spells.armor_of_agathys,
             // },
 
-            // {
-            //   level: 1,
-            //   spell: spells.elk_knock,
-            // },
+            {
+              level: 1,
+              spell: spells.elk_knock,
+            },
 
-            // {
-            //   level: 1,
-            //   spell: spells.divine_channel_devotion_1,
-            // },
+            {
+              level: 1,
+              spell: spells.divine_channel_devotion_1,
+            },
 
             // //Скобочки
 
