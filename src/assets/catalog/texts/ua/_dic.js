@@ -2762,4 +2762,6 @@ export default {
     min_base_strength: "дорівнює мінімум базовій Силі",
     speed_plus_10:"+10 Швидкість",
     if_no_heavy_armor_applied:"якшо не в важких обладунках (застосовано)",
+
+    slot_lvl: "рівень слоту",
 }

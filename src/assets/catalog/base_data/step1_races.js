@@ -96,7 +96,7 @@ export default {
 
             {
               level: 1,
-              spell: spells.enhance_ability,
+              spell: spells.divine_channel_mana,
             },
 
             // {

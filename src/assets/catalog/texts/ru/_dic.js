@@ -2757,4 +2757,6 @@ export default {
     step_background: "типаж",
 
     modifier: "модификатор",
+
+    slot_lvl: "уровень ячейки",
 }

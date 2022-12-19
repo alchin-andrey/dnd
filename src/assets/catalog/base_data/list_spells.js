@@ -1756,10 +1756,10 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
+      impact_type: "slot_lvl",
       impact_damage_type: null,
 
-      impact_size_foo: null,
+      impact_size_foo: "Num_Mastery_05",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
