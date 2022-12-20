@@ -1642,8 +1642,6 @@ export const maneuver_ambush_details = 'Разовий <span class="buff">бон
 export const maneuver_ambush_expanded = 
 'Коли ви здійснюєте перевірку Непомітності або кидок Ініціативи, ви можете додати Маневр до кидка, якщо ви дієздатні.';
 
-//NOTE ----- зупинився тут
-
 export const maneuver_evasive_footwork = "Активне ухилення";
 
 export const maneuver_evasive_footwork_details = 'Разовий <span class="buff">бонус</span> на Броню при переміщенні.';

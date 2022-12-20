@@ -2764,4 +2764,7 @@ export default {
     if_no_heavy_armor_applied:"якшо не в важких обладунках (застосовано)",
 
     slot_lvl: "рівень слоту",
+
+    wizard: classes.wizard,
+    wizard_details: classes.wizard_details,
 }

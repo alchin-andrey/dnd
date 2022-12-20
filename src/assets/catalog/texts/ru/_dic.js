@@ -2759,4 +2759,7 @@ export default {
     modifier: "модификатор",
 
     slot_lvl: "уровень ячейки",
+
+    wizard: classes.wizard,
+    wizard_details: classes.wizard_details,
 }
