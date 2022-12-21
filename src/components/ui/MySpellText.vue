@@ -520,6 +520,12 @@ export default {
       return Math.floor(this.Mastery / 2);
     },
 
+    Num_2xLvl_plus_INT() {
+      let lvl = this.MY.level;
+      let mod = this.stats_Mod("intelligence");
+      return lvl * 2 + mod;
+    },
+
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
