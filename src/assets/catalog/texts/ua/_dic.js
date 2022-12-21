@@ -2886,4 +2886,21 @@ export default {
     spell_portent: spells.portent,
     spell_portent_details: spells.portent_details,
     spell_portent_expanded: spells.portent_expanded,
+
+    use_wo_mana:"використання без мани",
+    two_spells_1_and_2: "одного закляття[1] і одного закляття[2]",
+    two_spells_3: "двох заклять[3]. Один раз. Відновлюється після короткого відпочинку",
+
+    min_half_damage: "мінімум половина пошкодження",
+    from_cantrips: "від заклять[0]",
+
+    plus_INT: "+ модифікатор Інтелекту",
+    to_damage_evocation: "до пошкодження усіх заклять Втілення",
+
+    spell_overload: spells.overload,
+    spell_overload_details: spells.overload_details,
+    spell_overload_expanded: spells.overload_expanded,
+
+    druid: classes.druid,
+    druid_details: classes.druid_details,
 }

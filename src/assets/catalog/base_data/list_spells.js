@@ -11495,4 +11495,47 @@ export default {
       impact_size_saved: null,
     }
   ],
+
+  overload: [
+    {
+      name: "spell_overload",
+      details: "spell_overload_details",
+      expanded: "spell_overload_expanded",
+
+      type: "ability",
+      classes: ["wizard"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
 };

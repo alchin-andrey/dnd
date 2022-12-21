@@ -2881,4 +2881,18 @@ export default {
     spell_portent: spells.portent,
     spell_portent_details: spells.portent_details,
     spell_portent_expanded: spells.portent_expanded,
+
+    use_wo_mana: "использование без маны",
+    two_spells_1_and_2: "одного заклинания[1] и одного заклинания[2]",
+    two_spells_3: "двух заклинаний[3]. Один раз. Восстанавливается после короткого отдыха",
+
+    min_half_damage: "минимум половина урона",
+    from_cantrips: "от заклинаний[0]",
+
+    plus_INT: "+ модификатор Интеллекта",
+    to_damage_evocation: "к урону всех заклинаний Воплощения",
+
+    spell_overload: spells.overload,
+    spell_overload_details: spells.overload_details,
+    spell_overload_expanded: spells.overload_expanded,
 }
