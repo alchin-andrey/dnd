@@ -10,7 +10,6 @@ export const useStatsStore = defineStore({
 	state: () => ({
     stats: [
       "strength",
-      "strength",
       "dexterity",
       "constitution",
       "intelligence",
