@@ -2867,4 +2867,18 @@ export default {
     magical_protection: "Магическая защита",
 
     end_of_the_day: "до окончания продолжительного отдыха",
+
+    look: "взгляд",
+
+    spell_hypnotic_look: spells.hypnotic_look,
+    spell_hypnotic_look_details: spells.hypnotic_look_details,
+    spell_hypnotic_look_expanded: spells.hypnotic_look_expanded,
+
+    spell_small_alchemy: spells.small_alchemy,
+    spell_small_alchemy_details: spells.small_alchemy_details,
+    spell_small_alchemy_expanded: spells.small_alchemy_expanded,
+
+    spell_portent: spells.portent,
+    spell_portent_details: spells.portent_details,
+    spell_portent_expanded: spells.portent_expanded,
 }

@@ -11185,6 +11185,8 @@ export default {
     },
   ],
 
+  // ------------------------------------------------------------
+
   paladin_divine_smite: [
     {
       //0
@@ -11196,7 +11198,7 @@ export default {
       expanded: "spell_paladin_divine_smite_expanded",
 
       type: "ability",
-      classes: [],
+      classes: ["paladin"],
 
       cast_time: "none",
       cast_duration: null,
@@ -11242,7 +11244,7 @@ export default {
       expanded: "spell_learn_spell_expanded",
 
       type: "ability",
-      classes: [],
+      classes: ["wizard"],
 
       cast_time: "ritual",
       cast_duration: 2,
@@ -11285,7 +11287,7 @@ export default {
       expanded: "spell_small_conjuration_expanded",
 
       type: "ability",
-      classes: [],
+      classes: ["wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -11329,7 +11331,7 @@ export default {
 
       type: "ability",
       slot_type: "magical_protection",
-      classes: [],
+      classes: ["wizard"],
 
       cast_time: "none",
       cast_duration: null,
@@ -11354,6 +11356,135 @@ export default {
       impact_damage_type: "temporary",
 
       impact_size_foo: "Num_2xLvl_plus_INT",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  hypnotic_look: [
+    {
+      name: "spell_hypnotic_look",
+      details: "spell_hypnotic_look_details",
+      expanded: "spell_hypnotic_look_expanded",
+
+      type: "ability",
+      classes: ["wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: 5,
+
+      parts: ["verbal","look"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  small_alchemy: [
+    {
+      name: "spell_small_alchemy",
+      details: "spell_small_alchemy_details",
+      expanded: "spell_small_alchemy_expanded",
+
+      type: "ability",
+      classes: ["wizard"],
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 1,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  portent: [
+    {
+      name: "spell_portent",
+      details: "spell_portent_details",
+      expanded: "spell_portent_expanded",
+
+      type: "ability",
+      classes: ["wizard"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "end_of_the_day",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,

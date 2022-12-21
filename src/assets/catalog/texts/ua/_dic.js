@@ -2823,9 +2823,9 @@ export default {
     twice_less:"Вдвічі менше",
     gold_and_time_conjuration:"золота та часу на Вивчення знайденого закляття Виклику",
 
-    spell_call_small_conjuration: spells.call_small_conjuration,
-    spell_call_small_conjuration_details: spells.call_small_conjuration_details,
-    spell_call_small_conjuration_expanded: spells.call_small_conjuration_expanded,
+    spell_small_conjuration: spells.small_conjuration,
+    spell_small_conjuration_details: spells.small_conjuration_details,
+    spell_small_conjuration_expanded: spells.small_conjuration_expanded,
 
     school_of_illusion:classes.school_of_illusion,
     school_of_illusion_details:classes.school_of_illusion_details,
@@ -2871,5 +2871,19 @@ export default {
 
     magical_protection: "Магічний захист",
 
-    end_of_the_day: "до закінчення довгого відпочинку",
+    end_of_the_day: "до закінчення тривалого відпочинку",
+
+    look: "погляд",
+
+    spell_hypnotic_look: spells.hypnotic_look,
+    spell_hypnotic_look_details: spells.hypnotic_look_details,
+    spell_hypnotic_look_expanded: spells.hypnotic_look_expanded,
+
+    spell_small_alchemy: spells.small_alchemy,
+    spell_small_alchemy_details: spells.small_alchemy_details,
+    spell_small_alchemy_expanded: spells.small_alchemy_expanded,
+
+    spell_portent: spells.portent,
+    spell_portent_details: spells.portent_details,
+    spell_portent_expanded: spells.portent_expanded,
 }

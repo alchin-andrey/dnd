@@ -2607,6 +2607,9 @@ export default {
         level: 1,
         spell: spells.learn_spell,
       },
+      {
+        spell: spells.portent,
+      }
     ],
 
     settings: [
@@ -2727,6 +2730,42 @@ export default {
             spells:[
               {
                 spell: spells.hypnotic_look,
+              }
+            ]
+          },
+          {
+            name: "school_of_transmutation",
+            details: "school_of_transmutation_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_transmutation",
+              },
+            ],
+
+            spells:[
+              {
+                spell: spells.small_alchemy,
+              }
+            ]
+          },
+          {
+            name: "school_of_divination",
+            details: "school_of_divination_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_divination",
+              },
+            ],
+
+            spells:[
+              {
+                spell: spells.portent,
               }
             ]
           },
