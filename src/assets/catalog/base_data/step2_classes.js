@@ -2607,9 +2607,6 @@ export default {
         level: 1,
         spell: spells.learn_spell,
       },
-      {
-        spell: spells.portent,
-      }
     ],
 
     settings: [
