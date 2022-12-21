@@ -1088,7 +1088,7 @@ export default {
     divination: "віщування", //
     enchantment: "чари", //
     evocation: "втілення", //
-    illusion: "іллюзія", //
+    illusion: "ілюзія", //
     necromancy: "некромантія", //
     transmutation: "перетворення", //
     ability: "вміння",
@@ -2509,6 +2509,10 @@ export default {
     spell_learn_ritual_details: spells.learn_ritual_details,
     spell_learn_ritual_expanded: spells.learn_ritual_expanded,
 
+    spell_learn_spell: spells.learn_spell,
+    spell_learn_spell_details: spells.learn_spell_details,
+    spell_learn_spell_expanded: spells.learn_spell_expanded,
+
     hour_per_lvl: "г / рів",
     gold50_per_lvl: "чорнила та ін. за 50 🟡 / рів",
 
@@ -2767,4 +2771,105 @@ export default {
 
     wizard: classes.wizard,
     wizard_details: classes.wizard_details,
+
+    weapons_daggers: weapons.daggers,
+    weapons_daggers_details: weapons.daggers_details,
+
+    weapons_darts: weapons.darts,
+    weapons_darts_details: weapons.darts_details,
+
+    weapons_slings: weapons.slings,
+    weapons_slings_details: weapons.slings_details,
+
+    weapons_quarterstaffs: weapons.quarterstaffs,
+    weapons_quarterstaffs_details: weapons.quarterstaffs_details,
+
+    weapons_light_arbalets: weapons.light_arbalets,
+    weapons_light_arbalets_details: weapons.light_arbalets_details,
+
+    restoring: "відновлення",
+    mana_slots_short_rest_lvl_05: "рівень/2 слотів мани при короткому відпочинку",
+
+    component_pouch: "мішечок с компонентами",
+    component_pouch_details: "Маленький водонепроникний шкіряний поясний гаманець із відділеннями для зберігання матеріальних компонентів та інших спеціальних предметів, необхідних для накладання заклять замість Фокусу, якщо тільки у цих компонентів не вказана вартість (дивіться опис закляття).",
+
+    focus: "фокус",
+    focus_details: "Особливий предмет — сфера, кристал, жезл, особливий посох, коротка дерев'яна паличка або схожий предмет — створений для створення заклять, умовою яких є Фокус.",
+
+    science_book: "наукова книга",
+    science_book_details: "",
+
+    sand_pouch: "сумочка з піском",
+    sand_pouch_details: "",
+
+    knife: "невеликий ніж",
+    knife_details: "",
+
+    spell_book: "книга заклять",
+    spell_book_details: "",
+
+    school_of_evocation:classes.school_of_evocation,
+    school_of_evocation_details:classes.school_of_evocation_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_evocation:"золота та часу на Вивчення знайденого закляття Втілення",
+
+    save_ally:"Створити безпечні ділянки",
+    one_plus_lvl_from_spell_evocation:"всередині області свого закляття Втілення",
+
+    school_of_conjuration:classes.school_of_conjuration,
+    school_of_conjuration_details:classes.school_of_conjuration_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_conjuration:"золота та часу на Вивчення знайденого закляття Виклику",
+
+    spell_call_small_conjuration: spells.call_small_conjuration,
+    spell_call_small_conjuration_details: spells.call_small_conjuration_details,
+    spell_call_small_conjuration_expanded: spells.call_small_conjuration_expanded,
+
+    school_of_illusion:classes.school_of_illusion,
+    school_of_illusion_details:classes.school_of_illusion_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_illusion:"золота та часу на Вивчення знайденого закляття Ілюзіїї",
+
+    school_of_necromancy:classes.school_of_necromancy,
+    school_of_necromancy_details:classes.school_of_necromancy_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_necromancy:"золота та часу на Вивчення знайденого закляття Некромантії",
+
+    school_of_abjuration:classes.school_of_abjuration,
+    school_of_abjuration_details:classes.school_of_abjuration_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_abjuration:"золота та часу на Вивчення знайденого закляття Огородження",
+
+    spell_magical_protection: spells.magical_protection,
+    spell_magical_protection_details: spells.magical_protection_details,
+    spell_magical_protection_expanded: spells.magical_protection_expanded,
+
+    school_of_enchantment:classes.school_of_enchantment,
+    school_of_enchantment_details:classes.school_of_enchantment_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_enchantment:"золота та часу на Вивчення знайденого закляття Чарів",
+
+    school_of_transmutation:classes.school_of_transmutation,
+    school_of_transmutation_details:classes.school_of_transmutation_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_transmutation:"золота та часу на Вивчення знайденого закляття Перетворення",
+
+    school_of_divination:classes.school_of_divination,
+    school_of_divination_details:classes.school_of_divination_details,
+
+    twice_less:"Вдвічі менше",
+    gold_and_time_divination:"золота та часу на Вивчення знайденого закляття Віщування",
+
+    from_spell_kill_necromancy:"на 2× рівень закляття, від вбивства закляттями. 3× якщо Некромантія",
+
+    magical_protection: "Магічний захист",
+
+    end_of_the_day: "до закінчення довгого відпочинку",
 }

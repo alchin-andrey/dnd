@@ -9,7 +9,7 @@ export default {
         name: "quarterstaff",
         details: "quarterstaff_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.quarterstaffs],
 
         range_min: 5,
         // если 5 то ближнее, если больше то дальнобойное
@@ -122,7 +122,7 @@ export default {
         name: "dagger",
         details: "dagger_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple,weaponry.daggers],
 
         range_min: 5,
         throwing: 20, // метательное
@@ -334,7 +334,7 @@ export default {
         name: "light_crossbow",
         details: "light_crossbow_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.light_arbalets],
 
         range_min: 80,
         throwing: null, // метательное
@@ -364,7 +364,7 @@ export default {
         name: "dart",
         details: "dart_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.darts],
 
         range_min: 20,
         throwing: 20, // метательное
@@ -424,7 +424,7 @@ export default {
         name: "shortbow",
         details: "shortbow_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.slings],
 
         range_min: 80,
         throwing: null, // метательное

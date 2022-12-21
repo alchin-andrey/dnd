@@ -35,7 +35,6 @@ export default {
         details:"weapons_rapires_details",
     },
 
-
     long_bows:{
         name:"weapons_long_bows",
         details:"weapons_long_bows_details",
@@ -66,4 +65,28 @@ export default {
         details:"weapons_improvised_details",
     },
 
+    daggers:{
+        name:"weapons_daggers",
+        details:"weapons_daggers_details",
+    },
+
+    darts:{
+        name:"weapons_darts",
+        details:"weapons_darts_details",
+    },
+
+    slings:{
+        name:"weapons_slings",
+        details:"weapons_slings_details",
+    },
+
+    quarterstaffs:{
+        name:"weapons_quarterstaffs",
+        details:"weapons_quarterstaffs_details",
+    },
+
+    light_arbalets:{
+        name:"weapons_light_arbalets",
+        details:"weapons_light_arbalets_details",
+    },
 }

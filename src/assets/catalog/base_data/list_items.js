@@ -224,6 +224,13 @@ export default {
     weight: 1,
   },
 
+  spell_book: {
+    name: "spell_book",
+    details: "spell_book_details",
+    cost: 5000,
+    weight: 1,
+  },
+
   chest: {
     name: "chest",
     details: "chest_details",
@@ -383,5 +390,40 @@ export default {
     details: "bolt_details",
     cost: 5,
     weight: 0.025,
+  },
+
+  component_pouch: {
+    name: "component_pouch",
+    details: "component_pouch_details",
+    cost: 2500,
+    weight: 1,
+  },
+
+  focus: {
+    name: "focus",
+    details: "focus_details",
+    cost: 2500,
+    weight: 1,
+  },
+
+  science_book: {
+    name: "science_book",
+    details: "science_book_details",
+    cost: 2500,
+    weight: 2.5,
+  },
+
+  sand_pouch: {
+    name: "sand_pouch",
+    details: "sand_pouch_details",
+    cost: 10,
+    weight: 1,
+  },
+
+  knife: {
+    name: "knife",
+    details: "knife_details",
+    cost: 10,
+    weight: 1,
   },
 };

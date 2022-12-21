@@ -2508,6 +2508,10 @@ export default {
     spell_learn_ritual_details: spells.learn_ritual_details,
     spell_learn_ritual_expanded: spells.learn_ritual_expanded,
 
+    spell_learn_spell: spells.learn_spell,
+    spell_learn_spell_details: spells.learn_spell_details,
+    spell_learn_spell_expanded: spells.learn_spell_expanded,
+
     hour_per_lvl: "ч / ур",
     gold50_per_lvl: "чернила и др за 50 🟡 / ур",
 
@@ -2762,4 +2766,105 @@ export default {
 
     wizard: classes.wizard,
     wizard_details: classes.wizard_details,
+
+    weapons_daggers: weapons.daggers,
+    weapons_daggers_details: weapons.daggers_details,
+
+    weapons_darts: weapons.darts,
+    weapons_darts_details: weapons.darts_details,
+
+    weapons_slings: weapons.slings,
+    weapons_slings_details: weapons.slings_details,
+
+    weapons_quarterstaffs: weapons.quarterstaffs,
+    weapons_quarterstaffs_details: weapons.quarterstaffs_details,
+
+    weapons_light_arbalets: weapons.light_arbalets,
+    weapons_light_arbalets_details: weapons.light_arbalets_details,
+
+    restoring: "восстановление",
+    mana_slots_short_rest_lvl_05: "уровень/2 ячеек маны при коротком отдыхе",
+
+    component_pouch: "мешочек с компонентами",
+    component_pouch_details: "Маленький водонепроницаемый кожаный поясной кошель с отделениями для хранения материальных компонентов и других особых предметов, нужных для накладывания заклинаний вместо Фокуса, если только у этих компонентов не указана стоимость (смотрите описание заклинания).",
+
+    focus: "фокус",
+    focus_details: "Особый предмет — сфера, кристалл, жезл, особый посох, короткая деревянная палочка или похожий предмет — созданный для создания заклинаний, частью которых является Фокус.",
+
+    science_book: "научная книга",
+    science_book_details: "",
+
+    sand_pouch: "сумочка с песком",
+    sand_pouch_details: "",
+
+    knife: "небольшой нож",
+    knife_details: "",
+
+    spell_book: "книга заклинаний",
+    spell_book_details: "",
+
+    school_of_evocation:classes.school_of_evocation,
+    school_of_evocation_details:classes.school_of_evocation_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_evocation:"золота и времени на Изучение найденного заклинания Воплощения",
+
+    save_ally:"Создать безопасные участки",
+    one_plus_lvl_from_spell_evocation:"внутри области своего заклинания Воплощения",
+
+    school_of_conjuration:classes.school_of_conjuration,
+    school_of_conjuration_details:classes.school_of_conjuration_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_conjuration:"золота и времени на Изучение найденного заклинания Вызова",
+
+    spell_call_small_conjuration: spells.call_small_conjuration,
+    spell_call_small_conjuration_details: spells.call_small_conjuration_details,
+    spell_call_small_conjuration_expanded: spells.call_small_conjuration_expanded,
+
+    school_of_illusion:classes.school_of_illusion,
+    school_of_illusion_details:classes.school_of_illusion_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_illusion:"золота и времени на Изучение найденного заклинания Иллюзии",
+
+    school_of_necromancy:classes.school_of_necromancy,
+    school_of_necromancy_details:classes.school_of_necromancy_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_necromancy:"золота и времени на Изучение найденного заклинания Некромантии",
+
+    school_of_abjuration:classes.school_of_abjuration,
+    school_of_abjuration_details:classes.school_of_abjuration_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_abjuration:"золота и времени на Изучение найденного заклинания Ограждения",
+
+    spell_magical_protection: spells.magical_protection,
+    spell_magical_protection_details: spells.magical_protection_details,
+    spell_magical_protection_expanded: spells.magical_protection_expanded,
+
+    school_of_enchantment:classes.school_of_enchantment,
+    school_of_enchantment_details:classes.school_of_enchantment_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_enchantment:"золота и времени на Изучение найденного заклинания Чар",
+
+    school_of_transmutation:classes.school_of_transmutation,
+    school_of_transmutation_details:classes.school_of_transmutation_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_transmutation:"золота и времени на Изучение найденного заклинания Преобразования",
+
+    school_of_divination:classes.school_of_divination,
+    school_of_divination_details:classes.school_of_divination_details,
+
+    twice_less:"Вдвое меньше",
+    gold_and_time_divination:"золота и времени на Изучение найденного заклинания Прорицания",
+
+    from_spell_kill_necromancy:"на 2× уровень заклинания, от убийства заклинаниями. 3× если Некромантия",
+
+    magical_protection: "Магическая защита",
+
+    end_of_the_day: "до окончания продолжительного отдыха",
 }

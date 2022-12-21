@@ -120,4 +120,19 @@ export default {
             [items.disguise_kit,5],
         ]
     },
+
+    scholars: {
+        name: "scholars_pack",
+        details: "scholars_pack_details",
+        items:
+        [
+            [items.backpack,1],
+            [items.science_book,1],
+            [items.ink,1], 
+            [items.ink_pen,5],
+            [items.paper,10], 
+            [items.sand_pouch,1],
+            [items.knife,1]
+        ]
+    },
 }

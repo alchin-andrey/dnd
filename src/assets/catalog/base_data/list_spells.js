@@ -11234,4 +11234,134 @@ export default {
     {},
     {},
   ],
+
+  learn_spell: [
+    {
+      name: "spell_learn_spell",
+      details: "spell_learn_spell_details",
+      expanded: "spell_learn_spell_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "ritual",
+      cast_duration: 2,
+      cast_duration_units: "hour_per_lvl",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["gold50_per_lvl"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  small_conjuration: [
+    {
+      name: "spell_small_conjuration",
+      details: "spell_small_conjuration_details",
+      expanded: "spell_small_conjuration_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  magical_protection: [
+    {
+      name: "spell_magical_protection",
+      details: "spell_magical_protection_details",
+      expanded: "spell_magical_protection_expanded",
+
+      type: "ability",
+      slot_type: "magical_protection",
+      classes: [],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "end_of_the_day",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "temporary",
+
+      impact_size_foo: "Num_2xLvl_plus_INT",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
 };
