@@ -2903,4 +2903,6 @@ export default {
 
     druid: classes.druid,
     druid_details: classes.druid_details,
+
+    inf: "безкінечно",
 }

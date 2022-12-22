@@ -2818,9 +2818,9 @@ export default {
     twice_less:"Вдвое меньше",
     gold_and_time_conjuration:"золота и времени на Изучение найденного заклинания Вызова",
 
-    spell_call_small_conjuration: spells.call_small_conjuration,
-    spell_call_small_conjuration_details: spells.call_small_conjuration_details,
-    spell_call_small_conjuration_expanded: spells.call_small_conjuration_expanded,
+    spell_small_conjuration: spells.small_conjuration,
+    spell_small_conjuration_details: spells.small_conjuration_details,
+    spell_small_conjuration_expanded: spells.small_conjuration_expanded,
 
     school_of_illusion:classes.school_of_illusion,
     school_of_illusion_details:classes.school_of_illusion_details,
@@ -2895,4 +2895,6 @@ export default {
     spell_overload: spells.overload,
     spell_overload_details: spells.overload_details,
     spell_overload_expanded: spells.overload_expanded,
+
+    inf: "бесконечно",
 }

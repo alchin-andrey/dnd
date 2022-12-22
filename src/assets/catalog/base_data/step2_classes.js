@@ -8,144 +8,6 @@ import armors from "./list_armor.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
 
-const object_example = {
-  name: "",
-  details: "",
-
-  proficiencies: [
-    {
-      level: 1,
-      armory: [],
-      weaponry: [],
-      tools: [],
-      languages: [],
-    },
-  ],
-
-  qualities: [
-    {
-      level: 1,
-      armor_class: 1,
-      initiative: 1,
-      speed: 10,
-
-      hp_dice: 12,
-      hp_bonus: 1,
-      regen_bonus: 1,
-
-      passive_perception: 1,
-      passive_investigation: 1,
-      passive_insight: 1,
-    },
-  ],
-
-  stats: [
-    {
-      level: 1,
-      strength: { base: 0, bonus: 0, mod: 0, save: 0 },
-      dexterity: { base: 0, bonus: 0, mod: 0, save: 0 },
-      constitution: { base: 0, bonus: 0, mod: 0, save: 0 },
-      intelligence: { base: 0, bonus: 0, mod: 0, save: 0 },
-      wisdom: { base: 0, bonus: 0, mod: 0, save: 0 },
-      charisma: { base: 0, bonus: 0, mod: 0, save: 0 },
-    },
-  ],
-
-  skills: [
-    {
-      level: 1,
-      athletics: 1,
-      acrobatics: 1,
-      sleight_of_hand: 1,
-      stealth: 1,
-      investigation: 1,
-      history: 1,
-      religion: 1,
-      arcana: 1,
-      nature: 1,
-      survival: 1,
-      perception: 1,
-      insight: 1,
-      medicine: 1,
-      animal_hanging: 1,
-      performance: 1,
-      persuasion: 1,
-      deception: 1,
-      intimidation: 1,
-    },
-  ],
-
-  equipment: [
-    {
-      level: 1,
-      armor: [[armors.leather, 1]],
-      weapon: [[weapons.dagger, 2]],
-      inventory: [[packs.thieves, 1]],
-    },
-  ],
-
-  charges: [
-    {
-      level: 1,
-      name: "spell_slots",
-      list: [
-        ["1", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["2", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["3", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["4", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["5", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["6", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["7", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["8", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-        ["9", 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "inf"],
-      ],
-    },
-  ],
-
-  fines: [
-    {
-      level: 1,
-
-      type: "",
-      keyword: "",
-      details: "",
-
-      // when without heavy armor
-      condition: "if_no_heavy_armor",
-      key: "armor_bonus",
-      value: "stats.constitution.mod",
-    },
-  ],
-
-  spells: [
-    {
-      level: 1,
-      spell: spells.acid_breath_line,
-    },
-  ],
-
-  settings: [
-    {
-      level: 1,
-      type: "custom",
-      name: "",
-      select: 2,
-      list: [
-        {
-          name: "1",
-        },
-      ],
-    },
-    {
-      level: 1,
-      type: "spells",
-      name: "",
-      select: 2,
-      filter: [0, "wizard"],
-    },
-  ],
-};
-
 export const barbarian_rage_bonus = [
   0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
 ];
@@ -1729,7 +1591,7 @@ export default {
 
       // ПУСТИЙ!!! ЩЕ НЕ ВНОСИВ НІЧОГО СЮДИ
   
-      hp_dice: 6,
+      hp_dice: 8,
   
       proficiencies: {
         armor: [],
@@ -2136,19 +1998,23 @@ export default {
       },
     ],
 
-    skills: [
+    specials: [
       {
-        lelel: 2,
-        condition: "no_mastery",
-        num: "mastery/2",
-      },
+        level: 2,
+        foo: "Skills_Half_Mastery",
+      }
     ],
 
     charges: [
       {
         level: 1,
         name: "bardic_inspiration_slots",
-        foo: "Str_CHA_min1",
+        foo: "Str_Bard_insp__Num_CHA_min1",
+        //Вы можете использовать это умение количество раз, равное модификатору вашей Харизмы, но как минимум один раз.
+        //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Изначально d6, она становится d8 на 5 уровне, d10 на 10 уровне и d12 на 15 уровне.
+        list: [
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ],
       },
       {
         level: 1,
