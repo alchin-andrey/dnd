@@ -23,6 +23,12 @@ export const useMYStore = defineStore({
 				state.MY.ethnos.settings?.find((item) => item.type == name);
 		},
 
+    class_Specials(state) {
+			return (name) =>
+				state.MY.class.specials?.filter((item) => item.type == name);
+		},
+
+
 		//NOTE - COMMON (stats, skills, languages, spells)
 		COMMON_Custom_Arr_RE: (state) => (name) => {
       const {stats_Keys, stats_Activ_Arr_RE} = useStatsStore();

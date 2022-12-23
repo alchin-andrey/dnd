@@ -104,9 +104,25 @@ export const useStatsStore = defineStore({
       return Math.floor((base_numb - 10)/2);
     },
 
+    stats_Saving_Arr() {
+      const MYStore = useMYStore();
+      let arr_save = [];
+      let save = MYStore.MY.class.saving;
+      arr_save = save.slice(0);
+      let lvl = MYStore.MY.level;
+      
+      let specials = MYStore.class_Specials("saving");
+			specials?.forEach(el => 
+        el.level <= lvl 
+        ? el.saving.forEach(x => arr_save.push(x)) 
+        : null);
+      return arr_save;
+    },
+
     stats_Save: (state) => (name) => {
       const MYStore = useMYStore();
-      let save = MYStore.MY.class.saving.includes(name)
+      // let save = MYStore.MY.class.saving.includes(name);
+      let save = state.stats_Saving_Arr.includes(name);
       return save ? MYStore.Mastery : null;
     },
 

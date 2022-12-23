@@ -460,13 +460,11 @@ export default {
 
 		Num_MOD() {
 			let num = this.Spell_Index.impact_size_num;
-			let mod = this.MY.stats.strength.mod;
-			// console.log('Str_X_Plus_1_Num_MOD', num)
-
-			let lvl = this.MY.level;
-			return num + mod + lvl;
-			// return num + mod;
+			let mod = this.stats_Mod(this.MY.class.spell_attribute);
+			let res = num + mod;
+			return res < 0 ? 0 : res;
 		},
+
 		Num_Plus_05() {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
@@ -529,11 +527,11 @@ export default {
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.MY.stats.strength.mod;
+      let mod = this.stats_Mod(this.MY.class.spell_attribute);
 			// console.log('Str_X_Plus_1_Num_MOD', num)
 
-			let lvl = this.MY.level;
-			return pls + mod + lvl;
+      let res = pls + mod;
+			return res < 0 ? 0 : res;
 			// return num + mod;
 
 			//Example:

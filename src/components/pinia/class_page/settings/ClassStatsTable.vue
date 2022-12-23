@@ -10,7 +10,7 @@
 			<svg
 				class="passive_svg"
 				:class="{
-					save_svg: MY.class.saving.includes(name),
+					save_svg: stats_Saving_Arr.includes(name),
 				}"
 				width="18"
 				height="18"
@@ -67,6 +67,7 @@ export default {
 		...mapState(useStatsStore, [
       "stats_Keys",
       "stats_Class_Page_Numb",
+      "stats_Saving_Arr",
 			"stats_Mod",
       "stats_Save",
       "stats_Save_Mod",
@@ -116,18 +117,6 @@ export default {
         return null;
       }
 		},
-
-    // cube_Save: (state) => (name) => {
-    //   let save = state.MY.class.saving.includes(name)
-    //   let mod = state.stats_Mod(name);
-    //   if (save && mod < 0) {
-    //     return state.Mastery - Math.abs(mod);
-    //   } else if (save) {
-    //     return state.Mastery;
-    //   } else {
-    //     return null;
-    //   }
-		// },
 
 		cube_Negative: (state) => (name) => {
 			let mod = state.stats_Mod(name);

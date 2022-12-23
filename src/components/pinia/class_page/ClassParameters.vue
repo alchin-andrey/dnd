@@ -17,7 +17,7 @@
 				:numb="null"
 				:old_numb="skills_Old_Numb(MY.skills[name].mod)"
 				:icon="MY.skills[name].mod"
-				:save="MY.class.saving"
+				:save="stats_Saving_Arr"
 			></my-attribute>
 		</my-wrapper>
 		<!-- attributes -->
@@ -144,7 +144,7 @@
 				plus
 				:numb="stats_Mod(MY.skills[name].mod)"
 				:icon="MY.skills[name].mod"
-				:save="MY.class.saving"
+				:save="stats_Saving_Arr"
 			></my-attribute>
 		</my-wrapper>
 		<!-- attributes-stats -->
@@ -180,6 +180,7 @@ export default {
 			"stats_Keys",
 			"stats_Race_Page_Numb",
 			"stats_Mod",
+      "stats_Saving_Arr",
 		]),
 		...mapState(useSkillsStore, ["skills_All_RE", "skills_Keys"]),
 		...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),

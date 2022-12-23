@@ -138,10 +138,10 @@ export default {
             //   spell: spells.cordon_of_arrows,
             // },
 
-            // {
-            //   level: 1,
-            //   spell: spells.heroism,
-            // },
+            {
+              level: 1,
+              spell: spells.heroism,
+            },
 
             // {
             //   level: 1,

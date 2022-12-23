@@ -4,7 +4,7 @@
 			<svg
 				class="passive_svg"
 				:class="{
-					save_svg: MY.class.saving.includes(stats_name),
+					save_svg: stats_Saving_Arr.includes(stats_name),
 				}"
 				width="18"
 				height="18"
@@ -57,7 +57,7 @@ export default {
 		...mapState(useMYStore, ["MY"]),
     ...mapState(useStatsStore, ["stats_base_numb", "stats_base_save"]),
 		// GETTERS
-    ...mapState(useStatsStore, ["stats_Keys", "stats_Base_Arr"]),
+    ...mapState(useStatsStore, ["stats_Keys", "stats_Base_Arr", "stats_Saving_Arr"]),
 		
     t_Title() {
 			return this.t(this.stats_name);
