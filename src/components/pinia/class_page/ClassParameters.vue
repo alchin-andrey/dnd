@@ -15,7 +15,7 @@
 				:title="name"
 				plus
 				:numb="null"
-				:old_numb="skills_Old_Numb(MY.skills[name].mod)"
+				:old_numb="skills_Old_Numb(name)"
 				:icon="MY.skills[name].mod"
 				:save="stats_Saving_Arr"
 			></my-attribute>
@@ -120,13 +120,6 @@
 		<!-- //NOTE - text -->
 		<div class="story int-400">
 			<div v-html="t_Story"></div>
-			<!-- <my-card-text
-  				v-if="MY.ethnos.name !== 'common'"
-  				:title="MY.ethnos.name"
-  				:text="MY.ethnos.details"
-  				:rare="MY.ethnos.rare"
-  			>
-  			</my-card-text> -->
 		</div>
 	</section>
 
@@ -142,7 +135,7 @@
 				:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
 				:title="name"
 				plus
-				:numb="stats_Mod(MY.skills[name].mod)"
+				:numb="skills_Old_Numb(name)"
 				:icon="MY.skills[name].mod"
 				:save="stats_Saving_Arr"
 			></my-attribute>
@@ -242,8 +235,11 @@ export default {
 		},
 
 		skills_Old_Numb: (state) => (name) => {
-			let mod = state.stats_Mod(name);
-			return state.Mastery + mod;
+      let state_name = state.MY.skills[name].mod
+			let mod = state.stats_Mod(state_name);
+      let race_mastery = null;
+      state.skills_All_RE.includes(name) ? race_mastery = state.Mastery : null;
+			return race_mastery + mod;
 		},
 
 		armor_Numb() {
