@@ -169,7 +169,8 @@ export default {
 
 .column_value {
 	display: flex;
-	width: 252px;
+  flex: 1 1 auto;
+	/* width: 252px; */
 }
 
 .icon {

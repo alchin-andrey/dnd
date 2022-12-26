@@ -129,14 +129,14 @@
 			<!-- //!NOTE - spells -->
 
 			<!-- //NOTE - weapon -->
-			<!-- <my-wrapper gap_8 hr>
+			<my-wrapper v-if="weapons_Level_Arr.length !== 0" gap_26 hr>
 				<my-weapon
-					v-for="item in weapons_Level_Arr"
-					:key="item"
-					:title="item[0].name"
+					v-for="weapon in weapons_Level_Arr"
+					:key="weapon"
+          :weapon="weapon"
 				>
 				</my-weapon>
-			</my-wrapper> -->
+			</my-wrapper>
 			<!-- //!NOTE - weapon -->
 
 			<!-- //NOTE - text -->
@@ -328,21 +328,19 @@ export default {
 		},
 
 		weapons_Level_Arr() {
-			let arr = null;
-			for (let item of this.equipments_Level_Arr) {
-        console.log('item:', item);
-				for (let weapon of item.weapon) {
-          console.log('i:', weapon)
-          if(weapon) {
-            console.log('weapon:', weapon)
-            // arr.push(item.weapon[i]);
-          }
-        }
-			}
-      // console.log('arr:', arr)
-			// this.equipments_Level_Arr?.forEach((el) =>
-			// 	el.weapon?.forEach((item) => arr.push(item))
-			// );
+			let arr = [];
+		
+			// for (let item of this.equipments_Level_Arr) {
+			// 	for (let weapon of item?.weapon) {
+      //     if(weapon) {
+      //       arr.push(weapon);
+      //     }
+      //   }
+			// }
+			this.equipments_Level_Arr?.forEach((el) =>
+				el.weapon?.forEach((weapon) => arr.push(weapon))
+			);
+      console.log('arr:', arr)
 			return arr ? arr : [];
 		},
 

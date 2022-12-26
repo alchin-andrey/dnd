@@ -1,7 +1,6 @@
 <template>
 	<div
-		v-if="lvl_Show"
-		class="flex_spell"
+		class="flex_weapon"
 		@mouseover="hoverIn_Full()"
 		@mouseleave="hoverOut()"
 		@click="showDialog_Full()"
@@ -10,9 +9,9 @@
 		<div class="int-400 flex_col" :class="{ passive: passive }">
 			<div>
 				<div class="flex_title">
-					<div class="title_spell h_18">{{ t_Title }}</div>
+					<div class="title h_18">{{ t_Title }} {{ weapon_Numb }}</div>
 					<img
-						class="icon_spell"
+						class="icon"
 						src="@/assets/img/icon/arrow_right_small.svg"
 						alt="arrow"
 						@mouseover="hoverIn_Select()"
@@ -21,42 +20,47 @@
 					/>
 				</div>
 			</div>
-			<my-attribute
-				title="inf"
-				:numb="2"
-				:dice="12"
+			<my-attribute v-if="Weapon.damage_1_hand_num"
+				title="damage"
+        type="damage_1_hand"
+				:numb="Weapon.damage_1_hand_num"
+				:dice="Weapon.damage_1_hand_dice"
+			/>
+      <my-attribute v-if="Weapon.damage_2_hand_num"
+				title="damage"
+        type="damage_2_hand"
+				:numb="Weapon.damage_2_hand_num"
+				:dice="Weapon.damage_2_hand_dice"
 			/>
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
+    <div class="title h_18">{{ t_Title }} {{ weapon_Numb }}</div>
+    <my-attribute v-if="Weapon.damage_1_hand_num"
+				title="damage"
+        type="damage_1_hand"
+				:numb="Weapon.damage_1_hand_num"
+				:dice="Weapon.damage_1_hand_dice"
+			/>
+      <my-attribute v-if="Weapon.damage_2_hand_num"
+				title="damage"
+        type="damage_2_hand"
+				:numb="Weapon.damage_2_hand_num"
+				:dice="Weapon.damage_2_hand_dice"
+			/>
 	</my-dialog-spell>
 </template>
 
 <script>
-import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
-import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "MyWeapon",
 	data() {
 		return {
 			dialogVisible: false,
-			numb_type: 0,
-			mana_numb: null,
-			emoji_size: 16,
 		};
 	},
 	props: {
-    title: {
-			type: String,
-			default: null,
-		},
-		lvl: {
-			type: Number,
-			default: null,
-		},
-		spell: {
+		weapon: {
 			type: Array,
 			default: null,
 		},
@@ -70,444 +74,21 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "Mastery"]),
-    	// GETTERS
-		...mapState(useStatsStore, ["stats_Mod"]),
+    Weapon() {
+      return this.weapon[0];
+    },
 
     t_Title() {
-      return this.t(this.title);
+      let str = this.t(this.Weapon.name)
+      return str[0].toUpperCase() + str.slice(1);
     },
 
-		Index() {
-			return this.spell.findIndex((el) => el.name);
-		},
-
-		Spell_Index() {
-			return this.spell[this.Index];
-		},
-
-		Mana_Numb() {
-			if (this.mana_numb) {
-				return this.mana_numb;
-			} else {
-				return this.Index;
-			}
-		},
-
-		Manna_Index() {
-			return this.spell[this.Mana_Numb];
-		},
-
-		Manna_Length() {
-			return this.spell.length;
-		},
-
-    lvl_Show() {
-			return this.lvl <= this.MY.level;
-		},
-
-		em_Upd() {
-			return this.updEmoji(this.t_Title);
-		},
-
-		em_Before() {
-			return this.beforeEmoji(this.t_Title);
-		},
-
-		em_After() {
-			return this.afterEmoji(this.t_Title);
-		},
-
-		t_Title() {
-			return this.t(this.Spell_Index.name);
-		},
-
-		t_Type() {
-			let string = this.t(this.Spell_Index.type);
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		t_Text() {
-			return this.t(this.Spell_Index.details);
-		},
-
-		t_Cast_Value() {
-			let string = null;
-			if (this.Spell_Index.cast_time === "ritual") {
-				let value = this.t(this.Spell_Index.cast_time);
-				let numb = this.Spell_Index.cast_duration;
-				let numb_units = this.t(this.Spell_Index.cast_duration_units);
-				string = `${value} ${numb} ${numb_units}`;
-			} else {
-				string = this.t(this.Spell_Index.cast_time);
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		t_Target_Value() {
-			let value_1 = this.t(this.Spell_Index.aim_target);
-			let value_2 = this.t(this.Spell_Index.aim_type);
-			let string = null;
-			if (value_2) {
-				string = `${value_1} ${value_2}`;
-			} else {
-				string = value_1;
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		t_Parts_Value() {
-			let parts = this.Spell_Index.parts;
-			let arr = [];
-			for (let i in parts) {
-				arr.push(this.t(parts[i]));
-			}
-			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
-		},
-
-		t_Time_Value() {
-			let value_1 = null;
-			if (this.Spell_Index.spell_time === "concentration") {
-				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
-			} else {
-				value_1 = this.t(this.Spell_Index.spell_time);
-			}
-			let value_2 = this.by_Mana("spell_duration");
-			let value_3 = this.t(this.Spell_Index.spell_duration_units);
-			let string = null;
-			if (!value_1) {
-				string = `${value_2} ${value_3}`;
-			} else if (value_2) {
-				string = `${value_1} ${value_2} ${value_3}`;
-			} else {
-				string = value_1;
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
-		},
-
-		Saving_Numb() {
-			const KOF = 8;
-			let attribute = this.MY.class.spell_attribute;
-			let mastery = this.Mastery;
-			let stats_mod = this.MY.stats[attribute].mod;
-			return KOF + mastery + stats_mod;
-		},
-
-    t_Save() {
-      if (this.Spell_Index.saving_attribute) {
-        let test = `${this.T("saving")} ${this.T(this.Spell_Index.saving_attribute)} ${this.Saving_Numb}`;
-        let success = `${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved}`;
-        if(this.Spell_Index.impact_size_saved) {
-          return `${test} — ${success}`;
-        } else {
-          return test;
-        }
-      } else {
-        return null;
-      }
+    weapon_Numb() {
+      let numb = this.weapon[1]
+      return numb > 1 ? `× ${numb}`: null;
     },
-
-		t_Expanded() {
-			return this.t(this.Spell_Index.expanded);
-		},
-
-    by_Mana: (state) => (str) => {
-			let val = state.Manna_Index[str];
-			if (val) {
-				return val;
-			} else {
-				let main_num = state.Index;
-				let num = state.Mana_Numb;
-				let res = null;
-				for (let i = num; i > main_num - 1; i--) {
-					if (state.spell[i].hasOwnProperty(str)) {
-						res = state.spell[i][str];
-						break;
-					}
-				}
-				return res;
-			}
-		},
-
-		// -----------------------------------
-		//ANCHOR - STR
-		Str_X_Level_5_11_17() {
-			let str = this.Spell_Index.impact_size_str;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl < 5) {
-				kof = 1;
-			} else if (lvl < 11) {
-				kof = 2;
-			} else if (lvl < 17) {
-				kof = 3;
-			} else {
-				kof = 4;
-			}
-			let res = str + kof;
-			return res;
-			//return to: impact_size_str
-			//1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
-			//Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Str_X_Plus_1() {
-			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = str + (mana - mana_min);
-			return res;
-			//return to: impact_size_str
-			//Exapmle: str = 3
-			//spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
-			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 4× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Str_X_Plus_2() {
-			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = str + (mana - mana_min) * 2;
-			return res;
-			//return to: impact_size_str
-			//Exapmle: str = 3
-			//spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
-			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 5× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Str_Plus_40() {
-			//не добавлять "×"
-
-			let str = this.Spell_Index.impact_size_str;
-			let mana = this.Mana_Numb;
-			let res = str * mana;
-			return res;
-			//Example:
-			//str = 40
-			//spell{1} = 40
-			//spell{2} = 80
-			//spell{3} = 120
-
-			// + aoe size через скобочки
-		},
-
-		//ANCHOR - NUM
-		Num_Barbarian_Rage_Bonus() {
-			return barbarian_rage_bonus[this.MY.level]; // convert to store
-		},
-
-		Num_Plus_Level_2() {
-			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			return num + Math.floor((lvl - 1) / 2);
-			//Например num = 1.
-			//на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
-		},
-
-		Num_LevelX() {
-			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-
-			return num * lvl;
-		},
-
-		Num_Level_9_16() {
-			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			let kof = 0;
-			if (lvl < 9) {
-				kof = 0;
-			} else if (lvl < 16) {
-				kof = 1;
-			} else {
-				kof = 2;
-			}
-			return num + kof;
-		},
-
-		Num_Level_5_11_17() {
-			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			let kof = 0;
-			if (lvl < 5) {
-				kof = 0;
-			} else if (lvl < 11) {
-				kof = 1;
-			} else if (lvl < 17) {
-				kof = 2;
-			} else {
-				kof = 3;
-			}
-			return num + kof;
-		},
-
-		Num_Level_6_11_16() {
-			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl < 6) {
-				kof = 0;
-			} else if (lvl < 11) {
-				kof = 1;
-			} else if (lvl < 16) {
-				kof = 2;
-			} else {
-				kof = 3;
-			}
-			return num + kof;
-		},
-
-		Num_MOD() {
-			let num = this.Spell_Index.impact_size_num;
-			let mod = this.stats_Mod(this.MY.class.spell_attribute);
-			let res = num + mod;
-			return res < 0 ? 0 : res;
-		},
-
-		Num_Plus_05() {
-			let num = this.Spell_Index.impact_size_num;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = num + Math.floor((mana - mana_min) / 2);
-			return res;
-			//spell{1} = num, spell{2} = num, spell{3} = num+1 ...
-			//Example:
-			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{3}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-		Num_Plus_1() {
-			let num = this.Spell_Index.impact_size_num;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = num + (mana - mana_min);
-			return res;
-			//spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
-			//Example:
-			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Num_Plus_2() {
-			let num = this.Spell_Index.impact_size_num;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = num + (mana - mana_min) * 2;
-			return res;
-			//spell{1} = num, spell{2} = num+2, spell{3} = num+4 ...
-			//Example:
-			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 3d10 ⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-		Num_Plus_5() {
-			let num = this.Spell_Index.impact_size_num;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = num + (mana - mana_min) * 5;
-			return res;
-			//return to: impact_size_num
-			//spell{1} = num, spell{2} = num+5, spell{3} = num+10 ...
-			//Example:
-			//spell{1}: 1d4 ⬜️🔳🔳🔳
-			//spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
-		},
-
-    Num_Mastery_05() {
-      return Math.floor(this.Mastery / 2);
-    },
-
-    Num_2xLvl_plus_INT() {
-      let lvl = this.MY.level;
-      let mod = this.stats_Mod("intelligence");
-      return lvl * 2 + mod;
-    },
-
-		//ANCHOR - PLS
-		Pls_MOD() {
-			let pls = this.Spell_Index.impact_size_pls;
-      let mod = this.stats_Mod(this.MY.class.spell_attribute);
-			// console.log('Str_X_Plus_1_Num_MOD', num)
-
-      let res = pls + mod;
-			return res < 0 ? 0 : res;
-			// return num + mod;
-
-			//Example:
-			//base_stat = strenth
-			//pls = base_stat_mod = strength.mod = 3
-			//spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
-			//spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
-		},
-		Pls_Plus_5() {
-			let pls = this.Spell_Index.impact_size_pls;
-			let mana = this.Mana_Numb;
-			let mana_min = this.Index;
-			let res = pls + (mana - mana_min) * 5;
-			return res;
-			//return to: impact_size_pls
-			//Exapmle: pls = 4
-			//spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
-			//spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
-		},
-
-		Pls_STR() {
-			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.stats_Mod("strength");
-      let res = pls + mod;
-			return res;
-
-			//return to: impact_size_pls
-			//if < 0 then 0
-			// Example: +3 ⬜️⬜️⬜️
-		},
-
-		Pls_CHA() {
-			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.stats_Mod("charisma");
-      let res = pls + mod;
-			return res <= 0 ? 1 : res;
-
-			//return to: impact_size_pls
-			//if < 0 then 0
-			//Example: +4 ⬜️⬜️⬜️⬜️
-		},
-
-    Pls_Lvl() {
-      let lvl = this.MY.level;
-      return lvl;
-    },
-
-		//ANCHOR - FOO
-    Value_Foo: (state) => (Val) => {
-      let low_val = Val.toLowerCase();
-			let num = state.Spell_Index[`impact_size_${low_val}`];
-			let foo = state.Spell_Index.impact_size_foo;
-			if (foo) {
-        let str = foo.split("__");
-				for (let i in str) {
-          str[i].substr(0, 3) === Val ? num = state[str[i]] : null;
-				}
-			}
-			return num;
-		},
-
-    Value_Str() {
-      return this.Value_Foo("Str");
-    },
-
-    Value_Num() {
-      return this.Value_Foo("Num");
-    },
-
-		Value_Pls() {
-			return this.Value_Foo("Pls");
-		},
-		// ------ FOO -----------
-
 	},
+
 	watch: {
 		dialogVisible(val) {
 			if (val === false) {
@@ -534,24 +115,18 @@ export default {
 		showDialog_Full() {
 			if (!this.select) {
 				this.dialogVisible = true;
-				this.mana_numb = this.Index;
 			}
 		},
 
 		showDialog_Select() {
 			this.dialogVisible = true;
-			this.mana_numb = this.Index;
-		},
-
-    choiceManna(numb) {
-			return numb - 1 < this.Index ? null : this.mana_numb = numb - 1
 		},
 	},
 };
 </script>
 
 <style scoped>
-.flex_spell {
+.flex_weapon {
 	display: flex;
 	gap: 0 18px;
 	height: 100%;
@@ -630,7 +205,7 @@ export default {
 	height: 18px;
 }
 
-.title_spell {
+.title {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
@@ -643,8 +218,9 @@ export default {
 	white-space: pre;
 }
 
-.title_spell:first-letter {
+.title::first-letter {
 	text-transform: uppercase;
+  font-size: 130%;
 }
 
 .gray_2 {
@@ -655,20 +231,9 @@ export default {
 	color: rgba(255, 255, 255, 0.4);
 }
 
-.text_spell {
-	width: 340px;
-	text-align: start;
-}
-
 .hr {
 	height: 1px;
 	background: rgba(255, 255, 255, 0.2);
-}
-
-.emoji-mart-emoji {
-	padding: 0;
-	line-height: 0;
-	vertical-align: text-top;
 }
 
 .passive {
