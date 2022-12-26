@@ -8,8 +8,8 @@
 					<div class="small">{{ Str(item) }}</div>
 					<div class="visual">
 						<div class="cube cube_charge" v-for="n in cube_Numb(item)" :key="n"></div>
-            <div class="charge" v-if="Inf(item)">{{ Inf(item) }}</div>
 					</div>
+          <div class="charge" v-if="Inf(item)">{{ Inf(item) }}</div>
 				</section>
 			</div>
 	</div>
