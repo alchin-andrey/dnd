@@ -1309,7 +1309,7 @@ export default {
       {
         level: 1,
         name: "divine_sense_slots",
-        foo: "Num_CHA", //Str_Plus_CHA
+        foo: "Num_CHA_Min0", //Str_Plus_CHA
         list: [
           ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],

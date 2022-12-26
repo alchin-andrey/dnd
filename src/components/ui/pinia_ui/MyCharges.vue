@@ -59,7 +59,6 @@ export default {
       let lvl = state.MY.level;
       let numb = item[lvl];
       let numb_foo = state.Value_Foo("Num");
-			console.log('cube_Numb:', numb + numb_foo)
 			return !isNaN(numb) ? numb + numb_foo : null
 		},
 
@@ -82,8 +81,6 @@ export default {
 		},
 
     Str_Level_5_10_15() {
-      //Вы можете использовать это умение количество раз, равное модификатору вашей Харизмы, но как минимум один раз.
-      //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Изначально d6, она становится d8 на 5 уровне, d10 на 10 уровне и d12 на 15 уровне.
 			let lvl = this.MY.level;
       let kof = null;
 			if (lvl < 5) {
@@ -98,27 +95,15 @@ export default {
 			return `d${kof}`;
     },
 
-    Num_CHA () {
+    Num_CHA_Min0 () {
       let mod = this.stats_Mod("charisma");
-			return mod;
+			return mod < 0 ? 0 : mod;
     },
     
     Num_CHA_Min1() {
       let mod = this.stats_Mod("charisma");
       return mod <= 0 ? 1 : mod;
     },
-
-    // Value_Str() {
-    //   return this.Value_Foo("Str");
-    // },
-
-    // Value_Num() {
-    //   return this.Value_Foo("Num");
-    // },
-
-		// Value_Pls() {
-		// 	return this.Value_Foo("Pls");
-		// },
 	},
 };
 </script>
