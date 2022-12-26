@@ -1605,7 +1605,7 @@ export default {
   
       proficiencies: {
         armor: [armory.light,armory.medium,armory.shields],
-        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.daggers, weaponry.light_arbalets],
+        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.daggers],
         tools: [],
         languages: [langs.druid],
       },
@@ -1625,7 +1625,7 @@ export default {
       fines: [
         {
           level: 1,
-          key: "minus",
+          type: "minus",
           keyword: "unability",
           details: "to_wear_metal_armor", 
         }
