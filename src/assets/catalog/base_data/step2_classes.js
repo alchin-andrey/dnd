@@ -574,6 +574,7 @@ export default {
           {
             equipment: [
               {
+                level: 1,
                 armor: [[armors.chainmail, 1]],
               },
             ],
@@ -656,6 +657,7 @@ export default {
             name: "style_dueling",
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_attack_signle_one_handed",
@@ -666,6 +668,7 @@ export default {
             name: "style_protection",
             spells: [
               {
+                level: 2,
                 spell: spells.side_pary,
               },
             ],
@@ -674,6 +677,7 @@ export default {
             name: "style_defence",
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_armor_if_armor",
@@ -689,6 +693,7 @@ export default {
             name: "style_great_weapon",
             fines: [
               {
+                level: 2,
                 type: "advantage",
                 keyword: "rethrow",
                 details: "if_1_or_2_on_two_handed_weapon",
@@ -699,6 +704,7 @@ export default {
             name: "style_double_weapon",
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_damage_second_attack",
@@ -709,6 +715,7 @@ export default {
             name: "style_archery",
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "aim_bonus",
                 details: "plus_2_on_ranged",
@@ -841,6 +848,7 @@ export default {
 
     charges: [
       {
+        level: 1,
         name: "rage_slots",
         list: [
           ["", 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, "inf"],
@@ -1808,9 +1816,10 @@ export default {
               
               charges: [
                 {
+                  level: 2,
                   name: "magical_protection",
                   list: [
-                    ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                    ["", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
                   ],
                 },
               ],
