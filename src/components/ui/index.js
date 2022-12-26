@@ -37,7 +37,9 @@ import MySpellMain from "@/components/ui/MySpellMain.vue";
 
 import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
 import MyBackPage from "@/components/ui/pinia_ui/MyBackPage.vue";
+
 import MyCharges from "@/components/ui/pinia_ui/MyCharges.vue";
+import MyWeapon from "@/components/ui/pinia_ui/MyWeapon.vue";
 
 
 
@@ -82,4 +84,5 @@ export default [
   MyCusstomSetting,
 
   MyCharges,
+  MyWeapon,
 ];

@@ -1,165 +1,175 @@
 <template>
-  <transition name="mode-fade" mode="out-in">
-	<section v-if="!class_page.shown.stats">
-		<!-- stats -->
-		<my-wrapper gap_16 hr>
-			<ClassStatsTable />
-		</my-wrapper>
-		<!-- stats -->
+	<transition name="mode-fade" mode="out-in">
+		<section v-if="!class_page.shown.stats">
+			<!-- stats -->
+			<my-wrapper gap_16 hr>
+				<ClassStatsTable />
+			</my-wrapper>
+			<!-- stats -->
 
-		<!-- attributes -->
-		<my-wrapper hr v-if="skills_All_RE.length !== 0">
-			<my-attribute
-				v-for="name in skills_All_RE"
-				:key="name"
-				:title="name"
-				plus
-				:numb="null"
-				:old_numb="skills_Old_Numb(name)"
-				:icon="MY.skills[name].mod"
-				:save="stats_Saving_Arr"
-			></my-attribute>
-		</my-wrapper>
-		<!-- attributes -->
+			<!-- attributes -->
+			<my-wrapper hr v-if="skills_All_RE.length !== 0">
+				<my-attribute
+					v-for="name in skills_All_RE"
+					:key="name"
+					:title="name"
+					plus
+					:numb="null"
+					:old_numb="skills_Old_Numb(name)"
+					:icon="MY.skills[name].mod"
+					:save="stats_Saving_Arr"
+				></my-attribute>
+			</my-wrapper>
+			<!-- attributes -->
 
-		<!-- qualities -->
-    <ClassQualitiesParam/>
-		<!-- qualities -->
+			<!-- qualities -->
+			<ClassQualitiesParam />
+			<!-- qualities -->
 
-    <!-- charges -->
-    <my-wrapper v-if="charges_Level_Arr.length !== 0" hr>
-			<my-charges
-				v-for="item in charges_Level_Arr"
-				:key="item"
-        :charge="item"
+			<!-- charges -->
+			<my-wrapper v-if="charges_Level_Arr.length !== 0" hr>
+				<my-charges
+					v-for="item in charges_Level_Arr"
+					:key="item"
+					:charge="item"
+				>
+				</my-charges>
+			</my-wrapper>
+			<!-- charges -->
+
+			<!-- //NOTE - proficiencies -->
+			<my-wrapper gap_8 hr>
+				<my-inventory
+					v-for="(val, name) in MY.proficiencies"
+					:key="name"
+					:title="name"
+					:item="proficiencies_Arr_Class(name)"
+					:item_old="proficiencies_Arr_REC(name)"
+				>
+				</my-inventory>
+			</my-wrapper>
+			<!-- //!NOTE - proficiencies -->
+
+			<!-- //NOTE - fines -->
+			<my-wrapper
+				v-if="MY.race.fines || MY.ethnos.fines || MY.class.fines"
+				gap_8
+				hr
 			>
-			</my-charges>
-		</my-wrapper>
-		<!-- charges -->
+				<!-- RACE -->
+				<my-fines
+					v-for="item in MY.race.fines"
+					:key="item"
+					:icon="item.type"
+					:title="item.keyword"
+					:details="item.details"
+					passive
+				></my-fines>
 
-		<!-- //NOTE - proficiencies -->
-		<my-wrapper gap_8 hr>
-			<my-inventory
-				v-for="(val, name) in MY.proficiencies"
-				:key="name"
-				:title="name"
-				:item="proficiencies_Arr_Class(name)"
-				:item_old="proficiencies_Arr_REC(name)"
-			>
-			</my-inventory>
-		</my-wrapper>
-		<!-- //!NOTE - proficiencies -->
+				<my-fines
+					v-for="item in MY.ethnos.fines"
+					:key="item"
+					:icon="item.type"
+					:title="item.keyword"
+					:details="item.details"
+					passive
+				></my-fines>
+				<!-- RACE -->
+				<!-- CLASS -->
+				<my-fines
+					v-for="item in MY.class.fines"
+					:key="item"
+					:lvl="item.level"
+					:icon="item.type"
+					:title="item.keyword"
+					:details="item.details"
+				></my-fines>
+				<!-- CLASS -->
+			</my-wrapper>
+			<!-- //!NOTE - fines -->
 
-		<!-- //NOTE - fines -->
-		<my-wrapper
-			v-if="MY.race.fines || MY.ethnos.fines || MY.class.fines"
-			gap_8
-			hr
-		>
+			<!-- //NOTE - spells -->
 			<!-- RACE -->
-			<my-fines
-				v-for="item in MY.race.fines"
-				:key="item"
-				:icon="item.type"
-				:title="item.keyword"
-				:details="item.details"
-				passive
-			></my-fines>
+			<my-wrapper v-if="shown_Spells_All" gap_26 hr>
+				<my-spell-text
+					v-for="item in MY.race.spells"
+					:key="item"
+					:lvl="item.level"
+					:spell="item.spell"
+					passive
+				>
+				</my-spell-text>
+				<my-spell-text
+					v-for="item in MY.ethnos.spells"
+					:key="item"
+					:lvl="item.level"
+					:spell="item.spell"
+					passive
+				>
+				</my-spell-text>
+				<my-spell-text
+					v-for="item in spells_Custom_Obj_RE"
+					:key="item"
+					:lvl="1"
+					:spell="item"
+					passive
+				>
+				</my-spell-text>
+				<!-- RACE -->
+				<!-- CLASS -->
+				<my-spell-text
+					v-for="item in MY.class.spells"
+					:key="item"
+					:lvl="item.level"
+					:spell="item.spell"
+				>
+				</my-spell-text>
+				<!-- CLASS -->
+			</my-wrapper>
+			<!-- //!NOTE - spells -->
 
-			<my-fines
-				v-for="item in MY.ethnos.fines"
-				:key="item"
-				:icon="item.type"
-				:title="item.keyword"
-				:details="item.details"
-				passive
-			></my-fines>
-			<!-- RACE -->
-			<!-- CLASS -->
-			<my-fines
-				v-for="item in MY.class.fines"
-				:key="item"
-				:lvl="item.level"
-				:icon="item.type"
-				:title="item.keyword"
-				:details="item.details"
-			></my-fines>
-			<!-- CLASS -->
-		</my-wrapper>
-		<!-- //!NOTE - fines -->
+			<!-- //NOTE - weapon -->
+			<!-- <my-wrapper gap_8 hr>
+				<my-weapon
+					v-for="item in weapons_Level_Arr"
+					:key="item"
+					:title="item[0].name"
+				>
+				</my-weapon>
+			</my-wrapper> -->
+			<!-- //!NOTE - weapon -->
 
-		<!-- //NOTE - spells -->
-		<!-- RACE -->
-		<my-wrapper v-if="shown_Spells_All" gap_26 hr>
-			<my-spell-text
-				v-for="item in MY.race.spells"
-				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
-				passive
-			>
-			</my-spell-text>
-			<my-spell-text
-				v-for="item in MY.ethnos.spells"
-				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
-				passive
-			>
-			</my-spell-text>
-			<my-spell-text
-				v-for="item in spells_Custom_Obj_RE"
-				:key="item"
-				:lvl="1"
-				:spell="item"
-				passive
-			>
-			</my-spell-text>
-			<!-- RACE -->
-			<!-- CLASS -->
-			<my-spell-text
-				v-for="item in MY.class.spells"
-				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
-			>
-			</my-spell-text>
-			<!-- CLASS -->
-		</my-wrapper>
-		<!-- //!NOTE - spells -->
+			<!-- //NOTE - text -->
+			<div class="story int-400">
+				<div v-html="t_Story"></div>
+			</div>
+		</section>
 
-		<!-- //NOTE - text -->
-		<div class="story int-400">
-			<div v-html="t_Story"></div>
-		</div>
-	</section>
-
-  <section v-else>
-		<!-- qualities-stats -->
-    <ClassQualitiesParam/>
-		<!-- qualities-stats -->
-		<!-- attributes-stats -->
-		<my-wrapper>
-			<my-attribute
-				v-for="(name, i) in skills_Keys"
-				:key="name"
-				:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
-				:title="name"
-				plus
-				:numb="skills_Old_Numb(name)"
-				:icon="MY.skills[name].mod"
-				:save="stats_Saving_Arr"
-			></my-attribute>
-		</my-wrapper>
-		<!-- attributes-stats -->
-	</section>
-</transition>
+		<section v-else>
+			<!-- qualities-stats -->
+			<ClassQualitiesParam />
+			<!-- qualities-stats -->
+			<!-- attributes-stats -->
+			<my-wrapper>
+				<my-attribute
+					v-for="(name, i) in skills_Keys"
+					:key="name"
+					:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
+					:title="name"
+					plus
+					:numb="skills_Old_Numb(name)"
+					:icon="MY.skills[name].mod"
+					:save="stats_Saving_Arr"
+				></my-attribute>
+			</my-wrapper>
+			<!-- attributes-stats -->
+		</section>
+	</transition>
 </template>
 
 <script>
 import ClassStatsTable from "@/components/pinia/class_page/settings/ClassStatsTable.vue";
 import ClassQualitiesParam from "@/components/pinia/class_page/parameters/ClassQualitiesParam.vue";
-
 
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
@@ -173,7 +183,7 @@ export default {
 	name: "ClassParameters",
 	components: {
 		ClassStatsTable,
-    ClassQualitiesParam,
+		ClassQualitiesParam,
 	},
 	computed: {
 		// STORE
@@ -184,7 +194,7 @@ export default {
 			"stats_Keys",
 			"stats_Race_Page_Numb",
 			"stats_Mod",
-      "stats_Saving_Arr",
+			"stats_Saving_Arr",
 		]),
 		...mapState(useSkillsStore, ["skills_All_RE", "skills_Keys"]),
 		...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
@@ -246,10 +256,12 @@ export default {
 		},
 
 		skills_Old_Numb: (state) => (name) => {
-      let state_name = state.MY.skills[name].mod
+			let state_name = state.MY.skills[name].mod;
 			let mod = state.stats_Mod(state_name);
-      let race_mastery = null;
-      state.skills_All_RE.includes(name) ? race_mastery = state.Mastery : null;
+			let race_mastery = null;
+			state.skills_All_RE.includes(name)
+				? (race_mastery = state.Mastery)
+				: null;
 			return race_mastery + mod;
 		},
 
@@ -303,11 +315,36 @@ export default {
 			return numb_RE + numb_bonus;
 		},
 
-    charges_Level_Arr() {
-      let lvl = this.MY.level;
-      let arr = this.MY.class.charges?.filter(el => el.level <= lvl)
-      return arr ? arr : [];
-    },
+		charges_Level_Arr() {
+			let lvl = this.MY.level;
+			let arr = this.MY.class.charges?.filter((el) => el.level <= lvl);
+			return arr ? arr : [];
+		},
+
+		equipments_Level_Arr() {
+			let lvl = this.MY.level;
+			let arr = this.MY.class.equipment?.filter((el) => el.level <= lvl);
+			return arr ? arr : [];
+		},
+
+		weapons_Level_Arr() {
+			let arr = null;
+			for (let item of this.equipments_Level_Arr) {
+        console.log('item:', item);
+				for (let weapon of item.weapon) {
+          console.log('i:', weapon)
+          if(i) {
+            console.log('weapon:', weapon)
+            // arr.push(item.weapon[i]);
+          }
+        }
+			}
+      // console.log('arr:', arr)
+			// this.equipments_Level_Arr?.forEach((el) =>
+			// 	el.weapon?.forEach((item) => arr.push(item))
+			// );
+			return arr ? arr : [];
+		},
 
 		proficiencies_Arr: (state) => (obj, kay) => {
 			let arr = [];
@@ -344,11 +381,13 @@ export default {
 	margin-top: 16px;
 }
 
-.mode-fade-enter-active, .mode-fade-leave-active {
-  transition: opacity .3s ease;
+.mode-fade-enter-active,
+.mode-fade-leave-active {
+	transition: opacity 0.3s ease;
 }
 
-.mode-fade-enter-from, .mode-fade-leave-to {
-  opacity: 0;
+.mode-fade-enter-from,
+.mode-fade-leave-to {
+	opacity: 0;
 }
 </style>

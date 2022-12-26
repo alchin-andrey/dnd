@@ -6,4 +6,6 @@ export default {
 	plus: '<path d="M13 5L13 13L5 13L13 5Z"/>',
 
 	resistance: '<path d="M9 5H13V11L9 14L5 11V5H9Z"/>',
+
+  minus: '<path d="M13 13L5 13L5 5L13 13Z" />'
 };

@@ -1,7 +1,7 @@
 <template>
 	<div class="column jbm-300" :class="{ passive: numb == 0 }">
 		<div class="column_value">
-			<div class="icon">
+			<div v-if="icon_Shown" class="icon">
         <svg
         :class="{
           active_svg: stats_Keys.includes(title) || stats_Keys.includes(icon),
@@ -122,6 +122,12 @@ export default {
 			return this.dice ? `d${this.dice}` : null;
 		},
 
+    icon_Shown() {
+      let icon = this.icon;
+      let atribute_icon = this.atribute_icon[this.icon_Image];
+      return icon || atribute_icon;
+    },
+
 		// icon_Image() {
 		// 	if (this.icon === null) {
 		// 		return null;
@@ -151,15 +157,6 @@ export default {
         return this.dice * this.numb - this.numb;
       }
 		},
-
-		// cube_Numb_Zero() {
-		// 	console.log('this.cube_zero:', this.cube_zero)
-		// 	if (this.cube_zero) {
-		// 		return this.numb < 6 ? 6 - this.numb : 0;
-		// 	} else if (this.dice) {
-    //     return this.dice * this.numb - this.numb;
-    //   }
-		// },
 	},
 };
 </script>
@@ -179,6 +176,7 @@ export default {
 	display: flex;
 	width: 18px;
 	height: 18px;
+  margin-right: 4px;
 }
 
 .active_svg{
@@ -193,9 +191,9 @@ export default {
   opacity: 0.2;
 }
 
-.item {
+/* .item {
 	margin-left: 4px;
-}
+} */
 
 .item span {
 	margin-left: 8px;
