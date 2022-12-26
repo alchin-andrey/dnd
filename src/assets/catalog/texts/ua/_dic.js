@@ -2229,6 +2229,9 @@ export default {
     rage_slots: "Слот Люті",
     rage_slot: "1× Слот Люті",
 
+    spell_slots: "Слоти мани",
+    spell_slot: "1× Слот мани",
+
     movement: "пересування",
 
     spell_maneuver_ambush: spells.maneuver_ambush,

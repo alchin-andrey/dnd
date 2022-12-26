@@ -2228,6 +2228,9 @@ export default {
     rage_slots: "Ячейки Ярости",
     rage_slot: "1× Ячейка Ярости",
 
+    spell_slots: "Ячейки маны",
+    spell_slot: "1× Ячейка маны",
+
     movement: "перемещение",
 
     spell_maneuver_ambush: spells.maneuver_ambush,
