@@ -333,7 +333,7 @@ export default {
         console.log('item:', item);
 				for (let weapon of item.weapon) {
           console.log('i:', weapon)
-          if(i) {
+          if(weapon) {
             console.log('weapon:', weapon)
             // arr.push(item.weapon[i]);
           }

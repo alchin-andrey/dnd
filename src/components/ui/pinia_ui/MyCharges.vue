@@ -143,7 +143,7 @@ export default {
 	width: 98px;
 	display: flex;
 	align-items: center;
-	/* margin-left: 12px; */
+	margin-left: 12px;
 	flex-wrap: wrap;
 	padding: 5px 0 5px 0;
 	gap: 2px;
