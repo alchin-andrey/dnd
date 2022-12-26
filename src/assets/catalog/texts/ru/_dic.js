@@ -2906,4 +2906,7 @@ export default {
 
     weapons_clubs: weapons.clubs,
     weapons_clubs_details: weapons.clubs_details,
+
+    unability: "неспособность",
+    to_wear_metal_armor: "носить металлическую броню или щит"
 }

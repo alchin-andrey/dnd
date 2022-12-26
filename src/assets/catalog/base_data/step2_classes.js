@@ -1604,8 +1604,8 @@ export default {
       hp_dice: 8,
   
       proficiencies: {
-        armor: [],
-        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.light_arbalets],
+        armor: [armory.light,armory.medium,armory.shields],
+        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.daggers, weaponry.light_arbalets],
         tools: [],
         languages: [langs.druid],
       },
@@ -1621,6 +1621,15 @@ export default {
   
       ],
       spell_attribute: "intelligence",
+
+      fines: [
+        {
+          level: 1,
+          key: "minus",
+          keyword: "unability",
+          details: "to_wear_metal_armor", 
+        }
+      ]
   },
 
   //NOTE - Wizard -------------------------------------------------------------------------

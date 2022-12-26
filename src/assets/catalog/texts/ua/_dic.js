@@ -2914,4 +2914,7 @@ export default {
 
     weapons_clubs: weapons.clubs,
     weapons_clubs_details: weapons.clubs_details,
+
+    unability: "неспроможність",
+    to_wear_metal_armor: "носити металеву броню або щит"
 }
