@@ -72,7 +72,10 @@ export const usePagesStore = defineStore({
 		},
 
 		showHome() {
-			this[this.page_setting_open].shown[this.setting_open] = false;
+      let page_setting = this.page_setting_open;
+      let setting = this.setting_open;
+      setting ? this[page_setting].shown[setting] = false : null;
+			// this[this.page_setting_open].shown[this.setting_open] = false;
 			this.shown_home = true;
 			this.page_setting_open = null;
 			this.setting_open = null;

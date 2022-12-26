@@ -574,6 +574,11 @@ export default {
 			//Example: +4 ⬜️⬜️⬜️⬜️
 		},
 
+    Pls_Lvl() {
+      let lvl = this.MY.level;
+      return lvl;
+    },
+
 		//ANCHOR - FOO
     Value_Foo: (state) => (Val) => {
       let low_val = Val.toLowerCase();
