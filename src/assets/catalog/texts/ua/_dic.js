@@ -2905,4 +2905,10 @@ export default {
     druid_details: classes.druid_details,
 
     inf: "безкінечно",
+
+    weapons_maces: weapons.maces,
+    weapons_maces_details: weapons.maces_details,
+
+    weapons_clubs: weapons.clubs,
+    weapons_clubs_details: weapons.clubs_details,
 }

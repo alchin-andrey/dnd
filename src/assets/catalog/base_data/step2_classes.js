@@ -7,6 +7,7 @@ import weapons from "./list_weapons.js";
 import armors from "./list_armor.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
+import langs from "./list_languages.js"
 
 export const barbarian_rage_bonus = [
   0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
@@ -1313,7 +1314,7 @@ export default {
         ],
       },
       {
-        level: 1,
+        level: 2,
         name: "spell_slots",
         list: [
           ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
@@ -1596,9 +1597,9 @@ export default {
   
       proficiencies: {
         armor: [],
-        weapons: [weaponry.daggers, weaponry.darts, weaponry.slings, weaponry.quarterstaffs, weaponry.light_arbalets],
+        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.light_arbalets],
         tools: [],
-        languages: [],
+        languages: [langs.druid],
       },
   
       saving: ["intelligence", "wisdom"],

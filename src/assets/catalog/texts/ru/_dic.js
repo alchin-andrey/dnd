@@ -2897,4 +2897,10 @@ export default {
     spell_overload_expanded: spells.overload_expanded,
 
     inf: "бесконечно",
+
+    weapons_maces: weapons.maces,
+    weapons_maces_details: weapons.maces_details,
+
+    weapons_clubs: weapons.clubs,
+    weapons_clubs_details: weapons.clubs_details,
 }

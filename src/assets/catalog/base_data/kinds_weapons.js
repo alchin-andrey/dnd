@@ -89,4 +89,14 @@ export default {
         name:"weapons_light_arbalets",
         details:"weapons_light_arbalets_details",
     },
+
+    maces:{
+        name:"weapons_maces",
+        details:"weapons_maces_details",
+    },
+
+    clubs:{
+        name:"weapons_clubs",
+        details:"weapons_clubs_details",
+    },
 }

@@ -62,7 +62,7 @@ export default {
         name: "mace",
         details: "mace_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.maces],
 
         range_min: 5,
         range_max: null,
@@ -92,7 +92,7 @@ export default {
         name: "club",
         details: "club_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.clubs],
 
         range_min: 5,
         range_max: null,
