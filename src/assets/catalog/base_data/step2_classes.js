@@ -1309,7 +1309,7 @@ export default {
       {
         level: 1,
         name: "divine_sense_slots",
-        foo: "Str_Plus_CHA",
+        foo: "Num_CHA", //Str_Plus_CHA
         list: [
           ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
@@ -2020,7 +2020,7 @@ export default {
       {
         level: 1,
         name: "bardic_inspiration_slots",
-        foo: "Str_Bard_insp__Num_CHA_min1",
+        foo: "Str_Level_5_10_15__Num_CHA_Min1",
         //Вы можете использовать это умение количество раз, равное модификатору вашей Харизмы, но как минимум один раз.
         //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Изначально d6, она становится d8 на 5 уровне, d10 на 10 уровне и d12 на 15 уровне.
         list: [

@@ -26,6 +26,17 @@
     <ClassQualitiesParam/>
 		<!-- qualities -->
 
+    <!-- charges -->
+    <my-wrapper v-if="charges_Level_Arr.length !== 0" hr>
+			<my-charges
+				v-for="item in charges_Level_Arr"
+				:key="item"
+        :charge="item"
+			>
+			</my-charges>
+		</my-wrapper>
+		<!-- charges -->
+
 		<!-- //NOTE - proficiencies -->
 		<my-wrapper gap_8 hr>
 			<my-inventory
@@ -291,6 +302,12 @@ export default {
 			}
 			return numb_RE + numb_bonus;
 		},
+
+    charges_Level_Arr() {
+      let lvl = this.MY.level;
+      let arr = this.MY.class.charges?.filter(el => el.level <= lvl)
+      return arr ? arr : [];
+    },
 
 		proficiencies_Arr: (state) => (obj, kay) => {
 			let arr = [];
