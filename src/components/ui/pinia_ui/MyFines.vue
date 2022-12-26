@@ -77,7 +77,7 @@ export default {
 		},
 
 		Negative() {
-			return this.title === "disadvantage";
+			return this.icon === "disadvantage" || this.icon === "minus";
 		},
 
 		t_Title() {
