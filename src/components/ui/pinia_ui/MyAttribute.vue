@@ -71,6 +71,10 @@ export default {
 			type: String,
 			default: null,
 		},
+    no_icon: {
+			type: Boolean,
+			default: false,
+		},
 		plus: {
 			type: Boolean,
 			default: false,
@@ -125,7 +129,7 @@ export default {
     icon_Shown() {
       let icon = this.icon;
       let atribute_icon = this.atribute_icon[this.icon_Image];
-      return icon || atribute_icon;
+      return (icon || atribute_icon) && !this.no_icon;
     },
 
 		// icon_Image() {

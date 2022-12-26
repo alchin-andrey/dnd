@@ -40,6 +40,7 @@ import MyBackPage from "@/components/ui/pinia_ui/MyBackPage.vue";
 
 import MyCharges from "@/components/ui/pinia_ui/MyCharges.vue";
 import MyWeapon from "@/components/ui/pinia_ui/MyWeapon.vue";
+import MyArmor from "@/components/ui/pinia_ui/MyArmor.vue";
 
 
 
@@ -85,4 +86,5 @@ export default [
 
   MyCharges,
   MyWeapon,
+  MyArmor,
 ];
