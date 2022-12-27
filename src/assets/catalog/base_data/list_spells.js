@@ -3745,7 +3745,7 @@ export default {
     {
       //0
       name: "spell_wild_shape",
-      details: "spell_wild_shape_details_2",
+      details: "spell_wild_shape_details",
       expanded: "spell_wild_shape_expanded",
 
       type: "ability",

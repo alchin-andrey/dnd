@@ -1853,6 +1853,15 @@ export default {
 
       settings: [
         {
+          level: 2,
+          type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          
+        ]
+        },
+        {
           level: 1,
           type: "skills",
           select: 2,
