@@ -1,7 +1,7 @@
 <template>
 		<!-- qualities-stats -->
 		<my-wrapper hr>
-      <my-attribute title="armor_class" :numb="armor_Numb"></my-attribute>
+      <my-attribute title="armor_class" :type="armor_Name" :numb="armor_Numb"></my-attribute>
 			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
       <my-attribute
 				title="hp_dice"
@@ -45,8 +45,9 @@ export default {
 	name: "ClassQualitiesParam",
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "Mastery"]),
+		...mapState(useMYStore, ["MY"]),
 		// GETTERS
+    ...mapState(useMYStore, ["Mastery", "class_Specials"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
 		hp_Bonus() {
@@ -58,11 +59,6 @@ export default {
 			} else {
 				return 0;
 			}
-		},
-
-		armor_Numb() {
-			let dex_mod = this.stats_Mod("dexterity");
-			return 10 + dex_mod;
 		},
 
 		hp_Max() {
@@ -109,6 +105,67 @@ export default {
 			}
 			return numb_RE + numb_bonus;
 		},
+
+    equipments_Level_Arr() {
+			let lvl = this.MY.level;
+			let arr = this.MY.class.equipment?.filter((el) => el.level <= lvl);
+			return arr ? arr : [];
+		},
+
+    armors_Level_Arr() {
+			let arr = [];
+			this.equipments_Level_Arr?.forEach((el) =>
+				el.armor?.forEach((armor) => arr.push(armor))
+			);
+			return arr;
+    },
+
+    armors_Element() {
+			let arr = null;
+			this.equipments_Level_Arr?.forEach((el) =>
+				el.armor?.forEach(armor => arr = armor[0])
+			);
+			return arr;
+    },
+
+    armor_Name() {
+      let armor = this.armors_Element
+      return armor ? armor.name : null;
+    },
+
+    armor_Numb() {
+      const armor = this.armors_Element;
+      
+      let armor_default = 10;
+			const dex_mod = this.stats_Mod("dexterity");
+      const dex_mod_max2 = dex_mod > 2 ? 2 : null;
+
+      const medium = armor?.type[0].name == "armor_medium";
+      medium ? armor_default += dex_mod_max2 : armor_default += dex_mod;
+
+      const armor_class = armor ? armor.armor_class : null;
+      const armor_bonus = armor ? armor.armor_bonus : null;
+      armor_default += armor_bonus;
+      armor_default += this.armor_Bonus_Specials;
+
+			return armor_class ? armor_class : armor_default;
+		},
+
+    armor_Bonus_Specials() {
+      let bonus = null;
+      const lvl = this.MY.level;
+      const specials = this.class_Specials("armor_bonus");
+			specials?.forEach(el => 
+        el.level <= lvl 
+        ? bonus += this[el.foo]
+        : null);
+      return bonus;
+    },
+
+    Num_CON() {
+      let mod = this.stats_Mod("constitution");
+      return mod < 0 ? 0 : mod;
+    },
 	},
 };
 </script>
