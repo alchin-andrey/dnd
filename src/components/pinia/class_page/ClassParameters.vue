@@ -140,14 +140,14 @@
 			<!-- //!NOTE - weapon -->
 
       <!-- //NOTE - armor -->
-			<my-wrapper v-if="armors_Level_Arr.length !== 0" gap_26 hr>
+			<!-- <my-wrapper v-if="armors_Level_Arr.length !== 0" gap_26 hr>
 				<my-armor
 					v-for="armor in armors_Level_Arr"
 					:key="armor"
           :armor="armor"
 				>
 				</my-armor>
-			</my-wrapper>
+			</my-wrapper> -->
 			<!-- //!NOTE - armor -->
 
 			<!-- //NOTE - text -->
@@ -346,21 +346,21 @@ export default {
 			return arr ? arr : [];
 		},
 
-    armors_Level_Arr() {
-			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.armor?.forEach((armor) => arr.push(armor))
-			);
-			return arr;
-    },
+    // armors_Level_Arr() {
+		// 	let arr = [];
+		// 	this.equipments_Level_Arr?.forEach((el) =>
+		// 		el.armor?.forEach((armor) => arr.push(armor))
+		// 	);
+		// 	return arr;
+    // },
 
-    armors_Element() {
-			let arr = null;
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.armor?.forEach(armor => arr = armor[0])
-			);
-			return arr;
-    },
+    // armors_Element() {
+		// 	let arr = null;
+		// 	this.equipments_Level_Arr?.forEach((el) =>
+		// 		el.armor?.forEach(armor => arr = armor[0])
+		// 	);
+		// 	return arr;
+    // },
 
 		proficiencies_Arr: (state) => (obj, kay) => {
 			let arr = [];
