@@ -17,6 +17,12 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 export default {
   name: "MyRangeSize",
+  data() {
+		return {
+			min_lvl: 1,
+			max_lvl: 20,
+		};
+	},
   props: {
     arr: {
       type: Array,
