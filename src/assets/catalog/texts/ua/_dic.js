@@ -2958,4 +2958,8 @@ export default {
     aging_slow: "Уповільнення старіння",
     ten_times: "у 10 разів",
     free_spell_parts_in_wildshape: "умов заклять без ціни, при Дикій формі",
+
+    spell_wild_shape_combat: spells.wild_shape_combat,
+
+    circle_of_the_land_arctic: classes.circle_of_the_land_arctic,
 }

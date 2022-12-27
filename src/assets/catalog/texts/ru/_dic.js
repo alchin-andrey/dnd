@@ -2954,4 +2954,8 @@ export default {
     aging_slow: "Замедление старения",
     ten_times: "в 10 раз",
     free_spell_parts_in_wildshape: "частей закинаний без цены, при Диком облике",
+
+    spell_wild_shape_combat: spells.wild_shape_combat,
+
+    circle_of_the_land_arctic: classes.circle_of_the_land_arctic,
 }

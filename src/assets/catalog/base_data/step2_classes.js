@@ -603,7 +603,7 @@ export default {
         select: 2,
         list: [
           {
-            equipment: [{ armor: [[items.shield, 1]] }],
+            equipment: [{ inventory: [[items.shield, 1]] }],
             spells:[
               {
                 spell:spells.prepare_shield,
@@ -1612,7 +1612,7 @@ export default {
         select: 2,
         list: [
           {
-            equipment: [{ armor: [[items.shield, 1]] }],
+            equipment: [{ inventory: [[items.shield, 1]] }],
             spells:[
               {
                 spell:spells.prepare_shield,
@@ -1855,10 +1855,12 @@ export default {
         {
           level: 2,
           type: "custom",
-        name: "subclass",
-        select: 1,
-        list: [
-          
+          name: "subclass",
+          select: 1,
+          list: [
+            {
+              name: "circle_of_the_land_arctic",
+            },
         ]
         },
         {
@@ -1884,7 +1886,7 @@ export default {
           select: 2,
           list: [
             {
-              equipment: [{ armor: [[items.shield, 1]] }],
+              equipment: [{ inventory: [[items.shield, 1]] }],
               spells:[
                 {
                   spell:spells.prepare_shield,

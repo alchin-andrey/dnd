@@ -3786,6 +3786,51 @@ export default {
     },
   ],
 
+  wild_shape_сombat: [
+    {
+      //0
+      name: "spell_wild_shape_combat",
+      details: "spell_wild_shape_details",
+      expanded: "spell_wild_shape_expanded",
+
+      type: "ability",
+      slot_type: "wild_shape_slot",
+      classes: ["druid"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_2_4_8_Wildshape__Dur_05_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   find_familiar_druid: [
     {
       name: "spell_find_familiar_druid",
