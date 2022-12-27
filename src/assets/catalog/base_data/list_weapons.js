@@ -152,7 +152,7 @@ export default {
         name: "spear",
         details: "spear_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple,weaponry.spears],
 
         range_min: 5,
         throwing: 20, // метательное
@@ -212,7 +212,7 @@ export default {
         name: "javelin",
         details: "javelin_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple,weaponry.javelins],
 
         range_min: 5,
         throwing: 30, // метательное
@@ -302,7 +302,7 @@ export default {
         name: "sickle",
         details: "sickle_details",
 
-        type: [weaponry.simple],
+        type: [weaponry.simple, weaponry.sickles],
 
         range_min: 5,
         throwing: null,
@@ -906,7 +906,7 @@ export default {
         name: "scimitar",
         details: "scimitar_details",
 
-        type: [weaponry.military],
+        type: [weaponry.military, weaponry.scimitars],
 
         range_min: 5,
         throwing: null, // метательное

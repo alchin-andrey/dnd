@@ -426,4 +426,25 @@ export default {
     cost: 10,
     weight: 1,
   },
+
+  dart: {
+    name: "dart",
+    details: "dart_details",
+    cost: 5,
+    weight: 0.025,
+  },
+
+  bullet: {
+    name: "bullet",
+    details: "bullet_details",
+    cost: 5,
+    weight: 0.025,
+  },
+
+  shield: {
+    name: "armor_shield",
+    details: "armor_shield_details",
+    cost: 1000,
+    weight: 3,
+  },
 };

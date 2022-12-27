@@ -30,4 +30,5 @@ export const tools = {
     music_flute: "флейти",
     music_dulcimer: "цимбали",
     music_shawm: "шалмії",
+    herbalists_tools: "травника",
 }

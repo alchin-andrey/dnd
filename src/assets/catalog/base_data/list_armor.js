@@ -15,14 +15,14 @@ export default {
         type: [armory.shields],
         armor_bonus: 2,
         cost: 1000,
-        weight: 6,
+        weight: 3,
     },
     chainmail: {
         name: "armor_chainmail",
         details: "armor_chainmail_details",
         type: [armory.heavy],
         armor_class: 16,
-        cost: 1000,
-        weight: 6,
+        cost: 7500,
+        weight: 28,
     },
 }

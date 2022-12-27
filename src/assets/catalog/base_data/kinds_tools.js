@@ -83,6 +83,10 @@ export default {
     name: "tool_jewelers_tools",
   },
 
+  herbalists_tools: {
+    name: "tool_herbalists_tools",
+  },
+
   // -------------------------------- music
 
   music_drums: {

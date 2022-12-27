@@ -69,6 +69,7 @@ export default {
       {
         level: 3,
         type: "custom",
+        name: "subclass",
         select: 1,
         list: [
           {
@@ -562,13 +563,14 @@ export default {
           "survival",
           "intimidation",
           "history",
-          "animal_handing",
+          "animal_hanging",
           "insight",
         ],
       },
       {
         level: 1,
         type: "custom",
+        name: "equipment",
         select: 1,
         list: [
           {
@@ -596,33 +598,110 @@ export default {
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
+        name: "weapon",
         select: 2,
         list: [
-          [armors.shield, 1],
-          [weapons.greataxe, 1],
-          [weapons.halberd, 1],
-          [weapons.war_pick, 1],
-          [weapons.warhammer, 1],
-          [weapons.battleaxe, 1],
-          [weapons.glaive, 1],
-          [weapons.greatsword, 1],
-          [weapons.lance, 1],
-          [weapons.longsword, 1],
-          [weapons.whip, 1],
-          [weapons.shortsword, 1],
-          [weapons.maul, 1],
-          [weapons.morningstar, 1],
-          [weapons.pike, 1],
-          [weapons.rapier, 1],
-          [weapons.scimitar, 1],
-          [weapons.trident, 1],
-          [weapons.flail, 1],
+          {
+            equipment: [{ armor: [[items.shield, 1]] }],
+            spells:[
+              {
+                spell:spells.prepare_shield,
+              }
+            ],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greataxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.halberd, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.war_pick, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.warhammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.battleaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.glaive, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatsword, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.lance, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.longsword, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.whip, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.shortsword, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.maul, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.morningstar, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.pike, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.rapier, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.scimitar, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.trident, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.flail, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.hand_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.heavy_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.longbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.blowgun, 1]],
+                inventory: [[items.dart, 20]],
+              },
+            ],
+          },
         ],
       },
       {
         level: 1,
         type: "custom",
+        name: "weapon",
         select: 1,
         list: [
           {
@@ -756,10 +835,6 @@ export default {
 
     qualities: [
       {
-        level:1,
-        armor_bonus: "Num_CON",
-      },
-      {
         level: 5,
         speed_bonus: 10,
       }
@@ -877,10 +952,19 @@ export default {
       },
     ],
 
+    specials: [
+      {
+        level:1,
+        type: "armor_bonus",
+        foo: "Num_CON",
+      },
+    ],
+
     settings: [
       {
         level: 3,
         type: "custom",
+        name: "subclass",
         select: 1,
         list: [
           {
@@ -1353,6 +1437,7 @@ export default {
       {
         level: 3,
         type: "custom",
+        name: "subclass",
         select: 1,
         list: [
           {
@@ -1522,28 +1607,104 @@ export default {
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
+        name: "weapon",
         select: 2,
         list: [
-          [armors.shield, 1],
-          [weapons.greataxe, 1],
-          [weapons.halberd, 1],
-          [weapons.war_pick, 1],
-          [weapons.warhammer, 1],
-          [weapons.battleaxe, 1],
-          [weapons.glaive, 1],
-          [weapons.greatsword, 1],
-          [weapons.lance, 1],
-          [weapons.longsword, 1],
-          [weapons.whip, 1],
-          [weapons.shortsword, 1],
-          [weapons.maul, 1],
-          [weapons.morningstar, 1],
-          [weapons.pike, 1],
-          [weapons.rapier, 1],
-          [weapons.scimitar, 1],
-          [weapons.trident, 1],
-          [weapons.flail, 1],
+          {
+            equipment: [{ armor: [[items.shield, 1]] }],
+            spells:[
+              {
+                spell:spells.prepare_shield,
+              }
+            ],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greataxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.halberd, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.war_pick, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.warhammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.battleaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.glaive, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatsword, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.lance, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.longsword, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.whip, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.shortsword, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.maul, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.morningstar, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.pike, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.rapier, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.scimitar, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.trident, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.flail, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.hand_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.heavy_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.longbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.blowgun, 1]],
+                inventory: [[items.dart, 20]],
+              },
+            ],
+          },
         ],
       },
       {
@@ -1605,8 +1766,8 @@ export default {
   
       proficiencies: {
         armor: [armory.light,armory.medium,armory.shields],
-        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.daggers],
-        tools: [],
+        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.daggers, weaponry.spears, weaponry.javelins, weaponry.slings, weaponry.sickles, weaponry.scimitars],
+        tools: [tools.herbalists_tools],
         languages: [langs.druid],
       },
   
@@ -1620,7 +1781,22 @@ export default {
         "strength",
   
       ],
-      spell_attribute: "intelligence",
+      spell_attribute: "wisdom",
+
+      spells: [
+        {
+          level: 1,
+          spell: spells.druid_message,
+        },
+        {
+          level: 2,
+          spell: spells.wild_shape,
+        },
+        {
+          level: 2,
+          spell: spells.find_familiar_druid,
+        },
+      ],
 
       fines: [
         {
@@ -1628,7 +1804,194 @@ export default {
           type: "minus",
           keyword: "unability",
           details: "to_wear_metal_armor", 
+        },
+        {
+          level: 18,
+          type: "plus",
+          keyword: "aging_slow",
+          details: "ten_times", 
+        },
+        {
+          level: 20,
+          type: "plus",
+          keyword: "ignoring",
+          details: "free_spell_parts_in_wildshape", 
         }
+      ],
+
+      charges: [
+        {
+          level: 2,
+          name: "wild_shape_slots",
+          list: [
+            ["", 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, "inf"],
+          ],
+        },
+        {
+          level: 1,
+          name: "spell_slots",
+          list: [
+            ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+            ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+            ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+            ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+            ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+            ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+          ],
+        },
+      ],
+
+      equipment: [
+        {
+          armor: [[armors.leather, 1]],
+          inventory: [[packs.explorers, 1],[items.focus,1]],
+        },
+      ],
+
+      settings: [
+        {
+          level: 1,
+          type: "skills",
+          select: 2,
+          bonus: "mastery",
+          list: [
+            "perception",
+            "survival",
+            "arcana",
+            "medicine",
+            "animal_hanging",
+            "nature",
+            "insight",
+            "religion"
+          ],
+        },
+        {
+          level: 1,
+          type: "custom",
+          name: "weapon",
+          select: 2,
+          list: [
+            {
+              equipment: [{ armor: [[items.shield, 1]] }],
+              spells:[
+                {
+                  spell:spells.prepare_shield,
+                }
+              ],
+            },
+            {
+              equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.mace, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.club, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.dagger, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.spear, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.javelin, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+            },
+            {
+              equipment: [{ weapon: [[weapons.sickle, 1]] }],
+            },
+            {
+              equipment: [
+                {
+                  weapon: [[weapons.light_crossbow, 1]],
+                  inventory: [[items.bolt, 20]],
+                },
+              ],
+            },
+            {
+              equipment: [
+                {
+                  weapon: [[weapons.dart, 20]],
+                },
+              ],
+            },
+            {
+              equipment: [
+                {
+                  weapon: [[weapons.shortbow, 1]],
+                  inventory: [[items.arrow, 20]],
+                },
+              ],
+            },
+            {
+              equipment: [
+                {
+                  weapon: [[weapons.sling, 1]],
+                  inventory: [[items.bullet, 20]],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          level: 1,
+          type: "weapons",
+          select: 1,
+          list: [
+            [weapons.scimitar, 1],
+            [weapons.quarterstaff, 1],
+            [weapons.mace, 1],
+            [weapons.club, 1],
+            [weapons.dagger, 1],
+            [weapons.spear, 1],
+            [weapons.light_hammer, 1],
+            [weapons.javelin, 1],
+            [weapons.greatclub, 1],
+            [weapons.handaxe, 1],
+            [weapons.sickle, 1],
+          ],
+        },
+        {
+          level: 1,
+          type: "spells",
+          name: "spells_0",
+          select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4
+          mana_min: 0,
+          mana_max: 0,
+          classes: ["druid"],
+        },
+        {
+          level: 4,
+          type: "feats",
+        },
+        {
+          level: 8,
+          type: "feats",
+        },
+        {
+          level: 12,
+          type: "feats",
+        },
+        {
+          level: 16,
+          type: "feats",
+        },
+        {
+          level: 19,
+          type: "feats",
+        },
       ]
   },
 
@@ -1715,6 +2078,7 @@ export default {
         {
           level: 2,
           type: "custom",
+          name: "subclass",
           select: 1,
           list: [
             {
@@ -2021,7 +2385,8 @@ export default {
     specials: [
       {
         level: 2,
-        foo: "Skills_Half_Mastery",
+        type: "skills",
+        foo: "Half_Mastery",
       }
     ],
 
@@ -2081,6 +2446,7 @@ export default {
       {
         level: 3,
         type: "custom",
+        name: "subclass",
         select: 1,
         list: [
           {
@@ -2440,6 +2806,7 @@ export default {
       {
         level: 3,
         type: "custom",
+        name: "subclass",
         select: 1,
         list: [
           {

@@ -99,4 +99,24 @@ export default {
         name:"weapons_clubs",
         details:"weapons_clubs_details",
     },
+
+    spears:{
+        name:"weapons_spears",
+        details:"weapons_spears_details",
+    },
+
+    javelins:{
+        name:"weapons_javelins",
+        details:"weapons_javelins_details",
+    },
+
+    sickles:{
+        name:"weapons_sickles",
+        details:"weapons_sickles_details",
+    },
+
+    scimitars:{
+        name:"weapons_scimitars",
+        details:"weapons_scimitars_details",
+    },
 }

@@ -370,6 +370,7 @@ export default {
             bolt:"болт",
             arrow:"стрела",
             bullet:"снаряд",
+            bullet_details: "",
 
             damage_1_hand:"одной рукой",
             damage_2_hand:"двумя руками",
@@ -557,6 +558,7 @@ export default {
             tool_music_flute: tools.music_flute,
             tool_music_dulcimer: tools.music_dulcimer,
             tool_music_shawm: tools.music_shawm,
+            tool_herbalists_tools: tools.herbalists_tools,
 
 
         languages:"языки",
@@ -2908,5 +2910,48 @@ export default {
     weapons_clubs_details: weapons.clubs_details,
 
     unability: "неспособность",
-    to_wear_metal_armor: "носить металлическую броню или щит"
+    to_wear_metal_armor: "носить металлическую броню или щит",
+
+    weapons_spears: weapons.spears,
+    weapons_spears_details: weapons.spears_details,
+
+    weapons_javelins: weapons.javelins,
+    weapons_javelins_details: weapons.javelins_details,
+
+    weapons_sickles: weapons.sickles,
+    weapons_sickles_details: weapons.sickles_details,
+
+    weapons_scimitars: weapons.scimitars,
+    weapons_scimitars_details: weapons.scimitars_details,
+
+    spell_druid_message: spells.druid_message,
+    spell_druid_message_details: spells.druid_message_details,
+    spell_druid_message_expanded: spells.druid_message_expanded,
+
+    spell_prepare_shield: spells.prepare_shield,
+    spell_prepare_shield_details: spells.prepare_shield_details,
+    spell_prepare_shield_expanded: spells.prepare_shield_expanded,
+
+    spell_wild_shape: spells.wild_shape,
+    spell_wild_shape_details_2: spells.wild_shape_details_2,
+    spell_wild_shape_details_4: spells.wild_shape_details_4,
+    spell_wild_shape_details_8: spells.wild_shape_details_8,
+    spell_wild_shape_expanded: spells.wild_shape_expanded,
+
+    wild_shape_slots: "Ячейки дикого облика",
+    wild_shape_slot: "1× Ячейка дикого облика",
+
+    dangerness: "опасность",
+
+    animal_025: "Волк",
+    animal_05: "Крокодил",
+    animal_1: "Тигр",
+
+    spell_find_familiar_druid: spells.find_familiar_druid,
+    spell_find_familiar_druid_details: spells.find_familiar_druid_details,
+    spell_find_familiar_druid_expanded: spells.find_familiar_druid_expanded,
+
+    aging_slow: "Замедление старения",
+    ten_times: "в 10 раз",
+    free_spell_parts_in_wildshape: "частей закинаний без цены, при Диком облике",
 }

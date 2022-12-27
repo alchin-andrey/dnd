@@ -69,6 +69,18 @@ export const weapons = {
     clubs: "дубинки",
     clubs_details: "",
 
+    spears: "списи",
+    spears_details: "",
+
+    javelins: "метальні списи",
+    javelins_details: "",
+
+    sickles: "серпи",
+    sickles_details: "",
+
+    scimitars: "ятагани",
+    scimitars_details: "",
+
     // ----------------------------
 
     quarterstaff:"бойовий посох",
@@ -161,7 +173,7 @@ export const weapons = {
     greataxe:"велика сокира",
     greataxe_details:"Зброя з довгою рукояттю, великим лезом і гаком на обусі, що дозволяє, наприклад, стягувати вершника з коня.",
 
-    scimitar:"ськімітар",
+    scimitar:"ятаган",
     scimitar_details:"Вигнута шабля.",
 
     trident:"тризуб",

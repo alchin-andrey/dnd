@@ -69,6 +69,18 @@ export const weapons = {
     clubs: "дубинки",
     clubs_details: "",
 
+    spears: "копья",
+    spears_details: "",
+
+    javelins: "метательные копья",
+    javelins_details: "",
+
+    sickles: "серпы",
+    sickles_details: "",
+
+    scimitars: "скимитары",
+    scimitars_details: "",
+
     // ----------------------------
 
     quarterstaff:"боевой посох",

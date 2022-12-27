@@ -370,6 +370,7 @@ export default {
             bolt:"болт",
             arrow:"стріла",
             bullet:"снаряд",
+            bullet_details:"",
 
             damage_1_hand:"однією рукою",
             damage_2_hand:"двома руками",
@@ -557,6 +558,7 @@ export default {
             tool_music_flute: tools.music_flute,
             tool_music_dulcimer: tools.music_dulcimer,
             tool_music_shawm: tools.music_shawm,
+            tool_herbalists_tools: tools.herbalists_tools,
 
 
         languages:"мови",
@@ -2916,5 +2918,44 @@ export default {
     weapons_clubs_details: weapons.clubs_details,
 
     unability: "неспроможність",
-    to_wear_metal_armor: "носити металеву броню або щит"
+    to_wear_metal_armor: "носити металеву броню або щит",
+
+    weapons_spears: weapons.spears,
+    weapons_spears_details: weapons.spears_details,
+
+    weapons_javelins: weapons.javelins,
+    weapons_javelins_details: weapons.javelins_details,
+
+    weapons_sickles: weapons.sickles,
+    weapons_sickles_details: weapons.sickles_details,
+
+    weapons_scimitars: weapons.scimitars,
+    weapons_scimitars_details: weapons.scimitars_details,
+
+    spell_druid_message: spells.druid_message,
+    spell_druid_message_details: spells.druid_message_details,
+    spell_druid_message_expanded: spells.druid_message_expanded,
+
+    spell_wild_shape: spells.wild_shape,
+    spell_wild_shape_details_2: spells.wild_shape_details_2,
+    spell_wild_shape_details_4: spells.wild_shape_details_4,
+    spell_wild_shape_details_8: spells.wild_shape_details_8,
+    spell_wild_shape_expanded: spells.wild_shape_expanded,
+
+    wild_shape_slots: "Слоти дикої форми",
+    wild_shape_slot: "1× Слот дикої форми",
+
+    dangerness: "небезпечність",
+
+    animal_025: "Вовк",
+    animal_05: "Крокодил",
+    animal_1: "Тигр",
+
+    spell_find_familiar_druid: spells.find_familiar_druid,
+    spell_find_familiar_druid_details: spells.find_familiar_druid_details,
+    spell_find_familiar_druid_expanded: spells.find_familiar_druid_expanded,
+
+    aging_slow: "Уповільнення старіння",
+    ten_times: "у 10 разів",
+    free_spell_parts_in_wildshape: "умов заклять без ціни, при Дикій формі",
 }
