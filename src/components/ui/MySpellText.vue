@@ -266,23 +266,28 @@ export default {
 		},
 
 		t_Time_Value() {
-			let value_1 = null;
-			if (this.Spell_Index.spell_time === "concentration") {
-				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
-			} else {
-				value_1 = this.t(this.Spell_Index.spell_time);
-			}
-			let value_2 = this.by_Mana("spell_duration");
-			let value_3 = this.t(this.Spell_Index.spell_duration_units);
-			let string = null;
-			if (!value_1) {
-				string = `${value_2} ${value_3}`;
-			} else if (value_2) {
-				string = `${value_1} ${value_2} ${value_3}`;
-			} else {
-				string = value_1;
-			}
-			return string.charAt(0).toUpperCase() + string.slice(1);
+      let foo = this.Value_Dur;
+      let string = null;
+      if (foo) {
+        string = foo;
+      } else {
+        let value_1 = null;
+        if (this.Spell_Index.spell_time === "concentration") {
+          value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
+        } else {
+          value_1 = this.t(this.Spell_Index.spell_time);
+        }
+        let value_2 = this.by_Mana("spell_duration");
+        let value_3 = this.t(this.Spell_Index.spell_duration_units);
+        if (!value_1) {
+          string = `${value_2} ${value_3}`;
+        } else if (value_2) {
+          string = `${value_1} ${value_2} ${value_3}`;
+        } else {
+          string = value_1;
+        }
+      }
+      return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 
 		Saving_Numb() {
@@ -597,7 +602,10 @@ export default {
 
     //ANCHOR - Dur
     Dur_05_Lvl() {
-
+      let lvl = this.MY.level;
+      let numb = Math.floor(lvl/2);
+      let unit = this.t("hour");
+      return `${numb} ${unit}`;
     },
 
 		//ANCHOR - FOO
@@ -628,6 +636,10 @@ export default {
 
     Value_Det() {
       return this.Value_Foo("Det");
+    },
+
+    Value_Dur() {
+      return this.Value_Foo("Dur");
     },
 		// ------ FOO -----------
 
