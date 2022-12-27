@@ -19,7 +19,7 @@ export default {
         armor_bonus: 4,
         armor_class: null,
         cost: 1000,
-        weight: 5,
+        weight: 25,
     },
     chainmail: {
         name: "armor_chainmail",
