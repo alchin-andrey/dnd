@@ -719,7 +719,8 @@ export default {
       },
       {
         level: 1,
-        type: "equipment",
+        type: "inventory_packs",
+        name: "packs",
         select: 1,
         list: [
           [packs.dungeoneers, 1],
@@ -946,7 +947,7 @@ export default {
       {
         level: 1,
         weapon: [[weapons.javelin, 4]],
-        inventory: [
+        inventory_packs: [
           [packs.explorers, 1], // нужно как-то распаковьівать 😅
         ],
       },
@@ -1726,16 +1727,8 @@ export default {
       },
       {
         level: 1,
-        type: "equipment",
-        select: 1,
-        list: [
-          [packs.priests, 1],
-          [packs.explorers, 1],
-        ],
-      },
-      {
-        level: 3,
-        type: "equipment",
+        type: "inventory_packs",
+        name: "packs",
         select: 1,
         list: [
           [packs.priests, 1],
@@ -1847,7 +1840,8 @@ export default {
       equipment: [
         {
           armor: [[armors.leather, 1]],
-          inventory: [[packs.explorers, 1],[items.focus,1]],
+          inventory: [[items.focus,1]],
+          inventory_packs: [[packs.explorers, 1],],
         },
       ],
 
@@ -1860,6 +1854,7 @@ export default {
           list: [
             {
               name: "circle_of_the_land_arctic",
+              name: "circle_of_the_land_arctic_details",
             },
         ]
         },
@@ -2303,7 +2298,7 @@ export default {
           ]
         },
         {
-          type: "packs",
+          type: "inventory_packs",
           name: "packs",
           select: 1,
           list: [
@@ -2614,7 +2609,7 @@ export default {
         ],
       },
       {
-        type: "packs",
+        type: "inventory_packs",
         name: "packs",
         select: 1,
         list: [
@@ -2627,8 +2622,16 @@ export default {
         name: "tools",
         select: 1,
         list: [
-          [packs.diplomats, 1],
-          [items.entertainers, 1],
+          [items.music_lute, 1],
+          [items.music_bagpipes, 1],
+          [items.music_drums, 1],
+          [items.music_dulcimer, 1],
+          [items.music_flute, 1],
+          [items.music_horn, 1],
+          [items.music_lyre, 1],
+          [items.music_pan_flute, 1],
+          [items.music_shawm, 1],
+          [items.music_viol, 1],
         ],
       },
       {
@@ -2742,7 +2745,7 @@ export default {
         level: 1,
         armor: [[armors.leather, 1]],
         weapon: [[weapons.dagger, 2]],
-        inventory: [[packs.thieves, 1]],
+        inventory_packs: [[packs.thieves, 1]],
       },
     ],
 
@@ -3178,7 +3181,8 @@ export default {
       },
       {
         level: 1,
-        type: "equipment",
+        type: "inventory_packs",
+        name: "packs",
         select: 1,
         list: [
           [packs.burglars, 1],

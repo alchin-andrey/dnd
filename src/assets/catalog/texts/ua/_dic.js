@@ -2965,4 +2965,22 @@ export default {
     spell_wild_shape_combat: spells.wild_shape_combat,
 
     circle_of_the_land_arctic: classes.circle_of_the_land_arctic,
+    circle_of_the_land_coast: classes.circle_of_the_land_coast,
+    circle_of_the_land_desert: classes.circle_of_the_land_desert,
+    circle_of_the_land_forest: classes.circle_of_the_land_forest,
+    circle_of_the_land_grassland: classes.circle_of_the_land_grassland,
+    circle_of_the_land_mountain: classes.circle_of_the_land_mountain,
+    circle_of_the_land_swamp: classes.circle_of_the_land_swamp,
+    circle_of_the_land_underdark: classes.circle_of_the_land_underdark,
+    circle_of_the_moon: classes.circle_of_the_moon,
+
+    circle_of_the_land_arctic_details: classes.circle_of_the_land_arctic_details,
+    circle_of_the_land_coast_details: classes.circle_of_the_land_coast_details,
+    circle_of_the_land_desert_details: classes.circle_of_the_land_desert_details,
+    circle_of_the_land_forest_details: classes.circle_of_the_land_forest_details,
+    circle_of_the_land_grassland_details: classes.circle_of_the_land_grassland_details,
+    circle_of_the_land_mountain_details: classes.circle_of_the_land_mountain_details,
+    circle_of_the_land_swamp_details: classes.circle_of_the_land_swamp_details,
+    circle_of_the_land_underdark_details: classes.circle_of_the_land_underdark_details,
+    circle_of_the_moon_details: classes.circle_of_the_moon_details,
 }
