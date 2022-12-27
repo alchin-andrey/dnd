@@ -227,7 +227,8 @@ export default {
 		},
 
 		t_Text() {
-			return this.t(this.Spell_Index.details);
+      let foo = this.Value_Det;
+      return foo ? this.t(foo) : this.t(this.Spell_Index.details);
 		},
 
 		t_Cast_Value() {
@@ -579,6 +580,26 @@ export default {
       return lvl;
     },
 
+    //ANCHOR - Det
+    Det_2_4_8_Wildshape(){
+      let deteils = this.Spell_Index.details;
+      let lvl = this.MY.level;
+      let kof = null;
+      if (lvl >= 8) {
+				kof = 8;
+			} else if (lvl >= 4) {
+				kof = 4;
+			} else {
+				kof = 2;
+			}
+      return `${deteils}_${kof}`
+    },
+
+    //ANCHOR - Dur
+    Dur_05_Lvl() {
+
+    },
+
 		//ANCHOR - FOO
     Value_Foo: (state) => (Val) => {
       let low_val = Val.toLowerCase();
@@ -604,6 +625,10 @@ export default {
 		Value_Pls() {
 			return this.Value_Foo("Pls");
 		},
+
+    Value_Det() {
+      return this.Value_Foo("Det");
+    },
 		// ------ FOO -----------
 
 	},
