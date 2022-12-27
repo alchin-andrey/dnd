@@ -6,7 +6,7 @@
 			<div class="items">
 				<section v-for="item in list_Filter_Arr" :key="item" class="column_vis">
 					<div class="small">{{ Str(item) }}</div>
-          <div class="charge" v-if="Inf(item)">{{ Inf(item) }}</div>
+          <div class="charge_text" v-if="Inf(item)">{{ Inf(item) }}</div>
 					<div v-else class="visual">
 						<div class="cube cube_charge" v-for="n in cube_Numb(item)" :key="n"></div>
 					</div>
@@ -158,8 +158,11 @@ export default {
 .cube_charge {
 	background: #00e0ff;
 }
-.charge {
+.charge_text {
+  width: 98px;
+  margin-left: 12px;
   color: #00e0ff;
+  text-align: start;
 }
 
 .small {
