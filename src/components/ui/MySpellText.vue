@@ -600,6 +600,32 @@ export default {
       return `${deteils}_${kof}`
     },
 
+    Det_2_4_8_9_10_12_15_18_Wildshape() {
+      let deteils = this.Spell_Index.details;
+      let lvl = this.MY.level;
+      let kof_arr = [2, 2, 2, 4, 4, 4, 4, 8, 9, 10, 10, 12, 12, 14, 15, 15, 17, 18, 18, 18];
+      let kof = kof_arr[lvl - 1];
+      // let kof = null;
+      // if (lvl >= 18) {
+			// 	kof = 18;
+			// } else if (lvl >= 15) {
+			// 	kof = 15;
+			// } else if (lvl >= 12) {
+			// 	kof = 12;
+			// } else if (lvl >= 10) {
+			// 	kof = 10;
+			// } else if (lvl >= 9) {
+			// 	kof = 9;
+			// } else if (lvl >= 8) {
+			// 	kof = 8;
+			// } else if (lvl >= 4) {
+			// 	kof = 4;
+			// } else {
+			// 	kof = 2;
+			// }
+      return `${deteils}_${kof}`
+    },
+
     //ANCHOR - Dur
     Dur_05_Lvl() {
       let lvl = this.MY.level;
