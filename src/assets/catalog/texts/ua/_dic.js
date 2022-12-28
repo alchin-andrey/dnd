@@ -2797,6 +2797,7 @@ export default {
 
     restoring: "відновлення",
     mana_slots_short_rest_lvl_05: "рівень/2 слотів мани при короткому відпочинку",
+    mana_slots_short_rest_lvl_05_up_to_5: "рівень/2 слотів мани при короткому відпочинку, не більше [5]",
 
     component_pouch: "мішечок с компонентами",
     component_pouch_details: "Маленький водонепроникний шкіряний поясний гаманець із відділеннями для зберігання матеріальних компонентів та інших спеціальних предметів, необхідних для накладання заклять замість Фокусу, якщо тільки у цих компонентів не вказана вартість (дивіться опис закляття).",
@@ -2963,6 +2964,14 @@ export default {
     free_spell_parts_in_wildshape: "умов заклять без ціни, при Дикій формі",
 
     spell_wild_shape_combat: spells.wild_shape_combat,
+    spell_wild_shape_combat_details_2: spells.wild_shape_combat_details_2,
+    spell_wild_shape_combat_details_4: spells.wild_shape_combat_details_4,
+    spell_wild_shape_combat_details_8: spells.wild_shape_combat_details_8,
+    spell_wild_shape_combat_details_9: spells.wild_shape_combat_details_9,
+    spell_wild_shape_combat_details_12: spells.wild_shape_combat_details_12,
+    spell_wild_shape_combat_details_15: spells.wild_shape_combat_details_15,
+    spell_wild_shape_combat_details_18: spells.wild_shape_combat_details_18,
+    spell_wild_shape_combat_expanded: spells.wild_shape_combat_expanded,
 
     circle_of_the_land_arctic: classes.circle_of_the_land_arctic,
     circle_of_the_land_coast: classes.circle_of_the_land_coast,
@@ -2983,4 +2992,21 @@ export default {
     circle_of_the_land_swamp_details: classes.circle_of_the_land_swamp_details,
     circle_of_the_land_underdark_details: classes.circle_of_the_land_underdark_details,
     circle_of_the_moon_details: classes.circle_of_the_moon_details,
+
+    spell_wild_shape_heal: spells.wild_shape_heal,
+    spell_wild_shape_heal_details: spells.wild_shape_heal_details,
+    spell_wild_shape_heal_expanded: spells.wild_shape_heal_expanded,
+
+    on_saving_from_plants: "на Випробування проти магічних рослин",
+    no_speed_fee: "Немає штрафу швидкості",
+    on_nonmagic_hard_area: "у немагічній важкопрохідній місцевості",
+    on_enchantment_from_fey_elemental: "проти 😍 Зачарування феями чи елементалями",
+    on_enchantment_from_fey_elemental: "проти 😱 Переляку феями чи елементалями",
+
+    saving_wisdom: "Випробування Мудрості",
+    on_any_animal_or_plant_attack: "для будь-якого звіра чи рослини, що намагається вас атакувати",
+
+    spell_alter_self_druid: spells.alter_self_druid,
+
+    of_nonmagic_damage_immunity_wild_shape: "імунітету цілі до немагічних атак та пошкоджень, при Дикій формі",
 }

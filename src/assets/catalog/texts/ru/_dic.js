@@ -2118,7 +2118,7 @@ export default {
 
     if_1_or_2_on_two_handed_weapon: "урона двуручного оружия, если выпало 1 или 2",
 
-    on_sick: "к болезням",
+    on_sick: "против болезней",
 
     spell_divine_channel_devotion_1: spells.divine_channel_devotion_1,
     spell_divine_channel_devotion_1_details: spells.divine_channel_devotion_1_details,
@@ -2792,6 +2792,7 @@ export default {
 
     restoring: "восстановление",
     mana_slots_short_rest_lvl_05: "уровень/2 ячеек маны при коротком отдыхе",
+    mana_slots_short_rest_lvl_05_up_to_5: "уровень/2 ячеек маны при коротком отдыхе, не больше [5]",
 
     component_pouch: "мешочек с компонентами",
     component_pouch_details: "Маленький водонепроницаемый кожаный поясной кошель с отделениями для хранения материальных компонентов и других особых предметов, нужных для накладывания заклинаний вместо Фокуса, если только у этих компонентов не указана стоимость (смотрите описание заклинания).",
@@ -2959,6 +2960,49 @@ export default {
     free_spell_parts_in_wildshape: "частей закинаний без цены, при Диком облике",
 
     spell_wild_shape_combat: spells.wild_shape_combat,
+    spell_wild_shape_combat_details_2: spells.wild_shape_combat_details_2,
+    spell_wild_shape_combat_details_4: spells.wild_shape_combat_details_4,
+    spell_wild_shape_combat_details_8: spells.wild_shape_combat_details_8,
+    spell_wild_shape_combat_details_9: spells.wild_shape_combat_details_9,
+    spell_wild_shape_combat_details_12: spells.wild_shape_combat_details_12,
+    spell_wild_shape_combat_details_15: spells.wild_shape_combat_details_15,
+    spell_wild_shape_combat_details_18: spells.wild_shape_combat_details_18,
+    spell_wild_shape_combat_expanded: spells.wild_shape_combat_expanded,
 
     circle_of_the_land_arctic: classes.circle_of_the_land_arctic,
+    circle_of_the_land_coast: classes.circle_of_the_land_coast,
+    circle_of_the_land_desert: classes.circle_of_the_land_desert,
+    circle_of_the_land_forest: classes.circle_of_the_land_forest,
+    circle_of_the_land_grassland: classes.circle_of_the_land_grassland,
+    circle_of_the_land_mountain: classes.circle_of_the_land_mountain,
+    circle_of_the_land_swamp: classes.circle_of_the_land_swamp,
+    circle_of_the_land_underdark: classes.circle_of_the_land_underdark,
+    circle_of_the_moon: classes.circle_of_the_moon,
+
+    circle_of_the_land_arctic_details: classes.circle_of_the_land_arctic_details,
+    circle_of_the_land_coast_details: classes.circle_of_the_land_coast_details,
+    circle_of_the_land_desert_details: classes.circle_of_the_land_desert_details,
+    circle_of_the_land_forest_details: classes.circle_of_the_land_forest_details,
+    circle_of_the_land_grassland_details: classes.circle_of_the_land_grassland_details,
+    circle_of_the_land_mountain_details: classes.circle_of_the_land_mountain_details,
+    circle_of_the_land_swamp_details: classes.circle_of_the_land_swamp_details,
+    circle_of_the_land_underdark_details: classes.circle_of_the_land_underdark_details,
+    circle_of_the_moon_details: classes.circle_of_the_moon_details,
+
+    spell_wild_shape_heal: spells.wild_shape_heal,
+    spell_wild_shape_heal_details: spells.wild_shape_heal_details,
+    spell_wild_shape_heal_expanded: spells.wild_shape_heal_expanded,
+
+    on_saving_from_plants: "на Испытания против магических растений",
+    no_speed_fee: "нет штрафа скорости",
+    on_nonmagic_hard_area: "в немагической труднопроходимой местности",
+    on_enchantment_from_fey_elemental: "против 😍 Очарования феями и элементалями",
+    on_enchantment_from_fey_elemental: "против 😱 Испуга феями и элементалями",
+
+    saving_wisdom: "Испытание Мудрости",
+    on_any_animal_or_plant_attack: "для любого зверя или растения, пытающегося вас атаковать",
+
+    spell_alter_self_druid: spells.alter_self_druid,
+
+    of_nonmagic_damage_immunity_wild_shape: "иммунитета цели к немагическим атакам и урону, при Диком облике",
 }

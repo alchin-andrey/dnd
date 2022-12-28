@@ -3786,15 +3786,14 @@ export default {
     },
   ],
 
-  wild_shape_сombat: [
+  wild_shape_combat: [
     {
       //0
       name: "spell_wild_shape_combat",
-      details: "spell_wild_shape_details",
-      expanded: "spell_wild_shape_expanded",
+      details: "spell_wild_shape_combat_details",
+      expanded: "spell_wild_shape_combat_expanded",
 
       type: "ability",
-      slot_type: "wild_shape_slot",
       classes: ["druid"],
 
       cast_time: "bonus_action",
@@ -3819,7 +3818,7 @@ export default {
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Det_2_4_8_Wildshape__Dur_05_Lvl",
+      impact_size_foo: "Det_2_4_8_9_10_12_15_18_Wildshape__Dur_05_Lvl",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
@@ -3829,6 +3828,52 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  wild_shape_heal: [
+    {},
+    {
+      //1
+      name: "spell_wild_shape_heal",
+      details: "spell_wild_shape_heal_details",
+      expanded: "spell_wild_shape_heal_expanded",
+
+      type: "ability",
+      classes: ["druid"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["spell_wild_shape_combat"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{},{},{},{},{}
   ],
 
   find_familiar_druid: [
@@ -3864,6 +3909,49 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Dur_05_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  alter_self_druid: [
+    {
+      name: "spell_alter_self_druid",
+      details: "spell_alter_self_details",
+      expanded: "spell_alter_self_expanded",
+
+      type: "transmutation",
+      classes: ["artificer", "sorcerer", "wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
