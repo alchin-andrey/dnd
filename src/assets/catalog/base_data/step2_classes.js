@@ -7,16 +7,15 @@ import weapons from "./list_weapons.js";
 import armors from "./list_armor.js";
 import packs from "./list_packs.js";
 import items from "./list_items.js";
-import langs from "./list_languages.js"
+import langs from "./list_languages.js";
 
 export const barbarian_rage_bonus = [
   0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
 ];
 
 export default {
-
   //NOTE - Fighter -------------------------------------------------------------------------
-  
+
   fighter: {
     name: "fighter",
     details: "fighter_details",
@@ -83,7 +82,29 @@ export default {
                 level: 3,
                 name: "superiority_dice_slots",
                 list: [
-                  ["d8", 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6],
+                  [
+                    "d8",
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                  ],
                 ],
               },
             ],
@@ -370,7 +391,7 @@ export default {
               },
               {
                 spell: spells.call_bonbed_weapon,
-              }
+              },
             ],
 
             charges: [
@@ -378,16 +399,103 @@ export default {
                 level: 1,
                 name: "spell_slots",
                 list: [
-                  ["[1]", 0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-                  ["[2]", 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-                  ["[3]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3],
-                  ["[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+                  [
+                    "[1]",
+                    0,
+                    0,
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                  ],
+                  [
+                    "[2]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[3]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[4]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
-            
-            settings:
-            [
+
+            settings: [
               {
                 level: 3,
                 type: "spells",
@@ -513,22 +621,21 @@ export default {
                 mana_max: "Num_Fighter_max_spell_slot",
                 classes: ["wizard"],
               },
-            ]
+            ],
           },
           {
             name: "champion",
             details: "champion_details",
 
-            fines:
-            [
+            fines: [
               {
-                level:3,
+                level: 3,
                 type: "plus",
                 keyword: "ctit_damage",
                 details: "on_dice_19_20",
-              }
-            ]
-          }
+              },
+            ],
+          },
         ],
       },
       {
@@ -604,10 +711,10 @@ export default {
         list: [
           {
             equipment: [{ inventory: [[items.shield, 1]] }],
-            spells:[
+            spells: [
               {
-                spell:spells.prepare_shield,
-              }
+                spell: spells.prepare_shield,
+              },
             ],
           },
           {
@@ -838,7 +945,7 @@ export default {
       {
         level: 5,
         speed_bonus: 10,
-      }
+      },
     ],
 
     fines: [
@@ -955,7 +1062,7 @@ export default {
 
     specials: [
       {
-        level:1,
+        level: 1,
         type: "armor_bonus",
         foo: "Num_CON",
       },
@@ -1614,10 +1721,10 @@ export default {
         list: [
           {
             equipment: [{ inventory: [[items.shield, 1]] }],
-            spells:[
+            spells: [
               {
-                spell:spells.prepare_shield,
-              }
+                spell: spells.prepare_shield,
+              },
             ],
           },
           {
@@ -1751,1208 +1858,1241 @@ export default {
 
   druid: {
     name: "druid",
-      details: "druid_details",
-  
-      hp_dice: 8,
-  
-      proficiencies: {
-        armor: [armory.light,armory.medium,armory.shields],
-        weapons: [weaponry.quarterstaffs, weaponry.maces, weaponry.darts, weaponry.clubs, weaponry.daggers, weaponry.spears, weaponry.javelins, weaponry.slings, weaponry.sickles, weaponry.scimitars],
-        tools: [tools.herbalists_tools],
-        languages: [langs.druid],
+    details: "druid_details",
+
+    hp_dice: 8,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [
+        weaponry.quarterstaffs,
+        weaponry.maces,
+        weaponry.darts,
+        weaponry.clubs,
+        weaponry.daggers,
+        weaponry.spears,
+        weaponry.javelins,
+        weaponry.slings,
+        weaponry.sickles,
+        weaponry.scimitars,
+      ],
+      tools: [tools.herbalists_tools],
+      languages: [langs.druid],
+    },
+
+    saving: ["intelligence", "wisdom"],
+    stats_base: [
+      "intelligence",
+      "wisdom",
+      "constitution",
+      "dexterity",
+      "charisma",
+      "strength",
+    ],
+    spell_attribute: "wisdom",
+
+    spells: [
+      {
+        level: 1,
+        spell: spells.druid_message,
       },
-  
-      saving: ["intelligence", "wisdom"],
-      stats_base: [
-        "intelligence",
-        "wisdom",
-        "constitution",
-        "dexterity",
-        "charisma",
-        "strength",
-  
-      ],
-      spell_attribute: "wisdom",
+      {
+        level: 2,
+        spell: spells.wild_shape,
+      },
+      {
+        level: 1,
+        spell: spells.wild_shape_heal,
+      },
+      {
+        level: 2,
+        spell: spells.find_familiar_druid,
+      },
+    ],
 
-      spells: [
-        {
-          level: 1,
-          spell: spells.druid_message,
-        },
-        {
-          level: 2,
-          spell: spells.wild_shape,
-        },
-        {
-          level: 1,
-          spell: spells.wild_shape_heal,
-        },
-        {
-          level: 2,
-          spell: spells.find_familiar_druid,
-        },
-      ],
+    fines: [
+      {
+        level: 1,
+        type: "minus",
+        keyword: "unability",
+        details: "to_wear_metal_armor",
+      },
+      {
+        level: 18,
+        type: "plus",
+        keyword: "aging_slow",
+        details: "ten_times",
+      },
+      {
+        level: 20,
+        type: "plus",
+        keyword: "ignoring",
+        details: "free_spell_parts_in_wildshape",
+      },
+    ],
 
-      fines: [
-        {
-          level: 1,
-          type: "minus",
-          keyword: "unability",
-          details: "to_wear_metal_armor", 
-        },
-        {
-          level: 18,
-          type: "plus",
-          keyword: "aging_slow",
-          details: "ten_times", 
-        },
-        {
-          level: 20,
-          type: "plus",
-          keyword: "ignoring",
-          details: "free_spell_parts_in_wildshape", 
-        }
-      ],
+    charges: [
+      {
+        level: 2,
+        name: "wild_shape_slots",
+        list: [
+          ["", 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, "inf"],
+        ],
+      },
+      {
+        level: 1,
+        name: "spell_slots",
+        list: [
+          ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+    ],
 
-      charges: [
-        {
-          level: 2,
-          name: "wild_shape_slots",
-          list: [
-            ["", 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, "inf"],
-          ],
-        },
-        {
-          level: 1,
-          name: "spell_slots",
-          list: [
-            ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-            ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
-            ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
-            ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
-            ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
-            ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-          ],
-        },
-      ],
+    equipment: [
+      {
+        armor: [[armors.leather, 1]],
+        inventory: [[items.focus, 1]],
+        inventory_packs: [[packs.explorers, 1]],
+      },
+    ],
 
-      equipment: [
-        {
-          armor: [[armors.leather, 1]],
-          inventory: [[items.focus,1]],
-          inventory_packs: [[packs.explorers, 1],],
-        },
-      ],
+    settings: [
+      {
+        level: 2,
+        type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            name: "circle_of_the_land_arctic",
+            details: "circle_of_the_land_arctic_details",
 
-      settings: [
-        {
-          level: 2,
-          type: "custom",
-          name: "subclass",
-          select: 1,
-          list: [
-            {
-              name: "circle_of_the_land_arctic",
-              name: "circle_of_the_land_arctic_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.hold_person,
+              },
+              {
+                level: 2,
+                spell: spells.spike_growth,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.hold_person,
-                },
-                {
-                  level: 2,
-                  spell: spells.spike_growth,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_land_swamp",
+            details: "circle_of_the_land_swamp_details",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_land_swamp",
-              name: "circle_of_the_land_swamp_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.melfs_acid_arrow,
+              },
+              {
+                level: 2,
+                spell: spells.darkness,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.melfs_acid_arrow,
-                },
-                {
-                  level: 2,
-                  spell: spells.darkness,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_land_mountain",
+            details: "circle_of_the_land_mountain_details",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_land_mountain",
-              name: "circle_of_the_land_mountain_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.spider_climb,
+              },
+              {
+                level: 2,
+                spell: spells.spike_growth,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.spider_climb,
-                },
-                {
-                  level: 2,
-                  spell: spells.spike_growth,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_land_forest",
+            details: "circle_of_the_land_forest_details",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_land_forest",
-              name: "circle_of_the_land_forest_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.barkskin,
+              },
+              {
+                level: 2,
+                spell: spells.spider_climb,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.barkskin,
-                },
-                {
-                  level: 2,
-                  spell: spells.spider_climb,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_land_grassland",
+            details: "circle_of_the_land_grassland_details",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_land_grassland",
-              name: "circle_of_the_land_grassland_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.pass_without_trace,
+              },
+              {
+                level: 2,
+                spell: spells.invisibility,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.pass_without_trace,
-                },
-                {
-                  level: 2,
-                  spell: spells.invisibility,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_land_coast",
+            details: "circle_of_the_land_coast_details",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_land_coast",
-              name: "circle_of_the_land_coast_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.mirror_image,
+              },
+              {
+                level: 2,
+                spell: spells.misty_step,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.mirror_image,
-                },
-                {
-                  level: 2,
-                  spell: spells.misty_step,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_land_underdark",
+            details: "circle_of_the_land_underdark_details",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_land_underdark",
-              name: "circle_of_the_land_underdark_details",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
+              },
+              {
+                level: 2,
+                spell: spells.spider_climb,
+              },
+              {
+                level: 2,
+                spell: spells.web,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape,
-                },
-                {
-                  level: 2,
-                  spell: spells.spider_climb,
-                },
-                {
-                  level: 2,
-                  spell: spells.web,
-                },
-              ],
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "restoring",
+                details: "mana_slots_short_rest_lvl_05_up_to_5",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "no_speed_fee",
+                details: "on_nonmagic_hard_area",
+              },
+              {
+                level: 6,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_from_plants",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_enchantment_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_fear_from_fey_elemental",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "poison_against",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_sick",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "saving_wisdom",
+                details: "on_any_animal_or_plant_attack",
+              },
+            ],
 
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "restoring",
-                  details: "mana_slots_short_rest_lvl_05_up_to_5",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "no_speed_fee",
-                  details: "on_nonmagic_hard_area",
-                },
-                {
-                  level: 6,
-                  type: "advantage",
-                  keyword: "advantage",
-                  details: "on_saving_from_plants",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_enchantment_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_fear_from_fey_elemental",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "poison_against",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "immunity",
-                  details: "on_sick",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "saving_wisdom",
-                  details: "on_any_animal_or_plant_attack",
-                },
-              ],
+            settings: [
+              {
+                level: 2,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+            ],
+          },
+          {
+            name: "circle_of_the_moon",
+            details: "circle_of_the_moon",
 
-              settings: [
-                {
-                  level: 2,
-                  type: "spells",
-                  name: "spells_0",
-                  select: 1,
-                  mana_min: 0,
-                  mana_max: 0,
-                  classes: ["druid"],
-                },
-              ]
-            },
-            {
-              name: "circle_of_the_moon",
-              name: "circle_of_the_moon",
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape_combat,
+              },
+              {
+                level: 2,
+                spell: spells.wild_shape_heal,
+              },
+              {
+                level: 14,
+                spell: spells.alter_self_druid,
+              },
+            ],
 
-              spells: [
-                {
-                  level: 2,
-                  spell: spells.wild_shape_combat,
-                },
-                {
-                  level: 2,
-                  spell: spells.wild_shape_heal,
-                },
-                {
-                  level: 14,
-                  spell: spells.alter_self_druid,
-                },
-              ],
-
-              fines: [
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "ignoring",
-                  details: "of_nonmagic_damage_immunity_wild_shape",
-                },
-              ],
-            },
-        ]
-        },
-        {
-          level: 1,
-          type: "skills",
-          select: 2,
-          bonus: "mastery",
-          list: [
-            "perception",
-            "survival",
-            "arcana",
-            "medicine",
-            "animal_hanging",
-            "nature",
-            "insight",
-            "religion"
-          ],
-        },
-        {
-          level: 1,
-          type: "custom",
-          name: "weapon",
-          select: 2,
-          list: [
-            {
-              equipment: [{ inventory: [[items.shield, 1]] }],
-              spells:[
-                {
-                  spell:spells.prepare_shield,
-                }
-              ],
-            },
-            {
-              equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.mace, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.club, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.dagger, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.spear, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.javelin, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.greatclub, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.handaxe, 1]] }],
-            },
-            {
-              equipment: [{ weapon: [[weapons.sickle, 1]] }],
-            },
-            {
-              equipment: [
-                {
-                  weapon: [[weapons.light_crossbow, 1]],
-                  inventory: [[items.bolt, 20]],
-                },
-              ],
-            },
-            {
-              equipment: [
-                {
-                  weapon: [[weapons.dart, 20]],
-                },
-              ],
-            },
-            {
-              equipment: [
-                {
-                  weapon: [[weapons.shortbow, 1]],
-                  inventory: [[items.arrow, 20]],
-                },
-              ],
-            },
-            {
-              equipment: [
-                {
-                  weapon: [[weapons.sling, 1]],
-                  inventory: [[items.bullet, 20]],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          level: 1,
-          type: "weapons",
-          select: 1,
-          list: [
-            [weapons.scimitar, 1],
-            [weapons.quarterstaff, 1],
-            [weapons.mace, 1],
-            [weapons.club, 1],
-            [weapons.dagger, 1],
-            [weapons.spear, 1],
-            [weapons.light_hammer, 1],
-            [weapons.javelin, 1],
-            [weapons.greatclub, 1],
-            [weapons.handaxe, 1],
-            [weapons.sickle, 1],
-          ],
-        },
-        {
-          level: 1,
-          type: "spells",
-          name: "spells_0",
-          select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4
-          mana_min: 0,
-          mana_max: 0,
-          classes: ["druid"],
-        },
-        {
-          type: "spells",
-          name: "spells",
-          select: "Str_Druid_Spells", //WIS + lvl (min 1 spell)
-          mana_min: 1,
-          mana_max: "Num_Wizard_max_spell_slot",
-          classes: ["wizard"],
-        },
-        {
-          level: 4,
-          type: "feats",
-        },
-        {
-          level: 8,
-          type: "feats",
-        },
-        {
-          level: 12,
-          type: "feats",
-        },
-        {
-          level: 16,
-          type: "feats",
-        },
-        {
-          level: 19,
-          type: "feats",
-        },
-      ]
-  },
+            fines: [
+              {
+                level: 6,
+                type: "plus",
+                keyword: "ignoring",
+                details: "of_nonmagic_damage_immunity_wild_shape",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "skills",
+        select: 2,
+        bonus: "mastery",
+        list: [
+          "perception",
+          "survival",
+          "arcana",
+          "medicine",
+          "animal_hanging",
+          "nature",
+          "insight",
+          "religion",
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapon",
+        select: 2,
+        list: [
+          {
+            equipment: [{ inventory: [[items.shield, 1]] }],
+            spells: [
+              {
+                spell: spells.prepare_shield,
+              },
+            ],
+          },
+          {
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.club, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.dagger, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.spear, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.javelin, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.sickle, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.dart, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.sling, 1]],
+                inventory: [[items.bullet, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "weapons",
+        select: 1,
+        list: [
+          [weapons.scimitar, 1],
+          [weapons.quarterstaff, 1],
+          [weapons.mace, 1],
+          [weapons.club, 1],
+          [weapons.dagger, 1],
+          [weapons.spear, 1],
+          [weapons.light_hammer, 1],
+          [weapons.javelin, 1],
+          [weapons.greatclub, 1],
+          [weapons.handaxe, 1],
+          [weapons.sickle, 1],
+        ],
+      },
+      {
+        level: 1,
+        type: "spells",
+        name: "spells_0",
+        select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["druid"],
+      },
+      {
+        type: "spells",
+        name: "spells",
+        select: "Str_Druid_Spells", //WIS + lvl (min 1 spell)
+        mana_min: 1,
+        mana_max: "Num_Wizard_max_spell_slot",
+        classes: ["wizard"],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+    ],
+  }, //Almost 20 (spells)
 
   //NOTE - Wizard -------------------------------------------------------------------------
 
   wizard: {
-      name: "wizard",
-      details: "wizard_details",
-  
-      hp_dice: 6,
-  
-      proficiencies: {
-        armor: [],
-        weapons: [weaponry.daggers, weaponry.darts, weaponry.slings, weaponry.quarterstaffs, weaponry.light_arbalets],
-        tools: [],
-        languages: [],
+    name: "wizard",
+    details: "wizard_details",
+
+    hp_dice: 6,
+
+    proficiencies: {
+      armor: [],
+      weapons: [
+        weaponry.daggers,
+        weaponry.darts,
+        weaponry.slings,
+        weaponry.quarterstaffs,
+        weaponry.light_arbalets,
+      ],
+      tools: [],
+      languages: [],
+    },
+
+    saving: ["intelligence", "wisdom"],
+    stats_base: [
+      "intelligence",
+      "wisdom",
+      "constitution",
+      "dexterity",
+      "charisma",
+      "strength",
+    ],
+    spell_attribute: "intelligence",
+
+    fines: [
+      {
+        level: 1,
+        type: "plus",
+        keyword: "restoring",
+        details: "mana_slots_short_rest_lvl_05",
       },
-  
-      saving: ["intelligence", "wisdom"],
-      stats_base: [
-        "intelligence",
-        "wisdom",
-        "constitution",
-        "dexterity",
-        "charisma",
-        "strength",
-  
-      ],
-      spell_attribute: "intelligence",
-  
-      fines: [
-        {
-          level: 1,
-          type: "plus",
-          keyword: "restoring",
-          details: "mana_slots_short_rest_lvl_05",
-        },
-        {
-          level: 18,
-          type: "plus",
-          keyword: "use_wo_mana",
-          details: "two_spells_1_and_2",
-        },
-        {
-          level: 20,
-          type: "plus",
-          keyword: "use_wo_mana",
-          details: "two_spells_3",
-        },
-      ],
-  
-      charges: [
-        {
-          level: 1,
-          name: "spell_slots",
-          list: [
-            ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-            ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
-            ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
-            ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
-            ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
-            ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-          ],
-        },
-      ],
-  
-      equipment: [
-        {
-          inventory: [[items.spell_book, 1]],
-        },
-      ],
-  
-      spells: [
-        {
-          level: 1,
-          spell: spells.learn_spell,
-        },
-      ],
-  
-      settings: [
-        {
-          level: 2,
-          type: "custom",
-          name: "subclass",
-          select: 1,
-          list: [
-            {
-              name: "school_of_evocation",
-              details: "school_of_evocation_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_evocation",
-                },
-                {
-                  type: "plus",
-                  keyword: "save_ally",
-                  details: "one_plus_lvl_from_spell_evocation",
-                },
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "min_half_damage",
-                  details: "from_cantrips",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "plus_INT",
-                  details: "to_damage_evocation",
-                },
-                {
-                  level: 14,
-                  type: "plus",
-                  keyword: "always_max_dmg",
-                  details: "from_evocation_1_to_5",
-                }
-              ],
-              spells:[
-                {
-                  level:14,
-                  spell:spells.overload,
-                }
-              ]
-            },
-            {
-              name: "school_of_conjuration",
-              details: "school_of_conjuration_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_conjuration",
-                },
-              ],
-  
-              spells:[
-                {
-                  spell: spells.small_conjuration,
-                }
-              ]
-            },
-            {
-              name: "school_of_illusion",
-              details: "school_of_illusion_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_illusion",
-                },
-              ],
-  
-              spells:[
-                {
-                  spell: spells.small_illusion,
-                }
-              ]
-            },
-            {
-              name: "school_of_necromancy",
-              details: "school_of_necromancy_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_necromancy",
-                },
-                {
-                  type: "plus",
-                  keyword: "heal",
-                  details: "from_spell_kill_necromancy",
-                },
-              ]
-            },
-            {
-              name: "school_of_abjuration",
-              details: "school_of_abjuration_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_abjuration",
-                },
-              ],
-              
-              charges: [
-                {
-                  level: 2,
-                  name: "magical_protection",
-                  list: [
-                    ["", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      {
+        level: 18,
+        type: "plus",
+        keyword: "use_wo_mana",
+        details: "two_spells_1_and_2",
+      },
+      {
+        level: 20,
+        type: "plus",
+        keyword: "use_wo_mana",
+        details: "two_spells_3",
+      },
+    ],
+
+    charges: [
+      {
+        level: 1,
+        name: "spell_slots",
+        list: [
+          ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+    ],
+
+    equipment: [
+      {
+        inventory: [[items.spell_book, 1]],
+      },
+    ],
+
+    spells: [
+      {
+        level: 1,
+        spell: spells.learn_spell,
+      },
+    ],
+
+    settings: [
+      {
+        level: 2,
+        type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            name: "school_of_evocation",
+            details: "school_of_evocation_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_evocation",
+              },
+              {
+                type: "plus",
+                keyword: "save_ally",
+                details: "one_plus_lvl_from_spell_evocation",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "min_half_damage",
+                details: "from_cantrips",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "plus_INT",
+                details: "to_damage_evocation",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "always_max_dmg",
+                details: "from_evocation_1_to_5",
+              },
+            ],
+            spells: [
+              {
+                level: 14,
+                spell: spells.overload,
+              },
+            ],
+          },
+          {
+            name: "school_of_conjuration",
+            details: "school_of_conjuration_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_conjuration",
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.small_conjuration,
+              },
+            ],
+          },
+          {
+            name: "school_of_illusion",
+            details: "school_of_illusion_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_illusion",
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.small_illusion,
+              },
+            ],
+          },
+          {
+            name: "school_of_necromancy",
+            details: "school_of_necromancy_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_necromancy",
+              },
+              {
+                type: "plus",
+                keyword: "heal",
+                details: "from_spell_kill_necromancy",
+              },
+            ],
+          },
+          {
+            name: "school_of_abjuration",
+            details: "school_of_abjuration_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_abjuration",
+              },
+            ],
+
+            charges: [
+              {
+                level: 2,
+                name: "magical_protection",
+                list: [
+                  [
+                    "",
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
                   ],
-                },
-              ],
-  
-              spells: [
-                {
-                  spell: spells.magical_protection,
-                }
-              ]
-            },
-            {
-              name: "school_of_enchantment",
-              details: "school_of_enchantment_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_enchantment",
-                },
-              ],
-  
-              spells:[
-                {
-                  spell: spells.hypnotic_look,
-                }
-              ]
-            },
-            {
-              name: "school_of_transmutation",
-              details: "school_of_transmutation_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_transmutation",
-                },
-              ],
-  
-              spells:[
-                {
-                  spell: spells.small_alchemy,
-                }
-              ]
-            },
-            {
-              name: "school_of_divination",
-              details: "school_of_divination_details",
-  
-              fines: [
-                {
-                  type: "plus",
-                  keyword: "twice_less",
-                  details: "gold_and_time_divination",
-                },
-              ],
-  
-              spells:[
-                {
-                  spell: spells.portent,
-                }
-              ]
-            },
-          ],
-        },
-        {
-          type: "skills",
-          name: "skills",
-          select: 2,
-          num: "mastery",
-          list: [
-            "investigation",
-            "history",
-            "arcana",
-            "medicine",
-            "insight",
-            "religion",
-          ],
-        },
-        {
-          type: "weapons",
-          name: "weapons",
-          select: 1,
-          list: [
-            [weapons.quarterstaff, 1],
-            [weapons.dagger, 1],
-          ],
-        },
-        {
-          type: "inventory",
-          name: "inventory",
-          select: 1,
-          list: [
-            [items.component_pouch],
-            [items.focus],
-          ]
-        },
-        {
-          type: "inventory_packs",
-          name: "packs",
-          select: 1,
-          list: [
-            [packs.scholars, 1],
-            [packs.explorers, 1],
-          ],
-        },
-        {
-          level: 1,
-          type: "spells",
-          name: "spells_0",
-          select: 3, //3,3,3,4,4, 4,4,4,4,5, 5,5,5,5,5, 5,5,5,5,5,
-          mana_min: 0,
-          mana_max: 0,
-          classes: ["wizard"],
-        },
-        {
-          type: "spells",
-          name: "spells",
-          select: "Str_Wizard_Spells", //6,8,10,12,14, 16,18,20,22,24, 26,28,30,32,34, 36,38,40,42,44
-          mana_min: 1,
-          mana_max: "Num_Wizard_max_spell_slot",
-          classes: ["wizard"],
-        },
-        {
-          level: 4,
-          type: "feats",
-        },
-        {
-          level: 8,
-          type: "feats",
-        },
-        {
-          level: 12,
-          type: "feats",
-        },
-        {
-          level: 16,
-          type: "feats",
-        },
-        {
-          level: 19,
-          type: "feats",
-        },
-      ],
-  
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.magical_protection,
+              },
+            ],
+          },
+          {
+            name: "school_of_enchantment",
+            details: "school_of_enchantment_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_enchantment",
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.hypnotic_look,
+              },
+            ],
+          },
+          {
+            name: "school_of_transmutation",
+            details: "school_of_transmutation_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_transmutation",
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.small_alchemy,
+              },
+            ],
+          },
+          {
+            name: "school_of_divination",
+            details: "school_of_divination_details",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_divination",
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.portent,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "skills",
+        name: "skills",
+        select: 2,
+        num: "mastery",
+        list: [
+          "investigation",
+          "history",
+          "arcana",
+          "medicine",
+          "insight",
+          "religion",
+        ],
+      },
+      {
+        type: "weapons",
+        name: "weapons",
+        select: 1,
+        list: [
+          [weapons.quarterstaff, 1],
+          [weapons.dagger, 1],
+        ],
+      },
+      {
+        type: "inventory",
+        name: "inventory",
+        select: 1,
+        list: [[items.component_pouch], [items.focus]],
+      },
+      {
+        type: "inventory_packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.scholars, 1],
+          [packs.explorers, 1],
+        ],
+      },
+      {
+        level: 1,
+        type: "spells",
+        name: "spells_0",
+        select: 3, //3,3,3,4,4, 4,4,4,4,5, 5,5,5,5,5, 5,5,5,5,5,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["wizard"],
+      },
+      {
+        type: "spells",
+        name: "spells",
+        select: "Str_Wizard_Spells", //6,8,10,12,14, 16,18,20,22,24, 26,28,30,32,34, 36,38,40,42,44
+        mana_min: 1,
+        mana_max: "Num_Wizard_max_spell_slot",
+        classes: ["wizard"],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+    ],
   },
 
   //NOTE - Bard -------------------------------------------------------------------------
@@ -3001,7 +3141,7 @@ export default {
         level: 2,
         type: "skills",
         foo: "Half_Mastery",
-      }
+      },
     ],
 
     charges: [
@@ -3421,7 +3561,7 @@ export default {
         level: 15,
         type: "saving",
         saving: ["wisdom"],
-      }
+      },
     ],
 
     settings: [
@@ -3800,4 +3940,47 @@ export default {
       },
     ],
   }, //20
+
+  //NOTE - Cleric
+
+  cleric: {
+    name: "cleric",
+    details: "cleric_details",
+
+    hp_dice: 8,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [weaponry.simple],
+      tools: [],
+      languages: [],
+    },
+
+    saving: ["wisdom", "charisma"],
+    stats_base: [
+      "wisdom",
+      "constitution",
+      "dexterity",
+      "strength",
+      "intelligence",
+      "charisma",
+    ],
+    spell_attribute: "wisdom",
+
+    settings: [
+      {
+        level: 1,
+        type: "skills",
+        select: 2,
+        bonus: "mastery",
+        list: [
+          "history",
+          "medicine",
+          "insight",
+          "religion",
+          "persuasion",
+        ],
+      },
+    ],
+  },
 };

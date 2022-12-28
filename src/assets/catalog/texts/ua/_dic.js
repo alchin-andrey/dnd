@@ -3009,4 +3009,9 @@ export default {
     spell_alter_self_druid: spells.alter_self_druid,
 
     of_nonmagic_damage_immunity_wild_shape: "імунітету цілі до немагічних атак та пошкоджень, при Дикій формі",
+
+    cleric: classes.cleric,
+    cleric_details: classes.cleric_details,
+
+    refresh_to_recommended: "Повернути рекомендований розподіл",
 }
