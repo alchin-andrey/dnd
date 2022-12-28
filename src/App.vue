@@ -338,6 +338,16 @@ a {
 	color: #ffffff;
 }
 
+.int-700 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+	letter-spacing: 0.02em;
+	color: #ffffff;
+}
+
 .stripe {
 	width: 2px;
 	background-color: rgba(255, 255, 255, 0.1);

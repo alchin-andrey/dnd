@@ -10,9 +10,11 @@
 	<my-selection-card
 		v-if="stats_base_save[MY.class.name]"
 		@click="defaultStats()"
-		class="jbm-300 btm_text"
 	>
-		{{ t(MY.class.name) }} по дефолту
+		<div class="int-700 btm_reset">
+			<div>Повернути до рекомендованого розподілу</div>
+			<img src="@/assets/img/icon/reset.svg" alt="reset" />
+		</div>
 	</my-selection-card>
 </template>
 
@@ -46,8 +48,15 @@ export default {
 </script>
 
 <style scoped>
-.btm_text {
-	text-align: center;
+.btm_reset {
+	display: flex;
+	justify-content: space-between;
+	height: 15px;
+	padding-right: 3px;
+}
+
+.btm_reset img {
+	/* width: 15px; */
 }
 
 .marg {
