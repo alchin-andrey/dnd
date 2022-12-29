@@ -68,13 +68,16 @@ export default {
     equipment: [
       {
         armor: [[armors.leather, 1]],
-        inventory: [[items.spell_book, 1], [items.shield, 1]],
-        inventory_packs: [[packs.explorers, 1],],
+        inventory: [
+          [items.spell_book, 1],
+          [items.shield, 1],
+        ],
+        inventory_packs: [[packs.explorers, 1]],
       },
       {
         level: 5,
         inventory: [[items.holy_symbol, 5]],
-        inventory_packs: [[packs.burglars, 1],],
+        inventory_packs: [[packs.burglars, 1]],
       },
     ],
     //!NOTE - Для отладки
@@ -131,9 +134,9 @@ export default {
                 name: "maneuvers",
                 select: 3,
                 list: [
-                  spells.evasive_footwork,
-                  spells.lunning_attack,
-                  spells.maneuvering_attack,
+                  spells.maneuver_evasive_footwork,
+                  spells.maneuver_lunging_attack,
+                  spells.maneuver_maneuvering_attack,
                   spells.maneuver_menacing_attack,
                   spells.maneuver_feinting_attack,
                   spells.maneuver_disarming_attack,
@@ -156,9 +159,9 @@ export default {
                 name: "maneuvers",
                 select: 2,
                 list: [
-                  spells.evasive_footwork,
-                  spells.lunning_attack,
-                  spells.maneuvering_attack,
+                  spells.maneuver_evasive_footwork,
+                  spells.maneuver_lunging_attack,
+                  spells.maneuver_maneuvering_attack,
                   spells.maneuver_menacing_attack,
                   spells.maneuver_feinting_attack,
                   spells.maneuver_disarming_attack,
@@ -181,9 +184,9 @@ export default {
                 name: "maneuvers",
                 select: 2,
                 list: [
-                  spells.evasive_footwork,
-                  spells.lunning_attack,
-                  spells.maneuvering_attack,
+                  spells.maneuver_evasive_footwork,
+                  spells.maneuver_lunging_attack,
+                  spells.maneuver_maneuvering_attack,
                   spells.maneuver_menacing_attack,
                   spells.maneuver_feinting_attack,
                   spells.maneuver_disarming_attack,
@@ -206,9 +209,9 @@ export default {
                 name: "maneuvers",
                 select: 2,
                 list: [
-                  spells.evasive_footwork,
-                  spells.lunning_attack,
-                  spells.maneuvering_attack,
+                  spells.maneuver_evasive_footwork,
+                  spells.maneuver_lunging_attack,
+                  spells.maneuver_maneuvering_attack,
                   spells.maneuver_menacing_attack,
                   spells.maneuver_feinting_attack,
                   spells.maneuver_disarming_attack,
@@ -1865,6 +1868,43 @@ export default {
         mana_min: 1,
         mana_max: "Num_Paladin_max_spell_slot", // по
         classes: ["paladin"],
+      },
+    ],
+  },
+
+  //NOTE - Cleric
+
+  cleric: {
+    name: "cleric",
+    details: "cleric_details",
+
+    hp_dice: 8,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [weaponry.simple],
+      tools: [],
+      languages: [],
+    },
+
+    saving: ["wisdom", "charisma"],
+    stats_base: [
+      "wisdom",
+      "constitution",
+      "dexterity",
+      "strength",
+      "intelligence",
+      "charisma",
+    ],
+    spell_attribute: "wisdom",
+
+    settings: [
+      {
+        level: 1,
+        type: "skills",
+        select: 2,
+        bonus: "mastery",
+        list: ["history", "medicine", "insight", "religion", "persuasion"],
       },
     ],
   },
@@ -3955,47 +3995,4 @@ export default {
       },
     ],
   }, //20
-
-  //NOTE - Cleric
-
-  cleric: {
-    name: "cleric",
-    details: "cleric_details",
-
-    hp_dice: 8,
-
-    proficiencies: {
-      armor: [armory.light, armory.medium, armory.shields],
-      weapons: [weaponry.simple],
-      tools: [],
-      languages: [],
-    },
-
-    saving: ["wisdom", "charisma"],
-    stats_base: [
-      "wisdom",
-      "constitution",
-      "dexterity",
-      "strength",
-      "intelligence",
-      "charisma",
-    ],
-    spell_attribute: "wisdom",
-
-    settings: [
-      {
-        level: 1,
-        type: "skills",
-        select: 2,
-        bonus: "mastery",
-        list: [
-          "history",
-          "medicine",
-          "insight",
-          "religion",
-          "persuasion",
-        ],
-      },
-    ],
-  },
 };

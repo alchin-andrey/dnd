@@ -11,7 +11,8 @@ export default {
 
         type: [weaponry.simple, weaponry.quarterstaffs],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         // если 5 то ближнее, если больше то дальнобойное
         // если ближнее, то меткость и урон от Силы
         // если дальнее, то меткость и урон от Ловкости
@@ -22,8 +23,7 @@ export default {
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -64,15 +64,15 @@ export default {
 
         type: [weaponry.simple, weaponry.maces],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         throwing: null, // метательное
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -94,15 +94,15 @@ export default {
 
         type: [weaponry.simple, weaponry.clubs],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         throwing: null, // метательное
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -124,15 +124,15 @@ export default {
 
         type: [weaponry.simple,weaponry.daggers],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: 20, // метательное
         range_max: 60,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -154,15 +154,15 @@ export default {
 
         type: [weaponry.simple,weaponry.spears],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: 20, // метательное
         range_max: 60,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -184,15 +184,15 @@ export default {
 
         type: [weaponry.simple,weaponry.light_hammers],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: 20, // метательное
         range_max: 60,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -214,15 +214,15 @@ export default {
 
         type: [weaponry.simple,weaponry.javelins],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: 30, // метательное
         range_max: 120,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -244,15 +244,15 @@ export default {
 
         type: [weaponry.simple],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         throwing: null, // метательное
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -274,15 +274,15 @@ export default {
 
         type: [weaponry.simple,weaponry.hand_axes],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: 20,
         range_max: 60,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -304,15 +304,15 @@ export default {
 
         type: [weaponry.simple, weaponry.sickles],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null,
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -336,6 +336,7 @@ export default {
 
         type: [weaponry.simple, weaponry.light_arbalets],
 
+        melee: false,
         range_min: 80,
         throwing: null, // метательное
         range_max: 320,
@@ -343,8 +344,7 @@ export default {
         ammunition: "bolt", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -366,6 +366,7 @@ export default {
 
         type: [weaponry.simple, weaponry.darts],
 
+        melee: false,
         range_min: 20,
         throwing: 20, // метательное
         range_max: 60,
@@ -373,8 +374,7 @@ export default {
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -396,6 +396,7 @@ export default {
 
         type: [weaponry.simple,weaponry.short_bows],
 
+        melee: false,
         range_min: 80,
         throwing: null, // метательное
         range_max: 320,
@@ -403,8 +404,7 @@ export default {
         ammunition: "arrow", // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -426,6 +426,7 @@ export default {
 
         type: [weaponry.simple, weaponry.slings],
 
+        melee: false,
         range_min: 80,
         throwing: null, // метательное
         range_max: 320,
@@ -433,8 +434,7 @@ export default {
         ammunition: "bullet", // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -458,15 +458,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null,
         range_max: 10,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -488,15 +488,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -518,15 +518,15 @@ export default {
 
         type: [weaponry.military,weaponry.battle_hammers],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -548,15 +548,15 @@ export default {
 
         type: [weaponry.military,weaponry.battle_axes],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -578,15 +578,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: 10,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -608,15 +608,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -638,15 +638,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: 10,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -668,15 +668,15 @@ export default {
 
         type: [weaponry.military,weaponry.long_swords],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -698,15 +698,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: 10,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -728,15 +728,15 @@ export default {
 
         type: [weaponry.military,weaponry.short_swords],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -758,15 +758,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -788,15 +788,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -818,15 +818,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: 10,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -848,15 +848,15 @@ export default {
 
         type: [weaponry.military,weaponry.rapires],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -878,15 +878,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -908,15 +908,15 @@ export default {
 
         type: [weaponry.military, weaponry.scimitars],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -938,15 +938,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: 20, // метательное
         range_max: 60,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -968,15 +968,15 @@ export default {
 
         type: [weaponry.military],
 
-        range_min: 5,
+        melee: true,
+range_min: 5,
         throwing: null, // метательное
         range_max: null,
 
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -1000,6 +1000,7 @@ export default {
 
         type: [weaponry.military,weaponry.hand_arbalets],
 
+        melee: false,
         range_min: 30,
         throwing: null, // метательное
         range_max: 120,
@@ -1007,8 +1008,7 @@ export default {
         ammunition: "bolt", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        light: true, // легкое
-        heavy: null, // тяжелое
+        heaviness: "light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1030,6 +1030,7 @@ export default {
 
         type: [weaponry.military],
 
+        melee: false,
         range_min: 100,
         throwing: null, // метательное
         range_max: 400,
@@ -1037,8 +1038,7 @@ export default {
         ammunition: "bolt", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1060,6 +1060,7 @@ export default {
 
         type: [weaponry.military,weaponry.long_bows],
 
+        melee: false,
         range_min: 150,
         throwing: null, // метательное
         range_max: 600,
@@ -1067,8 +1068,7 @@ export default {
         ammunition: "arrow", // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: true, // тяжелое
+        heaviness: "heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1090,6 +1090,7 @@ export default {
 
         type: [weaponry.military],
 
+        melee: false,
         range_min: 25,
         throwing: null, // метательное
         range_max: 100,
@@ -1097,8 +1098,7 @@ export default {
         ammunition: "dart", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1120,6 +1120,7 @@ export default {
 
         type: [weaponry.military],
 
+        melee: false,
         range_min: 5,
         throwing: 5, // метательное
         range_max: 15,
@@ -1127,8 +1128,7 @@ export default {
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        light: null, // легкое
-        heavy: null, // тяжелое
+        heaviness: "medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",

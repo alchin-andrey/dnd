@@ -365,8 +365,9 @@ export default {
             loading_details:weapons.loading_details,
             weapon_light_details:weapons.light_details,
             weapon_heavy_details:weapons.heavy_details,
+            weapon_finesse: "фехтувальне",
 
-            ammunition:"боєприпаси",
+            ammunition:"боєприпас",
             bolt:"болт",
             arrow:"стріла",
             bullet:"снаряд",
@@ -377,8 +378,11 @@ export default {
 
             cost:"ціна",
             coin_gold:"золотих монет",
+            coin_gold_short: "🟡",
             coin_silver:"срібних монет",
+            coin_silver_short: "⚪",
             сoin_copper:"мідних монет",
+            coin_copper_short: "🟠",
 
             weapons_battle_axes: weapons.battle_axes,
             weapons_battle_axes_details: weapons.battle_axes_details,

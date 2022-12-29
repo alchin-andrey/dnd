@@ -3926,8 +3926,8 @@ export default {
       details: "spell_alter_self_details",
       expanded: "spell_alter_self_expanded",
 
-      type: "transmutation",
-      classes: ["artificer", "sorcerer", "wizard"],
+      type: "ability",
+      classes: ["druid"],
 
       cast_time: "action",
       cast_duration: null,
