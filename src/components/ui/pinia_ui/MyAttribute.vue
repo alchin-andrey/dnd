@@ -1,34 +1,44 @@
 <template>
 	<div class="column jbm-300" :class="{ passive: numb == 0 }">
 		<div class="column_value">
-			<div v-if="icon_Shown" class="icon">
-        <svg
-        :class="{
-          active_svg: stats_Keys.includes(title) || stats_Keys.includes(icon),
-          not_save_svg: save.length !== 0 && !save.includes(icon) && !numb == 0,
-					save_svg: save.includes(icon),
-				}"
-        width="18"
-        height="18"
-        viewBox="0 0 18 18"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        v-html="atribute_icon[icon_Image]"
-      />
-				<!-- <img :src="icon_Image" :alt="icon" /> -->
+			<section class="flex_row">
+				<div v-if="icon_Shown" class="icon">
+					<svg
+						:class="{
+							active_svg:
+								stats_Keys.includes(title) || stats_Keys.includes(icon),
+							not_save_svg:
+								save.length !== 0 && !save.includes(icon) && !numb == 0,
+							save_svg: save.includes(icon),
+						}"
+						width="18"
+						height="18"
+						viewBox="0 0 18 18"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						v-html="atribute_icon[icon_Image]"
+					/>
+					<!-- <img :src="icon_Image" :alt="icon" /> -->
+				</div>
+				<div class="item">
+					{{ t_Title }}<span v-if="t_Type">{{ t_Type }}</span>
+				</div>
+			</section>
+			<div v-if="dot" class="dotted passive">
+				..................................
 			</div>
-			<div class="item">
-				{{ t_Title }}<span>{{ t_Type }}</span>
+			<div class="numb" v-if="numb_not_cube">
+				{{ Value }}
+				<emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="11" />
 			</div>
-			<div class="numb">
-				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span
-				> {{ Suffix }}
+			<div class="numb" v-else>
+				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span> {{ Unit }}
 			</div>
 		</div>
 		<div class="visual">
 			<div class="cube" v-for="n in cube_Numb" :key="n"></div>
-      <div class="cube_neg" v-for="n in cube_Negative" :key="n"></div>
-      <div class="cube_old" v-for="n in old_numb" :key="n"></div>
+			<div class="cube_neg" v-for="n in cube_Negative" :key="n"></div>
+			<div class="cube_old" v-for="n in old_numb" :key="n"></div>
 			<div class="cube_zero" v-for="n in cube_Numb_Zero" :key="n"></div>
 		</div>
 	</div>
@@ -41,11 +51,11 @@ import { useMYStore } from "@/stores/MY/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "MyAttribute",
-  data() {
-    return {
-      atribute_icon: atribute_icon,
-    }
-  },
+	data() {
+		return {
+			atribute_icon: atribute_icon,
+		};
+	},
 	props: {
 		title: {
 			type: String,
@@ -55,11 +65,23 @@ export default {
 			type: Number,
 			default: null,
 		},
-    old_numb: {
+		numb_not_cube: {
 			type: Number,
 			default: null,
 		},
-    dice: {
+		unit: {
+			type: String,
+			default: null,
+		},
+		dot: {
+			type: Boolean,
+			default: false,
+		},
+		old_numb: {
+			type: Number,
+			default: null,
+		},
+		dice: {
 			type: Number,
 			default: null,
 		},
@@ -71,7 +93,7 @@ export default {
 			type: String,
 			default: null,
 		},
-    no_icon: {
+		no_icon: {
 			type: Boolean,
 			default: false,
 		},
@@ -83,7 +105,7 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    save: {
+		save: {
 			type: Array,
 			default: [],
 		},
@@ -94,9 +116,9 @@ export default {
 	},
 
 	computed: {
-    // STORES
+		// STORES
 		...mapState(useMYStore, ["MY"]),
-    ...mapState(useStatsStore, ["stats_Keys"]),
+		...mapState(useStatsStore, ["stats_Keys"]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -107,30 +129,38 @@ export default {
 		},
 
 		Prefix() {
-			return (this.plus && this.Numb > 0) ? "+" : "";
+			return this.plus && this.Numb > 0 ? "+" : "";
 		},
 
-    Numb() {
-      return this.old_numb ? this.old_numb + this.numb : this.numb;
-    },
+		Numb() {
+			return this.old_numb ? this.old_numb + this.numb : this.numb;
+		},
 
-		Suffix() {
+		Value() {
+			return this.numb_not_cube ? this.numb_not_cube : this.numb;
+		},
+
+		Unit() {
+			return this.unit ? this.t(this.unit) : this.Feet;
+		},
+
+		Feet() {
 			return this.feet ? this.t("feet") : "";
 		},
 
-    icon_Image() {
-      return this.icon ? this.icon : this.title;
-    },
+		icon_Image() {
+			return this.icon ? this.icon : this.title;
+		},
 
-    Dice() {
+		Dice() {
 			return this.dice ? `d${this.dice}` : null;
 		},
 
-    icon_Shown() {
-      let icon = this.icon;
-      let atribute_icon = this.atribute_icon[this.icon_Image];
-      return (icon || atribute_icon) && !this.no_icon;
-    },
+		icon_Shown() {
+			let icon = this.icon;
+			let atribute_icon = this.atribute_icon[this.icon_Image];
+			return (icon || atribute_icon) && !this.no_icon;
+		},
 
 		// icon_Image() {
 		// 	if (this.icon === null) {
@@ -145,57 +175,86 @@ export default {
 		cube_Numb() {
 			if (this.feet) {
 				return Math.ceil(this.numb / 5);
-      } else if(this.numb < 0) {
-        return null;
+			} else if (this.numb < 0) {
+				return null;
 			} else {
-				return this.numb;
+				return Math.floor(this.numb);
 			}
 		},
 
-    cube_Negative() {
+		cube_Negative() {
 			return this.numb < 0 ? Math.abs(this.numb) : null;
 		},
 
-    cube_Numb_Zero() {
-      if (this.dice) {
-        return this.dice * this.numb - this.numb;
-      }
+		cube_Numb_Zero() {
+			if (this.dice) {
+				return this.dice * this.numb - this.numb;
+			}
 		},
 	},
 };
 </script>
 
 <style scoped>
+.dotted {
+	flex: 1 0;
+	margin: 0 0.6em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 .column {
+	width: 340px;
 	display: flex;
 	min-height: 18px;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .column_value {
+	width: 230px;
+	display: flex;
+	justify-content: space-between;
+	flex: 1 1 auto;
+}
+
+.flex_row {
+  display: flex;
+}
+
+/* .column {
+	display: flex;
+	min-height: 18px;
+} */
+
+/* .numb {
+	flex: 1 1 auto;
+	text-align: end;
+} */
+
+/* .column_value {
 	display: flex;
   flex: 1 1 auto;
-	/* width: 252px; */
-}
+} */
 
 .icon {
 	display: flex;
 	width: 18px;
 	height: 18px;
-  margin-right: 4px;
+	margin-right: 4px;
 }
 
-.active_svg{
-  stroke: white;
+.active_svg {
+	stroke: white;
 }
 
 .save_svg {
-  fill: white;
+	fill: white;
 }
 
 .not_save_svg {
-  opacity: 0.2;
+	opacity: 0.2;
 }
-
 /* .item {
 	margin-left: 4px;
 } */
@@ -211,13 +270,8 @@ export default {
 
 .passive {
 	color: rgba(255, 255, 255, 0.2);
-  fill-opacity: 0.2;
-  stroke-opacity: 0.2;
-}
-
-.numb {
-	flex: 1 1 auto;
-	text-align: end;
+	fill-opacity: 0.2;
+	stroke-opacity: 0.2;
 }
 
 .visual {
@@ -239,17 +293,17 @@ export default {
 }
 
 .cube_old {
-  width: 8px;
+	width: 8px;
 	height: 8px;
-	background: rgba(255, 255, 255, 0.2);;
+	background: rgba(255, 255, 255, 0.2);
 	border-radius: 2px;
 }
 
 .cube_neg {
-  width: 8px;
+	width: 8px;
 	height: 8px;
-  border-radius: 2px;
-  border: 1px solid #ff0000;
+	border-radius: 2px;
+	border: 1px solid #ff0000;
 }
 
 .cube_zero {
@@ -261,5 +315,11 @@ export default {
 
 .small {
 	text-transform: lowercase;
+}
+
+.emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+	top: 1px;
 }
 </style>

@@ -43,8 +43,8 @@ export default {
 	position: fixed;
 	z-index: 100;
 	cursor: pointer;
-	display: inline-block;
-	text-align: end;
+	/* display: inline-block; */
+	/* text-align: end; */
 }
 
 .dialog__wrapp {

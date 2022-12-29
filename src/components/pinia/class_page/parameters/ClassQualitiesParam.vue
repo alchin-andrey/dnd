@@ -108,7 +108,7 @@ export default {
 
     equipments_Level_Arr() {
 			let lvl = this.MY.level;
-			let arr = this.MY.class.equipment?.filter((el) => el.level <= lvl);
+      let arr = this.MY.class.equipment?.filter((el) => el.level ? el.level <= lvl : el);
 			return arr ? arr : [];
 		},
 

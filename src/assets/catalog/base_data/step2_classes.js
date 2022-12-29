@@ -64,6 +64,21 @@ export default {
       },
     ],
 
+    //NOTE - Для отладки
+    equipment: [
+      {
+        armor: [[armors.leather, 1]],
+        inventory: [[items.spell_book, 1], [items.shield, 1]],
+        inventory_packs: [[packs.explorers, 1],],
+      },
+      {
+        level: 5,
+        inventory: [[items.holy_symbol, 5]],
+        inventory_packs: [[packs.burglars, 1],],
+      },
+    ],
+    //!NOTE - Для отладки
+
     settings: [
       {
         level: 3,

@@ -139,6 +139,12 @@
 			</my-wrapper>
 			<!-- //!NOTE - weapon -->
 
+      <!-- //NOTE - weapon -->
+			<my-wrapper v-if="inventory_Level_Arr.length !== 0" hr>
+				<InventoryEquip/>
+			</my-wrapper>
+			<!-- //!NOTE - weapon -->
+
       <!-- //NOTE - armor -->
 			<!-- <my-wrapper v-if="armors_Level_Arr.length !== 0" gap_26 hr>
 				<my-armor
@@ -181,6 +187,7 @@
 <script>
 import ClassStatsTable from "@/components/pinia/class_page/settings/ClassStatsTable.vue";
 import ClassQualitiesParam from "@/components/pinia/class_page/parameters/ClassQualitiesParam.vue";
+import InventoryEquip from "@/components/pinia/class_page/equipment/InventoryEquip.vue";
 
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/pages/PagesStore";
@@ -195,6 +202,8 @@ export default {
 	components: {
 		ClassStatsTable,
 		ClassQualitiesParam,
+
+    InventoryEquip,
 	},
 	computed: {
 		// STORE
@@ -334,7 +343,7 @@ export default {
 
 		equipments_Level_Arr() {
 			let lvl = this.MY.level;
-			let arr = this.MY.class.equipment?.filter((el) => el.level <= lvl);
+			let arr = this.MY.class.equipment?.filter((el) => el.level ? el.level <= lvl : el);
 			return arr ? arr : [];
 		},
 
@@ -343,7 +352,15 @@ export default {
 			this.equipments_Level_Arr?.forEach((el) =>
 				el.weapon?.forEach((weapon) => arr.push(weapon))
 			);
-			return arr ? arr : [];
+			return arr;
+		},
+
+    inventory_Level_Arr() {
+			let arr = [];
+			this.equipments_Level_Arr?.forEach((el) =>
+				el.inventory?.forEach((inventory) => arr.push(inventory))
+			);
+			return arr;
 		},
 
     // armors_Level_Arr() {

@@ -80,6 +80,7 @@ export default {
 .col_title span {
 	color: rgba(255, 255, 255, 0.4);
 	min-width: 5px;
+  text-align: end;
 }
 
 .save_text {
