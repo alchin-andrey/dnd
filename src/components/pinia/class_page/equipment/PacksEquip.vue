@@ -7,14 +7,14 @@
 	>
 		<div ref="stripe" class="side_stripe"></div>
 		<div class="int-400 gap_col" :class="{ passive: passive }">
-			<div class="flex_title" >
+			<div class="flex_title">
 				<div class="title_packs">{{ packs_Name }}</div>
 				<img
 					class="icon"
 					:src="img_Icon"
 					alt="arrow"
-          @click.stop
-          @mouseover.stop
+					@click.stop
+					@mouseover.stop
 					@click="shownScroll()"
 				/>
 			</div>
@@ -26,7 +26,6 @@
 					</div>
 				</section>
 			</transition>
-      
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible" class="dialog">
@@ -95,10 +94,10 @@ export default {
 			return this.t(this.packs[0].details);
 		},
 
-    img_Icon () {
-      let icon = this.packs_scroll ? "top" : "down";
-      return require(`@/assets/img/icon/arrow_${icon}_small.svg`);
-    }
+		img_Icon() {
+			let icon = this.packs_scroll ? "top" : "down";
+			return require(`@/assets/img/icon/arrow_${icon}_small.svg`);
+		},
 	},
 
 	watch: {
@@ -109,8 +108,8 @@ export default {
 		},
 	},
 	methods: {
-    shownScroll() {
-			this.packs_scroll = !this.packs_scroll
+		shownScroll() {
+			this.packs_scroll = !this.packs_scroll;
 		},
 
 		hoverOut() {
@@ -150,7 +149,7 @@ export default {
 .gap_col {
 	display: grid;
 	gap: 15px;
-  width: 100%;
+	width: 100%;
 }
 
 .title_packs:first-letter {
@@ -181,7 +180,7 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  width: 100%;
+	width: 100%;
 }
 
 .side_stripe {
@@ -254,5 +253,23 @@ export default {
 .scroll-packs-leave-to {
 	transform: translateY(-20px);
 	opacity: 0;
+}
+
+.icon:hover {
+	position: relative;
+	animation-name: arrow;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes arrow{
+0%{
+top: 0%;
+}
+100%{
+  top: 20%;
+}
 }
 </style>
