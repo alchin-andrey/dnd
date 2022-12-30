@@ -679,6 +679,7 @@ export default {
       {
         level: 1,
         type: "skills",
+        name: "skills",
         select: 4,
         bonus: "mastery",
         list: [
@@ -724,7 +725,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        name: "weapon",
+        name: "weapons",
         select: 2,
         list: [
           {
@@ -826,7 +827,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        name: "weapon",
+        name: "weapons",
         select: 1,
         list: [
           {
@@ -1366,6 +1367,7 @@ export default {
       {
         level: 1,
         type: "skills",
+        name: "skills",
         select: 2,
         bonus: "mastery",
         list: [
@@ -1380,6 +1382,7 @@ export default {
       {
         level: 3,
         type: "skills",
+        name: "skills",
         select: 1,
         bonus: "mastery",
         list: [
@@ -1394,6 +1397,7 @@ export default {
       {
         level: 10,
         type: "skills",
+        name: "skills",
         select: 1,
         bonus: "mastery",
         list: [
@@ -1428,6 +1432,7 @@ export default {
       {
         level: 1,
         type: "weapons",
+        name: "weapons",
         select: 1,
         list: [
           [weapons.greataxe, 1],
@@ -1453,6 +1458,7 @@ export default {
       {
         level: 1,
         type: "weapons",
+        name: "weapons",
         select: 1,
         list: [
           [weapons.handaxe, 2],
@@ -1700,6 +1706,7 @@ export default {
       {
         level: 1,
         type: "skills",
+        name: "skills",
         select: 2,
         bonus: "mastery",
         list: [
@@ -1734,7 +1741,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        name: "weapon",
+        name: "weapons",
         select: 2,
         list: [
           {
@@ -1836,6 +1843,7 @@ export default {
       {
         level: 1,
         type: "weapons",
+        name: "weapons",
         select: 1,
         list: [
           [weapons.javelin, 5],
@@ -1898,13 +1906,321 @@ export default {
     ],
     spell_attribute: "wisdom",
 
+    charges: [
+      {
+        level: 1,
+        name: "spell_slots",
+        list: [
+          ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+      {
+        level: 1,
+        name: "divine_channel_slots",
+        list: [
+          ["", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+        ],
+      },
+      {
+        level: 10,
+        name: "divine_intervention_slots",
+        list: [
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+      {
+        level: 1,
+        name: "thunder_wrath_slots",
+        foo: "Num_WIS_Min1",
+        list: [
+          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,],
+        ],
+      },
+    ],
+
+    equipment: [
+      { 
+        inventory: [[items.shield, 1],[items.holy_symbol,1]] 
+      }
+    ],
+
+    spells: [
+      {
+        level:1,
+        spell: spells.thunder_wrath,
+      },
+      {
+        level: 2,
+        spell: spells.divine_channel_wrath,
+      },
+      {
+        level: 2,
+        spell: spells.divine_channel_undead,
+      },
+      {
+        level: 2,
+        spell: spells.divine_channel_mana,
+      },
+      {
+        level: 10,
+        spell: spells.divine_intervention,
+      },
+      {
+        level:1,
+        spell: spells.prepare_shield,
+      },
+    ],
+
     settings: [
       {
         level: 1,
+        type: "custom",
+        name: "subclass",
+        select:1,
+        list: [
+          {
+            //домен бури
+            name: "domain_thunder",
+            details: "domain_thunder_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "thunder_wrath_slots",
+                foo: "Num_WIS_Min1",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level:1,
+                spell: spells.thunder_wrath,
+              },
+              {
+                level: 1,
+                spell: spells.thunderwave,
+              },
+              {
+                level: 1,
+                spell: spells.fog_cloud,
+              },
+              {
+                level: 3,
+                spell: spells.shatter,
+              },
+              {
+                level: 3,
+                spell: spells.gust_of_wind,
+              },
+            ],
+
+            proficiencies: [
+                {
+                  armor: [[armory.heavy]],
+                  weapons: [[weaponry.military]]
+                }
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "weapons",
+                name: "weapons",
+                select: 1,
+                list: [
+                  [weapons.mace, 1],
+                  [weapons.warhammer, 1], // давай если нет мастери - подсвечивать имя желтьім
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]], // давай если нет мастери - прятать
+                      },
+                    ],
+                  },
+                ],
+              },
+            ]
+          },
+          {
+            //домен войны
+          },
+          {
+            //домен жизни
+          },
+          {
+            //домен знания
+          },
+          {
+            //домен обмана
+          },
+          {
+            //домен природы
+          },
+          {
+            //домен света
+          },
+        ]
+      },
+      {
+        level: 1,
         type: "skills",
+        name: "skills",
         select: 2,
         bonus: "mastery",
         list: ["history", "medicine", "insight", "religion", "persuasion"],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.club, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.dagger, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.spear, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.javelin, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.sickle, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.dart, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.sling, 1]],
+                inventory: [[items.bullet, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "inventory_packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.priests, 1],
+          [packs.explorers, 1],
+        ],
+      },
+      {
+        level: 1,
+        type: "spells",
+        name: "spells_0",
+        select: 3,  // 3,3,3,4,4  4,4,4,4,5  5,5,5,5,5  5,5,5,5,5
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["cleric"],
+      },
+      {
+        level: 2,
+        type: "spells",
+        name: "spells",
+        select: "Str_Lvl_Plus_WIS_min1",
+        mana_min: 1,
+        mana_max: "Num_Cleric_Max_Spell_Slot", // по
+        classes: ["cleric"],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
       },
     ],
   },
@@ -2633,6 +2949,7 @@ export default {
       {
         level: 1,
         type: "skills",
+        name: "skills",
         select: 2,
         bonus: "mastery",
         list: [
@@ -2649,7 +2966,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        name: "weapon",
+        name: "weapons",
         select: 2,
         list: [
           {
@@ -2726,6 +3043,7 @@ export default {
       {
         level: 1,
         type: "weapons",
+        name: "weapons",
         select: 1,
         list: [
           [weapons.scimitar, 1],
@@ -3204,6 +3522,7 @@ export default {
         level: 1,
         name: "bardic_inspiration_slots",
         foo: "Str_Level_5_10_15__Num_CHA_Min1",
+        //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Она становится к8 на 5 уровне, к10 на 10 уровне и к12 на 15 уровне.
         //Вы можете использовать это умение количество раз, равное модификатору вашей Харизмы, но как минимум один раз.
         //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Изначально d6, она становится d8 на 5 уровне, d10 на 10 уровне и d12 на 15 уровне.
         list: [
@@ -3715,6 +4034,7 @@ export default {
       {
         level: 1,
         type: "skills",
+        name: "skills",
         select: 4,
         bonus: "mastery",
         list: [
@@ -3956,6 +4276,7 @@ export default {
       {
         level: 1,
         type: "weapons",
+        name: "weapons",
         select: 1,
         list: [
           [weapons.rapier, 1],

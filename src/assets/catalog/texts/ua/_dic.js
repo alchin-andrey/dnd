@@ -1291,8 +1291,8 @@ export default {
     waterskin: "бурдюк",
     waterskin_details: "Місткість: 2 літри",
 
-    hempen_rope: "прядив'яна мотузка 50ф",
-    hempen_rope_details: "зроблена з пеньки або шовку. Вона має 2 HP, і її можна порвати Випробуванням Сили складністю 17.",
+    hempen_rope: "мотузка 50ф",
+    hempen_rope_details: "зроблена з пеньки або шовку. Вона має 2 здоровʼя, і її можна порвати Випробуванням Сили складністю 17.",
 
     barbarian: classes.barbarian,
     barbarian_details: classes.barbarian_details,
@@ -1377,8 +1377,8 @@ export default {
     armor_leather: "шкіряна",
     armor_leather_details: "Нагрудник та плечі цього обладунку виготовлені зі шкіри, вивареної в олії. Інші частини обладунку виготовлені з більш м'яких і гнучких матеріалів.",
 
-    armor_scalemale: "луската",
-    armor_scalemale_details: "Цей обладунок складається зі шкіряних куртки і поножів (а також, можливо, окремої спідниці), покритих шматочками металу, що перекриваються, схожими на рибну луску. У комплект входять рукавиці.",
+    armor_scalemail: "луската",
+    armor_scalemail_details: "Цей обладунок складається зі шкіряних куртки і поножів (а також, можливо, окремої спідниці), покритих шматочками металу, що перекриваються, схожими на рибну луску. У комплект входять рукавиці.",
 
     small_rasp: "невеликий напилок",
     small_rasp_details: "",
@@ -3018,4 +3018,34 @@ export default {
     cleric_details: classes.cleric_details,
 
     refresh_to_recommended: "Повернути рекомендований розподіл",
+
+    spell_prepare_shield: spells.prepare_shield,
+    spell_prepare_shield_details: spells.prepare_shield_details,
+    spell_prepare_shield_expanded: spells.prepare_shield_expanded,
+
+    spell_divine_channel_undead: spells.divine_channel_undead,
+    spell_divine_channel_undead_details: spells.divine_channel_undead_details,
+    spell_divine_channel_undead_details_5: spells.divine_channel_undead_details_5,
+    spell_divine_channel_undead_details_8: spells.divine_channel_undead_details_8,
+    spell_divine_channel_undead_details_11: spells.divine_channel_undead_details_11,
+    spell_divine_channel_undead_details_14: spells.divine_channel_undead_details_14,
+    spell_divine_channel_undead_details_17: spells.divine_channel_undead_details_17,
+    spell_divine_channel_undead_expanded: spells.divine_channel_undead_expanded,
+
+    spell_divine_intervention: spells.divine_intervention,
+    spell_divine_intervention_details: spells.divine_intervention_details,
+    spell_divine_intervention_details_20: spells.divine_intervention_details_20,
+    spell_divine_intervention_expanded: spells.divine_intervention_expanded,
+
+    divine_intervention_slots: "Божественне втручання",
+    divine_intervention_slot: "1× Божественне втручання",
+
+    domain_thunder: classes.domain_thunder,
+
+    spell_thunder_wrath: spells.thunder_wrath,
+    spell_thunder_wrath_details: spells.thunder_wrath_details,
+    spell_thunder_wrath_expanded: spells.thunder_wrath_expanded,
+
+    thunder_wrath_slots: "Гніви Бурі",
+    thunder_wrath_slot: "1× Гнів Бурі",
 }

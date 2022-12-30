@@ -3963,6 +3963,187 @@ export default {
     },
   ],
 
+  divine_channel_undead: [
+    {
+      //0
+      name: "spell_divine_channel_undead",
+      details: "spell_divine_channel_undead_details",
+      expanded: "spell_divine_channel_undead_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["focus", "somatic", "verbal"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_5_8_11_14_17",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  divine_intervention: [
+    {
+      //0
+      name: "spell_divine_intervention",
+      details: "spell_divine_intervention_details",
+      expanded: "spell_divine_intervention_expanded",
+
+      type: "ability",
+      slot_type: "divine_intervention_slot",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_20",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  thunder_wrath: [
+    {
+      //0
+      name: "spell_thunder_wrath",
+      details: "spell_thunder_wrath_details",
+      expanded: "spell_thunder_wrath_expanded",
+
+      type: "ability",
+      slot_type: "thunder_wrath_slot",
+      classes: ["cleric"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "electricity_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 2,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+  ],
+
+  divine_channel_wrath: [
+    {
+      //0
+      name: "spell_divine_channel_wrath",
+      details: "spell_divine_channel_wrath_details",
+      expanded: "spell_divine_channel_wrath_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [

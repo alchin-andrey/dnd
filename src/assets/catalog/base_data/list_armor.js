@@ -11,9 +11,9 @@ export default {
         cost: 1000,
         weight: 5,
     },
-    scalemale: {
-        name: "armor_scalemale",
-        details: "armor_scalemale_details",
+    scalemail: {
+        name: "armor_scalemail",
+        details: "armor_scalemail_details",
         type: [armory.medium],
         armor_foo: "DEX_Max2",
         armor_bonus: 4,
