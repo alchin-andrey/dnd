@@ -778,6 +778,7 @@ export default {
         on_dodging_in_rage_bear: "на ухилення союзників поруч від атак ворогів, що бачать вас, при Люті",
         flight: "політ",
         as_walking_speed_in_rage: "за швидкістю рівний швидкості пересування, при Люті",
+        as_walking_speed: "за швидкістю рівний швидкості пересування",
         on_thieves_tools: "до використання крадійських інструментів",
 
 //Умения - активные умения без урона
@@ -3055,4 +3056,8 @@ export default {
     spell_thunder_strike: spells.thunder_strike,
     spell_thunder_strike_details: spells.thunder_strike_details,
     spell_thunder_strike_expanded: spells.thunder_strike_expanded,
+
+    spell_divine_strike_sound: spells.divine_strike_sound,
+    spell_divine_strike_details: spells.divine_strike_details,
+    spell_divine_strike_expanded: spells.divine_strike_expanded,
 }

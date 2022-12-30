@@ -780,6 +780,7 @@ export default {
         on_dodging_in_rage_bear: "на уворот союзников рядом от атак врагов, видящих вас, при Ярости",
         flight: "полет",
         as_walking_speed_in_rage: "по скорости равный скорости передвижения, при Ярости",
+        as_walking_speed: "по скорости равный скорости передвижения",
         on_thieves_tools: "к использованию воровских инструментов",
 
 //Умения - активные умения без урона
@@ -3056,4 +3057,8 @@ export default {
     spell_thunder_strike: spells.thunder_strike,
     spell_thunder_strike_details: spells.thunder_strike_details,
     spell_thunder_strike_expanded: spells.thunder_strike_expanded,
+
+    spell_divine_strike_sound: spells.divine_strike_sound,
+    spell_divine_strike_details: spells.divine_strike_details,
+    spell_divine_strike_expanded: spells.divine_strike_expanded,
 }

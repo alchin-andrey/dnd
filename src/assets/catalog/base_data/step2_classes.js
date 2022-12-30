@@ -67,6 +67,13 @@ export default {
     //NOTE - Для отладки
     equipment: [
       {
+        weapon: [
+          [weapons.mace, 1],  //melee, ближний бой
+          [weapons.net, 2],  // метательное
+          [weapons.dagger, 1],  //фехтовальноеб, легкое, метательное
+          [weapons.trident, 1],  
+          [weapons.longbow, 1],  
+        ],
         armor: [[armors.leather, 1]],
         inventory: [
           [items.spell_book, 1],
@@ -1986,18 +1993,35 @@ export default {
               },
             ],
 
+            fines: [
+              {
+                level: 17,
+                type: "plus",
+                keyword: "flight",
+                details: "as_walking_speed",
+              },
+            ],
+
             spells: [
               {
                 level:1,
                 spell: spells.thunder_wrath,
               },
               {
-                level: 1,
-                spell: spells.thunderwave,
-              },
-              {
                 level: 2,
                 spell: spells.divine_channel_wrath,
+              },
+              {
+                level: 6,
+                spell: spells.thunder_strike,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_sound,
+              },
+              {
+                level: 1,
+                spell: spells.thunderwave,
               },
               {
                 level: 1,
@@ -2021,16 +2045,6 @@ export default {
             ],
 
             settings: [
-              {
-                level: 1,
-                type: "weapons",
-                name: "weapons",
-                select: 1,
-                list: [
-                  [weapons.mace, 1],
-                  [weapons.warhammer, 1], // давай если нет мастери - подсвечивать имя желтьім
-                ],
-              },
               {
                 level: 1,
                 type: "custom",
@@ -2092,6 +2106,16 @@ export default {
         select: 2,
         bonus: "mastery",
         list: ["history", "medicine", "insight", "religion", "persuasion"],
+      },
+      {
+        level: 1,
+        type: "weapons",
+        name: "weapons",
+        select: 1,
+        list: [
+          [weapons.mace, 1],
+          [weapons.warhammer, 1], // давай если нет мастери - подсвечивать имя желтьім
+        ],
       },
       {
         level: 1,
