@@ -29,7 +29,6 @@
 					: race_Colors(color_Char_Body, body_part)
 			"
 		></my-card-text-color>
-		<transition name="fade">
 			<div
 				class="reset_color"
 				:class="{ reset_color_custom: !color_Reset }"
@@ -37,7 +36,6 @@
 			>
 				<img src="@/assets/img/icon/reset.svg" alt="reset" />
 			</div>
-		</transition>
 	</my-selection-card>
 </template>
 

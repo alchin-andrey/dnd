@@ -7,15 +7,17 @@
 	<my-selection-card v-for="name in stats_Keys" :key="name" passive>
 		<BaseStatsCard :stats_name="name" />
 	</my-selection-card>
+  <transition name="fade">
 	<my-selection-card
 		v-if="stats_base_save[MY.class.name]"
 		@click="defaultStats()"
 	>
-		<div class="int-700 btm_reset">
+		<div class="int-700 btm_reset" >
 			<div>{{ t("refresh_to_recommended") }}</div>
 			<img src="@/assets/img/icon/reset.svg" alt="reset" />
 		</div>
 	</my-selection-card>
+</transition>
 </template>
 
 <script>
@@ -55,11 +57,17 @@ export default {
 	padding-right: 3px;
 }
 
-.btm_reset img {
-	/* width: 15px; */
-}
-
 .marg {
 	margin: 0 0 26px 16px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
