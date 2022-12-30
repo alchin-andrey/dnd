@@ -2972,6 +2972,7 @@ export default {
     spell_wild_shape_combat_details_4: spells.wild_shape_combat_details_4,
     spell_wild_shape_combat_details_8: spells.wild_shape_combat_details_8,
     spell_wild_shape_combat_details_9: spells.wild_shape_combat_details_9,
+    spell_wild_shape_combat_details_10: spells.wild_shape_combat_details_10,
     spell_wild_shape_combat_details_12: spells.wild_shape_combat_details_12,
     spell_wild_shape_combat_details_15: spells.wild_shape_combat_details_15,
     spell_wild_shape_combat_details_18: spells.wild_shape_combat_details_18,

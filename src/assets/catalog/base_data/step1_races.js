@@ -139,8 +139,23 @@ export default {
             // },
 
             {
-              level: 1,
-              spell: spells.heroism,
+              level: 2,
+              spell: spells.wild_shape,
+            },
+
+            {
+              level: 2,
+              spell: spells.wild_shape_combat,
+            },
+
+            {
+              level: 2,
+              spell: spells.divine_channel_undead,
+            },
+
+            {
+              level: 10,
+              spell: spells.divine_intervention,
             },
 
             // {

@@ -3774,7 +3774,7 @@ export default {
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Det_2_4_8_Wildshape__Dur_05_Lvl",
+      impact_size_foo: "Det_2_4_8_Lvl__Dur_05_Lvl",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
@@ -3818,7 +3818,7 @@ export default {
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Det_2_4_8_9_10_12_15_18_Wildshape__Dur_05_Lvl",
+      impact_size_foo: "Det_2_4_8_9_10_12_15_18_Lvl__Dur_05_Lvl",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
@@ -3996,7 +3996,7 @@ export default {
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Det_5_8_11_14_17",
+      impact_size_foo: "Det_5_8_11_14_17_Lvl",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
@@ -4041,7 +4041,7 @@ export default {
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Det_20",
+      impact_size_foo: "Det_20_Lvl",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,

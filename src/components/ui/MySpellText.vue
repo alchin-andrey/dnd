@@ -586,7 +586,7 @@ export default {
     },
 
     //ANCHOR - Det
-    Det_2_4_8_Wildshape(){
+    Det_2_4_8_Lvl(){
       let deteils = this.Spell_Index.details;
       let lvl = this.MY.level;
       let kof = null;
@@ -594,21 +594,23 @@ export default {
 				kof = 8;
 			} else if (lvl >= 4) {
 				kof = 4;
-			} else {
+			} else if (lvl >= 2) {
 				kof = 2;
+			} else {
+				kof = null;
 			}
-      return `${deteils}_${kof}`
+      return kof ? `${deteils}_${kof}` : deteils;
     },
 
-    Det_2_4_8_9_10_12_15_18_Wildshape() {
+    Det_2_4_8_9_10_12_15_18_Lvl() {
       let deteils = this.Spell_Index.details;
       let lvl = this.MY.level;
-      let kof_arr = [2, 2, 2, 4, 4, 4, 4, 8, 9, 10, 10, 12, 12, 14, 15, 15, 17, 18, 18, 18];
+      let kof_arr = [null, 2, 2, 4, 4, 4, 4, 8, 9, 10, 10, 12, 12, 14, 15, 15, 17, 18, 18, 18];
       let kof = kof_arr[lvl - 1];
-      return `${deteils}_${kof}`
+      return kof ? `${deteils}_${kof}` : deteils;
     },
 
-    Det_5_8_11_14_17() {
+    Det_5_8_11_14_17_Lvl() {
       let deteils = this.Spell_Index.details;
       let lvl = this.MY.level;
       let kof = null;
@@ -625,10 +627,12 @@ export default {
 			} else {
 				kof = null;
 			}
+      
+      console.log('Det_5_8_11_14_17_Lvl:', kof)
       return kof ? `${deteils}_${kof}` : deteils;
     },
 
-    Det_20() {
+    Det_20_Lvl() {
       let deteils = this.Spell_Index.details;
       let lvl = this.MY.level;
       let kof = lvl == 20 ? 20 : null;
