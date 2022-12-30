@@ -365,8 +365,10 @@ export default {
             loading_details:weapons.loading_details,
             weapon_light_details:weapons.light_details,
             weapon_heavy_details:weapons.heavy_details,
+            weapon_finesse: "фехтовальное",
 
-            ammunition:"боеприпасы",
+
+            ammunition:"боеприпас",
             bolt:"болт",
             arrow:"стрела",
             bullet:"снаряд",
@@ -377,8 +379,11 @@ export default {
 
             cost:"цена",
             coin_gold:"золотых монет",
+            coin_gold_short: "🟡",
             coin_silver:"серебряных монет",
+            coin_silver_short: "⚪",
             сoin_copper:"медных монет",
+            coin_copper_short: "🟠",
 
             weapons_battle_axes: weapons.battle_axes,
             weapons_battle_axes_details: weapons.battle_axes_details,
@@ -3010,4 +3015,6 @@ export default {
     cleric_details: classes.cleric_details,
 
     refresh_to_recommended: "Вернуть рекомендованное распределение",
+
+
 }
