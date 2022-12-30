@@ -23,7 +23,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -72,7 +72,7 @@ range_min: 5,
         throwing: null, // метательное
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -102,7 +102,7 @@ range_min: 5,
         throwing: null, // метательное
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -132,7 +132,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -162,7 +162,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -192,7 +192,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -222,7 +222,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -252,7 +252,7 @@ range_min: 5,
         throwing: null, // метательное
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -282,7 +282,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -312,7 +312,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -344,7 +344,7 @@ range_min: 5,
         ammunition: "bolt", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -374,7 +374,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -404,7 +404,7 @@ range_min: 5,
         ammunition: "arrow", // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -434,7 +434,7 @@ range_min: 5,
         ammunition: "bullet", // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -466,7 +466,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -496,7 +496,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -526,7 +526,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -556,7 +556,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -586,7 +586,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -616,7 +616,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -646,7 +646,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -676,7 +676,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -706,7 +706,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -736,7 +736,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -766,7 +766,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -796,7 +796,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -826,7 +826,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -856,7 +856,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -886,7 +886,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -916,7 +916,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "slashing_w",
@@ -946,7 +946,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piersing_w",
@@ -976,7 +976,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "bludgeoning_w",
@@ -1008,7 +1008,7 @@ range_min: 5,
         ammunition: "bolt", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        heaviness: "light",
+        heaviness: "armor_light",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1038,7 +1038,7 @@ range_min: 5,
         ammunition: "bolt", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1068,7 +1068,7 @@ range_min: 5,
         ammunition: "arrow", // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "heavy",
+        heaviness: "armor_heavy",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1098,7 +1098,7 @@ range_min: 5,
         ammunition: "dart", // боеприпасьі (надо ли??)
         loading: true, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",
@@ -1128,7 +1128,7 @@ range_min: 5,
         ammunition: null, // боеприпасьі (надо ли??)
         loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "medium",
+        heaviness: "armor_medium",
         finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
         damage_type: "piercing_w",

@@ -31,7 +31,7 @@
 	<my-dialog-spell v-model:show="dialogVisible" class="dialog">
 		<my-wrapper>
 			<div class="int-700">{{ t_Packs_Name }}</div>
-			<div class="text gray_2">{{ packs_Details }}</div>
+			<div class="text gray_4">{{ packs_Details }}</div>
 		</my-wrapper>
 
 		<section class="items_packs">

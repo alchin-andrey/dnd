@@ -627,8 +627,6 @@ export default {
 			} else {
 				kof = null;
 			}
-      
-      console.log('Det_5_8_11_14_17_Lvl:', kof)
       return kof ? `${deteils}_${kof}` : deteils;
     },
 

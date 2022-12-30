@@ -20,71 +20,63 @@
 					/>
 				</div>
 			</div>
-			<my-attribute v-if="weapon[0].damage_1_hand_num"
+			<my-attribute
+				v-if="weapon[0].damage_1_hand_num"
 				title="damage"
-        type="damage_1_hand"
+				type="damage_1_hand"
 				:numb="weapon[0].damage_1_hand_num"
 				:dice="weapon[0].damage_1_hand_dice"
 			/>
-      <my-attribute v-if="weapon[0].damage_2_hand_num"
+			<my-attribute
+				v-if="weapon[0].damage_2_hand_num"
 				title="damage"
-        type="damage_2_hand"
+				type="damage_2_hand"
 				:numb="weapon[0].damage_2_hand_num"
 				:dice="weapon[0].damage_2_hand_dice"
 			/>
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
-    <my-wrapper>
+		<my-wrapper>
 			<div class="int-700">{{ t_Weapon_Name }}</div>
-			<div class="text gray_2">{{ t_Weapon_Details }}</div>
+			<div class="gray_4">{{ t_Weapon_Details }}</div>
+			<div class="weapon_type gray_4">{{ t_Weapon_Type }}</div>
 		</my-wrapper>
 
-    <my-wrapper>
-      <my-attribute
-				title="aim_bonus"
-				:numb="6"
-				plus
-			/>
-			<my-attribute
-        title="aim_range"
-				:numb="weapon[0].range_min"
-        feet
-        dot
-			/>
-      <my-attribute
-        title="aim_range"
-				:numb="weapon[0].range_max"
-        feet
-        dot
-			/>
+		<my-wrapper>
+			<my-attribute title="aim_bonus" :numb="6" plus />
+			<my-attribute title="aim_range" :numb="weapon[0].range_min" feet dot />
+			<my-attribute title="aim_range" :numb="weapon[0].range_max" feet dot />
 		</my-wrapper>
 
-    <my-wrapper>
-    <magic-attribute
+		<my-wrapper>
+			<magic-attribute
 				title="damage"
 				:addition="weapon[0].damage_type"
-        not_dot
+				not_dot
 			/>
-    <my-attribute v-if="weapon[0].damage_1_hand_num"
-        title="damage_1_hand"
+			<my-attribute
+				v-if="weapon[0].damage_1_hand_num"
+				title="damage_1_hand"
 				:numb="weapon[0].damage_1_hand_num"
 				:dice="weapon[0].damage_1_hand_dice"
-        dot
+				dot
 			/>
-      <my-attribute v-if="weapon[0].damage_2_hand_num"
-        title="damage_2_hand"
+			<my-attribute
+				v-if="weapon[0].damage_2_hand_num"
+				title="damage_2_hand"
 				:numb="weapon[0].damage_2_hand_num"
 				:dice="weapon[0].damage_2_hand_dice"
-        dot
+				dot
 			/>
-    </my-wrapper>
-      <my-wrapper>
-      <my-attribute 
-      v-if="weapon[0].ammunition" 
-      title="ammunition" 
-      :unit="weapon[0].ammunition" 
-      dot />
+		</my-wrapper>
+		<my-wrapper>
+			<my-attribute
+				v-if="weapon[0].ammunition"
+				title="ammunition"
+				:unit="weapon[0].ammunition"
+				dot
+			/>
 			<my-attribute title="cost" :numb_not_cube="weapon[0].cost" dot />
 			<my-attribute title="weight" :numb="weapon[0].weight" unit="kg" dot />
 		</my-wrapper>
@@ -112,51 +104,78 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    passive: {
+		passive: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	computed: {
-    ...mapState(useStatsStore, ["stats_Mod"]),
+		...mapState(useStatsStore, ["stats_Mod"]),
 
-    Weapon() {
-      return this.weapon[0];
-    },
-
-    t_Equip_Name: (state) => (item) => {
+		t_Equip_Name: (state) => (item) => {
 			const name = state.t(item[0].name);
 			const namb = item[1];
 			let str = namb > 1 ? `${name} x ${namb}` : name;
 			return str[0].toUpperCase() + str.slice(1);
 		},
 
-    t_Weapon_Name() {
-      return this.t_Equip_Name(this.weapon);
-    },
+		t_Weapon_Name() {
+			return this.t_Equip_Name(this.weapon);
+		},
 
-    t_Weapon_Details() {
+		t_Weapon_Details() {
 			return this.t(this.weapon[0].details);
 		},
 
-    t_Weapon_Damage() {
-      return this.t(this.weapon[0].damage_type);
-    },
+		t_Weapon_Damage() {
+			return this.t(this.weapon[0].damage_type);
+		},
 
-    weapon_Damage() {
-      console.log('damage:', `damage ${this.weapon[0].damage_type}`)
-      return `damage ${this.weapon[0].damage_type}`;
-    },
+		weapon_Damage() {
+			return `damage ${this.weapon[0].damage_type}`;
+		},
 
-    // t_Title() {
-    //   let str = this.t(this.Weapon.name)
-    //   return str[0].toUpperCase() + str.slice(1);
-    // },
+		weapon_Type() {
+      let arr = [];
+      let t_arr = [];
 
-    // weapon_Numb() {
-    //   let numb = this.weapon[1]
-    //   return numb > 1 ? `× ${numb}`: null;
-    // },
+      const main_type = this.weapon[0].type[0].name; 
+      main_type == "weapons_simple" ? arr.push(main_type) : null; //Простое
+      main_type == "weapons_military" ? arr.push(main_type) : null; //Военное
+
+      this.weapon[0].melee ? arr.push("melee") : arr.push("ranged"); //Ближнее
+
+      const throwing_numb = this.weapon[0].throwing;
+      const t_throwing_full = `${this.t("throwing")} (${this.t("from")} ${throwing_numb}${this.t("f")})`;
+      throwing_numb ? arr.push(t_throwing_full) : null; //Метательное
+
+      this.weapon[0].loading ? arr.push("loading") : null; //Перезаряжающееся
+
+      // this.weapon[0].heaviness ? arr.push(this.weapon[0].heaviness) : null; //Перезаряжающееся
+     arr.push(this.weapon[0].heaviness); //Перезаряжающееся
+
+
+
+
+
+      //arr.push(this.weapon[0].main_type.name);
+
+			return arr;
+		},
+
+		t_Weapon_Type() {
+      let weapon_arr = this.weapon_Type;
+      let t_arr = [];
+      for (let i in weapon_arr) {
+					if (this.t(weapon_arr[i])) {
+						t_arr.push(this.t(weapon_arr[i]));
+					} else {
+						t_arr.push(weapon_arr[i]);
+					}
+				}
+			return t_arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+		},
+
 	},
 
 	watch: {
@@ -234,43 +253,6 @@ export default {
 	background: #ffffff;
 }
 
-.manna_flex {
-	display: flex;
-	gap: 3px;
-}
-
-.manna_bubble {
-	padding: 5px 12px;
-	min-width: 31px;
-	height: 28px;
-	border-radius: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-}
-
-.manna_bubble_choice {
-	background: rgba(255, 255, 255, 0.06);
-	color: #ffffff;
-}
-
-.manna_bubble_hover:hover {
-	background: rgba(255, 255, 255, 0.1);
-}
-
-.manna_bubble_active {
-	background: #00e0ff;
-	color: #0e1518;
-}
-
-.manna_bubble_passive {
-	background: transparent;
-	border: 1px solid rgba(255, 255, 255, 0.06);
-	color: rgba(255, 255, 255, 0.2);
-	cursor: auto;
-}
-
 .h_18 {
 	height: 18px;
 }
@@ -290,7 +272,11 @@ export default {
 
 .title::first-letter {
 	text-transform: uppercase;
-  font-size: 130%;
+	font-size: 130%;
+}
+
+.weapon_type {
+	margin-top: 12px;
 }
 
 .gray_2 {
@@ -307,7 +293,7 @@ export default {
 }
 
 .passive {
-  opacity: 0.2;
-  /* cursor: auto; */
+	opacity: 0.2;
+	/* cursor: auto; */
 }
 </style>
