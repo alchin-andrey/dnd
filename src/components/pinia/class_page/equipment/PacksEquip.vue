@@ -8,7 +8,7 @@
 		<div ref="stripe" class="side_stripe"></div>
 		<div class="int-400 gap_col" :class="{ passive: passive }">
 			<div class="flex_title">
-				<div class="title_packs">{{ packs_Name }}</div>
+				<div class="title_packs">{{ t_Packs_Name }}</div>
 				<img
 					class="icon"
 					:src="img_Icon"
@@ -22,7 +22,7 @@
 			<transition name="scroll-packs">
 				<section class="items_packs" v-if="packs_scroll">
 					<div class="item_packs" v-for="items in packs[0].items" :key="items">
-						• {{ t_Inventary(items) }}
+						• {{ t_Equip_Name(items) }}
 					</div>
 				</section>
 			</transition>
@@ -30,13 +30,13 @@
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible" class="dialog">
 		<my-wrapper>
-			<div class="int-700">{{ packs_Name }}</div>
+			<div class="int-700">{{ t_Packs_Name }}</div>
 			<div class="text gray_2">{{ packs_Details }}</div>
 		</my-wrapper>
 
 		<section class="items_packs">
 			<div class="item_packs" v-for="items in packs[0].items" :key="items">
-				• {{ t_Inventary(items) }}
+				• {{ t_Equip_Name(items) }}
 			</div>
 		</section>
 
@@ -79,15 +79,15 @@ export default {
 			return this.packs[0];
 		},
 
-		t_Inventary: (state) => (inv) => {
+		t_Equip_Name: (state) => (inv) => {
 			const name = state.t(inv[0].name);
 			const namb = inv[1];
 			let str = namb > 1 ? `${name} x ${namb}` : name;
 			return str[0].toUpperCase() + str.slice(1);
 		},
 
-		packs_Name() {
-			return this.t_Inventary(this.packs);
+		t_Packs_Name() {
+			return this.t_Equip_Name(this.packs);
 		},
 
 		packs_Details() {

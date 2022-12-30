@@ -12,7 +12,7 @@
 		@click="defaultStats()"
 	>
 		<div class="int-700 btm_reset">
-			<div>Повернути до рекомендованого розподілу</div>
+			<div>{{ t("refresh_to_recommended") }}</div>
 			<img src="@/assets/img/icon/reset.svg" alt="reset" />
 		</div>
 	</my-selection-card>

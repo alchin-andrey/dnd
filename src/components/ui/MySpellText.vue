@@ -605,25 +605,34 @@ export default {
       let lvl = this.MY.level;
       let kof_arr = [2, 2, 2, 4, 4, 4, 4, 8, 9, 10, 10, 12, 12, 14, 15, 15, 17, 18, 18, 18];
       let kof = kof_arr[lvl - 1];
-      // let kof = null;
-      // if (lvl >= 18) {
-			// 	kof = 18;
-			// } else if (lvl >= 15) {
-			// 	kof = 15;
-			// } else if (lvl >= 12) {
-			// 	kof = 12;
-			// } else if (lvl >= 10) {
-			// 	kof = 10;
-			// } else if (lvl >= 9) {
-			// 	kof = 9;
-			// } else if (lvl >= 8) {
-			// 	kof = 8;
-			// } else if (lvl >= 4) {
-			// 	kof = 4;
-			// } else {
-			// 	kof = 2;
-			// }
       return `${deteils}_${kof}`
+    },
+
+    Det_5_8_11_14_17() {
+      let deteils = this.Spell_Index.details;
+      let lvl = this.MY.level;
+      let kof = null;
+      if (lvl >= 17) {
+				kof = 17;
+			} else if (lvl >= 14) {
+				kof = 14;
+			} else if (lvl >= 11) {
+				kof = 11;
+			} else if (lvl >= 8) {
+				kof = 8;
+			} else if (lvl >= 5) {
+				kof = 5;
+			} else {
+				kof = null;
+			}
+      return kof ? `${deteils}_${kof}` : deteils;
+    },
+
+    Det_20() {
+      let deteils = this.Spell_Index.details;
+      let lvl = this.MY.level;
+      let kof = lvl == 20 ? 20 : null;
+      return kof ? `${deteils}_${kof}` : deteils;
     },
 
     //ANCHOR - Dur

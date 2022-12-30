@@ -104,6 +104,11 @@ export default {
       let mod = this.stats_Mod("charisma");
       return mod <= 0 ? 1 : mod;
     },
+
+    Num_WIS_Min1() {
+      let mod = this.stats_Mod("wisdom");
+      return mod <= 0 ? 1 : mod;
+    },
 	},
 };
 </script>

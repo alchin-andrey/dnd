@@ -9,7 +9,7 @@
 		<div class="int-400 flex_col" :class="{ passive: passive }">
 			<div>
 				<div class="flex_title">
-					<div class="title h_18">{{ t_Title }} {{ weapon_Numb }}</div>
+					<div class="title h_18">{{ t_Weapon_Name }}</div>
 					<img
 						class="icon"
 						src="@/assets/img/icon/arrow_right_small.svg"
@@ -20,38 +20,82 @@
 					/>
 				</div>
 			</div>
-			<my-attribute v-if="Weapon.damage_1_hand_num"
+			<my-attribute v-if="weapon[0].damage_1_hand_num"
 				title="damage"
         type="damage_1_hand"
-				:numb="Weapon.damage_1_hand_num"
-				:dice="Weapon.damage_1_hand_dice"
+				:numb="weapon[0].damage_1_hand_num"
+				:dice="weapon[0].damage_1_hand_dice"
 			/>
-      <my-attribute v-if="Weapon.damage_2_hand_num"
+      <my-attribute v-if="weapon[0].damage_2_hand_num"
 				title="damage"
         type="damage_2_hand"
-				:numb="Weapon.damage_2_hand_num"
-				:dice="Weapon.damage_2_hand_dice"
+				:numb="weapon[0].damage_2_hand_num"
+				:dice="weapon[0].damage_2_hand_dice"
 			/>
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
-    <div class="title h_18">{{ t_Title }} {{ weapon_Numb }}</div>
-    <my-attribute v-if="Weapon.damage_1_hand_num"
-				title="damage"
-        type="damage_1_hand"
-				:numb="Weapon.damage_1_hand_num"
-				:dice="Weapon.damage_1_hand_dice"
+    <my-wrapper>
+			<div class="int-700">{{ t_Weapon_Name }}</div>
+			<div class="text gray_2">{{ t_Weapon_Details }}</div>
+		</my-wrapper>
+
+    <my-wrapper>
+      <my-attribute
+				title="aim_bonus"
+				:numb="6"
+				plus
 			/>
-      <my-attribute v-if="Weapon.damage_2_hand_num"
-				title="damage"
-        type="damage_2_hand"
-				:numb="Weapon.damage_2_hand_num"
-				:dice="Weapon.damage_2_hand_dice"
+			<my-attribute
+        title="aim_range"
+				:numb="weapon[0].range_min"
+        feet
+        dot
 			/>
+      <my-attribute
+        title="aim_range"
+				:numb="weapon[0].range_max"
+        feet
+        dot
+			/>
+		</my-wrapper>
+
+    <my-wrapper>
+    <magic-attribute
+				title="damage"
+				:addition="weapon[0].damage_type"
+        not_dot
+			/>
+    <my-attribute v-if="weapon[0].damage_1_hand_num"
+        title="damage_1_hand"
+				:numb="weapon[0].damage_1_hand_num"
+				:dice="weapon[0].damage_1_hand_dice"
+        dot
+			/>
+      <my-attribute v-if="weapon[0].damage_2_hand_num"
+        title="damage_2_hand"
+				:numb="weapon[0].damage_2_hand_num"
+				:dice="weapon[0].damage_2_hand_dice"
+        dot
+			/>
+    </my-wrapper>
+      <my-wrapper>
+      <my-attribute 
+      v-if="weapon[0].ammunition" 
+      title="ammunition" 
+      :unit="weapon[0].ammunition" 
+      dot />
+			<my-attribute title="cost" :numb_not_cube="weapon[0].cost" dot />
+			<my-attribute title="weight" :numb="weapon[0].weight" unit="kg" dot />
+		</my-wrapper>
 	</my-dialog-spell>
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
+
 export default {
 	name: "MyWeapon",
 	data() {
@@ -74,19 +118,45 @@ export default {
 		},
 	},
 	computed: {
+    ...mapState(useStatsStore, ["stats_Mod"]),
+
     Weapon() {
       return this.weapon[0];
     },
 
-    t_Title() {
-      let str = this.t(this.Weapon.name)
-      return str[0].toUpperCase() + str.slice(1);
+    t_Equip_Name: (state) => (item) => {
+			const name = state.t(item[0].name);
+			const namb = item[1];
+			let str = namb > 1 ? `${name} x ${namb}` : name;
+			return str[0].toUpperCase() + str.slice(1);
+		},
+
+    t_Weapon_Name() {
+      return this.t_Equip_Name(this.weapon);
     },
 
-    weapon_Numb() {
-      let numb = this.weapon[1]
-      return numb > 1 ? `× ${numb}`: null;
+    t_Weapon_Details() {
+			return this.t(this.weapon[0].details);
+		},
+
+    t_Weapon_Damage() {
+      return this.t(this.weapon[0].damage_type);
     },
+
+    weapon_Damage() {
+      console.log('damage:', `damage ${this.weapon[0].damage_type}`)
+      return `damage ${this.weapon[0].damage_type}`;
+    },
+
+    // t_Title() {
+    //   let str = this.t(this.Weapon.name)
+    //   return str[0].toUpperCase() + str.slice(1);
+    // },
+
+    // weapon_Numb() {
+    //   let numb = this.weapon[1]
+    //   return numb > 1 ? `× ${numb}`: null;
+    // },
 	},
 
 	watch: {
