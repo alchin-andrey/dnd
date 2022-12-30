@@ -27,9 +27,9 @@
 			<div v-if="dot" class="dotted passive">
 				..................................
 			</div>
-			<div class="numb" v-if="numb_not_cube">
-				{{ Value }}
-				<emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="11" />
+			<div class="numb" v-if="price">
+				{{ Price }}
+				<emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" />
 			</div>
 			<div class="numb" v-else>
 				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span> {{ Unit }}
@@ -65,7 +65,7 @@ export default {
 			type: Number,
 			default: null,
 		},
-		numb_not_cube: {
+		price: {
 			type: Number,
 			default: null,
 		},
@@ -136,9 +136,30 @@ export default {
 			return this.old_numb ? this.old_numb + this.numb : this.numb;
 		},
 
-		Value() {
-			return this.numb_not_cube ? this.numb_not_cube : this.numb;
+		Price() {
+      let res = null;
+      if (this.price % 100 == 0) {
+        res = this.price / 100;
+      } else if (this.price % 10 == 0) {
+        res = this.price / 10;
+      } else {
+        res = this.price;
+      }
+      return res;
+			// return this.price ? this.price : this.numb;
 		},
+
+    em_Price() {
+      let emoji = null;
+      if (this.price % 100 == 0) {
+        emoji = "coin_gold_short";
+      } else if (this.price % 10 == 0) {
+        emoji = "coin_silver_short";
+      } else {
+        emoji = "coin_copper_short";
+      }
+      return this.t(emoji);
+    },
 
 		Unit() {
 			return this.unit ? this.t(this.unit) : this.Feet;

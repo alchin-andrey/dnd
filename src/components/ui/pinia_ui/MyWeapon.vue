@@ -39,14 +39,29 @@
 	<my-dialog-spell v-model:show="dialogVisible">
 		<my-wrapper>
 			<div class="int-700">{{ t_Weapon_Name }}</div>
-			<div class="gray_4">{{ t_Weapon_Details }}</div>
+			<div class="text gray_4">{{ t_Weapon_Details }}</div>
 			<div class="weapon_type gray_4">{{ t_Weapon_Type }}</div>
 		</my-wrapper>
 
 		<my-wrapper>
-			<my-attribute title="aim_bonus" :numb="6" plus />
-			<my-attribute title="aim_range" :numb="weapon[0].range_min" feet dot />
-			<my-attribute title="aim_range" :numb="weapon[0].range_max" feet dot />
+			<my-attribute 
+      title="aim_bonus" 
+      :type="aim_Bonus_Type" 
+      :numb="aim_Bonus_Numb" 
+      plus 
+      dot />
+			<magic-attribute 
+      v-if="aim_Range_Shown_Min" 
+      title="aim_range" 
+      addition="MIN"  
+      :numb="weapon[0].range_min" />
+			<magic-attribute
+      v-if="aim_Range_Shown_Max"  
+      title="aim_range" 
+      addition="MAX" 
+      :numb="weapon[0].range_max" />
+			<!-- <my-attribute title="aim_range" type="MIN"  :numb="weapon[0].range_min" feet dot />
+			<my-attribute title="aim_range" type="MAX" :numb="weapon[0].range_max" feet dot /> -->
 		</my-wrapper>
 
 		<my-wrapper>
@@ -77,7 +92,7 @@
 				:unit="weapon[0].ammunition"
 				dot
 			/>
-			<my-attribute title="cost" :numb_not_cube="weapon[0].cost" dot />
+			<my-attribute title="cost" :price="weapon[0].cost" dot />
 			<my-attribute title="weight" :numb="weapon[0].weight" unit="kg" dot />
 		</my-wrapper>
 	</my-dialog-spell>
@@ -131,51 +146,86 @@ export default {
 			return this.t(this.weapon[0].damage_type);
 		},
 
-		weapon_Damage() {
-			return `damage ${this.weapon[0].damage_type}`;
-		},
-
-		weapon_Type() {
-      let arr = [];
-      let t_arr = [];
-
-      const main_type = this.weapon[0].type[0].name; 
-      main_type == "weapons_simple" ? arr.push(main_type) : null; //Простое
-      main_type == "weapons_military" ? arr.push(main_type) : null; //Военное
-
-      this.weapon[0].melee ? arr.push("melee") : arr.push("ranged"); //Ближнее
-
-      const throwing_numb = this.weapon[0].throwing;
-      const t_throwing_full = `${this.t("throwing")} (${this.t("from")} ${throwing_numb}${this.t("f")})`;
-      throwing_numb ? arr.push(t_throwing_full) : null; //Метательное
-
-      this.weapon[0].loading ? arr.push("loading") : null; //Перезаряжающееся
-
-      // this.weapon[0].heaviness ? arr.push(this.weapon[0].heaviness) : null; //Перезаряжающееся
-     arr.push(this.weapon[0].heaviness); //Перезаряжающееся
-
-
-
-
-
-      //arr.push(this.weapon[0].main_type.name);
-
-			return arr;
-		},
-
 		t_Weapon_Type() {
-      let weapon_arr = this.weapon_Type;
+			let arr = [];
+			// let t_arr = [];
+
+			const main_type = this.weapon[0].type[0].name;
+			main_type == "weapons_simple" ? arr.push(main_type) : null; //Простое
+			main_type == "weapons_military" ? arr.push(main_type) : null; //Военное
+
+			this.weapon[0].melee ? arr.push("melee") : arr.push("ranged"); //Ближнее
+
+			const throwing_numb = this.weapon[0].throwing;
+			const t_throwing_full = `${this.t("throwing")} (${this.t(
+				"from"
+			)} ${throwing_numb}${this.t("f")})`;
+			throwing_numb ? arr.push(t_throwing_full) : null; //Метательное
+
+			this.weapon[0].loading ? arr.push("loading") : null; //Перезаряжающееся
+
+			const heaviness = this.weapon[0].heaviness;
+			heaviness != "weapon_medium" ? arr.push(heaviness) : null; //Тяжелое
+
+			this.weapon[0].finesse ? arr.push("weapon_finesse") : null; //Фехтовальное
+
+			const weapon_type = this.weapon[0].type;
+
+			for (let i in weapon_type) {
+				if (i != 0) {
+					arr.push(weapon_type[i].name);
+				}
+			} //Остальное
+
       let t_arr = [];
-      for (let i in weapon_arr) {
-					if (this.t(weapon_arr[i])) {
-						t_arr.push(this.t(weapon_arr[i]));
-					} else {
-						t_arr.push(weapon_arr[i]);
-					}
+			for (let i in arr) {
+					t_arr.push(this.t(arr[i]));
 				}
 			return t_arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
 
+		// t_Weapon_Type() {
+		// 	let weapon_arr = this.weapon_Type;
+		// 	let t_arr = [];
+		// 	for (let i in weapon_arr) {
+		// 			t_arr.push(this.t(weapon_arr[i]));
+		// 		}
+		// 	return t_arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+		// },
+
+    aim_Range_Shown_Min () {
+      const melee = this.weapon[0].melee; //Ближнее
+      const min = this.weapon[0].range_min;
+      const max = this.weapon[0].range_max;
+      return min && max;
+    },
+
+    aim_Range_Shown_Max () {
+      const max = this.weapon[0].range_max;
+      return max;
+    },
+
+    aim_Bonus_Type() {
+      const finesse = this.weapon[0].finesse; //Фехтовальное
+      const melee = this.weapon[0].melee; //Ближнее
+
+      const STR = this.stats_Mod("strength");
+      const DEX = this.stats_Mod("dexterity");
+
+      let res = null;
+      if (finesse) {
+        res = STR >= DEX ? "strength": "dexterity";
+      } else if(melee) {
+        res = "strength";
+      } else {
+        res = "dexterity";
+      }
+      return res;
+    },
+
+    aim_Bonus_Numb() {
+      return this.stats_Mod(this.aim_Bonus_Type);
+    },
 	},
 
 	watch: {
@@ -268,6 +318,10 @@ export default {
 	display: flex;
 	align-items: center;
 	white-space: pre;
+}
+
+.text {
+  white-space: pre-wrap;
 }
 
 .title::first-letter {

@@ -10,9 +10,11 @@ export default {
             },
 
             computed: {
-              t() {
-                  let lang = this.dic_.select_lang;
-                  return (x) => this.dic_[lang][x];
+              t: (state) => (word) => {
+                  let lang = state.dic_.select_lang;
+                  let t_word = state.dic_[lang][word];
+                  // return (x) => this.dic_[lang][x];
+                  return t_word ? t_word : word;
               },
 
               T: (state) => (str) => {

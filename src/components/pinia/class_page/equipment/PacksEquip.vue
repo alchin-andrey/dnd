@@ -41,7 +41,7 @@
 		</section>
 
 		<my-wrapper>
-			<my-attribute title="cost" :numb_not_cube="packs[0].cost" dot />
+			<my-attribute title="cost" :price="packs[0].cost" dot />
 			<my-attribute title="weight" :numb="packs[0].weight" unit="kg" dot />
 		</my-wrapper>
 	</my-dialog-spell>
