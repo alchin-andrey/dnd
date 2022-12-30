@@ -530,6 +530,12 @@ export default {
       return lvl * 2 + mod;
     },
 
+    Num_Lvl14_Plus_1() {
+      let num = this.Spell_Index.impact_size_num;
+      let lvl = this.MY.level;
+      return lvl >= 14 ? num + 1 : num;
+    },
+
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
