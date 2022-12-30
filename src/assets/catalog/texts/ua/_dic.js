@@ -185,6 +185,7 @@ export default {
 
     speed:"швидкість",
         feet: "футів",
+        f: "ф",
         miles: "миль",
         milei: "милі",
         milea: "миля",
@@ -1106,6 +1107,7 @@ export default {
     bonus_action: "бонусна дія",
     action: "основна дія",
     ritual: "ритуал",
+    from: "від",
     up_to: "до",
     sec: "сек",
     round: "раунд",
@@ -3049,4 +3051,8 @@ export default {
 
     thunder_wrath_slots: "Гніви Бурі",
     thunder_wrath_slot: "1× Гнів Бурі",
+
+    spell_thunder_strike: spells.thunder_strike,
+    spell_thunder_strike_details: spells.thunder_strike_details,
+    spell_thunder_strike_expanded: spells.thunder_strike_expanded,
 }

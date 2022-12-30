@@ -4113,7 +4113,7 @@ export default {
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "point",
+      aim_target: "object",
       aim_type: "in_distance",
       aim_range: null,
 
@@ -4137,8 +4137,52 @@ export default {
       impact_size_dice: null,
       impact_size_pls: null,
 
-      saving_need: true,
-      saving_attribute: "wisdom",
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  thunder_strike: [
+    {
+      //0
+      name: "spell_thunder_strike",
+      details: "spell_thunder_strike_details",
+      expanded: "spell_thunder_strike_expanded",
+
+      type: "ability",
+      classes: ["cleric"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],

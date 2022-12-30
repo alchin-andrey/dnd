@@ -185,6 +185,7 @@ export default {
 
     speed:"скорость",
         feet: "футов",
+        f: "ф",
         miles: "миль",
         milei: "мили",
         milea: "миля",
@@ -1108,6 +1109,7 @@ export default {
     bonus_action: "бонусное действие",
     action: "основное действие",
     ritual: "ритуал",
+    from: "от",
     up_to: "до",
     sec: "сек",
     round: "раунд",
@@ -3046,4 +3048,12 @@ export default {
 
     thunder_wrath_slots: "Гніви Бурі",
     thunder_wrath_slot: "1× Гнів Бурі",
+
+    spell_divine_channel_wrath: spells.divine_channel_wrath,
+    spell_divine_channel_wrath_details: spells.divine_channel_wrath_details,
+    spell_divine_channel_wrath_expanded: spells.divine_channel_wrath_expanded,
+
+    spell_thunder_strike: spells.thunder_strike,
+    spell_thunder_strike_details: spells.thunder_strike_details,
+    spell_thunder_strike_expanded: spells.thunder_strike_expanded,
 }

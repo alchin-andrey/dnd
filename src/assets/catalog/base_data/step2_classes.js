@@ -1936,14 +1936,6 @@ export default {
           ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
       },
-      {
-        level: 1,
-        name: "thunder_wrath_slots",
-        foo: "Num_WIS_Min1",
-        list: [
-          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,],
-        ],
-      },
     ],
 
     equipment: [
@@ -1953,14 +1945,6 @@ export default {
     ],
 
     spells: [
-      {
-        level:1,
-        spell: spells.thunder_wrath,
-      },
-      {
-        level: 2,
-        spell: spells.divine_channel_wrath,
-      },
       {
         level: 2,
         spell: spells.divine_channel_undead,
@@ -1997,7 +1981,7 @@ export default {
                 name: "thunder_wrath_slots",
                 foo: "Num_WIS_Min1",
                 list: [
-                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,],
+                  ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 ],
               },
             ],
@@ -2010,6 +1994,10 @@ export default {
               {
                 level: 1,
                 spell: spells.thunderwave,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_wrath,
               },
               {
                 level: 1,
