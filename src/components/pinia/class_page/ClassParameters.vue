@@ -208,7 +208,12 @@ export default {
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["race_page", "class_page"]),
-		...mapState(useMYStore, ["MY", "Mastery"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "Mastery", 
+      "proficiencies_Arr_REC",
+      "proficiencies_Arr_Class",
+    ]),
 		// GETTERS
 		...mapState(useStatsStore, [
 			"stats_Keys",
@@ -379,32 +384,32 @@ export default {
 		// 	return arr;
     // },
 
-		proficiencies_Arr: (state) => (obj, kay) => {
-			let arr = [];
-			obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
-			return arr;
-		},
+		// proficiencies_Arr: (state) => (obj, kay) => {
+		// 	let arr = [];
+		// 	obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
+		// 	return arr;
+		// },
 
-		proficiencies_Arr_REC: (state) => (kay) => {
-			let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay);
-			let ethnos_prof = state.proficiencies_Arr(
-				state.MY.ethnos.proficiencies,
-				kay
-			);
-			let custom_prof = [];
-			kay === "languages"
-				? (custom_prof = state.languages_Custom_Arr_RE)
-				: null;
-			return race_prof.concat(ethnos_prof).concat(custom_prof);
-		},
+		// proficiencies_Arr_REC: (state) => (kay) => {
+		// 	let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay);
+		// 	let ethnos_prof = state.proficiencies_Arr(
+		// 		state.MY.ethnos.proficiencies,
+		// 		kay
+		// 	);
+		// 	let custom_prof = [];
+		// 	kay === "languages"
+		// 		? (custom_prof = state.languages_Custom_Arr_RE)
+		// 		: null;
+		// 	return race_prof.concat(ethnos_prof).concat(custom_prof);
+		// },
 
-		proficiencies_Arr_Class: (state) => (kay) => {
-			let class_prof = state.proficiencies_Arr(
-				state.MY.class.proficiencies,
-				kay
-			);
-			return class_prof;
-		},
+		// proficiencies_Arr_Class: (state) => (kay) => {
+		// 	let class_prof = state.proficiencies_Arr(
+		// 		state.MY.class.proficiencies,
+		// 		kay
+		// 	);
+		// 	return class_prof;
+		// },
 	},
 };
 </script>

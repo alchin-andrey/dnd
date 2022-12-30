@@ -32,7 +32,7 @@
 				<emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" />
 			</div>
 			<div class="numb" v-else>
-				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span> {{ Unit }}
+				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}
 			</div>
 		</div>
 		<div class="visual">
@@ -87,6 +87,10 @@ export default {
 		},
 		type: {
 			type: String,
+			default: null,
+		},
+    pls: {
+			type: Number,
 			default: null,
 		},
 		icon: {
@@ -177,6 +181,14 @@ export default {
 			return this.dice ? `d${this.dice}` : null;
 		},
 
+    Pls() {
+      if (this.pls) {
+        let symbol = this.pls >=0 ? '+' : null;
+        return symbol + this.pls;
+      }
+      return null
+		},
+
 		icon_Shown() {
 			let icon = this.icon;
 			let atribute_icon = this.atribute_icon[this.icon_Image];
@@ -199,7 +211,7 @@ export default {
 			} else if (this.numb < 0) {
 				return null;
 			} else {
-				return Math.floor(this.numb);
+				return Math.floor(this.numb) + this.pls;
 			}
 		},
 

@@ -26,6 +26,7 @@
 				type="damage_1_hand"
 				:numb="weapon[0].damage_1_hand_num"
 				:dice="weapon[0].damage_1_hand_dice"
+        :pls="damage_Bonus_Numb"
 			/>
 			<my-attribute
 				v-if="weapon[0].damage_2_hand_num"
@@ -33,6 +34,7 @@
 				type="damage_2_hand"
 				:numb="weapon[0].damage_2_hand_num"
 				:dice="weapon[0].damage_2_hand_dice"
+        :pls="damage_Bonus_Numb"
 			/>
 		</div>
 	</div>
@@ -46,7 +48,7 @@
 		<my-wrapper>
 			<my-attribute 
       title="aim_bonus" 
-      :type="aim_Bonus_Type" 
+      :type="bonus_Type" 
       :numb="aim_Bonus_Numb" 
       plus 
       dot />
@@ -75,14 +77,16 @@
 				title="damage_1_hand"
 				:numb="weapon[0].damage_1_hand_num"
 				:dice="weapon[0].damage_1_hand_dice"
-				dot
+        :pls="damage_Bonus_Numb"
+        dot
 			/>
 			<my-attribute
 				v-if="weapon[0].damage_2_hand_num"
 				title="damage_2_hand"
 				:numb="weapon[0].damage_2_hand_num"
 				:dice="weapon[0].damage_2_hand_dice"
-				dot
+        :pls="damage_Bonus_Numb"
+        dot
 			/>
 		</my-wrapper>
 		<my-wrapper>
@@ -125,6 +129,10 @@ export default {
 		},
 	},
 	computed: {
+    ...mapState(useMYStore, [ 
+      "Mastery", 
+      "proficiencies_Arr_All",
+    ]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
 		t_Equip_Name: (state) => (item) => {
@@ -148,7 +156,6 @@ export default {
 
 		t_Weapon_Type() {
 			let arr = [];
-			// let t_arr = [];
 
 			const main_type = this.weapon[0].type[0].name;
 			main_type == "weapons_simple" ? arr.push(main_type) : null; //Простое
@@ -205,7 +212,7 @@ export default {
       return max;
     },
 
-    aim_Bonus_Type() {
+    bonus_Type() {
       const finesse = this.weapon[0].finesse; //Фехтовальное
       const melee = this.weapon[0].melee; //Ближнее
 
@@ -223,8 +230,26 @@ export default {
       return res;
     },
 
+    mastery_Bonus() {
+      const char_type = this.proficiencies_Arr_All("weapons");
+      let type_arr = [];
+      const weapon_type = this.weapon[0].type;
+      for (let i in weapon_type) {
+					type_arr.push(weapon_type[i].name);
+			}
+      let mastery = false;
+      type_arr.forEach((el) => char_type.includes(el) ? mastery = true : null);
+      return mastery ? this.Mastery : null;
+    },
+
     aim_Bonus_Numb() {
-      return this.stats_Mod(this.aim_Bonus_Type);
+      const mastery = this.mastery_Bonus;
+      const type_mod = this.stats_Mod(this.bonus_Type);
+      return type_mod + mastery;
+    },
+
+    damage_Bonus_Numb() {
+      return this.stats_Mod(this.bonus_Type);
     },
 	},
 

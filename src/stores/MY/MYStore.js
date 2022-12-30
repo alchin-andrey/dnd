@@ -29,6 +29,39 @@ export const useMYStore = defineStore({
 		},
 
 
+    proficiencies_Arr: (state) => (obj, kay) => {
+			let arr = [];
+			obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
+			return arr;
+		},
+
+		proficiencies_Arr_REC: (state) => (kay) => {
+      const {languages_Custom_Arr_RE} = useLanguagesStore();
+
+			let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay);
+			let ethnos_prof = state.proficiencies_Arr(
+				state.MY.ethnos.proficiencies,
+				kay
+			);
+			let custom_prof = [];
+			kay === "languages" ? custom_prof = languages_Custom_Arr_RE : null;
+			return race_prof.concat(ethnos_prof).concat(custom_prof);
+		},
+
+		proficiencies_Arr_Class: (state) => (kay) => {
+			let class_prof = state.proficiencies_Arr(
+				state.MY.class.proficiencies,
+				kay
+			);
+			return class_prof;
+		},
+
+    proficiencies_Arr_All: (state) => (kay) => {
+      let rec_prof = state.proficiencies_Arr_REC(kay);
+			let class_prof = state.proficiencies_Arr_Class(kay);
+			return rec_prof.concat(class_prof);
+		},
+
 		//NOTE - COMMON (stats, skills, languages, spells)
 		COMMON_Custom_Arr_RE: (state) => (name) => {
       const {stats_Keys, stats_Activ_Arr_RE} = useStatsStore();

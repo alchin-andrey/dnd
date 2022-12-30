@@ -37,17 +37,19 @@ export const useSpellsStore = defineStore({
       const MYStore = useMYStore();
 			let arr = [];
 			let spells_settings = MYStore.ethnos_Setting("spells");
+
 			if (spells_settings) {
 				let mana_min = spells_settings.mana_min;
 				let mana_max = spells_settings.mana_max;
 				let classes = spells_settings.classes;
 				for (let kay in state.spells) {
-					for (let j = mana_min; j == mana_max; j++) {
+					for (let j = mana_min; j <= mana_max; j++) {
 						let name = state.spells[kay][j]?.name;
 						if (name) {
 							for (let i in classes) {
 								let check = state.spells[kay][j].classes.includes(classes[i]);
-								if (check) {
+                let not_ability = state.spells[kay][j].type != "ability";
+								if (check && not_ability) {
 									let unique = !arr.includes(state.spells[kay]);
 									if (unique) {
 										arr.push(state.spells[kay]);
