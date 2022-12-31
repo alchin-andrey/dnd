@@ -191,15 +191,6 @@ export default {
 			return t_arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
 
-		// t_Weapon_Type() {
-		// 	let weapon_arr = this.weapon_Type;
-		// 	let t_arr = [];
-		// 	for (let i in weapon_arr) {
-		// 			t_arr.push(this.t(weapon_arr[i]));
-		// 		}
-		// 	return t_arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
-		// },
-
     aim_Range_Shown_Min () {
       const melee = this.weapon[0].melee; //Ближнее
       const min = this.weapon[0].range_min;
@@ -237,6 +228,13 @@ export default {
       for (let i in weapon_type) {
 					type_arr.push(weapon_type[i].name);
 			}
+
+      // for (let i in weapon_type) {
+			// 	if (i != 0) {
+			// 		type_arr.push(weapon_type[i].name);
+			// 	}
+			// } 
+
       let mastery = false;
       type_arr.forEach((el) => char_type.includes(el) ? mastery = true : null);
       return mastery ? this.Mastery : null;

@@ -18,7 +18,6 @@
 					@click="shownScroll()"
 				/>
 			</div>
-
 			<transition name="scroll-packs">
 				<section class="items_packs" v-if="packs_scroll">
 					<div class="item_packs" v-for="items in packs[0].items" :key="items">
@@ -271,5 +270,16 @@ top: 0%;
 100%{
   top: 20%;
 }
+}
+
+.scroll_wrap {
+	height: 0;
+	transition: all 1s ease-in-out;
+	position: relative;
+}
+
+.scroll_wrap_open {
+	height: 100%;
+	transition: all 1s ease-in-out;
 }
 </style>
