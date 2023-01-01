@@ -536,6 +536,10 @@ export default {
       return lvl >= 14 ? num + 1 : num;
     },
 
+	Num_WIS(){
+		return this.stats_Mod("wisdom");
+	},
+
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
@@ -654,6 +658,12 @@ export default {
       let unit = this.t("hour");
       return `${numb} ${unit}`;
     },
+
+	Dur_Wisdom_Total(){
+		return `${this.stats_Class_Page_Numb("wisdom")}`; // не работает 😢
+		// NOTE - Брат допоможи
+		// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
+	},
 
 		//ANCHOR - FOO
     Value_Foo: (state) => (Val) => {

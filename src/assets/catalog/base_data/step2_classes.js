@@ -2329,18 +2329,36 @@ export default {
           },
           {
             //домен знания
-            name: "domain_life",
-            details: "domain_life_details",
+            name: "domain_knowledge",
+            details: "domain_knowledge_details",
 
-            fines: [],
+            charges: [
+              {
+                level: 17,
+                name: "cleric_see_past_slots",
+                list: [
+                  ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+                ],
+              },
+            ],
 
             spells: [
               {
                 level: 2,
-                spell: spells.learn_tool,
+                spell: spells.divine_channel_learn_tool,
               },
-
-              // NOTE - зупинився тут
+              {
+                level: 6,
+                spell: spells.read_thoughts,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 17,
+                spell: spells.cleric_see_past,
+              },
               {
                 level: 1,
                 spell: spells.identify,
@@ -2408,6 +2426,8 @@ export default {
           },
           {
             //домен обмана
+            name: "domain_trickery",
+            details: "domain_trickery_details",
           },
           {
             //домен природы

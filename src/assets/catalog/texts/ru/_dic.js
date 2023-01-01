@@ -3109,7 +3109,22 @@ export default {
     always_max_heal: "всегда максимальное лечение",
     from_spells: "от заклинаний",
 
-    spell_learn_tool: spells.learn_tool,
-    spell_learn_tool_details: spells.learn_tool_details,
-    spell_learn_tool_expanded: spells.learn_tool_expanded,
+    spell_divine_channel_learn_tool: spells.divine_channel_learn_tool,
+    spell_divine_channel_learn_tool_details: spells.divine_channel_learn_tool_details,
+    spell_divine_channel_learn_tool_expanded: spells.divine_channel_learn_tool_expanded,
+
+    spell_divine_channel_read_thoughts: spells.divine_channel_read_thoughts,
+    spell_divine_channel_read_thoughts_details: spells.divine_channel_read_thoughts_details,
+    spell_divine_channel_read_thoughts_expanded: spells.divine_channel_read_thoughts_expanded,
+
+    spell_cleric_extra_damage: spells.cleric_extra_damage,
+    spell_cleric_extra_damage_details: spells.cleric_extra_damage_details,
+    spell_cleric_extra_damage_expanded: spells.cleric_extra_damage_expanded,
+
+    spell_cleric_see_past: spells.cleric_see_past,
+    spell_cleric_see_past_details: spells.cleric_see_past_details,
+    spell_cleric_see_past_expanded: spells.cleric_see_past_expanded,
+
+    cleric_see_past_slots: "Ячейки видений",
+    cleric_see_past_slot: "Ячейка видений",
 }

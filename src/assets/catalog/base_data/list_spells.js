@@ -4186,28 +4186,71 @@ export default {
     }
   ],
 
-  learn_tool: [
+  cleric_extra_damage: [
     {
-      name: "spell_learn_tool",
-      details: "spell_learn_tool_details",
-      expanded: "spell_learn_tool_expanded",
+      name: "spell_cleric_extra_damage",
+      details: "spell_cleric_extra_damage_details",
+      expanded: "spell_cleric_extra_damage_expanded",
 
       type: "ability",
-      slot_type: "divine_channel_slot",
       classes: ["cleric"],
 
-      cast_time: "action",
+      cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
-      aim_type: null,
+      aim_target: "creature",
+      aim_type: "in_distance",
       aim_range: null,
 
       parts: ["none"],
 
-      spell_time: null,
-      spell_duration: 10,
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_WIS",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  cleric_see_past: [
+    {
+      name: "spell_cleric_see_past",
+      details: "spell_cleric_see_past_details",
+      expanded: "spell_cleric_see_past_expanded",
+
+      type: "ability",
+      slot_type: "cleric_see_past_slot",
+      classes: ["cleric"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "concentration",
+      spell_duration: null,
       spell_duration_units: "min",
 
       aim_need: false,
@@ -4215,10 +4258,10 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: "bonus",
+      impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Pls_Mastery",
+      impact_size_foo: "Dur_Wisdom_Total",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
@@ -4410,6 +4453,94 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  divine_channel_learn_tool: [
+    {
+      name: "spell_divine_channel_learn_tool",
+      details: "spell_divine_channel_learn_tool_details",
+      expanded: "spell_divine_channel_learn_tool_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: "Pls_Mastery",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  divine_channel_read_thoughts: [
+    {
+      name: "spell_divine_channel_read_thoughts",
+      details: "spell_divine_channel_read_thoughts_details",
+      expanded: "spell_divine_channel_read_thoughts_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
   ],
 
   // --
