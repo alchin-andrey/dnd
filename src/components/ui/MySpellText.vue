@@ -591,6 +591,10 @@ export default {
       return lvl;
     },
 
+	Pls_Mastery() {
+      return this.Mastery;
+    },
+
     //ANCHOR - Det
     Det_2_4_8_Lvl(){
       let deteils = this.Spell_Index.details;

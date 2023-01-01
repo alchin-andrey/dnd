@@ -4098,6 +4098,140 @@ export default {
     },
   ],
 
+  thunder_strike: [
+    {
+      //0
+      name: "spell_thunder_strike",
+      details: "spell_thunder_strike_details",
+      expanded: "spell_thunder_strike_expanded",
+
+      type: "ability",
+      classes: ["cleric"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  inspired_attack: [
+    {
+      name: "spell_inspired_attack",
+      details: "spell_inspired_attack_details",
+      expanded: "spell_inspired_attack_expanded",
+
+      type: "ability",
+      slot_type: "inspired_attack_slot",
+      classes: ["cleric"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  learn_tool: [
+    {
+      name: "spell_learn_tool",
+      details: "spell_learn_tool_details",
+      expanded: "spell_learn_tool_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: "Pls_Mastery",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  // ==
+
   divine_channel_wrath: [
     {
       //0
@@ -4143,17 +4277,63 @@ export default {
     },
   ],
 
-  thunder_strike: [
+  divine_channel_directed_strike: [
     {
       //0
-      name: "spell_thunder_strike",
-      details: "spell_thunder_strike_details",
-      expanded: "spell_thunder_strike_expanded",
+      name: "spell_divine_channel_directed_strike",
+      details: "spell_divine_channel_directed_strike_details",
+      expanded: "spell_divine_channel_directed_strike_expanded",
 
       type: "ability",
+      slot_type: "divine_channel_slot",
       classes: ["cleric"],
 
       cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "aim_bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: 10,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  divine_channel_war_god_bless: [
+    {
+      //0
+      name: "spell_divine_channel_war_god_bless",
+      details: "spell_divine_channel_war_god_bless_details",
+      expanded: "spell_divine_channel_war_god_bless_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "reaction",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4172,12 +4352,57 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: "push",
+      impact_type: "aim_bonus",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: 10,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: 10,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  divine_channel_save_life: [
+    {
+      //0
+      name: "spell_divine_channel_save_life",
+      details: "spell_divine_channel_save_life_details",
+      expanded: "spell_divine_channel_save_life_expanded",
+
+      type: "ability",
+      slot_type: "divine_channel_slot",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus", "somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: "sum_w",
+
+      impact_size_foo: "Num_LevelX",
+      impact_size_str: null,
+      impact_size_num: 5,
       impact_size_dice: null,
       impact_size_pls: null,
 
@@ -4185,6 +4410,149 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  // --
+
+  divine_strike_sound: [
+    {
+      //1
+      name: "spell_divine_strike_sound",
+      details: "spell_divine_strike_details",
+      expanded: "spell_divine_strike_expanded",
+
+      type: "ability",
+      classes: ["cleric"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "sound_w",
+
+      impact_size_foo: "Num_Lvl14_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+  ],
+
+  divine_strike_weapon: [
+    {
+      //1
+      name: "spell_divine_strike_weapon",
+      details: "spell_divine_strike_details",
+      expanded: "spell_divine_strike_expanded",
+
+      type: "ability",
+      classes: ["cleric"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_Lvl14_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+  ],
+
+  divine_strike_radiant: [
+    {
+      //1
+      name: "spell_divine_strike_radiant",
+      details: "spell_divine_strike_details",
+      expanded: "spell_divine_strike_expanded",
+
+      type: "ability",
+      classes: ["cleric"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+
+      impact_size_foo: "Num_Lvl14_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
   ],
 
 
@@ -12072,52 +12440,5 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     }
-  ],
-
-  divine_strike_sound: [
-    {
-      //1
-      name: "spell_divine_strike_sound",
-      details: "spell_divine_strike_details",
-      expanded: "spell_divine_strike_expanded",
-
-      type: "ability",
-      classes: ["cleric"],
-
-      cast_time: "none",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "creature",
-      aim_type: "in distance",
-      aim_range: null,
-
-      parts: ["none"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: false,
-
-      aim_aoe: null,
-      aim_aoe_size: null,
-
-      impact_type: "damage",
-      impact_damage_type: "sound_w",
-
-      impact_size_foo: "Num_Lvl14_Plus_1",
-      impact_size_str: null,
-      impact_size_num: 1,
-      impact_size_dice: 8,
-      impact_size_pls: null,
-
-      saving_need: null,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-    {},
-    {},
-    {},
   ],
 };

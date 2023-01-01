@@ -66,13 +66,13 @@ export default {
 
     //NOTE - Для отладки
     // equipment: [
-      // {
-        // weapon: [
-          // [weapons.mace, 1],  //melee, ближний бой
-          // [weapons.net, 2],  // метательное
-          // [weapons.dagger, 1],  //фехтовальноеб, легкое, метательное
-          // [weapons.trident, 1],  
-          // [weapons.longbow, 1],  
+    // {
+    // weapon: [
+    // [weapons.mace, 1],  //melee, ближний бой
+    // [weapons.net, 2],  // метательное
+    // [weapons.dagger, 1],  //фехтовальноеб, легкое, метательное
+    // [weapons.trident, 1],
+    // [weapons.longbow, 1],
     //     ],
     //     armor: [[armors.leather, 1]],
     //     inventory: [
@@ -1946,9 +1946,12 @@ export default {
     ],
 
     equipment: [
-      { 
-        inventory: [[items.shield, 1],[items.holy_symbol,1]] 
-      }
+      {
+        inventory: [
+          [items.shield, 1],
+          [items.holy_symbol, 1],
+        ],
+      },
     ],
 
     spells: [
@@ -1965,7 +1968,7 @@ export default {
         spell: spells.divine_intervention,
       },
       {
-        level:1,
+        level: 1,
         spell: spells.prepare_shield,
       },
     ],
@@ -1975,7 +1978,7 @@ export default {
         level: 1,
         type: "custom",
         name: "subclass",
-        select:1,
+        select: 1,
         list: [
           {
             //домен бури
@@ -1988,7 +1991,29 @@ export default {
                 name: "thunder_wrath_slots",
                 foo: "Num_WIS_Min1",
                 list: [
-                  ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
                 ],
               },
             ],
@@ -2004,7 +2029,7 @@ export default {
 
             spells: [
               {
-                level:1,
+                level: 1,
                 spell: spells.thunder_wrath,
               },
               {
@@ -2038,10 +2063,10 @@ export default {
             ],
 
             proficiencies: [
-                {
-                  armor: [[armory.heavy]],
-                  weapons: [[weaponry.military]]
-                }
+              {
+                armor: [[armory.heavy]],
+                weapons: [[weaponry.military]],
+              },
             ],
 
             settings: [
@@ -2077,16 +2102,309 @@ export default {
                   },
                 ],
               },
-            ]
+            ],
           },
           {
             //домен войны
+            name: "domain_war",
+            details: "domain_war_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "thunder_wrath_slots",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 17,
+                type: "resistnace",
+                keyword: "resistance",
+                details: "as_walking_speed",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.inspired_attack,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_directed_strike,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_war_god_bless,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_weapon,
+              },
+              {
+                level: 1,
+                spell: spells.divine_favor,
+              },
+              {
+                level: 1,
+                spell: spells.shield_of_faith,
+              },
+              {
+                level: 3,
+                spell: spells.spiritual_weapon,
+              },
+              {
+                level: 3,
+                spell: spells.magic_weapon,
+              },
+            ],
+
+            proficiencies: [
+              {
+                armor: [[armory.heavy]],
+                weapons: [[weaponry.military]],
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]], // давай если нет мастери - прятать
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
           },
           {
             //домен жизни
+            name: "domain_life",
+            details: "domain_life_details",
+
+            fines: [
+              {
+                level: 1,
+                type: "plus",
+                keyword: "extra_healing",
+                details: "two_plus_spell_level",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "heal",
+                details: "self_two_plus_spell_level",
+              },
+              {
+                level: 17,
+                type: "advantage",
+                keyword: "always_max_heal",
+                details: "from_spells",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.divine_channel_save_life,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_save_life,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_light,
+              },
+
+              {
+                level: 1,
+                spell: spells.bless,
+              },
+              {
+                level: 1,
+                spell: spells.cure_wounds,
+              },
+              {
+                level: 3,
+                spell: spells.spiritual_weapon,
+              },
+              {
+                level: 3,
+                spell: spells.lesser_restoration,
+              },
+            ],
+
+            proficiencies: [
+              {
+                armor: [[armory.heavy]],
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]], // давай если нет мастери - прятать
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
           },
           {
             //домен знания
+            name: "domain_life",
+            details: "domain_life_details",
+
+            fines: [],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.learn_tool,
+              },
+
+              // NOTE - зупинився тут
+              {
+                level: 1,
+                spell: spells.identify,
+              },
+              {
+                level: 1,
+                spell: spells.command,
+              },
+              {
+                level: 3,
+                spell: spells.suggestion,
+              },
+              {
+                level: 3,
+                spell: spells.augury,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "languages",
+                name: "languages",
+                select: 2,
+                filter: "no_used",
+              },
+              {
+                level: 1,
+                type: "skills",
+                name: "skills",
+                select: 2,
+                num: "masteryX2",
+                list: [
+                  "history",
+                  "arvana",
+                  "nature",
+                  "religion"
+                ]
+              },
+            ],
           },
           {
             //домен обмана
@@ -2097,7 +2415,7 @@ export default {
           {
             //домен света
           },
-        ]
+        ],
       },
       {
         level: 1,
@@ -2200,7 +2518,7 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 3,  // 3,3,3,4,4  4,4,4,4,5  5,5,5,5,5  5,5,5,5,5
+        select: 3, // 3,3,3,4,4  4,4,4,4,5  5,5,5,5,5  5,5,5,5,5
         mana_min: 0,
         mana_max: 0,
         classes: ["cleric"],
@@ -3231,7 +3549,7 @@ export default {
               },
               {
                 level: 14,
-                type: "plus",
+                type: "advantage",
                 keyword: "always_max_dmg",
                 details: "from_evocation_1_to_5",
               },

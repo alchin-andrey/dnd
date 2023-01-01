@@ -3042,6 +3042,25 @@ export default {
     divine_intervention_slot: "1× Божественное вмешательство",
 
     domain_thunder: classes.domain_thunder,
+    domain_thunder_details: classes.domain_thunder_details,
+
+    domain_war: classes.domain_war,
+    domain_war_details: classes.domain_war_details,
+
+    domain_life: classes.domain_life,
+    domain_life_details: classes.domain_life_details,
+
+    domain_knowledge: classes.domain_knowledge,
+    domain_knowledge_details: classes.domain_knowledge_details,
+
+    domain_trickery: classes.domain_trickery,
+    domain_trickery_details: classes.domain_trickery_details,
+
+    domain_nature: classes.domain_nature,
+    domain_nature_details: classes.domain_nature_details,
+
+    domain_light: classes.domain_light,
+    domain_light_details: classes.domain_light_details,
 
     spell_thunder_wrath: spells.thunder_wrath,
     spell_thunder_wrath_details: spells.thunder_wrath_details,
@@ -3054,11 +3073,43 @@ export default {
     spell_divine_channel_wrath_details: spells.divine_channel_wrath_details,
     spell_divine_channel_wrath_expanded: spells.divine_channel_wrath_expanded,
 
+    spell_divine_channel_directed_strike: spells.divine_channel_directed_strike,
+    spell_divine_channel_directed_strike_details: spells.divine_channel_directed_strike_details,
+    spell_divine_channel_directed_strike_expanded: spells.divine_channel_directed_strike_expanded,
+
+    spell_divine_channel_war_god_bless: spells.divine_channel_war_god_bless,
+    spell_divine_channel_war_god_bless_details: spells.divine_channel_war_god_bless_details,
+    spell_divine_channel_war_god_bless_expanded: spells.divine_channel_war_god_bless_expanded,
+
     spell_thunder_strike: spells.thunder_strike,
     spell_thunder_strike_details: spells.thunder_strike_details,
     spell_thunder_strike_expanded: spells.thunder_strike_expanded,
 
     spell_divine_strike_sound: spells.divine_strike_sound,
+    spell_divine_strike_weapon: spells.divine_strike_weapon,
+    spell_divine_strike_radiant: spells.divine_strike_radiant,
+    spell_divine_strike_poison: spells.divine_strike_poison,
+    spell_divine_strike_nature: spells.divine_strike_nature,
     spell_divine_strike_details: spells.divine_strike_details,
+    spell_divine_strike_nature_details: spells.divine_strike_nature_details,
     spell_divine_strike_expanded: spells.divine_strike_expanded,
+
+    inspired_attack_slots: "Наснага",
+
+    to_no_magic_weapon: "урону от немагического оружия",
+
+    extra_healing: "дополнительное лечение",
+    two_plus_spell_level: "2 + [ур] заклинания, для [1+] заклинаний",
+    self_two_plus_spell_level: "и себя на 2 + [ур] заклинания, для [1+] заклинаний",
+
+    spell_divine_channel_save_life: spells.divine_channel_save_life,
+    spell_divine_channel_save_life_details: spells.divine_channel_save_life_details,
+    spell_divine_channel_save_life_expanded: spells.divine_channel_save_life_expanded,
+
+    always_max_heal: "всегда максимальное лечение",
+    from_spells: "от заклинаний",
+
+    spell_learn_tool: spells.learn_tool,
+    spell_learn_tool_details: spells.learn_tool_details,
+    spell_learn_tool_expanded: spells.learn_tool_expanded,
 }
