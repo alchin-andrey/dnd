@@ -31,7 +31,6 @@
 				</div>
 
 				<div class="text_spell" v-html="t_Text"></div>
-
 			</div>
 			<magic-attribute
 				v-if="Spell_Index.impact_type"
@@ -42,7 +41,7 @@
 				:dice="Spell_Index.impact_size_dice"
 				:pls="Value_Pls"
 				main
-        not_dot
+				not_dot
 			/>
 		</div>
 	</div>
@@ -82,7 +81,7 @@
 			<my-spell-main title="parts" :text="t_Parts_Value" emoji />
 			<my-spell-main title="cast_time" :text="t_Cast_Value" />
 			<my-spell-main title="time" :text="t_Time_Value" />
-			<my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save"/>
+			<my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save" />
 		</my-wrapper>
 		<my-wrapper
 			v-if="
@@ -108,7 +107,7 @@
 				:prefix="Spell_Index.aim_aoe"
 				:numb="by_Mana('aim_aoe_size')"
 			/>
-    <!-- Меткость -->
+			<!-- Меткость -->
 			<magic-attribute
 				v-if="Spell_Index.aim_need"
 				title="aim_bonus"
@@ -167,14 +166,14 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    passive: {
+		passive: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
-    	// GETTERS
+		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Class_Page_Numb"]),
 
 		Index() {
@@ -201,7 +200,7 @@ export default {
 			return this.spell.length;
 		},
 
-    lvl_Show() {
+		lvl_Show() {
 			return this.lvl <= this.MY.level;
 		},
 
@@ -227,8 +226,8 @@ export default {
 		},
 
 		t_Text() {
-      let foo = this.Value_Det;
-      return foo ? this.t(foo) : this.t(this.Spell_Index.details);
+			let foo = this.Value_Det;
+			return foo ? this.t(foo) : this.t(this.Spell_Index.details);
 		},
 
 		t_Cast_Value() {
@@ -265,29 +264,58 @@ export default {
 			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
 
+		// t_Time_Value() {
+		//   let foo = this.Value_Dur;
+		//   let string = null;
+		//   if (foo) {
+		//     string = foo;
+		//   } else {
+		//     let value_1 = null;
+		//     if (this.Spell_Index.spell_time === "concentration") {
+		//       value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
+		//     } else {
+		//       value_1 = this.t(this.Spell_Index.spell_time);
+		//     }
+		//     let value_2 = this.by_Mana("spell_duration");
+		//     let value_3 = this.t(this.Spell_Index.spell_duration_units);
+		//     if (!value_1) {
+		//       string = `${value_2} ${value_3}`;
+		//     } else if (value_2) {
+		//       string = `${value_1} ${value_2} ${value_3}`;
+		//     } else {
+		//       string = value_1;
+		//     }
+		//   }
+		//   return string.charAt(0).toUpperCase() + string.slice(1);
+		// },
+
 		t_Time_Value() {
-      let foo = this.Value_Dur;
-      let string = null;
-      if (foo) {
-        string = foo;
-      } else {
-        let value_1 = null;
-        if (this.Spell_Index.spell_time === "concentration") {
-          value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
-        } else {
-          value_1 = this.t(this.Spell_Index.spell_time);
-        }
-        let value_2 = this.by_Mana("spell_duration");
-        let value_3 = this.t(this.Spell_Index.spell_duration_units);
-        if (!value_1) {
-          string = `${value_2} ${value_3}`;
-        } else if (value_2) {
-          string = `${value_1} ${value_2} ${value_3}`;
-        } else {
-          string = value_1;
-        }
-      }
-      return string.charAt(0).toUpperCase() + string.slice(1);
+			let string = null;
+			let value_1 = null;
+			if (this.Spell_Index.spell_time === "concentration") {
+				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
+			} else {
+				value_1 = this.t(this.Spell_Index.spell_time);
+			}
+
+			let value_2 = null;
+			let foo = this.Value_Dur;
+			if (foo) {
+				value_2 = foo;
+			} else {
+				value_2 = this.by_Mana("spell_duration");
+			}
+
+			let value_3 = this.t(this.Spell_Index.spell_duration_units);
+			if (!value_1) {
+				string = `${value_2} ${value_3}`;
+			} else if (value_2) {
+				string = `${value_1} ${value_2} ${value_3}`;
+			} else {
+				string = value_1;
+			}
+
+			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 
 		Saving_Numb() {
@@ -298,25 +326,29 @@ export default {
 			return KOF + mastery + stats_mod;
 		},
 
-    t_Save() {
-      if (this.Spell_Index.saving_attribute) {
-        let test = `${this.T("saving")} ${this.T(this.Spell_Index.saving_attribute)} ${this.Saving_Numb}`;
-        let success = `${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved}`;
-        if(this.Spell_Index.impact_size_saved) {
-          return `${test} — ${success}`;
-        } else {
-          return test;
-        }
-      } else {
-        return null;
-      }
-    },
+		t_Save() {
+			if (this.Spell_Index.saving_attribute) {
+				let test = `${this.T("saving")} ${this.T(
+					this.Spell_Index.saving_attribute
+				)} ${this.Saving_Numb}`;
+				let success = `${this.t("if_succeed")} ${
+					this.Spell_Index.impact_size_saved
+				}`;
+				if (this.Spell_Index.impact_size_saved) {
+					return `${test} — ${success}`;
+				} else {
+					return test;
+				}
+			} else {
+				return null;
+			}
+		},
 
 		t_Expanded() {
 			return this.t(this.Spell_Index.expanded);
 		},
 
-    by_Mana: (state) => (str) => {
+		by_Mana: (state) => (str) => {
 			let val = state.Manna_Index[str];
 			if (val) {
 				return val;
@@ -520,33 +552,33 @@ export default {
 			//spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
 		},
 
-    Num_Mastery_05() {
-      return Math.floor(this.Mastery / 2);
-    },
+		Num_Mastery_05() {
+			return Math.floor(this.Mastery / 2);
+		},
 
-    Num_2xLvl_plus_INT() {
-      let lvl = this.MY.level;
-      let mod = this.stats_Mod("intelligence");
-      return lvl * 2 + mod;
-    },
+		Num_2xLvl_plus_INT() {
+			let lvl = this.MY.level;
+			let mod = this.stats_Mod("intelligence");
+			return lvl * 2 + mod;
+		},
 
-    Num_Lvl14_Plus_1() {
-      let num = this.Spell_Index.impact_size_num;
-      let lvl = this.MY.level;
-      return lvl >= 14 ? num + 1 : num;
-    },
+		Num_Lvl14_Plus_1() {
+			let num = this.Spell_Index.impact_size_num;
+			let lvl = this.MY.level;
+			return lvl >= 14 ? num + 1 : num;
+		},
 
-	Num_WIS(){
-		return this.stats_Mod("wisdom");
-	},
+		Num_WIS() {
+			return this.stats_Mod("wisdom");
+		},
 
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
-      let mod = this.stats_Mod(this.MY.class.spell_attribute);
+			let mod = this.stats_Mod(this.MY.class.spell_attribute);
 			// console.log('Str_X_Plus_1_Num_MOD', num)
 
-      let res = pls + mod;
+			let res = pls + mod;
 			return res < 0 ? 0 : res;
 			// return num + mod;
 
@@ -571,7 +603,7 @@ export default {
 		Pls_STR() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.stats_Mod("strength");
-      let res = pls + mod;
+			let res = pls + mod;
 			return res;
 
 			//return to: impact_size_pls
@@ -582,7 +614,7 @@ export default {
 		Pls_CHA() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.stats_Mod("charisma");
-      let res = pls + mod;
+			let res = pls + mod;
 			return res <= 0 ? 1 : res;
 
 			//return to: impact_size_pls
@@ -590,21 +622,21 @@ export default {
 			//Example: +4 ⬜️⬜️⬜️⬜️
 		},
 
-    Pls_Lvl() {
-      let lvl = this.MY.level;
-      return lvl;
-    },
+		Pls_Lvl() {
+			let lvl = this.MY.level;
+			return lvl;
+		},
 
-	Pls_Mastery() {
-      return this.Mastery;
-    },
+		Pls_Mastery() {
+			return this.Mastery;
+		},
 
-    //ANCHOR - Det
-    Det_2_4_8_Lvl(){
-      let deteils = this.Spell_Index.details;
-      let lvl = this.MY.level;
-      let kof = null;
-      if (lvl >= 8) {
+		//ANCHOR - Det
+		Det_2_4_8_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof = null;
+			if (lvl >= 8) {
 				kof = 8;
 			} else if (lvl >= 4) {
 				kof = 4;
@@ -613,22 +645,43 @@ export default {
 			} else {
 				kof = null;
 			}
-      return kof ? `${deteils}_${kof}` : deteils;
-    },
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
 
-    Det_2_4_8_9_10_12_15_18_Lvl() {
-      let deteils = this.Spell_Index.details;
-      let lvl = this.MY.level;
-      let kof_arr = [null, 2, 2, 4, 4, 4, 4, 8, 9, 10, 10, 12, 12, 14, 15, 15, 17, 18, 18, 18];
-      let kof = kof_arr[lvl - 1];
-      return kof ? `${deteils}_${kof}` : deteils;
-    },
+		Det_2_4_8_9_10_12_15_18_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof_arr = [
+				null,
+				2,
+				2,
+				4,
+				4,
+				4,
+				4,
+				8,
+				9,
+				10,
+				10,
+				12,
+				12,
+				14,
+				15,
+				15,
+				17,
+				18,
+				18,
+				18,
+			];
+			let kof = kof_arr[lvl - 1];
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
 
-    Det_5_8_11_14_17_Lvl() {
-      let deteils = this.Spell_Index.details;
-      let lvl = this.MY.level;
-      let kof = null;
-      if (lvl >= 17) {
+		Det_5_8_11_14_17_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof = null;
+			if (lvl >= 17) {
 				kof = 17;
 			} else if (lvl >= 14) {
 				kof = 14;
@@ -641,67 +694,64 @@ export default {
 			} else {
 				kof = null;
 			}
-      return kof ? `${deteils}_${kof}` : deteils;
-    },
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
 
-    Det_20_Lvl() {
-      let deteils = this.Spell_Index.details;
-      let lvl = this.MY.level;
-      let kof = lvl == 20 ? 20 : null;
-      return kof ? `${deteils}_${kof}` : deteils;
-    },
+		Det_20_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof = lvl == 20 ? 20 : null;
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
 
-    //ANCHOR - Dur
-    Dur_05_Lvl() {
-      let lvl = this.MY.level;
-      let numb = Math.floor(lvl/2);
-      let unit = this.t("hour");
-      return `${numb} ${unit}`;
-    },
+		//ANCHOR - Dur
+		Dur_05_Lvl() {
+			let lvl = this.MY.level;
+			let numb = Math.floor(lvl / 2);
+			return numb;
+		},
 
-	Dur_Wisdom_Total() {
-    let numb = this.stats_Class_Page_Numb("wisdom");
-    let unit = this.t("min");
-		return `${numb} ${unit}`;
-		// NOTE - Брат допоможи
-		// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
-	},
+		Dur_Wisdom_Total() {
+			let numb = this.stats_Class_Page_Numb("wisdom");
+			return numb;
+			// NOTE - Брат допоможи
+			// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
+		},
 
 		//ANCHOR - FOO
-    Value_Foo: (state) => (Val) => {
-      let low_val = Val.toLowerCase();
+		Value_Foo: (state) => (Val) => {
+			let low_val = Val.toLowerCase();
 			let num = state.Spell_Index[`impact_size_${low_val}`];
 			let foo = state.Spell_Index.impact_size_foo;
 			if (foo) {
-        let str = foo.split("__");
+				let str = foo.split("__");
 				for (let i in str) {
-          str[i].substr(0, 3) === Val ? num = state[str[i]] : null;
+					str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
 				}
 			}
 			return num;
 		},
 
-    Value_Str() {
-      return this.Value_Foo("Str");
-    },
+		Value_Str() {
+			return this.Value_Foo("Str");
+		},
 
-    Value_Num() {
-      return this.Value_Foo("Num");
-    },
+		Value_Num() {
+			return this.Value_Foo("Num");
+		},
 
 		Value_Pls() {
 			return this.Value_Foo("Pls");
 		},
 
-    Value_Det() {
-      return this.Value_Foo("Det");
-    },
+		Value_Det() {
+			return this.Value_Foo("Det");
+		},
 
-    Value_Dur() {
-      return this.Value_Foo("Dur");
-    },
+		Value_Dur() {
+			return this.Value_Foo("Dur");
+		},
 		// ------ FOO -----------
-
 	},
 	watch: {
 		dialogVisible(val) {
@@ -738,8 +788,8 @@ export default {
 			this.mana_numb = this.Index;
 		},
 
-    choiceManna(numb) {
-			return numb - 1 < this.Index ? null : this.mana_numb = numb - 1
+		choiceManna(numb) {
+			return numb - 1 < this.Index ? null : (this.mana_numb = numb - 1);
 		},
 	},
 };
@@ -867,7 +917,7 @@ export default {
 }
 
 .passive {
-  opacity: 0.2;
-  /* cursor: auto; */
+	opacity: 0.2;
+	/* cursor: auto; */
 }
 </style>
