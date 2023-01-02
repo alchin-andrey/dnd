@@ -94,10 +94,10 @@ export default {
 
             // По левелу перса
 
-            // {
-            //   level: 1,
-            //   spell: spells.divine_channel_mana,
-            // },
+            {
+              level: 1,
+              spell: spells.cleric_see_past,
+            },
 
             // {
             //   level: 1,

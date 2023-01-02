@@ -175,7 +175,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
     	// GETTERS
-		...mapState(useStatsStore, ["stats_Mod"]),
+		...mapState(useStatsStore, ["stats_Mod", "stats_Class_Page_Numb"]),
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
@@ -659,8 +659,10 @@ export default {
       return `${numb} ${unit}`;
     },
 
-	Dur_Wisdom_Total(){
-		return `${this.stats_Class_Page_Numb("wisdom")}`; // не работает 😢
+	Dur_Wisdom_Total() {
+    let numb = this.stats_Class_Page_Numb("wisdom");
+    let unit = this.t("min");
+		return `${numb} ${unit}`;
 		// NOTE - Брат допоможи
 		// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
 	},
