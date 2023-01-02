@@ -3117,6 +3117,20 @@ export default {
     spell_divine_channel_read_thoughts_details: spells.divine_channel_read_thoughts_details,
     spell_divine_channel_read_thoughts_expanded: spells.divine_channel_read_thoughts_expanded,
 
+    spell_divine_channel_mirror_image: spells.divine_channel_mirror_image,
+    spell_divine_channel_mirror_image_details: spells.divine_channel_mirror_image_details,
+    spell_divine_channel_mirror_image_details_17: spells.divine_channel_mirror_image_details_17,
+    spell_divine_channel_mirror_image_expanded: spells.divine_channel_mirror_image_expanded,
+
+    spell_divine_channel_cloak_of_shadows: spells.divine_channel_cloak_of_shadows,
+    spell_divine_channel_cloak_of_shadows_details: spells.divine_channel_cloak_of_shadows_details,
+    spell_divine_channel_cloak_of_shadows_expanded: spells.divine_channel_cloak_of_shadows_expanded,
+
+    spell_divine_channel_charm_alimal_plant: spells.divine_channel_charm_alimal_plant,
+    spell_divine_channel_charm_alimal_plant_details: spells.divine_channel_charm_alimal_plant_details,
+    spell_divine_channel_charm_alimal_plant_details_17: spells.divine_channel_charm_alimal_plant_details_17,
+    spell_divine_channel_charm_alimal_plant_expanded: spells.divine_channel_charm_alimal_plant_expanded,
+
     spell_cleric_extra_damage: spells.cleric_extra_damage,
     spell_cleric_extra_damage_details: spells.cleric_extra_damage_details,
     spell_cleric_extra_damage_expanded: spells.cleric_extra_damage_expanded,
@@ -3131,4 +3145,19 @@ export default {
     spell_tricker_bless: spells.tricker_bless,
     spell_tricker_bless_details: spells.tricker_bless_details,
     spell_tricker_bless_expanded: spells.tricker_bless_expanded,
+
+    spell_dampen_elements: spells.dampen_elements,
+    spell_dampen_elements_details: spells.dampen_elements_details,
+    spell_dampen_elements_expanded: spells.dampen_elements_expanded,
+
+    warding_flare_slots: "Защищающие вспышки",
+    warding_flare_slot: "1× Защищающая вспышка",
+
+    spell_divine_channel_radiance_dawn: spells.divine_channel_radiance_dawn,
+    spell_divine_channel_radiance_dawn_details: spells.divine_channel_radiance_dawn_details,
+    spell_divine_channel_radiance_dawn_expanded: spells.divine_channel_radiance_dawn_expanded,
+
+    spell_crown_of_light: spells.crown_of_light,
+    spell_crown_of_light_details: spells.crown_of_light_details,
+    spell_crown_of_light_expanded: spells.crown_of_light_expanded,
 }

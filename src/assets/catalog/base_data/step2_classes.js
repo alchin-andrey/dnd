@@ -1956,10 +1956,6 @@ export default {
 
     spells: [
       {
-        level: 1,
-        spell: spells.tricker_bless,
-      },
-      {
         level: 2,
         spell: spells.divine_channel_undead,
       },
@@ -2100,7 +2096,7 @@ export default {
                     equipment: [
                       {
                         level: 1,
-                        armor: [[armors.chainmail, 1]], // давай если нет мастери - прятать
+                        armor: [[armors.chainmail, 1]],
                       },
                     ],
                   },
@@ -2224,7 +2220,7 @@ export default {
                     equipment: [
                       {
                         level: 1,
-                        armor: [[armors.chainmail, 1]], // давай если нет мастери - прятать
+                        armor: [[armors.chainmail, 1]], 
                       },
                     ],
                   },
@@ -2323,7 +2319,7 @@ export default {
                     equipment: [
                       {
                         level: 1,
-                        armor: [[armors.chainmail, 1]], // давай если нет мастери - прятать
+                        armor: [[armors.chainmail, 1]],
                       },
                     ],
                   },
@@ -2436,11 +2432,6 @@ export default {
             spells: [
               {
                 level: 1,
-                spell: spells.tricker_bless,
-              },
-
-              {
-                level: 1,
                 spell: spells.disguise_self,
               },
               {
@@ -2456,12 +2447,237 @@ export default {
                 spell: spells.mirror_image,
               },
             ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ]
           },
           {
             //домен природы
+            name: "domain_nature",
+            details: "domain_nature_details",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.divine_channel_charm_alimal_plant,
+              },
+              {
+                level: 6,
+                spell: spells.dampen_elements,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_nature,
+              },
+
+              {
+                level: 1,
+                spell: spells.animal_friendship,
+              },
+              {
+                level: 1,
+                spell: spells.speak_with_animals,
+              },
+              {
+                level: 3,
+                spell: spells.barkskin,
+              },
+              {
+                level: 3,
+                spell: spells.spike_growth,
+              },
+            ],
+
+            proficiencies: [
+              {
+                armor: [[armory.heavy]],
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "spells",
+                name: "spells_0",
+                select: 1,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+              {
+                level: 1,
+                type: "skills",
+                name: "skills",
+                select: 1,
+                num: "mastery",
+                list: [
+                  "survival",
+                  "nature",
+                  "animal_hanging"
+                ]
+              },
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
           },
           {
             //домен света
+            name: "domain_light",
+            details: "domain_light_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "warding_flare_slots",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.light,
+              },
+              {
+                level: 1,
+                spell: spells.warding_flare,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_radiance_dawn,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 17,
+                spell: spells.crown_of_light,
+              },
+
+              {
+                level: 1,
+                spell: spells.burning_hands,
+              },
+              {
+                level: 1,
+                spell: spells.faerie_fire,
+              },
+              {
+                level: 3,
+                spell: spells.scorching_ray,
+              },
+              {
+                level: 3,
+                spell: spells.flaming_sphere,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ]
           },
         ],
       },

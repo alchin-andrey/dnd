@@ -697,6 +697,20 @@ export default {
 			return kof ? `${deteils}_${kof}` : deteils;
 		},
 
+		Det_6_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof = lvl >= 6 ? 6 : null;
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
+
+		Det_17_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof = lvl >= 17 ? 17 : null;
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
+
 		Det_20_Lvl() {
 			let deteils = this.Spell_Index.details;
 			let lvl = this.MY.level;
