@@ -1956,6 +1956,10 @@ export default {
 
     spells: [
       {
+        level: 1,
+        spell: spells.tricker_bless,
+      },
+      {
         level: 2,
         spell: spells.divine_channel_undead,
       },
@@ -2428,6 +2432,30 @@ export default {
             //домен обмана
             name: "domain_trickery",
             details: "domain_trickery_details",
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.tricker_bless,
+              },
+
+              {
+                level: 1,
+                spell: spells.disguise_self,
+              },
+              {
+                level: 1,
+                spell: spells.charm_person,
+              },
+              {
+                level: 3,
+                spell: spells.pass_without_trace,
+              },
+              {
+                level: 3,
+                spell: spells.mirror_image,
+              },
+            ],
           },
           {
             //домен природы

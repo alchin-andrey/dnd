@@ -3130,5 +3130,9 @@ export default {
     spell_cleric_see_past_expanded: spells.cleric_see_past_expanded,
 
     cleric_see_past_slots: "Слоти видінь",
-    cleric_see_past_slot: "Слот видінь",
+    cleric_see_past_slot: "1× Слот видінь",
+
+    spell_tricker_bless: spells.tricker_bless,
+    spell_tricker_bless_details: spells.tricker_bless_details,
+    spell_tricker_bless_expanded: spells.tricker_bless_expanded,
 }

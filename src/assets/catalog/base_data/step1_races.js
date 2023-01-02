@@ -94,10 +94,10 @@ export default {
 
             // По левелу перса
 
-            {
-              level: 1,
-              spell: spells.cleric_see_past,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.cleric_see_past,
+            // },
 
             // {
             //   level: 1,
@@ -138,25 +138,25 @@ export default {
             //   spell: spells.cordon_of_arrows,
             // },
 
-            {
-              level: 2,
-              spell: spells.wild_shape,
-            },
+            // {
+            //   level: 2,
+            //   spell: spells.wild_shape,
+            // },
 
-            {
-              level: 2,
-              spell: spells.wild_shape_combat,
-            },
+            // {
+            //   level: 2,
+            //   spell: spells.wild_shape_combat,
+            // },
 
-            {
-              level: 2,
-              spell: spells.divine_channel_undead,
-            },
+            // {
+            //   level: 2,
+            //   spell: spells.divine_channel_undead,
+            // },
 
-            {
-              level: 10,
-              spell: spells.divine_intervention,
-            },
+            // {
+            //   level: 10,
+            //   spell: spells.divine_intervention,
+            // },
 
             // {
             //   level: 1,

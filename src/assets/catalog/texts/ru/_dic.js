@@ -3126,5 +3126,9 @@ export default {
     spell_cleric_see_past_expanded: spells.cleric_see_past_expanded,
 
     cleric_see_past_slots: "Ячейки видений",
-    cleric_see_past_slot: "Ячейка видений",
+    cleric_see_past_slot: "1× Ячейка видений",
+
+    spell_tricker_bless: spells.tricker_bless,
+    spell_tricker_bless_details: spells.tricker_bless_details,
+    spell_tricker_bless_expanded: spells.tricker_bless_expanded,
 }

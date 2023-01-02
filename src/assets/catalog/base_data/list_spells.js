@@ -4255,13 +4255,56 @@ export default {
 
       aim_need: false,
 
+      aim_aoe: "cube",
+      aim_aoe_size: 50,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Dur_Wisdom_Total",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  tricker_bless: [
+    {
+      name: "spell_tricker_bless",
+      details: "spell_tricker_bless_details",
+      expanded: "spell_tricker_bless_expanded",
+
+      type: "ability",
+      classes: ["cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
       aim_aoe: null,
       aim_aoe_size: null,
 
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Dur_Wisdom_Total",
+      impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dice: null,
