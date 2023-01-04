@@ -3097,8 +3097,8 @@ export default {
     spell_divine_strike_nature_details: spells.divine_strike_nature_details,
     spell_divine_strike_expanded: spells.divine_strike_expanded,
 
-    inspired_attack_slots: "Наснага",
-    inspired_attack_slot: "Наснага",
+    inspired_attack_slots: "Слоти Наснаги",
+    inspired_attack_slot: "1× Слот Наснаги",
 
     to_no_magic_weapon: "пошкодженню від немагічної зброї",
 
@@ -3164,4 +3164,58 @@ export default {
     spell_crown_of_light: spells.crown_of_light,
     spell_crown_of_light_details: spells.crown_of_light_details,
     spell_crown_of_light_expanded: spells.crown_of_light_expanded,
+
+    warlock: classes.warlock,
+    warlock_details: classes.warlock_details,
+
+    warlock_protector: "покровитель",
+
+    archifey: classes.archifey,
+    archifey_details: classes.archifey_details,
+
+    fiend: classes.fiend,
+    fiend_details: classes.fiend_details,
+
+    great_old_one: classes.great_old_one,
+    great_old_one_details: classes.great_old_one_details,
+
+    pact_of_the_tome: "Гримуара",
+    pact_of_the_tome_details: "Ваш покровитель дарує вам гримуар, що зветься «Книга тіней».",
+
+    book_of_shadows:"Книга Тіней",
+    book_of_shadows_details:"Гримуар, який вам дарував ваш покровитель. У ньому записані 3 ваші закляття. Якщо ви втрачаєте книгу, вам потрібно провести ритуал тривалістю 1 годину, щоб отримати нову від свого покровителя. Ви можете провести цей ритуал під час короткого чи тривалого відпочинку. Попередня книга при цьому знищується. Книга перетворюється у попіл при вашій смерті.",
+
+    pact_of_the_blade: "Клинка",
+    pact_of_the_blade_details: "Ваш покровитель дарує вам зброю договору.",
+
+    spell_create_weapon: spells.create_weapon,
+    spell_create_weapon_details: spells.create_weapon_details,
+    spell_create_weapon_expanded: spells.create_weapon_expanded,
+
+    spell_convert_weapon: spells.convert_weapon,
+    spell_convert_weapon_details: spells.convert_weapon_details,
+    spell_convert_weapon_expanded: spells.convert_weapon_expanded,
+
+    pact_of_the_blade: "Ланцюга",
+    pact_of_the_blade_details: "Ваш покровитель дарує вам потойбіччого помічника. Ви можете вибрати одну з особливих форм фаміліара: біс, квазит, псевдодракон або спрайт.",
+
+    spell_find_familiar_warlock: spells.find_familiar_warlock,
+    spell_find_familiar_warlock_details: spells.find_familiar_warlock_details,
+    spell_find_familiar_warlock_expanded: spells.find_familiar_warlock_expanded,
+
+    pact_of_the_blade: "Талісману",
+    pact_of_the_blade_details: "Ваш покровитель дає вам талісман, який може допомогти вам пройти перевірку здібності.",
+
+    talisman: "Талісман",
+    talisman_details: "Коли власник провалює перевірку здібності, він може додати до кидка d4, потенційно перетворивши кидок на успіх. Цю перевагу можна використовувати кількість разів, що дорівнює вашому бонусу майстерності, і всі використані використання відновлюються, коли ви закінчуєте тривалий відпочинок. Якщо ви втратите талісман, ви можете провести церемонію тривалістю в годину, щоб отримати заміну від свого покровителя. Цей обряд можна проводити під час короткого чи тривалого відпочинку, і він руйнує попередній амулет. Коли ви вмираєте, талісман перетворюється на попіл.",
+    talisman_slots: "Допомога талісмана",
+
+    fey_presence_slots: "Фейська зовнішність",
+    fey_presence_slot: "1× Фейська зовнішність",
+
+    invocations: "заклики",
+
+    spell_fey_presence: spells.fey_presence,
+    spell_fey_presence_details: spells.fey_presence_details,
+    spell_fey_presence_expanded: spells.fey_presence_expanded,
 }

@@ -88,7 +88,6 @@ const example = {
     {
       level: 1,
       spell: spells.rage,
-      charges: 5,
     },
   ],
 };
@@ -293,6 +292,7 @@ export default {
     charges: [
       {
         name: "superiority_dice_slots_feat",
+        type: "short_rest",
         list: [
           ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],

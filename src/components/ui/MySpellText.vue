@@ -556,6 +556,10 @@ export default {
 			return Math.floor(this.Mastery / 2);
 		},
 
+		Num_Mastery() {
+			return this.Mastery;
+		},
+
 		Num_2xLvl_plus_INT() {
 			let lvl = this.MY.level;
 			let mod = this.stats_Mod("intelligence");
@@ -566,6 +570,10 @@ export default {
 			let num = this.Spell_Index.impact_size_num;
 			let lvl = this.MY.level;
 			return lvl >= 14 ? num + 1 : num;
+		},
+
+		Num_CHA() {
+			return this.stats_Mod("charisma");
 		},
 
 		Num_WIS() {

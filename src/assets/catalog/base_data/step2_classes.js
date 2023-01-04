@@ -44,6 +44,7 @@ export default {
       {
         level: 1,
         name: "second_wind_slots",
+        type: "short_rest",
         list: [
           ["d10", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
@@ -51,6 +52,7 @@ export default {
       {
         level: 2,
         name: "action_surge_slots",
+        type: "short_rest",
         list: [
           ["", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2],
         ],
@@ -106,6 +108,7 @@ export default {
               {
                 level: 3,
                 name: "superiority_dice_slots",
+                type: "short_rest",
                 list: [
                   [
                     "d8",
@@ -423,6 +426,7 @@ export default {
               {
                 level: 1,
                 name: "spell_slots",
+                type: "long_rest",
                 list: [
                   [
                     "[1]",
@@ -1059,6 +1063,7 @@ export default {
       {
         level: 1,
         name: "rage_slots",
+        type: "long_rest",
         list: [
           ["", 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, "inf"],
         ],
@@ -1532,14 +1537,16 @@ export default {
       {
         level: 1,
         name: "divine_sense_slots",
+        type: "long_rest",
         foo: "Num_CHA_Min0", //Str_Plus_CHA
         list: [
           ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
       },
       {
-        level: 1,
+        level: 3,
         name: "divine_channel_slots",
+        type: "short_rest",
         list: [
           ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
@@ -1547,6 +1554,7 @@ export default {
       {
         level: 2,
         name: "spell_slots",
+        type: "long_rest",
         list: [
           ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["[2]", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -1569,6 +1577,10 @@ export default {
       {
         level: 2,
         spell: spells.paladin_divine_smite,
+      },
+      {
+        level: 3,
+        spell: spells.divine_channel_mana,
       },
     ],
 
@@ -1916,7 +1928,24 @@ export default {
     charges: [
       {
         level: 1,
+        name: "divine_channel_slots",
+        type: "short_rest",
+        list: [
+          ["", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+        ],
+      },
+      {
+        level: 10,
+        name: "divine_intervention_slots",
+        type: "long_rest",
+        list: [
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+      {
+        level: 1,
         name: "spell_slots",
+        type: "long_rest",
         list: [
           ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -1927,20 +1956,6 @@ export default {
           ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
           ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
           ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-        ],
-      },
-      {
-        level: 1,
-        name: "divine_channel_slots",
-        list: [
-          ["", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
-        ],
-      },
-      {
-        level: 10,
-        name: "divine_intervention_slots",
-        list: [
-          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
       },
     ],
@@ -1989,6 +2004,7 @@ export default {
               {
                 level: 1,
                 name: "thunder_wrath_slots",
+                type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
                   [
@@ -2112,7 +2128,8 @@ export default {
             charges: [
               {
                 level: 1,
-                name: "thunder_wrath_slots",
+                name: "inspired_attack_slots",
+                type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
                   [
@@ -2336,6 +2353,7 @@ export default {
               {
                 level: 17,
                 name: "cleric_see_past_slots",
+                type: "short_rest",
                 list: [
                   ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
                 ],
@@ -2583,6 +2601,7 @@ export default {
               {
                 level: 1,
                 name: "warding_flare_slots",
+                type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
                   [
@@ -2817,7 +2836,7 @@ export default {
         type: "feats",
       },
     ],
-  },
+  }, // Almost 20 (spells)
 
   //NOTE - Druid -------------------------------------------------------------------------
 
@@ -2900,6 +2919,7 @@ export default {
       {
         level: 2,
         name: "wild_shape_slots",
+        type: "short_rest",
         list: [
           ["", 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, "inf"],
         ],
@@ -2907,6 +2927,7 @@ export default {
       {
         level: 1,
         name: "spell_slots",
+        type: "long_rest",
         list: [
           ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -3693,6 +3714,758 @@ export default {
     ],
   }, //Almost 20 (spells)
 
+  // NOTE - Warlock
+
+  warlock: {
+    name: "warlock",
+    details: "warlock_details",
+
+    hp_dice: 8,
+
+    proficiencies: {
+      armor: [armory.light],
+      weapons: [weaponry.simple],
+      tools: [],
+      languages: [],
+    },
+
+    saving: ["wisdom","charisma"],
+    stats_base: [
+      "charisma",
+      "dexterity",
+      "constitution",
+      "intelligence",
+      "wisdom",
+      "strength",
+    ],
+    spell_attribute: "charisma",
+
+    charges: [
+      {
+        level: 1,
+        name: "spell_slots",
+        type: "short_rest",
+        foo: "Str_Warlock_Manalvl", // "[1]","[1]","[2]","[2]","[3]",  "[3]","[4]","[4]","[5]","[5]",  "[5]","[5]","[5]","[5]","[5]",  "[5]","[5]","[5]","[5]","[5]",
+        list: [
+          ["[1]", 1,2,2,2,2,  2,2,2,2,2, 3,3,3,3,3, 3,4,4,4,4],
+        ],
+      },
+      {
+        level: 11,
+        name: "arcanum_slots",
+        type: "long_rest",
+        list: [
+          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+        //TODO - додати вибір заклять на відповідних рівнях
+      },
+      {
+        level: 20,
+        name: "inner_reserve_slots",
+        type: "long_rest",
+        list: [
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        ],
+      },
+    ],
+
+    spells: [
+      {
+        level: 20,
+        spell: spells.restore_mana_warlock,
+      }
+    ],
+
+    equipment: [
+      {
+        level: 1,
+        armor: [[armors.leather, 1]],
+        weapon: [[weapons.dagger, 2]],
+      },
+    ],
+
+    settings: [
+      {
+        level: 1,
+        type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            name:"archifey",
+            details:"archifey_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "fey_presence_slots",
+                type: "short_rest",
+                list: [
+                  ["", 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level:1,
+                spell: spells.fey_presence,
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells",
+                select: 2,
+                foo: "Sel_Warlock_Spells", //2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15
+                mana_min: 1,
+                mana_max: "Num_Warlock_Max_Spell_Slot", //1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,
+                classes: ["warlock"],
+                extra_items: [
+                  // Архифея позволяет вам при изучении заклинаний колдуна выбирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
+                  {
+                    level:1,
+                    spell: spells.faerie_fire,
+                  },
+                  {
+                    level:1,
+                    spell: spells.sleep,
+                  },
+                  {
+                    level:3,
+                    spell: spells.phantasmal_force,
+                  },
+                  {
+                    level:3,
+                    spell: spells.calm_emotions,
+                  },
+                ]
+              },
+            ],
+          },
+          {
+            name:"fiend",
+            details:"fiend_details",
+
+            spells: [
+              {
+                level:1,
+                spell: spells.burning_hands,
+              },
+              {
+                level:1,
+                spell: spells.command,
+              },
+              {
+                level:3,
+                spell: spells.blindness_deafness,
+              },
+              {
+                level:3,
+                spell: spells.scorching_ray,
+              },
+            ],
+          },
+          {
+            name:"great_old_one",
+            details:"great_old_one_details",
+
+            spells: [
+              {
+                level:1,
+                spell: spells.dissonant_whispers,
+              },
+              {
+                level:1,
+                spell: spells.tashas_hideous_laughter,
+              },
+              {
+                level:3,
+                spell: spells.phantasmal_force,
+              },
+              {
+                level:3,
+                spell: spells.detect_thoughts,
+              },
+            ],
+          }
+        ],
+      },
+      {
+        level: 3,
+        type: "custom",
+        name: "pact_item",
+        select: 1,
+        list: [
+          {
+            name:"pact_of_the_tome",
+            details:"pact_of_the_tome_details",
+
+            equipment: [
+              {
+                inventory: [items.book_of_shadows],
+              }
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "spells",
+                name: "spells_0",
+                select: 3,
+                mana_min: 0,
+                mana_max: 0,
+              },
+            ]
+          },
+          {
+            name:"pact_of_the_blade",
+            details:"pact_of_the_blade_details",
+
+            spells: [
+              {
+                spell: spells.create_weapon,
+              },
+              {
+                spell: spells.convert_weapon,
+              },
+            ],
+          },
+          {
+            name:"pact_of_the_chain",
+            details:"pact_of_the_chain_details",
+
+            spells: [
+              {
+                spell: spells.find_familiar_warlock,
+              },
+            ],
+          },
+          {
+            name:"pact_of_the_talisman",
+            details:"pact_of_the_talisman_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "talisman_slots",
+                type: "long_rest",
+                list: [
+                  ["d4", 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+                ],
+              },
+            ],
+
+            equipment: [
+              {
+                inventory: [items.talisman],
+              }
+            ],
+          }
+        ]
+      },
+      {
+        level: 2,
+        type: "custom",
+        name: "invocations",
+        select: 2,
+        foo: "Sel_2_5_7_9_12_15_18",
+        list: [
+          // Не каноничные, как оказалось
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_tome",
+          //   name: "aspect_of_the_moon",
+            
+          //   fines: [
+          //     {
+          //       type: "plus",
+          //       keyword: "none",
+          //       details: "sleep",
+          //     },
+          //     {
+          //       type: "resistance",
+          //       keyword: "immunity",
+          //       details: "sleep_against",
+          //     },
+          //   ],
+          // },
+          {
+            level: 2,
+            name: "gaze_of_two_minds",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.gaze_of_two_minds,
+              }
+            ]
+          },
+          {
+            level: 2,
+            name: "thief_of_five_fates",
+            details: "thief_of_five_fates_details",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.bane,
+              }
+            ]
+          },
+          {
+            level: 2,
+            name: "eyes_of_the_rune_keeper",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "able_to_read",
+                details: "any_texts",
+              },
+            ],
+          },
+          {
+            level: 2,
+            condition: "pact_of_the_chain",
+            name: "voice_of_the_chain_master",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "able_to_speak",
+                details: "through_familiar",
+              },
+            ],
+          },
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_chain",
+          //   name: "gift_of_the_ever_living_ones",
+
+          //   fines: [
+          //     {
+          //       type: "advantage",
+          //       keyword: "always_max_heal",
+          //       details: "if_familiar_is_in_100f",
+          //     },
+          //   ],
+          // },
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_chain",
+          //   name: "investment_of_the_chain_master",
+
+          //   spells: [
+          //     {
+          //       level: 2,
+          //       spell: spells.investment_of_the_chain_master,
+          //     }
+          //   ]
+          // },
+          {
+            level: 2,
+            name: "armor_of_shadows",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.mage_armor_shadow,
+              }
+            ]
+          },
+
+          {
+            level: 2,
+            name: "devils_sight",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "able_to_see",
+                details: "in_magic_darkness",
+              },
+            ],
+
+            qualities: [
+              {
+                level:2,
+                vision_night: 120 
+              }
+            ]
+          },
+          {
+            level: 2,
+            name: "beast_speech",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.speak_with_animals_warlock,
+              }
+            ]
+          },
+          {
+            level: 2,
+            condition: "pact_of_the_tome",
+            name: "book_of_antient_secrets",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.learn_ritual,
+              }
+            ]
+          },
+          // {
+          //   level: 2,
+          //   condition: "spell_eldritch_blast",
+          //   name: "lance_of_lethargy",
+
+          //   spells: [
+          //     {
+          //       level: 2,
+          //       spell: spells.eldritch_blast_slow,
+          //     }
+          //   ]
+          // },
+          {
+            level: 2,
+            name: "mask_of_many_faces",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.disguise_self_warlock,
+              }
+            ]
+          },
+          // {
+          //   level: 2,
+          //   name: "eldritch_mind",
+
+          //   fines: [
+          //     {
+          //       type: "advantage",
+          //       keyword: "advantage",
+          //       details: "on_concentration",
+          //     },
+          //   ],
+          // },
+          {
+            level: 2,
+            condition: "spell_eldritch_blast",
+            name: "eldritch_spear",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.eldritch_blast_distant,
+              }
+            ]
+          },
+          {
+            level: 2,
+            name: "fiendish_vigor",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.false_life_warlock,
+              }
+            ]
+          },
+          {
+            level: 2,
+            condition: "spell_eldritch_blast",
+            name: "agonizing_blast",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.eldritch_blast_damage,
+              }
+            ]
+          },
+          {
+            level: 2,
+            name: "beguiling_influence",
+
+            skills: [
+              {
+                level:2,
+                deception: "mastery",
+                persuasion: "mastery",
+              }
+            ]
+          },
+          {
+            level: 2,
+            condition: "spell_eldritch_blast",
+            name: "repelling_blast",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.eldritch_blast_push,
+              }
+            ]
+          },
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_talisman",
+          //   name: "rebuke_of_the_talisman",
+
+          //   spells: [
+          //     {
+          //       level: 2,
+          //       spell: spells.rebuke_of_the_talisman,
+          //     }
+          //   ],
+          // },
+          {
+            level: 2,
+            name: "eldritch_sight",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.detect_magic_warlock,
+              }
+            ],
+          },
+          {
+            level: 2,
+            name: "misty_visions",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.silent_image_warlock,
+              }
+            ],
+          },
+          //TODO - добавить остальные уровни (заблокировано заклинаниями)
+        ],
+      },
+      {
+        level: 1,
+        type: "skills",
+        name: "skills",
+        select: 2,
+        bonus: "mastery",
+        list: [
+          "investigation",
+          "intimidation",
+          "history",
+          "arcana",
+          "deception",
+          "nature",
+          "religion"
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.club, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.dagger, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.spear, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.javelin, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.sickle, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.dart, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.sling, 1]],
+                inventory: [[items.bullet, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.club, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.dagger, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.spear, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.javelin, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.sickle, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.dart, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.sling, 1]],
+                inventory: [[items.bullet, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "equipment",
+        select: 1,
+        list: [
+          {
+            inventory: [
+              [items.component_pouch, 1],
+            ],
+          },
+          {
+            inventory_packs: [
+              [items.focus, 1],
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "inventory_packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.scholars, 1],
+          [packs.dungeoneers, 1],
+        ],
+      },
+      {
+        level: 1,
+        type: "spells",
+        name: "spells_0",
+        select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4,
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["warlock"],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+    ]
+  }, // без Арканумов
+
   //NOTE - Wizard -------------------------------------------------------------------------
 
   wizard: {
@@ -3750,6 +4523,7 @@ export default {
       {
         level: 1,
         name: "spell_slots",
+        type: "long_rest",
         list: [
           ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -3894,6 +4668,7 @@ export default {
               {
                 level: 2,
                 name: "magical_protection",
+                type: "long_rest",
                 list: [
                   [
                     "",
@@ -4115,6 +4890,7 @@ export default {
       {
         level: 1,
         name: "bardic_inspiration_slots",
+        type: "long_rest",
         foo: "Str_Level_5_10_15__Num_CHA_Min1",
         //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Она становится к8 на 5 уровне, к10 на 10 уровне и к12 на 15 уровне.
         //Вы можете использовать это умение количество раз, равное модификатору вашей Харизмы, но как минимум один раз.
@@ -4126,6 +4902,7 @@ export default {
       {
         level: 1,
         name: "spell_slots",
+        type: "long_rest",
         list: [
           ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
           ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -4354,25 +5131,7 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 2, //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["bard"],
-      },
-      {
-        level: 4,
-        type: "spells",
-        name: "spells_0",
-        select: 1, //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["bard"],
-      },
-      {
-        level: 10,
-        type: "spells",
-        name: "spells_0",
-        select: 1, //2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4
+        select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4
         mana_min: 0,
         mana_max: 0,
         classes: ["bard"],

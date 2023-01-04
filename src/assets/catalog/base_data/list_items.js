@@ -447,4 +447,18 @@ export default {
     cost: 1000,
     weight: 3,
   },
+
+  book_of_shadows: {
+    name: "book_of_shadows",
+    details: "book_of_shadows_details",
+    cost: 5000,
+    weight: 1,
+  },
+
+  talisman: {
+    name: "talisman",
+    details: "talisman_details",
+    cost: 2500,
+    weight: 0.1,
+  },
 };

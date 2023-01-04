@@ -99,10 +99,10 @@ export default {
             //   spell: spells.cleric_see_past,
             // },
 
-            {
-              level: 2,
-              spell: spells.wild_shape,
-            },
+            // {
+            //   level: 2,
+            //   spell: spells.wild_shape,
+            // },
 
             // {
             //   level: 1,

@@ -738,6 +738,7 @@ export default {
         for_each_lvl_incl_1:"за каждый уровень включая первый",
         charm_against: "против 😍 Очарования",
         magic_sleep_against:"к магическому 🥱 Усыплению",
+        sleep_against:"к 🥱 Усыплению",
         trans_details: "— глубокая медитация вместо сна, до 4 часов",
         stealth_in_wild_details:"— даже если слабо заслонены листвой / дождем / снегопадом / туманом...",
         any_cantrip_wizard: "1 любого заговора Волшебника",
@@ -3094,7 +3095,8 @@ export default {
     spell_divine_strike_nature_details: spells.divine_strike_nature_details,
     spell_divine_strike_expanded: spells.divine_strike_expanded,
 
-    inspired_attack_slots: "Наснага",
+    inspired_attack_slots: "Воодушевления",
+    inspired_attack_slot: "1× Воодушевление",
 
     to_no_magic_weapon: "урону от немагического оружия",
 
@@ -3160,4 +3162,178 @@ export default {
     spell_crown_of_light: spells.crown_of_light,
     spell_crown_of_light_details: spells.crown_of_light_details,
     spell_crown_of_light_expanded: spells.crown_of_light_expanded,
+
+    warlock: classes.warlock,
+    warlock_details: classes.warlock_details,
+
+    warlock_protector: "покровитель",
+
+    archifey: classes.archifey,
+    archifey_details: classes.archifey_details,
+
+    fiend: classes.fiend,
+    fiend_details: classes.fiend_details,
+
+    great_old_one: classes.great_old_one,
+    great_old_one_details: classes.great_old_one_details,
+
+    pact_of_the_tome: "Гримуара",
+    pact_of_the_tome_details: "Ваш покровитель дарует вам гримуар, который называется «Книга теней».",
+
+    book_of_shadows:"Книга Теней",
+    book_of_shadows_details:"Гримуар, который вам даровал ваш покровитель. В нем записаны 3 ваших заклинания. Если вы теряете книгу, вам нужно провести ритуал длительностью в 1 час, чтобы получить новую от своего покровителя. Вы можете провести этот ритуал во время короткого или продолжительного отдыха. Предыдущая книга при этом уничтожается. Книга обращается в прах при вашей смерти.",
+
+    pact_of_the_blade: "Клинка",
+    pact_of_the_blade_details: "Ваш покровитель дарует вам оружие договора.",
+
+    spell_create_weapon: spells.create_weapon,
+    spell_create_weapon_details: spells.create_weapon_details,
+    spell_create_weapon_expanded: spells.create_weapon_expanded,
+
+    spell_convert_weapon: spells.convert_weapon,
+    spell_convert_weapon_details: spells.convert_weapon_details,
+    spell_convert_weapon_expanded: spells.convert_weapon_expanded,
+
+    pact_of_the_blade: "Цепи",
+    pact_of_the_blade_details: "Ваш покровитель дарует вам потустороннего помощника. Вы можете выбрать одну из особых форм фамилиара: бес, квазит, псевдодракон или спрайт.",
+
+    spell_find_familiar_warlock: spells.find_familiar_warlock,
+    spell_find_familiar_warlock_details: spells.find_familiar_warlock_details,
+    spell_find_familiar_warlock_expanded: spells.find_familiar_warlock_expanded,
+
+    pact_of_the_blade: "Талисмана",
+    pact_of_the_blade_details: "Ваш покровитель дает вам талисман, который может помочь вам пройти проверку способности.",
+
+    talisman: "Талисман",
+    talisman_details: "Когда владелец проваливает проверку способности, он может добавить к броску d4, потенциально превратив бросок в успех. Это преимущество можно использовать число раз, равное вашему бонусу мастерства, и все израсходованные использования восстанавливаются, когда вы заканчиваете продолжительный отдых. Если вы потеряете талисман, вы можете провести часовую церемонию, чтобы получить замену от своего покровителя. Этот обряд можно проводить во время короткого или продолжительного отдыха, и он разрушает предыдущий амулет. Когда вы умираете, талисман превращается в пепел.",
+    talisman_slots: "Помощь талисмана",
+
+    fey_presence_slots: "Фейская внешность",
+    fey_presence_slot: "1× Фейская внешность",
+
+    invocations: "воззвания",
+
+    spell_fey_presence: spells.fey_presence,
+    spell_fey_presence_details: spells.fey_presence_details,
+    spell_fey_presence_expanded: spells.fey_presence_expanded,
+
+    // -------
+
+    aspect_of_the_moon: "Аспект луны",
+    to_sleep: "спать",
+
+    gaze_of_two_minds: "взор двух умов",
+
+    spell_gaze_of_two_minds: spells.gaze_of_two_minds,
+    spell_gaze_of_two_minds_details: spells.gaze_of_two_minds_details,
+    spell_gaze_of_two_minds_expanded: spells.gaze_of_two_minds_expanded,
+
+    thief_of_five_fates: "Вор пяти судеб",
+    thief_of_five_fates_details: "Вы можете один раз сотворить заклинание Порча, используя ячейку маны колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.",
+
+    eyes_of_the_rune_keeper: "Глаза хранителя рун",
+    able_to_read: "Способность прочесть",
+    any_texts: "любые письмена",
+
+    voice_of_the_chain_master: "Голос хозяина",
+    able_to_speak: "Способность говорить",
+    through_familiar: "через фамилиара",
+
+    gift_of_the_ever_living_ones: "Дар вечноживых",
+    if_familiar_is_in_100f: "при фамилиаре в пределах 100ф",
+
+    investment_of_the_chain_master: "Вклад хозяина",
+    familiar: "фамилиар",
+
+    spell_investment_of_the_chain_master: spells.investment_of_the_chain_master,
+    spell_investment_of_the_chain_master_details: spells.investment_of_the_chain_master_details,
+    spell_investment_of_the_chain_master_expanded: spells.investment_of_the_chain_master_expanded,
+
+    armor_of_shadows: "Доспех теней",
+
+    spell_mage_armor_shadow: spells.mage_armor_shadow,
+
+    devils_sight: "Дьявольское зрение",
+
+    able_to_see: "Способность видеть",
+    in_magic_darkness: "в магической темноте",
+
+    spell_speak_with_animals_warlock: spells.speak_with_animals_warlock,
+
+    book_of_antient_secrets: "Книга древних секретов",
+
+    lance_of_lethargy: "Копье усталости",
+
+    slowing: "замедление",
+
+    spell_eldritch_blast_slow: spells.eldritch_blast_slow,
+    spell_eldritch_blast_slow_details: spells.eldritch_blast_slow_details,
+    spell_eldritch_blast_slow_expanded: spells.eldritch_blast_slow_expanded,
+
+    mask_of_many_faces: "Маска многих лиц",
+
+    spell_disguise_self_warlock: spells.disguise_self_warlock,
+
+    eldritch_mind: "Таинственный разум",
+
+    on_concentration: "на поддержание концентрации заклинания",
+
+    eldritch_spear: "Мистическое копье",
+
+    spell_eldritch_blast_distant: spells.eldritch_blast_distant,
+    spell_eldritch_blast_distant_details: spells.eldritch_blast_distant_details,
+    spell_eldritch_blast_distant_expanded: spells.eldritch_blast_distant_expanded,
+
+    fiendish_vigor: "Мощь исчадия",
+
+    spell_false_life_warlock: spells.false_life_warlock,
+    spell_false_life_warlock_expanded: spells.false_life_warlock_expanded,
+
+    agonizing_blast: "Мучительный заряд",
+
+    spell_eldritch_blast_damage: spells.eldritch_blast_damage,
+    spell_eldritch_blast_damage_details: spells.eldritch_blast_damage_details,
+    spell_eldritch_blast_damage_expanded: spells.eldritch_blast_damage_expanded,
+
+    beguiling_influence: "Чарующее влияние",
+
+    repelling_blast: "Отталкивающий заряд",
+
+    spell_eldritch_blast_push: spells.eldritch_blast_push,
+    spell_eldritch_blast_push_details: spells.eldritch_blast_push_details,
+    spell_eldritch_blast_push_expanded: spells.eldritch_blast_push_expanded,
+
+    rebuke_of_the_talisman: "Мстительный талисман",
+
+    spell_rebuke_of_the_talisman: spells.rebuke_of_the_talisman,
+    spell_rebuke_of_the_talisman_details: spells.rebuke_of_the_talisman_details,
+    spell_rebuke_of_the_talisman_expanded: spells.rebuke_of_the_talisman_expanded,
+
+    eldritch_sight: "Колдовской взгляд",
+
+    spell_detect_magic_warlock: spells.detect_magic_warlock,
+
+    misty_visions: "Туманные видения",
+
+    spell_silent_image_warlock: spells.silent_image_warlock,
+
+    improved_pact_weapon:"Улучшенное оружие договора",
+
+    arcanum_slots: "Арканумы",
+
+    inner_reserve_slots: "Внутренний резерв",
+    inner_reserve_slot: "1× Внутренний резерв",
+
+    spell_restore_mana_warlock: spells.restore_mana_warlock,
+    spell_restore_mana_warlock_details: spells.restore_mana_warlock_details,
+    spell_restore_mana_warlock_expanded: spells.restore_mana_warlock_expanded,
+
+    slot_need: "Для восстановления этих ячеек требуется:",
+    short_rest: "Короткий отдых (от 1ч)",
+    long_rest: "Продолжительный отдых (от 8ч)",
+
+    short_rest_details: "Короткий отдых это период длиной как минимум 1 час, во время которого персонаж не делает ничего напряжённого кроме поглощения пищи, питья, чтения и обработки ран.",
+
+    long_rest_details: "Продолжительный отдых это долгий период длительностью как минимум 8 часов, во время которого персонаж как минимум 6 часов спит, и не более 2 часов занимается лёгкой деятельностью: читает, разговаривает, ест и стоит на страже. Если отдых прерывается напряжённой активностью (как минимум 1 час ходьбы, сражения, накладывания заклинания или другая подобная деятельность), персонажи должны начать отдых с начала, чтобы получить от него преимущества.<br/><br/>"+
+    "Персонаж не может получить преимущества от второго продолжительного отдыха за 24-часовой период, и у персонажа должен быть хотя бы 1 пункт здоровья в начале отдыха, чтобы получить от него преимущества.",
 }

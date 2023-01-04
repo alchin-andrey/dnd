@@ -5129,6 +5129,792 @@ export default {
     {},
   ],
 
+  // ------
+
+  fey_presence: [
+    {
+      name: "spell_fey_presence",
+      details: "spell_fey_presence_details",
+      expanded: "spell_fey_presence_expanded",
+
+      type: "ability",
+      slot_type: "fey_presence_slot",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 10,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    }
+  ],
+
+  create_weapon: [
+    {
+      name: "spell_create_weapon",
+      details: "spell_create_weapon_details",
+      expanded: "spell_create_weapon_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  convert_weapon: [
+    {
+      name: "spell_convert_weapon",
+      details: "spell_convert_weapon_details",
+      expanded: "spell_convert_weapon_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  find_familiar_warlock: [
+    {
+      //0
+      name: "spell_find_familiar_warlock",
+      details: "spell_find_familiar_warlock_details",
+      expanded: "spell_find_familiar_warlock_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["material_familiar_10gold", "somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  gaze_of_two_minds: [
+    {
+      //0
+      name: "spell_gaze_of_two_minds",
+      details: "spell_gaze_of_two_minds_details",
+      expanded: "spell_gaze_of_two_minds_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: null,
+      spell_duration: 2,
+      spell_duration_units: "rounda",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  investment_of_the_chain_master: [
+    {
+      //0
+      name: "spell_investment_of_the_chain_master",
+      details: "spell_investment_of_the_chain_master_details",
+      expanded: "spell_investment_of_the_chain_master_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "familiar",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  mage_armor_shadow: [
+    {
+      //0
+      name: "spell_mage_armor_shadow",
+      details: "spell_mage_armor_details",
+      expanded: "spell_mage_armor_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "armor_class",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: 3,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  speak_with_animals_warlock: [
+    {
+      name: "spell_speak_with_animals_warlock",
+      details: "spell_speak_with_animals_details",
+      expanded: "spell_speak_with_animals_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  eldritch_blast_slow: [
+    {
+      //0
+      name: "spell_eldritch_blast_slow",
+      details: "spell_eldritch_blast_slow_details",
+      expanded: "spell_eldritch_blast_slow_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "slowing",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  disguise_self_warlock: [
+    {
+      //0
+      name: "spell_disguise_self_warlock",
+      details: "spell_disguise_self_details",
+      expanded: "spell_disguise_self_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "intelligence",
+      impact_size_saved: null,
+    },
+  ],
+
+  eldritch_blast_distant: [
+    {
+      //0
+      name: "spell_eldritch_blast_distant",
+      details: "spell_eldritch_blast_distant_details",
+      expanded: "spell_eldritch_blast_distant_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 300,
+
+      parts: ["none"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  false_life_warlock: [
+    {
+      //1
+      name: "spell_false_life_warlock",
+      details: "spell_false_life_details",
+      expanded: "spell_false_life_warlock_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "hp_bonus",
+      impact_damage_type: "temporary",
+
+      impact_size_foo: null, 
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 4,
+      impact_size_pls: 4,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  eldritch_blast_damage: [
+    {
+      //0
+      name: "spell_eldritch_blast_damage",
+      details: "spell_eldritch_blast_damage_details",
+      expanded: "spell_eldritch_blast_damage_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_CHA",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  eldritch_blast_push: [
+    {
+      //0
+      name: "spell_eldritch_blast_push",
+      details: "spell_eldritch_blast_push_details",
+      expanded: "spell_eldritch_blast_push_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  rebuke_of_the_talisman: [
+    {
+      //0
+      name: "spell_rebuke_of_the_talisman",
+      details: "spell_rebuke_of_the_talisman_details",
+      expanded: "spell_rebuke_of_the_talisman_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+
+      impact_size_foo: "Num_Mastery",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  detect_magic_warlock: [
+    {
+      //0
+      name: "spell_detect_magic_warlock",
+      details: "spell_detect_magic_details",
+      expanded: "spell_detect_magic_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "contentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  silent_image_warlock: [
+    {
+      //1
+      name: "spell_silent_image_warlock",
+      details: "spell_silent_image_details",
+      expanded: "spell_silent_image_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: null,
+      aim_range: 60,
+      aim_aoe: "cube",
+      aim_aoe_size: 15,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "intelligence",
+      impact_size_saved: null,
+    },
+  ],
+
+  restore_mana_warlock: [
+    {
+      //1
+      name: "spell_restore_mana_warlock",
+      details: "spell_restore_mana_warlock_details",
+      expanded: "spell_restore_mana_warlock_expanded",
+
+      type: "ability",
+      slot_type: "inner_reserve_slot",
+      classes: ["warlock"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: null,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 
   // All spells / 0 ----------------------------------------------------------
 
