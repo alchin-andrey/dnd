@@ -3217,8 +3217,6 @@ export default {
     spell_fey_presence_details: spells.fey_presence_details,
     spell_fey_presence_expanded: spells.fey_presence_expanded,
 
-    // -------
-
     aspect_of_the_moon: "Аспект луны",
     to_sleep: "спать",
 

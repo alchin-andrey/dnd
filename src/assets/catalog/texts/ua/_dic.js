@@ -3218,4 +3218,124 @@ export default {
     spell_fey_presence: spells.fey_presence,
     spell_fey_presence_details: spells.fey_presence_details,
     spell_fey_presence_expanded: spells.fey_presence_expanded,
+
+    aspect_of_the_moon: "Аспект місяця",
+    to_sleep: "спати",
+
+    gaze_of_two_minds: "Погляд двох умів",
+
+    spell_gaze_of_two_minds: spells.gaze_of_two_minds,
+    spell_gaze_of_two_minds_details: spells.gaze_of_two_minds_details,
+    spell_gaze_of_two_minds_expanded: spells.gaze_of_two_minds_expanded,
+
+    thief_of_five_fates: "Крадій п'яти доль",
+    thief_of_five_fates_details: "Ви можете один раз створити закляття Пристріт, використовуючи слот мани. Ви не можете зробити це повторно, доки не закінчите тривалий відпочинок.",
+
+    //NOTE - зупинився тут
+
+    eyes_of_the_rune_keeper: "Очі зберігача рун",
+    able_to_read: "Здатність прочитати",
+    any_texts: "будь-які письмена",
+
+    voice_of_the_chain_master: "Голос господаря",
+    able_to_speak: "Здатність говорити",
+    through_familiar: "через фамільяра",
+
+    gift_of_the_ever_living_ones: "Дар вічноживих",
+    if_familiar_is_in_100f: "при фамільярі в межах 100ф",
+
+    investment_of_the_chain_master: "Внесок господаря",
+    familiar: "фамільяр",
+
+    spell_investment_of_the_chain_master: spells.investment_of_the_chain_master,
+    spell_investment_of_the_chain_master_details: spells.investment_of_the_chain_master_details,
+    spell_investment_of_the_chain_master_expanded: spells.investment_of_the_chain_master_expanded,
+
+    armor_of_shadows: "Обладунок тіней",
+
+    spell_mage_armor_shadow: spells.mage_armor_shadow,
+
+    devils_sight: "Диявольський зір",
+
+    able_to_see: "Здатність бачити",
+    in_magic_darkness: "у магічній темряві",
+
+    spell_speak_with_animals_warlock: spells.speak_with_animals_warlock,
+
+    book_of_antient_secrets: "Книга стародавніх секретів",
+
+    lance_of_lethargy: "Спис втоми",
+
+    slowing: "уповільнення",
+
+    spell_eldritch_blast_slow: spells.eldritch_blast_slow,
+    spell_eldritch_blast_slow_details: spells.eldritch_blast_slow_details,
+    spell_eldritch_blast_slow_expanded: spells.eldritch_blast_slow_expanded,
+
+    mask_of_many_faces: "Маска багатьох облич",
+
+    spell_disguise_self_warlock: spells.disguise_self_warlock,
+
+    eldritch_mind: "Таємничий розум",
+
+    on_concentration: "на підтримку концентрації заклинання",
+
+    eldritch_spear: "Містичний спис",
+
+    spell_eldritch_blast_distant: spells.eldritch_blast_distant,
+    spell_eldritch_blast_distant_details: spells.eldritch_blast_distant_details,
+    spell_eldritch_blast_distant_expanded: spells.eldritch_blast_distant_expanded,
+
+    fiendish_vigor: "Потужність породження",
+
+    spell_false_life_warlock: spells.false_life_warlock,
+    spell_false_life_warlock_expanded: spells.false_life_warlock_expanded,
+
+    agonizing_blast: "Болісний заряд",
+
+    spell_eldritch_blast_damage: spells.eldritch_blast_damage,
+    spell_eldritch_blast_damage_details: spells.eldritch_blast_damage_details,
+    spell_eldritch_blast_damage_expanded: spells.eldritch_blast_damage_expanded,
+
+    beguiling_influence: "Чаруючий вплив",
+
+    repelling_blast: "Відштовхуючий заряд",
+
+    spell_eldritch_blast_push: spells.eldritch_blast_push,
+    spell_eldritch_blast_push_details: spells.eldritch_blast_push_details,
+    spell_eldritch_blast_push_expanded: spells.eldritch_blast_push_expanded,
+
+    rebuke_of_the_talisman: "Мстивий талісман",
+
+    spell_rebuke_of_the_talisman: spells.rebuke_of_the_talisman,
+    spell_rebuke_of_the_talisman_details: spells.rebuke_of_the_talisman_details,
+    spell_rebuke_of_the_talisman_expanded: spells.rebuke_of_the_talisman_expanded,
+
+    eldritch_sight: "Чаклунський погляд",
+
+    spell_detect_magic_warlock: spells.detect_magic_warlock,
+
+    misty_visions: "Туманні видіння",
+
+    spell_silent_image_warlock: spells.silent_image_warlock,
+
+    improved_pact_weapon:"Покращена зброя договору",
+
+    arcanum_slots: "Аркануми",
+
+    inner_reserve_slots: "Внутрішній резерв",
+    inner_reserve_slot: "1× Внутрішній резерв",
+
+    spell_restore_mana_warlock: spells.restore_mana_warlock,
+    spell_restore_mana_warlock_details: spells.restore_mana_warlock_details,
+    spell_restore_mana_warlock_expanded: spells.restore_mana_warlock_expanded,
+
+    slot_need: "Для відновлення цих слотів потрібно:",
+    short_rest: "Короткий відпочинок (від 1 години)",
+    long_rest: "Тривалий відпочинок (від 8 годин)",
+
+    short_rest_details: "Короткий відпочинок це період довжиною щонайменше 1 годину, під час якого персонаж не робить нічого напруженого крім поглинання їжі, пиття, читання та обробки ран.",
+
+    long_rest_details: "Тривалий відпочинок це довгий період тривалістю щонайменше 8 годин, під час якого персонаж як мінімум 6 годин спить, і не більше 2 годин займається легкою діяльністю: читає, розмовляє, їсть та стоїть на варті. Якщо відпочинок переривається напруженою активністю (щонайменше 1 година ходьби, битви, накладення заклинання або інша подібна діяльність), персонажі повинні почати відпочинок спочатку, щоб отримати від нього переваги.<br/><br/>"+
+    "Персонаж не може отримати переваги від другого тривалого відпочинку за 24-годинний період, і у персонажа має бути хоча б 1 пункт здоров'я на початку відпочинку, щоб отримати від нього переваги.",
 }
