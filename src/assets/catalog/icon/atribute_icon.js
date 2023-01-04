@@ -25,4 +25,8 @@ export default {
 
   initiative: '<path fill-rule="evenodd" clip-rule="evenodd" d="M10 5H8V11L5 11V13L8 13L9 13L10 13H13V11H10V5Z" fill="white"/>',
 
+  long_rest: '<path fill-rule="evenodd" clip-rule="evenodd" d="M4 9C4 11.7614 6.23858 14 9 14C11.7614 14 14 11.7614 14 9C14 6.23858 11.7614 4 9 4C6.23858 4 4 6.23858 4 9ZM9 3C5.68629 3 3 5.68629 3 9C3 12.3137 5.68629 15 9 15C12.3137 15 15 12.3137 15 9C15 5.68629 12.3137 3 9 3Z" fill="white"/> <path d="M9 9V3L13.5 5.5L14.5 10L13 13L9 9Z" fill="white"/>',
+
+  short_rest: '<path fill-rule="evenodd" clip-rule="evenodd" d="M4 9C4 11.7614 6.23858 14 9 14C11.7614 14 14 11.7614 14 9C14 6.23858 11.7614 4 9 4C6.23858 4 4 6.23858 4 9ZM9 3C5.68629 3 3 5.68629 3 9C3 12.3137 5.68629 15 9 15C12.3137 15 15 12.3137 15 9C15 5.68629 12.3137 3 9 3Z" fill="white"/> <path d="M9 9V3.5L11 4L9 9Z" fill="white"/>',
+
 };

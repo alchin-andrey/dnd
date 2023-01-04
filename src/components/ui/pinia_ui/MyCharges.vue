@@ -1,88 +1,112 @@
 <template>
 	<div class="column jbm-300">
+		<div class="flex_row">
+			<svg class="icon"
+				width="18"
+				height="18"
+				viewBox="0 0 18 18"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				v-html="atribute_icon[icon_Image]"
+			/>
 			<div class="title">
 				{{ t_Title }}
 			</div>
-			<div class="items">
-				<section v-for="item in list_Filter_Arr" :key="item" class="column_vis">
-					<div class="small">{{ Str(item) }}</div>
-          <div class="charge_text" v-if="Inf(item)">{{ Inf(item) }}</div>
-					<div v-else class="visual">
-						<div class="cube cube_charge" v-for="n in cube_Numb(item)" :key="n"></div>
-					</div>
-				</section>
-			</div>
+		</div>
+		<div class="items">
+			<section v-for="item in list_Filter_Arr" :key="item" class="column_vis">
+				<div class="small">{{ Str(item) }}</div>
+				<div class="charge_text" v-if="Inf(item)">{{ Inf(item) }}</div>
+				<div v-else class="visual">
+					<div
+						class="cube cube_charge"
+						v-for="n in cube_Numb(item)"
+						:key="n"
+					></div>
+				</div>
+			</section>
+		</div>
 	</div>
 </template>
 
 <script>
+import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/MY/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "MyCharges",
+	data() {
+		return {
+			atribute_icon: atribute_icon,
+		};
+	},
 	props: {
-    charge: {
-      type: Object,
+		charge: {
+			type: Object,
 			default: null,
-    },
+		},
 	},
 
 	computed: {
-    // STORES
+		// STORES
 		...mapState(useMYStore, ["MY"]),
-    ...mapState(useStatsStore, ["stats_Mod"]),
+		...mapState(useStatsStore, ["stats_Mod"]),
 
 		t_Title() {
 			return this.t(this.charge.name);
 		},
 
-    Str: (state) => (item) => {
-      let name = item[0]
-      let str_foo = state.Value_Foo("Str");
-      if (name) {
-        return `${name} :`;
-      } else if(str_foo) {
-        return `${str_foo} :`;
-      } else {
-        return null;
-      }
+		icon_Image() {
+			return this.charge.type;
 		},
 
-    list_Filter_Arr() {
-      let lvl = this.MY.level;
-      let numb_foo = this.Value_Foo("Num");
-      return this.charge.list.filter(el => (el[lvl] + numb_foo) !== 0);
-    },
+		Str: (state) => (item) => {
+			let name = item[0];
+			let str_foo = state.Value_Foo("Str");
+			if (name) {
+				return `${name} :`;
+			} else if (str_foo) {
+				return `${str_foo} :`;
+			} else {
+				return null;
+			}
+		},
+
+		list_Filter_Arr() {
+			let lvl = this.MY.level;
+			let numb_foo = this.Value_Foo("Num");
+			return this.charge.list.filter((el) => el[lvl] + numb_foo !== 0);
+		},
 
 		cube_Numb: (state) => (item) => {
-      let lvl = state.MY.level;
-      let numb = item[lvl];
-      let numb_foo = state.Value_Foo("Num");
-			return !isNaN(numb) ? numb + numb_foo : null
+			let lvl = state.MY.level;
+			let numb = item[lvl];
+			let numb_foo = state.Value_Foo("Num");
+			return !isNaN(numb) ? numb + numb_foo : null;
 		},
 
-    Inf: (state) => (item) => {
-      let lvl = state.MY.level;
-      let numb = item[lvl];
-			return typeof numb === "string" ? state.t(numb) : null
-    },
+		Inf: (state) => (item) => {
+			let lvl = state.MY.level;
+			let numb = item[lvl];
+			return typeof numb === "string" ? state.t(numb) : null;
+		},
 
-    Value_Foo: (state) => (Val) => {
+		Value_Foo: (state) => (Val) => {
 			let foo = state.charge.foo;
-      let numb = null;
+			let numb = null;
 			if (foo) {
-        let str = foo.split("__");
+				let str = foo.split("__");
 				for (let i in str) {
-          str[i].substr(0, 3) === Val ? numb = state[str[i]] : null;
+					str[i].substr(0, 3) === Val ? (numb = state[str[i]]) : null;
 				}
 			}
 			return numb;
 		},
 
-    Str_Level_5_10_15() {
+		Str_Level_5_10_15() {
 			let lvl = this.MY.level;
-      let kof = null;
+			let kof = null;
 			if (lvl < 5) {
 				kof = 6;
 			} else if (lvl < 10) {
@@ -93,30 +117,38 @@ export default {
 				kof = 12;
 			}
 			return `d${kof}`;
-    },
+		},
 
-    Num_CHA_Min0 () {
-      let mod = this.stats_Mod("charisma");
+		Num_CHA_Min0() {
+			let mod = this.stats_Mod("charisma");
 			return mod < 0 ? 0 : mod;
-    },
-    
-    Num_CHA_Min1() {
-      let mod = this.stats_Mod("charisma");
-      return mod <= 0 ? 1 : mod;
-    },
+		},
 
-    Num_WIS_Min1() {
-      let mod = this.stats_Mod("wisdom");
-      return mod <= 0 ? 1 : mod;
-    },
+		Num_CHA_Min1() {
+			let mod = this.stats_Mod("charisma");
+			return mod <= 0 ? 1 : mod;
+		},
+
+		Num_WIS_Min1() {
+			let mod = this.stats_Mod("wisdom");
+			return mod <= 0 ? 1 : mod;
+		},
 	},
 };
 </script>
 
 <style scoped>
+.flex_row {
+  display: flex;
+  gap: 4px;
+}
+
+/* .icon {
+  margin-right: 4px;
+} */
 .column {
 	display: flex;
-  justify-content: space-between;
+	justify-content: space-between;
 	min-height: 18px;
 }
 
@@ -124,21 +156,21 @@ export default {
 	display: flex;
 }
 
-.title {
+/* .title {
 	margin-left: 22px;
-  position: relative;
+	position: relative;
 }
 
 .title::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  background: #ffffff;
-  position: absolute;
-  top: 0;
-  left: calc(-18px/2 - 4px/2 - 4px);
-  top: calc(18px/2 - 4px/2);
-}
+	content: "";
+	width: 4px;
+	height: 4px;
+	background: #ffffff;
+	position: absolute;
+	top: 0;
+	left: calc(-18px / 2 - 4px / 2 - 4px);
+	top: calc(18px / 2 - 4px / 2);
+} */
 
 .items {
 	text-align: end;
@@ -164,10 +196,10 @@ export default {
 	background: #00e0ff;
 }
 .charge_text {
-  width: 98px;
-  margin-left: 12px;
-  color: #00e0ff;
-  text-align: start;
+	width: 98px;
+	margin-left: 12px;
+	color: #00e0ff;
+	text-align: start;
 }
 
 .small {

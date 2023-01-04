@@ -9,13 +9,13 @@
 				@click="showSettings__Main('lang')"
 				:active="main_page.shown.lang"
 			>
-				<!-- <emoji v-for="n in em_Icon" :key="n"
+				<emoji v-for="n in em_Icon" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
 					:set="set_emoji"
 					:size="15"
-				/> -->
-				<img class="header_icon" :src="lang_Icon" alt="Lang_Icon" />
+				/>
+				<!-- <img class="header_icon" :src="lang_Icon" alt="Lang_Icon" /> -->
 			</my-header-card>
 			<my-header-card
 				@click="showSettings__Main('lvl')"

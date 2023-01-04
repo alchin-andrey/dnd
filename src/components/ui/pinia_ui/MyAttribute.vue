@@ -237,7 +237,7 @@ export default {
 }
 
 .column {
-	width: 340px;
+	/* width: 340px; */
 	display: flex;
 	min-height: 18px;
 	justify-content: space-between;

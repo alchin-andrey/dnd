@@ -1,14 +1,14 @@
 <template>
 	<div class="int-400">
-		<img class="title" :src="Lang_Icon"/>
-		<!-- <div class="title">
+		<!-- <img class="title" :src="Lang_Icon"/> -->
+		<div class="title">
 				<emoji v-for="n in title" :key="n"
 					:data="emojiIndex"
 					:emoji="n"
 					:set="set_emoji"
 					:size="20"
 				/>
-		</div> -->
+		</div>
 		<div class="text">{{ text }}</div>
 	</div>
 </template>

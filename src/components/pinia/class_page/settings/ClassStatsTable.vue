@@ -196,6 +196,10 @@ export default {
 	gap: 2px;
 }
 
+/* .fix-width {
+  width: 98px;
+} */
+
 .cube {
   width: 8px;
 	height: 8px;
