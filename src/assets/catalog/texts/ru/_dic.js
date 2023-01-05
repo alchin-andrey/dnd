@@ -1505,6 +1505,8 @@ export default {
     spell_vicious_mockery_details: spells.vicious_mockery_details,
     spell_vicious_mockery_expanded: spells.vicious_mockery_expanded,
 
+    druid: classes.druid,
+
     spell_druidcraft: spells.druidcraft,
     spell_druidcraft_details: spells.druidcraft_details,
     spell_druidcraft_expanded: spells.druidcraft_expanded,

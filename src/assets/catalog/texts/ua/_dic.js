@@ -366,7 +366,7 @@ export default {
             loading_details:weapons.loading_details,
             weapon_light_details:weapons.light_details,
             weapon_heavy_details:weapons.heavy_details,
-            weapon_finesse: "фехтувальне",
+            weapon_finesse: "фехтувальна",
 
             ammunition:"боєприпас",
             bolt:"болт",

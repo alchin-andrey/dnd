@@ -1488,6 +1488,33 @@ export default {
     ],
   }, //20
 
+  //NOTE - Monk
+
+  monk: {
+    name: "monk",
+    details: "monk_details",
+
+    hp_dice: 8,
+    // x: hp_dice/2 + 1;
+    // hp_max: hp_dice + con.mod + ( x + con.mod ) * ( lvl - 1 ) + hp_bonus
+    //regen: = lvl * hp_dice
+
+    proficiencies: {
+      weapons: [weaponry.simple, weaponry.short_swords], // all ?
+    },
+
+    saving: ["strength", "dexterity"],
+    stats_base: [
+      "dexterity", // 15
+      "wisdom", // 14
+      "constitution", // 13
+      "strength", // 12
+      "charisma", // 10
+      "intelligence", // 8
+    ],
+    spell_attribute: "wisdom",
+  },
+
   //NOTE - Paladin -------------------------------------------------------------------------
 
   paladin: {
