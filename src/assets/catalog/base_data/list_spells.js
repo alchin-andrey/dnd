@@ -6076,7 +6076,7 @@ export default {
       aim_aoe_size: null,
 
       impact_type: "heal",
-      impact_damage_type: null,
+      impact_damage_type: "temporary",
 
       impact_size_foo: "Num_CHA_Plus_Lvl_Min1",
       impact_size_str: null,

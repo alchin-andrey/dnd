@@ -3338,4 +3338,59 @@ export default {
 
     long_rest_details: "Тривалий відпочинок це довгий період тривалістю щонайменше 8 годин, під час якого персонаж як мінімум 6 годин спить, і не більше 2 годин займається легкою діяльністю: читає, розмовляє, їсть та стоїть на варті. Якщо відпочинок переривається напруженою активністю (щонайменше 1 година ходьби, битви, накладення заклинання або інша подібна діяльність), персонажі повинні почати відпочинок спочатку, щоб отримати від нього переваги.<br/><br/>"+
     "Персонаж не може отримати переваги від другого тривалого відпочинку за 24-годинний період, і у персонажа має бути хоча б 1 пункт здоров'я на початку відпочинку, щоб отримати від нього переваги.",
+
+    ///
+
+    spell_misty_escape: spells.misty_escape,
+    spell_misty_escape_details: spells.misty_escape_details,
+    spell_misty_escape_expanded: spells.misty_escape_expanded,
+
+    misty_escape_slots: "Туманне зникнення",
+    misty_escape_slot: "1× Туманне зникнення",
+
+    spell_beguiling_defenses: spells.beguiling_defenses,
+    spell_beguiling_defenses_details: spells.beguiling_defenses_details,
+    spell_beguiling_defenses_expanded: spells.beguiling_defenses_expanded,
+
+    spell_dark_delirium: spells.dark_delirium,
+    spell_dark_delirium_details: spells.dark_delirium_details,
+    spell_dark_delirium_expanded: spells.dark_delirium_expanded,
+
+    dark_delirium_slots: "Темне марення",
+    dark_delirium_slot: "1× Темне марення",
+
+    spell_dark_ones_blessing: spells.dark_ones_blessing,
+    spell_dark_ones_blessing_details: spells.dark_ones_blessing_details,
+    spell_dark_ones_blessing_expanded: spells.dark_ones_blessing_expanded,
+
+    spell_dark_ones_own_luck: spells.dark_ones_own_luck,
+    spell_dark_ones_own_luck_details: spells.dark_ones_own_luck_details,
+    spell_dark_ones_own_luck_expanded: spells.dark_ones_own_luck_expanded,
+
+    dark_ones_own_luck_slots: "Талан Темного",
+    dark_ones_own_luck_slot: "1× Талан Темного",
+
+    one_choose_every_short_rest: "проти одного виду пошкодження (крім магічної та срібної зброї) раз на короткий відпочинок",
+
+    spell_hurl_through_hell: spells.hurl_through_hell,
+    spell_hurl_through_hell_details: spells.hurl_through_hell_details,
+    spell_hurl_through_hell_expanded: spells.hurl_through_hell_expanded,
+
+    hurl_through_hell_slots: "Кидок крізь пекло",
+    hurl_through_hell_slot: "1× Кидок крізь пекло",
+
+    telepatic_30f: "телепатично з будь-якою істотою, навіть без спільної мови",
+
+    spell_entropic_ward: spells.entropic_ward,
+    spell_entropic_ward_details: spells.entropic_ward_details,
+    spell_entropic_ward_expanded: spells.entropic_ward_expanded,
+
+    to_read_thoughts: "проти читання думок",
+    psychic_damage_against: "проти 🧠 Психічного пошкодження",
+
+    damage_back: "Пошкодження у відповідь",
+
+    spell_create_thrall: spells.create_thrall,
+    spell_create_thrall_details: spells.create_thrall_details,
+    spell_create_thrall_expanded: spells.create_thrall_expanded,
 }
