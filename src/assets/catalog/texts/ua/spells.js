@@ -2519,6 +2519,6 @@ export const silent_image_warlock = 'Безмовний образ [0]';
 
 export const restore_mana_warlock = 'Внутрішній резерв';
 
-export const restore_mana_warlock_details = 'Відновити всі комірки мани.';
+export const restore_mana_warlock_details = 'Відновити всі слоти мани.';
 
 export const restore_mana_warlock_expanded = 'Ви можете звернутися до внутрішнього резерву містичної сили, благаючи при цьому покровителя відновити витрачені слоти мани. Вам треба витратити 1 хвилину, благаючи покровителя, щоб відновити всі використані слоти мани. Ви повинні закінчити тривалий відпочинок, щоб застосувати це вміння знову.';

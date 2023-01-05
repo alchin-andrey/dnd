@@ -112,8 +112,8 @@ export default {
                 list: [
                   [
                     "d8",
-                    4,
-                    4,
+                    0,
+                    0,
                     4,
                     4,
                     4,
@@ -1548,7 +1548,7 @@ export default {
         name: "divine_channel_slots",
         type: "short_rest",
         list: [
-          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+          ["", 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ],
       },
       {
@@ -3810,6 +3810,31 @@ export default {
                   ["", 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1],
                 ],
               },
+              {
+                level: 6,
+                name: "misty_escape_slots",
+                type: "short_rest",
+                list: [
+                  ["", 0,0,0,0,0, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1],
+                ],
+              },
+              {
+                level: 14,
+                name: "dark_delirium_slots",
+                type: "short_rest",
+                list: [
+                  ["", 0,0,0,0,0, 0,0,0,0,0, 0,0,0,1,1, 1,1,1,1,1],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 10,
+                type: "advantage",
+                keyword: "immunity",
+                details: "charm_against",
+              },
             ],
 
             spells: [
@@ -3817,6 +3842,18 @@ export default {
                 level:1,
                 spell: spells.fey_presence,
               },
+              {
+                level:6,
+                spell: spells.misty_escape,
+              },
+              {
+                level:10,
+                spell: spells.beguiling_defenses,
+              }, 
+              {
+                level:14,
+                spell: spells.dark_delirium,
+              }, 
             ],
 
             settings: [
@@ -3854,22 +3891,77 @@ export default {
             name:"fiend",
             details:"fiend_details",
 
+            fines: [
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "resistance",
+                details: "one_choose_every_short_rest",
+              },
+            ],
+
+            charges: [
+              {
+                level: 1,
+                name: "dark_ones_own_luck_slots",
+                type: "short_rest",
+                list: [
+                  ["d10", 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1],
+                ],
+              },
+              {
+                level: 14,
+                name: "hurl_through_hell_slots",
+                type: "long_rest",
+                list: [
+                  ["", 0,0,0,0,0, 0,0,0,0,0, 0,0,0,1,1, 1,1,1,1,1],
+                ],
+              },
+            ],
+
             spells: [
               {
                 level:1,
-                spell: spells.burning_hands,
+                spell: spells.dark_ones_blessing,
               },
               {
-                level:1,
-                spell: spells.command,
+                level:6,
+                spell: spells.dark_ones_own_luck,
               },
               {
-                level:3,
-                spell: spells.blindness_deafness,
+                level:14,
+                spell: spells.hurl_through_hell,
               },
+            ],
+
+            settings: [
               {
-                level:3,
-                spell: spells.scorching_ray,
+                type: "spells",
+                name: "spells",
+                select: 2,
+                foo: "Sel_Warlock_Spells", //2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15
+                mana_min: 1,
+                mana_max: "Num_Warlock_Max_Spell_Slot", //1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,
+                classes: ["warlock"],
+                extra_items: [
+                  // Исчадие позволяет вам при изучении заклинаний колдуна выбирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
+                  {
+                    level:1,
+                    spell: spells.burning_hands,
+                  },
+                  {
+                    level:1,
+                    spell: spells.command,
+                  },
+                  {
+                    level:3,
+                    spell: spells.blindness_deafness,
+                  },
+                  {
+                    level:3,
+                    spell: spells.scorching_ray,
+                  },
+                ]
               },
             ],
           },
@@ -3877,22 +3969,83 @@ export default {
             name:"great_old_one",
             details:"great_old_one_details",
 
+            fines: [
+              {
+                level: 1,
+                type: "plus",
+                keyword: "able_to_speak",
+                details: "telepatic_30f",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "immunity",
+                details: "to_read_thoughts",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "resistance",
+                details: "psychic_damage_against",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "damage_back",
+                details: "psychic_w",
+              },
+            ],
+
+            charges: [
+              {
+                level: 6,
+                name: "entropic_ward_slots",
+                type: "short_rest",
+                list: [
+                  ["", 0,0,0,0,0, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1],
+                ],
+              },
+            ],
+
             spells: [
               {
-                level:1,
-                spell: spells.dissonant_whispers,
+                level:6,
+                spell: spells.entropic_ward,
               },
               {
-                level:1,
-                spell: spells.tashas_hideous_laughter,
+                level:14,
+                spell: spells.create_thrall,
               },
+            ],
+
+            settings: [
               {
-                level:3,
-                spell: spells.phantasmal_force,
-              },
-              {
-                level:3,
-                spell: spells.detect_thoughts,
+                type: "spells",
+                name: "spells",
+                select: 2,
+                foo: "Sel_Warlock_Spells", //2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15
+                mana_min: 1,
+                mana_max: "Num_Warlock_Max_Spell_Slot", //1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,
+                classes: ["warlock"],
+                extra_items: [
+                  // Ваш покравитель позволяет вам при изучении заклинаний колдуна выбирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
+                  {
+                    level:1,
+                    spell: spells.dissonant_whispers,
+                  },
+                  {
+                    level:1,
+                    spell: spells.tashas_hideous_laughter,
+                  },
+                  {
+                    level:3,
+                    spell: spells.phantasmal_force,
+                  },
+                  {
+                    level:3,
+                    spell: spells.detect_thoughts,
+                  },
+                ]
               },
             ],
           }
@@ -4467,7 +4620,7 @@ export default {
         type: "feats",
       },
     ]
-  }, // без Арканумов
+  }, // без Арканумов, воззваний, заклинаний
 
   //NOTE - Wizard -------------------------------------------------------------------------
 

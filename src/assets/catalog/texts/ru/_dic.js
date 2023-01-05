@@ -3334,4 +3334,57 @@ export default {
 
     long_rest_details: "Продолжительный отдых это долгий период длительностью как минимум 8 часов, во время которого персонаж как минимум 6 часов спит, и не более 2 часов занимается лёгкой деятельностью: читает, разговаривает, ест и стоит на страже. Если отдых прерывается напряжённой активностью (как минимум 1 час ходьбы, сражения, накладывания заклинания или другая подобная деятельность), персонажи должны начать отдых с начала, чтобы получить от него преимущества.<br/><br/>"+
     "Персонаж не может получить преимущества от второго продолжительного отдыха за 24-часовой период, и у персонажа должен быть хотя бы 1 пункт здоровья в начале отдыха, чтобы получить от него преимущества.",
+
+    spell_misty_escape: spells.misty_escape,
+    spell_misty_escape_details: spells.misty_escape_details,
+    spell_misty_escape_expanded: spells.misty_escape_expanded,
+
+    misty_escape_slots: "Туманное исчезновение",
+    misty_escape_slot: "1× Туманное исчезновение",
+
+    spell_beguiling_defenses: spells.beguiling_defenses,
+    spell_beguiling_defenses_details: spells.beguiling_defenses_details,
+    spell_beguiling_defenses_expanded: spells.beguiling_defenses_expanded,
+
+    spell_dark_delirium: spells.dark_delirium,
+    spell_dark_delirium_details: spells.dark_delirium_details,
+    spell_dark_delirium_expanded: spells.dark_delirium_expanded,
+
+    dark_delirium_slots: "Темное исступление",
+    dark_delirium_slot: "1× Темное исступление",
+
+    spell_dark_ones_blessing: spells.dark_ones_blessing,
+    spell_dark_ones_blessing_details: spells.dark_ones_blessing_details,
+    spell_dark_ones_blessing_expanded: spells.dark_ones_blessing_expanded,
+
+    spell_dark_ones_own_luck: spells.dark_ones_own_luck,
+    spell_dark_ones_own_luck_details: spells.dark_ones_own_luck_details,
+    spell_dark_ones_own_luck_expanded: spells.dark_ones_own_luck_expanded,
+
+    dark_ones_own_luck_slots: "Удача Темнейшего",
+    dark_ones_own_luck_slot: "1× Удача Темнейшего",
+
+    one_choose_every_short_rest: "против одного вида урона (кроме магического и серебрянного оружия) раз в короткий отдых",
+
+    spell_hurl_through_hell: spells.hurl_through_hell,
+    spell_hurl_through_hell_details: spells.hurl_through_hell_details,
+    spell_hurl_through_hell_expanded: spells.hurl_through_hell_expanded,
+
+    hurl_through_hell_slots: "Бросок сквозь ад",
+    hurl_through_hell_slot: "1× Бросок сквозь ад",
+
+    telepatic_30f: "телепатически с любым существом, даже без общего языка",
+
+    spell_entropic_ward: spells.entropic_ward,
+    spell_entropic_ward_details: spells.entropic_ward_details,
+    spell_entropic_ward_expanded: spells.entropic_ward_expanded,
+
+    to_read_thoughts: "против чтения мыслей",
+    psychic_damage_against: "против 🧠 Психического урона",
+
+    damage_back: "Ответный урон",
+
+    spell_create_thrall: spells.create_thrall,
+    spell_create_thrall_details: spells.create_thrall_details,
+    spell_create_thrall_expanded: spells.create_thrall_expanded,
 }
