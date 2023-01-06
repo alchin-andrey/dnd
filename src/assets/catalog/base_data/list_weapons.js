@@ -1,34 +1,32 @@
 import weaponry from "./kinds_weapons.js";
 
 export default {
+  // Простое рукопашное
 
-// Простое рукопашное
+  quarterstaff: {
+    name: "quarterstaff",
+    details: "quarterstaff_details",
 
-      quarterstaff: 
-      {
-        name: "quarterstaff",
-        details: "quarterstaff_details",
+    type: [weaponry.simple, weaponry.quarterstaffs],
 
-        type: [weaponry.simple, weaponry.quarterstaffs],
+    melee: true,
+    range_min: 5,
+    // если 5 то ближнее, если больше то дальнобойное
+    // если ближнее, то меткость и урон от Силы
+    // если дальнее, то меткость и урон от Ловкости
+    throwing: null,
+    // не null - метательное - мин расстояние
+    range_max: null,
 
-        melee: true,
-range_min: 5,
-        // если 5 то ближнее, если больше то дальнобойное
-        // если ближнее, то меткость и урон от Силы
-        // если дальнее, то меткость и урон от Ловкости
-        throwing: null, 
-        // не null - метательное - мин расстояние
-        range_max: null,
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
-
-        damage_type: "bludgeoning_w",
-      // Тип урона
-      /* 
+    damage_type: "bludgeoning_w",
+    // Тип урона
+    /* 
         bonus_w
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
@@ -47,1101 +45,1094 @@ range_min: 5,
         psychic_w: "🧠 Психический",
       */
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 8,
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 8,
 
-        cost: 20,
-        weight: 2,
-      },
+    cost: 20,
+    weight: 2,
+  },
 
-      mace: 
-      {
-        name: "mace",
-        details: "mace_details",
+  mace: {
+    name: "mace",
+    details: "mace_details",
 
-        type: [weaponry.simple, weaponry.maces],
+    type: [weaponry.simple, weaponry.maces],
 
-        melee: true,
-range_min: 5,
-        range_max: null,
+    melee: true,
+    range_min: 5,
+    range_max: null,
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        throwing: null, // метательное
-        loading: null, // перезаряжающееся (надо ли??)
+    ammunition: null, // боеприпасьі (надо ли??)
+    throwing: null, // метательное
+    loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_type: "bludgeoning_w",
+    damage_type: "bludgeoning_w",
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-        cost: 500,
-        weight: 2,
-      },
+    cost: 500,
+    weight: 2,
+  },
 
-      club:
-      {
-        name: "club",
-        details: "club_details",
+  club: {
+    name: "club",
+    details: "club_details",
 
-        type: [weaponry.simple, weaponry.clubs],
+    type: [weaponry.simple, weaponry.clubs],
 
-        melee: true,
-range_min: 5,
-        range_max: null,
+    melee: true,
+    range_min: 5,
+    range_max: null,
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        throwing: null, // метательное
-        loading: null, // перезаряжающееся (надо ли??)
+    ammunition: null, // боеприпасьі (надо ли??)
+    throwing: null, // метательное
+    loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "weapon_light",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    heaviness: "weapon_light",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_type: "bludgeoning_w",
+    damage_type: "bludgeoning_w",
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-        cost: 10,
-        weight: 1,
-      },
+    cost: 10,
+    weight: 1,
+  },
 
-      dagger:
-      {
-        name: "dagger",
-        details: "dagger_details",
+  dagger: {
+    name: "dagger",
+    details: "dagger_details",
 
-        type: [weaponry.simple,weaponry.daggers],
+    type: [weaponry.simple, weaponry.daggers],
 
-        melee: true,
-range_min: 5,
-        throwing: 20, // метательное
-        range_max: 60,
+    melee: true,
+    range_min: 5,
+    throwing: 20, // метательное
+    range_max: 60,
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "weapon_light",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    heaviness: "weapon_light",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_type: "piercing_w",
+    damage_type: "piercing_w",
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-        cost: 200,
-        weight: 0.5,
-      },
+    cost: 200,
+    weight: 0.5,
+  },
 
-      spear:
-      {
-        name: "spear",
-        details: "spear_details",
+  spear: {
+    name: "spear",
+    details: "spear_details",
 
-        type: [weaponry.simple,weaponry.spears],
+    type: [weaponry.simple, weaponry.spears],
 
-        melee: true,
-range_min: 5,
-        throwing: 20, // метательное
-        range_max: 60,
+    melee: true,
+    range_min: 5,
+    throwing: 20, // метательное
+    range_max: 60,
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_type: "piercing_w",
+    damage_type: "piercing_w",
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 8,
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 8,
 
-        cost: 100,
-        weight: 1.5,
-      },
+    cost: 100,
+    weight: 1.5,
+  },
 
-      light_hammer:
-      {
-        name: "light_hammer",
-        details: "light_hammer_details",
+  light_hammer: {
+    name: "light_hammer",
+    details: "light_hammer_details",
 
-        type: [weaponry.simple,weaponry.light_hammers],
+    type: [weaponry.simple, weaponry.light_hammers],
 
-        melee: true,
-range_min: 5,
-        throwing: 20, // метательное
-        range_max: 60,
+    melee: true,
+    range_min: 5,
+    throwing: 20, // метательное
+    range_max: 60,
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        heaviness: "weapon_light",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    heaviness: "weapon_light",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_type: "bludgeoning_w",
+    damage_type: "bludgeoning_w",
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-        cost: 200,
-        weight: 1,
-      },
-      
-      javelin:
-      {
-        name: "javelin",
-        details: "javelin_details",
+    cost: 200,
+    weight: 1,
+  },
 
-        type: [weaponry.simple,weaponry.javelins],
+  javelin: {
+    name: "javelin",
+    details: "javelin_details",
 
-        melee: true,
-range_min: 5,
-        throwing: 30, // метательное
-        range_max: 120,
+    type: [weaponry.simple, weaponry.javelins],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: 30, // метательное
+    range_max: 120,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        cost: 50,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      greatclub:
-      {
-        name: "greatclub",
-        details: "greatclub_details",
+    cost: 50,
+    weight: 1,
+  },
 
-        type: [weaponry.simple],
+  greatclub: {
+    name: "greatclub",
+    details: "greatclub_details",
 
-        melee: true,
-range_min: 5,
-        range_max: null,
+    type: [weaponry.simple],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        throwing: null, // метательное
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    throwing: null, // метательное
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "bludgeoning_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "bludgeoning_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 8,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 20,
-        weight: 5,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 8,
 
-      handaxe: 
-      {
-        name: "handaxe",
-        details: "handaxe_details",
+    cost: 20,
+    weight: 5,
+  },
 
-        type: [weaponry.simple,weaponry.hand_axes],
+  handaxe: {
+    name: "handaxe",
+    details: "handaxe_details",
 
-        melee: true,
-range_min: 5,
-        throwing: 20,
-        range_max: 60,
+    type: [weaponry.simple, weaponry.hand_axes],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: 20,
+    range_max: 60,
 
-        heaviness: "weapon_light",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_light",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        cost: 50,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      sickle: 
-      {
-        name: "sickle",
-        details: "sickle_details",
+    cost: 50,
+    weight: 1,
+  },
 
-        type: [weaponry.simple, weaponry.sickles],
+  sickle: {
+    name: "sickle",
+    details: "sickle_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null,
-        range_max: null,
+    type: [weaponry.simple, weaponry.sickles],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null,
+    range_max: null,
 
-        heaviness: "weapon_light",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_light",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        cost: 100,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-// Простое дальнобойное
+    cost: 100,
+    weight: 1,
+  },
 
-      light_crossbow:
-      {
-        name: "light_crossbow",
-        details: "light_crossbow_details",
+  // Простое дальнобойное
 
-        type: [weaponry.simple, weaponry.light_arbalets],
+  light_crossbow: {
+    name: "light_crossbow",
+    details: "light_crossbow_details",
 
-        melee: false,
-        range_min: 80,
-        throwing: null, // метательное
-        range_max: 320,
+    type: [weaponry.simple, weaponry.light_arbalets],
 
-        ammunition: "bolt", // боеприпасьі (надо ли??)
-        loading: true, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 80,
+    throwing: null, // метательное
+    range_max: 320,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "bolt", // боеприпасьі (надо ли??)
+    loading: true, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 8,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 2500,
-        weight: 2.5,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 8,
 
-      dart:
-      {
-        name: "dart",
-        details: "dart_details",
+    cost: 2500,
+    weight: 2.5,
+  },
 
-        type: [weaponry.simple, weaponry.darts],
+  dart: {
+    name: "dart",
+    details: "dart_details",
 
-        melee: false,
-        range_min: 20,
-        throwing: 20, // метательное
-        range_max: 60,
+    type: [weaponry.simple, weaponry.darts],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 20,
+    throwing: 20, // метательное
+    range_max: 60,
 
-        heaviness: "weapon_medium",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        cost: 5,
-        weight: 0.125,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      shortbow:
-      {
-        name: "shortbow",
-        details: "shortbow_details",
+    cost: 5,
+    weight: 0.125,
+  },
 
-        type: [weaponry.simple,weaponry.short_bows],
+  shortbow: {
+    name: "shortbow",
+    details: "shortbow_details",
 
-        melee: false,
-        range_min: 80,
-        throwing: null, // метательное
-        range_max: 320,
+    type: [weaponry.simple, weaponry.short_bows],
 
-        ammunition: "arrow", // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 80,
+    throwing: null, // метательное
+    range_max: 320,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "arrow", // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 6,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 2500,
-        weight: 1,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 6,
 
-      sling:
-      {
-        name: "shortbow",
-        details: "shortbow_details",
+    cost: 2500,
+    weight: 1,
+  },
 
-        type: [weaponry.simple, weaponry.slings],
+  sling: {
+    name: "shortbow",
+    details: "shortbow_details",
 
-        melee: false,
-        range_min: 80,
-        throwing: null, // метательное
-        range_max: 320,
+    type: [weaponry.simple, weaponry.slings],
 
-        ammunition: "bullet", // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 80,
+    throwing: null, // метательное
+    range_max: 320,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "bullet", // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        cost: 10,
-        weight: 0.05,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-// Воинское рукопашное
+    cost: 10,
+    weight: 0.05,
+  },
 
-      halberd: 
-      {
-        name: "halberd",
-        details: "halberd_details",
+  // Воинское рукопашное
 
-        type: [weaponry.military],
+  halberd: {
+    name: "halberd",
+    details: "halberd_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null,
-        range_max: 10,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null,
+    range_max: 10,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 200,
-        weight: 3,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      war_pick:
-      {
-        name: "war_pick",
-        details: "war_pick_details",
+    cost: 200,
+    weight: 3,
+  },
 
-        type: [weaponry.military],
+  war_pick: {
+    name: "war_pick",
+    details: "war_pick_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 500,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      warhammer: 
-      {
-        name: "warhammer",
-        details: "warhammer_details",
+    cost: 500,
+    weight: 1,
+  },
 
-        type: [weaponry.military,weaponry.battle_hammers],
+  warhammer: {
+    name: "warhammer",
+    details: "warhammer_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military, weaponry.battle_hammers],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "bludgeoning_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "bludgeoning_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 1500,
-        weight: 1,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      battleaxe: 
-      {
-        name: "battleaxe",
-        details: "battleaxe_details",
+    cost: 1500,
+    weight: 1,
+  },
 
-        type: [weaponry.military,weaponry.battle_axes],
+  battleaxe: {
+    name: "battleaxe",
+    details: "battleaxe_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military, weaponry.battle_axes],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 1000,
-        weight: 2,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      glaive: 
-      {
-        name: "glaive",
-        details: "glaive_details",
+    cost: 1000,
+    weight: 2,
+  },
 
-        type: [weaponry.military],
+  glaive: {
+    name: "glaive",
+    details: "glaive_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: 10,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: 10,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 2000,
-        weight: 3,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      greatsword: 
-      {
-        name: "greatsword",
-        details: "greatsword_details",
+    cost: 2000,
+    weight: 3,
+  },
 
-        type: [weaponry.military],
+  greatsword: {
+    name: "greatsword",
+    details: "greatsword_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: 2,
-        damage_2_hand_dice: 6,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 5000,
-        weight: 3,
-      },
+    damage_2_hand_num: 2,
+    damage_2_hand_dice: 6,
 
-      lance: 
-      {
-        name: "lance",
-        details: "lance_details",
+    cost: 5000,
+    weight: 3,
+  },
 
-        type: [weaponry.military],
+  lance: {
+    name: "lance",
+    details: "lance_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: 10,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: 10,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piersing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "piersing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 12,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 1000,
-        weight: 3,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 12,
 
-      longsword: 
-      {
-        name: "longsword",
-        details: "longsword_details",
+    cost: 1000,
+    weight: 3,
+  },
 
-        type: [weaponry.military,weaponry.long_swords],
+  longsword: {
+    name: "longsword",
+    details: "longsword_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military, weaponry.long_swords],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 1500,
-        weight: 1.5,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      whip: 
-      {
-        name: "whip",
-        details: "whip_details",
+    cost: 1500,
+    weight: 1.5,
+  },
 
-        type: [weaponry.military],
+  whip: {
+    name: "whip",
+    details: "whip_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: 10,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: 10,
 
-        heaviness: "weapon_medium",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_medium",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 4,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 4,
 
-        cost: 2000,
-        weight: 1.5,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      shortsword: 
-      {
-        name: "shortsword",
-        details: "shortsword_details",
+    cost: 2000,
+    weight: 1.5,
+  },
 
-        type: [weaponry.military,weaponry.short_swords],
+  shortsword: {
+    name: "shortsword",
+    details: "shortsword_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military, weaponry.short_swords],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_light",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piersing_w",
+    heaviness: "weapon_light",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_type: "piersing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        cost: 1000,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      maul: 
-      {
-        name: "maul",
-        details: "maul_details",
+    cost: 1000,
+    weight: 1,
+  },
 
-        type: [weaponry.military],
+  maul: {
+    name: "maul",
+    details: "maul_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "bludgeoning_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "bludgeoning_w",
 
-        damage_2_hand_num: 2,
-        damage_2_hand_dice: 6,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 1000,
-        weight: 5,
-      },
+    damage_2_hand_num: 2,
+    damage_2_hand_dice: 6,
 
-      morningstar: 
-      {
-        name: "morningstar",
-        details: "morningstar_details",
+    cost: 1000,
+    weight: 5,
+  },
 
-        type: [weaponry.military],
+  morningstar: {
+    name: "morningstar",
+    details: "morningstar_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piersing_w",
+    heaviness: "weapon_medium",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "piersing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 1500,
-        weight: 2,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      pike: 
-      {
-        name: "pike",
-        details: "pike_details",
+    cost: 1500,
+    weight: 2,
+  },
 
-        type: [weaponry.military],
+  pike: {
+    name: "pike",
+    details: "pike_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: 10,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: 10,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piersing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "piersing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 500,
-        weight: 9,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      rapier: 
-      {
-        name: "rapier",
-        details: "rapier_details",
+    cost: 500,
+    weight: 9,
+  },
 
-        type: [weaponry.military,weaponry.rapires],
+  rapier: {
+    name: "rapier",
+    details: "rapier_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military, weaponry.rapires],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piersing_w",
+    heaviness: "weapon_medium",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "piersing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 2500,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      greataxe: 
-      {
-        name: "greataxe",
-        details: "greataxe_details",
+    cost: 2500,
+    weight: 1,
+  },
 
-        type: [weaponry.military],
+  greataxe: {
+    name: "greataxe",
+    details: "greataxe_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 12,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 3000,
-        weight: 3.5,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 12,
 
-      scimitar: 
-      {
-        name: "scimitar",
-        details: "scimitar_details",
+    cost: 3000,
+    weight: 3.5,
+  },
 
-        type: [weaponry.military, weaponry.scimitars],
+  scimitar: {
+    name: "scimitar",
+    details: "scimitar_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military, weaponry.scimitars],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_light",
-        finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "slashing_w",
+    heaviness: "weapon_light",
+    finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_type: "slashing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        cost: 2500,
-        weight: 1.5,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      trident: 
-      {
-        name: "trident",
-        details: "trident_details",
+    cost: 2500,
+    weight: 1.5,
+  },
 
-        type: [weaponry.military],
+  trident: {
+    name: "trident",
+    details: "trident_details",
 
-        melee: true,
-range_min: 5,
-        throwing: 20, // метательное
-        range_max: 60,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: 20, // метательное
+    range_max: 60,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piersing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_type: "piersing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 8,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        cost: 500,
-        weight: 2,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 8,
 
-      flail: 
-      {
-        name: "flail",
-        details: "flail_details",
+    cost: 500,
+    weight: 2,
+  },
 
-        type: [weaponry.military],
+  flail: {
+    name: "flail",
+    details: "flail_details",
 
-        melee: true,
-range_min: 5,
-        throwing: null, // метательное
-        range_max: null,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: true,
+    range_min: 5,
+    throwing: null, // метательное
+    range_max: null,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "bludgeoning_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 8,
+    damage_type: "bludgeoning_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 8,
 
-        cost: 1000,
-        weight: 1,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-// Воинское дальнобойное
+    cost: 1000,
+    weight: 1,
+  },
 
-      hand_crossbow:
-      {
-        name: "hand_crossbow",
-        details: "hand_crossbow_details",
+  // Воинское дальнобойное
 
-        type: [weaponry.military,weaponry.hand_arbalets],
+  hand_crossbow: {
+    name: "hand_crossbow",
+    details: "hand_crossbow_details",
 
-        melee: false,
-        range_min: 30,
-        throwing: null, // метательное
-        range_max: 120,
+    type: [weaponry.military, weaponry.hand_arbalets],
 
-        ammunition: "bolt", // боеприпасьі (надо ли??)
-        loading: true, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 30,
+    throwing: null, // метательное
+    range_max: 120,
 
-        heaviness: "weapon_light",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "bolt", // боеприпасьі (надо ли??)
+    loading: true, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_light",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 6,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 6,
 
-        cost: 7500,
-        weight: 1.5,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      heavy_crossbow:
-      {
-        name: "heavy_crossbow",
-        details: "heavy_crossbow_details",
+    cost: 7500,
+    weight: 1.5,
+  },
 
-        type: [weaponry.military],
+  heavy_crossbow: {
+    name: "heavy_crossbow",
+    details: "heavy_crossbow_details",
 
-        melee: false,
-        range_min: 100,
-        throwing: null, // метательное
-        range_max: 400,
+    type: [weaponry.military],
 
-        ammunition: "bolt", // боеприпасьі (надо ли??)
-        loading: true, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 100,
+    throwing: null, // метательное
+    range_max: 400,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "bolt", // боеприпасьі (надо ли??)
+    loading: true, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 10,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 5000,
-        weight: 9,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 10,
 
-      longbow:
-      {
-        name: "longbow",
-        details: "longbow_details",
+    cost: 5000,
+    weight: 9,
+  },
 
-        type: [weaponry.military,weaponry.long_bows],
+  longbow: {
+    name: "longbow",
+    details: "longbow_details",
 
-        melee: false,
-        range_min: 150,
-        throwing: null, // метательное
-        range_max: 600,
+    type: [weaponry.military, weaponry.long_bows],
 
-        ammunition: "arrow", // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 150,
+    throwing: null, // метательное
+    range_max: 600,
 
-        heaviness: "weapon_heavy",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "arrow", // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_heavy",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: null,
-        damage_1_hand_dice: null,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: 1,
-        damage_2_hand_dice: 8,
+    damage_1_hand_num: null,
+    damage_1_hand_dice: null,
 
-        cost: 5000,
-        weight: 1,
-      },
+    damage_2_hand_num: 1,
+    damage_2_hand_dice: 8,
 
-      blowgun:
-      {
-        name: "blowgun",
-        details: "blowgun_details",
+    cost: 5000,
+    weight: 1,
+  },
 
-        type: [weaponry.military],
+  blowgun: {
+    name: "blowgun",
+    details: "blowgun_details",
 
-        melee: false,
-        range_min: 25,
-        throwing: null, // метательное
-        range_max: 100,
+    type: [weaponry.military],
 
-        ammunition: "dart", // боеприпасьі (надо ли??)
-        loading: true, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 25,
+    throwing: null, // метательное
+    range_max: 100,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: "dart", // боеприпасьі (надо ли??)
+    loading: true, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 1,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 1,
 
-        cost: 1000,
-        weight: 0.5,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
-      net:
-      {
-        name: "net",
-        details: "net_details",
+    cost: 1000,
+    weight: 0.5,
+  },
 
-        type: [weaponry.military],
+  net: {
+    name: "net",
+    details: "net_details",
 
-        melee: false,
-        range_min: 5,
-        throwing: 5, // метательное
-        range_max: 15,
+    type: [weaponry.military],
 
-        ammunition: null, // боеприпасьі (надо ли??)
-        loading: null, // перезаряжающееся (надо ли??)
+    melee: false,
+    range_min: 5,
+    throwing: 5, // метательное
+    range_max: 15,
 
-        heaviness: "weapon_medium",
-        finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
 
-        damage_type: "piercing_w",
+    heaviness: "weapon_medium",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-        damage_1_hand_num: 1,
-        damage_1_hand_dice: 1,
+    damage_type: "piercing_w",
 
-        damage_2_hand_num: null,
-        damage_2_hand_dice: null,
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: 1,
 
-        cost: 100,
-        weight: 1.5,
-      },
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
 
+    cost: 100,
+    weight: 1.5,
+  },
 
-}
+  // Импровизированное
+
+  unarmed: {
+    name: "unarmed",
+    details: "unarmed_details",
+
+    type: [weaponry.dimple],
+
+    melee: true,
+    range_min: 5,
+    throwing: null,
+    range_max: null,
+
+    ammunition: null, // боеприпасьі (надо ли??)
+    loading: null, // перезаряжающееся (надо ли??)
+
+    heaviness: "weapon_light",
+    finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
+
+    damage_type: "bludgeoning_w",
+
+    damage_1_hand_num: 1,
+    damage_1_hand_dice: null,
+
+    damage_2_hand_num: null,
+    damage_2_hand_dice: null,
+
+    cost: 0,
+    weight: 0,
+  },
+};

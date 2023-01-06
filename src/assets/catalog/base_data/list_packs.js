@@ -15,7 +15,7 @@ export default {
             [items.waterskin,1],
             [items.hempen_rope,1],
         ],
-        cost: 100,
+        cost: 1000,
         weight: 29.5,
     },
 
@@ -67,7 +67,9 @@ export default {
             [items.small_mirror,1],
             [items.scissors,1],
             [items.tweezers,1]
-        ]
+        ],
+        cost: 2500,
+        weight: 0.5,
     },
 
     priests: {

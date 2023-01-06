@@ -55,6 +55,11 @@ export default {
         details:"weapons_simple_details",
     },
 
+    dimple:{
+        name:"weapons_dimple",
+        details:"weapons_dimple_details",
+    },
+
     military:{
         name:"weapons_military",
         details:"weapons_military_details",

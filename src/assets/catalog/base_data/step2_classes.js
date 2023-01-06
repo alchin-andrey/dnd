@@ -51,7 +51,8 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 2]],
+        weapon: [[weapons.dagger, 2],[weapons.unarmed, 1]],
+        inventory: [[items.arrow,1]],
         inventory_packs: [[packs.thieves, 1]],
       },
     ],
@@ -527,6 +528,13 @@ export default {
       "intelligence",
     ],
     spell_attribute: "intelligence",
+
+    equipment: [
+      {
+        level: 1,
+        weapon: [[weapons.unarmed, 1]],
+      },
+    ],
 
     charges: [
       {
@@ -1572,7 +1580,7 @@ export default {
     equipment: [
       {
         level: 1,
-        weapon: [[weapons.javelin, 4]],
+        weapon: [[weapons.javelin, 4],[weapons.unarmed, 1]],
         inventory_packs: [
           [packs.explorers, 1], // нужно как-то распаковьівать 😅
         ],
@@ -2002,10 +2010,21 @@ export default {
     ],
     spell_attribute: "wisdom",
 
+    charges: [
+      {
+        level: 2,
+        name: "chi_slots",
+        type: "short_rest",
+        list: [
+          ["", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        ],
+      },
+    ],
+
     equipment: [
       {
         level: 1,
-        weapon: [[weapons.dart, 10]],
+        weapon: [[weapons.dart, 10],[weapons.unarmed, 1]],
       },
     ],
 
@@ -2016,6 +2035,31 @@ export default {
         keyword: "no_armor_protection",
         details: "armor_wisdom",
       },
+      {
+        level: 1,
+        type: "plus",
+        keyword: "bonus",
+        details: "to_damage_fist_and_weapon",
+      },
+    ],
+
+    spells: [
+      {
+        level:2,
+        spell:spells.step_of_the_wind,
+      },
+      {
+        level:2,
+        spell:spells.patient_defense,
+      },
+      {
+        level:2,
+        spell:spells.flurry_of_blows,
+      },
+      {
+        level:1,
+        spell:spells.unarmed_strike_bonus,
+      },
     ],
 
     specials: [
@@ -2024,6 +2068,19 @@ export default {
         type: "armor_bonus",
         foo: "Num_WIS",
       },
+      {
+        level: 1,
+        type: "weapon",
+        foo: "Finesse_All",
+        // Вы можете использовать Ловкость вместо Силы для бросков атак и урона ваших безоружных ударов и атак монашеским оружием. — Надо выбирать большее.
+      },
+      {
+        level: 1,
+        type: "weapon",
+        foo: "Dic_Default_or_Monk",
+        // 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
+        // Вы можете использовать кость d4 вместо обычной кости урона ваших безоружных ударов или атак монашеским оружием. Эта кость увеличивается с вашим уровнем, как показано в колонке «боевые искусства».
+      }
     ],
 
     settings: [
@@ -2257,9 +2314,6 @@ export default {
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
-            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
-          },
-          {
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
@@ -2268,23 +2322,7 @@ export default {
           {
             equipment: [
               {
-                weapon: [[weapons.light_crossbow, 1]],
-                inventory: [[items.bolt, 20]],
-              },
-            ],
-          },
-          {
-            equipment: [
-              {
                 weapon: [[weapons.dart, 10]],
-              },
-            ],
-          },
-          {
-            equipment: [
-              {
-                weapon: [[weapons.shortbow, 1]],
-                inventory: [[items.arrow, 20]],
               },
             ],
           },
@@ -2343,6 +2381,7 @@ export default {
       {
         level: 1,
         armor: [[armors.chainmail, 1]],
+        weapon: [[weapons.unarmed, 1]],
         inventory: [[items.holy_symbol, 1]],
       },
     ],
@@ -2785,6 +2824,7 @@ export default {
 
     equipment: [
       {
+        weapon: [[weapons.unarmed, 1]],
         inventory: [
           [items.shield, 1],
           [items.holy_symbol, 1],
@@ -3781,6 +3821,7 @@ export default {
     equipment: [
       {
         armor: [[armors.leather, 1]],
+        weapon: [[weapons.unarmed, 1]],
         inventory: [[items.focus, 1]],
         inventory_packs: [[packs.explorers, 1]],
       },
@@ -4622,7 +4663,7 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 2]],
+        weapon: [[weapons.dagger, 2],[weapons.unarmed, 1]],
       },
     ],
 
@@ -5682,6 +5723,7 @@ export default {
 
     equipment: [
       {
+        weapon: [[weapons.unarmed, 1]],
         inventory: [[items.spell_book, 1]],
       },
     ],
@@ -6016,7 +6058,7 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 1]],
+        weapon: [[weapons.dagger, 1],[weapons.unarmed, 1]],
       },
     ],
 

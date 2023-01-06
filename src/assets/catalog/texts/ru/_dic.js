@@ -3409,4 +3409,31 @@ export default {
 
     way_of_the_four_elements: classes.way_of_the_four_elements,
     way_of_the_four_elements_details: classes.way_of_the_four_elements_details,
+
+    unarmed: weapons.unarmed,
+    unarmed_details: weapons.unarmed_details,
+
+    weapons_dimple: "Кулаки",
+    weapons_dimple_details: "",
+
+    to_damage_fist_and_weapon: "к урону кулаком и оружием (применено)",
+
+    spell_unarmed_strike_bonus: spells.unarmed_strike_bonus,
+    spell_unarmed_strike_bonus_details: spells.unarmed_strike_bonus_details,
+    spell_unarmed_strike_bonus_expanded: spells.unarmed_strike_bonus_expanded,
+
+    chi_slots: "Ячейки Ци",
+    chi_slot: "1× Ци",
+
+    spell_step_of_the_wind: spells.step_of_the_wind,
+    spell_step_of_the_wind_details: spells.step_of_the_wind_details,
+    spell_step_of_the_wind_expanded: spells.step_of_the_wind_expanded,
+
+    spell_patient_defense: spells.patient_defense,
+    spell_patient_defense_details: spells.patient_defense_details,
+    spell_patient_defense_expanded: spells.patient_defense_expanded,
+
+    spell_flurry_of_blows: spells.flurry_of_blows,
+    spell_flurry_of_blows_details: spells.flurry_of_blows_details,
+    spell_flurry_of_blows_expanded: spells.flurry_of_blows_expanded,
 }

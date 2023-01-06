@@ -384,6 +384,7 @@ export default {
     qualities: { speed: 25 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.gnome],
     },
 
@@ -543,6 +544,7 @@ export default {
     qualities: { speed: 25 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.halfling],
     },
 
@@ -765,6 +767,7 @@ export default {
         weaponry.hand_axes,
         weaponry.battle_hammers,
         weaponry.light_hammers,
+        weaponry.dimple,
       ],
       tools: [tool.blacksmith, tool.brewer, tool.mason],
     },
@@ -1230,6 +1233,7 @@ export default {
     qualities: { speed: 30 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common],
     },
   },
@@ -1391,6 +1395,7 @@ export default {
     qualities: { speed: 30, vision_night: 60 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.elf],
     },
 
@@ -1799,6 +1804,7 @@ export default {
     },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.elf],
     },
 
@@ -2009,6 +2015,7 @@ export default {
     qualities: { speed: 30, vision_night: 60 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.tiefling],
     },
 
@@ -2121,6 +2128,7 @@ export default {
     qualities: { speed: 30, vision_night: 60 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.orc],
     },
 
@@ -2497,6 +2505,7 @@ export default {
     qualities: { speed: 30 },
 
     proficiencies: {
+      weapons: [weaponry.dimple],
       languages: [lang.common, lang.dragon],
     },
 
