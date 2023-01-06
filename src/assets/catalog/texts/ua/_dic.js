@@ -564,6 +564,7 @@ export default {
             tool_music_dulcimer: tools.music_dulcimer,
             tool_music_shawm: tools.music_shawm,
             tool_herbalists_tools: tools.herbalists_tools,
+            tool_shoemaker_tools: tools.shoemaker_tools,
 
 
         languages:"мови",
@@ -2238,7 +2239,7 @@ export default {
     divine_channel_slots: "Божественний канал",
     divine_channel_slot: "1× Божественний канал",
 
-    rage_slots: "Слот Люті",
+    rage_slots: "Слоти Люті",
     rage_slot: "1× Слот Люті",
 
     spell_slots: "Слоти мани",
@@ -2779,7 +2780,7 @@ export default {
     modifier: "модифікатор",
 
     min_base_strength: "дорівнює мінімум базовій Силі",
-    speed_plus_10:"+10 Швидкість",
+    speed_plus_10:"+10 Швидкість (застосовано)",
     if_no_heavy_armor_applied:"якшо не в важких обладунках (застосовано)",
 
     slot_lvl: "рівень слоту",
@@ -3393,4 +3394,20 @@ export default {
     spell_create_thrall: spells.create_thrall,
     spell_create_thrall_details: spells.create_thrall_details,
     spell_create_thrall_expanded: spells.create_thrall_expanded,
+
+    armor_wisdom: "— броня за рахунок Мудрості (застосовано)",
+
+    monk_weapons: "Деякі монастирі використовують особливі види монаської зброї. Наприклад, ви можете використовувати дубинку у вигляді двох дерев'яних брусків, з'єднаних коротким ланцюгом (така зброя називається нунчаками), або серп з більш коротким і прямим лезом (називається камою).",
+
+    monk: classes.monk,
+    monk_details: classes.monk_details,
+
+    way_of_the_open_hand: classes.way_of_the_open_hand,
+    way_of_the_open_hand_details: classes.way_of_the_open_hand_details,
+
+    way_of_the_shadow: classes.way_of_the_shadow,
+    way_of_the_shadow_details: classes.way_of_the_shadow_details,
+
+    way_of_the_four_elements: classes.way_of_the_four_elements,
+    way_of_the_four_elements_details: classes.way_of_the_four_elements_details,
 }

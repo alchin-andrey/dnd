@@ -166,6 +166,11 @@ export default {
       let mod = this.stats_Mod("constitution");
       return mod < 0 ? 0 : mod;
     },
+
+	Num_WIS() {
+      let mod = this.stats_Mod("wisdom");
+      return mod < 0 ? 0 : mod;
+    },
 	},
 };
 </script>

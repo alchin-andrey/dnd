@@ -87,6 +87,10 @@ export default {
     name: "tool_herbalists_tools",
   },
 
+  shoemaker_tools: {
+    name: "tool_shoemaker_tools",
+  },
+
   // -------------------------------- music
 
   music_drums: {

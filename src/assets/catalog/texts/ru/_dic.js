@@ -565,6 +565,7 @@ export default {
             tool_music_dulcimer: tools.music_dulcimer,
             tool_music_shawm: tools.music_shawm,
             tool_herbalists_tools: tools.herbalists_tools,
+            tool_shoemaker_tools: tools.shoemaker_tools,
 
 
         languages:"языки",
@@ -746,7 +747,7 @@ export default {
         persistence_details: "— когда HP опускается до 0 и вы при этом не убиты, оно становится = 1",
 
         no_armor_protection: "защита без доспехов",
-        armor_constitution: "— броня за счет Телосложения",
+        armor_constitution: "— броня за счет Телосложения (применено)",
         saving_dex_visible: "на испытания Ловкости от видимых эффектов",
         charmed_while_raging: "против 😍 Очарования при Ярости",
         frightened_while_raging: "против 😱 Испуга при Ярости",
@@ -756,7 +757,7 @@ export default {
         rage_persistence: "яростная стойкость",
         rage_persistence_details: "— когда во время Ярости HP опускается до 0, оно становится = 1 при успешном Испытании Силы со сложностью 10 (+5 за каждый следующий раз до долгого отдыха)",
         saving_strength: "испытание Силы",
-        min_base_strengt: "минимум равно базовой Силе",
+        min_base_strength: "минимум равно базовой Силе",
         rage_sustainability: "Ярость не прекращается досрочно",
         only_if_uncontious: "кроме потери сознания",
         near_friends_attack_in_rage: "на рукопашные атаки союзников рядом, при Ярости",
@@ -2781,6 +2782,9 @@ export default {
 
     modifier: "модификатор",
 
+    speed_plus_10:"+10 Скорость (применено)",
+    if_no_heavy_armor_applied:"если не в тяжелых доспехах (применено)",
+
     slot_lvl: "уровень ячейки",
 
     wizard: classes.wizard,
@@ -3389,4 +3393,20 @@ export default {
     spell_create_thrall: spells.create_thrall,
     spell_create_thrall_details: spells.create_thrall_details,
     spell_create_thrall_expanded: spells.create_thrall_expanded,
+
+    armor_wisdom: "— броня за счет Мудрости (применено)",
+
+    monk_weapons: "Некоторые монастыри используют особые виды монашеского оружия. Например, вы можете использовать дубинку в виде двух деревянных брусков, соединённых короткой цепью (такое оружие называется нунчаками), или серп с более коротким и прямым лезвием (называется камой).",
+
+    monk: classes.monk,
+    monk_details: classes.monk_details,
+
+    way_of_the_open_hand: classes.way_of_the_open_hand,
+    way_of_the_open_hand_details: classes.way_of_the_open_hand_details,
+
+    way_of_the_shadow: classes.way_of_the_shadow,
+    way_of_the_shadow_details: classes.way_of_the_shadow_details,
+
+    way_of_the_four_elements: classes.way_of_the_four_elements,
+    way_of_the_four_elements_details: classes.way_of_the_four_elements_details,
 }
