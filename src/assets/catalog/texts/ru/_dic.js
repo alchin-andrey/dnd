@@ -2782,7 +2782,7 @@ export default {
 
     modifier: "модификатор",
 
-    speed_plus_10:"+10 Скорость (применено)",
+    speed_plus_10:"+10 Скорость",
     if_no_heavy_armor_applied:"если не в тяжелых доспехах (применено)",
 
     slot_lvl: "уровень ячейки",
@@ -3436,4 +3436,17 @@ export default {
     spell_flurry_of_blows: spells.flurry_of_blows,
     spell_flurry_of_blows_details: spells.flurry_of_blows_details,
     spell_flurry_of_blows_expanded: spells.flurry_of_blows_expanded,
+
+    speed_plus_5:"+5 Скорость",
+
+    able_to_walk: "Способность ходить",
+    on_walls_and_water: "по стенам и воде",
+
+    spell_dedicated_weapon: spells.dedicated_weapon,
+    spell_dedicated_weapon_details: spells.dedicated_weapon_details,
+    spell_dedicated_weapon_expanded: spells.dedicated_weapon_expanded,
+
+    spell_deflect_missiles: spells.deflect_missiles,
+    spell_deflect_missiles_details: spells.deflect_missiles_details,
+    spell_deflect_missiles_expanded: spells.deflect_missiles_expanded,
 }

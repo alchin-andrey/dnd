@@ -2041,9 +2041,49 @@ export default {
         keyword: "bonus",
         details: "to_damage_fist_and_weapon",
       },
+      {
+        level: 2,
+        type: "plus",
+        keyword: "speed_plus_10",
+        details: "if_no_heavy_armor_applied",
+      },
+      {
+        level: 6,
+        type: "plus",
+        keyword: "speed_plus_5",
+        details: "if_no_heavy_armor_applied",
+      },
+      {
+        level: 10,
+        type: "plus",
+        keyword: "speed_plus_5",
+        details: "if_no_heavy_armor_applied",
+      },
+      {
+        level: 14,
+        type: "plus",
+        keyword: "speed_plus_5",
+        details: "if_no_heavy_armor_applied",
+      },
+      {
+        level: 18,
+        type: "plus",
+        keyword: "speed_plus_5",
+        details: "if_no_heavy_armor_applied",
+      },
+      {
+        level: 9,
+        type: "plus",
+        keyword: "able_to_walk",
+        details: "on_walls_and_water",
+      },
     ],
 
     spells: [
+      {
+        level:1,
+        spell:spells.unarmed_strike_bonus,
+      },
       {
         level:2,
         spell:spells.step_of_the_wind,
@@ -2057,8 +2097,35 @@ export default {
         spell:spells.flurry_of_blows,
       },
       {
-        level:1,
-        spell:spells.unarmed_strike_bonus,
+        level:2,
+        spell:spells.dedicated_weapon,
+      },
+      {
+        level:3,
+        spell:spells.deflect_missiles,
+      },
+    ],
+
+    qualities: [
+      {
+        level: 2,
+        speed_bonus: 10,
+      },
+      {
+        level: 6,
+        speed_bonus: 5,
+      },
+      {
+        level: 10,
+        speed_bonus: 5,
+      },
+      {
+        level: 14,
+        speed_bonus: 5,
+      },
+      {
+        level: 1,
+        speed_bonus: 5,
       },
     ],
 

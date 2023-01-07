@@ -636,6 +636,12 @@ export default {
 			//Example: +4 ⬜️⬜️⬜️⬜️
 		},
 
+		Pls_DEX_Plus_Lvl() {
+			let mod = this.stats_Mod("dexterity");
+			let lvl = this.MY.level;
+			return mod+lvl;
+		},
+
 		Pls_Lvl() {
 			let lvl = this.MY.level;
 			return lvl;

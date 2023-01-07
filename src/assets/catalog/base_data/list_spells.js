@@ -6440,6 +6440,94 @@ export default {
     }
   ],
 
+  dedicated_weapon: [
+    {
+      name: "spell_dedicated_weapon",
+      details: "spell_dedicated_weapon_details",
+      expanded: "spell_dedicated_weapon_expanded",
+
+      type: "ability",
+      //slot_type: "chi_slot",
+      classes: ["monk"],
+
+      cast_time: "short_rest",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  deflect_missiles: [
+    {
+      name: "spell_deflect_missiles",
+      details: "spell_deflect_missiles_details",
+      expanded: "spell_deflect_missiles_expanded",
+
+      type: "ability",
+      //slot_type: "chi_slot",
+      classes: ["monk"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: 60,
+
+      parts: ["touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "reduction_w",
+
+      impact_size_foo: "Pls_DEX_Plus_Lvl",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: 10,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [
