@@ -1,40 +1,44 @@
 <template>
-		<!-- qualities-stats -->
-		<my-wrapper hr>
-      <my-attribute title="armor_class" :type="armor_Name" :numb="armor_Numb"></my-attribute>
-			<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
-      <my-attribute
-				title="hp_dice"
-				:numb="MY.level"
-				:dice="MY.class.hp_dice"
-			></my-attribute>
-			<my-attribute
-				v-if="initiative_Numb"
-				title="initiative"
-				:numb="initiative_Numb"
-				plus
-			></my-attribute>
-			<my-attribute
-				v-if="qualities_Numb_Class('speed')"
-				title="speed"
-				:numb="qualities_Numb_Class('speed')"
-				feet
-			></my-attribute>
-			<my-attribute
-				v-if="qualities_Numb_Class('vision_night')"
-				title="vision_night"
-				:numb="qualities_Numb_Class('vision_night')"
-				feet
-			></my-attribute>
-			<!-- <my-attribute
+	<!-- qualities-stats -->
+	<my-wrapper hr>
+		<my-attribute
+			title="armor_class"
+			:type="armor_Name"
+			:numb="armor_Numb"
+		></my-attribute>
+		<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
+		<my-attribute
+			title="hp_dice"
+			:numb="MY.level"
+			:dice="MY.class.hp_dice"
+		></my-attribute>
+		<my-attribute
+			v-if="initiative_Numb"
+			title="initiative"
+			:numb="initiative_Numb"
+			plus
+		></my-attribute>
+		<my-attribute
+			v-if="qualities_Numb_Class('speed')"
+			title="speed"
+			:numb="qualities_Numb_Class('speed')"
+			feet
+		></my-attribute>
+		<my-attribute
+			v-if="qualities_Numb_Class('vision_night')"
+			title="vision_night"
+			:numb="qualities_Numb_Class('vision_night')"
+			feet
+		></my-attribute>
+		<!-- <my-attribute
         v-for="(val, name) in MY.qualities"
         :key="name"
         :title="name"
         :numb="qualities_Numb_Class(name)"
         feet
       ></my-attribute> -->
-		</my-wrapper>
-		<!-- qualities-stats -->
+	</my-wrapper>
+	<!-- qualities-stats -->
 </template>
 
 <script>
@@ -47,7 +51,7 @@ export default {
 		// STORE
 		...mapState(useMYStore, ["MY"]),
 		// GETTERS
-    ...mapState(useMYStore, ["Mastery", "class_Specials"]),
+		...mapState(useMYStore, ["Mastery", "class_Specials"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
 		hp_Bonus() {
@@ -89,88 +93,92 @@ export default {
 			return summ;
 		},
 
-		qualities_Find(state) {
-			return (name) => state.MY.class.qualities?.find((item) => item[name]);
+		// qualities_Find(state) {
+		// 	return (name) => state.MY.class.qualities?.find((item) => item[name]);
+		// },
+
+		qualities_Filter(state) {
+			return (name) => state.MY.class.qualities?.filter((item) => item[name]);
 		},
 
 		qualities_Numb_Class: (state) => (name) => {
-			let numb_RE = state.qualities_Numb_RE(name);
-			let qual_obj = state.qualities_Find(`${name}_bonus`);
+			const numb_RE = state.qualities_Numb_RE(name);
+
 			let numb_bonus = 0;
-			let lvl = state.MY.level;
-			if (qual_obj) {
-				let qual_bonus = qual_obj[`${name}_bonus`];
-				let qual_lvl = qual_obj.level;
-				lvl >= qual_lvl ? (numb_bonus = qual_bonus) : 0;
-			}
+			const lvl = state.MY.level;
+			const qual_arr = state.qualities_Filter(`${name}_bonus`);
+			qual_arr?.forEach((el) =>
+				el.level <= lvl ? (numb_bonus += el[`${name}_bonus`]) : null
+			);
 			return numb_RE + numb_bonus;
 		},
 
-    equipments_Level_Arr() {
+		equipments_Level_Arr() {
 			let lvl = this.MY.level;
-      let arr = this.MY.class.equipment?.filter((el) => el.level ? el.level <= lvl : el);
+			let arr = this.MY.class.equipment?.filter((el) =>
+				el.level ? el.level <= lvl : el
+			);
 			return arr ? arr : [];
 		},
 
-    armors_Level_Arr() {
+		armors_Level_Arr() {
 			let arr = [];
 			this.equipments_Level_Arr?.forEach((el) =>
 				el.armor?.forEach((armor) => arr.push(armor))
 			);
 			return arr;
-    },
+		},
 
-    armors_Element() {
+		armors_Element() {
 			let arr = null;
 			this.equipments_Level_Arr?.forEach((el) =>
-				el.armor?.forEach(armor => arr = armor[0])
+				el.armor?.forEach((armor) => (arr = armor[0]))
 			);
 			return arr;
-    },
+		},
 
-    armor_Name() {
-      let armor = this.armors_Element
-      return armor ? armor.name : null;
-    },
+		armor_Name() {
+			let armor = this.armors_Element;
+			return armor ? armor.name : null;
+		},
 
-    armor_Numb() {
-      const armor = this.armors_Element;
-      
-      let armor_default = 10;
+		armor_Numb() {
+			const armor = this.armors_Element;
+
+			let armor_default = 10;
 			const dex_mod = this.stats_Mod("dexterity");
-      const dex_mod_max2 = dex_mod > 2 ? 2 : null;
+			const dex_mod_max2 = dex_mod > 2 ? 2 : null;
 
-      const medium = armor?.type[0].name == "armor_medium";
-      medium ? armor_default += dex_mod_max2 : armor_default += dex_mod;
+			const medium = armor?.type[0].name == "armor_medium";
+			medium ? (armor_default += dex_mod_max2) : (armor_default += dex_mod);
 
-      const armor_class = armor ? armor.armor_class : null;
-      const armor_bonus = armor ? armor.armor_bonus : null;
-      armor_default += armor_bonus;
-      armor_default += this.armor_Bonus_Specials;
+			const armor_class = armor ? armor.armor_class : null;
+			const armor_bonus = armor ? armor.armor_bonus : null;
+			armor_default += armor_bonus;
+			armor_default += this.armor_Bonus_Specials;
 
 			return armor_class ? armor_class : armor_default;
 		},
 
-    armor_Bonus_Specials() {
-      let bonus = null;
-      const lvl = this.MY.level;
-      const specials = this.class_Specials("armor_bonus");
-			specials?.forEach(el => 
-        el.level <= lvl 
-        ? bonus += this[el.foo]
-        : null);
-      return bonus;
-    },
+		armor_Bonus_Specials() {
+			let bonus = null;
+			const lvl = this.MY.level;
+			const specials = this.class_Specials("armor_bonus");
+			specials?.forEach((el) =>
+				el.level <= lvl ? (bonus += this[el.foo]) : null
+			);
+			return bonus;
+		},
 
-    Num_CON() {
-      let mod = this.stats_Mod("constitution");
-      return mod < 0 ? 0 : mod;
-    },
+		Num_CON() {
+			let mod = this.stats_Mod("constitution");
+			return mod < 0 ? 0 : mod;
+		},
 
-	Num_WIS() {
-      let mod = this.stats_Mod("wisdom");
-      return mod < 0 ? 0 : mod;
-    },
+		Num_WIS() {
+			let mod = this.stats_Mod("wisdom");
+			return mod < 0 ? 0 : mod;
+		},
 	},
 };
 </script>
