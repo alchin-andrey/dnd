@@ -40,7 +40,6 @@
 					v-for="(val, name) in ethnos.qualities"
 					:key="name"
 					:title="name"
-					:type="`${name}_base`"
 					feet
 					:numb="val"
 				>

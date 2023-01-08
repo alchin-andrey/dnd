@@ -38,7 +38,7 @@
 				:addition="Spell_Index.impact_damage_type"
 				:str="Value_Str"
 				:numb="Value_Num"
-				:dice="Spell_Index.impact_size_dice"
+				:dice="Value_Dic"
 				:pls="Value_Pls"
 				main
 				not_dot
@@ -97,7 +97,7 @@
 				:addition="Spell_Index.impact_damage_type"
 				:str="Value_Str"
 				:numb="Value_Num"
-				:dice="Spell_Index.impact_size_dice"
+				:dice="Value_Dic"
 				:pls="Value_Pls"
 				main
 			/>
@@ -748,9 +748,27 @@ export default {
 		Dur_Wisdom_Total() {
 			let numb = this.stats_Class_Page_Numb("wisdom");
 			return numb;
-			// NOTE - Брат допоможи
 			// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
 		},
+
+    //ANCHOR - Dic
+    Dic_MonkMartial() {
+			let dice = this.Spell_Index.impact_size_dice;
+			let lvl = this.MY.level;
+			let kof = 0;
+			if (lvl >= 17) {
+				kof = 10;
+			} else if (lvl >= 11) {
+				kof = 8;
+			} else if (lvl >= 11) {
+				kof = 11;
+			} else if (lvl >= 5) {
+				kof = 6;
+			} else {
+				kof = 4;
+			}
+			return dice + kof;
+    },
 
 		//ANCHOR - FOO
 		Value_Foo: (state) => (Val) => {
@@ -784,6 +802,10 @@ export default {
 
 		Value_Dur() {
 			return this.Value_Foo("Dur");
+		},
+
+    Value_Dic() {
+			return this.Value_Foo("Dic");
 		},
 		// ------ FOO -----------
 	},
