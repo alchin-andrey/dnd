@@ -3463,4 +3463,11 @@ export default {
     spell_quickened_healing: spells.quickened_healing,
     spell_quickened_healing_details: spells.quickened_healing_details,
     spell_quickened_healing_expanded: spells.quickened_healing_expanded,
+
+    spell_extra_strike_monk: spells.extra_strike_monk,
+    spell_extra_strike_monk_details: spells.extra_strike_monk_details,
+    spell_extra_strike_monk_expanded: spells.extra_strike_monk_expanded,
+
+    magical_unarmed_strike: "Магические безоружные удары",
+    on_immunity_cheks: "— преодолевают сопротивление немагическому урону"
 }

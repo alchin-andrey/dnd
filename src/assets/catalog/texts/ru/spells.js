@@ -2625,3 +2625,9 @@ export const quickened_healing = 'Ускоренное лечение';
 export const quickened_healing_details = 'Восстановить здоровье.';
 
 export const quickened_healing_expanded = 'Действием вы можете потратить 2 очка ци и совершить бросок кости боевых искусств. Вы восстанавливаете количество хитов, равное результату броска кости боевых искусств + ваш бонус мастерства.';
+
+export const extra_strike_monk = 'Дополнительная Атака';
+
+export const extra_strike_monk_details = 'Еще одна атака в основной ход';
+
+export const extra_strike_monk_expanded = 'Eсли вы в свой ход совершаете действие Атака, вы можете совершить две атаки вместо одной.';

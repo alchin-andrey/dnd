@@ -753,7 +753,7 @@ export default {
 
     //ANCHOR - Dic
     Dic_MonkMartial() {
-			let dice = this.Spell_Index.impact_size_dice;
+			let dice = this.Spell_Index.impact_size_dic;
 			let lvl = this.MY.level;
 			let kof = 0;
 			if (lvl >= 17) {

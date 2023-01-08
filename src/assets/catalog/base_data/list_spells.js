@@ -80,7 +80,7 @@ const spell_name = [
     impact_size_foo: null,
     impact_size_str: null,
     impact_size_num: null,
-    impact_size_dice: null,
+    impact_size_dic: null,
     // рассчет урона
 
     impact_size_pls: null,
@@ -135,7 +135,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: true,
@@ -178,7 +178,7 @@ export default {
       impact_size_foo: "Num_Level_6_11_16",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -220,7 +220,7 @@ export default {
       impact_size_foo: "Num_Level_6_11_16", //1lvl + 0, 6lvl + 1, 11lvl + 2, 16lvl + 3
       impact_size_str: null,
       impact_size_num: 2, //1 + 0, 6 + 1, 11 + 2, 16 + 3
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -262,7 +262,7 @@ export default {
       impact_size_foo: "Num_Level_6_11_16",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -304,7 +304,7 @@ export default {
       impact_size_foo: "Num_Level_6_11_16",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -346,7 +346,7 @@ export default {
       impact_size_foo: "Num_Level_6_11_16",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -388,7 +388,7 @@ export default {
       impact_size_foo: "Num_Level_6_11_16", //done
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -430,7 +430,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -473,7 +473,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -554,7 +554,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       // рассчет урона
 
       impact_size_pls: null,
@@ -603,7 +603,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -646,7 +646,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -689,7 +689,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -731,7 +731,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -818,7 +818,7 @@ export default {
       impact_size_str: null,
       impact_size_num: 2,
       // impact_size_num: null, //this.$root.step2_classes.barbarian_rage_bonus[this.$root.MY.level],
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -903,7 +903,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       // рассчет урона
 
       impact_size_pls: null,
@@ -948,7 +948,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -987,7 +987,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -1027,7 +1027,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1068,7 +1068,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1108,7 +1108,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1153,7 +1153,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1193,7 +1193,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1233,7 +1233,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1273,7 +1273,7 @@ export default {
       impact_size_foo: "Pls_STR", //need update
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 12,
+      impact_size_dic: 12,
       impact_size_pls: null,
 
       saving_need: true,
@@ -1312,7 +1312,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1351,7 +1351,7 @@ export default {
       impact_size_foo: "Num_Plus_Level_2", //done
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1390,7 +1390,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1429,7 +1429,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1468,7 +1468,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1507,7 +1507,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1546,7 +1546,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1585,7 +1585,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1629,7 +1629,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1673,7 +1673,7 @@ export default {
       impact_size_foo: "Num_LevelX", //done
       impact_size_str: null,
       impact_size_num: 5,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1717,7 +1717,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1762,7 +1762,7 @@ export default {
       impact_size_foo: "Num_Mastery_05",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -1807,7 +1807,7 @@ export default {
       impact_size_foo: "Pls_CHA", 
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -1852,7 +1852,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -1897,7 +1897,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -1942,7 +1942,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -1987,7 +1987,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2032,7 +2032,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2076,7 +2076,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2120,7 +2120,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2164,7 +2164,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2208,7 +2208,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2252,7 +2252,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2296,7 +2296,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2340,7 +2340,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2384,7 +2384,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2428,7 +2428,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2472,7 +2472,7 @@ export default {
       impact_size_foo: "Pls_DEX",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2516,7 +2516,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2560,7 +2560,7 @@ export default {
       impact_size_foo: "Pls_CHA",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2604,7 +2604,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -2648,7 +2648,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2692,7 +2692,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2736,7 +2736,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2779,7 +2779,7 @@ export default {
       impact_size_foo: "Num_Lvl_Plus_CHA",
       impact_size_str: 6,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2822,7 +2822,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2866,7 +2866,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: 4,
 
       saving_need: null,
@@ -2909,7 +2909,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2952,7 +2952,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -2995,7 +2995,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3038,7 +3038,7 @@ export default {
       impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 5,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3081,7 +3081,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3124,7 +3124,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3167,7 +3167,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 5,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3210,7 +3210,7 @@ export default {
       impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3253,7 +3253,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3296,7 +3296,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3339,7 +3339,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -3383,7 +3383,7 @@ export default {
       impact_size_foo: "Dice_16_58_1010_1512",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3426,7 +3426,7 @@ export default {
       impact_size_foo: "Dice_16_98_1310_1712",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3470,7 +3470,7 @@ export default {
       impact_size_foo: "Dice_16_58_1010_1512",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3514,7 +3514,7 @@ export default {
       impact_size_foo: "Pls_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3558,7 +3558,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3601,7 +3601,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3644,7 +3644,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3688,7 +3688,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3732,7 +3732,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 2,
 
       saving_need: null,
@@ -3777,7 +3777,7 @@ export default {
       impact_size_foo: "Det_2_4_8_Lvl__Dur_05_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3821,7 +3821,7 @@ export default {
       impact_size_foo: "Det_2_4_8_9_10_12_15_18_Lvl__Dur_05_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3866,7 +3866,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -3911,7 +3911,7 @@ export default {
       impact_size_foo: "Dur_05_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -3954,7 +3954,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -3999,7 +3999,7 @@ export default {
       impact_size_foo: "Det_5_8_11_14_17_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -4044,7 +4044,7 @@ export default {
       impact_size_foo: "Det_20_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4089,7 +4089,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -4133,7 +4133,7 @@ export default {
       impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4177,7 +4177,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4220,7 +4220,7 @@ export default {
       impact_size_foo: "Num_WIS",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4264,7 +4264,7 @@ export default {
       impact_size_foo: "Dur_Wisdom_Total",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4307,7 +4307,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4350,7 +4350,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4394,7 +4394,7 @@ export default {
       impact_size_foo: "Det_6_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4437,7 +4437,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4484,7 +4484,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4529,7 +4529,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 10,
 
       saving_need: null,
@@ -4574,7 +4574,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 10,
 
       saving_need: null,
@@ -4619,7 +4619,7 @@ export default {
       impact_size_foo: "Num_LevelX",
       impact_size_str: null,
       impact_size_num: 5,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4663,7 +4663,7 @@ export default {
       impact_size_foo: "Pls_Mastery",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4707,7 +4707,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -4751,7 +4751,7 @@ export default {
       impact_size_foo: "Det_17_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4795,7 +4795,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4839,7 +4839,7 @@ export default {
       impact_size_foo: "Det_17_Lvl",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -4883,7 +4883,7 @@ export default {
       impact_size_foo: "Pls_Lvl",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: true,
@@ -4929,7 +4929,7 @@ export default {
       impact_size_foo: "Num_Lvl14_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -4976,7 +4976,7 @@ export default {
       impact_size_foo: "Num_Lvl14_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5023,7 +5023,7 @@ export default {
       impact_size_foo: "Num_Lvl14_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5070,7 +5070,7 @@ export default {
       impact_size_foo: "Num_Lvl14_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5117,7 +5117,7 @@ export default {
       impact_size_foo: "Num_Lvl14_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5166,7 +5166,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -5209,7 +5209,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5252,7 +5252,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5296,7 +5296,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5340,7 +5340,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5384,7 +5384,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5428,7 +5428,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 3,
 
       saving_need: false,
@@ -5468,7 +5468,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5512,7 +5512,7 @@ export default {
       impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5556,7 +5556,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -5600,7 +5600,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5644,7 +5644,7 @@ export default {
       impact_size_foo: null, 
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: 4,
 
       saving_need: false,
@@ -5688,7 +5688,7 @@ export default {
       impact_size_foo: "Num_CHA",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5732,7 +5732,7 @@ export default {
       impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5776,7 +5776,7 @@ export default {
       impact_size_foo: "Num_Mastery",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5820,7 +5820,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -5863,7 +5863,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -5907,7 +5907,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5951,7 +5951,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -5994,7 +5994,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -6038,7 +6038,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -6081,7 +6081,7 @@ export default {
       impact_size_foo: "Num_CHA_Plus_Lvl_Min1",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6125,7 +6125,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6169,7 +6169,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 10,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6213,7 +6213,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6256,7 +6256,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6299,7 +6299,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6343,7 +6343,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6387,7 +6387,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6431,7 +6431,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6475,7 +6475,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6519,7 +6519,7 @@ export default {
       impact_size_foo: "Pls_DEX_Plus_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6562,7 +6562,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6605,7 +6605,7 @@ export default {
       impact_size_foo: "Num_LevelX",
       impact_size_str: null,
       impact_size_num: 5,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6650,7 +6650,94 @@ export default {
       // MonkMartial 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  extra_strike_monk: [
+    {
+      name: "spell_extra_strike_monk",
+      details: "spell_extra_strike_monk_details",
+      expanded: "spell_extra_strike_monk_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  stunning_strike: [
+    {
+      name: "spell_stunning_strike",
+      details: "spell_stunning_strike_details",
+      expanded: "spell_stunning_strike_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -6696,7 +6783,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -6739,7 +6826,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -6783,7 +6870,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -6826,7 +6913,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -6869,7 +6956,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -6913,7 +7000,7 @@ export default {
       impact_size_foo: "Str_X_Level_5_11_17", //1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: false,
@@ -6957,7 +7044,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7001,7 +7088,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7044,7 +7131,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7088,7 +7175,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -7132,7 +7219,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7175,7 +7262,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7218,7 +7305,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7262,7 +7349,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 12,
+      impact_size_dic: 12,
       impact_size_pls: null,
 
       saving_need: true,
@@ -7305,7 +7392,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7348,7 +7435,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7391,7 +7478,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7435,7 +7522,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7479,7 +7566,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -7522,7 +7609,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7566,7 +7653,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7608,7 +7695,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       // рассчет урона
 
       impact_size_pls: null,
@@ -7653,7 +7740,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7696,7 +7783,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7739,7 +7826,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7783,7 +7870,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: true,
@@ -7826,7 +7913,7 @@ export default {
       impact_size_foo: "Num_Level_5_11_17", //1lvl + 0, 5lvl + 1, 11lvl + 2, 17lvl + 3
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -7874,7 +7961,7 @@ export default {
       impact_size_foo: "Num_Plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: true,
@@ -7885,50 +7972,50 @@ export default {
       //2
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 3,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //3
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 4,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //4
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 5,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //5
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 6,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //6
       // name: "spell_hellish_rebuke",
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 7,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //7
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 8,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //8
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 9,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
     {
       //9
       // impact_size_foo: null,
       // impact_size_str: null, impact_size_num: 10,
-      // impact_size_dice: 10,
+      // impact_size_dic: 10,
     },
   ],
 
@@ -7969,7 +8056,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8017,7 +8104,7 @@ export default {
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3×, spell{2} = 4×, spell{3} = 5× ...
       impact_size_str: 3,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8073,7 +8160,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8120,7 +8207,7 @@ export default {
       impact_size_foo: "Num_Plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 12,
+      impact_size_dic: 12,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8175,7 +8262,7 @@ export default {
       impact_size_foo: "Num_Plus_1", //spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8230,7 +8317,7 @@ export default {
       impact_size_foo: "Str_X_Plus_1", //spell{1} = 3× 1d4+1 , spell{2} = 4× 1d4+1, spell{3} = 5× 1d4+1
       impact_size_str: 3,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: 1,
 
       saving_need: false,
@@ -8285,7 +8372,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8334,7 +8421,7 @@ export default {
       //Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы можете сделать целью одно дополнительное существо за каждый уровень ячейки выше первого.
       impact_size_str: 1,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8389,7 +8476,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8436,7 +8523,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8488,7 +8575,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8535,7 +8622,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8590,7 +8677,7 @@ export default {
       impact_size_foo: "Pls_Plus_5", 
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 5,
 
       saving_need: false,
@@ -8645,7 +8732,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 3,
 
       saving_need: false,
@@ -8692,7 +8779,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8747,7 +8834,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -8794,7 +8881,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8846,7 +8933,7 @@ export default {
         //spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8901,7 +8988,7 @@ export default {
       impact_size_foo: "Num_Plus_1__Pls_MOD",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -8956,7 +9043,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9011,7 +9098,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9058,7 +9145,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9113,7 +9200,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9168,7 +9255,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 4,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9223,7 +9310,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9270,7 +9357,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9317,7 +9404,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9364,7 +9451,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9411,7 +9498,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9458,7 +9545,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9509,7 +9596,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9557,7 +9644,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9604,7 +9691,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9651,7 +9738,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9706,7 +9793,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9761,7 +9848,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9808,7 +9895,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9855,7 +9942,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -9910,7 +9997,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -9957,7 +10044,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10004,7 +10091,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -10059,7 +10146,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10106,7 +10193,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -10161,7 +10248,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10212,7 +10299,7 @@ export default {
         //spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: 4,
 
       saving_need: false,
@@ -10261,7 +10348,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10308,7 +10395,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -10363,7 +10450,7 @@ export default {
       impact_size_foo: "Num_Plus_2",
       impact_size_str: null,
       impact_size_num: 6,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10418,7 +10505,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10473,7 +10560,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10520,7 +10607,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -10567,7 +10654,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10622,7 +10709,7 @@ export default {
       impact_size_foo: "Str_Plus_40",
       impact_size_str: 40,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10693,7 +10780,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10740,7 +10827,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10811,7 +10898,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -10858,7 +10945,7 @@ export default {
       impact_size_foo: "Num_Plus_2",
       impact_size_str: null,
       impact_size_num: 5,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10913,7 +11000,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -10968,7 +11055,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: 10,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11015,7 +11102,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 5,
 
       saving_need: false,
@@ -11062,7 +11149,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 2,
 
       saving_need: false,
@@ -11114,7 +11201,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 10,
 
       saving_need: false,
@@ -11164,7 +11251,7 @@ export default {
       impact_size_foo: "Num_Plus_1__Pls_MOD",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11221,7 +11308,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11271,7 +11358,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11321,7 +11408,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -11371,7 +11458,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11421,7 +11508,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11471,7 +11558,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -11521,7 +11608,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11571,7 +11658,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -11628,7 +11715,7 @@ export default {
       impact_size_foo: "Num_Plus_05",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11684,7 +11771,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 3,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -11741,7 +11828,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 16,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11783,7 +11870,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11834,7 +11921,7 @@ export default {
       //Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, количество боеприпасов увеличивается на два за каждый уровень ячейки выше второго.
       impact_size_str: 3,
       impact_size_num: 1,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -11891,7 +11978,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11941,7 +12028,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -11998,7 +12085,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -12048,7 +12135,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -12098,7 +12185,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 10,
+      impact_size_dic: 10,
       impact_size_pls: null,
 
       saving_need: true,
@@ -12155,7 +12242,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -12205,7 +12292,7 @@ export default {
       impact_size_foo: "Num_Plus_05",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12259,7 +12346,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12309,7 +12396,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 4,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12386,7 +12473,7 @@ export default {
       // На более высоких уровнях: Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, лечение увеличивается на 1d8 за каждый уровень ячейки выше второго.
       impact_size_str: 6,
       impact_size_num: 2,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12443,7 +12530,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12500,7 +12587,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12557,7 +12644,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12607,7 +12694,7 @@ export default {
       impact_size_foo: "Num_Plus_2",
       impact_size_str: null,
       impact_size_num: 4,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12664,7 +12751,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -12714,7 +12801,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -12764,7 +12851,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12814,7 +12901,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12864,7 +12951,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: 1,
 
       saving_need: false,
@@ -12916,7 +13003,7 @@ export default {
       //Вы создаете один дополнительный луч за каждый уровень ячейки выше второго.
       impact_size_str: 3,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: false,
@@ -12973,7 +13060,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13023,7 +13110,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -13073,7 +13160,7 @@ export default {
       impact_size_foo: "Num_Plus_5",
       impact_size_str: 3,
       impact_size_num: 5,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13130,7 +13217,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13180,7 +13267,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13230,7 +13317,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13280,7 +13367,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13331,7 +13418,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 15,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -13381,7 +13468,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13452,7 +13539,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 6,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -13509,7 +13596,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13559,7 +13646,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: true,
@@ -13616,7 +13703,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -13666,7 +13753,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13716,7 +13803,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13766,7 +13853,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13816,7 +13903,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13866,7 +13953,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13910,7 +13997,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -13960,7 +14047,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: true,
@@ -14010,7 +14097,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -14075,7 +14162,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
@@ -14132,7 +14219,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -14182,7 +14269,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 4,
+      impact_size_dic: 4,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14231,7 +14318,7 @@ export default {
       impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
       impact_size_num: 2,
-      impact_size_dice: 8,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14277,7 +14364,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14320,7 +14407,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14364,7 +14451,7 @@ export default {
       impact_size_foo: "Num_2xLvl_plus_INT",
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14407,7 +14494,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: true,
@@ -14450,7 +14537,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14493,7 +14580,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
@@ -14536,7 +14623,7 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
-      impact_size_dice: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,

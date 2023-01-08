@@ -2072,6 +2072,18 @@ export default {
         details: "if_no_heavy_armor_applied",
       },
       {
+        level: 6,
+        type: "plus",
+        keyword: "magical_unarmed_strike",
+        details: "on_immunity_cheks",
+      },
+      {
+        level: 7,
+        type: "plus",
+        keyword: "fine_dodge",
+        details: "from_aoe_effects",
+      },
+      {
         level: 9,
         type: "plus",
         keyword: "able_to_walk",
@@ -2115,6 +2127,18 @@ export default {
       {
         level:4,
         spell:spells.quickened_healing,
+      },
+      {
+        level:5,
+        spell:spells.extra_strike_monk,
+      },
+      {
+        level:5,
+        spell:spells.stunning_strike,
+      },
+      {
+        level:5,
+        spell:spells.focused_aim,
       },
     ],
 
