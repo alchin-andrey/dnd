@@ -264,31 +264,6 @@ export default {
 			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
 
-		// t_Time_Value() {
-		//   let foo = this.Value_Dur;
-		//   let string = null;
-		//   if (foo) {
-		//     string = foo;
-		//   } else {
-		//     let value_1 = null;
-		//     if (this.Spell_Index.spell_time === "concentration") {
-		//       value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
-		//     } else {
-		//       value_1 = this.t(this.Spell_Index.spell_time);
-		//     }
-		//     let value_2 = this.by_Mana("spell_duration");
-		//     let value_3 = this.t(this.Spell_Index.spell_duration_units);
-		//     if (!value_1) {
-		//       string = `${value_2} ${value_3}`;
-		//     } else if (value_2) {
-		//       string = `${value_1} ${value_2} ${value_3}`;
-		//     } else {
-		//       string = value_1;
-		//     }
-		//   }
-		//   return string.charAt(0).toUpperCase() + string.slice(1);
-		// },
-
 		t_Time_Value() {
 			let string = null;
 			let value_1 = null;
@@ -579,7 +554,7 @@ export default {
 		Num_CHA_Plus_Lvl_Min1() {
 			let mod = this.stats_Mod("charisma");
 			let lvl = this.MY.level;
-			return mod+lvl >= 1 ? mod+lvl : 1;
+			return mod + lvl >= 1 ? mod + lvl : 1;
 		},
 
 		Num_WIS() {
@@ -590,17 +565,8 @@ export default {
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.stats_Mod(this.MY.class.spell_attribute);
-			// console.log('Str_X_Plus_1_Num_MOD', num)
-
 			let res = pls + mod;
 			return res < 0 ? 0 : res;
-			// return num + mod;
-
-			//Example:
-			//base_stat = strenth
-			//pls = base_stat_mod = strength.mod = 3
-			//spell{1} = 1d4+3 ⬜️⬜️⬜️ ⬜️🔳🔳🔳
-			//spell{2} = 2d4+3 ⬜️⬜️⬜️ ⬜️⬜️🔳🔳🔳🔳🔳🔳
 		},
 		Pls_Plus_5() {
 			let pls = this.Spell_Index.impact_size_pls;
@@ -608,10 +574,6 @@ export default {
 			let mana_min = this.Index;
 			let res = pls + (mana - mana_min) * 5;
 			return res;
-			//return to: impact_size_pls
-			//Exapmle: pls = 4
-			//spell{1}: 1d4+4 ⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
-			//spell{2}: 1d4+9 ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ ⬜️🔳🔳🔳
 		},
 
 		Pls_STR() {
@@ -619,10 +581,6 @@ export default {
 			let mod = this.stats_Mod("strength");
 			let res = pls + mod;
 			return res;
-
-			//return to: impact_size_pls
-			//if < 0 then 0
-			// Example: +3 ⬜️⬜️⬜️
 		},
 
 		Pls_CHA() {
@@ -630,16 +588,12 @@ export default {
 			let mod = this.stats_Mod("charisma");
 			let res = pls + mod;
 			return res <= 0 ? 1 : res;
-
-			//return to: impact_size_pls
-			//if < 0 then 0
-			//Example: +4 ⬜️⬜️⬜️⬜️
 		},
 
 		Pls_DEX_Plus_Lvl() {
 			let mod = this.stats_Mod("dexterity");
 			let lvl = this.MY.level;
-			return mod+lvl;
+			return mod + lvl;
 		},
 
 		Pls_Lvl() {
@@ -671,29 +625,14 @@ export default {
 		Det_2_4_8_9_10_12_15_18_Lvl() {
 			let deteils = this.Spell_Index.details;
 			let lvl = this.MY.level;
-			let kof_arr = [
-				null,
-				2,
-				2,
-				4,
-				4,
-				4,
-				4,
-				8,
-				9,
-				10,
-				10,
-				12,
-				12,
-				14,
-				15,
-				15,
-				17,
-				18,
-				18,
-				18,
-			];
-			let kof = kof_arr[lvl - 1];
+      const kof_arr = [2, 4, 8, 9, 10, 12, 15, 18, 20];
+      let kof = null;
+      for (const i of kof_arr) {
+        if(lvl < i) {
+          break;
+        }
+        kof = i
+      }
 			return kof ? `${deteils}_${kof}` : deteils;
 		},
 
@@ -751,8 +690,8 @@ export default {
 			// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
 		},
 
-    //ANCHOR - Dic
-    Dic_MonkMartial() {
+		//ANCHOR - Dic
+		Dic_MonkMartial() {
 			let dice = this.Spell_Index.impact_size_dic;
 			let lvl = this.MY.level;
 			let kof = 0;
@@ -768,7 +707,7 @@ export default {
 				kof = 4;
 			}
 			return dice + kof;
-    },
+		},
 
 		//ANCHOR - FOO
 		Value_Foo: (state) => (Val) => {
@@ -804,7 +743,7 @@ export default {
 			return this.Value_Foo("Dur");
 		},
 
-    Value_Dic() {
+		Value_Dic() {
 			return this.Value_Foo("Dic");
 		},
 		// ------ FOO -----------
