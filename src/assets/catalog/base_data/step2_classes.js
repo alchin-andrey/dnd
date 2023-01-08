@@ -2104,6 +2104,18 @@ export default {
         level:3,
         spell:spells.deflect_missiles,
       },
+      {
+        level:3,
+        spell:spells.weapon_strike_bonus,
+      },
+      {
+        level:4,
+        spell:spells.slow_fall,
+      },
+      {
+        level:4,
+        spell:spells.quickened_healing,
+      },
     ],
 
     qualities: [
@@ -2144,8 +2156,8 @@ export default {
       {
         level: 1,
         type: "weapon",
-        foo: "Dic_Default_or_Monk",
-        // 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
+        foo: "Dic_Default_or_MonkMartial",
+        // MonkMartial 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
         // Вы можете использовать кость d4 вместо обычной кости урона ваших безоружных ударов или атак монашеским оружием. Эта кость увеличивается с вашим уровнем, как показано в колонке «боевые искусства».
       }
     ],
@@ -2412,6 +2424,26 @@ export default {
           [packs.dungeoneers, 1],
           [packs.explorers, 1],
         ],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
       },
     ],
   },
