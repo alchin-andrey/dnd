@@ -656,6 +656,24 @@ export default {
 			return kof ? `${deteils}_${kof}` : deteils;
 		},
 
+		Det_5_9_13_17_Lvl() {
+			let deteils = this.Spell_Index.details;
+			let lvl = this.MY.level;
+			let kof = null;
+			if (lvl >= 17) {
+				kof = 17;
+			} else if (lvl >= 13) {
+				kof = 13;
+			} else if (lvl >= 9) {
+				kof = 9;
+			} else if (lvl >= 5) {
+				kof = 5;
+			} else {
+				kof = null;
+			}
+			return kof ? `${deteils}_${kof}` : deteils;
+		},
+
 		Det_6_Lvl() {
 			let deteils = this.Spell_Index.details;
 			let lvl = this.MY.level;
@@ -682,6 +700,10 @@ export default {
 			let lvl = this.MY.level;
 			let numb = Math.floor(lvl / 2);
 			return numb;
+		},
+
+		Dur_Lvl() {
+			return this.MY.level;
 		},
 
 		Dur_Wisdom_Total() {

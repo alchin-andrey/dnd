@@ -6921,6 +6921,875 @@ export default {
     }
   ],
 
+  open_hand_tech_knock: [
+    {
+      name: "spell_open_hand_tech_knock",
+      details: "spell_open_hand_tech_knock_details",
+      expanded: "spell_open_hand_tech_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration:null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    }
+  ],
+
+  open_hand_tech_push: [
+    {
+      name: "spell_open_hand_tech_push",
+      details: "spell_open_hand_tech_push_details",
+      expanded: "spell_open_hand_tech_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration:null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 15,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    }
+  ],
+
+  open_hand_tech_confuse: [
+    {
+      name: "spell_open_hand_tech_confuse",
+      details: "spell_open_hand_tech_confuse_details",
+      expanded: "spell_open_hand_tech_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration:1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  wholeness_of_body: [
+    {
+      name: "spell_wholeness_of_body",
+      details: "spell_wholeness_of_body_details",
+      expanded: "spell_wholeness_of_body_expanded",
+
+      type: "ability",
+      slot_type: "wholeness_body_slot",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration:null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_LevelX",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  wholeness_of_body: [
+    {
+      name: "spell_wholeness_of_body",
+      details: "spell_wholeness_of_body_details",
+      expanded: "spell_wholeness_of_body_expanded",
+
+      type: "ability",
+      slot_type: "wholeness_body_slot",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration:null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_LevelX",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  sanctuary_monk: [
+    {
+      //1
+      name: "spell_sanctuary_monk",
+      details: "spell_sanctuary_monk_details",
+      expanded: "spell_sanctuary_monk_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "long_rest",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  quivering_palm: [
+    {
+      name: "spell_quivering_palm",
+      details: "spell_quivering_palm_details",
+      expanded: "spell_quivering_palm_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_3",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+
+      impact_size_foo: "Dur_Lvl",
+      impact_size_str: null,
+      impact_size_num: 5280,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "10d10",
+    },
+  ],
+
+  pass_without_trace_monk: [
+    {
+      name: "spell_pass_without_trace_monk",
+      details: "spell_pass_without_trace_details",
+      expanded: "spell_pass_without_trace_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["druid", "ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: "stealth",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: 10,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  darkvision_monk: [
+    {
+      //2
+      name: "spell_darkvision_monk",
+      details: "spell_darkvision_details",
+      expanded: "spell_darkvision_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch", "somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  silence_monk: [
+    {
+      name: "spell_silence_monk",
+      details: "spell_silence_details",
+      expanded: "spell_silence_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  darkness_monk: [
+    {
+      name: "spell_darkness_monk",
+      details: "spell_darkness_details",
+      expanded: "spell_darkness_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 60,
+      aim_aoe: "sphere",
+      aim_aoe_size: 30,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  shadow_step: [
+    {
+      name: "spell_shadow_step",
+      details: "spell_shadow_step_details",
+      expanded: "spell_shadow_step_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 60,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  cloak_of_shadows_monk: [
+    {
+      name: "spell_cloak_of_shadows_monk",
+      details: "spell_cloak_of_shadows_monk_details",
+      expanded: "spell_cloak_of_shadows_monk_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  opportunist: [
+    {
+      name: "spell_opportunist",
+      details: "spell_opportunist_details",
+      expanded: "spell_opportunist_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  water_circle: [
+    {
+      name: "spell_water_circle",
+      details: "spell_water_circle_details",
+      expanded: "spell_water_circle_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bludgeoning_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  shatter_monk: [
+    {
+      name: "spell_shatter_monk",
+      details: "spell_shatter_monk_details",
+      expanded: "spell_shatter_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: "damage",
+      impact_damage_type: "thunder_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  fire_snake_teeth: [
+    {
+      name: "spell_fire_snake_teeth",
+      details: "spell_fire_snake_teeth_details",
+      expanded: "spell_fire_snake_teeth_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 15,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 0,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  ashing_strike: [
+    {
+      name: "spell_ashing_strike",
+      details: "spell_ashing_strike_details",
+      expanded: "spell_ashing_strike_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cone",
+      aim_aoe_size: 15,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  four_thunder_fist: [
+    {
+      name: "spell_four_thunder_fist",
+      details: "spell_four_thunder_fist_details",
+      expanded: "spell_four_thunder_fist_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 15,
+
+      impact_type: "damage",
+      impact_damage_type: "sound_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  gust_of_wind_monk: [
+    {
+      name: "spell_gust_of_wind_monk",
+      details: "spell_gust_of_wind_monk_details",
+      expanded: "spell_gust_of_wind_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 60,
+
+      impact_type: "push",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Feet",
+      impact_size_str: null,
+      impact_size_num: 15,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: null,
+    },
+  ],
+
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [
@@ -13589,8 +14458,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      // impact_size_foo: "Num_Feet",
-      impact_size_foo: null,
+      impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 15,
       impact_size_dic: null,

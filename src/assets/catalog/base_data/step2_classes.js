@@ -2124,6 +2124,10 @@ export default {
     spells: [
       {
         level:1,
+        spell: spells.four_thunder_fist
+      },
+      {
+        level:1,
         spell:spells.unarmed_strike_bonus,
       },
       {
@@ -2245,6 +2249,130 @@ export default {
     ],
 
     settings: [
+      {
+        level: 3,
+        type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            name: "way_of_the_open_hand",
+            details: "way_of_the_open_hand_details",
+
+            charges: [
+              {
+                level: 6,
+                name: "wholeness_body_slots",
+                type: "long_rest",
+                list: [
+                  ["", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level:3,
+                spell: spells.open_hand_tech_knock
+              },
+              {
+                level:3,
+                spell: spells.open_hand_tech_push
+              },
+              {
+                level:3,
+                spell: spells.open_hand_tech_confuse
+              },
+              {
+                level:6,
+                spell: spells.wholeness_of_body
+              },
+              {
+                level:11,
+                spell: spells.sanctuary_monk
+              },
+              {
+                level:17,
+                spell: spells.quivering_palm
+              },
+            ]
+          },
+          {
+            name: "way_of_the_shadow",
+            details: "way_of_the_shadow_details",
+
+            spells: [
+              {
+                level:3,
+                spell: spells.small_illusion
+              },
+              {
+                level:3,
+                spell: spells.pass_without_trace_monk
+              },
+              {
+                level:3,
+                spell: spells.darkvision_monk
+              },
+              {
+                level:3,
+                spell: spells.silence_monk
+              },
+              {
+                level:3,
+                spell: spells.darkness_monk
+              },
+              {
+                level:6,
+                spell: spells.shadow_step
+              },
+              {
+                level:11,
+                spell: spells.cloak_of_shadows
+              },
+              {
+                level:17,
+                spell: spells.opportunist
+              },
+            ]
+          },
+          {
+            name: "way_of_the_four_elements",
+            details: "way_of_the_four_elements_details",
+            
+            spells: [
+              {
+                level:3,
+                spell: spells.water_circle
+              },
+              {
+                level:3,
+                spell: spells.fire_snake_teeth
+              },
+              {
+                level:3,
+                spell: spells.ashing_strike
+              },
+              {
+                level:3,
+                spell: spells.four_thunder_fist
+              },
+              {
+                level:6,
+                spell: spells.shatter_monk
+              },
+              // {
+              //   level:17,
+              //   spell: spells.winter_breath
+              // },
+              // {
+              //   level:17,
+              //   spell: spells.earth_val
+              // },
+            ]
+          },
+        ]
+      },
       {
         level: 1,
         type: "skills",
