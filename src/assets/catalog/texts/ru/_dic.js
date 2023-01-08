@@ -3487,4 +3487,18 @@ export default {
     spell_diamond_soul: spells.diamond_soul,
     spell_diamond_soul_details: spells.diamond_soul_details,
     spell_diamond_soul_expanded: spells.diamond_soul_expanded,
+
+    spell_focused_aim: spells.focused_aim,
+    spell_focused_aim_details: spells.focused_aim_details,
+    spell_focused_aim_expanded: spells.focused_aim_expanded,
+
+    spell_stillness_of_mind: spells.stillness_of_mind,
+    spell_stillness_of_mind_details: spells.stillness_of_mind_details,
+    spell_stillness_of_mind_expanded: spells.stillness_of_mind_expanded,
+
+    chi_slot_4: "4× Ци",
+
+    spell_empty_body: spells.empty_body,
+    spell_empty_body_details: spells.empty_body_details,
+    spell_empty_body_expanded: spells.empty_body_expanded,
 }

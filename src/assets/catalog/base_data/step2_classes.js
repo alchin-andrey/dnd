@@ -2171,8 +2171,16 @@ export default {
         spell:spells.focused_aim,
       },
       {
-        level:5,
+        level:7,
+        spell:spells.stillness_of_mind,
+      },
+      {
+        level:14,
         spell:spells.diamond_soul,
+      },
+      {
+        level:14,
+        spell:spells.empty_body,
       },
     ],
 
@@ -2520,7 +2528,7 @@ export default {
         type: "feats",
       },
     ],
-  },
+  }, // 20 окрім 18: Пусте тіло (8 Чі)
 
   //NOTE - Paladin -------------------------------------------------------------------------
 
