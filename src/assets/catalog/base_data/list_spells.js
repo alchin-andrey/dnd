@@ -6528,6 +6528,137 @@ export default {
     }
   ],
 
+  weapon_strike_bonus: [
+    {
+      name: "spell_weapon_strike_bonus",
+      details: "spell_weapon_strike_bonus_details",
+      expanded: "spell_weapon_strike_bonus_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  slow_fall: [
+    {
+      name: "spell_slow_fall",
+      details: "spell_slow_fall_details",
+      expanded: "spell_slow_fall_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "reduction_w",
+
+      impact_size_foo: "Num_LevelX",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  quickened_healing: [
+    {
+      name: "spell_quickened_healing",
+      details: "spell_quickened_healing_details",
+      expanded: "spell_quickened_healing_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Dic_MonkMartial__Pls_Mastery",
+      // MonkMartial 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dice: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [

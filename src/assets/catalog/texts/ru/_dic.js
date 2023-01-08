@@ -3449,4 +3449,18 @@ export default {
     spell_deflect_missiles: spells.deflect_missiles,
     spell_deflect_missiles_details: spells.deflect_missiles_details,
     spell_deflect_missiles_expanded: spells.deflect_missiles_expanded,
+
+    spell_weapon_strike_bonus: spells.weapon_strike_bonus,
+    spell_weapon_strike_bonus_details: spells.weapon_strike_bonus_details,
+    spell_weapon_strike_bonus_expanded: spells.weapon_strike_bonus_expanded,
+
+    spell_slow_fall: spells.slow_fall,
+    spell_slow_fall_details: spells.slow_fall_details,
+    spell_slow_fall_expanded: spells.slow_fall_expanded,
+
+    chi_slot_2: "2× Ци",
+
+    spell_quickened_healing: spells.quickened_healing,
+    spell_quickened_healing_details: spells.quickened_healing_details,
+    spell_quickened_healing_expanded: spells.quickened_healing_expanded,
 }
