@@ -3469,5 +3469,22 @@ export default {
     spell_extra_strike_monk_expanded: spells.extra_strike_monk_expanded,
 
     magical_unarmed_strike: "Магические безоружные удары",
-    on_immunity_cheks: "— преодолевают сопротивление немагическому урону"
+    on_immunity_cheks: "— преодолевают сопротивление немагическому урону",
+
+    any: "все",
+
+    on_hunger_and_thirst: "против голода и жажды",
+
+    aging_against: "против естественного и магического старения тела. Умереть от старости все еще возможно",
+
+    plus_4_chi: "+4 ячейки Ци",
+    on_initiative: "при броске Инициативы",
+
+    spell_stunning_strike: spells.stunning_strike,
+    spell_stunning_strike_details: spells.stunning_strike_details,
+    spell_stunning_strike_expanded: spells.stunning_strike_expanded,
+
+    spell_diamond_soul: spells.diamond_soul,
+    spell_diamond_soul_details: spells.diamond_soul_details,
+    spell_diamond_soul_expanded: spells.diamond_soul_expanded,
 }

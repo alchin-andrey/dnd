@@ -3462,4 +3462,28 @@ export default {
     spell_quickened_healing: spells.quickened_healing,
     spell_quickened_healing_details: spells.quickened_healing_details,
     spell_quickened_healing_expanded: spells.quickened_healing_expanded,
+
+    spell_extra_strike_monk: spells.extra_strike_monk,
+    spell_extra_strike_monk_details: spells.extra_strike_monk_details,
+    spell_extra_strike_monk_expanded: spells.extra_strike_monk_expanded,
+
+    magical_unarmed_strike: "Магічні беззбройні удари",
+    on_immunity_cheks: "— долають стійкість до немагічного пошкодження",
+
+    any: "усі",
+
+    on_hunger_and_thirst: "проти голоду та спраги",
+
+    aging_against: "проти природного та магічного старіння тіла. Померти від старості все ще можливо",
+
+    plus_4_chi: "+4 слоту Чі",
+    on_initiative: "при кидку Ініціативи",
+
+    spell_stunning_strike: spells.stunning_strike,
+    spell_stunning_strike_details: spells.stunning_strike_details,
+    spell_stunning_strike_expanded: spells.stunning_strike_expanded,
+
+    spell_diamond_soul: spells.diamond_soul,
+    spell_diamond_soul_details: spells.diamond_soul_details,
+    spell_diamond_soul_expanded: spells.diamond_soul_expanded,
 }

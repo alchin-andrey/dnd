@@ -6740,6 +6740,50 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    }
+  ],
+
+  diamond_soul: [
+    {
+      name: "spell_diamond_soul",
+      details: "spell_diamond_soul_details",
+      expanded: "spell_diamond_soul_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot",
+      classes: ["monk"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
       saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,

@@ -60,7 +60,7 @@ export default {
     fines: [
       {
         level: 7,
-        type: "plus",
+        type: "resistance",
         keyword: "fine_dodge",
         details: "from_aoe_effects",
       },
@@ -2079,7 +2079,7 @@ export default {
       },
       {
         level: 7,
-        type: "plus",
+        type: "resistance",
         keyword: "fine_dodge",
         details: "from_aoe_effects",
       },
@@ -2088,6 +2088,36 @@ export default {
         type: "plus",
         keyword: "able_to_walk",
         details: "on_walls_and_water",
+      },
+      {
+        level: 10,
+        type: "resistance",
+        keyword: "immunity",
+        details: "on_sick",
+      },
+      {
+        level: 10,
+        type: "resistance",
+        keyword: "immunity",
+        details: "poison_against",
+      },
+      {
+        level: 15,
+        type: "resistance",
+        keyword: "immunity",
+        details: "aging_against",
+      },
+      {
+        level: 15,
+        type: "resistance",
+        keyword: "immunity",
+        details: "on_hunger_and_thirst",
+      },
+      {
+        level: 20,
+        type: "plus",
+        keyword: "plus_4_chi",
+        details: "on_initiative",
       },
     ],
 
@@ -2140,6 +2170,10 @@ export default {
         level:5,
         spell:spells.focused_aim,
       },
+      {
+        level:5,
+        spell:spells.diamond_soul,
+      },
     ],
 
     qualities: [
@@ -2183,7 +2217,23 @@ export default {
         foo: "Dic_Default_or_MonkMartial",
         // MonkMartial 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
         // Вы можете использовать кость d4 вместо обычной кости урона ваших безоружных ударов или атак монашеским оружием. Эта кость увеличивается с вашим уровнем, как показано в колонке «боевые искусства».
-      }
+      },
+      {
+        level: 13,
+        type: "proficiencies",
+        languages: "any",
+        //Вы понимаете речь на любом языке. Кроме того, все существа, способные понимать хотя бы один язык, понимают то, что вы сказали.
+      },
+      {
+        level: 14,
+        type: "saving",
+        saving: ["constitution","intelligence"],
+      },
+      {
+        level: 14,
+        type: "saving",
+        saving: ["wisdom","charisma"],
+      },
     ],
 
     settings: [
