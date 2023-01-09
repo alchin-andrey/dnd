@@ -3554,13 +3554,13 @@ export default {
     spell_opportunist_details: spells.opportunist_details,
     spell_opportunist_expanded: spells.opportunist_expanded,
 
-    spell_water_circle: spells.water_circle,
-    spell_water_circle_details: spells.water_circle_details,
-    spell_water_circle_details_5: spells.water_circle_details_5,
-    spell_water_circle_details_9: spells.water_circle_details_9,
-    spell_water_circle_details_13: spells.water_circle_details_13,
-    spell_water_circle_details_17: spells.water_circle_details_17,
-    spell_water_circle_expanded: spells.water_circle_expanded,
+    spell_water_whip: spells.water_whip,
+    spell_water_whip_details: spells.water_whip_details,
+    spell_water_whip_details_5: spells.water_whip_details_5,
+    spell_water_whip_details_9: spells.water_whip_details_9,
+    spell_water_whip_details_13: spells.water_whip_details_13,
+    spell_water_whip_details_17: spells.water_whip_details_17,
+    spell_water_whip_expanded: spells.water_whip_expanded,
 
     spell_shatter_monk: spells.shatter_monk,
     spell_shatter_monk_details: spells.shatter_monk_details,
@@ -3597,4 +3597,16 @@ export default {
     spell_gust_of_wind_monk: spells.gust_of_wind_monk,
     spell_gust_of_wind_monk_details: spells.gust_of_wind_monk_details,
     spell_gust_of_wind_monk_expanded: spells.gust_of_wind_monk_expanded,
+
+    spell_air_fist: spells.air_fist,
+    spell_air_fist_details: spells.air_fist_details,
+    spell_air_fist_details_5: spells.air_fist_details_5,
+    spell_air_fist_details_9: spells.air_fist_details_9,
+    spell_air_fist_details_13: spells.air_fist_details_13,
+    spell_air_fist_details_17: spells.air_fist_details_17,
+    spell_air_fist_expanded: spells.air_fist_expanded,
+
+    spell_element_bond: spells.element_bond,
+    spell_element_bond_details: spells.element_bond_details,
+    spell_element_bond_expanded: spells.element_bond_expanded,
 }

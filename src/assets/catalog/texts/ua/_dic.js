@@ -3500,4 +3500,110 @@ export default {
     spell_empty_body: spells.empty_body,
     spell_empty_body_details: spells.empty_body_details,
     spell_empty_body_expanded: spells.empty_body_expanded,
+
+    spell_open_hand_tech_knock: spells.open_hand_tech_knock,
+    spell_open_hand_tech_knock_details: spells.open_hand_tech_knock_details,
+
+    spell_open_hand_tech_push: spells.open_hand_tech_push,
+    spell_open_hand_tech_push_details: spells.open_hand_tech_push_details,
+
+    spell_open_hand_tech_confuse: spells.open_hand_tech_confuse,
+    spell_open_hand_tech_confuse_details: spells.open_hand_tech_confuse_details,
+
+    spell_open_hand_tech_expanded: spells.open_hand_tech_expanded,
+
+    spell_wholeness_of_body: spells.wholeness_of_body,
+    spell_wholeness_of_body_details: spells.wholeness_of_body_details,
+    spell_wholeness_of_body_expanded: spells.wholeness_of_body_expanded,
+
+    wholeness_body_slots: "Зцілення",
+    wholeness_body_slot: "1× Зцілення",
+
+    spell_sanctuary_monk: spells.sanctuary_monk,
+    spell_sanctuary_monk_details: spells.sanctuary_monk_details,
+    spell_sanctuary_monk_expanded: spells.sanctuary_monk_expanded,
+
+    chi_slot_3: "3× Чі",
+
+    spell_quivering_palm: spells.quivering_palm,
+    spell_quivering_palm_details: spells.quivering_palm_details,
+    spell_quivering_palm_expanded: spells.quivering_palm_expanded,
+
+    spell_pass_without_trace_monk: spells.pass_without_trace_monk,
+    spell_pass_without_trace_monk_expanded: spells.pass_without_trace_monk_expanded,
+
+    spell_darkvision_monk: spells.darkvision_monk,
+    spell_darkvision_monk_expanded: spells.darkvision_monk_expanded,
+
+    spell_silence_monk: spells.silence_monk,
+
+    spell_darkness_monk: spells.darkness_monk,
+
+    spell_shadow_step: spells.shadow_step,
+    spell_shadow_step_details: spells.shadow_step_details,
+    spell_shadow_step_expanded: spells.shadow_step_expanded,
+
+    spell_cloak_of_shadows_monk: spells.cloak_of_shadows_monk,
+    spell_cloak_of_shadows_monk_details: spells.cloak_of_shadows_monk_details,
+    spell_cloak_of_shadows_monk_expanded: spells.cloak_of_shadows_monk_expanded,
+
+    spell_opportunist: spells.opportunist,
+    spell_opportunist_details: spells.opportunist_details,
+    spell_opportunist_expanded: spells.opportunist_expanded,
+
+    spell_water_whip: spells.water_whip,
+    spell_water_whip_details: spells.water_whip_details,
+    spell_water_whip_details_5: spells.water_whip_details_5,
+    spell_water_whip_details_9: spells.water_whip_details_9,
+    spell_water_whip_details_13: spells.water_whip_details_13,
+    spell_water_whip_details_17: spells.water_whip_details_17,
+    spell_water_whip_expanded: spells.water_whip_expanded,
+
+    spell_shatter_monk: spells.shatter_monk,
+    spell_shatter_monk_details: spells.shatter_monk_details,
+    spell_shatter_monk_details_5: spells.shatter_monk_details_5,
+    spell_shatter_monk_details_9: spells.shatter_monk_details_9,
+    spell_shatter_monk_details_13: spells.shatter_monk_details_13,
+    spell_shatter_monk_details_17: spells.shatter_monk_details_17,
+    spell_shatter_monk_expanded: spells.shatter_monk_expanded,
+
+    spell_fire_snake_teeth: spells.fire_snake_teeth,
+    spell_fire_snake_teeth_details: spells.fire_snake_teeth_details,
+    spell_fire_snake_teeth_details_5: spells.fire_snake_teeth_details_5,
+    spell_fire_snake_teeth_details_9: spells.fire_snake_teeth_details_9,
+    spell_fire_snake_teeth_details_13: spells.fire_snake_teeth_details_13,
+    spell_fire_snake_teeth_details_17: spells.fire_snake_teeth_details_17,
+    spell_fire_snake_teeth_expanded: spells.fire_snake_teeth_expanded,
+
+    spell_ashing_strike: spells.ashing_strike,
+    spell_ashing_strike_details: spells.ashing_strike_details,
+    spell_ashing_strike_details_5: spells.ashing_strike_details_5,
+    spell_ashing_strike_details_9: spells.ashing_strike_details_9,
+    spell_ashing_strike_details_13: spells.ashing_strike_details_13,
+    spell_ashing_strike_details_17: spells.ashing_strike_details_17,
+    spell_ashing_strike_expanded: spells.ashing_strike_expanded,
+
+    spell_four_thunder_fist: spells.four_thunder_fist,
+    spell_four_thunder_fist_details: spells.four_thunder_fist_details,
+    spell_four_thunder_fist_details_5: spells.four_thunder_fist_details_5,
+    spell_four_thunder_fist_details_9: spells.four_thunder_fist_details_9,
+    spell_four_thunder_fist_details_13: spells.four_thunder_fist_details_13,
+    spell_four_thunder_fist_details_17: spells.four_thunder_fist_details_17,
+    spell_four_thunder_fist_expanded: spells.four_thunder_fist_expanded,
+
+    spell_gust_of_wind_monk: spells.gust_of_wind_monk,
+    spell_gust_of_wind_monk_details: spells.gust_of_wind_monk_details,
+    spell_gust_of_wind_monk_expanded: spells.gust_of_wind_monk_expanded,
+
+    spell_air_fist: spells.air_fist,
+    spell_air_fist_details: spells.air_fist_details,
+    spell_air_fist_details_5: spells.air_fist_details_5,
+    spell_air_fist_details_9: spells.air_fist_details_9,
+    spell_air_fist_details_13: spells.air_fist_details_13,
+    spell_air_fist_details_17: spells.air_fist_details_17,
+    spell_air_fist_expanded: spells.air_fist_expanded,
+
+    spell_element_bond: spells.element_bond,
+    spell_element_bond_details: spells.element_bond_details,
+    spell_element_bond_expanded: spells.element_bond_expanded,
 }

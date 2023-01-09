@@ -2124,10 +2124,6 @@ export default {
     spells: [
       {
         level:1,
-        spell: spells.four_thunder_fist
-      },
-      {
-        level:1,
         spell:spells.unarmed_strike_bonus,
       },
       {
@@ -2343,11 +2339,19 @@ export default {
             spells: [
               {
                 level:3,
-                spell: spells.water_circle
+                spell: spells.element_bond
+              },
+              {
+                level:3,
+                spell: spells.water_whip
               },
               {
                 level:3,
                 spell: spells.fire_snake_teeth
+              },
+              {
+                level:3,
+                spell: spells.air_fist
               },
               {
                 level:3,
@@ -2358,9 +2362,37 @@ export default {
                 spell: spells.four_thunder_fist
               },
               {
+                level:3,
+                spell: spells.gust_of_wind_monk
+              },
+              {
+                level:3,
+                spell: spells.gust_of_wind_monk
+              },
+              {
+                level:3,
+                spell: spells.form_river
+              },
+              {
                 level:6,
                 spell: spells.shatter_monk
               },
+              {
+                level:6,
+                spell: spells.hold_person_monk
+              },
+              // {
+              //   level:11,
+              //   spell: spells.fly_monk
+              // },
+              // {
+              //   level:11,
+              //   spell: spells.fireball_monk
+              // },
+              // {
+              //   level:11,
+              //   spell: spells.gaseous_form_monk
+              // },
               // {
               //   level:17,
               //   spell: spells.winter_breath
@@ -2368,6 +2400,14 @@ export default {
               // {
               //   level:17,
               //   spell: spells.earth_val
+              // },
+              // {
+              //   level:17,
+              //   spell: spells.stoneskin_monk
+              // },
+              // {
+              //   level:17,
+              //   spell: spells.wall_of_fire_monk
               // },
             ]
           },
@@ -2656,7 +2696,7 @@ export default {
         type: "feats",
       },
     ],
-  }, // 20 окрім 18: Пусте тіло (8 Чі)
+  }, // 20 окрім 18: Пусте тіло (8 Чі) та Шлях стихій (11 17 lvl)
 
   //NOTE - Paladin -------------------------------------------------------------------------
 

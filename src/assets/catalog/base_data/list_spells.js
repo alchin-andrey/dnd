@@ -7528,11 +7528,11 @@ export default {
     },
   ],
 
-  water_circle: [
+  water_whip: [
     {
-      name: "spell_water_circle",
-      details: "spell_water_circle_details",
-      expanded: "spell_water_circle_expanded",
+      name: "spell_water_whip",
+      details: "spell_water_whip_details",
+      expanded: "spell_water_whip_expanded",
 
       type: "ability",
       slot_type: "chi_slot_2",
@@ -7546,7 +7546,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 30,
 
-      parts: ["none"],
+      parts: ["somatic"],
 
       spell_time: "instant",
       spell_duration: null,
@@ -7578,7 +7578,7 @@ export default {
       expanded: "spell_shatter_monk_expanded",
 
       type: "ability",
-      slot_type: "chi_slot_2",
+      slot_type: "chi_slot_3",
       classes: ["monk"],
 
       cast_time: "action",
@@ -7632,7 +7632,7 @@ export default {
       aim_type: "in_distance",
       aim_range: 15,
 
-      parts: ["none"],
+      parts: ["somatic"],
 
       spell_time: null,
       spell_duration: 1,
@@ -7785,6 +7785,181 @@ export default {
 
       saving_need: true,
       saving_attribute: "strength",
+      impact_size_saved: null,
+    },
+  ],
+
+  air_fist: [
+    {
+      name: "spell_air_fist",
+      details: "spell_air_fist_details",
+      expanded: "spell_air_fist_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_2",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bludgeoning_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "strength",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  hold_person_monk: [
+    {
+      name: "spell_hold_person_monk",
+      details: "spell_hold_person_monk_details",
+      expanded: "spell_hold_person_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_3",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_disttance",
+      aim_range: 60,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  element_bond: [
+    {
+      name: "spell_element_bond",
+      details: "spell_element_bond_details",
+      expanded: "spell_element_bond_expanded",
+
+      type: "ability",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  form_river: [
+    {
+      name: "spell_form_river",
+      details: "spell_form_river_details",
+      expanded: "spell_form_river_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_1",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 30,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],
