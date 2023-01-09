@@ -345,129 +345,112 @@ export default {
 		//ANCHOR - STR
 		Str_X_Level_5_11_17() {
 			let str = this.Spell_Index.impact_size_str;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl < 5) {
-				kof = 1;
-			} else if (lvl < 11) {
-				kof = 2;
-			} else if (lvl < 17) {
-				kof = 3;
-			} else {
-				kof = 4;
-			}
-			let res = str + kof;
-			return res;
-			//return to: impact_size_str
-			//1lvl = 1×, 5lvl = 2×, 11lvl = 3×, 17lvl = 4×
-			//Example: 1× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			// let lvl = this.MY.level;
+			// let kof = null;
+			// if (lvl < 5) {
+			// 	kof = 1;
+			// } else if (lvl < 11) {
+			// 	kof = 2;
+			// } else if (lvl < 17) {
+			// 	kof = 3;
+			// } else {
+			// 	kof = 4;
+			// }
+      const lvl_arr = [5, 11, 17];
+			const kof_arr = [1, 2, 3];
+      let kof = this.kof_Foo(lvl_arr, kof_arr);
+			return str + kof;
 		},
 
 		Str_X_Plus_1() {
 			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			let res = str + (mana - mana_min);
-			return res;
-			//return to: impact_size_str
-			//Exapmle: str = 3
-			//spell{1} = 3×, spell{2} = 4×, spell{3} = 5×
-			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 4× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			return str + (mana - mana_min);
 		},
 
 		Str_X_Plus_2() {
 			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			let res = str + (mana - mana_min) * 2;
-			return res;
-			//return to: impact_size_str
-			//Exapmle: str = 3
-			//spell{1} = 3×, spell{2} = 5×, spell{3} = 7×
-			//spell{1}: 3× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 5× 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			return str + (mana - mana_min) * 2;
 		},
 
 		Str_Plus_40() {
-			//не добавлять "×"
-
 			let str = this.Spell_Index.impact_size_str;
 			let mana = this.Mana_Numb;
-			let res = str * mana;
-			return res;
-			//Example:
-			//str = 40
-			//spell{1} = 40
-			//spell{2} = 80
-			//spell{3} = 120
-
-			// + aoe size через скобочки
+			return str * mana;
 		},
 
 		//ANCHOR - NUM
-		Num_Barbarian_Rage_Bonus() {
-			return barbarian_rage_bonus[this.MY.level]; // convert to store
-		},
+		// Num_Barbarian_Rage_Bonus() {
+		// 	return barbarian_rage_bonus[this.MY.level]; // convert to store
+		// },
 
 		Num_Plus_Level_2() {
 			let num = this.Spell_Index.impact_size_num;
 			let lvl = this.MY.level;
 			return num + Math.floor((lvl - 1) / 2);
-			//Например num = 1.
-			//на 1 левеле = 1, на 3 левеле = 2, на 5 левеле = 3 и тд.
 		},
 
 		Num_LevelX() {
 			let num = this.Spell_Index.impact_size_num;
 			let lvl = this.MY.level;
-
 			return num * lvl;
 		},
 
 		Num_Level_9_16() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			let kof = 0;
-			if (lvl < 9) {
-				kof = 0;
-			} else if (lvl < 16) {
-				kof = 1;
-			} else {
-				kof = 2;
-			}
+			// let lvl = this.MY.level;
+			// let kof = 0;
+			// if (lvl < 9) {
+			// 	kof = 0;
+			// } else if (lvl < 16) {
+			// 	kof = 1;
+			// } else {
+			// 	kof = 2;
+			// }
+      const lvl_arr = [9, 16];
+			const kof_arr = [1, 2];
+      let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return num + kof;
 		},
 
 		Num_Level_5_11_17() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			let kof = 0;
-			if (lvl < 5) {
-				kof = 0;
-			} else if (lvl < 11) {
-				kof = 1;
-			} else if (lvl < 17) {
-				kof = 2;
-			} else {
-				kof = 3;
-			}
+			// let lvl = this.MY.level;
+			// let kof = 0;
+			// if (lvl < 5) {
+			// 	kof = 0;
+			// } else if (lvl < 11) {
+			// 	kof = 1;
+			// } else if (lvl < 17) {
+			// 	kof = 2;
+			// } else {
+			// 	kof = 3;
+			// }
+      const lvl_arr = [5, 11, 17];
+			const kof_arr = [1, 2, 3];
+      let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return num + kof;
 		},
 
 		Num_Level_6_11_16() {
 			let num = this.Spell_Index.impact_size_num;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl < 6) {
-				kof = 0;
-			} else if (lvl < 11) {
-				kof = 1;
-			} else if (lvl < 16) {
-				kof = 2;
-			} else {
-				kof = 3;
-			}
+			// let lvl = this.MY.level;
+			// let kof = null;
+			// if (lvl < 6) {
+			// 	kof = 0;
+			// } else if (lvl < 11) {
+			// 	kof = 1;
+			// } else if (lvl < 16) {
+			// 	kof = 2;
+			// } else {
+			// 	kof = 3;
+			// }
+      const lvl_arr = [6, 11, 16];
+			const kof_arr = [1, 2, 3];
+      let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return num + kof;
 		},
 
@@ -482,49 +465,27 @@ export default {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			let res = num + Math.floor((mana - mana_min) / 2);
-			return res;
-			//spell{1} = num, spell{2} = num, spell{3} = num+1 ...
-			//Example:
-			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{3}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			return num + Math.floor((mana - mana_min) / 2);
 		},
 		Num_Plus_1() {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			let res = num + (mana - mana_min);
-			return res;
-			//spell{1} = num, spell{2} = num+1, spell{3} = num+2 ...
-			//Example:
-			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 2d10 ⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			return num + (mana - mana_min);
 		},
 
 		Num_Plus_2() {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			let res = num + (mana - mana_min) * 2;
-			return res;
-			//spell{1} = num, spell{2} = num+2, spell{3} = num+4 ...
-			//Example:
-			//spell{1}: 1d10 ⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳
-			//spell{2}: 3d10 ⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳 🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			return num + (mana - mana_min) * 2;
 		},
 
 		Num_Plus_5() {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			let res = num + (mana - mana_min) * 5;
-			return res;
-			//return to: impact_size_num
-			//spell{1} = num, spell{2} = num+5, spell{3} = num+10 ...
-			//Example:
-			//spell{1}: 1d4 ⬜️🔳🔳🔳
-			//spell{2}: 6d4 ⬜️⬜️⬜️⬜️⬜️⬜️🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳
+			return num + (mana - mana_min) * 5;
 		},
 
 		Num_Mastery_05() {
@@ -607,99 +568,94 @@ export default {
 
 		//ANCHOR - Det
 		Det_2_4_8_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl >= 8) {
-				kof = 8;
-			} else if (lvl >= 4) {
-				kof = 4;
-			} else if (lvl >= 2) {
-				kof = 2;
-			} else {
-				kof = null;
-			}
-			return kof ? `${deteils}_${kof}` : deteils;
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// let kof = null;
+			// if (lvl >= 8) {
+			// 	kof = 8;
+			// } else if (lvl >= 4) {
+			// 	kof = 4;
+			// } else if (lvl >= 2) {
+			// 	kof = 2;
+			// } else {
+			// 	kof = null;
+			// }
+			// return kof;
+      const lvl_arr = [2, 4, 8];
+			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_2_4_8_9_10_12_15_18_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-      const kof_arr = [2, 4, 8, 9, 10, 12, 15, 18, 20];
-      let kof = null;
-      for (const i of kof_arr) {
-        if(lvl < i) {
-          break;
-        }
-        kof = i
-      }
-			return kof ? `${deteils}_${kof}` : deteils;
+      const lvl_arr = [2, 4, 8, 9, 10, 12, 15, 18, 20];
+			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_5_8_11_14_17_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl >= 17) {
-				kof = 17;
-			} else if (lvl >= 14) {
-				kof = 14;
-			} else if (lvl >= 11) {
-				kof = 11;
-			} else if (lvl >= 8) {
-				kof = 8;
-			} else if (lvl >= 5) {
-				kof = 5;
-			} else {
-				kof = null;
-			}
-			return kof ? `${deteils}_${kof}` : deteils;
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// let kof = null;
+			// if (lvl >= 17) {
+			// 	kof = 17;
+			// } else if (lvl >= 14) {
+			// 	kof = 14;
+			// } else if (lvl >= 11) {
+			// 	kof = 11;
+			// } else if (lvl >= 8) {
+			// 	kof = 8;
+			// } else if (lvl >= 5) {
+			// 	kof = 5;
+			// } else {
+			// 	kof = null;
+			// }
+			// return kof ? `${deteils}_${kof}` : kof;
+      const lvl_arr = [5, 8, 11, 14, 17];
+			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_5_9_13_17_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-			let kof = null;
-			if (lvl >= 17) {
-				kof = 17;
-			} else if (lvl >= 13) {
-				kof = 13;
-			} else if (lvl >= 9) {
-				kof = 9;
-			} else if (lvl >= 5) {
-				kof = 5;
-			} else {
-				kof = null;
-			}
-			return kof ? `${deteils}_${kof}` : deteils;
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// let kof = null;
+			// if (lvl >= 17) {
+			// 	kof = 17;
+			// } else if (lvl >= 13) {
+			// 	kof = 13;
+			// } else if (lvl >= 9) {
+			// 	kof = 9;
+			// } else if (lvl >= 5) {
+			// 	kof = 5;
+			// } else {
+			// 	kof = null;
+			// }
+			// return kof ? `${deteils}_${kof}` : kof;
+      const lvl_arr = [5, 9, 13, 17];
+			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_6_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-			let kof = lvl >= 6 ? 6 : null;
-			return kof ? `${deteils}_${kof}` : deteils;
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// return kof ? `${deteils}_${kof}` : kof;
+			return this.MY.level >= 6 ? 6 : null;
 		},
 
 		Det_17_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-			let kof = lvl >= 17 ? 17 : null;
-			return kof ? `${deteils}_${kof}` : deteils;
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// return kof ? `${deteils}_${kof}` : kof;
+			return this.MY.level >= 17 ? 17 : null;
 		},
 
 		Det_20_Lvl() {
-			let deteils = this.Spell_Index.details;
-			let lvl = this.MY.level;
-			let kof = lvl == 20 ? 20 : null;
-			return kof ? `${deteils}_${kof}` : deteils;
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// return kof ? `${deteils}_${kof}` : kof;
+			return this.MY.level == 20 ? 20 : null;
 		},
 
 		//ANCHOR - Dur
 		Dur_05_Lvl() {
-			let lvl = this.MY.level;
-			let numb = Math.floor(lvl / 2);
-			return numb;
+			return Math.floor(this.MY.level / 2);
 		},
 
 		Dur_Lvl() {
@@ -707,28 +663,29 @@ export default {
 		},
 
 		Dur_Wisdom_Total() {
-			let numb = this.stats_Class_Page_Numb("wisdom");
-			return numb;
-			// Вы можете медитировать таким образом количество минут, равное вашему базовому значению Мудрости
+			return this.stats_Class_Page_Numb("wisdom");
 		},
 
 		//ANCHOR - Dic
 		Dic_MonkMartial() {
-			let dice = this.Spell_Index.impact_size_dic;
-			let lvl = this.MY.level;
-			let kof = 0;
-			if (lvl >= 17) {
-				kof = 10;
-			} else if (lvl >= 11) {
-				kof = 8;
-			} else if (lvl >= 11) {
-				kof = 11;
-			} else if (lvl >= 5) {
-				kof = 6;
-			} else {
-				kof = 4;
-			}
-			return dice + kof;
+			// let dice = this.Spell_Index.impact_size_dic;
+			// let lvl = this.MY.level;
+			// let kof = 0;
+			// if (lvl >= 17) {
+			// 	kof = 10;
+			// } else if (lvl >= 11) {
+			// 	kof = 11;
+			// } else if (lvl >= 8) {
+			// 	kof = 8;
+			// } else if (lvl >= 5) {
+			// 	kof = 6;
+			// } else {
+			// 	kof = 4;
+			// }
+			// return dice + kof;
+      const lvl_arr = [1, 5, 11, 17];
+			const kof_arr = [4, 6, 8, 10];
+      return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
 		//ANCHOR - FOO
@@ -745,6 +702,19 @@ export default {
 			return num;
 		},
 
+    kof_Foo: (state) => (lvl_arr, kof_arr) => {
+      !kof_arr ? kof_arr = lvl_arr : null;
+      let lvl = state.MY.level;
+      let kof = null;
+			for (let i = 0; i < lvl_arr.length; i++) {
+        if (lvl < lvl_arr[i]) {
+					break;
+				}
+        kof = kof_arr[i];
+			}
+      return kof;
+    },
+
 		Value_Str() {
 			return this.Value_Foo("Str");
 		},
@@ -758,7 +728,9 @@ export default {
 		},
 
 		Value_Det() {
-			return this.Value_Foo("Det");
+			let details = this.Spell_Index.details;
+      let foo = this.Value_Foo("Det");
+      return foo ? `${details}_${foo}` : foo;
 		},
 
 		Value_Dur() {
@@ -766,7 +738,9 @@ export default {
 		},
 
 		Value_Dic() {
-			return this.Value_Foo("Dic");
+      let dice = this.Spell_Index.impact_size_dic;
+      let foo = this.Value_Foo("Dic");
+			return dice + foo;
 		},
 		// ------ FOO -----------
 	},
