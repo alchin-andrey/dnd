@@ -3606,4 +3606,22 @@ export default {
     spell_element_bond: spells.element_bond,
     spell_element_bond_details: spells.element_bond_details,
     spell_element_bond_expanded: spells.element_bond_expanded,
+
+    on_saving_against_your_spells: "на Випробування проти ваших заклять з непомітності",
+
+    arcane_trickster: classes.arcane_trickster,
+    arcane_trickster_details: classes.arcane_trickster_details,
+
+    spell_mage_hand_rogue: spells.mage_hand_rogue,
+    spell_mage_hand_rogue_details: spells.mage_hand_rogue_details,
+    spell_mage_hand_rogue_expanded: spells.mage_hand_rogue_expanded,
+
+    base_with: "базове",
+
+    spell_steal_slots: "Крадіжка заклять",
+    spell_steal_slot: "1× Крадіжка заклять",
+
+    spell_steal_spell: spells.steal_spell,
+    spell_steal_spell_details: spells.steal_spell_details,
+    spell_steal_spell_expanded: spells.steal_spell_expanded,
 }

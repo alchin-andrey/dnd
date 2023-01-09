@@ -4446,6 +4446,93 @@ export default {
     }
   ],
 
+  mage_hand_rogue: [
+    {
+      //0
+
+      name: "spell_mage_hand_rogue",
+      details: "spell_mage_hand_rogue_details",
+      expanded: "spell_mage_hand_rogue_expanded",
+
+      type: "ability",
+      classes: ["rogue"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_13_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  steal_spell: [
+    {
+      name: "spell_steal_spell",
+      details: "spell_steal_spell_details",
+      expanded: "spell_steal_spell_expanded",
+
+      type: "ability",
+      slot_type: "spell_steal_slot",
+      classes: ["rogue"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "base_with",
+      impact_size_saved: null,
+    },
+  ],
+
   // ==
 
   divine_channel_wrath: [
@@ -7963,7 +8050,6 @@ export default {
       impact_size_saved: null,
     },
   ],
-
 
   // All spells / 0 ----------------------------------------------------------
 

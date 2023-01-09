@@ -15,6 +15,10 @@ export const barbarian_rage_bonus = [
 
 export default {
 
+  //NOTE - Ranger
+
+
+
   //NOTE - Rogue -------------------------------------------------------------------------
 
   rogue: {
@@ -215,6 +219,82 @@ export default {
               },
             ],
           },
+          {
+            name: "arcane_trickster",
+            details: "arcane_trickster_details",
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.mage_hand_rogue,
+              },
+              {
+                level: 17,
+                spell: spells.steal_spell,
+              },
+            ],
+
+            charges: [
+              {
+                level: 3,
+                name: "spell_slots",
+                type: "long_rest",
+                list: [
+                  ["[1]", 0, 0, 2, 3, 3,   3, 4, 4, 4, 4,   4, 4, 4, 4, 4,   4, 4, 4, 4, 4],
+                  ["[2]", 0, 0, 0, 0, 0,   0, 2, 2, 2, 3,   3, 3, 3, 3, 3,   3, 3, 3, 3, 3],
+                  ["[3]", 0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 2, 2, 2,   3, 3, 3, 3, 3],
+                  ["[4]", 0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 1, 1],
+                ],
+              },
+              {
+                level: 17,
+                name: "spell_steal_slots",
+                type: "long_rest",
+                list: [
+                  ["", 0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 1, 1, 1],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level:9,
+                type: "plus",
+                keyword: "disadvantage",
+                details: "on_saving_against_your_spells",
+              }
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "spells",
+                name: "spells_0",
+                select: 2, 
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["wizard"],
+              },
+              {
+                level: 10,
+                type: "spells",
+                name: "spells_0",
+                select: 1, 
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["wizard"],
+              },
+              {
+                level: 3,
+                type: "spells",
+                name: "spells",
+                select: "Str_Rogue_Spells", //0,0,3,4,4, 4,5,6,6,7, 8,8,9,10,10, 11,11,11,12,13
+                mana_min: 1,
+                mana_max: "Num_Rogue_max_spell_slot",
+                classes: ["wizard"],
+              },
+            ]
+          }
         ],
       },
       {
