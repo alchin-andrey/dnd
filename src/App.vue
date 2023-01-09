@@ -28,8 +28,8 @@
 			<div class="delimiter"></div>
 		</div>
 
-		<div class="main_menu_wrap">
-			<div class="main_chapter_menu">
+		<div class="main_menu_wrap" @click="showHome()">
+			<div class="main_chapter_menu" @click.stop>
 				<RaceMenuSettings v-if="pages.race_page" />
 				<ClassMenuSettings v-if="pages.class_page" />
 			</div>
@@ -74,7 +74,7 @@
 	<div class="stripe"></div>
 	<!-- Персонаж -->
 
-	<div class="represent">
+	<div class="represent" @click="showHome()">
 		<transition name="fade-body">
 			<div
 				class="character"
