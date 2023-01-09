@@ -9,37 +9,7 @@ import packs from "./list_packs.js";
 import items from "./list_items.js";
 import langs from "./list_languages.js";
 
-export const barbarian_rage_bonus = [
-  0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4,
-];
-
 export default {
-
-  //NOTE - Ranger
-
-  ranger: {
-    name: "ranger",
-    details: "ranger_details",
-
-    hp_dice: 10,
-
-    proficiencies: {
-      armor: [armory.light,armory.medium,armory.shields],
-      weapons: [weaponry.simple,weaponry.military],
-    },
-
-    saving: ["strength", "dexterity"],
-    stats_base: [
-      "dexterity",
-      "strength",
-      "wisdom",
-      "constitution",
-      "intelligence",
-      "charisma",
-    ],
-    spell_attribute: "wisdom",
-  },
-
   //NOTE - Rogue -------------------------------------------------------------------------
 
   rogue: {
@@ -50,13 +20,7 @@ export default {
 
     proficiencies: {
       armor: [armory.light],
-      weapons: [
-        weaponry.simple,
-        weaponry.short_swords,
-        weaponry.long_swords,
-        weaponry.rapires,
-        weaponry.hand_arbalets,
-      ],
+      weapons: [weaponry.simple, weaponry.short_swords, weaponry.long_swords, weaponry.rapires, weaponry.hand_arbalets],
       tools: [tools.thief],
       languages: [lang.thieves],
     },
@@ -76,8 +40,8 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 2],[weapons.unarmed, 1]],
-        inventory: [[items.arrow,1]],
+        weapon: [ [weapons.dagger, 2], [weapons.unarmed, 1], ],
+        inventory: [[items.arrow, 1]],
         inventory_packs: [[packs.thieves, 1]],
       },
     ],
@@ -112,13 +76,6 @@ export default {
         type: "advantage",
         keyword: "min_20",
         details: "on_dice_d20",
-      },
-    ],
-
-    stats: [
-      {
-        level: 15,
-        //wisdom.save: "mastery", - подключить MY?
       },
     ],
 
@@ -261,10 +218,10 @@ export default {
                 name: "spell_slots",
                 type: "long_rest",
                 list: [
-                  ["[1]", 0, 0, 2, 3, 3,   3, 4, 4, 4, 4,   4, 4, 4, 4, 4,   4, 4, 4, 4, 4],
-                  ["[2]", 0, 0, 0, 0, 0,   0, 2, 2, 2, 3,   3, 3, 3, 3, 3,   3, 3, 3, 3, 3],
-                  ["[3]", 0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 2, 2, 2,   3, 3, 3, 3, 3],
-                  ["[4]", 0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 1, 1],
+                  [ "[1]", 0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, ],
+                  [ "[2]", 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
+                  [ "[3]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, ],
+                  [ "[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, ],
                 ],
               },
               {
@@ -272,18 +229,18 @@ export default {
                 name: "spell_steal_slots",
                 type: "long_rest",
                 list: [
-                  ["", 0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 0, 0, 0,   0, 0, 1, 1, 1],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, ],
                 ],
               },
             ],
 
             fines: [
               {
-                level:9,
+                level: 9,
                 type: "plus",
                 keyword: "disadvantage",
                 details: "on_saving_against_your_spells",
-              }
+              },
             ],
 
             settings: [
@@ -291,16 +248,7 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells_0",
-                select: 2, 
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["wizard"],
-              },
-              {
-                level: 10,
-                type: "spells",
-                name: "spells_0",
-                select: 1, 
+                select: [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
                 mana_min: 0,
                 mana_max: 0,
                 classes: ["wizard"],
@@ -309,13 +257,13 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells",
-                select: "Str_Rogue_Spells", //0,0,3,4,4, 4,5,6,6,7, 8,8,9,10,10, 11,11,11,12,13
+                select: [ 0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13, ],
                 mana_min: 1,
-                mana_max: "Num_Rogue_max_spell_slot",
+                mana_max: [ 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, ],
                 classes: ["wizard"],
               },
-            ]
-          }
+            ],
+          },
         ],
       },
       {
@@ -354,88 +302,40 @@ export default {
             ],
           },
           {
-            skills: [
-              {
-                sleight_of_hand: "mastery",
-              },
-            ],
+            skills: [ { sleight_of_hand: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                acrobatics: "mastery",
-              },
-            ],
+            skills: [ { acrobatics: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                investigation: "mastery",
-              },
-            ],
+            skills: [ { investigation: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                athletics: "mastery",
-              },
-            ],
+            skills: [ { athletics: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                perception: "mastery",
-              },
-            ],
+            skills: [ { perception: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                performance: "mastery",
-              },
-            ],
+            skills: [ { performance: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                intimidation: "mastery",
-              },
-            ],
+            skills: [ { intimidation: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                acrobatics: "mastery",
-              },
-            ],
+            skills: [ { acrobatics: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                deception: "mastery",
-              },
-            ],
+            skills: [ { deception: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                insight: "mastery",
-              },
-            ],
+            skills: [ { insight: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                stealth: "mastery",
-              },
-            ],
+            skills: [ { stealth: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                persuasion: "mastery",
-              },
-            ],
+            skills: [ { persuasion: "mastery", }, ],
           },
         ],
       },
@@ -455,88 +355,40 @@ export default {
             ],
           },
           {
-            skills: [
-              {
-                sleight_of_hand: "mastery",
-              },
-            ],
+            skills: [ { sleight_of_hand: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                acrobatics: "mastery",
-              },
-            ],
+            skills: [ { acrobatics: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                investigation: "mastery",
-              },
-            ],
+            skills: [ { investigation: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                athletics: "mastery",
-              },
-            ],
+            skills: [ { athletics: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                perception: "mastery",
-              },
-            ],
+            skills: [ { perception: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                performance: "mastery",
-              },
-            ],
+            skills: [ { performance: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                intimidation: "mastery",
-              },
-            ],
+            skills: [ { intimidation: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                acrobatics: "mastery",
-              },
-            ],
+            skills: [ { acrobatics: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                deception: "mastery",
-              },
-            ],
+            skills: [ { deception: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                insight: "mastery",
-              },
-            ],
+            skills: [ { insight: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                stealth: "mastery",
-              },
-            ],
+            skills: [ { stealth: "mastery", }, ],
           },
           {
-            skills: [
-              {
-                persuasion: "mastery",
-              },
-            ],
+            skills: [ { persuasion: "mastery", }, ],
           },
         ],
       },
@@ -707,29 +559,7 @@ export default {
                 name: "superiority_dice_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "d8",
-                    0,
-                    0,
-                    4,
-                    4,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    6,
-                    6,
-                    6,
-                    6,
-                  ],
+                  [ "d8", 0, 0, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, ],
                 ],
               },
             ],
@@ -842,165 +672,73 @@ export default {
                 select: 1,
                 list: [
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.blacksmith],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.blacksmith], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.brewer],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.brewer], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.mason],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.mason], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.alchemists_supplies],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.alchemists_supplies], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.blacksmith],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.blacksmith], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.brewer],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.brewer], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.calligraphers_supplies],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.calligraphers_supplies], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.carpenters_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.carpenters_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.cartographers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.cartographers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.cobblers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.cobblers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.cooks_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.cooks_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.disguise],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.disguise], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.glassblowers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.glassblowers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.jewelers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.jewelers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.leatherworkers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.leatherworkers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.mason],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.mason], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.navigators_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.navigators_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.painters_supplies],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.painters_supplies], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.poisoner],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.poisoner], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.potters_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.potters_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.tinkers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.tinkers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.weavers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.weavers_tools], }, ],
                   },
                   {
-                    proficiencies: [
-                      {
-                        tools: [tools.woodcarvers_tools],
-                      },
-                    ],
+                    proficiencies: [ { tools: [tools.woodcarvers_tools], }, ],
                   },
                 ],
               },
@@ -1025,98 +763,10 @@ export default {
                 name: "spell_slots",
                 type: "long_rest",
                 list: [
-                  [
-                    "[1]",
-                    0,
-                    0,
-                    2,
-                    3,
-                    3,
-                    3,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                    4,
-                  ],
-                  [
-                    "[2]",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                  ],
-                  [
-                    "[3]",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    3,
-                  ],
-                  [
-                    "[4]",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                  ],
+                  [ "[1]", 0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, ],
+                  [ "[2]", 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
+                  [ "[3]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, ],
+                  [ "[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, ],
                 ],
               },
             ],
@@ -1126,126 +776,20 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells_0",
-                select: 2,
+                select: [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
                 mana_min: 0,
                 mana_max: 0,
                 classes: ["wizard"],
               },
               {
-                level: 10,
-                type: "spells",
-                name: "spells_0",
-                select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["wizard"],
-              },
-              {
-                level: 3, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
+                level: 3,
                 type: "spells",
                 name: "spells",
-                select: 3,
+                select: [0,0,3,4,4, 4,5,6,6,7, 8,8,9,10,10, 11,11,11,12,13],
                 mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
+                mana_max: [ 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, ],
                 classes: ["wizard"],
                 filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 4, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 7, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 8, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-              },
-              {
-                level: 10, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 11, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 13, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 14, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-              },
-              {
-                level: 16, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 19, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
-              },
-              {
-                level: 20, // 0,0, 3,4,4,4,5,6,6,7,8,8,9,10,10,11,11,11,12,13
-                type: "spells",
-                name: "spells",
-                select: 1,
-                mana_min: 1,
-                mana_max: "Num_Fighter_max_spell_slot",
-                classes: ["wizard"],
               },
             ],
           },
@@ -1681,7 +1225,10 @@ export default {
     equipment: [
       {
         level: 1,
-        weapon: [[weapons.javelin, 4],[weapons.unarmed, 1]],
+        weapon: [
+          [weapons.javelin, 4],
+          [weapons.unarmed, 1],
+        ],
         inventory_packs: [
           [packs.explorers, 1], // нужно как-то распаковьівать 😅
         ],
@@ -2117,7 +1664,7 @@ export default {
         name: "chi_slots",
         type: "short_rest",
         list: [
-          ["", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+          [ "", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ],
         ],
       },
     ],
@@ -2125,7 +1672,10 @@ export default {
     equipment: [
       {
         level: 1,
-        weapon: [[weapons.dart, 10],[weapons.unarmed, 1]],
+        weapon: [
+          [weapons.dart, 10],
+          [weapons.unarmed, 1],
+        ],
       },
     ],
 
@@ -2224,64 +1774,64 @@ export default {
 
     spells: [
       {
-        level:1,
-        spell:spells.unarmed_strike_bonus,
+        level: 1,
+        spell: spells.unarmed_strike_bonus,
       },
       {
-        level:2,
-        spell:spells.step_of_the_wind,
+        level: 2,
+        spell: spells.step_of_the_wind,
       },
       {
-        level:2,
-        spell:spells.patient_defense,
+        level: 2,
+        spell: spells.patient_defense,
       },
       {
-        level:2,
-        spell:spells.flurry_of_blows,
+        level: 2,
+        spell: spells.flurry_of_blows,
       },
       {
-        level:2,
-        spell:spells.dedicated_weapon,
+        level: 2,
+        spell: spells.dedicated_weapon,
       },
       {
-        level:3,
-        spell:spells.deflect_missiles,
+        level: 3,
+        spell: spells.deflect_missiles,
       },
       {
-        level:3,
-        spell:spells.weapon_strike_bonus,
+        level: 3,
+        spell: spells.weapon_strike_bonus,
       },
       {
-        level:4,
-        spell:spells.slow_fall,
+        level: 4,
+        spell: spells.slow_fall,
       },
       {
-        level:4,
-        spell:spells.quickened_healing,
+        level: 4,
+        spell: spells.quickened_healing,
       },
       {
-        level:5,
-        spell:spells.extra_strike_monk,
+        level: 5,
+        spell: spells.extra_strike_monk,
       },
       {
-        level:5,
-        spell:spells.stunning_strike,
+        level: 5,
+        spell: spells.stunning_strike,
       },
       {
-        level:5,
-        spell:spells.focused_aim,
+        level: 5,
+        spell: spells.focused_aim,
       },
       {
-        level:7,
-        spell:spells.stillness_of_mind,
+        level: 7,
+        spell: spells.stillness_of_mind,
       },
       {
-        level:14,
-        spell:spells.diamond_soul,
+        level: 14,
+        spell: spells.diamond_soul,
       },
       {
-        level:14,
-        spell:spells.empty_body,
+        level: 14,
+        spell: spells.empty_body,
       },
     ],
 
@@ -2317,7 +1867,7 @@ export default {
       {
         level: 1,
         type: "weapon",
-        foo: "Finesse_All",
+        foo: "Fin_True",
         // Вы можете использовать Ловкость вместо Силы для бросков атак и урона ваших безоружных ударов и атак монашеским оружием. — Надо выбирать большее.
       },
       {
@@ -2336,12 +1886,12 @@ export default {
       {
         level: 14,
         type: "saving",
-        saving: ["constitution","intelligence"],
+        saving: ["constitution", "intelligence"],
       },
       {
         level: 14,
         type: "saving",
-        saving: ["wisdom","charisma"],
+        saving: ["wisdom", "charisma"],
       },
     ],
 
@@ -2362,37 +1912,37 @@ export default {
                 name: "wholeness_body_slots",
                 type: "long_rest",
                 list: [
-                  ["", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                  [ "", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
             ],
 
             spells: [
               {
-                level:3,
-                spell: spells.open_hand_tech_knock
+                level: 3,
+                spell: spells.open_hand_tech_knock,
               },
               {
-                level:3,
-                spell: spells.open_hand_tech_push
+                level: 3,
+                spell: spells.open_hand_tech_push,
               },
               {
-                level:3,
-                spell: spells.open_hand_tech_confuse
+                level: 3,
+                spell: spells.open_hand_tech_confuse,
               },
               {
-                level:6,
-                spell: spells.wholeness_of_body
+                level: 6,
+                spell: spells.wholeness_of_body,
               },
               {
-                level:11,
-                spell: spells.sanctuary_monk
+                level: 11,
+                spell: spells.sanctuary_monk,
               },
               {
-                level:17,
-                spell: spells.quivering_palm
+                level: 17,
+                spell: spells.quivering_palm,
               },
-            ]
+            ],
           },
           {
             name: "way_of_the_shadow",
@@ -2400,87 +1950,87 @@ export default {
 
             spells: [
               {
-                level:3,
-                spell: spells.small_illusion
+                level: 3,
+                spell: spells.small_illusion,
               },
               {
-                level:3,
-                spell: spells.pass_without_trace_monk
+                level: 3,
+                spell: spells.pass_without_trace_monk,
               },
               {
-                level:3,
-                spell: spells.darkvision_monk
+                level: 3,
+                spell: spells.darkvision_monk,
               },
               {
-                level:3,
-                spell: spells.silence_monk
+                level: 3,
+                spell: spells.silence_monk,
               },
               {
-                level:3,
-                spell: spells.darkness_monk
+                level: 3,
+                spell: spells.darkness_monk,
               },
               {
-                level:6,
-                spell: spells.shadow_step
+                level: 6,
+                spell: spells.shadow_step,
               },
               {
-                level:11,
-                spell: spells.cloak_of_shadows
+                level: 11,
+                spell: spells.cloak_of_shadows,
               },
               {
-                level:17,
-                spell: spells.opportunist
+                level: 17,
+                spell: spells.opportunist,
               },
-            ]
+            ],
           },
           {
             name: "way_of_the_four_elements",
             details: "way_of_the_four_elements_details",
-            
+
             spells: [
               {
-                level:3,
-                spell: spells.element_bond
+                level: 3,
+                spell: spells.element_bond,
               },
               {
-                level:3,
-                spell: spells.water_whip
+                level: 3,
+                spell: spells.water_whip,
               },
               {
-                level:3,
-                spell: spells.fire_snake_teeth
+                level: 3,
+                spell: spells.fire_snake_teeth,
               },
               {
-                level:3,
-                spell: spells.air_fist
+                level: 3,
+                spell: spells.air_fist,
               },
               {
-                level:3,
-                spell: spells.ashing_strike
+                level: 3,
+                spell: spells.ashing_strike,
               },
               {
-                level:3,
-                spell: spells.four_thunder_fist
+                level: 3,
+                spell: spells.four_thunder_fist,
               },
               {
-                level:3,
-                spell: spells.gust_of_wind_monk
+                level: 3,
+                spell: spells.gust_of_wind_monk,
               },
               {
-                level:3,
-                spell: spells.gust_of_wind_monk
+                level: 3,
+                spell: spells.gust_of_wind_monk,
               },
               {
-                level:3,
-                spell: spells.form_river
+                level: 3,
+                spell: spells.form_river,
               },
               {
-                level:6,
-                spell: spells.shatter_monk
+                level: 6,
+                spell: spells.shatter_monk,
               },
               {
-                level:6,
-                spell: spells.hold_person_monk
+                level: 6,
+                spell: spells.hold_person_monk,
               },
               // {
               //   level:11,
@@ -2510,9 +2060,9 @@ export default {
               //   level:17,
               //   spell: spells.wall_of_fire_monk
               // },
-            ]
+            ],
           },
-        ]
+        ],
       },
       {
         level: 1,
@@ -2526,7 +2076,7 @@ export default {
           "history",
           "insight",
           "religion",
-          "stealth"
+          "stealth",
         ],
       },
       {
@@ -3203,9 +2753,10 @@ export default {
         level: 2,
         type: "spells",
         name: "spells",
-        select: "Str_05Lvl_Plus_CHA",
+        select: [0,1,1,2,2, 3,3,4,4,5, 5,6,6,7,7, 8,8,9,9,10],
+        foo: "Sel_Plus_CHA_Min1",
         mana_min: 1,
-        mana_max: "Num_Paladin_max_spell_slot", // по
+        mana_max: [0,1,1,1,2, 2,2,2,3,3, 3,3,4,4,4, 4,5,5,5,5],
         classes: ["paladin"],
       },
     ],
@@ -3320,29 +2871,7 @@ export default {
                 type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
                 ],
               },
             ],
@@ -3445,29 +2974,7 @@ export default {
                 type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
                 ],
               },
             ],
@@ -3668,29 +3175,7 @@ export default {
                 name: "cleric_see_past_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, ],
                 ],
               },
             ],
@@ -3891,28 +3376,13 @@ export default {
                 select: 1,
                 list: [
                   {
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
+                    equipment: [ { level: 1, armor: [[armors.scalemail, 1]], }, ],
                   },
                   {
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
+                    equipment: [ { level: 1, armor: [[armors.leather, 1]], }, ],
                   },
                   {
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.chainmail, 1]],
-                      },
-                    ],
+                    equipment: [ { level: 1, armor: [[armors.chainmail, 1]], }, ],
                   },
                 ],
               },
@@ -3930,29 +3400,7 @@ export default {
                 type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
                 ],
               },
             ],
@@ -4127,18 +3575,19 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 3, // 3,3,3,4,4  4,4,4,4,5  5,5,5,5,5  5,5,5,5,5
+        select: [3,3,3,4,4,  4,4,4,4,5,  5,5,5,5,5,  5,5,5,5,5],
         mana_min: 0,
         mana_max: 0,
         classes: ["cleric"],
       },
       {
-        level: 2,
+        level: 1,
         type: "spells",
         name: "spells",
-        select: "Str_Lvl_Plus_WIS_min1",
+        select: [1,2,3,4,5, 6,7,8,9,10, 11,12,13,14,15, 16,17,18,19,20],
+        foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
-        mana_max: "Num_Cleric_Max_Spell_Slot", // по
+        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
         classes: ["cleric"],
       },
       {
@@ -5005,7 +4454,7 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4
+        select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         mana_min: 0,
         mana_max: 0,
         classes: ["druid"],
@@ -5013,7 +4462,8 @@ export default {
       {
         type: "spells",
         name: "spells",
-        select: "Str_Druid_Spells", //WIS + lvl (min 1 spell)
+        select: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
         mana_max: "Num_Wizard_max_spell_slot",
         classes: ["wizard"],
@@ -5113,7 +4563,10 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 2],[weapons.unarmed, 1]],
+        weapon: [
+          [weapons.dagger, 2],
+          [weapons.unarmed, 1],
+        ],
       },
     ],
 
@@ -5134,29 +4587,7 @@ export default {
                 name: "fey_presence_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "",
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
               {
@@ -5164,29 +4595,7 @@ export default {
                 name: "misty_escape_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
               {
@@ -5194,29 +4603,7 @@ export default {
                 name: "dark_delirium_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
             ],
@@ -5253,10 +4640,9 @@ export default {
               {
                 type: "spells",
                 name: "spells",
-                select: 2,
-                foo: "Sel_Warlock_Spells", //2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15
+                select: [2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15],
                 mana_min: 1,
-                mana_max: "Num_Warlock_Max_Spell_Slot", //1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,
+                mana_max: [1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5],
                 classes: ["warlock"],
                 extra_items: [
                   // Архифея позволяет вам при изучении заклинаний колдуна выбирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
@@ -5299,29 +4685,7 @@ export default {
                 name: "dark_ones_own_luck_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "d10",
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "d10", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
               {
@@ -5329,29 +4693,7 @@ export default {
                 name: "hurl_through_hell_slots",
                 type: "long_rest",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
             ],
@@ -5375,10 +4717,9 @@ export default {
               {
                 type: "spells",
                 name: "spells",
-                select: 2,
-                foo: "Sel_Warlock_Spells", //2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15
+                select: [2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15],
                 mana_min: 1,
-                mana_max: "Num_Warlock_Max_Spell_Slot", //1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,
+                mana_max: [1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,],
                 classes: ["warlock"],
                 extra_items: [
                   // Исчадие позволяет вам при изучении заклинаний колдуна выбирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
@@ -5439,29 +4780,7 @@ export default {
                 name: "entropic_ward_slots",
                 type: "short_rest",
                 list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
             ],
@@ -5481,10 +4800,9 @@ export default {
               {
                 type: "spells",
                 name: "spells",
-                select: 2,
-                foo: "Sel_Warlock_Spells", //2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15
+                select: [2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15],
                 mana_min: 1,
-                mana_max: "Num_Warlock_Max_Spell_Slot", //1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,
+                mana_max: [1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,],
                 classes: ["warlock"],
                 extra_items: [
                   // Ваш покравитель позволяет вам при изучении заклинаний колдуна выбирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
@@ -5570,29 +4888,7 @@ export default {
                 name: "talisman_slots",
                 type: "long_rest",
                 list: [
-                  [
-                    "d4",
-                    2,
-                    2,
-                    2,
-                    2,
-                    3,
-                    3,
-                    3,
-                    3,
-                    4,
-                    4,
-                    4,
-                    4,
-                    5,
-                    5,
-                    5,
-                    5,
-                    6,
-                    6,
-                    6,
-                    6,
-                  ],
+                  [ "d4", 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, ],
                 ],
               },
             ],
@@ -6071,7 +5367,7 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4,
+        select: [2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4,],
         mana_min: 0,
         mana_max: 0,
         classes: ["warlock"],
@@ -6304,29 +5600,7 @@ export default {
                 name: "magical_protection",
                 type: "long_rest",
                 list: [
-                  [
-                    "",
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
+                  [ "", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
                 ],
               },
             ],
@@ -6435,7 +5709,7 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 3, //3,3,3,4,4, 4,4,4,4,5, 5,5,5,5,5, 5,5,5,5,5,
+        select: [3,3,3,4,4, 4,4,4,4,5, 5,5,5,5,5, 5,5,5,5,5,],
         mana_min: 0,
         mana_max: 0,
         classes: ["wizard"],
@@ -6443,9 +5717,9 @@ export default {
       {
         type: "spells",
         name: "spells",
-        select: "Str_Wizard_Spells", //6,8,10,12,14, 16,18,20,22,24, 26,28,30,32,34, 36,38,40,42,44
+        select: [6,8,10,12,14, 16,18,20,22,24, 26,28,30,32,34, 36,38,40,42,44],
         mana_min: 1,
-        mana_max: "Num_Wizard_max_spell_slot",
+        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
         classes: ["wizard"],
       },
       {
@@ -6508,7 +5782,10 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [[weapons.dagger, 1],[weapons.unarmed, 1]],
+        weapon: [
+          [weapons.dagger, 1],
+          [weapons.unarmed, 1],
+        ],
       },
     ],
 
@@ -6765,7 +6042,7 @@ export default {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: 2, //2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4
+        select: [2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4],
         mana_min: 0,
         mana_max: 0,
         classes: ["bard"],
@@ -6773,9 +6050,9 @@ export default {
       {
         type: "spells",
         name: "spells",
-        select: "Str_Bard_Spells", //4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22
+        select: [4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22],
         mana_min: 1,
-        mana_max: "Num_Bard_max_spell_slot",
+        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
         classes: ["bard"],
       },
       {
@@ -6815,5 +6092,30 @@ export default {
         type: "feats",
       },
     ],
+  },
+
+  //NOTE - Ranger
+
+  ranger: {
+    name: "ranger",
+    details: "ranger_details",
+
+    hp_dice: 10,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [weaponry.simple, weaponry.military],
+    },
+
+    saving: ["strength", "dexterity"],
+    stats_base: [
+      "dexterity",
+      "strength",
+      "wisdom",
+      "constitution",
+      "intelligence",
+      "charisma",
+    ],
+    spell_attribute: "wisdom",
   },
 };
