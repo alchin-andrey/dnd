@@ -3625,4 +3625,8 @@ export default {
     spell_steal_spell: spells.steal_spell,
     spell_steal_spell_details: spells.steal_spell_details,
     spell_steal_spell_expanded: spells.steal_spell_expanded,
+
+    on_stealth: "на Скрытность",
+
+    abberations: "абберации",
 }

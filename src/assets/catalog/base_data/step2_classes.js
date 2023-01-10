@@ -855,9 +855,10 @@ export default {
             equipment: [
               {
                 level: 1,
-                armor: [[armors.chainmail, 1]],
+                armor: [[armors.chainmail, 1]], // Condition - Str Base = 13
               },
             ],
+            fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
           },
           {
             equipment: [
@@ -1867,7 +1868,7 @@ export default {
       {
         level: 1,
         type: "weapon",
-        foo: "Fin_True",
+        finesse: true,
         // Вы можете использовать Ловкость вместо Силы для бросков атак и урона ваших безоружных ударов и атак монашеским оружием. — Надо выбирать большее.
       },
       {
@@ -1886,12 +1887,7 @@ export default {
       {
         level: 14,
         type: "saving",
-        saving: ["constitution", "intelligence"],
-      },
-      {
-        level: 14,
-        type: "saving",
-        saving: ["wisdom", "charisma"],
+        saving: ["constitution", "intelligence","wisdom", "charisma"],
       },
     ],
 
@@ -2387,6 +2383,7 @@ export default {
     ],
 
     fines: [
+      {level: 1, type: "disadvantage", keyword: "disadvantage", details: "on_stealth",},
       {
         level: 3,
         type: "plus",
@@ -2941,6 +2938,7 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [
@@ -2957,6 +2955,7 @@ export default {
                         armor: [[armors.chainmail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                 ],
               },
@@ -3044,6 +3043,7 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [
@@ -3060,6 +3060,7 @@ export default {
                         armor: [[armors.chainmail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                 ],
               },
@@ -3143,6 +3144,7 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [
@@ -3159,6 +3161,7 @@ export default {
                         armor: [[armors.chainmail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                 ],
               },
@@ -3229,6 +3232,7 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [
@@ -3295,6 +3299,7 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [
@@ -3377,12 +3382,14 @@ export default {
                 list: [
                   {
                     equipment: [ { level: 1, armor: [[armors.scalemail, 1]], }, ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [ { level: 1, armor: [[armors.leather, 1]], }, ],
                   },
                   {
                     equipment: [ { level: 1, armor: [[armors.chainmail, 1]], }, ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                 ],
               },
@@ -3459,6 +3466,7 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
+                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
                   },
                   {
                     equipment: [
@@ -5404,20 +5412,21 @@ export default {
     hp_dice: 6,
 
     proficiencies: {
-      armor: [armory.light, armory.medium, armory.shields],
-      weapons: [weaponry.simple, weaponry.military],
+      weapons: [weaponry.quarterstaffs, weaponry.daggers, weaponry.light_arbalets, weaponry.darts, weaponry.slings],
     },
 
-    saving: ["strength", "dexterity"],
+    saving: ["constitution", "charisma"],
     stats_base: [
-      "dexterity",
-      "strength",
-      "wisdom",
-      "constitution",
-      "intelligence",
       "charisma",
+      "dexterity",
+      "constitution",
+      "wisdom",
+      "intelligence",
+      "strength",
     ],
-    spell_attribute: "wisdom",
+    spell_attribute: "charisma",
+
+
   },
 
   //NOTE - Wizard -------------------------------------------------------------------------
@@ -6142,5 +6151,96 @@ export default {
       "charisma",
     ],
     spell_attribute: "wisdom",
+
+    settings: [
+      {
+        level: 1,
+        type: "skills",
+        name: "skills",
+        select: 3,
+        bonus: "mastery",
+        list: [
+          "investigation",
+          "athletics",
+          "perception",
+          "survival",
+          "nature",
+          "insight",
+          "stealth",
+          "animal_hanging"
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "armor_class",
+        select: 1,
+        list: [
+          {
+            equipment: [
+              {
+                level: 1,
+                armor: [[armors.scalemail, 1]],
+              },
+            ],
+            fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+          },
+          {
+            equipment: [
+              {
+                level: 1,
+                armor: [[armors.leather, 1]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            equipment: [
+              {
+                weapon: [ [weapons.shortsword, 2]],
+              },
+            ],
+          },
+          {
+            settings: [
+              {
+
+              }
+            ]
+          }
+        ]
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "favored_enemy",
+        select: [1,1,1,1,1, 2,2,2,2,2, 2,2,2,3,3, 3,3,3,3,3],
+        list: [
+          {
+            name: "abberations",
+
+            fines: [
+              {
+                type: "advantage",
+                keyword: "advantage",
+                details: "wisdom_abberations_against",
+              },
+              {
+                type: "advantage",
+                keyword: "advantage",
+                details: "intelligence_abberations_against",
+              },
+            ]
+          },
+        ]
+      },
+    ]
   },
 };
