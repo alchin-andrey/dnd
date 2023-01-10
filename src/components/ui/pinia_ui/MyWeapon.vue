@@ -25,7 +25,7 @@
 				title="damage"
 				type="damage_1_hand"
 				:numb="weapon[0].damage_1_hand_num"
-				:dice="weapon[0].damage_1_hand_dice"
+				:dice="dice_1_Hand"
 				:pls="damage_Bonus_Numb"
 			/>
 			<my-attribute
@@ -33,7 +33,7 @@
 				title="damage"
 				type="damage_2_hand"
 				:numb="weapon[0].damage_2_hand_num"
-				:dice="weapon[0].damage_2_hand_dice"
+				:dice="dice_2_Hand"
 				:pls="damage_Bonus_Numb"
 			/>
 		</div>
@@ -79,7 +79,7 @@
 				v-if="weapon[0].damage_1_hand_num"
 				title="damage_1_hand"
 				:numb="weapon[0].damage_1_hand_num"
-				:dice="weapon[0].damage_1_hand_dice"
+				:dice="dice_1_Hand"
 				:pls="damage_Bonus_Numb"
 				dot
 			/>
@@ -87,7 +87,7 @@
 				v-if="weapon[0].damage_2_hand_num"
 				title="damage_2_hand"
 				:numb="weapon[0].damage_2_hand_num"
-				:dice="weapon[0].damage_2_hand_dice"
+				:dice="dice_2_Hand"
 				:pls="damage_Bonus_Numb"
 				dot
 			/>
@@ -143,7 +143,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["Mastery", "proficiencies_Arr_All", "class_Specials_Filter_Lvl"]),
+		...mapState(useMYStore, ["MY", "Mastery", "proficiencies_Arr_All", "class_Specials_Filter_Lvl"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
     shown_ACW() {
@@ -277,6 +277,46 @@ export default {
 		damage_Bonus_Numb() {
 			return this.stats_Mod(this.bonus_Type);
 		},
+
+    dice_Hand: (state) => (dice_hand) => {
+      const weapon_spec = state.class_Specials_Filter_Lvl("weapon");
+      let dice_foo = null;
+      weapon_spec?.forEach((el) => el.dice_foo ? dice_foo = state[el.dice_foo](dice_hand) : null);
+      return dice_foo ? dice_foo : dice_hand;
+    },
+
+    dice_1_Hand() {
+      return this.dice_Hand(this.weapon[0].damage_1_hand_dice);
+    },
+
+    dice_2_Hand() {
+      return this.dice_Hand(this.weapon[0].damage_2_hand_dice);
+    },
+
+    Dic_MonkMartial() {
+      const lvl_arr = [1, 5, 11, 17];
+			const kof_arr = [4, 6, 8, 10];
+      return this.kof_Foo(lvl_arr, kof_arr);
+		},
+
+    Dic_MonkMartial_or_Default: (state) => (dice_hand) => {
+      // const dice_hand = this.weapon[0].damage_1_hand_dice;
+      const foo_dice = state.Dic_MonkMartial
+      return foo_dice > dice_hand ? foo_dice : dice_hand;
+    },
+
+    kof_Foo: (state) => (lvl_arr, kof_arr) => {
+      !kof_arr ? kof_arr = lvl_arr : null;
+      let lvl = state.MY.level;
+      let kof = null;
+			for (let i = 0; i < lvl_arr.length; i++) {
+        if (lvl < lvl_arr[i]) {
+					break;
+				}
+        kof = kof_arr[i];
+			}
+      return kof;
+    },
 	},
 
 	watch: {
