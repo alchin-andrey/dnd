@@ -208,13 +208,15 @@ export default {
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["race_page", "class_page"]),
-		...mapState(useMYStore, [
-      "MY", 
-      "Mastery", 
+		...mapState(useMYStore, ["MY"]),
+		// GETTERS
+    ...mapState(useMYStore, [
+      "Mastery",
+      // "Half_Mastery",
       "proficiencies_Arr_REC",
       "proficiencies_Arr_Class",
+      "class_Specials_Filter_Lvl",
     ]),
-		// GETTERS
 		...mapState(useStatsStore, [
 			"stats_Keys",
 			"stats_Race_Page_Numb",
@@ -287,7 +289,15 @@ export default {
 			state.skills_All_RE.includes(name)
 				? (race_mastery = state.Mastery)
 				: null;
-			return race_mastery + mod;
+      const spec_skills = state.class_Specials_Filter_Lvl("skills");
+      let skills_foo = null;
+      spec_skills?.forEach((el) => skills_foo = state[el.foo](race_mastery));
+			return skills_foo ? skills_foo + mod : race_mastery + mod;
+		},
+
+    Half_Mastery: (state) => (skill_mastery) => {
+      const half_mastery = Math.floor(state.Mastery / 2);
+			return skill_mastery ? skill_mastery : half_mastery;
 		},
 
 		// armor_Numb() {
