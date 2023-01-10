@@ -28,12 +28,28 @@ export const useMYStore = defineStore({
 				state.MY.class.specials?.filter((item) => item.type == name);
 		},
 
+    class_Specials_Filter_Lvl(state) {
+      const lvl = state.MY.level;
+			return (name) =>
+				state.MY.class.specials?.filter((item) => item.type == name && lvl >= item.level);
+		},
+
+    class_Specials_Find(state) {
+			return (name) =>
+				state.MY.class.specials?.find((item) => item.type == name);
+		},
+
 
     proficiencies_Arr: (state) => (obj, kay) => {
 			let arr = [];
 			obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
 			return arr;
 		},
+
+    proficiencies_Any: (state) => (kay) => {
+      const specials = state.class_Specials_Filter_Lvl("proficiencies");
+      return specials?.some((el) =>  el?.[kay] == "any");
+    },
 
 		proficiencies_Arr_REC: (state) => (kay) => {
       const {languages_Custom_Arr_RE} = useLanguagesStore();
@@ -45,15 +61,18 @@ export const useMYStore = defineStore({
 			);
 			let custom_prof = [];
 			kay === "languages" ? custom_prof = languages_Custom_Arr_RE : null;
-			return race_prof.concat(ethnos_prof).concat(custom_prof);
+      const any =  state.proficiencies_Any(kay);
+      const rec_prof = race_prof.concat(ethnos_prof).concat(custom_prof);
+			return any ? [] : rec_prof;
 		},
 
 		proficiencies_Arr_Class: (state) => (kay) => {
-			let class_prof = state.proficiencies_Arr(
+			const class_prof = state.proficiencies_Arr(
 				state.MY.class.proficiencies,
 				kay
 			);
-			return class_prof;
+      const any =  state.proficiencies_Any(kay);
+			return any ? ['any'] : class_prof;
 		},
 
     proficiencies_Arr_All: (state) => (kay) => {
