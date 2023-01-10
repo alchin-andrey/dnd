@@ -143,7 +143,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["Mastery", "proficiencies_Arr_All"]),
+		...mapState(useMYStore, ["Mastery", "proficiencies_Arr_All", "class_Specials_Filter_Lvl"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
     shown_ACW() {
@@ -191,7 +191,8 @@ export default {
 			const heaviness = this.weapon[0].heaviness;
 			heaviness != "weapon_medium" ? arr.push(heaviness) : null; //Тяжелое
 
-			this.weapon[0].finesse ? arr.push("weapon_finesse") : null; //Фехтовальное
+			this.weapon_Finesse ? arr.push("weapon_finesse") : null; //Фехтовальное
+			// this.weapon[0].finesse ? arr.push("weapon_finesse") : null; //Фехтовальное
 
 			const weapon_type = this.weapon[0].type;
 
@@ -220,8 +221,16 @@ export default {
 			return max;
 		},
 
+    weapon_Finesse() {
+      const finesse = this.weapon[0].finesse;
+      const weapon_spec = this.class_Specials_Filter_Lvl("weapon");
+      const finesse_spec = weapon_spec?.some((el) =>  el?.finesse == true);
+      return finesse_spec ? finesse_spec : finesse;
+    },
+
 		bonus_Type() {
-			const finesse = this.weapon[0].finesse; //Фехтовальное
+			// const finesse = this.weapon[0].finesse; //Фехтовальное
+			const finesse = this.weapon_Finesse; //Фехтовальное
 			const melee = this.weapon[0].melee; //Ближнее
 
 			const STR = this.stats_Mod("strength");
