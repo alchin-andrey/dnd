@@ -5395,6 +5395,31 @@ export default {
     ],
   }, // без Арканумов, воззваний, заклинаний
 
+  //NOTE - sorcerer
+
+  sorcerer: {
+    name: "sorcerer",
+    details: "sorcerer_details",
+
+    hp_dice: 6,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [weaponry.simple, weaponry.military],
+    },
+
+    saving: ["strength", "dexterity"],
+    stats_base: [
+      "dexterity",
+      "strength",
+      "wisdom",
+      "constitution",
+      "intelligence",
+      "charisma",
+    ],
+    spell_attribute: "wisdom",
+  },
+
   //NOTE - Wizard -------------------------------------------------------------------------
 
   wizard: {
