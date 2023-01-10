@@ -868,7 +868,7 @@ export default {
                 weapon: [[weapons.longbow, 1]],
                 inventory: [
                   [items.arrow, 20],
-                  [items.quiver, 20],
+                  [items.quiver, 1],
                 ],
               },
             ],
@@ -963,7 +963,7 @@ export default {
             equipment: [
               {
                 weapon: [[weapons.longbow, 1]],
-                inventory: [[items.arrow, 20]],
+                inventory: [[items.arrow, 20],[items.quiver, 1],],
               },
             ],
           },
@@ -1874,7 +1874,7 @@ export default {
       {
         level: 1,
         type: "weapon",
-        foo: "Dic_Default_or_MonkMartial",
+        dice_foo: "Dic_MonkMartial_or_Default",
         // MonkMartial 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
         // Вы можете использовать кость d4 вместо обычной кости урона ваших безоружных ударов или атак монашеским оружием. Эта кость увеличивается с вашим уровнем, как показано в колонке «боевые искусства».
       },
@@ -2704,7 +2704,7 @@ export default {
             equipment: [
               {
                 weapon: [[weapons.longbow, 1]],
-                inventory: [[items.arrow, 20]],
+                inventory: [[items.arrow, 20],[items.quiver, 1],],
               },
             ],
           },
@@ -6152,6 +6152,17 @@ export default {
     ],
     spell_attribute: "wisdom",
 
+    equipment: [
+      {
+        level: 1,
+        weapon: [[weapons.longbow, 1]],
+        inventory: [
+          [items.arrow, 20],
+          [items.quiver, 1],
+        ],
+      },
+    ],
+
     settings: [
       {
         level: 1,
@@ -6211,11 +6222,52 @@ export default {
           {
             settings: [
               {
-
-              }
+                type: "weapons",
+                name: "weapons",
+                select: 1,
+                list: [
+                  [weapons.quarterstaff, 1],
+                  [weapons.mace, 1],
+                  [weapons.club, 1],
+                  [weapons.dagger, 1],
+                  [weapons.spear, 1],
+                  [weapons.light_hammer, 1],
+                  [weapons.javelin, 1],
+                  [weapons.greatclub, 1],
+                  [weapons.handaxe, 1],
+                  [weapons.sickle, 1],
+                ],
+              },
+              {
+                type: "weapons",
+                name: "weapons",
+                select: 1,
+                list: [
+                  [weapons.quarterstaff, 1],
+                  [weapons.mace, 1],
+                  [weapons.club, 1],
+                  [weapons.dagger, 1],
+                  [weapons.spear, 1],
+                  [weapons.light_hammer, 1],
+                  [weapons.javelin, 1],
+                  [weapons.greatclub, 1],
+                  [weapons.handaxe, 1],
+                  [weapons.sickle, 1],
+                ],
+              },
             ]
           }
         ]
+      },
+      {
+        level: 1,
+        type: "inventory_packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.dungeoneers, 1],
+          [packs.explorers, 1],
+        ],
       },
       {
         level: 1,
@@ -6239,6 +6291,7 @@ export default {
               },
             ]
           },
+
         ]
       },
     ]

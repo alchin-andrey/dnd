@@ -3629,4 +3629,16 @@ export default {
     on_stealth: "на Скрытность",
 
     abberations: "абберации",
+    beasts:"", 
+    celestials:"", 
+    constructs:"", 
+    dragons:"", 
+    elementals:"", 
+    fey:"", 
+    fiends:"", 
+    giants:"", 
+    monstrosities:"", 
+    oozes:"", 
+    plants:"", 
+    undead:"",
 }
