@@ -50,7 +50,7 @@ export default {
 
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "Mastery"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
 		t_Title() {
@@ -133,6 +133,10 @@ export default {
 			let mod = this.stats_Mod("wisdom");
 			return mod <= 0 ? 1 : mod;
 		},
+
+    Num_Mastery() {
+      return this.Mastery;
+    },
 	},
 };
 </script>
