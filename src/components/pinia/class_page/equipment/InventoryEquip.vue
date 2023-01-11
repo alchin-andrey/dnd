@@ -3,7 +3,7 @@
 		<section>
 			<my-wrapper gap_26>
 				<PacksEquip
-					v-for="packs in packs_Equip_Lvl_Arr"
+					v-for="packs in packs_Equip_Class"
 					:key="packs"
 					:packs="packs"
 					:packs_name="t_Inventary(packs)"
@@ -13,7 +13,7 @@
 		<section>
 			<div
 				class="main_inventory"
-				v-for="inventory in inventory_Level_Arr"
+				v-for="inventory in inventory_Equip_Class"
 				:key="inventory"
 			>
 				• {{ t_Inventary(inventory) }}
@@ -34,44 +34,60 @@ export default {
 		PacksEquip,
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "level_Filter", "MY_Subclass"]),
 
     shown_Inventory() {
-      return this.packs_Equip_Lvl_Arr.length !== 0 || 
-      this.inventory_Level_Arr.length !== 0
+      return this.packs_Equip_Class.length !== 0 || 
+      this.inventory_Equip_Class.length !== 0
     },
 
-		equipments_Level_Arr() {
-			let lvl = this.MY.level;
-			let arr = this.MY.class.equipment?.filter((el) =>
-				el.level ? el.level <= lvl : el
-			);
+		equipments_Class_Arr() {
+			let arr = this.level_Filter(this.MY.class.equipment);
 			return arr ? arr : [];
 		},
 
-		weapons_Level_Arr() {
+		equipments_Subclass_Arr() {
+			let arr = this.level_Filter(this.MY_Subclass?.equipment);
+			return arr ? arr : [];
+		},
+
+		equipments_Class_Params() {
+			const equip_class = this.equipments_Class_Arr
+      const equip_subclass = this.equipments_Subclass_Arr
+			return equip_class.concat(equip_subclass);
+		},
+
+    item_Equip_Arr: (state) => (item) => {
 			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.weapon?.forEach((weapon) => arr.push(weapon))
+			state.equipments_Class_Params?.forEach((el) =>
+				el[item]?.forEach((sub_el) => arr.push(sub_el))
 			);
 			return arr;
 		},
 
-		inventory_Level_Arr() {
-			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.inventory?.forEach((inventory) => arr.push(inventory))
-			);
-			return arr;
+		inventory_Equip_Class() {
+			return this.item_Equip_Arr("inventory");
 		},
 
-		packs_Equip_Lvl_Arr() {
-			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.inventory_packs?.forEach((packs) => arr.push(packs))
-			);
-			return arr;
+		packs_Equip_Class() {
+			return this.item_Equip_Arr("inventory_packs");
 		},
+
+		// inventory_Equip_Class() {
+		// 	let arr = [];
+		// 	this.equipments_Class_Arr?.forEach((el) =>
+		// 		el.inventory?.forEach((inventory) => arr.push(inventory))
+		// 	);
+		// 	return arr;
+		// },
+
+		// packs_Equip_Class() {
+		// 	let arr = [];
+		// 	this.equipments_Class_Arr?.forEach((el) =>
+		// 		el.inventory_packs?.forEach((packs) => arr.push(packs))
+		// 	);
+		// 	return arr;
+		// },
 
 		t_Inventary: (state) => (inv) => {
 			const name = state.t(inv[0].name);

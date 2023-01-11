@@ -27,9 +27,9 @@
 			<!-- qualities -->
 
 			<!-- charges -->
-			<my-wrapper v-if="charges_Level_Arr.length !== 0" hr>
+			<my-wrapper v-if="charges_Class_Params.length !== 0" hr>
 				<my-charges
-					v-for="item in charges_Level_Arr"
+					v-for="item in charges_Class_Params"
 					:key="item"
 					:charge="item"
 				>
@@ -148,9 +148,9 @@
 			<!-- //!NOTE - spells -->
 
 			<!-- //NOTE - weapon -->
-			<my-wrapper v-if="weapons_Level_Arr.length !== 0" gap_26 hr>
+			<my-wrapper v-if="weapons_Equip_Class.length !== 0" gap_26 hr>
 				<my-weapon
-					v-for="weapon in weapons_Level_Arr"
+					v-for="weapon in weapons_Equip_Class"
 					:key="weapon"
 					:weapon="weapon"
 				>
@@ -158,16 +158,16 @@
 			</my-wrapper>
 			<!-- //!NOTE - weapon -->
 
-			<!-- //NOTE - weapon -->
-			<my-wrapper v-if="inventory_Level_Arr.length !== 0" hr>
+			<!-- //NOTE - inventory -->
+			<my-wrapper v-if="shown_Invenory_Equip" hr>
 				<InventoryEquip />
 			</my-wrapper>
-			<!-- //!NOTE - weapon -->
+			<!-- //!NOTE - inventory -->
 
 			<!-- //NOTE - armor -->
-			<!-- <my-wrapper v-if="armors_Level_Arr.length !== 0" gap_26 hr>
+			<!-- <my-wrapper v-if="armors_Equip_Class.length !== 0" gap_26 hr>
 				<my-armor
-					v-for="armor in armors_Level_Arr"
+					v-for="armor in armors_Equip_Class"
 					:key="armor"
           :armor="armor"
 				>
@@ -176,9 +176,18 @@
 			<!-- //!NOTE - armor -->
 
 			<!-- //NOTE - text -->
-			<div class="story int-400">
+			<!-- <div class="story int-400">
 				<div v-html="t_Story"></div>
-			</div>
+			</div> -->
+      <my-wrapper gap_26>
+			<div class="story int-400" v-html="t_Story"></div>
+			<my-card-text
+				v-if="MY_Subclass"
+				:title="MY_Subclass.name"
+				:text="MY_Subclass.details"
+			>
+			</my-card-text>
+		</my-wrapper>
 		</section>
 
 		<section v-else>
@@ -235,6 +244,8 @@ export default {
 			"proficiencies_Arr_REC",
 			"proficiencies_Arr_Class",
 			"class_Specials_Filter_Lvl",
+
+      "level_Filter",
 		]),
 		...mapState(useStatsStore, [
 			"stats_Keys",
@@ -271,6 +282,15 @@ export default {
 		// 	return custom_spells.length !== 0;
 		// },
 
+		shown_Fines_All() {
+			return (
+				MY.race.fines || 
+        MY.ethnos.fines || 
+        MY.class.fines ||
+				this.fines_Subclass_Lvl.length !== 0
+			);
+		},
+
 		shown_Spells_All() {
 			return (
 				this.shown_Spells_RE ||
@@ -280,15 +300,17 @@ export default {
 			);
 		},
 
+    shown_Param_Arr: (state) => (arr) => {
+      return arr ? state.level_Filter(arr).length !== 0 : null;
+    },
+
 		spell_Subclass_Lvl() {
-			let lvl = this.MY.level;
-			let arr = this.MY_Subclass?.spells?.filter((el) => el.level <= lvl);
+      let arr = this.level_Filter(this.MY_Subclass?.spells);
 			return arr ? arr : [];
 		},
 
 		fines_Subclass_Lvl() {
-			let lvl = this.MY.level;
-			let arr = this.MY_Subclass?.fines?.filter((el) => el.level <= lvl);
+      let arr = this.level_Filter(this.MY_Subclass?.fines);
 			return arr ? arr : [];
 		},
 
@@ -382,39 +404,84 @@ export default {
 		// 	return numb_RE + numb_bonus;
 		// },
 
-		charges_Level_Arr() {
-			let lvl = this.MY.level;
-			let arr = this.MY.class.charges?.filter((el) => el.level <= lvl);
+		charges_Class_Arr() {
+      let arr = this.level_Filter(this.MY.class.charges);
 			return arr ? arr : [];
 		},
 
-		equipments_Level_Arr() {
-			let lvl = this.MY.level;
-			let arr = this.MY.class.equipment?.filter((el) =>
-				el.level ? el.level <= lvl : el
-			);
+    charges_Subclass_Arr() {
+      let arr = this.level_Filter(this.MY_Subclass?.charges);
 			return arr ? arr : [];
 		},
 
-		weapons_Level_Arr() {
+    charges_Class_Params() {
+      const charges_class = this.charges_Class_Arr
+      const charges_subclass = this.charges_Subclass_Arr
+			return charges_class.concat(charges_subclass);
+		},
+
+		equipments_Class_Arr() {
+			let arr = this.level_Filter(this.MY.class.equipment);
+			return arr ? arr : [];
+		},
+
+    equipments_Subclass_Arr() {
+			let arr = this.level_Filter(this.MY_Subclass?.equipment);
+			return arr ? arr : [];
+		},
+
+		equipments_Class_Params() {
+			const equip_class = this.equipments_Class_Arr
+      const equip_subclass = this.equipments_Subclass_Arr
+			return equip_class.concat(equip_subclass);
+		},
+
+    item_Equip_Arr: (state) => (item) => {
 			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.weapon?.forEach((weapon) => arr.push(weapon))
+			state.equipments_Class_Params?.forEach((el) =>
+				el[item]?.forEach((sub_el) => arr.push(sub_el))
 			);
 			return arr;
 		},
 
-		inventory_Level_Arr() {
-			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.inventory?.forEach((inventory) => arr.push(inventory))
-			);
-			return arr;
+    inventory_Equip_Class() {
+			return this.item_Equip_Arr("inventory");
 		},
 
-		// armors_Level_Arr() {
+    packs_Equip_Class() {
+			return this.item_Equip_Arr("inventory_packs");
+		},
+
+    shown_Invenory_Equip() {
+			return (
+				this.inventory_Equip_Class.length !== 0 ||
+				this.packs_Equip_Class.length !== 0
+			);
+		},
+
+		weapons_Equip_Class() {
+      return this.item_Equip_Arr("weapon");
+		},
+
+		// weapons_Equip_Class() {
 		// 	let arr = [];
-		// 	this.equipments_Level_Arr?.forEach((el) =>
+		// 	this.equipments_Class_Arr?.forEach((el) =>
+		// 		el.weapon?.forEach((weapon) => arr.push(weapon))
+		// 	);
+		// 	return arr;
+		// },
+
+		// inventory_Equip_Class() {
+		// 	let arr = [];
+		// 	this.equipments_Class_Arr?.forEach((el) =>
+		// 		el.inventory?.forEach((inventory) => arr.push(inventory))
+		// 	);
+		// 	return arr;
+		// },
+
+		// armors_Equip_Class() {
+		// 	let arr = [];
+		// 	this.equipments_Class_Arr?.forEach((el) =>
 		// 		el.armor?.forEach((armor) => arr.push(armor))
 		// 	);
 		// 	return arr;
@@ -422,7 +489,7 @@ export default {
 
 		// armors_Element() {
 		// 	let arr = null;
-		// 	this.equipments_Level_Arr?.forEach((el) =>
+		// 	this.equipments_Class_Arr?.forEach((el) =>
 		// 		el.armor?.forEach(armor => arr = armor[0])
 		// 	);
 		// 	return arr;

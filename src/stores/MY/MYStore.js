@@ -29,8 +29,16 @@ export const useMYStore = defineStore({
 
     level_Filter() {
       const lvl = this.MY.level;
-      return (item) => item?.filter((el) => lvl >= el.level);
+      // return (item) => item?.filter((el) => lvl >= el.level);
+      return (item) => item?.filter((el) => el.level ? lvl >= el.level : el);
+      
     },
+
+    // level_Filter: (state) => (item) => {
+    //   console.log('level_Filter:', item);
+    //   const lvl = state.MY.level;
+    //   return item?.filter((el) => lvl >= el.level);
+    // },
 
 		ethnos_Setting(state) {
 			return (name) =>
@@ -105,8 +113,14 @@ export const useMYStore = defineStore({
 				state.MY.class.proficiencies,
 				kay
 			);
+
+      const subclass_prof = state.proficiencies_Arr(
+				state.MY_Subclass?.proficiencies,
+				kay
+			);
+
       const any =  state.proficiencies_Any(kay);
-			return any ? ['any'] : class_prof;
+			return any ? ['any'] : class_prof.concat(subclass_prof);
 		},
 
     proficiencies_Arr_All: (state) => (kay) => {

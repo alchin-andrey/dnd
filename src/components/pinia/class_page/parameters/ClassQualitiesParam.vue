@@ -49,7 +49,7 @@ export default {
 	name: "ClassQualitiesParam",
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "level_Filter"]),
 		// GETTERS
 		...mapState(useMYStore, ["Mastery", "class_Specials"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
@@ -113,29 +113,37 @@ export default {
 			return numb_RE + numb_bonus;
 		},
 
-		equipments_Level_Arr() {
-			let lvl = this.MY.level;
-			let arr = this.MY.class.equipment?.filter((el) =>
-				el.level ? el.level <= lvl : el
-			);
+		equipments_Class_Arr() {
+			let arr = this.level_Filter(this.MY.class.equipment);
 			return arr ? arr : [];
 		},
 
-		armors_Level_Arr() {
+    item_Equip_Arr: (state) => (item) => {
 			let arr = [];
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.armor?.forEach((armor) => arr.push(armor))
+			state.equipments_Class_Arr?.forEach((el) =>
+				el[item]?.forEach((sub_el) => arr.push(sub_el))
 			);
 			return arr;
 		},
 
-		armors_Element() {
-			let arr = null;
-			this.equipments_Level_Arr?.forEach((el) =>
-				el.armor?.forEach((armor) => (arr = armor[0]))
-			);
-			return arr;
+    armors_Equip_Class() {
+			return this.item_Equip_Arr("armor");
 		},
+
+		armors_Element() {
+			return this.armors_Equip_Class[0]?.[0];
+		},
+    
+		// armors_Element() {
+		// 	let arr = null;
+		// 	let armor = this.armors_Equip_Class;
+		// 	console.log('armor:', armor)
+		// 	this.equipments_Class_Arr?.forEach((el) =>
+		// 		el.armor?.forEach((armor) => (arr = armor[0]))
+		// 	);
+		// 	console.log('arr:', arr)
+		// 	return arr;
+		// },
 
 		armor_Name() {
 			let armor = this.armors_Element;
