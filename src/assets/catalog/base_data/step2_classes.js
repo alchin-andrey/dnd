@@ -1970,7 +1970,7 @@ export default {
               },
               {
                 level: 11,
-                spell: spells.cloak_of_shadows,
+                spell: spells.cloak_of_shadows_monk,
               },
               {
                 level: 17,
@@ -6164,6 +6164,299 @@ export default {
 
     settings: [
       {
+        level:1,
+        type:"custom",
+        name:"subclass",
+        select: 1,
+        list: [
+          {
+            name:"favored_enemy",
+            details:"favored_enemy_details",
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "favored_enemy",
+                select: [1,1,1,1,1, 2,2,2,2,2, 2,2,2,3,3, 3,3,3,3,3],
+                list: [
+                  {
+                    name: "aberrations",
+                    details: "aberrations_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_aberrations_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_aberrations_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.deep],
+                    },
+                  },
+                  {
+                    name: "beasts",
+                    details: "beasts_details",
+                    
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_beasts_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_beasts_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.animal],
+                    },
+                  },
+                  {
+                    name: "celestials",
+                    details: "celestials_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_celestials_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_celestials_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.sky],
+                    },
+                  },
+                  {
+                    name: "constructs",
+                    details: "constructs_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_constructs_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_constructs_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "dragons",
+                    details: "dragons_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_dragons_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_dragons_against",
+                      },
+                    ],
+        
+                    proficiencies: {
+                      languages: [lang.dragon],
+                    },
+                  },
+                  {
+                    name: "elementals",
+                    details: "elementals_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_elementals_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_elementals_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.primordial],
+                    },
+                  },
+                  {
+                    name: "feys",
+                    details: "feys_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_feys_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_feys_against",
+                      },
+                    ],
+        
+                    proficiencies: {
+                      languages: [lang.sylvan],
+                    },
+                  },
+                  {
+                    name: "fiends",
+                    details: "fiends_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_fiends_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_fiends_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.demonic,lang.tiefling],
+                    },
+                  },
+                  {
+                    name: "giants",
+                    details: "giants_details",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_giants_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_giants_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.giant],
+                    },
+                  },
+                  {
+                    name: "monstrosities",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_monstrosities_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_monstrosities_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "oozes",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_oozes_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_oozes_against",
+                      },
+                    ]
+                  },
+                  {
+                    name: "plants",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_plants_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_plants_against",
+                      },
+                    ]
+                  },
+                  {
+                    name: "undeads",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_undeads_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_undeads_against",
+                      },
+                    ],                    
+                  },
+                  {
+                    name: "two_other_races",
+        
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_two_other_races_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_two_other_races_against",
+                      },
+                    ]
+                  },
+        
+                ]
+              },
+            ]
+          },
+          {
+            name:"favored_foe",
+            details:"favored_foe_details",
+          }
+        ]
+      },
+      {
         level: 1,
         type: "skills",
         name: "skills",
@@ -6267,256 +6560,6 @@ export default {
           [packs.dungeoneers, 1],
           [packs.explorers, 1],
         ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        name: "favored_enemy",
-        select: [1,1,1,1,1, 2,2,2,2,2, 2,2,2,3,3, 3,3,3,3,3],
-        list: [
-          {
-            name: "aberrations",
-            details: "aberrations_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_aberrations_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_aberrations_against",
-              },
-            ],
-          },
-          {
-            name: "beasts",
-            details: "beasts_details",
-            
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_beasts_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_beasts_against",
-              },
-            ]
-          },
-          {
-            name: "celestials",
-            details: "celestials_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_celestials_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_celestials_against",
-              },
-            ]
-          },
-          {
-            name: "constructs",
-            details: "constructs_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_constructs_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_constructs_against",
-              },
-            ]
-          },
-          {
-            name: "dragons",
-            details: "dragons_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_dragons_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_dragons_against",
-              },
-            ],
-
-            proficiencies: {
-              languages: [lang.dragon],
-            },
-          },
-          {
-            name: "elementals",
-            details: "elementals_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_elementals_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_elementals_against",
-              },
-            ]
-          },
-          {
-            name: "feys",
-            details: "feys_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_feys_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_feys_against",
-              },
-            ],
-
-            proficiencies: {
-              languages: [lang.sylvan],
-            },
-          },
-          {
-            name: "fiends",
-            details: "fiends_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_fiends_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_fiends_against",
-              },
-            ]
-          },
-          {
-            name: "giants",
-            details: "giants_details",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_giants_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_giants_against",
-              },
-            ],
-          },
-          {
-            name: "monstrosities",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_monstrosities_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_monstrosities_against",
-              },
-            ]
-          },
-          {
-            name: "oozes",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_oozes_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_oozes_against",
-              },
-            ]
-          },
-          {
-            name: "plants",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_plants_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_plants_against",
-              },
-            ]
-          },
-          {
-            name: "undeads",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_undeads_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_undeads_against",
-              },
-            ]
-          },
-          {
-            name: "two_other_races",
-
-            fines: [
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "wisdom_two_other_races_against",
-              },
-              {
-                type: "advantage",
-                keyword: "advantage",
-                details: "intelligence_two_other_races_against",
-              },
-            ]
-          },
-
-        ]
       },
     ]
   },
