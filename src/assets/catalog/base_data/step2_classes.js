@@ -671,73 +671,73 @@ export default {
                 select: 1,
                 list: [
                   {
-                    proficiencies: [ { tools: [tools.blacksmith], }, ],
+                    proficiencies: { tools: [tools.blacksmith], },
                   },
                   {
-                    proficiencies: [ { tools: [tools.brewer], }, ],
+                    proficiencies:  { tools: [tools.brewer], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.mason], }, ],
+                    proficiencies:  { tools: [tools.mason], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.alchemists_supplies], }, ],
+                    proficiencies: { tools: [tools.alchemists_supplies], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.blacksmith], }, ],
+                    proficiencies: { tools: [tools.blacksmith], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.brewer], }, ],
+                    proficiencies: { tools: [tools.brewer], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.calligraphers_supplies], }, ],
+                    proficiencies: { tools: [tools.calligraphers_supplies], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.carpenters_tools], }, ],
+                    proficiencies:  { tools: [tools.carpenters_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.cartographers_tools], }, ],
+                    proficiencies: { tools: [tools.cartographers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.cobblers_tools], }, ],
+                    proficiencies: { tools: [tools.cobblers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.cooks_tools], }, ],
+                    proficiencies: { tools: [tools.cooks_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.disguise], }, ],
+                    proficiencies: { tools: [tools.disguise], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.glassblowers_tools], }, ],
+                    proficiencies:  { tools: [tools.glassblowers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.jewelers_tools], }, ],
+                    proficiencies: { tools: [tools.jewelers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.leatherworkers_tools], }, ],
+                    proficiencies:  { tools: [tools.leatherworkers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.mason], }, ],
+                    proficiencies:  { tools: [tools.mason], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.navigators_tools], }, ],
+                    proficiencies:  { tools: [tools.navigators_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.painters_supplies], }, ],
+                    proficiencies:  { tools: [tools.painters_supplies], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.poisoner], }, ],
+                    proficiencies:  { tools: [tools.poisoner], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.potters_tools], }, ],
+                    proficiencies: { tools: [tools.potters_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.tinkers_tools], }, ],
+                    proficiencies:  { tools: [tools.tinkers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.weavers_tools], }, ],
+                    proficiencies:  { tools: [tools.weavers_tools], }, 
                   },
                   {
-                    proficiencies: [ { tools: [tools.woodcarvers_tools], }, ],
+                    proficiencies:  { tools: [tools.woodcarvers_tools], }, 
                   },
                 ],
               },
@@ -2081,179 +2081,177 @@ export default {
         select: 1,
         list: [
           {
-            proficiencies: [
-              {
+            proficiencies: {
                 tools: [tools.alchemists_supplies],
               },
-            ],
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.potters_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.tinkers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.calligraphers_supplies],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.cobblers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.cartographers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.leatherworkers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.blacksmith],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.brewer],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.carpenters_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.cooks_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.woodcarvers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.shoemaker_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.glassblowers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.weavers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.painters_supplies],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.jewelers_tools],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_dulcimer],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_flute],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_horn],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_lute],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_lyre],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_pan_flute],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_shawm],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_viol],
               },
-            ],
+            
           },
         ],
       },
@@ -2917,8 +2915,8 @@ export default {
             ],
 
             proficiencies: {
-                armor: [[armory.heavy]],
-                weapons: [[weaponry.military]],
+                armor: [armory.heavy],
+                weapons: [weaponry.military],
               },
 
             settings: [
@@ -3020,8 +3018,8 @@ export default {
             ],
 
             proficiencies: {
-                armor: [[armory.heavy]],
-                weapons: [[weaponry.military]],
+                armor: [armory.heavy],
+                weapons: [weaponry.military],
               },
 
 
@@ -3121,7 +3119,7 @@ export default {
             ],
 
             proficiencies: {
-                armor: [[armory.heavy]],
+                armor: [armory.heavy],
               },
 
 
@@ -3346,7 +3344,7 @@ export default {
             ],
 
             proficiencies: {
-                armor: [[armory.heavy]],
+                armor: [armory.heavy],
               },
 
 
@@ -5951,74 +5949,74 @@ export default {
         select: 3,
         list: [
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_bagpipes],
               },
-            ],
+
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_drums],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_dulcimer],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_flute],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_horn],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_lute],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_lyre],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_pan_flute],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_shawm],
               },
-            ],
+            
           },
           {
-            proficiencies: [
+            proficiencies: 
               {
                 tools: [tools.music_viol],
               },
-            ],
+            
           },
         ],
       },
