@@ -6166,7 +6166,7 @@ export default {
       {
         level:1,
         type:"custom",
-        name:"subclass",
+        name:"favor",
         select: 1,
         list: [
           {

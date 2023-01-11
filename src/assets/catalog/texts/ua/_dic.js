@@ -3693,4 +3693,6 @@ export default {
 
     lang_deep: langs.deep,
     lang_deep_details: langs.deep_details,
+
+    favor: "фавор",
 }
