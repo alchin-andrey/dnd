@@ -2916,12 +2916,10 @@ export default {
               },
             ],
 
-            proficiencies: [
-              {
+            proficiencies: {
                 armor: [[armory.heavy]],
                 weapons: [[weaponry.military]],
               },
-            ],
 
             settings: [
               {
@@ -3021,12 +3019,11 @@ export default {
               },
             ],
 
-            proficiencies: [
-              {
+            proficiencies: {
                 armor: [[armory.heavy]],
                 weapons: [[weaponry.military]],
               },
-            ],
+
 
             settings: [
               {
@@ -3123,11 +3120,10 @@ export default {
               },
             ],
 
-            proficiencies: [
-              {
+            proficiencies: {
                 armor: [[armory.heavy]],
               },
-            ],
+
 
             settings: [
               {
@@ -3349,11 +3345,10 @@ export default {
               },
             ],
 
-            proficiencies: [
-              {
+            proficiencies: {
                 armor: [[armory.heavy]],
               },
-            ],
+
 
             settings: [
               {
@@ -6453,6 +6448,13 @@ export default {
           {
             name:"favored_foe",
             details:"favored_foe_details",
+
+            spells: [
+              {
+                level:1,
+                spell:spells.favored_foe,
+              }
+            ]
           }
         ]
       },

@@ -3697,5 +3697,12 @@ export default {
 
     favor: "фавор",
 
-    
+    ranger: classes.ranger,
+    ranger_details: classes.ranger_details,
+
+    hunter: classes.hunter,
+    hunter_details: classes.hunter_details,
+
+    beastmaster: classes.beastmaster,
+    beastmaster_details: classes.beastmaster_details,
 }
