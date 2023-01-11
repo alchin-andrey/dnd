@@ -1,7 +1,17 @@
 <template>
     <!-- RACE ETHNOS -->
 	<div class="selection_menu_wrap">
-		<div class="selection_menu">
+		
+    <div class="selection_menu" v-if="MY_Subclass">
+      <my-selection
+				@click="showSettings__Class('subclass')"
+				:active="class_page.shown.subclass"
+				title="subclass"
+				:type="MY_Subclass.name"
+			></my-selection>
+    </div>
+
+    <div class="selection_menu">
 			<my-selection
 				@click="showSettings__Class('stats')"
 				:active="class_page.shown.stats"
@@ -15,6 +25,7 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
+import { useMYStore } from "@/stores/MY/MYStore";
 import { usePagesStore } from "@/stores/pages/PagesStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
@@ -24,6 +35,8 @@ export default {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),
     // GETTERS
+		...mapState(useMYStore, ["MY_Subclass"]),
+
     ...mapState(useStatsStore, ["stats_Custom_Arr_RE", "stats_Base_Settings_Two_T"]),
 
 	},

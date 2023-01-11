@@ -1,17 +1,17 @@
 <template>
 <div class="int-400">
-  <!-- <div class="title" v-html="t_Html"></div> -->
-            <h3 class="title"
+            <div class="title"
             :class="{
-              only: !text,
+              only: !text && !text_html,
     }"
-    >{{ t_Title }}</h3>
-            <p class="text">
+    >{{ t_Title }}</div>
+    <div v-if="text_html" class="text" v-html="t_Html"></div>
+            <div else class="text">
               {{ t_Text }}
               <br v-if="rare" />
               <br v-if="rare" />
               <span v-if="rare">{{ t_Rare }}</span>
-            </p>
+            </div>
           </div>
 </template>
 
@@ -23,10 +23,10 @@ export default {
       type: String,
       default: null,
     },
-    // title_html: {
-    //   type: String,
-    //   default: null,
-    // },
+    text_html: {
+      type: String,
+      default: null,
+    },
     text: {
       type: String,
       default: null,
@@ -40,9 +40,9 @@ export default {
     t_Title() {
       return this.t(this.title);
     },
-    // t_Html() {
-    //   return this.t(this.title_html);
-    // },
+    t_Html() {
+      return this.t(this.text_html);
+    },
     t_Text() {
       return this.t(this.text);
     },

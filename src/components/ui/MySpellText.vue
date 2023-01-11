@@ -40,6 +40,7 @@
 				:numb="Value_Num"
 				:dice="Value_Dic"
 				:pls="Value_Pls"
+        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
 				main
 				not_dot
 			/>
@@ -99,6 +100,7 @@
 				:numb="Value_Num"
 				:dice="Value_Dic"
 				:pls="Value_Pls"
+        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
 				main
 			/>
 			<magic-attribute

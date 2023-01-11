@@ -242,6 +242,7 @@ export default {
 	},
 	watch: {
 		"MY.race": "getWatch",
+		"MY.class": "getWatch_Class",
 	},
 
 	methods: {
@@ -251,6 +252,8 @@ export default {
 			"closeColor",
 			"closePar",
       "goPage",
+      
+      "closeSubclass",
 		]),
 		...mapActions(useMYStore, ["getEthnos"]),
 
@@ -274,6 +277,10 @@ export default {
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 		},
+
+    getWatch_Class() {
+      this.closeSubclass();
+    }
 	},
 };
 </script>
@@ -500,14 +507,14 @@ a {
 }
 
 .story h3 {
-	font-family: "Inter";
+	/* font-family: "Inter";
 	font-style: normal;
 	font-weight: 700;
 	font-size: 13px;
 	line-height: 15px;
-	letter-spacing: 0.02em;
+	letter-spacing: 0.02em; */
 	color: #ffffff;
-	margin-top: 25px;
+	margin-top: 26px;
 	margin-bottom: 5px;
 }
 

@@ -105,8 +105,8 @@
 		<!-- spells -->
 
 		<!-- text -->
-		<div class="story int-400">
-			<div v-html="t_Story"></div>
+    <my-wrapper gap_26>
+			<div class="story int-400" v-html="t_Story"></div>
 			<my-card-text
 				v-if="MY.ethnos.name !== 'common'"
 				:title="MY.ethnos.name"
@@ -114,7 +114,7 @@
 				:rare="MY.ethnos.rare"
 			>
 			</my-card-text>
-		</div>
+		</my-wrapper>
 </template>
 
 <script>

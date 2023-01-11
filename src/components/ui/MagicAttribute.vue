@@ -84,6 +84,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    feet: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
@@ -147,7 +151,8 @@ export default {
 			return (
 				this.title === "aim_range" ||
 				this.title === "aim_aoe" ||
-				(this.title === "push" && !this.save)
+        this.feet
+				// (this.title === "push" && !this.save)
 			);
 		},
 

@@ -53,6 +53,7 @@ export const usePagesStore = defineStore({
 
     class_page: {
       shown: {
+        subclass: false,
         stats: false,
       },
     },
@@ -152,7 +153,15 @@ export const usePagesStore = defineStore({
       this.race_page[name] = !this.race_page[name]
     },
 
-    // ^ Race Page: Shown settings
-
+    // ^ Class Page: Shown settings
+    
+    closeSubclass() {
+      const MYStore = useMYStore();
+      const subclass_show = this.class_page.shown.subclass;
+      const subclass = MYStore.MY_Subclass;
+      if (subclass_show && !subclass) {
+        this.showHome();
+      }
+    },
 	},
 });

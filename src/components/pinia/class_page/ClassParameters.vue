@@ -85,6 +85,16 @@
 					:details="item.details"
 				></my-fines>
 				<!-- CLASS -->
+				<!-- SUB_CLASS -->
+				<my-fines
+					v-for="item in fines_Subclass_Lvl"
+					:key="item"
+					:lvl="item.level"
+					:icon="item.type"
+					:title="item.keyword"
+					:details="item.details"
+				></my-fines>
+				<!-- SUB_CLASS -->
 			</my-wrapper>
 			<!-- //!NOTE - fines -->
 
@@ -125,6 +135,15 @@
 				>
 				</my-spell-text>
 				<!-- CLASS -->
+				<!-- SUB_CLASS -->
+				<my-spell-text
+					v-for="item in spell_Subclass_Lvl"
+					:key="item"
+					:lvl="item.level"
+					:spell="item.spell"
+				>
+				</my-spell-text>
+				<!-- SUB_CLASS -->
 			</my-wrapper>
 			<!-- //!NOTE - spells -->
 
@@ -133,19 +152,19 @@
 				<my-weapon
 					v-for="weapon in weapons_Level_Arr"
 					:key="weapon"
-          :weapon="weapon"
+					:weapon="weapon"
 				>
 				</my-weapon>
 			</my-wrapper>
 			<!-- //!NOTE - weapon -->
 
-      <!-- //NOTE - weapon -->
+			<!-- //NOTE - weapon -->
 			<my-wrapper v-if="inventory_Level_Arr.length !== 0" hr>
-				<InventoryEquip/>
+				<InventoryEquip />
 			</my-wrapper>
 			<!-- //!NOTE - weapon -->
 
-      <!-- //NOTE - armor -->
+			<!-- //NOTE - armor -->
 			<!-- <my-wrapper v-if="armors_Level_Arr.length !== 0" gap_26 hr>
 				<my-armor
 					v-for="armor in armors_Level_Arr"
@@ -203,20 +222,20 @@ export default {
 		ClassStatsTable,
 		ClassQualitiesParam,
 
-    InventoryEquip,
+		InventoryEquip,
 	},
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["race_page", "class_page"]),
 		...mapState(useMYStore, ["MY"]),
 		// GETTERS
-    ...mapState(useMYStore, [
-      "Mastery",
-      // "Half_Mastery",
-      "proficiencies_Arr_REC",
-      "proficiencies_Arr_Class",
-      "class_Specials_Filter_Lvl",
-    ]),
+		...mapState(useMYStore, [
+			"Mastery",
+			"MY_Subclass",
+			"proficiencies_Arr_REC",
+			"proficiencies_Arr_Class",
+			"class_Specials_Filter_Lvl",
+		]),
 		...mapState(useStatsStore, [
 			"stats_Keys",
 			"stats_Race_Page_Numb",
@@ -247,17 +266,30 @@ export default {
 			return class_spells && class_lvl;
 		},
 
-		shown_Spells_RE_Custom() {
-			let custom_spells = this.spells_Custom_Obj_RE;
-			return custom_spells.length !== 0;
-		},
+		// shown_Spells_RE_Custom() {
+		// 	let custom_spells = this.spells_Custom_Obj_RE;
+		// 	return custom_spells.length !== 0;
+		// },
 
 		shown_Spells_All() {
 			return (
 				this.shown_Spells_RE ||
 				this.shown_Spells_Class ||
-				this.shown_Spells_RE_Custom
+				this.spells_Custom_Obj_RE.length !== 0 ||
+				this.spell_Subclass_Lvl.length !== 0
 			);
+		},
+
+		spell_Subclass_Lvl() {
+			let lvl = this.MY.level;
+			let arr = this.MY_Subclass?.spells?.filter((el) => el.level <= lvl);
+			return arr ? arr : [];
+		},
+
+		fines_Subclass_Lvl() {
+			let lvl = this.MY.level;
+			let arr = this.MY_Subclass?.fines?.filter((el) => el.level <= lvl);
+			return arr ? arr : [];
 		},
 
 		getSkillMarg: () => (i, name) => {
@@ -289,14 +321,14 @@ export default {
 			state.skills_All_RE.includes(name)
 				? (race_mastery = state.Mastery)
 				: null;
-      const spec_skills = state.class_Specials_Filter_Lvl("skills");
-      let skills_foo = null;
-      spec_skills?.forEach((el) => skills_foo = state[el.foo](race_mastery));
+			const spec_skills = state.class_Specials_Filter_Lvl("skills");
+			let skills_foo = null;
+			spec_skills?.forEach((el) => (skills_foo = state[el.foo](race_mastery)));
 			return skills_foo ? skills_foo + mod : race_mastery + mod;
 		},
 
-    Half_Mastery: (state) => (skill_mastery) => {
-      const half_mastery = Math.floor(state.Mastery / 2);
+		Half_Mastery: (state) => (skill_mastery) => {
+			const half_mastery = Math.floor(state.Mastery / 2);
 			return skill_mastery ? skill_mastery : half_mastery;
 		},
 
@@ -358,7 +390,9 @@ export default {
 
 		equipments_Level_Arr() {
 			let lvl = this.MY.level;
-			let arr = this.MY.class.equipment?.filter((el) => el.level ? el.level <= lvl : el);
+			let arr = this.MY.class.equipment?.filter((el) =>
+				el.level ? el.level <= lvl : el
+			);
 			return arr ? arr : [];
 		},
 
@@ -370,7 +404,7 @@ export default {
 			return arr;
 		},
 
-    inventory_Level_Arr() {
+		inventory_Level_Arr() {
 			let arr = [];
 			this.equipments_Level_Arr?.forEach((el) =>
 				el.inventory?.forEach((inventory) => arr.push(inventory))
@@ -378,21 +412,21 @@ export default {
 			return arr;
 		},
 
-    // armors_Level_Arr() {
+		// armors_Level_Arr() {
 		// 	let arr = [];
 		// 	this.equipments_Level_Arr?.forEach((el) =>
 		// 		el.armor?.forEach((armor) => arr.push(armor))
 		// 	);
 		// 	return arr;
-    // },
+		// },
 
-    // armors_Element() {
+		// armors_Element() {
 		// 	let arr = null;
 		// 	this.equipments_Level_Arr?.forEach((el) =>
 		// 		el.armor?.forEach(armor => arr = armor[0])
 		// 	);
 		// 	return arr;
-    // },
+		// },
 
 		// proficiencies_Arr: (state) => (obj, kay) => {
 		// 	let arr = [];

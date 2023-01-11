@@ -18,9 +18,43 @@ export const useMYStore = defineStore({
 			return 1 + Math.ceil(state.MY.level / 4);
 		},
 
+    MY_Subclass() {
+      const class_subclasses = this.subclass_Find_Lvl;
+      const subclass_save = this.MY.subclass_save[this.MY.class.name];
+      if (class_subclasses) {
+        return subclass_save ? subclass_save : class_subclasses.list[0];
+      }
+      return null;
+		},
+
+    level_Filter() {
+      const lvl = this.MY.level;
+      return (item) => item?.filter((el) => lvl >= el.level);
+    },
+
 		ethnos_Setting(state) {
 			return (name) =>
 				state.MY.ethnos.settings?.find((item) => item.type == name);
+		},
+
+    subclass_Find() {
+      const lvl = this.MY.level;
+			return this.MY.class.settings?.find((item) => item.name == "subclass");
+		},
+
+    subclass_Find_Lvl() {
+      const lvl = this.MY.level;
+			return this.MY.class.settings?.find((item) => item.name == "subclass" && lvl >= item.level);
+		},
+
+		// class_Setting_Find_Lvl(state) {
+		// 	return (name) =>
+		// 		state.MY.class.settings?.find((item) => item.name == name && lvl >= item.level);
+		// },
+
+		class_Setting_Filter_Lvl(state) {
+			return (name) =>
+				state.MY.class.settings?.filter((item) => item.type == name && lvl >= item.level);
 		},
 
     class_Specials(state) {

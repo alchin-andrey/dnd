@@ -3035,7 +3035,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 5,
       impact_size_dic: null,
@@ -3207,7 +3207,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 10,
       impact_size_dic: null,
@@ -4130,7 +4130,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 10,
       impact_size_dic: null,
@@ -5596,7 +5596,7 @@ export default {
       impact_type: "slowing",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 10,
       impact_size_dic: null,
@@ -5816,7 +5816,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 10,
       impact_size_dic: null,
@@ -7082,7 +7082,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 15,
       impact_size_dic: null,
@@ -7864,7 +7864,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 15,
       impact_size_dic: null,
@@ -14719,7 +14719,7 @@ export default {
       impact_type: "push",
       impact_damage_type: null,
 
-      impact_size_foo: "Num_Feet",
+      impact_size_foo: "Feet",
       impact_size_str: null,
       impact_size_num: 15,
       impact_size_dic: null,
