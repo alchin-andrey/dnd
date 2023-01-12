@@ -1462,7 +1462,7 @@ export default {
     an_ability: "способность",
     to_use_magic_items: "использовать любые магические предметы и свитки",
 
-    bonus_move: "Бонусный полный ход",
+    bonus_move: "Дополнительный полный ход",
     in_first_round: "на первом раунде боя (с -10 Инициативы)",
 
     tool_disguise: "гримировальные",
@@ -3615,6 +3615,7 @@ export default {
 
     spell_mage_hand_rogue: spells.mage_hand_rogue,
     spell_mage_hand_rogue_details: spells.mage_hand_rogue_details,
+    spell_mage_hand_rogue_details_13: spells.mage_hand_rogue_details_13,
     spell_mage_hand_rogue_expanded: spells.mage_hand_rogue_expanded,
 
     base_with: "базовое",
@@ -3705,4 +3706,63 @@ export default {
 
     beastmaster: classes.beastmaster,
     beastmaster_details: classes.beastmaster_details,
+
+    favored_foe_slots:"избрание противника",
+    favored_foe_slot:"1× избрание противника",
+
+    favored_foe:"поиск противника",
+    favored_foe: "Вы способны определить заклятого противника прямо в бою. Когда вы попадаете атакой по существу, вы можете призвать силы природы, чтобы отметить существо и сделать его вашим заклятым противником.",
+
+    natural_explorer:"исследователь природы",
+    natural_explorer_details:"Вы очень хорошо знакомы с одним видом природной среды и имеете большой опыт путешествий и выживания в регионах с таким климатом — тундра, болота, горы, леса, луга, побережье, подземье или пустыня.",
+
+    favored_terrain: "избранная местность",
+
+    arctic:"тундра", 
+    coast:"побережье", 
+    desert:"пустыня", 
+    forest:"леса", 
+    grassland:"луга", 
+    mountain:"горы", 
+    swamp:"болота",
+    underdark:"подземье",
+
+    intelligence_wisdom_arctic:"на проверки Интеллекта или Мудрости, связанные с тундрой", 
+    intelligence_wisdom_coast:"на проверки Интеллекта или Мудрости, связанные с побережьем", 
+    intelligence_wisdom_desert:"на проверки Интеллекта или Мудрости, связанные с пустыней", 
+    intelligence_wisdom_forest:"на проверки Интеллекта или Мудрости, связанные с лесом", 
+    intelligence_wisdom_grassland:"на проверки Интеллекта или Мудрости, связанные с лугами", 
+    intelligence_wisdom_mountain:"на проверки Интеллекта или Мудрости, связанные с горами", 
+    intelligence_wisdom_swamp:"на проверки Интеллекта или Мудрости, связанные с болотами",
+    intelligence_wisdom_underdark:"на проверки Интеллекта или Мудрости, связанные с подземьем",
+
+    travel_arctic:"преимущества в тундре", 
+    travel_coast:"преимущества в побережье", 
+    travel_desert:"преимущества в пустыне", 
+    travel_forest:"преимущества в лесу", 
+    travel_grassland:"преимущества в лугах", 
+    travel_mountain:"преимущества в горах", 
+    travel_swamp:"преимущества в болотах",
+    travel_underdark:"преимущества в подземье",
+
+    terrain_advantages:"— проходимость, бдительность, 2× добыча, чтение следов, скрытность в одиночку",
+
+    deft_explorer:"искусный исследователь",
+    deft_explorer_details:"Вы — непревзойденный исследователь и выживальщик, способный как самостоятельно странствовать по дикой местности, так и помогать с этим другим.",
+
+    climbing_and_swimming: "лазание и плавание",
+
+    tireless_slots:"неутомимость",
+    tireless_slot:"1× неутомимось",
+
+    exhaust_rediction:"снижение истощения",
+    in_short_rest:"при коротком отдыхе",
+
+    spell_favored_foe: spells.favored_foe,
+    spell_favored_foe_details: spells.favored_foe_details,
+    spell_favored_foe_expanded: spells.favored_foe_expanded,
+
+    spell_tireless: spells.tireless,
+    spell_tireless_details: spells.tireless_details,
+    spell_tireless_expanded: spells.tireless_expanded,
 }

@@ -152,7 +152,7 @@ export default {
                 level: 17,
                 type: "plus",
                 keyword: "bonus_move",
-                details: "to_use_magic_items",
+                details: "in_first_round",
               },
             ],
           },
@@ -568,82 +568,7 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "maneuvers",
-                select: 3,
-                list: [
-                  spells.maneuver_evasive_footwork,
-                  spells.maneuver_lunging_attack,
-                  spells.maneuver_maneuvering_attack,
-                  spells.maneuver_menacing_attack,
-                  spells.maneuver_feinting_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_trip_attack,
-                  spells.maneuver_riposte,
-                  spells.maneuver_distracting_strike,
-                  spells.maneuver_parry,
-                  spells.maneuver_goading_attack,
-                  spells.maneuver_rally,
-                  spells.maneuver_pushing_attack,
-                  spells.maneuver_precision_attack,
-                  spells.maneuver_commanders_strike,
-                  spells.maneuver_sweeping_attack,
-                ],
-              },
-              {
-                level: 7,
-                type: "spells",
-                name: "maneuvers",
-                select: 2,
-                list: [
-                  spells.maneuver_evasive_footwork,
-                  spells.maneuver_lunging_attack,
-                  spells.maneuver_maneuvering_attack,
-                  spells.maneuver_menacing_attack,
-                  spells.maneuver_feinting_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_trip_attack,
-                  spells.maneuver_riposte,
-                  spells.maneuver_distracting_strike,
-                  spells.maneuver_parry,
-                  spells.maneuver_goading_attack,
-                  spells.maneuver_rally,
-                  spells.maneuver_pushing_attack,
-                  spells.maneuver_precision_attack,
-                  spells.maneuver_commanders_strike,
-                  spells.maneuver_sweeping_attack,
-                ],
-              },
-              {
-                level: 10,
-                type: "spells",
-                name: "maneuvers",
-                select: 2,
-                list: [
-                  spells.maneuver_evasive_footwork,
-                  spells.maneuver_lunging_attack,
-                  spells.maneuver_maneuvering_attack,
-                  spells.maneuver_menacing_attack,
-                  spells.maneuver_feinting_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_trip_attack,
-                  spells.maneuver_riposte,
-                  spells.maneuver_distracting_strike,
-                  spells.maneuver_parry,
-                  spells.maneuver_goading_attack,
-                  spells.maneuver_rally,
-                  spells.maneuver_pushing_attack,
-                  spells.maneuver_precision_attack,
-                  spells.maneuver_commanders_strike,
-                  spells.maneuver_sweeping_attack,
-                ],
-              },
-              {
-                level: 15,
-                type: "spells",
-                name: "maneuvers",
-                select: 2,
+                select: [0,0,3,3,3, 3,5,5,5,7, 7,7,7,7,9, 9,9,9,9,9],
                 list: [
                   spells.maneuver_evasive_footwork,
                   spells.maneuver_lunging_attack,
@@ -667,7 +592,7 @@ export default {
               {
                 level: 3,
                 type: "custom",
-                name: "profinciencies",
+                name: "proficiencies",
                 select: 1,
                 list: [
                   {
@@ -1853,7 +1778,7 @@ export default {
         speed_bonus: 5,
       },
       {
-        level: 1,
+        level: 18,
         speed_bonus: 5,
       },
     ],
@@ -6155,7 +6080,59 @@ export default {
       },
     ],
 
+    // для отладки
+
+    charges: [
+      {
+        level: 1,
+        name: "favored_foe_slots",
+        type: "long_rest",
+        foo: "Num_Mastery",
+        list: [
+          [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+        ],
+      },
+    ],
+
+    spells: [
+      {
+        level:1,
+        spell:spells.tireless,
+      }
+    ],
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "proficiency_bonus",
+        details: "intelligence_wisdom_arctic",
+      },
+      {
+        type: "plus",
+        keyword: "travel_arctic",
+        details: "terrain_advantages",
+      },
+    ],
+
+    // конец отладки
+
     settings: [
+      {
+        level:3,
+        type:"custom",
+        name:"subclass",
+        select: 1,
+        list: [
+          {
+            name:"hunter",
+            details:"hunter_details",
+          },
+          {
+            name:"beastmaster",
+            details:"beastmaster_details",
+          }
+        ],
+      },
       {
         level:1,
         type:"custom",
@@ -6447,11 +6424,246 @@ export default {
             name:"favored_foe",
             details:"favored_foe_details",
 
+            charges: [
+              {
+                level: 3,
+                name: "favored_foe_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                ],
+              },
+            ],
+
             spells: [
               {
                 level:1,
                 spell:spells.favored_foe,
               }
+            ]
+          }
+        ]
+      },
+      {
+        level:1,
+        type:"custom",
+        name:"exploration",
+        select: 1,
+        list: [
+          {
+            name:"natural_explorer",
+            details:"natural_explorer_details",
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "favored_terrain",
+                select: [1,1,1,1,1, 2,2,2,2,3, 3,3,3,3,3, 3,3,3,3,3],
+                list: [
+                  {
+                    name: "arctic",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_arctic",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_arctic",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },  
+                  {
+                    name: "coast",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_coast",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_coast",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },  
+                  {
+                    name: "desert",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_desert",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_desert",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  }, 
+                  {
+                    name: "forest",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_forest",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_forest",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },  
+                  {
+                    name: "grassland",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_grassland",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_grassland",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "mountain",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_mountain",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_mountain",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "swamp",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_swamp",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_swamp",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "underdark",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_underdark",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_underdark",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                ]
+              },
+            ]
+          },
+          {
+            name:"deft_explorer",
+            details:"deft_explorer_details",
+
+            qualities: [
+              {
+                level: 6,
+                speed_bonus: 5,
+              }
+            ],
+
+            fines: [
+              {
+                level: 6,
+                type: "plus",
+                keyword: "climbing_and_swimming",
+                details: "without_speed_fee",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "exhaust_rediction",
+                details: "in_short_rest",
+              },
+            ],
+
+            charges: [
+              {
+                level: 10,
+                name: "tireless_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 10,
+                spell: spells.tireless,
+              }
+            ],
+
+            settigns: [
+              {
+                level: 1,
+                type: "skills",
+                name: "skills",
+                select: 1,
+                bonus: "mastery",
+                list: [
+                  "investigation",
+                  "athletics",
+                  "perception",
+                  "survival",
+                  "nature",
+                  "insight",
+                  "stealth",
+                  "animal_hanging"
+                ],
+              },
+              {
+                  level: 1,
+                  type: "languages",
+                  name: "languages",
+                  select: 2,
+                  filter: "no_used",
+              },
             ]
           }
         ]
