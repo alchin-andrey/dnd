@@ -1459,7 +1459,7 @@ export default {
     an_ability: "здатність",
     to_use_magic_items: "використовувати будь-які магічні предмети та сувої",
 
-    bonus_move: "Бонусний повний хід",
+    bonus_move: "Додатковий повний хід",
     in_first_round: "на першому раунді бою (з -10 Ініціативи)",
 
     tool_disguise: "гримувальні",
@@ -3614,6 +3614,7 @@ export default {
 
     spell_mage_hand_rogue: spells.mage_hand_rogue,
     spell_mage_hand_rogue_details: spells.mage_hand_rogue_details,
+    spell_mage_hand_rogue_details_13: spells.mage_hand_rogue_details_13,
     spell_mage_hand_rogue_expanded: spells.mage_hand_rogue_expanded,
 
     base_with: "базове",

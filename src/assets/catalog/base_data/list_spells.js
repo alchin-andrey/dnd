@@ -4533,6 +4533,92 @@ export default {
     },
   ],
 
+  favored_foe: [
+    {
+      name: "spell_favored_foe",
+      details: "spell_favored_foe_details",
+      expanded: "spell_favored_foe_expanded",
+
+      type: "ability",
+      slot_type: "favored_foe_slot",
+      classes: ["ranger"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Dic_6_14_Lvl",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  tireless: [
+    {
+      name: "spell_tireless",
+      details: "spell_tireless_details",
+      expanded: "spell_tireless_expanded",
+
+      type: "ability",
+      slot_type: "tireless_slot",
+      classes: ["ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: "temporary",
+
+      impact_size_foo: "Pls_WIS_Min1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 4,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   // ==
 
   divine_channel_wrath: [

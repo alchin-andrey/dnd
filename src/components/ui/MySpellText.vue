@@ -553,6 +553,13 @@ export default {
 			return res <= 0 ? 1 : res;
 		},
 
+		Pls_WIS_Min1() {
+			let pls = this.Spell_Index.impact_size_pls;
+			let mod = this.stats_Mod("wisdom");
+			let res = pls + mod;
+			return res <= 0 ? 1 : res;
+		},
+
 		Pls_DEX_Plus_Lvl() {
 			let mod = this.stats_Mod("dexterity");
 			let lvl = this.MY.level;
@@ -695,6 +702,12 @@ export default {
       const lvl_arr = [1, 5, 11, 17];
 			const kof_arr = [4, 6, 8, 10];
       return this.kof_Foo(lvl_arr, kof_arr);
+		},
+
+		Dic_6_14_Lvl() {
+			const lvl_arr = [1, 6, 14];
+			const kof_arr = [4, 6, 8];
+			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
 		//ANCHOR - FOO
