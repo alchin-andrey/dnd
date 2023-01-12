@@ -711,6 +711,20 @@ export default {
 			return num;
 		},
 
+		Value_Foo_Сlean: (state) => (Val) => {
+			// let low_val = Val.toLowerCase();
+			// let num = state.Spell_Index[`impact_size_${low_val}`];
+			let num = null;
+			let foo = state.Spell_Index.impact_size_foo;
+			if (foo) {
+				let str = foo.split("__");
+				for (let i in str) {
+					str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
+				}
+			}
+			return num;
+		},
+
     kof_Foo: (state) => (lvl_arr, kof_arr) => {
       !kof_arr ? kof_arr = lvl_arr : null;
       let lvl = state.MY.level;
@@ -748,7 +762,7 @@ export default {
 
 		Value_Dic() {
       let dice = this.Spell_Index.impact_size_dic;
-      let foo = this.Value_Foo("Dic");
+      let foo = this.Value_Foo_Сlean("Dic");
 			return dice + foo;
 		},
 		// ------ FOO -----------
