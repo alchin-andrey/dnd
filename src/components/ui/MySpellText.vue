@@ -670,6 +670,14 @@ export default {
 		},
 
 		//ANCHOR - Dur
+
+		Dur_Plus_1() {
+			let num = this.Spell_Index.spell_duration;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			return num + (mana - mana_min);
+		},
+
 		Dur_05_Lvl() {
 			return Math.floor(this.MY.level / 2);
 		},

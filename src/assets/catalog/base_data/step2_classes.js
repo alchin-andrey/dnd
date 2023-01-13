@@ -964,13 +964,14 @@ export default {
                 type: "plus",
                 keyword: "bonus",
                 details: "on_armor_if_armor",
-
-                // when without heavy armor
-                condition: "if_armor",
-                key: "armor_bonus",
-                value: 1,
               },
             ],
+
+            qualities: [
+              {
+                armor_bonus: 1,
+              }
+            ]
           },
           {
             name: "style_great_weapon",
@@ -1002,6 +1003,14 @@ export default {
                 type: "plus",
                 keyword: "aim_bonus",
                 details: "plus_2_on_ranged",
+              },
+            ],
+
+            specials: [
+              {
+                level: 1,
+                type: "weapon_ranged",
+                aim_bonus: 2,
               },
             ],
           },
@@ -2483,13 +2492,14 @@ export default {
                 type: "plus",
                 keyword: "bonus",
                 details: "on_armor_if_armor",
-
-                // when without heavy armor
-                condition: "if_armor",
-                key: "armor_bonus",
-                value: 1,
               },
             ],
+
+            qualities: [
+              {
+                armor_bonus: 1,
+              }
+            ]
           },
           {
             name: "style_great_weapon",
@@ -6078,43 +6088,70 @@ export default {
           [items.quiver, 1],
         ],
       },
+      {
+        level: 2,
+        inventory: [
+          [items.focus, 1],
+        ],
+      },
     ],
-
-    // для отладки
 
     charges: [
       {
-        level: 1,
-        name: "favored_foe_slots",
+        level: 2,
+        name: "spell_slots",
         type: "long_rest",
-        foo: "Num_Mastery",
         list: [
-          [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+          ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
         ],
+      },
+    ],
+
+    fines: [
+      {
+        level: 8,
+        type: "plus",
+        keyword: "no_speed_fee",
+        details: "on_nonmagic_hard_area",
+      },
+      {
+        level: 8,
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_saving_from_plants",
+      },
+      {
+        level: 18,
+        type: "advantage",
+        keyword: "no_disadvantage",
+        details: "on_attacking_invisible",
+      },
+      {
+        level: 18,
+        type: "plus",
+        keyword: "knowledge",
+        details: "of_all_invisible_30",
       },
     ],
 
     spells: [
       {
-        level:1,
-        spell:spells.tireless,
-      }
-    ],
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "proficiency_bonus",
-        details: "intelligence_wisdom_arctic",
+        level:5,
+        spell:spells.extra_attack,
       },
       {
-        type: "plus",
-        keyword: "travel_arctic",
-        details: "terrain_advantages",
+        level:14,
+        spell:spells.disappearance,
+      },
+      {
+        level:20,
+        spell:spells.enemy_killer,
       },
     ],
-
-    // конец отладки
 
     settings: [
       {
@@ -6126,6 +6163,26 @@ export default {
           {
             name:"hunter",
             details:"hunter_details",
+
+            settings: [
+              {
+                level:3,
+                type:"custom",
+                name:"subclass",
+                select: 1,
+                list: [
+                  {
+                    
+                  }
+                ],
+              },
+              {
+
+              },
+              {
+
+              }
+            ]
           },
           {
             name:"beastmaster",
@@ -6669,6 +6726,84 @@ export default {
         ]
       },
       {
+        level:4,
+        type:"custom",
+        name:"primal_sense",
+        select: 1,
+        list: [
+          {
+            spells: [
+              {
+                level:3,
+                spell:spells.primeval_awareness_favored,
+              },
+              {
+                level:3,
+                spell:spells.primeval_awareness_favored,
+              },
+            ]
+          },
+          {
+            spells: [
+              {
+                level:3,
+                spell:spells.speak_with_animals_ranger,
+              },
+              {
+                level:5,
+                spell:spells.beast_sense_ranger,
+              },
+              // {
+              //   level:9,
+              //   spell:spells.speak_with_plants_ranger,
+              // },
+              // {
+              //   level:13,
+              //   spell:spells.locate_creature_ranger,
+              // },
+              {
+                level:17,
+                spell:spells.commune_with_nature_ranger,
+              },
+            ]
+          },
+        ],
+      },
+      {
+        level:10,
+        type:"custom",
+        name:"disguise",
+        select: 1,
+        list: [
+          {
+            spells: [
+              {
+                spell:spells.disguise_on_sight
+              }
+            ]
+          },
+          {
+            charges: [
+              {
+                level: 2,
+                name: "disguise_nature_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                spell:spells.disguise_nature
+              }
+            ]
+          }
+        ]
+      },
+      {
         level: 1,
         type: "skills",
         name: "skills",
@@ -6772,6 +6907,101 @@ export default {
           [packs.dungeoneers, 1],
           [packs.explorers, 1],
         ],
+      },
+      {
+        level: 2,
+        type: "custom",
+        name: "battle_style",
+        select: 1,
+        list: [
+          {
+            name: "style_dueling",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_attack_signle_one_handed",
+              },
+            ],
+          },
+          {
+            name: "style_defence",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_armor_if_armor",
+              },
+            ],
+
+            qualities: [
+              {
+                armor_bonus: 1,
+              }
+            ]
+          },
+          {
+            name: "style_double_weapon",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_damage_second_attack",
+              },
+            ],
+          },
+          {
+            name: "style_archery",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "aim_bonus",
+                details: "plus_2_on_ranged",
+              },
+            ],
+
+            specials: [
+              {
+                level: 1,
+                type: "weapon_ranged",
+                aim_bonus: 2,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 3,
+        type: "spells",
+        name: "spells",
+        select: [ 0, 2, 3, 3, 4,  4, 5, 5, 6, 6,  7, 7, 8, 8, 9,   9, 10, 11, 11, 11],
+        mana_min: 1,
+        mana_max: [ 0, 1, 1, 1, 2,  2, 2, 2, 3, 3,  3, 3, 4, 4, 4,  4, 5, 5, 5, 5, ],
+        classes: ["ranger"],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
       },
     ]
   },

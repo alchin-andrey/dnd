@@ -2126,7 +2126,7 @@ export default {
     spell_side_pary_details: spells.side_pary_details,
     spell_side_pary_expanded: spells.side_pary_expanded,
 
-    on_armor_if_armor: "+1 на броню при одетых доспехах",
+    on_armor_if_armor: "+1 на броню при одетых доспехах (применено)",
 
     if_1_or_2_on_two_handed_weapon: "урона двуручного оружия, если выпало 1 или 2",
 
@@ -2737,7 +2737,7 @@ export default {
     armor_chainmail_details: "",
 
     on_damage_second_attack:"к урону и от второй атаки в ходу",
-    plus_2_on_ranged: "+2 на дальнобойные атаки",
+    plus_2_on_ranged: "+2 на дальнобойные атаки (применено)",
 
     spell_second_wind: spells.second_wind,
     spell_second_wind_details: spells.second_wind_details,
@@ -3737,7 +3737,7 @@ export default {
     intelligence_wisdom_underdark:"на проверки Интеллекта или Мудрости, связанные с подземьем",
 
     travel_arctic:"преимущества в тундре", 
-    travel_coast:"преимущества в побережье", 
+    travel_coast:"преимущества на побережье", 
     travel_desert:"преимущества в пустыне", 
     travel_forest:"преимущества в лесу", 
     travel_grassland:"преимущества в лугах", 
@@ -3765,4 +3765,54 @@ export default {
     spell_tireless: spells.tireless,
     spell_tireless_details: spells.tireless_details,
     spell_tireless_expanded: spells.tireless_expanded,
+
+    spell_primeval_awareness: spells.primeval_awareness,
+    spell_primeval_awareness_favored: spells.primeval_awareness_favored,
+    spell_primeval_awareness_details: spells.primeval_awareness_details,
+    spell_primeval_awareness_expanded: spells.primeval_awareness_expanded,
+
+    spell_speak_with_animals_ranger: spells.speak_with_animals_ranger,
+    spell_speak_with_animals_ranger_details: spells.speak_with_animals_ranger_details,
+    spell_speak_with_animals_ranger_expanded: spells.speak_with_animals_ranger_expanded,
+
+    spell_beast_sense_ranger: spells.beast_sense_ranger,
+    spell_beast_sense_ranger_details: spells.beast_sense_ranger_details,
+    spell_beast_sense_ranger_expanded: spells.beast_sense_ranger_expanded,
+
+    spell_commune_with_nature_ranger: spells.commune_with_nature_ranger,
+    spell_commune_with_nature_ranger_details: spells.commune_with_nature_ranger_details,
+    spell_commune_with_nature_ranger_expanded: spells.commune_with_nature_ranger_expanded,
+
+    primal_sense: "инстинкт",
+
+    spell_extra_attack: spells.extra_attack,
+    spell_extra_attack_details: spells.extra_attack_details,
+    spell_extra_attack_expanded: spells.extra_attack_expanded,
+
+    disguise: "маскировка",
+
+    disguise_dirt: "сырье",
+
+    disguise_nature_slots: "природная завеса",
+    disguise_nature_slot: "1× природная завеса",
+
+    spell_disguise_on_sight: spells.disguise_on_sight,
+    spell_disguise_on_sight_details: spells.disguise_on_sight_details,
+    spell_disguise_on_sight_expanded: spells.disguise_on_sight_expanded,
+
+    spell_disguise_nature: spells.disguise_nature,
+    spell_disguise_nature_details: spells.disguise_nature_details,
+    spell_disguise_nature_expanded: spells.disguise_nature_expanded,
+
+    spell_disappearance: spells.disappearance,
+    spell_disappearance_details: spells.disappearance_details,
+    spell_disappearance_expanded: spells.disappearance_expanded,
+
+    on_attacking_invisible:"на атаки по невидимым существам",
+
+    of_all_invisible_30:"о всех невидимых существах в 30ф от вас",
+
+    spell_enemy_killer: spells.enemy_killer,
+    spell_enemy_killer_details: spells.enemy_killer_details,
+    spell_enemy_killer_expanded: spells.enemy_killer_expanded,
 }

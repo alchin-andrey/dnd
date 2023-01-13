@@ -2125,7 +2125,7 @@ export default {
     spell_side_pary_details: spells.side_pary_details,
     spell_side_pary_expanded: spells.side_pary_expanded,
 
-    on_armor_if_armor: "+1 на Броню при одягнених обладунках",
+    on_armor_if_armor: "+1 на Броню при одягнених обладунках (застосовано)",
 
     if_1_or_2_on_two_handed_weapon: "пошкодження дворучної зброї, якщо випало 1 або 2",
 
@@ -2734,7 +2734,7 @@ export default {
     armor_chainmail_details: "",
 
     on_damage_second_attack:"на пошкодження і від другої атаки в ході",
-    plus_2_on_ranged: "+2 на далекобійні атаки",
+    plus_2_on_ranged: "+2 на далекобійні атаки (застосовано)",
 
     spell_second_wind: spells.second_wind,
     spell_second_wind_details: spells.second_wind_details,
@@ -3705,4 +3705,113 @@ export default {
 
     beastmaster: classes.beastmaster,
     beastmaster_details: classes.beastmaster_details,
+
+    favored_foe_slots:"обрання противника",
+    favored_foe_slot:"1× обрання противника",
+
+    favored_foe:"пошук противника",
+    favored_foe: "Ви здатні визначити заклятого противника прямо в бою. Коли ви потрапляєте атакою по істоті, ви можете закликати сили природи, щоб відмітити істоту і зробити її заклятим противником.",
+
+    natural_explorer:"дослідник природи",
+    natural_explorer_details:"Ви дуже добре знайомі з одним видом природного середовища і маєте великий досвід подорожей та виживання в регіонах з таким кліматом – тундра, болота, гори, ліси, луки, узбережжя, підзем'я чи пустеля.",
+
+    favored_terrain: "обрана місцевість",
+
+    arctic:"тундра", 
+    coast:"узбережжя", 
+    desert:"пустеля", 
+    forest:"ліси", 
+    grassland:"луги", 
+    mountain:"гори", 
+    swamp:"болота",
+    underdark:"підземʼя",
+
+    intelligence_wisdom_arctic:"на перевірки Інтелекту або Мудрості, пов'язані з тундрою", 
+    intelligence_wisdom_coast:"на перевірки Інтелекту або Мудрості, пов'язані з узбережжям", 
+    intelligence_wisdom_desert:"на перевірки Інтелекту або Мудрості, пов'язані з пустелею", 
+    intelligence_wisdom_forest:"на перевірки Інтелекту або Мудрості, пов'язані з лісом", 
+    intelligence_wisdom_grassland:"на перевірки Інтелекту або Мудрості, пов'язані з лугами", 
+    intelligence_wisdom_mountain:"на перевірки Інтелекту або Мудрості, пов'язані з горами", 
+    intelligence_wisdom_swamp:"на перевірки Інтелекту або Мудрості, пов'язані з болотами",
+    intelligence_wisdom_underdark:"на перевірки Інтелекту або Мудрості, пов'язані з підземʼям",
+
+    travel_arctic:"переваги у тундрі", 
+    travel_coast:"переваги на узбережжі", 
+    travel_desert:"переваги у пустелі", 
+    travel_forest:"переваги у лісі", 
+    travel_grassland:"переваги в лугах", 
+    travel_mountain:"переваги в горах", 
+    travel_swamp:"переваги в болотах",
+    travel_underdark:"переваги в підземʼї",
+
+    terrain_advantages:"— Прохідність, пильність, 2× здобич, читання слідів, скритність наодинці",
+
+    deft_explorer:"майстерний дослідник",
+    deft_explorer_details:"Ви — неперевершений дослідник і виживальник, здатний як самостійно мандрувати дикою місцевістю, так і допомагати з цим іншим.",
+
+    climbing_and_swimming: "лазіння та плавання",
+
+    tireless_slots:"невтомність",
+    tireless_slot:"1× невтомність",
+
+    exhaust_rediction:"зниження виснаження",
+    in_short_rest:"при короткому відпочинку",
+
+    spell_favored_foe: spells.favored_foe,
+    spell_favored_foe_details: spells.favored_foe_details,
+    spell_favored_foe_expanded: spells.favored_foe_expanded,
+
+    spell_tireless: spells.tireless,
+    spell_tireless_details: spells.tireless_details,
+    spell_tireless_expanded: spells.tireless_expanded,
+
+    spell_primeval_awareness: spells.primeval_awareness,
+    spell_primeval_awareness_favored: spells.primeval_awareness_favored,
+    spell_primeval_awareness_details: spells.primeval_awareness_details,
+    spell_primeval_awareness_expanded: spells.primeval_awareness_expanded,
+
+    spell_speak_with_animals_ranger: spells.speak_with_animals_ranger,
+    spell_speak_with_animals_ranger_details: spells.speak_with_animals_ranger_details,
+    spell_speak_with_animals_ranger_expanded: spells.speak_with_animals_ranger_expanded,
+
+    spell_beast_sense_ranger: spells.beast_sense_ranger,
+    spell_beast_sense_ranger_details: spells.beast_sense_ranger_details,
+    spell_beast_sense_ranger_expanded: spells.beast_sense_ranger_expanded,
+
+    spell_commune_with_nature_ranger: spells.commune_with_nature_ranger,
+    spell_commune_with_nature_ranger_details: spells.commune_with_nature_ranger_details,
+    spell_commune_with_nature_ranger_expanded: spells.commune_with_nature_ranger_expanded,
+
+    primal_sense: "інстинкт",
+
+    spell_extra_attack: spells.extra_attack,
+    spell_extra_attack_details: spells.extra_attack_details,
+    spell_extra_attack_expanded: spells.extra_attack_expanded,
+
+    disguise: "маскування",
+
+    disguise_dirt: "сировина",
+
+    disguise_nature_slots: "природна завіса",
+    disguise_nature_slot: "1× природна завіса",
+
+    spell_disguise_on_sight: spells.disguise_on_sight,
+    spell_disguise_on_sight_details: spells.disguise_on_sight_details,
+    spell_disguise_on_sight_expanded: spells.disguise_on_sight_expanded,
+
+    spell_disguise_nature: spells.disguise_nature,
+    spell_disguise_nature_details: spells.disguise_nature_details,
+    spell_disguise_nature_expanded: spells.disguise_nature_expanded,
+
+    spell_disappearance: spells.disappearance,
+    spell_disappearance_details: spells.disappearance_details,
+    spell_disappearance_expanded: spells.disappearance_expanded,
+
+    on_attacking_invisible:"на атаки по невидимих істотах",
+
+    of_all_invisible_30:"про всі невидимі істоти у 30ф від вас",
+
+    spell_enemy_killer: spells.enemy_killer,
+    spell_enemy_killer_details: spells.enemy_killer_details,
+    spell_enemy_killer_expanded: spells.enemy_killer_expanded,
 }

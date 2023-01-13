@@ -1132,7 +1132,7 @@ export default {
       classes: [],
 
       cast_time: "ritual",
-      cast_duration: 10,
+      cast_duration: 1,
       cast_duration_units: "min",
 
       aim_target: "self",
@@ -4610,13 +4610,445 @@ export default {
       impact_size_foo: "Pls_WIS_Min1",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dic: 4,
+      impact_size_dic: 8,
       impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  primeval_awareness: [
+    {},
+    {
+      name: "spell_primeval_awareness",
+      details: "spell_primeval_awareness_details",
+      expanded: "spell_primeval_awareness_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 5280,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Dur_Plus_1",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{}
+  ],
+
+  primeval_awareness_favored: [
+    {},
+    {
+      name: "spell_primeval_awareness_favored",
+      details: "spell_primeval_awareness_details",
+      expanded: "spell_primeval_awareness_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 5280*6,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Dur_Plus_1",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{}
+  ],
+
+  speak_with_animals_ranger: [
+    {},
+    {
+      name: "spell_speak_with_animals_ranger",
+      details: "spell_speak_with_animals_ranger_details",
+      expanded: "spell_speak_with_animals_ranger_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  beast_sense_ranger: [
+    {},
+    {},
+    {
+      name: "spell_beast_sense_ranger",
+      details: "spell_beast_sense_ranger_details",
+      expanded: "spell_beast_sense_ranger_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "creature",
+      aim_type: "near",
+      parts: ["touch"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  commune_with_nature_ranger: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_commune_with_nature_ranger",
+      details: "spell_commune_with_nature_ranger_details",
+      expanded: "spell_commune_with_nature_ranger_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  extra_attack: [
+    {
+      name: "spell_extra_attack",
+      details: "spell_extra_attack_details",
+      expanded: "spell_extra_attack_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  disguise_on_sight: [
+    {
+      name: "spell_disguise_on_sight",
+      details: "spell_disguise_on_sight_details",
+      expanded: "spell_disguise_on_sight_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: null,
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["disguise_dirt"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "stealth",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: 10,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  disguise_nature: [
+    {
+      name: "spell_disguise_nature",
+      details: "spell_disguise_nature_details",
+      expanded: "spell_disguise_nature_expanded",
+
+      type: "ability",
+      slot_type: "disguise_nature_slot",
+      classes: ["ranger"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  disappearance: [
+    {
+      name: "spell_diappearance",
+      details: "spell_diappearance_details",
+      expanded: "spell_diappearance_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  enemy_killer: [
+    {
+      name: "spell_enemy_killer",
+      details: "spell_enemy_killer_details",
+      expanded: "spell_enemy_killer_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_WIS",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
   ],
 
   // ==
