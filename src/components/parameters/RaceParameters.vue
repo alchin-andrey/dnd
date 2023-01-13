@@ -119,8 +119,8 @@
 
 <script>
 import { mapState} from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";

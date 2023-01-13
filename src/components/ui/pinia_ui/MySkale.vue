@@ -29,7 +29,7 @@
 
 <script>
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "MySkale",
 	props: {

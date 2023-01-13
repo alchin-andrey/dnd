@@ -2,7 +2,7 @@
 import { defineStore } from "pinia";
 import color from "@/assets/catalog/base_data/_colors.js";
 
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
 export const useColorStore = defineStore({
 	id: "ColorStore",

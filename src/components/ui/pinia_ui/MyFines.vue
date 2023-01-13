@@ -39,7 +39,7 @@
 <script>
 import fines_icon from "@/assets/catalog/icon/fines_icon";
 import { mapState} from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "MyFines",
   data() {

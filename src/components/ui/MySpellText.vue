@@ -143,7 +143,7 @@
 <script>
 import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "MySpellText",

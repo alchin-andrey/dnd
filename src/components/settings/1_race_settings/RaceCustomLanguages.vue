@@ -38,7 +38,7 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 export default {
 	name: "RaceCustomLanguages",

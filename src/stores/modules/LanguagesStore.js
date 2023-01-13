@@ -2,7 +2,7 @@
 import { defineStore } from "pinia";
 import languages from "@/assets/catalog/base_data/list_languages.js";
 
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
 export const useLanguagesStore = defineStore({
 	id: 'LanguagesStore',

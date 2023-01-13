@@ -25,12 +25,12 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
-	name: "ClassMenuSettings",
+	name: "ClassMenu",
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),

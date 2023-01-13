@@ -2,7 +2,7 @@
 	<!-- Левый бар -->
 	<div class="sidebar_left">
 		<div class="main_chapter">
-			<Header />
+			<HeaderMenu />
 
 			<MyBackPage
 				v-if="pages.class_page"
@@ -30,8 +30,8 @@
 
 		<div class="main_menu_wrap" @click="showHome()">
 			<div class="main_chapter_menu" @click.stop>
-				<RaceMenuSettings v-if="pages.race_page" />
-				<ClassMenuSettings v-if="pages.class_page" />
+				<RaceMenu v-if="pages.race_page" />
+				<ClassMenu v-if="pages.class_page" />
 			</div>
 
 			<transition v-if="pages.race_page" name="btm-fade" mode="out-in">
@@ -117,40 +117,39 @@
 <script>
 import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
 
-import Header from "@/components/pinia/Header.vue";
-import HeaderSettings from "@/components/pinia/HeaderSettings.vue";
+import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
+import HeaderSettings from "@/components/settings_lists/0_HeaderSettings.vue";
 
 // RACE_PAGE
-import RaceMenuSettings from "@/components/pinia/race_page/settings/RaceMenuSettings.vue";
-import RaceSettings from "@/components/pinia/race_page/settings/RaceSettings.vue";
-import RaceParameters from "@/components/pinia/race_page/RaceParameters.vue";
+import RaceMenu from "@/components/menu/1_RaceMenu.vue";
+import RaceSettings from "@/components/settings_lists/1_RaceSettings.vue";
+import RaceParameters from "@/components/parameters/RaceParameters.vue";
 // CLASS_PAGE
-import ClassMenuSettings from "@/components/pinia/class_page/settings/ClassMenuSettings.vue";
-import ClassSettings from "@/components/pinia/class_page/settings/ClassSettings.vue";
-import ClassParameters from "@/components/pinia/class_page/ClassParameters.vue";
+import ClassMenu from "@/components/menu/2_ClassMenu.vue";
+import ClassSettings from "@/components/settings_lists/2_ClassSettings.vue";
+import ClassParameters from "@/components/parameters/ClassParameters.vue";
 
 import { mapState, mapActions } from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "App",
 	components: {
 		WelcomeBanner,
 
-		Header,
+		HeaderMenu,
 		HeaderSettings,
 		// RACE_PAGE
-		RaceMenuSettings, //TODO: Сылки на рост, вес, возраст
+		RaceMenu, //TODO: Сылки на рост, вес, возраст
 		RaceSettings,
 		RaceParameters,
 		// CLASS_PAGE
-		ClassMenuSettings,
+		ClassMenu,
 		ClassSettings,
 		ClassParameters,
 	},
 
 	created() {
-		// this.MY.class = Object.values(clas)[0];
 		this.getCreated();
 	},
 
@@ -166,10 +165,6 @@ export default {
 			"pages",
 		]),
 		//GETTERS
-
-		Mastery() {
-			return Math.ceil(this.MY.level / 4);
-		},
 
 		hide_Ruler() {
 			return (

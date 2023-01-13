@@ -25,8 +25,8 @@
 
 <script>
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "MyRange",
 	data() {

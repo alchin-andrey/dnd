@@ -1,7 +1,7 @@
 // import { ref, computed } from "vue";
 
 import { defineStore, storeToRefs } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
 export const usePagesStore = defineStore({
 	id: 'PagesStore',

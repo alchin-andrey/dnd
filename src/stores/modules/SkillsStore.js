@@ -1,6 +1,6 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
 export const useSkillsStore = defineStore({
 	id: 'SkillsStore',

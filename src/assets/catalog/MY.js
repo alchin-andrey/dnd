@@ -1,5 +1,4 @@
 import color from "@/assets/catalog/base_data/_colors.js";
-// import races from "@/assets/catalog/base_data/step1_races.js";
 import races from "@/assets/catalog/base_data/step1_races.js";
 import classes from "@/assets/catalog/base_data/step2_classes";
 

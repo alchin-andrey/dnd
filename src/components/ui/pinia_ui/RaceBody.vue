@@ -22,9 +22,9 @@
 <script>
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useColorStore } from "@/stores/modules/ColorStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useColorStore } from "@/stores/modules/simple/ColorStore";
 export default {
   name: "RaceBody",
   props: {

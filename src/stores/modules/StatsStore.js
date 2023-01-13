@@ -1,7 +1,7 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { useDicStore } from "@/stores/DicStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { useDicStore } from "@/stores/general/DicStore";
 
 
 

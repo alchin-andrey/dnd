@@ -9,10 +9,10 @@ v-vpshow="shown_Look" title="feel" :arr="feel_Arr"/>
 </template>
 
 <script>
-import GenderCard from "@/components/pinia/race_page/settings/GenderCard.vue";
+import GenderCard from "@/components/settings/1_race_settings/GenderCard.vue";
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { useGenderStore } from "@/stores/modules/GenderStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 export default {
   name: "GenderChoiceStore",
   components: { GenderCard, },

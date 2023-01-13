@@ -41,9 +41,9 @@
 
 <script>
 import { mapState } from "pinia";
-import { useColorStore } from "@/stores/modules/ColorStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useColorStore } from "@/stores/modules/simple/ColorStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "MyColorSelect",
 	props: {

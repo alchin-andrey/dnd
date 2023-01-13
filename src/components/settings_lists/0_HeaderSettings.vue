@@ -23,11 +23,11 @@
 
 <script>
 import { mapState } from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
-import Description from "@/components/pinia/Description.vue";
-import LangSetting from "@/components/pinia/LangSetting.vue";
+import Description from "@/components/settings/0_header_settings/Description.vue";
+import LangSetting from "@/components/settings/0_header_settings/LangSetting.vue";
 
 export default {
 	name: "HeaderSettings",

@@ -83,17 +83,17 @@
 
 <script>
 import { mapState} from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
-import EthnosChoice from "@/components/pinia/race_page/settings/EthnosChoice.vue";
+import EthnosChoice from "@/components/settings/1_race_settings/EthnosChoice.vue";
 
-import RaceCustomStats from "@/components/pinia/race_page/settings/RaceCustomStats.vue";
-import RaceCustomSkills from "@/components/pinia/race_page/settings/RaceCustomSkills.vue";
-import RaceCustomLanguages from "@/components/pinia/race_page/settings/RaceCustomLanguages.vue";
-import RaceCustomSpells from "@/components/pinia/race_page/settings/RaceCustomSpells.vue";
+import RaceCustomStats from "@/components/settings/1_race_settings/RaceCustomStats.vue";
+import RaceCustomSkills from "@/components/settings/1_race_settings/RaceCustomSkills.vue";
+import RaceCustomLanguages from "@/components/settings/1_race_settings/RaceCustomLanguages.vue";
+import RaceCustomSpells from "@/components/settings/1_race_settings/RaceCustomSpells.vue";
 
-import GenderSetting from "@/components/pinia/race_page/settings/GenderSetting.vue";
+import GenderSetting from "@/components/settings/1_race_settings/GenderSetting.vue";
 
 export default {
 	name: "RaceSettings",

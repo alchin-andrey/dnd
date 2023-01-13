@@ -23,13 +23,10 @@
 </template>
 
 <script>
-import race from "@/assets/catalog/base_data/step1_races.js";
-// import classes from "@/assets/catalog/base_data/step2_classes.js";
-
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useClassStore } from "@/stores/modules/ClassStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMainStore } from "@/stores/general/MainStore";
 
 export default {
 	name: "MySlider",
@@ -48,13 +45,6 @@ export default {
 		},
 	},
 
-	data() {
-		return {
-			race: race,
-			// class: classes,
-		};
-	},
-
 	mounted() {
 		document.addEventListener("keydown", this.listenerDown);
 		document.addEventListener("keyup", this.listenerUp);
@@ -67,7 +57,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["pages"]),
-    ...mapState(useClassStore, ["class"]),
+    ...mapState(useMainStore, ["race", "class"]),
 
 		t_name() {
 			return this.t(this.name);

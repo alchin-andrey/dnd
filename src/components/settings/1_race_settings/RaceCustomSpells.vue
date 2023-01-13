@@ -13,7 +13,7 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useMYStore } from "@/stores/MY/MYStore";
+import { useMYStore } from "@/stores/user/MYStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "RaceCustomSpells",

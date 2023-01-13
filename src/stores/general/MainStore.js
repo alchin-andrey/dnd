@@ -1,11 +1,13 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
+import race from "@/assets/catalog/base_data/step1_races.js";
 import classes from "@/assets/catalog/base_data/step2_classes.js";
 
-export const useClassStore = defineStore({
-	id: "ClassStore",
+export const useMainStore = defineStore({
+	id: "MainStore",
 	state: () => ({
-		class: classes,
+		race: race,
+    class: classes,
 	}),
 	getters: {
 	},

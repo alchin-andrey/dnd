@@ -28,11 +28,12 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useDicStore } from "@/stores/DicStore";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { usePagesStore } from "@/stores/pages/PagesStore";
+import { useDicStore } from "@/stores/general/DicStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
+  name: "HeaderMenu",
 	computed: {
 		...mapState(usePagesStore, ["main_page"]),
 		...mapState(useDicStore, ["dic"]),

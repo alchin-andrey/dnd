@@ -115,16 +115,16 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { usePagesStore } from "@/stores/pages/PagesStore";
-import { useMYStore } from "@/stores/MY/MYStore";
-import { useColorStore } from "@/stores/modules/ColorStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { useColorStore } from "@/stores/modules/simple/ColorStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
-	name: "RaceMenuSettings",
+	name: "RaceMenu",
 	computed: {
     // STORE
     ...mapState(useMYStore, ["MY"]),
