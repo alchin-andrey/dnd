@@ -641,6 +641,11 @@ export default {
 			return this.kof_Foo(lvl_arr);
 		},
 
+		Det_7_11_15_Lvl() {
+      		const lvl_arr = [7, 11, 15];
+			return this.kof_Foo(lvl_arr);
+		},
+
 		Det_6_Lvl() {
 			// let deteils = this.Spell_Index.details;
 			// let lvl = this.MY.level;

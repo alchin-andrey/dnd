@@ -165,7 +165,7 @@ export default {
     armor:null,
     shield:null,
 
-    //Оружие - предметы с уроном
+    //Оружие - предметьі с уроном
     weapons:null,
 
     wallet:{

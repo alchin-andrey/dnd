@@ -193,7 +193,7 @@ export default {
     vision_night:"темний зір",
     hp_bonus: "здоровʼя",
 
-// Навыки
+// Навьіки
 
     skills:"навички",
     skills_details:'Значення Навичок — основні показники, що використовуються в грі. Підсумкові значення будуть вираховані після вибору Класу на кроці 2 та Типажу на кроці 3.',
@@ -679,11 +679,11 @@ export default {
             lang_shu_details: langs.shu_details,
 
 
-//Особенности - пассивные умения
+//Особенности - пассивньіе умения
 
     fines:"особливості",
 
-        //Ключевые слова
+        //Ключевьіе слова
         advantage:"перевага",
         no_disadvantage: "немає перешкоди",
         rethrow:"перекид куба",
@@ -766,7 +766,7 @@ export default {
         in_rage: "при Люті",
         fast_tempo: "швидкий темп",
         while_following_prints: "при русі по сліду",
-        normal_tempo: "нормальный темп",
+        normal_tempo: "нормальньій темп",
         in_stealth: "при русі в Непомітності",
         double_weight: "2× Вантажопідйомність",
         weight_capacity: "включно з максимальною вагою навантаження та підйому",
@@ -782,7 +782,7 @@ export default {
         as_walking_speed: "за швидкістю рівний швидкості пересування",
         on_thieves_tools: "до використання крадійських інструментів",
 
-//Умения - активные умения без урона
+//Умения - активньіе умения без урона
 
     abilities:"особливості",
 
@@ -1085,7 +1085,7 @@ export default {
     Cerise: "вишневий",
     Burgundy: "бордовий",
 
-//Заклинания - активные умения с уроном
+//Заклинания - активньіе умения с уроном
 
     spells:"закляття",
 
@@ -3814,4 +3814,47 @@ export default {
     spell_enemy_killer: spells.enemy_killer,
     spell_enemy_killer_details: spells.enemy_killer_details,
     spell_enemy_killer_expanded: spells.enemy_killer_expanded,
+
+    prey: "здобич",
+
+    spell_giant_killer: spells.giant_killer,
+    spell_giant_killer_details: spells.giant_killer_details,
+    spell_giant_killer_expanded: spells.giant_killer_expanded,
+
+    on_provoked_attacks: "на провоковані атаки по вас",
+
+    plus_4_armor:"+4 Броні",
+    on_next_attacks:"при влучанні по вас, проти усіх наступних атак цієї істоти до кінця ходу",
+
+    multiattack:"мультиатака",
+
+    spell_whirlwind_attack: spells.whirlwind_attack,
+    spell_whirlwind_attack_details: spells.whirlwind_attack_details,
+    spell_whirlwind_attack_expanded: spells.whirlwind_attack_expanded,
+
+    spell_volley: spells.volley,
+    spell_volley_details: spells.volley_details,
+    spell_volley_expanded: spells.volley_expanded,
+
+    spell_stand_against_the_tide: spells.stand_against_the_tide,
+    spell_stand_against_the_tide_details: spells.stand_against_the_tide_details,
+    spell_stand_against_the_tide_expanded: spells.stand_against_the_tide_expanded,
+
+    companion:"супутник",
+
+    forever:"назавжди",
+
+    spell_rangers_companion: spells.rangers_companion,
+    spell_rangers_companion_details: spells.rangers_companion_details,
+    spell_rangers_companion_details_7: spells.rangers_companion_details_7,
+    spell_rangers_companion_details_11: spells.rangers_companion_details_11,
+    spell_rangers_companion_details_15: spells.rangers_companion_details_15,
+    spell_rangers_companion_expanded: spells.rangers_companion_expanded,
+
+    spell_primal_companion: spells.primal_companion,
+    spell_primal_companion_details: spells.primal_companion_details,
+    spell_primal_companion_details_7: spells.primal_companion_details_7,
+    spell_primal_companion_details_11: spells.primal_companion_details_11,
+    spell_primal_companion_details_15: spells.primal_companion_details_15,
+    spell_primal_companion_expanded: spells.primal_companion_expanded,
 }

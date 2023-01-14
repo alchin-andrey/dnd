@@ -210,19 +210,19 @@ export const circle_of_the_land_forest_details = circle_of_the_land_details +
 
 export const circle_of_the_land_grassland = "Круг земли: Луг";
 export const circle_of_the_land_grassland_details = circle_of_the_land_details +
-'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священные таинства. Для вас это зелений луг.</p>';
+'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священньіе таинства. Для вас это зелений луг.</p>';
 
 export const circle_of_the_land_mountain = "Круг земли: Гори";
 export const circle_of_the_land_mountain_details = circle_of_the_land_details +
-'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священные таинства. Для вас это високі гори.</p>';
+'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священньіе таинства. Для вас это високі гори.</p>';
 
 export const circle_of_the_land_swamp = "Круг земли: Болото";
 export const circle_of_the_land_swamp_details = circle_of_the_land_details +
-'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священные таинства. Для вас это підступне болото.</p>';
+'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священньіе таинства. Для вас это підступне болото.</p>';
 
 export const circle_of_the_land_underdark = "Круг земли: Підземелля";
 export const circle_of_the_land_underdark_details = circle_of_the_land_details +
-'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священные таинства. Для вас это темне підземелля.</p>';
+'<br /><br />Причастность к кругу Земли наделяет магию друида силой тех мест, где персонажа посвятили в священньіе таинства. Для вас это темне підземелля.</p>';
 
 export const circle_of_the_moon = "Круг місяця";
 export const circle_of_the_moon_details = 

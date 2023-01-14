@@ -6,10 +6,10 @@ export const armor = {
     medium: "средние",
     medium_details: "—",
 
-    heavy: "тяжелые",
+    heavy: "тяжельіе",
     heavy_details: "—",
 
-    shields: "щиты",
+    shields: "щитьі",
     shields_details: "—",
 
 }

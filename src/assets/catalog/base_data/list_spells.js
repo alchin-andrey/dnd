@@ -8,9 +8,9 @@ const spell_name = [
     type: null,
     /*
           abjuration: "ограждение",
-          conjuration: "вызов",
+          conjuration: "вьізов",
           divination: "прорицание",
-          enchantment: "чары",
+          enchantment: "чарьі",
           evocation: "воплощение",
           illusion: "иллюзия",
           necromancy: "некромантия",
@@ -67,7 +67,7 @@ const spell_name = [
       acid_w:"⚗️ Кислотой",
       thunder_w: "🔊 Звуком",
       radiant_w: "✨ Светом",
-      force_w: "🌈 Cиловым полем",
+      force_w: "🌈 Cиловьім полем",
 
       piercing_w: "🗡 колющий",
       slashing_w: "🪓 рубящий",
@@ -541,7 +541,7 @@ export default {
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
-        force_w: "🌈 Cиловым полем",
+        force_w: "🌈 Cиловьім полем",
 
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
@@ -804,7 +804,7 @@ export default {
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
-        force_w: "🌈 Cиловым полем",
+        force_w: "🌈 Cиловьім полем",
 
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
@@ -890,7 +890,7 @@ export default {
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
-        force_w: "🌈 Cиловым полем",
+        force_w: "🌈 Cиловьім полем",
 
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
@@ -992,7 +992,7 @@ export default {
 
       saving_need: true,
       saving_attribute: "wisdom",
-      //Если оно может видеть или слышать вас, оно должно совершить успешный спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмы)
+      //Если оно может видеть или сльішать вас, оно должно совершить успешньій спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмьі)
       impact_size_saved: null,
     },
   ],
@@ -1032,7 +1032,7 @@ export default {
 
       saving_need: false,
       saving_attribute: null,
-      //Если оно может видеть или слышать вас, оно должно совершить успешный спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмы)
+      //Если оно может видеть или сльішать вас, оно должно совершить успешньій спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмьі)
       impact_size_saved: null,
     },
   ],
@@ -1451,8 +1451,8 @@ export default {
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
-      aim_type: null,
+      aim_target: "creature",
+      aim_type: "in_distance",
       parts: ["none"],
       spell_time: "instant",
       spell_duration: null,
@@ -4967,9 +4967,9 @@ export default {
 
   disappearance: [
     {
-      name: "spell_diappearance",
-      details: "spell_diappearance_details",
-      expanded: "spell_diappearance_expanded",
+      name: "spell_disappearance",
+      details: "spell_disappearance_details",
+      expanded: "spell_disappearance_expanded",
 
       type: "ability",
       classes: ["ranger"],
@@ -5049,6 +5049,347 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     }
+  ],
+
+  horde_breaker: [
+    {
+      name: "spell_horde_breaker",
+      details: "spell_horde_breaker_details",
+      expanded: "spell_horde_breaker_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  giant_killer: [
+    {
+      name: "spell_giant_killer",
+      details: "spell_giant_killer_details",
+      expanded: "spell_giant_killer_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  colossus_slayer: [
+    {
+      name: "spell_colossus_slayer",
+      details: "spell_colossus_slayer_details",
+      expanded: "spell_colossus_slayer_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  whirlwind_attack: [
+    {
+      name: "spell_whirlwind_attack",
+      details: "spell_whirlwind_attack_details",
+      expanded: "spell_whirlwind_attack_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 15,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  volley: [
+    {
+      name: "spell_volley",
+      details: "spell_volley_details",
+      expanded: "spell_volley_expanded",
+
+      type: "ability",
+      classes: ["ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  stand_against_the_tide: [
+    {
+      name: "spell_stand_against_the_tide",
+      details: "spell_stand_against_the_tide_details",
+      expanded: "spell_stand_against_the_tide_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      parts: ["none"],
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  rangers_companion: [
+    {
+      name: "spell_rangers_companion",
+      details: "spell_rangers_companion_details",
+      expanded: "spell_rangers_companion_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "ritual",
+      cast_duration: 8,
+      cast_duration_units: "hour",
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "forever",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: "Pls_Mastery__Det_7_11_15_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  primal_companion: [
+    {},
+    {
+      name: "spell_primal_companion",
+      details: "spell_primal_companion_details",
+      expanded: "spell_primal_companion_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_7_11_15_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   // ==
@@ -10240,8 +10581,8 @@ export default {
       impact_damage_type: "temporary",
 
       impact_size_foo: "Str_X_Plus_1__Num_MOD",
-      //Cущество в начале каждого своего хода получает временные хиты, равные модификатору вашей базовой характеристики.
-      //Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, вы можете сделать целью одно дополнительное существо за каждый уровень ячейки выше первого.
+      //Cущество в начале каждого своего хода получает временньіе хитьі, равньіе модификатору вашей базовой характеристики.
+      //Если вьі накладьіваете это заклинание, используя ячейку 2 уровня или вьіше, вьі можете сделать целью одно дополнительное существо за каждьій уровень ячейки вьіше первого.
       impact_size_str: 1,
       impact_size_num: null,
       impact_size_dic: null,
@@ -13741,7 +14082,7 @@ export default {
       impact_damage_type: "piercing_w",
 
       impact_size_foo: "Str_X_Plus_2",
-      //Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, количество боеприпасов увеличивается на два за каждый уровень ячейки выше второго.
+      //Если вьі накладьіваете это заклинание, используя ячейку 3 уровня или вьіше, количество боеприпасов увеличивается на два за каждьій уровень ячейки вьіше второго.
       impact_size_str: 3,
       impact_size_num: 1,
       impact_size_dic: 6,
@@ -14281,7 +14622,7 @@ export default {
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
-        force_w: "🌈 Cиловым полем",
+        force_w: "🌈 Cиловьім полем",
 
         piercing_w: "🗡 колющий",
         slashing_w: "🪓 рубящий",
@@ -14292,8 +14633,8 @@ export default {
       */
 
       impact_size_foo: "Num_Plus_1__Pls_MOD",
-      // Каждое из шести существ на ваш выбор, видимых в пределах дистанции, восстанавливает количество хитов, равное 2d8 + модификатор вашей базовой характеристики.
-      // На более высоких уровнях: Если вы накладываете это заклинание, используя ячейку 3 уровня или выше, лечение увеличивается на 1d8 за каждый уровень ячейки выше второго.
+      // Каждое из шести существ на ваш вьібор, видимьіх в пределах дистанции, восстанавливает количество хитов, равное 2d8 + модификатор вашей базовой характеристики.
+      // На более вьісоких уровнях: Если вьі накладьіваете это заклинание, используя ячейку 3 уровня или вьіше, лечение увеличивается на 1d8 за каждьій уровень ячейки вьіше второго.
       impact_size_str: 6,
       impact_size_num: 2,
       impact_size_dic: 8,
@@ -14822,8 +15163,8 @@ export default {
       impact_damage_type: "fire_w",
 
       impact_size_foo: "Str_X_Plus_1",
-      //Вы создаете три огненных луча и направляете их на целей, находящихся в пределах дистанции.
-      //Вы создаете один дополнительный луч за каждый уровень ячейки выше второго.
+      //Вьі создаете три огненньіх луча и направляете их на целей, находящихся в пределах дистанции.
+      //Вьі создаете один дополнительньій луч за каждьій уровень ячейки вьіше второго.
       impact_size_str: 3,
       impact_size_num: 2,
       impact_size_dic: 6,
