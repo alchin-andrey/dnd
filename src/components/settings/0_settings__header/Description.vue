@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Welcome from "@/components/pinia/Welcome.vue";
+import Welcome from "@/components/Welcome.vue";
 import { copyText } from "vue3-clipboard";
 
 export default {

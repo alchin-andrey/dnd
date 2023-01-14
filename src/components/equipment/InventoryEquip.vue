@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import PacksEquip from "@/components/pinia/class_page/equipment/PacksEquip.vue";
+import PacksEquip from "@/components/equipment/PacksEquip.vue";
 
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";

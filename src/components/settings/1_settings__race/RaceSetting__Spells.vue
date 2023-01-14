@@ -16,7 +16,7 @@ import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
-	name: "RaceCustomSpells",
+	name: "RaceSetting__Spells",
 	computed: {
 		// GETTERS
 		...mapState(useMYStore, ["ethnos_Setting"]),

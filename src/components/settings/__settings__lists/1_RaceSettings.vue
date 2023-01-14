@@ -1,13 +1,13 @@
 <template>
 		<!-- Этнос-->
 		<my-selection-box :shown="race_page.shown.ethnos">
-			<EthnosChoice />
+			<RaceSetting__Ethnos />
 		</my-selection-box>
 		<!-- Этнос -->
 
 		<!-- Гендр -->
 		<my-selection-box :shown="race_page.shown.gender">
-      <GenderSetting />
+      <RaceSetting__Gender />
 		</my-selection-box>
 		<!-- Гендр -->
 
@@ -58,25 +58,25 @@
 
 		<!-- Характеристики -->
 		<my-selection-box :shown="race_page.shown.stats">
-			<RaceCustomStats />
+			<RaceSetting__Stats />
 		</my-selection-box>
 		<!-- Характеристики -->
 
 		<!-- Навыки -->
 		<my-selection-box :shown="race_page.shown.skills">
-      <RaceCustomSkills />
+      <RaceSetting__Skills />
 		</my-selection-box>
 		<!-- Навыки -->
 
 		<!-- Языки -->
 		<my-selection-box :shown="race_page.shown.languages">
-      <RaceCustomLanguages />
+      <RaceSetting__Languages />
 		</my-selection-box>
 		<!-- Языки -->
 
     <!-- Заклинания -->
 		<my-selection-box :shown="race_page.shown.spells">
-      <RaceCustomSpells />
+      <RaceSetting__Spells />
 		</my-selection-box>
 		<!-- Заклинания -->
 </template>
@@ -86,24 +86,24 @@ import { mapState} from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import EthnosChoice from "@/components/settings/1_race_settings/EthnosChoice.vue";
+import RaceSetting__Ethnos from "@/components/settings/1_settings__race/RaceSetting__Ethnos.vue";
 
-import RaceCustomStats from "@/components/settings/1_race_settings/RaceCustomStats.vue";
-import RaceCustomSkills from "@/components/settings/1_race_settings/RaceCustomSkills.vue";
-import RaceCustomLanguages from "@/components/settings/1_race_settings/RaceCustomLanguages.vue";
-import RaceCustomSpells from "@/components/settings/1_race_settings/RaceCustomSpells.vue";
+import RaceSetting__Stats from "@/components/settings/1_settings__race/RaceSetting__Stats.vue";
+import RaceSetting__Skills from "@/components/settings/1_settings__race/RaceSetting__Skills.vue";
+import RaceSetting__Languages from "@/components/settings/1_settings__race/RaceSetting__Languages.vue";
+import RaceSetting__Spells from "@/components/settings/1_settings__race/RaceSetting__Spells.vue";
 
-import GenderSetting from "@/components/settings/1_race_settings/GenderSetting.vue";
+import RaceSetting__Gender from "@/components/settings/1_settings__race/RaceSetting__Gender.vue";
 
 export default {
 	name: "RaceSettings",
   components: {
-		EthnosChoice,
-    RaceCustomStats,
-    RaceCustomSkills,
-    RaceCustomLanguages,
-    RaceCustomSpells,
-    GenderSetting,
+		RaceSetting__Ethnos,
+    RaceSetting__Stats,
+    RaceSetting__Skills,
+    RaceSetting__Languages,
+    RaceSetting__Spells,
+    RaceSetting__Gender,
 	},
 	computed: {
     // STORE

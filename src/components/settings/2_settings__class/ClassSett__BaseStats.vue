@@ -1,7 +1,7 @@
 <template>
 	<div class="marg">
 		<my-wrapper gap_16>
-			<ClassStatsTable />
+			<ClassParam__Stats />
 		</my-wrapper>
 	</div>
 	<my-selection-card v-for="name in stats_Keys" :key="name" passive>
@@ -21,17 +21,17 @@
 </template>
 
 <script>
-import BaseStatsCard from "@/components/pinia/class_page/settings/BaseStatsCard.vue";
-import ClassStatsTable from "@/components/pinia/class_page/settings/ClassStatsTable.vue";
+import BaseStatsCard from "@/components/settings/2_settings__class/BaseStatsCard.vue";
+import ClassParam__Stats from "@/components/parameters/2_param__class/ClassParam__Stats.vue";
 
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
-	name: "ClassBaseStats",
+	name: "ClassSett__BaseStats",
 	components: {
 		BaseStatsCard,
-		ClassStatsTable,
+		ClassParam__Stats,
 	},
 	computed: {
 		// STORES

@@ -3,7 +3,7 @@
 		<section v-if="!class_page.shown.stats">
 			<!-- stats -->
 			<my-wrapper gap_16 hr>
-				<ClassStatsTable />
+				<ClassParam__Stats />
 			</my-wrapper>
 			<!-- stats -->
 
@@ -23,7 +23,7 @@
 			<!-- attributes -->
 
 			<!-- qualities -->
-			<ClassQualitiesParam />
+			<ClassParam__Qualities />
 			<!-- qualities -->
 
 			<!-- charges -->
@@ -192,7 +192,7 @@
 
 		<section v-else>
 			<!-- qualities-stats -->
-			<ClassQualitiesParam />
+			<ClassParam__Qualities />
 			<!-- qualities-stats -->
 			<!-- attributes-stats -->
 			<my-wrapper>
@@ -213,9 +213,9 @@
 </template>
 
 <script>
-import ClassStatsTable from "@/components/pinia/class_page/settings/ClassStatsTable.vue";
-import ClassQualitiesParam from "@/components/pinia/class_page/parameters/ClassQualitiesParam.vue";
-import InventoryEquip from "@/components/pinia/class_page/equipment/InventoryEquip.vue";
+import ClassParam__Stats from "@/components/parameters/2_param__class/ClassParam__Stats.vue";
+import ClassParam__Qualities from "@/components/parameters/2_param__class/ClassParam__Qualities.vue";
+import InventoryEquip from "@/components/equipment/InventoryEquip.vue";
 
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -228,8 +228,8 @@ import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "ClassParameters",
 	components: {
-		ClassStatsTable,
-		ClassQualitiesParam,
+		ClassParam__Stats,
+		ClassParam__Qualities,
 
 		InventoryEquip,
 	},

@@ -1,12 +1,12 @@
 <template>
     <!-- Специализация -->
     <my-selection-box :shown="class_page.shown.subclass">
-			<SubclassCard />
+			<ClassSett__Subclass />
 		</my-selection-box>
 		<!-- Специализация -->
 		<!-- Характеристики -->
 		<my-selection-box :shown="class_page.shown.stats">
-			<ClassBaseStats />
+			<ClassSett__BaseStats />
 		</my-selection-box>
 		<!-- Характеристики -->
 </template>
@@ -16,14 +16,14 @@ import { mapState} from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import SubclassCard from "@/components/pinia/class_page/settings/SubclassCard.vue";
-import ClassBaseStats from "@/components/pinia/class_page/settings/ClassBaseStats.vue";
+import ClassSett__Subclass from "@/components/settings/2_settings__class/ClassSett__Subclass.vue";
+import ClassSett__BaseStats from "@/components/settings/2_settings__class/ClassSett__BaseStats.vue";
 
 export default {
 	name: "ClassSettings",
   components: {
-    SubclassCard,
-    ClassBaseStats,
+    ClassSett__Subclass,
+    ClassSett__BaseStats,
 	},
 	computed: {
     // STORE

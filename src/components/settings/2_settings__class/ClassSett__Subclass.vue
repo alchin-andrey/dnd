@@ -113,7 +113,7 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
-	name: "SubclassCard",
+	name: "ClassSett__Subclass",
 	computed: {
 		// STORE
 		...mapState(useMYStore, ["MY", "MY_Subclass", "level_Filter"]),

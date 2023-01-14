@@ -24,7 +24,7 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 export default {
-	name: "RaceCustomSkills",
+	name: "RaceSetting__Skills",
 	computed: {
 		// STORES
 		...mapState(useMYStore, ["MY", "Mastery"]),

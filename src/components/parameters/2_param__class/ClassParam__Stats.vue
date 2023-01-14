@@ -48,7 +48,7 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
-	name: "ClassStatsTable",
+	name: "ClassParam__Stats",
 	data() {
 		return {
 			stats_icon: stats_icon,

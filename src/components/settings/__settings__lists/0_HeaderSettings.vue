@@ -26,8 +26,8 @@ import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import Description from "@/components/settings/0_header_settings/Description.vue";
-import LangSetting from "@/components/settings/0_header_settings/LangSetting.vue";
+import Description from "@/components/settings/0_settings__header/Description.vue";
+import LangSetting from "@/components/settings/0_settings__header/LangSetting.vue";
 
 export default {
 	name: "HeaderSettings",

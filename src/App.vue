@@ -115,19 +115,19 @@
 </template>
 
 <script>
-import WelcomeBanner from "@/components/pinia/WelcomeBanner.vue";
+import WelcomeBanner from "@/components/WelcomeBanner.vue";
 
 import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
-import HeaderSettings from "@/components/settings_lists/0_HeaderSettings.vue";
+import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
 
 // RACE_PAGE
 import RaceMenu from "@/components/menu/1_RaceMenu.vue";
-import RaceSettings from "@/components/settings_lists/1_RaceSettings.vue";
-import RaceParameters from "@/components/parameters/RaceParameters.vue";
+import RaceSettings from "@/components/settings/__settings__lists/1_RaceSettings.vue";
+import RaceParameters from "@/components/parameters/__param__lists/1_RaceParameters.vue";
 // CLASS_PAGE
 import ClassMenu from "@/components/menu/2_ClassMenu.vue";
-import ClassSettings from "@/components/settings_lists/2_ClassSettings.vue";
-import ClassParameters from "@/components/parameters/ClassParameters.vue";
+import ClassSettings from "@/components/settings/__settings__lists/2_ClassSettings.vue";
+import ClassParameters from "@/components/parameters/__param__lists/2_ClassParameters.vue";
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";

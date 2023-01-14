@@ -38,7 +38,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
-	name: "RaceCustomStats",
+	name: "RaceSetting__Stats",
 	computed: {
 		// STORES
 		...mapState(useMYStore, ["MY"]),

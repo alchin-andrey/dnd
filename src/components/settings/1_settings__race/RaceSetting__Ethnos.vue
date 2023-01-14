@@ -63,12 +63,12 @@
 </template>
 
 <script>
-import EthnosCard from "@/components/settings/1_race_settings/EthnosCard.vue";
+import EthnosCard from "@/components/settings/1_settings__race/EthnosCard.vue";
 
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 export default {
-	name: "EthnosChoice",
+	name: "RaceSetting__Ethnos",
 	components: {
 		EthnosCard,
 	},

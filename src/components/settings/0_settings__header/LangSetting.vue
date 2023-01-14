@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import LangCard from "@/components/pinia/LangCard.vue";
+import LangCard from "@/components/settings/0_settings__header/LangCard.vue";
 import { mapState, mapActions } from "pinia";
 import { useDicStore } from "@/stores/general/DicStore";
 export default {

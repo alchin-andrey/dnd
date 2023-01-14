@@ -41,7 +41,7 @@ import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 export default {
-	name: "RaceCustomLanguages",
+	name: "RaceSetting__Languages",
 	computed: {
     // STORES
 		...mapState(usePagesStore, ["race_page"]),
