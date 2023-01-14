@@ -1,6 +1,6 @@
 export default {
 
-    //Левелы перса
+    //Левельі перса
 
     // Num_Plus_Level_2()
     // {
@@ -158,7 +158,7 @@ export default {
 //DONE
     Num_Feet()
     {
-        //превратить num в футы
+        //превратить num в футьі
     },
 
     //Pls

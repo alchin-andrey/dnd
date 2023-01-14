@@ -20,7 +20,7 @@ export const tools = {
     weavers_tools: "кравця",
     painters_supplies: "художника",
     jewelers_tools: "ювеліра",
-    music_drums: "барабаны",
+    music_drums: "барабаньі",
     music_viol: "віоли",
     music_bagpipes: "волинки",
     music_lyre: "ліри",
@@ -31,5 +31,5 @@ export const tools = {
     music_dulcimer: "цимбали",
     music_shawm: "шалмії",
     herbalists_tools: "травника",
-    shoemaker_tools: "сапожника",
+    shoemaker_tools: "чоботаря",
 }

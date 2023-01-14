@@ -176,7 +176,7 @@ export default {
     details: "feat_war_caster_details",
 
     condition: "spell_attribute",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
@@ -202,7 +202,7 @@ export default {
     details: "feat_grappler_details",
 
     condition: "strength > 12",
-    //Требования: Сила 13 или выше
+    //Требования: Сила 13 или вьіше
 
     fines: [
       {
@@ -333,7 +333,7 @@ export default {
     details: "feat_inspiring_leader_details",
 
     condition: "charisma > 12",
-    //Требования: Харизма 13 или выше
+    //Требования: Харизма 13 или вьіше
 
     spells: [
       {
@@ -632,7 +632,7 @@ export default {
     details: "feat_medium_armor_master_details",
 
     condition: "proficiency_armor_medium",
-    //Требования: Владение тяжелыми доспехами
+    //Требования: Владение тяжельіми доспехами
 
     fines: [
       {
@@ -653,7 +653,7 @@ export default {
     details: "feat_heavy_armor_master_details",
 
     condition: "proficiency_armor_heavy",
-    //Требования: Владение тяжелыми доспехами
+    //Требования: Владение тяжельіми доспехами
 
     stats: [
       {
@@ -697,7 +697,7 @@ export default {
     details: "feat_spell_sniper_details",
 
     condition: "spells_make",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
@@ -764,7 +764,7 @@ export default {
     details: "feat_defensive_duelist_details",
 
     condition: "dexterity > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     fines: [
       {
@@ -1346,7 +1346,7 @@ export default {
     details: "feat_skulker_details",
 
     condition: "dexterity > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     fines: [
       {
@@ -1372,7 +1372,7 @@ export default {
     details: "feat_ritual_caster_details_cleric",
 
     condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     spells: [
       {
@@ -1405,7 +1405,7 @@ export default {
     details: "feat_ritual_caster_details_druid",
 
     condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     spells: [
       {
@@ -1438,7 +1438,7 @@ export default {
     details: "feat_ritual_caster_details_warlock",
 
     condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     spells: [
       {
@@ -1471,7 +1471,7 @@ export default {
     details: "feat_ritual_caster_details_sorcerer",
 
     condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     spells: [
       {
@@ -1504,7 +1504,7 @@ export default {
     details: "feat_ritual_caster_details_wizard",
 
     condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     spells: [
       {
@@ -1537,7 +1537,7 @@ export default {
     details: "feat_ritual_caster_details_bard",
 
     condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или выше
+    //Требования: Ловкость 13 или вьіше
 
     spells: [
       {
@@ -1570,7 +1570,7 @@ export default {
     details: "feat_elemental_adept_sound_details",
 
     condition: "spell_attribute",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
@@ -1591,7 +1591,7 @@ export default {
     details: "feat_elemental_adept_acid_details",
 
     condition: "spell_attribute",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
@@ -1612,7 +1612,7 @@ export default {
     details: "feat_elemental_adept_fire_details",
 
     condition: "spell_attribute",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
@@ -1633,7 +1633,7 @@ export default {
     details: "feat_elemental_adept_cold_details",
 
     condition: "spell_attribute",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
@@ -1654,7 +1654,7 @@ export default {
     details: "feat_elemental_adept_electricity_details",
 
     condition: "spell_attribute",
-    //Требования: Способность накладывать хотя бы одно заклинание
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
       {
