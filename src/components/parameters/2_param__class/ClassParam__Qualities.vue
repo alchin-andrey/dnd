@@ -49,7 +49,7 @@ export default {
 		// STORE
 		...mapState(useMYStore, ["MY", "level_Filter"]),
 		// GETTERS
-		...mapState(useMYStore, ["Mastery", "class_Specials"]),
+		...mapState(useMYStore, ["Mastery", "class_Specials_Filter_Lvl"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
     ...mapState(useEquipStore, ["armor_Equip_Element"]),
 
@@ -137,11 +137,8 @@ export default {
 
 		armor_Bonus_Specials() {
 			let bonus = null;
-			const lvl = this.MY.level;
-			const specials = this.class_Specials("armor_bonus");
-			specials?.forEach((el) =>
-				el.level <= lvl ? (bonus += this[el.foo]) : null
-			);
+      const specials = this.class_Specials_Filter_Lvl("armor_bonus");
+      specials?.forEach((el) => bonus += this[el.foo]);
 			return bonus;
 		},
 

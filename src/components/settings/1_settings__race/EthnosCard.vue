@@ -53,7 +53,7 @@
 					v-for="(val, name) in ethnos.proficiencies"
 					:key="name"
 					:title="name"
-					:item="proficiencies_Arr_Ethnos(ethnos, name)"
+					:item="proficiencies_Arr(ethnos.proficiencies, name)"
 				>
 				</my-inventory>
 			</my-wrapper>
@@ -114,6 +114,7 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "EthnosCard",
 	computed: {
@@ -124,6 +125,7 @@ export default {
 		...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
 		...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
 		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
+		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 
 		select_Sum() {
 			return (name) => this[`${name}_Pass_Arr_RE`].length;
@@ -139,11 +141,6 @@ export default {
 		hp_Bonus: (state) => (increm_1, increm_2) => {
 			let level = Math.ceil(state.MY.level / increm_1);
 			return level * increm_2;
-		},
-
-		proficiencies_Arr_Ethnos: (state) => (obj, kay) => {
-			let ethnos_arr = obj.proficiencies?.[kay].map((x) => x.name);
-			return ethnos_arr;
 		},
 	},
 	methods: {

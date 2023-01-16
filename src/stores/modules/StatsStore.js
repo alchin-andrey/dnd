@@ -107,15 +107,12 @@ export const useStatsStore = defineStore({
     stats_Saving_Arr() {
       const MYStore = useMYStore();
       let arr_save = [];
-      let save = MYStore.MY.class.saving;
+      const save = MYStore.MY.class.saving;
       arr_save = save.slice(0);
-      let lvl = MYStore.MY.level;
       
-      let specials = MYStore.class_Specials("saving");
-			specials?.forEach(el => 
-        el.level <= lvl 
-        ? el.saving.forEach(x => arr_save.push(x)) 
-        : null);
+      const specials_lvl = MYStore.class_Specials_Filter_Lvl("saving");
+      specials_lvl?.forEach(el => el.saving.forEach(x => arr_save.push(x)));
+      
       return arr_save;
     },
 

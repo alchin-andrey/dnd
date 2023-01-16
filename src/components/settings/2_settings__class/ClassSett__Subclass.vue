@@ -1,7 +1,7 @@
 <template>
 	<!-- <div class="ethnos_cards_menu"> -->
 		<my-selection-card
-			v-for="subclass in subclass_Find.list"
+			v-for="subclass in subclass_Find_Lvl.list"
 			:key="subclass"
 			no_blur
 			@click="getSubclassObj(subclass)"
@@ -60,7 +60,7 @@
 					v-for="(val, name) in subclass.proficiencies"
 					:key="name"
 					:title="name"
-					:item="proficiencies_Arr_Subclass(subclass, name)"
+					:item="proficiencies_Arr(subclass.proficiencies, name)"
 				>
 				</my-inventory>
 			</my-wrapper>
@@ -112,11 +112,12 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "ClassSett__Subclass",
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "MY_Subclass", "level_Filter"]),
+		...mapState(useMYStore, ["MY", "MY_Subclass", "level_Filter", "subclass_Find_Lvl"]),
 		// GETTERS
 		...mapState(useMYStore, ["MY_Subclass"]),
 
@@ -124,13 +125,7 @@ export default {
 		...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
 		...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
 		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
-
-
-    subclass_Find() {
-      const lvl = this.MY.level;
-			// return this.MY.class.settings?.find((item) => item.name == "subclass" && lvl >= item.level);
-			return this.MY.class.settings?.find((item) => item.name == "subclass");
-		},
+		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 
     shown_Param_Arr: (state) => (arr) => {
       return arr ? state.level_Filter(arr).length !== 0 : null;
@@ -141,39 +136,34 @@ export default {
       return (select) => Array.isArray(select) ? select[lvl - 1] : select;
     },
 
-
-
-
-
-
-
-
-
-		select_Sum() {
-			return (name) => this[`${name}_Pass_Arr_RE`].length;
-		},
-
-		shown_Spells_Ethnos: (state) => (spells) => {
-
-			let ethnos_spells = spells;
-			let lvl = state.MY.level;
-			let spells_lvl = ethnos_spells?.[0].level <= lvl;
-			return ethnos_spells && spells_lvl;
-		},
-
-		hp_Bonus: (state) => (increm_1, increm_2) => {
-			let level = Math.ceil(state.MY.level / increm_1);
-			return level * increm_2;
-		},
-
-		proficiencies_Arr_Subclass: (state) => (obj, kay) => {
-			let subclass_arr = obj.proficiencies?.[kay].map((x) => x.name);
-			return subclass_arr;
-		},
-
     active_Subclass: (state) => (subclass) => {
       return state.MY_Subclass.name === subclass.name
     }
+
+
+
+
+
+
+
+
+
+		// select_Sum() {
+		// 	return (name) => this[`${name}_Pass_Arr_RE`].length;
+		// },
+
+		// shown_Spells_Ethnos: (state) => (spells) => {
+
+		// 	let ethnos_spells = spells;
+		// 	let lvl = state.MY.level;
+		// 	let spells_lvl = ethnos_spells?.[0].level <= lvl;
+		// 	return ethnos_spells && spells_lvl;
+		// },
+
+		// hp_Bonus: (state) => (increm_1, increm_2) => {
+		// 	let level = Math.ceil(state.MY.level / increm_1);
+		// 	return level * increm_2;
+		// },
 	},
 	methods: {
 		// getEthnosObj(obj) {
