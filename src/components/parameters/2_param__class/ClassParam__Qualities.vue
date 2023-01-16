@@ -1,6 +1,5 @@
 <template>
-	<!-- qualities-stats -->
-	<my-wrapper hr>
+  <my-wrapper :hr="hr">
 		<my-attribute
 			title="armor_class"
 			:type="armor_Name"
@@ -30,29 +29,29 @@
 			:numb="qualities_Numb_Class('vision_night')"
 			feet
 		></my-attribute>
-		<!-- <my-attribute
-        v-for="(val, name) in MY.qualities"
-        :key="name"
-        :title="name"
-        :numb="qualities_Numb_Class(name)"
-        feet
-      ></my-attribute> -->
-	</my-wrapper>
-	<!-- qualities-stats -->
+  </my-wrapper>
 </template>
 
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useEquipStore } from "@/stores/modules/EquipStore";
 export default {
 	name: "ClassParam__Qualities",
+  props: {
+    hr: {
+			type: Boolean,
+			default: false,
+		},
+	},
 	computed: {
 		// STORE
 		...mapState(useMYStore, ["MY", "level_Filter"]),
 		// GETTERS
 		...mapState(useMYStore, ["Mastery", "class_Specials"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
+    ...mapState(useEquipStore, ["armor_Equip_Element"]),
 
 		hp_Bonus() {
 			if (this.MY.ethnos.hp_bonus) {
@@ -113,45 +112,13 @@ export default {
 			return numb_RE + numb_bonus;
 		},
 
-		equipments_Class_Arr() {
-			let arr = this.level_Filter(this.MY.class.equipment);
-			return arr ? arr : [];
-		},
-
-    item_Equip_Arr: (state) => (item) => {
-			let arr = [];
-			state.equipments_Class_Arr?.forEach((el) =>
-				el[item]?.forEach((sub_el) => arr.push(sub_el))
-			);
-			return arr;
-		},
-
-    armors_Equip_Class() {
-			return this.item_Equip_Arr("armor");
-		},
-
-		armors_Element() {
-			return this.armors_Equip_Class[0]?.[0];
-		},
-    
-		// armors_Element() {
-		// 	let arr = null;
-		// 	let armor = this.armors_Equip_Class;
-		// 	console.log('armor:', armor)
-		// 	this.equipments_Class_Arr?.forEach((el) =>
-		// 		el.armor?.forEach((armor) => (arr = armor[0]))
-		// 	);
-		// 	console.log('arr:', arr)
-		// 	return arr;
-		// },
-
 		armor_Name() {
-			let armor = this.armors_Element;
+			let armor = this.armor_Equip_Element;
 			return armor ? armor.name : null;
 		},
 
 		armor_Numb() {
-			const armor = this.armors_Element;
+			const armor = this.armor_Equip_Element;
 
 			let armor_default = 10;
 			const dex_mod = this.stats_Mod("dexterity");

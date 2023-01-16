@@ -1,9 +1,7 @@
 <template>
-	<div class="marg">
-		<my-wrapper gap_16>
+	<section class="marg">
 			<ClassParam__Stats />
-		</my-wrapper>
-	</div>
+	</section>
 	<my-selection-card v-for="name in stats_Keys" :key="name" passive>
 		<BaseStatsCard :stats_name="name" />
 	</my-selection-card>

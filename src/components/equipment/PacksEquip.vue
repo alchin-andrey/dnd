@@ -20,9 +20,7 @@
 			</div>
 			<transition name="scroll-packs">
 				<section class="items_packs" v-if="packs_scroll">
-					<div class="item_packs" v-for="items in packs[0].items" :key="items">
-						• {{ t_Equip_Name(items) }}
-					</div>
+          <InventoryEquip :inventory="packs[0].items" />
 				</section>
 			</transition>
 		</div>
@@ -34,9 +32,7 @@
 		</my-wrapper>
 
 		<section class="items_packs">
-			<div class="item_packs" v-for="items in packs[0].items" :key="items">
-				• {{ t_Equip_Name(items) }}
-			</div>
+      <InventoryEquip :inventory="packs[0].items" />
 		</section>
 
 		<my-wrapper>
@@ -47,8 +43,10 @@
 </template>
 
 <script>
+import InventoryEquip from "@/components/equipment/InventoryEquip.vue";
 export default {
 	name: "PacksEquip",
+  components: { InventoryEquip },
 	data() {
 		return {
 			dialogVisible: false,
@@ -58,10 +56,6 @@ export default {
 	props: {
 		packs: {
 			type: Array,
-			default: null,
-		},
-		packs_name: {
-			type: String,
 			default: null,
 		},
 		select: {
@@ -74,9 +68,6 @@ export default {
 		},
 	},
 	computed: {
-		Packs() {
-			return this.packs[0];
-		},
 
 		t_Equip_Name: (state) => (inv) => {
 			const name = state.t(inv[0].name);
@@ -131,19 +122,6 @@ export default {
 </script>
 
 <style scoped>
-/* .skroll_list_closed::after {
-	position: absolute;
-	content: url(@/assets/img/icon/arrow_down_small.svg);
-	top: 0;
-	right: 16px;
-}
-
-.skroll_list_open::after {
-	position: absolute;
-	content: url(@/assets/img/icon/arrow_top_small.svg);
-	top: 0;
-	right: 16px;
-} */
 
 .gap_col {
 	display: grid;
