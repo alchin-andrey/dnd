@@ -9,6 +9,1085 @@ import packs from "./list_packs.js";
 import items from "./list_items.js";
 
 export default {
+  //NOTE - Ranger
+
+  ranger: {
+      name: "ranger",
+      details: "ranger_details",
+  
+      hp_dice: 10,
+  
+      proficiencies: {
+        armor: [armory.light, armory.medium, armory.shields],
+        weapons: [weaponry.simple, weaponry.military],
+      },
+  
+      saving: ["strength", "dexterity"],
+      stats_base: [
+        "dexterity",
+        "strength",
+        "wisdom",
+        "constitution",
+        "intelligence",
+        "charisma",
+      ],
+      spell_attribute: "wisdom",
+  
+      equipment: [
+        {
+          level: 1,
+          weapon: [[weapons.longbow, 1]],
+          inventory: [
+            [items.arrow, 20],
+            [items.quiver, 1],
+          ],
+        },
+        {
+          level: 2,
+          inventory: [
+            [items.focus, 1],
+          ],
+        },
+      ],
+  
+      charges: [
+        {
+          level: 2,
+          name: "spell_slots",
+          type: "long_rest",
+          list: [
+            ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+            ["[2]", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            ["[3]", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            ["[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
+            ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
+          ],
+        },
+      ],
+  
+      fines: [
+        {
+          level: 8,
+          type: "plus",
+          keyword: "no_speed_fee",
+          details: "on_nonmagic_hard_area",
+        },
+        {
+          level: 8,
+          type: "advantage",
+          keyword: "advantage",
+          details: "on_saving_from_plants",
+        },
+        {
+          level: 18,
+          type: "advantage",
+          keyword: "no_disadvantage",
+          details: "on_attacking_invisible",
+        },
+        {
+          level: 18,
+          type: "plus",
+          keyword: "knowledge",
+          details: "of_all_invisible_30",
+        },
+      ],
+  
+      spells: [
+        {
+          spell:spells.rangers_companion,
+        },
+        {
+          level:5,
+          spell:spells.extra_attack,
+        },
+        {
+          level:14,
+          spell:spells.disappearance,
+        },
+        {
+          level:20,
+          spell:spells.enemy_killer,
+        },
+      ],
+  
+      settings: [
+        {
+          level:3,
+          type:"custom",
+          name:"subclass",
+          select: 1,
+          list: [
+            {
+              name:"hunter",
+              details:"hunter_details",
+  
+              settings: [
+                {
+                  level:3,
+                  type:"custom",
+                  name:"prey",
+                  select: 1,
+                  list: [
+                    {
+                      spells: [
+                        {
+                          spell:spells.horde_breaker,
+                        }
+                      ]
+                    },
+                    {
+                      spells: [
+                        {
+                          spell:spells.giant_killer,
+                        }
+                      ]
+                    },
+                    {
+                      spells: [
+                        {
+                          spell:spells.colossus_slayer,
+                        }
+                      ]
+                    },
+                  ],
+                },
+                {
+                  level:7,
+                  type:"custom",
+                  name:"style_protection",
+                  select: 1,
+                  list: [
+                    {
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "plus_4_armor",
+                          on_provoked_attacks: "on_next_attacks",
+                        },
+                      ]
+                    },
+                    {
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "disadvantage",
+                          on_provoked_attacks: "on_attacking_invisible",
+                        }
+                      ]
+                    },
+                    {
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          on_provoked_attacks: "fear_against",
+                        }
+                      ]
+                    },
+                  ],
+                },
+                {
+                  level:11,
+                  type:"custom",
+                  name:"multiattack",
+                  select: 1,
+                  list: [
+                    {
+                      spells: [
+                        {
+                          spell:spells.whirlwind_attack,
+                        }
+                      ]
+                    },
+                    {
+                      spells: [
+                        {
+                          spell:spells.volley,
+                        }
+                      ]
+                    },
+                  ]
+                },
+                {
+                  level:15,
+                  type:"custom",
+                  name:"style_protection",
+                  select: 1,
+                  list: [
+                    {
+                      spells: [
+                        {
+                          spell:spells.uncanny_dodge,
+                        }
+                      ]
+                    },
+                    {
+                      spells: [
+                        {
+                          spell:spells.stand_against_the_tide,
+                        }
+                      ]
+                    },
+                    {
+                      fines: [
+                        {
+                          type: "resistance",
+                          keyword: "fine_dodge",
+                          details: "from_aoe_effects",
+                        },
+                      ]
+                    },
+                  ]
+                }
+              ]
+            },
+            {
+              name:"beastmaster",
+              details:"beastmaster_details",
+  
+              settings: [
+                {
+                  level:3,
+                  type:"custom",
+                  name:"companion",
+                  select: 1,
+                  list: [
+                    {
+                      spells: [
+                        {
+                          spell:spells.rangers_companion,
+                        }
+                      ]
+                    },
+                    {
+                      spells: [
+                        {
+                          spell:spells.primal_companion,
+                        }
+                      ]
+                    },
+                  ]
+                },
+              ]
+            }
+          ],
+        },
+        {
+          level:1,
+          type:"custom",
+          name:"favor",
+          select: 1,
+          list: [
+            {
+              name:"favored_enemy",
+              details:"favored_enemy_details",
+  
+              settings: [
+                {
+                  level: 1,
+                  type: "custom",
+                  name: "favored_enemy",
+                  select: [1,1,1,1,1, 2,2,2,2,2, 2,2,2,3,3, 3,3,3,3,3],
+                  list: [
+                    {
+                      name: "aberrations",
+                      details: "aberrations_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_aberrations_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_aberrations_against",
+                        },
+                      ],
+  
+                      proficiencies: {
+                        languages: [lang.deep],
+                      },
+                    },
+                    {
+                      name: "beasts",
+                      details: "beasts_details",
+                      
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_beasts_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_beasts_against",
+                        },
+                      ],
+  
+                      proficiencies: {
+                        languages: [lang.animal],
+                      },
+                    },
+                    {
+                      name: "celestials",
+                      details: "celestials_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_celestials_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_celestials_against",
+                        },
+                      ],
+  
+                      proficiencies: {
+                        languages: [lang.sky],
+                      },
+                    },
+                    {
+                      name: "constructs",
+                      details: "constructs_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_constructs_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_constructs_against",
+                        },
+                      ],
+                    },
+                    {
+                      name: "dragons",
+                      details: "dragons_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_dragons_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_dragons_against",
+                        },
+                      ],
+          
+                      proficiencies: {
+                        languages: [lang.dragon],
+                      },
+                    },
+                    {
+                      name: "elementals",
+                      details: "elementals_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_elementals_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_elementals_against",
+                        },
+                      ],
+  
+                      proficiencies: {
+                        languages: [lang.primordial],
+                      },
+                    },
+                    {
+                      name: "feys",
+                      details: "feys_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_feys_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_feys_against",
+                        },
+                      ],
+          
+                      proficiencies: {
+                        languages: [lang.sylvan],
+                      },
+                    },
+                    {
+                      name: "fiends",
+                      details: "fiends_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_fiends_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_fiends_against",
+                        },
+                      ],
+  
+                      proficiencies: {
+                        languages: [lang.demonic,lang.tiefling],
+                      },
+                    },
+                    {
+                      name: "giants",
+                      details: "giants_details",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_giants_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_giants_against",
+                        },
+                      ],
+  
+                      proficiencies: {
+                        languages: [lang.giant],
+                      },
+                    },
+                    {
+                      name: "monstrosities",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_monstrosities_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_monstrosities_against",
+                        },
+                      ],
+                    },
+                    {
+                      name: "oozes",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_oozes_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_oozes_against",
+                        },
+                      ]
+                    },
+                    {
+                      name: "plants",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_plants_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_plants_against",
+                        },
+                      ]
+                    },
+                    {
+                      name: "undeads",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_undeads_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_undeads_against",
+                        },
+                      ],                    
+                    },
+                    {
+                      name: "two_other_races",
+          
+                      fines: [
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "wisdom_two_other_races_against",
+                        },
+                        {
+                          type: "advantage",
+                          keyword: "advantage",
+                          details: "intelligence_two_other_races_against",
+                        },
+                      ]
+                    },
+          
+                  ]
+                },
+              ]
+            },
+            {
+              name:"favored_foe",
+              details:"favored_foe_details",
+  
+              charges: [
+                {
+                  level: 3,
+                  name: "favored_foe_slots",
+                  type: "long_rest",
+                  foo: "Num_Mastery",
+                  list: [
+                    [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                  ],
+                },
+              ],
+  
+              spells: [
+                {
+                  level:1,
+                  spell:spells.favored_foe,
+                }
+              ]
+            }
+          ]
+        },
+        {
+          level:1,
+          type:"custom",
+          name:"exploration",
+          select: 1,
+          list: [
+            {
+              name:"natural_explorer",
+              details:"natural_explorer_details",
+  
+              settings: [
+                {
+                  level: 1,
+                  type: "custom",
+                  name: "favored_terrain",
+                  select: [1,1,1,1,1, 2,2,2,2,3, 3,3,3,3,3, 3,3,3,3,3],
+                  list: [
+                    {
+                      name: "arctic",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_arctic",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_arctic",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },  
+                    {
+                      name: "coast",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_coast",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_coast",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },  
+                    {
+                      name: "desert",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_desert",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_desert",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    }, 
+                    {
+                      name: "forest",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_forest",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_forest",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },  
+                    {
+                      name: "grassland",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_grassland",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_grassland",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },
+                    {
+                      name: "mountain",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_mountain",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_mountain",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },
+                    {
+                      name: "swamp",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_swamp",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_swamp",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },
+                    {
+                      name: "underdark",
+  
+                      fines: [
+                        {
+                          type: "plus",
+                          keyword: "proficiency_bonus",
+                          details: "intelligence_wisdom_underdark",
+                        },
+                        {
+                          type: "plus",
+                          keyword: "travel_underdark",
+                          details: "terrain_advantages",
+                        },
+                      ],
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name:"deft_explorer",
+              details:"deft_explorer_details",
+  
+              qualities: [
+                {
+                  level: 6,
+                  speed_bonus: 5,
+                }
+              ],
+  
+              fines: [
+                {
+                  level: 6,
+                  type: "plus",
+                  keyword: "climbing_and_swimming",
+                  details: "without_speed_fee",
+                },
+                {
+                  level: 10,
+                  type: "plus",
+                  keyword: "exhaust_rediction",
+                  details: "in_short_rest",
+                },
+              ],
+  
+              charges: [
+                {
+                  level: 10,
+                  name: "tireless_slots",
+                  type: "long_rest",
+                  foo: "Num_Mastery",
+                  list: [
+                    [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                  ],
+                },
+              ],
+  
+              spells: [
+                {
+                  level: 10,
+                  spell: spells.tireless,
+                }
+              ],
+  
+              settigns: [
+                {
+                  level: 1,
+                  type: "skills",
+                  name: "skills",
+                  select: 1,
+                  bonus: "mastery",
+                  list: [
+                    "investigation",
+                    "athletics",
+                    "perception",
+                    "survival",
+                    "nature",
+                    "insight",
+                    "stealth",
+                    "animal_hanging"
+                  ],
+                },
+                {
+                    level: 1,
+                    type: "languages",
+                    name: "languages",
+                    select: 2,
+                    filter: "no_used",
+                },
+              ]
+            }
+          ]
+        },
+        {
+          level:4,
+          type:"custom",
+          name:"primal_sense",
+          select: 1,
+          list: [
+            {
+              spells: [
+                {
+                  level:3,
+                  spell:spells.primeval_awareness_favored,
+                },
+                {
+                  level:3,
+                  spell:spells.primeval_awareness_favored,
+                },
+              ]
+            },
+            {
+              spells: [
+                {
+                  level:3,
+                  spell:spells.speak_with_animals_ranger,
+                },
+                {
+                  level:5,
+                  spell:spells.beast_sense_ranger,
+                },
+                // {
+                //   level:9,
+                //   spell:spells.speak_with_plants_ranger,
+                // },
+                // {
+                //   level:13,
+                //   spell:spells.locate_creature_ranger,
+                // },
+                {
+                  level:17,
+                  spell:spells.commune_with_nature_ranger,
+                },
+              ]
+            },
+          ],
+        },
+        {
+          level:10,
+          type:"custom",
+          name:"disguise",
+          select: 1,
+          list: [
+            {
+              spells: [
+                {
+                  spell:spells.disguise_on_sight
+                }
+              ]
+            },
+            {
+              charges: [
+                {
+                  level: 2,
+                  name: "disguise_nature_slots",
+                  type: "long_rest",
+                  foo: "Num_Mastery",
+                  list: [
+                    ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                  ],
+                },
+              ],
+  
+              spells: [
+                {
+                  spell:spells.disguise_nature
+                }
+              ]
+            }
+          ]
+        },
+        {
+          level: 1,
+          type: "skills",
+          name: "skills",
+          select: 3,
+          bonus: "mastery",
+          list: [
+            "investigation",
+            "athletics",
+            "perception",
+            "survival",
+            "nature",
+            "insight",
+            "stealth",
+            "animal_hanging"
+          ],
+        },
+        {
+          level: 1,
+          type: "custom",
+          name: "armor_class",
+          select: 1,
+          list: [
+            {
+              equipment: [
+                {
+                  level: 1,
+                  armor: [[armors.scalemail, 1]],
+                },
+              ],
+              fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+            },
+            {
+              equipment: [
+                {
+                  level: 1,
+                  armor: [[armors.leather, 1]],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          level: 1,
+          type: "custom",
+          name: "weapons",
+          select: 1,
+          list: [
+            {
+              equipment: [
+                {
+                  weapon: [ [weapons.shortsword, 2]],
+                },
+              ],
+            },
+            {
+              settings: [
+                {
+                  type: "weapons",
+                  name: "weapons",
+                  select: 1,
+                  list: [
+                    [weapons.quarterstaff, 1],
+                    [weapons.mace, 1],
+                    [weapons.club, 1],
+                    [weapons.dagger, 1],
+                    [weapons.spear, 1],
+                    [weapons.light_hammer, 1],
+                    [weapons.javelin, 1],
+                    [weapons.greatclub, 1],
+                    [weapons.handaxe, 1],
+                    [weapons.sickle, 1],
+                  ],
+                },
+                {
+                  type: "weapons",
+                  name: "weapons",
+                  select: 1,
+                  list: [
+                    [weapons.quarterstaff, 1],
+                    [weapons.mace, 1],
+                    [weapons.club, 1],
+                    [weapons.dagger, 1],
+                    [weapons.spear, 1],
+                    [weapons.light_hammer, 1],
+                    [weapons.javelin, 1],
+                    [weapons.greatclub, 1],
+                    [weapons.handaxe, 1],
+                    [weapons.sickle, 1],
+                  ],
+                },
+              ]
+            }
+          ]
+        },
+        {
+          level: 1,
+          type: "inventory_packs",
+          name: "packs",
+          select: 1,
+          list: [
+            [packs.dungeoneers, 1],
+            [packs.explorers, 1],
+          ],
+        },
+        {
+          level: 2,
+          type: "custom",
+          name: "battle_style",
+          select: 1,
+          list: [
+            {
+              name: "style_dueling",
+              fines: [
+                {
+                  level: 2,
+                  type: "plus",
+                  keyword: "bonus",
+                  details: "on_attack_signle_one_handed",
+                },
+              ],
+            },
+            {
+              name: "style_defence",
+              fines: [
+                {
+                  level: 2,
+                  type: "plus",
+                  keyword: "bonus",
+                  details: "on_armor_if_armor",
+                },
+              ],
+  
+              qualities: [
+                {
+                  armor_bonus: 1,
+                }
+              ]
+            },
+            {
+              name: "style_double_weapon",
+              fines: [
+                {
+                  level: 2,
+                  type: "plus",
+                  keyword: "bonus",
+                  details: "on_damage_second_attack",
+                },
+              ],
+            },
+            {
+              name: "style_archery",
+              fines: [
+                {
+                  level: 2,
+                  type: "plus",
+                  keyword: "aim_bonus",
+                  details: "plus_2_on_ranged",
+                },
+              ],
+  
+              specials: [
+                {
+                  level: 1,
+                  type: "weapon_ranged",
+                  aim_bonus: 2,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          level: 3,
+          type: "spells",
+          name: "spells",
+          select: [ 0, 2, 3, 3, 4,  4, 5, 5, 6, 6,  7, 7, 8, 8, 9,   9, 10, 11, 11, 11],
+          mana_min: 1,
+          mana_max: [ 0, 1, 1, 1, 2,  2, 2, 2, 3, 3,  3, 3, 4, 4, 4,  4, 5, 5, 5, 5, ],
+          classes: ["ranger"],
+        },
+        {
+          level: 4,
+          type: "feats",
+        },
+        {
+          level: 8,
+          type: "feats",
+        },
+        {
+          level: 12,
+          type: "feats",
+        },
+        {
+          level: 16,
+          type: "feats",
+        },
+        {
+          level: 19,
+          type: "feats",
+        },
+      ]
+  },
+
   //NOTE - Rogue -------------------------------------------------------------------------
 
   rogue: {
@@ -3118,7 +4197,7 @@ export default {
               },
               {
                 level: 6,
-                spell: spells.read_thoughts,
+                spell: spells.divine_channel_read_thoughts,
               },
               {
                 level: 8,
@@ -5353,7 +6432,22 @@ export default {
     ],
     spell_attribute: "charisma",
 
-
+    settings: [
+      {
+        type: "skills",
+        name: "skills",
+        select: 2,
+        num: "mastery",
+        list: [
+          "intimidation",
+          "arcana",
+          "deception",
+          "insight",
+          "religion",
+          "persuasion",
+        ],
+      },
+    ]
   },
 
   //NOTE - Wizard -------------------------------------------------------------------------
@@ -6053,1084 +7147,5 @@ export default {
         type: "feats",
       },
     ],
-  },
-
-  //NOTE - Ranger
-
-  ranger: {
-    name: "ranger",
-    details: "ranger_details",
-
-    hp_dice: 10,
-
-    proficiencies: {
-      armor: [armory.light, armory.medium, armory.shields],
-      weapons: [weaponry.simple, weaponry.military],
-    },
-
-    saving: ["strength", "dexterity"],
-    stats_base: [
-      "dexterity",
-      "strength",
-      "wisdom",
-      "constitution",
-      "intelligence",
-      "charisma",
-    ],
-    spell_attribute: "wisdom",
-
-    equipment: [
-      {
-        level: 1,
-        weapon: [[weapons.longbow, 1]],
-        inventory: [
-          [items.arrow, 20],
-          [items.quiver, 1],
-        ],
-      },
-      {
-        level: 2,
-        inventory: [
-          [items.focus, 1],
-        ],
-      },
-    ],
-
-    charges: [
-      {
-        level: 2,
-        name: "spell_slots",
-        type: "long_rest",
-        list: [
-          ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-          ["[2]", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["[3]", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
-          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
-        ],
-      },
-    ],
-
-    fines: [
-      {
-        level: 8,
-        type: "plus",
-        keyword: "no_speed_fee",
-        details: "on_nonmagic_hard_area",
-      },
-      {
-        level: 8,
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_saving_from_plants",
-      },
-      {
-        level: 18,
-        type: "advantage",
-        keyword: "no_disadvantage",
-        details: "on_attacking_invisible",
-      },
-      {
-        level: 18,
-        type: "plus",
-        keyword: "knowledge",
-        details: "of_all_invisible_30",
-      },
-    ],
-
-    spells: [
-      {
-        spell:spells.rangers_companion,
-      },
-      {
-        level:5,
-        spell:spells.extra_attack,
-      },
-      {
-        level:14,
-        spell:spells.disappearance,
-      },
-      {
-        level:20,
-        spell:spells.enemy_killer,
-      },
-    ],
-
-    settings: [
-      {
-        level:3,
-        type:"custom",
-        name:"subclass",
-        select: 1,
-        list: [
-          {
-            name:"hunter",
-            details:"hunter_details",
-
-            settings: [
-              {
-                level:3,
-                type:"custom",
-                name:"prey",
-                select: 1,
-                list: [
-                  {
-                    spells: [
-                      {
-                        spell:spells.horde_breaker,
-                      }
-                    ]
-                  },
-                  {
-                    spells: [
-                      {
-                        spell:spells.giant_killer,
-                      }
-                    ]
-                  },
-                  {
-                    spells: [
-                      {
-                        spell:spells.colossus_slayer,
-                      }
-                    ]
-                  },
-                ],
-              },
-              {
-                level:7,
-                type:"custom",
-                name:"style_protection",
-                select: 1,
-                list: [
-                  {
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "plus_4_armor",
-                        on_provoked_attacks: "on_next_attacks",
-                      },
-                    ]
-                  },
-                  {
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "disadvantage",
-                        on_provoked_attacks: "on_attacking_invisible",
-                      }
-                    ]
-                  },
-                  {
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        on_provoked_attacks: "fear_against",
-                      }
-                    ]
-                  },
-                ],
-              },
-              {
-                level:11,
-                type:"custom",
-                name:"multiattack",
-                select: 1,
-                list: [
-                  {
-                    spells: [
-                      {
-                        spell:spells.whirlwind_attack,
-                      }
-                    ]
-                  },
-                  {
-                    spells: [
-                      {
-                        spell:spells.volley,
-                      }
-                    ]
-                  },
-                ]
-              },
-              {
-                level:15,
-                type:"custom",
-                name:"style_protection",
-                select: 1,
-                list: [
-                  {
-                    spells: [
-                      {
-                        spell:spells.uncanny_dodge,
-                      }
-                    ]
-                  },
-                  {
-                    spells: [
-                      {
-                        spell:spells.stand_against_the_tide,
-                      }
-                    ]
-                  },
-                  {
-                    fines: [
-                      {
-                        type: "resistance",
-                        keyword: "fine_dodge",
-                        details: "from_aoe_effects",
-                      },
-                    ]
-                  },
-                ]
-              }
-            ]
-          },
-          {
-            name:"beastmaster",
-            details:"beastmaster_details",
-
-            settings: [
-              {
-                level:3,
-                type:"custom",
-                name:"companion",
-                select: 1,
-                list: [
-                  {
-                    spells: [
-                      {
-                        spell:spells.rangers_companion,
-                      }
-                    ]
-                  },
-                  {
-                    spells: [
-                      {
-                        spell:spells.primal_companion,
-                      }
-                    ]
-                  },
-                ]
-              },
-            ]
-          }
-        ],
-      },
-      {
-        level:1,
-        type:"custom",
-        name:"favor",
-        select: 1,
-        list: [
-          {
-            name:"favored_enemy",
-            details:"favored_enemy_details",
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                name: "favored_enemy",
-                select: [1,1,1,1,1, 2,2,2,2,2, 2,2,2,3,3, 3,3,3,3,3],
-                list: [
-                  {
-                    name: "aberrations",
-                    details: "aberrations_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_aberrations_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_aberrations_against",
-                      },
-                    ],
-
-                    proficiencies: {
-                      languages: [lang.deep],
-                    },
-                  },
-                  {
-                    name: "beasts",
-                    details: "beasts_details",
-                    
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_beasts_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_beasts_against",
-                      },
-                    ],
-
-                    proficiencies: {
-                      languages: [lang.animal],
-                    },
-                  },
-                  {
-                    name: "celestials",
-                    details: "celestials_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_celestials_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_celestials_against",
-                      },
-                    ],
-
-                    proficiencies: {
-                      languages: [lang.sky],
-                    },
-                  },
-                  {
-                    name: "constructs",
-                    details: "constructs_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_constructs_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_constructs_against",
-                      },
-                    ],
-                  },
-                  {
-                    name: "dragons",
-                    details: "dragons_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_dragons_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_dragons_against",
-                      },
-                    ],
-        
-                    proficiencies: {
-                      languages: [lang.dragon],
-                    },
-                  },
-                  {
-                    name: "elementals",
-                    details: "elementals_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_elementals_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_elementals_against",
-                      },
-                    ],
-
-                    proficiencies: {
-                      languages: [lang.primordial],
-                    },
-                  },
-                  {
-                    name: "feys",
-                    details: "feys_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_feys_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_feys_against",
-                      },
-                    ],
-        
-                    proficiencies: {
-                      languages: [lang.sylvan],
-                    },
-                  },
-                  {
-                    name: "fiends",
-                    details: "fiends_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_fiends_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_fiends_against",
-                      },
-                    ],
-
-                    proficiencies: {
-                      languages: [lang.demonic,lang.tiefling],
-                    },
-                  },
-                  {
-                    name: "giants",
-                    details: "giants_details",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_giants_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_giants_against",
-                      },
-                    ],
-
-                    proficiencies: {
-                      languages: [lang.giant],
-                    },
-                  },
-                  {
-                    name: "monstrosities",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_monstrosities_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_monstrosities_against",
-                      },
-                    ],
-                  },
-                  {
-                    name: "oozes",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_oozes_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_oozes_against",
-                      },
-                    ]
-                  },
-                  {
-                    name: "plants",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_plants_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_plants_against",
-                      },
-                    ]
-                  },
-                  {
-                    name: "undeads",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_undeads_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_undeads_against",
-                      },
-                    ],                    
-                  },
-                  {
-                    name: "two_other_races",
-        
-                    fines: [
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "wisdom_two_other_races_against",
-                      },
-                      {
-                        type: "advantage",
-                        keyword: "advantage",
-                        details: "intelligence_two_other_races_against",
-                      },
-                    ]
-                  },
-        
-                ]
-              },
-            ]
-          },
-          {
-            name:"favored_foe",
-            details:"favored_foe_details",
-
-            charges: [
-              {
-                level: 3,
-                name: "favored_foe_slots",
-                type: "long_rest",
-                foo: "Num_Mastery",
-                list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-                ],
-              },
-            ],
-
-            spells: [
-              {
-                level:1,
-                spell:spells.favored_foe,
-              }
-            ]
-          }
-        ]
-      },
-      {
-        level:1,
-        type:"custom",
-        name:"exploration",
-        select: 1,
-        list: [
-          {
-            name:"natural_explorer",
-            details:"natural_explorer_details",
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                name: "favored_terrain",
-                select: [1,1,1,1,1, 2,2,2,2,3, 3,3,3,3,3, 3,3,3,3,3],
-                list: [
-                  {
-                    name: "arctic",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_arctic",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_arctic",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },  
-                  {
-                    name: "coast",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_coast",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_coast",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },  
-                  {
-                    name: "desert",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_desert",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_desert",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  }, 
-                  {
-                    name: "forest",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_forest",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_forest",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },  
-                  {
-                    name: "grassland",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_grassland",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_grassland",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },
-                  {
-                    name: "mountain",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_mountain",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_mountain",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },
-                  {
-                    name: "swamp",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_swamp",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_swamp",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },
-                  {
-                    name: "underdark",
-
-                    fines: [
-                      {
-                        type: "plus",
-                        keyword: "proficiency_bonus",
-                        details: "intelligence_wisdom_underdark",
-                      },
-                      {
-                        type: "plus",
-                        keyword: "travel_underdark",
-                        details: "terrain_advantages",
-                      },
-                    ],
-                  },
-                ]
-              },
-            ]
-          },
-          {
-            name:"deft_explorer",
-            details:"deft_explorer_details",
-
-            qualities: [
-              {
-                level: 6,
-                speed_bonus: 5,
-              }
-            ],
-
-            fines: [
-              {
-                level: 6,
-                type: "plus",
-                keyword: "climbing_and_swimming",
-                details: "without_speed_fee",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "exhaust_rediction",
-                details: "in_short_rest",
-              },
-            ],
-
-            charges: [
-              {
-                level: 10,
-                name: "tireless_slots",
-                type: "long_rest",
-                foo: "Num_Mastery",
-                list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
-                ],
-              },
-            ],
-
-            spells: [
-              {
-                level: 10,
-                spell: spells.tireless,
-              }
-            ],
-
-            settigns: [
-              {
-                level: 1,
-                type: "skills",
-                name: "skills",
-                select: 1,
-                bonus: "mastery",
-                list: [
-                  "investigation",
-                  "athletics",
-                  "perception",
-                  "survival",
-                  "nature",
-                  "insight",
-                  "stealth",
-                  "animal_hanging"
-                ],
-              },
-              {
-                  level: 1,
-                  type: "languages",
-                  name: "languages",
-                  select: 2,
-                  filter: "no_used",
-              },
-            ]
-          }
-        ]
-      },
-      {
-        level:4,
-        type:"custom",
-        name:"primal_sense",
-        select: 1,
-        list: [
-          {
-            spells: [
-              {
-                level:3,
-                spell:spells.primeval_awareness_favored,
-              },
-              {
-                level:3,
-                spell:spells.primeval_awareness_favored,
-              },
-            ]
-          },
-          {
-            spells: [
-              {
-                level:3,
-                spell:spells.speak_with_animals_ranger,
-              },
-              {
-                level:5,
-                spell:spells.beast_sense_ranger,
-              },
-              // {
-              //   level:9,
-              //   spell:spells.speak_with_plants_ranger,
-              // },
-              // {
-              //   level:13,
-              //   spell:spells.locate_creature_ranger,
-              // },
-              {
-                level:17,
-                spell:spells.commune_with_nature_ranger,
-              },
-            ]
-          },
-        ],
-      },
-      {
-        level:10,
-        type:"custom",
-        name:"disguise",
-        select: 1,
-        list: [
-          {
-            spells: [
-              {
-                spell:spells.disguise_on_sight
-              }
-            ]
-          },
-          {
-            charges: [
-              {
-                level: 2,
-                name: "disguise_nature_slots",
-                type: "long_rest",
-                foo: "Num_Mastery",
-                list: [
-                  ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                ],
-              },
-            ],
-
-            spells: [
-              {
-                spell:spells.disguise_nature
-              }
-            ]
-          }
-        ]
-      },
-      {
-        level: 1,
-        type: "skills",
-        name: "skills",
-        select: 3,
-        bonus: "mastery",
-        list: [
-          "investigation",
-          "athletics",
-          "perception",
-          "survival",
-          "nature",
-          "insight",
-          "stealth",
-          "animal_hanging"
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        name: "armor_class",
-        select: 1,
-        list: [
-          {
-            equipment: [
-              {
-                level: 1,
-                armor: [[armors.scalemail, 1]],
-              },
-            ],
-            fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
-          },
-          {
-            equipment: [
-              {
-                level: 1,
-                armor: [[armors.leather, 1]],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        name: "weapons",
-        select: 1,
-        list: [
-          {
-            equipment: [
-              {
-                weapon: [ [weapons.shortsword, 2]],
-              },
-            ],
-          },
-          {
-            settings: [
-              {
-                type: "weapons",
-                name: "weapons",
-                select: 1,
-                list: [
-                  [weapons.quarterstaff, 1],
-                  [weapons.mace, 1],
-                  [weapons.club, 1],
-                  [weapons.dagger, 1],
-                  [weapons.spear, 1],
-                  [weapons.light_hammer, 1],
-                  [weapons.javelin, 1],
-                  [weapons.greatclub, 1],
-                  [weapons.handaxe, 1],
-                  [weapons.sickle, 1],
-                ],
-              },
-              {
-                type: "weapons",
-                name: "weapons",
-                select: 1,
-                list: [
-                  [weapons.quarterstaff, 1],
-                  [weapons.mace, 1],
-                  [weapons.club, 1],
-                  [weapons.dagger, 1],
-                  [weapons.spear, 1],
-                  [weapons.light_hammer, 1],
-                  [weapons.javelin, 1],
-                  [weapons.greatclub, 1],
-                  [weapons.handaxe, 1],
-                  [weapons.sickle, 1],
-                ],
-              },
-            ]
-          }
-        ]
-      },
-      {
-        level: 1,
-        type: "inventory_packs",
-        name: "packs",
-        select: 1,
-        list: [
-          [packs.dungeoneers, 1],
-          [packs.explorers, 1],
-        ],
-      },
-      {
-        level: 2,
-        type: "custom",
-        name: "battle_style",
-        select: 1,
-        list: [
-          {
-            name: "style_dueling",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "bonus",
-                details: "on_attack_signle_one_handed",
-              },
-            ],
-          },
-          {
-            name: "style_defence",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "bonus",
-                details: "on_armor_if_armor",
-              },
-            ],
-
-            qualities: [
-              {
-                armor_bonus: 1,
-              }
-            ]
-          },
-          {
-            name: "style_double_weapon",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "bonus",
-                details: "on_damage_second_attack",
-              },
-            ],
-          },
-          {
-            name: "style_archery",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "aim_bonus",
-                details: "plus_2_on_ranged",
-              },
-            ],
-
-            specials: [
-              {
-                level: 1,
-                type: "weapon_ranged",
-                aim_bonus: 2,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        level: 3,
-        type: "spells",
-        name: "spells",
-        select: [ 0, 2, 3, 3, 4,  4, 5, 5, 6, 6,  7, 7, 8, 8, 9,   9, 10, 11, 11, 11],
-        mana_min: 1,
-        mana_max: [ 0, 1, 1, 1, 2,  2, 2, 2, 3, 3,  3, 3, 4, 4, 4,  4, 5, 5, 5, 5, ],
-        classes: ["ranger"],
-      },
-      {
-        level: 4,
-        type: "feats",
-      },
-      {
-        level: 8,
-        type: "feats",
-      },
-      {
-        level: 12,
-        type: "feats",
-      },
-      {
-        level: 16,
-        type: "feats",
-      },
-      {
-        level: 19,
-        type: "feats",
-      },
-    ]
   },
 };
