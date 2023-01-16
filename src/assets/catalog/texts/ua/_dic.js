@@ -2721,6 +2721,9 @@ export default {
     college_valor: classes.college_valor,
     college_valor_details: classes.college_valor_details,
 
+    college_lore: classes.college_lore,
+    college_lore_details: classes.college_lore_details,
+
     on_damage_and_ac: "можна використовувати для пошкодження або броні",
 
     spell_cutting_word: spells.cutting_word,
@@ -3857,4 +3860,13 @@ export default {
     spell_primal_companion_details_11: spells.primal_companion_details_11,
     spell_primal_companion_details_15: spells.primal_companion_details_15,
     spell_primal_companion_expanded: spells.primal_companion_expanded,
+
+    sorcerer: classes.sorcerer,
+    sorcerer_details: classes.sorcerer_details,
+
+    sorcerer_dragon_blood: classes.sorcerer_dragon_blood,
+    sorcerer_dragon_blood_details: classes.sorcerer_dragon_blood_details,
+
+    sorcerer_wild_magic: classes.sorcerer_wild_magic,
+    sorcerer_wild_magic_details: classes.sorcerer_wild_magic_details,
 }
