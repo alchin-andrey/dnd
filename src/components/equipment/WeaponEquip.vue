@@ -118,6 +118,7 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 
 export default {
 	name: "WeaponEquip",
@@ -141,7 +142,8 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "Mastery", "proficiencies_Arr_All", "class_Specials_Filter_Lvl"]),
+		...mapState(useMYStore, ["MY", "Mastery", "class_Specials_Filter_Lvl"]),
+		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
     shown_ACW() {
@@ -208,7 +210,6 @@ export default {
 		},
 
 		aim_Range_Shown_Min() {
-			const melee = this.weapon[0].melee; //Ближнее
 			const min = this.weapon[0].range_min;
 			const max = this.weapon[0].range_max;
 			return min && max;
@@ -252,12 +253,6 @@ export default {
 			for (let i in weapon_type) {
 				type_arr.push(weapon_type[i].name);
 			}
-
-			// for (let i in weapon_type) {
-			// 	if (i != 0) {
-			// 		type_arr.push(weapon_type[i].name);
-			// 	}
-			// }
 
 			let mastery = false;
 			type_arr.forEach((el) =>

@@ -49,10 +49,10 @@
 		<!-- proficiencies -->
 		<my-wrapper gap_8 hr>
 			<my-inventory
-				v-for="(val, name) in MY.proficiencies"
+				v-for="name in proficiencies"
 				:key="name"
 				:title="name"
-				:item="proficiencies_Arr_REC(name)"
+				:item="proficiencies_Race_Params(name)"
 			>
 			</my-inventory>
 		</my-wrapper>
@@ -126,17 +126,20 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "RaceParameters",
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["race_page"]),
     ...mapState(useMYStore, ["MY", "Mastery"]),
+    ...mapState(useProficienciesStore, ["proficiencies"]),
     // GETTERS
     ...mapState(useStatsStore, ["stats_Keys", "stats_Race_Page_Numb",]),
     ...mapState(useSkillsStore, ["skills_All_RE",]),
     ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
     ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
+    ...mapState(useProficienciesStore, ["proficiencies_Race_Params"]),
 
     t_Story() {
       return this.t(this.MY.race.details)
@@ -165,20 +168,6 @@ export default {
 			race_numb ? summ += race_numb : 0
 			ethnos_numb ? summ += ethnos_numb : 0
 			return summ;
-		},
-
-    proficiencies_Arr: (state) => (obj, kay) => {
-			let arr = [];
-			obj?.[kay] ? arr = obj[kay].map(x => x.name) : null
-			return arr;
-		},
-
-    proficiencies_Arr_REC: (state) => (kay) => {
-      let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay)
-      let ethnos_prof = state.proficiencies_Arr(state.MY.ethnos.proficiencies, kay)
-      let custom_prof = []
-      kay === "languages" ? custom_prof = state.languages_Custom_Arr_RE : null
-			return race_prof.concat(ethnos_prof).concat(custom_prof);
 		},
 	},
 };

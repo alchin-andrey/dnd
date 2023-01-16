@@ -67,6 +67,7 @@ import EthnosCard from "@/components/settings/1_settings__race/EthnosCard.vue";
 
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "RaceSetting__Ethnos",
 	components: {
@@ -76,17 +77,13 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(useMYStore, ["languages_Custom_Arr_RE"]),
+		...mapState(useProficienciesStore, ["proficiencies_Arr_Race"]),
 
 		shown_Spells_Race() {
 			let race_spells = this.MY.race.spells;
 			let lvl = this.MY.level;
 			let spells_lvl = race_spells?.[0].level <= lvl;
 			return race_spells && spells_lvl;
-		},
-
-		proficiencies_Arr_Race() {
-			let obj = this.MY.race.proficiencies;
-			return (kay) => obj?.[kay].map((x) => x.name);
 		},
 	},
 };
