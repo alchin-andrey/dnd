@@ -51,7 +51,7 @@
 
 <script>
 export default {
-	name: "MyArmor",
+	name: "ArmorEquip",
 	data() {
 		return {
 			dialogVisible: false,

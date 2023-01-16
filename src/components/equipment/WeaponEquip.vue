@@ -65,8 +65,6 @@
 				addition="MAX"
 				:numb="weapon[0].range_max"
 			/>
-			<!-- <my-attribute title="aim_range" type="MIN"  :numb="weapon[0].range_min" feet dot />
-			<my-attribute title="aim_range" type="MAX" :numb="weapon[0].range_max" feet dot /> -->
 		</my-wrapper>
 
 		<my-wrapper>
@@ -122,7 +120,7 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 
 export default {
-	name: "MyWeapon",
+	name: "WeaponEquip",
 	data() {
 		return {
 			dialogVisible: false,

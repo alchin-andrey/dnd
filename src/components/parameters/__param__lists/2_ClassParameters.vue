@@ -2,7 +2,7 @@
 	<transition name="mode-fade" mode="out-in">
 		<section v-if="!class_page.shown.stats">
 			<!-- stats -->
-				<ClassParam__Stats hr />
+			<ClassParam__Stats hr />
 			<!-- stats -->
 
 			<!-- attributes -->
@@ -20,32 +20,9 @@
 			</my-wrapper>
 			<!-- attributes -->
 
-			<!-- qualities -->
-				<ClassParam__Qualities hr/>
-			<!-- qualities -->
-
-			<!-- charges -->
-			<my-wrapper v-if="charges_Class_Params.length !== 0" hr>
-				<my-charges
-					v-for="item in charges_Class_Params"
-					:key="item"
-					:charge="item"
-				>
-				</my-charges>
-			</my-wrapper>
-			<!-- charges -->
-
-			<!-- //NOTE - proficiencies -->
-			<my-wrapper gap_8 hr>
-				<my-inventory
-					v-for="(val, name) in MY.proficiencies"
-					:key="name"
-					:title="name"
-					:item="proficiencies_Arr_Class(name)"
-					:item_old="proficiencies_Arr_REC(name)"
-				>
-				</my-inventory>
-			</my-wrapper>
+			<ClassParam__Qualities hr />
+			<ClassParam__Charges hr />
+      <ClassParam__Proficiencies hr />
 
 			<!-- //NOTE - fines -->
 			<my-wrapper
@@ -143,27 +120,10 @@
 			</my-wrapper>
 
 			<!-- //NOTE - weapon -->
-			<my-wrapper v-if="weapons_Equip_Class.length !== 0" gap_26 hr>
-				<my-weapon
-					v-for="weapon in weapons_Equip_Class"
-					:key="weapon"
-					:weapon="weapon"
-				>
-				</my-weapon>
-			</my-wrapper>
+			<ClassParam__Weapons hr />
 
 			<!-- //NOTE - EquipKit -->
-				<ClassParam__EquipKit hr/>
-
-			<!-- //NOTE - armor -->
-			<!-- <my-wrapper v-if="armors_Equip_Class.length !== 0" gap_26 hr>
-				<my-armor
-					v-for="armor in armors_Equip_Class"
-					:key="armor"
-          :armor="armor"
-				>
-				</my-armor>
-			</my-wrapper> -->
+			<ClassParam__EquipKit hr />
 
 			<!-- //NOTE - text -->
 			<!-- <div class="story int-400">
@@ -182,9 +142,9 @@
 
 		<section v-else>
 			<!-- qualities-stats -->
-				<ClassParam__Qualities hr/>
+			<ClassParam__Qualities hr />
 			<!-- qualities-stats -->
-      
+
 			<!-- attributes-stats -->
 			<my-wrapper>
 				<my-attribute
@@ -212,20 +172,12 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
-import { useEquipStore } from "@/stores/modules/EquipStore";
 
-import ClassParam__Stats from "@/components/parameters/2_param__class/ClassParam__Stats.vue";
-import ClassParam__Qualities from "@/components/parameters/2_param__class/ClassParam__Qualities.vue";
-import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassParam__EquipKit.vue";
+import ClassParam from "@/components/parameters/2_param__class/ClassParam.js";
 
 export default {
 	name: "ClassParameters",
-	components: {
-		ClassParam__Stats,
-		ClassParam__Qualities,
-
-		ClassParam__EquipKit,
-	},
+	mixins: [ClassParam],
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["race_page", "class_page"]),
@@ -234,8 +186,6 @@ export default {
 		...mapState(useMYStore, [
 			"Mastery",
 			"MY_Subclass",
-			"proficiencies_Arr_REC",
-			"proficiencies_Arr_Class",
 			"class_Specials_Filter_Lvl",
 
 			"level_Filter",
@@ -249,7 +199,6 @@ export default {
 		...mapState(useSkillsStore, ["skills_All_RE", "skills_Keys"]),
 		...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
 		...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
-    ...mapState(useEquipStore, ["weapons_Equip_Class", "inventory_Equip_Class", "packs_Equip_Class"]),
 
 		t_Story() {
 			return this.t(this.MY.class.details);
@@ -337,123 +286,6 @@ export default {
 			return skill_mastery ? skill_mastery : half_mastery;
 		},
 
-		charges_Class_Arr() {
-			let arr = this.level_Filter(this.MY.class.charges);
-			return arr ? arr : [];
-		},
-
-		charges_Subclass_Arr() {
-			let arr = this.level_Filter(this.MY_Subclass?.charges);
-			return arr ? arr : [];
-		},
-
-		charges_Class_Params() {
-			const charges_class = this.charges_Class_Arr;
-			const charges_subclass = this.charges_Subclass_Arr;
-			return charges_class.concat(charges_subclass);
-		},
-
-		// equipments_Class_Arr() {
-		// 	let arr = this.level_Filter(this.MY.class.equipment);
-		// 	return arr ? arr : [];
-		// },
-
-		// equipments_Subclass_Arr() {
-		// 	let arr = this.level_Filter(this.MY_Subclass?.equipment);
-		// 	return arr ? arr : [];
-		// },
-
-		// equipments_Class_Params() {
-		// 	const equip_class = this.equipments_Class_Arr;
-		// 	const equip_subclass = this.equipments_Subclass_Arr;
-		// 	return equip_class.concat(equip_subclass);
-		// },
-
-		// item_Equip_Arr: (state) => (item) => {
-		// 	let arr = [];
-		// 	state.equipments_Class_Params?.forEach((el) =>
-		// 		el[item]?.forEach((sub_el) => arr.push(sub_el))
-		// 	);
-		// 	return arr;
-		// },
-
-		// inventory_Equip_Class() {
-		// 	return this.item_Equip_Arr("inventory");
-		// },
-
-		// packs_Equip_Class() {
-		// 	return this.item_Equip_Arr("inventory_packs");
-		// },
-
-		shown_Invenory_Equip() {
-			return (
-				this.inventory_Equip_Class.length !== 0 ||
-				this.packs_Equip_Class.length !== 0
-			);
-		},
-
-		// weapons_Equip_Class() {
-		// 	return this.item_Equip_Arr("weapon");
-		// },
-
-		// weapons_Equip_Class() {
-		// 	let arr = [];
-		// 	this.equipments_Class_Arr?.forEach((el) =>
-		// 		el.weapon?.forEach((weapon) => arr.push(weapon))
-		// 	);
-		// 	return arr;
-		// },
-
-		// inventory_Equip_Class() {
-		// 	let arr = [];
-		// 	this.equipments_Class_Arr?.forEach((el) =>
-		// 		el.inventory?.forEach((inventory) => arr.push(inventory))
-		// 	);
-		// 	return arr;
-		// },
-
-		// armors_Equip_Class() {
-		// 	let arr = [];
-		// 	this.equipments_Class_Arr?.forEach((el) =>
-		// 		el.armor?.forEach((armor) => arr.push(armor))
-		// 	);
-		// 	return arr;
-		// },
-
-		// armors_Element() {
-		// 	let arr = null;
-		// 	this.equipments_Class_Arr?.forEach((el) =>
-		// 		el.armor?.forEach(armor => arr = armor[0])
-		// 	);
-		// 	return arr;
-		// },
-
-		// proficiencies_Arr: (state) => (obj, kay) => {
-		// 	let arr = [];
-		// 	obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
-		// 	return arr;
-		// },
-
-		// proficiencies_Arr_REC: (state) => (kay) => {
-		// 	let race_prof = state.proficiencies_Arr(state.MY.race.proficiencies, kay);
-		// 	let ethnos_prof = state.proficiencies_Arr(
-		// 		state.MY.ethnos.proficiencies,
-		// 		kay
-		// 	);
-		// 	let custom_prof = [];
-		// 	kay === "languages"
-		// 		? (custom_prof = state.languages_Custom_Arr_RE)
-		// 		: null;
-		// 	return race_prof.concat(ethnos_prof).concat(custom_prof);
-		// },
-
-		// proficiencies_Arr_Class: (state) => (kay) => {
-		// 	let class_prof = state.proficiencies_Arr(
-		// 		state.MY.class.proficiencies,
-		// 		kay
-		// 	);
-		// 	return class_prof;
-		// },
 	},
 };
 </script>
