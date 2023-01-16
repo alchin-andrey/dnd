@@ -4111,7 +4111,7 @@ export default {
               },
               {
                 level: 8,
-                spell: spells.divine_strike_light,
+                spell: spells.divine_strike_radiant,
               },
 
               {
@@ -6445,6 +6445,91 @@ export default {
           "insight",
           "religion",
           "persuasion",
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.club, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.dagger, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.spear, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.javelin, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+          },
+          {
+            equipment: [{ weapon: [[weapons.sickle, 1]] }],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.dart, 10]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            equipment: [
+              {
+                weapon: [[weapons.sling, 1]],
+                inventory: [[items.bullet, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "inventory",
+        name: "inventory",
+        select: 1,
+        list: [[items.component_pouch], [items.focus]],
+      },
+      {
+        level: 1,
+        type: "inventory_packs",
+        name: "packs",
+        select: 1,
+        list: [
+          [packs.dungeoneers, 1],
+          [packs.explorers, 1],
         ],
       },
     ]
