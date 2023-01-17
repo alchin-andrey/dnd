@@ -3870,4 +3870,15 @@ export default {
 
     sorcerer_wild_magic: classes.sorcerer_wild_magic,
     sorcerer_wild_magic_details: classes.sorcerer_wild_magic_details,
+
+    sorcery_slots: "Чародейства",
+    sorcery_slot: "1× Чародейство",
+    sorcery_slot_2: "2× Чародейство",
+    sorcery_slot_3: "3× Чародейство",
+    sorcery_slot_4: "4× Чародейство",
+    sorcery_slot_5: "5× Чародейство",
+    sorcery_slot_6: "6× Чародейство",
+    sorcery_slot_7: "7× Чародейство",
+
+    
 }

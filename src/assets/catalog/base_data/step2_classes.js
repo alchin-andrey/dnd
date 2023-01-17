@@ -6432,6 +6432,67 @@ export default {
     ],
     spell_attribute: "charisma",
 
+    charges: [
+      {
+        level: 2,
+        name: "sorcery_slots",
+        type: "long_rest",
+        list: [
+          ["", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        ],
+      },
+      {
+        level: 1,
+        name: "spell_slots",
+        type: "long_rest",
+        list: [
+          ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+    ],
+
+    equipment: [
+      {
+        level: 1,
+        weapon: [ [weapons.dagger, 2], [weapons.unarmed, 1], ],
+      },
+    ],
+
+    spells: [
+      {
+        level:2,
+        spell:spells.sorcery_to_mana_1,
+      },
+      {
+        level:3,
+        spell:spells.sorcery_to_mana_2,
+      },
+      {
+        level:5,
+        spell:spells.sorcery_to_mana_3,
+      },
+      {
+        level:6,
+        spell:spells.sorcery_to_mana_4,
+      },
+      {
+        level:7,
+        spell:spells.sorcery_to_mana_5,
+      },
+      {
+        level:2,
+        spell:spells.mana_to_sorcery,
+      },
+    ],
+
     settings: [
       {
         type: "skills",
@@ -6531,6 +6592,24 @@ export default {
           [packs.dungeoneers, 1],
           [packs.explorers, 1],
         ],
+      },
+      {
+        level: 1,
+        type: "spells",
+        name: "spells_0",
+        select: [ 4, 4, 4, 5, 5,   5, 5, 5, 5, 6,   6, 6, 6, 6, 6,   6, 6, 6, 6, 6, ],
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["sorcerer"],
+      },
+      {
+        level: 1,
+        type: "spells",
+        name: "spells",
+        select: [2,3,4,5,6, 7,8,9,10,11, 12,12,13,13,14, 14,15,15,15,15],
+        mana_min: 1,
+        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        classes: ["wizard"],
       },
     ]
   },

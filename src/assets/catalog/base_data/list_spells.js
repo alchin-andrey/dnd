@@ -3377,8 +3377,8 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: "dice",
-      impact_damage_type: "bonus_w",
+      impact_type: "bonus",
+      impact_damage_type: null,
 
       impact_size_foo: "Dice_16_58_1010_1512",
       impact_size_str: null,
@@ -8909,6 +8909,228 @@ export default {
       impact_size_saved: null,
     },
   ],
+
+  sorcery_to_mana_1: [
+    {
+      name: "spell_sorcery_to_mana_1",
+      details: "spell_sorcery_to_mana_1_details",
+      expanded: "spell_sorcery_to_mana_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_2",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  sorcery_to_mana_2: [
+    {
+      name: "spell_sorcery_to_mana_2",
+      details: "spell_sorcery_to_mana_2_details",
+      expanded: "spell_sorcery_to_mana_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_3",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  sorcery_to_mana_3: [
+    {
+      name: "spell_sorcery_to_mana_3",
+      details: "spell_sorcery_to_mana_3_details",
+      expanded: "spell_sorcery_to_mana_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_5",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  sorcery_to_mana_4: [
+    {
+      name: "spell_sorcery_to_mana_4",
+      details: "spell_sorcery_to_mana_4_details",
+      expanded: "spell_sorcery_to_mana_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_6",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  sorcery_to_mana_5: [
+    {
+      name: "spell_sorcery_to_mana_5",
+      details: "spell_sorcery_to_mana_5_details",
+      expanded: "spell_sorcery_to_mana_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_7",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+
 
   // All spells / 0 ----------------------------------------------------------
 
