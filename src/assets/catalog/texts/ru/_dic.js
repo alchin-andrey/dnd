@@ -3873,12 +3873,76 @@ export default {
 
     sorcery_slots: "Чародейства",
     sorcery_slot: "1× Чародейство",
+    sorcery_slot_2_plus: "1+ × Чародейство",
     sorcery_slot_2: "2× Чародейство",
+    sorcery_slot_2_plus: "2+ × Чародейство",
     sorcery_slot_3: "3× Чародейство",
-    sorcery_slot_4: "4× Чародейство",
-    sorcery_slot_5: "5× Чародейство",
-    sorcery_slot_6: "6× Чародейство",
-    sorcery_slot_7: "7× Чародейство",
 
-    
+    spell_sorcery_to_mana: spells.sorcery_to_mana,
+    spell_sorcery_to_mana_details: spells.sorcery_to_mana_details,
+    spell_sorcery_to_mana_expanded: spells.sorcery_to_mana_expanded,
+
+    spell_mana_to_sorcery: spells.mana_to_sorcery,
+    spell_mana_to_sorcery_details: spells.mana_to_sorcery_details,
+    spell_mana_to_sorcery_expanded: spells.mana_to_sorcery_expanded,
+
+    metamagic: "метамагия",
+
+    spell: "заклинание",
+
+    dices: "кости",
+
+    of_damage: "урона",
+
+    spell_metamagic_careful: spells.metamagic_careful,
+    spell_metamagic_careful_details: spells.metamagic_careful_details,
+    spell_metamagic_careful_expanded: spells.metamagic_careful_expanded,
+
+    spell_metamagic_distant: spells.metamagic_distant,
+    spell_metamagic_distant_details: spells.metamagic_distant_details,
+    spell_metamagic_distant_expanded: spells.metamagic_distant_expanded,
+
+    spell_metamagic_empowered: spells.metamagic_empowered,
+    spell_metamagic_empowered_details: spells.metamagic_empowered_details,
+    spell_metamagic_empowered_expanded: spells.metamagic_empowered_expanded,
+
+    spell_metamagic_extended: spells.metamagic_extended,
+    spell_metamagic_extended_details: spells.metamagic_extended_details,
+    spell_metamagic_extended_expanded: spells.metamagic_extended_expanded,
+
+    spell_metamagic_heightened: spells.metamagic_heightened,
+    spell_metamagic_heightened_details: spells.metamagic_heightened_details,
+    spell_metamagic_heightened_expanded: spells.metamagic_heightened_expanded,
+
+    spell_metamagic_quickened: spells.metamagic_quickened,
+    spell_metamagic_quickened_details: spells.metamagic_quickened_details,
+    spell_metamagic_quickened_expanded: spells.metamagic_quickened_expanded,
+
+    spell_metamagic_subtle: spells.metamagic_subtle,
+    spell_metamagic_subtle_details: spells.metamagic_subtle_details,
+    spell_metamagic_subtle_expanded: spells.metamagic_subtle_expanded,
+
+    spell_metamagic_transmuted: spells.metamagic_transmuted,
+    spell_metamagic_transmuted_details: spells.metamagic_transmuted_details,
+    spell_metamagic_transmuted_expanded: spells.metamagic_transmuted_expanded,
+
+    spell_metamagic_twinned: spells.metamagic_twinned,
+    spell_metamagic_twinned_details: spells.metamagic_twinned_details,
+    spell_metamagic_twinned_expanded: spells.metamagic_twinned_expanded,
+
+    spell_metamagic_seeking: spells.metamagic_seeking,
+    spell_metamagic_seeking_details: spells.metamagic_seeking_details,
+    spell_metamagic_seeking_expanded: spells.metamagic_seeking_expanded,
+
+    spell_magical_direction: spells.magical_direction,
+    spell_magical_direction_details: spells.magical_direction_details,
+    spell_magical_direction_expanded: spells.magical_direction_expanded,
+
+    to_restore_4_sorcery_points: "на восстановление 4× Чародейства",
+
+    plus_3_armor: "— +3 к Броне (применено)",
+
+    dragon_ancestor:"драконий предок",
+
+    to_charisma_dragon: "на проверки Харизмы, связанные с драконами",
 }

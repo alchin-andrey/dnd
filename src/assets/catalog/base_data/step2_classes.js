@@ -94,9 +94,6 @@ export default {
   
       spells: [
         {
-          spell:spells.rangers_companion,
-        },
-        {
           level:5,
           spell:spells.extra_attack,
         },
@@ -6466,34 +6463,226 @@ export default {
       },
     ],
 
+    fines: [
+      {
+        level: 20,
+        type: "plus",
+        keyword: "short_rest",
+        details: "to_restore_4_sorcery_points",
+      }
+    ],
+
     spells: [
       {
         level:2,
-        spell:spells.sorcery_to_mana_1,
-      },
-      {
-        level:3,
-        spell:spells.sorcery_to_mana_2,
-      },
-      {
-        level:5,
-        spell:spells.sorcery_to_mana_3,
-      },
-      {
-        level:6,
-        spell:spells.sorcery_to_mana_4,
-      },
-      {
-        level:7,
-        spell:spells.sorcery_to_mana_5,
+        spell:spells.sorcery_to_mana,
       },
       {
         level:2,
         spell:spells.mana_to_sorcery,
       },
+      {
+        level:5,
+        spell:spells.magical_direction,
+      },
     ],
 
     settings: [
+      {
+        level: 1,
+        type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            name: "sorcerer_dragon_blood",
+            details: "sorcerer_dragon_blood_details",
+
+            proficiencies: {
+              languages: [lang.dragon],
+            },
+
+            hp_bonus: [1,1],
+
+            fines: [
+              {
+                level: 1,
+                type: "resistance",
+                keyword: "no_armor_protection",
+                details: "plus_3_armor",
+              },
+              {
+                level: 1,
+                type: "plus",
+                keyword: "proficiency_bonus",
+                details: "to_charisma_dragon",
+              },
+            ],
+
+            qualities: [
+              {
+                armor_bonus: 3,
+              }
+            ],
+
+            settings: [
+              {
+                level: 6,
+                type: "custom",
+                name: "dragon_ancestor",
+                select: 1,
+                list: [
+                  {
+                    name: "red_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_fire
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_fire
+                      },
+                    ],
+                  },
+                  {
+                    name: "brass_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_fire
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_fire
+                      },
+                    ],
+                  },
+                  {
+                    name: "golden_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_fire
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_fire
+                      },
+                    ],
+                  },
+                  {
+                    name: "silver_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_cold
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_cold
+                      },
+                    ],
+                  },
+                  {
+                    name: "white_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_cold
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_cold
+                      },
+                    ],
+                  },
+                  {
+                    name: "blue_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_electricity
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_electricity
+                      },
+                    ],
+                  },
+                  {
+                    name: "bronze_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_electricity
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_electricity
+                      },
+                    ],
+                  },
+                  {
+                    name: "copper_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_acid
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_acid
+                      },
+                    ],
+                  },
+                  {
+                    name: "black_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_acid
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_acid
+                      },
+                    ],
+                  },
+                  {
+                    name: "green_dragonborn",
+
+                    spells: [
+                      {
+                        level: 6,
+                        spell: spells.elemental_affinity_poison
+                      },
+                      {
+                        level: 6,
+                        spell: spells.dragon_resistanse_poison
+                      },
+                    ],
+                  },
+                ]
+              }
+            ]
+          },
+          {
+            name: "sorcerer_wild_magic",
+            details: "sorcerer_wild_magic_details",
+          },
+          
+        ],
+      },
       {
         type: "skills",
         name: "skills",
@@ -6611,6 +6800,45 @@ export default {
         mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
         classes: ["wizard"],
       },
+      {
+        level: 3,
+        type: "custom",
+        name: "metamagic",
+        select: [0,0,2,2,2, 2,2,2,2,3, 3,3,3,3,3, 3,4,4,4,4],
+        list: [
+          { spells:[{spell:spells.metamagic_careful}] },
+          { spells:[{spell:spells.metamagic_distant}] },
+          { spells:[{spell:spells.metamagic_empowered}] },
+          { spells:[{spell:spells.metamagic_extended}] },
+          { spells:[{spell:spells.metamagic_heightened}] }, // непреодолимое
+          { spells:[{spell:spells.metamagic_quickened}] },
+          { spells:[{spell:spells.metamagic_subtle}] }, // неуловимое
+          { spells:[{spell:spells.metamagic_transmuted}] },
+          { spells:[{spell:spells.metamagic_twinned}] },
+
+          { spells:[{spell:spells.metamagic_seeking}] },
+        ],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },      
     ]
   },
 

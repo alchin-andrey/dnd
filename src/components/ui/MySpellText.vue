@@ -514,6 +514,11 @@ export default {
 			return this.stats_Mod("charisma");
 		},
 
+		Num_CHA_Min1() {
+			let mod = this.stats_Mod("charisma");
+			return mod >= 1 ? mod : 1;
+		},
+
 		Num_CHA_Plus_Lvl_Min1() {
 			let mod = this.stats_Mod("charisma");
 			let lvl = this.MY.level;
