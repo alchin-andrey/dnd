@@ -3,7 +3,7 @@
     
     <!-- RACE ETHNOS -->
 	<div class="selection_menu_wrap">
-		<div class="selection_menu">
+		<section class="selection_menu">
 			<my-selection
 				@click="showSettings__Race('ethnos')"
 				:active="race_page.shown.ethnos"
@@ -11,11 +11,11 @@
 				:type="MY.ethnos.name"
 				:rare="MY.ethnos.rare"
 			></my-selection>
-		</div>
+		</section>
     <!-- RACE ETHNOS -->
 
     <!-- RACE CUSTTOM -->
-		<div
+		<section
 			class="selection_menu"
 			v-if="custom_Race_Settings_Visib"
 		>
@@ -50,11 +50,11 @@
 				:type_arr="spells_Custom_Arr_RE"
 			>
 			</my-selection>
-		</div>
+		</section>
     <!-- RACE CUSTTOM -->
 
     <!-- OTHER RACE SETTINGS -->
-		<div class="selection_menu">
+		<section class="selection_menu">
 			<my-selection
 				@click="showSettings__Race('gender')"
 				:active="race_page.shown.gender"
@@ -107,7 +107,7 @@
 				:type="hair_color_Char_Body.name"
 			>
 			</my-selection>
-		</div>
+		</section>
     <!-- OTHER RACE SETTINGS -->
 	</div>
 	<!-- </div> -->

@@ -16,15 +16,10 @@ import { mapState} from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import ClassSett__Subclass from "@/components/settings/2_settings__class/ClassSett__Subclass.vue";
-import ClassSett__BaseStats from "@/components/settings/2_settings__class/ClassSett__BaseStats.vue";
-
+import ClassSett from "@/components/settings/2_settings__class/ClassSetting.js";
 export default {
 	name: "ClassSettings",
-  components: {
-    ClassSett__Subclass,
-    ClassSett__BaseStats,
-	},
+  mixins: [ClassSett],
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),

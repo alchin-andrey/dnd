@@ -9,15 +9,15 @@
 </template>
 
 <script>
-import { mapState} from "pinia";
-import { usePagesStore } from "@/stores/user/PagesStore";
+// import { mapState} from "pinia";
+// import { usePagesStore } from "@/stores/user/PagesStore";
 
 import RaceParam from "@/components/parameters/1_param__race/RaceParam.js";
 export default {
 	name: "RaceParameters",
   mixins: [RaceParam],
-	computed: {
-		...mapState(usePagesStore, ["race_page"]),
-	},
+	// computed: {
+	// 	...mapState(usePagesStore, ["race_page"]),
+	// },
 };
 </script>
