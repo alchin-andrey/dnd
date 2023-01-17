@@ -25,8 +25,9 @@
       <ClassParam__Proficiencies hr />
 
 			<!-- //NOTE - fines -->
+      <!-- <ClassParam__Fines hr /> -->
 			<my-wrapper
-				v-if="MY.race.fines || MY.ethnos.fines || MY.class.fines"
+				v-if="shown_Fines_All"
 				gap_8
 				hr
 			>
@@ -227,9 +228,9 @@ export default {
 
 		shown_Fines_All() {
 			return (
-				MY.race.fines ||
-				MY.ethnos.fines ||
-				MY.class.fines ||
+				this.MY.race.fines ||
+				this.MY.ethnos.fines ||
+				this.MY.class.fines ||
 				this.fines_Subclass_Lvl.length !== 0
 			);
 		},

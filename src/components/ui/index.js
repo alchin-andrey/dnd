@@ -18,6 +18,9 @@ import MyButtonGender from "@/components/ui/pinia_ui/MyButtonGender.vue";
 import MyAttribute from "@/components/ui/pinia_ui/MyAttribute.vue";
 import MyInventory from "@/components/ui/pinia_ui/MyInventory.vue";
 import MyFines from "@/components/ui/pinia_ui/MyFines.vue";
+import BaseFines from "@/components/ui/pinia_ui/BaseFines.vue";
+
+
 import MySelectionBox from "@/components/ui/pinia_ui/MySelectionBox.vue";
 import MySelectionCard from "@/components/ui/pinia_ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/pinia_ui/MyCardText.vue";
@@ -63,6 +66,8 @@ export default [
   MyAttribute,
   MyInventory,
   MyFines,
+  BaseFines,
+
   MySelectionBox,
   MySelectionCard,
   MyCardText,
