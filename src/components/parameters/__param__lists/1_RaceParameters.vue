@@ -58,47 +58,9 @@
 		</my-wrapper>
 		<!-- proficiencies -->
 
-		<!-- fines -->
     <RaceParam__Fines hr/>
-		<!-- fines -->
-
-		<!-- spells -->
-		<my-wrapper v-if="(shown_Spells_RE || spells_Custom_Obj_RE.length !== 0)" gap_26 hr>
-			<my-spell-text
-				v-for="item in MY.race.spells"
-				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
-			>
-			</my-spell-text>
-			<my-spell-text
-				v-for="item in MY.ethnos.spells"
-				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
-			>
-			</my-spell-text>
-      <my-spell-text
-				v-for="item in spells_Custom_Obj_RE"
-				:key="item"
-				:lvl="1"
-				:spell="item"
-			>
-			</my-spell-text>
-		</my-wrapper>
-		<!-- spells -->
-
-		<!-- text -->
-    <my-wrapper gap_26>
-			<div class="story int-400" v-html="t_Story"></div>
-			<my-card-text
-				v-if="MY.ethnos.name !== 'common'"
-				:title="MY.ethnos.name"
-				:text="MY.ethnos.details"
-				:rare="MY.ethnos.rare"
-			>
-			</my-card-text>
-		</my-wrapper>
+    <RaceParam__Spells hr/>
+    <RaceParam__Text />
 </template>
 
 <script>
@@ -124,22 +86,9 @@ export default {
     // GETTERS
     ...mapState(useStatsStore, ["stats_Keys", "stats_Race_Page_Numb",]),
     ...mapState(useSkillsStore, ["skills_All_RE",]),
-    ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
-    ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
+    // ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
+    // ...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
     ...mapState(useProficienciesStore, ["proficiencies_Race_Params"]),
-
-    t_Story() {
-      return this.t(this.MY.race.details)
-    },
-
-    shown_Spells_RE() {
-			let race_spells = this.MY.race.spells;
-			let ethnos_spells = this.MY.ethnos.spells;
-			let lvl = this.MY.level;
-			let race_lvl = race_spells?.[0].level <= lvl;
-			let ethnos_lvl = ethnos_spells?.[0].level <= lvl;
-			return ethnos_spells && ethnos_lvl || race_spells && race_lvl;
-		},
 
     hp_Bonus() {
 			let increm_1 = this.MY.ethnos.hp_bonus[0];
