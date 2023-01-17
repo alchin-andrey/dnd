@@ -4,6 +4,7 @@ import ClassParam__Qualities from "@/components/parameters/2_param__class/ClassP
 import ClassParam__Charges from "@/components/parameters/2_param__class/ClassParam__Charges.vue";
 import ClassParam__Proficiencies from "@/components/parameters/2_param__class/ClassParam__Proficiencies.vue";
 import ClassParam__Fines from "@/components/parameters/2_param__class/ClassParam__Fines.vue";
+import ClassParam__Spells from "@/components/parameters/2_param__class/ClassParam__Spells.vue";
 import ClassParam__Weapons from "@/components/parameters/2_param__class/ClassParam__Weapons.vue";
 import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassParam__EquipKit.vue";
 
@@ -17,6 +18,7 @@ export default {
   ClassParam__Charges,
   ClassParam__Proficiencies,
   ClassParam__Fines,
+  ClassParam__Spells,
   ClassParam__Weapons,
   ClassParam__EquipKit,
 

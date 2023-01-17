@@ -12,17 +12,42 @@ export const useSpellsStore = defineStore({
 	}),
 
   getters: {
-    spells_Activ_Obj_RE(state) {
-      const MYStore = useMYStore();
-			let arr = [];
-			let i = [];
-			let j = [];
-			MYStore.MY.race.spells ? (i = MYStore.MY.race.spells) : null;
-			MYStore.MY.ethnos.spells ? (j = MYStore.MY.ethnos.spells) : null;
-			i.concat(j).forEach((el) => arr.push(el.spell));
-			return arr;
-			// return i.concat(j);
+    spells_For_Arr_Obj: (state) => (arr_obj) => {
+      let arr_spell = [];
+      arr_obj.forEach((el) => arr_spell.push(el.spell));
+			return arr_spell;
 		},
+
+    spells_Race_Lvl() {
+      const MYStore = useMYStore();
+      const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.race?.spells);
+			return this.spells_For_Arr_Obj(spell_obj);
+		},
+
+		spells_Ethnos_Lvl() {
+      const MYStore = useMYStore();
+			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.spells);
+      return this.spells_For_Arr_Obj(spell_obj);
+		},
+
+    spells_Activ_Obj_RE() {
+			const race_spells = this.spells_Race_Lvl;
+			const ethnos_spells = this.spells_Ethnos_Lvl;
+			return race_spells.concat(ethnos_spells);
+		},
+
+
+    // spells_Activ_Obj_RE(state) {
+    //   const MYStore = useMYStore();
+		// 	let arr = [];
+		// 	let i = [];
+		// 	let j = [];
+		// 	MYStore.MY.race.spells ? (i = MYStore.MY.race.spells) : null;
+		// 	MYStore.MY.ethnos.spells ? (j = MYStore.MY.ethnos.spells) : null;
+		// 	i.concat(j).forEach((el) => arr.push(el.spell));
+		// 	return arr;
+		// 	// return i.concat(j);
+		// },
 
 		spells_Activ_Arr_RE(state) {
 			let arr = [];
@@ -102,7 +127,7 @@ export const useSpellsStore = defineStore({
 			return MYStore.COMMON_Custom_Arr_RE("spells");
 		},
 
-		spells_Custom_Obj_RE() {
+    spells_Custom_Obj_RE() {
 			let arr = [];
 			let pass_obj = this.spells_Pass_Obj_RE;
 			let cusstom_arr = this.spells_Custom_Arr_RE;
@@ -116,6 +141,32 @@ export const useSpellsStore = defineStore({
 			}
 			return arr;
 		},
+
+    spells_Race_Param() {
+			const RE_spells = this.spells_Activ_Obj_RE;
+			const custom_spells = this.spells_Custom_Obj_RE;
+			return RE_spells.concat(custom_spells);
+		},
+
+    spells_Class_Lvl() {
+      const MYStore = useMYStore();
+      const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.class?.spells);
+			return this.spells_For_Arr_Obj(spell_obj);
+		},
+
+    spells_Subclass_Lvl() {
+      const MYStore = useMYStore();
+      const spell_obj = MYStore.level_Filter_Arr(MYStore.MY_Subclass?.spells);
+			return this.spells_For_Arr_Obj(spell_obj);
+		},
+
+    spells_Class_Param() {
+			const class_spells = this.spells_Class_Lvl;
+			const subclass_spells = this.spells_Subclass_Lvl;
+			return class_spells.concat(subclass_spells);
+		},
+
+
   },
   
   actions: {
