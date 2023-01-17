@@ -4,31 +4,34 @@
 			title="armor_class"
 			:type="armor_Name"
 			:numb="armor_Numb"
-		></my-attribute>
-		<my-attribute title="hp_bonus" :numb="hp_Max"></my-attribute>
+		/>
+		<my-attribute 
+    title="hp_bonus" 
+    :numb="hp_Max" 
+    />
 		<my-attribute
 			title="hp_dice"
 			:numb="MY.level"
 			:dice="MY.class.hp_dice"
-		></my-attribute>
+		/>
 		<my-attribute
 			v-if="initiative_Numb"
 			title="initiative"
 			:numb="initiative_Numb"
 			plus
-		></my-attribute>
+		/>
 		<my-attribute
 			v-if="qualities_Numb_Class('speed')"
 			title="speed"
 			:numb="qualities_Numb_Class('speed')"
 			feet
-		></my-attribute>
+		/>
 		<my-attribute
 			v-if="qualities_Numb_Class('vision_night')"
 			title="vision_night"
 			:numb="qualities_Numb_Class('vision_night')"
 			feet
-		></my-attribute>
+		/>
   </my-wrapper>
 </template>
 

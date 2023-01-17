@@ -1,19 +1,9 @@
 <template>
-	<div class="ethnos_attributes">
-		<!-- Этнос_stats -->
-		<my-wrapper>
-			<my-attribute
-				v-for="name in stats_Keys"
-				:key="name"
-				:title="name"
-				:type="`${name}_base`"
-				plus
-				:numb="stats_Race_Page_Numb(name)"
-			>
-			</my-attribute>
-		</my-wrapper>
+	<section class="ethnos_attributes">
+    <RaceParam__Stats />
 		<my-card-text text="stats_base_details"></my-card-text>
-	</div>
+	</section>
+  
 	<my-selection-card
 		v-for="name in stats_Pass_Arr_RE"
 		:key="name"
@@ -35,10 +25,14 @@
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
-
 import { useStatsStore } from "@/stores/modules/StatsStore";
+
+import RaceParam__Stats from "@/components/parameters/1_param__race/RaceParam__Stats.vue";
 export default {
 	name: "RaceSetting__Stats",
+  components: {
+    RaceParam__Stats,
+	},
 	computed: {
 		// STORES
 		...mapState(useMYStore, ["MY"]),
