@@ -9698,6 +9698,401 @@ export default {
     },
   ],
 
+  dragon_resistanse_fire: [
+    {
+      name: "spell_dragon_resistanse_fire",
+      details: "spell_dragon_resistanse_fire_details",
+      expanded: "spell_dragon_resistanse_fire_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dragon_resistanse_cold: [
+    {
+      name: "spell_dragon_resistanse_cold",
+      details: "spell_dragon_resistanse_cold_details",
+      expanded: "spell_dragon_resistanse_cold_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dragon_resistanse_electricity: [
+    {
+      name: "spell_dragon_resistanse_electricity",
+      details: "spell_dragon_resistanse_electricity_details",
+      expanded: "spell_dragon_resistanse_electricity_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dragon_resistanse_acid: [
+    {
+      name: "spell_dragon_resistanse_acid",
+      details: "spell_dragon_resistanse_acid_details",
+      expanded: "spell_dragon_resistanse_acid_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dragon_resistanse_poison: [
+    {
+      name: "spell_dragon_resistanse_poison",
+      details: "spell_dragon_resistanse_poison_details",
+      expanded: "spell_dragon_resistanse_poison_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dragon_wings: [
+    {
+      name: "spell_dragon_wings",
+      details: "spell_dragon_wings_details",
+      expanded: "spell_dragon_wings_expanded",
+
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  dragon_presence: [
+    {
+      name: "spell_dragon_presence",
+      details: "spell_dragon_presence_details",
+      expanded: "spell_dragon_presence_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_5",
+      classes: ["sorcerer"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 60,
+
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  wild_magic_surge: [
+    {
+      name: "spell_wild_magic_surge",
+      details: "spell_wild_magic_surge_details",
+      expanded: "spell_wild_magic_surge_expanded",
+
+      type: "ability",
+      slot_type: "wild_magic_surge",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  bend_luck: [
+    {
+      name: "spell_bend_luck",
+      details: "spell_bend_luck_details",
+      expanded: "spell_bend_luck_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_2",
+      classes: ["sorcerer"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 4,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [

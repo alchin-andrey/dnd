@@ -3877,6 +3877,7 @@ export default {
     sorcery_slot_2: "2× Чародейство",
     sorcery_slot_2_plus: "2+ × Чародейство",
     sorcery_slot_3: "3× Чародейство",
+    sorcery_slot_5: "5× Чародейство",
 
     spell_sorcery_to_mana: spells.sorcery_to_mana,
     spell_sorcery_to_mana_details: spells.sorcery_to_mana_details,
@@ -3945,4 +3946,70 @@ export default {
     dragon_ancestor:"драконий предок",
 
     to_charisma_dragon: "на проверки Харизмы, связанные с драконами",
+
+    spell_elemental_affinity_fire: spells.elemental_affinity_fire,
+    spell_elemental_affinity_fire_details: spells.elemental_affinity_fire_details,
+    spell_elemental_affinity_fire_expanded: spells.elemental_affinity_fire_expanded,
+
+    spell_elemental_affinity_cold: spells.elemental_affinity_cold,
+    spell_elemental_affinity_cold_details: spells.elemental_affinity_cold_details,
+    spell_elemental_affinity_cold_expanded: spells.elemental_affinity_cold_expanded,
+
+    spell_elemental_affinity_electricity: spells.elemental_affinity_electricity,
+    spell_elemental_affinity_electricity_details: spells.elemental_affinity_electricity_details,
+    spell_elemental_affinity_electricity_expanded: spells.elemental_affinity_electricity_expanded,
+
+    spell_elemental_affinity_acid: spells.elemental_affinity_acid,
+    spell_elemental_affinity_acid_details: spells.elemental_affinity_acid_details,
+    spell_elemental_affinity_acid_expanded: spells.elemental_affinity_acid_expanded,
+
+    spell_elemental_affinity_poison: spells.elemental_affinity_poison,
+    spell_elemental_affinity_poison_details: spells.elemental_affinity_poison_details,
+    spell_elemental_affinity_poison_expanded: spells.elemental_affinity_poison_expanded,
+
+    spell_dragon_resistanse_fire: spells.dragon_resistanse_fire,
+    spell_dragon_resistanse_fire_details: spells.dragon_resistanse_fire_details,
+    spell_dragon_resistanse_fire_expanded: spells.dragon_resistanse_fire_expanded,
+
+    spell_dragon_resistanse_cold: spells.dragon_resistanse_cold,
+    spell_dragon_resistanse_cold_details: spells.dragon_resistanse_cold_details,
+    spell_dragon_resistanse_cold_expanded: spells.dragon_resistanse_cold_expanded,
+
+    spell_dragon_resistanse_electricity: spells.dragon_resistanse_electricity,
+    spell_dragon_resistanse_electricity_details: spells.dragon_resistanse_electricity_details,
+    spell_dragon_resistanse_electricity_expanded: spells.dragon_resistanse_electricity_expanded,
+
+    spell_dragon_resistanse_acid: spells.dragon_resistanse_acid,
+    spell_dragon_resistanse_acid_details: spells.dragon_resistanse_acid_details,
+    spell_dragon_resistanse_acid_expanded: spells.dragon_resistanse_acid_expanded,
+
+    spell_dragon_resistanse_poison: spells.dragon_resistanse_poison,
+    spell_dragon_resistanse_poison_details: spells.dragon_resistanse_poison_details,
+    spell_dragon_resistanse_poison_expanded: spells.dragon_resistanse_poison_expanded,
+
+    spell_dragon_wings: spells.dragon_wings,
+    spell_dragon_wings_details: spells.dragon_wings_details,
+    spell_dragon_wings_expanded: spells.dragon_wings_expanded,
+
+    spell_dragon_presence: spells.dragon_presence,
+    spell_dragon_presence_details: spells.dragon_presence_details,
+    spell_dragon_presence_expanded: spells.dragon_presence_expanded,
+
+    random_magic_effect: "случайный магический эффект",
+    on_casting_spell_mana_and_used_chaos: "При создании заклинаний, требующих ману, когда ячейка Потоков Хаоса использована | когда выпала 1 на попадание.",
+
+    wild_magic_surge_slots: "Потоки Хаоса",
+    wild_magic_surge_slot: "1× Поток Хаоса",
+
+    spell_wild_magic_surge: spells.wild_magic_surge,
+    spell_wild_magic_surge_details: spells.wild_magic_surge_details,
+    spell_wild_magic_surge_expanded: spells.wild_magic_surge_expanded,
+
+    on_random_magic_effect: "на случайный магический эффект",
+
+    spell_bend_luck: spells.bend_luck,
+    spell_bend_luck_details: spells.bend_luck_details,
+    spell_bend_luck_expanded: spells.bend_luck_expanded,
+
+    on_max_dice_result_in_spell: "при максимальном значении одной из костей урона заклинания",
 }

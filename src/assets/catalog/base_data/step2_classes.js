@@ -6525,6 +6525,17 @@ export default {
               }
             ],
 
+            spells: [
+              {
+                level:14,
+                spell:spells.dragon_wings
+              },
+              {
+                level:18,
+                spell:spells.dragon_presence
+              },
+            ],
+
             settings: [
               {
                 level: 6,
@@ -6679,8 +6690,50 @@ export default {
           {
             name: "sorcerer_wild_magic",
             details: "sorcerer_wild_magic_details",
+
+            charges: [
+              {
+                level: 2,
+                name: "wild_magic_surge_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1,1,1,1,1,  1,1,1,1,1,  1,1,1,1,1,  1,1,1,1,1],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level:1,
+                spell:spells.wild_magic_surge
+              },
+              {
+                level:6,
+                spell:spells.bend_luck
+              },
+            ],
+
+            fines: [
+              {
+                level: 1,
+                type: "plus",
+                keyword: "random_magic_effect",
+                details: "on_casting_spell_mana_and_used_chaos",
+              },
+              {
+                level: 14,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_random_magic_effect",
+              },
+              {
+                level: 18,
+                type: "plus",
+                keyword: "extra_dice_damage",
+                details: "on_max_dice_result_in_spell",
+              },
+            ],
           },
-          
         ],
       },
       {

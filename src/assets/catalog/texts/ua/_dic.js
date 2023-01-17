@@ -3869,4 +3869,146 @@ export default {
 
     sorcerer_wild_magic: classes.sorcerer_wild_magic,
     sorcerer_wild_magic_details: classes.sorcerer_wild_magic_details,
+
+    sorcery_slots: "Чародійства",
+    sorcery_slot: "1× Чародійство",
+    sorcery_slot_2_plus: "1+ × Чародійство",
+    sorcery_slot_2: "2× Чародійство",
+    sorcery_slot_2_plus: "2+ × Чародійство",
+    sorcery_slot_3: "3× Чародійство",
+    sorcery_slot_5: "5× Чародійство",
+
+    spell_sorcery_to_mana: spells.sorcery_to_mana,
+    spell_sorcery_to_mana_details: spells.sorcery_to_mana_details,
+    spell_sorcery_to_mana_expanded: spells.sorcery_to_mana_expanded,
+
+    spell_mana_to_sorcery: spells.mana_to_sorcery,
+    spell_mana_to_sorcery_details: spells.mana_to_sorcery_details,
+    spell_mana_to_sorcery_expanded: spells.mana_to_sorcery_expanded,
+
+    metamagic: "метамагія",
+
+    spell: "закляття",
+
+    dices: "куби",
+
+    of_damage: "пошкодження",
+
+    spell_metamagic_careful: spells.metamagic_careful,
+    spell_metamagic_careful_details: spells.metamagic_careful_details,
+    spell_metamagic_careful_expanded: spells.metamagic_careful_expanded,
+
+    spell_metamagic_distant: spells.metamagic_distant,
+    spell_metamagic_distant_details: spells.metamagic_distant_details,
+    spell_metamagic_distant_expanded: spells.metamagic_distant_expanded,
+
+    spell_metamagic_empowered: spells.metamagic_empowered,
+    spell_metamagic_empowered_details: spells.metamagic_empowered_details,
+    spell_metamagic_empowered_expanded: spells.metamagic_empowered_expanded,
+
+    spell_metamagic_extended: spells.metamagic_extended,
+    spell_metamagic_extended_details: spells.metamagic_extended_details,
+    spell_metamagic_extended_expanded: spells.metamagic_extended_expanded,
+
+    spell_metamagic_heightened: spells.metamagic_heightened,
+    spell_metamagic_heightened_details: spells.metamagic_heightened_details,
+    spell_metamagic_heightened_expanded: spells.metamagic_heightened_expanded,
+
+    spell_metamagic_quickened: spells.metamagic_quickened,
+    spell_metamagic_quickened_details: spells.metamagic_quickened_details,
+    spell_metamagic_quickened_expanded: spells.metamagic_quickened_expanded,
+
+    spell_metamagic_subtle: spells.metamagic_subtle,
+    spell_metamagic_subtle_details: spells.metamagic_subtle_details,
+    spell_metamagic_subtle_expanded: spells.metamagic_subtle_expanded,
+
+    spell_metamagic_transmuted: spells.metamagic_transmuted,
+    spell_metamagic_transmuted_details: spells.metamagic_transmuted_details,
+    spell_metamagic_transmuted_expanded: spells.metamagic_transmuted_expanded,
+
+    spell_metamagic_twinned: spells.metamagic_twinned,
+    spell_metamagic_twinned_details: spells.metamagic_twinned_details,
+    spell_metamagic_twinned_expanded: spells.metamagic_twinned_expanded,
+
+    spell_metamagic_seeking: spells.metamagic_seeking,
+    spell_metamagic_seeking_details: spells.metamagic_seeking_details,
+    spell_metamagic_seeking_expanded: spells.metamagic_seeking_expanded,
+
+    spell_magical_direction: spells.magical_direction,
+    spell_magical_direction_details: spells.magical_direction_details,
+    spell_magical_direction_expanded: spells.magical_direction_expanded,
+
+    to_restore_4_sorcery_points: "на відновлення 4× Чародійства",
+
+    plus_3_armor: "— +3 до Броні (застосовано)",
+
+    dragon_ancestor:"драконовий предок",
+
+    to_charisma_dragon: "на перевірки Харизми, повʼязані з драконами",
+
+    spell_elemental_affinity_fire: spells.elemental_affinity_fire,
+    spell_elemental_affinity_fire_details: spells.elemental_affinity_fire_details,
+    spell_elemental_affinity_fire_expanded: spells.elemental_affinity_fire_expanded,
+
+    spell_elemental_affinity_cold: spells.elemental_affinity_cold,
+    spell_elemental_affinity_cold_details: spells.elemental_affinity_cold_details,
+    spell_elemental_affinity_cold_expanded: spells.elemental_affinity_cold_expanded,
+
+    spell_elemental_affinity_electricity: spells.elemental_affinity_electricity,
+    spell_elemental_affinity_electricity_details: spells.elemental_affinity_electricity_details,
+    spell_elemental_affinity_electricity_expanded: spells.elemental_affinity_electricity_expanded,
+
+    spell_elemental_affinity_acid: spells.elemental_affinity_acid,
+    spell_elemental_affinity_acid_details: spells.elemental_affinity_acid_details,
+    spell_elemental_affinity_acid_expanded: spells.elemental_affinity_acid_expanded,
+
+    spell_elemental_affinity_poison: spells.elemental_affinity_poison,
+    spell_elemental_affinity_poison_details: spells.elemental_affinity_poison_details,
+    spell_elemental_affinity_poison_expanded: spells.elemental_affinity_poison_expanded,
+
+    spell_dragon_resistanse_fire: spells.dragon_resistanse_fire,
+    spell_dragon_resistanse_fire_details: spells.dragon_resistanse_fire_details,
+    spell_dragon_resistanse_fire_expanded: spells.dragon_resistanse_fire_expanded,
+
+    spell_dragon_resistanse_cold: spells.dragon_resistanse_cold,
+    spell_dragon_resistanse_cold_details: spells.dragon_resistanse_cold_details,
+    spell_dragon_resistanse_cold_expanded: spells.dragon_resistanse_cold_expanded,
+
+    spell_dragon_resistanse_electricity: spells.dragon_resistanse_electricity,
+    spell_dragon_resistanse_electricity_details: spells.dragon_resistanse_electricity_details,
+    spell_dragon_resistanse_electricity_expanded: spells.dragon_resistanse_electricity_expanded,
+
+    spell_dragon_resistanse_acid: spells.dragon_resistanse_acid,
+    spell_dragon_resistanse_acid_details: spells.dragon_resistanse_acid_details,
+    spell_dragon_resistanse_acid_expanded: spells.dragon_resistanse_acid_expanded,
+
+    spell_dragon_resistanse_poison: spells.dragon_resistanse_poison,
+    spell_dragon_resistanse_poison_details: spells.dragon_resistanse_poison_details,
+    spell_dragon_resistanse_poison_expanded: spells.dragon_resistanse_poison_expanded,
+
+    spell_dragon_wings: spells.dragon_wings,
+    spell_dragon_wings_details: spells.dragon_wings_details,
+    spell_dragon_wings_expanded: spells.dragon_wings_expanded,
+
+    spell_dragon_presence: spells.dragon_presence,
+    spell_dragon_presence_details: spells.dragon_presence_details,
+    spell_dragon_presence_expanded: spells.dragon_presence_expanded,
+
+    random_magic_effect: "випадковий магічний ефект",
+    on_casting_spell_mana_and_used_chaos: "При створенні заклять, що потребують ману, коли слот Потоків Хаосу використаний | коли випала 1 на влучання.",
+
+    wild_magic_surge_slots: "Потоки Хаосу",
+    wild_magic_surge_slot: "1× Потік Хаосу",
+
+    spell_wild_magic_surge: spells.wild_magic_surge,
+    spell_wild_magic_surge_details: spells.wild_magic_surge_details,
+    spell_wild_magic_surge_expanded: spells.wild_magic_surge_expanded,
+
+    on_random_magic_effect: "на випадковий магічний ефект",
+
+    spell_bend_luck: spells.bend_luck,
+    spell_bend_luck_details: spells.bend_luck_details,
+    spell_bend_luck_expanded: spells.bend_luck_expanded,
+
+    on_max_dice_result_in_spell: "при максимальному значенні одного з кубів пошкодження закляття",
 }
