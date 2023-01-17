@@ -1,19 +1,16 @@
 <template>
 	<my-wrapper v-if="shown_Fines_RaceParam" gap_8 :hr="hr">
-		<my-fines
+		<AppFines
 			v-for="item in fines_Race_Param"
 			:key="item"
-			:icon="item.type"
-			:title="item.keyword"
-			:details="item.details"
+			:fines="item"
 		/>
 	</my-wrapper>
 </template>
 
 <script>
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
-// import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { useFinesStore } from "@/stores/modules/FinesStore";
 
 export default {
 	name: "RaceParam__Fines",
@@ -24,26 +21,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "MY_Subclass", "level_Filter_Arr"]),
-		// ...mapState(useProficienciesStore, [
-		// 	"proficiencies",
-		// 	"proficiencies_Race_Params_Any",
-		// 	"proficiencies_Arr_Class",
-		// ]),
-
-		fines_Race_Lvl() {
-			return this.level_Filter_Arr(this.MY.race?.fines);
-		},
-
-		fines_Ethnos_Lvl() {
-			return this.level_Filter_Arr(this.MY.ethnos?.fines);
-		},
-
-		fines_Race_Param() {
-			const race_fines = this.fines_Race_Lvl;
-			const ethnos_fines = this.fines_Ethnos_Lvl;
-			return race_fines.concat(ethnos_fines);
-		},
+		...mapState(useFinesStore, ["fines_Race_Param"]),
 
 		shown_Fines_RaceParam() {
 			return (

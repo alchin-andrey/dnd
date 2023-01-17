@@ -68,13 +68,11 @@
 
 			<!-- Специализация_fines -->
 			<my-wrapper v-if="shown_Param_Arr(subclass.fines)" gap_8>
-				<my-fines
+				<AppFines
 					v-for="item in level_Filter(subclass.fines)"
 					:key="item"
-					:icon="item.type"
-					:title="item.keyword"
-					:details="item.details"
-				></my-fines>
+					:fines="item"
+				/>
 			</my-wrapper>
 			<!-- Специализация_fines -->
 

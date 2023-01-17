@@ -23,54 +23,7 @@
 			<ClassParam__Qualities hr />
 			<ClassParam__Charges hr />
       <ClassParam__Proficiencies hr />
-
-			<!-- //NOTE - fines -->
-      <!-- <ClassParam__Fines hr /> -->
-			<my-wrapper
-				v-if="shown_Fines_All"
-				gap_8
-				hr
-			>
-				<!-- RACE -->
-				<my-fines
-					v-for="item in MY.race.fines"
-					:key="item"
-					:icon="item.type"
-					:title="item.keyword"
-					:details="item.details"
-					passive
-				></my-fines>
-
-				<my-fines
-					v-for="item in MY.ethnos.fines"
-					:key="item"
-					:icon="item.type"
-					:title="item.keyword"
-					:details="item.details"
-					passive
-				></my-fines>
-				<!-- RACE -->
-				<!-- CLASS -->
-				<my-fines
-					v-for="item in MY.class.fines"
-					:key="item"
-					:lvl="item.level"
-					:icon="item.type"
-					:title="item.keyword"
-					:details="item.details"
-				></my-fines>
-				<!-- CLASS -->
-				<!-- SUB_CLASS -->
-				<my-fines
-					v-for="item in fines_Subclass_Lvl"
-					:key="item"
-					:lvl="item.level"
-					:icon="item.type"
-					:title="item.keyword"
-					:details="item.details"
-				></my-fines>
-				<!-- SUB_CLASS -->
-			</my-wrapper>
+      <ClassParam__Fines hr />
 
 			<!-- //NOTE - spells -->
 			<!-- RACE -->
@@ -226,15 +179,6 @@ export default {
 		// 	return custom_spells.length !== 0;
 		// },
 
-		shown_Fines_All() {
-			return (
-				this.MY.race.fines ||
-				this.MY.ethnos.fines ||
-				this.MY.class.fines ||
-				this.fines_Subclass_Lvl.length !== 0
-			);
-		},
-
 		shown_Spells_All() {
 			return (
 				this.shown_Spells_RE ||
@@ -250,11 +194,6 @@ export default {
 
 		spell_Subclass_Lvl() {
 			let arr = this.level_Filter(this.MY_Subclass?.spells);
-			return arr ? arr : [];
-		},
-
-		fines_Subclass_Lvl() {
-			let arr = this.level_Filter(this.MY_Subclass?.fines);
 			return arr ? arr : [];
 		},
 

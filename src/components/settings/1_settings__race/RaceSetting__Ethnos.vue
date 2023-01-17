@@ -35,13 +35,11 @@
 
 		<!-- Этнос_fines -->
 		<my-wrapper v-if="MY.race.fines" gap_8>
-			<my-fines
+			<AppFines
 				v-for="item in MY.race.fines"
 				:key="item"
-				:icon="item.type"
-				:title="item.keyword"
-				:details="item.details"
-			></my-fines>
+				:fines="item"
+			></AppFines>
 		</my-wrapper>
 		<!-- Этнос_fines -->
 		<!-- Этнос_spells -->

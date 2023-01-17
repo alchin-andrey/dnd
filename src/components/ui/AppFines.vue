@@ -41,7 +41,7 @@ import fines_icon from "@/assets/catalog/icon/fines_icon";
 import { mapState} from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 export default {
-	name: "BaseFines",
+	name: "AppFines",
   data() {
     return {
       fines_icon: fines_icon,
@@ -88,14 +88,10 @@ export default {
 			return this.afterEmoji(this.t_Details);
 		},
 
-		// src_Icon() {
-		// 	return require(`@/assets/img/icon/fines/${this.icon}.svg`);
-		// },
 	},
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .column {
 	display: flex;

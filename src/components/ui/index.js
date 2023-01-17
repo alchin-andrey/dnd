@@ -1,12 +1,13 @@
 import {Emoji} from "emoji-mart-vue-fast/src";
 
+import AppFines from "@/components/ui/AppFines.vue";
 
-// PINIA
+
+
+
 import MyColorBlock from "@/components/ui/pinia_ui/MyColorBlock.vue";
 import MyCardTextColor from "@/components/ui/pinia_ui/MyCardTextColor.vue";
 import MyColorSelect from "@/components/ui/pinia_ui/MyColorSelect.vue";
-
-// PINIA
 
 
 import MySelection from "@/components/ui/pinia_ui/MySelection.vue";
@@ -17,8 +18,7 @@ import MyButtonBack from "@/components/ui/pinia_ui/MyButtonBack.vue";
 import MyButtonGender from "@/components/ui/pinia_ui/MyButtonGender.vue";
 import MyAttribute from "@/components/ui/pinia_ui/MyAttribute.vue";
 import MyInventory from "@/components/ui/pinia_ui/MyInventory.vue";
-import MyFines from "@/components/ui/pinia_ui/MyFines.vue";
-import BaseFines from "@/components/ui/pinia_ui/BaseFines.vue";
+// import MyFines from "@/components/ui/pinia_ui/MyFines.vue";
 
 
 import MySelectionBox from "@/components/ui/pinia_ui/MySelectionBox.vue";
@@ -49,6 +49,7 @@ import MyCharges from "@/components/ui/pinia_ui/MyCharges.vue";
 
 export default [
   Emoji,
+  AppFines,
 
   MyBackPage,
 
@@ -65,8 +66,7 @@ export default [
   MyButtonGender,
   MyAttribute,
   MyInventory,
-  MyFines,
-  BaseFines,
+  // MyFines,
 
   MySelectionBox,
   MySelectionCard,

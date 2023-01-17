@@ -59,23 +59,7 @@
 		<!-- proficiencies -->
 
 		<!-- fines -->
-		<my-wrapper v-if="MY.race.fines || MY.ethnos.fines" gap_8 hr>
-			<my-fines
-				v-for="item in MY.race.fines"
-				:key="item"
-				:icon="item.type"
-				:title="item.keyword"
-				:details="item.details"
-			></my-fines>
-
-			<my-fines
-				v-for="item in MY.ethnos.fines"
-				:key="item"
-				:icon="item.type"
-				:title="item.keyword"
-				:details="item.details"
-			></my-fines>
-		</my-wrapper>
+    <RaceParam__Fines hr/>
 		<!-- fines -->
 
 		<!-- spells -->
@@ -127,8 +111,11 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+
+import RaceParam from "@/components/parameters/1_param__race/RaceParam.js";
 export default {
 	name: "RaceParameters",
+  mixins: [RaceParam],
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["race_page"]),

@@ -61,13 +61,11 @@
 
 			<!-- Этнос_Карточка_fines -->
 			<my-wrapper v-if="ethnos.fines" gap_8>
-				<my-fines
+				<AppFines
 					v-for="item in ethnos.fines"
 					:key="item"
-					:icon="item.type"
-					:title="item.keyword"
-					:details="item.details"
-				></my-fines>
+					:fines="item"
+				/>
 			</my-wrapper>
 			<!-- Этнос_Карточка_fines -->
 
