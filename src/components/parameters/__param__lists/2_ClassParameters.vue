@@ -1,25 +1,9 @@
 <template>
 	<transition name="mode-fade" mode="out-in">
-		<section v-if="!class_page.shown.stats">
-			<!-- stats -->
-			<ClassParam__Stats hr />
-			<!-- stats -->
-
-			<!-- attributes -->
-			<my-wrapper hr v-if="skills_All_RE.length !== 0">
-				<my-attribute
-					v-for="name in skills_All_RE"
-					:key="name"
-					:title="name"
-					plus
-					:numb="null"
-					:old_numb="skills_Old_Numb(name)"
-					:icon="MY.skills[name].mod"
-					:save="stats_Saving_Arr"
-				></my-attribute>
-			</my-wrapper>
-			<!-- attributes -->
-
+		
+    <section v-if="!class_page.shown.stats">
+      <ClassParam__Stats hr />
+      <ClassParam__Skills hr/>
 			<ClassParam__Qualities hr />
 			<ClassParam__Charges hr />
       <ClassParam__Proficiencies hr />
@@ -73,16 +57,10 @@
 				<!-- SUB_CLASS -->
 			</my-wrapper>
 
-			<!-- //NOTE - weapon -->
 			<ClassParam__Weapons hr />
-
-			<!-- //NOTE - EquipKit -->
 			<ClassParam__EquipKit hr />
 
 			<!-- //NOTE - text -->
-			<!-- <div class="story int-400">
-				<div v-html="t_Story"></div>
-			</div> -->
 			<my-wrapper gap_26>
 				<div class="story int-400" v-html="t_Story"></div>
 				<my-card-text
@@ -95,25 +73,10 @@
 		</section>
 
 		<section v-else>
-			<!-- qualities-stats -->
 			<ClassParam__Qualities hr />
-			<!-- qualities-stats -->
-
-			<!-- attributes-stats -->
-			<my-wrapper>
-				<my-attribute
-					v-for="(name, i) in skills_Keys"
-					:key="name"
-					:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
-					:title="name"
-					plus
-					:numb="skills_Old_Numb(name)"
-					:icon="MY.skills[name].mod"
-					:save="stats_Saving_Arr"
-				></my-attribute>
-			</my-wrapper>
-			<!-- attributes-stats -->
+      <ClassParam__SkillsAll/>
 		</section>
+
 	</transition>
 </template>
 
@@ -122,9 +85,9 @@ import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import { useStatsStore } from "@/stores/modules/StatsStore";
-import { useSkillsStore } from "@/stores/modules/SkillsStore";
-import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+// import { useStatsStore } from "@/stores/modules/StatsStore";
+// import { useSkillsStore } from "@/stores/modules/SkillsStore";
+// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 
 import ClassParam from "@/components/parameters/2_param__class/ClassParam.js";
@@ -134,7 +97,7 @@ export default {
 	mixins: [ClassParam],
 	computed: {
 		// STORE
-		...mapState(usePagesStore, ["race_page", "class_page"]),
+		...mapState(usePagesStore, ["class_page"]),
 		...mapState(useMYStore, ["MY"]),
 		// GETTERS
 		...mapState(useMYStore, [
@@ -144,14 +107,13 @@ export default {
 
 			"level_Filter",
 		]),
-		...mapState(useStatsStore, [
-			"stats_Keys",
-			"stats_Race_Page_Numb",
-			"stats_Mod",
-			"stats_Saving_Arr",
-		]),
-		...mapState(useSkillsStore, ["skills_All_RE", "skills_Keys"]),
-		...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
+		// ...mapState(useStatsStore, [
+		// 	"stats_Keys",
+		// 	"stats_Race_Page_Numb",
+		// 	"stats_Mod",
+		// 	"stats_Saving_Arr",
+		// ]),
+		// ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
 		...mapState(useSpellsStore, ["spells_Custom_Obj_RE"]),
 
 		t_Story() {
@@ -174,11 +136,6 @@ export default {
 			return class_spells && class_lvl;
 		},
 
-		// shown_Spells_RE_Custom() {
-		// 	let custom_spells = this.spells_Custom_Obj_RE;
-		// 	return custom_spells.length !== 0;
-		// },
-
 		shown_Spells_All() {
 			return (
 				this.shown_Spells_RE ||
@@ -188,52 +145,15 @@ export default {
 			);
 		},
 
-		shown_Param_Arr: (state) => (arr) => {
-			return arr ? state.level_Filter(arr).length !== 0 : null;
-		},
-
 		spell_Subclass_Lvl() {
 			let arr = this.level_Filter(this.MY_Subclass?.spells);
 			return arr ? arr : [];
 		},
-
-		getSkillMarg: () => (i, name) => {
-			if (i === 0) {
-				return true;
-			}
-			let obj = Object.values(name);
-			if (obj[i].mod !== obj[i - 1].mod) {
-				return true;
-			}
-			return false;
-		},
-
-		skills_Old_Numb: (state) => (name) => {
-			let state_name = state.MY.skills[name].mod;
-			let mod = state.stats_Mod(state_name);
-			let race_mastery = null;
-			state.skills_All_RE.includes(name)
-				? (race_mastery = state.Mastery)
-				: null;
-			const spec_skills = state.class_Specials_Filter_Lvl("skills");
-			let skills_foo = null;
-			spec_skills?.forEach((el) => (skills_foo = state[el.foo](race_mastery)));
-			return skills_foo ? skills_foo + mod : race_mastery + mod;
-		},
-
-		Half_Mastery: (state) => (skill_mastery) => {
-			const half_mastery = Math.floor(state.Mastery / 2);
-			return skill_mastery ? skill_mastery : half_mastery;
-		},
-
 	},
 };
 </script>
 
 <style scoped>
-.skill_marg:not(:first-child) {
-	margin-top: 16px;
-}
 
 .mode-fade-enter-active,
 .mode-fade-leave-active {

@@ -7,7 +7,6 @@
 			:fines="item"
 			passive
 		/>
-
 		<!-- CLASS -->
 		<AppFines 
       v-for="item in fines_Class_Param" 

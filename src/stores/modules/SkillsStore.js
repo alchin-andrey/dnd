@@ -1,6 +1,7 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 
 export const useSkillsStore = defineStore({
 	id: 'SkillsStore',
@@ -25,14 +26,32 @@ export const useSkillsStore = defineStore({
       deception: { bonus: 0, mod: "charisma" },
       intimidation: { bonus: 0, mod: "charisma" },
     },
+    _skills: [
+      {name:"athletics", mod:"strength"},
+      {name:"acrobatics", mod:"dexterity"},
+      {name:"sleight_of_hand", mod:"dexterity"},
+      {name:"stealth", mod:"dexterity"},
+
+      {name:"investigation", mod:"intelligence"},
+      {name:"history", mod:"intelligence"},
+      {name:"religion", mod:"intelligence"},
+      {name:"arcana", mod:"intelligence"},
+      {name:"nature", mod:"intelligence"},
+
+      {name:"survival", mod:"wisdom"},
+      {name:"perception", mod:"wisdom"},
+      {name:"insight", mod:"wisdom"},
+      {name:"medicine", mod:"wisdom"},
+      {name:"animal_hanging", mod:"wisdom"},
+
+      {name:"performance", mod:"charisma"},
+      {name:"persuasion", mod:"charisma"},
+      {name:"deception", mod:"charisma"},
+      {name:"intimidation", mod:"charisma"},
+    ]
 	}),
 
   getters: {
-    // skills_Mastery() {
-    //   const MYStore = useMYStore();
-		// 	return MYStore.Mastery;
-		// },
-
     skills_Keys() {
       const MYStore = useMYStore();
 			return Object.keys(MYStore.MY.skills);
@@ -62,6 +81,41 @@ export const useSkillsStore = defineStore({
 		skills_Custom_Arr_RE() {
       const MYStore = useMYStore();
 			return MYStore.COMMON_Custom_Arr_RE("skills");
+		},
+
+    skills_Old_Numb: (state) => (name) => {
+      const MYStore = useMYStore();
+      const StatsStore = useStatsStore();
+			const state_name = MYStore.MY.skills[name].mod;
+			const mod = StatsStore.stats_Mod(state_name);
+			let race_mastery = null;
+			state.skills_All_RE.includes(name)
+				? (race_mastery = MYStore.Mastery)
+				: null;
+			const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
+			let skills_foo = null;
+			spec_skills?.forEach((el) => (skills_foo = state[el.foo](race_mastery)));
+			return skills_foo ? skills_foo + mod : race_mastery + mod;
+		},
+
+    //NOTE - Skills Foo
+		Half_Mastery: (state) => (skill_mastery) => {
+      const MYStore = useMYStore();
+			const half_mastery = Math.floor(MYStore.Mastery / 2);
+			return skill_mastery ? skill_mastery : half_mastery;
+		},
+    
+    //!NOTE - Skills Foo
+
+    getSkillMarg: () => (i, name) => {
+			if (i === 0) {
+				return true;
+			}
+			let obj = Object.values(name);
+			if (obj[i].mod !== obj[i - 1].mod) {
+				return true;
+			}
+			return false;
 		},
   },
 
