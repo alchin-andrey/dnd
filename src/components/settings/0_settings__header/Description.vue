@@ -10,7 +10,7 @@
 					copy
 					:copied="uan_copied"
 				>
-					<div class="text">{{ `UAN  ${uan_text}` }}</div>
+					<div class="text">{{ `UAH  ${uan_text}` }}</div>
 				</my-selection-card>
 
 				<my-selection-card
@@ -18,7 +18,7 @@
 					copy
 					:copied="btc_copied"
 				>
-					<div class="text">{{ `BTS  ${btc_numb}` }}</div>
+					<div class="text">{{ `BTC  ${btc_numb}` }}</div>
 				</my-selection-card>
 
 				<my-selection-card link>

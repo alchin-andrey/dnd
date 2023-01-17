@@ -8910,14 +8910,14 @@ export default {
     },
   ],
 
-  sorcery_to_mana_1: [
+  sorcery_to_mana: [
     {
-      name: "spell_sorcery_to_mana_1",
-      details: "spell_sorcery_to_mana_1_details",
+      name: "spell_sorcery_to_mana",
+      details: "spell_sorcery_to_mana_details",
       expanded: "spell_sorcery_to_mana_expanded",
 
       type: "ability",
-      slot_type: "sorcery_slot_2",
+      slot_type: "sorcery_slot_2_plus",
       classes: ["sorcerer"],
 
       cast_time: "bonus_action",
@@ -8954,21 +8954,242 @@ export default {
     },
   ],
 
-  sorcery_to_mana_2: [
+  mana_to_sorcery: [
+    {},
     {
-      name: "spell_sorcery_to_mana_2",
-      details: "spell_sorcery_to_mana_2_details",
-      expanded: "spell_sorcery_to_mana_expanded",
+      name: "spell_mana_to_sorcery",
+      details: "spell_mana_to_sorcery_details",
+      expanded: "spell_mana_to_sorcery_expanded",
+
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "sorcery_slots",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},{},{},{}
+  ],
+
+  metamagic_careful: [
+    {
+      name: "spell_metamagic_careful",
+      details: "spell_metamagic_careful_details",
+      expanded: "spell_metamagic_careful_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_CHA_Min1",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  metamagic_distant: [
+    {
+      name: "spell_metamagic_distant",
+      details: "spell_metamagic_distant_details",
+      expanded: "spell_metamagic_distant_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: 2,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  metamagic_empowered: [
+    {
+      name: "spell_metamagic_empowered",
+      details: "spell_metamagic_empowered_details",
+      expanded: "spell_metamagic_empowered_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "dices",
+      impact_damage_type: "of_damage",
+
+      impact_size_foo: "Num_CHA_Min1",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  metamagic_extended: [
+    {
+      name: "spell_metamagic_extended",
+      details: "spell_metamagic_extended_details",
+      expanded: "spell_metamagic_extended_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "up_to",
+      spell_duration: 24,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  metamagic_heightened: [
+    {
+      name: "spell_metamagic_heightened",
+      details: "spell_metamagic_heightened_details",
+      expanded: "spell_metamagic_heightened_expanded",
 
       type: "ability",
       slot_type: "sorcery_slot_3",
       classes: ["sorcerer"],
 
-      cast_time: "bonus_action",
+      cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
+      aim_target: "spell",
       aim_type: null,
       aim_range: null,
 
@@ -8998,21 +9219,21 @@ export default {
     },
   ],
 
-  sorcery_to_mana_3: [
+  metamagic_quickened: [
     {
-      name: "spell_sorcery_to_mana_3",
-      details: "spell_sorcery_to_mana_3_details",
-      expanded: "spell_sorcery_to_mana_expanded",
+      name: "spell_metamagic_quickened",
+      details: "spell_metamagic_quickened_details",
+      expanded: "spell_metamagic_quickened_expanded",
 
       type: "ability",
-      slot_type: "sorcery_slot_5",
+      slot_type: "sorcery_slot_2",
       classes: ["sorcerer"],
 
-      cast_time: "bonus_action",
+      cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
+      aim_target: "spell",
       aim_type: null,
       aim_range: null,
 
@@ -9042,21 +9263,21 @@ export default {
     },
   ],
 
-  sorcery_to_mana_4: [
+  metamagic_subtle: [
     {
-      name: "spell_sorcery_to_mana_4",
-      details: "spell_sorcery_to_mana_4_details",
-      expanded: "spell_sorcery_to_mana_expanded",
+      name: "spell_metamagic_subtle",
+      details: "spell_metamagic_subtle_details",
+      expanded: "spell_metamagic_subtle_expanded",
 
       type: "ability",
-      slot_type: "sorcery_slot_6",
+      slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "bonus_action",
+      cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "self",
+      aim_target: "spell",
       aim_type: null,
       aim_range: null,
 
@@ -9086,17 +9307,149 @@ export default {
     },
   ],
 
-  sorcery_to_mana_5: [
+  metamagic_transmuted: [
     {
-      name: "spell_sorcery_to_mana_5",
-      details: "spell_sorcery_to_mana_5_details",
-      expanded: "spell_sorcery_to_mana_expanded",
+      name: "spell_metamagic_transmuted",
+      details: "spell_metamagic_transmuted_details",
+      expanded: "spell_metamagic_transmuted_expanded",
 
       type: "ability",
-      slot_type: "sorcery_slot_7",
+      slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "bonus_action",
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  metamagic_twinned: [
+    {
+      name: "spell_metamagic_twinned",
+      details: "spell_metamagic_twinned_details",
+      expanded: "spell_metamagic_twinned_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_1_plus",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  metamagic_seeking: [
+    {
+      name: "spell_metamagic_seeking",
+      details: "spell_metamagic_seeking_details",
+      expanded: "spell_metamagic_seeking_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot_2",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  magical_direction: [
+    {
+      name: "spell_magical_direction",
+      details: "spell_magical_direction_details",
+      expanded: "spell_magical_direction_expanded",
+
+      type: "ability",
+      slot_type: "sorcery_slot",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9130,7 +9483,220 @@ export default {
     },
   ],
 
+  elemental_affinity_fire: [
+    {
+      name: "spell_elemental_affinity_fire",
+      details: "spell_elemental_affinity_fire_details",
+      expanded: "spell_elemental_affinity_fire_expanded",
 
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_CHA",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  elemental_affinity_cold: [
+    {
+      name: "spell_elemental_affinity_cold",
+      details: "spell_elemental_affinity_cold_details",
+      expanded: "spell_elemental_affinity_cold_expanded",
+
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_CHA",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  elemental_affinity_electricity: [
+    {
+      name: "spell_elemental_affinity_electricity",
+      details: "spell_elemental_affinity_electricity_details",
+      expanded: "spell_elemental_affinity_electricity_expanded",
+
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_CHA",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  elemental_affinity_acid: [
+    {
+      name: "spell_elemental_affinity_acid",
+      details: "spell_elemental_affinity_acid_details",
+      expanded: "spell_elemental_affinity_acid_expanded",
+
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_CHA",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  elemental_affinity_poison: [
+    {
+      name: "spell_elemental_affinity_poison",
+      details: "spell_elemental_affinity_poison_details",
+      expanded: "spell_elemental_affinity_poison_expanded",
+
+      type: "ability",
+      classes: ["sorcerer"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "spell",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_CHA",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 
   // All spells / 0 ----------------------------------------------------------
 
