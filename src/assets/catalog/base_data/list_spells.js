@@ -3380,10 +3380,10 @@ export default {
       impact_type: "bonus",
       impact_damage_type: null,
 
-      impact_size_foo: "Dice_16_58_1010_1512",
+      impact_size_foo: "Dic_16_58_1010_1512_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dic: 6,
+      impact_size_dic: null, //6
       impact_size_pls: null,
 
       saving_need: null,
@@ -3423,10 +3423,10 @@ export default {
       impact_type: "heal",
       impact_damage_type: "bonus_o_w",
 
-      impact_size_foo: "Dice_16_98_1310_1712",
+      impact_size_foo: "Dic_16_98_1310_1712_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dic: 6,
+      impact_size_dic: null, //6
       impact_size_pls: null,
 
       saving_need: null,
@@ -3467,10 +3467,10 @@ export default {
       impact_type: "reduction_w",
       impact_damage_type: null,
 
-      impact_size_foo: "Dice_16_58_1010_1512",
+      impact_size_foo: "Dic_16_58_1010_1512_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
-      impact_size_dic: 6,
+      impact_size_dic: null, //6
       impact_size_pls: null,
 
       saving_need: null,
@@ -4564,7 +4564,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "bonus_w",
 
-      impact_size_foo: "Dic_6_14_Lvl",
+      impact_size_foo: "Dic_14_66_148_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dic: null,
@@ -7592,7 +7592,7 @@ export default {
       impact_type: "heal",
       impact_damage_type: null,
 
-      impact_size_foo: "Dic_MonkMartial__Pls_Mastery",
+      impact_size_foo: "Dic_14_56_118_1710_Lvl__Pls_Mastery",
       // MonkMartial 4,4,4,4,6, 6,6,6,6,6, 8,8,8,8,8, 8,10,10,10,10
       impact_size_str: null,
       impact_size_num: 1,

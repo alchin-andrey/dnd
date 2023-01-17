@@ -696,32 +696,25 @@ export default {
 		},
 
 		//ANCHOR - Dic
-
-    //Dic_14_56_118_1710_Lvl
-		Dic_MonkMartial() {
+		Dic_14_56_118_1710_Lvl() {
       const lvl_arr = [1, 5, 11, 17];
 			const kof_arr = [4, 6, 8, 10];
       return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
-    //Dic_14_66_148_Lvl
-		Dic_6_14_Lvl() {
+		Dic_14_66_148_Lvl() {
 			const lvl_arr = [1, 6, 14];
 			const kof_arr = [4, 6, 8];
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
-    //Dice_16_98_1310_1712
-    //Dic_16_98_1310_1712_Lvl
-    Dic_9_13_17_Lvl() {
+    Dic_16_98_1310_1712_Lvl() {
 			const lvl_arr = [1, 9, 13, 17];
 			const kof_arr = [6, 8, 10, 12];
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
-    //Dice_16_58_1010_1512
-    //Dic_16_58_1010_1512_Lvl
-    Dic_5_10_15_Lvl() {
+    Dic_16_58_1010_1512_Lvl() {
 			const lvl_arr = [1, 5, 10, 15];
 			const kof_arr = [6, 8, 10, 12];
 			return this.kof_Foo(lvl_arr, kof_arr);

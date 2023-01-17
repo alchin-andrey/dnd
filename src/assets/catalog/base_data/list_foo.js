@@ -233,9 +233,9 @@ export default {
 
     Num_Bard_max_spell_slot(){},
 
-    Dice_16_58_1010_1512(){},
+    Dic_16_58_1010_1512_Lvl(){},
 
-    Dice_16_98_1310_1712(){},
+    Dic_16_98_1310_1712_Lvl(){},
 
     Pls_Lvl(){},
 

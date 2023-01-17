@@ -3325,7 +3325,7 @@ export default {
       impact_type: "dice",
       impact_damage_type: "bonus_w",
 
-      impact_size_foo: "Dice_16_58_1010_1512",
+      impact_size_foo: "Dic_16_58_1010_1512_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dic: 6,
@@ -3367,7 +3367,7 @@ export default {
       impact_type: "heal",
       impact_damage_type: "bonus_o_w",
 
-      impact_size_foo: "Dice_16_98_1310_1712",
+      impact_size_foo: "Dic_16_98_1310_1712_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dic: 6,
@@ -3410,7 +3410,7 @@ export default {
       impact_type: "reduction_w",
       impact_damage_type: null,
 
-      impact_size_foo: "Dice_16_58_1010_1512",
+      impact_size_foo: "Dic_16_58_1010_1512_Lvl",
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dic: 6,
