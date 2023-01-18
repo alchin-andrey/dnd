@@ -3628,6 +3628,18 @@ export default {
           {
             name: "oath_of_devotion",
             details: "oath_of_devotion_details",
+
+            charges: [
+              {
+                level: 20,
+                name: "holy_nimbus_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
             spells: [
               {
                 level: 3,
@@ -3657,11 +3669,16 @@ export default {
                 level: 15,
                 spell: spells.protection_from_evil_and_good_paladin,
               },
+              {
+                level: 20,
+                spell: spells.holy_nimbus,
+              },
             ],
           },
           {
             name: "oath_of_antients",
             details: "oath_of_antients_details",
+
             spells: [
               {
                 level: 3,
@@ -3682,6 +3699,10 @@ export default {
               {
                 level: 3,
                 spell: spells.speak_with_animals,
+              },
+              {
+                level: 7,
+                spell: spells.aura_of_warding,
               },
             ],
           },

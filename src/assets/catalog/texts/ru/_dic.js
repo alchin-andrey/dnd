@@ -4098,4 +4098,15 @@ export default {
     spell_protection_from_evil_and_good_paladin: spells.protection_from_evil_and_good_paladin,
     spell_protection_from_evil_and_good_paladin_details: spells.protection_from_evil_and_good_paladin_details,
     spell_protection_from_evil_and_good_paladin_expanded: spells.protection_from_evil_and_good_paladin_expanded,
+
+    spell_holy_nimbus: spells.holy_nimbus,
+    spell_holy_nimbus_details: spells.holy_nimbus_details,
+    spell_holy_nimbus_expanded: spells.holy_nimbus_expanded,
+
+    spell_aura_of_warding: spells.aura_of_warding,
+    spell_aura_of_warding_details: spells.aura_of_warding_details,
+    spell_aura_of_warding_expanded: spells.aura_of_warding_expanded,
+
+    holy_nimbus_slots: "Святой нимб",
+    holy_nimbus_slot: "1× Святой нимб",
 }

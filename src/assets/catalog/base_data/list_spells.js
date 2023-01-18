@@ -10544,7 +10544,7 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -10587,7 +10587,7 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -10673,7 +10673,7 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -10736,6 +10736,93 @@ export default {
       impact_size_pls: null,
 
       saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  holy_nimbus: [
+    {
+      name: "spell_holy_nimbus",
+      details: "spell_holy_nimbus_details",
+      expanded: "spell_holy_nimbus_expanded",
+
+      type: "ability",
+      slot_type: "holy_nimbus_slot",
+      classes: ["paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  aura_of_warding: [
+    {
+      name: "spell_aura_of_warding",
+      details: "spell_aura_of_warding_details",
+      expanded: "spell_aura_of_warding_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Ran_18_30f",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
