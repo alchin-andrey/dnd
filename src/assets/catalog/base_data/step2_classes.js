@@ -3653,6 +3653,10 @@ export default {
                 level: 7,
                 spell: spells.aura_of_devotion,
               },
+              {
+                level: 15,
+                spell: spells.protection_from_evil_and_good_paladin,
+              },
             ],
           },
           {

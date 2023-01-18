@@ -4094,4 +4094,8 @@ export default {
     spell_aura_of_devotion: spells.aura_of_devotion,
     spell_aura_of_devotion_details: spells.aura_of_devotion_details,
     spell_aura_of_devotion_expanded: spells.aura_of_devotion_expanded,
+
+    spell_protection_from_evil_and_good_paladin: spells.protection_from_evil_and_good_paladin,
+    spell_protection_from_evil_and_good_paladin_details: spells.protection_from_evil_and_good_paladin_details,
+    spell_protection_from_evil_and_good_paladin_expanded: spells.protection_from_evil_and_good_paladin_expanded,
 }

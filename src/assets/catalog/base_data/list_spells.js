@@ -10697,6 +10697,50 @@ export default {
     },
   ],
 
+  protection_from_evil_and_good_paladin: [
+    {
+      //0
+      name: "spell_protection_from_evil_and_good_paladin",
+      details: "spell_protection_from_evil_and_good_paladin_details",
+      expanded: "spell_protection_from_evil_and_good_paladin_expanded",
+
+      type: "abjuration",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [
