@@ -832,10 +832,6 @@ export default {
 			return foo_range ? foo_range : spell_range;
 		},
 
-    Ran_18_30f() {
-			return this.MY.level >= 18 ? 30 : 10;
-		},
-
 		// ------ FOO -----------
 	},
 	watch: {
