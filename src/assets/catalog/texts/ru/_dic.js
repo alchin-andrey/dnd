@@ -4117,5 +4117,10 @@ export default {
     spell_undying_sentinel_details: spells.undying_sentinel_details,
     spell_undying_sentinel_expanded: spells.undying_sentinel_expanded,
 
-    
+    elder_champion_slots: "Древний чемпион",
+    elder_champion_slot: "1× Древний чемпион",
+
+    spell_elder_champion: spells.elder_champion,
+    spell_elder_champion_details: spells.elder_champion_details,
+    spell_elder_champion_expanded: spells.elder_champion_expanded,
 }
