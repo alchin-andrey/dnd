@@ -88,7 +88,7 @@
 			v-if="
 				Spell_Index.aim_need ||
 				Spell_Index.impact_type ||
-				Spell_Index.aim_range ||
+				Value_Ran ||
 				Spell_Index.aim_aoe
 			"
 		>
