@@ -7302,7 +7302,7 @@ export default {
         level: 1,
         name: "bardic_inspiration_slots",
         type: "long_rest",
-        foo: "Str_Level_5_10_15__Num_CHA_Min1",
+        foo: "Str_Level_5_10_15__Num_CHA_Min1__Typ_5_Lvl",
         //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Она становится к8 на 5 уровне, к10 на 10 уровне и к12 на 15 уровне.
         //Вьі можете использовать это умение количество раз, равное модификатору вашей Харизмьі, но как минимум один раз.
         //Ваша Кость бардовского вдохновения изменяется с ростом вашего уровня в этом классе. Изначально d6, она становится d8 на 5 уровне, d10 на 10 уровне и d12 на 15 уровне.
@@ -7336,6 +7336,10 @@ export default {
         level: 2,
         spell: spells.song_of_rest,
       },
+      {
+        level: 6,
+        spell: spells.countercharm,
+      },
     ],
 
     fines: [
@@ -7349,6 +7353,12 @@ export default {
         type: "plus",
         keyword: "restoring",
         details: "of_inspiration_slots_on_short_rest",
+      },
+      {
+        level: 5,
+        type: "plus",
+        keyword: "plus_1_insptiration",
+        details: "on_initiative_and_0_inspiration",
       },
     ],
 
@@ -7375,10 +7385,32 @@ export default {
                 details: "on_damage_and_ac",
               },
             ],
+
+            spells: [
+              {
+                level:6,
+                spell:spells.extra_attack,
+              },
+              {
+                level:14,
+                spell:spells.bonus_attack,
+              },
+            ],
           },
           {
             name: "college_lore",
             details: "college_lore_details",
+
+            spells: [
+              {
+                level:3,
+                spell:spells.cutting_word,
+              },
+              {
+                level:14,
+                spell:spells.peerless_skill,
+              },
+            ],
 
             settings: [
               {
@@ -7386,6 +7418,15 @@ export default {
                 name: "skills",
                 select: 3,
                 num: "mastery",
+              },
+              {
+                level: 6,
+                type: "spells",
+                name: "magic_mistery",
+                select: [0,0,0,0,0, 2,2,2,2,2, 2,2,2,2,2, 2,2,2,2,2],
+                mana_min: 0,
+                mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+                classes: ["artificer","cleric","druid","paladin","sorcerer","warlock","wizard"],
               },
             ],
           },
@@ -7550,10 +7591,19 @@ export default {
       {
         type: "spells",
         name: "spells",
-        select: [4,5,6,7,8,9,10,11,12,14,15,15,16,18,19,19,20,22,22,22],
+        select: [4,5,6,7,8, 9,10,11,12,12, 13,13,14,14,15, 15,16,16,16,16],
         mana_min: 1,
         mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
         classes: ["bard"],
+      },
+      {
+        level: 10,
+        type: "spells",
+        name: "magic_mistery",
+        select: [0,0,0,0,0, 0,0,0,0,2, 2,2,2,4,4, 4,4,6,6,6],
+        mana_min: 0,
+        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        classes: ["artificer","cleric","druid","paladin","sorcerer","warlock","wizard"],
       },
       {
         level: 3,

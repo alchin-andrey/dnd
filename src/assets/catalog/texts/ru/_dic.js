@@ -2700,8 +2700,8 @@ export default {
     bard: classes.bard,
     bard_details: classes.bard_details,
 
-    bardic_inspiration_slots: "Ячейки вдохновения",
-    bardic_inspiration_slot: "Ячейка вдохновения",
+    bardic_inspiration_slots: "Вдохновения",
+    bardic_inspiration_slot: "1× Вдохновение",
 
     dice: "кубик",
 
@@ -2719,7 +2719,7 @@ export default {
     spell_song_of_rest_expanded: spells.song_of_rest_expanded,
 
     restoring: "Восстановление",
-    of_inspiration_slots_on_short_rest: "Ячеек Вдохновения чисто за короткий отдьіх",
+    of_inspiration_slots_on_short_rest: "Ячеек Вдохновения чисто за короткий отдьіх (применено)",
 
     college_valor: classes.college_valor,
     college_valor_details: classes.college_valor_details,
@@ -4012,4 +4012,17 @@ export default {
     spell_bend_luck_expanded: spells.bend_luck_expanded,
 
     on_max_dice_result_in_spell: "при максимальном значении одной из костей урона заклинания",
+
+    spell_countercharm: spells.countercharm,
+    spell_countercharm_details: spells.countercharm_details,
+    spell_countercharm_expanded: spells.countercharm_expanded,
+
+    magic_mistery: "тайны магии",
+
+    plus_1_insptiration: "+1 Вдохновение",
+    on_initiative_and_0_inspiration: "перед началом боя, если ячеек Вдохновения не осталось",
+
+    spell_peerless_skill: spells.peerless_skill,
+    spell_peerless_skill_details: spells.peerless_skill_details,
+    spell_peerless_skill_expanded: spells.peerless_skill_expanded,
 }

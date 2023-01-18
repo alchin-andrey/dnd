@@ -2716,7 +2716,7 @@ export default {
     spell_song_of_rest_expanded: spells.song_of_rest_expanded,
 
     restoring: "Відновлення",
-    of_inspiration_slots_on_short_rest: "Слотів Натхнення навіть за короткий відпочинок",
+    of_inspiration_slots_on_short_rest: "Слотів Натхнення навіть за короткий відпочинок (застосовано)",
 
     college_valor: classes.college_valor,
     college_valor_details: classes.college_valor_details,

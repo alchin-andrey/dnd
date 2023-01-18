@@ -4878,6 +4878,49 @@ export default {
     }
   ],
 
+  bonus_attack: [
+    {
+      name: "spell_bonus_attack",
+      details: "spell_bonus_attack_details",
+      expanded: "spell_bonus_attack_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   disguise_on_sight: [
     {
       name: "spell_disguise_on_sight",
@@ -10085,6 +10128,93 @@ export default {
       impact_size_str: null,
       impact_size_num: 1,
       impact_size_dic: 4,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  countercharm: [
+    {
+      name: "spell_countercharm",
+      details: "spell_countercharm_details",
+      expanded: "spell_countercharm_expanded",
+
+      type: "ability",
+      classes: ["bard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 2,
+      spell_duration_units: "rounda",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  peerless_skill: [
+    {
+      name: "spell_peerless_skill",
+      details: "spell_peerless_skill_details",
+      expanded: "spell_peerless_skill_expanded",
+
+      type: "ability",
+      slot_type: "bardic_inspiration_slot",
+      classes: ["bard"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: null,
