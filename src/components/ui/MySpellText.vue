@@ -117,9 +117,9 @@
 				plus
 			/>
 			<magic-attribute
-				v-if="Spell_Index.aim_range"
+				v-if="Value_Ran"
 				title="aim_range"
-				:numb="Spell_Index.aim_range"
+				:numb="Value_Ran"
 			/>
 		</my-wrapper>
 		<!-- <my-wrapper v-if="Spell_Index.saving_need">
@@ -752,6 +752,7 @@ export default {
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
+    //ANCHOR - Ran
 		Ran_18_30f() {
 			return this.MY.level >= 18 ? 30 : 10;
 		},
@@ -824,6 +825,17 @@ export default {
       let foo = this.Value_Foo_Сlean("Dic");
 			return dice + foo;
 		},
+
+    Value_Ran() {
+      const foo_range = this.Value_Foo("Ran");
+      const spell_range = this.Spell_Index.aim_range;
+			return foo_range ? foo_range : spell_range;
+		},
+
+    Ran_18_30f() {
+			return this.MY.level >= 18 ? 30 : 10;
+		},
+
 		// ------ FOO -----------
 	},
 	watch: {
