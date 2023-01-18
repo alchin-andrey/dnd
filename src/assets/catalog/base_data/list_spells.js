@@ -10532,7 +10532,7 @@ export default {
       expanded: "spell_aura_of_protection_expanded",
 
       type: "ability",
-      classes: ["fighter"],
+      classes: ["paladin"],
 
       cast_time: "none",
       cast_duration: null,
@@ -10540,7 +10540,7 @@ export default {
 
       aim_target: "self",
       aim_type: null,
-      aim_range: 10,
+      aim_range: null,
 
       parts: ["none"],
 
@@ -10557,6 +10557,135 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Num_CHA_Min1__Ran_18_30f",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  aura_of_courage: [
+    {
+      name: "spell_aura_of_courage",
+      details: "spell_aura_of_courage_details",
+      expanded: "spell_aura_of_courage_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Ran_18_30f",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  cleansing_touch: [
+    {
+      name: "spell_cleansing_touch",
+      details: "spell_cleansing_touch_details",
+      expanded: "spell_cleansing_touch_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  aura_of_devotion: [
+    {
+      name: "spell_aura_of_devotion",
+      details: "spell_aura_of_devotion_details",
+      expanded: "spell_aura_of_devotion_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Ran_18_30f",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dic: null,
@@ -18149,6 +18278,49 @@ export default {
     {},
     {},
     {},
+  ],
+
+  paladin_divine_smite_free: [
+    {
+      name: "spell_paladin_divine_smite_free",
+      details: "spell_paladin_divine_smite_free_details",
+      expanded: "spell_paladin_divine_smite_free_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   learn_spell: [

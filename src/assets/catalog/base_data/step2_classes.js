@@ -3557,6 +3557,15 @@ export default {
         ],
       },
       {
+        level: 14,
+        name: "cleansing_touch_slots",
+        type: "long_rest",
+        foo: "Num_CHA_Min1", //Str_Plus_CHA
+        list: [
+          ["", 0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0, 0,0,0,0,0],
+        ],
+      },
+      {
         level: 2,
         name: "spell_slots",
         type: "long_rest",
@@ -3595,6 +3604,18 @@ export default {
         level: 6,
         spell: spells.aura_of_protection,
       },
+      {
+        level: 10,
+        spell: spells.aura_of_courage,
+      },
+      {
+        level: 11,
+        spell: spells.paladin_divine_smite_free,
+      },
+      {
+        level: 14,
+        spell: spells.cleansing_touch,
+      },
     ],
 
     settings: [
@@ -3627,6 +3648,10 @@ export default {
               {
                 level: 3,
                 spell: spells.sanctuary,
+              },
+              {
+                level: 7,
+                spell: spells.aura_of_devotion,
               },
             ],
           },

@@ -4075,4 +4075,23 @@ export default {
     spell_aura_of_protection: spells.aura_of_protection,
     spell_aura_of_protection_details: spells.aura_of_protection_details,
     spell_aura_of_protection_expanded: spells.aura_of_protection_expanded,
+
+    spell_aura_of_courage: spells.aura_of_courage,
+    spell_aura_of_courage_details: spells.aura_of_courage_details,
+    spell_aura_of_courage_expanded: spells.aura_of_courage_expanded,
+
+    spell_paladin_divine_smite_free: spells.paladin_divine_smite_free,
+    spell_paladin_divine_smite_free_details: spells.paladin_divine_smite_free_details,
+    spell_paladin_divine_smite_free_expanded: spells.paladin_divine_smite_free_expanded,
+
+    cleansing_touch_slots: "Очищающие касания",
+    cleansing_touch_slot: "1× Очищающее касание",
+
+    spell_cleansing_touch: spells.cleansing_touch,
+    spell_cleansing_touch_details: spells.cleansing_touch_details,
+    spell_cleansing_touch_expanded: spells.cleansing_touch_expanded,
+
+    spell_aura_of_devotion: spells.aura_of_devotion,
+    spell_aura_of_devotion_details: spells.aura_of_devotion_details,
+    spell_aura_of_devotion_expanded: spells.aura_of_devotion_expanded,
 }
