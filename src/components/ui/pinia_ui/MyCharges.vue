@@ -58,7 +58,8 @@ export default {
 		},
 
 		icon_Image() {
-			return this.charge.type;
+      let type_foo = this.Value_Foo("Typ");
+			return type_foo ? type_foo : this.charge.type;
 		},
 
 		Str: (state) => (item) => {
@@ -136,6 +137,12 @@ export default {
 
     Num_Mastery() {
       return this.Mastery;
+    },
+
+    Typ_5_Lvl() {
+      let lvl = this.MY.level;
+      let type = this.charge.type;
+      return lvl >= 5 ? "short_rest" : type;
     },
 	},
 };
