@@ -2754,7 +2754,7 @@ export default {
     spell_action_surge_expanded: spells.action_surge_expanded,
 
     action_surge_slots: "Всплески действий",
-    action_surge_slot: "Всплеск действий",
+    action_surge_slot: "1× Всплеск действий",
 
     battle_master: classes.battle_master,
     battle_master_details: classes.battle_master_details,
@@ -4025,4 +4025,52 @@ export default {
     spell_peerless_skill: spells.peerless_skill,
     spell_peerless_skill_details: spells.peerless_skill_details,
     spell_peerless_skill_expanded: spells.peerless_skill_expanded,
+
+    spell_extra_attack_fighter: spells.extra_attack_fighter,
+    spell_extra_attack_fighter_details: spells.extra_attack_fighter_details,
+    spell_extra_attack_fighter_details_11: spells.extra_attack_fighter_details_11,
+    spell_extra_attack_fighter_details_20: spells.extra_attack_fighter_details_20,
+    spell_extra_attack_fighter_expanded: spells.extra_attack_fighter_expanded,
+
+    indomity_slots: "Упорства",
+    indomity_slot: "1× Упорство",
+
+    spell_indomity: spells.indomity,
+    spell_indomity_details: spells.indomity_details,
+    spell_indomity_expanded: spells.indomity_expanded,
+
+    plus_1_insptiration: "+1 Маневр",
+    on_initiative_and_0_inspiration: "перед началом боя, если Маневров не осталось",
+
+    spell_know_your_enemy: spells.know_your_enemy,
+    spell_know_your_enemy_details: spells.know_your_enemy_details,
+    spell_know_your_enemy_expanded: spells.know_your_enemy_expanded,
+
+    on_spell_saving_after_hit: "на следующее Испытание существа против вашего заклинания, при попадании по ней атакой",
+
+    spell_bonus_attack_fighter: spells.bonus_attack_fighter,
+    spell_bonus_attack_fighter_details: spells.bonus_attack_fighter_details,
+    spell_bonus_attack_fighter_details_18: spells.bonus_attack_fighter_details_18,
+    spell_bonus_attack_fighter_expanded: spells.bonus_attack_fighter_expanded,
+
+    spell_bonus_attack: spells.bonus_attack,
+    spell_bonus_attack_details: spells.bonus_attack_details,
+    spell_bonus_attack_expanded: spells.bonus_attack_expanded,
+
+    spell_arcane_charge: spells.arcane_charge,
+    spell_arcane_charge_details: spells.arcane_charge_details,
+    spell_arcane_charge_expanded: spells.arcane_charge_expanded,
+
+    proficiency_bonus_half:"+ 0.5× Мастерства",
+    on_mastery_str_dex_con_checks: "ко всем проверкам Силы, Ловкости или Телосложения, куда этот бонус ещё не включён.",
+
+    on_mastery_checks: "ко всем проверкам характеристик, куда этот бонус ещё не включён. (применено)",
+
+    on_dice_18: "еще и при 18",
+
+    spell_survivor: spells.survivor,
+    spell_survivor_details: spells.survivor_details,
+    spell_survivor_expanded: spells.survivor_expanded,
+
+    
 }

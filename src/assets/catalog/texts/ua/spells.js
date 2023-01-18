@@ -2947,7 +2947,7 @@ export const commune_with_nature_ranger_details = commune_with_nature_details + 
 
 export const commune_with_nature_ranger_expanded = commune_with_nature_expanded + primal_awareness_expanded;
 
-export const extra_attack = 'Додаткова атака';
+export const extra_attack = 'Додатковий удар';
 
 export const extra_attack_details = '+1 атака в додаток до основної.';
 

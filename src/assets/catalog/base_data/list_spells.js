@@ -4878,6 +4878,49 @@ export default {
     }
   ],
 
+  extra_attack_fighter: [
+    {
+      name: "spell_extra_attack_fighter",
+      details: "spell_extra_attack_fighter_details",
+      expanded: "spell_extra_attack_fighter_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_11_20_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   bonus_attack: [
     {
       name: "spell_bonus_attack",
@@ -4910,6 +4953,49 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  bonus_attack_fighter: [
+    {
+      name: "spell_bonus_attack_fighter",
+      details: "spell_bonus_attack_fighter_details",
+      expanded: "spell_bonus_attack_fighter_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Det_18_Lvl",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dic: null,
@@ -10214,6 +10300,222 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  indomity: [
+    {
+      name: "spell_indomity",
+      details: "spell_indomity_details",
+      expanded: "spell_indomity_expanded",
+
+      type: "ability",
+      slot_type: "indomity_slot",
+      classes: ["fighter"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  know_your_enemy: [
+    {
+      name: "spell_know_your_enemy",
+      details: "spell_know_your_enemy_details",
+      expanded: "spell_know_your_enemy_expanded",
+
+      type: "ability",
+      classes: ["fighter"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  arcane_charge: [
+    {
+      name: "spell_arcane_charge",
+      details: "spell_arcane_charge_details",
+      expanded: "spell_arcane_charge_expanded",
+
+      type: "ability",
+      classes: ["fighter"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  athletic_jump: [
+    {
+      name: "spell_athletic_jump",
+      details: "spell_athletic_jump_details",
+      expanded: "spell_athletic_jump_expanded",
+
+      type: "ability",
+      classes: ["fighter"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_STR__Feet",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  survivor: [
+    {
+      name: "spell_survivor",
+      details: "spell_survivor_details",
+      expanded: "spell_survivor_expanded",
+
+      type: "ability",
+      classes: ["fighter"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Pls_CON",
+      impact_size_str: null,
+      impact_size_num: 5,
       impact_size_dic: null,
       impact_size_pls: null,
 

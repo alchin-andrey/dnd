@@ -120,6 +120,19 @@ export default {
 			return `d${kof}`;
 		},
 
+		Str_Level_10_18() {
+			let lvl = this.MY.level;
+			let kof = null;
+			if (lvl < 10) {
+				kof = 8;
+			} else if (lvl < 18) {
+				kof = 10;
+			} else {
+				kof = 12;
+			}
+			return `d${kof}`;
+		},
+
 		Num_CHA_Min0() {
 			let mod = this.stats_Mod("charisma");
 			return mod < 0 ? 0 : mod;

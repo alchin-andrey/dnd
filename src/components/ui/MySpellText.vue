@@ -456,13 +456,6 @@ export default {
 			return num + kof;
 		},
 
-		Num_MOD() {
-			let num = this.Spell_Index.impact_size_num;
-			let mod = this.stats_Mod(this.MY.class.spell_attribute);
-			let res = num + mod;
-			return res < 0 ? 0 : res;
-		},
-
 		Num_Plus_05() {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
@@ -510,6 +503,25 @@ export default {
 			return lvl >= 14 ? num + 1 : num;
 		},
 
+		Num_MOD() {
+			let num = this.Spell_Index.impact_size_num;
+			let mod = this.stats_Mod(this.MY.class.spell_attribute);
+			let res = num + mod;
+			return res < 0 ? 0 : res;
+		},
+
+		Num_STR() {
+			return this.stats_Mod("strength");
+		},
+
+		Num_CON() {
+			return this.stats_Mod("constitution");
+		},
+
+		Num_WIS() {
+			return this.stats_Mod("wisdom");
+		},
+
 		Num_CHA() {
 			return this.stats_Mod("charisma");
 		},
@@ -523,10 +535,6 @@ export default {
 			let mod = this.stats_Mod("charisma");
 			let lvl = this.MY.level;
 			return mod + lvl >= 1 ? mod + lvl : 1;
-		},
-
-		Num_WIS() {
-			return this.stats_Mod("wisdom");
 		},
 
 		//ANCHOR - PLS
@@ -547,6 +555,13 @@ export default {
 		Pls_STR() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.stats_Mod("strength");
+			let res = pls + mod;
+			return res;
+		},
+
+		Pls_CON() {
+			let pls = this.Spell_Index.impact_size_pls;
+			let mod = this.stats_Mod("constitution");
 			let res = pls + mod;
 			return res;
 		},
@@ -651,6 +666,11 @@ export default {
 			return this.kof_Foo(lvl_arr);
 		},
 
+		Det_11_20_Lvl() {
+      		const lvl_arr = [11, 20];
+			return this.kof_Foo(lvl_arr);
+		},
+
 		Det_6_Lvl() {
 			// let deteils = this.Spell_Index.details;
 			// let lvl = this.MY.level;
@@ -670,6 +690,13 @@ export default {
 			// let lvl = this.MY.level;
 			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level >= 17 ? 17 : null;
+		},
+
+		Det_18_Lvl() {
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// return kof ? `${deteils}_${kof}` : kof;
+			return this.MY.level >= 18 ? 18 : null;
 		},
 
 		Det_20_Lvl() {

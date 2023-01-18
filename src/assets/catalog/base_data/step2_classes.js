@@ -1581,6 +1581,14 @@ export default {
           ["", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2],
         ],
       },
+      {
+        level: 9,
+        name: "indomity_slots",
+        type: "long_rest",
+        list: [
+          ["", 0,0,0,0,0, 0,0,0,1,1, 1,1,2,2,2, 2,3,3,3,3],
+        ],
+      },
     ],
 
     spells: [
@@ -1588,32 +1596,15 @@ export default {
         level: 1,
         spell: spells.second_wind,
       },
+      {
+        level: 5,
+        spell: spells.extra_attack_fighter,
+      },
+      {
+        level: 5,
+        spell: spells.indomity,
+      },
     ],
-
-    //NOTE - Для отладки
-    // equipment: [
-    // {
-    // weapon: [
-    // [weapons.mace, 1],  //melee, ближний бой
-    // [weapons.net, 2],  // метательное
-    // [weapons.dagger, 1],  //фехтовальноеб, легкое, метательное
-    // [weapons.trident, 1],
-    // [weapons.longbow, 1],
-    //     ],
-    //     armor: [[armors.leather, 1]],
-    //     inventory: [
-    //       [items.spell_book, 1],
-    //       [items.shield, 1],
-    //     ],
-    //     inventory_packs: [[packs.explorers, 1]],
-    //   },
-    //   {
-    //     level: 5,
-    //     inventory: [[items.holy_symbol, 5]],
-    //     inventory_packs: [[packs.burglars, 1]],
-    //   },
-    // ],
-    //!NOTE - Для отладки
 
     settings: [
       {
@@ -1632,11 +1623,28 @@ export default {
               {
                 level: 3,
                 name: "superiority_dice_slots",
+                foo: "Str_Level_10_18",
                 type: "short_rest",
                 list: [
-                  [ "d8", 0, 0, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, ],
+                  [ "", 0, 0, 4, 4, 4,   4, 5, 5, 5, 5,   5, 5, 5, 5, 6,   6, 6, 6, 6, 6, ],
                 ],
               },
+            ],
+
+            fines: [
+              {
+                level: 5,
+                type: "plus",
+                keyword: "plus_1_maneuver",
+                details: "on_initiative_and_0_maneuver",
+              },
+            ],
+
+            spells: [
+              {
+                level:7,
+                spell:spells.know_your_enemy
+              }
             ],
 
             settings: [
@@ -1748,12 +1756,29 @@ export default {
             name: "eldritch_knight",
             details: "eldritch_knight_details",
 
+            fines: [
+              {
+                level: 10,
+                type: "advantage",
+                keyword: "disadvantage",
+                details: "on_spell_saving_after_hit",
+              },
+            ],
+
             spells: [
               {
                 spell: spells.weapon_bond,
               },
               {
                 spell: spells.call_bonbed_weapon,
+              },
+              {
+                level:7,
+                spell: spells.bonus_attack_fighter,
+              },
+              {
+                level:15,
+                spell: spells.arcane_charge,
               },
             ],
 
@@ -1804,7 +1829,121 @@ export default {
                 keyword: "ctit_damage",
                 details: "on_dice_19_20",
               },
+              {
+                level: 15,
+                type: "plus",
+                keyword: "ctit_damage",
+                details: "on_dice_18",
+              },
+              {
+                level: 7,
+                type: "plus",
+                keyword: "proficiency_bonus_half",
+                details: "on_mastery_str_dex_con_checks",
+              },
             ],
+
+            spells: [
+              {
+                level:7,
+                spell:spells.athletic_jump,
+              },
+              {
+                level:18,
+                spell:spells.survivor,
+              }
+            ],
+
+            settings: [
+              {
+                // TODO - отфильтровать вьібранньій стиль
+                // На 10 уровне вы можете выбрать второй боевой стиль.
+                level: 10,
+                type: "custom",
+                name: "battle_style",
+                select: 1,
+                list: [
+                  {
+                    name: "style_dueling",
+                    fines: [
+                      {
+                        level: 2,
+                        type: "plus",
+                        keyword: "bonus",
+                        details: "on_attack_signle_one_handed",
+                      },
+                    ],
+                  },
+                  {
+                    name: "style_protection",
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.side_pary,
+                      },
+                    ],
+                  },
+                  {
+                    name: "style_defence",
+                    fines: [
+                      {
+                        level: 2,
+                        type: "plus",
+                        keyword: "bonus",
+                        details: "on_armor_if_armor",
+                      },
+                    ],
+        
+                    qualities: [
+                      {
+                        armor_bonus: 1,
+                      }
+                    ]
+                  },
+                  {
+                    name: "style_great_weapon",
+                    fines: [
+                      {
+                        level: 2,
+                        type: "advantage",
+                        keyword: "rethrow",
+                        details: "if_1_or_2_on_two_handed_weapon",
+                      },
+                    ],
+                  },
+                  {
+                    name: "style_double_weapon",
+                    fines: [
+                      {
+                        level: 2,
+                        type: "plus",
+                        keyword: "bonus",
+                        details: "on_damage_second_attack",
+                      },
+                    ],
+                  },
+                  {
+                    name: "style_archery",
+                    fines: [
+                      {
+                        level: 2,
+                        type: "plus",
+                        keyword: "aim_bonus",
+                        details: "plus_2_on_ranged",
+                      },
+                    ],
+        
+                    specials: [
+                      {
+                        level: 1,
+                        type: "weapon_ranged",
+                        aim_bonus: 2,
+                      },
+                    ],
+                  },
+                ],
+              },
+            ]
           },
         ],
       },
@@ -2093,7 +2232,7 @@ export default {
         ],
       },
     ],
-  },
+  }, //20
 
   //NOTE - Barbarian -------------------------------------------------------------------------
 
@@ -5500,7 +5639,7 @@ export default {
         type: "feats",
       },
     ],
-  }, //Almost 20 (spells)
+  }, // Almost 20 (spells)
 
   // NOTE - Warlock
 
@@ -7349,6 +7488,12 @@ export default {
         details: "as_musical_instrument",
       },
       {
+        level: 2,
+        type: "plus",
+        keyword: "proficiency_bonus_half",
+        details: "on_mastery_checks",
+      },
+      {
         level: 5,
         type: "plus",
         keyword: "restoring",
@@ -7642,5 +7787,5 @@ export default {
         type: "feats",
       },
     ],
-  },
+  }, // 20
 };
