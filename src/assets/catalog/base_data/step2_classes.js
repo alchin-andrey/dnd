@@ -3679,6 +3679,34 @@ export default {
             name: "oath_of_antients",
             details: "oath_of_antients_details",
 
+            charges: [
+              {
+                level: 15,
+                name: "undying_sentinel_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+              {
+                level: 20,
+                name: "elder_champion_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 15,
+                type: "resistance",
+                keyword: "immunity",
+                details: "aging_against",
+              },
+            ],
+
             spells: [
               {
                 level: 3,
@@ -3703,6 +3731,14 @@ export default {
               {
                 level: 7,
                 spell: spells.aura_of_warding,
+              },
+              {
+                level: 15,
+                spell: spells.undying_sentinel,
+              },
+              {
+                level: 20,
+                spell: spells.elder_champion,
               },
             ],
           },

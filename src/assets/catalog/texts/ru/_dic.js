@@ -4109,4 +4109,13 @@ export default {
 
     holy_nimbus_slots: "Святой нимб",
     holy_nimbus_slot: "1× Святой нимб",
+
+    undying_sentinel_slots: "Стойкость",
+    undying_sentinel_slot: "1× Стойкость",
+
+    spell_undying_sentinel: spells.undying_sentinel,
+    spell_undying_sentinel_details: spells.undying_sentinel_details,
+    spell_undying_sentinel_expanded: spells.undying_sentinel_expanded,
+
+    
 }
