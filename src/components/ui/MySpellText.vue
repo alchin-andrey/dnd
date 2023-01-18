@@ -752,6 +752,10 @@ export default {
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
+		Ran_18_30f() {
+			return this.MY.level >= 18 ? 30 : 10;
+		},
+
 		//ANCHOR - FOO
 		Value_Foo: (state) => (Val) => {
 			let low_val = Val.toLowerCase();

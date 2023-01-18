@@ -4072,5 +4072,7 @@ export default {
     spell_survivor_details: spells.survivor_details,
     spell_survivor_expanded: spells.survivor_expanded,
 
-    
+    spell_aura_of_protection: spells.aura_of_protection,
+    spell_aura_of_protection_details: spells.aura_of_protection_details,
+    spell_aura_of_protection_expanded: spells.aura_of_protection_expanded,
 }

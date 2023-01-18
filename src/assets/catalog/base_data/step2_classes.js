@@ -3587,6 +3587,14 @@ export default {
         level: 3,
         spell: spells.divine_channel_mana,
       },
+      {
+        level: 5,
+        spell: spells.extra_attack,
+      },
+      {
+        level: 6,
+        spell: spells.aura_of_protection,
+      },
     ],
 
     settings: [
