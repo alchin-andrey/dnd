@@ -10544,7 +10544,7 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -10587,7 +10587,7 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -10673,7 +10673,7 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
@@ -10693,6 +10693,355 @@ export default {
 
       saving_need: null,
       saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  protection_from_evil_and_good_paladin: [
+    {
+      //0
+      name: "spell_protection_from_evil_and_good_paladin",
+      details: "spell_protection_from_evil_and_good_paladin_details",
+      expanded: "spell_protection_from_evil_and_good_paladin_expanded",
+
+      type: "abjuration",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  holy_nimbus: [
+    {
+      name: "spell_holy_nimbus",
+      details: "spell_holy_nimbus_details",
+      expanded: "spell_holy_nimbus_expanded",
+
+      type: "ability",
+      slot_type: "holy_nimbus_slot",
+      classes: ["paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  aura_of_warding: [
+    {
+      name: "spell_aura_of_warding",
+      details: "spell_aura_of_warding_details",
+      expanded: "spell_aura_of_warding_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Ran_18_30f",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  undying_sentinel: [
+    {
+      name: "spell_undying_sentinel",
+      details: "spell_undying_sentinel_details",
+      expanded: "spell_undying_sentinel_expanded",
+
+      type: "ability",
+      slot_type: "undying_sentinel_slot",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  elder_champion: [
+    {
+      name: "spell_elder_champion",
+      details: "spell_elder_champion_details",
+      expanded: "spell_elder_champion_expanded",
+
+      type: "ability",
+      slot_type: "elder_champion_slot",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 10,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: 10,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  relentless_avenger: [
+    {
+      name: "spell_relentless_avenger",
+      details: "spell_relentless_avenger_details",
+      expanded: "spell_relentless_avenger_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  soul_of_vengeance: [
+    {
+      name: "spell_soul_of_vengeance",
+      details: "spell_soul_of_vengeance_details",
+      expanded: "spell_soul_of_vengeance_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  avenging_angel: [
+    {
+      name: "spell_avenging_angel",
+      details: "spell_avenging_angel_details",
+      expanded: "spell_avenging_angel_expanded",
+
+      type: "ability",
+      slot_type: "avenging_angel_slot",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "speed",
+      impact_damage_type: "of_flight",
+
+      impact_size_foo: "Feet",
+      impact_size_str: null,
+      impact_size_num: 60,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
       impact_size_saved: null,
     },
   ],

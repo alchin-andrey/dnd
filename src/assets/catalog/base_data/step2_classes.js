@@ -1857,7 +1857,7 @@ export default {
             settings: [
               {
                 // TODO - отфильтровать вьібранньій стиль
-                // На 10 уровне вы можете выбрать второй боевой стиль.
+                // На 10 уровне вьі можете вьібрать второй боевой стиль.
                 level: 10,
                 type: "custom",
                 name: "battle_style",
@@ -3628,6 +3628,18 @@ export default {
           {
             name: "oath_of_devotion",
             details: "oath_of_devotion_details",
+
+            charges: [
+              {
+                level: 20,
+                name: "holy_nimbus_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
             spells: [
               {
                 level: 3,
@@ -3653,11 +3665,48 @@ export default {
                 level: 7,
                 spell: spells.aura_of_devotion,
               },
+              {
+                level: 15,
+                spell: spells.protection_from_evil_and_good_paladin,
+              },
+              {
+                level: 20,
+                spell: spells.holy_nimbus,
+              },
             ],
           },
           {
             name: "oath_of_antients",
             details: "oath_of_antients_details",
+
+            charges: [
+              {
+                level: 15,
+                name: "undying_sentinel_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+              {
+                level: 20,
+                name: "elder_champion_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 15,
+                type: "resistance",
+                keyword: "immunity",
+                details: "aging_against",
+              },
+            ],
+
             spells: [
               {
                 level: 3,
@@ -3679,11 +3728,35 @@ export default {
                 level: 3,
                 spell: spells.speak_with_animals,
               },
+              {
+                level: 7,
+                spell: spells.aura_of_warding,
+              },
+              {
+                level: 15,
+                spell: spells.undying_sentinel,
+              },
+              {
+                level: 20,
+                spell: spells.elder_champion,
+              },
             ],
           },
           {
             name: "oath_of_vengence",
             details: "oath_of_vengence_details",
+
+            charges: [
+              {
+                level: 20,
+                name: "avenging_angel_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
             spells: [
               {
                 level: 3,
@@ -3704,6 +3777,18 @@ export default {
               {
                 level: 3,
                 spell: spells.bane,
+              },
+              {
+                level: 7,
+                spell: spells.relentless_avenger,
+              },
+              {
+                level: 15,
+                spell: spells.soul_of_vengeance,
+              },
+              {
+                level: 20,
+                spell: spells.avenging_angel,
               },
             ],
           },
