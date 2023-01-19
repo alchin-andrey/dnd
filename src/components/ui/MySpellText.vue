@@ -60,7 +60,7 @@
 				/>{{ em_After }}
 			</div>
 		</my-wrapper>
-		<div class="manna_flex jbm-300">
+		<div class="manna_flex jbm-300" v-if="shown_Manna">
 			<div
 				class="manna_bubble manna_bubble_choice"
 				v-for="n in Manna_Length"
@@ -199,8 +199,16 @@ export default {
 		},
 
 		Manna_Length() {
+			
 			return this.spell.length;
 		},
+
+    shown_Manna() {
+      const manna_0 = this.Manna_Length == 1;
+      const slot = this.Spell_Index.slot_type;
+      const ability = this.Spell_Index.type == "ability";
+      return !manna_0 || slot || !ability;
+    },
 
 		lvl_Show() {
 			return this.lvl <= this.MY.level;
