@@ -3541,6 +3541,10 @@ export default {
 
     spell_silence_monk: spells.silence_monk,
 
+    spell_silence: spells.silence,
+    spell_silence_details: spells.silence_details,
+    spell_silence_expanded: spells.silence_expanded,
+
     spell_darkness_monk: spells.darkness_monk,
 
     spell_shadow_step: spells.shadow_step,
@@ -4039,8 +4043,8 @@ export default {
     spell_indomity_details: spells.indomity_details,
     spell_indomity_expanded: spells.indomity_expanded,
 
-    plus_1_insptiration: "+1 Маневр",
-    on_initiative_and_0_inspiration: "перед началом боя, если Маневров не осталось",
+    plus_1_maneuver: "+1 Маневр",
+    on_initiative_and_0_maneuver: "перед началом боя, если Маневров не осталось",
 
     spell_know_your_enemy: spells.know_your_enemy,
     spell_know_your_enemy_details: spells.know_your_enemy_details,
@@ -4140,4 +4144,17 @@ export default {
     spell_avenging_angel: spells.avenging_angel,
     spell_avenging_angel_details: spells.avenging_angel_details,
     spell_avenging_angel_expanded: spells.avenging_angel_expanded,
+
+    spell_athletic_jump: spells.athletic_jump,
+    spell_athletic_jump_details: spells.athletic_jump_details,
+    spell_athletic_jump_expanded: spells.athletic_jump_expanded,
+
+    berserker: classes.berserker,
+    berserker_details: classes.berserker_details,
+
+    practices: "практики",
+
+    spell_form_river: spells.form_river,
+    spell_form_river_details: spells.form_river_details,
+    spell_form_river_expanded: spells.form_river_expanded,
 }

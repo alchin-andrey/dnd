@@ -2744,7 +2744,7 @@ export default {
     spell_second_wind_expanded: spells.second_wind_expanded,
 
     second_wind_slots: "Другі дихання",
-    second_wind_slot: "Друге дихання",
+    second_wind_slot: "1× Друге дихання",
 
     spell_action_surge: spells.action_surge,
     spell_action_surge_details: spells.action_surge_details,
@@ -3462,6 +3462,8 @@ export default {
     spell_slow_fall_details: spells.slow_fall_details,
     spell_slow_fall_expanded: spells.slow_fall_expanded,
 
+    chi_slot_2: "2× Чі",
+
     spell_quickened_healing: spells.quickened_healing,
     spell_quickened_healing_details: spells.quickened_healing_details,
     spell_quickened_healing_expanded: spells.quickened_healing_expanded,
@@ -3539,6 +3541,10 @@ export default {
     spell_darkvision_monk_expanded: spells.darkvision_monk_expanded,
 
     spell_silence_monk: spells.silence_monk,
+
+    spell_silence: spells.silence,
+    spell_silence_details: spells.silence_details,
+    spell_silence_expanded: spells.silence_expanded,
 
     spell_darkness_monk: spells.darkness_monk,
 
@@ -4038,8 +4044,8 @@ export default {
     spell_indomity_details: spells.indomity_details,
     spell_indomity_expanded: spells.indomity_expanded,
 
-    plus_1_insptiration: "+1 Маневр",
-    on_initiative_and_0_inspiration: "перед початком бою, якщо Маневров не залишилося",
+    plus_1_maneuver: "+1 Маневр",
+    on_initiative_and_0_maneuver: "перед початком бою, якщо Маневрів не залишилося",
 
     spell_know_your_enemy: spells.know_your_enemy,
     spell_know_your_enemy_details: spells.know_your_enemy_details,
@@ -4139,4 +4145,17 @@ export default {
     spell_avenging_angel: spells.avenging_angel,
     spell_avenging_angel_details: spells.avenging_angel_details,
     spell_avenging_angel_expanded: spells.avenging_angel_expanded,
+
+    spell_athletic_jump: spells.athletic_jump,
+    spell_athletic_jump_details: spells.athletic_jump_details,
+    spell_athletic_jump_expanded: spells.athletic_jump_expanded,
+
+    berserker: classes.berserker,
+    berserker_details: classes.berserker_details,
+
+    practices: "практики",
+
+    spell_form_river: spells.form_river,
+    spell_form_river_details: spells.form_river_details,
+    spell_form_river_expanded: spells.form_river_expanded,
 }
