@@ -1857,7 +1857,7 @@ export default {
             settings: [
               {
                 // TODO - отфильтровать вьібранньій стиль
-                // На 10 уровне вы можете выбрать второй боевой стиль.
+                // На 10 уровне вьі можете вьібрать второй боевой стиль.
                 level: 10,
                 type: "custom",
                 name: "battle_style",
@@ -3745,6 +3745,18 @@ export default {
           {
             name: "oath_of_vengence",
             details: "oath_of_vengence_details",
+
+            charges: [
+              {
+                level: 20,
+                name: "avenging_angel_slots",
+                type: "long_rest",
+                list: [
+                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                ],
+              },
+            ],
+
             spells: [
               {
                 level: 3,
@@ -3765,6 +3777,18 @@ export default {
               {
                 level: 3,
                 spell: spells.bane,
+              },
+              {
+                level: 7,
+                spell: spells.relentless_avenger,
+              },
+              {
+                level: 15,
+                spell: spells.soul_of_vengeance,
+              },
+              {
+                level: 20,
+                spell: spells.avenging_angel,
               },
             ],
           },

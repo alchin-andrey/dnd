@@ -10916,6 +10916,136 @@ export default {
     },
   ],
 
+  relentless_avenger: [
+    {
+      name: "spell_relentless_avenger",
+      details: "spell_relentless_avenger_details",
+      expanded: "spell_relentless_avenger_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  soul_of_vengeance: [
+    {
+      name: "spell_soul_of_vengeance",
+      details: "spell_soul_of_vengeance_details",
+      expanded: "spell_soul_of_vengeance_expanded",
+
+      type: "ability",
+      classes: ["paladin"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  avenging_angel: [
+    {
+      name: "spell_avenging_angel",
+      details: "spell_avenging_angel_details",
+      expanded: "spell_avenging_angel_expanded",
+
+      type: "ability",
+      slot_type: "avenging_angel_slot",
+      classes: ["paladin"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 30,
+
+      parts: ["none"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe:  null,
+      aim_aoe_size: null,
+
+      impact_type: "speed",
+      impact_damage_type: "of_flight",
+
+      impact_size_foo: "Feet",
+      impact_size_str: null,
+      impact_size_num: 60,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
   // All spells / 0 ----------------------------------------------------------
 
   acid_splash: [

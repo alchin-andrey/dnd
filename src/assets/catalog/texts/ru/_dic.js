@@ -1131,7 +1131,7 @@ export default {
     focus: "фокус",
     material_10gold: "материальі на сумму в 10 🟡",
     hit: "попадание",
-    none: "не требуется",
+    none: "—",
 
     //aim
     aim_target: "цель",
@@ -3945,7 +3945,7 @@ export default {
 
     dragon_ancestor:"драконий предок",
 
-    to_charisma_dragon: "на проверки Харизмы, связанные с драконами",
+    to_charisma_dragon: "на проверки Харизмьі, связанньіе с драконами",
 
     spell_elemental_affinity_fire: spells.elemental_affinity_fire,
     spell_elemental_affinity_fire_details: spells.elemental_affinity_fire_details,
@@ -3995,8 +3995,8 @@ export default {
     spell_dragon_presence_details: spells.dragon_presence_details,
     spell_dragon_presence_expanded: spells.dragon_presence_expanded,
 
-    random_magic_effect: "случайный магический эффект",
-    on_casting_spell_mana_and_used_chaos: "При создании заклинаний, требующих ману, когда ячейка Потоков Хаоса использована | когда выпала 1 на попадание.",
+    random_magic_effect: "случайньій магический эффект",
+    on_casting_spell_mana_and_used_chaos: "При создании заклинаний, требующих ману, когда ячейка Потоков Хаоса использована | когда вьіпала 1 на попадание.",
 
     wild_magic_surge_slots: "Потоки Хаоса",
     wild_magic_surge_slot: "1× Поток Хаоса",
@@ -4005,7 +4005,7 @@ export default {
     spell_wild_magic_surge_details: spells.wild_magic_surge_details,
     spell_wild_magic_surge_expanded: spells.wild_magic_surge_expanded,
 
-    on_random_magic_effect: "на случайный магический эффект",
+    on_random_magic_effect: "на случайньій магический эффект",
 
     spell_bend_luck: spells.bend_luck,
     spell_bend_luck_details: spells.bend_luck_details,
@@ -4017,7 +4017,7 @@ export default {
     spell_countercharm_details: spells.countercharm_details,
     spell_countercharm_expanded: spells.countercharm_expanded,
 
-    magic_mistery: "тайны магии",
+    magic_mistery: "тайньі магии",
 
     plus_1_insptiration: "+1 Вдохновение",
     on_initiative_and_0_inspiration: "перед началом боя, если ячеек Вдохновения не осталось",
@@ -4046,7 +4046,7 @@ export default {
     spell_know_your_enemy_details: spells.know_your_enemy_details,
     spell_know_your_enemy_expanded: spells.know_your_enemy_expanded,
 
-    on_spell_saving_after_hit: "на следующее Испытание существа против вашего заклинания, при попадании по ней атакой",
+    on_spell_saving_after_hit: "на следующее Испьітание существа против вашего заклинания, при попадании по ней атакой",
 
     spell_bonus_attack_fighter: spells.bonus_attack_fighter,
     spell_bonus_attack_fighter_details: spells.bonus_attack_fighter_details,
@@ -4062,9 +4062,9 @@ export default {
     spell_arcane_charge_expanded: spells.arcane_charge_expanded,
 
     proficiency_bonus_half:"+ 0.5× Мастерства",
-    on_mastery_str_dex_con_checks: "ко всем проверкам Силы, Ловкости или Телосложения, куда этот бонус ещё не включён.",
+    on_mastery_str_dex_con_checks: "ко всем проверкам Сильі, Ловкости или Телосложения, куда этот бонус еще не включен.",
 
-    on_mastery_checks: "ко всем проверкам характеристик, куда этот бонус ещё не включён. (применено)",
+    on_mastery_checks: "ко всем проверкам характеристик, куда этот бонус еще не включен. (применено)",
 
     on_dice_18: "еще и при 18",
 
@@ -4123,4 +4123,21 @@ export default {
     spell_elder_champion: spells.elder_champion,
     spell_elder_champion_details: spells.elder_champion_details,
     spell_elder_champion_expanded: spells.elder_champion_expanded,
+
+    spell_relentless_avenger: spells.relentless_avenger,
+    spell_relentless_avenger_details: spells.relentless_avenger_details,
+    spell_relentless_avenger_expanded: spells.relentless_avenger_expanded,
+
+    spell_soul_of_vengeance: spells.soul_of_vengeance,
+    spell_soul_of_vengeance_details: spells.soul_of_vengeance_details,
+    spell_soul_of_vengeance_expanded: spells.soul_of_vengeance_expanded,
+
+    of_flight: "полета",
+
+    avenging_angel_slots: "Мстящий ангел",
+    avenging_angel_slot: "1× Мстящий ангел",
+
+    spell_avenging_angel: spells.avenging_angel,
+    spell_avenging_angel_details: spells.avenging_angel_details,
+    spell_avenging_angel_expanded: spells.avenging_angel_expanded,
 }

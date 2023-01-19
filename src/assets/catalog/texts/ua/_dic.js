@@ -1128,7 +1128,7 @@ export default {
     focus: "фокус",
     material_10gold: "матеріали на суму в 10 🟡",
     hit: "влучення",
-    none: "не потрібно",
+    none: "—",
 
     //aim
     aim_target: "ціль",
@@ -4011,4 +4011,132 @@ export default {
     spell_bend_luck_expanded: spells.bend_luck_expanded,
 
     on_max_dice_result_in_spell: "при максимальному значенні одного з кубів пошкодження закляття",
+
+    spell_countercharm: spells.countercharm,
+    spell_countercharm_details: spells.countercharm_details,
+    spell_countercharm_expanded: spells.countercharm_expanded,
+
+    magic_mistery: "магічні секрети",
+
+    plus_1_insptiration: "+1 Натхнення",
+    on_initiative_and_0_inspiration: "перед початком бою, якщо слотів Вдохновения не залишилося",
+
+    spell_peerless_skill: spells.peerless_skill,
+    spell_peerless_skill_details: spells.peerless_skill_details,
+    spell_peerless_skill_expanded: spells.peerless_skill_expanded,
+
+    spell_extra_attack_fighter: spells.extra_attack_fighter,
+    spell_extra_attack_fighter_details: spells.extra_attack_fighter_details,
+    spell_extra_attack_fighter_details_11: spells.extra_attack_fighter_details_11,
+    spell_extra_attack_fighter_details_20: spells.extra_attack_fighter_details_20,
+    spell_extra_attack_fighter_expanded: spells.extra_attack_fighter_expanded,
+
+    indomity_slots: "Витримка",
+    indomity_slot: "1× Витримка",
+
+    spell_indomity: spells.indomity,
+    spell_indomity_details: spells.indomity_details,
+    spell_indomity_expanded: spells.indomity_expanded,
+
+    plus_1_insptiration: "+1 Маневр",
+    on_initiative_and_0_inspiration: "перед початком бою, якщо Маневров не залишилося",
+
+    spell_know_your_enemy: spells.know_your_enemy,
+    spell_know_your_enemy_details: spells.know_your_enemy_details,
+    spell_know_your_enemy_expanded: spells.know_your_enemy_expanded,
+
+    on_spell_saving_after_hit: "на наступне Випробування істоти проти вашого закляття, при влучанні по ній атакою",
+
+    spell_bonus_attack_fighter: spells.bonus_attack_fighter,
+    spell_bonus_attack_fighter_details: spells.bonus_attack_fighter_details,
+    spell_bonus_attack_fighter_details_18: spells.bonus_attack_fighter_details_18,
+    spell_bonus_attack_fighter_expanded: spells.bonus_attack_fighter_expanded,
+
+    spell_bonus_attack: spells.bonus_attack,
+    spell_bonus_attack_details: spells.bonus_attack_details,
+    spell_bonus_attack_expanded: spells.bonus_attack_expanded,
+
+    spell_arcane_charge: spells.arcane_charge,
+    spell_arcane_charge_details: spells.arcane_charge_details,
+    spell_arcane_charge_expanded: spells.arcane_charge_expanded,
+
+    proficiency_bonus_half:"+ 0.5× Майстерності",
+    on_mastery_str_dex_con_checks: "до всіх перевірок Сили, Спритності і Статури, куди бонус Майстерності ще не додано",
+
+    on_mastery_checks: "до всіх перевірок здібностей, куди бонус Майстерності ще не додано (застосовано)",
+
+    on_dice_18: "ще й при 18",
+
+    spell_survivor: spells.survivor,
+    spell_survivor_details: spells.survivor_details,
+    spell_survivor_expanded: spells.survivor_expanded,
+
+    spell_aura_of_protection: spells.aura_of_protection,
+    spell_aura_of_protection_details: spells.aura_of_protection_details,
+    spell_aura_of_protection_expanded: spells.aura_of_protection_expanded,
+
+    spell_aura_of_courage: spells.aura_of_courage,
+    spell_aura_of_courage_details: spells.aura_of_courage_details,
+    spell_aura_of_courage_expanded: spells.aura_of_courage_expanded,
+
+    spell_paladin_divine_smite_free: spells.paladin_divine_smite_free,
+    spell_paladin_divine_smite_free_details: spells.paladin_divine_smite_free_details,
+    spell_paladin_divine_smite_free_expanded: spells.paladin_divine_smite_free_expanded,
+
+    cleansing_touch_slots: "Чисті дотики",
+    cleansing_touch_slot: "1× Чистий дотик",
+
+    spell_cleansing_touch: spells.cleansing_touch,
+    spell_cleansing_touch_details: spells.cleansing_touch_details,
+    spell_cleansing_touch_expanded: spells.cleansing_touch_expanded,
+
+    spell_aura_of_devotion: spells.aura_of_devotion,
+    spell_aura_of_devotion_details: spells.aura_of_devotion_details,
+    spell_aura_of_devotion_expanded: spells.aura_of_devotion_expanded,
+
+    spell_protection_from_evil_and_good_paladin: spells.protection_from_evil_and_good_paladin,
+    spell_protection_from_evil_and_good_paladin_details: spells.protection_from_evil_and_good_paladin_details,
+    spell_protection_from_evil_and_good_paladin_expanded: spells.protection_from_evil_and_good_paladin_expanded,
+
+    spell_holy_nimbus: spells.holy_nimbus,
+    spell_holy_nimbus_details: spells.holy_nimbus_details,
+    spell_holy_nimbus_expanded: spells.holy_nimbus_expanded,
+
+    spell_aura_of_warding: spells.aura_of_warding,
+    spell_aura_of_warding_details: spells.aura_of_warding_details,
+    spell_aura_of_warding_expanded: spells.aura_of_warding_expanded,
+
+    holy_nimbus_slots: "Святий німб",
+    holy_nimbus_slot: "1× Святий німб",
+
+    undying_sentinel_slots: "Витривалість",
+    undying_sentinel_slot: "1× Витривалість",
+
+    spell_undying_sentinel: spells.undying_sentinel,
+    spell_undying_sentinel_details: spells.undying_sentinel_details,
+    spell_undying_sentinel_expanded: spells.undying_sentinel_expanded,
+
+    elder_champion_slots: "Древній чемпіон",
+    elder_champion_slot: "1× Древній чемпіон",
+
+    spell_elder_champion: spells.elder_champion,
+    spell_elder_champion_details: spells.elder_champion_details,
+    spell_elder_champion_expanded: spells.elder_champion_expanded,
+
+    spell_relentless_avenger: spells.relentless_avenger,
+    spell_relentless_avenger_details: spells.relentless_avenger_details,
+    spell_relentless_avenger_expanded: spells.relentless_avenger_expanded,
+
+    spell_soul_of_vengeance: spells.soul_of_vengeance,
+    spell_soul_of_vengeance_details: spells.soul_of_vengeance_details,
+    spell_soul_of_vengeance_expanded: spells.soul_of_vengeance_expanded,
+
+    of_flight: "польоту",
+
+    avenging_angel_slots: "Ангел помсти",
+    avenging_angel_slot: "1× Ангел помсти",
+
+    spell_avenging_angel: spells.avenging_angel,
+    spell_avenging_angel_details: spells.avenging_angel_details,
+    spell_avenging_angel_expanded: spells.avenging_angel_expanded,
 }
