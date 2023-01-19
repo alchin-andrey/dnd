@@ -3136,75 +3136,40 @@ export default {
                 level: 3,
                 spell: spells.element_bond,
               },
-              {
-                level: 3,
-                spell: spells.water_whip,
-              },
-              {
-                level: 3,
-                spell: spells.fire_snake_teeth,
-              },
-              {
-                level: 3,
-                spell: spells.air_fist,
-              },
-              {
-                level: 3,
-                spell: spells.ashing_strike,
-              },
-              {
-                level: 3,
-                spell: spells.four_thunder_fist,
-              },
-              {
-                level: 3,
-                spell: spells.gust_of_wind_monk,
-              },
-              {
-                level: 3,
-                spell: spells.gust_of_wind_monk,
-              },
-              {
-                level: 3,
-                spell: spells.form_river,
-              },
-              {
-                level: 6,
-                spell: spells.shatter_monk,
-              },
-              {
-                level: 6,
-                spell: spells.hold_person_monk,
-              },
-              // {
-              //   level:11,
-              //   spell: spells.fly_monk
-              // },
-              // {
-              //   level:11,
-              //   spell: spells.fireball_monk
-              // },
-              // {
-              //   level:11,
-              //   spell: spells.gaseous_form_monk
-              // },
-              // {
-              //   level:17,
-              //   spell: spells.winter_breath
-              // },
-              // {
-              //   level:17,
-              //   spell: spells.earth_val
-              // },
-              // {
-              //   level:17,
-              //   spell: spells.stoneskin_monk
-              // },
-              // {
-              //   level:17,
-              //   spell: spells.wall_of_fire_monk
-              // },
             ],
+
+            settings: [
+              {
+                level:3,
+                type:"custom",
+                name:"practices",
+                select: [1,1,1,1,1, 2,2,2,2,2, 3,3,3,3,3, 3,4,4,4,4],
+                list: [
+
+                  {spells: [ { level: 3, spell: spells.water_whip, }, ],},
+                  {spells: [ { level: 3, spell: spells.fire_snake_teeth, }, ],},
+                  {spells: [ { level: 3, spell: spells.ashing_strike, }, ],},
+                  {spells: [ { level: 3, spell: spells.four_thunder_fist, }, ],},
+                  {spells: [ { level: 3, spell: spells.gust_of_wind_monk, }, ],},
+                  {spells: [ { level: 3, spell: spells.air_fist, }, ],},
+                  {spells: [ { level: 3, spell: spells.form_river, }, ],},
+                
+                  {spells: [ { level: 6, spell: spells.shatter_monk, }, ],},
+                  {spells: [ { level: 6, spell: spells.hold_person_monk, }, ],},
+
+                  //TODO - дописати спели
+
+                  {spells: [ { level:11, spell: spells.fly_monk }, ],},
+                  {spells: [ { level:11, spell: spells.fireball_monk }, ],},
+                  {spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
+
+                  {spells: [ { level:17, spell: spells.winter_breath }, ],},
+                  {spells: [ { level:17, spell: spells.earth_val }, ],},
+                  {spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
+                  {spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
+                ]
+              },
+            ]
           },
         ],
       },
@@ -3651,10 +3616,6 @@ export default {
               },
               {
                 level: 3,
-                spell: spells.divine_channel_mana,
-              },
-              {
-                level: 3,
                 spell: spells.protection_from_evil_and_good,
               },
               {
@@ -3718,10 +3679,6 @@ export default {
               },
               {
                 level: 3,
-                spell: spells.divine_channel_mana,
-              },
-              {
-                level: 3,
                 spell: spells.ensnaring_strike,
               },
               {
@@ -3765,10 +3722,6 @@ export default {
               {
                 level: 3,
                 spell: spells.divine_channel_vengence_2,
-              },
-              {
-                level: 3,
-                spell: spells.divine_channel_mana,
               },
               {
                 level: 3,
