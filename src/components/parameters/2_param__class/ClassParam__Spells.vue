@@ -3,14 +3,14 @@
 	<my-wrapper v-if="shown_Spells_All" gap_26 :hr="hr">
 		<my-spell-text
 			v-for="item in spells_Race_Param"
-			:key="item"
+			:key="item.name"
 			:spell="item"
 			passive
 		/>
 		<!-- CLASS -->
     <my-spell-text
 			v-for="item in spells_Class_Param"
-			:key="item"
+			:key="item.name"
 			:spell="item"
 		/>
 	</my-wrapper>
