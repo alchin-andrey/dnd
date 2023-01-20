@@ -1,17 +1,20 @@
 <template>
 	<div class="flex_section int-400">
-		<section>
-			<my-wrapper gap_26>
+		<!-- <section v-if="shown_Packs"> -->
+			<my-wrapper gap_26 v-if="shown_Packs" class="packs_section">
 				<PacksEquip
 					v-for="item_packs in packs"
 					:key="item_packs"
 					:packs="item_packs"
 				/>
 			</my-wrapper>
-		</section>
-		<section class="pad-top">
-      <InventoryEquip :inventory="inventory" />
-		</section> 
+		<!-- </section> -->
+		<!-- <section class="pad-top"> -->
+      <InventoryEquip 
+      :class="{ pad_top: !shown_Inventory_stripe }" 
+      :inventory="inventory" 
+      :stripe="shown_Inventory_stripe" />
+		<!-- </section>  -->
 	</div>
 </template>
 
@@ -35,17 +38,29 @@ export default {
 			default: null,
 		},
 	},
+  computed: {
+    shown_Inventory_stripe() {
+      return this.packs.length == 0
+    },
+
+    shown_Packs() {
+      return this.packs.length !== 0
+    }
+  }
 };
 </script>
 
 <style scoped>
 .flex_section {
-	display: grid;
-	grid-template-columns: 168px 1fr;
-	column-gap: 36px;
+  display: flex;
+  column-gap: 36px;
 }
 
-.pad-top {
+.packs_section {
+	width: 168px;
+}
+
+.pad_top {
   padding-top: 2px;
 }
 

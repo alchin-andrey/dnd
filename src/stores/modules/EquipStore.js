@@ -20,6 +20,16 @@ export const useEquipStore = defineStore({
   getters: {
     // ...mapState(useMYStore, ["MY", "level_Filter_Arr", "MY_Subclass"]),
 
+    item_Equip_Arr: (state) => (obj_arr, item) => {
+      const MYStore = useMYStore();
+      const eqip_lvl = MYStore.level_Filter_Arr(obj_arr);
+			let arr = [];
+			eqip_lvl?.forEach((el) =>
+				el[item]?.forEach((sub_el) => arr.push(sub_el))
+			);
+			return arr;
+		},
+
     equipments_Class_Arr() {
       const MYStore = useMYStore();
 			return MYStore.level_Filter_Arr(MYStore.MY.class.equipment);
@@ -36,28 +46,24 @@ export const useEquipStore = defineStore({
 			return equip_class.concat(equip_subclass);
 		},
 
-    item_Equip_Arr: (state) => (item) => {
-			let arr = [];
-			state.equipments_Class_Params?.forEach((el) =>
-				el[item]?.forEach((sub_el) => arr.push(sub_el))
-			);
-			return arr;
+    item_Equip_Class_Arr: (state) => (item) => {
+			return state.item_Equip_Arr(state.equipments_Class_Params, item);
 		},
 
     weapons_Equip_Class() {
-			return this.item_Equip_Arr("weapon");
+			return this.item_Equip_Class_Arr("weapon");
 		},
 
     inventory_Equip_Class() {
-			return this.item_Equip_Arr("inventory");
+			return this.item_Equip_Class_Arr("inventory");
 		},
 
 		packs_Equip_Class() {
-			return this.item_Equip_Arr("inventory_packs");
+			return this.item_Equip_Class_Arr("inventory_packs");
 		},
 
     armors_Equip_Class() {
-			return this.item_Equip_Arr("armor");
+			return this.item_Equip_Class_Arr("armor");
 		},
 
 		armor_Equip_Element() {

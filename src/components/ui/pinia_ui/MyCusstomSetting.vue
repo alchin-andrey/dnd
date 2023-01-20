@@ -24,6 +24,11 @@ export default {
 			type: Number,
 			default: null,
 		},
+
+    // sum: {
+		// 	// type: String,
+		// 	default: null,
+		// },
 	},
 
 	computed: {
@@ -32,22 +37,22 @@ export default {
 		},
 
 		t_Sum() {
-			return `${this.select} ${this.t("on_choice")}, ${this.sum} ${this.sum_Units}`;
+			return `${this.t("choice")} ${this.select} ${this.t("from")} ${this.sum}`;
 		},
 
-    sum_Units() {
-			let mod10 = Math.abs(this.sum % 10);
-			let mod100 = Math.abs(this.sum % 100);
-			if (mod100 > 10 && mod100 < 20) {
-				return this.t("choose_variants");
-			} else if (mod10 >= 2 && mod10 <= 4) {
-				return this.t("choose_varianta");
-			} else if (mod10 === 1) {
-				return this.t("choose_variant");
-			} else {
-				return this.t("choose_variants");
-			}
-		},
+    // sum_Units() {
+		// 	let mod10 = Math.abs(this.sum % 10);
+		// 	let mod100 = Math.abs(this.sum % 100);
+		// 	if (mod100 > 10 && mod100 < 20) {
+		// 		return this.t("choose_variants");
+		// 	} else if (mod10 >= 2 && mod10 <= 4) {
+		// 		return this.t("choose_varianta");
+		// 	} else if (mod10 === 1) {
+		// 		return this.t("choose_variant");
+		// 	} else {
+		// 		return this.t("choose_variants");
+		// 	}
+		// },
 	},
 };
 </script>

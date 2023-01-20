@@ -1,14 +1,12 @@
 <template>
-  <div :class="{ flex_packs: stripe }">
+	<div :class="{ flex_packs: stripe }">
 		<div ref="stripe" class="side_stripe" v-if="stripe"></div>
-			<div
-				class="main_inventory"
-				v-for="items in inventory"
-				:key="items"
-			>
+		<section>
+			<div class="main_inventory" v-for="items in inventory" :key="items">
 				• {{ t_Equip_Name(items) }}
 			</div>
-    </div>
+		</section>
+	</div>
 </template>
 
 <script>
@@ -19,13 +17,13 @@ export default {
 			type: Array,
 			default: null,
 		},
-    stripe: {
+		stripe: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	computed: {
-    t_Equip_Name: (state) => (inv) => {
+		t_Equip_Name: (state) => (inv) => {
 			const name = state.t(inv[0].name);
 			const namb = inv[1];
 			let str = namb > 1 ? `${name} x ${namb}` : name;
@@ -36,13 +34,12 @@ export default {
 </script>
 
 <style scoped>
-
 .flex_packs {
 	display: flex;
 	gap: 0 18px;
 	height: 100%;
 	width: 100%;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 
 .side_stripe {
