@@ -2105,6 +2105,10 @@ export default {
     spell_divine_sense_details: spells.divine_sense_details,
     spell_divine_sense_expanded: spells.divine_sense_expanded,
 
+    spell_paladin_divine_smite: spells.paladin_divine_smite,
+    spell_paladin_divine_smite_details: spells.paladin_divine_smite_details,
+    spell_paladin_divine_smite_expanded: spells.paladin_divine_smite_expanded,
+
     stock: "запас",
 
     spell_lay_on_hands: spells.lay_on_hands,

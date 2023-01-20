@@ -4198,9 +4198,9 @@ export default {
             fines: [
               {
                 level: 17,
-                type: "resistnace",
+                type: "resistance",
                 keyword: "resistance",
-                details: "as_walking_speed",
+                details: "to_no_magic_weapon",
               },
             ],
 
