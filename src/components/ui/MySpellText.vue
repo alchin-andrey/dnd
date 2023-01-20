@@ -623,7 +623,7 @@ export default {
 		},
 
 		Det_2_4_8_9_10_12_15_18_Lvl() {
-      const lvl_arr = [2, 4, 8, 9, 10, 12, 15, 18, 20];
+      const lvl_arr = [2, 4, 8, 9, 10, 12, 15, 18];
 			return this.kof_Foo(lvl_arr);
 		},
 

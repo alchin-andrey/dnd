@@ -3013,7 +3013,7 @@ export default {
     no_speed_fee: "Немає штрафу швидкості",
     on_nonmagic_hard_area: "у немагічній важкопрохідній місцевості",
     on_enchantment_from_fey_elemental: "проти 😍 Зачарування феями чи елементалями",
-    on_enchantment_from_fey_elemental: "проти 😱 Переляку феями чи елементалями",
+    on_fear_from_fey_elemental: "проти 😱 Переляку феями чи елементалями",
 
     saving_wisdom: "Випробування Мудрості",
     on_any_animal_or_plant_attack: "для будь-якого звіра чи рослини, що намагається вас атакувати",
@@ -4161,4 +4161,21 @@ export default {
 
     choice: "вибір",
     from: "з",
+
+    spell_inspired_attack: spells.inspired_attack,
+    spell_inspired_attack_details: spells.inspired_attack_details,
+    spell_inspired_attack_expanded: spells.inspired_attack_expanded,
+
+    spell_warding_flare: spells.warding_flare,
+    spell_warding_flare_details: spells.warding_flare_details,
+    spell_warding_flare_details_6: spells.warding_flare_details_6,
+    spell_warding_flare_expanded: spells.warding_flare_expanded,
+
+    circle_of_the_land: classes.circle_of_the_land,
+    circle_of_the_land_details: classes.circle_of_the_land_details,
+
+    totem_aspect: classes.totem_aspect,
+    totem_aspect_details: classes.totem_aspect_details,
+
+    spell_beast_sense_ritual: spells.beast_sense_ritual,
 }

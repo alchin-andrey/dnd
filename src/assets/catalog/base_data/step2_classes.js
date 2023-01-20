@@ -4956,23 +4956,8 @@ export default {
         select: 1,
         list: [
           {
-            name: "circle_of_the_land_arctic",
-            details: "circle_of_the_land_arctic_details",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
-              },
-              {
-                level: 2,
-                spell: spells.hold_person,
-              },
-              {
-                level: 2,
-                spell: spells.spike_growth,
-              },
-            ],
+            name: "circle_of_the_land",
+            details: "circle_of_the_land_details",
 
             fines: [
               {
@@ -5025,86 +5010,11 @@ export default {
               },
             ],
 
-            settings: [
-              {
-                level: 2,
-                type: "spells",
-                name: "spells_0",
-                select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
-              },
-            ],
-          },
-          {
-            name: "circle_of_the_land_swamp",
-            details: "circle_of_the_land_swamp_details",
-
             spells: [
               {
                 level: 2,
                 spell: spells.wild_shape,
               },
-              {
-                level: 2,
-                spell: spells.melfs_acid_arrow,
-              },
-              {
-                level: 2,
-                spell: spells.darkness,
-              },
-            ],
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "restoring",
-                details: "mana_slots_short_rest_lvl_05_up_to_5",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "no_speed_fee",
-                details: "on_nonmagic_hard_area",
-              },
-              {
-                level: 6,
-                type: "advantage",
-                keyword: "advantage",
-                details: "on_saving_from_plants",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_enchantment_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_fear_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "poison_against",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_sick",
-              },
-              {
-                level: 14,
-                type: "plus",
-                keyword: "saving_wisdom",
-                details: "on_any_animal_or_plant_attack",
-              },
             ],
 
             settings: [
@@ -5117,421 +5027,124 @@ export default {
                 mana_max: 0,
                 classes: ["druid"],
               },
-            ],
-          },
-          {
-            name: "circle_of_the_land_mountain",
-            details: "circle_of_the_land_mountain_details",
-
-            spells: [
               {
-                level: 2,
-                spell: spells.wild_shape,
-              },
-              {
-                level: 2,
-                spell: spells.spider_climb,
-              },
-              {
-                level: 2,
-                spell: spells.spike_growth,
-              },
-            ],
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "restoring",
-                details: "mana_slots_short_rest_lvl_05_up_to_5",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "no_speed_fee",
-                details: "on_nonmagic_hard_area",
-              },
-              {
-                level: 6,
-                type: "advantage",
-                keyword: "advantage",
-                details: "on_saving_from_plants",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_enchantment_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_fear_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "poison_against",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_sick",
-              },
-              {
-                level: 14,
-                type: "plus",
-                keyword: "saving_wisdom",
-                details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            settings: [
-              {
-                level: 2,
-                type: "spells",
-                name: "spells_0",
+                level:3,
+                type: "custom",
+                name: "favored_terrain",
                 select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
-              },
-            ],
-          },
-          {
-            name: "circle_of_the_land_forest",
-            details: "circle_of_the_land_forest_details",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
-              },
-              {
-                level: 2,
-                spell: spells.barkskin,
-              },
-              {
-                level: 2,
-                spell: spells.spider_climb,
-              },
-            ],
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "restoring",
-                details: "mana_slots_short_rest_lvl_05_up_to_5",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "no_speed_fee",
-                details: "on_nonmagic_hard_area",
-              },
-              {
-                level: 6,
-                type: "advantage",
-                keyword: "advantage",
-                details: "on_saving_from_plants",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_enchantment_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_fear_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "poison_against",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_sick",
-              },
-              {
-                level: 14,
-                type: "plus",
-                keyword: "saving_wisdom",
-                details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            settings: [
-              {
-                level: 2,
-                type: "spells",
-                name: "spells_0",
-                select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
-              },
-            ],
-          },
-          {
-            name: "circle_of_the_land_grassland",
-            details: "circle_of_the_land_grassland_details",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
-              },
-              {
-                level: 2,
-                spell: spells.pass_without_trace,
-              },
-              {
-                level: 2,
-                spell: spells.invisibility,
-              },
-            ],
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "restoring",
-                details: "mana_slots_short_rest_lvl_05_up_to_5",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "no_speed_fee",
-                details: "on_nonmagic_hard_area",
-              },
-              {
-                level: 6,
-                type: "advantage",
-                keyword: "advantage",
-                details: "on_saving_from_plants",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_enchantment_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_fear_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "poison_against",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_sick",
-              },
-              {
-                level: 14,
-                type: "plus",
-                keyword: "saving_wisdom",
-                details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            settings: [
-              {
-                level: 2,
-                type: "spells",
-                name: "spells_0",
-                select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
-              },
-            ],
-          },
-          {
-            name: "circle_of_the_land_coast",
-            details: "circle_of_the_land_coast_details",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
-              },
-              {
-                level: 2,
-                spell: spells.mirror_image,
-              },
-              {
-                level: 2,
-                spell: spells.misty_step,
-              },
-            ],
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "restoring",
-                details: "mana_slots_short_rest_lvl_05_up_to_5",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "no_speed_fee",
-                details: "on_nonmagic_hard_area",
-              },
-              {
-                level: 6,
-                type: "advantage",
-                keyword: "advantage",
-                details: "on_saving_from_plants",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_enchantment_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_fear_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "poison_against",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_sick",
-              },
-              {
-                level: 14,
-                type: "plus",
-                keyword: "saving_wisdom",
-                details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            settings: [
-              {
-                level: 2,
-                type: "spells",
-                name: "spells_0",
-                select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
-              },
-            ],
-          },
-          {
-            name: "circle_of_the_land_underdark",
-            details: "circle_of_the_land_underdark_details",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
-              },
-              {
-                level: 2,
-                spell: spells.spider_climb,
-              },
-              {
-                level: 2,
-                spell: spells.web,
-              },
-            ],
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "restoring",
-                details: "mana_slots_short_rest_lvl_05_up_to_5",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "no_speed_fee",
-                details: "on_nonmagic_hard_area",
-              },
-              {
-                level: 6,
-                type: "advantage",
-                keyword: "advantage",
-                details: "on_saving_from_plants",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_enchantment_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_fear_from_fey_elemental",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "poison_against",
-              },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "immunity",
-                details: "on_sick",
-              },
-              {
-                level: 14,
-                type: "plus",
-                keyword: "saving_wisdom",
-                details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            settings: [
-              {
-                level: 2,
-                type: "spells",
-                name: "spells_0",
-                select: 1,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
-              },
-            ],
+                list: [
+                  {
+                    name: "circle_of_the_land_arctic",
+                    details: "circle_of_the_land_arctic_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.hold_person,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.spike_growth,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_swamp",
+                    details: "circle_of_the_land_swamp_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.melfs_acid_arrow,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.darkness,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_mountain",
+                    details: "circle_of_the_land_mountain_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.spider_climb,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.spike_growth,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_forest",
+                    details: "circle_of_the_land_forest_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.barkskin,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.spider_climb,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_grassland",
+                    details: "circle_of_the_land_grassland_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.pass_without_trace,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.invisibility,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_coast",
+                    details: "circle_of_the_land_coast_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.mirror_image,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.misty_step,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_underdark",
+                    details: "circle_of_the_land_underdark_details",
+        
+                    spells: [
+                      {
+                        level: 2,
+                        spell: spells.spider_climb,
+                      },
+                      {
+                        level: 2,
+                        spell: spells.web,
+                      },
+                    ],
+                  },
+                ]
+              }
+            ]
           },
           {
             name: "circle_of_the_moon",
-            details: "circle_of_the_moon",
+            details: "circle_of_the_moon_details",
 
             spells: [
               {
