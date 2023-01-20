@@ -6839,12 +6839,6 @@ export default {
                 keyword: "plus_INT",
                 details: "to_damage_evocation",
               },
-              {
-                level: 14,
-                type: "advantage",
-                keyword: "always_max_dmg",
-                details: "from_evocation_1_to_5",
-              },
             ],
             spells: [
               {
@@ -6921,7 +6915,7 @@ export default {
             charges: [
               {
                 level: 2,
-                name: "magical_protection",
+                name: "magical_protection_slots",
                 type: "long_rest",
                 list: [
                   [ "", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],

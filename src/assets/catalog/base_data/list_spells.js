@@ -10142,7 +10142,7 @@ export default {
       expanded: "spell_wild_magic_surge_expanded",
 
       type: "ability",
-      slot_type: "wild_magic_surge",
+      slot_type: "wild_magic_surge_slot",
       classes: ["sorcerer"],
 
       cast_time: "none",
@@ -11233,7 +11233,7 @@ export default {
       expanded: "spell_magical_protection_expanded",
 
       type: "ability",
-      slot_type: "magical_protection",
+      slot_type: "magical_protection_slot",
       classes: ["wizard"],
 
       cast_time: "none",

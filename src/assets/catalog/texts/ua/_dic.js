@@ -2697,8 +2697,8 @@ export default {
     bard: classes.bard,
     bard_details: classes.bard_details,
 
-    bardic_inspiration_slots: "Слоти Натхнення",
-    bardic_inspiration_slot: "Слот Натхнення",
+    bardic_inspiration_slots: "Натхнення",
+    bardic_inspiration_slot: "1× Натхнення",
 
     dice: "куб",
 
@@ -4178,4 +4178,10 @@ export default {
     totem_aspect_details: classes.totem_aspect_details,
 
     spell_beast_sense_ritual: spells.beast_sense_ritual,
+
+    entropic_ward_slots: "Энтропічний догляд",
+    entropic_ward_slot: "1× Энтропічний догляд",
+
+    magical_protection_slots: "Магічний захист",
+    magical_protection_slot: "1× Магічний захист",
 }

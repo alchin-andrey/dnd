@@ -4178,5 +4178,12 @@ export default {
 
     spell_beast_sense_ritual: spells.beast_sense_ritual,
 
+    entropic_ward_slots: "Энтропическая опека",
+    entropic_ward_slot: "1× Энтропическая опека",
 
+    always_max_dmg: "всегда максимальньій урон",
+    from_spells: "от заклинаний Воплощения [1-5]",
+
+    magical_protection_slots: "Магическая защита",
+    magical_protection_slot: "1× Магическая защита",
 }
