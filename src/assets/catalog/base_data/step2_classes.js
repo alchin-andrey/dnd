@@ -781,7 +781,7 @@ export default {
                   type: "skills",
                   name: "skills",
                   select: 1,
-                  bonus: "mastery",
+                  bonus: "Mastery",
                   list: [
                     "investigation",
                     "athletics",
@@ -887,7 +887,7 @@ export default {
           type: "skills",
           name: "skills",
           select: 3,
-          bonus: "mastery",
+          bonus: "Mastery",
           list: [
             "investigation",
             "athletics",
@@ -1346,7 +1346,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 4,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "acrobatics",
           "investigation",
@@ -1377,40 +1377,40 @@ export default {
             ],
           },
           {
-            skills: [ { sleight_of_hand: "mastery", }, ],
+            skills: [ { sleight_of_hand: "Mastery", }, ],
           },
           {
-            skills: [ { acrobatics: "mastery", }, ],
+            skills: [ { acrobatics: "Mastery", }, ],
           },
           {
-            skills: [ { investigation: "mastery", }, ],
+            skills: [ { investigation: "Mastery", }, ],
           },
           {
-            skills: [ { athletics: "mastery", }, ],
+            skills: [ { athletics: "Mastery", }, ],
           },
           {
-            skills: [ { perception: "mastery", }, ],
+            skills: [ { perception: "Mastery", }, ],
           },
           {
-            skills: [ { performance: "mastery", }, ],
+            skills: [ { performance: "Mastery", }, ],
           },
           {
-            skills: [ { intimidation: "mastery", }, ],
+            skills: [ { intimidation: "Mastery", }, ],
           },
           {
-            skills: [ { acrobatics: "mastery", }, ],
+            skills: [ { acrobatics: "Mastery", }, ],
           },
           {
-            skills: [ { deception: "mastery", }, ],
+            skills: [ { deception: "Mastery", }, ],
           },
           {
-            skills: [ { insight: "mastery", }, ],
+            skills: [ { insight: "Mastery", }, ],
           },
           {
-            skills: [ { stealth: "mastery", }, ],
+            skills: [ { stealth: "Mastery", }, ],
           },
           {
-            skills: [ { persuasion: "mastery", }, ],
+            skills: [ { persuasion: "Mastery", }, ],
           },
         ],
       },
@@ -1430,40 +1430,40 @@ export default {
             ],
           },
           {
-            skills: [ { sleight_of_hand: "mastery", }, ],
+            skills: [ { sleight_of_hand: "Mastery", }, ],
           },
           {
-            skills: [ { acrobatics: "mastery", }, ],
+            skills: [ { acrobatics: "Mastery", }, ],
           },
           {
-            skills: [ { investigation: "mastery", }, ],
+            skills: [ { investigation: "Mastery", }, ],
           },
           {
-            skills: [ { athletics: "mastery", }, ],
+            skills: [ { athletics: "Mastery", }, ],
           },
           {
-            skills: [ { perception: "mastery", }, ],
+            skills: [ { perception: "Mastery", }, ],
           },
           {
-            skills: [ { performance: "mastery", }, ],
+            skills: [ { performance: "Mastery", }, ],
           },
           {
-            skills: [ { intimidation: "mastery", }, ],
+            skills: [ { intimidation: "Mastery", }, ],
           },
           {
-            skills: [ { acrobatics: "mastery", }, ],
+            skills: [ { acrobatics: "Mastery", }, ],
           },
           {
-            skills: [ { deception: "mastery", }, ],
+            skills: [ { deception: "Mastery", }, ],
           },
           {
-            skills: [ { insight: "mastery", }, ],
+            skills: [ { insight: "Mastery", }, ],
           },
           {
-            skills: [ { stealth: "mastery", }, ],
+            skills: [ { stealth: "Mastery", }, ],
           },
           {
-            skills: [ { persuasion: "mastery", }, ],
+            skills: [ { persuasion: "Mastery", }, ],
           },
         ],
       },
@@ -1972,7 +1972,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 4,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "acrobatics",
           "athletics",
@@ -2599,8 +2599,9 @@ export default {
                       {
                         level: 6,
                         type: "skills",
+                        name: "skills",
                         select: 1,
-                        bonus: "mastery",
+                        bonus: "Mastery",
                         list: [
                           "athletics",
                           "acrobatics",
@@ -2674,7 +2675,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "athletics",
           "insight",
@@ -2689,7 +2690,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 1,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "athletics",
           "insight",
@@ -2704,7 +2705,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 1,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "athletics",
           "insight",
@@ -3178,7 +3179,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        num: "mastery",
+        bonus: "Mastery",
         list: [
           "acrobatics",
           "athletics",
@@ -3804,7 +3805,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "athletics",
           "insight",
@@ -4470,8 +4471,8 @@ export default {
                 type: "skills",
                 name: "skills",
                 select: 2,
-                num: "masteryX2",
-                list: ["history", "arvana", "nature", "religion"],
+                bonus: "Mastery_x2",
+                list: ["history", "arcana", "nature", "religion"],
               },
             ],
           },
@@ -4584,7 +4585,7 @@ export default {
                 type: "skills",
                 name: "skills",
                 select: 1,
-                num: "mastery",
+                bonus: "Mastery",
                 list: ["survival", "nature", "animal_hanging"],
               },
               {
@@ -4700,7 +4701,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: ["history", "medicine", "insight", "religion", "persuasion"],
       },
       {
@@ -5563,7 +5564,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "perception",
           "survival",
@@ -6352,8 +6353,8 @@ export default {
             skills: [
               {
                 level: 2,
-                deception: "mastery",
-                persuasion: "mastery",
+                deception: "Mastery",
+                persuasion: "Mastery",
               },
             ],
           },
@@ -6411,7 +6412,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        bonus: "mastery",
+        bonus: "Mastery",
         list: [
           "investigation",
           "intimidation",
@@ -6950,7 +6951,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        num: "mastery",
+        bonus: "Mastery",
         list: [
           "intimidation",
           "arcana",
@@ -7381,7 +7382,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        num: "mastery",
+        bonus: "Mastery",
         list: [
           "investigation",
           "history",
@@ -7633,7 +7634,7 @@ export default {
                 type: "skills",
                 name: "skills",
                 select: 3,
-                num: "mastery",
+                bonus: "Mastery",
               },
               {
                 level: 6,
@@ -7652,7 +7653,7 @@ export default {
         type: "skills",
         name: "skills",
         select: 3,
-        num: "mastery",
+        bonus: "Mastery",
         list: [
           "performance",
           "athletics",
@@ -7826,16 +7827,17 @@ export default {
         type: "skills",
         name: "skills",
         select: 2,
-        filter: "mastery",
-        num: "mastery",
+        filter: "only_mastery",
+        // На третьем уровне выберите 2 навыка из тех, которыми вы владеете. Ваш бонус мастерства для этих навыков удваивается. На 10 уровне вы можете выбрать ещё 2 навыка и получить для них это преимущество.
+        bonus: "Mastery",
       },
       {
         level: 10,
         type: "skills",
         name: "skills",
         select: 2,
-        filter: "mastery",
-        num: "mastery",
+        filter: "only_mastery",
+        bonus: "Mastery",
       },
       {
         level: 4,

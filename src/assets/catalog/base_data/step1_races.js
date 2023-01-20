@@ -1262,7 +1262,7 @@ export default {
               name: "skills",
               select: 2,
               filter: "no_used",
-              num: "mastery"
+              bonus: "mastery"
             },
             {
               type: "languages",

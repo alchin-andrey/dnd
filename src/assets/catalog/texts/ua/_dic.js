@@ -4158,4 +4158,7 @@ export default {
     spell_form_river: spells.form_river,
     spell_form_river_details: spells.form_river_details,
     spell_form_river_expanded: spells.form_river_expanded,
+
+    choice: "вибір",
+    from: "з",
 }
