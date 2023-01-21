@@ -3,8 +3,10 @@ export default {
         { name: "male", details: 'male_details',},
         { name: "intersex", details: "intersex_details",},
         { name: "female", details: "female_details",},
+
         { name: "demiboy", details: "demiboy_details",},
         { name: "demigirl", details: "demigirl_details",},
+
         { name: "neutral_gender", details: "neutral_gender_details",},
         { name: "unstable", details: "unstable_details",},
         { name: "other_gender", details: "other_gender_details",},
@@ -36,7 +38,23 @@ export default {
         { name: "as_other_gender",  details: "as_other_gender_details",},
     ],
 
-    attraction: {
-        //Добавить на предистории
-    },
+    attraction: [
+        { name: "androginsexual", details: "androginsexual_details",},
+        { name: "pansexual", details: "pansexual_details",},
+        { name: "polysexual", details: "polysexual_details",},
+
+        { name: "androsexual", details: "androsexual_details",},
+        { name: "bisexual", details: "biexual_details",},
+
+        { name: "ginsexual", details: "ginsexual_details",},
+        { name: "heterosexual", details: "heterosexual_details",},
+        { name: "homosexual", details: "homosexual_details",},
+
+        { name: "sapiosexual", details: "sapiosexual_details",},
+        { name: "skoliosexual", details: "skoliosexual_details",},
+        
+        { name: "asexual", details: "asexual_details",},
+        { name: "autosexual", details: "autosexual_details",},
+        { name: "other_sexual", details: "other_sexual_details",},
+    ],
 };
