@@ -182,7 +182,7 @@ export default {
 
 			const throwing_numb = this.weapon[0].throwing;
 			const t_throwing_full = `${this.t("throwing")} (${this.t(
-				"starting_from"
+				"from"
 			)} ${throwing_numb}${this.t("f")})`;
 			throwing_numb ? arr.push(t_throwing_full) : null; //Метательное
 
