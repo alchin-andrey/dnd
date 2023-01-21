@@ -165,44 +165,42 @@ export const usePagesStore = defineStore({
 			}
 		},
 
-    closeCustom() {
+		closeCustomClass() {
 			const MYStore = useMYStore();
-      const setting_open = this.setting_open;
-      // // console.log('setting_open:', setting_open)
-      // if(setting_open) {
-      //     let str = setting_open.split("__");
-      //     console.log('str:', str)
-      //   const custtom = MYStore.сustomm_Settings_100[1];
-      //   console.log('custtom:', custtom)
-      //   let filter;
-      //   if(custtom) {
-      //     filter = custtom.find(el => {
-      //       console.log('custtom.id:', custtom.id)
-      //       custtom.id == setting_open
-      //     });
-      //   }
-      //   // console.log('filter:', filter)
-      // }
-
-
-			// if (page_shown && null_race_par && null_ethnos_par) {
-			// 	this.showHome();
-			// }
+			const setting_open = this.setting_open;
+			if (setting_open) {
+				let str = setting_open.split("__");
+				const custtom = MYStore.сustomm_Settings_100[str[1]];
+        let filter = custtom?.find((el) => el.id == setting_open);
+        const str_0 = `${str[0]}__${str[1]}__0`;
+        let filter_0 = custtom?.find((el) => el.id == str_0);
+        if(filter) {
+          return null;
+        } else if(filter_0) {
+          this.setting_open = str_0;
+          this.class_page.shown[setting_open] = false;
+          this.class_page.shown[str_0] = true;
+        } else {
+          this.showHome();
+        }
+			} else {
+        this.showHome();
+      }
 		},
 
 		// createVarClass(obj) {
-    //   for (let key in obj) {
-    //     const set = `${obj[key][0].type}_${key}`;
+		//   for (let key in obj) {
+		//     const set = `${obj[key][0].type}_${key}`;
 
-    //     for (let i = 0; i < obj[key].length; i += 1) {
-    //     // for (let i in obj[key]) {
-    //       const set_numb = `${set}_${i}`;
+		//     for (let i = 0; i < obj[key].length; i += 1) {
+		//     // for (let i in obj[key]) {
+		//       const set_numb = `${set}_${i}`;
 
-    //       if (!this.class_page.shown[set_numb]) {
-    //         this.class_page.shown[set_numb] = false;
-    //       }
-    //     }
-    //   }
+		//       if (!this.class_page.shown[set_numb]) {
+		//         this.class_page.shown[set_numb] = false;
+		//       }
+		//     }
+		//   }
 		// },
 	},
 });

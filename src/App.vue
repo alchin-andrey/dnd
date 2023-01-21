@@ -251,7 +251,7 @@ export default {
       "goPage",
       
       "closeSubclass",
-      "closeCustom",
+      "closeCustomClass",
 		]),
 		...mapActions(useMYStore, [
       "getEthnos",
@@ -283,7 +283,7 @@ export default {
     getWatch_Class() {
       // this.getSettingsClass()
       this.closeSubclass();
-      this.closeCustom();
+      this.closeCustomClass();
     }
 	},
 };
