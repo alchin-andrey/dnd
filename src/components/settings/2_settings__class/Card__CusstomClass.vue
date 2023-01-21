@@ -19,6 +19,17 @@
 				:icon="MY.skills[Object.keys(skill)[0]].mod"
 			></my-attribute>
 		</my-wrapper>
+    
+    <!-- //NOTE - hp_Bonus -->
+    <my-wrapper v-if="customm.hp_bonus">
+				<my-attribute
+					v-if="customm.hp_bonus"
+					title="hp_bonus"
+					:numb="hp_Bonus(customm.hp_bonus[0], customm.hp_bonus[1])"
+					plus
+					icon="hp_bonus"
+				/>
+			</my-wrapper>
 
     <!-- //NOTE - Charges -->
 		<my-wrapper v-if="shown_Param_Arr(customm.charges)">
@@ -156,10 +167,15 @@ export default {
 		...mapState(useEquipStore, ["item_Equip_Arr"]),
 
 
-    TTT: (state) => (name) => {
-      const arr = Object.keys(name);
-    return arr[0]
-    },
+    // TTT: (state) => (name) => {
+    //   const arr = Object.keys(name);
+    // return arr[0]
+    // },
+
+    hp_Bonus: (state) => (increm_1, increm_2) => {
+			let level = Math.ceil(state.MY.level / increm_1);
+			return level * increm_2;
+		},
 
 		packs_Equip: (state) => (obj_arr) => {
 			return state.item_Equip_Arr(obj_arr, "inventory_packs");
