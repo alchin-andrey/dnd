@@ -1921,6 +1921,7 @@ export default {
                 level: 10,
                 type: "custom",
                 name: "battle_style",
+                filter: "no_used",
                 select: 1,
                 list: [
                   {
@@ -2029,19 +2030,34 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 4,
-        bonus: "Mastery",
         list: [
-          "acrobatics",
-          "athletics",
-          "perception",
-          "survival",
-          "intimidation",
-          "history",
-          "animal_hanging",
-          "insight",
+          {
+            skills: [ { acrobatics: "Mastery", }, ],
+          },
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { perception: "Mastery", }, ],
+          },
+          {
+            skills: [ { survival: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { history: "Mastery", }, ],
+          },
+          {
+            skills: [ { animal_hanging: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -2197,12 +2213,12 @@ export default {
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.dungeoneers, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
       {
@@ -2658,15 +2674,14 @@ export default {
                     settings: [
                       {
                         level: 6,
-                        type: "skills",
+                        type: "custom",
                         name: "skills",
                         select: 1,
-                        bonus: "Mastery",
                         list: [
-                          "athletics",
-                          "acrobatics",
-                          "stealth",
-                          "survival",
+                          {skills: [ { athletics: "Mastery", }, ],},
+                          {skills: [ { acrobatics: "Mastery", }, ],},
+                          {skills: [ { stealth: "Mastery", }, ],},
+                          {skills: [ { survival: "Mastery", }, ],},
                         ],
                       },
                     ],
@@ -2732,47 +2747,80 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "athletics",
-          "insight",
-          "survival",
-          "intimidation",
-          "nature",
-          "animal_hanging",
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { survival: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { nature: "Mastery", }, ],
+          },
+          {
+            skills: [ { animal_hanging: "Mastery", }, ],
+          },
         ],
       },
       {
         level: 3,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 1,
-        bonus: "Mastery",
         list: [
-          "athletics",
-          "insight",
-          "survival",
-          "intimidation",
-          "nature",
-          "animal_hanging",
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { survival: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { nature: "Mastery", }, ],
+          },
+          {
+            skills: [ { animal_hanging: "Mastery", }, ],
+          },
         ],
       },
       {
         level: 10,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 1,
-        bonus: "Mastery",
         list: [
-          "athletics",
-          "insight",
-          "survival",
-          "intimidation",
-          "nature",
-          "animal_hanging",
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { survival: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { nature: "Mastery", }, ],
+          },
+          {
+            skills: [ { animal_hanging: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -2797,46 +2845,46 @@ export default {
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.greataxe, 1],
-          [weapons.halberd, 1],
-          [weapons.war_pick, 1],
-          [weapons.warhammer, 1],
-          [weapons.battleaxe, 1],
-          [weapons.glaive, 1],
-          [weapons.greatsword, 1],
-          [weapons.lance, 1],
-          [weapons.longsword, 1],
-          [weapons.whip, 1],
-          [weapons.shortsword, 1],
-          [weapons.maul, 1],
-          [weapons.morningstar, 1],
-          [weapons.pike, 1],
-          [weapons.rapier, 1],
-          [weapons.scimitar, 1],
-          [weapons.trident, 1],
-          [weapons.flail, 1],
+          {equipment: [{ weapon: [[weapons.greataxe, 1]] }],},
+          {equipment: [{ weapon: [[weapons.halberd, 1]] }],},
+          {equipment: [{ weapon: [[weapons.war_pick, 1]] }],},
+          {equipment: [{ weapon: [[weapons.warhammer, 1]] }],},
+          {equipment: [{ weapon: [[weapons.battleaxe, 1]] }],},
+          {equipment: [{ weapon: [[weapons.glaive, 1]] }],},
+          {equipment: [{ weapon: [[weapons.greatsword, 1]] }],},
+          {equipment: [{ weapon: [[weapons.lance, 1]] }],},
+          {equipment: [{ weapon: [[weapons.longsword, 1]] }],},
+          {equipment: [{ weapon: [[weapons.whip, 1]] }],},
+          {equipment: [{ weapon: [[weapons.shortsword, 1]] }],},
+          {equipment: [{ weapon: [[weapons.maul, 1]] }],},
+          {equipment: [{ weapon: [[weapons.morningstar, 1]] }],},
+          {equipment: [{ weapon: [[weapons.pike, 1]] }],},
+          {equipment: [{ weapon: [[weapons.rapier, 1]] }],},
+          {equipment: [{ weapon: [[weapons.scimitar, 1]] }],},
+          {equipment: [{ weapon: [[weapons.trident, 1]] }],},
+          {equipment: [{ weapon: [[weapons.flail, 1]] }],},
         ],
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.handaxe, 2],
-          [weapons.quarterstaff, 1],
-          [weapons.mace, 1],
-          [weapons.club, 1],
-          [weapons.dagger, 1],
-          [weapons.spear, 1],
-          [weapons.light_hammer, 1],
-          [weapons.javelin, 1],
-          [weapons.greatclub, 1],
-          [weapons.sickle, 1],
+          {equipment: [{ weapon: [[weapons.handaxe, 1]] }],},
+          {equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],},
+          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
+          {equipment: [{ weapon: [[weapons.club, 1]] }],},
+          {equipment: [{ weapon: [[weapons.dagger, 1]] }],},
+          {equipment: [{ weapon: [[weapons.spear, 1]] }],},
+          {equipment: [{ weapon: [[weapons.light_hammer, 1]] }],},
+          {equipment: [{ weapon: [[weapons.javelin, 1]] }],},
+          {equipment: [{ weapon: [[weapons.greatclub, 1]] }],},
+          {equipment: [{ weapon: [[weapons.sickle, 1]] }],},
         ],
       },
     ],
@@ -3220,14 +3268,14 @@ export default {
 
                   //TODO - дописати спели
 
-                  {spells: [ { level:11, spell: spells.fly_monk }, ],},
-                  {spells: [ { level:11, spell: spells.fireball_monk }, ],},
-                  {spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
+                  // {spells: [ { level:11, spell: spells.fly_monk }, ],},
+                  // {spells: [ { level:11, spell: spells.fireball_monk }, ],},
+                  // {spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
 
-                  {spells: [ { level:17, spell: spells.winter_breath }, ],},
-                  {spells: [ { level:17, spell: spells.earth_val }, ],},
-                  {spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
-                  {spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
+                  // {spells: [ { level:17, spell: spells.winter_breath }, ],},
+                  // {spells: [ { level:17, spell: spells.earth_val }, ],},
+                  // {spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
+                  // {spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
                 ]
               },
             ]
@@ -3236,17 +3284,28 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "acrobatics",
-          "athletics",
-          "history",
-          "insight",
-          "religion",
-          "stealth",
+          {
+            skills: [ { acrobatics: "Mastery", }, ],
+          },
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { history: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
+          {
+            skills: [ { stealth: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -3479,12 +3538,12 @@ export default {
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.dungeoneers, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
       {
@@ -3855,17 +3914,28 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "athletics",
-          "insight",
-          "intimidation",
-          "medicine",
-          "religion",
-          "persuasion",
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { medicine: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
+          {
+            skills: [ { persuasion: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -3992,30 +4062,30 @@ export default {
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.javelin, 5],
-          [weapons.quarterstaff, 1],
-          [weapons.mace, 1],
-          [weapons.club, 1],
-          [weapons.dagger, 1],
-          [weapons.spear, 1],
-          [weapons.light_hammer, 1],
-          [weapons.greatclub, 1],
-          [weapons.handaxe, 1],
-          [weapons.sickle, 1],
+          {equipment: [{ weapon: [[weapons.javelin, 1]] }],},
+          {equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],},
+          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
+          {equipment: [{ weapon: [[weapons.club, 1]] }],},
+          {equipment: [{ weapon: [[weapons.dagger, 1]] }],},
+          {equipment: [{ weapon: [[weapons.spear, 1]] }],},
+          {equipment: [{ weapon: [[weapons.light_hammer, 1]] }],},
+          {equipment: [{ weapon: [[weapons.greatclub, 1]] }],},
+          {equipment: [{ weapon: [[weapons.handaxe, 1]] }],},
+          {equipment: [{ weapon: [[weapons.sickle, 1]] }],},
         ],
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.priests, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.priests, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
       {
@@ -4521,11 +4591,23 @@ export default {
               },
               {
                 level: 1,
-                type: "skills",
+                type: "custom",
                 name: "skills",
                 select: 2,
-                bonus: "Mastery_x2",
-                list: ["history", "arcana", "nature", "religion"],
+                list: [
+                  {
+                    skills: [ { history: "Mastery_x2", }, ],
+                  },
+                  {
+                    skills: [ { arcana: "Mastery_x2", }, ],
+                  },
+                  {
+                    skills: [ { nature: "Mastery_x2", }, ],
+                  },
+                  {
+                    skills: [ { religion: "Mastery_x2", }, ],
+                  },
+                ],
               },
             ],
           },
@@ -4635,11 +4717,20 @@ export default {
               },
               {
                 level: 1,
-                type: "skills",
+                type: "custom",
                 name: "skills",
                 select: 1,
-                bonus: "Mastery",
-                list: ["survival", "nature", "animal_hanging"],
+                list: [
+                  {
+                    skills: [ { survival: "Mastery", }, ],
+                  },
+                  {
+                    skills: [ { nature: "Mastery", }, ],
+                  },
+                  {
+                    skills: [ { animal_hanging: "Mastery", }, ],
+                  },
+                  ],
               },
               {
                 level: 1,
@@ -4751,20 +4842,36 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
-        list: ["history", "medicine", "insight", "religion", "persuasion"],
+        list: [
+          {
+            skills: [ { history: "Mastery", }, ],
+          },
+          {
+            skills: [ { medicine: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
+          {
+            skills: [ { persuasion: "Mastery", }, ],
+          },  
+        ],
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.mace, 1],
-          [weapons.warhammer, 1], // давай если нет мастери - подсвечивать имя желтьім
+          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
+          {equipment: [{ weapon: [[weapons.warhammer, 1]] }],},
+          // TODO - давай если нет мастери - подсвечивать имя желтьім
         ],
       },
       {
@@ -4838,12 +4945,12 @@ export default {
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.priests, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.priests, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
       {
@@ -5227,19 +5334,34 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "perception",
-          "survival",
-          "arcana",
-          "medicine",
-          "animal_hanging",
-          "nature",
-          "insight",
-          "religion",
+          {
+            skills: [ { perception: "Mastery", }, ],
+          },
+          {
+            skills: [ { survival: "Mastery", }, ],
+          },
+          {
+            skills: [ { arcana: "Mastery", }, ],
+          },
+          {
+            skills: [ { medicine: "Mastery", }, ],
+          },
+          {
+            skills: [ { animal_hanging: "Mastery", }, ],
+          },
+          {
+            skills: [ { nature: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -5321,21 +5443,21 @@ export default {
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.scimitar, 1],
-          [weapons.quarterstaff, 1],
-          [weapons.mace, 1],
-          [weapons.club, 1],
-          [weapons.dagger, 1],
-          [weapons.spear, 1],
-          [weapons.light_hammer, 1],
-          [weapons.javelin, 1],
-          [weapons.greatclub, 1],
-          [weapons.handaxe, 1],
-          [weapons.sickle, 1],
+          {equipment: [{ weapon: [[weapons.scimitar, 1]] }],},
+          {equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],},
+          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
+          {equipment: [{ weapon: [[weapons.club, 1]] }],},
+          {equipment: [{ weapon: [[weapons.dagger, 1]] }],},
+          {equipment: [{ weapon: [[weapons.spear, 1]] }],},
+          {equipment: [{ weapon: [[weapons.light_hammer, 1]] }],},
+          {equipment: [{ weapon: [[weapons.javelin, 1]] }],},
+          {equipment: [{ weapon: [[weapons.greatclub, 1]] }],},
+          {equipment: [{ weapon: [[weapons.handaxe, 1]] }],},
+          {equipment: [{ weapon: [[weapons.sickle, 1]] }],},
         ],
       },
       {
@@ -5793,8 +5915,7 @@ export default {
         level: 2,
         type: "custom",
         name: "invocations",
-        select: 2,
-        foo: "Sel_2_5_7_9_12_15_18",
+        select: [0,2,2,2,3, 3,4,4,5,5, 5,6,6,6,7, 7,7,8,8,8],
         list: [
           // Не каноничньіе, как оказалось
           // {
@@ -6075,18 +6196,31 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "investigation",
-          "intimidation",
-          "history",
-          "arcana",
-          "deception",
-          "nature",
-          "religion",
+          {
+            skills: [ { investigation: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { history: "Mastery", }, ],
+          },
+          {
+            skills: [ { arcana: "Mastery", }, ],
+          },
+          {
+            skills: [ { deception: "Mastery", }, ],
+          },
+          {
+            skills: [ { nature: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -6243,12 +6377,12 @@ export default {
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.scholars, 1],
-          [packs.dungeoneers, 1],
+          {equipment: [{ inventory_packs:[[packs.scholars, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
         ],
       },
       {
@@ -6614,17 +6748,28 @@ export default {
         ],
       },
       {
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "intimidation",
-          "arcana",
-          "deception",
-          "insight",
-          "religion",
-          "persuasion",
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { arcana: "Mastery", }, ],
+          },
+          {
+            skills: [ { deception: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
+          {
+            skills: [ { persuasion: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -6697,19 +6842,22 @@ export default {
         ],
       },
       {
-        type: "inventory",
+        type: "custom",
         name: "inventory",
         select: 1,
-        list: [[items.component_pouch], [items.focus]],
+        list: [
+          {equipment: [{ inventory:[[items.component_pouch, 1],],}]},
+          {equipment: [{ inventory:[[items.focus, 1],],}]},
+        ]
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.dungeoneers, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
       {
@@ -6893,6 +7041,7 @@ export default {
                 details: "to_damage_evocation",
               },
             ],
+
             spells: [
               {
                 level: 14,
@@ -7039,41 +7188,55 @@ export default {
         ],
       },
       {
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
-        bonus: "Mastery",
         list: [
-          "investigation",
-          "history",
-          "arcana",
-          "medicine",
-          "insight",
-          "religion",
+          {
+            skills: [ { investigation: "Mastery", }, ],
+          },
+          {
+            skills: [ { history: "Mastery", }, ],
+          },
+          {
+            skills: [ { arcana: "Mastery", }, ],
+          },
+          {
+            skills: [ { medicine: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { religion: "Mastery", }, ],
+          },
         ],
       },
       {
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.quarterstaff, 1],
-          [weapons.dagger, 1],
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }], },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }], },
         ],
       },
       {
-        type: "inventory",
+        type: "custom",
         name: "inventory",
         select: 1,
-        list: [[items.component_pouch], [items.focus]],
+        list: [
+          {equipment: [{ inventory:[[items.component_pouch, 1],],}]},
+          {equipment: [{ inventory:[[items.focus, 1],],}]},
+        ]
       },
       {
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.scholars, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.scholars, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
       {
@@ -7303,10 +7466,29 @@ export default {
 
             settings: [
               {
-                type: "skills",
+                type: "custom",
                 name: "skills",
                 select: 3,
-                bonus: "Mastery",
+                list: [
+                  {skills: [ { athletics: "Mastery", }, ],},
+                  {skills: [ { acrobatics: "Mastery", }, ],},
+                  {skills: [ { sleight_of_hand: "Mastery", }, ],},
+                  {skills: [ { stealth: "Mastery", }, ],},
+                  {skills: [ { investigation: "Mastery", }, ],},
+                  {skills: [ { history: "Mastery", }, ],},
+                  {skills: [ { religion: "Mastery", }, ],},
+                  {skills: [ { arcana: "Mastery", }, ],},
+                  {skills: [ { nature: "Mastery", }, ],},
+                  {skills: [ { survival: "Mastery", }, ],},
+                  {skills: [ { perception: "Mastery", }, ],},
+                  {skills: [ { insight: "Mastery", }, ],},
+                  {skills: [ { medicine: "Mastery", }, ],},
+                  {skills: [ { animal_hanging: "Mastery", }, ],},
+                  {skills: [ { performance: "Mastery", }, ],},
+                  {skills: [ { persuasion: "Mastery", }, ],},
+                  {skills: [ { deception: "Mastery", }, ],},
+                  {skills: [ { intimidation: "Mastery", }, ],},                  
+                ]
               },
               {
                 level: 6,
@@ -7322,29 +7504,28 @@ export default {
         ],
       },
       {
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 3,
-        bonus: "Mastery",
         list: [
-          "performance",
-          "athletics",
-          "acrobatics",
-          "sleight_of_hand",
-          "stealth",
-          "arcana",
-          "history",
-          "investigation",
-          "nature",
-          "religion",
-          "animal_hanging",
-          "insight",
-          "medicine",
-          "perception",
-          "survival",
-          "deception",
-          "intimidation",
-          "persuasion",
+          {skills: [ { athletics: "Mastery", }, ],},
+          {skills: [ { acrobatics: "Mastery", }, ],},
+          {skills: [ { sleight_of_hand: "Mastery", }, ],},
+          {skills: [ { stealth: "Mastery", }, ],},
+          {skills: [ { investigation: "Mastery", }, ],},
+          {skills: [ { history: "Mastery", }, ],},
+          {skills: [ { religion: "Mastery", }, ],},
+          {skills: [ { arcana: "Mastery", }, ],},
+          {skills: [ { nature: "Mastery", }, ],},
+          {skills: [ { survival: "Mastery", }, ],},
+          {skills: [ { perception: "Mastery", }, ],},
+          {skills: [ { insight: "Mastery", }, ],},
+          {skills: [ { medicine: "Mastery", }, ],},
+          {skills: [ { animal_hanging: "Mastery", }, ],},
+          {skills: [ { performance: "Mastery", }, ],},
+          {skills: [ { persuasion: "Mastery", }, ],},
+          {skills: [ { deception: "Mastery", }, ],},
+          {skills: [ { intimidation: "Mastery", }, ],},
         ],
       },
       {
@@ -7425,47 +7606,47 @@ export default {
         ],
       },
       {
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.rapier, 1],
-          [weapons.longsword, 1],
-          [weapons.quarterstaff, 1],
-          [weapons.mace, 1],
-          [weapons.club, 1],
-          [weapons.dagger, 1],
-          [weapons.spear, 1],
-          [weapons.light_hammer, 1],
-          [weapons.javelin, 1],
-          [weapons.greatclub, 1],
-          [weapons.sickle, 1],
+          { equipment: [{ weapon: [[weapons.rapier, 1]] }], },
+          { equipment: [{ weapon: [[weapons.longsword, 1]] }], },
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }], },
+          { equipment: [{ weapon: [[weapons.mace, 1]] }], },
+          { equipment: [{ weapon: [[weapons.club, 1]] }], },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }], },
+          { equipment: [{ weapon: [[weapons.spear, 1]] }], },
+          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }], },
+          { equipment: [{ weapon: [[weapons.javelin, 1]] }], },
+          { equipment: [{ weapon: [[weapons.greatclub, 1]] }], },
+          { equipment: [{ weapon: [[weapons.sickle, 1]] }], },
         ],
       },
       {
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.diplomats, 1],
-          [packs.entertainers, 1],
+          {equipment: [{ inventory_packs:[[packs.diplomats, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.entertainers, 1],],}]},
         ],
       },
       {
-        type: "inventory",
-        name: "tools",
+        type: "custom",
+        name: "tool",
         select: 1,
         list: [
-          [items.music_lute, 1],
-          [items.music_bagpipes, 1],
-          [items.music_drums, 1],
-          [items.music_dulcimer, 1],
-          [items.music_flute, 1],
-          [items.music_horn, 1],
-          [items.music_lyre, 1],
-          [items.music_pan_flute, 1],
-          [items.music_shawm, 1],
-          [items.music_viol, 1],
+          {equipment: [{ inventory:[[items.music_lute, 1],],}]},
+          {equipment: [{ inventory:[[items.music_bagpipes, 1],],}]},
+          {equipment: [{ inventory:[[items.music_drums, 1],],}]},
+          {equipment: [{ inventory:[[items.music_dulcimer, 1],],}]},
+          {equipment: [{ inventory:[[items.music_flute, 1],],}]},
+          {equipment: [{ inventory:[[items.music_horn, 1],],}]},
+          {equipment: [{ inventory:[[items.music_lyre, 1],],}]},
+          {equipment: [{ inventory:[[items.music_pan_flute, 1],],}]},
+          {equipment: [{ inventory:[[items.music_shawm, 1],],}]},
+          {equipment: [{ inventory:[[items.music_viol, 1],],}]},
         ],
       },
       {
@@ -7497,7 +7678,7 @@ export default {
       },
       {
         level: 3,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
         filter: "only_mastery",
@@ -7506,7 +7687,7 @@ export default {
       },
       {
         level: 10,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 2,
         filter: "only_mastery",
