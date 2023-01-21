@@ -163,6 +163,8 @@ export default {
       "page_setting_open",
 			"setting_open",
 			"pages",
+
+      // "createVarClass"
 		]),
 		//GETTERS
 
@@ -249,8 +251,13 @@ export default {
       "goPage",
       
       "closeSubclass",
+      "closeCustom",
 		]),
-		...mapActions(useMYStore, ["getEthnos"]),
+		...mapActions(useMYStore, [
+      "getEthnos",
+
+      // "getSettingsClass",
+    ]),
 
 		getCreated() {
 			this.MY.height = this.Get_Height;
@@ -274,7 +281,9 @@ export default {
 		},
 
     getWatch_Class() {
+      // this.getSettingsClass()
       this.closeSubclass();
+      this.closeCustom();
     }
 	},
 };

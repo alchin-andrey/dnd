@@ -97,6 +97,10 @@ export default {
 	display: flex;
 	min-height: 18px;
 }
+.icon {
+  width: 18px;
+  height: 18px;
+}
 
 .text {
 	margin-left: 4px;

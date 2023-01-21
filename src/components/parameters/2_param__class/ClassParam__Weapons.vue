@@ -1,9 +1,10 @@
 <template>
-	<my-wrapper v-if="weapons_Equip_Class.length !== 0" gap_26 hr>
+	<my-wrapper v-if="weapons_Equip_Class.length !== 0" hr>
 		<WeaponEquip
 			v-for="weapon in weapons_Equip_Class"
 			:key="weapon"
-			:weapon="weapon" 
+			:weapon="weapon"
+      param_stule
     />
 	</my-wrapper>
 </template>

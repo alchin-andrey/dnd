@@ -20,6 +20,16 @@ export default {
   subclass_save: {
     
   },
+  _settings_class: {
+
+  },
+
+  // _settings_class_: {
+
+  // },
+  // _settings_class_0: {
+
+  // },
 	backstory: null,
 	level: 1,
 

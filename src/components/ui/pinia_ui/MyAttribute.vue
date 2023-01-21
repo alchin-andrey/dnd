@@ -1,5 +1,6 @@
 <template>
-	<div class="column jbm-300" :class="{ passive: numb == 0 }">
+	<div class="column" 
+  :class="{ passive: numb == 0,}">
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
@@ -20,18 +21,22 @@
 					/>
 					<!-- <img :src="icon_Image" :alt="icon" /> -->
 				</div>
-				<div class="item">
+				<div class="item"
+        :class="{ 
+    'int-700': text_stule,
+    'jbm-300': !text_stule,
+    }">
 					{{ t_Title }}<span v-if="t_Type">{{ t_Type }}</span>
 				</div>
 			</section>
 			<div v-if="dot" class="dotted passive">
 				..................................
 			</div>
-			<div class="numb" v-if="price">
+			<div class="numb jbm-300" v-if="price">
 				{{ Price }}
 				<emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" />
 			</div>
-			<div class="numb" v-else>
+			<div class="numb jbm-300" v-else>
 				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}
 			</div>
 		</div>
@@ -112,6 +117,10 @@ export default {
 		save: {
 			type: Array,
 			default: [],
+		},
+    text_stule: {
+			type: Boolean,
+			default: false,
 		},
 		// cube_zero: {
 		// 	type: Boolean,
@@ -292,6 +301,11 @@ export default {
 	margin-left: 4px;
 } */
 
+.item {
+  display: flex;
+  align-items: center;
+}
+
 .item span {
 	margin-left: 8px;
 	color: rgba(255, 255, 255, 0.2);
@@ -349,6 +363,7 @@ export default {
 .small {
 	text-transform: lowercase;
 }
+
 
 .emoji-mart-emoji {
 	padding: 0;

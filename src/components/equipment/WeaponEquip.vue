@@ -7,9 +7,11 @@
 	>
 		<div ref="stripe" class="side_stripe"></div>
 		<div class="int-400 flex_col" :class="{ passive: passive }">
-			<div>
+			<div v-if="!param_stule">
 				<div class="flex_title">
-					<div class="title h_18">{{ t_Weapon_Name }}</div>
+					<div class="title h_18">
+						{{ t_Weapon_Name }}
+					</div>
 					<img
 						class="icon"
 						src="@/assets/img/icon/arrow_right_small.svg"
@@ -20,22 +22,33 @@
 					/>
 				</div>
 			</div>
-			<my-attribute
-				v-if="weapon[0].damage_1_hand_num"
-				title="damage"
-				type="damage_1_hand"
-				:numb="weapon[0].damage_1_hand_num"
-				:dice="dice_1_Hand"
-				:pls="damage_Bonus_Numb"
-			/>
-			<my-attribute
-				v-if="weapon[0].damage_2_hand_num"
-				title="damage"
-				type="damage_2_hand"
-				:numb="weapon[0].damage_2_hand_num"
-				:dice="dice_2_Hand"
-				:pls="damage_Bonus_Numb"
-			/>
+			<section v-if="param_stule">
+				<my-attribute
+					:title="t_Weapon_Name"
+					:numb="num_Hand_Param_Stule"
+					:dice="dice_Hand_Param_Stule"
+					:pls="damage_Bonus_Numb"
+          text_stule
+				/>
+			</section>
+			<section v-if="!param_stule">
+				<my-attribute
+					v-if="weapon[0].damage_1_hand_num"
+					title="damage"
+					type="damage_1_hand"
+					:numb="weapon[0].damage_1_hand_num"
+					:dice="dice_1_Hand"
+					:pls="damage_Bonus_Numb"
+				/>
+				<my-attribute
+					v-if="weapon[0].damage_2_hand_num"
+					title="damage"
+					type="damage_2_hand"
+					:numb="weapon[0].damage_2_hand_num"
+					:dice="dice_2_Hand"
+					:pls="damage_Bonus_Numb"
+				/>
+			</section>
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
@@ -140,17 +153,23 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		param_stule: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery", "class_Specials_Filter_Lvl"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
-    shown_ACW() {
-      return this.weapon[0].ammunition ||
-      this.weapon[0].cost ||
-      this.weapon[0].weight
-    },
+		shown_ACW() {
+			return (
+				this.weapon[0].ammunition ||
+				this.weapon[0].cost ||
+				this.weapon[0].weight
+			);
+		},
 
 		t_Equip_Name: (state) => (item) => {
 			const name = state.t(item[0].name);
@@ -182,7 +201,7 @@ export default {
 
 			const throwing_numb = this.weapon[0].throwing;
 			const t_throwing_full = `${this.t("throwing")} (${this.t(
-				"from"
+				"starting_from"
 			)} ${throwing_numb}${this.t("f")})`;
 			throwing_numb ? arr.push(t_throwing_full) : null; //Метательное
 
@@ -220,12 +239,12 @@ export default {
 			return max;
 		},
 
-    weapon_Finesse() {
-      const finesse = this.weapon[0].finesse;
-      const weapon_spec = this.class_Specials_Filter_Lvl("weapon");
-      const finesse_spec = weapon_spec?.some((el) =>  el?.finesse == true);
-      return finesse_spec ? finesse_spec : finesse;
-    },
+		weapon_Finesse() {
+			const finesse = this.weapon[0].finesse;
+			const weapon_spec = this.class_Specials_Filter_Lvl("weapon");
+			const finesse_spec = weapon_spec?.some((el) => el?.finesse == true);
+			return finesse_spec ? finesse_spec : finesse;
+		},
 
 		bonus_Type() {
 			// const finesse = this.weapon[0].finesse; //Фехтовальное
@@ -271,45 +290,60 @@ export default {
 			return this.stats_Mod(this.bonus_Type);
 		},
 
-    dice_Hand: (state) => (dice_hand) => {
-      const weapon_spec = state.class_Specials_Filter_Lvl("weapon");
-      let dice_foo = null;
-      weapon_spec?.forEach((el) => el.dice_foo ? dice_foo = state[el.dice_foo](dice_hand) : null);
-      return dice_foo ? dice_foo : dice_hand;
+    num_Hand_Param_Stule() {
+      const num_hand_1 = this.weapon[0].damage_1_hand_num;
+      const num_hand_2 = this.weapon[0].damage_2_hand_num;
+      const res = num_hand_1 > num_hand_2 ? num_hand_1 : num_hand_2;
+      return res;
     },
 
-    dice_1_Hand() {
-      return this.dice_Hand(this.weapon[0].damage_1_hand_dice);
-    },
-
-    dice_2_Hand() {
-      return this.dice_Hand(this.weapon[0].damage_2_hand_dice);
-    },
-
-    Dic_14_56_118_1710_Lvl() {
-      const lvl_arr = [1, 5, 11, 17];
-			const kof_arr = [4, 6, 8, 10];
-      return this.kof_Foo(lvl_arr, kof_arr);
+    dice_Hand_Param_Stule() {
+      const dice_hand_1 = this.dice_1_Hand;
+      const dice_hand_2 = this.dice_2_Hand;
+			return dice_hand_1 > dice_hand_2 ? dice_hand_1 : dice_hand_2;
 		},
 
-    Dic_14_56_118_1710_Lvl_or_Default: (state) => (dice_hand) => {
-      // const dice_hand = this.weapon[0].damage_1_hand_dice;
-      const foo_dice = state.Dic_14_56_118_1710_Lvl
-      return foo_dice > dice_hand ? foo_dice : dice_hand;
-    },
+		dice_Hand: (state) => (dice_hand) => {
+			const weapon_spec = state.class_Specials_Filter_Lvl("weapon");
+			let dice_foo = null;
+			weapon_spec?.forEach((el) =>
+				el.dice_foo ? (dice_foo = state[el.dice_foo](dice_hand)) : null
+			);
+			return dice_foo ? dice_foo : dice_hand;
+		},
 
-    kof_Foo: (state) => (lvl_arr, kof_arr) => {
-      !kof_arr ? kof_arr = lvl_arr : null;
-      let lvl = state.MY.level;
-      let kof = null;
+		dice_1_Hand() {
+			return this.dice_Hand(this.weapon[0].damage_1_hand_dice);
+		},
+
+		dice_2_Hand() {
+			return this.dice_Hand(this.weapon[0].damage_2_hand_dice);
+		},
+
+		Dic_14_56_118_1710_Lvl() {
+			const lvl_arr = [1, 5, 11, 17];
+			const kof_arr = [4, 6, 8, 10];
+			return this.kof_Foo(lvl_arr, kof_arr);
+		},
+
+		Dic_14_56_118_1710_Lvl_or_Default: (state) => (dice_hand) => {
+			// const dice_hand = this.weapon[0].damage_1_hand_dice;
+			const foo_dice = state.Dic_14_56_118_1710_Lvl;
+			return foo_dice > dice_hand ? foo_dice : dice_hand;
+		},
+
+		kof_Foo: (state) => (lvl_arr, kof_arr) => {
+			!kof_arr ? (kof_arr = lvl_arr) : null;
+			let lvl = state.MY.level;
+			let kof = null;
 			for (let i = 0; i < lvl_arr.length; i++) {
-        if (lvl < lvl_arr[i]) {
+				if (lvl < lvl_arr[i]) {
 					break;
 				}
-        kof = kof_arr[i];
+				kof = kof_arr[i];
 			}
-      return kof;
-    },
+			return kof;
+		},
 	},
 
 	watch: {
