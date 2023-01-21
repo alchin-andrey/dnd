@@ -123,6 +123,8 @@ export default {
 
 <style scoped>
 
+
+
 .gap_col {
 	display: grid;
 	gap: 15px;
@@ -156,6 +158,10 @@ export default {
 	order: 0;
 	align-self: stretch;
 	flex-grow: 0;
+}
+
+.active {
+	background: #ffffff;
 }
 
 .gray_4 {

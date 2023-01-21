@@ -72,7 +72,7 @@
 			/>
 		</my-wrapper>
 
-		<!-- //NOTE - Weapon -->
+		<!-- //NOTE - Armor -->
 		<my-wrapper v-if="armors_Equip(customm.equipment).length !== 0" gap_26>
 			<ArmorEquip
 				v-for="armor in armors_Equip(customm.equipment)"
