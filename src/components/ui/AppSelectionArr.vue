@@ -47,6 +47,8 @@ export default {
 			item.select_list.forEach((item) => {
 				if (item.name) {
 					arr.push(store.t(item.name));
+				} else if (item.name_set) {
+					arr.push(store.t(item.name_set));
 				}
 			});
 			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");

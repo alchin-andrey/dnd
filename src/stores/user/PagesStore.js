@@ -168,18 +168,23 @@ export const usePagesStore = defineStore({
     closeCustom() {
 			const MYStore = useMYStore();
       const setting_open = this.setting_open;
-      // console.log('setting_open:', setting_open)
-      if(setting_open) {
-        // if (foo) {
-          let str = setting_open.split("__");
-          // console.log('str:', str)
-          // for (let i in str) {
-          //   str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
-          // }
-        // }
-        const custtom = MYStore.сustomm_Settings_100;
-        // console.log('custtom:', custtom)
-      }
+      // // console.log('setting_open:', setting_open)
+      // if(setting_open) {
+      //     let str = setting_open.split("__");
+      //     console.log('str:', str)
+      //   const custtom = MYStore.сustomm_Settings_100[1];
+      //   console.log('custtom:', custtom)
+      //   let filter;
+      //   if(custtom) {
+      //     filter = custtom.find(el => {
+      //       console.log('custtom.id:', custtom.id)
+      //       custtom.id == setting_open
+      //     });
+      //   }
+      //   // console.log('filter:', filter)
+      // }
+
+
 			// if (page_shown && null_race_par && null_ethnos_par) {
 			// 	this.showHome();
 			// }
