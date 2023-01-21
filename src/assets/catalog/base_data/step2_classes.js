@@ -775,7 +775,7 @@ export default {
                 }
               ],
   
-              settigns: [
+              settings: [
                 {
                   level: 1,
                   type: "skills",
