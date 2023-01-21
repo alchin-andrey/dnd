@@ -6,6 +6,7 @@ v-vpshow="shown_Look" title="feel" :arr="feel_Arr"/>
 <transition name="scroll-fade">
 <GenderCard v-if="shown_Look" title="look" :arr="look_Arr"/>
 </transition>
+<GenderCard title="attraction" :arr="attraction_Arr"/>
 </template>
 
 <script>
@@ -23,6 +24,7 @@ export default {
       "phisiological_Arr",
       "feel_Arr",
       "look_Arr",
+      "attraction_Arr",
     ]),
 
     shown_Look() {

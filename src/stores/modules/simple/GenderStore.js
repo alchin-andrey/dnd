@@ -17,5 +17,8 @@ export const useGenderStore = defineStore({
 		look_Arr(state) {
 			return state.gender.look;
 		},
+    attraction_Arr(state) {
+      return state.gender.attraction;
+    }
 	},
 });

@@ -39,7 +39,7 @@ export default {
 		phisiological: "male",
 		feel: "cisgender",
 		look: "as_phisiological",
-		attraction: null,
+		attraction: "heterosexual",
 	},
 	faith: null,
 

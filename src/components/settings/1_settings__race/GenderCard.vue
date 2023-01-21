@@ -108,7 +108,7 @@ export default {
     },
 
     showFeel() {
-      return this.title === "feel";
+      return this.title == "feel" || this.title == "attraction";
     },
 
     getSlice() {
