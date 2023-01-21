@@ -647,7 +647,7 @@ export default {
                       ],
                     }, 
                     {
-                      name: "forest",
+                      name: "forest_terrain",
   
                       fines: [
                         {
@@ -2918,7 +2918,7 @@ export default {
         level: 20,
         type: "plus",
         keyword: "plus_4_chi",
-        details: "on_initiative",
+        details: "on_initiative_throw",
       },
     ],
 

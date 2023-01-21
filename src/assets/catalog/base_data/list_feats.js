@@ -166,7 +166,7 @@ export default {
       {
         type: "advantage",
         keyword: "no_advantage",
-        details: "without_speed_fee",
+        details: "on_stealth_attacks",
       },
     ],
   },

@@ -11287,7 +11287,7 @@ export default {
       aim_type: "near",
       aim_range: 5,
 
-      parts: ["verbal","look"],
+      parts: ["verbal","looking"],
 
       spell_time: null,
       spell_duration: 1,

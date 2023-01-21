@@ -1108,7 +1108,7 @@ export default {
     bonus_action: "бонусна дія",
     action: "основна дія",
     ritual: "ритуал",
-    from: "від",
+    starting_from: "від",
     up_to: "до",
     sec: "сек",
     round: "раунд",
@@ -2177,7 +2177,7 @@ export default {
 
     on_sudden: "до застання зненацька",
 
-    on_stealth: "на атаки по вас із непомітності",
+    on_stealth_attacks: "на атаки по вас із непомітності",
 
     feat_war_caster: "Бойовий заклинач",
     feat_war_caster_details: "Ви вивчили магічні техніки, і навчилися накладати закляття в запалі битви.",
@@ -2805,14 +2805,12 @@ export default {
     weapons_light_arbalets: weapons.light_arbalets,
     weapons_light_arbalets_details: weapons.light_arbalets_details,
 
-    restoring: "відновлення",
     mana_slots_short_rest_lvl_05: "рівень/2 слотів мани при короткому відпочинку",
     mana_slots_short_rest_lvl_05_up_to_5: "рівень/2 слотів мани при короткому відпочинку, не більше [5]",
 
     component_pouch: "мішечок с компонентами",
     component_pouch_details: "Маленький водонепроникний шкіряний поясний гаманець із відділеннями для зберігання матеріальних компонентів та інших спеціальних предметів, необхідних для накладання заклять замість Фокусу, якщо тільки у цих компонентів не вказана вартість (дивіться опис закляття).",
 
-    focus: "фокус",
     focus_details: "Особливий предмет — сфера, кристал, жезл, особливий посох, коротка дерев'яна паличка або схожий предмет — створений для створення заклять, умовою яких є Фокус.",
 
     science_book: "наукова книга",
@@ -2839,7 +2837,6 @@ export default {
     school_of_conjuration:classes.school_of_conjuration,
     school_of_conjuration_details:classes.school_of_conjuration_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_conjuration:"золота та часу на Вивчення знайденого закляття Виклику",
 
     spell_small_conjuration: spells.small_conjuration,
@@ -2849,19 +2846,16 @@ export default {
     school_of_illusion:classes.school_of_illusion,
     school_of_illusion_details:classes.school_of_illusion_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_illusion:"золота та часу на Вивчення знайденого закляття Ілюзіїї",
 
     school_of_necromancy:classes.school_of_necromancy,
     school_of_necromancy_details:classes.school_of_necromancy_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_necromancy:"золота та часу на Вивчення знайденого закляття Некромантії",
 
     school_of_abjuration:classes.school_of_abjuration,
     school_of_abjuration_details:classes.school_of_abjuration_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_abjuration:"золота та часу на Вивчення знайденого закляття Огородження",
 
     spell_magical_protection: spells.magical_protection,
@@ -2871,19 +2865,16 @@ export default {
     school_of_enchantment:classes.school_of_enchantment,
     school_of_enchantment_details:classes.school_of_enchantment_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_enchantment:"золота та часу на Вивчення знайденого закляття Чарів",
 
     school_of_transmutation:classes.school_of_transmutation,
     school_of_transmutation_details:classes.school_of_transmutation_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_transmutation:"золота та часу на Вивчення знайденого закляття Перетворення",
 
     school_of_divination:classes.school_of_divination,
     school_of_divination_details:classes.school_of_divination_details,
 
-    twice_less:"Вдвічі менше",
     gold_and_time_divination:"золота та часу на Вивчення знайденого закляття Віщування",
 
     from_spell_kill_necromancy:"на 2× рівень закляття, від вбивства закляттями. 3× якщо Некромантія",
@@ -2892,7 +2883,7 @@ export default {
 
     end_of_the_day: "до закінчення тривалого відпочинку",
 
-    look: "погляд",
+    looking: "погляд",
 
     spell_hypnotic_look: spells.hypnotic_look,
     spell_hypnotic_look_details: spells.hypnotic_look_details,
@@ -3199,15 +3190,15 @@ export default {
     spell_convert_weapon_details: spells.convert_weapon_details,
     spell_convert_weapon_expanded: spells.convert_weapon_expanded,
 
-    pact_of_the_blade: "Ланцюга",
-    pact_of_the_blade_details: "Ваш покровитель дарує вам потойбіччого помічника. Ви можете вибрати одну з особливих форм фаміліара: біс, квазит, псевдодракон або спрайт.",
+    pact_of_the_chain: "Ланцюга",
+    pact_of_the_chain_details: "Ваш покровитель дарує вам потойбіччого помічника. Ви можете вибрати одну з особливих форм фаміліара: біс, квазит, псевдодракон або спрайт.",
 
     spell_find_familiar_warlock: spells.find_familiar_warlock,
     spell_find_familiar_warlock_details: spells.find_familiar_warlock_details,
     spell_find_familiar_warlock_expanded: spells.find_familiar_warlock_expanded,
 
-    pact_of_the_blade: "Талісману",
-    pact_of_the_blade_details: "Ваш покровитель дає вам талісман, який може допомогти вам пройти перевірку здібності.",
+    pact_of_the_talisman: "Талісману",
+    pact_of_the_talisman_details: "Ваш покровитель дає вам талісман, який може допомогти вам пройти перевірку здібності.",
 
     talisman: "Талісман",
     talisman_details: "Коли власник провалює перевірку здібності, він може додати до кидка d4, потенційно перетворивши кидок на успіх. Цю перевагу можна використовувати кількість разів, що дорівнює вашому бонусу майстерності, і всі використані використання відновлюються, коли ви закінчуєте тривалий відпочинок. Якщо ви втратите талісман, ви можете провести церемонію тривалістю в годину, щоб отримати заміну від свого покровителя. Цей обряд можна проводити під час короткого чи тривалого відпочинку, і він руйнує попередній амулет. Коли ви вмираєте, талісман перетворюється на попіл.",
@@ -3481,7 +3472,7 @@ export default {
     aging_against: "проти природного та магічного старіння тіла. Померти від старості все ще можливо",
 
     plus_4_chi: "+4 слоту Чі",
-    on_initiative: "при кидку Ініціативи",
+    on_initiative_throw: "при кидку Ініціативи",
 
     spell_stunning_strike: spells.stunning_strike,
     spell_stunning_strike_details: spells.stunning_strike_details,
@@ -3718,7 +3709,7 @@ export default {
     favored_foe_slot:"1× обрання противника",
 
     favored_foe:"пошук противника",
-    favored_foe: "Ви здатні визначити заклятого противника прямо в бою. Коли ви потрапляєте атакою по істоті, ви можете закликати сили природи, щоб відмітити істоту і зробити її заклятим противником.",
+    favored_foe_details: "Ви здатні визначити заклятого противника прямо в бою. Коли ви потрапляєте атакою по істоті, ви можете закликати сили природи, щоб відмітити істоту і зробити її заклятим противником.",
 
     natural_explorer:"дослідник природи",
     natural_explorer_details:"Ви дуже добре знайомі з одним видом природного середовища і маєте великий досвід подорожей та виживання в регіонах з таким кліматом – тундра, болота, гори, ліси, луки, узбережжя, підзем'я чи пустеля.",
@@ -3728,7 +3719,7 @@ export default {
     arctic:"тундра", 
     coast:"узбережжя", 
     desert:"пустеля", 
-    forest:"ліси", 
+    forest_terrain:"ліси", 
     grassland:"луги", 
     mountain_terrain:"гори", 
     swamp:"болота",
@@ -3877,7 +3868,7 @@ export default {
 
     sorcery_slots: "Чародійства",
     sorcery_slot: "1× Чародійство",
-    sorcery_slot_2_plus: "1+ × Чародійство",
+    sorcery_slot_1_plus: "1+ × Чародійство",
     sorcery_slot_2: "2× Чародійство",
     sorcery_slot_2_plus: "2+ × Чародійство",
     sorcery_slot_3: "3× Чародійство",
@@ -4356,8 +4347,8 @@ export default {
     stamp_ring: "кільце-печатка",
     stamp_ring_details: "",
 
-    stamp_ring: "сувій з родоводом",
-    stamp_ring_details: "",
+    scroll_lifeline: "сувій з родоводом",
+    scroll_lifeline_details: "",
 
     tool_playing_dragon_chess: "драконові шахи",
 
