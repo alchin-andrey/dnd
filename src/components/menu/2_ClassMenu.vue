@@ -22,7 +22,7 @@
     <div class="selection_menu">
 			<AppSelectionArr 
       v-for="сustomm in сustomm_Settings_100"
-      :key="сustomm[0].name"
+      :key="сustomm"
 			:menu="сustomm"
 			></AppSelectionArr>
 		</div>

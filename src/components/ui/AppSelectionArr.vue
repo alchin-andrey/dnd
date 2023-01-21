@@ -37,7 +37,7 @@ export default {
 
 		t_Title: (store) => (item) => {
       if (item == store.menu[0]) {
-        return store.t(item.name)
+        return store.t(item?.name)
       }
 			return null;
 		},
@@ -45,10 +45,10 @@ export default {
 		t_Type: (store) => (item) => {
 			let arr = [];
 			item.select_list.forEach((item) => {
-				if (item.name) {
-					arr.push(store.t(item.name));
-				} else if (item.name_set) {
-					arr.push(store.t(item.name_set));
+				if (item?.name) {
+					arr.push(store.t(item?.name));
+				} else if (item?.name_set) {
+					arr.push(store.t(item?.name_set));
 				}
 			});
 			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
