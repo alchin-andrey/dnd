@@ -19,7 +19,7 @@
 				/>
 			</div>
 			<transition name="scroll-packs">
-				<section class="items_packs" v-if="packs_scroll">
+				<section v-if="packs_scroll">
           <InventoryEquip :inventory="packs[0].items" />
 				</section>
 			</transition>
@@ -31,7 +31,7 @@
 			<div class="text gray_4">{{ packs_Details }}</div>
 		</my-wrapper>
 
-		<section class="items_packs">
+		<section>
       <InventoryEquip :inventory="packs[0].items" />
 		</section>
 
@@ -133,24 +133,12 @@ export default {
 	text-transform: uppercase;
 }
 
-.items_packs {
-	padding-left: 10px;
-}
-
-.item_packs {
-	text-indent: -10px;
-}
-
 .flex_packs {
 	display: flex;
 	gap: 0 18px;
 	height: 100%;
 	width: 100%;
 	cursor: pointer;
-}
-
-.gray_2 {
-	color: rgba(255, 255, 255, 0.2);
 }
 
 .flex_title {
@@ -170,48 +158,8 @@ export default {
 	flex-grow: 0;
 }
 
-.active {
-	background: #ffffff;
-}
-
-.manna_flex {
-	display: flex;
-	gap: 3px;
-}
-
-.h_18 {
-	height: 18px;
-}
-
-.title {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 700;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	display: flex;
-	align-items: center;
-	white-space: pre;
-}
-
-.title::first-letter {
-	text-transform: uppercase;
-	font-size: 130%;
-}
-
-.gray_2 {
-	color: rgba(255, 255, 255, 0.2);
-}
-
 .gray_4 {
 	color: rgba(255, 255, 255, 0.4);
-}
-
-.hr {
-	height: 1px;
-	background: rgba(255, 255, 255, 0.2);
 }
 
 .passive {

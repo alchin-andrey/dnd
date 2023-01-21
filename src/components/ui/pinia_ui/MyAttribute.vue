@@ -1,6 +1,6 @@
 <template>
 	<div class="column" 
-  :class="{ passive: numb == 0,}">
+  :class="{ passive: numb == 0, 'jbm-300': !text_stule,}">
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
@@ -24,7 +24,6 @@
 				<div class="item"
         :class="{ 
     'int-700': text_stule,
-    'jbm-300': !text_stule,
     }">
 					{{ t_Title }}<span v-if="t_Type">{{ t_Type }}</span>
 				</div>

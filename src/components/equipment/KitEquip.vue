@@ -63,9 +63,4 @@ export default {
 .pad_top {
   padding-top: 2px;
 }
-
-.main_inventory {
-  margin-top: 2px;
-	text-indent: -10px;
-}
 </style>

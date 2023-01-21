@@ -2,7 +2,7 @@
 	<div :class="{ flex_packs: stripe }">
 		<div ref="stripe" class="side_stripe" v-if="stripe"></div>
 		<section>
-			<div class="main_inventory" v-for="items in inventory" :key="items">
+			<div v-for="items in inventory" :key="items">
 				• {{ t_Equip_Name(items) }}
 			</div>
 		</section>
@@ -52,7 +52,7 @@ export default {
 	flex-grow: 0;
 }
 
-.main_inventory {
+/* .main_inventory {
 	text-indent: -10px;
-}
+} */
 </style>
