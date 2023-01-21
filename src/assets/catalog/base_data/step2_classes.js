@@ -1505,15 +1505,25 @@ export default {
         list: [
           {
             name: "ranged_fight",
+
+            equipment: [
+              {
             weapon: [[weapons.shortbow, 1]],
             inventory: [
               [items.quiver, 1],
               [items.arrow, 20],
             ],
+          }
+        ]
           },
           {
             name: "melee_fight",
+
+            equipment: [
+              {
             weapon: [[weapons.shortsword, 1]],
+              }
+            ]
           },
         ],
       },
