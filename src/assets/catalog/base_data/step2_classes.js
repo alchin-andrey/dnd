@@ -778,19 +778,34 @@ export default {
               settings: [
                 {
                   level: 1,
-                  type: "skills",
+                  type: "custom",
                   name: "skills",
                   select: 1,
-                  bonus: "Mastery",
                   list: [
-                    "investigation",
-                    "athletics",
-                    "perception",
-                    "survival",
-                    "nature",
-                    "insight",
-                    "stealth",
-                    "animal_hanging"
+                    {
+                      skills: [ { investigation: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { athletics: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { perception: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { survival: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { nature: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { insight: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { stealth: "Mastery", }, ],
+                    },
+                    {
+                      skills: [ { animal_hanging: "Mastery", }, ],
+                    },
                   ],
                 },
                 {
@@ -884,19 +899,34 @@ export default {
         },
         {
           level: 1,
-          type: "skills",
+          type: "custom",
           name: "skills",
           select: 3,
-          bonus: "Mastery",
           list: [
-            "investigation",
-            "athletics",
-            "perception",
-            "survival",
-            "nature",
-            "insight",
-            "stealth",
-            "animal_hanging"
+            {
+              skills: [ { investigation: "Mastery", }, ],
+            },
+            {
+              skills: [ { athletics: "Mastery", }, ],
+            },
+            {
+              skills: [ { perception: "Mastery", }, ],
+            },
+            {
+              skills: [ { survival: "Mastery", }, ],
+            },
+            {
+              skills: [ { nature: "Mastery", }, ],
+            },
+            {
+              skills: [ { insight: "Mastery", }, ],
+            },
+            {
+              skills: [ { stealth: "Mastery", }, ],
+            },
+            {
+              skills: [ { animal_hanging: "Mastery", }, ],
+            },
           ],
         },
         {
@@ -940,37 +970,37 @@ export default {
             {
               settings: [
                 {
-                  type: "weapons",
+                  type: "custom",
                   name: "weapons",
                   select: 1,
                   list: [
-                    [weapons.quarterstaff, 1],
-                    [weapons.mace, 1],
-                    [weapons.club, 1],
-                    [weapons.dagger, 1],
-                    [weapons.spear, 1],
-                    [weapons.light_hammer, 1],
-                    [weapons.javelin, 1],
-                    [weapons.greatclub, 1],
-                    [weapons.handaxe, 1],
-                    [weapons.sickle, 1],
+                    {equipment: [{ weapon: [ [weapons.quarterstaff, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.mace, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.club, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.dagger, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.spear, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.light_hammer, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.javelin, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.greatclub, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.handaxe, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.sickle, 1],], },],},
                   ],
                 },
                 {
-                  type: "weapons",
+                  type: "custom",
                   name: "weapons",
                   select: 1,
                   list: [
-                    [weapons.quarterstaff, 1],
-                    [weapons.mace, 1],
-                    [weapons.club, 1],
-                    [weapons.dagger, 1],
-                    [weapons.spear, 1],
-                    [weapons.light_hammer, 1],
-                    [weapons.javelin, 1],
-                    [weapons.greatclub, 1],
-                    [weapons.handaxe, 1],
-                    [weapons.sickle, 1],
+                    {equipment: [{ weapon: [ [weapons.quarterstaff, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.mace, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.club, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.dagger, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.spear, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.light_hammer, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.javelin, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.greatclub, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.handaxe, 1],], },],},
+                    {equipment: [{ weapon: [ [weapons.sickle, 1],], },],},
                   ],
                 },
               ]
@@ -979,12 +1009,12 @@ export default {
         },
         {
           level: 1,
-          type: "inventory_packs",
+          type: "custom",
           name: "packs",
           select: 1,
           list: [
-            [packs.dungeoneers, 1],
-            [packs.explorers, 1],
+            {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
+            {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]}
           ],
         },
         {
@@ -1343,22 +1373,43 @@ export default {
       },
       {
         level: 1,
-        type: "skills",
+        type: "custom",
         name: "skills",
         select: 4,
-        bonus: "Mastery",
         list: [
-          "acrobatics",
-          "investigation",
-          "athletics",
-          "perception",
-          "performance",
-          "intimidation",
-          "sleight_of_hand",
-          "deception",
-          "insight",
-          "stealth",
-          "persuasion",
+          {
+            skills: [ { acrobatics: "Mastery", }, ],
+          },
+          {
+            skills: [ { investigation: "Mastery", }, ],
+          },
+          {
+            skills: [ { athletics: "Mastery", }, ],
+          },
+          {
+            skills: [ { perception: "Mastery", }, ],
+          },
+          {
+            skills: [ { performance: "Mastery", }, ],
+          },
+          {
+            skills: [ { intimidation: "Mastery", }, ],
+          },
+          {
+            skills: [ { sleight_of_hand: "Mastery", }, ],
+          },
+          {
+            skills: [ { deception: "Mastery", }, ],
+          },
+          {
+            skills: [ { insight: "Mastery", }, ],
+          },
+          {
+            skills: [ { stealth: "Mastery", }, ],
+          },
+          {
+            skills: [ { persuasion: "Mastery", }, ],
+          },
         ],
       },
       {
@@ -1489,12 +1540,12 @@ export default {
       },
       {
         level: 1,
-        type: "weapons",
+        type: "custom",
         name: "weapons",
         select: 1,
         list: [
-          [weapons.rapier, 1],
-          [weapons.shortsword, 1],
+          {equipment: [{ weapon: [ [weapons.rapier, 1],]}]},
+          {equipment: [{ weapon: [ [weapons.shortsword, 1],]}]}
         ],
       },
       {
@@ -1529,13 +1580,13 @@ export default {
       },
       {
         level: 1,
-        type: "inventory_packs",
+        type: "custom",
         name: "packs",
         select: 1,
         list: [
-          [packs.burglars, 1],
-          [packs.dungeoneers, 1],
-          [packs.explorers, 1],
+          {equipment: [{ inventory_packs:[[packs.burglars, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
+          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
         ],
       },
     ],
@@ -1664,23 +1715,22 @@ export default {
                 name: "maneuvers",
                 select: [0,0,3,3,3, 3,5,5,5,7, 7,7,7,7,9, 9,9,9,9,9],
                 list: [
-                  spells.maneuver_evasive_footwork,
-                  spells.maneuver_lunging_attack,
-                  spells.maneuver_maneuvering_attack,
-                  spells.maneuver_menacing_attack,
-                  spells.maneuver_feinting_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_disarming_attack,
-                  spells.maneuver_trip_attack,
-                  spells.maneuver_riposte,
-                  spells.maneuver_distracting_strike,
-                  spells.maneuver_parry,
-                  spells.maneuver_goading_attack,
-                  spells.maneuver_rally,
-                  spells.maneuver_pushing_attack,
-                  spells.maneuver_precision_attack,
-                  spells.maneuver_commanders_strike,
-                  spells.maneuver_sweeping_attack,
+                  {spells: [{spell:spells.maneuver_evasive_footwork,}]},
+                  {spells: [{spell:spells.maneuver_lunging_attack,}]},
+                  {spells: [{spell:spells.maneuver_maneuvering_attack,}]},
+                  {spells: [{spell:spells.maneuver_menacing_attack,}]},
+                  {spells: [{spell:spells.maneuver_feinting_attack,}]},
+                  {spells: [{spell:spells.maneuver_disarming_attack,}]},
+                  {spells: [{spell:spells.maneuver_trip_attack,}]},
+                  {spells: [{spell:spells.maneuver_riposte,}]},
+                  {spells: [{spell:spells.maneuver_distracting_strike,}]},
+                  {spells: [{spell:spells.maneuver_parry,}]},
+                  {spells: [{spell:spells.maneuver_goading_attack,}]},
+                  {spells: [{spell:spells.maneuver_rally,}]},
+                  {spells: [{spell:spells.maneuver_pushing_attack,}]},
+                  {spells: [{spell:spells.maneuver_precision_attack,}]},
+                  {spells: [{spell:spells.maneuver_commanders_strike,}]},
+                  {spells: [{spell:spells.maneuver_sweeping_attack,}]},
                 ],
               },
               {
