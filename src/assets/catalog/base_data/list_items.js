@@ -461,4 +461,270 @@ export default {
     cost: 2500,
     weight: 0.1,
   },
+
+  fan_gift: {
+    name: "fan_gift",
+    details: "fan_gift_details",
+    cost: 10,
+    weight: 0.1,
+  },
+
+  map_urchin: {
+    name: "map_urchin",
+    details: "map_urchin_details",
+    cost: 100,
+    weight: 0.1,
+  },
+
+  pet_mouse: {
+    name: "pet_mouse",
+    details: "pet_mouse_details",
+    cost: 200,
+    weight: 0.2,
+  },
+
+  clothes: {
+    name: "clothes",
+    details: "clothes_details",
+    cost: 50,
+    weight: 0.1,
+  },
+
+  stamp_ring: {
+    name: "stamp_ring",
+    details: "stamp_ring_details",
+    cost: 500,
+    weight: 0.1,
+  },
+
+  scroll_lifeline: {
+    name: "scroll_lifeline",
+    details: "scroll_lifeline_details",
+    cost: 100,
+    weight: 0.1,
+  },
+
+  guild_letter: {
+    name: "guild_letter",
+    details: "guild_letter_details",
+    cost: 100,
+    weight: 0.1,
+  },
+
+  travelers_clothes: {
+    name: "travelers_clothes",
+    details: "travelers_clothes_details",
+    cost: 100,
+    weight: 0.1,
+  },
+
+  tools_alchemists_supplies: {
+    name: "tools_alchemists_supplies",
+    details: "tools_alchemists_supplies_details",
+    cost: 5000,
+    weight: 4,
+  },
+
+  tools_blacksmith: {
+    name: "tools_blacksmith",
+    details: "tools_blacksmith_details",
+    cost: 2000,
+    weight: 4,
+  },
+
+  tools_brewer: {
+    name: "tools_brewer",
+    details: "tools_brewer_details",
+    cost: 2000,
+    weight: 4.5,
+  },
+
+  tools_calligraphers_supplies: {
+    name: "tools_calligraphers_supplies",
+    details: "tools_calligraphers_supplies_details",
+    cost: 1000,
+    weight: 2.5,
+  },
+
+  tools_carpenters_tools: {
+    name: "tools_carpenters_tools",
+    details: "tools_carpenters_tools_details",
+    cost: 800,
+    weight: 3,
+  },
+
+  tools_cartographers_tools: {
+    name: "tools_cartographers_tools",
+    details: "tools_cartographers_tools_details",
+    cost: 1500,
+    weight: 3,
+  },
+
+  tools_navigators_tools: {
+    name: "tools_navigators_tools",
+    details: "tools_navigators_tools_details",
+    cost: 2500,
+    weight: 1,
+  },
+
+  tools_cobblers_tools: {
+    name: "tools_cobblers_tools",
+    details: "tools_cobblers_tools_details",
+    cost: 500,
+    weight: 2.5,
+  },
+
+  tools_cooks_tools: {
+    name: "tools_cooks_tools",
+    details: "tools_cooks_tools_details",
+    cost: 100,
+    weight: 4,
+  },
+
+  tools_glassblowers_tools: {
+    name: "tools_glassblowers_tools",
+    details: "tools_glassblowers_tools_details",
+    cost: 3000,
+    weight: 2.5,
+  },
+
+  tools_jewelers_tools: {
+    name: "tools_jewelers_tools",
+    details: "tools_jewelers_tools_details",
+    cost: 2500,
+    weight: 1,
+  },
+
+  tools_leatherworkers_tools: {
+    name: "tools_leatherworkers_tools",
+    details: "tools_leatherworkers_tools_details",
+    cost: 500,
+    weight: 2.5,
+  },
+
+  tools_mason: {
+    name: "tools_mason",
+    details: "tools_mason_details",
+    cost: 1000,
+    weight: 4,
+  },
+
+  tools_painters_supplies: {
+    name: "tools_painters_supplies",
+    details: "tools_painters_supplies_details",
+    cost: 2000,
+    weight: 4.5,
+  },
+
+  tools_potters_tools: {
+    name: "tools_potters_tools",
+    details: "tools_potters_tools_details",
+    cost: 1000,
+    weight: 1.5,
+  },
+
+  tools_tinkers_tools: {
+    name: "tools_tinkers_tools",
+    details: "tools_tinkers_tools_details",
+    cost: 5000,
+    weight: 5,
+  },
+
+  tools_weavers_tools: {
+    name: "tools_weavers_tools",
+    details: "tools_weavers_tools_details",
+    cost: 100,
+    weight: 2.5,
+  },
+
+  tools_woodcarvers_tools: {
+    name: "tools_woodcarvers_tools",
+    details: "tools_woodcarvers_tools_details",
+    cost: 2000,
+    weight: 4.5,
+  },
+
+  silk_rope: {
+    name: "silk_rope",
+    details: "silk_rope_details",
+    cost: 100,
+    weight: 5,
+  },
+
+  talisman_sailor: {
+    name: "talisman_sailor",
+    details: "talisman_sailor_details",
+    cost: 100,
+    weight: 0.2,
+  },
+
+  letter_question: {
+    name: "letter_question",
+    details: "letter_question_details",
+    cost: 100,
+    weight: 0.2,
+  },
+
+  shovel: {
+    name: "shovel",
+    details: "shovel_details",
+    cost: 200,
+    weight: 2.5,
+  },
+
+  iron_pot: {
+    name: "iron_pot",
+    details: "iron_pot_details",
+    cost: 200,
+    weight: 5,
+  },
+
+  tools_herbalists_tools: {
+    name: "tools_herbalists_tools",
+    details: "tools_herbalists_tools_details",
+    cost: 500,
+    weight: 1.5,
+  },
+
+  medal: {
+    name: "medal",
+    details: "medal_details",
+    cost: 500,
+    weight: 0.5,
+  },
+
+  trophey: {
+    name: "trophey",
+    details: "trophey_details",
+    cost: 50,
+    weight: 1,
+  },
+
+  staff: {
+    name: "staff",
+    details: "staff_details",
+    cost: 50,
+    weight: 2,
+  },
+
+  trophey_animal: {
+    name: "trophey_animal",
+    details: "trophey_animal_details",
+    cost: 50,
+    weight: 1,
+  },
+
+  hunting_trap: {
+    name: "hunting_trap",
+    details: "hunting_trap_details",
+    cost: 50,
+    weight: 1,
+  },
+
+  trick_set: {
+    name: "trick_set",
+    details: "trick_set_details",
+    cost: 50,
+    weight: 1,
+  },
 };

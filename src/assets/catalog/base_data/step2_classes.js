@@ -679,7 +679,7 @@ export default {
                       ],
                     },
                     {
-                      name: "mountain",
+                      name: "mountain_terrain",
   
                       fines: [
                         {
@@ -3274,13 +3274,6 @@ export default {
             proficiencies: 
               {
                 tools: [tools.woodcarvers_tools],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.shoemaker_tools],
               },
             
           },
@@ -7220,6 +7213,18 @@ export default {
                 spell:spells.bonus_attack,
               },
             ],
+
+            settings: [
+              {
+                level:6,
+                type: "spells",
+                name: "spells",
+                select: [0,0,0,0,0, 2,2,2,2,2, 2,2,2,2,2, 2,2,2,2,2],
+                mana_min: 0,
+                mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+                classes: ["bard"],
+              },
+            ]
           },
           {
             name: "college_lore",
@@ -7413,9 +7418,10 @@ export default {
         classes: ["bard"],
       },
       {
+        level: 1,
         type: "spells",
         name: "spells",
-        select: [4,5,6,7,8, 9,10,11,12,12, 13,13,14,14,15, 15,16,16,16,16],
+        select: [4,5,6,7,8, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,14,14],
         mana_min: 1,
         mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
         classes: ["bard"],
@@ -7435,7 +7441,7 @@ export default {
         name: "skills",
         select: 2,
         filter: "only_mastery",
-        // На третьем уровне выберите 2 навыка из тех, которыми вы владеете. Ваш бонус мастерства для этих навыков удваивается. На 10 уровне вы можете выбрать ещё 2 навыка и получить для них это преимущество.
+        // На третьем уровне вьіберите 2 навьіка из тех, которьіми вьі владеете. Ваш бонус мастерства для этих навьіков удваивается. На 10 уровне вьі можете вьібрать еще 2 навьіка и получить для них это преимущество.
         bonus: "Mastery",
       },
       {

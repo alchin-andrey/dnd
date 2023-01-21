@@ -21,7 +21,7 @@ export default {
     name: "tool_thief",
   },
 
-  // ------------
+  // NOTE - Artisan -----------------------
 
   alchemists_supplies: {
     name: "tool_alchemists_supplies",
@@ -87,11 +87,7 @@ export default {
     name: "tool_herbalists_tools",
   },
 
-  shoemaker_tools: {
-    name: "tool_shoemaker_tools",
-  },
-
-  // -------------------------------- music
+  // NOTE - Music -------------------------------- music
 
   music_drums: {
     name: "tool_music_drums",
@@ -133,5 +129,31 @@ export default {
     name: "tool_music_shawm",
   },
 
-  
+  // NOTE - Gaming -----------------------
+
+  playing_dragon_chess: {
+    name: "tool_playing_dragon_chess",
+  },
+
+  playing_dice: {
+    name: "tool_playing_dice",
+  },
+
+  playing_dragon_poker: {
+    name: "tool_playing_dragon_poker",
+  },
+
+  // NOTE - Other
+
+  transport_water: {
+    name: "tool_transport_water",
+  },
+
+  transport_ground: {
+    name: "tool_transport_ground",
+  },
+
+  forgery: {
+    name: "tool_forgery",
+  },
 };
