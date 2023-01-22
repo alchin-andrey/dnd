@@ -12,1107 +12,1283 @@ export default {
   //NOTE - Ranger
 
   ranger: {
-      name: "ranger",
-      details: "ranger_details",
-  
-      hp_dice: 10,
-  
-      proficiencies: {
-        armor: [armory.light, armory.medium, armory.shields],
-        weapons: [weaponry.simple, weaponry.military],
+    name: "ranger",
+    details: "ranger_details",
+
+    hp_dice: 10,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [weaponry.simple, weaponry.military],
+    },
+
+    saving: ["strength", "dexterity"],
+    stats_base: [
+      "dexterity",
+      "strength",
+      "wisdom",
+      "constitution",
+      "intelligence",
+      "charisma",
+    ],
+    spell_attribute: "wisdom",
+
+    equipment: [
+      {
+        level: 1,
+        weapon: [[weapons.longbow, 1]],
+        inventory: [
+          [items.arrow, 20],
+          [items.quiver, 1],
+        ],
       },
-  
-      saving: ["strength", "dexterity"],
-      stats_base: [
-        "dexterity",
-        "strength",
-        "wisdom",
-        "constitution",
-        "intelligence",
-        "charisma",
-      ],
-      spell_attribute: "wisdom",
-  
-      equipment: [
-        {
-          level: 1,
-          weapon: [[weapons.longbow, 1]],
-          inventory: [
-            [items.arrow, 20],
-            [items.quiver, 1],
-          ],
-        },
-        {
-          level: 2,
-          inventory: [
-            [items.focus, 1],
-          ],
-        },
-      ],
-  
-      charges: [
-        {
-          level: 2,
-          name: "spell_slots",
-          type: "long_rest",
-          list: [
-            ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-            ["[2]", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[3]", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-            ["[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
-            ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
-          ],
-        },
-      ],
-  
-      fines: [
-        {
-          level: 8,
-          type: "plus",
-          keyword: "no_speed_fee",
-          details: "on_nonmagic_hard_area",
-        },
-        {
-          level: 8,
-          type: "advantage",
-          keyword: "advantage",
-          details: "on_saving_from_plants",
-        },
-        {
-          level: 18,
-          type: "advantage",
-          keyword: "no_disadvantage",
-          details: "on_attacking_invisible",
-        },
-        {
-          level: 18,
-          type: "plus",
-          keyword: "knowledge",
-          details: "of_all_invisible_30",
-        },
-      ],
-  
-      spells: [
-        {
-          level:5,
-          spell:spells.extra_attack,
-        },
-        {
-          level:14,
-          spell:spells.disappearance,
-        },
-        {
-          level:20,
-          spell:spells.enemy_killer,
-        },
-      ],
-  
-      settings: [
-        {
-          level:3,
-          type:"custom",
-          name:"subclass",
-          select: 1,
-          list: [
-            {
-              name:"hunter",
-              details:"hunter_details",
-  
-              settings: [
-                {
-                  level:3,
-                  type:"custom",
-                  name:"prey",
-                  select: 1,
-                  list: [
-                    {
-                      spells: [
-                        {
-                          spell:spells.horde_breaker,
-                        }
-                      ]
-                    },
-                    {
-                      spells: [
-                        {
-                          spell:spells.giant_killer,
-                        }
-                      ]
-                    },
-                    {
-                      spells: [
-                        {
-                          spell:spells.colossus_slayer,
-                        }
-                      ]
-                    },
-                  ],
-                },
-                {
-                  level:7,
-                  type:"custom",
-                  name:"style_protection",
-                  select: 1,
-                  list: [
-                    {
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "plus_4_armor",
-                          on_provoked_attacks: "on_next_attacks",
-                        },
-                      ]
-                    },
-                    {
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "disadvantage",
-                          on_provoked_attacks: "on_attacking_invisible",
-                        }
-                      ]
-                    },
-                    {
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          on_provoked_attacks: "fear_against",
-                        }
-                      ]
-                    },
-                  ],
-                },
-                {
-                  level:11,
-                  type:"custom",
-                  name:"multiattack",
-                  select: 1,
-                  list: [
-                    {
-                      spells: [
-                        {
-                          spell:spells.whirlwind_attack,
-                        }
-                      ]
-                    },
-                    {
-                      spells: [
-                        {
-                          spell:spells.volley,
-                        }
-                      ]
-                    },
-                  ]
-                },
-                {
-                  level:15,
-                  type:"custom",
-                  name:"style_protection",
-                  select: 1,
-                  list: [
-                    {
-                      spells: [
-                        {
-                          spell:spells.uncanny_dodge,
-                        }
-                      ]
-                    },
-                    {
-                      spells: [
-                        {
-                          spell:spells.stand_against_the_tide,
-                        }
-                      ]
-                    },
-                    {
-                      fines: [
-                        {
-                          type: "resistance",
-                          keyword: "fine_dodge",
-                          details: "from_aoe_effects",
-                        },
-                      ]
-                    },
-                  ]
-                }
-              ]
-            },
-            {
-              name:"beastmaster",
-              details:"beastmaster_details",
-  
-              settings: [
-                {
-                  level:3,
-                  type:"custom",
-                  name:"companion",
-                  select: 1,
-                  list: [
-                    {
-                      spells: [
-                        {
-                          spell:spells.rangers_companion,
-                        }
-                      ]
-                    },
-                    {
-                      spells: [
-                        {
-                          spell:spells.primal_companion,
-                        }
-                      ]
-                    },
-                  ]
-                },
-              ]
-            }
-          ],
-        },
-        {
-          level:1,
-          type:"custom",
-          name:"favor",
-          select: 1,
-          list: [
-            {
-              name:"favored_enemy",
-              details:"favored_enemy_details",
-  
-              settings: [
-                {
-                  level: 1,
-                  type: "custom",
-                  name: "favored_enemy",
-                  select: [1,1,1,1,1, 2,2,2,2,2, 2,2,2,3,3, 3,3,3,3,3],
-                  list: [
-                    {
-                      name: "aberrations",
-                      details: "aberrations_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_aberrations_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_aberrations_against",
-                        },
-                      ],
-  
-                      proficiencies: {
-                        languages: [lang.deep],
+      {
+        level: 2,
+        inventory: [[items.focus, 1]],
+      },
+    ],
+
+    charges: [
+      {
+        level: 2,
+        name: "spell_slots",
+        type: "long_rest",
+        list: [
+          ["[1]", 0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
+        ],
+      },
+    ],
+
+    fines: [
+      {
+        level: 8,
+        type: "plus",
+        keyword: "no_speed_fee",
+        details: "on_nonmagic_hard_area",
+      },
+      {
+        level: 8,
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_saving_from_plants",
+      },
+      {
+        level: 18,
+        type: "advantage",
+        keyword: "no_disadvantage",
+        details: "on_attacking_invisible",
+      },
+      {
+        level: 18,
+        type: "plus",
+        keyword: "knowledge",
+        details: "of_all_invisible_30",
+      },
+    ],
+
+    spells: [
+      {
+        level: 5,
+        spell: spells.extra_attack,
+      },
+      {
+        level: 14,
+        spell: spells.disappearance,
+      },
+      {
+        level: 20,
+        spell: spells.enemy_killer,
+      },
+    ],
+
+    settings: [
+      {
+        level: 3,
+        type: "custom",
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            name: "hunter",
+            details: "hunter_details",
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                name: "prey",
+                select: 1,
+                list: [
+                  {
+                    name_set: spells.horde_breaker[0].name,
+                    spells: [
+                      {
+                        spell: spells.horde_breaker,
                       },
-                    },
-                    {
-                      name: "beasts",
-                      details: "beasts_details",
-                      
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_beasts_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_beasts_against",
-                        },
-                      ],
-  
-                      proficiencies: {
-                        languages: [lang.animal],
+                    ],
+                  },
+                  {
+                    name_set: spells.giant_killer[0].name,
+                    spells: [
+                      {
+                        spell: spells.giant_killer,
                       },
-                    },
-                    {
-                      name: "celestials",
-                      details: "celestials_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_celestials_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_celestials_against",
-                        },
-                      ],
-  
-                      proficiencies: {
-                        languages: [lang.sky],
+                    ],
+                  },
+                  {
+                    name_set: spells.colossus_slayer[0].name,
+                    spells: [
+                      {
+                        spell: spells.colossus_slayer,
                       },
-                    },
-                    {
-                      name: "constructs",
-                      details: "constructs_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_constructs_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_constructs_against",
-                        },
-                      ],
-                    },
-                    {
-                      name: "dragons",
-                      details: "dragons_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_dragons_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_dragons_against",
-                        },
-                      ],
-          
-                      proficiencies: {
-                        languages: [lang.dragon],
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 7,
+                type: "custom",
+                name: "style_protection",
+                select: 1,
+                list: [
+                  {
+                    name: "protection_from_multiattack",
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "plus_4_armor",
+                        on_provoked_attacks: "on_next_attacks",
                       },
-                    },
-                    {
-                      name: "elementals",
-                      details: "elementals_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_elementals_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_elementals_against",
-                        },
-                      ],
-  
-                      proficiencies: {
-                        languages: [lang.primordial],
+                    ],
+                  },
+                  {
+                    name: "run_from_horde",
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "disadvantage",
+                        on_provoked_attacks: "on_attacking_invisible",
                       },
-                    },
-                    {
-                      name: "feys",
-                      details: "feys_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_feys_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_feys_against",
-                        },
-                      ],
-          
-                      proficiencies: {
-                        languages: [lang.sylvan],
+                    ],
+                  },
+                  {
+                    name: "steel_will",
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        on_provoked_attacks: "fear_against",
                       },
-                    },
-                    {
-                      name: "fiends",
-                      details: "fiends_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_fiends_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_fiends_against",
-                        },
-                      ],
-  
-                      proficiencies: {
-                        languages: [lang.demonic,lang.tiefling],
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 11,
+                type: "custom",
+                name: "multiattack",
+                select: 1,
+                list: [
+                  {
+                    name_set: spells.whirlwind_attack[0].name,
+                    spells: [
+                      {
+                        spell: spells.whirlwind_attack,
                       },
-                    },
-                    {
-                      name: "giants",
-                      details: "giants_details",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_giants_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_giants_against",
-                        },
-                      ],
-  
-                      proficiencies: {
-                        languages: [lang.giant],
+                    ],
+                  },
+                  {
+                    name_set: spells.volley[0].name,
+                    spells: [
+                      {
+                        spell: spells.volley,
                       },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 15,
+                type: "custom",
+                name: "style_protection",
+                select: 1,
+                list: [
+                  {
+                    name_set: spells.uncanny_dodge[0].name,
+                    spells: [
+                      {
+                        spell: spells.uncanny_dodge,
+                      },
+                    ],
+                  },
+                  {
+                    name_set: spells.stand_against_the_tide[0].name,
+                    spells: [
+                      {
+                        spell: spells.stand_against_the_tide,
+                      },
+                    ],
+                  },
+                  {
+                    name: "evasiveness",
+                    fines: [
+                      {
+                        type: "resistance",
+                        keyword: "fine_dodge",
+                        details: "from_aoe_effects",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "beastmaster",
+            details: "beastmaster_details",
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                name: "companion",
+                select: 1,
+                list: [
+                  {
+                    name_set: spells.rangers_companion[0].name,
+                    spells: [
+                      {
+                        spell: spells.rangers_companion,
+                      },
+                    ],
+                  },
+                  {
+                    name_set: spells.primal_companion[0].name,
+                    spells: [
+                      {
+                        spell: spells.primal_companion,
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "favor",
+        select: 1,
+        list: [
+          {
+            name: "favored_enemy",
+            details: "favored_enemy_details",
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "favored_enemy",
+                select: [
+                  1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3,
+                ],
+                list: [
+                  {
+                    name: "aberrations",
+                    details: "aberrations_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_aberrations_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_aberrations_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.deep],
                     },
-                    {
-                      name: "monstrosities",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_monstrosities_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_monstrosities_against",
-                        },
-                      ],
+                  },
+                  {
+                    name: "beasts",
+                    details: "beasts_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_beasts_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_beasts_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.animal],
                     },
-                    {
-                      name: "oozes",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_oozes_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_oozes_against",
-                        },
-                      ]
+                  },
+                  {
+                    name: "celestials",
+                    details: "celestials_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_celestials_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_celestials_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.sky],
                     },
-                    {
-                      name: "plants",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_plants_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_plants_against",
-                        },
-                      ]
+                  },
+                  {
+                    name: "constructs",
+                    details: "constructs_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_constructs_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_constructs_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "dragons",
+                    details: "dragons_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_dragons_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_dragons_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.dragon],
                     },
-                    {
-                      name: "undeads",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_undeads_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_undeads_against",
-                        },
-                      ],                    
+                  },
+                  {
+                    name: "elementals",
+                    details: "elementals_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_elementals_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_elementals_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.primordial],
                     },
-                    {
-                      name: "two_other_races",
-          
-                      fines: [
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "wisdom_two_other_races_against",
-                        },
-                        {
-                          type: "advantage",
-                          keyword: "advantage",
-                          details: "intelligence_two_other_races_against",
-                        },
-                      ]
+                  },
+                  {
+                    name: "feys",
+                    details: "feys_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_feys_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_feys_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.sylvan],
                     },
-          
-                  ]
-                },
-              ]
-            },
-            {
-              name:"favored_foe",
-              details:"favored_foe_details",
-  
-              charges: [
-                {
-                  level: 3,
-                  name: "favored_foe_slots",
-                  type: "long_rest",
-                  foo: "Num_Mastery",
-                  list: [
-                    [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                  },
+                  {
+                    name: "fiends",
+                    details: "fiends_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_fiends_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_fiends_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.demonic, lang.tiefling],
+                    },
+                  },
+                  {
+                    name: "giants",
+                    details: "giants_details",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_giants_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_giants_against",
+                      },
+                    ],
+
+                    proficiencies: {
+                      languages: [lang.giant],
+                    },
+                  },
+                  {
+                    name: "monstrosities",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_monstrosities_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_monstrosities_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "oozes",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_oozes_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_oozes_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "plants",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_plants_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_plants_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "undeads",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_undeads_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_undeads_against",
+                      },
+                    ],
+                  },
+                  {
+                    name: "two_other_races",
+
+                    fines: [
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "wisdom_two_other_races_against",
+                      },
+                      {
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "intelligence_two_other_races_against",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "favored_foe",
+            details: "favored_foe_details",
+
+            charges: [
+              {
+                level: 3,
+                name: "favored_foe_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                   ],
-                },
-              ],
-  
-              spells: [
-                {
-                  level:1,
-                  spell:spells.favored_foe,
-                }
-              ]
-            }
-          ]
-        },
-        {
-          level:1,
-          type:"custom",
-          name:"exploration",
-          select: 1,
-          list: [
-            {
-              name:"natural_explorer",
-              details:"natural_explorer_details",
-  
-              settings: [
-                {
-                  level: 1,
-                  type: "custom",
-                  name: "favored_terrain",
-                  select: [1,1,1,1,1, 2,2,2,2,3, 3,3,3,3,3, 3,3,3,3,3],
-                  list: [
-                    {
-                      name: "arctic",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_arctic",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_arctic",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },  
-                    {
-                      name: "coast",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_coast",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_coast",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },  
-                    {
-                      name: "desert",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_desert",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_desert",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    }, 
-                    {
-                      name: "forest_terrain",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_forest",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_forest",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },  
-                    {
-                      name: "grassland",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_grassland",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_grassland",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },
-                    {
-                      name: "mountain_terrain",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_mountain",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_mountain",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },
-                    {
-                      name: "swamp",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_swamp",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_swamp",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },
-                    {
-                      name: "underdark",
-  
-                      fines: [
-                        {
-                          type: "plus",
-                          keyword: "proficiency_bonus",
-                          details: "intelligence_wisdom_underdark",
-                        },
-                        {
-                          type: "plus",
-                          keyword: "travel_underdark",
-                          details: "terrain_advantages",
-                        },
-                      ],
-                    },
-                  ]
-                },
-              ]
-            },
-            {
-              name:"deft_explorer",
-              details:"deft_explorer_details",
-  
-              qualities: [
-                {
-                  level: 6,
-                  speed_bonus: 5,
-                }
-              ],
-  
-              fines: [
-                {
-                  level: 6,
-                  type: "plus",
-                  keyword: "climbing_and_swimming",
-                  details: "without_speed_fee",
-                },
-                {
-                  level: 10,
-                  type: "plus",
-                  keyword: "exhaust_rediction",
-                  details: "in_short_rest",
-                },
-              ],
-  
-              charges: [
-                {
-                  level: 10,
-                  name: "tireless_slots",
-                  type: "long_rest",
-                  foo: "Num_Mastery",
-                  list: [
-                    [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.favored_foe,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "exploration",
+        select: 1,
+        list: [
+          {
+            name: "natural_explorer",
+            details: "natural_explorer_details",
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "favored_terrain",
+                select: [
+                  1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+                ],
+                list: [
+                  {
+                    name: "arctic",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_arctic",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_arctic",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "coast",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_coast",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_coast",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "desert",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_desert",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_desert",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "forest_terrain",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_forest",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_forest",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "grassland",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_grassland",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_grassland",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "mountain_terrain",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_mountain",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_mountain",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "swamp",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_swamp",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_swamp",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                  {
+                    name: "underdark",
+
+                    fines: [
+                      {
+                        type: "plus",
+                        keyword: "proficiency_bonus",
+                        details: "intelligence_wisdom_underdark",
+                      },
+                      {
+                        type: "plus",
+                        keyword: "travel_underdark",
+                        details: "terrain_advantages",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "deft_explorer",
+            details: "deft_explorer_details",
+
+            qualities: [
+              {
+                level: 6,
+                speed_bonus: 5,
+              },
+            ],
+
+            fines: [
+              {
+                level: 6,
+                type: "plus",
+                keyword: "climbing_and_swimming",
+                details: "without_speed_fee",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "exhaust_rediction",
+                details: "in_short_rest",
+              },
+            ],
+
+            charges: [
+              {
+                level: 10,
+                name: "tireless_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                   ],
-                },
-              ],
-  
-              spells: [
-                {
-                  level: 10,
-                  spell: spells.tireless,
-                }
-              ],
-  
-              settings: [
-                {
-                  level: 1,
-                  type: "custom",
-                  name: "skills",
-                  select: 1,
-                  list: [
-                    {
-                      skills: [ { investigation: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { athletics: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { perception: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { survival: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { nature: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { insight: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { stealth: "Mastery", }, ],
-                    },
-                    {
-                      skills: [ { animal_hanging: "Mastery", }, ],
-                    },
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 10,
+                spell: spells.tireless,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                name: "skills",
+                select: 1,
+                list: [
+                  {
+                    name_set: "investigation",
+                    skills: [{ investigation: "Mastery" }],
+                  },
+                  {
+                    name_set: "athletics",
+                    skills: [{ athletics: "Mastery" }],
+                  },
+                  {
+                    name_set: "perception",
+                    skills: [{ perception: "Mastery" }],
+                  },
+                  {
+                    name_set: "survival",
+                    skills: [{ survival: "Mastery" }],
+                  },
+                  {
+                    name_set: "nature",
+                    skills: [{ nature: "Mastery" }],
+                  },
+                  {
+                    name_set: "insight",
+                    skills: [{ insight: "Mastery" }],
+                  },
+                  {
+                    name_set: "stealth",
+                    skills: [{ stealth: "Mastery" }],
+                  },
+                  {
+                    name_set: "animal_hanging",
+                    skills: [{ animal_hanging: "Mastery" }],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "languages",
+                name: "languages",
+                select: 2,
+                filter: "no_used",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 4,
+        type: "custom",
+        name: "primal_sense",
+        select: 1,
+        list: [
+          {
+            name: "primal_knowledge",
+            spells: [
+              {
+                level: 3,
+                spell: spells.primeval_awareness_favored,
+              },
+              {
+                level: 3,
+                spell: spells.primeval_awareness_favored,
+              },
+            ],
+          },
+          {
+            name: "true_sense",
+            spells: [
+              {
+                level: 3,
+                spell: spells.speak_with_animals_ranger,
+              },
+              {
+                level: 5,
+                spell: spells.beast_sense_ranger,
+              },
+              // {
+              //   level:9,
+              //   spell:spells.speak_with_plants_ranger,
+              // },
+              // {
+              //   level:13,
+              //   spell:spells.locate_creature_ranger,
+              // },
+              {
+                level: 17,
+                spell: spells.commune_with_nature_ranger,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 10,
+        type: "custom",
+        name: "disguise",
+        select: 1,
+        list: [
+          {
+            name_set: "spell_disguise_on_sight",
+            spells: [
+              {
+                spell: spells.disguise_on_sight,
+              },
+            ],
+          },
+          {
+            name_set: "spell_disguise_nature",
+            charges: [
+              {
+                level: 2,
+                name: "disguise_nature_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                   ],
-                },
-                {
-                    level: 1,
-                    type: "languages",
-                    name: "languages",
-                    select: 2,
-                    filter: "no_used",
-                },
-              ]
-            }
-          ]
-        },
-        {
-          level:4,
-          type:"custom",
-          name:"primal_sense",
-          select: 1,
-          list: [
-            {
-              spells: [
-                {
-                  level:3,
-                  spell:spells.primeval_awareness_favored,
-                },
-                {
-                  level:3,
-                  spell:spells.primeval_awareness_favored,
-                },
-              ]
-            },
-            {
-              spells: [
-                {
-                  level:3,
-                  spell:spells.speak_with_animals_ranger,
-                },
-                {
-                  level:5,
-                  spell:spells.beast_sense_ranger,
-                },
-                // {
-                //   level:9,
-                //   spell:spells.speak_with_plants_ranger,
-                // },
-                // {
-                //   level:13,
-                //   spell:spells.locate_creature_ranger,
-                // },
-                {
-                  level:17,
-                  spell:spells.commune_with_nature_ranger,
-                },
-              ]
-            },
-          ],
-        },
-        {
-          level:10,
-          type:"custom",
-          name:"disguise",
-          select: 1,
-          list: [
-            {
-              spells: [
-                {
-                  spell:spells.disguise_on_sight
-                }
-              ]
-            },
-            {
-              charges: [
-                {
-                  level: 2,
-                  name: "disguise_nature_slots",
-                  type: "long_rest",
-                  foo: "Num_Mastery",
-                  list: [
-                    ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                  ],
-                },
-              ],
-  
-              spells: [
-                {
-                  spell:spells.disguise_nature
-                }
-              ]
-            }
-          ]
-        },
-        {
-          level: 1,
-          type: "custom",
-          name: "skills",
-          select: 3,
-          list: [
-            {
-              skills: [ { investigation: "Mastery", }, ],
-            },
-            {
-              skills: [ { athletics: "Mastery", }, ],
-            },
-            {
-              skills: [ { perception: "Mastery", }, ],
-            },
-            {
-              skills: [ { survival: "Mastery", }, ],
-            },
-            {
-              skills: [ { nature: "Mastery", }, ],
-            },
-            {
-              skills: [ { insight: "Mastery", }, ],
-            },
-            {
-              skills: [ { stealth: "Mastery", }, ],
-            },
-            {
-              skills: [ { animal_hanging: "Mastery", }, ],
-            },
-          ],
-        },
-        {
-          level: 1,
-          type: "custom",
-          name: "armor_class",
-          select: 1,
-          list: [
-            {
-              equipment: [
-                {
-                  level: 1,
-                  armor: [[armors.scalemail, 1]],
-                },
-              ],
-              fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
-            },
-            {
-              equipment: [
-                {
-                  level: 1,
-                  armor: [[armors.leather, 1]],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          level: 1,
-          type: "custom",
-          name: "weapons",
-          select: 1,
-          list: [
-            {
-              equipment: [
-                {
-                  weapon: [ [weapons.shortsword, 2]],
-                },
-              ],
-            },
-            {
-              settings: [
-                {
-                  type: "custom",
-                  name: "weapons",
-                  select: 1,
-                  list: [
-                    {equipment: [{ weapon: [ [weapons.quarterstaff, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.mace, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.club, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.dagger, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.spear, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.light_hammer, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.javelin, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.greatclub, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.handaxe, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.sickle, 1],], },],},
-                  ],
-                },
-                {
-                  type: "custom",
-                  name: "weapons",
-                  select: 1,
-                  list: [
-                    {equipment: [{ weapon: [ [weapons.quarterstaff, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.mace, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.club, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.dagger, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.spear, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.light_hammer, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.javelin, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.greatclub, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.handaxe, 1],], },],},
-                    {equipment: [{ weapon: [ [weapons.sickle, 1],], },],},
-                  ],
-                },
-              ]
-            }
-          ]
-        },
-        {
-          level: 1,
-          type: "custom",
-          name: "packs",
-          select: 1,
-          list: [
-            {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
-            {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]}
-          ],
-        },
-        {
-          level: 2,
-          type: "custom",
-          name: "battle_style",
-          select: 1,
-          list: [
-            {
-              name: "style_dueling",
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "bonus",
-                  details: "on_attack_signle_one_handed",
-                },
-              ],
-            },
-            {
-              name: "style_defence",
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "bonus",
-                  details: "on_armor_if_armor",
-                },
-              ],
-  
-              qualities: [
-                {
-                  armor_bonus: 1,
-                }
-              ]
-            },
-            {
-              name: "style_double_weapon",
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "bonus",
-                  details: "on_damage_second_attack",
-                },
-              ],
-            },
-            {
-              name: "style_archery",
-              fines: [
-                {
-                  level: 2,
-                  type: "plus",
-                  keyword: "aim_bonus",
-                  details: "plus_2_on_ranged",
-                },
-              ],
-  
-              specials: [
-                {
-                  level: 1,
-                  type: "weapon_ranged",
-                  aim_bonus: 2,
-                },
-              ],
-            },
-          ],
-        },
-        {
-          level: 3,
-          type: "spells",
-          name: "spells",
-          select: [ 0, 2, 3, 3, 4,  4, 5, 5, 6, 6,  7, 7, 8, 8, 9,   9, 10, 11, 11, 11],
-          mana_min: 1,
-          mana_max: [ 0, 1, 1, 1, 2,  2, 2, 2, 3, 3,  3, 3, 4, 4, 4,  4, 5, 5, 5, 5, ],
-          classes: ["ranger"],
-        },
-        {
-          level: 4,
-          type: "feats",
-        },
-        {
-          level: 8,
-          type: "feats",
-        },
-        {
-          level: 12,
-          type: "feats",
-        },
-        {
-          level: 16,
-          type: "feats",
-        },
-        {
-          level: 19,
-          type: "feats",
-        },
-      ]
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                spell: spells.disguise_nature,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "skills",
+        select: 3,
+        list: [
+          {
+            name_set: "investigation",
+            skills: [{ investigation: "Mastery" }],
+          },
+          {
+            name_set: "athletics",
+            skills: [{ athletics: "Mastery" }],
+          },
+          {
+            name_set: "perception",
+            skills: [{ perception: "Mastery" }],
+          },
+          {
+            name_set: "survival",
+            skills: [{ survival: "Mastery" }],
+          },
+          {
+            name_set: "nature",
+            skills: [{ nature: "Mastery" }],
+          },
+          {
+            name_set: "insight",
+            skills: [{ insight: "Mastery" }],
+          },
+          {
+            name_set: "stealth",
+            skills: [{ stealth: "Mastery" }],
+          },
+          {
+            name_set: "animal_hanging",
+            skills: [{ animal_hanging: "Mastery" }],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "armor_class",
+        select: 1,
+        list: [
+          {
+            name_set: armors.scalemail.name,
+            equipment: [
+              {
+                level: 1,
+                armor: [[armors.scalemail, 1]],
+              },
+            ],
+            fines: [
+              {
+                type: "disadvantage",
+                keyword: "disadvantage",
+                details: "on_stealth",
+              },
+            ],
+          },
+          {
+            name_set: armors.leather.name,
+            equipment: [
+              {
+                level: 1,
+                armor: [[armors.leather, 1]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            name_set: "shortsword_2",
+            equipment: [
+              {
+                weapon: [[weapons.shortsword, 2]],
+              },
+            ],
+          },
+          {
+            name: "two_simple_weapons",
+            settings: [
+              {
+                type: "custom",
+                name: "weapons",
+                select: 1,
+                list: [
+                  {
+                    name_set: weapons.quarterstaff.name,
+                    equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+                  },
+                  {
+                    name_set: weapons.mace.name,
+                    equipment: [{ weapon: [[weapons.mace, 1]] }],
+                  },
+                  {
+                    name_set: weapons.club.name,
+                    equipment: [{ weapon: [[weapons.club, 1]] }],
+                  },
+                  {
+                    name_set: weapons.dagger.name,
+                    equipment: [{ weapon: [[weapons.dagger, 1]] }],
+                  },
+                  {
+                    name_set: weapons.spear.name,
+                    equipment: [{ weapon: [[weapons.spear, 1]] }],
+                  },
+                  {
+                    name_set: weapons.light_hammer.name,
+                    equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+                  },
+                  {
+                    name_set: weapons.javelin.name,
+                    equipment: [{ weapon: [[weapons.javelin, 1]] }],
+                  },
+                  {
+                    name_set: weapons.greatclub.name,
+                    equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+                  },
+                  {
+                    name_set: weapons.handaxe.name,
+                    equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+                  },
+                  {
+                    name_set: weapons.sickle.name,
+                    equipment: [{ weapon: [[weapons.sickle, 1]] }],
+                  },
+                ],
+              },
+              {
+                type: "custom",
+                name: "weapons",
+                select: 1,
+                list: [
+                  {
+                    name_set: weapons.quarterstaff.name,
+                    equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+                  },
+                  {
+                    name_set: weapons.mace.name,
+                    equipment: [{ weapon: [[weapons.mace, 1]] }],
+                  },
+                  {
+                    name_set: weapons.club.name,
+                    equipment: [{ weapon: [[weapons.club, 1]] }],
+                  },
+                  {
+                    name_set: weapons.dagger.name,
+                    equipment: [{ weapon: [[weapons.dagger, 1]] }],
+                  },
+                  {
+                    name_set: weapons.spear.name,
+                    equipment: [{ weapon: [[weapons.spear, 1]] }],
+                  },
+                  {
+                    name_set: weapons.light_hammer.name,
+                    equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+                  },
+                  {
+                    name_set: weapons.javelin.name,
+                    equipment: [{ weapon: [[weapons.javelin, 1]] }],
+                  },
+                  {
+                    name_set: weapons.greatclub.name,
+                    equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+                  },
+                  {
+                    name_set: weapons.handaxe.name,
+                    equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+                  },
+                  {
+                    name_set: weapons.sickle.name,
+                    equipment: [{ weapon: [[weapons.sickle, 1]] }],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        name: "packs",
+        select: 1,
+        list: [
+          {
+            name_set: packs.dungeoneers.name,
+             equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          {
+            name_set: packs.explorers.name,
+             equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+        ],
+      },
+      {
+        level: 2,
+        type: "custom",
+        name: "battle_style",
+        select: 1,
+        list: [
+          {
+            name: "style_dueling",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_attack_signle_one_handed",
+              },
+            ],
+          },
+          {
+            name: "style_defence",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_armor_if_armor",
+              },
+            ],
+
+            qualities: [
+              {
+                armor_bonus: 1,
+              },
+            ],
+          },
+          {
+            name: "style_double_weapon",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_damage_second_attack",
+              },
+            ],
+          },
+          {
+            name: "style_archery",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "aim_bonus",
+                details: "plus_2_on_ranged",
+              },
+            ],
+
+            specials: [
+              {
+                level: 1,
+                type: "weapon_ranged",
+                aim_bonus: 2,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 3,
+        type: "spells",
+        name: "spells",
+        select: [
+          0, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 11, 11, 11,
+        ],
+        mana_min: 1,
+        mana_max: [0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],
+        classes: ["ranger"],
+      },
+      {
+        level: 4,
+        type: "feats",
+      },
+      {
+        level: 8,
+        type: "feats",
+      },
+      {
+        level: 12,
+        type: "feats",
+      },
+      {
+        level: 16,
+        type: "feats",
+      },
+      {
+        level: 19,
+        type: "feats",
+      },
+    ],
   }, // 20
 
   //NOTE - Rogue -------------------------------------------------------------------------
@@ -1125,7 +1301,13 @@ export default {
 
     proficiencies: {
       armor: [armory.light],
-      weapons: [weaponry.simple, weaponry.short_swords, weaponry.long_swords, weaponry.rapires, weaponry.hand_arbalets],
+      weapons: [
+        weaponry.simple,
+        weaponry.short_swords,
+        weaponry.long_swords,
+        weaponry.rapires,
+        weaponry.hand_arbalets,
+      ],
       tools: [tools.thief],
       languages: [lang.thieves],
     },
@@ -1145,7 +1327,10 @@ export default {
       {
         level: 1,
         armor: [[armors.leather, 1]],
-        weapon: [ [weapons.dagger, 2], [weapons.unarmed, 1], ],
+        weapon: [
+          [weapons.dagger, 2],
+          [weapons.unarmed, 1],
+        ],
         inventory: [[items.arrow, 1]],
         inventory_packs: [[packs.thieves, 1]],
       },
@@ -1323,10 +1508,98 @@ export default {
                 name: "spell_slots",
                 type: "long_rest",
                 list: [
-                  [ "[1]", 0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, ],
-                  [ "[2]", 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
-                  [ "[3]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, ],
-                  [ "[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, ],
+                  [
+                    "[1]",
+                    0,
+                    0,
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                  ],
+                  [
+                    "[2]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[3]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[4]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                  ],
                 ],
               },
               {
@@ -1334,7 +1607,29 @@ export default {
                 name: "spell_steal_slots",
                 type: "long_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -1353,7 +1648,9 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells_0",
-                select: [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
+                select: [
+                  2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+                ],
                 mana_min: 0,
                 mana_max: 0,
                 classes: ["wizard"],
@@ -1362,9 +1659,14 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells",
-                select: [ 0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12, 13, ],
+                select: [
+                  0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12,
+                  13,
+                ],
                 mana_min: 1,
-                mana_max: [ 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, ],
+                mana_max: [
+                  0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
+                ],
                 classes: ["wizard"],
               },
             ],
@@ -1378,37 +1680,37 @@ export default {
         select: 4,
         list: [
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { investigation: "Mastery", }, ],
+            skills: [{ investigation: "Mastery" }],
           },
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { perception: "Mastery", }, ],
+            skills: [{ perception: "Mastery" }],
           },
           {
-            skills: [ { performance: "Mastery", }, ],
+            skills: [{ performance: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { sleight_of_hand: "Mastery", }, ],
+            skills: [{ sleight_of_hand: "Mastery" }],
           },
           {
-            skills: [ { deception: "Mastery", }, ],
+            skills: [{ deception: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { stealth: "Mastery", }, ],
+            skills: [{ stealth: "Mastery" }],
           },
           {
-            skills: [ { persuasion: "Mastery", }, ],
+            skills: [{ persuasion: "Mastery" }],
           },
         ],
       },
@@ -1428,40 +1730,40 @@ export default {
             ],
           },
           {
-            skills: [ { sleight_of_hand: "Mastery", }, ],
+            skills: [{ sleight_of_hand: "Mastery" }],
           },
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { investigation: "Mastery", }, ],
+            skills: [{ investigation: "Mastery" }],
           },
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { perception: "Mastery", }, ],
+            skills: [{ perception: "Mastery" }],
           },
           {
-            skills: [ { performance: "Mastery", }, ],
+            skills: [{ performance: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { deception: "Mastery", }, ],
+            skills: [{ deception: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { stealth: "Mastery", }, ],
+            skills: [{ stealth: "Mastery" }],
           },
           {
-            skills: [ { persuasion: "Mastery", }, ],
+            skills: [{ persuasion: "Mastery" }],
           },
         ],
       },
@@ -1481,40 +1783,40 @@ export default {
             ],
           },
           {
-            skills: [ { sleight_of_hand: "Mastery", }, ],
+            skills: [{ sleight_of_hand: "Mastery" }],
           },
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { investigation: "Mastery", }, ],
+            skills: [{ investigation: "Mastery" }],
           },
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { perception: "Mastery", }, ],
+            skills: [{ perception: "Mastery" }],
           },
           {
-            skills: [ { performance: "Mastery", }, ],
+            skills: [{ performance: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { deception: "Mastery", }, ],
+            skills: [{ deception: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { stealth: "Mastery", }, ],
+            skills: [{ stealth: "Mastery" }],
           },
           {
-            skills: [ { persuasion: "Mastery", }, ],
+            skills: [{ persuasion: "Mastery" }],
           },
         ],
       },
@@ -1544,8 +1846,8 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          {equipment: [{ weapon: [ [weapons.rapier, 1],]}]},
-          {equipment: [{ weapon: [ [weapons.shortsword, 1],]}]}
+          { equipment: [{ weapon: [[weapons.rapier, 1]] }] },
+          { equipment: [{ weapon: [[weapons.shortsword, 1]] }] },
         ],
       },
       {
@@ -1559,22 +1861,22 @@ export default {
 
             equipment: [
               {
-            weapon: [[weapons.shortbow, 1]],
-            inventory: [
-              [items.quiver, 1],
-              [items.arrow, 20],
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [
+                  [items.quiver, 1],
+                  [items.arrow, 20],
+                ],
+              },
             ],
-          }
-        ]
           },
           {
             name: "melee_fight",
 
             equipment: [
               {
-            weapon: [[weapons.shortsword, 1]],
-              }
-            ]
+                weapon: [[weapons.shortsword, 1]],
+              },
+            ],
           },
         ],
       },
@@ -1584,9 +1886,9 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.burglars, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.burglars, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
     ],
@@ -1647,7 +1949,7 @@ export default {
         name: "indomity_slots",
         type: "long_rest",
         list: [
-          ["", 0,0,0,0,0, 0,0,0,1,1, 1,1,2,2,2, 2,3,3,3,3],
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3],
         ],
       },
     ],
@@ -1687,7 +1989,29 @@ export default {
                 foo: "Str_Level_10_18",
                 type: "short_rest",
                 list: [
-                  [ "", 0, 0, 4, 4, 4,   4, 5, 5, 5, 5,   5, 5, 5, 5, 6,   6, 6, 6, 6, 6, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                  ],
                 ],
               },
             ],
@@ -1703,9 +2027,9 @@ export default {
 
             spells: [
               {
-                level:7,
-                spell:spells.know_your_enemy
-              }
+                level: 7,
+                spell: spells.know_your_enemy,
+              },
             ],
 
             settings: [
@@ -1713,24 +2037,26 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "maneuvers",
-                select: [0,0,3,3,3, 3,5,5,5,7, 7,7,7,7,9, 9,9,9,9,9],
+                select: [
+                  0, 0, 3, 3, 3, 3, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9,
+                ],
                 list: [
-                  {spells: [{spell:spells.maneuver_evasive_footwork,}]},
-                  {spells: [{spell:spells.maneuver_lunging_attack,}]},
-                  {spells: [{spell:spells.maneuver_maneuvering_attack,}]},
-                  {spells: [{spell:spells.maneuver_menacing_attack,}]},
-                  {spells: [{spell:spells.maneuver_feinting_attack,}]},
-                  {spells: [{spell:spells.maneuver_disarming_attack,}]},
-                  {spells: [{spell:spells.maneuver_trip_attack,}]},
-                  {spells: [{spell:spells.maneuver_riposte,}]},
-                  {spells: [{spell:spells.maneuver_distracting_strike,}]},
-                  {spells: [{spell:spells.maneuver_parry,}]},
-                  {spells: [{spell:spells.maneuver_goading_attack,}]},
-                  {spells: [{spell:spells.maneuver_rally,}]},
-                  {spells: [{spell:spells.maneuver_pushing_attack,}]},
-                  {spells: [{spell:spells.maneuver_precision_attack,}]},
-                  {spells: [{spell:spells.maneuver_commanders_strike,}]},
-                  {spells: [{spell:spells.maneuver_sweeping_attack,}]},
+                  { spells: [{ spell: spells.maneuver_evasive_footwork }] },
+                  { spells: [{ spell: spells.maneuver_lunging_attack }] },
+                  { spells: [{ spell: spells.maneuver_maneuvering_attack }] },
+                  { spells: [{ spell: spells.maneuver_menacing_attack }] },
+                  { spells: [{ spell: spells.maneuver_feinting_attack }] },
+                  { spells: [{ spell: spells.maneuver_disarming_attack }] },
+                  { spells: [{ spell: spells.maneuver_trip_attack }] },
+                  { spells: [{ spell: spells.maneuver_riposte }] },
+                  { spells: [{ spell: spells.maneuver_distracting_strike }] },
+                  { spells: [{ spell: spells.maneuver_parry }] },
+                  { spells: [{ spell: spells.maneuver_goading_attack }] },
+                  { spells: [{ spell: spells.maneuver_rally }] },
+                  { spells: [{ spell: spells.maneuver_pushing_attack }] },
+                  { spells: [{ spell: spells.maneuver_precision_attack }] },
+                  { spells: [{ spell: spells.maneuver_commanders_strike }] },
+                  { spells: [{ spell: spells.maneuver_sweeping_attack }] },
                 ],
               },
               {
@@ -1740,73 +2066,73 @@ export default {
                 select: 1,
                 list: [
                   {
-                    proficiencies: { tools: [tools.blacksmith], },
+                    proficiencies: { tools: [tools.blacksmith] },
                   },
                   {
-                    proficiencies:  { tools: [tools.brewer], }, 
+                    proficiencies: { tools: [tools.brewer] },
                   },
                   {
-                    proficiencies:  { tools: [tools.mason], }, 
+                    proficiencies: { tools: [tools.mason] },
                   },
                   {
-                    proficiencies: { tools: [tools.alchemists_supplies], }, 
+                    proficiencies: { tools: [tools.alchemists_supplies] },
                   },
                   {
-                    proficiencies: { tools: [tools.blacksmith], }, 
+                    proficiencies: { tools: [tools.blacksmith] },
                   },
                   {
-                    proficiencies: { tools: [tools.brewer], }, 
+                    proficiencies: { tools: [tools.brewer] },
                   },
                   {
-                    proficiencies: { tools: [tools.calligraphers_supplies], }, 
+                    proficiencies: { tools: [tools.calligraphers_supplies] },
                   },
                   {
-                    proficiencies:  { tools: [tools.carpenters_tools], }, 
+                    proficiencies: { tools: [tools.carpenters_tools] },
                   },
                   {
-                    proficiencies: { tools: [tools.cartographers_tools], }, 
+                    proficiencies: { tools: [tools.cartographers_tools] },
                   },
                   {
-                    proficiencies: { tools: [tools.cobblers_tools], }, 
+                    proficiencies: { tools: [tools.cobblers_tools] },
                   },
                   {
-                    proficiencies: { tools: [tools.cooks_tools], }, 
+                    proficiencies: { tools: [tools.cooks_tools] },
                   },
                   {
-                    proficiencies: { tools: [tools.disguise], }, 
+                    proficiencies: { tools: [tools.disguise] },
                   },
                   {
-                    proficiencies:  { tools: [tools.glassblowers_tools], }, 
+                    proficiencies: { tools: [tools.glassblowers_tools] },
                   },
                   {
-                    proficiencies: { tools: [tools.jewelers_tools], }, 
+                    proficiencies: { tools: [tools.jewelers_tools] },
                   },
                   {
-                    proficiencies:  { tools: [tools.leatherworkers_tools], }, 
+                    proficiencies: { tools: [tools.leatherworkers_tools] },
                   },
                   {
-                    proficiencies:  { tools: [tools.mason], }, 
+                    proficiencies: { tools: [tools.mason] },
                   },
                   {
-                    proficiencies:  { tools: [tools.navigators_tools], }, 
+                    proficiencies: { tools: [tools.navigators_tools] },
                   },
                   {
-                    proficiencies:  { tools: [tools.painters_supplies], }, 
+                    proficiencies: { tools: [tools.painters_supplies] },
                   },
                   {
-                    proficiencies:  { tools: [tools.poisoner], }, 
+                    proficiencies: { tools: [tools.poisoner] },
                   },
                   {
-                    proficiencies: { tools: [tools.potters_tools], }, 
+                    proficiencies: { tools: [tools.potters_tools] },
                   },
                   {
-                    proficiencies:  { tools: [tools.tinkers_tools], }, 
+                    proficiencies: { tools: [tools.tinkers_tools] },
                   },
                   {
-                    proficiencies:  { tools: [tools.weavers_tools], }, 
+                    proficiencies: { tools: [tools.weavers_tools] },
                   },
                   {
-                    proficiencies:  { tools: [tools.woodcarvers_tools], }, 
+                    proficiencies: { tools: [tools.woodcarvers_tools] },
                   },
                 ],
               },
@@ -1833,11 +2159,11 @@ export default {
                 spell: spells.call_bonbed_weapon,
               },
               {
-                level:7,
+                level: 7,
                 spell: spells.bonus_attack_fighter,
               },
               {
-                level:15,
+                level: 15,
                 spell: spells.arcane_charge,
               },
             ],
@@ -1848,10 +2174,98 @@ export default {
                 name: "spell_slots",
                 type: "long_rest",
                 list: [
-                  [ "[1]", 0, 0, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, ],
-                  [ "[2]", 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
-                  [ "[3]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, ],
-                  [ "[4]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, ],
+                  [
+                    "[1]",
+                    0,
+                    0,
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                  ],
+                  [
+                    "[2]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[3]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[4]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -1861,7 +2275,9 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells_0",
-                select: [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, ],
+                select: [
+                  2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+                ],
                 mana_min: 0,
                 mana_max: 0,
                 classes: ["wizard"],
@@ -1870,9 +2286,14 @@ export default {
                 level: 3,
                 type: "spells",
                 name: "spells",
-                select: [0,0,3,4,4, 4,5,6,6,7, 8,8,9,10,10, 11,11,11,12,13],
+                select: [
+                  0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12,
+                  13,
+                ],
                 mana_min: 1,
-                mana_max: [ 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, ],
+                mana_max: [
+                  0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
+                ],
                 classes: ["wizard"],
                 filter: "type: [abjuration,evocation]",
               },
@@ -1905,13 +2326,13 @@ export default {
 
             spells: [
               {
-                level:7,
-                spell:spells.athletic_jump,
+                level: 7,
+                spell: spells.athletic_jump,
               },
               {
-                level:18,
-                spell:spells.survivor,
-              }
+                level: 18,
+                spell: spells.survivor,
+              },
             ],
 
             settings: [
@@ -1954,12 +2375,12 @@ export default {
                         details: "on_armor_if_armor",
                       },
                     ],
-        
+
                     qualities: [
                       {
                         armor_bonus: 1,
-                      }
-                    ]
+                      },
+                    ],
                   },
                   {
                     name: "style_great_weapon",
@@ -1993,7 +2414,7 @@ export default {
                         details: "plus_2_on_ranged",
                       },
                     ],
-        
+
                     specials: [
                       {
                         level: 1,
@@ -2004,7 +2425,7 @@ export default {
                   },
                 ],
               },
-            ]
+            ],
           },
         ],
       },
@@ -2035,28 +2456,28 @@ export default {
         select: 4,
         list: [
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { perception: "Mastery", }, ],
+            skills: [{ perception: "Mastery" }],
           },
           {
-            skills: [ { survival: "Mastery", }, ],
+            skills: [{ survival: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { history: "Mastery", }, ],
+            skills: [{ history: "Mastery" }],
           },
           {
-            skills: [ { animal_hanging: "Mastery", }, ],
+            skills: [{ animal_hanging: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
         ],
       },
@@ -2073,7 +2494,13 @@ export default {
                 armor: [[armors.chainmail, 1]], // Condition - Str Base = 13
               },
             ],
-            fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+            fines: [
+              {
+                type: "disadvantage",
+                keyword: "disadvantage",
+                details: "on_stealth",
+              },
+            ],
           },
           {
             equipment: [
@@ -2178,7 +2605,10 @@ export default {
             equipment: [
               {
                 weapon: [[weapons.longbow, 1]],
-                inventory: [[items.arrow, 20],[items.quiver, 1],],
+                inventory: [
+                  [items.arrow, 20],
+                  [items.quiver, 1],
+                ],
               },
             ],
           },
@@ -2217,8 +2647,8 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
@@ -2261,8 +2691,8 @@ export default {
             qualities: [
               {
                 armor_bonus: 1,
-              }
-            ]
+              },
+            ],
           },
           {
             name: "style_great_weapon",
@@ -2678,10 +3108,10 @@ export default {
                         name: "skills",
                         select: 1,
                         list: [
-                          {skills: [ { athletics: "Mastery", }, ],},
-                          {skills: [ { acrobatics: "Mastery", }, ],},
-                          {skills: [ { stealth: "Mastery", }, ],},
-                          {skills: [ { survival: "Mastery", }, ],},
+                          { skills: [{ athletics: "Mastery" }] },
+                          { skills: [{ acrobatics: "Mastery" }] },
+                          { skills: [{ stealth: "Mastery" }] },
+                          { skills: [{ survival: "Mastery" }] },
                         ],
                       },
                     ],
@@ -2752,22 +3182,22 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { survival: "Mastery", }, ],
+            skills: [{ survival: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { nature: "Mastery", }, ],
+            skills: [{ nature: "Mastery" }],
           },
           {
-            skills: [ { animal_hanging: "Mastery", }, ],
+            skills: [{ animal_hanging: "Mastery" }],
           },
         ],
       },
@@ -2778,22 +3208,22 @@ export default {
         select: 1,
         list: [
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { survival: "Mastery", }, ],
+            skills: [{ survival: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { nature: "Mastery", }, ],
+            skills: [{ nature: "Mastery" }],
           },
           {
-            skills: [ { animal_hanging: "Mastery", }, ],
+            skills: [{ animal_hanging: "Mastery" }],
           },
         ],
       },
@@ -2804,22 +3234,22 @@ export default {
         select: 1,
         list: [
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { survival: "Mastery", }, ],
+            skills: [{ survival: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { nature: "Mastery", }, ],
+            skills: [{ nature: "Mastery" }],
           },
           {
-            skills: [ { animal_hanging: "Mastery", }, ],
+            skills: [{ animal_hanging: "Mastery" }],
           },
         ],
       },
@@ -2849,24 +3279,24 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          {equipment: [{ weapon: [[weapons.greataxe, 1]] }],},
-          {equipment: [{ weapon: [[weapons.halberd, 1]] }],},
-          {equipment: [{ weapon: [[weapons.war_pick, 1]] }],},
-          {equipment: [{ weapon: [[weapons.warhammer, 1]] }],},
-          {equipment: [{ weapon: [[weapons.battleaxe, 1]] }],},
-          {equipment: [{ weapon: [[weapons.glaive, 1]] }],},
-          {equipment: [{ weapon: [[weapons.greatsword, 1]] }],},
-          {equipment: [{ weapon: [[weapons.lance, 1]] }],},
-          {equipment: [{ weapon: [[weapons.longsword, 1]] }],},
-          {equipment: [{ weapon: [[weapons.whip, 1]] }],},
-          {equipment: [{ weapon: [[weapons.shortsword, 1]] }],},
-          {equipment: [{ weapon: [[weapons.maul, 1]] }],},
-          {equipment: [{ weapon: [[weapons.morningstar, 1]] }],},
-          {equipment: [{ weapon: [[weapons.pike, 1]] }],},
-          {equipment: [{ weapon: [[weapons.rapier, 1]] }],},
-          {equipment: [{ weapon: [[weapons.scimitar, 1]] }],},
-          {equipment: [{ weapon: [[weapons.trident, 1]] }],},
-          {equipment: [{ weapon: [[weapons.flail, 1]] }],},
+          { equipment: [{ weapon: [[weapons.greataxe, 1]] }] },
+          { equipment: [{ weapon: [[weapons.halberd, 1]] }] },
+          { equipment: [{ weapon: [[weapons.war_pick, 1]] }] },
+          { equipment: [{ weapon: [[weapons.warhammer, 1]] }] },
+          { equipment: [{ weapon: [[weapons.battleaxe, 1]] }] },
+          { equipment: [{ weapon: [[weapons.glaive, 1]] }] },
+          { equipment: [{ weapon: [[weapons.greatsword, 1]] }] },
+          { equipment: [{ weapon: [[weapons.lance, 1]] }] },
+          { equipment: [{ weapon: [[weapons.longsword, 1]] }] },
+          { equipment: [{ weapon: [[weapons.whip, 1]] }] },
+          { equipment: [{ weapon: [[weapons.shortsword, 1]] }] },
+          { equipment: [{ weapon: [[weapons.maul, 1]] }] },
+          { equipment: [{ weapon: [[weapons.morningstar, 1]] }] },
+          { equipment: [{ weapon: [[weapons.pike, 1]] }] },
+          { equipment: [{ weapon: [[weapons.rapier, 1]] }] },
+          { equipment: [{ weapon: [[weapons.scimitar, 1]] }] },
+          { equipment: [{ weapon: [[weapons.trident, 1]] }] },
+          { equipment: [{ weapon: [[weapons.flail, 1]] }] },
         ],
       },
       {
@@ -2875,16 +3305,16 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          {equipment: [{ weapon: [[weapons.handaxe, 1]] }],},
-          {equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],},
-          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
-          {equipment: [{ weapon: [[weapons.club, 1]] }],},
-          {equipment: [{ weapon: [[weapons.dagger, 1]] }],},
-          {equipment: [{ weapon: [[weapons.spear, 1]] }],},
-          {equipment: [{ weapon: [[weapons.light_hammer, 1]] }],},
-          {equipment: [{ weapon: [[weapons.javelin, 1]] }],},
-          {equipment: [{ weapon: [[weapons.greatclub, 1]] }],},
-          {equipment: [{ weapon: [[weapons.sickle, 1]] }],},
+          { equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
     ],
@@ -2922,7 +3352,29 @@ export default {
         name: "chi_slots",
         type: "short_rest",
         list: [
-          [ "", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ],
+          [
+            "",
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+          ],
         ],
       },
     ],
@@ -3144,7 +3596,7 @@ export default {
       {
         level: 14,
         type: "saving",
-        saving: ["constitution", "intelligence","wisdom", "charisma"],
+        saving: ["constitution", "intelligence", "wisdom", "charisma"],
       },
     ],
 
@@ -3165,7 +3617,29 @@ export default {
                 name: "wholeness_body_slots",
                 type: "long_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -3249,22 +3723,23 @@ export default {
 
             settings: [
               {
-                level:3,
-                type:"custom",
-                name:"practices",
-                select: [1,1,1,1,1, 2,2,2,2,2, 3,3,3,3,3, 3,4,4,4,4],
+                level: 3,
+                type: "custom",
+                name: "practices",
+                select: [
+                  1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+                ],
                 list: [
+                  { spells: [{ level: 3, spell: spells.water_whip }] },
+                  { spells: [{ level: 3, spell: spells.fire_snake_teeth }] },
+                  { spells: [{ level: 3, spell: spells.ashing_strike }] },
+                  { spells: [{ level: 3, spell: spells.four_thunder_fist }] },
+                  { spells: [{ level: 3, spell: spells.gust_of_wind_monk }] },
+                  { spells: [{ level: 3, spell: spells.air_fist }] },
+                  { spells: [{ level: 3, spell: spells.form_river }] },
 
-                  {spells: [ { level: 3, spell: spells.water_whip, }, ],},
-                  {spells: [ { level: 3, spell: spells.fire_snake_teeth, }, ],},
-                  {spells: [ { level: 3, spell: spells.ashing_strike, }, ],},
-                  {spells: [ { level: 3, spell: spells.four_thunder_fist, }, ],},
-                  {spells: [ { level: 3, spell: spells.gust_of_wind_monk, }, ],},
-                  {spells: [ { level: 3, spell: spells.air_fist, }, ],},
-                  {spells: [ { level: 3, spell: spells.form_river, }, ],},
-                
-                  {spells: [ { level: 6, spell: spells.shatter_monk, }, ],},
-                  {spells: [ { level: 6, spell: spells.hold_person_monk, }, ],},
+                  { spells: [{ level: 6, spell: spells.shatter_monk }] },
+                  { spells: [{ level: 6, spell: spells.hold_person_monk }] },
 
                   //TODO - дописати спели
 
@@ -3276,9 +3751,9 @@ export default {
                   // {spells: [ { level:17, spell: spells.earth_val }, ],},
                   // {spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
                   // {spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
-                ]
+                ],
               },
-            ]
+            ],
           },
         ],
       },
@@ -3289,22 +3764,22 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { acrobatics: "Mastery", }, ],
+            skills: [{ acrobatics: "Mastery" }],
           },
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { history: "Mastery", }, ],
+            skills: [{ history: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
           {
-            skills: [ { stealth: "Mastery", }, ],
+            skills: [{ stealth: "Mastery" }],
           },
         ],
       },
@@ -3316,169 +3791,123 @@ export default {
         list: [
           {
             proficiencies: {
-                tools: [tools.alchemists_supplies],
-              },
+              tools: [tools.alchemists_supplies],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.potters_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.potters_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.tinkers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.tinkers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.calligraphers_supplies],
-              },
-            
+            proficiencies: {
+              tools: [tools.calligraphers_supplies],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.cobblers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.cobblers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.cartographers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.cartographers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.leatherworkers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.leatherworkers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.blacksmith],
-              },
-            
+            proficiencies: {
+              tools: [tools.blacksmith],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.brewer],
-              },
-            
+            proficiencies: {
+              tools: [tools.brewer],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.carpenters_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.carpenters_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.cooks_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.cooks_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.woodcarvers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.woodcarvers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.glassblowers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.glassblowers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.weavers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.weavers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.painters_supplies],
-              },
-            
+            proficiencies: {
+              tools: [tools.painters_supplies],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.jewelers_tools],
-              },
-            
+            proficiencies: {
+              tools: [tools.jewelers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_dulcimer],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_dulcimer],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_flute],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_flute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_horn],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_horn],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_lute],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_lute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_lyre],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_lyre],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_pan_flute],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_pan_flute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_shawm],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_shawm],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_viol],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_viol],
+            },
           },
         ],
       },
@@ -3542,8 +3971,8 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
@@ -3607,7 +4036,12 @@ export default {
     ],
 
     fines: [
-      {level: 1, type: "disadvantage", keyword: "disadvantage", details: "on_stealth",},
+      {
+        level: 1,
+        type: "disadvantage",
+        keyword: "disadvantage",
+        details: "on_stealth",
+      },
       {
         level: 3,
         type: "plus",
@@ -3640,7 +4074,7 @@ export default {
         type: "long_rest",
         foo: "Num_CHA_Min1", //Str_Plus_CHA
         list: [
-          ["", 0,0,0,0,0, 0,0,0,0,0,  0,0,0,0,0, 0,0,0,0,0],
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ],
       },
       {
@@ -3713,7 +4147,29 @@ export default {
                 name: "holy_nimbus_slots",
                 type: "long_rest",
                 list: [
-                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -3759,7 +4215,29 @@ export default {
                 name: "undying_sentinel_slots",
                 type: "long_rest",
                 list: [
-                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
               {
@@ -3767,7 +4245,29 @@ export default {
                 name: "elder_champion_slots",
                 type: "long_rest",
                 list: [
-                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -3822,7 +4322,29 @@ export default {
                 name: "avenging_angel_slots",
                 type: "long_rest",
                 list: [
-                  ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -3897,8 +4419,8 @@ export default {
             qualities: [
               {
                 armor_bonus: 1,
-              }
-            ]
+              },
+            ],
           },
           {
             name: "style_great_weapon",
@@ -3919,22 +4441,22 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { athletics: "Mastery", }, ],
+            skills: [{ athletics: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { medicine: "Mastery", }, ],
+            skills: [{ medicine: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
           {
-            skills: [ { persuasion: "Mastery", }, ],
+            skills: [{ persuasion: "Mastery" }],
           },
         ],
       },
@@ -4046,7 +4568,10 @@ export default {
             equipment: [
               {
                 weapon: [[weapons.longbow, 1]],
-                inventory: [[items.arrow, 20],[items.quiver, 1],],
+                inventory: [
+                  [items.arrow, 20],
+                  [items.quiver, 1],
+                ],
               },
             ],
           },
@@ -4066,16 +4591,16 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          {equipment: [{ weapon: [[weapons.javelin, 1]] }],},
-          {equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],},
-          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
-          {equipment: [{ weapon: [[weapons.club, 1]] }],},
-          {equipment: [{ weapon: [[weapons.dagger, 1]] }],},
-          {equipment: [{ weapon: [[weapons.spear, 1]] }],},
-          {equipment: [{ weapon: [[weapons.light_hammer, 1]] }],},
-          {equipment: [{ weapon: [[weapons.greatclub, 1]] }],},
-          {equipment: [{ weapon: [[weapons.handaxe, 1]] }],},
-          {equipment: [{ weapon: [[weapons.sickle, 1]] }],},
+          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
+          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
       {
@@ -4084,18 +4609,18 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.priests, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.priests, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
         level: 2,
         type: "spells",
         name: "spells",
-        select: [0,1,1,2,2, 3,3,4,4,5, 5,6,6,7,7, 8,8,9,9,10],
+        select: [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10],
         foo: "Sel_Plus_CHA_Min1",
         mana_min: 1,
-        mana_max: [0,1,1,1,2, 2,2,2,3,3, 3,3,4,4,4, 4,5,5,5,5],
+        mana_max: [0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],
         classes: ["paladin"],
       },
     ],
@@ -4210,7 +4735,29 @@ export default {
                 type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
                 ],
               },
             ],
@@ -4260,9 +4807,9 @@ export default {
             ],
 
             proficiencies: {
-                armor: [armory.heavy],
-                weapons: [weaponry.military],
-              },
+              armor: [armory.heavy],
+              weapons: [weaponry.military],
+            },
 
             settings: [
               {
@@ -4278,7 +4825,13 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
                     equipment: [
@@ -4295,7 +4848,13 @@ export default {
                         armor: [[armors.chainmail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                 ],
               },
@@ -4313,7 +4872,29 @@ export default {
                 type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
                 ],
               },
             ],
@@ -4363,10 +4944,9 @@ export default {
             ],
 
             proficiencies: {
-                armor: [armory.heavy],
-                weapons: [weaponry.military],
-              },
-
+              armor: [armory.heavy],
+              weapons: [weaponry.military],
+            },
 
             settings: [
               {
@@ -4382,7 +4962,13 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
                     equipment: [
@@ -4399,7 +4985,13 @@ export default {
                         armor: [[armors.chainmail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                 ],
               },
@@ -4464,9 +5056,8 @@ export default {
             ],
 
             proficiencies: {
-                armor: [armory.heavy],
-              },
-
+              armor: [armory.heavy],
+            },
 
             settings: [
               {
@@ -4482,7 +5073,13 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
                     equipment: [
@@ -4499,7 +5096,13 @@ export default {
                         armor: [[armors.chainmail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                 ],
               },
@@ -4516,7 +5119,29 @@ export default {
                 name: "cleric_see_past_slots",
                 type: "short_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -4570,7 +5195,13 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
                     equipment: [
@@ -4596,16 +5227,16 @@ export default {
                 select: 2,
                 list: [
                   {
-                    skills: [ { history: "Mastery_x2", }, ],
+                    skills: [{ history: "Mastery_x2" }],
                   },
                   {
-                    skills: [ { arcana: "Mastery_x2", }, ],
+                    skills: [{ arcana: "Mastery_x2" }],
                   },
                   {
-                    skills: [ { nature: "Mastery_x2", }, ],
+                    skills: [{ nature: "Mastery_x2" }],
                   },
                   {
-                    skills: [ { religion: "Mastery_x2", }, ],
+                    skills: [{ religion: "Mastery_x2" }],
                   },
                 ],
               },
@@ -4649,7 +5280,13 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
                     equipment: [
@@ -4701,9 +5338,8 @@ export default {
             ],
 
             proficiencies: {
-                armor: [armory.heavy],
-              },
-
+              armor: [armory.heavy],
+            },
 
             settings: [
               {
@@ -4722,15 +5358,15 @@ export default {
                 select: 1,
                 list: [
                   {
-                    skills: [ { survival: "Mastery", }, ],
+                    skills: [{ survival: "Mastery" }],
                   },
                   {
-                    skills: [ { nature: "Mastery", }, ],
+                    skills: [{ nature: "Mastery" }],
                   },
                   {
-                    skills: [ { animal_hanging: "Mastery", }, ],
+                    skills: [{ animal_hanging: "Mastery" }],
                   },
-                  ],
+                ],
               },
               {
                 level: 1,
@@ -4739,15 +5375,27 @@ export default {
                 select: 1,
                 list: [
                   {
-                    equipment: [ { level: 1, armor: [[armors.scalemail, 1]], }, ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    equipment: [{ level: 1, armor: [[armors.scalemail, 1]] }],
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
-                    equipment: [ { level: 1, armor: [[armors.leather, 1]], }, ],
+                    equipment: [{ level: 1, armor: [[armors.leather, 1]] }],
                   },
                   {
-                    equipment: [ { level: 1, armor: [[armors.chainmail, 1]], }, ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    equipment: [{ level: 1, armor: [[armors.chainmail, 1]] }],
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                 ],
               },
@@ -4765,7 +5413,29 @@ export default {
                 type: "long_rest",
                 foo: "Num_WIS_Min1",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
                 ],
               },
             ],
@@ -4824,7 +5494,13 @@ export default {
                         armor: [[armors.scalemail, 1]],
                       },
                     ],
-                    fines:[{type: "disadvantage", keyword: "disadvantage", details: "on_stealth",}]
+                    fines: [
+                      {
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
                   },
                   {
                     equipment: [
@@ -4847,20 +5523,20 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { history: "Mastery", }, ],
+            skills: [{ history: "Mastery" }],
           },
           {
-            skills: [ { medicine: "Mastery", }, ],
+            skills: [{ medicine: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
           {
-            skills: [ { persuasion: "Mastery", }, ],
-          },  
+            skills: [{ persuasion: "Mastery" }],
+          },
         ],
       },
       {
@@ -4869,8 +5545,8 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
-          {equipment: [{ weapon: [[weapons.warhammer, 1]] }],},
+          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { equipment: [{ weapon: [[weapons.warhammer, 1]] }] },
           // TODO - давай если нет мастери - подсвечивать имя желтьім
         ],
       },
@@ -4949,15 +5625,15 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.priests, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.priests, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: [3,3,3,4,4,  4,4,4,4,5,  5,5,5,5,5,  5,5,5,5,5],
+        select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         mana_min: 0,
         mana_max: 0,
         classes: ["cleric"],
@@ -4966,10 +5642,12 @@ export default {
         level: 1,
         type: "spells",
         name: "spells",
-        select: [1,2,3,4,5, 6,7,8,9,10, 11,12,13,14,15, 16,17,18,19,20],
+        select: [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        ],
         foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
-        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
         classes: ["cleric"],
       },
       {
@@ -5188,7 +5866,7 @@ export default {
                 classes: ["druid"],
               },
               {
-                level:3,
+                level: 3,
                 type: "custom",
                 name: "favored_terrain",
                 select: 1,
@@ -5196,7 +5874,7 @@ export default {
                   {
                     name: "circle_of_the_land_arctic",
                     details: "circle_of_the_land_arctic_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5211,7 +5889,7 @@ export default {
                   {
                     name: "circle_of_the_land_swamp",
                     details: "circle_of_the_land_swamp_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5226,7 +5904,7 @@ export default {
                   {
                     name: "circle_of_the_land_mountain",
                     details: "circle_of_the_land_mountain_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5241,7 +5919,7 @@ export default {
                   {
                     name: "circle_of_the_land_forest",
                     details: "circle_of_the_land_forest_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5256,7 +5934,7 @@ export default {
                   {
                     name: "circle_of_the_land_grassland",
                     details: "circle_of_the_land_grassland_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5271,7 +5949,7 @@ export default {
                   {
                     name: "circle_of_the_land_coast",
                     details: "circle_of_the_land_coast_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5286,7 +5964,7 @@ export default {
                   {
                     name: "circle_of_the_land_underdark",
                     details: "circle_of_the_land_underdark_details",
-        
+
                     spells: [
                       {
                         level: 2,
@@ -5298,9 +5976,9 @@ export default {
                       },
                     ],
                   },
-                ]
-              }
-            ]
+                ],
+              },
+            ],
           },
           {
             name: "circle_of_the_moon",
@@ -5339,28 +6017,28 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { perception: "Mastery", }, ],
+            skills: [{ perception: "Mastery" }],
           },
           {
-            skills: [ { survival: "Mastery", }, ],
+            skills: [{ survival: "Mastery" }],
           },
           {
-            skills: [ { arcana: "Mastery", }, ],
+            skills: [{ arcana: "Mastery" }],
           },
           {
-            skills: [ { medicine: "Mastery", }, ],
+            skills: [{ medicine: "Mastery" }],
           },
           {
-            skills: [ { animal_hanging: "Mastery", }, ],
+            skills: [{ animal_hanging: "Mastery" }],
           },
           {
-            skills: [ { nature: "Mastery", }, ],
+            skills: [{ nature: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
         ],
       },
@@ -5447,17 +6125,17 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          {equipment: [{ weapon: [[weapons.scimitar, 1]] }],},
-          {equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],},
-          {equipment: [{ weapon: [[weapons.mace, 1]] }],},
-          {equipment: [{ weapon: [[weapons.club, 1]] }],},
-          {equipment: [{ weapon: [[weapons.dagger, 1]] }],},
-          {equipment: [{ weapon: [[weapons.spear, 1]] }],},
-          {equipment: [{ weapon: [[weapons.light_hammer, 1]] }],},
-          {equipment: [{ weapon: [[weapons.javelin, 1]] }],},
-          {equipment: [{ weapon: [[weapons.greatclub, 1]] }],},
-          {equipment: [{ weapon: [[weapons.handaxe, 1]] }],},
-          {equipment: [{ weapon: [[weapons.sickle, 1]] }],},
+          { equipment: [{ weapon: [[weapons.scimitar, 1]] }] },
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
+          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
       {
@@ -5472,7 +6150,9 @@ export default {
       {
         type: "spells",
         name: "spells",
-        select: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+        select: [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        ],
         foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
         mana_max: "Num_Wizard_max_spell_slot",
@@ -5597,7 +6277,29 @@ export default {
                 name: "fey_presence_slots",
                 type: "short_rest",
                 list: [
-                  [ "", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
               {
@@ -5605,7 +6307,29 @@ export default {
                 name: "misty_escape_slots",
                 type: "short_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
               {
@@ -5613,7 +6337,29 @@ export default {
                 name: "dark_delirium_slots",
                 type: "short_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -5650,9 +6396,14 @@ export default {
               {
                 type: "spells",
                 name: "spells",
-                select: [2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15],
+                select: [
+                  2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
+                  14, 15, 15,
+                ],
                 mana_min: 1,
-                mana_max: [1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5],
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                ],
                 classes: ["warlock"],
                 extra_items: [
                   // Архифея позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
@@ -5695,7 +6446,29 @@ export default {
                 name: "dark_ones_own_luck_slots",
                 type: "short_rest",
                 list: [
-                  [ "d10", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "d10",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
               {
@@ -5703,7 +6476,29 @@ export default {
                 name: "hurl_through_hell_slots",
                 type: "long_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -5727,9 +6522,14 @@ export default {
               {
                 type: "spells",
                 name: "spells",
-                select: [2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15],
+                select: [
+                  2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
+                  14, 15, 15,
+                ],
                 mana_min: 1,
-                mana_max: [1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,],
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                ],
                 classes: ["warlock"],
                 extra_items: [
                   // Исчадие позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
@@ -5790,7 +6590,29 @@ export default {
                 name: "entropic_ward_slots",
                 type: "short_rest",
                 list: [
-                  [ "", 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -5810,9 +6632,14 @@ export default {
               {
                 type: "spells",
                 name: "spells",
-                select: [2,3,4,5,6, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,15,15],
+                select: [
+                  2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
+                  14, 15, 15,
+                ],
                 mana_min: 1,
-                mana_max: [1,1,2,2,3, 3,4,4,5,5, 5,5,5,5,5, 5,5,5,5,5,],
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                ],
                 classes: ["warlock"],
                 extra_items: [
                   // Ваш покравитель позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
@@ -5898,7 +6725,29 @@ export default {
                 name: "talisman_slots",
                 type: "long_rest",
                 list: [
-                  [ "d4", 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, ],
+                  [
+                    "d4",
+                    2,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6,
+                  ],
                 ],
               },
             ],
@@ -5915,7 +6764,7 @@ export default {
         level: 2,
         type: "custom",
         name: "invocations",
-        select: [0,2,2,2,3, 3,4,4,5,5, 5,6,6,6,7, 7,7,8,8,8],
+        select: [0, 2, 2, 2, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8],
         list: [
           // Не каноничньіе, как оказалось
           // {
@@ -6201,25 +7050,25 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { investigation: "Mastery", }, ],
+            skills: [{ investigation: "Mastery" }],
           },
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { history: "Mastery", }, ],
+            skills: [{ history: "Mastery" }],
           },
           {
-            skills: [ { arcana: "Mastery", }, ],
+            skills: [{ arcana: "Mastery" }],
           },
           {
-            skills: [ { deception: "Mastery", }, ],
+            skills: [{ deception: "Mastery" }],
           },
           {
-            skills: [ { nature: "Mastery", }, ],
+            skills: [{ nature: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
         ],
       },
@@ -6381,15 +7230,15 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.scholars, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.scholars, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
         ],
       },
       {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: [2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4,],
+        select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         mana_min: 0,
         mana_max: 0,
         classes: ["warlock"],
@@ -6426,7 +7275,13 @@ export default {
     hp_dice: 6,
 
     proficiencies: {
-      weapons: [weaponry.quarterstaffs, weaponry.daggers, weaponry.light_arbalets, weaponry.darts, weaponry.slings],
+      weapons: [
+        weaponry.quarterstaffs,
+        weaponry.daggers,
+        weaponry.light_arbalets,
+        weaponry.darts,
+        weaponry.slings,
+      ],
     },
 
     saving: ["constitution", "charisma"],
@@ -6446,7 +7301,29 @@ export default {
         name: "sorcery_slots",
         type: "long_rest",
         list: [
-          ["", 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+          [
+            "",
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+          ],
         ],
       },
       {
@@ -6470,7 +7347,10 @@ export default {
     equipment: [
       {
         level: 1,
-        weapon: [ [weapons.dagger, 2], [weapons.unarmed, 1], ],
+        weapon: [
+          [weapons.dagger, 2],
+          [weapons.unarmed, 1],
+        ],
       },
     ],
 
@@ -6480,21 +7360,21 @@ export default {
         type: "plus",
         keyword: "short_rest",
         details: "to_restore_4_sorcery_points",
-      }
+      },
     ],
 
     spells: [
       {
-        level:2,
-        spell:spells.sorcery_to_mana,
+        level: 2,
+        spell: spells.sorcery_to_mana,
       },
       {
-        level:2,
-        spell:spells.mana_to_sorcery,
+        level: 2,
+        spell: spells.mana_to_sorcery,
       },
       {
-        level:5,
-        spell:spells.magical_direction,
+        level: 5,
+        spell: spells.magical_direction,
       },
     ],
 
@@ -6513,7 +7393,7 @@ export default {
               languages: [lang.dragon],
             },
 
-            hp_bonus: [1,1],
+            hp_bonus: [1, 1],
 
             fines: [
               {
@@ -6533,17 +7413,17 @@ export default {
             qualities: [
               {
                 armor_bonus: 3,
-              }
+              },
             ],
 
             spells: [
               {
-                level:14,
-                spell:spells.dragon_wings
+                level: 14,
+                spell: spells.dragon_wings,
               },
               {
-                level:18,
-                spell:spells.dragon_presence
+                level: 18,
+                spell: spells.dragon_presence,
               },
             ],
 
@@ -6560,11 +7440,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_fire
+                        spell: spells.elemental_affinity_fire,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_fire
+                        spell: spells.dragon_resistanse_fire,
                       },
                     ],
                   },
@@ -6574,11 +7454,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_fire
+                        spell: spells.elemental_affinity_fire,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_fire
+                        spell: spells.dragon_resistanse_fire,
                       },
                     ],
                   },
@@ -6588,11 +7468,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_fire
+                        spell: spells.elemental_affinity_fire,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_fire
+                        spell: spells.dragon_resistanse_fire,
                       },
                     ],
                   },
@@ -6602,11 +7482,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_cold
+                        spell: spells.elemental_affinity_cold,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_cold
+                        spell: spells.dragon_resistanse_cold,
                       },
                     ],
                   },
@@ -6616,11 +7496,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_cold
+                        spell: spells.elemental_affinity_cold,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_cold
+                        spell: spells.dragon_resistanse_cold,
                       },
                     ],
                   },
@@ -6630,11 +7510,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_electricity
+                        spell: spells.elemental_affinity_electricity,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_electricity
+                        spell: spells.dragon_resistanse_electricity,
                       },
                     ],
                   },
@@ -6644,11 +7524,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_electricity
+                        spell: spells.elemental_affinity_electricity,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_electricity
+                        spell: spells.dragon_resistanse_electricity,
                       },
                     ],
                   },
@@ -6658,11 +7538,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_acid
+                        spell: spells.elemental_affinity_acid,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_acid
+                        spell: spells.dragon_resistanse_acid,
                       },
                     ],
                   },
@@ -6672,11 +7552,11 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_acid
+                        spell: spells.elemental_affinity_acid,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_acid
+                        spell: spells.dragon_resistanse_acid,
                       },
                     ],
                   },
@@ -6686,17 +7566,17 @@ export default {
                     spells: [
                       {
                         level: 6,
-                        spell: spells.elemental_affinity_poison
+                        spell: spells.elemental_affinity_poison,
                       },
                       {
                         level: 6,
-                        spell: spells.dragon_resistanse_poison
+                        spell: spells.dragon_resistanse_poison,
                       },
                     ],
                   },
-                ]
-              }
-            ]
+                ],
+              },
+            ],
           },
           {
             name: "sorcerer_wild_magic",
@@ -6708,19 +7588,41 @@ export default {
                 name: "wild_magic_surge_slots",
                 type: "long_rest",
                 list: [
-                  ["", 1,1,1,1,1,  1,1,1,1,1,  1,1,1,1,1,  1,1,1,1,1],
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
 
             spells: [
               {
-                level:1,
-                spell:spells.wild_magic_surge
+                level: 1,
+                spell: spells.wild_magic_surge,
               },
               {
-                level:6,
-                spell:spells.bend_luck
+                level: 6,
+                spell: spells.bend_luck,
               },
             ],
 
@@ -6753,22 +7655,22 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { intimidation: "Mastery", }, ],
+            skills: [{ intimidation: "Mastery" }],
           },
           {
-            skills: [ { arcana: "Mastery", }, ],
+            skills: [{ arcana: "Mastery" }],
           },
           {
-            skills: [ { deception: "Mastery", }, ],
+            skills: [{ deception: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
           {
-            skills: [ { persuasion: "Mastery", }, ],
+            skills: [{ persuasion: "Mastery" }],
           },
         ],
       },
@@ -6846,9 +7748,9 @@ export default {
         name: "inventory",
         select: 1,
         list: [
-          {equipment: [{ inventory:[[items.component_pouch, 1],],}]},
-          {equipment: [{ inventory:[[items.focus, 1],],}]},
-        ]
+          { equipment: [{ inventory: [[items.component_pouch, 1]] }] },
+          { equipment: [{ inventory: [[items.focus, 1]] }] },
+        ],
       },
       {
         level: 1,
@@ -6856,15 +7758,15 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.dungeoneers, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: [ 4, 4, 4, 5, 5,   5, 5, 5, 5, 6,   6, 6, 6, 6, 6,   6, 6, 6, 6, 6, ],
+        select: [4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
         mana_min: 0,
         mana_max: 0,
         classes: ["sorcerer"],
@@ -6873,28 +7775,31 @@ export default {
         level: 1,
         type: "spells",
         name: "spells",
-        select: [2,3,4,5,6, 7,8,9,10,11, 12,12,13,13,14, 14,15,15,15,15],
+        select: [
+          2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 15,
+          15,
+        ],
         mana_min: 1,
-        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
         classes: ["wizard"],
       },
       {
         level: 3,
         type: "custom",
         name: "metamagic",
-        select: [0,0,2,2,2, 2,2,2,2,3, 3,3,3,3,3, 3,4,4,4,4],
+        select: [0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4],
         list: [
-          { spells:[{spell:spells.metamagic_careful}] },
-          { spells:[{spell:spells.metamagic_distant}] },
-          { spells:[{spell:spells.metamagic_empowered}] },
-          { spells:[{spell:spells.metamagic_extended}] },
-          { spells:[{spell:spells.metamagic_heightened}] }, // непреодолимое
-          { spells:[{spell:spells.metamagic_quickened}] },
-          { spells:[{spell:spells.metamagic_subtle}] }, // неуловимое
-          { spells:[{spell:spells.metamagic_transmuted}] },
-          { spells:[{spell:spells.metamagic_twinned}] },
+          { spells: [{ spell: spells.metamagic_careful }] },
+          { spells: [{ spell: spells.metamagic_distant }] },
+          { spells: [{ spell: spells.metamagic_empowered }] },
+          { spells: [{ spell: spells.metamagic_extended }] },
+          { spells: [{ spell: spells.metamagic_heightened }] }, // непреодолимое
+          { spells: [{ spell: spells.metamagic_quickened }] },
+          { spells: [{ spell: spells.metamagic_subtle }] }, // неуловимое
+          { spells: [{ spell: spells.metamagic_transmuted }] },
+          { spells: [{ spell: spells.metamagic_twinned }] },
 
-          { spells:[{spell:spells.metamagic_seeking}] },
+          { spells: [{ spell: spells.metamagic_seeking }] },
         ],
       },
       {
@@ -6916,8 +7821,8 @@ export default {
       {
         level: 19,
         type: "feats",
-      },      
-    ]
+      },
+    ],
   }, // 20
 
   //NOTE - Wizard -------------------------------------------------------------------------
@@ -7120,7 +8025,29 @@ export default {
                 name: "magical_protection_slots",
                 type: "long_rest",
                 list: [
-                  [ "", 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ],
+                  [
+                    "",
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
                 ],
               },
             ],
@@ -7193,22 +8120,22 @@ export default {
         select: 2,
         list: [
           {
-            skills: [ { investigation: "Mastery", }, ],
+            skills: [{ investigation: "Mastery" }],
           },
           {
-            skills: [ { history: "Mastery", }, ],
+            skills: [{ history: "Mastery" }],
           },
           {
-            skills: [ { arcana: "Mastery", }, ],
+            skills: [{ arcana: "Mastery" }],
           },
           {
-            skills: [ { medicine: "Mastery", }, ],
+            skills: [{ medicine: "Mastery" }],
           },
           {
-            skills: [ { insight: "Mastery", }, ],
+            skills: [{ insight: "Mastery" }],
           },
           {
-            skills: [ { religion: "Mastery", }, ],
+            skills: [{ religion: "Mastery" }],
           },
         ],
       },
@@ -7217,8 +8144,8 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }], },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }], },
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
         ],
       },
       {
@@ -7226,24 +8153,24 @@ export default {
         name: "inventory",
         select: 1,
         list: [
-          {equipment: [{ inventory:[[items.component_pouch, 1],],}]},
-          {equipment: [{ inventory:[[items.focus, 1],],}]},
-        ]
+          { equipment: [{ inventory: [[items.component_pouch, 1]] }] },
+          { equipment: [{ inventory: [[items.focus, 1]] }] },
+        ],
       },
       {
         type: "custom",
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.scholars, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.explorers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.scholars, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: [3,3,3,4,4, 4,4,4,4,5, 5,5,5,5,5, 5,5,5,5,5,],
+        select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         mana_min: 0,
         mana_max: 0,
         classes: ["wizard"],
@@ -7251,9 +8178,12 @@ export default {
       {
         type: "spells",
         name: "spells",
-        select: [6,8,10,12,14, 16,18,20,22,24, 26,28,30,32,34, 36,38,40,42,44],
+        select: [
+          6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
+          42, 44,
+        ],
         mana_min: 1,
-        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
         classes: ["wizard"],
       },
       {
@@ -7428,26 +8358,30 @@ export default {
 
             spells: [
               {
-                level:6,
-                spell:spells.extra_attack,
+                level: 6,
+                spell: spells.extra_attack,
               },
               {
-                level:14,
-                spell:spells.bonus_attack,
+                level: 14,
+                spell: spells.bonus_attack,
               },
             ],
 
             settings: [
               {
-                level:6,
+                level: 6,
                 type: "spells",
                 name: "spells",
-                select: [0,0,0,0,0, 2,2,2,2,2, 2,2,2,2,2, 2,2,2,2,2],
+                select: [
+                  0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+                ],
                 mana_min: 0,
-                mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9,
+                ],
                 classes: ["bard"],
               },
-            ]
+            ],
           },
           {
             name: "college_lore",
@@ -7455,12 +8389,12 @@ export default {
 
             spells: [
               {
-                level:3,
-                spell:spells.cutting_word,
+                level: 3,
+                spell: spells.cutting_word,
               },
               {
-                level:14,
-                spell:spells.peerless_skill,
+                level: 14,
+                spell: spells.peerless_skill,
               },
             ],
 
@@ -7470,34 +8404,46 @@ export default {
                 name: "skills",
                 select: 3,
                 list: [
-                  {skills: [ { athletics: "Mastery", }, ],},
-                  {skills: [ { acrobatics: "Mastery", }, ],},
-                  {skills: [ { sleight_of_hand: "Mastery", }, ],},
-                  {skills: [ { stealth: "Mastery", }, ],},
-                  {skills: [ { investigation: "Mastery", }, ],},
-                  {skills: [ { history: "Mastery", }, ],},
-                  {skills: [ { religion: "Mastery", }, ],},
-                  {skills: [ { arcana: "Mastery", }, ],},
-                  {skills: [ { nature: "Mastery", }, ],},
-                  {skills: [ { survival: "Mastery", }, ],},
-                  {skills: [ { perception: "Mastery", }, ],},
-                  {skills: [ { insight: "Mastery", }, ],},
-                  {skills: [ { medicine: "Mastery", }, ],},
-                  {skills: [ { animal_hanging: "Mastery", }, ],},
-                  {skills: [ { performance: "Mastery", }, ],},
-                  {skills: [ { persuasion: "Mastery", }, ],},
-                  {skills: [ { deception: "Mastery", }, ],},
-                  {skills: [ { intimidation: "Mastery", }, ],},                  
-                ]
+                  { skills: [{ athletics: "Mastery" }] },
+                  { skills: [{ acrobatics: "Mastery" }] },
+                  { skills: [{ sleight_of_hand: "Mastery" }] },
+                  { skills: [{ stealth: "Mastery" }] },
+                  { skills: [{ investigation: "Mastery" }] },
+                  { skills: [{ history: "Mastery" }] },
+                  { skills: [{ religion: "Mastery" }] },
+                  { skills: [{ arcana: "Mastery" }] },
+                  { skills: [{ nature: "Mastery" }] },
+                  { skills: [{ survival: "Mastery" }] },
+                  { skills: [{ perception: "Mastery" }] },
+                  { skills: [{ insight: "Mastery" }] },
+                  { skills: [{ medicine: "Mastery" }] },
+                  { skills: [{ animal_hanging: "Mastery" }] },
+                  { skills: [{ performance: "Mastery" }] },
+                  { skills: [{ persuasion: "Mastery" }] },
+                  { skills: [{ deception: "Mastery" }] },
+                  { skills: [{ intimidation: "Mastery" }] },
+                ],
               },
               {
                 level: 6,
                 type: "spells",
                 name: "magic_mistery",
-                select: [0,0,0,0,0, 2,2,2,2,2, 2,2,2,2,2, 2,2,2,2,2],
+                select: [
+                  0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+                ],
                 mana_min: 0,
-                mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
-                classes: ["artificer","cleric","druid","paladin","sorcerer","warlock","wizard"],
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9,
+                ],
+                classes: [
+                  "artificer",
+                  "cleric",
+                  "druid",
+                  "paladin",
+                  "sorcerer",
+                  "warlock",
+                  "wizard",
+                ],
               },
             ],
           },
@@ -7508,24 +8454,24 @@ export default {
         name: "skills",
         select: 3,
         list: [
-          {skills: [ { athletics: "Mastery", }, ],},
-          {skills: [ { acrobatics: "Mastery", }, ],},
-          {skills: [ { sleight_of_hand: "Mastery", }, ],},
-          {skills: [ { stealth: "Mastery", }, ],},
-          {skills: [ { investigation: "Mastery", }, ],},
-          {skills: [ { history: "Mastery", }, ],},
-          {skills: [ { religion: "Mastery", }, ],},
-          {skills: [ { arcana: "Mastery", }, ],},
-          {skills: [ { nature: "Mastery", }, ],},
-          {skills: [ { survival: "Mastery", }, ],},
-          {skills: [ { perception: "Mastery", }, ],},
-          {skills: [ { insight: "Mastery", }, ],},
-          {skills: [ { medicine: "Mastery", }, ],},
-          {skills: [ { animal_hanging: "Mastery", }, ],},
-          {skills: [ { performance: "Mastery", }, ],},
-          {skills: [ { persuasion: "Mastery", }, ],},
-          {skills: [ { deception: "Mastery", }, ],},
-          {skills: [ { intimidation: "Mastery", }, ],},
+          { skills: [{ athletics: "Mastery" }] },
+          { skills: [{ acrobatics: "Mastery" }] },
+          { skills: [{ sleight_of_hand: "Mastery" }] },
+          { skills: [{ stealth: "Mastery" }] },
+          { skills: [{ investigation: "Mastery" }] },
+          { skills: [{ history: "Mastery" }] },
+          { skills: [{ religion: "Mastery" }] },
+          { skills: [{ arcana: "Mastery" }] },
+          { skills: [{ nature: "Mastery" }] },
+          { skills: [{ survival: "Mastery" }] },
+          { skills: [{ perception: "Mastery" }] },
+          { skills: [{ insight: "Mastery" }] },
+          { skills: [{ medicine: "Mastery" }] },
+          { skills: [{ animal_hanging: "Mastery" }] },
+          { skills: [{ performance: "Mastery" }] },
+          { skills: [{ persuasion: "Mastery" }] },
+          { skills: [{ deception: "Mastery" }] },
+          { skills: [{ intimidation: "Mastery" }] },
         ],
       },
       {
@@ -7534,74 +8480,54 @@ export default {
         select: 3,
         list: [
           {
-            proficiencies: 
-              {
-                tools: [tools.music_bagpipes],
-              },
-
+            proficiencies: {
+              tools: [tools.music_bagpipes],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_drums],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_drums],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_dulcimer],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_dulcimer],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_flute],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_flute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_horn],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_horn],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_lute],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_lute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_lyre],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_lyre],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_pan_flute],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_pan_flute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_shawm],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_shawm],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.music_viol],
-              },
-            
+            proficiencies: {
+              tools: [tools.music_viol],
+            },
           },
         ],
       },
@@ -7610,17 +8536,17 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.rapier, 1]] }], },
-          { equipment: [{ weapon: [[weapons.longsword, 1]] }], },
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }], },
-          { equipment: [{ weapon: [[weapons.mace, 1]] }], },
-          { equipment: [{ weapon: [[weapons.club, 1]] }], },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }], },
-          { equipment: [{ weapon: [[weapons.spear, 1]] }], },
-          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }], },
-          { equipment: [{ weapon: [[weapons.javelin, 1]] }], },
-          { equipment: [{ weapon: [[weapons.greatclub, 1]] }], },
-          { equipment: [{ weapon: [[weapons.sickle, 1]] }], },
+          { equipment: [{ weapon: [[weapons.rapier, 1]] }] },
+          { equipment: [{ weapon: [[weapons.longsword, 1]] }] },
+          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
       {
@@ -7628,8 +8554,8 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          {equipment: [{ inventory_packs:[[packs.diplomats, 1],],}]},
-          {equipment: [{ inventory_packs:[[packs.entertainers, 1],],}]},
+          { equipment: [{ inventory_packs: [[packs.diplomats, 1]] }] },
+          { equipment: [{ inventory_packs: [[packs.entertainers, 1]] }] },
         ],
       },
       {
@@ -7637,23 +8563,23 @@ export default {
         name: "tool",
         select: 1,
         list: [
-          {equipment: [{ inventory:[[items.music_lute, 1],],}]},
-          {equipment: [{ inventory:[[items.music_bagpipes, 1],],}]},
-          {equipment: [{ inventory:[[items.music_drums, 1],],}]},
-          {equipment: [{ inventory:[[items.music_dulcimer, 1],],}]},
-          {equipment: [{ inventory:[[items.music_flute, 1],],}]},
-          {equipment: [{ inventory:[[items.music_horn, 1],],}]},
-          {equipment: [{ inventory:[[items.music_lyre, 1],],}]},
-          {equipment: [{ inventory:[[items.music_pan_flute, 1],],}]},
-          {equipment: [{ inventory:[[items.music_shawm, 1],],}]},
-          {equipment: [{ inventory:[[items.music_viol, 1],],}]},
+          { equipment: [{ inventory: [[items.music_lute, 1]] }] },
+          { equipment: [{ inventory: [[items.music_bagpipes, 1]] }] },
+          { equipment: [{ inventory: [[items.music_drums, 1]] }] },
+          { equipment: [{ inventory: [[items.music_dulcimer, 1]] }] },
+          { equipment: [{ inventory: [[items.music_flute, 1]] }] },
+          { equipment: [{ inventory: [[items.music_horn, 1]] }] },
+          { equipment: [{ inventory: [[items.music_lyre, 1]] }] },
+          { equipment: [{ inventory: [[items.music_pan_flute, 1]] }] },
+          { equipment: [{ inventory: [[items.music_shawm, 1]] }] },
+          { equipment: [{ inventory: [[items.music_viol, 1]] }] },
         ],
       },
       {
         level: 1,
         type: "spells",
         name: "spells_0",
-        select: [2,2,2,3,3, 3,3,3,3,4, 4,4,4,4,4, 4,4,4,4,4],
+        select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         mana_min: 0,
         mana_max: 0,
         classes: ["bard"],
@@ -7662,39 +8588,51 @@ export default {
         level: 1,
         type: "spells",
         name: "spells",
-        select: [4,5,6,7,8, 7,8,9,10,10, 11,11,12,12,13, 13,14,14,14,14],
+        select: [
+          4, 5, 6, 7, 8, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 14,
+          14,
+        ],
         mana_min: 1,
-        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
         classes: ["bard"],
       },
       {
         level: 10,
         type: "spells",
         name: "magic_mistery",
-        select: [0,0,0,0,0, 0,0,0,0,2, 2,2,2,4,4, 4,4,6,6,6],
+        select: [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 4, 4, 4, 4, 6, 6, 6],
         mana_min: 0,
-        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
-        classes: ["artificer","cleric","druid","paladin","sorcerer","warlock","wizard"],
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
+        classes: [
+          "artificer",
+          "cleric",
+          "druid",
+          "paladin",
+          "sorcerer",
+          "warlock",
+          "wizard",
+        ],
       },
-      {
-        level: 3,
-        type: "custom",
-        name: "skills",
-        select: 2,
-        filter: "only_mastery",
-        // На третьем уровне вьіберите 2 навьіка из тех, которьіми вьі владеете. Ваш бонус мастерства для этих навьіков удваивается. На 10 уровне вьі можете вьібрать еще 2 навьіка и получить для них это преимущество.
-        bonus: "Mastery",
-        list:[]
-      },
-      {
-        level: 10,
-        type: "custom",
-        name: "skills",
-        select: 2,
-        filter: "only_mastery",
-        bonus: "Mastery",
-        list:[]
-      },
+      // TODO - решить вопрос
+      // {
+      //   level: 3,
+      //   type: "custom",
+      //   name: "skills",
+      //   select: 2,
+      //   filter: "only_mastery",
+      //   // На третьем уровне вьіберите 2 навьіка из тех, которьіми вьі владеете. Ваш бонус мастерства для этих навьіков удваивается. На 10 уровне вьі можете вьібрать еще 2 навьіка и получить для них это преимущество.
+      //   bonus: "Mastery",
+      //   list:[]
+      // },
+      // {
+      //   level: 10,
+      //   type: "custom",
+      //   name: "skills",
+      //   select: 2,
+      //   filter: "only_mastery",
+      //   bonus: "Mastery",
+      //   list:[]
+      // },
       {
         level: 4,
         type: "feats",

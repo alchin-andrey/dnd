@@ -4490,4 +4490,16 @@ export default {
     other_sexual:"Другое",
     other_sexual_details:"раскройте детали позже в Предистории вашего персонажа.\n\n",
     
+    protection_from_multiattack: "Защита от мультиатаки",
+    run_from_horde:"Побег от орды",
+    steel_will:"Стальная воля",
+
+    evasiveness:"увертливость",
+    primal_knowledge:"Первозданная осведомлённость",
+    true_sense:"Изначальное чутье",
+    exploration:"исследование",
+
+    two_simple_weapons:"Два простьіх оружия",
+
+    shortsword_2:weapons.shortsword + " × 2",
 }

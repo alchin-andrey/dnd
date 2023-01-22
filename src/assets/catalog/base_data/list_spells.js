@@ -5482,7 +5482,6 @@ export default {
   ],
 
   primal_companion: [
-    {},
     {
       name: "spell_primal_companion",
       details: "spell_primal_companion_details",
