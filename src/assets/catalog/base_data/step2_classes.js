@@ -3147,7 +3147,7 @@ export default {
                     name: "elk",
                     fines: [
                       {
-                        // when without heavy armor
+                        // TODO - when without heavy armor
                         condition: "if_no_heavy_armor",
                         key: "speed_bonus",
                         value: "15",
@@ -3239,10 +3239,18 @@ export default {
                         name: "skills",
                         select: 1,
                         list: [
-                          { skills: [{ athletics: "Mastery" }] },
-                          { skills: [{ acrobatics: "Mastery" }] },
-                          { skills: [{ stealth: "Mastery" }] },
-                          { skills: [{ survival: "Mastery" }] },
+                          { 
+                            name_set: "athletics",
+                            skills: [{ athletics: "Mastery" }] },
+                          { 
+                            name_set: "acrobatics",
+                            skills: [{ acrobatics: "Mastery" }] },
+                          { 
+                            name_set: "stealth",
+                            skills: [{ stealth: "Mastery" }] },
+                          { 
+                            name_set: "survival",
+                            skills: [{ survival: "Mastery" }] },
                         ],
                       },
                     ],
@@ -3313,21 +3321,27 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "survival",
             skills: [{ survival: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "nature",
             skills: [{ nature: "Mastery" }],
           },
           {
+            name_set: "animal_hanging",
             skills: [{ animal_hanging: "Mastery" }],
           },
         ],
@@ -3339,21 +3353,27 @@ export default {
         select: 1,
         list: [
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "survival",
             skills: [{ survival: "Mastery" }],
           },
-          {
+          { 
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "nature",
             skills: [{ nature: "Mastery" }],
           },
           {
+            name_set: "animal_hanging",
             skills: [{ animal_hanging: "Mastery" }],
           },
         ],
@@ -3365,21 +3385,27 @@ export default {
         select: 1,
         list: [
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "survival",
             skills: [{ survival: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "nature",
             skills: [{ nature: "Mastery" }],
           },
           {
+            name_set: "animal_hanging",
             skills: [{ animal_hanging: "Mastery" }],
           },
         ],
@@ -3410,24 +3436,60 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.greataxe, 1]] }] },
-          { equipment: [{ weapon: [[weapons.halberd, 1]] }] },
-          { equipment: [{ weapon: [[weapons.war_pick, 1]] }] },
-          { equipment: [{ weapon: [[weapons.warhammer, 1]] }] },
-          { equipment: [{ weapon: [[weapons.battleaxe, 1]] }] },
-          { equipment: [{ weapon: [[weapons.glaive, 1]] }] },
-          { equipment: [{ weapon: [[weapons.greatsword, 1]] }] },
-          { equipment: [{ weapon: [[weapons.lance, 1]] }] },
-          { equipment: [{ weapon: [[weapons.longsword, 1]] }] },
-          { equipment: [{ weapon: [[weapons.whip, 1]] }] },
-          { equipment: [{ weapon: [[weapons.shortsword, 1]] }] },
-          { equipment: [{ weapon: [[weapons.maul, 1]] }] },
-          { equipment: [{ weapon: [[weapons.morningstar, 1]] }] },
-          { equipment: [{ weapon: [[weapons.pike, 1]] }] },
-          { equipment: [{ weapon: [[weapons.rapier, 1]] }] },
-          { equipment: [{ weapon: [[weapons.scimitar, 1]] }] },
-          { equipment: [{ weapon: [[weapons.trident, 1]] }] },
-          { equipment: [{ weapon: [[weapons.flail, 1]] }] },
+          { 
+            name_set: weapons.greataxe.name,
+            equipment: [{ weapon: [[weapons.greataxe, 1]] }] },
+          { 
+            name_set: weapons.halberd.name,
+            equipment: [{ weapon: [[weapons.halberd, 1]] }] },
+          { 
+            name_set: weapons.war_pick.name,
+            equipment: [{ weapon: [[weapons.war_pick, 1]] }] },
+          { 
+            name_set: weapons.warhammer.name,
+            equipment: [{ weapon: [[weapons.warhammer, 1]] }] },
+          { 
+            name_set: weapons.battleaxe.name,
+            equipment: [{ weapon: [[weapons.battleaxe, 1]] }] },
+          { 
+            name_set: weapons.glaive.name,
+            equipment: [{ weapon: [[weapons.glaive, 1]] }] },
+          { 
+            name_set: weapons.greatsword.name,
+            equipment: [{ weapon: [[weapons.greatsword, 1]] }] },
+          { 
+            name_set: weapons.lance.name,
+            equipment: [{ weapon: [[weapons.lance, 1]] }] },
+          { 
+            name_set: weapons.longsword.name,
+            equipment: [{ weapon: [[weapons.longsword, 1]] }] },
+          { 
+            name_set: weapons.whip.name,
+            equipment: [{ weapon: [[weapons.whip, 1]] }] },
+          { 
+            name_set: weapons.shortsword.name,
+            equipment: [{ weapon: [[weapons.shortsword, 1]] }] },
+          { 
+            name_set: weapons.maul.name,
+            equipment: [{ weapon: [[weapons.maul, 1]] }] },
+          { 
+            name_set: weapons.morningstar.name,
+            equipment: [{ weapon: [[weapons.morningstar, 1]] }] },
+          { 
+            name_set: weapons.pike.name,
+            equipment: [{ weapon: [[weapons.pike, 1]] }] },
+          { 
+            name_set: weapons.rapier.name,
+            equipment: [{ weapon: [[weapons.rapier, 1]] }] },
+          { 
+            name_set: weapons.scimitar.name,
+            equipment: [{ weapon: [[weapons.scimitar, 1]] }] },
+          { 
+            name_set: weapons.trident.name,
+            equipment: [{ weapon: [[weapons.trident, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.flail, 1]] }] },
         ],
       },
       {
@@ -3436,16 +3498,36 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
-          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
-          { equipment: [{ weapon: [[weapons.club, 1]] }] },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
-          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
-          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
-          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
-          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
-          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { 
+            name_set: weapons.flail.name,
+            equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
     ],
@@ -3861,16 +3943,34 @@ export default {
                   1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
                 ],
                 list: [
-                  { spells: [{ level: 3, spell: spells.water_whip }] },
-                  { spells: [{ level: 3, spell: spells.fire_snake_teeth }] },
-                  { spells: [{ level: 3, spell: spells.ashing_strike }] },
-                  { spells: [{ level: 3, spell: spells.four_thunder_fist }] },
-                  { spells: [{ level: 3, spell: spells.gust_of_wind_monk }] },
-                  { spells: [{ level: 3, spell: spells.air_fist }] },
-                  { spells: [{ level: 3, spell: spells.form_river }] },
+                  { 
+                    name_set: spells.water_whip[0].name,
+                    spells: [{ level: 3, spell: spells.water_whip }] },
+                  { 
+                    name_set: spells.fire_snake_teeth[0].name,
+                    spells: [{ level: 3, spell: spells.fire_snake_teeth }] },
+                  { 
+                    name_set: spells.ashing_strike[0].name,
+                    spells: [{ level: 3, spell: spells.ashing_strike }] },
+                  { 
+                    name_set: spells.four_thunder_fist[0].name,
+                    spells: [{ level: 3, spell: spells.four_thunder_fist }] },
+                  { 
+                    name_set: spells.gust_of_wind_monk[0].name,
+                    spells: [{ level: 3, spell: spells.gust_of_wind_monk }] },
+                  { 
+                    name_set: spells.air_fist[0].name,
+                    spells: [{ level: 3, spell: spells.air_fist }] },
+                  { 
+                    name_set: spells.form_river[0].name,
+                    spells: [{ level: 3, spell: spells.form_river }] },
 
-                  { spells: [{ level: 6, spell: spells.shatter_monk }] },
-                  { spells: [{ level: 6, spell: spells.hold_person_monk }] },
+                  { 
+                    name_set: spells.shatter_monk[0].name,
+                    spells: [{ level: 6, spell: spells.shatter_monk }] },
+                  { 
+                    name_set: spells.hold_person_monk[0].name,
+                    spells: [{ level: 6, spell: spells.hold_person_monk }] },
 
                   //TODO - дописати спели
 
@@ -3895,21 +3995,27 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "history",
             skills: [{ history: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
           {
+            name_set: "stealth",
             skills: [{ stealth: "Mastery" }],
           },
         ],
@@ -3921,121 +4027,145 @@ export default {
         select: 1,
         list: [
           {
+            name_set: items.tools_alchemists_supplies.name,
             proficiencies: {
               tools: [tools.alchemists_supplies],
             },
           },
           {
+            name_set: items.tools_potters_tools.name,
             proficiencies: {
               tools: [tools.potters_tools],
             },
           },
           {
+            name_set: items.tools_tinkers_tools.name,
             proficiencies: {
               tools: [tools.tinkers_tools],
             },
           },
           {
+            name_set: items.tools_calligraphers_supplies.name,
             proficiencies: {
               tools: [tools.calligraphers_supplies],
             },
           },
           {
+            name_set: items.tools_cobblers_tools.name,
             proficiencies: {
               tools: [tools.cobblers_tools],
             },
           },
           {
+            name_set: items.tools_cartographers_tools.name,
             proficiencies: {
               tools: [tools.cartographers_tools],
             },
           },
           {
+            name_set: items.tools_leatherworkers_tools.name,
             proficiencies: {
               tools: [tools.leatherworkers_tools],
             },
           },
           {
+            name_set: items.tools_blacksmith.name,
             proficiencies: {
               tools: [tools.blacksmith],
             },
           },
           {
+            name_set: items.tools_brewer.name,
             proficiencies: {
               tools: [tools.brewer],
             },
           },
           {
+            name_set: items.tools_carpenters_tools.name,
             proficiencies: {
               tools: [tools.carpenters_tools],
             },
           },
           {
+            name_set: items.tools_cooks_tools.name,
             proficiencies: {
               tools: [tools.cooks_tools],
             },
           },
           {
+            name_set: items.tools_woodcarvers_tools.name,
             proficiencies: {
               tools: [tools.woodcarvers_tools],
             },
           },
           {
+            name_set: items.tools_glassblowers_tools.name,
             proficiencies: {
               tools: [tools.glassblowers_tools],
             },
           },
           {
+            name_set: items.tools_weavers_tools.name,
             proficiencies: {
               tools: [tools.weavers_tools],
             },
           },
           {
+            name_set: items.tools_painters_supplies.name,
             proficiencies: {
               tools: [tools.painters_supplies],
             },
           },
           {
+            name_set: items.tools_jewelers_tools.name,
             proficiencies: {
               tools: [tools.jewelers_tools],
             },
           },
           {
+            name_set: tools.music_dulcimer.name,
             proficiencies: {
               tools: [tools.music_dulcimer],
             },
           },
           {
+            name_set: tools.music_flute.name,
             proficiencies: {
               tools: [tools.music_flute],
             },
           },
           {
+            name_set: tools.music_horn.name,
             proficiencies: {
               tools: [tools.music_horn],
             },
           },
           {
+            name_set: tools.music_lute.name,
             proficiencies: {
               tools: [tools.music_lute],
             },
           },
           {
+            name_set: tools.music_lyre.name,
             proficiencies: {
               tools: [tools.music_lyre],
             },
           },
           {
+            name_set: tools.music_pan_flute.name,
             proficiencies: {
               tools: [tools.music_pan_flute],
             },
           },
           {
+            name_set: tools.music_shawm.name,
             proficiencies: {
               tools: [tools.music_shawm],
             },
           },
           {
+            name_set: tools.music_viol.name,
             proficiencies: {
               tools: [tools.music_viol],
             },
@@ -4050,36 +4180,47 @@ export default {
         select: 1,
         list: [
           {
+            name_set: weapons.shortsword.name,
             equipment: [{ weapon: [[weapons.shortsword, 1]] }],
           },
           {
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
           },
           {
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }],
           },
           {
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }],
           },
           {
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }],
           },
           {
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }],
           },
           {
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
           },
           {
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }],
           },
           {
+            name_set: weapons.dart.name,
             equipment: [
               {
                 weapon: [[weapons.dart, 10]],
@@ -4087,6 +4228,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.sling.name,
             equipment: [
               {
                 weapon: [[weapons.sling, 1]],
@@ -4102,8 +4244,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          { 
+            name_set: packs.dungeoneers.name,
+            equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { 
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
