@@ -1331,7 +1331,7 @@ export default {
           [weapons.dagger, 2],
           [weapons.unarmed, 1],
         ],
-        inventory: [[items.arrow, 1]],
+        //inventory: [[items.arrow, 1]], - для отладки
         inventory_packs: [[packs.thieves, 1]],
       },
     ],
