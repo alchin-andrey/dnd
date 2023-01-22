@@ -4481,4 +4481,17 @@ export default {
     autosexual_details:"ваш персонаж має тяжіння тільки до себе.\n\n",
     other_sexual:"Інше",
     other_sexual_details:"розкрийте деталі пізніше в Передісторії вашого персонажа.\n\n",
+
+    protection_from_multiattack: "захист від мультиатаки",
+    run_from_horde:"Побіг від орди",
+    steel_will:"Сталева воля",
+
+    evasiveness:"увертливість",
+    primal_knowledge:"Первинна обізнаність",
+    true_sense:"Споконвічне чуття",
+    exploration:"дослідження",
+
+    two_simple_weapons:"Дві простих зброї",
+
+    shortsword_2:weapons.shortsword + " × 2",
 }

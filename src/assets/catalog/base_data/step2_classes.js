@@ -1680,36 +1680,47 @@ export default {
         select: 4,
         list: [
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "investigation",
             skills: [{ investigation: "Mastery" }],
           },
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "perception",
             skills: [{ perception: "Mastery" }],
           },
           {
+            name_set: "performance",
             skills: [{ performance: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "sleight_of_hand",
             skills: [{ sleight_of_hand: "Mastery" }],
           },
           {
+            name_set: "deception",
             skills: [{ deception: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "stealth",
             skills: [{ stealth: "Mastery" }],
           },
           {
+            name_set: "persuasion",
             skills: [{ persuasion: "Mastery" }],
           },
         ],
@@ -1719,8 +1730,10 @@ export default {
         type: "custom",
         name: "skills",
         select: 2,
+        filter: "Ski_Only_Mastery",
         list: [
           {
+            name_set: packs.thieves.name,
             fines: [
               {
                 type: "plus",
@@ -1730,50 +1743,64 @@ export default {
             ],
           },
           {
+            name_set: "sleight_of_hand",
             skills: [{ sleight_of_hand: "Mastery" }],
           },
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "investigation",
             skills: [{ investigation: "Mastery" }],
           },
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "perception",
             skills: [{ perception: "Mastery" }],
           },
           {
+            name_set: "performance",
             skills: [{ performance: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "deception",
             skills: [{ deception: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "stealth",
             skills: [{ stealth: "Mastery" }],
           },
           {
+            name_set: "persuasion",
             skills: [{ persuasion: "Mastery" }],
           },
         ],
       },
       {
-        level: 6,
+        level: 1,
         type: "custom",
         name: "skills",
         select: 2,
+        filter: "Ski_Only_Mastery",
         list: [
           {
+            name_set: packs.thieves.name,
             fines: [
               {
                 type: "plus",
@@ -1783,39 +1810,51 @@ export default {
             ],
           },
           {
+            name_set: "sleight_of_hand",
             skills: [{ sleight_of_hand: "Mastery" }],
           },
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "investigation",
             skills: [{ investigation: "Mastery" }],
           },
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "perception",
             skills: [{ perception: "Mastery" }],
           },
           {
+            name_set: "performance",
             skills: [{ performance: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "deception",
             skills: [{ deception: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "stealth",
             skills: [{ stealth: "Mastery" }],
           },
           {
+            name_set: "persuasion",
             skills: [{ persuasion: "Mastery" }],
           },
         ],
@@ -1846,8 +1885,12 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.rapier, 1]] }] },
-          { equipment: [{ weapon: [[weapons.shortsword, 1]] }] },
+          {
+            name_set: weapons.rapier.name,
+            equipment: [{ weapon: [[weapons.rapier, 1]] }] },
+          {
+            name_set: weapons.shortsword.name,
+            equipment: [{ weapon: [[weapons.shortsword, 1]] }] },
         ],
       },
       {
@@ -1886,9 +1929,15 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.burglars, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          {
+            name_set:packs.burglars.name,
+            equipment: [{ inventory_packs: [[packs.burglars, 1]] }] },
+          {
+            name_set: packs.dungeoneers.name,
+            equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          {
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
     ],
