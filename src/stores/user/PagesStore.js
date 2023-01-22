@@ -170,11 +170,11 @@ export const usePagesStore = defineStore({
 			const setting_open = this.setting_open;
 			if (setting_open) {
 				let str = setting_open.split("__");
-				const custtom = MYStore.сustomm_Settings_100[str[1]];
-        let filter = custtom?.find((el) => el.id == setting_open);
+				const custom = MYStore.сustomm_Settings_100[str[1]];
+        let filter = custom?.find((el) => el.id == setting_open);
         const str_0 = `${str[0]}__${str[1]}__0`;
-        let filter_0 = custtom?.find((el) => el.id == str_0);
-        if(filter) {
+        let filter_0 = custom?.find((el) => el.id == str_0);
+        if(filter || str[0] !== "custom") {
           return null;
         } else if(filter_0) {
           this.setting_open = str_0;
