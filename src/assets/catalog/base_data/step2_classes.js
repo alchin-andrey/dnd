@@ -2090,22 +2090,54 @@ export default {
                   0, 0, 3, 3, 3, 3, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9,
                 ],
                 list: [
-                  { spells: [{ spell: spells.maneuver_evasive_footwork }] },
-                  { spells: [{ spell: spells.maneuver_lunging_attack }] },
-                  { spells: [{ spell: spells.maneuver_maneuvering_attack }] },
-                  { spells: [{ spell: spells.maneuver_menacing_attack }] },
-                  { spells: [{ spell: spells.maneuver_feinting_attack }] },
-                  { spells: [{ spell: spells.maneuver_disarming_attack }] },
-                  { spells: [{ spell: spells.maneuver_trip_attack }] },
-                  { spells: [{ spell: spells.maneuver_riposte }] },
-                  { spells: [{ spell: spells.maneuver_distracting_strike }] },
-                  { spells: [{ spell: spells.maneuver_parry }] },
-                  { spells: [{ spell: spells.maneuver_goading_attack }] },
-                  { spells: [{ spell: spells.maneuver_rally }] },
-                  { spells: [{ spell: spells.maneuver_pushing_attack }] },
-                  { spells: [{ spell: spells.maneuver_precision_attack }] },
-                  { spells: [{ spell: spells.maneuver_commanders_strike }] },
-                  { spells: [{ spell: spells.maneuver_sweeping_attack }] },
+                  { 
+                    name_set: spells.maneuver_evasive_footwork[0].name,
+                    spells: [{ spell: spells.maneuver_evasive_footwork }] },
+                  { 
+                    name_set: spells.maneuver_lunging_attack[0].name,
+                    spells: [{ spell: spells.maneuver_lunging_attack }] },
+                  { 
+                    name_set: spells.maneuver_maneuvering_attack[0].name,
+                    spells: [{ spell: spells.maneuver_maneuvering_attack }] },
+                  { 
+                    name_set: spells.maneuver_menacing_attack[0].name,
+                    spells: [{ spell: spells.maneuver_menacing_attack }] },
+                  { 
+                    name_set: spells.maneuver_feinting_attack[0].name,
+                    spells: [{ spell: spells.maneuver_feinting_attack }] },
+                  { 
+                    name_set: spells.maneuver_disarming_attack[0].name,
+                    spells: [{ spell: spells.maneuver_disarming_attack }] },
+                  { 
+                    name_set: spells.maneuver_trip_attack[0].name,
+                    spells: [{ spell: spells.maneuver_trip_attack }] },
+                  { 
+                    name_set: spells.maneuver_riposte[0].name,
+                    spells: [{ spell: spells.maneuver_riposte }] },
+                  { 
+                    name_set: spells.maneuver_distracting_strike[0].name,
+                    spells: [{ spell: spells.maneuver_distracting_strike }] },
+                  { 
+                    name_set: spells.maneuver_parry[0].name,
+                    spells: [{ spell: spells.maneuver_parry }] },
+                  { 
+                    name_set: spells.maneuver_goading_attack[0].name,
+                    spells: [{ spell: spells.maneuver_goading_attack }] },
+                  { 
+                    name_set: spells.maneuver_rally[0].name,
+                    spells: [{ spell: spells.maneuver_rally }] },
+                  { 
+                    name_set: spells.maneuver_pushing_attack[0].name,
+                    spells: [{ spell: spells.maneuver_pushing_attack }] },
+                  { 
+                    name_set: spells.maneuver_precision_attack[0].name,
+                    spells: [{ spell: spells.maneuver_precision_attack }] },
+                  { 
+                    name_set: spells.maneuver_commanders_strike[0].name,
+                    spells: [{ spell: spells.maneuver_commanders_strike }] },
+                  { 
+                    name_set: spells.maneuver_sweeping_attack[0].name,
+                    spells: [{ spell: spells.maneuver_sweeping_attack }] },
                 ],
               },
               {
@@ -2115,72 +2147,83 @@ export default {
                 select: 1,
                 list: [
                   {
-                    proficiencies: { tools: [tools.blacksmith] },
-                  },
-                  {
-                    proficiencies: { tools: [tools.brewer] },
-                  },
-                  {
-                    proficiencies: { tools: [tools.mason] },
-                  },
-                  {
+                    name_set: tools.alchemists_supplies.name,
                     proficiencies: { tools: [tools.alchemists_supplies] },
                   },
                   {
+                    name_set: tools.blacksmith.name,
                     proficiencies: { tools: [tools.blacksmith] },
                   },
                   {
+                    name_set: tools.brewer.name,
                     proficiencies: { tools: [tools.brewer] },
                   },
                   {
+                    name_set: tools.calligraphers_supplies.name,
                     proficiencies: { tools: [tools.calligraphers_supplies] },
                   },
                   {
+                    name_set: tools.carpenters_tools.name,
                     proficiencies: { tools: [tools.carpenters_tools] },
                   },
                   {
+                    name_set: tools.cartographers_tools.name,
                     proficiencies: { tools: [tools.cartographers_tools] },
                   },
                   {
+                    name_set: tools.cobblers_tools.name,
                     proficiencies: { tools: [tools.cobblers_tools] },
                   },
                   {
+                    name_set: tools.cooks_tools.name,
                     proficiencies: { tools: [tools.cooks_tools] },
                   },
                   {
+                    name_set: tools.disguise.name,
                     proficiencies: { tools: [tools.disguise] },
                   },
                   {
+                    name_set: tools.glassblowers_tools.name,
                     proficiencies: { tools: [tools.glassblowers_tools] },
                   },
                   {
+                    name_set: tools.jewelers_tools.name,
                     proficiencies: { tools: [tools.jewelers_tools] },
                   },
                   {
+                    name_set: tools.leatherworkers_tools.name,
                     proficiencies: { tools: [tools.leatherworkers_tools] },
                   },
                   {
+                    name_set: tools.mason.name,
                     proficiencies: { tools: [tools.mason] },
                   },
                   {
+                    name_set: tools.navigators_tools.name,
                     proficiencies: { tools: [tools.navigators_tools] },
                   },
                   {
+                    name_set: tools.painters_supplies.name,
                     proficiencies: { tools: [tools.painters_supplies] },
                   },
                   {
+                    name_set: tools.poisoner.name,
                     proficiencies: { tools: [tools.poisoner] },
                   },
                   {
+                    name_set: tools.potters_tools.name,
                     proficiencies: { tools: [tools.potters_tools] },
                   },
                   {
+                    name_set: tools.tinkers_tools.name,
                     proficiencies: { tools: [tools.tinkers_tools] },
                   },
                   {
+                    name_set: tools.weavers_tools.name,
                     proficiencies: { tools: [tools.weavers_tools] },
                   },
                   {
+                    name_set: tools.woodcarvers_tools.name,
                     proficiencies: { tools: [tools.woodcarvers_tools] },
                   },
                 ],
@@ -2505,27 +2548,35 @@ export default {
         select: 4,
         list: [
           {
+            name_set: "acrobatics",
             skills: [{ acrobatics: "Mastery" }],
           },
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "perception",
             skills: [{ perception: "Mastery" }],
           },
           {
+            name_set: "survival",
             skills: [{ survival: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "history",
             skills: [{ history: "Mastery" }],
           },
           {
+            name_set: "animal_hanging",
             skills: [{ animal_hanging: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
         ],
@@ -2533,10 +2584,11 @@ export default {
       {
         level: 1,
         type: "custom",
-        name: "equipment",
+        name: "armor_class",
         select: 1,
         list: [
           {
+            name_set: armors.chainmail.name,
             equipment: [
               {
                 level: 1,
@@ -2552,6 +2604,7 @@ export default {
             ],
           },
           {
+            name_set: armors.leather.name,
             equipment: [
               {
                 level: 1,
@@ -2573,6 +2626,7 @@ export default {
         select: 2,
         list: [
           {
+            name_set: items.shield.name,
             equipment: [{ inventory: [[items.shield, 1]] }],
             spells: [
               {
@@ -2581,60 +2635,79 @@ export default {
             ],
           },
           {
+            name_set: weapons.greataxe.name,
             equipment: [{ weapon: [[weapons.greataxe, 1]] }],
           },
           {
+            name_set: weapons.halberd.name,
             equipment: [{ weapon: [[weapons.halberd, 1]] }],
           },
           {
+            name_set: weapons.war_pick.name,
             equipment: [{ weapon: [[weapons.war_pick, 1]] }],
           },
           {
+            name_set: weapons.warhammer.name,
             equipment: [{ weapon: [[weapons.warhammer, 1]] }],
           },
           {
+            name_set: weapons.battleaxe.name,
             equipment: [{ weapon: [[weapons.battleaxe, 1]] }],
           },
           {
+            name_set: weapons.glaive.name,
             equipment: [{ weapon: [[weapons.glaive, 1]] }],
           },
           {
+            name_set: weapons.greatsword.name,
             equipment: [{ weapon: [[weapons.greatsword, 1]] }],
           },
           {
+            name_set: weapons.lance.name,
             equipment: [{ weapon: [[weapons.lance, 1]] }],
           },
           {
+            name_set: weapons.longsword.name,
             equipment: [{ weapon: [[weapons.longsword, 1]] }],
           },
           {
+            name_set: weapons.whip.name,
             equipment: [{ weapon: [[weapons.whip, 1]] }],
           },
           {
+            name_set: weapons.shortsword.name,
             equipment: [{ weapon: [[weapons.shortsword, 1]] }],
           },
           {
+            name_set: weapons.maul.name,
             equipment: [{ weapon: [[weapons.maul, 1]] }],
           },
           {
+            name_set: weapons.morningstar.name,
             equipment: [{ weapon: [[weapons.morningstar, 1]] }],
           },
           {
+            name_set: weapons.pike.name,
             equipment: [{ weapon: [[weapons.pike, 1]] }],
           },
           {
+            name_set: weapons.rapier.name,
             equipment: [{ weapon: [[weapons.rapier, 1]] }],
           },
           {
+            name_set: weapons.scimitar.name,
             equipment: [{ weapon: [[weapons.scimitar, 1]] }],
           },
           {
+            name_set: weapons.trident.name,
             equipment: [{ weapon: [[weapons.trident, 1]] }],
           },
           {
+            name_set: weapons.flail.name,
             equipment: [{ weapon: [[weapons.flail, 1]] }],
           },
           {
+            name_set: weapons.hand_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.hand_crossbow, 1]],
@@ -2643,6 +2716,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.heavy_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.heavy_crossbow, 1]],
@@ -2651,6 +2725,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.longbow.name,
             equipment: [
               {
                 weapon: [[weapons.longbow, 1]],
@@ -2662,6 +2737,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.blowgun.name,
             equipment: [
               {
                 weapon: [[weapons.blowgun, 1]],
@@ -2678,9 +2754,11 @@ export default {
         select: 1,
         list: [
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 2]] }],
           },
           {
+            name_set: weapons.light_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.light_crossbow, 1]],
@@ -2696,8 +2774,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          {
+            name_set: packs.dungeoneers.name,
+            equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          {
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
