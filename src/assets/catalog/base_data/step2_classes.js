@@ -1793,7 +1793,7 @@ export default {
         ],
       },
       {
-        level: 1,
+        level: 6,
         type: "custom",
         name: "skills",
         select: 2,
