@@ -44,7 +44,7 @@ export default {
         { name: "polysexual", details: "polysexual_details",},
 
         { name: "androsexual", details: "androsexual_details",},
-        { name: "bisexual", details: "biexual_details",},
+        { name: "bisexual", details: "bisexual_details",},
 
         { name: "ginsexual", details: "ginsexual_details",},
         { name: "heterosexual", details: "heterosexual_details",},
