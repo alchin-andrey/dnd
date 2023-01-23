@@ -8,30 +8,9 @@ export default {
     details: "back_entertainer_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "acrobatics", num: "Mastery", },
 
-        acrobatics: "Mastery",
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: "Mastery",
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "performance", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -115,30 +94,8 @@ export default {
     details: "back_urchin_details",
 
     skills: [
-      {
-        athletics: null,
-
-        acrobatics: null,
-        sleight_of_hand: "Mastery",
-        stealth: "Mastery",
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "sleight_of_hand", num: "Mastery", },
+        { name: "stealth", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -177,30 +134,9 @@ export default {
     details: "back_noble_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "history", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: "Mastery",
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: "Mastery",
-        deception: null,
-        intimidation: null,
-      },
+        { name: "persuasion", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -285,30 +221,9 @@ export default {
     details: "back_guild_artisan_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "insight", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: "Mastery",
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: "Mastery",
-        deception: null,
-        intimidation: null,
-      },
+        { name: "persuasion", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -451,30 +366,9 @@ export default {
     details: "back_sailor_details",
 
     skills: [
-      {
-        athletics: "Mastery",
+        { name: "athletics", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: "Mastery",
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "perception", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -512,30 +406,9 @@ export default {
     details: "back_sage_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "history", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: "Mastery",
-        religion: null,
-        arcana: "Mastery",
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "arcana", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -585,30 +458,9 @@ export default {
     details: "back_folk_hero_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "survival", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: "Mastery",
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: "Mastery",
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "animal_hanging", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -726,30 +578,9 @@ export default {
     details: "back_hermit_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "religion", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: "Mastery",
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: "Mastery",
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "medicine", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -798,30 +629,9 @@ export default {
     details: "back_criminal_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "stealth", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: "Mastery",
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: "Mastery",
-        intimidation: null,
-      },
+        { name: "deception", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -877,30 +687,9 @@ export default {
     details: "back_acolyte_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "religion", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: "Mastery",
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: "Mastery",
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "insight", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -950,30 +739,9 @@ export default {
     details: "back_soldier_details",
 
     skills: [
-      {
-        athletics: "Mastery",
+        { name: "athletics", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: "Mastery",
-      },
+        { name: "intimidation", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -1037,30 +805,9 @@ export default {
     details: "back_outlander_details",
 
     skills: [
-      {
-        athletics: "Mastery",
+        { name: "athletics", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: "Mastery",
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: null,
-        intimidation: null,
-      },
+        { name: "survival", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -1151,30 +898,9 @@ export default {
     details: "back_charlatan_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "sleight_of_hand", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: "Mastery",
-        stealth: null,
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: "Mastery",
-        intimidation: null,
-      },
+        { name: "deception", num: "Mastery", },
     ],
 
     proficiencies: {
@@ -1217,30 +943,9 @@ export default {
     details: "back_spy_details",
 
     skills: [
-      {
-        athletics: null,
+        { name: "stealth", num: "Mastery", },
 
-        acrobatics: null,
-        sleight_of_hand: null,
-        stealth: "Mastery",
-
-        investigation: null,
-        history: null,
-        religion: null,
-        arcana: null,
-
-        nature: null,
-        survival: null,
-        perception: null,
-        insight: null,
-        medicine: null,
-        animal_hanging: null,
-
-        performance: null,
-        persuasion: null,
-        deception: "Mastery",
-        intimidation: null,
-      },
+        { name: "deception", num: "Mastery", },
     ],
 
     proficiencies: {

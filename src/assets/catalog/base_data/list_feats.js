@@ -3,95 +3,6 @@ import weaponry from "./kinds_weapons.js";
 import armory from "./kinds_armor.js";
 import tools from "./kinds_tools.js";
 
-const example = {
-  name: "feat_example",
-  details: "feat_example_details",
-
-  stats: [
-    {
-      //Если level отсутствует — применять для всех
-      strength: 1,
-      dexterity: 1,
-      consitution: 1,
-      intelligence: 1,
-      wisdom: 1,
-      charisma: 1,
-    },
-    {
-      level: 4,
-      wisdom: 45,
-      charisma: 21,
-    },
-  ],
-
-  skills: [
-    {
-      athletics: "mastery",
-      acrobatics: "mastery",
-      sleight_of_hand: "mastery",
-      stealth: "mastery",
-      investigation: "mastery",
-      history: "mastery",
-      religion: "mastery",
-      religion: "mastery",
-      arcana: "mastery",
-      nature: "mastery",
-      survival: "mastery",
-      perception: "mastery",
-      insight: "mastery",
-      medicine: "mastery",
-      animal_hanging: "mastery",
-      performance: "mastery",
-      persuasion: "mastery",
-      deception: "mastery",
-      intimidation: "mastery",
-    },
-  ],
-
-  qualities: [
-    {
-      speed: 25,
-      speed_bonus: 10,
-      initiative: 2,
-      armor_class: 2,
-    },
-  ],
-
-  fines: [
-    {
-      type: "plus",
-      keyword: "advantage",
-      details: "performace_deception_acting",
-    },
-    {
-      level: 19,
-      type: "plus",
-      keyword: "mimicing",
-      details: "other_creature_sound_1min",
-
-      //условие - один из атрибутов MY
-      condition: "this.$root.MY.if_no_heavy_armor", //необязательно
-
-      // баф вьіраженньій в цифрах (или оба или ниодного)
-      key: "speed_bonus",
-      value: "15",
-    },
-  ],
-
-  spells: [
-    {
-      spell: spells.rage,
-    },
-    {
-      spell: spells.rage,
-    },
-    {
-      level: 1,
-      spell: spells.rage,
-    },
-  ],
-};
-
 export default {
   actor: {
     name: "feat_actor",
@@ -787,87 +698,87 @@ export default {
         list: [
           {
             skills: {
-              athletics: "mastery",
+              name: "athletics", num: "Mastery"
             },
           },
           {
             skills: {
-              acrobatics: "mastery",
+              name: "acrobatics", num: "Mastery"
             },
           },
           {
             skills: {
-              sleight_of_hand: "mastery",
+              name: "sleight_of_hand", num: "Mastery"
             },
           },
           {
             skills: {
-              stealth: "mastery",
+              name: "stealth", num: "Mastery"
             },
           },
           {
             skills: {
-              investigation: "mastery",
+              name: "investigation", num: "Mastery"
             },
           },
           {
             skills: {
-              history: "mastery",
+              name: "history", num: "Mastery"
             },
           },
           {
             skills: {
-              religion: "mastery",
+              name: "religion", num: "Mastery"
             },
           },
           {
             skills: {
-              arcana: "mastery",
+              name: "arcana", num: "Mastery"
             },
           },
           {
             skills: {
-              nature: "mastery",
+              name: "nature", num: "Mastery"
             },
           },
           {
             skills: {
-              survival: "mastery",
+              name: "survival", num: "Mastery"
             },
           },
           {
             skills: {
-              perception: "mastery",
+              name: "perception", num: "Mastery"
             },
           },
           {
             skills: {
-              insight: "mastery",
+              name: "insight", num: "Mastery"
             },
           },
           {
             skills: {
-              medicine: "mastery",
+              name: "medicine", num: "Mastery"
             },
           },
           {
             skills: {
-              animal_hanging: "mastery",
+              name: "animal_hanging", num: "Mastery"
             },
           },
           {
             skills: {
-              performance: "mastery",
+              name: "performance", num: "Mastery"
             },
           },
           {
             skills: {
-              persuasion: "mastery",
+              name: "persuasion", num: "Mastery"
             },
           },
           {
             skills: {
-              deception: "mastery",
+              name: "deception", num: "Mastery"
             },
           },
           {
