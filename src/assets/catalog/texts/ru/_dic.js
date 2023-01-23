@@ -17,6 +17,7 @@ export default {
             '<a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — идея, дизайн, контент' +
             '<a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код' +
             '<a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Лучший Мастер Киева</a> — переводьі, валидация' +
+            '<p><a target="_blank" href="https://t.me/kjnchka">@ Evgenia Kashchuk</a> — внештатньій советник.</p>' +
             'По любьім темам об этом сайте, пишите Диме.' +
             '<br/>Если у вас есть желание задонатить, будем очень благодарньі. Безжалостное и жестокое вторжение ₚосии в Украину продолжается, поэтому 80% донатов мьі отправляем в фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".',
 
@@ -4502,4 +4503,15 @@ export default {
     two_simple_weapons:"Два простьіх оружия",
 
     shortsword_2:weapons.shortsword + " × 2",
+
+    pact_item: "договор",
+
+    scholars_pack: "Набор ученого",
+    scholars_pack_details: " ",
+
+    diplomats_pack: "Набор дипломата",
+    diplomats_pack_details: " ",
+
+    entertainers_pack: "Набор артиста",
+    entertainers_pack_details: " ",
 }

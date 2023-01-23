@@ -3499,34 +3499,34 @@ export default {
         select: 1,
         list: [
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.greatclub.name,
             equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
           { 
-            name_set: weapons.flail.name,
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
@@ -4718,21 +4718,27 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "athletics",
             skills: [{ athletics: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "medicine",
             skills: [{ medicine: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
           {
+            name_set: "persuasion",
             skills: [{ persuasion: "Mastery" }],
           },
         ],
@@ -4764,6 +4770,7 @@ export default {
         select: 2,
         list: [
           {
+            name_set: items.shield.name,
             equipment: [{ inventory: [[items.shield, 1]] }],
             spells: [
               {
@@ -4772,60 +4779,79 @@ export default {
             ],
           },
           {
+            name_set: weapons.greataxe.name,
             equipment: [{ weapon: [[weapons.greataxe, 1]] }],
           },
           {
+            name_set: weapons.halberd.name,
             equipment: [{ weapon: [[weapons.halberd, 1]] }],
           },
           {
+            name_set: weapons.war_pick.name,
             equipment: [{ weapon: [[weapons.war_pick, 1]] }],
           },
           {
+            name_set: weapons.warhammer.name,
             equipment: [{ weapon: [[weapons.warhammer, 1]] }],
           },
           {
+            name_set: weapons.battleaxe.name,
             equipment: [{ weapon: [[weapons.battleaxe, 1]] }],
           },
           {
+            name_set: weapons.glaive.name,
             equipment: [{ weapon: [[weapons.glaive, 1]] }],
           },
           {
+            name_set: weapons.greatsword.name,
             equipment: [{ weapon: [[weapons.greatsword, 1]] }],
           },
           {
+            name_set: weapons.lance.name,
             equipment: [{ weapon: [[weapons.lance, 1]] }],
           },
           {
+            name_set: weapons.longsword.name,
             equipment: [{ weapon: [[weapons.longsword, 1]] }],
           },
           {
+            name_set: weapons.whip.name,
             equipment: [{ weapon: [[weapons.whip, 1]] }],
           },
           {
+            name_set: weapons.shortsword.name,
             equipment: [{ weapon: [[weapons.shortsword, 1]] }],
           },
           {
+            name_set: weapons.maul.name,
             equipment: [{ weapon: [[weapons.maul, 1]] }],
           },
           {
+            name_set: weapons.morningstar.name,
             equipment: [{ weapon: [[weapons.morningstar, 1]] }],
           },
           {
+            name_set: weapons.pike.name,
             equipment: [{ weapon: [[weapons.pike, 1]] }],
           },
           {
+            name_set: weapons.rapier.name,
             equipment: [{ weapon: [[weapons.rapier, 1]] }],
           },
           {
+            name_set: weapons.scimitar.name,
             equipment: [{ weapon: [[weapons.scimitar, 1]] }],
           },
           {
+            name_set: weapons.trident.name,
             equipment: [{ weapon: [[weapons.trident, 1]] }],
           },
           {
+            name_set: weapons.flail.name,
             equipment: [{ weapon: [[weapons.flail, 1]] }],
           },
           {
+            name_set: weapons.hand_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.hand_crossbow, 1]],
@@ -4834,6 +4860,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.heavy_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.heavy_crossbow, 1]],
@@ -4842,6 +4869,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.longbow.name,
             equipment: [
               {
                 weapon: [[weapons.longbow, 1]],
@@ -4853,6 +4881,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.blowgun.name,
             equipment: [
               {
                 weapon: [[weapons.blowgun, 1]],
@@ -4868,16 +4897,36 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
-          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
-          { equipment: [{ weapon: [[weapons.club, 1]] }] },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
-          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
-          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
-          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
-          { equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
-          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
+          {
+            name_set: weapons.javelin.name,
+            equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { 
+            name_set: weapons.quarterstaff.name,
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { 
+            name_set: weapons.mace.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { 
+            name_set: weapons.club.name,
+            equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { 
+            name_set: weapons.dagger.name,
+            equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { 
+            name_set: weapons.spear.name,
+            equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { 
+            name_set: weapons.light_hammer.name,
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { 
+            name_set: weapons.greatclub.name,
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { 
+            name_set: weapons.handaxe.name,
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
+          { 
+            name_set: weapons.sickle.name,
+            equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
       {
@@ -4886,8 +4935,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.priests, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          { 
+            name_set: packs.priests.name,
+            equipment: [{ inventory_packs: [[packs.priests, 1]] }] },
+          {  
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
@@ -5096,6 +5149,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5111,6 +5165,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [
                       {
                         level: 1,
@@ -5119,6 +5174,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.chainmail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5233,6 +5289,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5248,6 +5305,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [
                       {
                         level: 1,
@@ -5256,6 +5314,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.chainmail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5344,6 +5403,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5359,6 +5419,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [
                       {
                         level: 1,
@@ -5367,6 +5428,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.chainmail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5466,6 +5528,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5481,6 +5544,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [
                       {
                         level: 1,
@@ -5504,15 +5568,19 @@ export default {
                 select: 2,
                 list: [
                   {
+                    name_set: "history",
                     skills: [{ history: "Mastery_x2" }],
                   },
                   {
+                    name_set: "arcana",
                     skills: [{ arcana: "Mastery_x2" }],
                   },
                   {
+                    name_set: "nature",
                     skills: [{ nature: "Mastery_x2" }],
                   },
                   {
+                    name_set: "religion",
                     skills: [{ religion: "Mastery_x2" }],
                   },
                 ],
@@ -5551,6 +5619,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5566,6 +5635,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [
                       {
                         level: 1,
@@ -5635,12 +5705,15 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: "survival",
                     skills: [{ survival: "Mastery" }],
                   },
                   {
+                    name_set: "nature",
                     skills: [{ nature: "Mastery" }],
                   },
                   {
+                    name_set: "animal_hanging",
                     skills: [{ animal_hanging: "Mastery" }],
                   },
                 ],
@@ -5652,6 +5725,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [{ level: 1, armor: [[armors.scalemail, 1]] }],
                     fines: [
                       {
@@ -5662,9 +5736,11 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [{ level: 1, armor: [[armors.leather, 1]] }],
                   },
                   {
+                    name_set: armors.chainmail.name,
                     equipment: [{ level: 1, armor: [[armors.chainmail, 1]] }],
                     fines: [
                       {
@@ -5765,6 +5841,7 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name_set: armors.scalemail.name,
                     equipment: [
                       {
                         level: 1,
@@ -5780,6 +5857,7 @@ export default {
                     ],
                   },
                   {
+                    name_set: armors.leather.name,
                     equipment: [
                       {
                         level: 1,
@@ -5800,18 +5878,23 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "history",
             skills: [{ history: "Mastery" }],
           },
           {
+            name_set: "medicine",
             skills: [{ medicine: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
           {
+            name_set: "persuasion",
             skills: [{ persuasion: "Mastery" }],
           },
         ],
@@ -5822,8 +5905,12 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
-          { equipment: [{ weapon: [[weapons.warhammer, 1]] }] },
+          { 
+            name_set: weapons.mace.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { 
+            name_set: weapons.warhammer.name,
+            equipment: [{ weapon: [[weapons.warhammer, 1]] }] },
           // TODO - давай если нет мастери - подсвечивать имя желтьім
         ],
       },
@@ -5834,6 +5921,7 @@ export default {
         select: 1,
         list: [
           {
+            name_set: weapons.light_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.light_crossbow, 1]],
@@ -5842,36 +5930,47 @@ export default {
             ],
           },
           {
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
           },
           {
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }],
           },
           {
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }],
           },
           {
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }],
           },
           {
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }],
           },
           {
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
           },
           {
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
+            name_set: weapons.greatclub.name,
             equipment: [{ weapon: [[weapons.greatclub, 1]] }],
           },
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }],
           },
           {
+            name_set: weapons.dart.name,
             equipment: [
               {
                 weapon: [[weapons.dart, 10]],
@@ -5879,6 +5978,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.shortbow.name,
             equipment: [
               {
                 weapon: [[weapons.shortbow, 1]],
@@ -5887,6 +5987,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.sling.name,
             equipment: [
               {
                 weapon: [[weapons.sling, 1]],
@@ -5902,8 +6003,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.priests, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          { 
+            name_set: packs.priests.name,
+            equipment: [{ inventory_packs: [[packs.priests, 1]] }] },
+          { 
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
@@ -6294,27 +6399,35 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "perception",
             skills: [{ perception: "Mastery" }],
           },
           {
+            name_set: "survival",
             skills: [{ survival: "Mastery" }],
           },
           {
+            name_set: "arcana",
             skills: [{ arcana: "Mastery" }],
           },
           {
+            name_set: "medicine",
             skills: [{ medicine: "Mastery" }],
           },
           {
+            name_set: "animal_hanging",
             skills: [{ animal_hanging: "Mastery" }],
           },
           {
+            name_set: "nature",
             skills: [{ nature: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
         ],
@@ -6326,6 +6439,7 @@ export default {
         select: 2,
         list: [
           {
+            name_set: items.shield.name,
             equipment: [{ inventory: [[items.shield, 1]] }],
             spells: [
               {
@@ -6334,36 +6448,47 @@ export default {
             ],
           },
           {
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
           },
           {
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }],
           },
           {
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }],
           },
           {
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }],
           },
           {
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }],
           },
           {
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
           },
           {
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
+            name_set: weapons.greatclub.name,
             equipment: [{ weapon: [[weapons.greatclub, 1]] }],
           },
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }],
           },
           {
+            name_set: weapons.light_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.light_crossbow, 1]],
@@ -6372,6 +6497,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.dart.name,
             equipment: [
               {
                 weapon: [[weapons.dart, 10]],
@@ -6379,6 +6505,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.shortbow.name,
             equipment: [
               {
                 weapon: [[weapons.shortbow, 1]],
@@ -6387,6 +6514,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.sling.name,
             equipment: [
               {
                 weapon: [[weapons.sling, 1]],
@@ -6402,17 +6530,39 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.scimitar, 1]] }] },
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
-          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
-          { equipment: [{ weapon: [[weapons.club, 1]] }] },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
-          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
-          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
-          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
-          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
-          { equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
-          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
+          { 
+            name_set: weapons.scimitar.name,
+            equipment: [{ weapon: [[weapons.scimitar, 1]] }] },
+          { 
+            name_set: weapons.quarterstaff.name,
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { 
+            name_set: weapons.mace.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { 
+            name_set: weapons.club.name,
+            equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { 
+            name_set: weapons.dagger.name,
+            equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { 
+            name_set: weapons.spear.name,
+            equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { 
+            name_set: weapons.light_hammer.name,
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { 
+            name_set: weapons.javelin.name,
+            equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { 
+            name_set: weapons.greatclub.name,
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { 
+            name_set: weapons.handaxe.name,
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }] },
+          { 
+            name_set: weapons.sickle.name,
+            equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
       {
@@ -6954,7 +7104,7 @@ export default {
 
             equipment: [
               {
-                inventory: [items.book_of_shadows],
+                inventory: [[items.book_of_shadows,1]],
               },
             ],
 
@@ -7031,7 +7181,7 @@ export default {
 
             equipment: [
               {
-                inventory: [items.talisman],
+                inventory: [[items.talisman,1]],
               },
             ],
           },
@@ -7265,8 +7415,9 @@ export default {
 
             skills: [
               {
-                level: 2,
                 deception: "Mastery",
+              },
+              {
                 persuasion: "Mastery",
               },
             ],
@@ -7327,24 +7478,31 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "investigation",
             skills: [{ investigation: "Mastery" }],
           },
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "history",
             skills: [{ history: "Mastery" }],
           },
           {
+            name_set: "arcana",
             skills: [{ arcana: "Mastery" }],
           },
           {
+            name_set: "deception",
             skills: [{ deception: "Mastery" }],
           },
           {
+            name_set: "nature",
             skills: [{ nature: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
         ],
@@ -7356,6 +7514,7 @@ export default {
         select: 1,
         list: [
           {
+            name_set: weapons.light_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.light_crossbow, 1]],
@@ -7364,36 +7523,47 @@ export default {
             ],
           },
           {
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
           },
           {
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }],
           },
           {
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }],
           },
           {
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }],
           },
           {
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }],
           },
           {
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
           },
           {
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
+            name_set: weapons.greatclub.name,
             equipment: [{ weapon: [[weapons.greatclub, 1]] }],
           },
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }],
           },
           {
+            name_set: weapons.dart.name,
             equipment: [
               {
                 weapon: [[weapons.dart, 10]],
@@ -7401,6 +7571,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.shortbow.name,
             equipment: [
               {
                 weapon: [[weapons.shortbow, 1]],
@@ -7409,6 +7580,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.sling.name,
             equipment: [
               {
                 weapon: [[weapons.sling, 1]],
@@ -7425,36 +7597,47 @@ export default {
         select: 1,
         list: [
           {
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
           },
           {
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }],
           },
           {
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }],
           },
           {
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }],
           },
           {
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }],
           },
           {
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
           },
           {
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
+            name_set: weapons.greatclub.name,
             equipment: [{ weapon: [[weapons.greatclub, 1]] }],
           },
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }],
           },
           {
+            name_set: weapons.light_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.light_crossbow, 1]],
@@ -7463,6 +7646,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.dart.name,
             equipment: [
               {
                 weapon: [[weapons.dart, 10]],
@@ -7470,6 +7654,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.shortbow.name,
             equipment: [
               {
                 weapon: [[weapons.shortbow, 1]],
@@ -7478,6 +7663,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.sling.name,
             equipment: [
               {
                 weapon: [[weapons.sling, 1]],
@@ -7494,10 +7680,12 @@ export default {
         select: 1,
         list: [
           {
-            inventory: [[items.component_pouch, 1]],
+            name_set: items.component_pouch.name,
+            equipment: [{inventory: [[items.component_pouch, 1]],}]
           },
           {
-            inventory_packs: [[items.focus, 1]],
+            name_set: items.focus.name,
+            equipment: [{inventory: [[items.focus, 1]],}]
           },
         ],
       },
@@ -7507,8 +7695,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.scholars, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { 
+            name_set: packs.scholars.name,
+            equipment: [{ inventory_packs: [[packs.scholars, 1]] }] },
+          { 
+            name_set: packs.dungeoneers.name,
+            equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
         ],
       },
       {
@@ -7932,21 +8124,27 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "intimidation",
             skills: [{ intimidation: "Mastery" }],
           },
           {
+            name_set: "arcana",
             skills: [{ arcana: "Mastery" }],
           },
           {
+            name_set: "deception",
             skills: [{ deception: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
           {
+            name_set: "persuasion",
             skills: [{ persuasion: "Mastery" }],
           },
         ],
@@ -7958,6 +8156,7 @@ export default {
         select: 1,
         list: [
           {
+            name_set: weapons.light_crossbow.name,
             equipment: [
               {
                 weapon: [[weapons.light_crossbow, 1]],
@@ -7966,36 +8165,47 @@ export default {
             ],
           },
           {
+            name_set: weapons.quarterstaff.name,
             equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
           },
           {
+            name_set: weapons.mace.name,
             equipment: [{ weapon: [[weapons.mace, 1]] }],
           },
           {
+            name_set: weapons.club.name,
             equipment: [{ weapon: [[weapons.club, 1]] }],
           },
           {
+            name_set: weapons.dagger.name,
             equipment: [{ weapon: [[weapons.dagger, 1]] }],
           },
           {
+            name_set: weapons.spear.name,
             equipment: [{ weapon: [[weapons.spear, 1]] }],
           },
           {
+            name_set: weapons.light_hammer.name,
             equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
           },
           {
+            name_set: weapons.javelin.name,
             equipment: [{ weapon: [[weapons.javelin, 1]] }],
           },
           {
+            name_set: weapons.greatclub.name,
             equipment: [{ weapon: [[weapons.greatclub, 1]] }],
           },
           {
+            name_set: weapons.handaxe.name,
             equipment: [{ weapon: [[weapons.handaxe, 1]] }],
           },
           {
+            name_set: weapons.sickle.name,
             equipment: [{ weapon: [[weapons.sickle, 1]] }],
           },
           {
+            name_set: weapons.dart.name,
             equipment: [
               {
                 weapon: [[weapons.dart, 10]],
@@ -8003,6 +8213,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.shortbow.name,
             equipment: [
               {
                 weapon: [[weapons.shortbow, 1]],
@@ -8011,6 +8222,7 @@ export default {
             ],
           },
           {
+            name_set: weapons.sling.name,
             equipment: [
               {
                 weapon: [[weapons.sling, 1]],
@@ -8025,8 +8237,12 @@ export default {
         name: "inventory",
         select: 1,
         list: [
-          { equipment: [{ inventory: [[items.component_pouch, 1]] }] },
-          { equipment: [{ inventory: [[items.focus, 1]] }] },
+          { 
+            name_set: items.component_pouch.name,
+            equipment: [{ inventory: [[items.component_pouch, 1]] }] },
+          { 
+            name_set: items.focus.name,
+            equipment: [{ inventory: [[items.focus, 1]] }] },
         ],
       },
       {
@@ -8035,8 +8251,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          { 
+            name_set: packs.dungeoneers.name,
+            equipment: [{ inventory_packs: [[packs.dungeoneers, 1]] }] },
+          { 
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
@@ -8066,17 +8286,37 @@ export default {
         name: "metamagic",
         select: [0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4],
         list: [
-          { spells: [{ spell: spells.metamagic_careful }] },
-          { spells: [{ spell: spells.metamagic_distant }] },
-          { spells: [{ spell: spells.metamagic_empowered }] },
-          { spells: [{ spell: spells.metamagic_extended }] },
-          { spells: [{ spell: spells.metamagic_heightened }] }, // непреодолимое
-          { spells: [{ spell: spells.metamagic_quickened }] },
-          { spells: [{ spell: spells.metamagic_subtle }] }, // неуловимое
-          { spells: [{ spell: spells.metamagic_transmuted }] },
-          { spells: [{ spell: spells.metamagic_twinned }] },
+          {  
+            name_set: spells.metamagic_careful[0].name,
+            spells: [{ spell: spells.metamagic_careful }] },
+          {  
+            name_set: spells.metamagic_distant[0].name,
+            spells: [{ spell: spells.metamagic_distant }] },
+          {  
+            name_set: spells.metamagic_empowered[0].name,
+            spells: [{ spell: spells.metamagic_empowered }] },
+          {  
+            name_set: spells.metamagic_extended[0].name,
+            spells: [{ spell: spells.metamagic_extended }] },
+          {  
+            name_set: spells.metamagic_heightened[0].name,
+            spells: [{ spell: spells.metamagic_heightened }] }, // непреодолимое
+          {  
+            name_set: spells.metamagic_quickened[0].name,
+            spells: [{ spell: spells.metamagic_quickened }] },
+          {  
+            name_set: spells.metamagic_subtle[0].name,
+            spells: [{ spell: spells.metamagic_subtle }] }, // неуловимое
+          {  
+            name_set: spells.metamagic_transmuted[0].name,
+            spells: [{ spell: spells.metamagic_transmuted }] },
+          {  
+            name_set: spells.metamagic_twinned[0].name,
+            spells: [{ spell: spells.metamagic_twinned }] },
 
-          { spells: [{ spell: spells.metamagic_seeking }] },
+          {  
+            name_set: spells.metamagic_seeking[0].name,
+            spells: [{ spell: spells.metamagic_seeking }] },
         ],
       },
       {
@@ -8397,21 +8637,27 @@ export default {
         select: 2,
         list: [
           {
+            name_set: "investigation",
             skills: [{ investigation: "Mastery" }],
           },
           {
+            name_set: "history",
             skills: [{ history: "Mastery" }],
           },
           {
+            name_set: "arcana",
             skills: [{ arcana: "Mastery" }],
           },
           {
+            name_set: "medicine",
             skills: [{ medicine: "Mastery" }],
           },
           {
+            name_set: "insight",
             skills: [{ insight: "Mastery" }],
           },
           {
+            name_set: "religion",
             skills: [{ religion: "Mastery" }],
           },
         ],
@@ -8421,8 +8667,12 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { 
+            name_set: weapons.quarterstaff.name,
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { 
+            name_set: weapons.dagger.name,
+            equipment: [{ weapon: [[weapons.dagger, 1]] }] },
         ],
       },
       {
@@ -8430,8 +8680,12 @@ export default {
         name: "inventory",
         select: 1,
         list: [
-          { equipment: [{ inventory: [[items.component_pouch, 1]] }] },
-          { equipment: [{ inventory: [[items.focus, 1]] }] },
+          { 
+            name_set: items.component_pouch.name,
+            equipment: [{ inventory: [[items.component_pouch, 1]] }] },
+          { 
+            name_set: items.focus.name,
+            equipment: [{ inventory: [[items.focus, 1]] }] },
         ],
       },
       {
@@ -8439,8 +8693,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.scholars, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
+          { 
+            name_set: packs.scholars.name,
+            equipment: [{ inventory_packs: [[packs.scholars, 1]] }] },
+          { 
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }] },
         ],
       },
       {
@@ -8681,24 +8939,60 @@ export default {
                 name: "skills",
                 select: 3,
                 list: [
-                  { skills: [{ athletics: "Mastery" }] },
-                  { skills: [{ acrobatics: "Mastery" }] },
-                  { skills: [{ sleight_of_hand: "Mastery" }] },
-                  { skills: [{ stealth: "Mastery" }] },
-                  { skills: [{ investigation: "Mastery" }] },
-                  { skills: [{ history: "Mastery" }] },
-                  { skills: [{ religion: "Mastery" }] },
-                  { skills: [{ arcana: "Mastery" }] },
-                  { skills: [{ nature: "Mastery" }] },
-                  { skills: [{ survival: "Mastery" }] },
-                  { skills: [{ perception: "Mastery" }] },
-                  { skills: [{ insight: "Mastery" }] },
-                  { skills: [{ medicine: "Mastery" }] },
-                  { skills: [{ animal_hanging: "Mastery" }] },
-                  { skills: [{ performance: "Mastery" }] },
-                  { skills: [{ persuasion: "Mastery" }] },
-                  { skills: [{ deception: "Mastery" }] },
-                  { skills: [{ intimidation: "Mastery" }] },
+                  { 
+                    name_set: "athletics",
+                    skills: [{ athletics: "Mastery" }] },
+                  { 
+                    name_set: "acrobatics",
+                    skills: [{ acrobatics: "Mastery" }] },
+                  { 
+                    name_set: "sleight_of_hand",
+                    skills: [{ sleight_of_hand: "Mastery" }] },
+                  { 
+                    name_set: "stealth",
+                    skills: [{ stealth: "Mastery" }] },
+                  { 
+                    name_set: "investigation",
+                    skills: [{ investigation: "Mastery" }] },
+                  { 
+                    name_set: "history",
+                    skills: [{ history: "Mastery" }] },
+                  { 
+                    name_set: "religion",
+                    skills: [{ religion: "Mastery" }] },
+                  { 
+                    name_set: "arcana",
+                    skills: [{ arcana: "Mastery" }] },
+                  { 
+                    name_set: "nature",
+                    skills: [{ nature: "Mastery" }] },
+                  { 
+                    name_set: "survival",
+                    skills: [{ survival: "Mastery" }] },
+                  { 
+                    name_set: "perception",
+                    skills: [{ perception: "Mastery" }] },
+                  { 
+                    name_set: "insight",
+                    skills: [{ insight: "Mastery" }] },
+                  { 
+                    name_set: "medicine",
+                    skills: [{ medicine: "Mastery" }] },
+                  { 
+                    name_set: "animal_hanging",
+                    skills: [{ animal_hanging: "Mastery" }] },
+                  { 
+                    name_set: "performance",
+                    skills: [{ performance: "Mastery" }] },
+                  { 
+                    name_set: "persuasion",
+                    skills: [{ persuasion: "Mastery" }] },
+                  { 
+                    name_set: "deception",
+                    skills: [{ deception: "Mastery" }] },
+                  { 
+                    name_set: "intimidation",
+                    skills: [{ intimidation: "Mastery" }] },
                 ],
               },
               {
@@ -8731,24 +9025,60 @@ export default {
         name: "skills",
         select: 3,
         list: [
-          { skills: [{ athletics: "Mastery" }] },
-          { skills: [{ acrobatics: "Mastery" }] },
-          { skills: [{ sleight_of_hand: "Mastery" }] },
-          { skills: [{ stealth: "Mastery" }] },
-          { skills: [{ investigation: "Mastery" }] },
-          { skills: [{ history: "Mastery" }] },
-          { skills: [{ religion: "Mastery" }] },
-          { skills: [{ arcana: "Mastery" }] },
-          { skills: [{ nature: "Mastery" }] },
-          { skills: [{ survival: "Mastery" }] },
-          { skills: [{ perception: "Mastery" }] },
-          { skills: [{ insight: "Mastery" }] },
-          { skills: [{ medicine: "Mastery" }] },
-          { skills: [{ animal_hanging: "Mastery" }] },
-          { skills: [{ performance: "Mastery" }] },
-          { skills: [{ persuasion: "Mastery" }] },
-          { skills: [{ deception: "Mastery" }] },
-          { skills: [{ intimidation: "Mastery" }] },
+          { 
+            name_set: "athletics",
+            skills: [{ athletics: "Mastery" }] },
+          { 
+            name_set: "acrobatics",
+            skills: [{ acrobatics: "Mastery" }] },
+          { 
+            name_set: "sleight_of_hand",
+            skills: [{ sleight_of_hand: "Mastery" }] },
+          { 
+            name_set: "stealth",
+            skills: [{ stealth: "Mastery" }] },
+          { 
+            name_set: "investigation",
+            skills: [{ investigation: "Mastery" }] },
+          { 
+            name_set: "history",
+            skills: [{ history: "Mastery" }] },
+          { 
+            name_set: "religion",
+            skills: [{ religion: "Mastery" }] },
+          { 
+            name_set: "arcana",
+            skills: [{ arcana: "Mastery" }] },
+          { 
+            name_set: "nature",
+            skills: [{ nature: "Mastery" }] },
+          { 
+            name_set: "survival",
+            skills: [{ survival: "Mastery" }] },
+          { 
+            name_set: "perception",
+            skills: [{ perception: "Mastery" }] },
+          { 
+            name_set: "insight",
+            skills: [{ insight: "Mastery" }] },
+          { 
+            name_set: "medicine",
+            skills: [{ medicine: "Mastery" }] },
+          { 
+            name_set: "animal_hanging",
+            skills: [{ animal_hanging: "Mastery" }] },
+          { 
+            name_set: "performance",
+            skills: [{ performance: "Mastery" }] },
+          { 
+            name_set: "persuasion",
+            skills: [{ persuasion: "Mastery" }] },
+          { 
+            name_set: "deception",
+            skills: [{ deception: "Mastery" }] },
+          { 
+            name_set: "intimidation",
+            skills: [{ intimidation: "Mastery" }] },
         ],
       },
       {
@@ -8757,51 +9087,61 @@ export default {
         select: 3,
         list: [
           {
+            name_set: tools.music_bagpipes.name,
             proficiencies: {
               tools: [tools.music_bagpipes],
             },
           },
           {
+            name_set: tools.music_drums.name,
             proficiencies: {
               tools: [tools.music_drums],
             },
           },
           {
+            name_set: tools.music_dulcimer.name,
             proficiencies: {
               tools: [tools.music_dulcimer],
             },
           },
           {
+            name_set: tools.music_flute.name,
             proficiencies: {
               tools: [tools.music_flute],
             },
           },
           {
+            name_set: tools.music_horn.name,
             proficiencies: {
               tools: [tools.music_horn],
             },
           },
           {
+            name_set: tools.music_lute.name,
             proficiencies: {
               tools: [tools.music_lute],
             },
           },
           {
+            name_set: tools.music_lyre.name,
             proficiencies: {
               tools: [tools.music_lyre],
             },
           },
           {
+            name_set: tools.music_pan_flute.name,
             proficiencies: {
               tools: [tools.music_pan_flute],
             },
           },
           {
+            name_set: tools.music_shawm.name,
             proficiencies: {
               tools: [tools.music_shawm],
             },
           },
           {
+            name_set: tools.music_viol.name,
             proficiencies: {
               tools: [tools.music_viol],
             },
@@ -8813,17 +9153,39 @@ export default {
         name: "weapons",
         select: 1,
         list: [
-          { equipment: [{ weapon: [[weapons.rapier, 1]] }] },
-          { equipment: [{ weapon: [[weapons.longsword, 1]] }] },
-          { equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
-          { equipment: [{ weapon: [[weapons.mace, 1]] }] },
-          { equipment: [{ weapon: [[weapons.club, 1]] }] },
-          { equipment: [{ weapon: [[weapons.dagger, 1]] }] },
-          { equipment: [{ weapon: [[weapons.spear, 1]] }] },
-          { equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
-          { equipment: [{ weapon: [[weapons.javelin, 1]] }] },
-          { equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
-          { equipment: [{ weapon: [[weapons.sickle, 1]] }] },
+          { 
+            name_set: weapons.rapier.name,
+            equipment: [{ weapon: [[weapons.rapier, 1]] }] },
+          { 
+            name_set: weapons.longsword.name,
+            equipment: [{ weapon: [[weapons.longsword, 1]] }] },
+          { 
+            name_set: weapons.quarterstaff.name,
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }] },
+          { 
+            name_set: weapons.mace.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }] },
+          { 
+            name_set: weapons.club.name,
+            equipment: [{ weapon: [[weapons.club, 1]] }] },
+          { 
+            name_set: weapons.dagger.name,
+            equipment: [{ weapon: [[weapons.dagger, 1]] }] },
+          { 
+            name_set: weapons.spear.name,
+            equipment: [{ weapon: [[weapons.spear, 1]] }] },
+          { 
+            name_set: weapons.light_hammer.name,
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }] },
+          { 
+            name_set: weapons.javelin.name,
+            equipment: [{ weapon: [[weapons.javelin, 1]] }] },
+          { 
+            name_set: weapons.greatclub.name,
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }] },
+          { 
+            name_set: weapons.sickle.name,
+            equipment: [{ weapon: [[weapons.sickle, 1]] }] },
         ],
       },
       {
@@ -8831,8 +9193,12 @@ export default {
         name: "packs",
         select: 1,
         list: [
-          { equipment: [{ inventory_packs: [[packs.diplomats, 1]] }] },
-          { equipment: [{ inventory_packs: [[packs.entertainers, 1]] }] },
+          { 
+            name_set: packs.diplomats.name,
+            equipment: [{ inventory_packs: [[packs.diplomats, 1]] }] },
+          { 
+            name_set: packs.entertainers.name,
+            equipment: [{ inventory_packs: [[packs.entertainers, 1]] }] },
         ],
       },
       {
@@ -8840,16 +9206,36 @@ export default {
         name: "tool",
         select: 1,
         list: [
-          { equipment: [{ inventory: [[items.music_lute, 1]] }] },
-          { equipment: [{ inventory: [[items.music_bagpipes, 1]] }] },
-          { equipment: [{ inventory: [[items.music_drums, 1]] }] },
-          { equipment: [{ inventory: [[items.music_dulcimer, 1]] }] },
-          { equipment: [{ inventory: [[items.music_flute, 1]] }] },
-          { equipment: [{ inventory: [[items.music_horn, 1]] }] },
-          { equipment: [{ inventory: [[items.music_lyre, 1]] }] },
-          { equipment: [{ inventory: [[items.music_pan_flute, 1]] }] },
-          { equipment: [{ inventory: [[items.music_shawm, 1]] }] },
-          { equipment: [{ inventory: [[items.music_viol, 1]] }] },
+          { 
+            name_set: items.music_lute.name,
+            equipment: [{ inventory: [[items.music_lute, 1]] }] },
+          { 
+            name_set: items.music_bagpipes.name,
+            equipment: [{ inventory: [[items.music_bagpipes, 1]] }] },
+          { 
+            name_set: items.music_drums.name,
+            equipment: [{ inventory: [[items.music_drums, 1]] }] },
+          { 
+            name_set: items.music_dulcimer.name,
+            equipment: [{ inventory: [[items.music_dulcimer, 1]] }] },
+          { 
+            name_set: items.music_flute.name,
+            equipment: [{ inventory: [[items.music_flute, 1]] }] },
+          { 
+            name_set: items.music_horn.name,
+            equipment: [{ inventory: [[items.music_horn, 1]] }] },
+          { 
+            name_set: items.music_lyre.name,
+            equipment: [{ inventory: [[items.music_lyre, 1]] }] },
+          { 
+            name_set: items.music_pan_flute.name,
+            equipment: [{ inventory: [[items.music_pan_flute, 1]] }] },
+          { 
+            name_set: items.music_shawm.name,
+            equipment: [{ inventory: [[items.music_shawm, 1]] }] },
+          { 
+            name_set: items.music_viol.name,
+            equipment: [{ inventory: [[items.music_viol, 1]] }] },
         ],
       },
       {
@@ -8891,25 +9277,133 @@ export default {
         ],
       },
       // TODO - решить вопрос
-      // {
-      //   level: 3,
-      //   type: "custom",
-      //   name: "skills",
-      //   select: 2,
-      //   filter: "only_mastery",
-      //   // На третьем уровне вьіберите 2 навьіка из тех, которьіми вьі владеете. Ваш бонус мастерства для этих навьіков удваивается. На 10 уровне вьі можете вьібрать еще 2 навьіка и получить для них это преимущество.
-      //   bonus: "Mastery",
-      //   list:[]
-      // },
-      // {
-      //   level: 10,
-      //   type: "custom",
-      //   name: "skills",
-      //   select: 2,
-      //   filter: "only_mastery",
-      //   bonus: "Mastery",
-      //   list:[]
-      // },
+      {
+        level: 3,
+        type: "custom",
+        name: "skills",
+        select: 2,
+        filter: "only_mastery",
+        // На третьем уровне вьіберите 2 навьіка из тех, которьіми вьі владеете. Ваш бонус мастерства для этих навьіков удваивается. На 10 уровне вьі можете вьібрать еще 2 навьіка и получить для них это преимущество.
+        list:[
+          { 
+            name_set: "athletics",
+            skills: [{ athletics: "Mastery" }] },
+          { 
+            name_set: "acrobatics",
+            skills: [{ acrobatics: "Mastery" }] },
+          { 
+            name_set: "sleight_of_hand",
+            skills: [{ sleight_of_hand: "Mastery" }] },
+          { 
+            name_set: "stealth",
+            skills: [{ stealth: "Mastery" }] },
+          { 
+            name_set: "investigation",
+            skills: [{ investigation: "Mastery" }] },
+          { 
+            name_set: "history",
+            skills: [{ history: "Mastery" }] },
+          { 
+            name_set: "religion",
+            skills: [{ religion: "Mastery" }] },
+          { 
+            name_set: "arcana",
+            skills: [{ arcana: "Mastery" }] },
+          { 
+            name_set: "nature",
+            skills: [{ nature: "Mastery" }] },
+          { 
+            name_set: "survival",
+            skills: [{ survival: "Mastery" }] },
+          { 
+            name_set: "perception",
+            skills: [{ perception: "Mastery" }] },
+          { 
+            name_set: "insight",
+            skills: [{ insight: "Mastery" }] },
+          { 
+            name_set: "medicine",
+            skills: [{ medicine: "Mastery" }] },
+          { 
+            name_set: "animal_hanging",
+            skills: [{ animal_hanging: "Mastery" }] },
+          { 
+            name_set: "performance",
+            skills: [{ performance: "Mastery" }] },
+          { 
+            name_set: "persuasion",
+            skills: [{ persuasion: "Mastery" }] },
+          { 
+            name_set: "deception",
+            skills: [{ deception: "Mastery" }] },
+          { 
+            name_set: "intimidation",
+            skills: [{ intimidation: "Mastery" }] },
+        ]
+      },
+      {
+        level: 10,
+        type: "custom",
+        name: "skills",
+        select: 2,
+        filter: "only_mastery",
+        list:[
+          { 
+            name_set: "athletics",
+            skills: [{ athletics: "Mastery" }] },
+          { 
+            name_set: "acrobatics",
+            skills: [{ acrobatics: "Mastery" }] },
+          { 
+            name_set: "sleight_of_hand",
+            skills: [{ sleight_of_hand: "Mastery" }] },
+          { 
+            name_set: "stealth",
+            skills: [{ stealth: "Mastery" }] },
+          { 
+            name_set: "investigation",
+            skills: [{ investigation: "Mastery" }] },
+          { 
+            name_set: "history",
+            skills: [{ history: "Mastery" }] },
+          { 
+            name_set: "religion",
+            skills: [{ religion: "Mastery" }] },
+          { 
+            name_set: "arcana",
+            skills: [{ arcana: "Mastery" }] },
+          { 
+            name_set: "nature",
+            skills: [{ nature: "Mastery" }] },
+          { 
+            name_set: "survival",
+            skills: [{ survival: "Mastery" }] },
+          { 
+            name_set: "perception",
+            skills: [{ perception: "Mastery" }] },
+          { 
+            name_set: "insight",
+            skills: [{ insight: "Mastery" }] },
+          { 
+            name_set: "medicine",
+            skills: [{ medicine: "Mastery" }] },
+          { 
+            name_set: "animal_hanging",
+            skills: [{ animal_hanging: "Mastery" }] },
+          { 
+            name_set: "performance",
+            skills: [{ performance: "Mastery" }] },
+          { 
+            name_set: "persuasion",
+            skills: [{ persuasion: "Mastery" }] },
+          { 
+            name_set: "deception",
+            skills: [{ deception: "Mastery" }] },
+          { 
+            name_set: "intimidation",
+            skills: [{ intimidation: "Mastery" }] },
+        ]
+      },
       {
         level: 4,
         type: "feats",

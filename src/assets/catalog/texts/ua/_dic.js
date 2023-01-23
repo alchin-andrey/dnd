@@ -16,7 +16,8 @@ export default {
             authors: 
             '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент</p>' +
             '<p><a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код</p>' +
-            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Найкращий Майстер Києва</a> — валідація.</p>' +
+            '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Найкращий Майстер Києва</a> — валідація</p>' +
+            '<p><a target="_blank" href="https://t.me/kjnchka">@ Evgenia Kashchuk</a> — позаштатний радник.</p>' +
             '<p>З будь яких тем по цьому сайту, пишіть Дімі.</p>' +
             '<br /><p>Якщо у вас є бажання задонатити, будемо дуже вдячні. Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 80% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 
@@ -4491,7 +4492,18 @@ export default {
     true_sense:"Споконвічне чуття",
     exploration:"дослідження",
 
-    two_simple_weapons:"Дві простих зброї",
+    two_simple_weapons:"Дві прості зброї",
 
     shortsword_2:weapons.shortsword + " × 2",
+
+    pact_item: "пакт",
+
+    scholars_pack: "Набір вченого",
+    scholars_pack_details: " ",
+
+    diplomats_pack: "Набір дипломата",
+    diplomats_pack_details: " ",
+
+    entertainers_pack: "Набір артиста",
+    entertainers_pack_details: " ",
 }

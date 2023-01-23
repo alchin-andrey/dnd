@@ -55,7 +55,9 @@ export default {
             [items.ration,10],
             [items.waterskin,1],
             [items.hempen_rope,1],
-        ]
+        ],
+        cost: 1200,
+        weight: 17.5,
     },
 
     thieves: {
@@ -86,7 +88,9 @@ export default {
             [items.vestment,1]
             [items.ration,2],
             [items.waterskin,1],
-        ]
+        ],
+        cost: 1900,
+        weight: 7.5,
     },
 
     diplomats: {
@@ -105,7 +109,9 @@ export default {
             [items.perfume,1], //
             [items.vax,1], //
             [items.soap,1] //
-        ]
+        ],
+        cost: 3900,
+        weight: 17.5,
     },
 
     entertainers: {
@@ -120,7 +126,10 @@ export default {
             [items.ration,5],
             [items.waterskin,1],
             [items.disguise_kit,5],
-        ]
+        ],
+
+        cost: 4000,
+        weight: 12.5,
     },
 
     scholars: {
@@ -135,6 +144,9 @@ export default {
             [items.paper,10], 
             [items.sand_pouch,1],
             [items.knife,1]
-        ]
+        ],
+
+        cost: 4000,
+        weight: 7.5,
     },
 }
