@@ -207,8 +207,8 @@ export default {
         '• Встояти на палубі у шторм\n' +
         '• Вибратися з пут',
 
-        animal_hanging:"фауна",
-        animal_hanging_details:
+        animal_handling:"фауна",
+        animal_handling_details:
         'Здатність ладнати з тваринами. Наприклад спроба:\n\n' +
         '• Заспокоїти одомашнену тварину\n' +
         '• Утримати скакуна від паніки\n' +

@@ -121,7 +121,7 @@ export default {
         medicine:
         { bonus:0, mod:"wisdom" },
 
-        animal_hanging:
+        animal_handling:
         { bonus:0, mod:"wisdom" },
 
         performance:

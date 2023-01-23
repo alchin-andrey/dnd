@@ -460,7 +460,7 @@ export default {
     skills: [
         { name: "survival", num: "Mastery", },
 
-        { name: "animal_hanging", num: "Mastery", },
+        { name: "animal_handling", num: "Mastery", },
     ],
 
     proficiencies: {

@@ -869,8 +869,8 @@ export default {
                     skills: [{ name: "stealth", num: "Mastery" }],
                   },
                   {
-                    name_set: "animal_hanging",
-                    skills: [{ name: "animal_hanging", num: "Mastery" }],
+                    name_set: "animal_handling",
+                    skills: [{ name: "animal_handling", num: "Mastery" }],
                   },
                 ],
               },
@@ -1024,8 +1024,8 @@ export default {
             skills: [{ name: "stealth", num: "Mastery" }],
           },
           {
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }],
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }],
           },
         ],
       },
@@ -2572,8 +2572,8 @@ export default {
             skills: [{ name: "history", num: "Mastery" }],
           },
           {
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }],
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }],
           },
           {
             name_set: "insight",
@@ -3341,8 +3341,8 @@ export default {
             skills: [{ name: "nature", num: "Mastery" }],
           },
           {
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }],
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }],
           },
         ],
       },
@@ -3373,8 +3373,8 @@ export default {
             skills: [{ name: "nature", num: "Mastery" }],
           },
           {
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }],
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }],
           },
         ],
       },
@@ -3405,8 +3405,8 @@ export default {
             skills: [{ name: "nature", num: "Mastery" }],
           },
           {
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }],
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }],
           },
         ],
       },
@@ -5713,8 +5713,8 @@ export default {
                     skills: [{ name: "nature", num: "Mastery" }],
                   },
                   {
-                    name_set: "animal_hanging",
-                    skills: [{ name: "animal_hanging", num: "Mastery" }],
+                    name_set: "animal_handling",
+                    skills: [{ name: "animal_handling", num: "Mastery" }],
                   },
                 ],
               },
@@ -6415,8 +6415,8 @@ export default {
             skills: [{ name: "medicine", num: "Mastery" }],
           },
           {
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }],
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }],
           },
           {
             name_set: "nature",
@@ -8979,8 +8979,8 @@ export default {
                     name_set: "medicine",
                     skills: [{ name: "medicine", num: "Mastery" }] },
                   { 
-                    name_set: "animal_hanging",
-                    skills: [{ name: "animal_hanging", num: "Mastery" }] },
+                    name_set: "animal_handling",
+                    skills: [{ name: "animal_handling", num: "Mastery" }] },
                   { 
                     name_set: "performance",
                     skills: [{ name: "performance", num: "Mastery" }] },
@@ -9065,8 +9065,8 @@ export default {
             name_set: "medicine",
             skills: [{ name: "medicine", num: "Mastery" }] },
           { 
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }] },
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }] },
           { 
             name_set: "performance",
             skills: [{ name: "performance", num: "Mastery" }] },
@@ -9325,8 +9325,8 @@ export default {
             name_set: "medicine",
             skills: [{ name: "medicine", num: "Mastery" }] },
           { 
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }] },
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }] },
           { 
             name_set: "performance",
             skills: [{ name: "performance", num: "Mastery" }] },
@@ -9388,8 +9388,8 @@ export default {
             name_set: "medicine",
             skills: [{ name: "medicine", num: "Mastery" }] },
           { 
-            name_set: "animal_hanging",
-            skills: [{ name: "animal_hanging", num: "Mastery" }] },
+            name_set: "animal_handling",
+            skills: [{ name: "animal_handling", num: "Mastery" }] },
           { 
             name_set: "performance",
             skills: [{ name: "performance", num: "Mastery" }] },

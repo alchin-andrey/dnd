@@ -763,7 +763,7 @@ export default {
           },
           {
             skills: {
-              name: "animal_hanging", num: "Mastery"
+              name: "animal_handling", num: "Mastery"
             },
           },
           {

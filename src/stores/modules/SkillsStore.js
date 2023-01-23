@@ -20,7 +20,7 @@ export const useSkillsStore = defineStore({
       perception: { bonus: 0, mod: "wisdom" },
       insight: { bonus: 0, mod: "wisdom" },
       medicine: { bonus: 0, mod: "wisdom" },
-      animal_hanging: { bonus: 0, mod: "wisdom" },
+      animal_handling: { bonus: 0, mod: "wisdom" },
       performance: { bonus: 0, mod: "charisma" },
       persuasion: { bonus: 0, mod: "charisma" },
       deception: { bonus: 0, mod: "charisma" },
@@ -42,7 +42,7 @@ export const useSkillsStore = defineStore({
       {name:"perception", mod:"wisdom"},
       {name:"insight", mod:"wisdom"},
       {name:"medicine", mod:"wisdom"},
-      {name:"animal_hanging", mod:"wisdom"},
+      {name:"animal_handling", mod:"wisdom"},
 
       {name:"performance", mod:"charisma"},
       {name:"persuasion", mod:"charisma"},

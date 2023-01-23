@@ -205,126 +205,214 @@ export const useMYStore = defineStore({
 		// },
 
 		сustomm_Settings_100() {
-        const sett_obj = {};
-        const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-        const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-        const sett_select = this.MY._settings_class[this.MY.class.name];
-        let name_arr = [];
-        sett_custtom?.forEach((item) => {
-          if (!name_arr.includes(item.name)) {
-            name_arr.push(item.name);
-          }
-        });
-  
-        name_arr?.forEach((item_name) => {
-          const str = `custom__${item_name}`;
-          sett_obj[item_name] = [];
-          const name_filter = sett_custtom.filter(
-            (item) => item.name == item_name
-          );
+			const sett_obj = {};
+			const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
+			const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
+			const sett_select = this.MY._settings_class[this.MY.class.name];
+			let name_arr = [];
+			sett_custtom?.forEach((item) => {
+				if (!name_arr.includes(item.name)) {
+					name_arr.push(item.name);
+				}
+			});
 
-          let arr_name = [];
-          name_filter?.forEach((item) => {
-            let count = 0;
-            for (let i = 0; i < arr_name.length; i +=1 ) {
-              if (arr_name[i] === item.name) {
-                count += 1;
-              }
-            }
-            arr_name.push(item.name);
-            const str_numb = `${str}__${count}`;
-            const select_numb = this.select_Numb(item.select);
-            let arr_elem = [];
+			name_arr?.forEach((item_name) => {
+				const str = `custom__${item_name}`;
+				sett_obj[item_name] = [];
+				const name_filter = sett_custtom.filter(
+					(item) => item.name == item_name
+				);
 
-            const select_arr = sett_select?.[str_numb];
-            let pass_arr = item.list;
-            if(select_arr) {
-              pass_arr = item.list.filter(el => !select_arr.includes(el));
-            }
+				let arr_name = [];
+				name_filter?.forEach((item) => {
+					let count = 0;
+					for (let i = 0; i < arr_name.length; i += 1) {
+						if (arr_name[i] === item.name) {
+							count += 1;
+						}
+					}
+					arr_name.push(item.name);
+					const str_numb = `${str}__${count}`;
+					const select_numb = this.select_Numb(item.select);
+					let arr_elem = [];
 
-            // TODO - выбор
-              for (let i = 0; i < select_numb; i += 1) {
-                if(select_arr?.[i]) {
-                  arr_elem.push(select_arr[i]);
-                } else {
-                  arr_elem.push(pass_arr[i]);
-                }
-              }
-              
-            sett_obj[item_name].push({
-              id: str_numb,
-              type: item.type,
-              name: item.name,
-              select: item.select,
-              select_list: arr_elem,
-              list: item.list,
-            });
-          });
-        });
-        return sett_obj;
+					const select_arr = sett_select?.[str_numb];
+					let pass_arr = item.list;
+					if (select_arr) {
+						pass_arr = item.list.filter((el) => !select_arr.includes(el));
+					}
+
+					// TODO - выбор
+					for (let i = 0; i < select_numb; i += 1) {
+						if (select_arr?.[i]) {
+							arr_elem.push(select_arr[i]);
+						} else {
+							arr_elem.push(pass_arr[i]);
+						}
+					}
+
+					sett_obj[item_name].push({
+						id: str_numb,
+						type: item.type,
+						name: item.name,
+						select: item.select,
+						select_list: arr_elem,
+						list: item.list,
+					});
+				});
+			});
+			return sett_obj;
 		},
 
-
-		// сustomm_Settings_200() {
-    //     const sett_obj = {};
-    //     const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-    //     const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-    //     let name_arr = [];
-    //     sett_custtom?.forEach((item) => {
-    //       if (!name_arr.includes(item.name)) {
-    //         name_arr.push(item.name);
-    //       }
-    //     });
-  
-    //     name_arr?.forEach((item_name) => {
-    //       const str = `custom_${item_name}`;
-    //       sett_obj[item_name] = [];
-    //       const name_filter = sett_custtom.filter(
-    //         (item) => item.name == item_name
-    //       );
-
-    //       let arr_name = [];
-
-
-
-    //       name_filter?.forEach((item) => {
-
-    //         let count = 0;
-    //         for (let i = 0; i < arr_name.length; i +=1 ) {
-    //           if (arr_name[i] === item.name) {
-    //             count += 1;
-    //           }
-    //         }
-    //         arr_name.push(item.name);
-    //         const str_numb = `${str}_${count}`;
-
-    //         const select = this.select_Numb(item.select);
-    //         let arr_elem = [];
-    //         for (let i = 0; i < select; i += 1) {
-    //           arr_elem.push(item.list[i]);
-    //         }
-    //         sett_obj[item_name].push({
-    //           id: str_numb,
-    //           type: item.type,
-    //           name: item.name,
-    //           select: item.select,
-    //           select_list: arr_elem,
-    //           list: item.list,
-    //         });
-    //       });
-    //     });
-    //     // const PagesStore = usePagesStore();
-    //     // PagesStore.createVarClass(sett_obj);
-    //     return sett_obj;
+		// level_Filter_Set() {
+		//   return this.level_Filter_Arr(this.MY.class.settings);
 		// },
 
-    // сustomm_Settings_0_All: (state) => (name) => {
-    //   const sett_lvl = state.level_Filter_Arr(state.MY.class.settings);
-    //   const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-    //   const sett_name = sett_custtom.filter((el) => el.name == name);
-    //   return sett_name;
-    // },
+		settings_Class() {
+			let custtom_arr = [];
+			const str = "custom";
+			const settings_lvl = this.level_Filter_Arr(this.MY.class.settings);
+			const settings_custom = settings_lvl.filter((el) => el.type == "custom");
 
+			let name_arr = settings_custom.reduce(
+				(accum, item) => accum.concat(item.name),
+				[]
+			);
+			let custtom_name_arr = name_arr.filter(
+        (item, i) => name_arr.indexOf(item) === i
+        );
+        
+				console.log('custtom_name_arr:', custtom_name_arr)
+
+
+			// let custtom_name_arr = [];
+			// for (const item_sett of settings_custom) {
+			//   if (!custtom_name_arr.includes(item_sett.name)) {
+			// 		custtom_name_arr.push(item_sett.name);
+			// 	}
+			// }
+			// console.log('custtom_name_arr:', custtom_name_arr)
+
+			for (const name of custtom_name_arr) {
+				let str_link = `${str}__${name}`;
+				const settings_custom_name = settings_custom.filter(
+					(item_sett) => item_sett.name == name
+				);
+				// console.log(`settings_custom_${name}:`, settings_custom_name)
+
+				for (const [item, ind] of settings_custom_name) {
+					let str_link_ind = `${str_link}__${name}`;
+
+					// console.log(`settings_custom_${name}:`, item, ind);
+				}
+			}
+
+			custtom_name_arr?.forEach((item_name) => {
+				const str = `custom__${item_name}`;
+				const settings_custom_name = settings_custom.filter(
+					(item_sett) => item_sett.name == item_name
+				);
+
+				// let arr_name = [];
+				// name_filter?.forEach((item) => {
+				// 	let count = 0;
+				// 	for (let i = 0; i < arr_name.length; i += 1) {
+				// 		if (arr_name[i] === item.name) {
+				// 			count += 1;
+				// 		}
+				// 	}
+				// 	arr_name.push(item.name);
+				// 	const str_numb = `${str}__${count}`;
+				// 	const select_numb = this.select_Numb(item.select);
+				// 	let arr_elem = [];
+
+				// 	const select_arr = sett_select?.[str_numb];
+				// 	let pass_arr = item.list;
+				// 	if (select_arr) {
+				// 		pass_arr = item.list.filter((el) => !select_arr.includes(el));
+				// 	}
+
+				// 	// TODO - выбор
+				// 	for (let i = 0; i < select_numb; i += 1) {
+				// 		if (select_arr?.[i]) {
+				// 			arr_elem.push(select_arr[i]);
+				// 		} else {
+				// 			arr_elem.push(pass_arr[i]);
+				// 		}
+				// 	}
+
+				// 	sett_obj[item_name].push({
+				// 		id: str_numb,
+				// 		type: item.type,
+				// 		name: item.name,
+				// 		select: item.select,
+				// 		select_list: arr_elem,
+				// 		list: item.list,
+				// 	});
+
+				// });
+			});
+
+			return true;
+		},
+
+		// сustomm_Settings_200() {
+		//     const sett_obj = {};
+		//     const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
+		//     const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
+		//     let name_arr = [];
+		//     sett_custtom?.forEach((item) => {
+		//       if (!name_arr.includes(item.name)) {
+		//         name_arr.push(item.name);
+		//       }
+		//     });
+
+		//     name_arr?.forEach((item_name) => {
+		//       const str = `custom_${item_name}`;
+		//       sett_obj[item_name] = [];
+		//       const name_filter = sett_custtom.filter(
+		//         (item) => item.name == item_name
+		//       );
+
+		//       let arr_name = [];
+
+		//       name_filter?.forEach((item) => {
+
+		//         let count = 0;
+		//         for (let i = 0; i < arr_name.length; i +=1 ) {
+		//           if (arr_name[i] === item.name) {
+		//             count += 1;
+		//           }
+		//         }
+		//         arr_name.push(item.name);
+		//         const str_numb = `${str}_${count}`;
+
+		//         const select = this.select_Numb(item.select);
+		//         let arr_elem = [];
+		//         for (let i = 0; i < select; i += 1) {
+		//           arr_elem.push(item.list[i]);
+		//         }
+		//         sett_obj[item_name].push({
+		//           id: str_numb,
+		//           type: item.type,
+		//           name: item.name,
+		//           select: item.select,
+		//           select_list: arr_elem,
+		//           list: item.list,
+		//         });
+		//       });
+		//     });
+		//     // const PagesStore = usePagesStore();
+		//     // PagesStore.createVarClass(sett_obj);
+		//     return sett_obj;
+		// },
+
+		// сustomm_Settings_0_All: (state) => (name) => {
+		//   const sett_lvl = state.level_Filter_Arr(state.MY.class.settings);
+		//   const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
+		//   const sett_name = sett_custtom.filter((el) => el.name == name);
+		//   return sett_name;
+		// },
 	},
 	//!SECTION - GETTERS
 
