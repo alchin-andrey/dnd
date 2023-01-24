@@ -4506,4 +4506,6 @@ export default {
 
     entertainers_pack: "Набір артиста",
     entertainers_pack_details: " ",
+
+    armor_full: "повна",
 }
