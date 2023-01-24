@@ -9,7 +9,7 @@
 		</my-card-text>
     
     <!-- //NOTE - Skilss -->
-    <my-wrapper v-if="shown_Param_Arr(customm.skills)">
+    <!-- <my-wrapper v-if="shown_Param_Arr(customm.skills)">
 			<my-attribute
 				v-for="(skill, key, ind) in level_Filter_Arr(customm.skills)"
 				:key="skill"
@@ -17,6 +17,16 @@
 				plus
 				:numb="Mastery"
 				:icon="MY.skills[Object.keys(skill)[0]].mod"
+			></my-attribute>
+		</my-wrapper> -->
+    <my-wrapper v-if="shown_Param_Arr(customm.skills)">
+			<my-attribute
+				v-for="skill in level_Filter_Arr(customm.skills)"
+				:key="skill"
+				:title="skill.name"
+				plus
+				:numb="Mastery"
+				:icon="MY.skills[skill.name].mod"
 			></my-attribute>
 		</my-wrapper>
     

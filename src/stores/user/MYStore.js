@@ -141,9 +141,7 @@ export const useMYStore = defineStore({
 		},
 
 		сustomm_Settings_Class_Arr() {
-			let res = this.settingsClass(this.MY.class.settings, "custom");
-			console.log("res:", res);
-			return res;
+			return this.settingsClass(this.MY.class.settings, "custom");
 		},
 
 		customm_Settings_Class_Obj() {
