@@ -29,8 +29,8 @@
 	>
 		<my-wrapper
 			v-for="item in сustomm"
-			:key="item.id"
-			:shown="active_Link(item.id)"
+			:key="item.id_link"
+			:shown="active_Link(item.id_link)"
 			gap_8
 		>
 			<my-wrapper v-for="list in item.list" :key="list">
@@ -39,11 +39,11 @@
 		</my-wrapper>
 	</my-selection-box> -->
 
-	<section v-for="сustomm in сustomm_Settings_100" :key="сustomm[0].name">
+	<section v-for="сustomm in customm_Settings_All" :key="сustomm[0].name">
 		<my-selection-box
 			v-for="item in сustomm"
-			:key="item.id"
-			:shown="class_page.shown[item.id]"
+			:key="item.id_link"
+			:shown="class_page.shown[item.id_link]"
 		>
 			<!-- <my-wrapper gap_8> -->
 			<!-- <my-wrapper v-for="list in item.list" :key="list"> -->
@@ -76,6 +76,7 @@ export default {
 			"MY",
 			// "сustomm_Settings_0",
 			"сustomm_Settings_100",
+      "customm_Settings_All",
 		]),
 
 		// active_Link: (store) => (item) => {
@@ -110,17 +111,12 @@ export default {
 				arr.splice(0, 1);
 				arr.push(list_el);  
 
-        const arr_obj = сustomm.map(obj=> obj.id == item.id ? ({...obj, select_list: arr}) : {...obj} );
-
-        // if(!this.MY._settings_class_0[this.MY.class.name]) {
-        //   this.MY._settings_class_0[this.MY.class.name] = {};
-        // }
-        // this.MY._settings_class_0[this.MY.class.name][сustomm[0].name] = arr_obj;
+        const arr_obj = сustomm.map(obj=> obj.id_link == item.id_link ? ({...obj, select_list: arr}) : {...obj} );
 
         if(!this.MY._settings_class[this.MY.class.name]) {
           this.MY._settings_class[this.MY.class.name] = {};
         }
-        this.MY._settings_class[this.MY.class.name][item.id] = arr;
+        this.MY._settings_class[this.MY.class.name][item.id_link] = arr;
 
 			}
 
