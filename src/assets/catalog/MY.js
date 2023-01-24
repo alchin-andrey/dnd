@@ -24,6 +24,10 @@ export default {
 
   },
 
+  // _settings_class: {
+
+  // },
+
   // _settings_class_: {
 
   // },

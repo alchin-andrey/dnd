@@ -117,6 +117,7 @@ export const usePagesStore = defineStore({
 		},
 
 		showSettings__Class(name) {
+      console.log('name:', name)
 			this.showSettings("class_page", name);
 		},
 

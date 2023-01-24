@@ -1,17 +1,17 @@
 <template>
-		<div v-for="item in menu" :key="item.id"
+		<div v-for="item in menu" :key="item.id_link"
 			class="column hover"
-      @click="showSettings__Class(item.id)"
+      @click="showSettings__Class(item.id_link)"
 			:class="{
-				active_link: class_page.shown[item.id],
+				active_link: class_page.shown[item.id_link],
 			}"
 		>
 			<div class="column_title jbm-300">{{ t_Title(item) }}</div>
 			<div
 				class="column_link int-400 active"
 				:class="{
-					icon: !class_page.shown[item.id],
-					icon_active: class_page.shown[item.id],
+					icon: !class_page.shown[item.id_link],
+					icon_active: class_page.shown[item.id_link],
 				}"
 			>
 				{{ t_Type(item) }}

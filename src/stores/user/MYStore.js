@@ -1,5 +1,5 @@
 // import { ref, computed } from "vue";
-import { defineStore } from "pinia";
+import { acceptHMRUpdate, defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
@@ -261,6 +261,7 @@ export const useMYStore = defineStore({
 					});
 				});
 			});
+			// console.log('sett_obj:', sett_obj)
 			return sett_obj;
 		},
 
@@ -268,144 +269,107 @@ export const useMYStore = defineStore({
 		//   return this.level_Filter_Arr(this.MY.class.settings);
 		// },
 
-		settings_Class() {
-			let custtom_arr = [];
-			const str = "custom";
-			const settings_lvl = this.level_Filter_Arr(this.MY.class.settings);
-			const settings_custom = settings_lvl.filter((el) => el.type == "custom");
+		// сustomm_settings_Class() {
+		// 	let custtom_arr = [];
+		// 	const type = "custom";
+		// 	const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
+		// 	const sett_custom = sett_lvl.filter((el) => el.type == "custom");
+		// 	const sett_select = this.MY._settings_class[this.MY.class.name];
 
-			let name_arr = settings_custom.reduce(
-				(accum, item) => accum.concat(item.name),
-				[]
-			);
-			let custtom_name_arr = name_arr.filter(
-        (item, i) => name_arr.indexOf(item) === i
-        );
-        
-				console.log('custtom_name_arr:', custtom_name_arr)
+		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name),[]);
+		// 	const uniqu_name = [...new Set(all_name)];
 
+		// 	for (const item_name of uniqu_name) {
+		// 		const type_name = `${type}__${item_name}`;
+		// 		const sett_for_name = sett_custom.filter((el) => el.name == item_name);
 
-			// let custtom_name_arr = [];
-			// for (const item_sett of settings_custom) {
-			//   if (!custtom_name_arr.includes(item_sett.name)) {
-			// 		custtom_name_arr.push(item_sett.name);
-			// 	}
-			// }
-			// console.log('custtom_name_arr:', custtom_name_arr)
+		// 		sett_for_name.forEach((item, i) => {
+		// 			const type_name_i = `${type_name}__${i}`;
+		// 			const select_numb = this.select_Numb(item.select);
+		// 			const select_arr = sett_select?.[id_link] ?? [];
+		// 			const pass_arr = item.list.filter((el) => !select_arr.includes(el));
 
-			for (const name of custtom_name_arr) {
-				let str_link = `${str}__${name}`;
-				const settings_custom_name = settings_custom.filter(
-					(item_sett) => item_sett.name == name
-				);
-				// console.log(`settings_custom_${name}:`, settings_custom_name)
-
-				for (const [item, ind] of settings_custom_name) {
-					let str_link_ind = `${str_link}__${name}`;
-
-					// console.log(`settings_custom_${name}:`, item, ind);
-				}
-			}
-
-			custtom_name_arr?.forEach((item_name) => {
-				const str = `custom__${item_name}`;
-				const settings_custom_name = settings_custom.filter(
-					(item_sett) => item_sett.name == item_name
-				);
-
-				// let arr_name = [];
-				// name_filter?.forEach((item) => {
-				// 	let count = 0;
-				// 	for (let i = 0; i < arr_name.length; i += 1) {
-				// 		if (arr_name[i] === item.name) {
-				// 			count += 1;
-				// 		}
-				// 	}
-				// 	arr_name.push(item.name);
-				// 	const str_numb = `${str}__${count}`;
-				// 	const select_numb = this.select_Numb(item.select);
-				// 	let arr_elem = [];
-
-				// 	const select_arr = sett_select?.[str_numb];
-				// 	let pass_arr = item.list;
-				// 	if (select_arr) {
-				// 		pass_arr = item.list.filter((el) => !select_arr.includes(el));
-				// 	}
-
-				// 	// TODO - выбор
-				// 	for (let i = 0; i < select_numb; i += 1) {
-				// 		if (select_arr?.[i]) {
-				// 			arr_elem.push(select_arr[i]);
-				// 		} else {
-				// 			arr_elem.push(pass_arr[i]);
-				// 		}
-				// 	}
-
-				// 	sett_obj[item_name].push({
-				// 		id: str_numb,
-				// 		type: item.type,
-				// 		name: item.name,
-				// 		select: item.select,
-				// 		select_list: arr_elem,
-				// 		list: item.list,
-				// 	});
-
-				// });
-			});
-
-			return true;
-		},
-
-		// сustomm_Settings_200() {
-		//     const sett_obj = {};
-		//     const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-		//     const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-		//     let name_arr = [];
-		//     sett_custtom?.forEach((item) => {
-		//       if (!name_arr.includes(item.name)) {
-		//         name_arr.push(item.name);
-		//       }
-		//     });
-
-		//     name_arr?.forEach((item_name) => {
-		//       const str = `custom_${item_name}`;
-		//       sett_obj[item_name] = [];
-		//       const name_filter = sett_custtom.filter(
-		//         (item) => item.name == item_name
-		//       );
-
-		//       let arr_name = [];
-
-		//       name_filter?.forEach((item) => {
-
-		//         let count = 0;
-		//         for (let i = 0; i < arr_name.length; i +=1 ) {
-		//           if (arr_name[i] === item.name) {
-		//             count += 1;
-		//           }
-		//         }
-		//         arr_name.push(item.name);
-		//         const str_numb = `${str}_${count}`;
-
-		//         const select = this.select_Numb(item.select);
-		//         let arr_elem = [];
-		//         for (let i = 0; i < select; i += 1) {
-		//           arr_elem.push(item.list[i]);
-		//         }
-		//         sett_obj[item_name].push({
-		//           id: str_numb,
-		//           type: item.type,
-		//           name: item.name,
-		//           select: item.select,
-		//           select_list: arr_elem,
-		//           list: item.list,
-		//         });
-		//       });
-		//     });
-		//     // const PagesStore = usePagesStore();
-		//     // PagesStore.createVarClass(sett_obj);
-		//     return sett_obj;
+		// 			let select_list = [];
+		// 			for (let i = 0; i < select_numb; i += 1) {
+		// 				select_list.push(select_arr[i] ?? pass_arr[i]);
+		// 			}
+		// 			custtom_arr.push({
+		// 				...item,
+		// 				id_link: type_name_i,
+		// 				select_list: select_list,
+		// 			});
+		// 		});
+		// 	}
+		// 	return custtom_arr;
 		// },
+
+		// сustomm_settings_Class() {
+		// 	let custtom_arr = [];
+		// 	const type = "custom";
+		// 	const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
+		// 	const sett_custom = sett_lvl.filter((el) => el.type == "custom");
+		// 	const sett_select = this.MY._settings_class[this.MY.class.name];
+
+		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name),[]);
+		// 	const uniqu_name = [...new Set(all_name)];
+
+		// 	for (const item_name of uniqu_name) {
+		// 		const type_name = `${type}__${item_name}`;
+		// 		const sett_for_name = sett_custom.filter((el) => el.name == item_name);
+
+		// 		sett_for_name.forEach((item, i) => {
+		// 			const type_name_i = `${type_name}__${i}`;
+		// 			const select_numb = this.select_Numb(item.select);
+		// 			const select_arr = sett_select?.[id_link] ?? [];
+		// 			const pass_arr = item.list.filter((el) => !select_arr.includes(el));
+
+		// 			let select_list = [];
+		// 			for (let i = 0; i < select_numb; i += 1) {
+		// 				select_list.push(select_arr[i] ?? pass_arr[i]);
+		// 			}
+		// 			custtom_arr.push({
+		// 				...item,
+		// 				id_link: type_name_i,
+		// 				select_list: select_list,
+		// 			});
+		// 		});
+		// 	}
+		// 	return custtom_arr;
+		// },
+
+    сustomm_Settings() {
+      const sett_0 = this.settingsClass(this.MY.class.settings, "custom");
+      let sett_1 = sett_0.reduce((acc, el) => {
+        // console.log('el_1:', el)
+        let arg;
+        el.select_list.forEach((item) => {
+          if(item.settings) {
+            arg = this.settingsClass(item.settings, "custom", el.id_link);
+          }
+        });
+        return arg ? acc.concat(arg) : acc;
+      },[]);
+      return sett_0.concat(sett_1);
+    },
+
+    сustomm_Settings__5555() {
+      const sett_0 = this.settingsClass(this.MY.class.settings, "custom");
+      const sett_1 = this.sett_Reduce(sett_0);
+      const sett_2 = this.sett_Reduce(sett_1);
+      return sett_0.concat(sett_1).concat(sett_2);
+    },
+
+    customm_Settings_All(){
+      const sett_obj = {};
+      const sett_custom = this.сustomm_Settings__5555;
+      let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name),[]);
+			const uniqu_name = [...new Set(all_name)];
+      uniqu_name.forEach((item_name) => {
+        sett_obj[item_name] = sett_custom.filter((el) => el.name == item_name);
+      });
+      return sett_obj;
+    },
+
 
 		// сustomm_Settings_0_All: (state) => (name) => {
 		//   const sett_lvl = state.level_Filter_Arr(state.MY.class.settings);
@@ -418,6 +382,52 @@ export const useMYStore = defineStore({
 
 	//SECTION - //? ACTIONS
 	actions: {
+    sett_Reduce(obj) {
+      return obj.reduce((acc, el) => {
+        // console.log('el_1:', el)
+        let arg;
+        el.select_list.forEach((item) => {
+          if(item.settings) {
+            arg = this.settingsClass(item.settings, "custom", el.id_link);
+          }
+        });
+        return arg ? acc.concat(arg) : acc;
+      },[]);
+    },
+
+    settingsClass(settings_arr, type, per_id_link) {
+			let new_arr = [];
+			const link_type = per_id_link ? `${per_id_link}___${type}`: type;
+			const sett_lvl = this.level_Filter_Arr(settings_arr);
+			const sett_for_type = sett_lvl.filter((el) => el.type == type);
+			const sett_select = this.MY._settings_class[this.MY.class.name];
+
+			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name),[]);
+			const uniqu_name = [...new Set(all_name)];
+
+			for (const item_name of uniqu_name) {
+				const link_type_name = `${link_type}__${item_name}`;
+				const sett_for_name = sett_for_type.filter((el) => el.name == item_name);
+
+				sett_for_name?.forEach((item, i) => {
+					const link_type_name_i = `${link_type_name}__${i}`;
+					const select_numb = this.select_Numb(item.select);
+					const select_arr = sett_select?.[link_type_name_i] ?? [];
+					const pass_arr = item.list.filter((el) => !select_arr.includes(el));
+
+					let select_list = [];
+					for (let i = 0; i < select_numb; i += 1) {
+						select_list.push(select_arr[i] ?? pass_arr[i]);
+					}
+					new_arr.push({
+						...item,
+						id_link: link_type_name_i,
+						select_list: select_list,
+					});
+				});
+			}
+			return new_arr;
+		},
 		// getSettingsClass() {
 		// },
 
