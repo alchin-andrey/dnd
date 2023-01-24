@@ -9,7 +9,7 @@
 		<div class="int-400 flex_col" :class="{ passive: passive }">
 			<div>
 				<div class="flex_title">
-					<div class="title h_18">{{ t_Title }} {{ armor_Numb }}</div>
+					<div class="title int-700 h_18">{{ t_Armor_Name }}</div>
 					<img
 						class="icon"
 						src="@/assets/img/icon/arrow_right_small.svg"
@@ -19,33 +19,64 @@
 						@click="showDialog_Select()"
 					/>
 				</div>
+        <div class="text gray_2" v-html="t_Armor_Type"></div>
 			</div>
       <my-attribute v-if="Armor.armor_bonus"
 				title="armor_class"
 				:numb="Armor.armor_bonus"
+        type="bonus"
         plus
         no_icon
 			/>
       <my-attribute v-if="Armor.armor_class"
 				title="armor_class"
 				:numb="Armor.armor_class"
+        type="armor_full"
         no_icon
 			/>
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
-    <div class="title h_18">{{ t_Title }} {{ armor_Numb }}</div>
-    <my-attribute v-if="Armor.armor_bonus"
+
+      <my-wrapper>
+			<div class="int-700">{{ t_Armor_Name }}</div>
+			<div class="text gray_4">{{ t_Armor_Details }}</div>
+      <div class="type gray_4">{{ t_Armor_Type }}</div>
+		</my-wrapper>
+
+		<my-wrapper>
+      <my-attribute v-if="Armor.armor_bonus"
 				title="armor_class"
 				:numb="Armor.armor_bonus"
+        type="bonus"
         plus
         no_icon
+        dot
 			/>
       <my-attribute v-if="Armor.armor_class"
 				title="armor_class"
 				:numb="Armor.armor_class"
+        type="armor_full"
         no_icon
+        dot
 			/>
+		</my-wrapper>
+
+		<my-wrapper v-if="Armor.cost || Armor.weight">
+			<my-attribute
+				v-if="Armor.cost"
+				title="cost"
+				:price="Armor.cost"
+				dot
+			/>
+			<my-attribute
+				v-if="Armor.weight"
+				title="weight"
+				:numb="Armor.weight"
+				unit="kg"
+				dot
+			/>
+		</my-wrapper>
 	</my-dialog-spell>
 </template>
 
@@ -76,9 +107,23 @@ export default {
       return this.armor[0];
     },
 
-    t_Title() {
-      let str = this.t(this.Armor.name)
-      return str[0].toUpperCase() + str.slice(1);
+    t_Equip_Name: (state) => (item) => {
+			const name = state.t(item[0].name);
+			const namb = item[1];
+			let str = namb > 1 ? `${name} x ${namb}` : name;
+			return str[0].toUpperCase() + str.slice(1);
+		},
+
+    t_Armor_Name() {
+			return this.t_Equip_Name(this.armor);
+		},
+
+    t_Armor_Details() {
+      return this.t(this.Armor.details)
+    },
+
+    t_Armor_Type() {
+      return this.t(this.Armor.type[0].name);
     },
 
     armor_Numb() {
@@ -137,7 +182,7 @@ export default {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 12px 0;
+	gap: 4px 0;
 	/*flex: 1 1 auto;*/
 }
 
@@ -146,6 +191,20 @@ export default {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 4px;
+}
+.type {
+	margin-top: 12px;
+}
+
+.type::first-letter {
+	text-transform: uppercase;
+}
+.text {
+	text-align: start;
+}
+
+.text::first-letter {
+	text-transform: uppercase;
 }
 
 .side_stripe {
@@ -162,55 +221,11 @@ export default {
 	background: #ffffff;
 }
 
-.manna_flex {
-	display: flex;
-	gap: 3px;
-}
-
-.manna_bubble {
-	padding: 5px 12px;
-	min-width: 31px;
-	height: 28px;
-	border-radius: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-}
-
-.manna_bubble_choice {
-	background: rgba(255, 255, 255, 0.06);
-	color: #ffffff;
-}
-
-.manna_bubble_hover:hover {
-	background: rgba(255, 255, 255, 0.1);
-}
-
-.manna_bubble_active {
-	background: #00e0ff;
-	color: #0e1518;
-}
-
-.manna_bubble_passive {
-	background: transparent;
-	border: 1px solid rgba(255, 255, 255, 0.06);
-	color: rgba(255, 255, 255, 0.2);
-	cursor: auto;
-}
-
 .h_18 {
 	height: 18px;
 }
 
 .title {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 700;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
 	display: flex;
 	align-items: center;
 	white-space: pre;
@@ -218,7 +233,6 @@ export default {
 
 .title::first-letter {
 	text-transform: uppercase;
-  font-size: 130%;
 }
 
 .gray_2 {
@@ -229,13 +243,7 @@ export default {
 	color: rgba(255, 255, 255, 0.4);
 }
 
-.hr {
-	height: 1px;
-	background: rgba(255, 255, 255, 0.2);
-}
-
 .passive {
   opacity: 0.2;
-  /* cursor: auto; */
 }
 </style>

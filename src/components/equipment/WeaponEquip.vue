@@ -396,7 +396,7 @@ export default {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 12px 0;
+	gap: 4px 0;
 	/*flex: 1 1 auto;*/
 }
 
@@ -404,7 +404,6 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 4px;
 }
 
 .side_stripe {
