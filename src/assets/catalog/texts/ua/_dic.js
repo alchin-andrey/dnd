@@ -4508,4 +4508,12 @@ export default {
     entertainers_pack_details: " ",
 
     armor_full: "повна",
+
+    spell_horde_breaker: spells.horde_breaker,
+    spell_horde_breaker_details: spells.horde_breaker_details,
+    spell_horde_breaker_expanded: spells.horde_breaker_expanded,
+
+    spell_colossus_slayer: spells.colossus_slayer,
+    spell_colossus_slayer_details: spells.colossus_slayer_details,
+    spell_colossus_slayer_expanded: spells.colossus_slayer_expanded,
 }

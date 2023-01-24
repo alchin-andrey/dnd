@@ -4516,4 +4516,8 @@ export default {
     entertainers_pack_details: " ",
 
     armor_full: "полная",
+
+    spell_horde_breaker: spells.horde_breaker,
+    spell_horde_breaker_details: spells.horde_breaker_details,
+    spell_horde_breaker_expanded: spells.horde_breaker_expanded,
 }

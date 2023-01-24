@@ -1,4 +1,5 @@
 export default {
+    
     alignment: [
         { name: "principal_altruistic", details: "principal_altruistic_details",},
         { name: "principal_neutral", details: "principal_neutral_details",},

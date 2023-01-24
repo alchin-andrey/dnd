@@ -152,7 +152,7 @@ export default {
               {
                 level: 7,
                 type: "custom",
-                name: "style_protection",
+                name: "style_defence",
                 select: 1,
                 list: [
                   {
@@ -574,7 +574,7 @@ export default {
 
             charges: [
               {
-                level: 3,
+                level: 1,
                 name: "favored_foe_slots",
                 type: "long_rest",
                 foo: "Num_Mastery",
