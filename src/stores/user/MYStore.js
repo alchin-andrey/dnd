@@ -44,16 +44,6 @@ export const useMYStore = defineStore({
 			return arr ? arr : [];
 		},
 
-		// setting_Filter: (state) => (arr_obj, type, name) => {
-		// 	const lvl = this.MY.level;
-		// 	// const arr_lvl = arr_obj?.filter((item) => lvl >= item.level);
-		// 	const arr_type = arr_obj?.filter(
-		// 		(item) => lvl >= item.level && item.type == type
-		// 	);
-
-		// 	return arr_type?.find((item) => item.name == name);
-		// },
-
 		subclass_Find_Lvl() {
 			const lvl = this.MY.level;
 			return this.MY.class.settings?.find(
@@ -145,264 +135,40 @@ export const useMYStore = defineStore({
 			return ethnos_settings ? ethnos_settings.select : 0;
 		},
 
-		setting_Type_Arr: (state) => (arr_obj) => {
-			const sett_lvl = state.level_Filter_Arr(arr_obj);
-			let arr = [];
-			sett_lvl?.forEach((el) => {
-				if (el.type !== "feats") {
-					if (!arr.includes(el.type)) {
-						arr.push(el.type);
-					}
-					// !(arr.includes(el.type)) ? arr.push(el.type) : null
-				}
-			});
-			return arr;
-		},
-
-		setting_Name_Arr: (state) => (arr_obj, type) => {
-			let arr = [];
-			arr_obj?.forEach((el) => (el.type == type ? arr.push(el.name) : null));
-			return arr;
-		},
-
-		setting_Arr: (state) => (arr_obj, key) => {
-			const sett_lvl = state.level_Filter_Arr(arr_obj);
-			let arr = [];
-			sett_lvl?.forEach((el) => {
-				// if (el[key]) {
-				!arr.includes(el[key]) ? arr.push(el[key]) : null;
-				// }
-			});
-			return arr;
-		},
-
 		select_Numb() {
 			const lvl = this.MY.level;
 			return (select) => (Array.isArray(select) ? select[lvl - 1] : select);
 		},
 
-		// settings_Customm_0() {
-		// 	const sett_obj = {};
-		// 	const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-		// 	const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-
-		// 	sett_obj[this.MY.class.name] = [];
-
-		// 	sett_custtom?.forEach((item) => {
-		// 		const select = this.select_Numb(item.select);
-		// 		let arr_elem = [];
-		// 		for (let i = 0; i < select; i += 1) {
-		// 			arr_elem.push(item.list[i]);
-		// 		}
-		// 		sett_obj[this.MY.class.name].push({
-		// 			type: item.type,
-		// 			name: item.name,
-		// 			select: item.select,
-		// 			select_list: arr_elem,
-		// 		});
-		// 	});
-		// 	return sett_obj;
-		// },
-
-		сustomm_Settings_100() {
-			const sett_obj = {};
-			const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-			const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-			const sett_select = this.MY._settings_class[this.MY.class.name];
-			let name_arr = [];
-			sett_custtom?.forEach((item) => {
-				if (!name_arr.includes(item.name)) {
-					name_arr.push(item.name);
-				}
-			});
-
-			name_arr?.forEach((item_name) => {
-				const str = `custom__${item_name}`;
-				sett_obj[item_name] = [];
-				const name_filter = sett_custtom.filter(
-					(item) => item.name == item_name
-				);
-
-				let arr_name = [];
-				name_filter?.forEach((item) => {
-					let count = 0;
-					for (let i = 0; i < arr_name.length; i += 1) {
-						if (arr_name[i] === item.name) {
-							count += 1;
-						}
-					}
-					arr_name.push(item.name);
-					const str_numb = `${str}__${count}`;
-					const select_numb = this.select_Numb(item.select);
-					let arr_elem = [];
-
-					const select_arr = sett_select?.[str_numb];
-					let pass_arr = item.list;
-					if (select_arr) {
-						pass_arr = item.list.filter((el) => !select_arr.includes(el));
-					}
-
-					// TODO - выбор
-					for (let i = 0; i < select_numb; i += 1) {
-						if (select_arr?.[i]) {
-							arr_elem.push(select_arr[i]);
-						} else {
-							arr_elem.push(pass_arr[i]);
-						}
-					}
-
-					sett_obj[item_name].push({
-						id: str_numb,
-						type: item.type,
-						name: item.name,
-						select: item.select,
-						select_list: arr_elem,
-						list: item.list,
-					});
-				});
-			});
-			// console.log('sett_obj:', sett_obj)
-			return sett_obj;
+		сustomm_Settings_Class_Arr() {
+			let res = this.settingsClass(this.MY.class.settings, "custom");
+			console.log("res:", res);
+			return res;
 		},
 
-		// level_Filter_Set() {
-		//   return this.level_Filter_Arr(this.MY.class.settings);
-		// },
-
-		// сustomm_settings_Class() {
-		// 	let custtom_arr = [];
-		// 	const type = "custom";
-		// 	const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-		// 	const sett_custom = sett_lvl.filter((el) => el.type == "custom");
-		// 	const sett_select = this.MY._settings_class[this.MY.class.name];
-
-		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name),[]);
-		// 	const uniqu_name = [...new Set(all_name)];
-
-		// 	for (const item_name of uniqu_name) {
-		// 		const type_name = `${type}__${item_name}`;
-		// 		const sett_for_name = sett_custom.filter((el) => el.name == item_name);
-
-		// 		sett_for_name.forEach((item, i) => {
-		// 			const type_name_i = `${type_name}__${i}`;
-		// 			const select_numb = this.select_Numb(item.select);
-		// 			const select_arr = sett_select?.[id_link] ?? [];
-		// 			const pass_arr = item.list.filter((el) => !select_arr.includes(el));
-
-		// 			let select_list = [];
-		// 			for (let i = 0; i < select_numb; i += 1) {
-		// 				select_list.push(select_arr[i] ?? pass_arr[i]);
-		// 			}
-		// 			custtom_arr.push({
-		// 				...item,
-		// 				id_link: type_name_i,
-		// 				select_list: select_list,
-		// 			});
-		// 		});
-		// 	}
-		// 	return custtom_arr;
-		// },
-
-		// сustomm_settings_Class() {
-		// 	let custtom_arr = [];
-		// 	const type = "custom";
-		// 	const sett_lvl = this.level_Filter_Arr(this.MY.class.settings);
-		// 	const sett_custom = sett_lvl.filter((el) => el.type == "custom");
-		// 	const sett_select = this.MY._settings_class[this.MY.class.name];
-
-		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name),[]);
-		// 	const uniqu_name = [...new Set(all_name)];
-
-		// 	for (const item_name of uniqu_name) {
-		// 		const type_name = `${type}__${item_name}`;
-		// 		const sett_for_name = sett_custom.filter((el) => el.name == item_name);
-
-		// 		sett_for_name.forEach((item, i) => {
-		// 			const type_name_i = `${type_name}__${i}`;
-		// 			const select_numb = this.select_Numb(item.select);
-		// 			const select_arr = sett_select?.[id_link] ?? [];
-		// 			const pass_arr = item.list.filter((el) => !select_arr.includes(el));
-
-		// 			let select_list = [];
-		// 			for (let i = 0; i < select_numb; i += 1) {
-		// 				select_list.push(select_arr[i] ?? pass_arr[i]);
-		// 			}
-		// 			custtom_arr.push({
-		// 				...item,
-		// 				id_link: type_name_i,
-		// 				select_list: select_list,
-		// 			});
-		// 		});
-		// 	}
-		// 	return custtom_arr;
-		// },
-
-    сustomm_Settings() {
-      const sett_0 = this.settingsClass(this.MY.class.settings, "custom");
-      let sett_1 = sett_0.reduce((acc, el) => {
-        // console.log('el_1:', el)
-        let arg;
-        el.select_list.forEach((item) => {
-          if(item.settings) {
-            arg = this.settingsClass(item.settings, "custom", el.id_link);
-          }
-        });
-        return arg ? acc.concat(arg) : acc;
-      },[]);
-      return sett_0.concat(sett_1);
-    },
-
-    сustomm_Settings__5555() {
-      const sett_0 = this.settingsClass(this.MY.class.settings, "custom");
-      const sett_1 = this.sett_Reduce(sett_0);
-      const sett_2 = this.sett_Reduce(sett_1);
-      return sett_0.concat(sett_1).concat(sett_2);
-    },
-
-    customm_Settings_All(){
-      const sett_obj = {};
-      const sett_custom = this.сustomm_Settings__5555;
-      let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name),[]);
+		customm_Settings_Class_Obj() {
+			const sett_obj = {};
+			const sett_custom = this.сustomm_Settings_Class_Arr;
+			let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
-      uniqu_name.forEach((item_name) => {
-        sett_obj[item_name] = sett_custom.filter((el) => el.name == item_name);
-      });
-      return sett_obj;
-    },
-
-
-		// сustomm_Settings_0_All: (state) => (name) => {
-		//   const sett_lvl = state.level_Filter_Arr(state.MY.class.settings);
-		//   const sett_custtom = sett_lvl.filter((el) => el.type == "custom");
-		//   const sett_name = sett_custtom.filter((el) => el.name == name);
-		//   return sett_name;
-		// },
+			uniqu_name.forEach((item_name) => {
+				sett_obj[item_name] = sett_custom.filter((el) => el.name == item_name);
+			});
+			return sett_obj;
+		},
 	},
 	//!SECTION - GETTERS
 
 	//SECTION - //? ACTIONS
 	actions: {
-    sett_Reduce(obj) {
-      return obj.reduce((acc, el) => {
-        // console.log('el_1:', el)
-        let arg;
-        el.select_list.forEach((item) => {
-          if(item.settings) {
-            arg = this.settingsClass(item.settings, "custom", el.id_link);
-          }
-        });
-        return arg ? acc.concat(arg) : acc;
-      },[]);
-    },
-
-    settingsClass(settings_arr, type, per_id_link) {
+		settingsClass(settings_arr, type, per_id_link) {
 			let new_arr = [];
-			const link_type = per_id_link ? `${per_id_link}___${type}`: type;
+			const link_type = per_id_link ? `${per_id_link}___${type}` : type;
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type);
 			const sett_select = this.MY._settings_class[this.MY.class.name];
 
-			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name),[]);
+			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
 
 			for (const item_name of uniqu_name) {
@@ -419,17 +185,23 @@ export const useMYStore = defineStore({
 					for (let i = 0; i < select_numb; i += 1) {
 						select_list.push(select_arr[i] ?? pass_arr[i]);
 					}
+
 					new_arr.push({
 						...item,
 						id_link: link_type_name_i,
 						select_list: select_list,
 					});
+
+					select_list.forEach((elem_list) => {
+						if (elem_list.settings) {
+							let redus = this.settingsClass(elem_list.settings, "custom", link_type_name_i);
+							new_arr = new_arr.concat(redus);
+						}
+					});
 				});
 			}
 			return new_arr;
 		},
-		// getSettingsClass() {
-		// },
 
 		getRaceObj(name) {
 			this.MY.race = name;

@@ -171,10 +171,12 @@ export const usePagesStore = defineStore({
 			const setting_open = this.setting_open;
 			if (setting_open) {
 				let str = setting_open.split("__");
-				const custom = MYStore.сustomm_Settings_100[str[1]];
-        let filter = custom?.find((el) => el.id == setting_open);
-        const str_0 = `${str[0]}__${str[1]}__0`;
-        let filter_0 = custom?.find((el) => el.id == str_0);
+
+        const name_sett = str[str.length - 2];
+				const custom = MYStore.customm_Settings_Class_Obj[name_sett];
+        let filter = custom?.find((el) => el.id_link == setting_open);
+        const str_0 = `${str[0]}__${name_sett}__0`;
+        let filter_0 = custom?.find((el) => el.id_link == str_0);
         if(filter || str[0] !== "custom") {
           return null;
         } else if(filter_0) {
@@ -188,20 +190,5 @@ export const usePagesStore = defineStore({
         this.showHome();
       }
 		},
-
-		// createVarClass(obj) {
-		//   for (let key in obj) {
-		//     const set = `${obj[key][0].type}_${key}`;
-
-		//     for (let i = 0; i < obj[key].length; i += 1) {
-		//     // for (let i in obj[key]) {
-		//       const set_numb = `${set}_${i}`;
-
-		//       if (!this.class_page.shown[set_numb]) {
-		//         this.class_page.shown[set_numb] = false;
-		//       }
-		//     }
-		//   }
-		// },
 	},
 });

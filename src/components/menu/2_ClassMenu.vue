@@ -19,17 +19,9 @@
 			></my-selection>
 		</div>
 
-    <!-- <div class="selection_menu">
-			<AppSelectionArr 
-      v-for="сustomm in сustomm_Settings_100"
-      :key="сustomm"
-			:menu="сustomm"
-			></AppSelectionArr>
-		</div> -->
-
     <div class="selection_menu">
 			<AppSelectionArr 
-      v-for="сustomm in customm_Settings_All"
+      v-for="сustomm in customm_Settings_Class_Obj"
       :key="сustomm"
 			:menu="сustomm"
 			></AppSelectionArr>
@@ -50,9 +42,12 @@ export default {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),
     // GETTERS
-		...mapState(useMYStore, ["MY_Subclass", "сustomm_Settings_100", "customm_Settings_All"]),
+		...mapState(useMYStore, ["MY_Subclass", "customm_Settings_Class_Obj"]),
 
-    ...mapState(useStatsStore, ["stats_Custom_Arr_RE", "stats_Base_Settings_Two_T"]),
+    ...mapState(useStatsStore, [
+      // "stats_Custom_Arr_RE", 
+      "stats_Base_Settings_Two_T",
+    ]),
 
 	},
 	methods: {
