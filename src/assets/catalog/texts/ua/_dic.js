@@ -3939,7 +3939,7 @@ export default {
 
     plus_3_armor: "— +3 до Броні (застосовано)",
 
-    dragon_ancestor:"драконовий предок",
+    dragon_ancestor:"предок",
 
     to_charisma_dragon: "на перевірки Харизми, повʼязані з драконами",
 
@@ -4516,4 +4516,15 @@ export default {
     spell_colossus_slayer: spells.colossus_slayer,
     spell_colossus_slayer_details: spells.colossus_slayer_details,
     spell_colossus_slayer_expanded: spells.colossus_slayer_expanded,
+
+    red_dragonborn_sorcerer: "червоний дракон",
+    brass_dragonborn_sorcerer: "латунний дракон",
+    golden_dragonborn_sorcerer: "золотий дракон",
+    silver_dragonborn_sorcerer: "срібний дракон",
+    white_dragonborn_sorcerer: "білий дракон",
+    blue_dragonborn_sorcerer: "синій дракон",
+    bronze_dragonborn_sorcerer: "бронзовий дракон",
+    copper_dragonborn_sorcerer: "мідний дракон",
+    black_dragonborn_sorcerer: "чорний дракон",
+    green_dragonborn_sorcerer: "зелений дракон",
 }
