@@ -1,5 +1,5 @@
 export default {
-    
+
     alignment: [
         { name: "principal_altruistic", details: "principal_altruistic_details",},
         { name: "principal_neutral", details: "principal_neutral_details",},
@@ -14,23 +14,97 @@ export default {
         { name: "unprincipal_egoistic", details: "unprincipal_neutral_egoistic",},
     ],
 
-    feel: [
-        { name: "androgin", details: "androgin_details",},
-        { name: "pangender", details: "pangender_details",},
-        { name: "gender_fluid", details: "gender_fluid_details",},
+    main_feature: [
+        // рассказчик
+        // сплетник
+        // романтик
+        // переменчивий
+        // плюшкин
+        // любопитний
+        // замкнутьій
+        // тревожний
+        // небрежний
+        // прямолинейний
+        // щедрий
+        // льститель
+        // високомерний
+        // чистюля
+        // злопамятний
+        // перфекционист
+        // сноб
+        // любознательний
+        // остроумний
+        // грубий
+        // трудолюбивий        
+        // єрудированний        
+        // хвастливьій        
+        // саркастичний    
+        // храбрий
+        // сердобольний 
+        // молчаливий
+        // безмятежний 
+        // бунтарь 
+        // фаталист 
+        // конспиролог 
+        // задумчивий 
+        // философ 
+        // хладнокровний 
+        // махинатор 
+        // недоверчивий 
+        // вспильчивий 
+        // вредний 
+        // користний
+        // фанатичний
+        // миролюбний
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
 
-        { name: "queer", details: "queer_details",},
-        { name: "bigender", details: "bigender_details",},
-        
-        { name: "undecided", details: "undecided_details",},
-        { name: "cisgender", details: "cisgender_details",},
-        { name: "transvestit", details: "transvestit_details",},
-        
-        { name: "demigender", details: "demigender_details",},
-        { name: "demitrans", details: "demitrans_details",},
+        // ІДЕАЛИ
+        // справедливість
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
 
-        { name: "neutral_gender", details: "neutral_gender_details",},
-        { name: "transsexual", details: "transsexual_details",},
-        { name: "other_gender", details: "other_gender_details",},
+        // СЛАБОСТИ
+        // скупой
+        // тщеславний
+        // спорник
+        // лентяй
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
+        // 
     ],
 };
