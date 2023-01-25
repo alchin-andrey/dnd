@@ -62,6 +62,16 @@
 			</my-inventory>
 		</my-wrapper>
 
+    		<!-- //NOTE - Armor -->
+		<my-wrapper v-if="armors_Equip(customm.equipment).length !== 0" gap_26>
+			<ArmorEquip
+				v-for="armor in armors_Equip(customm.equipment)"
+				:key="armor"
+				:armor="armor"
+        select
+			/>
+		</my-wrapper>
+
 		<!-- //NOTE - Fines -->
 		<my-wrapper v-if="shown_Param_Arr(customm.fines)" gap_8>
 			<AppFines
@@ -89,16 +99,6 @@
 				v-for="weapon in weapons_Equip(customm.equipment)"
 				:key="weapon"
 				:weapon="weapon"
-        select
-			/>
-		</my-wrapper>
-
-		<!-- //NOTE - Armor -->
-		<my-wrapper v-if="armors_Equip(customm.equipment).length !== 0" gap_26>
-			<ArmorEquip
-				v-for="armor in armors_Equip(customm.equipment)"
-				:key="armor"
-				:armor="armor"
         select
 			/>
 		</my-wrapper>

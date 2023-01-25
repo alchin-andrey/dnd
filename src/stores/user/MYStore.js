@@ -159,11 +159,11 @@ export const useMYStore = defineStore({
 
 	//SECTION - //? ACTIONS
 	actions: {
-		settingsClass(settings_arr, type, per_id_link) {
+		settingsClass(settings_arr, type_str, per_id_link) {
 			let new_arr = [];
-			const link_type = per_id_link ? `${per_id_link}___${type}` : type;
+			const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
-			const sett_for_type = sett_lvl.filter((el) => el.type == type);
+			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
 			const sett_select = this.MY._settings_class[this.MY.class.name];
 
 			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name), []);
@@ -177,22 +177,26 @@ export const useMYStore = defineStore({
 					const link_type_name_i = `${link_type_name}__${i}`;
 					const select_numb = this.select_Numb(item.select);
 					const select_arr = sett_select?.[link_type_name_i] ?? [];
-					const pass_arr = item.list.filter((el) => !select_arr.includes(el));
+					
+          const select_arr_lvl = this.level_Filter_Arr(select_arr);
+					const list_lvl = this.level_Filter_Arr(item.list);
+					const pass_arr_lvl = list_lvl.filter((el) => !select_arr_lvl.includes(el));
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
-						select_list.push(select_arr[i] ?? pass_arr[i]);
+						select_list.push(select_arr_lvl[i] ?? pass_arr_lvl[i]);
 					}
 
 					new_arr.push({
 						...item,
 						id_link: link_type_name_i,
 						select_list: select_list,
+            list: list_lvl,
 					});
 
 					select_list.forEach((elem_list) => {
 						if (elem_list.settings) {
-							let redus = this.settingsClass(elem_list.settings, "custom", link_type_name_i);
+							let redus = this.settingsClass(elem_list.settings, type_str, link_type_name_i);
 							new_arr = new_arr.concat(redus);
 						}
 					});
