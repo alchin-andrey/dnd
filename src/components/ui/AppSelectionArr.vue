@@ -1,30 +1,44 @@
 <template>
-		<div v-for="item in menu" :key="item.id_link"
-			class="column hover"
-      @click="showSettings__Class(item.id_link)"
-			:class="{
-				active_link: class_page.shown[item.id_link],
-			}"
-		>
-			<div class="column_title jbm-300">{{ t_Title(item) }}</div>
-			<div
-				class="column_link int-400 active"
-				:class="{
-					icon: !class_page.shown[item.id_link],
-					icon_active: class_page.shown[item.id_link],
-				}"
-			>
-				{{ t_Type(item) }}
+	<div
+		v-for="item in menu"
+		:key="item.id_link"
+		class="column"
+		@click="showSettings__Class(item.id_link)"
+		:class="{
+			active_link: class_page.shown[item.id_link],
+			hover: !class_page.shown[item.id_link],
+      'lvl-dot': shown_Level_Dot(item.level),
+		}"
+	>
+		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
+		<section class="column_link int-400 active">
+			<div class="link-text">
+				<span>{{ t_Type(item) }}</span>
 			</div>
-		</div>
+			<div class="icon">
+				<svg
+					viewBox="0 0 18 18"
+					xmlns="http://www.w3.org/2000/svg"
+					v-html="ui_icon[icon_Image(item)]"
+				/>
+			</div>
+		</section>
+	</div>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
+
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppSelectionArr",
+	data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		menu: {
 			type: Object,
@@ -33,12 +47,22 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-    ...mapState(usePagesStore, ["class_page", "showSettings__Class"]),
+		...mapState(usePagesStore, ["class_page", "showSettings__Class"]),
+
+    icon_Image: (store) => (item) => {
+      let actile_link = store.class_page.shown[item.id_link];
+			return !actile_link ? 'arrow_down_small' : 'arrow_right_small';
+		},
+
+    shown_Level_Dot: (store) => (item_lvl) => {
+      let lvl = store.MY.level;
+      return item_lvl == lvl && lvl !== 1;
+    },
 
 		t_Title: (store) => (item) => {
-      if (item == store.menu[0]) {
-        return store.t(item?.name)
-      }
+			if (item == store.menu[0]) {
+				return store.t(item?.name);
+			}
 			return null;
 		},
 
@@ -53,17 +77,16 @@ export default {
 			});
 			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
-
 	},
 };
 </script>
 
 <style scoped>
 .column {
-	/* height: 18px; */
+	height: 18px;
 	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
+	align-items: center;
+	justify-content: space-between;
 	position: relative;
 	cursor: pointer;
 }
@@ -74,7 +97,7 @@ export default {
 	gap: 8px;
 }
 
-.hover:hover::after {
+.hover:hover::before {
 	content: "";
 	position: absolute;
 	width: 20px;
@@ -84,25 +107,25 @@ export default {
 	background: #ffffff;
 }
 
-.column_title {
-	width: 120px;
-	height: 18px;
-}
-
-/* .column_title div {
-	display: inline;
-} */
-
 .column_link {
-	width: 132px;
-	height: 18px;
-	padding-right: 16px;
-	margin-left: 4px;
+	display: flex;
+	gap: 4px;
 	position: relative;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: rgba(255, 255, 255, 0.2);
+}
+
+.lvl-dot::after {
+	content: "";
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	right: -15px;
+	top: calc(50% - 4px);
+	background: #0047ff;
+	border-radius: 50%;
 }
 
 .active_link:before {
@@ -115,28 +138,27 @@ export default {
 	background: #ffffff;
 }
 
-.column_link div {
+.column_link span {
 	white-space: nowrap; /* Текст не переносится */
 	overflow: hidden; /* Обрезаем всё за пределами блока */
 	text-overflow: ellipsis;
 }
 
-.column_link:first-letter {
+.link-text {
+	width: 110px;
+	display: flex;
+	align-items: center;
+	/* height: 18px; */
+}
+.link-text:first-letter {
 	text-transform: uppercase;
 }
 
-.icon::after {
-	content: url(@/assets/img/icon/arrow_down_small.svg);
-	position: absolute;
-	right: 0px;
-	top: -2px;
-}
-
-.icon_active::after {
-	content: url(@/assets/img/icon/arrow_right_small.svg);
-	position: absolute;
-	right: 0px;
-	top: -2px;
+.icon {
+	width: 18px;
+	height: 18px;
+  /* display: flex;
+  align-items: center; */
 }
 
 .rare {
