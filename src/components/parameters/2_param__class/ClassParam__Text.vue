@@ -17,11 +17,17 @@ import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "ClassParam__Text",
 	computed: {
-		...mapState(useMYStore, ["MY", "MY_Subclass"]),
+		...mapState(useMYStore, ["MY", "сustomm_Settings_Class_Arr"]),
 
 		t_Story() {
 			return this.t(this.MY.class.details);
 		},
+
+    MY_Subclass() {
+      const сustomm = this.сustomm_Settings_Class_Arr;
+      const subclass = сustomm.find(el => el.name == "subclass")
+      return subclass?.select_list[0];
+    }
 	},
 };
 </script>

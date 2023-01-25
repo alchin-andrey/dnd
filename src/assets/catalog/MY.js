@@ -14,15 +14,8 @@ export default {
 	ethnos: ethnos_def,
   ethnos_name: ethnos_def.name,
 	class: class_def,
-	subclass: {
-
-  },
-  subclass_save: {
-    
-  },
-  _settings_class: {
-
-  },
+  
+  _settings_class: {},
 
 	backstory: null,
 	level: 1,

@@ -1,8 +1,5 @@
-// import { ref, computed } from "vue";
 import { defineStore } from "pinia";
-// import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-// import { useDicStore } from "@/stores/general/DicStore";
 
 
 
@@ -18,7 +15,6 @@ export const useEquipStore = defineStore({
 	}),
 
   getters: {
-    // ...mapState(useMYStore, ["MY", "level_Filter_Arr", "MY_Subclass"]),
 
     item_Equip_Arr: (state) => (obj_arr, item) => {
       const MYStore = useMYStore();
@@ -35,15 +31,15 @@ export const useEquipStore = defineStore({
 			return MYStore.level_Filter_Arr(MYStore.MY.class.equipment);
 		},
 
-		equipments_Subclass_Arr() {
+    equipments_Custom_Class_Lvl() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY_Subclass?.equipment);
+			return MYStore.filter_Custom_Class_Lvl("equipment");
 		},
 
     equipments_Class_Params() {
 			const equip_class = this.equipments_Class_Arr;
-      const equip_subclass = this.equipments_Subclass_Arr;
-			return equip_class.concat(equip_subclass);
+      const equip_custom = this.equipments_Custom_Class_Lvl;
+			return equip_class.concat(equip_custom);
 		},
 
     item_Equip_Class_Arr: (state) => (item) => {

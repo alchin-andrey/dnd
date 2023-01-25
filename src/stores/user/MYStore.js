@@ -18,24 +18,9 @@ export const useMYStore = defineStore({
 			return 1 + Math.ceil(state.MY.level / 4);
 		},
 
-		MY_Subclass() {
-			const class_subclasses = this.subclass_Find_Lvl;
-			const subclass_save = this.MY.subclass_save[this.MY.class.name];
-			if (class_subclasses) {
-				return subclass_save ? subclass_save : class_subclasses.list[0];
-			}
-			return null;
-		},
-
 		ethnos_Setting(state) {
 			return (name) =>
 				state.MY.ethnos.settings?.find((item) => item.type == name);
-		},
-
-		level_Filter() {
-			const lvl = this.MY.level;
-			// return (item) => item?.filter((el) => lvl >= el.level);
-			return (item) => item?.filter((el) => (el.level ? lvl >= el.level : el));
 		},
 
 		level_Filter_Arr: (state) => (item) => {
@@ -43,23 +28,6 @@ export const useMYStore = defineStore({
 			let arr = item?.filter((el) => (el.level ? lvl >= el.level : el));
 			return arr ? arr : [];
 		},
-
-		subclass_Find_Lvl() {
-			const lvl = this.MY.level;
-			return this.MY.class.settings?.find(
-				(item) => item.name == "subclass" && lvl >= item.level
-			);
-		},
-
-		// class_Setting_Find_Lvl(state) {
-		// 	return (name) =>
-		// 		state.MY.class.settings?.find((item) => item.name == name && lvl >= item.level);
-		// },
-
-		// class_Setting_Filter_Lvl(state) {
-		// 	return (name) =>
-		// 		state.MY.class.settings?.filter((item) => item.type == name && lvl >= item.level);
-		// },
 
 		class_Specials_Filter_Lvl(state) {
 			const lvl = state.MY.level;
@@ -142,6 +110,17 @@ export const useMYStore = defineStore({
 
 		сustomm_Settings_Class_Arr() {
 			return this.settingsClass(this.MY.class.settings, "custom");
+		},
+
+    filter_Custom_Class_Lvl: (state) => (name) => {
+      let res_arr = [];
+      state.сustomm_Settings_Class_Arr.forEach(el => {
+        el.select_list.forEach(sub_el => {
+          const item_lvl = state.level_Filter_Arr(sub_el?.[name]);
+          res_arr = res_arr.concat(item_lvl);
+        });
+      });
+			return res_arr;
 		},
 
 		customm_Settings_Class_Obj() {

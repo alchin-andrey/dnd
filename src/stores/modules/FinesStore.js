@@ -29,15 +29,15 @@ export const useFinesStore = defineStore({
 			return MYStore.level_Filter_Arr(MYStore.MY.class?.fines);
 		},
 
-		fines_Subclass_Lvl() {
+    fines_Custom_Class_Lvl() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY_Subclass?.fines);
+			return MYStore.filter_Custom_Class_Lvl("fines");
 		},
 
 		fines_Class_Param() {
 			const class_fines = this.fines_Class_Lvl;
-			const subclass_fines = this.fines_Subclass_Lvl;
-			return class_fines.concat(subclass_fines);
+      const custom_fines = this.fines_Custom_Class_Lvl;
+			return class_fines.concat(custom_fines);
 		},
     
 	},

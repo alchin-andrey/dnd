@@ -1,7 +1,5 @@
 import { defineStore } from "pinia";
-// import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-// import { useDicStore } from "@/stores/general/DicStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 
 
@@ -18,8 +16,6 @@ export const useProficienciesStore = defineStore({
 	}),
 
   getters: {
-    // ...mapState(useMYStore, ["MY", "level_Filter_Arr", "MY_Subclass"]),
-
       proficiencies_Any: (state) => (kay) => {
         const MYStore = useMYStore();
         const specials = MYStore.class_Specials_Filter_Lvl("proficiencies");
@@ -67,14 +63,18 @@ export const useProficienciesStore = defineStore({
           MYStore.MY.class.proficiencies,
           kay
         );
-  
-        const subclass_prof = state.proficiencies_Arr(
-          MYStore.MY_Subclass?.proficiencies,
-          kay
-        );
+
+        let custom_prof = [];
+        MYStore.сustomm_Settings_Class_Arr.forEach(el => {
+          el.select_list.forEach(sub_el => {
+            const prof_arr = state.proficiencies_Arr(
+              sub_el?.proficiencies, kay);
+              custom_prof = custom_prof.concat(prof_arr);
+            });
+          });
   
         const any =  state.proficiencies_Any(kay);
-        return any ? ['any'] : class_prof.concat(subclass_prof);
+        return any ? ['any'] : class_prof.concat(custom_prof);
       },
   
       proficiencies_Arr_All: (state) => (kay) => {

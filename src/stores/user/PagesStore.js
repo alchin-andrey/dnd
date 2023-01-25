@@ -53,8 +53,6 @@ export const usePagesStore = defineStore({
 
 		class_page: {
 			shown: {
-				subclass: false,
-				// favor: true,
 				stats: false,
 			},
 		},
@@ -155,15 +153,6 @@ export const usePagesStore = defineStore({
 		},
 
 		// ^ Class Page: Shown settings
-
-		closeSubclass() {
-			const MYStore = useMYStore();
-			const subclass_show = this.class_page.shown.subclass;
-			const subclass = MYStore.MY_Subclass;
-			if (subclass_show && !subclass) {
-				this.showHome();
-			}
-		},
 
 		closeCustomClass() {
 			const MYStore = useMYStore();

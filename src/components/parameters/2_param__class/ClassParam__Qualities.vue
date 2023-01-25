@@ -50,7 +50,7 @@ export default {
 	},
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "level_Filter"]),
+		...mapState(useMYStore, ["MY"]),
 		// GETTERS
 		...mapState(useMYStore, ["Mastery", "class_Specials_Filter_Lvl"]),
 		...mapState(useStatsStore, ["stats_Mod"]),

@@ -1,9 +1,4 @@
 <template>
-	<!-- Специализация -->
-	<my-selection-box :shown="class_page.shown.subclass">
-		<ClassSett__Subclass />
-	</my-selection-box>
-	<!-- Специализация -->
 	<!-- Характеристики -->
 	<my-selection-box :shown="class_page.shown.stats">
 		<ClassSett__BaseStats />
