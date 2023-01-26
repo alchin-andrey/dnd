@@ -159,7 +159,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "Mastery", "class_Specials_Filter_Lvl"]),
+		...mapState(useMYStore, ["MY", "Mastery", "class_Specials_Filter_Lvl", "сustomm_Settings_Class_Arr", "filter_Custom_Class_Lvl"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
@@ -283,7 +283,16 @@ export default {
 		aim_Bonus_Numb() {
 			const mastery = this.mastery_Bonus;
 			const type_mod = this.stats_Mod(this.bonus_Type);
-			return type_mod + mastery;
+
+      const weapon_ranged_class = this.class_Specials_Filter_Lvl("weapon_ranged");
+
+      const cusstom_specials = this.filter_Custom_Class_Lvl("specials");
+      const weapon_ranged_custom = cusstom_specials.filter(el => el.type == "weapon_ranged");
+
+      const weapon_ranged = weapon_ranged_class.concat(weapon_ranged_custom)
+      let aim_bonus = 0;
+      weapon_ranged.forEach(el => aim_bonus += el.aim_bonus);
+			return type_mod + mastery + aim_bonus;
 		},
 
 		damage_Bonus_Numb() {
