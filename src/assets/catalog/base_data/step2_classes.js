@@ -1945,8 +1945,8 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 14,
-        name: "equipment",
+        position: 12,
+        name: "weapons",
         select: 1,
         list: [
           {
@@ -3226,14 +3226,13 @@ export default {
 
                         condition: "if_no_heavy_armor",
                       },
-                      {
-                        type: "plus",
-                        keyword: "rush",
-                        details: "as_bonus_action",
-
-                        condition: "if_no_heavy_armor",
-                      },
                     ],
+
+                    spells : [
+                      {
+                        spell: spells.quick_dash,
+                      }
+                    ]
                   },
                   {
                     name: "elk",
@@ -8505,7 +8504,7 @@ export default {
       },
       {
         type: "custom",
-        position: 14,
+        position: 13,
         name: "inventory",
         select: 1,
         list: [
@@ -8771,11 +8770,57 @@ export default {
             name: "school_of_conjuration",
             details: "school_of_conjuration_details",
 
+            charges: [
+              {
+                level: 6,
+                name: "movement_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
             fines: [
               {
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_conjuration",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_concentration_damage",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "hp_30",
+                details: "on_conjuration_creatures",
               },
             ],
 
@@ -8783,11 +8828,55 @@ export default {
               {
                 spell: spells.small_conjuration,
               },
+              {
+                level: 6,
+                spell: spells.safe_movement,
+              },
+              {
+                level: 6,
+                spell: spells.swap,
+              },
             ],
+
+
           },
           {
             name: "school_of_illusion",
             details: "school_of_illusion_details",
+
+            charges: [
+              {
+                level: 10,
+                name: "self_illusion_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
 
             fines: [
               {
@@ -8800,6 +8889,18 @@ export default {
             spells: [
               {
                 spell: spells.small_illusion,
+              },
+              {
+                level: 6,
+                spell: spells.transform_illusion,
+              },
+              {
+                level: 10,
+                spell: spells.self_illusion,
+              },
+              {
+                level: 14,
+                spell: spells.illusory_reality,
               },
             ],
           },
@@ -8818,7 +8919,31 @@ export default {
                 keyword: "heal",
                 details: "from_spell_kill_necromancy",
               },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "resistance",
+                details: "on_necrotic_damage",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_hp_reduction",
+              },
             ],
+
+            // TODO - добавить спелл
+            spells:[
+              // {
+              //   level: 6,
+              //   spell: spells.animate_dead,
+              // },
+              {
+                level: 14,
+                spell: spells.control_undead,
+              },
+            ]
           },
           {
             name: "school_of_abjuration",
@@ -8829,6 +8954,24 @@ export default {
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_abjuration",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "mastery_bonus",
+                details: "on_check_bjuration",
+              },
+              {
+                level: 14,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_spells",
+              },
+              {
+                level: 14,
+                type: "resistance",
+                keyword: "resistance",
+                details: "on_damage_spells",
               },
             ],
 
@@ -8875,6 +9018,40 @@ export default {
             name: "school_of_enchantment",
             details: "school_of_enchantment_details",
 
+            charges: [
+              {
+                level: 6,
+                name: "instinct_charm_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
             fines: [
               {
                 type: "plus",
@@ -8886,6 +9063,22 @@ export default {
             spells: [
               {
                 spell: spells.hypnotic_look,
+              },
+              {
+                level: 6,
+                spell: spells.instinct_charm,
+              },
+              {
+                level: 10,
+                spell: spells.powerful_charm,
+              },
+              {
+                level: 14,
+                spell: spells.false_memories,
+              },
+              {
+                level: 14,
+                spell: spells.erase_memories,
               },
             ],
           },
@@ -8977,7 +9170,7 @@ export default {
       },
       {
         type: "custom",
-        position: 14,
+        position: 13,
         name: "inventory",
         select: 1,
         list: [
