@@ -1,17 +1,22 @@
 <template>
-	<div class="btm">
-		<div class="numb jbm-300">
-			<div>
-				{{ numb }}
+	<section class="sect">
+		<div class="gradient"></div>
+		<div class="btm">
+			<div class="numb jbm-300">
+				<div>
+					{{ numb }}
+				</div>
+			</div>
+			<div class="title jbm-300">
+				<div>
+					{{ t_Title }}
+				</div>
+				<div>
+					<img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg" />
+				</div>
 			</div>
 		</div>
-		<div class="title jbm-300">
-			<div>
-				{{ t_Title }}
-			</div>
-			<div><img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg" /></div>
-		</div>
-	</div>
+	</section>
 </template>
 
 <script>
@@ -37,6 +42,9 @@ export default {
 </script>
 
 <style scoped>
+.sect {
+	position: relative;
+}
 .btm {
 	width: 320px;
 	min-height: 118px;
@@ -50,6 +58,14 @@ export default {
 	/*margin-top: 32px;*/
 	height: 18px;
 	text-align: left;
+}
+
+.gradient {
+	height: 32px;
+	width: 100%;
+	position: absolute;
+	top: -32px;
+	background: linear-gradient(180deg, rgba(14, 21, 24, 0) 0%, #0e1518 100%);
 }
 
 .title {
