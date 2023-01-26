@@ -534,6 +534,11 @@ export default {
 			return this.stats_Mod("charisma");
 		},
 
+		Num_CHA_Min0_Plus1() {
+			let mod = this.stats_Mod("charisma");
+			return mod >= 0 ? mod + 1 : 0 + 1;
+		},
+
 		Num_CHA_Min1() {
 			let mod = this.stats_Mod("charisma");
 			return mod >= 1 ? mod : 1;
@@ -763,6 +768,10 @@ export default {
     //ANCHOR - Ran
 		Ran_18_30f() {
 			return this.MY.level >= 18 ? 30 : 10;
+		},
+
+		Ran_6_30f() {
+			return this.MY.level >= 6 ? 30 : null;
 		},
 
 		//ANCHOR - FOO
