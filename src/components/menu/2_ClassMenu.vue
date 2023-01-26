@@ -75,10 +75,10 @@ export default {
     tools_Filter: (stor) => stor.filter_Setting(9),
     languages_Filter: (stor) => stor.filter_Setting(10),
 
-    armors_Filter: (stor) => stor.filter_Setting(10),
-    weapons_Filter: (stor) => stor.filter_Setting(11),
-    packs_Filter: (stor) => stor.filter_Setting(12),
-    inventory_Filter: (stor) => stor.filter_Setting(13),
+    armors_Filter: (stor) => stor.filter_Setting(11),
+    weapons_Filter: (stor) => stor.filter_Setting(12),
+    packs_Filter: (stor) => stor.filter_Setting(13),
+    inventory_Filter: (stor) => stor.filter_Setting(14),
 
     undefined_Filter: (stor) => stor.filter_Setting(undefined),
 
