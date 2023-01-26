@@ -29,6 +29,13 @@ export const useMYStore = defineStore({
 			return arr ? arr : [];
 		},
 
+		// level_Filter_Name_Arr: (state) => (item) => {
+		// 	const lvl = state.MY.level;
+    //   let lvl_arr = item?.filter((el) => (el.level ? lvl >= el.level : el && el.name));
+		// 	let name_lvl_arr = lvl_arr?.filter((el) => (el.name  == name));
+		// 	return arr ? arr : [];
+		// },
+
 		class_Specials_Filter_Lvl(state) {
 			const lvl = state.MY.level;
 			return (name) =>

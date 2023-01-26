@@ -1,25 +1,15 @@
 <template>
-  	<my-selection-card
-		no_blur
-    :active_boll_link="active_boll_link"
-	>
+	<my-selection-card no_blur :active_boll_link="active_boll_link">
 		<!-- //NOTE - Text -->
-		<my-card-text v-if="customm.name || customm.details"
-    :title="customm.name" :text_html="customm.details">
+		<my-card-text
+			v-if="customm.name || customm.details"
+			:title="customm.name"
+			:text_html="customm.details"
+		>
 		</my-card-text>
-    
-    <!-- //NOTE - Skilss -->
-    <!-- <my-wrapper v-if="shown_Param_Arr(customm.skills)">
-			<my-attribute
-				v-for="(skill, key, ind) in level_Filter_Arr(customm.skills)"
-				:key="skill"
-				:title="Object.keys(skill)[0]"
-				plus
-				:numb="Mastery"
-				:icon="MY.skills[Object.keys(skill)[0]].mod"
-			></my-attribute>
-		</my-wrapper> -->
-    <my-wrapper v-if="shown_Param_Arr(customm.skills)">
+
+		<!-- //NOTE - Skilss -->
+		<my-wrapper v-if="shown_Param_Arr(customm.skills)">
 			<my-attribute
 				v-for="skill in level_Filter_Arr(customm.skills)"
 				:key="skill"
@@ -29,19 +19,28 @@
 				:icon="MY.skills[skill.name].mod"
 			></my-attribute>
 		</my-wrapper>
-    
-    <!-- //NOTE - hp_Bonus -->
-    <my-wrapper v-if="customm.hp_bonus">
-				<my-attribute
-					v-if="customm.hp_bonus"
-					title="hp_bonus"
-					:numb="hp_Bonus(customm.hp_bonus[0], customm.hp_bonus[1])"
-					plus
-					icon="hp_bonus"
-				/>
-			</my-wrapper>
 
-    <!-- //NOTE - Charges -->
+		<!-- //NOTE - Qualities -->
+		<my-wrapper v-if="shown_Qualities">
+			<my-attribute
+				v-if="customm.hp_bonus"
+				title="hp_bonus"
+				:numb="hp_Bonus(customm.hp_bonus[0], customm.hp_bonus[1])"
+				plus
+				icon="hp_bonus"
+			/>
+			<my-attribute
+				v-for="item in speed_Bonus_True"
+				:key="item"
+				title="speed"
+				:numb="item.speed_bonus"
+				plus
+        feet
+				icon="speed"
+			/>
+		</my-wrapper>
+
+		<!-- //NOTE - Charges -->
 		<my-wrapper v-if="shown_Param_Arr(customm.charges)">
 			<my-charges
 				v-for="item in level_Filter_Arr(customm.charges)"
@@ -62,13 +61,13 @@
 			</my-inventory>
 		</my-wrapper>
 
-    		<!-- //NOTE - Armor -->
+		<!-- //NOTE - Armor -->
 		<my-wrapper v-if="armors_Equip(customm.equipment).length !== 0" gap_26>
 			<ArmorEquip
 				v-for="armor in armors_Equip(customm.equipment)"
 				:key="armor"
 				:armor="armor"
-        select
+				select
 			/>
 		</my-wrapper>
 
@@ -99,7 +98,7 @@
 				v-for="weapon in weapons_Equip(customm.equipment)"
 				:key="weapon"
 				:weapon="weapon"
-        select
+				select
 			/>
 		</my-wrapper>
 
@@ -115,8 +114,8 @@
 				:inventory="inventory_Equip(customm.equipment)"
 			/>
 		</my-wrapper>
-    
-    <!-- //NOTE - Settings -->
+
+		<!-- //NOTE - Settings -->
 		<my-wrapper v-if="customm.settings">
 			<MyCusstomSetting
 				v-for="item in customm.settings"
@@ -127,7 +126,7 @@
 			>
 			</MyCusstomSetting>
 		</my-wrapper>
-  </my-selection-card>
+	</my-selection-card>
 </template>
 
 <script>
@@ -147,42 +146,49 @@ export default {
 	name: "Card__CusstomClass",
 	components: {
 		KitEquip,
-    WeaponEquip,
-    ArmorEquip,
+		WeaponEquip,
+		ArmorEquip,
 	},
-  props: {
+	props: {
 		customm: {
 			type: Object,
 			default: null,
 		},
 
-    // customm_: {
+		// customm_: {
 		// 	type: Object,
 		// 	default: null,
 		// },
 
-    active_boll_link: {
+		active_boll_link: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	computed: {
 		// STORE
-		...mapState(useMYStore, [
-			"MY",
-      "Mastery",
-			"level_Filter_Arr",
-		]),
+		...mapState(useMYStore, ["MY", "Mastery", "level_Filter_Arr"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr"]),
 
+		// TTT: (state) => (name) => {
+		//   const arr = Object.keys(name);
+		// return arr[0]
+		// },
+		speed_Bonus_True() {
+			const qualities = this.level_Filter_Arr(this.customm.qualities);
+			const speed_bonus_arr = qualities.filter((el) => el.speed_bonus && el.show);
+			return speed_bonus_arr;
+		},
 
-    // TTT: (state) => (name) => {
-    //   const arr = Object.keys(name);
-    // return arr[0]
-    // },
+    shown_Qualities() {
+      return (
+        this.customm.hp_bonus ||
+        this.speed_Bonus_True.length !== 0
+        )
+    },
 
-    hp_Bonus: (state) => (increm_1, increm_2) => {
+		hp_Bonus: (state) => (increm_1, increm_2) => {
 			let level = Math.ceil(state.MY.level / increm_1);
 			return level * increm_2;
 		},
