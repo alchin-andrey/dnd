@@ -123,14 +123,33 @@ export const useMYStore = defineStore({
 			return res_arr;
 		},
 
-		customm_Settings_Class_Obj() {
+		// customm_Settings_Class_Obj_2() {
+		// 	const sett_obj = {};
+		// 	const sett_custom = this.сustomm_Settings_Class_Arr;
+		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name), []);
+		// 	const uniqu_name = [...new Set(all_name)];
+		// 	uniqu_name.forEach((item_name) => {
+		// 		sett_obj[item_name] = sett_custom.filter((el) => el.name == item_name);
+		// 	});
+		// 	return sett_obj;
+		// },
+
+    customm_Settings_Class_Obj() {
 			const sett_obj = {};
 			const sett_custom = this.сustomm_Settings_Class_Arr;
-			let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name), []);
-			const uniqu_name = [...new Set(all_name)];
-			uniqu_name.forEach((item_name) => {
-				sett_obj[item_name] = sett_custom.filter((el) => el.name == item_name);
+			let position_arr = sett_custom.reduce((acc, el) => acc.concat(el.position), []);
+			const uniqu_position_arr = [...new Set(position_arr)].sort((a,b) => a - b);
+			uniqu_position_arr.forEach((numb) => {
+				sett_obj[`position_${numb}`] = sett_custom.filter((el) => el.position == numb);
 			});
+
+      // sett_obj.forEach((el_pos) => {
+      //   let all_name = el_pos.reduce((acc, el) => acc.concat(el.name), []);
+			//   const uniqu_name = [...new Set(all_name)];
+      //   uniqu_name.forEach((item_name) => {
+      //     sett_obj[`position_${el_pos.position}`][item_name] = sett_custom.filter((el) => el.name == item_name);
+      //   });
+      // });
 			return sett_obj;
 		},
 	},
