@@ -6,7 +6,7 @@ export const tools = {
     thief: "крадійскі",
 
     alchemists_supplies: "алхіміка",
-    potters_tools: "гончаря",
+    potters_tools: "гончара",
     tinkers_tools: "бляхаря",
     calligraphers_supplies: "каліграфа",
     cartographers_tools: "картографа",
