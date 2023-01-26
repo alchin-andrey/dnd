@@ -1,5 +1,5 @@
 <template>
-	<div
+	<!-- <div
 		v-for="item in menu"
 		:key="item.id_link"
 		class="column"
@@ -7,7 +7,7 @@
 		:class="{
 			active_link: class_page.shown[item.id_link],
 			hover: !class_page.shown[item.id_link],
-      'lvl-dot': shown_Level_Dot(item.level),
+			'lvl-dot': shown_Level_Dot(item.level),
 		}"
 	>
 		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
@@ -23,7 +23,37 @@
 				/>
 			</div>
 		</section>
-	</div>
+	</div> -->
+
+	<!-- <main> -->
+<!-- <section> -->
+  	<div
+  		v-for="item in menu"
+  		:key="item.id_link"
+  		class="column"
+  		@click="showSettings__Class(item.id_link)"
+  		:class="{
+  			active_link: class_page.shown[item.id_link],
+  			hover: !class_page.shown[item.id_link],
+  			'lvl-dot': shown_Level_Dot(item.level),
+  		}"
+  	>
+  		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
+  		<section class="column_link int-400 active">
+  			<div class="link-text">
+  				<span>{{ t_Type(item) }}</span>
+  			</div>
+  			<div class="icon">
+  				<svg
+  					viewBox="0 0 18 18"
+  					xmlns="http://www.w3.org/2000/svg"
+  					v-html="ui_icon[icon_Image(item)]"
+  				/>
+  			</div>
+  		</section>
+  	</div>
+<!-- </section> -->
+	<!-- </main> -->
 </template>
 
 <script>
@@ -37,6 +67,7 @@ export default {
 	data() {
 		return {
 			ui_icon: ui_icon,
+			name_arr: [],
 		};
 	},
 	props: {
@@ -49,22 +80,43 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["class_page", "showSettings__Class"]),
 
-    icon_Image: (store) => (item) => {
-      let actile_link = store.class_page.shown[item.id_link];
-			return !actile_link ? 'arrow_down_small' : 'arrow_right_small';
+		icon_Image: (store) => (item) => {
+			let actile_link = store.class_page.shown[item.id_link];
+			return !actile_link ? "arrow_down_small" : "arrow_right_small";
 		},
 
-    shown_Level_Dot: (store) => (item_lvl) => {
-      let lvl = store.MY.level;
-      return item_lvl == lvl && lvl !== 1;
-    },
+		shown_Level_Dot: (store) => (item_lvl) => {
+			let lvl = store.MY.level;
+			return item_lvl == lvl && lvl !== 1;
+		},
+
+		uniqu_Name() {
+			const sett_obj = {};
+			let all_name = this.menu.reduce((acc, el) => acc.concat(el.name), []);
+			const uniqu_name = [...new Set(all_name)];
+			uniqu_name.forEach((item_name) => {
+				sett_obj[item_name] = this.menu.filter((el) => el.name == item_name);
+			});
+			return sett_obj;
+		},
 
 		t_Title: (store) => (item) => {
-			if (item == store.menu[0]) {
+      const first_name = store.uniqu_Name[item.name][0];
+			if (item == first_name) {
 				return store.t(item?.name);
 			}
 			return null;
 		},
+
+		// t_Title: (store) => (item) => {
+		// 	if (!arr.includes(item?.name)) {
+		// 		store.name_arr.push(item?.name);
+		// 		console.log("this.name_arr:", store.name_arr);
+		// 		return store.t(item?.name);
+		// 	} else {
+		// 		return null;
+		// 	}
+		// },
 
 		t_Type: (store) => (item) => {
 			let arr = [];
@@ -78,6 +130,17 @@ export default {
 			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 		},
 	},
+	// methods: {
+	// 	tTitle(item, arr) {
+	// 		if (!arr.includes(item?.name)) {
+	// 			this.name_arr.push(item?.name);
+	// 			console.log("this.name_arr:", this.name_arr);
+	// 			return this.t(item?.name);
+	// 		} else {
+	// 			return null;
+	// 		}
+	// 	},
+	// },
 };
 </script>
 
@@ -157,7 +220,7 @@ export default {
 .icon {
 	width: 18px;
 	height: 18px;
-  /* display: flex;
+	/* display: flex;
   align-items: center; */
 }
 

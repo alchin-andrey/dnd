@@ -1,56 +1,43 @@
 <template>
 	<div class="selection_menu_wrap">
-		
-    <!-- <div class="selection_menu" v-if="MY_Subclass">
-      <my-selection
-				@click="showSettings__Class('subclass')"
-				:active="class_page.shown.subclass"
-				title="subclass"
-				:type="MY_Subclass.name"
-			></my-selection>
-    </div> -->
 
-    <!-- <div class="selection_menu">
-			<AppSelectionArr 
-      v-for="сustomm in subclass_Filter"
-      :key="сustomm"
-			:menu="[сustomm]"
-			></AppSelectionArr>
-		</div> -->
+    <div class="selection_menu" v-if="shown_Subclass">
+			<AppSelectionArr :menu="subclass_Filter"/>
+		</div>
+
+    <div class="selection_menu" v-if="shown_Other">
+			<AppSelectionArr :menu="other_Filter"/>
+		</div>
+
+    <div class="selection_menu" v-if="shown_Spells">
+      <AppSelectionArr :menu="spells_0_Filter"/>
+			<AppSelectionArr :menu="spells_Filter"/>
+		</div>
 
     <div class="selection_menu">
-			<my-selection
+      <my-selection
 				@click="showSettings__Class('stats')"
 				:active="class_page.shown.stats"
 				title="stats"
 				:t_type="stats_Base_Settings_Two_T"
 			></my-selection>
+			<AppSelectionArr :menu="stats_Filter"/>
+			<AppSelectionArr :menu="feats_Filter"/>
+			<AppSelectionArr :menu="skills_Filter"/>
+			<AppSelectionArr :menu="tools_Filter"/>
+			<AppSelectionArr :menu="languages_Filter"/>
 		</div>
 
-    <!-- <div class="selection_menu">
-			<AppSelectionArr :menu="filter_Setting('skills')"/>
+    <div class="selection_menu" v-if="shown_Equip">
+      <AppSelectionArr :menu="armors_Filter"/>
+			<AppSelectionArr :menu="weapons_Filter"/>
+			<AppSelectionArr :menu="packs_Filter"/>
+			<AppSelectionArr :menu="inventory_Filter"/>
 		</div>
 
-    <div class="selection_menu">
-			<AppSelectionArr :menu="filter_Setting('proficiencies')"/>
+    <div class="selection_menu undefined" v-if="shown_Undefined">
+      <AppSelectionArr :menu="undefined_Filter"/>
 		</div>
-
-    <div class="selection_menu">
-      <AppSelectionArr :menu="filter_Setting('armor_class')"/>
-			<AppSelectionArr :menu="filter_Setting('weapons')"/>
-			<AppSelectionArr :menu="filter_Setting('packs')"/>
-			<AppSelectionArr :menu="filter_Setting('equipment')"/>
-		</div> -->
-
-    <div class="selection_menu">
-			<AppSelectionArr 
-      v-for="сustomm in customm_Settings_Class_Obj"
-      :key="сustomm"
-			:menu="сustomm"
-			/>
-		</div>
-
-
 
 	</div>
 </template>
@@ -67,29 +54,61 @@ export default {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),
     // GETTERS
-		...mapState(useMYStore, ["MY_Subclass", "customm_Settings_Class_Obj", "сustomm_Settings_Class_Arr"]),
+		...mapState(useMYStore, ["сustomm_Settings_Class_Arr"]),
 
-    ...mapState(useStatsStore, [
-      // "stats_Custom_Arr_RE", 
-      "stats_Base_Settings_Two_T",
-    ]),
+    ...mapState(useStatsStore, [ "stats_Base_Settings_Two_T"]),
 
-		filter_Setting: (state) => (name) => {
-			return state.сustomm_Settings_Class_Arr.filter((item) => item.name == name);
+    filter_Setting: (stor) => (numb) => {
+			return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);
 		},
 
-    skills_Filter() {
-      return this.filter_Setting("skills")
+    subclass_Filter: (stor) => stor.filter_Setting(1),
+
+    other_Filter: (stor) => stor.filter_Setting(2),
+
+    spells_0_Filter: (stor) => stor.filter_Setting(3),
+    spells_Filter: (stor) => stor.filter_Setting(4),
+
+    stats_Filter: (stor) => stor.filter_Setting(6),
+    feats_Filter: (stor) => stor.filter_Setting(7),
+    skills_Filter: (stor) => stor.filter_Setting(8),
+    tools_Filter: (stor) => stor.filter_Setting(9),
+    languages_Filter: (stor) => stor.filter_Setting(10),
+
+    armors_Filter: (stor) => stor.filter_Setting(10),
+    weapons_Filter: (stor) => stor.filter_Setting(11),
+    packs_Filter: (stor) => stor.filter_Setting(12),
+    inventory_Filter: (stor) => stor.filter_Setting(13),
+
+    undefined_Filter: (stor) => stor.filter_Setting(undefined),
+
+    shown_Subclass() {
+      return this.subclass_Filter.length !== 0
     },
 
-    subclass_Filter() {
-      let res = this.сustomm_Settings_Class_Arr.filter((item) => {
-        let str = item.id_link.split("__");
-        return str[1] == "subclass"
-      });
-      return res;
-    }
+    shown_Other() {
+      return this.other_Filter.length !== 0
+    },
 
+    shown_Spells() {
+      return (
+        this.spells_0_Filter.length !== 0 ||
+        this.spells_Filter.length !== 0
+      )
+    },
+
+    shown_Equip() {
+      return (
+        this.armors_Filter.length !== 0 ||
+        this.weapons_Filter.length !== 0 ||
+        this.packs_Filter.length !== 0 ||
+        this.inventory_Filter.length !== 0
+      )
+    },
+
+    shown_Undefined() {
+      return this.undefined_Filter.length !== 0
+    },
 	},
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Class"]),
@@ -114,5 +133,9 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+}
+
+.undefined{
+  background: rgb(94, 10, 10);
 }
 </style>
