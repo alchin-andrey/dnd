@@ -2292,6 +2292,10 @@ export default {
     spell_maneuver_riposte_details: spells.maneuver_riposte_details,
     spell_maneuver_riposte_expanded: spells.maneuver_riposte_expanded,
 
+    spell_maneuver_distracting_strike: spells.maneuver_distracting_strike,
+    spell_maneuver_distracting_strike_details: spells.maneuver_distracting_strike_details,
+    spell_maneuver_distracting_strike_expanded: spells.maneuver_distracting_strike_expanded,
+
     reduction_w: "снижение",
 
     spell_maneuver_parry: spells.maneuver_parry,
@@ -4700,5 +4704,9 @@ export default {
         obsession: "одержимость",
         uncompromise: "бескомпромісность",
         poormemory: "забьівчивость",
+
+        pack: "набор",
+
+        speed_plus_15: "+15 Скорость",
 
 }

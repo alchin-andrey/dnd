@@ -223,6 +223,16 @@ export default {
                 select: 1,
                 list: [
                   {
+                    name: "evasiveness",
+                    fines: [
+                      {
+                        type: "resistance",
+                        keyword: "fine_dodge",
+                        details: "from_aoe_effects",
+                      },
+                    ],
+                  },
+                  {
                     name_set: spells.uncanny_dodge[0].name,
                     spells: [
                       {
@@ -235,16 +245,6 @@ export default {
                     spells: [
                       {
                         spell: spells.stand_against_the_tide,
-                      },
-                    ],
-                  },
-                  {
-                    name: "evasiveness",
-                    fines: [
-                      {
-                        type: "resistance",
-                        keyword: "fine_dodge",
-                        details: "from_aoe_effects",
                       },
                     ],
                   },
@@ -494,6 +494,7 @@ export default {
                   },
                   {
                     name: "monstrosities",
+                    details: "monstrosities_details",
 
                     fines: [
                       {
@@ -510,6 +511,7 @@ export default {
                   },
                   {
                     name: "oozes",
+                    details: "oozes_details",
 
                     fines: [
                       {
@@ -526,6 +528,7 @@ export default {
                   },
                   {
                     name: "plants",
+                    details: "plants_details",
 
                     fines: [
                       {
@@ -542,6 +545,7 @@ export default {
                   },
                   {
                     name: "undeads",
+                    details: "undeads_details",
 
                     fines: [
                       {
@@ -558,6 +562,7 @@ export default {
                   },
                   {
                     name: "two_other_races",
+                    details: "two_other_races_details",
 
                     fines: [
                       {
@@ -784,6 +789,7 @@ export default {
               {
                 level: 6,
                 speed_bonus: 5,
+                show: true,
               },
             ],
 
@@ -892,6 +898,73 @@ export default {
                 name: "languages",
                 select: 2,
                 filter: "no_used",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 2,
+        type: "custom",
+        position: 2,
+        name: "battle_style",
+        select: 1,
+        list: [
+          {
+            name: "style_dueling",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_attack_signle_one_handed",
+              },
+            ],
+          },
+          {
+            name: "style_defence",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_armor_if_armor",
+              },
+            ],
+
+            qualities: [
+              {
+                armor_bonus: 1,
+              },
+            ],
+          },
+          {
+            name: "style_double_weapon",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "bonus",
+                details: "on_damage_second_attack",
+              },
+            ],
+          },
+          {
+            name: "style_archery",
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "aim_bonus",
+                details: "plus_2_on_ranged",
+              },
+            ],
+
+            specials: [
+              {
+                level: 1,
+                type: "weapon_ranged",
+                aim_bonus: 2,
               },
             ],
           },
@@ -1098,7 +1171,7 @@ export default {
             settings: [
               {
                 type: "custom",
-                position: 11,
+                position: 12,
                 name: "weapons",
                 select: 1,
                 list: [
@@ -1146,7 +1219,7 @@ export default {
               },
               {
                 type: "custom",
-                position: 11,
+                position: 12,
                 name: "weapons",
                 select: 1,
                 list: [
@@ -1200,7 +1273,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -1210,73 +1283,6 @@ export default {
           {
             name_set: packs.explorers.name,
             equipment: [{ inventory_packs: [[packs.explorers, 1]] }],
-          },
-        ],
-      },
-      {
-        level: 2,
-        type: "custom",
-        position: 2,
-        name: "battle_style",
-        select: 1,
-        list: [
-          {
-            name: "style_dueling",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "bonus",
-                details: "on_attack_signle_one_handed",
-              },
-            ],
-          },
-          {
-            name: "style_defence",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "bonus",
-                details: "on_armor_if_armor",
-              },
-            ],
-
-            qualities: [
-              {
-                armor_bonus: 1,
-              },
-            ],
-          },
-          {
-            name: "style_double_weapon",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "bonus",
-                details: "on_damage_second_attack",
-              },
-            ],
-          },
-          {
-            name: "style_archery",
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "aim_bonus",
-                details: "plus_2_on_ranged",
-              },
-            ],
-
-            specials: [
-              {
-                level: 1,
-                type: "weapon_ranged",
-                aim_bonus: 2,
-              },
-            ],
           },
         ],
       },
@@ -1971,7 +1977,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -2210,7 +2216,7 @@ export default {
                 level: 3,
                 type: "custom",
                 position: 9,
-                name: "proficiencies",
+                name: "tools",
                 select: 1,
                 list: [
                   {
@@ -2851,7 +2857,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -2867,7 +2873,7 @@ export default {
       {
         level: 2,
         type: "custom",
-        position: 2,
+        position: 1,
         name: "battle_style",
         select: 1,
         list: [
@@ -2985,6 +2991,7 @@ export default {
       {
         level: 5,
         speed_bonus: 10,
+        show: true,
       },
     ],
 
@@ -3230,12 +3237,21 @@ export default {
                   },
                   {
                     name: "elk",
+
+                    qualities: [
+                      {
+                        level: 6,
+                        speed_bonus: 5,
+                        show: false,
+                      },
+                    ],
+
                     fines: [
                       {
-                        // TODO - when without heavy armor
-                        condition: "if_no_heavy_armor",
-                        key: "speed_bonus",
-                        value: "15",
+
+                        type: "plus",
+                        keyword: "speed_plus_15",
+                        details: "if_no_heavy_armor_applied",
                       },
                     ],
                   },
@@ -3311,8 +3327,6 @@ export default {
                         type: "plus",
                         keyword: "double_speed",
                         details: "travel_elk",
-                        key: "speed_bonus_x",
-                        value: 2,
                       },
                     ],
                   },
@@ -3891,22 +3905,27 @@ export default {
       {
         level: 2,
         speed_bonus: 10,
+        show: false,
       },
       {
         level: 6,
         speed_bonus: 5,
+        show: false,
       },
       {
         level: 10,
         speed_bonus: 5,
+        show: false,
       },
       {
         level: 14,
         speed_bonus: 5,
+        show: false,
       },
       {
         level: 18,
         speed_bonus: 5,
+        show: false,
       },
     ],
 
@@ -3931,7 +3950,7 @@ export default {
       },
       {
         level: 13,
-        type: "proficiencies",
+        type: "tools",
         languages: "any",
         //Вьі понимаете речь на любом язьіке. Кроме того, все существа, способньіе понимать хотя бьі один язьік, понимают то, что вьі сказали.
       },
@@ -4165,7 +4184,7 @@ export default {
         level: 1,
         type: "custom",
         position: 9,
-        name: "proficiencies",
+        name: "tools",
         select: 1,
         list: [
           {
@@ -4385,7 +4404,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -5104,7 +5123,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -6193,7 +6212,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -6454,7 +6473,7 @@ export default {
               {
                 level: 3,
                 type: "custom",
-                position: 2,
+                position: 1,
                 name: "favored_terrain",
                 select: 1,
                 list: [
@@ -7932,7 +7951,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -8149,6 +8168,7 @@ export default {
               {
                 level: 1,
                 type: "custom",
+                position: 1,
                 name: "dragon_ancestor",
                 select: 1,
                 list: [
@@ -8503,7 +8523,7 @@ export default {
         level: 1,
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -8542,6 +8562,7 @@ export default {
       {
         level: 3,
         type: "custom",
+        position: 1,
         name: "metamagic",
         select: [0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4],
         list: [
@@ -8973,7 +8994,7 @@ export default {
       {
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -9417,7 +9438,7 @@ export default {
       {
         type: "custom",
         position: 9,
-        name: "proficiencies",
+        name: "tools",
         select: 3,
         list: [
           {
@@ -9537,7 +9558,7 @@ export default {
       {
         type: "custom",
         position: 13,
-        name: "packs",
+        name: "pack",
         select: 1,
         list: [
           {
@@ -9552,7 +9573,7 @@ export default {
       },
       {
         type: "custom",
-        position: 9,
+        position: 12,
         name: "tool",
         select: 1,
         list: [

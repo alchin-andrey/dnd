@@ -2282,6 +2282,10 @@ export default {
     spell_maneuver_riposte_details: spells.maneuver_riposte_details,
     spell_maneuver_riposte_expanded: spells.maneuver_riposte_expanded,
 
+    spell_maneuver_distracting_strike: spells.maneuver_distracting_strike,
+    spell_maneuver_distracting_strike_details: spells.maneuver_distracting_strike_details,
+    spell_maneuver_distracting_strike_expanded: spells.maneuver_distracting_strike_expanded,
+
     reduction_w: "зменшення",
 
     spell_maneuver_parry: spells.maneuver_parry,
@@ -4369,7 +4373,7 @@ export default {
     tools_brewer: "Інструменти пивовара",
     tools_brewer_details: "",
 
-    tools_potters_tools: "Інструменти гончаря",
+    tools_potters_tools: "Інструменти гончара",
     tools_potters_tools_details: "",
 
     tools_carpenters_tools: "Інструменти тесляра",
@@ -4686,4 +4690,8 @@ export default {
           obsession: "одержимість",
           uncompromise: "безкомпромісність",
           poormemory: "забудькуватість",
+
+          pack: "набір",
+
+          speed_plus_15: "+15 Швидкість",
 }
