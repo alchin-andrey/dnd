@@ -3067,6 +3067,7 @@ export default {
 
   spell_portent: spells.portent,
   spell_portent_details: spells.portent_details,
+  spell_portent_details_14: spells.portent_details_14,
   spell_portent_expanded: spells.portent_expanded,
 
   use_wo_mana: "використання без мани",
@@ -5063,5 +5064,33 @@ export default {
   spell_transmutation_stone: spells.transmutation_stone,
   spell_transmutation_stone_details: spells.transmutation_stone_details,
   spell_transmutation_stone_expanded: spells.transmutation_stone_expanded,
+
+  spell_big_transformation: spells.big_transformation,
+  spell_big_transformation_details: spells.big_transformation_details,
+  spell_big_transformation_expanded: spells.big_transformation_expanded,
+
+  younging: "змолодження",
+
+  spell_return_youth: spells.return_youth,
+  spell_return_youth_details: spells.return_youth_details,
+  spell_return_youth_expanded: spells.return_youth_expanded,
+
+  spell_panacea: spells.panacea,
+  spell_panacea_details: spells.panacea_details,
+  spell_panacea_expanded: spells.panacea_expanded, 
+  
+  genius_slots: "Геній",
+  genius_slot: "1× Геній",
+
+  spell_divination_expert: spells.divination_expert,
+  spell_divination_expert_details: spells.divination_expert_details,
+  spell_divination_expert_expanded: spells.divination_expert_expanded, 
+
+  spell_third_eye: spells.third_eye,
+  spell_third_eye_details: spells.third_eye_details,
+  spell_third_eye_expanded: spells.third_eye_expanded, 
+
+  third_eye_slots: "Третє око",
+  third_eye_slot: "1× Третє око",
 
 };

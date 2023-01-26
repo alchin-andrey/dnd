@@ -698,6 +698,13 @@ export default {
 			return this.MY.level >= 13 ? 13 : null;
 		},
 
+		Det_14_Lvl() {
+			// let deteils = this.Spell_Index.details;
+			// let lvl = this.MY.level;
+			// return kof ? `${deteils}_${kof}` : kof;
+			return this.MY.level >= 14 ? 14 : null;
+		},
+
 		Det_17_Lvl() {
 			// let deteils = this.Spell_Index.details;
 			// let lvl = this.MY.level;

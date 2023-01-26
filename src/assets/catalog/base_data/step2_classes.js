@@ -9208,9 +9208,11 @@ export default {
                 spell: spells.portent,
               },
               {
+                level: 6,
                 spell: spells.divination_expert,
               },
               {
+                level: 10,
                 spell: spells.third_eye,
               },
             ],

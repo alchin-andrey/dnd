@@ -3082,6 +3082,7 @@ export default {
 
   spell_portent: spells.portent,
   spell_portent_details: spells.portent_details,
+  spell_portent_details_14: spells.portent_details_14,
   spell_portent_expanded: spells.portent_expanded,
 
   use_wo_mana: "использование без маньі",
@@ -5111,5 +5112,12 @@ export default {
   spell_divination_expert_details: spells.divination_expert_details,
   spell_divination_expert_expanded: spells.divination_expert_expanded, 
 
-  
+  spell_third_eye: spells.third_eye,
+  spell_third_eye_details: spells.third_eye_details,
+  spell_third_eye_expanded: spells.third_eye_expanded, 
+
+  third_eye_slots: "Третий глаз",
+  third_eye_slot: "1× Третий глаз",
+
+
 };
