@@ -2133,7 +2133,7 @@ export default {
             settings: [
               {
                 level: 3,
-                type: "spells",
+                type: "custom",
                 position: 1,
                 name: "maneuvers",
                 select: [
@@ -8147,13 +8147,13 @@ export default {
 
             settings: [
               {
-                level: 6,
+                level: 1,
                 type: "custom",
                 name: "dragon_ancestor",
                 select: 1,
                 list: [
                   {
-                    name: "red_dragonborn",
+                    name: "red_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8167,7 +8167,7 @@ export default {
                     ],
                   },
                   {
-                    name: "brass_dragonborn",
+                    name: "brass_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8181,7 +8181,7 @@ export default {
                     ],
                   },
                   {
-                    name: "golden_dragonborn",
+                    name: "golden_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8195,7 +8195,7 @@ export default {
                     ],
                   },
                   {
-                    name: "silver_dragonborn",
+                    name: "silver_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8209,7 +8209,7 @@ export default {
                     ],
                   },
                   {
-                    name: "white_dragonborn",
+                    name: "white_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8223,7 +8223,7 @@ export default {
                     ],
                   },
                   {
-                    name: "blue_dragonborn",
+                    name: "blue_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8237,7 +8237,7 @@ export default {
                     ],
                   },
                   {
-                    name: "bronze_dragonborn",
+                    name: "bronze_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8251,7 +8251,7 @@ export default {
                     ],
                   },
                   {
-                    name: "copper_dragonborn",
+                    name: "copper_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8265,7 +8265,7 @@ export default {
                     ],
                   },
                   {
-                    name: "black_dragonborn",
+                    name: "black_dragonborn_sorcerer",
 
                     spells: [
                       {
@@ -8279,7 +8279,7 @@ export default {
                     ],
                   },
                   {
-                    name: "green_dragonborn",
+                    name: "green_dragonborn_sorcerer",
 
                     spells: [
                       {

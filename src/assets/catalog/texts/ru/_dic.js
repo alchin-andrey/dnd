@@ -3942,7 +3942,7 @@ export default {
 
     plus_3_armor: "— +3 к Броне (применено)",
 
-    dragon_ancestor:"драконий предок",
+    dragon_ancestor:"предок",
 
     to_charisma_dragon: "на проверки Харизмьі, связанньіе с драконами",
 
@@ -4520,4 +4520,15 @@ export default {
     spell_horde_breaker: spells.horde_breaker,
     spell_horde_breaker_details: spells.horde_breaker_details,
     spell_horde_breaker_expanded: spells.horde_breaker_expanded,
+
+    red_dragonborn_sorcerer: "красньій дракон",
+    brass_dragonborn_sorcerer: "латунньій дракон",
+    golden_dragonborn_sorcerer: "золотой дракон",
+    silver_dragonborn_sorcerer: "серебряньій дракон",
+    white_dragonborn_sorcerer: "бельій дракон",
+    blue_dragonborn_sorcerer: "синий дракон",
+    bronze_dragonborn_sorcerer: "бронзовьій дракон",
+    copper_dragonborn_sorcerer: "медньій дракон",
+    black_dragonborn_sorcerer: "черньій дракон",
+    green_dragonborn_sorcerer: "зеленьій дракон",
 }
