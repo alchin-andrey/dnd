@@ -124,8 +124,8 @@ export default {
 			const numb_RE = store.qualities_Numb_RE(name);
 			const numb_class_bonus = store.qualities_Bonus_Numb(store.MY.class?.qualities, name);
       
-      const custom = store.filter_Custom_Class_Lvl("qualities")
-			const numb_custom_bonus = store.qualities_Bonus_Numb(custom, name);
+      const custom_qual = store.filter_Custom_Class_Lvl("qualities")
+			const numb_custom_bonus = store.qualities_Bonus_Numb(custom_qual, name);
 			return numb_RE + numb_class_bonus + numb_custom_bonus;
 		},
 
@@ -148,6 +148,10 @@ export default {
 			const armor_bonus = armor ? armor.armor_bonus : null;
 			armor_default += armor_bonus;
 			armor_default += this.armor_Bonus_Specials;
+
+      const custom_qual = this.filter_Custom_Class_Lvl("qualities")
+      const armor_bonus_custom = this.qualities_Bonus_Numb(custom_qual, "armor");
+      armor_default += armor_bonus_custom;
 
 			return armor_class ? armor_class : armor_default;
 		},
