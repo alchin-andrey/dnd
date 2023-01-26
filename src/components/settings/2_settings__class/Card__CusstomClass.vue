@@ -36,7 +36,12 @@
 				:numb="item.speed_bonus"
 				plus
         feet
-				icon="speed"
+			/>
+      <my-attribute
+        v-if="vision_Night_Numb"
+				title="vision_night"
+				:numb="vision_Night_Numb"
+        feet
 			/>
 		</my-wrapper>
 
@@ -181,10 +186,19 @@ export default {
 			return speed_bonus_arr;
 		},
 
+		vision_Night_Numb() {
+			const qualities = this.level_Filter_Arr(this.customm.qualities);
+			const vision_night = qualities.filter((el) => el.vision_night);
+      let numb_MAX = 0;
+      vision_night.forEach(el => numb_MAX = Math.max(numb_MAX, el.vision_night))
+			return numb_MAX;
+		},
+
     shown_Qualities() {
       return (
         this.customm.hp_bonus ||
-        this.speed_Bonus_True.length !== 0
+        this.speed_Bonus_True.length !== 0 ||
+        this.vision_Night_Numb
         )
     },
 

@@ -126,7 +126,11 @@ export default {
       
       const custom_qual = store.filter_Custom_Class_Lvl("qualities")
 			const numb_custom_bonus = store.qualities_Bonus_Numb(custom_qual, name);
-			return numb_RE + numb_class_bonus + numb_custom_bonus;
+      const new_numb = custom_qual.filter((el) => el[name]);
+      let new_numb_MAX = 0;
+      new_numb.forEach(el => new_numb_MAX = Math.max(new_numb_MAX, el[name]))
+      const main_numb = Math.max(new_numb_MAX, numb_RE);
+			return main_numb + numb_class_bonus + numb_custom_bonus;
 		},
 
 		armor_Name() {
