@@ -2,9 +2,9 @@
 	<transition name="mode-fade" mode="out-in">
 		<!-- //NOTE - Main -->
     <section v-if="!class_page.shown.stats">
-      <ClassParam__Stats hr /> <!-- //TODO - Cusstom -->
+      <ClassParam__Stats hr />
       <ClassParam__Skills hr/> <!-- //TODO - Cusstom -->
-			<ClassParam__Qualities hr /> <!-- //TODO - Cusstom -->
+			<ClassParam__Qualities hr />
 			<ClassParam__Charges hr />
       <ClassParam__Proficiencies hr />
       <ClassParam__Fines hr />

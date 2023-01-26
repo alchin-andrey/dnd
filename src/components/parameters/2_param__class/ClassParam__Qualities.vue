@@ -139,27 +139,31 @@ export default {
 
 			let armor_default = 10;
 			const dex_mod = this.stats_Mod("dexterity");
-			const dex_mod_max2 = dex_mod > 2 ? 2 : null;
+			const dex_mod_max2 = dex_mod > 2 ? 2 : 0;
 
 			const medium = armor?.type[0].name == "armor_medium";
 			medium ? (armor_default += dex_mod_max2) : (armor_default += dex_mod);
 
-			const armor_class = armor ? armor.armor_class : null;
+      const bonus_A = this.armor_Bonus_Specials("armor");
+      const bonus_AC = this.armor_Bonus_Specials("armor_class");
+      const bonus_AB = this.armor_Bonus_Specials("armor_bonus");
+
+      const armor_class = armor ? armor.armor_class : null;
 			const armor_bonus = armor ? armor.armor_bonus : null;
-			armor_default += armor_bonus;
-			armor_default += this.armor_Bonus_Specials;
+      
+      const armor_default_bonus = armor_default + armor_bonus + bonus_A + bonus_AB;
+      const armor_class_bonus = armor_class + bonus_A + bonus_AC;
 
-      const custom_qual = this.filter_Custom_Class_Lvl("qualities")
-      const armor_bonus_custom = this.qualities_Bonus_Numb(custom_qual, "armor");
-      armor_default += armor_bonus_custom;
-
-			return armor_class ? armor_class : armor_default;
+			return armor_class ? armor_class_bonus : armor_default_bonus;
 		},
 
-		armor_Bonus_Specials() {
-			let bonus = null;
-      const specials = this.class_Specials_Filter_Lvl("armor_bonus");
-      specials?.forEach((el) => bonus += this[el.foo]);
+		armor_Bonus_Specials: (store) => (type) => {
+      const class_specials_type = store.class_Specials_Filter_Lvl(type) ?? [];
+      const custom_specials = store.filter_Custom_Class_Lvl("specials");
+      const custom_specials_type = custom_specials.filter(el => el.type == type);
+      const all_specials = class_specials_type.concat(custom_specials_type);
+      let bonus = 0;
+      all_specials?.forEach((el) => bonus += (el.foo ? store[el.foo] : el.armor_bonus));
 			return bonus;
 		},
 

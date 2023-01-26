@@ -98,7 +98,37 @@ export const useSkillsStore = defineStore({
 			return skills_foo ? skills_foo + mod : race_mastery + mod;
 		},
 
+    // skills_Class_Numb: (state) => (name) => {
+    //   const MYStore = useMYStore();
+    //   // const StatsStore = useStatsStore();
+		// 	// const state_name = MYStore.MY.skills[name].mod;
+		// 	// const mod = StatsStore.stats_Mod(state_name);
+    //   const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
+    //   const skills_name = skills_custom.filter(el => el.name == name);
+    //   let skill_numb = 0;
+    //   skills_name.forEach(el => skill_numb += this[el.num]);
+		// 	return skill_numb;
+		// },
+
+    // skills_Name_All() {
+    //   const MYStore = useMYStore();
+    //   const race_page = this.skills_All_RE;
+    //   const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
+    //   const skills_custom_name = skills_custom.reduce((acc, el) => acc.concat(el.name), []);
+		// 	const uniqu_name = [...new Set(skills_custom_name)];
+    //   return skills_custom;
+    // },
+
     //NOTE - Skills Foo
+    Mastery() {
+      const MYStore = useMYStore();
+			return MYStore.Mastery;
+		},
+
+    Mastery_x2() {
+			return this.Mastery * 2;
+		},
+
 		Half_Mastery: (state) => (skill_mastery) => {
       const MYStore = useMYStore();
 			const half_mastery = Math.floor(MYStore.Mastery / 2);
