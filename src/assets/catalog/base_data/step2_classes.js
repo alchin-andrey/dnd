@@ -932,8 +932,9 @@ export default {
               },
             ],
 
-            qualities: [
+            specials: [
               {
+                type: "armor",
                 armor_bonus: 1,
               },
             ],
@@ -2544,8 +2545,9 @@ export default {
                       },
                     ],
 
-                    qualities: [
+                    specials: [
                       {
+                        type: "armor",
                         armor_bonus: 1,
                       },
                     ],
@@ -2908,8 +2910,9 @@ export default {
               },
             ],
 
-            qualities: [
+            specials: [
               {
+                type: "armor",
                 armor_bonus: 1,
               },
             ],
@@ -3237,20 +3240,12 @@ export default {
                   {
                     name: "elk",
 
-                    qualities: [
-                      {
-                        level: 6,
-                        speed_bonus: 5,
-                        show: false,
-                      },
-                    ],
-
                     fines: [
                       {
 
                         type: "plus",
                         keyword: "speed_plus_15",
-                        details: "if_no_heavy_armor_applied",
+                        details: "if_no_heavy_armor_on_rage",
                       },
                     ],
                   },
@@ -4864,8 +4859,9 @@ export default {
               },
             ],
 
-            qualities: [
+            specials: [
               {
+                type: "armor",
                 armor_bonus: 1,
               },
             ],
@@ -9086,6 +9082,40 @@ export default {
             name: "school_of_transmutation",
             details: "school_of_transmutation_details",
 
+            charges: [
+              {
+                level: 14,
+                name: "genius_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
             fines: [
               {
                 type: "plus",
@@ -9098,11 +9128,71 @@ export default {
               {
                 spell: spells.small_alchemy,
               },
+              {
+                level:6,
+                spell: spells.transmutation_stone,
+              },
+              //TODO - добавить заклинание
+              // {
+              //   level:10,
+              //   spell: spells.polymorph,
+              // },
+              {
+                level:14,
+                spell: spells.big_transformation,
+              },
+               //TODO - добавить заклинание
+              // {
+              //   level:14,
+              //   spell: spells.raise_dead,
+              // },
+              {
+                level:14,
+                spell: spells.return_youth,
+              },
+              {
+                level:14,
+                spell: spells.panacea,
+              },
             ],
           },
           {
             name: "school_of_divination",
             details: "school_of_divination_details",
+
+            charges: [
+              {
+                level: 14,
+                name: "genius_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
 
             fines: [
               {
@@ -9115,6 +9205,9 @@ export default {
             spells: [
               {
                 spell: spells.portent,
+              },
+              {
+                spell: spells.divination_expert,
               },
             ],
           },

@@ -5058,4 +5058,10 @@ export default {
   spell_erase_memories_details: spells.erase_memories_details,
   spell_erase_memories_expanded: spells.erase_memories_expanded,
 
+  if_no_heavy_armor_on_rage: "якшо не в важких обладунках та при Люті",
+
+  spell_transmutation_stone: spells.transmutation_stone,
+  spell_transmutation_stone_details: spells.transmutation_stone_details,
+  spell_transmutation_stone_expanded: spells.transmutation_stone_expanded,
+
 };

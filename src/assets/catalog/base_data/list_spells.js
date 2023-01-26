@@ -11918,6 +11918,224 @@ export default {
     }
   ],
 
+  transmutation_stone: [
+    {
+      name: "spell_transmutation_stone",
+      details: "spell_transmutation_stone_details",
+      expanded: "spell_transmutation_stone_expanded",
+
+      type: "ability",
+      classes: ["wizard"],
+
+      cast_time: "ritual",
+      cast_duration: 8,
+      cast_duration_units: "hour",
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Mastery",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  big_transformation: [
+    {
+      name: "spell_big_transformation",
+      details: "spell_big_transformation_details",
+      expanded: "spell_big_transformation_expanded",
+
+      type: "ability",
+      slot_type: "genius_slot",
+      classes: ["wizard"],
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["spell_transmutation_stone","touch"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  return_youth: [
+    {
+      name: "spell_return_youth",
+      details: "spell_return_youth_details",
+      expanded: "spell_return_youth_expanded",
+
+      type: "ability",
+      slot_type: "genius_slot",
+      classes: ["wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["spell_transmutation_stone","touch"],
+
+      spell_time: "always",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "younging",
+      impact_damage_type: "years",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  panacea: [
+    {
+      name: "spell_panacea",
+      details: "spell_panacea_details",
+      expanded: "spell_panacea_expanded",
+
+      type: "ability",
+      slot_type: "genius_slot",
+      classes: ["wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["spell_transmutation_stone"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  divination_expert: [
+    {
+      name: "spell_divination_expert",
+      details: "spell_divination_expert_details",
+      expanded: "spell_divination_expert_expanded",
+
+      type: "ability",
+      classes: ["wizard"],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
   // NOTE - Spells [0]
 
   // All spells / 0 ----------------------------------------------------------

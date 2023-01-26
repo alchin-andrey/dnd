@@ -5083,4 +5083,33 @@ export default {
   spell_erase_memories: spells.erase_memories,
   spell_erase_memories_details: spells.erase_memories_details,
   spell_erase_memories_expanded: spells.erase_memories_expanded,
+
+  if_no_heavy_armor_on_rage:"если не в тяжельіх доспехах и при Ярости",
+
+  spell_transmutation_stone: spells.transmutation_stone,
+  spell_transmutation_stone_details: spells.transmutation_stone_details,
+  spell_transmutation_stone_expanded: spells.transmutation_stone_expanded,
+
+  spell_big_transformation: spells.big_transformation,
+  spell_big_transformation_details: spells.big_transformation_details,
+  spell_big_transformation_expanded: spells.big_transformation_expanded,
+
+  younging: "омоложение",
+
+  spell_return_youth: spells.return_youth,
+  spell_return_youth_details: spells.return_youth_details,
+  spell_return_youth_expanded: spells.return_youth_expanded,
+
+  spell_panacea: spells.panacea,
+  spell_panacea_details: spells.panacea_details,
+  spell_panacea_expanded: spells.panacea_expanded, 
+  
+  genius_slots: "Гений",
+  genius_slot: "1× Гений",
+
+  spell_divination_expert: spells.divination_expert,
+  spell_divination_expert_details: spells.divination_expert_details,
+  spell_divination_expert_expanded: spells.divination_expert_expanded, 
+
+  
 };
