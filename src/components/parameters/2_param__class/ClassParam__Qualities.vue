@@ -52,15 +52,21 @@ export default {
 		// STORE
 		...mapState(useMYStore, ["MY"]),
 		// GETTERS
-		...mapState(useMYStore, ["Mastery", "class_Specials_Filter_Lvl"]),
+		...mapState(useMYStore, [
+      "Mastery",
+      "class_Specials_Filter_Lvl",
+      "level_Filter_Arr",
+      "сustomm_Settings_Class_Arr",
+      "filter_Custom_Class_Lvl",
+    ]),
 		...mapState(useStatsStore, ["stats_Mod"]),
     ...mapState(useEquipStore, ["armor_Equip_Element"]),
 
-		hp_Bonus() {
-			if (this.MY.ethnos.hp_bonus) {
-				let increm_1 = this.MY.ethnos.hp_bonus[0];
-				let increm_2 = this.MY.ethnos.hp_bonus[1];
-				let level = Math.ceil(this.MY.level / increm_1);
+		hp_Bonus: (store) => (obj) => {
+			if (obj.hp_bonus) {
+				let increm_1 = obj.hp_bonus[0];
+				let increm_2 = obj.hp_bonus[1];
+				let level = Math.ceil(store.MY.level / increm_1);
 				return level * increm_2;
 			} else {
 				return 0;
@@ -68,11 +74,18 @@ export default {
 		},
 
 		hp_Max() {
-			let hp_dice = this.MY.class.hp_dice;
-			let x = Math.ceil(hp_dice / 2) + 1;
-			let con_mod = this.stats_Mod("constitution");
-			let lvl = this.MY.level;
-			let hp_bonus = this.hp_Bonus;
+			const hp_dice = this.MY.class.hp_dice;
+			const x = Math.ceil(hp_dice / 2) + 1;
+			const con_mod = this.stats_Mod("constitution");
+			const lvl = this.MY.level;
+
+      let hp_bonus = 0;
+			hp_bonus += this.hp_Bonus(this.MY.ethnos);
+      this.сustomm_Settings_Class_Arr.forEach(el => {
+        el.select_list.forEach(sub_el => {
+          hp_bonus += this.hp_Bonus(sub_el);
+        });
+      });
 			return hp_dice + con_mod + (x + con_mod) * (lvl - 1) + hp_bonus;
 		},
 
@@ -95,24 +108,25 @@ export default {
 			return summ;
 		},
 
-		// qualities_Find(state) {
-		// 	return (name) => state.MY.class.qualities?.find((item) => item[name]);
-		// },
-
-		qualities_Filter(state) {
-			return (name) => state.MY.class.qualities?.filter((item) => item[name]);
+		qualities_Filter: (store) => (arr, name) => {
+      let lvl_arr = store.level_Filter_Arr(arr);
+			return lvl_arr.filter((item) => item[name]);
 		},
 
-		qualities_Numb_Class: (state) => (name) => {
-			const numb_RE = state.qualities_Numb_RE(name);
+    qualities_Bonus_Numb: (store) => (arr, name) => {
+      let numb_bonus = 0;
+			const qual_arr = store.qualities_Filter(arr, `${name}_bonus`);
+			qual_arr?.forEach((el) => numb_bonus += el[`${name}_bonus`]);
+      return numb_bonus;
+    },
 
-			let numb_bonus = 0;
-			const lvl = state.MY.level;
-			const qual_arr = state.qualities_Filter(`${name}_bonus`);
-			qual_arr?.forEach((el) =>
-				el.level <= lvl ? (numb_bonus += el[`${name}_bonus`]) : null
-			);
-			return numb_RE + numb_bonus;
+		qualities_Numb_Class: (store) => (name) => {
+			const numb_RE = store.qualities_Numb_RE(name);
+			const numb_class_bonus = store.qualities_Bonus_Numb(store.MY.class?.qualities, name);
+      
+      const custom = store.filter_Custom_Class_Lvl("qualities")
+			const numb_custom_bonus = store.qualities_Bonus_Numb(custom, name);
+			return numb_RE + numb_class_bonus + numb_custom_bonus;
 		},
 
 		armor_Name() {
