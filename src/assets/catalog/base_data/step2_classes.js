@@ -8142,8 +8142,9 @@ export default {
               },
             ],
 
-            qualities: [
+            specials: [
               {
+                type: "armor_bonus",
                 armor_bonus: 3,
               },
             ],
@@ -9162,9 +9163,9 @@ export default {
 
             charges: [
               {
-                level: 14,
-                name: "genius_slots",
-                type: "long_rest",
+                level: 10,
+                name: "third_eye_slots",
+                type: "short_rest",
                 list: [
                   [
                     "",
@@ -9178,10 +9179,10 @@ export default {
                     0,
                     0,
                     0,
-                    0,
-                    0,
-                    0,
-                    0,
+                    1,
+                    1,
+                    1,
+                    1,
                     1,
                     1,
                     1,
@@ -9208,6 +9209,9 @@ export default {
               },
               {
                 spell: spells.divination_expert,
+              },
+              {
+                spell: spells.third_eye,
               },
             ],
           },
