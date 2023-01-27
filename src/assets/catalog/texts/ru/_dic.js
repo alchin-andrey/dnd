@@ -1809,6 +1809,10 @@ export default {
   spell_bane_details: spells.bane_details,
   spell_bane_expanded: spells.bane_expanded,
 
+  spell_bane_warlock: spells.bane_warlock,
+  spell_bane_warlock_details: spells.bane_warlock_details,
+  spell_bane_warlock_expanded: spells.bane_warlock_expanded,
+
   spell_expeditious_retreat: spells.expeditious_retreat,
   spell_expeditious_retreat_details: spells.expeditious_retreat_details,
   spell_expeditious_retreat_expanded: spells.expeditious_retreat_expanded,
@@ -5119,5 +5123,68 @@ export default {
   third_eye_slots: "Третий глаз",
   third_eye_slot: "1× Третий глаз",
 
+  // ------------------------------------------------------------------
 
+  principal_altruistic: "Законно добрьій", 
+  principal_altruistic_details: 
+  "Альтруистичньій идеалист. "+
+  "Верит, что другие заслуживают, чтобы к ним хорошо относились. "+
+  "Верит, что ему ведом идеал, к которому всем, включая его, надо стремиться. ",
+
+  principal_neutral: "Законно нейтральньій", 
+  principal_neutral_details: 
+  "Идеалист. "+
+  "Придерживается принципа «ты мне — я тебе». "+
+  "Верит, что ему ведом идеал, к которому всем, включая его, надо стремиться. ",
+
+  principal_egoistic: "Законно злой", 
+  principal_neutral_egoistic: 
+  "Эгоистичньій идеалист. "+
+  "Считает, что окружающие ничем не лучше его самого. "+
+  "Верит, что ему ведом идеал, к которому всем, включая его, надо стремиться. ",
+
+  // ------------------------------------------------------------------
+  
+  fluid_altruistic: "Нейтрально добрьій",
+  fluid_altruistic_details: 
+  "Альтруист. "+
+  "Верит, что другие заслуживают, чтобы к ним хорошо относились. "+
+  "Не особо интересуется идеализацией чего бы то ни было. ",
+  
+  fluid_neutral: "Нейтральньій",
+  fluid_neutral_details: 
+  "Оппортунист. "+
+  "Придерживается принципа «ты мне — я тебе». "+
+  "Не особо интересуется идеализацией чего бы то ни было. ",
+  
+  fluid_egoistic: "Нейтрально злой",
+  fluid_neutral_egoistic: 
+  "Эгоист. "+
+  "Считает, что окружающие ничем не лучше его самого. "+
+  "Не особо интересуется идеализацией чего бы то ни было. ",
+
+  // ------------------------------------------------------------------
+  
+  unprincipal_altruistic: "Хаотично добрьій",
+  unprincipal_altruistic_details: 
+  "Альтруистичньій циник."+
+  "Верит, что другие заслуживают, чтобы к ним хорошо относились. "+
+  "Считает идеалы не более чем пустым звуком и попыткой пустить пыль в глаза. ",
+  
+  unprincipal_neutral: "Хаотично нейтральньій",
+  unprincipal_neutral_details: 
+  "Циник. "+
+  "Придерживается принципа «ты мне — я тебе». "+
+  "Считает идеалы не более чем пустым звуком и попыткой пустить пыль в глаза. ",
+  
+  unprincipal_egoistic: "Хаотично злой",
+  unprincipal_neutral_egoistic: 
+  "Эгоистичньій циник. "+
+  "Считает, что окружающие ничем не лучше его самого. "+
+  "Считает идеалы не более чем пустым звуком и попыткой пустить пыль в глаза. ",
+
+  // ------------------------------------------------------------------
+
+  beast_speech: "Животная речь",
+  
 };

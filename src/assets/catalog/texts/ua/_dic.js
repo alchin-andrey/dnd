@@ -1799,6 +1799,10 @@ export default {
   spell_bane_details: spells.bane_details,
   spell_bane_expanded: spells.bane_expanded,
 
+  spell_bane_warlock: spells.bane_warlock,
+  spell_bane_warlock_details: spells.bane_warlock_details,
+  spell_bane_warlock_expanded: spells.bane_warlock_expanded,
+
   spell_expeditious_retreat: spells.expeditious_retreat,
   spell_expeditious_retreat_details: spells.expeditious_retreat_details,
   spell_expeditious_retreat_expanded: spells.expeditious_retreat_expanded,
@@ -5092,5 +5096,7 @@ export default {
 
   third_eye_slots: "Третє око",
   third_eye_slot: "1× Третє око",
+
+  beast_speech: "Тваринна мова",
 
 };

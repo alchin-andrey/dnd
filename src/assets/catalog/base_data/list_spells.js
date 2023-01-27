@@ -12180,6 +12180,57 @@ export default {
     }
   ],
 
+  bane_warlock: [
+    {
+      //0
+    },
+    {
+      //1
+      name: "spell_bane_warlock",
+      details: "spell_bane_warlock_details",
+      expanded: "spell_bane_warlock_expanded",
+
+      type: "enchantment",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus", "somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
   // NOTE - Spells [0]
 
   // All spells / 0 ----------------------------------------------------------

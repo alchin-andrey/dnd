@@ -7473,12 +7473,12 @@ export default {
           {
             level: 2,
             name: "thief_of_five_fates",
-            details: "thief_of_five_fates_details",
+            //details: "thief_of_five_fates_details",
 
             spells: [
               {
                 level: 2,
-                spell: spells.bane,
+                spell: spells.bane_warlock,
               },
             ],
           },

@@ -8,10 +8,7 @@ export default {
     { name: "fluid_neutral", details: "fluid_neutral_details" },
     { name: "fluid_egoistic", details: "fluid_neutral_egoistic" },
 
-    {
-      name: "unprincipal_altruistic",
-      details: "unprincipal_altruistic_details",
-    },
+    { name: "unprincipal_altruistic", details: "unprincipal_altruistic_details" },
     { name: "unprincipal_neutral", details: "unprincipal_neutral_details" },
     { name: "unprincipal_egoistic", details: "unprincipal_neutral_egoistic" },
   ],
