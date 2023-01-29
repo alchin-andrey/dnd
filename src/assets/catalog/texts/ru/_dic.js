@@ -5187,4 +5187,5 @@ export default {
 
   beast_speech: "Животная речь",
   
+  
 };

@@ -168,23 +168,19 @@ export default {
 
     { name: "weakness_greed" }, // жадность
     { name: "weakness_lust" }, // похоть
-    
     { name: "weakness_passion" }, // азарт
     { name: "weakness_dependance" }, // залежність
     { name: "weakness_spender" }, // транжира
-
     { name: "weakness_unreliability" }, // ненадежность
     { name: "weakness_cowardice" }, // трусость
     { name: "weakness_submissiveness" }, // покорність
-    
-    { name: "weakness_pride" }, // гординя
-    { name: "weakness_uncompromise" }, // бескомпромісний
-    { name: "weakness_audacity" }, // дерзость
-    { name: "weakness_wrath" }, // гнів
     { name: "weakness_envy" }, // заздрість
-
-    { name: "weakness_belief" }, // доверчивость
+    { name: "weakness_wrath" }, // гнів
+    { name: "weakness_audacity" }, // дерзость
+    { name: "weakness_uncompromise" }, // бескомпромісний
+    { name: "weakness_pride" }, // гординя
     { name: "weakness_laziness" }, // лень
+    { name: "weakness_belief" }, // доверчивость
     { name: "weakness_poormemory" }, // забивчівость
     { name: "weakness_carelessness" }, // беспечность
     { name: "weakness_recklessness" }, // безрассудство

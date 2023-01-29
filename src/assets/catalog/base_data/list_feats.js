@@ -698,87 +698,87 @@ export default {
         list: [
           {
             skills: {
-              name: "athletics", num: "Mastery"
+              name: "athletics", num: "Mastery", details: "athletics_details"
             },
           },
           {
             skills: {
-              name: "acrobatics", num: "Mastery"
+              name: "acrobatics", num: "Mastery", details: "acrobatics_details"
             },
           },
           {
             skills: {
-              name: "sleight_of_hand", num: "Mastery"
+              name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details"
             },
           },
           {
             skills: {
-              name: "stealth", num: "Mastery"
+              name: "stealth", num: "Mastery", details: "stealth_details"
             },
           },
           {
             skills: {
-              name: "investigation", num: "Mastery"
+              name: "investigation", num: "Mastery", details: "investigation_details"
             },
           },
           {
             skills: {
-              name: "history", num: "Mastery"
+              name: "history", num: "Mastery", details: "history_details"
             },
           },
           {
             skills: {
-              name: "religion", num: "Mastery"
+              name: "religion", num: "Mastery", details: "religion_details"
             },
           },
           {
             skills: {
-              name: "arcana", num: "Mastery"
+              name: "arcana", num: "Mastery", details: "arcana_details"
             },
           },
           {
             skills: {
-              name: "nature", num: "Mastery"
+              name: "nature", num: "Mastery", details: "nature_details"
             },
           },
           {
             skills: {
-              name: "survival", num: "Mastery"
+              name: "survival", num: "Mastery", details: "survival_details"
             },
           },
           {
             skills: {
-              name: "perception", num: "Mastery"
+              name: "perception", num: "Mastery", details: "perception_details"
             },
           },
           {
             skills: {
-              name: "insight", num: "Mastery"
+              name: "insight", num: "Mastery", details: "insight_details"
             },
           },
           {
             skills: {
-              name: "medicine", num: "Mastery"
+              name: "medicine", num: "Mastery", details: "medicine_details"
             },
           },
           {
             skills: {
-              name: "animal_handling", num: "Mastery"
+              name: "animal_handling", num: "Mastery", details: "animal_handling_details"
             },
           },
           {
             skills: {
-              name: "performance", num: "Mastery"
+              name: "performance", num: "Mastery", details: "performance_details"
             },
           },
           {
             skills: {
-              name: "persuasion", num: "Mastery"
+              name: "persuasion", num: "Mastery", details: "persuasion_details"
             },
           },
           {
             skills: {
-              name: "deception", num: "Mastery"
+              name: "deception", num: "Mastery", details: "deception_details"
             },
           },
           {
