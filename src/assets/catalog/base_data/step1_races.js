@@ -94,10 +94,10 @@ export default {
 
             // По левелу перса
 
-            {
-              level: 1,
-              spell: spells.detect_magic_warlock,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.detect_magic_warlock,
+            // },
 
             // {
             //   level: 2,
