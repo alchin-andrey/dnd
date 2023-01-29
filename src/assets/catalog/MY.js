@@ -116,7 +116,7 @@ export default {
 	},
 
 	skills: {
-		athletics: { bonus: 0, mod: "strength" },
+    athletics: { bonus: 0, mod: "strength" },
 
 		acrobatics: { bonus: 0, mod: "dexterity" },
 

@@ -3,7 +3,7 @@
 		<!-- //NOTE - Main -->
     <section v-if="!class_page.shown.stats">
       <ClassParam__Stats hr />
-      <ClassParam__Skills hr/> <!-- //TODO - Cusstom -->
+      <ClassParam__Skills hr/>
 			<ClassParam__Qualities hr />
 			<ClassParam__Charges hr />
       <ClassParam__Proficiencies hr />
@@ -17,7 +17,7 @@
   <!-- //NOTE - Stats -->
 		<section v-else>
 			<ClassParam__Qualities hr />
-      <ClassParam__SkillsAll /> <!-- //TODO - Cusstom -->
+      <ClassParam__SkillsAll />
 		</section>
 
 	</transition>

@@ -18,6 +18,10 @@ export const useMYStore = defineStore({
 			return 1 + Math.ceil(state.MY.level / 4);
 		},
 
+    Mastery_x2() {
+			return this.Mastery * 2;
+		},
+
 		ethnos_Setting(state) {
 			return (name) =>
 				state.MY.ethnos.settings?.find((item) => item.type == name);

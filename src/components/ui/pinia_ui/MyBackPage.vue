@@ -1,7 +1,7 @@
 <template>
 	<div class="flex_custom">
 		<div class="gap_4">
-			<img src="@/assets/img/icon/back_page.svg" alt="custom_setting" />
+			<!-- <img src="@/assets/img/icon/back_page.svg" alt="custom_setting" /> -->
 			<div class="column_link int-400"><p>{{ t_Title }}</p></div>
 		</div>
 		<img src="@/assets/img/icon/arrow_down_small.svg" alt="arrow_down_small" />
