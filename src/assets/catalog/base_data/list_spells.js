@@ -5020,7 +5020,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: null,
+      cast_time: "ritual",
       cast_duration: 10,
       cast_duration_units: "min",
 
@@ -6870,9 +6870,9 @@ export default {
       type: "ability",
       classes: ["warlock"],
 
-      cast_time: null,
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
       aim_target: "self",
       aim_type: null,
