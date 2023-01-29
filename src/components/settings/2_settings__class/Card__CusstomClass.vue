@@ -10,14 +10,21 @@
 
 		<!-- //NOTE - Skilss -->
 		<my-wrapper v-if="shown_Param_Arr(customm.skills)">
-			<my-attribute
+			<!-- <my-attribute
 				v-for="skill in level_Filter_Arr(customm.skills)"
 				:key="skill"
 				:title="skill.name"
 				plus
 				:numb="Mastery"
 				:icon="MY.skills[skill.name].mod"
-			></my-attribute>
+			></my-attribute> -->
+      <AppSkills
+			v-for="skill in level_Filter_Arr(customm.skills)"
+			:key="skill"
+			:title="skill.name"
+			:numb="this[skill.num]"
+			save
+		/>
 		</my-wrapper>
 
 		<!-- //NOTE - Qualities -->
@@ -27,7 +34,6 @@
 				title="hp_bonus"
 				:numb="hp_Bonus(customm.hp_bonus[0], customm.hp_bonus[1])"
 				plus
-				icon="hp_bonus"
 			/>
 			<my-attribute
 				v-for="item in speed_Bonus_True"
@@ -172,9 +178,12 @@ export default {
 	},
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "Mastery", "level_Filter_Arr"]),
+		...mapState(useMYStore, ["MY", "Mastery", "Mastery_x2", "level_Filter_Arr"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr"]),
+
+
+
 
 		// TTT: (state) => (name) => {
 		//   const arr = Object.keys(name);

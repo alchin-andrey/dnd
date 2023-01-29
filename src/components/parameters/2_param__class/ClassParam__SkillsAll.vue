@@ -1,16 +1,14 @@
 <template>
-			<my-wrapper :hr="hr">
-				<my-attribute
-					v-for="(name, i) in skills_Keys"
-					:key="name"
-					:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
-					:title="name"
-					plus
-					:numb="skills_Old_Numb(name)"
-					:icon="MY.skills[name].mod"
-					:save="stats_Saving_Arr"
-				></my-attribute>
-			</my-wrapper>
+	<my-wrapper :hr="hr">
+		<AppSkills
+			v-for="(name, i) in skills_Keys"
+			:key="name"
+			:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
+			:title="name"
+			:numb="skills_All_Numb(name)"
+			save
+		/>
+	</my-wrapper>
 </template>
 
 <script>
@@ -28,13 +26,13 @@ export default {
 		},
 	},
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
-    ...mapState(useStatsStore, ["stats_Saving_Arr"]),
+		...mapState(useMYStore, ["MY"]),
+		...mapState(useStatsStore, ["stats_Saving_Arr"]),
 		...mapState(useSkillsStore, [
-      "skills_Keys", 
-      "skills_Old_Numb",
-      "getSkillMarg",
-    ]),
+			"skills_Keys",
+			"skills_All_Numb",
+			"getSkillMarg",
+		]),
 	},
 };
 </script>

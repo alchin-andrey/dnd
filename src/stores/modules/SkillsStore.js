@@ -83,41 +83,77 @@ export const useSkillsStore = defineStore({
 			return MYStore.COMMON_Custom_Arr_RE("skills");
 		},
 
-    skills_Old_Numb: (state) => (name) => {
+    skills_MOD_Numb: (store) => (name) => {
       const MYStore = useMYStore();
       const StatsStore = useStatsStore();
-			const state_name = MYStore.MY.skills[name].mod;
-			const mod = StatsStore.stats_Mod(state_name);
-			let race_mastery = null;
-			state.skills_All_RE.includes(name)
-				? (race_mastery = MYStore.Mastery)
+      const state_name = MYStore.MY.skills[name].mod;
+			return StatsStore.stats_Mod(state_name);
+    },
+
+    skills_RP_Numb: (store) => (name) => {
+      let race_mastery = 0;
+			store.skills_All_RE.includes(name)
+				? (race_mastery = store.Mastery)
 				: null;
-			const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
-			let skills_foo = null;
-			spec_skills?.forEach((el) => (skills_foo = state[el.foo](race_mastery)));
-			return skills_foo ? skills_foo + mod : race_mastery + mod;
+        return race_mastery;
+    },
+
+    skills_RP_MOD_Numb: (store) => (name) => {
+      const skills_RP = store.skills_RP_Numb(name);
+      const skills_MOD = store.skills_MOD_Numb(name);
+			return skills_RP + skills_MOD;
 		},
 
-    // skills_Class_Numb: (state) => (name) => {
+    // skills_RP_MOD_Numb: (store) => (name) => {
     //   const MYStore = useMYStore();
-    //   // const StatsStore = useStatsStore();
-		// 	// const state_name = MYStore.MY.skills[name].mod;
-		// 	// const mod = StatsStore.stats_Mod(state_name);
-    //   const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
-    //   const skills_name = skills_custom.filter(el => el.name == name);
-    //   let skill_numb = 0;
-    //   skills_name.forEach(el => skill_numb += this[el.num]);
-		// 	return skill_numb;
+    //   const StatsStore = useStatsStore();
+		// 	const state_name = MYStore.MY.skills[name].mod;
+		// 	const mod = StatsStore.stats_Mod(state_name);
+		// 	let race_mastery = null;
+		// 	store.skills_All_RE.includes(name)
+		// 		? (race_mastery = MYStore.Mastery)
+		// 		: null;
+		// 	const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
+		// 	let skills_foo = null;
+		// 	spec_skills?.forEach((el) => (skills_foo = state[el.foo](race_mastery)));
+		// 	return skills_foo ? skills_foo + mod : race_mastery + mod;
 		// },
 
-    // skills_Name_All() {
-    //   const MYStore = useMYStore();
-    //   const race_page = this.skills_All_RE;
-    //   const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
-    //   const skills_custom_name = skills_custom.reduce((acc, el) => acc.concat(el.name), []);
-		// 	const uniqu_name = [...new Set(skills_custom_name)];
-    //   return skills_custom;
-    // },
+    skills_Class_Numb: (store) => (name) => {
+
+      const MYStore = useMYStore();
+      const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
+
+      const skills_name = skills_custom.filter(el => el.name == name);
+
+      let skill_numb = 0;
+      skills_name.forEach(el => skill_numb += store[el.num]);
+
+			return skill_numb;
+		},
+
+    skills_All_Numb: (store) => (name) => {
+      const MYStore = useMYStore();
+      const skill_RP = store.skills_RP_Numb(name);
+      const skill_MOD = store.skills_MOD_Numb(name);
+      const skill_Class = store.skills_Class_Numb(name);
+      const skill_Mastery = skill_Class + skill_RP;
+
+      const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
+			let skills_foo = null;
+			spec_skills?.forEach((el) => (skills_foo = store[el.foo](skill_Mastery)));
+      return skills_foo ? skills_foo + skill_MOD : skill_Mastery + skill_MOD;
+    },
+
+    skills_Class_Param() {
+      const MYStore = useMYStore();
+      const skills_name_RP = this.skills_All_RE;
+      const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
+      const skills_custom_name = skills_custom.reduce((acc, el) => acc.concat(el.name), []);
+      const skills_name_ALL = skills_name_RP.concat(skills_custom_name);
+			const uniqu_name = [...new Set(skills_name_ALL)];
+      return uniqu_name;
+    },
 
     //NOTE - Skills Foo
     Mastery() {
