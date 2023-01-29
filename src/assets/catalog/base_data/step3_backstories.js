@@ -8,9 +8,9 @@ export default {
     details: "back_entertainer_details",
 
     skills: [
-        { name: "acrobatics", num: "Mastery", },
+        { name: "acrobatics", num: "Mastery", details: "acrobatics_details", },
 
-        { name: "performance", num: "Mastery", },
+        { name: "performance", num: "Mastery", details: "performance_details", },
     ],
 
     proficiencies: {
@@ -94,8 +94,8 @@ export default {
     details: "back_urchin_details",
 
     skills: [
-        { name: "sleight_of_hand", num: "Mastery", },
-        { name: "stealth", num: "Mastery", },
+        { name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details", },
+        { name: "stealth", num: "Mastery", details: "stealth_details", },
     ],
 
     proficiencies: {
@@ -134,9 +134,9 @@ export default {
     details: "back_noble_details",
 
     skills: [
-        { name: "history", num: "Mastery", },
+        { name: "history", num: "Mastery", details: "history_details", },
 
-        { name: "persuasion", num: "Mastery", },
+        { name: "persuasion", num: "Mastery", details: "persuasion_details", },
     ],
 
     proficiencies: {
@@ -221,9 +221,9 @@ export default {
     details: "back_guild_artisan_details",
 
     skills: [
-        { name: "insight", num: "Mastery", },
+        { name: "insight", num: "Mastery", details: "insight_details", },
 
-        { name: "persuasion", num: "Mastery", },
+        { name: "persuasion", num: "Mastery", details: "persuasion_details", },
     ],
 
     proficiencies: {
@@ -366,9 +366,9 @@ export default {
     details: "back_sailor_details",
 
     skills: [
-        { name: "athletics", num: "Mastery", },
+        { name: "athletics", num: "Mastery", details: "athletics_details", },
 
-        { name: "perception", num: "Mastery", },
+        { name: "perception", num: "Mastery", details: "perception_details", },
     ],
 
     proficiencies: {
@@ -406,9 +406,9 @@ export default {
     details: "back_sage_details",
 
     skills: [
-        { name: "history", num: "Mastery", },
+        { name: "history", num: "Mastery", details: "history_details", },
 
-        { name: "arcana", num: "Mastery", },
+        { name: "arcana", num: "Mastery", details: "arcana_details", },
     ],
 
     proficiencies: {
@@ -458,9 +458,9 @@ export default {
     details: "back_folk_hero_details",
 
     skills: [
-        { name: "survival", num: "Mastery", },
+        { name: "survival", num: "Mastery", details: "survival_details", },
 
-        { name: "animal_handling", num: "Mastery", },
+        { name: "animal_handling", num: "Mastery", details: "animal_handling_details", },
     ],
 
     proficiencies: {
@@ -578,9 +578,9 @@ export default {
     details: "back_hermit_details",
 
     skills: [
-        { name: "religion", num: "Mastery", },
+        { name: "religion", num: "Mastery", details: "religion_details", },
 
-        { name: "medicine", num: "Mastery", },
+        { name: "medicine", num: "Mastery", details: "medicine_details", },
     ],
 
     proficiencies: {
@@ -629,9 +629,9 @@ export default {
     details: "back_criminal_details",
 
     skills: [
-        { name: "stealth", num: "Mastery", },
+        { name: "stealth", num: "Mastery", details: "stealth_details", },
 
-        { name: "deception", num: "Mastery", },
+        { name: "deception", num: "Mastery", details: "deception_details", },
     ],
 
     proficiencies: {
@@ -687,9 +687,9 @@ export default {
     details: "back_acolyte_details",
 
     skills: [
-        { name: "religion", num: "Mastery", },
+        { name: "religion", num: "Mastery", details: "religion_details", },
 
-        { name: "insight", num: "Mastery", },
+        { name: "insight", num: "Mastery", details: "insight_details", },
     ],
 
     proficiencies: {
@@ -739,9 +739,9 @@ export default {
     details: "back_soldier_details",
 
     skills: [
-        { name: "athletics", num: "Mastery", },
+        { name: "athletics", num: "Mastery", details: "athletics_details", },
 
-        { name: "intimidation", num: "Mastery", },
+        { name: "intimidation", num: "Mastery", details: "intimidation_details", },
     ],
 
     proficiencies: {
@@ -805,9 +805,9 @@ export default {
     details: "back_outlander_details",
 
     skills: [
-        { name: "athletics", num: "Mastery", },
+        { name: "athletics", num: "Mastery", details: "athletics_details", },
 
-        { name: "survival", num: "Mastery", },
+        { name: "survival", num: "Mastery", details: "survival_details", },
     ],
 
     proficiencies: {
@@ -898,9 +898,9 @@ export default {
     details: "back_charlatan_details",
 
     skills: [
-        { name: "sleight_of_hand", num: "Mastery", },
+        { name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details", },
 
-        { name: "deception", num: "Mastery", },
+        { name: "deception", num: "Mastery", details: "deception_details", },
     ],
 
     proficiencies: {
@@ -943,9 +943,9 @@ export default {
     details: "back_spy_details",
 
     skills: [
-        { name: "stealth", num: "Mastery", },
+        { name: "stealth", num: "Mastery", details: "stealth_details", },
 
-        { name: "deception", num: "Mastery", },
+        { name: "deception", num: "Mastery", details: "deception_details", },
     ],
 
     proficiencies: {
