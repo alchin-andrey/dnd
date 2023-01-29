@@ -240,21 +240,6 @@ export default {
 			return foo ? this.t(foo) : this.t(this.Spell_Index.details);
 		},
 
-		// t_Cast_Value() {
-		// 	let string = null;
-
-    //   const cast_time = this.t(this.Spell_Index.cast_time);
-    //   const numb = this.Spell_Index.cast_duration;
-    //   const numb_units = this.t(this.Spell_Index.cast_duration_units);
-		// 	if (this.Spell_Index.cast_time === "ritual") {
-				
-		// 		string = `${cast_time} ${numb} ${numb_units}`;
-		// 	} else {
-		// 		string = this.t(this.Spell_Index.cast_time);
-		// 	}
-		// 	return string.charAt(0).toUpperCase() + string.slice(1);
-		// },
-
 		t_Cast_Value() {
 			let string = null;
 
