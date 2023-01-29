@@ -115,6 +115,8 @@ export default {
     // ПРИХИЛЬНІСТЬ
 
     { name: "attachment_tool" }, // інструмент
+    { name: "attachment_talisman" }, // талісман
+    { name: "attachment_thing" }, // памʼятна річ
     { name: "attachment_vehicle" }, // корабель або кінь або брічка
     { name: "attachment_corner" }, // свій куточок (майстерня)
     { name: "attachment_childhood" }, // дитинство
