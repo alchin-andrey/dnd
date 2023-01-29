@@ -96,7 +96,7 @@ export default {
 
             // {
             //   level: 1,
-            //   spell: spells.cleric_see_past,
+            //   spell: spells.detect_magic_warlock,
             // },
 
             // {
