@@ -1812,10 +1812,6 @@ export default {
             skills: [{ name: "intimidation", num: "Mastery", details: "intimidation_details" }],
           },
           {
-            name_set: "acrobatics",
-            skills: [{ name: "acrobatics", num: "Mastery", details: "acrobatics_details" }],
-          },
-          {
             name_set: "deception",
             skills: [{ name: "deception", num: "Mastery", details: "deception_details" }],
           },
@@ -1878,10 +1874,6 @@ export default {
           {
             name_set: "intimidation",
             skills: [{ name: "intimidation", num: "Mastery", details: "intimidation_details" }],
-          },
-          {
-            name_set: "acrobatics",
-            skills: [{ name: "acrobatics", num: "Mastery", details: "acrobatics_details" }],
           },
           {
             name_set: "deception",
