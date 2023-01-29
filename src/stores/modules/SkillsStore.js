@@ -28,6 +28,7 @@ export const useSkillsStore = defineStore({
     },
     _skills: [
       {name:"athletics", mod:"strength"},
+      
       {name:"acrobatics", mod:"dexterity"},
       {name:"sleight_of_hand", mod:"dexterity"},
       {name:"stealth", mod:"dexterity"},

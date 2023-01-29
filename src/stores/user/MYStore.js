@@ -134,7 +134,7 @@ export const useMYStore = defineStore({
 			return res_arr;
 		},
 
-		// customm_Settings_Class_Obj_2() {
+		// custom_Settings_Class_Obj_2() {
 		// 	const sett_obj = {};
 		// 	const sett_custom = this.сustomm_Settings_Class_Arr;
 		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name), []);
@@ -145,7 +145,7 @@ export const useMYStore = defineStore({
 		// 	return sett_obj;
 		// },
 
-    customm_Settings_Class_Obj() {
+    custom_Settings_Class_Obj() {
 			const sett_obj = {};
 			const sett_custom = this.сustomm_Settings_Class_Arr;
 			let position_arr = sett_custom.reduce((acc, el) => acc.concat(el.position), []);

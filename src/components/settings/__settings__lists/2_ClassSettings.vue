@@ -4,21 +4,16 @@
 		<ClassSett__BaseStats />
 	</my-selection-box>
 	<!-- customm_Settings -->
-	<section v-for="сustomm in customm_Settings_Class_Obj" :key="сustomm[0].name">
-		<my-selection-box
-			v-for="item in сustomm"
+
+
+  <my-selection-box
+			v-for="item in сustomm_Settings_Class_Arr"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
 		>
-			<Card__CusstomClass
-				v-for="list_el in item.list"
-				:key="list_el"
-				:customm="list_el"
-        @click="getCustomSelect(item, list_el)"
-        :active_boll_link="item.select_list.includes(list_el)"
-			/>
+			<ClassSett__Custom :custom="item"/>
 		</my-selection-box>
-	</section>
+
   <!-- customm_Settings -->
 </template>
 
@@ -34,34 +29,7 @@ export default {
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["class_page"]),
-		...mapState(useMYStore, [
-			"MY",
-      "customm_Settings_Class_Obj",
-		]),
-	},
-
-  methods: {
-		getCustomSelect(item, list_el) {
-    const active = item.select_list.includes(list_el);
-    
-    if (active) {
-				return null;
-			} else {
-				let arr = item.select_list.slice(0);
-				arr.splice(0, 1);
-				arr.push(list_el);  
-
-        // const arr_obj = сustomm.map(obj=> obj.id_link == item.id_link ? ({...obj, select_list: arr}) : {...obj} );
-
-        if(!this.MY._settings_class[this.MY.class.name]) {
-          this.MY._settings_class[this.MY.class.name] = {};
-        }
-        this.MY._settings_class[this.MY.class.name][item.id_link] = arr;
-
-			}
-
-      
-    }
+		...mapState(useMYStore, ["сustomm_Settings_Class_Arr"]),
 	},
 };
 </script>

@@ -161,7 +161,7 @@ export const usePagesStore = defineStore({
 				let str = setting_open.split("__");
 
         const name_sett = str[str.length - 2];
-				// const custom = MYStore.customm_Settings_Class_Obj[name_sett];
+				// const custom = MYStore.custom_Settings_Class_Obj[name_sett];
 				const custom = MYStore.сustomm_Settings_Class_Arr;
         let filter = custom?.find((el) => el.id_link == setting_open);
         const str_0 = `${str[0]}__${name_sett}__0`;

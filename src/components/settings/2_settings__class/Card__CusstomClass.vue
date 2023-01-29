@@ -2,37 +2,30 @@
 	<my-selection-card no_blur :active_boll_link="active_boll_link">
 		<!-- //NOTE - Text -->
 		<my-card-text
-			v-if="customm.name || customm.details"
-			:title="customm.name"
-			:text_html="customm.details"
+			v-if="custom.name || custom.details"
+			:title="custom.name"
+			:text_html="custom.details"
 		>
 		</my-card-text>
 
 		<!-- //NOTE - Skilss -->
-		<my-wrapper v-if="shown_Param_Arr(customm.skills)">
-			<!-- <my-attribute
-				v-for="skill in level_Filter_Arr(customm.skills)"
-				:key="skill"
-				:title="skill.name"
-				plus
-				:numb="Mastery"
-				:icon="MY.skills[skill.name].mod"
-			></my-attribute> -->
+		<my-wrapper gap_26 v-if="shown_Param_Arr(custom.skills)" 			
+    v-for="skill in level_Filter_Arr(custom.skills)"
+			:key="skill">
       <AppSkills
-			v-for="skill in level_Filter_Arr(customm.skills)"
-			:key="skill"
 			:title="skill.name"
 			:numb="this[skill.num]"
 			save
 		/>
+    <my-card-text v-if="skill.details" :text_html="skill.details"/>
 		</my-wrapper>
 
 		<!-- //NOTE - Qualities -->
 		<my-wrapper v-if="shown_Qualities">
 			<my-attribute
-				v-if="customm.hp_bonus"
+				v-if="custom.hp_bonus"
 				title="hp_bonus"
-				:numb="hp_Bonus(customm.hp_bonus[0], customm.hp_bonus[1])"
+				:numb="hp_Bonus(custom.hp_bonus[0], custom.hp_bonus[1])"
 				plus
 			/>
 			<my-attribute
@@ -52,9 +45,9 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Charges -->
-		<my-wrapper v-if="shown_Param_Arr(customm.charges)">
+		<my-wrapper v-if="shown_Param_Arr(custom.charges)">
 			<my-charges
-				v-for="item in level_Filter_Arr(customm.charges)"
+				v-for="item in level_Filter_Arr(custom.charges)"
 				:key="item"
 				:charge="item"
 			>
@@ -62,20 +55,20 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Proficiencies -->
-		<my-wrapper v-if="customm.proficiencies">
+		<my-wrapper v-if="custom.proficiencies">
 			<my-inventory
-				v-for="(val, name) in customm.proficiencies"
+				v-for="(val, name) in custom.proficiencies"
 				:key="name"
 				:title="name"
-				:item="proficiencies_Arr(customm.proficiencies, name)"
+				:item="proficiencies_Arr(custom.proficiencies, name)"
 			>
 			</my-inventory>
 		</my-wrapper>
 
 		<!-- //NOTE - Armor -->
-		<my-wrapper v-if="armors_Equip(customm.equipment).length !== 0" gap_26>
+		<my-wrapper v-if="armors_Equip(custom.equipment).length !== 0" gap_26>
 			<ArmorEquip
-				v-for="armor in armors_Equip(customm.equipment)"
+				v-for="armor in armors_Equip(custom.equipment)"
 				:key="armor"
 				:armor="armor"
 				select
@@ -83,18 +76,18 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Fines -->
-		<my-wrapper v-if="shown_Param_Arr(customm.fines)" gap_8>
+		<my-wrapper v-if="shown_Param_Arr(custom.fines)" gap_8>
 			<AppFines
-				v-for="item in level_Filter_Arr(customm.fines)"
+				v-for="item in level_Filter_Arr(custom.fines)"
 				:key="item"
 				:fines="item"
 			/>
 		</my-wrapper>
 
 		<!-- //NOTE - Spells -->
-		<my-wrapper v-if="shown_Param_Arr(customm.spells)" gap_26>
+		<my-wrapper v-if="shown_Param_Arr(custom.spells)" gap_26>
 			<my-spell-text
-				v-for="item in level_Filter_Arr(customm.spells)"
+				v-for="item in level_Filter_Arr(custom.spells)"
 				:key="item"
 				:lvl="item.level"
 				:spell="item.spell"
@@ -104,9 +97,9 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Weapon -->
-		<my-wrapper v-if="weapons_Equip(customm.equipment).length !== 0" gap_26>
+		<my-wrapper v-if="weapons_Equip(custom.equipment).length !== 0" gap_26>
 			<WeaponEquip
-				v-for="weapon in weapons_Equip(customm.equipment)"
+				v-for="weapon in weapons_Equip(custom.equipment)"
 				:key="weapon"
 				:weapon="weapon"
 				select
@@ -116,20 +109,20 @@
 		<!-- //NOTE - Invenory -->
 		<my-wrapper
 			v-if="
-				packs_Equip(customm.equipment).length !== 0 ||
-				inventory_Equip(customm.equipment).length !== 0
+				packs_Equip(custom.equipment).length !== 0 ||
+				inventory_Equip(custom.equipment).length !== 0
 			"
 		>
 			<KitEquip
-				:packs="packs_Equip(customm.equipment)"
-				:inventory="inventory_Equip(customm.equipment)"
+				:packs="packs_Equip(custom.equipment)"
+				:inventory="inventory_Equip(custom.equipment)"
 			/>
 		</my-wrapper>
 
 		<!-- //NOTE - Settings -->
-		<my-wrapper v-if="customm.settings">
+		<my-wrapper v-if="custom.settings">
 			<MyCusstomSetting
-				v-for="item in customm.settings"
+				v-for="item in custom.settings"
 				:key="item"
 				:title="item.name"
 				:select="select_Numb(item.select)"
@@ -161,15 +154,10 @@ export default {
 		ArmorEquip,
 	},
 	props: {
-		customm: {
+		custom: {
 			type: Object,
 			default: null,
 		},
-
-		// customm_: {
-		// 	type: Object,
-		// 	default: null,
-		// },
 
 		active_boll_link: {
 			type: Boolean,
@@ -182,21 +170,14 @@ export default {
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr"]),
 
-
-
-
-		// TTT: (state) => (name) => {
-		//   const arr = Object.keys(name);
-		// return arr[0]
-		// },
 		speed_Bonus_True() {
-			const qualities = this.level_Filter_Arr(this.customm.qualities);
+			const qualities = this.level_Filter_Arr(this.custom.qualities);
 			const speed_bonus_arr = qualities.filter((el) => el.speed_bonus && el.show);
 			return speed_bonus_arr;
 		},
 
 		vision_Night_Numb() {
-			const qualities = this.level_Filter_Arr(this.customm.qualities);
+			const qualities = this.level_Filter_Arr(this.custom.qualities);
 			const vision_night = qualities.filter((el) => el.vision_night);
       let numb_MAX = 0;
       vision_night.forEach(el => numb_MAX = Math.max(numb_MAX, el.vision_night))
@@ -205,7 +186,7 @@ export default {
 
     shown_Qualities() {
       return (
-        this.customm.hp_bonus ||
+        this.custom.hp_bonus ||
         this.speed_Bonus_True.length !== 0 ||
         this.vision_Night_Numb
         )
