@@ -284,7 +284,7 @@ export default {
 			const mastery = this.mastery_Bonus;
 			const type_mod = this.stats_Mod(this.bonus_Type);
 
-      const weapon_ranged_class = this.class_Specials_Filter_Lvl("weapon_ranged");
+      const weapon_ranged_class = this.class_Specials_Filter_Lvl("weapon_ranged") ?? [];
 
       const cusstom_specials = this.filter_Custom_Class_Lvl("specials");
       const weapon_ranged_custom = cusstom_specials.filter(el => el.type == "weapon_ranged");
