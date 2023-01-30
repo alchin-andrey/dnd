@@ -1517,8 +1517,9 @@ export default {
   on_not_moved: "на атаки по істотах, які ще не зробили хід у цьому раунді",
 
   double_damage: "2× пошкодження",
+  double_damage_more: "ще 2× пошкодження",
   on_sudden_attack:
-    "по істотах, захоплених зненацька, і не ходили в поточному бою",
+    "по істотах, захоплених зненацька, які не ходили в поточному бою",
   on_sudden_attack_extra:
     "по істотах, захоплених зненацька, якщо вони провалили Випробування Статури",
 
@@ -5165,5 +5166,15 @@ export default {
   // ------------------------------------------------------------------
 
   beast_speech: "Тваринна мова",
+  
+  luck: "вдача",
+  luck_slots: "вдача",
+  luck_slot: "1× Вдача",
+
+  spell_rogue_luck: spells.rogue_luck,
+  spell_rogue_luck_details: spells.rogue_luck_details,
+  spell_rogue_luck_expanded: spells.rogue_luck_expanded, 
+
+  download_charsheet: "скачати аркуш персонажа",
 
 };
