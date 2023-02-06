@@ -1525,8 +1525,9 @@ export default {
   on_not_moved: "на атаки по существам, еще не сделавшим ход в этом раунде",
 
   double_damage: "2× урон",
+  double_damage_more: "еще 2× урон",
   on_sudden_attack:
-    "по существам, захваченньім врасплох, и не ходившим в текущем бою",
+    "по существам, захваченньім врасплох, которьіе не ходившим в текущем бою",
   on_sudden_attack_extra:
     "по существам, захваченньім врасплох, если они провалили Испьітание Телосложения",
 
@@ -5192,5 +5193,13 @@ export default {
 
   beast_speech: "Животная речь",
   
+  luck: "удача",
+  luck_slots: "удача",
+  luck_slot: "1× удача",
 
+  spell_rogue_luck: spells.rogue_luck,
+  spell_rogue_luck_details: spells.rogue_luck_details,
+  spell_rogue_luck_expanded: spells.rogue_luck_expanded,
+
+  download_charsheet: "скачать лист персонажа",
 };

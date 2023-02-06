@@ -869,6 +869,21 @@ export default {
           },
         },
 
+        ulutiune: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][3]],
+            hair: [color[0][6]],
+          },
+
+          name: "ulutiune",
+          details: "ulutiune_details",
+
+          proficiencies: {
+            languages: [lang.uluik],
+          },
+        },
+
         arkayun: {
           name: "arkayun",
           details: "arkayun_details",
@@ -959,6 +974,21 @@ export default {
           },
         },
 
+        shu: {
+          color: {
+            skin: [color[2][4]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "shu",
+          details: "shu_details",
+
+          proficiencies: {
+            languages: [lang.shu],
+          },
+        },
+
         rashemi: {
           color: {
             skin: [color[2][5]],
@@ -1031,36 +1061,6 @@ export default {
 
           proficiencies: {
             languages: [lang.tuiganian],
-          },
-        },
-
-        shu: {
-          color: {
-            skin: [color[3][4]],
-            eyes: [color[0][5]],
-            hair: [color[0][6]],
-          },
-
-          name: "shu",
-          details: "shu_details",
-
-          proficiencies: {
-            languages: [lang.shu],
-          },
-        },
-
-        ulutiune: {
-          color: {
-            skin: [color[3][4]],
-            eyes: [color[8][3]],
-            hair: [color[0][6]],
-          },
-
-          name: "ulutiune",
-          details: "ulutiune_details",
-
-          proficiencies: {
-            languages: [lang.uluik],
           },
         },
 

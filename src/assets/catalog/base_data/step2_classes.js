@@ -1372,6 +1372,17 @@ export default {
       },
     ],
 
+    charges: [
+      {
+        level: 20,
+        name: "luck_slots",
+        type: "short_rest",
+        list: [
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        ],
+      },
+    ],
+
     fines: [
       {
         level: 7,
@@ -1397,12 +1408,6 @@ export default {
         keyword: "no_advantage",
         details: "on_attacks_on_you",
       },
-      {
-        level: 20,
-        type: "advantage",
-        keyword: "min_20",
-        details: "on_dice_d20",
-      },
     ],
 
     spells: [
@@ -1421,6 +1426,10 @@ export default {
       {
         level: 5,
         spell: spells.uncanny_dodge,
+      },
+      {
+        level: 20,
+        spell: spells.rogue_luck,
       },
     ],
 
@@ -1508,7 +1517,7 @@ export default {
               {
                 level: 17,
                 type: "plus",
-                keyword: "double_damage",
+                keyword: "double_damage_more",
                 details: "on_sudden_attack_extra",
               },
             ],
@@ -3028,28 +3037,28 @@ export default {
         details: "crit_hand_weapon",
       },
       {
-        level: 11,
-        type: "plus",
-        keyword: "rage_persistence",
-        details: "rage_persistence_details",
-      },
-      {
         level: 13,
         type: "plus",
         keyword: "extra_dice_damage",
         details: "crit_hand_weapon",
       },
       {
-        level: 15,
-        type: "plus",
-        keyword: "rage_sustainability",
-        details: "only_if_uncontious",
-      },
-      {
         level: 17,
         type: "plus",
         keyword: "extra_dice_damage",
         details: "crit_hand_weapon",
+      },
+      {
+        level: 11,
+        type: "plus",
+        keyword: "rage_persistence",
+        details: "rage_persistence_details",
+      },
+      {
+        level: 15,
+        type: "plus",
+        keyword: "rage_sustainability",
+        details: "only_if_uncontious",
       },
       {
         level: 18,
