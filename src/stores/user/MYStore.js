@@ -134,17 +134,6 @@ export const useMYStore = defineStore({
 			return res_arr;
 		},
 
-		// custom_Settings_Class_Obj_2() {
-		// 	const sett_obj = {};
-		// 	const sett_custom = this.сustomm_Settings_Class_Arr;
-		// 	let all_name = sett_custom.reduce((acc, el) => acc.concat(el.name), []);
-		// 	const uniqu_name = [...new Set(all_name)];
-		// 	uniqu_name.forEach((item_name) => {
-		// 		sett_obj[item_name] = sett_custom.filter((el) => el.name == item_name);
-		// 	});
-		// 	return sett_obj;
-		// },
-
     custom_Settings_Class_Obj() {
 			const sett_obj = {};
 			const sett_custom = this.сustomm_Settings_Class_Arr;
@@ -153,14 +142,6 @@ export const useMYStore = defineStore({
 			uniqu_position_arr.forEach((numb) => {
 				sett_obj[`position_${numb}`] = sett_custom.filter((el) => el.position == numb);
 			});
-
-      // sett_obj.forEach((el_pos) => {
-      //   let all_name = el_pos.reduce((acc, el) => acc.concat(el.name), []);
-			//   const uniqu_name = [...new Set(all_name)];
-      //   uniqu_name.forEach((item_name) => {
-      //     sett_obj[`position_${el_pos.position}`][item_name] = sett_custom.filter((el) => el.name == item_name);
-      //   });
-      // });
 			return sett_obj;
 		},
 	},

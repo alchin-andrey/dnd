@@ -21,6 +21,7 @@
 				title="stats"
 				:t_type="stats_Base_Settings_Two_T"
 			></my-selection>
+			<AppSelectionArr :menu="feats_Select_Arr"/>
 			<AppSelectionArr :menu="stats_Filter"/>
 			<AppSelectionArr :menu="feats_Filter"/>
 			<AppSelectionArr :menu="skills_Filter"/>
@@ -48,15 +49,17 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useFeatsStore } from "@/stores/modules/FeatsStore";
 export default {
 	name: "ClassMenu",
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),
     // GETTERS
-		...mapState(useMYStore, ["сustomm_Settings_Class_Arr"]),
+		...mapState(useMYStore, [ "сustomm_Settings_Class_Arr" ]),
 
     ...mapState(useStatsStore, [ "stats_Base_Settings_Two_T"]),
+    ...mapState(useFeatsStore, [ "feats_Select_Arr"]),
 
     filter_Setting: (stor) => (numb) => {
 			return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);

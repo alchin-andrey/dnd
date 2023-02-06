@@ -514,6 +514,12 @@ export default {
 			return lvl >= 14 ? num + 1 : num;
 		},
 
+    Num_Lvl_Plus_CHA() {
+      let lvl = this.MY.level;
+			let mod = this.stats_Mod("intelligence");
+      return lvl + mod;
+    },
+
 		Num_MOD() {
 			let num = this.Spell_Index.impact_size_num;
 			let mod = this.stats_Mod(this.MY.class.spell_attribute);

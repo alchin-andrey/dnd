@@ -2,6 +2,7 @@ import spells from "./list_spells.js";
 import weaponry from "./kinds_weapons.js";
 import armory from "./kinds_armor.js";
 import tools from "./kinds_tools.js";
+import item from "./list_items.js";
 
 export default {
   actor: {

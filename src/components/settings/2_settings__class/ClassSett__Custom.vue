@@ -5,7 +5,7 @@
 			v-for="list_el in custom.list"
 			:key="list_el"
 			:custom="list_el"
-			@click="getCustomSelect(custom, list_el)"
+			@click="getCustomSelect(list_el)"
 			:active_boll_link="custom.select_list.includes(list_el)"
 		/>
 	</section>
@@ -55,20 +55,20 @@ export default {
 	},
 
 	methods: {
-		getCustomSelect(item, list_el) {
-			const active = item.select_list.includes(list_el);
+		getCustomSelect(list_el) {
+			const active = this.custom.select_list.includes(list_el);
 
 			if (active) {
 				return null;
 			} else {
-				let arr = item.select_list.slice(0);
+				let arr = this.custom.select_list.slice(0);
 				arr.splice(0, 1);
 				arr.push(list_el);
 
 				if (!this.MY._settings_class[this.MY.class.name]) {
 					this.MY._settings_class[this.MY.class.name] = {};
 				}
-				this.MY._settings_class[this.MY.class.name][item.id_link] = arr;
+				this.MY._settings_class[this.MY.class.name][this.custom.id_link] = arr;
 			}
 		},
 	},

@@ -3,9 +3,8 @@
 	<my-selection-box :shown="class_page.shown.stats">
 		<ClassSett__BaseStats />
 	</my-selection-box>
+
 	<!-- customm_Settings -->
-
-
   <my-selection-box
 			v-for="item in сustomm_Settings_Class_Arr"
 			:key="item.id_link"
@@ -14,13 +13,21 @@
 			<ClassSett__Custom :custom="item"/>
 		</my-selection-box>
 
-  <!-- customm_Settings -->
+  <!-- feats_Settings -->
+  <my-selection-box
+			v-for="item in feats_Settings_Class"
+			:key="item"
+			:shown="class_page.shown[item.id_link]"
+		>
+    <ClassSett__Feats :id_link="item.id_link" />
+		</my-selection-box>
 </template>
 
 <script>
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useFeatsStore } from "@/stores/modules/FeatsStore";
 
 import ClassSett from "@/components/settings/2_settings__class/ClassSetting.js";
 export default {
@@ -30,7 +37,23 @@ export default {
 		// STORE
 		...mapState(usePagesStore, ["class_page"]),
 		...mapState(useMYStore, ["сustomm_Settings_Class_Arr"]),
+    ...mapState(useFeatsStore, ["feats_Settings_Class"]),
 	},
+  methods: {
+    // getFeatsLink() {
+		// 	if (!this.MY._settings_class[this.MY.class.name]) {
+		// 		this.MY._settings_class[this.MY.class.name] = {};
+		// 	}
+		// 	if (!this.MY._settings_class[this.MY.class.name][this.custom.id_link]) {
+		// 		this.MY._settings_class[this.MY.class.name][this.custom.id_link] = {
+    //       id_btn: this.btn,
+		// 			stats_2: [this.stats_2[0]],
+    //       stats_1_1: [this.stats_1_1[0], this.stats_1_1[1]],
+    //       feats: [this.feats[0]],
+    //     };
+		// 	}
+		// },
+  }
 };
 </script>
 

@@ -9,8 +9,8 @@
 							active_svg:
 								stats_Keys.includes(title) || stats_Keys.includes(icon),
 							not_save_svg:
-								save.length !== 0 && !save.includes(icon) && !numb == 0,
-							save_svg: save.includes(icon),
+								save.length !== 0 && !save.includes(title) && !numb == 0,
+							save_svg: save.includes(title),
 						}"
 						width="18"
 						height="18"
@@ -289,9 +289,11 @@ export default {
 	stroke: white;
 }
 
-.save_svg {
+/* .save_svg {
 	fill: white;
-}
+} */
+
+
 
 .not_save_svg {
 	opacity: 0.2;
@@ -318,6 +320,11 @@ export default {
 	color: rgba(255, 255, 255, 0.2);
 	fill-opacity: 0.2;
 	stroke-opacity: 0.2;
+}
+
+.save_svg {
+	fill: #05ff00;
+	stroke: #05ff00;
 }
 
 .visual {

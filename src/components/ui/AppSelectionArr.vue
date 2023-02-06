@@ -1,5 +1,5 @@
 <template>
-	<!-- <div
+	<div
 		v-for="item in menu"
 		:key="item.id_link"
 		class="column"
@@ -23,37 +23,7 @@
 				/>
 			</div>
 		</section>
-	</div> -->
-
-	<!-- <main> -->
-<!-- <section> -->
-  	<div
-  		v-for="item in menu"
-  		:key="item.id_link"
-  		class="column"
-  		@click="showSettings__Class(item.id_link)"
-  		:class="{
-  			active_link: class_page.shown[item.id_link],
-  			hover: !class_page.shown[item.id_link],
-  			'lvl-dot': shown_Level_Dot(item.level),
-  		}"
-  	>
-  		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
-  		<section class="column_link int-400 active">
-  			<div class="link-text">
-  				<span>{{ t_Type(item) }}</span>
-  			</div>
-  			<div class="icon">
-  				<svg
-  					viewBox="0 0 18 18"
-  					xmlns="http://www.w3.org/2000/svg"
-  					v-html="ui_icon[icon_Image(item)]"
-  				/>
-  			</div>
-  		</section>
-  	</div>
-<!-- </section> -->
-	<!-- </main> -->
+	</div>
 </template>
 
 <script>
@@ -67,7 +37,6 @@ export default {
 	data() {
 		return {
 			ui_icon: ui_icon,
-			name_arr: [],
 		};
 	},
 	props: {
@@ -101,46 +70,38 @@ export default {
 		},
 
 		t_Title: (store) => (item) => {
-      const first_name = store.uniqu_Name[item.name][0];
+			const first_name = store.uniqu_Name[item.name][0];
 			if (item == first_name) {
 				return store.t(item?.name);
 			}
 			return null;
 		},
 
-		// t_Title: (store) => (item) => {
-		// 	if (!arr.includes(item?.name)) {
-		// 		store.name_arr.push(item?.name);
-		// 		console.log("this.name_arr:", store.name_arr);
-		// 		return store.t(item?.name);
-		// 	} else {
-		// 		return null;
-		// 	}
-		// },
-
 		t_Type: (store) => (item) => {
-			let arr = [];
-			item.select_list.forEach((item) => {
-				if (item?.name) {
-					arr.push(store.t(item?.name));
-				} else if (item?.name_set) {
-					arr.push(store.t(item?.name_set));
-				}
-			});
-			return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+			if (
+				item.type == "feats" &&
+				(item.id_btn == "stats_2" || item.id_btn == "stats_1_1")
+			) {
+				let arr = [];
+        item.select_list.forEach((item) => {
+          const name = item.stats[0].name;
+          const num = item.stats[0].num;
+          arr.push(`+${num} ${store.t(name).slice(0, 3)}`)
+        });
+				return arr.map((n) => n.replace(n[3], n[3].toUpperCase())).join(", ");
+			} else {
+        let arr = [];
+        item.select_list.forEach((item) => {
+          if (item?.name) {
+            arr.push(store.t(item?.name));
+          } else if (item?.name_set) {
+            arr.push(store.t(item?.name_set));
+          }
+        });
+        return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+      }
 		},
 	},
-	// methods: {
-	// 	tTitle(item, arr) {
-	// 		if (!arr.includes(item?.name)) {
-	// 			this.name_arr.push(item?.name);
-	// 			console.log("this.name_arr:", this.name_arr);
-	// 			return this.t(item?.name);
-	// 		} else {
-	// 			return null;
-	// 		}
-	// 	},
-	// },
 };
 </script>
 

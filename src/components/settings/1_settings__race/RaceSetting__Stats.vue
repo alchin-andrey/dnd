@@ -1,7 +1,7 @@
 <template>
 	<section class="ethnos_attributes">
     <RaceParam__Stats />
-		<my-card-text text="stats_base_details"></my-card-text>
+		<my-card-text text="stats_base_details_race"></my-card-text>
 	</section>
   
 	<my-selection-card
