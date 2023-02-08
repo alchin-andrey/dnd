@@ -5,6 +5,7 @@ import lang from "./list_languages.js";
 import weaponry from "./kinds_weapons.js";
 import tool from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
+import backstory from "./list_backstories.js";
 // import { divine_channel_antients_2 } from "../texts/ua/spells.js";
 
 export default {
@@ -324,7 +325,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
       color: {
         skin: [
           color[2][1],
@@ -493,7 +494,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
       color: {
         skin: [
           color[1][0],
@@ -706,7 +707,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [
@@ -1114,7 +1115,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [
@@ -1279,7 +1280,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [
@@ -1617,7 +1618,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [
@@ -1848,7 +1849,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [
@@ -2067,7 +2068,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [
@@ -2477,7 +2478,7 @@ export default {
       },
 
       gender: gender,
-//backstory: backstory,
+      backstory: backstory,
 
       color: {
         skin: [],
