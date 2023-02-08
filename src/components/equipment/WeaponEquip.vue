@@ -335,9 +335,21 @@ export default {
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
+		Dic_14_Lvl() {
+			const lvl_arr = [1];
+			const kof_arr = [4];
+			return this.kof_Foo(lvl_arr, kof_arr);
+		},
+
 		Dic_14_56_118_1710_Lvl_or_Default: (state) => (dice_hand) => {
 			// const dice_hand = this.weapon[0].damage_1_hand_dice;
 			const foo_dice = state.Dic_14_56_118_1710_Lvl;
+			return foo_dice > dice_hand ? foo_dice : dice_hand;
+		},
+
+		Dic_14_Lvl_or_Default: (state) => (dice_hand) => {
+			// const dice_hand = this.weapon[0].damage_1_hand_dice;
+			const foo_dice = state.Dic_14_Lvl;
 			return foo_dice > dice_hand ? foo_dice : dice_hand;
 		},
 

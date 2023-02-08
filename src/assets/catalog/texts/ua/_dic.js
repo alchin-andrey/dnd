@@ -706,7 +706,7 @@ export default {
   //Ключевьіе слова
   advantage: "перевага",
   no_disadvantage: "немає перешкоди",
-  rethrow: "перекид куба",
+  rethrow: "перекид",
   resistance: "стійкість",
   immunity: "імунітет",
   telepathy: "телепатія",
@@ -2202,7 +2202,7 @@ export default {
   on_armor_if_armor: "+1 на Броню при одягнених обладунках (застосовано)",
 
   if_1_or_2_on_two_handed_weapon:
-    "пошкодження дворучної зброї, якщо випало 1 або 2",
+    "кубів пошкодження дворучної зброї, якщо випало 1 або 2",
 
   on_sick: "до хвороб",
 
@@ -2442,10 +2442,7 @@ export default {
   feat_inspiring_leader_details:
     "Ви можете додати наснаги супутникам, зміцнивши їхню рішучість.",
 
-  savage_attacker: "Дикий атакуючий",
-  savage_attacker_details: "Ваші атаки завдають більше пошкодження.",
-
-  of_damage_dice_once_per_move: "пошкодження від атаки один раз на хід",
+  of_damage_dice_once_per_move: "пошкодження від атаки ближньою зброєю один раз на хід",
 
   weapons_improvised: weapons.improvised,
   weapons_improvised_details: weapons.improvised_details,
@@ -5177,4 +5174,23 @@ export default {
 
   download_charsheet: "скачати аркуш персонажа",
 
+  on_size_jupms:"для стрибків у довжину і висоту",
+
+  feat_savage_attacker:"Дикий нападник",
+  feat_savage_attacker_details:"Ви завдаєте більше пошкодження ближньою зброєю.",
+
+  feat_brawler:"Забіяка",
+  feat_brawler_details:"Ви звикли до мордобою з використанням підручних предметів.",
+
+  no_fee:"Немає штрафу",
+
+  damage_increase: "Збільшення пошкодження",
+  of_unarmed_strike: "від беззбройного удару (застосовано)",
+
+  perception_passive: "пасивна уважність",
+  wisdom_passive: "пасивна мудрість",
+  investigation_passive: "пасивне розслідування",
+
+  feat_resilient: "Стійкий",
+  feat_resilient_details: "Ви сфокусувались на одній з ваших здібностей. Її базове значення збільшується на 1, і ви отримуєте +майстерність до Випробування цієї здібності.",
 };

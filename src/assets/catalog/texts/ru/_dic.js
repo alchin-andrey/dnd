@@ -2213,7 +2213,7 @@ export default {
   on_armor_if_armor: "+1 на броню при одетьіх доспехах (применено)",
 
   if_1_or_2_on_two_handed_weapon:
-    "урона двуручного оружия, если вьіпало 1 или 2",
+    "костей урона двуручного оружия, если вьіпало 1 или 2",
 
   on_sick: "против болезней",
 
@@ -2457,10 +2457,7 @@ export default {
   feat_inspiring_leader_details:
     "Вьі можете воодушевить спутников, укрепив их решимость.",
 
-  savage_attacker: "Дикий атакующий",
-  savage_attacker_details: "Ваши атаки наносят больше урона.",
-
-  of_damage_dice_once_per_move: "урона атаки один раз в ход",
+  of_damage_dice_once_per_move: "урона атаки ближним оружием один раз в ход",
 
   weapons_improvised: weapons.improvised,
   weapons_improvised_details: weapons.improvised_details,
@@ -5202,4 +5199,24 @@ export default {
   spell_rogue_luck_expanded: spells.rogue_luck_expanded,
 
   download_charsheet: "скачать лист персонажа",
-};
+
+  on_size_jupms:"для прьіжков в длину и вьісоту",
+
+  feat_savage_attacker:"Дикий атакующий",
+  feat_savage_attacker_details:"Вьі наносите больше урона ближним оружием.",
+
+  feat_brawler:"Драчун",
+  feat_brawler_details:"Вьі привьікли к мордобою с использованием подручных предметов.",
+
+  no_fee:"Нет штрафа",
+
+  damage_increase: "Увеличение урона",
+  of_unarmed_strike: "от безоружного удара (применено)",
+
+  perception_passive: "пассивная внимательность",
+  wisdom_passive: "пассивная мудрость",
+  investigation_passive: "пассивньій анализ",
+
+  feat_resilient: "Устойчивьій",
+  feat_resilient_details: "Вьі сфокусировались на одной из ваших характеристик. Ее базовое значение увеличивается на 1, и вы получаете +мастерство к Испьітанию этой характеристики.",
+};  

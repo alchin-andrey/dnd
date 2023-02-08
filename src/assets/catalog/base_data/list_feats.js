@@ -11,7 +11,8 @@ export default {
 
     stats: [
       {
-        charisma: 1,
+        name: "charisma",
+        num: 1,
       },
     ],
 
@@ -35,8 +36,12 @@ export default {
 
     stats: [
       {
-        strength: 1,
-        dexterity: 1,
+        name: "strength",
+        num: 1,
+      },
+      {
+        name: "dexterity",
+        num: 1,
       },
     ],
 
@@ -63,9 +68,10 @@ export default {
     name: "feat_alert",
     details: "feat_alert_details",
 
-    stats: [
+    qualities: [
       {
-        initiative_bonus: 5,
+        name: "initiative",
+        num: 5,
       },
     ],
 
@@ -144,7 +150,7 @@ export default {
 
     charges: [
       {
-        name: "luck_slot",
+        name: "luck_slots",
         list: [
           ["d20", 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
         ],
@@ -181,10 +187,23 @@ export default {
 
     stats: [
       {
-        intelligence: 1,
-        wisdom: 1,
-        perception_passive: 5,
-        investigation_passive: 5,
+        name: "intelligence",
+        num: 1,
+      },
+      {
+        name: "wisdom",
+        num: 1,
+      },
+    ],
+
+    qualities: [
+      {
+        name: "perception_passive",
+        num: 5,
+      },
+      {
+        name: "investigation_passive",
+        num: 5,
       },
     ],
 
@@ -211,30 +230,78 @@ export default {
       },
     ],
 
+    //TODO - fix list
     settings: [
       {
         level: 1,
-        type: "spells",
+        type: "custom",
         name: "maneuvers",
         select: 2,
         list: [
-          spells.evasive_footwork,
-          spells.lunning_attack,
-          spells.maneuvering_attack,
-          spells.maneuver_menacing_attack,
-          spells.maneuver_feinting_attack,
-          spells.maneuver_disarming_attack,
-          spells.maneuver_disarming_attack,
-          spells.maneuver_trip_attack,
-          spells.maneuver_riposte,
-          spells.maneuver_distracting_strike,
-          spells.maneuver_parry,
-          spells.maneuver_goading_attack,
-          spells.maneuver_rally,
-          spells.maneuver_pushing_attack,
-          spells.maneuver_precision_attack,
-          spells.maneuver_commanders_strike,
-          spells.maneuver_sweeping_attack,
+          {
+            name_set: spells.maneuver_evasive_footwork[0].name,
+            spells: [{ spell: spells.maneuver_evasive_footwork }],
+          },
+          {
+            name_set: spells.maneuver_lunging_attack[0].name,
+            spells: [{ spell: spells.maneuver_lunging_attack }],
+          },
+          {
+            name_set: spells.maneuver_maneuvering_attack[0].name,
+            spells: [{ spell: spells.maneuver_maneuvering_attack }],
+          },
+          {
+            name_set: spells.maneuver_menacing_attack[0].name,
+            spells: [{ spell: spells.maneuver_menacing_attack }],
+          },
+          {
+            name_set: spells.maneuver_feinting_attack[0].name,
+            spells: [{ spell: spells.maneuver_feinting_attack }],
+          },
+          {
+            name_set: spells.maneuver_disarming_attack[0].name,
+            spells: [{ spell: spells.maneuver_disarming_attack }],
+          },
+          {
+            name_set: spells.maneuver_trip_attack[0].name,
+            spells: [{ spell: spells.maneuver_trip_attack }],
+          },
+          {
+            name_set: spells.maneuver_riposte[0].name,
+            spells: [{ spell: spells.maneuver_riposte }],
+          },
+          {
+            name_set: spells.maneuver_distracting_strike[0].name,
+            spells: [{ spell: spells.maneuver_distracting_strike }],
+          },
+          {
+            name_set: spells.maneuver_parry[0].name,
+            spells: [{ spell: spells.maneuver_parry }],
+          },
+          {
+            name_set: spells.maneuver_goading_attack[0].name,
+            spells: [{ spell: spells.maneuver_goading_attack }],
+          },
+          {
+            name_set: spells.maneuver_rally[0].name,
+            spells: [{ spell: spells.maneuver_rally }],
+          },
+          {
+            name_set: spells.maneuver_pushing_attack[0].name,
+            spells: [{ spell: spells.maneuver_pushing_attack }],
+          },
+          {
+            name_set: spells.maneuver_precision_attack[0].name,
+            spells: [{ spell: spells.maneuver_precision_attack }],
+          },
+          {
+            name_set: spells.maneuver_commanders_strike[0].name,
+            spells: [{ spell: spells.maneuver_commanders_strike }],
+          },
+          {
+            name_set: spells.maneuver_sweeping_attack[0].name,
+            spells: [{ spell: spells.maneuver_sweeping_attack }],
+          },
         ],
       },
     ],
@@ -271,19 +338,36 @@ export default {
     name: "feat_brawler",
     details: "feat_brawler_details",
 
-    stats: [
+    fines: [
       {
-        strength: 1,
-        constitution: 1,
-        weapon_unarmed_strike: "1d4",
+        type: "plus",
+        keyword: "damage_increase",
+        details: "of_unarmed_strike",
       },
     ],
 
-    proficiencies: 
+    stats: [
       {
-        weaponry: [weaponry.improvised],
+        name: "strength",
+        num: 1,
       },
-    
+      {
+        name: "constitution",
+        num: 1,
+      },
+    ],
+
+    specials: [
+      {
+        type: "weapon",
+        dice_foo: "Dic_14_Lvl_or_Default",
+        //weapon_unarmed_strike: "1d4",
+      },
+    ],
+
+    proficiencies: {
+      weapons: [weaponry.improvised],
+    },
 
     spells: [
       {
@@ -298,16 +382,18 @@ export default {
 
     stats: [
       {
-        strength: 1,
-        dexterity: 1,
+        name: "strength",
+        num: 1,
+      },
+      {
+        name: "dexterity",
+        num: 1,
       },
     ],
 
-    proficiencies: 
-      {
-        armory: [armory.light],
-      },
-    
+    proficiencies: {
+      armor: [armory.light],
+    },
   },
 
   moderately_armored: {
@@ -316,16 +402,18 @@ export default {
 
     stats: [
       {
-        strength: 1,
-        dexterity: 1,
+        name: "strength",
+        num: 1,
+      },
+      {
+        name: "dexterity",
+        num: 1,
       },
     ],
 
-    proficiencies: 
-      {
-        armory: [armory.medium, armory.shields],
-      },
-    
+    proficiencies: {
+      armor: [armory.medium, armory.shields],
+    },
   },
 
   heavily_armored: {
@@ -334,15 +422,14 @@ export default {
 
     stats: [
       {
-        strength: 1,
+        name: "strength",
+        num: 1,
       },
     ],
 
-    proficiencies: 
-      {
-        armory: [armory.heavy],
-      },
-    
+    proficiencies: {
+      armor: [armory.heavy],
+    },
   },
 
   dual_wielder: {
@@ -400,72 +487,7 @@ export default {
     name: "feat_tough",
     details: "feat_tough_details",
 
-    stats: [
-      {
-        level: 4,
-        hp_bonus: 8,
-      },
-      {
-        level: 5,
-        hp_bonus: 2,
-      },
-      {
-        level: 6,
-        hp_bonus: 2,
-      },
-      {
-        level: 7,
-        hp_bonus: 2,
-      },
-      {
-        level: 8,
-        hp_bonus: 2,
-      },
-      {
-        level: 9,
-        hp_bonus: 2,
-      },
-      {
-        level: 10,
-        hp_bonus: 2,
-      },
-      {
-        level: 11,
-        hp_bonus: 2,
-      },
-      {
-        level: 12,
-        hp_bonus: 2,
-      },
-      {
-        level: 13,
-        hp_bonus: 2,
-      },
-      {
-        level: 14,
-        hp_bonus: 2,
-      },
-      {
-        level: 15,
-        hp_bonus: 2,
-      },
-      {
-        level: 16,
-        hp_bonus: 2,
-      },
-      {
-        level: 17,
-        hp_bonus: 2,
-      },
-      {
-        level: 18,
-        hp_bonus: 2,
-      },
-      {
-        level: 19,
-        hp_bonus: 2,
-      },
-    ],
+    hp_bonus: [1, 2],
   },
 
   healer: {
@@ -526,15 +548,151 @@ export default {
 
     stats: [
       {
-        strength: 1,
-        dexterity: 1,
+        name: "strength",
+        num: 1,
       },
     ],
 
     settings: [
       {
-        type: "proficiency_weapon",
+        type: "custom",
+        name: "proficiencies",
+        position: 9,
         select: 4,
+        list: [
+          {
+            name_set: weaponry.battle_axes.name,
+            proficiencies: {
+              weapons: [weaponry.battle_axes],
+            },
+          },
+          {
+            name_set: weaponry.battle_hammers.name,
+            proficiencies: {
+              weapons: [weaponry.battle_hammers],
+            },
+          },
+          {
+            name_set: weaponry.clubs.name,
+            proficiencies: {
+              weapons: [weaponry.clubs],
+            },
+          },
+          {
+            name_set: weaponry.clubs.name,
+            proficiencies: {
+              weapons: [weaponry.clubs],
+            },
+          },
+          {
+            name_set: weaponry.daggers.name,
+            proficiencies: {
+              weapons: [weaponry.daggers],
+            },
+          },
+          {
+            name_set: weaponry.darts.name,
+            proficiencies: {
+              weapons: [weaponry.darts],
+            },
+          },
+          {
+            name_set: weaponry.hand_arbalets.name,
+            proficiencies: {
+              weapons: [weaponry.hand_arbalets],
+            },
+          },
+          {
+            name_set: weaponry.hand_axes.name,
+            proficiencies: {
+              weapons: [weaponry.hand_axes],
+            },
+          },
+          {
+            name_set: weaponry.javelins.name,
+            proficiencies: {
+              weapons: [weaponry.javelins],
+            },
+          },
+          {
+            name_set: weaponry.light_arbalets.name,
+            proficiencies: {
+              weapons: [weaponry.light_arbalets],
+            },
+          },
+          {
+            name_set: weaponry.light_hammers.name,
+            proficiencies: {
+              weapons: [weaponry.light_hammers],
+            },
+          },
+          {
+            name_set: weaponry.long_bows.name,
+            proficiencies: {
+              weapons: [weaponry.long_bows],
+            },
+          },
+          {
+            name_set: weaponry.long_swords.name,
+            proficiencies: {
+              weapons: [weaponry.long_swords],
+            },
+          },
+          {
+            name_set: weaponry.maces.name,
+            proficiencies: {
+              weapons: [weaponry.maces],
+            },
+          },
+          {
+            name_set: weaponry.quarterstaffs.name,
+            proficiencies: {
+              weapons: [weaponry.quarterstaffs],
+            },
+          },
+          {
+            name_set: weaponry.rapires.name,
+            proficiencies: {
+              weapons: [weaponry.rapires],
+            },
+          },
+          {
+            name_set: weaponry.scimitars.name,
+            proficiencies: {
+              weapons: [weaponry.scimitars],
+            },
+          },
+          {
+            name_set: weaponry.short_bows.name,
+            proficiencies: {
+              weapons: [weaponry.short_bows],
+            },
+          },
+          {
+            name_set: weaponry.short_swords.name,
+            proficiencies: {
+              weapons: [weaponry.short_swords],
+            },
+          },
+          {
+            name_set: weaponry.sickles.name,
+            proficiencies: {
+              weapons: [weaponry.sickles],
+            },
+          },
+          {
+            name_set: weaponry.slings.name,
+            proficiencies: {
+              weapons: [weaponry.slings],
+            },
+          },
+          {
+            name_set: weaponry.spears.name,
+            proficiencies: {
+              weapons: [weaponry.spears],
+            },
+          },
+        ],
       },
     ],
   },
@@ -569,7 +727,8 @@ export default {
 
     stats: [
       {
-        strength: 1,
+        name: "strength",
+        num: 1,
       },
     ],
 
@@ -628,7 +787,11 @@ export default {
       {
         type: "spells",
         select: 1,
-        filter: "mana_0",
+        filter: "aim_need",
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard", "wizard", "druid", "cleric", "warlock", "sorcerer"],
+        //Вы узнаёте один заговор, требующий броска атаки
       },
     ],
   },
@@ -695,307 +858,284 @@ export default {
       {
         type: "custom",
         name: "proficiencies",
+        position: 8,
         select: 3,
         list: [
           {
-            skills: {
-              name: "athletics", num: "Mastery", details: "athletics_details"
+            name_set: "athletics",
+            skills: [ { name: "athletics", num: "Mastery", details: "athletics_details", }, ],
+          },
+          {
+            name_set: "acrobatics",
+            skills: [ { name: "acrobatics", num: "Mastery", details: "acrobatics_details", }, ],
+          },
+          {
+            name_set: "sleight_of_hand",
+            skills: [ { name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details", }, ],
+          },
+          {
+            name_set: "stealth",
+            skills: [ { name: "stealth", num: "Mastery", details: "stealth_details" }, ],
+          },
+          {
+            name_set: "investigation",
+            skills: [ { name: "investigation", num: "Mastery", details: "investigation_details", }, ],
+          },
+          {
+            name_set: "history",
+            skills: [ { name: "history", num: "Mastery", details: "history_details" }, ],
+          },
+          {
+            name_set: "religion",
+            skills: [ { name: "religion", num: "Mastery", details: "religion_details" }, ],
+          },
+          {
+            name_set: "arcana",
+            skills: [ { name: "arcana", num: "Mastery", details: "arcana_details" }, ],
+          },
+          {
+            name_set: "nature",
+            skills: [ { name: "nature", num: "Mastery", details: "nature_details" }, ],
+          },
+          {
+            name_set: "survival",
+            skills: [ { name: "survival", num: "Mastery", details: "survival_details" }, ],
+          },
+          {
+            name_set: "perception",
+            skills: [ { name: "perception", num: "Mastery", details: "perception_details", }, ],
+          },
+          {
+            name_set: "insight",
+            skills: [ { name: "insight", num: "Mastery", details: "insight_details" }, ],
+          },
+          {
+            name_set: "medicine",
+            skills: [ { name: "medicine", num: "Mastery", details: "medicine_details" }, ],
+          },
+          {
+            name_set: "animal_handling",
+            skills: [ { name: "animal_handling", num: "Mastery", details: "animal_handling_details", }, ],
+          },
+          {
+            name_set: "performance",
+            skills: [ { name: "performance", num: "Mastery", details: "performance_details", }, ],
+          },
+          {
+            name_set: "persuasion",
+            skills: [ { name: "persuasion", num: "Mastery", details: "persuasion_details", }, ],
+          },
+          {
+            name_set: "deception",
+            skills: [ { name: "deception", num: "Mastery", details: "deception_details", }, ],
+          },
+          {
+            name_set: "intimidation",
+            skills: [ { name: "intimidation", num: "Mastery", details: "intimidation_details", }, ],
+          },
+          {
+            name_set: tools.alchemists_supplies.name,
+            proficiencies: {
+              tools: [tools.alchemists_supplies],
             },
           },
           {
-            skills: {
-              name: "acrobatics", num: "Mastery", details: "acrobatics_details"
+            name_set: tools.blacksmith.name,
+            proficiencies: {
+              tools: [tools.blacksmith],
             },
           },
           {
-            skills: {
-              name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details"
+            name_set: tools.brewer.name,
+            proficiencies: {
+              tools: [tools.brewer],
             },
           },
           {
-            skills: {
-              name: "stealth", num: "Mastery", details: "stealth_details"
+            name_set: tools.calligraphers_supplies.name,
+            proficiencies: {
+              tools: [tools.calligraphers_supplies],
             },
           },
           {
-            skills: {
-              name: "investigation", num: "Mastery", details: "investigation_details"
+            name_set: tools.carpenters_tools.name,
+            proficiencies: {
+              tools: [tools.carpenters_tools],
             },
           },
           {
-            skills: {
-              name: "history", num: "Mastery", details: "history_details"
+            name_set: tools.cartographers_tools.name,
+            proficiencies: {
+              tools: [tools.cartographers_tools],
             },
           },
           {
-            skills: {
-              name: "religion", num: "Mastery", details: "religion_details"
+            name_set: tools.cobblers_tools.name,
+            proficiencies: {
+              tools: [tools.cobblers_tools],
             },
           },
           {
-            skills: {
-              name: "arcana", num: "Mastery", details: "arcana_details"
+            name_set: tools.cooks_tools.name,
+            proficiencies: {
+              tools: [tools.cooks_tools],
             },
           },
           {
-            skills: {
-              name: "nature", num: "Mastery", details: "nature_details"
+            name_set: tools.disguise.name,
+            proficiencies: {
+              tools: [tools.disguise],
             },
           },
           {
-            skills: {
-              name: "survival", num: "Mastery", details: "survival_details"
+            name_set: tools.glassblowers_tools.name,
+            proficiencies: {
+              tools: [tools.glassblowers_tools],
             },
           },
           {
-            skills: {
-              name: "perception", num: "Mastery", details: "perception_details"
+            name_set: tools.jewelers_tools.name,
+            proficiencies: {
+              tools: [tools.jewelers_tools],
             },
           },
           {
-            skills: {
-              name: "insight", num: "Mastery", details: "insight_details"
+            name_set: tools.leatherworkers_tools.name,
+            proficiencies: {
+              tools: [tools.leatherworkers_tools],
             },
           },
           {
-            skills: {
-              name: "medicine", num: "Mastery", details: "medicine_details"
+            name_set: tools.mason.name,
+            proficiencies: {
+              tools: [tools.mason],
             },
           },
           {
-            skills: {
-              name: "animal_handling", num: "Mastery", details: "animal_handling_details"
+            name_set: tools.navigators_tools.name,
+            proficiencies: {
+              tools: [tools.navigators_tools],
             },
           },
           {
-            skills: {
-              name: "performance", num: "Mastery", details: "performance_details"
+            name_set: tools.painters_supplies.name,
+            proficiencies: {
+              tools: [tools.painters_supplies],
             },
           },
           {
-            skills: {
-              name: "persuasion", num: "Mastery", details: "persuasion_details"
+            name_set: tools.poisoner.name,
+            proficiencies: {
+              tools: [tools.poisoner],
             },
           },
           {
-            skills: {
-              name: "deception", num: "Mastery", details: "deception_details"
+            name_set: tools.potters_tools.name,
+            proficiencies: {
+              tools: [tools.potters_tools],
             },
           },
           {
-            skills: {
-              intimidation: "mastery",
+            name_set: tools.tinkers_tools.name,
+            proficiencies: {
+              tools: [tools.tinkers_tools],
             },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.alchemists_supplies],
-              },
-            
+            name_set: tools.weavers_tools.name,
+            proficiencies: {
+              tools: [tools.weavers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.blacksmith],
-              },
-            
+            name_set: tools.woodcarvers_tools.name,
+            proficiencies: {
+              tools: [tools.woodcarvers_tools],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.brewer],
-              },
-            
+            name_set: tools.poisoner.name,
+            proficiencies: {
+              tools: [tools.poisoner],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.calligraphers_supplies],
-              },
-            
+            name_set: tools.thief.name,
+            proficiencies: {
+              tools: [tools.thief],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.carpenters_tools],
-              },
-            
+            name_set: tools.transport_ground.name,
+            proficiencies: {
+              tools: [tools.transport_ground],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.cartographers_tools],
-              },
-            
+            name_set: tools.transport_water.name,
+            proficiencies: {
+              tools: [tools.transport_water],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.cobblers_tools],
-              },
-            
+            name_set: tools.music_bagpipes.name,
+            proficiencies: {
+              tools: [tools.music_bagpipes],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.cooks_tools],
-              },
-            
+            name_set: tools.music_drums.name,
+            proficiencies: {
+              tools: [tools.music_drums],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.disguise],
-              },
-            
+            name_set: tools.music_dulcimer.name,
+            proficiencies: {
+              tools: [tools.music_dulcimer],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.glassblowers_tools],
-              },
-            
+            name_set: tools.music_flute.name,
+            proficiencies: {
+              tools: [tools.music_flute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.jewelers_tools],
-              },
-            
+            name_set: tools.music_horn.name,
+            proficiencies: {
+              tools: [tools.music_horn],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.leatherworkers_tools],
-              },
-            
+            name_set: tools.music_lute.name,
+            proficiencies: {
+              tools: [tools.music_lute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.mason],
-              },
-            
+            name_set: tools.music_lyre.name,
+            proficiencies: {
+              tools: [tools.music_lyre],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.navigators_tools],
-              },
-            
+            name_set: tools.music_pan_flute.name,
+            proficiencies: {
+              tools: [tools.music_pan_flute],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.painters_supplies],
-              },
-            
+            name_set: tools.music_shawm.name,
+            proficiencies: {
+              tools: [tools.music_shawm],
+            },
           },
           {
-            proficiencies: 
-              {
-                tools: [tools.poisoner],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.potters_tools],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.tinkers_tools],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.weavers_tools],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.woodcarvers_tools],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_bagpipes],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_drums],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_dulcimer],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_flute],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_horn],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_lute],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_lyre],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_pan_flute],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_shawm],
-              },
-            
-          },
-          {
-            proficiencies: 
-              {
-                tools: [tools.music_viol],
-              },
-            
+            name_set: tools.music_viol.name,
+            proficiencies: {
+              tools: [tools.music_viol],
+            },
           },
         ],
       },
@@ -1008,7 +1148,8 @@ export default {
 
     stats: [
       {
-        intelligence: 1,
+        name: "intelligence",
+        num: 1,
       },
     ],
 
@@ -1035,9 +1176,11 @@ export default {
     name: "feat_mobile",
     details: "feat_mobile_details",
 
-    stats: [
+    qualities: [
       {
-        speed_bonus: 10,
+        name: "speed_bonus",
+        num: 10,
+        show: true,
       },
     ],
 
@@ -1588,7 +1731,8 @@ export default {
 
     stats: [
       {
-        consitution: 1,
+        name: "consitution",
+        num: 1,
       },
     ],
 
@@ -1604,7 +1748,7 @@ export default {
   sentinel: {
     name: "feat_sentinel",
     details: "feat_sentinel_details",
-    
+
     fines: [
       {
         type: "plus",
@@ -1627,7 +1771,7 @@ export default {
   mage_slayer: {
     name: "feat_mage_slayer",
     details: "feat_mage_slayer_details",
-    
+
     fines: [
       {
         type: "advantage",
@@ -1647,74 +1791,53 @@ export default {
     ],
   },
 
-  resilient_strength: {
-    name: "feat_resilient_strength",
-    details: "strength_details",
+  resilient: {
+    name: "feat_resilient",
+    details: "feat_resilient_details",
 
-    stats: [
+    settings: [
       {
-        strength: 1,
-        strength_saving: 1,
-      },
-    ],
-  },
-
-  resilient_dexterity: {
-    name: "feat_resilient_dexterity",
-    details: "dexterity_details",
-
-    stats: [
-      {
-        dexterity: 1,
-        dexterity_saving: 1,
-      },
-    ],
-  },
-
-  resilient_constitution: {
-    name: "feat_resilient_constitution",
-    details: "constitution_details",
-
-    stats: [
-      {
-        constitution: 1,
-        constitution_saving: 1,
-      },
-    ],
-  },
-
-  resilient_intelligence: {
-    name: "feat_resilient_intelligence",
-    details: "intelligence_details",
-
-    stats: [
-      {
-        intelligence: 1,
-        intelligence_saving: 1,
-      },
-    ],
-  },
-
-  resilient_wisdom: {
-    name: "feat_resilient_wisdom",
-    details: "wisdom_details",
-
-    stats: [
-      {
-        wisdom: 1,
-        wisdom_saving: 1,
-      },
-    ],
-  },
-
-  resilient_charisma: {
-    name: "feat_resilient_charisma",
-    details: "charisma_details",
-
-    stats: [
-      {
-        charisma: 1,
-        charisma_saving: 1,
+        type: "custom",
+        name: "stats",
+        select: 1,
+        list: [
+          {
+            name_set: "strength",
+            details: "strength_details",
+            saving: ["strength"],
+            stats: [{ name: "strength", num: 1 }],
+          },
+          {
+            name_set: "dexterity",
+            details: "dexterity_details",
+            saving: ["dexterity"],
+            stats: [{ name: "dexterity", num: 1 }],
+          },
+          {
+            name_set: "constitution",
+            details: "constitution_details",
+            saving: ["constitution"],
+            stats: [{ name: "constitution", num: 1 }],
+          },
+          {
+            name_set: "intelligence",
+            details: "intelligence_details",
+            saving: ["intelligence"],
+            stats: [{ name: "intelligence", num: 1 }],
+          },
+          {
+            name_set: "wisdom",
+            details: "wisdom_details",
+            saving: ["wisdom"],
+            stats: [{ name: "wisdom", num: 1 }],
+          },
+          {
+            name_set: "charisma",
+            details: "charisma_details",
+            saving: ["charisma"],
+            stats: [{ name: "charisma", num: 1 }],
+          },
+        ],
       },
     ],
   },
@@ -1736,11 +1859,11 @@ export default {
       },
     ],
 
-    spells:[
-        {
-            spell: spells.crossbow_shot,
-        }
-    ]
+    spells: [
+      {
+        spell: spells.crossbow_shot,
+      },
+    ],
   },
 
   linguist: {
@@ -1749,24 +1872,23 @@ export default {
 
     stats: [
       {
-        intelligence: 1,
+        name: "intelligence",
+        num: 1,
       },
     ],
 
     spells: [
-        {
-            spell: spells.create_crypt,
-        }
+      {
+        spell: spells.create_crypt,
+      },
     ],
 
     settings: [
-        {
-          type: "languages",
-          select: 3,
-          filter: "no_used",
-        }
-      ],
-
-    
+      {
+        type: "languages",
+        select: 3,
+        filter: "no_used",
+      },
+    ],
   },
 };
