@@ -324,6 +324,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
       color: {
         skin: [
           color[2][1],
@@ -492,6 +493,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
       color: {
         skin: [
           color[1][0],
@@ -704,6 +706,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [
@@ -1111,6 +1114,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [
@@ -1275,6 +1279,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [
@@ -1612,6 +1617,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [
@@ -1842,6 +1848,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [
@@ -2060,6 +2067,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [
@@ -2469,6 +2477,7 @@ export default {
       },
 
       gender: gender,
+//backstory: backstory,
 
       color: {
         skin: [],

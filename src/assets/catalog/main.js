@@ -2,7 +2,7 @@ import color from './base_data/_colors.js';
 import gender from './base_data/list_genders.js';
 import race from './base_data/step1_races.js';
 import clas from './base_data/step2_classes.js';
-import past from './base_data/step3_backstories.js';
+import past from './base_data/list_backstories.js';
 
 
 import MY from "./MY.js";

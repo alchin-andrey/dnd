@@ -7,6 +7,7 @@ export default {
     name: "bayraktar",
 
     settings: [
+      // TODO - REMOVE
       {
         type: "custom",
         position: 1,
@@ -1142,6 +1143,7 @@ export default {
           },
         ],
       },
+      // END OF REMOVE
       {
         type: "alignment",
         position: 2,
