@@ -5,6 +5,7 @@ import tools from "./kinds_tools.js";
 import item from "./list_items.js";
 
 export default {
+
   actor: {
     name: "feat_actor",
     details: "feat_actor_details",
@@ -64,119 +65,82 @@ export default {
     ],
   },
 
-  alert: {
-    name: "feat_alert",
-    details: "feat_alert_details",
+  mobile: {
+    name: "feat_mobile",
+    details: "feat_mobile_details",
 
     qualities: [
       {
-        name: "initiative",
-        num: 5,
+        name: "speed_bonus",
+        num: 10,
+        show: true,
       },
     ],
 
     fines: [
       {
-        type: "advantage",
-        keyword: "immunity",
-        details: "on_sudden",
-      },
-      {
-        type: "advantage",
-        keyword: "no_advantage",
-        details: "on_stealth_attacks",
-      },
-    ],
-  },
-
-  war_caster: {
-    name: "feat_war_caster",
-    details: "feat_war_caster_details",
-
-    condition: "spell_attribute",
-    //Требования: Способность накладьівать хотя бьі одно заклинание
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_con_save_while_concentrating",
+        type: "plus",
+        keyword: "no_fee",
+        details: "on_hard_area_dash",
       },
       {
         type: "plus",
-        keyword: "use_somatic",
-        details: "in_taken_hands",
+        keyword: "no_provocation",
+        details: "in_this_move_after_attack",
+      },
+    ],
+  },
+
+  skulker: {
+    name: "feat_skulker",
+    details: "feat_skulker_details",
+
+    condition: "dexterity > 12",
+    //Требования: Ловкость 13 или вьіше
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ability_to_hide",
+        details: "if_small_cover",
       },
       {
         type: "plus",
-        keyword: "cast_reaction",
-        details: "for_spells_action",
-      },
-    ],
-  },
-
-  grappler: {
-    name: "feat_grappler",
-    details: "feat_grappler_details",
-
-    condition: "strength > 12",
-    //Требования: Сила 13 или вьіше
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_attack_grapple",
+        keyword: "no_reveal",
+        details: "if_missed",
       },
       {
         type: "plus",
-        keyword: "restrain",
-        details: "creature_on_addititonal_grapple",
+        keyword: "no_disadvantage",
+        details: "on_perception_sight",
       },
     ],
   },
 
-  lucky: {
-    name: "feat_lucky",
-    details: "feat_lucky_details",
+  dungeon_delver: {
+    name: "feat_dungeon_delver",
+    details: "feat_dungeon_delver_details",
 
     fines: [
       {
         type: "advantage",
         keyword: "advantage",
-        details: "on_any_d20",
+        details: "on_hidden_doors",
       },
-    ],
-
-    charges: [
-      {
-        name: "luck_slots",
-        list: [
-          ["d20", 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-        ],
-      },
-    ],
-  },
-
-  mounted_combatant: {
-    name: "feat_mounted_combatant",
-    details: "feat_mounted_combatant_details",
-
-    fines: [
       {
         type: "advantage",
         keyword: "advantage",
-        details: "on_mounted_attack",
+        details: "on_trap_evasion",
       },
       {
         type: "resistance",
-        keyword: "redirect_attack",
-        details: "from_mount_on_self",
+        keyword: "resistance",
+        details: "on_trap_damage",
       },
       {
-        type: "resistance",
-        keyword: "reduce_damage",
-        details: "on_mount_save_dex",
+        type: "plus",
+        keyword: "no_fee",
+        details: "on_passive_perception_on_quick_move",
       },
     ],
   },
@@ -216,269 +180,50 @@ export default {
     ],
   },
 
-  martial_adept: {
-    name: "feat_martial_adept",
-    details: "feat_martial_adept_details",
+  alert: {
+    name: "feat_alert",
+    details: "feat_alert_details",
+
+    qualities: [
+      {
+        name: "initiative",
+        num: 5,
+      },
+    ],
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "immunity",
+        details: "on_sudden",
+      },
+      {
+        type: "advantage",
+        keyword: "no_advantage",
+        details: "on_stealth_attacks",
+      },
+    ],
+  },
+
+  lucky: {
+    name: "feat_lucky",
+    details: "feat_lucky_details",
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_any_d20",
+      },
+    ],
 
     charges: [
       {
-        name: "superiority_dice_slots_feat",
-        type: "short_rest",
+        name: "luck_slots",
+        type: "long_rest",
         list: [
-          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+          ["d20", 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
         ],
-      },
-    ],
-
-    //TODO - fix list
-    settings: [
-      {
-        level: 1,
-        type: "custom",
-        name: "maneuvers",
-        select: 2,
-        list: [
-          {
-            name_set: spells.maneuver_evasive_footwork[0].name,
-            spells: [{ spell: spells.maneuver_evasive_footwork }],
-          },
-          {
-            name_set: spells.maneuver_lunging_attack[0].name,
-            spells: [{ spell: spells.maneuver_lunging_attack }],
-          },
-          {
-            name_set: spells.maneuver_maneuvering_attack[0].name,
-            spells: [{ spell: spells.maneuver_maneuvering_attack }],
-          },
-          {
-            name_set: spells.maneuver_menacing_attack[0].name,
-            spells: [{ spell: spells.maneuver_menacing_attack }],
-          },
-          {
-            name_set: spells.maneuver_feinting_attack[0].name,
-            spells: [{ spell: spells.maneuver_feinting_attack }],
-          },
-          {
-            name_set: spells.maneuver_disarming_attack[0].name,
-            spells: [{ spell: spells.maneuver_disarming_attack }],
-          },
-          {
-            name_set: spells.maneuver_trip_attack[0].name,
-            spells: [{ spell: spells.maneuver_trip_attack }],
-          },
-          {
-            name_set: spells.maneuver_riposte[0].name,
-            spells: [{ spell: spells.maneuver_riposte }],
-          },
-          {
-            name_set: spells.maneuver_distracting_strike[0].name,
-            spells: [{ spell: spells.maneuver_distracting_strike }],
-          },
-          {
-            name_set: spells.maneuver_parry[0].name,
-            spells: [{ spell: spells.maneuver_parry }],
-          },
-          {
-            name_set: spells.maneuver_goading_attack[0].name,
-            spells: [{ spell: spells.maneuver_goading_attack }],
-          },
-          {
-            name_set: spells.maneuver_rally[0].name,
-            spells: [{ spell: spells.maneuver_rally }],
-          },
-          {
-            name_set: spells.maneuver_pushing_attack[0].name,
-            spells: [{ spell: spells.maneuver_pushing_attack }],
-          },
-          {
-            name_set: spells.maneuver_precision_attack[0].name,
-            spells: [{ spell: spells.maneuver_precision_attack }],
-          },
-          {
-            name_set: spells.maneuver_commanders_strike[0].name,
-            spells: [{ spell: spells.maneuver_commanders_strike }],
-          },
-          {
-            name_set: spells.maneuver_sweeping_attack[0].name,
-            spells: [{ spell: spells.maneuver_sweeping_attack }],
-          },
-        ],
-      },
-    ],
-  },
-
-  inspiring_leader: {
-    name: "feat_inspiring_leader",
-    details: "feat_inspiring_leader_details",
-
-    condition: "charisma > 12",
-    //Требования: Харизма 13 или вьіше
-
-    spells: [
-      {
-        spell: spells.inspiration,
-      },
-    ],
-  },
-
-  savage_attacker: {
-    name: "feat_savage_attacker",
-    details: "feat_savage_attacker_details",
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "rethrow",
-        details: "of_damage_dice_once_per_move",
-      },
-    ],
-  },
-
-  brawler: {
-    name: "feat_brawler",
-    details: "feat_brawler_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "damage_increase",
-        details: "of_unarmed_strike",
-      },
-    ],
-
-    stats: [
-      {
-        name: "strength",
-        num: 1,
-      },
-      {
-        name: "constitution",
-        num: 1,
-      },
-    ],
-
-    specials: [
-      {
-        type: "weapon",
-        dice_foo: "Dic_14_Lvl_or_Default",
-        //weapon_unarmed_strike: "1d4",
-      },
-    ],
-
-    proficiencies: {
-      weapons: [weaponry.improvised],
-    },
-
-    spells: [
-      {
-        spell: spells.grapple,
-      },
-    ],
-  },
-
-  lightly_armored: {
-    name: "feat_lightly_armored",
-    details: "feat_lightly_armored_details",
-
-    stats: [
-      {
-        name: "strength",
-        num: 1,
-      },
-      {
-        name: "dexterity",
-        num: 1,
-      },
-    ],
-
-    proficiencies: {
-      armor: [armory.light],
-    },
-  },
-
-  moderately_armored: {
-    name: "feat_moderately_armored",
-    details: "feat_moderately_armored_details",
-
-    stats: [
-      {
-        name: "strength",
-        num: 1,
-      },
-      {
-        name: "dexterity",
-        num: 1,
-      },
-    ],
-
-    proficiencies: {
-      armor: [armory.medium, armory.shields],
-    },
-  },
-
-  heavily_armored: {
-    name: "feat_heavily_armored",
-    details: "feat_heavily_armored_details",
-
-    stats: [
-      {
-        name: "strength",
-        num: 1,
-      },
-    ],
-
-    proficiencies: {
-      armor: [armory.heavy],
-    },
-  },
-
-  dual_wielder: {
-    name: "feat_dual_wielder",
-    details: "feat_dual_wielder_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "bonus",
-        details: "on_armor_if_two_weapons",
-      },
-      {
-        type: "plus",
-        keyword: "use_of_two_weapons",
-        details: "without_speed_fee",
-      },
-      {
-        type: "plus",
-        keyword: "quick_take",
-        details: "of_two_weapons",
-      },
-    ],
-  },
-
-  dungeon_delver: {
-    name: "feat_dungeon_delver",
-    details: "feat_dungeon_delver_details",
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_hidden_doors",
-      },
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_trap_evasion",
-      },
-      {
-        type: "resistance",
-        keyword: "resistance",
-        details: "on_trap_damage",
-      },
-      {
-        type: "plus",
-        keyword: "no_fee",
-        details: "on_passive_perception_on_quick_move",
       },
     ],
   },
@@ -490,362 +235,73 @@ export default {
     hp_bonus: [1, 2],
   },
 
-  healer: {
-    name: "feat_healer",
-    details: "feat_healer_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "plus_1_to_hp",
-        details: "on_use_of_medical_tools",
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.healer_tooling,
-      },
-    ],
-  },
-
-  great_weapon_master: {
-    name: "feat_great_weapon_master",
-    details: "feat_great_weapon_master_details",
-
-    spells: [
-      {
-        spell: spells.extra_strike,
-      },
-      {
-        spell: spells.heavy_strike,
-      },
-    ],
-  },
-
-  polearm_master: {
-    name: "feat_polearm_master",
-    details: "feat_polearm_master_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "provoked_attack",
-        details: "on_polearm_reach",
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.polearm_strike,
-      },
-    ],
-  },
-
-  weapon_master: {
-    name: "feat_weapon_master",
-    details: "feat_weapon_master_details",
+  durable: {
+    name: "feat_durable",
+    details: "feat_durable_details",
 
     stats: [
       {
-        name: "strength",
+        name: "consitution",
         num: 1,
       },
     ],
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "double_CON",
+        details: "on_regen_min_2",
+      },
+    ],
+  },
+
+  resilient: {
+    name: "feat_resilient",
+    details: "feat_resilient_details",
 
     settings: [
       {
         type: "custom",
-        name: "proficiencies",
-        position: 9,
-        select: 4,
+        name: "stats",
+        select: 1,
         list: [
           {
-            name_set: weaponry.battle_axes.name,
-            proficiencies: {
-              weapons: [weaponry.battle_axes],
-            },
+            name_set: "strength",
+            details: "strength_details",
+            saving: ["strength"],
+            stats: [{ name: "strength", num: 1 }],
           },
           {
-            name_set: weaponry.battle_hammers.name,
-            proficiencies: {
-              weapons: [weaponry.battle_hammers],
-            },
+            name_set: "dexterity",
+            details: "dexterity_details",
+            saving: ["dexterity"],
+            stats: [{ name: "dexterity", num: 1 }],
           },
           {
-            name_set: weaponry.clubs.name,
-            proficiencies: {
-              weapons: [weaponry.clubs],
-            },
+            name_set: "constitution",
+            details: "constitution_details",
+            saving: ["constitution"],
+            stats: [{ name: "constitution", num: 1 }],
           },
           {
-            name_set: weaponry.clubs.name,
-            proficiencies: {
-              weapons: [weaponry.clubs],
-            },
+            name_set: "intelligence",
+            details: "intelligence_details",
+            saving: ["intelligence"],
+            stats: [{ name: "intelligence", num: 1 }],
           },
           {
-            name_set: weaponry.daggers.name,
-            proficiencies: {
-              weapons: [weaponry.daggers],
-            },
+            name_set: "wisdom",
+            details: "wisdom_details",
+            saving: ["wisdom"],
+            stats: [{ name: "wisdom", num: 1 }],
           },
           {
-            name_set: weaponry.darts.name,
-            proficiencies: {
-              weapons: [weaponry.darts],
-            },
-          },
-          {
-            name_set: weaponry.hand_arbalets.name,
-            proficiencies: {
-              weapons: [weaponry.hand_arbalets],
-            },
-          },
-          {
-            name_set: weaponry.hand_axes.name,
-            proficiencies: {
-              weapons: [weaponry.hand_axes],
-            },
-          },
-          {
-            name_set: weaponry.javelins.name,
-            proficiencies: {
-              weapons: [weaponry.javelins],
-            },
-          },
-          {
-            name_set: weaponry.light_arbalets.name,
-            proficiencies: {
-              weapons: [weaponry.light_arbalets],
-            },
-          },
-          {
-            name_set: weaponry.light_hammers.name,
-            proficiencies: {
-              weapons: [weaponry.light_hammers],
-            },
-          },
-          {
-            name_set: weaponry.long_bows.name,
-            proficiencies: {
-              weapons: [weaponry.long_bows],
-            },
-          },
-          {
-            name_set: weaponry.long_swords.name,
-            proficiencies: {
-              weapons: [weaponry.long_swords],
-            },
-          },
-          {
-            name_set: weaponry.maces.name,
-            proficiencies: {
-              weapons: [weaponry.maces],
-            },
-          },
-          {
-            name_set: weaponry.quarterstaffs.name,
-            proficiencies: {
-              weapons: [weaponry.quarterstaffs],
-            },
-          },
-          {
-            name_set: weaponry.rapires.name,
-            proficiencies: {
-              weapons: [weaponry.rapires],
-            },
-          },
-          {
-            name_set: weaponry.scimitars.name,
-            proficiencies: {
-              weapons: [weaponry.scimitars],
-            },
-          },
-          {
-            name_set: weaponry.short_bows.name,
-            proficiencies: {
-              weapons: [weaponry.short_bows],
-            },
-          },
-          {
-            name_set: weaponry.short_swords.name,
-            proficiencies: {
-              weapons: [weaponry.short_swords],
-            },
-          },
-          {
-            name_set: weaponry.sickles.name,
-            proficiencies: {
-              weapons: [weaponry.sickles],
-            },
-          },
-          {
-            name_set: weaponry.slings.name,
-            proficiencies: {
-              weapons: [weaponry.slings],
-            },
-          },
-          {
-            name_set: weaponry.spears.name,
-            proficiencies: {
-              weapons: [weaponry.spears],
-            },
+            name_set: "charisma",
+            details: "charisma_details",
+            saving: ["charisma"],
+            stats: [{ name: "charisma", num: 1 }],
           },
         ],
-      },
-    ],
-  },
-
-  medium_armor_master: {
-    name: "feat_medium_armor_master",
-    details: "feat_medium_armor_master_details",
-
-    condition: "proficiency_armor_medium",
-    //Требования: Владение тяжельіми доспехами
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "no_fee",
-        details: "on_stealth_in_medium_armor",
-      },
-      {
-        type: "plus",
-        keyword: "bonus",
-        details: "on_medium_armor",
-      },
-    ],
-  },
-
-  heavy_armor_master: {
-    name: "feat_heavy_armor_master",
-    details: "feat_heavy_armor_master_details",
-
-    condition: "proficiency_armor_heavy",
-    //Требования: Владение тяжельіми доспехами
-
-    stats: [
-      {
-        name: "strength",
-        num: 1,
-      },
-    ],
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "damage_reduction",
-        details: "on_3_in_heavy_armor",
-      },
-    ],
-  },
-
-  shield_master: {
-    name: "feat_shield_master",
-    details: "feat_shield_master_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "bonus",
-        details: "on_dex_check_in_shield",
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.shield_push,
-      },
-      {
-        spell: spells.shield_block,
-      },
-    ],
-  },
-
-  spell_sniper: {
-    name: "feat_spell_sniper",
-    details: "feat_spell_sniper_details",
-
-    condition: "spells_make",
-    //Требования: Способность накладьівать хотя бьі одно заклинание
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "double_range",
-        details: "on_spells_with_aim",
-      },
-      {
-        type: "plus",
-        keyword: "ignoring",
-        details: "on_covers_spells",
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        select: 1,
-        filter: "aim_need",
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["bard", "wizard", "druid", "cleric", "warlock", "sorcerer"],
-        //Вы узнаёте один заговор, требующий броска атаки
-      },
-    ],
-  },
-
-  sharpshooter: {
-    name: "feat_sharpshooter",
-    details: "feat_sharpshooter_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "no_fee",
-        details: "on_shots_in_max_distance",
-      },
-      {
-        type: "plus",
-        keyword: "ignoring",
-        details: "on_covers",
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.heavy_shot,
-      },
-    ],
-  },
-
-  charger: {
-    name: "feat_charger",
-    details: "feat_charger_details",
-
-    spells: [
-      {
-        spell: spells.charge_attack,
-      },
-      {
-        spell: spells.charge_push,
-      },
-    ],
-  },
-
-  defensive_duelist: {
-    name: "feat_defensive_duelist",
-    details: "feat_defensive_duelist_details",
-
-    condition: "dexterity > 12",
-    //Требования: Ловкость 13 или вьіше
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "mastery_bonus",
-        details: "on_armor_finesse",
       },
     ],
   },
@@ -863,75 +319,151 @@ export default {
         list: [
           {
             name_set: "athletics",
-            skills: [ { name: "athletics", num: "Mastery", details: "athletics_details", }, ],
+            skills: [
+              {
+                name: "athletics",
+                num: "Mastery",
+                details: "athletics_details",
+              },
+            ],
           },
           {
             name_set: "acrobatics",
-            skills: [ { name: "acrobatics", num: "Mastery", details: "acrobatics_details", }, ],
+            skills: [
+              {
+                name: "acrobatics",
+                num: "Mastery",
+                details: "acrobatics_details",
+              },
+            ],
           },
           {
             name_set: "sleight_of_hand",
-            skills: [ { name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details", }, ],
+            skills: [
+              {
+                name: "sleight_of_hand",
+                num: "Mastery",
+                details: "sleight_of_hand_details",
+              },
+            ],
           },
           {
             name_set: "stealth",
-            skills: [ { name: "stealth", num: "Mastery", details: "stealth_details" }, ],
+            skills: [
+              { name: "stealth", num: "Mastery", details: "stealth_details" },
+            ],
           },
           {
             name_set: "investigation",
-            skills: [ { name: "investigation", num: "Mastery", details: "investigation_details", }, ],
+            skills: [
+              {
+                name: "investigation",
+                num: "Mastery",
+                details: "investigation_details",
+              },
+            ],
           },
           {
             name_set: "history",
-            skills: [ { name: "history", num: "Mastery", details: "history_details" }, ],
+            skills: [
+              { name: "history", num: "Mastery", details: "history_details" },
+            ],
           },
           {
             name_set: "religion",
-            skills: [ { name: "religion", num: "Mastery", details: "religion_details" }, ],
+            skills: [
+              { name: "religion", num: "Mastery", details: "religion_details" },
+            ],
           },
           {
             name_set: "arcana",
-            skills: [ { name: "arcana", num: "Mastery", details: "arcana_details" }, ],
+            skills: [
+              { name: "arcana", num: "Mastery", details: "arcana_details" },
+            ],
           },
           {
             name_set: "nature",
-            skills: [ { name: "nature", num: "Mastery", details: "nature_details" }, ],
+            skills: [
+              { name: "nature", num: "Mastery", details: "nature_details" },
+            ],
           },
           {
             name_set: "survival",
-            skills: [ { name: "survival", num: "Mastery", details: "survival_details" }, ],
+            skills: [
+              { name: "survival", num: "Mastery", details: "survival_details" },
+            ],
           },
           {
             name_set: "perception",
-            skills: [ { name: "perception", num: "Mastery", details: "perception_details", }, ],
+            skills: [
+              {
+                name: "perception",
+                num: "Mastery",
+                details: "perception_details",
+              },
+            ],
           },
           {
             name_set: "insight",
-            skills: [ { name: "insight", num: "Mastery", details: "insight_details" }, ],
+            skills: [
+              { name: "insight", num: "Mastery", details: "insight_details" },
+            ],
           },
           {
             name_set: "medicine",
-            skills: [ { name: "medicine", num: "Mastery", details: "medicine_details" }, ],
+            skills: [
+              { name: "medicine", num: "Mastery", details: "medicine_details" },
+            ],
           },
           {
             name_set: "animal_handling",
-            skills: [ { name: "animal_handling", num: "Mastery", details: "animal_handling_details", }, ],
+            skills: [
+              {
+                name: "animal_handling",
+                num: "Mastery",
+                details: "animal_handling_details",
+              },
+            ],
           },
           {
             name_set: "performance",
-            skills: [ { name: "performance", num: "Mastery", details: "performance_details", }, ],
+            skills: [
+              {
+                name: "performance",
+                num: "Mastery",
+                details: "performance_details",
+              },
+            ],
           },
           {
             name_set: "persuasion",
-            skills: [ { name: "persuasion", num: "Mastery", details: "persuasion_details", }, ],
+            skills: [
+              {
+                name: "persuasion",
+                num: "Mastery",
+                details: "persuasion_details",
+              },
+            ],
           },
           {
             name_set: "deception",
-            skills: [ { name: "deception", num: "Mastery", details: "deception_details", }, ],
+            skills: [
+              {
+                name: "deception",
+                num: "Mastery",
+                details: "deception_details",
+              },
+            ],
           },
           {
             name_set: "intimidation",
-            skills: [ { name: "intimidation", num: "Mastery", details: "intimidation_details", }, ],
+            skills: [
+              {
+                name: "intimidation",
+                num: "Mastery",
+                details: "intimidation_details",
+              },
+            ],
           },
           {
             name_set: tools.alchemists_supplies.name,
@@ -1172,233 +704,195 @@ export default {
     ],
   },
 
-  mobile: {
-    name: "feat_mobile",
-    details: "feat_mobile_details",
+  linguist: {
+    name: "feat_linguist",
+    details: "feat_linguist_details",
 
-    qualities: [
+    stats: [
       {
-        name: "speed_bonus",
-        num: 10,
-        show: true,
+        name: "intelligence",
+        num: 1,
       },
     ],
+
+    spells: [
+      {
+        spell: spells.create_crypt,
+      },
+    ],
+
+    settings: [
+      {
+        type: "languages",
+        name: "languages",
+        select: 3,
+        filter: "no_used",
+      },
+    ],
+  },
+
+  inspiring_leader: {
+    name: "feat_inspiring_leader",
+    details: "feat_inspiring_leader_details",
+
+    condition: "charisma > 12",
+    //Требования: Харизма 13 или вьіше
+
+    spells: [
+      {
+        spell: spells.inspiration,
+      },
+    ],
+  },
+
+  healer: {
+    name: "feat_healer",
+    details: "feat_healer_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "plus_1_to_hp",
+        details: "on_use_of_medical_tools",
+      },
+    ],
+
+    spells: [
+      {
+        spell: spells.healer_tooling,
+      },
+    ],
+  },
+
+  //NOTE - Armor
+
+  lightly_armored: {
+    name: "feat_lightly_armored",
+    details: "feat_lightly_armored_details",
+
+    stats: [
+      {
+        name: "strength",
+        num: 1,
+      },
+      {
+        name: "dexterity",
+        num: 1,
+      },
+    ],
+
+    proficiencies: {
+      armor: [armory.light],
+    },
+  },
+
+  moderately_armored: {
+    name: "feat_moderately_armored",
+    details: "feat_moderately_armored_details",
+
+    stats: [
+      {
+        name: "strength",
+        num: 1,
+      },
+      {
+        name: "dexterity",
+        num: 1,
+      },
+    ],
+
+    proficiencies: {
+      armor: [armory.medium, armory.shields],
+    },
+  },
+
+  heavily_armored: {
+    name: "feat_heavily_armored",
+    details: "feat_heavily_armored_details",
+
+    stats: [
+      {
+        name: "strength",
+        num: 1,
+      },
+    ],
+
+    proficiencies: {
+      armor: [armory.heavy],
+    },
+  },
+
+  medium_armor_master: {
+    name: "feat_medium_armor_master",
+    details: "feat_medium_armor_master_details",
+
+    condition: "proficiency_armor_medium",
+    //Требования: Владение тяжельіми доспехами
 
     fines: [
       {
         type: "plus",
         keyword: "no_fee",
-        details: "on_hard_area_dash",
+        details: "on_stealth_in_medium_armor",
       },
       {
         type: "plus",
-        keyword: "no_provocation",
-        details: "in_this_move_after_attack",
+        keyword: "bonus",
+        details: "on_medium_armor",
       },
     ],
   },
 
-  magic_initiate_cleric: {
-    name: "feat_magic_initiate_cleric",
-    details: "feat_magic_initiate_details_cleric",
+  heavy_armor_master: {
+    name: "feat_heavy_armor_master",
+    details: "feat_heavy_armor_master_details",
+
+    condition: "proficiency_armor_heavy",
+    //Требования: Владение тяжельіми доспехами
+
+    stats: [
+      {
+        name: "strength",
+        num: 1,
+      },
+    ],
 
     fines: [
       {
         type: "plus",
-        keyword: "use_no_mana",
-        details: "one_spell_cleric",
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_0",
-        select: 2,
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["cleric"],
-      },
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 1,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["cleric"],
+        keyword: "damage_reduction",
+        details: "on_3_in_heavy_armor",
       },
     ],
   },
 
-  magic_initiate_druid: {
-    name: "feat_magic_initiate_druid",
-    details: "feat_magic_initiate_details_druid",
+  shield_master: {
+    name: "feat_shield_master",
+    details: "feat_shield_master_details",
 
     fines: [
       {
         type: "plus",
-        keyword: "use_no_mana",
-        details: "one_spell_druid",
+        keyword: "bonus",
+        details: "on_dex_check_in_shield",
       },
     ],
 
-    settings: [
+    spells: [
       {
-        type: "spells",
-        name: "spells_0",
-        select: 2,
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["druid"],
+        spell: spells.shield_push,
       },
       {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 1,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["druid"],
+        spell: spells.shield_block,
       },
     ],
   },
 
-  magic_initiate_warlock: {
-    name: "feat_magic_initiate_warlock",
-    details: "feat_magic_initiate_details_warlock",
+  //NOTE - Weapon
 
-    fines: [
-      {
-        type: "plus",
-        keyword: "use_no_mana",
-        details: "one_spell_warlock",
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_0",
-        select: 2,
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["warlock"],
-      },
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 1,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["warlock"],
-      },
-    ],
-  },
-
-  magic_initiate_sorcerer: {
-    name: "feat_magic_initiate_sorcerer",
-    details: "feat_magic_initiate_details_sorcerer",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "use_no_mana",
-        details: "one_spell_sorcerer",
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_0",
-        select: 2,
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["sorcerer"],
-      },
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 1,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["sorcerer"],
-      },
-    ],
-  },
-
-  magic_initiate_wizard: {
-    name: "feat_magic_initiate_wizard",
-    details: "feat_magic_initiate_details_wizard",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "use_no_mana",
-        details: "one_spell_wizard",
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_0",
-        select: 2,
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["wizard"],
-      },
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 1,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["wizard"],
-      },
-    ],
-  },
-
-  magic_initiate_bard: {
-    name: "feat_magic_initiate_bard",
-    details: "feat_magic_initiate_details_bard",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "use_no_mana",
-        details: "one_spell_bard",
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_0",
-        select: 2,
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["bard"],
-      },
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 1,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["bard"],
-      },
-    ],
-  },
-
-  skulker: {
-    name: "feat_skulker",
-    details: "feat_skulker_details",
+  defensive_duelist: {
+    name: "feat_defensive_duelist",
+    details: "feat_defensive_duelist_details",
 
     condition: "dexterity > 12",
     //Требования: Ловкость 13 или вьіше
@@ -1406,25 +900,936 @@ export default {
     fines: [
       {
         type: "plus",
-        keyword: "ability_to_hide",
-        details: "if_small_cover",
+        keyword: "mastery_bonus",
+        details: "on_armor_finesse",
+      },
+    ],
+  },
+
+  great_weapon_master: {
+    name: "feat_great_weapon_master",
+    details: "feat_great_weapon_master_details",
+
+    spells: [
+      {
+        spell: spells.extra_strike,
+      },
+      {
+        spell: spells.heavy_strike,
+      },
+    ],
+  },
+
+  polearm_master: {
+    name: "feat_polearm_master",
+    details: "feat_polearm_master_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "provoked_attack",
+        details: "on_polearm_reach",
+      },
+    ],
+
+    spells: [
+      {
+        spell: spells.polearm_strike,
+      },
+    ],
+  },
+
+  weapon_master: {
+    name: "feat_weapon_master",
+    details: "feat_weapon_master_details",
+
+    stats: [
+      {
+        name: "strength",
+        num: 1,
+      },
+    ],
+
+    settings: [
+      {
+        type: "custom",
+        name: "proficiencies",
+        position: 9,
+        select: 4,
+        list: [
+          {
+            name_set: weaponry.battle_axes.name,
+            proficiencies: {
+              weapons: [weaponry.battle_axes],
+            },
+          },
+          {
+            name_set: weaponry.battle_hammers.name,
+            proficiencies: {
+              weapons: [weaponry.battle_hammers],
+            },
+          },
+          {
+            name_set: weaponry.clubs.name,
+            proficiencies: {
+              weapons: [weaponry.clubs],
+            },
+          },
+          {
+            name_set: weaponry.clubs.name,
+            proficiencies: {
+              weapons: [weaponry.clubs],
+            },
+          },
+          {
+            name_set: weaponry.daggers.name,
+            proficiencies: {
+              weapons: [weaponry.daggers],
+            },
+          },
+          {
+            name_set: weaponry.darts.name,
+            proficiencies: {
+              weapons: [weaponry.darts],
+            },
+          },
+          {
+            name_set: weaponry.hand_arbalets.name,
+            proficiencies: {
+              weapons: [weaponry.hand_arbalets],
+            },
+          },
+          {
+            name_set: weaponry.hand_axes.name,
+            proficiencies: {
+              weapons: [weaponry.hand_axes],
+            },
+          },
+          {
+            name_set: weaponry.javelins.name,
+            proficiencies: {
+              weapons: [weaponry.javelins],
+            },
+          },
+          {
+            name_set: weaponry.light_arbalets.name,
+            proficiencies: {
+              weapons: [weaponry.light_arbalets],
+            },
+          },
+          {
+            name_set: weaponry.light_hammers.name,
+            proficiencies: {
+              weapons: [weaponry.light_hammers],
+            },
+          },
+          {
+            name_set: weaponry.long_bows.name,
+            proficiencies: {
+              weapons: [weaponry.long_bows],
+            },
+          },
+          {
+            name_set: weaponry.long_swords.name,
+            proficiencies: {
+              weapons: [weaponry.long_swords],
+            },
+          },
+          {
+            name_set: weaponry.maces.name,
+            proficiencies: {
+              weapons: [weaponry.maces],
+            },
+          },
+          {
+            name_set: weaponry.quarterstaffs.name,
+            proficiencies: {
+              weapons: [weaponry.quarterstaffs],
+            },
+          },
+          {
+            name_set: weaponry.rapires.name,
+            proficiencies: {
+              weapons: [weaponry.rapires],
+            },
+          },
+          {
+            name_set: weaponry.scimitars.name,
+            proficiencies: {
+              weapons: [weaponry.scimitars],
+            },
+          },
+          {
+            name_set: weaponry.short_bows.name,
+            proficiencies: {
+              weapons: [weaponry.short_bows],
+            },
+          },
+          {
+            name_set: weaponry.short_swords.name,
+            proficiencies: {
+              weapons: [weaponry.short_swords],
+            },
+          },
+          {
+            name_set: weaponry.sickles.name,
+            proficiencies: {
+              weapons: [weaponry.sickles],
+            },
+          },
+          {
+            name_set: weaponry.slings.name,
+            proficiencies: {
+              weapons: [weaponry.slings],
+            },
+          },
+          {
+            name_set: weaponry.spears.name,
+            proficiencies: {
+              weapons: [weaponry.spears],
+            },
+          },
+        ],
+      },
+    ],
+  },  
+
+  dual_wielder: {
+    name: "feat_dual_wielder",
+    details: "feat_dual_wielder_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "bonus",
+        details: "on_armor_if_two_weapons",
       },
       {
         type: "plus",
-        keyword: "no_reveal",
-        details: "if_missed",
+        keyword: "use_of_two_weapons",
+        details: "without_speed_fee",
+      },
+      {
+        type: "plus",
+        keyword: "quick_take",
+        details: "of_two_weapons",
+      },
+    ],
+  },
+
+  crossbow_expert: {
+    name: "feat_crossbow_expert",
+    details: "feat_crossbow_expert_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "recharge_on_arbalets",
       },
       {
         type: "plus",
         keyword: "no_disadvantage",
-        details: "on_perception_sight",
+        details: "near_target_arbalet",
+      },
+    ],
+
+    spells: [
+      {
+        spell: spells.crossbow_shot,
+      },
+    ],
+  },
+  
+  sharpshooter: {
+    name: "feat_sharpshooter",
+    details: "feat_sharpshooter_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "no_fee",
+        details: "on_shots_in_max_distance",
+      },
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "on_covers",
+      },
+    ],
+
+    spells: [
+      {
+        spell: spells.heavy_shot,
       },
     ],
   },
 
-  ritual_caster_cleric: {
-    name: "feat_ritual_caster_cleric",
-    details: "feat_ritual_caster_details_cleric",
+  //NOTE - Fight
+
+  
+
+  martial_adept: {
+    name: "feat_martial_adept",
+    details: "feat_martial_adept_details",
+
+    charges: [
+      {
+        name: "superiority_dice_slots_feat",
+        type: "short_rest",
+        list: [
+          ["", 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+    ],
+
+    //TODO - fix list
+    settings: [
+      {
+        level: 1,
+        type: "custom",
+        name: "maneuvers",
+        select: 2,
+        list: [
+          {
+            name_set: spells.maneuver_evasive_footwork[0].name,
+            spells: [{ spell: spells.maneuver_evasive_footwork }],
+          },
+          {
+            name_set: spells.maneuver_lunging_attack[0].name,
+            spells: [{ spell: spells.maneuver_lunging_attack }],
+          },
+          {
+            name_set: spells.maneuver_maneuvering_attack[0].name,
+            spells: [{ spell: spells.maneuver_maneuvering_attack }],
+          },
+          {
+            name_set: spells.maneuver_menacing_attack[0].name,
+            spells: [{ spell: spells.maneuver_menacing_attack }],
+          },
+          {
+            name_set: spells.maneuver_feinting_attack[0].name,
+            spells: [{ spell: spells.maneuver_feinting_attack }],
+          },
+          {
+            name_set: spells.maneuver_disarming_attack[0].name,
+            spells: [{ spell: spells.maneuver_disarming_attack }],
+          },
+          {
+            name_set: spells.maneuver_trip_attack[0].name,
+            spells: [{ spell: spells.maneuver_trip_attack }],
+          },
+          {
+            name_set: spells.maneuver_riposte[0].name,
+            spells: [{ spell: spells.maneuver_riposte }],
+          },
+          {
+            name_set: spells.maneuver_distracting_strike[0].name,
+            spells: [{ spell: spells.maneuver_distracting_strike }],
+          },
+          {
+            name_set: spells.maneuver_parry[0].name,
+            spells: [{ spell: spells.maneuver_parry }],
+          },
+          {
+            name_set: spells.maneuver_goading_attack[0].name,
+            spells: [{ spell: spells.maneuver_goading_attack }],
+          },
+          {
+            name_set: spells.maneuver_rally[0].name,
+            spells: [{ spell: spells.maneuver_rally }],
+          },
+          {
+            name_set: spells.maneuver_pushing_attack[0].name,
+            spells: [{ spell: spells.maneuver_pushing_attack }],
+          },
+          {
+            name_set: spells.maneuver_precision_attack[0].name,
+            spells: [{ spell: spells.maneuver_precision_attack }],
+          },
+          {
+            name_set: spells.maneuver_commanders_strike[0].name,
+            spells: [{ spell: spells.maneuver_commanders_strike }],
+          },
+          {
+            name_set: spells.maneuver_sweeping_attack[0].name,
+            spells: [{ spell: spells.maneuver_sweeping_attack }],
+          },
+        ],
+      },
+    ],
+  },
+
+  grappler: {
+    name: "feat_grappler",
+    details: "feat_grappler_details",
+
+    condition: "strength > 12",
+    //Требования: Сила 13 или вьіше
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_attack_grapple",
+      },
+      {
+        type: "plus",
+        keyword: "restrain",
+        details: "creature_on_addititonal_grapple",
+      },
+    ],
+  },
+
+  brawler: {
+    name: "feat_brawler",
+    details: "feat_brawler_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "damage_increase",
+        details: "of_unarmed_strike",
+      },
+    ],
+
+    stats: [
+      {
+        name: "strength",
+        num: 1,
+      },
+      {
+        name: "constitution",
+        num: 1,
+      },
+    ],
+
+    specials: [
+      {
+        type: "weapon",
+        dice_foo: "Dic_14_Lvl_or_Default",
+        //weapon_unarmed_strike: "1d4",
+      },
+    ],
+
+    proficiencies: {
+      weapons: [weaponry.improvised],
+    },
+
+    spells: [
+      {
+        spell: spells.grapple,
+      },
+    ],
+  },
+
+  charger: {
+    name: "feat_charger",
+    details: "feat_charger_details",
+
+    spells: [
+      {
+        spell: spells.charge_attack,
+      },
+      {
+        spell: spells.charge_push,
+      },
+    ],
+  },
+
+  savage_attacker: {
+    name: "feat_savage_attacker",
+    details: "feat_savage_attacker_details",
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "rethrow",
+        details: "of_damage_dice_once_per_move",
+      },
+    ],
+  },
+
+  sentinel: {
+    name: "feat_sentinel",
+    details: "feat_sentinel_details",
+
+    fines: [
+      {
+        type: "plus",
+        keyword: "provocation",
+        details: "on_disengage",
+      },
+      {
+        type: "plus",
+        keyword: "provocation",
+        details: "on_ally_attack",
+      },
+      {
+        type: "plus",
+        keyword: "stopka",
+        details: "creature_affected_provoked_attack",
+      },
+    ],
+  },
+
+  mounted_combatant: {
+    name: "feat_mounted_combatant",
+    details: "feat_mounted_combatant_details",
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_mounted_attack",
+      },
+      {
+        type: "resistance",
+        keyword: "redirect_attack",
+        details: "from_mount_on_self",
+      },
+      {
+        type: "resistance",
+        keyword: "reduce_damage",
+        details: "on_mount_save_dex",
+      },
+    ],
+  },
+
+  mage_slayer: {
+    name: "feat_mage_slayer",
+    details: "feat_mage_slayer_details",
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_save_spells_near",
+      },
+      {
+        type: "plus",
+        keyword: "disadvantage",
+        details: "on_concentration_to_attacked_creature",
+      },
+      {
+        type: "plus",
+        keyword: "provocation",
+        details: "on_casting_near",
+      },
+    ],
+  },
+
+  // NOTE - magic
+
+  magic_initiate: {
+    name: "feat_magic_initiate",
+    details: "feat_magic_initiate_details",
+
+    settings: [
+      {
+        type: "custom",
+        name: "class",
+        select: 1,
+        position: 2,
+        list: [
+          {
+            name: "feat_magic_initiate_cleric",
+            details: "feat_magic_initiate_details_cleric",
+
+            charges: [
+              {
+                name: "spell_cleric",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "use_no_mana",
+                details: "one_spell_cleric",
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["cleric"],
+              },
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 1,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["cleric"],
+                //TODO - поставить на заклинании какую-то метку?
+              },
+            ],
+          },
+          {
+            name: "feat_magic_initiate_druid",
+            details: "feat_magic_initiate_details_druid",
+
+            charges: [
+              {
+                name: "spell_druid",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "use_no_mana",
+                details: "one_spell_druid",
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["druid"],
+              },
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 1,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["druid"],
+                //TODO - поставить на заклинании какую-то метку?
+              },
+            ],
+          },
+          {
+            name: "feat_magic_initiate_warlock",
+            details: "feat_magic_initiate_details_warlock",
+
+            charges: [
+              {
+                name: "spell_warlock",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "use_no_mana",
+                details: "one_spell_warlock",
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["warlock"],
+              },
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 1,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["warlock"],
+                //TODO - поставить на заклинании какую-то метку?
+              },
+            ],
+          },
+          {
+            name: "feat_magic_initiate_sorcerer",
+            details: "feat_magic_initiate_details_sorcerer",
+
+            charges: [
+              {
+                name: "spell_sorcerer",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "use_no_mana",
+                details: "one_spell_sorcerer",
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["sorcerer"],
+              },
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 1,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["sorcerer"],
+                //TODO - поставить на заклинании какую-то метку?
+              },
+            ],
+          },
+          {
+            name: "feat_magic_initiate_wizard",
+            details: "feat_magic_initiate_details_wizard",
+
+            charges: [
+              {
+                name: "spell_wizard",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "use_no_mana",
+                details: "one_spell_wizard",
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["wizard"],
+              },
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 1,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["wizard"],
+                //TODO - поставить на заклинании какую-то метку?
+              },
+            ],
+          },
+          {
+            name: "feat_magic_initiate_bard",
+            details: "feat_magic_initiate_details_bard",
+
+            charges: [
+              {
+                name: "spell_bard",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "use_no_mana",
+                details: "one_spell_bard",
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_0",
+                select: 2,
+                mana_min: 0,
+                mana_max: 0,
+                classes: ["bard"],
+              },
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 1,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["bard"],
+                //TODO - поставить на заклинании какую-то метку?
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  ritual_caster: {
+    name: "feat_ritual_caster",
+    details: "feat_ritual_caster_details",
 
     condition: "intelligence > 12 || wisdom > 12",
     //Требования: Ловкость 13 или вьіше
@@ -1443,179 +1848,174 @@ export default {
 
     settings: [
       {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 2,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["cleric"],
-        cast_time: "ritual",
+        type: "custom",
+        name: "class",
+        select: 1,
+        position: 2,
+        list: [
+          {
+            name: "feat_ritual_caster_cleric",
+            details: "feat_ritual_caster_details_cleric",
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 2,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["cleric"],
+                cast_time: "ritual",
+              },
+            ],
+          },
+          {
+            name: "feat_ritual_caster_druid",
+            details: "feat_ritual_caster_details_druid",
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 2,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["druid"],
+                cast_time: "ritual",
+              },
+            ],
+          },
+          {
+            name: "feat_ritual_caster_warlock",
+            details: "feat_ritual_caster_details_warlock",
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 2,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["warlock"],
+                cast_time: "ritual",
+              },
+            ],
+          },
+          {
+            name: "feat_ritual_caster_sorcerer",
+            details: "feat_ritual_caster_details_sorcerer",
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 2,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["sorcerer"],
+                cast_time: "ritual",
+              },
+            ],
+          },
+          {
+            name: "feat_ritual_caster_wizard",
+            details: "feat_ritual_caster_details_wizard",
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 2,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["wizard"],
+                cast_time: "ritual",
+              },
+            ],
+          },
+          {
+            name: "feat_ritual_caster_bard",
+            details: "feat_ritual_caster_details_bard",
+
+            settings: [
+              {
+                type: "spells",
+                name: "spells_1",
+                details: "no_mana_but_once_a_day",
+                select: 2,
+                mana_min: 1,
+                mana_max: 1,
+                classes: ["bard"],
+                cast_time: "ritual",
+              },
+            ],
+          },
+        ],
       },
     ],
   },
 
-  ritual_caster_druid: {
-    name: "feat_ritual_caster_druid",
-    details: "feat_ritual_caster_details_druid",
+  war_caster: {
+    name: "feat_war_caster",
+    details: "feat_war_caster_details",
 
-    condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или вьіше
+    condition: "spell_attribute",
+    //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    spells: [
+    fines: [
       {
-        spell: spells.learn_ritual,
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_con_save_while_concentrating",
+      },
+      {
+        type: "plus",
+        keyword: "use_somatic",
+        details: "in_taken_hands",
+      },
+      {
+        type: "plus",
+        keyword: "cast_reaction",
+        details: "for_spells_action",
       },
     ],
+  },
 
-    equipment: [
+  spell_sniper: {
+    name: "feat_spell_sniper",
+    details: "feat_spell_sniper_details",
+
+    condition: "spells_make",
+    //Требования: Способность накладьівать хотя бьі одно заклинание
+
+    fines: [
       {
-        inventory: [[item.ritual_book, 1]],
+        type: "plus",
+        keyword: "double_range",
+        details: "on_spells_with_aim",
+      },
+      {
+        type: "plus",
+        keyword: "ignoring",
+        details: "on_covers_spells",
       },
     ],
 
     settings: [
       {
         type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 2,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["druid"],
-        cast_time: "ritual",
-      },
-    ],
-  },
-
-  ritual_caster_warlock: {
-    name: "feat_ritual_caster_warlock",
-    details: "feat_ritual_caster_details_warlock",
-
-    condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или вьіше
-
-    spells: [
-      {
-        spell: spells.learn_ritual,
-      },
-    ],
-
-    equipment: [
-      {
-        inventory: [[item.ritual_book, 1]],
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 2,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["warlock"],
-        cast_time: "ritual",
-      },
-    ],
-  },
-
-  ritual_caster_sorcerer: {
-    name: "feat_ritual_caster_sorcerer",
-    details: "feat_ritual_caster_details_sorcerer",
-
-    condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или вьіше
-
-    spells: [
-      {
-        spell: spells.learn_ritual,
-      },
-    ],
-
-    equipment: [
-      {
-        inventory: [[item.ritual_book, 1]],
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 2,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["sorcerer"],
-        cast_time: "ritual",
-      },
-    ],
-  },
-
-  ritual_caster_wizard: {
-    name: "feat_ritual_caster_wizard",
-    details: "feat_ritual_caster_details_wizard",
-
-    condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или вьіше
-
-    spells: [
-      {
-        spell: spells.learn_ritual,
-      },
-    ],
-
-    equipment: [
-      {
-        inventory: [[item.ritual_book, 1]],
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_once_a_day",
-        select: 2,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["wizard"],
-        cast_time: "ritual",
-      },
-    ],
-  },
-
-  ritual_caster_bard: {
-    name: "feat_ritual_caster_bard",
-    details: "feat_ritual_caster_details_bard",
-
-    condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или вьіше
-
-    spells: [
-      {
-        spell: spells.learn_ritual,
-      },
-    ],
-
-    equipment: [
-      {
-        inventory: [[item.ritual_book, 1]],
-      },
-    ],
-
-    settings: [
-      {
-        type: "spells",
-        name: "spells_1",
-        details: "no_mana_but_ritual",
-        select: 2,
-        mana_min: 1,
-        mana_max: 1,
-        classes: ["bard"],
-        cast_time: "ritual",
+        name: "spells",
+        select: 1,
+        filter: "aim_need",
+        mana_min: 0,
+        mana_max: 0,
+        classes: ["bard", "wizard", "druid", "cleric", "warlock", "sorcerer"],
+        //Вы узнаёте один заговор, требующий броска атаки
       },
     ],
   },
@@ -1721,173 +2121,6 @@ export default {
         type: "plus",
         keyword: "two_min",
         details: "on_damage_dice_of_electricity",
-      },
-    ],
-  },
-
-  durable: {
-    name: "feat_durable",
-    details: "feat_durable_details",
-
-    stats: [
-      {
-        name: "consitution",
-        num: 1,
-      },
-    ],
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "double_CON",
-        details: "on_regen_min_2",
-      },
-    ],
-  },
-
-  sentinel: {
-    name: "feat_sentinel",
-    details: "feat_sentinel_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "provocation",
-        details: "on_disengage",
-      },
-      {
-        type: "plus",
-        keyword: "provocation",
-        details: "on_ally_attack",
-      },
-      {
-        type: "plus",
-        keyword: "stopka",
-        details: "creature_affected_provoked_attack",
-      },
-    ],
-  },
-
-  mage_slayer: {
-    name: "feat_mage_slayer",
-    details: "feat_mage_slayer_details",
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_save_spells_near",
-      },
-      {
-        type: "plus",
-        keyword: "disadvantage",
-        details: "on_concentration_to_attacked_creature",
-      },
-      {
-        type: "plus",
-        keyword: "provocation",
-        details: "on_casting_near",
-      },
-    ],
-  },
-
-  resilient: {
-    name: "feat_resilient",
-    details: "feat_resilient_details",
-
-    settings: [
-      {
-        type: "custom",
-        name: "stats",
-        select: 1,
-        list: [
-          {
-            name_set: "strength",
-            details: "strength_details",
-            saving: ["strength"],
-            stats: [{ name: "strength", num: 1 }],
-          },
-          {
-            name_set: "dexterity",
-            details: "dexterity_details",
-            saving: ["dexterity"],
-            stats: [{ name: "dexterity", num: 1 }],
-          },
-          {
-            name_set: "constitution",
-            details: "constitution_details",
-            saving: ["constitution"],
-            stats: [{ name: "constitution", num: 1 }],
-          },
-          {
-            name_set: "intelligence",
-            details: "intelligence_details",
-            saving: ["intelligence"],
-            stats: [{ name: "intelligence", num: 1 }],
-          },
-          {
-            name_set: "wisdom",
-            details: "wisdom_details",
-            saving: ["wisdom"],
-            stats: [{ name: "wisdom", num: 1 }],
-          },
-          {
-            name_set: "charisma",
-            details: "charisma_details",
-            saving: ["charisma"],
-            stats: [{ name: "charisma", num: 1 }],
-          },
-        ],
-      },
-    ],
-  },
-
-  crossbow_expert: {
-    name: "feat_crossbow_expert",
-    details: "feat_crossbow_expert_details",
-
-    fines: [
-      {
-        type: "plus",
-        keyword: "ignoring",
-        details: "recharge_on_arbalets",
-      },
-      {
-        type: "plus",
-        keyword: "no_disadvantage",
-        details: "near_target_arbalet",
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.crossbow_shot,
-      },
-    ],
-  },
-
-  linguist: {
-    name: "feat_linguist",
-    details: "feat_linguist_details",
-
-    stats: [
-      {
-        name: "intelligence",
-        num: 1,
-      },
-    ],
-
-    spells: [
-      {
-        spell: spells.create_crypt,
-      },
-    ],
-
-    settings: [
-      {
-        type: "languages",
-        select: 3,
-        filter: "no_used",
       },
     ],
   },

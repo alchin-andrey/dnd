@@ -2278,7 +2278,7 @@ export default {
   in_taken_hands: "зайнятими руками",
 
   cast_reaction: "Реакція як Каст",
-  for_spells_action: "для заклять з Кастом Основна або Бонусна дія",
+  for_spells_action: "для заклять з Кастом Основна | Бонусна дія",
 
   feat_grappler: "Борець",
   feat_grappler_details:
@@ -2582,7 +2582,7 @@ export default {
   spell_heavy_shot_details: spells.heavy_shot_details,
   spell_heavy_shot_expanded: spells.heavy_shot_expanded,
 
-  feat_charger: "Нападник",
+  feat_charger: "Нальотчик",
   feat_charger_details: "Ви багато рухаєтеся у бою.",
 
   mastery_bonus: "Бонус Майстерності",
@@ -2732,7 +2732,7 @@ export default {
   on_damage_dice_of_electricity: "на кожному кубі пошкоджень ⚡ Струмом",
 
   double_CON: "2× Статура",
-  on_regen_min_2: "при регені (мінімум 2)",
+  on_regen_min_2: "як мінімальний результат при кидку Регену (мінімум 2)",
 
   feat_durable: "Витривалий",
   feat_durable_details: "Ви дуже живучий.",
@@ -5193,4 +5193,26 @@ export default {
 
   feat_resilient: "Стійкий",
   feat_resilient_details: "Ви сфокусувались на одній з ваших здібностей. Її базове значення збільшується на 1, і ви отримуєте +майстерність до Випробування цієї здібності.",
+
+  feat_magic_initiate: "Посвячений у магію",
+  feat_magic_initiate_details: "Ви знаєте два закляття вибраного класа, що не потребують мани, і одне заклинання, що коштує 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
+
+  spell_cleric: "закляття [1] клірика",
+  spell_druid: "закляття [1] друїда",
+  spell_warlock: "закляття [1] чаклуна",
+  spell_sorcerer: "закляття [1] чародія",
+  spell_wizard: "закляття [1] чарівника",
+  spell_bard: "закляття [1] барда",
+
+  feat_skilled: "Обдарований",
+  feat_skilled_details: "Ви отримуєте володіння будь-якою комбінацією із трьох навичок або інструментів на ваш вибір.",
+
+  feat_ritual_caster: "Ритуальний заклинач",
+  feat_ritual_caster_details:
+    "Ви дізнаєтесь два ритуали вибраного класа. Ви зможете використовувати їх без мани, але накладати його на 10 хвилин довше і тримаючи в руці свою ритуальну книгу. Також ви можете вивчати інші знайдені ритуальні закляття вибраного класа.",
+
+    spell_shield_block: spells.shield_block,
+  spell_shield_block_details: spells.shield_block_details,
+  spell_shield_block_expanded: spells.shield_block_expanded,
+  
 };
