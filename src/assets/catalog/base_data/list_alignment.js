@@ -169,6 +169,7 @@ export default {
     // СЛАБОСТИ
 
     { name: "weakness_greed" }, // жадность
+    { name: "weakness_cleptomany" }, // жадность
     { name: "weakness_lust" }, // похоть
     { name: "weakness_passion" }, // азарт
     { name: "weakness_dependance" }, // залежність
