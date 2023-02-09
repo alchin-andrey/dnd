@@ -16,7 +16,7 @@
 			:active_boll_link="shown_Btn == 'feats'"
 			@click="shownFeatsBtn('feats')"
 		>
-			<span>+1 Черта</span>
+			<span>{{t("feat")}}</span>
 		</my-selection-card>
 	</section>
 

@@ -105,7 +105,7 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: !shown_home && !class_page.shown.stats }"
+		:class="{ sidebar_right_close: close_Sidebar_Right }"
 	>
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
@@ -167,6 +167,11 @@ export default {
       // "createVarClass"
 		]),
 		//GETTERS
+
+    close_Sidebar_Right() {
+      const feats = this.setting_open?.slice(0, 5) == "feats";
+      return !this.shown_home && !(this.class_page.shown.stats || feats);
+    },
 
 		hide_Ruler() {
 			return (

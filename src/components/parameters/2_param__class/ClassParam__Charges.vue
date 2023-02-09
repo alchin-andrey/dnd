@@ -1,11 +1,13 @@
 <template>
-	<my-wrapper v-if="charges_Class_Params.length !== 0" :hr="hr">
-		<my-charges
-			v-for="item in charges_Class_Params"
-			:key="item"
-			:charge="item"
-		/>
-	</my-wrapper>
+<div>
+  	<my-wrapper v-if="charges_Class_Params.length !== 0" :hr="hr">
+  		<my-charges
+  			v-for="item in charges_Class_Params"
+  			:key="item"
+  			:charge="item"
+  		/>
+  	</my-wrapper>
+</div>
 </template>
 
 <script>
