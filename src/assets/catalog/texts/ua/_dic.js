@@ -5214,5 +5214,7 @@ export default {
     spell_shield_block: spells.shield_block,
   spell_shield_block_details: spells.shield_block_details,
   spell_shield_block_expanded: spells.shield_block_expanded,
+
+  feat: "Риса",
   
 };
