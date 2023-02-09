@@ -12,53 +12,53 @@ export const useFeatsStore = defineStore({
 		stats_2: [
 				{
 					name_set: "strength",
-					stats: [{ name: "strength", num: 2 }],
+					stats: [{ name: "strength", num: 2, details: "strength_details"}],
 				},
 				{
 					name_set: "dexterity",
-					stats: [{ name: "dexterity", num: 2 }],
+					stats: [{ name: "dexterity", num: 2, details: "dexterity_details" }],
 				},
 				{
 					name_set: "constitution",
-					stats: [{ name: "constitution", num: 2 }],
+					stats: [{ name: "constitution", num: 2, details: "constitution_details" }],
 				},
 				{
 					name_set: "intelligence",
-					stats: [{ name: "intelligence", num: 2 }],
+					stats: [{ name: "intelligence", num: 2, details: "intelligence_details" }],
 				},
 				{
 					name_set: "wisdom",
-					stats: [{ name: "wisdom", num: 2 }],
+					stats: [{ name: "wisdom", num: 2, details: "wisdom_details" }],
 				},
 				{
 					name_set: "charisma",
-					stats: [{ name: "charisma", num: 2 }],
+					stats: [{ name: "charisma", num: 2, details: "charisma_details" }],
 				},
 			],
 		stats_1_1: [
 				{
 					name_set: "strength",
-					stats: [{ name: "strength", num: 1 }],
+					stats: [{ name: "strength", num: 1, details: "strength_details" }],
 				},
 				{
 					name_set: "dexterity",
-					stats: [{ name: "dexterity", num: 1 }],
+					stats: [{ name: "dexterity", num: 1, details: "dexterity_details" }],
 				},
 				{
 					name_set: "constitution",
-					stats: [{ name: "constitution", num: 1 }],
+					stats: [{ name: "constitution", num: 1, details: "constitution_details" }],
 				},
 				{
 					name_set: "intelligence",
-					stats: [{ name: "intelligence", num: 1 }],
+					stats: [{ name: "intelligence", num: 1, details: "intelligence_details" }],
 				},
 				{
 					name_set: "wisdom",
-					stats: [{ name: "wisdom", num: 1 }],
+					stats: [{ name: "wisdom", num: 1, details: "wisdom_details" }],
 				},
 				{
 					name_set: "charisma",
-					stats: [{ name: "charisma", num: 1 }],
+					stats: [{ name: "charisma", num: 1, details: "charisma_details"}],
 				},
 			],
 	}),

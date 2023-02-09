@@ -172,17 +172,12 @@ export default {
 	opacity: 0.2;
 }
 
-.fade-move,
 .scroll-packs-enter-active {
 	transition: all 0.4s ease-out;
 }
 
-
-
 .scroll-packs-leave-active {
 	transition: all 0.4s cubic-bezier(1, 0.8, 0.8, 1);
-  /* position: absolute;
-  width: 100%; */
 }
 
 .scroll-packs-enter-from,

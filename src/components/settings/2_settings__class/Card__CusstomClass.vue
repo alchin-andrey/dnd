@@ -8,16 +8,34 @@
 		>
 		</my-card-text>
 
+		<!-- //NOTE - Stats -->
+
+		<my-wrapper v-if="shown_Param_Arr(custom.stats)">
+			<my-wrapper
+				gap_26
+				v-for="state in level_Filter_Arr(custom.stats)"
+				:key="state"
+			>
+				<my-attribute
+					:title="state.name"
+					:type="`${state.name}_base`"
+					plus
+					:numb="state.num"
+					:save="stats_Saving_Arr"
+				/>
+				<my-card-text v-if="state.details" :text_html="state.details" />
+			</my-wrapper>
+		</my-wrapper>
+
 		<!-- //NOTE - Skilss -->
-		<my-wrapper gap_26 v-if="shown_Param_Arr(custom.skills)" 			
-    v-for="skill in level_Filter_Arr(custom.skills)"
-			:key="skill">
-      <AppSkills
-			:title="skill.name"
-			:numb="this[skill.num]"
-			save
-		/>
-    <my-card-text v-if="skill.details" :text_html="skill.details"/>
+		<my-wrapper
+			gap_26
+			v-if="shown_Param_Arr(custom.skills)"
+			v-for="skill in level_Filter_Arr(custom.skills)"
+			:key="skill"
+		>
+			<AppSkills :title="skill.name" :numb="this[skill.num]" save />
+			<my-card-text v-if="skill.details" :text_html="skill.details" />
 		</my-wrapper>
 
 		<!-- //NOTE - Qualities -->
@@ -34,13 +52,13 @@
 				title="speed"
 				:numb="item.speed_bonus"
 				plus
-        feet
+				feet
 			/>
-      <my-attribute
-        v-if="vision_Night_Numb"
+			<my-attribute
+				v-if="vision_Night_Numb"
 				title="vision_night"
 				:numb="vision_Night_Numb"
-        feet
+				feet
 			/>
 		</my-wrapper>
 
@@ -136,7 +154,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-// import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 // import { useSkillsStore } from "@/stores/modules/SkillsStore";
 // import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 // import { useSpellsStore } from "@/stores/modules/SpellsStore";
@@ -166,31 +184,41 @@ export default {
 	},
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "Mastery", "Mastery_x2", "level_Filter_Arr"]),
+		...mapState(useMYStore, [
+			"MY",
+			"Mastery",
+			"Mastery_x2",
+			"level_Filter_Arr",
+		]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr"]),
+		...mapState(useStatsStore, ["stats_Saving_Arr"]),
 
 		speed_Bonus_True() {
 			const qualities = this.level_Filter_Arr(this.custom.qualities);
-			const speed_bonus_arr = qualities.filter((el) => el.speed_bonus && el.show);
+			const speed_bonus_arr = qualities.filter(
+				(el) => el.speed_bonus && el.show
+			);
 			return speed_bonus_arr;
 		},
 
 		vision_Night_Numb() {
 			const qualities = this.level_Filter_Arr(this.custom.qualities);
 			const vision_night = qualities.filter((el) => el.vision_night);
-      let numb_MAX = 0;
-      vision_night.forEach(el => numb_MAX = Math.max(numb_MAX, el.vision_night))
+			let numb_MAX = 0;
+			vision_night.forEach(
+				(el) => (numb_MAX = Math.max(numb_MAX, el.vision_night))
+			);
 			return numb_MAX;
 		},
 
-    shown_Qualities() {
-      return (
-        this.custom.hp_bonus ||
-        this.speed_Bonus_True.length !== 0 ||
-        this.vision_Night_Numb
-        )
-    },
+		shown_Qualities() {
+			return (
+				this.custom.hp_bonus ||
+				this.speed_Bonus_True.length !== 0 ||
+				this.vision_Night_Numb
+			);
+		},
 
 		hp_Bonus: (state) => (increm_1, increm_2) => {
 			let level = Math.ceil(state.MY.level / increm_1);
