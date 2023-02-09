@@ -9,7 +9,6 @@
 		</my-card-text>
 
 		<!-- //NOTE - Stats -->
-
 		<my-wrapper v-if="shown_Param_Arr(custom.stats)">
 			<my-wrapper
 				gap_26
@@ -28,14 +27,15 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Skilss -->
-		<my-wrapper
-			gap_26
-			v-if="shown_Param_Arr(custom.skills)"
-			v-for="skill in level_Filter_Arr(custom.skills)"
-			:key="skill"
-		>
-			<AppSkills :title="skill.name" :numb="this[skill.num]" save />
-			<my-card-text v-if="skill.details" :text_html="skill.details" />
+		<my-wrapper v-if="shown_Param_Arr(custom.skills)">
+			<my-wrapper
+				gap_26
+				v-for="skill in level_Filter_Arr(custom.skills)"
+				:key="skill"
+			>
+				<AppSkills :title="skill.name" :numb="this[skill.num]" save />
+				<my-card-text v-if="skill.details" :text_html="skill.details" />
+			</my-wrapper>
 		</my-wrapper>
 
 		<!-- //NOTE - Qualities -->
@@ -59,6 +59,18 @@
 				title="vision_night"
 				:numb="vision_Night_Numb"
 				feet
+			/>
+		</my-wrapper>
+    
+    <!-- //NOTE - Qualities_#2 -->
+    <my-wrapper v-if="shown_Param_Arr(custom.qualities)">
+			<my-attribute
+				v-for="qual in level_Filter_Arr(custom.qualities)"
+				:key="qual"
+				:title="qual.name"
+        :numb="qual.num"
+        :feet="qual.name == 'speed_bonus'"
+        plus
 			/>
 		</my-wrapper>
 
