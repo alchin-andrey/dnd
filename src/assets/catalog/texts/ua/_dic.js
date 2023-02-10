@@ -4975,6 +4975,7 @@ export default {
   weakness: "слабкість",
   // СЛАБОСТІ
   weakness_greed: "жадібність",
+  weakness_cleptomany: "клептоманія",
   weakness_pride: "гордіня",
   weakness_passion: "азарт",
   weakness_laziness: "лінь",

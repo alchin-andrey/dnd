@@ -5001,6 +5001,7 @@ export default {
   weakness: "слабость",
   // СЛАБОСТИ
   weakness_greed: "жадность",
+  weakness_cleptomany: "клептомания",
   weakness_pride: "гордьіня",
   weakness_passion: "азарт",
   weakness_laziness: "лень",
