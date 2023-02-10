@@ -1,4 +1,5 @@
 // import { ref, computed } from "vue";
+import { mapState } from "pinia";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -64,6 +65,7 @@ export const useFeatsStore = defineStore({
 	}),
 
 	getters: {
+    ...mapState(useMYStore, ["MY"]),
 		feats() {
       const obj = this.feats_obj;
       let new_arr = [];
@@ -89,15 +91,15 @@ export const useFeatsStore = defineStore({
     },
 
     feats_Stats_2_Arr() {
-      return this.getFeatsArr("stats_2", 1);
+      return this.getStatsForFeatsArr("stats_2", 1);
     },
 
     feats_Stats_1_1_Arr() {
-      return this.getFeatsArr("stats_1_1", 2);
+      return this.getStatsForFeatsArr("stats_1_1", 2);
     },
 
     feats_Feats_Arr() {
-      return this.getFeatsArr("feats", 1);
+      return this.getFeatsForFeatsArr();
     },
 
     feats_Select_Arr() {
@@ -112,10 +114,6 @@ export const useFeatsStore = defineStore({
         if(select_save) {
           const btn_save = select_save.id_btn;
           btn_link = btn_save;
-          const save_arr = select_save[btn_save];
-          if (save_arr) {
-            select_list = save_arr;
-          } else {
             if(btn_save == "stats_2") {
               const stats_2 = this.feats_Stats_2_Arr.find(el => el.id_link == item.id_link);
               select_list = stats_2.select_list;
@@ -126,7 +124,6 @@ export const useFeatsStore = defineStore({
               const feats = this.feats_Feats_Arr.find(el => el.id_link == item.id_link);
               select_list = feats.select_list;
             }
-          }
         } else {
           const stats_2 = this.feats_Stats_2_Arr.find(el => el.id_link == item.id_link);
           select_list = stats_2.select_list;
@@ -143,7 +140,73 @@ export const useFeatsStore = defineStore({
 	},
 
 	actions: {
-    getFeatsArr(link_btn, select_numb) {
+    getFeatsForFeatsArr() {
+      const link_btn = "feats";
+      const MYStore = useMYStore();
+      const sett_select_old = MYStore.MY._settings_class_old[MYStore.MY.class.name];
+      const sett_select = MYStore.MY._settings_class[MYStore.MY.class.name];
+			const feats_lvl = this.feats_Settings_Class;
+      let list = this[link_btn];
+      
+      let select_list_all = [];
+      let save_list_old = [];
+      let new_arr = [];
+      feats_lvl?.forEach((item) => {
+        const select_save_old = sett_select_old?.[item.id_link]?.[link_btn];
+        const btn_save_old = sett_select_old?.[item.id_link]?.id_btn;
+        if(select_save_old && btn_save_old == "feats") {
+          save_list_old.push(select_save_old[0].name);
+        }
+      });
+
+      feats_lvl?.forEach((item) => {
+        const btn_save_old = sett_select_old?.[item.id_link]?.id_btn;
+
+				const select_save = sett_select?.[item.id_link]?.[link_btn];
+        const btn_save = sett_select?.[item.id_link]?.id_btn;
+
+        let select_list = [];
+          if(btn_save == "feats") {
+            const includ_select = select_list_all.some(el => el.name == select_save?.[0].name);
+            const includ_save_old = save_list_old.some(el => el == select_save?.[0].name);
+            if(btn_save == btn_save_old) {
+              select_list = select_save;
+            } else if(select_save && !includ_select && !includ_save_old) {
+              select_list = select_save;
+            } else {
+              const list_select_includ = list.filter((el) => !save_list_old.includes(el.name));
+              select_list.push(list_select_includ[0]);
+              MYStore.MY._settings_class[MYStore.MY.class.name][item.id_link][link_btn] = select_list;
+            }
+        } else {    
+          select_list.push(list[0]);
+        }
+
+				new_arr.push({
+					...item,
+          name: link_btn,
+					select_list: select_list,
+          list: list,
+				});
+        if(btn_save == "feats") {
+          list = list.filter((el) => !select_list.includes(el));
+          select_list_all = select_list_all.concat(select_list);
+        }
+			});
+        let feats_arr = [];
+        const list_all = this[link_btn];
+        new_arr.forEach(item => {
+          const select_list_all_includ = select_list_all.filter((el) => !item.select_list.includes(el))
+          const new_list = list_all.filter((el) => !select_list_all_includ.includes(el));
+          feats_arr.push({
+            ...item, 
+            list: new_list,
+          });
+        });
+        return feats_arr;
+    },
+
+    getStatsForFeatsArr(link_btn, select_numb) {
       const MYStore = useMYStore();
       const sett_select = MYStore.MY._settings_class[MYStore.MY.class.name];
 			const feats_lvl = this.feats_Settings_Class;
@@ -151,6 +214,7 @@ export const useFeatsStore = defineStore({
       feats_lvl?.forEach((item) => {
 				const select_save = sett_select?.[item.id_link]?.[link_btn];
         const list = this[link_btn];
+
 
         let select_list = [];
         if(select_save) {
@@ -170,5 +234,6 @@ export const useFeatsStore = defineStore({
 			});
       return new_arr;
     },
+
   },
 });

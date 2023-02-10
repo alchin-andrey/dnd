@@ -9,8 +9,10 @@ export default {
   charisma: '<path d="M9 4L10.1803 7.81966H14L10.9098 10.1803L12.0902 14L9 11.6393L5.90983 14L7.09017 10.1803L4 7.81966H7.81966L9 4Z"/>',
 
 	intelligence: '<rect x="5" y="5" width="8" height="8" rx="4" />',
-  
+	investigation_passive: '<rect x="5" y="5" width="8" height="8" rx="4" />',
+
 	wisdom: '<path d="M4.71,9l4.29,-4.29l4.29,4.29l-4.29,4.29Z" />',
+	perception_passive: '<path d="M4.71,9l4.29,-4.29l4.29,4.29l-4.29,4.29Z" />',
   //STATS
   
 	speed: '<path d="M4 5H7L9 9L7 13H4L6 9L4 5Z" fill="white"/><path d="M9 5H12L14 9L12 13H9L11 9L9 5Z" fill="white"/>',

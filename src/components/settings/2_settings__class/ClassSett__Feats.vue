@@ -76,19 +76,21 @@ export default {
 
 	methods: {
 		shownFeatsBtn(name) {
-			this.getFeatsLink(name);
+			this.getFeatsLink({});
 			this.MY._settings_class[this.MY.class.name][this.id_link].id_btn =
 				name;
 		},
 
-		getFeatsLink(name) {
+		getFeatsLink(obj) {
 			if (!this.MY._settings_class[this.MY.class.name]) {
 				this.MY._settings_class[this.MY.class.name] = {};
 			}
 			if (!this.MY._settings_class[this.MY.class.name][this.id_link]) {
-				this.MY._settings_class[this.MY.class.name][this.id_link] = { id_btn: name };
+				this.MY._settings_class[this.MY.class.name][this.id_link] = obj;
 			}
-		},
+      let sett = this.MY._settings_class;
+      this.MY._settings_class_old = JSON.parse(JSON.stringify(sett));
+    },
 
 		getFeatsSelect(list_el) {
 			const active = this.feat_Arr.select_list.includes(list_el);
@@ -99,7 +101,7 @@ export default {
 				let arr = this.feat_Arr.select_list.slice(0);
 				arr.splice(0, 1);
 				arr.push(list_el);
-				this.getFeatsLink(this.shown_Btn);
+				this.getFeatsLink({ id_btn: this.shown_Btn });
 				this.MY._settings_class[this.MY.class.name][this.id_link][this.shown_Btn] = arr;
 			}
 		},
