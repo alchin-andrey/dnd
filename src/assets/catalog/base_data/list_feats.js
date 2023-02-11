@@ -71,8 +71,9 @@ export default {
 
     qualities: [
       {
-        name: "speed_bonus",
-        num: 10,
+        name: "speed",
+        type: "bonus",
+        num:  10,
         show: true,
       },
     ],
@@ -163,11 +164,15 @@ export default {
     qualities: [
       {
         name: "perception_passive",
+        type: "bonus",
         num: 5,
+        show: true,
       },
       {
         name: "investigation_passive",
+        type: "bonus",
         num: 5,
+        show: true,
       },
     ],
 
@@ -187,7 +192,9 @@ export default {
     qualities: [
       {
         name: "initiative",
+        type: "bonus",
         num: 5,
+        show: true,
       },
     ],
 
@@ -241,7 +248,7 @@ export default {
 
     stats: [
       {
-        name: "consitution",
+        name: "constitution",
         num: 1,
       },
     ],
@@ -1344,7 +1351,7 @@ export default {
     fines: [
       {
         type: "advantage",
-        keyword: "rethrow",
+        keyword: "advantage",
         details: "of_damage_dice_once_per_move",
       },
     ],

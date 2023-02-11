@@ -1799,7 +1799,7 @@ export default {
   spell_searing_smite_details: spells.searing_smite_details,
   spell_searing_smite_expanded: spells.searing_smite_expanded,
 
-  material_familiar_10gold: "уголь + благовония + жаровня за 10 🟡",
+  material_familiar_10gold: "уголь+благовония+жаровня за 10 🟡",
 
   spell_find_familiar: spells.find_familiar,
   spell_find_familiar_details: spells.find_familiar_details,
@@ -2457,7 +2457,7 @@ export default {
   feat_inspiring_leader_details:
     "Вьі можете воодушевить спутников, укрепив их решимость.",
 
-  of_damage_dice_once_per_move: "урона атаки ближним оружием один раз в ход",
+  of_damage_dice_once_per_move: "на урон атаки ближним оружием один раз в ход",
 
   weapons_improvised: weapons.improvised,
   weapons_improvised_details: weapons.improvised_details,
