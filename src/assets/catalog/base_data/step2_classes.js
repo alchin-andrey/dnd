@@ -1641,8 +1641,10 @@ export default {
     qualities: [
       {
         level: 5,
-        speed_bonus: 10,
-        show: true,
+        name: "speed",
+        type: "bonus",
+        num: 10,
+        show: false,
       },
     ],
 
@@ -2549,27 +2551,37 @@ export default {
     qualities: [
       {
         level: 2,
-        speed_bonus: 10,
+        name: "speed",
+        type: "bonus",
+        num: 10,
         show: false,
       },
       {
         level: 6,
-        speed_bonus: 5,
+        name: "speed",
+        type: "bonus",
+        num:  5,
         show: false,
       },
       {
         level: 10,
-        speed_bonus: 5,
+        sname: "speed",
+        type: "bonus",
+        num:  5,
         show: false,
       },
       {
         level: 14,
-        speed_bonus: 5,
+        name: "speed",
+        type: "bonus",
+        num:  5,
         show: false,
       },
       {
         level: 18,
-        speed_bonus: 5,
+        name: "speed",
+        type: "bonus",
+        num:  5,
         show: false,
       },
     ],
@@ -6210,7 +6222,9 @@ export default {
             qualities: [
               {
                 level: 2,
-                vision_night: 120,
+                name: "vision_night",
+                num: 120,
+                show: true
               },
             ],
           },
@@ -9495,7 +9509,9 @@ export default {
             qualities: [
               {
                 level: 6,
-                speed_bonus: 5,
+                name: "speed",
+                type: "bonus",
+                num:  5,
                 show: true,
               },
             ],
