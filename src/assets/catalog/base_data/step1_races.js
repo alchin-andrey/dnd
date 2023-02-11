@@ -676,6 +676,25 @@ export default {
           stats: { strength: 1 },
           qualities: { vision_night: 120 },
 
+          charges: [
+            {
+              level: 3,
+              name: "enlargement_self_slots",
+              type: "long_rest",
+              list: [
+                ["", 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+              ],
+            },
+            {
+              level: 5,
+              name: "invisibility_self_slots",
+              type: "long_rest",
+              list: [
+                ["", 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+              ],
+            },
+          ],
+
           proficiencies: {
             languages: [lang.undercommon],
           },
@@ -2021,6 +2040,25 @@ export default {
     stats: { intelligence: 1, charisma: 2 },
 
     qualities: { speed: 30, vision_night: 60 },
+
+    charges: [
+      {
+        level: 3,
+        name: "hellish_rebuke_tiefling_slots",
+        type: "long_rest",
+        list: [
+          ["", 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+      {
+        level: 5,
+        name: "darkness_tiefling_slots",
+        type: "long_rest",
+        list: [
+          ["", 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+    ],
 
     proficiencies: {
       weapons: [weaponry.dimple],

@@ -111,6 +111,7 @@ export default {
       expanded: "spell_hellish_rebuke_tiefling_expanded",
 
       type: "evocation",
+      slot_type: "hellish_rebuke_tiefling_slot",
       classes: [],
 
       cast_time: "reaction",
@@ -406,6 +407,7 @@ export default {
       expanded: "spell_darkness_tiefling_expanded",
 
       type: "evocation",
+      slot_type: "darkness_tiefling_slot",
       classes: [],
 
       cast_time: "action",
@@ -448,6 +450,7 @@ export default {
       expanded: "spell_enlargement_self_expanded", // полное описание
 
       type: "transmutation",
+      slot_type: "enlargement_self_slot",
       classes: [],
 
       cast_time: "action",
@@ -491,6 +494,7 @@ export default {
       expanded: "spell_invisibility_self_expanded", // полное описание
 
       type: "illusion",
+      slot_type: "invisibility_self_slot",
       classes: [],
 
       cast_time: "action",

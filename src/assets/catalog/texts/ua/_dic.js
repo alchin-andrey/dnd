@@ -5217,5 +5217,17 @@ export default {
   spell_shield_block_expanded: spells.shield_block_expanded,
 
   feat: "Риса",
+
+  hellish_rebuke_tiefling_slots: "пекельна помста",
+  hellish_rebuke_tiefling_slot: "1× Пекельна помста",
+
+  darkness_tiefling_slots: "темрява",
+  darkness_tiefling_slot: "1× Темрява",
+
+  enlargement_self_slots: "Збільшення",
+  enlargement_self_slot: "1× Збільшення",
+
+  invisibility_self_slots: "невидимість",
+  invisibility_self_slot: "1× Невидимість",
   
 };

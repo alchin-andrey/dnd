@@ -5243,5 +5243,17 @@ export default {
   spell_shield_block_expanded: spells.shield_block_expanded,
 
   feat: "Черта",
+
+  hellish_rebuke_tiefling_slots: "Адское возмездие",
+  hellish_rebuke_tiefling_slot: "1× Адское возмездие",
+
+  darkness_tiefling_slots: "тьма",
+  darkness_tiefling_slot: "1× Тьма",
+
+  enlargement_self_slots: "Увеличение",
+  enlargement_self_slot: "1× Увеличение",
+
+  invisibility_self_slots: "невидимость",
+  invisibility_self_slot: "1× Невидимость",
   
 };  
