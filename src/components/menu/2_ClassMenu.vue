@@ -21,7 +21,7 @@
 				title="stats"
 				:t_type="stats_Base_Settings_Two_T"
 			></my-selection>
-			<AppSelectionArr :menu="feats_Select_Arr"/>
+			<!-- <AppSelectionArr :menu="feats_Select_Arr"/> -->
 			<AppSelectionArr :menu="stats_Filter"/>
 			<AppSelectionArr :menu="feats_Filter"/>
 			<AppSelectionArr :menu="skills_Filter"/>

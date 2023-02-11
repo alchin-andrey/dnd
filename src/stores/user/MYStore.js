@@ -5,6 +5,7 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useFeatsStore } from "@/stores/modules/FeatsStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
 export const useMYStore = defineStore({
@@ -119,8 +120,21 @@ export const useMYStore = defineStore({
 			return (select) => (Array.isArray(select) ? select[lvl - 1] : select);
 		},
 
-		сustomm_Settings_Class_Arr() {
+		сustomm_Main_Settings_Class_Arr() {
 			return this.settingsClass(this.MY.class.settings, "custom");
+		},
+
+    сustomm_Feats_Settings_Class_Arr() {
+      const FeatsStore = useFeatsStore();
+			return this.settingsSelectList(FeatsStore.feats_Select_Arr, "custom");
+		},
+
+		сustomm_Settings_Class_Arr() {
+      const FeatsStore = useFeatsStore();
+      const main_custom = this.сustomm_Main_Settings_Class_Arr;
+      const feats = FeatsStore.feats_Select_Arr;
+      const feats_custom = this.сustomm_Feats_Settings_Class_Arr;
+			return main_custom.concat(feats).concat(feats_custom);
 		},
 
     filter_Custom_Class_Lvl: (state) => (name) => {
@@ -194,6 +208,21 @@ export const useMYStore = defineStore({
 			}
 			return new_arr;
 		},
+
+    settingsSelectList(arr, type_str) {
+      console.log('arr:', arr)
+      let new_arr = [];
+      arr.forEach(el => {
+        el.select_list.forEach((elem_list) => {
+          console.log('elem_list.settings:', elem_list.settings)
+          if (elem_list.settings) {
+            let redus = this.settingsClass(elem_list.settings, type_str, elem_list.id_link);
+            new_arr = new_arr.concat(redus);
+          }
+        });
+      });
+      return new_arr;
+    },
 
 		getRaceObj(name) {
 			this.MY.race = name;

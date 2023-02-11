@@ -1,5 +1,5 @@
 // import { ref, computed } from "vue";
-import { mapState } from "pinia";
+// import { mapState } from "pinia";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -65,7 +65,7 @@ export const useFeatsStore = defineStore({
 	}),
 
 	getters: {
-    ...mapState(useMYStore, ["MY"]),
+    // ...mapState(useMYStore, ["MY"]),
 		feats() {
       const obj = this.feats_obj;
       let new_arr = [];
