@@ -3351,7 +3351,7 @@ export default {
       impact_size_pls: null,
 
       saving_need: true,
-      saving_attribute: "intelligenct",
+      saving_attribute: "intelligence",
       impact_size_saved: null,
     }
   ],

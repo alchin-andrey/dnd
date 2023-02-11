@@ -270,40 +270,41 @@ export default {
       {
         type: "custom",
         name: "stats",
+        position:6,
         select: 1,
         list: [
           {
-            name_set: "strength",
+            name: "strength",
             details: "strength_details",
             saving: ["strength"],
             stats: [{ name: "strength", num: 1 }],
           },
           {
-            name_set: "dexterity",
+            name: "dexterity",
             details: "dexterity_details",
             saving: ["dexterity"],
             stats: [{ name: "dexterity", num: 1 }],
           },
           {
-            name_set: "constitution",
+            name: "constitution",
             details: "constitution_details",
             saving: ["constitution"],
             stats: [{ name: "constitution", num: 1 }],
           },
           {
-            name_set: "intelligence",
+            name: "intelligence",
             details: "intelligence_details",
             saving: ["intelligence"],
             stats: [{ name: "intelligence", num: 1 }],
           },
           {
-            name_set: "wisdom",
+            name: "wisdom",
             details: "wisdom_details",
             saving: ["wisdom"],
             stats: [{ name: "wisdom", num: 1 }],
           },
           {
-            name_set: "charisma",
+            name: "charisma",
             details: "charisma_details",
             saving: ["charisma"],
             stats: [{ name: "charisma", num: 1 }],
@@ -732,6 +733,7 @@ export default {
       {
         type: "languages",
         name: "languages",
+        position: 10,
         select: 3,
         filter: "no_used",
       },
@@ -1196,6 +1198,7 @@ export default {
         level: 1,
         type: "custom",
         name: "maneuvers",
+        position: 2,
         select: 2,
         list: [
           {
@@ -1435,7 +1438,7 @@ export default {
     settings: [
       {
         type: "custom",
-        name: "class",
+        name: "magic_class",
         select: 1,
         position: 2,
         list: [
@@ -1487,6 +1490,7 @@ export default {
               {
                 type: "spells",
                 name: "spells_0",
+                position: 3,
                 select: 2,
                 mana_min: 0,
                 mana_max: 0,
@@ -1496,6 +1500,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
@@ -1552,6 +1557,7 @@ export default {
               {
                 type: "spells",
                 name: "spells_0",
+                position: 3,
                 select: 2,
                 mana_min: 0,
                 mana_max: 0,
@@ -1561,6 +1567,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
@@ -1617,6 +1624,7 @@ export default {
               {
                 type: "spells",
                 name: "spells_0",
+                position: 3,
                 select: 2,
                 mana_min: 0,
                 mana_max: 0,
@@ -1626,6 +1634,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
@@ -1682,6 +1691,7 @@ export default {
               {
                 type: "spells",
                 name: "spells_0",
+                position: 3,
                 select: 2,
                 mana_min: 0,
                 mana_max: 0,
@@ -1691,6 +1701,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
@@ -1747,6 +1758,7 @@ export default {
               {
                 type: "spells",
                 name: "spells_0",
+                position: 3,
                 select: 2,
                 mana_min: 0,
                 mana_max: 0,
@@ -1756,6 +1768,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
@@ -1812,6 +1825,7 @@ export default {
               {
                 type: "spells",
                 name: "spells_0",
+                position: 3,
                 select: 2,
                 mana_min: 0,
                 mana_max: 0,
@@ -1821,6 +1835,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
@@ -1856,7 +1871,7 @@ export default {
     settings: [
       {
         type: "custom",
-        name: "class",
+        name: "magic_class",
         select: 1,
         position: 2,
         list: [
@@ -1869,6 +1884,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
@@ -1886,6 +1902,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
@@ -1903,6 +1920,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
@@ -1920,6 +1938,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
@@ -1937,6 +1956,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
@@ -1954,6 +1974,7 @@ export default {
                 type: "spells",
                 name: "spells_1",
                 details: "no_mana_but_once_a_day",
+                position: 4,
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
@@ -2016,7 +2037,8 @@ export default {
     settings: [
       {
         type: "spells",
-        name: "spells",
+        name: "spells_0",
+        position: 3,
         select: 1,
         filter: "aim_need",
         mana_min: 0,

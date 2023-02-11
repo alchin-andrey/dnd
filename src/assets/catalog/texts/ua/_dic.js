@@ -5229,5 +5229,7 @@ export default {
 
   invisibility_self_slots: "невидимість",
   invisibility_self_slot: "1× Невидимість",
+
+  magic_class: "клас магії"
   
 };
