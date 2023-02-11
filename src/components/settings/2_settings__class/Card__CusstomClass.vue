@@ -69,7 +69,7 @@
 				:key="qual"
 				:title="qual.name"
         :numb="qual.num"
-        :feet="qual.name == 'speed_bonus'"
+        :feet="qual.name == 'speed'"
         plus
 			/>
 		</my-wrapper>

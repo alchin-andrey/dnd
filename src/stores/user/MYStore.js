@@ -210,13 +210,11 @@ export const useMYStore = defineStore({
 		},
 
     settingsSelectList(arr, type_str) {
-      console.log('arr:', arr)
       let new_arr = [];
       arr.forEach(el => {
         el.select_list.forEach((elem_list) => {
-          console.log('elem_list.settings:', elem_list.settings)
           if (elem_list.settings) {
-            let redus = this.settingsClass(elem_list.settings, type_str, elem_list.id_link);
+            let redus = this.settingsClass(elem_list.settings, type_str, el.id_link);
             new_arr = new_arr.concat(redus);
           }
         });

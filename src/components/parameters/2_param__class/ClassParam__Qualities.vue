@@ -142,8 +142,9 @@ export default {
 			const armor = this.armor_Equip_Element;
 
 			let armor_default = 10;
-			const dex_mod = this.stats_Mod("dexterity");
-			const dex_mod_max2 = dex_mod > 2 ? 2 : 0;
+			let dex_mod = this.stats_Mod("dexterity");
+      dex_mod = dex_mod < 0 ? 0 : dex_mod;
+			const dex_mod_max2 = dex_mod > 2 ? 2 : dex_mod;
 
 			const medium = armor?.type[0].name == "armor_medium";
 			medium ? (armor_default += dex_mod_max2) : (armor_default += dex_mod);
