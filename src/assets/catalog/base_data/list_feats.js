@@ -95,8 +95,7 @@ export default {
   skulker: {
     name: "feat_skulker",
     details: "feat_skulker_details",
-
-    condition: "dexterity > 12",
+    condition: "condition_dexterity_13plus",
     //Требования: Ловкость 13 или вьіше
 
     fines: [
@@ -743,8 +742,7 @@ export default {
   inspiring_leader: {
     name: "feat_inspiring_leader",
     details: "feat_inspiring_leader_details",
-
-    condition: "charisma > 12",
+    condition: "condition_charisma_13plus",
     //Требования: Харизма 13 или вьіше
 
     spells: [
@@ -834,8 +832,7 @@ export default {
   medium_armor_master: {
     name: "feat_medium_armor_master",
     details: "feat_medium_armor_master_details",
-
-    condition: "proficiency_armor_medium",
+    condition: "condition_proficiency_armor_medium",
     //Требования: Владение тяжельіми доспехами
 
     fines: [
@@ -855,8 +852,7 @@ export default {
   heavy_armor_master: {
     name: "feat_heavy_armor_master",
     details: "feat_heavy_armor_master_details",
-
-    condition: "proficiency_armor_heavy",
+    condition: "condition_proficiency_armor_heavy",
     //Требования: Владение тяжельіми доспехами
 
     stats: [
@@ -902,8 +898,7 @@ export default {
   defensive_duelist: {
     name: "feat_defensive_duelist",
     details: "feat_defensive_duelist_details",
-
-    condition: "dexterity > 12",
+    condition: "condition_dexterity_13plus",
     //Требования: Ловкость 13 или вьіше
 
     fines: [
@@ -1273,8 +1268,7 @@ export default {
   grappler: {
     name: "feat_grappler",
     details: "feat_grappler_details",
-
-    condition: "strength > 12",
+    condition: "condition_strength_13plus",
     //Требования: Сила 13 или вьіше
 
     fines: [
@@ -1478,13 +1472,13 @@ export default {
               },
             ],
 
-            fines: [
-              {
-                type: "plus",
-                keyword: "use_no_mana",
-                details: "one_spell_cleric",
-              },
-            ],
+            // fines: [
+            //   {
+            //     type: "plus",
+            //     keyword: "use_no_mana",
+            //     details: "one_spell_cleric",
+            //   },
+            // ],
 
             settings: [
               {
@@ -1545,13 +1539,13 @@ export default {
               },
             ],
 
-            fines: [
-              {
-                type: "plus",
-                keyword: "use_no_mana",
-                details: "one_spell_druid",
-              },
-            ],
+            // fines: [
+            //   {
+            //     type: "plus",
+            //     keyword: "use_no_mana",
+            //     details: "one_spell_druid",
+            //   },
+            // ],
 
             settings: [
               {
@@ -1612,13 +1606,13 @@ export default {
               },
             ],
 
-            fines: [
-              {
-                type: "plus",
-                keyword: "use_no_mana",
-                details: "one_spell_warlock",
-              },
-            ],
+            // fines: [
+            //   {
+            //     type: "plus",
+            //     keyword: "use_no_mana",
+            //     details: "one_spell_warlock",
+            //   },
+            // ],
 
             settings: [
               {
@@ -1679,13 +1673,13 @@ export default {
               },
             ],
 
-            fines: [
-              {
-                type: "plus",
-                keyword: "use_no_mana",
-                details: "one_spell_sorcerer",
-              },
-            ],
+            // fines: [
+            //   {
+            //     type: "plus",
+            //     keyword: "use_no_mana",
+            //     details: "one_spell_sorcerer",
+            //   },
+            // ],
 
             settings: [
               {
@@ -1746,13 +1740,13 @@ export default {
               },
             ],
 
-            fines: [
-              {
-                type: "plus",
-                keyword: "use_no_mana",
-                details: "one_spell_wizard",
-              },
-            ],
+            // fines: [
+            //   {
+            //     type: "plus",
+            //     keyword: "use_no_mana",
+            //     details: "one_spell_wizard",
+            //   },
+            // ],
 
             settings: [
               {
@@ -1813,13 +1807,13 @@ export default {
               },
             ],
 
-            fines: [
-              {
-                type: "plus",
-                keyword: "use_no_mana",
-                details: "one_spell_bard",
-              },
-            ],
+            // fines: [
+            //   {
+            //     type: "plus",
+            //     keyword: "use_no_mana",
+            //     details: "one_spell_bard",
+            //   },
+            // ],
 
             settings: [
               {
@@ -1852,9 +1846,8 @@ export default {
   ritual_caster: {
     name: "feat_ritual_caster",
     details: "feat_ritual_caster_details",
-
-    condition: "intelligence > 12 || wisdom > 12",
-    //Требования: Ловкость 13 или вьіше
+    condition: "condition_intelligence_or_wisdom_13plus",
+    //Требования: Интеллект или Мудрость 13 или выше
 
     spells: [
       {
@@ -1991,8 +1984,7 @@ export default {
   war_caster: {
     name: "feat_war_caster",
     details: "feat_war_caster_details",
-
-    condition: "spell_attribute",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
@@ -2017,8 +2009,7 @@ export default {
   spell_sniper: {
     name: "feat_spell_sniper",
     details: "feat_spell_sniper_details",
-
-    condition: "spells_make",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
@@ -2044,7 +2035,7 @@ export default {
         mana_min: 0,
         mana_max: 0,
         classes: ["bard", "wizard", "druid", "cleric", "warlock", "sorcerer"],
-        //Вы узнаёте один заговор, требующий броска атаки
+        //Вьі узнаете один заговор, требующий броска атаки
       },
     ],
   },
@@ -2052,8 +2043,7 @@ export default {
   elemental_adept_sound: {
     name: "feat_elemental_adept_sound",
     details: "feat_elemental_adept_sound_details",
-
-    condition: "spell_attribute",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
@@ -2073,8 +2063,7 @@ export default {
   elemental_adept_acid: {
     name: "feat_elemental_adept_acid",
     details: "feat_elemental_adept_acid_details",
-
-    condition: "spell_attribute",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
@@ -2094,8 +2083,7 @@ export default {
   elemental_adept_fire: {
     name: "feat_elemental_adept_fire",
     details: "feat_elemental_adept_fire_details",
-
-    condition: "spell_attribute",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
@@ -2115,8 +2103,7 @@ export default {
   elemental_adept_cold: {
     name: "feat_elemental_adept_cold",
     details: "feat_elemental_adept_cold_details",
-
-    condition: "spell_attribute",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
@@ -2136,8 +2123,7 @@ export default {
   elemental_adept_electricity: {
     name: "feat_elemental_adept_electricity",
     details: "feat_elemental_adept_electricity_details",
-
-    condition: "spell_attribute",
+    condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
     fines: [
