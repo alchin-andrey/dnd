@@ -1,4 +1,5 @@
 // import { ref, computed } from "vue";
+// import { watch, toRef } from 'vue';
 import { acceptHMRUpdate, defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
 import { useStatsStore } from "@/stores/modules/StatsStore";
@@ -282,6 +283,19 @@ export const useMYStore = defineStore({
 				this.MY.custom_selected_race_page[item] = arr;
 			}
 		},
+
+    // onFooChanged() {
+    //   console.log('onFooChanged:')
+    // }
 	},
 });
 //!SECTION - ACTIONS
+
+// const useMYStore.$subscribe((mutation, state) => {
+//   console.log('state:', state)
+//   console.log('mutation:', mutation)
+//   console.log('tracked!')
+// })
+
+// const store = useMYStore();
+// watch(toRef(store, 'Mastery'), store.onFooChanged);

@@ -16,7 +16,7 @@
   <!-- feats_Settings -->
   <my-selection-box
 			v-for="item in feats_Settings_Class"
-			:key="item"
+			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
 		>
     <ClassSett__Feats :id_link="item.id_link" />
@@ -40,19 +40,6 @@ export default {
     ...mapState(useFeatsStore, ["feats_Settings_Class"]),
 	},
   methods: {
-    // getFeatsLink() {
-		// 	if (!this.MY._settings_class[this.MY.class.name]) {
-		// 		this.MY._settings_class[this.MY.class.name] = {};
-		// 	}
-		// 	if (!this.MY._settings_class[this.MY.class.name][this.custom.id_link]) {
-		// 		this.MY._settings_class[this.MY.class.name][this.custom.id_link] = {
-    //       id_btn: this.btn,
-		// 			stats_2: [this.stats_2[0]],
-    //       stats_1_1: [this.stats_1_1[0], this.stats_1_1[1]],
-    //       feats: [this.feats[0]],
-    //     };
-		// 	}
-		// },
   }
 };
 </script>

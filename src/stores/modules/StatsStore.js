@@ -93,10 +93,14 @@ export const useStatsStore = defineStore({
     },
 
     stats_Class_Page_Numb: (store) => (name) => {
+      const MYStore = useMYStore();
       const REC = store.stats_Race_Page_Numb(name);
       let index = store.stats_Base_Arr.indexOf(name);
       const base = store.stats_base_numb[index];
-      return REC + base;
+      let custom_bonus = 0;
+      const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
+      custom_stats.forEach(el => el.name == name ? custom_bonus += el.num : null);
+      return REC + base + custom_bonus;
     },
 
     stats_Mod: (store) => (name) => {
