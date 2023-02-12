@@ -2104,15 +2104,36 @@ export default {
 
     settings: [
       {
-        type: "spells",
+        type: "custom",
         name: "spells_0",
         position: 3,
         select: 1,
-        filter: "aim_need",
-        mana_min: 0,
-        mana_max: 0,
-        classes: ["bard", "wizard", "druid", "cleric", "warlock", "sorcerer"],
-        //Вьі узнаете один заговор, требующий броска атаки
+        list:[
+          {
+            name_set: spells.acid_splash[0].name,
+            spells: [{spell:spells.acid_splash}]
+          },
+          {
+            name_set: spells.eldritch_blast[0].name,
+            spells: [{spell:spells.eldritch_blast}]
+          },
+          {
+            name_set: spells.fire_bolt[0].name,
+            spells: [{spell:spells.fire_bolt}]
+          },
+          {
+            name_set: spells.ray_of_frost[0].name,
+            spells: [{spell:spells.ray_of_frost}]
+          },
+          {
+            name_set: spells.shocking_grasp[0].name,
+            spells: [{spell:spells.shocking_grasp}]
+          },
+          {
+            name_set: spells.thorn_whip[0].name,
+            spells: [{spell:spells.thorn_whip}]
+          },
+        ]
       },
     ],
   },
