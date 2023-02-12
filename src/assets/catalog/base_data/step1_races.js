@@ -276,7 +276,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.small_illusion,
+              spell: spells.minor_illusion,
             },
           ],
         },

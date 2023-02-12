@@ -1530,14 +1530,51 @@ export default {
 
             settings: [
               {
-                type: "spells",
+                type: "custom",
                 name: "spells_0",
                 position: 3,
                 select: 2,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["cleric"],
+                list: [
+                  //spells[0] cleric
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.light[0].name,
+                    spells: [{ spell: spells.light }],
+                  },
+                  {
+                    name_set: spells.sacred_flame[0].name,
+                    spells: [{ spell: spells.sacred_flame }],
+                  },
+                  {
+                    name_set: spells.resistance[0].name,
+                    spells: [{ spell: spells.resistance }],
+                  },
+                  {
+                    name_set: spells.guidance[0].name,
+                    spells: [{ spell: spells.guidance }],
+                  },
+                  {
+                    name_set: spells.spare_the_dying[0].name,
+                    spells: [{ spell: spells.spare_the_dying }],
+                  },
+                  {
+                    name_set: spells.thaumaturgy[0].name,
+                    spells: [{ spell: spells.thaumaturgy }],
+                  },
+                ]
               },
+              // {
+              //   type: "spells",
+              //   name: "spells_0",
+              //   position: 3,
+              //   select: 2,
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["cleric"],
+              // },
               {
                 type: "spells",
                 name: "spells_1",
@@ -1597,14 +1634,59 @@ export default {
 
             settings: [
               {
-                type: "spells",
+                type: "custom",
                 name: "spells_0",
                 position: 3,
                 select: 2,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["druid"],
+                list: [
+                  //spells[0] druid
+                  {
+                    name_set: spells.shillelagh[0].name,
+                    spells: [{ spell: spells.shillelagh }],
+                  },
+                  {
+                    name_set: spells.druidcraft[0].name,
+                    spells: [{ spell: spells.druidcraft }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.resistance[0].name,
+                    spells: [{ spell: spells.resistance }],
+                  },
+                  {
+                    name_set: spells.produce_flame[0].name,
+                    spells: [{ spell: spells.produce_flame }],
+                  },
+                  {
+                    name_set: spells.thorn_whip[0].name,
+                    spells: [{ spell: spells.thorn_whip }],
+                  },
+                  {
+                    name_set: spells.guidance[0].name,
+                    spells: [{ spell: spells.guidance }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ spell: spells.poison_spray }],
+                  },
+                ]
               },
+              // {
+              //   type: "spells",
+              //   name: "spells_0",
+              //   position: 3,
+              //   select: 2,
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["druid"],
+              // },
               {
                 type: "spells",
                 name: "spells_1",
@@ -1664,14 +1746,59 @@ export default {
 
             settings: [
               {
-                type: "spells",
+                type: "custom",
                 name: "spells_0",
                 position: 3,
                 select: 2,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["warlock"],
+                list: [
+                  //spells[0] warlock
+                  {
+                    name_set: spells.mage_hand[0].name,
+                    spells: [{ spell: spells.mage_hand }],
+                  },
+                  {
+                    name_set: spells.friends[0].name,
+                    spells: [{ spell: spells.friends }],
+                  },
+                  {
+                    name_set: spells.blade_ward[0].name,
+                    spells: [{ spell: spells.blade_ward }],
+                  },
+                  {
+                    name_set: spells.chill_touch[0].name,
+                    spells: [{ spell: spells.chill_touch }],
+                  },
+                  {
+                    name_set: spells.minor_illusion[0].name,
+                    spells: [{ spell: spells.minor_illusion }],
+                  },
+                  {
+                    name_set: spells.true_strike[0].name,
+                    spells: [{ spell: spells.true_strike }],
+                  },
+                  {
+                    name_set: spells.eldritch_blast[0].name,
+                    spells: [{ spell: spells.eldritch_blast }],
+                  },
+                  {
+                    name_set: spells.prestidigitation[0].name,
+                    spells: [{ spell: spells.prestidigitation }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ spell: spells.poison_spray }],
+                  },
+                ]
               },
+              // {
+              //   type: "spells",
+              //   name: "spells_0",
+              //   position: 3,
+              //   select: 2,
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["warlock"],
+              // },
               {
                 type: "spells",
                 name: "spells_1",
@@ -1731,14 +1858,87 @@ export default {
 
             settings: [
               {
-                type: "spells",
+                type: "custom",
                 name: "spells_0",
                 position: 3,
                 select: 2,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["sorcerer"],
+                list: [
+                  //spells[0] sorcerer
+                  {
+                    name_set: spells.acid_splash[0].name,
+                    spells: [{ spell: spells.acid_splash }],
+                  },
+                  {
+                    name_set: spells.mage_hand[0].name,
+                    spells: [{ spell: spells.mage_hand }],
+                  },
+                  {
+                    name_set: spells.friends[0].name,
+                    spells: [{ spell: spells.friends }],
+                  },
+                  {
+                    name_set: spells.blade_ward[0].name,
+                    spells: [{ spell: spells.blade_ward }],
+                  },
+                  {
+                    name_set: spells.chill_touch[0].name,
+                    spells: [{ spell: spells.chill_touch }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.minor_illusion[0].name,
+                    spells: [{ spell: spells.minor_illusion }],
+                  },
+                  {
+                    name_set: spells.true_strike[0].name,
+                    spells: [{ spell: spells.true_strike }],
+                  },
+                  {
+                    name_set: spells.fire_bolt[0].name,
+                    spells: [{ spell: spells.fire_bolt }],
+                  },
+                  {
+                    name_set: spells.dancing_lights[0].name,
+                    spells: [{ spell: spells.dancing_lights }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.light[0].name,
+                    spells: [{ spell: spells.light }],
+                  },
+                  {
+                    name_set: spells.message[0].name,
+                    spells: [{ spell: spells.message }],
+                  },
+                  {
+                    name_set: spells.prestidigitation[0].name,
+                    spells: [{ spell: spells.prestidigitation }],
+                  },
+                  {
+                    name_set: spells.shocking_grasp[0].name,
+                    spells: [{ spell: spells.shocking_grasp }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ spell: spells.poison_spray }],
+                  },
+                ]
               },
+              // {
+              //   type: "spells",
+              //   name: "spells_0",
+              //   position: 3,
+              //   select: 2,
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["sorcerer"],
+              // },
               {
                 type: "spells",
                 name: "spells_1",
@@ -1798,14 +1998,88 @@ export default {
 
             settings: [
               {
-                type: "spells",
-                name: "spells_0",
+                level: 3,
+                type: "custom",
                 position: 3,
+                name: "spells_0",
                 select: 2,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["wizard"],
+                list: [
+                  // spells[0] wizard
+                  {
+                    name_set: spells.acid_splash[0].name,
+                    spells: [{ spell: spells.acid_splash }],
+                  },
+                  {
+                    name_set: spells.mage_hand[0].name,
+                    spells: [{ spell: spells.mage_hand }],
+                  },
+                  {
+                    name_set: spells.friends[0].name,
+                    spells: [{ spell: spells.friends }],
+                  },
+                  {
+                    name_set: spells.blade_ward[0].name,
+                    spells: [{ spell: spells.blade_ward }],
+                  },
+                  {
+                    name_set: spells.chill_touch[0].name,
+                    spells: [{ spell: spells.chill_touch }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.minor_illusion[0].name,
+                    spells: [{ spell: spells.minor_illusion }],
+                  },
+                  {
+                    name_set: spells.true_strike[0].name,
+                    spells: [{ spell: spells.true_strike }],
+                  },
+                  {
+                    name_set: spells.fire_bolt[0].name,
+                    spells: [{ spell: spells.fire_bolt }],
+                  },
+                  {
+                    name_set: spells.dancing_lights[0].name,
+                    spells: [{ spell: spells.dancing_lights }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.light[0].name,
+                    spells: [{ spell: spells.light }],
+                  },
+                  {
+                    name_set: spells.message[0].name,
+                    spells: [{ spell: spells.message }],
+                  },
+                  {
+                    name_set: spells.prestidigitation[0].name,
+                    spells: [{ spell: spells.prestidigitation }],
+                  },
+                  {
+                    name_set: spells.shocking_grasp[0].name,
+                    spells: [{ spell: spells.shocking_grasp }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ spell: spells.poison_spray }],
+                  },
+                ],
               },
+              // {
+              //   type: "spells",
+              //   name: "spells_0",
+              //   position: 3,
+              //   select: 2,
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["wizard"],
+              // },
               {
                 type: "spells",
                 name: "spells_1",
@@ -1865,14 +2139,68 @@ export default {
 
             settings: [
               {
-                type: "spells",
-                name: "spells_0",
-                position: 3,
-                select: 2,
-                mana_min: 0,
-                mana_max: 0,
-                classes: ["bard"],
+              level: 3,
+              type: "custom",
+              position: 3,
+              name: "spells_0",
+              select: 2,
+              list: [
+                // spells[0] bard
+                {
+                  name_set: spells.mage_hand[0].name,
+                  spells: [{ spell: spells.mage_hand }],
+                },
+                {
+                  name_set: spells.friends[0].name,
+                  spells: [{ spell: spells.friends }],
+                },
+                {
+                  name_set: spells.blade_ward[0].name,
+                  spells: [{ spell: spells.blade_ward }],
+                },
+                {
+                  name_set: spells.vicious_mockery[0].name,
+                  spells: [{ spell: spells.vicious_mockery }],
+                },
+                {
+                  name_set: spells.minor_illusion[0].name,
+                  spells: [{ spell: spells.minor_illusion }],
+                },
+                {
+                  name_set: spells.true_strike[0].name,
+                  spells: [{ spell: spells.true_strike }],
+                },
+                {
+                  name_set: spells.dancing_lights[0].name,
+                  spells: [{ spell: spells.dancing_lights }],
+                },
+                {
+                  name_set: spells.mending[0].name,
+                  spells: [{ spell: spells.mending }],
+                },
+                {
+                  name_set: spells.light[0].name,
+                  spells: [{ spell: spells.light }],
+                },
+                {
+                  name_set: spells.message[0].name,
+                  spells: [{ spell: spells.message }],
+                },
+                {
+                  name_set: spells.prestidigitation[0].name,
+                  spells: [{ spell: spells.prestidigitation }],
+                },
+              ],
               },
+              // {
+              //   type: "spells",
+              //   name: "spells_0",
+              //   position: 3,
+              //   select: 2,
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["bard"],
+              // },
               {
                 type: "spells",
                 name: "spells_1",
@@ -2109,10 +2437,6 @@ export default {
         position: 3,
         select: 1,
         list:[
-          {
-            name_set: spells.acid_splash[0].name,
-            spells: [{spell:spells.acid_splash}]
-          },
           {
             name_set: spells.eldritch_blast[0].name,
             spells: [{spell:spells.eldritch_blast}]

@@ -1221,9 +1221,9 @@ export default {
   spell_music_box_details: spells.music_box_details,
   spell_music_box_expanded: spells.music_box_expanded,
 
-  spell_small_illusion: spells.small_illusion,
-  spell_small_illusion_details: spells.small_illusion_details,
-  spell_small_illusion_expanded: spells.small_illusion_expanded,
+  spell_minor_illusion: spells.minor_illusion,
+  spell_minor_illusion_details: spells.minor_illusion_details,
+  spell_minor_illusion_expanded: spells.minor_illusion_expanded,
 
   spell_enlargement_self: spells.enlargement_self,
   spell_enlargement_self_details: spells.enlargement_self_details,

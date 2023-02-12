@@ -13197,11 +13197,11 @@ export default {
     },
   ],
 
-  small_illusion: [
+  minor_illusion: [
     {
-      name: "spell_small_illusion",
-      details: "spell_small_illusion_details",
-      expanded: "spell_small_illusion_expanded", // полное описание
+      name: "spell_minor_illusion",
+      details: "spell_minor_illusion_details",
+      expanded: "spell_minor_illusion_expanded", // полное описание
 
       type: "illusion",
       classes: ["bard", "sorcerer", "warlock", "wizard"],
