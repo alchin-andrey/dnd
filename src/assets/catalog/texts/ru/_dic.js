@@ -5258,12 +5258,12 @@ export default {
 
   magic_class: "класс магии",
   
-  condition_strength_13plus: "Требование: Базовая Сила = 13+.\n" + races.rare,
-  condition_dexterity_13plus: "Требование: Базовая Ловкость = 13+.\n" + races.rare,
-  condition_intelligence_or_wisdom_13plus: "Требование: Базовьій Интеллект или Мудрость = 13+.\n" + races.rare,
-  condition_charisma_13plus: "Требование: Базовая Харизма = 13+.\n" + races.rare,
-  condition_proficiency_armor_medium: "Требование: Владение средними доспехами.\n" + races.rare,
-  condition_proficiency_armor_heavy: "Требование: Владение тяжельіми доспехами.\n" + races.rare,
-  condition_spellcasting: "Требование: Способность накладьівать заклятие.\n" + races.rare,
+  condition_strength_13plus: "Требование: Базовая Сила = 13+.",
+  condition_dexterity_13plus: "Требование: Базовая Ловкость = 13+.",
+  condition_intelligence_or_wisdom_13plus: "Требование: Базовьій Интеллект или Мудрость = 13+.",
+  condition_charisma_13plus: "Требование: Базовая Харизма = 13+.",
+  condition_proficiency_armor_medium: "Требование: Владение средними доспехами.",
+  condition_proficiency_armor_heavy: "Требование: Владение тяжельіми доспехами.",
+  condition_spellcasting: "Требование: Способность накладьівать заклятие.",
   
 };  

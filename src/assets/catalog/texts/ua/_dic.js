@@ -1364,7 +1364,7 @@ export default {
     "на Артистичність та Обман, коли ви намагаєтеся видати себе за когось іншого",
   mimicing: "імітація",
   other_creature_sound_1min:
-    "мови та звуків інших істот, почутими не менше 1 хвилини",
+    "мови та звуків інших істот, після 1 хвилини слухання",
 
   feat_example: "приклад",
   feat_example_details: "приблизний приклад",
@@ -5232,11 +5232,11 @@ export default {
 
   magic_class: "клас магії",
   
-  condition_strength_13plus: "Умова: Базова Сила = 13+.\n" + races.rare,
-  condition_dexterity_13plus: "Умова: Базова Спритність = 13+.\n" + races.rare,
-  condition_intelligence_or_wisdom_13plus: "Умова: Базовий Інтелект або Мудрість = 13+.\n" + races.rare,
-  condition_charisma_13plus: "Умова: Базова Харизма = 13+.\n" + races.rare,
-  condition_proficiency_armor_medium: "Умова: Володіння середніми обладунками.\n" + races.rare,
-  condition_proficiency_armor_heavy: "Умова: Володіння важкими обладунками.\n" + races.rare,
-  condition_spellcasting: "Умова: Здатність накладати закляття.\n" + races.rare,
+  condition_strength_13plus: "Умова: Базова Сила = 13+.",
+  condition_dexterity_13plus: "Умова: Базова Спритність = 13+.",
+  condition_intelligence_or_wisdom_13plus: "Умова: Базовий Інтелект або Мудрість = 13+.",
+  condition_charisma_13plus: "Умова: Базова Харизма = 13+.",
+  condition_proficiency_armor_medium: "Умова: Володіння середніми обладунками.",
+  condition_proficiency_armor_heavy: "Умова: Володіння важкими обладунками.",
+  condition_spellcasting: "Умова: Здатність накладати закляття.",
 };

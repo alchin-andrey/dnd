@@ -754,6 +754,15 @@ export default {
     condition: "condition_charisma_13plus",
     //Требования: Харизма 13 или вьіше
 
+    filter:{
+      stats: [
+        {
+          name: "charisma",
+          min_num: 13,
+        },
+      ]
+    },
+
     spells: [
       {
         spell: spells.inspiration,
@@ -844,6 +853,12 @@ export default {
     condition: "condition_proficiency_armor_medium",
     //Требования: Владение тяжельіми доспехами
 
+    filter:{
+      proficiencies: {
+        armor: [armory.medium.name],
+      },
+    },
+
     fines: [
       {
         type: "plus",
@@ -863,6 +878,12 @@ export default {
     details: "feat_heavy_armor_master_details",
     condition: "condition_proficiency_armor_heavy",
     //Требования: Владение тяжельіми доспехами
+
+    filter:{
+      proficiencies: {
+        armor: [armory.heavy.name],
+      },
+    },
 
     stats: [
       {
@@ -1996,6 +2017,14 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
+
     fines: [
       {
         type: "advantage",
@@ -2020,6 +2049,14 @@ export default {
     details: "feat_spell_sniper_details",
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
+
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
 
     fines: [
       {
@@ -2055,6 +2092,14 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
+
     fines: [
       {
         type: "plus",
@@ -2074,6 +2119,14 @@ export default {
     details: "feat_elemental_adept_acid_details",
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
+
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
 
     fines: [
       {
@@ -2095,6 +2148,14 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
+
     fines: [
       {
         type: "plus",
@@ -2115,6 +2176,14 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
+
     fines: [
       {
         type: "plus",
@@ -2134,6 +2203,14 @@ export default {
     details: "feat_elemental_adept_electricity_details",
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
+
+    filter:{
+      spells_exception: [
+        {
+          type: "ability",
+        },
+      ]
+    },
 
     fines: [
       {
