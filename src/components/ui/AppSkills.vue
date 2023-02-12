@@ -1,12 +1,12 @@
-<template>
-	<div class="column jbm-300" >
+<template> 
+	<div class="column jbm-300" :class="{ passive: numb == 0}" >
 		<div class="column_value">
-			<section class="flex_row" :class="{ passive: pass_Title}">
+			<section class="flex_row">
 				<div class="icon">
 					<svg class="icon_svg"
 						:class="{
               save_svg: shown_Save,
-              passive: pass_Title
+              passive: numb == 0
               }"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,8 @@ export default {
 		},
 
 		pass_Title() {
-			return this.numb == 0 && this.second_numb !== null;
+			return this.numb == 0;
+			// return this.numb == 0 && this.second_numb !== null;
 		},
 
     Prefix() {
