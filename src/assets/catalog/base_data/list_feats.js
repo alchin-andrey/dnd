@@ -931,6 +931,15 @@ export default {
     condition: "condition_dexterity_13plus",
     //Требования: Ловкость 13 или вьіше
 
+    filter:{
+      stats: [
+        {
+          name: "dexterity",
+          min_num: 13,
+        },
+      ]
+    },
+
     fines: [
       {
         type: "plus",
@@ -1300,6 +1309,15 @@ export default {
     details: "feat_grappler_details",
     condition: "condition_strength_13plus",
     //Требования: Сила 13 или вьіше
+
+    filter:{
+      stats: [
+        {
+          name: "strength",
+          min_num: 13,
+        },
+      ]
+    },
 
     fines: [
       {
@@ -1878,6 +1896,19 @@ export default {
     details: "feat_ritual_caster_details",
     condition: "condition_intelligence_or_wisdom_13plus",
     //Требования: Интеллект или Мудрость 13 или выше
+
+    filter:{
+      stats: [
+        {
+          name: "intelligence",
+          min_num: 13,
+        },
+        {
+          name: "wisdom",
+          min_num: 13,
+        },
+      ]
+    },
 
     spells: [
       {
