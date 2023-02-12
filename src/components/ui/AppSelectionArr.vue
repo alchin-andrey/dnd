@@ -61,7 +61,7 @@ export default {
 
 		uniqu_Name() {
 			const sett_obj = {};
-			let all_name = this.menu.reduce((acc, el) => acc.concat(el.name), []);
+			const all_name = this.menu.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
 			uniqu_name.forEach((item_name) => {
 				sett_obj[item_name] = this.menu.filter((el) => el.name == item_name);
@@ -71,7 +71,7 @@ export default {
 
 		t_Title: (store) => (item) => {
 			const first_name = store.uniqu_Name[item.name][0];
-			if (item == first_name) {
+			if (item == first_name && item.name !== "stats") {
 				return store.t(item?.name);
 			}
 			return null;

@@ -163,12 +163,9 @@ export default {
 		},
 
 		armor_Bonus_Specials: (store) => (type) => {
-      const class_specials_type = store.class_Specials_Filter_Lvl(type) ?? [];
-      const custom_specials = store.filter_Custom_Class_Lvl("specials");
-      const custom_specials_type = custom_specials.filter(el => el.type == type);
-      const all_specials = class_specials_type.concat(custom_specials_type);
+      const class_specials = store.class_Specials_Filter_Lvl(type);
       let bonus = 0;
-      all_specials?.forEach((el) => bonus += (el.foo ? store[el.foo] : el.armor_bonus));
+      class_specials.forEach((el) => bonus += (el.foo ? store[el.foo] : el.armor_bonus));
 			return bonus;
 		},
 

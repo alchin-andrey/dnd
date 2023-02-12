@@ -79,77 +79,76 @@ export const useStatsStore = defineStore({
 			}
 		},
 
-		stats_Race_Page_Numb: (state) => (name) => {
-			const RE = state.stats_RE_Numb(name);
-			const custom = state.stats_Custom_RE_Numb(name);
+		stats_Race_Page_Numb: (store) => (name) => {
+			const RE = store.stats_RE_Numb(name);
+			const custom = store.stats_Custom_RE_Numb(name);
 			return RE + custom;
 		},
 
-    stats_Base_Arr(state) {
+    stats_Base_Arr(store) {
       const MYStore = useMYStore();
       let stats_arr_base = MYStore.MY.class.stats_base;
-      let stats_arr_save = state.stats_base_save[MYStore.MY.class.name];
+      let stats_arr_save = store.stats_base_save[MYStore.MY.class.name];
       return stats_arr_save ? stats_arr_save : stats_arr_base;
     },
 
-    stats_Class_Page_Numb: (state) => (name) => {
-      const REC = state.stats_Race_Page_Numb(name);
-      let index = state.stats_Base_Arr.indexOf(name);
-      const base = state.stats_base_numb[index];
+    stats_Class_Page_Numb: (store) => (name) => {
+      const REC = store.stats_Race_Page_Numb(name);
+      let index = store.stats_Base_Arr.indexOf(name);
+      const base = store.stats_base_numb[index];
       return REC + base;
     },
 
-    stats_Mod: (state) => (name) => {
-      let base_numb = state.stats_Class_Page_Numb(name);
+    stats_Mod: (store) => (name) => {
+      let base_numb = store.stats_Class_Page_Numb(name);
       return Math.floor((base_numb - 10)/2);
     },
 
     stats_Saving_Arr() {
       const MYStore = useMYStore();
-      let arr_save = [];
-      const save = MYStore.MY.class.saving;
-      arr_save = save.slice(0);
-      
+      let arr_save = [...MYStore.MY.class.saving];
       const specials_lvl = MYStore.class_Specials_Filter_Lvl("saving");
       specials_lvl?.forEach(el => el.saving.forEach(x => arr_save.push(x)));
       
-      return arr_save;
+      const save_custom = MYStore.filter_Custom_Class_Lvl("saving");
+      arr_save = [...arr_save, ...save_custom];
+      const uniqu_arr_save = [...new Set(arr_save)];
+      return uniqu_arr_save;
     },
 
-    stats_Save: (state) => (name) => {
+    stats_Save: (store) => (name) => {
       const MYStore = useMYStore();
-      // let save = MYStore.MY.class.saving.includes(name);
-      let save = state.stats_Saving_Arr.includes(name);
+      let save = store.stats_Saving_Arr.includes(name);
       return save ? MYStore.Mastery : null;
     },
 
-    stats_Save_Mod: (state) => (name) => {
-      let mod = state.stats_Mod(name);
-      let save = state.stats_Save(name);
+    stats_Save_Mod: (store) => (name) => {
+      let mod = store.stats_Mod(name);
+      let save = store.stats_Save(name);
       return mod + save;
     },
 
-    stats_Base_Settings_Full_T(state) {
-      const { t } = useDicStore();
-      let base_arr = this.stats_Base_Arr;
-      let arr = [];
-      for (let kay in base_arr) {
-        let index = base_arr.indexOf(base_arr[kay]);
-        let numb = state.stats_base_numb[index];
-        let str = t(base_arr[kay]).slice(0, 3);
-        let new_Str = str[0].toUpperCase() + str.slice(1);
-        arr.push(`${numb} ${new_Str}`);
-      }
-      return arr.map((n) => n).join(", ");
-    },
+    // stats_Base_Settings_Full_T() {
+    //   const { t } = useDicStore();
+    //   let base_arr = this.stats_Base_Arr;
+    //   let arr = [];
+    //   for (let kay in base_arr) {
+    //     let index = base_arr.indexOf(base_arr[kay]);
+    //     let numb = this.stats_base_numb[index];
+    //     let str = t(base_arr[kay]).slice(0, 3);
+    //     let new_Str = str[0].toUpperCase() + str.slice(1);
+    //     arr.push(`${numb} ${new_Str}`);
+    //   }
+    //   return arr.map((n) => n).join(", ");
+    // },
 
-    stats_Base_Settings_Two_T(state) {
+    stats_Base_Settings_Two_T() {
       const { t } = useDicStore();
       let base_arr = this.stats_Base_Arr;
       let arr = [];
       for (let i = 0; i < 2; i++) {
         let index = base_arr.indexOf(base_arr[i]);
-        let numb = state.stats_base_numb[index];
+        let numb = this.stats_base_numb[index];
         let str = t(base_arr[i]).slice(0, 3);
         let new_Str = str[0].toUpperCase() + str.slice(1);
         arr.push(`${numb} ${new_Str}`);

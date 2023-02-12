@@ -2,12 +2,10 @@
 	<div class="column_value jbm-300">
 		<div class="text">
 			<svg
-				class="passive_svg"
+				class="active_svg"
 				:class="{
 					save_svg: stats_Saving_Arr.includes(stats_name),
 				}"
-				width="18"
-				height="18"
 				viewBox="0 0 18 18"
 				xmlns="http://www.w3.org/2000/svg"
 				v-html="stats_icon[stats_name]"
@@ -105,6 +103,13 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 	min-height: 18px;
+}
+
+.active_svg {
+  width: 18px;
+  height: 18px;
+	fill: none;
+	stroke: white;
 }
 
 .passive_svg {

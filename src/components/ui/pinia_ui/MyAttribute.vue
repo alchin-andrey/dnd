@@ -4,27 +4,16 @@
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
-					<svg
-						:class="{
-							active_svg:
-								stats_Keys.includes(title) || stats_Keys.includes(icon),
-							not_save_svg:
-								save.length !== 0 && !save.includes(title) && !numb == 0,
-							save_svg: save.includes(title),
-						}"
-						width="18"
-						height="18"
+					<svg class="active_svg"
+						:class="{save_svg: save.includes(title)}"
 						viewBox="0 0 18 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 						v-html="atribute_icon[icon_Image]"
 					/>
-					<!-- <img :src="icon_Image" :alt="icon" /> -->
 				</div>
 				<div class="item"
-        :class="{ 
-    'int-700': text_stule,
-    }">
+        :class="{'int-700': text_stule}">
 					{{ t_Title }}<span v-if="t_Type">{{ t_Type }}</span>
 				</div>
 			</section>
@@ -35,7 +24,7 @@
 				{{ Price }}
 				<emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" />
 			</div>
-			<div class="numb jbm-300" v-else>
+			<div class="numb jbm-300" :class="{'grey-2': Numb == 0}" v-else>
 				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}
 			</div>
 		</div>
@@ -121,10 +110,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		// cube_zero: {
-		// 	type: Boolean,
-		// 	default: false,
-		// },
 	},
 
 	computed: {
@@ -263,21 +248,6 @@ export default {
   display: flex;
 }
 
-/* .column {
-	display: flex;
-	min-height: 18px;
-} */
-
-/* .numb {
-	flex: 1 1 auto;
-	text-align: end;
-} */
-
-/* .column_value {
-	display: flex;
-  flex: 1 1 auto;
-} */
-
 .icon {
 	display: flex;
 	width: 18px;
@@ -287,20 +257,9 @@ export default {
 
 .active_svg {
 	stroke: white;
+  width: 18px;
+	height: 18px;
 }
-
-/* .save_svg {
-	fill: white;
-} */
-
-
-
-.not_save_svg {
-	opacity: 0.2;
-}
-/* .item {
-	margin-left: 4px;
-} */
 
 .item {
   display: flex;
@@ -310,10 +269,6 @@ export default {
 .item span {
 	margin-left: 8px;
 	color: rgba(255, 255, 255, 0.2);
-}
-
-.active {
-	color: #ffffff;
 }
 
 .passive {
@@ -370,6 +325,9 @@ export default {
 	text-transform: lowercase;
 }
 
+.grey-2 {
+	color: rgba(255, 255, 255, 0.2);
+}
 
 .emoji-mart-emoji {
 	padding: 0;

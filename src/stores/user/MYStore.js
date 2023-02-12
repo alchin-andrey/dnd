@@ -41,13 +41,23 @@ export const useMYStore = defineStore({
 		// 	return arr ? arr : [];
 		// },
 
-		class_Specials_Filter_Lvl(state) {
-			const lvl = state.MY.level;
-			return (name) =>
-				state.MY.class.specials?.filter(
-					(item) => item.type == name && lvl >= item.level
-				);
+    class_Specials_All() {
+			const class_specials = this.level_Filter_Arr(this.MY.class.specials);
+			const custom_specials = this.filter_Custom_Class_Lvl("specials");
+			return [...class_specials, ...custom_specials];
 		},
+
+    class_Specials_Filter_Lvl: (store) => (name) => {
+			return store.class_Specials_All?.filter((item) => item.type == name);
+		},
+
+		// class_Specials_Filter_Lvl(state) {
+		// 	const lvl = state.MY.level;
+		// 	return (name) =>
+		// 		state.MY.class.specials?.filter(
+		// 			(item) => item.type == name && lvl >= item.level
+		// 		);
+		// },
 
 		//NOTE - COMMON (stats, skills, languages, spells)
 		COMMON_Custom_Arr_RE: (state) => (name) => {
@@ -134,7 +144,7 @@ export const useMYStore = defineStore({
       const main_custom = this.сustomm_Main_Settings_Class_Arr;
       const feats = FeatsStore.feats_Select_Arr;
       const feats_custom = this.сustomm_Feats_Settings_Class_Arr;
-			return main_custom.concat(feats).concat(feats_custom);
+			return [...main_custom, ...feats, ...feats_custom];
 		},
 
     filter_Custom_Class_Lvl: (state) => (name) => {
@@ -148,16 +158,16 @@ export const useMYStore = defineStore({
 			return res_arr;
 		},
 
-    custom_Settings_Class_Obj() {
-			const sett_obj = {};
-			const sett_custom = this.сustomm_Settings_Class_Arr;
-			let position_arr = sett_custom.reduce((acc, el) => acc.concat(el.position), []);
-			const uniqu_position_arr = [...new Set(position_arr)].sort((a,b) => a - b);
-			uniqu_position_arr.forEach((numb) => {
-				sett_obj[`position_${numb}`] = sett_custom.filter((el) => el.position == numb);
-			});
-			return sett_obj;
-		},
+    // custom_Settings_Class_Obj() {
+		// 	const sett_obj = {};
+		// 	const sett_custom = this.сustomm_Settings_Class_Arr;
+		// 	let position_arr = sett_custom.reduce((acc, el) => acc.concat(el.position), []);
+		// 	const uniqu_position_arr = [...new Set(position_arr)].sort((a,b) => a - b);
+		// 	uniqu_position_arr.forEach((numb) => {
+		// 		sett_obj[`position_${numb}`] = sett_custom.filter((el) => el.position == numb);
+		// 	});
+		// 	return sett_obj;
+		// },
 	},
 	//!SECTION - GETTERS
 

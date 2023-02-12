@@ -28,7 +28,7 @@
 					:numb="num_Hand_Param_Stule"
 					:dice="dice_Hand_Param_Stule"
 					:pls="damage_Bonus_Numb"
-          text_stule
+					text_stule
 				/>
 			</section>
 			<section v-if="!param_stule">
@@ -159,7 +159,13 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "Mastery", "class_Specials_Filter_Lvl", "сustomm_Settings_Class_Arr", "filter_Custom_Class_Lvl"]),
+		...mapState(useMYStore, [
+			"MY",
+			"Mastery",
+			"class_Specials_Filter_Lvl",
+			"сustomm_Settings_Class_Arr",
+			"filter_Custom_Class_Lvl",
+		]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
@@ -284,14 +290,10 @@ export default {
 			const mastery = this.mastery_Bonus;
 			const type_mod = this.stats_Mod(this.bonus_Type);
 
-      const weapon_ranged_class = this.class_Specials_Filter_Lvl("weapon_ranged") ?? [];
-
-      const cusstom_specials = this.filter_Custom_Class_Lvl("specials");
-      const weapon_ranged_custom = cusstom_specials.filter(el => el.type == "weapon_ranged");
-
-      const weapon_ranged = weapon_ranged_class.concat(weapon_ranged_custom)
-      let aim_bonus = 0;
-      weapon_ranged.forEach(el => aim_bonus += el.aim_bonus);
+			const weapon_ranged = this.class_Specials_Filter_Lvl("weapon_ranged");
+      
+			let aim_bonus = 0;
+			weapon_ranged.forEach((el) => (aim_bonus += el.aim_bonus));
 			return type_mod + mastery + aim_bonus;
 		},
 
@@ -299,25 +301,27 @@ export default {
 			return this.stats_Mod(this.bonus_Type);
 		},
 
-    num_Hand_Param_Stule() {
-      const num_hand_1 = this.weapon[0].damage_1_hand_num;
-      const num_hand_2 = this.weapon[0].damage_2_hand_num;
-      const res = num_hand_1 > num_hand_2 ? num_hand_1 : num_hand_2;
-      return res;
-    },
+		num_Hand_Param_Stule() {
+			const num_hand_1 = this.weapon[0].damage_1_hand_num;
+			const num_hand_2 = this.weapon[0].damage_2_hand_num;
+			const res = num_hand_1 > num_hand_2 ? num_hand_1 : num_hand_2;
+			return res;
+		},
 
-    dice_Hand_Param_Stule() {
-      const dice_hand_1 = this.dice_1_Hand;
-      const dice_hand_2 = this.dice_2_Hand;
+		dice_Hand_Param_Stule() {
+			const dice_hand_1 = this.dice_1_Hand;
+			const dice_hand_2 = this.dice_2_Hand;
 			return dice_hand_1 > dice_hand_2 ? dice_hand_1 : dice_hand_2;
 		},
 
-		dice_Hand: (state) => (dice_hand) => {
-			const weapon_spec = state.class_Specials_Filter_Lvl("weapon");
+		dice_Hand: (store) => (dice_hand) => {
+			const weapon_spec = store.class_Specials_Filter_Lvl("weapon");
 			let dice_foo = null;
-			weapon_spec?.forEach((el) =>
-				el.dice_foo ? (dice_foo = state[el.dice_foo](dice_hand)) : null
-			);
+			weapon_spec.forEach((el) => {
+				if (el.dice_foo) {
+					dice_foo = Math.max(dice_foo, store[el.dice_foo](dice_hand));
+				}
+			});
 			return dice_foo ? dice_foo : dice_hand;
 		},
 
@@ -342,13 +346,11 @@ export default {
 		},
 
 		Dic_14_56_118_1710_Lvl_or_Default: (state) => (dice_hand) => {
-			// const dice_hand = this.weapon[0].damage_1_hand_dice;
 			const foo_dice = state.Dic_14_56_118_1710_Lvl;
 			return foo_dice > dice_hand ? foo_dice : dice_hand;
 		},
 
 		Dic_14_Lvl_or_Default: (state) => (dice_hand) => {
-			// const dice_hand = this.weapon[0].damage_1_hand_dice;
 			const foo_dice = state.Dic_14_Lvl;
 			return foo_dice > dice_hand ? foo_dice : dice_hand;
 		},

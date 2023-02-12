@@ -1,7 +1,7 @@
 <template>
 	<my-wrapper gap_16 :hr="hr">
 		<div class="column_value jbm-300">
-			<div class="base pad-52 grey">{{ t_Base }}</div>
+			<div class="base pad-52 grey-2">{{ t_Base }}</div>
 			<div class="mod">{{ t_Save }}</div>
 			<div class="mod">{{ t_Mod }}</div>
 		</div>
@@ -9,22 +9,22 @@
 			<div class="column_value jbm-300" v-for="name in stats_Keys" :key="name">
 				<div class="base">
 					<svg
-						class="passive_svg"
+						class="active_svg"
 						:class="{
 							save_svg: stats_Saving_Arr.includes(name),
 						}"
-						width="18"
-						height="18"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
 						v-html="stats_icon[name]"
 					/>
 					<div class="item">
-						{{ t_Stats_Name(name) }}<span>{{ base_Numb(name) }}</span>
+						{{ t_Stats_Name(name) }}<span class="grey-2">{{ base_Numb(name) }}</span>
 					</div>
 				</div>
 				<div class="mod">
-					<div class="mod_numb">{{ mod_Numb(stats_Save_Mod(name)) }}</div>
+					<div class="mod_numb"
+          :class="{'grey-2': stats_Sign_Save(name) == 0 }"
+          >{{ stats_Sign_Save(name) }}</div>
 					<div class="visual">
 						<div
 							class="cube cube_pos"
@@ -44,7 +44,9 @@
 					</div>
 				</div>
 				<div class="mod">
-					<div class="mod_numb">{{ mod_Numb(stats_Mod(name)) }}</div>
+					<div class="mod_numb"
+          :class="{'grey-2': stats_Sign_Mod(name) == 0 }"
+          >{{ stats_Sign_Mod(name) }}</div>
 					<div class="visual">
 						<div
 							class="cube cube_pos"
@@ -119,12 +121,18 @@ export default {
 			return (name) => this.stats_Class_Page_Numb(name);
 		},
 
-		mod_Numb: (state) => (numb) => {
-			if (numb >= 0) {
-				return `+${numb}`;
-			} else {
-				return numb;
-			}
+    stats_Sign_Save: (store) => (name) => {
+      const save = store.stats_Save_Mod(name);
+      return store.sign_Numb(save);
+    },
+
+    stats_Sign_Mod: (store) => (name) => {
+      const mod = store.stats_Mod(name);
+      return store.sign_Numb(mod);
+    },
+
+		sign_Numb: (store) => (numb) => {
+      return numb > 0 ? `+${numb}` : numb;
 		},
 
 		cube_Positive: (state) => (name) => {
@@ -168,6 +176,13 @@ export default {
 	min-height: 18px;
 }
 
+.active_svg {
+  width: 18px;
+  height: 18px;
+	fill: none;
+	stroke: white;
+}
+
 .passive_svg {
 	fill: none;
 	stroke: rgba(255, 255, 255, 0.2);
@@ -192,13 +207,15 @@ export default {
 	margin-left: 4px;
 }
 
-.grey {
+.grey-2 {
 	color: rgba(255, 255, 255, 0.2);
+}
+.grey-4 {
+	color: rgba(255, 255, 255, 0.4);
 }
 
 .item span {
 	margin-left: 8px;
-	color: rgba(255, 255, 255, 0.2);
 }
 
 .mod {
