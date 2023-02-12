@@ -160,6 +160,11 @@
 			>
 			</MyCusstomSetting>
 		</my-wrapper>
+
+    		<!-- //NOTE - Сondition -->
+		<my-wrapper v-if="custom.condition">
+      <div class="rare-text int-400" v-html="t_Condition"/>
+		</my-wrapper>
 	</my-selection-card>
 </template>
 
@@ -265,6 +270,18 @@ export default {
 		select_Sum: (state) => (list) => {
 			return list ? list.length : 10.000000001;
 		},
+
+    t_Condition() {
+      return this.t(this.custom.condition);
+    },
 	},
 };
 </script>
+
+<style scoped>
+
+.rare-text {
+  color: #ffc93d;
+}
+
+</style>

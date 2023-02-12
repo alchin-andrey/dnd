@@ -98,6 +98,15 @@ export default {
     condition: "condition_dexterity_13plus",
     //Требования: Ловкость 13 или вьіше
 
+    filter:{
+      stats: [
+        {
+          name: "dexterity",
+          min_num: 13,
+        },
+      ]
+    },
+
     fines: [
       {
         type: "plus",

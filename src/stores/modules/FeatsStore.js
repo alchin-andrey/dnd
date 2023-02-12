@@ -72,7 +72,14 @@ export const useFeatsStore = defineStore({
       for (const key in obj) {
         new_arr.push(obj[key]);
       }
-			return new_arr;
+      const filter_arr = new_arr.filter(el => {
+        if (el?.filter?.stats) {
+          return this.feats_List_Filter_MinBaseStats(el.filter.stats);
+        } else {
+          return true;
+        }
+      });
+			return filter_arr;
 		},
 
     feats_Settings_Class() {
@@ -140,6 +147,17 @@ export const useFeatsStore = defineStore({
 	},
 
 	actions: {
+    feats_List_Filter_MinBaseStats(arr) {
+      const StatsStore = useStatsStore();
+      let res = false;
+      arr.forEach(item => {
+        const base_stats_name = item.name;
+        const base_stats_num = StatsStore.stats_Class_Page_Numb(base_stats_name);
+        res = (base_stats_num >= item.min_num) || res;
+        });
+      return res;
+    },
+
     getFeatsForFeatsArr() {
       const link_btn = "feats";
       const MYStore = useMYStore();
@@ -169,9 +187,12 @@ export const useFeatsStore = defineStore({
           if(btn_save == "feats") {
             const includ_select = select_list_all.some(el => el.name == select_save?.[0].name);
             const includ_save_old = save_list_old.some(el => el == select_save?.[0].name);
-            if(btn_save == btn_save_old) {
+            const includ_null = list.some(el => el.name == select_save?.[0].name);
+            if(btn_save == btn_save_old && includ_null) {
               select_list = select_save;
-            } else if(select_save && !includ_select && !includ_save_old) {
+              const sett = MYStore.MY._settings_class;
+              MYStore.MY._settings_class_old = JSON.parse(JSON.stringify(sett));
+            } else if(select_save && !includ_select && !includ_save_old && includ_null) {
               select_list = select_save;
             } else {
               const list_select_includ = list.filter((el) => !save_list_old.includes(el.name));

@@ -88,7 +88,7 @@ export default {
 			if (!this.MY._settings_class[this.MY.class.name][this.id_link]) {
 				this.MY._settings_class[this.MY.class.name][this.id_link] = obj;
 			}
-      let sett = this.MY._settings_class;
+      const sett = this.MY._settings_class;
       this.MY._settings_class_old = JSON.parse(JSON.stringify(sett));
     },
 
