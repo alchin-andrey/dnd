@@ -95,10 +95,6 @@ export default {
     spells: [
       {
         level: 1,
-        spell: spells.aura_of_life,
-      },
-      {
-        level: 1,
         spell: spells.sneaky_attack,
       },
       {

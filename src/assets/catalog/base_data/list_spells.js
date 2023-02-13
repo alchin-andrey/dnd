@@ -19771,10 +19771,9 @@ export default {
     },
   ],
 
-  // ------------------------------------------------------------
-
   // NOTE - Spells [3]
 
+  // TODO - Remove other classes!
   aura_of_vitality: [
     {},
     {},
@@ -19785,7 +19784,7 @@ export default {
       expanded: "spell_aura_of_vitality_expanded",
 
       type: "evocation",
-      classes: ["druid","cleric","paladin"],
+      classes: ["druid","cleric","paladin",    "bard","wizard","warlock","sorcerer","ranger"],
 
       cast_time: null,
       cast_duration: 1,
@@ -19821,6 +19820,7 @@ export default {
 
   // NOTE - Spells [4]
 
+  // TODO - Remove other classes!
   aura_of_life: [
     {},
     {},
@@ -19832,7 +19832,7 @@ export default {
       expanded: "spell_aura_of_life_expanded",
 
       type: "abjuration",
-      classes: ["cleric","paladin"],
+      classes: ["cleric","paladin",     "bard","druid","wizard","warlock","sorcerer","ranger"],
 
       cast_time: null,
       cast_duration: 1,
@@ -19868,6 +19868,7 @@ export default {
 
   // NOTE - Spells [5]
 
+  // TODO - Remove other classes!
   commune_with_nature: [
     {},
     {},
@@ -19880,7 +19881,7 @@ export default {
       expanded: "spell_commune_with_nature_expanded",
 
       type: "divination",
-      classes: [],
+      classes: ["druid","ranger",       "cleric","paladin","bard","wizard","warlock","sorcerer"],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -19898,6 +19899,220 @@ export default {
       aim_range: null,
       aim_aoe: null,
       aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // NOTE - Spells [6]
+
+  // TODO - Remove other classes!
+  true_seeing: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_true_seeing",
+      details: "spell_true_seeing_details",
+      expanded: "spell_true_seeing_expanded",
+
+      type: "divination",
+      classes: ["bard","wizard","cleric","warlock","sorcerer",     "druid","ranger","paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_mushroom_cream_25_gold", "touch", "somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "vision_true",
+      impact_damage_type: null,
+
+      impact_size_foo: "Feet",
+      impact_size_str: null,
+      impact_size_num: 120,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // NOTE - Spells [7]
+
+  // TODO - Remove other classes!
+  mordenkainens_sword: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_mordenkainens_sword",
+      details: "spell_mordenkainens_sword_details",
+      expanded: "spell_mordenkainens_sword_expanded",
+
+      type: "evocation",
+      classes: ["bard","wizard",    "cleric","warlock","sorcerer","druid","ranger","paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["material_mini_platinum_sword_250_gold", "somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "force_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // NOTE - Spells [8]
+
+  // TODO - Remove other classes!
+  glibness: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_glibness",
+      details: "spell_glibness_details",
+      expanded: "spell_glibness_expanded",
+
+      type: "transmutation",
+      classes: ["bard","warlock",    "cleric","wizard","sorcerer","druid","ranger","paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // NOTE - Spells [9]
+
+  // TODO - Remove other classes!
+  power_word_kill: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_power_word_kill",
+      details: "spell_power_word_kill_details",
+      expanded: "spell_power_word_kill_expanded",
+
+      type: "enchantment",
+      classes: ["bard","warlock","wizard","sorcerer",    "cleric","druid","ranger","paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      
+      aim_aoe: null,
+      aim_aoe_size: null,
+
       impact_type: null,
       impact_damage_type: null,
 
