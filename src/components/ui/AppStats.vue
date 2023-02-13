@@ -21,7 +21,7 @@
 				</div>
 				<div class="item">
 					{{ t_Title }}
-					<span v-if="t_Type">{{ t_Type }}</span>
+					<span class="grey-2" :class="{'rare-text': max_Numb }" v-if="t_Type">{{ t_Type }}</span>
 				</div>
 			</section>
 			<div v-if="dot" class="dotted passive">
@@ -186,13 +186,21 @@ export default {
 
 .item span {
 	margin-left: 8px;
-  opacity: 0.2;
+  /* opacity: 0.2; */
 }
 
 .passive {
 	color: rgba(255, 255, 255, 0.2);
 	fill-opacity: 0.2;
 	stroke-opacity: 0.2;
+}
+
+.grey-2 {
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.rare-text {
+	color: #ffc93d;
 }
 
 .max_icon_svg {
@@ -231,9 +239,5 @@ export default {
 }
 .cube_max {
 	background: #ffc93d;
-}
-
-.grey-2 {
-	color: rgba(255, 255, 255, 0.2);
 }
 </style>
