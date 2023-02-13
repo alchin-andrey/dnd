@@ -100,7 +100,9 @@ export const useStatsStore = defineStore({
       let custom_bonus = 0;
       const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
       custom_stats.forEach(el => el.name == name ? custom_bonus += el.num : null);
-      return REC + base + custom_bonus;
+      // не больше 20;
+      const res = REC + base + custom_bonus;
+      return res < 20 ? res : 20;
     },
 
     stats_Mod: (store) => (name) => {
