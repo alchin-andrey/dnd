@@ -102,10 +102,12 @@ export default {
 		},
 
     getFeatsSelect(list_el) {
-			// const active = this.feat_Arr.select_list.includes(list_el);
-			// if (active) {
-			// 	return null;
-			// } else {
+			const active = this.feat_Arr.select_list.includes(list_el);
+			if (active) {
+        let arr = this.feat_Arr.select_list.slice(0);
+        this.getFeatsLink({ id_btn: this.shown_Btn });
+        this.MY._settings_class[this.MY.class.name][this.id_link][this.shown_Btn] = arr;
+			} else {
 				let arr = this.feat_Arr.select_list.slice(0);
 				arr.splice(0, 1);
 				arr.push(list_el);
@@ -113,7 +115,7 @@ export default {
 				this.MY._settings_class[this.MY.class.name][this.id_link][
 					this.shown_Btn
 				] = arr;
-			// }
+			}
 		},
 	},
 };
