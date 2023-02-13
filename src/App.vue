@@ -328,6 +328,10 @@ a {
 	/* font-weight: 600; */
 }
 
+.rare-text {
+	color: #ffc93d;
+}
+
 .jbm-300 {
 	font-family: "JetBrains Mono";
 	font-style: normal;

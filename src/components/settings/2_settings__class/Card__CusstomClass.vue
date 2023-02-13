@@ -10,31 +10,43 @@
 
 		<!-- //NOTE - Stats -->
 		<my-wrapper v-if="shown_Param_Arr(custom.stats)">
-      <my-wrapper
-				v-for="saving in level_Filter_Arr(custom.saving)"
-				:key="saving"
-			>
-      <my-attribute
-					:title="saving"
-					type="saving"
-					plus
-					:numb="Mastery"
-          save_bool
-				/>
-			</my-wrapper>
 			<my-wrapper
 				gap_26
 				v-for="state in level_Filter_Arr(custom.stats)"
 				:key="state"
 			>
-				<my-attribute
+				<!-- <my-attribute
 					:title="state.name"
 					:type="`${state.name}_base`"
 					plus
 					:numb="state.num"
 					:save="stats_Saving_Arr"
+				/> -->
+				<AppStats
+					:title="state.name"
+					:type="`${state.name}_base`"
+					plus
+					:numb="state.num"
 				/>
 				<my-card-text v-if="state.details" :text_html="state.details" />
+			</my-wrapper>
+      <my-wrapper
+				v-for="saving in level_Filter_Arr(custom.saving)"
+				:key="saving"
+			>
+      <!-- <my-attribute
+					:title="saving"
+					type="saving"
+					plus
+					:numb="Mastery"
+          save_bool
+				/> -->
+      <AppStats
+					:title="saving"
+					type="saving"
+					plus
+					:numb="Mastery"
+				/>
 			</my-wrapper>
 		</my-wrapper>
 

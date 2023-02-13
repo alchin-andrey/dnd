@@ -2,6 +2,7 @@ import {Emoji} from "emoji-mart-vue-fast/src";
 
 import AppFines from "@/components/ui/AppFines.vue";
 import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
+import AppStats from "@/components/ui/AppStats.vue";
 import AppSkills from "@/components/ui/AppSkills.vue";
 
 
@@ -53,6 +54,7 @@ export default [
   Emoji,
   AppFines,
   AppSelectionArr,
+  AppStats,
   AppSkills,
 
   MyBackPage,

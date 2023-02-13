@@ -20,9 +20,9 @@
 			<div class="numb">{{ Prefix }}{{ summ_Numb }}</div>
 		</div>
 		<div class="visual">
-			<div class="cube" v-for="n in cube_Numb" :key="n"></div>
-			<div class="cube-neg" v-for="n in cube_Negative" :key="n"></div>
-			<div class="cube-second" v-for="n in cube_Second" :key="n"></div>
+			<div class="cube" v-for="n in cube_Numb" :key="n"/>
+			<div class="cube-neg" v-for="n in cube_Negative" :key="n"/>
+			<div class="cube-second" v-for="n in cube_Second" :key="n"/>
 		</div>
 	</div>
 </template>
@@ -72,10 +72,10 @@ export default {
 			return this.t(this.title);
 		},
 
-		pass_Title() {
-			return this.numb == 0;
-			// return this.numb == 0 && this.second_numb !== null;
-		},
+		// pass_Title() {
+		// 	return this.numb == 0;
+		// 	// return this.numb == 0 && this.second_numb !== null;
+		// },
 
     Prefix() {
 			return this.summ_Numb > 0 ? "+" : "";
