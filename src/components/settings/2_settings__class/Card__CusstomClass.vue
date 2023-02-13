@@ -10,6 +10,18 @@
 
 		<!-- //NOTE - Stats -->
 		<my-wrapper v-if="shown_Param_Arr(custom.stats)">
+      <my-wrapper
+				v-for="saving in level_Filter_Arr(custom.saving)"
+				:key="saving"
+			>
+      <my-attribute
+					:title="saving"
+					type="saving"
+					plus
+					:numb="Mastery"
+					:save="[saving]"
+				/>
+			</my-wrapper>
 			<my-wrapper
 				gap_26
 				v-for="state in level_Filter_Arr(custom.stats)"
@@ -234,6 +246,13 @@ export default {
 				this.custom.hp_bonus ||
 				this.speed_Bonus_True.length !== 0 ||
 				this.vision_Night_Numb
+			);
+		},
+
+		shown_Stats() {
+			return (
+				this.level_Filter_Arr(custom.saving).length !== 0 ||
+				this.level_Filter_Arr(custom.stats).length !== 0
 			);
 		},
 
