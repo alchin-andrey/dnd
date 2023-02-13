@@ -95,7 +95,7 @@ export default {
     spells: [
       {
         level: 1,
-        spell: spells.aura_of_life,
+        spell: spells.power_word_kill,
       },
       {
         level: 1,

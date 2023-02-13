@@ -5247,4 +5247,25 @@ export default {
   spell_aura_of_life: spells.aura_of_life,
   spell_aura_of_life_details: spells.aura_of_life_details,
   spell_aura_of_life_expanded: spells.aura_of_life_expanded,
+
+  vision_true: "істинний зір",
+  material_mushroom_cream_25_gold: "мазь з грибного порошка за 25 🟡",
+
+  spell_true_seeing: spells.true_seeing,
+  spell_true_seeing_details: spells.true_seeing_details,
+  spell_true_seeing_expanded: spells.true_seeing_expanded,
+
+  material_mini_platinum_sword_250_gold: "мініатюрний платиновий меч за 250 🟡",
+
+  spell_mordenkainens_sword: spells.mordenkainens_sword,
+  spell_mordenkainens_sword_details: spells.mordenkainens_sword_details,
+  spell_mordenkainens_sword_expanded: spells.mordenkainens_sword_expanded,
+
+  spell_glibness: spells.glibness,
+  spell_glibness_details: spells.glibness_details,
+  spell_glibness_expanded: spells.glibness_expanded,
+
+  spell_power_word_kill: spells.power_word_kill,
+  spell_power_word_kill_details: spells.power_word_kill_details,
+  spell_power_word_kill_expanded: spells.power_word_kill_expanded,
 };
