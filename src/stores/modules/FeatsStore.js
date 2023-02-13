@@ -73,33 +73,17 @@ export const useFeatsStore = defineStore({
       for (const key in obj) {
         new_arr.push(obj[key]);
       }
-      // const ProficienciesStore = useProficienciesStore();
-      // const base_pof_name = ProficienciesStore.proficiencies_Arr_All("armor");
-      // const filter_arr = new_arr.filter(el => {
-      //   if (el?.filter?.stats) {
-      //     return this.feats_List_Filter_MinBaseStats(el.filter.stats);
-      //   } else if (el.filter?.proficiencies?.armor) {
-      //     return this.feats_List_Filter_ArmorMastery(el.filter?.proficiencies?.armor);
-      //   } else {
-      //     return true;
-      //   }
-      // });
-			return new_arr;
+      const filter_arr = new_arr.filter(el => {
+        if (el?.filter?.stats) {
+          return this.feats_List_Filter_MinBaseStats(el.filter.stats);
+        } else if (el.filter?.proficiencies?.armor) {
+          return this.feats_List_Filter_ArmorMastery(el.filter?.proficiencies?.armor);
+        } else {
+          return true;
+        }
+      });
+			return filter_arr;
 		},
-
-    // feats_Filter: (store) => (obj) => {
-
-    //   const filter_arr = this.feats.filter(el => {
-    //     if (el?.filter?.stats) {
-    //       return this.feats_List_Filter_MinBaseStats(el.filter.stats);
-    //     } else if (el.filter?.proficiencies?.armor) {
-    //       return this.feats_List_Filter_ArmorMastery(el.filter?.proficiencies?.armor);
-    //     } else {
-    //       return true;
-    //     }
-    //   });
-		// 	return filter_arr;
-		// },
 
     feats_Settings_Class() {
       const MYStore = useMYStore();
@@ -127,21 +111,6 @@ export const useFeatsStore = defineStore({
     feats_Feats_Arr() {
       return this.getFeatsForFeatsArr(this.feats);
     },
-
-    // feats_Feats_Arr() {
-    //   const feats_Feats = this.feats_Feats_Arr_2;
-    //   console.log('feats_Feats:', feats_Feats)
-    //   const feats = this.feats;
-    //   return this.getFeatsForFeatsArr(this.feats);
-    // },
-
-    // feats_Feats_Arr_Filter() {
-    //   const feats_Feats = this.feats_Feats_Arr;
-    //   // console.log('feats_Feats:', feats_Feats)
-    //   return true;
-    // },
-
-
 
     feats_Select_Arr() {
       const MYStore = useMYStore();
@@ -260,7 +229,7 @@ export const useFeatsStore = defineStore({
         let feats_arr = [];
         const list_all = obj;
         new_arr.forEach(item => {
-          const select_list_all_includ = select_list_all.filter((el) => !item.select_list.includes(el))
+          const select_list_all_includ = select_list_all.filter((el) => !item.select_list.includes(el));
           const new_list = list_all.filter((el) => !select_list_all_includ.includes(el));
           feats_arr.push({
             ...item, 
@@ -298,43 +267,5 @@ export const useFeatsStore = defineStore({
 			});
       return new_arr;
     },
-
-
-    // featsSelectArr() {
-    //   const MYStore = useMYStore();
-    //   const sett_select = MYStore.MY._settings_class[MYStore.MY.class.name];
-    //   const feats_lvl = this.feats_Settings_Class;
-    //   let new_arr = [];
-    //   feats_lvl?.forEach((item) => {
-		// 		const select_save = sett_select?.[item.id_link];
-    //     let select_list = [];
-    //     let btn_link = "stats_2";
-    //     if(select_save) {
-    //       const btn_save = select_save.id_btn;
-    //       btn_link = btn_save;
-    //         if(btn_save == "stats_2") {
-    //           const stats_2 = this.feats_Stats_2_Arr.find(el => el.id_link == item.id_link);
-    //           select_list = stats_2.select_list;
-    //         } else if (btn_save == "stats_1_1") {
-    //           const stats_1_1 = this.feats_Stats_1_1_Arr.find(el => el.id_link == item.id_link);
-    //           select_list = stats_1_1.select_list;
-    //         } else if (btn_save == "feats") {
-    //           const feats = this.feats_Feats_Arr.find(el => el.id_link == item.id_link);
-    //           select_list = feats.select_list;
-    //         }
-    //     } else {
-    //       const stats_2 = this.feats_Stats_2_Arr.find(el => el.id_link == item.id_link);
-    //       select_list = stats_2.select_list;
-    //     }
-
-    //     new_arr.push({
-		// 			...item,
-    //       id_btn: btn_link,
-		// 			select_list: select_list,
-		// 		});
-    //   });
-    //   return new_arr;
-    // },
-
   },
 });

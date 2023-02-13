@@ -275,6 +275,16 @@ export default {
       return this.t(this.custom.condition);
     },
 	},
+  watch: {
+    active_boll_link: {
+      handler: function(val, oldVal) {
+        if(val) {
+        this.$emit('someEvent', this.custom)
+        }
+      },
+      immediate: true
+    }
+}, 
 };
 </script>
 
