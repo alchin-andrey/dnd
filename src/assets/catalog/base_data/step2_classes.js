@@ -95,10 +95,6 @@ export default {
     spells: [
       {
         level: 1,
-        spell: spells.power_word_kill,
-      },
-      {
-        level: 1,
         spell: spells.sneaky_attack,
       },
       {
