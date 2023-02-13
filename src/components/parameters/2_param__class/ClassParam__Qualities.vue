@@ -89,8 +89,19 @@ export default {
 			return hp_dice + con_mod + (x + con_mod) * (lvl - 1) + hp_bonus;
 		},
 
+    qualities_Bonus_Numb_All: (stor) => (name) => {
+      // const numb_class_bonus = stor.level_Filter_Arr(stor.MY.class?.qualities);
+      const qual_custom = stor.filter_Custom_Class_Lvl("qualities");
+      const qual_bonus = qual_custom.filter(el => el.name == name && el.type == "bonus")
+      console.log('qual_bonus:', qual_bonus)
+      let bonus_numb = qual_bonus.reduce((acc, el) => acc + el.num, 0);
+      return bonus_numb;
+    },
+
 		initiative_Numb() {
-			return this.stats_Mod("dexterity");
+      const mod = this.stats_Mod("dexterity");
+      const bonus_numb = this.qualities_Bonus_Numb_All("initiative");
+			return mod + bonus_numb;
 		},
 
 		regen_Numb() {
