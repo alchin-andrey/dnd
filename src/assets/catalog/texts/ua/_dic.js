@@ -5269,5 +5269,5 @@ export default {
   spell_power_word_kill_details: spells.power_word_kill_details,
   spell_power_word_kill_expanded: spells.power_word_kill_expanded,
 
-  hint_over_limit: "Цей атрибут вже застосований/максимізований раніше, і не буде доданий знову.",
+  hint_over_limit: "Цей атрибут вже застосований/максимізований раніше,\nі не буде доданий знову.",
 };
