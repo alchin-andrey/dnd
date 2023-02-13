@@ -2538,7 +2538,7 @@ export default {
         list:[
           {
             name_set: spells.eldritch_blast[0].name,
-            spells: [{spell:spells.eldritch_blast}]
+            spells: [{spell:spells.eldritch_blast}],
           },
           {
             name_set: spells.fire_bolt[0].name,

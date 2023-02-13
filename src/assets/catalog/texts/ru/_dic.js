@@ -5266,4 +5266,11 @@ export default {
   condition_proficiency_armor_heavy: "Требование: Владение тяжельіми доспехами.",
   condition_spellcasting: "Требование: Способность накладьівать заклятие.",
   
+  spell_aura_of_vitality: spells.aura_of_vitality,
+  spell_aura_of_vitality_details: spells.aura_of_vitality_details,
+  spell_aura_of_vitality_expanded: spells.aura_of_vitality_expanded,
+  
+  spell_aura_of_life: spells.aura_of_life,
+  spell_aura_of_life_details: spells.aura_of_life_details,
+  spell_aura_of_life_expanded: spells.aura_of_life_expanded,
 };  
