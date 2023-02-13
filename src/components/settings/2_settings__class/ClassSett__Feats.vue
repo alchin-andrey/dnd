@@ -21,7 +21,7 @@
 			:custom="list_el"
 			:active_boll_link="feat_Arr.select_list.includes(list_el)"
 			@click="getFeatsSelect(list_el)"
-      @some-event="getFeatsSelect"
+      @clickOneMore="getFeatsSelect"
 		/>
 	</section>
 </template>

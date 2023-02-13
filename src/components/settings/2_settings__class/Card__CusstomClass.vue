@@ -279,7 +279,7 @@ export default {
     active_boll_link: {
       handler: function(val, oldVal) {
         if(val) {
-        this.$emit('someEvent', this.custom)
+        this.$emit('clickOneMore', this.custom)
         }
       },
       immediate: true

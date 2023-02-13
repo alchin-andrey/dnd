@@ -62,7 +62,7 @@ export default {
     ...mapState(useFeatsStore, [ "feats_Select_Arr"]),
 
     filter_Setting: (stor) => (numb) => {
-			return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);
+      return stor.сustomm_Settings_Class_Arr().filter((item) => item.position == numb);
 		},
 
     subclass_Filter: (stor) => stor.filter_Setting(1),
@@ -115,6 +115,10 @@ export default {
 	},
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Class"]),
+
+    // filter_Setting(numb) {
+		// 	return this.сustomm_Settings_Class_Arr().filter((item) => item.position == numb);
+		// },
 	},
 };
 </script>

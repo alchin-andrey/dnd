@@ -81,7 +81,7 @@ export default {
 
       let hp_bonus = 0;
 			hp_bonus += this.hp_Bonus(this.MY.ethnos);
-      this.сustomm_Settings_Class_Arr.forEach(el => {
+      this.сustomm_Settings_Class_Arr().forEach(el => {
         el.select_list.forEach(sub_el => {
           hp_bonus += this.hp_Bonus(sub_el);
         });

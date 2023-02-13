@@ -141,22 +141,25 @@ export const useSpellsStore = defineStore({
 			return this.spells_For_Arr_Obj(spell_obj);
 		},
 
-    fines_Custom_Class_Lvl() {
-      const MYStore = useMYStore();
-			return MYStore.filter_Custom_Class_Lvl("fines");
-		},
-
     spells_Custom_Class_Lvl() {
       const MYStore = useMYStore();
       let spell_arr = MYStore.filter_Custom_Class_Lvl("spells");
+      // console.log('spell_arr:', spell_arr)
 			return this.spells_For_Arr_Obj(spell_arr);
 		},
 
     spells_Class_Param() {
 			const class_spells = this.spells_Class_Lvl;
 			const custo_spells = this.spells_Custom_Class_Lvl;
+			// console.log('custo_spells:', custo_spells)
 			return class_spells.concat(custo_spells);
 		},
+
+    spells_RC_Param() {
+      const race_spells = this.spells_Race_Param;
+			const class_spells = this.spells_Class_Param;
+			return race_spells.concat(class_spells);
+    }
 
 
   },

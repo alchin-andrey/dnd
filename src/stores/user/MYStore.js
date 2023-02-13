@@ -140,17 +140,18 @@ export const useMYStore = defineStore({
 			return this.settingsSelectList(FeatsStore.feats_Select_Arr, "custom");
 		},
 
-		сustomm_Settings_Class_Arr() {
+    сustomm_Settings_Class_Arr: (store) => () => {
+      // console.log('сustomm_Settings_Class_Arr:')
       const FeatsStore = useFeatsStore();
-      const main_custom = this.сustomm_Main_Settings_Class_Arr;
+      const main_custom = store.сustomm_Main_Settings_Class_Arr;
       const feats = FeatsStore.feats_Select_Arr;
-      const feats_custom = this.сustomm_Feats_Settings_Class_Arr;
-			return [...main_custom, ...feats, ...feats_custom];
-		},
+      const feats_custom = store.сustomm_Feats_Settings_Class_Arr;
+      return [...main_custom, ...feats, ...feats_custom];
+    },
 
     filter_Custom_Class_Lvl: (state) => (name) => {
       let res_arr = [];
-      state.сustomm_Settings_Class_Arr.forEach(el => {
+      state.сustomm_Settings_Class_Arr().forEach(el => {
         el.select_list.forEach(sub_el => {
           const item_lvl = state.level_Filter_Arr(sub_el?.[name]);
           res_arr = res_arr.concat(item_lvl);
@@ -158,22 +159,19 @@ export const useMYStore = defineStore({
       });
 			return res_arr;
 		},
-
-    // custom_Settings_Class_Obj() {
-		// 	const sett_obj = {};
-		// 	const sett_custom = this.сustomm_Settings_Class_Arr;
-		// 	let position_arr = sett_custom.reduce((acc, el) => acc.concat(el.position), []);
-		// 	const uniqu_position_arr = [...new Set(position_arr)].sort((a,b) => a - b);
-		// 	uniqu_position_arr.forEach((numb) => {
-		// 		sett_obj[`position_${numb}`] = sett_custom.filter((el) => el.position == numb);
-		// 	});
-		// 	return sett_obj;
-		// },
 	},
 	//!SECTION - GETTERS
 
 	//SECTION - //? ACTIONS
 	actions: {
+    сustommSettingsClassArr() {
+      const FeatsStore = useFeatsStore();
+      const main_custom = this.сustomm_Main_Settings_Class_Arr;
+      const feats = FeatsStore.feats_Select_Arr;
+      const feats_custom = this.сustomm_Feats_Settings_Class_Arr;
+      return [...main_custom, ...feats, ...feats_custom];
+    },
+
 		settingsClass(settings_arr, type_str, per_id_link) {
 			let new_arr = [];
 			const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
@@ -284,18 +282,6 @@ export const useMYStore = defineStore({
 			}
 		},
 
-    // onFooChanged() {
-    //   console.log('onFooChanged:')
-    // }
 	},
 });
 //!SECTION - ACTIONS
-
-// const useMYStore.$subscribe((mutation, state) => {
-//   console.log('state:', state)
-//   console.log('mutation:', mutation)
-//   console.log('tracked!')
-// })
-
-// const store = useMYStore();
-// watch(toRef(store, 'Mastery'), store.onFooChanged);

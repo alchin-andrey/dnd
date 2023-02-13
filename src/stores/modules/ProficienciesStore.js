@@ -65,7 +65,7 @@ export const useProficienciesStore = defineStore({
         );
 
         let custom_prof = [];
-        MYStore.сustomm_Settings_Class_Arr.forEach(el => {
+        MYStore.сustomm_Settings_Class_Arr().forEach(el => {
           el.select_list.forEach(sub_el => {
             const prof_arr = state.proficiencies_Arr(
               sub_el?.proficiencies, kay);

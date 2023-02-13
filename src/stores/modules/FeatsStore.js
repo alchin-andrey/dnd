@@ -3,8 +3,11 @@
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
+
 import feats_obj from "@/assets/catalog/base_data/list_feats.js";
 
 export const useFeatsStore = defineStore({
@@ -69,20 +72,12 @@ export const useFeatsStore = defineStore({
     // ...mapState(useMYStore, ["MY"]),
 		feats() {
       const obj = this.feats_obj;
+      // const arr = this.feats_Select_Arr
       let new_arr = [];
       for (const key in obj) {
         new_arr.push(obj[key]);
       }
-      const filter_arr = new_arr.filter(el => {
-        if (el?.filter?.stats) {
-          return this.feats_List_Filter_MinBaseStats(el.filter.stats);
-        } else if (el.filter?.proficiencies?.armor) {
-          return this.feats_List_Filter_ArmorMastery(el.filter?.proficiencies?.armor);
-        } else {
-          return true;
-        }
-      });
-			return filter_arr;
+			return this.feats_List_Filter(new_arr);
 		},
 
     feats_Settings_Class() {
@@ -150,6 +145,21 @@ export const useFeatsStore = defineStore({
 	},
 
 	actions: {
+    feats_List_Filter(arr) {
+      const filter_arr = arr.filter(el => {
+        if (el?.filter?.stats) {
+          return this.feats_List_Filter_MinBaseStats(el.filter.stats);
+        } else if (el.filter?.proficiencies?.armor) {
+          return this.feats_List_Filter_ArmorMastery(el.filter?.proficiencies?.armor);
+        } else if (el.filter?.spells_exception) {
+          return this.feats_List_Filter_SpellsException(el.filter?.spells_exception);
+        } else {
+          return true;
+        }
+      });
+      return filter_arr;
+    },
+
     feats_List_Filter_MinBaseStats(arr) {
       const StatsStore = useStatsStore();
       let res = false;
@@ -167,6 +177,18 @@ export const useFeatsStore = defineStore({
       const base_pof_name = ProficienciesStore.proficiencies_Arr_All("armor");
       arr.forEach(item => {
         res = base_pof_name.includes(item) || res;
+        });
+      return res;
+    },
+
+    feats_List_Filter_SpellsException(arr) {
+      const SpellsStore = useSpellsStore();
+      let res = false;
+      const spell_arr = SpellsStore.spells_RC_Param;
+      let all_type = spell_arr.reduce((acc, el) => acc.concat(el.find(item => item.type).type), []);
+      const uniqu_type = [...new Set(all_type)];
+      arr.forEach(item => {
+        res = uniqu_type.some(el => el !== item.type) || res;
         });
       return res;
     },
