@@ -112,13 +112,23 @@ export const useStatsStore = defineStore({
       let custom_bonus = 0;
       const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
       custom_stats.forEach(el => el.name == name ? custom_bonus += el.num : null);
-      const res = REC + base + custom_bonus;
+      return REC + base + custom_bonus;
+    },
+
+    stats_Class_Page_Numb_Max: (stor) => (name) => {
+      const res = stor.stats_Class_Page_Numb(name);
       const max = stor.stats_Base_Max(name);
       return res < max ? res : max;
     },
 
-    stats_Mod: (store) => (name) => {
-      let base_numb = store.stats_Class_Page_Numb(name);
+    stats_Class_Page_Numb_Diff: (stor) => (name) => {
+      const base_numb_full = stor.stats_Class_Page_Numb(name);
+      const base_numb = stor.stats_Class_Page_Numb_Max(name);
+      return base_numb_full - base_numb;
+    },
+
+    stats_Mod: (stor) => (name) => {
+      const base_numb = stor.stats_Class_Page_Numb_Max(name);
       return Math.floor((base_numb - 10)/2);
     },
 

@@ -165,7 +165,7 @@ export const useFeatsStore = defineStore({
       let res = false;
       arr.forEach(item => {
         const base_stats_name = item.name;
-        const base_stats_num = StatsStore.stats_Class_Page_Numb(base_stats_name);
+        const base_stats_num = StatsStore.stats_Class_Page_Numb_Max(base_stats_name);
         res = (base_stats_num >= item.min_num) || res;
         });
       return res;

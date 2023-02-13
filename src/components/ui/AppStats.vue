@@ -1,39 +1,44 @@
 <template>
-	<div class="column jbm-300" 
-  :class="{ passive: numb == 0 , 'rare-text': max_Numb}">
+	<div
+		class="column jbm-300"
+		:class="{ passive: numb == 0, 'rare-text': max_Numb }"
+	>
 		<div class="column_value">
 			<section class="flex_row">
 				<div class="icon">
-					<svg class="icon_svg"
+					<svg
+						class="icon_svg"
 						:class="{
-              max_icon_svg: max_Numb,
-              save_svg: save_Icin,
-              max_save_svg: save_Icin && max_Numb,
-              }"
+							max_icon_svg: max_Numb,
+							save_svg: save_Icin,
+							max_save_svg: save_Icin && max_Numb,
+						}"
 						viewBox="0 0 18 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
 						v-html="atribute_icon[title]"
 					/>
 				</div>
-				<div class="item">{{ t_Title }}
-        <span v-if="t_Type">{{ t_Type }}</span>
-        </div>
+				<div class="item">
+					{{ t_Title }}
+					<span v-if="t_Type">{{ t_Type }}</span>
+				</div>
 			</section>
 			<div v-if="dot" class="dotted passive">
 				..................................
 			</div>
-			<div :class="{'rare-text': max_Numb}" >{{ Prefix }}{{ numb }}</div>
+			<div :class="{ 'rare-text': max_Numb }">{{ Prefix }}{{ numb }}</div>
 		</div>
 		<div class="visual">
-			<div 
-      class="cube" 
-      :class="{
-        cube_save: only_Save,
-        cube_max: max_Numb,
-        }" 
-      v-for="n in cube_Numb" 
-      :key="n" />
+			<div
+				class="cube"
+				v-for="n in cube_Numb"
+				:key="n"
+				:class="{
+					cube_save: only_Save,
+					cube_max: max_Cube(n),
+				}"
+			/>
 		</div>
 	</div>
 </template>
@@ -55,7 +60,7 @@ export default {
 			type: String,
 			default: null,
 		},
-    type: {
+		type: {
 			type: String,
 			default: null,
 		},
@@ -81,10 +86,11 @@ export default {
 		// STORES
 		// ...mapState(useMYStore, ["MY"]),
 		...mapState(useStatsStore, [
-      "stats_Class_Page_Numb", 
-      "stats_Base_Max", 
-      "stats_Save"
-    ]),
+			"stats_Class_Page_Numb_Diff",
+			"stats_Class_Page_Numb",
+			"stats_Base_Max",
+			"stats_Save",
+		]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -99,25 +105,34 @@ export default {
 		},
 
 		cube_Numb() {
-				return this.numb < 0 ? null : this.numb;
+			return this.numb < 0 ? null : this.numb;
 		},
 
-    only_Save() {
-      return this.type == "saving";
-    },
+		only_Save() {
+			return this.type == "saving";
+		},
 
-    max_Numb() {
-      if (this.only_Save) {
-        return this.stats_Save(this.title)
-      } else {
-        const stat_numb = this.stats_Class_Page_Numb(this.title);
-        const max = this.stats_Base_Max(this.title);
-        return stat_numb >= max;
+		max_Numb() {
+			if (this.only_Save) {
+				return this.stats_Save(this.title);
+			} else {
+				const stat_numb = this.stats_Class_Page_Numb(this.title);
+				const max = this.stats_Base_Max(this.title);
+				return stat_numb >= max;
+			}
+		},
+
+		save_Icin() {
+			return this.stats_Save(this.title) || this.only_Save;
+		},
+
+    max_Cube: (stor) => (n) => {
+      if (stor.only_Save) {
+				return stor.stats_Save(stor.title);
+			} else {
+        const diff_num = stor.stats_Class_Page_Numb_Diff(stor.title)
+        return (n - diff_num) < 0;
       }
-    },
-
-    save_Icin() {
-      return this.stats_Save(this.title) || this.only_Save;
     }
 	},
 };
@@ -147,7 +162,7 @@ export default {
 }
 
 .flex_row {
-  display: flex;
+	display: flex;
 }
 
 .icon {
@@ -158,20 +173,20 @@ export default {
 }
 
 .icon_svg {
-  width: 18px;
+	width: 18px;
 	height: 18px;
-  fill: none;
-  stroke: white;
+	fill: none;
+	stroke: white;
 }
 
 .item {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .item span {
 	margin-left: 8px;
-	color: rgba(255, 255, 255, 0.2);
+  opacity: 0.2;
 }
 
 .passive {
@@ -192,8 +207,6 @@ export default {
 	fill: #ffc93d;
 	stroke: #ffc93d;
 }
-
-
 
 .visual {
 	width: 98px;

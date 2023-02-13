@@ -24,8 +24,7 @@
 							:class="{
 								'rare-text': max_Numb(name),
 							}"
-							>{{ base_Numb(name) }}</span
-						>
+							>{{ base_Numb(name) }}</span>
 					</div>
 				</div>
 				<div class="mod">
@@ -107,12 +106,13 @@ export default {
 		// GETTERS
 		...mapState(useStatsStore, [
 			"stats_Keys",
-			"stats_Class_Page_Numb",
 			"stats_Saving_Arr",
 			"stats_Mod",
 			"stats_Save",
 			"stats_Save_Mod",
-      "stats_Base_Max"
+      "stats_Base_Max",
+      "stats_Class_Page_Numb",
+			"stats_Class_Page_Numb_Max",
 		]),
 
 		t_Base() {
@@ -132,7 +132,7 @@ export default {
 		},
 
 		base_Numb() {
-			return (name) => this.stats_Class_Page_Numb(name);
+			return (name) => this.stats_Class_Page_Numb_Max(name);
 		},
 
 		stats_Sign_Save: (stor) => (name) => {
@@ -213,7 +213,7 @@ export default {
 }
 
 .base {
-	width: 90px;
+	width: 90px;   /* 90 */
 	display: flex;
 	align-items: center;
 }
