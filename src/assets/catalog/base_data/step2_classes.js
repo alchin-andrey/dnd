@@ -95,6 +95,10 @@ export default {
     spells: [
       {
         level: 1,
+        spell: spells.aura_of_life,
+      },
+      {
+        level: 1,
         spell: spells.sneaky_attack,
       },
       {
@@ -2039,13 +2043,11 @@ export default {
         level: 20,
         name: "strength",
         num: 4,
-        max: 24,
       },
       {
         level: 20,
         name: "constitution",
         num: 4,
-        max: 24,
       },
     ],
 
@@ -2089,6 +2091,18 @@ export default {
         level: 1,
         type: "armor_bonus",
         foo: "Num_CON",
+      },
+      {
+        level: 20,
+        type: "stat_max",
+        name: "strength",
+        num: 24,
+      },
+      {
+        level: 20,
+        type: "stat_max",
+        name: "constitution",
+        num: 24,
       },
     ],
 

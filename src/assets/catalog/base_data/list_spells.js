@@ -1125,51 +1125,6 @@ export default {
     },
   ],
 
-  commune_with_nature: [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {
-      name: "spell_commune_with_nature",
-      details: "spell_commune_with_nature_details",
-      expanded: "spell_commune_with_nature_expanded",
-
-      type: "divination",
-      classes: [],
-
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "min",
-
-      aim_target: "self",
-      aim_type: null,
-      parts: ["somatic", "verbal"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: false,
-      aim_range: null,
-      aim_aoe: null,
-      aim_aoe_size: null,
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dic: null,
-      impact_size_pls: null,
-
-      saving_need: false,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-  ],
-
   commune_with_nature_ritual: [
     {
       name: "spell_commune_with_nature_ritual",
@@ -19818,5 +19773,143 @@ export default {
 
   // ------------------------------------------------------------
 
+  // NOTE - Spells [3]
 
+  aura_of_vitality: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_aura_of_vitality",
+      details: "spell_aura_of_vitality_details",
+      expanded: "spell_aura_of_vitality_expanded",
+
+      type: "evocation",
+      classes: ["druid","cleric","paladin"],
+
+      cast_time: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 2,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // NOTE - Spells [4]
+
+  aura_of_life: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_aura_of_life",
+      details: "spell_aura_of_life_details",
+      expanded: "spell_aura_of_life_expanded",
+
+      type: "abjuration",
+      classes: ["cleric","paladin"],
+
+      cast_time: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  // NOTE - Spells [5]
+
+  commune_with_nature: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_commune_with_nature",
+      details: "spell_commune_with_nature_details",
+      expanded: "spell_commune_with_nature_expanded",
+
+      type: "divination",
+      classes: [],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
 };

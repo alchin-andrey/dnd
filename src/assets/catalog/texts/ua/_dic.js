@@ -5239,4 +5239,12 @@ export default {
   condition_proficiency_armor_medium: "Умова: Володіння середніми обладунками.",
   condition_proficiency_armor_heavy: "Умова: Володіння важкими обладунками.",
   condition_spellcasting: "Умова: Здатність накладати закляття.",
+  
+  spell_aura_of_vitality: spells.aura_of_vitality,
+  spell_aura_of_vitality_details: spells.aura_of_vitality_details,
+  spell_aura_of_vitality_expanded: spells.aura_of_vitality_expanded,
+
+  spell_aura_of_life: spells.aura_of_life,
+  spell_aura_of_life_details: spells.aura_of_life_details,
+  spell_aura_of_life_expanded: spells.aura_of_life_expanded,
 };
