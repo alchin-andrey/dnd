@@ -279,41 +279,41 @@ export default {
       {
         type: "custom",
         name: "stats",
-        position:6,
+        position:7,
         select: 1,
         list: [
           {
-            name: "strength",
+            name: "feat_resilient_strength",
             details: "strength_details",
             saving: ["strength"],
             stats: [{ name: "strength", num: 1 }],
           },
           {
-            name: "dexterity",
+            name: "feat_resilient_dexterity",
             details: "dexterity_details",
             saving: ["dexterity"],
             stats: [{ name: "dexterity", num: 1 }],
           },
           {
-            name: "constitution",
+            name: "feat_resilient_constitution",
             details: "constitution_details",
             saving: ["constitution"],
             stats: [{ name: "constitution", num: 1 }],
           },
           {
-            name: "intelligence",
+            name: "feat_resilient_intelligence",
             details: "intelligence_details",
             saving: ["intelligence"],
             stats: [{ name: "intelligence", num: 1 }],
           },
           {
-            name: "wisdom",
+            name: "feat_resilient_wisdom",
             details: "wisdom_details",
             saving: ["wisdom"],
             stats: [{ name: "wisdom", num: 1 }],
           },
           {
-            name: "charisma",
+            name: "feat_resilient_charisma",
             details: "charisma_details",
             saving: ["charisma"],
             stats: [{ name: "charisma", num: 1 }],
