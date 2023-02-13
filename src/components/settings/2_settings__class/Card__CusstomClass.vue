@@ -19,7 +19,7 @@
 					type="saving"
 					plus
 					:numb="Mastery"
-					:save="[saving]"
+          save_bool
 				/>
 			</my-wrapper>
 			<my-wrapper

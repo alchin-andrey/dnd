@@ -5,7 +5,7 @@
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
 					<svg class="active_svg"
-						:class="{save_svg: save.includes(title)}"
+						:class="{save_svg: save.includes(title) || save_bool}"
 						viewBox="0 0 18 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +33,7 @@
 			<div class="cube_neg" v-for="n in cube_Negative" :key="n"></div>
 			<div class="cube_old" v-for="n in old_numb" :key="n"></div>
 			<div class="cube_zero" v-for="n in cube_Numb_Zero" :key="n"></div>
+      <div class="cube_save" v-for="n in cube_Save" :key="n"></div>
 		</div>
 	</div>
 </template>
@@ -105,6 +106,10 @@ export default {
 		save: {
 			type: Array,
 			default: [],
+		},
+		save_bool: {
+			type: Boolean,
+			default: false,
 		},
     text_stule: {
 			type: Boolean,
@@ -201,7 +206,7 @@ export default {
 		cube_Numb() {
 			if (this.feet) {
 				return Math.ceil(this.numb / 5);
-			} else if (this.numb < 0) {
+			} else if (this.numb < 0 || this.save_bool) {
 				return null;
 			} else {
 				return Math.floor(this.numb) + this.pls;
@@ -213,9 +218,13 @@ export default {
 		},
 
 		cube_Numb_Zero() {
-			if (this.dice) {
+      if (this.dice) {
 				return this.dice * this.numb - this.numb;
 			}
+		},
+
+    cube_Save() {
+      return this.save_bool ? this.numb : null;
 		},
 	},
 };
@@ -320,6 +329,14 @@ export default {
 	height: 8px;
 	border-radius: 2px;
 	border: 1px solid #ffffff;
+}
+
+.cube_save {
+  width: 8px;
+	height: 8px;
+	border-radius: 2px;
+	background: #05ff00;
+	box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
 }
 
 .small {
