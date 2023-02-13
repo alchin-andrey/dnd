@@ -18,13 +18,23 @@
 						v-html="stats_icon[name]"
 					/>
 					<div class="item">
-						{{ t_Stats_Name(name) }}<span class="grey-2">{{ base_Numb(name) }}</span>
+						{{ t_Stats_Name(name)
+						}}<span
+							class="grey-2"
+							:class="{
+								'rare-text': max_Numb(name),
+							}"
+							>{{ base_Numb(name) }}</span
+						>
 					</div>
 				</div>
 				<div class="mod">
-					<div class="mod_numb"
-          :class="{'grey-2': stats_Sign_Save(name) == 0 }"
-          >{{ stats_Sign_Save(name) }}</div>
+					<div
+						class="mod_numb"
+						:class="{ 'grey-2': stats_Sign_Save(name) == 0 }"
+					>
+						{{ stats_Sign_Save(name) }}
+					</div>
 					<div class="visual">
 						<div
 							class="cube cube_pos"
@@ -44,9 +54,12 @@
 					</div>
 				</div>
 				<div class="mod">
-					<div class="mod_numb"
-          :class="{'grey-2': stats_Sign_Mod(name) == 0 }"
-          >{{ stats_Sign_Mod(name) }}</div>
+					<div
+						class="mod_numb"
+						:class="{ 'grey-2': stats_Sign_Mod(name) == 0 }"
+					>
+						{{ stats_Sign_Mod(name) }}
+					</div>
 					<div class="visual">
 						<div
 							class="cube cube_pos"
@@ -83,7 +96,7 @@ export default {
 			type: String,
 			default: null,
 		},
-    hr: {
+		hr: {
 			type: Boolean,
 			default: false,
 		},
@@ -99,6 +112,7 @@ export default {
 			"stats_Mod",
 			"stats_Save",
 			"stats_Save_Mod",
+      "stats_Base_Max"
 		]),
 
 		t_Base() {
@@ -121,28 +135,28 @@ export default {
 			return (name) => this.stats_Class_Page_Numb(name);
 		},
 
-    stats_Sign_Save: (store) => (name) => {
-      const save = store.stats_Save_Mod(name);
-      return store.sign_Numb(save);
-    },
-
-    stats_Sign_Mod: (store) => (name) => {
-      const mod = store.stats_Mod(name);
-      return store.sign_Numb(mod);
-    },
-
-		sign_Numb: (store) => (numb) => {
-      return numb > 0 ? `+${numb}` : numb;
+		stats_Sign_Save: (stor) => (name) => {
+			const save = stor.stats_Save_Mod(name);
+			return stor.sign_Numb(save);
 		},
 
-		cube_Positive: (state) => (name) => {
-			let mod = state.stats_Mod(name);
+		stats_Sign_Mod: (stor) => (name) => {
+			const mod = stor.stats_Mod(name);
+			return stor.sign_Numb(mod);
+		},
+
+		sign_Numb: (stor) => (numb) => {
+			return numb > 0 ? `+${numb}` : numb;
+		},
+
+		cube_Positive: (stor) => (name) => {
+			let mod = stor.stats_Mod(name);
 			return mod > 0 ? mod : null;
 		},
 
-		cube_Save: (state) => (name) => {
-			let save = state.stats_Save(name);
-			let mod = state.stats_Mod(name);
+		cube_Save: (stor) => (name) => {
+			let save = stor.stats_Save(name);
+			let mod = stor.stats_Mod(name);
 			if (save && mod < 0) {
 				return save - Math.abs(mod);
 			} else if (save) {
@@ -152,15 +166,20 @@ export default {
 			}
 		},
 
-		cube_Negative: (state) => (name) => {
-			let mod = state.stats_Mod(name);
+		cube_Negative: (stor) => (name) => {
+			let mod = stor.stats_Mod(name);
 			return mod < 0 ? Math.abs(mod) : null;
 		},
 
-		cube_Negative_Save: (state) => (name) => {
-			let save = state.stats_Save_Mod(name);
-			let mod = state.stats_Mod(name);
+		cube_Negative_Save: (stor) => (name) => {
+			let save = stor.stats_Save_Mod(name);
+			let mod = stor.stats_Mod(name);
 			return save + mod < 0 ? Math.abs(mod) : null;
+		},
+
+		max_Numb: (stor) => (name) => {
+      const max = stor.stats_Base_Max(name);
+			return stor.base_Numb(name) >= max;
 		},
 	},
 
@@ -171,14 +190,14 @@ export default {
 <style scoped>
 .column_value {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
+	align-items: flex-start;
 	min-height: 18px;
 }
 
 .active_svg {
-  width: 18px;
-  height: 18px;
+	width: 18px;
+	height: 18px;
 	fill: none;
 	stroke: white;
 }
@@ -227,21 +246,15 @@ export default {
 .mod_numb {
 	width: 14px;
 	display: flex;
-	align-items: center;
 	justify-content: flex-end;
 }
 
 .visual {
 	display: flex;
-	align-items: center;
 	flex-wrap: wrap;
 	padding: 5px 0 5px 0;
 	gap: 2px;
 }
-
-/* .fix-width {
-  width: 98px;
-} */
 
 .cube {
 	width: 8px;
@@ -260,5 +273,9 @@ export default {
 
 .cube_neg {
 	border: 1px solid #ff0000;
+}
+
+.rare-text {
+	color: #ffc93d;
 }
 </style>

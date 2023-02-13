@@ -241,6 +241,7 @@ export default {
 	width: 230px;
 	display: flex;
 	justify-content: space-between;
+  
 	flex: 1 1 auto;
 }
 

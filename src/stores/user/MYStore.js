@@ -35,13 +35,6 @@ export const useMYStore = defineStore({
 			return arr ? arr : [];
 		},
 
-		// level_Filter_Name_Arr: (state) => (item) => {
-		// 	const lvl = state.MY.level;
-    //   let lvl_arr = item?.filter((el) => (el.level ? lvl >= el.level : el && el.name));
-		// 	let name_lvl_arr = lvl_arr?.filter((el) => (el.name  == name));
-		// 	return arr ? arr : [];
-		// },
-
     class_Specials_All() {
 			const class_specials = this.level_Filter_Arr(this.MY.class.specials);
 			const custom_specials = this.filter_Custom_Class_Lvl("specials");
@@ -51,14 +44,6 @@ export const useMYStore = defineStore({
     class_Specials_Filter_Lvl: (store) => (name) => {
 			return store.class_Specials_All?.filter((item) => item.type == name);
 		},
-
-		// class_Specials_Filter_Lvl(state) {
-		// 	const lvl = state.MY.level;
-		// 	return (name) =>
-		// 		state.MY.class.specials?.filter(
-		// 			(item) => item.type == name && lvl >= item.level
-		// 		);
-		// },
 
 		//NOTE - COMMON (stats, skills, languages, spells)
 		COMMON_Custom_Arr_RE: (state) => (name) => {

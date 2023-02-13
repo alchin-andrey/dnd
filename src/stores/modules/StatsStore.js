@@ -92,17 +92,29 @@ export const useStatsStore = defineStore({
       return stats_arr_save ? stats_arr_save : stats_arr_base;
     },
 
-    stats_Class_Page_Numb: (store) => (name) => {
+    stats_Base_Max: (stor) => (name) => {
+      const MYStore = useMYStore()
+      let max = 20;
+      const specials = MYStore.class_Specials_Filter_Lvl("stat_max");
+      specials.forEach(el => {
+        if(el.name == name) {
+          max = Math.max(max, el.num);
+        }
+      })
+      return max;
+    },
+
+    stats_Class_Page_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
-      const REC = store.stats_Race_Page_Numb(name);
-      let index = store.stats_Base_Arr.indexOf(name);
-      const base = store.stats_base_numb[index];
+      const REC = stor.stats_Race_Page_Numb(name);
+      let index = stor.stats_Base_Arr.indexOf(name);
+      const base = stor.stats_base_numb[index];
       let custom_bonus = 0;
       const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
       custom_stats.forEach(el => el.name == name ? custom_bonus += el.num : null);
-      // не больше 20;
       const res = REC + base + custom_bonus;
-      return res < 20 ? res : 20;
+      const max = stor.stats_Base_Max(name);
+      return res < max ? res : max;
     },
 
     stats_Mod: (store) => (name) => {
