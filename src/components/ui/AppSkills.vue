@@ -6,7 +6,6 @@
 					<svg class="icon_svg"
 						:class="{
               save_svg: shown_Save,
-              passive: numb == 0
               }"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +144,7 @@ export default {
 
 .save_svg {
 	fill: white;
-  stroke-opacity: 1;
+  /* stroke-opacity: 1; */
 }
 
 .item {
@@ -158,11 +157,8 @@ export default {
 }
 
 .passive {
-	color: rgba(255, 255, 255, 0.2);
-	fill-opacity: 0.2;
-	stroke-opacity: 0.2;
+  opacity: 0.2;
 }
-
 .visual {
 	width: 98px;
 	display: flex;
