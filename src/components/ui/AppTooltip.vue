@@ -5,7 +5,6 @@
 		</div>
     <transition name="slide-fade">
 		<div class="tooltip-clss int-400" v-show="isShown">
-		<!-- <div class="tooltip-clss int-400"> -->
 			{{ t_Text }}
 		</div>
   </transition>
@@ -35,10 +34,6 @@ export default {
 		t_Text() {
 			return this.t(this.text);
 		},
-
-		// shown_Save() {
-		//   return this.save ? this.stats_Saving_Arr.includes(this.icon_Stats) : false;
-		// },
 	},
 
   methods: {
@@ -83,10 +78,10 @@ export default {
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 .slide-fade-enter-active {
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to{
