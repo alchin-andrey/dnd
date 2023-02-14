@@ -4,7 +4,7 @@
 			<slot />
 		</div>
     <transition name="slide-fade">
-		<div class="tooltip-clss int-400" v-show="isShown">
+		<div class="tooltip-clss int-400" v-show="shown_Tooltip">
 			{{ t_Text }}
 		</div>
   </transition>
@@ -34,13 +34,15 @@ export default {
 		t_Text() {
 			return this.t(this.text);
 		},
+
+    shown_Tooltip() {
+      return this.shown && this.isShown;
+    }
 	},
 
   methods: {
     toggle() {
-      if(this.shown) {
         this.isShown = !this.isShown
-      }
     }
   }
 };
