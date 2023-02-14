@@ -29,8 +29,10 @@
 <script>
 import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+
+import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "AppSkills",
@@ -52,29 +54,21 @@ export default {
 			type: Number,
 			default: null,
 		},
-		save: {
-			type: Boolean,
-			default: false,
-		},
 	},
 
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY"]),
+		...mapState(usePagesStore, ["pages"]),
+    ...mapState(useSkillsStore, ["skills", "skills_passive"]),
     ...mapState(useStatsStore, ["stats_Saving_Arr"]),
 
     shown_Save() {
-      return this.save ? this.stats_Saving_Arr.includes(this.icon_Stats) : false;
+      return this.pages.class_page ? this.stats_Saving_Arr.includes(this.icon_Stats) : false;
     },
 
 		t_Title() {
 			return this.t(this.title);
 		},
-
-		// pass_Title() {
-		// 	return this.numb == 0;
-		// 	// return this.numb == 0 && this.second_numb !== null;
-		// },
 
     Prefix() {
 			return this.summ_Numb > 0 ? "+" : "";
@@ -85,7 +79,11 @@ export default {
 		},
 
 		icon_Stats() {
-			return this.MY.skills[this.title].mod;
+      if(this.title.indexOf('passive') !== -1) {
+        return this.skills_passive.find(el => el.name == this.title).mod;
+      } else {
+        return this.skills.find(el => el.name == this.title).mod;
+      }
 		},
 
 		cube_Numb() {

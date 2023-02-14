@@ -20,20 +20,20 @@
 					:type="`${state.name}_base`"
 					plus
 					:numb="state.num"
-          :active_card="active_boll_link"
+					:active_card="active_boll_link"
 				/>
 				<my-card-text v-if="state.details" :text_html="state.details" />
 			</my-wrapper>
-      <my-wrapper
+			<my-wrapper
 				v-for="saving in level_Filter_Arr(custom.saving)"
 				:key="saving"
 			>
-      <AppStats
+				<AppStats
 					:title="saving"
 					type="saving"
 					plus
 					:numb="Mastery"
-          :active_card="active_boll_link"
+					:active_card="active_boll_link"
 				/>
 			</my-wrapper>
 		</my-wrapper>
@@ -45,9 +45,19 @@
 				v-for="skill in level_Filter_Arr(custom.skills)"
 				:key="skill"
 			>
-				<AppSkills :title="skill.name" :numb="this[skill.num]" save />
+				<AppSkills :title="skill.name" :numb="this[skill.num]" />
 				<my-card-text v-if="skill.details" :text_html="skill.details" />
 			</my-wrapper>
+		</my-wrapper>
+
+		<!-- //NOTE - Skilss_Passive -->
+		<my-wrapper v-if="shown_Param_Arr(custom.skills_passive)">
+			<AppSkills
+				v-for="skills_passive in level_Filter_Arr(custom.skills_passive)"
+				:key="skills_passive"
+				:title="skills_passive.name"
+				:numb="skills_passive.num"
+			/>
 		</my-wrapper>
 
 		<!-- //NOTE - Qualities -->
@@ -62,9 +72,9 @@
 				v-for="qual in level_Filter_Arr(custom.qualities)"
 				:key="qual"
 				:title="qual.name"
-        :numb="qual.num"
-        :feet="qual.name == 'speed' || qual.name == 'vision_night'"
-        :plus="qual.type == 'bonus'"
+				:numb="qual.num"
+				:feet="qual.name == 'speed' || qual.name == 'vision_night'"
+				:plus="qual.type == 'bonus'"
 			/>
 		</my-wrapper>
 
@@ -155,9 +165,9 @@
 			</MyCusstomSetting>
 		</my-wrapper>
 
-    		<!-- //NOTE - Сondition -->
+		<!-- //NOTE - Сondition -->
 		<my-wrapper v-if="custom.condition">
-      <div class="rare-text int-400" v-html="t_Condition"/>
+			<div class="rare-text int-400" v-html="t_Condition" />
 		</my-wrapper>
 	</my-selection-card>
 </template>
@@ -271,27 +281,25 @@ export default {
 			return list ? list.length : 10.000000001;
 		},
 
-    t_Condition() {
-      return this.t(this.custom.condition);
-    },
+		t_Condition() {
+			return this.t(this.custom.condition);
+		},
 	},
-  watch: {
-    active_boll_link: {
-      handler: function(val, oldVal) {
-        if(val) {
-        this.$emit('clickOneMore', this.custom)
-        }
-      },
-      immediate: true
-    }
-}, 
+	watch: {
+		active_boll_link: {
+			handler: function (val, oldVal) {
+				if (val) {
+					this.$emit("clickOneMore", this.custom);
+				}
+			},
+			immediate: true,
+		},
+	},
 };
 </script>
 
 <style scoped>
-
 .rare-text {
-  color: #ffc93d;
+	color: #ffc93d;
 }
-
 </style>

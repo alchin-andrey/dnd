@@ -6,7 +6,6 @@
 			:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
 			:title="name"
 			:numb="skills_All_Numb(name)"
-			save
 		/>
 	</my-wrapper>
 </template>

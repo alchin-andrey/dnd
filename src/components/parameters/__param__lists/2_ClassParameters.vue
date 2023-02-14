@@ -6,6 +6,7 @@
     <section v-if="shown_Main_Paramm">
       <ClassParam__Stats hr />
       <ClassParam__Skills hr/>
+      <ClassParam__SkillsPassive hr/>
 			<ClassParam__Qualities hr />
 			<ClassParam__Charges hr />
       <ClassParam__Proficiencies hr />
@@ -22,7 +23,8 @@
     <TransitionGroup tag="ul" name="fade" class="container">
       <ClassParam__Stats key="stats" v-if="shown_Feats" hr/>
 			<ClassParam__Qualities key="qualities" hr />
-      <ClassParam__SkillsAll key="skillsall" />
+      <ClassParam__SkillsAll key="skillsAll" hr/>
+      <ClassParam__SkillsPassive key="skillsPassive" all/>
     </TransitionGroup>
 		</section>
 	</transition>

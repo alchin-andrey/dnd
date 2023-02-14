@@ -1,5 +1,6 @@
 import ClassParam__Stats from "@/components/parameters/2_param__class/ClassParam__Stats.vue";
 import ClassParam__Skills from "@/components/parameters/2_param__class/ClassParam__Skills.vue";
+import ClassParam__SkillsPassive from "@/components/parameters/2_param__class/ClassParam__SkillsPassive.vue";
 import ClassParam__Qualities from "@/components/parameters/2_param__class/ClassParam__Qualities.vue";
 import ClassParam__Charges from "@/components/parameters/2_param__class/ClassParam__Charges.vue";
 import ClassParam__Proficiencies from "@/components/parameters/2_param__class/ClassParam__Proficiencies.vue";
@@ -15,6 +16,7 @@ export default {
 	components: {
 	ClassParam__Stats,
   ClassParam__Skills,
+  ClassParam__SkillsPassive,
   ClassParam__Qualities,
   ClassParam__Charges,
   ClassParam__Proficiencies,

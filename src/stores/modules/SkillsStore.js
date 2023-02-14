@@ -6,7 +6,7 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 export const useSkillsStore = defineStore({
 	id: 'SkillsStore',
 	state: () => ({
-    skills: {
+    skills_old: {
       athletics: { bonus: 0, mod: "strength" },
       acrobatics: { bonus: 0, mod: "dexterity" },
       sleight_of_hand: { bonus: 0, mod: "dexterity" },
@@ -26,7 +26,7 @@ export const useSkillsStore = defineStore({
       deception: { bonus: 0, mod: "charisma" },
       intimidation: { bonus: 0, mod: "charisma" },
     },
-    _skills: [
+    skills: [
       {name:"athletics", mod:"strength"},
       
       {name:"acrobatics", mod:"dexterity"},
@@ -49,16 +49,29 @@ export const useSkillsStore = defineStore({
       {name:"persuasion", mod:"charisma"},
       {name:"deception", mod:"charisma"},
       {name:"intimidation", mod:"charisma"},
+    ],
+    skills_passive: [
+      {name:"investigation_passive", mod:"intelligence"},
+      {name:"perception_passive", mod:"wisdom"},
     ]
 	}),
 
   getters: {
+
+    skills_Obj: (stor) => (name) => {
+			return stor.skills.find(el => el.name == name);
+		},
+
+    skills_Passive_Obj: (stor) => (name) => {
+			return stor.skills_passive.find(el => el.name == name);
+		},
+
     skills_Keys() {
       const MYStore = useMYStore();
 			return Object.keys(MYStore.MY.skills);
 		},
 
-		skills_Activ_Obj_RE(state) {
+		skills_Activ_Obj_RE(stor) {
       const MYStore = useMYStore();
 			let i = MYStore.MY.race.skills;
 			let j = MYStore.MY.ethnos.skills;
@@ -84,65 +97,44 @@ export const useSkillsStore = defineStore({
 			return MYStore.COMMON_Custom_Arr_RE("skills");
 		},
 
-    skills_MOD_Numb: (store) => (name) => {
-      const MYStore = useMYStore();
+    skills_MOD_Numb: (stor) => (name) => {
       const StatsStore = useStatsStore();
-      const state_name = MYStore.MY.skills[name].mod;
+      const state_name = stor.skills.find(el => el.name == name).mod;
 			return StatsStore.stats_Mod(state_name);
     },
 
-    skills_RP_Numb: (store) => (name) => {
+    skills_RP_Numb: (stor) => (name) => {
       let race_mastery = 0;
-			store.skills_All_RE.includes(name)
-				? (race_mastery = store.Mastery)
+			stor.skills_All_RE.includes(name)
+				? (race_mastery = stor.Mastery)
 				: null;
         return race_mastery;
     },
 
-    skills_RP_MOD_Numb: (store) => (name) => {
-      const skills_RP = store.skills_RP_Numb(name);
-      const skills_MOD = store.skills_MOD_Numb(name);
+    skills_RP_MOD_Numb: (stor) => (name) => {
+      const skills_RP = stor.skills_RP_Numb(name);
+      const skills_MOD = stor.skills_MOD_Numb(name);
 			return skills_RP + skills_MOD;
 		},
 
-    // skills_RP_MOD_Numb: (store) => (name) => {
-    //   const MYStore = useMYStore();
-    //   const StatsStore = useStatsStore();
-		// 	const state_name = MYStore.MY.skills[name].mod;
-		// 	const mod = StatsStore.stats_Mod(state_name);
-		// 	let race_mastery = null;
-		// 	store.skills_All_RE.includes(name)
-		// 		? (race_mastery = MYStore.Mastery)
-		// 		: null;
-		// 	const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
-		// 	let skills_foo = null;
-		// 	spec_skills?.forEach((el) => (skills_foo = state[el.foo](race_mastery)));
-		// 	return skills_foo ? skills_foo + mod : race_mastery + mod;
-		// },
-
-    skills_Class_Numb: (store) => (name) => {
-
+    skills_Class_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
       const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
-
       const skills_name = skills_custom.filter(el => el.name == name);
-
-      let skill_numb = 0;
-      skills_name.forEach(el => skill_numb += store[el.num]);
-
+      let skill_numb = skills_name.reduce((acc, el) => acc + stor[el.num], 0);
 			return skill_numb;
 		},
 
-    skills_All_Numb: (store) => (name) => {
+    skills_All_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
-      const skill_RP = store.skills_RP_Numb(name);
-      const skill_MOD = store.skills_MOD_Numb(name);
-      const skill_Class = store.skills_Class_Numb(name);
+      const skill_RP = stor.skills_RP_Numb(name);
+      const skill_MOD = stor.skills_MOD_Numb(name);
+      const skill_Class = stor.skills_Class_Numb(name);
       const skill_Mastery = skill_Class + skill_RP;
 
       const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
 			let skills_foo = null;
-			spec_skills?.forEach((el) => (skills_foo = store[el.foo](skill_Mastery)));
+			spec_skills?.forEach((el) => (skills_foo = stor[el.foo](skill_Mastery)));
       return skills_foo ? skills_foo + skill_MOD : skill_Mastery + skill_MOD;
     },
 
@@ -156,6 +148,35 @@ export const useSkillsStore = defineStore({
       return uniqu_name;
     },
 
+    //NOTE - Skills_Passive
+    skills_passive_MOD_Numb: (stor) => (name) => {
+      const StatsStore = useStatsStore();
+      const state_name = stor.skills_passive.find(el => el.name == name).mod;
+			return StatsStore.stats_Mod(state_name);
+    },
+    
+    skills_passive_Class_Numb: (stor) => (name) => {
+      const MYStore = useMYStore();
+      const skills_custom = MYStore.filter_Custom_Class_Lvl("skills_passive");
+      const skills_name = skills_custom.filter(el => el.name == name);
+      let skill_numb = skills_name.reduce((acc, el) => acc + el.num, 0);
+			return skill_numb;
+		},
+
+    skills_passive_All_Numb: (stor) => (name) => {
+      const skill_MOD = stor.skills_passive_MOD_Numb(name);
+      const skill_Class = stor.skills_passive_Class_Numb(name);
+      return skill_Class +  skill_MOD;
+    },
+
+    skills_passive_Class_Param() {
+      const MYStore = useMYStore();
+      const skills_custom = MYStore.filter_Custom_Class_Lvl("skills_passive");
+      const skills_custom_name = skills_custom.reduce((acc, el) => acc.concat(el.name), []);
+			const uniqu_name = [...new Set(skills_custom_name)];
+      return uniqu_name;
+    },
+
     //NOTE - Skills Foo
     Mastery() {
       const MYStore = useMYStore();
@@ -166,7 +187,7 @@ export const useSkillsStore = defineStore({
 			return this.Mastery * 2;
 		},
 
-		Half_Mastery: (state) => (skill_mastery) => {
+		Half_Mastery: (stor) => (skill_mastery) => {
       const MYStore = useMYStore();
 			const half_mastery = Math.floor(MYStore.Mastery / 2);
 			return skill_mastery ? skill_mastery : half_mastery;

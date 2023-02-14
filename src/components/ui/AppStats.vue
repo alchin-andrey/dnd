@@ -83,10 +83,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		save: {
-			type: Array,
-			default: [],
-		},
 		active_card: {
 			type: Boolean,
 			default: false,
