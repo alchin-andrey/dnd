@@ -1,4 +1,5 @@
 <template>
+  <AppTooltip text="hint_over_limit" :shown="max_Numb">
 	<div
 		class="column jbm-300"
 		:class="{ passive: numb == 0, 'rare-text': max_Numb }"
@@ -41,6 +42,7 @@
 			/>
 		</div>
 	</div>
+</AppTooltip>
 </template>
 
 <script>

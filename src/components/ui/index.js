@@ -4,6 +4,7 @@ import AppFines from "@/components/ui/AppFines.vue";
 import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
 import AppStats from "@/components/ui/AppStats.vue";
 import AppSkills from "@/components/ui/AppSkills.vue";
+import AppTooltip from "@/components/ui/AppTooltip.vue";
 
 
 
@@ -56,6 +57,7 @@ export default [
   AppSelectionArr,
   AppStats,
   AppSkills,
+  AppTooltip,
 
   MyBackPage,
 
