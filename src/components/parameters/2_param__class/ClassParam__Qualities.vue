@@ -21,15 +21,15 @@
 			plus
 		/>
 		<my-attribute
-			v-if="qualities_Numb_Class('speed')"
+			v-if="speed_Numb_Class"
 			title="speed"
-			:numb="qualities_Numb_Class('speed')"
+			:numb="speed_Numb_Class"
 			feet
 		/>
 		<my-attribute
-			v-if="qualities_Numb_Class('vision_night')"
+			v-if="vision_night_Numb_Class"
 			title="vision_night"
-			:numb="qualities_Numb_Class('vision_night')"
+			:numb="vision_night_Numb_Class"
 			feet
 		/>
   </my-wrapper>
@@ -89,18 +89,42 @@ export default {
 			return hp_dice + con_mod + (x + con_mod) * (lvl - 1) + hp_bonus;
 		},
 
-    qualities_Bonus_Numb_All: (stor) => (name) => {
-      // const numb_class_bonus = stor.level_Filter_Arr(stor.MY.class?.qualities);
-      const qual_custom = stor.filter_Custom_Class_Lvl("qualities");
-      const qual_bonus = qual_custom.filter(el => el.name == name && el.type == "bonus");
-      let bonus_numb = qual_bonus.reduce((acc, el) => acc + el.num, 0);
-      return bonus_numb;
+    qualities_Class_All() {
+      const qual_class = this.level_Filter_Arr(this.MY.class?.qualities);
+      const qual_custom = this.filter_Custom_Class_Lvl("qualities");
+      return [...qual_class, ...qual_custom];
     },
 
-		initiative_Numb() {
+    qualities_Class_Bonus: (stor) => (name) => {
+      const qual_class_all = stor.qualities_Class_All;
+      const qual_bonus = qual_class_all.filter(el => el.name == name && el.type == "bonus");
+      return qual_bonus.reduce((acc, el) => acc + el.num, 0);
+    },
+
+    qualities_Class_Main_Numb: (stor) => (name) => {
+      const numb_RE = stor.qualities_Numb_RE(name);
+      const qual_class_all = stor.qualities_Class_All;
+      const qual_other_numb = qual_class_all.filter(el => el.name == name && !el.type);
+      const new_numb_MAX = qual_other_numb.reduce((acc, el) => Math.max(acc, el.num), 0);
+      return Math.max(numb_RE, new_numb_MAX);
+    },
+
+    initiative_Numb() {
       const mod = this.stats_Mod("dexterity");
-      const bonus_numb = this.qualities_Bonus_Numb_All("initiative");
+      const bonus_numb = this.qualities_Class_Bonus("initiative");
 			return mod + bonus_numb;
+		},
+
+    speed_Numb_Class() {
+			const main_numb = this.qualities_Class_Main_Numb("speed");
+      const bonus_numb = this.qualities_Class_Bonus("speed");
+			return main_numb + bonus_numb;
+		},
+
+    vision_night_Numb_Class() {
+      const main_numb = this.qualities_Class_Main_Numb("vision_night");
+      const bonus_numb = this.qualities_Class_Bonus("vision_night");
+			return main_numb + bonus_numb;
 		},
 
 		regen_Numb() {
@@ -123,25 +147,25 @@ export default {
 			return lvl_arr.filter((item) => item[name]);
 		},
 
-    qualities_Bonus_Numb: (store) => (arr, name) => {
-      let numb_bonus = 0;
-			const qual_arr = store.qualities_Filter(arr, `${name}_bonus`);
-			qual_arr?.forEach((el) => numb_bonus += el[`${name}_bonus`]);
-      return numb_bonus;
-    },
+    // qualities_Bonus_Numb: (store) => (arr, name) => {
+    //   let numb_bonus = 0;
+		// 	const qual_arr = store.qualities_Filter(arr, `${name}_bonus`);
+		// 	qual_arr?.forEach((el) => numb_bonus += el[`${name}_bonus`]);
+    //   return numb_bonus;
+    // },
 
-		qualities_Numb_Class: (store) => (name) => {
-			const numb_RE = store.qualities_Numb_RE(name);
-			const numb_class_bonus = store.qualities_Bonus_Numb(store.MY.class?.qualities, name);
+		// qualities_Numb_Class: (store) => (name) => {
+		// 	const numb_RE = store.qualities_Numb_RE(name);
+		// 	const numb_class_bonus = store.qualities_Bonus_Numb(store.MY.class?.qualities, name);
       
-      const custom_qual = store.filter_Custom_Class_Lvl("qualities")
-			const numb_custom_bonus = store.qualities_Bonus_Numb(custom_qual, name);
-      const new_numb = custom_qual.filter((el) => el[name]);
-      let new_numb_MAX = 0;
-      new_numb.forEach(el => new_numb_MAX = Math.max(new_numb_MAX, el[name]))
-      const main_numb = Math.max(new_numb_MAX, numb_RE);
-			return main_numb + numb_class_bonus + numb_custom_bonus;
-		},
+    //   const custom_qual = store.filter_Custom_Class_Lvl("qualities")
+		// 	const numb_custom_bonus = store.qualities_Bonus_Numb(custom_qual, name);
+    //   const new_numb = custom_qual.filter((el) => el[name]);
+    //   let new_numb_MAX = 0;
+    //   new_numb.forEach(el => new_numb_MAX = Math.max(new_numb_MAX, el[name]))
+    //   const main_numb = Math.max(new_numb_MAX, numb_RE);
+		// 	return main_numb + numb_class_bonus + numb_custom_bonus;
+		// },
 
 		armor_Name() {
 			let armor = this.armor_Equip_Element;

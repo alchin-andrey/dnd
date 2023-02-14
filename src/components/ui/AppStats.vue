@@ -11,8 +11,8 @@
 							class="icon_svg"
 							:class="{
 								max_icon_svg: overflow_Numb,
-								save_svg: save_Icin,
-								max_save_svg: save_Icin && overflow_Numb,
+								save_svg: save_Icon,
+								max_save_svg: save_Icon && overflow_Numb,
 							}"
 							viewBox="0 0 18 18"
 							fill="none"
@@ -91,6 +91,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		not_warn: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
@@ -148,7 +152,7 @@ export default {
 			}
 		},
 
-		save_Icin() {
+		save_Icon() {
 			return this.stats_Saving_Arr.includes(this.title) || this.only_Save;
 		},
 
