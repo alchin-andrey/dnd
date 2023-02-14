@@ -120,7 +120,7 @@ export default {
 			} else {
 				const stat_numb = this.stats_Class_Page_Numb(this.title);
 				const max = this.stats_Base_Max(this.title);
-				return stat_numb >= max;
+				return stat_numb > max;
 			}
 		},
 
@@ -133,7 +133,7 @@ export default {
 				return stor.stats_Save(stor.title);
 			} else {
         const diff_num = stor.stats_Class_Page_Numb_Diff(stor.title)
-        return (n - diff_num) < 0;
+        return (n - diff_num) <= 0;
       }
     }
 	},
