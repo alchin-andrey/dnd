@@ -93,7 +93,7 @@ export const useStatsStore = defineStore({
     },
 
     stats_Base_Max: (stor) => (name) => {
-      const MYStore = useMYStore()
+      const MYStore = useMYStore();
       let max = 20;
       const specials = MYStore.class_Specials_Filter_Lvl("stat_max");
       specials.forEach(el => {
@@ -107,12 +107,16 @@ export const useStatsStore = defineStore({
     stats_Class_Page_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
       const REC = stor.stats_Race_Page_Numb(name);
-      let index = stor.stats_Base_Arr.indexOf(name);
+      
+      const index = stor.stats_Base_Arr.indexOf(name);
       const base = stor.stats_base_numb[index];
-      let custom_bonus = 0;
+
+      const class_stats = MYStore.level_Filter_Arr(MYStore.MY.class?.stats);
       const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
-      custom_stats.forEach(el => el.name == name ? custom_bonus += el.num : null);
-      return REC + base + custom_bonus;
+      const class_stats_all = [...class_stats, ...custom_stats];
+      const class_stats_name = class_stats_all.filter(el => el.name == name);
+      const bonus_numb = class_stats_name.reduce((acc, el) => acc + el.num, 0);
+      return REC + base + bonus_numb;
     },
 
     stats_Class_Page_Numb_Max: (stor) => (name) => {

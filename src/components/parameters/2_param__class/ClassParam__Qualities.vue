@@ -93,7 +93,6 @@ export default {
       // const numb_class_bonus = stor.level_Filter_Arr(stor.MY.class?.qualities);
       const qual_custom = stor.filter_Custom_Class_Lvl("qualities");
       const qual_bonus = qual_custom.filter(el => el.name == name && el.type == "bonus")
-      console.log('qual_bonus:', qual_bonus)
       let bonus_numb = qual_bonus.reduce((acc, el) => acc + el.num, 0);
       return bonus_numb;
     },
