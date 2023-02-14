@@ -28,7 +28,7 @@
 			<div v-if="dot" class="dotted passive">
 				..................................
 			</div>
-			<div :class="{ 'rare-text': max_Numb }">{{ Prefix }}{{ numb }}</div>
+			<div>{{ Prefix }}{{ numb }}</div>
 		</div>
 		<div class="visual">
 			<div
@@ -82,14 +82,19 @@ export default {
 			type: Array,
 			default: [],
 		},
+    active_card: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
 		// STORES
 		// ...mapState(useMYStore, ["MY"]),
 		...mapState(useStatsStore, [
-			"stats_Class_Page_Numb_Diff",
-			"stats_Class_Page_Numb",
+			"stats_Class_Page_Numb_Overflow",
+      "stats_Class_Page_Numb",
+			"stats_Class_Page_Numb_Full",
 			"stats_Base_Max",
 			"stats_Save",
 		]),
@@ -118,9 +123,9 @@ export default {
 			if (this.only_Save) {
 				return this.stats_Save(this.title);
 			} else {
-				const stat_numb = this.stats_Class_Page_Numb(this.title);
+				const stat_numb = this.stats_Class_Page_Numb_Full(this.title);
 				const max = this.stats_Base_Max(this.title);
-				return stat_numb > max;
+				return (this.active_card && stat_numb == max) ? false : stat_numb >= max;
 			}
 		},
 
@@ -132,8 +137,17 @@ export default {
       if (stor.only_Save) {
 				return stor.stats_Save(stor.title);
 			} else {
-        const diff_num = stor.stats_Class_Page_Numb_Diff(stor.title)
-        return (n - diff_num) <= 0;
+        if(stor.active_card) {
+          const overflow_numb = stor.stats_Class_Page_Numb_Overflow(stor.title);
+          return  (n - overflow_numb) <= 0; 
+        } else {
+          const stat_numb_full = stor.stats_Class_Page_Numb_Full(stor.title);
+          const max = stor.stats_Base_Max(stor.title);
+          const stat_numb_full_pls = stat_numb_full + stor.numb;
+          const stat_numb_pls = stat_numb_full_pls < max ? stat_numb_full_pls : max;
+          const overflow_numb = stat_numb_full_pls - stat_numb_pls;
+          return (n - overflow_numb) <= 0;
+        }
       }
     }
 	},

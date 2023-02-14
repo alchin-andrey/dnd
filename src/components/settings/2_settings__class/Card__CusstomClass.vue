@@ -27,6 +27,7 @@
 					:type="`${state.name}_base`"
 					plus
 					:numb="state.num"
+          :active_card="active_boll_link"
 				/>
 				<my-card-text v-if="state.details" :text_html="state.details" />
 			</my-wrapper>

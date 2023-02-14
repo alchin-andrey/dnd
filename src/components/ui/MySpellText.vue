@@ -176,7 +176,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
 		// GETTERS
-		...mapState(useStatsStore, ["stats_Mod", "stats_Class_Page_Numb_Max"]),
+		...mapState(useStatsStore, ["stats_Mod", "stats_Class_Page_Numb"]),
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
@@ -753,7 +753,7 @@ export default {
 		},
 
 		Dur_Wisdom_Total() {
-			return this.stats_Class_Page_Numb_Max("wisdom");
+			return this.stats_Class_Page_Numb("wisdom");
 		},
 
 		//ANCHOR - Dic

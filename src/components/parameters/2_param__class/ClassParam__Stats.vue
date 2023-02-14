@@ -111,8 +111,8 @@ export default {
 			"stats_Save",
 			"stats_Save_Mod",
       "stats_Base_Max",
-      "stats_Class_Page_Numb",
-			"stats_Class_Page_Numb_Max",
+      "stats_Class_Page_Numb_Full",
+			"stats_Class_Page_Numb",
 		]),
 
 		t_Base() {
@@ -132,7 +132,7 @@ export default {
 		},
 
 		base_Numb() {
-			return (name) => this.stats_Class_Page_Numb_Max(name);
+			return (name) => this.stats_Class_Page_Numb(name);
 		},
 
 		stats_Sign_Save: (stor) => (name) => {

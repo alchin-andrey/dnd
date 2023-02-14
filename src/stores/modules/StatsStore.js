@@ -104,7 +104,7 @@ export const useStatsStore = defineStore({
       return max;
     },
 
-    stats_Class_Page_Numb: (stor) => (name) => {
+    stats_Class_Page_Numb_Full: (stor) => (name) => {
       const MYStore = useMYStore();
       const REC = stor.stats_Race_Page_Numb(name);
       
@@ -119,20 +119,20 @@ export const useStatsStore = defineStore({
       return REC + base + bonus_numb;
     },
 
-    stats_Class_Page_Numb_Max: (stor) => (name) => {
-      const res = stor.stats_Class_Page_Numb(name);
+    stats_Class_Page_Numb: (stor) => (name) => {
+      const res = stor.stats_Class_Page_Numb_Full(name);
       const max = stor.stats_Base_Max(name);
       return res < max ? res : max;
     },
 
-    stats_Class_Page_Numb_Diff: (stor) => (name) => {
-      const base_numb_full = stor.stats_Class_Page_Numb(name);
-      const base_numb = stor.stats_Class_Page_Numb_Max(name);
+    stats_Class_Page_Numb_Overflow: (stor) => (name) => {
+      const base_numb_full = stor.stats_Class_Page_Numb_Full(name);
+      const base_numb = stor.stats_Class_Page_Numb(name);
       return base_numb_full - base_numb;
     },
 
     stats_Mod: (stor) => (name) => {
-      const base_numb = stor.stats_Class_Page_Numb_Max(name);
+      const base_numb = stor.stats_Class_Page_Numb(name);
       return Math.floor((base_numb - 10)/2);
     },
 
