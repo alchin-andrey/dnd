@@ -58,6 +58,7 @@ export default {
   width: 100%;
 	max-width: 340px;
 	left: 0px;
+  z-index: 10;
 	top: calc(100% + 8px);
 
 	background: rgba(255, 255, 255, 0.06);
