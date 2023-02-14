@@ -170,7 +170,7 @@ export default {
       },
     ],
 
-    qualities: [
+    skills_passive: [
       {
         name: "perception_passive",
         type: "bonus",

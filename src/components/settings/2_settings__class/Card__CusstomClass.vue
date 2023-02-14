@@ -9,19 +9,12 @@
 		</my-card-text>
 
 		<!-- //NOTE - Stats -->
-		<my-wrapper v-if="shown_Param_Arr(custom.stats)">
+		<my-wrapper v-if="shown_Stats">
 			<my-wrapper
 				gap_26
 				v-for="state in level_Filter_Arr(custom.stats)"
 				:key="state"
 			>
-				<!-- <my-attribute
-					:title="state.name"
-					:type="`${state.name}_base`"
-					plus
-					:numb="state.num"
-					:save="stats_Saving_Arr"
-				/> -->
 				<AppStats
 					:title="state.name"
 					:type="`${state.name}_base`"
@@ -35,13 +28,6 @@
 				v-for="saving in level_Filter_Arr(custom.saving)"
 				:key="saving"
 			>
-      <!-- <my-attribute
-					:title="saving"
-					type="saving"
-					plus
-					:numb="Mastery"
-          save_bool
-				/> -->
       <AppStats
 					:title="saving"
 					type="saving"
@@ -73,30 +59,12 @@
 				plus
 			/>
 			<my-attribute
-				v-for="item in speed_Bonus_True"
-				:key="item"
-				title="speed"
-				:numb="item.speed_bonus"
-				plus
-				feet
-			/>
-			<my-attribute
-				v-if="vision_Night_Numb"
-				title="vision_night"
-				:numb="vision_Night_Numb"
-				feet
-			/>
-		</my-wrapper>
-    
-    <!-- //NOTE - Qualities_#2 -->
-    <my-wrapper v-if="shown_Param_Arr(custom.qualities)">
-			<my-attribute
 				v-for="qual in level_Filter_Arr(custom.qualities)"
 				:key="qual"
 				:title="qual.name"
         :numb="qual.num"
-        :feet="qual.name == 'speed'"
-        plus
+        :feet="qual.name == 'speed' || qual.name == 'vision_night'"
+        :plus="qual.type == 'bonus'"
 			/>
 		</my-wrapper>
 
@@ -258,15 +226,14 @@ export default {
 		shown_Qualities() {
 			return (
 				this.custom.hp_bonus ||
-				this.speed_Bonus_True.length !== 0 ||
-				this.vision_Night_Numb
+				this.level_Filter_Arr(this.custom.qualities).length !== 0
 			);
 		},
 
 		shown_Stats() {
 			return (
-				this.level_Filter_Arr(custom.saving).length !== 0 ||
-				this.level_Filter_Arr(custom.stats).length !== 0
+				this.level_Filter_Arr(this.custom.saving).length !== 0 ||
+				this.level_Filter_Arr(this.custom.stats).length !== 0
 			);
 		},
 
