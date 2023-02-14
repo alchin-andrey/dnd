@@ -4,7 +4,12 @@
 			<slot />
 		</div>
     <transition name="slide-fade">
-		<div class="tooltip-clss int-400" v-show="shown_Tooltip">
+		<div 
+    class="tooltip-clss int-400" 
+    :class="{
+      'tooltip-clss--warn': warn,
+      }" 
+    v-show="shown_Tooltip">
 			{{ t_Text }}
 		</div>
   </transition>
@@ -25,6 +30,10 @@ export default {
 			default: null,
 		},
     shown: {
+      type: Boolean,
+			default: false,
+    },
+    warn: {
       type: Boolean,
 			default: false,
     }
@@ -55,7 +64,7 @@ export default {
 
 .tooltip-clss {
 	position: absolute;
-  color: #FFC93D;
+  color: #ffffff;
 	padding: 8px 11px 9px;
   width: 100%;
 	max-width: 340px;
@@ -64,7 +73,7 @@ export default {
 	top: calc(100% + 8px);
 
 	background: rgba(255, 255, 255, 0.06);
-	border: 1px solid #FFC93D;
+	border: 1px solid #ffffff;
 	backdrop-filter: blur(30px);
 	border-radius: 6px;
 }
@@ -76,8 +85,17 @@ export default {
   transform: translateX(-50%);
   bottom: 100%; /* Положение треугольника */
   border: 6px solid transparent; /* Прозрачные границы */
-  border-bottom: 6px solid #FFC93D; /* Добавляем треугольник */
+  border-bottom: 6px solid #ffffff; /* Добавляем треугольник */
 }
+
+.tooltip-clss--warn {
+  border-color: #FFC93D;
+  color: #FFC93D;
+}
+.tooltip-clss--warn:after {
+  border-bottom-color: #FFC93D;
+}
+
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {

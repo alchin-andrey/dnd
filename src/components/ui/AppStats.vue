@@ -1,48 +1,53 @@
 <template>
-  <AppTooltip text="hint_over_limit" :shown="max_Numb">
-	<div
-		class="column jbm-300"
-		:class="{ passive: numb == 0, 'rare-text': max_Numb }"
-	>
-		<div class="column_value">
-			<section class="flex_row">
-				<div class="icon">
-					<svg
-						class="icon_svg"
-						:class="{
-							max_icon_svg: max_Numb,
-							save_svg: save_Icin,
-							max_save_svg: save_Icin && max_Numb,
-						}"
-						viewBox="0 0 18 18"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						v-html="atribute_icon[title]"
-					/>
+	<AppTooltip text="hint_over_limit" :shown="overflow_Numb" warn>
+		<div
+			class="column jbm-300"
+			:class="{ passive: numb == 0, 'rare-text': overflow_Numb }"
+		>
+			<div class="column_value">
+				<section class="flex_row">
+					<div class="icon">
+						<svg
+							class="icon_svg"
+							:class="{
+								max_icon_svg: overflow_Numb,
+								save_svg: save_Icin,
+								max_save_svg: save_Icin && overflow_Numb,
+							}"
+							viewBox="0 0 18 18"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							v-html="atribute_icon[title]"
+						/>
+					</div>
+					<div class="item">
+						{{ t_Title }}
+						<span
+							class="grey-2"
+							:class="{ 'rare-text': overflow_Numb }"
+							v-if="t_Type"
+							>{{ t_Type }}</span
+						>
+					</div>
+				</section>
+				<div v-if="dot" class="dotted passive">
+					..................................
 				</div>
-				<div class="item">
-					{{ t_Title }}
-					<span class="grey-2" :class="{'rare-text': max_Numb }" v-if="t_Type">{{ t_Type }}</span>
-				</div>
-			</section>
-			<div v-if="dot" class="dotted passive">
-				..................................
+				<div>{{ Prefix }}{{ numb }}</div>
 			</div>
-			<div>{{ Prefix }}{{ numb }}</div>
+			<div class="visual">
+				<div
+					class="cube"
+					v-for="n in cube_Numb"
+					:key="n"
+					:class="{
+						cube_save: only_Save,
+						cube_max: max_Cube(n),
+					}"
+				/>
+			</div>
 		</div>
-		<div class="visual">
-			<div
-				class="cube"
-				v-for="n in cube_Numb"
-				:key="n"
-				:class="{
-					cube_save: only_Save,
-					cube_max: max_Cube(n),
-				}"
-			/>
-		</div>
-	</div>
-</AppTooltip>
+	</AppTooltip>
 </template>
 
 <script>
@@ -82,7 +87,7 @@ export default {
 			type: Array,
 			default: [],
 		},
-    active_card: {
+		active_card: {
 			type: Boolean,
 			default: false,
 		},
@@ -93,10 +98,11 @@ export default {
 		// ...mapState(useMYStore, ["MY"]),
 		...mapState(useStatsStore, [
 			"stats_Class_Page_Numb_Overflow",
-      "stats_Class_Page_Numb",
+			"stats_Class_Page_Numb",
 			"stats_Class_Page_Numb_Full",
 			"stats_Base_Max",
-			"stats_Save",
+			"stats_Saving_Arr_AllName",
+			"stats_Saving_Arr",
 		]),
 
 		t_Title() {
@@ -119,37 +125,51 @@ export default {
 			return this.type == "saving";
 		},
 
-		max_Numb() {
+		overflow_Save() {
+			const save_all_name = this.stats_Saving_Arr_AllName;
+			const save_times = save_all_name.reduce(
+				(acc, el) => (el == this.title ? acc + 1 : acc),
+				0
+			);
+			if (this.active_card && save_times <= 1) {
+				return false;
+			} else {
+				return this.stats_Saving_Arr.includes(this.title);
+			}
+		},
+
+		overflow_Numb() {
 			if (this.only_Save) {
-				return this.stats_Save(this.title);
+				return this.overflow_Save;
 			} else {
 				const stat_numb = this.stats_Class_Page_Numb_Full(this.title);
 				const max = this.stats_Base_Max(this.title);
-				return (this.active_card && stat_numb == max) ? false : stat_numb >= max;
+				return this.active_card && stat_numb == max ? false : stat_numb >= max;
 			}
 		},
 
 		save_Icin() {
-			return this.stats_Save(this.title) || this.only_Save;
+			return this.stats_Saving_Arr.includes(this.title) || this.only_Save;
 		},
 
-    max_Cube: (stor) => (n) => {
-      if (stor.only_Save) {
-				return stor.stats_Save(stor.title);
+		max_Cube: (stor) => (n) => {
+			if (stor.only_Save) {
+				return stor.overflow_Save;
 			} else {
-        if(stor.active_card) {
-          const overflow_numb = stor.stats_Class_Page_Numb_Overflow(stor.title);
-          return  (n - overflow_numb) <= 0; 
-        } else {
-          const stat_numb_full = stor.stats_Class_Page_Numb_Full(stor.title);
-          const max = stor.stats_Base_Max(stor.title);
-          const stat_numb_full_pls = stat_numb_full + stor.numb;
-          const stat_numb_pls = stat_numb_full_pls < max ? stat_numb_full_pls : max;
-          const overflow_numb = stat_numb_full_pls - stat_numb_pls;
-          return (n - overflow_numb) <= 0;
-        }
-      }
-    }
+				if (stor.active_card) {
+					const overflow_numb = stor.stats_Class_Page_Numb_Overflow(stor.title);
+					return n - overflow_numb <= 0;
+				} else {
+					const stat_numb_full = stor.stats_Class_Page_Numb_Full(stor.title);
+					const max = stor.stats_Base_Max(stor.title);
+					const stat_numb_full_pls = stat_numb_full + stor.numb;
+					const stat_numb_pls =
+						stat_numb_full_pls < max ? stat_numb_full_pls : max;
+					const overflow_numb = stat_numb_full_pls - stat_numb_pls;
+					return n - overflow_numb <= 0;
+				}
+			}
+		},
 	},
 };
 </script>
@@ -202,7 +222,7 @@ export default {
 
 .item span {
 	margin-left: 8px;
-  /* opacity: 0.2; */
+	/* opacity: 0.2; */
 }
 
 .passive {
@@ -238,6 +258,8 @@ export default {
 	align-items: center;
 	margin-left: 12px;
 	flex-wrap: wrap;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
 	padding: 5px 0 5px 0;
 	gap: 2px;
 }

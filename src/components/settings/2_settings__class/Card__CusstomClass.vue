@@ -47,6 +47,7 @@
 					type="saving"
 					plus
 					:numb="Mastery"
+          :active_card="active_boll_link"
 				/>
 			</my-wrapper>
 		</my-wrapper>

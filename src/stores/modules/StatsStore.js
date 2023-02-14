@@ -136,16 +136,19 @@ export const useStatsStore = defineStore({
       return Math.floor((base_numb - 10)/2);
     },
 
-    stats_Saving_Arr() {
+    stats_Saving_Arr_AllName() {
       const MYStore = useMYStore();
       let arr_save = [...MYStore.MY.class.saving];
       const specials_lvl = MYStore.class_Specials_Filter_Lvl("saving");
       specials_lvl?.forEach(el => el.saving.forEach(x => arr_save.push(x)));
       
       const save_custom = MYStore.filter_Custom_Class_Lvl("saving");
-      arr_save = [...arr_save, ...save_custom];
-      const uniqu_arr_save = [...new Set(arr_save)];
-      return uniqu_arr_save;
+      const arr_save_all = [...arr_save, ...save_custom];
+      return arr_save_all;
+    },
+
+    stats_Saving_Arr() {
+      return [...new Set(this.stats_Saving_Arr_AllName)];
     },
 
     stats_Save: (store) => (name) => {
