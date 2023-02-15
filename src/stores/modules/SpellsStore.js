@@ -129,10 +129,14 @@ export const useSpellsStore = defineStore({
 			return arr;
 		},
 
-    spells_Race_Param() {
+    spells_Race_Param_All() {
 			const RE_spells = this.spells_Activ_Obj_RE;
 			const custom_spells = this.spells_Custom_Obj_RE;
-			return RE_spells.concat(custom_spells);
+      return [...RE_spells, ...custom_spells];
+		},
+
+    spells_Race_Param() {
+      return [...new Set(this.spells_Race_Param_All)];
 		},
 
     spells_Class_Lvl() {
@@ -144,21 +148,35 @@ export const useSpellsStore = defineStore({
     spells_Custom_Class_Lvl() {
       const MYStore = useMYStore();
       let spell_arr = MYStore.filter_Custom_Class_Lvl("spells");
-      // console.log('spell_arr:', spell_arr)
 			return this.spells_For_Arr_Obj(spell_arr);
 		},
 
-    spells_Class_Param() {
+    spells_Class_Param_All() {
 			const class_spells = this.spells_Class_Lvl;
 			const custo_spells = this.spells_Custom_Class_Lvl;
-			// console.log('custo_spells:', custo_spells)
-			return class_spells.concat(custo_spells);
+			return [...class_spells, ...custo_spells];
 		},
+
+    spells_Class_Param() {
+			return [...new Set(this.spells_Class_Param_All)];
+		},
+
+    spells_Class_Param_includ_Race_Param() {
+      const race_spells = this.spells_Race_Param;
+      const class_spells = this.spells_Class_Param;
+      return class_spells.filter((el) => !race_spells.includes(el));
+    },
+
+    spells_RC_Param_All() {
+      const race_spells_all = this.spells_Race_Param_All;
+			const class_spells_all = this.spells_Class_Param_All;
+      return [...race_spells_all, ...class_spells_all];
+    },
 
     spells_RC_Param() {
       const race_spells = this.spells_Race_Param;
-			const class_spells = this.spells_Class_Param;
-			return race_spells.concat(class_spells);
+      const class_spells_includ = this.spells_Class_Param_includ_Race_Param;
+      return [...race_spells, ...class_spells_includ];
     }
 
 

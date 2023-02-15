@@ -136,6 +136,7 @@
 				:lvl="item.level"
 				:spell="item.spell"
 				select
+        :active_card="active_boll_link"
 			>
 			</my-spell-text>
 		</my-wrapper>

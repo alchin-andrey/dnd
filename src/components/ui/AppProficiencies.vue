@@ -92,8 +92,8 @@ export default {
 		},
 
 		unique_Names() {
-			const unique_arr_name = [...new Set(this.arr_name)];
 			const unique_arr_name_old = [...new Set(this.arr_name_old)];
+			const unique_arr_name = [...new Set(this.arr_name)];
 			const unique_arr_name_includ = unique_arr_name.filter(
 				(i) => !unique_arr_name_old.includes(i)
 			);

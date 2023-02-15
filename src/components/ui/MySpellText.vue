@@ -1,51 +1,70 @@
 <template>
-	<div
-		v-if="lvl_Show"
-		class="flex_spell"
-		@mouseover="hoverIn_Full()"
-		@mouseleave="hoverOut()"
-		@click="showDialog_Full()"
-	>
-		<div ref="stripe" class="side_stripe"></div>
-		<div class="int-400 flex_col" :class="{ passive: passive }">
-			<div>
-				<div class="flex_title">
-					<div class="title_spell h_18">
-						{{ em_Before
-						}}<emoji
-							v-if="em_Upd"
-							:data="emojiIndex"
-							:emoji="em_Upd"
-							:set="set_emoji"
-							:size="emoji_size"
-						/>{{ em_After }}
-					</div>
-					<img
+	<AppTooltip text="hint_over_limit" :shown="overflow_Spell && !param" warn>
+		<div
+			v-if="lvl_Show"
+			class="flex_spell"
+			@mouseover="hoverIn_Full()"
+			@mouseleave="hoverOut()"
+			@click="showDialog_Full()"
+		>
+			<div ref="stripe" class="side_stripe"></div>
+			<div
+				class="int-400 flex_col"
+				:class="{
+					passive: passive,
+					'rare-text': overflow_Spell,
+				}"
+			>
+				<div>
+					<div class="flex_title">
+						<div class="title_spell h_18">
+							{{ em_Before
+							}}<emoji
+								v-if="em_Upd"
+								:data="emojiIndex"
+								:emoji="em_Upd"
+								:set="set_emoji"
+								:size="emoji_size"
+							/>{{ em_After }}
+						</div>
+						<svg
+							class="icon_svg"
+							:class="{ 'icon-overflow': overflow_Spell }"
+							@mouseover="hoverIn_Select()"
+							@mouseleave="hoverOut()"
+							@click="showDialog_Select()"
+							viewBox="0 0 18 18"
+							xmlns="http://www.w3.org/2000/svg"
+							v-html="ui_icon.arrow_right_small"
+						/>
+						<!-- <img
 						class="icon_spell"
 						src="@/assets/img/icon/arrow_right_small.svg"
 						alt="arrow"
 						@mouseover="hoverIn_Select()"
 						@mouseleave="hoverOut()"
 						@click="showDialog_Select()"
-					/>
-				</div>
+					/> -->
+					</div>
 
-				<div class="text_spell" v-html="t_Text"></div>
+					<div class="text_spell" v-html="t_Text"></div>
+				</div>
+				<magic-attribute
+					v-if="Spell_Index.impact_type"
+					:title="Spell_Index.impact_type"
+					:addition="Spell_Index.impact_damage_type"
+					:str="Value_Str"
+					:numb="Value_Num"
+					:dice="Value_Dic"
+					:pls="Value_Pls"
+					:feet="Spell_Index.impact_size_foo?.includes('Feet')"
+					main
+					not_dot
+					:overflow="overflow_Spell"
+				/>
 			</div>
-			<magic-attribute
-				v-if="Spell_Index.impact_type"
-				:title="Spell_Index.impact_type"
-				:addition="Spell_Index.impact_damage_type"
-				:str="Value_Str"
-				:numb="Value_Num"
-				:dice="Value_Dic"
-				:pls="Value_Pls"
-        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-				main
-				not_dot
-			/>
 		</div>
-	</div>
+	</AppTooltip>
 	<my-dialog-spell v-model:show="dialogVisible" v-model:mana="mana_numb">
 		<my-wrapper>
 			<div class="title_spell gray_2">{{ t_Type }} /</div>
@@ -100,7 +119,7 @@
 				:numb="Value_Num"
 				:dice="Value_Dic"
 				:pls="Value_Pls"
-        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
+				:feet="Spell_Index.impact_size_foo?.includes('Feet')"
 				main
 			/>
 			<magic-attribute
@@ -116,39 +135,24 @@
 				:numb="Mastery"
 				plus
 			/>
-			<magic-attribute
-				v-if="Value_Ran"
-				title="aim_range"
-				:numb="Value_Ran"
-			/>
+			<magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
 		</my-wrapper>
-		<!-- <my-wrapper v-if="Spell_Index.saving_need">
-			<magic-attribute
-				v-if="Spell_Index.saving_need"
-				title="saving"
-				:prefix="Spell_Index.saving_attribute"
-				:numb="Saving_Numb"
-			/>
-			<magic-attribute
-				v-if="Spell_Index.impact_size_saved"
-				title="if_succeed"
-				:save="Spell_Index.impact_size_saved"
-			/>
-		</my-wrapper> -->
 		<div class="hr"></div>
 		<div class="text_spell gray_4" v-html="t_Expanded"></div>
 	</my-dialog-spell>
 </template>
 
 <script>
-import { barbarian_rage_bonus } from "@/assets/catalog/base_data/step2_classes.js";
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "MySpellText",
 	data() {
 		return {
+			ui_icon: ui_icon,
 			dialogVisible: false,
 			numb_type: 0,
 			mana_numb: null,
@@ -172,14 +176,37 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		active_card: {
+			type: Boolean,
+			default: false,
+		},
+		param: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Class_Page_Numb"]),
+		...mapState(useSpellsStore, ["spells_RC_Param_All"]),
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
+		},
+
+		overflow_Spell() {
+			const name_times = this.spells_RC_Param_All.reduce(
+				(acc, el) => (el == this.spell ? acc + 1 : acc),
+				0
+			);
+			if (this.active_card && name_times <= 1) {
+				return false;
+			} else if (this.param) {
+				return name_times > 1;
+			} else {
+				return name_times >= 1;
+			}
 		},
 
 		Spell_Index() {
@@ -199,16 +226,15 @@ export default {
 		},
 
 		Manna_Length() {
-			
 			return this.spell.length;
 		},
 
-    shown_Manna() {
-      const manna_0 = this.Manna_Length == 1;
-      const slot = this.Spell_Index.slot_type;
-      const ability = this.Spell_Index.type == "ability";
-      return !manna_0 || slot || !ability;
-    },
+		shown_Manna() {
+			const manna_0 = this.Manna_Length == 1;
+			const slot = this.Spell_Index.slot_type;
+			const ability = this.Spell_Index.type == "ability";
+			return !manna_0 || slot || !ability;
+		},
 
 		lvl_Show() {
 			return this.lvl <= this.MY.level;
@@ -243,12 +269,12 @@ export default {
 		t_Cast_Value() {
 			let string = null;
 
-      const cast_time = this.t(this.Spell_Index.cast_time);
-      const numb = this.Spell_Index.cast_duration;
-      const numb_units = this.t(this.Spell_Index.cast_duration_units);
+			const cast_time = this.t(this.Spell_Index.cast_time);
+			const numb = this.Spell_Index.cast_duration;
+			const numb_units = this.t(this.Spell_Index.cast_duration_units);
 			if (this.Spell_Index.cast_time === "ritual") {
 				string = `${cast_time} ${numb} ${numb_units}`;
-			} else if(!cast_time) {
+			} else if (!cast_time) {
 				string = `${numb} ${numb_units}`;
 			} else {
 				string = cast_time;
@@ -358,20 +384,9 @@ export default {
 		//ANCHOR - STR
 		Str_X_Level_5_11_17() {
 			let str = this.Spell_Index.impact_size_str;
-			// let lvl = this.MY.level;
-			// let kof = null;
-			// if (lvl < 5) {
-			// 	kof = 1;
-			// } else if (lvl < 11) {
-			// 	kof = 2;
-			// } else if (lvl < 17) {
-			// 	kof = 3;
-			// } else {
-			// 	kof = 4;
-			// }
-      const lvl_arr = [5, 11, 17];
+			const lvl_arr = [5, 11, 17];
 			const kof_arr = [1, 2, 3];
-      let kof = this.kof_Foo(lvl_arr, kof_arr);
+			let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return str + kof;
 		},
 
@@ -396,9 +411,6 @@ export default {
 		},
 
 		//ANCHOR - NUM
-		// Num_Barbarian_Rage_Bonus() {
-		// 	return barbarian_rage_bonus[this.MY.level]; // convert to store
-		// },
 
 		Num_Plus_Level_2() {
 			let num = this.Spell_Index.impact_size_num;
@@ -414,56 +426,25 @@ export default {
 
 		Num_Level_9_16() {
 			let num = this.Spell_Index.impact_size_num;
-			// let lvl = this.MY.level;
-			// let kof = 0;
-			// if (lvl < 9) {
-			// 	kof = 0;
-			// } else if (lvl < 16) {
-			// 	kof = 1;
-			// } else {
-			// 	kof = 2;
-			// }
-      const lvl_arr = [9, 16];
+			const lvl_arr = [9, 16];
 			const kof_arr = [1, 2];
-      let kof = this.kof_Foo(lvl_arr, kof_arr);
+			let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return num + kof;
 		},
 
 		Num_Level_5_11_17() {
 			let num = this.Spell_Index.impact_size_num;
-			// let lvl = this.MY.level;
-			// let kof = 0;
-			// if (lvl < 5) {
-			// 	kof = 0;
-			// } else if (lvl < 11) {
-			// 	kof = 1;
-			// } else if (lvl < 17) {
-			// 	kof = 2;
-			// } else {
-			// 	kof = 3;
-			// }
-      const lvl_arr = [5, 11, 17];
+			const lvl_arr = [5, 11, 17];
 			const kof_arr = [1, 2, 3];
-      let kof = this.kof_Foo(lvl_arr, kof_arr);
+			let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return num + kof;
 		},
 
 		Num_Level_6_11_16() {
 			let num = this.Spell_Index.impact_size_num;
-			// let lvl = this.MY.level;
-			// let kof = null;
-			// if (lvl < 6) {
-			// 	kof = 0;
-			// } else if (lvl < 11) {
-			// 	kof = 1;
-			// } else if (lvl < 16) {
-			// 	kof = 2;
-			// } else {
-			// 	kof = 3;
-			// }
-      const lvl_arr = [6, 11, 16];
+			const lvl_arr = [6, 11, 16];
 			const kof_arr = [1, 2, 3];
-      let kof = this.kof_Foo(lvl_arr, kof_arr);
+			let kof = this.kof_Foo(lvl_arr, kof_arr);
 			return num + kof;
 		},
 
@@ -514,11 +495,11 @@ export default {
 			return lvl >= 14 ? num + 1 : num;
 		},
 
-    Num_Lvl_Plus_CHA() {
-      let lvl = this.MY.level;
+		Num_Lvl_Plus_CHA() {
+			let lvl = this.MY.level;
 			let mod = this.stats_Mod("intelligence");
-      return lvl + mod;
-    },
+			return lvl + mod;
+		},
 
 		Num_MOD() {
 			let num = this.Spell_Index.impact_size_num;
@@ -566,6 +547,7 @@ export default {
 			let res = pls + mod;
 			return res < 0 ? 0 : res;
 		},
+
 		Pls_Plus_5() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mana = this.Mana_Numb;
@@ -577,6 +559,13 @@ export default {
 		Pls_STR() {
 			let pls = this.Spell_Index.impact_size_pls;
 			let mod = this.stats_Mod("strength");
+			let res = pls + mod;
+			return res;
+		},
+
+		Pls_DEX() {
+			let pls = this.Spell_Index.impact_size_pls;
+			let mod = this.stats_Mod("dexterity");
 			let res = pls + mod;
 			return res;
 		},
@@ -619,119 +608,56 @@ export default {
 
 		//ANCHOR - Det
 		Det_2_4_8_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// let kof = null;
-			// if (lvl >= 8) {
-			// 	kof = 8;
-			// } else if (lvl >= 4) {
-			// 	kof = 4;
-			// } else if (lvl >= 2) {
-			// 	kof = 2;
-			// } else {
-			// 	kof = null;
-			// }
-			// return kof;
-      const lvl_arr = [2, 4, 8];
+			const lvl_arr = [2, 4, 8];
 			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_2_4_8_9_10_12_15_18_Lvl() {
-      const lvl_arr = [2, 4, 8, 9, 10, 12, 15, 18];
+			const lvl_arr = [2, 4, 8, 9, 10, 12, 15, 18];
 			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_5_8_11_14_17_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// let kof = null;
-			// if (lvl >= 17) {
-			// 	kof = 17;
-			// } else if (lvl >= 14) {
-			// 	kof = 14;
-			// } else if (lvl >= 11) {
-			// 	kof = 11;
-			// } else if (lvl >= 8) {
-			// 	kof = 8;
-			// } else if (lvl >= 5) {
-			// 	kof = 5;
-			// } else {
-			// 	kof = null;
-			// }
-			// return kof ? `${deteils}_${kof}` : kof;
-      const lvl_arr = [5, 8, 11, 14, 17];
+			const lvl_arr = [5, 8, 11, 14, 17];
 			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_5_9_13_17_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// let kof = null;
-			// if (lvl >= 17) {
-			// 	kof = 17;
-			// } else if (lvl >= 13) {
-			// 	kof = 13;
-			// } else if (lvl >= 9) {
-			// 	kof = 9;
-			// } else if (lvl >= 5) {
-			// 	kof = 5;
-			// } else {
-			// 	kof = null;
-			// }
-			// return kof ? `${deteils}_${kof}` : kof;
-      const lvl_arr = [5, 9, 13, 17];
+			const lvl_arr = [5, 9, 13, 17];
 			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_7_11_15_Lvl() {
-      		const lvl_arr = [7, 11, 15];
+			const lvl_arr = [7, 11, 15];
 			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_11_20_Lvl() {
-      		const lvl_arr = [11, 20];
+			const lvl_arr = [11, 20];
 			return this.kof_Foo(lvl_arr);
 		},
 
 		Det_6_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level >= 6 ? 6 : null;
 		},
 
 		Det_13_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level >= 13 ? 13 : null;
 		},
 
 		Det_14_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level >= 14 ? 14 : null;
 		},
 
 		Det_17_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level >= 17 ? 17 : null;
 		},
 
 		Det_18_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level >= 18 ? 18 : null;
 		},
 
 		Det_20_Lvl() {
-			// let deteils = this.Spell_Index.details;
-			// let lvl = this.MY.level;
-			// return kof ? `${deteils}_${kof}` : kof;
 			return this.MY.level == 20 ? 20 : null;
 		},
 
@@ -758,9 +684,9 @@ export default {
 
 		//ANCHOR - Dic
 		Dic_14_56_118_1710_Lvl() {
-      const lvl_arr = [1, 5, 11, 17];
+			const lvl_arr = [1, 5, 11, 17];
 			const kof_arr = [4, 6, 8, 10];
-      return this.kof_Foo(lvl_arr, kof_arr);
+			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
 		Dic_14_66_148_Lvl() {
@@ -769,19 +695,19 @@ export default {
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
-    Dic_16_98_1310_1712_Lvl() {
+		Dic_16_98_1310_1712_Lvl() {
 			const lvl_arr = [1, 9, 13, 17];
 			const kof_arr = [6, 8, 10, 12];
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
-    Dic_16_58_1010_1512_Lvl() {
+		Dic_16_58_1010_1512_Lvl() {
 			const lvl_arr = [1, 5, 10, 15];
 			const kof_arr = [6, 8, 10, 12];
 			return this.kof_Foo(lvl_arr, kof_arr);
 		},
 
-    //ANCHOR - Ran
+		//ANCHOR - Ran
 		Ran_18_30f() {
 			return this.MY.level >= 18 ? 30 : 10;
 		},
@@ -818,18 +744,18 @@ export default {
 			return num;
 		},
 
-    kof_Foo: (state) => (lvl_arr, kof_arr) => {
-      !kof_arr ? kof_arr = lvl_arr : null;
-      let lvl = state.MY.level;
-      let kof = null;
+		kof_Foo: (state) => (lvl_arr, kof_arr) => {
+			!kof_arr ? (kof_arr = lvl_arr) : null;
+			let lvl = state.MY.level;
+			let kof = null;
 			for (let i = 0; i < lvl_arr.length; i++) {
-        if (lvl < lvl_arr[i]) {
+				if (lvl < lvl_arr[i]) {
 					break;
 				}
-        kof = kof_arr[i];
+				kof = kof_arr[i];
 			}
-      return kof;
-    },
+			return kof;
+		},
 
 		Value_Str() {
 			return this.Value_Foo("Str");
@@ -845,8 +771,8 @@ export default {
 
 		Value_Det() {
 			let details = this.Spell_Index.details;
-      let foo = this.Value_Foo("Det");
-      return foo ? `${details}_${foo}` : foo;
+			let foo = this.Value_Foo("Det");
+			return foo ? `${details}_${foo}` : foo;
 		},
 
 		Value_Dur() {
@@ -854,14 +780,14 @@ export default {
 		},
 
 		Value_Dic() {
-      let dice = this.Spell_Index.impact_size_dic;
-      let foo = this.Value_Foo_Сlean("Dic");
+			let dice = this.Spell_Index.impact_size_dic;
+			let foo = this.Value_Foo_Сlean("Dic");
 			return dice + foo;
 		},
 
-    Value_Ran() {
-      const foo_range = this.Value_Foo("Ran");
-      const spell_range = this.Spell_Index.aim_range;
+		Value_Ran() {
+			const foo_range = this.Value_Foo("Ran");
+			const spell_range = this.Spell_Index.aim_range;
 			return foo_range ? foo_range : spell_range;
 		},
 
@@ -871,23 +797,33 @@ export default {
 		dialogVisible(val) {
 			if (val === false) {
 				this.$refs.stripe.classList.remove("active");
+				this.$refs.stripe.classList.remove("active--overflow");
 			}
 		},
 	},
 	methods: {
 		hoverIn_Select() {
 			if (this.select) {
-				this.$refs.stripe.classList.add("active");
+				if (this.overflow_Spell) {
+					this.$refs.stripe.classList.add("active--overflow");
+				} else {
+					this.$refs.stripe.classList.add("active");
+				}
 			}
 		},
 		hoverOut() {
 			if (!this.dialogVisible) {
 				this.$refs.stripe.classList.remove("active");
+				this.$refs.stripe.classList.remove("active--overflow");
 			}
 		},
 		hoverIn_Full() {
 			if (!this.select) {
-				this.$refs.stripe.classList.add("active");
+				if (this.overflow_Spell) {
+					this.$refs.stripe.classList.add("active--overflow");
+				} else {
+					this.$refs.stripe.classList.add("active");
+				}
 			}
 		},
 		showDialog_Full() {
@@ -916,6 +852,7 @@ export default {
 	height: 100%;
 	width: 100%;
 	cursor: pointer;
+	color: #ffffff;
 	/* cursor: url('@/assets/img/icon/cursor_magic.png'), pointer; */
 }
 
@@ -946,6 +883,10 @@ export default {
 
 .active {
 	background: #ffffff;
+}
+
+.active--overflow {
+	background: #ffc93d;
 }
 
 .manna_flex {
@@ -996,7 +937,6 @@ export default {
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
-	color: #ffffff;
 	display: flex;
 	align-items: center;
 	white-space: pre;
@@ -1032,6 +972,24 @@ export default {
 
 .passive {
 	opacity: 0.2;
-	/* cursor: auto; */
+}
+
+.icon_svg {
+	fill: white;
+	width: 18px;
+	height: 18px;
+}
+
+.icon-overflow {
+	fill: #ffc93d;
+}
+
+.rare-text {
+	color: #ffc93d;
+	opacity: 1;
+}
+.rare-text div {
+	color: #ffc93d;
+	opacity: 1;
 }
 </style>

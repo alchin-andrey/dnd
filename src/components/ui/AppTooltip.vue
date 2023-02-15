@@ -120,7 +120,7 @@ export default {
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  top: 30px;
+  top: calc(100% + 20px);
 	opacity: 0;
 }
 </style>

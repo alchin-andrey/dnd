@@ -22,12 +22,21 @@
 		</div>
 		<div class="visual">
 			<div
-				class="cube"
-				:class="{ cube_dash: Miles }"
+				class="cube cube-main"
+				:class="{ 
+          cube_dash: Miles,
+          'cube-main--overflow': overflow,
+          }"
 				v-for="n in spell_Cube_Numb"
 				:key="n"
-			></div>
-			<div class="cube_zero" v-for="n in spell_Cube_Numb_Zero" :key="n"></div>
+			/>
+			<div 
+      class="cube cube-zero"     
+      :class="{ 
+      'cube-zero--overflow': overflow,
+      }" 
+      v-for="n in spell_Cube_Numb_Zero" 
+      :key="n"/>
 		</div>
 	</div>
 </template>
@@ -85,6 +94,10 @@ export default {
 			default: false,
 		},
     feet: {
+			type: Boolean,
+			default: false,
+		},
+    overflow: {
 			type: Boolean,
 			default: false,
 		},
@@ -277,19 +290,26 @@ export default {
 .cube {
 	width: 8px;
 	height: 8px;
+	/* box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25); */
+	border-radius: 2px;
+}
+.cube-main {
 	background: #ffffff;
 	box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
-	border-radius: 2px;
+}
+
+.cube-main--overflow {
+	background: #ffc93d;
 }
 
 .cube_dash {
 	width: 100%;
 }
 
-.cube_zero {
-	width: 8px;
-	height: 8px;
-	border-radius: 2px;
+.cube-zero {
 	border: 1px solid #ffffff;
+}
+.cube-zero--overflow {
+	border: 1px solid #ffc93d;
 }
 </style>

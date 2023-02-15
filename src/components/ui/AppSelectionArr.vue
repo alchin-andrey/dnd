@@ -17,6 +17,7 @@
 			</div>
 			<div class="icon">
 				<svg
+          class="main_svg"
 					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
 					v-html="ui_icon[icon_Image(item)]"
@@ -181,8 +182,12 @@ export default {
 .icon {
 	width: 18px;
 	height: 18px;
-	/* display: flex;
-  align-items: center; */
+}
+
+.main_svg {
+	fill: white;
+  /* width: 18px;
+	height: 18px; */
 }
 
 .rare {
