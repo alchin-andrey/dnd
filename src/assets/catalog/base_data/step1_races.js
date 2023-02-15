@@ -159,30 +159,30 @@ export default {
             //   spell: spells.divine_intervention,
             // },
 
-            {
-              level: 1,
-              spell: spells.create_or_destroy_water,
-            },
-            {
-              level: 1,
-              spell: spells.create_or_destroy_water,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.create_or_destroy_water,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.create_or_destroy_water,
+            // },
 
             // //Num
 
-            {
-              level: 1,
-              spell: spells.flame_blade,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.flame_blade,
+            // },
 
-            {
-              level: 1,
-              spell: spells.hellish_rebuke,
-            },
-            {
-              level: 1,
-              spell: spells.hellish_rebuke,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.hellish_rebuke,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.hellish_rebuke,
+            // },
 
             // {
             //   level: 1,
