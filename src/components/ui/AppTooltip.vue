@@ -1,9 +1,43 @@
 <template>
-	<!-- <span class="relative"> -->
-	<span>
-		<span class="full" @mouseenter="toggle" @mouseleave="toggle">
-			<slot />
-		</span>
+	<div class="h-100">
+			<div class="flex"
+				@mouseenter="toggle"
+				@mouseleave="toggle"
+			>
+				<slot />
+        <transition name="slide-fade">
+        <div 
+        v-show="shown_Tooltip"
+        class="tooltip-pointer" 				
+        :class="{
+          'tooltip-pointer--warn': warn,
+				}" />
+    </transition>
+			</div>
+		<transition name="slide-fade">
+			<div v-show="shown_Tooltip"
+				class="tooltip-clss int-400"
+				:class="{
+					'tooltip-clss--warn': warn,
+				}"
+			>
+				{{ t_Text }}
+			</div>
+		</transition>
+	</div>
+
+	<!-- <span class="h-100">
+			<span
+				:class="{
+					'tooltip-pointer': shown_Tooltip,
+          'tooltip-pointer--warn': warn,
+          'tooltip-inline': inline,
+				}"
+				@mouseenter="toggle"
+				@mouseleave="toggle"
+			>
+				<slot />
+			</span>
 		<transition name="slide-fade">
 			<div
 				class="tooltip-clss int-400"
@@ -15,7 +49,8 @@
 				{{ t_Text }}
 			</div>
 		</transition>
-	</span>
+	</span> -->
+
 </template>
 
 <script>
@@ -35,10 +70,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    // relative: {
-		// 	type: Boolean,
-		// 	default: false,
-		// },
 		warn: {
 			type: Boolean,
 			default: false,
@@ -68,9 +99,10 @@ export default {
 	position: relative;
 }
 
-/* .full {
-  width: 100%;
-} */
+.flex {
+  display: flex;
+  flex-direction: column;
+}
 
 .tooltip-clss {
 	position: absolute;
@@ -80,27 +112,39 @@ export default {
 	/* min-width: min-content; */
 	/* min-width: 340px; */
 	width: 340px;
-  /* text-align: center; */
 	left: 0;
-  /* transform:translateX(-50%); */
 	z-index: 10;
+	top: 100%;
 	top: calc(100% + 8px);
-
 	background: rgba(255, 255, 255, 0.06);
 	border: 1px solid #ffffff;
 	backdrop-filter: blur(30px);
 	border-radius: 6px;
 }
 
-
-.tooltip-clss::after {
+/* .tooltip-clss::after {
 	content: "";
-	position: absolute; /* Абсолютное позиционирование */
+	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: 100%; /* Положение треугольника */
-	border: 6px solid transparent; /* Прозрачные границы */
-	border-bottom: 6px solid #ffffff; /* Добавляем треугольник */
+	bottom: 100%; 
+	border: 6px solid transparent; 
+	border-bottom: 6px solid #ffffff; 
+} */
+
+.tooltip-pointer {
+	position: relative;
+}
+
+
+.tooltip-pointer::after {
+	content: "";
+	position: absolute; 
+	top: calc(100% - 4px);
+	left: 50%;
+	transform: translateX(-50%);
+	border: 6px solid transparent;
+	border-bottom: 6px solid #ffffff; 
 }
 
 .tooltip-clss--warn {
@@ -110,25 +154,25 @@ export default {
 .tooltip-clss--warn:after {
 	border-bottom-color: #ffc93d;
 }
+.tooltip-pointer--warn:after {
+	border-bottom-color: #ffc93d;
+}
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  /* transition-property: top, opacity; */
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in;
 }
 .slide-fade-enter-active {
-  /* transition-property: top, opacity; */
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-delay: 0.2s;
-  transition-timing-function: ease-in;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-delay: 0.3s;
+	transition-timing-function: ease-in;
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  /* top: calc(100% + 20px); */
-  transform:translateY(10px);
+	transform: translateY(10px);
 	opacity: 0;
 }
 </style>

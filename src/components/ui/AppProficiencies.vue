@@ -1,56 +1,5 @@
 <template>
-	<AppTooltip text="hint_over_limit" :shown="any_Name" warn>
-		<div class="column">
-			<!-- <section class="flex_row"> -->
-				<div class="icon" v-if="!passive_Link_Full">
-					<svg
-						class="icon_svg"
-						:class="{
-							'icon-passive': passive_Link,
-							'icon-full': any_Name,
-						}"
-						viewBox="0 0 18 18"
-						xmlns="http://www.w3.org/2000/svg"
-						v-html="ui_icon.check"
-					/>
-				</div>
-				<div
-					class="title jbm-300"
-					:class="{
-						passive: passive_Link,
-						'rare-text': any_Name,
-					}"
-				>
-					{{ t_Title
-					}}<span
-						class="grey-2"
-						:class="{
-							'rare-text': any_Name,
-						}"
-						>:</span
-					>
-				</div>
-			<!-- </section> -->
-			<div class="item int-400" :class="{ passive: passive_Link }">
-				<span v-if="unique_Names.length == 0">—</span>
-				<AppTooltip
-					text="hint_over_limit"
-					v-for="(name, i) in unique_Names"
-					:key="name"
-					:shown="overflow_Save(name) && !any_Name"
-					warn
-					:class="{ passive: arr_name_old.includes(name) }"
-				>
-					<span :class="{ 'rare-text': overflow_Save(name) }">
-						{{ t_Name(name, i) }}
-					</span>
-					<span v-if="unique_Names.length - 1 > i">, </span>
-				</AppTooltip>
-			</div>
-		</div>
-	</AppTooltip>
-
-	<!-- <AppTooltip text="hint_over_limit" :shown="any_Name" warn>
+	<!-- <AppTooltip text="hint_over_limit" :shown="any_Name" warn> -->
 	<div class="column">
     <div class="icon" v-if="!passive_Link_Full">
 						<svg
@@ -85,17 +34,20 @@
 				v-for="(name, i) in unique_Names"
 				:key="name"
 				:shown="overflow_Save(name) && !any_Name"
-				warn
+				warn inline
 				:class="{ passive: arr_name_old.includes(name) }"
 			>
-				<span :class="{ 'rare-text': overflow_Save(name) }">
-					{{ t_Name(name, i) }}
-				</span>
-				<span v-if="unique_Names.length - 1 > i">, </span>
+				<div class="flex-col">
+				  <div :class="{ 'rare-text': overflow_Save(name) }">
+  					{{ t_Name(name, i) }}
+            <!-- <span v-if="unique_Names.length - 1 > i">, </span> -->
+  				</div>
+  				<div v-if="unique_Names.length - 1 > i">, </div>
+				</div>
 			</AppTooltip>
 		</div>
 	</div>
-</AppTooltip> -->
+<!-- </AppTooltip> -->
 </template>
 
 <script>
@@ -191,9 +143,12 @@ export default {
 	position: relative;
 }
 
-/* .flex_row {
+.flex-col{
   display: flex;
-} */
+  align-items: center;
+  height: 18px;
+  /* min-height: 18px; */
+}
 
 .title {
 	margin-left: 22px;
@@ -221,10 +176,15 @@ export default {
 
 .item {
 	width: 100%;
-	min-height: 11px;
+	min-height: 18px;
 	margin-left: 11px;
-	padding: 2px 0px 1px;
+	/* padding: 2px 0px 1px; */
 	text-align: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 3px;
+  /* align-self: start; */
+
 }
 
 .passive {
