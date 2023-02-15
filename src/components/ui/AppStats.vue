@@ -15,7 +15,6 @@
 								max_save_svg: save_Icon && overflow_Numb,
 							}"
 							viewBox="0 0 18 18"
-							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="atribute_icon[title]"
 						/>

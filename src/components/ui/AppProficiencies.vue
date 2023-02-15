@@ -1,13 +1,31 @@
 <template>
+<AppTooltip text="hint_over_limit" :shown="any_Name" warn>
 	<div class="column">
+    <div class="icon" v-if="!passive_Link_Full">
+						<svg
+							class="icon_svg"
+							:class="{
+                'icon-passive': passive_Link,
+                'icon-full': any_Name,
+              }"
+							viewBox="0 0 18 18"
+							xmlns="http://www.w3.org/2000/svg"
+							v-html="ui_icon.check"
+						/>
+					</div>
 		<div
 			class="title jbm-300"
 			:class="{
 				passive: passive_Link,
-				icon: !passive_Link_Full,
+        'rare-text': any_Name,
 			}"
 		>
-			{{ t_Title }}<span>:</span>
+			{{ t_Title }}<span 
+      class="grey-2"
+			:class="{
+        'rare-text': any_Name,
+			}"
+      >:</span>
 		</div>
 		<div class="item int-400" :class="{ passive: passive_Link }">
 			<span v-if="unique_Names.length == 0">—</span>
@@ -15,24 +33,31 @@
 				text="hint_over_limit"
 				v-for="(name, i) in unique_Names"
 				:key="name"
-				:shown="overflow_Save(name)"
+				:shown="overflow_Save(name) && !any_Name"
 				warn
-        :class="{passive: arr_name_old.includes(name),}"
-        >
-				<span :class="{'rare-text': overflow_Save(name),}">
+				:class="{ passive: arr_name_old.includes(name) }"
+			>
+				<span :class="{ 'rare-text': overflow_Save(name) }">
 					{{ t_Name(name, i) }}
 				</span>
 				<span v-if="unique_Names.length - 1 > i">, </span>
 			</AppTooltip>
 		</div>
 	</div>
+</AppTooltip>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "AppProficiencies",
+  data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		title: {
 			type: String,
@@ -79,13 +104,19 @@ export default {
 			const name_times = stor
 				.proficiencies_Arr_All(stor.title)
 				.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
-			if (stor.active_card && name_times <= 1) {
+			if (stor.any_Name) {
+				return true;
+			} else if (stor.active_card && name_times <= 1) {
 				return false;
 			} else if (stor.param) {
 				return name_times > 1;
 			} else {
 				return name_times >= 1;
 			}
+		},
+
+		any_Name() {
+			return this.proficiencies_Arr_All(this.title).includes("any");
 		},
 
 		t_Name: (stor) => (name) => {
@@ -108,29 +139,32 @@ export default {
 .column {
 	display: flex;
 	min-height: 18px;
+  position: relative;
 }
 
 .title {
 	margin-left: 22px;
 }
 
-.title span {
+.grey-2 {
 	color: rgba(255, 255, 255, 0.2);
 }
 
 .icon {
-	position: relative;
-}
-
-.icon::before {
-	content: url(@/assets/img/icon/check.svg);
 	position: absolute;
-	left: -22px;
 }
 
-/* .icon::before {
+.icon_svg {
+	width: 18px;
+	height: 18px;
+	fill: #05FF00;
+}
+.icon-full {
+	fill: #ffc93d;
+}
+.icon-passive {
 	opacity: 0.2;
-} */
+}
 
 .item {
 	width: 100%;
@@ -138,16 +172,10 @@ export default {
 	margin-left: 11px;
 	padding: 2px 0px 1px;
 	text-align: start;
-	/* display: flex;
-  flex-wrap: wrap; */
 }
 
 .passive {
 	color: rgba(255, 255, 255, 0.2);
-}
-
-.passive::before {
-	opacity: 0.2;
 }
 
 .rare-text {

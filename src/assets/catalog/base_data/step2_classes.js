@@ -3064,6 +3064,8 @@ export default {
             name: "way_of_the_open_hand",
             details: "way_of_the_open_hand_details",
 
+            proficiencies: {languages: [lang.halfling]},
+
             charges: [
               {
                 level: 6,
