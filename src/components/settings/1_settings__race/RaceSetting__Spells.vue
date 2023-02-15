@@ -6,7 +6,9 @@
 		:active_boll_link="spells_Custom_Arr_RE.includes(name_Find(item))"
 		no_blur
 	>
-		<my-spell-text :lvl="ethnos_Setting('spells').level" :spell="item" select>
+		<my-spell-text 
+    :active_card="spells_Custom_Arr_RE.includes(name_Find(item))"
+    :lvl="ethnos_Setting('spells').level" :spell="item" select>
 		</my-spell-text>
 	</my-selection-card>
 </template>

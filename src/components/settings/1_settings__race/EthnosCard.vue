@@ -75,6 +75,7 @@
 					:lvl="item.level"
 					:spell="item.spell"
 					select
+          :active_card="MY.ethnos.name === ethnos.name"
 				>
 				</my-spell-text>
 			</my-wrapper>

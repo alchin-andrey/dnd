@@ -29,29 +29,6 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-
-		// skill_Name() {
-		// 	const name = this.custom.list.reduce(
-		// 		(acc, el) => acc.concat(el.name_set),
-		// 		[]
-		// 	);
-		// 	return name;
-		// },
-
-		// getSkillMarg: (store) => (i) => {
-		// 	if (i === 0) {
-		// 		return true;
-		// 	}
-		// 	const value = store.MY.skills[store.skill_Name[i]]?.mod;
-		// 	if (value) {
-		// 		const old_value = store.MY.skills[store.skill_Name[i - 1]]?.mod;
-		// 		if (value !== old_value) {
-		// 			return true;
-		// 		}
-		// 	}
-
-		// 	return false;
-		// },
 	},
 
 	methods: {
@@ -85,10 +62,6 @@ export default {
 .marg-bot {
 	margin-bottom: 16px;
 }
-
-/* .skill_marg:not(:first-child) {
-	margin-top: 16px;
-} */
 
 .fade-enter-active,
 .fade-leave-active {

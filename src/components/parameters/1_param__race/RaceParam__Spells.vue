@@ -4,6 +4,7 @@
 			v-for="item in spells_Race_Param"
 			:key="item"
 			:spell="item"
+      param
 		/>
 	</my-wrapper>
 </template>

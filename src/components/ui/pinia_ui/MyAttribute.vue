@@ -4,7 +4,7 @@
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
-					<svg class="active_svg"
+					<svg
 						:class="{save_svg: save.includes(title) || save_bool}"
 						viewBox="0 0 18 18"
 						fill="none"
@@ -265,11 +265,10 @@ export default {
 	margin-right: 4px;
 }
 
-.active_svg {
-	stroke: white;
+/* .active_svg {
   width: 18px;
 	height: 18px;
-}
+} */
 
 .item {
   display: flex;
