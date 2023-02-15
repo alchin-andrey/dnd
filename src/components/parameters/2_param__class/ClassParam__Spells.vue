@@ -15,14 +15,14 @@
 		/>
 	</my-wrapper>
 
-	<my-wrapper v-if="shown_Spells_All" gap_26 :hr="hr">
+	<!-- <my-wrapper v-if="shown_Spells_All" gap_26 :hr="hr">
     <my-spell-text
 			v-for="item in spells_RC_Param_All"
 			:key="item.name"
 			:spell="item"
       param
 		/>
-	</my-wrapper>
+	</my-wrapper> -->
 </template>
 
 <script>
