@@ -200,10 +200,8 @@ export default {
 				(acc, el) => (el == this.spell ? acc + 1 : acc),
 				0
 			);
-			if (this.active_card && name_times <= 1) {
+			if (this.active_card && name_times <= 1 || this.param) {
 				return false;
-			} else if (this.param) {
-				return name_times > 1;
 			} else {
 				return name_times >= 1;
 			}

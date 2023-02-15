@@ -53,6 +53,7 @@ export const useSkillsStore = defineStore({
     skills_passive: [
       {name:"investigation_passive", mod:"intelligence"},
       {name:"perception_passive", mod:"wisdom"},
+      {name:"insight_passive", mod:"wisdom"},
     ]
 	}),
 

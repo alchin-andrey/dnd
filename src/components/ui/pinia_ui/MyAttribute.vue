@@ -5,7 +5,10 @@
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
 					<svg
-						:class="{save_svg: save.includes(title) || save_bool}"
+						:class="{
+              save_svg: save.includes(title) || save_bool,
+              active_svg: !icon
+              }"
 						viewBox="0 0 18 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
@@ -265,10 +268,11 @@ export default {
 	margin-right: 4px;
 }
 
-/* .active_svg {
+.active_svg {
   width: 18px;
 	height: 18px;
-} */
+  stroke: white;
+}
 
 .item {
   display: flex;

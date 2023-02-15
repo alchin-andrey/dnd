@@ -140,15 +140,7 @@ export default {
                 level: 3,
                 spell: spells.fast_hands,
               },
-              // {
-              //   level: 1,
-              //   spell: spells.flame_blade,
-              // },
-  
-              // {
-              //   level: 1,
-              //   spell: spells.hellish_rebuke,
-              // },
+
             ],
 
             fines: [
@@ -214,10 +206,7 @@ export default {
             ],
 
             spells: [
-              // {
-              //   level: 3,
-              //   spell: spells.fast_hands,
-              // },
+
               {
                 level: 9,
                 spell: spells.fake_identity,
@@ -3076,8 +3065,6 @@ export default {
           {
             name: "way_of_the_open_hand",
             details: "way_of_the_open_hand_details",
-
-            proficiencies: {languages: [lang.halfling]},
 
             charges: [
               {

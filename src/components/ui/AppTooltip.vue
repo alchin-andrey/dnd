@@ -73,12 +73,12 @@ export default {
 	padding: 8px 11px 9px;
 	width: 100%;
 	/* min-width: min-content; */
-	min-width: 150px;
+	min-width: 340px;
 	max-width: 340px;
   text-align: center;
 	left: 50%;
   transform:translateX(-50%);
-	z-index: 10;
+	z-index: 1000;
 	top: calc(100% + 8px);
 
 	background: rgba(255, 255, 255, 0.06);

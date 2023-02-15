@@ -106,10 +106,8 @@ export default {
 				.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
 			if (stor.any_Name) {
 				return true;
-			} else if (stor.active_card && name_times <= 1) {
+			} else if (stor.active_card && name_times <= 1 || stor.param) {
 				return false;
-			} else if (stor.param) {
-				return name_times > 1;
 			} else {
 				return name_times >= 1;
 			}
