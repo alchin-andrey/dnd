@@ -5189,7 +5189,7 @@ export default {
   of_unarmed_strike: "від беззбройного удару (застосовано)",
 
   perception_passive: "пасивна уважність",
-  wisdom_passive: "пасивна мудрість",
+  insight_passive: "пасивна інутіція",
   investigation_passive: "пасивне розслідування",
 
   feat_resilient: "Стійкий",

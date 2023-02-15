@@ -5215,7 +5215,7 @@ export default {
   of_unarmed_strike: "от безоружного удара (применено)",
 
   perception_passive: "пассивная внимательность",
-  wisdom_passive: "пассивная мудрость",
+  insight_passive: "пассивная проницательность",
   investigation_passive: "пассивньій анализ",
 
   feat_resilient: "Устойчивьій",
