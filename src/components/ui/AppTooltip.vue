@@ -1,5 +1,6 @@
 <template>
-	<span class="relative">
+	<!-- <span class="relative"> -->
+	<span>
 		<span class="full" @mouseenter="toggle" @mouseleave="toggle">
 			<slot />
 		</span>
@@ -34,6 +35,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    // relative: {
+		// 	type: Boolean,
+		// 	default: false,
+		// },
 		warn: {
 			type: Boolean,
 			default: false,
@@ -71,14 +76,14 @@ export default {
 	position: absolute;
 	color: #ffffff;
 	padding: 8px 11px 9px;
-	width: 100%;
+	/* width: 100%; */
 	/* min-width: min-content; */
-	min-width: 340px;
-	max-width: 340px;
-  text-align: center;
-	left: 50%;
-  transform:translateX(-50%);
-	z-index: 1000;
+	/* min-width: 340px; */
+	width: 340px;
+  /* text-align: center; */
+	left: 0;
+  /* transform:translateX(-50%); */
+	z-index: 10;
 	top: calc(100% + 8px);
 
 	background: rgba(255, 255, 255, 0.06);
@@ -108,19 +113,22 @@ export default {
 
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition-property: top, opacity;
+  /* transition-property: top, opacity; */
+  transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in;
 }
 .slide-fade-enter-active {
-  transition-property: top, opacity;
+  /* transition-property: top, opacity; */
+  transition-property: all;
   transition-duration: 0.3s;
   transition-delay: 0.2s;
   transition-timing-function: ease-in;
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  top: calc(100% + 20px);
+  /* top: calc(100% + 20px); */
+  transform:translateY(10px);
 	opacity: 0;
 }
 </style>

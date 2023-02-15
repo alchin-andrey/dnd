@@ -1,5 +1,5 @@
 <template>
-	<AppTooltip text="hint_over_limit" :shown="overflow_Spell && !param" warn>
+	<AppTooltip class="relative" text="hint_over_limit" :shown="overflow_Spell && !param" warn>
 		<div
 			v-if="lvl_Show"
 			class="flex_spell"
@@ -10,14 +10,11 @@
 			<div ref="stripe" class="side_stripe"></div>
 			<div
 				class="int-400 flex_col"
-				:class="{
-					passive: passive,
-					'rare-text': overflow_Spell,
-				}"
+				:class="{passive: passive}"
 			>
 				<div>
 					<div class="flex_title">
-						<div class="title_spell h_18">
+						<div class="title_spell h_18" :class="{'rare-text': overflow_Spell}">
 							{{ em_Before
 							}}<emoji
 								v-if="em_Upd"
@@ -29,7 +26,6 @@
 						</div>
 						<svg
 							class="icon_svg"
-							:class="{ 'icon-overflow': overflow_Spell }"
 							@mouseover="hoverIn_Select()"
 							@mouseleave="hoverOut()"
 							@click="showDialog_Select()"
@@ -37,14 +33,6 @@
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="ui_icon.arrow_right_small"
 						/>
-						<!-- <img
-						class="icon_spell"
-						src="@/assets/img/icon/arrow_right_small.svg"
-						alt="arrow"
-						@mouseover="hoverIn_Select()"
-						@mouseleave="hoverOut()"
-						@click="showDialog_Select()"
-					/> -->
 					</div>
 
 					<div class="text_spell" v-html="t_Text"></div>
@@ -60,7 +48,6 @@
 					:feet="Spell_Index.impact_size_foo?.includes('Feet')"
 					main
 					not_dot
-					:overflow="overflow_Spell"
 				/>
 			</div>
 		</div>
@@ -795,33 +782,23 @@ export default {
 		dialogVisible(val) {
 			if (val === false) {
 				this.$refs.stripe.classList.remove("active");
-				this.$refs.stripe.classList.remove("active--overflow");
 			}
 		},
 	},
 	methods: {
 		hoverIn_Select() {
 			if (this.select) {
-				if (this.overflow_Spell) {
-					this.$refs.stripe.classList.add("active--overflow");
-				} else {
 					this.$refs.stripe.classList.add("active");
-				}
 			}
 		},
 		hoverOut() {
 			if (!this.dialogVisible) {
 				this.$refs.stripe.classList.remove("active");
-				this.$refs.stripe.classList.remove("active--overflow");
 			}
 		},
 		hoverIn_Full() {
 			if (!this.select) {
-				if (this.overflow_Spell) {
-					this.$refs.stripe.classList.add("active--overflow");
-				} else {
 					this.$refs.stripe.classList.add("active");
-				}
 			}
 		},
 		showDialog_Full() {
@@ -983,10 +960,6 @@ export default {
 }
 
 .rare-text {
-	color: #ffc93d;
-	opacity: 1;
-}
-.rare-text div {
 	color: #ffc93d;
 	opacity: 1;
 }

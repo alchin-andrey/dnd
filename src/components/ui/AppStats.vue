@@ -1,5 +1,5 @@
 <template>
-	<AppTooltip text="hint_over_limit" :shown="overflow_Numb" warn>
+	<AppTooltip class="relative" text="hint_over_limit" :shown="overflow_Numb" warn>
 		<div
 			class="column jbm-300"
 			:class="{ passive: numb == 0, 'rare-text': overflow_Numb }"

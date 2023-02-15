@@ -312,6 +312,10 @@ a {
 	overflow: hidden;
 }
 
+.relative {
+	position: relative;
+}
+
 .delimiter {
 	height: 1px;
 	/* margin: 40px 0 0 0; */
