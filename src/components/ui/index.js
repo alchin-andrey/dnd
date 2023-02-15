@@ -1,5 +1,6 @@
 import {Emoji} from "emoji-mart-vue-fast/src";
 
+import AppProficiencies from "@/components/ui/AppProficiencies.vue";
 import AppFines from "@/components/ui/AppFines.vue";
 import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
 import AppStats from "@/components/ui/AppStats.vue";
@@ -53,6 +54,7 @@ import MyCharges from "@/components/ui/pinia_ui/MyCharges.vue";
 
 export default [
   Emoji,
+  AppProficiencies,
   AppFines,
   AppSelectionArr,
   AppStats,

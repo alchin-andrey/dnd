@@ -134,7 +134,7 @@ export default {
 			if (this.active_card && save_times <= 1) {
 				return false;
 			} else {
-				return this.stats_Saving_Arr.includes(this.title);
+				return save_times >= 1;
 			}
 		},
 

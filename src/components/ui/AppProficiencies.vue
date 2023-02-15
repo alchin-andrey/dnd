@@ -1,0 +1,156 @@
+<template>
+	<div class="column">
+		<div
+			class="title jbm-300"
+			:class="{
+				passive: passive_Link,
+				icon: !passive_Link_Full,
+			}"
+		>
+			{{ t_Title }}<span>:</span>
+		</div>
+		<div class="item int-400" :class="{ passive: passive_Link }">
+			<span v-if="unique_Names.length == 0">—</span>
+			<AppTooltip
+				text="hint_over_limit"
+				v-for="(name, i) in unique_Names"
+				:key="name"
+				:shown="overflow_Save(name)"
+				warn
+        :class="{passive: arr_name_old.includes(name),}"
+        >
+				<span :class="{'rare-text': overflow_Save(name),}">
+					{{ t_Name(name, i) }}
+				</span>
+				<span v-if="unique_Names.length - 1 > i">, </span>
+			</AppTooltip>
+		</div>
+	</div>
+</template>
+
+<script>
+import { mapState } from "pinia";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+export default {
+	name: "AppProficiencies",
+	props: {
+		title: {
+			type: String,
+			default: null,
+		},
+		arr_name: {
+			type: Array,
+			default: [],
+		},
+		arr_name_old: {
+			type: Array,
+			default: [],
+		},
+		active_card: {
+			type: Boolean,
+			default: false,
+		},
+		param: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
+
+		t_Title() {
+			return this.t(this.title);
+		},
+
+		all_Names() {
+			return [...this.arr_name, ...this.arr_name_old];
+		},
+
+		unique_Names() {
+			const unique_arr_name = [...new Set(this.arr_name)];
+			const unique_arr_name_old = [...new Set(this.arr_name_old)];
+			const unique_arr_name_includ = unique_arr_name.filter(
+				(i) => !unique_arr_name_old.includes(i)
+			);
+			return [...unique_arr_name_includ, ...unique_arr_name_old];
+		},
+
+		overflow_Save: (stor) => (name) => {
+			const name_times = stor
+				.proficiencies_Arr_All(stor.title)
+				.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+			if (stor.active_card && name_times <= 1) {
+				return false;
+			} else if (stor.param) {
+				return name_times > 1;
+			} else {
+				return name_times >= 1;
+			}
+		},
+
+		t_Name: (stor) => (name) => {
+			const t_name = stor.t(name);
+			return `${t_name[0].toUpperCase()}${t_name.slice(1)}`;
+		},
+
+		passive_Link() {
+			return this.arr_name.length === 0;
+		},
+
+		passive_Link_Full() {
+			return this.all_Names.length === 0;
+		},
+	},
+};
+</script>
+
+<style scoped>
+.column {
+	display: flex;
+	min-height: 18px;
+}
+
+.title {
+	margin-left: 22px;
+}
+
+.title span {
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+	position: relative;
+}
+
+.icon::before {
+	content: url(@/assets/img/icon/check.svg);
+	position: absolute;
+	left: -22px;
+}
+
+/* .icon::before {
+	opacity: 0.2;
+} */
+
+.item {
+	width: 100%;
+	min-height: 11px;
+	margin-left: 11px;
+	padding: 2px 0px 1px;
+	text-align: start;
+	/* display: flex;
+  flex-wrap: wrap; */
+}
+
+.passive {
+	color: rgba(255, 255, 255, 0.2);
+}
+
+.passive::before {
+	opacity: 0.2;
+}
+
+.rare-text {
+	color: #ffc93d;
+}
+</style>

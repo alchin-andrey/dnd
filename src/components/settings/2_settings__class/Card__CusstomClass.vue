@@ -89,7 +89,7 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Proficiencies -->
-		<my-wrapper v-if="custom.proficiencies">
+		<!-- <my-wrapper v-if="custom.proficiencies">
 			<my-inventory
 				v-for="(val, name) in custom.proficiencies"
 				:key="name"
@@ -97,6 +97,16 @@
 				:item="proficiencies_Arr(custom.proficiencies, name)"
 			>
 			</my-inventory>
+		</my-wrapper> -->
+
+		<my-wrapper v-if="custom.proficiencies">
+			<AppProficiencies
+				v-for="(val, name) in custom.proficiencies"
+				:key="name"
+				:title="name"
+				:arr_name="proficiencies_Arr(custom.proficiencies, name)"
+        :active_card="active_boll_link"
+			/>
 		</my-wrapper>
 
 		<!-- //NOTE - Armor -->
