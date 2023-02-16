@@ -100,7 +100,7 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Armor -->
-		<my-wrapper v-if="armors_Equip(custom.equipment).length !== 0" gap_26>
+		<my-wrapper v-if="shown_Param_Arr(custom.equipment)" gap_26>
 			<ArmorEquip
 				v-for="armor in armors_Equip(custom.equipment)"
 				:key="armor"

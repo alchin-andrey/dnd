@@ -5,11 +5,21 @@
 		</my-selection-box>
 		<!-- Этнос -->
 
-		<!-- Этнос-->
+		<!-- Backestory-->
 		<my-selection-box :shown="race_page.shown.backstory">
 			<RaceSetting__Backstory />
 		</my-selection-box>
-		<!-- Этнос -->
+		<!-- Backestory -->
+
+		<!-- customm_Settings -->
+    <my-selection-box
+			v-for="item in сustomm_Settings_Race_Arr"
+			:key="item.id_link"
+			:shown="race_page.shown[item.id_link]"
+		>
+			<RaceSett__Custom :custom="item"/>
+		</my-selection-box>
+		<!-- customm_Settings -->
 
 		<!-- Гендр -->
 		<my-selection-box :shown="race_page.shown.gender">
@@ -99,7 +109,7 @@ export default {
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["race_page"]),
-    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["MY", "сustomm_Settings_Race_Arr"]),
 	},
 };
 </script>

@@ -3,7 +3,7 @@
 		v-for="item in menu"
 		:key="item.id_link"
 		class="column"
-		@click="showSettings__Class(item.id_link)"
+		@click="showSettings__Settings(item.id_link)"
 		:class="{
 			active_link: class_page.shown[item.id_link],
 			hover: !class_page.shown[item.id_link],
@@ -30,7 +30,7 @@
 <script>
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
@@ -48,10 +48,18 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["class_page", "showSettings__Class"]),
+		...mapState(usePagesStore, [
+      "pages", 
+      "race_page", 
+      "class_page", 
+    ]),
 
-		icon_Image: (store) => (item) => {
-			let actile_link = store.class_page.shown[item.id_link];
+		icon_Image: (stor) => (item) => {
+      let page = "race_page"
+      if(stor.pages.class_page) {
+        page = "class_page"
+      }
+			let actile_link = stor[page].shown[item.id_link];
 			return !actile_link ? "arrow_down_small" : "arrow_right_small";
 		},
 
@@ -102,6 +110,9 @@ export default {
         return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
       }
 		},
+	},
+  methods: {
+    ...mapActions(usePagesStore, ["showSettings__Settings"]),
 	},
 };
 </script>

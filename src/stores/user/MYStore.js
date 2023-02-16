@@ -126,15 +126,14 @@ export const useMYStore = defineStore({
 			return this.settingsSelectList("class", FeatsStore.feats_Select_Arr, "custom");
 		},
 
-    // сustomm_Backstories_Settings_Race_Arr() {
-    //   const BackstoriesStore = useBackstoriesStore();
-		// 	return this.settingsClass("race", BackstoriesStore.backstories, "custom");
-		// },
+    сustomm_Backstories_Settings_Race_Arr() {
+			return this.settingsClass("race", this.MY.backstory.settings, "custom");
+		},
 
-    // сustomm_Settings_Race_Arr: (stor) => () => {
-    //   const backstories_custom = stor.сustomm_Backstories_Settings_Race_Arr;
-    //   return [...backstories_custom];
-    // },
+    сustomm_Settings_Race_Arr() {
+      const backstories_custom = this.сustomm_Backstories_Settings_Race_Arr;
+      return [...backstories_custom];
+    },
 
     сustomm_Settings_Class_Arr(stor) {
       const FeatsStore = useFeatsStore();

@@ -14,12 +14,16 @@
 			<my-selection
 				@click="showSettings__Race('backstory')"
 				:active="race_page.shown.backstory"
-				title="backstory"
+				title="past"
 				:type="MY.backstory.name"
 				:rare="MY.backstory.rare"
 			></my-selection>
 		</section>
     <!-- RACE ETHNOS -->
+
+		<section class="selection_menu" v-if="сustomm_Settings_Race_Arr.length !== 0">
+      <AppSelectionArr :menu="сustomm_Settings_Race_Arr"/>
+		</section>
 
     <!-- RACE CUSTTOM -->
 		<section

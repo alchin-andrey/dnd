@@ -122,6 +122,16 @@ export const usePagesStore = defineStore({
 			this.showSettings("class_page", name);
 		},
 
+		showSettings__Settings(name) {
+      if(this.pages.race_page) {
+        this.showSettings("race_page", name);
+      } else {
+        this.showSettings("class_page", name);
+      }
+		},
+
+
+
 		closeEthnos() {
 			const MYStore = useMYStore();
 			const ethnos_show = this.race_page.shown.ethnos;
