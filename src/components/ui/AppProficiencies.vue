@@ -1,40 +1,43 @@
 <template>
-	<!-- <AppTooltip text="hint_over_limit" :shown="any_Name" warn> -->
+	
 	<div class="column">
-    <div class="icon" v-if="!passive_Link_Full">
+    <div class="icon">
 						<svg
 							class="icon_svg"
 							:class="{
                 'icon-passive': passive_Link,
-                'icon-full': any_Name,
+                'icon-full': any_Name && !param,
+                'icon-null': passive_Link_Full,
               }"
 							viewBox="0 0 18 18"
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="ui_icon.check"
 						/>
 					</div>
+    <AppTooltip text="hint_over_limit" :shown="any_Name" warn>
 		<div
 			class="title jbm-300"
 			:class="{
 				passive: passive_Link,
-        'rare-text': any_Name,
+        'rare-text': any_Name && !param,
 			}"
 		>
 			{{ t_Title }}<span 
       class="grey-2"
 			:class="{
-        'rare-text': any_Name,
+        'rare-text': any_Name && !param,
 			}"
       >:</span>
 		</div>
+  </AppTooltip>
 		<div class="item int-400" :class="{ passive: passive_Link }">
 			<span v-if="unique_Names.length == 0">—</span>
 			<AppTooltip
 				text="hint_over_limit"
 				v-for="(name, i) in unique_Names"
 				:key="name"
-				:shown="overflow_Save(name) && !any_Name"
-				warn inline
+				:shown="overflow_Save(name)"
+				warn
 				:class="{ passive: arr_name_old.includes(name) }"
 			>
 				<div class="flex-col">
@@ -47,7 +50,6 @@
 			</AppTooltip>
 		</div>
 	</div>
-<!-- </AppTooltip> -->
 </template>
 
 <script>
@@ -107,7 +109,7 @@ export default {
 			const name_times = stor
 				.proficiencies_Arr_All(stor.title)
 				.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
-			if (stor.any_Name) {
+			if (stor.any_Name && !stor.param) {
 				return true;
 			} else if ((stor.active_card && name_times <= 1) || stor.param) {
 				return false;
@@ -151,7 +153,7 @@ export default {
 }
 
 .title {
-	margin-left: 22px;
+	margin-left: 4px;
 }
 
 .grey-2 {
@@ -159,7 +161,9 @@ export default {
 }
 
 .icon {
-	position: absolute;
+	/* position: absolute; */
+  width: 18px;
+	height: 18px;
 }
 
 .icon_svg {
@@ -193,5 +197,9 @@ export default {
 
 .rare-text {
 	color: #ffc93d;
+}
+
+.icon-null{
+  opacity: 0;
 }
 </style>

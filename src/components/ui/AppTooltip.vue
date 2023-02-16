@@ -15,7 +15,8 @@
     </transition>
 			</div>
 		<transition name="slide-fade">
-			<div v-show="shown_Tooltip"
+			<div 
+      v-show="shown_Tooltip"
 				class="tooltip-clss int-400"
 				:class="{
 					'tooltip-clss--warn': warn,
