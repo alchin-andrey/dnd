@@ -567,7 +567,7 @@ export default {
       },
 
       {
-        type: "plus",
+        type: "advantage",
         keyword: "rethrow",
         details: "any_dice_1",
       },

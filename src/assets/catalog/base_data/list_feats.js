@@ -225,17 +225,15 @@ export default {
     name: "feat_lucky",
     details: "feat_lucky_details",
 
-    fines: [
+    spells: [
       {
-        type: "advantage",
-        keyword: "advantage",
-        details: "on_any_d20",
-      },
+        spell: spells.luck_feat,
+      }
     ],
 
     charges: [
       {
-        name: "luck_slots",
+        name: "lucky_slots",
         type: "long_rest",
         list: [
           ["d20", 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
