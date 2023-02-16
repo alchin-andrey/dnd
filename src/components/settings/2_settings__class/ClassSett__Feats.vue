@@ -21,7 +21,7 @@
 			:custom="list_el"
 			:active_boll_link="feat_Arr.select_list.includes(list_el)"
 			@click="getFeatsSelect(list_el)"
-      @clickOneMore="getFeatsSelect"
+			@clickOneMore="getFeatsSelect"
 		/>
 	</section>
 </template>
@@ -47,10 +47,10 @@ export default {
 		};
 	},
 	props: {
-    modelValue: {
-      type: String,
-      default: null,
-    },
+		// modelValue: {
+		// 	type: String,
+		// 	default: null,
+		// },
 		id_link: {
 			type: String,
 			default: null,
@@ -101,21 +101,17 @@ export default {
 			this.MY._settings_class_old = JSON.parse(JSON.stringify(sett));
 		},
 
-    getFeatsSelect(list_el) {
+		getFeatsSelect(list_el) {
 			const active = this.feat_Arr.select_list.includes(list_el);
-			if (active) {
-        let arr = this.feat_Arr.select_list.slice(0);
-        this.getFeatsLink({ id_btn: this.shown_Btn });
-        this.MY._settings_class[this.MY.class.name][this.id_link][this.shown_Btn] = arr;
-			} else {
-				let arr = this.feat_Arr.select_list.slice(0);
+			let arr = this.feat_Arr.select_list.slice(0);
+			if (!active) {
 				arr.splice(0, 1);
 				arr.push(list_el);
-				this.getFeatsLink({ id_btn: this.shown_Btn });
-				this.MY._settings_class[this.MY.class.name][this.id_link][
-					this.shown_Btn
-				] = arr;
 			}
+			this.getFeatsLink({ id_btn: this.shown_Btn });
+			this.MY._settings_class[this.MY.class.name][this.id_link][
+				this.shown_Btn
+			] = arr;
 		},
 	},
 };

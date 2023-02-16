@@ -11,6 +11,13 @@
 				:type="MY.ethnos.name"
 				:rare="MY.ethnos.rare"
 			></my-selection>
+			<my-selection
+				@click="showSettings__Race('backstory')"
+				:active="race_page.shown.backstory"
+				title="backstory"
+				:type="MY.backstory.name"
+				:rare="MY.backstory.rare"
+			></my-selection>
 		</section>
     <!-- RACE ETHNOS -->
 
@@ -127,7 +134,7 @@ export default {
 	name: "RaceMenu",
 	computed: {
     // STORE
-    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["MY", "сustomm_Settings_Race_Arr"]),
 		...mapState(usePagesStore, ["race_page"]),
     // GETTERS
     ...mapState(useColorStore, [

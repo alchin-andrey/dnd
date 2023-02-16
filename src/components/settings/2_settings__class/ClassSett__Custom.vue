@@ -1,12 +1,17 @@
 <template>
 	<section class="flex-col">
-		<my-card-text class="marg-bot" v-if="custom.details" :text="custom.details" />
+		<my-card-text
+			class="marg-bot"
+			v-if="custom.details"
+			:text="custom.details"
+		/>
 		<Card__CusstomClass
 			v-for="list_el in custom.list"
 			:key="list_el"
 			:custom="list_el"
 			@click="getCustomSelect(list_el)"
 			:active_boll_link="custom.select_list.includes(list_el)"
+			@clickOneMore="getCustomSelect"
 		/>
 	</section>
 </template>
@@ -32,21 +37,21 @@ export default {
 	},
 
 	methods: {
+		getLink() {
+			if (!this.MY._settings_class[this.MY.class.name]) {
+				this.MY._settings_class[this.MY.class.name] = {};
+			}
+		},
+
 		getCustomSelect(list_el) {
 			const active = this.custom.select_list.includes(list_el);
-
-			if (active) {
-				return null;
-			} else {
-				let arr = this.custom.select_list.slice(0);
+			let arr = this.custom.select_list.slice(0);
+			if (!active) {
 				arr.splice(0, 1);
 				arr.push(list_el);
-
-				if (!this.MY._settings_class[this.MY.class.name]) {
-					this.MY._settings_class[this.MY.class.name] = {};
-				}
-				this.MY._settings_class[this.MY.class.name][this.custom.id_link] = arr;
 			}
+			this.getLink();
+			this.MY._settings_class[this.MY.class.name][this.custom.id_link] = arr;
 		},
 	},
 };

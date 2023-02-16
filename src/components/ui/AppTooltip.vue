@@ -26,32 +26,6 @@
 			</div>
 		</transition>
 	</div>
-
-	<!-- <span class="h-100">
-			<span
-				:class="{
-					'tooltip-pointer': shown_Tooltip,
-          'tooltip-pointer--warn': warn,
-          'tooltip-inline': inline,
-				}"
-				@mouseenter="toggle"
-				@mouseleave="toggle"
-			>
-				<slot />
-			</span>
-		<transition name="slide-fade">
-			<div
-				class="tooltip-clss int-400"
-				:class="{
-					'tooltip-clss--warn': warn,
-				}"
-				v-show="shown_Tooltip"
-			>
-				{{ t_Text }}
-			</div>
-		</transition>
-	</span> -->
-
 </template>
 
 <script>

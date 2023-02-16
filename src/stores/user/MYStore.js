@@ -7,6 +7,7 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
+import { useBackstoriesStore } from "@/stores/modules/BackstoriesStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
 export const useMYStore = defineStore({
@@ -117,21 +118,30 @@ export const useMYStore = defineStore({
 		},
 
 		сustomm_Main_Settings_Class_Arr() {
-			return this.settingsClass(this.MY.class.settings, "custom");
+			return this.settingsClass("class", this.MY.class.settings, "custom");
 		},
 
     сustomm_Feats_Settings_Class_Arr() {
       const FeatsStore = useFeatsStore();
-			return this.settingsSelectList(FeatsStore.feats_Select_Arr, "custom");
+			return this.settingsSelectList("class", FeatsStore.feats_Select_Arr, "custom");
 		},
 
-    сustomm_Settings_Class_Arr: (store) => () => {
-      // console.log('сustomm_Settings_Class_Arr:')
+    // сustomm_Backstories_Settings_Race_Arr() {
+    //   const BackstoriesStore = useBackstoriesStore();
+		// 	return this.settingsClass("race", BackstoriesStore.backstories, "custom");
+		// },
+
+    // сustomm_Settings_Race_Arr: (stor) => () => {
+    //   const backstories_custom = stor.сustomm_Backstories_Settings_Race_Arr;
+    //   return [...backstories_custom];
+    // },
+
+    сustomm_Settings_Class_Arr(stor) {
       const FeatsStore = useFeatsStore();
-      const main_custom = store.сustomm_Main_Settings_Class_Arr;
+      const main_custom = stor.сustomm_Main_Settings_Class_Arr;
       const feats = FeatsStore.feats_Select_Arr;
-      const feats_custom = store.сustomm_Feats_Settings_Class_Arr;
-      return [...main_custom, ...feats, ...feats_custom];
+      const feats_custom = stor.сustomm_Feats_Settings_Class_Arr;
+      return () => [...main_custom, ...feats, ...feats_custom];
     },
 
     filter_Custom_Class_Lvl: (state) => (name) => {
@@ -157,12 +167,12 @@ export const useMYStore = defineStore({
       return [...main_custom, ...feats, ...feats_custom];
     },
 
-		settingsClass(settings_arr, type_str, per_id_link) {
+		settingsClass(page, settings_arr, type_str, per_id_link) {
 			let new_arr = [];
 			const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
-			const sett_select = this.MY._settings_class[this.MY.class.name];
+			const sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
 
 			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
@@ -194,7 +204,7 @@ export const useMYStore = defineStore({
 
 					select_list.forEach((elem_list) => {
 						if (elem_list.settings) {
-							let redus = this.settingsClass(elem_list.settings, type_str, link_type_name_i);
+							let redus = this.settingsClass(page, elem_list.settings, type_str, link_type_name_i);
 							new_arr = new_arr.concat(redus);
 						}
 					});
@@ -203,12 +213,12 @@ export const useMYStore = defineStore({
 			return new_arr;
 		},
 
-    settingsSelectList(arr, type_str) {
+    settingsSelectList(page, arr, type_str) {
       let new_arr = [];
       arr.forEach(el => {
         el.select_list.forEach((elem_list) => {
           if (elem_list.settings) {
-            let redus = this.settingsClass(elem_list.settings, type_str, el.id_link);
+            let redus = this.settingsClass(page, elem_list.settings, type_str, el.id_link);
             new_arr = new_arr.concat(redus);
           }
         });

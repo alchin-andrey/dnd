@@ -5,6 +5,12 @@
 		</my-selection-box>
 		<!-- Этнос -->
 
+		<!-- Этнос-->
+		<my-selection-box :shown="race_page.shown.backstory">
+			<RaceSetting__Backstory />
+		</my-selection-box>
+		<!-- Этнос -->
+
 		<!-- Гендр -->
 		<my-selection-box :shown="race_page.shown.gender">
       <RaceSetting__Gender />

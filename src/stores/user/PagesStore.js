@@ -14,8 +14,8 @@ export const usePagesStore = defineStore({
 			},
 		},
 		pages: {
-			race_page: false,
-			class_page: true,
+			race_page: true,
+			class_page: false,
 		},
 		// page_open: "race_page",
 		page_setting_open: null,
@@ -25,6 +25,7 @@ export const usePagesStore = defineStore({
 		race_page: {
 			shown: {
 				ethnos: false,
+        backstory: false,
 				gender: false,
 				skin_color: false,
 				eyes_color: false,

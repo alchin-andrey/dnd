@@ -578,7 +578,7 @@ export default {
     equipment: [
       {
         armor: [],
-        weapon: [weapons.club],
+        weapon: [[weapons.club, 1]],
         inventory: [
           [items.silk_rope, 1],
           [items.talisman_sailor, 1],
