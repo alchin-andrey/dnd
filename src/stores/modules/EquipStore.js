@@ -16,7 +16,7 @@ export const useEquipStore = defineStore({
 
   getters: {
 
-    item_Equip_Arr: (state) => (obj_arr, item) => {
+    item_Equip_Arr: (stor) => (obj_arr, item) => {
       const MYStore = useMYStore();
       const eqip_lvl = MYStore.level_Filter_Arr(obj_arr);
 			let arr = [];
@@ -25,6 +25,15 @@ export const useEquipStore = defineStore({
 			);
 			return arr;
 		},
+
+    gold_Equip_Numb: (stor) => (obj_arr) => {
+      const MYStore = useMYStore();
+      const eqip_lvl = MYStore.level_Filter_Arr(obj_arr);
+      console.log('eqip_lvl:', eqip_lvl)
+      const res = eqip_lvl.reduce((acc, el) => el.gold ? acc + el.gold : acc, 0);
+      console.log('res:', res)
+      return res;
+    },
 
     equipments_Class_Arr() {
       const MYStore = useMYStore();
@@ -42,8 +51,8 @@ export const useEquipStore = defineStore({
 			return equip_class.concat(equip_custom);
 		},
 
-    item_Equip_Class_Arr: (state) => (item) => {
-			return state.item_Equip_Arr(state.equipments_Class_Params, item);
+    item_Equip_Class_Arr: (stor) => (item) => {
+			return stor.item_Equip_Arr(stor.equipments_Class_Params, item);
 		},
 
     weapons_Equip_Class() {

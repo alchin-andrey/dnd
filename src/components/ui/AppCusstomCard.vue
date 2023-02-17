@@ -143,16 +143,18 @@
 			/>
 		</my-wrapper>
 
-		<!-- //NOTE - Invenory -->
+		<!-- //NOTE - Invenory_Kit -->
 		<my-wrapper
 			v-if="
 				packs_Equip(custom.equipment).length !== 0 ||
-				inventory_Equip(custom.equipment).length !== 0
+				inventory_Equip(custom.equipment).length !== 0 ||
+        gold_Equip_Numb(custom.equipment)
 			"
 		>
 			<KitEquip
 				:packs="packs_Equip(custom.equipment)"
 				:inventory="inventory_Equip(custom.equipment)"
+        :gold="gold_Equip_Numb(custom.equipment)"
 			/>
 		</my-wrapper>
 
@@ -218,7 +220,7 @@ export default {
 			"level_Filter_Arr",
 		]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
-		...mapState(useEquipStore, ["item_Equip_Arr"]),
+		...mapState(useEquipStore, ["item_Equip_Arr", "gold_Equip_Numb"]),
 		...mapState(useStatsStore, ["stats_Saving_Arr"]),
 
 		speed_Bonus_True() {
@@ -261,37 +263,37 @@ export default {
 			);
 		},
 
-		hp_Bonus: (state) => (increm_1, increm_2) => {
-			let level = Math.ceil(state.MY.level / increm_1);
+		hp_Bonus: (stor) => (increm_1, increm_2) => {
+			let level = Math.ceil(stor.MY.level / increm_1);
 			return level * increm_2;
 		},
 
-		packs_Equip: (state) => (obj_arr) => {
-			return state.item_Equip_Arr(obj_arr, "inventory_packs");
+		packs_Equip: (stor) => (obj_arr) => {
+			return stor.item_Equip_Arr(obj_arr, "inventory_packs");
 		},
 
-		inventory_Equip: (state) => (obj_arr) => {
-			return state.item_Equip_Arr(obj_arr, "inventory");
+		inventory_Equip: (stor) => (obj_arr) => {
+			return stor.item_Equip_Arr(obj_arr, "inventory");
 		},
 
-		weapons_Equip: (state) => (obj_arr) => {
-			return state.item_Equip_Arr(obj_arr, "weapon");
+		weapons_Equip: (stor) => (obj_arr) => {
+			return stor.item_Equip_Arr(obj_arr, "weapon");
 		},
 
-		armors_Equip: (state) => (obj_arr) => {
-			return state.item_Equip_Arr(obj_arr, "armor");
+		armors_Equip: (stor) => (obj_arr) => {
+			return stor.item_Equip_Arr(obj_arr, "armor");
 		},
 
-		shown_Param_Arr: (state) => (arr) => {
-			return state.level_Filter_Arr(arr).length !== 0;
+		shown_Param_Arr: (stor) => (arr) => {
+			return stor.level_Filter_Arr(arr).length !== 0;
 		},
 
-		select_Numb: (state) => (select) => {
-			const lvl = state.MY.level;
+		select_Numb: (stor) => (select) => {
+			const lvl = stor.MY.level;
 			return Array.isArray(select) ? select[lvl - 1] : select;
 		},
 
-		select_Sum: (state) => (list) => {
+		select_Sum: (stor) => (list) => {
 			return list ? list.length : 10.000000001;
 		},
 
