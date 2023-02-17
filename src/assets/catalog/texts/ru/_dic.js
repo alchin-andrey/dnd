@@ -30,7 +30,7 @@ export default {
   ethnos: "этнос",
   class: "класс",
   subclass: "специализация",
-  background: "типаж",
+  past: "типаж",
   level: "уровень",
   level_unit: "й",
   lvl: "LVL",
@@ -5303,4 +5303,6 @@ export default {
   spell_luck_feat: spells.luck_feat,
   spell_luck_feat_details: spells.luck_feat_details,
   spell_luck_feat_expanded: spells.luck_feat_expanded,
+
+  player: "игрок",
 };  

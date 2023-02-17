@@ -15,18 +15,18 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      // //armor: [],
+      // //weapons: [],
       tools: [tools.disguise],
-      languages: [],
+      // //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        // //armor: [],
+        // //weapon: [],
         inventory: [[items.fan_gift, 1]],
-        inventory_packs: [],
+        // //inventory_packs: [],
         gold: 15,
       },
     ],
@@ -46,42 +46,52 @@ export default {
         select: 1,
         list: [
           {
+            name_set: items.music_bagpipes.name,
             equipment: [{ inventory: [[items.music_bagpipes, 1]] }],
             proficiencies: { tools: [tools.music_bagpipes] },
           },
           {
+            name_set: items.music_drums.name,
             equipment: [{ inventory: [[items.music_drums, 1]] }],
             proficiencies: { tools: [tools.music_drums] },
           },
           {
+            name_set: items.music_dulcimer.name,
             equipment: [{ inventory: [[items.music_dulcimer, 1]] }],
             proficiencies: { tools: [tools.music_dulcimer] },
           },
           {
+            name_set: items.music_flute.name,
             equipment: [{ inventory: [[items.music_flute, 1]] }],
             proficiencies: { tools: [tools.music_flute] },
           },
           {
+            name_set: items.music_horn.name,
             equipment: [{ inventory: [[items.music_horn, 1]] }],
             proficiencies: { tools: [tools.music_horn] },
           },
           {
+            name_set: items.music_lute.name,
             equipment: [{ inventory: [[items.music_lute, 1]] }],
             proficiencies: { tools: [tools.music_lute] },
           },
           {
+            name_set: items.music_lyre.name,
             equipment: [{ inventory: [[items.music_lyre, 1]] }],
             proficiencies: { tools: [tools.music_lyre] },
           },
           {
+            name_set: items.music_pan_flute.name,
             equipment: [{ inventory: [[items.music_pan_flute, 1]] }],
             proficiencies: { tools: [tools.music_pan_flute] },
           },
           {
+            name_set: items.music_shawm.name,
             equipment: [{ inventory: [[items.music_shawm, 1]] }],
             proficiencies: { tools: [tools.music_shawm] },
           },
           {
+            name_set: items.music_viol.name,
             equipment: [{ inventory: [[items.music_viol, 1]] }],
             proficiencies: { tools: [tools.music_viol] },
           },
@@ -100,23 +110,23 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.thief, tools.disguise],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.knife, 1],
           [items.map_urchin, 1],
           [items.pet_mouse, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 10,
       },
     ],
@@ -141,22 +151,22 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
-      tools: [],
-      languages: [],
+      //armor: [],
+      //weapons: [],
+      //tools: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.fine_clothes, 1],
           [items.stamp_ring, 1],
           [items.scroll_lifeline, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 25,
       },
     ],
@@ -298,16 +308,19 @@ export default {
       // },
       {
         type: "custom",
-        name: "packs",
+        name: "player",
         select: 1,
         list: [
           {
+            name_set: tools.playing_dragon_chess.name,
             proficiencies: { tools: [tools.playing_dragon_chess] },
           },
           {
+            name_set: tools.playing_dragon_poker.name,
             proficiencies: { tools: [tools.playing_dragon_poker] },
           },
           {
+            name_set: tools.playing_dice.name,
             proficiencies: { tools: [tools.playing_dice] },
           },
         ],
@@ -326,21 +339,21 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
-      tools: [],
-      languages: [],
+      //armor: [],
+      //weapons: [],
+      //tools: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.guild_letter, 1],
           [items.travelers_clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 15,
       },
     ],
@@ -479,79 +492,103 @@ export default {
         name: "tool",
         select: 1,
         list: [
+
           {
-            equipment: [{ inventory: [[items.tools_alchemists_supplies, 1]] }],
-            proficiencies: { tools: [tools.alchemists_supplies] },
-          },
-          {
+            name_set: tools.blacksmith.name,
             equipment: [{ inventory: [[items.tools_blacksmith, 1]] }],
             proficiencies: { tools: [tools.blacksmith] },
           },
           {
-            equipment: [{ inventory: [[items.tools_brewer, 1]] }],
-            proficiencies: { tools: [tools.brewer] },
+            name_set: tools.tinkers_tools.name,
+            equipment: [{ inventory: [[items.tools_tinkers_tools, 1]] }],
+            proficiencies: { tools: [tools.tinkers_tools] },
           },
           {
+            name_set: tools.leatherworkers_tools.name,
+            equipment: [{ inventory: [[items.tools_leatherworkers_tools, 1]] }],
+            proficiencies: { tools: [tools.leatherworkers_tools] },
+          },         
+          {
+            name_set: tools.cobblers_tools.name,
+            equipment: [{ inventory: [[items.tools_cobblers_tools, 1]] }],
+            proficiencies: { tools: [tools.cobblers_tools] },
+          },
+
+          {
+            name_set: tools.cooks_tools.name,
+            equipment: [{ inventory: [[items.tools_cooks_tools, 1]] }],
+            proficiencies: { tools: [tools.cooks_tools] },
+          },
+          {
+            name_set: tools.brewer.name,
+            equipment: [{ inventory: [[items.tools_brewer, 1]] }],
+            proficiencies: { tools: [tools.brewer] },
+          }, 
+          {
+            name_set: tools.alchemists_supplies.name,
+            equipment: [{ inventory: [[items.tools_alchemists_supplies, 1]] }],
+            proficiencies: { tools: [tools.alchemists_supplies] },
+          },
+
+          {
+            name_set: tools.navigators_tools.name,
+            equipment: [{ inventory: [[items.tools_navigators_tools, 1]] }],
+            proficiencies: { tools: [tools.navigators_tools] },
+          },
+          {
+            name_set: tools.cartographers_tools.name,
+            equipment: [{ inventory: [[items.tools_cartographers_tools, 1]] }],
+            proficiencies: { tools: [tools.cartographers_tools] },
+          },
+          {
+            name_set: tools.calligraphers_supplies.name,
             equipment: [
               { inventory: [[items.tools_calligraphers_supplies, 1]] },
             ],
             proficiencies: { tools: [tools.calligraphers_supplies] },
           },
           {
-            equipment: [{ inventory: [[items.tools_carpenters_tools, 1]] }],
-            proficiencies: { tools: [tools.carpenters_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_cartographers_tools, 1]] }],
-            proficiencies: { tools: [tools.cartographers_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_navigators_tools, 1]] }],
-            proficiencies: { tools: [tools.navigators_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_cobblers_tools, 1]] }],
-            proficiencies: { tools: [tools.cobblers_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_cooks_tools, 1]] }],
-            proficiencies: { tools: [tools.cooks_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_glassblowers_tools, 1]] }],
-            proficiencies: { tools: [tools.glassblowers_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_jewelers_tools, 1]] }],
-            proficiencies: { tools: [tools.jewelers_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_leatherworkers_tools, 1]] }],
-            proficiencies: { tools: [tools.leatherworkers_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_mason, 1]] }],
-            proficiencies: { tools: [tools.mason] },
-          },
-          {
+            name_set: tools.painters_supplies.name,
             equipment: [{ inventory: [[items.tools_painters_supplies, 1]] }],
             proficiencies: { tools: [tools.painters_supplies] },
           },
           {
-            equipment: [{ inventory: [[items.tools_potters_tools, 1]] }],
-            proficiencies: { tools: [tools.potters_tools] },
-          },
-          {
-            equipment: [{ inventory: [[items.tools_tinkers_tools, 1]] }],
-            proficiencies: { tools: [tools.tinkers_tools] },
-          },
-          {
+            name_set: tools.weavers_tools.name,
             equipment: [{ inventory: [[items.tools_weavers_tools, 1]] }],
             proficiencies: { tools: [tools.weavers_tools] },
           },
+
           {
+            name_set: tools.carpenters_tools.name,
+            equipment: [{ inventory: [[items.tools_carpenters_tools, 1]] }],
+            proficiencies: { tools: [tools.carpenters_tools] },
+          },
+          {
+            name_set: tools.woodcarvers_tools.name,
             equipment: [{ inventory: [[items.tools_woodcarvers_tools, 1]] }],
             proficiencies: { tools: [tools.woodcarvers_tools] },
+          },
+
+          {
+            name_set: tools.glassblowers_tools.name,
+            equipment: [{ inventory: [[items.tools_glassblowers_tools, 1]] }],
+            proficiencies: { tools: [tools.glassblowers_tools] },
+          },
+          {
+            name_set: tools.jewelers_tools.name,
+            equipment: [{ inventory: [[items.tools_jewelers_tools, 1]] }],
+            proficiencies: { tools: [tools.jewelers_tools] },
+          },
+
+          {
+            name_set: tools.mason.name,
+            equipment: [{ inventory: [[items.tools_mason, 1]] }],
+            proficiencies: { tools: [tools.mason] },
+          },
+          {
+            name_set: tools.potters_tools.name,
+            equipment: [{ inventory: [[items.tools_potters_tools, 1]] }],
+            proficiencies: { tools: [tools.potters_tools] },
           },
         ],
       },
@@ -569,22 +606,22 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.navigators_tools, tools.transport_water],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
+        //armor: [],
         weapon: [[weapons.club, 1]],
         inventory: [
           [items.silk_rope, 1],
           [items.talisman_sailor, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 10,
       },
     ],
@@ -609,16 +646,16 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
-      tools: [],
-      languages: [],
+      //armor: [],
+      //weapons: [],
+      //tools: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.ink, 1],
           [items.ink_pen, 1],
@@ -626,7 +663,7 @@ export default {
           [items.letter_question, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 10,
       },
     ],
@@ -759,22 +796,22 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.transport_ground],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.shovel, 1],
           [items.iron_pot, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 10,
       },
     ],
@@ -879,23 +916,23 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.herbalists_tools],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.scroll_tube, 1],
           [items.blanket, 1],
           [items.clothes, 1],
           [items.tools_herbalists_tools, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 5,
       },
     ],
@@ -1028,21 +1065,21 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.thief],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.crowbar, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 15,
       },
     ],
@@ -1086,16 +1123,16 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
-      tools: [],
-      languages: [],
+      //armor: [],
+      //weapons: [],
+      //tools: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.holy_symbol, 1],
           [items.music_drums, 1],
@@ -1103,7 +1140,7 @@ export default {
           [items.vestment, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 15,
       },
     ],
@@ -1236,22 +1273,22 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.transport_ground],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.medal, 1],
           [items.trophey, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 10,
       },
     ],
@@ -1302,23 +1339,23 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
-      tools: [],
-      languages: [],
+      //armor: [],
+      //weapons: [],
+      //tools: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.staff, 1],
           [items.hunting_trap, 1],
           [items.trophey_animal, 1],
           [items.travelers_clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 10,
       },
     ],
@@ -1493,22 +1530,22 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.disguise, tools.forgery],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.fine_clothes, 1],
           [items.disguise_kit, 1],
           [items.trick_set, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 15,
       },
     ],
@@ -1538,21 +1575,21 @@ export default {
     ],
 
     proficiencies: {
-      armor: [],
-      weapons: [],
+      //armor: [],
+      //weapons: [],
       tools: [tools.disguise],
-      languages: [],
+      //languages: [],
     },
 
     equipment: [
       {
-        armor: [],
-        weapon: [],
+        //armor: [],
+        //weapon: [],
         inventory: [
           [items.crowbar, 1],
           [items.clothes, 1],
         ],
-        inventory_packs: [],
+        //inventory_packs: [],
         gold: 15,
       },
     ],
