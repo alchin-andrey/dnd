@@ -8,6 +8,13 @@
 				:rare="MY.ethnos.rare"
 			>
 			</my-card-text>
+			<my-card-text
+				v-if="MY.backstory.name"
+				:title="MY.backstory.name"
+				:text_html="MY.backstory.details"
+				:rare="MY.backstory.rare"
+			>
+			</my-card-text>
 		</my-wrapper>
 </template>
 
