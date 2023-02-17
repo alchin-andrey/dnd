@@ -12,6 +12,7 @@
 				v-if="MY.backstory.name"
 				:title="MY.backstory.name"
 				:text_html="MY.backstory.details"
+        :text_html_2="MY.backstory.expanded"
 				:rare="MY.backstory.rare"
 			>
 			</my-card-text>

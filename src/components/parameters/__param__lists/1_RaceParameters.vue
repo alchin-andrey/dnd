@@ -8,7 +8,7 @@
     <RaceParam__Spells hr/> <!-- //TODO -->
     <RaceParam__Weapons hr />
 		<RaceParam__EquipKit hr />
-    <RaceParam__Text /> <!-- //TODO -->
+    <RaceParam__Text />
 </template>
 
 <script>
