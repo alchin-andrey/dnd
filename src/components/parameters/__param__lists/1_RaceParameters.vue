@@ -6,7 +6,7 @@
     <RaceParam__Proficiencies hr/>
     <RaceParam__Fines hr/> 
     <RaceParam__Spells hr/> <!-- //TODO -->
-    <!-- <RaceParam__Weapons hr /> --> <!-- //TODO -->
+    <RaceParam__Weapons hr />
 		<RaceParam__EquipKit hr />
     <RaceParam__Text /> <!-- //TODO -->
 </template>
