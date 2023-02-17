@@ -7,6 +7,7 @@ export default {
   entertainer: {
     name: "back_entertainer",
     details: "back_entertainer_details",
+    expanded: "back_entertainer_expanded",
 
     skills: [
         { name: "acrobatics", num: "Mastery", details: "acrobatics_details", },
@@ -103,6 +104,7 @@ export default {
   urchin: {
     name: "back_urchin",
     details: "back_urchin_details",
+    expanded: "back_urchin_expanded",
 
     skills: [
         { name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details", },
@@ -143,6 +145,7 @@ export default {
   noble: {
     name: "back_noble",
     details: "back_noble_details",
+    expanded: "back_noble_expanded",
 
     skills: [
         { name: "history", num: "Mastery", details: "history_details", },
@@ -331,6 +334,7 @@ export default {
   guild_artisan: {
     name: "back_guild_artisan",
     details: "back_guild_artisan_details",
+    expanded: "back_guild_artisan_expanded",
 
     skills: [
         { name: "insight", num: "Mastery", details: "insight_details", },
@@ -593,6 +597,7 @@ export default {
   sailor: {
     name: "back_sailor",
     details: "back_sailor_details",
+    expanded: "back_sailor_expanded",
 
     skills: [
         { name: "athletics", num: "Mastery", details: "athletics_details", },
@@ -633,6 +638,7 @@ export default {
   sage: {
     name: "back_sage",
     details: "back_sage_details",
+    expanded: "back_sage_expanded",
 
     skills: [
         { name: "history", num: "Mastery", details: "history_details", },
@@ -783,6 +789,7 @@ export default {
   folk_hero: {
     name: "back_folk_hero",
     details: "back_folk_hero_details",
+    expanded: "back_folk_hero_expanded",
 
     skills: [
         { name: "survival", num: "Mastery", details: "survival_details", },
@@ -926,6 +933,7 @@ export default {
   hermit: {
     name: "back_hermit",
     details: "back_hermit_details",
+    expanded: "back_hermit_expanded",
 
     skills: [
         { name: "religion", num: "Mastery", details: "religion_details", },
@@ -1075,6 +1083,7 @@ export default {
   criminal: {
     name: "back_criminal",
     details: "back_criminal_details",
+    expanded: "back_criminal_expanded",
 
     skills: [
         { name: "stealth", num: "Mastery", details: "stealth_details", },
@@ -1136,6 +1145,7 @@ export default {
   acolyte: {
     name: "back_acolyte",
     details: "back_acolyte_details",
+    expanded: "back_acolyte_expanded",
 
     skills: [
         { name: "religion", num: "Mastery", details: "religion_details", },
@@ -1286,6 +1296,7 @@ export default {
   soldier: {
     name: "back_soldier",
     details: "back_soldier_details",
+    expanded: "back_soldier_expanded",
 
     skills: [
         { name: "athletics", num: "Mastery", details: "athletics_details", },
@@ -1351,6 +1362,7 @@ export default {
   outlander: {
     name: "back_outlander",
     details: "back_outlander_details",
+    expanded: "back_outlander_expanded",
 
     skills: [
         { name: "athletics", num: "Mastery", details: "athletics_details", },
@@ -1562,6 +1574,7 @@ export default {
   charlatan: {
     name: "back_charlatan",
     details: "back_charlatan_details",
+    expanded: "back_charlatan_expanded",
 
     skills: [
         { name: "sleight_of_hand", num: "Mastery", details: "sleight_of_hand_details", },
@@ -1607,6 +1620,7 @@ export default {
   spy: {
     name: "back_spy",
     details: "back_spy_details",
+    expanded: "back_spy_expanded",
 
     skills: [
         { name: "stealth", num: "Mastery", details: "stealth_details", },
