@@ -121,13 +121,13 @@ export const useMYStore = defineStore({
 			return this.settingsClass("race", this.MY.ethnos.settings, "custom");
 		},
 
-    сustomm_Backstories_Settings_Race_Arr() {
+    сustomm_Backstory_Settings_Race_Arr() {
 			return this.settingsClass("race", this.MY.backstory.settings, "custom");
 		},
 
     сustomm_Settings_Race_Arr() {
       // const main_custom = this.сustomm_Main_Settings_Race_Arr;
-      const backstories_custom = this.сustomm_Backstories_Settings_Race_Arr;
+      const backstories_custom = this.сustomm_Backstory_Settings_Race_Arr;
       return [...backstories_custom];
     },
 
@@ -198,13 +198,23 @@ export const useMYStore = defineStore({
 					const select_numb = this.select_Numb(item.select);
 					const select_arr = sett_select?.[link_type_name_i] ?? [];
 					
-          const select_arr_lvl = this.level_Filter_Arr(select_arr);
 					const list_lvl = this.level_Filter_Arr(item.list);
-					const pass_arr_lvl = list_lvl.filter((el) => !select_arr_lvl.includes(el));
+
+          const select_arr_lvl = this.level_Filter_Arr(select_arr);
+          // const select_copy = [...select_arr_lvl];
+          const select_not_null = select_arr_lvl.filter((el) => list_lvl.some(item => {
+            if (item.name) {
+              return item.name == el.name;
+            } else {
+              return item.name_set == el.name_set;
+            }
+          })); //NOTE - NEW
+
+					const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.includes(el));
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
-						select_list.push(select_arr_lvl[i] ?? pass_arr_lvl[i]);
+						select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
 					}
 
 					new_arr.push({

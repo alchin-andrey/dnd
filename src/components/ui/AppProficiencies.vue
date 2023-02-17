@@ -1,37 +1,38 @@
 <template>
-	
 	<div class="column">
-    <div class="icon">
-						<svg
-							class="icon_svg"
-							:class="{
-                'icon-passive': passive_Link,
-                'icon-full': any_Name && !param,
-                'icon-null': passive_Link_Full,
-              }"
-							viewBox="0 0 18 18"
-							xmlns="http://www.w3.org/2000/svg"
-							v-html="ui_icon.check"
-						/>
-					</div>
-    <AppTooltip text="hint_over_limit" :shown="any_Name" warn>
-		<div
-			class="title jbm-300"
-			:class="{
-				passive: passive_Link,
-        'rare-text': any_Name && !param,
-			}"
-		>
-			{{ t_Title }}<span 
-      class="grey-2"
-			:class="{
-        'rare-text': any_Name && !param,
-			}"
-      >:</span>
+		<div class="icon">
+			<svg
+				class="icon_svg"
+				:class="{
+					'icon-passive': passive_Link,
+					'icon-full': any_Name && !param,
+					'icon-null': passive_Link_Full,
+				}"
+				viewBox="0 0 18 18"
+				xmlns="http://www.w3.org/2000/svg"
+				v-html="ui_icon.check"
+			/>
 		</div>
-  </AppTooltip>
+		<AppTooltip text="hint_over_limit" :shown="any_Name" warn>
+			<div
+				class="title jbm-300"
+				:class="{
+					passive: passive_Link,
+					'rare-text': any_Name && !param,
+				}"
+			>
+				{{ t_Title
+				}}<span
+					class="grey-2"
+					:class="{
+						'rare-text': any_Name && !param,
+					}"
+					>:</span
+				>
+			</div>
+		</AppTooltip>
 		<div class="item int-400" :class="{ passive: passive_Link }">
-			<span v-if="unique_Names.length == 0">—</span>
+			<div class="flex-col" v-if="unique_Names.length == 0">—</div>
 			<AppTooltip
 				text="hint_over_limit"
 				v-for="(name, i) in unique_Names"
@@ -41,11 +42,10 @@
 				:class="{ passive: arr_name_old.includes(name) }"
 			>
 				<div class="flex-col">
-				  <div :class="{ 'rare-text': overflow_Save(name) }">
-  					{{ t_Name(name, i) }}
-            <!-- <span v-if="unique_Names.length - 1 > i">, </span> -->
-  				</div>
-  				<div v-if="unique_Names.length - 1 > i">, </div>
+					<div :class="{ 'rare-text': overflow_Save(name) }">
+						{{ t_Name(name, i) }}
+					</div>
+					<div v-if="unique_Names.length - 1 > i">,</div>
 				</div>
 			</AppTooltip>
 		</div>
@@ -55,6 +55,7 @@
 <script>
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "AppProficiencies",
@@ -86,7 +87,16 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
+    ...mapState(usePagesStore, ["pages"]),
+		...mapState(useProficienciesStore, ["proficiencies_Race_Params", "proficiencies_Arr_All"]),
+
+    page_Arr: (stor) => (name) => {
+      if(stor.pages.race_page) {
+        return stor.proficiencies_Race_Params(name);
+      } else {
+        return stor.proficiencies_Arr_All(name);
+      }
+    },
 
 		t_Title() {
 			return this.t(this.title);
@@ -107,7 +117,7 @@ export default {
 
 		overflow_Save: (stor) => (name) => {
 			const name_times = stor
-				.proficiencies_Arr_All(stor.title)
+				.page_Arr(stor.title)
 				.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
 			if (stor.any_Name && !stor.param) {
 				return true;
@@ -119,7 +129,7 @@ export default {
 		},
 
 		any_Name() {
-			return this.proficiencies_Arr_All(this.title).includes("any");
+			return this.page_Arr(this.title).includes("any");
 		},
 
 		t_Name: (stor) => (name) => {
@@ -145,11 +155,11 @@ export default {
 	position: relative;
 }
 
-.flex-col{
-  display: flex;
-  align-items: center;
-  height: 18px;
-  /* min-height: 18px; */
+.flex-col {
+	display: flex;
+	align-items: center;
+	height: 18px;
+	/* min-height: 18px; */
 }
 
 .title {
@@ -162,7 +172,7 @@ export default {
 
 .icon {
 	/* position: absolute; */
-  width: 18px;
+	width: 18px;
 	height: 18px;
 }
 
@@ -184,11 +194,10 @@ export default {
 	margin-left: 11px;
 	/* padding: 2px 0px 1px; */
 	text-align: start;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 3px;
-  /* align-self: start; */
-
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 3px;
+	/* align-self: start; */
 }
 
 .passive {
@@ -199,7 +208,7 @@ export default {
 	color: #ffc93d;
 }
 
-.icon-null{
-  opacity: 0;
+.icon-null {
+	opacity: 0;
 }
 </style>

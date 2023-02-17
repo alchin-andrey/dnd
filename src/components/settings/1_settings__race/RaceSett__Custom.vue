@@ -10,7 +10,7 @@
 			:key="list_el"
 			:custom="list_el"
 			@click="getCustomSelect(list_el)"
-			:active_boll_link="custom.select_list.includes(list_el)"
+			:active_boll_link="getActive(list_el)"
 			@clickOneMore="getCustomSelect"
 		/>
 	</section>
@@ -34,6 +34,16 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
+
+    getActive: (stor) => (list_el) => {
+      return stor.custom.select_list.some(item => {
+        if (item.name) {
+          return item.name == list_el.name
+        } else {
+          return item.name_set == list_el.name_set
+        }
+      })
+    }
 	},
 
 	methods: {

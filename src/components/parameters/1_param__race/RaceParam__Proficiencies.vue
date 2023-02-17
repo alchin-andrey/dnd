@@ -1,10 +1,11 @@
 <template>
-	<my-wrapper gap_8 :hr="hr">
-		<my-inventory
+  <my-wrapper gap_8 :hr="hr">
+		<AppProficiencies
 			v-for="name in proficiencies"
 			:key="name"
 			:title="name"
-			:item="proficiencies_Race_Params(name)"
+			:arr_name="proficiencies_Race_Params(name)"
+      param
 		/>
 	</my-wrapper>
 </template>

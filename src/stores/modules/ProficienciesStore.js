@@ -16,70 +16,90 @@ export const useProficienciesStore = defineStore({
 	}),
 
   getters: {
-      proficiencies_Any: (state) => (kay) => {
+      proficiencies_Any: (stor) => (kay) => {
         const MYStore = useMYStore();
         const specials = MYStore.class_Specials_Filter_Lvl("proficiencies");
         return specials?.some((el) =>  el?.[kay] == "any");
       },
 
-      proficiencies_Arr: (state) => (obj, kay) => {
+      proficiencies_Arr: (stor) => (obj, kay) => {
         let arr = [];
         obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
         return arr;
       },
   
-      proficiencies_Arr_Race: (state) => (kay) => {
+      proficiencies_Arr_Race: (stor) => (kay) => {
         const MYStore = useMYStore();
-        return state.proficiencies_Arr(MYStore.MY.race.proficiencies, kay);
+        return stor.proficiencies_Arr(MYStore.MY.race.proficiencies, kay);
       },
 
-      proficiencies_Arr_Ethnos: (state) => (kay) => {
+      proficiencies_Arr_Ethnos: (stor) => (kay) => {
         const MYStore = useMYStore();
-        return state.proficiencies_Arr(MYStore.MY.ethnos.proficiencies, kay);
+        return stor.proficiencies_Arr(MYStore.MY.ethnos.proficiencies, kay);
       },
 
-      proficiencies_Arr_Custom: (state) => (kay) => {
+      proficiencies_Arr_Custom: (stor) => (kay) => {
         const LanguagesStore = useLanguagesStore();
         return kay === "languages" ? LanguagesStore.languages_Custom_Arr_RE : [];
       },
 
-      proficiencies_Race_Params: (state) => (kay) => {
-        const race_prof = state.proficiencies_Arr_Race(kay);
-        const ethnos_prof = state.proficiencies_Arr_Ethnos(kay);
-        const custom_prof = state.proficiencies_Arr_Custom(kay);
-
-        return race_prof.concat(ethnos_prof).concat(custom_prof);
-      },
-      
-      proficiencies_Race_Params_Any: (state) => (kay) => {
-        const REC_prof = state.proficiencies_Race_Params(kay);
-        const any =  state.proficiencies_Any(kay);
-        return any ? [] : REC_prof;
-      },
-  
-      proficiencies_Arr_Class: (state) => (kay) => {
+      proficiencies_Arr_Backstory: (stor) => (kay) => {
         const MYStore = useMYStore();
-        const class_prof = state.proficiencies_Arr(
-          MYStore.MY.class.proficiencies,
-          kay
-        );
+        return stor.proficiencies_Arr(MYStore.MY.backstory.proficiencies, kay);
+      },
 
+      proficiencies_Arr_Setting_Race: (stor) => (kay) => {
+        const MYStore = useMYStore();
+        return stor.proficiencies_Arr_Setting(MYStore.сustomm_Settings_Race_Arr, kay);
+      },
+
+      proficiencies_Race_Params: (stor) => (kay) => {
+        const race_prof = stor.proficiencies_Arr_Race(kay);
+        const ethnos_prof = stor.proficiencies_Arr_Ethnos(kay);
+        const custom_prof = stor.proficiencies_Arr_Custom(kay);
+        const backstory_prof = stor.proficiencies_Arr_Backstory(kay);
+        const sett_prof = stor.proficiencies_Arr_Setting_Race(kay);
+        return [...race_prof, ...ethnos_prof, ...custom_prof, ...backstory_prof, ...sett_prof];
+      },
+
+      proficiencies_Arr_Setting: (stor) => (arr, kay) => {
         let custom_prof = [];
-        MYStore.сustomm_Settings_Class_Arr().forEach(el => {
+        arr.forEach(el => {
           el.select_list.forEach(sub_el => {
-            const prof_arr = state.proficiencies_Arr(
+            const prof_arr = stor.proficiencies_Arr(
               sub_el?.proficiencies, kay);
               custom_prof = custom_prof.concat(prof_arr);
             });
           });
-  
-        const any =  state.proficiencies_Any(kay);
-        return any ? ['any'] : class_prof.concat(custom_prof);
+        return custom_prof;
+      },
+
+      proficiencies_Arr_Class: (stor) => (kay) => {
+        const MYStore = useMYStore();
+        return stor.proficiencies_Arr(MYStore.MY.class.proficiencies, kay);
+      },
+
+      proficiencies_Arr_Setting_Class: (stor) => (kay) => {
+        const MYStore = useMYStore();
+        return stor.proficiencies_Arr_Setting(MYStore.сustomm_Settings_Class_Arr(), kay);
+      },
+
+      proficiencies_Race_Params_Any: (stor) => (kay) => {
+        const REC_prof = stor.proficiencies_Race_Params(kay);
+        const any =  stor.proficiencies_Any(kay);
+        return any ? [] : REC_prof;
       },
   
-      proficiencies_Arr_All: (state) => (kay) => {
-        let rec_prof = state.proficiencies_Race_Params(kay);
-        let class_prof = state.proficiencies_Arr_Class(kay);
+      proficiencies_Class_Params: (stor) => (kay) => {
+        const class_prof = stor.proficiencies_Arr_Class(kay);
+        const sett_prof = stor.proficiencies_Arr_Setting_Class(kay);
+        const any =  stor.proficiencies_Any(kay);
+        return any ? ['any'] : class_prof.concat(sett_prof);
+      },
+  
+      proficiencies_Arr_All: (stor) => (kay) => {
+        let rec_prof = stor.proficiencies_Race_Params(kay);
+        let class_prof = stor.proficiencies_Class_Params(kay);
         return rec_prof.concat(class_prof);
       },
 

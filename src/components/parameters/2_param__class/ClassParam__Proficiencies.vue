@@ -4,7 +4,7 @@
 			v-for="name in proficiencies"
 			:key="name"
 			:title="name"
-			:item="proficiencies_Arr_Class(name)"
+			:item="proficiencies_Class_Params(name)"
 			:item_old="proficiencies_Race_Params_Any(name)"
 		/>
 	</my-wrapper> -->
@@ -14,7 +14,7 @@
 			v-for="name in proficiencies"
 			:key="name"
 			:title="name"
-			:arr_name="proficiencies_Arr_Class(name)"
+			:arr_name="proficiencies_Class_Params(name)"
 			:arr_name_old="proficiencies_Race_Params_Any(name)"
       param
 		/>
@@ -37,7 +37,7 @@ export default {
 		...mapState(useProficienciesStore, [
 			"proficiencies",
 			"proficiencies_Race_Params_Any",
-			"proficiencies_Arr_Class",
+			"proficiencies_Class_Params",
 		]),
 	},
 };
