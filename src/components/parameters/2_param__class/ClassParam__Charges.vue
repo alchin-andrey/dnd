@@ -1,19 +1,24 @@
 <template>
-<div>
-  	<my-wrapper v-if="charges_Class_Params.length !== 0" :hr="hr">
-  		<my-charges
-  			v-for="item in charges_Class_Params"
-  			:key="item"
-  			:charge="item"
-  		/>
-  	</my-wrapper>
-</div>
+	<div>
+		<my-wrapper v-if="shown_Charges" :hr="hr">
+			<AppCharges
+				v-for="item in charges_Race_Param"
+				:key="item"
+				:charge="item"
+        passive
+			/>
+			<AppCharges
+				v-for="item in charges_Class_Param"
+				:key="item"
+				:charge="item"
+			/>
+		</my-wrapper>
+	</div>
 </template>
 
 <script>
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
-// import { useEquipStore } from "@/stores/modules/EquipStore";
+import { useChargesStore } from "@/stores/modules/ChargesStore";
 
 export default {
 	name: "ClassParam__Charges",
@@ -24,26 +29,31 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, [
-    "MY", 
-    "level_Filter_Arr",
-    "сustomm_Settings_Class_Arr",
-    "filter_Custom_Class_Lvl"
-  ]),
-    
-		charges_Class_Arr() {
-			return this.level_Filter_Arr(this.MY.class.charges);
-		},
+		...mapState(useChargesStore, [
+      "charges_Race_Param",
+      "charges_Class_Param",
+    ]),
 
-    charges_Custom_Arr() {
-			return this.filter_Custom_Class_Lvl("charges");
-		},
+    shown_Charges() {
+      return (
+        this.charges_Race_Param.length !== 0
+        || this.charges_Class_Param.length !== 0
+      )
+    },
 
-		charges_Class_Params() {
-			const charges_class = this.charges_Class_Arr;
-			const charges_custom = this.charges_Custom_Arr;
-			return charges_class.concat(charges_custom);
-		},
+		// charges_Class_Arr() {
+		// 	return this.level_Filter_Arr(this.MY.class.charges);
+		// },
+
+		// charges_Custom_Arr() {
+		// 	return this.filter_Custom_Class_Lvl("charges");
+		// },
+
+		// charges_Class_Params() {
+		// 	const charges_class = this.charges_Class_Arr;
+		// 	const charges_custom = this.charges_Custom_Arr;
+		// 	return charges_class.concat(charges_custom);
+		// },
 	},
 };
 </script>

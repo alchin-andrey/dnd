@@ -7,7 +7,7 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
-import { useBackstoriesStore } from "@/stores/modules/BackstoriesStore";
+import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
 export const useMYStore = defineStore({

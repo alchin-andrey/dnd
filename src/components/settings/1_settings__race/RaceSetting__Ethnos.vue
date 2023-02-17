@@ -21,15 +21,25 @@
 		</my-wrapper>
 		<!-- Этнос_stats + qualities -->
 
+    <!-- Этнос_Карточка_Charges -->
+			<my-wrapper v-if="charges_Race_Main_Arr.length !== 0">
+				<AppCharges
+					v-for="item in charges_Race_Main_Arr"
+					:key="item"
+					:charge="item"
+				/>
+			</my-wrapper>
+			<!-- Этнос_Карточка_Charges -->
+
 		<!-- Этнос_proficiencies -->
 		<my-wrapper v-if="MY.race.proficiencies">
-			<my-inventory
+			<AppProficiencies
 				v-for="(val, name) in MY.race.proficiencies"
 				:key="name"
 				:title="name"
-				:item="proficiencies_Arr_Race(name)"
-			>
-			</my-inventory>
+				:arr_name="proficiencies_Arr_Race(name)"
+        param
+			/>
 		</my-wrapper>
 		<!-- Этнос_proficiencies -->
 
@@ -66,6 +76,7 @@ import EthnosCard from "@/components/settings/1_settings__race/EthnosCard.vue";
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { useChargesStore } from "@/stores/modules/ChargesStore";
 export default {
 	name: "RaceSetting__Ethnos",
 	components: {
@@ -76,6 +87,7 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(useMYStore, ["languages_Custom_Arr_RE"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_Race"]),
+    ...mapState(useChargesStore, ["charges_Race_Main_Arr"]),
 
 		shown_Spells_Race() {
 			let race_spells = this.MY.race.spells;

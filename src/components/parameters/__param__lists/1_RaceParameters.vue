@@ -1,11 +1,12 @@
 <template>
-    <RaceParam__Stats hr/> //TODO
+    <RaceParam__Stats hr/> <!-- //TODO -->
     <RaceParam__Skills hr/> 
-    <RaceParam__Qualities hr/> //TODO
+    <RaceParam__Qualities hr/> <!-- //TODO -->
+    <RaceParam__Charges hr/>
     <RaceParam__Proficiencies hr/>
-    <RaceParam__Fines hr/> //TODO
-    <RaceParam__Spells hr/> //TODO
-    <RaceParam__Text /> //TODO
+    <RaceParam__Fines hr/> <!-- //TODO -->
+    <RaceParam__Spells hr/> <!-- //TODO -->
+    <RaceParam__Text /> <!-- //TODO -->
 </template>
 
 <script>

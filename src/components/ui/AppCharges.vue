@@ -1,5 +1,5 @@
 <template>
-	<div class="column jbm-300">
+	<div class="column jbm-300" :class="{passive: passive}">
 		<div class="flex_row">
 			<svg class="icon"
 				width="18"
@@ -35,7 +35,7 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
-	name: "MyCharges",
+	name: "AppCharges",
 	data() {
 		return {
 			atribute_icon: atribute_icon,
@@ -45,6 +45,10 @@ export default {
 		charge: {
 			type: Object,
 			default: null,
+		},
+    passive: {
+			type: Boolean,
+			default: false,
 		},
 	},
 
@@ -228,5 +232,9 @@ export default {
 
 .small {
 	text-transform: lowercase;
+}
+
+.passive {
+	opacity: 0.2;
 }
 </style>

@@ -83,19 +83,18 @@
 
 		<!-- //NOTE - Charges -->
 		<my-wrapper v-if="shown_Param_Arr(custom.charges)">
-			<my-charges
+			<AppCharges
 				v-for="item in level_Filter_Arr(custom.charges)"
 				:key="item"
 				:charge="item"
-			>
-			</my-charges>
+			/>
 		</my-wrapper>
 
 		<!-- //NOTE - Proficiencies -->
 			<my-wrapper v-if="shown_Proficiencies">
 				<AppProficiencies 
-        v-for="(val, name) in custom.proficiencies" 
-        :key="name"
+          v-for="(val, name) in custom.proficiencies" 
+          :key="name"
 					:title="name"
 					:arr_name="proficiencies_Arr(custom.proficiencies, name)"
 					:active_card="active_boll_link"

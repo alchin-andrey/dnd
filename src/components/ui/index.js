@@ -5,6 +5,7 @@ import AppFines from "@/components/ui/AppFines.vue";
 import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
 import AppStats from "@/components/ui/AppStats.vue";
 import AppSkills from "@/components/ui/AppSkills.vue";
+import AppCharges from "@/components/ui/AppCharges.vue";
 import AppCusstomCard from "@/components/ui/AppCusstomCard.vue";
 
 import AppTooltip from "@/components/ui/AppTooltip.vue";
@@ -23,8 +24,8 @@ import MyButton from "@/components/ui/pinia_ui/MyButton.vue";
 import MyButtonBack from "@/components/ui/pinia_ui/MyButtonBack.vue";
 import MyButtonGender from "@/components/ui/pinia_ui/MyButtonGender.vue";
 import MyAttribute from "@/components/ui/pinia_ui/MyAttribute.vue";
-import MyInventory from "@/components/ui/pinia_ui/MyInventory.vue";
-// import MyFines from "@/components/ui/pinia_ui/MyFines.vue";
+// import MyInventory from "@/components/ui/DELETE/MyInventory.vue";
+// import MyFines from "@/components/ui/DELETE/MyFines.vue";
 
 
 import MySelectionBox from "@/components/ui/pinia_ui/MySelectionBox.vue";
@@ -47,7 +48,7 @@ import MySpellMain from "@/components/ui/MySpellMain.vue";
 import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
 import MyBackPage from "@/components/ui/pinia_ui/MyBackPage.vue";
 
-import MyCharges from "@/components/ui/pinia_ui/MyCharges.vue";
+
 
 
 
@@ -60,8 +61,8 @@ export default [
   AppSelectionArr,
   AppStats,
   AppSkills,
+  AppCharges,
   AppCusstomCard,
-  
   AppTooltip,
 
   MyBackPage,
@@ -78,7 +79,7 @@ export default [
   MyButtonBack,
   MyButtonGender,
   MyAttribute,
-  MyInventory,
+  // MyInventory,
   // MyFines,
 
   MySelectionBox,
@@ -100,5 +101,5 @@ export default [
 
   MyCusstomSetting,
 
-  MyCharges,
+  
 ];

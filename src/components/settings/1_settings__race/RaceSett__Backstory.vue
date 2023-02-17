@@ -10,7 +10,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { useBackstoriesStore } from "@/stores/modules/BackstoriesStore";
+import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
 export default {
 	name: "RaceSetting__Backstory",
 	computed: {

@@ -45,25 +45,31 @@
 			</my-wrapper>
 			<!-- Этнос_Карточка_stats + qualities-->
 
+			<!-- Этнос_Карточка_Charges -->
+			<my-wrapper v-if="level_Filter_Arr(ethnos.charges).length !== 0">
+				<AppCharges
+					v-for="item in level_Filter_Arr(ethnos.charges)"
+					:key="item"
+					:charge="item"
+				/>
+			</my-wrapper>
+			<!-- Этнос_Карточка_Charges -->
+
 			<!-- Этнос_Карточка_proficiencies -->
 			<my-wrapper v-if="ethnos.proficiencies">
-				<my-inventory
+				<AppProficiencies
 					v-for="(val, name) in ethnos.proficiencies"
 					:key="name"
 					:title="name"
-					:item="proficiencies_Arr(ethnos.proficiencies, name)"
-				>
-				</my-inventory>
+					:arr_name="proficiencies_Arr(ethnos.proficiencies, name)"
+					:active_card="MY.ethnos.name === ethnos.name"
+				/>
 			</my-wrapper>
 			<!-- Этнос_proficiencies -->
 
 			<!-- Этнос_Карточка_fines -->
 			<my-wrapper v-if="ethnos.fines" gap_8>
-				<AppFines
-					v-for="item in ethnos.fines"
-					:key="item"
-					:fines="item"
-				/>
+				<AppFines v-for="item in ethnos.fines" :key="item" :fines="item" />
 			</my-wrapper>
 			<!-- Этнос_Карточка_fines -->
 
@@ -75,7 +81,7 @@
 					:lvl="item.level"
 					:spell="item.spell"
 					select
-          :active_card="MY.ethnos.name === ethnos.name"
+					:active_card="MY.ethnos.name === ethnos.name"
 				>
 				</my-spell-text>
 			</my-wrapper>
@@ -116,7 +122,7 @@ export default {
 	name: "EthnosCard",
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Pass_Arr_RE"]),
 		...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
