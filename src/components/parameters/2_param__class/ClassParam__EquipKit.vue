@@ -1,6 +1,14 @@
 <template>
-	<my-wrapper v-if="shown_Invenory_Equip" :hr="hr">
-		<KitEquip :packs="packs_Equip_Class" :inventory="inventory_Equip_Class" />
+	<my-wrapper v-if="shown_Invenory_Equip_Class" :hr="hr">
+		<KitEquip 
+    :inventory_old="inventory_Equip_Race"
+    :inventory="inventory_Equip_Class"
+
+    :packs_old="packs_Equip_Race"
+    :packs="packs_Equip_Class"
+
+    :gold="gold_Equip_All"
+    />
 	</my-wrapper>
 </template>
 
@@ -22,12 +30,23 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useEquipStore, ["inventory_Equip_Class", "packs_Equip_Class"]),
+		...mapState(useEquipStore, [
+      "inventory_Equip_Race",
+      "inventory_Equip_Class",
 
-    shown_Invenory_Equip() {
+      "packs_Equip_Race", 
+      "packs_Equip_Class",
+
+      "gold_Equip_All",
+    ]),
+
+    shown_Invenory_Equip_Class() {
 			return (
-				this.inventory_Equip_Class.length !== 0 ||
-				this.packs_Equip_Class.length !== 0
+        this.inventory_Equip_Race.length !== 0
+				|| this.inventory_Equip_Class.length !== 0
+				|| this.packs_Equip_Race.length !== 0
+				|| this.packs_Equip_Class.length !== 0
+        || this.gold_Equip_All
 			);
 		},
 	},

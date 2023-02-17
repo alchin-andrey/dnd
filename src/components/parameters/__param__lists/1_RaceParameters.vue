@@ -4,8 +4,10 @@
     <RaceParam__Qualities hr/> <!-- //TODO -->
     <RaceParam__Charges hr/>
     <RaceParam__Proficiencies hr/>
-    <RaceParam__Fines hr/> <!-- //TODO -->
+    <RaceParam__Fines hr/> 
     <RaceParam__Spells hr/> <!-- //TODO -->
+    <!-- <RaceParam__Weapons hr /> --> <!-- //TODO -->
+		<RaceParam__EquipKit hr />
     <RaceParam__Text /> <!-- //TODO -->
 </template>
 

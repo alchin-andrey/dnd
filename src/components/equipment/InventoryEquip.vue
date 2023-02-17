@@ -2,6 +2,9 @@
 	<div :class="{ flex_packs: stripe }">
 		<div ref="stripe" class="side_stripe" v-if="stripe"></div>
 		<section>
+			<div class="passive" v-for="items in inventory_old" :key="items">
+				• {{ t_Equip_Name(items) }}
+			</div>
 			<div v-for="items in inventory" :key="items">
 				• {{ t_Equip_Name(items) }}
 			</div>
@@ -15,7 +18,11 @@ export default {
 	props: {
 		inventory: {
 			type: Array,
-			default: null,
+			default: [],
+		},
+    inventory_old: {
+			type: Array,
+			default: [],
 		},
 		stripe: {
 			type: Boolean,
@@ -52,7 +59,7 @@ export default {
 	flex-grow: 0;
 }
 
-/* .main_inventory {
-	text-indent: -10px;
-} */
+.passive {
+	opacity: 0.2;
+}
 </style>

@@ -1,7 +1,13 @@
 <template>
 	<div class="flex_section int-400">
-		<!-- <section v-if="shown_Packs"> -->
+
 		<my-wrapper gap_26 v-if="shown_Packs" class="packs_section">
+      <PacksEquip
+				v-for="item_packs_old in packs_old"
+				:key="item_packs_old"
+				:packs="item_packs_old"
+        passive
+			/>
 			<PacksEquip
 				v-for="item_packs in packs"
 				:key="item_packs"
@@ -15,14 +21,12 @@
 			</section>
 		</my-wrapper>
 
-		<!-- </section> -->
-		<!-- <section class="pad-top"> -->
 		<InventoryEquip
 			:class="{ pad_top: !shown_Inventory_stripe }"
+      :inventory_old="inventory_old"
 			:inventory="inventory"
 			:stripe="shown_Inventory_stripe"
 		/>
-		<!-- </section>  -->
 	</div>
 </template>
 
@@ -37,13 +41,21 @@ export default {
 		InventoryEquip,
 	},
 	props: {
+    packs_old: {
+      type: Array,
+      default: [],
+    },
 		packs: {
 			type: Array,
-			default: null,
+			default: [],
 		},
+    inventory_old: {
+      type: Array,
+      default: [],
+    },
 		inventory: {
 			type: Array,
-			default: null,
+			default: [],
 		},
 		gold: {
 			type: Number,
@@ -56,11 +68,15 @@ export default {
 		},
 
 		shown_Inventory_stripe() {
-			return this.packs.length == 0 && !this.gold;
+			return !this.shown_Packs;
 		},
 
 		shown_Packs() {
-			return this.packs.length !== 0 || this.gold;
+			return (
+        this.packs_old.length !== 0
+        || this.packs.length !== 0
+        || this.gold
+        );
 		},
 	},
 };
@@ -72,17 +88,17 @@ export default {
 	column-gap: 36px;
 }
 .flex-row {
-  display: flex;
-  align-items: center;
-  gap: 0 4px;
+	display: flex;
+	align-items: center;
+	gap: 0 4px;
 }
 
 .coin {
-  width: 18px;
+	width: 18px;
 	height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 .text:first-letter {
 	text-transform: uppercase;

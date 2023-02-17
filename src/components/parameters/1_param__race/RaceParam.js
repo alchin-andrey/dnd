@@ -5,6 +5,7 @@ import RaceParam__Charges from "@/components/parameters/1_param__race/RaceParam_
 import RaceParam__Proficiencies from "@/components/parameters/1_param__race/RaceParam__Proficiencies.vue";
 import RaceParam__Fines from "@/components/parameters/1_param__race/RaceParam__Fines.vue";
 import RaceParam__Spells from "@/components/parameters/1_param__race/RaceParam__Spells.vue";
+import RaceParam__EquipKit from "@/components/parameters/1_param__race/RaceParam__EquipKit.vue";
 import RaceParam__Text from "@/components/parameters/1_param__race/RaceParam__Text.vue";
 
 export default {
@@ -16,6 +17,7 @@ export default {
 		RaceParam__Proficiencies,
 		RaceParam__Fines,
 		RaceParam__Spells,
+    RaceParam__EquipKit,
 		RaceParam__Text,
 	},
 };

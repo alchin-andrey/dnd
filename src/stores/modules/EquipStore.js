@@ -15,7 +15,7 @@ export const useEquipStore = defineStore({
 	}),
 
   getters: {
-
+    // SECTION - Tootal
     item_Equip_Arr: (stor) => (obj_arr, item) => {
       const MYStore = useMYStore();
       const eqip_lvl = MYStore.level_Filter_Arr(obj_arr);
@@ -29,26 +29,80 @@ export const useEquipStore = defineStore({
     gold_Equip_Numb: (stor) => (obj_arr) => {
       const MYStore = useMYStore();
       const eqip_lvl = MYStore.level_Filter_Arr(obj_arr);
-      console.log('eqip_lvl:', eqip_lvl)
       const res = eqip_lvl.reduce((acc, el) => el.gold ? acc + el.gold : acc, 0);
-      console.log('res:', res)
       return res;
     },
+    // !SECTION - Tootal
 
-    equipments_Class_Arr() {
+    // SECTION - Race
+    equipments_Race_Main_Arr() {
+      const MYStore = useMYStore();
+			return MYStore.level_Filter_Arr(MYStore.MY.race.equipment);
+		},
+
+    equipments_Race_Ethnos_Arr() {
+      const MYStore = useMYStore();
+			return MYStore.level_Filter_Arr(MYStore.MY.ethnos.equipment);
+		},
+
+    equipments_Race_Backstory_Arr() {
+      const MYStore = useMYStore();
+			return MYStore.level_Filter_Arr(MYStore.MY.backstory.equipment);
+		},
+
+    equipments_Race_Custom_Arr() {
+      const MYStore = useMYStore();
+			return MYStore.filter_Custom_Race_Lvl("equipment");
+		},
+
+    equipments_Race_Params() {
+			const race = this.equipments_Race_Main_Arr;
+			const ethnos = this.equipments_Race_Ethnos_Arr;
+      const backstory = this.equipments_Race_Backstory_Arr;
+      const race_custom = this.equipments_Race_Custom_Arr;
+			return [...race, ...ethnos, ...backstory, ...race_custom];
+		},
+
+    item_Equip_Race_Arr: (stor) => (item) => {
+			return stor.item_Equip_Arr(stor.equipments_Race_Params, item);
+		},
+
+    weapons_Equip_Race() {
+			return this.item_Equip_Race_Arr("weapon");
+		},
+
+    inventory_Equip_Race() {
+			return this.item_Equip_Race_Arr("inventory");
+		},
+
+    packs_Equip_Race() {
+			return this.item_Equip_Race_Arr("inventory_packs");
+		},
+
+    armors_Equip_Race() {
+			return this.item_Equip_Race_Arr("armor");
+		},
+
+    gold_Equip_Race() {
+			return this.gold_Equip_Numb(this.equipments_Race_Params);
+		},
+    // !SECTION - Race
+
+    // SECTION - Castom
+    equipments_Class_Main_Arr() {
       const MYStore = useMYStore();
 			return MYStore.level_Filter_Arr(MYStore.MY.class.equipment);
 		},
 
-    equipments_Custom_Class_Lvl() {
+    equipments_Class_Custom_Arr() {
       const MYStore = useMYStore();
 			return MYStore.filter_Custom_Class_Lvl("equipment");
 		},
 
     equipments_Class_Params() {
-			const equip_class = this.equipments_Class_Arr;
-      const equip_custom = this.equipments_Custom_Class_Lvl;
-			return equip_class.concat(equip_custom);
+			const equip_class = this.equipments_Class_Main_Arr;
+      const equip_custom = this.equipments_Class_Custom_Arr;
+			return [...equip_class, ...equip_custom];
 		},
 
     item_Equip_Class_Arr: (stor) => (item) => {
@@ -71,10 +125,46 @@ export const useEquipStore = defineStore({
 			return this.item_Equip_Class_Arr("armor");
 		},
 
+    gold_Equip_Class() {
+			return this.gold_Equip_Numb(this.equipments_Class_Params);
+		},
+    // !SECTION - Castom
+
+    // SECTION - ALL
 		armor_Equip_Element() {
-			return this.armors_Equip_Class[0]?.[0];
+			return this.armors_Equip_Race[0]?.[0] ?? this.armors_Equip_Class[0]?.[0];
 		},
 
+    equipments_All_Params() {
+			const race_param = this.equipments_Race_Params;
+      const class_param = this.equipments_Class_Params;
+			return [...race_param, ...class_param];
+		},
+
+    item_Equip_All_Arr: (stor) => (item) => {
+			return stor.item_Equip_Arr(stor.equipments_All_Params, item);
+		},
+
+    weapons_Equip_All() {
+			return this.item_Equip_All_Arr("weapon");
+		},
+
+    inventory_Equip_All() {
+			return this.item_Equip_All_Arr("inventory");
+		},
+
+		packs_Equip_All() {
+			return this.item_Equip_All_Arr("inventory_packs");
+		},
+
+    armors_Equip_All() {
+			return this.item_Equip_All_Arr("armor");
+		},
+
+    gold_Equip_All() {
+			return this.gold_Equip_Numb(this.equipments_All_Params);
+		},
+    // !SECTION - ALL
   },
   
   actions: {
