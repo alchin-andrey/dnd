@@ -1,23 +1,17 @@
 <template>
-    <RaceParam__Stats hr/>
-    <RaceParam__Skills hr/>
-    <RaceParam__Qualities hr/>
+    <RaceParam__Stats hr/> //TODO
+    <RaceParam__Skills hr/> 
+    <RaceParam__Qualities hr/> //TODO
     <RaceParam__Proficiencies hr/>
-    <RaceParam__Fines hr/>
-    <RaceParam__Spells hr/>
-    <RaceParam__Text />
+    <RaceParam__Fines hr/> //TODO
+    <RaceParam__Spells hr/> //TODO
+    <RaceParam__Text /> //TODO
 </template>
 
 <script>
-// import { mapState} from "pinia";
-// import { usePagesStore } from "@/stores/user/PagesStore";
-
 import RaceParam from "@/components/parameters/1_param__race/RaceParam.js";
 export default {
 	name: "RaceParameters",
   mixins: [RaceParam],
-	// computed: {
-	// 	...mapState(usePagesStore, ["race_page"]),
-	// },
 };
 </script>

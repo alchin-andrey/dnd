@@ -92,7 +92,7 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Proficiencies -->
-			<my-wrapper v-if="Object.keys(custom.proficiencies).length !== 0">
+			<my-wrapper v-if="shown_Proficiencies">
 				<AppProficiencies 
         v-for="(val, name) in custom.proficiencies" 
         :key="name"
@@ -239,6 +239,14 @@ export default {
 			);
 			return numb_MAX;
 		},
+
+    shown_Proficiencies() {
+      if(this.custom.proficiencies) {
+        return Object.keys(this.custom.proficiencies).length !== 0
+      } else {
+        return false
+      }
+    },
 
 		shown_Qualities() {
 			return (
