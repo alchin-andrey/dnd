@@ -32,12 +32,8 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
 
-import Card__CusstomClass from "@/components/settings/2_settings__class/Card__CusstomClass.vue";
 export default {
 	name: "ClassSett__Feats",
-	components: {
-		Card__CusstomClass,
-	},
 	data() {
 		return {
 			main_buttons: [

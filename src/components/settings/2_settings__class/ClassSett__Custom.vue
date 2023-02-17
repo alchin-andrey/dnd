@@ -21,12 +21,8 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import Card__CusstomClass from "@/components/settings/2_settings__class/Card__CusstomClass.vue";
 export default {
 	name: "ClassSett__Custom",
-	components: {
-		Card__CusstomClass,
-	},
 	props: {
 		custom: {
 			type: Object,

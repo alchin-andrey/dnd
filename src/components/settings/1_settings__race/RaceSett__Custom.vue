@@ -5,7 +5,7 @@
 			v-if="custom.details"
 			:text="custom.details"
 		/>
-		<Card__CusstomClass
+		<AppCusstomCard
 			v-for="list_el in custom.list"
 			:key="list_el"
       :setting_name="custom.name"
@@ -21,12 +21,8 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import Card__CusstomClass from "@/components/settings/2_settings__class/Card__CusstomClass.vue";
 export default {
 	name: "RaceSett__Custom",
-	components: {
-		Card__CusstomClass,
-	},
 	props: {
 		custom: {
 			type: Object,

@@ -92,15 +92,15 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Proficiencies -->
-		<my-wrapper>
-			<my-wrapper v-for="(val, name) in custom.proficiencies" :key="name">
-				<AppProficiencies
+			<my-wrapper v-if="Object.keys(custom.proficiencies).length !== 0">
+				<AppProficiencies 
+        v-for="(val, name) in custom.proficiencies" 
+        :key="name"
 					:title="name"
 					:arr_name="proficiencies_Arr(custom.proficiencies, name)"
 					:active_card="active_boll_link"
 				/>
 			</my-wrapper>
-		</my-wrapper>
 
 		<!-- //NOTE - Armor -->
 		<my-wrapper v-if="armors_Equip(custom.equipment).length !== 0" gap_26>
