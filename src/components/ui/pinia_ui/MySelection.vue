@@ -166,12 +166,13 @@ export default {
 	top: -2px;
 }
 
-.rare {
-	color: #ffc93d;
-}
 
 .active {
 	color: #ffffff;
+}
+
+.rare {
+	color: #ffc93d;
 }
 
 .cursor_auto {
