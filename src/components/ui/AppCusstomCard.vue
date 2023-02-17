@@ -46,7 +46,10 @@
 				:key="skill"
 			>
 				<AppSkills :title="skill.name" :numb="this[skill.num]" />
-				<my-card-text v-if="skill.details" :text_html="skill.details" />
+				<my-card-text
+					v-if="skill.details && setting_name == 'skills'"
+					:text_html="skill.details"
+				/>
 			</my-wrapper>
 		</my-wrapper>
 
@@ -89,18 +92,18 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Proficiencies -->
-		<my-wrapper v-if="custom.proficiencies">
-			<AppProficiencies
-				v-for="(val, name) in custom.proficiencies"
-				:key="name"
-				:title="name"
-				:arr_name="proficiencies_Arr(custom.proficiencies, name)"
-        :active_card="active_boll_link"
-			/>
+		<my-wrapper>
+			<my-wrapper v-for="(val, name) in custom.proficiencies" :key="name">
+				<AppProficiencies
+					:title="name"
+					:arr_name="proficiencies_Arr(custom.proficiencies, name)"
+					:active_card="active_boll_link"
+				/>
+			</my-wrapper>
 		</my-wrapper>
 
 		<!-- //NOTE - Armor -->
-		<my-wrapper v-if="shown_Param_Arr(custom.equipment)" gap_26>
+		<my-wrapper v-if="armors_Equip(custom.equipment).length !== 0" gap_26>
 			<ArmorEquip
 				v-for="armor in armors_Equip(custom.equipment)"
 				:key="armor"
@@ -126,7 +129,7 @@
 				:lvl="item.level"
 				:spell="item.spell"
 				select
-        :active_card="active_boll_link"
+				:active_card="active_boll_link"
 			>
 			</my-spell-text>
 		</my-wrapper>
@@ -194,11 +197,14 @@ export default {
 		ArmorEquip,
 	},
 	props: {
+		setting_name: {
+			type: String,
+			default: null,
+		},
 		custom: {
 			type: Object,
 			default: null,
 		},
-
 		active_boll_link: {
 			type: Boolean,
 			default: false,

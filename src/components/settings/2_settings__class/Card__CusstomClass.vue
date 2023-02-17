@@ -46,7 +46,7 @@
 				:key="skill"
 			>
 				<AppSkills :title="skill.name" :numb="this[skill.num]" />
-				<my-card-text v-if="skill.details" :text_html="skill.details" />
+				<my-card-text v-if="skill.details && custom.name == 'skills'" :text_html="skill.details" />
 			</my-wrapper>
 		</my-wrapper>
 
@@ -204,11 +204,14 @@ export default {
 		ArmorEquip,
 	},
 	props: {
+		setting_name: {
+			type: String,
+			default: null,
+		},
 		custom: {
 			type: Object,
 			default: null,
 		},
-
 		active_boll_link: {
 			type: Boolean,
 			default: false,
@@ -245,6 +248,7 @@ export default {
 		},
 
 		shown_Qualities() {
+      console.log('this.custom.name',this.custom, this.custom.name == 'skills')
 			return (
 				this.custom.hp_bonus ||
 				this.level_Filter_Arr(this.custom.qualities).length !== 0

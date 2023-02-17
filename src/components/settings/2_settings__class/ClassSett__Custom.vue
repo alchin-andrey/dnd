@@ -5,9 +5,10 @@
 			v-if="custom.details"
 			:text="custom.details"
 		/>
-		<Card__CusstomClass
+		<AppCusstomCard
 			v-for="list_el in custom.list"
 			:key="list_el"
+      :setting_name="custom.name"
 			:custom="list_el"
 			@click="getCustomSelect(list_el)"
 			:active_boll_link="custom.select_list.includes(list_el)"
