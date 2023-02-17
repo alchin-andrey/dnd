@@ -58,7 +58,7 @@ export const useSkillsStore = defineStore({
 	}),
 
   getters: {
-
+    //NOTE - OLD Start
     skills_Obj: (stor) => (name) => {
 			return stor.skills.find(el => el.name == name);
 		},
@@ -89,20 +89,15 @@ export const useSkillsStore = defineStore({
 			);
 		},
 
+    
 		skills_All_RE() {
 			return this.skills_Activ_Arr_RE.concat(this.skills_Custom_Arr_RE);
 		},
 
-		skills_Custom_Arr_RE() {
+    skills_Custom_Arr_RE() {
       const MYStore = useMYStore();
 			return MYStore.COMMON_Custom_Arr_RE("skills");
 		},
-
-    skills_MOD_Numb: (stor) => (name) => {
-      const StatsStore = useStatsStore();
-      const state_name = stor.skills.find(el => el.name == name).mod;
-			return StatsStore.stats_Mod(state_name);
-    },
 
     skills_RP_Numb: (stor) => (name) => {
       let race_mastery = 0;
@@ -111,9 +106,42 @@ export const useSkillsStore = defineStore({
 				: null;
         return race_mastery;
     },
+    //NOTE - OLD End
+
+    skills_Race_Settings() {
+      const MYStore = useMYStore();
+      const skills_backstory = MYStore.level_Filter_Arr(MYStore.MY.backstory.skills);
+      const skills_custom = MYStore.filter_Custom_Race_Lvl("skills");
+      return [...skills_backstory , ...skills_custom];
+    },
+
+    skills_Race_Param() {
+      const skills_name_RE_OLD = this.skills_All_RE; //NOTE - OLD
+
+      const skills_sett = this.skills_Race_Settings;
+      const skills_sett_name = skills_sett.reduce((acc, el) => acc.concat(el.name), []);
+      const skills_name_ALL = [...skills_name_RE_OLD , ...skills_sett_name];
+			const uniqu_name = [...new Set(skills_name_ALL)];
+      return uniqu_name;
+    },
+
+    skills_Race_Numb: (stor) => (name) => {
+      const skills_RP = stor.skills_RP_Numb(name); //NOTE - OLD
+      
+      const skills_sett = stor.skills_Race_Settings;
+      const skills_name = skills_sett.filter(el => el.name == name);
+      let skill_numb = skills_name.reduce((acc, el) => acc + stor[el.num], 0);
+			return skills_RP + skill_numb;
+		},
+
+    skills_MOD_Numb: (stor) => (name) => {
+      const StatsStore = useStatsStore();
+      const state_name = stor.skills.find(el => el.name == name).mod;
+			return StatsStore.stats_Mod(state_name);
+    },
 
     skills_RP_MOD_Numb: (stor) => (name) => {
-      const skills_RP = stor.skills_RP_Numb(name);
+      const skills_RP = stor.skills_Race_Numb(name);
       const skills_MOD = stor.skills_MOD_Numb(name);
 			return skills_RP + skills_MOD;
 		},
@@ -128,7 +156,7 @@ export const useSkillsStore = defineStore({
 
     skills_All_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
-      const skill_RP = stor.skills_RP_Numb(name);
+      const skill_RP = stor.skills_Race_Numb(name);
       const skill_MOD = stor.skills_MOD_Numb(name);
       const skill_Class = stor.skills_Class_Numb(name);
       const skill_Mastery = skill_Class + skill_RP;
@@ -141,7 +169,7 @@ export const useSkillsStore = defineStore({
 
     skills_Class_Param() {
       const MYStore = useMYStore();
-      const skills_name_RP = this.skills_All_RE;
+      const skills_name_RP = this.skills_Race_Param;
       const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
       const skills_custom_name = skills_custom.reduce((acc, el) => acc.concat(el.name), []);
       const skills_name_ALL = skills_name_RP.concat(skills_custom_name);

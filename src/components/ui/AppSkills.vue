@@ -21,7 +21,7 @@
 		<div class="visual">
 			<div class="cube" v-for="n in cube_Numb" :key="n"/>
 			<div class="cube-neg" v-for="n in cube_Negative" :key="n"/>
-			<div class="cube-second" v-for="n in cube_Second" :key="n"/>
+			<div class="cube-second" :class="{ opasity: numb == 0}" v-for="n in cube_Second" :key="n"/>
 		</div>
 	</div>
 </template>
@@ -178,8 +178,13 @@ export default {
 .cube-second {
 	width: 8px;
 	height: 8px;
-	background: rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+	/* background: rgba(255, 255, 255, 0.2); */
 	border-radius: 2px;
+  opacity: 0.2;
+}
+.opasity{
+  opacity: 1;
 }
 
 .cube-neg {

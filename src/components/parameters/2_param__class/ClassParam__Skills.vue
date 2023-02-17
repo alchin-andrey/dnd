@@ -12,8 +12,6 @@
 
 <script>
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
-import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 
 export default {
@@ -25,10 +23,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
-		...mapState(useStatsStore, ["stats_Saving_Arr"]),
 		...mapState(useSkillsStore, [
-			"skills_All_RE",
 			"skills_RP_MOD_Numb",
 			"skills_Class_Numb",
 			"skills_Class_Param",

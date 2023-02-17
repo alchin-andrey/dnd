@@ -1,13 +1,11 @@
 <template>
-  <my-wrapper v-if="skills_All_RE.length !== 0" :hr="hr">
-			<my-attribute
-				v-for="name in skills_All_RE"
+  <my-wrapper v-if="skills_Race_Param.length !== 0" :hr="hr">
+			<AppSkills
+				v-for="name in skills_Race_Param"
 				:key="name"
 				:title="name"
-				plus
-				:numb="Mastery"
-				:icon="MY.skills[name].mod"
-			></my-attribute>
+				:numb="skills_Race_Numb(name)"
+			></AppSkills>
 		</my-wrapper>
 </template>
 
@@ -26,7 +24,10 @@ export default {
 	},
 	computed: {
     ...mapState(useMYStore, ["MY", "Mastery"]),
-		...mapState(useSkillsStore, ["skills_All_RE"]),
+		...mapState(useSkillsStore, [ 
+      "skills_Race_Param",
+      "skills_Race_Numb"
+    ]),
 	},
 };
 </script>

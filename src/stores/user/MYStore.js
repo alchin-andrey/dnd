@@ -117,6 +117,20 @@ export const useMYStore = defineStore({
 			return (select) => (Array.isArray(select) ? select[lvl - 1] : select);
 		},
 
+    сustomm_Main_Settings_Ethnos_Arr() {
+			return this.settingsClass("race", this.MY.ethnos.settings, "custom");
+		},
+
+    сustomm_Backstories_Settings_Race_Arr() {
+			return this.settingsClass("race", this.MY.backstory.settings, "custom");
+		},
+
+    сustomm_Settings_Race_Arr() {
+      // const main_custom = this.сustomm_Main_Settings_Race_Arr;
+      const backstories_custom = this.сustomm_Backstories_Settings_Race_Arr;
+      return [...backstories_custom];
+    },
+
 		сustomm_Main_Settings_Class_Arr() {
 			return this.settingsClass("class", this.MY.class.settings, "custom");
 		},
@@ -126,15 +140,6 @@ export const useMYStore = defineStore({
 			return this.settingsSelectList("class", FeatsStore.feats_Select_Arr, "custom");
 		},
 
-    сustomm_Backstories_Settings_Race_Arr() {
-			return this.settingsClass("race", this.MY.backstory.settings, "custom");
-		},
-
-    сustomm_Settings_Race_Arr() {
-      const backstories_custom = this.сustomm_Backstories_Settings_Race_Arr;
-      return [...backstories_custom];
-    },
-
     сustomm_Settings_Class_Arr(stor) {
       const FeatsStore = useFeatsStore();
       const main_custom = stor.сustomm_Main_Settings_Class_Arr;
@@ -143,9 +148,17 @@ export const useMYStore = defineStore({
       return () => [...main_custom, ...feats, ...feats_custom];
     },
 
-    filter_Custom_Class_Lvl: (state) => (name) => {
+    filter_Custom_Class_Lvl: (stor) => (name) => {
+      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr(), name);
+    },
+
+    filter_Custom_Race_Lvl: (stor) => (name) => {
+      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Race_Arr, name);
+    },
+
+    filter_Custom_Lvl: (state) => (arr, name) => {
       let res_arr = [];
-      state.сustomm_Settings_Class_Arr().forEach(el => {
+      arr.forEach(el => {
         el.select_list.forEach(sub_el => {
           const item_lvl = state.level_Filter_Arr(sub_el?.[name]);
           res_arr = res_arr.concat(item_lvl);
