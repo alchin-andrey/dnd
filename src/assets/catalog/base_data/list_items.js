@@ -727,4 +727,26 @@ export default {
     cost: 50,
     weight: 1,
   },
+
+  playing_dragon_chess: {
+    name: "playing_dragon_chess",
+    details: "playing_dragon_chess_details",
+    cost: 100,
+    weight: 0.25,
+  },
+
+  playing_dragon_poker: {
+    name: "playing_dragon_poker",
+    details: "playing_dragon_poker_details",
+    cost: 100,
+    weight: 0.1,
+  },
+
+  playing_dice: {
+    name: "playing_dice",
+    details: "playing_dice_details",
+    cost: 10,
+    weight: 0.1,
+  },
 };
+ 

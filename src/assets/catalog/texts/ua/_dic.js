@@ -4670,7 +4670,7 @@ export default {
   tools_carpenters_tools: "Інструменти тесляра",
   tools_carpenters_tools_details: "",
 
-  tools_calligraphers_supplies: "Инструментьі каліграфа",
+  tools_calligraphers_supplies: "Інструменти каліграфа",
   tools_calligraphers_supplies_details: "",
 
   tools_cartographers_tools: "Інструменти картографа",
@@ -4724,8 +4724,7 @@ export default {
 
   tool_transport_ground: "наземний транспорт",
 
-  shovel: "залізний горщик",
-  shovel_details: "Місткість: 1 галон (3,75 л)",
+  shovel: "лопата",
 
   tools_herbalists_tools: "набір травника",
   tools_herbalists_tools_details: "",
@@ -5279,4 +5278,10 @@ export default {
   spell_luck_feat_expanded: spells.luck_feat_expanded,
 
   player: "гравець",
+  playing_dragon_chess: "Драконові шахи",
+  playing_dragon_poker: "Драконовий покер",
+  playing_dice: "Гральні куби",
+
+  iron_pot: "Залізний горщик",
+  iron_pot_details: "Місткість: 1 галон (3,75 л)",
 };

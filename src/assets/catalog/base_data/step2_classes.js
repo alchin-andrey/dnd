@@ -3302,101 +3302,98 @@ export default {
         name: "tools",
         select: 1,
         list: [
+          
           {
-            name_set: items.tools_alchemists_supplies.name,
-            proficiencies: {
-              tools: [tools.alchemists_supplies],
-            },
+            name_set: tools.potters_tools.name,
+            equipment: [{ inventory: [[items.tools_potters_tools, 1]] }],
+            proficiencies: { tools: [tools.potters_tools] },
           },
           {
-            name_set: items.tools_potters_tools.name,
-            proficiencies: {
-              tools: [tools.potters_tools],
-            },
+            name_set: tools.cooks_tools.name,
+            equipment: [{ inventory: [[items.tools_cooks_tools, 1]] }],
+            proficiencies: { tools: [tools.cooks_tools] },
           },
           {
-            name_set: items.tools_tinkers_tools.name,
-            proficiencies: {
-              tools: [tools.tinkers_tools],
-            },
+            name_set: tools.brewer.name,
+            equipment: [{ inventory: [[items.tools_brewer, 1]] }],
+            proficiencies: { tools: [tools.brewer] },
+          }, 
+          {
+            name_set: tools.alchemists_supplies.name,
+            equipment: [{ inventory: [[items.tools_alchemists_supplies, 1]] }],
+            proficiencies: { tools: [tools.alchemists_supplies] },
           },
           {
-            name_set: items.tools_calligraphers_supplies.name,
-            proficiencies: {
-              tools: [tools.calligraphers_supplies],
-            },
+            name_set: tools.glassblowers_tools.name,
+            equipment: [{ inventory: [[items.tools_glassblowers_tools, 1]] }],
+            proficiencies: { tools: [tools.glassblowers_tools] },
           },
           {
-            name_set: items.tools_cobblers_tools.name,
-            proficiencies: {
-              tools: [tools.cobblers_tools],
-            },
+            name_set: tools.jewelers_tools.name,
+            equipment: [{ inventory: [[items.tools_jewelers_tools, 1]] }],
+            proficiencies: { tools: [tools.jewelers_tools] },
           },
           {
-            name_set: items.tools_cartographers_tools.name,
-            proficiencies: {
-              tools: [tools.cartographers_tools],
-            },
+            name_set: tools.weavers_tools.name,
+            equipment: [{ inventory: [[items.tools_weavers_tools, 1]] }],
+            proficiencies: { tools: [tools.weavers_tools] },
           },
           {
-            name_set: items.tools_leatherworkers_tools.name,
-            proficiencies: {
-              tools: [tools.leatherworkers_tools],
-            },
+            name_set: tools.painters_supplies.name,
+            equipment: [{ inventory: [[items.tools_painters_supplies, 1]] }],
+            proficiencies: { tools: [tools.painters_supplies] },
           },
           {
-            name_set: items.tools_blacksmith.name,
-            proficiencies: {
-              tools: [tools.blacksmith],
-            },
+            name_set: tools.calligraphers_supplies.name,
+            equipment: [
+              { inventory: [[items.tools_calligraphers_supplies, 1]] },
+            ],
+            proficiencies: { tools: [tools.calligraphers_supplies] },
           },
           {
-            name_set: items.tools_brewer.name,
-            proficiencies: {
-              tools: [tools.brewer],
-            },
+            name_set: tools.cartographers_tools.name,
+            equipment: [{ inventory: [[items.tools_cartographers_tools, 1]] }],
+            proficiencies: { tools: [tools.cartographers_tools] },
           },
           {
-            name_set: items.tools_carpenters_tools.name,
-            proficiencies: {
-              tools: [tools.carpenters_tools],
-            },
+            name_set: tools.navigators_tools.name,
+            equipment: [{ inventory: [[items.tools_navigators_tools, 1]] }],
+            proficiencies: { tools: [tools.navigators_tools] },
+          },         
+          {
+            name_set: tools.woodcarvers_tools.name,
+            equipment: [{ inventory: [[items.tools_woodcarvers_tools, 1]] }],
+            proficiencies: { tools: [tools.woodcarvers_tools] },
           },
           {
-            name_set: items.tools_cooks_tools.name,
-            proficiencies: {
-              tools: [tools.cooks_tools],
-            },
+            name_set: tools.carpenters_tools.name,
+            equipment: [{ inventory: [[items.tools_carpenters_tools, 1]] }],
+            proficiencies: { tools: [tools.carpenters_tools] },
           },
           {
-            name_set: items.tools_woodcarvers_tools.name,
-            proficiencies: {
-              tools: [tools.woodcarvers_tools],
-            },
+            name_set: tools.mason.name,
+            equipment: [{ inventory: [[items.tools_mason, 1]] }],
+            proficiencies: { tools: [tools.mason] },
           },
           {
-            name_set: items.tools_glassblowers_tools.name,
-            proficiencies: {
-              tools: [tools.glassblowers_tools],
-            },
+            name_set: tools.blacksmith.name,
+            equipment: [{ inventory: [[items.tools_blacksmith, 1]] }],
+            proficiencies: { tools: [tools.blacksmith] },
           },
           {
-            name_set: items.tools_weavers_tools.name,
-            proficiencies: {
-              tools: [tools.weavers_tools],
-            },
+            name_set: tools.tinkers_tools.name,
+            equipment: [{ inventory: [[items.tools_tinkers_tools, 1]] }],
+            proficiencies: { tools: [tools.tinkers_tools] },
           },
           {
-            name_set: items.tools_painters_supplies.name,
-            proficiencies: {
-              tools: [tools.painters_supplies],
-            },
-          },
+            name_set: tools.leatherworkers_tools.name,
+            equipment: [{ inventory: [[items.tools_leatherworkers_tools, 1]] }],
+            proficiencies: { tools: [tools.leatherworkers_tools] },
+          },         
           {
-            name_set: items.tools_jewelers_tools.name,
-            proficiencies: {
-              tools: [tools.jewelers_tools],
-            },
+            name_set: tools.cobblers_tools.name,
+            equipment: [{ inventory: [[items.tools_cobblers_tools, 1]] }],
+            proficiencies: { tools: [tools.cobblers_tools] },
           },
           {
             name_set: tools.music_dulcimer.name,

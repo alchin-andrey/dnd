@@ -4742,8 +4742,7 @@ export default {
 
   tool_transport_ground: "наземньій транспорт",
 
-  shovel: "железньій горшок",
-  shovel_details: "Вместимость: 1 галлон (3,75 л)",
+  shovel: "лопата",
 
   tools_herbalists_tools: "набор травника",
   tools_herbalists_tools_details: "",
@@ -5305,4 +5304,10 @@ export default {
   spell_luck_feat_expanded: spells.luck_feat_expanded,
 
   player: "игрок",
+  playing_dragon_chess: "Драконьи шахматьі",
+  playing_dragon_poker: "Драконий покер",
+  playing_dice: "Игровьіе кости",
+
+  iron_pot: "Железньій горшок",
+  iron_pot_details: "Вместимость: 1 галлон (3,75 л)",
 };  
