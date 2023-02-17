@@ -9,6 +9,7 @@
 			{{ t_Title }}
 		</div>
 		<div v-if="text_html" class="text" v-html="t_Html"></div>
+    <div v-if="text_html_2" class="text" v-html="t_Html_2"></div>
 		<div else class="text">
 			{{ t_Text }}
 			<span v-if="rare">{{ t_Rare }}</span>
@@ -28,6 +29,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		text_html_2: {
+			type: String,
+			default: null,
+		},
 		text: {
 			type: String,
 			default: null,
@@ -43,6 +48,9 @@ export default {
 		},
 		t_Html() {
 			return this.t(this.text_html);
+		},
+		t_Html_2() {
+			return this.t(this.text_html_2);
 		},
 		t_Text() {
 			return this.t(this.text);
