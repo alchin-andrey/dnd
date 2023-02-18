@@ -2,13 +2,13 @@
 // import { watch, toRef } from 'vue';
 import { acceptHMRUpdate, defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
-import { useStatsStore } from "@/stores/modules/StatsStore";
-import { useSkillsStore } from "@/stores/modules/SkillsStore";
-import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-import { useSpellsStore } from "@/stores/modules/SpellsStore";
+// import { useStatsStore } from "@/stores/modules/StatsStore";
+// import { useSkillsStore } from "@/stores/modules/SkillsStore";
+// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+// import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
-import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
-import { usePagesStore } from "@/stores/user/PagesStore";
+// import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
+// import { usePagesStore } from "@/stores/user/PagesStore";
 
 export const useMYStore = defineStore({
 	id: "MYStore",
@@ -82,12 +82,12 @@ export const useMYStore = defineStore({
       return () => [...main_custom, ...feats, ...feats_custom];
     },
 
-    filter_Custom_Class_Lvl: (stor) => (name) => {
-      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr(), name);
-    },
-
     filter_Custom_Race_Lvl: (stor) => (name) => {
       return stor.filter_Custom_Lvl(stor.сustomm_Settings_Race_Arr, name);
+    },
+
+    filter_Custom_Class_Lvl: (stor) => (name) => {
+      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr(), name);
     },
 
     filter_Custom_Lvl: (state) => (arr, name) => {

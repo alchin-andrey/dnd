@@ -81,7 +81,9 @@ export default {
 
           // stats: { constitution: 1 },
           stats: [{name: "constitution", num: 1, },],
-          qualities: { vision_night: 60 },
+
+          // qualities: { vision_night: 60 },
+          qualities: [{name: "vision_night", num: 60,},],
 
           fines: [
             {
@@ -277,7 +279,10 @@ export default {
 
           // stats: { dexterity: 1 },
           stats: [{ name: "dexterity", num: 1, },],
-          qualities: { vision_night: 60 },
+
+          // qualities: { vision_night: 60 },
+          qualities: [{name: "vision_night", num: 60,},],
+
 
           proficiencies: {
             languages: [lang.animal],
@@ -318,7 +323,9 @@ export default {
 
           // stats: { dexterity: 1 },
           stats: [{ name: "dexterity", num: 1, },],
-          qualities: { vision_night: 120 },
+
+          // qualities: { vision_night: 120 },
+          qualities: [{name: "vision_night", num: 120,},],
 
           proficiencies: {
             languages: [lang.undercommon],
@@ -394,7 +401,9 @@ export default {
 
     // stats: { intelligence: 2 },
     stats: [{ name: "intelligence", num: 2, },],
-    qualities: { speed: 25 },
+
+    // qualities: { speed: 25 },
+    qualities: [{name: "speed", num: 25,},],
 
     proficiencies: {
       weapons: [weaponry.dimple],
@@ -550,7 +559,9 @@ export default {
 
     // stats: { dexterity: 2 },
     stats: [{ name: "dexterity", num: 2, },],
-    qualities: { speed: 25 },
+
+    // qualities: { speed: 25 },
+    qualities: [{name: "speed", num: 25,},],
 
     proficiencies: {
       weapons: [weaponry.dimple],
@@ -625,7 +636,9 @@ export default {
 
           // stats: { strength: 2 },
           stats: [{ name: "strength", num: 2, },],
-          qualities: { vision_night: 60 },
+
+          // qualities: { vision_night: 60 },
+          qualities: [{name: "vision_night", num: 60,},],
 
           proficiencies: {
             armor: [armory.light, armory.medium],
@@ -654,7 +667,9 @@ export default {
 
           // stats: { wisdom: 1 },
           stats: [{ name: "wisdom", num: 1, },],
-          qualities: { vision_night: 60 },
+
+          // qualities: { vision_night: 60 },
+          qualities: [{name: "vision_night", num: 60,},],
 
           hp_bonus: [1,1],
 
@@ -683,7 +698,9 @@ export default {
 
           // stats: { strength: 1 },
           stats: [{ name: "strength", num: 1, },],
-          qualities: { vision_night: 120 },
+
+          // qualities: { vision_night: 120 },
+          qualities: [{name: "vision_night", num: 120,},],
 
           charges: [
             {
@@ -790,7 +807,9 @@ export default {
 
     // stats: { constitution: 2 },
     stats: [{ name: "constitution", num: 2, },],
-    qualities: { speed: 25 },
+
+    // qualities: { speed: 25 },
+    qualities: [{name: "speed", num: 25,},],
 
     proficiencies: {
       languages: [lang.common, lang.dwarf],
@@ -1270,7 +1289,9 @@ export default {
       { name: "wisdom", num: 1, },
       { name: "charisma", num: 1, },
     ],
-    qualities: { speed: 30 },
+
+    // qualities: { speed: 30 },
+    qualities: [{name: "speed", num: 30,},],
 
     proficiencies: {
       weapons: [weaponry.dimple],
@@ -1759,7 +1780,11 @@ export default {
     // stats: { charisma: 2 },
     stats: [{ name: "charisma", num: 2, },],
 
-    qualities: { speed: 30, vision_night: 60 },
+    // qualities: { speed: 30, vision_night: 60 },
+    qualities: [
+      {name: "speed", num: 30,},
+      {name: "vision_night", num: 60,},
+    ],
 
     proficiencies: {
       weapons: [weaponry.dimple],
@@ -1810,9 +1835,9 @@ export default {
 
           // stats: {wisdom: 1,},
           stats: [{ name: "wisdom", num: 1, },],
-          qualities: {
-            vision_night: 60,
-          },
+
+          // qualities: {vision_night: 60,},
+          qualities: [{name: "vision_night", num: 60,},],
 
           proficiencies: {
             weapons: [
@@ -2034,9 +2059,9 @@ export default {
 
           // stats: {wisdom: 1,},
           stats: [{ name: "wisdom", num: 1, },],
-          qualities: {
-            vision_night: 60,
-          },
+
+          // qualities: {vision_night: 60,},
+          qualities: [{name: "vision_night", num: 60,},],
 
           proficiencies: {
             weapons: [
@@ -2088,9 +2113,9 @@ export default {
 
           // stats: {charisma: 1,},
           stats: [{ name: "charisma", num: 1, },],
-          qualities: {
-            vision_night: 120,
-          },
+
+          // qualities: {vision_night: 120,},
+          qualities: [{name: "vision_night", num: 120,},],
 
           proficiencies: {
             weapons: [
@@ -2319,9 +2344,8 @@ export default {
     // stats: {dexterity: 2,},
     stats: [{ name: "dexterity", num: 2, },],
 
-    qualities: {
-      speed: 30,
-    },
+    // qualities: {speed: 30,},
+    qualities: [{name: "speed", num: 30,},],
 
     // skills: {perception: "mastery",},
     skills: [{name: "perception", num: "Mastery",},],
@@ -2540,7 +2564,11 @@ export default {
       { name: "charisma", num: 2, },
   ],
 
-    qualities: { speed: 30, vision_night: 60 },
+    // qualities: { speed: 30, vision_night: 60 },
+    qualities: [
+      {name: "speed", num: 30,},
+      {name: "vision_night", num: 60,},
+    ],
 
     charges: [
       {
@@ -2673,7 +2701,11 @@ export default {
     // skills: {intimidation: "mastery",},
     skills: [{name: "intimidation", num: "Mastery",},],
 
-    qualities: { speed: 30, vision_night: 60 },
+    // qualities: { speed: 30, vision_night: 60 },
+    qualities: [
+      {name: "speed", num: 30,},
+      {name: "vision_night", num: 60,},
+    ],
 
     proficiencies: {
       weapons: [weaponry.dimple],
@@ -3052,7 +3084,8 @@ export default {
       { name: "constitution", num: 1, },
   ],
 
-    qualities: { speed: 30 },
+    // qualities: { speed: 30 },
+    qualities: [{name: "speed", num: 30,},],
 
     proficiencies: {
       weapons: [weaponry.dimple],

@@ -1,7 +1,7 @@
 <template>
 	<div class="ethnos_attributes">
 		<!-- Этнос_stats + qualities -->
-		<my-wrapper v-if="MY.race.stats || MY.race.qualities">
+		<my-wrapper v-if="MY.race.stats || level_Filter_Arr(MY.race.qualities).length !== 0">
 			<AppStats
 				v-for="stat in MY.race.stats"
 				:key="stat.name"
@@ -10,13 +10,14 @@
 				plus
 				:numb="stat.num"
 			/>
-			<my-attribute
-				v-for="(val, name) in MY.race.qualities"
-				:key="name"
-				:title="name"
-				:numb="val"
-				feet
-			></my-attribute>
+      <my-attribute
+					v-for="qual in level_Filter_Arr(MY.race.qualities)"
+					:key="qual"
+					:title="qual.name"
+					:numb="qual.num"
+					:feet="qual.name == 'speed' || qual.name == 'vision_night'"
+					:plus="qual.type == 'bonus'"
+				/>
 		</my-wrapper>
 		<!-- Этнос_stats + qualities -->
 
@@ -83,8 +84,7 @@ export default {
 	},
 
 	computed: {
-		...mapState(useMYStore, ["MY"]),
-		...mapState(useMYStore, ["languages_Custom_Arr_RE"]),
+		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_Race"]),
     ...mapState(useChargesStore, ["charges_Race_Main_Arr"]),
 

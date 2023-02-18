@@ -19,7 +19,7 @@
 			</div>
 
 			<!-- Этнос_Карточка_stats + qualities -->
-			<my-wrapper v-if="ethnos.stats || ethnos.qualities">
+			<my-wrapper v-if="ethnos.stats || level_Filter_Arr(ethnos.qualities).length !== 0">
 				<AppStats
 					v-for="stat in ethnos.stats"
 					:key="stat.name"
@@ -31,18 +31,20 @@
 				<my-attribute
 					v-if="ethnos.hp_bonus"
 					title="hp_bonus"
-					:numb="hp_Bonus(ethnos.hp_bonus[0], ethnos.hp_bonus[1])"
+					:numb="hp_Bonus(ethnos)"
 					plus
 					icon="hp_bonus"
 				/>
 				<my-attribute
-					v-for="(val, name) in ethnos.qualities"
-					:key="name"
-					:title="name"
-					feet
-					:numb="val"
+					v-for="qual in level_Filter_Arr(ethnos.qualities)"
+					:key="qual"
+					:title="qual.name"
+					:numb="qual.num"
+					:feet="qual.name == 'speed' || qual.name == 'vision_night'"
+					:plus="qual.type == 'bonus'"
 				/>
 			</my-wrapper>
+
 			<!-- Этнос_Карточка_stats + qualities-->
 
 			<!-- Этнос_Карточка_Charges -->
@@ -113,7 +115,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
@@ -128,10 +130,7 @@ export default {
 		...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
 		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
-
-		// select_Sum() {
-		// 	return (name) => this[`${name}_Pass_Arr_RE`].length;
-		// },
+		...mapState(useQualitiesStore, ["hp_Bonus"]),
 
 		select_Numb: (stor) => (select) => {
 			const lvl = stor.MY.level;
@@ -140,11 +139,6 @@ export default {
 
 		select_Sum: (stor) => (list) => {
 			return list ? list.length : 10.000000001;
-		},
-
-		hp_Bonus: (state) => (increm_1, increm_2) => {
-			let level = Math.ceil(state.MY.level / increm_1);
-			return level * increm_2;
 		},
 	},
 	methods: {

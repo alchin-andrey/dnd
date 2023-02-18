@@ -68,7 +68,7 @@
 			<my-attribute
 				v-if="custom.hp_bonus"
 				title="hp_bonus"
-				:numb="hp_Bonus(custom.hp_bonus[0], custom.hp_bonus[1])"
+				:numb="hp_Bonus(custom)"
 				plus
 			/>
 			<my-attribute
@@ -181,9 +181,7 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
-// import { useSkillsStore } from "@/stores/modules/SkillsStore";
-// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-// import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useEquipStore } from "@/stores/modules/EquipStore";
 
@@ -222,24 +220,7 @@ export default {
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr", "gold_Equip_Numb"]),
 		...mapState(useStatsStore, ["stats_Saving_Arr"]),
-
-		speed_Bonus_True() {
-			const qualities = this.level_Filter_Arr(this.custom.qualities);
-			const speed_bonus_arr = qualities.filter(
-				(el) => el.speed_bonus && el.show
-			);
-			return speed_bonus_arr;
-		},
-
-		vision_Night_Numb() {
-			const qualities = this.level_Filter_Arr(this.custom.qualities);
-			const vision_night = qualities.filter((el) => el.vision_night);
-			let numb_MAX = 0;
-			vision_night.forEach(
-				(el) => (numb_MAX = Math.max(numb_MAX, el.vision_night))
-			);
-			return numb_MAX;
-		},
+		...mapState(useQualitiesStore, ["hp_Bonus"]),
 
     shown_Proficiencies() {
       if(this.custom.proficiencies) {
@@ -261,11 +242,6 @@ export default {
 				this.level_Filter_Arr(this.custom.saving).length !== 0 ||
 				this.level_Filter_Arr(this.custom.stats).length !== 0
 			);
-		},
-
-		hp_Bonus: (stor) => (increm_1, increm_2) => {
-			let level = Math.ceil(stor.MY.level / increm_1);
-			return level * increm_2;
 		},
 
 		packs_Equip: (stor) => (obj_arr) => {
