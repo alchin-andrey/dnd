@@ -37,7 +37,11 @@ export default {
 	},
 
 	methods: {
-		...mapActions(useSkillsStore, ["getCustomSelect_Skills_RE"]),
+
+    getCustomSelect_Skills_RE(name) {
+      const MYStore = useMYStore();
+			MYStore.getCustomSelect_COMMON_RE("skills", name);
+		},
 
 		getSkillMarg(i, name) {
 			if (i === 0) {

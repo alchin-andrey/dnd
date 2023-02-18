@@ -546,10 +546,6 @@ export default {
         max: 20,
       },
 
-      // ТОЛЬКО ДЛЯ ОТЛАДКИ
-      // custom_stats: [2, 1], // [колво, инкремент]
-      // custom_skills: [2, "mastery"],
-      // custom_languages: [2],
     },
 
     // stats: { dexterity: 2 },
@@ -2327,9 +2323,8 @@ export default {
       speed: 30,
     },
 
-    skills: {
-      perception: "mastery",
-    },
+    // skills: {perception: "mastery",},
+    skills: [{name: "perception", num: "Mastery",},],
 
     proficiencies: {
       weapons: [weaponry.dimple],
@@ -2675,9 +2670,8 @@ export default {
       { name: "constitution", num: 1, },
   ],
 
-    skills: {
-      intimidation: "mastery",
-    },
+    // skills: {intimidation: "mastery",},
+    skills: [{name: "intimidation", num: "Mastery",},],
 
     qualities: { speed: 30, vision_night: 60 },
 

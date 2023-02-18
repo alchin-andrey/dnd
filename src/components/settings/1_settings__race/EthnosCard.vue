@@ -74,9 +74,9 @@
 			<!-- Этнос_Карточка_fines -->
 
 			<!-- Этнос_Карточка_spells -->
-			<my-wrapper v-if="shown_Spells_Ethnos(ethnos.spells)" gap_26>
+			<my-wrapper v-if="level_Filter_Arr(ethnos.spells).length !== 0" gap_26>
 				<my-spell-text
-					v-for="item in ethnos.spells"
+					v-for="item in level_Filter_Arr(ethnos.spells)"
 					:key="item"
 					:lvl="item.level"
 					:spell="item.spell"
@@ -140,13 +140,6 @@ export default {
 
 		select_Sum: (stor) => (list) => {
 			return list ? list.length : 10.000000001;
-		},
-
-		shown_Spells_Ethnos: (state) => (spells) => {
-			let ethnos_spells = spells;
-			let lvl = state.MY.level;
-			let spells_lvl = ethnos_spells?.[0].level <= lvl;
-			return ethnos_spells && spells_lvl;
 		},
 
 		hp_Bonus: (state) => (increm_1, increm_2) => {

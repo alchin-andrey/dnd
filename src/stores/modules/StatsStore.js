@@ -72,9 +72,9 @@ export const useStatsStore = defineStore({
 
     stats_Class_Page() {
       const MYStore = useMYStore();
-      const class_stats = MYStore.level_Filter_Arr(MYStore.MY.class?.stats);
-      const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
-      return [...class_stats, ...custom_stats];
+      const class_main = MYStore.level_Filter_Arr(MYStore.MY.class?.stats);
+      const class_custom = MYStore.filter_Custom_Class_Lvl("stats");
+      return [...class_main, ...class_custom];
     },
 
     stats_RC_Page() {

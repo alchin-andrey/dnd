@@ -108,30 +108,28 @@ export const useSkillsStore = defineStore({
     },
     //NOTE - OLD End
 
-    skills_Race_Settings() {
+    skills_Numb_Bonus: (stor) => (arr_all, name) => {
+      const filter_name = arr_all.filter(el => el.name == name);
+      return filter_name.reduce((acc, el) => acc + stor[el.num], 0);
+		},
+
+    skills_Race_All() {
       const MYStore = useMYStore();
-      const skills_backstory = MYStore.level_Filter_Arr(MYStore.MY.backstory.skills);
-      const skills_custom = MYStore.filter_Custom_Race_Lvl("skills");
-      return [...skills_backstory , ...skills_custom];
+      const race = MYStore.level_Filter_Arr(MYStore.MY.race?.skills);
+      const ethnos = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.skills);
+      const backstory = MYStore.level_Filter_Arr(MYStore.MY.backstory?.skills);
+      const race_custom = MYStore.filter_Custom_Race_Lvl("skills");
+      return [...race, ...ethnos, ...backstory, ...race_custom];
     },
 
     skills_Race_Param() {
-      const skills_name_RE_OLD = this.skills_All_RE; //NOTE - OLD
-
-      const skills_sett = this.skills_Race_Settings;
-      const skills_sett_name = skills_sett.reduce((acc, el) => acc.concat(el.name), []);
-      const skills_name_ALL = [...skills_name_RE_OLD , ...skills_sett_name];
-			const uniqu_name = [...new Set(skills_name_ALL)];
+      const skills_name_all = this.skills_Race_All.reduce((acc, el) => acc.concat(el.name), []);
+			const uniqu_name = [...new Set(skills_name_all)];
       return uniqu_name;
     },
 
     skills_Race_Numb: (stor) => (name) => {
-      const skills_RP = stor.skills_RP_Numb(name); //NOTE - OLD
-      
-      const skills_sett = stor.skills_Race_Settings;
-      const skills_name = skills_sett.filter(el => el.name == name);
-      let skill_numb = skills_name.reduce((acc, el) => acc + stor[el.num], 0);
-			return skills_RP + skill_numb;
+			return stor.skills_Numb_Bonus(stor.skills_Race_All, name);
 		},
 
     skills_MOD_Numb: (stor) => (name) => {
@@ -146,20 +144,27 @@ export const useSkillsStore = defineStore({
 			return skills_RP + skills_MOD;
 		},
 
-    skills_Class_Numb: (stor) => (name) => {
+    skills_Class_All() {
       const MYStore = useMYStore();
-      const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
-      const skills_name = skills_custom.filter(el => el.name == name);
-      let skill_numb = skills_name.reduce((acc, el) => acc + stor[el.num], 0);
-			return skill_numb;
+      const class_main = MYStore.level_Filter_Arr(MYStore.MY.class?.skills);
+      const class_custom = MYStore.filter_Custom_Class_Lvl("skills");
+      return [...class_main, ...class_custom,];
+    },
+
+    stats_RC_Page() {
+      const race_skills = this.skills_Race_All;
+      const class_skills = this.skills_Class_All;
+      return [...race_skills, ...class_skills];
+    },
+
+    skills_Class_Numb: (stor) => (name) => {
+			return stor.skills_Numb_Bonus(stor.skills_Class_All, name);
 		},
 
-    skills_All_Numb: (stor) => (name) => {
+    skills_RC_All_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
-      const skill_RP = stor.skills_Race_Numb(name);
       const skill_MOD = stor.skills_MOD_Numb(name);
-      const skill_Class = stor.skills_Class_Numb(name);
-      const skill_Mastery = skill_Class + skill_RP;
+      const skill_Mastery = stor.skills_Numb_Bonus(stor.stats_RC_Page, name);;
 
       const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
 			let skills_foo = null;
@@ -168,12 +173,8 @@ export const useSkillsStore = defineStore({
     },
 
     skills_Class_Param() {
-      const MYStore = useMYStore();
-      const skills_name_RP = this.skills_Race_Param;
-      const skills_custom = MYStore.filter_Custom_Class_Lvl("skills");
-      const skills_custom_name = skills_custom.reduce((acc, el) => acc.concat(el.name), []);
-      const skills_name_ALL = skills_name_RP.concat(skills_custom_name);
-			const uniqu_name = [...new Set(skills_name_ALL)];
+      const skills_RC_name = this.stats_RC_Page.reduce((acc, el) => acc.concat(el.name), []);
+			const uniqu_name = [...new Set(skills_RC_name)];
       return uniqu_name;
     },
 
@@ -237,9 +238,5 @@ export const useSkillsStore = defineStore({
   },
 
   actions: {
-    getCustomSelect_Skills_RE(name) {
-      const MYStore = useMYStore();
-			MYStore.getCustomSelect_COMMON_RE("skills", name);
-		},
   }
 });

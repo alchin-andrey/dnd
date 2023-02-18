@@ -5,7 +5,7 @@
 			:key="name"
 			:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
 			:title="name"
-			:numb="skills_All_Numb(name)"
+			:numb="skills_RC_All_Numb(name)"
 		/>
 	</my-wrapper>
 </template>
@@ -29,7 +29,7 @@ export default {
 		...mapState(useStatsStore, ["stats_Saving_Arr"]),
 		...mapState(useSkillsStore, [
 			"skills_Keys",
-			"skills_All_Numb",
+			"skills_RC_All_Numb",
 			"getSkillMarg",
 		]),
 	},

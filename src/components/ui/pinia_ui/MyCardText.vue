@@ -12,7 +12,7 @@
     <div v-if="text_html_2" class="text" v-html="t_Html_2"></div>
 		<div else class="text">
 			{{ t_Text }}
-			<span v-if="rare">{{ t_Rare }}</span>
+			<div class="rare-text" v-if="rare">{{ t_Rare }}</div>
 		</div>
 	</div>
 </template>
@@ -98,6 +98,13 @@ export default {
 }
 
 .text span:first-letter {
+	text-transform: uppercase;
+}
+.rare-text {
+  color: #ffc93d;
+}
+
+.rare-text:first-letter {
 	text-transform: uppercase;
 }
 </style>
