@@ -39,16 +39,34 @@ export default {
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
     ...mapState(useMYStore, ["ethnos_Setting"]),
-		...mapState(useStatsStore, [
-			"stats_Keys",
-			"stats_Pass_Arr_RE",
-			"stats_Custom_Arr_RE",
-			"stats_Race_Page_Numb",
-		]),
+
+    stats_Keys() {
+      const MYStore = useMYStore();
+			return Object.keys(MYStore.MY.stats);
+		},
+
+    stats_Activ_Obj_RE() {
+      const MYStore = useMYStore();
+			let i = MYStore.MY.race.stats;
+			let j = MYStore.MY.ethnos.stats;
+			return Object.assign({}, i, j);
+		},
+
+		stats_Activ_Arr_RE() {
+			return Object.keys(this.stats_Activ_Obj_RE);
+		},
+
+		stats_Pass_Arr_RE(state) {
+			return this.stats_Keys.filter(
+				(el) => !this.stats_Activ_Arr_RE.includes(el)
+			);
+		},
 	},
 
 	methods: {
-    ...mapActions(useStatsStore, ["getCustomSelect_Stats_RE"]),
+    getCustomSelect_Stats_RE(name) {
+			this.getCustomSelect_COMMON_RE("stats", name);
+		},
 	},
 };
 </script>

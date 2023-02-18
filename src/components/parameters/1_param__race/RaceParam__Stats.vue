@@ -1,14 +1,13 @@
 <template>
 	<my-wrapper :hr="hr">
-		<my-attribute
+		<AppStats
 			v-for="name in stats_Keys"
 			:key="name"
 			:title="name"
 			:type="`${name}_base`"
 			plus
 			:numb="stats_Race_Page_Numb(name)"
-		>
-		</my-attribute>
+		/>
 	</my-wrapper>
 </template>
 

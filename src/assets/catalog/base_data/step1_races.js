@@ -79,7 +79,8 @@ export default {
             hair: [color[2][3], color[2][2]],
           },
 
-          stats: { constitution: 1 },
+          // stats: { constitution: 1 },
+          stats: [{name: "constitution", num: 1, },],
           qualities: { vision_night: 60 },
 
           fines: [
@@ -274,7 +275,8 @@ export default {
             hair: [color[2][5]],
           },
 
-          stats: { dexterity: 1 },
+          // stats: { dexterity: 1 },
+          stats: [{ name: "dexterity", num: 1, },],
           qualities: { vision_night: 60 },
 
           proficiencies: {
@@ -314,7 +316,8 @@ export default {
             max: 54,
           },
 
-          stats: { dexterity: 1 },
+          // stats: { dexterity: 1 },
+          stats: [{ name: "dexterity", num: 1, },],
           qualities: { vision_night: 120 },
 
           proficiencies: {
@@ -389,8 +392,8 @@ export default {
       },
     },
 
-    stats: { intelligence: 2 },
-
+    // stats: { intelligence: 2 },
+    stats: [{ name: "intelligence", num: 2, },],
     qualities: { speed: 25 },
 
     proficiencies: {
@@ -430,11 +433,8 @@ export default {
             hair: [color[0][6]],
           },
 
-          stats: { charisma: 1 },
-
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
-          // hp_bonus: [1,1],
-          // ТОЛЬКО ДЛЯ ОТЛАДКИ
+          // stats: { charisma: 1 },
+          stats: [{ name: "charisma", num: 1, },],
 
           fines: [
             {
@@ -458,7 +458,8 @@ export default {
             hair: [color[1][4]],
           },
 
-          stats: { constitution: 1 },
+          // stats: { constitution: 1 },
+          stats: [{ name: "constitution", num: 1, },],
 
           fines: [
             {
@@ -487,7 +488,8 @@ export default {
             hair: [color[2][5]],
           },
 
-          stats: { wisdom: 1 },
+          // stats: { wisdom: 1 },
+          stats: [{ name: "wisdom", num: 1, },],
 
           fines: [
             {
@@ -550,8 +552,8 @@ export default {
       // custom_languages: [2],
     },
 
-    stats: { dexterity: 2 },
-
+    // stats: { dexterity: 2 },
+    stats: [{ name: "dexterity", num: 2, },],
     qualities: { speed: 25 },
 
     proficiencies: {
@@ -625,7 +627,8 @@ export default {
             ],
           },
 
-          stats: { strength: 2 },
+          // stats: { strength: 2 },
+          stats: [{ name: "strength", num: 2, },],
           qualities: { vision_night: 60 },
 
           proficiencies: {
@@ -653,7 +656,8 @@ export default {
             hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
           },
 
-          stats: { wisdom: 1 },
+          // stats: { wisdom: 1 },
+          stats: [{ name: "wisdom", num: 1, },],
           qualities: { vision_night: 60 },
 
           hp_bonus: [1,1],
@@ -681,7 +685,8 @@ export default {
             ],
           },
 
-          stats: { strength: 1 },
+          // stats: { strength: 1 },
+          stats: [{ name: "strength", num: 1, },],
           qualities: { vision_night: 120 },
 
           charges: [
@@ -787,8 +792,8 @@ export default {
       },
     },
 
-    stats: { constitution: 2 },
-
+    // stats: { constitution: 2 },
+    stats: [{ name: "constitution", num: 2, },],
     qualities: { speed: 25 },
 
     proficiencies: {
@@ -1253,15 +1258,22 @@ export default {
       },
     },
 
-    stats: {
-      strength: 1,
-      dexterity: 1,
-      constitution: 1,
-      intelligence: 1,
-      wisdom: 1,
-      charisma: 1,
-    },
-
+    // stats: {
+    //   strength: 1,
+    //   dexterity: 1,
+    //   constitution: 1,
+    //   intelligence: 1,
+    //   wisdom: 1,
+    //   charisma: 1,
+    // },
+    stats: [
+      { name: "strength", num: 1, },
+      { name: "dexterity", num: 1, },
+      { name: "constitution", num: 1, },
+      { name: "intelligence", num: 1, },
+      { name: "wisdom", num: 1, },
+      { name: "charisma", num: 1, },
+    ],
     qualities: { speed: 30 },
 
     proficiencies: {
@@ -1748,7 +1760,8 @@ export default {
       },
     },
 
-    stats: { charisma: 2 },
+    // stats: { charisma: 2 },
+    stats: [{ name: "charisma", num: 2, },],
 
     qualities: { speed: 30, vision_night: 60 },
 
@@ -1799,9 +1812,8 @@ export default {
             ],
           },
 
-          stats: {
-            wisdom: 1,
-          },
+          // stats: {wisdom: 1,},
+          stats: [{ name: "wisdom", num: 1, },],
           qualities: {
             vision_night: 60,
           },
@@ -2024,9 +2036,8 @@ export default {
             ],
           },
 
-          stats: {
-            wisdom: 1,
-          },
+          // stats: {wisdom: 1,},
+          stats: [{ name: "wisdom", num: 1, },],
           qualities: {
             vision_night: 60,
           },
@@ -2079,9 +2090,8 @@ export default {
             ],
           },
 
-          stats: {
-            charisma: 1,
-          },
+          // stats: {charisma: 1,},
+          stats: [{ name: "charisma", num: 1, },],
           qualities: {
             vision_night: 120,
           },
@@ -2310,9 +2320,8 @@ export default {
       },
     },
 
-    stats: {
-      dexterity: 2,
-    },
+    // stats: {dexterity: 2,},
+    stats: [{ name: "dexterity", num: 2, },],
 
     qualities: {
       speed: 30,
@@ -2530,7 +2539,11 @@ export default {
       },
     },
 
-    stats: { intelligence: 1, charisma: 2 },
+    // stats: { intelligence: 1, charisma: 2 },
+    stats: [
+      { name: "intelligence", num: 1, },
+      { name: "charisma", num: 2, },
+  ],
 
     qualities: { speed: 30, vision_night: 60 },
 
@@ -2656,10 +2669,11 @@ export default {
       },
     },
 
-    stats: {
-      strength: 2,
-      constitution: 1,
-    },
+    // stats: {strength: 2,constitution: 1,},
+    stats: [
+      { name: "strength", num: 2, },
+      { name: "constitution", num: 1, },
+  ],
 
     skills: {
       intimidation: "mastery",
@@ -3038,10 +3052,11 @@ export default {
       },
     },
 
-    stats: {
-      strength: 2,
-      charisma: 1,
-    },
+    // stats: {strength: 2,charisma: 1,},
+    stats: [
+      { name: "strength", num: 2, },
+      { name: "constitution", num: 1, },
+  ],
 
     qualities: { speed: 30 },
 

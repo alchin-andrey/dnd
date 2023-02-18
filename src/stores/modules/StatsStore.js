@@ -30,68 +30,31 @@ export const useStatsStore = defineStore({
 
   getters: {
     stats_Keys() {
+			return this.stats;
+		},
+
+    stats_Numb_Bonus: (stor) => (arr_all, name) => {
+      const filter_name = arr_all.filter(el => el.name == name);
+      return filter_name.reduce((acc, el) => acc + el.num, 0);
+		},
+
+		stats_Race_Page() {
       const MYStore = useMYStore();
-			return Object.keys(MYStore.MY.stats);
+      const race = MYStore.level_Filter_Arr(MYStore.MY.race?.stats);
+      const ethnos = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.stats);
+      const backstory = MYStore.level_Filter_Arr(MYStore.MY.backstory?.stats);
+      const race_custom = MYStore.filter_Custom_Race_Lvl("stats");
+      return [...race, ...ethnos, ...backstory, ...race_custom];
 		},
 
-    //NOTE - Race_Page
-		stats_Activ_Obj_RE() {
-      const MYStore = useMYStore();
-			let i = MYStore.MY.race.stats;
-			let j = MYStore.MY.ethnos.stats;
-			return Object.assign({}, i, j);
+		stats_Race_Page_Numb: (stor) => (name) => {
+			return stor.stats_Numb_Bonus(stor.stats_Race_Page, name);
 		},
 
-		stats_Activ_Arr_RE() {
-			return Object.keys(this.stats_Activ_Obj_RE);
-		},
-
-		stats_Pass_Arr_RE(state) {
-			return this.stats_Keys.filter(
-				(el) => !this.stats_Activ_Arr_RE.includes(el)
-			);
-		},
-
-
-
-    //ANCHOR - NUMB
-    stats_RE_Numb: (state) => (name) => {
-			let option_value = state.stats_Activ_Obj_RE[name];
-			return option_value ? option_value : 0;
-		},
-
-		stats_Custom_RE_Numb: (state) => (name) => {
-      const MYStore = useMYStore();
-			let settings_stats = MYStore.ethnos_Setting("stats");
-			if (settings_stats) {
-				let option_true = MYStore.COMMON_Custom_Arr_RE("stats").includes(name);
-				if (option_true) {
-					let increment = settings_stats.num;
-					return increment;
-				} else {
-					return 0;
-				}
-			} else {
-				return 0;
-			}
-		},
-
-		stats_Race_Page_Numb: (store) => (name) => {
-      const MYStore = useMYStore();
-			const RE = store.stats_RE_Numb(name);
-			// const custom = store.stats_Custom_RE_Numb(name);
-
-      const custom_stats = MYStore.filter_Custom_Race_Lvl("stats");
-      // const class_stats_all = [...class_stats, ...custom_stats];
-      const class_stats_name = custom_stats.filter(el => el.name == name);
-      const bonus_numb = class_stats_name.reduce((acc, el) => acc + el.num, 0);
-			return RE + bonus_numb;
-		},
-
-    stats_Base_Arr(store) {
+    stats_Base_Arr(stor) {
       const MYStore = useMYStore();
       let stats_arr_base = MYStore.MY.class.stats_base;
-      let stats_arr_save = store.stats_base_save[MYStore.MY.class.name];
+      let stats_arr_save = stor.stats_base_save[MYStore.MY.class.name];
       return stats_arr_save ? stats_arr_save : stats_arr_base;
     },
 
@@ -103,23 +66,28 @@ export const useStatsStore = defineStore({
         if(el.name == name) {
           max = Math.max(max, el.num);
         }
-      })
+      });
       return max;
     },
 
-    stats_Class_Page_Numb_Full: (stor) => (name) => {
+    stats_Class_Page() {
       const MYStore = useMYStore();
-      const REC = stor.stats_Race_Page_Numb(name);
-      
-      const index = stor.stats_Base_Arr.indexOf(name);
-      const base = stor.stats_base_numb[index];
-
       const class_stats = MYStore.level_Filter_Arr(MYStore.MY.class?.stats);
       const custom_stats = MYStore.filter_Custom_Class_Lvl("stats");
-      const class_stats_all = [...class_stats, ...custom_stats];
-      const class_stats_name = class_stats_all.filter(el => el.name == name);
-      const bonus_numb = class_stats_name.reduce((acc, el) => acc + el.num, 0);
-      return REC + base + bonus_numb;
+      return [...class_stats, ...custom_stats];
+    },
+
+    stats_RC_Page() {
+      const race_stats = this.stats_Race_Page;
+      const class_stats = this.stats_Class_Page;
+      return [...race_stats, ...class_stats];
+    },
+
+    stats_Class_Page_Numb_Full: (stor) => (name) => {
+      const index = stor.stats_Base_Arr.indexOf(name);
+      const BASE = stor.stats_base_numb[index];
+      const RC_bonus_numb = stor.stats_Numb_Bonus(stor.stats_RC_Page, name);
+      return BASE + RC_bonus_numb;
     },
 
     stats_Class_Page_Numb: (stor) => (name) => {
@@ -154,15 +122,15 @@ export const useStatsStore = defineStore({
       return [...new Set(this.stats_Saving_Arr_AllName)];
     },
 
-    stats_Save: (store) => (name) => {
+    stats_Save: (stor) => (name) => {
       const MYStore = useMYStore();
-      let save = store.stats_Saving_Arr.includes(name);
+      let save = stor.stats_Saving_Arr.includes(name);
       return save ? MYStore.Mastery : null;
     },
 
-    stats_Save_Mod: (store) => (name) => {
-      let mod = store.stats_Mod(name);
-      let save = store.stats_Save(name);
+    stats_Save_Mod: (stor) => (name) => {
+      let mod = stor.stats_Mod(name);
+      let save = stor.stats_Save(name);
       return mod + save;
     },
 
@@ -197,10 +165,5 @@ export const useStatsStore = defineStore({
   },
   
   actions: {
-    getCustomSelect_Stats_RE(name) {
-      const MYStore = useMYStore();
-			MYStore.getCustomSelect_COMMON_RE("stats", name);
-		},
-
   }
 });

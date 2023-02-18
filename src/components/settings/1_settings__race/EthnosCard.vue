@@ -20,13 +20,13 @@
 
 			<!-- Этнос_Карточка_stats + qualities -->
 			<my-wrapper v-if="ethnos.stats || ethnos.qualities">
-				<my-attribute
-					v-for="(val, name) in ethnos.stats"
-					:key="name"
-					:title="name"
-					:type="`${name}_base`"
+				<AppStats
+					v-for="stat in ethnos.stats"
+					:key="stat.name"
+					:title="stat.name"
+					:type="`${stat.name}_base`"
 					plus
-					:numb="val"
+					:numb="stat.num"
 				/>
 				<my-attribute
 					v-if="ethnos.hp_bonus"
@@ -93,7 +93,7 @@
 					:key="item"
 					:title="item.name"
 					:select="select_Numb(item.select)"
-          :sum="select_Sum(item.list)"
+					:sum="select_Sum(item.list)"
 				>
 				</MyCusstomSetting>
 			</my-wrapper>
@@ -124,7 +124,6 @@ export default {
 		// STORE
 		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
 		// GETTERS
-		...mapState(useStatsStore, ["stats_Pass_Arr_RE"]),
 		...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
 		...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
 		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
@@ -134,7 +133,7 @@ export default {
 		// 	return (name) => this[`${name}_Pass_Arr_RE`].length;
 		// },
 
-    select_Numb: (stor) => (select) => {
+		select_Numb: (stor) => (select) => {
 			const lvl = stor.MY.level;
 			return Array.isArray(select) ? select[lvl - 1] : select;
 		},

@@ -2,15 +2,14 @@
 	<div class="ethnos_attributes">
 		<!-- Этнос_stats + qualities -->
 		<my-wrapper v-if="MY.race.stats || MY.race.qualities">
-			<my-attribute
-				v-for="(val, name) in MY.race.stats"
-				:key="name"
-				:title="name"
-				:type="`${name}_base`"
+			<AppStats
+				v-for="stat in MY.race.stats"
+				:key="stat.name"
+				:title="stat.name"
+				:type="`${stat.name}_base`"
 				plus
-				:numb="val"
-			>
-			</my-attribute>
+				:numb="stat.num"
+			/>
 			<my-attribute
 				v-for="(val, name) in MY.race.qualities"
 				:key="name"
