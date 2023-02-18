@@ -80,9 +80,15 @@ export const useStatsStore = defineStore({
 		},
 
 		stats_Race_Page_Numb: (store) => (name) => {
+      const MYStore = useMYStore();
 			const RE = store.stats_RE_Numb(name);
-			const custom = store.stats_Custom_RE_Numb(name);
-			return RE + custom;
+			// const custom = store.stats_Custom_RE_Numb(name);
+
+      const custom_stats = MYStore.filter_Custom_Race_Lvl("stats");
+      // const class_stats_all = [...class_stats, ...custom_stats];
+      const class_stats_name = custom_stats.filter(el => el.name == name);
+      const bonus_numb = class_stats_name.reduce((acc, el) => acc + el.num, 0);
+			return RE + bonus_numb;
 		},
 
     stats_Base_Arr(store) {

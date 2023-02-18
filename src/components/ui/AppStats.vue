@@ -52,7 +52,7 @@
 <script>
 import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
-// import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "AppStats",
@@ -94,7 +94,7 @@ export default {
 
 	computed: {
 		// STORES
-		// ...mapState(useMYStore, ["MY"]),
+    ...mapState(usePagesStore, ["pages"]),
 		...mapState(useStatsStore, [
 			"stats_Class_Page_Numb_Overflow",
 			"stats_Class_Page_Numb",
@@ -148,7 +148,8 @@ export default {
 		},
 
 		save_Icon() {
-			return this.stats_Saving_Arr.includes(this.title) || this.only_Save;
+      const shown_save = this.pages.class_page ? this.stats_Saving_Arr.includes(this.title) : false;
+			return shown_save || this.only_Save;
 		},
 
 		max_Cube: (stor) => (n) => {

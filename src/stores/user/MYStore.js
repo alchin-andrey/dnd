@@ -127,7 +127,6 @@ export const useMYStore = defineStore({
 
     сustomm_Settings_Race_Arr() {
       const main_custom = this.сustomm_Main_Settings_Ethnos_Arr;
-      console.log('main_custom:', main_custom)
       const backstories_custom = this.сustomm_Backstory_Settings_Race_Arr;
       return [...main_custom, ...backstories_custom];
     },

@@ -129,9 +129,15 @@ export const useSpellsStore = defineStore({
 			return arr;
 		},
 
+    spells_Custom_Race_Lvl() {
+      const MYStore = useMYStore();
+      let spell_arr = MYStore.filter_Custom_Race_Lvl("spells");
+			return this.spells_For_Arr_Obj(spell_arr);
+		},
+
     spells_Race_Param_All() {
 			const RE_spells = this.spells_Activ_Obj_RE;
-			const custom_spells = this.spells_Custom_Obj_RE;
+			const custom_spells = this.spells_Custom_Race_Lvl;
       return [...RE_spells, ...custom_spells];
 		},
 

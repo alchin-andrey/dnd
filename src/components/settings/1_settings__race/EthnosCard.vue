@@ -92,8 +92,8 @@
 					v-for="item in ethnos.settings"
 					:key="item"
 					:title="item.name"
-					:select="item.select"
-					:sum="select_Sum(item.type)"
+					:select="select_Numb(item.select)"
+          :sum="select_Sum(item.list)"
 				>
 				</MyCusstomSetting>
 			</my-wrapper>
@@ -130,8 +130,17 @@ export default {
 		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 
-		select_Sum() {
-			return (name) => this[`${name}_Pass_Arr_RE`].length;
+		// select_Sum() {
+		// 	return (name) => this[`${name}_Pass_Arr_RE`].length;
+		// },
+
+    select_Numb: (stor) => (select) => {
+			const lvl = stor.MY.level;
+			return Array.isArray(select) ? select[lvl - 1] : select;
+		},
+
+		select_Sum: (stor) => (list) => {
+			return list ? list.length : 10.000000001;
 		},
 
 		shown_Spells_Ethnos: (state) => (spells) => {
