@@ -1283,25 +1283,350 @@ export default {
           name: "common",
           settings: [
             {
-              type: "stats",
+              type: "custom",
               name: "stats",
+              position:7,
               select: 2,
-              filter: "no_used",
-              num: 1,
+              list: [
+                {
+                  name_set: "strength",
+                  stats: [
+                    {
+                      name: "strength",
+                      num: 1,
+                      details: "strength_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "dexterity",
+                  stats: [
+                    {
+                      name: "dexterity",
+                      num: 1,
+                      details: "dexterity_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "constitution",
+                  stats: [
+                    {
+                      name: "constitution",
+                      num: 1,
+                      details: "constitution_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "intelligence",
+                  stats: [
+                    {
+                      name: "intelligence",
+                      num: 1,
+                      details: "intelligence_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "wisdom",
+                  stats: [
+                    {
+                      name: "wisdom",
+                      num: 1,
+                      details: "wisdom_details",
+                    },
+                  ],
+                },
+              ]
             },
             {
-              type: "skills",
+              type: "custom",
               name: "skills",
+              position: 8,
               select: 2,
-              filter: "no_used",
-              bonus: "mastery"
+              list: [
+                {
+                  name_set: "athletics",
+                  skills: [
+                    {
+                      name: "athletics",
+                      num: "Mastery",
+                      details: "athletics_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "acrobatics",
+                  skills: [
+                    {
+                      name: "acrobatics",
+                      num: "Mastery",
+                      details: "acrobatics_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "sleight_of_hand",
+                  skills: [
+                    {
+                      name: "sleight_of_hand",
+                      num: "Mastery",
+                      details: "sleight_of_hand_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "stealth",
+                  skills: [
+                    {
+                      name: "stealth",
+                      num: "Mastery",
+                      details: "stealth_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "investigation",
+                  skills: [
+                    {
+                      name: "investigation",
+                      num: "Mastery",
+                      details: "investigation_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "history",
+                  skills: [
+                    {
+                      name: "history",
+                      num: "Mastery",
+                      details: "history_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "religion",
+                  skills: [
+                    {
+                      name: "religion",
+                      num: "Mastery",
+                      details: "religion_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "arcana",
+                  skills: [
+                    {
+                      name: "arcana",
+                      num: "Mastery",
+                      details: "arcana_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "nature",
+                  skills: [
+                    {
+                      name: "nature",
+                      num: "Mastery",
+                      details: "nature_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "survival",
+                  skills: [
+                    {
+                      name: "survival",
+                      num: "Mastery",
+                      details: "survival_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "perception",
+                  skills: [
+                    {
+                      name: "perception",
+                      num: "Mastery",
+                      details: "perception_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "insight",
+                  skills: [
+                    {
+                      name: "insight",
+                      num: "Mastery",
+                      details: "insight_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "medicine",
+                  skills: [
+                    {
+                      name: "medicine",
+                      num: "Mastery",
+                      details: "medicine_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "animal_handling",
+                  skills: [
+                    {
+                      name: "animal_handling",
+                      num: "Mastery",
+                      details: "animal_handling_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "performance",
+                  skills: [
+                    {
+                      name: "performance",
+                      num: "Mastery",
+                      details: "performance_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "persuasion",
+                  skills: [
+                    {
+                      name: "persuasion",
+                      num: "Mastery",
+                      details: "persuasion_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "deception",
+                  skills: [
+                    {
+                      name: "deception",
+                      num: "Mastery",
+                      details: "deception_details",
+                    },
+                  ],
+                },
+                {
+                  name_set: "intimidation",
+                  skills: [
+                    {
+                      name: "intimidation",
+                      num: "Mastery",
+                      details: "intimidation_details",
+                    },
+                  ],
+                },
+              ]
             },
             {
-              type: "languages",
+              level: 1,
+              type: "custom",
               name: "languages",
+              position: 10,
               select: 1,
-              filter: "no_used",
-            }
+              list: [
+                {
+                  name: lang.halfling.name,
+                  details: lang.halfling.details,
+                  proficiencies: {languages: [lang.halfling]}
+                },
+                {
+                  name: lang.gnome.name,
+                  details: lang.gnome.details,
+                  proficiencies: {languages: [lang.gnome]}
+                },
+                {
+                  name: lang.dwarf.name,
+                  details: lang.dwarf.details,
+                  proficiencies: {languages: [lang.dwarf]}
+                },
+                {
+                  name: lang.elf.name,
+                  details: lang.elf.details,
+                  proficiencies: {languages: [lang.elf]}
+                },
+                {
+                  name: lang.orc.name,
+                  details: lang.orc.details,
+                  proficiencies: {languages: [lang.orc]}
+                },
+                {
+                  name: lang.dragon.name,
+                  details: lang.dragon.details,
+                  proficiencies: {languages: [lang.dragon]}
+                },
+                {
+                  name: lang.giant.name,
+                  details: lang.giant.details,
+                  proficiencies: {languages: [lang.giant]}
+                },
+                {
+                  name: lang.goblin.name,
+                  details: lang.goblin.details,
+                  proficiencies: {languages: [lang.goblin]}
+                },
+                {
+                  name: lang.thieves.name,
+                  details: lang.thieves.details,
+                  proficiencies: {languages: [lang.thieves]}
+                },
+                {
+                  name: lang.druid.name,
+                  details: lang.druid.details,
+                  proficiencies: {languages: [lang.druid]}
+                },
+                {
+                  name: lang.animal.name,
+                  details: lang.animal.details,
+                  proficiencies: {languages: [lang.animal]}
+                },
+                {
+                  name: lang.sylvan.name,
+                  details: lang.sylvan.details,
+                  proficiencies: {languages: [lang.sylvan]}
+                },
+                {
+                  name: lang.undercommon.name,
+                  details: lang.undercommon.details,
+                  proficiencies: {languages: [lang.undercommon]}
+                },
+                {
+                  name: lang.deep.name,
+                  details: lang.deep.details,
+                  proficiencies: {languages: [lang.deep]}
+                },
+                {
+                  name: lang.primordial.name,
+                  details: lang.primordial.details,
+                  proficiencies: {languages: [lang.primordial]}
+                },
+                {
+                  name: lang.sky.name,
+                  details: lang.sky.details,
+                  proficiencies: {languages: [lang.sky]}
+                },
+                {
+                  name: lang.demonic.name,
+                  details: lang.demonic.details,
+                  proficiencies: {languages: [lang.demonic]}
+                },
+                {
+                  name: lang.tiefling.name,
+                  details: lang.tiefling.details,
+                  proficiencies: {languages: [lang.tiefling]}
+                },
+              ]
+            },
           ]
         },
       },
@@ -1500,20 +1825,186 @@ export default {
 
           settings: [
             {
+              type: "custom",
+              name: "spells_0",
+              position: 3,
+              select: 1,
+              list: [
+                // spells[0] wizard
+                {
+                  name_set: spells.acid_splash[0].name,
+                  spells: [{ spell: spells.acid_splash }],
+                },
+                {
+                  name_set: spells.mage_hand[0].name,
+                  spells: [{ spell: spells.mage_hand }],
+                },
+                {
+                  name_set: spells.friends[0].name,
+                  spells: [{ spell: spells.friends }],
+                },
+                {
+                  name_set: spells.blade_ward[0].name,
+                  spells: [{ spell: spells.blade_ward }],
+                },
+                {
+                  name_set: spells.chill_touch[0].name,
+                  spells: [{ spell: spells.chill_touch }],
+                },
+                {
+                  name_set: spells.ray_of_frost[0].name,
+                  spells: [{ spell: spells.ray_of_frost }],
+                },
+                {
+                  name_set: spells.minor_illusion[0].name,
+                  spells: [{ spell: spells.minor_illusion }],
+                },
+                {
+                  name_set: spells.true_strike[0].name,
+                  spells: [{ spell: spells.true_strike }],
+                },
+                {
+                  name_set: spells.fire_bolt[0].name,
+                  spells: [{ spell: spells.fire_bolt }],
+                },
+                {
+                  name_set: spells.dancing_lights[0].name,
+                  spells: [{ spell: spells.dancing_lights }],
+                },
+                {
+                  name_set: spells.mending[0].name,
+                  spells: [{ spell: spells.mending }],
+                },
+                {
+                  name_set: spells.light[0].name,
+                  spells: [{ spell: spells.light }],
+                },
+                {
+                  name_set: spells.message[0].name,
+                  spells: [{ spell: spells.message }],
+                },
+                {
+                  name_set: spells.prestidigitation[0].name,
+                  spells: [{ spell: spells.prestidigitation }],
+                },
+                {
+                  name_set: spells.shocking_grasp[0].name,
+                  spells: [{ spell: spells.shocking_grasp }],
+                },
+                {
+                  name_set: spells.poison_spray[0].name,
+                  spells: [{ spell: spells.poison_spray }],
+                },
+              ],
+            },
+            {
               type: "spells",
               name: "spells",
+              position: 4,
               select: 1,
               mana_min: 0,
               mana_max: 0,
               classes: ["wizard"],
             },
             {
-              type: "languages",
-              name: "languages",
               level: 1,
+              type: "custom",
+              name: "languages",
+              position: 10,
               select: 1,
-              filter: "no_used",
-            }
+              list: [
+                {
+                  name: lang.halfling.name,
+                  details: lang.halfling.details,
+                  proficiencies: {languages: [lang.halfling]}
+                },
+                {
+                  name: lang.gnome.name,
+                  details: lang.gnome.details,
+                  proficiencies: {languages: [lang.gnome]}
+                },
+                {
+                  name: lang.dwarf.name,
+                  details: lang.dwarf.details,
+                  proficiencies: {languages: [lang.dwarf]}
+                },
+                {
+                  name: lang.elf.name,
+                  details: lang.elf.details,
+                  proficiencies: {languages: [lang.elf]}
+                },
+                {
+                  name: lang.orc.name,
+                  details: lang.orc.details,
+                  proficiencies: {languages: [lang.orc]}
+                },
+                {
+                  name: lang.dragon.name,
+                  details: lang.dragon.details,
+                  proficiencies: {languages: [lang.dragon]}
+                },
+                {
+                  name: lang.giant.name,
+                  details: lang.giant.details,
+                  proficiencies: {languages: [lang.giant]}
+                },
+                {
+                  name: lang.goblin.name,
+                  details: lang.goblin.details,
+                  proficiencies: {languages: [lang.goblin]}
+                },
+                {
+                  name: lang.thieves.name,
+                  details: lang.thieves.details,
+                  proficiencies: {languages: [lang.thieves]}
+                },
+                {
+                  name: lang.druid.name,
+                  details: lang.druid.details,
+                  proficiencies: {languages: [lang.druid]}
+                },
+                {
+                  name: lang.animal.name,
+                  details: lang.animal.details,
+                  proficiencies: {languages: [lang.animal]}
+                },
+                {
+                  name: lang.sylvan.name,
+                  details: lang.sylvan.details,
+                  proficiencies: {languages: [lang.sylvan]}
+                },
+                {
+                  name: lang.undercommon.name,
+                  details: lang.undercommon.details,
+                  proficiencies: {languages: [lang.undercommon]}
+                },
+                {
+                  name: lang.deep.name,
+                  details: lang.deep.details,
+                  proficiencies: {languages: [lang.deep]}
+                },
+                {
+                  name: lang.primordial.name,
+                  details: lang.primordial.details,
+                  proficiencies: {languages: [lang.primordial]}
+                },
+                {
+                  name: lang.sky.name,
+                  details: lang.sky.details,
+                  proficiencies: {languages: [lang.sky]}
+                },
+                {
+                  name: lang.demonic.name,
+                  details: lang.demonic.details,
+                  proficiencies: {languages: [lang.demonic]}
+                },
+                {
+                  name: lang.tiefling.name,
+                  details: lang.tiefling.details,
+                  proficiencies: {languages: [lang.tiefling]}
+                },
+              ]
+            },
           ],
         },
 

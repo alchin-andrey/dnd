@@ -79,21 +79,21 @@
 		<!-- Характеристики -->
 
 		<!-- Навыки -->
-		<my-selection-box :shown="race_page.shown.skills">
+		<!-- <my-selection-box :shown="race_page.shown.skills">
       <RaceSetting__Skills />
-		</my-selection-box>
+		</my-selection-box> -->
 		<!-- Навыки -->
 
 		<!-- Языки -->
-		<my-selection-box :shown="race_page.shown.languages">
+		<!-- <my-selection-box :shown="race_page.shown.languages">
       <RaceSetting__Languages />
-		</my-selection-box>
+		</my-selection-box> -->
 		<!-- Языки -->
 
     <!-- Заклинания -->
-		<my-selection-box :shown="race_page.shown.spells">
+		<!-- <my-selection-box :shown="race_page.shown.spells">
       <RaceSetting__Spells />
-		</my-selection-box>
+		</my-selection-box> -->
 		<!-- Заклинания -->
 </template>
 

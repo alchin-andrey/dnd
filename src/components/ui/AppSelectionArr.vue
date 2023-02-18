@@ -45,6 +45,10 @@ export default {
 			type: Object,
 			default: {},
 		},
+		no_name: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
@@ -78,10 +82,10 @@ export default {
 			return sett_obj;
 		},
 
-		t_Title: (store) => (item) => {
-			const first_name = store.uniqu_Name[item.name][0];
-			if (item == first_name && item.name !== "stats") {
-				return store.t(item?.name);
+		t_Title: (stor) => (item) => {
+			const first_name = stor.uniqu_Name[item.name][0];
+			if (item == first_name && !stor.no_name) {
+				return stor.t(item?.name);
 			}
 			return null;
 		},

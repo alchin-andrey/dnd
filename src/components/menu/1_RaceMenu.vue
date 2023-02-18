@@ -1,7 +1,7 @@
 <template>
 	<!-- <div class="main_chapter_menu"> -->
-    
-    <!-- RACE ETHNOS -->
+
+	<!-- RACE ETHNOS -->
 	<div class="selection_menu_wrap">
 		<section class="selection_menu">
 			<my-selection
@@ -19,14 +19,33 @@
 				:rare="MY.backstory.rare"
 			></my-selection>
 		</section>
-    <!-- RACE ETHNOS -->
+		<!-- RACE ETHNOS -->
 
-		<section class="selection_menu" v-if="сustomm_Settings_Race_Arr.length !== 0">
-      <AppSelectionArr :menu="сustomm_Settings_Race_Arr"/>
+		<section
+			class="selection_menu"
+			v-if="сustomm_Settings_Race_Arr.length !== 0"
+		>
+			<AppSelectionArr :menu="other_Filter"/>
+      <AppSelectionArr :menu="spells_0_Filter"/>
+			<AppSelectionArr :menu="spells_Filter"/>
+      <AppSelectionArr :menu="stats_Filter"/>
+			<AppSelectionArr :menu="skills_Filter"/>
+			<AppSelectionArr :menu="tools_Filter"/>
+			<AppSelectionArr :menu="languages_Filter"/>
+      <AppSelectionArr :menu="armors_Filter"/>
+			<AppSelectionArr :menu="weapons_Filter"/>
+			<AppSelectionArr :menu="packs_Filter"/>
+			<AppSelectionArr :menu="inventory_Filter"/>
+			<!-- <AppSelectionArr :menu="sort_Setting" /> -->
+			<!-- <AppSelectionArr :menu="sort_Setting_Position" /> -->
 		</section>
 
-    <!-- RACE CUSTTOM -->
-		<section
+		<section class="selection_menu undefined" v-if="shown_Undefined">
+			<AppSelectionArr :menu="undefined_Filter" />
+		</section>
+
+		<!-- RACE CUSTTOM -->
+		<!-- <section
 			class="selection_menu"
 			v-if="custom_Race_Settings_Visib"
 		>
@@ -61,10 +80,10 @@
 				:type_arr="spells_Custom_Arr_RE"
 			>
 			</my-selection>
-		</section>
-    <!-- RACE CUSTTOM -->
+		</section> -->
+		<!-- RACE CUSTTOM -->
 
-    <!-- OTHER RACE SETTINGS -->
+		<!-- OTHER RACE SETTINGS -->
 		<section class="selection_menu">
 			<my-selection
 				@click="showSettings__Race('gender')"
@@ -119,7 +138,7 @@
 			>
 			</my-selection>
 		</section>
-    <!-- OTHER RACE SETTINGS -->
+		<!-- OTHER RACE SETTINGS -->
 	</div>
 	<!-- </div> -->
 </template>
@@ -130,43 +149,89 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
 
-import { useStatsStore } from "@/stores/modules/StatsStore";
-import { useSkillsStore } from "@/stores/modules/SkillsStore";
-import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-import { useSpellsStore } from "@/stores/modules/SpellsStore";
+// import { useStatsStore } from "@/stores/modules/StatsStore";
+// import { useSkillsStore } from "@/stores/modules/SkillsStore";
+// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+// import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "RaceMenu",
 	computed: {
-    // STORE
-    ...mapState(useMYStore, ["MY", "сustomm_Settings_Race_Arr"]),
+		// STORE
+		...mapState(useMYStore, ["MY", "сustomm_Settings_Race_Arr"]),
 		...mapState(usePagesStore, ["race_page"]),
-    // GETTERS
-    ...mapState(useColorStore, [
-      "skin_color_Char_Body",
-      "eyes_color_Char_Body",
-      "hair_color_Char_Body"
-    ]),
+		// GETTERS
+		...mapState(useColorStore, [
+			"skin_color_Char_Body",
+			"eyes_color_Char_Body",
+			"hair_color_Char_Body",
+		]),
 
-    ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
-    ...mapState(useSkillsStore, ["skills_Custom_Arr_RE"]),
-    ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
-    ...mapState(useSpellsStore, ["spells_Custom_Arr_RE"]),
-
-    custom_Race_Settings_Visib() {
-      return !this.stats_Custom_Arr_RE.length == 0 ||
-			!this.skills_Custom_Arr_RE.length == 0 ||
-      !this.languages_Custom_Arr_RE.length == 0 ||
-      !this.spells_Custom_Arr_RE.length == 0;
+		filter_Setting: (stor) => (numb) => {
+			return stor.сustomm_Settings_Race_Arr.filter(
+				(item) => item.position == numb
+			);
 		},
 
+		sort_Setting() {
+			return this.сustomm_Settings_Race_Arr.sort((a, b) => {
+				let nameA = a.name.toLowerCase(),
+					nameB = b.name.toLowerCase();
+				if (nameA < nameB)
+					//сортируем строки по возрастанию
+					return -1;
+				if (nameA > nameB) return 1;
+				return 0; // Никакой сортировки
+			});
+		},
+
+		sort_Setting_Position() {
+			return this.сustomm_Settings_Race_Arr.sort((a, b) => a.position - b.position);
+		},
+
+		subclass_Filter: (stor) => stor.filter_Setting(1),
+
+		other_Filter: (stor) => stor.filter_Setting(2),
+
+		spells_0_Filter: (stor) => stor.filter_Setting(3),
+		spells_Filter: (stor) => stor.filter_Setting(4),
+
+		feats_Filter: (stor) => stor.filter_Setting(6),
+		stats_Filter: (stor) => stor.filter_Setting(7),
+		skills_Filter: (stor) => stor.filter_Setting(8),
+		tools_Filter: (stor) => stor.filter_Setting(9),
+		languages_Filter: (stor) => stor.filter_Setting(10),
+
+		armors_Filter: (stor) => stor.filter_Setting(11),
+		weapons_Filter: (stor) => stor.filter_Setting(12),
+		packs_Filter: (stor) => stor.filter_Setting(13),
+		inventory_Filter: (stor) => stor.filter_Setting(14),
+
+		undefined_Filter: (stor) => stor.filter_Setting(undefined),
+
+		shown_Undefined() {
+			return this.undefined_Filter.length !== 0;
+		},
+
+		// ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
+		// ...mapState(useSkillsStore, ["skills_Custom_Arr_RE"]),
+		// ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
+		// ...mapState(useSpellsStore, ["spells_Custom_Arr_RE"]),
+
+		// custom_Race_Settings_Visib() {
+		//   return !this.stats_Custom_Arr_RE.length == 0 ||
+		// 	!this.skills_Custom_Arr_RE.length == 0 ||
+		//   !this.languages_Custom_Arr_RE.length == 0 ||
+		//   !this.spells_Custom_Arr_RE.length == 0;
+		// },
+
 		Age_Note() {
-      let age = this.MY.race.race_settings.age;
+			let age = this.MY.race.race_settings.age;
 			let baby = age.min;
 			let young = age.young;
 			let mature = age.mature;
 			let old = age.old;
 			let oldest = age.max;
-      const MY_age = this.MY.age;
+			const MY_age = this.MY.age;
 			if (baby <= MY_age && MY_age < young) {
 				return this.t("baby");
 			} else if (young <= MY_age && MY_age < mature) {
@@ -194,10 +259,9 @@ export default {
 		Hight_Note() {
 			return this.t(this.MY.race.race_settings.size);
 		},
-
 	},
 	methods: {
-    ...mapActions(usePagesStore, ["showSettings__Race"]),
+		...mapActions(usePagesStore, ["showSettings__Race"]),
 	},
 };
 </script>
@@ -229,5 +293,9 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+}
+
+.undefined {
+	background: rgb(94, 10, 10);
 }
 </style>

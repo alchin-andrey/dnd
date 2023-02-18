@@ -118,7 +118,7 @@ export const useMYStore = defineStore({
 		},
 
     сustomm_Main_Settings_Ethnos_Arr() {
-			return this.settingsClass("race", this.MY.ethnos.settings, "custom");
+			return this.settingsClass("race", this.MY.ethnos?.settings, "custom");
 		},
 
     сustomm_Backstory_Settings_Race_Arr() {
@@ -126,9 +126,10 @@ export const useMYStore = defineStore({
 		},
 
     сustomm_Settings_Race_Arr() {
-      // const main_custom = this.сustomm_Main_Settings_Race_Arr;
+      const main_custom = this.сustomm_Main_Settings_Ethnos_Arr;
+      console.log('main_custom:', main_custom)
       const backstories_custom = this.сustomm_Backstory_Settings_Race_Arr;
-      return [...backstories_custom];
+      return [...main_custom, ...backstories_custom];
     },
 
 		сustomm_Main_Settings_Class_Arr() {

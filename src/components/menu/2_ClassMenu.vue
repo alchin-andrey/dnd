@@ -22,8 +22,8 @@
 				:t_type="stats_Base_Settings_Two_T"
 			></my-selection>
 			<!-- <AppSelectionArr :menu="feats_Select_Arr"/> -->
-			<AppSelectionArr :menu="stats_Filter"/>
-			<AppSelectionArr :menu="feats_Filter"/>
+			<AppSelectionArr :menu="feats_Filter" no_name/>
+			<AppSelectionArr :menu="stats_Filter" no_name/>
 			<AppSelectionArr :menu="skills_Filter"/>
 			<AppSelectionArr :menu="tools_Filter"/>
 			<AppSelectionArr :menu="languages_Filter"/>
@@ -72,8 +72,8 @@ export default {
     spells_0_Filter: (stor) => stor.filter_Setting(3),
     spells_Filter: (stor) => stor.filter_Setting(4),
 
-    stats_Filter: (stor) => stor.filter_Setting(6),
-    feats_Filter: (stor) => stor.filter_Setting(7),
+    feats_Filter: (stor) => stor.filter_Setting(6),
+    stats_Filter: (stor) => stor.filter_Setting(7),
     skills_Filter: (stor) => stor.filter_Setting(8),
     tools_Filter: (stor) => stor.filter_Setting(9),
     languages_Filter: (stor) => stor.filter_Setting(10),
