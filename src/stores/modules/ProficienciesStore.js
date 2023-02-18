@@ -38,11 +38,6 @@ export const useProficienciesStore = defineStore({
         return stor.proficiencies_Arr(MYStore.MY.ethnos.proficiencies, kay);
       },
 
-      proficiencies_Arr_Custom: (stor) => (kay) => {
-        const LanguagesStore = useLanguagesStore();
-        return kay === "languages" ? LanguagesStore.languages_Custom_Arr_RE : [];
-      },
-
       proficiencies_Arr_Backstory: (stor) => (kay) => {
         const MYStore = useMYStore();
         return stor.proficiencies_Arr(MYStore.MY.backstory.proficiencies, kay);
@@ -56,10 +51,9 @@ export const useProficienciesStore = defineStore({
       proficiencies_Race_Params: (stor) => (kay) => {
         const race_prof = stor.proficiencies_Arr_Race(kay);
         const ethnos_prof = stor.proficiencies_Arr_Ethnos(kay);
-        const custom_prof = stor.proficiencies_Arr_Custom(kay);
         const backstory_prof = stor.proficiencies_Arr_Backstory(kay);
         const sett_prof = stor.proficiencies_Arr_Setting_Race(kay);
-        return [...race_prof, ...ethnos_prof, ...custom_prof, ...backstory_prof, ...sett_prof];
+        return [...race_prof, ...ethnos_prof, ...backstory_prof, ...sett_prof];
       },
 
       proficiencies_Arr_Setting: (stor) => (arr, kay) => {
@@ -102,7 +96,6 @@ export const useProficienciesStore = defineStore({
         let class_prof = stor.proficiencies_Class_Params(kay);
         return rec_prof.concat(class_prof);
       },
-
   },
   
   actions: {

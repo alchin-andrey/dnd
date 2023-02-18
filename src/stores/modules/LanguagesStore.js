@@ -74,9 +74,5 @@ export const useLanguagesStore = defineStore({
   },
 
   actions: {
-    getCustomSelect_Languages_RE(name) {
-      const MYStore = useMYStore();
-			MYStore.getCustomSelect_COMMON_RE("languages", name);
-		},
   }
 });

@@ -177,6 +177,11 @@ export default {
 				return custom_arr;
 			}
 		},
+
+    option_Custom_RE_Quant: (state) => (name) => {
+			const ethnos_settings = state.ethnos_Setting(name);
+			return ethnos_settings ? ethnos_settings.select : 0;
+		},
 	},
 
 	methods: {
@@ -198,6 +203,8 @@ export default {
 				this.MY.custom_selected_race_page[item] = arr;
 			}
 		},
+
+    
 	},
 
 };

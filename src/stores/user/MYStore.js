@@ -46,83 +46,17 @@ export const useMYStore = defineStore({
 			return store.class_Specials_All?.filter((item) => item.type == name);
 		},
 
-		//NOTE - COMMON (stats, skills, languages, spells)
-		COMMON_Custom_Arr_RE: (state) => (name) => {
-			const { stats_Keys, stats_Activ_Arr_RE } = useStatsStore();
-			const { skills_Keys, skills_Activ_Arr_RE } = useSkillsStore();
-			const { languages_Keys, languages_Activ_Arr_RE } = useLanguagesStore();
-			const { spells_Keys, spells_Activ_Arr_RE } = useSpellsStore();
-
-			let custom_arr = [];
-			const selected_arr = state.MY.custom_selected_race_page[name];
-
-			let ACTIV_ARR = [];
-			if (name == "stats") {
-				ACTIV_ARR = stats_Activ_Arr_RE;
-			}
-			if (name == "skills") {
-				ACTIV_ARR = skills_Activ_Arr_RE;
-			}
-			if (name == "languages") {
-				ACTIV_ARR = languages_Activ_Arr_RE;
-			}
-			if (name == "spells") {
-				ACTIV_ARR = spells_Activ_Arr_RE;
-			}
-
-			let KEYS = [];
-			if (name == "stats") {
-				KEYS = stats_Keys;
-			}
-			if (name == "skills") {
-				KEYS = skills_Keys;
-			}
-			if (name == "languages") {
-				KEYS = languages_Keys;
-			}
-			if (name == "spells") {
-				KEYS = spells_Keys;
-			}
-
-			let pass_selected_arr = selected_arr.filter(
-				(el) => !ACTIV_ARR.includes(el)
-			);
-			const increment = state.option_Custom_RE_Quant(name);
-			if (increment === 0) {
-				return custom_arr;
-			} else {
-				if (pass_selected_arr.length === increment) {
-					custom_arr = pass_selected_arr;
-				} else if (pass_selected_arr.length < increment) {
-					const activ_full_arr = ACTIV_ARR.concat(pass_selected_arr);
-					let pass_arr = KEYS.filter((el) => !activ_full_arr.includes(el));
-					const i = increment - pass_selected_arr.length;
-					custom_arr = pass_selected_arr.concat(pass_arr.slice(0, i));
-				} else if (pass_selected_arr.length > increment) {
-					const i = pass_selected_arr.length - increment;
-					pass_selected_arr.splice(0, i);
-					custom_arr = pass_selected_arr;
-				}
-				return custom_arr;
-			}
-		},
-
-		option_Custom_RE_Quant: (state) => (name) => {
-			const ethnos_settings = state.ethnos_Setting(name);
-			return ethnos_settings ? ethnos_settings.select : 0;
-		},
-
 		select_Numb() {
 			const lvl = this.MY.level;
 			return (select) => (Array.isArray(select) ? select[lvl - 1] : select);
 		},
 
     сustomm_Main_Settings_Ethnos_Arr() {
-			return this.settingsClass("race", this.MY.ethnos?.settings, "custom");
+			return this.settingsMainSelect("race", this.MY.ethnos?.settings, "custom", "ethnos");
 		},
 
     сustomm_Backstory_Settings_Race_Arr() {
-			return this.settingsClass("race", this.MY.backstory.settings, "custom");
+			return this.settingsMainSelect("race", this.MY.backstory.settings, "custom", "backstory");
 		},
 
     сustomm_Settings_Race_Arr() {
@@ -132,7 +66,7 @@ export const useMYStore = defineStore({
     },
 
 		сustomm_Main_Settings_Class_Arr() {
-			return this.settingsClass("class", this.MY.class.settings, "custom");
+			return this.settingsMainSelect("class", this.MY.class.settings, "custom");
 		},
 
     сustomm_Feats_Settings_Class_Arr() {
@@ -171,15 +105,7 @@ export const useMYStore = defineStore({
 
 	//SECTION - //? ACTIONS
 	actions: {
-    сustommSettingsClassArr() {
-      const FeatsStore = useFeatsStore();
-      const main_custom = this.сustomm_Main_Settings_Class_Arr;
-      const feats = FeatsStore.feats_Select_Arr;
-      const feats_custom = this.сustomm_Feats_Settings_Class_Arr;
-      return [...main_custom, ...feats, ...feats_custom];
-    },
-
-		settingsClass(page, settings_arr, type_str, per_id_link) {
+		settingsMainSelect(page, settings_arr, type_str, per_id_link) {
 			let new_arr = [];
 			const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
@@ -226,7 +152,7 @@ export const useMYStore = defineStore({
 
 					select_list.forEach((elem_list) => {
 						if (elem_list.settings) {
-							let redus = this.settingsClass(page, elem_list.settings, type_str, link_type_name_i);
+							let redus = this.settingsMainSelect(page, elem_list.settings, type_str, link_type_name_i);
 							new_arr = new_arr.concat(redus);
 						}
 					});
@@ -240,7 +166,7 @@ export const useMYStore = defineStore({
       arr.forEach(el => {
         el.select_list.forEach((elem_list) => {
           if (elem_list.settings) {
-            let redus = this.settingsClass(page, elem_list.settings, type_str, el.id_link);
+            let redus = this.settingsMainSelect(page, elem_list.settings, type_str, el.id_link);
             new_arr = new_arr.concat(redus);
           }
         });
@@ -264,39 +190,6 @@ export const useMYStore = defineStore({
 			this.MY.ethnos_name = Object.values(
 				this.MY.race.race_settings.ethnos
 			)[0].name;
-		},
-
-		//NOTE - COMMON (stats, skills, languages, spells)
-		getCustomSelect_COMMON_RE(item, name) {
-			const { stats_Activ_Arr_RE } = useStatsStore();
-			const { skills_Activ_Arr_RE } = useSkillsStore();
-			const { languages_Activ_Arr_RE } = useLanguagesStore();
-			const { spells_Activ_Arr_RE } = useSpellsStore();
-			const selekt = this.COMMON_Custom_Arr_RE(item);
-
-			let active = null;
-			if (item === "stats") {
-				active = stats_Activ_Arr_RE.includes(name);
-			}
-			if (item === "skills") {
-				active = skills_Activ_Arr_RE.includes(name);
-			}
-			if (item === "languages") {
-				active = languages_Activ_Arr_RE.includes(name);
-			}
-			if (item === "spells") {
-				active = spells_Activ_Arr_RE.includes(name);
-			}
-
-			const passive = selekt.includes(name);
-			if (active || passive) {
-				return null;
-			} else {
-				let arr = selekt;
-				arr.splice(0, 1);
-				arr.push(name);
-				this.MY.custom_selected_race_page[item] = arr;
-			}
 		},
 
 	},

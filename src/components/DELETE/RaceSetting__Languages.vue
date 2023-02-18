@@ -75,6 +75,102 @@ export default {
       }
       return arr;
     },
+
+    languages_Arr_Humman(state) {
+			let arr = [];
+			for (let i in state.languages) {
+				if (state.languages[i]?.human) {
+					arr.push(state.languages[i].name);
+				}
+			}
+			return arr;
+		},
+
+    languages_Arr_Not_Humman(state) {
+			let arr = [];
+			for (let i in state.languages) {
+				if (!state.languages[i]?.human) {
+					arr.push(state.languages[i].name);
+				}
+			}
+			return arr;
+		},
+
+    languages_Keys(state) {
+      let arr = [];
+      for (let key in state.languages) {
+        arr.push(state.languages[key].name)
+      }
+			return arr;
+		},
+
+		languages_Activ_Obj_RE(state) {
+      const MYStore = useMYStore();
+			let i = [];
+			let j = [];
+			if (MYStore.MY.race.proficiencies?.languages) {
+				i = Object.values(MYStore.MY.race.proficiencies?.languages);
+			}
+			if (MYStore.MY.ethnos.proficiencies?.languages) {
+				j = Object.values(MYStore.MY.ethnos.proficiencies?.languages);
+			}
+			return i.concat(j);
+		},
+
+		languages_Activ_Arr_RE() {
+			let arr_obj = this.languages_Activ_Obj_RE;
+			let arr = [];
+			for (let indx in arr_obj) {
+				arr.push(arr_obj[indx].name);
+			}
+			return arr;
+		},
+
+    languages_Pass_Arr_RE() {
+			return this.languages_Keys.filter(
+				(el) => !this.languages_Activ_Arr_RE.includes(el)
+			);
+		},
+
+    languages_Custom_Arr_RE() {
+			return this.COMMON_Custom_Arr_RE("languages");
+		},
+
+    COMMON_Custom_Arr_RE: (stor) => (name) => {
+
+			let custom_arr = [];
+			const selected_arr = stor.MY.custom_selected_race_page[name];
+			let ACTIV_ARR = stor.languages_Activ_Arr_RE;
+			let KEYS = stor.languages_Keys;
+
+			let pass_selected_arr = selected_arr.filter(
+				(el) => !ACTIV_ARR.includes(el)
+			);
+			const increment = stor.option_Custom_RE_Quant(name);
+			if (increment === 0) {
+				return custom_arr;
+			} else {
+				if (pass_selected_arr.length === increment) {
+					custom_arr = pass_selected_arr;
+				} else if (pass_selected_arr.length < increment) {
+					const activ_full_arr = ACTIV_ARR.concat(pass_selected_arr);
+					let pass_arr = KEYS.filter((el) => !activ_full_arr.includes(el));
+					const i = increment - pass_selected_arr.length;
+					custom_arr = pass_selected_arr.concat(pass_arr.slice(0, i));
+				} else if (pass_selected_arr.length > increment) {
+					const i = pass_selected_arr.length - increment;
+					pass_selected_arr.splice(0, i);
+					custom_arr = pass_selected_arr;
+				}
+				return custom_arr;
+			}
+		},
+
+		option_Custom_RE_Quant: (stor) => (name) => {
+			const ethnos_settings = stor.ethnos_Setting(name);
+			return ethnos_settings ? ethnos_settings.select : 0;
+		},
+
 	},
 
   watch: {
@@ -84,8 +180,29 @@ export default {
 	},
 
 	methods: {
-		...mapActions(useLanguagesStore, ["getCustomSelect_Languages_RE"]),
     ...mapActions(usePagesStore, ["showRaceScroll"]),
+
+    getCustomSelect_Languages_RE(name) {
+			this.getCustomSelect_COMMON_RE("languages", name);
+		},
+
+    getCustomSelect_COMMON_RE(item, name) {
+			const { stats_Activ_Arr_RE } = useStatsStore();
+			const { skills_Activ_Arr_RE } = useSkillsStore();
+			const { languages_Activ_Arr_RE } = useLanguagesStore();
+			const { spells_Activ_Arr_RE } = useSpellsStore();
+			const selekt = this.COMMON_Custom_Arr_RE(item);
+			let active = this.languages_Activ_Arr_RE.includes(name);
+			const passive = selekt.includes(name);
+			if (active || passive) {
+				return null;
+			} else {
+				let arr = selekt;
+				arr.splice(0, 1);
+				arr.push(name);
+				this.MY.custom_selected_race_page[item] = arr;
+			}
+		},
 	},
 };
 </script>

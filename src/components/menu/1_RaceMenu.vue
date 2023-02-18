@@ -36,8 +36,6 @@
 			<AppSelectionArr :menu="weapons_Filter"/>
 			<AppSelectionArr :menu="packs_Filter"/>
 			<AppSelectionArr :menu="inventory_Filter"/>
-			<!-- <AppSelectionArr :menu="sort_Setting" /> -->
-			<!-- <AppSelectionArr :menu="sort_Setting_Position" /> -->
 		</section>
 
 		<section class="selection_menu undefined" v-if="shown_Undefined">
@@ -110,10 +108,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
 
-// import { useStatsStore } from "@/stores/modules/StatsStore";
-// import { useSkillsStore } from "@/stores/modules/SkillsStore";
-// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-// import { useSpellsStore } from "@/stores/modules/SpellsStore";
+
 export default {
 	name: "RaceMenu",
 	computed: {
@@ -131,22 +126,6 @@ export default {
 			return stor.сustomm_Settings_Race_Arr.filter(
 				(item) => item.position == numb
 			);
-		},
-
-		sort_Setting() {
-			return this.сustomm_Settings_Race_Arr.sort((a, b) => {
-				let nameA = a.name.toLowerCase(),
-					nameB = b.name.toLowerCase();
-				if (nameA < nameB)
-					//сортируем строки по возрастанию
-					return -1;
-				if (nameA > nameB) return 1;
-				return 0; // Никакой сортировки
-			});
-		},
-
-		sort_Setting_Position() {
-			return this.сustomm_Settings_Race_Arr.sort((a, b) => a.position - b.position);
 		},
 
 		subclass_Filter: (stor) => stor.filter_Setting(1),

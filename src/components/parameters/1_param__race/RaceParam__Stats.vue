@@ -7,6 +7,7 @@
 			:type="`${name}_base`"
 			plus
 			:numb="stats_Race_Page_Numb(name)"
+      param
 		/>
 	</my-wrapper>
 </template>

@@ -1,5 +1,10 @@
 <template>
-	<AppTooltip class="relative" text="hint_over_limit" :shown="overflow_Numb" warn>
+	<AppTooltip
+		class="relative"
+		text="hint_over_limit"
+		:shown="overflow_Numb"
+		warn
+	>
 		<div
 			class="column jbm-300"
 			:class="{ passive: numb == 0, 'rare-text': overflow_Numb }"
@@ -86,7 +91,11 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		not_warn: {
+		// not_warn: {
+		// 	type: Boolean,
+		// 	default: false,
+		// },
+		param: {
 			type: Boolean,
 			default: false,
 		},
@@ -94,7 +103,7 @@ export default {
 
 	computed: {
 		// STORES
-    ...mapState(usePagesStore, ["pages"]),
+		...mapState(usePagesStore, ["pages"]),
 		...mapState(useStatsStore, [
 			"stats_Class_Page_Numb_Overflow",
 			"stats_Class_Page_Numb",
@@ -138,7 +147,9 @@ export default {
 		},
 
 		overflow_Numb() {
-			if (this.only_Save) {
+			if (this.param || this.pages.race_page) {
+				return false;
+			} else if (this.only_Save) {
 				return this.overflow_Save;
 			} else {
 				const stat_numb = this.stats_Class_Page_Numb_Full(this.title);
@@ -148,12 +159,16 @@ export default {
 		},
 
 		save_Icon() {
-      const shown_save = this.pages.class_page ? this.stats_Saving_Arr.includes(this.title) : false;
+			const shown_save = this.pages.class_page
+				? this.stats_Saving_Arr.includes(this.title)
+				: false;
 			return shown_save || this.only_Save;
 		},
 
 		max_Cube: (stor) => (n) => {
-			if (stor.only_Save) {
+      if (stor.param || stor.pages.race_page) {
+				return false;
+			} else if (stor.only_Save) {
 				return stor.overflow_Save;
 			} else {
 				if (stor.active_card) {
