@@ -1829,6 +1829,9 @@ export default {
               name: "spells_0",
               position: 3,
               select: 1,
+              mana_min: 0,
+              mana_max: 0,
+              classes: ["wizard"],
               list: [
                 // spells[0] wizard
                 {
