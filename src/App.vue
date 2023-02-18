@@ -214,6 +214,7 @@ export default {
 			let arr = [];
 			arr.push(this.MY.race.name);
 			arr.push(this.MY.ethnos.name);
+			arr.push(this.MY.backstory.name);
 			return arr;
 		},
 

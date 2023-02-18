@@ -58,7 +58,7 @@ export default {
 }
 
 .column_link p {
-	max-width: 210px;
+	max-width: 238px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
