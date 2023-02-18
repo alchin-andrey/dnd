@@ -97,6 +97,7 @@ export default {
         level: 1,
         type: "custom",
         name: "languages",
+        position: 10,
         select: 1,
         list: [
           {
@@ -191,16 +192,10 @@ export default {
           },
         ]
       },
-      // {
-      //   level: 1,
-      //   type: "languages",
-      //   name: "languages",
-      //   select: 1,
-      //   filter: "no_used",
-      // },
       {
         type: "custom",
-        name: "tool",
+        name: "tool", 
+        position: 9,
         select: 1,
         list: [
           {
@@ -304,6 +299,7 @@ export default {
         level: 1,
         type: "custom",
         name: "languages",
+        position: 10,
         select: 1,
         list: [
           {
@@ -402,6 +398,7 @@ export default {
       //   level: 1,
       //   type: "languages",
       //   name: "languages",
+
       //   select: 1,
       //   filter: "no_used",
       // },
@@ -455,6 +452,7 @@ export default {
         level: 1,
         type: "custom",
         name: "languages",
+        position: 10,
         select: 2,
         list: [
           {
@@ -606,6 +604,7 @@ export default {
         level: 1,
         type: "custom",
         name: "languages",
+        position: 10,
         select: 2,
         list: [
           {
@@ -769,6 +768,7 @@ export default {
         level: 1,
         type: "custom",
         name: "languages",
+        position: 10,
         select: 1,
         list: [
           {
@@ -872,7 +872,8 @@ export default {
       // },
       {
         type: "custom",
-        name: "tool",
+        name: "tool", 
+        position: 9,
         select: 1,
         list: [
 
@@ -1009,6 +1010,7 @@ export default {
       {
         type: "custom",
         name: "legacy",
+        position: 2,
         select: 1,
         list: [
           {
@@ -1039,6 +1041,7 @@ export default {
         level: 1,
         type: "custom",
         name: "languages",
+        position: 10,
         select: 1,
         list: [
           {
@@ -1143,6 +1146,7 @@ export default {
       {
         type: "custom",
         name: "player",
+        position: 2,
         select: 1,
         list: [
           {
@@ -1201,7 +1205,8 @@ export default {
     settings: [
       {
         type: "custom",
-        name: "tool",
+        name: "tool", 
+        position: 9,
         select: 1,
         list: [
           {
@@ -1302,7 +1307,8 @@ export default {
     settings: [
       {
         type: "custom",
-        name: "tool",
+        name: "tool", 
+        position: 9,
         select: 1,
         list: [
 
@@ -1447,6 +1453,7 @@ export default {
       {
         type: "custom",
         name: "player",
+        position: 2,
         select: 1,
         list: [
           {
@@ -1553,6 +1560,7 @@ export default {
       {
         type: "custom",
         name: "player",
+        position: 2,
         select: 1,
         list: [
           {
@@ -1660,7 +1668,8 @@ export default {
     settings: [
       {
         type: "custom",
-        name: "tool",
+        name: "tool", 
+        position: 9,
         select: 1,
         list: [
           {
