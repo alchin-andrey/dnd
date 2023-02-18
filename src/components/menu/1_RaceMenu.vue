@@ -44,45 +44,6 @@
 			<AppSelectionArr :menu="undefined_Filter" />
 		</section>
 
-		<!-- RACE CUSTTOM -->
-		<!-- <section
-			class="selection_menu"
-			v-if="custom_Race_Settings_Visib"
-		>
-			<my-selection
-				v-if="!stats_Custom_Arr_RE.length == 0"
-				@click="showSettings__Race('stats')"
-				:active="race_page.shown.stats"
-				title="stats"
-				:type_arr="stats_Custom_Arr_RE"
-			></my-selection>
-			<my-selection
-				v-if="!skills_Custom_Arr_RE.length == 0"
-				@click="showSettings__Race('skills')"
-				:active="race_page.shown.skills"
-				title="skills"
-				:type_arr="skills_Custom_Arr_RE"
-			>
-			</my-selection>
-			<my-selection
-				v-if="!languages_Custom_Arr_RE.length == 0"
-				@click="showSettings__Race('languages')"
-				:active="race_page.shown.languages"
-				title="languages"
-				:type_arr="languages_Custom_Arr_RE"
-			>
-			</my-selection>
-      <my-selection
-				v-if="!spells_Custom_Arr_RE.length == 0"
-				@click="showSettings__Race('spells')"
-				:active="race_page.shown.spells"
-				title="spells"
-				:type_arr="spells_Custom_Arr_RE"
-			>
-			</my-selection>
-		</section> -->
-		<!-- RACE CUSTTOM -->
-
 		<!-- OTHER RACE SETTINGS -->
 		<section class="selection_menu">
 			<my-selection
@@ -211,18 +172,6 @@ export default {
 		shown_Undefined() {
 			return this.undefined_Filter.length !== 0;
 		},
-
-		// ...mapState(useStatsStore, ["stats_Custom_Arr_RE"]),
-		// ...mapState(useSkillsStore, ["skills_Custom_Arr_RE"]),
-		// ...mapState(useLanguagesStore, ["languages_Custom_Arr_RE"]),
-		// ...mapState(useSpellsStore, ["spells_Custom_Arr_RE"]),
-
-		// custom_Race_Settings_Visib() {
-		//   return !this.stats_Custom_Arr_RE.length == 0 ||
-		// 	!this.skills_Custom_Arr_RE.length == 0 ||
-		//   !this.languages_Custom_Arr_RE.length == 0 ||
-		//   !this.spells_Custom_Arr_RE.length == 0;
-		// },
 
 		Age_Note() {
 			let age = this.MY.race.race_settings.age;

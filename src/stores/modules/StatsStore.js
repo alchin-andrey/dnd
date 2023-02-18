@@ -52,10 +52,7 @@ export const useStatsStore = defineStore({
 			);
 		},
 
-		stats_Custom_Arr_RE() {
-      const MYStore = useMYStore();
-			return MYStore.COMMON_Custom_Arr_RE("stats");
-		},
+
 
     //ANCHOR - NUMB
     stats_RE_Numb: (state) => (name) => {

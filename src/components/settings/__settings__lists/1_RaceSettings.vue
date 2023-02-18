@@ -73,9 +73,9 @@
 		<!-- Вес -->
 
 		<!-- Характеристики -->
-		<my-selection-box :shown="race_page.shown.stats">
+		<!-- <my-selection-box :shown="race_page.shown.stats">
 			<RaceSetting__Stats />
-		</my-selection-box>
+		</my-selection-box> -->
 		<!-- Характеристики -->
 
 		<!-- Навыки -->
@@ -90,11 +90,7 @@
 		</my-selection-box> -->
 		<!-- Языки -->
 
-    <!-- Заклинания -->
-		<!-- <my-selection-box :shown="race_page.shown.spells">
-      <RaceSetting__Spells />
-		</my-selection-box> -->
-		<!-- Заклинания -->
+
 </template>
 
 <script>

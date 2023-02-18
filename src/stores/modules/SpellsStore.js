@@ -18,115 +18,16 @@ export const useSpellsStore = defineStore({
 			return arr_spell;
 		},
 
-    spells_Race_Lvl() {
+    spells_Race_Main_Arr() {
       const MYStore = useMYStore();
       const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.race?.spells);
 			return this.spells_For_Arr_Obj(spell_obj);
 		},
 
-		spells_Ethnos_Lvl() {
+		spells_Race_Ethnos_Arr() {
       const MYStore = useMYStore();
 			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.spells);
       return this.spells_For_Arr_Obj(spell_obj);
-		},
-
-    spells_Activ_Obj_RE() {
-			const race_spells = this.spells_Race_Lvl;
-			const ethnos_spells = this.spells_Ethnos_Lvl;
-			return race_spells.concat(ethnos_spells);
-		},
-
-		spells_Activ_Arr_RE(state) {
-			let arr = [];
-			this.spells_Activ_Obj_RE.forEach((el) =>
-				arr.push(el.find((x) => x.name).name)
-			);
-			return arr;
-		},
-
-		spells_Settings_Obj_RE(state) {
-      const MYStore = useMYStore();
-			let arr = [];
-			let spells_settings = MYStore.ethnos_Setting("spells");
-
-			if (spells_settings) {
-				let mana_min = spells_settings.mana_min;
-				let mana_max = spells_settings.mana_max;
-				let classes = spells_settings.classes;
-				for (let kay in state.spells) {
-					for (let j = mana_min; j <= mana_max; j++) {
-						let name = state.spells[kay][j]?.name;
-						if (name) {
-							for (let i in classes) {
-								let check = state.spells[kay][j].classes.includes(classes[i]);
-                let not_ability = state.spells[kay][j].type != "ability";
-								if (check && not_ability) {
-									let unique = !arr.includes(state.spells[kay]);
-									if (unique) {
-										arr.push(state.spells[kay]);
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			return arr;
-		},
-
-		spells_Pass_Obj_RE() {
-			return this.spells_Settings_Obj_RE.filter(
-				(el) => !this.spells_Activ_Obj_RE.includes(el)
-			);
-		},
-
-    spells_Pass_Obj_RE_Sort() {
-      const { t } = useDicStore();
-      if (this.spells_Pass_Obj_RE) {
-        return this.spells_Pass_Obj_RE.sort((x, y) => t(x[0].name).localeCompare(t(y[0].name)));
-      }
-		},
-
-		spells_Keys(state) {
-			let arr = [];
-			this.spells_Settings_Obj_RE.forEach((el) =>
-				arr.push(el.find((x) => x.name).name)
-			);
-			return arr;
-		},
-
-		spells_Pass_Arr_RE(state) {
-			let arr = [];
-			this.spells_Pass_Obj_RE.forEach((el) =>
-				arr.push(el.find((x) => x.name).name)
-			);
-			return arr;
-		},
-
-		spells_Pass_Arr_RE_ALL() {
-			return this.spells_Keys.filter(
-				(el) => !this.spells_Activ_Arr_RE.includes(el)
-			);
-		},
-
-		spells_Custom_Arr_RE() {
-      const MYStore = useMYStore();
-			return MYStore.COMMON_Custom_Arr_RE("spells");
-		},
-
-    spells_Custom_Obj_RE() {
-			let arr = [];
-			let pass_obj = this.spells_Pass_Obj_RE;
-			let cusstom_arr = this.spells_Custom_Arr_RE;
-			for (let i in pass_obj) {
-        for (let j in pass_obj[i]) {
-				for (let item in cusstom_arr)
-					if (pass_obj[i][j].name == cusstom_arr[item]) {
-						arr.push(pass_obj[i]);
-					}
-        }
-			}
-			return arr;
 		},
 
     spells_Custom_Race_Lvl() {
@@ -136,30 +37,31 @@ export const useSpellsStore = defineStore({
 		},
 
     spells_Race_Param_All() {
-			const RE_spells = this.spells_Activ_Obj_RE;
-			const custom_spells = this.spells_Custom_Race_Lvl;
-      return [...RE_spells, ...custom_spells];
+			const race = this.spells_Race_Main_Arr;
+			const ethnos = this.spells_Race_Ethnos_Arr;
+			const custom_race = this.spells_Custom_Race_Lvl;
+      return [...race, ...ethnos, ...custom_race];
 		},
 
     spells_Race_Param() {
       return [...new Set(this.spells_Race_Param_All)];
 		},
 
-    spells_Class_Lvl() {
+    spells_Class_Main_Arr() {
       const MYStore = useMYStore();
       const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.class?.spells);
 			return this.spells_For_Arr_Obj(spell_obj);
 		},
 
-    spells_Custom_Class_Lvl() {
+    spells_Class_Custom_Arr() {
       const MYStore = useMYStore();
       let spell_arr = MYStore.filter_Custom_Class_Lvl("spells");
 			return this.spells_For_Arr_Obj(spell_arr);
 		},
 
     spells_Class_Param_All() {
-			const class_spells = this.spells_Class_Lvl;
-			const custo_spells = this.spells_Custom_Class_Lvl;
+			const class_spells = this.spells_Class_Main_Arr;
+			const custo_spells = this.spells_Class_Custom_Arr;
 			return [...class_spells, ...custo_spells];
 		},
 
@@ -167,7 +69,7 @@ export const useSpellsStore = defineStore({
 			return [...new Set(this.spells_Class_Param_All)];
 		},
 
-    spells_Class_Param_includ_Race_Param() {
+    spells_Class_Param_without_Race_Param() {
       const race_spells = this.spells_Race_Param;
       const class_spells = this.spells_Class_Param;
       return class_spells.filter((el) => !race_spells.includes(el));
@@ -181,17 +83,11 @@ export const useSpellsStore = defineStore({
 
     spells_RC_Param() {
       const race_spells = this.spells_Race_Param;
-      const class_spells_includ = this.spells_Class_Param_includ_Race_Param;
+      const class_spells_includ = this.spells_Class_Param_without_Race_Param;
       return [...race_spells, ...class_spells_includ];
     }
-
-
   },
   
   actions: {
-    getCustomSelect_Spells_RE(name) {
-      const MYStore = useMYStore();
-			MYStore.getCustomSelect_COMMON_RE("spells", name);
-		},
   }
 });
