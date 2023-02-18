@@ -1898,15 +1898,6 @@ export default {
               ],
             },
             {
-              type: "spells",
-              name: "spells",
-              position: 4,
-              select: 1,
-              mana_min: 0,
-              mana_max: 0,
-              classes: ["wizard"],
-            },
-            {
               level: 1,
               type: "custom",
               name: "languages",
