@@ -5542,7 +5542,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 4,
+        position: 3,
         name: "spells_0",
         select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         list: [
@@ -6228,7 +6228,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 4,
+        position: 3,
         name: "spells_0",
         select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         list: [
@@ -7580,7 +7580,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 4,
+        position: 3,
         name: "spells_0",
         select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         list: [
@@ -8223,7 +8223,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 4,
+        position: 3,
         name: "spells_0",
         select: [4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
         list: [
@@ -9078,7 +9078,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 4,
+        position: 3,
         name: "spells_0",
         select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
         list: [
@@ -9949,7 +9949,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 4,
+        position: 3,
         name: "spells_0",
         select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
         list: [
