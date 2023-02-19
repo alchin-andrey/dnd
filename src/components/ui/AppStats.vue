@@ -41,11 +41,11 @@
 			<div class="visual">
 				<div
 					class="cube"
-					v-for="n in cube_Numb"
-					:key="n"
+					v-for="i in cube_Numb"
+					:key="i"
 					:class="{
 						cube_save: only_Save,
-						cube_max: max_Cube(n),
+						cube_max: overflow_Cube(i),
 					}"
 				/>
 			</div>
@@ -56,7 +56,6 @@
 <script>
 import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
-import { usePagesStore } from "@/stores/user/PagesStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
@@ -103,17 +102,11 @@ export default {
 
 	computed: {
 		// STORES
-		...mapState(usePagesStore, ["pages"]),
-		...mapState(useStatsStore, [
-			"stats_Class_Page_Numb_Overflow",
-			// "stats_Class_Page_Numb",
-			"stats_Class_Page_Numb_Full",
-			"stats_Base_Max",
-			"stats_Saving_Arr",
-		]),
+		...mapState(useStatsStore, ["stats_Save_Page_Arr",]),
     ...mapState(useOverflowStore, [
       "overflow_Stats_Save",
-      "overflow_Stats_Numb"
+      "overflow_Stats_Numb",
+      "overflow_Stats_Cube",
     ]),
 
 		t_Title() {
@@ -154,31 +147,19 @@ export default {
 			}
 		},
 
-		save_Icon() {
-			const shown_save = this.pages.class_page
-				? this.stats_Saving_Arr.includes(this.title)
-				: false;
-			return shown_save || this.only_Save;
-		},
+    overflow_Cube: (stor) => (i) => {
+      if (stor.param) {
+        return false;
+      } else if (stor.only_Save) {
+        return stor.overflow_Save;
+      } else {
+        return stor.overflow_Stats_Cube(i, stor.numb, stor.title, stor.active_card)
+      }
+    },
 
-		max_Cube: (stor) => (n) => {
-      if (stor.param || stor.pages.race_page) {
-				return false;
-			} else if (stor.only_Save) {
-				return stor.overflow_Save;
-			} else {
-				if (stor.active_card) {
-					const overflow_numb = stor.stats_Class_Page_Numb_Overflow(stor.title);
-					return n - overflow_numb <= 0;
-				} else {
-					const stat_numb_full = stor.stats_Class_Page_Numb_Full(stor.title);
-					const max = stor.stats_Base_Max(stor.title);
-					const stat_numb_full_pls = stat_numb_full + stor.numb;
-					const stat_numb_pls = stat_numb_full_pls < max ? stat_numb_full_pls : max;
-					const overflow_numb = stat_numb_full_pls - stat_numb_pls;
-					return n - overflow_numb <= 0;
-				}
-			}
+		save_Icon() {
+			const shown_save = this.stats_Save_Page_Arr.includes(this.title)
+			return shown_save || this.only_Save;
 		},
 	},
 };

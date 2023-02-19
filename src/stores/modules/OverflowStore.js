@@ -14,20 +14,23 @@ export const useOverflowStore = defineStore({
 	}),
 
 	getters: {
-    ...mapState(usePagesStore, [
+		...mapState(usePagesStore, [
 			"pages",
 			"race_page",
 			"class_page",
 			"page_Open",
 		]),
 
-    filter_List_Lvl: (stor) => (arr, name, kay) => {
-      const MYStore = useMYStore();
-      const ProficienciesStore = useProficienciesStore();
+		filter_List_Lvl: (stor) => (arr, name, kay) => {
+			const MYStore = useMYStore();
+			const ProficienciesStore = useProficienciesStore();
 			let res_arr = [];
 			arr.forEach((el) => {
 				if (name == "proficiencies") {
-					const prof_arr = ProficienciesStore.proficiencies_Arr(el?.proficiencies, kay);
+					const prof_arr = ProficienciesStore.proficiencies_Arr(
+						el?.proficiencies,
+						kay
+					);
 					res_arr = res_arr.concat(prof_arr);
 				} else {
 					const item_lvl = MYStore.level_Filter_Arr(el?.[name]);
@@ -38,63 +41,73 @@ export const useOverflowStore = defineStore({
 		},
 
 		overflow_Item_Menu: (stor) => (item) => {
-      const ProficienciesStore = useProficienciesStore();
-      let res = false;
+			const ProficienciesStore = useProficienciesStore();
+			let res = false;
 
-      ProficienciesStore.proficiencies.forEach(key => {
-        const proff_arr = stor.filter_List_Lvl(item.select_list, "proficiencies", key);
-        proff_arr.forEach(name => {
-          const new_res = stor.overflow_Prof(key, name, true);
-          res = res ? true : new_res;
-        });
-      });
+			ProficienciesStore.proficiencies.forEach((key) => {
+				const proff_arr = stor.filter_List_Lvl(
+					item.select_list,
+					"proficiencies",
+					key
+				);
+				proff_arr.forEach((name) => {
+					const new_res = stor.overflow_Prof(key, name, true);
+					res = res ? true : new_res;
+				});
+			});
 
-      const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
-        spell_arr.forEach(el => {
-          const new_res = stor.overflow_Spell(el.spell, true);
-          res = res ? true : new_res;
-        });
+			const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
+			spell_arr.forEach((el) => {
+				const new_res = stor.overflow_Spell(el.spell, true);
+				res = res ? true : new_res;
+			});
 
-      const stats_save_arr = stor.filter_List_Lvl(item.select_list, "saving");
-        stats_save_arr.forEach(name => {
-          const new_res = stor.overflow_Stats_Save(name, true);
-          res = res ? true : new_res;
-        });
+			const stats_save_arr = stor.filter_List_Lvl(item.select_list, "saving");
+			stats_save_arr.forEach((name) => {
+				const new_res = stor.overflow_Stats_Save(name, true);
+				res = res ? true : new_res;
+			});
 
-      const stats_arr = stor.filter_List_Lvl(item.select_list, "stats");
-        stats_arr.forEach(el => {
-          const new_res = stor.overflow_Stats_Numb(el.name, true);
-          res = res ? true : new_res;
-        });
+			const stats_arr = stor.filter_List_Lvl(item.select_list, "stats");
+			stats_arr.forEach((el) => {
+				const new_res = stor.overflow_Stats_Numb(el.name, true);
+				res = res ? true : new_res;
+			});
 
 			return res;
 		},
-    
-    //NOTE - Proficiencies
-    overflow_Prof_Any_Name: (stor) => (key) => {
-      const ProficienciesStore = useProficienciesStore();
+
+		//NOTE - Proficiencies
+		overflow_Prof_Any_Name: (stor) => (key) => {
+			const ProficienciesStore = useProficienciesStore();
 			return ProficienciesStore.proficiencies_Page_Arr(key).includes("any");
 		},
 
 		overflow_Prof: (stor) => (key, name, active) => {
-      const ProficienciesStore = useProficienciesStore();
-      const prof_arr = ProficienciesStore.proficiencies_Page_Arr(key);
-      const any_name = stor.overflow_Prof_Any_Name(key);
-			const name_times = prof_arr.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+			const ProficienciesStore = useProficienciesStore();
+			const prof_arr = ProficienciesStore.proficiencies_Page_Arr(key);
+			const any_name = stor.overflow_Prof_Any_Name(key);
+			const name_times = prof_arr.reduce(
+				(acc, el) => (el == name ? acc + 1 : acc),
+				0
+			);
 			if (any_name) {
 				return true;
-      } else if (active && name_times <= 1) {
+			} else if (active && name_times <= 1) {
 				return false;
 			} else {
 				return name_times >= 1;
 			}
 		},
 
-    //NOTE - Spell
-    overflow_Spell: (stor) => (name, active) => {
-      const SpellsStore = useSpellsStore();
-      const spell_arr = SpellsStore.spells_Page_Arr;
-			const name_times = spell_arr.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+		//NOTE - Spell
+		overflow_Spell: (stor) => (name, active) => {
+			const SpellsStore = useSpellsStore();
+			const spell_arr = SpellsStore.spells_Page_Arr;
+			const name_times = spell_arr.reduce(
+				(acc, el) => (el == name ? acc + 1 : acc),
+				0
+			);
 			if (active && name_times <= 1) {
 				return false;
 			} else {
@@ -102,11 +115,14 @@ export const useOverflowStore = defineStore({
 			}
 		},
 
-    //NOTE - Stats_Save
-    overflow_Stats_Save: (stor) => (name, active) => {
-      const StatsStore = useStatsStore();
-			const save_all_name = StatsStore.stats_Save_Page_Arr;
-			const name_times = save_all_name.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+		//NOTE - Stats_Save
+		overflow_Stats_Save: (stor) => (name, active) => {
+			const StatsStore = useStatsStore();
+			const save_all_name = StatsStore.stats_Save_All_Page_Arr;
+			const name_times = save_all_name.reduce(
+				(acc, el) => (el == name ? acc + 1 : acc),
+				0
+			);
 			if (active && name_times <= 1) {
 				return false;
 			} else {
@@ -114,16 +130,28 @@ export const useOverflowStore = defineStore({
 			}
 		},
 
-    //NOTE - Stats_Numb
-    overflow_Stats_Numb: (stor) => (name, active) => {
-        const StatsStore = useStatsStore();
-				const stat_numb = StatsStore.stats_Numb_Page_Arr(name);
-				const max = StatsStore.stats_Base_Max(name);
-        if (active && stat_numb == max) {
-          return false;
-        } else {
-          return stat_numb >= max;
-        }
+		//NOTE - Stats_Numb
+		overflow_Stats_Numb: (stor) => (name, active) => {
+			const StatsStore = useStatsStore();
+			const stat_numb_full = StatsStore.stats_Numb_Full_Page_Arr(name);
+			const max = StatsStore.stats_Base_Max(name);
+			if (active && stat_numb_full == max) {
+				return false;
+			} else {
+				return stat_numb_full >= max;
+			}
+		},
+
+    //NOTE - Stats_Cube
+		overflow_Stats_Cube: (stor) => (i, numb, name, active) => {
+			const StatsStore = useStatsStore();
+			const stat_numb_full = StatsStore.stats_Numb_Full_Page_Arr(name);
+			const max = StatsStore.stats_Base_Max(name);
+			let stat_numb = stat_numb_full;
+      !active ? stat_numb += numb : null;
+			const stat_numb_max = stat_numb < max ? stat_numb : max;
+			const overflow_numb = stat_numb - stat_numb_max;
+			return i - overflow_numb <= 0;
 		},
 	},
 

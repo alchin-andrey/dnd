@@ -165,7 +165,7 @@ export const useStatsStore = defineStore({
     },
 
     		//NOTE - PAGE
-    stats_Save_Page_Arr() {
+    stats_Save_All_Page_Arr() {
       const PagesStore = usePagesStore();
       if (PagesStore.pages.race_page) {
         return [];
@@ -176,7 +176,18 @@ export const useStatsStore = defineStore({
       }
     },
 
-    stats_Numb_Page_Arr: (stor) => (name) => {
+    stats_Save_Page_Arr() {
+      const PagesStore = usePagesStore();
+      if (PagesStore.pages.race_page) {
+        return [];
+      } else if (PagesStore.pages.class_page) {
+        return this.stats_Saving_Arr;
+      } else {
+        return [];
+      }
+    },
+
+    stats_Numb_Full_Page_Arr: (stor) => (name) => {
       const PagesStore = usePagesStore();
       if (PagesStore.pages.race_page) {
         return [];
