@@ -165,23 +165,23 @@ export const useStatsStore = defineStore({
     },
 
     		//NOTE - PAGE
-		// spells_Page_Arr() {
-		// 	const PagesStore = usePagesStore();
-		// 	if (PagesStore.pages.race_page) {
-		// 		return this.spells_Race_Param_All;
-		// 	} else if (PagesStore.pages.class_page) {
-		// 		return this.spells_RC_Param_All;
-		// 	} else {
-    //     return [];
-    //   }
-		// },
-
     stats_Save_Page_Arr() {
       const PagesStore = usePagesStore();
       if (PagesStore.pages.race_page) {
         return [];
       } else if (PagesStore.pages.class_page) {
         return this.stats_Saving_Arr_AllName;
+      } else {
+        return [];
+      }
+    },
+
+    stats_Numb_Page_Arr: (stor) => (name) => {
+      const PagesStore = usePagesStore();
+      if (PagesStore.pages.race_page) {
+        return [];
+      } else if (PagesStore.pages.class_page) {
+        return stor.stats_Class_Page_Numb_Full(name);
       } else {
         return [];
       }

@@ -28,7 +28,6 @@
 						{{ t_Title }}
 						<span
 							class="grey-2"
-							:class="{ 'rare-text': overflow_Numb }"
 							v-if="t_Type"
 							>{{ t_Type }}</span
 						>
@@ -112,7 +111,10 @@ export default {
 			"stats_Base_Max",
 			"stats_Saving_Arr",
 		]),
-    ...mapState(useOverflowStore, ["overflow_Stats_Save"]),
+    ...mapState(useOverflowStore, [
+      "overflow_Stats_Save",
+      "overflow_Stats_Numb"
+    ]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -138,19 +140,17 @@ export default {
       if(this.param) {
         return false;
       } else {
-        return this.overflow_Stats_Save(this.title, this.active_card)
+        return this.overflow_Stats_Save(this.title, this.active_card);
       }
 		},
 
 		overflow_Numb() {
-			if (this.param || this.pages.race_page) {
+			if (this.param) {
 				return false;
 			} else if (this.only_Save) {
 				return this.overflow_Save;
 			} else {
-				const stat_numb = this.stats_Class_Page_Numb_Full(this.title);
-				const max = this.stats_Base_Max(this.title);
-				return this.active_card && stat_numb == max ? false : stat_numb >= max;
+				return this.overflow_Stats_Numb(this.title, this.active_card);
 			}
 		},
 
@@ -245,7 +245,8 @@ export default {
 	color: rgba(255, 255, 255, 0.2);
 }
 
-.rare-text {
+.rare-text,
+.rare-text span {
 	color: #ffc93d;
 }
 

@@ -50,14 +50,20 @@ export const useOverflowStore = defineStore({
       });
 
       const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
-        spell_arr.forEach(name => {
-          const new_res = stor.overflow_Spell(name.spell, true);
+        spell_arr.forEach(el => {
+          const new_res = stor.overflow_Spell(el.spell, true);
           res = res ? true : new_res;
         });
 
       const stats_save_arr = stor.filter_List_Lvl(item.select_list, "saving");
         stats_save_arr.forEach(name => {
           const new_res = stor.overflow_Stats_Save(name, true);
+          res = res ? true : new_res;
+        });
+
+      const stats_arr = stor.filter_List_Lvl(item.select_list, "stats");
+        stats_arr.forEach(el => {
+          const new_res = stor.overflow_Stats_Numb(el.name, true);
           res = res ? true : new_res;
         });
 
@@ -106,6 +112,18 @@ export const useOverflowStore = defineStore({
 			} else {
 				return name_times >= 1;
 			}
+		},
+
+    //NOTE - Stats_Numb
+    overflow_Stats_Numb: (stor) => (name, active) => {
+        const StatsStore = useStatsStore();
+				const stat_numb = StatsStore.stats_Numb_Page_Arr(name);
+				const max = StatsStore.stats_Base_Max(name);
+        if (active && stat_numb == max) {
+          return false;
+        } else {
+          return stat_numb >= max;
+        }
 		},
 	},
 
