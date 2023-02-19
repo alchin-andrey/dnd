@@ -68,9 +68,7 @@ export default {
       "proficiencies_Arr"
 		]),
 
-		...mapState(useOverflowStore, [
-      "overflow_Item_Menu"
-		]),
+		...mapState(useOverflowStore, ["overflow_Item_Menu"]),
 
     //NOTE - Filter Proff
 		// filter_List_Lvl: (stor) => (arr, name, kay) => {

@@ -2,8 +2,10 @@ import { defineStore } from "pinia";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 
 export const useOverflowStore = defineStore({
 	id: "OverflowStore",
@@ -53,6 +55,11 @@ export const useOverflowStore = defineStore({
           res = res ? true : new_res;
         });
 
+      const stats_save_arr = stor.filter_List_Lvl(item.select_list, "saving");
+        stats_save_arr.forEach(name => {
+          const new_res = stor.overflow_Stats_Save(name, true);
+          res = res ? true : new_res;
+        });
 
 			return res;
 		},
@@ -78,11 +85,22 @@ export const useOverflowStore = defineStore({
 		},
 
     //NOTE - Spell
-
     overflow_Spell: (stor) => (name, active) => {
       const SpellsStore = useSpellsStore();
       const spell_arr = SpellsStore.spells_Page_Arr;
 			const name_times = spell_arr.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+			if (active && name_times <= 1) {
+				return false;
+			} else {
+				return name_times >= 1;
+			}
+		},
+
+    //NOTE - Stats_Save
+    overflow_Stats_Save: (stor) => (name, active) => {
+      const StatsStore = useStatsStore();
+			const save_all_name = StatsStore.stats_Save_Page_Arr;
+			const name_times = save_all_name.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
 			if (active && name_times <= 1) {
 				return false;
 			} else {

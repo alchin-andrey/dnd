@@ -107,8 +107,6 @@ export const useMYStore = defineStore({
 	actions: {
 		settingsMainSelect(page, settings_arr, type_str, per_id_link) {
 			let new_arr = [];
-			// const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
-			// const link_type = per_id_link ? `${per_id_link}___${type_str}` : null;
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
 			const sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
@@ -230,19 +228,6 @@ export const useMYStore = defineStore({
       });
       return new_arr;
     },
-
-    // settingsSelectList(page, arr, type_str) {
-    //   let new_arr = [];
-    //   arr.forEach(el => {
-    //     el.select_list.forEach((elem_list) => {
-    //       if (elem_list.settings) {
-    //         let redus = this.settingsMainSelect(page, elem_list.settings, type_str, el.id_link);
-    //         new_arr = new_arr.concat(redus);
-    //       }
-    //     });
-    //   });
-    //   return new_arr;
-    // },
 
 		getRaceObj(name) {
 			this.MY.race = name;

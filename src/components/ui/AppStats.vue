@@ -59,6 +59,7 @@ import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppStats",
 	data() {
@@ -106,12 +107,12 @@ export default {
 		...mapState(usePagesStore, ["pages"]),
 		...mapState(useStatsStore, [
 			"stats_Class_Page_Numb_Overflow",
-			"stats_Class_Page_Numb",
+			// "stats_Class_Page_Numb",
 			"stats_Class_Page_Numb_Full",
 			"stats_Base_Max",
-			"stats_Saving_Arr_AllName",
 			"stats_Saving_Arr",
 		]),
+    ...mapState(useOverflowStore, ["overflow_Stats_Save"]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -134,16 +135,11 @@ export default {
 		},
 
 		overflow_Save() {
-			const save_all_name = this.stats_Saving_Arr_AllName;
-			const save_times = save_all_name.reduce(
-				(acc, el) => (el == this.title ? acc + 1 : acc),
-				0
-			);
-			if (this.active_card && save_times <= 1) {
-				return false;
-			} else {
-				return save_times >= 1;
-			}
+      if(this.param) {
+        return false;
+      } else {
+        return this.overflow_Stats_Save(this.title, this.active_card)
+      }
 		},
 
 		overflow_Numb() {
@@ -178,8 +174,7 @@ export default {
 					const stat_numb_full = stor.stats_Class_Page_Numb_Full(stor.title);
 					const max = stor.stats_Base_Max(stor.title);
 					const stat_numb_full_pls = stat_numb_full + stor.numb;
-					const stat_numb_pls =
-						stat_numb_full_pls < max ? stat_numb_full_pls : max;
+					const stat_numb_pls = stat_numb_full_pls < max ? stat_numb_full_pls : max;
 					const overflow_numb = stat_numb_full_pls - stat_numb_pls;
 					return n - overflow_numb <= 0;
 				}

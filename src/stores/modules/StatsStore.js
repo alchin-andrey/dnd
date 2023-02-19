@@ -1,6 +1,7 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useDicStore } from "@/stores/general/DicStore";
 
 
@@ -162,6 +163,31 @@ export const useStatsStore = defineStore({
       let text = arr.map((n) => n).join(", ")
       return `${text}, ...`;
     },
+
+    		//NOTE - PAGE
+		// spells_Page_Arr() {
+		// 	const PagesStore = usePagesStore();
+		// 	if (PagesStore.pages.race_page) {
+		// 		return this.spells_Race_Param_All;
+		// 	} else if (PagesStore.pages.class_page) {
+		// 		return this.spells_RC_Param_All;
+		// 	} else {
+    //     return [];
+    //   }
+		// },
+
+    stats_Save_Page_Arr() {
+      const PagesStore = usePagesStore();
+      if (PagesStore.pages.race_page) {
+        return [];
+      } else if (PagesStore.pages.class_page) {
+        return this.stats_Saving_Arr_AllName;
+      } else {
+        return [];
+      }
+    },
+
+
   },
   
   actions: {
