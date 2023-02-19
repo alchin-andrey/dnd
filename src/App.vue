@@ -256,7 +256,7 @@ export default {
 			"closePar",
       "goPage",
       
-      "closeCustomClass",
+      "closeCustomSett",
 		]),
 		...mapActions(useMYStore, [
       "getEthnos",
@@ -274,17 +274,18 @@ export default {
 			this.closeColor("skin");
 			this.closeColor("eyes");
 			this.closeColor("hair");
-			this.closePar("stats");
-			this.closePar("skills");
-			this.closePar("languages");
-			this.closePar("spells");
+      this.closeCustomSett();
+			// this.closePar("stats");
+			// this.closePar("skills");
+			// this.closePar("languages");
+			// this.closePar("spells");
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 		},
 
     getWatch_Class() {
-      this.closeCustomClass();
+      this.closeCustomSett();
     }
 	},
 };

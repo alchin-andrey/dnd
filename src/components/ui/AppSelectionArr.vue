@@ -3,10 +3,10 @@
 		v-for="item in menu"
 		:key="item.id_link"
 		class="column"
-		@click="showSettings__Settings(item.id_link)"
+		@click="showSettings(page_Open, item.id_link)"
 		:class="{
-			active_link: class_page.shown[item.id_link],
-			hover: !class_page.shown[item.id_link],
+			active_link: active_Link(item),
+			hover: !active_Link(item),
 			'lvl-dot': shown_Level_Dot(item.level),
 		}"
 	>
@@ -52,19 +52,14 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, [
-      "pages", 
-      "race_page", 
-      "class_page", 
-    ]),
+		...mapState(usePagesStore, ["race_page", "class_page", "page_Open"]),
+    
+    active_Link: (stor) => (item) => {
+      return stor[stor.page_Open]?.shown[item.id_link];
+    },
 
 		icon_Image: (stor) => (item) => {
-      let page = "race_page"
-      if(stor.pages.class_page) {
-        page = "class_page"
-      }
-			let actile_link = stor[page].shown[item.id_link];
-			return !actile_link ? "arrow_down_small" : "arrow_right_small";
+			return !stor.active_Link(item) ? "arrow_down_small" : "arrow_right_small";
 		},
 
 		shown_Level_Dot: (store) => (item_lvl) => {
@@ -116,7 +111,7 @@ export default {
 		},
 	},
   methods: {
-    ...mapActions(usePagesStore, ["showSettings__Settings"]),
+    ...mapActions(usePagesStore, ["showSettings"]),
 	},
 };
 </script>

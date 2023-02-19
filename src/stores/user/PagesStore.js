@@ -62,6 +62,16 @@ export const usePagesStore = defineStore({
 		},
 	}),
 
+  getters: {
+    page_Open() {
+      if(this.pages.race_page) {
+        return "race_page";
+      } else if(this.pages.class_page) {
+        return "class_page";
+      }
+    }
+  },
+
 	actions: {
 		goPage(page_name) {
 			for (const [key, value] of Object.entries(this.pages)) {
@@ -83,15 +93,19 @@ export const usePagesStore = defineStore({
 			this.setting_open = null;
 		},
 
+    toggleSettings(page, name) {
+      if (this.setting_open) {
+        this[this.page_setting_open].shown[this.setting_open] = false;
+      }
+      this[page].shown[name] = true;
+      this.page_setting_open = page;
+      this.setting_open = name;
+      this.shown_home = false;
+    },
+
 		showSettings(page, name) {
 			if (this.setting_open !== name) {
-				if (this.setting_open) {
-					this[this.page_setting_open].shown[this.setting_open] = false;
-				}
-				this[page].shown[name] = true;
-				this.page_setting_open = page;
-				this.setting_open = name;
-				this.shown_home = false;
+        this.toggleSettings(page, name);
 			} else {
 				this.showHome();
 			}
@@ -122,16 +136,6 @@ export const usePagesStore = defineStore({
 			this.showSettings("class_page", name);
 		},
 
-		showSettings__Settings(name) {
-      if(this.pages.race_page) {
-        this.showSettings("race_page", name);
-      } else {
-        this.showSettings("class_page", name);
-      }
-		},
-
-
-
 		closeEthnos() {
 			const MYStore = useMYStore();
 			const ethnos_show = this.race_page.shown.ethnos;
@@ -151,46 +155,45 @@ export const usePagesStore = defineStore({
 			}
 		},
 
-		closePar(name) {
-			const MYStore = useMYStore();
-			const page_shown = this.race_page.shown[name] === true;
-			const null_race_par =
-				MYStore.MY.race.race_settings[`custom_${name}`] === undefined;
-			const null_ethnos_par = MYStore.MY.ethnos[`custom_${name}`] === undefined;
-			if (page_shown && null_race_par && null_ethnos_par) {
-				this.showHome();
-			}
-		},
-
 		showRaceScroll(name) {
 			this.race_page[name] = !this.race_page[name];
 		},
 
 		// ^ Class Page: Shown settings
-
-		closeCustomClass() {
+		closeCustomSett() {
 			const MYStore = useMYStore();
-			const setting_open = this.setting_open;
-			if (setting_open) {
-				let str = setting_open.split("__");
 
-        const name_sett = str[str.length - 2];
-				// const custom = MYStore.custom_Settings_Class_Obj[name_sett];
-				const custom = MYStore.сustomm_Settings_Class_Arr();
-        let filter = custom?.find((el) => el.id_link == setting_open);
-        const str_0 = `${str[0]}__${name_sett}__0`;
-        let filter_0 = custom?.find((el) => el.id_link == str_0);
-        if(filter || str[0] !== "custom") {
-          return null;
-        } else if(filter_0) {
-          this.setting_open = str_0;
-          this.class_page.shown[setting_open] = false;
-          this.class_page.shown[str_0] = true;
+			const setting_open = this.setting_open;
+			if (setting_open && setting_open.includes("__")) {
+				let custom = MYStore.сustomm_Settings_Race_Arr;
+        if (this.pages.class_page) {
+          custom = MYStore.сustomm_Settings_Class_Arr();
+        }
+        
+        const filter_full = custom?.find((el) => el.id_link == setting_open);
+        if (filter_full) {
+          this.toggleSettings(this.page_Open, filter_full.id_link);
+          return;
+        }
+        
+        const str_name_numb = setting_open.split("___").pop();
+        const filter_name_i = custom?.find((el) => el.id_link.includes(str_name_numb));
+        if (filter_name_i) {
+          this.toggleSettings(this.page_Open, filter_name_i.id_link);
+          return;
+        }
+
+        const str_name = str_name_numb.split("__")[0];
+        const filter_name = custom?.find((el) => el.id_link.includes(str_name));
+        if (filter_name) {
+          this.toggleSettings(this.page_Open, filter_name.id_link);
+          return;
         } else {
           this.showHome();
         }
 			} else {
-        this.showHome();
+        return null;
+        // this.showHome();
       }
 		},
 	},

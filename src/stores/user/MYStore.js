@@ -107,7 +107,8 @@ export const useMYStore = defineStore({
 	actions: {
 		settingsMainSelect(page, settings_arr, type_str, per_id_link) {
 			let new_arr = [];
-			const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
+			// const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
+			// const link_type = per_id_link ? `${per_id_link}___${type_str}` : null;
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
 			const sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
@@ -116,13 +117,13 @@ export const useMYStore = defineStore({
 			const uniqu_name = [...new Set(all_name)];
 
 			for (const item_name of uniqu_name) {
-				const link_type_name = `${link_type}__${item_name}`;
+				const link_name = per_id_link ? `${per_id_link}___${item_name}` : item_name;
 				const sett_for_name = sett_for_type.filter((el) => el.name == item_name);
 
 				sett_for_name?.forEach((item, i) => {
-					const link_type_name_i = `${link_type_name}__${i}`;
+					const link_name_i = `${link_name}__${i}`;
 					const select_numb = this.select_Numb(item.select);
-					const select_arr = sett_select?.[link_type_name_i] ?? [];
+					const select_arr = sett_select?.[link_name_i] ?? [];
 					
 					const list_lvl = this.level_Filter_Arr(item.list);
 
@@ -145,14 +146,14 @@ export const useMYStore = defineStore({
 
 					new_arr.push({
 						...item,
-						id_link: link_type_name_i,
+						id_link: link_name_i,
 						select_list: select_list,
             list: list_lvl,
 					});
 
 					select_list.forEach((elem_list) => {
 						if (elem_list.settings) {
-							let redus = this.settingsMainSelect(page, elem_list.settings, type_str, link_type_name_i);
+							let redus = this.settingsMainSelect(page, elem_list.settings, type_str, link_name_i);
 							new_arr = new_arr.concat(redus);
 						}
 					});
@@ -160,6 +161,62 @@ export const useMYStore = defineStore({
 			}
 			return new_arr;
 		},
+
+		// settingsMainSelect(page, settings_arr, type_str, per_id_link) {
+		// 	let new_arr = [];
+		// 	const link_type = per_id_link ? `${per_id_link}___${type_str}` : type_str;
+		// 	const sett_lvl = this.level_Filter_Arr(settings_arr);
+		// 	const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
+		// 	const sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
+
+		// 	let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name), []);
+		// 	const uniqu_name = [...new Set(all_name)];
+
+		// 	for (const item_name of uniqu_name) {
+		// 		const link_type_name = `${link_type}__${item_name}`;
+		// 		const sett_for_name = sett_for_type.filter((el) => el.name == item_name);
+
+		// 		sett_for_name?.forEach((item, i) => {
+		// 			const link_type_name_i = `${link_type_name}__${i}`;
+		// 			const select_numb = this.select_Numb(item.select);
+		// 			const select_arr = sett_select?.[link_type_name_i] ?? [];
+					
+		// 			const list_lvl = this.level_Filter_Arr(item.list);
+
+    //       const select_arr_lvl = this.level_Filter_Arr(select_arr);
+    //       // const select_copy = [...select_arr_lvl];
+    //       const select_not_null = select_arr_lvl.filter((el) => list_lvl.some(item => {
+    //         if (item.name) {
+    //           return item.name == el.name;
+    //         } else {
+    //           return item.name_set == el.name_set;
+    //         }
+    //       })); //NOTE - NEW
+
+		// 			const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.includes(el));
+
+		// 			let select_list = [];
+		// 			for (let i = 0; i < select_numb; i += 1) {
+		// 				select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
+		// 			}
+
+		// 			new_arr.push({
+		// 				...item,
+		// 				id_link: link_type_name_i,
+		// 				select_list: select_list,
+    //         list: list_lvl,
+		// 			});
+
+		// 			select_list.forEach((elem_list) => {
+		// 				if (elem_list.settings) {
+		// 					let redus = this.settingsMainSelect(page, elem_list.settings, type_str, link_type_name_i);
+		// 					new_arr = new_arr.concat(redus);
+		// 				}
+		// 			});
+		// 		});
+		// 	}
+		// 	return new_arr;
+		// },
 
     settingsSelectList(page, arr, type_str) {
       let new_arr = [];
@@ -173,6 +230,19 @@ export const useMYStore = defineStore({
       });
       return new_arr;
     },
+
+    // settingsSelectList(page, arr, type_str) {
+    //   let new_arr = [];
+    //   arr.forEach(el => {
+    //     el.select_list.forEach((elem_list) => {
+    //       if (elem_list.settings) {
+    //         let redus = this.settingsMainSelect(page, elem_list.settings, type_str, el.id_link);
+    //         new_arr = new_arr.concat(redus);
+    //       }
+    //     });
+    //   });
+    //   return new_arr;
+    // },
 
 		getRaceObj(name) {
 			this.MY.race = name;
