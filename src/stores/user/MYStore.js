@@ -90,11 +90,11 @@ export const useMYStore = defineStore({
       return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr(), name);
     },
 
-    filter_Custom_Lvl: (state) => (arr, name) => {
+    filter_Custom_Lvl: (stor) => (arr, name) => {
       let res_arr = [];
       arr.forEach(el => {
         el.select_list.forEach(sub_el => {
-          const item_lvl = state.level_Filter_Arr(sub_el?.[name]);
+          const item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
           res_arr = res_arr.concat(item_lvl);
         });
       });

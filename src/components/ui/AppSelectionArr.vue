@@ -12,12 +12,13 @@
 	>
 		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
 		<section class="column_link int-400 active">
-			<div class="link-text">
+			<div class="link-text" 
+      :class="{ 'rare-text': overflow_Item_Menu(item) }">
 				<span>{{ t_Type(item) }}</span>
 			</div>
 			<div class="icon">
 				<svg
-          class="main_svg"
+					class="main_svg"
 					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
 					v-html="ui_icon[icon_Image(item)]"
@@ -33,6 +34,8 @@ import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSelectionArr",
 	data() {
@@ -51,12 +54,76 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["race_page", "class_page", "page_Open"]),
-    
-    active_Link: (stor) => (item) => {
-      return stor[stor.page_Open]?.shown[item.id_link];
-    },
+		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
+		...mapState(usePagesStore, [
+			"pages",
+			"race_page",
+			"class_page",
+			"page_Open",
+		]),
+		...mapState(useProficienciesStore, [
+      "proficiencies",
+			"proficiencies_Race_Params",
+			"proficiencies_Arr_All",
+      "proficiencies_Arr"
+		]),
+
+		...mapState(useOverflowStore, [
+      "overflow_Item_Menu"
+		]),
+
+    //NOTE - Filter Proff
+		// filter_List_Lvl: (stor) => (arr, name, kay) => {
+		// 	let res_arr = [];
+		// 	arr.forEach((el) => {
+		// 		if (name == "proficiencies") {
+		// 			const prof_arr = stor.proficiencies_Arr(el?.proficiencies, kay);
+		// 			res_arr = res_arr.concat(prof_arr);
+		// 		} else {
+		// 			const item_lvl = stor.level_Filter_Arr(el?.[name]);
+		// 			res_arr = res_arr.concat(item_lvl);
+		// 		}
+		// 	});
+		// 	return res_arr;
+		// },
+
+		// overflow_Item_Menu: (stor) => (item) => {
+    //   let res = false
+    //   stor.proficiencies.forEach(key => {
+    //     const proff_arr = stor.filter_List_Lvl(item.select_list, "proficiencies", key);
+    //     proff_arr.forEach(name => {
+    //       const new_res = stor.overflow_Proff(key, name)
+    //       res = res ? true : new_res;
+    //     });
+    //   })
+		// 	return res;
+		// },
+
+		// page_Arr: (stor) => (name) => {
+		// 	if (stor.pages.race_page) {
+		// 		return stor.proficiencies_Race_Params(name);
+		// 	} else if (stor.pages.class_page) {
+		// 		return stor.proficiencies_Arr_All(name);
+		// 	}
+		// },
+
+		// overflow_Proff: (stor) => (key, name) => {
+    //   const any_name = stor.page_Arr(key).includes("any")
+		// 	const name_times = stor
+		// 		.page_Arr(key)
+		// 		.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+		// 	if (any_name) {
+		// 		return true;
+		// 	} else {
+		// 		return name_times > 1;
+		// 	}
+		// },
+
+    //!NOTE - Filter Proff
+
+		active_Link: (stor) => (item) => {
+			return stor[stor.page_Open]?.shown[item.id_link];
+		},
 
 		icon_Image: (stor) => (item) => {
 			return !stor.active_Link(item) ? "arrow_down_small" : "arrow_right_small";
@@ -91,27 +158,27 @@ export default {
 				(item.id_btn == "stats_2" || item.id_btn == "stats_1_1")
 			) {
 				let arr = [];
-        item.select_list.forEach((item) => {
-          const name = item.stats[0].name;
-          const num = item.stats[0].num;
-          arr.push(`+${num} ${store.t(name).slice(0, 3)}`)
-        });
+				item.select_list.forEach((item) => {
+					const name = item.stats[0].name;
+					const num = item.stats[0].num;
+					arr.push(`+${num} ${store.t(name).slice(0, 3)}`);
+				});
 				return arr.map((n) => n.replace(n[3], n[3].toUpperCase())).join(", ");
 			} else {
-        let arr = [];
-        item.select_list.forEach((item) => {
-          if (item?.name) {
-            arr.push(store.t(item?.name));
-          } else if (item?.name_set) {
-            arr.push(store.t(item?.name_set));
-          }
-        });
-        return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
-      }
+				let arr = [];
+				item.select_list.forEach((item) => {
+					if (item?.name) {
+						arr.push(store.t(item?.name));
+					} else if (item?.name_set) {
+						arr.push(store.t(item?.name_set));
+					}
+				});
+				return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+			}
 		},
 	},
-  methods: {
-    ...mapActions(usePagesStore, ["showSettings"]),
+	methods: {
+		...mapActions(usePagesStore, ["showSettings"]),
 	},
 };
 </script>
@@ -196,11 +263,11 @@ export default {
 
 .main_svg {
 	fill: white;
-  /* width: 18px;
+	/* width: 18px;
 	height: 18px; */
 }
 
-.rare {
+.rare-text {
 	color: #ffc93d;
 }
 

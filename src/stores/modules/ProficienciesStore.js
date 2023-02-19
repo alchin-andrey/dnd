@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 
 
 
@@ -27,7 +27,20 @@ export const useProficienciesStore = defineStore({
         obj?.[kay] ? (arr = obj[kay].map((x) => x.name)) : null;
         return arr;
       },
-  
+
+      proficiencies_Arr_Setting: (stor) => (arr, kay) => {
+        let custom_prof = [];
+        arr.forEach(el => {
+          el.select_list.forEach(sub_el => {
+            const prof_arr = stor.proficiencies_Arr(
+              sub_el?.proficiencies, kay);
+              custom_prof = custom_prof.concat(prof_arr);
+            });
+          });
+        return custom_prof;
+      },
+
+      //NOTE - RACE
       proficiencies_Arr_Race: (stor) => (kay) => {
         const MYStore = useMYStore();
         return stor.proficiencies_Arr(MYStore.MY.race.proficiencies, kay);
@@ -56,18 +69,7 @@ export const useProficienciesStore = defineStore({
         return [...race_prof, ...ethnos_prof, ...backstory_prof, ...sett_prof];
       },
 
-      proficiencies_Arr_Setting: (stor) => (arr, kay) => {
-        let custom_prof = [];
-        arr.forEach(el => {
-          el.select_list.forEach(sub_el => {
-            const prof_arr = stor.proficiencies_Arr(
-              sub_el?.proficiencies, kay);
-              custom_prof = custom_prof.concat(prof_arr);
-            });
-          });
-        return custom_prof;
-      },
-
+      //NOTE - CLASS
       proficiencies_Arr_Class: (stor) => (kay) => {
         const MYStore = useMYStore();
         return stor.proficiencies_Arr(MYStore.MY.class.proficiencies, kay);
@@ -95,6 +97,16 @@ export const useProficienciesStore = defineStore({
         let rec_prof = stor.proficiencies_Race_Params(kay);
         let class_prof = stor.proficiencies_Class_Params(kay);
         return rec_prof.concat(class_prof);
+      },
+
+      //NOTE - PAGE
+      proficiencies_Page_Arr: (stor) => (name) => {
+        const PagesStore = usePagesStore();
+        if (PagesStore.pages.race_page) {
+          return stor.proficiencies_Race_Params(name);
+        } else if (PagesStore.pages.class_page) {
+          return stor.proficiencies_Arr_All(name);
+        }
       },
   },
   

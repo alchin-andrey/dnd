@@ -1,11 +1,13 @@
 <template>
-	<div class="column">
+	<div class="column" 				
+  :class="{
+    'rare-text': any_Name && !param,
+		}">
 		<div class="icon">
 			<svg
 				class="icon_svg"
 				:class="{
 					'icon-passive': passive_Link,
-					'icon-full': any_Name && !param,
 					'icon-null': passive_Link_Full,
 				}"
 				viewBox="0 0 18 18"
@@ -18,15 +20,11 @@
 				class="title jbm-300"
 				:class="{
 					passive: passive_Link,
-					'rare-text': any_Name && !param,
 				}"
 			>
 				{{ t_Title
 				}}<span
 					class="grey-2"
-					:class="{
-						'rare-text': any_Name && !param,
-					}"
 					>:</span
 				>
 			</div>
@@ -55,8 +53,8 @@
 <script>
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
-import { usePagesStore } from "@/stores/user/PagesStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppProficiencies",
 	data() {
@@ -87,16 +85,12 @@ export default {
 		},
 	},
 	computed: {
-    ...mapState(usePagesStore, ["pages"]),
-		...mapState(useProficienciesStore, ["proficiencies_Race_Params", "proficiencies_Arr_All"]),
+		...mapState(useProficienciesStore, []),
 
-    page_Arr: (stor) => (name) => {
-      if(stor.pages.race_page) {
-        return stor.proficiencies_Race_Params(name);
-      } else {
-        return stor.proficiencies_Arr_All(name);
-      }
-    },
+    ...mapState(useOverflowStore, [
+      "overflow_Prof",
+      "overflow_Prof_Any_Name",
+		]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -116,20 +110,15 @@ export default {
 		},
 
 		overflow_Save: (stor) => (name) => {
-			const name_times = stor
-				.page_Arr(stor.title)
-				.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
-			if (stor.any_Name && !stor.param) {
-				return true;
-			} else if ((stor.active_card && name_times <= 1) || stor.param) {
-				return false;
-			} else {
-				return name_times >= 1;
-			}
+      if(stor.param) {
+        return false;
+      } else {
+        return stor.overflow_Prof(stor.title, name, stor.active_card)
+      }
 		},
 
 		any_Name() {
-			return this.page_Arr(this.title).includes("any");
+      return this.overflow_Prof_Any_Name(this.title)
 		},
 
 		t_Name: (stor) => (name) => {
@@ -204,9 +193,17 @@ export default {
 	color: rgba(255, 255, 255, 0.2);
 }
 
-.rare-text {
+
+.rare-text,
+.rare-text span, 
+.rare-text div {
 	color: #ffc93d;
 }
+
+.rare-text svg {
+	fill: #ffc93d;
+}
+
 
 .icon-null {
 	opacity: 0;
