@@ -3,6 +3,7 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 
 export const useOverflowStore = defineStore({
 	id: "OverflowStore",
@@ -11,18 +12,12 @@ export const useOverflowStore = defineStore({
 	}),
 
 	getters: {
-    // ...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
     ...mapState(usePagesStore, [
 			"pages",
 			"race_page",
 			"class_page",
 			"page_Open",
 		]),
-    // ...mapState(useProficienciesStore, [
-    //   // "proficiencies",
-    //   // "proficiencies_Arr",
-    //   // "proficiencies_Page_Arr",
-		// ]),
 
     filter_List_Lvl: (stor) => (arr, name, kay) => {
       const MYStore = useMYStore();
@@ -43,6 +38,7 @@ export const useOverflowStore = defineStore({
 		overflow_Item_Menu: (stor) => (item) => {
       const ProficienciesStore = useProficienciesStore();
       let res = false;
+
       ProficienciesStore.proficiencies.forEach(key => {
         const proff_arr = stor.filter_List_Lvl(item.select_list, "proficiencies", key);
         proff_arr.forEach(name => {
@@ -50,9 +46,18 @@ export const useOverflowStore = defineStore({
           res = res ? true : new_res;
         });
       });
+
+      const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
+        spell_arr.forEach(name => {
+          const new_res = stor.overflow_Spell(name.spell, true);
+          res = res ? true : new_res;
+        });
+
+
 			return res;
 		},
-
+    
+    //NOTE - Proficiencies
     overflow_Prof_Any_Name: (stor) => (key) => {
       const ProficienciesStore = useProficienciesStore();
 			return ProficienciesStore.proficiencies_Page_Arr(key).includes("any");
@@ -66,6 +71,19 @@ export const useOverflowStore = defineStore({
 			if (any_name) {
 				return true;
       } else if (active && name_times <= 1) {
+				return false;
+			} else {
+				return name_times >= 1;
+			}
+		},
+
+    //NOTE - Spell
+
+    overflow_Spell: (stor) => (name, active) => {
+      const SpellsStore = useSpellsStore();
+      const spell_arr = SpellsStore.spells_Page_Arr;
+			const name_times = spell_arr.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
+			if (active && name_times <= 1) {
 				return false;
 			} else {
 				return name_times >= 1;

@@ -174,7 +174,7 @@ export const useFeatsStore = defineStore({
     feats_List_Filter_ArmorMastery(arr) {
       const ProficienciesStore = useProficienciesStore();
       let res = false;
-      const base_pof_name = ProficienciesStore.proficiencies_Arr_All("armor");
+      const base_pof_name = ProficienciesStore.proficiencies_RC_Params_All("armor");
       arr.forEach(item => {
         res = base_pof_name.includes(item) || res;
         });

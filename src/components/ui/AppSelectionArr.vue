@@ -63,8 +63,8 @@ export default {
 		]),
 		...mapState(useProficienciesStore, [
       "proficiencies",
-			"proficiencies_Race_Params",
-			"proficiencies_Arr_All",
+			"proficiencies_Race_Params_All",
+			"proficiencies_RC_Params_All",
       "proficiencies_Arr"
 		]),
 
@@ -101,9 +101,9 @@ export default {
 
 		// page_Arr: (stor) => (name) => {
 		// 	if (stor.pages.race_page) {
-		// 		return stor.proficiencies_Race_Params(name);
+		// 		return stor.proficiencies_Race_Params_All(name);
 		// 	} else if (stor.pages.class_page) {
-		// 		return stor.proficiencies_Arr_All(name);
+		// 		return stor.proficiencies_RC_Params_All(name);
 		// 	}
 		// },
 

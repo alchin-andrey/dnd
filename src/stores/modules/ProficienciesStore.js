@@ -61,13 +61,17 @@ export const useProficienciesStore = defineStore({
         return stor.proficiencies_Arr_Setting(MYStore.сustomm_Settings_Race_Arr, kay);
       },
 
-      proficiencies_Race_Params: (stor) => (kay) => {
+      proficiencies_Race_Params_All: (stor) => (kay) => {
         const race_prof = stor.proficiencies_Arr_Race(kay);
         const ethnos_prof = stor.proficiencies_Arr_Ethnos(kay);
         const backstory_prof = stor.proficiencies_Arr_Backstory(kay);
         const sett_prof = stor.proficiencies_Arr_Setting_Race(kay);
         return [...race_prof, ...ethnos_prof, ...backstory_prof, ...sett_prof];
       },
+
+      // proficiencies_Race_Params: (stor) => (kay) => {
+      //   return [...new Set(stor.proficiencies_Race_Params_All(kay))];
+      // },
 
       //NOTE - CLASS
       proficiencies_Arr_Class: (stor) => (kay) => {
@@ -80,22 +84,23 @@ export const useProficienciesStore = defineStore({
         return stor.proficiencies_Arr_Setting(MYStore.сustomm_Settings_Class_Arr(), kay);
       },
 
-      proficiencies_Race_Params_Any: (stor) => (kay) => {
-        const REC_prof = stor.proficiencies_Race_Params(kay);
+      proficiencies_Race_Params_All_or_Any: (stor) => (kay) => {
+        const REC_prof = stor.proficiencies_Race_Params_All(kay);
         const any =  stor.proficiencies_Any(kay);
         return any ? [] : REC_prof;
       },
   
-      proficiencies_Class_Params: (stor) => (kay) => {
+      proficiencies_Class_Params_All: (stor) => (kay) => {
         const class_prof = stor.proficiencies_Arr_Class(kay);
         const sett_prof = stor.proficiencies_Arr_Setting_Class(kay);
         const any =  stor.proficiencies_Any(kay);
         return any ? ['any'] : class_prof.concat(sett_prof);
       },
-  
-      proficiencies_Arr_All: (stor) => (kay) => {
-        let rec_prof = stor.proficiencies_Race_Params(kay);
-        let class_prof = stor.proficiencies_Class_Params(kay);
+
+      //NOTE - ALL
+      proficiencies_RC_Params_All: (stor) => (kay) => {
+        let rec_prof = stor.proficiencies_Race_Params_All(kay);
+        let class_prof = stor.proficiencies_Class_Params_All(kay);
         return rec_prof.concat(class_prof);
       },
 
@@ -103,9 +108,11 @@ export const useProficienciesStore = defineStore({
       proficiencies_Page_Arr: (stor) => (name) => {
         const PagesStore = usePagesStore();
         if (PagesStore.pages.race_page) {
-          return stor.proficiencies_Race_Params(name);
+          return stor.proficiencies_Race_Params_All(name);
         } else if (PagesStore.pages.class_page) {
-          return stor.proficiencies_Arr_All(name);
+          return stor.proficiencies_RC_Params_All(name);
+        } else {
+          return [];
         }
       },
   },

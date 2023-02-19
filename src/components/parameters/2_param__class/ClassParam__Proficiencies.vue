@@ -4,8 +4,8 @@
 			v-for="name in proficiencies"
 			:key="name"
 			:title="name"
-			:arr_name="proficiencies_Class_Params(name)"
-			:arr_name_old="proficiencies_Race_Params_Any(name)"
+			:arr_name="proficiencies_Class_Params_All(name)"
+			:arr_name_old="proficiencies_Race_Params_All_or_Any(name)"
       param
 		/>
 	</my-wrapper>
@@ -26,8 +26,8 @@ export default {
 	computed: {
 		...mapState(useProficienciesStore, [
 			"proficiencies",
-			"proficiencies_Race_Params_Any",
-			"proficiencies_Class_Params",
+			"proficiencies_Race_Params_All_or_Any",
+			"proficiencies_Class_Params_All",
 		]),
 	},
 };

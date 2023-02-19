@@ -1,5 +1,5 @@
 <template>
-	<AppTooltip class="relative" text="hint_over_limit" :shown="overflow_Spell && !param" warn>
+	<AppTooltip class="relative" text="hint_over_limit" :shown="overflow_Save && !param" warn>
 		<div
 			v-if="lvl_Show"
 			class="flex_spell"
@@ -14,7 +14,7 @@
 			>
 				<div>
 					<div class="flex_title">
-						<div class="title_spell h_18" :class="{'rare-text': overflow_Spell}">
+						<div class="title_spell h_18" :class="{'rare-text': overflow_Save}">
 							{{ em_Before
 							}}<emoji
 								v-if="em_Upd"
@@ -134,7 +134,8 @@ import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
-import { useSpellsStore } from "@/stores/modules/SpellsStore";
+// import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "MySpellText",
 	data() {
@@ -176,22 +177,20 @@ export default {
 		...mapState(useMYStore, ["MY", "Mastery"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Class_Page_Numb"]),
-		...mapState(useSpellsStore, ["spells_RC_Param_All"]),
+    ...mapState(useOverflowStore, [
+      "overflow_Spell"
+		]),
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
 
-		overflow_Spell() {
-			const name_times = this.spells_RC_Param_All.reduce(
-				(acc, el) => (el == this.spell ? acc + 1 : acc),
-				0
-			);
-			if (this.active_card && name_times <= 1 || this.param) {
-				return false;
-			} else {
-				return name_times >= 1;
-			}
+    overflow_Save() {
+      if(this.param) {
+        return false;
+      } else {
+        return this.overflow_Spell(this.spell, this.active_card)
+      }
 		},
 
 		Spell_Index() {

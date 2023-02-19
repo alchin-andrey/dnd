@@ -166,7 +166,7 @@ export default {
 			"сustomm_Settings_Class_Arr",
 			"filter_Custom_Class_Lvl",
 		]),
-		...mapState(useProficienciesStore, ["proficiencies_Arr_All"]),
+		...mapState(useProficienciesStore, ["proficiencies_RC_Params_All"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
 		shown_ACW() {
@@ -272,7 +272,7 @@ export default {
 		},
 
 		mastery_Bonus() {
-			const char_type = this.proficiencies_Arr_All("weapons");
+			const char_type = this.proficiencies_RC_Params_All("weapons");
 			let type_arr = [];
 			const weapon_type = this.weapon[0].type;
 			for (let i in weapon_type) {
