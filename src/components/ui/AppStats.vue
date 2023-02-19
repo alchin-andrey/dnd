@@ -26,11 +26,7 @@
 					</div>
 					<div class="item">
 						{{ t_Title }}
-						<span
-							class="grey-2"
-							v-if="t_Type"
-							>{{ t_Type }}</span
-						>
+						<span class="grey-2" v-if="t_Type">{{ t_Type }}</span>
 					</div>
 				</section>
 				<div v-if="dot" class="dotted passive">
@@ -102,12 +98,12 @@ export default {
 
 	computed: {
 		// STORES
-		...mapState(useStatsStore, ["stats_Save_Page_Arr",]),
-    ...mapState(useOverflowStore, [
-      "overflow_Stats_Save",
-      "overflow_Stats_Numb",
-      "overflow_Stats_Cube",
-    ]),
+		...mapState(useStatsStore, ["stats_Save_Page_Arr"]),
+		...mapState(useOverflowStore, [
+			"overflow_Stats_Save",
+			"overflow_Stats_Numb",
+			"overflow_Stats_Cube",
+		]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -130,11 +126,7 @@ export default {
 		},
 
 		overflow_Save() {
-      if(this.param) {
-        return false;
-      } else {
-        return this.overflow_Stats_Save(this.title, this.active_card);
-      }
+			return this.overflow_Stats_Save(this.title, this.active_card);
 		},
 
 		overflow_Numb() {
@@ -147,18 +139,23 @@ export default {
 			}
 		},
 
-    overflow_Cube: (stor) => (i) => {
-      if (stor.param) {
-        return false;
-      } else if (stor.only_Save) {
-        return stor.overflow_Save;
-      } else {
-        return stor.overflow_Stats_Cube(i, stor.numb, stor.title, stor.active_card)
-      }
-    },
+		overflow_Cube: (stor) => (i) => {
+			if (stor.param) {
+				return false;
+			} else if (stor.only_Save) {
+				return stor.overflow_Save;
+			} else {
+				return stor.overflow_Stats_Cube(
+					i,
+					stor.numb,
+					stor.title,
+					stor.active_card
+				);
+			}
+		},
 
 		save_Icon() {
-			const shown_save = this.stats_Save_Page_Arr.includes(this.title)
+			const shown_save = this.stats_Save_Page_Arr.includes(this.title);
 			return shown_save || this.only_Save;
 		},
 	},

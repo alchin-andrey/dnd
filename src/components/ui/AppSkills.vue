@@ -32,8 +32,6 @@ import { mapState } from "pinia";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 
-import { usePagesStore } from "@/stores/user/PagesStore";
-
 export default {
 	name: "AppSkills",
 	data() {
@@ -58,12 +56,11 @@ export default {
 
 	computed: {
 		// STORES
-		...mapState(usePagesStore, ["pages"]),
     ...mapState(useSkillsStore, ["skills", "skills_passive"]),
-    ...mapState(useStatsStore, ["stats_Saving_Arr"]),
+    ...mapState(useStatsStore, ["stats_Save_Page_Arr"]),
 
     shown_Save() {
-      return this.pages.class_page ? this.stats_Saving_Arr.includes(this.icon_Stats) : false;
+      return this.stats_Save_Page_Arr.includes(this.icon_Stats)
     },
 
 		t_Title() {
