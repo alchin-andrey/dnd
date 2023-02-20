@@ -5675,10 +5675,6 @@ export default {
         spell: spells.wild_shape,
       },
       {
-        level: 1,
-        spell: spells.wild_shape_heal,
-      },
-      {
         level: 2,
         spell: spells.find_familiar_druid,
       },
@@ -5801,13 +5797,6 @@ export default {
                 type: "plus",
                 keyword: "saving_wisdom",
                 details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
               },
             ],
 
@@ -11451,10 +11440,6 @@ export default {
           {
             name: "primal_knowledge",
             spells: [
-              {
-                level: 3,
-                spell: spells.primeval_awareness_favored,
-              },
               {
                 level: 3,
                 spell: spells.primeval_awareness_favored,
