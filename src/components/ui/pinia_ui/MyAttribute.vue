@@ -1,6 +1,6 @@
 <template>
 	<div class="column" 
-  :class="{ passive: numb == 0, 'jbm-300': !text_stule,}">
+  :class="{ passive: numb == 0 && passive, 'jbm-300': !text_stule,}">
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
@@ -111,6 +111,10 @@ export default {
 			default: [],
 		},
 		save_bool: {
+			type: Boolean,
+			default: false,
+		},
+		passive: {
 			type: Boolean,
 			default: false,
 		},

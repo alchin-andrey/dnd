@@ -89,12 +89,23 @@ export const useSpellsStore = defineStore({
 		},
 
 		//NOTE - PAGE
-		spells_Page_Arr() {
+		spells_Page_All_Arr() {
 			const PagesStore = usePagesStore();
 			if (PagesStore.pages.race_page) {
 				return this.spells_Race_Param_All;
 			} else if (PagesStore.pages.class_page) {
 				return this.spells_RC_Param_All;
+			} else {
+        return [];
+      }
+		},
+
+		spells_Page_Arr() {
+			const PagesStore = usePagesStore();
+			if (PagesStore.pages.race_page) {
+				return this.spells_Race_Param;
+			} else if (PagesStore.pages.class_page) {
+				return this.spells_RC_Param;
 			} else {
         return [];
       }

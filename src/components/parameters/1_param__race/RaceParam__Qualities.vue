@@ -11,11 +11,13 @@
 			title="speed"
 			:numb="speed_Numb_Race"
 			feet
+      passive
 		/>
 		<my-attribute
 			title="vision_night"
 			:numb="vision_night_Numb_Race"
 			feet
+      passive
 		/>
 	</my-wrapper>
 </template>

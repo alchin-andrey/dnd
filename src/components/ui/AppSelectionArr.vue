@@ -34,7 +34,6 @@ import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
-import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSelectionArr",
@@ -61,63 +60,7 @@ export default {
 			"class_page",
 			"page_Open",
 		]),
-		...mapState(useProficienciesStore, [
-      "proficiencies",
-			"proficiencies_Race_Params_All",
-			"proficiencies_RC_Params_All",
-      "proficiencies_Arr"
-		]),
-
 		...mapState(useOverflowStore, ["overflow_Item_Menu"]),
-
-    //NOTE - Filter Proff
-		// filter_List_Lvl: (stor) => (arr, name, kay) => {
-		// 	let res_arr = [];
-		// 	arr.forEach((el) => {
-		// 		if (name == "proficiencies") {
-		// 			const prof_arr = stor.proficiencies_Arr(el?.proficiencies, kay);
-		// 			res_arr = res_arr.concat(prof_arr);
-		// 		} else {
-		// 			const item_lvl = stor.level_Filter_Arr(el?.[name]);
-		// 			res_arr = res_arr.concat(item_lvl);
-		// 		}
-		// 	});
-		// 	return res_arr;
-		// },
-
-		// overflow_Item_Menu: (stor) => (item) => {
-    //   let res = false
-    //   stor.proficiencies.forEach(key => {
-    //     const proff_arr = stor.filter_List_Lvl(item.select_list, "proficiencies", key);
-    //     proff_arr.forEach(name => {
-    //       const new_res = stor.overflow_Proff(key, name)
-    //       res = res ? true : new_res;
-    //     });
-    //   })
-		// 	return res;
-		// },
-
-		// page_Arr: (stor) => (name) => {
-		// 	if (stor.pages.race_page) {
-		// 		return stor.proficiencies_Race_Params_All(name);
-		// 	} else if (stor.pages.class_page) {
-		// 		return stor.proficiencies_RC_Params_All(name);
-		// 	}
-		// },
-
-		// overflow_Proff: (stor) => (key, name) => {
-    //   const any_name = stor.page_Arr(key).includes("any")
-		// 	const name_times = stor
-		// 		.page_Arr(key)
-		// 		.reduce((acc, el) => (el == name ? acc + 1 : acc), 0);
-		// 	if (any_name) {
-		// 		return true;
-		// 	} else {
-		// 		return name_times > 1;
-		// 	}
-		// },
-
-    //!NOTE - Filter Proff
 
 		active_Link: (stor) => (item) => {
 			return stor[stor.page_Open]?.shown[item.id_link];

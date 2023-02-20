@@ -165,7 +165,8 @@ export const useFeatsStore = defineStore({
       let res = false;
       arr.forEach(item => {
         const base_stats_name = item.name;
-        const base_stats_num = StatsStore.stats_Class_Page_Numb(base_stats_name);
+        // const base_stats_num = StatsStore.stats_Class_Page_Numb(base_stats_name);
+        const base_stats_num = StatsStore.stats_Numb(base_stats_name);
         res = (base_stats_num >= item.min_num) || res;
         });
       return res;
@@ -174,7 +175,8 @@ export const useFeatsStore = defineStore({
     feats_List_Filter_ArmorMastery(arr) {
       const ProficienciesStore = useProficienciesStore();
       let res = false;
-      const base_pof_name = ProficienciesStore.proficiencies_RC_Params_All("armor");
+      // const base_pof_name = ProficienciesStore.proficiencies_RC_Params_All("armor");
+      const base_pof_name = ProficienciesStore.proficiencies_Page_Arr("armor");
       arr.forEach(item => {
         res = base_pof_name.includes(item) || res;
         });
@@ -184,7 +186,8 @@ export const useFeatsStore = defineStore({
     feats_List_Filter_SpellsException(arr) {
       const SpellsStore = useSpellsStore();
       let res = false;
-      const spell_arr = SpellsStore.spells_RC_Param;
+      // const spell_arr = SpellsStore.spells_RC_Param;
+      const spell_arr = SpellsStore.spells_Page_Arr;
       let all_type = spell_arr.reduce((acc, el) => acc.concat(el.find(item => item.type).type), []);
       const uniqu_type = [...new Set(all_type)];
       arr.forEach(item => {

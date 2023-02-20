@@ -11,7 +11,7 @@
 					<svg
 						class="active_svg"
 						:class="{
-							save_svg: stats_Saving_Arr.includes(name),
+							save_svg: stats_Save_Page_Arr.includes(name),
 						}"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
@@ -106,13 +106,12 @@ export default {
 		// GETTERS
 		...mapState(useStatsStore, [
 			"stats_Keys",
-			"stats_Saving_Arr",
+			"stats_Save_Page_Arr",
+			"stats_Numb",
 			"stats_Mod",
 			"stats_Save",
 			"stats_Save_Mod",
       "stats_Base_Max",
-      "stats_Class_Page_Numb_Full",
-			"stats_Class_Page_Numb",
 		]),
 
 		t_Base() {
@@ -132,7 +131,7 @@ export default {
 		},
 
 		base_Numb() {
-			return (name) => this.stats_Class_Page_Numb(name);
+			return (name) => this.stats_Numb(name);
 		},
 
 		stats_Sign_Save: (stor) => (name) => {

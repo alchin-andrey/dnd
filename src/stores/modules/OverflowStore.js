@@ -103,7 +103,7 @@ export const useOverflowStore = defineStore({
 		//NOTE - Spell
 		overflow_Spell: (stor) => (name, active) => {
 			const SpellsStore = useSpellsStore();
-			const spell_arr = SpellsStore.spells_Page_Arr;
+			const spell_arr = SpellsStore.spells_Page_All_Arr;
 			const name_times = spell_arr.reduce(
 				(acc, el) => (el == name ? acc + 1 : acc),
 				0
@@ -133,7 +133,7 @@ export const useOverflowStore = defineStore({
 		//NOTE - Stats_Numb
 		overflow_Stats_Numb: (stor) => (name, active) => {
 			const StatsStore = useStatsStore();
-			const stat_numb_full = StatsStore.stats_Numb_Full_Page_Arr(name);
+			const stat_numb_full = StatsStore.stats_Numb_Full_Page(name);
 			const max = StatsStore.stats_Base_Max(name);
 			if (active && stat_numb_full == max) {
 				return false;
@@ -145,7 +145,7 @@ export const useOverflowStore = defineStore({
     //NOTE - Stats_Cube
 		overflow_Stats_Cube: (stor) => (i, numb, name, active) => {
 			const StatsStore = useStatsStore();
-			const stat_numb_full = StatsStore.stats_Numb_Full_Page_Arr(name);
+			const stat_numb_full = StatsStore.stats_Numb_Full_Page(name);
 			const max = StatsStore.stats_Base_Max(name);
 			let stat_numb = stat_numb_full;
       !active ? stat_numb += numb : null;
