@@ -159,9 +159,9 @@
 		</my-wrapper>
 
 		<!-- //NOTE - Settings -->
-		<my-wrapper v-if="custom.settings">
+		<my-wrapper v-if="shown_Param_Arr(custom.settings)">
 			<MyCusstomSetting
-				v-for="item in custom.settings"
+				v-for="item in level_Filter_Arr(custom.settings)"
 				:key="item"
 				:title="item.name"
 				:select="select_Numb(item.select)"
