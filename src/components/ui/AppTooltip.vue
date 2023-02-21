@@ -137,13 +137,13 @@ export default {
 .slide-fade-leave-active {
 	transition-property: all;
 	transition-duration: 0.3s;
-	transition-timing-function: ease-in;
+	transition-timing-function: ease-out;
 }
 .slide-fade-enter-active {
 	transition-property: all;
 	transition-duration: 0.3s;
 	transition-delay: 0.3s;
-	transition-timing-function: ease-in;
+	transition-timing-function: ease-out;
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
