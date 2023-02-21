@@ -2312,6 +2312,7 @@ export default {
                         level: 6,
                         type: "custom",
                         name: "skills",
+                        position: 8,
                         select: 1,
                         list: [
                           {
@@ -5675,10 +5676,6 @@ export default {
         spell: spells.wild_shape,
       },
       {
-        level: 1,
-        spell: spells.wild_shape_heal,
-      },
-      {
         level: 2,
         spell: spells.find_familiar_druid,
       },
@@ -5801,13 +5798,6 @@ export default {
                 type: "plus",
                 keyword: "saving_wisdom",
                 details: "on_any_animal_or_plant_attack",
-              },
-            ],
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.wild_shape,
               },
             ],
 
@@ -7546,7 +7536,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 2,
+        position: 14,
         name: "equipment",
         select: 1,
         list: [
@@ -9046,22 +9036,6 @@ export default {
       {
         type: "custom",
         position: 13,
-        name: "inventory",
-        select: 1,
-        list: [
-          {
-            name_set: items.component_pouch.name,
-            equipment: [{ inventory: [[items.component_pouch, 1]] }],
-          },
-          {
-            name_set: items.focus.name,
-            equipment: [{ inventory: [[items.focus, 1]] }],
-          },
-        ],
-      },
-      {
-        type: "custom",
-        position: 13,
         name: "pack",
         select: 1,
         list: [
@@ -9072,6 +9046,22 @@ export default {
           {
             name_set: packs.explorers.name,
             equipment: [{ inventory_packs: [[packs.explorers, 1]] }],
+          },
+        ],
+      },
+      {
+        type: "custom",
+        position: 13,
+        name: "inventory",
+        select: 1,
+        list: [
+          {
+            name_set: items.component_pouch.name,
+            equipment: [{ inventory: [[items.component_pouch, 1]] }],
+          },
+          {
+            name_set: items.focus.name,
+            equipment: [{ inventory: [[items.focus, 1]] }],
           },
         ],
       },
@@ -11451,10 +11441,6 @@ export default {
           {
             name: "primal_knowledge",
             spells: [
-              {
-                level: 3,
-                spell: spells.primeval_awareness_favored,
-              },
               {
                 level: 3,
                 spell: spells.primeval_awareness_favored,
