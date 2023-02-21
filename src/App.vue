@@ -163,14 +163,16 @@ export default {
       "page_setting_open",
 			"setting_open",
 			"pages",
-
-      // "createVarClass"
+      "page_Open",
 		]),
 		//GETTERS
 
     close_Sidebar_Right() {
-      const feats = this.setting_open?.slice(0, 5) == "feats";
-      return !this.shown_home && !(this.class_page.shown.stats || feats);
+      const open_class_page = this.pages.class_page;
+      const feats = this.setting_open?.slice(0, 5) == "feats" && open_class_page;
+      const stats = this.setting_open?.includes("stats") && open_class_page;
+      const skills = this.setting_open?.includes("skills") && open_class_page;
+      return !this.shown_home && !(stats || feats || skills);
     },
 
 		hide_Ruler() {

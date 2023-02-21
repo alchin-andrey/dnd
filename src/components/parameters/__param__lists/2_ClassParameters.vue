@@ -22,7 +22,7 @@
 		<section v-else>
     <TransitionGroup tag="ul" name="fade" class="container">
       <ClassParam__Stats key="stats" v-if="shown_Feats" hr/>
-			<ClassParam__Qualities key="qualities" hr />
+			<ClassParam__Qualities key="qualities" v-if="shown_Feats || shown_Stats" hr />
       <ClassParam__SkillsAll key="skillsAll" hr/>
       <ClassParam__SkillsPassive key="skillsPassive" all/>
     </TransitionGroup>
@@ -71,12 +71,18 @@ export default {
       return feats;
     },
 
-    shown_Base_Stats() {
-      return this.class_page.shown.stats;
+    shown_Skills() {
+      const skills = this.setting_open?.includes("skills");
+      return skills;
+    },
+
+    shown_Stats() {
+      const stats = this.setting_open?.includes("stats");
+      return stats;
     },
 
     shown_Stats_Param() {
-      return this.shown_Base_Stats || this.shown_Feats;
+      return this.shown_Stats || this.shown_Feats || this.shown_Skills;
     },
 
     shown_Main_Paramm() {
