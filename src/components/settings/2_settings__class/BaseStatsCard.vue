@@ -20,9 +20,12 @@
 				class="numb int-400"
 				v-for="numb in revers_Stats_Numb"
 				:key="numb"
+        @mouseover="hoverStat(numb)" 
+        @mouseleave="hoverStop()"
 				@click="arr_StatsNeW(numb)"
 				:class="{
 					active: numb == stats_base_numb[stats_Index],
+					active_hower: numb == stats_base_numb[stats_Hower_Index],
 				}"
 			>
 				{{ numb }}
@@ -53,9 +56,9 @@ export default {
 	computed: {
 		// STORES
 		...mapState(useMYStore, ["MY"]),
-    ...mapState(useStatsStore, ["stats_base_numb", "stats_base_save"]),
+    ...mapState(useStatsStore, ["stats_base_numb", "stats_base_save", "stats_base_hower"]),
 		// GETTERS
-    ...mapState(useStatsStore, ["stats_Keys", "stats_Base_Arr", "stats_Saving_Arr"]),
+    ...mapState(useStatsStore, ["stats_Keys", "stats_Base_Arr", "stats_Base_Hower_Arr", "stats_Saving_Arr"]),
 		
     t_Title() {
 			return this.t(this.stats_name);
@@ -73,10 +76,34 @@ export default {
 			return this.stats_Base_Arr.indexOf(this.stats_name);
 		},
 
+		stats_Hower_Index() {
+			return this.stats_Base_Hower_Arr.indexOf(this.stats_name);
+		},
+
 	},
 
 	methods: {
 		// ...mapActions(useMYStore, ["getCustomSelect_Languages_RE"]),
+
+    hoverStop() {
+      this.stats_base_hower[this.MY.class.name] = null;
+    },
+
+		hoverStat(numb) {
+      let arr_base = this.stats_Base_Arr.slice(0);
+      let arr = this.stats_Base_Hower_Arr.slice(0);
+      let new_index = this.stats_base_numb.indexOf(numb);
+      let old_index = this.stats_Index;
+      let new_elem = arr[old_index];
+      let old_elem = arr[new_index];
+      arr.splice(old_index, 1, old_elem);
+      arr.splice(new_index, 1, new_elem);
+      if(arr.length == arr_base.length && arr.every((el, i) => arr_base[i] == el)) {
+        this.stats_base_hower[this.MY.class.name] = null;
+      } else {
+        this.stats_base_hower[this.MY.class.name] = arr;
+      }
+		},
 
 		arr_StatsNeW(numb) {
       let arr_base = this.MY.class.stats_base.slice(0);
@@ -162,6 +189,19 @@ export default {
 .numb:hover {
 	color: #ffffff;
 }
+
+/* .active_hower {
+  color: #ffffff;
+} */
+
+.active_hower::before {
+	content: "";
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 50%;
+} 
 
 .active {
 	color: #ffffff;

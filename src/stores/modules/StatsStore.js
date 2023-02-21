@@ -25,6 +25,14 @@ export const useStatsStore = defineStore({
 			// rogue: null,
 			// fighter: null,
 		},
+
+		stats_base_hower: {
+			// barbarian: null,
+			// paladin: null,
+			// bard: null,
+			// rogue: null,
+			// fighter: null,
+		},
 	}),
 
 	getters: {
@@ -55,6 +63,14 @@ export const useStatsStore = defineStore({
 			let stats_arr_base = MYStore.MY.class.stats_base;
 			let stats_arr_save = stor.stats_base_save[MYStore.MY.class.name];
 			return stats_arr_save ? stats_arr_save : stats_arr_base;
+		},
+
+		stats_Base_Hower_Arr(stor) {
+      const MYStore = useMYStore();
+			// let stats_base_arr = MYStore.MY.class.stats_base;
+			let stats_base_arr = this.stats_Base_Arr;
+			let stats_hower_arr = stor.stats_base_hower[MYStore.MY.class.name];
+			return stats_hower_arr ? stats_hower_arr : stats_base_arr;
 		},
 
 		stats_Base_Max: (stor) => (name) => {
