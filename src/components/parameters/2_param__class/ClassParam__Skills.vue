@@ -1,7 +1,7 @@
 <template>
-	<my-wrapper v-if="skills_Class_Param.length !== 0" :hr="hr">
+	<my-wrapper v-if="filter_Skills.length !== 0" :hr="hr">
 		<AppSkills
-			v-for="name in skills_Class_Param"
+			v-for="name in filter_Skills"
 			:key="name"
 			:title="name"
 			:numb="skills_Class_Numb(name)"
@@ -27,7 +27,12 @@ export default {
 			"skills_RP_MOD_Numb",
 			"skills_Class_Numb",
 			"skills_Class_Param",
+      "skills_Keys",
 		]),
+
+    filter_Skills() {
+      return this.skills_Keys.filter(el => this.skills_Class_Param.includes(el));
+    }
 	},
 };
 </script>

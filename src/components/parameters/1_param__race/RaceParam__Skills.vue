@@ -1,7 +1,7 @@
 <template>
-  <my-wrapper v-if="skills_Race_Param.length !== 0" :hr="hr">
+  <my-wrapper v-if="filter_Skills.length !== 0" :hr="hr">
 			<AppSkills
-				v-for="name in skills_Race_Param"
+				v-for="name in filter_Skills"
 				:key="name"
 				:title="name"
 				:numb="skills_Race_Numb(name)"
@@ -24,10 +24,15 @@ export default {
 	},
 	computed: {
     ...mapState(useMYStore, ["MY", "Mastery"]),
-		...mapState(useSkillsStore, [ 
+		...mapState(useSkillsStore, [
+      "skills_Keys",
       "skills_Race_Param",
       "skills_Race_Numb"
     ]),
+
+    filter_Skills() {
+      return this.skills_Keys.filter(el => this.skills_Race_Param.includes(el));
+    }
 	},
 };
 </script>
