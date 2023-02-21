@@ -21,7 +21,7 @@
 							}"
 							viewBox="0 0 18 18"
 							xmlns="http://www.w3.org/2000/svg"
-							v-html="atribute_icon[title]"
+							v-html="stats_icon[title]"
 						/>
 					</div>
 					<div class="item">
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import atribute_icon from "@/assets/catalog/icon/atribute_icon";
+import stats_icon from "@/assets/catalog/icon/stats_icon";
 import { mapState } from "pinia";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
@@ -58,7 +58,7 @@ export default {
 	name: "AppStats",
 	data() {
 		return {
-			atribute_icon: atribute_icon,
+			stats_icon: stats_icon,
 		};
 	},
 	props: {

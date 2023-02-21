@@ -9,18 +9,18 @@
 		<div class="int-400 gap_col" :class="{ passive: passive }">
 			<div class="flex_title">
 				<div class="title_packs">{{ t_Packs_Name }}</div>
-				<img
-					class="icon"
-					:src="img_Icon"
-					alt="arrow"
-					@click.stop
-					@mouseover.stop
-					@click="shownScroll()"
-				/>
+				<div class="icon" @click.stop @mouseover.stop @click="shownScroll()">
+					<svg
+						class="main_svg"
+						viewBox="0 0 18 18"
+						xmlns="http://www.w3.org/2000/svg"
+						v-html="ui_icon[img_Icon]"
+					/>
+				</div>
 			</div>
 			<transition name="scroll-packs">
 				<section v-if="packs_scroll">
-          <InventoryEquip :inventory="packs[0].items" />
+					<InventoryEquip :inventory="packs[0].items" />
 				</section>
 			</transition>
 		</div>
@@ -32,7 +32,7 @@
 		</my-wrapper>
 
 		<section>
-      <InventoryEquip :inventory="packs[0].items" />
+			<InventoryEquip :inventory="packs[0].items" />
 		</section>
 
 		<my-wrapper>
@@ -43,14 +43,16 @@
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 import InventoryEquip from "@/components/equipment/InventoryEquip.vue";
 export default {
 	name: "PacksEquip",
-  components: { InventoryEquip },
+	components: { InventoryEquip },
 	data() {
 		return {
 			dialogVisible: false,
 			packs_scroll: false,
+			ui_icon: ui_icon,
 		};
 	},
 	props: {
@@ -68,7 +70,6 @@ export default {
 		},
 	},
 	computed: {
-
 		t_Equip_Name: (state) => (inv) => {
 			const name = state.t(inv[0].name);
 			const namb = inv[1];
@@ -85,8 +86,7 @@ export default {
 		},
 
 		img_Icon() {
-			let icon = this.packs_scroll ? "top" : "down";
-			return require(`@/assets/img/icon/arrow_${icon}_small.svg`);
+			return this.packs_scroll ? "arrow_top_small" : "arrow_down_small";
 		},
 	},
 
@@ -122,9 +122,6 @@ export default {
 </script>
 
 <style scoped>
-
-
-
 .gap_col {
 	display: grid;
 	gap: 15px;
@@ -186,23 +183,36 @@ export default {
 	opacity: 0;
 }
 
-.icon:hover {
+.icon {
+	width: 18px;
+	height: 18px;
+	align-self: flex-start;
+}
+
+.main_svg {
+  width: 18px;
+	height: 18px;
+  align-self: flex-start;
+	fill: white;
+}
+
+/* .icon:hover {
 	position: relative;
 	animation-name: arrow;
 	animation-duration: 0.5s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-}
+} */
 
-@keyframes arrow{
+/* @keyframes arrow{
 0%{
 top: 0%;
 }
 100%{
   top: 20%;
 }
-}
+} */
 
 .scroll_wrap {
 	height: 0;

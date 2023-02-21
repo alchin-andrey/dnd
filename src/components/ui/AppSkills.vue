@@ -9,7 +9,7 @@
               }"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
-						v-html="atribute_icon[icon_Stats]"
+						v-html="stats_icon[icon_Stats]"
 					/>
 				</div>
 				<div class="item">
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import atribute_icon from "@/assets/catalog/icon/atribute_icon";
+import stats_icon from "@/assets/catalog/icon/stats_icon";
 import { mapState } from "pinia";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
@@ -36,7 +36,7 @@ export default {
 	name: "AppSkills",
 	data() {
 		return {
-			atribute_icon: atribute_icon,
+			stats_icon: stats_icon,
 		};
 	},
 	props: {

@@ -204,8 +204,6 @@ export default {
 
 .main_svg {
 	fill: white;
-	/* width: 18px;
-	height: 18px; */
 }
 
 .rare-text {
