@@ -67,7 +67,6 @@ export const useStatsStore = defineStore({
 
 		stats_Base_Hower_Arr(stor) {
       const MYStore = useMYStore();
-			// let stats_base_arr = MYStore.MY.class.stats_base;
 			let stats_base_arr = this.stats_Base_Arr;
 			let stats_hower_arr = stor.stats_base_hower[MYStore.MY.class.name];
 			return stats_hower_arr ? stats_hower_arr : stats_base_arr;
