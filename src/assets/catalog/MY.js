@@ -15,6 +15,7 @@ export default {
 	ethnos: ethnos_def,
   ethnos_name: ethnos_def.name,
 	class: class_def,
+  settings: {},
   _settings_race: {},
   _settings_class_old: {},
   _settings_class: {},
@@ -67,93 +68,93 @@ export default {
 		//armor_class: null,
 	},
 
-	stats: {
-		strength: {
-			base: 0,
-			bonus: 0,
-			total: 0,
-			mod: 0,
-			save: 0,
-		},
+	// stats: {
+	// 	strength: {
+	// 		base: 0,
+	// 		bonus: 0,
+	// 		total: 0,
+	// 		mod: 0,
+	// 		save: 0,
+	// 	},
 
-		dexterity: {
-			base: 0,
-			bonus: 0,
-			total: 0,
-			mod: 0,
-			save: 0,
-		},
+	// 	dexterity: {
+	// 		base: 0,
+	// 		bonus: 0,
+	// 		total: 0,
+	// 		mod: 0,
+	// 		save: 0,
+	// 	},
 
-		constitution: {
-			base: 0,
-			bonus: 0,
-			total: 0,
-			mod: 0,
-			save: 0,
-		},
+	// 	constitution: {
+	// 		base: 0,
+	// 		bonus: 0,
+	// 		total: 0,
+	// 		mod: 0,
+	// 		save: 0,
+	// 	},
 
-		intelligence: {
-			base: 0,
-			bonus: 0,
-			total: 0,
-			mod: 0,
-			save: 0,
-		},
+	// 	intelligence: {
+	// 		base: 0,
+	// 		bonus: 0,
+	// 		total: 0,
+	// 		mod: 0,
+	// 		save: 0,
+	// 	},
 
-		wisdom: {
-			base: 0,
-			bonus: 0,
-			total: 0,
-			mod: 0,
-			save: 0,
-		},
+	// 	wisdom: {
+	// 		base: 0,
+	// 		bonus: 0,
+	// 		total: 0,
+	// 		mod: 0,
+	// 		save: 0,
+	// 	},
 
-		charisma: {
-			base: 0,
-			bonus: 0,
-			total: 0,
-			mod: 0,
-			save: 0,
-		},
-	},
+	// 	charisma: {
+	// 		base: 0,
+	// 		bonus: 0,
+	// 		total: 0,
+	// 		mod: 0,
+	// 		save: 0,
+	// 	},
+	// },
 
-	skills: {
-    athletics: { bonus: 0, mod: "strength" },
+	// skills: {
+  //   athletics: { bonus: 0, mod: "strength" },
 
-		acrobatics: { bonus: 0, mod: "dexterity" },
+	// 	acrobatics: { bonus: 0, mod: "dexterity" },
 
-		sleight_of_hand: { bonus: 0, mod: "dexterity" },
+	// 	sleight_of_hand: { bonus: 0, mod: "dexterity" },
 
-		stealth: { bonus: 0, mod: "dexterity" },
+	// 	stealth: { bonus: 0, mod: "dexterity" },
 
-		investigation: { bonus: 0, mod: "intelligence" },
+	// 	investigation: { bonus: 0, mod: "intelligence" },
 
-		history: { bonus: 0, mod: "intelligence" },
+	// 	history: { bonus: 0, mod: "intelligence" },
 
-		religion: { bonus: 0, mod: "intelligence" },
+	// 	religion: { bonus: 0, mod: "intelligence" },
 
-		arcana: { bonus: 0, mod: "intelligence" },
+	// 	arcana: { bonus: 0, mod: "intelligence" },
 
-		nature: { bonus: 0, mod: "intelligence" },
+	// 	nature: { bonus: 0, mod: "intelligence" },
 
-		survival: { bonus: 0, mod: "wisdom" },
+	// 	survival: { bonus: 0, mod: "wisdom" },
 
-		perception: { bonus: 0, mod: "wisdom" },
+	// 	perception: { bonus: 0, mod: "wisdom" },
 
-		insight: { bonus: 0, mod: "wisdom" },
+	// 	insight: { bonus: 0, mod: "wisdom" },
 
-		medicine: { bonus: 0, mod: "wisdom" },
+	// 	medicine: { bonus: 0, mod: "wisdom" },
 
-		animal_handling: { bonus: 0, mod: "wisdom" },
+	// 	animal_handling: { bonus: 0, mod: "wisdom" },
 
-		performance: { bonus: 0, mod: "charisma" },
+	// 	performance: { bonus: 0, mod: "charisma" },
 
-		persuasion: { bonus: 0, mod: "charisma" },
+	// 	persuasion: { bonus: 0, mod: "charisma" },
 
-		deception: { bonus: 0, mod: "charisma" },
+	// 	deception: { bonus: 0, mod: "charisma" },
 
-		intimidation: { bonus: 0, mod: "charisma" },
-	},
+	// 	intimidation: { bonus: 0, mod: "charisma" },
+	// },
 
 	//Владения - с чем умеешь обращаться
 	proficiencies: {

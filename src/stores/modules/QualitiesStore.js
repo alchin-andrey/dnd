@@ -46,7 +46,7 @@ export const useQualitiesStore = defineStore({
     hp_Bonus_Class_Param() {
       const MYStore = useMYStore();
       const main_class = this.hp_Bonus(MYStore.MY.class);
-      const custom_class = this.hp_Bonus_Custom(MYStore.сustomm_Settings_Class_Arr());
+      const custom_class = this.hp_Bonus_Custom(MYStore.сustomm_Settings_Class_Arr);
       return main_class + custom_class;
     },
 

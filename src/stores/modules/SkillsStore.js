@@ -6,26 +6,6 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 export const useSkillsStore = defineStore({
 	id: 'SkillsStore',
 	state: () => ({
-    skills_old: {
-      athletics: { bonus: 0, mod: "strength" },
-      acrobatics: { bonus: 0, mod: "dexterity" },
-      sleight_of_hand: { bonus: 0, mod: "dexterity" },
-      stealth: { bonus: 0, mod: "dexterity" },
-      investigation: { bonus: 0, mod: "intelligence" },
-      history: { bonus: 0, mod: "intelligence" },
-      religion: { bonus: 0, mod: "intelligence" },
-      arcana: { bonus: 0, mod: "intelligence" },
-      nature: { bonus: 0, mod: "intelligence" },
-      survival: { bonus: 0, mod: "wisdom" },
-      perception: { bonus: 0, mod: "wisdom" },
-      insight: { bonus: 0, mod: "wisdom" },
-      medicine: { bonus: 0, mod: "wisdom" },
-      animal_handling: { bonus: 0, mod: "wisdom" },
-      performance: { bonus: 0, mod: "charisma" },
-      persuasion: { bonus: 0, mod: "charisma" },
-      deception: { bonus: 0, mod: "charisma" },
-      intimidation: { bonus: 0, mod: "charisma" },
-    },
     skills: [
       {name:"athletics", mod:"strength"},
       
@@ -58,55 +38,9 @@ export const useSkillsStore = defineStore({
 	}),
 
   getters: {
-    //NOTE - OLD Start
-    skills_Obj: (stor) => (name) => {
-			return stor.skills.find(el => el.name == name);
-		},
-
-    skills_Passive_Obj: (stor) => (name) => {
-			return stor.skills_passive.find(el => el.name == name);
-		},
-
     skills_Keys() {
-      const MYStore = useMYStore();
-			return Object.keys(MYStore.MY.skills);
+			return this.skills.reduce((acc, el) => acc.concat(el.name), []);
 		},
-
-		skills_Activ_Obj_RE(stor) {
-      const MYStore = useMYStore();
-			let i = MYStore.MY.race.skills;
-			let j = MYStore.MY.ethnos.skills;
-			return Object.assign({}, i, j);
-		},
-
-		skills_Activ_Arr_RE() {
-			return Object.keys(this.skills_Activ_Obj_RE);
-		},
-
-		skills_Pass_Arr_RE() {
-			return this.skills_Keys.filter(
-				(el) => !this.skills_Activ_Arr_RE.includes(el)
-			);
-		},
-
-    
-		skills_All_RE() {
-			return this.skills_Activ_Arr_RE.concat(this.skills_Custom_Arr_RE);
-		},
-
-    skills_Custom_Arr_RE() {
-      const MYStore = useMYStore();
-			return MYStore.COMMON_Custom_Arr_RE("skills");
-		},
-
-    skills_RP_Numb: (stor) => (name) => {
-      let race_mastery = 0;
-			stor.skills_All_RE.includes(name)
-				? (race_mastery = stor.Mastery)
-				: null;
-        return race_mastery;
-    },
-    //NOTE - OLD End
 
     skills_Numb_Bonus: (stor) => (arr_all, name) => {
       const filter_name = arr_all.filter(el => el.name == name);
@@ -225,15 +159,8 @@ export const useSkillsStore = defineStore({
     
     //!NOTE - Skills Foo
 
-    getSkillMarg: () => (i, name) => {
-			if (i === 0) {
-				return true;
-			}
-			let obj = Object.values(name);
-			if (obj[i].mod !== obj[i - 1].mod) {
-				return true;
-			}
-			return false;
+    getSkillMarg: (stor) => (i) => {
+			return i == 0 ? true : stor.skills[i].mod !== stor.skills[i - 1].mod;
 		},
   },
 

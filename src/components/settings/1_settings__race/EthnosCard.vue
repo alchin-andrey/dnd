@@ -116,9 +116,9 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
-import { useSkillsStore } from "@/stores/modules/SkillsStore";
-import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-import { useSpellsStore } from "@/stores/modules/SpellsStore";
+// import { useSkillsStore } from "@/stores/modules/SkillsStore";
+// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
+// import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "EthnosCard",
@@ -126,9 +126,9 @@ export default {
 		// STORE
 		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
 		// GETTERS
-		...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
-		...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
-		...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
+		// ...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
+		// ...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
+		// ...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useQualitiesStore, ["hp_Bonus"]),
 

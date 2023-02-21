@@ -187,10 +187,6 @@ export default {
 		},
 
     getCustomSelect_COMMON_RE(item, name) {
-			const { stats_Activ_Arr_RE } = useStatsStore();
-			const { skills_Activ_Arr_RE } = useSkillsStore();
-			const { languages_Activ_Arr_RE } = useLanguagesStore();
-			const { spells_Activ_Arr_RE } = useSpellsStore();
 			const selekt = this.COMMON_Custom_Arr_RE(item);
 			let active = this.languages_Activ_Arr_RE.includes(name);
 			const passive = selekt.includes(name);

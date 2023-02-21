@@ -6,7 +6,7 @@
 
 	<!-- customm_Settings -->
   <my-selection-box
-			v-for="item in сustomm_Settings_Class_Arr()"
+			v-for="item in сustomm_Settings_Class_Arr"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
 		>

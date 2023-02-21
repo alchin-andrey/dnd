@@ -11,13 +11,16 @@
       :setting_name="custom.name"
 			:custom="list_el"
 			@click="getCustomSelect(list_el)"
-			:active_boll_link="custom.select_list.includes(list_el)"
-			@clickOneMore="getCustomSelect"
+			:active_boll_link="getActive(list_el)"
+      @clickOneMore="getCustomSelect"
 		/>
 	</section>
 </template>
 
+
+
 <script>
+// @clickOneMore="getCustomSelect"
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 
@@ -31,9 +34,20 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
+    getActive: (stor) => (list_el) => {
+      return stor.custom.select_list.some(item => {
+        if (item.name) {
+          return item.name == list_el.name
+        } else {
+          return item.name_set == list_el.name_set
+        }
+      })
+    },
 	},
 
 	methods: {
+
+
 		getLink() {
 			if (!this.MY._settings_class[this.MY.class.name]) {
 				this.MY._settings_class[this.MY.class.name] = {};
@@ -41,7 +55,9 @@ export default {
 		},
 
 		getCustomSelect(list_el) {
+			// console.log('list_el:', list_el)
 			const active = this.custom.select_list.includes(list_el);
+			// console.log('active:', active)
 			let arr = this.custom.select_list.slice(0);
 			if (!active) {
 				arr.splice(0, 1);

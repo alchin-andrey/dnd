@@ -3,7 +3,7 @@
 		<AppSkills
 			v-for="(name, i) in skills_Keys"
 			:key="name"
-			:class="{ skill_marg: getSkillMarg(i, MY.skills) }"
+			:class="{ skill_marg: getSkillMarg(i) }"
 			:title="name"
 			:numb="skills_RC_All_Numb(name)"
 		/>
