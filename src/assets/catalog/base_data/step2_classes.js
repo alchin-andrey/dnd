@@ -2312,6 +2312,7 @@ export default {
                         level: 6,
                         type: "custom",
                         name: "skills",
+                        position: 8,
                         select: 1,
                         list: [
                           {
@@ -7535,7 +7536,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 2,
+        position: 14,
         name: "equipment",
         select: 1,
         list: [
@@ -9035,22 +9036,6 @@ export default {
       {
         type: "custom",
         position: 13,
-        name: "inventory",
-        select: 1,
-        list: [
-          {
-            name_set: items.component_pouch.name,
-            equipment: [{ inventory: [[items.component_pouch, 1]] }],
-          },
-          {
-            name_set: items.focus.name,
-            equipment: [{ inventory: [[items.focus, 1]] }],
-          },
-        ],
-      },
-      {
-        type: "custom",
-        position: 13,
         name: "pack",
         select: 1,
         list: [
@@ -9061,6 +9046,22 @@ export default {
           {
             name_set: packs.explorers.name,
             equipment: [{ inventory_packs: [[packs.explorers, 1]] }],
+          },
+        ],
+      },
+      {
+        type: "custom",
+        position: 13,
+        name: "inventory",
+        select: 1,
+        list: [
+          {
+            name_set: items.component_pouch.name,
+            equipment: [{ inventory: [[items.component_pouch, 1]] }],
+          },
+          {
+            name_set: items.focus.name,
+            equipment: [{ inventory: [[items.focus, 1]] }],
           },
         ],
       },
