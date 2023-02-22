@@ -318,9 +318,7 @@ export default {
 		Saving_Numb() {
 			const KOF = 8;
 			let attribute = this.MY.class.spell_attribute;
-			console.log('attribute:', attribute)
 			let mastery = this.Mastery;
-			// let stats_mod = this.MY.stats[attribute].mod;
       let stats_mod = this.stats_Mod(attribute);
 			return KOF + mastery + stats_mod;
 		},

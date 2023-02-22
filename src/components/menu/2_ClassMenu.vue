@@ -3,6 +3,7 @@
 
     <div class="selection_menu" v-if="shown_Subclass">
 			<AppSelectionArr :menu="subclass_Filter"/>
+			<AppSelectionArr :menu="subclass_other_Filter"/>
 		</div>
 
     <div class="selection_menu" v-if="shown_Other">
@@ -64,8 +65,8 @@ export default {
     filter_Setting: (stor) => (numb) => {
       return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);
 		},
-
-    subclass_Filter: (stor) => stor.filter_Setting(1),
+    subclass_Filter: (stor) => stor.filter_Setting(0),
+    subclass_other_Filter: (stor) => stor.filter_Setting(1),
 
     other_Filter: (stor) => stor.filter_Setting(2),
 
@@ -86,7 +87,8 @@ export default {
     undefined_Filter: (stor) => stor.filter_Setting(undefined),
 
     shown_Subclass() {
-      return this.subclass_Filter.length !== 0
+      return this.subclass_Filter.length !== 0 ||
+      this.subclass_other_Filter.length !== 0
     },
 
     shown_Other() {

@@ -83,7 +83,10 @@ export const useMYStore = defineStore({
     },
 
     сustomm_Settings_Class_Arr(stor) {
-      return stor.filterSettings(stor.сustomm_Settings_Class_Arr_No_Filter);
+      const start_arr = stor.сustomm_Settings_Class_Arr_No_Filter;
+      const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
+      const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
+      return stor.filterSettings(sort_arr_lvl);
     },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
@@ -263,7 +266,7 @@ export const useMYStore = defineStore({
           new_battle_style_arr.push({...el, select_list: new_select_list});
         });
       }
-      let new_arr = arr.slice(0);
+      let new_arr = arr; //slice(0)
       new_battle_style_arr.forEach((el) => {
         const select_list_includ = select_name.filter(item => !el.select_list.some(sub_el => sub_el.name == item));
         const list_filter = el.list.filter(item => !select_list_includ.includes(item.name));
