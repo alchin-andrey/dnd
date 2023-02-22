@@ -3193,6 +3193,7 @@ export default {
     "для будь-якого звіра чи рослини, що намагається вас атакувати",
 
   spell_alter_self_druid: spells.alter_self_druid,
+  spell_alter_self_warlock: spells.alter_self_warlock,
 
   of_nonmagic_damage_immunity_wild_shape:
     "імунітету цілі до немагічних атак та пошкоджень, при Дикій формі",
@@ -3533,7 +3534,15 @@ export default {
 
   improved_pact_weapon: "Покращена зброя договору",
 
+  arcanum_6: "Арканум [6]",
+  arcanum_7: "Арканум [7]",
+  arcanum_8: "Арканум [8]",
+  arcanum_9: "Арканум [9]",
   arcanum_slots: "Аркануми",
+  arcanum_slot_6: "1× Арканум [6]",
+  arcanum_slot_7: "1× Арканум [7]",
+  arcanum_slot_8: "1× Арканум [8]",
+  arcanum_slot_9: "1× Арканум [9]",
 
   inner_reserve_slots: "Внутрішній резерв",
   inner_reserve_slot: "1× Внутрішній резерв",
@@ -5284,4 +5293,51 @@ export default {
 
   iron_pot: "Залізний горщик",
   iron_pot_details: "Місткість: 1 галон (3,75 л)",
+
+  condition_spell_eldritch_blast: "Умова: Закляття Містичний заряд",
+
+  spell_extra_attack_warlock: spells.extra_attack_warlock,
+  spell_extra_attack_warlock_details: spells.extra_attack_warlock_details,
+  spell_extra_attack_warlock_expanded: spells.extra_attack_warlock_expanded,
+
+  thirsting_blade: "Спраглий клинок",
+
+  sign_of_ill_omen: "Мітка лихого передвістя",
+
+  bestow_curse_slots: "прокльон",
+  bestow_curse_slot: "1× прокльон",
+
+  spell_dissapear: spells.dissapear,
+  spell_dissapear_details: spells.dissapear_details,
+  spell_dissapear_expanded: spells.dissapear_expanded,
+
+  mire_the_mind: "Трясовина розуму",
+
+  slow_slots: "уповільнення",
+  slow_slot: "1× уповільнення",
+
+  one_with_shadows: "Єдиний з тінню",
+  bewitching_whispers: "Заворожуючий шепіт",
+  sculptor_of_flesh: "Скульптор плоті",
+  dreadful_word: "Жахаюче слово",
+  ascendant_step: "Крок вгору",
+  whispers_of_the_grave: "Шепіт могили",
+  overworldly_leap: "Потойбічне стрибання",
+  minions_of_chaos: "Підлеглі Хаоса",
+  lifedrinker: "Випивач життя",
+
+  spell_lifedrinker: spells.lifedrinker,
+  spell_lifedrinker_details: spells.lifedrinker_details,
+  spell_lifedrinker_expanded: spells.lifedrinker_expanded,
+
+  witch_sight: "Відьомський зір",
+  illusion_shifters_30f: "істинний вигляд ілюзій та перекиднів у 30ф від вас",
+
+  visions_of_distant_realms:"Видіння далеких королівств",
+  master_of_myriad_forms: "Майстер незліченних виглядів",
+  chains_of_carceri: "Ланцюги Карцері",
+
+  polymorph_slots: "Перетворення",
+  polymorph_slot: "1× перетворення | 4× мана",
+
 };

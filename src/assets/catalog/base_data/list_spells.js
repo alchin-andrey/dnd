@@ -3926,6 +3926,49 @@ export default {
     },
   ],
 
+  alter_self_warlock: [
+    {
+      name: "spell_alter_self_warlock",
+      details: "spell_alter_self_details",
+      expanded: "spell_alter_self_expanded",
+
+      type: "ability",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   divine_channel_undead: [
     {
       //0
@@ -4873,6 +4916,49 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: "Det_11_20_Lvl",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  extra_attack_warlock: [
+    {
+      name: "spell_extra_attack_warlock",
+      details: "spell_extra_attack_warlock_details",
+      expanded: "spell_extra_attack_warlock_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dic: null,
@@ -12267,6 +12353,93 @@ export default {
       impact_damage_type: null,
 
       impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  dissapear: [
+    {
+      name: "spell_dissapear",
+      details: "spell_dissapear_details",
+      expanded: "spell_dissapear_expanded",
+
+      type: "ability",
+      slot_type: "dissapear_slot",
+      classes: [],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    }
+  ],
+
+  lifedrinker: [
+    {
+      name: "spell_lifedrinker",
+      details: "spell_lifedrinker_details",
+      expanded: "spell_lifedrinker_expanded",
+
+      type: "ability",
+      classes: [],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+
+      impact_size_foo: "Num_CHA_Min1",
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dic: null,

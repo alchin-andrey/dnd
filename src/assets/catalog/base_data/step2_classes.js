@@ -140,7 +140,6 @@ export default {
                 level: 3,
                 spell: spells.fast_hands,
               },
-
             ],
 
             fines: [
@@ -206,7 +205,6 @@ export default {
             ],
 
             spells: [
-
               {
                 level: 9,
                 spell: spells.fake_identity,
@@ -2980,9 +2978,14 @@ export default {
         spell: spells.diamond_soul,
       },
       {
-        level: 14,
+        level: 18,
         spell: spells.empty_body,
       },
+// TODO - Додати закляття astral_projection_monk
+      // {
+      //   level: 18,
+      //   spell: spells.astral_projection_monk,
+      // },
     ],
 
     qualities: [
@@ -3303,7 +3306,6 @@ export default {
         name: "tools",
         select: 1,
         list: [
-          
           {
             name_set: tools.potters_tools.name,
             equipment: [{ inventory: [[items.tools_potters_tools, 1]] }],
@@ -3318,7 +3320,7 @@ export default {
             name_set: tools.brewer.name,
             equipment: [{ inventory: [[items.tools_brewer, 1]] }],
             proficiencies: { tools: [tools.brewer] },
-          }, 
+          },
           {
             name_set: tools.alchemists_supplies.name,
             equipment: [{ inventory: [[items.tools_alchemists_supplies, 1]] }],
@@ -3360,7 +3362,7 @@ export default {
             name_set: tools.navigators_tools.name,
             equipment: [{ inventory: [[items.tools_navigators_tools, 1]] }],
             proficiencies: { tools: [tools.navigators_tools] },
-          },         
+          },
           {
             name_set: tools.woodcarvers_tools.name,
             equipment: [{ inventory: [[items.tools_woodcarvers_tools, 1]] }],
@@ -3390,7 +3392,7 @@ export default {
             name_set: tools.leatherworkers_tools.name,
             equipment: [{ inventory: [[items.tools_leatherworkers_tools, 1]] }],
             proficiencies: { tools: [tools.leatherworkers_tools] },
-          },         
+          },
           {
             name_set: tools.cobblers_tools.name,
             equipment: [{ inventory: [[items.tools_cobblers_tools, 1]] }],
@@ -3753,9 +3755,42 @@ export default {
                 spell: spells.sanctuary,
               },
               {
+                level: 5,
+                spell: spells.lesser_restoration,
+              },
+              {
+                level: 5,
+                spell: spells.zone_of_truth,
+              },
+              {
                 level: 7,
                 spell: spells.aura_of_devotion,
               },
+              //TODO - Додати спели
+              // {
+              //   level: 9,
+              //   spell: spells.beacon_of_hope,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.dispel_magic,
+              // },
+              // {
+              //   level: 13,
+              //   spell: spells.freedom_of_movement,
+              // },
+              // {
+              //   level: 13,
+              //   spell: spells.guardian_of_faith,
+              // },
+              // {
+              //   level: 17,
+              //   spell: spells.flame_strike,
+              // },
+              // {
+              //   level: 17,
+              //   spell: spells.commune,
+              // },
               {
                 level: 15,
                 spell: spells.protection_from_evil_and_good_paladin,
@@ -3860,8 +3895,41 @@ export default {
                 spell: spells.speak_with_animals,
               },
               {
+                level: 5,
+                spell: spells.moonbeam,
+              },
+              {
+                level: 5,
+                spell: spells.misty_step,
+              },
+              {
                 level: 7,
                 spell: spells.aura_of_warding,
+              },
+              //TODO - Додати спели
+              // {
+              //   level: 9,
+              //   spell: spells.protection_from_energy,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.plant_growth,
+              // },
+              // {
+              //   level: 13,
+              //   spell: spells.ice_storm,
+              // },
+              // {
+              //   level: 13,
+              //   spell: spells.stoneskin,
+              // },
+              // {
+              //   level: 17,
+              //   spell: spells.tree_stride,
+              // },
+              {
+                level: 17,
+                spell: spells.commune_with_nature,
               },
               {
                 level: 15,
@@ -3928,9 +3996,42 @@ export default {
                 spell: spells.bane,
               },
               {
+                level: 5,
+                spell: spells.misty_step,
+              },
+              {
+                level: 5,
+                spell: spells.hold_person,
+              },
+              {
                 level: 7,
                 spell: spells.relentless_avenger,
               },
+              //TODO - додати спели
+              // {
+              //   level: 9,
+              //   spell: spells.protection_from_energy,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.haste,
+              // },
+              // {
+              //   level: 13,
+              //   spell: spells.banishment,
+              // },
+              // {
+              //   level: 13,
+              //   spell: spells.dimension_door,
+              // },
+              // {
+              //   level: 17,
+              //   spell: spells.scrying,
+              // },
+              // {
+              //   level: 17,
+              //   spell: spells.hold_monster,
+              // },
               {
                 level: 15,
                 spell: spells.soul_of_vengeance,
@@ -4286,7 +4387,7 @@ export default {
         classes: ["paladin"],
       },
     ],
-  },
+  }, // 20 , орім спелів сабкласів
 
   //NOTE - Cleric
 
@@ -4467,6 +4568,31 @@ export default {
                 level: 3,
                 spell: spells.gust_of_wind,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.sleet_storm,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.call_lightning,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.control_water,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.ice_storm,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.insect_plague,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.destructive_wave,
+              // },
             ],
 
             proficiencies: {
@@ -4608,6 +4734,31 @@ export default {
                 level: 3,
                 spell: spells.magic_weapon,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.spirit_guardians,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.crusaders_mantle,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.stoneskin,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.freedom_of_movement,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.flame_strike,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.hold_monster,
+              // },
             ],
 
             proficiencies: {
@@ -4724,6 +4875,31 @@ export default {
                 level: 3,
                 spell: spells.lesser_restoration,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.revivify,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.beacon_of_hope,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.death_ward,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.guardian_of_faith,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.mass_cure_wounds,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.raise_dead,
+              // },
             ],
 
             proficiencies: {
@@ -4854,6 +5030,31 @@ export default {
                 level: 3,
                 spell: spells.augury,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.nondetection,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.speak_with_dead,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.arcane_eye,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.confusion,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.legend_lore,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.scrying,
+              // },
             ],
 
             settings: [
@@ -4901,94 +5102,94 @@ export default {
                   {
                     name: lang.halfling.name,
                     details: lang.halfling.details,
-                    proficiencies: {languages: [lang.halfling]}
+                    proficiencies: { languages: [lang.halfling] },
                   },
                   {
                     name: lang.gnome.name,
                     details: lang.gnome.details,
-                    proficiencies: {languages: [lang.gnome]}
+                    proficiencies: { languages: [lang.gnome] },
                   },
                   {
                     name: lang.dwarf.name,
                     details: lang.dwarf.details,
-                    proficiencies: {languages: [lang.dwarf]}
+                    proficiencies: { languages: [lang.dwarf] },
                   },
                   {
                     name: lang.elf.name,
                     details: lang.elf.details,
-                    proficiencies: {languages: [lang.elf]}
+                    proficiencies: { languages: [lang.elf] },
                   },
                   {
                     name: lang.orc.name,
                     details: lang.orc.details,
-                    proficiencies: {languages: [lang.orc]}
+                    proficiencies: { languages: [lang.orc] },
                   },
                   {
                     name: lang.dragon.name,
                     details: lang.dragon.details,
-                    proficiencies: {languages: [lang.dragon]}
+                    proficiencies: { languages: [lang.dragon] },
                   },
                   {
                     name: lang.giant.name,
                     details: lang.giant.details,
-                    proficiencies: {languages: [lang.giant]}
+                    proficiencies: { languages: [lang.giant] },
                   },
                   {
                     name: lang.goblin.name,
                     details: lang.goblin.details,
-                    proficiencies: {languages: [lang.goblin]}
+                    proficiencies: { languages: [lang.goblin] },
                   },
                   {
                     name: lang.thieves.name,
                     details: lang.thieves.details,
-                    proficiencies: {languages: [lang.thieves]}
+                    proficiencies: { languages: [lang.thieves] },
                   },
                   {
                     name: lang.druid.name,
                     details: lang.druid.details,
-                    proficiencies: {languages: [lang.druid]}
+                    proficiencies: { languages: [lang.druid] },
                   },
                   {
                     name: lang.animal.name,
                     details: lang.animal.details,
-                    proficiencies: {languages: [lang.animal]}
+                    proficiencies: { languages: [lang.animal] },
                   },
                   {
                     name: lang.sylvan.name,
                     details: lang.sylvan.details,
-                    proficiencies: {languages: [lang.sylvan]}
+                    proficiencies: { languages: [lang.sylvan] },
                   },
                   {
                     name: lang.undercommon.name,
                     details: lang.undercommon.details,
-                    proficiencies: {languages: [lang.undercommon]}
+                    proficiencies: { languages: [lang.undercommon] },
                   },
                   {
                     name: lang.deep.name,
                     details: lang.deep.details,
-                    proficiencies: {languages: [lang.deep]}
+                    proficiencies: { languages: [lang.deep] },
                   },
                   {
                     name: lang.primordial.name,
                     details: lang.primordial.details,
-                    proficiencies: {languages: [lang.primordial]}
+                    proficiencies: { languages: [lang.primordial] },
                   },
                   {
                     name: lang.sky.name,
                     details: lang.sky.details,
-                    proficiencies: {languages: [lang.sky]}
+                    proficiencies: { languages: [lang.sky] },
                   },
                   {
                     name: lang.demonic.name,
                     details: lang.demonic.details,
-                    proficiencies: {languages: [lang.demonic]}
+                    proficiencies: { languages: [lang.demonic] },
                   },
                   {
                     name: lang.tiefling.name,
                     details: lang.tiefling.details,
-                    proficiencies: {languages: [lang.tiefling]}
+                    proficiencies: { languages: [lang.tiefling] },
                   },
-                ]
+                ],
               },
               // {
               //   level: 1,
@@ -5047,6 +5248,32 @@ export default {
                 level: 3,
                 spell: spells.mirror_image,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.blink,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.dispel_magic,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.dimension_door,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.polymorph,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.modify_memory,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.dominate_person,
+              // },
+              //TODO - додати вміння Домену Обману
             ],
 
             settings: [
@@ -5121,6 +5348,31 @@ export default {
                 level: 3,
                 spell: spells.spike_growth,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.plant_growth,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.wind_wall,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.dominate_beast,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.grasping_vine,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.tree_stride,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.insect_plague,
+              // },
             ],
 
             proficiencies: {
@@ -5172,7 +5424,7 @@ export default {
                     name_set: spells.poison_spray[0].name,
                     spells: [{ spell: spells.poison_spray }],
                   },
-                ]
+                ],
               },
               // {
               //   level: 1,
@@ -5337,6 +5589,31 @@ export default {
                 level: 3,
                 spell: spells.flaming_sphere,
               },
+              //TODO - додати спели
+              // {
+              //   level: 5,
+              //   spell: spells.daylight,
+              // },
+              // {
+              //   level: 5,
+              //   spell: spells.fireball,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.wall_of_fire,
+              // },
+              // {
+              //   level: 7,
+              //   spell: spells.guardian_of_faith,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.scrying,
+              // },
+              // {
+              //   level: 9,
+              //   spell: spells.flame_strike,
+              // },
             ],
 
             settings: [
@@ -5576,7 +5853,7 @@ export default {
             name_set: spells.thaumaturgy[0].name,
             spells: [{ spell: spells.thaumaturgy }],
           },
-        ]
+        ],
       },
       // {
       //   level: 1,
@@ -5846,7 +6123,7 @@ export default {
                     name_set: spells.poison_spray[0].name,
                     spells: [{ spell: spells.poison_spray }],
                   },
-                ]
+                ],
               },
               // {
               //   level: 2,
@@ -5871,12 +6148,37 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.hold_person,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.spike_growth,
+                      },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.slow,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.sleet_storm,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.ice_storm,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.freedom_of_movement,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.cone_of_cold,
+                      // },
+                      {
+                        level: 9,
+                        spell: spells.commune_with_nature,
                       },
                     ],
                   },
@@ -5886,13 +6188,38 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.melfs_acid_arrow,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.darkness,
                       },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.stinking_cloud,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.water_walk,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.locate_creature,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.freedom_of_movement,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.scrying,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.insect_plague,
+                      // },
                     ],
                   },
                   {
@@ -5901,13 +6228,38 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.spider_climb,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.spike_growth,
                       },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.lightning_bolt,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.meld_into_stone,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.stone_shape,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.stoneskin,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.wall_of_stone,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.passwall,
+                      // },
                     ],
                   },
                   {
@@ -5916,12 +6268,37 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.barkskin,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.spider_climb,
+                      },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.call_lightning,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.plant_growth,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.divination,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.freedom_of_movement,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.tree_stride,
+                      // },
+                      {
+                        level: 9,
+                        spell: spells.commune_with_nature,
                       },
                     ],
                   },
@@ -5931,13 +6308,38 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.pass_without_trace,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.invisibility,
                       },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.daylight,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.haste,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.divination,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.freedom_of_movement,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.dream,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.insect_plague,
+                      // },
                     ],
                   },
                   {
@@ -5946,13 +6348,38 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.mirror_image,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.misty_step,
                       },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.water_breathing,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.water_walk,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.control_water,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.freedom_of_movement,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.scrying,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.conjure_elemental,
+                      // },
                     ],
                   },
                   {
@@ -5961,15 +6388,41 @@ export default {
 
                     spells: [
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.spider_climb,
                       },
                       {
-                        level: 2,
+                        level: 3,
                         spell: spells.web,
                       },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.gaseous_form,
+                      // },
+                      // {
+                      //   level: 5,
+                      //   spell: spells.stinking_cloud,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.greater_invisibility,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.stone_shape,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.insect_plague,
+                      // },
+                      // {
+                      //   level: 9,
+                      //   spell: spells.cloudkill,
+                      // },
                     ],
                   },
+                  //TODO - Add Desert terrain
                 ],
               },
             ],
@@ -6259,7 +6712,7 @@ export default {
             name_set: spells.poison_spray[0].name,
             spells: [{ spell: spells.poison_spray }],
           },
-        ]
+        ],
       },
       // {
       //   level: 1,
@@ -6280,7 +6733,7 @@ export default {
         ],
         foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
-        mana_max: [1,1,2,2,3, 3,4,4,5,5, 6,6,7,7,8, 8,9,9,9,9],
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
         classes: ["druid"],
       },
       {
@@ -6555,6 +7008,31 @@ export default {
                     level: 3,
                     spell: spells.calm_emotions,
                   },
+                  //TODO - Додати спеллс
+                  // {
+                  //   level: 5,
+                  //   spell: spells.blink,
+                  // },
+                  // {
+                  //   level: 5,
+                  //   spell: spells.plant_growth,
+                  // },
+                  // {
+                  //   level: 7,
+                  //   spell: spells.greater_invisibility,
+                  // },
+                  // {
+                  //   level: 7,
+                  //   spell: spells.dominate_beast,
+                  // },
+                  // {
+                  //   level: 9,
+                  //   spell: spells.dominate_person,
+                  // },
+                  // {
+                  //   level: 9,
+                  //   spell: spells.seeming,
+                  // },
                 ],
               },
             ],
@@ -6682,6 +7160,31 @@ export default {
                     level: 3,
                     spell: spells.scorching_ray,
                   },
+                  //TODO - Додати спеллс
+                  // {
+                  //   level: 5,
+                  //   spell: spells.stinking_cloud,
+                  // },
+                  // {
+                  //   level: 5,
+                  //   spell: spells.fireball,
+                  // },
+                  // {
+                  //   level: 7,
+                  //   spell: spells.wall_of_fire,
+                  // },
+                  // {
+                  //   level: 7,
+                  //   spell: spells.fire_shield,
+                  // },
+                  // {
+                  //   level: 9,
+                  //   spell: spells.flame_strike,
+                  // },
+                  // {
+                  //   level: 9,
+                  //   spell: spells.hallow,
+                  // },
                 ],
               },
             ],
@@ -7020,25 +7523,6 @@ export default {
         name: "invocations",
         select: [0, 2, 2, 2, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8],
         list: [
-          // Не каноничньіе, как оказалось
-          // {
-          //   level: 2,
-          //   condition: "pact_of_the_tome",
-          //   name: "aspect_of_the_moon",
-
-          //   fines: [
-          //     {
-          //       type: "plus",
-          //       keyword: "none",
-          //       details: "sleep",
-          //     },
-          //     {
-          //       type: "resistance",
-          //       keyword: "immunity",
-          //       details: "sleep_against",
-          //     },
-          //   ],
-          // },
           {
             level: 2,
             name: "gaze_of_two_minds",
@@ -7053,7 +7537,6 @@ export default {
           {
             level: 2,
             name: "thief_of_five_fates",
-            //details: "thief_of_five_fates_details",
 
             spells: [
               {
@@ -7087,31 +7570,6 @@ export default {
               },
             ],
           },
-          // {
-          //   level: 2,
-          //   condition: "pact_of_the_chain",
-          //   name: "gift_of_the_ever_living_ones",
-
-          //   fines: [
-          //     {
-          //       type: "advantage",
-          //       keyword: "always_max_heal",
-          //       details: "if_familiar_is_in_100f",
-          //     },
-          //   ],
-          // },
-          // {
-          //   level: 2,
-          //   condition: "pact_of_the_chain",
-          //   name: "investment_of_the_chain_master",
-
-          //   spells: [
-          //     {
-          //       level: 2,
-          //       spell: spells.investment_of_the_chain_master,
-          //     }
-          //   ]
-          // },
           {
             level: 2,
             name: "armor_of_shadows",
@@ -7123,7 +7581,6 @@ export default {
               },
             ],
           },
-
           {
             level: 2,
             name: "devils_sight",
@@ -7168,18 +7625,6 @@ export default {
               },
             ],
           },
-          // {
-          //   level: 2,
-          //   condition: "spell_eldritch_blast",
-          //   name: "lance_of_lethargy",
-
-          //   spells: [
-          //     {
-          //       level: 2,
-          //       spell: spells.eldritch_blast_slow,
-          //     }
-          //   ]
-          // },
           {
             level: 2,
             name: "mask_of_many_faces",
@@ -7191,30 +7636,6 @@ export default {
               },
             ],
           },
-          // {
-          //   level: 2,
-          //   name: "eldritch_mind",
-
-          //   fines: [
-          //     {
-          //       type: "advantage",
-          //       keyword: "advantage",
-          //       details: "on_concentration",
-          //     },
-          //   ],
-          // },
-          {
-            level: 2,
-            condition: "spell_eldritch_blast",
-            name: "eldritch_spear",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.eldritch_blast_distant,
-              },
-            ],
-          },
           {
             level: 2,
             name: "fiendish_vigor",
@@ -7223,18 +7644,6 @@ export default {
               {
                 level: 2,
                 spell: spells.false_life_warlock,
-              },
-            ],
-          },
-          {
-            level: 2,
-            condition: "spell_eldritch_blast",
-            name: "agonizing_blast",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.eldritch_blast_damage,
               },
             ],
           },
@@ -7253,30 +7662,6 @@ export default {
               },
             ],
           },
-          {
-            level: 2,
-            condition: "spell_eldritch_blast",
-            name: "repelling_blast",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.eldritch_blast_push,
-              },
-            ],
-          },
-          // {
-          //   level: 2,
-          //   condition: "pact_of_the_talisman",
-          //   name: "rebuke_of_the_talisman",
-
-          //   spells: [
-          //     {
-          //       level: 2,
-          //       spell: spells.rebuke_of_the_talisman,
-          //     }
-          //   ],
-          // },
           {
             level: 2,
             name: "eldritch_sight",
@@ -7299,7 +7684,325 @@ export default {
               },
             ],
           },
-          //TODO - добавить остальньіе уровни (заблокировано заклинаниями)
+          {
+            level: 2,
+            condition: "condition_spell_eldritch_blast",
+            name: "eldritch_spear",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.eldritch_blast_distant,
+              },
+            ],
+          },
+          {
+            level: 2,
+            condition: "condition_spell_eldritch_blast",
+            name: "agonizing_blast",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.eldritch_blast_damage,
+              },
+            ],
+          },
+          {
+            level: 2,
+            condition: "condition_spell_eldritch_blast",
+            name: "repelling_blast",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.eldritch_blast_push,
+              },
+            ],
+          },
+          {
+            level: 5,
+            condition: "pact_of_the_blade",
+            name: "thirsting_blade",
+
+            spells: [
+              {
+                level: 5,
+                spell: spells.extra_attack_warlock,
+              },
+            ],
+          },
+          {
+            level: 5,
+            name: "sign_of_ill_omen",
+
+            //TODO - додати Bestow Curse
+            // spells: [
+            //   {
+            //     level: 5,
+            //     spell: spells.bestow_curse,
+            //     Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //   },
+            // ],
+          },
+          {
+            level: 5,
+            name: "one_with_shadows",
+
+            spells: [
+              {
+                level: 5,
+                spell: spells.dissapear,
+              },
+            ],
+          },
+          {
+            level: 5,
+            name: "mire_the_mind",
+
+            //TODO - додати Slow
+            // spells: [
+            //   {
+            //     level: 5,
+            //     spell: spells.slow,
+            //     Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //   },
+            // ],
+          },
+          {
+            level: 7,
+            name: "bewitching_whispers",
+
+            //TODO - додати Compulsion
+            // spells: [
+            //   {
+            //     level: 7,
+            //     spell: spells.compulsion,
+            //     // Вы можете один раз сотворить заклинание принуждение [compulsion], используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //   },
+            // ],
+          },
+          {
+            level: 7,
+            name: "sculptor_of_flesh",
+
+            //TODO - додати polymorph
+            // spells: [
+            //   {
+            //     level: 7,
+            //     spell: spells.polymorph,
+            //     // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //   },
+            // ],
+          },
+          {
+            level: 7,
+            name: "dreadful_word",
+
+            //TODO - додати polymorph
+            // spells: [
+            //   {
+            //     level: 7,
+            //     spell: spells.polymorph,
+            //     // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //   },
+            // ],
+          },
+          {
+            level: 9,
+            name: "ascendant_step",
+
+            //TODO - додати levitate_warlock
+            // spells: [
+            //   {
+            //     level: 9,
+            //     spell: spells.levitate_warlock,
+            //     // Вы можете неограниченно накладывать на себя заклинание левитация [levitate], не тратя ячейки заклинаний и материальные компоненты.
+            //   },
+            // ],
+          },
+          {
+            level: 9,
+            name: "whispers_of_the_grave",
+
+            //TODO - додати speak_with_dead_warlock
+            // spells: [
+            //   {
+            //     level: 9,
+            //     spell: spells.speak_with_dead_warlock,
+            //     // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+            //   },
+            // ],
+          },
+          {
+            level: 9,
+            name: "overworldly_leap",
+
+            //TODO - додати jump_warlock
+            // spells: [
+            //   {
+            //     level: 9,
+            //     spell: spells.jump_warlock,
+            //     // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+            //   },
+            // ],
+          },
+          {
+            level: 9,
+            name: "minions_of_chaos",
+
+            //TODO - додати Conjure Elemental
+            // spells: [
+            //   {
+            //     level: 9,
+            //     spell: spells.conjure_elemental,
+            //     // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //   },
+            // ],
+          },
+          {
+            level: 12,
+            condition: "pact_of_the_blade",
+            name: "lifedrinker",
+
+            spells: [
+              {
+                level: 12,
+                spell: spells.lifedrinker,
+              },
+            ],
+          },
+          {
+            level: 15,
+            name: "witch_sight",
+
+            fines: [
+              {
+                type: "plus",
+                keyword: "able_to_see",
+                details: "illusion_shifters_30f",
+              },
+            ],
+          },
+          {
+            level: 15,
+            name: "visions_of_distant_realms",
+            
+            //TODO - додати Arcane_Eye_warlock
+            // spells: [
+            //   {
+            //     level: 15,
+            //     spell: spells.arcane_eye_warlock,
+            //     // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+            //   },
+            // ],
+          },
+          {
+            level: 15,
+            name: "master_of_myriad_forms",
+            
+            spells: [
+              {
+                level: 15,
+                spell: spells.alter_self_warlock,
+                // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+              },
+            ],
+          },
+          {
+            level: 15,
+            name: "chains_of_carceri",
+            
+            //TODO - додати hold_monster_warlock
+            // spells: [
+            //   {
+            //     level: 15,
+            //     spell: spells.hold_monster_warlock,
+            //     // Вы можете неограниченно накладывать заклинание удержание чудовища [hold monster], если цель — исчадие, небожитель или элементаль. При этом вы не тратите ячейки заклинаний и материальные компоненты. Вы должны закончить продолжительный отдых, прежде чем снова сможете использовать это заклинание против этого же существа.
+            //   },
+            // ],
+          },
+
+          // Не каноничньіе, как оказалось
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_tome",
+          //   name: "aspect_of_the_moon",
+
+          //   fines: [
+          //     {
+          //       type: "plus",
+          //       keyword: "none",
+          //       details: "sleep",
+          //     },
+          //     {
+          //       type: "resistance",
+          //       keyword: "immunity",
+          //       details: "sleep_against",
+          //     },
+          //   ],
+          // },
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_chain",
+          //   name: "gift_of_the_ever_living_ones",
+
+          //   fines: [
+          //     {
+          //       type: "advantage",
+          //       keyword: "always_max_heal",
+          //       details: "if_familiar_is_in_100f",
+          //     },
+          //   ],
+          // },
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_chain",
+          //   name: "investment_of_the_chain_master",
+
+          //   spells: [
+          //     {
+          //       level: 2,
+          //       spell: spells.investment_of_the_chain_master,
+          //     }
+          //   ]
+          // },
+          // {
+          //   level: 2,
+          //   condition: "condition_spell_eldritch_blast",
+          //   name: "lance_of_lethargy",
+
+          //   spells: [
+          //     {
+          //       level: 2,
+          //       spell: spells.eldritch_blast_slow,
+          //     }
+          //   ]
+          // },
+          // {
+          //   level: 2,
+          //   condition: "pact_of_the_talisman",
+          //   name: "rebuke_of_the_talisman",
+
+          //   spells: [
+          //     {
+          //       level: 2,
+          //       spell: spells.rebuke_of_the_talisman,
+          //     }
+          //   ],
+          // },
+          // {
+          //   level: 2,
+          //   name: "eldritch_mind",
+
+          //   fines: [
+          //     {
+          //       type: "advantage",
+          //       keyword: "advantage",
+          //       details: "on_concentration",
+          //     },
+          //   ],
+          // },
         ],
       },
       {
@@ -7611,7 +8314,7 @@ export default {
             name_set: spells.poison_spray[0].name,
             spells: [{ spell: spells.poison_spray }],
           },
-        ]        
+        ],
       },
       // {
       //   level: 1,
@@ -7623,6 +8326,47 @@ export default {
       //   mana_max: 0,
       //   classes: ["warlock"],
       // },
+      // TODO - Додати Аркануми ?
+      {
+          level: 11,
+          type: "spells",
+          position: 4,
+          name: "arcanum_6",
+          select: 1,
+          mana_min: 6,
+          mana_max: 6,
+          classes: ["warlock"],
+      },
+      {
+          level: 13,
+          type: "spells",
+          position: 4,
+          name: "arcanum_7",
+          select: 1,
+          mana_min: 7,
+          mana_max: 7,
+          classes: ["warlock"],
+      },
+      {
+          level: 15,
+          type: "spells",
+          position: 4,
+          name: "arcanum_8",
+          select: 1,
+          mana_min: 8,
+          mana_max: 8,
+          classes: ["warlock"],
+      },
+      {
+          level: 17,
+          type: "spells",
+          position: 4,
+          name: "arcanum_9",
+          select: 1,
+          mana_min: 9,
+          mana_max: 9,
+          classes: ["warlock"],
+      },
       {
         level: 4,
         type: "feats",
@@ -8282,7 +9026,7 @@ export default {
             name_set: spells.poison_spray[0].name,
             spells: [{ spell: spells.poison_spray }],
           },
-        ]
+        ],
       },
       // {
       //   level: 1,
@@ -8680,11 +9424,12 @@ export default {
               },
             ],
 
-            // TODO - добавить спелл
+            // TODO - добавить спелл animate_dead_wizard
+            // Когда вы накладываете заклинание восставший труп [animate dead], вы можете сделать его целью один дополнительный труп или кучу костей, создавая зомби [zombie] или скелета [skeleton] соответственно. Каждый раз, когда вы создаёте нежить, используя заклинание школы Некромантии, она получает дополнительные преимущества: -Максимум хитов создаваемой нежити увеличивается на значение, равное вашему уровню волшебника. -Создаваемые существа добавляют ваш бонус мастерства к броскам урона оружием.
             spells: [
               // {
               //   level: 6,
-              //   spell: spells.animate_dead,
+              //   spell: spells.animate_dead_wizard,
               // },
               {
                 level: 14,
@@ -8835,6 +9580,38 @@ export default {
 
             charges: [
               {
+                level: 10,
+                name: "polymorph_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+              {
                 level: 14,
                 name: "genius_slots",
                 type: "long_rest",
@@ -8852,6 +9629,7 @@ export default {
                     0,
                     0,
                     0,
+
                     0,
                     0,
                     0,
@@ -8883,19 +9661,21 @@ export default {
                 level: 6,
                 spell: spells.transmutation_stone,
               },
-              //TODO - добавить заклинание
+              //TODO - добавить заклинание polymorph_wizard
+              // Вы можете накладывать превращение [polymorph], не тратя ячейку заклинаний. Когда вы так поступаете, вы можете выбрать в качестве цели только себя и превратиться можете в зверя, Показатель опасности которого не больше 1. Активировав превращение подобным путём один раз, вы не можете делать это ещё раз до завершения короткого или продолжительного отдыха, хотя вы можете накладывать это заклинание обычным способом, за ячейки заклинаний.
               // {
               //   level:10,
-              //   spell: spells.polymorph,
+              //   spell: spells.polymorph_wizard,
               // },
               {
                 level: 14,
                 spell: spells.big_transformation,
               },
-              //TODO - добавить заклинание
+              //TODO - добавить заклинание raise_dead_wizard - geinus
+              //Вы накладываете заклинание оживление [raise dead] на существо, которого коснулись своим камнем преобразования, не тратя ячейку заклинания и даже без необходимости иметь это заклинание в книге заклинаний.
               // {
               //   level:14,
-              //   spell: spells.raise_dead,
+              //   spell: spells.raise_dead_wizard,
               // },
               {
                 level: 14,
@@ -11262,94 +12042,94 @@ export default {
                   {
                     name: lang.halfling.name,
                     details: lang.halfling.details,
-                    proficiencies: {languages: [lang.halfling]}
+                    proficiencies: { languages: [lang.halfling] },
                   },
                   {
                     name: lang.gnome.name,
                     details: lang.gnome.details,
-                    proficiencies: {languages: [lang.gnome]}
+                    proficiencies: { languages: [lang.gnome] },
                   },
                   {
                     name: lang.dwarf.name,
                     details: lang.dwarf.details,
-                    proficiencies: {languages: [lang.dwarf]}
+                    proficiencies: { languages: [lang.dwarf] },
                   },
                   {
                     name: lang.elf.name,
                     details: lang.elf.details,
-                    proficiencies: {languages: [lang.elf]}
+                    proficiencies: { languages: [lang.elf] },
                   },
                   {
                     name: lang.orc.name,
                     details: lang.orc.details,
-                    proficiencies: {languages: [lang.orc]}
+                    proficiencies: { languages: [lang.orc] },
                   },
                   {
                     name: lang.dragon.name,
                     details: lang.dragon.details,
-                    proficiencies: {languages: [lang.dragon]}
+                    proficiencies: { languages: [lang.dragon] },
                   },
                   {
                     name: lang.giant.name,
                     details: lang.giant.details,
-                    proficiencies: {languages: [lang.giant]}
+                    proficiencies: { languages: [lang.giant] },
                   },
                   {
                     name: lang.goblin.name,
                     details: lang.goblin.details,
-                    proficiencies: {languages: [lang.goblin]}
+                    proficiencies: { languages: [lang.goblin] },
                   },
                   {
                     name: lang.thieves.name,
                     details: lang.thieves.details,
-                    proficiencies: {languages: [lang.thieves]}
+                    proficiencies: { languages: [lang.thieves] },
                   },
                   {
                     name: lang.druid.name,
                     details: lang.druid.details,
-                    proficiencies: {languages: [lang.druid]}
+                    proficiencies: { languages: [lang.druid] },
                   },
                   {
                     name: lang.animal.name,
                     details: lang.animal.details,
-                    proficiencies: {languages: [lang.animal]}
+                    proficiencies: { languages: [lang.animal] },
                   },
                   {
                     name: lang.sylvan.name,
                     details: lang.sylvan.details,
-                    proficiencies: {languages: [lang.sylvan]}
+                    proficiencies: { languages: [lang.sylvan] },
                   },
                   {
                     name: lang.undercommon.name,
                     details: lang.undercommon.details,
-                    proficiencies: {languages: [lang.undercommon]}
+                    proficiencies: { languages: [lang.undercommon] },
                   },
                   {
                     name: lang.deep.name,
                     details: lang.deep.details,
-                    proficiencies: {languages: [lang.deep]}
+                    proficiencies: { languages: [lang.deep] },
                   },
                   {
                     name: lang.primordial.name,
                     details: lang.primordial.details,
-                    proficiencies: {languages: [lang.primordial]}
+                    proficiencies: { languages: [lang.primordial] },
                   },
                   {
                     name: lang.sky.name,
                     details: lang.sky.details,
-                    proficiencies: {languages: [lang.sky]}
+                    proficiencies: { languages: [lang.sky] },
                   },
                   {
                     name: lang.demonic.name,
                     details: lang.demonic.details,
-                    proficiencies: {languages: [lang.demonic]}
+                    proficiencies: { languages: [lang.demonic] },
                   },
                   {
                     name: lang.tiefling.name,
                     details: lang.tiefling.details,
-                    proficiencies: {languages: [lang.tiefling]}
+                    proficiencies: { languages: [lang.tiefling] },
                   },
-                ]
+                ],
               },
               // {
               //   level: 1,
@@ -11458,6 +12238,7 @@ export default {
                 level: 5,
                 spell: spells.beast_sense_ranger,
               },
+              // TODO - додати спели
               // {
               //   level:9,
               //   spell:spells.speak_with_plants_ranger,
