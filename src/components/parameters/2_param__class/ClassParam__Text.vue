@@ -24,7 +24,7 @@ export default {
 		},
 
     MY_Subclass() {
-      const сustomm = this.сustomm_Settings_Class_Arr;
+      const сustomm = this.сustomm_Settings_Class_Arr();
       const subclass = сustomm.find(el => el.name == "subclass")
       return subclass?.select_list[0];
     }

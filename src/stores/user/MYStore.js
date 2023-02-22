@@ -82,8 +82,8 @@ export const useMYStore = defineStore({
       return [...main_custom, ...feats, ...feats_custom];
     },
 
-    сustomm_Settings_Class_Arr() {
-      return this.filterSettings(this.сustomm_Settings_Class_Arr_No_Filter);
+    сustomm_Settings_Class_Arr: (stor) => () => {
+      return stor.filterSettings(stor.сustomm_Settings_Class_Arr_No_Filter);
     },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
@@ -91,7 +91,7 @@ export const useMYStore = defineStore({
     },
 
     filter_Custom_Class_Lvl: (stor) => (name) => {
-      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr, name);
+      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr(), name);
     },
 
     filter_Custom_Lvl: (stor) => (arr, name) => {
@@ -232,16 +232,18 @@ export const useMYStore = defineStore({
     },
 
     filterSettings(arr) {
-      const MYStore = useMYStore();
-      let battle_style_arr = arr.filter(el => el.name == "battle_style");
-      const save_select_name = battle_style_arr.reduce((acc, el) => acc.concat(el.name), []);
+      const battle_style_arr = arr.filter(el => el.name == "battle_style");
+      const save_list_sel = battle_style_arr.reduce((acc, el) => acc.concat(el.select_list), []);
+      const save_select_name = save_list_sel.reduce((acc, el) => acc.concat(el.name), []);
       const save_name_unic = [...new Set(save_select_name)];
       const save_valid = save_select_name.toString() == save_name_unic.toString();
+      let new_battle_style_arr = battle_style_arr;
+      let select_name = save_select_name;
       if (!save_valid) {
-        let new_battle_style_arr = [];
-        let select_name = [];
+        new_battle_style_arr = [];
+        select_name = [];
+        
         battle_style_arr.forEach((el) => {
-
           const list = el.list.filter(item => !select_name.includes(item.name));
           let new_select_list = [];
           el.select_list.forEach((elem_list) => {
@@ -251,35 +253,30 @@ export const useMYStore = defineStore({
               select_name.push(elem_list.name);
             } else {
               const pass_list = list.filter(item => !new_select_list.includes(item.name));
-              
               new_select_list.push(pass_list[0]);
               select_name.push(pass_list[0].name);
             }
           });
-          const MYStore = useMYStore();
-          if (!MYStore.MY._settings_class[MYStore.MY.class.name]) {
-            MYStore.MY._settings_class[MYStore.MY.class.name] = {};
-          }
-          if (!MYStore.MY._settings_class[MYStore.MY.class.name][el.id_link]) {
-            MYStore.MY._settings_class[MYStore.MY.class.name][el.id_link] = new_select_list;
-          }
           new_battle_style_arr.push({...el, list: list, select_list: new_select_list});
+          if (!this.MY._settings_class[this.MY.class.name]) {
+            this.MY._settings_class[this.MY.class.name] = {};
+          }
+          if (!this.MY._settings_class[this.MY.class.name][el.id_link]) {
+            this.MY._settings_class[this.MY.class.name][el.id_link] = new_select_list;
+          }
         });
-
-        let new_arr = arr.slice(0);
-        new_battle_style_arr.forEach((el) => {
-          const select_list_includ = select_name.filter(item => !el.select_list.some(sub_el => sub_el.name == item));
-          const list_filter = el.list.filter(item => !select_list_includ.includes(item.name));
-          new_arr = new_arr.map((el_map) => (
-            el_map.id_link === el.id_link
-              ? {...el, list: list_filter}
-              : el_map
-          ));
-        });
-
-        return new_arr;
       }
-      return arr;
+      let new_arr = arr.slice(0);
+      new_battle_style_arr.forEach((el) => {
+        const select_list_includ = select_name.filter(item => !el.select_list.some(sub_el => sub_el.name == item));
+        const list_filter = el.list.filter(item => !select_list_includ.includes(item.name));
+        new_arr = new_arr.map((el_map) => (
+          el_map.id_link === el.id_link
+            ? {...el, list: list_filter}
+            : el_map
+        ));
+      });
+      return new_arr;
     },
 
 		getRaceObj(name) {

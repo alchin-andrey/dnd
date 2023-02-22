@@ -167,7 +167,7 @@ export const usePagesStore = defineStore({
 			if (setting_open && setting_open.includes("__")) {
 				let custom = MYStore.сustomm_Settings_Race_Arr;
         if (this.pages.class_page) {
-          custom = MYStore.сustomm_Settings_Class_Arr;
+          custom = MYStore.сustomm_Settings_Class_Arr();
         }
         
         const filter_full = custom?.find((el) => el.id_link == setting_open);
