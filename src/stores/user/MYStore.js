@@ -84,9 +84,9 @@ export const useMYStore = defineStore({
 
     сustomm_Settings_Class_Arr(stor) {
       const start_arr = stor.сustomm_Settings_Class_Arr_No_Filter;
-      // const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
-      // const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
-      return stor.filterSettings(start_arr);
+      const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
+      const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
+      return stor.filterSettings(sort_arr_lvl);
     },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
@@ -188,34 +188,28 @@ export const useMYStore = defineStore({
     filterSettings(arr) {
       const battle_style_arr = arr.filter(el => el.name == "battle_style");
       const sett_select = this.MY._settings_class[this.MY.class.name];
-      const sett_save = battle_style_arr.reduce((acc, el) => acc.concat(sett_select?.[el.id_link]), []);
-      const sett_save_name = sett_save.reduce((acc, el) => acc.concat(el?.name), []);
-      const save_valid = sett_save_name.includes(undefined);
-      let new_battle_style_arr = battle_style_arr;
-      let select_name = sett_save_name;
-      if (save_valid) {
-        new_battle_style_arr = [];
-        select_name = [];
-        battle_style_arr.forEach((el) => {
-          let new_select_list = [];
-          if(sett_select?.[el.id_link]) {
-            new_select_list = [...new_select_list, ...sett_select[el.id_link]];
-            select_name = [...select_name, ...sett_select[el.id_link].reduce((acc, el) => acc.concat(el?.name), [])];
-          } else {
+      let new_battle_style_arr = [];
+      let select_item_all = [];
+      battle_style_arr.forEach((el) => {
+        let new_select_list = [];
+          el.select_list.forEach(item => {
+            const select_includ = select_item_all.some(sub_el => sub_el.name == item.name);
+            if(!select_includ && sett_select?.[el.id_link]) {
+              new_select_list.push(item);
+              select_item_all.push(item);
+            } else {
+              const list_filter = el.list.filter(item => !select_item_all.some(sub_el => sub_el.name == item.name));
+              new_select_list.push(list_filter[0]);
+              select_item_all.push(list_filter[0]);
+            }
+          });
+        new_battle_style_arr.push({...el, select_list: new_select_list});
+      });
 
-            el.select_list.forEach((elem_list) => {
-              const i = select_name.length;
-              new_select_list.push(el.list[i]);
-              select_name.push(el.list[i].name);
-            });
-          }
-          new_battle_style_arr.push({...el, select_list: new_select_list});
-        });
-      }
       let new_arr = arr.slice(0);
       new_battle_style_arr.forEach((el) => {
-        const select_list_includ = select_name.filter(item => !el.select_list.some(sub_el => sub_el.name == item));
-        const list_filter = el.list.filter(item => !select_list_includ.includes(item.name));
+        const select_list_includ = select_item_all.filter(item => !el.select_list.some(sub_el => sub_el.name == item.name));
+        const list_filter = el.list.filter(item => !select_list_includ.some(sub_el => sub_el.name == item.name));
         new_arr = new_arr.map((el_map) => (
           el_map.id_link === el.id_link
             ? {...el, list: list_filter}
@@ -224,46 +218,6 @@ export const useMYStore = defineStore({
       });
       return new_arr;
     },
-
-    // filterSettings(arr) {
-    //   const battle_style_arr = arr.filter(el => el.name == "battle_style");
-    //   const sett_select = this.MY._settings_class[this.MY.class.name];
-    //   const sett_save = battle_style_arr.reduce((acc, el) => acc.concat(sett_select?.[el.id_link]), []);
-    //   const sett_save_name = sett_save.reduce((acc, el) => acc.concat(el?.name), []);
-    //   const  save_valid = sett_save_name.includes(undefined);
-    //   let new_battle_style_arr = battle_style_arr;
-    //   let select_name = sett_save_name;
-    //   if (save_valid) {
-    //     new_battle_style_arr = [];
-    //     select_name = [];
-    //     battle_style_arr.forEach((el) => {
-    //       let new_select_list = [];
-    //       if(sett_select?.[el.id_link]) {
-    //         new_select_list = [...sett_select[el.id_link]];
-    //         select_name = [...sett_select[el.id_link].reduce((acc, el) => acc.concat(el?.name), [])];
-    //       } else {
-    //         el.select_list.forEach((elem_list) => {
-    //           const i = select_name.length;
-    //           new_select_list.push(el.list[i]);
-    //           select_name.push(el.list[i].name);
-    //         });
-    //       }
-    //       new_battle_style_arr.push({...el, select_list: new_select_list});
-    //     });
-    //   }
-    //   let new_arr = arr; //slice(0)
-    //   new_battle_style_arr.forEach((el) => {
-    //     const select_list_includ = select_name.filter(item => !el.select_list.some(sub_el => sub_el.name == item));
-    //     const list_filter = el.list.filter(item => !select_list_includ.includes(item.name));
-    //     new_arr = new_arr.map((el_map) => (
-    //       el_map.id_link === el.id_link
-    //         ? {...el, list: list_filter}
-    //         : el_map
-    //     ));
-    //   });
-    //   return new_arr;
-    // },
-
 
 		getRaceObj(name) {
 			this.MY.race = name;
