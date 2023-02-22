@@ -1739,7 +1739,7 @@ export default {
   spell_guiding_bolt_details: spells.guiding_bolt_details,
   spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
 
-  material_ink_10gold: "чернила за минимум 10 🟡",
+  material_ink_10gold: "чернила за >=10 🟡",
 
   spell_illusory_script: spells.illusory_script,
   spell_illusory_script_details: spells.illusory_script_details,
@@ -1763,7 +1763,7 @@ export default {
   spell_detect_magic_details: spells.detect_magic_details,
   spell_detect_magic_expanded: spells.detect_magic_expanded,
 
-  material_pearl_100gold: "жемчужина за минимум 100 🟡",
+  material_pearl_100gold: "жемчужина за >=100 🟡",
 
   spell_burning_hands: spells.burning_hands,
   spell_burning_hands_details: spells.burning_hands_details,
@@ -1873,7 +1873,7 @@ export default {
   spell_sleep_details: spells.sleep_details,
   spell_sleep_expanded: spells.sleep_expanded,
 
-  material_diamond_50gold: "алмаз за минимум 50 🟡",
+  material_diamond_50gold: "алмаз за >=50 🟡",
 
   spell_chromatic_orb: spells.chromatic_orb,
   spell_chromatic_orb_details: spells.chromatic_orb_details,
@@ -1915,14 +1915,14 @@ export default {
   spell_suggestion_expanded: spells.suggestion_expanded,
 
   material_magic_mouth_50gold:
-    "Кусочек медовьіх сот и порошок нефрита за минимум 10 🟡 (расходуемьіе заклинанием)",
+    "Кусочек медовьіх сот и порошок нефрита за >=10 🟡 (расходуемьіе заклинанием)",
 
   spell_magic_mouth: spells.magic_mouth,
   spell_magic_mouth_details: spells.magic_mouth_details,
   spell_magic_mouth_expanded: spells.magic_mouth_expanded,
 
   material_golden_dust_25gold:
-    "Золотая пьіль за минимум 25 🟡 (расходуемая заклинанием)",
+    "Золотая пьіль за >=25 🟡 (расходуемая заклинанием)",
 
   spell_arcane_lock: spells.arcane_lock,
   spell_arcane_lock_details: spells.arcane_lock_details,
@@ -1933,7 +1933,7 @@ export default {
   spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
 
   material_augury_25gold:
-    "Особьіе палочки, костяшки или фигурки с отметинами за минимум 25 🟡",
+    "Особьіе палочки, костяшки или фигурки с отметинами за >=25 🟡",
 
   spell_augury: spells.augury,
   spell_augury_details: spells.augury_details,
@@ -2029,7 +2029,7 @@ export default {
   spell_mirror_image_details: spells.mirror_image_details,
   spell_mirror_image_expanded: spells.mirror_image_expanded,
 
-  material_warding_bond_50gold: "Пара платиновьіх колец за минимум 50 🟡",
+  material_warding_bond_50gold: "Пара платиновьіх колец за >=50 🟡",
   bonus: "бонус",
 
   spell_warding_bond: spells.warding_bond,
@@ -5365,4 +5365,40 @@ export default {
 
   polymorph_slots: "Превращение",
   polymorph_slot: "1× превращение | 4× мана",
+
+  material_giacint_1000gold: "гиацинт за >=1000 🟡",
+  material_silver_bar_100gold: "брусок серебра с орнаментом за >=100 🟡",
+
+  spell_astral_projection: spells.astral_projection,
+  spell_astral_projection_details: spells.astral_projection_details,
+  spell_astral_projection_expanded: spells.astral_projection_expanded,
+
+  chi_slot_8: "8× Ци",
+
+  spell_astral_projection_monk: spells.astral_projection_monk,
+  spell_astral_projection_monk_details: spells.astral_projection_monk_details,
+  spell_astral_projection_monk_expanded: spells.astral_projection_monk_expanded,
+
+  spell_fly: spells.fly,
+  spell_fly_details: spells.fly_details,
+  spell_fly_expanded: spells.fly_expanded,
+
+  spell_fly_monk: spells.fly_monk,
+  spell_fly_monk_details: spells.fly_monk_details,
+  spell_fly_monk_expanded: spells.fly_monk_expanded,
+
+  spell_fireball: spells.fireball,
+  spell_fireball_details: spells.fireball_details,
+  spell_fireball_expanded: spells.fireball_expanded,
+
+  spell_fireball_monk: spells.fireball_monk,
+  spell_fireball_monk_expanded: spells.fireball_monk_expanded,
+
+  spell_gaseous_form: spells.gaseous_form,
+  spell_gaseous_form_details: spells.gaseous_form_details,
+  spell_gaseous_form_expanded: spells.gaseous_form_expanded,
+
+  spell_gaseous_form_monk: spells.gaseous_form_monk,
+  spell_gaseous_form_monk_details: spells.gaseous_form_monk_details,
+  spell_gaseous_form_monk_expanded: spells.gaseous_form_monk_expanded,
 };  

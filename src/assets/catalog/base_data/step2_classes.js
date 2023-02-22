@@ -1434,8 +1434,6 @@ export default {
 
             settings: [
               {
-                // TODO - отфильтровать вьібранньій стиль
-                // На 10 уровне вьі можете вьібрать второй боевой стиль.
                 level: 10,
                 type: "custom",
                 position: 1,
@@ -2981,11 +2979,10 @@ export default {
         level: 18,
         spell: spells.empty_body,
       },
-// TODO - Додати закляття astral_projection_monk
-      // {
-      //   level: 18,
-      //   spell: spells.astral_projection_monk,
-      // },
+      {
+        level: 18,
+        spell: spells.astral_projection_monk,
+      },
     ],
 
     qualities: [
@@ -3230,16 +3227,30 @@ export default {
                     spells: [{ level: 6, spell: spells.hold_person_monk }],
                   },
 
+                  {
+                    name_set: spells.fly_monk[0].name,
+                    spells: [ { level:11, spell: spells.fly_monk }, ],},
+                  {
+                    name_set: spells.fireball_monk[0].name,
+                    spells: [ { level:11, spell: spells.fireball_monk }, ],},
+                  {
+                    name_set: spells.gaseous_form_monk[0].name,
+                    spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
+
                   //TODO - дописати спели
 
-                  // {spells: [ { level:11, spell: spells.fly_monk }, ],},
-                  // {spells: [ { level:11, spell: spells.fireball_monk }, ],},
-                  // {spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
-
-                  // {spells: [ { level:17, spell: spells.winter_breath }, ],},
-                  // {spells: [ { level:17, spell: spells.earth_val }, ],},
-                  // {spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
-                  // {spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
+                  // {
+                  //   name_set: spells.winter_breath[0].name,
+                  //   spells: [ { level:17, spell: spells.winter_breath }, ],},
+                  // {
+                  //   name_set: spells.earth_val[0].name,
+                  //   spells: [ { level:17, spell: spells.earth_val }, ],},
+                  // {
+                  //   name_set: spells.stoneskin_monk[0].name,
+                  //   spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
+                  // {
+                  //   name_set: spells.wall_of_fire_monk[0].name,
+                  //   spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
                 ],
               },
             ],
@@ -10811,7 +10822,7 @@ export default {
           "wizard",
         ],
       },
-      // TODO - решить вопрос
+      // TODO - Only_mastery
       {
         level: 3,
         type: "custom",

@@ -12451,6 +12451,179 @@ export default {
     }
   ],
 
+  astral_projection_monk: [
+    {
+      name: "spell_astral_projection_monk",
+      details: "spell_astral_projection_monk_details",
+      expanded: "spell_astral_projection_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_8",
+      classes: ["monk"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fly_monk: [
+    {
+      name: "spell_fly_monk",
+      details: "spell_fly_monk_details",
+      expanded: "spell_fly_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_4",
+      classes: ["monk"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fireball_monk: [
+    {
+      name: "spell_fireball_monk",
+      details: "spell_fireball_details",
+      expanded: "spell_fireball_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_4",
+      classes: ["monk",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 150,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  gaseous_form_monk: [
+    {
+      name: "spell_gaseous_form_monk",
+      details: "spell_gaseous_form_monk_details",
+      expanded: "spell_gaseous_form_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_4",
+      classes: ["monk",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   // NOTE - Spells [0]
 
   // All spells / 0 ----------------------------------------------------------
@@ -20003,9 +20176,9 @@ export default {
       type: "evocation",
       classes: ["druid","cleric","paladin",    "bard","wizard","warlock","sorcerer","ranger"],
 
-      cast_time: null,
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
       aim_target: "self",
       aim_type: null,
@@ -20030,6 +20203,154 @@ export default {
       impact_size_pls: null,
 
       saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  fireball: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_fireball",
+      details: "spell_fireball_details",
+      expanded: "spell_fireball_expanded",
+
+      type: "evocation",
+      classes: ["wizard","sorcerer",    "warlock","ranger","druid","cleric","paladin","bard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 150,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  fly: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_fly",
+      details: "spell_fly_details",
+      expanded: "spell_fly_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","warlock","ranger","sorcerer",    "druid","cleric","paladin","bard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus","touch","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  gaseous_form: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_gaseous_form",
+      details: "spell_gaseous_form_details",
+      expanded: "spell_gaseous_form_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","warlock","sorcerer",    "druid","cleric","paladin","bard","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus","touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20336,6 +20657,58 @@ export default {
       impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  astral_projection: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_astral_projection",
+      details: "spell_astral_projection_details",
+      expanded: "spell_astral_projection_expanded",
+
+      type: "necromancy",
+      classes: ["cleric","warlock","wizard",      "sorcerer","bard","druid","ranger","paladin"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["material_giacint_1000gold","material_silver_bar_100gold","somatic","verbal"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 9,
       impact_size_dic: null,
       impact_size_pls: null,
 

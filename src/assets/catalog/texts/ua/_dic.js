@@ -5340,4 +5340,41 @@ export default {
   polymorph_slots: "Перетворення",
   polymorph_slot: "1× перетворення | 4× мана",
 
+  material_giacint_1000gold: "гіацинт за >=1000 🟡",
+  material_silver_bar_100gold: "брусок срібла з орнаментом за >=100 🟡",
+
+  spell_astral_projection: spells.astral_projection,
+  spell_astral_projection_monk: spells.astral_projection_monk,
+  spell_astral_projection_details: spells.astral_projection_details,
+  spell_astral_projection_expanded: spells.astral_projection_expanded,
+
+  chi_slot_8: "8× Чі",
+
+  spell_astral_projection_monk: spells.astral_projection_monk,
+  spell_astral_projection_monk_details: spells.astral_projection_monk_details,
+  spell_astral_projection_monk_expanded: spells.astral_projection_monk_expanded,
+
+  spell_fly: spells.fly,
+  spell_fly_details: spells.fly_details,
+  spell_fly_expanded: spells.fly_expanded,
+
+  spell_fly_monk: spells.fly_monk,
+  spell_fly_monk_details: spells.fly_monk_details,
+  spell_fly_monk_expanded: spells.fly_monk_expanded,
+
+  spell_fireball: spells.fireball,
+  spell_fireball_details: spells.fireball_details,
+  spell_fireball_expanded: spells.fireball_expanded,
+
+  spell_fireball_monk: spells.fireball_monk,
+  spell_fireball_monk_expanded: spells.fireball_monk_expanded,
+
+  spell_gaseous_form: spells.gaseous_form,
+  spell_gaseous_form_details: spells.gaseous_form_details,
+  spell_gaseous_form_expanded: spells.gaseous_form_expanded,
+
+  spell_gaseous_form_monk: spells.gaseous_form_monk,
+  spell_gaseous_form_monk_details: spells.gaseous_form_monk_details,
+  spell_gaseous_form_monk_expanded: spells.gaseous_form_monk_expanded,
+
 };
