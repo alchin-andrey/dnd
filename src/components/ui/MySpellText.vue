@@ -134,7 +134,7 @@ import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
-// import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "MySpellText",
@@ -177,6 +177,7 @@ export default {
 		...mapState(useMYStore, ["MY", "Mastery"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb"]),
+		...mapState(useSkillsStore, ["skills"]),
     ...mapState(useOverflowStore, ["overflow_Spell"]),
 
 		Index() {
@@ -317,8 +318,10 @@ export default {
 		Saving_Numb() {
 			const KOF = 8;
 			let attribute = this.MY.class.spell_attribute;
+			console.log('attribute:', attribute)
 			let mastery = this.Mastery;
-			let stats_mod = this.MY.stats[attribute].mod;
+			// let stats_mod = this.MY.stats[attribute].mod;
+      let stats_mod = this.stats_Mod(attribute);
 			return KOF + mastery + stats_mod;
 		},
 

@@ -81,7 +81,7 @@ export const useProficienciesStore = defineStore({
 
       proficiencies_Arr_Setting_Class: (stor) => (kay) => {
         const MYStore = useMYStore();
-        return stor.proficiencies_Arr_Setting(MYStore.сustomm_Settings_Class_Arr(), kay);
+        return stor.proficiencies_Arr_Setting(MYStore.сustomm_Settings_Class_Arr, kay);
       },
 
       proficiencies_Race_Params_All_or_Any: (stor) => (kay) => {

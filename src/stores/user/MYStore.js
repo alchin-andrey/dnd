@@ -82,7 +82,7 @@ export const useMYStore = defineStore({
       return [...main_custom, ...feats, ...feats_custom];
     },
 
-    сustomm_Settings_Class_Arr: (stor) => () => {
+    сustomm_Settings_Class_Arr(stor) {
       return stor.filterSettings(stor.сustomm_Settings_Class_Arr_No_Filter);
     },
 
@@ -91,7 +91,7 @@ export const useMYStore = defineStore({
     },
 
     filter_Custom_Class_Lvl: (stor) => (name) => {
-      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr(), name);
+      return stor.filter_Custom_Lvl(stor.сustomm_Settings_Class_Arr, name);
     },
 
     filter_Custom_Lvl: (stor) => (arr, name) => {
@@ -138,7 +138,13 @@ export const useMYStore = defineStore({
             }
           })); //NOTE - NEW
 
-					const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.includes(el));
+					const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.some(item => {
+            if (item.name) {
+              return item.name == el.name;
+            } else {
+              return item.name_set == el.name_set;
+            }
+          })); //NOTE - NEW
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
@@ -233,37 +239,28 @@ export const useMYStore = defineStore({
 
     filterSettings(arr) {
       const battle_style_arr = arr.filter(el => el.name == "battle_style");
-      const save_list_sel = battle_style_arr.reduce((acc, el) => acc.concat(el.select_list), []);
-      const save_select_name = save_list_sel.reduce((acc, el) => acc.concat(el.name), []);
-      const save_name_unic = [...new Set(save_select_name)];
-      const save_valid = save_select_name.toString() == save_name_unic.toString();
+      const sett_select = this.MY._settings_class[this.MY.class.name];
+      const sett_save = battle_style_arr.reduce((acc, el) => acc.concat(sett_select?.[el.id_link]), []);
+      const sett_save_name = sett_save.reduce((acc, el) => acc.concat(el?.name), []);
+      const  save_valid = sett_save_name.includes(undefined);
       let new_battle_style_arr = battle_style_arr;
-      let select_name = save_select_name;
-      if (!save_valid) {
+      let select_name = sett_save_name;
+      if (save_valid) {
         new_battle_style_arr = [];
         select_name = [];
-        
         battle_style_arr.forEach((el) => {
-          const list = el.list.filter(item => !select_name.includes(item.name));
           let new_select_list = [];
-          el.select_list.forEach((elem_list) => {
-            const elem_includ = select_name.includes(elem_list.name);
-            if(!elem_includ) {
-              new_select_list.push(elem_list);
-              select_name.push(elem_list.name);
-            } else {
-              const pass_list = list.filter(item => !new_select_list.includes(item.name));
-              new_select_list.push(pass_list[0]);
-              select_name.push(pass_list[0].name);
-            }
-          });
-          new_battle_style_arr.push({...el, list: list, select_list: new_select_list});
-          if (!this.MY._settings_class[this.MY.class.name]) {
-            this.MY._settings_class[this.MY.class.name] = {};
+          if(sett_select?.[el.id_link]) {
+            new_select_list = [...sett_select[el.id_link]];
+            select_name = [...sett_select[el.id_link].reduce((acc, el) => acc.concat(el?.name), [])];
+          } else {
+            el.select_list.forEach((elem_list) => {
+              const i = select_name.length;
+              new_select_list.push(el.list[i]);
+              select_name.push(el.list[i].name);
+            });
           }
-          if (!this.MY._settings_class[this.MY.class.name][el.id_link]) {
-            this.MY._settings_class[this.MY.class.name][el.id_link] = new_select_list;
-          }
+          new_battle_style_arr.push({...el, select_list: new_select_list});
         });
       }
       let new_arr = arr.slice(0);
@@ -278,6 +275,7 @@ export const useMYStore = defineStore({
       });
       return new_arr;
     },
+
 
 		getRaceObj(name) {
 			this.MY.race = name;
