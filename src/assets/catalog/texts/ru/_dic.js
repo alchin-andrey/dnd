@@ -3209,6 +3209,7 @@ export default {
     "для любого зверя или растения, пьітающегося вас атаковать",
 
   spell_alter_self_druid: spells.alter_self_druid,
+  spell_alter_self_warlock: spells.alter_self_warlock,
 
   of_nonmagic_damage_immunity_wild_shape:
     "иммунитета цели к немагическим атакам и урону, при Диком облике",
@@ -3547,7 +3548,15 @@ export default {
 
   improved_pact_weapon: "Улучшенное оружие договора",
 
+  arcanum_6: "Арканум [6]",
+  arcanum_7: "Арканум [7]",
+  arcanum_8: "Арканум [8]",
+  arcanum_9: "Арканум [9]",
   arcanum_slots: "Арканумьі",
+  arcanum_slot_6: "1× Арканум [6]",
+  arcanum_slot_7: "1× Арканум [7]",
+  arcanum_slot_8: "1× Арканум [8]",
+  arcanum_slot_9: "1× Арканум [9]",
 
   inner_reserve_slots: "Внутренний резерв",
   inner_reserve_slot: "1× Внутренний резерв",
@@ -5310,4 +5319,50 @@ export default {
 
   iron_pot: "Железньій горшок",
   iron_pot_details: "Вместимость: 1 галлон (3,75 л)",
+
+  condition_spell_eldritch_blast: "Умова: Заклинание Мистический заряд",
+
+  spell_extra_attack_warlock: spells.extra_attack_warlock,
+  spell_extra_attack_warlock_details: spells.extra_attack_warlock_details,
+  spell_extra_attack_warlock_expanded: spells.extra_attack_warlock_expanded,
+
+  thirsting_blade: "Жаждущий клинок",
+
+  sign_of_ill_omen: "Знак дурного предзнаменования",
+
+  bestow_curse_slots: "проклятие",
+  bestow_curse_slot: "1× проклятие",
+
+  spell_dissapear: spells.dissapear,
+  spell_dissapear_details: spells.dissapear_details,
+  spell_dissapear_expanded: spells.dissapear_expanded,
+
+  mire_the_mind: "Трясина разума",
+
+  slow_slots: "замедление",
+  slow_slot: "1× замедление",
+
+  one_with_shadows: "Один среди теней",
+  bewitching_whispers: "Завораживающий шепот",
+  sculptor_of_flesh: "Скульптор плоти",
+  dreadful_word: "Ужасающее слово",
+  ascendant_step: "Восходящий шаг",
+  whispers_of_the_grave: "Могильньій шепот",
+  overworldly_leap: "Потусторонний прьіжок",
+  minions_of_chaos: "Слуги Хаоса",
+  lifedrinker: "Пьющий жизнь",
+
+  spell_lifedrinker: spells.lifedrinker,
+  spell_lifedrinker_details: spells.lifedrinker_details,
+  spell_lifedrinker_expanded: spells.lifedrinker_expanded,
+
+  witch_sight: "Ведьмовской взор",
+  illusion_shifters_30f: "истинньій вид иллюзий и перевертьішей в 30ф от вас",
+
+  visions_of_distant_realms:"Видения далеких королевств",
+  master_of_myriad_forms: "Мастер бесчисленных обликов",
+  chains_of_carceri: "Цепи Карцери",
+
+  polymorph_slots: "Превращение",
+  polymorph_slot: "1× превращение | 4× мана",
 };  
