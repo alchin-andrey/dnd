@@ -256,19 +256,21 @@ export const useMYStore = defineStore({
 
           let count_list = 0;
           let count_save = 0;
+          
           let new_select_list = [];
           el.select_list.forEach(item => {
             if(save_skills && save_new[count_save]) {
                 new_select_list.push(save_new[count_save]);
                 count_save ++;
               } else {
-                new_select_list.push(list_without_save[count_list]);
+                new_select_list.push(list_without_save?.[count_list]);
                 count_list ++;
               }
           });
+          const select_list_clean = new_select_list.filter(el => el !== undefined);
           new_arr = new_arr.map((el_map) => (
             el_map.id_link === el.id_link
-              ? {...el, list: list_new, select_list: new_select_list}
+              ? {...el, list: list_new, select_list: select_list_clean}
               : el_map
           ));
         }); 
