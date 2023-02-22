@@ -12624,6 +12624,50 @@ export default {
     },
   ],
 
+  cone_of_cold_monk: [
+    {
+      name: "spell_cone_of_cold_monk",
+      details: "spell_cone_of_cold_monk_details",
+      expanded: "spell_cone_of_cold_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_6",
+      classes: ["monk",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cone",
+      aim_aoe_size: 60,
+
+      impact_type: "damage",
+      impact_damage_type: "cold_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "÷2",
+    },
+  ],
+
   // NOTE - Spells [0]
 
   // All spells / 0 ----------------------------------------------------------
@@ -20450,6 +20494,58 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  cone_of_cold: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_cone_of_cold",
+      details: "spell_cone_of_cold_details",
+      expanded: "spell_cone_of_cold_expanded",
+
+      type: "evocation",
+      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus","somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cone",
+      aim_aoe_size: 60,
+
+      impact_type: "damage",
+      impact_damage_type: "cold_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
   ],
 
   // NOTE - Spells [6]

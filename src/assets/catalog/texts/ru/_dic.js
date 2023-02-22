@@ -5401,4 +5401,14 @@ export default {
   spell_gaseous_form_monk: spells.gaseous_form_monk,
   spell_gaseous_form_monk_details: spells.gaseous_form_monk_details,
   spell_gaseous_form_monk_expanded: spells.gaseous_form_monk_expanded,
+
+  chi_slot_6: "6× Ци",
+
+  spell_cone_of_cold: spells.cone_of_cold,
+  spell_cone_of_cold_details: spells.cone_of_cold_details,
+  spell_cone_of_cold_expanded: spells.cone_of_cold_expanded,
+
+  spell_cone_of_cold_monk: spells.cone_of_cold_monk,
+  spell_cone_of_cold_monk_details: spells.cone_of_cold_monk_details,
+  spell_cone_of_cold_monk_expanded: spells.cone_of_cold_monk_expanded,
 };  
