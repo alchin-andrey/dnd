@@ -78,6 +78,13 @@ export const useSkillsStore = defineStore({
 			return skills_RP + skills_MOD;
 		},
 
+    skills_Name_Class_Mastery_No_Settings() {
+      const MYStore = useMYStore();
+      const race_skills = this.skills_Race_All;
+      const class_main = MYStore.level_Filter_Arr(MYStore.MY.class?.skills);
+      return [...race_skills, ...class_main];
+    },
+
     skills_Class_All() {
       const MYStore = useMYStore();
       const class_main = MYStore.level_Filter_Arr(MYStore.MY.class?.skills);

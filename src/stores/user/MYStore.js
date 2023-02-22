@@ -3,7 +3,7 @@
 import { acceptHMRUpdate, defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
 // import { useStatsStore } from "@/stores/modules/StatsStore";
-// import { useSkillsStore } from "@/stores/modules/SkillsStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 // import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
 // import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
@@ -86,7 +86,10 @@ export const useMYStore = defineStore({
       const start_arr = stor.сustomm_Settings_Class_Arr_No_Filter;
       const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
       const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
-      return stor.filterSettings(sort_arr_lvl);
+
+      const filter_battle_style = stor.filterSettings_NoUsed(sort_arr_lvl);
+      const filter_only_mastery = stor.filterSettings_OnlyMastery(filter_battle_style);
+      return filter_only_mastery;
     },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
@@ -159,6 +162,7 @@ export const useMYStore = defineStore({
 						id_link: link_name_i,
 						select_list: select_list,
             list: list_lvl,
+            select_numb: select_numb,
 					});
 
 					select_list.forEach((elem_list) => {
@@ -185,38 +189,92 @@ export const useMYStore = defineStore({
       return new_arr;
     },
 
-    filterSettings(arr) {
+    filterSettings_NoUsed(arr) {
       const battle_style_arr = arr.filter(el => el.name == "battle_style");
-      const sett_select = this.MY._settings_class[this.MY.class.name];
-      let new_battle_style_arr = [];
-      let select_item_all = [];
-      battle_style_arr.forEach((el) => {
-        let new_select_list = [];
-          el.select_list.forEach(item => {
-            const select_includ = select_item_all.some(sub_el => sub_el.name == item.name);
-            if(!select_includ && sett_select?.[el.id_link]) {
-              new_select_list.push(item);
-              select_item_all.push(item);
-            } else {
-              const list_filter = el.list.filter(item => !select_item_all.some(sub_el => sub_el.name == item.name));
-              new_select_list.push(list_filter[0]);
-              select_item_all.push(list_filter[0]);
-            }
-          });
-        new_battle_style_arr.push({...el, select_list: new_select_list});
-      });
+      if(battle_style_arr.length !== 0) {
+        let new_battle_style_arr = [];
+        let select_item_all = [];
+        battle_style_arr.forEach((el) => {
+          let new_select_list = [];
+            el.select_list.forEach(item => {
+              const select_includ = select_item_all.some(sub_el => sub_el.name == item.name);
+              const sett_select = this.MY._settings_class[this.MY.class.name];
+              if(!select_includ && sett_select?.[el.id_link]) {
+                new_select_list.push(item);
+                select_item_all.push(item);
+              } else {
+                const list_filter = el.list.filter(item => !select_item_all.some(sub_el => sub_el.name == item.name));
+                new_select_list.push(list_filter[0]);
+                select_item_all.push(list_filter[0]);
+              }
+            });
+          new_battle_style_arr.push({...el, select_list: new_select_list});
+        });
 
-      let new_arr = arr.slice(0);
-      new_battle_style_arr.forEach((el) => {
-        const select_list_includ = select_item_all.filter(item => !el.select_list.some(sub_el => sub_el.name == item.name));
-        const list_filter = el.list.filter(item => !select_list_includ.some(sub_el => sub_el.name == item.name));
-        new_arr = new_arr.map((el_map) => (
-          el_map.id_link === el.id_link
-            ? {...el, list: list_filter}
-            : el_map
-        ));
-      });
-      return new_arr;
+        let new_arr = arr.slice(0);
+        new_battle_style_arr.forEach((el) => {
+          const select_list_includ = select_item_all.filter(item => !el.select_list.some(sub_el => sub_el.name == item.name));
+          const list_filter = el.list.filter(item => !select_list_includ.some(sub_el => sub_el.name == item.name));
+          new_arr = new_arr.map((el_map) => (
+            el_map.id_link === el.id_link
+              ? {...el, list: list_filter}
+              : el_map
+          ));
+        });
+        return new_arr;
+      }
+    return arr;
+    },
+
+    filterSettings_OnlyMastery(arr) {
+      const SkillsStore = useSkillsStore();
+      const arr_for_filter = arr.filter(el => el.name == "skills" && el.filter == "only_mastery");
+
+      if(arr_for_filter.length !== 0) {
+        
+        const arr_clean_sett = arr.filter(el => el.filter !== "only_mastery");
+
+        const skills_mastery_sett = this.filter_Custom_Lvl(arr_clean_sett, "skills");
+        const skills_mastery_param = SkillsStore.skills_Name_Class_Mastery_No_Settings;
+        const skills_mastery = [...skills_mastery_sett, ...skills_mastery_param];
+
+        const sett_select = this.MY._settings_class[this.MY.class.name];
+        let new_arr = arr.slice(0);
+        arr_for_filter.forEach(el => {
+          const list_clean = el.list.filter(item => !item.skills);
+          const list_filter = el.list.filter(item => skills_mastery.some(sub_el => sub_el.name == item.name_set));
+
+          const list_new = [...list_clean, ...list_filter];
+          let save_new = [];
+          const save_skills = sett_select?.[el.id_link];
+          if(save_skills) {
+            const save_clean = save_skills.filter(item => !item.skills);
+            const save_filter = save_skills.filter(item => skills_mastery.some(sub_el => sub_el.name == item.name_set));
+            save_new = [...save_clean, ...save_filter];
+          }
+          const list_without_save = list_new.filter(item => !save_new.some(sub_el => sub_el.name_set == item.name_set));
+
+          let count_list = 0;
+          let count_save = 0;
+          let new_select_list = [];
+          el.select_list.forEach(item => {
+            if(save_skills && save_new[count_save]) {
+                new_select_list.push(save_new[count_save]);
+                count_save ++;
+              } else {
+                new_select_list.push(list_without_save[count_list]);
+                count_list ++;
+              }
+          });
+          new_arr = new_arr.map((el_map) => (
+            el_map.id_link === el.id_link
+              ? {...el, list: list_new, select_list: new_select_list}
+              : el_map
+          ));
+        }); 
+        return new_arr;
+      }
+      return arr;
     },
 
 		getRaceObj(name) {
