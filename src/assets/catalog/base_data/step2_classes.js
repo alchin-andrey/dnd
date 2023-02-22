@@ -127,7 +127,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -930,7 +930,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -2104,7 +2104,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -3059,7 +3059,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -3707,7 +3707,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -4494,7 +4494,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -6030,7 +6030,7 @@ export default {
       {
         level: 2,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -6858,7 +6858,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -8522,7 +8522,7 @@ export default {
       {
         level: 1,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -9230,7 +9230,7 @@ export default {
       {
         level: 2,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -10107,7 +10107,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
@@ -11110,7 +11110,7 @@ export default {
       {
         level: 3,
         type: "custom",
-        position: 1,
+        position: 0,
         name: "subclass",
         select: 1,
         list: [
