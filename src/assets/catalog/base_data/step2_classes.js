@@ -3239,12 +3239,12 @@ export default {
 
                   //TODO - дописати спели
 
+                  {
+                    name_set: spells.cone_of_cold_monk[0].name,
+                    spells: [ { level:17, spell: spells.cone_of_cold_monk }, ],},
                   // {
-                  //   name_set: spells.winter_breath[0].name,
-                  //   spells: [ { level:17, spell: spells.winter_breath }, ],},
-                  // {
-                  //   name_set: spells.earth_val[0].name,
-                  //   spells: [ { level:17, spell: spells.earth_val }, ],},
+                  //   name_set: spells.wall_of_stone_monk[0].name,
+                  //   spells: [ { level:17, spell: spells.wall_of_stone_monk }, ],},
                   // {
                   //   name_set: spells.stoneskin_monk[0].name,
                   //   spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
