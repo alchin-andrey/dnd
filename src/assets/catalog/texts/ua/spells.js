@@ -2864,11 +2864,11 @@ export const hold_person_monk_details = 'Паралізувати ціль, що
 
 export const hold_person_monk_details_5 = hold_person_monk_details
 
-export const hold_person_monk_details_9 = hold_person_monk_details+' +1 цель за каждое доп очко Ци. (максимум 4)';
+export const hold_person_monk_details_9 = hold_person_monk_details+' +1 ціль за кожний додатковий слот Чі. (максимум 4)';
 
-export const hold_person_monk_details_13 = hold_person_monk_details+' +1 цель за каждое доп очко Ци. (максимум 5)';
+export const hold_person_monk_details_13 = hold_person_monk_details+' +1 ціль за кожний додатковий слот Чі. (максимум 5)';
 
-export const hold_person_monk_details_17 = hold_person_monk_details+' +1 цель за каждое доп очко Ци. (максимум 6)';
+export const hold_person_monk_details_17 = hold_person_monk_details+' +1 ціль за кожний додатковий слот Чі. (максимум 6)';
 
 export const hold_person_monk_expanded = 'Виберіть гуманоїда, якого бачите у межах дистанції. Ціль повинна досягти успіху у Випробуванні Мудрості, інакше стане паралізованою на період дії закляття. У кінці кожного свого ходу ціль може проходити нові Випробування Мудрості. У разі успіху закляття на цій цілі закінчується.<br/><br/>'+monk_element_adept;
 
