@@ -12569,7 +12569,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "fire_w",
 
-      impact_size_foo: null,
+      impact_size_foo: "Det_5_9_13_17_Lvl",
       impact_size_str: null,
       impact_size_num: 8,
       impact_size_dic: 6,
@@ -12656,7 +12656,7 @@ export default {
       impact_type: "damage",
       impact_damage_type: "cold_w",
 
-      impact_size_foo: null,
+      impact_size_foo: "Det_5_9_13_17_Lvl",
       impact_size_str: null,
       impact_size_num: 8,
       impact_size_dic: 8,
@@ -12664,6 +12664,138 @@ export default {
 
       saving_need: true,
       saving_attribute: "constitution",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  wall_of_stone_monk: [
+    {
+      name: "spell_wall_of_stone_monk",
+      details: "spell_wall_of_stone_details",
+      expanded: "spell_wall_of_stone_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_6",
+      classes: ["monk",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 100,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+  ],
+
+  stoneskin_monk: [
+    {
+      name: "spell_stoneskin_monk",
+      details: "spell_stoneskin_monk_details",
+      expanded: "spell_stoneskin_monk_expanded",
+
+      type: "ability",
+      slot_type: "chi_slot_5",
+      classes: ["monk",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  wall_of_fire_monk: [
+    {
+      name: "spell_wall_of_fire_monk",
+      details: "spell_wall_of_fire_details",
+      expanded: "spell_wall_of_fire_monk_expanded",
+
+      type: "evocation",
+      slot_type: "chi_slot_5",
+      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 60,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Det_5_9_13_17_Lvl",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
   ],
@@ -20416,9 +20548,9 @@ export default {
       type: "abjuration",
       classes: ["cleric","paladin",     "bard","druid","wizard","warlock","sorcerer","ranger"],
 
-      cast_time: null,
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
       aim_target: "self",
       aim_type: null,
@@ -20446,6 +20578,105 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  stoneskin: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_stoneskin",
+      details: "spell_stoneskin_details",
+      expanded: "spell_stoneskin_expanded",
+
+      type: "abjuration",
+      classes: ["druid","wizard","sorcerer","ranger",     "cleric","paladin","bard","warlock",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_diamont_dust_100gold","touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  wall_of_fire: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_wall_of_fire",
+      details: "spell_wall_of_fire_details",
+      expanded: "spell_wall_of_fire_expanded",
+
+      type: "evocation",
+      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 60,
+
+      impact_type: "damage",
+      impact_damage_type: "fire_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   // NOTE - Spells [5]
@@ -20546,6 +20777,54 @@ export default {
     {},
     {},
     {},
+  ],
+
+  wall_of_stone: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_wall_of_stone",
+      details: "spell_wall_of_stone_details",
+      expanded: "spell_wall_of_stone_expanded",
+
+      type: "evocation",
+      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 100,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
   ],
 
   // NOTE - Spells [6]

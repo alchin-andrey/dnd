@@ -5391,7 +5391,11 @@ export default {
   spell_fireball_details: spells.fireball_details,
   spell_fireball_expanded: spells.fireball_expanded,
 
-  spell_fireball_monk: spells.fireball_monk,
+  spell_fireball_monk: spells.fireball_monk,  
+  spell_fireball_details_5: spells.fireball_details_5,
+  spell_fireball_details_9: spells.fireball_details_9,
+  spell_fireball_details_13: spells.fireball_details_13,
+  spell_fireball_details_17: spells.fireball_details_17,
   spell_fireball_monk_expanded: spells.fireball_monk_expanded,
 
   spell_gaseous_form: spells.gaseous_form,
@@ -5403,6 +5407,7 @@ export default {
   spell_gaseous_form_monk_expanded: spells.gaseous_form_monk_expanded,
 
   chi_slot_6: "6× Ци",
+  chi_slot_5: "5× Ци",
 
   spell_cone_of_cold: spells.cone_of_cold,
   spell_cone_of_cold_details: spells.cone_of_cold_details,
@@ -5410,5 +5415,36 @@ export default {
 
   spell_cone_of_cold_monk: spells.cone_of_cold_monk,
   spell_cone_of_cold_monk_details: spells.cone_of_cold_monk_details,
+  spell_cone_of_cold_monk_details_5: spells.cone_of_cold_monk_details_5,
+  spell_cone_of_cold_monk_details_9: spells.cone_of_cold_monk_details_9,
+  spell_cone_of_cold_monk_details_13: spells.cone_of_cold_monk_details_13,
+  spell_cone_of_cold_monk_details_17: spells.cone_of_cold_monk_details_17,
   spell_cone_of_cold_monk_expanded: spells.cone_of_cold_monk_expanded,
+
+  spell_wall_of_stone: spells.wall_of_stone,
+  spell_wall_of_stone_monk: spells.wall_of_stone_monk,
+  spell_wall_of_stone_details: spells.wall_of_stone_details,
+  spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
+
+  material_diamont_dust_100gold: "пыль бриллианта за >=100 🟡",
+
+  spell_stoneskin: spells.stoneskin,
+  spell_stoneskin_details: spells.stoneskin_details,
+  spell_stoneskin_expanded: spells.stoneskin_expanded,
+
+  spell_stoneskin_monk: spells.stoneskin_monk,
+  spell_stoneskin_monk_details: spells.stoneskin_monk_details,
+  spell_stoneskin_monk_expanded: spells.stoneskin_monk_expanded,
+
+  spell_wall_of_fire: spells.wall_of_fire,
+  spell_wall_of_fire_details: spells.wall_of_fire_details,
+  spell_wall_of_fire_expanded: spells.wall_of_fire_expanded,
+
+  spell_wall_of_fire_monk: spells.wall_of_fire_monk,
+  spell_wall_of_fire_details: spells.wall_of_fire_details,
+  spell_wall_of_fire_details_5: spells.wall_of_fire_details_5,
+  spell_wall_of_fire_details_9: spells.wall_of_fire_details_9,
+  spell_wall_of_fire_details_13: spells.wall_of_fire_details_13,
+  spell_wall_of_fire_details_17: spells.wall_of_fire_details_17,
+  spell_wall_of_fire_monk_expanded: spells.wall_of_fire_monk_expanded,
 };  

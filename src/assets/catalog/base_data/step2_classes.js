@@ -3219,38 +3219,45 @@ export default {
                   },
 
                   {
+                    level: 6,
                     name_set: spells.shatter_monk[0].name,
                     spells: [{ level: 6, spell: spells.shatter_monk }],
                   },
                   {
+                    level: 6,
                     name_set: spells.hold_person_monk[0].name,
                     spells: [{ level: 6, spell: spells.hold_person_monk }],
                   },
 
                   {
+                    level: 11,
                     name_set: spells.fly_monk[0].name,
                     spells: [ { level:11, spell: spells.fly_monk }, ],},
                   {
+                    level: 11,
                     name_set: spells.fireball_monk[0].name,
                     spells: [ { level:11, spell: spells.fireball_monk }, ],},
                   {
+                    level: 11,
                     name_set: spells.gaseous_form_monk[0].name,
                     spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
 
-                  //TODO - дописати спели
-
                   {
+                    level: 17,
                     name_set: spells.cone_of_cold_monk[0].name,
                     spells: [ { level:17, spell: spells.cone_of_cold_monk }, ],},
-                  // {
-                  //   name_set: spells.wall_of_stone_monk[0].name,
-                  //   spells: [ { level:17, spell: spells.wall_of_stone_monk }, ],},
-                  // {
-                  //   name_set: spells.stoneskin_monk[0].name,
-                  //   spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
-                  // {
-                  //   name_set: spells.wall_of_fire_monk[0].name,
-                  //   spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
+                  {
+                    level: 17,
+                    name_set: spells.wall_of_stone_monk[0].name,
+                    spells: [ { level:17, spell: spells.wall_of_stone_monk }, ],},
+                  {
+                    level: 17,
+                    name_set: spells.stoneskin_monk[0].name,
+                    spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
+                  {
+                    level: 17,
+                    name_set: spells.wall_of_fire_monk[0].name,
+                    spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
                 ],
               },
             ],
