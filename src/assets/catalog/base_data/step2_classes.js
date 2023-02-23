@@ -3924,7 +3924,6 @@ export default {
                 level: 7,
                 spell: spells.aura_of_warding,
               },
-              //TODO - Додати спели
               {
                 level: 9,
                 spell: spells.protection_from_energy,
@@ -3933,25 +3932,25 @@ export default {
                 level: 9,
                 spell: spells.plant_growth,
               },
-              // {
-              //   level: 13,
-              //   spell: spells.ice_storm,
-              // },
+              {
+                level: 13,
+                spell: spells.ice_storm,
+              },
               {
                 level: 13,
                 spell: spells.stoneskin,
               },
-              // {
-              //   level: 17,
-              //   spell: spells.tree_stride,
-              // },
-              {
-                level: 17,
-                spell: spells.commune_with_nature,
-              },
               {
                 level: 15,
                 spell: spells.undying_sentinel,
+              },
+              {
+                level: 17,
+                spell: spells.tree_stride,
+              },
+              {
+                level: 17,
+                spell: spells.commune_with_nature,
               },
               {
                 level: 20,
@@ -4042,6 +4041,10 @@ export default {
               //   level: 13,
               //   spell: spells.dimension_door,
               // },
+              {
+                level: 15,
+                spell: spells.soul_of_vengeance,
+              },
               // {
               //   level: 17,
               //   spell: spells.scrying,
@@ -4050,10 +4053,7 @@ export default {
               //   level: 17,
               //   spell: spells.hold_monster,
               // },
-              {
-                level: 15,
-                spell: spells.soul_of_vengeance,
-              },
+
               {
                 level: 20,
                 spell: spells.avenging_angel,
@@ -4599,10 +4599,10 @@ export default {
               //   level: 7,
               //   spell: spells.control_water,
               // },
-              // {
-              //   level: 7,
-              //   spell: spells.ice_storm,
-              // },
+              {
+                level: 7,
+                spell: spells.ice_storm,
+              },
               // {
               //   level: 9,
               //   spell: spells.insect_plague,
@@ -4761,18 +4761,18 @@ export default {
               //   level: 5,
               //   spell: spells.crusaders_mantle,
               // },
-              // {
-              //   level: 7,
-              //   spell: spells.stoneskin,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.freedom_of_movement,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.flame_strike,
-              // },
+              {
+                level: 7,
+                spell: spells.stoneskin,
+              },
+              {
+                level: 7,
+                spell: spells.freedom_of_movement,
+              },
+              {
+                level: 9,
+                spell: spells.flame_strike,
+              },
               // {
               //   level: 9,
               //   spell: spells.hold_monster,
@@ -4898,18 +4898,18 @@ export default {
               //   level: 5,
               //   spell: spells.revivify,
               // },
-              // {
-              //   level: 5,
-              //   spell: spells.beacon_of_hope,
-              // },
+              {
+                level: 5,
+                spell: spells.beacon_of_hope,
+              },
               // {
               //   level: 7,
               //   spell: spells.death_ward,
               // },
-              // {
-              //   level: 7,
-              //   spell: spells.guardian_of_faith,
-              // },
+              {
+                level: 7,
+                spell: spells.guardian_of_faith,
+              },
               // {
               //   level: 9,
               //   spell: spells.mass_cure_wounds,
@@ -5271,10 +5271,10 @@ export default {
               //   level: 5,
               //   spell: spells.blink,
               // },
-              // {
-              //   level: 5,
-              //   spell: spells.dispel_magic,
-              // },
+              {
+                level: 5,
+                spell: spells.dispel_magic,
+              },
               // {
               //   level: 7,
               //   spell: spells.dimension_door,
@@ -5383,10 +5383,10 @@ export default {
               //   level: 7,
               //   spell: spells.grasping_vine,
               // },
-              // {
-              //   level: 9,
-              //   spell: spells.tree_stride,
-              // },
+              {
+                level: 9,
+                spell: spells.tree_stride,
+              },
               // {
               //   level: 9,
               //   spell: spells.insect_plague,
@@ -5612,26 +5612,26 @@ export default {
               //   level: 5,
               //   spell: spells.daylight,
               // },
-              // {
-              //   level: 5,
-              //   spell: spells.fireball,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.wall_of_fire,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.guardian_of_faith,
-              // },
+              {
+                level: 5,
+                spell: spells.fireball,
+              },
+              {
+                level: 7,
+                spell: spells.wall_of_fire,
+              },
+              {
+                level: 7,
+                spell: spells.guardian_of_faith,
+              },
               // {
               //   level: 9,
               //   spell: spells.scrying,
               // },
-              // {
-              //   level: 9,
-              //   spell: spells.flame_strike,
-              // },
+              {
+                level: 9,
+                spell: spells.flame_strike,
+              },
             ],
 
             settings: [
@@ -6182,18 +6182,18 @@ export default {
                       //   level: 5,
                       //   spell: spells.sleet_storm,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.ice_storm,
-                      // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.freedom_of_movement,
-                      // },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.cone_of_cold,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.ice_storm,
+                      },
+                      {
+                        level: 7,
+                        spell: spells.freedom_of_movement,
+                      },
+                      {
+                        level: 9,
+                        spell: spells.cone_of_cold,
+                      },
                       {
                         level: 9,
                         spell: spells.commune_with_nature,
@@ -6226,10 +6226,10 @@ export default {
                       //   level: 7,
                       //   spell: spells.locate_creature,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.freedom_of_movement,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.freedom_of_movement,
+                      },
                       // {
                       //   level: 9,
                       //   spell: spells.scrying,
@@ -6266,14 +6266,14 @@ export default {
                       //   level: 7,
                       //   spell: spells.stone_shape,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.stoneskin,
-                      // },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.wall_of_stone,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.stoneskin,
+                      },
+                      {
+                        level: 9,
+                        spell: spells.wall_of_stone,
+                      },
                       // {
                       //   level: 9,
                       //   spell: spells.passwall,
@@ -6306,14 +6306,14 @@ export default {
                       //   level: 7,
                       //   spell: spells.divination,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.freedom_of_movement,
-                      // },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.tree_stride,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.freedom_of_movement,
+                      },
+                      {
+                        level: 9,
+                        spell: spells.tree_stride,
+                      },
                       {
                         level: 9,
                         spell: spells.commune_with_nature,
@@ -6346,10 +6346,10 @@ export default {
                       //   level: 7,
                       //   spell: spells.divination,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.freedom_of_movement,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.freedom_of_movement,
+                      },
                       // {
                       //   level: 9,
                       //   spell: spells.dream,
@@ -6386,10 +6386,10 @@ export default {
                       //   level: 7,
                       //   spell: spells.control_water,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.freedom_of_movement,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.freedom_of_movement,
+                      },
                       // {
                       //   level: 9,
                       //   spell: spells.scrying,
@@ -6414,10 +6414,10 @@ export default {
                         spell: spells.web,
                       },
                       //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.gaseous_form,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.gaseous_form,
+                      },
                       // {
                       //   level: 5,
                       //   spell: spells.stinking_cloud,
@@ -7183,22 +7183,22 @@ export default {
                   //   level: 5,
                   //   spell: spells.stinking_cloud,
                   // },
-                  // {
-                  //   level: 5,
-                  //   spell: spells.fireball,
-                  // },
-                  // {
-                  //   level: 7,
-                  //   spell: spells.wall_of_fire,
-                  // },
+                  {
+                    level: 5,
+                    spell: spells.fireball,
+                  },
+                  {
+                    level: 7,
+                    spell: spells.wall_of_fire,
+                  },
                   // {
                   //   level: 7,
                   //   spell: spells.fire_shield,
                   // },
-                  // {
-                  //   level: 9,
-                  //   spell: spells.flame_strike,
-                  // },
+                  {
+                    level: 9,
+                    spell: spells.flame_strike,
+                  },
                   // {
                   //   level: 9,
                   //   spell: spells.hallow,

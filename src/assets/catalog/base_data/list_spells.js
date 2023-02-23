@@ -21219,6 +21219,54 @@ export default {
     {},
   ],
 
+  tree_stride: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_tree_stride",
+      details: "spell_tree_stride_details",
+      expanded: "spell_tree_stride_expanded",
+
+      type: "conjuration",
+      classes: ["druid","ranger",    "cleric","paladin","bard","wizard","warlock","sorcerer"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 1000,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   wall_of_stone: [
     {},
     {},

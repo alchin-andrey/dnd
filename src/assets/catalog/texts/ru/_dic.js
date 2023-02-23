@@ -5481,4 +5481,12 @@ export default {
   spell_plant_growth: spells.plant_growth,
   spell_plant_growth_details: spells.plant_growth_details,
   spell_plant_growth_expanded: spells.plant_growth_expanded,
+
+  spell_ice_storm: spells.ice_storm,
+  spell_ice_storm_details: spells.ice_storm_details,
+  spell_ice_storm_expanded: spells.ice_storm_expanded,
+
+  spell_tree_stride: spells.tree_stride,
+  spell_tree_stride_details: spells.tree_stride_details,
+  spell_tree_stride_expanded: spells.tree_stride_expanded,
 };  
