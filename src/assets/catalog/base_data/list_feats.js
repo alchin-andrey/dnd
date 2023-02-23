@@ -1680,7 +1680,7 @@ export default {
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["cleric"],
+                filter: { classes: ["cleric"],}
                 //TODO - поставить на заклинании какую-то метку?
               },
             ],
@@ -1792,7 +1792,7 @@ export default {
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["druid"],
+                filter: { classes: ["druid"], }
                 //TODO - поставить на заклинании какую-то метку?
               },
             ],
@@ -1904,7 +1904,7 @@ export default {
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["warlock"],
+                filter: { classes: ["warlock"],}
                 //TODO - поставить на заклинании какую-то метку?
               },
             ],
@@ -2044,7 +2044,7 @@ export default {
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["sorcerer"],
+                filter: { classes: ["sorcerer"], }
                 //TODO - поставить на заклинании какую-то метку?
               },
             ],
@@ -2185,7 +2185,7 @@ export default {
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["wizard"],
+                filter: { classes: ["wizard"], }
                 //TODO - поставить на заклинании какую-то метку?
               },
             ],
@@ -2306,7 +2306,7 @@ export default {
                 select: 1,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["bard"],
+                filter: { classes: ["bard"], }
                 //TODO - поставить на заклинании какую-то метку?
               },
             ],
@@ -2367,8 +2367,10 @@ export default {
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["cleric"],
-                cast_time: "ritual",
+                filter: { 
+                  classes: ["cleric"],
+                  cast_time: "ritual",
+                }
               },
             ],
           },
@@ -2385,8 +2387,8 @@ export default {
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["druid"],
-                cast_time: "ritual",
+                filter: { classes: ["druid"],
+                cast_time: "ritual", }
               },
             ],
           },
@@ -2403,8 +2405,8 @@ export default {
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["warlock"],
-                cast_time: "ritual",
+                filter: { classes: ["warlock"],
+                cast_time: "ritual",}
               },
             ],
           },
@@ -2421,8 +2423,8 @@ export default {
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["sorcerer"],
-                cast_time: "ritual",
+                filter: { classes: ["sorcerer"],
+                cast_time: "ritual",}
               },
             ],
           },
@@ -2439,8 +2441,8 @@ export default {
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["wizard"],
-                cast_time: "ritual",
+                filter: { classes: ["wizard"],
+                cast_time: "ritual",}
               },
             ],
           },
@@ -2457,8 +2459,8 @@ export default {
                 select: 2,
                 mana_min: 1,
                 mana_max: 1,
-                classes: ["bard"],
-                cast_time: "ritual",
+                filter: { classes: ["bard"],
+                cast_time: "ritual", }
               },
             ],
           },

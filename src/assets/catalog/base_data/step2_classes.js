@@ -469,7 +469,7 @@ export default {
                 mana_max: [
                   0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
                 ],
-                classes: ["wizard"],
+                filter: { classes: ["wizard"], }
               },
             ],
           },
@@ -1391,8 +1391,9 @@ export default {
                 mana_max: [
                   0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
                 ],
-                classes: ["wizard"],
-                filter: "type: [abjuration,evocation]",
+                filter: { 
+                  classes: ["wizard"],
+                type: ["abjuration","evocation"],}
               },
             ],
           },
@@ -3576,7 +3577,7 @@ export default {
         position: 7,
       },
     ],
-  }, // 20 окрім 18: Пусте тіло (8 Чі) та Шлях стихій (11 17 lvl)
+  }, // 20 
 
   //NOTE - Paladin -------------------------------------------------------------------------
 
@@ -3784,34 +3785,33 @@ export default {
                 level: 7,
                 spell: spells.aura_of_devotion,
               },
-              //TODO - Додати спели
-              // {
-              //   level: 9,
-              //   spell: spells.beacon_of_hope,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.dispel_magic,
-              // },
-              // {
-              //   level: 13,
-              //   spell: spells.freedom_of_movement,
-              // },
-              // {
-              //   level: 13,
-              //   spell: spells.guardian_of_faith,
-              // },
-              // {
-              //   level: 17,
-              //   spell: spells.flame_strike,
-              // },
-              // {
-              //   level: 17,
-              //   spell: spells.commune,
-              // },
+              {
+                level: 9,
+                spell: spells.beacon_of_hope,
+              },
+              {
+                level: 9,
+                spell: spells.dispel_magic,
+              },
+              {
+                level: 13,
+                spell: spells.freedom_of_movement,
+              },
+              {
+                level: 13,
+                spell: spells.guardian_of_faith,
+              },
               {
                 level: 15,
                 spell: spells.protection_from_evil_and_good_paladin,
+              },
+              {
+                level: 17,
+                spell: spells.flame_strike,
+              },
+              {
+                level: 17,
+                spell: spells.commune,
               },
               {
                 level: 20,
@@ -3925,22 +3925,22 @@ export default {
                 spell: spells.aura_of_warding,
               },
               //TODO - Додати спели
-              // {
-              //   level: 9,
-              //   spell: spells.protection_from_energy,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.plant_growth,
-              // },
+              {
+                level: 9,
+                spell: spells.protection_from_energy,
+              },
+              {
+                level: 9,
+                spell: spells.plant_growth,
+              },
               // {
               //   level: 13,
               //   spell: spells.ice_storm,
               // },
-              // {
-              //   level: 13,
-              //   spell: spells.stoneskin,
-              // },
+              {
+                level: 13,
+                spell: spells.stoneskin,
+              },
               // {
               //   level: 17,
               //   spell: spells.tree_stride,
@@ -4402,7 +4402,7 @@ export default {
         foo: "Sel_Plus_CHA_Min1",
         mana_min: 1,
         mana_max: [0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],
-        classes: ["paladin"],
+        filter: { classes: ["paladin"], }
       },
     ],
   }, // 20 , орім спелів сабкласів
@@ -5367,10 +5367,10 @@ export default {
                 spell: spells.spike_growth,
               },
               //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.plant_growth,
-              // },
+              {
+                level: 5,
+                spell: spells.plant_growth,
+              },
               // {
               //   level: 5,
               //   spell: spells.wind_wall,
@@ -5894,7 +5894,7 @@ export default {
         foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        classes: ["cleric"],
+        filter: { classes: ["cleric"], }
       },
       {
         level: 4,
@@ -6298,10 +6298,10 @@ export default {
                       //   level: 5,
                       //   spell: spells.call_lightning,
                       // },
-                      // {
-                      //   level: 5,
-                      //   spell: spells.plant_growth,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.plant_growth,
+                      },
                       // {
                       //   level: 7,
                       //   spell: spells.divination,
@@ -6752,7 +6752,7 @@ export default {
         foo: "Sel_Plus_WIS_Min1",
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        classes: ["druid"],
+        filter: { classes: ["druid"], }
       },
       {
         level: 4,
@@ -7007,7 +7007,7 @@ export default {
                 mana_max: [
                   1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
                 ],
-                classes: ["warlock"],
+                filter: { classes: ["warlock"], },
                 extra_items: [
                   // Архифея позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
@@ -7031,10 +7031,10 @@ export default {
                   //   level: 5,
                   //   spell: spells.blink,
                   // },
-                  // {
-                  //   level: 5,
-                  //   spell: spells.plant_growth,
-                  // },
+                  {
+                    level: 5,
+                    spell: spells.plant_growth,
+                  },
                   // {
                   //   level: 7,
                   //   spell: spells.greater_invisibility,
@@ -7159,7 +7159,7 @@ export default {
                 mana_max: [
                   1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
                 ],
-                classes: ["warlock"],
+                filter: { classes: ["warlock"], },
                 extra_items: [
                   // Исчадие позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
@@ -7295,7 +7295,7 @@ export default {
                 mana_max: [
                   1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
                 ],
-                classes: ["warlock"],
+                filter: { classes: ["warlock"],},
                 extra_items: [
                   // Ваш покравитель позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
@@ -8353,7 +8353,7 @@ export default {
           select: 1,
           mana_min: 6,
           mana_max: 6,
-          classes: ["warlock"],
+          filter: { classes: ["warlock"], }
       },
       {
           level: 13,
@@ -8363,7 +8363,7 @@ export default {
           select: 1,
           mana_min: 7,
           mana_max: 7,
-          classes: ["warlock"],
+          filter: { classes: ["warlock"], }
       },
       {
           level: 15,
@@ -8373,7 +8373,7 @@ export default {
           select: 1,
           mana_min: 8,
           mana_max: 8,
-          classes: ["warlock"],
+          filter: { classes: ["warlock"], }
       },
       {
           level: 17,
@@ -8383,7 +8383,7 @@ export default {
           select: 1,
           mana_min: 9,
           mana_max: 9,
-          classes: ["warlock"],
+          filter: { classes: ["warlock"], }
       },
       {
         level: 4,
@@ -9067,7 +9067,7 @@ export default {
         ],
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        classes: ["sorcerer"],
+        filter: { classes: ["sorcerer"], }
       },
       {
         level: 3,
@@ -9957,7 +9957,7 @@ export default {
         ],
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        classes: ["wizard"],
+        filter: { classes: ["wizard"], }
       },
       {
         level: 4,
@@ -10159,7 +10159,7 @@ export default {
                 mana_max: [
                   1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9,
                 ],
-                classes: ["bard"],
+                filter: { classes: ["bard"], }
               },
             ],
           },
@@ -10380,7 +10380,7 @@ export default {
                 mana_max: [
                   1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9,
                 ],
-                classes: [
+                filter: { classes: [
                   "artificer",
                   "cleric",
                   "druid",
@@ -10388,7 +10388,7 @@ export default {
                   "sorcerer",
                   "warlock",
                   "wizard",
-                ],
+                ], }
               },
             ],
           },
@@ -10809,7 +10809,7 @@ export default {
         ],
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        classes: ["bard"],
+        filter: { classes: ["bard"],}
       },
       {
         level: 10,
@@ -10819,7 +10819,7 @@ export default {
         select: [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 4, 4, 4, 4, 6, 6, 6],
         mana_min: 0,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        classes: [
+        filter: { classes: [
           "artificer",
           "cleric",
           "druid",
@@ -10827,7 +10827,7 @@ export default {
           "sorcerer",
           "warlock",
           "wizard",
-        ],
+        ],}
       },
       // TODO - Only_mastery
       {
@@ -12584,7 +12584,7 @@ export default {
         ],
         mana_min: 1,
         mana_max: [0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5],
-        classes: ["ranger"],
+        filter: { classes: ["ranger"],}
       },
       {
         level: 4,

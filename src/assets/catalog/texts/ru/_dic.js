@@ -5447,4 +5447,38 @@ export default {
   spell_wall_of_fire_details_13: spells.wall_of_fire_details_13,
   spell_wall_of_fire_details_17: spells.wall_of_fire_details_17,
   spell_wall_of_fire_monk_expanded: spells.wall_of_fire_monk_expanded,
+
+  spell_beacon_of_hope: spells.beacon_of_hope,
+  spell_beacon_of_hope_details: spells.beacon_of_hope_details,
+  spell_beacon_of_hope_expanded: spells.beacon_of_hope_expanded,
+
+  spell_level: "уровень заклинаний",
+
+  spell_dispel_magic: spells.dispel_magic,
+  spell_dispel_magic_details: spells.dispel_magic_details,
+  spell_dispel_magic_expanded: spells.dispel_magic_expanded,
+
+  spell_freedom_of_movement: spells.freedom_of_movement,
+  spell_freedom_of_movement_details: spells.freedom_of_movement_details,
+  spell_freedom_of_movement_expanded: spells.freedom_of_movement_expanded,
+
+  spell_guardian_of_faith: spells.guardian_of_faith,
+  spell_guardian_of_faith_details: spells.guardian_of_faith_details,
+  spell_guardian_of_faith_expanded: spells.guardian_of_faith_expanded,
+
+  spell_flame_strike: spells.flame_strike,
+  spell_flame_strike_details: spells.flame_strike_details,
+  spell_flame_strike_expanded: spells.flame_strike_expanded,
+
+  spell_commune: spells.commune,
+  spell_commune_details: spells.commune_details,
+  spell_commune_expanded: spells.commune_expanded,
+
+  spell_protection_from_energy: spells.protection_from_energy,
+  spell_protection_from_energy_details: spells.protection_from_energy_details,
+  spell_protection_from_energy_expanded: spells.protection_from_energy_expanded,
+
+  spell_plant_growth: spells.plant_growth,
+  spell_plant_growth_details: spells.plant_growth_details,
+  spell_plant_growth_expanded: spells.plant_growth_expanded,
 };  
