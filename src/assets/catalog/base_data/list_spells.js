@@ -704,11 +704,11 @@ export default {
     },
   ],
 
-  faerie_fire: [
+  faerie_fire_0: [
     {
-      name: "spell_faerie_fire",
-      details: "spell_faerie_fire_details",
-      expanded: "spell_faerie_fire_expanded", // полное описание
+      name: "spell_faerie_fire_0",
+      details: "spell_faerie_fire_0_details",
+      expanded: "spell_faerie_fire_0_expanded", // полное описание
 
       type: "evocation",
       classes: [],
@@ -8347,10 +8347,6 @@ export default {
   ],
 
   pass_without_trace_monk: [
-    //TODO - Для отладки
-    {},
-    {},
-    {},
     {
       name: "spell_pass_without_trace_monk",
       details: "spell_pass_without_trace_details",
@@ -14138,8 +14134,6 @@ export default {
       expanded: "spell_bless_expanded",
 
       type: "enchantment",
-      //TODO - Для отладки
-      slot_type: "chi_slot_2",
       classes: ["cleric", "paladin"],
 
       cast_time: "action",
@@ -15626,12 +15620,12 @@ export default {
     {},
   ],
 
-  faerie_fire_1: [
+  faerie_fire: [
     {},
     {
-      name: "spell_faerie_fire_1",
-      details: "spell_faerie_fire_details",
-      expanded: "spell_faerie_fire_expanded", // полное описание
+      name: "spell_faerie_fire",
+      details: "spell_faerie_fire_0_details",
+      expanded: "spell_faerie_fire_0_expanded", // полное описание
 
       type: "evocation",
       classes: [],
@@ -15921,15 +15915,15 @@ export default {
     },
   ],
 
-  feather_fell: [
+  feather_fall: [
     {
       //0
     },
     {
       //1
-      name: "spell_feather_fell",
-      details: "spell_feather_fell_details",
-      expanded: "spell_feather_fell_expanded",
+      name: "spell_feather_fall",
+      details: "spell_feather_fall_details",
+      expanded: "spell_feather_fall_expanded",
 
       type: "transmutation",
       classes: ["artificer", "bard", "sorcerer", "wizard"],
@@ -16712,7 +16706,7 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: "target_number",
+      impact_type: "targets_number",
       impact_damage_type: null,
 
       impact_size_foo: "Num_Plus_1",

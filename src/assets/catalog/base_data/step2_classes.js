@@ -94,14 +94,6 @@ export default {
 
     spells: [
       {
-        spell: spells.pass_without_trace_monk,
-        //TODO - Для отладки
-      },
-      {
-        spell: spells.bless,
-        //TODO - Для отладки
-      },
-      {
         level: 1,
         spell: spells.sneaky_attack,
       },
@@ -5605,7 +5597,7 @@ export default {
               },
               {
                 level: 1,
-                spell: spells.faerie_fire,
+                spell: spells.faerie_fire_0,
               },
               {
                 level: 3,
@@ -7020,7 +7012,7 @@ export default {
                   // Архифея позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
                     level: 1,
-                    spell: spells.faerie_fire,
+                    spell: spells.faerie_fire_0,
                   },
                   {
                     level: 1,

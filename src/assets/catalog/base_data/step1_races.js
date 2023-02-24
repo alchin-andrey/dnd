@@ -2146,7 +2146,7 @@ export default {
 
             {
               level: 3,
-              spell: spells.faerie_fire,
+              spell: spells.faerie_fire_0,
             },
 
             {
