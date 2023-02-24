@@ -8347,6 +8347,10 @@ export default {
   ],
 
   pass_without_trace_monk: [
+    //TODO - Для отладки
+    {},
+    {},
+    {},
     {
       name: "spell_pass_without_trace_monk",
       details: "spell_pass_without_trace_details",
@@ -14134,6 +14138,8 @@ export default {
       expanded: "spell_bless_expanded",
 
       type: "enchantment",
+      //TODO - Для отладки
+      slot_type: "chi_slot_2",
       classes: ["cleric", "paladin"],
 
       cast_time: "action",
