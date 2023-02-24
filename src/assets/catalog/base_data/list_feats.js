@@ -6,7 +6,6 @@ import item from "./list_items.js";
 import lang from "./list_languages.js";
 
 export default {
-
   actor: {
     name: "feat_actor",
     details: "feat_actor_details",
@@ -74,7 +73,7 @@ export default {
       {
         name: "speed",
         type: "bonus",
-        num:  10,
+        num: 10,
         show: true,
       },
     ],
@@ -99,13 +98,13 @@ export default {
     condition: "condition_dexterity_13plus",
     //Требования: Ловкость 13 или вьіше
 
-    filter:{
+    filter: {
       stats: [
         {
           name: "dexterity",
           min_num: 13,
         },
-      ]
+      ],
     },
 
     fines: [
@@ -228,7 +227,7 @@ export default {
     spells: [
       {
         spell: spells.luck_feat,
-      }
+      },
     ],
 
     charges: [
@@ -277,7 +276,7 @@ export default {
       {
         type: "custom",
         name: "stats",
-        position:7,
+        position: 7,
         select: 1,
         list: [
           {
@@ -746,94 +745,94 @@ export default {
           {
             name: lang.halfling.name,
             details: lang.halfling.details,
-            proficiencies: {languages: [lang.halfling]}
+            proficiencies: { languages: [lang.halfling] },
           },
           {
             name: lang.gnome.name,
             details: lang.gnome.details,
-            proficiencies: {languages: [lang.gnome]}
+            proficiencies: { languages: [lang.gnome] },
           },
           {
             name: lang.dwarf.name,
             details: lang.dwarf.details,
-            proficiencies: {languages: [lang.dwarf]}
+            proficiencies: { languages: [lang.dwarf] },
           },
           {
             name: lang.elf.name,
             details: lang.elf.details,
-            proficiencies: {languages: [lang.elf]}
+            proficiencies: { languages: [lang.elf] },
           },
           {
             name: lang.orc.name,
             details: lang.orc.details,
-            proficiencies: {languages: [lang.orc]}
+            proficiencies: { languages: [lang.orc] },
           },
           {
             name: lang.dragon.name,
             details: lang.dragon.details,
-            proficiencies: {languages: [lang.dragon]}
+            proficiencies: { languages: [lang.dragon] },
           },
           {
             name: lang.giant.name,
             details: lang.giant.details,
-            proficiencies: {languages: [lang.giant]}
+            proficiencies: { languages: [lang.giant] },
           },
           {
             name: lang.goblin.name,
             details: lang.goblin.details,
-            proficiencies: {languages: [lang.goblin]}
+            proficiencies: { languages: [lang.goblin] },
           },
           {
             name: lang.thieves.name,
             details: lang.thieves.details,
-            proficiencies: {languages: [lang.thieves]}
+            proficiencies: { languages: [lang.thieves] },
           },
           {
             name: lang.druid.name,
             details: lang.druid.details,
-            proficiencies: {languages: [lang.druid]}
+            proficiencies: { languages: [lang.druid] },
           },
           {
             name: lang.animal.name,
             details: lang.animal.details,
-            proficiencies: {languages: [lang.animal]}
+            proficiencies: { languages: [lang.animal] },
           },
           {
             name: lang.sylvan.name,
             details: lang.sylvan.details,
-            proficiencies: {languages: [lang.sylvan]}
+            proficiencies: { languages: [lang.sylvan] },
           },
           {
             name: lang.undercommon.name,
             details: lang.undercommon.details,
-            proficiencies: {languages: [lang.undercommon]}
+            proficiencies: { languages: [lang.undercommon] },
           },
           {
             name: lang.deep.name,
             details: lang.deep.details,
-            proficiencies: {languages: [lang.deep]}
+            proficiencies: { languages: [lang.deep] },
           },
           {
             name: lang.primordial.name,
             details: lang.primordial.details,
-            proficiencies: {languages: [lang.primordial]}
+            proficiencies: { languages: [lang.primordial] },
           },
           {
             name: lang.sky.name,
             details: lang.sky.details,
-            proficiencies: {languages: [lang.sky]}
+            proficiencies: { languages: [lang.sky] },
           },
           {
             name: lang.demonic.name,
             details: lang.demonic.details,
-            proficiencies: {languages: [lang.demonic]}
+            proficiencies: { languages: [lang.demonic] },
           },
           {
             name: lang.tiefling.name,
             details: lang.tiefling.details,
-            proficiencies: {languages: [lang.tiefling]}
+            proficiencies: { languages: [lang.tiefling] },
           },
-        ]
+        ],
       },
       // {
       //   type: "languages",
@@ -851,13 +850,13 @@ export default {
     condition: "condition_charisma_13plus",
     //Требования: Харизма 13 или вьіше
 
-    filter:{
+    filter: {
       stats: [
         {
           name: "charisma",
           min_num: 13,
         },
-      ]
+      ],
     },
 
     spells: [
@@ -950,7 +949,7 @@ export default {
     condition: "condition_proficiency_armor_medium",
     //Требования: Владение тяжельіми доспехами
 
-    filter:{
+    filter: {
       proficiencies: {
         armor: [armory.medium.name],
       },
@@ -976,7 +975,7 @@ export default {
     condition: "condition_proficiency_armor_heavy",
     //Требования: Владение тяжельіми доспехами
 
-    filter:{
+    filter: {
       proficiencies: {
         armor: [armory.heavy.name],
       },
@@ -1028,13 +1027,13 @@ export default {
     condition: "condition_dexterity_13plus",
     //Требования: Ловкость 13 или вьіше
 
-    filter:{
+    filter: {
       stats: [
         {
           name: "dexterity",
           min_num: 13,
         },
-      ]
+      ],
     },
 
     fines: [
@@ -1232,7 +1231,7 @@ export default {
         ],
       },
     ],
-  },  
+  },
 
   dual_wielder: {
     name: "feat_dual_wielder",
@@ -1280,7 +1279,7 @@ export default {
       },
     ],
   },
-  
+
   sharpshooter: {
     name: "feat_sharpshooter",
     details: "feat_sharpshooter_details",
@@ -1306,8 +1305,6 @@ export default {
   },
 
   //NOTE - Fight
-
-  
 
   martial_adept: {
     name: "feat_martial_adept",
@@ -1407,13 +1404,13 @@ export default {
     condition: "condition_strength_13plus",
     //Требования: Сила 13 или вьіше
 
-    filter:{
+    filter: {
       stats: [
         {
           name: "strength",
           min_num: 13,
         },
-      ]
+      ],
     },
 
     fines: [
@@ -1661,7 +1658,7 @@ export default {
                     name_set: spells.thaumaturgy[0].name,
                     spells: [{ spell: spells.thaumaturgy }],
                   },
-                ]
+                ],
               },
               {
                 // TODO - Apply alterations
@@ -1681,130 +1678,201 @@ export default {
                   {
                     name_set: spells.bless[1].name,
 
-                    spells: 
-                    [
-                      { 
+                    spells: [
+                      {
                         spell: spells.bless,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_cleric1",
-                        spell_attribute: "wisdom",
-                      }
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.protection_from_evil_and_good[1].name,
-                    spells: [{ spell: spells.protection_from_evil_and_good,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.protection_from_evil_and_good,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.healing_word[1].name,
-                    spells: [{ spell: spells.healing_word,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.healing_word,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.cure_wounds[1].name,
-                    spells: [{ spell: spells.cure_wounds,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.cure_wounds,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.inflict_wounds[1].name,
-                    spells: [{ spell: spells.inflict_wounds,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.inflict_wounds,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.guiding_bolt[1].name,
-                    spells: [{ spell: spells.guiding_bolt,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.guiding_bolt,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_poison_and_disease[1].name,
-                    spells: [{ spell: spells.detect_poison_and_disease,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.detect_poison_and_disease,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_evil_and_good[1].name,
-                    spells: [{ spell: spells.detect_evil_and_good,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.detect_evil_and_good,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
-                    spells: [{ spell: spells.detect_magic,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.purify_food_and_drink[1].name,
-                    spells: [{ spell: spells.purify_food_and_drink,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.purify_food_and_drink,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.bane[1].name,
-                    spells: [{ spell: spells.bane,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.bane,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.command[1].name,
-                    spells: [{ spell: spells.command,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.command,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.create_or_destroy_water[1].name,
-                    spells: [{ spell: spells.create_or_destroy_water,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.create_or_destroy_water,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.sanctuary[1].name,
-                    spells: [{ spell: spells.sanctuary,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.sanctuary,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.shield_of_faith[1].name,
-                    spells: [{ spell: spells.shield_of_faith,
-                      name_extra: "*",
-                      slot_type: "spell_cleric1",
-                      spell_attribute: "wisdom",
-                     }],
+                    spells: [
+                      {
+                        spell: spells.shield_of_faith,
+                        mod: {
+                          name_extra: "*",
+                          slot_type: "spell_cleric1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -1896,7 +1964,7 @@ export default {
                     name_set: spells.poison_spray[0].name,
                     spells: [{ spell: spells.poison_spray }],
                   },
-                ]
+                ],
               },
               {
                 // TODO - Apply alterations
@@ -1915,141 +1983,243 @@ export default {
                   //spells[1] druid
                   {
                     name_set: spells.thunderwave[1].name,
-                    spells: [{ spell: spells.thunderwave,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.thunderwave,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.animal_friendship[1].name,
-                    spells: [{ spell: spells.animal_friendship,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.animal_friendship,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.protection_from_evil_and_good[1].name,
-                    spells: [{ spell: spells.protection_from_evil_and_good,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.protection_from_evil_and_good,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.healing_word[1].name,
-                    spells: [{ spell: spells.healing_word,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.healing_word,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.cure_wounds[1].name,
-                    spells: [{ spell: spells.cure_wounds,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.cure_wounds,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_poison_and_disease[1].name,
-                    spells: [{ spell: spells.detect_poison_and_disease,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.detect_poison_and_disease,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.faerie_fire[1].name,
-                    spells: [{ spell: spells.faerie_fire,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.faerie_fire,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.entangle[1].name,
-                    spells: [{ spell: spells.entangle,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.entangle,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.charm_person[1].name,
-                    spells: [{ spell: spells.charm_person,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.charm_person,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.purify_food_and_drink[1].name,
-                    spells: [{ spell: spells.purify_food_and_drink,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.purify_food_and_drink,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.jump[1].name,
-                    spells: [{ spell: spells.jump,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.jump,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.speak_with_animals[1].name,
-                    spells: [{ spell: spells.speak_with_animals,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.speak_with_animals,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.longstrider[1].name,
-                    spells: [{ spell: spells.longstrider,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.longstrider,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.create_or_destroy_water[1].name,
-                    spells: [{ spell: spells.create_or_destroy_water,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.create_or_destroy_water,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.fog_cloud[1].name,
-                    spells: [{ spell: spells.fog_cloud,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.fog_cloud,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.goodberry[1].name,
-                    spells: [{ spell: spells.goodberry,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_druid1",
-                        spell_attribute: "wisdom", }],
+                    spells: [
+                      {
+                        spell: spells.goodberry,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_druid1",
+                          spell_attribute: "wisdom",
+                        },
+                      },
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -2141,7 +2311,7 @@ export default {
                     name_set: spells.poison_spray[0].name,
                     spells: [{ spell: spells.poison_spray }],
                   },
-                ]
+                ],
               },
               {
                 // TODO - Apply alterations
@@ -2160,93 +2330,159 @@ export default {
                   //spells[1] warlock
                   {
                     name_set: spells.hellish_rebuke[1].name,
-                    spells: [{ spell: spells.hellish_rebuke,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.hellish_rebuke,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.witch_bolt[1].name,
-                    spells: [{ spell: spells.witch_bolt,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.witch_bolt,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.armor_of_agathys[1].name,
-                    spells: [{ spell: spells.armor_of_agathys,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.armor_of_agathys,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.protection_from_evil_and_good[1].name,
-                    spells: [{ spell: spells.protection_from_evil_and_good,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.protection_from_evil_and_good,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.illusory_script[1].name,
-                    spells: [{ spell: spells.illusory_script,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.illusory_script,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.unseen_servant[1].name,
-                    spells: [{ spell: spells.unseen_servant,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.unseen_servant,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.charm_person[1].name,
-                    spells: [{ spell: spells.charm_person,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.charm_person,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.expeditious_retreat[1].name,
-                    spells: [{ spell: spells.expeditious_retreat,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.expeditious_retreat,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.arms_of_hadar[1].name,
-                    spells: [{ spell: spells.arms_of_hadar,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.arms_of_hadar,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.hex[1].name,
-                    spells: [{ spell: spells.hex,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_warlock1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.hex,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_warlock1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -2366,7 +2602,7 @@ export default {
                     name_set: spells.poison_spray[0].name,
                     spells: [{ spell: spells.poison_spray }],
                   },
-                ]
+                ],
               },
               {
                 // TODO - Apply alterations
@@ -2385,173 +2621,299 @@ export default {
                   //spells[1] sorcerer
                   {
                     name_set: spells.silent_image[1].name,
-                    spells: [{ spell: spells.silent_image,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.silent_image,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.witch_bolt[1].name,
-                    spells: [{ spell: spells.witch_bolt,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.witch_bolt,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.thunderwave[1].name,
-                    spells: [{ spell: spells.thunderwave,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.thunderwave,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.magic_missile[1].name,
-                    spells: [{ spell: spells.magic_missile,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.magic_missile,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.mage_armor[1].name,
-                    spells: [{ spell: spells.mage_armor,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.mage_armor,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.ray_of_sickness[1].name,
-                    spells: [{ spell: spells.ray_of_sickness,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.ray_of_sickness,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.disguise_self[1].name,
-                    spells: [{ spell: spells.disguise_self,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.disguise_self,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.burning_hands[1].name,
-                    spells: [{ spell: spells.burning_hands,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.burning_hands,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.charm_person[1].name,
-                    spells: [{ spell: spells.charm_person,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.charm_person,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.feather_fall[1].name,
-                    spells: [{ spell: spells.feather_fall,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.feather_fall,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.expeditious_retreat[1].name,
-                    spells: [{ spell: spells.expeditious_retreat,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.expeditious_retreat,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.jump[1].name,
-                    spells: [{ spell: spells.jump,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.jump,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.false_life[1].name,
-                    spells: [{ spell: spells.false_life,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.false_life,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.color_spray[1].name,
-                    spells: [{ spell: spells.color_spray,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.color_spray,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.grease[1].name,
-                    spells: [{ spell: spells.grease,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.grease,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.fog_cloud[1].name,
-                    spells: [{ spell: spells.fog_cloud,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.fog_cloud,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.sleep[1].name,
-                    spells: [{ spell: spells.sleep,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.sleep,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.chromatic_orb[1].name,
-                    spells: [{ spell: spells.chromatic_orb,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.chromatic_orb,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.shield[1].name,
-                    spells: [{ spell: spells.shield,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_sorcerer1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.shield,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_sorcerer1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -2691,245 +3053,425 @@ export default {
                   //spells[1] wizard
                   {
                     name_set: spells.silent_image[1].name,
-                    spells: [{ spell: spells.silent_image,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.silent_image,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.witch_bolt[1].name,
-                    spells: [{ spell: spells.witch_bolt,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.witch_bolt,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.thunderwave[1].name,
-                    spells: [{ spell: spells.thunderwave,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.thunderwave,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.magic_missile[1].name,
-                    spells: [{ spell: spells.magic_missile,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.magic_missile,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.mage_armor[1].name,
-                    spells: [{ spell: spells.mage_armor,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.mage_armor,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.tashas_hideous_laughter[1].name,
-                    spells: [{ spell: spells.tashas_hideous_laughter,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.tashas_hideous_laughter,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.protection_from_evil_and_good[1].name,
-                    spells: [{ spell: spells.protection_from_evil_and_good,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.protection_from_evil_and_good,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.ray_of_sickness[1].name,
-                    spells: [{ spell: spells.ray_of_sickness,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.ray_of_sickness,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.disguise_self[1].name,
-                    spells: [{ spell: spells.disguise_self,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.disguise_self,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.illusory_script[1].name,
-                    spells: [{ spell: spells.illusory_script,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.illusory_script,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.unseen_servant[1].name,
-                    spells: [{ spell: spells.unseen_servant,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.unseen_servant,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.burning_hands[1].name,
-                    spells: [{ spell: spells.burning_hands,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.burning_hands,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.identify[1].name,
-                    spells: [{ spell: spells.identify,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.identify,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.charm_person[1].name,
-                    spells: [{ spell: spells.charm_person,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.charm_person,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.feather_fall[1].name,
-                    spells: [{ spell: spells.feather_fall,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.feather_fall,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.find_familiar[1].name,
-                    spells: [{ spell: spells.find_familiar,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.find_familiar,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.expeditious_retreat[1].name,
-                    spells: [{ spell: spells.expeditious_retreat,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.expeditious_retreat,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.jump[1].name,
-                    spells: [{ spell: spells.jump,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.jump,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.false_life[1].name,
-                    spells: [{ spell: spells.false_life,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.false_life,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.color_spray[1].name,
-                    spells: [{ spell: spells.color_spray,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.color_spray,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.alarm[1].name,
-                    spells: [{ spell: spells.alarm,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.alarm,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.grease[1].name,
-                    spells: [{ spell: spells.grease,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.grease,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.longstrider[1].name,
-                    spells: [{ spell: spells.longstrider,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.longstrider,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.tensers_floating_disk[1].name,
-                    spells: [{ spell: spells.tensers_floating_disk,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.tensers_floating_disk,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.fog_cloud[1].name,
-                    spells: [{ spell: spells.fog_cloud,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.fog_cloud,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.sleep[1].name,
-                    spells: [{ spell: spells.sleep,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.sleep,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.chromatic_orb[1].name,
-                    spells: [{ spell: spells.chromatic_orb,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.chromatic_orb,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.shield[1].name,
-                    spells: [{ spell: spells.shield,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_wizard1",
-                        spell_attribute: "intelligence", }],
+                    spells: [
+                      {
+                        spell: spells.shield,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_wizard1",
+                          spell_attribute: "intelligence",
+                        },
+                      },
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -2979,58 +3521,58 @@ export default {
 
             settings: [
               {
-              level: 3,
-              type: "custom",
-              position: 3,
-              name: "spells_0",
-              select: 2,
-              list: [
-                // spells[0] bard
-                {
-                  name_set: spells.mage_hand[0].name,
-                  spells: [{ spell: spells.mage_hand }],
-                },
-                {
-                  name_set: spells.friends[0].name,
-                  spells: [{ spell: spells.friends }],
-                },
-                {
-                  name_set: spells.blade_ward[0].name,
-                  spells: [{ spell: spells.blade_ward }],
-                },
-                {
-                  name_set: spells.vicious_mockery[0].name,
-                  spells: [{ spell: spells.vicious_mockery }],
-                },
-                {
-                  name_set: spells.minor_illusion[0].name,
-                  spells: [{ spell: spells.minor_illusion }],
-                },
-                {
-                  name_set: spells.true_strike[0].name,
-                  spells: [{ spell: spells.true_strike }],
-                },
-                {
-                  name_set: spells.dancing_lights[0].name,
-                  spells: [{ spell: spells.dancing_lights }],
-                },
-                {
-                  name_set: spells.mending[0].name,
-                  spells: [{ spell: spells.mending }],
-                },
-                {
-                  name_set: spells.light[0].name,
-                  spells: [{ spell: spells.light }],
-                },
-                {
-                  name_set: spells.message[0].name,
-                  spells: [{ spell: spells.message }],
-                },
-                {
-                  name_set: spells.prestidigitation[0].name,
-                  spells: [{ spell: spells.prestidigitation }],
-                },
-              ],
+                level: 3,
+                type: "custom",
+                position: 3,
+                name: "spells_0",
+                select: 2,
+                list: [
+                  // spells[0] bard
+                  {
+                    name_set: spells.mage_hand[0].name,
+                    spells: [{ spell: spells.mage_hand }],
+                  },
+                  {
+                    name_set: spells.friends[0].name,
+                    spells: [{ spell: spells.friends }],
+                  },
+                  {
+                    name_set: spells.blade_ward[0].name,
+                    spells: [{ spell: spells.blade_ward }],
+                  },
+                  {
+                    name_set: spells.vicious_mockery[0].name,
+                    spells: [{ spell: spells.vicious_mockery }],
+                  },
+                  {
+                    name_set: spells.minor_illusion[0].name,
+                    spells: [{ spell: spells.minor_illusion }],
+                  },
+                  {
+                    name_set: spells.true_strike[0].name,
+                    spells: [{ spell: spells.true_strike }],
+                  },
+                  {
+                    name_set: spells.dancing_lights[0].name,
+                    spells: [{ spell: spells.dancing_lights }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.light[0].name,
+                    spells: [{ spell: spells.light }],
+                  },
+                  {
+                    name_set: spells.message[0].name,
+                    spells: [{ spell: spells.message }],
+                  },
+                  {
+                    name_set: spells.prestidigitation[0].name,
+                    spells: [{ spell: spells.prestidigitation }],
+                  },
+                ],
               },
               {
                 // TODO - Apply alterations
@@ -3042,196 +3584,334 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
-                details:"no_mana_but_once_a_day",
+                details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
                 list: [
                   //spells[1] bard
                   {
                     name_set: spells.silent_image[1].name,
-                    spells: [{ spell: spells.silent_image,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.silent_image,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.thunderwave[1].name,
-                    spells: [{ spell: spells.thunderwave,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.thunderwave,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.heroism[1].name,
-                    spells: [{ spell: spells.heroism,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.heroism,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.dissonant_whispers[1].name,
-                    spells: [{ spell: spells.dissonant_whispers,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.dissonant_whispers,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.animal_friendship[1].name,
-                    spells: [{ spell: spells.animal_friendship,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.animal_friendship,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.tashas_hideous_laughter[1].name,
-                    spells: [{ spell: spells.tashas_hideous_laughter,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.tashas_hideous_laughter,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.healing_word[1].name,
-                    spells: [{ spell: spells.healing_word,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.healing_word,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.cure_wounds[1].name,
-                    spells: [{ spell: spells.cure_wounds,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.cure_wounds,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.disguise_self[1].name,
-                    spells: [{ spell: spells.disguise_self,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.disguise_self,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.illusory_script[1].name,
-                    spells: [{ spell: spells.illusory_script,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.illusory_script,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.unseen_servant[1].name,
-                    spells: [{ spell: spells.unseen_servant,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.unseen_servant,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.faerie_fire[1].name,
-                    spells: [{ spell: spells.faerie_fire,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.faerie_fire,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.identify[1].name,
-                    spells: [{ spell: spells.identify,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.identify,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.charm_person[1].name,
-                    spells: [{ spell: spells.charm_person,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.charm_person,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.feather_fall[1].name,
-                    spells: [{ spell: spells.feather_fall,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.feather_fall,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.bane[1].name,
-                    spells: [{ spell: spells.bane,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.bane,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.command[1].name,
-                    spells: [{ spell: spells.command,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.command,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.speak_with_animals[1].name,
-                    spells: [{ spell: spells.speak_with_animals,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.speak_with_animals,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.color_spray[1].name,
-                    spells: [{ spell: spells.color_spray,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.color_spray,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.longstrider[1].name,
-                    spells: [{ spell: spells.longstrider,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.longstrider,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
                   {
                     name_set: spells.sleep[1].name,
-                    spells: [{ spell: spells.sleep,
-                        name_extra: "*",
-                        expanded_extra: "magic_initiate_expanded",
-                        slot_type: "spell_bard1",
-                        spell_attribute: "charisma", }],
+                    spells: [
+                      {
+                        spell: spells.sleep,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
+                          slot_type: "spell_bard1",
+                          spell_attribute: "charisma",
+                        },
+                      },
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3246,7 +3926,7 @@ export default {
     condition: "condition_intelligence_or_wisdom_13plus",
     //Требования: Интеллект или Мудрость 13 или выше
 
-    filter:{
+    filter: {
       stats: [
         {
           name: "intelligence",
@@ -3256,7 +3936,7 @@ export default {
           name: "wisdom",
           min_num: 13,
         },
-      ]
+      ],
     },
 
     spells: [
@@ -3296,46 +3976,58 @@ export default {
                   {
                     name_set: spells.detect_poison_and_disease[1].name,
 
-                    spells: [{ spell: spells.detect_poison_and_disease,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_poison_and_disease,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
 
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.purify_food_and_drink[1].name,
 
-                    spells: [{ spell: spells.purify_food_and_drink,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.purify_food_and_drink,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3357,60 +4049,76 @@ export default {
                   {
                     name_set: spells.detect_poison_and_disease[1].name,
 
-                    spells: [{ spell: spells.detect_poison_and_disease,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_poison_and_disease,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
 
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.purify_food_and_drink[1].name,
 
-                    spells: [{ spell: spells.purify_food_and_drink,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.purify_food_and_drink,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.speak_with_animals[1].name,
 
-                    spells: [{ spell: spells.speak_with_animals,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "wisdom",
-                      }
+                    spells: [
+                      {
+                        spell: spells.speak_with_animals,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "wisdom",
+                        },
+                      },
                     ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3432,46 +4140,58 @@ export default {
                   {
                     name_set: spells.illusory_script[1].name,
 
-                    spells: [{ spell: spells.illusory_script,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.illusory_script,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.unseen_servant[1].name,
 
-                    spells: [{ spell: spells.unseen_servant,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.unseen_servant,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
 
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3493,32 +4213,40 @@ export default {
                   {
                     name_set: spells.detect_magic[1].name,
 
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
 
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3540,116 +4268,148 @@ export default {
                   {
                     name_set: spells.illusory_script[1].name,
 
-                    spells: [{ spell: spells.illusory_script,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.illusory_script,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.unseen_servant[1].name,
 
-                    spells: [{ spell: spells.unseen_servant,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.unseen_servant,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
 
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.identify[1].name,
 
-                    spells: [{ spell: spells.identify,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.identify,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.find_familiar[1].name,
 
-                    spells: [{ spell: spells.find_familiar,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.find_familiar,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
 
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.alarm[1].name,
 
-                    spells: [{ spell: spells.alarm,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.alarm,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.tensers_floating_disk[1].name,
 
-                    spells: [{ spell: spells.tensers_floating_disk,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "intelligence",
-                      }
+                    spells: [
+                      {
+                        spell: spells.tensers_floating_disk,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "intelligence",
+                        },
+                      },
                     ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3671,88 +4431,112 @@ export default {
                   {
                     name_set: spells.illusory_script[1].name,
 
-                    spells: [{ spell: spells.illusory_script,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.illusory_script,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.unseen_servant[1].name,
 
-                    spells: [{ spell: spells.unseen_servant,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.unseen_servant,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.detect_magic[1].name,
 
-                    spells: [{ spell: spells.detect_magic,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.detect_magic,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.identify[1].name,
 
-                    spells: [{ spell: spells.identify,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.identify,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.comprehend_languages[1].name,
 
-                    spells: [{ spell: spells.comprehend_languages,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.comprehend_languages,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
                   {
                     name_set: spells.speak_with_animals[1].name,
 
-                    spells: [{ spell: spells.speak_with_animals,
-                        name_extra: "*",
-                        expanded_extra: "ritual_caster_expanded",
-                        slot_type: "0",
-                        cast_time: "ritual",  
-                        cast_duration_plus: 10,
-                        cast_duration_units_plus: "min",
-                        spell_attribute: "charisma",
-                      }
+                    spells: [
+                      {
+                        spell: spells.speak_with_animals,
+                        mod: {
+                          name_extra: "*",
+                          expanded_extra: "ritual_caster_expanded",
+                          slot_type: "0",
+                          cast_time: "ritual",
+                          cast_duration_plus: 10,
+                          cast_duration_units_plus: "min",
+                          spell_attribute: "charisma",
+                        },
+                      },
                     ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -3767,12 +4551,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
@@ -3800,12 +4584,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
@@ -3827,28 +4611,28 @@ export default {
         name: "spells_0",
         position: 3,
         select: 1,
-        list:[
+        list: [
           {
             name_set: spells.eldritch_blast[0].name,
-            spells: [{spell:spells.eldritch_blast}],
+            spells: [{ spell: spells.eldritch_blast }],
           },
           {
             name_set: spells.fire_bolt[0].name,
-            spells: [{spell:spells.fire_bolt}]
+            spells: [{ spell: spells.fire_bolt }],
           },
           {
             name_set: spells.ray_of_frost[0].name,
-            spells: [{spell:spells.ray_of_frost}]
+            spells: [{ spell: spells.ray_of_frost }],
           },
           {
             name_set: spells.shocking_grasp[0].name,
-            spells: [{spell:spells.shocking_grasp}]
+            spells: [{ spell: spells.shocking_grasp }],
           },
           {
             name_set: spells.thorn_whip[0].name,
-            spells: [{spell:spells.thorn_whip}]
+            spells: [{ spell: spells.thorn_whip }],
           },
-        ]
+        ],
       },
     ],
   },
@@ -3859,12 +4643,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
@@ -3887,12 +4671,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
@@ -3915,12 +4699,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
@@ -3943,12 +4727,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
@@ -3971,12 +4755,12 @@ export default {
     condition: "condition_spellcasting",
     //Требования: Способность накладьівать хотя бьі одно заклинание
 
-    filter:{
+    filter: {
       spells_exception: [
         {
           type: "ability",
         },
-      ]
+      ],
     },
 
     fines: [
