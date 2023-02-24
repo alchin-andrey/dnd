@@ -4033,10 +4033,10 @@ export default {
                 spell: spells.haste,
               },
               //TODO - додати спели
-              // {
-              //   level: 13,
-              //   spell: spells.banishment,
-              // },
+              {
+                level: 13,
+                spell: spells.banishment,
+              },
               // {
               //   level: 13,
               //   spell: spells.dimension_door,

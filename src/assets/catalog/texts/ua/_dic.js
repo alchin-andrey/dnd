@@ -5487,4 +5487,8 @@ export default {
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
   ritual_caster_expanded: "<br/><br/>* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу.",
+
+  spell_banishment: spells.banishment,
+  spell_banishment_details: spells.banishment_details,
+  spell_banishment_expanded: spells.banishment_expanded,
 };

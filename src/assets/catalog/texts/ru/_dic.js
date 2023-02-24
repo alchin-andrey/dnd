@@ -5512,4 +5512,12 @@ export default {
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
   ritual_caster_expanded: "<br/><br/>* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, на 10 минут дольше, и держа в руке свою ритуальную книгу.",
+
+  spell_banishment: spells.banishment,
+  spell_banishment_details: spells.banishment_details,
+  spell_banishment_expanded: spells.banishment_expanded,
+
+  spell_crown_of_madness: spells.crown_of_madness,
+  spell_crown_of_madness_details: spells.crown_of_madness_details,
+  spell_crown_of_madness_expanded: spells.crown_of_madness_expanded,
 };  
