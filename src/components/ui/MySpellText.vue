@@ -71,14 +71,14 @@
 				/>{{ em_After }}
 			</div>
 		</my-wrapper>
-		<section v-if="Spell_Index.slot_type || shown_Manna">
+		<section class="jbm-300" v-if="Spell_Index.slot_type || shown_Manna">
 			<section
 				class="manna_bubble manna_bubble_active"
 				v-if="Spell_Index.slot_type"
 			>
 				{{ t_Slot_Type }}
 			</section>
-			<section class="manna_flex jbm-300" v-if="shown_Manna">
+			<section class="manna_flex" v-if="shown_Manna">
 				<div
 					class="manna_bubble manna_bubble_choice"
 					v-for="n in Manna_Length"
