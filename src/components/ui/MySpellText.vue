@@ -1,5 +1,10 @@
 <template>
-	<AppTooltip class="relative" text="hint_over_limit" :shown="overflow_Save && !param" warn>
+	<AppTooltip
+		class="relative"
+		text="hint_over_limit"
+		:shown="overflow_Save && !param"
+		warn
+	>
 		<div
 			v-if="lvl_Show"
 			class="flex_spell"
@@ -8,13 +13,13 @@
 			@click="showDialog_Full()"
 		>
 			<div ref="stripe" class="side_stripe"></div>
-			<div
-				class="int-400 flex_col"
-				:class="{passive: passive}"
-			>
+			<div class="int-400 flex_col" :class="{ passive: passive }">
 				<div>
 					<div class="flex_title">
-						<div class="title_spell h_18" :class="{'rare-text': overflow_Save}">
+						<div
+							class="title_spell h_18"
+							:class="{ 'rare-text': overflow_Save }"
+						>
 							{{ em_Before
 							}}<emoji
 								v-if="em_Upd"
@@ -66,21 +71,29 @@
 				/>{{ em_After }}
 			</div>
 		</my-wrapper>
-		<div class="manna_flex jbm-300" v-if="shown_Manna">
-			<div
-				class="manna_bubble manna_bubble_choice"
-				v-for="n in Manna_Length"
-				:key="n"
-				@click="choiceManna(n)"
-				:class="{
-					manna_bubble_passive: n - 1 < Index,
-					manna_bubble_active: n - 1 === mana_numb,
-					manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === mana_numb),
-				}"
+		<section v-if="Spell_Index.slot_type || shown_Manna">
+			<section
+				class="manna_bubble manna_bubble_active"
+				v-if="Spell_Index.slot_type"
 			>
-				{{ Spell_Index.slot_type ? t(Spell_Index.slot_type) : n - 1 }}
-			</div>
-		</div>
+				{{ t_Slot_Type }}
+			</section>
+			<section class="manna_flex jbm-300" v-if="shown_Manna">
+				<div
+					class="manna_bubble manna_bubble_choice"
+					v-for="n in Manna_Length"
+					:key="n"
+					@click="choiceManna(n)"
+					:class="{
+						manna_bubble_passive: n - 1 < Index,
+						manna_bubble_active: n - 1 === mana_numb,
+						manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === mana_numb),
+					}"
+				>
+					{{ n - 1 }}
+				</div>
+			</section>
+		</section>
 
 		<div class="text_spell" v-html="t_Text"></div>
 
@@ -178,18 +191,18 @@ export default {
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb"]),
 		...mapState(useSkillsStore, ["skills"]),
-    ...mapState(useOverflowStore, ["overflow_Spell"]),
+		...mapState(useOverflowStore, ["overflow_Spell"]),
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
 
-    overflow_Save() {
-      if(this.param) {
-        return false;
-      } else {
-        return this.overflow_Spell(this.spell, this.active_card)
-      }
+		overflow_Save() {
+			if (this.param) {
+				return false;
+			} else {
+				return this.overflow_Spell(this.spell, this.active_card);
+			}
 		},
 
 		Spell_Index() {
@@ -216,7 +229,8 @@ export default {
 			const manna_0 = this.Manna_Length == 1;
 			const slot = this.Spell_Index.slot_type;
 			const ability = this.Spell_Index.type == "ability";
-			return !manna_0 || slot || !ability;
+			const slot_type = this.Spell_Index.slot_type;
+			return (!manna_0 || slot || !ability) && !slot_type;
 		},
 
 		lvl_Show() {
@@ -243,6 +257,10 @@ export default {
 			let string = this.t(this.Spell_Index.type);
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
+
+    t_Slot_Type() {
+    return this.t(this.Spell_Index.slot_type)
+    },
 
 		t_Text() {
 			let foo = this.Value_Det;
@@ -319,7 +337,7 @@ export default {
 			const KOF = 8;
 			let attribute = this.MY.class.spell_attribute;
 			let mastery = this.Mastery;
-      let stats_mod = this.stats_Mod(attribute);
+			let stats_mod = this.stats_Mod(attribute);
 			return KOF + mastery + stats_mod;
 		},
 
@@ -786,7 +804,7 @@ export default {
 	methods: {
 		hoverIn_Select() {
 			if (this.select) {
-					this.$refs.stripe.classList.add("active");
+				this.$refs.stripe.classList.add("active");
 			}
 		},
 		hoverOut() {
@@ -796,7 +814,7 @@ export default {
 		},
 		hoverIn_Full() {
 			if (!this.select) {
-					this.$refs.stripe.classList.add("active");
+				this.$refs.stripe.classList.add("active");
 			}
 		},
 		showDialog_Full() {
@@ -869,7 +887,7 @@ export default {
 
 .manna_bubble {
 	padding: 5px 12px;
-	min-width: 31px;
+	max-width: max-content;
 	height: 28px;
 	border-radius: 100px;
 	display: flex;
@@ -877,6 +895,16 @@ export default {
 	justify-content: center;
 	cursor: pointer;
 }
+
+/* .slot_type_bubble {
+	padding: 5px 12px;
+	max-width: max-content;
+	height: 28px;
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
 
 .manna_bubble_choice {
 	background: rgba(255, 255, 255, 0.06);
