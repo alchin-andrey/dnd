@@ -4024,15 +4024,15 @@ export default {
                 level: 7,
                 spell: spells.relentless_avenger,
               },
+              {
+                level: 9,
+                spell: spells.protection_from_energy,
+              },
+              {
+                level: 9,
+                spell: spells.haste,
+              },
               //TODO - додати спели
-              // {
-              //   level: 9,
-              //   spell: spells.protection_from_energy,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.haste,
-              // },
               // {
               //   level: 13,
               //   spell: spells.banishment,
@@ -6338,10 +6338,10 @@ export default {
                       //   level: 5,
                       //   spell: spells.daylight,
                       // },
-                      // {
-                      //   level: 5,
-                      //   spell: spells.haste,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.haste,
+                      },
                       // {
                       //   level: 7,
                       //   spell: spells.divination,

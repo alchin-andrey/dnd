@@ -1663,25 +1663,80 @@ export default {
                   },
                 ]
               },
-              // {
-              //   type: "spells",
-              //   name: "spells_0",
-              //   position: 3,
-              //   select: 2,
-              //   mana_min: 0,
-              //   mana_max: 0,
-              //   classes: ["cleric"],
-              // },
               {
-                type: "spells",
+                // TODO - Apply alterations
+                // выберите одно заклинание 1 уровня из этого же списка. Вы узнаёте это заклинание и можете накладывать его на минимально возможном уровне. После использования заклинания вы должны закончить продолжительный отдых, прежде чем сможете снова использовать его этой чертой.
+                //Базовая характеристика для этих заклинаний зависит от выбранного класса:
+                //Харизма для барда колдуна и чародея;
+                //Интеллект для волшебника;
+                //Мудрость для друида и жреца.
+                type: "custom",
                 name: "spells_1",
-                details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
-                mana_min: 1,
-                mana_max: 1,
-                filter: { classes: ["cleric"],}
-                //TODO - поставить на заклинании какую-то метку?
+                list: [
+                  //spells[1] cleric
+                  {
+                    name_set: spells.bless[0].name,
+                    spells: [{ spell: spells.bless }],
+                  },
+                  {
+                    name_set: spells.protection_from_evil_and_good[0].name,
+                    spells: [{ spell: spells.protection_from_evil_and_good }],
+                  },
+                  {
+                    name_set: spells.healing_word[0].name,
+                    spells: [{ spell: spells.healing_word }],
+                  },
+                  {
+                    name_set: spells.cure_wounds[0].name,
+                    spells: [{ spell: spells.cure_wounds }],
+                  },
+                  {
+                    name_set: spells.inflict_wounds[0].name,
+                    spells: [{ spell: spells.inflict_wounds }],
+                  },
+                  {
+                    name_set: spells.guiding_bolt[0].name,
+                    spells: [{ spell: spells.guiding_bolt }],
+                  },
+                  {
+                    name_set: spells.detect_poison_and_disease[0].name,
+                    spells: [{ spell: spells.detect_poison_and_disease }],
+                  },
+                  {
+                    name_set: spells.detect_evil_and_good[0].name,
+                    spells: [{ spell: spells.detect_evil_and_good }],
+                  },
+                  {
+                    name_set: spells.detect_magic[0].name,
+                    spells: [{ spell: spells.detect_magic }],
+                  },
+                  {
+                    name_set: spells.purify_food_and_drink[0].name,
+                    spells: [{ spell: spells.purify_food_and_drink }],
+                  },
+                  {
+                    name_set: spells.bane[0].name,
+                    spells: [{ spell: spells.bane }],
+                  },
+                  {
+                    name_set: spells.command[0].name,
+                    spells: [{ spell: spells.command }],
+                  },
+                  {
+                    name_set: spells.create_or_destroy_water[0].name,
+                    spells: [{ spell: spells.create_or_destroy_water }],
+                  },
+                  {
+                    name_set: spells.sanctuary[0].name,
+                    spells: [{ spell: spells.sanctuary }],
+                  },
+                  {
+                    name_set: spells.shield_of_faith[0].name,
+                    spells: [{ spell: spells.shield_of_faith }],
+                  },
+                ]
               },
             ],
           },

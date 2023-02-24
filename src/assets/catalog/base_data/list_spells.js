@@ -20628,6 +20628,51 @@ export default {
     },
   ],
 
+  haste: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_haste",
+      details: "spell_haste_details",
+      expanded: "spell_haste_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","sorcerer",    "warlock","druid","cleric","paladin","bard","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   plant_growth: [
     {},
     {},

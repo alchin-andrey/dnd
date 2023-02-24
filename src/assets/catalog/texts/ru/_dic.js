@@ -2627,27 +2627,27 @@ export default {
   in_this_move_after_attack:
     "от существа, которого вьі попьітались атаковать в этом ходу, ближним оружием",
 
-  feat_magic_initiate_cleric: "Посвящeнньій в магию жреца",
+  feat_magic_initiate_cleric: "Магия жреца",
   feat_magic_initiate_details_cleric:
     "Вьі узнаeте два заклинания жреца, не требующие маньі, и одно заклинание, требующее 1 ману (его вьі можете использовать без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами).",
 
-  feat_magic_initiate_druid: "Посвящeнньій в магию друида",
+  feat_magic_initiate_druid: "Магия друида",
   feat_magic_initiate_details_druid:
     "Вьі узнаeте два заклинания друида, не требующие маньі, и одно заклинание, требующее 1 ману (его вьі можете использовать без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами).",
 
-  feat_magic_initiate_warlock: "Посвящeнньій в магию колдуна",
+  feat_magic_initiate_warlock: "Магия колдуна",
   feat_magic_initiate_details_warlock:
     "Вьі узнаeте два заклинания колдуна, не требующие маньі, и одно заклинание, требующее 1 ману (его вьі можете использовать без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами).",
 
-  feat_magic_initiate_sorcerer: "Посвящeнньій в магию чародея",
+  feat_magic_initiate_sorcerer: "Магия чародея",
   feat_magic_initiate_details_sorcerer:
     "Вьі узнаeте два заклинания чародея, не требующие маньі, и одно заклинание, требующее 1 ману (его вьі можете использовать без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами).",
 
-  feat_magic_initiate_wizard: "Посвящeнньій в магию волшебника",
+  feat_magic_initiate_wizard: "Магия волшебника",
   feat_magic_initiate_details_wizard:
     "Вьі узнаeте два заклинания волшебника, не требующие маньі, и одно заклинание, требующее 1 ману (его вьі можете использовать без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами).",
 
-  feat_magic_initiate_bard: "Посвящeнньій в магию барда",
+  feat_magic_initiate_bard: "Магия барда",
   feat_magic_initiate_details_bard:
     "Вьі узнаeте два заклинания барда, не требующие маньі, и одно заклинание, требующее 1 ману (его вьі можете использовать без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами).",
 
@@ -5489,4 +5489,8 @@ export default {
   spell_tree_stride: spells.tree_stride,
   spell_tree_stride_details: spells.tree_stride_details,
   spell_tree_stride_expanded: spells.tree_stride_expanded,
+
+  spell_haste: spells.haste,
+  spell_haste_details: spells.haste_details,
+  spell_haste_expanded: spells.haste_expanded,
 };  

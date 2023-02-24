@@ -2612,27 +2612,27 @@ export default {
   in_this_move_after_attack:
     "від істоти, яку ви спробували атакувати в цьому ходу, ближньою зброєю",
 
-  feat_magic_initiate_cleric: "Посвячений у магію клірика",
+  feat_magic_initiate_cleric: "Магія клірика",
   feat_magic_initiate_details_cleric:
     "Ви знаєте два закляття клірика, що не потребують мани, і одне заклинання, що вимагає 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
 
-  feat_magic_initiate_druid: "Посвячений у магію друїда",
+  feat_magic_initiate_druid: "Магія друїда",
   feat_magic_initiate_details_druid:
     "Ви знаєте два заклинання друїда, що не вимагають мани, і одне заклинання, що вимагає 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
 
-  feat_magic_initiate_warlock: "Посвячений у магію чаклуна",
+  feat_magic_initiate_warlock: "Магія чаклуна",
   feat_magic_initiate_details_warlock:
     "Ви знаєте два закляття чаклуна, що не потребують мани, і одне заклинання, що вимагає 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
 
-  feat_magic_initiate_sorcerer: "Посвячений у магію чародія",
+  feat_magic_initiate_sorcerer: "Магія чародія",
   feat_magic_initiate_details_sorcerer:
     "Ви знаєте два закляття чародія, що не потребують мани, і одне заклинання, що вимагає 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
 
-  feat_magic_initiate_wizard: "Посвячений у магію чарівника",
+  feat_magic_initiate_wizard: "Магія чарівника",
   feat_magic_initiate_details_wizard:
     "Ви знаєте два закляття чарівника, що не потребують мани, і одне заклинання, що вимагає 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
 
-  feat_magic_initiate_bard: "Посвячений у магію барда",
+  feat_magic_initiate_bard: "Магія барда",
   feat_magic_initiate_details_bard:
     "Ви знаєте два закляття барда, що не потребують мани, і одне заклинання, що вимагає 1 ману (його ви можете використовувати без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками).",
 
@@ -5464,5 +5464,9 @@ export default {
   spell_tree_stride: spells.tree_stride,
   spell_tree_stride_details: spells.tree_stride_details,
   spell_tree_stride_expanded: spells.tree_stride_expanded,
+
+  spell_haste: spells.haste,
+  spell_haste_details: spells.haste_details,
+  spell_haste_expanded: spells.haste_expanded,
 
 };
