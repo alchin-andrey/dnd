@@ -94,6 +94,14 @@ export default {
 
     spells: [
       {
+        spell: spells.pass_without_trace_monk,
+        //TODO - Для отладки
+      },
+      {
+        spell: spells.bless,
+        //TODO - Для отладки
+      },
+      {
         level: 1,
         spell: spells.sneaky_attack,
       },

@@ -1677,63 +1677,70 @@ export default {
                 list: [
                   //spells[1] cleric
                   {
-                    name_set: spells.bless[0].name,
-                    spells: [{ spell: spells.bless }],
+                    name_set: spells.bless[1].name,
+
+                    
+                    spells: 
+                    [
+                      { 
+                        spell: spells.bless,
+                      }
+                    ],
                   },
                   {
-                    name_set: spells.protection_from_evil_and_good[0].name,
+                    name_set: spells.protection_from_evil_and_good[1].name,
                     spells: [{ spell: spells.protection_from_evil_and_good }],
                   },
                   {
-                    name_set: spells.healing_word[0].name,
+                    name_set: spells.healing_word[1].name,
                     spells: [{ spell: spells.healing_word }],
                   },
                   {
-                    name_set: spells.cure_wounds[0].name,
+                    name_set: spells.cure_wounds[1].name,
                     spells: [{ spell: spells.cure_wounds }],
                   },
                   {
-                    name_set: spells.inflict_wounds[0].name,
+                    name_set: spells.inflict_wounds[1].name,
                     spells: [{ spell: spells.inflict_wounds }],
                   },
                   {
-                    name_set: spells.guiding_bolt[0].name,
+                    name_set: spells.guiding_bolt[1].name,
                     spells: [{ spell: spells.guiding_bolt }],
                   },
                   {
-                    name_set: spells.detect_poison_and_disease[0].name,
+                    name_set: spells.detect_poison_and_disease[1].name,
                     spells: [{ spell: spells.detect_poison_and_disease }],
                   },
                   {
-                    name_set: spells.detect_evil_and_good[0].name,
+                    name_set: spells.detect_evil_and_good[1].name,
                     spells: [{ spell: spells.detect_evil_and_good }],
                   },
                   {
-                    name_set: spells.detect_magic[0].name,
+                    name_set: spells.detect_magic[1].name,
                     spells: [{ spell: spells.detect_magic }],
                   },
                   {
-                    name_set: spells.purify_food_and_drink[0].name,
+                    name_set: spells.purify_food_and_drink[1].name,
                     spells: [{ spell: spells.purify_food_and_drink }],
                   },
                   {
-                    name_set: spells.bane[0].name,
+                    name_set: spells.bane[1].name,
                     spells: [{ spell: spells.bane }],
                   },
                   {
-                    name_set: spells.command[0].name,
+                    name_set: spells.command[1].name,
                     spells: [{ spell: spells.command }],
                   },
                   {
-                    name_set: spells.create_or_destroy_water[0].name,
+                    name_set: spells.create_or_destroy_water[1].name,
                     spells: [{ spell: spells.create_or_destroy_water }],
                   },
                   {
-                    name_set: spells.sanctuary[0].name,
+                    name_set: spells.sanctuary[1].name,
                     spells: [{ spell: spells.sanctuary }],
                   },
                   {
-                    name_set: spells.shield_of_faith[0].name,
+                    name_set: spells.shield_of_faith[1].name,
                     spells: [{ spell: spells.shield_of_faith }],
                   },
                 ]
