@@ -20811,6 +20811,57 @@ export default {
     },
   ],
 
+  banishment: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_banishment",
+      details: "spell_banishment_details",
+      expanded: "spell_banishment_expanded",
+
+      type: "abjuration",
+      classes: ["wizard","cleric","warlock","paladin","sorcerer",      "druid","bard","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
   freedom_of_movement: [
     {},
     {},
