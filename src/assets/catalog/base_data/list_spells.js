@@ -20863,6 +20863,52 @@ export default {
     {},
   ],
 
+  dimension_door: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_dimension_door",
+      details: "spell_dimension_door_details",
+      expanded: "spell_dimension_door_expanded",
+
+      type: "conjuration",
+      classes: ["bard","wizard","warlock","sorcerer",       "ranger","paladin","druid","cleric",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 500,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "force_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 4,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   freedom_of_movement: [
     {},
     {},
@@ -20899,8 +20945,8 @@ export default {
 
       impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: 8,
-      impact_size_dic: 6,
+      impact_size_num: null,
+      impact_size_dic: null,
       impact_size_pls: null,
 
       saving_need: false,
