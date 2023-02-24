@@ -77,15 +77,13 @@
 
 			<!-- Этнос_Карточка_spells -->
 			<my-wrapper v-if="level_Filter_Arr(ethnos.spells).length !== 0" gap_26>
-				<my-spell-text
+				<AppSpells
 					v-for="item in level_Filter_Arr(ethnos.spells)"
 					:key="item"
-					:lvl="item.level"
-					:spell="item.spell"
+					:spell_obj="item"
 					select
 					:active_card="MY.ethnos.name === ethnos.name"
-				>
-				</my-spell-text>
+				/>
 			</my-wrapper>
 			<!-- Этнос_Карточка_spells -->
 

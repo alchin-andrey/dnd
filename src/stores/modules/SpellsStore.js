@@ -31,19 +31,19 @@ export const useSpellsStore = defineStore({
 		spells_Race_Main_Arr() {
 			const MYStore = useMYStore();
 			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.race?.spells);
-			return this.spells_For_Arr_Obj(spell_obj);
+			return spell_obj;
 		},
 
 		spells_Race_Ethnos_Arr() {
 			const MYStore = useMYStore();
 			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.spells);
-			return this.spells_For_Arr_Obj(spell_obj);
+			return spell_obj;
 		},
 
 		spells_Custom_Race_Lvl() {
 			const MYStore = useMYStore();
 			let spell_arr = MYStore.filter_Custom_Race_Lvl("spells");
-			return this.spells_For_Arr_Obj(spell_arr);
+			return spell_arr;
 		},
 
 		spells_Race_Param_All() {
@@ -60,13 +60,13 @@ export const useSpellsStore = defineStore({
 		spells_Class_Main_Arr() {
 			const MYStore = useMYStore();
 			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.class?.spells);
-			return this.spells_For_Arr_Obj(spell_obj);
+			return spell_obj;
 		},
 
 		spells_Class_Custom_Arr() {
 			const MYStore = useMYStore();
 			let spell_arr = MYStore.filter_Custom_Class_Lvl("spells");
-			return this.spells_For_Arr_Obj(spell_arr);
+			return spell_arr;
 		},
 
 		spells_Class_Param_All() {

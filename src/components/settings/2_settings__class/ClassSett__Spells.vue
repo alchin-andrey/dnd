@@ -14,10 +14,10 @@
 						v-for="list_el in filter_Spells(i - 1)"
 						:key="list_el"
 					>
-						<my-spell-text
+						<AppSpells
 							v-for="item in list_el.spells"
 							:key="item"
-							:spell="item.spell"
+							:spell_obj="item"
 							:active_card="false"
 						/>
 					</my-selection-card>
@@ -33,10 +33,10 @@
   				v-for="list_el in spells_setting.list"
   				:key="list_el"
   			>
-  				<my-spell-text
+  				<AppSpells
   					v-for="item in list_el.spells"
   					:key="item"
-  					:spell="item.spell"
+  					:spell_obj="item"
   					:active_card="false"
   				/>
   			</my-selection-card>

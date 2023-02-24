@@ -54,13 +54,11 @@
 		<!-- Этнос_fines -->
 		<!-- Этнос_spells -->
 		<my-wrapper v-if="shown_Spells_Race" gap_26>
-			<my-spell-text
+			<AppSpells
 				v-for="item in MY.race.spells"
 				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
-			>
-			</my-spell-text>
+				:spell_obj="item"
+			/>
 		</my-wrapper>
 		<!-- Этнос_spells -->
 	</div>

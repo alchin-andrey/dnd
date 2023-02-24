@@ -103,7 +103,7 @@ export const useOverflowStore = defineStore({
 		//NOTE - Spell
 		overflow_Spell: (stor) => (name, active) => {
 			const SpellsStore = useSpellsStore();
-			const spell_arr = SpellsStore.spells_Page_All_Arr;
+			const spell_arr = SpellsStore.spells_For_Arr_Obj(SpellsStore.spells_Page_All_Arr);
 			const name_times = spell_arr.reduce(
 				(acc, el) => (el == name ? acc + 1 : acc),
 				0

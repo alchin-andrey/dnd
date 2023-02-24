@@ -5,6 +5,7 @@ import AppFines from "@/components/ui/AppFines.vue";
 import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
 import AppStats from "@/components/ui/AppStats.vue";
 import AppSkills from "@/components/ui/AppSkills.vue";
+import AppSpells from "@/components/ui/AppSpells.vue";
 import AppCharges from "@/components/ui/AppCharges.vue";
 import AppCusstomCard from "@/components/ui/AppCusstomCard.vue";
 
@@ -62,6 +63,7 @@ export default [
   AppSelectionArr,
   AppStats,
   AppSkills,
+  AppSpells,
   AppCharges,
   AppCusstomCard,
   AppTooltip,

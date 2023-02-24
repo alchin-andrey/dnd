@@ -122,15 +122,13 @@
 
 		<!-- //NOTE - Spells -->
 		<my-wrapper v-if="shown_Param_Arr(custom.spells)" gap_26>
-			<my-spell-text
+			<AppSpells
 				v-for="item in level_Filter_Arr(custom.spells)"
 				:key="item"
-				:lvl="item.level"
-				:spell="item.spell"
+				:spell_obj="item"
 				select
 				:active_card="active_boll_link"
-			>
-			</my-spell-text>
+			/>
 		</my-wrapper>
 
 		<!-- //NOTE - Weapon -->
