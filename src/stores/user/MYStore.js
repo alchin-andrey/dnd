@@ -87,7 +87,7 @@ export const useMYStore = defineStore({
       ];
     },
 
-    сustomm_Settings_Class_Arr_Filter(stor) {
+    сustomm_Settings_Class_Arr(stor) {
       const start_arr = stor.сustomm_Settings_Class_Arr_Clean;
       const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
       const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
@@ -98,14 +98,14 @@ export const useMYStore = defineStore({
       return filter_only_mastery;
     },
 
-    сustomm_Settings_Class_Arr() {
-      const custom_class = this.сustomm_Settings_Class_Arr_Filter;
-      // const spells_sett = this.spells_Settings_Class_Arr;
-      return [
-        ...custom_class, 
-        // ...spells_sett
-      ];
-    },
+    // сustomm_Settings_Class_Arr() {
+    //   const custom_class = this.сustomm_Settings_Class_Arr_Filter;
+    //   const spells_sett = this.spells_Settings_Class_Arr;
+    //   return [
+    //     ...custom_class, 
+    //     ...spells_sett
+    //   ];
+    // },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
       return stor.filter_Custom_Lvl(stor.сustomm_Settings_Race_Arr, name);
@@ -128,7 +128,7 @@ export const useMYStore = defineStore({
 
     spells_Settings_Class_Arr() {
       const sett_class = this.level_Filter_Arr(this.MY.class.settings);
-      const sett_custom = this.filter_Custom_Lvl(this.сustomm_Settings_Class_Arr_Clean, 'settings');
+      const sett_custom = this.filter_Custom_Lvl(this.сustomm_Main_Settings_Class_Arr, 'settings');
       const sett_all = [
         ...sett_class, 
         ...sett_custom
@@ -150,26 +150,26 @@ export const useMYStore = defineStore({
           
           const list_lvl = this.settingsSpellsList(item);
 
-          const select_arr_lvl = this.level_Filter_Arr(select_arr);
-          const select_not_null = select_arr_lvl.filter((el) => list_lvl.some(item => {
-            if (item.name) {
-              return item.name == el.name;
-            } else {
-              return item.name_set == el.name_set;
-            }
-          })); //NOTE - NEW
+          // const select_arr_lvl = this.level_Filter_Arr(select_arr);
+          // const select_not_null = select_arr_lvl.filter((el) => list_lvl.some(item => {
+          //   if (item.name) {
+          //     return item.name == el.name;
+          //   } else {
+          //     return item.name_set == el.name_set;
+          //   }
+          // })); //NOTE - NEW
 
-					const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.some(item => {
-            if (item.name) {
-              return item.name == el.name;
-            } else {
-              return item.name_set == el.name_set;
-            }
-          })); //NOTE - NEW
+					// const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.some(item => {
+          //   if (item.name) {
+          //     return item.name == el.name;
+          //   } else {
+          //     return item.name_set == el.name_set;
+          //   }
+          // })); //NOTE - NEW
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
-						select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
+						select_arr?.[i] ? select_list.push(select_arr[i]) : null;
 					}
 
           new_arr.push({

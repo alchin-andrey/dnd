@@ -9,6 +9,7 @@ import AppCharges from "@/components/ui/AppCharges.vue";
 import AppCusstomCard from "@/components/ui/AppCusstomCard.vue";
 
 import AppTooltip from "@/components/ui/AppTooltip.vue";
+import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
 
 
 
@@ -64,6 +65,7 @@ export default [
   AppCharges,
   AppCusstomCard,
   AppTooltip,
+  AppSpellsPacks,
 
   MyBackPage,
 

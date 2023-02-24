@@ -13,6 +13,7 @@
     <div class="selection_menu" v-if="shown_Spells">
       <AppSelectionArr :menu="spells_0_Filter"/>
 			<AppSelectionArr :menu="spells_Filter"/>
+			<AppSelectionArr :menu="spells_Settings_Class_Arr"/>
 		</div>
 
     <div class="selection_menu">
@@ -57,7 +58,7 @@ export default {
     // STORE
 		...mapState(usePagesStore, ["class_page"]),
     // GETTERS
-		...mapState(useMYStore, [ "сustomm_Settings_Class_Arr" ]),
+		...mapState(useMYStore, [ "сustomm_Settings_Class_Arr", "spells_Settings_Class_Arr" ]),
 
     ...mapState(useStatsStore, [ "stats_Base_Settings_Two_T"]),
     ...mapState(useFeatsStore, [ "feats_Select_Arr"]),
@@ -98,7 +99,8 @@ export default {
     shown_Spells() {
       return (
         this.spells_0_Filter.length !== 0 ||
-        this.spells_Filter.length !== 0
+        this.spells_Filter.length !== 0 ||
+        this.spells_Settings_Class_Arr.length !== 0
       )
     },
 

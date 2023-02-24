@@ -13,6 +13,14 @@
 			<ClassSett__Custom :custom="item"/>
 		</my-selection-box>
 
+  <my-selection-box
+			v-for="item in spells_Settings_Class_Arr"
+			:key="item.id_link"
+			:shown="class_page.shown[item.id_link]"
+		>
+			<ClassSett__Spells :spells_setting="item"/>
+		</my-selection-box>
+
   <!-- feats_Settings -->
   <my-selection-box
 			v-for="item in feats_Settings_Class"
@@ -36,7 +44,7 @@ export default {
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["class_page"]),
-		...mapState(useMYStore, ["сustomm_Settings_Class_Arr"]),
+		...mapState(useMYStore, ["сustomm_Settings_Class_Arr", "spells_Settings_Class_Arr"]),
     ...mapState(useFeatsStore, ["feats_Settings_Class"]),
 	},
   methods: {

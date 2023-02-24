@@ -896,16 +896,6 @@ export default {
 	cursor: pointer;
 }
 
-/* .slot_type_bubble {
-	padding: 5px 12px;
-	max-width: max-content;
-	height: 28px;
-	border-radius: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
-
 .manna_bubble_choice {
 	background: rgba(255, 255, 255, 0.06);
 	color: #ffffff;

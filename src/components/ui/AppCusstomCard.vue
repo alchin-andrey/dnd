@@ -280,7 +280,7 @@ export default {
 	watch: {
 		active_boll_link: {
 			handler: function (val, oldVal) {
-				if (val) {
+				if (val == true) {
 					this.$emit("clickOneMore", this.custom);
 				}
 			},
