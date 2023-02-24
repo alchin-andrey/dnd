@@ -15,6 +15,7 @@ export default {
 	ethnos: ethnos_def,
   ethnos_name: ethnos_def.name,
 	class: class_def,
+  _spells_save: {},
   settings: {},
   _settings_race: {},
   _settings_class_old: {},

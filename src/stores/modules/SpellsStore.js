@@ -13,6 +13,15 @@ export const useSpellsStore = defineStore({
 	}),
 
 	getters: {
+    spells_Arr() {
+      const obj = this.spells;
+      let new_arr = [];
+      for (const key in obj) {
+        new_arr.push(obj[key]);
+      }
+			return new_arr;
+		},
+
 		spells_For_Arr_Obj: (state) => (arr_obj) => {
 			let arr_spell = [];
 			arr_obj.forEach((el) => arr_spell.push(el.spell));

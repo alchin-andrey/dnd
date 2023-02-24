@@ -56,8 +56,7 @@ export default {
 
 		getCustomSelect(list_el) {
 			// console.log('list_el:', list_el)
-			const active = this.custom.select_list.includes(list_el);
-			// console.log('active:', active)
+			const active = this.getActive(list_el);
 			let arr = this.custom.select_list.slice(0);
 			if (!active) {
 				arr.splice(0, 1);

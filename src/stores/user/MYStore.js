@@ -2,10 +2,11 @@
 // import { watch, toRef } from 'vue';
 import { acceptHMRUpdate, defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
-// import { useStatsStore } from "@/stores/modules/StatsStore";
+
+import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
-// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-// import { useSpellsStore } from "@/stores/modules/SpellsStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
+
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
 // import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
 // import { usePagesStore } from "@/stores/user/PagesStore";
@@ -74,22 +75,36 @@ export const useMYStore = defineStore({
 			return this.settingsSelectList("class", FeatsStore.feats_Select_Arr, "custom");
 		},
 
-    сustomm_Settings_Class_Arr_No_Filter(stor) {
+    сustomm_Settings_Class_Arr_Clean(stor) {
       const FeatsStore = useFeatsStore();
       const main_custom = stor.сustomm_Main_Settings_Class_Arr;
       const feats = FeatsStore.feats_Select_Arr;
       const feats_custom = stor.сustomm_Feats_Settings_Class_Arr;
-      return [...main_custom, ...feats, ...feats_custom];
+      return [
+        ...main_custom, 
+        ...feats, 
+        ...feats_custom
+      ];
     },
 
-    сustomm_Settings_Class_Arr(stor) {
-      const start_arr = stor.сustomm_Settings_Class_Arr_No_Filter;
+    сustomm_Settings_Class_Arr_Filter(stor) {
+      const start_arr = stor.сustomm_Settings_Class_Arr_Clean;
       const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
       const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
 
       const filter_battle_style = stor.filterSettings_NoUsed(sort_arr_lvl);
       const filter_only_mastery = stor.filterSettings_OnlyMastery(filter_battle_style);
+      
       return filter_only_mastery;
+    },
+
+    сustomm_Settings_Class_Arr() {
+      const custom_class = this.сustomm_Settings_Class_Arr_Filter;
+      // const spells_sett = this.spells_Settings_Class_Arr;
+      return [
+        ...custom_class, 
+        // ...spells_sett
+      ];
     },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
@@ -110,13 +125,148 @@ export const useMYStore = defineStore({
       });
 			return res_arr;
 		},
+
+    spells_Settings_Class_Arr() {
+      const sett_class = this.level_Filter_Arr(this.MY.class.settings);
+      const sett_custom = this.filter_Custom_Lvl(this.сustomm_Settings_Class_Arr_Clean, 'settings');
+      const sett_all = [
+        ...sett_class, 
+        ...sett_custom
+      ];
+      const sett_spell = sett_all.filter((el) => el.type == 'spells');
+
+      let all_name = sett_spell.reduce((acc, el) => acc.concat(el.name), []);
+			const uniqu_name = [...new Set(all_name)];
+
+      const sett_select = this.MY._settings_class[this.MY.class.name];
+      let new_arr = [];
+      for (const item_name of uniqu_name) {
+				const link_name = item_name;
+				const sett_for_name = sett_spell.filter((el) => el.name == item_name);
+        sett_for_name?.forEach((item, i) => {
+          const link_name_i = `${link_name}__${i}`;
+					const select_numb = this.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
+					const select_arr = sett_select?.[link_name_i] ?? [];
+          
+          const list_lvl = this.settingsSpellsList(item);
+
+          const select_arr_lvl = this.level_Filter_Arr(select_arr);
+          const select_not_null = select_arr_lvl.filter((el) => list_lvl.some(item => {
+            if (item.name) {
+              return item.name == el.name;
+            } else {
+              return item.name_set == el.name_set;
+            }
+          })); //NOTE - NEW
+
+					const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.some(item => {
+            if (item.name) {
+              return item.name == el.name;
+            } else {
+              return item.name_set == el.name_set;
+            }
+          })); //NOTE - NEW
+
+					let select_list = [];
+					for (let i = 0; i < select_numb; i += 1) {
+						select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
+					}
+
+          new_arr.push({
+						...item,
+						id_link: link_name_i,
+						select_list: select_list,
+            list: list_lvl,
+            select_numb: select_numb,
+					});
+
+        });
+      }
+
+      return new_arr;
+    },
+
+    Sel_Plus_CHA_Min1() {
+      const StatsStore = useStatsStore();
+			const mod = StatsStore.stats_Mod("charisma");
+			return mod >= 1 ? mod : 1;
+		},
+
+    Sel_Plus_WIS_Min1() {
+      const StatsStore = useStatsStore();
+			const mod = StatsStore.stats_Mod("wisdom");
+			return mod >= 1 ? mod : 1;
+		},
+
 	},
 	//!SECTION - GETTERS
 
 	//SECTION - //? ACTIONS
 	actions: {
+    settingsSpellsList(item) {
+      const SpellsStore = useSpellsStore();
+      const lvl = this.MY.level;
+      const mana_min = item.mana_min;
+      const mana_max = Array.isArray(item.mana_max) ? item.mana_max[lvl - 1] : item.mana_max;
+      
+      const classes_filter_arr = item.filter.classes;
+      const type_filter_arr = item.filter?.type;
+      const cast_time_filter = item.filter?.cast_time;
+
+      const extra_items = item.extra_items;
+
+      const spell_arr = SpellsStore.spells_Arr;
+
+      let arr = [];
+      spell_arr.forEach(el => {
+        const find_el = el.find((item, i) => mana_min <= i && i <= mana_max && item?.name && item?.type != "ability");
+        if(find_el) {
+          const class_verif_arr = find_el.classes.filter(item => classes_filter_arr.includes(item));
+          
+          const class_verif = class_verif_arr.length !== 0;
+          const type_verif = type_filter_arr ? type_filter_arr.includes(find_el.type) : true;
+          const cast_time_verif = cast_time_filter ? cast_time_filter == find_el.cast_time : true;
+          if(class_verif && type_verif && cast_time_verif) {
+
+            //TODO - обернуть флагом
+            // const el_with_mark = el.map((el_map) => (
+            //   el_map.name
+            //   ? {...el_map, mark_details: 'my_details'}
+            //   : el_map
+            //   ));
+
+            arr.push({
+              name_set: find_el.name,
+              spells: [{spell: el}],
+            });
+          }
+        }
+        });
+      return arr;
+            // const spells_filter = spell_arr.filter(el => {
+      //   const find_el = el.find((item, i) => mana_min <= i && i <= mana_max && item?.name && item?.type != "ability");
+      //   if(find_el) {
+      //     const class_verif_arr = find_el.classes.filter(item => classes_filter_arr.includes(item));
+          
+      //     const class_verif = class_verif_arr.length !== 0;
+      //     const type_verif = type_filter_arr ? type_filter_arr.includes(find_el.type) : true;
+      //     const cast_time_verif = cast_time_filter ? cast_time_filter == find_el.cast_time : true;
+      //     return class_verif && type_verif && cast_time_verif;
+      //   }
+      //   return find_el;
+      //   });
+      // console.log('spells_filter:', spells_filter);
+    },
+
+    select_spells_Numb(item) {
+			const lvl = this.MY.level;
+      const select_numb = Array.isArray(item.select) ? item.select[lvl - 1] : item.select;
+      const foo_numb = item?.foo ? this[item.foo] : 0;
+			return select_numb + foo_numb;
+		},
+
 		settingsMainSelect(page, settings_arr, type_str, per_id_link) {
-			let new_arr = [];
+      let new_arr = [];
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
 			const sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
@@ -211,7 +361,7 @@ export const useMYStore = defineStore({
           new_battle_style_arr.push({...el, select_list: new_select_list});
         });
 
-        let new_arr = arr.slice(0);
+        let new_arr = arr; //slice(0)
         new_battle_style_arr.forEach((el) => {
           const select_list_includ = select_item_all.filter(item => !el.select_list.some(sub_el => sub_el.name == item.name));
           const list_filter = el.list.filter(item => !select_list_includ.some(sub_el => sub_el.name == item.name));

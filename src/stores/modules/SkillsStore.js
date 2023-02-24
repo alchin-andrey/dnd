@@ -105,7 +105,7 @@ export const useSkillsStore = defineStore({
     skills_RC_All_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
       const skill_MOD = stor.skills_MOD_Numb(name);
-      const skill_Mastery = stor.skills_Numb_Bonus(stor.stats_RC_Page, name);;
+      const skill_Mastery = stor.skills_Numb_Bonus(stor.stats_RC_Page, name);
 
       const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
 			let skills_foo = null;
