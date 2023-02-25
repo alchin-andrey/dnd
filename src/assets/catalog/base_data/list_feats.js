@@ -1698,6 +1698,7 @@ export default {
                         spell: spells.protection_from_evil_and_good,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1711,6 +1712,7 @@ export default {
                         spell: spells.healing_word,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1724,6 +1726,7 @@ export default {
                         spell: spells.cure_wounds,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1737,6 +1740,7 @@ export default {
                         spell: spells.inflict_wounds,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1750,6 +1754,7 @@ export default {
                         spell: spells.guiding_bolt,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1763,6 +1768,7 @@ export default {
                         spell: spells.detect_poison_and_disease,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1776,6 +1782,7 @@ export default {
                         spell: spells.detect_evil_and_good,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1789,6 +1796,7 @@ export default {
                         spell: spells.detect_magic,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1802,6 +1810,7 @@ export default {
                         spell: spells.purify_food_and_drink,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1815,6 +1824,7 @@ export default {
                         spell: spells.bane,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1828,6 +1838,7 @@ export default {
                         spell: spells.command,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1841,6 +1852,7 @@ export default {
                         spell: spells.create_or_destroy_water,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1854,6 +1866,7 @@ export default {
                         spell: spells.sanctuary,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
@@ -1867,6 +1880,7 @@ export default {
                         spell: spells.shield_of_faith,
                         mod: {
                           name_extra: "*",
+                          expanded_extra: "magic_initiate_expanded",
                           slot_type: "spell_cleric1",
                           spell_attribute: "wisdom",
                         },
