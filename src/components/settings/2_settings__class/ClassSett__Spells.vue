@@ -25,6 +25,7 @@
 								:spell_obj="item"
 								:active_card="false"
 								plus
+                :full_select="full_Spells_Select"
 								@updateSpell="getSpellSelect(list_el)"
 							/>
 						</my-selection-card>
@@ -97,6 +98,11 @@ export default {
 			unique_numb.sort((a, b) => a - b);
 			return unique_numb;
 		},
+
+    full_Spells_Select() {
+      const numb = this.spells_setting.select_numb - this.spells_setting.select_list.length;
+      return numb == 0;
+    },
 	},
 
 	methods: {
@@ -116,10 +122,7 @@ export default {
 		},
 
 		getSpellSelect(list_el) {
-			const numb =
-				this.spells_setting.select_numb -
-				this.spells_setting.select_list.length;
-			if (numb !== 0) {
+			if (!this.full_Spells_Select) {
 				this.getLink();
 				this.MY._settings_class[this.MY.class.name][
 					this.spells_setting.id_link

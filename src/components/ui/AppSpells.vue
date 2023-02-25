@@ -26,6 +26,9 @@
 					</div>
 					<svg
 						class="icon_svg"
+            :class="{
+              passive: full_select,
+            }"
 						@mouseover="hoverIn_Select()"
 						@mouseleave="hoverOut()"
 						@click="btnClick()"
@@ -195,6 +198,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    full_select: {
+      type: Boolean,
+			default: false,
+    }
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
