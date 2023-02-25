@@ -28,7 +28,7 @@
 						class="icon_svg"
 						@mouseover="hoverIn_Select()"
 						@mouseleave="hoverOut()"
-						@click="btnClick()"
+						@click="showDialog_Select()"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
 						v-html="ui_icon[icon_Svg]"
@@ -152,7 +152,6 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSpells",
-  emits: ["updateSpell"],
 	data() {
 		return {
 			ui_icon: ui_icon,
@@ -859,14 +858,6 @@ export default {
 		},
 	},
 	methods: {
-    btnClick() {
-      if (this.plus || this.delete) {
-        this.$emit("updateSpell");
-      } else {
-        this.showDialog_Select()
-      }
-    },
-
 		hoverIn_Select() {
 			if (this.select) {
 				this.$refs.stripe.classList.add("active");

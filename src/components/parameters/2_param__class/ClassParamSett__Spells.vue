@@ -9,10 +9,14 @@
 			/>
 		</my-wrapper>
 
-			<my-wrapper gap_26
-				v-if="spells_RC_Param_Manna.length !== 0 || spells_RC_Param_Ability.length !== 0"
-			>
-      <AppSpellsPacks
+		<my-wrapper
+			gap_26
+			v-if="
+				spells_RC_Param_Manna.length !== 0 ||
+				spells_RC_Param_Ability.length !== 0
+			"
+		>
+			<AppSpellsPacks
 				class="flex-col"
 				v-if="spells_RC_Param_Ability.length !== 0"
 				text="ability"
@@ -30,32 +34,35 @@
 				</div>
 			</AppSpellsPacks>
 
-				<section v-for="i in numb_Manna_Spell" :key="i">
-					<AppSpellsPacks
-						class="flex-col"
-						v-if="filter_All_Manna_Spells(i).length !== 0"
-						:numb="filter_All_Manna_Spells(i).length"
-						:text="String(i)"
-					>
-						<div class="flex-col">
-							<AppSpells
-								v-for="item in filter_RC_Spells(i)"
-								:key="item"
-								:spell_obj="item"
-								passive
-								param
-								only_title
-							/>
-							<AppSpells
-								v-for="item in filter_Settings_Spells(i)"
-								:key="item"
-								:spell_obj="item"
-								only_title
-							/>
-						</div>
-					</AppSpellsPacks>
-				</section>
-			</my-wrapper>
+			<section v-for="i in numb_Manna_Spell" :key="i">
+				<AppSpellsPacks
+					class="flex-col"
+					v-if="filter_All_Manna_Spells(i).length !== 0"
+					:numb="filter_All_Manna_Spells(i).length"
+					:text="String(i)"
+				>
+					<div class="flex-col">
+						<AppSpells
+							v-for="item in filter_RC_Spells(i)"
+							:key="item"
+							:spell_obj="item"
+							passive
+							param
+							only_title
+						/>
+						<AppSpells
+							v-for="item in filter_Settings_Spells(i)"
+							:key="item"
+							:spell_obj="item"
+							only_title
+							delete
+							active_card
+							@updateSpell="delSpell(item)"
+						/>
+					</div>
+				</AppSpellsPacks>
+			</section>
+		</my-wrapper>
 	</div>
 </template>
 
@@ -78,7 +85,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["level_Filter_Arr"]),
+		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
 		...mapState(useChargesStore, [
 			"charges_Class_Spell_Slots",
 			"charges_Class_Spell_Manna",
@@ -87,7 +94,7 @@ export default {
 			"spells_RC_Param",
 			"spells_RC_Param_Ability",
 			"spells_RC_Param_Manna",
-			"spells_For_Arr_Obj",
+			"spells_Filter_Without",
 		]),
 
 		spells_Setting_Arr() {
@@ -99,12 +106,19 @@ export default {
 			return res_arr;
 		},
 
+		spells_RC_Without_Setting() {
+			return this.spells_Filter_Without(
+				this.spells_RC_Param_Manna,
+				this.spells_Setting_Arr
+			);
+		},
+
 		spells_All_Manna() {
-			return [...this.spells_RC_Param_Manna, ...this.spells_Setting_Arr];
+			return [...this.spells_RC_Without_Setting, ...this.spells_Setting_Arr];
 		},
 
 		filter_RC_Spells: (stor) => (numb) => {
-			const res = stor.spells_RC_Param_Manna.filter(
+			const res = stor.spells_RC_Without_Setting.filter(
 				(el) => el.spell[numb]?.name
 			);
 			return res;
@@ -136,6 +150,18 @@ export default {
 
 		shown_Spells_All() {
 			return this.spells_RC_Param.length !== 0;
+		},
+	},
+	methods: {
+		delSpell(item) {
+			const item_name = item.spell.find((el) => el.name).name;
+			const save_spell =
+				this.MY._settings_class[this.MY.class.name][
+					this.spells_setting.id_link
+				];
+			const new_arr = save_spell.filter((el) => el.name_set !== item_name);
+			this.MY._settings_class[this.MY.class.name][this.spells_setting.id_link] =
+				new_arr;
 		},
 	},
 };
