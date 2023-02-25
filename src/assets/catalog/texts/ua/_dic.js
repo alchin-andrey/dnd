@@ -1133,10 +1133,10 @@ export default {
 
   //cast time
   cast_time: "каст",
-  reaction: "реакція",
-  bonus_action: "бонусна дія",
-  action: "основна дія",
-  ritual: "ритуал",
+  reaction: "Реакція",
+  bonus_action: "Бонусна дія",
+  action: "Основна дія",
+  ritual: "Ритуал",
   starting_from: "від",
   up_to: "до",
   sec: "сек",
