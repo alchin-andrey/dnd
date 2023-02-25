@@ -139,7 +139,7 @@
 		</my-wrapper>
 		<div class="hr"></div>
 		<div class="text_spell gray_4" v-html="t_Expanded"></div>
-		<div class="text_spell rare-text" v-html="mod_Expanded_Extra"></div>
+		<div class="text_spell rare-text" v-if="mod_Expanded_Extra" v-html="mod_Expanded_Extra"></div>
 	</my-dialog-spell>
 </template>
 
