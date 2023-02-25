@@ -226,10 +226,13 @@ export default {
 
     cast_time_MOD() {
       const mod_cast_time = this.spell_Mod?.cast_time;
-      console.log('mod_cast_time:', mod_cast_time)
       const spell_cast_time = this.Spell_Index.cast_time;
-      console.log('spell_cast_time:', spell_cast_time)
       return mod_cast_time ?? spell_cast_time;
+    },
+
+    mod_Cast_Dration_Units_Plus() {
+      const cast_duration_units_plus = this.spell_Mod?.cast_duration_units_plus;
+      return cast_duration_units_plus ? this.t(cast_duration_units_plus) : null;
     },
 
 		Index() {
@@ -311,8 +314,13 @@ export default {
 			const cast_time = this.t(this.cast_time_MOD);
 			const numb = this.Spell_Index.cast_duration;
 			const numb_units = this.t(this.Spell_Index.cast_duration_units);
+      const mod_cast_duration = this.mod_Cast_Dration_Units_Plus
 			if (this.cast_time_MOD === "ritual") {
-				string = `${cast_time} ${numb} ${numb_units}`;
+        if(mod_cast_duration) {
+          string = `${cast_time} ${numb} ${numb_units} ${mod_cast_duration}`;
+        } else {
+          string = `${cast_time} ${numb} ${numb_units}`;
+        }
 			} else if (!cast_time) {
 				string = `${numb} ${numb_units}`;
 			} else {
