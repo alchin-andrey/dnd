@@ -6,24 +6,30 @@
 			:text="spells_setting.details"
 		/>
 
-		<div v-for="i in 10" :key="i">
-			<AppSpellsPacks v-if="filter_Spells(i - 1).length !== 0" :numb="i - 1">
-				<section class="flex-col">
-					<my-selection-card
-						no_blur
-						v-for="list_el in filter_Spells(i - 1)"
-						:key="list_el"
-					>
-						<AppSpells
-							v-for="item in list_el.spells"
-							:key="item"
-							:spell_obj="item"
-							:active_card="false"
-						/>
-					</my-selection-card>
-				</section>
-			</AppSpellsPacks>
-		</div>
+		<section class="flex-col gap-34" v-if="numb_Manna_Spell.length !== 0">
+			<div v-for="i in numb_Manna_Spell" :key="i">
+				<AppSpellsPacks
+					class="flex-col gap-34"
+					v-if="filter_Spells(i).length !== 0"
+					:numb="i"
+				>
+					<section class="flex-col">
+						<my-selection-card
+							no_blur
+							v-for="list_el in filter_Spells(i)"
+							:key="list_el"
+						>
+							<AppSpells
+								v-for="item in list_el.spells"
+								:key="item"
+								:spell_obj="item"
+								:active_card="false"
+							/>
+						</my-selection-card>
+					</section>
+				</AppSpellsPacks>
+			</div>
+		</section>
 
 		<!-- <div class="flex-col gap-26">
 			<div class="jbm-300 manna-numb">{{ t("spells")}} [0]</div>
@@ -83,10 +89,25 @@ export default {
 			return res;
 		},
 
-		// filter_Spell: (stor) => (list_el) => {
-		//   console.log('stor.level_Filter_Arr(list_el.spells):', stor.level_Filter_Arr(list_el.spells))
-		//   return stor.level_Filter_Arr(list_el.spells);
-		// }
+		numb_Manna_Spell() {
+      let res = 0;
+      this.spells_setting.list.forEach(el => {
+        res = Math.max(res, el.spells[0].spell.length)
+      });
+
+
+      let res_arr = [];
+      this.spells_setting.list.forEach(el => {
+        el.spells[0].spell.forEach((item, i) => {
+          if(item.name) {
+            res_arr.push(i);
+          }
+        })
+      });
+      const unique_numb = [...new Set(res_arr)];
+      unique_numb.sort((a, b) => a - b);
+			return unique_numb;
+		},
 	},
 };
 </script>
@@ -103,8 +124,12 @@ export default {
 	/* margin: 0 0 26px 16px; */
 }
 
-.gap-26 {
-	gap: 26px;
+.mar-bot-34 {
+	margin-bottom: 34px;
+}
+
+.gap-34 {
+	gap: 34px;
 }
 
 .manna-numb {

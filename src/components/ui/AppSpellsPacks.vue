@@ -1,5 +1,5 @@
 <template>
-		<div class="flex-col gap-26" :class="{ passive: passive }">
+		<div :class="{ passive: passive }">
 			<div class="flex_title">
 				<div class="jbm-300 manna-numb">{{ t_Title }}</div>
 				<div class="icon"
@@ -55,16 +55,15 @@ export default {
 </script>
 
 <style scoped>
-.flex-col {
+/* .flex-col {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	/* margin: 0 0 26px 16px; */
 }
 
-.gap-26 {
-	gap: 26px;
-}
+.gap-34 {
+	gap: 34px;
+} */
 
 .manna-numb {
 	margin-left: 16px;

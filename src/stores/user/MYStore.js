@@ -98,14 +98,14 @@ export const useMYStore = defineStore({
       return filter_only_mastery;
     },
 
-    // сustomm_Settings_Class_Arr() {
-    //   const custom_class = this.сustomm_Settings_Class_Arr_Filter;
-    //   const spells_sett = this.spells_Settings_Class_Arr;
-    //   return [
-    //     ...custom_class, 
-    //     ...spells_sett
-    //   ];
-    // },
+    settings_Class_Arr() {
+      const custom_class = this.сustomm_Settings_Class_Arr;
+      const spells_sett = this.spells_Settings_Class_Arr;
+      return [
+        ...custom_class, 
+        ...spells_sett
+      ];
+    },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
       return stor.filter_Custom_Lvl(stor.сustomm_Settings_Race_Arr, name);
@@ -148,24 +148,7 @@ export const useMYStore = defineStore({
 					const select_numb = this.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
 					const select_arr = sett_select?.[link_name_i] ?? [];
           
-          const list_lvl = this.settingsSpellsList(item);
-
-          // const select_arr_lvl = this.level_Filter_Arr(select_arr);
-          // const select_not_null = select_arr_lvl.filter((el) => list_lvl.some(item => {
-          //   if (item.name) {
-          //     return item.name == el.name;
-          //   } else {
-          //     return item.name_set == el.name_set;
-          //   }
-          // })); //NOTE - NEW
-
-					// const pass_arr_lvl = list_lvl.filter((el) => !select_not_null.some(item => {
-          //   if (item.name) {
-          //     return item.name == el.name;
-          //   } else {
-          //     return item.name_set == el.name_set;
-          //   }
-          // })); //NOTE - NEW
+          const list_lvl = this.settingsSpellsList(item); //NOTE - NEW_FOR_SPELL
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
@@ -228,13 +211,6 @@ export const useMYStore = defineStore({
           const cast_time_verif = cast_time_filter ? cast_time_filter == find_el.cast_time : true;
           if(class_verif && type_verif && cast_time_verif) {
 
-            //TODO - обернуть флагом
-            // const el_with_mark = el.map((el_map) => (
-            //   el_map.name
-            //   ? {...el_map, mark_details: 'my_details'}
-            //   : el_map
-            //   ));
-
             arr.push({
               name_set: find_el.name,
               spells: [{spell: el}],
@@ -243,19 +219,6 @@ export const useMYStore = defineStore({
         }
         });
       return arr;
-            // const spells_filter = spell_arr.filter(el => {
-      //   const find_el = el.find((item, i) => mana_min <= i && i <= mana_max && item?.name && item?.type != "ability");
-      //   if(find_el) {
-      //     const class_verif_arr = find_el.classes.filter(item => classes_filter_arr.includes(item));
-          
-      //     const class_verif = class_verif_arr.length !== 0;
-      //     const type_verif = type_filter_arr ? type_filter_arr.includes(find_el.type) : true;
-      //     const cast_time_verif = cast_time_filter ? cast_time_filter == find_el.cast_time : true;
-      //     return class_verif && type_verif && cast_time_verif;
-      //   }
-      //   return find_el;
-      //   });
-      // console.log('spells_filter:', spells_filter);
     },
 
     select_spells_Numb(item) {
@@ -316,7 +279,6 @@ export const useMYStore = defineStore({
               select_list.push(pass_arr_lvl[count_list]);
               count_list++;
             }
-						// select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
 					}
 
 					new_arr.push({

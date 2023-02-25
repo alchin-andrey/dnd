@@ -167,9 +167,9 @@ export const usePagesStore = defineStore({
 			if (setting_open && setting_open.includes("__")) {
 				let custom = MYStore.сustomm_Settings_Race_Arr;
         if (this.pages.class_page) {
-          custom = MYStore.сustomm_Settings_Class_Arr;
+          custom = MYStore.settings_Class_Arr;
         }
-        
+
         const filter_full = custom?.find((el) => el.id_link == setting_open);
         if (filter_full) {
           this.toggleSettings(this.page_Open, filter_full.id_link);
@@ -184,7 +184,7 @@ export const usePagesStore = defineStore({
         }
 
         const str_name = str_name_numb.split("__")[0];
-        const filter_name = custom?.find((el) => el.id_link.includes(str_name));
+        const filter_name = custom?.find((el) => el.id_link.includes(`${str_name}__0`));
         if (filter_name) {
           this.toggleSettings(this.page_Open, filter_name.id_link);
           return;
