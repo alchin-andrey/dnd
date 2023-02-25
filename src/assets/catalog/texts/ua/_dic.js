@@ -5486,7 +5486,7 @@ export default {
   spell_tashas_hideous_laughter_details: spells.tashas_hideous_laughter_details,
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
-  ritual_caster_expanded: "* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу.",
+  ritual_caster_expanded: "* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу. (застосовано)",
 
   spell_banishment: spells.banishment,
   spell_banishment_details: spells.banishment_details,
@@ -5495,4 +5495,8 @@ export default {
   spell_dimension_door: spells.dimension_door,
   spell_dimension_door_details: spells.dimension_door_details,
   spell_dimension_door_expanded: spells.dimension_door_expanded,
+
+  true_sense_details: "Крім звичайного використання, ви можете застосувати ці заклинання без мани 1 раз між тривалими відпочинками.",
+
+  plus_10_min: "+10 хв",
 };
