@@ -27,7 +27,7 @@
 								:emoji="em_Upd"
 								:set="set_emoji"
 								:size="emoji_size"
-							/>{{ em_After }}
+							/>{{ em_After }} {{name_Extra_MOD}}
 						</div>
 						<svg
 							class="icon_svg"
@@ -68,13 +68,13 @@
 					:emoji="em_Upd"
 					:set="set_emoji"
 					:size="emoji_size"
-				/>{{ em_After }}
+				/>{{ em_After }} {{name_Extra_MOD}}
 			</div>
 		</my-wrapper>
-		<section class="jbm-300" v-if="Spell_Index.slot_type || shown_Manna">
+		<section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
 			<section
 				class="manna_bubble manna_bubble_active"
-				v-if="Spell_Index.slot_type"
+				v-if="spell_Slot_Type_MOD"
 			>
 				{{ t_Slot_Type }}
 			</section>
@@ -139,6 +139,7 @@
 		</my-wrapper>
 		<div class="hr"></div>
 		<div class="text_spell gray_4" v-html="t_Expanded"></div>
+		<div class="text_spell rare-text" v-html="mod_Expanded_Extra"></div>
 	</my-dialog-spell>
 </template>
 
@@ -201,6 +202,36 @@ export default {
       return this.spell_obj?.mod;
     },
 
+    name_Extra_MOD() {
+      const name_extr = this.spell_Mod?.name_extra;
+      return name_extr ? this.t(name_extr) : null;
+    },
+
+    spell_Slot_Type_MOD() {
+      const mod_slot_type = this.spell_Mod?.slot_type;
+      const spell_slot_type = this.Spell_Index.slot_type
+      return mod_slot_type ?? spell_slot_type;
+    },
+
+    spell_Attribute_MOD() {
+      const mod_attribute = this.spell_Mod?.spell_attribute;
+      const class_attribute = this.MY.class.spell_attribute;
+      return mod_attribute ?? class_attribute;
+    },
+
+    mod_Expanded_Extra() {
+      const expanded_extra = this.spell_Mod?.expanded_extra;
+      return expanded_extra ? this.t(expanded_extra) : null;
+    },
+
+    cast_time_MOD() {
+      const mod_cast_time = this.spell_Mod?.cast_time;
+      console.log('mod_cast_time:', mod_cast_time)
+      const spell_cast_time = this.Spell_Index.cast_time;
+      console.log('spell_cast_time:', spell_cast_time)
+      return mod_cast_time ?? spell_cast_time;
+    },
+
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
@@ -235,10 +266,9 @@ export default {
 
 		shown_Manna() {
 			const manna_0 = this.Manna_Length == 1;
-			const slot = this.Spell_Index.slot_type;
 			const ability = this.Spell_Index.type == "ability";
-			const slot_type = this.Spell_Index.slot_type;
-			return (!manna_0 || slot || !ability) && !slot_type;
+			const slot_type = this.spell_Slot_Type_MOD;
+			return (!manna_0 || !ability) && !slot_type;
 		},
 
 		lvl_Show() {
@@ -267,7 +297,7 @@ export default {
 		},
 
     t_Slot_Type() {
-    return this.t(this.Spell_Index.slot_type)
+    return this.t(this.spell_Slot_Type_MOD)
     },
 
 		t_Text() {
@@ -278,10 +308,10 @@ export default {
 		t_Cast_Value() {
 			let string = null;
 
-			const cast_time = this.t(this.Spell_Index.cast_time);
+			const cast_time = this.t(this.cast_time_MOD);
 			const numb = this.Spell_Index.cast_duration;
 			const numb_units = this.t(this.Spell_Index.cast_duration_units);
-			if (this.Spell_Index.cast_time === "ritual") {
+			if (this.cast_time_MOD === "ritual") {
 				string = `${cast_time} ${numb} ${numb_units}`;
 			} else if (!cast_time) {
 				string = `${numb} ${numb_units}`;
@@ -343,7 +373,7 @@ export default {
 
 		Saving_Numb() {
 			const KOF = 8;
-			let attribute = this.MY.class.spell_attribute;
+			let attribute = this.spell_Attribute_MOD;
 			let mastery = this.Mastery;
 			let stats_mod = this.stats_Mod(attribute);
 			return KOF + mastery + stats_mod;
@@ -512,7 +542,7 @@ export default {
 
 		Num_MOD() {
 			let num = this.Spell_Index.impact_size_num;
-			let mod = this.stats_Mod(this.MY.class.spell_attribute);
+			let mod = this.stats_Mod(this.spell_Attribute_MOD);
 			let res = num + mod;
 			return res < 0 ? 0 : res;
 		},
@@ -552,7 +582,7 @@ export default {
 		//ANCHOR - PLS
 		Pls_MOD() {
 			let pls = this.Spell_Index.impact_size_pls;
-			let mod = this.stats_Mod(this.MY.class.spell_attribute);
+			let mod = this.stats_Mod(this.spell_Attribute_MOD);
 			let res = pls + mod;
 			return res < 0 ? 0 : res;
 		},

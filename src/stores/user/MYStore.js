@@ -302,9 +302,21 @@ export const useMYStore = defineStore({
             }
           })); //NOTE - NEW
 
+
+          let count_list = 0;
+          let count_save = 0;
+
 					let select_list = [];
-					for (let i = 0; i < select_numb; i += 1) {
-						select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
+					for (let i = 0; i < select_numb; i++) {
+
+            if(select_not_null[count_save]){
+              select_list.push(select_not_null[count_save]);
+              count_save ++;
+            } else {
+              select_list.push(pass_arr_lvl[count_list]);
+              count_list++;
+            }
+						// select_list.push(select_not_null[i] ?? pass_arr_lvl[i]);
 					}
 
 					new_arr.push({
@@ -316,7 +328,7 @@ export const useMYStore = defineStore({
 					});
 
 					select_list.forEach((elem_list) => {
-						if (elem_list.settings) {
+						if (elem_list?.settings) {
 							let redus = this.settingsMainSelect(page, elem_list.settings, type_str, link_name_i);
 							new_arr = new_arr.concat(redus);
 						}
