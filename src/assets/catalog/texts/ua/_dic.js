@@ -1278,11 +1278,15 @@ export default {
 
   spell_speak_with_animals: spells.speak_with_animals,
   spell_speak_with_animals_ritual: spells.speak_with_animals_ritual,
+  spell_speak_with_animals_ritual_details: spells.speak_with_animals_ritual_details,
+  spell_speak_with_animals_ritual_expanded: spells.speak_with_animals_ritual_expanded,
   spell_speak_with_animals_details: spells.speak_with_animals_details,
   spell_speak_with_animals_expanded: spells.speak_with_animals_expanded,
 
   spell_commune_with_nature: spells.commune_with_nature,
   spell_commune_with_nature_ritual: spells.commune_with_nature_ritual,
+  spell_commune_with_nature_ritual_details: spells.commune_with_nature_ritual_details,
+  spell_commune_with_nature_ritual_expanded: spells.commune_with_nature_ritual_expanded,
   spell_commune_with_nature_details: spells.commune_with_nature_details,
   spell_commune_with_nature_expanded: spells.commune_with_nature_expanded,
 
@@ -4466,6 +4470,8 @@ export default {
   totem_aspect_details: classes.totem_aspect_details,
 
   spell_beast_sense_ritual: spells.beast_sense_ritual,
+  spell_beast_sense_ritual_details: spells.beast_sense_ritual_details,
+  spell_beast_sense_ritual_expanded: spells.beast_sense_ritual_expanded,
 
   entropic_ward_slots: "Ентропічний догляд",
   entropic_ward_slot: "1× Ентропічний догляд",

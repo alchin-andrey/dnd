@@ -1048,8 +1048,8 @@ export default {
   beast_sense_ritual: [
     {
       name: "spell_beast_sense_ritual",
-      details: "spell_beast_sense_details",
-      expanded: "spell_beast_sense_expanded",
+      details: "spell_beast_sense_ritual_details",
+      expanded: "spell_beast_sense_ritual_expanded",
 
       type: "ability",
       classes: [],
@@ -1088,8 +1088,8 @@ export default {
   speak_with_animals_ritual: [
     {
       name: "spell_speak_with_animals_ritual",
-      details: "spell_speak_with_animals_details",
-      expanded: "spell_speak_with_animals_expanded",
+      details: "spell_speak_with_animals_ritual_details",
+      expanded: "spell_speak_with_animals_ritual_expanded",
 
       type: "ability",
       classes: [],
@@ -1128,8 +1128,8 @@ export default {
   commune_with_nature_ritual: [
     {
       name: "spell_commune_with_nature_ritual",
-      details: "spell_commune_with_nature_details",
-      expanded: "spell_commune_with_nature_expanded",
+      details: "spell_commune_with_nature_ritual_details",
+      expanded: "spell_commune_with_nature_ritual_expanded",
 
       type: "ability",
       classes: [],
@@ -4723,8 +4723,8 @@ export default {
       classes: ["ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "self",
@@ -4766,8 +4766,8 @@ export default {
       classes: ["ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "creature",
@@ -4814,6 +4814,7 @@ export default {
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -15394,8 +15395,8 @@ export default {
       classes: ["bard", "warlock", "wizard"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "point",
@@ -15442,8 +15443,9 @@ export default {
       classes: ["cleric", "druid", "paladin", "ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -15536,8 +15538,9 @@ export default {
       classes: ["bard", "warlock", "wizard"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -15886,8 +15889,8 @@ export default {
       classes: ["artificer", "cleric", "druid", "paladin"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "point",
@@ -16083,8 +16086,8 @@ export default {
       classes: ["bard", "sorcerer", "wwarlock", "wizard"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "self",
@@ -16391,8 +16394,8 @@ export default {
       classes: ["bard", "druid", "ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "self",
@@ -16821,8 +16824,8 @@ export default {
       classes: ["wizard"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "point",
@@ -17917,8 +17920,8 @@ export default {
       classes: [],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "creature",
@@ -18632,8 +18635,8 @@ export default {
       classes: ["cleric", "wizard"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "creature",
@@ -19263,8 +19266,8 @@ export default {
       classes: ["bard", "druid", "ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "self",
@@ -19514,8 +19517,8 @@ export default {
       classes: ["bard", "druid", "ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "creature",
@@ -19900,8 +19903,8 @@ export default {
       classes: ["bard", "cleric", "ranger"],
 
       cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
+      cast_duration: 1,
+      cast_duration_units: "action",
       as_ritual: true,
 
       aim_target: "point",
@@ -21188,6 +21191,7 @@ export default {
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -21233,6 +21237,7 @@ export default {
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
