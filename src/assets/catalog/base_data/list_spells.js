@@ -6927,7 +6927,7 @@ export default {
 
       parts: ["somatic", "verbal"],
 
-      spell_time: "contentration",
+      spell_time: "concentration",
       spell_duration: 10,
       spell_duration_units: "min",
 
@@ -15548,7 +15548,7 @@ export default {
 
       parts: ["somatic", "verbal"],
 
-      spell_time: "contentration",
+      spell_time: "concentration",
       spell_duration: 10,
       spell_duration_units: "min",
 
