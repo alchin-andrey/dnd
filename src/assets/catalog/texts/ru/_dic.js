@@ -5511,7 +5511,7 @@ export default {
   spell_tashas_hideous_laughter_details: spells.tashas_hideous_laughter_details,
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
-  ritual_caster_expanded: "* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, на 10 минут дольше, и держа в руке свою ритуальную книгу.",
+  ritual_caster_expanded: "* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, на 10 минут дольше, и держа в руке свою ритуальную книгу. (применено)",
 
   spell_banishment: spells.banishment,
   spell_banishment_details: spells.banishment_details,
@@ -5524,4 +5524,8 @@ export default {
   spell_dimension_door: spells.dimension_door,
   spell_dimension_door_details: spells.dimension_door_details,
   spell_dimension_door_expanded: spells.dimension_door_expanded,
+
+  true_sense_details: "Кроме обьічного использования, вы можете применить эти заклинания без маньі 1 раз между продолжительньіми отдыхами.",
+
+  plus_10_min: "+10 мин",
 };  

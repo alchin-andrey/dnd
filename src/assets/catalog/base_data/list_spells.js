@@ -4714,7 +4714,6 @@ export default {
   ],
 
   speak_with_animals_ranger: [
-    {},
     {
       name: "spell_speak_with_animals_ranger",
       details: "spell_speak_with_animals_ranger_details",
@@ -4723,9 +4722,10 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -4765,9 +4765,10 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "creature",
       aim_type: "near",
@@ -8445,9 +8446,10 @@ export default {
       slot_type: "chi_slot_2",
       classes: ["monk"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "point",
       aim_type: "in_distance",
@@ -15346,6 +15348,7 @@ export default {
       cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
+      as_ritual: true,
 
       aim_target: "object",
       aim_type: "near",
@@ -15390,9 +15393,10 @@ export default {
       type: "conjuration",
       classes: ["bard", "warlock", "wizard"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "point",
       aim_type: "in_distance",
@@ -15437,9 +15441,9 @@ export default {
       type: "divination",
       classes: ["cleric", "druid", "paladin", "ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
       aim_target: "self",
       aim_type: null,
@@ -15531,9 +15535,9 @@ export default {
       type: "divination",
       classes: ["bard", "warlock", "wizard"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
 
       aim_target: "self",
       aim_type: null,
@@ -15881,9 +15885,10 @@ export default {
       type: "transmutation",
       classes: ["artificer", "cleric", "druid", "paladin"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "point",
       aim_type: "in_distance",
@@ -16077,9 +16082,10 @@ export default {
       type: "divination",
       classes: ["bard", "sorcerer", "wwarlock", "wizard"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -16384,9 +16390,10 @@ export default {
       type: "divination",
       classes: ["bard", "druid", "ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -16813,9 +16820,10 @@ export default {
       type: "conjuration",
       classes: ["wizard"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "point",
       aim_type: "in_distance",
@@ -17908,9 +17916,10 @@ export default {
       type: "divination",
       classes: [],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "creature",
       aim_type: "near",
@@ -18622,9 +18631,10 @@ export default {
       type: "necromancy",
       classes: ["cleric", "wizard"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "creature",
       aim_type: "near",
@@ -19252,9 +19262,10 @@ export default {
       type: "divination",
       classes: ["bard", "druid", "ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "self",
       aim_type: null,
@@ -19502,9 +19513,10 @@ export default {
       type: "enchantment",
       classes: ["bard", "druid", "ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "creature",
       aim_type: "in_distance",
@@ -19887,9 +19899,10 @@ export default {
       type: "illusion",
       classes: ["bard", "cleric", "ranger"],
 
-      cast_time: "ritual",
-      cast_duration: 1,
-      cast_duration_units: "action",
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
 
       aim_target: "point",
       aim_type: "in_distance",

@@ -5275,10 +5275,10 @@ export default {
                 level: 5,
                 spell: spells.dispel_magic,
               },
-              // {
-              //   level: 7,
-              //   spell: spells.dimension_door,
-              // },
+              {
+                level: 7,
+                spell: spells.dimension_door,
+              },
               // {
               //   level: 7,
               //   spell: spells.polymorph,
@@ -12246,7 +12246,9 @@ export default {
             ],
           },
           {
+            //Вы можете единожды применить каждое из этих заклинаний без использования ячеек заклинания. Как только вы используете заклинание таким образом, вы больше не сможете сделать это повторно до окончания продолжительного отдыха.
             name: "true_sense",
+            details: "true_sense_details",
             spells: [
               {
                 level: 3,
