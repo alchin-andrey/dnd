@@ -33,16 +33,6 @@
 				</AppSpellsPacks>
 			</div>
 		</section>
-
-		<!-- <AppCusstomCard
-			v-for="list_el in custom.list"
-			:key="list_el"
-      :setting_name="custom.name"
-			:custom="list_el"
-			@click="getCustomSelect(list_el)"
-			:active_boll_link="getActive(list_el)"
-      @clickOneMore="getCustomSelect"
-		/> -->
 	</section>
 </template>
 

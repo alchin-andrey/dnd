@@ -103,8 +103,12 @@ export default {
 
 		t_Type: (stor) => (item) => {
       if (item.type == "spells") {
+        const dub_detect = stor.overflow_Item_Menu(item);
         const numb = item.select_numb - item.select_list.length;
-        return numb == 0 ? `${stor.t("обрано")} ${item.select_numb}` : `${stor.t("spells_left")} ${numb}`;
+        const selected = `${stor.t("spell_selected")} ${item.select_numb}`;
+        const left = `${stor.t("spells_left")} ${numb}`;
+        const duplicated = `${stor.t("spell_duplicated")}`;
+        return dub_detect ? duplicated : numb == 0 ? selected : left;
       }
 			if (
 				item.type == "feats" &&
