@@ -104,7 +104,7 @@ export default {
 		t_Type: (stor) => (item) => {
       if (item.type == "spells") {
         const numb = item.select_numb - item.select_list.length;
-        return numb == 0 ? `обрано ${item.select_numb}` : `залишилось ${numb}`;
+        return numb == 0 ? `${stor.t("обрано")} ${item.select_numb}` : `${stor.t("spells_left")} ${numb}`;
       }
 			if (
 				item.type == "feats" &&

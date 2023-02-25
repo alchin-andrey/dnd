@@ -16,6 +16,8 @@
 		</div>
 		<div class="items">
 			<section v-for="item in list_Filter_Arr" :key="item" class="column_vis">
+        <!-- <div class="passive" v-if="spell_count">{{numb_Spells(item)}}</div>
+        <div class="small">{{ Str(item) }}</div> -->
 				<div class="small">
 					<span class="passive" v-if="spell_count">{{
 						numb_Spells(item)
@@ -203,23 +205,8 @@ export default {
 
 .column_vis {
 	display: flex;
+  justify-content: flex-end;
 }
-
-/* .title {
-	margin-left: 22px;
-	position: relative;
-}
-
-.title::before {
-	content: "";
-	width: 4px;
-	height: 4px;
-	background: #ffffff;
-	position: absolute;
-	top: 0;
-	left: calc(-18px / 2 - 4px / 2 - 4px);
-	top: calc(18px / 2 - 4px / 2);
-} */
 
 .items {
 	text-align: end;
