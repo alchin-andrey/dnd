@@ -5498,6 +5498,10 @@ export default {
   spell_banishment_details: spells.banishment_details,
   spell_banishment_expanded: spells.banishment_expanded,
 
+  spell_crown_of_madness: spells.crown_of_madness,
+  spell_crown_of_madness_details: spells.crown_of_madness_details,
+  spell_crown_of_madness_expanded: spells.crown_of_madness_expanded,
+
   spell_dimension_door: spells.dimension_door,
   spell_dimension_door_details: spells.dimension_door_details,
   spell_dimension_door_expanded: spells.dimension_door_expanded,
