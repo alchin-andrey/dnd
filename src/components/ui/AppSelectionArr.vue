@@ -13,8 +13,9 @@
 		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
 		<section class="column_link int-400 active">
 			<div class="link-text" 
-      :class="{ 'rare-text': overflow_Item_Menu(item) }">
-				<span>{{ t_Type(item) }}</span>
+      :class="{ 
+        'rare-text': overflow_Item_Menu(item) || sett_Counter(item)}">
+				<span class="type-text">{{ t_Type(item) }}</span>
 			</div>
 			<div class="icon">
 				<svg
@@ -93,7 +94,18 @@ export default {
 			return null;
 		},
 
-		t_Type: (store) => (item) => {
+    sett_Counter: (stor) => (item) => {
+      if (item.type == "spells") {
+        const numb = item.select_numb - item.select_list.length;
+        return numb !== 0;
+      }
+    },
+
+		t_Type: (stor) => (item) => {
+      if (item.type == "spells") {
+        const numb = item.select_numb - item.select_list.length;
+        return numb == 0 ? `обрано ${item.select_numb}` : `залишилось ${numb}`;
+      }
 			if (
 				item.type == "feats" &&
 				(item.id_btn == "stats_2" || item.id_btn == "stats_1_1")
@@ -102,16 +114,16 @@ export default {
 				item.select_list.forEach((item) => {
 					const name = item.stats[0].name;
 					const num = item.stats[0].num;
-					arr.push(`+${num} ${store.t(name).slice(0, 3)}`);
+					arr.push(`+${num} ${stor.t(name).slice(0, 3)}`);
 				});
 				return arr.map((n) => n.replace(n[3], n[3].toUpperCase())).join(", ");
 			} else {
 				let arr = [];
 				item.select_list.forEach((item) => {
 					if (item?.name) {
-						arr.push(store.t(item?.name));
+						arr.push(stor.t(item?.name));
 					} else if (item?.name_set) {
-						arr.push(store.t(item?.name_set));
+						arr.push(stor.t(item?.name_set));
 					}
 				});
 				return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
@@ -194,6 +206,9 @@ export default {
 	/* height: 18px; */
 }
 .link-text:first-letter {
+	text-transform: uppercase;
+}
+.type-text:first-letter {
 	text-transform: uppercase;
 }
 

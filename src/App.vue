@@ -172,7 +172,8 @@ export default {
       const feats = this.setting_open?.slice(0, 5) == "feats" && open_class_page;
       const stats = this.setting_open?.includes("stats") && open_class_page;
       const skills = this.setting_open?.includes("skills") && open_class_page;
-      return !this.shown_home && !(stats || feats || skills);
+      const many_spells = this.setting_open?.includes("many_spells") && open_class_page;
+      return !this.shown_home && !(stats || feats || skills || many_spells);
     },
 
 		hide_Ruler() {

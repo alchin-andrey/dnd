@@ -65,8 +65,13 @@ export const useChargesStore = defineStore({
 			return [...race_param, ...class_param];
 		},
 
+    charges_Class_Spell_Slots() {
+      return this.charges_All_Param.find(el => el.name == "spell_slots");
+    },
 
-    
+    charges_Class_Spell_Manna() {
+      return this.charges_All_Param.filter(el => el.name == "spell_slots" || el.name == "arcanum_slots");
+    }
 	},
 
 	actions: {},

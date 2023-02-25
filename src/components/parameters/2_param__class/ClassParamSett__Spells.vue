@@ -1,0 +1,154 @@
+<template>
+	<div v-if="shown">
+		<my-wrapper v-if="charges_Class_Spell_Manna.length !== 0" hr>
+			<AppCharges
+				v-for="item in charges_Class_Spell_Manna"
+				:key="item"
+				:charge="item"
+				spell_count
+			/>
+		</my-wrapper>
+
+			<my-wrapper gap_26
+				v-if="spells_RC_Param_Manna.length !== 0 || spells_RC_Param_Ability.length !== 0"
+			>
+      <AppSpellsPacks
+				class="flex-col"
+				v-if="spells_RC_Param_Ability.length !== 0"
+				text="ability"
+				:numb="spells_RC_Param_Ability.length"
+			>
+				<div class="flex-col">
+					<AppSpells
+						v-for="item in spells_RC_Param_Ability"
+						:key="item"
+						:spell_obj="item"
+						passive
+						param
+						only_title
+					/>
+				</div>
+			</AppSpellsPacks>
+
+				<section v-for="i in numb_Manna_Spell" :key="i">
+					<AppSpellsPacks
+						class="flex-col"
+						v-if="filter_All_Manna_Spells(i).length !== 0"
+						:numb="filter_All_Manna_Spells(i).length"
+						:text="String(i)"
+					>
+						<div class="flex-col">
+							<AppSpells
+								v-for="item in filter_RC_Spells(i)"
+								:key="item"
+								:spell_obj="item"
+								passive
+								param
+								only_title
+							/>
+							<AppSpells
+								v-for="item in filter_Settings_Spells(i)"
+								:key="item"
+								:spell_obj="item"
+								only_title
+							/>
+						</div>
+					</AppSpellsPacks>
+				</section>
+			</my-wrapper>
+	</div>
+</template>
+
+<script>
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/user/MYStore";
+import { useChargesStore } from "@/stores/modules/ChargesStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
+
+export default {
+	name: "ClassParamSett__Spells",
+	props: {
+		spells_setting: {
+			type: Object,
+			default: {},
+		},
+		shown: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		...mapState(useMYStore, ["level_Filter_Arr"]),
+		...mapState(useChargesStore, [
+			"charges_Class_Spell_Slots",
+			"charges_Class_Spell_Manna",
+		]),
+		...mapState(useSpellsStore, [
+			"spells_RC_Param",
+			"spells_RC_Param_Ability",
+			"spells_RC_Param_Manna",
+			"spells_For_Arr_Obj",
+		]),
+
+		spells_Setting_Arr() {
+			let res_arr = [];
+			this.spells_setting.select_list.forEach((el) => {
+				const item_lvl = this.level_Filter_Arr(el?.spells);
+				res_arr = res_arr.concat(item_lvl);
+			});
+			return res_arr;
+		},
+
+		spells_All_Manna() {
+			return [...this.spells_RC_Param_Manna, ...this.spells_Setting_Arr];
+		},
+
+		filter_RC_Spells: (stor) => (numb) => {
+			const res = stor.spells_RC_Param_Manna.filter(
+				(el) => el.spell[numb]?.name
+			);
+			return res;
+		},
+
+		filter_Settings_Spells: (stor) => (numb) => {
+			const res = stor.spells_Setting_Arr.filter((el) => el.spell[numb]?.name);
+			return res;
+		},
+
+		filter_All_Manna_Spells: (stor) => (numb) => {
+			const res = stor.spells_All_Manna.filter((el) => el.spell[numb]?.name);
+			return res;
+		},
+
+		numb_Manna_Spell() {
+			let res_arr = [];
+			this.spells_All_Manna.forEach((el) => {
+				el.spell.forEach((item, i) => {
+					if (item.name) {
+						res_arr.push(i);
+					}
+				});
+			});
+			const unique_numb = [...new Set(res_arr)];
+			unique_numb.sort((a, b) => a - b);
+			return unique_numb;
+		},
+
+		shown_Spells_All() {
+			return this.spells_RC_Param.length !== 0;
+		},
+	},
+};
+</script>
+
+<style scoped>
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.gap-26 {
+	gap: 26px;
+}
+</style>

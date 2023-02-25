@@ -101,10 +101,7 @@ export const useMYStore = defineStore({
     settings_Class_Arr() {
       const custom_class = this.сustomm_Settings_Class_Arr;
       const spells_sett = this.spells_Settings_Class_Arr;
-      return [
-        ...custom_class, 
-        ...spells_sett
-      ];
+      return [...custom_class, ...spells_sett];
     },
 
     filter_Custom_Race_Lvl: (stor) => (name) => {
@@ -144,7 +141,7 @@ export const useMYStore = defineStore({
 				const link_name = item_name;
 				const sett_for_name = sett_spell.filter((el) => el.name == item_name);
         sett_for_name?.forEach((item, i) => {
-          const link_name_i = `${link_name}__${i}`;
+          const link_name_i = `many_spells___${link_name}__${i}`;
 					const select_numb = this.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
 					const select_arr = sett_select?.[link_name_i] ?? [];
           

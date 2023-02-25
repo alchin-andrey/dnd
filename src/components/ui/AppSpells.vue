@@ -14,46 +14,43 @@
 		>
 			<div ref="stripe" class="side_stripe"></div>
 			<div class="int-400 flex_col" :class="{ passive: passive }">
-				<div>
-					<div class="flex_title">
-						<div
-							class="title_spell h_18"
-							:class="{ 'rare-text': overflow_Save }"
-						>
-							{{ em_Before
-							}}<emoji
-								v-if="em_Upd"
-								:data="emojiIndex"
-								:emoji="em_Upd"
-								:set="set_emoji"
-								:size="emoji_size"
-							/>{{ em_After }} {{name_Extra_MOD}}
-						</div>
-						<svg
-							class="icon_svg"
-							@mouseover="hoverIn_Select()"
-							@mouseleave="hoverOut()"
-							@click="showDialog_Select()"
-							viewBox="0 0 18 18"
-							xmlns="http://www.w3.org/2000/svg"
-							v-html="ui_icon.arrow_right_small"
-						/>
+				<section class="flex_title">
+					<div class="title_spell h_18" :class="{ 'rare-text': overflow_Save }">
+						{{ em_Before
+						}}<emoji
+							v-if="em_Upd"
+							:data="emojiIndex"
+							:emoji="em_Upd"
+							:set="set_emoji"
+							:size="emoji_size"
+						/>{{ em_After }} {{ name_Extra_MOD }}
 					</div>
+					<svg
+						class="icon_svg"
+						@mouseover="hoverIn_Select()"
+						@mouseleave="hoverOut()"
+						@click="showDialog_Select()"
+						viewBox="0 0 18 18"
+						xmlns="http://www.w3.org/2000/svg"
+						v-html="ui_icon.arrow_right_small"
+					/>
+				</section>
 
+				<section class="flex_col gap-12" v-if="!only_title">
 					<div class="text_spell" v-html="t_Text"></div>
-				</div>
-				<magic-attribute
-					v-if="Spell_Index.impact_type"
-					:title="Spell_Index.impact_type"
-					:addition="Spell_Index.impact_damage_type"
-					:str="Value_Str"
-					:numb="Value_Num"
-					:dice="Value_Dic"
-					:pls="Value_Pls"
-					:feet="Spell_Index.impact_size_foo?.includes('Feet')"
-					main
-					not_dot
-				/>
+					<magic-attribute
+						v-if="Spell_Index.impact_type"
+						:title="Spell_Index.impact_type"
+						:addition="Spell_Index.impact_damage_type"
+						:str="Value_Str"
+						:numb="Value_Num"
+						:dice="Value_Dic"
+						:pls="Value_Pls"
+						:feet="Spell_Index.impact_size_foo?.includes('Feet')"
+						main
+						not_dot
+					/>
+				</section>
 			</div>
 		</div>
 	</AppTooltip>
@@ -68,7 +65,7 @@
 					:emoji="em_Upd"
 					:set="set_emoji"
 					:size="emoji_size"
-				/>{{ em_After }} {{name_Extra_MOD}}
+				/>{{ em_After }} {{ name_Extra_MOD }}
 			</div>
 		</my-wrapper>
 		<section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
@@ -139,7 +136,11 @@
 		</my-wrapper>
 		<div class="hr"></div>
 		<div class="text_spell gray_4" v-html="t_Expanded"></div>
-		<div class="text_spell rare-text" v-if="mod_Expanded_Extra" v-html="mod_Expanded_Extra"></div>
+		<div
+			class="text_spell rare-text"
+			v-if="mod_Expanded_Extra"
+			v-html="mod_Expanded_Extra"
+		></div>
 	</my-dialog-spell>
 </template>
 
@@ -186,6 +187,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		only_title: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery"]),
@@ -194,46 +199,46 @@ export default {
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 
-    spell() {
-      return this.spell_obj.spell;
-    },
+		spell() {
+			return this.spell_obj.spell;
+		},
 
-    spell_Mod() {
-      return this.spell_obj?.mod;
-    },
+		spell_Mod() {
+			return this.spell_obj?.mod;
+		},
 
-    name_Extra_MOD() {
-      const name_extr = this.spell_Mod?.name_extra;
-      return name_extr ? this.t(name_extr) : null;
-    },
+		name_Extra_MOD() {
+			const name_extr = this.spell_Mod?.name_extra;
+			return name_extr ? this.t(name_extr) : null;
+		},
 
-    spell_Slot_Type_MOD() {
-      const mod_slot_type = this.spell_Mod?.slot_type;
-      const spell_slot_type = this.Spell_Index.slot_type
-      return mod_slot_type ?? spell_slot_type;
-    },
+		spell_Slot_Type_MOD() {
+			const mod_slot_type = this.spell_Mod?.slot_type;
+			const spell_slot_type = this.Spell_Index.slot_type;
+			return mod_slot_type ?? spell_slot_type;
+		},
 
-    spell_Attribute_MOD() {
-      const mod_attribute = this.spell_Mod?.spell_attribute;
-      const class_attribute = this.MY.class.spell_attribute;
-      return mod_attribute ?? class_attribute;
-    },
+		spell_Attribute_MOD() {
+			const mod_attribute = this.spell_Mod?.spell_attribute;
+			const class_attribute = this.MY.class.spell_attribute;
+			return mod_attribute ?? class_attribute;
+		},
 
-    mod_Expanded_Extra() {
-      const expanded_extra = this.spell_Mod?.expanded_extra;
-      return expanded_extra ? this.t(expanded_extra) : null;
-    },
+		mod_Expanded_Extra() {
+			const expanded_extra = this.spell_Mod?.expanded_extra;
+			return expanded_extra ? this.t(expanded_extra) : null;
+		},
 
-    cast_time_MOD() {
-      const mod_cast_time = this.spell_Mod?.cast_time;
-      const spell_cast_time = this.Spell_Index.cast_time;
-      return mod_cast_time ?? spell_cast_time;
-    },
+		cast_time_MOD() {
+			const mod_cast_time = this.spell_Mod?.cast_time;
+			const spell_cast_time = this.Spell_Index.cast_time;
+			return mod_cast_time ?? spell_cast_time;
+		},
 
-    mod_Cast_Dration_Units_Plus() {
-      const cast_duration_units_plus = this.spell_Mod?.cast_duration_units_plus;
-      return cast_duration_units_plus ? this.t(cast_duration_units_plus) : null;
-    },
+		mod_Cast_Dration_Units_Plus() {
+			const cast_duration_units_plus = this.spell_Mod?.cast_duration_units_plus;
+			return cast_duration_units_plus ? this.t(cast_duration_units_plus) : null;
+		},
 
 		Index() {
 			return this.spell.findIndex((el) => el.name);
@@ -299,9 +304,9 @@ export default {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 
-    t_Slot_Type() {
-    return this.t(this.spell_Slot_Type_MOD)
-    },
+		t_Slot_Type() {
+			return this.t(this.spell_Slot_Type_MOD);
+		},
 
 		t_Text() {
 			let foo = this.Value_Det;
@@ -314,13 +319,13 @@ export default {
 			const cast_time = this.t(this.cast_time_MOD);
 			const numb = this.Spell_Index.cast_duration;
 			const numb_units = this.t(this.Spell_Index.cast_duration_units);
-      const mod_cast_duration = this.mod_Cast_Dration_Units_Plus
+			const mod_cast_duration = this.mod_Cast_Dration_Units_Plus;
 			if (this.cast_time_MOD === "ritual") {
-        if(mod_cast_duration) {
-          string = `${cast_time} ${numb} ${numb_units} ${mod_cast_duration}`;
-        } else {
-          string = `${cast_time} ${numb} ${numb_units}`;
-        }
+				if (mod_cast_duration) {
+					string = `${cast_time} ${numb} ${numb_units} ${mod_cast_duration}`;
+				} else {
+					string = `${cast_time} ${numb} ${numb_units}`;
+				}
 			} else if (!cast_time) {
 				string = `${numb} ${numb_units}`;
 			} else {
@@ -897,15 +902,17 @@ export default {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 12px 0;
-	/*flex: 1 1 auto;*/
+	gap: 4px;
+}
+.gap-12 {
+	gap: 12px;
 }
 
 .flex_title {
+	height: 18px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 4px;
 }
 
 .side_stripe {

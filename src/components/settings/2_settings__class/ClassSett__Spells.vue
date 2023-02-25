@@ -11,7 +11,7 @@
 				<AppSpellsPacks
 					class="flex-col gap-34"
 					v-if="filter_Spells(i).length !== 0"
-					:numb="i"
+					:text="String(i)"
 				>
 					<section class="flex-col">
 						<my-selection-card
@@ -90,12 +90,6 @@ export default {
 		},
 
 		numb_Manna_Spell() {
-      let res = 0;
-      this.spells_setting.list.forEach(el => {
-        res = Math.max(res, el.spells[0].spell.length)
-      });
-
-
       let res_arr = [];
       this.spells_setting.list.forEach(el => {
         el.spells[0].spell.forEach((item, i) => {
@@ -121,7 +115,6 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	/* margin: 0 0 26px 16px; */
 }
 
 .mar-bot-34 {

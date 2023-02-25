@@ -11,6 +11,7 @@ import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassPa
 import ClassParam__Text from "@/components/parameters/2_param__class/ClassParam__Text.vue";
 
 import ClassParam__SkillsAll from "@/components/parameters/2_param__class/ClassParam__SkillsAll.vue";
+import ClassParamSett__Spells from "@/components/parameters/2_param__class/ClassParamSett__Spells.vue";
 
 export default {
 	components: {
@@ -27,5 +28,7 @@ export default {
   ClassParam__Text,
 
   ClassParam__SkillsAll,
+  ClassParamSett__Spells,
+  
 	},
 };

@@ -22,10 +22,16 @@ export const useSpellsStore = defineStore({
 			return new_arr;
 		},
 
-		spells_For_Arr_Obj: (state) => (arr_obj) => {
+		spells_For_Arr_Obj: (stor) => (arr_obj) => {
 			let arr_spell = [];
 			arr_obj.forEach((el) => arr_spell.push(el.spell));
 			return arr_spell;
+		},
+
+    spells_Filter_Without: (stor) => (arr_filter, arr_main) => {
+      return arr_filter.filter((el) => !arr_main.some(item => {
+        return item.spell.find(i => i.name).name == el.spell.find(i => i.name).name;
+      }));
 		},
 
 		spells_Race_Main_Arr() {
@@ -69,10 +75,25 @@ export const useSpellsStore = defineStore({
 			return spell_arr;
 		},
 
+    spells_Class_Settings_Many_Arr() {
+      const MYStore = useMYStore();
+      const arr = MYStore.spells_Settings_Class_Arr;
+      const spell_arr = MYStore.filter_Custom_Lvl(arr, "spells")
+      // let spell_arr = [];
+      // arr.forEach(el => {
+      //   el.select_list.forEach(sub_el => {
+      //     const item_lvl = MYStore.level_Filter_Arr(sub_el?.[spells]);
+      //     spell_arr = spell_arr.concat(item_lvl);
+      //   });
+      // });
+			return spell_arr;
+    },
+
 		spells_Class_Param_All() {
 			const class_spells = this.spells_Class_Main_Arr;
 			const custo_spells = this.spells_Class_Custom_Arr;
-			return [...class_spells, ...custo_spells];
+			const sett_many_spells = this.spells_Class_Settings_Many_Arr;
+			return [...class_spells, ...custo_spells, ...sett_many_spells];
 		},
 
 		spells_Class_Param() {
@@ -82,7 +103,8 @@ export const useSpellsStore = defineStore({
 		spells_Class_Param_without_Race_Param() {
 			const race_spells = this.spells_Race_Param;
 			const class_spells = this.spells_Class_Param;
-			return class_spells.filter((el) => !race_spells.includes(el));
+      const filter_class_spells = this.spells_Filter_Without(class_spells, race_spells);
+			return filter_class_spells;
 		},
 
 		spells_RC_Param_All() {
@@ -95,6 +117,20 @@ export const useSpellsStore = defineStore({
 			const race_spells = this.spells_Race_Param;
 			const class_spells_includ = this.spells_Class_Param_without_Race_Param;
 			return [...race_spells, ...class_spells_includ];
+		},
+
+    spells_RC_Param_Ability() {
+			const start_arr = this.spells_RC_Param;
+			return start_arr.filter(
+				(el) => el.spell.find((item) => item.name).type == "ability"
+			);
+		},
+
+		spells_RC_Param_Manna() {
+			const start_arr = this.spells_RC_Param;
+			return start_arr.filter(
+				(el) => el.spell.find((item) => item.name).type !== "ability"
+			);
 		},
 
 		//NOTE - PAGE

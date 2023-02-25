@@ -1,7 +1,13 @@
 <template>
 		<div :class="{ passive: passive }">
 			<div class="flex_title">
-				<div class="jbm-300 manna-numb">{{ t_Title }}</div>
+				<div class="jbm-300" 
+        :class="{
+          'manna-numb': !numb
+        }">
+        <span v-if="numb">{{numb_Count}}</span>
+        <span>{{ t_Title }}</span>
+        </div>
 				<div class="icon"
         @click="shownScroll()">
 					<svg
@@ -33,6 +39,10 @@ export default {
 			type: Number,
 			default: null,
 		},
+		text: {
+			type: String,
+			default: null,
+		},
 		passive: {
 			type: Boolean,
 			default: false,
@@ -40,8 +50,12 @@ export default {
 	},
 	computed: {
 		t_Title() {
-			return `${this.t("spells")} [${this.numb}]`;
+			return `${this.t("spells")} [${this.t(this.text)}]`;
 		},
+    numb_Count() {
+      return `${this.numb}× `;
+    },
+
 		img_Icon() {
 			return this.packs_scroll ? "arrow_top_small" : "arrow_down_small";
 		},
@@ -103,7 +117,7 @@ export default {
 
 .scroll-packs-enter-from,
 .scroll-packs-leave-to {
-	transform: translateY(-20px);
+	transform: translateY(-10px);
 	opacity: 0;
 }
 

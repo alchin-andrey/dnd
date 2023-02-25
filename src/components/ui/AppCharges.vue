@@ -1,7 +1,8 @@
 <template>
-	<div class="column jbm-300" :class="{passive: passive}">
+	<div class="column jbm-300" :class="{ passive: passive }">
 		<div class="flex_row">
-			<svg class="icon"
+			<svg
+				class="icon"
 				width="18"
 				height="18"
 				viewBox="0 0 18 18"
@@ -15,7 +16,12 @@
 		</div>
 		<div class="items">
 			<section v-for="item in list_Filter_Arr" :key="item" class="column_vis">
-				<div class="small">{{ Str(item) }}</div>
+				<div class="small">
+					<span class="passive" v-if="spell_count">{{
+						numb_Spells(item)
+					}}</span>
+					<span>{{ Str(item) }}</span>
+				</div>
 				<div class="charge_text" v-if="Inf(item)">{{ Inf(item) }}</div>
 				<div v-else class="visual">
 					<div
@@ -34,6 +40,7 @@ import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "AppCharges",
 	data() {
@@ -46,7 +53,11 @@ export default {
 			type: Object,
 			default: null,
 		},
-    passive: {
+		passive: {
+			type: Boolean,
+			default: false,
+		},
+		spell_count: {
 			type: Boolean,
 			default: false,
 		},
@@ -56,13 +67,23 @@ export default {
 		// STORES
 		...mapState(useMYStore, ["MY", "Mastery"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
+		...mapState(useSpellsStore, ["spells_RC_Param_Manna"]),
 
 		t_Title() {
 			return this.t(this.charge.name);
 		},
 
+		numb_Spells: (stor) => (item) => {
+			const numb = item[0][1];
+			const res = stor.spells_RC_Param_Manna.reduce(
+				(acc, el) => (el.spell[numb]?.name ? (acc += 1) : acc),
+				0
+			);
+			return `${res}× `;
+		},
+
 		icon_Image() {
-      let type_foo = this.Value_Foo("Typ");
+			let type_foo = this.Value_Foo("Typ");
 			return type_foo ? type_foo : this.charge.type;
 		},
 
@@ -152,23 +173,23 @@ export default {
 			return mod <= 0 ? 1 : mod;
 		},
 
-    Num_Mastery() {
-      return this.Mastery;
-    },
+		Num_Mastery() {
+			return this.Mastery;
+		},
 
-    Typ_5_Lvl() {
-      let lvl = this.MY.level;
-      let type = this.charge.type;
-      return lvl >= 5 ? "short_rest" : type;
-    },
+		Typ_5_Lvl() {
+			let lvl = this.MY.level;
+			let type = this.charge.type;
+			return lvl >= 5 ? "short_rest" : type;
+		},
 	},
 };
 </script>
 
 <style scoped>
 .flex_row {
-  display: flex;
-  gap: 4px;
+	display: flex;
+	gap: 4px;
 }
 
 /* .icon {
