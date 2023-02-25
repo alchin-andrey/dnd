@@ -4033,14 +4033,14 @@ export default {
                 spell: spells.haste,
               },
               //TODO - додати спели
-              // {
-              //   level: 13,
-              //   spell: spells.banishment,
-              // },
-              // {
-              //   level: 13,
-              //   spell: spells.dimension_door,
-              // },
+              {
+                level: 13,
+                spell: spells.banishment,
+              },
+              {
+                level: 13,
+                spell: spells.dimension_door,
+              },
               {
                 level: 15,
                 spell: spells.soul_of_vengeance,

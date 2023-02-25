@@ -1670,6 +1670,7 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "mi_cleric",
                 details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
@@ -1976,6 +1977,7 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "mi_druid",
                 details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
@@ -2323,6 +2325,7 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "mi_warlock",
                 details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
@@ -2614,6 +2617,7 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "mi_sorcerer",
                 details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
@@ -3046,6 +3050,7 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "mi_wizard",
                 details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
@@ -3584,6 +3589,7 @@ export default {
                 //Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "mi_bard",
                 details: "no_mana_but_once_a_day",
                 position: 4,
                 select: 1,
@@ -3968,6 +3974,7 @@ export default {
                 // Вы узнали несколько заклинаний, которые можете накладывать как ритуалы. Выбранный класс также определяет базовую характеристику для этих заклинаний: Харизма для барда, колдуна и чародея; Интеллект для волшебника; Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "rc_cleric",
                 details: "no_mana_but_ritual",
                 position: 4,
                 select: 2,
@@ -4041,6 +4048,7 @@ export default {
                 // Вы узнали несколько заклинаний, которые можете накладывать как ритуалы. Выбранный класс также определяет базовую характеристику для этих заклинаний: Харизма для барда, колдуна и чародея; Интеллект для волшебника; Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "rc_druid",
                 details: "no_mana_but_ritual",
                 position: 4,
                 select: 2,
@@ -4132,6 +4140,7 @@ export default {
                 // Вы узнали несколько заклинаний, которые можете накладывать как ритуалы. Выбранный класс также определяет базовую характеристику для этих заклинаний: Харизма для барда, колдуна и чародея; Интеллект для волшебника; Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "rc_warlock",
                 details: "no_mana_but_ritual",
                 position: 4,
                 select: 2,
@@ -4205,6 +4214,7 @@ export default {
                 // Вы узнали несколько заклинаний, которые можете накладывать как ритуалы. Выбранный класс также определяет базовую характеристику для этих заклинаний: Харизма для барда, колдуна и чародея; Интеллект для волшебника; Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "rc_sorcerer",
                 details: "no_mana_but_ritual",
                 position: 4,
                 select: 2,
@@ -4260,6 +4270,7 @@ export default {
                 // Вы узнали несколько заклинаний, которые можете накладывать как ритуалы. Выбранный класс также определяет базовую характеристику для этих заклинаний: Харизма для барда, колдуна и чародея; Интеллект для волшебника; Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "rc_wizard",
                 details: "no_mana_but_ritual",
                 position: 4,
                 select: 2,
@@ -4423,6 +4434,7 @@ export default {
                 // Вы узнали несколько заклинаний, которые можете накладывать как ритуалы. Выбранный класс также определяет базовую характеристику для этих заклинаний: Харизма для барда, колдуна и чародея; Интеллект для волшебника; Мудрость для друида и жреца.
                 type: "custom",
                 name: "spells_1",
+                name_extra: "rc_bard",
                 details: "no_mana_but_ritual",
                 position: 4,
                 select: 2,

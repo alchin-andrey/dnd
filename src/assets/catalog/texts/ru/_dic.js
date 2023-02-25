@@ -5501,7 +5501,7 @@ export default {
   spell_haste_details: spells.haste_details,
   spell_haste_expanded: spells.haste_expanded,
 
-  magic_initiate_expanded: "<br/><br/>* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами.",
+  magic_initiate_expanded: "* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, и один раз между продолжительньіми отдьіхами.",
 
   spell_longstrider: spells.longstrider,
   spell_longstrider_details: spells.longstrider_details,
@@ -5511,5 +5511,17 @@ export default {
   spell_tashas_hideous_laughter_details: spells.tashas_hideous_laughter_details,
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
-  ritual_caster_expanded: "<br/><br/>* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, на 10 минут дольше, и держа в руке свою ритуальную книгу.",
+  ritual_caster_expanded: "* Вьі можете использовать єто заклинание без маньі, но накладьівать его на минимально возможном уровне, на 10 минут дольше, и держа в руке свою ритуальную книгу.",
+
+  spell_banishment: spells.banishment,
+  spell_banishment_details: spells.banishment_details,
+  spell_banishment_expanded: spells.banishment_expanded,
+
+  spell_crown_of_madness: spells.crown_of_madness,
+  spell_crown_of_madness_details: spells.crown_of_madness_details,
+  spell_crown_of_madness_expanded: spells.crown_of_madness_expanded,
+
+  spell_dimension_door: spells.dimension_door,
+  spell_dimension_door_details: spells.dimension_door_details,
+  spell_dimension_door_expanded: spells.dimension_door_expanded,
 };  

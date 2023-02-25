@@ -5476,7 +5476,7 @@ export default {
   spell_haste_details: spells.haste_details,
   spell_haste_expanded: spells.haste_expanded,
 
-  magic_initiate_expanded: "<br/><br/>* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками",
+  magic_initiate_expanded: "* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками",
 
   spell_longstrider: spells.longstrider,
   spell_longstrider_details: spells.longstrider_details,
@@ -5486,5 +5486,13 @@ export default {
   spell_tashas_hideous_laughter_details: spells.tashas_hideous_laughter_details,
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
-  ritual_caster_expanded: "<br/><br/>* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу.",
+  ritual_caster_expanded: "* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу.",
+
+  spell_banishment: spells.banishment,
+  spell_banishment_details: spells.banishment_details,
+  spell_banishment_expanded: spells.banishment_expanded,
+
+  spell_dimension_door: spells.dimension_door,
+  spell_dimension_door_details: spells.dimension_door_details,
+  spell_dimension_door_expanded: spells.dimension_door_expanded,
 };
