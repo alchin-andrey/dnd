@@ -5513,4 +5513,6 @@ export default {
   spells_left: "виберіть ще",
   spell_duplicated: "є повторення",
   spell_selected: "✅ Обрано",
+  action_plus10min: '[Без мани +10 хв] Основна дія',
+  ritual_plus10min: '[Без мани +10 хв] Ритуал',
 };
