@@ -4714,6 +4714,7 @@ export default {
   ],
 
   speak_with_animals_ranger: [
+    {},
     {
       name: "spell_speak_with_animals_ranger",
       details: "spell_speak_with_animals_ranger_details",
@@ -4722,7 +4723,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -4765,7 +4766,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -4811,7 +4812,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "ritual",
+      cast_time: "ritual_plus10min",
       cast_duration: 1,
       cast_duration_units: "min",
       as_ritual: true,
@@ -8447,7 +8448,7 @@ export default {
       slot_type: "chi_slot_2",
       classes: ["monk"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: null,
       cast_duration_units: null,
       as_ritual: true,
@@ -15346,7 +15347,7 @@ export default {
       type: "illusion",
       classes: ["bard", "warlock", "wizard"],
 
-      cast_time: "ritual",
+      cast_time: "ritual_plus10min",
       cast_duration: 1,
       cast_duration_units: "min",
       as_ritual: true,
@@ -15394,7 +15395,7 @@ export default {
       type: "conjuration",
       classes: ["bard", "warlock", "wizard"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -15442,7 +15443,7 @@ export default {
       type: "divination",
       classes: ["cleric", "druid", "paladin", "ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -15537,7 +15538,7 @@ export default {
       type: "divination",
       classes: ["bard", "warlock", "wizard"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -15888,7 +15889,7 @@ export default {
       type: "transmutation",
       classes: ["artificer", "cleric", "druid", "paladin"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -16085,7 +16086,7 @@ export default {
       type: "divination",
       classes: ["bard", "sorcerer", "wwarlock", "wizard"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -16393,7 +16394,7 @@ export default {
       type: "divination",
       classes: ["bard", "druid", "ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -16823,7 +16824,7 @@ export default {
       type: "conjuration",
       classes: ["wizard"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -17919,7 +17920,7 @@ export default {
       type: "divination",
       classes: [],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -18634,7 +18635,7 @@ export default {
       type: "necromancy",
       classes: ["cleric", "wizard"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -19265,7 +19266,7 @@ export default {
       type: "divination",
       classes: ["bard", "druid", "ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -19516,7 +19517,7 @@ export default {
       type: "enchantment",
       classes: ["bard", "druid", "ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -19902,7 +19903,7 @@ export default {
       type: "illusion",
       classes: ["bard", "cleric", "ranger"],
 
-      cast_time: "action",
+      cast_time: "action_plus10min",
       cast_duration: 1,
       cast_duration_units: "action",
       as_ritual: true,
@@ -21188,7 +21189,7 @@ export default {
       type: "divination",
       classes: ["druid","ranger",       "cleric","paladin","bard","wizard","warlock","sorcerer"],
 
-      cast_time: "ritual",
+      cast_time: "ritual_plus10min",
       cast_duration: 1,
       cast_duration_units: "min",
       as_ritual: true,
@@ -21234,7 +21235,7 @@ export default {
       type: "divination",
       classes: ["cleric",      "druid","ranger","paladin","bard","wizard","warlock","sorcerer"],
 
-      cast_time: "ritual",
+      cast_time: "ritual_plus10min",
       cast_duration: 1,
       cast_duration_units: "min",
       as_ritual: true,
