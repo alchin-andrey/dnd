@@ -21465,7 +21465,7 @@ export default {
       impact_type: "aim_aoe",
       impact_damage_type: "sphere",
 
-      impact_size_foo: "Num_Feet__Num_Plus_5", //TODO - Num_Plus_10
+      impact_size_foo: "Num_Feet__Num_Plus_10",
       impact_size_str: null,
       impact_size_num: 20,
       impact_size_dic: null,
