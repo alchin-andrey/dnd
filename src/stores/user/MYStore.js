@@ -194,6 +194,7 @@ export const useMYStore = defineStore({
       const cast_time_filter = item.filter?.cast_time;
 
       const extra_items = item.extra_items;
+      const extra_items_lvl = this.level_Filter_Arr(extra_items);
 
       const spell_arr = SpellsStore.spells_Arr;
 
@@ -215,7 +216,7 @@ export const useMYStore = defineStore({
           }
         }
         });
-      return arr;
+      return [...arr, ...extra_items_lvl];
     },
 
     select_spells_Numb(item) {
