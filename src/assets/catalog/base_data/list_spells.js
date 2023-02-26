@@ -21175,51 +21175,6 @@ export default {
   // NOTE - Spells [5]
 
   // TODO - Remove other classes!
-  commune_with_nature: [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {
-      name: "spell_commune_with_nature",
-      details: "spell_commune_with_nature_details",
-      expanded: "spell_commune_with_nature_expanded",
-
-      type: "divination",
-      classes: ["druid","ranger",       "cleric","paladin","bard","wizard","warlock","sorcerer"],
-
-      cast_time: "ritual_plus10min",
-      cast_duration: 1,
-      cast_duration_units: "min",
-      as_ritual: true,
-
-      aim_target: "self",
-      aim_type: null,
-      parts: ["somatic", "verbal"],
-
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
-
-      aim_need: false,
-      aim_range: null,
-      aim_aoe: null,
-      aim_aoe_size: null,
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dic: null,
-      impact_size_pls: null,
-
-      saving_need: false,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-  ],
 
   commune: [
     {},
@@ -21247,6 +21202,52 @@ export default {
       spell_time: null,
       spell_duration: 1,
       spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: null,
+      aim_aoe_size: null,
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  commune_with_nature: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_commune_with_nature",
+      details: "spell_commune_with_nature_details",
+      expanded: "spell_commune_with_nature_expanded",
+
+      type: "divination",
+      classes: ["druid","ranger",       "cleric","paladin","bard","wizard","warlock","sorcerer"],
+
+      cast_time: "ritual_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "min",
+      as_ritual: true,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_range: null,
@@ -21379,6 +21380,55 @@ export default {
     {},
     {},
     {},
+  ],
+
+  scrying: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_scrying",
+      details: "spell_scrying_details",
+      expanded: "spell_scrying_expanded",
+
+      type: "divination",
+      classes: ["bard","wizard","druid","cleric","warlock",      "ranger","paladin","sorcerer"],
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+      as_ritual: true,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["material_focus_1000gold", "somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
   ],
 
   tree_stride: [

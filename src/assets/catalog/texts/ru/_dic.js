@@ -1739,7 +1739,7 @@ export default {
   spell_guiding_bolt_details: spells.guiding_bolt_details,
   spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
 
-  material_ink_10gold: "чернила за >=10 🟡",
+  material_ink_10gold: "чернила за 10+ 🟡",
 
   spell_illusory_script: spells.illusory_script,
   spell_illusory_script_details: spells.illusory_script_details,
@@ -1763,7 +1763,7 @@ export default {
   spell_detect_magic_details: spells.detect_magic_details,
   spell_detect_magic_expanded: spells.detect_magic_expanded,
 
-  material_pearl_100gold: "жемчужина за >=100 🟡",
+  material_pearl_100gold: "жемчужина за 100+ 🟡",
 
   spell_burning_hands: spells.burning_hands,
   spell_burning_hands_details: spells.burning_hands_details,
@@ -1873,7 +1873,7 @@ export default {
   spell_sleep_details: spells.sleep_details,
   spell_sleep_expanded: spells.sleep_expanded,
 
-  material_diamond_50gold: "алмаз за >=50 🟡",
+  material_diamond_50gold: "алмаз за 50+ 🟡",
 
   spell_chromatic_orb: spells.chromatic_orb,
   spell_chromatic_orb_details: spells.chromatic_orb_details,
@@ -1915,14 +1915,14 @@ export default {
   spell_suggestion_expanded: spells.suggestion_expanded,
 
   material_magic_mouth_50gold:
-    "Кусочек медовьіх сот и порошок нефрита за >=10 🟡 (расходуемьіе заклинанием)",
+    "Кусочек медовьіх сот и порошок нефрита за 10+ 🟡 (расходуемьіе заклинанием)",
 
   spell_magic_mouth: spells.magic_mouth,
   spell_magic_mouth_details: spells.magic_mouth_details,
   spell_magic_mouth_expanded: spells.magic_mouth_expanded,
 
   material_golden_dust_25gold:
-    "Золотая пьіль за >=25 🟡 (расходуемая заклинанием)",
+    "Золотая пьіль за 25+ 🟡 (расходуемая заклинанием)",
 
   spell_arcane_lock: spells.arcane_lock,
   spell_arcane_lock_details: spells.arcane_lock_details,
@@ -1933,7 +1933,7 @@ export default {
   spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
 
   material_augury_25gold:
-    "Особьіе палочки, костяшки или фигурки с отметинами за >=25 🟡",
+    "Особьіе палочки, костяшки или фигурки с отметинами за 25+ 🟡",
 
   spell_augury: spells.augury,
   spell_augury_details: spells.augury_details,
@@ -2029,7 +2029,7 @@ export default {
   spell_mirror_image_details: spells.mirror_image_details,
   spell_mirror_image_expanded: spells.mirror_image_expanded,
 
-  material_warding_bond_50gold: "Пара платиновьіх колец за >=50 🟡",
+  material_warding_bond_50gold: "Пара платиновьіх колец за 50+ 🟡",
   bonus: "бонус",
 
   spell_warding_bond: spells.warding_bond,
@@ -5373,8 +5373,8 @@ export default {
   polymorph_slots: "Превращение",
   polymorph_slot: "1× превращение | 4× мана",
 
-  material_giacint_1000gold: "гиацинт за >=1000 🟡",
-  material_silver_bar_100gold: "брусок серебра с орнаментом за >=100 🟡",
+  material_giacint_1000gold: "гиацинт за 1000+ 🟡",
+  material_silver_bar_100gold: "брусок серебра с орнаментом за 100+ 🟡",
 
   spell_astral_projection: spells.astral_projection,
   spell_astral_projection_details: spells.astral_projection_details,
@@ -5433,7 +5433,7 @@ export default {
   spell_wall_of_stone_details: spells.wall_of_stone_details,
   spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
 
-  material_diamont_dust_100gold: "пыль бриллианта за >=100 🟡",
+  material_diamont_dust_100gold: "пыль бриллианта за 100+ 🟡",
 
   spell_stoneskin: spells.stoneskin,
   spell_stoneskin_details: spells.stoneskin_details,
@@ -5530,6 +5530,14 @@ export default {
   plus_10_min: "+10 мин",
 
   spells_left: "вьіберите еще",
-  spell_duplicated: "є повторення",
-  spell_selected: "✅ Обрано",
+  spell_duplicated: "есть повторьі",
+  spell_selected: "✅ Вьібрано",
+  action_plus10min: '[Без маньі +10 мин] Основное действие',
+  ritual_plus10min: '[Без маньі +10 мин] Ритуал',
+
+  spell_scrying: spells.scrying,
+  spell_scrying_details: spells.scrying_details,
+  spell_scrying_expanded: spells.scrying_expanded,
+
+  material_focus_1000gold:"Фокус за 🟡 1000+",
 };  

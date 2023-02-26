@@ -5353,8 +5353,8 @@ export default {
   polymorph_slots: "Перетворення",
   polymorph_slot: "1× перетворення | 4× мана",
 
-  material_giacint_1000gold: "гіацинт за >=1000 🟡",
-  material_silver_bar_100gold: "брусок срібла з орнаментом за >=100 🟡",
+  material_giacint_1000gold: "гіацинт за 1000+ 🟡",
+  material_silver_bar_100gold: "брусок срібла з орнаментом за 100+ 🟡",
 
   spell_astral_projection: spells.astral_projection,
   spell_astral_projection_monk: spells.astral_projection_monk,
@@ -5414,7 +5414,7 @@ export default {
   spell_wall_of_stone_details: spells.wall_of_stone_details,
   spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
 
-  material_diamont_dust_100gold: "діамантовий пил за >=100 🟡",
+  material_diamont_dust_100gold: "діамантовий пил за 100+ 🟡",
 
   spell_stoneskin: spells.stoneskin,
   spell_stoneskin_details: spells.stoneskin_details,
@@ -5482,7 +5482,7 @@ export default {
   spell_haste_details: spells.haste_details,
   spell_haste_expanded: spells.haste_expanded,
 
-  magic_initiate_expanded: "* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками",
+  magic_initiate_expanded: "* Ви можете використовувати це закляття тільки без мани, але накладати його на мінімально можливому рівні, і один раз між тривалими відпочинками",
 
   spell_longstrider: spells.longstrider,
   spell_longstrider_details: spells.longstrider_details,
@@ -5492,7 +5492,7 @@ export default {
   spell_tashas_hideous_laughter_details: spells.tashas_hideous_laughter_details,
   spell_tashas_hideous_laughter_expanded: spells.tashas_hideous_laughter_expanded,
 
-  ritual_caster_expanded: "* Ви можете використовувати це закляття без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу. (застосовано)",
+  ritual_caster_expanded: "* Ви можете використовувати це закляття тільки без мани, але накладати його на мінімально можливому рівні, на 10 хвилин довше і тримаючи в руці свою ритуальну книгу. (застосовано)",
 
   spell_banishment: spells.banishment,
   spell_banishment_details: spells.banishment_details,
@@ -5515,4 +5515,10 @@ export default {
   spell_selected: "✅ Обрано",
   action_plus10min: '[Без мани +10 хв] Основна дія',
   ritual_plus10min: '[Без мани +10 хв] Ритуал',
+
+  spell_scrying: spells.scrying,
+  spell_scrying_details: spells.scrying_details,
+  spell_scrying_expanded: spells.scrying_expanded,
+
+  material_focus_1000gold:"Фокус за 1000+ 🟡",
 };
