@@ -5625,4 +5625,8 @@ export default {
 
   material_smell_250gold:"благовония за 🟡 250+ (расходуется)",
   material_ivory_50gold:"4 пластинки из слоновой кости за 🟡 200+",
+
+  spell_legend_lore: spells.legend_lore,
+  spell_legend_lore_details: spells.legend_lore_details,
+  spell_legend_lore_expanded: spells.legend_lore_expanded,
 };  
