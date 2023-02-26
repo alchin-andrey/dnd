@@ -7012,14 +7012,17 @@ export default {
                   // Архифея позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
                     level: 1,
-                    spell: spells.faerie_fire_0,
+                    name_set: spells.faerie_fire[1].name,
+                    spell: spells.faerie_fire,
                   },
                   {
                     level: 1,
+                    name_set: spells.sleep[1].name,
                     spell: spells.sleep,
                   },
                   {
                     level: 3,
+                    name_set: spells.phantasmal_force[2].name,
                     spell: spells.phantasmal_force,
                   },
                   {
@@ -7029,26 +7032,32 @@ export default {
                   //TODO - Додати спеллс
                   // {
                   //   level: 5,
+                  //   name_set: spells.blink[3].name,
                   //   spell: spells.blink,
                   // },
                   {
                     level: 5,
+                    name_set: spells.plant_growth[3].name,
                     spell: spells.plant_growth,
                   },
                   // {
                   //   level: 7,
+                  //   name_set: spells.greater_invisibility[4].name,
                   //   spell: spells.greater_invisibility,
                   // },
                   // {
                   //   level: 7,
+                  //   name_set: spells.dominate_beast[4].name,
                   //   spell: spells.dominate_beast,
                   // },
                   // {
                   //   level: 9,
+                  //   name_set: spells.dominate_person[5].name,
                   //   spell: spells.dominate_person,
                   // },
                   // {
                   //   level: 9,
+                  //   name_set: spells.seeming[5].name,
                   //   spell: spells.seeming,
                   // },
                 ],
@@ -7164,43 +7173,53 @@ export default {
                   // Исчадие позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
                     level: 1,
+                    name_set: spells.burning_hands[1].name,
                     spell: spells.burning_hands,
                   },
                   {
                     level: 1,
+                    name_set: spells.command[1].name,
                     spell: spells.command,
                   },
                   {
                     level: 3,
+                    name_set: spells.blindness_deafness[2].name,
                     spell: spells.blindness_deafness,
                   },
                   {
                     level: 3,
+                    name_set: spells.scorching_ray[2].name,
                     spell: spells.scorching_ray,
                   },
                   //TODO - Додати спеллс
                   // {
                   //   level: 5,
+                  //   name_set: spells.stinking_cloud[3].name,
                   //   spell: spells.stinking_cloud,
                   // },
                   {
                     level: 5,
+                    name_set: spells.fireball[3].name,
                     spell: spells.fireball,
                   },
                   {
                     level: 7,
+                    name_set: spells.wall_of_fire[4].name,
                     spell: spells.wall_of_fire,
                   },
                   // {
                   //   level: 7,
+                  //   name_set: spells.fire_shield[4].name,
                   //   spell: spells.fire_shield,
                   // },
                   {
                     level: 9,
+                    name_set: spells.flame_strike[5].name,
                     spell: spells.flame_strike,
                   },
                   // {
                   //   level: 9,
+                  //   name_set: spells.hallow[5].name,
                   //   spell: spells.hallow,
                   // },
                 ],
@@ -7300,20 +7319,55 @@ export default {
                   // Ваш покравитель позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
                   {
                     level: 1,
+                    name_set: spells.dissonant_whispers[1].name,
                     spell: spells.dissonant_whispers,
                   },
                   {
                     level: 1,
+                    name_set: spells.tashas_hideous_laughter[1].name,
                     spell: spells.tashas_hideous_laughter,
                   },
                   {
                     level: 3,
+                    name_set: spells.phantasmal_force[2].name,
                     spell: spells.phantasmal_force,
                   },
                   {
                     level: 3,
+                    name_set: spells.detect_thoughts[2].name,
                     spell: spells.detect_thoughts,
                   },
+                  //TODO - Додати спеллс
+                  // {
+                  //   level: 5,
+                  //   name_set: spells.clairvoyance[3].name,
+                  //   spell: spells.clairvoyance,
+                  // },
+                  // {
+                  //   level: 5,
+                  //   name_set: spells.sending[3].name,
+                  //   spell: spells.sending,
+                  // },
+                  // {
+                  //   level: 7,
+                  //   name_set: spells.dominate_beast[4].name,
+                  //   spell: spells.dominate_beast,
+                  // },
+                  // {
+                  //   level: 7,
+                  //   name_set: spells.evards_black_tentacles[4].name,
+                  //   spell: spells.evards_black_tentacles,
+                  // },
+                  // {
+                  //   level: 9,
+                  //   name_set: spells.dominate_person[5].name,
+                  //   spell: spells.dominate_person,
+                  // },
+                  // {
+                  //   level: 9,
+                  //   name_set: spells.telekinesis[5].name,
+                  //   spell: spells.telekinesis,
+                  // },
                 ],
               },
             ],

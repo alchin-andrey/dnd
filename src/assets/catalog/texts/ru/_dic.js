@@ -5530,4 +5530,6 @@ export default {
   plus_10_min: "+10 мин",
 
   spells_left: "вьіберите еще",
+  spell_duplicated: "є повторення",
+  spell_selected: "✅ Обрано",
 };  

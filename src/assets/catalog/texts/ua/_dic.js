@@ -5511,4 +5511,6 @@ export default {
   plus_10_min: "+10 хв",
 
   spells_left: "виберіть ще",
+  spell_duplicated: "є повторення",
+  spell_selected: "✅ Обрано",
 };
