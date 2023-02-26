@@ -22,7 +22,8 @@
 						}}<span
 							class="grey-2"
 							:class="{
-								'rare-text': max_Numb(name),
+                active: max_Numb(name),
+								'rare-text': max_Numb_More(name),
 							}"
 							>{{ base_Numb(name) }}</span>
 					</div>
@@ -108,6 +109,7 @@ export default {
 			"stats_Keys",
 			"stats_Save_Page_Arr",
 			"stats_Numb",
+      "stats_Numb_Full",
 			"stats_Mod",
 			"stats_Save",
 			"stats_Save_Mod",
@@ -178,7 +180,12 @@ export default {
 
 		max_Numb: (stor) => (name) => {
       const max = stor.stats_Base_Max(name);
-			return stor.base_Numb(name) >= max;
+			return stor.stats_Numb_Full(name) == max;
+		},
+
+		max_Numb_More: (stor) => (name) => {
+      const max = stor.stats_Base_Max(name);
+			return stor.stats_Numb_Full(name) > max;
 		},
 	},
 
@@ -274,6 +281,9 @@ export default {
 	border: 1px solid #ff0000;
 }
 
+.active {
+	color: #ffffff;
+}
 .rare-text {
 	color: #ffc93d;
 }

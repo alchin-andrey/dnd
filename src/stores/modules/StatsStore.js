@@ -165,6 +165,10 @@ export const useStatsStore = defineStore({
 			return stor.stats_Numb_Page(name);
 		},
 
+    stats_Numb_Full: (stor) => (name) => {
+			return stor.stats_Numb_Full_Page(name);
+		},
+
     stats_Mod: (stor) => (name) => {
 			// const base_numb = stor.stats_Class_Page_Numb(name);
 			const base_numb = stor.stats_Numb_Page(name);
