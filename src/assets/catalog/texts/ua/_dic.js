@@ -5357,7 +5357,6 @@ export default {
   material_silver_bar_100gold: "брусок срібла з орнаментом за 100+ 🟡",
 
   spell_astral_projection: spells.astral_projection,
-  spell_astral_projection_monk: spells.astral_projection_monk,
   spell_astral_projection_details: spells.astral_projection_details,
   spell_astral_projection_expanded: spells.astral_projection_expanded,
 
@@ -5429,7 +5428,6 @@ export default {
   spell_wall_of_fire_expanded: spells.wall_of_fire_expanded,
 
   spell_wall_of_fire_monk: spells.wall_of_fire_monk,
-  spell_wall_of_fire_details: spells.wall_of_fire_details,
   spell_wall_of_fire_details_5: spells.wall_of_fire_details_5,
   spell_wall_of_fire_details_9: spells.wall_of_fire_details_9,
   spell_wall_of_fire_details_13: spells.wall_of_fire_details_13,
@@ -5572,7 +5570,7 @@ export default {
   spell_mass_cure_wounds_details: spells.mass_cure_wounds_details,
   spell_mass_cure_wounds_expanded: spells.mass_cure_wounds_expanded,
 
-  material_diamond_300gold: "Діаманти за 🟡 500+ (витрачається)",
+  material_diamond_500gold: "Діаманти за 🟡 500+ (витрачається)",
 
   fee: "штраф",
 
@@ -5605,7 +5603,7 @@ export default {
   spell_confusion_expanded: spells.confusion_expanded,
 
   material_smell_250gold:"пахощі за 🟡 250+ (витрачається)",
-  material_ivory_50gold:"4 пластинки із слонової кістки за 🟡 200+",
+  material_ivory_50gold:"4 пластинки із слонової кістки за 200+",
 
   spell_legend_lore: spells.legend_lore,
   spell_legend_lore_details: spells.legend_lore_details,
