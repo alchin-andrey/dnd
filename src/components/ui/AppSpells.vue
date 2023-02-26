@@ -29,6 +29,7 @@
             :class="{
               passive: full_select,
             }"
+            @click.stop
 						@mouseover="hoverIn_Select()"
 						@mouseleave="hoverOut()"
 						@click="btnClick()"
