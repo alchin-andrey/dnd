@@ -7002,11 +7002,11 @@ export default {
                     spells: [{spell: spells.calm_emotions,}],
                   },
                   //TODO - Додати спеллс
-                  // {
-                  //   level: 5,
-                  //   name_set: spells.blink[3].name,
-                  //   spells: [{spell: spells.blink,}],
-                  // },
+                  {
+                    level: 5,
+                    name_set: spells.blink[3].name,
+                    spells: [{spell: spells.blink,}],
+                  },
                   {
                     level: 5,
                     name_set: spells.plant_growth[3].name,
