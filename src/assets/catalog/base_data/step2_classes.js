@@ -4044,15 +4044,14 @@ export default {
                 level: 15,
                 spell: spells.soul_of_vengeance,
               },
-              //TODO - додати спели
               {
                 level: 17,
                 spell: spells.scrying,
               },
-              // {
-              //   level: 17,
-              //   spell: spells.hold_monster,
-              // },
+              {
+                level: 17,
+                spell: spells.hold_monster,
+              },
 
               {
                 level: 20,
@@ -4559,24 +4558,16 @@ export default {
                 spell: spells.thunder_wrath,
               },
               {
-                level: 2,
-                spell: spells.divine_channel_wrath,
-              },
-              {
-                level: 6,
-                spell: spells.thunder_strike,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_sound,
-              },
-              {
                 level: 1,
                 spell: spells.thunderwave,
               },
               {
                 level: 1,
                 spell: spells.fog_cloud,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_wrath,
               },
               {
                 level: 3,
@@ -4586,31 +4577,38 @@ export default {
                 level: 3,
                 spell: spells.gust_of_wind,
               },
-              //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.sleet_storm,
-              // },
-              // {
-              //   level: 5,
-              //   spell: spells.call_lightning,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.control_water,
-              // },
+              {
+                level: 5,
+                spell: spells.sleet_storm,
+              },
+              {
+                level: 5,
+                spell: spells.call_lightning,
+              },
+              {
+                level: 6,
+                spell: spells.thunder_strike,
+              },
+              {
+                level: 7,
+                spell: spells.control_water,
+              },
               {
                 level: 7,
                 spell: spells.ice_storm,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.insect_plague,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.destructive_wave,
-              // },
+              {
+                level: 8,
+                spell: spells.divine_strike_sound,
+              },
+              {
+                level: 9,
+                spell: spells.insect_plague,
+              },
+              {
+                level: 9,
+                spell: spells.destructive_wave,
+              },
             ],
 
             proficiencies: {
@@ -4725,24 +4723,16 @@ export default {
                 spell: spells.inspired_attack,
               },
               {
-                level: 2,
-                spell: spells.divine_channel_directed_strike,
-              },
-              {
-                level: 6,
-                spell: spells.divine_channel_war_god_bless,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_weapon,
-              },
-              {
                 level: 1,
                 spell: spells.divine_favor,
               },
               {
                 level: 1,
                 spell: spells.shield_of_faith,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_directed_strike,
               },
               {
                 level: 3,
@@ -4752,15 +4742,18 @@ export default {
                 level: 3,
                 spell: spells.magic_weapon,
               },
-              //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.spirit_guardians,
-              // },
-              // {
-              //   level: 5,
-              //   spell: spells.crusaders_mantle,
-              // },
+              {
+                level: 5,
+                spell: spells.spirit_guardians,
+              },
+              {
+                level: 5,
+                spell: spells.crusaders_mantle,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_war_god_bless,
+              },
               {
                 level: 7,
                 spell: spells.stoneskin,
@@ -4770,13 +4763,17 @@ export default {
                 spell: spells.freedom_of_movement,
               },
               {
+                level: 8,
+                spell: spells.divine_strike_weapon,
+              },
+              {
                 level: 9,
                 spell: spells.flame_strike,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.hold_monster,
-              // },
+              {
+                level: 9,
+                spell: spells.hold_monster,
+              },
             ],
 
             proficiencies: {
@@ -4865,25 +4862,16 @@ export default {
 
             spells: [
               {
-                level: 2,
-                spell: spells.divine_channel_save_life,
-              },
-              {
-                level: 6,
-                spell: spells.divine_channel_save_life,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_radiant,
-              },
-
-              {
                 level: 1,
                 spell: spells.bless,
               },
               {
                 level: 1,
                 spell: spells.cure_wounds,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_save_life,
               },
               {
                 level: 3,
@@ -4893,31 +4881,35 @@ export default {
                 level: 3,
                 spell: spells.lesser_restoration,
               },
-              //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.revivify,
-              // },
+
+              {
+                level: 5,
+                spell: spells.revivify,
+              },
               {
                 level: 5,
                 spell: spells.beacon_of_hope,
               },
-              // {
-              //   level: 7,
-              //   spell: spells.death_ward,
-              // },
+              {
+                level: 7,
+                spell: spells.death_ward,
+              },
               {
                 level: 7,
                 spell: spells.guardian_of_faith,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.mass_cure_wounds,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.raise_dead,
-              // },
+              {
+                level: 8,
+                spell: spells.divine_strike_radiant,
+              },
+              {
+                level: 9,
+                spell: spells.mass_cure_wounds,
+              },
+              {
+                level: 9,
+                spell: spells.raise_dead,
+              },
             ],
 
             proficiencies: {
@@ -5017,28 +5009,16 @@ export default {
 
             spells: [
               {
-                level: 2,
-                spell: spells.divine_channel_learn_tool,
-              },
-              {
-                level: 6,
-                spell: spells.divine_channel_read_thoughts,
-              },
-              {
-                level: 8,
-                spell: spells.cleric_extra_damage,
-              },
-              {
-                level: 17,
-                spell: spells.cleric_see_past,
-              },
-              {
                 level: 1,
                 spell: spells.identify,
               },
               {
                 level: 1,
                 spell: spells.command,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_learn_tool,
               },
               {
                 level: 3,
@@ -5049,30 +5029,42 @@ export default {
                 spell: spells.augury,
               },
               //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.nondetection,
-              // },
-              // {
-              //   level: 5,
-              //   spell: spells.speak_with_dead,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.arcane_eye,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.confusion,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.legend_lore,
-              // },
-              // {
-              //   level: 9,
-              //   spell: spells.scrying,
-              // },
+              {
+                level: 5,
+                spell: spells.nondetection,
+              },
+              {
+                level: 5,
+                spell: spells.speak_with_dead,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_read_thoughts,
+              },
+              {
+                level: 7,
+                spell: spells.arcane_eye,
+              },
+              {
+                level: 7,
+                spell: spells.confusion,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 9,
+                spell: spells.legend_lore,
+              },
+              {
+                level: 9,
+                spell: spells.scrying,
+              },
+              {
+                level: 17,
+                spell: spells.cleric_see_past,
+              },
             ],
 
             settings: [
@@ -5387,10 +5379,10 @@ export default {
                 level: 9,
                 spell: spells.tree_stride,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.insect_plague,
-              // },
+              {
+                level: 9,
+                spell: spells.insect_plague,
+              },
             ],
 
             proficiencies: {
@@ -5624,10 +5616,10 @@ export default {
                 level: 7,
                 spell: spells.guardian_of_faith,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.scrying,
-              // },
+              {
+                level: 9,
+                spell: spells.scrying,
+              },
               {
                 level: 9,
                 spell: spells.flame_strike,
@@ -5873,16 +5865,6 @@ export default {
           },
         ],
       },
-      // {
-      //   level: 1,
-      //   type: "spells",
-      //   position: 4,
-      //   name: "spells_0",
-      //   select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-      //   mana_min: 0,
-      //   mana_max: 0,
-      //   classes: ["cleric"],
-      // },
       {
         level: 1,
         type: "spells",
@@ -6178,10 +6160,10 @@ export default {
                       //   level: 5,
                       //   spell: spells.slow,
                       // },
-                      // {
-                      //   level: 5,
-                      //   spell: spells.sleet_storm,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.sleet_storm,
+                      },
                       {
                         level: 7,
                         spell: spells.ice_storm,
@@ -6230,14 +6212,14 @@ export default {
                         level: 7,
                         spell: spells.freedom_of_movement,
                       },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.scrying,
-                      // },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.insect_plague,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.scrying,
+                      },
+                      {
+                        level: 9,
+                        spell: spells.insect_plague,
+                      },
                     ],
                   },
                   {
@@ -6294,10 +6276,10 @@ export default {
                         spell: spells.spider_climb,
                       },
                       //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.call_lightning,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.call_lightning,
+                      },
                       {
                         level: 5,
                         spell: spells.plant_growth,
@@ -6354,10 +6336,10 @@ export default {
                       //   level: 9,
                       //   spell: spells.dream,
                       // },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.insect_plague,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.insect_plague,
+                      },
                     ],
                   },
                   {
@@ -6382,18 +6364,18 @@ export default {
                       //   level: 5,
                       //   spell: spells.water_walk,
                       // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.control_water,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.control_water,
+                      },
                       {
                         level: 7,
                         spell: spells.freedom_of_movement,
                       },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.scrying,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.scrying,
+                      },
                       // {
                       //   level: 9,
                       //   spell: spells.conjure_elemental,
@@ -6430,10 +6412,10 @@ export default {
                       //   level: 7,
                       //   spell: spells.stone_shape,
                       // },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.insect_plague,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.insect_plague,
+                      },
                       // {
                       //   level: 9,
                       //   spell: spells.cloudkill,
@@ -6732,16 +6714,6 @@ export default {
           },
         ],
       },
-      // {
-      //   level: 1,
-      //   type: "spells",
-      //   position: 4,
-      //   name: "spells_0",
-      //   select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-      //   mana_min: 0,
-      //   mana_max: 0,
-      //   classes: ["druid"],
-      // },
       {
         type: "spells",
         position: 4,
@@ -7897,15 +7869,13 @@ export default {
           {
             level: 9,
             name: "whispers_of_the_grave",
-
-            //TODO - додати speak_with_dead_warlock
-            // spells: [
-            //   {
-            //     level: 9,
-            //     spell: spells.speak_with_dead_warlock,
-            //     // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 9,
+                spell: spells.speak_with_dead_warlock,
+                // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+              },
+            ],
           },
           {
             level: 9,
@@ -7960,15 +7930,14 @@ export default {
           {
             level: 15,
             name: "visions_of_distant_realms",
-            
-            //TODO - додати Arcane_Eye_warlock
-            // spells: [
-            //   {
-            //     level: 15,
-            //     spell: spells.arcane_eye_warlock,
-            //     // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
-            //   },
-            // ],
+
+            spells: [
+              {
+                level: 15,
+                spell: spells.arcane_eye_warlock,
+                // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+              },
+            ],
           },
           {
             level: 15,
@@ -7985,15 +7954,12 @@ export default {
           {
             level: 15,
             name: "chains_of_carceri",
-            
-            //TODO - додати hold_monster_warlock
-            // spells: [
-            //   {
-            //     level: 15,
-            //     spell: spells.hold_monster_warlock,
-            //     // Вы можете неограниченно накладывать заклинание удержание чудовища [hold monster], если цель — исчадие, небожитель или элементаль. При этом вы не тратите ячейки заклинаний и материальные компоненты. Вы должны закончить продолжительный отдых, прежде чем снова сможете использовать это заклинание против этого же существа.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 15,
+                spell: spells.hold_monster_warlock,
+              },
+            ],
           },
 
           // Не каноничньіе, как оказалось
@@ -8389,17 +8355,6 @@ export default {
           },
         ],
       },
-      // {
-      //   level: 1,
-      //   type: "spells",
-      //   position: 4,
-      //   name: "spells_0",
-      //   select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-      //   mana_min: 0,
-      //   mana_max: 0,
-      //   classes: ["warlock"],
-      // },
-      // TODO - Додати Аркануми ?
       {
           level: 11,
           type: "spells",
@@ -9101,16 +9056,6 @@ export default {
           },
         ],
       },
-      // {
-      //   level: 1,
-      //   type: "spells",
-      //   position: 4,
-      //   name: "spells_0",
-      //   select: [4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
-      //   mana_min: 0,
-      //   mana_max: 0,
-      //   classes: ["sorcerer"],
-      // },
       {
         level: 1,
         type: "spells",
@@ -9744,12 +9689,10 @@ export default {
                 level: 14,
                 spell: spells.big_transformation,
               },
-              //TODO - добавить заклинание raise_dead_wizard - geinus
-              //Вы накладываете заклинание оживление [raise dead] на существо, которого коснулись своим камнем преобразования, не тратя ячейку заклинания и даже без необходимости иметь это заклинание в книге заклинаний.
-              // {
-              //   level:14,
-              //   spell: spells.raise_dead_wizard,
-              // },
+              {
+                level:14,
+                spell: spells.raise_dead_wizard,
+              },
               {
                 level: 14,
                 spell: spells.return_youth,

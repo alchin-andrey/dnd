@@ -476,6 +476,13 @@ export default {
 			return num + (mana - mana_min) * 5;
 		},
 
+		Num_Plus_10() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			return num + (mana - mana_min) * 10;
+		},
+
 		Num_Mastery_05() {
 			return Math.floor(this.Mastery / 2);
 		},

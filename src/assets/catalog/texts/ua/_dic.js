@@ -5357,7 +5357,6 @@ export default {
   material_silver_bar_100gold: "брусок срібла з орнаментом за 100+ 🟡",
 
   spell_astral_projection: spells.astral_projection,
-  spell_astral_projection_monk: spells.astral_projection_monk,
   spell_astral_projection_details: spells.astral_projection_details,
   spell_astral_projection_expanded: spells.astral_projection_expanded,
 
@@ -5429,7 +5428,6 @@ export default {
   spell_wall_of_fire_expanded: spells.wall_of_fire_expanded,
 
   spell_wall_of_fire_monk: spells.wall_of_fire_monk,
-  spell_wall_of_fire_details: spells.wall_of_fire_details,
   spell_wall_of_fire_details_5: spells.wall_of_fire_details_5,
   spell_wall_of_fire_details_9: spells.wall_of_fire_details_9,
   spell_wall_of_fire_details_13: spells.wall_of_fire_details_13,
@@ -5521,4 +5519,93 @@ export default {
   spell_scrying_expanded: spells.scrying_expanded,
 
   material_focus_1000gold:"Фокус за 1000+ 🟡",
+
+  spell_hold_monster: spells.hold_monster,
+  spell_hold_monster_details: spells.hold_monster_details,
+  spell_hold_monster_expanded: spells.hold_monster_expanded,
+
+  spell_hold_monster_warlock: spells.hold_monster_warlock,
+  spell_hold_monster_warlock_details: spells.hold_monster_warlock_details,
+  spell_hold_monster_warlock_expanded: spells.hold_monster_warlock_expanded,
+
+  spell_sleet_storm: spells.sleet_storm,
+  spell_sleet_storm_details: spells.sleet_storm_details,
+  spell_sleet_storm_expanded: spells.sleet_storm_expanded,
+
+  spell_call_lightning: spells.call_lightning,
+  spell_call_lightning_details: spells.call_lightning_details,
+  spell_call_lightning_expanded: spells.call_lightning_expanded,
+
+  spell_control_water: spells.control_water,
+  spell_control_water_details: spells.control_water_details,
+  spell_control_water_expanded: spells.control_water_expanded,
+
+  spell_insect_plague: spells.insect_plague,
+  spell_insect_plague_details: spells.insect_plague_details,
+  spell_insect_plague_expanded: spells.insect_plague_expanded,
+
+  spell_destructive_wave: spells.destructive_wave,
+  spell_destructive_wave_details: spells.destructive_wave_details,
+  spell_destructive_wave_expanded: spells.destructive_wave_expanded,
+
+  spell_spirit_guardians: spells.spirit_guardians,
+  spell_spirit_guardians_details: spells.spirit_guardians_details,
+  spell_spirit_guardians_expanded: spells.spirit_guardians_expanded,
+
+  spell_crusaders_mantle: spells.crusaders_mantle,
+  spell_crusaders_mantle_details: spells.crusaders_mantle_details,
+  spell_crusaders_mantle_expanded: spells.crusaders_mantle_expanded,
+
+  material_diamond_300gold: "Діаманти за 🟡 300+ (витрачається)",
+
+  spell_revivify: spells.revivify,
+  spell_revivify_details: spells.revivify_details,
+  spell_revivify_expanded: spells.revivify_expanded,
+
+  spell_death_ward: spells.death_ward,
+  spell_death_ward_details: spells.death_ward_details,
+  spell_death_ward_expanded: spells.death_ward_expanded,
+
+  spell_mass_cure_wounds: spells.mass_cure_wounds,
+  spell_mass_cure_wounds_details: spells.mass_cure_wounds_details,
+  spell_mass_cure_wounds_expanded: spells.mass_cure_wounds_expanded,
+
+  material_diamond_500gold: "Діаманти за 🟡 500+ (витрачається)",
+
+  fee: "штраф",
+
+  spell_raise_dead: spells.raise_dead,
+  spell_raise_dead_details: spells.raise_dead_details,
+  spell_raise_dead_expanded: spells.raise_dead_expanded,
+
+  spell_raise_dead_wizard: spells.raise_dead_wizard,
+  spell_raise_dead_wizard_details: spells.raise_dead_wizard_details,
+  spell_raise_dead_wizard_expanded: spells.raise_dead_wizard_expanded,
+
+  material_diamont_dust_25gold: "діамантовий пил за 🟡 25+",
+
+  spell_nondetection: spells.nondetection,
+  spell_nondetection_details: spells.nondetection_details,
+  spell_nondetection_expanded: spells.nondetection_expanded,
+
+  spell_speak_with_dead: spells.speak_with_dead,
+  spell_speak_with_dead_warlock: spells.speak_with_dead_warlock,
+  spell_speak_with_dead_details: spells.speak_with_dead_details,
+  spell_speak_with_dead_expanded: spells.speak_with_dead_expanded,
+
+  spell_arcane_eye: spells.arcane_eye,
+  spell_arcane_eye_warlock: spells.arcane_eye_warlock,
+  spell_arcane_eye_details: spells.arcane_eye_details,
+  spell_arcane_eye_expanded: spells.arcane_eye_expanded,
+
+  spell_confusion: spells.confusion,
+  spell_confusion_details: spells.confusion_details,
+  spell_confusion_expanded: spells.confusion_expanded,
+
+  material_smell_250gold:"пахощі за 🟡 250+ (витрачається)",
+  material_ivory_50gold:"4 пластинки із слонової кістки за 200+",
+
+  spell_legend_lore: spells.legend_lore,
+  spell_legend_lore_details: spells.legend_lore_details,
+  spell_legend_lore_expanded: spells.legend_lore_expanded,
 };
