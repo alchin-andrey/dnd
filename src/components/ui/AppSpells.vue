@@ -360,7 +360,8 @@ export default {
 			const numb = this.Spell_Index.cast_duration;
 			const numb_units = this.t(this.Spell_Index.cast_duration_units);
 			const mod_cast_duration = this.mod_Cast_Dration_Units_Plus;
-			if (this.cast_time_MOD === "ritual") {
+			if (this.cast_time_MOD === "ritual" || this.cast_time_MOD === "ritual_plus10min") {
+				console.log("ritual_plus10min_mod");
 				if (mod_cast_duration) {
 					string = `${cast_time} ${numb} ${numb_units} ${mod_cast_duration}`;
 				} else {
