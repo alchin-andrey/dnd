@@ -34,6 +34,18 @@ export const useSpellsStore = defineStore({
       }));
 		},
 
+    spells_filter_Ability: (stor) => (arr) => {
+			return arr.filter(
+				(el) => el.spell.find((item) => item.name).type == "ability"
+			);
+		},
+    
+    spells_filter_Not_Ability: (stor) => (arr) => {
+			return arr.filter(
+				(el) => el.spell.find((item) => item.name).type !== "ability"
+			);
+		},
+
 		spells_Race_Main_Arr() {
 			const MYStore = useMYStore();
 			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.race?.spells);
@@ -120,17 +132,11 @@ export const useSpellsStore = defineStore({
 		},
 
     spells_RC_Param_Ability() {
-			const start_arr = this.spells_RC_Param;
-			return start_arr.filter(
-				(el) => el.spell.find((item) => item.name).type == "ability"
-			);
+			return this.spells_filter_Ability(this.spells_RC_Param);
 		},
 
 		spells_RC_Param_Manna() {
-			const start_arr = this.spells_RC_Param;
-			return start_arr.filter(
-				(el) => el.spell.find((item) => item.name).type !== "ability"
-			);
+			return this.spells_filter_Not_Ability(this.spells_RC_Param);
 		},
 
 		//NOTE - PAGE
