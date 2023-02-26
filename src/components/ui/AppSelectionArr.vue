@@ -108,7 +108,7 @@ export default {
         const selected = `${stor.t("spell_selected")} ${item.select_numb}`;
         const left = `${stor.t("spells_left")} ${numb}`;
         const duplicated = `${stor.t("spell_duplicated")}`;
-        return dub_detect ? duplicated : numb == 0 ? selected : left;
+        return numb !== 0 ? left : dub_detect ? duplicated : selected;
       }
 			if (
 				item.type == "feats" &&
