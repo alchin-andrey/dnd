@@ -1,9 +1,10 @@
 <template>
 	<AppTooltip
-		class="relative"
+		class="relative marg_slow"
 		text="hint_over_limit"
 		:shown="overflow_Save && !param"
 		warn
+    :style="{ margin: getMarg }"
 	>
 		<div
 			class="flex_spell"
@@ -38,8 +39,13 @@
 						v-html="ui_icon[icon_Svg]"
 					/>
 				</section>
-
-				<section class="flex_col gap-12" v-if="!only_title">
+        <!-- <transition name="scroll-packs"> -->
+				<section class="flex_col gap-12"
+        :class="{
+          'marg-top-4': !this.only_title,
+          null_height: this.only_title,
+          full_height: this.only_title && this.isShown,
+          }">
 					<div class="text_spell" v-html="t_Text"></div>
 					<magic-attribute
 						v-if="Spell_Index.impact_type"
@@ -54,6 +60,7 @@
 						not_dot
 					/>
 				</section>
+      <!-- </transition> -->
 			</div>
 		</div>
 	</AppTooltip>
@@ -164,6 +171,7 @@ export default {
 			numb_type: 0,
 			mana_numb: null,
 			emoji_size: 16,
+      isShown: false,
 		};
 	},
 	props: {
@@ -211,10 +219,28 @@ export default {
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 
-    
+    shown_Spell_Text() {
+      return this.only_title ? this.isShown : true;
+    },
+
+    getMarg() {
+      return this.isShown ? `${8}px ${0}` : `0 0`;
+    },
 
     icon_Svg() {
-      return this.plus ? "plus" : this.delete ? "delete" : "arrow_right_small";
+      let str;
+      if (this.plus) {
+        str = "plus"
+      } else if (this.delete) {
+        str = "delete"
+      } else if (this.only_title && this.isShown) {
+        str = "arrow_top_small"
+      } else if (this.only_title && !this.isShown) {
+        str = "arrow_down_small"
+      } else {
+        str = "arrow_right_small"
+      }
+      return str;
     },
 
 		spell() {
@@ -867,9 +893,15 @@ export default {
 		},
 	},
 	methods: {
+    toggle() {
+			this.isShown = !this.isShown;
+		},
+
     btnClick() {
       if (this.plus || this.delete) {
         this.$emit("updateSpell");
+      } else if (this.only_title) {
+        this.toggle()
       } else {
         this.showDialog_Select()
       }
@@ -924,7 +956,7 @@ export default {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	/* gap: 4px; */
 }
 .gap-12 {
 	gap: 12px;
@@ -1054,4 +1086,44 @@ export default {
 	color: #ffc93d;
 	opacity: 1;
 }
+
+.marg-top-4 {
+  margin-top: 4px;
+}
+
+.null_height {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+}
+
+.full_height {
+  max-height: 300px;
+  margin-top: 4px;
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+
+.marg_slow {
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.scroll-packs-enter-active {
+	transition: all 0.4s ease-out;
+}
+
+.scroll-packs-leave-active {
+	transition: all 0.4s ease-out;
+}
+
+.scroll-packs-enter-from,
+.scroll-packs-leave-to {
+	transform: translateY(-10px);
+	opacity: 0;
+}
+
 </style>

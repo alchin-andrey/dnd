@@ -19,8 +19,8 @@
     <AppSpellsPacks
 				class="flex-col"
 				v-if="spells_RC_Param_Ability.length !== 0"
-				text="ability"
 				:numb="spells_RC_Param_Ability.length"
+        ability
 			>
 				<div class="flex-col">
 					<AppSpells

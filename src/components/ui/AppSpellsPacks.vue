@@ -47,10 +47,14 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		ability: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		t_Title() {
-			return `${this.t("spells")} [${this.t(this.text)}]`;
+			return this.ability ? this.t("ability") : `${this.t("spells")} [${this.t(this.text)}]`;
 		},
     numb_Count() {
       return `${this.numb}× `;
@@ -112,7 +116,7 @@ export default {
 }
 
 .scroll-packs-leave-active {
-	transition: all 0.4s cubic-bezier(1, 0.8, 0.8, 1);
+	transition: all 0.4s ease-out;
 }
 
 .scroll-packs-enter-from,
