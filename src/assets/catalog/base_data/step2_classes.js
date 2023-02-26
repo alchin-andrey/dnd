@@ -5028,7 +5028,6 @@ export default {
                 level: 3,
                 spell: spells.augury,
               },
-              //TODO - додати спели
               {
                 level: 5,
                 spell: spells.nondetection,
@@ -5259,10 +5258,10 @@ export default {
                 spell: spells.mirror_image,
               },
               //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.blink,
-              // },
+              {
+                level: 5,
+                spell: spells.blink,
+              },
               {
                 level: 5,
                 spell: spells.dispel_magic,
@@ -5271,10 +5270,10 @@ export default {
                 level: 7,
                 spell: spells.dimension_door,
               },
-              // {
-              //   level: 7,
-              //   spell: spells.polymorph,
-              // },
+              {
+                level: 7,
+                spell: spells.polymorph,
+              },
               // {
               //   level: 9,
               //   spell: spells.modify_memory,
@@ -7831,27 +7830,24 @@ export default {
             level: 7,
             name: "sculptor_of_flesh",
 
-            //TODO - додати polymorph
-            // spells: [
-            //   {
-            //     level: 7,
-            //     spell: spells.polymorph,
-            //     // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 7,
+                spell: spells.polymorph_warlock,
+                // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+              },
+            ],
           },
           {
             level: 7,
             name: "dreadful_word",
-
-            //TODO - додати polymorph
-            // spells: [
-            //   {
-            //     level: 7,
-            //     spell: spells.polymorph,
-            //     // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 7,
+                spell: spells.confusion_warlock,
+                // Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+              },
+            ],
           },
           {
             level: 9,
@@ -9679,12 +9675,15 @@ export default {
                 level: 6,
                 spell: spells.transmutation_stone,
               },
-              //TODO - добавить заклинание polymorph_wizard
               // Вы можете накладывать превращение [polymorph], не тратя ячейку заклинаний. Когда вы так поступаете, вы можете выбрать в качестве цели только себя и превратиться можете в зверя, Показатель опасности которого не больше 1. Активировав превращение подобным путём один раз, вы не можете делать это ещё раз до завершения короткого или продолжительного отдыха, хотя вы можете накладывать это заклинание обычным способом, за ячейки заклинаний.
-              // {
-              //   level:10,
-              //   spell: spells.polymorph_wizard,
-              // },
+              {
+                level:10,
+                spell: spells.polymorph,
+              },
+              {
+                level:10,
+                spell: spells.polymorph_wizard,
+              },
               {
                 level: 14,
                 spell: spells.big_transformation,
@@ -9935,16 +9934,6 @@ export default {
           },
         ],
       },
-      // {
-      //   level: 1,
-      //   type: "spells",
-      //   position: 4,
-      //   name: "spells_0",
-      //   select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-      //   mana_min: 0,
-      //   mana_max: 0,
-      //   classes: ["wizard"],
-      // },
       {
         type: "spells",
         position: 4,
