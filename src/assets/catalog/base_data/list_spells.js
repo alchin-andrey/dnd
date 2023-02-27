@@ -8217,50 +8217,6 @@ export default {
     }
   ],
 
-  wholeness_of_body: [
-    {
-      name: "spell_wholeness_of_body",
-      details: "spell_wholeness_of_body_details",
-      expanded: "spell_wholeness_of_body_expanded",
-
-      type: "ability",
-      slot_type: "wholeness_body_slot",
-      classes: ["monk"],
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "self",
-      aim_type: null,
-      aim_range: null,
-
-      parts: ["none"],
-
-      spell_time: "instant",
-      spell_duration:null,
-      spell_duration_units: null,
-
-      aim_need: false,
-
-      aim_aoe: null,
-      aim_aoe_size: null,
-
-      impact_type: "heal",
-      impact_damage_type: null,
-
-      impact_size_foo: "Num_LevelX",
-      impact_size_str: null,
-      impact_size_num: 3,
-      impact_size_dic: null,
-      impact_size_pls: null,
-
-      saving_need: null,
-      saving_attribute: null,
-      impact_size_saved: null,
-    }
-  ],
-
   sanctuary_monk: [
     {
       //1
