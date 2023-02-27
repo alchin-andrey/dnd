@@ -249,7 +249,7 @@ export default {
 		},
 
 		getMarg() {
-			return this.isShown ? `${8}px ${0}` : `0 0`;
+			return this.isShown ? `${10}px ${0}` : `0 0`;
 		},
 
 		icon_Svg() {
@@ -1127,7 +1127,6 @@ export default {
 	top: 6px;
 	background: #0047ff;
 	border-radius: 50%;
-	z-index: 100;
 }
 
 .lvl-dot-param::before {

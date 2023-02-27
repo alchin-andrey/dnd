@@ -173,6 +173,9 @@ export default {
 	flex-direction: column;
 }
 
+.gap-4 {
+	gap: 4px;
+}
 .gap-8 {
 	gap: 8px;
 }

@@ -21,12 +21,15 @@
       <section 
       class="null_height"
       :class="{full_height: packs_scroll,}">
+      <transition name="scroll-packs-spells">
         <slot v-if="packs_scroll"/>
+      </transition>
       </section>
 		</div>
 </template>
 
 <script>
+// v-if="packs_scroll"
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "AppSpellsPacks",
@@ -127,5 +130,19 @@ export default {
   max-height: 400vh;
   /* opacity: 1; */
   transition: all 0.5s ease-in;
+}
+
+.scroll-packs-spells-enter-active {
+	transition: all 0.4s ease-out;
+}
+
+.scroll-packs-spells-leave-active {
+	transition: all 0.4s ease-out;
+}
+
+.scroll-packs-spells-enter-from,
+.scroll-packs-spells-leave-to {
+	transform: translateY(-10px);
+	opacity: 0;
 }
 </style>
