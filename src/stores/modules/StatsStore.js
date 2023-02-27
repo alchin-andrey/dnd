@@ -196,7 +196,7 @@ export const useStatsStore = defineStore({
 			} else if (PagesStore.pages.class_page) {
 				return this.stats_Saving_Arr_AllName;
 			} else {
-				return [];
+				return this.stats_Saving_Arr_AllName;
 			}
 		},
 
@@ -207,7 +207,7 @@ export const useStatsStore = defineStore({
 			} else if (PagesStore.pages.class_page) {
 				return this.stats_Saving_Arr;
 			} else {
-				return [];
+				return this.stats_Saving_Arr;
 			}
 		},
 
@@ -218,7 +218,7 @@ export const useStatsStore = defineStore({
 			} else if (PagesStore.pages.class_page) {
 				return stor.stats_Class_Page_Numb_Full(name);
 			} else {
-				return 1000;
+				return stor.stats_Class_Page_Numb_Full(name);
 			}
 		},
 
@@ -229,7 +229,7 @@ export const useStatsStore = defineStore({
 			} else if (PagesStore.pages.class_page) {
 				return stor.stats_Class_Page_Numb(name);
 			} else {
-				return 1000;
+				return stor.stats_Class_Page_Numb(name);
 			}
 		},
 	},

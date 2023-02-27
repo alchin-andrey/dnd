@@ -9,7 +9,7 @@ const class_def = Object.values(classes)[0];
 const backstories_def = Object.values(backstories)[0];
 export default {
 	//Key selections
-	name: null,
+	name: "Байрактар",
 	race: race_def,
   race_name: race_def.name,
 	ethnos: ethnos_def,

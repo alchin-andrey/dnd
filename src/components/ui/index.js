@@ -15,6 +15,7 @@ import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
 
 //Main
 import AppSlider from "@/components/ui/main/AppSlider.vue";
+import AppName from "@/components/ui/main/AppName.vue";
 
 
 
@@ -75,6 +76,7 @@ export default [
 
 //main
   AppSlider,
+  AppName,
 
 
 

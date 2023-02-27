@@ -30,6 +30,12 @@
 				name="class"
 				:slides="MY.class.name"
 			/>
+			<AppName
+				v-if="pages.background_page"
+				numb="03"
+				title="name"
+        v-model="MY.name"
+			/>
 			<div class="delimiter"></div>
 		</div>
 
@@ -114,6 +120,7 @@
 	>
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
+    <BackgroundParameters v-if="pages.background_page"/>
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
@@ -133,6 +140,9 @@ import RaceParameters from "@/components/parameters/__param__lists/1_RaceParamet
 import ClassMenu from "@/components/menu/2_ClassMenu.vue";
 import ClassSettings from "@/components/settings/__settings__lists/2_ClassSettings.vue";
 import ClassParameters from "@/components/parameters/__param__lists/2_ClassParameters.vue";
+
+// BACKGROUND_PAGE
+import BackgroundParameters from "@/components/parameters/__param__lists/3_BackgroundParameters.vue";
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -155,6 +165,9 @@ export default {
 		ClassMenu,
 		ClassSettings,
 		ClassParameters,
+    
+    // BACKGROUND_PAGE
+    BackgroundParameters,
 	},
 
 	created() {

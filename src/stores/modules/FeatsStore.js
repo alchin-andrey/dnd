@@ -79,20 +79,7 @@ export const useFeatsStore = defineStore({
 	getters: {
 		// ...mapState(useMYStore, ["MY"]),
 
-		// feats_Dop() {
-		// 	const obj = this.feats_obj;
-		// 	// const arr = this.feats_Select_Arr
-		// 	let feats_arr = [];
-		// 	for (const key in obj) {
-		// 		feats_arr.push(obj[key]);
-		// 	}
-
-		// 	return this.spells_Cheng(feats_arr);
-		// },
-
 		feats() {
-			// const ttt = this.feats_Dop;
-			// console.log("ttt:", ttt);
 			const obj = this.feats_obj;
 			// const arr = this.feats_Select_Arr
 			let new_arr = [];
@@ -175,59 +162,6 @@ export const useFeatsStore = defineStore({
 	},
 
 	actions: {
-		// spells_Cheng(arr) {
-		// 	let new_arr = [];
-		// 	arr.forEach((el) => {
-		// 		if (el?.settings) {
-		// 			el?.settings.forEach((item) => {
-		// 				if (item.name == "spells_1") {
-		// 					let new_list = [];
-		// 					item.list.forEach((list_el) => {
-		// 						let new_spells = [];
-		// 						list_el.spells.forEach((sub_el) => {
-		// 							console.log("sub_el:", sub_el);
-		// 							console.log("sub_el?.dop:", sub_el?.dop);
-		// 							if (sub_el?.dop) {
-		// 								const new_spell = sub_el.spell.map((el_map) =>
-		// 									el_map?.name
-		// 										? {...el_map, ...sub_el.dop,}
-		// 										: el_map
-		// 								);
-		// 								new_spells.push({ ...sub_el, spell: new_spell });
-		// 								console.log("new_spell:", new_spell);
-		// 							}
-		// 						});
-		// 						new_list.push({ ...list_el, spells: new_spells });
-		// 					});
-		// 					new_arr.push({ ...item, list: new_list });
-		// 				}
-		// 				let redus = this.spells_Cheng(item.list);
-		// 				new_arr = new_arr.concat(redus);
-		// 			});
-		// 		}
-		// 	});
-		// 	return new_arr;
-		// },
-
-		// dub() {
-		//   let new_arr = [];
-		//   if (el?.settings) {
-		//     el?.settings.forEach((item) => {
-		//       if ( item.name == "spells_1") {
-		//         item.list.forEach((list_el) => {
-		//         console.log('list_el:', list_el)
-		//         });
-		//       }
-		//       item.list.forEach((elem_list) => {
-		//         if (elem_list?.settings) {
-
-		//         }
-		//       });
-		//     });
-		//   }
-		//   return new_arr;
-		// },
-
 		feats_List_Filter(arr) {
 			const filter_arr = arr.filter((el) => {
 				if (el?.filter?.stats) {

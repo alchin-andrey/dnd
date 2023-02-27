@@ -1,21 +1,5 @@
 <template>
 	<my-wrapper v-if="spells_RC_Param.length !== 0" gap_26 :hr="hr">
-		<!-- <AppSpells
-			v-for="item in spells_Race_Param"
-			:key="item"
-			:spell_obj="item"
-			passive
-      param
-      only_title
-		/>
-    <AppSpells
-			v-for="item in spells_Class_Param_without_Race_Param"
-			:key="item"
-			:spell_obj="item"
-      param
-      only_title
-		/> -->
-
     <AppSpellsPacks
 				class="flex-col"
 				v-if="spells_RC_Param_Ability.length !== 0"

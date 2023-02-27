@@ -112,7 +112,7 @@ export const useProficienciesStore = defineStore({
         } else if (PagesStore.pages.class_page) {
           return stor.proficiencies_RC_Params_All(name);
         } else {
-          return [];
+          return stor.proficiencies_RC_Params_All(name);
         }
       },
   },
