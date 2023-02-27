@@ -172,7 +172,6 @@ export default {
   faith: "вера",
   alignment: "мировоззрение",
   personality: "характер",
-  ideals: "приоритетьі",
   bonds: "привязанности",
   flaws: "слабости",
   appearance: "внешность",
