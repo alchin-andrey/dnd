@@ -82,10 +82,10 @@ export default {
             [items.blanket,1],
             [items.candle,10],
             [items.tinderbox,1],
-            [items.donation_box,1]
+            [items.donation_box,1],
             [items.incense,2],
             [items.censer,1],
-            [items.vestment,1]
+            [items.vestment,1],
             [items.ration,2],
             [items.waterskin,1],
         ],

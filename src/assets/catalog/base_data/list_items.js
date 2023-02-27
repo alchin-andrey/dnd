@@ -748,5 +748,12 @@ export default {
     cost: 10,
     weight: 0.1,
   },
+
+  vax: {
+    name: "vax",
+    details: "vax_details",
+    cost: 50,
+    weight: 0.1,
+  },
 };
  

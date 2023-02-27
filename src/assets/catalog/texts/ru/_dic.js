@@ -5653,4 +5653,7 @@ export default {
   spell_polymorph_wizard_details: spells.polymorph_wizard_details,
   spell_polymorph_wizard_expanded: spells.polymorph_wizard_expanded,
 
+  vax:"воск",
+  vax_details: "",
+
 };  
