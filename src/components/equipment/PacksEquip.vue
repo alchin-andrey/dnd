@@ -6,7 +6,7 @@
 		@click="showDialog_Full()"
 	>
 		<div ref="stripe" class="side_stripe"></div>
-		<div class="int-400 gap_col" :class="{ passive: passive }">
+		<div class="int-400 width-100" :class="{ passive: passive }">
 			<div class="flex_title">
 				<div class="title_packs">{{ t_Packs_Name }}</div>
 				<div class="icon" @click.stop @mouseover.stop @click="shownScroll()">
@@ -18,11 +18,12 @@
 					/>
 				</div>
 			</div>
-			<transition name="scroll-packs">
-				<section v-if="packs_scroll">
+				<section 
+        class="null_height"
+        :class="{full_height: this.packs_scroll,}"
+        >
 					<InventoryEquip :inventory="packs[0].items" />
 				</section>
-			</transition>
 		</div>
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible" class="dialog">
@@ -122,12 +123,10 @@ export default {
 </script>
 
 <style scoped>
-.gap_col {
-	display: grid;
-	gap: 15px;
-	width: 100%;
-}
 
+.width-100 {
+  width: 100%;
+}
 .title_packs:first-letter {
 	text-transform: uppercase;
 }
@@ -169,20 +168,6 @@ export default {
 	opacity: 0.2;
 }
 
-.scroll-packs-enter-active {
-	transition: all 0.4s ease-out;
-}
-
-.scroll-packs-leave-active {
-	transition: all 0.4s cubic-bezier(1, 0.8, 0.8, 1);
-}
-
-.scroll-packs-enter-from,
-.scroll-packs-leave-to {
-	transform: translateY(-20px);
-	opacity: 0;
-}
-
 .icon {
 	width: 18px;
 	height: 18px;
@@ -196,32 +181,17 @@ export default {
 	fill: white;
 }
 
-/* .icon:hover {
-	position: relative;
-	animation-name: arrow;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-} */
-
-/* @keyframes arrow{
-0%{
-top: 0%;
-}
-100%{
-  top: 20%;
-}
-} */
-
-.scroll_wrap {
-	height: 0;
-	transition: all 1s ease-in-out;
-	position: relative;
+.null_height {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
 }
 
-.scroll_wrap_open {
-	height: 100%;
-	transition: all 1s ease-in-out;
+.full_height {
+  max-height: 400px;
+  margin-top: 15px;
+  opacity: 1;
+  transition: all 0.5s ease-in;
 }
 </style>
