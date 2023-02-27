@@ -384,63 +384,63 @@ export default {
                   // spells[0] wizard
                   {
                     name_set: spells.acid_splash[0].name,
-                    spells: [{ spell: spells.acid_splash }],
+                    spells: [{ level: 3, spell: spells.acid_splash }],
                   },
                   {
                     name_set: spells.friends[0].name,
-                    spells: [{ spell: spells.friends }],
+                    spells: [{ level: 3, spell: spells.friends }],
                   },
                   {
                     name_set: spells.blade_ward[0].name,
-                    spells: [{ spell: spells.blade_ward }],
+                    spells: [{ level: 3, spell: spells.blade_ward }],
                   },
                   {
                     name_set: spells.chill_touch[0].name,
-                    spells: [{ spell: spells.chill_touch }],
+                    spells: [{ level: 3, spell: spells.chill_touch }],
                   },
                   {
                     name_set: spells.ray_of_frost[0].name,
-                    spells: [{ spell: spells.ray_of_frost }],
+                    spells: [{ level: 3, spell: spells.ray_of_frost }],
                   },
                   {
                     name_set: spells.minor_illusion[0].name,
-                    spells: [{ spell: spells.minor_illusion }],
+                    spells: [{ level: 3, spell: spells.minor_illusion }],
                   },
                   {
                     name_set: spells.true_strike[0].name,
-                    spells: [{ spell: spells.true_strike }],
+                    spells: [{ level: 3, spell: spells.true_strike }],
                   },
                   {
                     name_set: spells.fire_bolt[0].name,
-                    spells: [{ spell: spells.fire_bolt }],
+                    spells: [{ level: 3, spell: spells.fire_bolt }],
                   },
                   {
                     name_set: spells.dancing_lights[0].name,
-                    spells: [{ spell: spells.dancing_lights }],
+                    spells: [{ level: 3, spell: spells.dancing_lights }],
                   },
                   {
                     name_set: spells.mending[0].name,
-                    spells: [{ spell: spells.mending }],
+                    spells: [{ level: 3, spell: spells.mending }],
                   },
                   {
                     name_set: spells.light[0].name,
-                    spells: [{ spell: spells.light }],
+                    spells: [{ level: 3, spell: spells.light }],
                   },
                   {
                     name_set: spells.message[0].name,
-                    spells: [{ spell: spells.message }],
+                    spells: [{ level: 3, spell: spells.message }],
                   },
                   {
                     name_set: spells.prestidigitation[0].name,
-                    spells: [{ spell: spells.prestidigitation }],
+                    spells: [{ level: 3, spell: spells.prestidigitation }],
                   },
                   {
                     name_set: spells.shocking_grasp[0].name,
-                    spells: [{ spell: spells.shocking_grasp }],
+                    spells: [{ level: 3, spell: spells.shocking_grasp }],
                   },
                   {
                     name_set: spells.poison_spray[0].name,
-                    spells: [{ spell: spells.poison_spray }],
+                    spells: [{ level: 3, spell: spells.poison_spray }],
                   },
                 ],
               },
@@ -1002,67 +1002,67 @@ export default {
                 list: [
                   {
                     name_set: spells.maneuver_evasive_footwork[0].name,
-                    spells: [{ spell: spells.maneuver_evasive_footwork }],
+                    spells: [{ level: 3, spell: spells.maneuver_evasive_footwork }],
                   },
                   {
                     name_set: spells.maneuver_lunging_attack[0].name,
-                    spells: [{ spell: spells.maneuver_lunging_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_lunging_attack }],
                   },
                   {
                     name_set: spells.maneuver_maneuvering_attack[0].name,
-                    spells: [{ spell: spells.maneuver_maneuvering_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_maneuvering_attack }],
                   },
                   {
                     name_set: spells.maneuver_menacing_attack[0].name,
-                    spells: [{ spell: spells.maneuver_menacing_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_menacing_attack }],
                   },
                   {
                     name_set: spells.maneuver_feinting_attack[0].name,
-                    spells: [{ spell: spells.maneuver_feinting_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_feinting_attack }],
                   },
                   {
                     name_set: spells.maneuver_disarming_attack[0].name,
-                    spells: [{ spell: spells.maneuver_disarming_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_disarming_attack }],
                   },
                   {
                     name_set: spells.maneuver_trip_attack[0].name,
-                    spells: [{ spell: spells.maneuver_trip_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_trip_attack }],
                   },
                   {
                     name_set: spells.maneuver_riposte[0].name,
-                    spells: [{ spell: spells.maneuver_riposte }],
+                    spells: [{ level: 3, spell: spells.maneuver_riposte }],
                   },
                   {
                     name_set: spells.maneuver_distracting_strike[0].name,
-                    spells: [{ spell: spells.maneuver_distracting_strike }],
+                    spells: [{ level: 3, spell: spells.maneuver_distracting_strike }],
                   },
                   {
                     name_set: spells.maneuver_parry[0].name,
-                    spells: [{ spell: spells.maneuver_parry }],
+                    spells: [{ level: 3, spell: spells.maneuver_parry }],
                   },
                   {
                     name_set: spells.maneuver_goading_attack[0].name,
-                    spells: [{ spell: spells.maneuver_goading_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_goading_attack }],
                   },
                   {
                     name_set: spells.maneuver_rally[0].name,
-                    spells: [{ spell: spells.maneuver_rally }],
+                    spells: [{ level: 3, spell: spells.maneuver_rally }],
                   },
                   {
                     name_set: spells.maneuver_pushing_attack[0].name,
-                    spells: [{ spell: spells.maneuver_pushing_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_pushing_attack }],
                   },
                   {
                     name_set: spells.maneuver_precision_attack[0].name,
-                    spells: [{ spell: spells.maneuver_precision_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_precision_attack }],
                   },
                   {
                     name_set: spells.maneuver_commanders_strike[0].name,
-                    spells: [{ spell: spells.maneuver_commanders_strike }],
+                    spells: [{ level: 3, spell: spells.maneuver_commanders_strike }],
                   },
                   {
                     name_set: spells.maneuver_sweeping_attack[0].name,
-                    spells: [{ spell: spells.maneuver_sweeping_attack }],
+                    spells: [{ level: 3, spell: spells.maneuver_sweeping_attack }],
                   },
                 ],
               },
@@ -1172,9 +1172,11 @@ export default {
 
             spells: [
               {
+                level: 3,
                 spell: spells.weapon_bond,
               },
               {
+                level: 3,
                 spell: spells.call_bonbed_weapon,
               },
               {
@@ -1302,82 +1304,70 @@ export default {
                   // spells[0] wizard
                   {
                     name_set: spells.acid_splash[0].name,
-                    spells: [{ spell: spells.acid_splash }],
+                    spells: [{ level: 3, spell: spells.acid_splash }],
                   },
                   {
                     name_set: spells.mage_hand[0].name,
-                    spells: [{ spell: spells.mage_hand }],
+                    spells: [{ level: 3, spell: spells.mage_hand }],
                   },
                   {
                     name_set: spells.friends[0].name,
-                    spells: [{ spell: spells.friends }],
+                    spells: [{ level: 3, spell: spells.friends }],
                   },
                   {
                     name_set: spells.blade_ward[0].name,
-                    spells: [{ spell: spells.blade_ward }],
+                    spells: [{ level: 3, spell: spells.blade_ward }],
                   },
                   {
                     name_set: spells.chill_touch[0].name,
-                    spells: [{ spell: spells.chill_touch }],
+                    spells: [{ level: 3, spell: spells.chill_touch }],
                   },
                   {
                     name_set: spells.ray_of_frost[0].name,
-                    spells: [{ spell: spells.ray_of_frost }],
+                    spells: [{ level: 3, spell: spells.ray_of_frost }],
                   },
                   {
                     name_set: spells.minor_illusion[0].name,
-                    spells: [{ spell: spells.minor_illusion }],
+                    spells: [{ level: 3, spell: spells.minor_illusion }],
                   },
                   {
                     name_set: spells.true_strike[0].name,
-                    spells: [{ spell: spells.true_strike }],
+                    spells: [{ level: 3, spell: spells.true_strike }],
                   },
                   {
                     name_set: spells.fire_bolt[0].name,
-                    spells: [{ spell: spells.fire_bolt }],
+                    spells: [{ level: 3, spell: spells.fire_bolt }],
                   },
                   {
                     name_set: spells.dancing_lights[0].name,
-                    spells: [{ spell: spells.dancing_lights }],
+                    spells: [{ level: 3, spell: spells.dancing_lights }],
                   },
                   {
                     name_set: spells.mending[0].name,
-                    spells: [{ spell: spells.mending }],
+                    spells: [{ level: 3, spell: spells.mending }],
                   },
                   {
                     name_set: spells.light[0].name,
-                    spells: [{ spell: spells.light }],
+                    spells: [{ level: 3, spell: spells.light }],
                   },
                   {
                     name_set: spells.message[0].name,
-                    spells: [{ spell: spells.message }],
+                    spells: [{ level: 3, spell: spells.message }],
                   },
                   {
                     name_set: spells.prestidigitation[0].name,
-                    spells: [{ spell: spells.prestidigitation }],
+                    spells: [{ level: 3, spell: spells.prestidigitation }],
                   },
                   {
                     name_set: spells.shocking_grasp[0].name,
-                    spells: [{ spell: spells.shocking_grasp }],
+                    spells: [{ level: 3, spell: spells.shocking_grasp }],
                   },
                   {
                     name_set: spells.poison_spray[0].name,
-                    spells: [{ spell: spells.poison_spray }],
+                    spells: [{ level: 3, spell: spells.poison_spray }],
                   },
                 ],
               },
-              // {
-              //   level: 3,
-              //   type: "spells",
-              //   position: 3,
-              //   name: "spells_0",
-              //   select: [
-              //     2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-              //   ],
-              //   mana_min: 0,
-              //   mana_max: 0,
-              //   classes: ["wizard"],
-              // },
               {
                 level: 3,
                 type: "spells",
@@ -1446,7 +1436,7 @@ export default {
                     name: "style_dueling",
                     fines: [
                       {
-                        level: 2,
+                        level: 10,
                         type: "plus",
                         keyword: "bonus",
                         details: "on_attack_signle_one_handed",
@@ -1457,7 +1447,7 @@ export default {
                     name: "style_protection",
                     spells: [
                       {
-                        level: 2,
+                        level: 10,
                         spell: spells.side_pary,
                       },
                     ],
@@ -1466,7 +1456,7 @@ export default {
                     name: "style_defence",
                     fines: [
                       {
-                        level: 2,
+                        level: 10,
                         type: "plus",
                         keyword: "bonus",
                         details: "on_armor_if_armor",
@@ -1475,6 +1465,7 @@ export default {
 
                     specials: [
                       {
+                        level: 10,
                         type: "armor",
                         armor_bonus: 1,
                       },
@@ -1484,7 +1475,7 @@ export default {
                     name: "style_great_weapon",
                     fines: [
                       {
-                        level: 2,
+                        level: 10,
                         type: "advantage",
                         keyword: "rethrow",
                         details: "if_1_or_2_on_two_handed_weapon",
@@ -1495,7 +1486,7 @@ export default {
                     name: "style_double_weapon",
                     fines: [
                       {
-                        level: 2,
+                        level: 10,
                         type: "plus",
                         keyword: "bonus",
                         details: "on_damage_second_attack",
@@ -1506,7 +1497,7 @@ export default {
                     name: "style_archery",
                     fines: [
                       {
-                        level: 2,
+                        level: 10,
                         type: "plus",
                         keyword: "aim_bonus",
                         details: "plus_2_on_ranged",
@@ -1515,7 +1506,7 @@ export default {
 
                     specials: [
                       {
-                        level: 1,
+                        level: 10,
                         type: "weapon_ranged",
                         aim_bonus: 2,
                       },
@@ -1876,6 +1867,7 @@ export default {
 
             specials: [
               {
+                level: 2,
                 type: "armor",
                 armor_bonus: 1,
               },
@@ -1916,7 +1908,7 @@ export default {
 
             specials: [
               {
-                level: 1,
+                level: 2,
                 type: "weapon_ranged",
                 aim_bonus: 2,
               },
@@ -2182,6 +2174,7 @@ export default {
                     name: "wolf",
                     fines: [
                       {
+                        level: 3,
                         type: "advantage",
                         keyword: "advantage",
                         details: "near_friends_attack_in_rage",
@@ -2192,6 +2185,7 @@ export default {
                     name: "bear",
                     fines: [
                       {
+                        level: 3,
                         type: "resistance",
                         keyword: "resistance",
                         details: "any_damage_but_psy",
@@ -2202,6 +2196,7 @@ export default {
                     name: "eagle",
                     fines: [
                       {
+                        level: 3,
                         type: "advantage",
                         keyword: "advantage",
                         details: "on_dodging_in_rage",
@@ -2212,6 +2207,7 @@ export default {
 
                     spells: [
                       {
+                        level: 3,
                         spell: spells.quick_dash,
                       },
                     ],
@@ -2221,6 +2217,7 @@ export default {
 
                     fines: [
                       {
+                        level: 3,
                         type: "plus",
                         keyword: "speed_plus_15",
                         details: "if_no_heavy_armor_on_rage",
@@ -2231,6 +2228,7 @@ export default {
                     name: "tiger",
                     fines: [
                       {
+                        level: 3,
                         type: "plus",
                         keyword: "long_jumps",
                         details: "in_rage",
@@ -2251,11 +2249,13 @@ export default {
                     name: "wolf",
                     fines: [
                       {
+                        level: 6,
                         type: "plus",
                         keyword: "fast_tempo",
                         details: "while_following_prints",
                       },
                       {
+                        level: 6,
                         type: "plus",
                         keyword: "normal_tempo",
                         details: "in_stealth",
@@ -2266,11 +2266,13 @@ export default {
                     name: "bear",
                     fines: [
                       {
+                        level: 6,
                         type: "plus",
                         keyword: "double_weight",
                         details: "weight_capacity_details",
                       },
                       {
+                        level: 6,
                         type: "advantage",
                         keyword: "advantage",
                         details: "str_check_on_move",
@@ -2281,11 +2283,13 @@ export default {
                     name: "eagle",
                     fines: [
                       {
+                        level: 6,
                         type: "plus",
                         keyword: "to_see",
                         details: "one_mile_100f_details",
                       },
                       {
+                        level: 6,
                         type: "advantage",
                         keyword: "no_disadvantage",
                         details: "on_perception_in_lowlight",
@@ -2296,6 +2300,7 @@ export default {
                     name: "elk",
                     fines: [
                       {
+                        level: 6,
                         type: "plus",
                         keyword: "double_speed",
                         details: "travel_elk",
@@ -2370,6 +2375,7 @@ export default {
                     name: "wolf",
                     spells: [
                       {
+                        level: 14,
                         spell: spells.wolf_knock,
                       },
                     ],
@@ -2378,6 +2384,7 @@ export default {
                     name: "bear",
                     fines: [
                       {
+                        level: 14,
                         type: "advantage",
                         keyword: "advantage",
                         details: "on_dodging_in_rage_bear",
@@ -2388,6 +2395,7 @@ export default {
                     name: "eagle",
                     fines: [
                       {
+                        level: 14,
                         type: "plus",
                         keyword: "flight",
                         details: "as_walking_speed_in_rage",
@@ -2398,6 +2406,7 @@ export default {
                     name: "elk",
                     spells: [
                       {
+                        level: 14,
                         spell: spells.elk_knock,
                       },
                     ],
@@ -2406,6 +2415,7 @@ export default {
                     name: "tiger",
                     spells: [
                       {
+                        level: 14,
                         spell: spells.tiger_strike,
                       },
                     ],
@@ -3191,30 +3201,37 @@ export default {
                 ],
                 list: [
                   {
+                    level: 3,
                     name_set: spells.water_whip[0].name,
                     spells: [{ level: 3, spell: spells.water_whip }],
                   },
                   {
+                    level: 3,
                     name_set: spells.fire_snake_teeth[0].name,
                     spells: [{ level: 3, spell: spells.fire_snake_teeth }],
                   },
                   {
+                    level: 3,
                     name_set: spells.ashing_strike[0].name,
                     spells: [{ level: 3, spell: spells.ashing_strike }],
                   },
                   {
+                    level: 3,
                     name_set: spells.four_thunder_fist[0].name,
                     spells: [{ level: 3, spell: spells.four_thunder_fist }],
                   },
                   {
+                    level: 3,
                     name_set: spells.gust_of_wind_monk[0].name,
                     spells: [{ level: 3, spell: spells.gust_of_wind_monk }],
                   },
                   {
+                    level: 3,
                     name_set: spells.air_fist[0].name,
                     spells: [{ level: 3, spell: spells.air_fist }],
                   },
                   {
+                    level: 3,
                     name_set: spells.form_river[0].name,
                     spells: [{ level: 3, spell: spells.form_river }],
                   },
@@ -4072,6 +4089,7 @@ export default {
             name: "style_dueling",
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_attack_signle_one_handed",
@@ -4082,6 +4100,7 @@ export default {
             name: "style_protection",
             spells: [
               {
+                level: 2,
                 spell: spells.side_pary,
               },
             ],
@@ -4090,6 +4109,7 @@ export default {
             name: "style_defence",
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_armor_if_armor",
@@ -4098,6 +4118,7 @@ export default {
 
             specials: [
               {
+                level: 2,
                 type: "armor",
                 armor_bonus: 1,
               },
@@ -4107,6 +4128,7 @@ export default {
             name: "style_great_weapon",
             fines: [
               {
+                level: 2,
                 type: "advantage",
                 keyword: "rethrow",
                 details: "if_1_or_2_on_two_handed_weapon",
@@ -4634,6 +4656,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -4659,6 +4682,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -4799,6 +4823,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -4824,6 +4849,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -4934,6 +4960,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -4959,6 +4986,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -5084,6 +5112,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -5200,14 +5229,6 @@ export default {
                   },
                 ],
               },
-              // {
-              //   level: 1,
-              //   type: "languages",
-              //   position: 10,
-              //   name: "languages",
-              //   select: 2,
-              //   filter: "no_used",
-              // },
               {
                 level: 1,
                 type: "custom",
@@ -5303,6 +5324,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -5399,52 +5421,42 @@ export default {
                   //spells[0] druid
                   {
                     name_set: spells.shillelagh[0].name,
-                    spells: [{ spell: spells.shillelagh }],
+                    spells: [{ level: 1, spell: spells.shillelagh }],
                   },
                   {
                     name_set: spells.druidcraft[0].name,
-                    spells: [{ spell: spells.druidcraft }],
+                    spells: [{ level: 1, spell: spells.druidcraft }],
                   },
                   {
                     name_set: spells.ray_of_frost[0].name,
-                    spells: [{ spell: spells.ray_of_frost }],
+                    spells: [{ level: 1, spell: spells.ray_of_frost }],
                   },
                   {
                     name_set: spells.mending[0].name,
-                    spells: [{ spell: spells.mending }],
+                    spells: [{ level: 1, spell: spells.mending }],
                   },
                   {
                     name_set: spells.resistance[0].name,
-                    spells: [{ spell: spells.resistance }],
+                    spells: [{ level: 1, spell: spells.resistance }],
                   },
                   {
                     name_set: spells.produce_flame[0].name,
-                    spells: [{ spell: spells.produce_flame }],
+                    spells: [{ level: 1, spell: spells.produce_flame }],
                   },
                   {
                     name_set: spells.thorn_whip[0].name,
-                    spells: [{ spell: spells.thorn_whip }],
+                    spells: [{ level: 1, spell: spells.thorn_whip }],
                   },
                   {
                     name_set: spells.guidance[0].name,
-                    spells: [{ spell: spells.guidance }],
+                    spells: [{ level: 1, spell: spells.guidance }],
                   },
                   {
                     name_set: spells.poison_spray[0].name,
-                    spells: [{ spell: spells.poison_spray }],
+                    spells: [{ level: 1, spell: spells.poison_spray }],
                   },
                 ],
               },
-              // {
-              //   level: 1,
-              //   type: "spells",
-              //   position: 3,
-              //   name: "spells_0",
-              //   select: 1,
-              //   mana_min: 0,
-              //   mana_max: 0,
-              //   classes: ["druid"],
-              // },
               {
                 level: 1,
                 type: "custom",
@@ -5496,6 +5508,7 @@ export default {
                     equipment: [{ level: 1, armor: [[armors.scalemail, 1]] }],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -5511,6 +5524,7 @@ export default {
                     equipment: [{ level: 1, armor: [[armors.chainmail, 1]] }],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -5643,6 +5657,7 @@ export default {
                     ],
                     fines: [
                       {
+                        level: 1,
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
@@ -5836,31 +5851,31 @@ export default {
           //spells[0] cleric
           {
             name_set: spells.mending[0].name,
-            spells: [{ spell: spells.mending }],
+            spells: [{ level: 1, spell: spells.mending }],
           },
           {
             name_set: spells.light[0].name,
-            spells: [{ spell: spells.light }],
+            spells: [{ level: 1, spell: spells.light }],
           },
           {
             name_set: spells.sacred_flame[0].name,
-            spells: [{ spell: spells.sacred_flame }],
+            spells: [{ level: 1, spell: spells.sacred_flame }],
           },
           {
             name_set: spells.resistance[0].name,
-            spells: [{ spell: spells.resistance }],
+            spells: [{ level: 1, spell: spells.resistance }],
           },
           {
             name_set: spells.guidance[0].name,
-            spells: [{ spell: spells.guidance }],
+            spells: [{ level: 1, spell: spells.guidance }],
           },
           {
             name_set: spells.spare_the_dying[0].name,
-            spells: [{ spell: spells.spare_the_dying }],
+            spells: [{ level: 1, spell: spells.spare_the_dying }],
           },
           {
             name_set: spells.thaumaturgy[0].name,
-            spells: [{ spell: spells.thaumaturgy }],
+            spells: [{ level: 1, spell: spells.thaumaturgy }],
           },
         ],
       },
@@ -6088,52 +6103,42 @@ export default {
                   //spells[0] druid
                   {
                     name_set: spells.shillelagh[0].name,
-                    spells: [{ spell: spells.shillelagh }],
+                    spells: [{ level: 2, spell: spells.shillelagh }],
                   },
                   {
                     name_set: spells.druidcraft[0].name,
-                    spells: [{ spell: spells.druidcraft }],
+                    spells: [{ level: 2, spell: spells.druidcraft }],
                   },
                   {
                     name_set: spells.ray_of_frost[0].name,
-                    spells: [{ spell: spells.ray_of_frost }],
+                    spells: [{ level: 2, spell: spells.ray_of_frost }],
                   },
                   {
                     name_set: spells.mending[0].name,
-                    spells: [{ spell: spells.mending }],
+                    spells: [{ level: 2, spell: spells.mending }],
                   },
                   {
                     name_set: spells.resistance[0].name,
-                    spells: [{ spell: spells.resistance }],
+                    spells: [{ level: 2, spell: spells.resistance }],
                   },
                   {
                     name_set: spells.produce_flame[0].name,
-                    spells: [{ spell: spells.produce_flame }],
+                    spells: [{ level: 2, spell: spells.produce_flame }],
                   },
                   {
                     name_set: spells.thorn_whip[0].name,
-                    spells: [{ spell: spells.thorn_whip }],
+                    spells: [{ level: 2, spell: spells.thorn_whip }],
                   },
                   {
                     name_set: spells.guidance[0].name,
-                    spells: [{ spell: spells.guidance }],
+                    spells: [{ level: 2, spell: spells.guidance }],
                   },
                   {
                     name_set: spells.poison_spray[0].name,
-                    spells: [{ spell: spells.poison_spray }],
+                    spells: [{ level: 2, spell: spells.poison_spray }],
                   },
                 ],
               },
-              // {
-              //   level: 2,
-              //   type: "spells",
-              //   position: 3,
-              //   name: "spells_0",
-              //   select: 1,
-              //   mana_min: 0,
-              //   mana_max: 0,
-              //   classes: ["druid"],
-              // },
               {
                 level: 3,
                 type: "custom",
@@ -6677,39 +6682,39 @@ export default {
           //spells[0] druid
           {
             name_set: spells.shillelagh[0].name,
-            spells: [{ spell: spells.shillelagh }],
+            spells: [{ level: 1, spell: spells.shillelagh }],
           },
           {
             name_set: spells.druidcraft[0].name,
-            spells: [{ spell: spells.druidcraft }],
+            spells: [{ level: 1, spell: spells.druidcraft }],
           },
           {
             name_set: spells.ray_of_frost[0].name,
-            spells: [{ spell: spells.ray_of_frost }],
+            spells: [{ level: 1, spell: spells.ray_of_frost }],
           },
           {
             name_set: spells.mending[0].name,
-            spells: [{ spell: spells.mending }],
+            spells: [{ level: 1, spell: spells.mending }],
           },
           {
             name_set: spells.resistance[0].name,
-            spells: [{ spell: spells.resistance }],
+            spells: [{ level: 1, spell: spells.resistance }],
           },
           {
             name_set: spells.produce_flame[0].name,
-            spells: [{ spell: spells.produce_flame }],
+            spells: [{ level: 1, spell: spells.produce_flame }],
           },
           {
             name_set: spells.thorn_whip[0].name,
-            spells: [{ spell: spells.thorn_whip }],
+            spells: [{ level: 1, spell: spells.thorn_whip }],
           },
           {
             name_set: spells.guidance[0].name,
-            spells: [{ spell: spells.guidance }],
+            spells: [{ level: 1, spell: spells.guidance }],
           },
           {
             name_set: spells.poison_spray[0].name,
-            spells: [{ spell: spells.poison_spray }],
+            spells: [{ level: 1, spell: spells.poison_spray }],
           },
         ],
       },
@@ -6984,53 +6989,53 @@ export default {
                   {
                     level: 1,
                     name_set: spells.faerie_fire[1].name,
-                    spells: [{spell: spells.faerie_fire,}],
+                    spells: [{ level: 1, spell: spells.faerie_fire,}],
                   },
                   {
                     level: 1,
                     name_set: spells.sleep[1].name,
-                    spells: [{spell: spells.sleep,}],
+                    spells: [{ level: 1, spell: spells.sleep,}],
                   },
                   {
                     level: 3,
                     name_set: spells.phantasmal_force[2].name,
-                    spells: [{spell: spells.phantasmal_force,}],
+                    spells: [{ level: 3, spell: spells.phantasmal_force,}],
                   },
                   {
                     level: 3,
                     name_set: spells.calm_emotions[2].name,
-                    spells: [{spell: spells.calm_emotions,}],
+                    spells: [{ level: 3, spell: spells.calm_emotions,}],
                   },
                   //TODO - Додати спеллс
                   {
                     level: 5,
                     name_set: spells.blink[3].name,
-                    spells: [{spell: spells.blink,}],
+                    spells: [{ level: 5, spell: spells.blink,}],
                   },
                   {
                     level: 5,
                     name_set: spells.plant_growth[3].name,
-                    spells: [{spell: spells.plant_growth,}],
+                    spells: [{ level: 5, spell: spells.plant_growth,}],
                   },
                   // {
                   //   level: 7,
                   //   name_set: spells.greater_invisibility[4].name,
-                  //   spells: [{spell: spells.greater_invisibility,}],
+                  //   spells: [{ level: 7, spell: spells.greater_invisibility,}],
                   // },
                   // {
                   //   level: 7,
                   //   name_set: spells.dominate_beast[4].name,
-                  //   spells: [{spell: spells.dominate_beast,}],
+                  //   spells: [{ level: 7, spell: spells.dominate_beast,}],
                   // },
                   // {
                   //   level: 9,
                   //   name_set: spells.dominate_person[5].name,
-                  //   spells: [{spell: spells.dominate_person,}],
+                  //   spells: [{ level: 9, spell: spells.dominate_person,}],
                   // },
                   // {
                   //   level: 9,
                   //   name_set: spells.seeming[5].name,
-                  //   spells: [{spell: spells.seeming,}],
+                  //   spells: [{ level: 9, spell: spells.seeming,}],
                   // },
                 ],
               },
@@ -7146,53 +7151,53 @@ export default {
                   {
                     level: 1,
                     name_set: spells.burning_hands[1].name,
-                    spells: [{spell: spells.burning_hands,}],
+                    spells: [{ level: 1, spell: spells.burning_hands,}],
                   },
                   {
                     level: 1,
                     name_set: spells.command[1].name,
-                    spells: [{spell: spells.command,}],
+                    spells: [{ level: 1, spell: spells.command,}],
                   },
                   {
                     level: 3,
                     name_set: spells.blindness_deafness[2].name,
-                    spells: [{spell: spells.blindness_deafness,}],
+                    spells: [{ level: 3, spell: spells.blindness_deafness,}],
                   },
                   {
                     level: 3,
                     name_set: spells.scorching_ray[2].name,
-                    spells: [{spell: spells.scorching_ray,}],
+                    spells: [{ level: 3, spell: spells.scorching_ray,}],
                   },
                   //TODO - Додати спеллс
                   // {
                   //   level: 5,
                   //   name_set: spells.stinking_cloud[3].name,
-                  //   spells: [{spell: spells.stinking_cloud,}],
+                  //   spells: [{ level: 5, spell: spells.stinking_cloud,}],
                   // },
                   {
                     level: 5,
                     name_set: spells.fireball[3].name,
-                    spells: [{spell: spells.fireball,}],
+                    spells: [{ level: 5, spell: spells.fireball,}],
                   },
                   {
                     level: 7,
                     name_set: spells.wall_of_fire[4].name,
-                    spells: [{spell: spells.wall_of_fire,}],
+                    spells: [{ level: 7, spell: spells.wall_of_fire,}],
                   },
                   // {
                   //   level: 7,
                   //   name_set: spells.fire_shield[4].name,
-                  //   spells: [{spell: spells.fire_shield,}],
+                  //   spells: [{ level: 7, spell: spells.fire_shield,}],
                   // },
                   {
                     level: 9,
                     name_set: spells.flame_strike[5].name,
-                    spells: [{spell: spells.flame_strike,}],
+                    spells: [{ level: 9, spell: spells.flame_strike,}],
                   },
                   // {
                   //   level: 9,
                   //   name_set: spells.hallow[5].name,
-                  //   spells: [{spell: spells.hallow,}],
+                  //   spells: [{ level: 9, spell: spells.hallow,}],
                   // },
                 ],
               },
@@ -7292,53 +7297,53 @@ export default {
                   {
                     level: 1,
                     name_set: spells.dissonant_whispers[1].name,
-                    spells: [{spell: spells.dissonant_whispers,}],
+                    spells: [{ level: 1, spell: spells.dissonant_whispers,}],
                   },
                   {
                     level: 1,
                     name_set: spells.tashas_hideous_laughter[1].name,
-                    spells: [{spell: spells.tashas_hideous_laughter,}],
+                    spells: [{ level: 1, spell: spells.tashas_hideous_laughter,}],
                   },
                   {
                     level: 3,
                     name_set: spells.phantasmal_force[2].name,
-                    spells: [{spell: spells.phantasmal_force,}],
+                    spells: [{ level: 3, spell: spells.phantasmal_force,}],
                   },
                   {
                     level: 3,
                     name_set: spells.detect_thoughts[2].name,
-                    spells: [{spell: spells.detect_thoughts,}],
+                    spells: [{ level: 3, spell: spells.detect_thoughts,}],
                   },
                   //TODO - Додати спеллс
                   // {
                   //   level: 5,
                   //   name_set: spells.clairvoyance[3].name,
-                  //   spells: [{spell: spells.clairvoyance,}],
+                  //   spells: [{ level: 5, spell: spells.clairvoyance,}],
                   // },
                   // {
                   //   level: 5,
                   //   name_set: spells.sending[3].name,
-                  //   spells: [{spell: spells.sending,}],
+                  //   spells: [{ level: 5, spell: spells.sending,}],
                   // },
                   // {
                   //   level: 7,
                   //   name_set: spells.dominate_beast[4].name,
-                  //   spells: [{spell: spells.dominate_beast,}],
+                  //   spells: [{ level: 7, spell: spells.dominate_beast,}],
                   // },
                   // {
                   //   level: 7,
                   //   name_set: spells.evards_black_tentacles[4].name,
-                  //   spells: [{spell: spells.evards_black_tentacles,}],
+                  //   spells: [{ level: 7, spell: spells.evards_black_tentacles,}],
                   // },
                   // {
                   //   level: 9,
                   //   name_set: spells.dominate_person[5].name,
-                  //   spells: [{spell: spells.dominate_person,}],
+                  //   spells: [{ level: 9, spell: spells.dominate_person,}],
                   // },
                   // {
                   //   level: 9,
                   //   name_set: spells.telekinesis[5].name,
-                  //   spells: [{spell: spells.telekinesis,}],
+                  //   spells: [{ level: 9, spell: spells.telekinesis,}],
                   // },
                 ],
               },
@@ -7365,7 +7370,7 @@ export default {
 
             settings: [
               {
-                level: 1,
+                level: 3,
                 type: "custom",
                 position: 3,
                 name: "spells_0",
@@ -7373,123 +7378,114 @@ export default {
                 list: [
                   {
                     name_set: spells.acid_splash[0].name,
-                    spells: [{ spell: spells.acid_splash }],
+                    spells: [{ level: 3, spell: spells.acid_splash }],
                   },
                   {
                     name_set: spells.mage_hand[0].name,
-                    spells: [{ spell: spells.mage_hand }],
+                    spells: [{ level: 3, spell: spells.mage_hand }],
                   },
                   {
                     name_set: spells.friends[0].name,
-                    spells: [{ spell: spells.friends }],
+                    spells: [{ level: 3, spell: spells.friends }],
                   },
                   {
                     name_set: spells.shillelagh[0].name,
-                    spells: [{ spell: spells.shillelagh }],
+                    spells: [{ level: 3, spell: spells.shillelagh }],
                   },
                   {
                     name_set: spells.blade_ward[0].name,
-                    spells: [{ spell: spells.blade_ward }],
+                    spells: [{ level: 3, spell: spells.blade_ward }],
                   },
                   {
                     name_set: spells.vicious_mockery[0].name,
-                    spells: [{ spell: spells.vicious_mockery }],
+                    spells: [{ level: 3, spell: spells.vicious_mockery }],
                   },
                   {
                     name_set: spells.druidcraft[0].name,
-                    spells: [{ spell: spells.druidcraft }],
+                    spells: [{ level: 3, spell: spells.druidcraft }],
                   },
                   {
                     name_set: spells.chill_touch[0].name,
-                    spells: [{ spell: spells.chill_touch }],
+                    spells: [{ level: 3, spell: spells.chill_touch }],
                   },
                   {
                     name_set: spells.ray_of_frost[0].name,
-                    spells: [{ spell: spells.ray_of_frost }],
+                    spells: [{ level: 3, spell: spells.ray_of_frost }],
                   },
                   {
                     name_set: spells.minor_illusion[0].name,
-                    spells: [{ spell: spells.minor_illusion }],
+                    spells: [{ level: 3, spell: spells.minor_illusion }],
                   },
                   {
                     name_set: spells.true_strike[0].name,
-                    spells: [{ spell: spells.true_strike }],
+                    spells: [{ level: 3, spell: spells.true_strike }],
                   },
                   {
                     name_set: spells.eldritch_blast[0].name,
-                    spells: [{ spell: spells.eldritch_blast }],
+                    spells: [{ level: 3, spell: spells.eldritch_blast }],
                   },
                   {
                     name_set: spells.fire_bolt[0].name,
-                    spells: [{ spell: spells.fire_bolt }],
+                    spells: [{ level: 3, spell: spells.fire_bolt }],
                   },
                   {
                     name_set: spells.dancing_lights[0].name,
-                    spells: [{ spell: spells.dancing_lights }],
+                    spells: [{ level: 3, spell: spells.dancing_lights }],
                   },
                   {
                     name_set: spells.mending[0].name,
-                    spells: [{ spell: spells.mending }],
+                    spells: [{ level: 3, spell: spells.mending }],
                   },
                   {
                     name_set: spells.light[0].name,
-                    spells: [{ spell: spells.light }],
+                    spells: [{ level: 3, spell: spells.light }],
                   },
                   {
                     name_set: spells.sacred_flame[0].name,
-                    spells: [{ spell: spells.sacred_flame }],
+                    spells: [{ level: 3, spell: spells.sacred_flame }],
                   },
                   {
                     name_set: spells.message[0].name,
-                    spells: [{ spell: spells.message }],
+                    spells: [{ level: 3, spell: spells.message }],
                   },
                   {
                     name_set: spells.resistance[0].name,
-                    spells: [{ spell: spells.resistance }],
+                    spells: [{ level: 3, spell: spells.resistance }],
                   },
                   {
                     name_set: spells.produce_flame[0].name,
-                    spells: [{ spell: spells.produce_flame }],
+                    spells: [{ level: 3, spell: spells.produce_flame }],
                   },
                   {
                     name_set: spells.thorn_whip[0].name,
-                    spells: [{ spell: spells.thorn_whip }],
+                    spells: [{ level: 3, spell: spells.thorn_whip }],
                   },
                   {
                     name_set: spells.guidance[0].name,
-                    spells: [{ spell: spells.guidance }],
+                    spells: [{ level: 3, spell: spells.guidance }],
                   },
                   {
                     name_set: spells.spare_the_dying[0].name,
-                    spells: [{ spell: spells.spare_the_dying }],
+                    spells: [{ level: 3, spell: spells.spare_the_dying }],
                   },
                   {
                     name_set: spells.prestidigitation[0].name,
-                    spells: [{ spell: spells.prestidigitation }],
+                    spells: [{ level: 3, spell: spells.prestidigitation }],
                   },
                   {
                     name_set: spells.thaumaturgy[0].name,
-                    spells: [{ spell: spells.thaumaturgy }],
+                    spells: [{ level: 3, spell: spells.thaumaturgy }],
                   },
                   {
                     name_set: spells.shocking_grasp[0].name,
-                    spells: [{ spell: spells.shocking_grasp }],
+                    spells: [{ level: 3, spell: spells.shocking_grasp }],
                   },
                   {
                     name_set: spells.poison_spray[0].name,
-                    spells: [{ spell: spells.poison_spray }],
+                    spells: [{ level: 3, spell: spells.poison_spray }],
                   },
                 ],
               },
-              // {
-              //   level: 1,
-              //   type: "spells",
-              //   position: 3,
-              //   name: "spells_0",
-              //   select: 3,
-              //   mana_min: 0,
-              //   mana_max: 0,
-              // },
             ],
           },
           {
@@ -7498,9 +7494,11 @@ export default {
 
             spells: [
               {
+                level: 3,
                 spell: spells.create_weapon,
               },
               {
+                level: 3,
                 spell: spells.convert_weapon,
               },
             ],
@@ -7511,6 +7509,7 @@ export default {
 
             spells: [
               {
+                level: 3,
                 spell: spells.find_familiar_warlock,
               },
             ],
@@ -7521,7 +7520,7 @@ export default {
 
             charges: [
               {
-                level: 1,
+                level: 3,
                 name: "talisman_slots",
                 type: "long_rest",
                 list: [
@@ -7595,6 +7594,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "able_to_read",
                 details: "any_texts",
@@ -7608,6 +7608,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "able_to_speak",
                 details: "through_familiar",
@@ -7631,6 +7632,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "able_to_see",
                 details: "in_magic_darkness",
@@ -7917,6 +7919,7 @@ export default {
 
             fines: [
               {
+                level: 15,
                 type: "plus",
                 keyword: "able_to_see",
                 details: "illusion_shifters_30f",
@@ -8315,39 +8318,39 @@ export default {
           //spells[0] warlock
           {
             name_set: spells.mage_hand[0].name,
-            spells: [{ spell: spells.mage_hand }],
+            spells: [{ level: 1, spell: spells.mage_hand }],
           },
           {
             name_set: spells.friends[0].name,
-            spells: [{ spell: spells.friends }],
+            spells: [{ level: 1, spell: spells.friends }],
           },
           {
             name_set: spells.blade_ward[0].name,
-            spells: [{ spell: spells.blade_ward }],
+            spells: [{ level: 1, spell: spells.blade_ward }],
           },
           {
             name_set: spells.chill_touch[0].name,
-            spells: [{ spell: spells.chill_touch }],
+            spells: [{ level: 1, spell: spells.chill_touch }],
           },
           {
             name_set: spells.minor_illusion[0].name,
-            spells: [{ spell: spells.minor_illusion }],
+            spells: [{ level: 1, spell: spells.minor_illusion }],
           },
           {
             name_set: spells.true_strike[0].name,
-            spells: [{ spell: spells.true_strike }],
+            spells: [{ level: 1, spell: spells.true_strike }],
           },
           {
             name_set: spells.eldritch_blast[0].name,
-            spells: [{ spell: spells.eldritch_blast }],
+            spells: [{ level: 1, spell: spells.eldritch_blast }],
           },
           {
             name_set: spells.prestidigitation[0].name,
-            spells: [{ spell: spells.prestidigitation }],
+            spells: [{ level: 1, spell: spells.prestidigitation }],
           },
           {
             name_set: spells.poison_spray[0].name,
-            spells: [{ spell: spells.poison_spray }],
+            spells: [{ level: 1, spell: spells.poison_spray }],
           },
         ],
       },
@@ -8566,6 +8569,7 @@ export default {
 
             specials: [
               {
+                level: 1,
                 type: "armor_bonus",
                 armor_bonus: 3,
               },
@@ -8988,67 +8992,67 @@ export default {
           //spells[0] sorcerer
           {
             name_set: spells.acid_splash[0].name,
-            spells: [{ spell: spells.acid_splash }],
+            spells: [{ level: 1, spell: spells.acid_splash }],
           },
           {
             name_set: spells.mage_hand[0].name,
-            spells: [{ spell: spells.mage_hand }],
+            spells: [{ level: 1, spell: spells.mage_hand }],
           },
           {
             name_set: spells.friends[0].name,
-            spells: [{ spell: spells.friends }],
+            spells: [{ level: 1, spell: spells.friends }],
           },
           {
             name_set: spells.blade_ward[0].name,
-            spells: [{ spell: spells.blade_ward }],
+            spells: [{ level: 1, spell: spells.blade_ward }],
           },
           {
             name_set: spells.chill_touch[0].name,
-            spells: [{ spell: spells.chill_touch }],
+            spells: [{ level: 1, spell: spells.chill_touch }],
           },
           {
             name_set: spells.ray_of_frost[0].name,
-            spells: [{ spell: spells.ray_of_frost }],
+            spells: [{ level: 1, spell: spells.ray_of_frost }],
           },
           {
             name_set: spells.minor_illusion[0].name,
-            spells: [{ spell: spells.minor_illusion }],
+            spells: [{ level: 1, spell: spells.minor_illusion }],
           },
           {
             name_set: spells.true_strike[0].name,
-            spells: [{ spell: spells.true_strike }],
+            spells: [{ level: 1, spell: spells.true_strike }],
           },
           {
             name_set: spells.fire_bolt[0].name,
-            spells: [{ spell: spells.fire_bolt }],
+            spells: [{ level: 1, spell: spells.fire_bolt }],
           },
           {
             name_set: spells.dancing_lights[0].name,
-            spells: [{ spell: spells.dancing_lights }],
+            spells: [{ level: 1, spell: spells.dancing_lights }],
           },
           {
             name_set: spells.mending[0].name,
-            spells: [{ spell: spells.mending }],
+            spells: [{ level: 1, spell: spells.mending }],
           },
           {
             name_set: spells.light[0].name,
-            spells: [{ spell: spells.light }],
+            spells: [{ level: 1, spell: spells.light }],
           },
           {
             name_set: spells.message[0].name,
-            spells: [{ spell: spells.message }],
+            spells: [{ level: 1, spell: spells.message }],
           },
           {
             name_set: spells.prestidigitation[0].name,
-            spells: [{ spell: spells.prestidigitation }],
+            spells: [{ level: 1, spell: spells.prestidigitation }],
           },
           {
             name_set: spells.shocking_grasp[0].name,
-            spells: [{ spell: spells.shocking_grasp }],
+            spells: [{ level: 1, spell: spells.shocking_grasp }],
           },
           {
             name_set: spells.poison_spray[0].name,
-            spells: [{ spell: spells.poison_spray }],
+            spells: [{ level: 1, spell: spells.poison_spray }],
           },
         ],
       },
@@ -9074,44 +9078,44 @@ export default {
         list: [
           {
             name_set: spells.metamagic_careful[0].name,
-            spells: [{ spell: spells.metamagic_careful }],
+            spells: [{ level: 3, spell: spells.metamagic_careful }],
           },
           {
             name_set: spells.metamagic_distant[0].name,
-            spells: [{ spell: spells.metamagic_distant }],
+            spells: [{ level: 3, spell: spells.metamagic_distant }],
           },
           {
             name_set: spells.metamagic_empowered[0].name,
-            spells: [{ spell: spells.metamagic_empowered }],
+            spells: [{ level: 3, spell: spells.metamagic_empowered }],
           },
           {
             name_set: spells.metamagic_extended[0].name,
-            spells: [{ spell: spells.metamagic_extended }],
+            spells: [{ level: 3, spell: spells.metamagic_extended }],
           },
           {
             name_set: spells.metamagic_heightened[0].name,
-            spells: [{ spell: spells.metamagic_heightened }],
+            spells: [{ level: 3, spell: spells.metamagic_heightened }],
           }, // непреодолимое
           {
             name_set: spells.metamagic_quickened[0].name,
-            spells: [{ spell: spells.metamagic_quickened }],
+            spells: [{ level: 3, spell: spells.metamagic_quickened }],
           },
           {
             name_set: spells.metamagic_subtle[0].name,
-            spells: [{ spell: spells.metamagic_subtle }],
+            spells: [{ level: 3, spell: spells.metamagic_subtle }],
           }, // неуловимое
           {
             name_set: spells.metamagic_transmuted[0].name,
-            spells: [{ spell: spells.metamagic_transmuted }],
+            spells: [{ level: 3, spell: spells.metamagic_transmuted }],
           },
           {
             name_set: spells.metamagic_twinned[0].name,
-            spells: [{ spell: spells.metamagic_twinned }],
+            spells: [{ level: 3, spell: spells.metamagic_twinned }],
           },
 
           {
             name_set: spells.metamagic_seeking[0].name,
-            spells: [{ spell: spells.metamagic_seeking }],
+            spells: [{ level: 3, spell: spells.metamagic_seeking }],
           },
         ],
       },
@@ -9243,11 +9247,13 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_evocation",
               },
               {
+                level: 2,
                 type: "plus",
                 keyword: "save_ally",
                 details: "one_plus_lvl_from_spell_evocation",
@@ -9313,6 +9319,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_conjuration",
@@ -9333,6 +9340,7 @@ export default {
 
             spells: [
               {
+                level: 2,
                 spell: spells.small_conjuration,
               },
               {
@@ -9385,6 +9393,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_illusion",
@@ -9393,6 +9402,7 @@ export default {
 
             spells: [
               {
+                level: 2,
                 spell: spells.minor_illusion,
               },
               {
@@ -9415,11 +9425,13 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_necromancy",
               },
               {
+                level: 2,
                 type: "plus",
                 keyword: "heal",
                 details: "from_spell_kill_necromancy",
@@ -9457,6 +9469,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_abjuration",
@@ -9516,6 +9529,7 @@ export default {
 
             spells: [
               {
+                level: 2,
                 spell: spells.magical_protection,
               },
             ],
@@ -9560,6 +9574,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_enchantment",
@@ -9568,6 +9583,7 @@ export default {
 
             spells: [
               {
+                level: 2,
                 spell: spells.hypnotic_look,
               },
               {
@@ -9661,6 +9677,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_transmutation",
@@ -9669,6 +9686,7 @@ export default {
 
             spells: [
               {
+                level: 2,
                 spell: spells.small_alchemy,
               },
               {
@@ -9742,6 +9760,7 @@ export default {
 
             fines: [
               {
+                level: 2,
                 type: "plus",
                 keyword: "twice_less",
                 details: "gold_and_time_divination",
@@ -9750,6 +9769,7 @@ export default {
 
             spells: [
               {
+                level: 2,
                 spell: spells.portent,
               },
               {
@@ -9870,67 +9890,67 @@ export default {
           // spells[0] wizard
           {
             name_set: spells.acid_splash[0].name,
-            spells: [{ spell: spells.acid_splash }],
+            spells: [{ level: 1, spell: spells.acid_splash }],
           },
           {
             name_set: spells.mage_hand[0].name,
-            spells: [{ spell: spells.mage_hand }],
+            spells: [{ level: 1, spell: spells.mage_hand }],
           },
           {
             name_set: spells.friends[0].name,
-            spells: [{ spell: spells.friends }],
+            spells: [{ level: 1, spell: spells.friends }],
           },
           {
             name_set: spells.blade_ward[0].name,
-            spells: [{ spell: spells.blade_ward }],
+            spells: [{ level: 1, spell: spells.blade_ward }],
           },
           {
             name_set: spells.chill_touch[0].name,
-            spells: [{ spell: spells.chill_touch }],
+            spells: [{ level: 1, spell: spells.chill_touch }],
           },
           {
             name_set: spells.ray_of_frost[0].name,
-            spells: [{ spell: spells.ray_of_frost }],
+            spells: [{ level: 1, spell: spells.ray_of_frost }],
           },
           {
             name_set: spells.minor_illusion[0].name,
-            spells: [{ spell: spells.minor_illusion }],
+            spells: [{ level: 1, spell: spells.minor_illusion }],
           },
           {
             name_set: spells.true_strike[0].name,
-            spells: [{ spell: spells.true_strike }],
+            spells: [{ level: 1, spell: spells.true_strike }],
           },
           {
             name_set: spells.fire_bolt[0].name,
-            spells: [{ spell: spells.fire_bolt }],
+            spells: [{ level: 1, spell: spells.fire_bolt }],
           },
           {
             name_set: spells.dancing_lights[0].name,
-            spells: [{ spell: spells.dancing_lights }],
+            spells: [{ level: 1, spell: spells.dancing_lights }],
           },
           {
             name_set: spells.mending[0].name,
-            spells: [{ spell: spells.mending }],
+            spells: [{ level: 1, spell: spells.mending }],
           },
           {
             name_set: spells.light[0].name,
-            spells: [{ spell: spells.light }],
+            spells: [{ level: 1, spell: spells.light }],
           },
           {
             name_set: spells.message[0].name,
-            spells: [{ spell: spells.message }],
+            spells: [{ level: 1, spell: spells.message }],
           },
           {
             name_set: spells.prestidigitation[0].name,
-            spells: [{ spell: spells.prestidigitation }],
+            spells: [{ level: 1, spell: spells.prestidigitation }],
           },
           {
             name_set: spells.shocking_grasp[0].name,
-            spells: [{ spell: spells.shocking_grasp }],
+            spells: [{ level: 1, spell: spells.shocking_grasp }],
           },
           {
             name_set: spells.poison_spray[0].name,
-            spells: [{ spell: spells.poison_spray }],
+            spells: [{ level: 1, spell: spells.poison_spray }],
           },
         ],
       },
@@ -10116,6 +10136,7 @@ export default {
 
             fines: [
               {
+                level: 3,
                 type: "plus",
                 keyword: "spell_bardic_inspiration",
                 details: "on_damage_and_ac",
@@ -10731,60 +10752,50 @@ export default {
           // spells[0] bard
           {
             name_set: spells.mage_hand[0].name,
-            spells: [{ spell: spells.mage_hand }],
+            spells: [{ level: 1, spell: spells.mage_hand }],
           },
           {
             name_set: spells.friends[0].name,
-            spells: [{ spell: spells.friends }],
+            spells: [{ level: 1, spell: spells.friends }],
           },
           {
             name_set: spells.blade_ward[0].name,
-            spells: [{ spell: spells.blade_ward }],
+            spells: [{ level: 1, spell: spells.blade_ward }],
           },
           {
             name_set: spells.vicious_mockery[0].name,
-            spells: [{ spell: spells.vicious_mockery }],
+            spells: [{ level: 1, spell: spells.vicious_mockery }],
           },
           {
             name_set: spells.minor_illusion[0].name,
-            spells: [{ spell: spells.minor_illusion }],
+            spells: [{ level: 1, spell: spells.minor_illusion }],
           },
           {
             name_set: spells.true_strike[0].name,
-            spells: [{ spell: spells.true_strike }],
+            spells: [{ level: 1, spell: spells.true_strike }],
           },
           {
             name_set: spells.dancing_lights[0].name,
-            spells: [{ spell: spells.dancing_lights }],
+            spells: [{ level: 1, spell: spells.dancing_lights }],
           },
           {
             name_set: spells.mending[0].name,
-            spells: [{ spell: spells.mending }],
+            spells: [{ level: 1, spell: spells.mending }],
           },
           {
             name_set: spells.light[0].name,
-            spells: [{ spell: spells.light }],
+            spells: [{ level: 1, spell: spells.light }],
           },
           {
             name_set: spells.message[0].name,
-            spells: [{ spell: spells.message }],
+            spells: [{ level: 1, spell: spells.message }],
           },
           {
             name_set: spells.prestidigitation[0].name,
-            spells: [{ spell: spells.prestidigitation }],
+            spells: [{ level: 1, spell: spells.prestidigitation }],
           },
         ],
       },
-      // {
-      //   level: 1,
-      //   type: "spells",
-      //   position: 4,
-      //   name: "spells_0",
-      //   select: [2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-      //   mana_min: 0,
-      //   mana_max: 0,
-      //   classes: ["bard"],
-      // },
       {
         level: 1,
         type: "spells",
@@ -11124,6 +11135,7 @@ export default {
                     name_set: spells.horde_breaker[0].name,
                     spells: [
                       {
+                        level: 3,
                         spell: spells.horde_breaker,
                       },
                     ],
@@ -11132,6 +11144,7 @@ export default {
                     name_set: spells.giant_killer[0].name,
                     spells: [
                       {
+                        level: 3,
                         spell: spells.giant_killer,
                       },
                     ],
@@ -11140,6 +11153,7 @@ export default {
                     name_set: spells.colossus_slayer[0].name,
                     spells: [
                       {
+                        level: 3,
                         spell: spells.colossus_slayer,
                       },
                     ],
@@ -11157,6 +11171,7 @@ export default {
                     name: "protection_from_multiattack",
                     fines: [
                       {
+                        level: 7,
                         type: "plus",
                         keyword: "plus_4_armor",
                         details: "on_next_attacks",
@@ -11167,6 +11182,7 @@ export default {
                     name: "run_from_horde",
                     fines: [
                       {
+                        level: 7,
                         type: "advantage",
                         keyword: "disadvantage",
                         details: "on_attacking_invisible",
@@ -11177,6 +11193,7 @@ export default {
                     name: "steel_will",
                     fines: [
                       {
+                        level: 7,
                         type: "advantage",
                         keyword: "advantage",
                         details: "fear_against",
@@ -11196,6 +11213,7 @@ export default {
                     name_set: spells.whirlwind_attack[0].name,
                     spells: [
                       {
+                        level: 11,
                         spell: spells.whirlwind_attack,
                       },
                     ],
@@ -11204,6 +11222,7 @@ export default {
                     name_set: spells.volley[0].name,
                     spells: [
                       {
+                        level: 11,
                         spell: spells.volley,
                       },
                     ],
@@ -11221,6 +11240,7 @@ export default {
                     name: "evasiveness",
                     fines: [
                       {
+                        level: 15,
                         type: "resistance",
                         keyword: "fine_dodge",
                         details: "from_aoe_effects",
@@ -11231,6 +11251,7 @@ export default {
                     name_set: spells.uncanny_dodge[0].name,
                     spells: [
                       {
+                        level: 15,
                         spell: spells.uncanny_dodge,
                       },
                     ],
@@ -11239,6 +11260,7 @@ export default {
                     name_set: spells.stand_against_the_tide[0].name,
                     spells: [
                       {
+                        level: 15,
                         spell: spells.stand_against_the_tide,
                       },
                     ],
@@ -11263,6 +11285,7 @@ export default {
                     name_set: spells.rangers_companion[0].name,
                     spells: [
                       {
+                        level: 3,
                         spell: spells.rangers_companion,
                       },
                     ],
@@ -11271,6 +11294,7 @@ export default {
                     name_set: spells.primal_companion[0].name,
                     spells: [
                       {
+                        level: 3,
                         spell: spells.primal_companion,
                       },
                     ],
@@ -11308,11 +11332,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_aberrations_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_aberrations_against",
@@ -11329,11 +11355,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_beasts_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_beasts_against",
@@ -11350,11 +11378,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_celestials_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_celestials_against",
@@ -11371,11 +11401,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_constructs_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_constructs_against",
@@ -11388,11 +11420,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_dragons_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_dragons_against",
@@ -11409,11 +11443,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_elementals_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_elementals_against",
@@ -11430,11 +11466,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_feys_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_feys_against",
@@ -11451,11 +11489,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_fiends_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_fiends_against",
@@ -11472,11 +11512,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_giants_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_giants_against",
@@ -11493,11 +11535,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_monstrosities_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_monstrosities_against",
@@ -11510,11 +11554,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_oozes_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_oozes_against",
@@ -11527,11 +11573,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_plants_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_plants_against",
@@ -11544,11 +11592,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_undeads_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_undeads_against",
@@ -11561,11 +11611,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "wisdom_two_other_races_against",
                       },
                       {
+                        level:1,
                         type: "advantage",
                         keyword: "advantage",
                         details: "intelligence_two_other_races_against",
@@ -11649,6 +11701,7 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_arctic",
@@ -11665,11 +11718,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_coast",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_coast",
                         details: "terrain_advantages",
@@ -11681,11 +11736,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_desert",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_desert",
                         details: "terrain_advantages",
@@ -11697,11 +11754,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_forest",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_forest",
                         details: "terrain_advantages",
@@ -11713,11 +11772,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_grassland",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_grassland",
                         details: "terrain_advantages",
@@ -11729,11 +11790,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_mountain",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_mountain",
                         details: "terrain_advantages",
@@ -11745,11 +11808,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_swamp",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_swamp",
                         details: "terrain_advantages",
@@ -11761,11 +11826,13 @@ export default {
 
                     fines: [
                       {
+                        level:1,
                         type: "plus",
                         keyword: "proficiency_bonus",
                         details: "intelligence_wisdom_underdark",
                       },
                       {
+                        level:1,
                         type: "plus",
                         keyword: "travel_underdark",
                         details: "terrain_advantages",
@@ -12179,6 +12246,7 @@ export default {
 
             specials: [
               {
+                level:2,
                 type: "armor",
                 armor_bonus: 1,
               },
@@ -12208,7 +12276,7 @@ export default {
 
             specials: [
               {
-                level: 1,
+                level: 2,
                 type: "weapon_ranged",
                 aim_bonus: 2,
               },
@@ -12217,7 +12285,7 @@ export default {
         ],
       },
       {
-        level: 4,
+        level: 3,
         type: "custom",
         position: 2,
         name: "primal_sense",
@@ -12273,6 +12341,7 @@ export default {
             name_set: "spell_disguise_on_sight",
             spells: [
               {
+                level: 10,
                 spell: spells.disguise_on_sight,
               },
             ],
@@ -12281,7 +12350,7 @@ export default {
             name_set: "spell_disguise_nature",
             charges: [
               {
-                level: 2,
+                level: 10,
                 name: "disguise_nature_slots",
                 type: "long_rest",
                 foo: "Num_Mastery",
@@ -12315,6 +12384,7 @@ export default {
 
             spells: [
               {
+                level: 10,
                 spell: spells.disguise_nature,
               },
             ],
@@ -12411,6 +12481,7 @@ export default {
             ],
             fines: [
               {
+                level: 1,
                 type: "disadvantage",
                 keyword: "disadvantage",
                 details: "on_stealth",
