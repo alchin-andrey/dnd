@@ -179,6 +179,7 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useEquipStore } from "@/stores/modules/EquipStore";
@@ -219,6 +220,7 @@ export default {
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr", "gold_Equip_Numb"]),
 		...mapState(useStatsStore, ["stats_Saving_Arr"]),
+		...mapState(useSkillsStore, ["skills_RC_Page_Name"]),
 		...mapState(useQualitiesStore, ["hp_Bonus"]),
 
     shown_Proficiencies() {
@@ -269,7 +271,11 @@ export default {
 		},
 
 		select_Sum: (stor) => (item) => {
-			return item.list ? item.list.length : stor.settings_Spells_List(item).length;
+      if(item.filter == "only_mastery") {
+        return stor.skills_RC_Page_Name.length
+      } else {
+        return item.list ? item.list.length : stor.settings_Spells_List(item).length;
+      }
 		},
 
 		t_Condition() {

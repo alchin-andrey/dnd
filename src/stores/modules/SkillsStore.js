@@ -92,10 +92,16 @@ export const useSkillsStore = defineStore({
       return [...class_main, ...class_custom,];
     },
 
-    stats_RC_Page() {
+    skills_RC_Page() {
       const race_skills = this.skills_Race_All;
       const class_skills = this.skills_Class_All;
       return [...race_skills, ...class_skills];
+    },
+
+    skills_RC_Page_Name() {
+      let all_name = this.skills_RC_Page.reduce((acc, el) => acc.concat(el.name), []);
+			const uniqu_name = [...new Set(all_name)];
+      return uniqu_name;
     },
 
     skills_Class_Numb: (stor) => (name) => {
@@ -105,7 +111,7 @@ export const useSkillsStore = defineStore({
     skills_RC_All_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
       const skill_MOD = stor.skills_MOD_Numb(name);
-      const skill_Mastery = stor.skills_Numb_Bonus(stor.stats_RC_Page, name);
+      const skill_Mastery = stor.skills_Numb_Bonus(stor.skills_RC_Page, name);
 
       const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
 			let skills_foo = null;
@@ -114,7 +120,7 @@ export const useSkillsStore = defineStore({
     },
 
     skills_Class_Param() {
-      const skills_RC_name = this.stats_RC_Page.reduce((acc, el) => acc.concat(el.name), []);
+      const skills_RC_name = this.skills_RC_Page.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(skills_RC_name)];
       return uniqu_name;
     },
