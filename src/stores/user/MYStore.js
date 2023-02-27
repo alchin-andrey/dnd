@@ -145,7 +145,7 @@ export const useMYStore = defineStore({
 					const select_numb = this.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
 					const select_arr = sett_select?.[link_name_i] ?? [];
           
-          const list_lvl = this.settingsSpellsList(item); //NOTE - NEW_FOR_SPELL
+          const list_lvl = this.settings_Spells_List(item); //NOTE - NEW_FOR_SPELL
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
@@ -178,14 +178,9 @@ export const useMYStore = defineStore({
 			return mod >= 1 ? mod : 1;
 		},
 
-	},
-	//!SECTION - GETTERS
-
-	//SECTION - //? ACTIONS
-	actions: {
-    settingsSpellsList(item) {
+    settings_Spells_List: (stor) => (item) => {
       const SpellsStore = useSpellsStore();
-      const lvl = this.MY.level;
+      const lvl = stor.MY.level;
       const mana_min = item.mana_min;
       const mana_max = Array.isArray(item.mana_max) ? item.mana_max[lvl - 1] : item.mana_max;
       
@@ -194,7 +189,7 @@ export const useMYStore = defineStore({
       const cast_time_filter = item.filter?.cast_time;
 
       const extra_items = item.extra_items;
-      const extra_items_lvl = this.level_Filter_Arr(extra_items);
+      const extra_items_lvl = stor.level_Filter_Arr(extra_items);
 
       const spell_arr = SpellsStore.spells_Arr;
 
@@ -219,6 +214,11 @@ export const useMYStore = defineStore({
       return [...arr, ...extra_items_lvl];
     },
 
+	},
+	//!SECTION - GETTERS
+
+	//SECTION - //? ACTIONS
+	actions: {
     select_spells_Numb(item) {
 			const lvl = this.MY.level;
       const select_numb = Array.isArray(item.select) ? item.select[lvl - 1] : item.select;

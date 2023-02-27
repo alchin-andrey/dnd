@@ -163,7 +163,7 @@
 				:key="item"
 				:title="item.name"
 				:select="select_Numb(item.select)"
-				:sum="select_Sum(item.list)"
+				:sum="select_Sum(item)"
 			>
 			</MyCusstomSetting>
 		</my-wrapper>
@@ -214,6 +214,7 @@ export default {
 			"Mastery",
 			"Mastery_x2",
 			"level_Filter_Arr",
+      "settings_Spells_List",
 		]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useEquipStore, ["item_Equip_Arr", "gold_Equip_Numb"]),
@@ -267,8 +268,8 @@ export default {
 			return Array.isArray(select) ? select[lvl - 1] : select;
 		},
 
-		select_Sum: (stor) => (list) => {
-			return list ? list.length : 10.000000001;
+		select_Sum: (stor) => (item) => {
+			return item.list ? item.list.length : stor.settings_Spells_List(item).length;
 		},
 
 		t_Condition() {
@@ -285,6 +286,9 @@ export default {
 			immediate: true,
 		},
 	},
+
+  methods: {
+  }
 };
 </script>
 
