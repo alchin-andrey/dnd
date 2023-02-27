@@ -1,12 +1,13 @@
 <template>
-
-<GenderCard title="phisiological" :arr="phisiological_Arr"/>
-<GenderCard 
-v-vpshow="shown_Look" title="feel" :arr="feel_Arr"/>
-<transition name="scroll-fade">
-<GenderCard v-if="shown_Look" title="look" :arr="look_Arr"/>
-</transition>
-<GenderCard title="attraction" :arr="attraction_Arr"/>
+	<div>
+		<GenderCard title="phisiological" :arr="phisiological_Arr" />
+		<GenderCard class="marg-top-8" v-vpshow="shown_Look" title="feel" :arr="feel_Arr"/>
+		<!-- v-vpshow="shown_Look" -->
+		<section class="null_height" :class="{ full_height: shown_Look }">
+			<GenderCard class="marg-top-8" title="look" :arr="look_Arr" />
+		</section>
+		<GenderCard class="marg-top-8" title="attraction" :arr="attraction_Arr" />
+	</div>
 </template>
 
 <script>
@@ -15,28 +16,42 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 export default {
-  name: "RaceSetting__Gender",
-  components: { GenderCard, },
-  computed: {
-    ...mapState(useMYStore, ["MY"]),
+	name: "RaceSetting__Gender",
+	components: { GenderCard },
+	computed: {
+		...mapState(useMYStore, ["MY"]),
 
-    ...mapState(useGenderStore, [
-      "phisiological_Arr",
-      "feel_Arr",
-      "look_Arr",
-      "attraction_Arr",
-    ]),
+		...mapState(useGenderStore, [
+			"phisiological_Arr",
+			"feel_Arr",
+			"look_Arr",
+			"attraction_Arr",
+		]),
 
-    shown_Look() {
-      return this.MY.gender.feel !== 'cisgender'
-    }
-  },
+		shown_Look() {
+			return this.MY.gender.feel !== "cisgender";
+		},
+	},
 
-  methods: {
-  },
+	methods: {},
 };
 </script>
 
 <style scoped>
+.null_height {
+	max-height: 0;
+	/* opacity: 0.5; */
+	transition: all 0.5s ease-out;
+	overflow: hidden;
+}
 
+.full_height {
+	max-height: 300px;
+	/* opacity: 1; */
+	transition: all 0.5s ease-in;
+}
+
+.marg-top-8 {
+	margin-top: 8px;
+}
 </style>

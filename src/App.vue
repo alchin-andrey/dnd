@@ -567,21 +567,5 @@ a {
 	gap: 8px;
 }
 
-/* GLOBAL */
-.scroll-fade-enter-active {
-	transition: all 0.8s ease-out;
-}
-
-.scroll-fade-leave-active {
-	transition: all 0.6s cubic-bezier(1, 0.8, 0.8, 1);
-}
-
-.scroll-fade-enter-from,
-.scroll-fade-leave-to {
-	transform: translateY(-20px);
-	opacity: 0;
-}
-/* GLOBAL */
-
 /* ---------------------sidebar_right----------------------*/
 </style>

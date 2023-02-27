@@ -29,13 +29,14 @@ export default {
                 block: "start",
                 inline: "nearest",
             });
-        } else {
-            el.scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-                inline: "nearest",
-            });
-        }
+        } 
+        // else {
+        //     el.scrollIntoView({
+        //         behavior: "smooth",
+        //         block: "end",
+        //         inline: "nearest",
+        //     });
+        // }
     },
     // вьізьівается перед тем, как будет размонтирован родительский компонент
     beforeUnmount(el, binding) {
