@@ -819,6 +819,15 @@ export default {
 			return this.stats_Numb("wisdom");
 		},
 
+		Dur_10_60_480() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb - this.Index;
+			if (mana == 0) return num;
+			if (mana == 1) return 10;
+			if (mana == 2) return 60;
+			if (mana == 3) return 480;
+		},
+
 		//ANCHOR - Dic
 		Dic_14_56_118_1710_Lvl() {
 			const lvl_arr = [1, 5, 11, 17];

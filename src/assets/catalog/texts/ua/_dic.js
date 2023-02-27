@@ -5635,5 +5635,9 @@ export default {
   vax:"віск",
   vax_details: "",
 
-  event_oldness: "давнина"
+  event_oldness: "давнина,",
+
+  spell_modify_memory: spells.modify_memory,
+  spell_modify_memory_details: spells.modify_memory_details,
+  spell_modify_memory_expanded: spells.modify_memory_expanded,
 };

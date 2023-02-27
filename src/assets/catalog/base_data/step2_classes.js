@@ -5299,10 +5299,10 @@ export default {
                 level: 9,
                 spell: spells.modify_memory,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.dominate_person,
-              // },
+              {
+                level: 9,
+                spell: spells.dominate_person,
+              },
               //TODO - додати вміння Домену Обману
             ],
 
@@ -7027,11 +7027,11 @@ export default {
                   //   name_set: spells.dominate_beast[4].name,
                   //   spells: [{ level: 7, spell: spells.dominate_beast,}],
                   // },
-                  // {
-                  //   level: 9,
-                  //   name_set: spells.dominate_person[5].name,
-                  //   spells: [{ level: 9, spell: spells.dominate_person,}],
-                  // },
+                  {
+                    level: 9,
+                    name_set: spells.dominate_person[5].name,
+                    spells: [{ level: 9, spell: spells.dominate_person,}],
+                  },
                   // {
                   //   level: 9,
                   //   name_set: spells.seeming[5].name,
@@ -7335,11 +7335,11 @@ export default {
                   //   name_set: spells.evards_black_tentacles[4].name,
                   //   spells: [{ level: 7, spell: spells.evards_black_tentacles,}],
                   // },
-                  // {
-                  //   level: 9,
-                  //   name_set: spells.dominate_person[5].name,
-                  //   spells: [{ level: 9, spell: spells.dominate_person,}],
-                  // },
+                  {
+                    level: 9,
+                    name_set: spells.dominate_person[5].name,
+                    spells: [{ level: 9, spell: spells.dominate_person,}],
+                  },
                   // {
                   //   level: 9,
                   //   name_set: spells.telekinesis[5].name,

@@ -5656,6 +5656,10 @@ export default {
   vax:"воск",
   vax_details: "",
 
-  event_oldness: "давность"
+  event_oldness: "давность,",
+
+  spell_modify_memory: spells.modify_memory,
+  spell_modify_memory_details: spells.modify_memory_details,
+  spell_modify_memory_expanded: spells.modify_memory_expanded,
 
 };  
