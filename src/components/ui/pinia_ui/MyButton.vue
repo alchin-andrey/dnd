@@ -1,8 +1,8 @@
 <template>
-	<section class="sect">
+	<section class="relative">
 		<div class="gradient"></div>
 		<div class="btm">
-			<div class="numb jbm-300">
+			<div class="numb jbm-300" v-if="numb">
 				<div>
 					{{ numb }}
 				</div>
@@ -42,20 +42,16 @@ export default {
 </script>
 
 <style scoped>
-.sect {
-	position: relative;
-}
 .btm {
 	width: 320px;
-	min-height: 118px;
+  display: grid;
+  gap: 18px;
 	background: #0047ff;
-	padding-top: 32px;
-	padding-left: 32px;
+  padding: 32px;
 	cursor: pointer;
 }
 
 .numb {
-	/*margin-top: 32px;*/
 	height: 18px;
 	text-align: left;
 }
@@ -69,10 +65,7 @@ export default {
 }
 
 .title {
-	margin-top: 18px;
 	display: flex;
-	width: 256px;
-	height: 18px;
 	justify-content: space-between;
 }
 </style>

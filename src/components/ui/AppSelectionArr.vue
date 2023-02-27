@@ -7,7 +7,7 @@
 		:class="{
 			active_link: active_Link(item),
 			hover: !active_Link(item),
-			'lvl-dot': shown_Level_Dot(item.level),
+			'lvl-dot': shown_Level_Dot(item),
 		}"
 	>
 		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
@@ -71,9 +71,9 @@ export default {
 			return !stor.active_Link(item) ? "arrow_down_small" : "arrow_right_small";
 		},
 
-		shown_Level_Dot: (store) => (item_lvl) => {
+		shown_Level_Dot: (store) => (item) => {
 			let lvl = store.MY.level;
-			return item_lvl == lvl && lvl !== 1;
+			return item.level == lvl && lvl !== 1;
 		},
 
 		uniqu_Name() {

@@ -4,27 +4,32 @@
 		<div class="main_chapter">
 			<HeaderMenu />
 
-			<MyBackPage
-				v-if="pages.class_page"
-				:text_arr="arr_Name_RE"
-				@click="goPage('race_page')"
-			/>
+			<section class="grid-col gap-10">
+				<MyBackPage
+					v-if="!pages.race_page"
+					:text_arr="arr_Name_Race_Page"
+					@click="goPage('race_page')"
+				/>
+				<MyBackPage
+					v-if="!pages.race_page && !pages.class_page"
+					:text_arr="arr_Name_Class_Page"
+					@click="goPage('class_page')"
+				/>
+			</section>
 
 			<div v-if="!pages.race_page" class="delimiter"></div>
-			<my-slider
+			<AppSlider
 				v-if="pages.race_page"
 				numb="01"
 				name="race"
 				:slides="MY.race.name"
-			>
-			</my-slider>
-			<my-slider
+			/>
+			<AppSlider
 				v-if="pages.class_page"
 				numb="02"
 				name="class"
 				:slides="MY.class.name"
-			>
-			</my-slider>
+			/>
 			<div class="delimiter"></div>
 		</div>
 
@@ -34,27 +39,27 @@
 				<ClassMenu v-if="pages.class_page" />
 			</div>
 
-			<transition v-if="pages.race_page" name="btm-fade" mode="out-in">
-				<my-button
-					v-if="shown_home"
-					numb="02"
-					title="class"
-					@click="goPage('class_page')"
-				></my-button>
-				<my-button-back
-					v-else
-					title="command_back"
-					@click="showHome()"
-				></my-button-back>
-			</transition>
+			<transition name="btm-fade" mode="out-in">
+				<section v-if="shown_home">
+					<my-button
+						v-if="pages.race_page"
+						numb="02"
+						title="class"
+						@click="goPage('class_page')"
+					></my-button>
+					<my-button
+						v-if="pages.class_page"
+						numb="03"
+						title="step_background"
+						@click="goPage('background_page')"
+					></my-button>
+					<my-button
+						v-if="pages.background_page"
 
-			<transition v-if="pages.class_page" name="btm-fade" mode="out-in">
-				<my-button
-					v-if="shown_home"
-					numb="03"
-					title="step_background"
-					@click="goPage('class_page')"
-				></my-button>
+						title="download_charsheet"
+						@click="goPage('background_page')"
+					></my-button>
+				</section>
 				<my-button-back
 					v-else
 					title="command_back"
@@ -132,8 +137,11 @@ import ClassParameters from "@/components/parameters/__param__lists/2_ClassParam
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+
+import MainApp from "@/components/main/MainApp.js";
 export default {
 	name: "App",
+  mixins: [MainApp],
 	components: {
 		WelcomeBanner,
 
@@ -155,26 +163,28 @@ export default {
 
 	computed: {
 		//STORES
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "subclass_Name"]),
 		...mapState(usePagesStore, [
 			"race_page",
 			"class_page",
 			"shown_home",
-      "page_setting_open",
+			"page_setting_open",
 			"setting_open",
 			"pages",
-      "page_Open",
+			"page_Open",
 		]),
 		//GETTERS
 
-    close_Sidebar_Right() {
-      const open_class_page = this.pages.class_page;
-      const feats = this.setting_open?.slice(0, 5) == "feats" && open_class_page;
-      const stats = this.setting_open?.includes("stats") && open_class_page;
-      const skills = this.setting_open?.includes("skills") && open_class_page;
-      const many_spells = this.setting_open?.includes("many_spells") && open_class_page;
-      return !this.shown_home && !(stats || feats || skills || many_spells);
-    },
+		close_Sidebar_Right() {
+			const open_class_page = this.pages.class_page;
+			const feats =
+				this.setting_open?.slice(0, 5) == "feats" && open_class_page;
+			const stats = this.setting_open?.includes("stats") && open_class_page;
+			const skills = this.setting_open?.includes("skills") && open_class_page;
+			const many_spells =
+				this.setting_open?.includes("many_spells") && open_class_page;
+			return !this.shown_home && !(stats || feats || skills || many_spells);
+		},
 
 		hide_Ruler() {
 			return (
@@ -213,11 +223,18 @@ export default {
 			}
 		},
 
-		arr_Name_RE() {
+		arr_Name_Race_Page() {
 			let arr = [];
 			arr.push(this.MY.race.name);
 			arr.push(this.MY.ethnos.name);
 			arr.push(this.MY.backstory.name);
+			return arr;
+		},
+
+		arr_Name_Class_Page() {
+			let arr = [];
+			arr.push(this.MY.class.name);
+			this.subclass_Name ? arr.push(this.subclass_Name) : null;
 			return arr;
 		},
 
@@ -257,13 +274,10 @@ export default {
 			"closeEthnos",
 			"closeColor",
 			"closePar",
-      "goPage",
-      
-      "closeCustomSett",
+			"goPage",
+			"closeCustomSett",
 		]),
-		...mapActions(useMYStore, [
-      "getEthnos",
-    ]),
+		...mapActions(useMYStore, ["getEthnos"]),
 
 		getCreated() {
 			this.MY.height = this.Get_Height;
@@ -277,19 +291,15 @@ export default {
 			this.closeColor("skin");
 			this.closeColor("eyes");
 			this.closeColor("hair");
-      this.closeCustomSett();
-			// this.closePar("stats");
-			// this.closePar("skills");
-			// this.closePar("languages");
-			// this.closePar("spells");
+			this.closeCustomSett();
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
 		},
 
-    getWatch_Class() {
-      this.closeCustomSett();
-    }
+		getWatch_Class() {
+			this.closeCustomSett();
+		},
 	},
 };
 </script>
@@ -341,6 +351,14 @@ a {
 	color: #ffc93d;
 }
 
+.grid-col {
+  display: grid;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
 .jbm-300 {
 	font-family: "JetBrains Mono";
 	font-style: normal;
@@ -363,11 +381,11 @@ a {
 }
 
 .int-700 {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 15px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 15px;
 	letter-spacing: 0.02em;
 	color: #ffffff;
 }
@@ -524,12 +542,6 @@ a {
 }
 
 .story h3 {
-	/* font-family: "Inter";
-	font-style: normal;
-	font-weight: 700;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em; */
 	color: #ffffff;
 	margin-top: 26px;
 	margin-bottom: 5px;

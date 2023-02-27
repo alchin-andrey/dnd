@@ -6,12 +6,14 @@
 			:key="item"
 			:fines="item"
 			passive
+      param
 		/>
 		<!-- CLASS -->
 		<AppFines 
       v-for="item in fines_Class_Param" 
       :key="item" 
       :fines="item" 
+      param
     />
 	</my-wrapper>
 </template>

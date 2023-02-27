@@ -13,6 +13,10 @@ import AppTooltip from "@/components/ui/AppTooltip.vue";
 import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
 
 
+//Main
+import AppSlider from "@/components/ui/main/AppSlider.vue";
+
+
 
 import MyColorBlock from "@/components/ui/pinia_ui/MyColorBlock.vue";
 import MyCardTextColor from "@/components/ui/pinia_ui/MyCardTextColor.vue";
@@ -21,7 +25,7 @@ import MyColorSelect from "@/components/ui/pinia_ui/MyColorSelect.vue";
 
 import MySelection from "@/components/ui/pinia_ui/MySelection.vue";
 import MyController from "@/components/ui/pinia_ui/MyController.vue";
-import MySlider from "@/components/ui/pinia_ui/MySlider.vue";
+// import MySlider from "@/components/ui/pinia_ui/MySlider.vue";
 import MyButton from "@/components/ui/pinia_ui/MyButton.vue";
 import MyButtonBack from "@/components/ui/pinia_ui/MyButtonBack.vue";
 import MyButtonGender from "@/components/ui/pinia_ui/MyButtonGender.vue";
@@ -69,6 +73,11 @@ export default [
   AppTooltip,
   AppSpellsPacks,
 
+//main
+  AppSlider,
+
+
+
   MyBackPage,
 
   MyColorBlock,
@@ -78,7 +87,7 @@ export default [
   
   MySelection,
   MyController,
-  MySlider,
+  // MySlider,
   MyButton,
   MyButtonBack,
   MyButtonGender,

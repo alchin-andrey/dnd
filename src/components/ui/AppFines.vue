@@ -1,6 +1,11 @@
 <template>
 	<div class="column" :class="{ passive: passive }">
-		<div class="icon">
+		<div class="icon"
+    :class="{
+      'lvl-dot': shown_Level_Dot(fines),
+      'lvl-dot-param' : param
+      }"
+    >
       <svg
       :class="{
 					positive: !Negative,
@@ -52,14 +57,19 @@ export default {
 			type: Object,
 			default: null,
 		},
-    
+		param: {
+			type: Boolean,
+			default: false,
+		},
 		passive: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	computed: {
-    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["MY", 
+    "shown_Level_Dot"
+  ]),
 
 		Negative() {
 			return (
@@ -97,10 +107,30 @@ export default {
 	display: flex;
 	min-height: 18px;
 }
+
 .icon {
   width: 18px;
   height: 18px;
+  position: relative;
 }
+
+.lvl-dot::before {
+	content: "";
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	left: -8px;
+	/* top: calc(50% - 3px); */
+  top: 50%;
+	transform: translateY(-50%);
+	background: #0047ff;
+	border-radius: 50%;
+}
+
+.lvl-dot-param::before {
+  left: -15px;
+}
+
 
 .text {
 	margin-left: 4px;

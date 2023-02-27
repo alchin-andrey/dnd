@@ -82,10 +82,13 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_Race_Param_All() {
+      const MYStore = useMYStore();
 			const race = this.spells_Race_Main_Arr;
 			const ethnos = this.spells_Race_Ethnos_Arr;
 			const custom_race = this.spells_Custom_Race_Lvl;
-			return [...race, ...ethnos, ...custom_race];
+      const race_param = [...race, ...ethnos, ...custom_race];
+      console.log('race_param:', race_param)
+			return MYStore.sort_Level(race_param);
 		},
 
 		spells_Race_Param() {
@@ -112,10 +115,13 @@ export const useSpellsStore = defineStore({
     },
 
 		spells_Class_Param_All() {
+      const MYStore = useMYStore();
 			const class_spells = this.spells_Class_Main_Arr;
 			const custo_spells = this.spells_Class_Custom_Arr;
 			const sett_many_spells = this.spells_Class_Settings_Many_Arr;
-			return [...class_spells, ...custo_spells, ...sett_many_spells];
+			const class_param = [...class_spells, ...custo_spells, ...sett_many_spells];
+			console.log('class_param:', class_param)
+			return MYStore.sort_Level(class_param);
 		},
 
 		spells_Class_Param() {
@@ -136,9 +142,12 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_RC_Param() {
+      const MYStore = useMYStore();
 			const race_spells = this.spells_Race_Param;
 			const class_spells_includ = this.spells_Class_Param_without_Race_Param;
-			return [...race_spells, ...class_spells_includ];
+			const RC_param = [...race_spells, ...class_spells_includ]
+			console.log('RC_param:', RC_param)
+			return MYStore.sort_Level(RC_param);
 		},
 
     spells_RC_Param_Ability() {

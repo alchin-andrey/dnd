@@ -15,7 +15,7 @@
 				v-html="ui_icon.check"
 			/>
 		</div>
-		<AppTooltip text="hint_over_limit" :shown="any_Name" warn>
+		<AppTooltip text="hint_over_limit" :shown="any_Name && !param" warn>
 			<div
 				class="title jbm-300"
 				:class="{

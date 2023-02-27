@@ -4,16 +4,20 @@
 		text="hint_over_limit"
 		:shown="overflow_Save && !param"
 		warn
-    :style="{ margin: getMarg }"
+		:style="{ margin: getMarg }"
 	>
 		<div
+    :class="{
+						'lvl-dot': shown_Level_Dot(spell_obj),
+						'lvl-dot-param': param,
+					}"
 			class="flex_spell"
 			@mouseover="hoverIn_Full()"
 			@mouseleave="hoverOut()"
 			@click="showDialog_Full()"
 		>
 			<div ref="stripe" class="side_stripe"></div>
-			<div class="int-400 flex_col" :class="{ passive: passive }">
+			<div class="int-400 flex_col" :class="{passive: passive,}">
 				<section class="flex_title">
 					<div class="title_spell h_18" :class="{ 'rare-text': overflow_Save }">
 						{{ em_Before
@@ -27,10 +31,10 @@
 					</div>
 					<svg
 						class="icon_svg"
-            :class="{
-              passive: full_select,
-            }"
-            @click.stop
+						:class="{
+							passive: full_select,
+						}"
+						@click.stop
 						@mouseover="hoverIn_Select()"
 						@mouseleave="hoverOut()"
 						@click="btnClick()"
@@ -39,13 +43,15 @@
 						v-html="ui_icon[icon_Svg]"
 					/>
 				</section>
-        <!-- <transition name="scroll-packs"> -->
-				<section class="flex_col gap-12"
-        :class="{
-          'marg-top-4': !this.only_title,
-          null_height: this.only_title,
-          full_height: this.only_title && this.isShown,
-          }">
+				<!-- <transition name="scroll-packs"> -->
+				<section
+					class="flex_col gap-12"
+					:class="{
+						'marg-top-4': !this.only_title,
+						null_height: this.only_title,
+						full_height: this.only_title && this.isShown,
+					}"
+				>
 					<div class="text_spell" v-html="t_Text"></div>
 					<magic-attribute
 						v-if="Spell_Index.impact_type"
@@ -59,7 +65,7 @@
 						main
 						not_dot
 					/>
-          <magic-attribute
+					<magic-attribute
 						v-if="Spell_Index.second_impact_type"
 						:title="Spell_Index.second_impact_type"
 						:addition="Spell_Index.second_impact_damage_type"
@@ -70,7 +76,7 @@
 						not_dot
 					/>
 				</section>
-      <!-- </transition> -->
+				<!-- </transition> -->
 			</div>
 		</div>
 	</AppTooltip>
@@ -139,15 +145,15 @@
 				:feet="Spell_Index.impact_size_foo?.includes('Feet')"
 				main
 			/>
-      <magic-attribute
-        v-if="Spell_Index.second_impact_type"
-        :title="Spell_Index.second_impact_type"
-        :addition="Spell_Index.second_impact_damage_type"
-        :numb="Spell_Index.second_impact_size_num"
-        :dice="Spell_Index.second_impact_size_dic"
-        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-        main
-      />
+			<magic-attribute
+				v-if="Spell_Index.second_impact_type"
+				:title="Spell_Index.second_impact_type"
+				:addition="Spell_Index.second_impact_damage_type"
+				:numb="Spell_Index.second_impact_size_num"
+				:dice="Spell_Index.second_impact_size_dic"
+				:feet="Spell_Index.impact_size_foo?.includes('Feet')"
+				main
+			/>
 			<magic-attribute
 				v-if="Spell_Index.aim_aoe"
 				title="aim_aoe"
@@ -182,7 +188,7 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSpells",
-  emits: ["updateSpell"],
+	emits: ["updateSpell"],
 	data() {
 		return {
 			ui_icon: ui_icon,
@@ -190,7 +196,7 @@ export default {
 			numb_type: 0,
 			mana_numb: null,
 			emoji_size: 16,
-      isShown: false,
+			isShown: false,
 		};
 	},
 	props: {
@@ -226,41 +232,41 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    full_select: {
-      type: Boolean,
+		full_select: {
+			type: Boolean,
 			default: false,
-    }
+		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "Mastery"]),
+		...mapState(useMYStore, ["MY", "Mastery", "shown_Level_Dot"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb"]),
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 
-    shown_Spell_Text() {
-      return this.only_title ? this.isShown : true;
-    },
+		shown_Spell_Text() {
+			return this.only_title ? this.isShown : true;
+		},
 
-    getMarg() {
-      return this.isShown ? `${8}px ${0}` : `0 0`;
-    },
+		getMarg() {
+			return this.isShown ? `${8}px ${0}` : `0 0`;
+		},
 
-    icon_Svg() {
-      let str;
-      if (this.plus) {
-        str = "plus"
-      } else if (this.delete) {
-        str = "delete"
-      } else if (this.only_title && this.isShown) {
-        str = "arrow_top_small"
-      } else if (this.only_title && !this.isShown) {
-        str = "arrow_down_small"
-      } else {
-        str = "arrow_right_small"
-      }
-      return str;
-    },
+		icon_Svg() {
+			let str;
+			if (this.plus) {
+				str = "plus";
+			} else if (this.delete) {
+				str = "delete";
+			} else if (this.only_title && this.isShown) {
+				str = "arrow_top_small";
+			} else if (this.only_title && !this.isShown) {
+				str = "arrow_down_small";
+			} else {
+				str = "arrow_right_small";
+			}
+			return str;
+		},
 
 		spell() {
 			return this.spell_obj.spell;
@@ -379,7 +385,10 @@ export default {
 			const numb = this.Spell_Index.cast_duration;
 			const numb_units = this.t(this.Spell_Index.cast_duration_units);
 			const mod_cast_duration = this.mod_Cast_Dration_Units_Plus;
-			if (this.cast_time_MOD === "ritual" || this.cast_time_MOD === "ritual_plus10min") {
+			if (
+				this.cast_time_MOD === "ritual" ||
+				this.cast_time_MOD === "ritual_plus10min"
+			) {
 				if (mod_cast_duration) {
 					string = `${cast_time} ${numb} ${numb_units} ${mod_cast_duration}`;
 				} else {
@@ -881,7 +890,7 @@ export default {
 			return this.Value_Foo("Num");
 		},
 
-    Value_Dic() {
+		Value_Dic() {
 			let dice = this.Spell_Index.impact_size_dic;
 			let foo = this.Value_Foo_Сlean("Dic");
 			return dice + foo;
@@ -917,19 +926,19 @@ export default {
 		},
 	},
 	methods: {
-    toggle() {
+		toggle() {
 			this.isShown = !this.isShown;
 		},
 
-    btnClick() {
-      if (this.plus || this.delete) {
-        this.$emit("updateSpell");
-      } else if (this.only_title) {
-        this.toggle()
-      } else {
-        this.showDialog_Select()
-      }
-    },
+		btnClick() {
+			if (this.plus || this.delete) {
+				this.$emit("updateSpell");
+			} else if (this.only_title) {
+				this.toggle();
+			} else {
+				this.showDialog_Select();
+			}
+		},
 
 		hoverIn_Select() {
 			if (this.select) {
@@ -973,6 +982,7 @@ export default {
 	width: 100%;
 	cursor: pointer;
 	color: #ffffff;
+	position: relative;
 	/* cursor: url('@/assets/img/icon/cursor_magic.png'), pointer; */
 }
 
@@ -991,6 +1001,7 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 
 .side_stripe {
@@ -1096,6 +1107,23 @@ export default {
 	opacity: 0.2;
 }
 
+.lvl-dot::before {
+	content: "";
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	left: -8px;
+	overflow-y: visible;
+	top: 6px;
+	background: #0047ff;
+	border-radius: 50%;
+	z-index: 100;
+}
+
+.lvl-dot-param::before {
+	left: -15px;
+}
+
 .icon_svg {
 	fill: white;
 	width: 18px;
@@ -1112,28 +1140,28 @@ export default {
 }
 
 .marg-top-4 {
-  margin-top: 4px;
+	margin-top: 4px;
 }
 
 .null_height {
-  max-height: 0;
-  opacity: 0;
-  transition: all 0.5s ease-out;
-  overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	transition: all 0.5s ease-out;
+	overflow: hidden;
 }
 
 .full_height {
-  max-height: 300px;
-  margin-top: 4px;
-  opacity: 1;
-  transition: all 0.5s ease-in;
+	max-height: 300px;
+	margin-top: 4px;
+	opacity: 1;
+	transition: all 0.5s ease-in;
 }
 
 .marg_slow {
-  transition-property: all;
-  transition-duration: 0.3s;
-  transition-delay: 0.2s;
-  transition-timing-function: ease-out;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-delay: 0.2s;
+	transition-timing-function: ease-out;
 }
 
 .scroll-packs-enter-active {
@@ -1149,5 +1177,4 @@ export default {
 	transform: translateY(-10px);
 	opacity: 0;
 }
-
 </style>

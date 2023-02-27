@@ -16,6 +16,7 @@ export const usePagesStore = defineStore({
 		pages: {
 			race_page: false,
 			class_page: true,
+      background_page: false,
 		},
 		// page_open: "race_page",
 		page_setting_open: null,
@@ -56,9 +57,15 @@ export const usePagesStore = defineStore({
 			shown: {
 				stats: false,
 			},
-      shown_feats: {
+      // shown_feats: {
 
-      }
+      // }
+		},
+
+		background_page: {
+			shown: {
+				// stats: false,
+			},
 		},
 	}),
 
@@ -68,6 +75,8 @@ export const usePagesStore = defineStore({
         return "race_page";
       } else if(this.pages.class_page) {
         return "class_page";
+      } else if(this.pages.background_page) {
+        return "background_page";
       }
     }
   },

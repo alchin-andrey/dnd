@@ -26,9 +26,17 @@ export const useMYStore = defineStore({
 			return this.Mastery * 2;
 		},
 
-		ethnos_Setting(state) {
-			return (name) =>
-				state.MY.ethnos.settings?.find((item) => item.type == name);
+    sort_Level: (state) => (start_arr) => {
+      return start_arr.sort((a, b) => {
+        const a_lvl = a.level ?? 1;
+        const b_lvl = b.level ?? 1;
+        return a_lvl - b_lvl;
+      });
+    },
+
+    shown_Level_Dot: (store) => (item) => {
+			let lvl = store.MY.level;
+			return item.level == lvl && lvl !== 1;
 		},
 
 		level_Filter_Arr: (state) => (item) => {
@@ -94,8 +102,18 @@ export const useMYStore = defineStore({
 
       const filter_battle_style = stor.filterSettings_NoUsed(sort_arr_lvl);
       const filter_only_mastery = stor.filterSettings_OnlyMastery(filter_battle_style);
-      
+
       return filter_only_mastery;
+    },
+
+    subclass_Name() {
+      let res = null;
+      this.сustomm_Settings_Class_Arr.forEach(el => {
+        if(el.name == "subclass") {
+          res = el.select_list.find(item => item.name).name;
+        }
+      });
+      return res;
     },
 
     settings_Class_Arr() {

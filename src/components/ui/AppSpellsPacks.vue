@@ -21,7 +21,7 @@
       <section 
       class="null_height"
       :class="{full_height: packs_scroll,}">
-        <slot/>
+        <slot v-if="packs_scroll"/>
       </section>
 		</div>
 </template>
@@ -120,11 +120,11 @@ export default {
   max-height: 0;
   /* opacity: 0.5; */
   transition: all 0.5s ease-out;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .full_height {
-  max-height: 100vh;
+  max-height: 400vh;
   /* opacity: 1; */
   transition: all 0.5s ease-in;
 }
