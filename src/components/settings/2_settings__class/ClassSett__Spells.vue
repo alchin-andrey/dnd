@@ -6,14 +6,14 @@
 			:text="spells_setting.details"
 		/>
 
-		<section class="flex-col gap-34" v-if="numb_Manna_Spell.length !== 0">
+		<section class="flex-col gap-26" v-if="numb_Manna_Spell.length !== 0">
 			<div v-for="i in numb_Manna_Spell" :key="i">
 				<AppSpellsPacks
-					class="flex-col gap-34"
+					class="flex-col"
 					v-if="filter_Spells(i).length !== 0"
 					:text="String(i)"
 				>
-					<section class="flex-col">
+					<section class="flex-col gap-8 marg-top-34">
 						<my-selection-card
 							no_blur
 							v-for="list_el in filter_Spells(i)"
@@ -131,15 +131,22 @@ export default {
 .flex-col {
 	display: flex;
 	flex-direction: column;
+}
+
+.gap-8 {
 	gap: 8px;
 }
 
-.mar-bot-34 {
-	margin-bottom: 34px;
+.marg-top-34 {
+  margin-top: 34px;
 }
 
 .gap-34 {
 	gap: 34px;
+}
+
+.gap-26 {
+	gap: 26px;
 }
 
 .manna-numb {

@@ -18,9 +18,11 @@
 					/>
 				</div>
 			</div>
-			<transition name="scroll-packs">
-      <slot v-if="packs_scroll"/>
-			</transition>
+      <section 
+      class="null_height"
+      :class="{full_height: this.packs_scroll,}">
+        <slot/>
+      </section>
 		</div>
 </template>
 
@@ -73,16 +75,6 @@ export default {
 </script>
 
 <style scoped>
-/* .flex-col {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-}
-
-.gap-34 {
-	gap: 34px;
-} */
-
 .manna-numb {
 	margin-left: 16px;
 }
@@ -111,20 +103,6 @@ export default {
 	opacity: 0.2;
 }
 
-.scroll-packs-enter-active {
-	transition: all 0.4s ease-out;
-}
-
-.scroll-packs-leave-active {
-	transition: all 0.4s ease-out;
-}
-
-.scroll-packs-enter-from,
-.scroll-packs-leave-to {
-	transform: translateY(-10px);
-	opacity: 0;
-}
-
 .icon {
 	width: 18px;
 	height: 18px;
@@ -138,14 +116,16 @@ export default {
 	fill: white;
 }
 
-/* .scroll_wrap {
-	height: 0;
-	transition: all 1s ease-in-out;
-	position: relative;
+.null_height {
+  max-height: 0;
+  /* opacity: 0.5; */
+  transition: all 0.5s ease-out;
+  overflow: hidden;
 }
 
-.scroll_wrap_open {
-	height: 100%;
-	transition: all 1s ease-in-out;
-} */
+.full_height {
+  max-height: 100vh;
+  /* opacity: 1; */
+  transition: all 0.5s ease-in;
+}
 </style>

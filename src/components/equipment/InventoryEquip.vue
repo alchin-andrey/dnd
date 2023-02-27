@@ -5,7 +5,7 @@
 			<div class="passive" v-for="items in inventory_old" :key="items">
 				• {{ t_Equip_Name(items) }}
 			</div>
-			<div v-for="items in inventory" :key="items">
+			<div v-for="items in inventory" :key="items" :class="{undef: t_Equip_Name(items) == undefined }">
 				• {{ t_Equip_Name(items) }}
 			</div>
 		</section>
@@ -30,11 +30,14 @@ export default {
 		},
 	},
 	computed: {
-		t_Equip_Name: (state) => (inv) => {
-			const name = state.t(inv[0].name);
+		t_Equip_Name: (stor) => (inv) => {
+      if (inv?.[0]) {
+      const name = stor.t(inv[0].name);
 			const namb = inv[1];
 			let str = namb > 1 ? `${name} x ${namb}` : name;
 			return str[0].toUpperCase() + str.slice(1);
+      }
+      return inv?.[0];
 		},
 	},
 };
@@ -57,6 +60,11 @@ export default {
 	order: 0;
 	align-self: stretch;
 	flex-grow: 0;
+}
+
+.undef {
+  color: red;
+  /* background: rgba(248, 0, 0, 0.2); */
 }
 
 .passive {
