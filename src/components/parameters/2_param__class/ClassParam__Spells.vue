@@ -22,7 +22,7 @@
 				:numb="spells_RC_Param_Ability.length"
         ability
 			>
-				<div class="flex-col">
+				<div class="flex-col gap-8 marg-top-8">
 					<AppSpells
 						v-for="item in spells_Race_Param_Ability"
 						:key="item"
@@ -48,7 +48,7 @@
 					:numb="filter_All_Manna_Spells(i).length"
 					:text="String(i)"
 				>
-					<div class="flex-col">
+					<div class="flex-col gap-8 marg-top-8">
 						<AppSpells
 							v-for="item in filter_Race_Param_Manna_Spells(i)"
 							:key="item"
@@ -148,7 +148,14 @@ export default {
 .flex-col {
 	display: flex;
 	flex-direction: column;
+}
+
+.gap-8 {
 	gap: 8px;
+}
+
+.marg-top-8 {
+  margin-top: 8px;
 }
 
 .gap-26 {

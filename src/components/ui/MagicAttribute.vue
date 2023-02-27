@@ -23,6 +23,7 @@
 		<div class="visual">
 			<div
 				class="cube cube-main"
+        :class="{cube_dash: Miles}"
 				v-for="n in spell_Cube_Numb"
 				:key="n"
 			/>
