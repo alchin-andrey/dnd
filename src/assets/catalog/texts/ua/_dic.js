@@ -5634,4 +5634,6 @@ export default {
 
   vax:"віск",
   vax_details: "",
+
+  event_oldness: "давнина"
 };

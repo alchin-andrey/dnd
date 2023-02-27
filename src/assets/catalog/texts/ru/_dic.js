@@ -5656,4 +5656,6 @@ export default {
   vax:"воск",
   vax_details: "",
 
+  event_oldness: "давность"
+
 };  

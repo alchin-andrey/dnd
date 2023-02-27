@@ -22528,6 +22528,57 @@ export default {
     {},
   ],
 
+  modify_memory: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_modify_memory",
+      details: "spell_modify_memory_details",
+      expanded: "spell_modify_memory_expanded",
+
+      type: "enchantment",
+      classes: ["bard","wizard",     "cleric","paladin","druid","ranger","warlock","sorcerer","druid",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "event_oldness",
+      impact_damage_type: "days",
+
+      impact_size_foo: "Num_7_30_365_5280",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
   raise_dead: [
     {},
     {},

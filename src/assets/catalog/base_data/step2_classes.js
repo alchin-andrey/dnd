@@ -5295,10 +5295,10 @@ export default {
                 level: 7,
                 spell: spells.polymorph,
               },
-              // {
-              //   level: 9,
-              //   spell: spells.modify_memory,
-              // },
+              {
+                level: 9,
+                spell: spells.modify_memory,
+              },
               // {
               //   level: 9,
               //   spell: spells.dominate_person,

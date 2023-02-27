@@ -602,6 +602,16 @@ export default {
 			return num + (mana - mana_min) * 10;
 		},
 
+		Num_7_30_365_5280() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb - this.Index;
+			if (mana == 0) return num;
+			if (mana == 1) return 7;
+			if (mana == 2) return 30;
+			if (mana == 3) return 365;
+			if (mana == 4) return "♾️";
+		},
+
 		Num_Mastery_05() {
 			return Math.floor(this.Mastery / 2);
 		},
