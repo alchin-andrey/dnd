@@ -20,7 +20,7 @@
 			</div>
       <section 
       class="null_height"
-      :class="{full_height: this.packs_scroll,}">
+      :class="{full_height: packs_scroll,}">
         <slot/>
       </section>
 		</div>

@@ -830,8 +830,6 @@ export default {
 		},
 
 		Value_Foo_Сlean: (state) => (Val) => {
-			// let low_val = Val.toLowerCase();
-			// let num = state.Spell_Index[`impact_size_${low_val}`];
 			let num = null;
 			let foo = state.Spell_Index.impact_size_foo;
 			if (foo) {
@@ -864,6 +862,12 @@ export default {
 			return this.Value_Foo("Num");
 		},
 
+    Value_Dic() {
+			let dice = this.Spell_Index.impact_size_dic;
+			let foo = this.Value_Foo_Сlean("Dic");
+			return dice + foo;
+		},
+
 		Value_Pls() {
 			return this.Value_Foo("Pls");
 		},
@@ -876,12 +880,6 @@ export default {
 
 		Value_Dur() {
 			return this.Value_Foo("Dur");
-		},
-
-		Value_Dic() {
-			let dice = this.Spell_Index.impact_size_dic;
-			let foo = this.Value_Foo_Сlean("Dic");
-			return dice + foo;
 		},
 
 		Value_Ran() {

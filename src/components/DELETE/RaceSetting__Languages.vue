@@ -229,4 +229,24 @@ export default {
 	top: 0;
 	right: 16px;
 }
+
+/* GLOBAL */
+.scroll-fade-enter-active {
+	transition: all 0.6s ease-in;
+  max-height: 250px;
+}
+
+.scroll-fade-leave-active {
+	/* transition: all 0.6s cubic-bezier(1, 0.8, 0.8, 1); */
+	transition: all 0.6s ease-out;
+  max-height: 250px;
+}
+
+.scroll-fade-enter-from,
+.scroll-fade-leave-to {
+	transform: translateY(-10px);
+	opacity: 0;
+  max-height: 0;
+}
+/* GLOBAL */
 </style>
