@@ -59,6 +59,16 @@
 						main
 						not_dot
 					/>
+          <magic-attribute
+						v-if="Spell_Index.second_impact_type"
+						:title="Spell_Index.second_impact_type"
+						:addition="Spell_Index.second_impact_damage_type"
+						:numb="Spell_Index.second_impact_size_num"
+						:dice="Spell_Index.second_impact_size_dic"
+						:feet="Spell_Index.impact_size_foo?.includes('Feet')"
+						main
+						not_dot
+					/>
 				</section>
       <!-- </transition> -->
 			</div>
@@ -129,6 +139,15 @@
 				:feet="Spell_Index.impact_size_foo?.includes('Feet')"
 				main
 			/>
+      <magic-attribute
+        v-if="Spell_Index.second_impact_type"
+        :title="Spell_Index.second_impact_type"
+        :addition="Spell_Index.second_impact_damage_type"
+        :numb="Spell_Index.second_impact_size_num"
+        :dice="Spell_Index.second_impact_size_dic"
+        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
+        main
+      />
 			<magic-attribute
 				v-if="Spell_Index.aim_aoe"
 				title="aim_aoe"

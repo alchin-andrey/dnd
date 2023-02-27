@@ -5,7 +5,7 @@
 				@mouseleave="toggle"
 			>
 				<slot />
-        <transition name="slide-fade">
+        <transition name="slide-fade-tolltip">
         <div 
         v-show="shown_Tooltip"
         class="tooltip-pointer" 				
@@ -14,7 +14,7 @@
 				}" />
     </transition>
 			</div>
-		<transition name="slide-fade">
+		<transition name="slide-fade-tolltip">
 			<div 
       v-show="shown_Tooltip"
 				class="tooltip-clss int-400"
@@ -133,20 +133,21 @@ export default {
 	border-bottom-color: #ffc93d;
 }
 
-.slide-fade-enter-active,
-.slide-fade-leave-active {
+.slide-fade-tolltip-enter-active,
+.slide-fade-tolltip-leave-active {
 	transition-property: all;
-	transition-duration: 0.3s;
+	transition-duration: 0.4s;
+  transition-delay: 0.2s;
+	transition-timing-function: ease-in;
+}
+.slide-fade-tolltip-enter-active {
+	transition-property: all;
+	transition-duration: 0.4s;
+	transition-delay: 0.2s;
 	transition-timing-function: ease-out;
 }
-.slide-fade-enter-active {
-	transition-property: all;
-	transition-duration: 0.3s;
-	transition-delay: 0.3s;
-	transition-timing-function: ease-out;
-}
-.slide-fade-enter-from,
-.slide-fade-leave-to {
+.slide-fade-tolltip-enter-from,
+.slide-fade-tolltip-leave-to {
 	transform: translateY(10px);
 	opacity: 0;
 }
