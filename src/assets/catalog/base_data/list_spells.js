@@ -22262,6 +22262,56 @@ export default {
     },
   ],
 
+  dominate_person: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_dominate_person",
+      details: "spell_dominate_person_details",
+      expanded: "spell_dominate_person_expanded",
+
+      type: "enchantment",
+      classes: ["bard","wizard","sorcerer",     "cleric","paladin","druid","ranger","warlock","druid",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Dur_10_60_480",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+  ],
+
   flame_strike: [
     {},
     {},
