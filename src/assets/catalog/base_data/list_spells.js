@@ -12938,7 +12938,7 @@ export default {
       details: "spell_arcane_eye_details",
       expanded: "spell_arcane_eye_expanded",
 
-      type: "divination",
+      type: "ability",
       classes: ["wizard",      "sorcerer","ranger","druid","cleric","paladin","bard","warlock",],
 
       cast_time: "action",
@@ -12966,6 +12966,147 @@ export default {
       impact_size_foo: "Num_Feet",
       impact_size_str: null,
       impact_size_num: 30,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  polymorph_warlock: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_polymorph_warlock",
+      details: "spell_polymorph_warlock_details",
+      expanded: "spell_polymorph_warlock_expanded",
+
+      type: "ability",
+      classes: ["druid","bard","sorcerer","wizard",       "ranger","warlock","paladin","cleric",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  confusion_warlock: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_confusion_warlock",
+      details: "spell_confusion_warlock_details",
+      expanded: "spell_confusion_warlock_expanded",
+
+      type: "ability",
+      classes: ["druid","bard","wizard","sorcerer",      "cleric","warlock","paladin","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "aim_aoe",
+      impact_damage_type: "sphere",
+
+      impact_size_foo: "Num_Feet__Num_Plus_10",
+      impact_size_str: null,
+      impact_size_num: 20,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  polymorph_wizard: [
+    {
+      name: "spell_polymorph_wizard",
+      details: "spell_polymorph_wizard_details",
+      expanded: "spell_polymorph_wizard_expanded",
+
+      type: "ability",
+      slot_type: "polymorph_slot",
+      classes: ["wizard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
       impact_size_dic: null,
       impact_size_pls: null,
 
@@ -20617,6 +20758,51 @@ export default {
     },
   ],
 
+  blink: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_blink",
+      details: "spell_blink_details",
+      expanded: "spell_blink_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","sorcerer",    "druid","cleric","paladin","bard","warlock","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 10,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   call_lightning: [
     {},
     {},
@@ -21766,6 +21952,52 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+    },
+  ],
+
+  polymorph: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_polymorph",
+      details: "spell_polymorph_details",
+      expanded: "spell_polymorph_expanded",
+
+      type: "transmutation",
+      classes: ["druid","bard","sorcerer","wizard",       "ranger","warlock","paladin","cleric",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
     },
   ],
 

@@ -5371,7 +5371,7 @@ export default {
   chains_of_carceri: "Цепи Карцери",
 
   polymorph_slots: "Превращение",
-  polymorph_slot: "1× превращение | 4× мана",
+  polymorph_slot: "1× превращение",
 
   material_giacint_1000gold: "гиацинт за 1000+ 🟡",
   material_silver_bar_100gold: "брусок серебра с орнаментом за 100+ 🟡",
@@ -5629,4 +5629,28 @@ export default {
   spell_legend_lore: spells.legend_lore,
   spell_legend_lore_details: spells.legend_lore_details,
   spell_legend_lore_expanded: spells.legend_lore_expanded,
+
+  spell_blink: spells.blink,
+  spell_blink_details: spells.blink_details,
+  spell_blink_expanded: spells.blink_expanded,
+
+  spell_polymorph: spells.polymorph,
+  spell_polymorph_details: spells.polymorph_details,
+  spell_polymorph_expanded: spells.polymorph_expanded,
+
+  sculptor_of_flesh_slots:"скульптор плоти",
+  sculptor_of_flesh_slot: "1× скульптор плоти",
+  
+  spell_polymorph_warlock: spells.polymorph_warlock,
+  spell_polymorph_warlock_details: spells.polymorph_warlock_details,
+  spell_polymorph_warlock_expanded: spells.polymorph_warlock_expanded,
+
+  spell_confusion_warlock: spells.confusion_warlock,
+  spell_confusion_warlock_details: spells.confusion_warlock_details,
+  spell_confusion_warlock_expanded: spells.confusion_warlock_expanded,
+
+  spell_polymorph_wizard: spells.polymorph_wizard,
+  spell_polymorph_wizard_details: spells.polymorph_wizard_details,
+  spell_polymorph_wizard_expanded: spells.polymorph_wizard_expanded,
+
 };  
