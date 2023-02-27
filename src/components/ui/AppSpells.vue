@@ -292,7 +292,7 @@ export default {
 			if (this.param) {
 				return false;
 			} else {
-				return this.overflow_Spell(this.spell, this.active_card);
+				return this.overflow_Spell(this.spell_obj, this.active_card);
 			}
 		},
 
@@ -361,7 +361,6 @@ export default {
 			const numb_units = this.t(this.Spell_Index.cast_duration_units);
 			const mod_cast_duration = this.mod_Cast_Dration_Units_Plus;
 			if (this.cast_time_MOD === "ritual" || this.cast_time_MOD === "ritual_plus10min") {
-				console.log("ritual_plus10min_mod");
 				if (mod_cast_duration) {
 					string = `${cast_time} ${numb} ${numb_units} ${mod_cast_duration}`;
 				} else {

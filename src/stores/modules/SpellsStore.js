@@ -30,8 +30,25 @@ export const useSpellsStore = defineStore({
 
     spells_Filter_Without: (stor) => (arr_filter, arr_main) => {
       return arr_filter.filter((el) => !arr_main.some(item => {
-        return item.spell.find(i => i.name).name == el.spell.find(i => i.name).name;
+        const item_spell = item.spell.find(i => i.name);
+        const el_spell = el.spell.find(i => i.name);
+        return item_spell.name == el_spell.name && item.mod?.name_extra == el.mod?.name_extra;
       }));
+		},
+
+    spells_Filter_UniqueArr: (stor) => (start_arr) => {
+      const res = start_arr.reduce((acc, el) => {
+        const acc_spell = acc.find(item => {
+          const item_spell = item.spell.find(i => i.name);
+          const el_spell = el.spell.find(i => i.name);
+          return item_spell.name == el_spell.name && item.mod?.name_extra == el.mod?.name_extra;
+        });
+        if (!acc_spell) {
+          acc.push(el);
+        }
+        return acc;
+      }, []);
+			return res;
 		},
 
     spells_filter_Ability: (stor) => (arr) => {
@@ -72,7 +89,7 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_Race_Param() {
-			return [...new Set(this.spells_Race_Param_All)];
+      return this.spells_Filter_UniqueArr(this.spells_Race_Param_All);
 		},
 
 		spells_Class_Main_Arr() {
@@ -91,13 +108,6 @@ export const useSpellsStore = defineStore({
       const MYStore = useMYStore();
       const arr = MYStore.spells_Settings_Class_Arr;
       const spell_arr = MYStore.filter_Custom_Lvl(arr, "spells")
-      // let spell_arr = [];
-      // arr.forEach(el => {
-      //   el.select_list.forEach(sub_el => {
-      //     const item_lvl = MYStore.level_Filter_Arr(sub_el?.[spells]);
-      //     spell_arr = spell_arr.concat(item_lvl);
-      //   });
-      // });
 			return spell_arr;
     },
 
@@ -109,7 +119,7 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_Class_Param() {
-			return [...new Set(this.spells_Class_Param_All)];
+			return this.spells_Filter_UniqueArr(this.spells_Class_Param_All);
 		},
 
 		spells_Class_Param_without_Race_Param() {

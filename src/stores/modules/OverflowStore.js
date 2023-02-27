@@ -58,7 +58,7 @@ export const useOverflowStore = defineStore({
 
 			const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
 			spell_arr.forEach((el) => {
-				const new_res = stor.overflow_Spell(el.spell, true);
+				const new_res = stor.overflow_Spell(el, true);
 				res = res ? true : new_res;
 			});
 
@@ -101,11 +101,20 @@ export const useOverflowStore = defineStore({
 		},
 
 		//NOTE - Spell
-		overflow_Spell: (stor) => (name, active) => {
+		overflow_Spell: (stor) => (item, active) => {
 			const SpellsStore = useSpellsStore();
-			const spell_arr = SpellsStore.spells_For_Arr_Obj(SpellsStore.spells_Page_All_Arr);
+			const spell_arr = SpellsStore.spells_Page_All_Arr;
 			const name_times = spell_arr.reduce(
-				(acc, el) => (el == name ? acc + 1 : acc),
+				(acc, el) => {
+          const item_spell = item.spell.find(i => i.name);
+          const el_spell = el.spell.find(i => i.name);
+          if(item_spell.name == el_spell.name && item.mod?.name_extra == el.mod?.name_extra) {
+            return acc + 1;
+          } else {
+            return acc;
+          }
+          // el == name ? acc + 1 : acc
+        },
 				0
 			);
 			if (active && name_times <= 1) {
