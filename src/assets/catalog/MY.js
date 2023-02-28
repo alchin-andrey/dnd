@@ -20,12 +20,13 @@ export default {
   _settings_race: {},
   _settings_class_old: {},
   _settings_class: {},
+  _settings_alignment: {},
 
 	backstory: backstories_def,
 	level: 1,
 
 	//Character
-	alignment: null,
+	alignment: "fluid_neutral",
 	gender: {
 		phisiological: "male",
 		feel: "cisgender",
@@ -35,11 +36,12 @@ export default {
 	faith: null,
 
 	personality: null,
-	ideals: null,
 	bonds: null,
 	flaws: null,
 	appearance: null,
 	story: null,
+  main_feature: "",
+  ideals: "",
 
 	//Race secondary adjustments
 	age: null,

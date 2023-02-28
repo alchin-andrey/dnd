@@ -16,7 +16,7 @@ export const usePagesStore = defineStore({
 		pages: {
 			race_page: false,
 			class_page: true,
-      background_page: false,
+      alignment_page: false,
 		},
 		// page_open: "race_page",
 		page_setting_open: null,
@@ -34,10 +34,10 @@ export const usePagesStore = defineStore({
 				age: false,
 				height: false,
 				weight: false,
-				stats: false,
-				skills: false,
-				languages: false,
-				spells: false,
+				// stats: false,
+				// skills: false,
+				// languages: false,
+				// spells: false,
 			},
 
 			shown_humman_lang: false,
@@ -57,14 +57,11 @@ export const usePagesStore = defineStore({
 			shown: {
 				stats: false,
 			},
-      // shown_feats: {
-
-      // }
 		},
 
-		background_page: {
+		alignment_page: {
 			shown: {
-				// stats: false,
+				alignment: false,
 			},
 		},
 	}),
@@ -75,8 +72,8 @@ export const usePagesStore = defineStore({
         return "race_page";
       } else if(this.pages.class_page) {
         return "class_page";
-      } else if(this.pages.background_page) {
-        return "background_page";
+      } else if(this.pages.alignment_page) {
+        return "alignment_page";
       }
     }
   },
@@ -204,6 +201,11 @@ export const usePagesStore = defineStore({
         return null;
         // this.showHome();
       }
+		},
+
+
+    showSettings__Alignment(name) {
+			this.showSettings("alignment_page", name);
 		},
 	},
 });

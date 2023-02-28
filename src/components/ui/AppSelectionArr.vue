@@ -59,6 +59,7 @@ export default {
 			"pages",
 			"race_page",
 			"class_page",
+      "alignment_page",
 			"page_Open",
 		]),
 		...mapState(useOverflowStore, ["overflow_Item_Menu"]),

@@ -248,7 +248,10 @@ export const useMYStore = defineStore({
       let new_arr = [];
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
-			const sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
+			let sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
+      if (page == "alignment") {
+        sett_select = this.MY._settings_alignment;
+      }
 
 			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];

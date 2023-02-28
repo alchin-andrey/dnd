@@ -33,9 +33,6 @@ export default {
 	},
 
 	computed: {
-		// get_Image() {
-		// 	return require(`@/assets/img/icon/gender/${this.img}.svg`);
-		// },
 	},
 };
 </script>

@@ -6,31 +6,18 @@
 		<div class="name jbm-300">
 			<div>{{ t_Title }}</div>
 		</div>
-		<!-- <div class="main"> -->
-		<!-- <transition mode="out-in" name="type"> -->
 		<div class="wrap liner">
-		  <input
-      size="1"
-      @keyup.enter="getName()"
-        spellcheck="false"
-  			class="main"
-        :class="{liner: inputValue !== ''}"
-  			v-model="inputValue"
-  			type="text"
-  			placeholder="Введіть Ім'я"
-  		/>
+			<input
+				size="1"
+				@keyup.enter="getName()"
+				spellcheck="false"
+				class="main"
+				:class="{ liner: inputValue !== '' }"
+				v-model="inputValue"
+				type="text"
+				placeholder="Введіть Ім'я"
+			/>
 		</div>
-		<!-- <div :key="t_Type">{{ t_Type }}</div> -->
-		<!-- </transition> -->
-		<!-- </div> -->
-		<!-- <div class="arrows">
-			<div ref="back" class="arrow_left" @click="getSlideBack()">
-				<img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg" />
-			</div>
-			<div ref="next" class="arrow_right" @click="getSlideNext()">
-				<img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg" />
-			</div>
-		</div> -->
 	</div>
 </template>
 
@@ -66,10 +53,9 @@ export default {
 		},
 	},
 	methods: {
-
-    getName() {
-      this.MY.name = this.inputValue
-    }
+		getName() {
+			this.MY.name = this.inputValue;
+		},
 	},
 	watch: {
 		modelValue: {
@@ -90,7 +76,7 @@ export default {
 <style scoped>
 .mg-18 {
 	margin-bottom: 18px;
-  display: grid;
+	display: grid;
 }
 .numb {
 	height: 18px;
@@ -115,11 +101,9 @@ export default {
 	/* text-transform: capitalize; */
 }
 
-
-
 .wrap {
-  /* width: 100%; */
-  /* max-width: min-content;
+	/* width: 100%; */
+	/* max-width: min-content;
   display: flex; */
 }
 
@@ -132,19 +116,19 @@ input[type="text"] {
 	background: #0e1518 !important;
 	outline: none;
 	height: 28px;
-  width: 100%;
-  /* min-width: 112px; */
+	width: 100%;
+	/* min-width: 112px; */
 }
 
 .liner {
-  text-decoration-line: underline;
-  text-decoration-color: #ffffff;
+	text-decoration-line: underline;
+	text-decoration-color: #ffffff;
 }
 
 ::placeholder {
 	/* color: rgba(255, 255, 255, 0.2); */
-	color: #ffc93d;;
-  /* text-decoration-line: underline;
+	color: #ffc93d;
+	/* text-decoration-line: underline;
   text-decoration-color: rgba(255, 255, 255, 0.2); */
 	opacity: 1;
 }
@@ -156,7 +140,6 @@ input[type="text"] {
 ::-ms-input-placeholder {
 	color: rgba(255, 255, 255, 0.2);
 }
-
 
 .arrows {
 	margin-top: 18px;

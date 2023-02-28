@@ -31,7 +31,7 @@
 				:slides="MY.class.name"
 			/>
 			<AppName
-				v-if="pages.background_page"
+				v-if="pages.alignment_page"
 				numb="03"
 				title="name"
         v-model="MY.name"
@@ -43,6 +43,7 @@
 			<div class="main_chapter_menu" @click.stop>
 				<RaceMenu v-if="pages.race_page" />
 				<ClassMenu v-if="pages.class_page" />
+        <AlignmentMenu v-if="pages.alignment_page"/>
 			</div>
 
 			<transition name="btm-fade" mode="out-in">
@@ -56,14 +57,14 @@
 					<my-button
 						v-if="pages.class_page"
 						numb="03"
-						title="step_background"
-						@click="goPage('background_page')"
+						title="alignment"
+						@click="goPage('alignment_page')"
 					></my-button>
 					<my-button
-						v-if="pages.background_page"
+						v-if="pages.alignment_page"
 
 						title="download_charsheet"
-						@click="goPage('background_page')"
+						@click="goPage('alignment_page')"
 					></my-button>
 				</section>
 				<my-button-back
@@ -80,6 +81,7 @@
 		<HeaderSettings />
 		<RaceSettings v-if="pages.race_page" />
 		<ClassSettings v-if="pages.class_page" />
+    <AlignmentSettings v-if="pages.alignment_page"/>
 	</div>
 
 	<div class="stripe"></div>
@@ -120,7 +122,7 @@
 	>
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
-    <BackgroundParameters v-if="pages.background_page"/>
+    <AlignmentParameters v-if="pages.alignment_page"/>
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
@@ -141,8 +143,10 @@ import ClassMenu from "@/components/menu/2_ClassMenu.vue";
 import ClassSettings from "@/components/settings/__settings__lists/2_ClassSettings.vue";
 import ClassParameters from "@/components/parameters/__param__lists/2_ClassParameters.vue";
 
-// BACKGROUND_PAGE
-import BackgroundParameters from "@/components/parameters/__param__lists/3_BackgroundParameters.vue";
+// ALIGNMENT_PAGE
+import AlignmentMenu from "@/components/menu/3_AlignmentMenu.vue";
+import AlignmentSettings from "@/components/settings/__settings__lists/3_AlignmentSettings.vue";
+import AlignmentParameters from "@/components/parameters/__param__lists/3_AlignmentParameters.vue";
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -166,8 +170,10 @@ export default {
 		ClassSettings,
 		ClassParameters,
     
-    // BACKGROUND_PAGE
-    BackgroundParameters,
+    // ALIGNMENT_PAGE
+    AlignmentMenu,
+    AlignmentSettings,
+    AlignmentParameters,
 	},
 
 	created() {

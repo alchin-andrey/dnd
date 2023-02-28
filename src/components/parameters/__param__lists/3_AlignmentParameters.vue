@@ -44,10 +44,10 @@
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
-import BackgroundParam from "@/components/parameters/3_param__background/BackgroundParam.js";
+import AlignmentParam from "@/components/parameters/3_param__alignment/AlignmentParam.js";
 export default {
-	name: "BackgroundParameters",
-	mixins: [BackgroundParam],
+	name: "AlignmentParameters",
+	mixins: [AlignmentParam],
 	computed: {
 		...mapState(usePagesStore, ["class_page", "setting_open"]),
 		...mapState(useMYStore, ["spells_Settings_Class_Arr"]),
