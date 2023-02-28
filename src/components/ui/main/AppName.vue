@@ -15,7 +15,7 @@
 				:class="{ liner: inputValue !== '' }"
 				v-model="inputValue"
 				type="text"
-				placeholder="Введіть Ім'я"
+				:placeholder="t_Placeholder"
 			/>
 		</div>
 	</div>
@@ -50,6 +50,10 @@ export default {
 
 		t_Title() {
 			return this.t(this.title);
+		},
+
+    t_Placeholder() {
+			return this.t("name_placeholder");
 		},
 	},
 	methods: {
