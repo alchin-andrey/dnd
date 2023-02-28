@@ -5696,7 +5696,7 @@ export default {
   lvl_to_animated_undead: "у розмірі вашого рівня, для сворених вами немертвих",
   to_damage_to_animated_undead: "на пошкодження зброєю, для сворених вами немертвих",
 
-  name_placeholder: "Придумайте імʼя",
+  name_placeholder: "Вигадайте імʼя",
 
   spell_speak_with_plants: spells.speak_with_plants,
   spell_speak_with_plants_details: spells.speak_with_plants_details,
