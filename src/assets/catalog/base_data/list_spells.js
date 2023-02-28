@@ -63,7 +63,7 @@ const spell_name = [
       poison_w:"🧪 Ядом",
       fire_w:"🔥 Огнем",
       cold_w:"❄️ Холодом",
-      electricity_w:"⚡️ Электричеством",
+      electricity_w:"⚡️ єлектричеством",
       acid_w:"⚗️ Кислотой",
       thunder_w: "🔊 Звуком",
       radiant_w: "✨ Светом",
@@ -543,7 +543,7 @@ export default {
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
         cold_w:"❄️ Холодом",
-        electricity_w:"⚡️ Электричеством",
+        electricity_w:"⚡️ єлектричеством",
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
@@ -808,7 +808,7 @@ export default {
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
         cold_w:"❄️ Холодом",
-        electricity_w:"⚡️ Электричеством",
+        electricity_w:"⚡️ єлектричеством",
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
@@ -894,7 +894,7 @@ export default {
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
         cold_w:"❄️ Холодом",
-        electricity_w:"⚡️ Электричеством",
+        electricity_w:"⚡️ єлектричеством",
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
@@ -15025,7 +15025,7 @@ export default {
 
       impact_size_foo: "Str_X_Plus_1__Num_MOD",
       //Cущество в начале каждого своего хода получает временньіе хитьі, равньіе модификатору вашей базовой характеристики.
-      //Если вьі накладьіваете это заклинание, используя ячейку 2 уровня или вьіше, вьі можете сделать целью одно дополнительное существо за каждьій уровень ячейки вьіше первого.
+      //Если вьі накладьіваете єто заклинание, используя ячейку 2 уровня или вьіше, вьі можете сделать целью одно дополнительное существо за каждьій уровень ячейки вьіше первого.
       impact_size_str: 1,
       impact_size_num: null,
       impact_size_dic: null,
@@ -18536,7 +18536,7 @@ export default {
       impact_damage_type: "piercing_w",
 
       impact_size_foo: "Str_X_Plus_2",
-      //Если вьі накладьіваете это заклинание, используя ячейку 3 уровня или вьіше, количество боеприпасов увеличивается на два за каждьій уровень ячейки вьіше второго.
+      //Если вьі накладьіваете єто заклинание, используя ячейку 3 уровня или вьіше, количество боеприпасов увеличивается на два за каждьій уровень ячейки вьіше второго.
       impact_size_str: 3,
       impact_size_num: 1,
       impact_size_dic: 6,
@@ -19072,7 +19072,7 @@ export default {
         poison_w:"🧪 Ядом",
         fire_w:"🔥 Огнем",
         cold_w:"❄️ Холодом",
-        electricity_w:"⚡️ Электричеством",
+        electricity_w:"⚡️ єлектричеством",
         acid_w:"⚗️ Кислотой",
         thunder_w: "🔊 Звуком",
         radiant_w: "✨ Светом",
@@ -19088,7 +19088,7 @@ export default {
 
       impact_size_foo: "Num_Plus_1__Pls_MOD",
       // Каждое из шести существ на ваш вьібор, видимьіх в пределах дистанции, восстанавливает количество хитов, равное 2d8 + модификатор вашей базовой характеристики.
-      // На более вьісоких уровнях: Если вьі накладьіваете это заклинание, используя ячейку 3 уровня или вьіше, лечение увеличивается на 1d8 за каждьій уровень ячейки вьіше второго.
+      // На более вьісоких уровнях: Если вьі накладьіваете єто заклинание, используя ячейку 3 уровня или вьіше, лечение увеличивается на 1d8 за каждьій уровень ячейки вьіше второго.
       impact_size_str: 6,
       impact_size_num: 2,
       impact_size_dic: 8,
@@ -21476,6 +21476,103 @@ export default {
     },
   ],
 
+  lightning_bolt: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_lightning_bolt",
+      details: "spell_lightning_bolt_details",
+      expanded: "spell_lightning_bolt_expanded",
+
+      type: "evocation",
+      classes: ["wizard","sorcerer","druid",     "cleric","ranger","warlock","paladin","bard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: 0,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 100,
+
+      impact_type: "damage",
+      impact_damage_type: "electricity_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  meld_into_stone: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_meld_into_stone",
+      details: "spell_meld_into_stone_details",
+      expanded: "spell_meld_into_stone_expanded",
+
+      type: "transmutation",
+      classes: ["druid","cleric","ranger",     "wizard","sorcerer","paladin","bard","warlock",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   nondetection: [
     {},
     {},
@@ -21932,6 +22029,51 @@ export default {
 
       saving_need: true,
       saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+  ],
+
+  water_walk: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_water_walk",
+      details: "spell_water_walk_details",
+      expanded: "spell_water_walk_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","sorcerer",    "druid","cleric","paladin","bard","warlock","ranger",],
+
+      cast_time: "action_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],
@@ -22657,6 +22799,53 @@ export default {
     },
   ],
 
+  stone_shape: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_stone_shape",
+      details: "spell_stone_shape_details",
+      expanded: "spell_stone_shape_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","cleric","druid",       "warlock","paladin","sorcerer","bard","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus","touch","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   stoneskin: [
     {},
     {},
@@ -23327,6 +23516,54 @@ export default {
     {},
     {},
     {},
+  ],
+
+  passwall: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_passwall",
+      details: "spell_passwall_details",
+      expanded: "spell_passwall_expanded",
+
+      type: "transmutation",
+      classes: ["wizard",      "druid","ranger","cleric","paladin","bard","warlock","sorcerer"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus","somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   raise_dead: [

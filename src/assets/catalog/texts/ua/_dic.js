@@ -3872,7 +3872,7 @@ export default {
   celestials: "небожителі",
   constructs: "конструкти",
   dragons: "дракони",
-  elementals: "элементалі",
+  elementals: "єлементалі",
   feys: "фейрі",
   fiends: "породження",
   giants: "велетні",
@@ -5135,7 +5135,7 @@ export default {
 
   principal_egoistic: "Законно злий", 
   principal_neutral_egoistic: 
-  "Эгоистичньій ідеаліст. "+
+  "єгоистичньій ідеаліст. "+
   "Вважає, що оточуючі нічим не кращі за нього самого. "+
   "Вірить, що йому відомий ідеал, якого всім, включаючи його, треба прагнути. ",
 
@@ -5155,7 +5155,7 @@ export default {
   
   fluid_egoistic: "Нейтрально злий",
   fluid_neutral_egoistic: 
-  "Эгоїст. "+
+  "єгоїст. "+
   "Вважає, що оточуючі нічим не кращі за нього самого. "+
   "Не надто цікавиться ідеалізацією будь-чого. ",
 
@@ -5175,7 +5175,7 @@ export default {
   
   unprincipal_egoistic: "Хаотично злий",
   unprincipal_neutral_egoistic: 
-  "Эгоїстичий цинік. "+
+  "єгоїстичий цинік. "+
   "Вважає, що оточуючі нічим не кращі за нього самого. "+
   "Вважає ідеали не більш ніж порожнім звуком та намаганням пустити пил у вічі. ",
 
@@ -5713,4 +5713,25 @@ export default {
   spell_locate_creature_ranger: spells.locate_creature_ranger,
   spell_locate_creature_ranger_details: spells.locate_creature_ranger_details,
   spell_locate_creature_ranger_expanded: spells.locate_creature_ranger_expanded,
+
+  spell_water_walk: spells.water_walk,
+  spell_water_walk_details: spells.water_walk_details,
+  spell_water_walk_expanded: spells.water_walk_expanded,
+
+  spell_lightning_bolt: spells.lightning_bolt,
+  spell_lightning_bolt_details: spells.lightning_bolt_details,
+  spell_lightning_bolt_expanded: spells.lightning_bolt_expanded,
+
+  spell_meld_into_stone: spells.meld_into_stone,
+  spell_meld_into_stone_details: spells.meld_into_stone_details,
+  spell_meld_into_stone_expanded: spells.meld_into_stone_expanded,
+
+  spell_stone_shape: spells.stone_shape,
+  spell_stone_shape_details: spells.stone_shape_details,
+  spell_stone_shape_expanded: spells.stone_shape_expanded,
+
+  spell_passwall: spells.passwall,
+  spell_passwall_details: spells.passwall_details,
+  spell_passwall_expanded: spells.passwall_expanded,
+
 };
