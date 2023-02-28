@@ -2,7 +2,6 @@
   <!-- <my-wrapper gap_26> -->
     <my-wrapper gap_26 hr>
 			<my-card-text class="story int-400"
-				v-if="MY.ethnos.name !== 'common'"
         notation="race"
 				:title="MY.race.name"
 				:text_html="MY.race.details"
@@ -11,9 +10,8 @@
 			</my-card-text>
     </my-wrapper>
 
-    <my-wrapper gap_26 hr>
+    <my-wrapper gap_26 hr v-if="MY.ethnos.name !== 'common'">
 			<my-card-text
-        v-if="MY.ethnos.name !== 'common'"
         notation="ethnos"
 				:title="MY.ethnos.name"
 				:text_html="MY.ethnos.details"
@@ -24,7 +22,6 @@
 
     <my-wrapper gap_26 hr>
 			<my-card-text
-				v-if="MY.backstory.name"
         notation="past"
 				:title="MY.backstory.name"
 				:text_html="MY.backstory.details"
