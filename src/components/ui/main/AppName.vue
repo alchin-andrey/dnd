@@ -9,7 +9,7 @@
 		<div class="wrap liner">
 			<input
 				size="1"
-				@keyup.enter="getName()"
+				@keyup="getName()"
 				spellcheck="false"
 				class="main"
 				:class="{ liner: inputValue !== '' }"

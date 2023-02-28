@@ -1,5 +1,5 @@
 <template> 
-	<div class="column jbm-300" :class="{ passive: numb == 0}" >
+	<div class="column jbm-300" :class="{ passive: numb == 0 && passive_Old}" >
 		<div class="column_value">
 			<section class="flex_row">
 				<div class="icon">
@@ -21,7 +21,11 @@
 		<div class="visual">
 			<div class="cube" v-for="n in cube_Numb" :key="n"/>
 			<div class="cube-neg" v-for="n in cube_Negative" :key="n"/>
-			<div class="cube-second" :class="{ opasity: numb == 0}" v-for="n in cube_Second" :key="n"/>
+			<div class="cube-second" 
+      :class="{ 
+        passive: passive_Old,
+        opasity: numb == 0}" 
+      v-for="n in cube_Second" :key="n"/>
 		</div>
 	</div>
 </template>
@@ -29,6 +33,7 @@
 <script>
 import stats_icon from "@/assets/catalog/icon/stats_icon";
 import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 
@@ -56,8 +61,13 @@ export default {
 
 	computed: {
 		// STORES
+    ...mapState(usePagesStore, ["page_Open"]),
     ...mapState(useSkillsStore, ["skills", "skills_passive"]),
     ...mapState(useStatsStore, ["stats_Save_Page_Arr"]),
+
+    passive_Old() {
+      return this.page_Open !== "alignment_page";
+    },
 
     shown_Save() {
       return this.stats_Save_Page_Arr.includes(this.icon_Stats)
@@ -178,7 +188,7 @@ export default {
   background: #ffffff;
 	/* background: rgba(255, 255, 255, 0.2); */
 	border-radius: 2px;
-  opacity: 0.2;
+  /* opacity: 0.2; */
 }
 .opasity{
   opacity: 1;

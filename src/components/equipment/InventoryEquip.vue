@@ -2,7 +2,7 @@
 	<div :class="{ flex_packs: stripe }">
 		<div ref="stripe" class="side_stripe" v-if="stripe"></div>
 		<section>
-			<div class="passive" v-for="items in inventory_old" :key="items">
+			<div :class="{passive: passive_Old}" v-for="items in inventory_old" :key="items">
 				• {{ t_Equip_Name(items) }}
 			</div>
 			<div v-for="items in inventory" :key="items" :class="{undef: t_Equip_Name(items) == undefined }">
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "InventoryEquip",
 	props: {
@@ -30,6 +32,12 @@ export default {
 		},
 	},
 	computed: {
+    ...mapState(usePagesStore, ["page_Open"]),
+
+    passive_Old() {
+      return this.page_Open !== "alignment_page";
+    },
+
 		t_Equip_Name: (stor) => (inv) => {
       if (inv?.[0]) {
       const name = stor.t(inv[0].name);

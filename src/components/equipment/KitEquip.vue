@@ -6,7 +6,7 @@
 				v-for="item_packs_old in packs_old"
 				:key="item_packs_old"
 				:packs="item_packs_old"
-        passive
+        :passive="passive_Old"
 			/>
 			<PacksEquip
 				v-for="item_packs in packs"
@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import PacksEquip from "@/components/equipment/PacksEquip.vue";
 import InventoryEquip from "@/components/equipment/InventoryEquip.vue";
 
@@ -63,6 +65,12 @@ export default {
 		},
 	},
 	computed: {
+    ...mapState(usePagesStore, ["page_Open"]),
+
+    passive_Old() {
+      return this.page_Open !== "alignment_page";
+    },
+
 		t_Text() {
 			return `${this.t("coin_gold")} × ${this.gold}`;
 		},

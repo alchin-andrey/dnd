@@ -5,7 +5,7 @@
 				v-for="item in charges_Race_Param"
 				:key="item"
 				:charge="item"
-        passive
+				:passive="passive_Old"
 			/>
 			<AppCharges
 				v-for="item in charges_Class_Param"
@@ -18,6 +18,7 @@
 
 <script>
 import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useChargesStore } from "@/stores/modules/ChargesStore";
 
 export default {
@@ -29,17 +30,20 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useChargesStore, [
-      "charges_Race_Param",
-      "charges_Class_Param",
-    ]),
+		...mapState(usePagesStore, ["page_Open"]),
 
-    shown_Charges() {
-      return (
-        this.charges_Race_Param.length !== 0
-        || this.charges_Class_Param.length !== 0
-      )
-    },
+		passive_Old() {
+			return this.page_Open !== "alignment_page";
+		},
+
+		...mapState(useChargesStore, ["charges_Race_Param", "charges_Class_Param"]),
+
+		shown_Charges() {
+			return (
+				this.charges_Race_Param.length !== 0 ||
+				this.charges_Class_Param.length !== 0
+			);
+		},
 
 		// charges_Class_Arr() {
 		// 	return this.level_Filter_Arr(this.MY.class.charges);

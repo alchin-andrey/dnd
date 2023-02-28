@@ -18,7 +18,6 @@
         xmlns="http://www.w3.org/2000/svg"
         v-html="fines_icon[fines.type]"
       />
-			<!-- <img :src="src_Icon" :alt="icon" /> -->
 		</div>
 		<div class="text int-400" :class="{ emoji_true: em_Upd }">
 			<span

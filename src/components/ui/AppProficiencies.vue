@@ -37,7 +37,7 @@
 				:key="name"
 				:shown="overflow_Save(name)"
 				warn
-				:class="{ passive: arr_name_old.includes(name) }"
+				:class="{ passive: passive_Old(name) }"
 			>
 				<div class="flex-col">
 					<div :class="{ 'rare-text': overflow_Save(name) }">
@@ -53,7 +53,7 @@
 <script>
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
-import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppProficiencies",
@@ -85,12 +85,19 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useProficienciesStore, []),
-
+    ...mapState(usePagesStore, ["page_Open"]),
     ...mapState(useOverflowStore, [
       "overflow_Prof",
       "overflow_Prof_Any_Name",
 		]),
+
+    passive_Old: (stor) => (name) => {
+      if (stor.page_Open == "alignment_page") {
+        return false;
+      } else {
+        return stor.arr_name_old.includes(name);
+      }
+    },
 
 		t_Title() {
 			return this.t(this.title);
@@ -127,7 +134,11 @@ export default {
 		},
 
 		passive_Link() {
-			return this.arr_name.length === 0;
+      if (this.page_Open == "alignment_page") {
+        return false;
+      } else {
+        return this.arr_name.length === 0;
+      }
 		},
 
 		passive_Link_Full() {
