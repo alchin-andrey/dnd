@@ -5163,7 +5163,7 @@ export default {
   
   unprincipal_altruistic: "Хаотично добрий",
   unprincipal_altruistic_details: 
-  "Альтруїстичний цинік."+
+  "Альтруїстичний цинік. "+
   "Вірить, що інші заслуговують на те, щоб до них добре ставилися. "+
   "Вважає ідеали не більш ніж порожнім звуком та намаганням пустити пил у вічі. ",
   
@@ -5175,7 +5175,7 @@ export default {
   
   unprincipal_egoistic: "Хаотично злий",
   unprincipal_neutral_egoistic: 
-  "Эгоистичньій циник. "+
+  "Эгоїстичий цинік. "+
   "Вважає, що оточуючі нічим не кращі за нього самого. "+
   "Вважає ідеали не більш ніж порожнім звуком та намаганням пустити пил у вічі. ",
 
@@ -5671,6 +5671,10 @@ export default {
   spell_slow_details: spells.slow_details,
   spell_slow_expanded: spells.slow_expanded,
 
+  spell_slow_warlock: spells.slow_warlock,
+  spell_slow_warlock_details: spells.slow_warlock_details,
+  spell_slow_warlock_expanded: spells.slow_warlock_expanded,
+
   spell_jump_warlock: spells.jump_warlock,
   spell_jump_warlock_details: spells.jump_warlock_details,
   spell_jump_warlock_expanded: spells.jump_warlock_expanded,
@@ -5691,4 +5695,22 @@ export default {
   health_bonus: "Бонусне здоровʼя",
   lvl_to_animated_undead: "у розмірі вашого рівня, для сворених вами немертвих",
   to_damage_to_animated_undead: "на пошкодження зброєю, для сворених вами немертвих",
+
+  name_placeholder: "Придумайте імʼя",
+
+  spell_speak_with_plants: spells.speak_with_plants,
+  spell_speak_with_plants_details: spells.speak_with_plants_details,
+  spell_speak_with_plants_expanded: spells.speak_with_plants_expanded,
+
+  spell_speak_with_plants_ranger: spells.speak_with_plants_ranger,
+  spell_speak_with_plants_ranger_details: spells.speak_with_plants_ranger_details,
+  spell_speak_with_plants_ranger_expanded: spells.speak_with_plants_ranger_expanded,
+
+  spell_locate_creature: spells.locate_creature,
+  spell_locate_creature_details: spells.locate_creature_details,
+  spell_locate_creature_expanded: spells.locate_creature_expanded,
+
+  spell_locate_creature_ranger: spells.locate_creature_ranger,
+  spell_locate_creature_ranger_details: spells.locate_creature_ranger_details,
+  spell_locate_creature_ranger_expanded: spells.locate_creature_ranger_expanded,
 };
