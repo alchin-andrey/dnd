@@ -5264,11 +5264,19 @@ export default {
             spells: [
               {
                 level: 1,
+                spell: spells.tricker_bless,
+              },
+              {
+                level: 1,
                 spell: spells.disguise_self,
               },
               {
                 level: 1,
                 spell: spells.charm_person,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_mirror_image,
               },
               {
                 level: 3,
@@ -5278,7 +5286,6 @@ export default {
                 level: 3,
                 spell: spells.mirror_image,
               },
-              //TODO - додати спели
               {
                 level: 5,
                 spell: spells.blink,
@@ -5286,6 +5293,10 @@ export default {
               {
                 level: 5,
                 spell: spells.dispel_magic,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_cloak_of_shadows,
               },
               {
                 level: 7,
@@ -5296,6 +5307,10 @@ export default {
                 spell: spells.polymorph,
               },
               {
+                level: 8,
+                spell: spells.divine_strike_poison,
+              },
+              {
                 level: 9,
                 spell: spells.modify_memory,
               },
@@ -5303,7 +5318,6 @@ export default {
                 level: 9,
                 spell: spells.dominate_person,
               },
-              //TODO - додати вміння Домену Обману
             ],
 
             settings: [
@@ -5379,23 +5393,22 @@ export default {
                 level: 3,
                 spell: spells.spike_growth,
               },
-              //TODO - додати спели
               {
                 level: 5,
                 spell: spells.plant_growth,
               },
-              // {
-              //   level: 5,
-              //   spell: spells.wind_wall,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.dominate_beast,
-              // },
-              // {
-              //   level: 7,
-              //   spell: spells.grasping_vine,
-              // },
+              {
+                level: 5,
+                spell: spells.wind_wall,
+              },
+              {
+                level: 7,
+                spell: spells.dominate_beast,
+              },
+              {
+                level: 7,
+                spell: spells.grasping_vine,
+              },
               {
                 level: 9,
                 spell: spells.tree_stride,
@@ -5612,11 +5625,10 @@ export default {
                 level: 3,
                 spell: spells.flaming_sphere,
               },
-              //TODO - додати спели
-              // {
-              //   level: 5,
-              //   spell: spells.daylight,
-              // },
+              {
+                level: 5,
+                spell: spells.daylight,
+              },
               {
                 level: 5,
                 spell: spells.fireball,
@@ -5737,7 +5749,6 @@ export default {
             name_set: weapons.warhammer.name,
             equipment: [{ weapon: [[weapons.warhammer, 1]] }],
           },
-          // TODO - давай если нет мастери - подсвечивать имя желтьім
         ],
       },
       {
@@ -6159,11 +6170,10 @@ export default {
                         level: 3,
                         spell: spells.spike_growth,
                       },
-                      //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.slow,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.slow,
+                      },
                       {
                         level: 5,
                         spell: spells.sleet_storm,
@@ -6200,10 +6210,10 @@ export default {
                         spell: spells.darkness,
                       },
                       //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.stinking_cloud,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.stinking_cloud,
+                      },
                       // {
                       //   level: 5,
                       //   spell: spells.water_walk,
@@ -6320,10 +6330,10 @@ export default {
                         spell: spells.invisibility,
                       },
                       //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.daylight,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.daylight,
+                      },
                       {
                         level: 5,
                         spell: spells.haste,
@@ -6342,6 +6352,46 @@ export default {
                       // },
                       {
                         level: 9,
+                        spell: spells.insect_plague,
+                      },
+                    ],
+                  },
+                  {
+                    name: "circle_of_the_land_desert",
+                    details: "circle_of_the_land_desert_details",
+
+                    spells: [
+                      {
+                        level: 3,
+                        spell: spells.blur,
+                      },
+                      {
+                        level: 3,
+                        spell: spells.silence,
+                      },
+                      {
+                        level: 5,
+                        spell: spells.protection_from_energy,
+                      },
+                      //TODO - додати спели
+                      // {
+                      //   level: 5,
+                      //   spell: spells.create_food_and_water,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.hallucinatory_terrain,
+                      // },
+                      // {
+                      //   level: 7,
+                      //   spell: spells.blight,
+                      // },
+                      {
+                        level: 9,
+                        spell: spells.wall_of_stone,
+                      },
+                      {
+                        level: 3,
                         spell: spells.insect_plague,
                       },
                     ],
@@ -6404,10 +6454,10 @@ export default {
                         level: 5,
                         spell: spells.gaseous_form,
                       },
-                      // {
-                      //   level: 5,
-                      //   spell: spells.stinking_cloud,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.stinking_cloud,
+                      },
                       // {
                       //   level: 7,
                       //   spell: spells.greater_invisibility,
@@ -6426,7 +6476,6 @@ export default {
                       // },
                     ],
                   },
-                  //TODO - Add Desert terrain
                 ],
               },
             ],
@@ -6807,7 +6856,6 @@ export default {
           ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
           ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
         ],
-        //TODO - додати вибір заклять на відповідних рівнях
       },
       {
         level: 20,
@@ -7022,11 +7070,11 @@ export default {
                   //   name_set: spells.greater_invisibility[4].name,
                   //   spells: [{ level: 7, spell: spells.greater_invisibility,}],
                   // },
-                  // {
-                  //   level: 7,
-                  //   name_set: spells.dominate_beast[4].name,
-                  //   spells: [{ level: 7, spell: spells.dominate_beast,}],
-                  // },
+                  {
+                    level: 7,
+                    name_set: spells.dominate_beast[4].name,
+                    spells: [{ level: 7, spell: spells.dominate_beast,}],
+                  },
                   {
                     level: 9,
                     name_set: spells.dominate_person[5].name,
@@ -7169,11 +7217,11 @@ export default {
                     spells: [{ level: 3, spell: spells.scorching_ray,}],
                   },
                   //TODO - Додати спеллс
-                  // {
-                  //   level: 5,
-                  //   name_set: spells.stinking_cloud[3].name,
-                  //   spells: [{ level: 5, spell: spells.stinking_cloud,}],
-                  // },
+                  {
+                    level: 5,
+                    name_set: spells.stinking_cloud[3].name,
+                    spells: [{ level: 5, spell: spells.stinking_cloud,}],
+                  },
                   {
                     level: 5,
                     name_set: spells.fireball[3].name,
@@ -7325,11 +7373,11 @@ export default {
                   //   name_set: spells.sending[3].name,
                   //   spells: [{ level: 5, spell: spells.sending,}],
                   // },
-                  // {
-                  //   level: 7,
-                  //   name_set: spells.dominate_beast[4].name,
-                  //   spells: [{ level: 7, spell: spells.dominate_beast,}],
-                  // },
+                  {
+                    level: 7,
+                    name_set: spells.dominate_beast[4].name,
+                    spells: [{ level: 7, spell: spells.dominate_beast,}],
+                  },
                   // {
                   //   level: 7,
                   //   name_set: spells.evards_black_tentacles[4].name,
@@ -7787,7 +7835,7 @@ export default {
             //   {
             //     level: 5,
             //     spell: spells.bestow_curse,
-            //     Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+            //     //Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
             //   },
             // ],
           },
@@ -7806,14 +7854,13 @@ export default {
             level: 5,
             name: "mire_the_mind",
 
-            //TODO - додати Slow
-            // spells: [
-            //   {
-            //     level: 5,
-            //     spell: spells.slow,
-            //     Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 5,
+                spell: spells.slow_warlock,
+                //Вы можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вы не можете сделать это повторно, пока не окончите продолжительный отдых.
+              },
+            ],
           },
           {
             level: 7,
@@ -7854,15 +7901,13 @@ export default {
           {
             level: 9,
             name: "ascendant_step",
-
-            //TODO - додати levitate_warlock
-            // spells: [
-            //   {
-            //     level: 9,
-            //     spell: spells.levitate_warlock,
-            //     // Вы можете неограниченно накладывать на себя заклинание левитация [levitate], не тратя ячейки заклинаний и материальные компоненты.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 9,
+                spell: spells.levitate_warlock,
+                // Вы можете неограниченно накладывать на себя заклинание левитация [levitate], не тратя ячейки заклинаний и материальные компоненты.
+              },
+            ],
           },
           {
             level: 9,
@@ -7878,15 +7923,13 @@ export default {
           {
             level: 9,
             name: "overworldly_leap",
-
-            //TODO - додати jump_warlock
-            // spells: [
-            //   {
-            //     level: 9,
-            //     spell: spells.jump_warlock,
-            //     // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 9,
+                spell: spells.jump_warlock,
+                // Вы можете неограниченно накладывать на себя заклинание, не тратя ячейки заклинаний и материальные компоненты.
+              },
+            ],
           },
           {
             level: 9,
@@ -9437,6 +9480,18 @@ export default {
                 details: "from_spell_kill_necromancy",
               },
               {
+                level: 6,
+                type: "plus",
+                keyword: "health_bonus",
+                details: "lvl_to_animated_undead",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "mastery_bonus",
+                details: "to_damage_to_animated_undead",
+              },
+              {
                 level: 10,
                 type: "resistance",
                 keyword: "resistance",
@@ -9450,13 +9505,12 @@ export default {
               },
             ],
 
-            // TODO - добавить спелл animate_dead_wizard
-            // Когда вы накладываете заклинание восставший труп [animate dead], вы можете сделать его целью один дополнительный труп или кучу костей, создавая зомби [zombie] или скелета [skeleton] соответственно. Каждый раз, когда вы создаёте нежить, используя заклинание школы Некромантии, она получает дополнительные преимущества: -Максимум хитов создаваемой нежити увеличивается на значение, равное вашему уровню волшебника. -Создаваемые существа добавляют ваш бонус мастерства к броскам урона оружием.
+            // Каждый раз, когда вы создаёте нежить, используя заклинание школы Некромантии, она получает дополнительные преимущества: -Максимум хитов создаваемой нежити увеличивается на значение, равное вашему уровню волшебника. -Создаваемые существа добавляют ваш бонус мастерства к броскам урона оружием.
             spells: [
-              // {
-              //   level: 6,
-              //   spell: spells.animate_dead_wizard,
-              // },
+              {
+                level: 6,
+                spell: spells.animate_dead_wizard,
+              },
               {
                 level: 14,
                 spell: spells.control_undead,
@@ -10827,7 +10881,6 @@ export default {
           "wizard",
         ],}
       },
-      // TODO - Only_mastery
       {
         level: 3,
         type: "custom",

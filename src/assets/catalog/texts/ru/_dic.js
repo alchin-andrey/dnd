@@ -172,7 +172,6 @@ export default {
   faith: "вера",
   alignment: "мировоззрение",
   personality: "характер",
-  ideals: "приоритетьі",
   bonds: "привязанности",
   flaws: "слабости",
   appearance: "внешность",
@@ -5662,4 +5661,50 @@ export default {
   spell_modify_memory_details: spells.modify_memory_details,
   spell_modify_memory_expanded: spells.modify_memory_expanded,
 
+  spell_dominate_person: spells.dominate_person,
+  spell_dominate_person_details: spells.dominate_person_details,
+  spell_dominate_person_expanded: spells.dominate_person_expanded,
+
+  spell_wind_wall: spells.wind_wall,
+  spell_wind_wall_details: spells.wind_wall_details,
+  spell_wind_wall_expanded: spells.wind_wall_expanded,
+
+  spell_dominate_beast: spells.dominate_beast,
+  spell_dominate_beast_details: spells.dominate_beast_details,
+  spell_dominate_beast_expanded: spells.dominate_beast_expanded,
+
+  pull:"притягивание",
+
+  spell_grasping_vine: spells.grasping_vine,
+  spell_grasping_vine_details: spells.grasping_vine_details,
+  spell_grasping_vine_expanded: spells.grasping_vine_expanded,
+
+  spell_daylight: spells.daylight,
+  spell_daylight_details: spells.daylight_details,
+  spell_daylight_expanded: spells.daylight_expanded,
+
+  spell_slow: spells.slow,
+  spell_slow_details: spells.slow_details,
+  spell_slow_expanded: spells.slow_expanded,
+
+  spell_jump_warlock: spells.jump_warlock,
+  spell_jump_warlock_details: spells.jump_warlock_details,
+  spell_jump_warlock_expanded: spells.jump_warlock_expanded,
+
+  spell_levitate_warlock: spells.levitate_warlock,
+  spell_levitate_warlock_details: spells.levitate_warlock_details,
+  spell_levitate_warlock_expanded: spells.levitate_warlock_expanded,
+
+  spell_stinking_cloud: spells.stinking_cloud,
+  spell_stinking_cloud_details: spells.stinking_cloud_details,
+  spell_stinking_cloud_expanded: spells.stinking_cloud_expanded,
+
+  spell_animate_dead: spells.animate_dead,
+  spell_animate_dead_wizard: spells.animate_dead_wizard,
+  spell_animate_dead_details: spells.animate_dead_details,
+  spell_animate_dead_expanded: spells.animate_dead_expanded,
+
+  health_bonus: "Бонусное здоровье",
+  lvl_to_animated_undead: "равное вашему уровню, для созданной вами нежити",
+  to_damage_to_animated_undead: "на урон оружием, для созданной вами нежити",
 };  
