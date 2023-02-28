@@ -5687,6 +5687,10 @@ export default {
   spell_slow_details: spells.slow_details,
   spell_slow_expanded: spells.slow_expanded,
 
+  spell_slow_warlock: spells.slow_warlock,
+  spell_slow_warlock_details: spells.slow_warlock_details,
+  spell_slow_warlock_expanded: spells.slow_warlock_expanded,
+
   spell_jump_warlock: spells.jump_warlock,
   spell_jump_warlock_details: spells.jump_warlock_details,
   spell_jump_warlock_expanded: spells.jump_warlock_expanded,
@@ -5707,4 +5711,22 @@ export default {
   health_bonus: "Бонусное здоровье",
   lvl_to_animated_undead: "равное вашему уровню, для созданной вами нежити",
   to_damage_to_animated_undead: "на урон оружием, для созданной вами нежити",
+
+  name_placeholder: "Придумайте имя",
+
+  spell_speak_with_plants: spells.speak_with_plants,
+  spell_speak_with_plants_details: spells.speak_with_plants_details,
+  spell_speak_with_plants_expanded: spells.speak_with_plants_expanded,
+
+  spell_speak_with_plants_ranger: spells.speak_with_plants_ranger,
+  spell_speak_with_plants_ranger_details: spells.speak_with_plants_ranger_details,
+  spell_speak_with_plants_ranger_expanded: spells.speak_with_plants_ranger_expanded,
+
+  spell_locate_creature: spells.locate_creature,
+  spell_locate_creature_details: spells.locate_creature_details,
+  spell_locate_creature_expanded: spells.locate_creature_expanded,
+
+  spell_locate_creature_ranger: spells.locate_creature_ranger,
+  spell_locate_creature_ranger_details: spells.locate_creature_ranger_details,
+  spell_locate_creature_ranger_expanded: spells.locate_creature_ranger_expanded,
 };  

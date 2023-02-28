@@ -1,7 +1,3 @@
-import tools from "./kinds_tools.js";
-import weapons from "./list_weapons.js";
-import items from "./list_items.js";
-
 export default {
   back: {
     name: "bayraktar",

@@ -4798,6 +4798,97 @@ export default {
     },
   ],
 
+  speak_with_plants_ranger: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_speak_with_plants_ranger",
+      details: "spell_speak_with_plants_ranger_details",
+      expanded: "spell_speak_with_plants_ranger_expanded",
+
+      type: "ability",
+      classes: ["ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 10,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  locate_creature_ranger: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_locate_creature_ranger",
+      details: "spell_locate_creature_ranger_details",
+      expanded: "spell_locate_creature_ranger_expanded",
+
+      type: "ability",
+      classes: ["ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 1000,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   commune_with_nature_ranger: [
     {},
     {},
@@ -21702,6 +21793,51 @@ export default {
     },
   ],
 
+  speak_with_plants: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_speak_with_plants",
+      details: "spell_speak_with_plants_details",
+      expanded: "spell_speak_with_plants_expanded",
+
+      type: "transmutation",
+      classes: ["druid","bard","ranger",     "wizard","sorcerer","warlock","cleric","paladin",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 10,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   spirit_guardians: [
     {},
     {},
@@ -22426,6 +22562,52 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+    },
+  ],
+
+  locate_creature: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_locate_creature",
+      details: "spell_locate_creature_details",
+      expanded: "spell_locate_creature_expanded",
+
+      type: "divination",
+      classes: ["bard","druid","wizard","cleric","paladin","ranger",     "warlock","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 1000,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
     },
   ],
 

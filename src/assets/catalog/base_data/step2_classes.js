@@ -12366,15 +12366,14 @@ export default {
                 level: 5,
                 spell: spells.beast_sense_ranger,
               },
-              // TODO - додати спели
-              // {
-              //   level:9,
-              //   spell:spells.speak_with_plants_ranger,
-              // },
-              // {
-              //   level:13,
-              //   spell:spells.locate_creature_ranger,
-              // },
+              {
+                level:9,
+                spell:spells.speak_with_plants_ranger,
+              },
+              {
+                level:13,
+                spell:spells.locate_creature_ranger,
+              },
               {
                 level: 17,
                 spell: spells.commune_with_nature_ranger,
