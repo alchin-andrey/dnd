@@ -1,7 +1,8 @@
 <template>
-	<transition name="mode-fade" mode="out-in">
+	<!-- <transition name="mode-fade" mode="out-in"> -->
 		<!-- //NOTE - Main -->
-		<section v-if="shown_Main_Paramm">
+		<!-- <section v-if="shown_Main_Paramm"> -->
+			<AlignmentParam__Text />
 			<ClassParam__Stats hr />
 			<ClassParam__Skills hr />
 			<ClassParam__SkillsPassive hr />
@@ -11,12 +12,11 @@
 			<ClassParam__Fines hr />
 			<ClassParam__Spells hr />
 			<ClassParam__Weapons hr />
-			<ClassParam__EquipKit hr />
-			<ClassParam__Text />
-		</section>
+			<ClassParam__EquipKit />
+		<!-- </section> -->
 
 		<!-- //NOTE - Stats -->
-		<section v-else-if="shown_Stats_Param">
+		<!-- <section v-else-if="shown_Stats_Param">
 			<TransitionGroup tag="ul" name="fade-slide" class="container">
 				<ClassParam__Stats key="stats" v-if="shown_Feats" hr />
 				<ClassParam__Qualities
@@ -37,7 +37,7 @@
 				:spells_setting="item"
 			/>
 		</section>
-	</transition>
+	</transition> -->
 </template>
 
 <script>

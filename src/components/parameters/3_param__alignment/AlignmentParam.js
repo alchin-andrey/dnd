@@ -1,3 +1,6 @@
+import AlignmentParam__Text from "@/components/parameters/3_param__alignment/AlignmentParam__Text.vue";
+
+
 import ClassParam__Stats from "@/components/parameters/2_param__class/ClassParam__Stats.vue";
 import ClassParam__Skills from "@/components/parameters/2_param__class/ClassParam__Skills.vue";
 import ClassParam__SkillsPassive from "@/components/parameters/2_param__class/ClassParam__SkillsPassive.vue";
@@ -8,13 +11,14 @@ import ClassParam__Fines from "@/components/parameters/2_param__class/ClassParam
 import ClassParam__Spells from "@/components/parameters/2_param__class/ClassParam__Spells.vue";
 import ClassParam__Weapons from "@/components/parameters/2_param__class/ClassParam__Weapons.vue";
 import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassParam__EquipKit.vue";
-import ClassParam__Text from "@/components/parameters/2_param__class/ClassParam__Text.vue";
 
-import ClassParam__SkillsAll from "@/components/parameters/2_param__class/ClassParam__SkillsAll.vue";
-import ClassParamSett__Spells from "@/components/parameters/2_param__class/ClassParamSett__Spells.vue";
+// import ClassParam__SkillsAll from "@/components/parameters/2_param__class/ClassParam__SkillsAll.vue";
+// import ClassParamSett__Spells from "@/components/parameters/2_param__class/ClassParamSett__Spells.vue";
 
 export default {
 	components: {
+  AlignmentParam__Text,
+
 	ClassParam__Stats,
   ClassParam__Skills,
   ClassParam__SkillsPassive,
@@ -25,10 +29,9 @@ export default {
   ClassParam__Spells,
   ClassParam__Weapons,
   ClassParam__EquipKit,
-  ClassParam__Text,
 
-  ClassParam__SkillsAll,
-  ClassParamSett__Spells,
+  // ClassParam__SkillsAll,
+  // ClassParamSett__Spells,
   
 	},
 };

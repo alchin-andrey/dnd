@@ -21,6 +21,10 @@
 export default {
 	name: "MyCardText",
 	props: {
+    notation: {
+			type: String,
+			default: null,
+		},
 		title: {
 			type: String,
 			default: null,
@@ -44,7 +48,15 @@ export default {
 	},
 	computed: {
 		t_Title() {
-			return this.t(this.title);
+      let str;
+      if(this.notation) {
+        const t_note = this.t(this.notation);
+        const t_title = this.t(this.title);
+        const T_title = `${t_title[0].toUpperCase()}${t_title.slice(1)}`;
+        return `${t_note}: ${T_title}`
+      } else {
+        return this.t(this.title)
+      }
 		},
 		t_Html() {
 			return this.t(this.text_html);

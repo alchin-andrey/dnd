@@ -5,7 +5,7 @@
 			v-for="item in fines_Race_Param"
 			:key="item"
 			:fines="item"
-			passive
+			:passive="page_Open == 'class_page'"
       param
 		/>
 		<!-- CLASS -->
@@ -21,6 +21,7 @@
 <script>
 import { mapState } from "pinia";
 import { useFinesStore } from "@/stores/modules/FinesStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 
 import RaceParam__Fines from "@/components/parameters/1_param__race/RaceParam__Fines.vue";
 export default {
@@ -35,6 +36,7 @@ export default {
 		},
 	},
 	computed: {
+		...mapState(usePagesStore, ["page_Open"]),
 		...mapState(useFinesStore, [
       "fines_Race_Param", 
       "fines_Class_Param",
