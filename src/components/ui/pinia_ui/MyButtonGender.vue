@@ -1,13 +1,13 @@
 <template>
 	<div class="gender_item" :class="{ active: active_link }">
-    <svg 
-        fill="white"
-        width="72" 
-        height="72"
+    <div class="icon">
+      <svg 
+        class="main_svg"
         viewBox="0 0 72 72"
         xmlns="http://www.w3.org/2000/svg"
         v-html="gender_icon[img]"
-      />
+        />
+    </div>
 		<!-- <img :src="get_Image" :alt="img" /> -->
 	</div>
 </template>
@@ -48,6 +48,17 @@ export default {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+}
+
+.icon {
+  width: 72px;
+	height: 72px;
+}
+
+.main_svg {
+  fill: white;
+  width: 72px;
+	height: 72px;
 }
 
 .gender_item:hover {
