@@ -188,6 +188,7 @@ export default {
           { name: "weakness_spender" }, // транжира
           { name: "weakness_unreliability" }, // ненадежность
           { name: "weakness_cowardice" }, // трусость
+          { name: "weakness_fobia" }, // фобія
           { name: "weakness_submissiveness" }, // покорність
           { name: "weakness_envy" }, // заздрість
           { name: "weakness_wrath" }, // гнів

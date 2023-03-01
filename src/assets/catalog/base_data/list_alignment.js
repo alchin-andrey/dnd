@@ -100,6 +100,7 @@ export default {
     { name: "ideal_destiry" }, // доля
     { name: "ideal_faith" }, // віра
     { name: "ideal_traditions" }, // традиції
+    { name: "ideal_order" }, // традиції
     { name: "ideal_duty" }, // обовʼязок
     { name: "ideal_honor" }, // честь
     { name: "ideal_revenge" }, // помста
@@ -176,6 +177,7 @@ export default {
     { name: "weakness_spender" }, // транжира
     { name: "weakness_unreliability" }, // ненадежность
     { name: "weakness_cowardice" }, // трусость
+    { name: "weakness_fobia" }, // фобія
     { name: "weakness_submissiveness" }, // покорність
     { name: "weakness_envy" }, // заздрість
     { name: "weakness_wrath" }, // гнів

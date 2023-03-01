@@ -10714,6 +10714,7 @@ export default {
       expanded: "spell_cleansing_touch_expanded",
 
       type: "ability",
+      slot_type: "cleansing_touch_slot",
       classes: ["paladin"],
 
       cast_time: "none",
@@ -20912,7 +20913,7 @@ export default {
       expanded: "spell_aura_of_vitality_expanded",
 
       type: "evocation",
-      classes: ["druid","cleric","paladin",    "bard","wizard","warlock","sorcerer","ranger"],
+      classes: ["druid","cleric","paladin",],
 
       cast_time: "action",
       cast_duration: null,
@@ -20956,7 +20957,7 @@ export default {
       expanded: "spell_animate_dead_expanded",
 
       type: "necromancy",
-      classes: ["wizard","cleric",      "paladin","druid","bard","warlock","sorcerer","ranger"],
+      classes: ["wizard","cleric",],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -21008,7 +21009,7 @@ export default {
       expanded: "spell_beacon_of_hope_expanded",
 
       type: "abjuration",
-      classes: ["cleric",    "druid","paladin","bard","wizard","warlock","sorcerer","ranger"],
+      classes: ["cleric",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21053,7 +21054,7 @@ export default {
       expanded: "spell_blink_expanded",
 
       type: "transmutation",
-      classes: ["wizard","sorcerer",    "druid","cleric","paladin","bard","warlock","ranger",],
+      classes: ["wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21098,7 +21099,7 @@ export default {
       expanded: "spell_call_lightning_expanded",
 
       type: "conjuration",
-      classes: ["druid",     "cleric","ranger","warlock","paladin","bard","wizard","sorcerer",],
+      classes: ["druid",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21150,7 +21151,7 @@ export default {
       expanded: "spell_crusaders_mantle_expanded",
 
       type: "evocation",
-      classes: ["paladin",     "wizard","sorcerer","druid","ranger","warlock","cleric","bard",],
+      classes: ["paladin",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21196,7 +21197,7 @@ export default {
       expanded: "spell_daylight_expanded",
 
       type: "evocation",
-      classes: ["druid","cleric","paladin","sorcerer","ranger",    "bard","wizard","warlock",],
+      classes: ["druid","cleric","paladin","sorcerer","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21242,7 +21243,7 @@ export default {
       expanded: "spell_dispel_magic_expanded",
 
       type: "abjuration",
-      classes: ["cleric","druid","paladin","bard","wizard","warlock","sorcerer",       "ranger"],
+      classes: ["cleric","druid","paladin","bard","wizard","warlock","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21293,7 +21294,7 @@ export default {
       expanded: "spell_fireball_expanded",
 
       type: "evocation",
-      classes: ["wizard","sorcerer",    "warlock","ranger","druid","cleric","paladin","bard",],
+      classes: ["wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21345,7 +21346,7 @@ export default {
       expanded: "spell_fly_expanded",
 
       type: "transmutation",
-      classes: ["wizard","warlock","ranger","sorcerer",    "druid","cleric","paladin","bard",],
+      classes: ["wizard","warlock","ranger","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21396,7 +21397,7 @@ export default {
       expanded: "spell_gaseous_form_expanded",
 
       type: "transmutation",
-      classes: ["wizard","warlock","sorcerer",    "druid","cleric","paladin","bard","ranger",],
+      classes: ["wizard","warlock","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21441,7 +21442,7 @@ export default {
       expanded: "spell_haste_expanded",
 
       type: "transmutation",
-      classes: ["wizard","sorcerer",    "warlock","druid","cleric","paladin","bard","ranger",],
+      classes: ["wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21486,7 +21487,7 @@ export default {
       expanded: "spell_lightning_bolt_expanded",
 
       type: "evocation",
-      classes: ["wizard","sorcerer","druid",     "cleric","ranger","warlock","paladin","bard",],
+      classes: ["wizard","sorcerer","druid",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21538,7 +21539,7 @@ export default {
       expanded: "spell_meld_into_stone_expanded",
 
       type: "transmutation",
-      classes: ["druid","cleric","ranger",     "wizard","sorcerer","paladin","bard","warlock",],
+      classes: ["druid","cleric","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21583,7 +21584,7 @@ export default {
       expanded: "spell_nondetection_expanded",
 
       type: "abjuration",
-      classes: ["bard","ranger","wizard",       "sorcerer","warlock","druid","cleric","paladin",],
+      classes: ["bard","ranger","wizard",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21628,7 +21629,7 @@ export default {
       expanded: "spell_plant_growth_expanded",
 
       type: "transmutation",
-      classes: ["bard","druid","ranger",      "wizard","warlock","sorcerer","cleric","paladin",],
+      classes: ["bard","druid","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21673,7 +21674,7 @@ export default {
       expanded: "spell_protection_from_energy_expanded",
 
       type: "abjuration",
-      classes: ["wizard","sorcerer","druid","cleric","ranger",   "warlock","paladin","bard",],
+      classes: ["wizard","sorcerer","druid","cleric","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21718,7 +21719,7 @@ export default {
       expanded: "spell_revivify_expanded",
 
       type: "necromancy",
-      classes: ["druid","cleric","paladin","ranger",     "wizard","warlock","sorcerer","druid","bard",],
+      classes: ["druid","cleric","paladin","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21763,7 +21764,7 @@ export default {
       expanded: "spell_sleet_storm_expanded",
 
       type: "conjuration",
-      classes: ["wizard","sorcerer","druid",     "cleric","ranger","warlock","paladin","bard",],
+      classes: ["wizard","sorcerer","druid",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21809,7 +21810,7 @@ export default {
       expanded: "spell_slow_expanded",
 
       type: "transmutation",
-      classes: ["wizard","sorcerer",    "warlock","druid","cleric","paladin","bard","ranger",],
+      classes: ["wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21855,7 +21856,7 @@ export default {
       expanded: "spell_speak_with_dead_expanded",
 
       type: "necromancy",
-      classes: ["bard","wizard","cleric",     "paladin","ranger","warlock","sorcerer","druid","druid",],
+      classes: ["bard","wizard","cleric",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21900,7 +21901,7 @@ export default {
       expanded: "spell_speak_with_plants_expanded",
 
       type: "transmutation",
-      classes: ["druid","bard","ranger",     "wizard","sorcerer","warlock","cleric","paladin",],
+      classes: ["druid","bard","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21945,7 +21946,7 @@ export default {
       expanded: "spell_spirit_guardians_expanded",
 
       type: "conjuration",
-      classes: ["paladin",     "wizard","sorcerer","druid","ranger","warlock","cleric","bard",],
+      classes: ["paladin",],
 
       cast_time: "action",
       cast_duration: null,
@@ -21997,7 +21998,7 @@ export default {
       expanded: "spell_stinking_cloud_expanded",
 
       type: "conjuration",
-      classes: ["bard","wizard","sorcerer",     "druid","cleric","paladin","ranger","warlock",],
+      classes: ["bard","wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22043,7 +22044,7 @@ export default {
       expanded: "spell_water_walk_expanded",
 
       type: "transmutation",
-      classes: ["wizard","sorcerer",    "druid","cleric","paladin","bard","warlock","ranger",],
+      classes: ["wizard","sorcerer",],
 
       cast_time: "action_plus10min",
       cast_duration: 1,
@@ -22088,7 +22089,7 @@ export default {
       expanded: "spell_wind_wall_expanded",
 
       type: "evocation",
-      classes: ["druid","ranger",     "wizard","sorcerer","cleric","warlock","paladin","bard",],
+      classes: ["druid","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22139,7 +22140,7 @@ export default {
       expanded: "spell_arcane_eye_expanded",
 
       type: "divination",
-      classes: ["wizard",      "sorcerer","ranger","druid","cleric","paladin","bard","warlock",],
+      classes: ["wizard",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22186,7 +22187,7 @@ export default {
       expanded: "spell_aura_of_life_expanded",
 
       type: "abjuration",
-      classes: ["cleric","paladin",     "bard","druid","wizard","warlock","sorcerer","ranger"],
+      classes: ["cleric","paladin",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22231,7 +22232,7 @@ export default {
       expanded: "spell_banishment_expanded",
 
       type: "abjuration",
-      classes: ["wizard","cleric","warlock","paladin","sorcerer",      "druid","bard","ranger",],
+      classes: ["wizard","cleric","warlock","paladin","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22283,7 +22284,7 @@ export default {
       expanded: "spell_grasping_vine_expanded",
 
       type: "conjuration",
-      classes: ["druid","ranger",      "bard","wizard","cleric","warlock","paladin","sorcerer",],
+      classes: ["druid","ranger",],
 
       cast_time: "bonus_action",
       cast_duration: null,
@@ -22330,7 +22331,7 @@ export default {
       expanded: "spell_confusion_expanded",
 
       type: "enchantment",
-      classes: ["druid","bard","wizard","sorcerer",      "cleric","warlock","paladin","ranger",],
+      classes: ["druid","bard","wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22382,7 +22383,7 @@ export default {
       expanded: "spell_control_water_expanded",
 
       type: "transmutation",
-      classes: ["wizard","cleric","druid",       "warlock","paladin","sorcerer","bard","ranger",],
+      classes: ["wizard","cleric","druid",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22429,7 +22430,7 @@ export default {
       expanded: "spell_death_ward_expanded",
 
       type: "abjuration",
-      classes: ["cleric","paladin",     "sorcerer","warlock","wizard","druid","bard","ranger",],
+      classes: ["cleric","paladin",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22476,7 +22477,7 @@ export default {
       expanded: "spell_dimension_door_expanded",
 
       type: "conjuration",
-      classes: ["bard","wizard","warlock","sorcerer",       "ranger","paladin","druid","cleric",],
+      classes: ["bard","wizard","warlock","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22522,7 +22523,7 @@ export default {
       expanded: "spell_dominate_beast_expanded",
 
       type: "enchantment",
-      classes: ["druid","ranger","sorcerer",     "bard","wizard","cleric","paladin","warlock","druid",],
+      classes: ["druid","ranger","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22571,7 +22572,7 @@ export default {
       expanded: "spell_freedom_of_movement_expanded",
 
       type: "abjuration",
-      classes: ["druid","cleric","bard","ranger",      "wizard","warlock","sorcerer","paladin",],
+      classes: ["druid","cleric","bard","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22617,7 +22618,7 @@ export default {
       expanded: "spell_guardian_of_faith_expanded",
 
       type: "conjuration",
-      classes: ["cleric",      "bard","ranger","wizard","warlock","sorcerer","paladin","druid",],
+      classes: ["cleric",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22663,7 +22664,7 @@ export default {
       expanded: "spell_ice_storm_expanded",
 
       type: "evocation",
-      classes: ["wizard","druid","sorcerer",    "cleric","bard","ranger","warlock","paladin",],
+      classes: ["wizard","druid","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22718,7 +22719,7 @@ export default {
       expanded: "spell_locate_creature_expanded",
 
       type: "divination",
-      classes: ["bard","druid","wizard","cleric","paladin","ranger",     "warlock","sorcerer",],
+      classes: ["bard","druid","wizard","cleric","paladin","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22764,7 +22765,7 @@ export default {
       expanded: "spell_polymorph_expanded",
 
       type: "transmutation",
-      classes: ["druid","bard","sorcerer","wizard",       "ranger","warlock","paladin","cleric",],
+      classes: ["druid","bard","sorcerer","wizard",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22810,7 +22811,7 @@ export default {
       expanded: "spell_stone_shape_expanded",
 
       type: "transmutation",
-      classes: ["wizard","cleric","druid",       "warlock","paladin","sorcerer","bard","ranger",],
+      classes: ["wizard","cleric","druid",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22857,7 +22858,7 @@ export default {
       expanded: "spell_stoneskin_expanded",
 
       type: "abjuration",
-      classes: ["druid","wizard","sorcerer","ranger",     "cleric","paladin","bard","warlock",],
+      classes: ["druid","wizard","sorcerer","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22904,7 +22905,7 @@ export default {
       expanded: "spell_wall_of_fire_expanded",
 
       type: "evocation",
-      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+      classes: ["druid","wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -22961,7 +22962,7 @@ export default {
       expanded: "spell_commune_expanded",
 
       type: "divination",
-      classes: ["cleric",      "druid","ranger","paladin","bard","wizard","warlock","sorcerer"],
+      classes: ["cleric",],
 
       cast_time: "ritual_plus10min",
       cast_duration: 1,
@@ -23007,7 +23008,7 @@ export default {
       expanded: "spell_commune_with_nature_expanded",
 
       type: "divination",
-      classes: ["druid","ranger",       "cleric","paladin","bard","wizard","warlock","sorcerer"],
+      classes: ["druid","ranger",],
 
       cast_time: "ritual_plus10min",
       cast_duration: 1,
@@ -23053,7 +23054,7 @@ export default {
       expanded: "spell_cone_of_cold_expanded",
 
       type: "evocation",
-      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+      classes: ["druid","wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23105,7 +23106,7 @@ export default {
       expanded: "spell_destructive_wave_expanded",
 
       type: "evocation",
-      classes: ["paladin",     "cleric","druid","wizard","sorcerer","ranger","paladin","bard","warlock",],
+      classes: ["paladin",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23163,7 +23164,7 @@ export default {
       expanded: "spell_dominate_person_expanded",
 
       type: "enchantment",
-      classes: ["bard","wizard","sorcerer",     "cleric","paladin","druid","ranger","warlock","druid",],
+      classes: ["bard","wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23213,7 +23214,7 @@ export default {
       expanded: "spell_flame_strike_expanded",
 
       type: "evocation",
-      classes: ["cleric",     "druid","wizard","sorcerer","ranger","paladin","bard","warlock",],
+      classes: ["cleric",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23275,7 +23276,7 @@ export default {
       expanded: "spell_hold_monster_expanded",
 
       type: "enchantment",
-      classes: ["bard","wizard","warlock","sorcerer",        "druid","cleric","ranger","paladin",],
+      classes: ["bard","wizard","warlock","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23326,7 +23327,7 @@ export default {
       expanded: "spell_insect_plague_expanded",
 
       type: "transmutation",
-      classes: ["wizard","cleric","druid",       "warlock","paladin","sorcerer","bard","ranger",],
+      classes: ["wizard","cleric","druid",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23379,7 +23380,7 @@ export default {
       expanded: "spell_legend_lore_expanded",
 
       type: "divination",
-      classes: ["bard","wizard","cleric",      "druid","ranger","paladin","warlock","sorcerer"],
+      classes: ["bard","wizard","cleric",],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -23426,7 +23427,7 @@ export default {
       expanded: "spell_mass_cure_wounds_expanded",
 
       type: "evocation",
-      classes: ["bard","druid","cleric",       "wizard","warlock","paladin","sorcerer","ranger",],
+      classes: ["bard","druid","cleric",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23479,7 +23480,7 @@ export default {
       expanded: "spell_modify_memory_expanded",
 
       type: "enchantment",
-      classes: ["bard","wizard",     "cleric","paladin","druid","ranger","warlock","sorcerer","druid",],
+      classes: ["bard","wizard",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23530,7 +23531,7 @@ export default {
       expanded: "spell_passwall_expanded",
 
       type: "transmutation",
-      classes: ["wizard",      "druid","ranger","cleric","paladin","bard","warlock","sorcerer"],
+      classes: ["wizard",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23578,7 +23579,7 @@ export default {
       expanded: "spell_raise_dead_expanded",
 
       type: "necromancy",
-      classes: ["bard","cleric","paladin",      "druid","ranger","wizard","warlock","sorcerer","druid",],
+      classes: ["bard","cleric","paladin",],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -23625,7 +23626,7 @@ export default {
       expanded: "spell_scrying_expanded",
 
       type: "divination",
-      classes: ["bard","wizard","druid","cleric","warlock",      "ranger","paladin","sorcerer"],
+      classes: ["bard","wizard","druid","cleric","warlock",],
 
       cast_time: "ritual",
       cast_duration: 10,
@@ -23673,7 +23674,7 @@ export default {
       expanded: "spell_tree_stride_expanded",
 
       type: "conjuration",
-      classes: ["druid","ranger",    "cleric","paladin","bard","wizard","warlock","sorcerer"],
+      classes: ["druid","ranger",],
 
       cast_time: "action",
       cast_duration: null,
@@ -23721,7 +23722,7 @@ export default {
       expanded: "spell_wall_of_stone_expanded",
 
       type: "evocation",
-      classes: ["druid","wizard","sorcerer",        "ranger","cleric","paladin","bard","warlock",],
+      classes: ["druid","wizard","sorcerer",],
 
       cast_time: "action",
       cast_duration: null,
