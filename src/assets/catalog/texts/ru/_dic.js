@@ -5795,4 +5795,8 @@ export default {
   spell_cloudkill: spells.cloudkill,
   spell_cloudkill_details: spells.cloudkill_details,
   spell_cloudkill_expanded: spells.cloudkill_expanded,
+
+  spell_seeming: spells.seeming,
+  spell_seeming_details: spells.seeming_details,
+  spell_seeming_expanded: spells.seeming_expanded,
 };  

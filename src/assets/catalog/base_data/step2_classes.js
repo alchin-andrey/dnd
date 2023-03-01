@@ -7014,7 +7014,7 @@ export default {
             settings: [
               {
                 type: "spells",
-                position: 4,
+                position: 3,
                 name: "spells",
                 select: [
                   2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
@@ -7073,11 +7073,11 @@ export default {
                     name_set: spells.dominate_person[5].name,
                     spells: [{ level: 9, spell: spells.dominate_person,}],
                   },
-                  // {
-                  //   level: 9,
-                  //   name_set: spells.seeming[5].name,
-                  //   spells: [{ level: 9, spell: spells.seeming,}],
-                  // },
+                  {
+                    level: 9,
+                    name_set: spells.seeming[5].name,
+                    spells: [{ level: 9, spell: spells.seeming,}],
+                  },
                 ],
               },
             ],
@@ -7176,7 +7176,7 @@ export default {
             settings: [
               {
                 type: "spells",
-                position: 4,
+                position:3,
                 name: "spells",
                 select: [
                   2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
@@ -7322,7 +7322,7 @@ export default {
             settings: [
               {
                 type: "spells",
-                position: 4,
+                position: 3,
                 name: "spells",
                 select: [
                   2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,

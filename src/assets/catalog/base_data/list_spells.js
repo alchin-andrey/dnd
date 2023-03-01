@@ -24044,6 +24044,55 @@ export default {
     },
   ],
 
+  seeming: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_seeming",
+      details: "spell_seeming_details",
+      expanded: "spell_seeming_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+      as_ritual: true,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    },
+  ],
+
   raise_dead: [
     {},
     {},
