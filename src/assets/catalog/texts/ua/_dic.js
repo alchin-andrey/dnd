@@ -3423,6 +3423,7 @@ export default {
   talisman_details:
     "Коли власник провалює перевірку здібності, він може додати до кидка d4, потенційно перетворивши кидок на успіх. Цю перевагу можна використовувати кількість разів, що дорівнює вашому бонусу майстерності, і всі використані використання відновлюються, коли ви закінчуєте тривалий відпочинок. Якщо ви втратите талісман, ви можете провести церемонію тривалістю в годину, щоб отримати заміну від свого покровителя. Цей обряд можна проводити під час короткого чи тривалого відпочинку, і він руйнує попередній амулет. Коли ви вмираєте, талісман перетворюється на попіл.",
   talisman_slots: "Допомога талісмана",
+  talisman_slot: "1× Допомога талісмана",
 
   fey_presence_slots: "Фейська зовнішність",
   fey_presence_slot: "1× Фейська зовнішність",
@@ -5830,4 +5831,16 @@ export default {
   spell_compulsion_warlock: spells.compulsion_warlock,
   spell_compulsion_warlock_details: spells.compulsion_warlock_details,
   spell_compulsion_warlock_expanded: spells.compulsion_warlock_expanded,
+
+  spell_help_of_talisman_warlock: spells.help_of_talisman_warlock,
+  spell_help_of_talisman_warlock_details: spells.help_of_talisman_warlock_details,
+  spell_help_of_talisman_warlock_expanded: spells.help_of_talisman_warlock_expanded,
+
+  spell_create_talisman_warlock: spells.create_talisman_warlock,
+  spell_create_talisman_warlock_details: spells.create_talisman_warlock_details,
+  spell_create_talisman_warlock_expanded: spells.create_talisman_warlock_expanded,
+
+  condition_pact_of_the_chain: "Умова: Пакт Ланцюга",
+  condition_pact_of_the_tome: "Умова: Пакт Гримуара",
+  condition_pact_of_the_blade: "Умова: Пакт Клинка",
 };

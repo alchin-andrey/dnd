@@ -3434,6 +3434,7 @@ export default {
   talisman_details:
     "Когда владелец проваливает проверку способности, он может добавить к броску d4, потенциально превратив бросок в успех. єто преимущество можно использовать число раз, равное вашему бонусу мастерства, и все израсходованньіе использования восстанавливаются, когда вьі заканчиваете продолжительньій отдьіх. Если вьі потеряете талисман, вьі можете провести часовую церемонию, чтобьі получить замену от своего покровителя. єтот обряд можно проводить во время короткого или продолжительного отдьіха, и он разрушает предьідущий амулет. Когда вьі умираете, талисман превращается в пепел.",
   talisman_slots: "Помощь талисмана",
+  talisman_slot: "1× Помощь талисмана",
 
   fey_presence_slots: "Фейская внешность",
   fey_presence_slot: "1× Фейская внешность",
@@ -5843,4 +5844,17 @@ export default {
   spell_compulsion_warlock: spells.compulsion_warlock,
   spell_compulsion_warlock_details: spells.compulsion_warlock_details,
   spell_compulsion_warlock_expanded: spells.compulsion_warlock_expanded,
+
+  spell_help_of_talisman_warlock: spells.help_of_talisman_warlock,
+  spell_help_of_talisman_warlock_details: spells.help_of_talisman_warlock_details,
+  spell_help_of_talisman_warlock_expanded: spells.help_of_talisman_warlock_expanded,
+
+  spell_create_talisman_warlock: spells.create_talisman_warlock,
+  spell_create_talisman_warlock_details: spells.create_talisman_warlock_details,
+  spell_create_talisman_warlock_expanded: spells.create_talisman_warlock_expanded,
+
+  condition_pact_of_the_chain: "Требование: Пакт Цепи",
+  condition_pact_of_the_tome: "Требование: Пакт Гримуара",
+  condition_pact_of_the_blade: "Требование: Пакт Клинка",
+
 };  

@@ -7594,6 +7594,17 @@ export default {
                 inventory: [[items.talisman, 1]],
               },
             ],
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.help_of_talisman_warlock,
+              },
+              {
+                level: 3,
+                spell: spells.create_talisman_warlock,
+              },
+            ],
           },
         ],
       },
@@ -7639,20 +7650,7 @@ export default {
               },
             ],
           },
-          {
-            level: 2,
-            condition: "pact_of_the_chain",
-            name: "voice_of_the_chain_master",
-
-            fines: [
-              {
-                level: 2,
-                type: "plus",
-                keyword: "able_to_speak",
-                details: "through_familiar",
-              },
-            ],
-          },
+          
           {
             level: 2,
             name: "armor_of_shadows",
@@ -7694,18 +7692,6 @@ export default {
               {
                 level: 2,
                 spell: spells.speak_with_animals_warlock,
-              },
-            ],
-          },
-          {
-            level: 2,
-            condition: "pact_of_the_tome",
-            name: "book_of_antient_secrets",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.learn_ritual,
               },
             ],
           },
@@ -7805,14 +7791,52 @@ export default {
             ],
           },
           {
+            level: 2,
+            condition: "condition_pact_of_the_tome",
+            name: "book_of_antient_secrets",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.learn_ritual,
+              },
+            ],
+          },
+          {
+            level: 2,
+            condition: "condition_pact_of_the_chain",
+            name: "voice_of_the_chain_master",
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "able_to_speak",
+                details: "through_familiar",
+              },
+            ],
+          },
+          {
             level: 5,
-            condition: "pact_of_the_blade",
+            condition: "condition_pact_of_the_blade",
             name: "thirsting_blade",
 
             spells: [
               {
                 level: 5,
                 spell: spells.extra_attack_warlock,
+              },
+            ],
+          },
+          {
+            level: 12,
+            condition: "condition_pact_of_the_blade",
+            name: "lifedrinker",
+
+            spells: [
+              {
+                level: 12,
+                spell: spells.lifedrinker,
               },
             ],
           },
@@ -7933,18 +7957,6 @@ export default {
             ],
           },
           {
-            level: 12,
-            condition: "pact_of_the_blade",
-            name: "lifedrinker",
-
-            spells: [
-              {
-                level: 12,
-                spell: spells.lifedrinker,
-              },
-            ],
-          },
-          {
             level: 15,
             name: "witch_sight",
 
@@ -7995,7 +8007,7 @@ export default {
           // Не каноничньіе, как оказалось
           // {
           //   level: 2,
-          //   condition: "pact_of_the_tome",
+          //   condition: "condition_pact_of_the_tome",
           //   name: "aspect_of_the_moon",
 
           //   fines: [
@@ -8013,7 +8025,7 @@ export default {
           // },
           // {
           //   level: 2,
-          //   condition: "pact_of_the_chain",
+          //   condition: "condition_pact_of_the_chain",
           //   name: "gift_of_the_ever_living_ones",
 
           //   fines: [
@@ -8026,7 +8038,7 @@ export default {
           // },
           // {
           //   level: 2,
-          //   condition: "pact_of_the_chain",
+          //   condition: "condition_pact_of_the_chain",
           //   name: "investment_of_the_chain_master",
 
           //   spells: [
@@ -8050,7 +8062,7 @@ export default {
           // },
           // {
           //   level: 2,
-          //   condition: "pact_of_the_talisman",
+          //   condition: "condition_pact_of_the_talisman",
           //   name: "rebuke_of_the_talisman",
 
           //   spells: [

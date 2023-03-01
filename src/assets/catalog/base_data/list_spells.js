@@ -13360,8 +13360,8 @@ export default {
       details: "spell_conjure_elemental_warlock_details",
       expanded: "spell_conjure_elemental_warlock_expanded",
 
-      type: "conjuration",
-      classes: ["wizard","druid",],
+      type: "ability",
+      classes: ["warlock",],
 
       cast_time: "ritual",
       cast_duration: 1,
@@ -13407,8 +13407,8 @@ export default {
       details: "spell_bestow_curse_warlock_details",
       expanded: "spell_bestow_curse_warlock_expanded",
 
-      type: "transmutation",
-      classes: ["wizard","bard","cleric"],
+      type: "ability",
+      classes: ["warlock"],
 
       cast_time: "action",
       cast_duration: null,
@@ -13455,8 +13455,8 @@ export default {
       details: "spell_compulsion_warlock_details",
       expanded: "spell_compulsion_warlock_expanded",
 
-      type: "enchantment",
-      classes: ["bard",],
+      type: "ability",
+      classes: ["warlock",],
 
       cast_time: "action",
       cast_duration: null,
@@ -13488,6 +13488,93 @@ export default {
 
       saving_need: true,
       saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  help_of_talisman_warlock: [
+    {
+      name: "spell_help_of_talisman_warlock",
+      details: "spell_help_of_talisman_warlock_details",
+      expanded: "spell_help_of_talisman_warlock_expanded",
+
+      type: "ability",
+      slot_type: "talisman_slot",
+      classes: ["warlock",],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "bonus",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 4,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  create_talisman_warlock: [
+    {
+      name: "spell_create_talisman_warlock",
+      details: "spell_create_talisman_warlock_details",
+      expanded: "spell_create_talisman_warlock_expanded",
+
+      type: "ability",
+      classes: ["warlock",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],
