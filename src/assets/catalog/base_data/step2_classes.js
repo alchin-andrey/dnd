@@ -7047,7 +7047,6 @@ export default {
                     name_set: spells.calm_emotions[2].name,
                     spells: [{ level: 3, spell: spells.calm_emotions,}],
                   },
-                  //TODO - Додати спеллс
                   {
                     level: 5,
                     name_set: spells.blink[3].name,
@@ -7209,7 +7208,6 @@ export default {
                     name_set: spells.scorching_ray[2].name,
                     spells: [{ level: 3, spell: spells.scorching_ray,}],
                   },
-                  //TODO - Додати спеллс
                   {
                     level: 5,
                     name_set: spells.stinking_cloud[3].name,
@@ -7225,21 +7223,21 @@ export default {
                     name_set: spells.wall_of_fire[4].name,
                     spells: [{ level: 7, spell: spells.wall_of_fire,}],
                   },
-                  // {
-                  //   level: 7,
-                  //   name_set: spells.fire_shield[4].name,
-                  //   spells: [{ level: 7, spell: spells.fire_shield,}],
-                  // },
+                  {
+                    level: 7,
+                    name_set: spells.fire_shield[4].name,
+                    spells: [{ level: 7, spell: spells.fire_shield,}],
+                  },
                   {
                     level: 9,
                     name_set: spells.flame_strike[5].name,
                     spells: [{ level: 9, spell: spells.flame_strike,}],
                   },
-                  // {
-                  //   level: 9,
-                  //   name_set: spells.hallow[5].name,
-                  //   spells: [{ level: 9, spell: spells.hallow,}],
-                  // },
+                  {
+                    level: 9,
+                    name_set: spells.hallow[5].name,
+                    spells: [{ level: 9, spell: spells.hallow,}],
+                  },
                 ],
               },
             ],
@@ -7356,36 +7354,36 @@ export default {
                     spells: [{ level: 3, spell: spells.detect_thoughts,}],
                   },
                   //TODO - Додати спеллс
-                  // {
-                  //   level: 5,
-                  //   name_set: spells.clairvoyance[3].name,
-                  //   spells: [{ level: 5, spell: spells.clairvoyance,}],
-                  // },
-                  // {
-                  //   level: 5,
-                  //   name_set: spells.sending[3].name,
-                  //   spells: [{ level: 5, spell: spells.sending,}],
-                  // },
+                  {
+                    level: 5,
+                    name_set: spells.clairvoyance[3].name,
+                    spells: [{ level: 5, spell: spells.clairvoyance,}],
+                  },
+                  {
+                    level: 5,
+                    name_set: spells.sending[3].name,
+                    spells: [{ level: 5, spell: spells.sending,}],
+                  },
                   {
                     level: 7,
                     name_set: spells.dominate_beast[4].name,
                     spells: [{ level: 7, spell: spells.dominate_beast,}],
                   },
-                  // {
-                  //   level: 7,
-                  //   name_set: spells.evards_black_tentacles[4].name,
-                  //   spells: [{ level: 7, spell: spells.evards_black_tentacles,}],
-                  // },
+                  {
+                    level: 7,
+                    name_set: spells.evards_black_tentacles[4].name,
+                    spells: [{ level: 7, spell: spells.evards_black_tentacles,}],
+                  },
                   {
                     level: 9,
                     name_set: spells.dominate_person[5].name,
                     spells: [{ level: 9, spell: spells.dominate_person,}],
                   },
-                  // {
-                  //   level: 9,
-                  //   name_set: spells.telekinesis[5].name,
-                  //   spells: [{ level: 9, spell: spells.telekinesis,}],
-                  // },
+                  {
+                    level: 9,
+                    name_set: spells.telekinesis[5].name,
+                    spells: [{ level: 9, spell: spells.telekinesis,}],
+                  },
                 ],
               },
             ],
@@ -7824,13 +7822,13 @@ export default {
             name: "sign_of_ill_omen",
 
             //TODO - додати Bestow Curse
-            // spells: [
-            //   {
-            //     level: 5,
-            //     spell: spells.bestow_curse,
-            //     //Вьі можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вьі не можете сделать єто повторно, пока не окончите продолжительньій отдьіх.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 5,
+                spell: spells.bestow_curse,
+                //Вьі можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вьі не можете сделать єто повторно, пока не окончите продолжительньій отдьіх.
+              },
+            ],
           },
           {
             level: 5,
@@ -7864,7 +7862,7 @@ export default {
             //   {
             //     level: 7,
             //     spell: spells.compulsion,
-            //     // Вьі можете один раз сотворить заклинание принуждение [compulsion], используя ячейку заклинаний колдуна. Вьі не можете сделать єто повторно, пока не окончите продолжительньій отдьіх.
+            //     // Вьі можете один раз сотворить заклинание принуждение, используя ячейку заклинаний колдуна. Вьі не можете сделать єто повторно, пока не окончите продолжительньій отдьіх.
             //   },
             // ],
           },

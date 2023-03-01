@@ -5741,7 +5741,7 @@ export default {
   spell_passwall_details: spells.passwall_details,
   spell_passwall_expanded: spells.passwall_expanded,
 
-  material_incense_25gold: "пахожі та підношення за 25+ 🟡 (застосовано)",
+  material_incense_25gold: "пахожі та підношення за 25+ 🟡 ( витрачається )",
 
   spell_dream: spells.dream,
   spell_dream_details: spells.dream_details,
@@ -5786,4 +5786,40 @@ export default {
   spell_seeming: spells.seeming,
   spell_seeming_details: spells.seeming_details,
   spell_seeming_expanded: spells.seeming_expanded,
+
+  spell_fire_shield: spells.fire_shield,
+  spell_fire_shield_details: spells.fire_shield_details,
+  spell_fire_shield_expanded: spells.fire_shield_expanded,
+
+  material_incense_1000gold: "травы, масла и благовония за 1000+ 🟡 ( витрачається )",
+
+  spell_hallow: spells.hallow,
+  spell_hallow_details: spells.hallow_details,
+  spell_hallow_expanded: spells.hallow_expanded,
+
+  material_focus_100gold:"Фокус за 100+ 🟡",
+
+  spell_clairvoyance: spells.clairvoyance,
+  spell_clairvoyance_details: spells.clairvoyance_details,
+  spell_clairvoyance_expanded: spells.clairvoyance_expanded,
+
+  spell_sending: spells.sending,
+  spell_sending_details: spells.sending_details,
+  spell_sending_expanded: spells.sending_expanded,
+
+  spell_evards_black_tentacles: spells.evards_black_tentacles,
+  spell_evards_black_tentacles_details: spells.evards_black_tentacles_details,
+  spell_evards_black_tentacles_expanded: spells.evards_black_tentacles_expanded,
+
+  spell_telekinesis: spells.telekinesis,
+  spell_telekinesis_details: spells.telekinesis_details,
+  spell_telekinesis_expanded: spells.telekinesis_expanded,
+
+  spell_bestow_curse: spells.bestow_curse,
+  spell_bestow_curse_details: spells.bestow_curse_details,
+  spell_bestow_curse_expanded: spells.bestow_curse_expanded,
+
+  spell_bestow_curse_warlock: spells.bestow_curse_warlock,
+  spell_bestow_curse_warlock_details: spells.bestow_curse_warlock_details,
+  spell_bestow_curse_warlock_expanded: spells.bestow_curse_warlock_expanded,
 };
