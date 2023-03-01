@@ -829,9 +829,9 @@ export default {
 		},
 
 		Dur_10_8_8_24_Nul() {
-			let num = this.Spell_Index.spell_duration;
+			// let num = this.Spell_Index.spell_duration;
 			let mana = this.Mana_Numb - this.Index;
-			if (mana == 0) return num;
+			if (mana == 0) return 1;
 			if (mana == 1) return 10;
 			if (mana == 2) return 8;
 			if (mana == 3) return 8;
