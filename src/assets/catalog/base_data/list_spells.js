@@ -13420,9 +13420,9 @@ export default {
 
       parts: ["touch","somatic","verbal"],
 
-      spell_time: "concentration",
-      spell_duration: 1,
-      spell_duration_units: "min",
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_aoe: null,
@@ -13443,6 +13443,53 @@ export default {
     },
     {},
     {},
+  ],
+
+  compulsion_warlock: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_compulsion_warlock",
+      details: "spell_compulsion_warlock_details",
+      expanded: "spell_compulsion_warlock_expanded",
+
+      type: "enchantment",
+      classes: ["bard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
   ],
 
   // NOTE - Spells [0]
@@ -21160,9 +21207,9 @@ export default {
 
       parts: ["touch","somatic","verbal"],
 
-      spell_time: "concentration",
-      spell_duration: 1,
-      spell_duration_units: "min",
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
 
       aim_need: false,
       aim_aoe: null,
@@ -22725,15 +22772,15 @@ export default {
 
       aim_need: false,
 
-      aim_aoe: null,
-      aim_aoe_size: null,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
 
-      impact_type: "aim_aoe",
-      impact_damage_type: "sphere",
+      impact_type: null,
+      impact_damage_type: null,
 
-      impact_size_foo: "Feet__Num_Plus_10",
+      impact_size_foo: null,
       impact_size_str: null,
-      impact_size_num: 20,
+      impact_size_num: null,
       impact_size_dic: null,
       impact_size_pls: null,
 
