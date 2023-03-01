@@ -9,8 +9,12 @@
 			selection_card_active: get_Active,
 			link: link,
       copy_card: copy,
+      blue_card: download,
 		}"
 	>
+  <div v-if="download" class="copy_icon">
+    <img src="@/assets/img/icon/download.svg" />
+  </div>
 		<div v-if="copy" class="copy_icon">
 			<transition name="mode-fade" mode="out-in">
 				<svg
@@ -56,9 +60,13 @@ export default {
 			default: false,
 		},
 		copied: {
-			type: Boolean,
+      type: Boolean,
 			default: false,
 		},
+    download: {
+      type: Boolean,
+      default: false,
+    },
 		link: {
 			type: Boolean,
 			default: false,
@@ -119,6 +127,13 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 26px;
+}
+
+.blue_card {
+	background: #0047FF;
+}
+.blue_card:hover {
+	background: #0047FF;
 }
 
 .no_blur {

@@ -1,7 +1,11 @@
 <template>
 	<Transition duration="550" name="nested">
 		<div class="dialog" v-if="show" @click="hideDialog">
-			<div @click.stop class="dialog__wrapp int-400">
+			<div 
+      @click.stop 
+      class="dialog__wrapp int-400" 
+      :class="{dialog__finish: finish}"
+      >
 				<div class="dialog__content">
 					<slot></slot>
 				</div>
@@ -22,6 +26,10 @@ export default {
 			type: Number,
 			default: null,
 		},
+		finish: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	methods: {
 		hideDialog() {
@@ -41,7 +49,7 @@ export default {
 	padding: 4px;
 	background: rgba(0, 0, 0, 0.8);
 	position: fixed;
-	z-index: 100;
+	z-index: 1000;
 	cursor: pointer;
 	/* display: inline-block; */
 	/* text-align: end; */
@@ -53,11 +61,16 @@ export default {
 	background: #1c2326;
 	border-radius: 12px;
 	width: 396px;
-	z-index: 100;
+	z-index: 1001;
 	cursor: auto;
 	overflow-y: scroll;
 	scrollbar-width: none;
 	max-height: 100%;
+}
+
+.dialog__finish {
+  margin: 0 auto;
+  width: 426px;
 }
 
 .dialog__wrapp::-webkit-scrollbar {

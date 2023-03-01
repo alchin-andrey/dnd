@@ -64,7 +64,7 @@
 						v-if="pages.alignment_page"
 
 						title="download_charsheet"
-						@click="goPage('alignment_page')"
+						@click="showDialog()"
 					></my-button>
 				</section>
 				<my-button-back
@@ -126,10 +126,17 @@
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
+  <my-dialog-spell v-model:show="dialogVisible" finish>
+    <!-- <div> -->
+    <div class="title-donat int-700">{{t("support_project")}}</div>
+    <Donate finish/>
+    <!-- </div> -->
+  </my-dialog-spell>
 </template>
 
 <script>
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
+import Donate from "@/components/Donate.vue";
 
 import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
 import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
@@ -158,6 +165,7 @@ export default {
   mixins: [MainApp],
 	components: {
 		WelcomeBanner,
+    Donate,
 
 		HeaderMenu,
 		HeaderSettings,
@@ -174,6 +182,12 @@ export default {
     AlignmentMenu,
     AlignmentSettings,
     AlignmentParameters,
+	},
+
+  data() {
+		return {
+			dialogVisible: false,
+		};
 	},
 
 	created() {
@@ -298,6 +312,10 @@ export default {
 		]),
 		...mapActions(useMYStore, ["getEthnos"]),
 
+    showDialog() {
+			this.dialogVisible = true;
+		},
+
 		getCreated() {
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
@@ -344,6 +362,14 @@ a {
 	-ms-user-select: none;
 	user-select: none;
 	overflow: hidden;
+}
+
+.title-donat {
+  margin-bottom: 21px;
+}
+
+.title-donat::first-letter {
+  text-transform: uppercase;
 }
 
 .relative {
