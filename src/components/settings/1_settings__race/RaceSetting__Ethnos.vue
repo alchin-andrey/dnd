@@ -1,6 +1,6 @@
 <template>
 	<div class="ethnos_attributes">
-		<!-- Этнос_stats + qualities -->
+		<!-- Ethnos_stats + qualities -->
 		<my-wrapper v-if="MY.race.stats || level_Filter_Arr(MY.race.qualities).length !== 0">
 			<AppStats
 				v-for="stat in MY.race.stats"
@@ -19,9 +19,9 @@
 					:plus="qual.type == 'bonus'"
 				/>
 		</my-wrapper>
-		<!-- Этнос_stats + qualities -->
+		<!-- Ethnos_stats + qualities -->
 
-    <!-- Этнос_Карточка_Charges -->
+    <!-- Ethnos_Charges -->
 			<my-wrapper v-if="charges_Race_Main_Arr.length !== 0">
 				<AppCharges
 					v-for="item in charges_Race_Main_Arr"
@@ -29,9 +29,9 @@
 					:charge="item"
 				/>
 			</my-wrapper>
-			<!-- Этнос_Карточка_Charges -->
+			<!-- Ethnos_Charges -->
 
-		<!-- Этнос_proficiencies -->
+		<!-- Ethnos_proficiencies -->
 		<my-wrapper v-if="MY.race.proficiencies">
 			<AppProficiencies
 				v-for="(val, name) in MY.race.proficiencies"
@@ -41,9 +41,9 @@
         param
 			/>
 		</my-wrapper>
-		<!-- Этнос_proficiencies -->
+		<!-- Ethnos_proficiencies -->
 
-		<!-- Этнос_fines -->
+		<!-- Ethnos_fines -->
 		<my-wrapper v-if="MY.race.fines" gap_8>
 			<AppFines
 				v-for="item in MY.race.fines"
@@ -51,8 +51,8 @@
 				:fines="item"
 			></AppFines>
 		</my-wrapper>
-		<!-- Этнос_fines -->
-		<!-- Этнос_spells -->
+		<!-- Ethnos_fines -->
+		<!-- Ethnos_spells -->
 		<my-wrapper v-if="shown_Spells_Race" gap_26>
 			<AppSpells
 				v-for="item in MY.race.spells"
@@ -60,12 +60,10 @@
 				:spell_obj="item"
 			/>
 		</my-wrapper>
-		<!-- Этнос_spells -->
+		<!-- Ethnos_spells -->
 	</div>
 
-	<!-- Этнос_Карточка -->
 	<EthnosCard />
-	<!-- Этнос_Карточка -->
 </template>
 
 <script>

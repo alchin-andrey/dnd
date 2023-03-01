@@ -1,5 +1,5 @@
 <template>
-	<!-- Левый бар -->
+	<!-- Left bar -->
 	<div class="sidebar_left">
 		<div class="main_chapter">
 			<HeaderMenu />
@@ -76,7 +76,7 @@
 		</div>
 	</div>
 
-	<!-- Выпадающее меню -->
+	<!-- Drop-down menu -->
 	<div class="sidebar_wrap" :class="{ sidebar_wrap_open: setting_open }">
 		<HeaderSettings />
 		<RaceSettings v-if="pages.race_page" />
@@ -85,7 +85,7 @@
 	</div>
 
 	<div class="stripe"></div>
-	<!-- Персонаж -->
+	<!-- Character -->
 
 	<div class="represent" @click="showHome()">
 		<transition name="fade-body">
@@ -112,7 +112,7 @@
 			</div>
 		</transition>
 	</div>
-	<!-- Персонаж -->
+	<!-- Character -->
 
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->

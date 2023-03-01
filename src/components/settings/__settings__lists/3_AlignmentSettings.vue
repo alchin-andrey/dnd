@@ -1,5 +1,4 @@
 <template>
-	<!-- Характеристики -->
 	<my-selection-box :shown="alignment_page.shown.alignment">
 		<AlignmentSett__Alignment />
 	</my-selection-box>

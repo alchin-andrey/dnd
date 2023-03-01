@@ -1,5 +1,4 @@
 <template>
-	<!-- Характеристики -->
 	<my-selection-box :shown="class_page.shown.stats">
 		<ClassSett__BaseStats />
 	</my-selection-box>

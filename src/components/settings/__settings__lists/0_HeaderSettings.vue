@@ -1,24 +1,24 @@
 <template>
-	<!-- Превью -->
+	<!-- Preview -->
 	<my-selection-box :shown="main_page.shown.logo">
 		<Description />
 	</my-selection-box>
-	<!-- Превью -->
+	<!-- Preview -->
 
-	<!-- Смена языка -->
+	<!-- Language change -->
 	<my-selection-box :shown="main_page.shown.lang">
 		<LangSetting />
 	</my-selection-box>
-	<!-- Смена языка -->
+	<!-- Language change -->
 
-	<!-- Уровень -->
+	<!-- Level -->
 	<my-selection-box :shown="main_page.shown.lvl">
 		<div class="flex_options">
 			<MyRange v-model.number="MY.level" lvl />
 			<MyRangeSize lvl />
 		</div>
 	</my-selection-box>
-	<!-- Уровень -->
+	<!-- Level -->
 </template>
 
 <script>

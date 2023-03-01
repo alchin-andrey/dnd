@@ -18,7 +18,7 @@
 				<RaceBody body_part="eyes" :ethnos_name="ethnos.name" />
 			</div>
 
-			<!-- Этнос_Карточка_stats + qualities -->
+			<!-- Ethnos_card_stats + qualities -->
 			<my-wrapper v-if="ethnos.stats || level_Filter_Arr(ethnos.qualities).length !== 0">
 				<AppStats
 					v-for="stat in ethnos.stats"
@@ -45,9 +45,9 @@
 				/>
 			</my-wrapper>
 
-			<!-- Этнос_Карточка_stats + qualities-->
+			<!-- Ethnos_card_stats + qualities-->
 
-			<!-- Этнос_Карточка_Charges -->
+			<!-- Ethnos_card_Charges -->
 			<my-wrapper v-if="level_Filter_Arr(ethnos.charges).length !== 0">
 				<AppCharges
 					v-for="item in level_Filter_Arr(ethnos.charges)"
@@ -55,9 +55,9 @@
 					:charge="item"
 				/>
 			</my-wrapper>
-			<!-- Этнос_Карточка_Charges -->
+			<!-- Ethnos_card_Charges -->
 
-			<!-- Этнос_Карточка_proficiencies -->
+			<!-- Ethnos_card_proficiencies -->
 			<my-wrapper v-if="ethnos.proficiencies">
 				<AppProficiencies
 					v-for="(val, name) in ethnos.proficiencies"
@@ -67,15 +67,15 @@
 					:active_card="MY.ethnos.name === ethnos.name"
 				/>
 			</my-wrapper>
-			<!-- Этнос_proficiencies -->
+			<!-- Ethnos_card_proficiencies -->
 
-			<!-- Этнос_Карточка_fines -->
+			<!-- Ethnos_card_fines -->
 			<my-wrapper v-if="ethnos.fines" gap_8>
 				<AppFines v-for="item in ethnos.fines" :key="item" :fines="item" />
 			</my-wrapper>
-			<!-- Этнос_Карточка_fines -->
+			<!-- Ethnos_card_fines -->
 
-			<!-- Этнос_Карточка_spells -->
+			<!-- Ethnos_card_spells -->
 			<my-wrapper v-if="level_Filter_Arr(ethnos.spells).length !== 0" gap_26>
 				<AppSpells
 					v-for="item in level_Filter_Arr(ethnos.spells)"
@@ -85,7 +85,7 @@
 					:active_card="MY.ethnos.name === ethnos.name"
 				/>
 			</my-wrapper>
-			<!-- Этнос_Карточка_spells -->
+			<!-- Ethnos_card_spells -->
 
 			<my-wrapper v-if="ethnos.settings">
 				<MyCusstomSetting
@@ -98,7 +98,7 @@
 				</MyCusstomSetting>
 			</my-wrapper>
 
-			<!-- Этнос_Карточка_текст -->
+			<!-- Ethnos_card_текст -->
 			<my-card-text
 				:title="ethnos.name"
 				:text="ethnos.details"
@@ -106,7 +106,7 @@
 			>
 			</my-card-text>
 		</my-selection-card>
-		<!-- Этнос_Карточка_текст -->
+		<!-- Ethnos_card_текст -->
 	</div>
 </template>
 
