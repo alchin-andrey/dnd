@@ -5835,4 +5835,12 @@ export default {
   spell_bestow_curse_warlock: spells.bestow_curse_warlock,
   spell_bestow_curse_warlock_details: spells.bestow_curse_warlock_details,
   spell_bestow_curse_warlock_expanded: spells.bestow_curse_warlock_expanded,
+
+  spell_compulsion: spells.compulsion,
+  spell_compulsion_details: spells.compulsion_details,
+  spell_compulsion_expanded: spells.compulsion_expanded,
+
+  spell_compulsion_warlock: spells.compulsion_warlock,
+  spell_compulsion_warlock_details: spells.compulsion_warlock_details,
+  spell_compulsion_warlock_expanded: spells.compulsion_warlock_expanded,
 };  
