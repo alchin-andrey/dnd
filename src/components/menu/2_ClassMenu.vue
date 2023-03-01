@@ -12,8 +12,9 @@
 
     <div class="selection_menu" v-if="shown_Spells">
       <AppSelectionArr :menu="spells_0_Filter"/>
+			<AppSelectionArr :menu="spells_1_Filter"/>
 			<AppSelectionArr :menu="spells_Filter"/>
-			<AppSelectionArr :menu="spells_Settings_Class_Arr"/>
+			<AppSelectionArr :menu="spells_Arcanum_Filter"/>
 		</div>
 
     <div class="selection_menu">
@@ -66,13 +67,23 @@ export default {
     filter_Setting: (stor) => (numb) => {
       return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);
 		},
+
+    filter_Setting_Spells: (stor) => (numb) => {
+      return stor.spells_Settings_Class_Arr.filter((item) => item.position == numb);
+		},
+
+
     subclass_Filter: (stor) => stor.filter_Setting(0),
     subclass_other_Filter: (stor) => stor.filter_Setting(1),
 
     other_Filter: (stor) => stor.filter_Setting(2),
 
     spells_0_Filter: (stor) => stor.filter_Setting(3),
-    spells_Filter: (stor) => stor.filter_Setting(4),
+    spells_1_Filter: (stor) => stor.filter_Setting(4),
+
+    spells_Filter: (stor) => stor.filter_Setting_Spells(3),
+    spells_Arcanum_Filter: (stor) => stor.filter_Setting_Spells(4),
+
 
     feats_Filter: (stor) => stor.filter_Setting(6),
     stats_Filter: (stor) => stor.filter_Setting(7),
@@ -88,6 +99,7 @@ export default {
     undefined_Filter: (stor) => stor.filter_Setting(undefined),
 
     shown_Subclass() {
+      console.log('this.spells_Settings_Class_Arr:', this.spells_Settings_Class_Arr)
       return this.subclass_Filter.length !== 0 ||
       this.subclass_other_Filter.length !== 0
     },
