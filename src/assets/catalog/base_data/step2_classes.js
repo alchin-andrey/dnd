@@ -6287,7 +6287,6 @@ export default {
                         level: 3,
                         spell: spells.spider_climb,
                       },
-                      //TODO - додати спели
                       {
                         level: 5,
                         spell: spells.call_lightning,
@@ -6296,10 +6295,10 @@ export default {
                         level: 5,
                         spell: spells.plant_growth,
                       },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.divination,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.divination,
+                      },
                       {
                         level: 7,
                         spell: spells.freedom_of_movement,
@@ -6327,7 +6326,6 @@ export default {
                         level: 3,
                         spell: spells.invisibility,
                       },
-                      //TODO - додати спели
                       {
                         level: 5,
                         spell: spells.daylight,
@@ -6336,18 +6334,18 @@ export default {
                         level: 5,
                         spell: spells.haste,
                       },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.divination,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.divination,
+                      },
                       {
                         level: 7,
                         spell: spells.freedom_of_movement,
                       },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.dream,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.dream,
+                      },
                       {
                         level: 9,
                         spell: spells.insect_plague,
@@ -6371,19 +6369,18 @@ export default {
                         level: 5,
                         spell: spells.protection_from_energy,
                       },
-                      //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.create_food_and_water,
-                      // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.hallucinatory_terrain,
-                      // },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.blight,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.create_food_and_water,
+                      },
+                      {
+                        level: 7,
+                        spell: spells.hallucinatory_terrain,
+                      },
+                      {
+                        level: 7,
+                        spell: spells.blight,
+                      },
                       {
                         level: 9,
                         spell: spells.wall_of_stone,
@@ -6407,11 +6404,10 @@ export default {
                         level: 3,
                         spell: spells.misty_step,
                       },
-                      //TODO - додати спели
-                      // {
-                      //   level: 5,
-                      //   spell: spells.water_breathing,
-                      // },
+                      {
+                        level: 5,
+                        spell: spells.water_breathing,
+                      },
                       {
                         level: 5,
                         spell: spells.water_walk,
@@ -6428,10 +6424,10 @@ export default {
                         level: 9,
                         spell: spells.scrying,
                       },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.conjure_elemental,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.conjure_elemental,
+                      },
                     ],
                   },
                   {
@@ -6447,7 +6443,6 @@ export default {
                         level: 3,
                         spell: spells.web,
                       },
-                      //TODO - додати спели
                       {
                         level: 5,
                         spell: spells.gaseous_form,
@@ -6456,10 +6451,10 @@ export default {
                         level: 5,
                         spell: spells.stinking_cloud,
                       },
-                      // {
-                      //   level: 7,
-                      //   spell: spells.greater_invisibility,
-                      // },
+                      {
+                        level: 7,
+                        spell: spells.greater_invisibility,
+                      },
                       {
                         level: 7,
                         spell: spells.stone_shape,
@@ -6468,10 +6463,10 @@ export default {
                         level: 9,
                         spell: spells.insect_plague,
                       },
-                      // {
-                      //   level: 9,
-                      //   spell: spells.cloudkill,
-                      // },
+                      {
+                        level: 9,
+                        spell: spells.cloudkill,
+                      },
                     ],
                   },
                 ],
@@ -7063,11 +7058,11 @@ export default {
                     name_set: spells.plant_growth[3].name,
                     spells: [{ level: 5, spell: spells.plant_growth,}],
                   },
-                  // {
-                  //   level: 7,
-                  //   name_set: spells.greater_invisibility[4].name,
-                  //   spells: [{ level: 7, spell: spells.greater_invisibility,}],
-                  // },
+                  {
+                    level: 7,
+                    name_set: spells.greater_invisibility[4].name,
+                    spells: [{ level: 7, spell: spells.greater_invisibility,}],
+                  },
                   {
                     level: 7,
                     name_set: spells.dominate_beast[4].name,
@@ -7933,14 +7928,13 @@ export default {
             level: 9,
             name: "minions_of_chaos",
 
-            //TODO - додати Conjure Elemental
-            // spells: [
-            //   {
-            //     level: 9,
-            //     spell: spells.conjure_elemental,
-            //     // Вьі можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вьі не можете сделать єто повторно, пока не окончите продолжительньій отдьіх.
-            //   },
-            // ],
+            spells: [
+              {
+                level: 9,
+                spell: spells.conjure_elemental_warlock,
+                // Вьі можете один раз сотворить заклинание, используя ячейку заклинаний колдуна. Вьі не можете сделать єто повторно, пока не окончите продолжительньій отдьіх.
+              },
+            ],
           },
           {
             level: 12,

@@ -13350,6 +13350,54 @@ export default {
     {},
   ],
 
+  conjure_elemental_warlock: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_conjure_elemental_warlock",
+      details: "spell_conjure_elemental_warlock_details",
+      expanded: "spell_conjure_elemental_warlock_expanded",
+
+      type: "conjuration",
+      classes: ["wizard","druid",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 10,
+
+      impact_type: "dangerness",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+  ],
+
   // NOTE - Spells [0]
 
   // All spells / 0 ----------------------------------------------------------
@@ -20902,7 +20950,6 @@ export default {
 
   // NOTE - Spells [3]
 
-  // TODO - Remove other classes!
   aura_of_vitality: [
     {},
     {},
@@ -21139,6 +21186,51 @@ export default {
     {},
     {},
     {},
+  ],
+
+  create_food_and_water: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_create_food_and_water",
+      details: "spell_create_food_and_water_details",
+      expanded: "spell_create_food_and_water_expanded",
+
+      type: "conjuration",
+      classes: ["cleric","paladin"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "up_to",
+      spell_duration: 24,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 15,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   crusaders_mantle: [
@@ -22034,6 +22126,51 @@ export default {
     },
   ],
 
+  water_breathing: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_water_breathing",
+      details: "spell_water_breathing_details",
+      expanded: "spell_water_breathing_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","sorcerer","druid","ranger"],
+
+      cast_time: "action_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   water_walk: [
     {},
     {},
@@ -22126,8 +22263,6 @@ export default {
   ],
 
   // NOTE - Spells [4]
-
-  // TODO - Remove other classes!
 
   arcane_eye: [
     {},
@@ -22265,6 +22400,58 @@ export default {
       saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  blight: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_blight",
+      details: "spell_blight_details",
+      expanded: "spell_blight_expanded",
+
+      type: "necromancy",
+      classes: ["wizard","druid","warlock","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "÷2",
     },
     {},
     {},
@@ -22512,6 +22699,53 @@ export default {
     },
   ],
 
+  divination: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_divination",
+      details: "spell_divination_details",
+      expanded: "spell_divination_expanded",
+
+      type: "divination",
+      classes: ["cleric","wizard","druid",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["material_incense_25gold","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   dominate_beast: [
     {},
     {},
@@ -22650,6 +22884,53 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+    },
+  ],
+
+  hallucinatory_terrain: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_hallucinatory_terrain",
+      details: "spell_hallucinatory_terrain_details",
+      expanded: "spell_hallucinatory_terrain_expanded",
+
+      type: "illustion",
+      classes: ["wizard","bard","druid","warlock"],
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 300,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 150,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
     },
   ],
 
@@ -22948,7 +23229,57 @@ export default {
 
   // NOTE - Spells [5]
 
-  // TODO - Remove other classes!
+  cloudkill: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_cloudkill",
+      details: "spell_cloudkill_details",
+      expanded: "spell_cloudkill_expanded",
+
+      type: "conjuration",
+      classes: ["wizard","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: "damage",
+      impact_damage_type: "poison_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
 
   commune: [
     {},
@@ -23094,6 +23425,58 @@ export default {
     {},
   ],
 
+  conjure_elemental: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_conjure_elemental",
+      details: "spell_conjure_elemental_details",
+      expanded: "spell_conjure_elemental_expanded",
+
+      type: "conjuration",
+      classes: ["wizard","druid",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 90,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 10,
+
+      impact_type: "dangerness",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
   destructive_wave: [
     {},
     {},
@@ -23202,6 +23585,53 @@ export default {
     {},
   ],
 
+  dream: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_dream",
+      details: "spell_dream_details",
+      expanded: "spell_dream_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard","warlock",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
   flame_strike: [
     {},
     {},
@@ -23262,6 +23692,53 @@ export default {
     {},
     {},
     {},
+  ],
+
+  greater_invisibility: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_greater_invisibility",
+      details: "spell_greater_invisibility_details",
+      expanded: "spell_greater_invisibility_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   hold_monster: [

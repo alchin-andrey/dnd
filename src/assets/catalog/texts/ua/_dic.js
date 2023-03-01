@@ -5741,4 +5741,45 @@ export default {
   spell_passwall_details: spells.passwall_details,
   spell_passwall_expanded: spells.passwall_expanded,
 
+  material_incense_25gold: "пахожі та підношення за 25+ 🟡 (застосовано)",
+
+  spell_dream: spells.dream,
+  spell_dream_details: spells.dream_details,
+  spell_dream_expanded: spells.dream_expanded,
+
+  spell_divination: spells.divination,
+  spell_divination_details: spells.divination_details,
+  spell_divination_expanded: spells.divination_expanded,
+
+  spell_greater_invisibility: spells.greater_invisibility,
+  spell_greater_invisibility_details: spells.greater_invisibility_details,
+  spell_greater_invisibility_expanded: spells.greater_invisibility_expanded,
+
+  spell_create_food_and_water: spells.create_food_and_water,
+  spell_create_food_and_water_details: spells.create_food_and_water_details,
+  spell_create_food_and_water_expanded: spells.create_food_and_water_expanded,
+
+  spell_hallucinatory_terrain: spells.hallucinatory_terrain,
+  spell_hallucinatory_terrain_details: spells.hallucinatory_terrain_details,
+  spell_hallucinatory_terrain_expanded: spells.hallucinatory_terrain_expanded,
+
+  spell_blight: spells.blight,
+  spell_blight_details: spells.blight_details,
+  spell_blight_expanded: spells.blight_expanded,
+
+  spell_water_breathing: spells.water_breathing,
+  spell_water_breathing_details: spells.water_breathing_details,
+  spell_water_breathing_expanded: spells.water_breathing_expanded,
+
+  spell_conjure_elemental: spells.conjure_elemental,
+  spell_conjure_elemental_details: spells.conjure_elemental_details,
+  spell_conjure_elemental_expanded: spells.conjure_elemental_expanded,
+
+  spell_conjure_elemental_warlock: spells.conjure_elemental_warlock,
+  spell_conjure_elemental_warlock_details: spells.conjure_elemental_warlock_details,
+  spell_conjure_elemental_warlock_expanded: spells.conjure_elemental_warlock_expanded,
+
+  spell_cloudkill: spells.cloudkill,
+  spell_cloudkill_details: spells.cloudkill_details,
+  spell_cloudkill_expanded: spells.cloudkill_expanded,
 };
