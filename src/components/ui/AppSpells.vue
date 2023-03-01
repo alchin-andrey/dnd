@@ -841,9 +841,9 @@ export default {
 
 		//ANCHOR - Sti
 		Sti_Con_Nul_Nul_Til() {
-			let num = this.Spell_Index.spell_time;
+			// let num = this.Spell_Index.spell_time;
 			let mana = this.Mana_Numb - this.Index;
-			if (mana == 0) return num;
+			if (mana == 0) return "concentration";
 			if (mana == 1) return "concentration";
 			if (mana == 2) return null;
 			if (mana == 3) return null;
@@ -853,9 +853,9 @@ export default {
 
 		//ANCHOR - Sdu
 		Sdu_Min_Hour_Hour_Nul() {
-			let num = this.Spell_Index.spell_duration_units;
+			// let num = this.Spell_Index.spell_duration_units;
 			let mana = this.Mana_Numb - this.Index;
-			if (mana == 0) return num;
+			if (mana == 0) return "min";
 			if (mana == 1) return "min";
 			if (mana == 2) return "hour";
 			if (mana == 3) return "hour";
