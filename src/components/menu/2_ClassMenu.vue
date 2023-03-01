@@ -99,7 +99,6 @@ export default {
     undefined_Filter: (stor) => stor.filter_Setting(undefined),
 
     shown_Subclass() {
-      console.log('this.spells_Settings_Class_Arr:', this.spells_Settings_Class_Arr)
       return this.subclass_Filter.length !== 0 ||
       this.subclass_other_Filter.length !== 0
     },

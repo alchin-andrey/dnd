@@ -7,17 +7,17 @@
 		:style="{ margin: getMarg }"
 	>
 		<div
-    :class="{
-						'lvl-dot': shown_Level_Dot(spell_obj),
-						'lvl-dot-param': param,
-					}"
+			:class="{
+				'lvl-dot': shown_Level_Dot(spell_obj),
+				'lvl-dot-param': param,
+			}"
 			class="flex_spell"
 			@mouseover="hoverIn_Full()"
 			@mouseleave="hoverOut()"
 			@click="showDialog_Full()"
 		>
 			<div ref="stripe" class="side_stripe"></div>
-			<div class="int-400 flex_col" :class="{passive: passive,}">
+			<div class="int-400 flex_col" :class="{ passive: passive }">
 				<section class="flex_title">
 					<div class="title_spell h_18" :class="{ 'rare-text': overflow_Save }">
 						{{ em_Before
@@ -424,23 +424,23 @@ export default {
 		},
 
 		t_Time_Value() {
-			let string = null;
+      const foo_time = this.Value_Sti;
+			let spell_time = foo_time ?? this.Spell_Index.spell_time;
+
 			let value_1 = null;
-			if (this.Spell_Index.spell_time === "concentration") {
-				value_1 = `${this.t(this.Spell_Index.spell_time)} ${this.t("up_to")}`;
+			if (spell_time === "concentration") {
+				value_1 = `${this.t(spell_time)} ${this.t("up_to")}`;
 			} else {
-				value_1 = this.t(this.Spell_Index.spell_time);
+				value_1 = this.t(spell_time);
 			}
 
-			let value_2 = null;
-			let foo = this.Value_Dur;
-			if (foo) {
-				value_2 = foo;
-			} else {
-				value_2 = this.by_Mana("spell_duration");
-			}
+			const foo_dur = this.Value_Dur;
+			let value_2 = foo_dur ?? this.by_Mana("spell_duration");
 
-			let value_3 = this.t(this.Spell_Index.spell_duration_units);
+			const foo_sdu = this.Value_Sdu;
+      let value_3 = foo_sdu ? this.t(foo_sdu) : this.t(this.Spell_Index.spell_duration_units);
+      
+			let string = null;
 			if (!value_1) {
 				string = `${value_2} ${value_3}`;
 			} else if (value_2) {
@@ -820,12 +820,47 @@ export default {
 		},
 
 		Dur_10_60_480() {
-			let num = this.Spell_Index.impact_size_num;
+			let num = this.Spell_Index.spell_duration;
 			let mana = this.Mana_Numb - this.Index;
 			if (mana == 0) return num;
 			if (mana == 1) return 10;
 			if (mana == 2) return 60;
 			if (mana == 3) return 480;
+		},
+
+		Dur_10_8_8_24_Nul() {
+			let num = this.Spell_Index.spell_duration;
+			let mana = this.Mana_Numb - this.Index;
+			if (mana == 0) return num;
+			if (mana == 1) return 10;
+			if (mana == 2) return 8;
+			if (mana == 3) return 8;
+			if (mana == 4) return 24;
+			if (mana == 5) return null;
+		},
+
+		//ANCHOR - Sti
+		Sti_Con_Nul_Nul_Til() {
+			let num = this.Spell_Index.spell_time;
+			let mana = this.Mana_Numb - this.Index;
+			if (mana == 0) return num;
+			if (mana == 1) return "concentration";
+			if (mana == 2) return null;
+			if (mana == 3) return null;
+			if (mana == 4) return null;
+			if (mana == 5) return "till_dissipate";
+		},
+
+		//ANCHOR - Sdu
+		Sdu_Min_Hour_Hour_Nul() {
+			let num = this.Spell_Index.spell_duration_units;
+			let mana = this.Mana_Numb - this.Index;
+			if (mana == 0) return num;
+			if (mana == 1) return "min";
+			if (mana == 2) return "hour";
+			if (mana == 3) return "hour";
+			if (mana == 4) return "hour";
+			if (mana == 5) return null;
 		},
 
 		//ANCHOR - Dic
@@ -925,8 +960,16 @@ export default {
 			return foo ? `${details}_${foo}` : foo;
 		},
 
+		Value_Sti() {
+			return this.Value_Foo("Sti");
+		},
+
 		Value_Dur() {
 			return this.Value_Foo("Dur");
+		},
+
+		Value_Sdu() {
+			return this.Value_Foo("Sdu");
 		},
 
 		Value_Ran() {
