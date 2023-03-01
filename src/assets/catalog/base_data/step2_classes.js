@@ -7353,7 +7353,6 @@ export default {
                     name_set: spells.detect_thoughts[2].name,
                     spells: [{ level: 3, spell: spells.detect_thoughts,}],
                   },
-                  //TODO - Додати спеллс
                   {
                     level: 5,
                     name_set: spells.clairvoyance[3].name,
@@ -7856,7 +7855,7 @@ export default {
             level: 7,
             name: "bewitching_whispers",
 
-            //TODO - додати Compulsion
+
             spells: [
               {
                 level: 7,

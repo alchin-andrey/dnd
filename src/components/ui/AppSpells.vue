@@ -836,7 +836,7 @@ export default {
 			if (mana == 2) return 8;
 			if (mana == 3) return 8;
 			if (mana == 4) return 24;
-			if (mana == 5) return null;
+			if (mana >= 5) return null;
 		},
 
 		//ANCHOR - Sti
@@ -848,7 +848,7 @@ export default {
 			if (mana == 2) return null;
 			if (mana == 3) return null;
 			if (mana == 4) return null;
-			if (mana == 5) return "till_dissipate";
+			if (mana >= 5) return "till_dissipate";
 		},
 
 		//ANCHOR - Sdu
@@ -860,7 +860,7 @@ export default {
 			if (mana == 2) return "hour";
 			if (mana == 3) return "hour";
 			if (mana == 4) return "hour";
-			if (mana == 5) return null;
+			if (mana >= 5) return null;
 		},
 
 		//ANCHOR - Dic
