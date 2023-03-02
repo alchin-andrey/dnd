@@ -34,7 +34,7 @@
 				v-if="pages.alignment_page"
 				numb="03"
 				title="name"
-        v-model="MY.name"
+				v-model="MY.name"
 			/>
 			<div class="delimiter"></div>
 		</div>
@@ -43,7 +43,7 @@
 			<div class="main_chapter_menu" @click.stop>
 				<RaceMenu v-if="pages.race_page" />
 				<ClassMenu v-if="pages.class_page" />
-        <AlignmentMenu v-if="pages.alignment_page"/>
+				<AlignmentMenu v-if="pages.alignment_page" />
 			</div>
 
 			<transition name="btm-fade" mode="out-in">
@@ -62,7 +62,6 @@
 					></my-button>
 					<my-button
 						v-if="pages.alignment_page"
-
 						title="download_charsheet"
 						@click="showDialog()"
 					></my-button>
@@ -81,7 +80,7 @@
 		<HeaderSettings />
 		<RaceSettings v-if="pages.race_page" />
 		<ClassSettings v-if="pages.class_page" />
-    <AlignmentSettings v-if="pages.alignment_page"/>
+		<AlignmentSettings v-if="pages.alignment_page" />
 	</div>
 
 	<div class="stripe"></div>
@@ -118,25 +117,26 @@
 	<!-- <transition name="slide-fade"> -->
 	<div
 		class="sidebar_right"
-		:class="{ sidebar_right_close: close_Sidebar_Right }"
-	>
+		:class="{ sidebar_right_close: close_Sidebar_Right } ">
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
-    <AlignmentParameters v-if="pages.alignment_page"/>
+		<AlignmentParameters v-if="pages.alignment_page" />
 	</div>
 	<!-- </transition> -->
 	<!-- sidebar_right -->
-  <my-dialog-spell v-model:show="dialogVisible" finish>
-    <!-- <div> -->
-    <div class="title-donat int-700">{{t("support_project")}}</div>
-    <Donate finish/>
-    <!-- </div> -->
-  </my-dialog-spell>
+	<my-dialog-spell v-model:show="dialogVisible" finish>
+		<div class="title-donat int-700">{{ t("support_project") }}</div>
+		<Donate finish @getPdf="exportToPDF()" />
+	</my-dialog-spell>
+  <!-- <div class="sidebar_right" id="element-to-convert"><BlankPrint /></div> -->
 </template>
 
 <script>
+// import html2pdf from "html2pdf.js";
+
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 import Donate from "@/components/Donate.vue";
+import BlankPrint from "@/components/BlankPrint.vue";
 
 import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
 import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
@@ -162,10 +162,11 @@ import { useMYStore } from "@/stores/user/MYStore";
 import MainApp from "@/components/main/MainApp.js";
 export default {
 	name: "App",
-  mixins: [MainApp],
+	mixins: [MainApp],
 	components: {
 		WelcomeBanner,
-    Donate,
+		Donate,
+		BlankPrint,
 
 		HeaderMenu,
 		HeaderSettings,
@@ -177,14 +178,14 @@ export default {
 		ClassMenu,
 		ClassSettings,
 		ClassParameters,
-    
-    // ALIGNMENT_PAGE
-    AlignmentMenu,
-    AlignmentSettings,
-    AlignmentParameters,
+
+		// ALIGNMENT_PAGE
+		AlignmentMenu,
+		AlignmentSettings,
+		AlignmentParameters,
 	},
 
-  data() {
+	data() {
 		return {
 			dialogVisible: false,
 		};
@@ -302,6 +303,13 @@ export default {
 	},
 
 	methods: {
+		exportToPDF() {
+			// html2pdf(document.getElementById("element-to-convert"), {
+			// 	margin: 1,
+			// 	filename: "dndme.pdf",
+			// });
+		},
+
 		...mapActions(usePagesStore, [
 			"showHome",
 			"closeEthnos",
@@ -312,7 +320,7 @@ export default {
 		]),
 		...mapActions(useMYStore, ["getEthnos"]),
 
-    showDialog() {
+		showDialog() {
 			this.dialogVisible = true;
 		},
 
@@ -365,11 +373,11 @@ a {
 }
 
 .title-donat {
-  margin-bottom: 21px;
+	margin-bottom: 21px;
 }
 
 .title-donat::first-letter {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .relative {
@@ -397,11 +405,11 @@ a {
 }
 
 .grid-col {
-  display: grid;
+	display: grid;
 }
 
 .gap-10 {
-  gap: 10px;
+	gap: 10px;
 }
 
 .jbm-300 {

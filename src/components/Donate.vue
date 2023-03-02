@@ -40,8 +40,8 @@
 				>
 					<div class="text">{{ t_Copy }}</div>
 				</my-selection-card>
-				<my-selection-card download>
-					<div class="text">
+				<my-selection-card download @click="btnClick()">
+					<div class="text" >
 						{{ t_Pdf }} <span class="soon-class">({{ t_Soon }})</span>
 					</div>
 				</my-selection-card>
@@ -54,6 +54,7 @@
 import { copyText } from "vue3-clipboard";
 export default {
 	name: "Donate",
+  emits: ["getPdf"],
 	props: {
 		finish: {
 			type: Boolean,
@@ -91,6 +92,10 @@ export default {
 		copiedLink(name) {
 			this[name] = true;
 			setTimeout(() => (this[name] = false), 2000);
+		},
+
+    btnClick() {
+			this.$emit("getPdf");
 		},
 	},
 
