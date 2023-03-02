@@ -133,8 +133,12 @@
 	<!-- <div v-show="false" id="element-to-convert"><BlankPrint /></div> -->
 	<div v-if="small" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
-			<div class="grey-4-main">{{t("responsive_top")}}</div>
-			<div>{{t("responsive_bottom")}}</div>
+			<div class="grey-4-main">{{ t("responsive_top") }}</div>
+			<div class="emog">
+				{{ em_Before }}
+				<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="21"/>
+				{{ em_After }}
+			</div>
 		</div>
 	</div>
 </template>
@@ -221,6 +225,22 @@ export default {
 			"pages",
 			"page_Open",
 		]),
+
+		t_Details() {
+			return this.t("responsive_bottom");
+		},
+
+		em_Upd() {
+			return this.updEmoji(this.t_Details);
+		},
+
+		em_Before() {
+			return this.beforeEmoji(this.t_Details);
+		},
+
+		em_After() {
+			return this.afterEmoji(this.t_Details);
+		},
 		//GETTERS
 
 		close_Sidebar_Right() {
@@ -412,7 +432,7 @@ a {
 }
 
 .grey-4-main {
-  color: rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, 0.4);
 }
 
 .buff {
@@ -679,10 +699,10 @@ a {
 	bottom: 0;
 	right: 0;
 	left: 0;
-	background-color: #0E1518;
+	background-color: #0e1518;
 	position: fixed;
 	z-index: 10;
-	color: #FFFFFF;
+	color: #ffffff;
 	padding: 20px;
 	display: flex;
 	/* flex-direction: column; */
@@ -692,17 +712,23 @@ a {
 }
 
 .plug-dialog {
-  /* margin: 0 auto; */
+	/* margin: 0 auto; */
 	width: 320px;
 	background: rgba(255, 255, 255, 0.06);
 	border-radius: 12px;
-  padding: 28px;
+	padding: 28px;
 	display: flex;
 	flex-direction: column;
 	/* justify-content: center; */
 	/* align-items: center; */
 	gap: 72px;
-  z-index: 1000;
+	z-index: 1000;
+}
+
+.emog .emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+	top: 4px;
 }
 
 /* ---------------------sidebar_right----------------------*/
