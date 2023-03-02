@@ -5863,4 +5863,6 @@ export default {
   download_pdf: "Скачать PDF лист персонажа",
   coming_soon: "скоро",
 
+  responsive_top: "Этот сайт доступен только на Desktop 1280+",
+  responsive_bottom: "Откройте на єкране большего размера.",
 };  
