@@ -86,7 +86,7 @@
 	<div class="stripe"></div>
 	<!-- Character -->
 
-	<div class="represent" @click="showHome()">
+	<div class="represent" @click="showHome()" v-show="true">
 		<transition name="fade-body">
 			<div
 				class="character"
@@ -116,8 +116,10 @@
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->
 	<div
+		v-show="true"
 		class="sidebar_right"
-		:class="{ sidebar_right_close: close_Sidebar_Right } ">
+		:class="{ sidebar_right_close: close_Sidebar_Right }"
+	>
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
 		<AlignmentParameters v-if="pages.alignment_page" />
@@ -128,7 +130,13 @@
 		<div class="title-donat int-700">{{ t("support_project") }}</div>
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
-  <!-- <div class="sidebar_right" id="element-to-convert"><BlankPrint /></div> -->
+	<!-- <div v-show="false" id="element-to-convert"><BlankPrint /></div> -->
+	<div v-if="small" class="plug-wrap int-700-20">
+		<div class="plug-dialog">
+			<div class="grey-4-main">{{t("responsive_top")}}</div>
+			<div>{{t("responsive_bottom")}}</div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -188,11 +196,17 @@ export default {
 	data() {
 		return {
 			dialogVisible: false,
+			small: false,
 		};
 	},
 
 	created() {
 		this.getCreated();
+		window.addEventListener("resize", this.onResize);
+		this.onResize();
+	},
+	destroyed() {
+		window.removeEventListener("resize", this.onResize);
 	},
 
 	computed: {
@@ -303,9 +317,15 @@ export default {
 	},
 
 	methods: {
+		onResize() {
+			console.log("window.innerWidth:", window.innerWidth);
+			this.small = window.innerWidth <= 1279;
+			console.log("this.small:", this.small);
+		},
+
 		exportToPDF() {
 			// html2pdf(document.getElementById("element-to-convert"), {
-			// 	margin: 1,
+			// 	margin: 0,
 			// 	filename: "dndme.pdf",
 			// });
 		},
@@ -370,6 +390,7 @@ a {
 	-ms-user-select: none;
 	user-select: none;
 	overflow: hidden;
+	color: #ffffff;
 }
 
 .title-donat {
@@ -388,6 +409,10 @@ a {
 	height: 1px;
 	/* margin: 40px 0 0 0; */
 	background: rgba(255, 255, 255, 0.2);
+}
+
+.grey-4-main {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .buff {
@@ -420,7 +445,7 @@ a {
 	line-height: 18px;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	color: #ffffff;
+	/* color: #ffffff; */
 }
 
 .int-400 {
@@ -430,8 +455,17 @@ a {
 	font-size: 11px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
-	color: #ffffff;
+	/* color: #ffffff; */
 }
+
+/* .int-600 {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 11px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+} */
 
 .int-700 {
 	font-family: "Inter";
@@ -440,9 +474,17 @@ a {
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
-	color: #ffffff;
+	/* color: #ffffff; */
 }
 
+.int-700-20 {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+}
 .stripe {
 	width: 2px;
 	background-color: rgba(255, 255, 255, 0.1);
@@ -630,6 +672,37 @@ a {
 	justify-content: space-between;
 	align-items: flex-end;
 	gap: 8px;
+}
+
+.plug-wrap {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #0E1518;
+	position: fixed;
+	z-index: 10;
+	color: #FFFFFF;
+	padding: 20px;
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: center;
+	align-items: center;
+	gap: 26px;
+}
+
+.plug-dialog {
+  /* margin: 0 auto; */
+	width: 320px;
+	background: rgba(255, 255, 255, 0.06);
+	border-radius: 12px;
+  padding: 28px;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	/* align-items: center; */
+	gap: 72px;
+  z-index: 1000;
 }
 
 /* ---------------------sidebar_right----------------------*/
