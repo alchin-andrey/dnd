@@ -17,6 +17,11 @@ import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
 import AppSlider from "@/components/ui/main/AppSlider.vue";
 import AppName from "@/components/ui/main/AppName.vue";
 
+// Blank Print
+import AppMainCell from "@/components/ui/blank/AppMainCell.vue";
+
+
+
 
 
 import MyColorBlock from "@/components/ui/pinia_ui/MyColorBlock.vue";
@@ -77,6 +82,9 @@ export default [
 //main
   AppSlider,
   AppName,
+
+// Blank Print
+  AppMainCell,
 
 
 
