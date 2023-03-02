@@ -338,9 +338,7 @@ export default {
 
 	methods: {
 		onResize() {
-			console.log("window.innerWidth:", window.innerWidth);
 			this.small = window.innerWidth <= 1279;
-			console.log("this.small:", this.small);
 		},
 
 		exportToPDF() {
