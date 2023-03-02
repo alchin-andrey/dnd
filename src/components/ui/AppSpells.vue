@@ -1178,7 +1178,7 @@ export default {
 	position: absolute;
 	width: 6px;
 	height: 6px;
-	left: -8px;
+	left: -11px;
 	overflow-y: visible;
 	top: 6px;
 	background: #0047ff;
