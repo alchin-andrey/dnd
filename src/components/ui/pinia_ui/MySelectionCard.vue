@@ -133,7 +133,7 @@ export default {
 	background: #0047FF;
 }
 .blue_card:hover {
-	background: #0047FF;
+	background: #1355FF;
 }
 
 .no_blur {

@@ -1,8 +1,8 @@
 <template>
-	<div class="flex_col gap-26">
-		<div class="story int-400" v-html="t_Html"></div>
-		<div class="flex_col gap-26 int-700">
-			<section class="flex_col gap-4">
+	<div class="grid gap-26">
+		<div class="story-dev int-400" v-html="t_Html"></div>
+		<div class="grid gap-26 int-700">
+			<section class="grid gap-4">
 				<my-selection-card
 					@click="doCopy(uan_numb), copiedLink('uan_copied')"
 					copy
@@ -16,7 +16,9 @@
 					copy
 					:copied="btc_copied"
 				>
-					<div class="text">{{ `BTC  ${btc_numb}` }}</div>
+					<div class="text" :class="{'text-finish': finish}">
+						{{ `BTC  ${btc_numb}` }}
+					</div>
 				</my-selection-card>
 
 				<my-selection-card link>
@@ -30,7 +32,7 @@
 				</my-selection-card>
 			</section>
 
-			<section class="flex_col gap-4" v-if="finish">
+			<section class="grid gap-4" v-if="finish">
 				<my-selection-card
 					@click="doCopy(char_numb), copiedLink('char_copied')"
 					copy
@@ -39,7 +41,9 @@
 					<div class="text">{{ t_Copy }}</div>
 				</my-selection-card>
 				<my-selection-card download>
-					<div class="text">{{ t_Pdf }} <span class="soon-class">({{ t_Soon }})</span></div>
+					<div class="text">
+						{{ t_Pdf }} <span class="soon-class">({{ t_Soon }})</span>
+					</div>
 				</my-selection-card>
 			</section>
 		</div>
@@ -50,7 +54,7 @@
 import { copyText } from "vue3-clipboard";
 export default {
 	name: "Donate",
-  props: {
+	props: {
 		finish: {
 			type: Boolean,
 			default: false,
@@ -105,13 +109,13 @@ export default {
 			return this.t("copy_link_character");
 		},
 
-    t_Pdf() {
-      return this.t("download_pdf");
-    },
+		t_Pdf() {
+			return this.t("download_pdf");
+		},
 
-    t_Soon() {
-      return this.t("coming_soon");
-    }
+		t_Soon() {
+			return this.t("coming_soon");
+		},
 	},
 };
 </script>
@@ -129,17 +133,16 @@ export default {
 	justify-content: space-between;
 }
 
-.flex_col {
-	display: flex;
-	flex-direction: column;
+.grid {
+  display: grid;
 }
 
 .gap-4 {
-  gap: 4px;
+	gap: 4px;
 }
 
 .gap-26 {
-  gap: 26px;
+	gap: 26px;
 }
 
 .flex {
@@ -149,22 +152,11 @@ export default {
 .story-dev {
 	color: rgba(255, 255, 255, 0.4);
 	text-align: start;
-	margin-bottom: 22px;
+	/* margin-bottom: 22px; */
 }
 
-/* .title {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 700;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-} */
-
-
 .soon-class {
-  color: #05FF00;
+	color: #05ff00;
 }
 
 .text {
@@ -174,7 +166,11 @@ export default {
 	text-overflow: ellipsis;
 }
 
-.title:first-letter {
+.text-finish {
+	width: 320px;
+}
+
+.text:first-letter {
 	text-transform: uppercase;
 }
 
