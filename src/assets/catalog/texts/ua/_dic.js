@@ -5844,4 +5844,9 @@ export default {
   condition_pact_of_the_chain: "Умова: Пакт Ланцюга",
   condition_pact_of_the_tome: "Умова: Пакт Гримуара",
   condition_pact_of_the_blade: "Умова: Пакт Клинка",
+
+  support_project: "Підтримай проект",
+  copy_link_character: "Скопіювати посилання на персонажа",
+  download_pdf: "Скачати PDF аркуш персонажа",
+  coming_soon: "скоро",
 };

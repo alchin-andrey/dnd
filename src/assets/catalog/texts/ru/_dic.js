@@ -5858,4 +5858,9 @@ export default {
   condition_pact_of_the_tome: "Требование: Пакт Гримуара",
   condition_pact_of_the_blade: "Требование: Пакт Клинка",
 
+  support_project: "Поддержи проект",
+  copy_link_character: "Скопировать ссьілку на персонажа",
+  download_pdf: "Скачать PDF лист персонажа",
+  coming_soon: "скоро",
+
 };  
