@@ -63,12 +63,12 @@ export default {
 	data() {
 		return {
 			uan: "UAH",
-			uan_text: "5375 4141 0613 7382",
-			uan_numb: 5375414106137382,
+			uan_text: "5375 4112 0415 1513",
+			uan_numb: 5375411204151513,
 			uan_copied: false,
 			btc_numb: "1LnEyvMisSyUvdbJQUmAyaiHEeALQd793F",
 			btc_copied: false,
-			char_numb: "/",
+			char_numb: "скоро 😘",
 			char_copied: false,
 		};
 	},
