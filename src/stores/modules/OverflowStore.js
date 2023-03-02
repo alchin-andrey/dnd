@@ -22,22 +22,25 @@ export const useOverflowStore = defineStore({
 		]),
 
 		filter_List_Lvl: (stor) => (arr, name, kay) => {
-			const MYStore = useMYStore();
-			const ProficienciesStore = useProficienciesStore();
-			let res_arr = [];
-			arr.forEach((el) => {
-				if (name == "proficiencies") {
-					const prof_arr = ProficienciesStore.proficiencies_Arr(
-						el?.proficiencies,
-						kay
-					);
-					res_arr = res_arr.concat(prof_arr);
-				} else {
-					const item_lvl = MYStore.level_Filter_Arr(el?.[name]);
-					res_arr = res_arr.concat(item_lvl);
-				}
-			});
-			return res_arr;
+      if(arr) {
+        const MYStore = useMYStore();
+        const ProficienciesStore = useProficienciesStore();
+        let res_arr = [];
+        arr.forEach((el) => {
+          if (name == "proficiencies") {
+            const prof_arr = ProficienciesStore.proficiencies_Arr(
+              el?.proficiencies,
+              kay
+            );
+            res_arr = res_arr.concat(prof_arr);
+          } else {
+            const item_lvl = MYStore.level_Filter_Arr(el?.[name]);
+            res_arr = res_arr.concat(item_lvl);
+          }
+        });
+        return res_arr;
+      }
+      return [];
 		},
 
 		overflow_Item_Menu: (stor) => (item) => {
@@ -83,7 +86,9 @@ export const useOverflowStore = defineStore({
 			return ProficienciesStore.proficiencies_Page_Arr(key).includes("any");
 		},
 
-		overflow_Prof: (stor) => (key, name, active) => {
+		overflow_Prof: (stor) => (key, name, active, select_list) => {
+      const prof_select_arr = stor.filter_List_Lvl(select_list, "proficiencies", key);
+      const select_true = prof_select_arr.includes(name);
 			const ProficienciesStore = useProficienciesStore();
 			const prof_arr = ProficienciesStore.proficiencies_Page_Arr(key);
 			const any_name = stor.overflow_Prof_Any_Name(key);
@@ -93,7 +98,7 @@ export const useOverflowStore = defineStore({
 			);
 			if (any_name) {
 				return true;
-			} else if (active && name_times <= 1) {
+			} else if ((active || select_list.length == 1 && select_true) && name_times <= 1) {
 				return false;
 			} else {
 				return name_times >= 1;
@@ -101,23 +106,31 @@ export const useOverflowStore = defineStore({
 		},
 
 		//NOTE - Spell
-		overflow_Spell: (stor) => (item, active) => {
+		overflow_Spell: (stor) => (item, active, select_list) => {
+			const spell_select_arr = stor.filter_List_Lvl(select_list, "spells");
+      const select_true = spell_select_arr.some(el => {
+        const item_spell = item.spell.find(i => i.name);
+        const el_spell = el.spell.find(i => i.name);
+        return item_spell.name == el_spell.name && item.mod?.name_extra == el.mod?.name_extra;
+      });
+
 			const SpellsStore = useSpellsStore();
 			const spell_arr = SpellsStore.spells_Page_All_Arr;
-			const name_times = spell_arr.reduce(
-				(acc, el) => {
-          const item_spell = item.spell.find(i => i.name);
-          const el_spell = el.spell.find(i => i.name);
-          if(item_spell.name == el_spell.name && item.mod?.name_extra == el.mod?.name_extra) {
-            return acc + 1;
-          } else {
-            return acc;
-          }
-          // el == name ? acc + 1 : acc
-        },
-				0
-			);
-			if (active && name_times <= 1) {
+			const name_times = spell_arr.reduce((acc, el) => {
+				const item_spell = item.spell.find((i) => i.name);
+				const el_spell = el.spell.find((i) => i.name);
+				if (
+					item_spell.name == el_spell.name &&
+					item.mod?.name_extra == el.mod?.name_extra
+				) {
+					return acc + 1;
+				} else {
+					return acc;
+				}
+				// el == name ? acc + 1 : acc
+			}, 0);
+			if ((active || select_list.length == 1 && select_true) && name_times <= 1) { 
+				//select_numb && name_times <= 1
 				return false;
 			} else {
 				return name_times >= 1;
@@ -151,13 +164,13 @@ export const useOverflowStore = defineStore({
 			}
 		},
 
-    //NOTE - Stats_Cube
+		//NOTE - Stats_Cube
 		overflow_Stats_Cube: (stor) => (i, numb, name, active) => {
 			const StatsStore = useStatsStore();
 			const stat_numb_full = StatsStore.stats_Numb_Full_Page(name);
 			const max = StatsStore.stats_Base_Max(name);
 			let stat_numb = stat_numb_full;
-      !active ? stat_numb += numb : null;
+			!active ? (stat_numb += numb) : null;
 			const stat_numb_max = stat_numb < max ? stat_numb : max;
 			const overflow_numb = stat_numb - stat_numb_max;
 			return i - overflow_numb <= 0;

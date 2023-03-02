@@ -98,6 +98,7 @@
 					:title="name"
 					:arr_name="proficiencies_Arr(custom.proficiencies, name)"
 					:active_card="active_boll_link"
+          :select_list="select_list"
 				/>
 			</my-wrapper>
 
@@ -128,6 +129,7 @@
 				:spell_obj="item"
 				select
 				:active_card="active_boll_link"
+        :select_list="select_list"
 			/>
 		</my-wrapper>
 
@@ -198,6 +200,10 @@ export default {
 		setting_name: {
 			type: String,
 			default: null,
+		},
+    select_list: {
+			type: Array,
+			default: [],
 		},
 		custom: {
 			type: Object,

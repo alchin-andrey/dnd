@@ -83,6 +83,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    select_list: {
+			type: Array,
+			default: [],
+		},
 	},
 	computed: {
     ...mapState(usePagesStore, ["page_Open"]),
@@ -120,7 +124,7 @@ export default {
       if(stor.param) {
         return false;
       } else {
-        return stor.overflow_Prof(stor.title, name, stor.active_card)
+        return stor.overflow_Prof(stor.title, name, stor.active_card, stor.select_list)
       }
 		},
 

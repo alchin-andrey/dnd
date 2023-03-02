@@ -212,10 +212,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		active_card: {
-			type: Boolean,
-			default: false,
-		},
 		param: {
 			type: Boolean,
 			default: false,
@@ -235,6 +231,14 @@ export default {
 		full_select: {
 			type: Boolean,
 			default: false,
+		},
+    active_card: {
+			type: Boolean,
+			default: false,
+		},
+    select_list: {
+			type: Array,
+			default: [],
 		},
 	},
 	computed: {
@@ -317,7 +321,7 @@ export default {
 			if (this.param) {
 				return false;
 			} else {
-				return this.overflow_Spell(this.spell_obj, this.active_card);
+				return this.overflow_Spell(this.spell_obj, this.active_card, this.select_list);
 			}
 		},
 

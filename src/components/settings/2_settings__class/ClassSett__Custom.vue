@@ -9,6 +9,7 @@
 			v-for="list_el in custom.list"
 			:key="list_el"
       :setting_name="custom.name"
+      :select_list="custom.select_list"
 			:custom="list_el"
 			@click="getCustomSelect(list_el)"
 			:active_boll_link="getActive(list_el)"
@@ -55,7 +56,6 @@ export default {
 		},
 
 		getCustomSelect(list_el) {
-			// console.log('list_el:', list_el)
 			const active = this.getActive(list_el);
 			let arr = this.custom.select_list.slice(0);
 			if (!active) {

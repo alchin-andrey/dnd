@@ -3,6 +3,7 @@
   v-for="list_el in backstories"
 	:key="list_el"
 	:custom="list_el"
+  :select_list="[list_el]"
 	@click="getCustomSelect(list_el)"
 	:active_boll_link="MY.backstory.name == list_el.name"/>
 </template>

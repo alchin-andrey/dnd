@@ -19,6 +19,7 @@
 			v-for="list_el in feat_Arr.list"
 			:key="list_el"
       :setting_name="feat_Arr.name"
+      :select_list="feat_Arr.select_list"
 			:custom="list_el"
 			:active_boll_link="feat_Arr.select_list.includes(list_el)"
 			@click="getFeatsSelect(list_el)"
