@@ -85,7 +85,7 @@ export default {
 
 .nested-enter-active,
 .nested-leave-active {
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-out;
 }
 /* delay leave of parent element */
 .nested-leave-active {
@@ -102,7 +102,7 @@ export default {
 	transition: all 0.3s ease-out;
 }
 .nested-enter-active .dialog__wrapp {
-	transition-delay: 0.25s ease-in;
+	transition-delay: 0.25s ease-out;
 }
 
 .nested-enter-from .dialog__wrapp,
