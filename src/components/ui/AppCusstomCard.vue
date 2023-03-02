@@ -21,6 +21,7 @@
 					plus
 					:numb="state.num"
 					:active_card="active_boll_link"
+          :select_list="select_list"
 				/>
 				<my-card-text v-if="state.details" :text_html="state.details" />
 			</my-wrapper>
@@ -34,6 +35,7 @@
 					plus
 					:numb="Mastery"
 					:active_card="active_boll_link"
+          :select_list="select_list"
 				/>
 			</my-wrapper>
 		</my-wrapper>

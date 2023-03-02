@@ -86,6 +86,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    select_list: {
+			type: Array,
+			default: [],
+		},
 		// not_warn: {
 		// 	type: Boolean,
 		// 	default: false,
@@ -126,7 +130,7 @@ export default {
 		},
 
 		overflow_Save() {
-			return this.overflow_Stats_Save(this.title, this.active_card);
+			return this.overflow_Stats_Save(this.title, this.active_card, this.select_list);
 		},
 
 		overflow_Numb() {
@@ -135,7 +139,7 @@ export default {
 			} else if (this.only_Save) {
 				return this.overflow_Save;
 			} else {
-				return this.overflow_Stats_Numb(this.title, this.active_card);
+				return this.overflow_Stats_Numb(this.title, this.active_card, this.select_list);
 			}
 		},
 
@@ -149,7 +153,8 @@ export default {
 					i,
 					stor.numb,
 					stor.title,
-					stor.active_card
+					stor.active_card,
+          stor.select_list
 				);
 			}
 		},

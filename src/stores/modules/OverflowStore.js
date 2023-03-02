@@ -127,10 +127,8 @@ export const useOverflowStore = defineStore({
 				} else {
 					return acc;
 				}
-				// el == name ? acc + 1 : acc
 			}, 0);
 			if ((active || select_list.length == 1 && select_true) && name_times <= 1) { 
-				//select_numb && name_times <= 1
 				return false;
 			} else {
 				return name_times >= 1;
@@ -138,14 +136,16 @@ export const useOverflowStore = defineStore({
 		},
 
 		//NOTE - Stats_Save
-		overflow_Stats_Save: (stor) => (name, active) => {
+		overflow_Stats_Save: (stor) => (name, active, select_list) => {
+      const save_select_arr = stor.filter_List_Lvl(select_list, "saving");
+      const select_true = save_select_arr.includes(name);
 			const StatsStore = useStatsStore();
 			const save_all_name = StatsStore.stats_Save_All_Page_Arr;
 			const name_times = save_all_name.reduce(
 				(acc, el) => (el == name ? acc + 1 : acc),
 				0
 			);
-			if (active && name_times <= 1) {
+			if ((active || select_list.length == 1 && select_true) && name_times <= 1) {
 				return false;
 			} else {
 				return name_times >= 1;
@@ -153,11 +153,13 @@ export const useOverflowStore = defineStore({
 		},
 
 		//NOTE - Stats_Numb
-		overflow_Stats_Numb: (stor) => (name, active) => {
+		overflow_Stats_Numb: (stor) => (name, active, select_list) => {
+      const stats_select_arr = stor.filter_List_Lvl(select_list, "stats");
+      const select_true = stats_select_arr.some(el => el.name.includes(name));
 			const StatsStore = useStatsStore();
 			const stat_numb_full = StatsStore.stats_Numb_Full_Page(name);
 			const max = StatsStore.stats_Base_Max(name);
-			if (active && stat_numb_full == max) {
+			if ((active || select_list.length == 1 && select_true) && stat_numb_full == max) {
 				return false;
 			} else {
 				return stat_numb_full >= max;
@@ -165,12 +167,14 @@ export const useOverflowStore = defineStore({
 		},
 
 		//NOTE - Stats_Cube
-		overflow_Stats_Cube: (stor) => (i, numb, name, active) => {
+		overflow_Stats_Cube: (stor) => (i, numb, name, active, select_list) => {
+      const stats_select_arr = stor.filter_List_Lvl(select_list, "stats");
+      const select_true = stats_select_arr.some(el => el.name.includes(name));
 			const StatsStore = useStatsStore();
 			const stat_numb_full = StatsStore.stats_Numb_Full_Page(name);
 			const max = StatsStore.stats_Base_Max(name);
 			let stat_numb = stat_numb_full;
-			!active ? (stat_numb += numb) : null;
+			!(active || select_list.length == 1 && select_true) ? (stat_numb += numb) : null;
 			const stat_numb_max = stat_numb < max ? stat_numb : max;
 			const overflow_numb = stat_numb - stat_numb_max;
 			return i - overflow_numb <= 0;
