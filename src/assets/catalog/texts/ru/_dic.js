@@ -5865,4 +5865,6 @@ export default {
 
   responsive_top: "Этот сайт доступен только на Desktop 1280+",
   responsive_bottom: "Откройте на єкране большего размера.",
+
+  abilities_passive: "постоянньіе эффектьі",
 };  
