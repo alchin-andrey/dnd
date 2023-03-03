@@ -21,8 +21,40 @@ export const useAlignmentStore = defineStore({
 		},
 
     alignment_Arr() {
+      const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
+      console.log('сustomm:', сustomm)
       return this.alignment_lists.alignment;
-    }
+    },
+
+    MY_Main_Feature() {
+      const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
+      const name = сustomm.find(el => el.name == "main_feature");
+      return name?.select_list[0];
+    },
+
+    MY_Ideals() {
+      const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
+      const name = сustomm.find(el => el.name == "ideals");
+      return name?.select_list[0];
+    },
+
+    MY_Commitment() {
+      const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
+      const name = сustomm.find(el => el.name == "commitment");
+      return name?.select_list[0];
+    },
+
+    MY_Secret() {
+      const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
+      const name = сustomm.find(el => el.name == "secret");
+      return name?.select_list[0];
+    },
+
+    MY_Weakness() {
+      const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
+      const name = сustomm.find(el => el.name == "weakness");
+      return name?.select_list[0];
+    },
 
 	},
 

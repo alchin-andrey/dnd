@@ -11,7 +11,7 @@
 				<AppSpellsPacks
 					class="flex-col"
 					v-if="filter_Spells(i).length !== 0"
-					:text="String(i)"
+					:numb_manna="i"
 				>
 					<section class="flex-col gap-8 marg-top-34">
 						<my-selection-card

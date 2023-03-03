@@ -48,6 +48,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		numb_manna: {
+			type: Number,
+			default: null,
+		},
 		passive: {
 			type: Boolean,
 			default: false,
@@ -58,9 +62,16 @@ export default {
 		},
 	},
 	computed: {
-		t_Title() {
-			return this.ability ? this.t("ability") : `${this.t("spells")} [${this.t(this.text)}]`;
+    t_Title() {
+      if(this.text) {
+        return this.t(this.text);
+      } else {
+        return `${this.t("spells")} [${this.t(this.numb_manna)}]`;
+      }
+
+			// return this.ability ? this.t("ability") : `${this.t("spells")} [${this.t(this.text)}]`;
 		},
+
     numb_Count() {
       return `${this.numb}× `;
     },

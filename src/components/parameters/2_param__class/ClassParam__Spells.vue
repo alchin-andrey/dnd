@@ -1,10 +1,35 @@
 <template>
 	<my-wrapper v-if="spells_RC_Param.length !== 0" gap_26 :hr="hr">
+    <AppSpellsPacks
+			class="flex-col"
+			v-if="spells_RC_Param_Ability_Passive.length !== 0"
+			:numb="spells_RC_Param_Ability_Passive.length"
+			text="abilities_passive"
+		>
+			<div class="flex-col gap-4 marg-top-8">
+				<AppSpells
+					v-for="item in spells_Race_Param_Ability_Passive"
+					:key="item"
+					:spell_obj="item"
+					:passive="passive_Old"
+					param
+					only_title
+				/>
+				<AppSpells
+					v-for="item in spells_Class_Param_Ability_Passive"
+					:key="item"
+					:spell_obj="item"
+					param
+					only_title
+				/>
+			</div>
+		</AppSpellsPacks>
+
 		<AppSpellsPacks
 			class="flex-col"
 			v-if="spells_RC_Param_Ability.length !== 0"
 			:numb="spells_RC_Param_Ability.length"
-			ability
+			text="ability"
 		>
 			<div class="flex-col gap-4 marg-top-8">
 				<AppSpells
@@ -30,7 +55,7 @@
 				class="flex-col"
 				v-if="filter_All_Manna_Spells(i).length !== 0"
 				:numb="filter_All_Manna_Spells(i).length"
-				:text="String(i)"
+				:numb_manna="i"
 			>
 				<div class="flex-col gap-4 marg-top-8">
 					<AppSpells
@@ -78,25 +103,49 @@ export default {
 			"spells_filter_Ability",
 			"spells_filter_Not_Ability",
 
+      "spells_filter_Ability_Passive",
+      "spells_filter_Ability_Not_Passive",
+
 			"spells_Race_Param",
 			"spells_Class_Param_without_Race_Param",
 
+      "spells_RC_Param_Ability_Full",
 			"spells_RC_Param_Ability",
+      "spells_RC_Param_Ability_Passive",
 			"spells_RC_Param_Manna",
 
 			"spells_RC_Param",
 		]),
-
-		spells_Race_Param_Ability() {
+    
+    //NOTE - Ability_Race
+		spells_Race_Param_Ability_Full() {
 			return this.spells_filter_Ability(this.spells_Race_Param);
 		},
 
-		spells_Class_Param_Ability() {
+		spells_Race_Param_Ability() {
+			return this.spells_filter_Ability_Not_Passive(this.spells_Race_Param_Ability_Full);
+		},
+
+		spells_Race_Param_Ability_Passive() {
+			return this.spells_filter_Ability_Passive(this.spells_Race_Param_Ability_Full);
+		},
+
+    ///NOTE - Ability_Class
+		spells_Class_Param_Ability_Full() {
 			return this.spells_filter_Ability(
 				this.spells_Class_Param_without_Race_Param
 			);
 		},
 
+    spells_Class_Param_Ability() {
+			return this.spells_filter_Ability_Not_Passive(this.spells_Class_Param_Ability_Full);
+		},
+
+		spells_Class_Param_Ability_Passive() {
+			return this.spells_filter_Ability_Passive(this.spells_Class_Param_Ability_Full);
+		},
+
+    //NOTE - Manna
 		spells_Race_Param_Manna() {
 			return this.spells_filter_Not_Ability(this.spells_Race_Param);
 		},

@@ -131,7 +131,7 @@
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
 
-	<!-- <div v-show="false" id="element-to-convert"><BlankPrint /></div> -->
+	<!-- <div v-show="true" id="element-to-convert"><BlankPrint /></div> -->
 
 	<div v-if="small" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
@@ -344,9 +344,21 @@ export default {
 		},
 
 		exportToPDF() {
+      // const race = this.MY.race.name;
+      // const ethnos = this.MY.ethnos.name;
+      // const classes = this.MY.class.name;
+      // const lvl = this.MY.level;
 			// html2pdf(document.getElementById("element-to-convert"), {
 			// 	margin: 0,
-			// 	filename: "dndme.pdf",
+			// 	filename: `DNDME-${race}-${ethnos}-${classes}-${lvl}-lvl.pdf`,
+      //   image: { type: 'jpeg', quality: 1 },
+      //   html2canvas: {
+      //   dpi: 300,
+      //   scale:4,
+      //   letterRendering: true,
+      //   useCORS: true
+      // },
+      // jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
 			// });
 		},
 
@@ -478,14 +490,15 @@ a {
 	/* color: #ffffff; */
 }
 
-/* .int-600 {
+.int-600-24 {
 	font-family: "Inter";
 	font-style: normal;
 	font-weight: 600;
-	font-size: 11px;
-	line-height: 15px;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: center;
 	letter-spacing: 0.02em;
-} */
+}
 
 .int-700 {
 	font-family: "Inter";

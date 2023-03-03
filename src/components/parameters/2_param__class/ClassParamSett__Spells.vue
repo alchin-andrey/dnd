@@ -13,14 +13,32 @@
 			gap_26
 			v-if="
 				spells_RC_Param_Manna.length !== 0 ||
-				spells_RC_Param_Ability.length !== 0
+				spells_RC_Param_Ability.length !== 0 ||
+        spells_RC_Param_Ability_Passive.length !== 0
 			"
 		>
+    <AppSpellsPacks
+				class="flex-col"
+				v-if="spells_RC_Param_Ability_Passive.length !== 0"
+				:numb="spells_RC_Param_Ability_Passive.length"
+        text="abilities_passive"
+			>
+				<div class="flex-col gap-8 marg-top-8">
+					<AppSpells
+						v-for="item in spells_RC_Param_Ability_Passive"
+						:key="item"
+						:spell_obj="item"
+						passive
+						param
+						only_title
+					/>
+				</div>
+			</AppSpellsPacks>
 			<AppSpellsPacks
 				class="flex-col"
 				v-if="spells_RC_Param_Ability.length !== 0"
 				:numb="spells_RC_Param_Ability.length"
-        ability
+        text="ability"
 			>
 				<div class="flex-col gap-8 marg-top-8">
 					<AppSpells
@@ -39,7 +57,7 @@
 					class="flex-col"
 					v-if="filter_All_Manna_Spells(i).length !== 0"
 					:numb="filter_All_Manna_Spells(i).length"
-					:text="String(i)"
+					:numb_manna="i"
 				>
 					<div class="flex-col gap-8 marg-top-8">
 						<AppSpells
@@ -93,6 +111,7 @@ export default {
 		...mapState(useSpellsStore, [
 			"spells_RC_Param",
 			"spells_RC_Param_Ability",
+      "spells_RC_Param_Ability_Passive",
 			"spells_RC_Param_Manna",
 			"spells_Filter_Without",
 		]),

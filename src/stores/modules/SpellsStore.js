@@ -56,6 +56,18 @@ export const useSpellsStore = defineStore({
 				(el) => el.spell.find((item) => item.name).type == "ability"
 			);
 		},
+
+    spells_filter_Ability_Passive: (stor) => (arr) => {
+			return arr.filter(
+				(el) => el.spell.find((item) => item.name).cast_time == "none"
+			);
+		},
+
+    spells_filter_Ability_Not_Passive: (stor) => (arr) => {
+			return arr.filter(
+				(el) => el.spell.find((item) => item.name).cast_time !== "none"
+			);
+		},
     
     spells_filter_Not_Ability: (stor) => (arr) => {
 			return arr.filter(
@@ -147,8 +159,16 @@ export const useSpellsStore = defineStore({
 			return MYStore.sort_Level(RC_param);
 		},
 
-    spells_RC_Param_Ability() {
+    spells_RC_Param_Ability_Full() {
 			return this.spells_filter_Ability(this.spells_RC_Param);
+		},
+
+    spells_RC_Param_Ability_Passive() {
+			return this.spells_filter_Ability_Passive(this.spells_RC_Param_Ability_Full);
+		},
+
+    spells_RC_Param_Ability() {
+			return this.spells_filter_Ability_Not_Passive(this.spells_RC_Param_Ability_Full);
 		},
 
 		spells_RC_Param_Manna() {

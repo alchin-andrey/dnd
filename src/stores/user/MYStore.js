@@ -18,6 +18,12 @@ export const useMYStore = defineStore({
 	}),
 	//SECTION - GETTERS
 	getters: {
+    MY_Subclass() {
+      const сustomm = this.сustomm_Settings_Class_Arr;
+      const subclass = сustomm.find(el => el.name == "subclass");
+      return subclass?.select_list[0];
+    },
+
 		Mastery(state) {
 			return 1 + Math.ceil(state.MY.level / 4);
 		},

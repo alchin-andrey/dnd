@@ -1,7 +1,7 @@
 <template>
 	<div class="grid-cell">
-		<div class="int-400">{{t_Title}}</div>
-		<div class="int-400 font-w-600">{{t_Content}}</div>
+		<div class="cell-item">{{t_Title}}</div>
+		<div class="cell-item font-w-600">{{t_Content}}</div>
 	</div>
 </template>
 
@@ -30,8 +30,12 @@ export default {
 		},
 
 		t_Content() {
-      const t_str = this.t(this.content);
-      return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
+      if(this.content) {
+        const t_str = this.t(this.content);
+        return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
+      } else {
+        return "—"
+      }
 		},
 	},
 };
@@ -44,19 +48,13 @@ export default {
   display: grid;
 }
 
+.cell-item {
+  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .font-w-600 {
   font-weight: 600;
 }
-
-/* .flex_custom {
-	height: 18px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.gap_4 {
-	display: flex;
-	gap: 4px;
-} */
 </style>
