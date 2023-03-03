@@ -4310,7 +4310,7 @@ export default {
 
   plus_1_insptiration: "+1 Натхнення",
   on_initiative_and_0_inspiration:
-    "перед початком бою, якщо слотів Вдохновения не залишилося",
+    "перед початком бою, якщо слотів Натхнення не залишилося",
 
   spell_peerless_skill: spells.peerless_skill,
   spell_peerless_skill_details: spells.peerless_skill_details,
