@@ -130,7 +130,9 @@
 		<div class="title-donat int-700">{{ t("support_project") }}</div>
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
+
 	<!-- <div v-show="false" id="element-to-convert"><BlankPrint /></div> -->
+
 	<div v-if="small" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
 			<div class="grey-4-main">{{ t("responsive_top") }}</div>

@@ -1,6 +1,10 @@
 <template>
 	<div class="blank-conteiner int-400">
-		<div class="wrap">
+
+
+
+
+		<!-- <div class="wrap">
 		  <table class="table-main">
   			<thead>
   				<tr>
@@ -15,13 +19,14 @@
         
         </tbody>
   		</table>
-		</div>
-
-
-		<!-- <div class="table-main grid-container">
-			<div class="cell cell-title int-600">{{ MY.name }}</div>
-			<AppMainCell class="cell" title="race" :content="MY.race.name" />
 		</div> -->
+
+
+		<div class="table-main grid-container">
+			<div class="cell cell-title int-600">{{ MY.name }}</div>
+			<AppMainCell class="cell-main" title="race" :content="MY.race.name" />
+			<AppMainCell class="cell-main" title="ethnos" :content="MY.ethnos.name" />
+		</div>
 	</div>
 </template>
 
@@ -78,6 +83,17 @@ export default {
 	width: 0;
 }
 
+/* .wrap {
+  border: 1px solid red;
+  border-radius: 5px;
+} */
+
+/* table {
+  border-radius: 10px;
+  border: 1px solid #000;
+  display: block;
+} */
+
 .wrap {
   /* border: 0.5px solid #000000; */
   border-radius: 3px;
@@ -95,12 +111,19 @@ tr:last-child > td{border-bottom:none} */
   border-collapse: collapse;
 	border: 0.5px solid #000000;
   border-radius: 3px; /* CSS3 */
+  display: block;
 }
 
 .cell-main td {
   padding: 4px 6px 2px;
   border: 0.5px solid #000000;
-  border-radius: 3px;
+  /* border-radius: 3px; */
+}
+
+.cell-main {
+  padding: 4px 6px 2px;
+  border: 0.5px solid #000000;
+  /* border-radius: 3px; */
 }
 
 
@@ -127,7 +150,7 @@ tr:last-child > td{border-bottom:none} */
 .cell-title {
 	grid-column: span 2;
 	padding: 23px 12px 25px;
-	border-radius: 3px 3px 0px 0px;
+	/* border-radius: 3px 3px 0px 0px; */
 }
 
 .cursor {
