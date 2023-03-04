@@ -86,7 +86,7 @@
 	<div class="stripe"></div>
 	<!-- Character -->
 
-	<div class="represent" @click="showHome()" v-show="true">
+	<div class="represent" @click="showHome()" v-show="!PRINT_BLANK">
 		<transition name="fade-body">
 			<div
 				class="character"
@@ -116,7 +116,7 @@
 	<!-- sidebar_right -->
 	<!-- <transition name="slide-fade"> -->
 	<div
-		v-show="true"
+		v-show="!PRINT_BLANK"
 		class="sidebar_right"
 		:class="{ sidebar_right_close: close_Sidebar_Right }"
 	>
@@ -131,9 +131,9 @@
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
 
-	<div v-show="dialogVisible" id="element-to-convert"><BlankPrint /></div>
+	<div v-show="dialogVisible || PRINT_BLANK" id="element-to-convert"><BlankPrint /></div>
 
-	<div v-if="small" class="plug-wrap int-700-20">
+	<div v-if="small_screen" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
 			<div class="grey-4-main">{{ t("responsive_top") }}</div>
 			<div class="emog">
@@ -202,7 +202,8 @@ export default {
 	data() {
 		return {
 			dialogVisible: false,
-			small: false,
+			small_screen: false,
+      PRINT_BLANK: false,
 		};
 	},
 
@@ -340,7 +341,7 @@ export default {
 
 	methods: {
 		onResize() {
-			this.small = window.innerWidth <= 1279;
+			this.small_screen = window.innerWidth <= 1279;
 		},
 
 		exportToPDF() {
@@ -503,22 +504,12 @@ a {
 	/* color: #ffffff; */
 }
 
-.int-600-24 {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 600;
-	font-size: 24px;
-	line-height: 24px;
-	text-align: center;
-	letter-spacing: 0.02em;
-}
-
 .int-600-48 {
 	font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
-  line-height: 66px;
+  line-height: 60px;
   letter-spacing: 0.02em;
 }
 

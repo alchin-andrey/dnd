@@ -18,6 +18,10 @@ export const useMYStore = defineStore({
 	}),
 	//SECTION - GETTERS
 	getters: {
+    str_Upper: (stor) => (t_str) => {
+			return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
+		},
+    
     MY_Subclass() {
       const сustomm = this.сustomm_Settings_Class_Arr;
       const subclass = сustomm.find(el => el.name == "subclass");
