@@ -1,17 +1,9 @@
 <template>
   <div class="grid__body">
-    <AppMainCell class="cell bord-tl-3" title="phisiological" :content="MY.gender.phisiological" />
-    <AppMainCell class="cell" title="feel" :content="MY.gender.feel" />
-    <AppMainCell class="cell bord-tr-3" title="attraction" :content="MY.gender.attraction" />
-
-    <AppMainCell class="cell" title="age" :content="MY_Age" />
-    <AppMainCell class="cell" title="weight" :content="MY_Height" />
-    <AppMainCell class="cell" title="height" :content="MY_Weight" />
-
-    <AppMainCell class="cell bord-bl-3" title="color_eyes" :content="eyes_color_Char_Body.name" />
-    <AppMainCell class="cell" title="color_skin" :content="skin_color_Char_Body.name" />
-    <AppMainCell class="cell bord-br-3" title="color_hair" :content="hair_color_Char_Body.name" />
-
+    <AppMainCell class="cell bord-tl-tr-6" title="armor" :content_arr="proficiencies_RC_Params('armor')" />
+    <AppMainCell class="cell" title="weapons" :content_arr="proficiencies_RC_Params('weapons')" />
+    <AppMainCell class="cell " title="tools" :content_arr="proficiencies_RC_Params('tools')" />
+    <AppMainCell class="cell bord-br-bl-6" title="languages" :content_arr="proficiencies_RC_Params('languages')" />
   </div>
 </template>
 
@@ -19,12 +11,14 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
+import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
-	name: "BlankTable__MainSett",
+	name: "BlankTable__Proficiencies",
 	methods: {},
 
 	computed: {
 		...mapState(useMYStore, ["MY"]),
+		...mapState(useProficienciesStore, ["proficiencies_RC_Params"]),
     ...mapState(useColorStore, [
 			"skin_color_Char_Body",
 			"eyes_color_Char_Body",
@@ -67,8 +61,7 @@ export default {
 <style scoped>
 .grid__body {
 	display: grid;
-	grid-template-rows: repeat(3, 72px);
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 126px);
 }
 
 .grid__full {
@@ -76,25 +69,18 @@ export default {
 }
 
 .cell {
-	padding: 0 12px;
+	padding: 4px 12px;
 	border: 1px solid #000;
 	margin: -1px -1px 0 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.bord-tl-3 {
-  border-radius: 6px 0 0 0;
+.bord-tl-tr-6 {
+  border-radius: 6px 6px 0 0;
 }
-
-.bord-tr-3 {
-  border-radius: 0 6px 0 0;
-}
-.bord-br-3 {
-  border-radius: 0 0 6px 0;
-}
-
-.bord-bl-3 {
-  border-radius: 0 0 0 6px;
+.bord-br-bl-6 {
+  border-radius: 0 0 6px 6px;
 }
 </style>

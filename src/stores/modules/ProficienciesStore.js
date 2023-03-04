@@ -97,6 +97,15 @@ export const useProficienciesStore = defineStore({
         return any ? ['any'] : class_prof.concat(sett_prof);
       },
 
+      proficiencies_RC_Params: (stor) => (kay) => {
+        const unique_race = [...new Set(stor.proficiencies_Race_Params_All_or_Any(kay))];
+        const unique_class = [...new Set(stor.proficiencies_Class_Params_All(kay))];
+        const unique_class_without = unique_class.filter(
+          (i) => !unique_race.includes(i)
+        );
+        return [...unique_class_without, ...unique_race];
+      },
+
       //NOTE - ALL
       proficiencies_RC_Params_All: (stor) => (kay) => {
         let rec_prof = stor.proficiencies_Race_Params_All(kay);

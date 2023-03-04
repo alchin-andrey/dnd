@@ -1,22 +1,24 @@
 <template>
-  <img
-        v-if="img_Char"
-        :style="{ 
-          height: hight_Char,
-          left: left_Char 
-          }"
-        :src="img_Char"
-        :alt="body_part"
-      />
-
-      <svg
-        v-if="!img_Char"
-        :fill="placeholder_Color_Hex"
-        :height="calc_Img"
-        viewBox="0 0 197 400"
-        xmlns="http://www.w3.org/2000/svg"
-        v-html="placeholder[body_part]"
-      ></svg>
+  <!-- <div> -->
+    <img
+          v-if="img_Char"
+          :style="{ 
+            height: hight_Char,
+            left: left_Char 
+            }"
+          :src="img_Char"
+          :alt="body_part"
+        />
+  
+        <svg
+          v-if="!img_Char"
+          :fill="placeholder_Color_Hex"
+          :height="calc_Img"
+          viewBox="0 0 197 400"
+          xmlns="http://www.w3.org/2000/svg"
+          v-html="placeholder[body_part]"
+        ></svg>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -36,6 +38,10 @@ export default {
       type: String,
       default: null,
     },
+    // blank_print: {
+    //   type: Boolean,
+    //   default: false,
+    // },
   },
   data() {
     return {
@@ -134,6 +140,8 @@ export default {
     left_Char() {
       if(this.ethnos_name) {
         return `${this.MY.race.ethnos_preview[1]}px`;
+      // } else if(this.blank_print) {
+      //   return 0;
       } else {
         return `50%`;
       }
@@ -155,7 +163,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.character img {
+/* .character img {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -178,6 +186,6 @@ export default {
   transition-property: all, fill;
   transition-duration: 0.8s, 0.1s;
   transition-timing-function: ease-in-out;
-}
+} */
 
 </style>

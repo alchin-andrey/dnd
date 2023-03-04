@@ -1,6 +1,6 @@
 <template>
   <div class="grid__body">
-    <div class="grid__title int-600-24">{{ MY.name }}</div>
+    <div class="grid__title int-600-48"><div class="text__item">{{ MY.name }}</div></div>
     <AppMainCell class="cell" title="race" :content="MY.race.name" />
     <AppMainCell class="cell" title="ethnos" :content="MY.ethnos.name" />
 
@@ -15,8 +15,8 @@
     <AppMainCell class="cell" title="ideals" :content="MY_Ideals.name" />
     <AppMainCell class="cell" title="commitment" :content="MY_Commitment.name" />
 
-    <AppMainCell class="cell bord-l-3" title="secret" :content="MY_Secret.name" />
-    <AppMainCell class="cell bord-r-3" title="weakness" :content="MY_Weakness.name" />
+    <AppMainCell class="cell bord-bl-3" title="secret" :content="MY_Secret.name" />
+    <AppMainCell class="cell bord-br-3" title="weakness" :content="MY_Weakness.name" />
   </div>
 </template>
 
@@ -44,18 +44,26 @@ export default {
 <style scoped>
 .grid__body {
 	display: grid;
-	grid-template-rows: 72px repeat(6, 36px);
+	grid-template-rows: 144px repeat(6, 72px);
 	grid-template-columns: repeat(2, 50%);
-  border-radius: 3px;
+  /* border-radius: 6px; */
 }
 
 .grid__title {
 	grid-column: span 2;
-	padding: 23px 12px 25px;
+
+	padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 	border: 1px solid #000;
-	box-sizing: border-box;
 	margin: -1px -1px 0 0;
-	border-radius: 3px 3px 0 0;
+	border-radius: 6px 6px 0 0;
+	overflow: hidden;
+}
+
+.text__item {
   white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -66,16 +74,18 @@ export default {
 }
 
 .cell {
-	padding: 4px 6px 2px;
+	padding: 0 12px;
 	border: 1px solid #000;
-	box-sizing: border-box;
 	margin: -1px -1px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.bord-r-3 {
-  border-radius: 0 0 3px 0;
+.bord-br-3 {
+  border-radius: 0 0 6px 0;
 }
 
-.bord-l-3 {
-  border-radius: 0 0 0 3px;
+.bord-bl-3 {
+  border-radius: 0 0 0 6px;
 }
 </style>

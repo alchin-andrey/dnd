@@ -1,7 +1,10 @@
 <template>
 	<div class="grid-cell">
 		<div class="cell-item">{{t_Title}}</div>
-		<div class="cell-item font-w-600">{{t_Content}}</div>
+		<div 
+    class="cell-item font-w-600"
+    :class="{wrap_arr: content_arr.length !== 0}"
+    >{{t_Content}}</div>
 	</div>
 </template>
 
@@ -33,6 +36,8 @@ export default {
       if(this.content) {
         const t_str = this.t(this.content);
         return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
+      } else if(this.content_arr.length !== 0) {
+				return this.content_arr.map((n) => `${this.t(n)[0].toUpperCase()}${this.t(n).slice(1)}`).join(", ");
       } else {
         return "—"
       }
@@ -41,17 +46,20 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
 
+<style scoped>
 .grid-cell {
-  display: grid;
+  overflow: hidden;
 }
 
 .cell-item {
   white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.wrap_arr {
+  white-space: normal;
 }
 
 .font-w-600 {

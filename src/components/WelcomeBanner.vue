@@ -2,7 +2,7 @@
   <div v-if="welcome" class="wrapp">
     <my-selection-card passive>
       <Welcome />
-      <img @click="close()" src="@/assets/img/icon/close.svg"/>
+      <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
     </my-selection-card>
 </div>
 </template>
@@ -38,10 +38,10 @@ export default {
   z-index: 100;
 }
 
-img {
+.icone_del {
   position: absolute;
-  right: 16px;
-  top: 16px;
+  right: 22px;
+  top: 28px;
   cursor: pointer;
 }
 </style>

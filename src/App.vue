@@ -131,7 +131,7 @@
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
 
-	<!-- <div v-show="true" id="element-to-convert"><BlankPrint /></div> -->
+	<div v-show="dialogVisible" id="element-to-convert"><BlankPrint /></div>
 
 	<div v-if="small" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
@@ -146,7 +146,7 @@
 </template>
 
 <script>
-// import html2pdf from "html2pdf.js";
+import html2pdf from "html2pdf.js";
 
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 import Donate from "@/components/Donate.vue";
@@ -344,22 +344,25 @@ export default {
 		},
 
 		exportToPDF() {
-      // const race = this.MY.race.name;
-      // const ethnos = this.MY.ethnos.name;
-      // const classes = this.MY.class.name;
-      // const lvl = this.MY.level;
-			// html2pdf(document.getElementById("element-to-convert"), {
-			// 	margin: 0,
-			// 	filename: `DNDME-${race}-${ethnos}-${classes}-${lvl}-lvl.pdf`,
-      //   image: { type: 'jpeg', quality: 1 },
-      //   html2canvas: {
-      //   dpi: 300,
-      //   scale:4,
-      //   letterRendering: true,
-      //   useCORS: true
-      // },
-      // jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-			// });
+      const race = this.MY.race.name;
+      const ethnos = this.MY.ethnos.name;
+      const classes = this.MY.class.name;
+      const lvl = this.MY.level;
+			html2pdf(document.getElementById("element-to-convert"), {
+				margin: 0,
+				filename: `DNDME-${race}-${ethnos}-${classes}-${lvl}-lvl.pdf`,
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+        dpi: 150,
+        scale: 3,
+        // windowWidth: 1044,
+        width: 2088,
+        // height: 1223,
+        letterRendering: true,
+        useCORS: true
+      },
+      jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait', hotfixes: "px_scaling", }
+			});
 		},
 
 		...mapActions(usePagesStore, [
@@ -490,6 +493,16 @@ a {
 	/* color: #ffffff; */
 }
 
+.int-400-22 {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
+	/* color: #ffffff; */
+}
+
 .int-600-24 {
 	font-family: "Inter";
 	font-style: normal;
@@ -498,6 +511,15 @@ a {
 	line-height: 24px;
 	text-align: center;
 	letter-spacing: 0.02em;
+}
+
+.int-600-48 {
+	font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 66px;
+  letter-spacing: 0.02em;
 }
 
 .int-700 {
@@ -611,6 +633,31 @@ a {
 	position: relative;
 	transition-duration: 0.8s;
 	transition-timing-function: ease-in-out;
+}
+
+.character img {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+.character svg {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  transition-property: all, fill;
+  transition-duration: 0.8s, 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .active_eyes {
@@ -743,6 +790,8 @@ a {
 	line-height: 0;
 	top: 4px;
 }
+
+/* .html2canvas-container { width: 3000px !important; height: 3000px !important; } */
 
 /* ---------------------sidebar_right----------------------*/
 </style>
