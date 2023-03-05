@@ -21564,6 +21564,58 @@ export default {
     },
   ],
 
+  counterspell: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_counterspell",
+      details: "spell_counterspell_details",
+      expanded: "spell_counterspell_expanded",
+
+      type: "abjuration",
+      classes: ["wizard","warlock","sorcerer"],
+
+      cast_time: "reaction",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["somatic"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "level",
+      impact_damage_type: "spell",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
   create_food_and_water: [
     {},
     {},
@@ -22046,6 +22098,51 @@ export default {
     },
   ],
 
+  leomunds_tiny_hut: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_leomunds_tiny_hut",
+      details: "spell_leomunds_tiny_hut_details",
+      expanded: "spell_leomunds_tiny_hut_expanded",
+
+      type: "evocation",
+      classes: ["wizard","bard",],
+
+      cast_time: "ritual_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: "halfsphere",
+      aim_aoe_size: 20,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   lightning_bolt: [
     {},
     {},
@@ -22089,6 +22186,57 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  magic_circle: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_magic_circle",
+      details: "spell_magic_circle_details",
+      expanded: "spell_magic_circle_expanded",
+
+      type: "abjuration",
+      classes: ["wizard","cleric","warlock","paladin",],
+
+      cast_time: "ritual",
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 10,
+
+      parts: ["material_holy_water_100gold","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: "cilinder",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Dur_Plus_1",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
     },
     {},
     {},
