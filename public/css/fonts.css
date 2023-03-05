@@ -6,6 +6,20 @@
 }
 
 @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/JetBrainsMono-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/JetBrainsMono-SemiBold.ttf');
+}
+
+@font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
