@@ -7,7 +7,7 @@
 		</section>
 
 		<div class="hiden-avatar">
-			<section class="character_blank">
+			<section class="character_blank" :class="{character_blank_higher: chare_Higher}">
 				<RaceBody body_part="skin" />
 				<RaceBody body_part="eyes" />
 				<RaceBody body_part="hair" />
@@ -19,7 +19,7 @@
 			<div class="flex-sett">
 				<div class="sett-text-absol">{{ t_Saving }}</div>
 				<div class="cell-wrapp">
-					<div class="flex-centr int-600-36">
+					<div class="flex-centr">
 						<svg
 							class="main-svg"
 							viewBox="0 0 36 36"
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 				<div class="cell-wrapp">
-					<div class="flex-centr int-600-36">
+					<div class="flex-centr">
 						<svg
 							class="main-svg"
 							viewBox="0 0 36 36"
@@ -53,7 +53,7 @@
 			</div>
 		</section>
 
-		<div class="gradient"></div>
+		<div class="gradient" v-if="chare_Higher"></div>
 	</div>
 </template>
 
@@ -88,21 +88,15 @@ export default {
 		t_Mastery() {
 			return `${this.t("print_mastry")} +${this.Mastery}`;
 		},
+
+    chare_Higher() {
+      return this.MY.height >= 155;
+    }
 	},
 };
 </script>
 
 <style>
-.int-600-36 {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 600;
-	font-size: 36px;
-	line-height: 50px;
-	text-align: center;
-	letter-spacing: 0.02em;
-}
-
 .main-svg {
 	width: 36px;
 	height: 36px;
@@ -191,19 +185,20 @@ export default {
 }
 
 .character_blank {
-	height: 150%;
+	height: 130%;
+  width: 100%;
 	position: absolute;
-	border-radius: 50px;
-	left: 50%;
-	transform: translate(-50%, 0);
+  bottom: 0;
+	/* left: 50%; */
+	/* transform: translate(-50%, 0); */
 }
 
 .character_blank img {
 	position: absolute;
-	top: 50%;
+	bottom: 60px;
 	/* left: 0 !important; */
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translateX(-50%);
 }
 
 .character_blank svg {
@@ -211,6 +206,16 @@ export default {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.character_blank_higher {
+  top: 0;
+  bottom: auto;
+}
+
+.character_blank_higher img {
+  top: 0;
+  bottom: auto;
 }
 
 .gradient {
