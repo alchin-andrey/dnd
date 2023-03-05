@@ -3,7 +3,7 @@
 		<section class="level-blok">
 			<div>{{ t_lvl }}</div>
 			<div class="int-600-48">{{ MY.level }}</div>
-			<div>{{ t_BM }}</div>
+			<div>{{ t_Mastery }}</div>
 		</section>
 
 		<div class="hiden-avatar">
@@ -17,7 +17,7 @@
 
 		<section class="avatar-sett-wrapp">
 			<div class="flex-sett">
-				<div class="sett-text-absol">Спасброски</div>
+				<div class="sett-text-absol">{{ t_Saving }}</div>
 				<div class="cell-wrapp">
 					<div class="flex-centr int-600-36">+</div>
 					<div><div class="cell-free" v-for="n in 3"></div></div>
@@ -27,12 +27,12 @@
 					<div><div class="cell-free" v-for="n in 3"></div></div>
 				</div>
 			</div>
-      <div class="sett-tired">
-        <div class="sett-text-absol">Усталость</div>
-  			<div class="cell-wrapp">
-  				<div class="cell-free" v-for="n in 5"></div>
-  			</div>
-      </div>
+			<div class="sett-tired">
+				<div class="sett-text-absol">{{ t_Fatigue }}</div>
+				<div class="cell-wrapp">
+					<div class="cell-free" v-for="n in 5"></div>
+				</div>
+			</div>
 		</section>
 
 		<div class="gradient"></div>
@@ -48,14 +48,22 @@ export default {
 	methods: {},
 
 	computed: {
-		...mapState(useMYStore, ["MY", "str_Upper"]),
+		...mapState(useMYStore, ["MY", "Mastery", "str_Upper"]),
 
 		t_lvl() {
 			return this.str_Upper(this.t("level"));
 		},
 
-		t_BM() {
-			return `БМ +6`;
+		t_Saving() {
+			return this.str_Upper(this.t("saving_throws"));
+		},
+
+		t_Fatigue() {
+			return this.str_Upper(this.t("fatigue"));
+		},
+
+		t_Mastery() {
+			return `${this.t("print_mastry")} +${this.Mastery}`;
 		},
 	},
 };
@@ -116,9 +124,9 @@ export default {
 }
 
 .sett-tired {
-  position: relative;
-  margin-top: 64px;
-  padding-top: 46px;
+	position: relative;
+	margin-top: 64px;
+	padding-top: 46px;
 }
 
 .flex-centr {

@@ -1,6 +1,6 @@
 <template>
   <div class="grid__body">
-    <AppMainCell class="cell bord-tl-3" title="phisiological" :content="MY.gender.phisiological" />
+    <AppMainCell class="cell bord-tl-3" title="gender_phisiological" :content="MY.gender.phisiological" />
     <AppMainCell class="cell" title="feel" :content="MY.gender.feel" />
     <AppMainCell class="cell bord-tr-3" title="attraction" :content="MY.gender.attraction" />
 
