@@ -5867,4 +5867,31 @@ export default {
   responsive_bottom: "Откройте на єкране большего размера.",
 
   abilities_passive: "постоянньіе эффектьі",
+
+  max: "max",
+
+  spell_conjure_animals: spells.conjure_animals,
+  spell_conjure_animals_details: spells.conjure_animals_details,
+  spell_conjure_animals_expanded: spells.conjure_animals_expanded,
+
+  spell_conjure_barrage: spells.conjure_barrage,
+  spell_conjure_barrage_details: spells.conjure_barrage_details,
+  spell_conjure_barrage_expanded: spells.conjure_barrage_expanded,
+
+  spell_hipnotic_pattern: spells.hipnotic_pattern,
+  spell_hipnotic_pattern_details: spells.hipnotic_pattern_details,
+  spell_hipnotic_pattern_expanded: spells.hipnotic_pattern_expanded,
+
+  spell_hunger_of_hadar: spells.hunger_of_hadar,
+  spell_hunger_of_hadar_details: spells.hunger_of_hadar_details,
+  spell_hunger_of_hadar_expanded: spells.hunger_of_hadar_expanded,
+
+  gender_phisiological: "Гердер физ",
+  armors_proficiency: "Владение доспехами",
+  weapons_proficiency: "Владение оружием",
+  tools_proficiency: "Владение инструментами",
+  languages_proficiency: "Владение язьіками",
+  print_mastry: "БМ",
+  saving_throws: "Умирание",
+  fatigue: "Усталость",
 };  

@@ -578,6 +578,14 @@ export default {
 			let mana_min = this.Index;
 			return num + Math.floor((mana - mana_min) / 2);
 		},
+
+		Num_Plus_05_x2() {
+			let num = this.Spell_Index.impact_size_num;
+			let mana = this.Mana_Numb;
+			let mana_min = this.Index;
+			return num + Math.floor((mana - mana_min) / 2)*2;
+		},
+
 		Num_Plus_1() {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;

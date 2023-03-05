@@ -1832,7 +1832,7 @@ export default {
   spell_arms_of_hadar_details: spells.arms_of_hadar_details,
   spell_arms_of_hadar_expanded: spells.arms_of_hadar_expanded,
 
-  sum_w: "сумарне",
+  sum_w: "сумарно",
 
   spell_color_spray: spells.color_spray,
   spell_color_spray_details: spells.color_spray_details,
@@ -5854,4 +5854,31 @@ export default {
   responsive_bottom: "Спробуй відкрити на екрані більшого розміру, та насолоджуйся 😌",
 
   abilities_passive: "постійні еффекти",
+
+  max: "max",
+
+  spell_conjure_animals: spells.conjure_animals,
+  spell_conjure_animals_details: spells.conjure_animals_details,
+  spell_conjure_animals_expanded: spells.conjure_animals_expanded,
+
+  spell_conjure_barrage: spells.conjure_barrage,
+  spell_conjure_barrage_details: spells.conjure_barrage_details,
+  spell_conjure_barrage_expanded: spells.conjure_barrage_expanded,
+
+  spell_hipnotic_pattern: spells.hipnotic_pattern,
+  spell_hipnotic_pattern_details: spells.hipnotic_pattern_details,
+  spell_hipnotic_pattern_expanded: spells.hipnotic_pattern_expanded,
+
+  spell_hunger_of_hadar: spells.hunger_of_hadar,
+  spell_hunger_of_hadar_details: spells.hunger_of_hadar_details,
+  spell_hunger_of_hadar_expanded: spells.hunger_of_hadar_expanded,
+
+  gender_phisiological: "Гердер фіз",
+  armors_proficiency: "Володіння обладунками",
+  weapons_proficiency: "Володіння зброєю",
+  tools_proficiency: "Володіння інструментами",
+  languages_proficiency: "Володіння мовами",
+  print_mastry: "БМ",
+  saving_throws: "Вмирання",
+  fatigue: "Втома",
 };

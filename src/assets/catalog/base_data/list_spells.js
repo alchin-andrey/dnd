@@ -21466,6 +21466,104 @@ export default {
     },
   ],
 
+  conjure_animals: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_conjure_animals",
+      details: "spell_conjure_animals_details",
+      expanded: "spell_conjure_animals_expanded",
+
+      type: "conjuration",
+      classes: ["druid","ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "dangerness",
+      impact_damage_type: "sum_w",
+
+      impact_size_foo: "Num_Plus_05_x2",
+      impact_size_str: null,
+      impact_size_num: 2,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  conjure_barrage: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_conjure_barrage",
+      details: "spell_conjure_barrage_details",
+      expanded: "spell_conjure_barrage_expanded",
+
+      type: "conjuration",
+      classes: ["ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus", "somatic", "verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cone",
+      aim_aoe_size: 60,
+
+      impact_type: "damage",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+  ],
+
   create_food_and_water: [
     {},
     {},
@@ -21843,6 +21941,107 @@ export default {
 
       saving_need: null,
       saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  hipnotic_pattern: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_hipnotic_pattern",
+      details: "spell_hipnotic_pattern_details",
+      expanded: "spell_hipnotic_pattern_expanded",
+
+      type: "illusion",
+      classes: ["wizard","sorcerer","bard","warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 30,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  hunger_of_hadar: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_hunger_of_hadar",
+      details: "spell_hunger_of_hadar_details",
+      expanded: "spell_hunger_of_hadar_expanded",
+
+      type: "conjuration",
+      classes: ["warlock"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 150,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: "damage",
+      impact_damage_type: "cold_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 2,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      second_impact_type: "damage",
+      second_impact_damage_type: "acid_w",
+
+      second_impact_size_foo: null,
+      second_impact_size_str: null,
+      second_impact_size_num: 2,
+      second_impact_size_dic: 6,
+      second_impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
       impact_size_saved: null,
     },
   ],
