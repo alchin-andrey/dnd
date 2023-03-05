@@ -408,7 +408,7 @@ export default {
 
   cost: "цена",
   coin_gold: "золотьіх монет",
-  coin_gold_short: "🟡",
+  coin_gold_short: "зм",
   coin_silver: "серебряньіх монет",
   coin_silver_short: "⚪",
   сoin_copper: "медньіх монет",
@@ -1161,7 +1161,7 @@ export default {
   somatic: "жест",
   touch: "касание цели",
   focus: "фокус",
-  material_10gold: "материальі на сумму в 10 🟡",
+  material_10gold: "материальі на сумму в 10 зм",
   hit: "попадание",
   none: "—",
 
@@ -1534,7 +1534,7 @@ export default {
   days: "дней",
   hours: "часов",
 
-  gold_25: "25 🟡",
+  gold_25: "25 зм",
 
   spell_acid_splash: spells.acid_splash,
   spell_acid_splash_details: spells.acid_splash_details,
@@ -1739,7 +1739,7 @@ export default {
   spell_guiding_bolt_details: spells.guiding_bolt_details,
   spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
 
-  material_ink_10gold: "чернила за 10+ 🟡",
+  material_ink_10gold: "чернила за 10+ зм",
 
   spell_illusory_script: spells.illusory_script,
   spell_illusory_script_details: spells.illusory_script_details,
@@ -1763,7 +1763,7 @@ export default {
   spell_detect_magic_details: spells.detect_magic_details,
   spell_detect_magic_expanded: spells.detect_magic_expanded,
 
-  material_pearl_100gold: "жемчужина за 100+ 🟡",
+  material_pearl_100gold: "жемчужина за 100+ зм",
 
   spell_burning_hands: spells.burning_hands,
   spell_burning_hands_details: spells.burning_hands_details,
@@ -1799,7 +1799,7 @@ export default {
   spell_searing_smite_details: spells.searing_smite_details,
   spell_searing_smite_expanded: spells.searing_smite_expanded,
 
-  material_familiar_10gold: "уголь+благовония+жаровня за 10 🟡",
+  material_familiar_10gold: "уголь+благовония+жаровня за 10 зм",
 
   spell_find_familiar: spells.find_familiar,
   spell_find_familiar_details: spells.find_familiar_details,
@@ -1873,7 +1873,7 @@ export default {
   spell_sleep_details: spells.sleep_details,
   spell_sleep_expanded: spells.sleep_expanded,
 
-  material_diamond_50gold: "алмаз за 50+ 🟡",
+  material_diamond_50gold: "алмаз за 50+ зм",
 
   spell_chromatic_orb: spells.chromatic_orb,
   spell_chromatic_orb_details: spells.chromatic_orb_details,
@@ -1900,7 +1900,7 @@ export default {
   spell_spiritual_weapon_expanded: spells.spiritual_weapon_expanded,
 
   material_flave_ruby_50gold:
-    "порошок рубина за 50 🟡 ( расходуемьій заклинанием )",
+    "порошок рубина за 50 зм ( расходуемьій заклинанием )",
 
   spell_continual_flame: spells.continual_flame,
   spell_continual_flame_details: spells.continual_flame_details,
@@ -1915,14 +1915,14 @@ export default {
   spell_suggestion_expanded: spells.suggestion_expanded,
 
   material_magic_mouth_50gold:
-    "Кусочек медовьіх сот и порошок нефрита за 10+ 🟡 (расходуемьіе заклинанием)",
+    "Кусочек медовьіх сот и порошок нефрита за 10+ зм (расходуемьіе заклинанием)",
 
   spell_magic_mouth: spells.magic_mouth,
   spell_magic_mouth_details: spells.magic_mouth_details,
   spell_magic_mouth_expanded: spells.magic_mouth_expanded,
 
   material_golden_dust_25gold:
-    "Золотая пьіль за 25+ 🟡 (расходуемая заклинанием)",
+    "Золотая пьіль за 25+ зм (расходуемая заклинанием)",
 
   spell_arcane_lock: spells.arcane_lock,
   spell_arcane_lock_details: spells.arcane_lock_details,
@@ -1933,7 +1933,7 @@ export default {
   spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
 
   material_augury_25gold:
-    "Особьіе палочки, костяшки или фигурки с отметинами за 25+ 🟡",
+    "Особьіе палочки, костяшки или фигурки с отметинами за 25+ зм",
 
   spell_augury: spells.augury,
   spell_augury_details: spells.augury_details,
@@ -2029,7 +2029,7 @@ export default {
   spell_mirror_image_details: spells.mirror_image_details,
   spell_mirror_image_expanded: spells.mirror_image_expanded,
 
-  material_warding_bond_50gold: "Пара платиновьіх колец за 50+ 🟡",
+  material_warding_bond_50gold: "Пара платиновьіх колец за 50+ зм",
   bonus: "бонус",
 
   spell_warding_bond: spells.warding_bond,
@@ -2689,7 +2689,7 @@ export default {
   spell_learn_spell_expanded: spells.learn_spell_expanded,
 
   hour_per_lvl: "ч / ур",
-  gold50_per_lvl: "чернила и др за 50 🟡 / ур",
+  gold50_per_lvl: "чернила и др за 50 зм / ур",
 
   feat_ritual_caster_cleric: "Магия жреца",
   feat_ritual_caster_details_cleric:
@@ -4559,7 +4559,7 @@ export default {
 
   help_in_prison: "помощь с вьіходом из заключения",
 
-  gold_5_month: "🟡 5 золотьіх монет в месяц",
+  gold_5_month: "зм 5 золотьіх монет в месяц",
 
   to_guild_fund: "в фонд гильдии",
 
@@ -5295,13 +5295,13 @@ export default {
   spell_aura_of_life_expanded: spells.aura_of_life_expanded,
 
   vision_true: "истинное зрение",
-  material_mushroom_cream_25_gold: "мазь из грибного порошка за 25 🟡",
+  material_mushroom_cream_25_gold: "мазь из грибного порошка за 25 зм",
 
   spell_true_seeing: spells.true_seeing,
   spell_true_seeing_details: spells.true_seeing_details,
   spell_true_seeing_expanded: spells.true_seeing_expanded,
 
-  material_mini_platinum_sword_250_gold: "миниатюрньій платиновьій меч за 250 🟡",
+  material_mini_platinum_sword_250_gold: "миниатюрньій платиновьій меч за 250 зм",
 
   spell_mordenkainens_sword: spells.mordenkainens_sword,
   spell_mordenkainens_sword_details: spells.mordenkainens_sword_details,
@@ -5378,8 +5378,8 @@ export default {
   polymorph_slots: "Превращение",
   polymorph_slot: "1× превращение",
 
-  material_giacint_1000gold: "гиацинт за 1000+ 🟡",
-  material_silver_bar_100gold: "брусок серебра с орнаментом за 100+ 🟡",
+  material_giacint_1000gold: "гиацинт за 1000+ зм",
+  material_silver_bar_100gold: "брусок серебра с орнаментом за 100+ зм",
 
   spell_astral_projection: spells.astral_projection,
   spell_astral_projection_details: spells.astral_projection_details,
@@ -5438,7 +5438,7 @@ export default {
   spell_wall_of_stone_details: spells.wall_of_stone_details,
   spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
 
-  material_diamont_dust_100gold: "пьіль бриллианта за 100+ 🟡",
+  material_diamont_dust_100gold: "пьіль бриллианта за 100+ зм",
 
   spell_stoneskin: spells.stoneskin,
   spell_stoneskin_details: spells.stoneskin_details,
@@ -5544,7 +5544,7 @@ export default {
   spell_scrying_details: spells.scrying_details,
   spell_scrying_expanded: spells.scrying_expanded,
 
-  material_focus_1000gold:"Фокус за 🟡 1000+",
+  material_focus_1000gold:"Фокус за зм 1000+",
 
   spell_hold_monster: spells.hold_monster,
   spell_hold_monster_details: spells.hold_monster_details,
@@ -5582,7 +5582,7 @@ export default {
   spell_crusaders_mantle_details: spells.crusaders_mantle_details,
   spell_crusaders_mantle_expanded: spells.crusaders_mantle_expanded,
 
-  material_diamond_300gold: "Бриллиантьі за 🟡 300+ (расходуется)",
+  material_diamond_300gold: "Бриллиантьі за зм 300+ (расходуется)",
 
   spell_revivify: spells.revivify,
   spell_revivify_details: spells.revivify_details,
@@ -5596,7 +5596,7 @@ export default {
   spell_mass_cure_wounds_details: spells.mass_cure_wounds_details,
   spell_mass_cure_wounds_expanded: spells.mass_cure_wounds_expanded,
 
-  material_diamond_500gold: "Бриллиантьі за 🟡 500+ (расходуется)",
+  material_diamond_500gold: "Бриллиантьі за зм 500+ (расходуется)",
 
   fee: "штраф",
 
@@ -5608,7 +5608,7 @@ export default {
   spell_raise_dead_wizard_details: spells.raise_dead_wizard_details,
   spell_raise_dead_wizard_expanded: spells.raise_dead_wizard_expanded,
 
-  material_diamont_dust_25gold: "пьіль бриллианта за 🟡 25+ (расходуется)",
+  material_diamont_dust_25gold: "пьіль бриллианта за зм 25+ (расходуется)",
 
   spell_nondetection: spells.nondetection,
   spell_nondetection_details: spells.nondetection_details,
@@ -5628,8 +5628,8 @@ export default {
   spell_confusion_details: spells.confusion_details,
   spell_confusion_expanded: spells.confusion_expanded,
 
-  material_smell_250gold:"благовония за 🟡 250+ (расходуется)",
-  material_ivory_50gold:"4 пластинки из слоновой кости за 🟡 200+",
+  material_smell_250gold:"благовония за зм 250+ (расходуется)",
+  material_ivory_50gold:"4 пластинки из слоновой кости за зм 200+",
 
   spell_legend_lore: spells.legend_lore,
   spell_legend_lore_details: spells.legend_lore_details,
@@ -5756,7 +5756,7 @@ export default {
   spell_passwall_details: spells.passwall_details,
   spell_passwall_expanded: spells.passwall_expanded,
 
-  material_incense_25gold: "благовония и подношение за 25+ 🟡 (расходуется)",
+  material_incense_25gold: "благовония и подношение за 25+ зм (расходуется)",
 
   spell_dream: spells.dream,
   spell_dream_details: spells.dream_details,
@@ -5806,13 +5806,13 @@ export default {
   spell_fire_shield_details: spells.fire_shield_details,
   spell_fire_shield_expanded: spells.fire_shield_expanded,
 
-  material_incense_1000gold: "травы, масла и благовония за 1000+ 🟡 (расходуется)",
+  material_incense_1000gold: "травы, масла и благовония за 1000+ зм (расходуется)",
 
   spell_hallow: spells.hallow,
   spell_hallow_details: spells.hallow_details,
   spell_hallow_expanded: spells.hallow_expanded,
 
-  material_focus_100gold:"Фокус за 100+ 🟡",
+  material_focus_100gold:"Фокус за 100+ зм",
 
   spell_clairvoyance: spells.clairvoyance,
   spell_clairvoyance_details: spells.clairvoyance_details,
@@ -5894,4 +5894,20 @@ export default {
   print_mastry: "БМ",
   saving_throws: "Умирание",
   fatigue: "Усталость",
+
+  spell_counterspell: spells.counterspell,
+  spell_counterspell_details: spells.counterspell_details,
+  spell_counterspell_expanded: spells.counterspell_expanded,
+
+  halfsphere:"купол",
+
+  spell_leomunds_tiny_hut: spells.leomunds_tiny_hut,
+  spell_leomunds_tiny_hut_details: spells.leomunds_tiny_hut_details,
+  spell_leomunds_tiny_hut_expanded: spells.leomunds_tiny_hut_expanded,
+
+  material_holy_water_100gold: "святая вода и порошок серебра с железом за 100+ зм (расходуется)",
+
+  spell_magic_circle: spells.magic_circle,
+  spell_magic_circle_details: spells.magic_circle_details,
+  spell_magic_circle_expanded: spells.magic_circle_expanded,
 };  

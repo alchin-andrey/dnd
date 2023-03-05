@@ -403,7 +403,7 @@ export default {
 
   cost: "ціна",
   coin_gold: "золотих монет",
-  coin_gold_short: "🟡",
+  coin_gold_short: "зм",
   coin_silver: "срібних монет",
   coin_silver_short: "⚪",
   сoin_copper: "мідних монет",
@@ -1154,7 +1154,7 @@ export default {
   somatic: "жест",
   touch: "дотик цілі",
   focus: "фокус",
-  material_10gold: "матеріали на суму в 10 🟡",
+  material_10gold: "матеріали на суму в 10 зм",
   hit: "влучення",
   none: "—",
 
@@ -1531,7 +1531,7 @@ export default {
   days: "днів",
   hours: "годин",
 
-  gold_25: "25 🟡",
+  gold_25: "25 зм",
 
   spell_acid_splash: spells.acid_splash,
   spell_acid_splash_details: spells.acid_splash_details,
@@ -1734,7 +1734,7 @@ export default {
   spell_guiding_bolt_details: spells.guiding_bolt_details,
   spell_guiding_bolt_expanded: spells.guiding_bolt_expanded,
 
-  material_ink_10gold: "чорнило за 10 🟡",
+  material_ink_10gold: "чорнило за 10 зм",
 
   spell_illusory_script: spells.illusory_script,
   spell_illusory_script_details: spells.illusory_script_details,
@@ -1758,7 +1758,7 @@ export default {
   spell_detect_magic_details: spells.detect_magic_details,
   spell_detect_magic_expanded: spells.detect_magic_expanded,
 
-  material_pearl_100gold: "перлина за 10 🟡",
+  material_pearl_100gold: "перлина за 10 зм",
 
   spell_burning_hands: spells.burning_hands,
   spell_burning_hands_details: spells.burning_hands_details,
@@ -1794,7 +1794,7 @@ export default {
   spell_searing_smite_details: spells.searing_smite_details,
   spell_searing_smite_expanded: spells.searing_smite_expanded,
 
-  material_familiar_10gold: "вугілля+пахощі+жаровня за 10 🟡",
+  material_familiar_10gold: "вугілля+пахощі+жаровня за 10 зм",
 
   spell_find_familiar: spells.find_familiar,
   spell_find_familiar_details: spells.find_familiar_details,
@@ -1868,7 +1868,7 @@ export default {
   spell_sleep_details: spells.sleep_details,
   spell_sleep_expanded: spells.sleep_expanded,
 
-  material_diamond_50gold: "діамант за 50 🟡",
+  material_diamond_50gold: "діамант за 50 зм",
 
   spell_chromatic_orb: spells.chromatic_orb,
   spell_chromatic_orb_details: spells.chromatic_orb_details,
@@ -1894,7 +1894,7 @@ export default {
   spell_spiritual_weapon_details: spells.spiritual_weapon_details,
   spell_spiritual_weapon_expanded: spells.spiritual_weapon_expanded,
 
-  material_flave_ruby_50gold: "порошок рубіну за 50 🟡 ( витрачається )",
+  material_flave_ruby_50gold: "порошок рубіну за 50 зм ( витрачається )",
 
   spell_continual_flame: spells.continual_flame,
   spell_continual_flame_details: spells.continual_flame_details,
@@ -1909,13 +1909,13 @@ export default {
   spell_suggestion_expanded: spells.suggestion_expanded,
 
   material_magic_mouth_50gold:
-    "Шматочок медових сот і порошок нефриту за 10 🟡 ( витрачаються )",
+    "Шматочок медових сот і порошок нефриту за 10 зм ( витрачаються )",
 
   spell_magic_mouth: spells.magic_mouth,
   spell_magic_mouth_details: spells.magic_mouth_details,
   spell_magic_mouth_expanded: spells.magic_mouth_expanded,
 
-  material_golden_dust_25gold: "Золотий пил за 25 🟡 ( витрачається ).",
+  material_golden_dust_25gold: "Золотий пил за 25 зм ( витрачається ).",
 
   spell_arcane_lock: spells.arcane_lock,
   spell_arcane_lock_details: spells.arcane_lock_details,
@@ -1926,7 +1926,7 @@ export default {
   spell_phantasmal_force_expanded: spells.phantasmal_force_expanded,
 
   material_augury_25gold:
-    "Особливі палички, кісточки або фігурки з мітками за 25 🟡",
+    "Особливі палички, кісточки або фігурки з мітками за 25 зм",
 
   spell_augury: spells.augury,
   spell_augury_details: spells.augury_details,
@@ -2022,7 +2022,7 @@ export default {
   spell_mirror_image_details: spells.mirror_image_details,
   spell_mirror_image_expanded: spells.mirror_image_expanded,
 
-  material_warding_bond_50gold: "Пара платинових кілець за 50 🟡",
+  material_warding_bond_50gold: "Пара платинових кілець за 50 зм",
   bonus: "бонус",
 
   spell_warding_bond: spells.warding_bond,
@@ -2679,7 +2679,7 @@ export default {
   spell_learn_spell_expanded: spells.learn_spell_expanded,
 
   hour_per_lvl: "г / рів",
-  gold50_per_lvl: "чорнила та ін. за 50 🟡 / рів",
+  gold50_per_lvl: "чорнила та ін. за 50 зм / рів",
 
   feat_ritual_caster_cleric: "Магія клірика",
   feat_ritual_caster_details_cleric:
@@ -4550,7 +4550,7 @@ export default {
 
   help_in_prison: "допомога з виходом з увʼязнення",
 
-  gold_5_month: "🟡 5 золотих монет у місяць",
+  gold_5_month: "зм 5 золотих монет у місяць",
 
   to_guild_fund: "до фонду гільдії",
 
@@ -5283,13 +5283,13 @@ export default {
   spell_aura_of_life_expanded: spells.aura_of_life_expanded,
 
   vision_true: "істинний зір",
-  material_mushroom_cream_25_gold: "мазь з грибного порошка за 25 🟡",
+  material_mushroom_cream_25_gold: "мазь з грибного порошка за 25 зм",
 
   spell_true_seeing: spells.true_seeing,
   spell_true_seeing_details: spells.true_seeing_details,
   spell_true_seeing_expanded: spells.true_seeing_expanded,
 
-  material_mini_platinum_sword_250_gold: "мініатюрний платиновий меч за 250 🟡",
+  material_mini_platinum_sword_250_gold: "мініатюрний платиновий меч за 250 зм",
 
   spell_mordenkainens_sword: spells.mordenkainens_sword,
   spell_mordenkainens_sword_details: spells.mordenkainens_sword_details,
@@ -5366,8 +5366,8 @@ export default {
   polymorph_slots: "Поліморф",
   polymorph_slot: "1× Поліморф",
 
-  material_giacint_1000gold: "гіацинт за 1000+ 🟡",
-  material_silver_bar_100gold: "брусок срібла з орнаментом за 100+ 🟡",
+  material_giacint_1000gold: "гіацинт за 1000+ зм",
+  material_silver_bar_100gold: "брусок срібла з орнаментом за 100+ зм",
 
   spell_astral_projection: spells.astral_projection,
   spell_astral_projection_details: spells.astral_projection_details,
@@ -5426,7 +5426,7 @@ export default {
   spell_wall_of_stone_details: spells.wall_of_stone_details,
   spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
 
-  material_diamont_dust_100gold: "діамантовий пил за 100+ 🟡",
+  material_diamont_dust_100gold: "діамантовий пил за 100+ зм",
 
   spell_stoneskin: spells.stoneskin,
   spell_stoneskin_details: spells.stoneskin_details,
@@ -5531,7 +5531,7 @@ export default {
   spell_scrying_details: spells.scrying_details,
   spell_scrying_expanded: spells.scrying_expanded,
 
-  material_focus_1000gold:"Фокус за 1000+ 🟡",
+  material_focus_1000gold:"Фокус за 1000+ зм",
 
   spell_hold_monster: spells.hold_monster,
   spell_hold_monster_details: spells.hold_monster_details,
@@ -5569,7 +5569,7 @@ export default {
   spell_crusaders_mantle_details: spells.crusaders_mantle_details,
   spell_crusaders_mantle_expanded: spells.crusaders_mantle_expanded,
 
-  material_diamond_300gold: "Діаманти за 🟡 300+ (витрачається)",
+  material_diamond_300gold: "Діаманти за зм 300+ (витрачається)",
 
   spell_revivify: spells.revivify,
   spell_revivify_details: spells.revivify_details,
@@ -5583,7 +5583,7 @@ export default {
   spell_mass_cure_wounds_details: spells.mass_cure_wounds_details,
   spell_mass_cure_wounds_expanded: spells.mass_cure_wounds_expanded,
 
-  material_diamond_500gold: "Діаманти за 🟡 500+ (витрачається)",
+  material_diamond_500gold: "Діаманти за зм 500+ (витрачається)",
 
   fee: "штраф",
 
@@ -5595,7 +5595,7 @@ export default {
   spell_raise_dead_wizard_details: spells.raise_dead_wizard_details,
   spell_raise_dead_wizard_expanded: spells.raise_dead_wizard_expanded,
 
-  material_diamont_dust_25gold: "діамантовий пил за 🟡 25+",
+  material_diamont_dust_25gold: "діамантовий пил за зм 25+",
 
   spell_nondetection: spells.nondetection,
   spell_nondetection_details: spells.nondetection_details,
@@ -5615,7 +5615,7 @@ export default {
   spell_confusion_details: spells.confusion_details,
   spell_confusion_expanded: spells.confusion_expanded,
 
-  material_smell_250gold:"пахощі за 🟡 250+ (витрачається)",
+  material_smell_250gold:"пахощі за зм 250+ (витрачається)",
   material_ivory_50gold:"4 пластинки із слонової кістки за 200+",
 
   spell_legend_lore: spells.legend_lore,
@@ -5743,7 +5743,7 @@ export default {
   spell_passwall_details: spells.passwall_details,
   spell_passwall_expanded: spells.passwall_expanded,
 
-  material_incense_25gold: "пахожі та підношення за 25+ 🟡 ( витрачається )",
+  material_incense_25gold: "пахожі та підношення за 25+ зм ( витрачається )",
 
   spell_dream: spells.dream,
   spell_dream_details: spells.dream_details,
@@ -5793,13 +5793,13 @@ export default {
   spell_fire_shield_details: spells.fire_shield_details,
   spell_fire_shield_expanded: spells.fire_shield_expanded,
 
-  material_incense_1000gold: "травы, масла и благовония за 1000+ 🟡 ( витрачається )",
+  material_incense_1000gold: "травы, масла и благовония за 1000+ зм ( витрачається )",
 
   spell_hallow: spells.hallow,
   spell_hallow_details: spells.hallow_details,
   spell_hallow_expanded: spells.hallow_expanded,
 
-  material_focus_100gold:"Фокус за 100+ 🟡",
+  material_focus_100gold:"Фокус за 100+ зм",
 
   spell_clairvoyance: spells.clairvoyance,
   spell_clairvoyance_details: spells.clairvoyance_details,
@@ -5881,4 +5881,18 @@ export default {
   print_mastry: "БМ",
   saving_throws: "Вмирання",
   fatigue: "Втома",
+
+  spell_counterspell: spells.counterspell,
+  spell_counterspell_details: spells.counterspell_details,
+  spell_counterspell_expanded: spells.counterspell_expanded,
+
+  halfsphere:"купол",
+
+  spell_leomunds_tiny_hut: spells.leomunds_tiny_hut,
+  spell_leomunds_tiny_hut_details: spells.leomunds_tiny_hut_details,
+  spell_leomunds_tiny_hut_expanded: spells.leomunds_tiny_hut_expanded,
+
+  spell_magic_circle: spells.magic_circle,
+  spell_magic_circle_details: spells.magic_circle_details,
+  spell_magic_circle_expanded: spells.magic_circle_expanded,
 };
