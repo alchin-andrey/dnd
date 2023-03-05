@@ -107,7 +107,6 @@ export default {
 	width: 100%;
 	/* width: 1223px; */
 	height: 1404px;
-	/* overflow: hidden; */
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -189,8 +188,6 @@ export default {
   width: 100%;
 	position: absolute;
   bottom: 0;
-	/* left: 50%; */
-	/* transform: translate(-50%, 0); */
 }
 
 .character_blank img {

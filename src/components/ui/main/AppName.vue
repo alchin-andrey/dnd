@@ -15,6 +15,7 @@
 				:class="{ liner: inputValue !== '' }"
 				v-model="inputValue"
 				type="text"
+        maxlength="20"
 				:placeholder="t_Placeholder"
 			/>
 		</div>
