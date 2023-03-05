@@ -19,18 +19,36 @@
 			<div class="flex-sett">
 				<div class="sett-text-absol">{{ t_Saving }}</div>
 				<div class="cell-wrapp">
-					<div class="flex-centr int-600-36">+</div>
-					<div><div class="cell-free" v-for="n in 3"></div></div>
+					<div class="flex-centr int-600-36">
+						<svg
+							class="main-svg"
+							viewBox="0 0 36 36"
+							xmlns="http://www.w3.org/2000/svg"
+							v-html="ui_icon.print_plus"
+						/>
+					</div>
+					<div>
+						<div class="cell-free" v-for="n in 3" />
+					</div>
 				</div>
 				<div class="cell-wrapp">
-					<div class="flex-centr int-600-36">-</div>
-					<div><div class="cell-free" v-for="n in 3"></div></div>
+					<div class="flex-centr int-600-36">
+						<svg
+							class="main-svg"
+							viewBox="0 0 36 36"
+							xmlns="http://www.w3.org/2000/svg"
+							v-html="ui_icon.print_minus"
+						/>
+					</div>
+					<div>
+						<div class="cell-free" v-for="n in 3" />
+					</div>
 				</div>
 			</div>
 			<div class="sett-tired">
 				<div class="sett-text-absol">{{ t_Fatigue }}</div>
 				<div class="cell-wrapp">
-					<div class="cell-free" v-for="n in 5"></div>
+					<div class="cell-free" v-for="n in 5" />
 				</div>
 			</div>
 		</section>
@@ -40,12 +58,17 @@
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
+
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-
 export default {
 	name: "Blank__Avatar",
-	methods: {},
+	data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery", "str_Upper"]),
@@ -78,6 +101,12 @@ export default {
 	line-height: 50px;
 	text-align: center;
 	letter-spacing: 0.02em;
+}
+
+.main-svg {
+	width: 36px;
+	height: 36px;
+	fill: black;
 }
 
 .avatar-print {
@@ -130,6 +159,7 @@ export default {
 }
 
 .flex-centr {
+  height: 60px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
