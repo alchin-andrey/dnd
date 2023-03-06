@@ -5922,4 +5922,6 @@ export default {
   spell_major_image: spells.major_image,
   spell_major_image_details: spells.major_image_details,
   spell_major_image_expanded: spells.major_image_expanded,
+
+  link_description: "Используй єту ссьілку для возврата к своему персонажу, повьішения его уровня и изменения настроек. Обрати внимание, новьіе настройки будут иметь уже другую ссьілку.",
 };  

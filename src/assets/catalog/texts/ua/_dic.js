@@ -5907,4 +5907,6 @@ export default {
   spell_major_image: spells.major_image,
   spell_major_image_details: spells.major_image_details,
   spell_major_image_expanded: spells.major_image_expanded,
+
+  link_description: "Це посилання для повернення до свого персонажа, підняття його рівня і зміни налаштувань. Зверни увагу, що персонаж зі зміненими налаштуваннями буде мати вже інше посилання.",
 };
