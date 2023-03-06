@@ -1,6 +1,7 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import gender from "@/assets/catalog/base_data/list_genders.js";
+import { useMYStore } from "@/stores/user/MYStore";
 
 export const useGenderStore = defineStore({
 	id: "GenderStore",
@@ -19,6 +20,15 @@ export const useGenderStore = defineStore({
 		},
     attraction_Arr(state) {
       return state.gender.attraction;
+    },
+
+    gender_Arr() {
+      const MYStore = useMYStore();
+      const phisiological = MYStore.MY.gender.phisiological;
+      const feel = MYStore.MY.gender.feel;
+      const look = MYStore.MY.gender.look;
+      const attraction = MYStore.MY.gender.attraction;
+      return [phisiological, feel, look, attraction];
     }
 	},
 });
