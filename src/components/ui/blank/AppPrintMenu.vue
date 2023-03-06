@@ -4,8 +4,7 @@
 		<div class="column-item font-w-600">
 			<div class="item-text-wrap" v-for="elem, i in for_Rendering_Item(item)">
         <div class="item-text">
-          {{ rend_Elem(elem, item) }}
-          <span v-if="for_Rendering_Item(item).length - 1 > i">,</span>
+          {{ rend_Elem(elem, item) }}<span v-if="for_Rendering_Item(item).length - 1 > i">,</span>
         </div>
 			</div>
 		</div>

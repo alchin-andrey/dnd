@@ -1,5 +1,5 @@
 <template>
-	<section class="selection-print-menu">
+	<section class="selection-print-menu hr-print">
 		<AppPrintMenu title="race" :chapter="MY.race.name" />
 		<AppPrintMenu title="ethnos" :chapter="MY.ethnos.name" />
 		<AppPrintMenu title="past" :chapter="MY.backstory.name" />
@@ -116,5 +116,11 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+}
+
+.hr-print {
+  width: 512px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #000000;
 }
 </style>

@@ -12,15 +12,18 @@
 		<section class="blank-bottom">
 			<div class="column-wrap">
 				<div class="column-content">
-					<div class="int-600-28">{{ site_Link }}</div>
+					<section class="flex-col gap-16">
+						<div class="int-600-28">{{ site_Link }}</div>
+						<div>{{ link_Description }}</div>
+					</section>
 
-					<div>{{ link_Description }}</div>
+					<div class="hr-print-lvl">
+						<AppPrintMenu title="level" :chapter="String(MY.level)" />
+					</div>
 
-					<div class="print-hr"></div>
-					<AppPrintMenu title="level" :chapter="String(MY.level)" />
-          <div class="print-hr"></div>
-          <Blank__RaceMenu />
-					<div class="print-hr"></div>
+					<Blank__RaceMenu />
+          <Blank__ClassMenu class="column-avoid"/>
+					<Blank__AlignmentMenu />
 				</div>
 			</div>
 		</section>
@@ -95,25 +98,37 @@ export default {
 .column-wrap {
 	/* min-height: 100%; */
 	height: 1310px;
-	columns: 3;
-	column-gap: 32px;
+	columns: 584px;
+	column-gap: 64px;
+  column-rule: 1px solid;
 	column-fill: auto;
-	/* padding: 0 32px; */
+  padding-left: 32px;
+  border-left: 1px solid #000000;
 }
 
 .column-content {
-	/* min-height: 100%; */
 	height: 1310px;
-	border-left: 1px solid #000000;
-	padding-left: 32px;
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 52px;
 }
-.print-hr {
+
+.column-avoid {
+  break-inside: avoid;
+}
+.hr-print-lvl {
 	width: 512px;
-	height: 2px;
-	background: #000000;
-	margin: 36px 0;
+	padding: 50px 0;
+	border-top: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.gap-16 {
+	gap: 16px;
 }
 </style>
