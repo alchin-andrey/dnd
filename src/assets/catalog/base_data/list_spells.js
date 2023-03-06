@@ -22143,6 +22143,58 @@ export default {
     },
   ],
 
+  lightning_arrow: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_lightning_arrow",
+      details: "spell_lightning_arrow_details",
+      expanded: "spell_lightning_arrow_expanded",
+
+      type: "transmutaion",
+      classes: ["ranger",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: "damage",
+      impact_damage_type: "electricity_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 4,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
   lightning_bolt: [
     {},
     {},
@@ -22246,6 +22298,57 @@ export default {
     {},
   ],
 
+  mass_healing_word: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_mass_healing_word",
+      details: "spell_mass_healing_word_details",
+      expanded: "spell_mass_healing_word_expanded",
+
+      type: "evocation",
+      classes: ["bard","cleric",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: "sphere",
+      aim_aoe_size: 120,
+
+      impact_type: "heal",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1__Pls_MOD",
+      impact_size_str: 6,
+      impact_size_num: 1,
+      impact_size_dic: 4,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
   meld_into_stone: [
     {},
     {},
@@ -22289,6 +22392,55 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  major_image: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_major_image",
+      details: "spell_major_image_details",
+      expanded: "spell_major_image_expanded",
+
+      type: "illusion",
+      classes: ["bard","warlock","wizard","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Sti_6Til__Dur_6Nul__Sdu_6Nul",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
   ],
 
   nondetection: [

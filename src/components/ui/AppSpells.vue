@@ -851,6 +851,13 @@ export default {
 			if (mana >= 5) return null;
 		},
 
+		Dur_6Nul() {
+			// let num = this.Spell_Index.spell_duration;
+			let mana = this.Mana_Numb;
+			if (mana < 6) return 10;
+			if (mana >= 6) return null;
+		},
+
 		//ANCHOR - Sti
 		Sti_Con_Nul_Nul_Til() {
 			// let num = this.Spell_Index.spell_time;
@@ -863,6 +870,13 @@ export default {
 			if (mana >= 5) return "till_dissipate";
 		},
 
+		Sti_6Til() {
+			// let num = this.Spell_Index.spell_time;
+			let mana = this.Mana_Numb;
+			if (mana < 6) return "concentration";
+			if (mana >= 6) return "till_dissipate";
+		},
+
 		//ANCHOR - Sdu
 		Sdu_Min_Hour_Hour_Nul() {
 			// let num = this.Spell_Index.spell_duration_units;
@@ -873,6 +887,13 @@ export default {
 			if (mana == 3) return "hour";
 			if (mana == 4) return "hour";
 			if (mana >= 5) return null;
+		},
+
+		Sdu_6Nul() {
+			// let num = this.Spell_Index.spell_duration_units;
+			let mana = this.Mana_Numb;
+			if (mana < 6) return "min";
+			if (mana >= 6) return null;
 		},
 
 		//ANCHOR - Dic

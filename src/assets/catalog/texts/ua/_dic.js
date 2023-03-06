@@ -5895,4 +5895,16 @@ export default {
   spell_magic_circle: spells.magic_circle,
   spell_magic_circle_details: spells.magic_circle_details,
   spell_magic_circle_expanded: spells.magic_circle_expanded,
+
+  spell_mass_healing_word: spells.mass_healing_word,
+  spell_mass_healing_word_details: spells.mass_healing_word_details,
+  spell_mass_healing_word_expanded: spells.mass_healing_word_expanded,
+
+  spell_lightning_arrow: spells.lightning_arrow,
+  spell_lightning_arrow_details: spells.lightning_arrow_details,
+  spell_lightning_arrow_expanded: spells.lightning_arrow_expanded,
+
+  spell_major_image: spells.major_image,
+  spell_major_image_details: spells.major_image_details,
+  spell_major_image_expanded: spells.major_image_expanded,
 };
