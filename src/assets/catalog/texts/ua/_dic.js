@@ -1894,7 +1894,7 @@ export default {
   spell_spiritual_weapon_details: spells.spiritual_weapon_details,
   spell_spiritual_weapon_expanded: spells.spiritual_weapon_expanded,
 
-  material_flave_ruby_50gold: "порошок рубіну за 50 зм ( витрачається )",
+  material_flave_ruby_50gold: "порошок рубіну за 50 зм (витрачається)",
 
   spell_continual_flame: spells.continual_flame,
   spell_continual_flame_details: spells.continual_flame_details,
@@ -1915,7 +1915,7 @@ export default {
   spell_magic_mouth_details: spells.magic_mouth_details,
   spell_magic_mouth_expanded: spells.magic_mouth_expanded,
 
-  material_golden_dust_25gold: "Золотий пил за 25 зм ( витрачається ).",
+  material_golden_dust_25gold: "Золотий пил за 25 зм (витрачається).",
 
   spell_arcane_lock: spells.arcane_lock,
   spell_arcane_lock_details: spells.arcane_lock_details,
@@ -5743,7 +5743,7 @@ export default {
   spell_passwall_details: spells.passwall_details,
   spell_passwall_expanded: spells.passwall_expanded,
 
-  material_incense_25gold: "пахожі та підношення за 25+ зм ( витрачається )",
+  material_incense_25gold: "пахожі та підношення за 25+ зм (витрачається)",
 
   spell_dream: spells.dream,
   spell_dream_details: spells.dream_details,
@@ -5793,7 +5793,7 @@ export default {
   spell_fire_shield_details: spells.fire_shield_details,
   spell_fire_shield_expanded: spells.fire_shield_expanded,
 
-  material_incense_1000gold: "травы, масла и благовония за 1000+ зм ( витрачається )",
+  material_incense_1000gold: "травы, масла и благовония за 1000+ зм (витрачається)",
 
   spell_hallow: spells.hallow,
   spell_hallow_details: spells.hallow_details,
@@ -5892,6 +5892,8 @@ export default {
   spell_leomunds_tiny_hut_details: spells.leomunds_tiny_hut_details,
   spell_leomunds_tiny_hut_expanded: spells.leomunds_tiny_hut_expanded,
 
+  material_holy_water_100gold: "свята вода та порошок срібла із залізом за 100+ зм (витрачається)",
+
   spell_magic_circle: spells.magic_circle,
   spell_magic_circle_details: spells.magic_circle_details,
   spell_magic_circle_expanded: spells.magic_circle_expanded,
@@ -5909,4 +5911,14 @@ export default {
   spell_major_image_expanded: spells.major_image_expanded,
 
   link_description: "Це посилання для повернення до свого персонажа, підняття його рівня і зміни налаштувань. Зверни увагу, що персонаж зі зміненими налаштуваннями буде мати вже інше посилання.",
+
+  spell_blinding_smite: spells.blinding_smite,
+  spell_blinding_smite_details: spells.blinding_smite_details,
+  spell_blinding_smite_expanded: spells.blinding_smite_expanded,
+
+  material_incense_200gold:"пахощі та потовчений діамант за 200+ зм (витрачається)",
+
+  spell_glyph_of_warding: spells.glyph_of_warding,
+  spell_glyph_of_warding_details: spells.glyph_of_warding_details,
+  spell_glyph_of_warding_expanded: spells.glyph_of_warding_expanded,
 };

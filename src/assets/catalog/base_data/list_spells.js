@@ -21368,6 +21368,51 @@ export default {
     },
   ],
 
+  blinding_smite: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_blinding_smite",
+      details: "spell_blinding_smite_details",
+      expanded: "spell_blinding_smite_expanded",
+
+      type: "evocation",
+      classes: ["paladin",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "radiant_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+  ],
+
   call_lightning: [
     {},
     {},
@@ -21950,6 +21995,57 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
+  ],
+
+  glyph_of_warding: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_glyph_of_warding",
+      details: "spell_glyph_of_warding_details",
+      expanded: "spell_glyph_of_warding_expanded",
+
+      type: "abjuration",
+      classes: ["wizard","cleric","bard",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_incense_200gold","touch","somatic","verbal"],
+
+      spell_time: "till_dissipate",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: "square",
+      aim_aoe_size: 10,
+
+      impact_type: "damage",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   haste: [

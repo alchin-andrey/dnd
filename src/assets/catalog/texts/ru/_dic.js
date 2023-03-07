@@ -5924,4 +5924,14 @@ export default {
   spell_major_image_expanded: spells.major_image_expanded,
 
   link_description: "Используй єту ссьілку для возврата к своему персонажу, повьішения его уровня и изменения настроек. Обрати внимание, новьіе настройки будут иметь уже другую ссьілку.",
+
+  spell_blinding_smite: spells.blinding_smite,
+  spell_blinding_smite_details: spells.blinding_smite_details,
+  spell_blinding_smite_expanded: spells.blinding_smite_expanded,
+
+  material_incense_200gold:"благовония и растолченньій бриллиант за 200+ зм (расходуется)",
+
+  spell_glyph_of_warding: spells.glyph_of_warding,
+  spell_glyph_of_warding_details: spells.glyph_of_warding_details,
+  spell_glyph_of_warding_expanded: spells.glyph_of_warding_expanded,
 };  
