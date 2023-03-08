@@ -5934,4 +5934,16 @@ export default {
   spell_glyph_of_warding: spells.glyph_of_warding,
   spell_glyph_of_warding_details: spells.glyph_of_warding_details,
   spell_glyph_of_warding_expanded: spells.glyph_of_warding_expanded,
+
+  spell_phantom_steed: spells.phantom_steed,
+  spell_phantom_steed_details: spells.phantom_steed_details,
+  spell_phantom_steed_expanded: spells.phantom_steed_expanded,
+
+  spell_vampiric_touch: spells.vampiric_touch,
+  spell_vampiric_touch_details: spells.vampiric_touch_details,
+  spell_vampiric_touch_expanded: spells.vampiric_touch_expanded,
+
+  spell_feign_death: spells.feign_death,
+  spell_feign_death_details: spells.feign_death_details,
+  spell_feign_death_expanded: spells.feign_death_expanded,
 };  

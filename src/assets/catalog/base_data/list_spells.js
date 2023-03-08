@@ -21849,6 +21849,52 @@ export default {
     {},
   ],
 
+  feign_death: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_feign_death",
+      details: "spell_feign_death_details",
+      expanded: "spell_feign_death_expanded",
+
+      type: "necromancy",
+      classes: ["wizard","bard","druid","cleric",],
+
+      cast_time: "action_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "action",
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus","touch","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   fireball: [
     {},
     {},
@@ -22584,6 +22630,52 @@ export default {
     },
   ],
 
+  phantom_steed: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_phantom_steed",
+      details: "spell_phantom_steed_details",
+      expanded: "spell_phantom_steed_expanded",
+
+      type: "illusion",
+      classes: ["wizard",],
+
+      cast_time: "ritual_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   plant_growth: [
     {},
     {},
@@ -23042,6 +23134,58 @@ export default {
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
+  ],
+
+  vampiric_touch: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_vampiric_touch",
+      details: "spell_vampiric_touch_details",
+      expanded: "spell_vampiric_touch_expanded",
+
+      type: "necromancy",
+      classes: ["warlock","wizard","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: 5,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "necrotic_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 3,
+      impact_size_dic: 6,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
   ],
 
   water_breathing: [
