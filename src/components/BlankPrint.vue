@@ -11,7 +11,7 @@
 
 		<section class="blank-bottom">
 			<div class="column-wrap">
-				<div class="column-content">
+				<!-- <div class="column-content"> -->
 					<section class="flex-col gap-16">
 						<div class="int-600-28">{{ site_Link }}</div>
 						<div>{{ link_Description }}</div>
@@ -25,7 +25,7 @@
           <Blank__ClassMenu class="column-avoid"/>
 					<Blank__AlignmentMenu />
 				</div>
-			</div>
+			<!-- </div> -->
 		</section>
 	</div>
 </template>

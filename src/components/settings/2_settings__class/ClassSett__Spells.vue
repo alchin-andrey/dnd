@@ -6,7 +6,7 @@
 			:text="spells_setting.details"
 		/>
 
-		<section class="flex-col gap-26" v-if="numb_Manna_Spell.length !== 0">
+		<section class="flex-col gap-34" v-if="numb_Manna_Spell.length !== 0">
 			<div v-for="i in numb_Manna_Spell" :key="i">
 				<AppSpellsPacks
 					class="flex-col"
@@ -143,10 +143,6 @@ export default {
 
 .gap-34 {
 	gap: 34px;
-}
-
-.gap-26 {
-	gap: 26px;
 }
 
 .manna-numb {
