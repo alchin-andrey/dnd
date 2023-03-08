@@ -2,8 +2,8 @@
 	<section v-for="item in for_Rendering" :key="item" class="column">
 		<div class="column-title jbm-600-22">{{ rend_Title(item) }}</div>
 		<div class="column-item font-w-600">
-			<div class="item-text-wrap" v-for="elem, i in for_Rendering_Item(item)">
-        <div class="item-text">
+			<div class="item-text-wrap" :class="{'h-72': base_Stats}" v-for="elem, i in for_Rendering_Item(item)">
+        <div class="item-text" :class="{'item-text-normal': base_Stats}">
           {{ rend_Elem(elem, item) }}<span v-if="for_Rendering_Item(item).length - 1 > i">,</span>
         </div>
 			</div>
@@ -42,6 +42,11 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY", "level_Filter_Arr", "str_Upper"]),
 		...mapState(useOverflowStore, ["overflow_Item_Menu"]),
+
+
+    base_Stats() {
+      return this.title == 'stats';
+    },
 
 		for_Rendering() {
 			if (this.title) {
@@ -145,9 +150,18 @@ export default {
   align-items: center;
 }
 
+.h-72 {
+  height: 72px;
+}
+
 .item-text {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+
+.item-text-normal {
+  white-space: normal;
 }
 </style>
