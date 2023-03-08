@@ -5910,4 +5910,40 @@ export default {
   spell_magic_circle: spells.magic_circle,
   spell_magic_circle_details: spells.magic_circle_details,
   spell_magic_circle_expanded: spells.magic_circle_expanded,
+
+  spell_mass_healing_word: spells.mass_healing_word,
+  spell_mass_healing_word_details: spells.mass_healing_word_details,
+  spell_mass_healing_word_expanded: spells.mass_healing_word_expanded,
+
+  spell_lightning_arrow: spells.lightning_arrow,
+  spell_lightning_arrow_details: spells.lightning_arrow_details,
+  spell_lightning_arrow_expanded: spells.lightning_arrow_expanded,
+
+  spell_major_image: spells.major_image,
+  spell_major_image_details: spells.major_image_details,
+  spell_major_image_expanded: spells.major_image_expanded,
+
+  link_description: "Используй єту ссьілку для возврата к своему персонажу, повьішения его уровня и изменения настроек. Обрати внимание, новьіе настройки будут иметь уже другую ссьілку.",
+
+  spell_blinding_smite: spells.blinding_smite,
+  spell_blinding_smite_details: spells.blinding_smite_details,
+  spell_blinding_smite_expanded: spells.blinding_smite_expanded,
+
+  material_incense_200gold:"благовония и растолченньій бриллиант за 200+ зм (расходуется)",
+
+  spell_glyph_of_warding: spells.glyph_of_warding,
+  spell_glyph_of_warding_details: spells.glyph_of_warding_details,
+  spell_glyph_of_warding_expanded: spells.glyph_of_warding_expanded,
+
+  spell_phantom_steed: spells.phantom_steed,
+  spell_phantom_steed_details: spells.phantom_steed_details,
+  spell_phantom_steed_expanded: spells.phantom_steed_expanded,
+
+  spell_vampiric_touch: spells.vampiric_touch,
+  spell_vampiric_touch_details: spells.vampiric_touch_details,
+  spell_vampiric_touch_expanded: spells.vampiric_touch_expanded,
+
+  spell_feign_death: spells.feign_death,
+  spell_feign_death_details: spells.feign_death_details,
+  spell_feign_death_expanded: spells.feign_death_expanded,
 };  
