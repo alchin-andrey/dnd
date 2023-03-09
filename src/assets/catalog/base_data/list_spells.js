@@ -23708,53 +23708,6 @@ export default {
     {},
   ],
 
-  grasping_vine: [
-    {},
-    {},
-    {},
-    {},
-    {
-      name: "spell_grasping_vine",
-      details: "spell_grasping_vine_details",
-      expanded: "spell_grasping_vine_expanded",
-
-      type: "conjuration",
-      classes: ["druid","ranger",],
-
-      cast_time: "bonus_action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "creature",
-      aim_type: "in_distance",
-      aim_range: 30,
-
-      parts: ["somatic","verbal"],
-
-      spell_time: "concentration",
-      spell_duration: 1,
-      spell_duration_units: "min",
-
-      aim_need: false,
-
-      aim_aoe: null,
-      aim_aoe_size: null,
-
-      impact_type: "pull",
-      impact_damage_type: null,
-
-      impact_size_foo: "Feet",
-      impact_size_str: 10,
-      impact_size_num: 20,
-      impact_size_dic: null,
-      impact_size_pls: null,
-
-      saving_need: true,
-      saving_attribute: "dexterity",
-      impact_size_saved: null,
-    },
-  ],
-
   compulsion: [
     {},
     {},
@@ -24229,6 +24182,99 @@ export default {
     },
   ],
 
+  grasping_vine: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_grasping_vine",
+      details: "spell_grasping_vine_details",
+      expanded: "spell_grasping_vine_expanded",
+
+      type: "conjuration",
+      classes: ["druid","ranger",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "pull",
+      impact_damage_type: null,
+
+      impact_size_foo: "Feet",
+      impact_size_str: 10,
+      impact_size_num: 20,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+  ],
+
+  greater_invisibility: [
+    {},
+    {},
+    {},
+    {},
+    {
+      name: "spell_greater_invisibility",
+      details: "spell_greater_invisibility_details",
+      expanded: "spell_greater_invisibility_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: null,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+  
   guardian_of_faith: [
     {},
     {},
@@ -25080,53 +25126,6 @@ export default {
     {},
     {},
     {},
-  ],
-
-  greater_invisibility: [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {
-      name: "spell_greater_invisibility",
-      details: "spell_greater_invisibility_details",
-      expanded: "spell_greater_invisibility_expanded",
-
-      type: "illusion",
-      classes: ["bard","wizard","sorcerer",],
-
-      cast_time: "action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "creature",
-      aim_type: "near",
-      aim_range: null,
-
-      parts: ["touch","somatic","verbal"],
-
-      spell_time: "concentration",
-      spell_duration: 1,
-      spell_duration_units: "min",
-
-      aim_need: false,
-      aim_aoe: null,
-      aim_aoe_size: null,
-
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dic: null,
-      impact_size_pls: null,
-
-      saving_need: null,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
   ],
 
   hallow: [
