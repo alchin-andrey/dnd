@@ -19,7 +19,8 @@ import AppName from "@/components/ui/main/AppName.vue";
 
 // Blank Print
 import AppMainCell from "@/components/ui/blank/AppMainCell.vue";
-import AppPrintMenu from "@/components/ui/blank/AppPrintMenu.vue";
+import AppPrintMenu__Chapter from "@/components/ui/blank/AppPrintMenu__Chapter.vue";
+import AppPrintMenu__Arr from "@/components/ui/blank/AppPrintMenu__Arr.vue";
 
 
 
@@ -86,7 +87,8 @@ export default [
 
 // Blank Print
   AppMainCell,
-  AppPrintMenu,
+  AppPrintMenu__Chapter,
+  AppPrintMenu__Arr,
 
 
 

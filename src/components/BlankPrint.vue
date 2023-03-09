@@ -9,24 +9,7 @@
 			<Blank__Avatar />
 		</section>
 
-		<section class="blank-bottom">
-			<div class="column-wrap">
-				<div class="column-content">
-					<section class="flex-col gap-16">
-						<div class="int-600-28">{{ site_Link }}</div>
-						<div>{{ link_Description }}</div>
-					</section>
-
-					<div class="hr-print-lvl">
-						<AppPrintMenu title="level" :chapter="String(MY.level)" />
-					</div>
-
-					<Blank__RaceMenu />
-          <Blank__ClassMenu class="column-avoid"/>
-					<Blank__AlignmentMenu />
-				</div>
-			</div>
-		</section>
+			<Blank__SelectMenu />
 	</div>
 </template>
 
@@ -56,7 +39,6 @@ export default {
 <style scoped>
 .blank-conteiner {
 	width: 100%;
-	height: 100%;
 	width: 2088px; /* 1588 */
 	height: 2952px;
 	color: #000000;
@@ -68,22 +50,14 @@ export default {
 	margin-right: -2088px;
 }
 
+.blank-conteiner::-webkit-scrollbar {
+	width: 0;
+}
+
 .blank-head {
 	display: flex;
 	gap: 72px;
 	height: 1404px;
-}
-
-.blank-bottom {
-	border-top: 1px dashed #333333;
-	padding-top: 72px;
-	/* height: 1404px; */
-	height: 1404px;
-	height: 100%;
-}
-
-.blank-conteiner::-webkit-scrollbar {
-	width: 0;
 }
 
 .grid-wrap {
@@ -95,8 +69,14 @@ export default {
 	gap: 36px;
 }
 
+/* .blank-bottom {
+	border-top: 1px dashed #333333;
+	padding-top: 72px;
+	height: 1404px;
+	height: 100%;
+}
+
 .column-wrap {
-	/* min-height: 100%; */
 	height: 1310px;
 	columns: 584px;
 	column-gap: 64px;
@@ -130,5 +110,5 @@ export default {
 
 .gap-16 {
 	gap: 16px;
-}
+} */
 </style>
