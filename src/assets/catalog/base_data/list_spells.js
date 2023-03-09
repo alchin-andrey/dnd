@@ -21849,6 +21849,101 @@ export default {
     {},
   ],
 
+  elemental_weapon: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_elemental_weapon",
+      details: "spell_elemental_weapon_details",
+      expanded: "spell_elemental_weapon_expanded",
+
+      type: "transmutation",
+      classes: ["druid","paladin","ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_Plus_05__Det_5_7_Mana",
+      impact_size_str: null,
+      impact_size_num: 1,
+      impact_size_dic: 4,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  fear: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_fear",
+      details: "spell_fear_details",
+      expanded: "spell_fear_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard","warlock","sorcerer",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: "cone",
+      aim_aoe_size: 30,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   feign_death: [
     {},
     {},
@@ -21977,12 +22072,12 @@ export default {
       aim_aoe: null,
       aim_aoe_size: null,
 
-      impact_type: null,
+      impact_type: "targets_number",
       impact_damage_type: null,
 
-      impact_size_foo: null,
+      impact_size_foo: "Num_Plus_1",
       impact_size_str: null,
-      impact_size_num: null,
+      impact_size_num: 1,
       impact_size_dic: null,
       impact_size_pls: null,
 
@@ -22766,6 +22861,52 @@ export default {
     },
   ],
 
+  remove_curse: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_remove_curse",
+      details: "spell_remove_curse_details",
+      expanded: "spell_remove_curse_expanded",
+
+      type: "abjuration",
+      classes: ["wizard","paladin","warlock","cleric",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   revivify: [
     {},
     {},
@@ -23132,6 +23273,51 @@ export default {
 
       saving_need: true,
       saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+  ],
+
+  tongues: [
+    {},
+    {},
+    {},
+    {
+      name: "spell_tongues",
+      details: "spell_tongues_details",
+      expanded: "spell_tongues_expanded",
+
+      type: "divination",
+      classes: ["wizard","warlock","cleric","sorcerer","bard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["focus","touch","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],

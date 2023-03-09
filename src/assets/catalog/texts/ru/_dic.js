@@ -5946,4 +5946,22 @@ export default {
   spell_feign_death: spells.feign_death,
   spell_feign_death_details: spells.feign_death_details,
   spell_feign_death_expanded: spells.feign_death_expanded,
+
+  spell_remove_curse: spells.remove_curse,
+  spell_remove_curse_details: spells.remove_curse_details,
+  spell_remove_curse_expanded: spells.remove_curse_expanded,
+
+  spell_elemental_weapon: spells.elemental_weapon,
+  spell_elemental_weapon_details: spells.elemental_weapon_details,
+  spell_elemental_weapon_details_5: spells.elemental_weapon_details_5,
+  spell_elemental_weapon_details_7: spells.elemental_weapon_details_7,
+  spell_elemental_weapon_expanded: spells.elemental_weapon_expanded,
+
+  spell_fear: spells.fear,
+  spell_fear_details: spells.fear_details,
+  spell_fear_expanded: spells.fear_expanded,
+
+  spell_tongues: spells.tongues,
+  spell_tongues_details: spells.tongues_details,
+  spell_tongues_expanded: spells.tongues_expanded,
 };  

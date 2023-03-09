@@ -776,6 +776,13 @@ export default {
 			return this.kof_Foo(lvl_arr);
 		},
 
+		Det_5_7_Mana() {
+			let mana = this.Mana_Numb;
+			if (mana == 5) return 5;
+			if (mana == 6) return 5;
+			if (mana == 7) return 7;
+		},
+
 		Det_7_11_15_Lvl() {
 			const lvl_arr = [7, 11, 15];
 			return this.kof_Foo(lvl_arr);
