@@ -25,7 +25,7 @@
 					<a
 						class="link-pad"
 						target="_blank"
-						href="https://www.patreon.com/dimalagoda"
+						href="https://www.patreon.com/dndme"
 					>
 						Patreon ↗
 					</a>
