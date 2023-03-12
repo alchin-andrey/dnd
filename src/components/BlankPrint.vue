@@ -1,15 +1,23 @@
 <template>
 	<div class="blank-conteiner int-400-22">
-		<section class="blank-head">
-			<div class="grid-wrap">
-				<BlankTable__MainNames />
-				<BlankTable__MainSett />
-				<BlankTable__Proficiencies />
-			</div>
-			<Blank__Avatar />
-		</section>
+		<div class="blank-scroll">
 
-			<Blank__SelectMenu />
+			<main class="print-page">
+				<section class="blank-head">
+					<div class="grid-wrap">
+						<BlankTable__MainNames />
+						<BlankTable__MainSett />
+						<BlankTable__Proficiencies />
+					</div>
+					<Blank__Avatar />
+				</section>
+				<Blank__SelectMenu />
+			</main>
+
+      <main class="print-page">
+        <BlankTable__QualStats />
+      </main>
+		</div>
 	</div>
 </template>
 
@@ -38,16 +46,26 @@ export default {
 
 <style scoped>
 .blank-conteiner {
-	width: 100%;
+	/* width: 100%; */
 	width: 2088px; /* 1588 */
-	height: 2952px;
 	color: #000000;
 	z-index: 10;
-	padding: 72px;
+	height: 1000%;
+	/* padding: 72px; */
 	overflow-y: scroll;
 	scrollbar-width: none;
 	background-color: #ffffff;
 	margin-right: -2088px;
+}
+
+.blank-scroll {
+	height: 1000%;
+}
+
+.print-page {
+	width: 100%;
+	height: 2952px;
+	padding: 72px;
 }
 
 .blank-conteiner::-webkit-scrollbar {
@@ -68,47 +86,4 @@ export default {
 	flex-direction: column;
 	gap: 36px;
 }
-
-/* .blank-bottom {
-	border-top: 1px dashed #333333;
-	padding-top: 72px;
-	height: 1404px;
-	height: 100%;
-}
-
-.column-wrap {
-	height: 1310px;
-	columns: 584px;
-	column-gap: 64px;
-  column-rule: 1px solid;
-	column-fill: auto;
-  padding-left: 32px;
-  border-left: 1px solid #000000;
-}
-
-.column-content {
-	height: 1310px;
-	display: flex;
-	flex-direction: column;
-	gap: 52px;
-}
-
-.column-avoid {
-  break-inside: avoid;
-}
-.hr-print-lvl {
-	width: 512px;
-	padding: 50px 0;
-	border-top: 2px solid #000000;
-	border-bottom: 2px solid #000000;
-}
-
-.flex-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.gap-16 {
-	gap: 16px;
-} */
 </style>

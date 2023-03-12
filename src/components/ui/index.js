@@ -21,6 +21,8 @@ import AppName from "@/components/ui/main/AppName.vue";
 import AppMainCell from "@/components/ui/blank/AppMainCell.vue";
 import AppPrintMenu__Chapter from "@/components/ui/blank/AppPrintMenu__Chapter.vue";
 import AppPrintMenu__Arr from "@/components/ui/blank/AppPrintMenu__Arr.vue";
+import AppPrintQualities from "@/components/ui/blank/AppPrintQualities.vue";
+import AppPrintStats from "@/components/ui/blank/AppPrintStats.vue";
 
 
 
@@ -89,8 +91,8 @@ export default [
   AppMainCell,
   AppPrintMenu__Chapter,
   AppPrintMenu__Arr,
-
-
+  AppPrintQualities,
+  AppPrintStats,
 
   MyBackPage,
 

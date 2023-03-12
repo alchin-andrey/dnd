@@ -4,11 +4,7 @@
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
-					<svg
-						:class="{
-              save_svg: save.includes(title) || save_bool,
-              active_svg: !icon
-              }"
+					<svg class="main_svg"
 						viewBox="0 0 18 18"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"
@@ -272,11 +268,15 @@ export default {
 	margin-right: 4px;
 }
 
-.active_svg {
+/* .main_svg {
+  fill: white;
+} */
+
+/* .active_svg {
   width: 18px;
 	height: 18px;
   stroke: white;
-}
+} */
 
 .item {
   display: flex;
@@ -294,10 +294,10 @@ export default {
 	stroke-opacity: 0.2;
 }
 
-.save_svg {
+/* .save_svg {
 	fill: #05ff00;
 	stroke: #05ff00;
-}
+} */
 
 .visual {
 	width: 98px;

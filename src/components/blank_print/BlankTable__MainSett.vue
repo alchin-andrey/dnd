@@ -1,16 +1,16 @@
 <template>
   <div class="grid__body">
-    <AppMainCell class="cell bord-tl-3" title="gender_phisiological" :content="MY.gender.phisiological" />
+    <AppMainCell class="cell bord-tl-6" title="gender_phisiological" :content="MY.gender.phisiological" />
     <AppMainCell class="cell" title="feel" :content="MY.gender.feel" />
-    <AppMainCell class="cell bord-tr-3" title="attraction" :content="MY.gender.attraction" />
+    <AppMainCell class="cell bord-tr-6" title="attraction" :content="MY.gender.attraction" />
 
     <AppMainCell class="cell" title="age" :content="MY_Age" />
     <AppMainCell class="cell" title="weight" :content="MY_Height" />
     <AppMainCell class="cell" title="height" :content="MY_Weight" />
 
-    <AppMainCell class="cell bord-bl-3" title="color_eyes" :content="eyes_color_Char_Body.name" />
+    <AppMainCell class="cell bord-bl-6" title="color_eyes" :content="eyes_color_Char_Body.name" />
     <AppMainCell class="cell" title="color_skin" :content="skin_color_Char_Body.name" />
-    <AppMainCell class="cell bord-br-3" title="color_hair" :content="hair_color_Char_Body.name" />
+    <AppMainCell class="cell bord-br-6" title="color_hair" :content="hair_color_Char_Body.name" />
 
   </div>
 </template>
@@ -83,18 +83,18 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
-.bord-tl-3 {
+.bord-tl-6 {
   border-radius: 6px 0 0 0;
 }
 
-.bord-tr-3 {
+.bord-tr-6 {
   border-radius: 0 6px 0 0;
 }
-.bord-br-3 {
+.bord-br-6 {
   border-radius: 0 0 6px 0;
 }
 
-.bord-bl-3 {
+.bord-bl-6 {
   border-radius: 0 0 0 6px;
 }
 </style>
