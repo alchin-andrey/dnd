@@ -2,7 +2,7 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-			<main class="print-page">
+			<main class="print-page" v-if="true">
 				<section class="blank-head">
 					<div class="grid-wrap">
 						<BlankTable__MainNames />

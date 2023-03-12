@@ -524,6 +524,16 @@ a {
 	/* color: #ffffff; */
 }
 
+.int-600-22 {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
+	/* color: #ffffff; */
+}
+
 .int-600-28 {
 	font-family: 'Inter';
   font-style: normal;
@@ -539,6 +549,15 @@ a {
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
+  letter-spacing: 0.02em;
+}
+
+.int-600-72 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 72px;
   letter-spacing: 0.02em;
 }
 
@@ -560,6 +579,9 @@ a {
 	line-height: 24px;
 	letter-spacing: 0.02em;
 }
+
+
+
 .stripe {
 	width: 2px;
 	background-color: rgba(255, 255, 255, 0.1);
