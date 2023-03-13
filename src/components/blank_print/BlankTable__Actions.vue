@@ -20,7 +20,7 @@
 
 			<section class="table-col-2">
       <div class="column-content">
-        <div class="int-600-28">{{ t_X1("main_action") }}</div>
+        <div class="int-600-28">{{ t_X1("action") }}</div>
         <div>• {{ T("action_weapon_attack") }}</div>
 				<div>• {{ t_Jump }}</div>
 				<div>• {{ t_Departure }}</div>
@@ -62,7 +62,7 @@ export default {
 		// },
 
 		// t_Main_Action() {
-		// 	const str = this.T("main_action");
+		// 	const str = this.T("action");
 		// 	return `1 × ${str}`;
 		// },
 
