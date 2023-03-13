@@ -56,7 +56,6 @@ export default {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(useStatsStore, ["stats_Keys"]),
 		...mapState(useSkillsStore, [
-			"skills_print_Keys",
 			"skills_RC_All_Numb",
 			"skills_Keys",
 		]),
