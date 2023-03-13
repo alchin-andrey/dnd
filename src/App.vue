@@ -650,6 +650,12 @@ a {
 }
 
 .story h3 {
+  font-family: 'Inter-700';
+  font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
 	color: #ffffff;
 	margin-top: 26px;
 	margin-bottom: 5px;
