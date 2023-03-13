@@ -5955,4 +5955,12 @@ export default {
   none_action: "—",
 
   spell_difficulty: "складність заклять",
+
+  free_action: "вільна дія",
+  action_short_phrase: "коротка фраза або жест",
+  action_with_backpack: "дістати з рюкзака предмет або зброю для Основної дії",
+  actions_with_door: "Відкрити або закрити двері",
+  action_button_click: "Натиснути на кнопку",
+  action_other: "інша дрібна дія",
+
 };

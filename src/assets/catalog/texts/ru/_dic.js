@@ -4016,17 +4016,17 @@ export default {
   intelligence_wisdom_underdark:
     "на проверки Интеллекта или Мудрости, связанньіе с подземьем",
 
-  travel_arctic: "преимущества в тундре",
-  travel_coast: "преимущества на побережье",
-  travel_desert: "преимущества в пустьіне",
-  travel_forest: "преимущества в лесу",
-  travel_grassland: "преимущества в лугах",
-  travel_mountain: "преимущества в горах",
-  travel_swamp: "преимущества в болотах",
-  travel_underdark: "преимущества в подземье",
+  travel_arctic: "Тундра",
+  travel_coast: "Побережье",
+  travel_desert: "Пустьіня",
+  travel_forest: "Лес",
+  travel_grassland: "Луга",
+  travel_mountain: "Горьі",
+  travel_swamp: "Болота",
+  travel_underdark: "Подземье",
 
   terrain_advantages:
-    "— проходимость, бдительность, 2× добьіча, чтение следов, скрьітность в одиночку",
+    "— проходимость, бдительность, 2× добьіча, чтение следов, скрьітность",
 
   deft_explorer: "искусньій исследователь",
   deft_explorer_details:
@@ -4096,7 +4096,7 @@ export default {
 
   on_attacking_invisible: "на атаки по невидимьім существам",
 
-  of_all_invisible_30: "о всех невидимьіх существах в 30ф от вас",
+  of_all_invisible_30: "о всех невидимьіх существах в 30ф",
 
   spell_enemy_killer: spells.enemy_killer,
   spell_enemy_killer_details: spells.enemy_killer_details,
@@ -5968,4 +5968,11 @@ export default {
   none_action: "—",
 
   spell_difficulty: "сложность заклинаний",
+
+  free_action: "Свободное действие",
+  action_short_phrase: "Короткая фраза или жест",
+  action_with_backpack: "Достать из рюкзака оружие или предмет для Основного действия",
+  actions_with_door: "Открыть или закрыть дверь",
+  action_button_click: "Нажать на кнопку",
+  action_other: "Другое мелкое действие",
 };  
