@@ -30,6 +30,36 @@ export const useSkillsStore = defineStore({
       {name:"deception", mod:"charisma"},
       {name:"intimidation", mod:"charisma"},
     ],
+
+    skills_print_grid: [
+      {name:"acrobatics", mod:"dexterity"},
+      {name:"arcana", mod:"intelligence"},
+      
+      {name:"investigation", mod:"intelligence"},
+      {name:"medicine", mod:"wisdom"},
+      
+      {name:"athletics", mod:"strength"},
+      {name:"deception", mod:"charisma"},
+      
+      {name:"perception", mod:"wisdom"},
+      {name:"nature", mod:"intelligence"},
+
+      
+      
+      {name:"sleight_of_hand", mod:"dexterity"},
+      {name:"stealth", mod:"dexterity"},
+
+      {name:"history", mod:"intelligence"},
+      {name:"religion", mod:"intelligence"},
+
+      {name:"survival", mod:"wisdom"},
+      {name:"insight", mod:"wisdom"},
+      {name:"animal_handling", mod:"wisdom"},
+
+      {name:"performance", mod:"charisma"},
+      {name:"persuasion", mod:"charisma"},
+      {name:"intimidation", mod:"charisma"},
+    ],
     skills_passive: [
       {name:"investigation_passive", mod:"intelligence"},
       {name:"perception_passive", mod:"wisdom"},
@@ -40,6 +70,10 @@ export const useSkillsStore = defineStore({
   getters: {
     skills_Keys() {
 			return this.skills.reduce((acc, el) => acc.concat(el.name), []);
+		},
+
+    skills_print_Keys() {
+			return this.skills_print_grid.reduce((acc, el) => acc.concat(el.name), []);
 		},
 
     skills_Numb_Bonus: (stor) => (arr_all, name) => {

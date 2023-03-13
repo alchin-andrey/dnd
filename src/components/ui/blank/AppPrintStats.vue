@@ -13,7 +13,6 @@
 			<div class="cell-item">{{ t_Title }}</div>
 		</section>
 		<div class="int-600-72 numb">{{ mod_Numb }}</div>
-		<!-- <div class="flex-vis"> -->
 			<div class="visual">
 				<section class="text-item">
 					<div>{{ t_Base }}</div>
@@ -24,7 +23,6 @@
 					<div>{{ save_Numb }}</div>
 				</section>
 			</div>
-		<!-- </div> -->
 	</div>
 </template>
 
@@ -96,13 +94,18 @@ export default {
 }
 
 .title-head {
-	height: 36px;
+  height: 36px;
 	display: flex;
-	/* align-items: center; */
+  align-items: center;
+}
+
+.cell-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .icon {
-	/* display: flex; */
 	width: 36px;
 	height: 36px;
 	margin-right: 2px;
@@ -123,14 +126,6 @@ export default {
 	text-align: center;
 	margin-top: 82px;
 }
-
-/* .flex-vis {
-	flex: 1 1;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	padding-bottom: 6px;
-} */
 
 .visual {
 	flex: 1 auto;

@@ -83,6 +83,13 @@ export default {
 .title-head {
   height: 36px;
 	display: flex;
+  align-items: center;
+}
+
+.cell-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .icon {
