@@ -105,18 +105,24 @@ export const useSkillsStore = defineStore({
     },
 
     skills_Class_Numb: (stor) => (name) => {
-			return stor.skills_Numb_Bonus(stor.skills_Class_All, name);
+      const class_numb = stor.skills_Numb_Bonus(stor.skills_Class_All, name);
+      const skills_foo = stor.skill_Specials_Foo(name);
+			return class_numb + skills_foo;
 		},
 
-    skills_RC_All_Numb: (stor) => (name) => {
+    skill_Specials_Foo: (stor) => (name) => {
       const MYStore = useMYStore();
-      const skill_MOD = stor.skills_MOD_Numb(name);
       const skill_Mastery = stor.skills_Numb_Bonus(stor.skills_RC_Page, name);
-
       const spec_skills = MYStore.class_Specials_Filter_Lvl("skills");
-			let skills_foo = null;
+      let skills_foo = 0;
 			spec_skills?.forEach((el) => (skills_foo = stor[el.foo](skill_Mastery)));
-      return skills_foo ? skills_foo + skill_MOD : skill_Mastery + skill_MOD;
+      return skills_foo;
+    },
+
+    skills_RC_All_Numb: (stor) => (name) => {
+      const skill_RP_MOD = stor.skills_RP_MOD_Numb(name);
+      const class_numb = stor.skills_Class_Numb(name);
+      return skill_RP_MOD + class_numb;
     },
 
     skills_Class_Param() {
@@ -126,24 +132,32 @@ export const useSkillsStore = defineStore({
     },
 
     //NOTE - Skills_Passive
-    skills_passive_MOD_Numb: (stor) => (name) => {
-      const StatsStore = useStatsStore();
-      const state_name = stor.skills_passive.find(el => el.name == name).mod;
-			return StatsStore.stats_Mod(state_name);
+    skills_passive_RP_MOD_Numb: (stor) => (name) => {
+      const name_skill = name.replace("_passive", '');
+      const RP_mod = stor.skills_RP_MOD_Numb(name_skill);
+			return RP_mod;
     },
     
     skills_passive_Class_Numb: (stor) => (name) => {
+      const name_skill = name.replace("_passive", '');
+      const class_numb = stor.skills_Class_Numb(name_skill);
+
       const MYStore = useMYStore();
       const skills_custom = MYStore.filter_Custom_Class_Lvl("skills_passive");
       const skills_name = skills_custom.filter(el => el.name == name);
-      let skill_numb = skills_name.reduce((acc, el) => acc + el.num, 0);
-			return skill_numb;
+      const skill_numb = skills_name.reduce((acc, el) => acc + el.num, 0);
+			return class_numb + skill_numb;
 		},
 
     skills_passive_All_Numb: (stor) => (name) => {
-      const skill_MOD = stor.skills_passive_MOD_Numb(name);
+      const skill_RP_MOD = stor.skills_passive_RP_MOD_Numb(name);
       const skill_Class = stor.skills_passive_Class_Numb(name);
-      return skill_Class +  skill_MOD;
+      return skill_Class +  skill_RP_MOD;
+    },
+
+    skills_passive_Print_All_Numb: (stor) => (name) => {
+      const skill_all_numb = stor.skills_passive_All_Numb(name);
+      return 10 + skill_all_numb;
     },
 
     skills_passive_Class_Param() {
@@ -167,7 +181,7 @@ export const useSkillsStore = defineStore({
 		Half_Mastery: (stor) => (skill_mastery) => {
       const MYStore = useMYStore();
 			const half_mastery = Math.floor(MYStore.Mastery / 2);
-			return skill_mastery ? skill_mastery : half_mastery;
+			return skill_mastery ? 0 : half_mastery;
 		},
     
     //!NOTE - Skills Foo

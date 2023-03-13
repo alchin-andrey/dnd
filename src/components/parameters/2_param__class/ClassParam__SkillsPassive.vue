@@ -6,7 +6,7 @@
 				:key="name"
 				:title="name"
 				:numb="skills_passive_Class_Numb(name)"
-				:second_numb="skills_passive_MOD_Numb(name)"
+				:second_numb="skills_passive_RP_MOD_Numb(name)"
 			/>
 		</my-wrapper>
 		<my-wrapper v-if="all">
@@ -40,7 +40,7 @@ export default {
 		...mapState(useSkillsStore, [
 			"skills_passive",
 			"skills_passive_Class_Param",
-			"skills_passive_MOD_Numb",
+			"skills_passive_RP_MOD_Numb",
 			"skills_passive_Class_Numb",
 			"skills_passive_All_Numb",
 		]),
