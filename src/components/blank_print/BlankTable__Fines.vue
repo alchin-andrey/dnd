@@ -62,7 +62,17 @@
 							v-html="fines_icon[fines.type]"
 						/>
 					</div>
-					<div class="int-600-22 fines-text">{{ t_Fines(fines) }}</div>
+					<!-- <div class="int-600-22 fines-text">{{ t_Fines(fines) }}</div> -->
+					<div class="int-600-22 fines-text">
+            {{ em_Before(t_Fines(fines)) }}
+			<emoji
+				v-if="em_Upd(t_Fines(fines))"
+				:data="emojiIndex"
+				:emoji="em_Upd(t_Fines(fines))"
+				:set="set_emoji"
+				:size="22"
+			/>{{ em_After(t_Fines(fines)) }}
+          </div>
 				</section>
 			</div>
 		</div>
@@ -137,6 +147,18 @@ export default {
 			const str_2 = stor.t(obj.details);
 			return `${str_1} ${str_2}`;
 		},
+
+    em_Upd: (stor) => (name) => {
+			return stor.updEmoji(name);
+		},
+
+		em_Before: (stor) => (name) => {
+			return stor.beforeEmoji(name);
+		},
+
+		em_After: (stor) => (name) => {
+			return stor.afterEmoji(name);
+		},
 	},
 };
 </script>
@@ -210,13 +232,13 @@ export default {
 	stroke-width: 1px;
 }
 
-.fines_svg {
-	width: 36px;
-	height: 36px;
+.save_svg {
 	fill: black;
 }
 
-.save_svg {
-	fill: black;
+.emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+	top: 2px;
 }
 </style>
