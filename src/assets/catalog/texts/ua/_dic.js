@@ -5952,5 +5952,5 @@ export default {
   spell_tongues_details: spells.tongues_details,
   spell_tongues_expanded: spells.tongues_expanded,
 
-  none_action: "--",
+  none_action: "—",
 };
