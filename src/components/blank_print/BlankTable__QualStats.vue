@@ -75,13 +75,7 @@ export default {
 				arr.push({ t_name: t_name, numb: numb });
 			});
       arr.sort((a, b) => {
-				if (a.t_name > b.t_name) {
-					return 1;
-				}
-				if (a.t_name < b.t_name) {
-					return -1;
-				}
-				return 0;
+        return a.t_name.localeCompare(b.t_name);
 			});
 			return arr;
 		},
