@@ -8,6 +8,7 @@ import Blank__SelectMenu from "@/components/blank_print/Blank__SelectMenu.vue";
 import BlankTable__QualStats from "@/components/blank_print/BlankTable__QualStats.vue";
 import BlankTable__Fines from "@/components/blank_print/BlankTable__Fines.vue";
 
+import BlankTable__Actions from "@/components/blank_print/BlankTable__Actions.vue";
 
 export default {
 	components: {
@@ -16,10 +17,11 @@ export default {
   BlankTable__Proficiencies,
   Blank__Avatar,
   Blank__SelectMenu,
-
-
+  
   BlankTable__QualStats,
   BlankTable__Fines,
+  
+  BlankTable__Actions,
 
 	},
 };

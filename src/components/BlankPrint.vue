@@ -20,6 +20,7 @@
           <BlankTable__Fines class="marg-top-36"/>
         </section>
         <section class="wrap-bottom">
+        <BlankTable__Actions class="marg-top-72"/>
         </section>
       </main>
 		</div>
@@ -95,5 +96,9 @@ export default {
 
 .marg-top-36 {
   margin-top: 36px;
+}
+
+.marg-top-72 {
+  margin-top: 72px;
 }
 </style>
