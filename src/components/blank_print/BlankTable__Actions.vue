@@ -3,7 +3,7 @@
 		<div class="wrap-table-left">
 			<section class="table-col-1">
 				<div class="cell-1-1 row-flex int-500-22">
-					<div class="int-600-28">{{ t_Free_Action }}</div>
+					<div class="int-600-28">{{ t_X1("free_action") }}</div>
 					<div>• {{ T("action_short_phrase") }}</div>
 					<div>• {{ T("action_with_backpack") }}</div>
 					<div>• {{ T("actions_with_door") }}</div>
@@ -18,7 +18,22 @@
         </div>
 			</section>
 
-			<section class="table-col-2"></section>
+			<section class="table-col-2">
+      <div class="column-content">
+        <div class="int-600-28">{{ t_X1("main_action") }}</div>
+        <div>• {{ T("action_weapon_attack") }}</div>
+				<div>• {{ t_Jump }}</div>
+				<div>• {{ t_Departure }}</div>
+				<div>• {{ T("actions_evasion") }}</div>
+				<div>• {{ T("action_ambush") }}</div>
+				<div>• {{ T("action_prepare") }}</div>
+				<div>• {{ T("action_use_item") }}</div>
+				<div>• {{ T("action_search") }}</div>
+
+
+
+      </div>
+      </section>
 
 			<section class="table-col-1">
 				<div class="cell-3-1"></div>
@@ -41,10 +56,36 @@ export default {
 		...mapState(useQualitiesStore, ["speed_Numb_Class"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
-		t_Free_Action() {
-			const str = this.T("free_action");
-			return `1 × ${str}`;
-		},
+		// t_Free_Action() {
+		// 	const str = this.T("free_action");
+		// 	return `1 × ${str}`;
+		// },
+
+		// t_Main_Action() {
+		// 	const str = this.T("main_action");
+		// 	return `1 × ${str}`;
+		// },
+
+    t_X1: (stor) => (str) => {
+      const t_str = stor.T(str);
+			return `1 × ${t_str}`;
+    },
+
+    t_Jump() {
+      const t_str = this.T("actions_jump");
+      const speed = this.speed_Numb_Class;
+      const unit = this.t("f");
+      const t_move = this.t("movement");
+			return `${t_str} (+${speed + unit} ${t_move})`;
+    },
+
+    t_Departure() {
+      const t_str = this.T("actions_departure");
+      const speed = 0;
+      const unit = this.t("f");
+      const t_move = this.t("movement");
+			return `${t_str} (+${speed + unit} ${t_move})`;
+    },
 
     speed_Numb() {
       return this.speed_Numb_Class / 5
@@ -91,7 +132,7 @@ export default {
 .wrap-table-left {
 	/* padding: 12px 12px; */
 	display: flex;
-	width: 1528px;
+	width: 1530px;
 	height: 684px;
 	border: 1px solid #000000;
 	border-radius: 6px;
@@ -128,7 +169,8 @@ export default {
 }
 
 .table-col-2 {
-	width: 764px;
+  padding: 4px 12px 8px;
+	width: 766px;
 	border-right: 1px solid #000000;
 	border-left: 1px solid #000000;
 }
@@ -142,6 +184,17 @@ export default {
 .move-numb {
   margin-top: 32px;
   text-align: center;
+}
+
+
+.column-content {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  gap: 0 24px;
+	/* gap: 16px 12px; */
 }
 
 
@@ -183,14 +236,6 @@ export default {
 .fines-text {
 	width: 540px;
 	padding-top: 2px;
-}
-.column-content {
-	width: 636px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	gap: 16px 12px;
 }
 
 .main-fines {
