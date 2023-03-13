@@ -1,6 +1,6 @@
 <template>
 	<div class="wrap-cell">
-		<section class="title-head jbm-600-22">
+		<section class="title-head jbm-500-22">
 			<div class="icon">
 				<svg
 					class="main_svg"

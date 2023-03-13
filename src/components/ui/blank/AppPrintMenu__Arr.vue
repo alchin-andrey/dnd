@@ -1,6 +1,6 @@
 <template>
 	<section v-for="name in uniqu_Name" :key="name" class="column">
-		<div class="column-title jbm-600-22">{{ t_Title(name) }}</div>
+		<div class="column-title jbm-500-22">{{ t_Title(name) }}</div>
 		<div class="column-item font-w-600">
 			<div class="item-text-wrap" v-for="elem in for_Rendering_Arr(name)">
 				<div class="item-text">

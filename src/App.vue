@@ -494,16 +494,6 @@ a {
   text-transform: uppercase;
 }
 
-.jbm-600-22 {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 36px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .int-400 {
 	font-family: "Inter";
 	font-style: normal;

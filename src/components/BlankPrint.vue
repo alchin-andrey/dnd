@@ -32,14 +32,6 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
-
-		site_Link() {
-			return "dndme.club";
-		},
-
-		link_Description() {
-			return this.t("link_description");
-		},
 	},
 };
 </script>

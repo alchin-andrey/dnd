@@ -36,7 +36,7 @@
 				v-for="skill in t_skill_Arr"
 				:key="skill.t_name"
 			>
-				<div class="jbm-600-22">{{ skill.t_name }}</div>
+				<div class="jbm-500-22">{{ skill.t_name }}</div>
 				<div class="int-600-22">{{ skill_Numb(skill.numb) }}</div>
 			</section>
 		</div>

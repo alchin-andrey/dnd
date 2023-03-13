@@ -1,5 +1,5 @@
 <template>
-	<div class="wrap-cell jbm-600-22">
+	<div class="wrap-cell jbm-500-22">
 		<section class="title-head">
 			<div class="icon">
 				<svg
