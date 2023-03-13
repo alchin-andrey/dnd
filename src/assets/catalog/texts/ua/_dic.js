@@ -5953,4 +5953,6 @@ export default {
   spell_tongues_expanded: spells.tongues_expanded,
 
   none_action: "—",
+
+  spell_difficulty: "складність заклять",
 };
