@@ -12,7 +12,9 @@
 				</div>
 				<div class="cell-1-2">
           <div class="int-600-28">{{ T("movement") }}</div>
-          <!-- <div class="int-600-28">{{ T("movement") }}</div> -->
+          <div class="move-numb int-600-72">
+          {{ speed_Numb }} <span class="print-grey">{{speed_Pref}}</span>
+          </div>
         </div>
 			</section>
 
@@ -36,13 +38,21 @@ export default {
 	name: "BlankTable__Actions",
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
-		...mapState(useQualitiesStore, ["vision_night_Numb_Class"]),
+		...mapState(useQualitiesStore, ["speed_Numb_Class"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
 		t_Free_Action() {
 			const str = this.T("free_action");
 			return `1 × ${str}`;
 		},
+
+    speed_Numb() {
+      return this.speed_Numb_Class / 5
+    },
+
+    speed_Pref() {
+      return `× 5${this.t("f")}`
+    }
 
 		// t_Fines_Title() {
 		// 	return this.str_Upper(this.t("fines"));
@@ -70,6 +80,9 @@ export default {
 </script>
 
 <style scoped>
+.print-grey {
+  color: #828282;
+}
 .wrap-section {
 	display: flex;
 	justify-content: space-between;
@@ -125,6 +138,26 @@ export default {
 	flex-direction: column;
 	gap: 30px;
 }
+
+.move-numb {
+  margin-top: 32px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .flax-col-wrap {
 	width: 100%;
