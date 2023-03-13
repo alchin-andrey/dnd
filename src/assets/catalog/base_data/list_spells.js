@@ -1293,7 +1293,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2014,7 +2014,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2058,7 +2058,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2102,7 +2102,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2146,7 +2146,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2234,7 +2234,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2278,7 +2278,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2366,7 +2366,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2454,7 +2454,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2542,7 +2542,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2586,7 +2586,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2890,7 +2890,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -3062,7 +3062,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -3496,7 +3496,7 @@ export default {
       slot_type: "action_surge_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4114,7 +4114,7 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4549,7 +4549,7 @@ export default {
       slot_type: "favored_foe_slot",
       classes: ["ranger"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
