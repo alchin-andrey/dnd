@@ -2,7 +2,7 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-			<main class="print-page" v-if="false">
+			<main class="print-page" v-if="true">
 				<section class="blank-head">
 					<div class="grid-wrap">
 						<BlankTable__MainNames />
@@ -15,8 +15,12 @@
 			</main>
 
       <main class="print-page">
-        <BlankTable__QualStats />
-        <BlankTable__Fines class="marg-top-36"/>
+        <section class="wrap-head">
+          <BlankTable__QualStats />
+          <BlankTable__Fines class="marg-top-36"/>
+        </section>
+        <section class="wrap-bottom">
+        </section>
       </main>
 		</div>
 	</div>
@@ -68,6 +72,15 @@ export default {
 .blank-head {
 	display: flex;
 	gap: 72px;
+	height: 1403px;
+}
+
+.wrap-head {
+  height: 1403px;
+}
+
+.wrap-bottom {
+	border-top: 1px dashed #333333;
 	height: 1404px;
 }
 
