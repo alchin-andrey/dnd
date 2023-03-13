@@ -1,7 +1,7 @@
 export default {
 	speed: '<path d="M8 10H14L18 18L14 26H8L12 18L8 10Z" fill="black"/><path d="M18 10H24L28 18L24 26H18L22 18L18 10Z" fill="black"/>',
 
-	vision_night: '<circle cx="9" cy="9" r="2.5" stroke="black"/><path d="M14 9L11 7V11L14 9Z" fill="black"/><path d="M4 9L7 11L7 7L4 9Z" fill="black"/>',
+	vision_night: '<circle cx="18.0005" cy="18" r="5" stroke="black" stroke-width="2"/><path d="M28.0005 18L22.0005 14L22.0005 22L28.0005 18Z" fill="black"/><path d="M8.00049 18L14.0005 22L14.0005 14L8.00049 18Z" fill="black"/>',
 
 	hp_bonus: '<path fill-rule="evenodd" clip-rule="evenodd" d="M20 10H16V16L10 16V20H16V26H20V20L26 20V16L20 16V10Z" fill="black"/>',
 

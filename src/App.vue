@@ -203,7 +203,7 @@ export default {
 		return {
 			dialogVisible: false,
 			small_screen: false,
-      PRINT_BLANK: false,
+      PRINT_BLANK: true,
 		};
 	},
 
@@ -490,7 +490,7 @@ a {
   font-weight: 500;
   font-size: 22px;
   line-height: 36px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 

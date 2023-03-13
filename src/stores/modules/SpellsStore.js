@@ -2,6 +2,7 @@
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useDicStore } from "@/stores/general/DicStore";
 
 import spells from "@/assets/catalog/base_data/list_spells.js";
@@ -20,6 +21,16 @@ export const useSpellsStore = defineStore({
         new_arr.push(obj[key]);
       }
 			return new_arr;
+		},
+
+    spells_Saving_Numb: (stor) => (name) => {
+      const MYStore = useMYStore();
+      const StatsStore = useStatsStore();
+			const KOF = 8;
+			// let attribute = this.spell_Attribute_MOD;
+			let mastery = MYStore.Mastery;
+			let stats_mod = StatsStore.stats_Mod(name);
+			return KOF + mastery + stats_mod;
 		},
 
 		spells_For_Arr_Obj: (stor) => (arr_obj) => {

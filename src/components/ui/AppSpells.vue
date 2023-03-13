@@ -185,6 +185,7 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSpells",
@@ -247,6 +248,7 @@ export default {
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb"]),
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
+		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
 		shown_Spell_Text() {
 			return this.only_title ? this.isShown : true;
@@ -456,13 +458,18 @@ export default {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 
-		Saving_Numb() {
-			const KOF = 8;
-			let attribute = this.spell_Attribute_MOD;
-			let mastery = this.Mastery;
-			let stats_mod = this.stats_Mod(attribute);
-			return KOF + mastery + stats_mod;
-		},
+		// Saving_Numb() {
+		// 	const KOF = 8;
+		// 	let attribute = this.spell_Attribute_MOD;
+		// 	let mastery = this.Mastery;
+		// 	let stats_mod = this.stats_Mod(attribute);
+		// 	return KOF + mastery + stats_mod;
+		// },
+
+    Saving_Numb() {
+      const attribute = this.spell_Attribute_MOD;
+      return this.spells_Saving_Numb(attribute);
+    },
 
 		t_Save() {
 			if (this.Spell_Index.saving_attribute) {
