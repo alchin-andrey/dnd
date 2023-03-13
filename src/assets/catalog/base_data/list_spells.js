@@ -1293,7 +1293,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2014,7 +2014,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2058,7 +2058,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2102,7 +2102,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2146,7 +2146,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2234,7 +2234,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2278,7 +2278,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2366,7 +2366,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2454,7 +2454,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2542,7 +2542,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2586,7 +2586,7 @@ export default {
       slot_type: "superiority_dice_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -2890,7 +2890,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -3062,7 +3062,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -3496,7 +3496,7 @@ export default {
       slot_type: "action_surge_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4114,7 +4114,7 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4549,7 +4549,7 @@ export default {
       slot_type: "favored_foe_slot",
       classes: ["ranger"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4944,7 +4944,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -4987,7 +4987,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5030,7 +5030,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5289,7 +5289,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5332,7 +5332,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5418,7 +5418,7 @@ export default {
       type: "ability",
       classes: ["ranger"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5676,7 +5676,7 @@ export default {
       slot_type: "divine_channel_slot",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -5721,7 +5721,7 @@ export default {
       slot_type: "divine_channel_slot",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -6121,12 +6121,12 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in distance",
+      aim_type: "in_distance",
       aim_range: null,
 
       parts: ["none"],
@@ -6165,12 +6165,12 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in distance",
+      aim_type: "in_distance",
       aim_range: null,
 
       parts: ["none"],
@@ -6212,12 +6212,12 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in distance",
+      aim_type: "in_distance",
       aim_range: null,
 
       parts: ["none"],
@@ -6259,12 +6259,12 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in distance",
+      aim_type: "in_distance",
       aim_range: null,
 
       parts: ["none"],
@@ -6306,12 +6306,12 @@ export default {
       type: "ability",
       classes: ["cleric"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in distance",
+      aim_type: "in_distance",
       aim_range: null,
 
       parts: ["none"],
@@ -7314,7 +7314,7 @@ export default {
       slot_type: "dark_ones_own_luck_slot",
       classes: ["warlock"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -7358,7 +7358,7 @@ export default {
       slot_type: "hurl_through_hell_slot",
       classes: ["warlock"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -7882,7 +7882,7 @@ export default {
       type: "ability",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -7926,7 +7926,7 @@ export default {
       slot_type: "chi_slot",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -7970,7 +7970,7 @@ export default {
       slot_type: "chi_slot",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -8014,7 +8014,7 @@ export default {
       slot_type: "chi_slot",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -8144,7 +8144,7 @@ export default {
       type: "ability",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -8187,7 +8187,7 @@ export default {
       type: "ability",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -8230,7 +8230,7 @@ export default {
       type: "ability",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -8362,7 +8362,7 @@ export default {
       slot_type: "chi_slot_3",
       classes: ["monk"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9234,7 +9234,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9278,7 +9278,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9322,7 +9322,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9366,7 +9366,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9410,7 +9410,7 @@ export default {
       slot_type: "sorcery_slot_3",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9454,7 +9454,7 @@ export default {
       slot_type: "sorcery_slot_2",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9498,7 +9498,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9542,7 +9542,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9586,7 +9586,7 @@ export default {
       slot_type: "sorcery_slot_1_plus",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9630,7 +9630,7 @@ export default {
       slot_type: "sorcery_slot_2",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9674,7 +9674,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9933,7 +9933,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -9977,7 +9977,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10021,7 +10021,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10065,7 +10065,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10109,7 +10109,7 @@ export default {
       slot_type: "sorcery_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10240,7 +10240,7 @@ export default {
       slot_type: "wild_magic_surge_slot",
       classes: ["sorcerer"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10371,7 +10371,7 @@ export default {
       slot_type: "bardic_inspiration_slot",
       classes: ["bard"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10415,7 +10415,7 @@ export default {
       slot_type: "indomity_slot",
       classes: ["fighter"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10717,7 +10717,7 @@ export default {
       slot_type: "cleansing_touch_slot",
       classes: ["paladin"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10935,7 +10935,7 @@ export default {
       slot_type: "undying_sentinel_slot",
       classes: ["paladin"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -10979,7 +10979,7 @@ export default {
       slot_type: "elder_champion_slot",
       classes: ["paladin"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -11109,7 +11109,7 @@ export default {
       slot_type: "avenging_angel_slot",
       classes: ["paladin"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -11156,7 +11156,7 @@ export default {
       type: "ability",
       classes: ["paladin"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -11332,7 +11332,7 @@ export default {
       slot_type: "magical_protection_slot",
       classes: ["wizard"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -11461,7 +11461,7 @@ export default {
       type: "ability",
       classes: ["wizard"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -11504,7 +11504,7 @@ export default {
       type: "ability",
       classes: ["wizard"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -11938,7 +11938,7 @@ export default {
       type: "ability",
       classes: ["wizard"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -12338,7 +12338,7 @@ export default {
       slot_type: "luck_slot",
       classes: ["rogue"],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -12382,7 +12382,7 @@ export default {
       slot_type: "lucky_slot",
       classes: [],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 
@@ -13502,7 +13502,7 @@ export default {
       slot_type: "talisman_slot",
       classes: ["warlock",],
 
-      cast_time: "none",
+      cast_time: "none_action",
       cast_duration: null,
       cast_duration_units: null,
 

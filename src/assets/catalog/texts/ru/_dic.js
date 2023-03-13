@@ -83,7 +83,7 @@ export default {
     "• Внимательность\n" +
     "• Проницательность\n" +
     "• Медицина\n" +
-    "• Уход за животньіми\n",
+    "• Уход за животньім\n",
 
   charisma: "харизма",
   charisma_base: "базовая",
@@ -236,7 +236,7 @@ export default {
     "• Устоять на палубе в шторм\n" +
     "• Вьібраться из пут",
 
-  animal_handling: "уход за животньіми",
+  animal_handling: "уход за животньім",
   animal_handling_details:
     "Способность ладить с животньіми. Например попьітка:\n\n" +
     "• Успокоить одомашненное животное\n" +
@@ -5964,4 +5964,6 @@ export default {
   spell_tongues: spells.tongues,
   spell_tongues_details: spells.tongues_details,
   spell_tongues_expanded: spells.tongues_expanded,
+
+  none_action: "—",
 };  
