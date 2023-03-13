@@ -132,9 +132,9 @@ export default {
 .main {
 	height: 24px;
 	margin-top: 4px;
-	font-family: "Inter";
+	font-family: "Inter-700";
 	font-style: normal;
-	font-weight: 700;
+	font-weight: normal;
 	font-size: 20px;
 	line-height: 24px;
 	letter-spacing: 0.02em;

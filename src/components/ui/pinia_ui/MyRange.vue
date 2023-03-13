@@ -292,9 +292,9 @@ input[type="range"] {
 	left: 16px;
 	bottom: 11px;
 	height: 24px;
-	font-family: "Inter";
+	font-family: "Inter-700";
 	font-style: normal;
-	font-weight: 700;
+	font-weight: normal;
 	font-size: 20px;
 	line-height: 24px;
 	letter-spacing: 0.02em;

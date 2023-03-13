@@ -929,9 +929,9 @@ export default {
 }
 
 .title_spell {
-	font-family: "Inter";
+	font-family: "Inter-700";
 	font-style: normal;
-	font-weight: 700;
+	font-weight: normal;
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
