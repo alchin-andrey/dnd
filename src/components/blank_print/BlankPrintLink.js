@@ -6,6 +6,7 @@ import Blank__SelectMenu from "@/components/blank_print/Blank__SelectMenu.vue";
 
 
 import BlankTable__QualStats from "@/components/blank_print/BlankTable__QualStats.vue";
+import BlankTable__Fines from "@/components/blank_print/BlankTable__Fines.vue";
 
 
 export default {
@@ -18,6 +19,7 @@ export default {
 
 
   BlankTable__QualStats,
+  BlankTable__Fines,
 
 	},
 };

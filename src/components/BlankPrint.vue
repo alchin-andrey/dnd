@@ -16,6 +16,7 @@
 
       <main class="print-page">
         <BlankTable__QualStats />
+        <BlankTable__Fines class="marg-top-36"/>
       </main>
 		</div>
 	</div>
@@ -77,5 +78,9 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 36px;
+}
+
+.marg-top-36 {
+  margin-top: 36px;
 }
 </style>

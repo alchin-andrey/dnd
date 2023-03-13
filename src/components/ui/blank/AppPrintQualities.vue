@@ -13,6 +13,7 @@
 		</section>
     <div class="int-600-72 numb" v-if="!title_numb">{{ value_Numb }}</div>
     <div class="flex-vis">
+    <div class="hp-text jbm-500-22" v-if="title_numb">{{ t_Temporary }}</div>
       <div class="visual">
       <div class="cube_zero" v-if="hp_Dice" v-for="n in cube_Numb_Zero" :key="n" />
       </div>
@@ -53,6 +54,10 @@ export default {
       if(this.title_numb) return `${str} ${this.numb}`
 			else return str;
 		},
+
+    t_Temporary() {
+      return `${this.t("temporary")}:`;
+    },
 
     hp_Dice() {
       return this.title == "hp_dice"
@@ -116,8 +121,14 @@ export default {
   padding-bottom: 6px;
 }
 
+.hp-text {
+  flex-grow: 1;
+  margin: 0 0 8px 38px;
+}
+
 .visual {
 	display: flex;
+  justify-self: center;
   justify-content: center;
 	flex-wrap: wrap-reverse;
 	gap: 4px;
