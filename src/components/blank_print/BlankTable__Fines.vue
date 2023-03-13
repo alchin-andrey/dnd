@@ -7,10 +7,10 @@
 					<section class="row-36">
 						<div class="icon">
 							<svg
-								class="quql_svg"
-								viewBox="0 0 36 36"
+								class="main_svg"
+								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
-								v-html="print_atribute_icon.vision_night"
+								v-html="atribute_icon.vision_night"
 							/>
 						</div>
 						<div class="int-600-22">{{ t_Vision_Night }}</div>
@@ -38,7 +38,7 @@
 					<section class="row-36">
 						<div class="icon">
 							<svg
-								class="stats_svg"
+								class="main_svg"
 								:class="{ save_svg: save_Icon(MY.class.spell_attribute) }"
 								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@
 				>
 					<div class="icon">
 						<svg
-							class="fines_svg"
+							class="main_svg"
 							viewBox="0 0 18 18"
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="fines_icon[fines.type]"
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import print_atribute_icon from "@/assets/catalog/icon/print_atribute_icon";
+import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import stats_icon from "@/assets/catalog/icon/stats_icon";
 import fines_icon from "@/assets/catalog/icon/fines_icon";
 import { mapState } from "pinia";
@@ -84,7 +84,7 @@ export default {
 	name: "BlankTable__Fines",
 	data() {
 		return {
-			print_atribute_icon: print_atribute_icon,
+			atribute_icon: atribute_icon,
 			stats_icon: stats_icon,
 			fines_icon: fines_icon,
 		};
@@ -143,7 +143,7 @@ export default {
 
 <style scoped>
 .wrap-table {
-	padding: 4px 12px;
+	padding: 12px 12px;
 	width: 1944px;
 	height: 648px;
 	border: 1px solid #000000;
@@ -154,7 +154,7 @@ export default {
 	width: 100%;
 	/* margin-top: 14px; */
 	/* height: 580px; */
-	height: 640px;
+	height: 624px;
 }
 
 .row-36 {
@@ -197,10 +197,10 @@ export default {
 	margin-right: 2px;
 }
 
-.quql_svg {
+.main_svg {
 	width: 36px;
 	height: 36px;
-	fill: none;
+	fill: black;
 }
 .stats_svg {
 	width: 36px;

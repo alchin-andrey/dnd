@@ -4,9 +4,9 @@
 			<div class="icon">
 				<svg
 					class="main_svg"
-					viewBox="0 0 36 36"
+					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
-					v-html="print_atribute_icon[title]"
+					v-html="atribute_icon[title]"
 				/>
 			</div>
 			<div class="cell-item">{{ t_Title }}</div>
@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import print_atribute_icon from "@/assets/catalog/icon/print_atribute_icon";
+import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "AppPrintQualities",
 	data() {
 		return {
-			print_atribute_icon: print_atribute_icon,
+			atribute_icon: atribute_icon,
 		};
 	},
 	props: {
@@ -103,10 +103,11 @@ export default {
 	margin-right: 2px;
 }
 
-/* .main_svg {
+.main_svg {
 	width: 36px;
 	height: 36px;
-} */
+  fill: black;
+}
 
 .numb {
   text-align: center;

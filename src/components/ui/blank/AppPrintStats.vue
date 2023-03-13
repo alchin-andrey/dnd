@@ -5,9 +5,9 @@
 				<svg
 					class="main_svg"
 					:class="{ save_svg: save_Icon }"
-					viewBox="0 0 36 36"
+					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
-					v-html="print_stats_icon[title]"
+					v-html="stats_icon[title]"
 				/>
 			</div>
 			<div class="cell-item">{{ t_Title }}</div>
@@ -27,14 +27,14 @@
 </template>
 
 <script>
-import print_stats_icon from "@/assets/catalog/icon/print_stats_icon";
+import stats_icon from "@/assets/catalog/icon/stats_icon";
 import { mapState } from "pinia";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "AppPrintStats",
 	data() {
 		return {
-			print_stats_icon: print_stats_icon,
+			stats_icon: stats_icon,
 		};
 	},
 	props: {
@@ -116,7 +116,7 @@ export default {
 	height: 36px;
 	fill: none;
 	stroke: black;
-	stroke-width: 2px;
+	/* stroke-width: 1px; */
 }
 .save_svg {
 	fill: black;

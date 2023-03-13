@@ -268,9 +268,11 @@ export default {
 	margin-right: 4px;
 }
 
-/* .main_svg {
+.main_svg {
+  width: 18px;
+	height: 18px;
   fill: white;
-} */
+}
 
 /* .active_svg {
   width: 18px;
