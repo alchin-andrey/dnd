@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="spell-wrap">
 		<div>
 			• {{ em_Before }}
 			<emoji
@@ -45,6 +45,18 @@ export default {
 </script>
 
 <style scoped>
+
+.spell-wrap {
+  width: 359px;
+  overflow: hidden;
+}
+
+.spell-wrap > div {
+  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .emoji-mart-emoji {
 	padding: 0;
 	line-height: 0;
