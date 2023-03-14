@@ -5963,4 +5963,17 @@ export default {
   action_button_click: "Натиснути на кнопку",
   action_other: "інша дрібна дія",
 
+  action_weapon_attack: "атака зброєю",
+  actions_jump: "ривок",
+  actions_departure: "відхід",
+  actions_evasion: "ухилення",
+  action_ambush: "засідка",
+  action_prepare: "підготувати дію",
+  action_use_item: "використати предмет",
+  action_search: "пошук | перевірка",
+
+  no_cost_action: "Безкоштовні дії",
+  provoked_attackn: "Провокована атака",
+  action_prepared: "Використання підготованої дії",
+
 };

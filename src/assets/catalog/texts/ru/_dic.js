@@ -5975,4 +5975,17 @@ export default {
   actions_with_door: "Открыть или закрыть дверь",
   action_button_click: "Нажать на кнопку",
   action_other: "Другое мелкое действие",
+
+  action_weapon_attack: "атака оружием",
+  actions_jump: "рьівок",
+  actions_departure: "отход",
+  actions_evasion: "уклонение",
+  action_ambush: "засада",
+  action_prepare: "подготовить действие",
+  action_use_item: "использовать предмет",
+  action_search: "поиск | проверка",
+
+  no_cost_action: "Бесплатньіе дествия",
+  provoked_attackn: "Провоцированная атака",
+  action_prepared: "Использование подготовленного действия",
 };  
