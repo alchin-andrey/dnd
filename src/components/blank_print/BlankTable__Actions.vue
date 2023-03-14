@@ -74,6 +74,9 @@
 		<div class="wrap-table-right">
       <div class="int-600-28">{{ t_X1("reaction") }}</div>
 
+      <div class="marg-t-30" ><div>• {{ T("provoked_attackn") }}</div></div>
+			<div><div>• {{ T("action_prepared") }}</div></div>
+
       <AppPrintSpellTitle 
         v-for="item, i in spell_Ability_Reaction"
         :key="item.spell"
@@ -104,7 +107,7 @@ export default {
 			action_main_numb: 31,
 			action_bonus_numb: 9,
 			action_none_numb: 9,
-			action_reaction_numb: 20,
+			action_reaction_numb: 17,
 		};
 	},
 	computed: {
