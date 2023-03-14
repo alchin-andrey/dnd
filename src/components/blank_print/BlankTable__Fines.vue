@@ -13,7 +13,7 @@
 								v-html="atribute_icon.vision_night"
 							/>
 						</div>
-						<div class="int-600-22">{{ t_Vision_Night }}</div>
+						<div class="int-500-22">{{ t_Vision_Night }}</div>
 					</section>
 
 					<section
@@ -30,7 +30,7 @@
 								v-html="stats_icon[skill_pass.mod]"
 							/>
 						</div>
-						<div class="int-600-22">
+						<div class="int-500-22">
 							{{ t_Skills_Passive(skill_pass.name) }}
 						</div>
 					</section>
@@ -45,7 +45,7 @@
 								v-html="stats_icon[MY.class.spell_attribute]"
 							/>
 						</div>
-						<div class="int-600-22">{{ t_Spells_Saving }}</div>
+						<div class="int-500-22">{{ t_Spells_Saving }}</div>
 					</section>
 				</main>
 
@@ -62,8 +62,8 @@
 							v-html="fines_icon[fines.type]"
 						/>
 					</div>
-					<!-- <div class="int-600-22 fines-text">{{ t_Fines(fines) }}</div> -->
-					<div class="int-600-22 fines-text">
+					<!-- <div class="int-500-22 fines-text">{{ t_Fines(fines) }}</div> -->
+					<div class="int-500-22 fines-text">
             {{ em_Before(t_Fines(fines)) }}
 			<emoji
 				v-if="em_Upd(t_Fines(fines))"

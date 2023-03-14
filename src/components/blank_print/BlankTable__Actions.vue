@@ -19,19 +19,34 @@
 			</section>
 
 			<section class="table-col-2">
-      <div class="column-content">
         <div class="int-600-28">{{ t_X1("action") }}</div>
-        <div>• {{ T("action_weapon_attack") }}</div>
-				<div>• {{ t_Jump }}</div>
-				<div>• {{ t_Departure }}</div>
-				<div>• {{ T("actions_evasion") }}</div>
-				<div>• {{ T("action_ambush") }}</div>
-				<div>• {{ T("action_prepare") }}</div>
-				<div>• {{ T("action_use_item") }}</div>
-				<div>• {{ T("action_search") }}</div>
+      <div class="column-content int-500-22">
+        <!-- <div class="int-600-28">{{ t_X1("action") }}</div> -->
+        <div><div>• {{ T("action_weapon_attack") }}</div></div>
+				<div><div>• {{ t_Jump }}</div></div>
+				<div><div>• {{ t_Departure }}</div></div>
+				<div><div>• {{ T("actions_evasion") }}</div></div>
+				<div><div>• {{ T("action_ambush") }}</div></div>
+				<div><div>• {{ T("action_prepare") }}</div></div>
+				<div><div>• {{ T("action_use_item") }}</div></div>
+				<div><div>• {{ T("action_search") }}</div></div>
 
+        <AppPrintSpellTitle 
+        class="ability-action" 
+        v-for="item, i in spell_Ability_Main"
+        :key="item.spell"
+        :class="{'marg-t-30': i == 0}" 
+        :spells="item"
+        />
 
-
+        <AppPrintSpellTitle 
+        class="ability-action" 
+        v-for="item, i in spell_Manna_Main"
+        :key="item.spell"
+        :class="{'marg-t-30': i == 0}" 
+        :spells="item"
+        />
+      <div v-if="spell_Action_Hidden">• {{ spell_Action_Hidden }}</div>
       </div>
       </section>
 
@@ -51,20 +66,65 @@ import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "BlankTable__Actions",
+  data() {
+		return {
+			action_main_numb: 31,
+		};
+	},
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
 		...mapState(useQualitiesStore, ["speed_Numb_Class"]),
-		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
+		...mapState(useSpellsStore, [
+      "spells_RC_Param_Ability_Full",
+      "spells_RC_Param_Manna",
+    ]),
 
-		// t_Free_Action() {
-		// 	const str = this.T("free_action");
-		// 	return `1 × ${str}`;
-		// },
+    spell_Action_Main: (stor) => (arr) => {
+      return arr.filter(
+				(el) => {
+          const action = el.spell.find((item) => item.name).cast_time == "action";
+          const action_plus10min = el.spell.find((item) => item.name).cast_time == "action_plus10min";
+          return action || action_plus10min;
+        }
+			);
+    },
 
-		// t_Main_Action() {
-		// 	const str = this.T("action");
-		// 	return `1 × ${str}`;
-		// },
+    spell_Ability_Main() {
+      return this.spell_Action_Main(this.spells_RC_Param_Ability_Full);
+    },
+
+    spell_Manna_Main_Full() {
+      return this.spell_Action_Main(this.spells_RC_Param_Manna);
+    },
+
+    spell_Action_Main_Length() {
+      const ability = this.spell_Ability_Main.length;
+      const extra = ability > 0 ? 1 : 0;
+      const ability_length = ability + extra;
+      const manna_length = this.spell_Manna_Main_Full.length;
+      const all_length = ability_length + manna_length;
+      return all_length;
+    },
+
+    spell_Action_Hidden() {
+      const FULL = this.action_main_numb;
+      const all_spell = this.spell_Action_Main_Length;
+      const numb = FULL - all_spell
+      return numb < 0 ? `... +${Math.abs(numb) + 1}` : null;
+    },
+
+    spell_Manna_Main() {
+      const FULL = this.action_main_numb;
+      const ability = this.spell_Ability_Main.length;
+      const extra = ability > 0 ? 1 : 0;
+      const ability_length = ability + extra;
+      const manna_length = this.spell_Manna_Main_Full.length;
+      const all_length = ability_length + manna_length;
+      const num_slice = all_length == FULL 
+      ? FULL 
+      : FULL - ability_length - 1;
+      return this.spell_Manna_Main_Full.slice(0, num_slice);
+    },
 
     t_X1: (stor) => (str) => {
       const t_str = stor.T(str);
@@ -93,29 +153,8 @@ export default {
 
     speed_Pref() {
       return `× 5${this.t("f")}`
-    }
+    },
 
-		// t_Fines_Title() {
-		// 	return this.str_Upper(this.t("fines"));
-		// },
-
-		// t_Fines: (stor) => (obj) => {
-		// 	const str_1 = stor.str_Upper(stor.t(obj.keyword));
-		// 	const str_2 = stor.t(obj.details);
-		// 	return `${str_1} ${str_2}`;
-		// },
-
-		// em_Upd: (stor) => (name) => {
-		// 	return stor.updEmoji(name);
-		// },
-
-		// em_Before: (stor) => (name) => {
-		// 	return stor.beforeEmoji(name);
-		// },
-
-		// em_After: (stor) => (name) => {
-		// 	return stor.afterEmoji(name);
-		// },
 	},
 };
 </script>
@@ -189,12 +228,27 @@ export default {
 
 .column-content {
 	width: 50%;
-	height: 100%;
+	height: calc(100% - 48px);
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
   gap: 0 24px;
 	/* gap: 16px 12px; */
+}
+
+.column-content > div {
+  width: 359px;
+  overflow: hidden;
+}
+
+.column-content > div > div {
+  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.marg-t-30 {
+  margin-top: 30px;
 }
 
 
@@ -245,9 +299,5 @@ export default {
 	margin-bottom: 18px;
 }
 
-.emoji-mart-emoji {
-	padding: 0;
-	line-height: 0;
-	top: 2px;
-}
+
 </style>
