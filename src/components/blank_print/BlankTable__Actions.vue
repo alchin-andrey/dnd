@@ -74,8 +74,8 @@
 		<div class="wrap-table-right">
       <div class="int-600-28">{{ t_X1("reaction") }}</div>
 
-      <div class="marg-t-30" ><div>• {{ T("provoked_attackn") }}</div></div>
-			<div><div>• {{ T("action_prepared") }}</div></div>
+      <div class="marg-t-30" >• {{ T("provoked_attackn") }}</div>
+			<div>• {{ T("action_prepared") }}</div>
 
       <AppPrintSpellTitle 
         v-for="item, i in spell_Ability_Reaction"
@@ -239,9 +239,6 @@ export default {
       return this.spell_Action_None_Full.slice(0, num_slice);
     },
 
-
-
-
     spell_Action_Reaction: (stor) => (arr) => {
       return arr.filter((el) => el.spell.find((item) => item.name).cast_time == "reaction");
     },
@@ -354,7 +351,6 @@ export default {
   text-align: center;
 }
 
-
 .column-content {
 	width: 50%;
 	height: calc(100% - 48px);
@@ -378,53 +374,4 @@ export default {
 .marg-t-30 {
   margin-top: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.flax-col-wrap {
-	width: 100%;
-	/* margin-top: 14px; */
-	/* height: 580px; */
-	height: 624px;
-}
-
-.row-36 {
-	display: flex;
-	width: 100%;
-	height: 36px;
-	align-items: center;
-}
-
-.row-finse {
-	display: flex;
-	width: 100%;
-	min-height: 36px;
-	/* align-items: flex-start; */
-}
-
-.fines-text {
-	width: 540px;
-	padding-top: 2px;
-}
-
-.main-fines {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	margin-bottom: 18px;
-}
-
-
 </style>

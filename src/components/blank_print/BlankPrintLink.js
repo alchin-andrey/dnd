@@ -9,6 +9,7 @@ import BlankTable__QualStats from "@/components/blank_print/BlankTable__QualStat
 import BlankTable__Fines from "@/components/blank_print/BlankTable__Fines.vue";
 
 import BlankTable__Actions from "@/components/blank_print/BlankTable__Actions.vue";
+import BlankTable__Equip from "@/components/blank_print/BlankTable__Equip.vue";
 
 export default {
 	components: {
@@ -22,6 +23,7 @@ export default {
   BlankTable__Fines,
   
   BlankTable__Actions,
+  BlankTable__Equip,
 
 	},
 };

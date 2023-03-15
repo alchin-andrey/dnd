@@ -21,6 +21,7 @@
         </section>
         <section class="wrap-bottom">
         <BlankTable__Actions class="marg-top-72"/>
+        <BlankTable__Equip class="marg-top-36"/>
         </section>
       </main>
 		</div>

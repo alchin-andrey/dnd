@@ -12,6 +12,12 @@ export const useEquipStore = defineStore({
       "inventory",
       "inventory_packs"
     ],
+
+    ammunition: [
+      "bolt",
+      "arrow",
+      "bullet",
+    ]
 	}),
 
   getters: {
@@ -163,6 +169,18 @@ export const useEquipStore = defineStore({
 
     gold_Equip_All() {
 			return this.gold_Equip_Numb(this.equipments_All_Params);
+		},
+
+    inventory_Equip_Print() {
+      const all = this.inventory_Equip_All;
+      const filter = all.filter(el => !this.ammunition.includes(el[0].name));
+			return filter;
+		},
+
+    ammunition_Equip_Print() {
+      const all = this.inventory_Equip_All;
+      const find = all.find(el => this.ammunition.includes(el[0].name));
+			return find;
 		},
     // !SECTION - ALL
   },
