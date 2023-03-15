@@ -6001,4 +6001,8 @@ export default {
   print_perception_passive: "пасс. вним.",
   print_spell_complex: "слож. закл.",
   print_notes: "заметки",
+
+  print_characters: "Личности",
+  print_events: "Собьітия",
+  print_places: "Места",
 };  

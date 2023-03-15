@@ -5986,6 +5986,12 @@ export default {
   print_damage: "Пошкодж.",
 
   print_perception_passive: "п. уважність",
-  print_spell_complex: "скл заклять",
+  print_spell_complex: "скл. заклять",
   print_notes: "нотатки",
+
+  print_characters: "Особи",
+  print_events: "Події",
+  print_places: "Місця",
+
+  
 };
