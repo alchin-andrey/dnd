@@ -5976,4 +5976,16 @@ export default {
   provoked_attackn: "Провокована атака",
   action_prepared: "Використання підготованої дії",
 
+  print_coin_platinum: "Платинових",
+  print_coin_gold: "Золотих",
+  print_coin_silver: "Срібних",
+  print_coin_copper: "Мідних",
+
+  print_aim_range: "Дальн.",
+  print_aim_need: "Влч",
+  print_damage: "Пошкодж.",
+
+  print_perception_passive: "п. уважність",
+  print_spell_complex: "скл заклять",
+  print_notes: "нотатки",
 };

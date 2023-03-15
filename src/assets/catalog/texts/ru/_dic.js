@@ -5988,4 +5988,17 @@ export default {
   no_cost_action: "Бесплатньіе дествия",
   provoked_attackn: "Провоцированная атака",
   action_prepared: "Использование подготовленного действия",
+
+  print_coin_platinum: "Платиновьіх",
+  print_coin_gold: "Золотьіх",
+  print_coin_silver: "Серебряньіч",
+  print_coin_copper: "Медньіх",
+
+  print_aim_range: "Дальн.",
+  print_aim_need: "Мтк",
+  print_damage: "Урон",
+
+  print_perception_passive: "пасс. вним.",
+  print_spell_complex: "слож. закл.",
+  print_notes: "заметки",
 };  
