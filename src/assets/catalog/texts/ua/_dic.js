@@ -5963,4 +5963,35 @@ export default {
   action_button_click: "Натиснути на кнопку",
   action_other: "інша дрібна дія",
 
+  action_weapon_attack: "атака зброєю",
+  actions_jump: "ривок",
+  actions_departure: "відхід",
+  actions_evasion: "ухилення",
+  action_ambush: "засідка",
+  action_prepare: "підготувати дію",
+  action_use_item: "використати предмет",
+  action_search: "пошук | перевірка",
+
+  no_cost_action: "Безкоштовні дії",
+  provoked_attackn: "Провокована атака",
+  action_prepared: "Використання підготованої дії",
+
+  print_coin_platinum: "Платинових",
+  print_coin_gold: "Золотих",
+  print_coin_silver: "Срібних",
+  print_coin_copper: "Мідних",
+
+  print_aim_range: "Дальн.",
+  print_aim_need: "Влч",
+  print_damage: "Пошкодж.",
+
+  print_perception_passive: "п. уважність",
+  print_spell_complex: "скл. заклять",
+  print_notes: "нотатки",
+
+  print_characters: "Особи",
+  print_events: "Події",
+  print_places: "Місця",
+
+  
 };
