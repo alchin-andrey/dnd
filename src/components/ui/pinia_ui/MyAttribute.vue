@@ -21,7 +21,15 @@
 			</div>
 			<div class="numb jbm-300" v-if="price">
 				{{ Price }}
-				<emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" />
+        {{ em_Before }}
+			<emoji
+				v-if="em_Upd"
+				:data="emojiIndex"
+				:emoji="em_Upd"
+				:set="set_emoji"
+				:size="11"
+			/>{{ em_After }}
+				<!-- <emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" /> -->
 			</div>
 			<div class="numb jbm-300" :class="{'grey-2': Numb == 0}" v-else>
 				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}
@@ -165,6 +173,18 @@ export default {
       }
       return this.t(emoji);
     },
+
+    em_Upd() {
+			return this.updEmoji(this.em_Price);
+		},
+
+		em_Before() {
+			return this.beforeEmoji(this.em_Price);
+		},
+
+		em_After() {
+			return this.afterEmoji(this.em_Price);
+		},
 
 		Unit() {
 			return this.unit ? this.t(this.unit) : this.Feet;
