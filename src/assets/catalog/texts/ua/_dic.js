@@ -405,9 +405,9 @@ export default {
   coin_gold: "золотих монет",
   coin_gold_short: "зм",
   coin_silver: "срібних монет",
-  coin_silver_short: "⚪",
+  coin_silver_short: "см",
   сoin_copper: "мідних монет",
-  coin_copper_short: "🟠",
+  coin_copper_short: "мм",
 
   weapons_battle_axes: weapons.battle_axes,
   weapons_battle_axes_details: weapons.battle_axes_details,

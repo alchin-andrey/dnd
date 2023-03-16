@@ -627,7 +627,7 @@ export default {
     heaviness: "weapon_medium",
     finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-    damage_type: "piersing_w",
+    damage_type: "piercing_w",
 
     damage_1_hand_num: null,
     damage_1_hand_dice: null,
@@ -714,7 +714,7 @@ export default {
     heaviness: "weapon_light",
     finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-    damage_type: "piersing_w",
+    damage_type: "piercing_w",
 
     damage_1_hand_num: 1,
     damage_1_hand_dice: 6,
@@ -772,7 +772,7 @@ export default {
     heaviness: "weapon_medium",
     finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-    damage_type: "piersing_w",
+    damage_type: "piercing_w",
 
     damage_1_hand_num: 1,
     damage_1_hand_dice: 8,
@@ -801,7 +801,7 @@ export default {
     heaviness: "weapon_heavy",
     finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-    damage_type: "piersing_w",
+    damage_type: "piercing_w",
 
     damage_1_hand_num: null,
     damage_1_hand_dice: null,
@@ -830,7 +830,7 @@ export default {
     heaviness: "weapon_medium",
     finesse: true, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-    damage_type: "piersing_w",
+    damage_type: "piercing_w",
 
     damage_1_hand_num: 1,
     damage_1_hand_dice: 8,
@@ -917,7 +917,7 @@ export default {
     heaviness: "weapon_medium",
     finesse: null, // фехтовальное - меткость и урон от большего между Силой и Ловкостью
 
-    damage_type: "piersing_w",
+    damage_type: "piercing_w",
 
     damage_1_hand_num: 1,
     damage_1_hand_dice: 6,
