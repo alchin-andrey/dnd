@@ -1,130 +1,187 @@
 <template>
-	<div
-		class="flex_weapon"
-		@mouseover="hoverIn_Full()"
-		@mouseleave="hoverOut()"
-		@click="showDialog_Full()"
-	>
-		<div ref="stripe" class="side_stripe"></div>
-		<div class="int-400 flex_col" :class="{ passive: passive }">
-			<div v-if="!param_stule">
-				<div class="flex_title">
-					<div class="title h_18">
-						{{ t_Weapon_Name }}
-					</div>
-					<img
-						class="icon"
-						src="@/assets/img/icon/arrow_right_small.svg"
-						alt="arrow"
-						@mouseover="hoverIn_Select()"
-						@mouseleave="hoverOut()"
-						@click="showDialog_Select()"
-					/>
-				</div>
-			</div>
-			<section v-if="param_stule">
-				<my-attribute
-					:title="t_Weapon_Name"
-					:numb="num_Hand_Param_Stule"
-					:dice="dice_Hand_Param_Stule"
+	<section v-if="blank_print" id="print_weapon">
+		<div class="print-cell-pad">
+      <div>
+        <span>{{ print_Weapon_Name }}</span> 
+        <span class="print-grey">{{ print_Weapon_Numb }}</span>
+      </div>
+      <div class="int-400-22" v-if="print_Hand">
+        <span class="int-400-22">/ {{ t(print_Hand) }}</span>
+      </div>
+    </div>
+		<div class="print-cell-pad">
+      <div><span>{{ print_Aim_Range }}</span></div>
+      <div class="int-400-22" v-if="print_Hand"><span>{{ print_Aim_Range }}</span></div>
+    </div>
+		<div class="print-cell-pad">
+      <my-attribute
+				:numb="aim_Bonus_Numb"
+				plus
+				only_numb
+			/>
+      <my-attribute 
+        class="int-400-22"
+        v-if="print_Hand" 
+				:numb="aim_Bonus_Numb"
+				plus
+				only_numb
+			/>
+    </div>
+		<div class="print-cell-pad">
+      <my-attribute
+        :numb="num_Hand_Param_Stule"
+        :dice="dice_Hand_Param_Stule"
+        :pls="damage_Bonus_Numb"
+        only_numb
+      />
+      <div class="int-400-22" v-if="print_Hand">
+        <my-attribute
+          v-if="print_Hand == 'damage_1_hand'"
+          :numb="weapon[0].damage_1_hand_num"
+					:dice="dice_1_Hand"
 					:pls="damage_Bonus_Numb"
-					text_stule
+          only_numb
+        />
+        <my-attribute
+          v-if="print_Hand == 'damage_2_hand'"
+          :numb="weapon[0].damage_2_hand_num"
+					:dice="dice_2_Hand"
+					:pls="damage_Bonus_Numb"
+          only_numb
+        />
+      </div>
+    </div>
+
+	</section>
+
+	<section v-else id="site_weapon">
+		<div
+			class="flex_weapon"
+			@mouseover="hoverIn_Full()"
+			@mouseleave="hoverOut()"
+			@click="showDialog_Full()"
+		>
+			<div ref="stripe" class="side_stripe"></div>
+			<div class="int-400 flex_col" :class="{ passive: passive }">
+				<div v-if="!param_stule">
+					<div class="flex_title">
+						<div class="title h_18">
+							{{ t_Weapon_Name }}
+						</div>
+						<img
+							class="icon"
+							src="@/assets/img/icon/arrow_right_small.svg"
+							alt="arrow"
+							@mouseover="hoverIn_Select()"
+							@mouseleave="hoverOut()"
+							@click="showDialog_Select()"
+						/>
+					</div>
+				</div>
+				<section v-if="param_stule">
+					<my-attribute
+						:title="t_Weapon_Name"
+						:numb="num_Hand_Param_Stule"
+						:dice="dice_Hand_Param_Stule"
+						:pls="damage_Bonus_Numb"
+						text_stule
+					/>
+				</section>
+				<section v-if="!param_stule">
+					<my-attribute
+						v-if="weapon[0].damage_1_hand_num"
+						title="damage"
+						type="damage_1_hand"
+						:numb="weapon[0].damage_1_hand_num"
+						:dice="dice_1_Hand"
+						:pls="damage_Bonus_Numb"
+					/>
+					<my-attribute
+						v-if="weapon[0].damage_2_hand_num"
+						title="damage"
+						type="damage_2_hand"
+						:numb="weapon[0].damage_2_hand_num"
+						:dice="dice_2_Hand"
+						:pls="damage_Bonus_Numb"
+					/>
+				</section>
+			</div>
+		</div>
+		<my-dialog-spell v-model:show="dialogVisible">
+			<my-wrapper>
+				<div class="int-700">{{ t_Weapon_Name }}</div>
+				<div class="text gray_4">{{ t_Weapon_Details }}</div>
+				<div class="weapon_type gray_4">{{ t_Weapon_Type }}</div>
+			</my-wrapper>
+
+			<my-wrapper>
+				<my-attribute
+					title="aim_bonus"
+					:type="bonus_Type"
+					:numb="aim_Bonus_Numb"
+					plus
+					dot
 				/>
-			</section>
-			<section v-if="!param_stule">
+				<magic-attribute
+					v-if="aim_Range_Shown_Min"
+					title="aim_range"
+					addition="MIN"
+					:numb="weapon[0].range_min"
+				/>
+				<magic-attribute
+					v-if="aim_Range_Shown_Max"
+					title="aim_range"
+					addition="MAX"
+					:numb="weapon[0].range_max"
+				/>
+			</my-wrapper>
+
+			<my-wrapper>
+				<magic-attribute
+					title="damage"
+					:addition="weapon[0].damage_type"
+					not_dot
+				/>
 				<my-attribute
 					v-if="weapon[0].damage_1_hand_num"
-					title="damage"
-					type="damage_1_hand"
+					title="damage_1_hand"
 					:numb="weapon[0].damage_1_hand_num"
 					:dice="dice_1_Hand"
 					:pls="damage_Bonus_Numb"
+					dot
 				/>
 				<my-attribute
 					v-if="weapon[0].damage_2_hand_num"
-					title="damage"
-					type="damage_2_hand"
+					title="damage_2_hand"
 					:numb="weapon[0].damage_2_hand_num"
 					:dice="dice_2_Hand"
 					:pls="damage_Bonus_Numb"
+					dot
 				/>
-			</section>
-		</div>
-	</div>
-	<my-dialog-spell v-model:show="dialogVisible">
-		<my-wrapper>
-			<div class="int-700">{{ t_Weapon_Name }}</div>
-			<div class="text gray_4">{{ t_Weapon_Details }}</div>
-			<div class="weapon_type gray_4">{{ t_Weapon_Type }}</div>
-		</my-wrapper>
-
-		<my-wrapper>
-			<my-attribute
-				title="aim_bonus"
-				:type="bonus_Type"
-				:numb="aim_Bonus_Numb"
-				plus
-				dot
-			/>
-			<magic-attribute
-				v-if="aim_Range_Shown_Min"
-				title="aim_range"
-				addition="MIN"
-				:numb="weapon[0].range_min"
-			/>
-			<magic-attribute
-				v-if="aim_Range_Shown_Max"
-				title="aim_range"
-				addition="MAX"
-				:numb="weapon[0].range_max"
-			/>
-		</my-wrapper>
-
-		<my-wrapper>
-			<magic-attribute
-				title="damage"
-				:addition="weapon[0].damage_type"
-				not_dot
-			/>
-			<my-attribute
-				v-if="weapon[0].damage_1_hand_num"
-				title="damage_1_hand"
-				:numb="weapon[0].damage_1_hand_num"
-				:dice="dice_1_Hand"
-				:pls="damage_Bonus_Numb"
-				dot
-			/>
-			<my-attribute
-				v-if="weapon[0].damage_2_hand_num"
-				title="damage_2_hand"
-				:numb="weapon[0].damage_2_hand_num"
-				:dice="dice_2_Hand"
-				:pls="damage_Bonus_Numb"
-				dot
-			/>
-		</my-wrapper>
-		<my-wrapper v-if="shown_ACW">
-			<my-attribute
-				v-if="weapon[0].ammunition"
-				title="ammunition"
-				:unit="weapon[0].ammunition"
-				dot
-			/>
-			<my-attribute
-				v-if="weapon[0].cost"
-				title="cost"
-				:price="weapon[0].cost"
-				dot
-			/>
-			<my-attribute
-				v-if="weapon[0].weight"
-				title="weight"
-				:numb="weapon[0].weight"
-				unit="kg"
-				dot
-			/>
-		</my-wrapper>
-	</my-dialog-spell>
+			</my-wrapper>
+			<my-wrapper v-if="shown_ACW">
+				<my-attribute
+					v-if="weapon[0].ammunition"
+					title="ammunition"
+					:unit="weapon[0].ammunition"
+					dot
+				/>
+				<my-attribute
+					v-if="weapon[0].cost"
+					title="cost"
+					:price="weapon[0].cost"
+					dot
+				/>
+				<my-attribute
+					v-if="weapon[0].weight"
+					title="weight"
+					:numb="weapon[0].weight"
+					unit="kg"
+					dot
+				/>
+			</my-wrapper>
+		</my-dialog-spell>
+	</section>
 </template>
 
 <script>
@@ -157,13 +214,13 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		blank_print: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
-		...mapState(useMYStore, [
-			"MY",
-			"Mastery",
-			"class_Specials_Filter_Lvl",
-		]),
+		...mapState(useMYStore, ["MY", "Mastery", "class_Specials_Filter_Lvl"]),
 		...mapState(useProficienciesStore, ["proficiencies_Page_Arr"]),
 		...mapState(useStatsStore, ["stats_Mod"]),
 
@@ -176,11 +233,42 @@ export default {
 		},
 
 		t_Equip_Name: (state) => (item) => {
-			const name = state.t(item[0].name);
+			const name = state.T(item[0].name);
 			const namb = item[1];
-			let str = namb > 1 ? `${name} x ${namb}` : name;
-			return str[0].toUpperCase() + str.slice(1);
+			return namb > 1 ? `${name} x ${namb}` : name;
+			// return str[0].toUpperCase() + str.slice(1);
 		},
+
+		print_Weapon_Name() {
+			return this.T(this.weapon[0].name);
+		},
+
+		print_Weapon_Numb() {
+			const namb = this.weapon[1];
+			return namb > 1 ? ` x ${namb}` : null;
+		},
+
+    print_Hand() {
+			const num_hand_1 = this.weapon[0].damage_1_hand_num;
+      const dice_hand_1 = this.weapon[0].damage_1_hand_dice;
+      const summ_hand_1 = num_hand_1 + dice_hand_1;
+
+			const num_hand_2 = this.weapon[0].damage_2_hand_num;
+			const dice_hand_2 = this.weapon[0].damage_2_hand_dice;
+      const summ_hand_2 = num_hand_2 + dice_hand_2;
+
+      if (summ_hand_1 && summ_hand_2 && (summ_hand_1 !== summ_hand_2)) {
+        return summ_hand_1 > summ_hand_2 ? "damage_2_hand" : "damage_1_hand";
+      } else {
+        return null;
+      }
+		},
+    
+    print_Aim_Range() {
+      const min = this.weapon[0].range_min;
+      const max = this.weapon[0].range_max;
+      return max ? `${min}-${max}` : min;
+    },
 
 		t_Weapon_Name() {
 			return this.t_Equip_Name(this.weapon);
@@ -290,7 +378,7 @@ export default {
 			const type_mod = this.stats_Mod(this.bonus_Type);
 
 			const weapon_ranged = this.class_Specials_Filter_Lvl("weapon_ranged");
-      
+
 			let aim_bonus = 0;
 			weapon_ranged.forEach((el) => (aim_bonus += el.aim_bonus));
 			return type_mod + mastery + aim_bonus;
@@ -488,5 +576,10 @@ export default {
 .passive {
 	opacity: 0.2;
 	/* cursor: auto; */
+}
+
+
+.print-cell-pad {
+  padding: 4px 12px 8px;
 }
 </style>

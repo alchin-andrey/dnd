@@ -1,5 +1,6 @@
 <template>
-	<div class="column" 
+  <div v-if="only_numb">{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}</div>
+	<div v-else class="column" 
   :class="{ passive: numb == 0 && passive, 'jbm-300': !text_stule,}">
 		<div class="column_value">
 			<section class="flex_row">
@@ -123,6 +124,10 @@ export default {
 			default: false,
 		},
     text_stule: {
+			type: Boolean,
+			default: false,
+		},
+    only_numb: {
 			type: Boolean,
 			default: false,
 		},

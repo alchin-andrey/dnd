@@ -1,6 +1,6 @@
 <template>
 	<div class="wrap-section">
-		<div class="wrap-table-equip">
+		<section class="wrap-table-equip">
 			<div class="table-equip">
 				<div class="cell-invent">
 					<div>{{ t_Equipment }}</div>
@@ -46,20 +46,26 @@
           <span class="print-grey">{{ t_Ammunition_Numb }}</span>
           </div>
 				</div>
-
-	
-
-
-				<!-- <section class="cell-equip" v-for="item, i in equip" :key="item.name">
-					<div>{{ T(item.name) }}</div>
-					<div class="int-600-22"
-          :class="{'print-grey': i < 4,}"
-          v-if="item.value">
-						{{ t_Item(item.value) }}
-					</div>
-				</section> -->
 			</div>
-		</div>
+		</section>
+    <section class="wrap-table-weapon-charg">
+      <div class="wrap-table-weapon">
+        <div class="table-weapon">
+          <div class="table-weapon__grid">
+            <div class="cell-weapon">{{ T("weapons") }}</div>
+            <div class="cell-weapon">{{ T("print_aim_range") }}</div>
+            <div class="cell-weapon">{{ T("print_aim_need") }}</div>
+            <div class="cell-weapon">{{ T("print_damage") }}</div>
+          </div>
+          <WeaponEquip class="table-weapon__grid int-600-22"
+            v-for="weapon in weapons_Equip_All"
+            :key="weapon"
+            :weapon="weapon"
+            blank_print
+          />
+        </div>
+      </div>
+    </section>
 	</div>
 </template>
 
@@ -68,21 +74,15 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useEquipStore } from "@/stores/modules/EquipStore";
+import WeaponEquip from "@/components/equipment/WeaponEquip.vue";
 export default {
 	name: "BlankTable__Equip",
+  components: {
+		WeaponEquip,
+	},
 	data() {
 		return {
 			coins: ["platina", "gold", "silver", "copper"],
-			// equip: [
-      //     { name: "platina", value: null,},
-      //     { name: "gold", value: "gold_Equip_All", },
-      //     { name: "silver", value: null, },
-      //     { name: "copper", value: null, },
-      //     { name: "armor", value: "armor_Name_Class_Param", },
-      //     { name: "bullets", value: "t_Ammunition", },
-      //   ],
-
-			action_main_numb: 31,
 		};
 	},
 	computed: {
@@ -94,6 +94,7 @@ export default {
       "inventory_Equip_All",
       "inventory_Equip_Print",
       "ammunition_Equip_Print",
+      "weapons_Equip_All",
     ]),
 
 		t_Equipment() {
@@ -125,6 +126,11 @@ export default {
       const ammunition = this.ammunition_Equip_Print
       if(ammunition) return `x${ammunition[1]}`
     },
+
+    t_Aim_Range() {
+      const str = this.T("aim_range");
+      return str.length >= 5 ? str.slice(0, 5) + "." : str;
+    }
 
 	},
 };
@@ -189,4 +195,28 @@ export default {
 .marg-t-30 {
 	margin-top: 30px;
 }
+
+.wrap-table-weapon-charg {
+
+}
+.wrap-table-weapon{
+
+}
+
+.table-weapon {
+
+}
+
+.table-weapon__grid {
+  display: grid;
+  grid-template-columns: 300px 121px 68px 160px;
+  border-bottom: 1px solid #000000;
+}
+
+.table-weapon__grid > * {
+  padding: 4px 12px 8px;
+}
+
+
+
 </style>

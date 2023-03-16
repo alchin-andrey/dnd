@@ -2,7 +2,7 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-			<main class="print-page" v-if="true">
+			<main class="print-page" v-if="!PRINT_WORK">
 				<section class="blank-head">
 					<div class="grid-wrap">
 						<BlankTable__MainNames />
@@ -15,12 +15,12 @@
 			</main>
 
       <main class="print-page">
-        <section class="wrap-head">
+        <section class="wrap-head" v-if="!PRINT_WORK">
           <BlankTable__QualStats />
           <BlankTable__Fines class="marg-top-36"/>
         </section>
         <section class="wrap-bottom">
-        <BlankTable__Actions class="marg-top-72"/>
+        <BlankTable__Actions class="marg-top-72" v-if="!PRINT_WORK"/>
         <BlankTable__Equip class="marg-top-36"/>
         </section>
       </main>
@@ -35,8 +35,11 @@ import BlankPrintLink from "@/components/blank_print/BlankPrintLink.js";
 export default {
 	name: "BlankPrint",
 	mixins: [BlankPrintLink],
-	methods: {},
-
+  data() {
+		return {
+      PRINT_WORK: false,
+		};
+	},
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
 	},
