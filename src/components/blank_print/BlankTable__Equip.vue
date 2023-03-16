@@ -11,16 +11,16 @@
             :key="pack"
             >
             <div :class="{'marg-t-30': i > 0}"/>
-              <div>{{ t_Equip_Name(pack) }}:</div>
+              <div class="int-500-22">{{ t_Equip_Name(pack) }}:</div>
               <div v-for="inv in pack[0].items" :key="inv">
-                <div>• {{ t_Equip_Name(inv) }}</div>
+                <div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
               </div>
             </template>
   
             <template v-for="inv, i in inventory_Equip_Print" :key="inv">
               <!-- <div :class="{'marg-t-30': i == 0}"/> -->
               <div class="marg-t-30" v-if="i == 0"/>
-              <div>• {{ t_Equip_Name(inv) }}</div>
+              <div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
             </template>
 
           </div>

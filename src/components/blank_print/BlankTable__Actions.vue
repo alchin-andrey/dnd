@@ -295,21 +295,21 @@ export default {
 
 .wrap-table-left {
 	display: flex;
-	width: 1530px;
+	width: 1525.6px;
 	height: 684px;
 	border: 1px solid #000000;
 	border-radius: 6px;
 }
 .wrap-table-right {
   padding: 4px 12px 8px;
-	width: 382px;
+	width: 382.4px;
 	height: 684px;
 	border: 1px solid #000000;
 	border-radius: 6px;
 }
 
 .table-col-1 {
-	width: 382px;
+	width: 380.4px;
 }
 
 .cell-1-1 {
@@ -335,7 +335,7 @@ export default {
 
 .table-col-2 {
   padding: 4px 12px 8px;
-	width: 766px;
+	width: 760.8px;
 	border-right: 1px solid #000000;
 	border-left: 1px solid #000000;
 }
@@ -361,7 +361,7 @@ export default {
 	/* gap: 16px 12px; */
 }
 .column-content > div {
-  width: 359px;
+  width: calc(100% - 12px);
   overflow: hidden;
 }
 
