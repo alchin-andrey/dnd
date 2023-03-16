@@ -140,6 +140,15 @@
 	letter-spacing: 0.02em;
 }
 
+.int-700-18 {
+	font-family: "Inter-700";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 20px;
+	letter-spacing: 0.02em;
+}
+
 .int-700-20 {
 	font-family: "Inter-700";
 	font-style: normal;
@@ -148,6 +157,7 @@
 	line-height: 24px;
 	letter-spacing: 0.02em;
 }
+
 .print-grey {
 	color: #828282;
 }

@@ -1,40 +1,72 @@
 <template>
-	<div class="column jbm-300" :class="{ passive: passive }">
+	<!-- <section v-if="blank_print" class="print-row int-600-22" >
+    <div class="print-icon">
+				<svg
+					class="print_svg"
+					viewBox="0 0 18 18"
+					xmlns="http://www.w3.org/2000/svg"
+					v-html="atribute_icon[icon_Image]"
+				/>
+			</div>
+    <div class="print-title">{{ t_Title }}</div>
+  </section> -->
+  
+  
+  
+  
+  <section class="column" :class="{ 
+    passive: passive,
+    'jbm-300': !blank_print,
+    'int-600-22': blank_print,
+    'print-row': blank_print,
+    }">
 		<div class="flex_row">
-			<svg
-				class="icon"
-				width="18"
-				height="18"
-				viewBox="0 0 18 18"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				v-html="atribute_icon[icon_Image]"
-			/>
-			<div class="title">
+			<div class="icon" :class="{'print-icon': blank_print,}">
+				<svg
+					class="main_svg"
+          :class="{'print_svg': blank_print,}"
+					viewBox="0 0 18 18"
+					xmlns="http://www.w3.org/2000/svg"
+					v-html="atribute_icon[icon_Image]"
+				/>
+			</div>
+			<div class="title" :class="{'print-title': blank_print,}">
 				{{ t_Title }}
 			</div>
 		</div>
-		<div class="items">
-			<section v-for="item in list_Filter_Arr" :key="item" class="column_vis">
-        <!-- <div class="passive" v-if="spell_count">{{numb_Spells(item)}}</div>
-        <div class="small">{{ Str(item) }}</div> -->
-				<div class="small">
+		<div class="items" :class="{'print-items': blank_print,} ">
+			<section v-for="item in list_Filter_Arr" :key="item" class="column_vis" 
+      :class="{'print-column_vis': blank_print,} "
+      >
+				<div class="small" 
+        :class="{'int-700-18': blank_print,}">
 					<span class="passive" v-if="spell_count">{{
 						numb_Spells(item)
 					}}</span>
 					<span>{{ Str(item) }}</span>
 				</div>
-				<div class="charge_text" v-if="Inf(item)">{{ Inf(item) }}</div>
-				<div v-else class="visual">
+				<div 
+        :class="{
+          'charge_text': !blank_print,
+          'print-charge_text': blank_print,
+          'int-700-18': blank_print,
+          } "
+        v-if="Inf(item)">{{ Inf(item) }}</div>
+				<div v-else
+        :class="{
+          visual: !blank_print,
+          'print-visual': blank_print,
+          } ">
 					<div
 						class="cube cube_charge"
+            :class="{'print-cube_zero': blank_print,} "
 						v-for="n in cube_Numb(item)"
 						:key="n"
 					></div>
 				</div>
 			</section>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>
@@ -63,6 +95,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    blank_print: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
@@ -72,7 +108,7 @@ export default {
 		...mapState(useSpellsStore, ["spells_RC_Param_Manna"]),
 
 		t_Title() {
-			return this.t(this.charge.name);
+			return this.T(this.charge.name);
 		},
 
 		numb_Spells: (stor) => (item) => {
@@ -89,16 +125,26 @@ export default {
 			return type_foo ? type_foo : this.charge.type;
 		},
 
-		Str: (state) => (item) => {
+		Str: (stor) => (item) => {
 			let name = item[0];
-			let str_foo = state.Value_Foo("Str");
-			if (name) {
-				return `${name} :`;
-			} else if (str_foo) {
-				return `${str_foo} :`;
-			} else {
-				return null;
-			}
+			let str_foo = stor.Value_Foo("Str");
+      const res = name ? name : str_foo;
+      const print = stor.blank_print;
+
+      if (res) {
+        if(print) {
+          const print_str = res.replace(/[^a-zа-яё0-9\s]/gi, ' ');
+          return print_str;
+        }
+        return `${res} :`
+      };
+			// if (name) {
+			// 	return dot ? name : `${name} :`;
+			// } else if (str_foo) {
+			// 	return dot ? str_foo : `${str_foo} :`;
+			// } else {
+			// 	return null;
+			// }
 		},
 
 		list_Filter_Arr() {
@@ -191,12 +237,20 @@ export default {
 <style scoped>
 .flex_row {
 	display: flex;
-	gap: 4px;
 }
 
-/* .icon {
-  margin-right: 4px;
-} */
+.icon {
+	width: 18px;
+	height: 18px;
+	margin-right: 4px;
+}
+
+.main_svg {
+	width: 18px;
+	height: 18px;
+	fill: white;
+}
+
 .column {
 	display: flex;
 	justify-content: space-between;
@@ -205,7 +259,7 @@ export default {
 
 .column_vis {
 	display: flex;
-  justify-content: flex-end;
+	justify-content: flex-end;
 }
 
 .items {
@@ -240,9 +294,72 @@ export default {
 
 .small {
 	text-transform: lowercase;
+  display: flex;
+  align-items: center;
+
 }
 
 .passive {
 	opacity: 0.2;
+}
+
+.print-row {
+  position: relative;
+  max-height: 72px;
+}
+
+.print-title {
+  margin-left: 28px;
+}
+
+.print-icon {
+  position: absolute;
+  width: 36px;
+	height: 36px;
+  top: 2px;
+  left: 2px;
+}
+
+.print_svg {
+	width: 36px;
+	height: 36px;
+	fill: black;
+}
+
+.print-column_vis {
+  min-height: 30px;
+}
+
+.print-items {
+  max-width: 425px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 3px;
+  gap: 0 8px;
+  flex-wrap: wrap;
+
+}
+
+.print-visual {
+	display: flex;
+	align-items: center;
+	margin-left: 4px;
+	gap: 4px;
+}
+
+.print-charge_text {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.print-cube_zero {
+  margin-top: 1px;
+	width: 16px;
+	height: 16px;
+	border-radius: 4px;
+	border: 2px solid #000000;
+  background: none;
 }
 </style>

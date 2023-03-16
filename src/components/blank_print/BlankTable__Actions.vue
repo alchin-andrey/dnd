@@ -47,7 +47,7 @@
       </div>
       </section>
 
-			<section class="table-col-1">
+			<section class="table-col-1 int-500-22">
 
 				<div class="cell-3-1">
           <div class="int-600-28">{{ t_X1("bonus_action") }}</div>
@@ -71,7 +71,7 @@
 
 			</section>
 		</div>
-		<div class="wrap-table-right">
+		<div class="wrap-table-right int-500-22">
       <div class="int-600-28">{{ t_X1("reaction") }}</div>
 
       <div class="marg-t-30" >• {{ T("provoked_attackn") }}</div>
