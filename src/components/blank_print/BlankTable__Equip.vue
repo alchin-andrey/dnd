@@ -150,7 +150,7 @@ export default {
 
 .table-equip {
 	display: grid;
-	grid-template-rows: 536px 72px;
+	grid-template-rows: 538px 72px;
 	grid-template-columns: repeat(4, 1fr) repeat(2, 2fr);
 }
 
