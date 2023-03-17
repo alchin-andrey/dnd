@@ -2,7 +2,7 @@
 	<div class="avatar-print">
 		<section class="level-blok">
 			<div>{{ t_lvl }}</div>
-			<div class="int-600-48">{{ MY.level }}</div>
+			<div class="int-600-48">{{ my_Lvl }}</div>
 			<div>{{ t_Mastery }}</div>
 		</section>
 
@@ -72,6 +72,12 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery", "str_Upper"]),
+// NOTE - DR
+    my_Lvl() {
+      if(this.MY.level == 1000) return "♾️"
+      return this.MY.level
+    },
+// !NOTE - DR
 
 		t_lvl() {
 			return this.str_Upper(this.t("level"));

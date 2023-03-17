@@ -8,7 +8,7 @@
       @click="getSize(n)"
       :style="{
         bottom: getBottom(n),
-        }">{{n}}</div>
+        }">{{getN(n)}}</div>
   </div>
 </template>
 
@@ -65,7 +65,8 @@ export default {
       } 
     },
     Level_Arr() {
-      return [0, 5, 10, 15, 20]
+      return [0, 5, 31, 40, 60, 80, 100, 500, 1000] // NOTE - DR
+      // return [0, 5, 10, 15, 20]
     },
     Weight_Arr() {
       let min = this.MY.race.race_settings.weight.min
@@ -103,7 +104,13 @@ export default {
       } else {
         this.MY[this.Target_Range] = this.Min_Range
       }
+    },
+    // NOTE - DR
+    getN(numb) {
+      if(numb == 1000) return "♾️";
+      return numb
     }
+    // NOTE - DR
   }
 };
 </script>

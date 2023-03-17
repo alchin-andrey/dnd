@@ -15,7 +15,11 @@
     <div class="flex-vis">
     <div class="hp-text jbm-500-22" v-if="title_numb">{{ t_Temporary }}</div>
       <div class="visual">
-      <div class="cube_zero" v-if="hp_Dice" v-for="n in cube_Numb_Zero" :key="n" />
+      
+      <!-- <div class="cube_zero" v-if="hp_Dice" v-for="n in cube_Numb_Zero" :key="n" /> -->
+      <div class="int-600-72" v-if="hp_Dice && cube_Numb_Zero == 1000">♾️</div>
+      <div class="cube_zero" v-if="hp_Dice && cube_Numb_Zero !== 1000" v-for="n in cube_Numb_Zero" :key="n" />
+
       </div>
     </div>
 	</div>
@@ -70,7 +74,7 @@ export default {
     },
 
     cube_Numb_Zero() {
-      // return this.numb;
+      if(this.MY.level > 20 && this.MY.level !== 1000) return 20; //NOTE - DR
       return this.MY.level;
     }
 	},

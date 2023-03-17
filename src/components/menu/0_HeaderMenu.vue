@@ -48,6 +48,7 @@ export default {
     },
 
 		char_Lvl(store) {
+      if(store.MY.level == 1000) return `lvl ♾️` //NOTE - DR
       return `lvl ${store.MY.level}`
     },
 	},

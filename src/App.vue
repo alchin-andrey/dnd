@@ -352,7 +352,7 @@ export default {
       const race = this.MY.race.name;
       const ethnos = this.MY.ethnos.name;
       const classes = this.MY.class.name;
-      const lvl = this.MY.level;
+      const lvl = this.MY.level == 1000 ? "♾️" : this.MY.level; //NOTE - DR
 			html2pdf(document.getElementById("element-to-convert"), {
 				margin: 0,
 				filename: `${name}_LVL${lvl}.pdf`,

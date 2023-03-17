@@ -9,14 +9,16 @@
 						<BlankTable__MainSett />
 						<BlankTable__Proficiencies />
 					</div>
-					<Blank__Avatar />
+          <!-- NOTE - DR -->
+					<Blank__Avatar /> 
 				</section>
 				<Blank__SelectMenu />
 			</main>
 
       <main class="print-page">
         <section class="wrap-head" v-if="!PRINT_WORK">
-          <BlankTable__QualStats />
+          <!-- NOTE - DR -->
+          <BlankTable__QualStats /> 
           <BlankTable__Fines class="marg-top-36"/>
         </section>
         <section class="wrap-bottom">
