@@ -133,7 +133,7 @@ export default {
         list: [
 
 //NOTE - DR
-          { name: "Ципа та коко" }, // друзі
+          { name: "Ципа та Коко" }, // друзі
 //NOTE - DR
 
 
