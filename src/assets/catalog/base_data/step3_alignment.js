@@ -13,6 +13,11 @@ export default {
         name: "main_feature",
         select: 1,
         list: [
+//NOTE - DR
+          { name: "feature_perfectionist" }, // перфекционист
+//NOTE - DR
+
+
           { name: "feature_taler" }, // рассказчик
           { name: "feature_gossip" }, // сплетник
           { name: "feature_flatterer" }, // льстец
@@ -77,6 +82,13 @@ export default {
         name: "ideals",
         select: 1,
         list: [
+
+//NOTE - DR
+          { name: "ideal_creativity" }, // творчість
+//NOTE - DR
+
+
+
           { name: "ideal_justice" }, // справедливість
           { name: "ideal_equality" }, // рівність
           { name: "ideal_independence" }, // незалежність
@@ -119,6 +131,13 @@ export default {
         name: "commitment",
         select: 1,
         list: [
+
+//NOTE - DR
+          { name: "Ципа та коко" }, // друзі
+//NOTE - DR
+
+
+
           { name: "attachment_tool" }, // інструмент
           { name: "attachment_talisman" }, // талісман
           { name: "attachment_thing" }, // памʼятна річ
@@ -159,6 +178,11 @@ export default {
         name: "secret",
         select: 1,
         list: [
+//NOTE - DR
+          { name: "У волоссі" }, // пророцтво
+//NOTE - DR
+
+
           { name: "secret_mistake" }, // жахлива помилка
           { name: "secret_setup" }, // підстава
           { name: "secret_crime" }, // злочин
@@ -180,6 +204,12 @@ export default {
         name: "weakness",
         select: 1,
         list: [
+//NOTE - DR
+          { name: "кошенята" },
+//NOTE - DR
+
+
+
           { name: "weakness_greed" }, // жадность
           { name: "weakness_cleptomany" }, // жадность
           { name: "weakness_lust" }, // похоть
