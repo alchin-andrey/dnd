@@ -9,6 +9,1508 @@ import packs from "./list_packs.js";
 import items from "./list_items.js";
 
 export default {
+
+  cleric: {
+    name: "cleric",
+    details: "cleric_details",
+
+    hp_dice: 8,
+
+    proficiencies: {
+      armor: [armory.light, armory.medium, armory.shields],
+      weapons: [weaponry.simple],
+      tools: [],
+      languages: [],
+    },
+
+    saving: ["wisdom", "charisma"],
+    stats_base: [
+      "wisdom",
+      "constitution",
+      "dexterity",
+      "strength",
+      "intelligence",
+      "charisma",
+    ],
+    spell_attribute: "wisdom",
+
+    charges: [
+      {
+        level: 1,
+        name: "divine_channel_slots",
+        type: "short_rest",
+        list: [
+          ["", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+        ],
+      },
+      {
+        level: 10,
+        name: "divine_intervention_slots",
+        type: "long_rest",
+        list: [
+          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        ],
+      },
+      {
+        level: 1,
+        name: "spell_slots",
+        type: "long_rest",
+        list: [
+          ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+          ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
+          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
+          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+        ],
+      },
+    ],
+
+    equipment: [
+      {
+        weapon: [[weapons.unarmed, 1]],
+        inventory: [
+          [items.shield, 1],
+          [items.holy_symbol, 1],
+        ],
+      },
+    ],
+
+    spells: [
+      {
+        level: 2,
+        spell: spells.divine_channel_undead,
+      },
+      {
+        level: 2,
+        spell: spells.divine_channel_mana,
+      },
+      {
+        level: 10,
+        spell: spells.divine_intervention,
+      },
+      {
+        level: 1,
+        spell: spells.prepare_shield,
+      },
+    ],
+
+    settings: [
+      {
+        level: 1,
+        type: "custom",
+        position: 0,
+        name: "subclass",
+        select: 1,
+        list: [
+          {
+            //домен бури
+            name: "domain_thunder",
+            details: "domain_thunder_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "thunder_wrath_slots",
+                type: "long_rest",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 17,
+                type: "plus",
+                keyword: "flight",
+                details: "as_walking_speed",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.thunder_wrath,
+              },
+              {
+                level: 1,
+                spell: spells.thunderwave,
+              },
+              {
+                level: 1,
+                spell: spells.fog_cloud,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_wrath,
+              },
+              {
+                level: 3,
+                spell: spells.shatter,
+              },
+              {
+                level: 3,
+                spell: spells.gust_of_wind,
+              },
+              {
+                level: 5,
+                spell: spells.sleet_storm,
+              },
+              {
+                level: 5,
+                spell: spells.call_lightning,
+              },
+              {
+                level: 6,
+                spell: spells.thunder_strike,
+              },
+              {
+                level: 7,
+                spell: spells.control_water,
+              },
+              {
+                level: 7,
+                spell: spells.ice_storm,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_sound,
+              },
+              {
+                level: 9,
+                spell: spells.insect_plague,
+              },
+              {
+                level: 9,
+                spell: spells.destructive_wave,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+              weapons: [weaponry.military],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен войньі
+            name: "domain_war",
+            details: "domain_war_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "inspired_attack_slots",
+                type: "long_rest",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 17,
+                type: "resistance",
+                keyword: "resistance",
+                details: "to_no_magic_weapon",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.inspired_attack,
+              },
+              {
+                level: 1,
+                spell: spells.divine_favor,
+              },
+              {
+                level: 1,
+                spell: spells.shield_of_faith,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_directed_strike,
+              },
+              {
+                level: 3,
+                spell: spells.spiritual_weapon,
+              },
+              {
+                level: 3,
+                spell: spells.magic_weapon,
+              },
+              {
+                level: 5,
+                spell: spells.spirit_guardians,
+              },
+              {
+                level: 5,
+                spell: spells.crusaders_mantle,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_war_god_bless,
+              },
+              {
+                level: 7,
+                spell: spells.stoneskin,
+              },
+              {
+                level: 7,
+                spell: spells.freedom_of_movement,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_weapon,
+              },
+              {
+                level: 9,
+                spell: spells.flame_strike,
+              },
+              {
+                level: 9,
+                spell: spells.hold_monster,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+              weapons: [weaponry.military],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен жизни
+            name: "domain_life",
+            details: "domain_life_details",
+
+            fines: [
+              {
+                level: 1,
+                type: "plus",
+                keyword: "extra_healing",
+                details: "two_plus_spell_level",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "heal",
+                details: "self_two_plus_spell_level",
+              },
+              {
+                level: 17,
+                type: "advantage",
+                keyword: "always_max_heal",
+                details: "from_spells",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.bless,
+              },
+              {
+                level: 1,
+                spell: spells.cure_wounds,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_save_life,
+              },
+              {
+                level: 3,
+                spell: spells.spiritual_weapon,
+              },
+              {
+                level: 3,
+                spell: spells.lesser_restoration,
+              },
+
+              {
+                level: 5,
+                spell: spells.revivify,
+              },
+              {
+                level: 5,
+                spell: spells.beacon_of_hope,
+              },
+              {
+                level: 7,
+                spell: spells.death_ward,
+              },
+              {
+                level: 7,
+                spell: spells.guardian_of_faith,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_radiant,
+              },
+              {
+                level: 9,
+                spell: spells.mass_cure_wounds,
+              },
+              {
+                level: 9,
+                spell: spells.raise_dead,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен знания
+            name: "domain_knowledge",
+            details: "domain_knowledge_details",
+
+            charges: [
+              {
+                level: 17,
+                name: "cleric_see_past_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.identify,
+              },
+              {
+                level: 1,
+                spell: spells.command,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_learn_tool,
+              },
+              {
+                level: 3,
+                spell: spells.suggestion,
+              },
+              {
+                level: 3,
+                spell: spells.augury,
+              },
+              {
+                level: 5,
+                spell: spells.nondetection,
+              },
+              {
+                level: 5,
+                spell: spells.speak_with_dead,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_read_thoughts,
+              },
+              {
+                level: 7,
+                spell: spells.arcane_eye,
+              },
+              {
+                level: 7,
+                spell: spells.confusion,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 9,
+                spell: spells.legend_lore,
+              },
+              {
+                level: 9,
+                spell: spells.scrying,
+              },
+              {
+                level: 17,
+                spell: spells.cleric_see_past,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 10,
+                name: "languages",
+                select: 2,
+                list: [
+                  {
+                    name: lang.halfling.name,
+                    details: lang.halfling.details,
+                    proficiencies: { languages: [lang.halfling] },
+                  },
+                  {
+                    name: lang.gnome.name,
+                    details: lang.gnome.details,
+                    proficiencies: { languages: [lang.gnome] },
+                  },
+                  {
+                    name: lang.dwarf.name,
+                    details: lang.dwarf.details,
+                    proficiencies: { languages: [lang.dwarf] },
+                  },
+                  {
+                    name: lang.elf.name,
+                    details: lang.elf.details,
+                    proficiencies: { languages: [lang.elf] },
+                  },
+                  {
+                    name: lang.orc.name,
+                    details: lang.orc.details,
+                    proficiencies: { languages: [lang.orc] },
+                  },
+                  {
+                    name: lang.dragon.name,
+                    details: lang.dragon.details,
+                    proficiencies: { languages: [lang.dragon] },
+                  },
+                  {
+                    name: lang.giant.name,
+                    details: lang.giant.details,
+                    proficiencies: { languages: [lang.giant] },
+                  },
+                  {
+                    name: lang.goblin.name,
+                    details: lang.goblin.details,
+                    proficiencies: { languages: [lang.goblin] },
+                  },
+                  {
+                    name: lang.thieves.name,
+                    details: lang.thieves.details,
+                    proficiencies: { languages: [lang.thieves] },
+                  },
+                  {
+                    name: lang.druid.name,
+                    details: lang.druid.details,
+                    proficiencies: { languages: [lang.druid] },
+                  },
+                  {
+                    name: lang.animal.name,
+                    details: lang.animal.details,
+                    proficiencies: { languages: [lang.animal] },
+                  },
+                  {
+                    name: lang.sylvan.name,
+                    details: lang.sylvan.details,
+                    proficiencies: { languages: [lang.sylvan] },
+                  },
+                  {
+                    name: lang.undercommon.name,
+                    details: lang.undercommon.details,
+                    proficiencies: { languages: [lang.undercommon] },
+                  },
+                  {
+                    name: lang.deep.name,
+                    details: lang.deep.details,
+                    proficiencies: { languages: [lang.deep] },
+                  },
+                  {
+                    name: lang.primordial.name,
+                    details: lang.primordial.details,
+                    proficiencies: { languages: [lang.primordial] },
+                  },
+                  {
+                    name: lang.sky.name,
+                    details: lang.sky.details,
+                    proficiencies: { languages: [lang.sky] },
+                  },
+                  {
+                    name: lang.demonic.name,
+                    details: lang.demonic.details,
+                    proficiencies: { languages: [lang.demonic] },
+                  },
+                  {
+                    name: lang.tiefling.name,
+                    details: lang.tiefling.details,
+                    proficiencies: { languages: [lang.tiefling] },
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 8,
+                name: "skills",
+                select: 2,
+                list: [
+                  {
+                    name_set: "history",
+                    skills: [{ name: "history", num: "Mastery_x2" }],
+                  },
+                  {
+                    name_set: "arcana",
+                    skills: [{ name: "arcana", num: "Mastery_x2" }],
+                  },
+                  {
+                    name_set: "nature",
+                    skills: [{ name: "nature", num: "Mastery_x2" }],
+                  },
+                  {
+                    name_set: "religion",
+                    skills: [{ name: "religion", num: "Mastery_x2" }],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен обмана
+            name: "domain_trickery",
+            details: "domain_trickery_details",
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.tricker_bless,
+              },
+              {
+                level: 1,
+                spell: spells.disguise_self,
+              },
+              {
+                level: 1,
+                spell: spells.charm_person,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_mirror_image,
+              },
+              {
+                level: 3,
+                spell: spells.pass_without_trace,
+              },
+              {
+                level: 3,
+                spell: spells.mirror_image,
+              },
+              {
+                level: 5,
+                spell: spells.blink,
+              },
+              {
+                level: 5,
+                spell: spells.dispel_magic,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_cloak_of_shadows,
+              },
+              {
+                level: 7,
+                spell: spells.dimension_door,
+              },
+              {
+                level: 7,
+                spell: spells.polymorph,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_poison,
+              },
+              {
+                level: 9,
+                spell: spells.modify_memory,
+              },
+              {
+                level: 9,
+                spell: spells.dominate_person,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен природьі
+            name: "domain_nature",
+            details: "domain_nature_details",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.divine_channel_charm_alimal_plant,
+              },
+              {
+                level: 6,
+                spell: spells.dampen_elements,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_nature,
+              },
+
+              {
+                level: 1,
+                spell: spells.animal_friendship,
+              },
+              {
+                level: 1,
+                spell: spells.speak_with_animals,
+              },
+              {
+                level: 3,
+                spell: spells.barkskin,
+              },
+              {
+                level: 3,
+                spell: spells.spike_growth,
+              },
+              {
+                level: 5,
+                spell: spells.plant_growth,
+              },
+              {
+                level: 5,
+                spell: spells.wind_wall,
+              },
+              {
+                level: 7,
+                spell: spells.dominate_beast,
+              },
+              {
+                level: 7,
+                spell: spells.grasping_vine,
+              },
+              {
+                level: 9,
+                spell: spells.tree_stride,
+              },
+              {
+                level: 9,
+                spell: spells.insect_plague,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 3,
+                name: "spells_0",
+                select: 1,
+                list: [
+                  //spells[0] druid
+                  {
+                    name_set: spells.shillelagh[0].name,
+                    spells: [{ level: 1, spell: spells.shillelagh }],
+                  },
+                  {
+                    name_set: spells.druidcraft[0].name,
+                    spells: [{ level: 1, spell: spells.druidcraft }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ level: 1, spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ level: 1, spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.resistance[0].name,
+                    spells: [{ level: 1, spell: spells.resistance }],
+                  },
+                  {
+                    name_set: spells.produce_flame[0].name,
+                    spells: [{ level: 1, spell: spells.produce_flame }],
+                  },
+                  {
+                    name_set: spells.thorn_whip[0].name,
+                    spells: [{ level: 1, spell: spells.thorn_whip }],
+                  },
+                  {
+                    name_set: spells.guidance[0].name,
+                    spells: [{ level: 1, spell: spells.guidance }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ level: 1, spell: spells.poison_spray }],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 8,
+                name: "skills",
+                select: 1,
+                list: [
+                  {
+                    name_set: "survival",
+                    skills: [
+                      {
+                        name: "survival",
+                        num: "Mastery",
+                        details: "survival_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "nature",
+                    skills: [
+                      {
+                        name: "nature",
+                        num: "Mastery",
+                        details: "nature_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "animal_handling",
+                    skills: [
+                      {
+                        name: "animal_handling",
+                        num: "Mastery",
+                        details: "animal_handling_details",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [{ level: 1, armor: [[armors.scalemail, 1]] }],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [{ level: 1, armor: [[armors.leather, 1]] }],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [{ level: 1, armor: [[armors.chainmail, 1]] }],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен света
+            name: "domain_light",
+            details: "domain_light_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "warding_flare_slots",
+                type: "long_rest",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.light,
+              },
+              {
+                level: 1,
+                spell: spells.warding_flare,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_radiance_dawn,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 17,
+                spell: spells.crown_of_light,
+              },
+
+              {
+                level: 1,
+                spell: spells.burning_hands,
+              },
+              {
+                level: 1,
+                spell: spells.faerie_fire_0,
+              },
+              {
+                level: 3,
+                spell: spells.scorching_ray,
+              },
+              {
+                level: 3,
+                spell: spells.flaming_sphere,
+              },
+              {
+                level: 5,
+                spell: spells.daylight,
+              },
+              {
+                level: 5,
+                spell: spells.fireball,
+              },
+              {
+                level: 7,
+                spell: spells.wall_of_fire,
+              },
+              {
+                level: 7,
+                spell: spells.guardian_of_faith,
+              },
+              {
+                level: 9,
+                spell: spells.scrying,
+              },
+              {
+                level: 9,
+                spell: spells.flame_strike,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        position: 8,
+        name: "skills",
+        select: 2,
+        list: [
+          {
+            name_set: "history",
+            skills: [
+              { name: "history", num: "Mastery", details: "history_details" },
+            ],
+          },
+          {
+            name_set: "medicine",
+            skills: [
+              { name: "medicine", num: "Mastery", details: "medicine_details" },
+            ],
+          },
+          {
+            name_set: "insight",
+            skills: [
+              { name: "insight", num: "Mastery", details: "insight_details" },
+            ],
+          },
+          {
+            name_set: "religion",
+            skills: [
+              { name: "religion", num: "Mastery", details: "religion_details" },
+            ],
+          },
+          {
+            name_set: "persuasion",
+            skills: [
+              {
+                name: "persuasion",
+                num: "Mastery",
+                details: "persuasion_details",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        position: 12,
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            name_set: weapons.mace.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            name_set: weapons.warhammer.name,
+            equipment: [{ weapon: [[weapons.warhammer, 1]] }],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        position: 12,
+        name: "weapons",
+        select: 1,
+        list: [
+          {
+            name_set: weapons.light_crossbow.name,
+            equipment: [
+              {
+                weapon: [[weapons.light_crossbow, 1]],
+                inventory: [[items.bolt, 20]],
+              },
+            ],
+          },
+          {
+            name_set: weapons.quarterstaff.name,
+            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
+          },
+          {
+            name_set: weapons.mace.name,
+            equipment: [{ weapon: [[weapons.mace, 1]] }],
+          },
+          {
+            name_set: weapons.club.name,
+            equipment: [{ weapon: [[weapons.club, 1]] }],
+          },
+          {
+            name_set: weapons.dagger.name,
+            equipment: [{ weapon: [[weapons.dagger, 1]] }],
+          },
+          {
+            name_set: weapons.spear.name,
+            equipment: [{ weapon: [[weapons.spear, 1]] }],
+          },
+          {
+            name_set: weapons.light_hammer.name,
+            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
+          },
+          {
+            name_set: weapons.javelin.name,
+            equipment: [{ weapon: [[weapons.javelin, 1]] }],
+          },
+          {
+            name_set: weapons.greatclub.name,
+            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
+          },
+          {
+            name_set: weapons.handaxe.name,
+            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
+          },
+          {
+            name_set: weapons.sickle.name,
+            equipment: [{ weapon: [[weapons.sickle, 1]] }],
+          },
+          {
+            name_set: weapons.dart.name,
+            equipment: [
+              {
+                weapon: [[weapons.dart, 10]],
+              },
+            ],
+          },
+          {
+            name_set: weapons.shortbow.name,
+            equipment: [
+              {
+                weapon: [[weapons.shortbow, 1]],
+                inventory: [[items.arrow, 20]],
+              },
+            ],
+          },
+          {
+            name_set: weapons.sling.name,
+            equipment: [
+              {
+                weapon: [[weapons.sling, 1]],
+                inventory: [[items.bullet, 20]],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        position: 13,
+        name: "pack",
+        select: 1,
+        list: [
+          {
+            name_set: packs.priests.name,
+            equipment: [{ inventory_packs: [[packs.priests, 1]] }],
+          },
+          {
+            name_set: packs.explorers.name,
+            equipment: [{ inventory_packs: [[packs.explorers, 1]] }],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "custom",
+        position: 3,
+        name: "spells_0",
+        select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+        list: [
+          //spells[0] cleric
+          {
+            name_set: spells.mending[0].name,
+            spells: [{ level: 1, spell: spells.mending }],
+          },
+          {
+            name_set: spells.light[0].name,
+            spells: [{ level: 1, spell: spells.light }],
+          },
+          {
+            name_set: spells.sacred_flame[0].name,
+            spells: [{ level: 1, spell: spells.sacred_flame }],
+          },
+          {
+            name_set: spells.resistance[0].name,
+            spells: [{ level: 1, spell: spells.resistance }],
+          },
+          {
+            name_set: spells.guidance[0].name,
+            spells: [{ level: 1, spell: spells.guidance }],
+          },
+          {
+            name_set: spells.spare_the_dying[0].name,
+            spells: [{ level: 1, spell: spells.spare_the_dying }],
+          },
+          {
+            name_set: spells.thaumaturgy[0].name,
+            spells: [{ level: 1, spell: spells.thaumaturgy }],
+          },
+        ],
+      },
+      {
+        level: 1,
+        type: "spells",
+        position: 4,
+        name: "spells",
+        select: [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        ],
+        foo: "Sel_Plus_WIS_Min1",
+        mana_min: 1,
+        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
+        filter: { classes: ["cleric"], }
+      },
+      {
+        level: 4,
+        type: "feats",
+        position: 7,
+      },
+      {
+        level: 8,
+        type: "feats",
+        position: 7,
+      },
+      {
+        level: 12,
+        type: "feats",
+        position: 7,
+      },
+      {
+        level: 16,
+        type: "feats",
+        position: 7,
+      },
+      {
+        level: 19,
+        type: "feats",
+        position: 7,
+      },
+    ],
+  }, // 20
+
   //NOTE - Rogue -------------------------------------------------------------------------
 
   rogue: {
@@ -4430,1506 +5932,6 @@ export default {
 
   //NOTE - Cleric
 
-  cleric: {
-    name: "cleric",
-    details: "cleric_details",
-
-    hp_dice: 8,
-
-    proficiencies: {
-      armor: [armory.light, armory.medium, armory.shields],
-      weapons: [weaponry.simple],
-      tools: [],
-      languages: [],
-    },
-
-    saving: ["wisdom", "charisma"],
-    stats_base: [
-      "wisdom",
-      "constitution",
-      "dexterity",
-      "strength",
-      "intelligence",
-      "charisma",
-    ],
-    spell_attribute: "wisdom",
-
-    charges: [
-      {
-        level: 1,
-        name: "divine_channel_slots",
-        type: "short_rest",
-        list: [
-          ["", 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
-        ],
-      },
-      {
-        level: 10,
-        name: "divine_intervention_slots",
-        type: "long_rest",
-        list: [
-          ["", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-        ],
-      },
-      {
-        level: 1,
-        name: "spell_slots",
-        type: "long_rest",
-        list: [
-          ["[1]", 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-          ["[2]", 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["[3]", 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["[4]", 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-          ["[5]", 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3],
-          ["[6]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
-          ["[7]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2],
-          ["[8]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
-          ["[9]", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
-        ],
-      },
-    ],
-
-    equipment: [
-      {
-        weapon: [[weapons.unarmed, 1]],
-        inventory: [
-          [items.shield, 1],
-          [items.holy_symbol, 1],
-        ],
-      },
-    ],
-
-    spells: [
-      {
-        level: 2,
-        spell: spells.divine_channel_undead,
-      },
-      {
-        level: 2,
-        spell: spells.divine_channel_mana,
-      },
-      {
-        level: 10,
-        spell: spells.divine_intervention,
-      },
-      {
-        level: 1,
-        spell: spells.prepare_shield,
-      },
-    ],
-
-    settings: [
-      {
-        level: 1,
-        type: "custom",
-        position: 0,
-        name: "subclass",
-        select: 1,
-        list: [
-          {
-            //домен бури
-            name: "domain_thunder",
-            details: "domain_thunder_details",
-
-            charges: [
-              {
-                level: 1,
-                name: "thunder_wrath_slots",
-                type: "long_rest",
-                foo: "Num_WIS_Min1",
-                list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                  ],
-                ],
-              },
-            ],
-
-            fines: [
-              {
-                level: 17,
-                type: "plus",
-                keyword: "flight",
-                details: "as_walking_speed",
-              },
-            ],
-
-            spells: [
-              {
-                level: 1,
-                spell: spells.thunder_wrath,
-              },
-              {
-                level: 1,
-                spell: spells.thunderwave,
-              },
-              {
-                level: 1,
-                spell: spells.fog_cloud,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_wrath,
-              },
-              {
-                level: 3,
-                spell: spells.shatter,
-              },
-              {
-                level: 3,
-                spell: spells.gust_of_wind,
-              },
-              {
-                level: 5,
-                spell: spells.sleet_storm,
-              },
-              {
-                level: 5,
-                spell: spells.call_lightning,
-              },
-              {
-                level: 6,
-                spell: spells.thunder_strike,
-              },
-              {
-                level: 7,
-                spell: spells.control_water,
-              },
-              {
-                level: 7,
-                spell: spells.ice_storm,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_sound,
-              },
-              {
-                level: 9,
-                spell: spells.insect_plague,
-              },
-              {
-                level: 9,
-                spell: spells.destructive_wave,
-              },
-            ],
-
-            proficiencies: {
-              armor: [armory.heavy],
-              weapons: [weaponry.military],
-            },
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.chainmail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.chainmail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            //домен войньі
-            name: "domain_war",
-            details: "domain_war_details",
-
-            charges: [
-              {
-                level: 1,
-                name: "inspired_attack_slots",
-                type: "long_rest",
-                foo: "Num_WIS_Min1",
-                list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                  ],
-                ],
-              },
-            ],
-
-            fines: [
-              {
-                level: 17,
-                type: "resistance",
-                keyword: "resistance",
-                details: "to_no_magic_weapon",
-              },
-            ],
-
-            spells: [
-              {
-                level: 1,
-                spell: spells.inspired_attack,
-              },
-              {
-                level: 1,
-                spell: spells.divine_favor,
-              },
-              {
-                level: 1,
-                spell: spells.shield_of_faith,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_directed_strike,
-              },
-              {
-                level: 3,
-                spell: spells.spiritual_weapon,
-              },
-              {
-                level: 3,
-                spell: spells.magic_weapon,
-              },
-              {
-                level: 5,
-                spell: spells.spirit_guardians,
-              },
-              {
-                level: 5,
-                spell: spells.crusaders_mantle,
-              },
-              {
-                level: 6,
-                spell: spells.divine_channel_war_god_bless,
-              },
-              {
-                level: 7,
-                spell: spells.stoneskin,
-              },
-              {
-                level: 7,
-                spell: spells.freedom_of_movement,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_weapon,
-              },
-              {
-                level: 9,
-                spell: spells.flame_strike,
-              },
-              {
-                level: 9,
-                spell: spells.hold_monster,
-              },
-            ],
-
-            proficiencies: {
-              armor: [armory.heavy],
-              weapons: [weaponry.military],
-            },
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.chainmail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.chainmail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            //домен жизни
-            name: "domain_life",
-            details: "domain_life_details",
-
-            fines: [
-              {
-                level: 1,
-                type: "plus",
-                keyword: "extra_healing",
-                details: "two_plus_spell_level",
-              },
-              {
-                level: 6,
-                type: "plus",
-                keyword: "heal",
-                details: "self_two_plus_spell_level",
-              },
-              {
-                level: 17,
-                type: "advantage",
-                keyword: "always_max_heal",
-                details: "from_spells",
-              },
-            ],
-
-            spells: [
-              {
-                level: 1,
-                spell: spells.bless,
-              },
-              {
-                level: 1,
-                spell: spells.cure_wounds,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_save_life,
-              },
-              {
-                level: 3,
-                spell: spells.spiritual_weapon,
-              },
-              {
-                level: 3,
-                spell: spells.lesser_restoration,
-              },
-
-              {
-                level: 5,
-                spell: spells.revivify,
-              },
-              {
-                level: 5,
-                spell: spells.beacon_of_hope,
-              },
-              {
-                level: 7,
-                spell: spells.death_ward,
-              },
-              {
-                level: 7,
-                spell: spells.guardian_of_faith,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_radiant,
-              },
-              {
-                level: 9,
-                spell: spells.mass_cure_wounds,
-              },
-              {
-                level: 9,
-                spell: spells.raise_dead,
-              },
-            ],
-
-            proficiencies: {
-              armor: [armory.heavy],
-            },
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.chainmail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.chainmail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            //домен знания
-            name: "domain_knowledge",
-            details: "domain_knowledge_details",
-
-            charges: [
-              {
-                level: 17,
-                name: "cleric_see_past_slots",
-                type: "short_rest",
-                list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    1,
-                    1,
-                    1,
-                    1,
-                  ],
-                ],
-              },
-            ],
-
-            spells: [
-              {
-                level: 1,
-                spell: spells.identify,
-              },
-              {
-                level: 1,
-                spell: spells.command,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_learn_tool,
-              },
-              {
-                level: 3,
-                spell: spells.suggestion,
-              },
-              {
-                level: 3,
-                spell: spells.augury,
-              },
-              {
-                level: 5,
-                spell: spells.nondetection,
-              },
-              {
-                level: 5,
-                spell: spells.speak_with_dead,
-              },
-              {
-                level: 6,
-                spell: spells.divine_channel_read_thoughts,
-              },
-              {
-                level: 7,
-                spell: spells.arcane_eye,
-              },
-              {
-                level: 7,
-                spell: spells.confusion,
-              },
-              {
-                level: 8,
-                spell: spells.cleric_extra_damage,
-              },
-              {
-                level: 9,
-                spell: spells.legend_lore,
-              },
-              {
-                level: 9,
-                spell: spells.scrying,
-              },
-              {
-                level: 17,
-                spell: spells.cleric_see_past,
-              },
-            ],
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                level: 1,
-                type: "custom",
-                position: 10,
-                name: "languages",
-                select: 2,
-                list: [
-                  {
-                    name: lang.halfling.name,
-                    details: lang.halfling.details,
-                    proficiencies: { languages: [lang.halfling] },
-                  },
-                  {
-                    name: lang.gnome.name,
-                    details: lang.gnome.details,
-                    proficiencies: { languages: [lang.gnome] },
-                  },
-                  {
-                    name: lang.dwarf.name,
-                    details: lang.dwarf.details,
-                    proficiencies: { languages: [lang.dwarf] },
-                  },
-                  {
-                    name: lang.elf.name,
-                    details: lang.elf.details,
-                    proficiencies: { languages: [lang.elf] },
-                  },
-                  {
-                    name: lang.orc.name,
-                    details: lang.orc.details,
-                    proficiencies: { languages: [lang.orc] },
-                  },
-                  {
-                    name: lang.dragon.name,
-                    details: lang.dragon.details,
-                    proficiencies: { languages: [lang.dragon] },
-                  },
-                  {
-                    name: lang.giant.name,
-                    details: lang.giant.details,
-                    proficiencies: { languages: [lang.giant] },
-                  },
-                  {
-                    name: lang.goblin.name,
-                    details: lang.goblin.details,
-                    proficiencies: { languages: [lang.goblin] },
-                  },
-                  {
-                    name: lang.thieves.name,
-                    details: lang.thieves.details,
-                    proficiencies: { languages: [lang.thieves] },
-                  },
-                  {
-                    name: lang.druid.name,
-                    details: lang.druid.details,
-                    proficiencies: { languages: [lang.druid] },
-                  },
-                  {
-                    name: lang.animal.name,
-                    details: lang.animal.details,
-                    proficiencies: { languages: [lang.animal] },
-                  },
-                  {
-                    name: lang.sylvan.name,
-                    details: lang.sylvan.details,
-                    proficiencies: { languages: [lang.sylvan] },
-                  },
-                  {
-                    name: lang.undercommon.name,
-                    details: lang.undercommon.details,
-                    proficiencies: { languages: [lang.undercommon] },
-                  },
-                  {
-                    name: lang.deep.name,
-                    details: lang.deep.details,
-                    proficiencies: { languages: [lang.deep] },
-                  },
-                  {
-                    name: lang.primordial.name,
-                    details: lang.primordial.details,
-                    proficiencies: { languages: [lang.primordial] },
-                  },
-                  {
-                    name: lang.sky.name,
-                    details: lang.sky.details,
-                    proficiencies: { languages: [lang.sky] },
-                  },
-                  {
-                    name: lang.demonic.name,
-                    details: lang.demonic.details,
-                    proficiencies: { languages: [lang.demonic] },
-                  },
-                  {
-                    name: lang.tiefling.name,
-                    details: lang.tiefling.details,
-                    proficiencies: { languages: [lang.tiefling] },
-                  },
-                ],
-              },
-              {
-                level: 1,
-                type: "custom",
-                position: 8,
-                name: "skills",
-                select: 2,
-                list: [
-                  {
-                    name_set: "history",
-                    skills: [{ name: "history", num: "Mastery_x2" }],
-                  },
-                  {
-                    name_set: "arcana",
-                    skills: [{ name: "arcana", num: "Mastery_x2" }],
-                  },
-                  {
-                    name_set: "nature",
-                    skills: [{ name: "nature", num: "Mastery_x2" }],
-                  },
-                  {
-                    name_set: "religion",
-                    skills: [{ name: "religion", num: "Mastery_x2" }],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            //домен обмана
-            name: "domain_trickery",
-            details: "domain_trickery_details",
-
-            spells: [
-              {
-                level: 1,
-                spell: spells.tricker_bless,
-              },
-              {
-                level: 1,
-                spell: spells.disguise_self,
-              },
-              {
-                level: 1,
-                spell: spells.charm_person,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_mirror_image,
-              },
-              {
-                level: 3,
-                spell: spells.pass_without_trace,
-              },
-              {
-                level: 3,
-                spell: spells.mirror_image,
-              },
-              {
-                level: 5,
-                spell: spells.blink,
-              },
-              {
-                level: 5,
-                spell: spells.dispel_magic,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_cloak_of_shadows,
-              },
-              {
-                level: 7,
-                spell: spells.dimension_door,
-              },
-              {
-                level: 7,
-                spell: spells.polymorph,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_poison,
-              },
-              {
-                level: 9,
-                spell: spells.modify_memory,
-              },
-              {
-                level: 9,
-                spell: spells.dominate_person,
-              },
-            ],
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            //домен природьі
-            name: "domain_nature",
-            details: "domain_nature_details",
-
-            spells: [
-              {
-                level: 2,
-                spell: spells.divine_channel_charm_alimal_plant,
-              },
-              {
-                level: 6,
-                spell: spells.dampen_elements,
-              },
-              {
-                level: 8,
-                spell: spells.divine_strike_nature,
-              },
-
-              {
-                level: 1,
-                spell: spells.animal_friendship,
-              },
-              {
-                level: 1,
-                spell: spells.speak_with_animals,
-              },
-              {
-                level: 3,
-                spell: spells.barkskin,
-              },
-              {
-                level: 3,
-                spell: spells.spike_growth,
-              },
-              {
-                level: 5,
-                spell: spells.plant_growth,
-              },
-              {
-                level: 5,
-                spell: spells.wind_wall,
-              },
-              {
-                level: 7,
-                spell: spells.dominate_beast,
-              },
-              {
-                level: 7,
-                spell: spells.grasping_vine,
-              },
-              {
-                level: 9,
-                spell: spells.tree_stride,
-              },
-              {
-                level: 9,
-                spell: spells.insect_plague,
-              },
-            ],
-
-            proficiencies: {
-              armor: [armory.heavy],
-            },
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 3,
-                name: "spells_0",
-                select: 1,
-                list: [
-                  //spells[0] druid
-                  {
-                    name_set: spells.shillelagh[0].name,
-                    spells: [{ level: 1, spell: spells.shillelagh }],
-                  },
-                  {
-                    name_set: spells.druidcraft[0].name,
-                    spells: [{ level: 1, spell: spells.druidcraft }],
-                  },
-                  {
-                    name_set: spells.ray_of_frost[0].name,
-                    spells: [{ level: 1, spell: spells.ray_of_frost }],
-                  },
-                  {
-                    name_set: spells.mending[0].name,
-                    spells: [{ level: 1, spell: spells.mending }],
-                  },
-                  {
-                    name_set: spells.resistance[0].name,
-                    spells: [{ level: 1, spell: spells.resistance }],
-                  },
-                  {
-                    name_set: spells.produce_flame[0].name,
-                    spells: [{ level: 1, spell: spells.produce_flame }],
-                  },
-                  {
-                    name_set: spells.thorn_whip[0].name,
-                    spells: [{ level: 1, spell: spells.thorn_whip }],
-                  },
-                  {
-                    name_set: spells.guidance[0].name,
-                    spells: [{ level: 1, spell: spells.guidance }],
-                  },
-                  {
-                    name_set: spells.poison_spray[0].name,
-                    spells: [{ level: 1, spell: spells.poison_spray }],
-                  },
-                ],
-              },
-              {
-                level: 1,
-                type: "custom",
-                position: 8,
-                name: "skills",
-                select: 1,
-                list: [
-                  {
-                    name_set: "survival",
-                    skills: [
-                      {
-                        name: "survival",
-                        num: "Mastery",
-                        details: "survival_details",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: "nature",
-                    skills: [
-                      {
-                        name: "nature",
-                        num: "Mastery",
-                        details: "nature_details",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: "animal_handling",
-                    skills: [
-                      {
-                        name: "animal_handling",
-                        num: "Mastery",
-                        details: "animal_handling_details",
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [{ level: 1, armor: [[armors.scalemail, 1]] }],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [{ level: 1, armor: [[armors.leather, 1]] }],
-                  },
-                  {
-                    name_set: armors.chainmail.name,
-                    equipment: [{ level: 1, armor: [[armors.chainmail, 1]] }],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            //домен света
-            name: "domain_light",
-            details: "domain_light_details",
-
-            charges: [
-              {
-                level: 1,
-                name: "warding_flare_slots",
-                type: "long_rest",
-                foo: "Num_WIS_Min1",
-                list: [
-                  [
-                    "",
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                  ],
-                ],
-              },
-            ],
-
-            spells: [
-              {
-                level: 1,
-                spell: spells.light,
-              },
-              {
-                level: 1,
-                spell: spells.warding_flare,
-              },
-              {
-                level: 2,
-                spell: spells.divine_channel_radiance_dawn,
-              },
-              {
-                level: 8,
-                spell: spells.cleric_extra_damage,
-              },
-              {
-                level: 17,
-                spell: spells.crown_of_light,
-              },
-
-              {
-                level: 1,
-                spell: spells.burning_hands,
-              },
-              {
-                level: 1,
-                spell: spells.faerie_fire_0,
-              },
-              {
-                level: 3,
-                spell: spells.scorching_ray,
-              },
-              {
-                level: 3,
-                spell: spells.flaming_sphere,
-              },
-              {
-                level: 5,
-                spell: spells.daylight,
-              },
-              {
-                level: 5,
-                spell: spells.fireball,
-              },
-              {
-                level: 7,
-                spell: spells.wall_of_fire,
-              },
-              {
-                level: 7,
-                spell: spells.guardian_of_faith,
-              },
-              {
-                level: 9,
-                spell: spells.scrying,
-              },
-              {
-                level: 9,
-                spell: spells.flame_strike,
-              },
-            ],
-
-            settings: [
-              {
-                level: 1,
-                type: "custom",
-                position: 11,
-                name: "armor_class",
-                select: 1,
-                list: [
-                  {
-                    name_set: armors.scalemail.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.scalemail, 1]],
-                      },
-                    ],
-                    fines: [
-                      {
-                        level: 1,
-                        type: "disadvantage",
-                        keyword: "disadvantage",
-                        details: "on_stealth",
-                      },
-                    ],
-                  },
-                  {
-                    name_set: armors.leather.name,
-                    equipment: [
-                      {
-                        level: 1,
-                        armor: [[armors.leather, 1]],
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        position: 8,
-        name: "skills",
-        select: 2,
-        list: [
-          {
-            name_set: "history",
-            skills: [
-              { name: "history", num: "Mastery", details: "history_details" },
-            ],
-          },
-          {
-            name_set: "medicine",
-            skills: [
-              { name: "medicine", num: "Mastery", details: "medicine_details" },
-            ],
-          },
-          {
-            name_set: "insight",
-            skills: [
-              { name: "insight", num: "Mastery", details: "insight_details" },
-            ],
-          },
-          {
-            name_set: "religion",
-            skills: [
-              { name: "religion", num: "Mastery", details: "religion_details" },
-            ],
-          },
-          {
-            name_set: "persuasion",
-            skills: [
-              {
-                name: "persuasion",
-                num: "Mastery",
-                details: "persuasion_details",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        position: 12,
-        name: "weapons",
-        select: 1,
-        list: [
-          {
-            name_set: weapons.mace.name,
-            equipment: [{ weapon: [[weapons.mace, 1]] }],
-          },
-          {
-            name_set: weapons.warhammer.name,
-            equipment: [{ weapon: [[weapons.warhammer, 1]] }],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        position: 12,
-        name: "weapons",
-        select: 1,
-        list: [
-          {
-            name_set: weapons.light_crossbow.name,
-            equipment: [
-              {
-                weapon: [[weapons.light_crossbow, 1]],
-                inventory: [[items.bolt, 20]],
-              },
-            ],
-          },
-          {
-            name_set: weapons.quarterstaff.name,
-            equipment: [{ weapon: [[weapons.quarterstaff, 1]] }],
-          },
-          {
-            name_set: weapons.mace.name,
-            equipment: [{ weapon: [[weapons.mace, 1]] }],
-          },
-          {
-            name_set: weapons.club.name,
-            equipment: [{ weapon: [[weapons.club, 1]] }],
-          },
-          {
-            name_set: weapons.dagger.name,
-            equipment: [{ weapon: [[weapons.dagger, 1]] }],
-          },
-          {
-            name_set: weapons.spear.name,
-            equipment: [{ weapon: [[weapons.spear, 1]] }],
-          },
-          {
-            name_set: weapons.light_hammer.name,
-            equipment: [{ weapon: [[weapons.light_hammer, 1]] }],
-          },
-          {
-            name_set: weapons.javelin.name,
-            equipment: [{ weapon: [[weapons.javelin, 1]] }],
-          },
-          {
-            name_set: weapons.greatclub.name,
-            equipment: [{ weapon: [[weapons.greatclub, 1]] }],
-          },
-          {
-            name_set: weapons.handaxe.name,
-            equipment: [{ weapon: [[weapons.handaxe, 1]] }],
-          },
-          {
-            name_set: weapons.sickle.name,
-            equipment: [{ weapon: [[weapons.sickle, 1]] }],
-          },
-          {
-            name_set: weapons.dart.name,
-            equipment: [
-              {
-                weapon: [[weapons.dart, 10]],
-              },
-            ],
-          },
-          {
-            name_set: weapons.shortbow.name,
-            equipment: [
-              {
-                weapon: [[weapons.shortbow, 1]],
-                inventory: [[items.arrow, 20]],
-              },
-            ],
-          },
-          {
-            name_set: weapons.sling.name,
-            equipment: [
-              {
-                weapon: [[weapons.sling, 1]],
-                inventory: [[items.bullet, 20]],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        position: 13,
-        name: "pack",
-        select: 1,
-        list: [
-          {
-            name_set: packs.priests.name,
-            equipment: [{ inventory_packs: [[packs.priests, 1]] }],
-          },
-          {
-            name_set: packs.explorers.name,
-            equipment: [{ inventory_packs: [[packs.explorers, 1]] }],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "custom",
-        position: 3,
-        name: "spells_0",
-        select: [3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-        list: [
-          //spells[0] cleric
-          {
-            name_set: spells.mending[0].name,
-            spells: [{ level: 1, spell: spells.mending }],
-          },
-          {
-            name_set: spells.light[0].name,
-            spells: [{ level: 1, spell: spells.light }],
-          },
-          {
-            name_set: spells.sacred_flame[0].name,
-            spells: [{ level: 1, spell: spells.sacred_flame }],
-          },
-          {
-            name_set: spells.resistance[0].name,
-            spells: [{ level: 1, spell: spells.resistance }],
-          },
-          {
-            name_set: spells.guidance[0].name,
-            spells: [{ level: 1, spell: spells.guidance }],
-          },
-          {
-            name_set: spells.spare_the_dying[0].name,
-            spells: [{ level: 1, spell: spells.spare_the_dying }],
-          },
-          {
-            name_set: spells.thaumaturgy[0].name,
-            spells: [{ level: 1, spell: spells.thaumaturgy }],
-          },
-        ],
-      },
-      {
-        level: 1,
-        type: "spells",
-        position: 4,
-        name: "spells",
-        select: [
-          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-        ],
-        foo: "Sel_Plus_WIS_Min1",
-        mana_min: 1,
-        mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
-        filter: { classes: ["cleric"], }
-      },
-      {
-        level: 4,
-        type: "feats",
-        position: 7,
-      },
-      {
-        level: 8,
-        type: "feats",
-        position: 7,
-      },
-      {
-        level: 12,
-        type: "feats",
-        position: 7,
-      },
-      {
-        level: 16,
-        type: "feats",
-        position: 7,
-      },
-      {
-        level: 19,
-        type: "feats",
-        position: 7,
-      },
-    ],
-  }, // Almost 20 (spells)
 
   //NOTE - Druid -------------------------------------------------------------------------
 

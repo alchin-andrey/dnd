@@ -1,7 +1,7 @@
 <template>
 	<section>
-		<div class="title jbm-500-22">З днем народження!</div>
-		<div class="title jbm-500-22">Дядько, Дівер, Брат!</div>
+		<div class="title jbm-500-22">З днем народження,</div>
+		<div class="title jbm-500-22">Браааааааааааааат!</div>
 		<div class="relet">
       <div class="flag-flip">
 			<div class="flag limiter">

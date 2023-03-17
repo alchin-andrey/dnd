@@ -86,7 +86,7 @@ export default {
         list: [
 
 //NOTE - DR
-          { name: "ideal_creativity" }, // творчість
+          { name: "ideal_development" }, // розвиток
 //NOTE - DR
 
 
@@ -99,12 +99,12 @@ export default {
           { name: "ideal_respect" }, // повага
           { name: "ideal_society" }, // суспільство
           { name: "ideal_thrive" }, // процвітання
-          { name: "ideal_development" }, // розвиток
+          // { name: "ideal_development" }, // розвиток
           { name: "ideal_knowledge" }, // знання
           { name: "ideal_logics" }, // логіка
           { name: "ideal_truth" }, // правда
 
-          // { name: "ideal_creativity" }, // творчість
+          { name: "ideal_creativity" }, // творчість
 
           { name: "ideal_beauty" }, // краса
           { name: "ideal_nature" }, // природа
@@ -137,7 +137,7 @@ export default {
         list: [
 
 //NOTE - DR
-          { name: "Ципа та Коко" }, // друзі
+          { name: "attachment_family" }, // сімʼя
 //NOTE - DR
 
 
@@ -156,7 +156,7 @@ export default {
           { name: "attachment_mentor" }, // наставник
           { name: "attachment_legacy" }, // спадок
           { name: "attachment_child" }, // дитина
-          { name: "attachment_family" }, // сімʼя
+          //{ name: "attachment_family" }, // сімʼя
           { name: "attachment_home" }, // дім
           { name: "attachment_bonds" }, // звʼязки
           { name: "attachment_friends" }, // друзі
@@ -183,7 +183,7 @@ export default {
         select: 1,
         list: [
 //NOTE - DR
-          { name: "У волоссі" }, // пророцтво
+          { name: "Надприродня майстерність" }, // пророцтво
 //NOTE - DR
 
 
@@ -209,7 +209,7 @@ export default {
         select: 1,
         list: [
 //NOTE - DR
-          { name: "кошенята" },
+          { name: "Сова" },
 //NOTE - DR
 
 

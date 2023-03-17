@@ -6,178 +6,8 @@ import weaponry from "./kinds_weapons.js";
 import tool from "./kinds_tools.js";
 import armory from "./kinds_armor.js";
 import backstory from "./list_backstories.js";
-// import { divine_channel_antients_2 } from "../texts/ua/spells.js";
 
 export default {
-  halfling: {
-    name: "halfling",
-    details: "halfling_details",
-
-    noimg_ethnos: true,
-    ethnos_preview: [300,-24],
-
-    race_settings: {
-      ethnos: {
-
-        lightfoot: {
-          name: "lightfoot",
-          details: "lightfoot_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503210924",
-          link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[2][1]],
-            eyes: [color[2][5]],
-            hair: [color[0][6]],
-          },
-
-          // stats: { charisma: 1 },
-          stats: [{ name: "charisma", num: 1, },],
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "stealth",
-              details: "behind_bigger_than_mid",
-            },
-          ],
-        },
-
-        stout: {
-          name: "stout",
-          details: "stout_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503185616",
-          link_female: "https://www.heroforge.com/load_config%3D503211377",
-
-          color: {
-            skin: [color[2][0]],
-            eyes: [color[4][5]],
-            hair: [color[1][4]],
-          },
-
-          // stats: { constitution: 1 },
-          stats: [{ name: "constitution", num: 1, },],
-
-          fines: [
-            {
-              type: "advantage",
-              keyword: "advantage",
-              details: "poison_against",
-            },
-
-            {
-              type: "resistance",
-              keyword: "resistance",
-              details: "poison_damage",
-            },
-          ],
-        },
-
-        ghost: {
-          name: "ghost",
-          details: "ghost_halfling_details",
-          link_male: "https://www.heroforge.com/load_config%3D503211188",
-          link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[8][2]],
-            hair: [color[2][5]],
-          },
-
-          // stats: { wisdom: 1 },
-          stats: [{ name: "wisdom", num: 1, },],
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "telepathy",
-              details: "known_languages",
-            },
-          ],
-
-          rare: "rare",
-        },
-      },
-
-      gender: gender,
-      backstory: backstory,
-      color: {
-        skin: [
-          color[1][0],
-          color[2][0],
-          color[2][1],
-          color[2][2],
-          color[2][3],
-          color[2][4],
-          color[2][5],
-          color[2][6],
-          color[1][6],
-          color[0][6],
-          color[3][0],
-          color[12][0],
-          color[11][0],
-          color[10][0],
-        ],
-        eyes: [color[2][4], color[2][6]],
-        hair: [color[2][4], color[2][6], color[1][5], color[1][6]],
-      },
-
-      age: {
-        min: 10,
-        young: 20,
-        mature: 45,
-        old: 100,
-        max: 150,
-      },
-
-      height: {
-        min: 90,
-        max: 120,
-      },
-
-      size:"size_small",
-
-      weight: {
-        min: 15,
-        max: 20,
-      },
-
-    },
-
-    // stats: { dexterity: 2 },
-    stats: [{ name: "dexterity", num: 2, },],
-
-    // qualities: { speed: 25 },
-    qualities: [{name: "speed", num: 25,},],
-
-    proficiencies: {
-      weapons: [weaponry.dimple],
-      languages: [lang.common, lang.halfling],
-    },
-
-    fines: [
-      {
-        type: "advantage",
-        keyword: "advantage",
-        details: "fear_against",
-      },
-
-      {
-        type: "advantage",
-        keyword: "rethrow",
-        details: "any_dice_1",
-      },
-
-      {
-        type: "plus",
-        keyword: "slippage",
-        details: "among_bigger_than_mid",
-      },
-    ],
-  },
 
   gnome: {
     name: "gnome",
@@ -585,6 +415,176 @@ export default {
         type: "advantage",
         keyword: "advantage",
         details: "magic_against_int_wis_cha",
+      },
+    ],
+  },
+  
+  halfling: {
+    name: "halfling",
+    details: "halfling_details",
+
+    noimg_ethnos: true,
+    ethnos_preview: [300,-24],
+
+    race_settings: {
+      ethnos: {
+
+        lightfoot: {
+          name: "lightfoot",
+          details: "lightfoot_halfling_details",
+
+          link_male: "https://www.heroforge.com/load_config%3D503210924",
+          link_female: "https://www.heroforge.com/load_config%3D503211388",
+
+          color: {
+            skin: [color[2][1]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
+          // stats: { charisma: 1 },
+          stats: [{ name: "charisma", num: 1, },],
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "stealth",
+              details: "behind_bigger_than_mid",
+            },
+          ],
+        },
+
+        stout: {
+          name: "stout",
+          details: "stout_halfling_details",
+
+          link_male: "https://www.heroforge.com/load_config%3D503185616",
+          link_female: "https://www.heroforge.com/load_config%3D503211377",
+
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[4][5]],
+            hair: [color[1][4]],
+          },
+
+          // stats: { constitution: 1 },
+          stats: [{ name: "constitution", num: 1, },],
+
+          fines: [
+            {
+              type: "advantage",
+              keyword: "advantage",
+              details: "poison_against",
+            },
+
+            {
+              type: "resistance",
+              keyword: "resistance",
+              details: "poison_damage",
+            },
+          ],
+        },
+
+        ghost: {
+          name: "ghost",
+          details: "ghost_halfling_details",
+          link_male: "https://www.heroforge.com/load_config%3D503211188",
+          link_female: "https://www.heroforge.com/load_config%3D503211452",
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][2]],
+            hair: [color[2][5]],
+          },
+
+          // stats: { wisdom: 1 },
+          stats: [{ name: "wisdom", num: 1, },],
+
+          fines: [
+            {
+              type: "plus",
+              keyword: "telepathy",
+              details: "known_languages",
+            },
+          ],
+
+          rare: "rare",
+        },
+      },
+
+      gender: gender,
+      backstory: backstory,
+      color: {
+        skin: [
+          color[1][0],
+          color[2][0],
+          color[2][1],
+          color[2][2],
+          color[2][3],
+          color[2][4],
+          color[2][5],
+          color[2][6],
+          color[1][6],
+          color[0][6],
+          color[3][0],
+          color[12][0],
+          color[11][0],
+          color[10][0],
+        ],
+        eyes: [color[2][4], color[2][6]],
+        hair: [color[2][4], color[2][6], color[1][5], color[1][6]],
+      },
+
+      age: {
+        min: 10,
+        young: 20,
+        mature: 45,
+        old: 100,
+        max: 150,
+      },
+
+      height: {
+        min: 90,
+        max: 120,
+      },
+
+      size:"size_small",
+
+      weight: {
+        min: 15,
+        max: 20,
+      },
+
+    },
+
+    // stats: { dexterity: 2 },
+    stats: [{ name: "dexterity", num: 2, },],
+
+    // qualities: { speed: 25 },
+    qualities: [{name: "speed", num: 25,},],
+
+    proficiencies: {
+      weapons: [weaponry.dimple],
+      languages: [lang.common, lang.halfling],
+    },
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "fear_against",
+      },
+
+      {
+        type: "advantage",
+        keyword: "rethrow",
+        details: "any_dice_1",
+      },
+
+      {
+        type: "plus",
+        keyword: "slippage",
+        details: "among_bigger_than_mid",
       },
     ],
   },
