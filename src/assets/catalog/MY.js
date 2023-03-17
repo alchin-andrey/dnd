@@ -24,7 +24,8 @@ export default {
   _settings_alignment: {},
 
 	backstory: backstories_def,
-	level: 31,
+	level: 1,
+	// level: 31,
 
 	//Character
 	// alignment: "fluid_neutral",

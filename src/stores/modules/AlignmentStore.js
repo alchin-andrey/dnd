@@ -22,7 +22,6 @@ export const useAlignmentStore = defineStore({
 
     alignment_Arr() {
       const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
-      console.log('сustomm:', сustomm)
       return this.alignment_lists.alignment;
     },
 

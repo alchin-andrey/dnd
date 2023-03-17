@@ -17,7 +17,7 @@
       <div class="visual">
       
       <!-- <div class="cube_zero" v-if="hp_Dice" v-for="n in cube_Numb_Zero" :key="n" /> -->
-      <div class="int-600-72" v-if="hp_Dice && cube_Numb_Zero == 1000">♾️</div>
+      <div class="int-600-72" v-if="hp_Dice && cube_Numb_Zero == 1000">ထ</div>
       <div class="cube_zero" v-if="hp_Dice && cube_Numb_Zero !== 1000" v-for="n in cube_Numb_Zero" :key="n" />
 
       </div>

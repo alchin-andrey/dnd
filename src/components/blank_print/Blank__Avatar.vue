@@ -74,7 +74,7 @@ export default {
 		...mapState(useMYStore, ["MY", "Mastery", "str_Upper"]),
 // NOTE - DR
     my_Lvl() {
-      if(this.MY.level == 1000) return "♾️"
+      if(this.MY.level == 1000) return "ထ"
       return this.MY.level
     },
 // !NOTE - DR

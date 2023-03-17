@@ -42,7 +42,8 @@
 				</my-selection-card>
 				<my-selection-card download @click="btnClick()">
 					<div class="text" >
-						{{ t_Pdf }} <span class="soon-class">({{ t_Soon }})</span>
+						{{ t_Pdf }} 
+            <!-- <span class="soon-class">({{ t_Soon }})</span> -->
 					</div>
 				</my-selection-card>
 			</section>

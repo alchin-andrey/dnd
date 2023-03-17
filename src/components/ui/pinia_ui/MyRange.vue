@@ -19,7 +19,9 @@
 			}"
 			class="range_bottom"
 		></div>
-		<div class="range_value">{{ t_Unit }}</div>
+		<div class="range_value">
+    {{ t_Unit }}
+    </div>
 	</div>
 </template>
 
@@ -93,7 +95,7 @@ export default {
 
 		t_Unit() {
 			if (this.lvl) {
-        if(this.inputValue == 1000) return `♾️ ${this.t("level")}`; // NOTE - DR
+        if(this.inputValue == 1000) return `Ꝏ ${this.t("level")}`; // NOTE - DR
 				return `${this.inputValue}${this.t("level_unit")} ${this.t("level")}`;
 			} else if (this.age) {
 				return `${this.inputValue} ${this.t(this.age_Units)}`;
@@ -309,4 +311,5 @@ input[type="range"] {
 	background-color: #ffffff;
 	cursor: pointer;
 }
+
 </style>

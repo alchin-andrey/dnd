@@ -65,7 +65,8 @@ export default {
       } 
     },
     Level_Arr() {
-      return [0, 5, 31, 40, 60, 80, 100, 500, 1000] // NOTE - DR
+      return [0, 31, 100, 500, 1000] // NOTE - DR
+      // return [0, 5, 31, 40, 60, 80, 100, 500, 1000] // NOTE - DR
       // return [0, 5, 10, 15, 20]
     },
     Weight_Arr() {
@@ -107,7 +108,7 @@ export default {
     },
     // NOTE - DR
     getN(numb) {
-      if(numb == 1000) return "♾️";
+      if(numb == 1000) return "Ꝏ";
       return numb
     }
     // NOTE - DR

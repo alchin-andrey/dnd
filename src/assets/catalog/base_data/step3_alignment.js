@@ -55,7 +55,9 @@ export default {
           { name: "feature_high" }, // високомерний
           { name: "feature_haughty" }, // надменний
           { name: "feature_snob" }, // сноб
-          { name: "feature_perfectionist" }, // перфекционист
+
+          // { name: "feature_perfectionist" }, // перфекционист
+
           { name: "feature_neat" }, // чистюля
           { name: "feature_polite" }, // вежливий
           { name: "feature_peaceful" }, // миролюбний
@@ -101,7 +103,9 @@ export default {
           { name: "ideal_knowledge" }, // знання
           { name: "ideal_logics" }, // логіка
           { name: "ideal_truth" }, // правда
-          { name: "ideal_creativity" }, // творчість
+
+          // { name: "ideal_creativity" }, // творчість
+
           { name: "ideal_beauty" }, // краса
           { name: "ideal_nature" }, // природа
           { name: "ideal_harmony" }, // лагода
