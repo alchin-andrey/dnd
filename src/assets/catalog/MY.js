@@ -9,8 +9,7 @@ const class_def = Object.values(classes)[0];
 const backstories_def = Object.values(backstories)[0];
 export default {
 	//Key selections
-	name: "Immortiale",
-	// name: "Байрактар",
+	name: "Байрактар",
 	race: race_def,
   race_name: race_def.name,
 	ethnos: ethnos_def,
@@ -25,11 +24,9 @@ export default {
 
 	backstory: backstories_def,
 	level: 1,
-	// level: 31,
 
 	//Character
-	// alignment: "fluid_neutral",
-	alignment: "principal_altruistic",
+	alignment: "fluid_neutral",
 	gender: {
 		phisiological: "male",
 		feel: "cisgender",
