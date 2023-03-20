@@ -1,8 +1,7 @@
 <template>
   <div v-if="welcome" class="wrapp">
     <my-selection-card passive>
-      <!-- <Welcome /> -->
-      <DR />
+      <Welcome />
       <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
     </my-selection-card>
 </div>
@@ -10,10 +9,9 @@
 
 <script>
 import Welcome from "@/components/Welcome.vue";
-import DR from "@/components/DR.vue";
 
 export default {
-  components: { Welcome, DR },
+  components: { Welcome },
   name: "WelcomeBanner",
   data() {
     return {

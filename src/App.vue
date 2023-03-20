@@ -99,7 +99,7 @@
 				}"
 			>
 				<WelcomeBanner />
-				<Confetti />
+
 
 				<RaceBody body_part="skin" />
 				<RaceBody body_part="eyes" />
@@ -149,7 +149,6 @@
 <script>
 import html2pdf from "html2pdf.js";
 
-import Confetti from "@/components/Confetti.vue";
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 import Donate from "@/components/Donate.vue";
 import BlankPrint from "@/components/BlankPrint.vue";
@@ -180,7 +179,6 @@ export default {
 	name: "App",
 	mixins: [MainApp],
 	components: {
-		Confetti,
 		WelcomeBanner,
 		Donate,
 		BlankPrint,
@@ -352,7 +350,7 @@ export default {
       const race = this.MY.race.name;
       const ethnos = this.MY.ethnos.name;
       const classes = this.MY.class.name;
-      const lvl = this.MY.level == 1000 ? "Ꝏ" : this.MY.level; //NOTE - DR
+      const lvl = this.MY.level;
 			html2pdf(document.getElementById("element-to-convert"), {
 				margin: 0,
 				filename: `${name}_LVL${lvl}.pdf`,
