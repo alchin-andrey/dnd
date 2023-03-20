@@ -13,11 +13,6 @@ export default {
         name: "main_feature",
         select: 1,
         list: [
-//NOTE - DR
-          { name: "feature_perfectionist" }, // перфекционист
-//NOTE - DR
-
-
           { name: "feature_taler" }, // рассказчик
           { name: "feature_gossip" }, // сплетник
           { name: "feature_flatterer" }, // льстец
@@ -55,9 +50,7 @@ export default {
           { name: "feature_high" }, // високомерний
           { name: "feature_haughty" }, // надменний
           { name: "feature_snob" }, // сноб
-
-          // { name: "feature_perfectionist" }, // перфекционист
-
+          { name: "feature_perfectionist" }, // перфекционист
           { name: "feature_neat" }, // чистюля
           { name: "feature_polite" }, // вежливий
           { name: "feature_peaceful" }, // миролюбний
@@ -84,13 +77,6 @@ export default {
         name: "ideals",
         select: 1,
         list: [
-
-//NOTE - DR
-          { name: "ideal_development" }, // розвиток
-//NOTE - DR
-
-
-
           { name: "ideal_justice" }, // справедливість
           { name: "ideal_equality" }, // рівність
           { name: "ideal_independence" }, // незалежність
@@ -99,13 +85,11 @@ export default {
           { name: "ideal_respect" }, // повага
           { name: "ideal_society" }, // суспільство
           { name: "ideal_thrive" }, // процвітання
-          // { name: "ideal_development" }, // розвиток
+          { name: "ideal_development" }, // розвиток
           { name: "ideal_knowledge" }, // знання
           { name: "ideal_logics" }, // логіка
           { name: "ideal_truth" }, // правда
-
           { name: "ideal_creativity" }, // творчість
-
           { name: "ideal_beauty" }, // краса
           { name: "ideal_nature" }, // природа
           { name: "ideal_harmony" }, // лагода
@@ -135,13 +119,6 @@ export default {
         name: "commitment",
         select: 1,
         list: [
-
-//NOTE - DR
-          { name: "attachment_family" }, // сімʼя
-//NOTE - DR
-
-
-
           { name: "attachment_tool" }, // інструмент
           { name: "attachment_talisman" }, // талісман
           { name: "attachment_thing" }, // памʼятна річ
@@ -156,7 +133,7 @@ export default {
           { name: "attachment_mentor" }, // наставник
           { name: "attachment_legacy" }, // спадок
           { name: "attachment_child" }, // дитина
-          //{ name: "attachment_family" }, // сімʼя
+          { name: "attachment_family" }, // сімʼя
           { name: "attachment_home" }, // дім
           { name: "attachment_bonds" }, // звʼязки
           { name: "attachment_friends" }, // друзі
@@ -182,11 +159,6 @@ export default {
         name: "secret",
         select: 1,
         list: [
-//NOTE - DR
-          { name: "Надприродня майстерність" }, // пророцтво
-//NOTE - DR
-
-
           { name: "secret_mistake" }, // жахлива помилка
           { name: "secret_setup" }, // підстава
           { name: "secret_crime" }, // злочин
@@ -208,12 +180,6 @@ export default {
         name: "weakness",
         select: 1,
         list: [
-//NOTE - DR
-          { name: "Сова" },
-//NOTE - DR
-
-
-
           { name: "weakness_greed" }, // жадность
           { name: "weakness_cleptomany" }, // жадность
           { name: "weakness_lust" }, // похоть
