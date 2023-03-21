@@ -5974,7 +5974,7 @@ export default {
 
   no_cost_action: "Безкоштовні дії",
   provoked_attackn: "Провокована атака",
-  action_prepared: "Використання підготованої дії",
+  action_prepared: "Здійснення підготованої дії",
 
   print_coin_platinum: "Платинових",
   print_coin_gold: "Золотих",
