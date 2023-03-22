@@ -3219,10 +3219,6 @@ export default {
 
   refresh_to_recommended: "Вернуть рекомендованное распределение",
 
-  spell_prepare_shield: spells.prepare_shield,
-  spell_prepare_shield_details: spells.prepare_shield_details,
-  spell_prepare_shield_expanded: spells.prepare_shield_expanded,
-
   spell_divine_channel_undead: spells.divine_channel_undead,
   spell_divine_channel_undead_details: spells.divine_channel_undead_details,
   spell_divine_channel_undead_details_5: spells.divine_channel_undead_details_5,
@@ -4484,7 +4480,7 @@ export default {
   entropic_ward_slot: "1× єнтропическая опека",
 
   always_max_dmg: "всегда максимальньій урон",
-  from_spells: "от заклинаний Воплощения [1-5]",
+  from_spells_evocation_1_5: "от заклинаний Воплощения [1-5]",
 
   magical_protection_slots: "Магическая защита",
   magical_protection_slot: "1× Магическая защита",
@@ -5453,7 +5449,6 @@ export default {
   spell_wall_of_fire_expanded: spells.wall_of_fire_expanded,
 
   spell_wall_of_fire_monk: spells.wall_of_fire_monk,
-  spell_wall_of_fire_details: spells.wall_of_fire_details,
   spell_wall_of_fire_details_5: spells.wall_of_fire_details_5,
   spell_wall_of_fire_details_9: spells.wall_of_fire_details_9,
   spell_wall_of_fire_details_13: spells.wall_of_fire_details_13,
