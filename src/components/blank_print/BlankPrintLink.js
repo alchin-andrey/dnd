@@ -11,6 +11,8 @@ import BlankTable__Fines from "@/components/blank_print/BlankTable__Fines.vue";
 import BlankTable__Actions from "@/components/blank_print/BlankTable__Actions.vue";
 import BlankTable__Equip from "@/components/blank_print/BlankTable__Equip.vue";
 
+import BlankTable__List_3 from "@/components/blank_print/BlankTable__List_3.vue";
+
 export default {
 	components: {
   BlankTable__MainNames,
@@ -25,5 +27,8 @@ export default {
   BlankTable__Actions,
   BlankTable__Equip,
 
+  BlankTable__List_3,
+  
+  
 	},
 };

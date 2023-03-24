@@ -14,16 +14,22 @@
 				<Blank__SelectMenu />
 			</main>
 
-      <main class="print-page">
-        <section class="wrap-head" v-if="!PRINT_WORK">
+      <main class="print-page" v-if="!PRINT_WORK">
+        <section class="wrap-head">
           <BlankTable__QualStats /> 
           <BlankTable__Fines class="marg-top-36"/>
         </section>
         <section class="wrap-bottom">
-        <BlankTable__Actions class="marg-top-72" v-if="!PRINT_WORK"/>
+        <BlankTable__Actions class="marg-top-72"/>
         <BlankTable__Equip class="marg-top-36"/>
         </section>
       </main>
+
+      <main class="print-page" v-if="NOT_DEPLOY">
+        <section class="col-wrap-spell">
+          <BlankTable__List_3 />
+        </section>
+			</main>
 		</div>
 	</div>
 </template>
@@ -38,6 +44,7 @@ export default {
   data() {
 		return {
       PRINT_WORK: false,
+      NOT_DEPLOY: true,
 		};
 	},
 	computed: {
@@ -104,5 +111,9 @@ export default {
 
 .marg-top-72 {
   margin-top: 72px;
+}
+
+.col-wrap-spell {
+  width: 648px;
 }
 </style>
