@@ -7,13 +7,13 @@
 					:class="{ save_svg: save_Icon }"
 					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
-					v-html="stats_icon[title]"
+					v-html="stats_icon[icon_Svg]"
 				/>
 			</div>
 			<div class="cell-item">{{ t_Title }}</div>
 		</section>
-		<div class="int-600-72 numb">{{ mod_Numb }}</div>
-			<div class="visual">
+		<div class="int-600-72 numb" :class="{'mr-28': list_3}">{{ numb_Value }}</div>
+			<div class="visual" v-if="!list_3">
 				<section class="text-item">
 					<div>{{ t_Base }}</div>
 					<div>{{ t_Save }}</div>
@@ -42,6 +42,18 @@ export default {
 			type: String,
 			default: null,
 		},
+		icon: {
+			type: String,
+			default: null,
+		},
+    numb: {
+			type: Number,
+			default: null,
+		},
+    list_3: {
+      type: Boolean,
+			default: false,
+    },
 	},
 
 	computed: {
@@ -56,6 +68,10 @@ export default {
 			return this.t(this.title);
 		},
 
+    icon_Svg() {
+      return this.icon ?? this.title;
+    },
+
 		t_Base() {
 			return this.t("strength_base").slice(0, 3);
 		},
@@ -65,21 +81,25 @@ export default {
 		},
 
 		save_Icon() {
-			return this.stats_Saving_Arr.includes(this.title);
+			return this.stats_Saving_Arr.includes(this.icon_Svg);
 		},
 
+    numb_Value() {
+      return this.numb ?? this.mod_Numb
+    },
+
 		mod_Numb() {
-			const mod = this.stats_Mod(this.title);
+			const mod = this.stats_Mod(this.icon_Svg);
 			return mod > 0 ? `+${mod}` : mod;
 		},
 
 		save_Numb() {
-			const save = this.stats_Save_Mod(this.title);
+			const save = this.stats_Save_Mod(this.icon_Svg);
 			return save > 0 ? `+${save}` : save;
 		},
 
     base_Numb() {
-      return this.stats_Numb(this.title);
+      return this.stats_Numb(this.icon_Svg);
     },
 	},
 };
@@ -125,6 +145,10 @@ export default {
 .numb {
 	text-align: center;
 	margin-top: 82px;
+}
+
+.mr-28 {
+  margin-top: 28px;
 }
 
 .visual {

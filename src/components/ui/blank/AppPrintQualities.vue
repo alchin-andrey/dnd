@@ -11,7 +11,7 @@
 			</div>
 			<div class="cell-item">{{ t_Title }}</div>
 		</section>
-    <div class="int-600-72 numb" v-if="!title_numb">{{ value_Numb }}</div>
+    <div class="int-600-72 numb" :class="{'mr-28': list_3}" v-if="!title_numb">{{ value_Numb }}</div>
     <div class="flex-vis">
     <div class="hp-text jbm-500-22" v-if="title_numb">{{ t_Temporary }}</div>
       <div class="visual">
@@ -43,6 +43,10 @@ export default {
 			default: null,
 		},
     title_numb: {
+      type: Boolean,
+			default: false,
+    },
+    list_3: {
       type: Boolean,
 			default: false,
     },
@@ -112,6 +116,10 @@ export default {
 .numb {
   text-align: center;
   margin-top: 76px;
+}
+
+.mr-28 {
+  margin-top: 28px;
 }
 
 .flex-vis {
