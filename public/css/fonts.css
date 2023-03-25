@@ -158,6 +158,19 @@
 	letter-spacing: 0.02em;
 }
 
+.int-700-22 {
+	font-family: "Inter-700";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
+}
+
 .print-grey {
 	color: #828282;
+}
+
+.text_print {
+  color: #000000 !important;
 }

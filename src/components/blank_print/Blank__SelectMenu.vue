@@ -78,7 +78,6 @@ export default {
 	computed: {
 		...mapState(useMYStore, [
       "MY", 
-      "str_Upper", 
       "сustomm_Settings_Race_Arr",
       "сustomm_Settings_Class_Arr",
       "spells_Settings_Class_Arr",

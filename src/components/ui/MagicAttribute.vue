@@ -1,6 +1,6 @@
 <template>
-	<div class="column jbm-300">
-		<div class="column_value" :class="{ passive: save }">
+	<div class="column jbm-300" :class="{ 'jbm-500-22': blank_print, print_col: blank_print }" >
+		<div class="column_value" :class="{ passive: save, print_col: blank_print }">
 			<div class="wrapp_atrib">
 				{{ t_Title }}{{ em_Before
 				}}<emoji
@@ -8,7 +8,7 @@
 					:data="emojiIndex"
 					:emoji="em_Upd"
 					:set="set_emoji"
-					:size="15"
+					:size="em_Size"
 				/>{{ em_After }}
 			</div>
       <div v-if="!not_dot" class="dotted passive">..................................</div>
@@ -20,7 +20,7 @@
 				{{ Prefix }} {{ Plus }}{{ Value }}{{ save }} {{ t_Suffix }}
 			</div>
 		</div>
-		<div class="visual">
+		<div class="visual" v-if="!blank_print">
 			<div
 				class="cube cube-main"
         :class="{cube_dash: Miles}"
@@ -91,6 +91,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    blank_print: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
@@ -105,6 +109,10 @@ export default {
 		em_After() {
         return this.afterEmoji(this.t_Addition);
 		},
+
+    em_Size() {
+      return this.blank_print ? 24 : 15;
+    },
 
 		t_Title() {
       if (this.em_Before || this.em_After) {
@@ -222,6 +230,7 @@ export default {
 	white-space: pre;
 }
 
+
 .emoji-mart-emoji {
 	padding: 0;
 	bottom: 1px;
@@ -249,6 +258,10 @@ export default {
 	justify-content: space-between;
 	flex: 1 1 auto;
 	/*width: 100%;*/
+}
+
+.print_col {
+  width: 100%;
 }
 
 .numb {

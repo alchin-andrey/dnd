@@ -27,7 +27,14 @@
 
       <main class="print-page" v-if="NOT_DEPLOY">
         <section class="col-wrap-spell">
-          <BlankTable__List_3 />
+          <BlankTable__List_3 class="main-table mr-min"/>
+          <AppSpells
+            class="cell-spell mr-min"
+            v-for="item in spell_RC_Param_Sort_ApAM"
+						:key="item"
+						:spell_obj="item"
+            blank_print
+					/>
         </section>
 			</main>
 		</div>
@@ -37,6 +44,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import BlankPrintLink from "@/components/blank_print/BlankPrintLink.js";
 export default {
 	name: "BlankPrint",
@@ -49,6 +57,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
+		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM"]),
 	},
 };
 </script>
@@ -115,5 +124,24 @@ export default {
 
 .col-wrap-spell {
   width: 648px;
+  height: 100%;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.cell-spell {
+  width: 100%;
+  padding: 48px 56px 56px;
+  border: 1px solid #828282;
+}
+
+.main-table {
+  position: relative;
+  z-index: 10;
+}
+
+.mr-min {
+  margin: -1px -1px 0 0;
 }
 </style>

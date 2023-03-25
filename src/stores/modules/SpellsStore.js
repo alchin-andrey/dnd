@@ -186,6 +186,14 @@ export const useSpellsStore = defineStore({
 			return this.spells_filter_Not_Ability(this.spells_RC_Param);
 		},
 
+    spell_RC_Param_Sort_ApAM() {
+      return [
+        ...this.spells_RC_Param_Ability_Passive,
+        ...this.spells_RC_Param_Ability,
+        ...this.spells_RC_Param_Manna,
+      ]
+    },
+
 		//NOTE - PAGE
 		spells_Page_All_Arr() {
 			const PagesStore = usePagesStore();

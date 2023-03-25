@@ -24,6 +24,7 @@ import AppPrintMenu__Arr from "@/components/ui/blank/AppPrintMenu__Arr.vue";
 import AppPrintQualities from "@/components/ui/blank/AppPrintQualities.vue";
 import AppPrintStats from "@/components/ui/blank/AppPrintStats.vue";
 import AppPrintSpellTitle from "@/components/ui/blank/AppPrintSpellTitle.vue";
+import AppPrintSpellMain from "@/components/ui/blank/AppPrintSpellMain.vue";
 
 
 
@@ -95,6 +96,7 @@ export default [
   AppPrintQualities,
   AppPrintStats,
   AppPrintSpellTitle,
+  AppPrintSpellMain,
 
   MyBackPage,
 

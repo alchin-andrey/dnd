@@ -71,18 +71,18 @@ export default {
 	},
 
 	computed: {
-		...mapState(useMYStore, ["MY", "Mastery", "str_Upper"]),
+		...mapState(useMYStore, ["MY", "Mastery"]),
 
 		t_lvl() {
-			return this.str_Upper(this.t("level"));
+			return this.T("level");
 		},
 
 		t_Saving() {
-			return this.str_Upper(this.t("saving_throws"));
+			return this.T("saving_throws");
 		},
 
 		t_Fatigue() {
-			return this.str_Upper(this.t("fatigue"));
+			return this.T("fatigue");
 		},
 
 		t_Mastery() {

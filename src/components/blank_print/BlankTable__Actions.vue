@@ -111,7 +111,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "str_Upper"]),
+		...mapState(useMYStore, ["MY"]),
 		...mapState(useQualitiesStore, ["speed_Numb_Class"]),
 		...mapState(useSpellsStore, [
       "spells_RC_Param",

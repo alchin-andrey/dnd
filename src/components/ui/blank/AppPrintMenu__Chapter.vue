@@ -40,7 +40,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "level_Filter_Arr", "str_Upper"]),
+		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
 		...mapState(useOverflowStore, ["overflow_Item_Menu"]),
 
 
@@ -59,7 +59,7 @@ export default {
     },
 
     rend_Elem: (stor) => (elem) => {
-			if (stor.title) return stor.str_Upper(stor.t(elem));
+			if (stor.title) return stor.T(elem);
 		},
 	},
 };

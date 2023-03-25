@@ -14,9 +14,9 @@ export const usePagesStore = defineStore({
 			},
 		},
 		pages: {
-			race_page: true,
+			race_page: false,
 			class_page: false,
-      alignment_page: false,
+      alignment_page: true,
 		},
 		// page_open: "race_page",
 		page_setting_open: null,
