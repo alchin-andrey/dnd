@@ -848,7 +848,7 @@ export default {
       type: "ability",
       classes: [],
 
-      cast_time: "instant",
+      cast_time: "none",
       // Время наложения ("reacion" | "bonus_action" | "action" | "ritual"). Ритуал может бьіть входньім параметром (+10 мин)
       cast_duration: null,
       // Длительность наложения
