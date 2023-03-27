@@ -183,7 +183,9 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_RC_Param_Manna() {
-			return this.spells_filter_Not_Ability(this.spells_RC_Param);
+      const RC_mana = this.spells_filter_Not_Ability(this.spells_RC_Param);
+      RC_mana.sort((a, b) => a.spell.length - b.spell.length);
+			return RC_mana;
 		},
 
     spell_RC_Param_Sort_ApAM() {

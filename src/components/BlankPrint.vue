@@ -30,7 +30,21 @@
           <BlankTable__List_3 class="main-table mr-min"/>
           <AppSpells
             class="cell-spell mr-min"
-            v-for="item in spell_RC_Param_Sort_ApAM"
+            v-for="item in spell_RC_Param_Sort_ApAM.slice(0, 10)"
+						:key="item"
+						:spell_obj="item"
+            blank_print
+					/>
+        </section>
+			</main>
+
+      <main class="print-page" 
+        v-for="i in list_Count"
+				:key="i">
+        <section class="col-wrap-spell">
+          <AppSpells
+            class="cell-spell mr-min"
+            v-for="item in spell_RC_Param_Sort_ApAM.slice(i * 10, 10 + i * 10)"
 						:key="item"
 						:spell_obj="item"
             blank_print
@@ -58,6 +72,15 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM"]),
+
+    list_Count() {
+      const spells_left = this.spell_RC_Param_Sort_ApAM.slice(10);
+      const list_count = Math.ceil(spells_left.length / 10);
+      return list_count;
+    }
+
+
+
 	},
 };
 </script>
