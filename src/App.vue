@@ -653,7 +653,7 @@ a {
 
 .story {
 	max-width: 362px;
-	color: rgba(255, 255, 255, 0.4);
+	/* color: rgba(255, 255, 255, 0.4); */
 	text-align: start;
 }
 
@@ -667,6 +667,17 @@ a {
 	color: #ffffff;
 	margin-top: 26px;
 	margin-bottom: 5px;
+}
+
+.story-print h3 {
+  font-family: 'Inter-600';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+	margin-top: 26px;
+	margin-bottom: 10px;
 }
 
 .fade-body-enter-active,

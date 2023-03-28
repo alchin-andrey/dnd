@@ -25,7 +25,7 @@
         </section>
       </main>
 
-      <main class="print-page" v-if="NOT_DEPLOY">
+      <main class="print-page" v-if="!PRINT_WORK">
         <section class="col-wrap-spell">
           <BlankTable__List_3 class="main-table mr-min"/>
           <AppSpells
@@ -38,7 +38,7 @@
         </section>
 			</main>
 
-      <main class="print-page" 
+      <main class="print-page" v-if="!PRINT_WORK" 
         v-for="i in list_Count"
 				:key="i">
         <section class="col-wrap-spell">
@@ -49,6 +49,14 @@
 						:spell_obj="item"
             blank_print
 					/>
+        </section>
+			</main>
+      <main class="print-page">
+        <section class="wrap-head">
+          <BlankText__Part_1 class="pad-bottom-72" />
+        </section>
+        <section class="wrap-bottom">
+          <BlankText__Part_2 class="pad-top-72"/>
         </section>
 			</main>
 		</div>
@@ -165,6 +173,14 @@ export default {
   margin-top: 72px;
 }
 
+.pad-top-72 {
+  padding-top: 72px;
+}
+
+.pad-bottom-72 {
+  padding-bottom: 72px;
+}
+
 .col-wrap-spell {
   width: 648px;
   height: 100%;
@@ -188,7 +204,12 @@ export default {
   margin: -1px -1px 0 0;
 }
 
-/* .mr-pls {
-  margin: 10px 10px 0 0;
+/* .text-col {
+  height: 100%;
+  column-fill: auto;
+  column-count: 3;
+  column-gap: 48px;
 } */
+
+
 </style>

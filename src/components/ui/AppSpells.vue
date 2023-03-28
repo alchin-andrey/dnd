@@ -71,24 +71,22 @@
           <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" blank_print/>
         </section>
 
-       <!-- <div class="spell_qr"> -->
-          <div class="flex_qr_wrapp">
-            <section class="flex_mana jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
-              <div class="manna_bubble_print" v-if="spell_Slot_Type_MOD">{{ t_Slot_Type }}</div>
-              
-              <div class="flex_row gap-8" v-if="shown_Manna">
-                <div 
-                class="manna_bubble_print" 
-                :class="{manna_bubble_print_zero: Index == 0}" 
-                >
-                {{ print_Manna }}
-                </div>
-                <div class="manna_bubble_print fs-40" v-if="print_Plus">+</div>
+        <div class="flex_qr_wrapp">
+          <section class="flex_mana jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
+            <div class="manna_bubble_print" v-if="spell_Slot_Type_MOD">{{ t_Slot_Type }}</div>
+            
+            <div class="flex_row gap-8" v-if="shown_Manna">
+              <div 
+              class="manna_bubble_print" 
+              :class="{manna_bubble_print_zero: Index == 0}" 
+              >
+              {{ print_Manna }}
               </div>
-            </section>
-            <qrcode-vue :value="value" :size="size" level="H" />
-          </div>
-       <!-- </div> -->
+              <div class="manna_bubble_print fs-40" v-if="print_Plus">+</div>
+            </div>
+          </section>
+          <qrcode-vue :value="value" :size="size" level="H" />
+        </div>
     </div>
   </main>
 
