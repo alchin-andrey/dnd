@@ -12,8 +12,6 @@ import BlankTable__Actions from "@/components/blank_print/BlankTable__Actions.vu
 import BlankTable__Equip from "@/components/blank_print/BlankTable__Equip.vue";
 
 import BlankTable__List_3 from "@/components/blank_print/BlankTable__List_3.vue";
-import BlankText__Part_1 from "@/components/blank_print/BlankText__Part_1.vue";
-import BlankText__Part_2 from "@/components/blank_print/BlankText__Part_2.vue";
 import BlankText__All from "@/components/blank_print/BlankText__All.vue";
 
 export default {
@@ -31,10 +29,7 @@ export default {
   BlankTable__Equip,
 
   BlankTable__List_3,
-  BlankText__Part_1,
-  BlankText__Part_2,
   BlankText__All,
-  
   
 	},
 };

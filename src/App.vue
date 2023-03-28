@@ -455,24 +455,6 @@ a {
 	background: rgba(255, 255, 255, 0.2);
 }
 
-.grey-4-main {
-	color: rgba(255, 255, 255, 0.4);
-}
-
-.buff {
-	color: #05ff00;
-	/* font-weight: 600; */
-}
-
-.debuff {
-	color: #ff0000;
-	/* font-weight: 600; */
-}
-
-.rare-text {
-	color: #ffc93d;
-}
-
 .grid-col {
 	display: grid;
 }

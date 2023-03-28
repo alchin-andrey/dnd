@@ -1430,9 +1430,9 @@ export default {
   border: 2px solid #000000;
 }
 
-.text_print {
+/* .text_print {
   color: #000000 !important;
-}
+} */
 
 .flex_row {
   display: flex;
