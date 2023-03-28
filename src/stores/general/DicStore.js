@@ -16,7 +16,10 @@ export const useDicStore = defineStore({
 
 		T: (state) => (str) => {
 			const t_str = state.t(str);
-			return t_str.charAt(0).toUpperCase() + t_str.slice(1);
+      if (t_str) {
+        const T_str = t_str[0].toUpperCase() + t_str.slice(1);
+        return T_str;
+      }
 		},
 
 		// T(state) {
