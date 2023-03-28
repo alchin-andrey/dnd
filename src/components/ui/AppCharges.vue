@@ -58,8 +58,10 @@
           'print-visual': blank_print,
           } ">
 					<div
-						class="cube cube_charge"
-            :class="{'print-cube_zero': blank_print,} "
+            :class="{
+              cube_charge: !blank_print, 
+              'print-cube_zero': blank_print,
+              } "
 						v-for="n in cube_Numb(item)"
 						:key="n"
 					></div>
@@ -276,14 +278,17 @@ export default {
 	gap: 2px;
 }
 
-.cube {
+/* .cube {
 	width: 8px;
 	height: 8px;
-	box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
 	border-radius: 2px;
-}
+} */
 .cube_charge {
+  width: 8px;
+	height: 8px;
+	border-radius: 2px;
 	background: #00e0ff;
+  box-shadow: 0px 0px 4px 1px rgba(255, 245, 0, 0.25);
 }
 .charge_text {
 	width: 98px;
