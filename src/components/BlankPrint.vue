@@ -59,6 +59,17 @@
           <BlankText__Part_2 class="pad-top-72"/>
         </section>
 			</main>
+
+      <main class="print-page">
+        <section class="wrap-head int-600-28">
+          <div>{{T('print_biography')}}</div>
+        </section>
+        <section class="wrap-bottom pad-top-72 int-600-28 flex_row">
+          <div>{{T('print_characters')}}</div>
+          <div>{{T('print_events')}}</div>
+          <div>{{T('print_places')}}</div>
+        </section>
+			</main>
 		</div>
 	</div>
 </template>
@@ -204,12 +215,12 @@ export default {
   margin: -1px -1px 0 0;
 }
 
-/* .text-col {
-  height: 100%;
-  column-fill: auto;
-  column-count: 3;
-  column-gap: 48px;
-} */
+.flex_row {
+  display: flex;
+}
 
+.flex_row > div {
+  width: 648px;
+}
 
 </style>
