@@ -105,7 +105,8 @@ export default {
 
   hellish_rebuke_tiefling: [
     {
-      //0
+      //0      
+      link: "hellish_rebuke_tiefling",
       name: "spell_hellish_rebuke_tiefling",
       details: "spell_hellish_rebuke_tiefling_details",
       expanded: "spell_hellish_rebuke_tiefling_expanded",
@@ -149,7 +150,8 @@ export default {
   ],
 
   fire_breath_cone: [
-    {
+    {      
+      link: "fire_breath_cone",
       name: "spell_fire_breath_cone",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
@@ -191,7 +193,8 @@ export default {
   ],
 
   fire_breath_line: [
-    {
+    {      
+      link: "fire_breath_line",
       name: "spell_fire_breath_line",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
@@ -233,7 +236,8 @@ export default {
   ],
 
   cold_breath_cone: [
-    {
+    {      
+      link: "cold_breath_cone",
       name: "spell_cold_breath",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
@@ -275,7 +279,8 @@ export default {
   ],
 
   electricity_breath_line: [
-    {
+    {      
+      link: "electricity_breath_line",
       name: "spell_electricity_breath",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
@@ -317,7 +322,8 @@ export default {
   ],
 
   acid_breath_line: [
-    {
+    {      
+      link: "acid_breath_line",
       name: "spell_acid_breath",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
@@ -359,7 +365,8 @@ export default {
   ],
 
   poison_breath_cone: [
-    {
+    {      
+      link: "poison_breath_cone",
       name: "spell_poison_breath",
       details: "spell_breath_details",
       expanded: "spell_breath_expanded",
@@ -401,7 +408,8 @@ export default {
   ],
 
   darkness_tiefling: [
-    {
+    {      
+      link: "darkness_tiefling",
       name: "spell_darkness_tiefling",
       details: "spell_darkness_tiefling_details",
       expanded: "spell_darkness_tiefling_expanded",
@@ -444,7 +452,8 @@ export default {
   ],
 
   enlargement_self: [
-    {
+    {      
+      link: "enlargement_self",
       name: "spell_enlargement_self",
       details: "spell_enlargement_self_details",
       expanded: "spell_enlargement_self_expanded", // полное описание
@@ -488,7 +497,8 @@ export default {
   ],
 
   invisibility_self: [
-    {
+    {      
+      link: "invisibility_self",
       name: "spell_invisibility_self",
       details: "spell_invisibility_self_details",
       expanded: "spell_invisibility_self_expanded", // полное описание
@@ -576,7 +586,8 @@ export default {
   ],
 
   toy: [
-    {
+    {      
+      link: "toy",
       name: "spell_toy",
       details: "spell_toy_details",
       expanded: "spell_toy_expanded",
@@ -619,7 +630,8 @@ export default {
   ],
 
   lighter: [
-    {
+    {      
+      link: "lighter",
       name: "spell_lighter",
       details: "spell_lighter_details",
       expanded: "spell_lighter_expanded",
@@ -662,7 +674,8 @@ export default {
   ],
 
   music_box: [
-    {
+    {      
+      link: "music_box",
       name: "spell_music_box",
       details: "spell_music_box_details",
       expanded: "spell_music_box_expanded",
@@ -705,7 +718,8 @@ export default {
   ],
 
   faerie_fire_0: [
-    {
+    {      
+      link: "faerie_fire_0",
       name: "spell_faerie_fire_0",
       details: "spell_faerie_fire_0_details",
       expanded: "spell_faerie_fire_0_expanded", // полное описание
@@ -750,7 +764,8 @@ export default {
   // NOTE - Class abilitites
 
   rage: [
-    {
+    {      
+      link: "rage",
       name: "spell_rage",
       details: "spell_rage_details",
       expanded: "spell_rage_expanded", // полное описание
@@ -840,7 +855,8 @@ export default {
   ],
 
   reckless_attack: [
-    {
+    {      
+      link: "reckless_attack",
       name: "spell_reckless_attack",
       details: "spell_reckless_attack_details",
       expanded: "spell_reckless_attack_expanded", // полное описание
@@ -927,7 +943,8 @@ export default {
   ],
 
   frenzy: [
-    {
+    {      
+      link: "frenzy",
       name: "spell_frenzy",
       details: "spell_frenzy_details",
       expanded: "spell_frenzy_expanded",
@@ -966,7 +983,8 @@ export default {
   ],
 
   intimidating_presence: [
-    {
+    {      
+      link: "intimidating_presence",
       name: "spell_intimidating_presence",
       details: "spell_intimidating_presence_details",
       expanded: "spell_intimidating_presence_expanded",
@@ -1006,7 +1024,8 @@ export default {
   ],
 
   retaliation: [
-    {
+    {      
+      link: "retaliation",
       name: "spell_retaliation",
       details: "spell_retaliation_details",
       expanded: "spell_retaliation_expanded",
@@ -1046,7 +1065,8 @@ export default {
   ],
 
   beast_sense_ritual: [
-    {
+    {      
+      link: "beast_sense_ritual",
       name: "spell_beast_sense_ritual",
       details: "spell_beast_sense_ritual_details",
       expanded: "spell_beast_sense_ritual_expanded",
@@ -1086,7 +1106,8 @@ export default {
   ],
 
   speak_with_animals_ritual: [
-    {
+    {      
+      link: "speak_with_animals_ritual",
       name: "spell_speak_with_animals_ritual",
       details: "spell_speak_with_animals_ritual_details",
       expanded: "spell_speak_with_animals_ritual_expanded",
@@ -1126,7 +1147,8 @@ export default {
   ],
 
   commune_with_nature_ritual: [
-    {
+    {      
+      link: "commune_with_nature_ritual",
       name: "spell_commune_with_nature_ritual",
       details: "spell_commune_with_nature_ritual_details",
       expanded: "spell_commune_with_nature_ritual_expanded",
@@ -1166,7 +1188,8 @@ export default {
   ],
 
   wolf_knock: [
-    {
+    {      
+      link: "wolf_knock",
       name: "spell_wolf_knock",
       details: "spell_wolf_knock_details",
       expanded: "spell_wolf_knock_expanded",
@@ -1206,7 +1229,8 @@ export default {
   ],
 
   elk_knock: [
-    {
+    {      
+      link: "elk_knock",
       name: "spell_elk_knock",
       details: "spell_elk_knock_details",
       expanded: "spell_elk_knock_expanded",
@@ -1246,7 +1270,8 @@ export default {
   ],
 
   tiger_strike: [
-    {
+    {      
+      link: "tiger_strike",
       name: "spell_tiger_strike",
       details: "spell_tiger_strike_details",
       expanded: "spell_tiger_strike_expanded",
@@ -1285,7 +1310,8 @@ export default {
   ],
 
   sneaky_attack: [
-    {
+    {      
+      link: "sneaky_attack",
       name: "spell_sneaky_attack",
       details: "spell_sneaky_attack_details",
       expanded: "spell_sneaky_attack_expanded",
@@ -1324,7 +1350,8 @@ export default {
   ],
 
   cunning_action: [
-    {
+    {      
+      link: "cunning_action",
       name: "spell_cunning_action",
       details: "spell_cunning_action_details",
       expanded: "spell_cunning_action_expanded",
@@ -1363,7 +1390,8 @@ export default {
   ],
 
   steady_aim: [
-    {
+    {      
+      link: "steady_aim",
       name: "spell_steady_aim",
       details: "spell_steady_aim_details",
       expanded: "spell_steady_aim_expanded",
@@ -1402,7 +1430,8 @@ export default {
   ],
 
   uncanny_dodge: [
-    {
+    {      
+      link: "uncanny_dodge",
       name: "spell_uncanny_dodge",
       details: "spell_uncanny_dodge_details",
       expanded: "spell_uncanny_dodge_expanded",
@@ -1441,7 +1470,8 @@ export default {
   ],
 
   fast_hands: [
-    {
+    {      
+      link: "fast_hands",
       name: "spell_fast_hands",
       details: "spell_fast_hands_details",
       expanded: "spell_fast_hands_expanded",
@@ -1480,7 +1510,8 @@ export default {
   ],
 
   fake_identity: [
-    {
+    {      
+      link: "fake_identity",
       name: "spell_fake_identity",
       details: "spell_fake_identity_details",
       expanded: "spell_fake_identity_expanded",
@@ -1519,7 +1550,8 @@ export default {
   ],
 
   fake_presence: [
-    {
+    {      
+      link: "fake_presence",
       name: "spell_fake_presence",
       details: "spell_fake_presence_details",
       expanded: "spell_fake_presence_expanded",
@@ -1559,7 +1591,8 @@ export default {
 
   divine_sense: [
     {
-      //0
+      //0      
+      link: "divine_sense",
       name: "spell_divine_sense",
       details: "spell_divine_sense_details",
       expanded: "spell_divine_sense_expanded",
@@ -1603,7 +1636,8 @@ export default {
 
   lay_on_hands: [
     {
-      //0
+      //0      
+      link: "lay_on_hands",
       name: "spell_lay_on_hands",
       details: "spell_lay_on_hands_details",
       expanded: "spell_lay_on_hands_expanded",
@@ -1647,7 +1681,8 @@ export default {
 
   side_pary: [
     {
-      //0
+      //0      
+      link: "side_pary",
       name: "spell_side_pary",
       details: "spell_side_pary_details",
       expanded: "spell_side_pary_expanded",
@@ -1691,7 +1726,8 @@ export default {
 
   divine_channel_mana: [
     {
-      //0
+      //0      
+      link: "divine_channel_mana",
       name: "spell_divine_channel_mana",
       details: "spell_divine_channel_mana_details",
       expanded: "spell_divine_channel_mana_expanded",
@@ -1736,7 +1772,8 @@ export default {
 
   divine_channel_devotion_1: [
     {
-      //0
+      //0      
+      link: "divine_channel_devotion_1",
       name: "spell_divine_channel_devotion_1",
       details: "spell_divine_channel_devotion_1_details",
       expanded: "spell_divine_channel_devotion_1_expanded",
@@ -1781,7 +1818,8 @@ export default {
 
   divine_channel_devotion_2: [
     {
-      //0
+      //0      
+      link: "divine_channel_devotion_2",
       name: "spell_divine_channel_devotion_2",
       details: "spell_divine_channel_devotion_2_details",
       expanded: "spell_divine_channel_devotion_2_expanded",
@@ -1826,7 +1864,8 @@ export default {
 
   divine_channel_antients_1: [
     {
-      //0
+      //0      
+      link: "divine_channel_antients_1",
       name: "spell_divine_channel_antients_1",
       details: "spell_divine_channel_antients_1_details",
       expanded: "spell_divine_channel_antients_1_expanded",
@@ -1871,7 +1910,8 @@ export default {
 
   divine_channel_antients_2: [
     {
-      //0
+      //0      
+      link: "divine_channel_antients_2",
       name: "spell_divine_channel_antients_2",
       details: "spell_divine_channel_antients_2_details",
       expanded: "spell_divine_channel_antients_2_expanded",
@@ -1916,7 +1956,8 @@ export default {
 
   divine_channel_vengence_1: [
     {
-      //0
+      //0      
+      link: "divine_channel_vengence_1",
       name: "spell_divine_channel_vengence_1",
       details: "spell_divine_channel_vengence_1_details",
       expanded: "spell_divine_channel_vengence_1_expanded",
@@ -1961,7 +2002,8 @@ export default {
 
   divine_channel_vengence_2: [
     {
-      //0
+      //0      
+      link: "divine_channel_vengence_2",
       name: "spell_divine_channel_vengence_2",
       details: "spell_divine_channel_vengence_2_details",
       expanded: "spell_divine_channel_vengence_2_expanded",
@@ -2005,7 +2047,8 @@ export default {
   ],
 
   maneuver_evasive_footwork: [
-    {
+    {      
+      link: "maneuver_evasive_footwork",
       name: "spell_maneuver_evasive_footwork",
       details: "spell_maneuver_evasive_footwork_details",
       expanded: "spell_maneuver_evasive_footwork_expanded",
@@ -2049,7 +2092,8 @@ export default {
   ],
 
   maneuver_lunging_attack: [
-    {
+    {      
+      link: "maneuver_lunging_attack",
       name: "spell_maneuver_lunging_attack",
       details: "spell_maneuver_lunging_attack_details",
       expanded: "spell_maneuver_lunging_attack_expanded",
@@ -2093,7 +2137,8 @@ export default {
   ],
 
   maneuver_maneuvering_attack: [
-    {
+    {      
+      link: "maneuver_maneuvering_attack",
       name: "spell_maneuver_maneuvering_attack",
       details: "spell_maneuver_maneuvering_attack_details",
       expanded: "spell_maneuver_maneuvering_attack_expanded",
@@ -2137,7 +2182,8 @@ export default {
   ],
 
   maneuver_menacing_attack: [
-    {
+    {      
+      link: "maneuver_menacing_attack",
       name: "spell_maneuver_menacing_attack",
       details: "spell_maneuver_menacing_attack_details",
       expanded: "spell_maneuver_menacing_attack_expanded",
@@ -2181,7 +2227,8 @@ export default {
   ],
 
   maneuver_feinting_attack: [
-    {
+    {      
+      link: "maneuver_feinting_attack",
       name: "spell_maneuver_feinting_attack",
       details: "spell_maneuver_feinting_attack_details",
       expanded: "spell_maneuver_feinting_attack_expanded",
@@ -2225,7 +2272,8 @@ export default {
   ],
 
   maneuver_disarming_attack: [
-    {
+    {      
+      link: "maneuver_disarming_attack",
       name: "spell_maneuver_disarming_attack",
       details: "spell_maneuver_disarming_attack_details",
       expanded: "spell_maneuver_disarming_attack_expanded",
@@ -2269,7 +2317,8 @@ export default {
   ],
 
   maneuver_trip_attack: [
-    {
+    {      
+      link: "maneuver_trip_attack",
       name: "spell_maneuver_trip_attack",
       details: "spell_maneuver_trip_attack_details",
       expanded: "spell_maneuver_trip_attack_expanded",
@@ -2313,7 +2362,8 @@ export default {
   ],
 
   maneuver_riposte: [
-    {
+    {      
+      link: "maneuver_riposte",
       name: "spell_maneuver_riposte",
       details: "spell_maneuver_riposte_details",
       expanded: "spell_maneuver_riposte_expanded",
@@ -2357,7 +2407,8 @@ export default {
   ],
 
   maneuver_distracting_strike: [
-    {
+    {      
+      link: "maneuver_distracting_strike",
       name: "spell_maneuver_distracting_strike",
       details: "spell_maneuver_distracting_strike_details",
       expanded: "spell_maneuver_distracting_strike_expanded",
@@ -2401,7 +2452,8 @@ export default {
   ],
 
   maneuver_parry: [
-    {
+    {      
+      link: "maneuver_parry",
       name: "spell_maneuver_parry",
       details: "spell_maneuver_parry_details",
       expanded: "spell_maneuver_parry_expanded",
@@ -2445,7 +2497,8 @@ export default {
   ],
 
   maneuver_goading_attack: [
-    {
+    {      
+      link: "maneuver_goading_attack",
       name: "spell_maneuver_goading_attack",
       details: "spell_maneuver_goading_attack_details",
       expanded: "spell_maneuver_goading_attack_expanded",
@@ -2489,7 +2542,8 @@ export default {
   ],
 
   maneuver_rally: [
-    {
+    {      
+      link: "maneuver_rally",
       name: "spell_maneuver_rally",
       details: "spell_maneuver_rally_details",
       expanded: "spell_maneuver_rally_expanded",
@@ -2533,7 +2587,8 @@ export default {
   ],
 
   maneuver_pushing_attack: [
-    {
+    {      
+      link: "maneuver_pushing_attack",
       name: "spell_maneuver_pushing_attack",
       details: "spell_maneuver_pushing_attack_details",
       expanded: "spell_maneuver_pushing_attack_expanded",
@@ -2577,7 +2632,8 @@ export default {
   ],
 
   maneuver_precision_attack: [
-    {
+    {      
+      link: "maneuver_precision_attack",
       name: "spell_maneuver_precision_attack",
       details: "spell_maneuver_precision_attack_details",
       expanded: "spell_maneuver_precision_attack_expanded",
@@ -2621,7 +2677,8 @@ export default {
   ],
 
   maneuver_commanders_strike: [
-    {
+    {      
+      link: "maneuver_commanders_strike",
       name: "spell_maneuver_commanders_strike",
       details: "spell_maneuver_commanders_strike_details",
       expanded: "spell_maneuver_commanders_strike_expanded",
@@ -2665,7 +2722,8 @@ export default {
   ],
 
   maneuver_sweeping_attack: [
-    {
+    {      
+      link: "maneuver_sweeping_attack",
       name: "spell_maneuver_sweeping_attack",
       details: "spell_maneuver_sweeping_attack_details",
       expanded: "spell_maneuver_sweeping_attack_expanded",
@@ -2709,7 +2767,8 @@ export default {
   ],
 
   inspiration: [
-    {
+    {      
+      link: "inspiration",
       name: "spell_inspiration",
       details: "spell_inspiration_details",
       expanded: "spell_inspiration_expanded",
@@ -2752,7 +2811,8 @@ export default {
   ],
 
   grapple: [
-    {
+    {      
+      link: "grapple",
       name: "spell_grapple",
       details: "spell_grapple_details",
       expanded: "spell_grapple_expanded",
@@ -2795,7 +2855,8 @@ export default {
   ],
 
   healer_tooling: [
-    {
+    {      
+      link: "healer_tooling",
       name: "spell_healer_tooling",
       details: "spell_healer_tooling_details",
       expanded: "spell_healer_tooling_expanded",
@@ -2839,7 +2900,8 @@ export default {
   ],
 
   extra_strike: [
-    {
+    {      
+      link: "extra_strike",
       name: "spell_extra_strike",
       details: "spell_extra_strike_details",
       expanded: "spell_extra_strike_expanded",
@@ -2882,7 +2944,8 @@ export default {
   ],
 
   heavy_strike: [
-    {
+    {      
+      link: "heavy_strike",
       name: "spell_heavy_strike",
       details: "spell_heavy_strike_details",
       expanded: "spell_heavy_strike_expanded",
@@ -2925,7 +2988,8 @@ export default {
   ],
 
   polearm_strike: [
-    {
+    {      
+      link: "polearm_strike",
       name: "spell_polearm_strike",
       details: "spell_polearm_strike_details",
       expanded: "spell_polearm_strike_expanded",
@@ -2968,7 +3032,8 @@ export default {
   ],
 
   shield_push: [
-    {
+    {      
+      link: "shield_push",
       name: "spell_shield_push",
       details: "spell_shield_push_details",
       expanded: "spell_shield_push_expanded",
@@ -3011,7 +3076,8 @@ export default {
   ],
 
   shield_block: [
-    {
+    {      
+      link: "shield_block",
       name: "spell_shield_block",
       details: "spell_shield_block_details",
       expanded: "spell_shield_block_expanded",
@@ -3054,7 +3120,8 @@ export default {
   ],
 
   heavy_shot: [
-    {
+    {      
+      link: "heavy_shot",
       name: "spell_heavy_shot",
       details: "spell_heavy_shot_details",
       expanded: "spell_heavy_shot_expanded",
@@ -3097,7 +3164,8 @@ export default {
   ],
 
   charge_attack: [
-    {
+    {      
+      link: "charge_attack",
       name: "spell_charge_attack",
       details: "spell_charge_attack_details",
       expanded: "spell_charge_attack_expanded",
@@ -3140,7 +3208,8 @@ export default {
   ],
 
   charge_push: [
-    {
+    {      
+      link: "charge_push",
       name: "spell_charge_push",
       details: "spell_charge_push_details",
       expanded: "spell_charge_push_expanded",
@@ -3183,7 +3252,8 @@ export default {
   ],
 
   learn_ritual: [
-    {
+    {      
+      link: "learn_ritual",
       name: "spell_learn_ritual",
       details: "spell_learn_ritual_details",
       expanded: "spell_learn_ritual_expanded",
@@ -3226,7 +3296,8 @@ export default {
   ],
 
   crossbow_shot: [
-    {
+    {      
+      link: "crossbow_shot",
       name: "spell_crossbow_shot",
       details: "spell_crossbow_shot_details",
       expanded: "spell_crossbow_shot_expanded",
@@ -3269,7 +3340,8 @@ export default {
   ],
 
   create_crypt: [
-    {
+    {      
+      link: "create_crypt",
       name: "spell_create_crypt",
       details: "spell_create_crypt_details",
       expanded: "spell_create_crypt_expanded",
@@ -3312,7 +3384,8 @@ export default {
   ],
 
   bardic_inspiration: [
-    {
+    {      
+      link: "bardic_inspiration",
       name: "spell_bardic_inspiration",
       details: "spell_bardic_inspiration_details",
       expanded: "spell_bardic_inspiration_expanded",
@@ -3356,7 +3429,8 @@ export default {
   ],
 
   song_of_rest: [
-    {
+    {      
+      link: "song_of_rest",
       name: "spell_song_of_rest",
       details: "spell_song_of_rest_details",
       expanded: "spell_song_of_rest_expanded",
@@ -3399,7 +3473,8 @@ export default {
   ],
 
   cutting_word: [
-    {
+    {      
+      link: "cutting_word",
       name: "spell_cutting_word",
       details: "spell_cutting_word_details",
       expanded: "spell_cutting_word_expanded",
@@ -3443,7 +3518,8 @@ export default {
   ],
 
   second_wind: [
-    {
+    {      
+      link: "second_wind",
       name: "spell_second_wind",
       details: "spell_second_wind_details",
       expanded: "spell_second_wind_expanded",
@@ -3487,7 +3563,8 @@ export default {
   ],
 
   action_surge: [
-    {
+    {      
+      link: "action_surge",
       name: "spell_action_surge",
       details: "spell_action_surge_details",
       expanded: "spell_action_surge_expanded",
@@ -3531,7 +3608,8 @@ export default {
   ],
 
   weapon_bond: [
-    {
+    {      
+      link: "weapon_bond",
       name: "spell_weapon_bond",
       details: "spell_weapon_bond_details",
       expanded: "spell_weapon_bond_expanded",
@@ -3574,7 +3652,8 @@ export default {
   ],
 
   call_bonbed_weapon: [
-    {
+    {      
+      link: "call_bonbed_weapon",
       name: "spell_call_bonbed_weapon",
       details: "spell_call_bonbed_weapon_details",
       expanded: "spell_call_bonbed_weapon_expanded",
@@ -3618,7 +3697,8 @@ export default {
 
   druid_message: [
     {
-      //0
+      //0      
+      link: "druid_message",
       name: "spell_druid_message",
       details: "spell_druid_message_details",
       expanded: "spell_druid_message_expanded",
@@ -3662,7 +3742,8 @@ export default {
 
   prepare_shield: [
     {
-      //0
+      //0      
+      link: "prepare_shield",
       name: "spell_prepare_shield",
       details: "spell_prepare_shield_details",
       expanded: "spell_prepare_shield_expanded",
@@ -3706,7 +3787,8 @@ export default {
 
   wild_shape: [
     {
-      //0
+      //0      
+      link: "wild_shape",
       name: "spell_wild_shape",
       details: "spell_wild_shape_details",
       expanded: "spell_wild_shape_expanded",
@@ -3751,7 +3833,8 @@ export default {
 
   wild_shape_combat: [
     {
-      //0
+      //0      
+      link: "wild_shape_combat",
       name: "spell_wild_shape_combat",
       details: "spell_wild_shape_combat_details",
       expanded: "spell_wild_shape_combat_expanded",
@@ -3796,7 +3879,8 @@ export default {
   wild_shape_heal: [
     {},
     {
-      //1
+      //1      
+      link: "wild_shape_heal",
       name: "spell_wild_shape_heal",
       details: "spell_wild_shape_heal_details",
       expanded: "spell_wild_shape_heal_expanded",
@@ -3840,7 +3924,8 @@ export default {
   ],
 
   find_familiar_druid: [
-    {
+    {      
+      link: "find_familiar_druid",
       name: "spell_find_familiar_druid",
       details: "spell_find_familiar_druid_details",
       expanded: "spell_find_familiar_druid_expanded",
@@ -3884,7 +3969,8 @@ export default {
   ],
 
   alter_self_druid: [
-    {
+    {      
+      link: "alter_self_druid",
       name: "spell_alter_self_druid",
       details: "spell_alter_self_details",
       expanded: "spell_alter_self_expanded",
@@ -3927,7 +4013,8 @@ export default {
   ],
 
   alter_self_warlock: [
-    {
+    {      
+      link: "alter_self_warlock",
       name: "spell_alter_self_warlock",
       details: "spell_alter_self_details",
       expanded: "spell_alter_self_expanded",
@@ -3971,7 +4058,8 @@ export default {
 
   divine_channel_undead: [
     {
-      //0
+      //0      
+      link: "divine_channel_undead",
       name: "spell_divine_channel_undead",
       details: "spell_divine_channel_undead_details",
       expanded: "spell_divine_channel_undead_expanded",
@@ -4016,7 +4104,8 @@ export default {
 
   divine_intervention: [
     {
-      //0
+      //0      
+      link: "divine_intervention",
       name: "spell_divine_intervention",
       details: "spell_divine_intervention_details",
       expanded: "spell_divine_intervention_expanded",
@@ -4061,7 +4150,8 @@ export default {
 
   thunder_wrath: [
     {
-      //0
+      //0      
+      link: "thunder_wrath",
       name: "spell_thunder_wrath",
       details: "spell_thunder_wrath_details",
       expanded: "spell_thunder_wrath_expanded",
@@ -4106,7 +4196,8 @@ export default {
 
   thunder_strike: [
     {
-      //0
+      //0      
+      link: "thunder_strike",
       name: "spell_thunder_strike",
       details: "spell_thunder_strike_details",
       expanded: "spell_thunder_strike_expanded",
@@ -4149,7 +4240,8 @@ export default {
   ],
 
   inspired_attack: [
-    {
+    {      
+      link: "inspired_attack",
       name: "spell_inspired_attack",
       details: "spell_inspired_attack_details",
       expanded: "spell_inspired_attack_expanded",
@@ -4193,7 +4285,8 @@ export default {
   ],
 
   cleric_extra_damage: [
-    {
+    {      
+      link: "cleric_extra_damage",
       name: "spell_cleric_extra_damage",
       details: "spell_cleric_extra_damage_details",
       expanded: "spell_cleric_extra_damage_expanded",
@@ -4236,7 +4329,8 @@ export default {
   ],
 
   cleric_see_past: [
-    {
+    {      
+      link: "cleric_see_past",
       name: "spell_cleric_see_past",
       details: "spell_cleric_see_past_details",
       expanded: "spell_cleric_see_past_expanded",
@@ -4280,7 +4374,8 @@ export default {
   ],
 
   tricker_bless: [
-    {
+    {      
+      link: "tricker_bless",
       name: "spell_tricker_bless",
       details: "spell_tricker_bless_details",
       expanded: "spell_tricker_bless_expanded",
@@ -4323,7 +4418,8 @@ export default {
   ],
 
   dampen_elements: [
-    {
+    {      
+      link: "dampen_elements",
       name: "spell_dampen_elements",
       details: "spell_dampen_elements_details",
       expanded: "spell_dampen_elements_expanded",
@@ -4366,7 +4462,8 @@ export default {
   ],
 
   warding_flare: [
-    {
+    {      
+      link: "warding_flare",
       name: "spell_warding_flare",
       details: "spell_warding_flare_details",
       expanded: "spell_warding_flare_expanded",
@@ -4410,7 +4507,8 @@ export default {
   ],
 
   crown_of_light: [
-    {
+    {      
+      link: "crown_of_light",
       name: "spell_crown_of_light",
       details: "spell_crown_of_light_details",
       expanded: "spell_crown_of_light_expanded",
@@ -4455,7 +4553,8 @@ export default {
   mage_hand_rogue: [
     {
       //0
-
+      
+      link: "mage_hand_rogue",
       name: "spell_mage_hand_rogue",
       details: "spell_mage_hand_rogue_details",
       expanded: "spell_mage_hand_rogue_expanded",
@@ -4497,7 +4596,8 @@ export default {
   ],
 
   steal_spell: [
-    {
+    {      
+      link: "steal_spell",
       name: "spell_steal_spell",
       details: "spell_steal_spell_details",
       expanded: "spell_steal_spell_expanded",
@@ -4540,7 +4640,8 @@ export default {
   ],
 
   favored_foe: [
-    {
+    {      
+      link: "favored_foe",
       name: "spell_favored_foe",
       details: "spell_favored_foe_details",
       expanded: "spell_favored_foe_expanded",
@@ -4583,7 +4684,8 @@ export default {
   ],
 
   tireless: [
-    {
+    {      
+      link: "tireless",
       name: "spell_tireless",
       details: "spell_tireless_details",
       expanded: "spell_tireless_expanded",
@@ -4627,7 +4729,8 @@ export default {
 
   primeval_awareness: [
     {},
-    {
+    {      
+      link: "primeval_awareness",
       name: "spell_primeval_awareness",
       details: "spell_primeval_awareness_details",
       expanded: "spell_primeval_awareness_expanded",
@@ -4671,7 +4774,8 @@ export default {
 
   primeval_awareness_favored: [
     {},
-    {
+    {      
+      link: "primeval_awareness_favored",
       name: "spell_primeval_awareness_favored",
       details: "spell_primeval_awareness_details",
       expanded: "spell_primeval_awareness_expanded",
@@ -4715,7 +4819,8 @@ export default {
 
   speak_with_animals_ranger: [
     {},
-    {
+    {      
+      link: "speak_with_animals_ranger",
       name: "spell_speak_with_animals_ranger",
       details: "spell_speak_with_animals_ranger_details",
       expanded: "spell_speak_with_animals_ranger_expanded",
@@ -4758,7 +4863,8 @@ export default {
   beast_sense_ranger: [
     {},
     {},
-    {
+    {      
+      link: "beast_sense_ranger",
       name: "spell_beast_sense_ranger",
       details: "spell_beast_sense_ranger_details",
       expanded: "spell_beast_sense_ranger_expanded",
@@ -4802,7 +4908,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "speak_with_plants_ranger",
       name: "spell_speak_with_plants_ranger",
       details: "spell_speak_with_plants_ranger_details",
       expanded: "spell_speak_with_plants_ranger_expanded",
@@ -4848,7 +4955,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "locate_creature_ranger",
       name: "spell_locate_creature_ranger",
       details: "spell_locate_creature_ranger_details",
       expanded: "spell_locate_creature_ranger_expanded",
@@ -4895,7 +5003,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "commune_with_nature_ranger",
       name: "spell_commune_with_nature_ranger",
       details: "spell_commune_with_nature_ranger_details",
       expanded: "spell_commune_with_nature_ranger_expanded",
@@ -4936,7 +5045,8 @@ export default {
   ],
 
   extra_attack: [
-    {
+    {      
+      link: "extra_attack",
       name: "spell_extra_attack",
       details: "spell_extra_attack_details",
       expanded: "spell_extra_attack_expanded",
@@ -4979,7 +5089,8 @@ export default {
   ],
 
   extra_attack_fighter: [
-    {
+    {      
+      link: "extra_attack_fighter",
       name: "spell_extra_attack_fighter",
       details: "spell_extra_attack_fighter_details",
       expanded: "spell_extra_attack_fighter_expanded",
@@ -5022,7 +5133,8 @@ export default {
   ],
 
   extra_attack_warlock: [
-    {
+    {      
+      link: "extra_attack_warlock",
       name: "spell_extra_attack_warlock",
       details: "spell_extra_attack_warlock_details",
       expanded: "spell_extra_attack_warlock_expanded",
@@ -5065,7 +5177,8 @@ export default {
   ],
 
   bonus_attack: [
-    {
+    {      
+      link: "bonus_attack",
       name: "spell_bonus_attack",
       details: "spell_bonus_attack_details",
       expanded: "spell_bonus_attack_expanded",
@@ -5108,7 +5221,8 @@ export default {
   ],
 
   bonus_attack_fighter: [
-    {
+    {      
+      link: "bonus_attack_fighter",
       name: "spell_bonus_attack_fighter",
       details: "spell_bonus_attack_fighter_details",
       expanded: "spell_bonus_attack_fighter_expanded",
@@ -5151,7 +5265,8 @@ export default {
   ],
 
   disguise_on_sight: [
-    {
+    {      
+      link: "disguise_on_sight",
       name: "spell_disguise_on_sight",
       details: "spell_disguise_on_sight_details",
       expanded: "spell_disguise_on_sight_expanded",
@@ -5194,7 +5309,8 @@ export default {
   ],
 
   disguise_nature: [
-    {
+    {      
+      link: "disguise_nature",
       name: "spell_disguise_nature",
       details: "spell_disguise_nature_details",
       expanded: "spell_disguise_nature_expanded",
@@ -5238,7 +5354,8 @@ export default {
   ],
 
   disappearance: [
-    {
+    {      
+      link: "disappearance",
       name: "spell_disappearance",
       details: "spell_disappearance_details",
       expanded: "spell_disappearance_expanded",
@@ -5281,7 +5398,8 @@ export default {
   ],
 
   enemy_killer: [
-    {
+    {      
+      link: "enemy_killer",
       name: "spell_enemy_killer",
       details: "spell_enemy_killer_details",
       expanded: "spell_enemy_killer_expanded",
@@ -5324,7 +5442,8 @@ export default {
   ],
 
   horde_breaker: [
-    {
+    {      
+      link: "horde_breaker",
       name: "spell_horde_breaker",
       details: "spell_horde_breaker_details",
       expanded: "spell_horde_breaker_expanded",
@@ -5367,7 +5486,8 @@ export default {
   ],
 
   giant_killer: [
-    {
+    {      
+      link: "giant_killer",
       name: "spell_giant_killer",
       details: "spell_giant_killer_details",
       expanded: "spell_giant_killer_expanded",
@@ -5410,7 +5530,8 @@ export default {
   ],
 
   colossus_slayer: [
-    {
+    {      
+      link: "colossus_slayer",
       name: "spell_colossus_slayer",
       details: "spell_colossus_slayer_details",
       expanded: "spell_colossus_slayer_expanded",
@@ -5453,7 +5574,8 @@ export default {
   ],
 
   whirlwind_attack: [
-    {
+    {      
+      link: "whirlwind_attack",
       name: "spell_whirlwind_attack",
       details: "spell_whirlwind_attack_details",
       expanded: "spell_whirlwind_attack_expanded",
@@ -5496,7 +5618,8 @@ export default {
   ],
 
   volley: [
-    {
+    {      
+      link: "volley",
       name: "spell_volley",
       details: "spell_volley_details",
       expanded: "spell_volley_expanded",
@@ -5539,7 +5662,8 @@ export default {
   ],
 
   stand_against_the_tide: [
-    {
+    {      
+      link: "stand_against_the_tide",
       name: "spell_stand_against_the_tide",
       details: "spell_stand_against_the_tide_details",
       expanded: "spell_stand_against_the_tide_expanded",
@@ -5578,7 +5702,8 @@ export default {
   ],
 
   rangers_companion: [
-    {
+    {      
+      link: "rangers_companion",
       name: "spell_rangers_companion",
       details: "spell_rangers_companion_details",
       expanded: "spell_rangers_companion_expanded",
@@ -5621,7 +5746,8 @@ export default {
   ],
 
   primal_companion: [
-    {
+    {      
+      link: "primal_companion",
       name: "spell_primal_companion",
       details: "spell_primal_companion_details",
       expanded: "spell_primal_companion_expanded",
@@ -5667,7 +5793,8 @@ export default {
 
   divine_channel_wrath: [
     {
-      //0
+      //0      
+      link: "divine_channel_wrath",
       name: "spell_divine_channel_wrath",
       details: "spell_divine_channel_wrath_details",
       expanded: "spell_divine_channel_wrath_expanded",
@@ -5712,7 +5839,8 @@ export default {
 
   divine_channel_directed_strike: [
     {
-      //0
+      //0      
+      link: "divine_channel_directed_strike",
       name: "spell_divine_channel_directed_strike",
       details: "spell_divine_channel_directed_strike_details",
       expanded: "spell_divine_channel_directed_strike_expanded",
@@ -5757,7 +5885,8 @@ export default {
 
   divine_channel_war_god_bless: [
     {
-      //0
+      //0      
+      link: "divine_channel_war_god_bless",
       name: "spell_divine_channel_war_god_bless",
       details: "spell_divine_channel_war_god_bless_details",
       expanded: "spell_divine_channel_war_god_bless_expanded",
@@ -5802,7 +5931,8 @@ export default {
 
   divine_channel_save_life: [
     {
-      //0
+      //0      
+      link: "divine_channel_save_life",
       name: "spell_divine_channel_save_life",
       details: "spell_divine_channel_save_life_details",
       expanded: "spell_divine_channel_save_life_expanded",
@@ -5846,7 +5976,8 @@ export default {
   ],
 
   divine_channel_learn_tool: [
-    {
+    {      
+      link: "divine_channel_learn_tool",
       name: "spell_divine_channel_learn_tool",
       details: "spell_divine_channel_learn_tool_details",
       expanded: "spell_divine_channel_learn_tool_expanded",
@@ -5890,7 +6021,8 @@ export default {
   ],
 
   divine_channel_read_thoughts: [
-    {
+    {      
+      link: "divine_channel_read_thoughts",
       name: "spell_divine_channel_read_thoughts",
       details: "spell_divine_channel_read_thoughts_details",
       expanded: "spell_divine_channel_read_thoughts_expanded",
@@ -5934,7 +6066,8 @@ export default {
   ],
 
   divine_channel_mirror_image: [
-    {
+    {      
+      link: "divine_channel_mirror_image",
       name: "spell_divine_channel_mirror_image",
       details: "spell_divine_channel_mirror_image_details",
       expanded: "spell_divine_channel_mirror_image_expanded",
@@ -5978,7 +6111,8 @@ export default {
   ],
 
   divine_channel_cloak_of_shadows: [
-    {
+    {      
+      link: "divine_channel_cloak_of_shadows",
       name: "spell_divine_channel_cloak_of_shadows",
       details: "spell_divine_channel_cloak_of_shadows_details",
       expanded: "spell_divine_channel_cloak_of_shadows_expanded",
@@ -6022,7 +6156,8 @@ export default {
   ],
 
   divine_channel_charm_alimal_plant: [
-    {
+    {      
+      link: "divine_channel_charm_alimal_plant",
       name: "spell_divine_channel_charm_alimal_plant",
       details: "spell_divine_channel_charm_alimal_plant_details",
       expanded: "spell_divine_channel_charm_alimal_plant_expanded",
@@ -6066,7 +6201,8 @@ export default {
   ],
 
   divine_channel_radiance_dawn: [
-    {
+    {      
+      link: "divine_channel_radiance_dawn",
       name: "spell_divine_channel_radiance_dawn",
       details: "spell_divine_channel_radiance_dawn_details",
       expanded: "spell_divine_channel_radiance_dawn_expanded",
@@ -6113,7 +6249,8 @@ export default {
 
   divine_strike_sound: [
     {
-      //0
+      //0      
+      link: "divine_strike_sound",
       name: "spell_divine_strike_sound",
       details: "spell_divine_strike_details",
       expanded: "spell_divine_strike_expanded",
@@ -6157,7 +6294,8 @@ export default {
 
   divine_strike_weapon: [
     {
-      //1
+      //1      
+      link: "divine_strike_weapon",
       name: "spell_divine_strike_weapon",
       details: "spell_divine_strike_details",
       expanded: "spell_divine_strike_expanded",
@@ -6204,7 +6342,8 @@ export default {
 
   divine_strike_radiant: [
     {
-      //1
+      //1      
+      link: "divine_strike_radiant",
       name: "spell_divine_strike_radiant",
       details: "spell_divine_strike_details",
       expanded: "spell_divine_strike_expanded",
@@ -6251,7 +6390,8 @@ export default {
 
   divine_strike_poison: [
     {
-      //1
+      //1      
+      link: "divine_strike_poison",
       name: "spell_divine_strike_poison",
       details: "spell_divine_strike_details",
       expanded: "spell_divine_strike_expanded",
@@ -6298,7 +6438,8 @@ export default {
 
   divine_strike_nature: [
     {
-      //1
+      //1      
+      link: "divine_strike_nature",
       name: "spell_divine_strike_nature",
       details: "spell_divine_strike_nature_details",
       expanded: "spell_divine_strike_expanded",
@@ -6346,7 +6487,8 @@ export default {
   // ------
 
   fey_presence: [
-    {
+    {      
+      link: "fey_presence",
       name: "spell_fey_presence",
       details: "spell_fey_presence_details",
       expanded: "spell_fey_presence_expanded",
@@ -6390,7 +6532,8 @@ export default {
   ],
 
   create_weapon: [
-    {
+    {      
+      link: "create_weapon",
       name: "spell_create_weapon",
       details: "spell_create_weapon_details",
       expanded: "spell_create_weapon_expanded",
@@ -6433,7 +6576,8 @@ export default {
   ],
 
   convert_weapon: [
-    {
+    {      
+      link: "convert_weapon",
       name: "spell_convert_weapon",
       details: "spell_convert_weapon_details",
       expanded: "spell_convert_weapon_expanded",
@@ -6477,7 +6621,8 @@ export default {
 
   find_familiar_warlock: [
     {
-      //0
+      //0      
+      link: "find_familiar_warlock",
       name: "spell_find_familiar_warlock",
       details: "spell_find_familiar_warlock_details",
       expanded: "spell_find_familiar_warlock_expanded",
@@ -6521,7 +6666,8 @@ export default {
 
   gaze_of_two_minds: [
     {
-      //0
+      //0      
+      link: "gaze_of_two_minds",
       name: "spell_gaze_of_two_minds",
       details: "spell_gaze_of_two_minds_details",
       expanded: "spell_gaze_of_two_minds_expanded",
@@ -6565,7 +6711,8 @@ export default {
 
   investment_of_the_chain_master: [
     {
-      //0
+      //0      
+      link: "investment_of_the_chain_master",
       name: "spell_investment_of_the_chain_master",
       details: "spell_investment_of_the_chain_master_details",
       expanded: "spell_investment_of_the_chain_master_expanded",
@@ -6609,7 +6756,8 @@ export default {
 
   mage_armor_shadow: [
     {
-      //0
+      //0      
+      link: "mage_armor_shadow",
       name: "spell_mage_armor_shadow",
       details: "spell_mage_armor_details",
       expanded: "spell_mage_armor_expanded",
@@ -6652,7 +6800,8 @@ export default {
   ],
 
   speak_with_animals_warlock: [
-    {
+    {      
+      link: "speak_with_animals_warlock",
       name: "spell_speak_with_animals_warlock",
       details: "spell_speak_with_animals_details",
       expanded: "spell_speak_with_animals_expanded",
@@ -6693,7 +6842,8 @@ export default {
 
   eldritch_blast_slow: [
     {
-      //0
+      //0      
+      link: "eldritch_blast_slow",
       name: "spell_eldritch_blast_slow",
       details: "spell_eldritch_blast_slow_details",
       expanded: "spell_eldritch_blast_slow_expanded",
@@ -6737,7 +6887,8 @@ export default {
 
   disguise_self_warlock: [
     {
-      //0
+      //0      
+      link: "disguise_self_warlock",
       name: "spell_disguise_self_warlock",
       details: "spell_disguise_self_details",
       expanded: "spell_disguise_self_expanded",
@@ -6781,7 +6932,8 @@ export default {
 
   eldritch_blast_distant: [
     {
-      //0
+      //0      
+      link: "eldritch_blast_distant",
       name: "spell_eldritch_blast_distant",
       details: "spell_eldritch_blast_distant_details",
       expanded: "spell_eldritch_blast_distant_expanded",
@@ -6825,7 +6977,8 @@ export default {
 
   false_life_warlock: [
     {
-      //1
+      //1      
+      link: "false_life_warlock",
       name: "spell_false_life_warlock",
       details: "spell_false_life_details",
       expanded: "spell_false_life_warlock_expanded",
@@ -6869,7 +7022,8 @@ export default {
 
   eldritch_blast_damage: [
     {
-      //0
+      //0      
+      link: "eldritch_blast_damage",
       name: "spell_eldritch_blast_damage",
       details: "spell_eldritch_blast_damage_details",
       expanded: "spell_eldritch_blast_damage_expanded",
@@ -6913,7 +7067,8 @@ export default {
 
   eldritch_blast_push: [
     {
-      //0
+      //0      
+      link: "eldritch_blast_push",
       name: "spell_eldritch_blast_push",
       details: "spell_eldritch_blast_push_details",
       expanded: "spell_eldritch_blast_push_expanded",
@@ -6957,7 +7112,8 @@ export default {
 
   rebuke_of_the_talisman: [
     {
-      //0
+      //0      
+      link: "rebuke_of_the_talisman",
       name: "spell_rebuke_of_the_talisman",
       details: "spell_rebuke_of_the_talisman_details",
       expanded: "spell_rebuke_of_the_talisman_expanded",
@@ -7001,7 +7157,8 @@ export default {
 
   detect_magic_warlock: [
     {
-      //0
+      //0      
+      link: "detect_magic_warlock",
       name: "spell_detect_magic_warlock",
       details: "spell_detect_magic_details",
       expanded: "spell_detect_magic_expanded",
@@ -7045,7 +7202,8 @@ export default {
 
   silent_image_warlock: [
     {
-      //1
+      //1      
+      link: "silent_image_warlock",
       name: "spell_silent_image_warlock",
       details: "spell_silent_image_details",
       expanded: "spell_silent_image_expanded",
@@ -7088,7 +7246,8 @@ export default {
 
   restore_mana_warlock: [
     {
-      //1
+      //1      
+      link: "restore_mana_warlock",
       name: "spell_restore_mana_warlock",
       details: "spell_restore_mana_warlock_details",
       expanded: "spell_restore_mana_warlock_expanded",
@@ -7131,7 +7290,8 @@ export default {
   ],
 
   misty_escape: [
-    {
+    {      
+      link: "misty_escape",
       name: "spell_misty_escape",
       details: "spell_misty_escape_details",
       expanded: "spell_misty_escape_expanded",
@@ -7175,7 +7335,8 @@ export default {
   ],
 
   beguiling_defenses: [
-    {
+    {      
+      link: "beguiling_defenses",
       name: "spell_beguiling_defenses",
       details: "spell_beguiling_defenses_details",
       expanded: "spell_beguiling_defenses_expanded",
@@ -7218,7 +7379,8 @@ export default {
   ],
 
   dark_delirium: [
-    {
+    {      
+      link: "dark_delirium",
       name: "spell_dark_delirium",
       details: "spell_dark_delirium_details",
       expanded: "spell_dark_delirium_expanded",
@@ -7262,7 +7424,8 @@ export default {
   ],
 
   dark_ones_blessing: [
-    {
+    {      
+      link: "dark_ones_blessing",
       name: "spell_dark_ones_blessing",
       details: "spell_dark_ones_blessing_details",
       expanded: "spell_dark_ones_blessing_expanded",
@@ -7305,7 +7468,8 @@ export default {
   ],
 
   dark_ones_own_luck: [
-    {
+    {      
+      link: "dark_ones_own_luck",
       name: "spell_dark_ones_own_luck",
       details: "spell_dark_ones_own_luck_details",
       expanded: "spell_dark_ones_own_luck_expanded",
@@ -7349,7 +7513,8 @@ export default {
   ],
 
   hurl_through_hell: [
-    {
+    {      
+      link: "hurl_through_hell",
       name: "spell_hurl_through_hell",
       details: "spell_hurl_through_hell_details",
       expanded: "spell_hurl_through_hell_expanded",
@@ -7393,7 +7558,8 @@ export default {
   ],
 
   entropic_ward: [
-    {
+    {      
+      link: "entropic_ward",
       name: "spell_entropic_ward",
       details: "spell_entropic_ward_details",
       expanded: "spell_entropic_ward_expanded",
@@ -7437,7 +7603,8 @@ export default {
   ],
 
   create_thrall: [
-    {
+    {      
+      link: "create_thrall",
       name: "spell_create_thrall",
       details: "spell_create_thrall_details",
       expanded: "spell_create_thrall_expanded",
@@ -7480,7 +7647,8 @@ export default {
   ],
 
   unarmed_strike_bonus: [
-    {
+    {      
+      link: "unarmed_strike_bonus",
       name: "spell_unarmed_strike_bonus",
       details: "spell_unarmed_strike_bonus_details",
       expanded: "spell_unarmed_strike_bonus_expanded",
@@ -7523,7 +7691,8 @@ export default {
   ],
 
   step_of_the_wind: [
-    {
+    {      
+      link: "step_of_the_wind",
       name: "spell_step_of_the_wind",
       details: "spell_step_of_the_wind_details",
       expanded: "spell_step_of_the_wind_expanded",
@@ -7567,7 +7736,8 @@ export default {
   ],
 
   patient_defense: [
-    {
+    {      
+      link: "patient_defense",
       name: "spell_patient_defense",
       details: "spell_patient_defense_details",
       expanded: "spell_patient_defense_expanded",
@@ -7611,7 +7781,8 @@ export default {
   ],
 
   flurry_of_blows: [
-    {
+    {      
+      link: "flurry_of_blows",
       name: "spell_flurry_of_blows",
       details: "spell_flurry_of_blows_details",
       expanded: "spell_flurry_of_blows_expanded",
@@ -7655,7 +7826,8 @@ export default {
   ],
 
   dedicated_weapon: [
-    {
+    {      
+      link: "dedicated_weapon",
       name: "spell_dedicated_weapon",
       details: "spell_dedicated_weapon_details",
       expanded: "spell_dedicated_weapon_expanded",
@@ -7699,7 +7871,8 @@ export default {
   ],
 
   deflect_missiles: [
-    {
+    {      
+      link: "deflect_missiles",
       name: "spell_deflect_missiles",
       details: "spell_deflect_missiles_details",
       expanded: "spell_deflect_missiles_expanded",
@@ -7743,7 +7916,8 @@ export default {
   ],
 
   weapon_strike_bonus: [
-    {
+    {      
+      link: "weapon_strike_bonus",
       name: "spell_weapon_strike_bonus",
       details: "spell_weapon_strike_bonus_details",
       expanded: "spell_weapon_strike_bonus_expanded",
@@ -7786,7 +7960,8 @@ export default {
   ],
 
   slow_fall: [
-    {
+    {      
+      link: "slow_fall",
       name: "spell_slow_fall",
       details: "spell_slow_fall_details",
       expanded: "spell_slow_fall_expanded",
@@ -7829,7 +8004,8 @@ export default {
   ],
 
   quickened_healing: [
-    {
+    {      
+      link: "quickened_healing",
       name: "spell_quickened_healing",
       details: "spell_quickened_healing_details",
       expanded: "spell_quickened_healing_expanded",
@@ -7874,7 +8050,8 @@ export default {
   ],
 
   extra_strike_monk: [
-    {
+    {      
+      link: "extra_strike_monk",
       name: "spell_extra_strike_monk",
       details: "spell_extra_strike_monk_details",
       expanded: "spell_extra_strike_monk_expanded",
@@ -7917,7 +8094,8 @@ export default {
   ],
 
   stunning_strike: [
-    {
+    {      
+      link: "stunning_strike",
       name: "spell_stunning_strike",
       details: "spell_stunning_strike_details",
       expanded: "spell_stunning_strike_expanded",
@@ -7961,7 +8139,8 @@ export default {
   ],
 
   diamond_soul: [
-    {
+    {      
+      link: "diamond_soul",
       name: "spell_diamond_soul",
       details: "spell_diamond_soul_details",
       expanded: "spell_diamond_soul_expanded",
@@ -8005,7 +8184,8 @@ export default {
   ],
 
   focused_aim: [
-    {
+    {      
+      link: "focused_aim",
       name: "spell_focused_aim",
       details: "spell_focused_aim_details",
       expanded: "spell_focused_aim_expanded",
@@ -8049,7 +8229,8 @@ export default {
   ],
 
   stillness_of_mind: [
-    {
+    {      
+      link: "stillness_of_mind",
       name: "spell_stillness_of_mind",
       details: "spell_stillness_of_mind_details",
       expanded: "spell_stillness_of_mind_expanded",
@@ -8092,7 +8273,8 @@ export default {
   ],
 
   empty_body: [
-    {
+    {      
+      link: "empty_body",
       name: "spell_empty_body",
       details: "spell_empty_body_details",
       expanded: "spell_empty_body_expanded",
@@ -8136,7 +8318,8 @@ export default {
   ],
 
   open_hand_tech_knock: [
-    {
+    {      
+      link: "open_hand_tech_knock",
       name: "spell_open_hand_tech_knock",
       details: "spell_open_hand_tech_knock_details",
       expanded: "spell_open_hand_tech_expanded",
@@ -8179,7 +8362,8 @@ export default {
   ],
 
   open_hand_tech_push: [
-    {
+    {      
+      link: "open_hand_tech_push",
       name: "spell_open_hand_tech_push",
       details: "spell_open_hand_tech_push_details",
       expanded: "spell_open_hand_tech_expanded",
@@ -8222,7 +8406,8 @@ export default {
   ],
 
   open_hand_tech_confuse: [
-    {
+    {      
+      link: "open_hand_tech_confuse",
       name: "spell_open_hand_tech_confuse",
       details: "spell_open_hand_tech_confuse_details",
       expanded: "spell_open_hand_tech_expanded",
@@ -8265,7 +8450,8 @@ export default {
   ],
 
   wholeness_of_body: [
-    {
+    {      
+      link: "wholeness_of_body",
       name: "spell_wholeness_of_body",
       details: "spell_wholeness_of_body_details",
       expanded: "spell_wholeness_of_body_expanded",
@@ -8310,7 +8496,8 @@ export default {
 
   sanctuary_monk: [
     {
-      //1
+      //1      
+      link: "sanctuary_monk",
       name: "spell_sanctuary_monk",
       details: "spell_sanctuary_monk_details",
       expanded: "spell_sanctuary_monk_expanded",
@@ -8353,7 +8540,8 @@ export default {
   ],
 
   quivering_palm: [
-    {
+    {      
+      link: "quivering_palm",
       name: "spell_quivering_palm",
       details: "spell_quivering_palm_details",
       expanded: "spell_quivering_palm_expanded",
@@ -8397,7 +8585,8 @@ export default {
   ],
 
   pass_without_trace_monk: [
-    {
+    {      
+      link: "pass_without_trace_monk",
       name: "spell_pass_without_trace_monk",
       details: "spell_pass_without_trace_details",
       expanded: "spell_pass_without_trace_monk_expanded",
@@ -8442,7 +8631,8 @@ export default {
 
   darkvision_monk: [
     {
-      //2
+      //2      
+      link: "darkvision_monk",
       name: "spell_darkvision_monk",
       details: "spell_darkvision_details",
       expanded: "spell_darkvision_monk_expanded",
@@ -8486,7 +8676,8 @@ export default {
   ],
 
   silence_monk: [
-    {
+    {      
+      link: "silence_monk",
       name: "spell_silence_monk",
       details: "spell_silence_details",
       expanded: "spell_silence_expanded",
@@ -8531,7 +8722,8 @@ export default {
   ],
 
   darkness_monk: [
-    {
+    {      
+      link: "darkness_monk",
       name: "spell_darkness_monk",
       details: "spell_darkness_details",
       expanded: "spell_darkness_expanded",
@@ -8574,7 +8766,8 @@ export default {
   ],
 
   shadow_step: [
-    {
+    {      
+      link: "shadow_step",
       name: "spell_shadow_step",
       details: "spell_shadow_step_details",
       expanded: "spell_shadow_step_expanded",
@@ -8616,7 +8809,8 @@ export default {
   ],
 
   cloak_of_shadows_monk: [
-    {
+    {      
+      link: "cloak_of_shadows_monk",
       name: "spell_cloak_of_shadows_monk",
       details: "spell_cloak_of_shadows_monk_details",
       expanded: "spell_cloak_of_shadows_monk_expanded",
@@ -8658,7 +8852,8 @@ export default {
   ],
 
   opportunist: [
-    {
+    {      
+      link: "opportunist",
       name: "spell_opportunist",
       details: "spell_opportunist_details",
       expanded: "spell_opportunist_expanded",
@@ -8700,7 +8895,8 @@ export default {
   ],
 
   water_whip: [
-    {
+    {      
+      link: "water_whip",
       name: "spell_water_whip",
       details: "spell_water_whip_details",
       expanded: "spell_water_whip_expanded",
@@ -8743,7 +8939,8 @@ export default {
   ],
 
   shatter_monk: [
-    {
+    {      
+      link: "shatter_monk",
       name: "spell_shatter_monk",
       details: "spell_shatter_monk_details",
       expanded: "spell_shatter_monk_expanded",
@@ -8786,7 +8983,8 @@ export default {
   ],
 
   fire_snake_teeth: [
-    {
+    {      
+      link: "fire_snake_teeth",
       name: "spell_fire_snake_teeth",
       details: "spell_fire_snake_teeth_details",
       expanded: "spell_fire_snake_teeth_expanded",
@@ -8829,7 +9027,8 @@ export default {
   ],
 
   ashing_strike: [
-    {
+    {      
+      link: "ashing_strike",
       name: "spell_ashing_strike",
       details: "spell_ashing_strike_details",
       expanded: "spell_ashing_strike_expanded",
@@ -8873,7 +9072,8 @@ export default {
   ],
 
   four_thunder_fist: [
-    {
+    {      
+      link: "four_thunder_fist",
       name: "spell_four_thunder_fist",
       details: "spell_four_thunder_fist_details",
       expanded: "spell_four_thunder_fist_expanded",
@@ -8917,7 +9117,8 @@ export default {
   ],
 
   gust_of_wind_monk: [
-    {
+    {      
+      link: "gust_of_wind_monk",
       name: "spell_gust_of_wind_monk",
       details: "spell_gust_of_wind_monk_details",
       expanded: "spell_gust_of_wind_monk_expanded",
@@ -8961,7 +9162,8 @@ export default {
   ],
 
   air_fist: [
-    {
+    {      
+      link: "air_fist",
       name: "spell_air_fist",
       details: "spell_air_fist_details",
       expanded: "spell_air_fist_expanded",
@@ -9005,7 +9207,8 @@ export default {
   ],
 
   hold_person_monk: [
-    {
+    {      
+      link: "hold_person_monk",
       name: "spell_hold_person_monk",
       details: "spell_hold_person_monk_details",
       expanded: "spell_hold_person_monk_expanded",
@@ -9049,7 +9252,8 @@ export default {
   ],
 
   element_bond: [
-    {
+    {      
+      link: "element_bond",
       name: "spell_element_bond",
       details: "spell_element_bond_details",
       expanded: "spell_element_bond_expanded",
@@ -9092,7 +9296,8 @@ export default {
   ],
 
   form_river: [
-    {
+    {      
+      link: "form_river",
       name: "spell_form_river",
       details: "spell_form_river_details",
       expanded: "spell_form_river_expanded",
@@ -9136,7 +9341,8 @@ export default {
   ],
 
   sorcery_to_mana: [
-    {
+    {      
+      link: "sorcery_to_mana",
       name: "spell_sorcery_to_mana",
       details: "spell_sorcery_to_mana_details",
       expanded: "spell_sorcery_to_mana_expanded",
@@ -9181,7 +9387,8 @@ export default {
 
   mana_to_sorcery: [
     {},
-    {
+    {      
+      link: "mana_to_sorcery",
       name: "spell_mana_to_sorcery",
       details: "spell_mana_to_sorcery_details",
       expanded: "spell_mana_to_sorcery_expanded",
@@ -9225,7 +9432,8 @@ export default {
   ],
 
   metamagic_careful: [
-    {
+    {      
+      link: "metamagic_careful",
       name: "spell_metamagic_careful",
       details: "spell_metamagic_careful_details",
       expanded: "spell_metamagic_careful_expanded",
@@ -9269,7 +9477,8 @@ export default {
   ],
 
   metamagic_distant: [
-    {
+    {      
+      link: "metamagic_distant",
       name: "spell_metamagic_distant",
       details: "spell_metamagic_distant_details",
       expanded: "spell_metamagic_distant_expanded",
@@ -9313,7 +9522,8 @@ export default {
   ],
 
   metamagic_empowered: [
-    {
+    {      
+      link: "metamagic_empowered",
       name: "spell_metamagic_empowered",
       details: "spell_metamagic_empowered_details",
       expanded: "spell_metamagic_empowered_expanded",
@@ -9357,7 +9567,8 @@ export default {
   ],
 
   metamagic_extended: [
-    {
+    {      
+      link: "metamagic_extended",
       name: "spell_metamagic_extended",
       details: "spell_metamagic_extended_details",
       expanded: "spell_metamagic_extended_expanded",
@@ -9401,7 +9612,8 @@ export default {
   ],
 
   metamagic_heightened: [
-    {
+    {      
+      link: "metamagic_heightened",
       name: "spell_metamagic_heightened",
       details: "spell_metamagic_heightened_details",
       expanded: "spell_metamagic_heightened_expanded",
@@ -9445,7 +9657,8 @@ export default {
   ],
 
   metamagic_quickened: [
-    {
+    {      
+      link: "metamagic_quickened",
       name: "spell_metamagic_quickened",
       details: "spell_metamagic_quickened_details",
       expanded: "spell_metamagic_quickened_expanded",
@@ -9489,7 +9702,8 @@ export default {
   ],
 
   metamagic_subtle: [
-    {
+    {      
+      link: "metamagic_subtle",
       name: "spell_metamagic_subtle",
       details: "spell_metamagic_subtle_details",
       expanded: "spell_metamagic_subtle_expanded",
@@ -9533,7 +9747,8 @@ export default {
   ],
 
   metamagic_transmuted: [
-    {
+    {      
+      link: "metamagic_transmuted",
       name: "spell_metamagic_transmuted",
       details: "spell_metamagic_transmuted_details",
       expanded: "spell_metamagic_transmuted_expanded",
@@ -9577,7 +9792,8 @@ export default {
   ],
 
   metamagic_twinned: [
-    {
+    {      
+      link: "metamagic_twinned",
       name: "spell_metamagic_twinned",
       details: "spell_metamagic_twinned_details",
       expanded: "spell_metamagic_twinned_expanded",
@@ -9621,7 +9837,8 @@ export default {
   ],
 
   metamagic_seeking: [
-    {
+    {      
+      link: "metamagic_seeking",
       name: "spell_metamagic_seeking",
       details: "spell_metamagic_seeking_details",
       expanded: "spell_metamagic_seeking_expanded",
@@ -9665,7 +9882,8 @@ export default {
   ],
 
   magical_direction: [
-    {
+    {      
+      link: "magical_direction",
       name: "spell_magical_direction",
       details: "spell_magical_direction_details",
       expanded: "spell_magical_direction_expanded",
@@ -9709,7 +9927,8 @@ export default {
   ],
 
   elemental_affinity_fire: [
-    {
+    {      
+      link: "elemental_affinity_fire",
       name: "spell_elemental_affinity_fire",
       details: "spell_elemental_affinity_fire_details",
       expanded: "spell_elemental_affinity_fire_expanded",
@@ -9752,7 +9971,8 @@ export default {
   ],
 
   elemental_affinity_cold: [
-    {
+    {      
+      link: "elemental_affinity_cold",
       name: "spell_elemental_affinity_cold",
       details: "spell_elemental_affinity_cold_details",
       expanded: "spell_elemental_affinity_cold_expanded",
@@ -9795,7 +10015,8 @@ export default {
   ],
 
   elemental_affinity_electricity: [
-    {
+    {      
+      link: "elemental_affinity_electricity",
       name: "spell_elemental_affinity_electricity",
       details: "spell_elemental_affinity_electricity_details",
       expanded: "spell_elemental_affinity_electricity_expanded",
@@ -9838,7 +10059,8 @@ export default {
   ],
 
   elemental_affinity_acid: [
-    {
+    {      
+      link: "elemental_affinity_acid",
       name: "spell_elemental_affinity_acid",
       details: "spell_elemental_affinity_acid_details",
       expanded: "spell_elemental_affinity_acid_expanded",
@@ -9881,7 +10103,8 @@ export default {
   ],
 
   elemental_affinity_poison: [
-    {
+    {      
+      link: "elemental_affinity_poison",
       name: "spell_elemental_affinity_poison",
       details: "spell_elemental_affinity_poison_details",
       expanded: "spell_elemental_affinity_poison_expanded",
@@ -9924,7 +10147,8 @@ export default {
   ],
 
   dragon_resistanse_fire: [
-    {
+    {      
+      link: "dragon_resistanse_fire",
       name: "spell_dragon_resistanse_fire",
       details: "spell_dragon_resistanse_fire_details",
       expanded: "spell_dragon_resistanse_fire_expanded",
@@ -9968,7 +10192,8 @@ export default {
   ],
 
   dragon_resistanse_cold: [
-    {
+    {      
+      link: "dragon_resistanse_cold",
       name: "spell_dragon_resistanse_cold",
       details: "spell_dragon_resistanse_cold_details",
       expanded: "spell_dragon_resistanse_cold_expanded",
@@ -10012,7 +10237,8 @@ export default {
   ],
 
   dragon_resistanse_electricity: [
-    {
+    {      
+      link: "dragon_resistanse_electricity",
       name: "spell_dragon_resistanse_electricity",
       details: "spell_dragon_resistanse_electricity_details",
       expanded: "spell_dragon_resistanse_electricity_expanded",
@@ -10056,7 +10282,8 @@ export default {
   ],
 
   dragon_resistanse_acid: [
-    {
+    {      
+      link: "dragon_resistanse_acid",
       name: "spell_dragon_resistanse_acid",
       details: "spell_dragon_resistanse_acid_details",
       expanded: "spell_dragon_resistanse_acid_expanded",
@@ -10100,7 +10327,8 @@ export default {
   ],
 
   dragon_resistanse_poison: [
-    {
+    {      
+      link: "dragon_resistanse_poison",
       name: "spell_dragon_resistanse_poison",
       details: "spell_dragon_resistanse_poison_details",
       expanded: "spell_dragon_resistanse_poison_expanded",
@@ -10144,7 +10372,8 @@ export default {
   ],
 
   dragon_wings: [
-    {
+    {      
+      link: "dragon_wings",
       name: "spell_dragon_wings",
       details: "spell_dragon_wings_details",
       expanded: "spell_dragon_wings_expanded",
@@ -10187,7 +10416,8 @@ export default {
   ],
 
   dragon_presence: [
-    {
+    {      
+      link: "dragon_presence",
       name: "spell_dragon_presence",
       details: "spell_dragon_presence_details",
       expanded: "spell_dragon_presence_expanded",
@@ -10231,7 +10461,8 @@ export default {
   ],
 
   wild_magic_surge: [
-    {
+    {      
+      link: "wild_magic_surge",
       name: "spell_wild_magic_surge",
       details: "spell_wild_magic_surge_details",
       expanded: "spell_wild_magic_surge_expanded",
@@ -10275,7 +10506,8 @@ export default {
   ],
 
   bend_luck: [
-    {
+    {      
+      link: "bend_luck",
       name: "spell_bend_luck",
       details: "spell_bend_luck_details",
       expanded: "spell_bend_luck_expanded",
@@ -10319,7 +10551,8 @@ export default {
   ],
 
   countercharm: [
-    {
+    {      
+      link: "countercharm",
       name: "spell_countercharm",
       details: "spell_countercharm_details",
       expanded: "spell_countercharm_expanded",
@@ -10362,7 +10595,8 @@ export default {
   ],
 
   peerless_skill: [
-    {
+    {      
+      link: "peerless_skill",
       name: "spell_peerless_skill",
       details: "spell_peerless_skill_details",
       expanded: "spell_peerless_skill_expanded",
@@ -10406,7 +10640,8 @@ export default {
   ],
 
   indomity: [
-    {
+    {      
+      link: "indomity",
       name: "spell_indomity",
       details: "spell_indomity_details",
       expanded: "spell_indomity_expanded",
@@ -10450,7 +10685,8 @@ export default {
   ],
 
   know_your_enemy: [
-    {
+    {      
+      link: "know_your_enemy",
       name: "spell_know_your_enemy",
       details: "spell_know_your_enemy_details",
       expanded: "spell_know_your_enemy_expanded",
@@ -10493,7 +10729,8 @@ export default {
   ],
 
   arcane_charge: [
-    {
+    {      
+      link: "arcane_charge",
       name: "spell_arcane_charge",
       details: "spell_arcane_charge_details",
       expanded: "spell_arcane_charge_expanded",
@@ -10536,7 +10773,8 @@ export default {
   ],
 
   athletic_jump: [
-    {
+    {      
+      link: "athletic_jump",
       name: "spell_athletic_jump",
       details: "spell_athletic_jump_details",
       expanded: "spell_athletic_jump_expanded",
@@ -10579,7 +10817,8 @@ export default {
   ],
 
   survivor: [
-    {
+    {      
+      link: "survivor",
       name: "spell_survivor",
       details: "spell_survivor_details",
       expanded: "spell_survivor_expanded",
@@ -10622,7 +10861,8 @@ export default {
   ],
 
   aura_of_protection: [
-    {
+    {      
+      link: "aura_of_protection",
       name: "spell_aura_of_protection",
       details: "spell_aura_of_protection_details",
       expanded: "spell_aura_of_protection_expanded",
@@ -10665,7 +10905,8 @@ export default {
   ],
 
   aura_of_courage: [
-    {
+    {      
+      link: "aura_of_courage",
       name: "spell_aura_of_courage",
       details: "spell_aura_of_courage_details",
       expanded: "spell_aura_of_courage_expanded",
@@ -10708,7 +10949,8 @@ export default {
   ],
 
   cleansing_touch: [
-    {
+    {      
+      link: "cleansing_touch",
       name: "spell_cleansing_touch",
       details: "spell_cleansing_touch_details",
       expanded: "spell_cleansing_touch_expanded",
@@ -10752,7 +10994,8 @@ export default {
   ],
 
   aura_of_devotion: [
-    {
+    {      
+      link: "aura_of_devotion",
       name: "spell_aura_of_devotion",
       details: "spell_aura_of_devotion_details",
       expanded: "spell_aura_of_devotion_expanded",
@@ -10796,7 +11039,8 @@ export default {
 
   protection_from_evil_and_good_paladin: [
     {
-      //0
+      //0      
+      link: "protection_from_evil_and_good_paladin",
       name: "spell_protection_from_evil_and_good_paladin",
       details: "spell_protection_from_evil_and_good_paladin_details",
       expanded: "spell_protection_from_evil_and_good_paladin_expanded",
@@ -10839,7 +11083,8 @@ export default {
   ],
 
   holy_nimbus: [
-    {
+    {      
+      link: "holy_nimbus",
       name: "spell_holy_nimbus",
       details: "spell_holy_nimbus_details",
       expanded: "spell_holy_nimbus_expanded",
@@ -10883,7 +11128,8 @@ export default {
   ],
 
   aura_of_warding: [
-    {
+    {      
+      link: "aura_of_warding",
       name: "spell_aura_of_warding",
       details: "spell_aura_of_warding_details",
       expanded: "spell_aura_of_warding_expanded",
@@ -10926,7 +11172,8 @@ export default {
   ],
 
   undying_sentinel: [
-    {
+    {      
+      link: "undying_sentinel",
       name: "spell_undying_sentinel",
       details: "spell_undying_sentinel_details",
       expanded: "spell_undying_sentinel_expanded",
@@ -10970,7 +11217,8 @@ export default {
   ],
 
   elder_champion: [
-    {
+    {      
+      link: "elder_champion",
       name: "spell_elder_champion",
       details: "spell_elder_champion_details",
       expanded: "spell_elder_champion_expanded",
@@ -11014,7 +11262,8 @@ export default {
   ],
 
   relentless_avenger: [
-    {
+    {      
+      link: "relentless_avenger",
       name: "spell_relentless_avenger",
       details: "spell_relentless_avenger_details",
       expanded: "spell_relentless_avenger_expanded",
@@ -11057,7 +11306,8 @@ export default {
   ],
 
   soul_of_vengeance: [
-    {
+    {      
+      link: "soul_of_vengeance",
       name: "spell_soul_of_vengeance",
       details: "spell_soul_of_vengeance_details",
       expanded: "spell_soul_of_vengeance_expanded",
@@ -11100,7 +11350,8 @@ export default {
   ],
 
   avenging_angel: [
-    {
+    {      
+      link: "avenging_angel",
       name: "spell_avenging_angel",
       details: "spell_avenging_angel_details",
       expanded: "spell_avenging_angel_expanded",
@@ -11148,7 +11399,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "paladin_divine_smite",
       name: "spell_paladin_divine_smite",
       details: "spell_paladin_divine_smite_details",
       expanded: "spell_paladin_divine_smite_expanded",
@@ -11194,7 +11446,8 @@ export default {
   ],
 
   paladin_divine_smite_free: [
-    {
+    {      
+      link: "paladin_divine_smite_free",
       name: "spell_paladin_divine_smite_free",
       details: "spell_paladin_divine_smite_free_details",
       expanded: "spell_paladin_divine_smite_free_expanded",
@@ -11237,7 +11490,8 @@ export default {
   ],
 
   learn_spell: [
-    {
+    {      
+      link: "learn_spell",
       name: "spell_learn_spell",
       details: "spell_learn_spell_details",
       expanded: "spell_learn_spell_expanded",
@@ -11280,7 +11534,8 @@ export default {
   ],
 
   small_conjuration: [
-    {
+    {      
+      link: "small_conjuration",
       name: "spell_small_conjuration",
       details: "spell_small_conjuration_details",
       expanded: "spell_small_conjuration_expanded",
@@ -11323,7 +11578,8 @@ export default {
   ],
 
   magical_protection: [
-    {
+    {      
+      link: "magical_protection",
       name: "spell_magical_protection",
       details: "spell_magical_protection_details",
       expanded: "spell_magical_protection_expanded",
@@ -11367,7 +11623,8 @@ export default {
   ],
 
   hypnotic_look: [
-    {
+    {      
+      link: "hypnotic_look",
       name: "spell_hypnotic_look",
       details: "spell_hypnotic_look_details",
       expanded: "spell_hypnotic_look_expanded",
@@ -11410,7 +11667,8 @@ export default {
   ],
 
   small_alchemy: [
-    {
+    {      
+      link: "small_alchemy",
       name: "spell_small_alchemy",
       details: "spell_small_alchemy_details",
       expanded: "spell_small_alchemy_expanded",
@@ -11453,7 +11711,8 @@ export default {
   ],
 
   portent: [
-    {
+    {      
+      link: "portent",
       name: "spell_portent",
       details: "spell_portent_details",
       expanded: "spell_portent_expanded",
@@ -11496,7 +11755,8 @@ export default {
   ],
 
   overload: [
-    {
+    {      
+      link: "overload",
       name: "spell_overload",
       details: "spell_overload_details",
       expanded: "spell_overload_expanded",
@@ -11539,7 +11799,8 @@ export default {
   ],
 
   quick_dash: [
-    {
+    {      
+      link: "quick_dash",
       name: "spell_quick_dash",
       details: "spell_quick_dash_details",
       expanded: "spell_quick_dash_expanded",
@@ -11582,7 +11843,8 @@ export default {
   ],
 
   safe_movement: [
-    {
+    {      
+      link: "safe_movement",
       name: "spell_safe_movement",
       details: "spell_safe_movement_details",
       expanded: "spell_safe_movement_expanded",
@@ -11626,7 +11888,8 @@ export default {
   ],
 
   swap: [
-    {
+    {      
+      link: "swap",
       name: "spell_swap",
       details: "spell_swap_details",
       expanded: "spell_swap_expanded",
@@ -11670,7 +11933,8 @@ export default {
   ],
 
   transform_illusion: [
-    {
+    {      
+      link: "transform_illusion",
       name: "spell_transform_illusion",
       details: "spell_transform_illusion_details",
       expanded: "spell_transform_illusion_expanded",
@@ -11713,7 +11977,8 @@ export default {
   ],
 
   self_illusion: [
-    {
+    {      
+      link: "self_illusion",
       name: "spell_self_illusion",
       details: "spell_self_illusion_details",
       expanded: "spell_self_illusion_expanded",
@@ -11757,7 +12022,8 @@ export default {
   ],
 
   illusory_reality: [
-    {
+    {      
+      link: "illusory_reality",
       name: "spell_illusory_reality",
       details: "spell_illusory_reality_details",
       expanded: "spell_illusory_reality_expanded",
@@ -11800,7 +12066,8 @@ export default {
   ],
 
   control_undead: [
-    {
+    {      
+      link: "control_undead",
       name: "spell_control_undead",
       details: "spell_control_undead_details",
       expanded: "spell_control_undead_expanded",
@@ -11843,7 +12110,8 @@ export default {
   ],
 
   instinct_charm: [
-    {
+    {      
+      link: "instinct_charm",
       name: "spell_instinct_charm",
       details: "spell_instinct_charm_details",
       expanded: "spell_instinct_charm_expanded",
@@ -11887,7 +12155,8 @@ export default {
   ],
 
   powerful_charm: [
-    {
+    {      
+      link: "powerful_charm",
       name: "spell_powerful_charm",
       details: "spell_powerful_charm_details",
       expanded: "spell_powerful_charm_expanded",
@@ -11930,7 +12199,8 @@ export default {
   ],
 
   false_memories: [
-    {
+    {      
+      link: "false_memories",
       name: "spell_false_memories",
       details: "spell_false_memories_details",
       expanded: "spell_false_memories_expanded",
@@ -11973,7 +12243,8 @@ export default {
   ],
 
   erase_memories: [
-    {
+    {      
+      link: "erase_memories",
       name: "spell_erase_memories",
       details: "spell_erase_memories_details",
       expanded: "spell_erase_memories_expanded",
@@ -12016,7 +12287,8 @@ export default {
   ],
 
   transmutation_stone: [
-    {
+    {      
+      link: "transmutation_stone",
       name: "spell_transmutation_stone",
       details: "spell_transmutation_stone_details",
       expanded: "spell_transmutation_stone_expanded",
@@ -12059,7 +12331,8 @@ export default {
   ],
 
   big_transformation: [
-    {
+    {      
+      link: "big_transformation",
       name: "spell_big_transformation",
       details: "spell_big_transformation_details",
       expanded: "spell_big_transformation_expanded",
@@ -12103,7 +12376,8 @@ export default {
   ],
 
   return_youth: [
-    {
+    {      
+      link: "return_youth",
       name: "spell_return_youth",
       details: "spell_return_youth_details",
       expanded: "spell_return_youth_expanded",
@@ -12147,7 +12421,8 @@ export default {
   ],
 
   panacea: [
-    {
+    {      
+      link: "panacea",
       name: "spell_panacea",
       details: "spell_panacea_details",
       expanded: "spell_panacea_expanded",
@@ -12191,7 +12466,8 @@ export default {
   ],
 
   divination_expert: [
-    {
+    {      
+      link: "divination_expert",
       name: "spell_divination_expert",
       details: "spell_divination_expert_details",
       expanded: "spell_divination_expert_expanded",
@@ -12234,7 +12510,8 @@ export default {
   ],
 
   third_eye: [
-    {
+    {      
+      link: "third_eye",
       name: "spell_third_eye",
       details: "spell_third_eye_details",
       expanded: "spell_third_eye_expanded",
@@ -12282,7 +12559,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "bane_warlock",
       name: "spell_bane_warlock",
       details: "spell_bane_warlock_details",
       expanded: "spell_bane_warlock_expanded",
@@ -12329,7 +12607,8 @@ export default {
   ],
 
   rogue_luck: [
-    {
+    {      
+      link: "rogue_luck",
       name: "spell_rogue_luck",
       details: "spell_rogue_luck_details",
       expanded: "spell_rogue_luck_expanded",
@@ -12373,7 +12652,8 @@ export default {
   ],
 
   luck_feat: [
-    {
+    {      
+      link: "luck_feat",
       name: "spell_luck_feat",
       details: "spell_luck_feat_details",
       expanded: "spell_luck_feat_expanded",
@@ -12417,7 +12697,8 @@ export default {
   ],
 
   dissapear: [
-    {
+    {      
+      link: "dissapear",
       name: "spell_dissapear",
       details: "spell_dissapear_details",
       expanded: "spell_dissapear_expanded",
@@ -12461,7 +12742,8 @@ export default {
   ],
 
   lifedrinker: [
-    {
+    {      
+      link: "lifedrinker",
       name: "spell_lifedrinker",
       details: "spell_lifedrinker_details",
       expanded: "spell_lifedrinker_expanded",
@@ -12504,7 +12786,8 @@ export default {
   ],
 
   astral_projection_monk: [
-    {
+    {      
+      link: "astral_projection_monk",
       name: "spell_astral_projection_monk",
       details: "spell_astral_projection_monk_details",
       expanded: "spell_astral_projection_monk_expanded",
@@ -12548,7 +12831,8 @@ export default {
   ],
 
   fly_monk: [
-    {
+    {      
+      link: "fly_monk",
       name: "spell_fly_monk",
       details: "spell_fly_monk_details",
       expanded: "spell_fly_monk_expanded",
@@ -12590,7 +12874,8 @@ export default {
   ],
 
   fireball_monk: [
-    {
+    {      
+      link: "fireball_monk",
       name: "spell_fireball_monk",
       details: "spell_fireball_details",
       expanded: "spell_fireball_monk_expanded",
@@ -12634,7 +12919,8 @@ export default {
   ],
 
   gaseous_form_monk: [
-    {
+    {      
+      link: "gaseous_form_monk",
       name: "spell_gaseous_form_monk",
       details: "spell_gaseous_form_monk_details",
       expanded: "spell_gaseous_form_monk_expanded",
@@ -12677,7 +12963,8 @@ export default {
   ],
 
   cone_of_cold_monk: [
-    {
+    {      
+      link: "cone_of_cold_monk",
       name: "spell_cone_of_cold_monk",
       details: "spell_cone_of_cold_monk_details",
       expanded: "spell_cone_of_cold_monk_expanded",
@@ -12721,7 +13008,8 @@ export default {
   ],
 
   wall_of_stone_monk: [
-    {
+    {      
+      link: "wall_of_stone_monk",
       name: "spell_wall_of_stone_monk",
       details: "spell_wall_of_stone_details",
       expanded: "spell_wall_of_stone_expanded",
@@ -12765,7 +13053,8 @@ export default {
   ],
 
   stoneskin_monk: [
-    {
+    {      
+      link: "stoneskin_monk",
       name: "spell_stoneskin_monk",
       details: "spell_stoneskin_monk_details",
       expanded: "spell_stoneskin_monk_expanded",
@@ -12809,7 +13098,8 @@ export default {
   ],
 
   wall_of_fire_monk: [
-    {
+    {      
+      link: "wall_of_fire_monk",
       name: "spell_wall_of_fire_monk",
       details: "spell_wall_of_fire_details",
       expanded: "spell_wall_of_fire_monk_expanded",
@@ -12853,7 +13143,8 @@ export default {
   ],
 
   hold_monster_warlock: [
-    {
+    {      
+      link: "hold_monster_warlock",
       name: "spell_hold_monster_warlock",
       details: "spell_hold_monster_warlock_details",
       expanded: "spell_hold_monster_warlock_expanded",
@@ -12896,7 +13187,8 @@ export default {
   ],
 
   raise_dead_wizard: [
-    {
+    {      
+      link: "raise_dead_wizard",
       name: "spell_raise_dead_wizard",
       details: "spell_raise_dead_wizard_details",
       expanded: "spell_raise_dead_wizard_expanded",
@@ -12939,7 +13231,8 @@ export default {
   ],
 
   speak_with_dead_warlock: [
-    {
+    {      
+      link: "speak_with_dead_warlock",
       name: "spell_speak_with_dead_warlock",
       details: "spell_speak_with_dead_details",
       expanded: "spell_speak_with_dead_expanded",
@@ -12981,7 +13274,8 @@ export default {
   ],
 
   arcane_eye_warlock: [
-    {
+    {      
+      link: "arcane_eye_warlock",
       name: "spell_arcane_eye_warlock",
       details: "spell_arcane_eye_details",
       expanded: "spell_arcane_eye_expanded",
@@ -13028,7 +13322,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "polymorph_warlock",
       name: "spell_polymorph_warlock",
       details: "spell_polymorph_warlock_details",
       expanded: "spell_polymorph_warlock_expanded",
@@ -13074,7 +13369,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "confusion_warlock",
       name: "spell_confusion_warlock",
       details: "spell_confusion_warlock_details",
       expanded: "spell_confusion_warlock_expanded",
@@ -13122,7 +13418,8 @@ export default {
   ],
 
   polymorph_wizard: [
-    {
+    {      
+      link: "polymorph_wizard",
       name: "spell_polymorph_wizard",
       details: "spell_polymorph_wizard_details",
       expanded: "spell_polymorph_wizard_expanded",
@@ -13166,7 +13463,8 @@ export default {
 
   jump_warlock: [
     {
-      //1
+      //1      
+      link: "jump_warlock",
       name: "spell_jump_warlock",
       details: "spell_jump_warlock_details",
       expanded: "spell_jump_warlock_expanded",
@@ -13210,7 +13508,8 @@ export default {
 
   levitate_warlock: [
     {
-      //2
+      //2      
+      link: "levitate_warlock",
       name: "spell_levitate_warlock",
       details: "spell_levitate_warlock_details",
       expanded: "spell_levitate_warlock_expanded",
@@ -13256,7 +13555,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "slow_warlock",
       name: "spell_slow_warlock",
       details: "spell_slow_warlock_details",
       expanded: "spell_slow_warlock_expanded",
@@ -13302,7 +13602,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "animate_dead_wizard",
       name: "spell_animate_dead_wizard",
       details: "spell_animate_dead_details",
       expanded: "spell_animate_dead_expanded",
@@ -13355,7 +13656,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "conjure_elemental_warlock",
       name: "spell_conjure_elemental_warlock",
       details: "spell_conjure_elemental_warlock_details",
       expanded: "spell_conjure_elemental_warlock_expanded",
@@ -13402,7 +13704,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "bestow_curse_warlock",
       name: "spell_bestow_curse_warlock",
       details: "spell_bestow_curse_warlock_details",
       expanded: "spell_bestow_curse_warlock_expanded",
@@ -13450,7 +13753,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "compulsion_warlock",
       name: "spell_compulsion_warlock",
       details: "spell_compulsion_warlock_details",
       expanded: "spell_compulsion_warlock_expanded",
@@ -13493,7 +13797,8 @@ export default {
   ],
 
   help_of_talisman_warlock: [
-    {
+    {      
+      link: "help_of_talisman_warlock",
       name: "spell_help_of_talisman_warlock",
       details: "spell_help_of_talisman_warlock_details",
       expanded: "spell_help_of_talisman_warlock_expanded",
@@ -13537,7 +13842,8 @@ export default {
   ],
 
   create_talisman_warlock: [
-    {
+    {      
+      link: "create_talisman_warlock",
       name: "spell_create_talisman_warlock",
       details: "spell_create_talisman_warlock_details",
       expanded: "spell_create_talisman_warlock_expanded",
@@ -13586,7 +13892,8 @@ export default {
   acid_splash: [
     {
       //0
-
+      
+      link: "acid_splash",
       name: "spell_acid_splash",
       details: "spell_acid_splash_details",
       expanded: "spell_acid_splash_expanded",
@@ -13629,7 +13936,8 @@ export default {
 
   blade_ward: [
     {
-      //0
+      //0      
+      link: "blade_ward",
       name: "spell_blade_ward",
       details: "spell_blade_ward_details",
       expanded: "spell_blade_ward_expanded",
@@ -13673,7 +13981,8 @@ export default {
   chill_touch: [
     {
       //0
-
+      
+      link: "chill_touch",
       name: "spell_chill_touch",
       details: "spell_chill_touch_details",
       expanded: "spell_chill_touch_expanded",
@@ -13715,7 +14024,8 @@ export default {
   ],
 
   dancing_lights: [
-    {
+    {      
+      link: "dancing_lights",
       name: "spell_dancing_lights",
       details: "spell_dancing_lights_details",
       expanded: "spell_dancing_lights_expanded", // полное описание
@@ -13759,7 +14069,8 @@ export default {
 
   druidcraft: [
     {
-      //0
+      //0      
+      link: "druidcraft",
       name: "spell_druidcraft",
       details: "spell_druidcraft_details",
       expanded: "spell_druidcraft_expanded",
@@ -13803,7 +14114,8 @@ export default {
   eldritch_blast: [
     {
       //0
-
+      
+      link: "eldritch_blast",
       name: "spell_eldritch_blast",
       details: "spell_eldritch_blast_details",
       expanded: "spell_eldritch_blast_expanded",
@@ -13847,7 +14159,8 @@ export default {
   fire_bolt: [
     {
       //0
-
+      
+      link: "fire_bolt",
       name: "spell_fire_bolt",
       details: "spell_fire_bolt_details",
       expanded: "spell_fire_bolt_expanded",
@@ -13891,7 +14204,8 @@ export default {
   friends: [
     {
       //0
-
+      
+      link: "friends",
       name: "spell_friends",
       details: "spell_friends_details",
       expanded: "spell_friends_expanded",
@@ -13934,7 +14248,8 @@ export default {
 
   guidance: [
     {
-      //0
+      //0      
+      link: "guidance",
       name: "spell_guidance",
       details: "spell_guidance_details",
       expanded: "spell_guidance_expanded",
@@ -13978,7 +14293,8 @@ export default {
   light: [
     {
       //0
-
+      
+      link: "light",
       name: "spell_light",
       details: "spell_light_details",
       expanded: "spell_light_expanded",
@@ -14022,7 +14338,8 @@ export default {
   mage_hand: [
     {
       //0
-
+      
+      link: "mage_hand",
       name: "spell_mage_hand",
       details: "spell_mage_hand_details",
       expanded: "spell_mage_hand_expanded",
@@ -14065,7 +14382,8 @@ export default {
 
   mending: [
     {
-      //0
+      //0      
+      link: "mending",
       name: "spell_mending",
       details: "spell_mending_details",
       expanded: "spell_mending_expanded",
@@ -14108,7 +14426,8 @@ export default {
 
   message: [
     {
-      //0
+      //0      
+      link: "message",
       name: "spell_message",
       details: "spell_message_details",
       expanded: "spell_message_expanded",
@@ -14152,7 +14471,8 @@ export default {
   poison_spray: [
     {
       //0
-
+      
+      link: "poison_spray",
       name: "spell_poison_spray",
       details: "spell_poison_spray_details",
       expanded: "spell_poison_spray_expanded",
@@ -14195,7 +14515,8 @@ export default {
 
   prestidigitation: [
     {
-      //0
+      //0      
+      link: "prestidigitation",
       name: "spell_prestidigitation",
       details: "spell_prestidigitation_details",
       expanded: "spell_prestidigitation_expanded",
@@ -14238,7 +14559,8 @@ export default {
 
   produce_flame: [
     {
-      //0
+      //0      
+      link: "produce_flame",
       name: "spell_produce_flame",
       details: "spell_produce_flame_details",
       expanded: "spell_produce_flame_expanded",
@@ -14281,7 +14603,8 @@ export default {
 
   resistance: [
     {
-      //0
+      //0      
+      link: "resistance",
       name: "spell_resistance",
       details: "spell_resistance_details",
       expanded: "spell_resistance_expanded",
@@ -14325,7 +14648,8 @@ export default {
   ray_of_frost: [
     {
       //0
-
+      
+      link: "ray_of_frost",
       name: "spell_ray_of_frost",
       details: "spell_ray_of_frost_details",
       expanded: "spell_ray_of_frost_expanded",
@@ -14369,7 +14693,8 @@ export default {
   sacred_flame: [
     {
       //0
-
+      
+      link: "sacred_flame",
       name: "spell_sacred_flame",
       details: "spell_sacred_flame_details",
       expanded: "spell_sacred_flame_expanded",
@@ -14412,7 +14737,8 @@ export default {
 
   shillelagh: [
     {
-      //0
+      //0      
+      link: "shillelagh",
       name: "spell_shillelagh",
       details: "spell_shillelagh_details",
       expanded: "spell_shillelagh_expanded",
@@ -14456,7 +14782,8 @@ export default {
   shocking_grasp: [
     {
       //0
-
+      
+      link: "shocking_grasp",
       name: "spell_shocking_grasp",
       details: "spell_shocking_grasp_details",
       expanded: "spell_shocking_grasp_expanded",
@@ -14498,7 +14825,8 @@ export default {
   ],
 
   minor_illusion: [
-    {
+    {      
+      link: "minor_illusion",
       name: "spell_minor_illusion",
       details: "spell_minor_illusion_details",
       expanded: "spell_minor_illusion_expanded", // полное описание
@@ -14543,7 +14871,8 @@ export default {
 
   spare_the_dying: [
     {
-      //0
+      //0      
+      link: "spare_the_dying",
       name: "spell_spare_the_dying",
       details: "spell_spare_the_dying_details",
       expanded: "spell_spare_the_dying_expanded",
@@ -14586,7 +14915,8 @@ export default {
 
   thaumaturgy: [
     {
-      //0
+      //0      
+      link: "thaumaturgy",
       name: "spell_thaumaturgy",
       details: "spell_thaumaturgy_details",
       expanded: "spell_thaumaturgy_expanded",
@@ -14629,7 +14959,8 @@ export default {
 
   true_strike: [
     {
-      //0
+      //0      
+      link: "true_strike",
       name: "spell_true_strike",
       details: "spell_true_strike_details",
       expanded: "spell_true_strike_expanded",
@@ -14673,7 +15004,8 @@ export default {
   vicious_mockery: [
     {
       //0
-
+      
+      link: "vicious_mockery",
       name: "spell_vicious_mockery",
       details: "spell_vicious_mockery_details",
       expanded: "spell_vicious_mockery_expanded",
@@ -14716,7 +15048,8 @@ export default {
 
   thorn_whip: [
     {
-      //0
+      //0      
+      link: "thorn_whip",
       name: "spell_thorn_whip",
       details: "spell_thorn_whip_details",
       expanded: "spell_thorn_whip_expanded",
@@ -14766,7 +15099,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "hellish_rebuke",
       name: "spell_hellish_rebuke",
       details: "spell_hellish_rebuke_details",
       expanded: "spell_hellish_rebuke_expanded",
@@ -14861,7 +15195,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "silent_image",
       name: "spell_silent_image",
       details: "spell_silent_image_details",
       expanded: "spell_silent_image_expanded",
@@ -14907,7 +15242,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "bless",
       name: "spell_bless",
       details: "spell_bless_details",
       expanded: "spell_bless_expanded",
@@ -14963,7 +15299,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "divine_favor",
       name: "spell_divine_favor",
       details: "spell_divine_favor_details",
       expanded: "spell_divine_favor_expanded",
@@ -15011,7 +15348,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "witch_bolt",
       name: "spell_witch_bolt",
       details: "spell_witch_bolt_details",
       expanded: "spell_witch_bolt_expanded",
@@ -15066,7 +15404,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "thunderwave",
       name: "spell_thunderwave",
       details: "spell_thunderwave_details",
       expanded: "spell_thunderwave_expanded",
@@ -15121,7 +15460,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "magic_missile",
       name: "spell_magic_missile",
       details: "spell_magic_missile_details",
       expanded: "spell_magic_missile_expanded",
@@ -15176,7 +15516,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "compelled_duel",
       name: "spell_compelled_duel",
       details: "spell_compelled_duel_details",
       expanded: "spell_compelled_duel_expanded",
@@ -15223,7 +15564,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "heroism",
       name: "spell_heroism",
       details: "spell_heroism_details",
       expanded: "spell_heroism_expanded",
@@ -15280,7 +15622,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "wrathful_smite",
       name: "spell_wrathful_smite",
       details: "spell_wrathful_smite_details",
       expanded: "spell_wrathful_smite_expanded",
@@ -15327,7 +15670,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "hail_of_thorns",
       name: "spell_hail_of_thorns",
       details: "spell_hail_of_thorns_details",
       expanded: "spell_hail_of_thorns_expanded",
@@ -15379,7 +15723,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "thunderous_smite",
       name: "spell_thunderous_smite",
       details: "spell_thunderous_smite_details",
       expanded: "spell_thunderous_smite_expanded",
@@ -15426,7 +15771,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "dissonant_whispers",
       name: "spell_dissonant_whispers",
       details: "spell_dissonant_whispers_details",
       expanded: "spell_dissonant_whispers_expanded",
@@ -15481,7 +15827,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "armor_of_agathys",
       name: "spell_armor_of_agathys",
       details: "spell_armor_of_agathys_details",
       expanded: "spell_armor_of_agathys_expanded",
@@ -15536,7 +15883,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "mage_armor",
       name: "spell_mage_armor",
       details: "spell_mage_armor_details",
       expanded: "spell_mage_armor_expanded",
@@ -15583,7 +15931,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "animal_friendship",
       name: "spell_animal_friendship",
       details: "spell_animal_friendship_details",
       expanded: "spell_animal_friendship_expanded",
@@ -15638,7 +15987,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "tashas_hideous_laughter",
       name: "spell_tashas_hideous_laughter",
       details: "spell_tashas_hideous_laughter_details",
       expanded: "spell_tashas_hideous_laughter_expanded",
@@ -15685,7 +16035,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "protection_from_evil_and_good",
       name: "spell_protection_from_evil_and_good",
       details: "spell_protection_from_evil_and_good_details",
       expanded: "spell_protection_from_evil_and_good_expanded",
@@ -15732,7 +16083,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "healing_word",
       name: "spell_healing_word",
       details: "spell_healing_word_details",
       expanded: "spell_healing_word_expanded",
@@ -15792,7 +16144,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "cure_wounds",
       name: "spell_cure_wounds",
       details: "spell_cure_wounds_details",
       expanded: "spell_cure_wounds_expanded",
@@ -15847,7 +16200,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "ray_of_sickness",
       name: "spell_ray_of_sickness",
       details: "spell_ray_of_sickness_details",
       expanded: "spell_ray_of_sickness_expanded",
@@ -15902,7 +16256,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "disguise_self",
       name: "spell_disguise_self",
       details: "spell_disguise_self_details",
       expanded: "spell_disguise_self_expanded",
@@ -15949,7 +16304,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "hunters_mark",
       name: "spell_hunters_mark",
       details: "spell_hunters_mark_details",
       expanded: "spell_hunters_mark_expanded",
@@ -16004,7 +16360,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "inflict_wounds",
       name: "spell_inflict_wounds",
       details: "spell_inflict_wounds_details",
       expanded: "spell_inflict_wounds_expanded",
@@ -16059,7 +16416,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "guiding_bolt",
       name: "spell_guiding_bolt",
       details: "spell_guiding_bolt_details",
       expanded: "spell_guiding_bolt_expanded",
@@ -16114,7 +16472,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "illusory_script",
       name: "spell_illusory_script",
       details: "spell_illusory_script_details",
       expanded: "spell_illusory_script_expanded",
@@ -16162,7 +16521,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "unseen_servant",
       name: "spell_unseen_servant",
       details: "spell_unseen_servant_details",
       expanded: "spell_unseen_servant_expanded",
@@ -16210,7 +16570,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "detect_poison_and_disease",
       name: "spell_detect_poison_and_disease",
       details: "spell_detect_poison_and_disease_details",
       expanded: "spell_detect_poison_and_disease_expanded",
@@ -16258,7 +16619,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "detect_evil_and_good",
       name: "spell_detect_evil_and_good",
       details: "spell_detect_evil_and_good_details",
       expanded: "spell_detect_evil_and_good_expanded",
@@ -16305,7 +16667,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "detect_magic",
       name: "spell_detect_magic",
       details: "spell_detect_magic_details",
       expanded: "spell_detect_magic_expanded",
@@ -16353,7 +16716,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "burning_hands",
       name: "spell_burning_hands",
       details: "spell_burning_hands_details",
       expanded: "spell_burning_hands_expanded",
@@ -16405,7 +16769,8 @@ export default {
 
   faerie_fire: [
     {},
-    {
+    {      
+      link: "faerie_fire",
       name: "spell_faerie_fire",
       details: "spell_faerie_fire_0_details",
       expanded: "spell_faerie_fire_0_expanded", // полное описание
@@ -16452,7 +16817,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "identify",
       name: "spell_identify",
       details: "spell_identify_details",
       expanded: "spell_identify_expanded",
@@ -16499,7 +16865,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "entangle",
       name: "spell_entangle",
       details: "spell_entangle_details",
       expanded: "spell_entangle_expanded",
@@ -16546,7 +16913,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "ensnaring_strike",
       name: "spell_ensnaring_strike",
       details: "spell_ensnaring_strike_details",
       expanded: "spell_ensnaring_strike_expanded",
@@ -16601,7 +16969,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "charm_person",
       name: "spell_charm_person",
       details: "spell_charm_person_details",
       expanded: "spell_charm_person_expanded",
@@ -16656,7 +17025,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "purify_food_and_drink",
       name: "spell_purify_food_and_drink",
       details: "spell_purify_food_and_drink_details",
       expanded: "spell_purify_food_and_drink_expanded",
@@ -16704,7 +17074,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "feather_fall",
       name: "spell_feather_fall",
       details: "spell_feather_fall_details",
       expanded: "spell_feather_fall_expanded",
@@ -16751,7 +17122,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "searing_smite",
       name: "spell_searing_smite",
       details: "spell_searing_smite_details",
       expanded: "spell_searing_smite_expanded",
@@ -16806,7 +17178,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "find_familiar",
       name: "spell_find_familiar",
       details: "spell_find_familiar_details",
       expanded: "spell_find_familiar_expanded",
@@ -16853,7 +17226,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "comprehend_languages",
       name: "spell_comprehend_languages",
       details: "spell_comprehend_languages_details",
       expanded: "spell_comprehend_languages_expanded",
@@ -16901,7 +17275,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "bane",
       name: "spell_bane",
       details: "spell_bane_details",
       expanded: "spell_bane_expanded",
@@ -16956,7 +17331,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "expeditious_retreat",
       name: "spell_expeditious_retreat",
       details: "spell_expeditious_retreat_details",
       expanded: "spell_expeditious_retreat_expanded",
@@ -17003,7 +17379,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "command",
       name: "spell_command",
       details: "spell_command_details",
       expanded: "spell_command_expanded",
@@ -17058,7 +17435,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "jump",
       name: "spell_jump",
       details: "spell_jump_details",
       expanded: "spell_jump_expanded",
@@ -17105,7 +17483,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "false_life",
       name: "spell_false_life",
       details: "spell_false_life_details",
       expanded: "spell_false_life_expanded",
@@ -17161,7 +17540,8 @@ export default {
 
   speak_with_animals: [
     {},
-    {
+    {      
+      link: "speak_with_animals",
       name: "spell_speak_with_animals",
       details: "spell_speak_with_animals_details",
       expanded: "spell_speak_with_animals_expanded",
@@ -17206,7 +17586,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "arms_of_hadar",
       name: "spell_arms_of_hadar",
       details: "spell_arms_of_hadar_details",
       expanded: "spell_arms_of_hadar_expanded",
@@ -17261,7 +17642,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "color_spray",
       name: "spell_color_spray",
       details: "spell_color_spray_details",
       expanded: "spell_color_spray_expanded",
@@ -17316,7 +17698,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "hex",
       name: "spell_hex",
       details: "spell_hex_details",
       expanded: "spell_hex_expanded",
@@ -17371,7 +17754,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "alarm",
       name: "spell_alarm",
       details: "spell_alarm_details",
       expanded: "spell_alarm_expanded",
@@ -17418,7 +17802,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "grease",
       name: "spell_grease",
       details: "spell_grease_details",
       expanded: "spell_grease_expanded",
@@ -17465,7 +17850,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "longstrider",
       name: "spell_longstrider",
       details: "spell_longstrider_details",
       expanded: "spell_longstrider_expanded",
@@ -17520,7 +17906,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "create_or_destroy_water",
       name: "spell_create_or_destroy_water",
       details: "spell_create_or_destroy_water_details",
       expanded: "spell_create_or_destroy_water_expanded",
@@ -17591,7 +17978,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "tensers_floating_disk",
       name: "spell_tensers_floating_disk",
       details: "spell_tensers_floating_disk_details",
       expanded: "spell_tensers_floating_disk_expanded",
@@ -17639,7 +18027,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "fog_cloud",
       name: "spell_fog_cloud",
       details: "spell_fog_cloud_details",
       expanded: "spell_fog_cloud_expanded",
@@ -17710,7 +18099,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "sanctuary",
       name: "spell_sanctuary",
       details: "spell_sanctuary_details",
       expanded: "spell_sanctuary_expanded",
@@ -17757,7 +18147,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "sleep",
       name: "spell_sleep",
       details: "spell_sleep_details",
       expanded: "spell_sleep_expanded",
@@ -17812,7 +18203,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "chromatic_orb",
       name: "spell_chromatic_orb",
       details: "spell_chromatic_orb_details",
       expanded: "spell_chromatic_orb_expanded",
@@ -17867,7 +18259,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "goodberry",
       name: "spell_goodberry",
       details: "spell_goodberry_details",
       expanded: "spell_goodberry_expanded",
@@ -17914,7 +18307,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "shield",
       name: "spell_shield",
       details: "spell_shield_details",
       expanded: "spell_shield_expanded",
@@ -17961,7 +18355,8 @@ export default {
       //0
     },
     {
-      //1
+      //1      
+      link: "shield_of_faith",
       name: "spell_shield_of_faith",
       details: "spell_shield_of_faith_details",
       expanded: "spell_shield_of_faith_expanded",
@@ -18015,7 +18410,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "pass_without_trace",
       name: "spell_pass_without_trace",
       details: "spell_pass_without_trace_details",
       expanded: "spell_pass_without_trace_expanded",
@@ -18065,7 +18461,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "spiritual_weapon",
       name: "spell_spiritual_weapon",
       details: "spell_spiritual_weapon_details",
       expanded: "spell_spiritual_weapon_expanded",
@@ -18122,7 +18519,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "continual_flame",
       name: "spell_continual_flame",
       details: "spell_continual_flame_details",
       expanded: "spell_continual_flame_expanded",
@@ -18172,7 +18570,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "see_invisibility",
       name: "spell_see_invisibility",
       details: "spell_see_invisibility_details",
       expanded: "spell_see_invisibility_expanded",
@@ -18222,7 +18621,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "suggestion",
       name: "spell_suggestion",
       details: "spell_suggestion_details",
       expanded: "spell_suggestion_expanded",
@@ -18272,7 +18672,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "magic_mouth",
       name: "spell_magic_mouth",
       details: "spell_magic_mouth_details",
       expanded: "spell_magic_mouth_expanded",
@@ -18322,7 +18723,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "arcane_lock",
       name: "spell_arcane_lock",
       details: "spell_arcane_lock_details",
       expanded: "spell_arcane_lock_expanded",
@@ -18372,7 +18774,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "phantasmal_force",
       name: "spell_phantasmal_force",
       details: "spell_phantasmal_force_details",
       expanded: "spell_phantasmal_force_expanded",
@@ -18422,7 +18825,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "augury",
       name: "spell_augury",
       details: "spell_augury_details",
       expanded: "spell_augury_expanded",
@@ -18472,7 +18876,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "blindness_deafness",
       name: "spell_blindness_deafness",
       details: "spell_blindness_deafness_details",
       expanded: "spell_blindness_deafness_expanded",
@@ -18529,7 +18934,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "flame_blade",
       name: "spell_flame_blade",
       details: "spell_flame_blade_details",
       expanded: "spell_flame_blade_expanded",
@@ -18585,7 +18991,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "shatter",
       name: "spell_shatter",
       details: "spell_shatter_details",
       expanded: "spell_shatter_expanded",
@@ -18642,7 +19049,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "barkskin",
       name: "spell_barkskin",
       details: "spell_barkskin_details",
       expanded: "spell_barkskin_expanded",
@@ -18687,7 +19095,8 @@ export default {
   beast_sense: [
     {},
     {},
-    {
+    {      
+      link: "beast_sense",
       name: "spell_beast_sense",
       details: "spell_beast_sense_details",
       expanded: "spell_beast_sense_expanded",
@@ -18735,7 +19144,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "cordon_of_arrows",
       name: "spell_cordon_of_arrows",
       details: "spell_cordon_of_arrows_details",
       expanded: "spell_cordon_of_arrows_expanded",
@@ -18793,7 +19203,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "protection_from_poison",
       name: "spell_protection_from_poison",
       details: "spell_protection_from_poison_details",
       expanded: "spell_protection_from_poison_expanded",
@@ -18843,7 +19254,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "branding_smite",
       name: "spell_branding_smite",
       details: "spell_branding_smite_details",
       expanded: "spell_branding_smite_expanded",
@@ -18900,7 +19312,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "crown_of_madness",
       name: "spell_crown_of_madness",
       details: "spell_crown_of_madness_details",
       expanded: "spell_crown_of_madness_expanded",
@@ -18950,7 +19363,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "levitate",
       name: "spell_levitate",
       details: "spell_levitate_details",
       expanded: "spell_levitate_expanded",
@@ -19000,7 +19414,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "moonbeam",
       name: "spell_moonbeam",
       details: "spell_moonbeam_details",
       expanded: "spell_moonbeam_expanded",
@@ -19057,7 +19472,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "ray_of_enfeeblement",
       name: "spell_ray_of_enfeeblement",
       details: "spell_ray_of_enfeeblement_details",
       expanded: "spell_ray_of_enfeeblement_expanded",
@@ -19107,7 +19523,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "magic_weapon",
       name: "spell_magic_weapon",
       details: "spell_magic_weapon_details",
       expanded: "spell_magic_weapon_expanded",
@@ -19161,7 +19578,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "lesser_restoration",
       name: "spell_lesser_restoration",
       details: "spell_lesser_restoration_details",
       expanded: "spell_lesser_restoration_expanded",
@@ -19211,7 +19629,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "melfs_acid_arrow",
       name: "spell_melfs_acid_arrow",
       details: "spell_melfs_acid_arrow_details",
       expanded: "spell_melfs_acid_arrow_expanded",
@@ -19268,7 +19687,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "prayer_of_healing",
       name: "spell_prayer_of_healing",
       details: "spell_prayer_of_healing_details",
       expanded: "spell_prayer_of_healing_expanded",
@@ -19345,7 +19765,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "invisibility",
       name: "spell_invisibility",
       details: "spell_invisibility_details",
       expanded: "spell_invisibility_expanded",
@@ -19402,7 +19823,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "gentle_repose",
       name: "spell_gentle_repose",
       details: "spell_gentle_repose_details",
       expanded: "spell_gentle_repose_expanded",
@@ -19460,7 +19882,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "nystuls_magic_aura",
       name: "spell_nystuls_magic_aura",
       details: "spell_nystuls_magic_aura_details",
       expanded: "spell_nystuls_magic_aura_expanded",
@@ -19510,7 +19933,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "cloud_of_daggers",
       name: "spell_cloud_of_daggers",
       details: "spell_cloud_of_daggers_details",
       expanded: "spell_cloud_of_daggers_expanded",
@@ -19567,7 +19991,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "zone_of_truth",
       name: "spell_zone_of_truth",
       details: "spell_zone_of_truth_details",
       expanded: "spell_zone_of_truth_expanded",
@@ -19617,7 +20042,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "detect_thoughts",
       name: "spell_detect_thoughts",
       details: "spell_detect_thoughts_details",
       expanded: "spell_detect_thoughts_expanded",
@@ -19667,7 +20093,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "knock",
       name: "spell_knock",
       details: "spell_knock_details",
       expanded: "spell_knock_expanded",
@@ -19717,7 +20144,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "mirror_image",
       name: "spell_mirror_image",
       details: "spell_mirror_image_details",
       expanded: "spell_mirror_image_expanded",
@@ -19767,7 +20195,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "warding_bond",
       name: "spell_warding_bond",
       details: "spell_warding_bond_details",
       expanded: "spell_warding_bond_expanded",
@@ -19817,7 +20246,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "scorching_ray",
       name: "spell_scorching_ray",
       details: "spell_scorching_ray_details",
       expanded: "spell_scorching_ray_expanded",
@@ -19876,7 +20306,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "spider_climb",
       name: "spell_spider_climb",
       details: "spell_spider_climb_details",
       expanded: "spell_spider_climb_expanded",
@@ -19926,7 +20357,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "web",
       name: "spell_web",
       details: "spell_web_details",
       expanded: "spell_web_expanded",
@@ -19976,7 +20408,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "aid",
       name: "spell_aid",
       details: "spell_aid_details",
       expanded: "spell_aid_expanded",
@@ -20033,7 +20466,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "locate_animals_or_plants",
       name: "spell_locate_animals_or_plants",
       details: "spell_locate_animals_or_plants_details",
       expanded: "spell_locate_animals_or_plants_expanded",
@@ -20084,7 +20518,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "find_traps",
       name: "spell_find_traps",
       details: "spell_find_traps_details",
       expanded: "spell_find_traps_expanded",
@@ -20134,7 +20569,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "locate_object",
       name: "spell_locate_object",
       details: "spell_locate_object_details",
       expanded: "spell_locate_object_expanded",
@@ -20184,7 +20620,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "find_steed",
       name: "spell_find_steed",
       details: "spell_find_steed_details",
       expanded: "spell_find_steed_expanded",
@@ -20234,7 +20671,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "gust_of_wind",
       name: "spell_gust_of_wind",
       details: "spell_gust_of_wind_details",
       expanded: "spell_gust_of_wind_expanded",
@@ -20284,7 +20722,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "animal_messenger",
       name: "spell_animal_messenger",
       details: "spell_animal_messenger_details",
       expanded: "spell_animal_messenger_expanded",
@@ -20356,7 +20795,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "flaming_sphere",
       name: "spell_flaming_sphere",
       details: "spell_flaming_sphere_details",
       expanded: "spell_flaming_sphere_expanded",
@@ -20413,7 +20853,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "blur",
       name: "spell_blur",
       details: "spell_blur_details",
       expanded: "spell_blur_expanded",
@@ -20463,7 +20904,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "heat_metal",
       name: "spell_heat_metal",
       details: "spell_heat_metal_details",
       expanded: "spell_heat_metal_expanded",
@@ -20520,7 +20962,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "enthrall",
       name: "spell_enthrall",
       details: "spell_enthrall_details",
       expanded: "spell_enthrall_expanded",
@@ -20570,7 +21013,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "alter_self",
       name: "spell_alter_self",
       details: "spell_alter_self_details",
       expanded: "spell_alter_self_expanded",
@@ -20620,7 +21064,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "darkvision",
       name: "spell_darkvision",
       details: "spell_darkvision_details",
       expanded: "spell_darkvision_expanded",
@@ -20670,7 +21115,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "silence",
       name: "spell_silence",
       details: "spell_silence_details",
       expanded: "spell_silence_expanded",
@@ -20721,7 +21167,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "rope_trick",
       name: "spell_rope_trick",
       details: "spell_rope_trick_details",
       expanded: "spell_rope_trick_expanded",
@@ -20771,7 +21218,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "misty_step",
       name: "spell_misty_step",
       details: "spell_misty_step_details",
       expanded: "spell_misty_step_expanded",
@@ -20816,7 +21264,8 @@ export default {
   darkness: [
     {},
     {},
-    {
+    {      
+      link: "darkness",
       name: "spell_darkness",
       details: "spell_darkness_details",
       expanded: "spell_darkness_expanded",
@@ -20865,7 +21314,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "enlarge",
       name: "spell_enlarge",
       details: "spell_enlarge_details",
       expanded: "spell_enlarge_expanded",
@@ -20915,7 +21365,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "hold_person",
       name: "spell_hold_person",
       details: "spell_hold_person_details",
       expanded: "spell_hold_person_expanded",
@@ -20972,7 +21423,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "enhance_ability",
       name: "spell_enhance_ability",
       details: "spell_enhance_ability_details",
       expanded: "spell_enhance_ability_expanded",
@@ -21037,7 +21489,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "calm_emotions",
       name: "spell_calm_emotions",
       details: "spell_calm_emotions_details",
       expanded: "spell_calm_emotions_expanded",
@@ -21087,7 +21540,8 @@ export default {
       //1
     },
     {
-      //2
+      //2      
+      link: "spike_growth",
       name: "spell_spike_growth",
       details: "spell_spike_growth_details",
       expanded: "spell_spike_growth_expanded",
@@ -21135,7 +21589,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "aura_of_vitality",
       name: "spell_aura_of_vitality",
       details: "spell_aura_of_vitality_details",
       expanded: "spell_aura_of_vitality_expanded",
@@ -21179,7 +21634,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "animate_dead",
       name: "spell_animate_dead",
       details: "spell_animate_dead_details",
       expanded: "spell_animate_dead_expanded",
@@ -21231,7 +21687,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "beacon_of_hope",
       name: "spell_beacon_of_hope",
       details: "spell_beacon_of_hope_details",
       expanded: "spell_beacon_of_hope_expanded",
@@ -21276,7 +21733,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "bestow_curse",
       name: "spell_bestow_curse",
       details: "spell_bestow_curse_details",
       expanded: "spell_bestow_curse_expanded",
@@ -21327,7 +21785,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "blink",
       name: "spell_blink",
       details: "spell_blink_details",
       expanded: "spell_blink_expanded",
@@ -21372,7 +21831,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "blinding_smite",
       name: "spell_blinding_smite",
       details: "spell_blinding_smite_details",
       expanded: "spell_blinding_smite_expanded",
@@ -21417,7 +21877,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "call_lightning",
       name: "spell_call_lightning",
       details: "spell_call_lightning_details",
       expanded: "spell_call_lightning_expanded",
@@ -21469,7 +21930,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "clairvoyance",
       name: "spell_clairvoyance",
       details: "spell_clairvoyance_details",
       expanded: "spell_clairvoyance_expanded",
@@ -21515,7 +21977,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "conjure_animals",
       name: "spell_conjure_animals",
       details: "spell_conjure_animals_details",
       expanded: "spell_conjure_animals_expanded",
@@ -21567,7 +22030,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "conjure_barrage",
       name: "spell_conjure_barrage",
       details: "spell_conjure_barrage_details",
       expanded: "spell_conjure_barrage_expanded",
@@ -21613,7 +22077,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "counterspell",
       name: "spell_counterspell",
       details: "spell_counterspell_details",
       expanded: "spell_counterspell_expanded",
@@ -21665,7 +22130,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "create_food_and_water",
       name: "spell_create_food_and_water",
       details: "spell_create_food_and_water_details",
       expanded: "spell_create_food_and_water_expanded",
@@ -21710,7 +22176,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "crusaders_mantle",
       name: "spell_crusaders_mantle",
       details: "spell_crusaders_mantle_details",
       expanded: "spell_crusaders_mantle_expanded",
@@ -21756,7 +22223,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "daylight",
       name: "spell_daylight",
       details: "spell_daylight_details",
       expanded: "spell_daylight_expanded",
@@ -21802,7 +22270,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "dispel_magic",
       name: "spell_dispel_magic",
       details: "spell_dispel_magic_details",
       expanded: "spell_dispel_magic_expanded",
@@ -21853,7 +22322,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "elemental_weapon",
       name: "spell_elemental_weapon",
       details: "spell_elemental_weapon_details",
       expanded: "spell_elemental_weapon_expanded",
@@ -21903,7 +22373,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "fear",
       name: "spell_fear",
       details: "spell_fear_details",
       expanded: "spell_fear_expanded",
@@ -21948,7 +22419,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "feign_death",
       name: "spell_feign_death",
       details: "spell_feign_death_details",
       expanded: "spell_feign_death_expanded",
@@ -21994,7 +22466,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "fireball",
       name: "spell_fireball",
       details: "spell_fireball_details",
       expanded: "spell_fireball_expanded",
@@ -22046,7 +22519,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "fly",
       name: "spell_fly",
       details: "spell_fly_details",
       expanded: "spell_fly_expanded",
@@ -22097,7 +22571,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "gaseous_form",
       name: "spell_gaseous_form",
       details: "spell_gaseous_form_details",
       expanded: "spell_gaseous_form_expanded",
@@ -22142,7 +22617,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "glyph_of_warding",
       name: "spell_glyph_of_warding",
       details: "spell_glyph_of_warding_details",
       expanded: "spell_glyph_of_warding_expanded",
@@ -22193,7 +22669,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "haste",
       name: "spell_haste",
       details: "spell_haste_details",
       expanded: "spell_haste_expanded",
@@ -22238,7 +22715,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "hipnotic_pattern",
       name: "spell_hipnotic_pattern",
       details: "spell_hipnotic_pattern_details",
       expanded: "spell_hipnotic_pattern_expanded",
@@ -22284,7 +22762,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "hunger_of_hadar",
       name: "spell_hunger_of_hadar",
       details: "spell_hunger_of_hadar_details",
       expanded: "spell_hunger_of_hadar_expanded",
@@ -22339,7 +22818,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "leomunds_tiny_hut",
       name: "spell_leomunds_tiny_hut",
       details: "spell_leomunds_tiny_hut_details",
       expanded: "spell_leomunds_tiny_hut_expanded",
@@ -22384,7 +22864,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "lightning_arrow",
       name: "spell_lightning_arrow",
       details: "spell_lightning_arrow_details",
       expanded: "spell_lightning_arrow_expanded",
@@ -22436,7 +22917,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "lightning_bolt",
       name: "spell_lightning_bolt",
       details: "spell_lightning_bolt_details",
       expanded: "spell_lightning_bolt_expanded",
@@ -22488,7 +22970,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "magic_circle",
       name: "spell_magic_circle",
       details: "spell_magic_circle_details",
       expanded: "spell_magic_circle_expanded",
@@ -22539,7 +23022,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "mass_healing_word",
       name: "spell_mass_healing_word",
       details: "spell_mass_healing_word_details",
       expanded: "spell_mass_healing_word_expanded",
@@ -22590,7 +23074,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "meld_into_stone",
       name: "spell_meld_into_stone",
       details: "spell_meld_into_stone_details",
       expanded: "spell_meld_into_stone_expanded",
@@ -22635,7 +23120,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "major_image",
       name: "spell_major_image",
       details: "spell_major_image_details",
       expanded: "spell_major_image_expanded",
@@ -22684,7 +23170,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "nondetection",
       name: "spell_nondetection",
       details: "spell_nondetection_details",
       expanded: "spell_nondetection_expanded",
@@ -22729,7 +23216,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "phantom_steed",
       name: "spell_phantom_steed",
       details: "spell_phantom_steed_details",
       expanded: "spell_phantom_steed_expanded",
@@ -22775,7 +23263,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "plant_growth",
       name: "spell_plant_growth",
       details: "spell_plant_growth_details",
       expanded: "spell_plant_growth_expanded",
@@ -22820,7 +23309,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "protection_from_energy",
       name: "spell_protection_from_energy",
       details: "spell_protection_from_energy_details",
       expanded: "spell_protection_from_energy_expanded",
@@ -22865,7 +23355,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "remove_curse",
       name: "spell_remove_curse",
       details: "spell_remove_curse_details",
       expanded: "spell_remove_curse_expanded",
@@ -22911,7 +23402,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "revivify",
       name: "spell_revivify",
       details: "spell_revivify_details",
       expanded: "spell_revivify_expanded",
@@ -22956,7 +23448,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "sending",
       name: "spell_sending",
       details: "spell_sending_details",
       expanded: "spell_sending_expanded",
@@ -23001,7 +23494,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "sleet_storm",
       name: "spell_sleet_storm",
       details: "spell_sleet_storm_details",
       expanded: "spell_sleet_storm_expanded",
@@ -23047,7 +23541,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "slow",
       name: "spell_slow",
       details: "spell_slow_details",
       expanded: "spell_slow_expanded",
@@ -23093,7 +23588,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "speak_with_dead",
       name: "spell_speak_with_dead",
       details: "spell_speak_with_dead_details",
       expanded: "spell_speak_with_dead_expanded",
@@ -23138,7 +23634,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "speak_with_plants",
       name: "spell_speak_with_plants",
       details: "spell_speak_with_plants_details",
       expanded: "spell_speak_with_plants_expanded",
@@ -23183,7 +23680,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "spirit_guardians",
       name: "spell_spirit_guardians",
       details: "spell_spirit_guardians_details",
       expanded: "spell_spirit_guardians_expanded",
@@ -23235,7 +23733,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "stinking_cloud",
       name: "spell_stinking_cloud",
       details: "spell_stinking_cloud_details",
       expanded: "spell_stinking_cloud_expanded",
@@ -23281,7 +23780,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "tongues",
       name: "spell_tongues",
       details: "spell_tongues_details",
       expanded: "spell_tongues_expanded",
@@ -23326,7 +23826,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "vampiric_touch",
       name: "spell_vampiric_touch",
       details: "spell_vampiric_touch_details",
       expanded: "spell_vampiric_touch_expanded",
@@ -23378,7 +23879,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "water_breathing",
       name: "spell_water_breathing",
       details: "spell_water_breathing_details",
       expanded: "spell_water_breathing_expanded",
@@ -23423,7 +23925,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "water_walk",
       name: "spell_water_walk",
       details: "spell_water_walk_details",
       expanded: "spell_water_walk_expanded",
@@ -23468,7 +23971,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "wind_wall",
       name: "spell_wind_wall",
       details: "spell_wind_wall_details",
       expanded: "spell_wind_wall_expanded",
@@ -23517,7 +24021,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "arcane_eye",
       name: "spell_arcane_eye",
       details: "spell_arcane_eye_details",
       expanded: "spell_arcane_eye_expanded",
@@ -23564,7 +24069,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "aura_of_life",
       name: "spell_aura_of_life",
       details: "spell_aura_of_life_details",
       expanded: "spell_aura_of_life_expanded",
@@ -23609,7 +24115,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "banishment",
       name: "spell_banishment",
       details: "spell_banishment_details",
       expanded: "spell_banishment_expanded",
@@ -23661,7 +24168,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "blight",
       name: "spell_blight",
       details: "spell_blight_details",
       expanded: "spell_blight_expanded",
@@ -23713,7 +24221,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "compulsion",
       name: "spell_compulsion",
       details: "spell_compulsion_details",
       expanded: "spell_compulsion_expanded",
@@ -23760,7 +24269,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "confusion",
       name: "spell_confusion",
       details: "spell_confusion_details",
       expanded: "spell_confusion_expanded",
@@ -23812,7 +24322,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "control_water",
       name: "spell_control_water",
       details: "spell_control_water_details",
       expanded: "spell_control_water_expanded",
@@ -23859,7 +24370,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "death_ward",
       name: "spell_death_ward",
       details: "spell_death_ward_details",
       expanded: "spell_death_ward_expanded",
@@ -23906,7 +24418,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "dimension_door",
       name: "spell_dimension_door",
       details: "spell_dimension_door_details",
       expanded: "spell_dimension_door_expanded",
@@ -23952,7 +24465,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "divination",
       name: "spell_divination",
       details: "spell_divination_details",
       expanded: "spell_divination_expanded",
@@ -23999,7 +24513,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "dominate_beast",
       name: "spell_dominate_beast",
       details: "spell_dominate_beast_details",
       expanded: "spell_dominate_beast_expanded",
@@ -24048,7 +24563,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "evards_black_tentacles",
       name: "spell_evards_black_tentacles",
       details: "spell_evards_black_tentacles_details",
       expanded: "spell_evards_black_tentacles_expanded",
@@ -24094,7 +24610,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "fire_shield",
       name: "spell_fire_shield",
       details: "spell_fire_shield_details",
       expanded: "spell_fire_shield_expanded",
@@ -24141,7 +24658,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "freedom_of_movement",
       name: "spell_freedom_of_movement",
       details: "spell_freedom_of_movement_details",
       expanded: "spell_freedom_of_movement_expanded",
@@ -24187,7 +24705,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "grasping_vine",
       name: "spell_grasping_vine",
       details: "spell_grasping_vine_details",
       expanded: "spell_grasping_vine_expanded",
@@ -24234,7 +24753,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "greater_invisibility",
       name: "spell_greater_invisibility",
       details: "spell_greater_invisibility_details",
       expanded: "spell_greater_invisibility_expanded",
@@ -24280,7 +24800,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "guardian_of_faith",
       name: "spell_guardian_of_faith",
       details: "spell_guardian_of_faith_details",
       expanded: "spell_guardian_of_faith_expanded",
@@ -24326,7 +24847,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "hallucinatory_terrain",
       name: "spell_hallucinatory_terrain",
       details: "spell_hallucinatory_terrain_details",
       expanded: "spell_hallucinatory_terrain_expanded",
@@ -24373,7 +24895,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "ice_storm",
       name: "spell_ice_storm",
       details: "spell_ice_storm_details",
       expanded: "spell_ice_storm_expanded",
@@ -24428,7 +24951,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "locate_creature",
       name: "spell_locate_creature",
       details: "spell_locate_creature_details",
       expanded: "spell_locate_creature_expanded",
@@ -24474,7 +24998,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "polymorph",
       name: "spell_polymorph",
       details: "spell_polymorph_details",
       expanded: "spell_polymorph_expanded",
@@ -24520,7 +25045,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "stone_shape",
       name: "spell_stone_shape",
       details: "spell_stone_shape_details",
       expanded: "spell_stone_shape_expanded",
@@ -24567,7 +25093,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "stoneskin",
       name: "spell_stoneskin",
       details: "spell_stoneskin_details",
       expanded: "spell_stoneskin_expanded",
@@ -24614,7 +25141,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "wall_of_fire",
       name: "spell_wall_of_fire",
       details: "spell_wall_of_fire_details",
       expanded: "spell_wall_of_fire_expanded",
@@ -24668,7 +25196,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "cloudkill",
       name: "spell_cloudkill",
       details: "spell_cloudkill_details",
       expanded: "spell_cloudkill_expanded",
@@ -24721,7 +25250,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "commune",
       name: "spell_commune",
       details: "spell_commune_details",
       expanded: "spell_commune_expanded",
@@ -24767,7 +25297,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "commune_with_nature",
       name: "spell_commune_with_nature",
       details: "spell_commune_with_nature_details",
       expanded: "spell_commune_with_nature_expanded",
@@ -24813,7 +25344,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "cone_of_cold",
       name: "spell_cone_of_cold",
       details: "spell_cone_of_cold_details",
       expanded: "spell_cone_of_cold_expanded",
@@ -24864,7 +25396,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "conjure_elemental",
       name: "spell_conjure_elemental",
       details: "spell_conjure_elemental_details",
       expanded: "spell_conjure_elemental_expanded",
@@ -24917,7 +25450,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "destructive_wave",
       name: "spell_destructive_wave",
       details: "spell_destructive_wave_details",
       expanded: "spell_destructive_wave_expanded",
@@ -24975,7 +25509,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "dominate_person",
       name: "spell_dominate_person",
       details: "spell_dominate_person_details",
       expanded: "spell_dominate_person_expanded",
@@ -25025,7 +25560,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "dream",
       name: "spell_dream",
       details: "spell_dream_details",
       expanded: "spell_dream_expanded",
@@ -25072,7 +25608,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "flame_strike",
       name: "spell_flame_strike",
       details: "spell_flame_strike_details",
       expanded: "spell_flame_strike_expanded",
@@ -25134,7 +25671,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "hallow",
       name: "spell_hallow",
       details: "spell_hallow_details",
       expanded: "spell_hallow_expanded",
@@ -25182,7 +25720,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "hold_monster",
       name: "spell_hold_monster",
       details: "spell_hold_monster_details",
       expanded: "spell_hold_monster_expanded",
@@ -25233,7 +25772,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "insect_plague",
       name: "spell_insect_plague",
       details: "spell_insect_plague_details",
       expanded: "spell_insect_plague_expanded",
@@ -25286,7 +25826,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "legend_lore",
       name: "spell_legend_lore",
       details: "spell_legend_lore_details",
       expanded: "spell_legend_lore_expanded",
@@ -25333,7 +25874,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "mass_cure_wounds",
       name: "spell_mass_cure_wounds",
       details: "spell_mass_cure_wounds_details",
       expanded: "spell_mass_cure_wounds_expanded",
@@ -25386,7 +25928,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "modify_memory",
       name: "spell_modify_memory",
       details: "spell_modify_memory_details",
       expanded: "spell_modify_memory_expanded",
@@ -25437,7 +25980,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "passwall",
       name: "spell_passwall",
       details: "spell_passwall_details",
       expanded: "spell_passwall_expanded",
@@ -25485,7 +26029,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "seeming",
       name: "spell_seeming",
       details: "spell_seeming_details",
       expanded: "spell_seeming_expanded",
@@ -25534,7 +26079,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "raise_dead",
       name: "spell_raise_dead",
       details: "spell_raise_dead_details",
       expanded: "spell_raise_dead_expanded",
@@ -25581,7 +26127,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "scrying",
       name: "spell_scrying",
       details: "spell_scrying_details",
       expanded: "spell_scrying_expanded",
@@ -25629,7 +26176,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "telekinesis",
       name: "spell_telekinesis",
       details: "spell_telekinesis_details",
       expanded: "spell_telekinesis_expanded",
@@ -25676,7 +26224,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "tree_stride",
       name: "spell_tree_stride",
       details: "spell_tree_stride_details",
       expanded: "spell_tree_stride_expanded",
@@ -25724,7 +26273,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "wall_of_stone",
       name: "spell_wall_of_stone",
       details: "spell_wall_of_stone_details",
       expanded: "spell_wall_of_stone_expanded",
@@ -25776,7 +26326,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "true_seeing",
       name: "spell_true_seeing",
       details: "spell_true_seeing_details",
       expanded: "spell_true_seeing_expanded",
@@ -25829,7 +26380,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "mordenkainens_sword",
       name: "spell_mordenkainens_sword",
       details: "spell_mordenkainens_sword_details",
       expanded: "spell_mordenkainens_sword_expanded",
@@ -25883,7 +26435,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "glibness",
       name: "spell_glibness",
       details: "spell_glibness_details",
       expanded: "spell_glibness_expanded",
@@ -25938,7 +26491,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "power_word_kill",
       name: "spell_power_word_kill",
       details: "spell_power_word_kill_details",
       expanded: "spell_power_word_kill_expanded",
@@ -25990,7 +26544,8 @@ export default {
     {},
     {},
     {},
-    {
+    {      
+      link: "astral_projection",
       name: "spell_astral_projection",
       details: "spell_astral_projection_details",
       expanded: "spell_astral_projection_expanded",

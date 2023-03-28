@@ -6000,4 +6000,6 @@ export default {
   print_characters: "Личности",
   print_events: "Собьітия",
   print_places: "Места",
+
+  print_biography: "Біографія",
 };  

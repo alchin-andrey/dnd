@@ -5993,5 +5993,5 @@ export default {
   print_events: "Події",
   print_places: "Місця",
 
-  
+  print_biography: "Біографія",
 };
