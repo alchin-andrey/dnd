@@ -71,20 +71,24 @@
           <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" blank_print/>
         </section>
 
-        <section class="jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
-          <div class="manna_bubble_print" v-if="spell_Slot_Type_MOD">{{ t_Slot_Type }}</div>
-          
-          <div class="flex_row gap-8" v-if="shown_Manna">
-            <div 
-            class="manna_bubble_print" 
-            :class="{manna_bubble_print_zero: Index == 0}" 
-            >
-            {{ print_Manna }}
-            </div>
-            <div class="manna_bubble_print fs-40" v-if="print_Plus">+</div>
+       <!-- <div class="spell_qr"> -->
+          <div class="flex_qr_wrapp">
+            <section class="flex_mana jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
+              <div class="manna_bubble_print" v-if="spell_Slot_Type_MOD">{{ t_Slot_Type }}</div>
+              
+              <div class="flex_row gap-8" v-if="shown_Manna">
+                <div 
+                class="manna_bubble_print" 
+                :class="{manna_bubble_print_zero: Index == 0}" 
+                >
+                {{ print_Manna }}
+                </div>
+                <div class="manna_bubble_print fs-40" v-if="print_Plus">+</div>
+              </div>
+            </section>
+            <qrcode-vue :value="value" :size="size" level="H" />
           </div>
-        </section>
-
+       <!-- </div> -->
     </div>
   </main>
 
@@ -271,6 +275,7 @@
 </template>
 
 <script>
+import QrcodeVue from 'qrcode.vue'
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
@@ -280,6 +285,9 @@ import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSpells",
+  components: {
+      QrcodeVue,
+    },
 	emits: ["updateSpell"],
 	data() {
 		return {
@@ -289,6 +297,8 @@ export default {
 			mana_numb: null,
 			emoji_size: 16,
 			isShown: false,
+      value: 'http://dndme.club',
+      size: 120,
 		};
 	},
 	props: {
@@ -1432,5 +1442,22 @@ export default {
 
 .fs-40 {
   font-size: 40px;
+}
+
+/* .spell_qr {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.flex_qr_wrapp {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.flex_mana {
+  flex: 1 1 auto;
+  justify-self: flex-start;
 }
 </style>

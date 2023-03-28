@@ -30,7 +30,7 @@
           <BlankTable__List_3 class="main-table mr-min"/>
           <AppSpells
             class="cell-spell mr-min"
-            v-for="item in spell_RC_Param_Sort_ApAM.slice(0, 10)"
+            v-for="item in spell_List_3"
 						:key="item"
 						:spell_obj="item"
             blank_print
@@ -44,7 +44,7 @@
         <section class="col-wrap-spell">
           <AppSpells
             class="cell-spell mr-min"
-            v-for="item in spell_RC_Param_Sort_ApAM.slice(i * 10, 10 + i * 10)"
+            v-for="item in spellsList(i)"
 						:key="item"
 						:spell_obj="item"
             blank_print
@@ -73,15 +73,35 @@ export default {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM"]),
 
+    spell_List_3() {
+      return this.spell_RC_Param_Sort_ApAM.slice(0, 8);
+    },
+
+    spell_Left() {
+      return this.spell_RC_Param_Sort_ApAM.slice(8);
+    },
+
     list_Count() {
-      const spells_left = this.spell_RC_Param_Sort_ApAM.slice(10);
+      const spells_left = this.spell_Left;
       const list_count = Math.ceil(spells_left.length / 10);
       return list_count;
-    }
+    },
 
-
-
+    // spells_List: (stor) => (i) => {
+    //   const start = (i - 1) * 10;
+    //   const end = 10 + start;
+    //   return stor.spell_Left.slice(start, end);
+    // },
 	},
+
+  methods: {
+    spellsList(i) {
+      const numb = 9;
+      const start = (i - 1) * numb;
+      const end = numb + start;
+      return this.spell_Left.slice(start, end);
+    },
+  }
 };
 </script>
 
@@ -91,7 +111,7 @@ export default {
 	width: 2088px; /* 1588 */
 	color: #000000;
 	z-index: 10;
-	height: 1000%;
+	height: 10000%;
 	/* padding: 72px; */
 	overflow-y: scroll;
 	scrollbar-width: none;
@@ -100,7 +120,7 @@ export default {
 }
 
 .blank-scroll {
-	height: 1000%;
+	height: 10000%;
 }
 
 .print-page {
@@ -167,4 +187,8 @@ export default {
 .mr-min {
   margin: -1px -1px 0 0;
 }
+
+/* .mr-pls {
+  margin: 10px 10px 0 0;
+} */
 </style>

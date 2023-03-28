@@ -357,14 +357,20 @@ export default {
         image: { type: 'jpeg', quality: 1 },
         html2canvas: {
         dpi: 150,
-        scale: 3,
+        scale: 1,
         // windowWidth: 1044,
         width: 2088,
         // height: 1223,
-        letterRendering: true,
-        useCORS: true
+        // imageTimeout: 200000,
+        // letterRendering: true,
+        // useCORS: true
       },
-      jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait', hotfixes: "px_scaling", }
+      jsPDF: { 
+        unit: 'pt', 
+        format: 'a4', 
+        orientation: 'portrait', 
+        // hotfixes: "px_scaling", 
+      }
 			});
 		},
 
