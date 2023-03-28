@@ -90,6 +90,7 @@ export default {
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
+  color: #ffffff;
 	margin-bottom: 5px;
 }
 
@@ -101,6 +102,7 @@ export default {
   line-height: 30px;
   letter-spacing: 0.02em;
   margin-bottom: 10px;
+  color: #000000;
 }
 
 .only {
