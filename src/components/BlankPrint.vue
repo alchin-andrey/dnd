@@ -52,12 +52,7 @@
         </section>
 			</main>
       <main class="print-page">
-        <section class="wrap-head">
-          <BlankText__Part_1 class="pad-bottom-72" />
-        </section>
-        <section class="wrap-bottom">
-          <BlankText__Part_2 class="pad-top-72"/>
-        </section>
+        <BlankText__All/>
 			</main>
 
       <main class="print-page">
