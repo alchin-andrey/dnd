@@ -479,7 +479,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery", "shown_Level_Dot"]),
 		// GETTERS
-		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj"]),
+		...mapState(useStatsStore, ["stats_Mod", "stats_Numb"]),
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
@@ -487,26 +487,25 @@ export default {
 
 
     print_Spell_Link_Qr() {
-      const sait = 'alchin-andrey.github.io/dnd/#';
+      const sait = 'https://alchin-andrey.github.io/dnd/#';
       const chapter = '/s/'
       const spell_link = this.Spell_Index.link;
       const full_link = sait + chapter + spell_link;
 
-      const lvl = `l=${this.MY.level}`;
-      const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
-      console.log('base_link:', base_link)
-      const spell_attribute = `sa=${this.spell_Attribute_MOD}`;
+      const lvl = `lvl=${this.MY.level}`;
+      // const class_link = new URLSearchParams(this.MY.class)
+      const spell_attribute = `spell_attribute=${this.spell_Attribute_MOD}`;
 
-      return `${full_link}?${lvl}&${spell_attribute}&${base_link}`;
+      return `${full_link}?${lvl}&${spell_attribute}`;
     },
 
     // link_Level() {
-		// 	const param_level = this.spell_Link?.lvl;
+		// 	const param_level = this.spell_Param?.lvl;
 		// 	return param_level ?? this.MY.level;
 		// },
 
     // link_Mastery() {
-		// 	const param_level = this.spell_Link?.lvl;
+		// 	const param_level = this.spell_Param?.lvl;
 		// 	return param_level ?? this.MY.level;
 		// },
 
@@ -542,7 +541,7 @@ export default {
 			return this.spell_obj?.mod;
 		},
 
-		spell_Link() {
+		spell_Param() {
 			return this.spell_obj?.param;
 		},
 
@@ -558,10 +557,9 @@ export default {
 		},
 
 		spell_Attribute_MOD() {
-			const link_attribute = this.spell_Link?.sa;
 			const mod_attribute = this.spell_Mod?.spell_attribute;
 			const class_attribute = this.MY.class.spell_attribute;
-			return link_attribute ?? mod_attribute ?? class_attribute;
+			return mod_attribute ?? class_attribute;
 		},
 
 		mod_Expanded_Extra() {
@@ -1321,7 +1319,7 @@ export default {
 	methods: {
 
     getCreated() {
-      const param_level = this.spell_Link?.l;
+      const param_level = this.spell_Param?.lvl;
       if(param_level) {this.MY.level = param_level}
     },
 

@@ -26,10 +26,10 @@ const routes = [
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   // },
   {
-    // path: '/dnd/spell_form/:id',
-    // path: '/spell_form/:id',
-    // path: '/dnd/spell_form/:queryParams(.*)',
-    path: '/spell_form/:id(.*)',
+    // path: '/dnd/s/:id',
+    // path: '/s/:id',
+    // path: '/dnd/s/:queryParams(.*)',
+    path: '/s/:id(.*)',
     name: 'SpellForm',
     component: SpellForm,
     // props: true

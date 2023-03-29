@@ -11,38 +11,19 @@ import { mapState } from "pinia";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "SpellForm",
-	// data() {
-	// 	return {
-	// 		spell_obj: null,
-	// 	};
-	// },
 	computed: {
 		...mapState(useSpellsStore, ["spells"]),
 
     spell_Obj() {
+      // console.log('this.$route.:', this.$route)
+      // console.log('this.$route.:', this.$route.query)
       const id_link = this.$route.params.id;
+      const param = this.$route.query;
 			const spell_arr = this.spells[id_link];
-			return { spell: spell_arr };
+			return { spell: spell_arr, param: param, };
     },
-
-	// 	count() {
-  //     const id_link = this.$route.params.id;
-  //     console.log('id_link:', id_link)
-	// 		return this.spells.length;
-	// 	},
 	},
 
-	// watch: {
-	// 	count: {
-	// 		handler() {
-	// 			const id_link = this.$route.params.id;
-	// 			console.log("id_link:", id_link, this.$route);
-	// 			const spell_arr = this.spells[id_link];
-	// 			this.spell_obj = { spell: spell_arr };
-	// 		},
-	// 		immediate: true,
-	// 	},
-	// },
 };
 </script>
 

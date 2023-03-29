@@ -68,7 +68,7 @@
 					<!-- <my-button
 						v-if="pages.alignment_page"
 						title="download_charsheet"
-						@click="goTo(`/spell_form/hellish_rebuke_tiefling`)"
+						@click="goTo(`/s/hellish_rebuke_tiefling`)"
 					></my-button> -->
 				</section>
 				<my-button-back
@@ -357,9 +357,9 @@ export default {
 
 		exportToPDF() {
       const name = this.MY.name;
-      const race = this.MY.race.name;
-      const ethnos = this.MY.ethnos.name;
-      const classes = this.MY.class.name;
+      // const race = this.MY.race.name;
+      // const ethnos = this.MY.ethnos.name;
+      // const classes = this.MY.class.name;
       const lvl = this.MY.level;
 			html2pdf(document.getElementById("element-to-convert"), {
 				margin: 0,

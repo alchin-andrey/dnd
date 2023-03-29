@@ -165,6 +165,16 @@ export const useStatsStore = defineStore({
 			return stor.stats_Numb_Page(name);
 		},
 
+    stats_Base_Obj() {
+      const str = this.stats_Numb("strength");
+      const dex = this.stats_Numb("dexterity");
+      const con = this.stats_Numb("constitution");
+      const int = this.stats_Numb("intelligence");
+      const wis = this.stats_Numb("wisdom");
+      const chr = this.stats_Numb("charisma");
+      return {str: str, dex: dex, con: con, int: int, wis: wis, chr: chr,}
+    },
+
     stats_Numb_Full: (stor) => (name) => {
 			return stor.stats_Numb_Full_Page(name);
 		},

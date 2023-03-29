@@ -68,7 +68,7 @@
 					<my-button
 						v-if="pages.alignment_page"
 						title="download_charsheet"
-						@click="goTo(`/spell_form/hellish_rebuke_tiefling`)"
+						@click="goTo(`/s/hellish_rebuke_tiefling`)"
 					></my-button>
 				</section>
 				<my-button-back
