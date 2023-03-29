@@ -381,6 +381,16 @@ export default {
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
+    spell_Link_Qr() {
+      // const sait = 'https://alchin-andrey.github.io/dnd/#';
+      const sait = 'https://alchin-andrey.github.io/dnd';
+      // const sait = 'https://alchin-andrey.github.io/dnd';
+      // const sait = process.env.BASE_URL;
+      const chapter = '/spell_form/'
+      const spell_link = this.Spell_Index.link;
+      return sait + chapter + spell_link;
+    },
+
 		shown_Spell_Text() {
 			return this.only_title ? this.isShown : true;
 		},
@@ -449,15 +459,6 @@ export default {
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
-
-    spell_Link_Qr() {
-      const sait = 'http://dndme.club';
-      // const sait = 'https://alchin-andrey.github.io/dnd';
-      // const sait = process.env.BASE_URL;
-      const chapter = '/spell_form/'
-      const spell_link = this.Spell_Index.link;
-      return sait + chapter + spell_link;
-    },
 
 		overflow_Save() {
 			if (this.param) {
