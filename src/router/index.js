@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import Main from '@/views/Main.vue';
 import SpellForm from '@/components/SpellForm.vue';
 
@@ -38,7 +38,10 @@ const routes = [
 
 const router = createRouter({
   // history: createWebHistory(process.env.BASE_URL),
-  history: createWebHistory('/dnd/'),
+  // history: createWebHistory('/dnd/'),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
+  // history: createWebHashHistory(process.env.BASE_URL),
   routes
 });
 
