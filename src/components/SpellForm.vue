@@ -29,6 +29,7 @@ export default {
 		count: {
 			handler() {
 				const id_link = this.$route.params.id;
+				console.log('id_link:', id_link, this.$route)
 				const spell_arr = this.spells[id_link];
 				this.spell_obj = {spell: spell_arr};
 			},
