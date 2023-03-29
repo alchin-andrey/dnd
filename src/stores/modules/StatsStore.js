@@ -18,6 +18,8 @@ export const useStatsStore = defineStore({
 
 		stats_base_numb: [15, 14, 13, 12, 10, 8],
 
+    stats_link: {},
+
 		stats_base_save: {
 			// barbarian: null,
 			// paladin: null,
@@ -38,6 +40,15 @@ export const useStatsStore = defineStore({
 	getters: {
 		stats_Keys() {
 			return this.stats;
+		},
+
+		stats_Full_Name: (stor) => (str) => {
+			if(str == 'st') return 'strength';
+			if(str == 'de') return 'dexterity';
+			if(str == 'co') return 'constitution';
+			if(str == 'in') return 'intelligence';
+			if(str == 'wi') return 'wisdom';
+			if(str == 'ch') return 'charisma';
 		},
 
 		stats_Numb_Bonus: (stor) => (arr_all, name) => {
@@ -161,10 +172,6 @@ export const useStatsStore = defineStore({
 		},
 
     // NOTE - Calculations
-    stats_Numb: (stor) => (name) => {
-			return stor.stats_Numb_Page(name);
-		},
-
     stats_Base_Obj() {
       const str = this.stats_Numb("strength");
       const dex = this.stats_Numb("dexterity");
@@ -172,16 +179,19 @@ export const useStatsStore = defineStore({
       const int = this.stats_Numb("intelligence");
       const wis = this.stats_Numb("wisdom");
       const chr = this.stats_Numb("charisma");
-      return {str: str, dex: dex, con: con, int: int, wis: wis, chr: chr,}
+      return {st: str, de: dex, co: con, in: int, wi: wis, ch: chr,}
     },
+
+    stats_Numb: (stor) => (name) => {
+			return stor.stats_link[name] ?? stor.stats_Numb_Page(name);
+		},
 
     stats_Numb_Full: (stor) => (name) => {
 			return stor.stats_Numb_Full_Page(name);
 		},
 
     stats_Mod: (stor) => (name) => {
-			// const base_numb = stor.stats_Class_Page_Numb(name);
-			const base_numb = stor.stats_Numb_Page(name);
+			const base_numb = stor.stats_link[name] ?? stor.stats_Numb_Page(name);
 			return Math.floor((base_numb - 10) / 2);
 		},
 

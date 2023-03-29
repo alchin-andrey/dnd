@@ -16,7 +16,6 @@ export default {
 
     spell_Obj() {
       // console.log('this.$route.:', this.$route)
-      // console.log('this.$route.:', this.$route.query)
       const id_link = this.$route.params.id;
       const param = this.$route.query;
 			const spell_arr = this.spells[id_link];

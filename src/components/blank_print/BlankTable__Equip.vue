@@ -221,8 +221,8 @@ export default {
 	flex-direction: column;
 	justify-content: space-between;
 }
-.table-weapon {
-}
+/* .table-weapon {
+} */
 
 .table-weapon__grid {
 	display: grid;

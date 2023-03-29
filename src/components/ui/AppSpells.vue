@@ -476,10 +476,15 @@ export default {
 		this.getCreated();
 	},
 
+  // destroyed() {
+	// 	this.getDestroyed();
+	// },
+
 	computed: {
 		...mapState(useMYStore, ["MY", "Mastery", "shown_Level_Dot"]),
+    ...mapState(useStatsStore, ["stats_link"]),
 		// GETTERS
-		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj"]),
+		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj", "stats_Full_Name"]),
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
@@ -494,10 +499,11 @@ export default {
 
       const lvl = `l=${this.MY.level}`;
       const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
-      console.log('base_link:', base_link)
-      const spell_attribute = `sa=${this.spell_Attribute_MOD}`;
+      const spell_attribute = `sa=${this.spell_Attribute_MOD.slice(0, 2)}`;
 
-      return `${full_link}?${lvl}&${spell_attribute}&${base_link}`;
+      const link = `${full_link}?${lvl}&${spell_attribute}&${base_link}`;
+      // console.log('link:', link)
+      return link;
     },
 
     // link_Level() {
@@ -558,7 +564,7 @@ export default {
 		},
 
 		spell_Attribute_MOD() {
-			const link_attribute = this.spell_Link?.sa;
+			const link_attribute = this.stats_Full_Name(this.spell_Link?.sa);
 			const mod_attribute = this.spell_Mod?.spell_attribute;
 			const class_attribute = this.MY.class.spell_attribute;
 			return link_attribute ?? mod_attribute ?? class_attribute;
@@ -1321,9 +1327,22 @@ export default {
 	methods: {
 
     getCreated() {
-      const param_level = this.spell_Link?.l;
-      if(param_level) {this.MY.level = param_level}
+      const query = this.spell_Link;
+      if(query) {
+        this.MY.level = query?.l ?? this.MY.level;
+
+        this.stats_link.strength = query?.st;
+        this.stats_link.dexterity = query?.de;
+        this.stats_link.constitution = query?.co;
+        this.stats_link.intelligence = query?.in;
+        this.stats_link.wisdom = query?.wi;
+        this.stats_link.charisma = query?.ch;
+      }
     },
+
+    // getDestroyed() {
+    //   this.stats_link = {}
+    // },
 
 		toggle() {
 			this.isShown = !this.isShown;
