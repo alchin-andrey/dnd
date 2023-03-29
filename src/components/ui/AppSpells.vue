@@ -382,8 +382,7 @@ export default {
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
     spell_Link_Qr() {
-      // const sait = 'https://alchin-andrey.github.io/dnd/#';
-      const sait = 'https://alchin-andrey.github.io/dnd';
+      const sait = 'https://alchin-andrey.github.io/dnd/#';
       // const sait = 'https://alchin-andrey.github.io/dnd';
       // const sait = process.env.BASE_URL;
       const chapter = '/spell_form/'
