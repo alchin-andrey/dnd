@@ -436,10 +436,10 @@ export default {
 		},
 
     spell_Link_Qr() {
-      // const sait = 'http://dndme.club';
-      // const sait = 'https://alchin-andrey.github.io/dnd/';
-      const sait = process.env.BASE_URL;
-      const chapter = 'spell_form/'
+      const sait = 'http://dndme.club';
+      // const sait = 'https://alchin-andrey.github.io/dnd';
+      // const sait = process.env.BASE_URL;
+      const chapter = '/spell_form/'
       const spell_link = this.Spell_Index.link;
       return sait + chapter + spell_link;
     },
