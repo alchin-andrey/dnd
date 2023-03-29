@@ -85,9 +85,18 @@
               <div class="manna_bubble_print fs-40" v-if="print_Plus">+</div>
             </div>
           </section>
-          <qrcode-vue :value="value" :size="size" level="H" />
+          <qrcode-vue :value="spell_Link_Qr" :size="size" level="H" />
         </div>
     </div>
+  </main>
+
+  <main v-else-if="qr_form" id="qr_spell">
+    <div class="text_spell-qr gray_4" v-html="t_Expanded"></div>
+    <div
+      class="text_spell-qr rare-text"
+      v-if="mod_Expanded_Extra"
+      v-html="mod_Expanded_Extra"
+    ></div>
   </main>
 
 
@@ -295,7 +304,7 @@ export default {
 			mana_numb: null,
 			emoji_size: 16,
 			isShown: false,
-      value: 'http://dndme.club',
+      sait_link: 'http://dndme.club',
       size: 120,
 		};
 	},
@@ -341,6 +350,10 @@ export default {
 			default: [],
 		},
     blank_print: {
+			type: Boolean,
+			default: false,
+		},
+    qr_form: {
 			type: Boolean,
 			default: false,
 		},
@@ -421,6 +434,15 @@ export default {
 		Index() {
 			return this.spell.findIndex((el) => el.name);
 		},
+
+    spell_Link_Qr() {
+      // const sait = 'http://dndme.club';
+      // const sait = 'https://alchin-andrey.github.io/dnd/';
+      const sait = process.env.BASE_URL;
+      const chapter = 'spell_form/'
+      const spell_link = this.Spell_Index.link;
+      return sait + chapter + spell_link;
+    },
 
 		overflow_Save() {
 			if (this.param) {

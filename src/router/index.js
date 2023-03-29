@@ -1,11 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import Main from '@/views/Main.vue';
+import SpellForm from '@/components/SpellForm.vue';
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'main',
+    component: Main,
   },
   {
     path: '/about',
@@ -15,15 +16,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
-  // {
-  //   path: '/spell_form/:id',
-  //   component: SpellForm,
-  // },
-]
+  {
+    path: '/spell_form/:id',
+    component: SpellForm,
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;
