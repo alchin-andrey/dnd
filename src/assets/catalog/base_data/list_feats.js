@@ -4,6 +4,7 @@ import armory from "./kinds_armor.js";
 import tools from "./kinds_tools.js";
 import item from "./list_items.js";
 import lang from "./list_languages.js";
+import mods from "./list_spells_mods.js";
 
 export default {
   actor: {
@@ -1682,12 +1683,7 @@ export default {
                     spells: [
                       {
                         spell: spells.bless,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1696,12 +1692,7 @@ export default {
                     spells: [
                       {
                         spell: spells.protection_from_evil_and_good,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1710,12 +1701,7 @@ export default {
                     spells: [
                       {
                         spell: spells.healing_word,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1724,12 +1710,7 @@ export default {
                     spells: [
                       {
                         spell: spells.cure_wounds,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1738,12 +1719,7 @@ export default {
                     spells: [
                       {
                         spell: spells.inflict_wounds,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1752,12 +1728,7 @@ export default {
                     spells: [
                       {
                         spell: spells.guiding_bolt,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1766,12 +1737,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_poison_and_disease,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1780,12 +1746,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_evil_and_good,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1794,12 +1755,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1808,12 +1764,7 @@ export default {
                     spells: [
                       {
                         spell: spells.purify_food_and_drink,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1822,12 +1773,7 @@ export default {
                     spells: [
                       {
                         spell: spells.bane,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1836,12 +1782,7 @@ export default {
                     spells: [
                       {
                         spell: spells.command,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1850,12 +1791,7 @@ export default {
                     spells: [
                       {
                         spell: spells.create_or_destroy_water,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1864,12 +1800,7 @@ export default {
                     spells: [
                       {
                         spell: spells.sanctuary,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -1878,12 +1809,7 @@ export default {
                     spells: [
                       {
                         spell: spells.shield_of_faith,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_cleric1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[0],
                       },
                     ],
                   },
@@ -2002,12 +1928,7 @@ export default {
                     spells: [
                       {
                         spell: spells.thunderwave,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2016,12 +1937,7 @@ export default {
                     spells: [
                       {
                         spell: spells.animal_friendship,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2030,12 +1946,7 @@ export default {
                     spells: [
                       {
                         spell: spells.protection_from_evil_and_good,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2044,12 +1955,7 @@ export default {
                     spells: [
                       {
                         spell: spells.healing_word,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2058,12 +1964,7 @@ export default {
                     spells: [
                       {
                         spell: spells.cure_wounds,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2072,12 +1973,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_poison_and_disease,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2086,12 +1982,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2100,12 +1991,7 @@ export default {
                     spells: [
                       {
                         spell: spells.faerie_fire,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2114,12 +2000,7 @@ export default {
                     spells: [
                       {
                         spell: spells.entangle,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2128,12 +2009,7 @@ export default {
                     spells: [
                       {
                         spell: spells.charm_person,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2142,12 +2018,7 @@ export default {
                     spells: [
                       {
                         spell: spells.purify_food_and_drink,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2156,12 +2027,7 @@ export default {
                     spells: [
                       {
                         spell: spells.jump,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2170,12 +2036,7 @@ export default {
                     spells: [
                       {
                         spell: spells.speak_with_animals,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2184,12 +2045,7 @@ export default {
                     spells: [
                       {
                         spell: spells.longstrider,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2198,12 +2054,7 @@ export default {
                     spells: [
                       {
                         spell: spells.create_or_destroy_water,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2212,12 +2063,7 @@ export default {
                     spells: [
                       {
                         spell: spells.fog_cloud,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2226,12 +2072,7 @@ export default {
                     spells: [
                       {
                         spell: spells.goodberry,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_druid1",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[1],
                       },
                     ],
                   },
@@ -2350,12 +2191,7 @@ export default {
                     spells: [
                       {
                         spell: spells.hellish_rebuke,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2364,12 +2200,7 @@ export default {
                     spells: [
                       {
                         spell: spells.witch_bolt,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2378,12 +2209,7 @@ export default {
                     spells: [
                       {
                         spell: spells.armor_of_agathys,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2392,12 +2218,7 @@ export default {
                     spells: [
                       {
                         spell: spells.protection_from_evil_and_good,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2406,12 +2227,7 @@ export default {
                     spells: [
                       {
                         spell: spells.illusory_script,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2420,12 +2236,7 @@ export default {
                     spells: [
                       {
                         spell: spells.unseen_servant,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2434,12 +2245,7 @@ export default {
                     spells: [
                       {
                         spell: spells.charm_person,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2448,12 +2254,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2462,12 +2263,7 @@ export default {
                     spells: [
                       {
                         spell: spells.expeditious_retreat,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2476,12 +2272,7 @@ export default {
                     spells: [
                       {
                         spell: spells.arms_of_hadar,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2490,12 +2281,7 @@ export default {
                     spells: [
                       {
                         spell: spells.hex,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_warlock1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[2],
                       },
                     ],
                   },
@@ -2642,12 +2428,7 @@ export default {
                     spells: [
                       {
                         spell: spells.silent_image,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2656,12 +2437,7 @@ export default {
                     spells: [
                       {
                         spell: spells.witch_bolt,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2670,12 +2446,7 @@ export default {
                     spells: [
                       {
                         spell: spells.thunderwave,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2684,12 +2455,7 @@ export default {
                     spells: [
                       {
                         spell: spells.magic_missile,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2698,12 +2464,7 @@ export default {
                     spells: [
                       {
                         spell: spells.mage_armor,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2712,12 +2473,7 @@ export default {
                     spells: [
                       {
                         spell: spells.ray_of_sickness,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2726,12 +2482,7 @@ export default {
                     spells: [
                       {
                         spell: spells.disguise_self,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2740,12 +2491,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2754,12 +2500,7 @@ export default {
                     spells: [
                       {
                         spell: spells.burning_hands,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2768,12 +2509,7 @@ export default {
                     spells: [
                       {
                         spell: spells.charm_person,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2782,12 +2518,7 @@ export default {
                     spells: [
                       {
                         spell: spells.feather_fall,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2796,12 +2527,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2810,12 +2536,7 @@ export default {
                     spells: [
                       {
                         spell: spells.expeditious_retreat,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2824,12 +2545,7 @@ export default {
                     spells: [
                       {
                         spell: spells.jump,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2838,12 +2554,7 @@ export default {
                     spells: [
                       {
                         spell: spells.false_life,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2852,12 +2563,7 @@ export default {
                     spells: [
                       {
                         spell: spells.color_spray,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2866,12 +2572,7 @@ export default {
                     spells: [
                       {
                         spell: spells.grease,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2880,12 +2581,7 @@ export default {
                     spells: [
                       {
                         spell: spells.fog_cloud,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2894,12 +2590,7 @@ export default {
                     spells: [
                       {
                         spell: spells.sleep,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2908,12 +2599,7 @@ export default {
                     spells: [
                       {
                         spell: spells.chromatic_orb,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -2922,12 +2608,7 @@ export default {
                     spells: [
                       {
                         spell: spells.shield,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_sorcerer1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[3],
                       },
                     ],
                   },
@@ -3075,12 +2756,7 @@ export default {
                     spells: [
                       {
                         spell: spells.silent_image,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3089,12 +2765,7 @@ export default {
                     spells: [
                       {
                         spell: spells.witch_bolt,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3103,12 +2774,7 @@ export default {
                     spells: [
                       {
                         spell: spells.thunderwave,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3117,12 +2783,7 @@ export default {
                     spells: [
                       {
                         spell: spells.magic_missile,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3131,12 +2792,7 @@ export default {
                     spells: [
                       {
                         spell: spells.mage_armor,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3145,12 +2801,7 @@ export default {
                     spells: [
                       {
                         spell: spells.tashas_hideous_laughter,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3159,12 +2810,7 @@ export default {
                     spells: [
                       {
                         spell: spells.protection_from_evil_and_good,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3173,12 +2819,7 @@ export default {
                     spells: [
                       {
                         spell: spells.ray_of_sickness,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3187,12 +2828,7 @@ export default {
                     spells: [
                       {
                         spell: spells.disguise_self,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3201,12 +2837,7 @@ export default {
                     spells: [
                       {
                         spell: spells.illusory_script,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3215,12 +2846,7 @@ export default {
                     spells: [
                       {
                         spell: spells.unseen_servant,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3229,12 +2855,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3243,12 +2864,7 @@ export default {
                     spells: [
                       {
                         spell: spells.burning_hands,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3257,12 +2873,7 @@ export default {
                     spells: [
                       {
                         spell: spells.identify,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3271,12 +2882,7 @@ export default {
                     spells: [
                       {
                         spell: spells.charm_person,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3285,12 +2891,7 @@ export default {
                     spells: [
                       {
                         spell: spells.feather_fall,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3299,12 +2900,7 @@ export default {
                     spells: [
                       {
                         spell: spells.find_familiar,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3313,12 +2909,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3327,12 +2918,7 @@ export default {
                     spells: [
                       {
                         spell: spells.expeditious_retreat,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3341,12 +2927,7 @@ export default {
                     spells: [
                       {
                         spell: spells.jump,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3355,12 +2936,7 @@ export default {
                     spells: [
                       {
                         spell: spells.false_life,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3369,12 +2945,7 @@ export default {
                     spells: [
                       {
                         spell: spells.color_spray,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3383,12 +2954,7 @@ export default {
                     spells: [
                       {
                         spell: spells.alarm,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3397,12 +2963,7 @@ export default {
                     spells: [
                       {
                         spell: spells.grease,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3411,12 +2972,7 @@ export default {
                     spells: [
                       {
                         spell: spells.longstrider,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3425,12 +2981,7 @@ export default {
                     spells: [
                       {
                         spell: spells.tensers_floating_disk,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3439,12 +2990,7 @@ export default {
                     spells: [
                       {
                         spell: spells.fog_cloud,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3453,12 +2999,7 @@ export default {
                     spells: [
                       {
                         spell: spells.sleep,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3467,12 +3008,7 @@ export default {
                     spells: [
                       {
                         spell: spells.chromatic_orb,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3481,12 +3017,7 @@ export default {
                     spells: [
                       {
                         spell: spells.shield,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_wizard1",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[4],
                       },
                     ],
                   },
@@ -3614,12 +3145,7 @@ export default {
                     spells: [
                       {
                         spell: spells.silent_image,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3628,12 +3154,7 @@ export default {
                     spells: [
                       {
                         spell: spells.thunderwave,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3642,12 +3163,7 @@ export default {
                     spells: [
                       {
                         spell: spells.heroism,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3656,12 +3172,7 @@ export default {
                     spells: [
                       {
                         spell: spells.dissonant_whispers,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3670,12 +3181,7 @@ export default {
                     spells: [
                       {
                         spell: spells.animal_friendship,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3684,12 +3190,7 @@ export default {
                     spells: [
                       {
                         spell: spells.tashas_hideous_laughter,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3698,12 +3199,7 @@ export default {
                     spells: [
                       {
                         spell: spells.healing_word,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3712,12 +3208,7 @@ export default {
                     spells: [
                       {
                         spell: spells.cure_wounds,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3726,12 +3217,7 @@ export default {
                     spells: [
                       {
                         spell: spells.disguise_self,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3740,12 +3226,7 @@ export default {
                     spells: [
                       {
                         spell: spells.illusory_script,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3754,12 +3235,7 @@ export default {
                     spells: [
                       {
                         spell: spells.unseen_servant,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3768,12 +3244,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3782,12 +3253,7 @@ export default {
                     spells: [
                       {
                         spell: spells.faerie_fire,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3796,12 +3262,7 @@ export default {
                     spells: [
                       {
                         spell: spells.identify,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3810,12 +3271,7 @@ export default {
                     spells: [
                       {
                         spell: spells.charm_person,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3824,12 +3280,7 @@ export default {
                     spells: [
                       {
                         spell: spells.feather_fall,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3838,12 +3289,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3852,12 +3298,7 @@ export default {
                     spells: [
                       {
                         spell: spells.bane,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3866,12 +3307,7 @@ export default {
                     spells: [
                       {
                         spell: spells.command,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3880,12 +3316,7 @@ export default {
                     spells: [
                       {
                         spell: spells.speak_with_animals,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3894,12 +3325,7 @@ export default {
                     spells: [
                       {
                         spell: spells.color_spray,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3908,12 +3334,7 @@ export default {
                     spells: [
                       {
                         spell: spells.longstrider,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -3922,12 +3343,7 @@ export default {
                     spells: [
                       {
                         spell: spells.sleep,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "magic_initiate_expanded",
-                          slot_type: "spell_bard1",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[5],
                       },
                     ],
                   },
@@ -4000,14 +3416,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_poison_and_disease,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4017,14 +3426,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4034,14 +3436,7 @@ export default {
                     spells: [
                       {
                         spell: spells.purify_food_and_drink,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4071,14 +3466,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_poison_and_disease,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4088,14 +3476,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4105,14 +3486,7 @@ export default {
                     spells: [
                       {
                         spell: spells.purify_food_and_drink,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4122,14 +3496,7 @@ export default {
                     spells: [
                       {
                         spell: spells.speak_with_animals,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "wisdom",
-                        },
+                        mod: mods.m[6],
                       },
                     ],
                   },
@@ -4159,14 +3526,7 @@ export default {
                     spells: [
                       {
                         spell: spells.illusory_script,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4176,14 +3536,7 @@ export default {
                     spells: [
                       {
                         spell: spells.unseen_servant,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4193,14 +3546,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4230,14 +3576,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4247,14 +3586,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4284,14 +3616,7 @@ export default {
                     spells: [
                       {
                         spell: spells.illusory_script,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4301,14 +3626,7 @@ export default {
                     spells: [
                       {
                         spell: spells.unseen_servant,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4318,14 +3636,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4335,14 +3646,7 @@ export default {
                     spells: [
                       {
                         spell: spells.identify,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4352,14 +3656,7 @@ export default {
                     spells: [
                       {
                         spell: spells.find_familiar,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4369,14 +3666,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4386,14 +3676,7 @@ export default {
                     spells: [
                       {
                         spell: spells.alarm,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4403,14 +3686,7 @@ export default {
                     spells: [
                       {
                         spell: spells.tensers_floating_disk,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "intelligence",
-                        },
+                        mod: mods.m[8],
                       },
                     ],
                   },
@@ -4440,14 +3716,7 @@ export default {
                     spells: [
                       {
                         spell: spells.illusory_script,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4457,14 +3726,7 @@ export default {
                     spells: [
                       {
                         spell: spells.unseen_servant,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4474,14 +3736,7 @@ export default {
                     spells: [
                       {
                         spell: spells.detect_magic,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4491,14 +3746,7 @@ export default {
                     spells: [
                       {
                         spell: spells.identify,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4508,14 +3756,7 @@ export default {
                     spells: [
                       {
                         spell: spells.comprehend_languages,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
@@ -4525,14 +3766,7 @@ export default {
                     spells: [
                       {
                         spell: spells.speak_with_animals,
-                        mod: {
-                          name_extra: "*",
-                          expanded_extra: "ritual_caster_expanded",
-                          slot_type: "0",
-                          cast_time: "ritual",
-                          cast_duration_units_plus: "plus_10_min",
-                          spell_attribute: "charisma",
-                        },
+                        mod: mods.m[7],
                       },
                     ],
                   },
