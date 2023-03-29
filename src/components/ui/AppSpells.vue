@@ -104,11 +104,11 @@
             />{{ em_After }} {{ name_Extra_MOD }}
           </div>
         </my-wrapper>
-        <div class="text_spell" v-html="t_Text"></div>
+        <div v-html="t_Text"></div>
         <div class="hr"></div>
-    <div class="text_spell-qr gray_4" v-html="t_Expanded"></div>
+    <div class="gray_4" v-html="t_Expanded"></div>
     <div
-      class="text_spell-qr rare-text"
+      class="rare-text"
       v-if="mod_Expanded_Extra"
       v-html="mod_Expanded_Extra"
     ></div>
