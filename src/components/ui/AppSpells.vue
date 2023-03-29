@@ -90,7 +90,22 @@
     </div>
   </main>
 
-  <main v-else-if="qr_form" id="qr_spell">
+  <main v-else-if="qr_form" id="qr_spell" class="flex_col gap-8">
+    <my-wrapper>
+          <div class="title_spell gray_2">{{ t_Type }} /</div>
+          <div class="title_spell">
+            {{ em_Before
+            }}<emoji
+              v-if="em_Upd"
+              :data="emojiIndex"
+              :emoji="em_Upd"
+              :set="set_emoji"
+              :size="emoji_size"
+            />{{ em_After }} {{ name_Extra_MOD }}
+          </div>
+        </my-wrapper>
+        <div class="text_spell" v-html="t_Text"></div>
+        <div class="hr"></div>
     <div class="text_spell-qr gray_4" v-html="t_Expanded"></div>
     <div
       class="text_spell-qr rare-text"
