@@ -6,11 +6,13 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useDicStore } from "@/stores/general/DicStore";
 
 import spells from "@/assets/catalog/base_data/list_spells.js";
+import mods from "@/assets/catalog/base_data/list_spells_mods.js";
 
 export const useSpellsStore = defineStore({
 	id: "SpellsStore",
 	state: () => ({
 		spells: spells,
+    mods: mods,
 	}),
 
 	getters: {

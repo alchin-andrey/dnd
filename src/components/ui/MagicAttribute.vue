@@ -13,7 +13,7 @@
 			</div>
       <div v-if="!not_dot" class="dotted passive">..................................</div>
 			<div v-if="main" class="numb" :class="{ passive: save }">
-				{{ Str }} {{ numb }}<span class="small">{{ Dice }}</span
+				{{ Str }} {{ Value_Main }}<span class="small">{{ Dice }}</span
 				>{{ Pls }} {{ t_Suffix }}
 			</div>
 			<div v-else class="numb" :class="{ passive: save }">
@@ -172,6 +172,14 @@ export default {
 				return null;
 			} else if (this.Miles) {
 				return this.numb / 5280;
+			} else {
+				return this.numb;
+			}
+		},
+
+		Value_Main() {
+      if (this.Miles) {
+				return "ꝏ";
 			} else {
 				return this.numb;
 			}

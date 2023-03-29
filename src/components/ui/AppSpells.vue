@@ -85,7 +85,7 @@
               <div class="manna_bubble_print fs-40" v-if="print_Plus">+</div>
             </div>
           </section>
-          <qrcode-vue :value="print_Spell_Link_Qr" :size="size" level="H" />
+          <qrcode-vue :value="print_Spell_Link_Qr" :size="size" level="L" />
         </div>
     </div>
   </main>
@@ -130,7 +130,7 @@
         </my-wrapper>
         <section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
           <section
-            class="manna_bubble manna_bubble_active"
+            class="manna_bubble manna_bubble_active manna_bubble_str"
             v-if="spell_Slot_Type_MOD"
           >
             {{ t_Slot_Type }}
@@ -311,7 +311,7 @@
         </my-wrapper>
         <section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
           <section
-            class="manna_bubble manna_bubble_active"
+            class="manna_bubble manna_bubble_active manna_bubble_str"
             v-if="spell_Slot_Type_MOD"
           >
             {{ t_Slot_Type }}
@@ -489,20 +489,19 @@ export default {
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
-
-
     print_Spell_Link_Qr() {
-      const sait = 'alchin-andrey.github.io/dnd/#';
+      const site = 'alchin-andrey.github.io/dnd/#';
       const chapter = '/s/'
       const spell_link = this.Spell_Index.link;
-      const full_link = sait + chapter + spell_link;
+      const full_link = site + chapter + spell_link;
 
       const lvl = `l=${this.MY.level}`;
       const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
       const spell_attribute = `sa=${this.spell_Attribute_MOD.slice(0, 2)}`;
 
-      const link = `${full_link}?${lvl}&${spell_attribute}&${base_link}`;
-      // console.log('link:', link)
+      const spell_mod_id = this.spell_Mod?.id;
+      const mod = this.spell_Mod ? `&m=${spell_mod_id}` : '';
+      const link = `${full_link}?${lvl}&${spell_attribute}&${base_link}` + mod;
       return link;
     },
 
@@ -918,7 +917,7 @@ export default {
 			if (mana == 1) return 7;
 			if (mana == 2) return 30;
 			if (mana == 3) return 365;
-			if (mana == 4) return "♾️";
+			if (mana == 4) return 5280;
 		},
 
 		Num_Mastery_05() {
@@ -1451,13 +1450,18 @@ export default {
 
 .manna_bubble {
 	padding: 5px 12px;
-	max-width: max-content;
+  width: 31px;
 	height: 28px;
 	border-radius: 100px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+}
+
+.manna_bubble_str {
+  width: 100%;
+  max-width: max-content;
 }
 
 .manna_bubble_choice {
