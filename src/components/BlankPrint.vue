@@ -55,7 +55,7 @@
         <BlankText__All/>
 			</main>
 
-      <main class="print-page">
+      <main class="print-page" v-if="!PRINT_WORK" >
         <section class="wrap-head int-600-28">
           <div>{{T('print_biography')}}</div>
         </section>
@@ -81,6 +81,8 @@ export default {
 		return {
       PRINT_WORK: false,
       NOT_DEPLOY: true,
+      spell_list_1: 7,
+      spell_rest: 9,
 		};
 	},
 	computed: {
@@ -88,16 +90,19 @@ export default {
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM"]),
 
     spell_List_3() {
-      return this.spell_RC_Param_Sort_ApAM.slice(0, 8);
+      const num = this.spell_list_1
+      return this.spell_RC_Param_Sort_ApAM.slice(0, num);
     },
 
     spell_Left() {
-      return this.spell_RC_Param_Sort_ApAM.slice(8);
+      const num = this.spell_list_1
+      return this.spell_RC_Param_Sort_ApAM.slice(num);
     },
 
     list_Count() {
       const spells_left = this.spell_Left;
-      const list_count = Math.ceil(spells_left.length / 10);
+      const num = this.spell_rest
+      const list_count = Math.ceil(spells_left.length / num);
       return list_count;
     },
 
@@ -110,9 +115,9 @@ export default {
 
   methods: {
     spellsList(i) {
-      const numb = 9;
-      const start = (i - 1) * numb;
-      const end = numb + start;
+      const num = this.spell_rest
+      const start = (i - 1) * num;
+      const end = num + start;
       return this.spell_Left.slice(start, end);
     },
   }

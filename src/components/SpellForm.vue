@@ -1,7 +1,9 @@
 <template>
 	<div class="spell-wrapp">
-		<div class="spell-baner int-400">
-			<AppSpells :spell_obj="spell_Obj" qr_form />
+		<div>
+		  <div class="spell-baner int-400">
+  			<AppSpells :spell_obj="spell_Obj" qr_form />
+  		</div>
 		</div>
 	</div>
 </template>
@@ -34,8 +36,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .spell-wrapp {
-	margin: 0 auto;
+  width: 100%;
+  display: flex;
+	/* margin: 0 auto; */
+  justify-content: center;
 	padding: 10px;
 	/* align-self: center; */
 	/* height: max-content; */

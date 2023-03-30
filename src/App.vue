@@ -28,6 +28,7 @@ a {
 	-moz-osx-font-smoothing: grayscale;
 	height: 100%;
 	display: flex;
+  /* justify-content: center; */
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;

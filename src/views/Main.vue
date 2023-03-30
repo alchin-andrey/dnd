@@ -372,8 +372,8 @@ export default {
         width: 2088,
         // height: 1223,
         // imageTimeout: 200000,
-        // letterRendering: true,
-        // useCORS: true
+        letterRendering: true,
+        useCORS: true
       },
       jsPDF: { 
         unit: 'pt', 
@@ -424,28 +424,6 @@ export default {
 </script>
 
 <style>
-body {
-	background-color: #0e1518;
-}
-
-a {
-	color: #fff;
-}
-
-#app {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	height: 100%;
-	display: flex;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	overflow: hidden;
-	color: #ffffff;
-}
 
 .title-donat {
 	margin-bottom: 21px;
