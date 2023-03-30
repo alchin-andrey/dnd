@@ -68,6 +68,16 @@
   text-transform: uppercase;
 }
 
+.jbm-500-40 {
+  font-family: 'JetBrains Mono-500';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  /* line-height: 36px; */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .int-400 {
 	font-family: "Inter-400";
 	font-style: normal;
