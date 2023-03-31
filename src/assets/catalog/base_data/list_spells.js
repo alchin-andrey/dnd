@@ -14191,6 +14191,51 @@ export default {
     },
   ],
 
+  empowered_evocation: [
+    {      
+      h: {ua: 674, ru: 674},
+      link: "empowered_evocation",
+      name: "spell_empowered_evocation",
+      details: "spell_empowered_evocation_details",
+      expanded: "spell_empowered_evocation_expanded",
+
+      type: "ability",
+      classes: ["wizard",],
+
+      cast_time: "none",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: null,
+
+      parts: ["none"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "bonus_w",
+
+      impact_size_foo: "Num_INT",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   // NOTE - Spells [0]
 
   // All spells / 0 ----------------------------------------------------------

@@ -6002,4 +6002,8 @@ export default {
   print_biography: "Біографія",
 
   link_description: "Настройки персонажа сохраненьі на исходном устройстве.",
+
+  spell_empowered_evocation: spells.empowered_evocation,
+  spell_empowered_evocation_details: spells.empowered_evocation_details,
+  spell_empowered_evocation_expanded: spells.empowered_evocation_expanded,
 };  
