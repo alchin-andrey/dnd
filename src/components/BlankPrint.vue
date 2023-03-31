@@ -93,8 +93,8 @@ export default {
 	mixins: [BlankPrintLink],
   data() {
 		return {
-      PRINT_WORK: true,
-      DEPLOY: true,
+      PRINT_WORK: false,
+      DEPLOY: false,
       spell_list_1: 7,
       spell_rest: 9,
 		};
