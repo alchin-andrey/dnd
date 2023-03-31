@@ -470,7 +470,7 @@ export default {
 
     print_Spell_Link_Qr() {
       // const site = 'alchin-andrey.github.io/dnd/#';
-      const site = 'dndme.club';
+      const site = 'dndme.club/#';
       const chapter = '/s/'
       const spell_link = this.Spell_Index.link;
       const full_link = site + chapter + spell_link;
