@@ -73,15 +73,23 @@
 
         <div class="flex_qr_wrapp">
           <section class="flex_mana jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
-            <div class="manna_bubble_print" v-if="spell_Slot_Type_MOD">{{ t_Slot_Type }}</div>
+            
+            <div 
+            class="manna_bubble_print" 
+            :class="{manna_bubble_print_zero: t_Slot_Type == '0'}"  
+            v-if="spell_Slot_Type_MOD"
+            >
+            {{ t_Slot_Type }}
+            </div>
             
             <div class="flex_row gap-8" v-if="shown_Manna">
               <div 
               class="manna_bubble_print" 
-              :class="{manna_bubble_print_zero: Index == 0}" 
+              :class="{manna_bubble_print_zero: Index == 0 }" 
               >
               {{ print_Manna }}
               </div>
+
               <div class="manna_bubble_print jbm-500-40" v-if="print_Plus">
                 <div class="print_icon">
                     <svg

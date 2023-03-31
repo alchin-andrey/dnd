@@ -74,9 +74,7 @@ export default {
 				const numb = this.skills_RC_All_Numb(el);
 				arr.push({ t_name: t_name, numb: numb });
 			});
-      arr.sort((a, b) => {
-        return a.t_name.localeCompare(b.t_name);
-			});
+      arr.sort((a, b) => a.t_name.localeCompare(b.t_name));
 			return arr;
 		},
 

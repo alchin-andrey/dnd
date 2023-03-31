@@ -212,14 +212,25 @@ export const useSpellsStore = defineStore({
       const abil_ALL = [...abil_pass, ...abil];
       const abil_clean = abil_ALL.filter((el) => el.spell.find((item) => !item.slot_type));
       const abil_slot_type = abil_ALL.filter((el) => el.spell.find((item) => item.slot_type));
+      abil_slot_type.sort((a, b) => {
+        const a_slot = a.spell.find(el => el.name).slot_type;
+        const b_slot = b.spell.find(el => el.name).slot_type;
+        return a_slot.localeCompare(b_slot);
+      });
 
       const manna = this.spells_RC_Param_Manna;
       const spell_mod = manna.filter((el) => el.mod);
+      
+      const spell_mod_slot = spell_mod.filter((el) => el.mod.slot_type !== "0");
+      spell_mod_slot.sort((a, b) => a.mod.slot_type.localeCompare(b.mod.slot_type));
+      const spell_mod_0 = spell_mod.filter((el) => el.mod.slot_type == "0");
+
       const spell_clean = manna.filter((el) => !el.mod);
       return [
         ...abil_clean,
         ...abil_slot_type,
-        ...spell_mod,
+        ...spell_mod_slot,
+        ...spell_mod_0,
         ...spell_clean,
       ];
     },

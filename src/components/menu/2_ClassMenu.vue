@@ -107,11 +107,20 @@ export default {
       return this.other_Filter.length !== 0
     },
 
+    // shown_Spells() {
+    //   return (
+    //     this.spells_0_Filter.length !== 0 ||
+    //     this.spells_Filter.length !== 0 ||
+    //     this.spells_Settings_Class_Arr.length !== 0
+    //   )
+    // },
+
     shown_Spells() {
       return (
         this.spells_0_Filter.length !== 0 ||
+        this.spells_1_Filter.length !== 0 ||
         this.spells_Filter.length !== 0 ||
-        this.spells_Settings_Class_Arr.length !== 0
+        this.spells_Arcanum_Filter.length !== 0
       )
     },
 
