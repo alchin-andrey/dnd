@@ -8,6 +8,7 @@ const ethnos_def = Object.values(race_def.race_settings.ethnos)[0];
 const class_def = Object.values(classes)[0];
 const backstories_def = Object.values(backstories)[0];
 export default {
+  select_lang: "ua",
 	//Key selections
 	name: "Байрактар",
 	race: race_def,

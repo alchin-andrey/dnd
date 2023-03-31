@@ -39,16 +39,16 @@ export default {
 		...mapState(useDicStore, ["dic"]),
     ...mapState(useMYStore, ["MY"]),
 
-		lang_Icon(stor) {
-			return require(`@/assets/img/icon/lang/icon_${stor.dic.select_lang}.png`)
+		lang_Icon() {
+			return require(`@/assets/img/icon/lang/icon_${this.MY.select_lang}.png`)
     },
 		
-    em_Icon(stor) {
-			return stor.dic.lang.find(icon => icon.mark === stor.dic.select_lang).icon
+    em_Icon() {
+			return this.dic.lang.find(icon => icon.mark === this.MY.select_lang).icon
     },
 
-		char_Lvl(stor) {
-      return `lvl ${stor.MY.level}`
+		char_Lvl() {
+      return `lvl ${this.MY.level}`
     },
 	},
 

@@ -64,10 +64,6 @@ export const useSpellsStore = defineStore({
 			return res;
 		},
 
-    // spells_filter_Ability: (stor) => (arr) => {
-		// 	return arr.filter((el) => el.spell.find((item) => item.name).type == "ability");
-		// },
-
     spells_filter_Ability: (stor) => (arr) => {
 			return arr.filter((el) => {
           const abil = el.spell.find((item) => item.name).type == "ability";
@@ -87,12 +83,6 @@ export const useSpellsStore = defineStore({
 				(el) => el.spell.find((item) => item.name).cast_time !== "none"
 			);
 		},
-    
-    // spells_filter_Not_Ability: (stor) => (arr) => {
-		// 	return arr.filter(
-		// 		(el) => el.spell.find((item) => item.name).type !== "ability"
-		// 	);
-		// },
 
     spells_filter_Not_Ability: (stor) => (arr) => {
 			return arr.filter((el) => {

@@ -394,6 +394,7 @@
 import QrcodeVue from 'qrcode.vue'
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
+import { useDicStore } from "@/stores/general/DicStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
@@ -413,7 +414,6 @@ export default {
 			mana_numb: null,
 			emoji_size: 16,
 			isShown: false,
-      sait_link: 'http://dndme.club',
       size: 120,
 		};
 	},
@@ -477,6 +477,7 @@ export default {
 	// },
 
 	computed: {
+		...mapState(useDicStore, ["MY", "Mastery", "shown_Level_Dot"]),
 		...mapState(useMYStore, ["MY", "Mastery", "shown_Level_Dot"]),
     ...mapState(useStatsStore, ["stats_link"]),
 		// GETTERS
@@ -486,19 +487,19 @@ export default {
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
     print_Spell_Link_Qr() {
-      // const site = 'alchin-andrey.github.io/dnd/#';
       const site = 'dndme.club/#';
       const chapter = '/s/'
       const spell_link = this.Spell_Index.link;
       const full_link = site + chapter + spell_link;
 
+      const lang = `ln=${this.MY.select_lang}`;
       const lvl = `l=${this.MY.level}`;
       const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
       const spell_attribute = `sa=${this.spell_Attribute_MOD.slice(0, 2)}`;
 
       const spell_mod_id = this.spell_Mod?.id;
       const mod = this.spell_Mod ? `&m=${spell_mod_id}` : '';
-      const link = `${full_link}?${lvl}&${spell_attribute}&${base_link}` + mod;
+      const link = `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
       return link;
     },
 
@@ -1316,6 +1317,7 @@ export default {
       const query = this.spell_Link;
       if(query) {
         this.MY.level = query?.l ?? this.MY.level;
+        this.MY.select_lang = query?.ln ?? this.MY.select_lang;
 
         this.stats_link.strength = query?.st;
         this.stats_link.dexterity = query?.de;

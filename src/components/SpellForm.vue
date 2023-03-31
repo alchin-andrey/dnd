@@ -1,9 +1,9 @@
 <template>
 	<div class="spell-wrapp">
 		<div>
-		  <div class="spell-baner int-400">
-  			<AppSpells :spell_obj="spell_Obj" qr_form />
-  		</div>
+      <div class="spell-baner int-400">
+        <AppSpells :spell_obj="spell_Obj" qr_form />
+      </div>
 		</div>
 	</div>
 </template>
