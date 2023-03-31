@@ -72,8 +72,9 @@
       <main class="col-wrap-spell">
         <AppSpells
             class="cell-spell mr-min"
-            v-for="item in spells_Arr"
+            v-for="item, i in spells_Arr"
 						:key="item"
+            :id="`spell_${i}`"
 						:spell_obj="{spell: item}"
             blank_print
 					/>
@@ -98,6 +99,33 @@ export default {
       spell_rest: 9,
 		};
 	},
+
+  mounted(el, binding) {
+    this.spells_Arr.forEach((el, i) => {
+      const id = `spell_${i}`
+      const name = el.find(item => item.name).name
+      const h = document.getElementById(id).offsetHeight;
+
+      // const h1 = document.getElementById(id).clientHeight;
+      // const h2 = document.getElementById(id).offsetHeight;
+      // const h3 = document.getElementById(id).scrollHeight;
+      // const obg = {
+      //   name: name,
+      //   height: `${h}px`
+      // }
+      // console.table(obg);
+      console.log('name:', name);
+      console.log('height:', `${h}px`);
+      // console.log('h1:', `${h1}px`);
+      // console.log('h2:', `${h2}px`);
+      // console.log('h3:', `${h3}px`);
+      console.log('-------------------');
+
+      // console.table(obg);
+      
+    });
+  },
+
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM", "spells_Arr"]),
@@ -127,6 +155,14 @@ export default {
 	},
 
   methods: {
+    spellObj(item, i) {
+      // const id = `${item}_${i}`
+      // const h = document.getElementById(id).offsetHeight;
+      // console.log('h:', h)
+      return {spell: item}
+    },
+
+
     spellsList(i) {
       const num = this.spell_rest
       const start = (i - 1) * num;
