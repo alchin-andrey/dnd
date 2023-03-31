@@ -210,7 +210,7 @@ export default {
 		return {
 			dialogVisible: false,
 			small_screen: false,
-      PRINT_BLANK: false,
+      PRINT_BLANK: true,
 		};
 	},
 

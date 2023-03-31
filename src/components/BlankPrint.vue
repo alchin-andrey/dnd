@@ -51,7 +51,9 @@
 					/>
         </section>
 			</main>
-      <main class="print-page">
+
+
+      <main class="print-page" v-if="!PRINT_WORK">
         <BlankText__All/>
 			</main>
 
@@ -65,6 +67,17 @@
           <div>{{T('print_places')}}</div>
         </section>
 			</main>
+
+
+      <main class="col-wrap-spell">
+        <AppSpells
+            class="cell-spell mr-min"
+            v-for="item in spells_Arr"
+						:key="item"
+						:spell_obj="{spell: item}"
+            blank_print
+					/>
+      </main>
 		</div>
 	</div>
 </template>
@@ -79,7 +92,7 @@ export default {
 	mixins: [BlankPrintLink],
   data() {
 		return {
-      PRINT_WORK: false,
+      PRINT_WORK: true,
       NOT_DEPLOY: true,
       spell_list_1: 7,
       spell_rest: 9,
@@ -87,7 +100,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
-		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM"]),
+		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM", "spells_Arr"]),
 
     spell_List_3() {
       const num = this.spell_list_1
@@ -138,6 +151,10 @@ export default {
 	margin-right: -2088px;
 }
 
+.blank-conteiner::-webkit-scrollbar {
+	width: 0;
+}
+
 .blank-scroll {
 	height: 10000%;
 }
@@ -146,10 +163,6 @@ export default {
 	width: 100%;
 	height: 2952px;
 	padding: 72px;
-}
-
-.blank-conteiner::-webkit-scrollbar {
-	width: 0;
 }
 
 .blank-head {

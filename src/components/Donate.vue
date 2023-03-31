@@ -33,13 +33,13 @@
 			</section>
 
 			<section class="grid gap-4" v-if="finish">
-				<my-selection-card
+				<!-- <my-selection-card
 					@click="doCopy(char_numb), copiedLink('char_copied')"
 					copy
 					:copied="char_copied"
 				>
 					<div class="text">{{ t_Copy }}</div>
-				</my-selection-card>
+				</my-selection-card> -->
 				<my-selection-card download @click="btnClick()">
 					<div class="text" >
 						{{ t_Pdf }} 
