@@ -69,7 +69,8 @@ export default {
     },
 
     value_Numb() {
-      if(this.title == "initiative") return `+${this.numb}`
+      const unit = this.numb > 0 ? "+" : "";
+      if(this.title == "initiative") return unit + this.numb
       if(this.hp_Dice) return `d${this.numb}`
       else return this.numb;
     },
