@@ -235,7 +235,7 @@ export default {
 		t_Equip_Name: (state) => (item) => {
 			const name = state.T(item[0].name);
 			const namb = item[1];
-			return namb > 1 ? `${name} x ${namb}` : name;
+			return namb > 1 ? `${name} × ${namb}` : name;
 			// return str[0].toUpperCase() + str.slice(1);
 		},
 
@@ -245,7 +245,7 @@ export default {
 
 		print_Weapon_Numb() {
 			const namb = this.weapon[1];
-			return namb > 1 ? ` x ${namb}` : null;
+			return namb > 1 ? ` × ${namb}` : null;
 		},
 
     print_Hand() {

@@ -118,7 +118,7 @@ export default {
 		t_Equip_Name: (state) => (inv) => {
 			const name = state.T(inv[0].name);
 			const namb = inv[1];
-			return namb > 1 ? `${name} x ${namb}` : name;
+			return namb > 1 ? `${name} × ${namb}` : name;
 		},
 
 		t_Armor_Name() {
@@ -133,7 +133,7 @@ export default {
 
 		t_Ammunition_Numb() {
 			const ammunition = this.ammunition_Equip_Print;
-			if (ammunition) return `x${ammunition[1]}`;
+			if (ammunition) return `×${ammunition[1]}`;
 		},
 
 		t_Aim_Range() {

@@ -110,7 +110,7 @@ export default {
     t_Equip_Name: (state) => (item) => {
 			const name = state.t(item[0].name);
 			const namb = item[1];
-			let str = namb > 1 ? `${name} x ${namb}` : name;
+			let str = namb > 1 ? `${name} × ${namb}` : name; 
 			return str[0].toUpperCase() + str.slice(1);
 		},
 
