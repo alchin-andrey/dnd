@@ -82,7 +82,16 @@
               >
               {{ print_Manna }}
               </div>
-              <div class="manna_bubble_print jbm-500-40" v-if="print_Plus">+</div>
+              <div class="manna_bubble_print jbm-500-40" v-if="print_Plus">
+                <div class="print_icon">
+                    <svg
+                      class="print-svg"
+                      viewBox="0 0 18 18"
+                      xmlns="http://www.w3.org/2000/svg"
+                      v-html="ui_icon.plus"
+                    />
+                </div>
+              </div>
             </div>
           </section>
           <qrcode-vue :value="print_Spell_Link_Qr" :size="size" level="L" />
@@ -484,16 +493,6 @@ export default {
       const link = `${full_link}?${lvl}&${spell_attribute}&${base_link}` + mod;
       return link;
     },
-
-    // link_Level() {
-		// 	const param_level = this.spell_Link?.lvl;
-		// 	return param_level ?? this.MY.level;
-		// },
-
-    // link_Mastery() {
-		// 	const param_level = this.spell_Link?.lvl;
-		// 	return param_level ?? this.MY.level;
-		// },
 
 		shown_Spell_Text() {
 			return this.only_title ? this.isShown : true;
@@ -1635,5 +1634,16 @@ export default {
 .flex_mana {
   flex: 1 1 auto;
   justify-self: flex-start;
+}
+
+.print_icon {
+  width: 36px;
+	height: 36px;
+}
+
+.print-svg {
+  width: 36px;
+	height: 36px;
+	fill: black;
 }
 </style>

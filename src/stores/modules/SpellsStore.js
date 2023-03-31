@@ -64,10 +64,16 @@ export const useSpellsStore = defineStore({
 			return res;
 		},
 
+    // spells_filter_Ability: (stor) => (arr) => {
+		// 	return arr.filter((el) => el.spell.find((item) => item.name).type == "ability");
+		// },
+
     spells_filter_Ability: (stor) => (arr) => {
-			return arr.filter(
-				(el) => el.spell.find((item) => item.name).type == "ability"
-			);
+			return arr.filter((el) => {
+          const abil = el.spell.find((item) => item.name).type == "ability";
+          const i = el.spell.findIndex((item) => item.name);
+          return abil && i == 0;
+        });
 		},
 
     spells_filter_Ability_Passive: (stor) => (arr) => {
@@ -82,10 +88,18 @@ export const useSpellsStore = defineStore({
 			);
 		},
     
+    // spells_filter_Not_Ability: (stor) => (arr) => {
+		// 	return arr.filter(
+		// 		(el) => el.spell.find((item) => item.name).type !== "ability"
+		// 	);
+		// },
+
     spells_filter_Not_Ability: (stor) => (arr) => {
-			return arr.filter(
-				(el) => el.spell.find((item) => item.name).type !== "ability"
-			);
+			return arr.filter((el) => {
+        const abil = el.spell.find((item) => item.name).type == "ability";
+        const i = el.spell.findIndex((item) => item.name);
+        return !abil || i !== 0;
+      });
 		},
 
 		spells_Race_Main_Arr() {
@@ -187,15 +201,27 @@ export const useSpellsStore = defineStore({
 		spells_RC_Param_Manna() {
       const RC_mana = this.spells_filter_Not_Ability(this.spells_RC_Param);
       RC_mana.sort((a, b) => a.spell.length - b.spell.length);
+      RC_mana.sort((a, b) => a.spell.findIndex((el) => el.name) - b.spell.findIndex((el) => el.name));
 			return RC_mana;
 		},
 
     spell_RC_Param_Sort_ApAM() {
+      const abil_pass = this.spells_RC_Param_Ability_Passive;
+      const abil = this.spells_RC_Param_Ability;
+      
+      const abil_ALL = [...abil_pass, ...abil];
+      const abil_clean = abil_ALL.filter((el) => el.spell.find((item) => !item.slot_type));
+      const abil_slot_type = abil_ALL.filter((el) => el.spell.find((item) => item.slot_type));
+
+      const manna = this.spells_RC_Param_Manna;
+      const spell_mod = manna.filter((el) => el.mod);
+      const spell_clean = manna.filter((el) => !el.mod);
       return [
-        ...this.spells_RC_Param_Ability_Passive,
-        ...this.spells_RC_Param_Ability,
-        ...this.spells_RC_Param_Manna,
-      ]
+        ...abil_clean,
+        ...abil_slot_type,
+        ...spell_mod,
+        ...spell_clean,
+      ];
     },
 
 		//NOTE - PAGE

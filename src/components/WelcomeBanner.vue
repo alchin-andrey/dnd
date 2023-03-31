@@ -35,7 +35,7 @@ export default {
   -webkit-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
-  z-index: 100;
+  z-index: 500;
 }
 
 .icone_del {

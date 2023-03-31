@@ -9,19 +9,10 @@ export default {
 
   check: '<path d="M4.98798 8.0843L5.95903 6.99688L8.12088 9.11627L12.1499 5.22283L13.1421 6.27603L8.06646 11.0731L4.98798 8.0843Z" />',
 
-  plus: '<path fill-rule="evenodd" clip-rule="evenodd" d="M10 5H8V8L5 8V10H8V13H10V10L13 10V8L10 8V5Z" fill="white"/>',
+  plus: '<path fill-rule="evenodd" clip-rule="evenodd" d="M10 5H8V8L5 8V10H8V13H10V10L13 10V8L10 8V5Z" />',
+
+  minus: '<path d="M13 10L9 10L5 10L5 8L9 8L13 8L13 10Z" />',
 
   delete: '<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5355 6.87831L11.1213 5.46409L9 7.58541L6.87868 5.46409L5.46447 6.87831L7.58579 8.99963L5.46447 11.1209L6.87868 12.5352L9 10.4138L11.1213 12.5352L12.5355 11.1209L10.4142 8.99963L12.5355 6.87831Z" fill="#FF0000"/>',
 
-  print_plus: '<path fill-rule="evenodd" clip-rule="evenodd" d="M20 10H16V16L10 16V20H16V26H20V20L26 20V16L20 16V10Z" />',
-
-  print_minus: '<path d="M26 20L18 20L10 20L10 16L18 16L26 16L26 20Z" />'
-	
-	// constitution: '',
-  
-  // charisma: '',
-
-	// intelligence: '',
-  
-	// wisdom: '',
 };

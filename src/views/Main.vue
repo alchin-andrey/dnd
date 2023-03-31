@@ -104,8 +104,6 @@
 				}"
 			>
 				<WelcomeBanner />
-        <router-view/>
-
 
 				<RaceBody body_part="skin" />
 				<RaceBody body_part="eyes" />
@@ -211,6 +209,7 @@ export default {
 			dialogVisible: false,
 			small_screen: false,
       PRINT_BLANK: true,
+      // PRINT_BLANK: false,
 		};
 	},
 
