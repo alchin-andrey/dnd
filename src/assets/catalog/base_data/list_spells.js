@@ -14206,13 +14206,13 @@ export default {
       cast_duration: null,
       cast_duration_units: null,
 
-      aim_target: "creature",
-      aim_type: "in_distance",
+      aim_target: "none",
+      aim_type: null,
       aim_range: null,
 
       parts: ["none"],
 
-      spell_time: "instant",
+      spell_time: "always",
       spell_duration: null,
       spell_duration_units: null,
 
