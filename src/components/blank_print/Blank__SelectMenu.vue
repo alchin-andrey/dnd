@@ -9,9 +9,9 @@
 			<div class="hr-print"></div>
 			<AppPrintMenu__Chapter title="level" :chapter="String(MY.level)" />
       <div class="hr-print"></div>
-			<AppPrintMenu__Chapter title="race" :chapter="MY.race.name" />
+			<AppPrintMenu__Chapter title="race" :chapter="MY.race_name" />
 			<AppPrintMenu__Chapter title="ethnos" :chapter="MY.ethnos.name" />
-			<AppPrintMenu__Chapter title="past" :chapter="MY_Backstory.name" />
+			<AppPrintMenu__Chapter title="past" :chapter="MY.backstory_name" />
 
 			<AppPrintMenu__Arr :menu="other_Filter_Race" />
 			<AppPrintMenu__Arr :menu="spells_0_Filter_Race" />
@@ -78,7 +78,6 @@ export default {
 	computed: {
 		...mapState(useMYStore, [
       "MY",
-      "MY_Backstory",
       "сustomm_Settings_Race_Arr",
       "сustomm_Settings_Class_Arr",
       "spells_Settings_Class_Arr",

@@ -1,7 +1,7 @@
 <template>
   <div class="grid__body">
     <div class="grid__title int-600-48"><div class="text__item">{{ MY_Name }}</div></div>
-    <AppMainCell class="cell" title="race" :content="MY.race.name" />
+    <AppMainCell class="cell" title="race" :content="MY.race_name" />
     <AppMainCell class="cell" title="ethnos" :content="MY.ethnos.name" />
 
     <AppMainCell class="cell" title="class" :content="MY.class_name" />
@@ -43,7 +43,7 @@ export default {
 
     MY_Name() {
       const name = this.MY.name;
-      return name.length !== 0 ? name : `${this.str_Upper(this.t("someone"))} ${this.t(this.MY.race.name)}`
+      return name.length !== 0 ? name : `${this.str_Upper(this.t("someone"))} ${this.t(this.MY.race_name)}`
     }
 	},
 };

@@ -62,7 +62,7 @@ export default {
 	},
 
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Race",]),
 		...mapState(usePagesStore, ["race_page"]),
 		Target_Range() {
 			if (this.lvl) {
@@ -110,7 +110,7 @@ export default {
 			if (this.lvl) {
 				return this.max_lvl;
 			} else {
-				return this.MY.race.race_settings[this.Target_Range].max;
+				return this.MY_Race.race_settings[this.Target_Range].max;
 			}
 		},
 
@@ -118,7 +118,7 @@ export default {
 			if (this.lvl) {
 				return this.min_lvl;
 			} else {
-				return this.MY.race.race_settings[this.Target_Range].min;
+				return this.MY_Race.race_settings[this.Target_Range].min;
 			}
 		},
 
@@ -126,8 +126,8 @@ export default {
 			if (this.lvl) {
 				return null;
 			} else {
-				let min = this.MY.race.race_settings[this.Target_Range].min;
-				let max = this.MY.race.race_settings[this.Target_Range].max;
+				let min = this.MY_Race.race_settings[this.Target_Range].min;
+				let max = this.MY_Race.race_settings[this.Target_Range].max;
 				return (this.MY[this.Target_Range] - min) / (max - min);
 			}
 		},
@@ -152,7 +152,7 @@ export default {
 		},
 	},
 	watch: {
-		"MY.race": {
+		"MY.race_name": {
 			handler() {
 				if (this.lvl) {
 					return null;
@@ -165,7 +165,7 @@ export default {
 					}, 1);
 				}
 			},
-			deep: true,
+			// deep: true,
 			immediate: true,
 		},
 		modelValue: {

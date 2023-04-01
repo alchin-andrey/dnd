@@ -46,8 +46,8 @@ export default {
 
 	methods: {
 		getLink() {
-			if (!this.MY._settings_race[this.MY.race.name]) {
-				this.MY._settings_race[this.MY.race.name] = {};
+			if (!this.MY._settings_race[this.MY.race_name]) {
+				this.MY._settings_race[this.MY.race_name] = {};
 			}
 		},
 
@@ -59,7 +59,7 @@ export default {
 				arr.push(list_el);
 			}
 			this.getLink();
-			this.MY._settings_race[this.MY.race.name][this.custom.id_link] = arr;
+			this.MY._settings_race[this.MY.race_name][this.custom.id_link] = arr;
 		},
 	},
 };

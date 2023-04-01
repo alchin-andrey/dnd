@@ -174,7 +174,7 @@ export default {
 		//STORES
 		...mapState(useMYStore, [
       "MY",
-      "MY_Backstory",
+      "MY_Race",
       "subclass_Name"]),
 		...mapState(usePagesStore, [
 			"race_page",
@@ -253,9 +253,9 @@ export default {
 
 		arr_Name_Race_Page() {
 			let arr = [];
-			arr.push(this.MY.race.name);
+			arr.push(this.MY.race_name);
 			arr.push(this.MY.ethnos.name);
-			arr.push(this.MY_Backstory.name);
+			arr.push(this.MY.backstory_name);
 			return arr;
 		},
 
@@ -267,12 +267,12 @@ export default {
 		},
 
 		race_Settings() {
-			return this.MY.race.race_settings;
+			return this.MY_Race.race_settings;
 		},
 
 		Char_Hight_Back() {
-			let max_height = this.MY.race.race_settings.height.max;
-			let min_height = this.MY.race.race_settings.height.min;
+			let max_height = this.MY_Race.race_settings.height.max;
+			let min_height = this.MY_Race.race_settings.height.min;
 			let mein_height = (min_height + max_height) / 2;
 			let kof = 0;
 			if (mein_height == 105) {
@@ -303,9 +303,6 @@ export default {
 
 		exportToPDF() {
       const name = this.MY.name;
-      // const race = this.MY.race.name;
-      // const ethnos = this.MY.ethnos.name;
-      // const classes = this.MY.class_name;
       const lvl = this.MY.level;
 
       const element = document.getElementById('element-to-convert');

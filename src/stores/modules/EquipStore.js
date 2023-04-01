@@ -43,7 +43,7 @@ export const useEquipStore = defineStore({
     // SECTION - Race
     equipments_Race_Main_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.race.equipment);
+			return MYStore.level_Filter_Arr(MYStore.MY_Race.equipment);
 		},
 
     equipments_Race_Ethnos_Arr() {

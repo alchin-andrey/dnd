@@ -1,10 +1,8 @@
-// import color from "@/assets/catalog/base_data/_colors.js";
 import races from "@/assets/catalog/base_data/step1_races.js";
-// import classes from "@/assets/catalog/base_data/step2_classes";
 
 const race_def = Object.values(races)[0];
 const ethnos_def = Object.values(race_def.race_settings.ethnos)[0];
-// const class_def = Object.values(classes)[0];
+
 export default {
   select_lang: "ua",
 	//Key selections
@@ -18,8 +16,7 @@ export default {
   _settings_class: {},
   _settings_alignment: {},
   
-  race: race_def,
-	// class: class_def,
+  // race: race_def,
   race_name: "gnome",
   class_name: "rogue",
   backstory_name: "back_urchin",

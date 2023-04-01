@@ -54,11 +54,11 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Race"]),
 		pass_Link() {
-			let skin = this.MY.race.race_settings.color.skin.length;
-			let eyes = this.MY.race.race_settings.color.eyes.length;
-			let hair = this.MY.race.race_settings.color.hair.length;
+			let skin = this.MY_Race.race_settings.color.skin.length;
+			let eyes = this.MY_Race.race_settings.color.eyes.length;
+			let hair = this.MY_Race.race_settings.color.hair.length;
 			let fact_1 = this.type == "common";
 			let fact_2 = this.title == "color_skin" && skin == 0;
 			let fact_3 = this.title == "color_eyes" && eyes == 0;

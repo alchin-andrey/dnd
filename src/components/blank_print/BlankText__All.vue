@@ -3,9 +3,9 @@
     <my-card-text
 				class="story-print int-400-22"
 				notation="race"
-				:title="MY.race.name"
-				:text_html="MY.race.details"
-				:rare="MY.race.rare"
+				:title="MY.race_name"
+				:text_html="MY_Race.details"
+				:rare="MY_Race.rare"
 				blank_print
 			/>
       
@@ -55,6 +55,7 @@ export default {
 	computed: {
     ...mapState(useMYStore, [
       "MY",
+      "MY_Race",
       "MY_Class",
       "MY_Backstory",
       "сustomm_Settings_Class_Arr"

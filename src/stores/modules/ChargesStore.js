@@ -10,7 +10,7 @@ export const useChargesStore = defineStore({
 	getters: {
     charges_Race_Main_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.race.charges);
+			return MYStore.level_Filter_Arr(MYStore.MY_Race.charges);
 		},
 
 		charges_Race_Ethnos_Arr() {

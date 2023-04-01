@@ -10,7 +10,7 @@ export const useFinesStore = defineStore({
 	getters: {
     fines_Race_Main_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.race?.fines);
+			return MYStore.level_Filter_Arr(MYStore.MY_Race?.fines);
 		},
 
 		fines_Race_Ethnos_Arr() {

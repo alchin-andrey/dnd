@@ -59,22 +59,4 @@ function A(x) {
 
 //------------------------------------------
 
-// document.getElementById('out').innerHTML = c;
-//
-// MY.race = race.halfling
-// MY.ethnos = race.halfling.settings.ethnos.lightfoot
-//
-// console.log(`${TT(MY.ethnos.name)} ${TT(MY.race.name)}`);
-//
-// for (let i in MY.stats) {
-//     MY.stats[i] = A(MY.race[i]) + A(MY.ethnos[i]);
-//     console.log(`${TT(i)} ${TT("base")}: ${A(MY.stats[i])}`);
-// };
-//
-// for (let i in MY.race.peculiarities){
-//     console.log(T(MY.race.peculiarities[i].keyword) + " " + t(MY.race.peculiarities[i].details));
-// }
-//
-// console.log(t(MY.race.details));
-// console.log(`${T(MY.ethnos.name)} ${t(MY.race.name)}`);
-// console.log(t(MY.ethnos.details));
+

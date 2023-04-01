@@ -113,7 +113,12 @@ export default {
 	name: "RaceMenu",
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "MY_Backstory", "сustomm_Settings_Race_Arr"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "MY_Backstory",
+      "MY_Race",
+      "сustomm_Settings_Race_Arr",
+    ]),
 		...mapState(usePagesStore, ["race_page"]),
 		// GETTERS
 		...mapState(useColorStore, [
@@ -153,7 +158,7 @@ export default {
 		},
 
 		Age_Note() {
-			let age = this.MY.race.race_settings.age;
+			let age = this.MY_Race.race_settings.age;
 			let baby = age.min;
 			let young = age.young;
 			let mature = age.mature;
@@ -185,7 +190,7 @@ export default {
 		},
 
 		Hight_Note() {
-			return this.t(this.MY.race.race_settings.size);
+			return this.t(this.MY_Race.race_settings.size);
 		},
 	},
 	methods: {

@@ -61,7 +61,7 @@ export default {
 		// STORE
 		...mapState(useColorStore, ["color"]),
 		...mapState(usePagesStore, ["race_page"]),
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Race",]),
 		// GETTERS
 		...mapState(useColorStore, ["color_Char_Сommon"]),
 
@@ -84,7 +84,7 @@ export default {
 		},
 
 		race_Colors() {
-			return (obj, value) => this.MY.race.race_settings.color[value].includes(obj);
+			return (obj, value) => this.MY_Race.race_settings.color[value].includes(obj);
 		},
 	},
 	methods: {

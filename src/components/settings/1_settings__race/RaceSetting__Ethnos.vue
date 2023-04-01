@@ -1,9 +1,9 @@
 <template>
 	<div class="ethnos_attributes">
 		<!-- Ethnos_stats + qualities -->
-		<my-wrapper v-if="MY.race.stats || level_Filter_Arr(MY.race.qualities).length !== 0">
+		<my-wrapper v-if="MY_Race.stats || level_Filter_Arr(MY_Race.qualities).length !== 0">
 			<AppStats
-				v-for="stat in MY.race.stats"
+				v-for="stat in MY_Race.stats"
 				:key="stat.name"
 				:title="stat.name"
 				:type="`${stat.name}_base`"
@@ -11,7 +11,7 @@
 				:numb="stat.num"
 			/>
       <my-attribute
-					v-for="qual in level_Filter_Arr(MY.race.qualities)"
+					v-for="qual in level_Filter_Arr(MY_Race.qualities)"
 					:key="qual"
 					:title="qual.name"
 					:numb="qual.num"
@@ -32,9 +32,9 @@
 			<!-- Ethnos_Charges -->
 
 		<!-- Ethnos_proficiencies -->
-		<my-wrapper v-if="MY.race.proficiencies">
+		<my-wrapper v-if="MY_Race.proficiencies">
 			<AppProficiencies
-				v-for="(val, name) in MY.race.proficiencies"
+				v-for="(val, name) in MY_Race.proficiencies"
 				:key="name"
 				:title="name"
 				:arr_name="proficiencies_Arr_Race(name)"
@@ -44,9 +44,9 @@
 		<!-- Ethnos_proficiencies -->
 
 		<!-- Ethnos_fines -->
-		<my-wrapper v-if="MY.race.fines" gap_8>
+		<my-wrapper v-if="MY_Race.fines" gap_8>
 			<AppFines
-				v-for="item in MY.race.fines"
+				v-for="item in MY_Race.fines"
 				:key="item"
 				:fines="item"
 			></AppFines>
@@ -55,7 +55,7 @@
 		<!-- Ethnos_spells -->
 		<my-wrapper v-if="shown_Spells_Race" gap_26>
 			<AppSpells
-				v-for="item in MY.race.spells"
+				v-for="item in MY_Race.spells"
 				:key="item"
 				:spell_obj="item"
 			/>
@@ -80,12 +80,12 @@ export default {
 	},
 
 	computed: {
-		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
+		...mapState(useMYStore, ["MY", "MY_Race", "level_Filter_Arr"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_Race"]),
     ...mapState(useChargesStore, ["charges_Race_Main_Arr"]),
 
 		shown_Spells_Race() {
-			let race_spells = this.MY.race.spells;
+			let race_spells = this.MY_Race.spells;
 			let lvl = this.MY.level;
 			let spells_lvl = race_spells?.[0].level <= lvl;
 			return race_spells && spells_lvl;

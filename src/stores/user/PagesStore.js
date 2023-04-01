@@ -14,8 +14,8 @@ export const usePagesStore = defineStore({
 			},
 		},
 		pages: {
-			race_page: false,
-			class_page: true,
+			race_page: true,
+			class_page: false,
       alignment_page: false,
 		},
 		// page_open: "race_page",
@@ -128,7 +128,7 @@ export const usePagesStore = defineStore({
 			const ethnos_common = MYStore.MY.ethnos.name === "common";
 			let custom_ethnos = ethnos && ethnos_common;
 			const str = name.split("_")[0];
-			let color_length = MYStore.MY.race.race_settings.color[str]?.length === 0;
+			let color_length = MYStore.MY_Race.race_settings.color[str]?.length === 0;
 
 			if (custom_ethnos || color_length) {
 				return null;
@@ -154,7 +154,7 @@ export const usePagesStore = defineStore({
 			const MYStore = useMYStore();
 			const color_page = this.race_page.shown[`${name}_color`] === true;
 			const color_length =
-				MYStore.MY.race.race_settings.color[name].length === 0;
+				MYStore.MY_Race.race_settings.color[name].length === 0;
 			if (color_page && color_length) {
 				this.showHome();
 			}

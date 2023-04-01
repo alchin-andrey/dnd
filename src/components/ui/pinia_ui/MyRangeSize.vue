@@ -42,7 +42,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["MY", "MY_Race"]),
 
     Target_Range() {
       if (this.lvl) {
@@ -61,23 +61,23 @@ export default {
       if (this.lvl) {
         return this.min_lvl;
       } else {
-        return this.MY.race.race_settings[this.Target_Range].min;
+        return this.MY_Race.race_settings[this.Target_Range].min;
       } 
     },
     Level_Arr() {
       return [0, 5, 10, 15, 20]
     },
     Weight_Arr() {
-      let min = this.MY.race.race_settings.weight.min
-      let max = this.MY.race.race_settings.weight.max
+      let min = this.MY_Race.race_settings.weight.min
+      let max = this.MY_Race.race_settings.weight.max
       return [0, min, max]
     },
     Age_Arr() {
-      let baby = this.MY.race.race_settings.age.min
-      let young = this.MY.race.race_settings.age.young
-      let mature = this.MY.race.race_settings.age.mature
-      let old = this.MY.race.race_settings.age.old
-      let oldest = this.MY.race.race_settings.age.max
+      let baby = this.MY_Race.race_settings.age.min
+      let young = this.MY_Race.race_settings.age.young
+      let mature = this.MY_Race.race_settings.age.mature
+      let old = this.MY_Race.race_settings.age.old
+      let oldest = this.MY_Race.race_settings.age.max
       return [0, baby, young, mature, old, oldest]
     },
     Skale_Arr() {

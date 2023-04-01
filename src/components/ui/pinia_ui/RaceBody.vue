@@ -50,14 +50,14 @@ export default {
     }
   },
   computed: {
-    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useMYStore, ["MY", "MY_Race"]),
     ...mapState(usePagesStore, ["race_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
 
     growth_Char() {
       if (this.MY.height === null) {
-      let max_height = this.MY.race.race_settings.height.max
-      let min_height = this.MY.race.race_settings.height.min
+      let max_height = this.MY_Race.race_settings.height.max
+      let min_height = this.MY_Race.race_settings.height.min
         return (min_height + max_height) / 2;
       } else {
         return this.MY.height;
@@ -70,9 +70,9 @@ export default {
 
     ethnos_Char() {
       if(this.ethnos_name) {
-        return this.MY.race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
+        return this.MY_Race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
       } else {
-        return this.MY.race.noimg_ethnos ? "" : `/${this.MY.ethnos.name}`;
+        return this.MY_Race.noimg_ethnos ? "" : `/${this.MY.ethnos.name}`;
       }
     },
 
@@ -82,14 +82,14 @@ export default {
 
     img_Char_Numb() {
       if(this.ethnos_name) {
-        return this.MY.race.race_settings.ethnos[this.ethnos_name].color[this.body_part][0].img;
+        return this.MY_Race.race_settings.ethnos[this.ethnos_name].color[this.body_part][0].img;
       } else {
         return this.Hower ? this.Hower.img : this.color_Char_Body.img;
       }
     },
 
     img_Char() {
-      let race = this.MY.race.name;
+      let race = this.MY.race_name;
       let ethnos = this.ethnos_Char;
       let phisiological = this.MY.gender.phisiological;
       let img;
@@ -131,7 +131,7 @@ export default {
 
     hight_Char() {
       if(this.ethnos_name) {
-        return `${this.MY.race.ethnos_preview[0]}px`;
+        return `${this.MY_Race.ethnos_preview[0]}px`;
       } else {
         return this.calc_Img;
       }
@@ -139,7 +139,7 @@ export default {
 
     left_Char() {
       if(this.ethnos_name) {
-        return `${this.MY.race.ethnos_preview[1]}px`;
+        return `${this.MY_Race.ethnos_preview[1]}px`;
       // } else if(this.blank_print) {
       //   return 0;
       } else {
@@ -149,7 +149,7 @@ export default {
 
     placeholder_Color_Hex() {
       if (this.ethnos_name && !this.img_Char) {
-        return this.MY.race.race_settings.ethnos[this.ethnos_name].color[this.body_part][0].hex;
+        return this.MY_Race.race_settings.ethnos[this.ethnos_name].color[this.body_part][0].hex;
       } else {
         let hex = this.Hower ? this.Hower.hex : this.color_Char_Body.hex;
       return hex;

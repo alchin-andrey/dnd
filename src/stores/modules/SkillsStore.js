@@ -49,7 +49,7 @@ export const useSkillsStore = defineStore({
 
     skills_Race_All() {
       const MYStore = useMYStore();
-      const race = MYStore.level_Filter_Arr(MYStore.MY.race?.skills);
+      const race = MYStore.level_Filter_Arr(MYStore.MY_Race?.skills);
       const ethnos = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.skills);
       const backstory = MYStore.level_Filter_Arr(MYStore.MY_Backstory?.skills);
       const race_custom = MYStore.filter_Custom_Race_Lvl("skills");

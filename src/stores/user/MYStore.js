@@ -31,7 +31,7 @@ export const useMYStore = defineStore({
 
     MY_Race() {
       const MainStore = useMainStore();
-      return MainStore.class_Arr.find(el => el.name == this.MY.race_name);
+      return MainStore.race_Arr.find(el => el.name == this.MY.race_name);
     },
 
     MY_Class() {
@@ -449,21 +449,13 @@ export const useMYStore = defineStore({
       return arr;
     },
 
-		getRaceObj(name) {
-			this.MY.race = name;
-		},
-
-		getRaceName(name) {
-			this.MY.race_name = name;
-		},
-
 		getEthnos() {
-			this.MY.ethnos = Object.values(this.MY.race.race_settings.ethnos)[0];
+			this.MY.ethnos = Object.values(this.MY_Race.race_settings.ethnos)[0];
 		},
 
 		getEthnosName() {
 			this.MY.ethnos_name = Object.values(
-				this.MY.race.race_settings.ethnos
+				this.MY_Race.race_settings.ethnos
 			)[0].name;
 		},
 

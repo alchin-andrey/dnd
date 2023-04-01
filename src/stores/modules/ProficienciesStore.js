@@ -43,7 +43,7 @@ export const useProficienciesStore = defineStore({
       //NOTE - RACE
       proficiencies_Arr_Race: (stor) => (kay) => {
         const MYStore = useMYStore();
-        return stor.proficiencies_Arr(MYStore.MY.race.proficiencies, kay);
+        return stor.proficiencies_Arr(MYStore.MY_Race.proficiencies, kay);
       },
 
       proficiencies_Arr_Ethnos: (stor) => (kay) => {

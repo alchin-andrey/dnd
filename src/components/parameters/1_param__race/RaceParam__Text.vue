@@ -9,7 +9,6 @@
 			>
 			</my-card-text>
 			<my-card-text
-				v-if="MY_Backstory.name"
 				:title="MY_Backstory.name"
 				:text_html="MY_Backstory.details"
         :text_html_2="MY_Backstory.expanded"
@@ -26,10 +25,14 @@ import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "RaceParam__Text",
 	computed: {
-		...mapState(useMYStore, ["MY", "MY_Backstory"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "MY_Backstory", 
+      "MY_Race",
+    ]),
 
 		t_Story() {
-			return this.t(this.MY.race.details);
+			return this.t(this.MY_Race.details);
 		},
 	},
 };

@@ -1,7 +1,7 @@
 <template>
 	<div class="ethnos_cards_menu">
 		<my-selection-card
-			v-for="ethnos in MY.race.race_settings.ethnos"
+			v-for="ethnos in MY_Race.race_settings.ethnos"
 			:key="ethnos"
 			no_blur
 			@click="getEthnosObj(ethnos)"
@@ -114,19 +114,17 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
-// import { useSkillsStore } from "@/stores/modules/SkillsStore";
-// import { useLanguagesStore } from "@/stores/modules/LanguagesStore";
-// import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 export default {
 	name: "EthnosCard",
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "MY_Race",
+      "level_Filter_Arr"
+    ]),
 		// GETTERS
-		// ...mapState(useSkillsStore, ["skills_Pass_Arr_RE"]),
-		// ...mapState(useLanguagesStore, ["languages_Pass_Arr_RE"]),
-		// ...mapState(useSpellsStore, ["spells_Pass_Arr_RE"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr"]),
 		...mapState(useQualitiesStore, ["hp_Bonus"]),
 
