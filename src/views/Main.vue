@@ -175,6 +175,7 @@ export default {
 		...mapState(useMYStore, [
       "MY",
       "MY_Race",
+      "MY_Ethnos",
       "subclass_Name"]),
 		...mapState(usePagesStore, [
 			"race_page",
@@ -254,7 +255,7 @@ export default {
 		arr_Name_Race_Page() {
 			let arr = [];
 			arr.push(this.MY.race_name);
-			arr.push(this.MY.ethnos.name);
+			arr.push(this.MY_Ethnos.name);
 			arr.push(this.MY.backstory_name);
 			return arr;
 		},
@@ -339,7 +340,6 @@ export default {
 			"goPage",
 			"closeCustomSett",
 		]),
-		...mapActions(useMYStore, ["getEthnos"]),
 
 		showDialog() {
 			this.dialogVisible = true;
@@ -352,7 +352,6 @@ export default {
 		},
 
 		getWatch_Race() {
-			this.getEthnos();
 			this.closeEthnos();
 			this.closeColor("skin");
 			this.closeColor("eyes");

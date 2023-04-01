@@ -61,7 +61,7 @@ export default {
 		// STORE
 		...mapState(useColorStore, ["color"]),
 		...mapState(usePagesStore, ["race_page"]),
-		...mapState(useMYStore, ["MY", "MY_Race",]),
+		...mapState(useMYStore, ["MY", "MY_Race", "MY_Ethnos",]),
 		// GETTERS
 		...mapState(useColorStore, ["color_Char_Сommon"]),
 
@@ -78,9 +78,9 @@ export default {
 		},
 
 		ethnos_Colors() {
-			const common = this.MY.ethnos.name === "common";
+			const common = this.MY_Ethnos.name === "common";
 			return (obj, value) =>
-				common ? false : this.MY.ethnos.color[value].includes(obj);
+				common ? false : this.MY_Ethnos.color[value].includes(obj);
 		},
 
 		race_Colors() {

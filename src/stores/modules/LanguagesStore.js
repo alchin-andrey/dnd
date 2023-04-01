@@ -46,8 +46,8 @@ export const useLanguagesStore = defineStore({
 			if (MYStore.MY_Race.proficiencies?.languages) {
 				i = Object.values(MYStore.MY_Race.proficiencies?.languages);
 			}
-			if (MYStore.MY.ethnos.proficiencies?.languages) {
-				j = Object.values(MYStore.MY.ethnos.proficiencies?.languages);
+			if (MYStore.MY_Ethnos.proficiencies?.languages) {
+				j = Object.values(MYStore.MY_Ethnos.proficiencies?.languages);
 			}
 			return i.concat(j);
 		},

@@ -15,7 +15,7 @@ export const useChargesStore = defineStore({
 
 		charges_Race_Ethnos_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.ethnos.charges);
+			return MYStore.level_Filter_Arr(MYStore.MY_Ethnos.charges);
 		},
 
 		charges_Race_Backstory_Arr() {

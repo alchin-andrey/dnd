@@ -100,7 +100,7 @@ export const useSpellsStore = defineStore({
 
 		spells_Race_Ethnos_Arr() {
 			const MYStore = useMYStore();
-			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.spells);
+			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY_Ethnos?.spells);
 			return spell_obj;
 		},
 

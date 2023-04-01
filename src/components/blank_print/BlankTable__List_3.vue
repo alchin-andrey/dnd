@@ -8,7 +8,7 @@
 				<div class="int-600-48">{{ MY_Name }}</div>
 			</div>
 			<AppMainCell class="cell" title="race" :content="MY.race_name" />
-			<AppMainCell class="cell" title="ethnos" :content="MY.ethnos.name" />
+			<AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
 			<AppMainCell class="cell" title="class" :content="MY.class_name" />
 			<AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
@@ -83,6 +83,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, [
       "MY",
+      "MY_Ethnos",
       "MY_Class",
       "MY_Subclass"
     ]),

@@ -125,7 +125,7 @@ export const usePagesStore = defineStore({
 		showSettings__Race(name) {
 			const MYStore = useMYStore();
 			const ethnos = name === "ethnos";
-			const ethnos_common = MYStore.MY.ethnos.name === "common";
+			const ethnos_common = MYStore.MY_Ethnos.name === "common";
 			let custom_ethnos = ethnos && ethnos_common;
 			const str = name.split("_")[0];
 			let color_length = MYStore.MY_Race.race_settings.color[str]?.length === 0;
@@ -144,7 +144,7 @@ export const usePagesStore = defineStore({
 		closeEthnos() {
 			const MYStore = useMYStore();
 			const ethnos_show = this.race_page.shown.ethnos;
-			const ethnos_common = MYStore.MY.ethnos.name === "common";
+			const ethnos_common = MYStore.MY_Ethnos.name === "common";
 			if (ethnos_show && ethnos_common) {
 				this.showHome();
 			}

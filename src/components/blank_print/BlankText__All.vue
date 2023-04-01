@@ -9,13 +9,13 @@
 				blank_print
 			/>
       
-      <div class="hr-print" v-if="MY.ethnos.name !== 'common'"></div>
+      <div class="hr-print" v-if="MY_Ethnos.name !== 'common'"></div>
 			<my-card-text
-        v-if="MY.ethnos.name !== 'common'"
+        v-if="MY_Ethnos.name !== 'common'"
 				notation="ethnos"
-				:title="MY.ethnos.name"
-				:text_html="MY.ethnos.details"
-				:rare="MY.ethnos.rare"
+				:title="MY_Ethnos.name"
+				:text_html="MY_Ethnos.details"
+				:rare="MY_Ethnos.rare"
 				blank_print
 			/>
       
@@ -56,6 +56,7 @@ export default {
     ...mapState(useMYStore, [
       "MY",
       "MY_Race",
+      "MY_Ethnos",
       "MY_Class",
       "MY_Backstory",
       "сustomm_Settings_Class_Arr"

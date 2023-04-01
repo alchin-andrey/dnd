@@ -34,6 +34,19 @@ export const useMYStore = defineStore({
       return MainStore.race_Arr.find(el => el.name == this.MY.race_name);
     },
 
+    ethnos_Arr() {
+			return Object.values(this.MY_Race.race_settings.ethnos);
+		},
+
+    MY_Ethnos() {
+      const name_save = this.MY.ethnos_name_save?.[this.MY.race_name];
+      if (name_save) {
+        return this.ethnos_Arr.find(el => el.name == name_save);
+      } else {
+        return this.ethnos_Arr[0];
+      }
+    },
+
     MY_Class() {
       const MainStore = useMainStore();
       return MainStore.class_Arr.find(el => el.name == this.MY.class_name);
@@ -88,7 +101,7 @@ export const useMYStore = defineStore({
 		},
 
     сustomm_Main_Settings_Ethnos_Arr() {
-			return this.settingsMainSelect("race", this.MY.ethnos?.settings, "custom", "ethnos");
+			return this.settingsMainSelect("race", this.MY_Ethnos?.settings, "custom", "ethnos");
 		},
 
     сustomm_Backstory_Settings_Race_Arr() {
@@ -448,17 +461,6 @@ export const useMYStore = defineStore({
       }
       return arr;
     },
-
-		getEthnos() {
-			this.MY.ethnos = Object.values(this.MY_Race.race_settings.ethnos)[0];
-		},
-
-		getEthnosName() {
-			this.MY.ethnos_name = Object.values(
-				this.MY_Race.race_settings.ethnos
-			)[0].name;
-		},
-
 	},
 });
 //!SECTION - ACTIONS

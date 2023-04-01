@@ -2,7 +2,7 @@
   <div class="grid__body">
     <div class="grid__title int-600-48"><div class="text__item">{{ MY_Name }}</div></div>
     <AppMainCell class="cell" title="race" :content="MY.race_name" />
-    <AppMainCell class="cell" title="ethnos" :content="MY.ethnos.name" />
+    <AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
     <AppMainCell class="cell" title="class" :content="MY.class_name" />
     <AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
@@ -32,6 +32,7 @@ export default {
 		...mapState(useMYStore, [
       "MY", 
       "str_Upper",
+      "MY_Ethnos",
       "MY_Subclass"]),
     ...mapState(useAlignmentStore, [
       "MY_Main_Feature",

@@ -2,10 +2,10 @@
     <my-wrapper gap_26>
 			<div class="story int-400" v-html="t_Story"></div>
 			<my-card-text
-				v-if="MY.ethnos.name !== 'common'"
-				:title="MY.ethnos.name"
-				:text_html="MY.ethnos.details"
-				:rare="MY.ethnos.rare"
+				v-if="MY_Ethnos.name !== 'common'"
+				:title="MY_Ethnos.name"
+				:text_html="MY_Ethnos.details"
+				:rare="MY_Ethnos.rare"
 			>
 			</my-card-text>
 			<my-card-text
@@ -29,6 +29,7 @@ export default {
       "MY", 
       "MY_Backstory", 
       "MY_Race",
+      "MY_Ethnos",
     ]),
 
 		t_Story() {

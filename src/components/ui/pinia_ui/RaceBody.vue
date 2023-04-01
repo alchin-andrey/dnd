@@ -50,7 +50,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(useMYStore, ["MY", "MY_Race"]),
+    ...mapState(useMYStore, [
+      "MY", 
+      "MY_Race", 
+      "MY_Ethnos",
+    ]),
     ...mapState(usePagesStore, ["race_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
 
@@ -72,7 +76,7 @@ export default {
       if(this.ethnos_name) {
         return this.MY_Race.noimg_ethnos ? "" : `/${this.ethnos_name}`;
       } else {
-        return this.MY_Race.noimg_ethnos ? "" : `/${this.MY.ethnos.name}`;
+        return this.MY_Race.noimg_ethnos ? "" : `/${this.MY_Ethnos.name}`;
       }
     },
 

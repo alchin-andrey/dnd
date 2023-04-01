@@ -10,12 +10,12 @@
 			</my-card-text>
     </my-wrapper>
 
-    <my-wrapper gap_26 hr v-if="MY.ethnos.name !== 'common'">
+    <my-wrapper gap_26 hr v-if="MY_Ethnos.name !== 'common'">
 			<my-card-text
         notation="ethnos"
-				:title="MY.ethnos.name"
-				:text_html="MY.ethnos.details"
-				:rare="MY.ethnos.rare"
+				:title="MY_Ethnos.name"
+				:text_html="MY_Ethnos.details"
+				:rare="MY_Ethnos.rare"
 			>
 			</my-card-text>
 		</my-wrapper>
@@ -61,6 +61,7 @@ export default {
 		...mapState(useMYStore, [
       "MY",
       "MY_Race",
+      "MY_Ethnos",
       "MY_Class",
       "MY_Backstory",
       "сustomm_Settings_Class_Arr"

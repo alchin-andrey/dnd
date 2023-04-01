@@ -15,7 +15,7 @@ export const useFinesStore = defineStore({
 
 		fines_Race_Ethnos_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.ethnos?.fines);
+			return MYStore.level_Filter_Arr(MYStore.MY_Ethnos?.fines);
 		},
 
     fines_Race_Backstory_Arr() {

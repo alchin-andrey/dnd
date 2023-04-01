@@ -1,11 +1,11 @@
 <template>
 	<div class="ethnos_cards_menu">
 		<my-selection-card
-			v-for="ethnos in MY_Race.race_settings.ethnos"
+			v-for="ethnos in ethnos_Arr"
 			:key="ethnos"
 			no_blur
-			@click="getEthnosObj(ethnos)"
-			:active_boll_link="MY.ethnos.name === ethnos.name"
+			@click="getEthnosName(ethnos.name)"
+			:active_boll_link="MY_Ethnos.name === ethnos.name"
 		>
 			<div
 				class="ethnos_char_back"
@@ -64,7 +64,7 @@
 					:key="name"
 					:title="name"
 					:arr_name="proficiencies_Arr(ethnos.proficiencies, name)"
-					:active_card="MY.ethnos.name === ethnos.name"
+					:active_card="MY_Ethnos.name === ethnos.name"
 				/>
 			</my-wrapper>
 			<!-- Ethnos_card_proficiencies -->
@@ -82,7 +82,7 @@
 					:key="item"
 					:spell_obj="item"
 					select
-					:active_card="MY.ethnos.name === ethnos.name"
+					:active_card="MY_Ethnos.name === ethnos.name"
 				/>
 			</my-wrapper>
 			<!-- Ethnos_card_spells -->
@@ -121,7 +121,8 @@ export default {
 		// STORE
 		...mapState(useMYStore, [
       "MY", 
-      "MY_Race",
+      "ethnos_Arr",
+      "MY_Ethnos",
       "level_Filter_Arr"
     ]),
 		// GETTERS
@@ -138,8 +139,9 @@ export default {
 		},
 	},
 	methods: {
-		getEthnosObj(obj) {
-			this.MY.ethnos = obj;
+		getEthnosName(name) {
+			console.log('name:', name)
+			this.MY.ethnos_name_save[this.MY.race_name] = name;
 		},
 	},
 };

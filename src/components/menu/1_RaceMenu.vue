@@ -8,8 +8,8 @@
 				@click="showSettings__Race('ethnos')"
 				:active="race_page.shown.ethnos"
 				title="ethnos"
-				:type="MY.ethnos.name"
-				:rare="MY.ethnos.rare"
+				:type="MY_Ethnos.name"
+				:rare="MY_Ethnos.rare"
 			></my-selection>
 			<my-selection
 				@click="showSettings__Race('backstory')"
@@ -117,6 +117,7 @@ export default {
       "MY", 
       "MY_Backstory",
       "MY_Race",
+      "MY_Ethnos",
       "сustomm_Settings_Race_Arr",
     ]),
 		...mapState(usePagesStore, ["race_page"]),
