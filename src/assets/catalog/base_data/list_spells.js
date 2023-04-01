@@ -26913,7 +26913,6 @@ export default {
 
   // NOTE - Spells [6]
 
-  // TODO - Remove other classes!
   true_seeing: [
     {},
     {},
@@ -26929,7 +26928,7 @@ export default {
       expanded: "spell_true_seeing_expanded",
 
       type: "divination",
-      classes: ["bard","wizard","cleric","warlock","sorcerer",     "druid","ranger","paladin"],
+      classes: ["bard","wizard","cleric","warlock","sorcerer"],
 
       cast_time: "action",
       cast_duration: null,
@@ -26967,7 +26966,6 @@ export default {
 
   // NOTE - Spells [7]
 
-  // TODO - Remove other classes!
   mordenkainens_sword: [
     {},
     {},
@@ -26984,7 +26982,7 @@ export default {
       expanded: "spell_mordenkainens_sword_expanded",
 
       type: "evocation",
-      classes: ["bard","wizard",    "cleric","warlock","sorcerer","druid","ranger","paladin"],
+      classes: ["bard","wizard"],
 
       cast_time: "action",
       cast_duration: null,
@@ -27022,7 +27020,6 @@ export default {
 
   // NOTE - Spells [8]
 
-  // TODO - Remove other classes!
   glibness: [
     {},
     {},
@@ -27040,7 +27037,7 @@ export default {
       expanded: "spell_glibness_expanded",
 
       type: "transmutation",
-      classes: ["bard","warlock",    "cleric","wizard","sorcerer","druid","ranger","paladin"],
+      classes: ["bard","warlock"],
 
       cast_time: "action",
       cast_duration: null,
@@ -27078,7 +27075,6 @@ export default {
 
   // NOTE - Spells [9]
 
-  // TODO - Remove other classes!
   power_word_kill: [
     {},
     {},
@@ -27097,7 +27093,7 @@ export default {
       expanded: "spell_power_word_kill_expanded",
 
       type: "enchantment",
-      classes: ["bard","warlock","wizard","sorcerer",    "cleric","druid","ranger","paladin"],
+      classes: ["bard","warlock","wizard","sorcerer"],
 
       cast_time: "action",
       cast_duration: null,
@@ -27151,7 +27147,7 @@ export default {
       expanded: "spell_astral_projection_expanded",
 
       type: "necromancy",
-      classes: ["cleric","warlock","wizard",      "sorcerer","bard","druid","ranger","paladin"],
+      classes: ["cleric","warlock","wizard"],
 
       cast_time: "ritual",
       cast_duration: 1,
