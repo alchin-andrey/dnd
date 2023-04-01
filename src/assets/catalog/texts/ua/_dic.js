@@ -6001,7 +6001,7 @@ export default {
 
   lobby_button: "Що за D&D таке, і де знайти Майстра ?",
 
-  welcome_title: "Поринь у D&D<br/>без читання правил!",
+  lobby_welcome_title: "Поринь у D&D<br/>без читання правил!",
 
   lobby_base: "база",
 
