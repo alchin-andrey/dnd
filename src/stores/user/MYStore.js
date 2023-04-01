@@ -16,7 +16,7 @@ export const useMYStore = defineStore({
 	state: () => ({
 		MY: MY,
 	}),
-  // persist: true,
+  persist: true,
 
 	//SECTION - GETTERS
 	getters: {

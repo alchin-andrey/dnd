@@ -5,8 +5,8 @@
     <AppMainCell class="cell bord-tr-6" title="attraction" :content="MY.gender.attraction" />
 
     <AppMainCell class="cell" title="age" :content="MY_Age" />
-    <AppMainCell class="cell" title="weight" :content="MY_Height" />
-    <AppMainCell class="cell" title="height" :content="MY_Weight" />
+    <AppMainCell class="cell" title="height" :content="MY_Height" />
+    <AppMainCell class="cell" title="weight" :content="MY_Weight" />
 
     <AppMainCell class="cell bord-bl-6" title="color_eyes" :content="eyes_color_Char_Body.name" />
     <AppMainCell class="cell" title="color_skin" :content="skin_color_Char_Body.name" />

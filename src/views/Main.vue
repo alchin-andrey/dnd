@@ -145,7 +145,8 @@
 <script>
 import html2pdf from "html2pdf.js";
 
-import { mapState, mapActions } from "pinia";
+import { mapState, mapWritableState, mapActions } from "pinia";
+import { useDicStore } from "@/stores/general/DicStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
@@ -172,12 +173,15 @@ export default {
 
 	computed: {
 		//STORES
+    ...mapWritableState(useDicStore, ["select_lang"]),
 		...mapState(useMYStore, [
       "MY",
       "MY_Race",
       "MY_Ethnos",
       "subclass_Name"]),
 		...mapState(usePagesStore, [
+      "sait_settings",
+      "links",
 			"race_page",
 			"class_page",
 			"shown_home",
@@ -346,6 +350,17 @@ export default {
 		},
 
 		getCreated() {
+      if(this.sait_settings.save.MY_level) {
+          this.MY.level = this.sait_settings.save.MY_level;
+          this.sait_settings.save.MY_level = null;
+        }
+
+      if(this.sait_settings.save.select_lang) {
+          this.select_lang = this.sait_settings.save.select_lang;
+          this.sait_settings.save.select_lang = null;
+        }
+      this.links.stats_link = {};
+      
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;

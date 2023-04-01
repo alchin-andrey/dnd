@@ -36,15 +36,15 @@ export default {
   name: "HeaderMenu",
 	computed: {
 		...mapState(usePagesStore, ["main_page"]),
-		...mapState(useDicStore, ["dic"]),
+		...mapState(useDicStore, ["dic", "select_lang"]),
     ...mapState(useMYStore, ["MY"]),
 
 		lang_Icon() {
-			return require(`@/assets/img/icon/lang/icon_${this.MY.select_lang}.png`)
+			return require(`@/assets/img/icon/lang/icon_${this.select_lang}.png`)
     },
 		
     em_Icon() {
-			return this.dic.lang.find(icon => icon.mark === this.MY.select_lang).icon
+			return this.dic.lang.find(icon => icon.mark === this.select_lang).icon
     },
 
 		char_Lvl() {

@@ -28,11 +28,4 @@ export default {
 </script>
 
 <style scoped>
-/* .ethnos_attributes {
-	color: rgba(255, 255, 255, 0.2);
-	display: flex;
-	flex-direction: column;
-	gap: 26px;
-	margin: 0 0 26px 16px;
-} */
 </style>

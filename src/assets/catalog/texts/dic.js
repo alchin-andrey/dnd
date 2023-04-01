@@ -19,6 +19,4 @@ export default {
             name: "русский",
         },
     ],
-
-    select_lang: "ua",
 };
