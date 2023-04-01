@@ -5910,8 +5910,6 @@ export default {
   spell_major_image_details: spells.major_image_details,
   spell_major_image_expanded: spells.major_image_expanded,
 
-  link_description: "Це посилання для повернення до свого персонажа, підняття його рівня і зміни налаштувань. Зверни увагу, що персонаж зі зміненими налаштуваннями буде мати вже інше посилання.",
-
   spell_blinding_smite: spells.blinding_smite,
   spell_blinding_smite_details: spells.blinding_smite_details,
   spell_blinding_smite_expanded: spells.blinding_smite_expanded,
@@ -5994,4 +5992,10 @@ export default {
   print_places: "Місця",
 
   print_biography: "Біографія",
+
+  link_description: "Налаштування персонажа збережені на пристрої, на якому він був створений.",
+
+  spell_empowered_evocation: spells.empowered_evocation,
+  spell_empowered_evocation_details: spells.empowered_evocation_details,
+  spell_empowered_evocation_expanded: spells.empowered_evocation_expanded,
 };

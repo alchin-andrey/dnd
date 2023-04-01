@@ -9308,15 +9308,13 @@ export default {
                 keyword: "min_half_damage",
                 details: "from_cantrips",
               },
-              {
-                level: 10,
-                type: "plus",
-                keyword: "plus_INT",
-                details: "to_damage_evocation",
-              },
             ],
 
             spells: [
+              {
+                level: 10,
+                spell: spells.empowered_evocation,
+              },
               {
                 level: 14,
                 spell: spells.overload,

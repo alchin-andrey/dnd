@@ -949,6 +949,10 @@ export default {
 			return this.stats_Mod("constitution");
 		},
 
+		Num_INT() {
+			return this.stats_Mod("intelligence");
+		},
+
 		Num_WIS() {
 			return this.stats_Mod("wisdom");
 		},
