@@ -6,6 +6,15 @@ import { useMYStore } from "@/stores/user/MYStore";
 export const usePagesStore = defineStore({
 	id: "PagesStore",
 	state: () => ({
+    sait_settings: {
+      save: {},
+      welcome: true,
+    },
+
+    links: {
+      stats_link: {},
+    },
+    
 		main_page: {
 			shown: {
 				logo: false,
@@ -18,34 +27,21 @@ export const usePagesStore = defineStore({
 			class_page: false,
       alignment_page: false,
 		},
-		// page_open: "race_page",
 		page_setting_open: null,
 		setting_open: null,
 		shown_home: true,
 
 		race_page: {
 			shown: {
-				ethnos: false,
-        backstory: false,
-				gender: false,
-				skin_color: false,
-				eyes_color: false,
-				hair_color: false,
-				age: false,
-				height: false,
-				weight: false,
-				// stats: false,
-				// skills: false,
-				// languages: false,
-				// spells: false,
-			},
-
-			shown_humman_lang: false,
-
-			color_selected: {
-				skin: null,
-				hair: null,
-				eyes: null,
+				// ethnos: false,
+        // backstory: false,
+				// gender: false,
+				// skin_color: false,
+				// eyes_color: false,
+				// hair_color: false,
+				// age: false,
+				// height: false,
+				// weight: false,
 			},
 
 			height_kof: 0.5,
@@ -55,16 +51,21 @@ export const usePagesStore = defineStore({
 
 		class_page: {
 			shown: {
-				stats: false,
+				// stats: false,
 			},
 		},
 
 		alignment_page: {
 			shown: {
-				alignment: false,
+				// alignment: false,
 			},
 		},
 	}),
+
+  persist: {
+    paths: ['sait_settings'],
+  },
+
   getters: {
     page_Open() {
       if(this.pages.race_page) {

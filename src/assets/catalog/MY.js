@@ -1,6 +1,5 @@
 
 export default {
-  select_lang: "ua",
 	//Key selections
 	name: "Байрактар",
 

@@ -18,24 +18,13 @@ export const useStatsStore = defineStore({
 
 		stats_base_numb: [15, 14, 13, 12, 10, 8],
 
-    stats_link: {},
-
-		stats_base_save: {
-			// barbarian: null,
-			// paladin: null,
-			// bard: null,
-			// rogue: null,
-			// fighter: null,
-		},
-
-		stats_base_hower: {
-			// barbarian: null,
-			// paladin: null,
-			// bard: null,
-			// rogue: null,
-			// fighter: null,
-		},
+		stats_base_save: {},
+		stats_base_hower: {},
 	}),
+
+  persist: {
+    paths: ['stats_base_save'],
+  },
 
 	getters: {
 		stats_Keys() {
@@ -183,7 +172,8 @@ export const useStatsStore = defineStore({
     },
 
     stats_Numb: (stor) => (name) => {
-			return stor.stats_link[name] ?? stor.stats_Numb_Page(name);
+      const PagesStore = usePagesStore();
+			return PagesStore.links.stats_link[name] ?? stor.stats_Numb_Page(name);
 		},
 
     stats_Numb_Full: (stor) => (name) => {
@@ -191,7 +181,8 @@ export const useStatsStore = defineStore({
 		},
 
     stats_Mod: (stor) => (name) => {
-			const base_numb = stor.stats_link[name] ?? stor.stats_Numb_Page(name);
+      const PagesStore = usePagesStore();
+			const base_numb = PagesStore.links.stats_link[name] ?? stor.stats_Numb_Page(name);
 			return Math.floor((base_numb - 10) / 2);
 		},
 

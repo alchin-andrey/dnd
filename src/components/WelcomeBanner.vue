@@ -1,5 +1,5 @@
 <template>
-  <div v-if="welcome" class="wrapp">
+  <div v-if="sait_settings.welcome" class="wrapp">
     <my-selection-card passive>
       <Welcome />
       <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
@@ -8,19 +8,19 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import Welcome from "@/components/Welcome.vue";
 
 export default {
   components: { Welcome },
   name: "WelcomeBanner",
-  data() {
-    return {
-      welcome: true,
-    };
+  computed: {
+		...mapState(usePagesStore, ["sait_settings"]),
   },
   methods: {
     close() {
-        this.welcome = false;
+        this.sait_settings.welcome = false;
       },
   },
 };

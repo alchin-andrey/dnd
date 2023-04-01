@@ -84,6 +84,7 @@
 
 <script>
 import { mapState } from "pinia";
+import { useDicStore } from "@/stores/general/DicStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import BlankPrintLink from "@/components/blank_print/BlankPrintLink.js";
@@ -122,12 +123,13 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
+    ...mapState(useDicStore, ["select_lang"]),
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM", "spells_Arr"]),
 
 
     spell_List_3() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM;
-      const lang = this.MY.select_lang;
+      const lang = this.select_lang;
 
       let count_column = 1;
       let h_column = this.h_list - this.h_table;
@@ -157,7 +159,7 @@ export default {
 
     list_Spell_Left_Arr() {
       const spell_arr = this.spell_Left;
-      const lang = this.MY.select_lang;
+      const lang = this.select_lang;
 
       let count_column = 1;
       let h_column = this.h_list;

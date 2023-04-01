@@ -9,11 +9,26 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapState, mapWritableState } from "pinia";
+import { useDicStore } from "@/stores/general/DicStore";
+import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 export default {
 	name: "SpellForm",
+  data() {
+		return {
+			first_lvl: null,
+			first_select_lang: null,
+		};
+	},
+  created() {
+		this.getCreated();
+	},
 	computed: {
+    ...mapWritableState(useDicStore, ["select_lang"]),
+    ...mapState(useMYStore, ["MY"]),
+    ...mapState(usePagesStore, ["sait_settings", "links"]),
 		...mapState(useSpellsStore, ["spells", "mods"]),
 
     spell_Obj() {
@@ -30,6 +45,31 @@ export default {
 			return spell_obj;
     },
 	},
+
+  methods: {
+    getCreated() {
+      console.log('getCreated:')
+      const query = this.$route.query;
+      if(query) {
+        if(!this.sait_settings.save.MY_level) {
+          this.sait_settings.save.MY_level = this.MY.level;
+        }
+        this.MY.level = query?.l ? Number(query.l) : this.MY.level;
+
+        if(!this.sait_settings.save.select_lang) {
+          this.sait_settings.save.select_lang = this.select_lang;
+        }
+        this.select_lang = query?.ln ?? this.select_lang;
+
+        this.links.stats_link.strength = query?.st ? Number(query?.st) : null;
+        this.links.stats_link.dexterity = query?.de ? Number(query?.de) : null;
+        this.links.stats_link.constitution = query?.co ? Number(query?.co) : null;
+        this.links.stats_link.intelligence = query?.in ? Number(query?.in) : null;
+        this.links.stats_link.wisdom = query?.wi ? Number(query?.wi) : null;
+        this.links.stats_link.charisma = query?.ch ? Number(query?.ch) : null;
+      }
+    },
+  },
 
 };
 </script>

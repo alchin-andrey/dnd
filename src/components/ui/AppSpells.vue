@@ -393,7 +393,7 @@
 <script>
 import QrcodeVue from 'qrcode.vue'
 import ui_icon from "@/assets/catalog/icon/ui_icon";
-import { mapState } from "pinia";
+import { mapState, mapWritableState } from "pinia";
 import { useDicStore } from "@/stores/general/DicStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
@@ -468,22 +468,14 @@ export default {
 		},
 	},
 
-  created() {
-		this.getCreated();
-	},
-
-  // destroyed() {
-	// 	this.getDestroyed();
-	// },
-
 	computed: {
+    ...mapWritableState(useDicStore, ["select_lang"]),
 		...mapState(useMYStore, [
       "MY", 
       "Mastery", 
       "shown_Level_Dot",
       "MY_Class"
     ]),
-    ...mapState(useStatsStore, ["stats_link"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj", "stats_Full_Name"]),
 		...mapState(useSkillsStore, ["skills"]),
@@ -496,7 +488,7 @@ export default {
       const spell_link = this.Spell_Index.link;
       const full_link = site + chapter + spell_link;
 
-      const lang = `ln=${this.MY.select_lang}`;
+      const lang = `ln=${this.select_lang}`;
       const lvl = `l=${this.MY.level}`;
       const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
       const spell_attribute = `sa=${this.spell_Attribute_MOD.slice(0, 2)}`;
@@ -504,6 +496,7 @@ export default {
       const spell_mod_id = this.spell_Mod?.id;
       const mod = this.spell_Mod ? `&m=${spell_mod_id}` : '';
       const link = `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
+      console.log('link:', link)
       return link;
     },
 
@@ -1320,25 +1313,6 @@ export default {
 		},
 	},
 	methods: {
-
-    getCreated() {
-      const query = this.spell_Link;
-      if(query) {
-        this.MY.level = query?.l ?? this.MY.level;
-        this.MY.select_lang = query?.ln ?? this.MY.select_lang;
-
-        this.stats_link.strength = query?.st;
-        this.stats_link.dexterity = query?.de;
-        this.stats_link.constitution = query?.co;
-        this.stats_link.intelligence = query?.in;
-        this.stats_link.wisdom = query?.wi;
-        this.stats_link.charisma = query?.ch;
-      }
-    },
-
-    // getDestroyed() {
-    //   this.stats_link = {}
-    // },
 
 		toggle() {
 			this.isShown = !this.isShown;
