@@ -53,7 +53,7 @@ export const useProficienciesStore = defineStore({
 
       proficiencies_Arr_Backstory: (stor) => (kay) => {
         const MYStore = useMYStore();
-        return stor.proficiencies_Arr(MYStore.MY.backstory.proficiencies, kay);
+        return stor.proficiencies_Arr(MYStore.MY_Backstory.proficiencies, kay);
       },
 
       proficiencies_Arr_Setting_Race: (stor) => (kay) => {

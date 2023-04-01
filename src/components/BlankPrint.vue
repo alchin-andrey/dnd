@@ -97,9 +97,6 @@ export default {
 
       h_table: null,
       h_list: null,
-
-      spell_list_1: 7,
-      spell_rest: 9,
 		};
 	},
 

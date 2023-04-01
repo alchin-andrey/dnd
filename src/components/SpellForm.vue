@@ -34,32 +34,21 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .spell-wrapp {
   width: 100%;
   display: flex;
-	/* margin: 0 auto; */
   justify-content: center;
 	padding: 10px;
-	/* align-self: center; */
-	/* height: max-content; */
 }
 
 .spell-baner {
-	/* margin: 0 auto; */
 	padding: 28px;
 	background: #1c2326;
 	border-radius: 12px;
-	/* max-width: 396px; */
   width: 396px;
-	/* cursor: auto; */
-	/* align-self: center; */
 	overflow-y: scroll;
 	scrollbar-width: none;
-	/* height: max-content; */
-	/* height: 100%; */
   max-height: 100%;
 }
 

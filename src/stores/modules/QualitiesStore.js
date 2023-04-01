@@ -38,7 +38,7 @@ export const useQualitiesStore = defineStore({
       const MYStore = useMYStore();
       const race = this.hp_Bonus(MYStore.MY.race);
       const ethnos = this.hp_Bonus(MYStore.MY.ethnos);
-      const backstory = this.hp_Bonus(MYStore.MY.backstory);
+      const backstory = this.hp_Bonus(MYStore.MY_Backstory);
       const custom_race = this.hp_Bonus_Custom(MYStore.сustomm_Settings_Race_Arr);
       return race + ethnos + backstory + custom_race;
     },
@@ -126,7 +126,7 @@ export const useQualitiesStore = defineStore({
       const MYStore = useMYStore();
       const race = MYStore.level_Filter_Arr(MYStore.MY.race?.qualities);
 			const ethnos = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.qualities);
-			const backstory = MYStore.level_Filter_Arr(MYStore.MY.backstory?.qualities);
+			const backstory = MYStore.level_Filter_Arr(MYStore.MY_Backstory?.qualities);
       const custom_race = MYStore.filter_Custom_Race_Lvl("qualities");
       return [...race, ...ethnos, ...backstory, ...custom_race];
     },

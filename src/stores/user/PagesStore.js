@@ -65,7 +65,6 @@ export const usePagesStore = defineStore({
 			},
 		},
 	}),
-
   getters: {
     page_Open() {
       if(this.pages.race_page) {

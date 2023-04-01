@@ -53,7 +53,7 @@ export const useEquipStore = defineStore({
 
     equipments_Race_Backstory_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.backstory.equipment);
+			return MYStore.level_Filter_Arr(MYStore.MY_Backstory.equipment);
 		},
 
     equipments_Race_Custom_Arr() {

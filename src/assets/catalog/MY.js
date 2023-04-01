@@ -1,12 +1,10 @@
 import color from "@/assets/catalog/base_data/_colors.js";
 import races from "@/assets/catalog/base_data/step1_races.js";
 import classes from "@/assets/catalog/base_data/step2_classes";
-import backstories from "@/assets/catalog/base_data/list_backstories.js";
 
 const race_def = Object.values(races)[0];
 const ethnos_def = Object.values(race_def.race_settings.ethnos)[0];
 const class_def = Object.values(classes)[0];
-const backstories_def = Object.values(backstories)[0];
 export default {
   select_lang: "ua",
 	//Key selections
@@ -23,7 +21,8 @@ export default {
   _settings_class: {},
   _settings_alignment: {},
 
-	backstory: backstories_def,
+
+  backstory_name: "back_urchin",
 	level: 1,
 
 	//Character

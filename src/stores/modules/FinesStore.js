@@ -20,7 +20,7 @@ export const useFinesStore = defineStore({
 
     fines_Race_Backstory_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.backstory.fines);
+			return MYStore.level_Filter_Arr(MYStore.MY_Backstory.fines);
 		},
 
     fines_Race_Custom_Arr() {

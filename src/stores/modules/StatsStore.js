@@ -60,7 +60,7 @@ export const useStatsStore = defineStore({
 			const MYStore = useMYStore();
 			const race = MYStore.level_Filter_Arr(MYStore.MY.race?.stats);
 			const ethnos = MYStore.level_Filter_Arr(MYStore.MY.ethnos?.stats);
-			const backstory = MYStore.level_Filter_Arr(MYStore.MY.backstory?.stats);
+			const backstory = MYStore.level_Filter_Arr(MYStore.MY_Backstory?.stats);
 			const race_custom = MYStore.filter_Custom_Race_Lvl("stats");
 			return [...race, ...ethnos, ...backstory, ...race_custom];
 		},

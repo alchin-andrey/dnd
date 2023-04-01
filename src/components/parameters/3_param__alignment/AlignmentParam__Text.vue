@@ -23,10 +23,10 @@
     <my-wrapper gap_26 hr>
 			<my-card-text
         notation="past"
-				:title="MY.backstory.name"
-				:text_html="MY.backstory.details"
-        :text_html_2="MY.backstory.expanded"
-				:rare="MY.backstory.rare"
+				:title="MY_Backstory.name"
+				:text_html="MY_Backstory.details"
+        :text_html_2="MY_Backstory.expanded"
+				:rare="MY_Backstory.rare"
 			>
 			</my-card-text>
 		</my-wrapper>
@@ -58,7 +58,11 @@ import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "AlignmentParam__Text",
 	computed: {
-		...mapState(useMYStore, ["MY", "сustomm_Settings_Class_Arr"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "MY_Backstory",
+      "сustomm_Settings_Class_Arr"
+    ]),
 
 		// t_Story() {
 		// 	return this.t(this.MY.class.details);

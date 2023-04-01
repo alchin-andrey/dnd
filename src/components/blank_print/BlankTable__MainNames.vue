@@ -7,7 +7,7 @@
     <AppMainCell class="cell" title="class" :content="MY.class.name" />
     <AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
 
-    <AppMainCell class="cell grid__full" title="past" :content="MY.backstory.name" />
+    <AppMainCell class="cell grid__full" title="past" :content="MY_Backstory.name" />
 
     <AppMainCell class="cell" title="alignment" :content="MY.alignment" />
     <AppMainCell class="cell" title="main_feature" :content="MY_Main_Feature.name" />
@@ -29,7 +29,11 @@ export default {
 	methods: {},
 
 	computed: {
-		...mapState(useMYStore, ["MY", "str_Upper", "MY_Subclass"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "str_Upper",
+      "MY_Backstory",
+      "MY_Subclass"]),
     ...mapState(useAlignmentStore, [
       "MY_Main_Feature",
       "MY_Ideals",

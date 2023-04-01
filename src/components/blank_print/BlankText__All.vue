@@ -22,10 +22,10 @@
       <div class="hr-print"></div>
 			<my-card-text
 				notation="past"
-				:title="MY.backstory.name"
-				:text_html="MY.backstory.details"
-				:text_html_2="MY.backstory.expanded"
-				:rare="MY.backstory.rare"
+				:title="MY_Backstory.name"
+				:text_html="MY_Backstory.details"
+				:text_html_2="MY_Backstory.expanded"
+				:rare="MY_Backstory.rare"
 				blank_print
 			/>
 
@@ -53,7 +53,11 @@ import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "BlankText__All",
 	computed: {
-    ...mapState(useMYStore, ["MY", "сustomm_Settings_Class_Arr"]),
+    ...mapState(useMYStore, [
+      "MY", 
+      "MY_Backstory",
+      "сustomm_Settings_Class_Arr"
+    ]),
 
     MY_Subclass() {
       const сustomm = this.сustomm_Settings_Class_Arr;

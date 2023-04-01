@@ -9,11 +9,11 @@
 			>
 			</my-card-text>
 			<my-card-text
-				v-if="MY.backstory.name"
-				:title="MY.backstory.name"
-				:text_html="MY.backstory.details"
-        :text_html_2="MY.backstory.expanded"
-				:rare="MY.backstory.rare"
+				v-if="MY_Backstory.name"
+				:title="MY_Backstory.name"
+				:text_html="MY_Backstory.details"
+        :text_html_2="MY_Backstory.expanded"
+				:rare="MY_Backstory.rare"
 			>
 			</my-card-text>
 		</my-wrapper>
@@ -26,7 +26,7 @@ import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "RaceParam__Text",
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Backstory"]),
 
 		t_Story() {
 			return this.t(this.MY.race.details);

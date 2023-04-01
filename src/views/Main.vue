@@ -174,7 +174,10 @@ export default {
 
 	computed: {
 		//STORES
-		...mapState(useMYStore, ["MY", "subclass_Name"]),
+		...mapState(useMYStore, [
+      "MY",
+      "MY_Backstory",
+      "subclass_Name"]),
 		...mapState(usePagesStore, [
 			"race_page",
 			"class_page",
@@ -254,7 +257,7 @@ export default {
 			let arr = [];
 			arr.push(this.MY.race.name);
 			arr.push(this.MY.ethnos.name);
-			arr.push(this.MY.backstory.name);
+			arr.push(this.MY_Backstory.name);
 			return arr;
 		},
 

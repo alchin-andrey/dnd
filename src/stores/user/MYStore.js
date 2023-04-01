@@ -2,13 +2,13 @@
 // import { watch, toRef } from 'vue';
 import { acceptHMRUpdate, defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
+import { useMainStore } from "@/stores/general/MainStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
-// import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
 // import { usePagesStore } from "@/stores/user/PagesStore";
 
 export const useMYStore = defineStore({
@@ -16,11 +16,17 @@ export const useMYStore = defineStore({
 	state: () => ({
 		MY: MY,
 	}),
+  // persist: true,
 	//SECTION - GETTERS
 	getters: {
     str_Upper: (stor) => (t_str) => {
 			return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
 		},
+
+    MY_Backstory() {
+      const MainStore = useMainStore();
+      return MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
+    },
     
     MY_Subclass() {
       const сustomm = this.сustomm_Settings_Class_Arr;
@@ -75,7 +81,7 @@ export const useMYStore = defineStore({
 		},
 
     сustomm_Backstory_Settings_Race_Arr() {
-			return this.settingsMainSelect("race", this.MY.backstory.settings, "custom", "backstory");
+			return this.settingsMainSelect("race", this.MY_Backstory.settings, "custom", "backstory");
 		},
 
     сustomm_Settings_Race_Arr() {

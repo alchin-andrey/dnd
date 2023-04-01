@@ -9,9 +9,13 @@ import myTranslation from "@/plagins/myTranslation.js";
 import EmojiChenge from "@/plagins/EmojiChenge.js";
 import { createPinia } from 'pinia';
 
+// import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
+
 
 const pinia = createPinia();
-// const app = createApp(App).use(createPinia());
+// pinia.use(piniaPluginPersistedstate);
+
 const app = createApp(App);
 
 app.use(pinia);

@@ -16,7 +16,7 @@
 			<AppMainCell
 				class="cell grid-col-2"
 				title="past"
-				:content="MY.backstory.name"
+				:content="MY_Backstory.name"
 			/>
 		</section>
 
@@ -81,7 +81,11 @@ export default {
 	methods: {},
 
 	computed: {
-		...mapState(useMYStore, ["MY", "MY_Subclass"]),
+		...mapState(useMYStore, [
+      "MY",
+      "MY_Backstory",
+      "MY_Subclass"
+    ]),
 		...mapState(useQualitiesStore, [
 			"hp_Max_Class_Param",
 			"armor_Numb_Class_Param",

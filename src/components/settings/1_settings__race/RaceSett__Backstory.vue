@@ -1,27 +1,27 @@
 <template>
   <AppCusstomCard 
-  v-for="list_el in backstories"
+  v-for="list_el in backstories_Arr"
 	:key="list_el"
 	:custom="list_el"
   :select_list="[list_el]"
-	@click="getCustomSelect(list_el)"
-	:active_boll_link="MY.backstory.name == list_el.name"/>
+	@click="getBackName(list_el.name)"
+	:active_boll_link="MY.backstory_name == list_el.name"/>
 </template>
 
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { useBackstoriesStore } from "@/stores/modules/simple/BackstoriesStore";
+import { useMainStore } from "@/stores/general/MainStore";
 export default {
 	name: "RaceSetting__Backstory",
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(useBackstoriesStore, ["backstories"]),
+		...mapState(useMainStore, ["backstories_Arr"]),
 
 	},
   methods: {
-		getCustomSelect(list_el) {
-      this.MY.backstory = list_el;
+		getBackName(name) {
+      this.MY.backstory_name = name;
 		},
 	},
 };

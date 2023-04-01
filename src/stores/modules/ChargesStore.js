@@ -20,7 +20,7 @@ export const useChargesStore = defineStore({
 
 		charges_Race_Backstory_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.backstory.charges);
+			return MYStore.level_Filter_Arr(MYStore.MY_Backstory.charges);
 		},
 
     charges_Race_Custom_Arr() {
