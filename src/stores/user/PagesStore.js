@@ -14,7 +14,7 @@ export const usePagesStore = defineStore({
     links: {
       stats_link: {},
     },
-    
+
 		main_page: {
 			shown: {
 				logo: false,
@@ -63,7 +63,7 @@ export const usePagesStore = defineStore({
 	}),
 
   persist: {
-    paths: ['sait_settings'],
+    paths: ['sait_settings', 'pages'],
   },
 
   getters: {
