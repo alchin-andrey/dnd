@@ -306,8 +306,10 @@ export default {
       // const ethnos = this.MY.ethnos.name;
       // const classes = this.MY.class.name;
       const lvl = this.MY.level;
-			html2pdf(document.getElementById("element-to-convert"), {
-				margin: 0,
+
+      const element = document.getElementById('element-to-convert');
+      const opt = {
+        margin: 0,
 				filename: `${name}_LVL${lvl}.pdf`,
         image: { type: 'jpeg', quality: 1 },
         html2canvas: {
@@ -319,14 +321,16 @@ export default {
         imageTimeout: 30000,
         letterRendering: true,
         useCORS: true
-      },
-      jsPDF: { 
-        unit: 'pt', 
-        format: 'a4', 
-        orientation: 'portrait', 
-        // hotfixes: "px_scaling", 
-      }
-			});
+        },
+        jsPDF: { 
+          unit: 'pt', 
+          format: 'a4', 
+          orientation: 'portrait', 
+          // hotfixes: "px_scaling", 
+        }
+      };
+      html2pdf().set(opt).from(element).save();
+      // html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then();
 		},
 
 		...mapActions(usePagesStore, [
