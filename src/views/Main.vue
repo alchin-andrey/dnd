@@ -65,11 +65,6 @@
 						title="download_charsheet"
 						@click="showDialog()"
 					></my-button>
-					<!-- <my-button
-						v-if="pages.alignment_page"
-						title="download_charsheet"
-						@click="goTo(`/s/hellish_rebuke_tiefling`)"
-					></my-button> -->
 				</section>
 				<my-button-back
 					v-else
@@ -119,7 +114,6 @@
 	<!-- Character -->
 
 	<!-- sidebar_right -->
-	<!-- <transition name="slide-fade"> -->
 	<div
 		v-show="!PRINT_BLANK"
 		class="sidebar_right"
@@ -129,14 +123,14 @@
 		<ClassParameters v-if="pages.class_page" />
 		<AlignmentParameters v-if="pages.alignment_page" />
 	</div>
-	<!-- </transition> -->
-	<!-- sidebar_right -->
+
+	<!-- alse -->
 	<my-dialog-spell v-model:show="dialogVisible" finish>
 		<div class="title-donat int-700">{{ t("support_project") }}</div>
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
 
-	<div v-show="dialogVisible || PRINT_BLANK" id="element-to-convert"><BlankPrint /></div>
+	<div v-if="dialogVisible || PRINT_BLANK" id="element-to-convert"><BlankPrint /></div>
 
 	<div v-if="small_screen" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
@@ -153,27 +147,6 @@
 <script>
 import html2pdf from "html2pdf.js";
 
-import WelcomeBanner from "@/components/WelcomeBanner.vue";
-import Donate from "@/components/Donate.vue";
-import BlankPrint from "@/components/BlankPrint.vue";
-
-import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
-import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
-
-// RACE_PAGE
-import RaceMenu from "@/components/menu/1_RaceMenu.vue";
-import RaceSettings from "@/components/settings/__settings__lists/1_RaceSettings.vue";
-import RaceParameters from "@/components/parameters/__param__lists/1_RaceParameters.vue";
-// CLASS_PAGE
-import ClassMenu from "@/components/menu/2_ClassMenu.vue";
-import ClassSettings from "@/components/settings/__settings__lists/2_ClassSettings.vue";
-import ClassParameters from "@/components/parameters/__param__lists/2_ClassParameters.vue";
-
-// ALIGNMENT_PAGE
-import AlignmentMenu from "@/components/menu/3_AlignmentMenu.vue";
-import AlignmentSettings from "@/components/settings/__settings__lists/3_AlignmentSettings.vue";
-import AlignmentParameters from "@/components/parameters/__param__lists/3_AlignmentParameters.vue";
-
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
@@ -182,28 +155,6 @@ import MainApp from "@/components/main/MainApp.js";
 export default {
 	name: "Main",
 	mixins: [MainApp],
-	components: {
-		WelcomeBanner,
-		Donate,
-		BlankPrint,
-
-		HeaderMenu,
-		HeaderSettings,
-		// RACE_PAGE
-		RaceMenu, //TODO: Сылки на рост, вес, возраст
-		RaceSettings,
-		RaceParameters,
-		// CLASS_PAGE
-		ClassMenu,
-		ClassSettings,
-		ClassParameters,
-
-		// ALIGNMENT_PAGE
-		AlignmentMenu,
-		AlignmentSettings,
-		AlignmentParameters,
-	},
-
 	data() {
 		return {
 			dialogVisible: false,
@@ -345,10 +296,6 @@ export default {
 	},
 
 	methods: {
-    goTo(route) {
-				this.$router.push(route);
-			},
-
 		onResize() {
 			this.small_screen = window.innerWidth <= 1279;
 		},
@@ -369,7 +316,7 @@ export default {
         // windowWidth: 1044,
         width: 2088,
         // height: 1223,
-        // imageTimeout: 200000,
+        imageTimeout: 30000,
         letterRendering: true,
         useCORS: true
       },

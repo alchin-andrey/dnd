@@ -37,14 +37,11 @@ import MyColorSelect from "@/components/ui/pinia_ui/MyColorSelect.vue";
 
 import MySelection from "@/components/ui/pinia_ui/MySelection.vue";
 import MyController from "@/components/ui/pinia_ui/MyController.vue";
-// import MySlider from "@/components/ui/pinia_ui/MySlider.vue";
+
 import MyButton from "@/components/ui/pinia_ui/MyButton.vue";
 import MyButtonBack from "@/components/ui/pinia_ui/MyButtonBack.vue";
 import MyButtonGender from "@/components/ui/pinia_ui/MyButtonGender.vue";
 import MyAttribute from "@/components/ui/pinia_ui/MyAttribute.vue";
-// import MyInventory from "@/components/ui/DELETE/MyInventory.vue";
-// import MyFines from "@/components/ui/DELETE/MyFines.vue";
-
 
 import MySelectionBox from "@/components/ui/pinia_ui/MySelectionBox.vue";
 import MySelectionCard from "@/components/ui/pinia_ui/MySelectionCard.vue";
@@ -107,13 +104,11 @@ export default [
   
   MySelection,
   MyController,
-  // MySlider,
+
   MyButton,
   MyButtonBack,
   MyButtonGender,
   MyAttribute,
-  // MyInventory,
-  // MyFines,
 
   MySelectionBox,
   MySelectionCard,

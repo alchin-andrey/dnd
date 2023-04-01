@@ -25,9 +25,9 @@
         </section>
       </main>
 
-      <main class="print-page" v-if="!PRINT_WORK">
+      <main class="print-page">
         <section class="col-wrap-spell">
-          <BlankTable__List_3 class="main-table mr-min"/>
+          <BlankTable__List_3 id="table_list_3" class="main-table mr-min"/>
           <AppSpells
             class="cell-spell mr-min"
             v-for="item in spell_List_3"
@@ -38,13 +38,13 @@
         </section>
 			</main>
 
-      <main class="print-page" v-if="!PRINT_WORK" 
-        v-for="i in list_Count"
-				:key="i">
+      <main class="print-page" 
+        v-for="arr in list_Spell_Left_Arr"
+				:key="arr">
         <section class="col-wrap-spell">
           <AppSpells
             class="cell-spell mr-min"
-            v-for="item in spellsList(i)"
+            v-for="item in arr"
 						:key="item"
 						:spell_obj="item"
             blank_print
@@ -52,12 +52,11 @@
         </section>
 			</main>
 
-
-      <main class="print-page" v-if="!PRINT_WORK">
+      <main class="print-page">
         <BlankText__All/>
 			</main>
 
-      <main class="print-page" v-if="!PRINT_WORK" >
+      <main class="print-page" >
         <section class="wrap-head int-600-28">
           <div>{{T('print_biography')}}</div>
         </section>
@@ -69,7 +68,7 @@
 			</main>
 
 
-      <main class="col-wrap-spell" v-if="DEPLOY">
+      <main class="col-wrap-spell" v-if="ALL_SPELL">
         <AppSpells
             class="cell-spell mr-min"
             v-for="item, i in spells_Arr"
@@ -94,14 +93,18 @@ export default {
   data() {
 		return {
       PRINT_WORK: false,
-      DEPLOY: false,
+      ALL_SPELL: false,
+
+      h_table: null,
+      h_list: null,
+
       spell_list_1: 7,
       spell_rest: 9,
 		};
 	},
 
   mounted(el, binding) {
-    if(this.DEPLOY) {
+    if(this.ALL_SPELL) {
       this.spells_Arr.forEach((el, i) => {
         const id = `spell_${i}`
         const name = el.find(item => item.name).name
@@ -111,45 +114,81 @@ export default {
         console.log('-------------------');
       });
     }
-
+    this.h_table = document.getElementById("table_list_3").offsetHeight;
+    this.h_list = document.querySelector(".col-wrap-spell").offsetHeight;
+    // const list = document.querySelector(".print-page");
+    // const h_list = list.offsetHeight;
+    // const h_pad_top = parseFloat(window.getComputedStyle(list).paddingTop);
+    // const h_pad_bottom = parseFloat(window.getComputedStyle(list).paddingBottom);
+    // this.h_list = h_list - h_pad_top - h_pad_bottom;
   },
 
 	computed: {
 		...mapState(useMYStore, ["MY", "str_Upper"]),
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM", "spells_Arr"]),
 
+
     spell_List_3() {
-      const num = this.spell_list_1
-      return this.spell_RC_Param_Sort_ApAM.slice(0, num);
+      const spell_arr = this.spell_RC_Param_Sort_ApAM;
+      const lang = this.MY.select_lang;
+
+      let count_column = 1;
+      let h_column = this.h_list - this.h_table;
+
+      let arr = [];
+      for (let i = 0; i < spell_arr.length; i++) {
+        const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
+        h_column -= h_spell;
+
+        if (h_column < 0) {
+          if(count_column == 3) {
+            break;
+          } else {
+          h_column = this.h_list - h_spell;
+          count_column++;
+          }
+        }
+        arr.push(spell_arr[i])
+      }
+      return arr;
     },
 
     spell_Left() {
-      const num = this.spell_list_1
+      const num = this.spell_List_3.length
       return this.spell_RC_Param_Sort_ApAM.slice(num);
     },
 
-    list_Count() {
-      const spells_left = this.spell_Left;
-      const num = this.spell_rest
-      const list_count = Math.ceil(spells_left.length / num);
-      return list_count;
-    },
+    list_Spell_Left_Arr() {
+      const spell_arr = this.spell_Left;
+      const lang = this.MY.select_lang;
 
-    // spells_List: (stor) => (i) => {
-    //   const start = (i - 1) * 10;
-    //   const end = 10 + start;
-    //   return stor.spell_Left.slice(start, end);
-    // },
+      let count_column = 1;
+      let h_column = this.h_list;
+      let res_arr = [];
+      let arr = [];
+      for (let i = 0; i < spell_arr.length; i++) {
+        const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
+        h_column -= h_spell;
+
+        if (h_column < 0) {
+          if(count_column == 3) {
+            res_arr.push(arr);
+            h_column = this.h_list - h_spell;
+            count_column = 1;
+            arr = [];
+          } else {
+          h_column = this.h_list - h_spell;
+          count_column++;
+          }
+        }
+        arr.push(spell_arr[i])
+        if(i == spell_arr.length - 1) {
+            res_arr.push(arr);
+          }
+      }
+      return res_arr;
+    },
 	},
-
-  methods: {
-    spellsList(i) {
-      const num = this.spell_rest
-      const start = (i - 1) * num;
-      const end = num + start;
-      return this.spell_Left.slice(start, end);
-    },
-  }
 };
 </script>
 
