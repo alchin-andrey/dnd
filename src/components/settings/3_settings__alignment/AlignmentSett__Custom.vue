@@ -49,12 +49,6 @@ export default {
 	methods: {
 
 
-		// getLink() {
-		// 	if (!this.MY._settings_class[this.MY.class.name]) {
-		// 		this.MY._settings_class[this.MY.class.name] = {};
-		// 	}
-		// },
-
 		getCustomSelect(list_el) {
 
 			const active = this.getActive(list_el);

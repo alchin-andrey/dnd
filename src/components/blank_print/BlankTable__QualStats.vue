@@ -21,7 +21,7 @@
 			<AppPrintQualities
 				class="cell"
 				title="hp_dice"
-				:numb="MY.class.hp_dice"
+				:numb="MY_Class.hp_dice"
 			/>
 			<AppPrintStats
 				class="cell"
@@ -53,7 +53,7 @@ export default {
 	name: "BlankTable__QualStats",
 
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Class"]),
 		...mapState(useStatsStore, ["stats_Keys"]),
 		...mapState(useSkillsStore, [
 			"skills_RC_All_Numb",

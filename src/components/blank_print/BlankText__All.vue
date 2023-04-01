@@ -32,8 +32,8 @@
     <div class="hr-print"></div>
 		<my-card-text class="story-print int-400-22"
       notation="class"
-			:title="MY.class.name"
-			:text_html="MY.class.details"
+			:title="MY_Class.name"
+			:text_html="MY_Class.details"
       blank_print
 		/>
 
@@ -54,7 +54,8 @@ export default {
 	name: "BlankText__All",
 	computed: {
     ...mapState(useMYStore, [
-      "MY", 
+      "MY",
+      "MY_Class",
       "MY_Backstory",
       "сustomm_Settings_Class_Arr"
     ]),

@@ -4,10 +4,10 @@
     <AppMainCell class="cell" title="race" :content="MY.race.name" />
     <AppMainCell class="cell" title="ethnos" :content="MY.ethnos.name" />
 
-    <AppMainCell class="cell" title="class" :content="MY.class.name" />
+    <AppMainCell class="cell" title="class" :content="MY.class_name" />
     <AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
 
-    <AppMainCell class="cell grid__full" title="past" :content="MY_Backstory.name" />
+    <AppMainCell class="cell grid__full" title="past" :content="MY.backstory_name" />
 
     <AppMainCell class="cell" title="alignment" :content="MY.alignment" />
     <AppMainCell class="cell" title="main_feature" :content="MY_Main_Feature.name" />
@@ -32,7 +32,6 @@ export default {
 		...mapState(useMYStore, [
       "MY", 
       "str_Upper",
-      "MY_Backstory",
       "MY_Subclass"]),
     ...mapState(useAlignmentStore, [
       "MY_Main_Feature",

@@ -477,8 +477,12 @@ export default {
 	// },
 
 	computed: {
-		...mapState(useDicStore, ["MY", "Mastery", "shown_Level_Dot"]),
-		...mapState(useMYStore, ["MY", "Mastery", "shown_Level_Dot"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "Mastery", 
+      "shown_Level_Dot",
+      "MY_Class"
+    ]),
     ...mapState(useStatsStore, ["stats_link"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj", "stats_Full_Name"]),
@@ -553,7 +557,7 @@ export default {
 		spell_Attribute_MOD() {
 			const link_attribute = this.stats_Full_Name(this.spell_Link?.sa);
 			const mod_attribute = this.spell_Mod?.spell_attribute;
-			const class_attribute = this.MY.class.spell_attribute;
+			const class_attribute = this.MY_Class.spell_attribute;
 			return link_attribute ?? mod_attribute ?? class_attribute;
 		},
 

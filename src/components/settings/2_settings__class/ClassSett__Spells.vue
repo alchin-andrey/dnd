@@ -97,15 +97,15 @@ export default {
 
 	methods: {
 		getLink() {
-			if (!this.MY._settings_class[this.MY.class.name]) {
-				this.MY._settings_class[this.MY.class.name] = {};
+			if (!this.MY._settings_class[this.MY.class_name]) {
+				this.MY._settings_class[this.MY.class_name] = {};
 			}
 			if (
-				!this.MY._settings_class[this.MY.class.name][
+				!this.MY._settings_class[this.MY.class_name][
 					this.spells_setting.id_link
 				]
 			) {
-				this.MY._settings_class[this.MY.class.name][
+				this.MY._settings_class[this.MY.class_name][
 					this.spells_setting.id_link
 				] = [];
 			}
@@ -114,7 +114,7 @@ export default {
 		getSpellSelect(list_el) {
 			if (!this.full_Spells_Select) {
 				this.getLink();
-				this.MY._settings_class[this.MY.class.name][
+				this.MY._settings_class[this.MY.class_name][
 					this.spells_setting.id_link
 				].push(list_el);
 			}

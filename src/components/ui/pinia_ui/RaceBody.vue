@@ -102,7 +102,7 @@ export default {
         sex = "male";
       }
       if (this.body_part == "class") {
-        img = this.MY.class.name;
+        img = this.MY.class_name;
       } else {
         img = this.img_Char_Numb;
       }

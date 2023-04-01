@@ -17,6 +17,7 @@ export const useMYStore = defineStore({
 		MY: MY,
 	}),
   // persist: true,
+
 	//SECTION - GETTERS
 	getters: {
     str_Upper: (stor) => (t_str) => {
@@ -26,6 +27,16 @@ export const useMYStore = defineStore({
     MY_Backstory() {
       const MainStore = useMainStore();
       return MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
+    },
+
+    MY_Race() {
+      const MainStore = useMainStore();
+      return MainStore.class_Arr.find(el => el.name == this.MY.race_name);
+    },
+
+    MY_Class() {
+      const MainStore = useMainStore();
+      return MainStore.class_Arr.find(el => el.name == this.MY.class_name);
     },
     
     MY_Subclass() {
@@ -62,7 +73,7 @@ export const useMYStore = defineStore({
 		},
 
     class_Specials_All() {
-			const class_specials = this.level_Filter_Arr(this.MY.class.specials);
+			const class_specials = this.level_Filter_Arr(this.MY_Class.specials);
 			const custom_specials = this.filter_Custom_Class_Lvl("specials");
 			return [...class_specials, ...custom_specials];
 		},
@@ -91,7 +102,7 @@ export const useMYStore = defineStore({
     },
 
 		сustomm_Main_Settings_Class_Arr() {
-			return this.settingsMainSelect("class", this.MY.class.settings, "custom");
+			return this.settingsMainSelect("class", this.MY_Class.settings, "custom");
 		},
 
     сustomm_Feats_Settings_Class_Arr() {
@@ -111,13 +122,13 @@ export const useMYStore = defineStore({
       ];
     },
 
-    сustomm_Settings_Class_Arr(stor) {
-      const start_arr = stor.сustomm_Settings_Class_Arr_Clean;
+    сustomm_Settings_Class_Arr() {
+      const start_arr = this.сustomm_Settings_Class_Arr_Clean;
       const sort_arr_id = start_arr.sort((a, b) => a.id_link.length - b.id_link.length);
       const sort_arr_lvl = sort_arr_id.sort((a, b) => a.level - b.level);
 
-      const filter_battle_style = stor.filterSettings_NoUsed(sort_arr_lvl);
-      const filter_only_mastery = stor.filterSettings_OnlyMastery(filter_battle_style);
+      const filter_battle_style = this.filterSettings_NoUsed(sort_arr_lvl);
+      const filter_only_mastery = this.filterSettings_OnlyMastery(filter_battle_style);
 
       return filter_only_mastery;
     },
@@ -148,17 +159,17 @@ export const useMYStore = defineStore({
 
     filter_Custom_Lvl: (stor) => (arr, name) => {
       let res_arr = [];
-      arr.forEach(el => {
-        el.select_list.forEach(sub_el => {
-          const item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
-          res_arr = res_arr.concat(item_lvl);
+        arr?.forEach(el => {
+          el?.select_list.forEach(sub_el => {
+            const item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
+            res_arr = res_arr.concat(item_lvl);
+          });
         });
-      });
 			return res_arr;
 		},
 
     spells_Settings_Class_Arr() {
-      const sett_class = this.level_Filter_Arr(this.MY.class.settings);
+      const sett_class = this.level_Filter_Arr(this.MY_Class.settings);
       const sett_custom = this.filter_Custom_Lvl(this.сustomm_Main_Settings_Class_Arr, 'settings');
       const sett_all = [
         ...sett_class, 
@@ -169,7 +180,7 @@ export const useMYStore = defineStore({
       let all_name = sett_spell.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
 
-      const sett_select = this.MY._settings_class[this.MY.class.name];
+      const sett_select = this.MY._settings_class[this.MY.class_name];
       let new_arr = [];
       for (const item_name of uniqu_name) {
 				const link_name = item_name;
@@ -264,7 +275,7 @@ export const useMYStore = defineStore({
       let new_arr = [];
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
-			let sett_select = this.MY[`_settings_${page}`][this.MY[page].name];
+			let sett_select = this.MY[`_settings_${page}`][this.MY[`${page}_name`]];
       if (page == "alignment") {
         sett_select = this.MY._settings_alignment;
       }
@@ -357,7 +368,7 @@ export const useMYStore = defineStore({
           let new_select_list = [];
             el.select_list.forEach(item => {
               const select_includ = select_item_all.some(sub_el => sub_el.name == item.name);
-              const sett_select = this.MY._settings_class[this.MY.class.name];
+              const sett_select = this.MY._settings_class[this.MY.class_name];
               if(!select_includ && sett_select?.[el.id_link]) {
                 new_select_list.push(item);
                 select_item_all.push(item);
@@ -397,7 +408,7 @@ export const useMYStore = defineStore({
         const skills_mastery_param = SkillsStore.skills_Name_Class_Mastery_No_Settings;
         const skills_mastery = [...skills_mastery_sett, ...skills_mastery_param];
 
-        const sett_select = this.MY._settings_class[this.MY.class.name];
+        const sett_select = this.MY._settings_class[this.MY.class_name];
         let new_arr = arr.slice(0);
         arr_for_filter.forEach(el => {
           const list_clean = el.list.filter(item => !item.skills);

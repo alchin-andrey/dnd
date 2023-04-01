@@ -48,7 +48,7 @@ export const useFinesStore = defineStore({
 
 		fines_Class_Main_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.class?.fines);
+			return MYStore.level_Filter_Arr(MYStore.MY_Class?.fines);
 		},
 
     fines_Class_Custom_Arr() {

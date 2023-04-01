@@ -39,10 +39,10 @@
 						<div class="icon">
 							<svg
 								class="main_svg"
-								:class="{ save_svg: save_Icon(MY.class.spell_attribute) }"
+								:class="{ save_svg: save_Icon(MY_Class.spell_attribute) }"
 								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
-								v-html="stats_icon[MY.class.spell_attribute]"
+								v-html="stats_icon[MY_Class.spell_attribute]"
 							/>
 						</div>
 						<div class="int-500-22">{{ t_Spells_Saving }}</div>
@@ -100,7 +100,11 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "str_Upper"]),
+		...mapState(useMYStore, [
+      "MY",
+      "str_Upper",
+      "MY_Class",
+    ]),
 		...mapState(useStatsStore, ["stats_Saving_Arr"]),
 		...mapState(useQualitiesStore, ["vision_night_Numb_Class"]),
 		...mapState(useSkillsStore, [
@@ -135,7 +139,7 @@ export default {
 		},
 
 		t_Spells_Saving() {
-			const spell_attribute = this.MY.class.spell_attribute;
+			const spell_attribute = this.MY_Class.spell_attribute;
 			const t_title = this.str_Upper(this.t("spell_difficulty"));
 			const numb = this.spells_Saving_Numb(spell_attribute);
 			const t_attribute = this.str_Upper(this.t(spell_attribute));

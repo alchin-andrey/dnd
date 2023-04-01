@@ -44,20 +44,6 @@ export default {
 				this.charges_Class_Param.length !== 0
 			);
 		},
-
-		// charges_Class_Arr() {
-		// 	return this.level_Filter_Arr(this.MY.class.charges);
-		// },
-
-		// charges_Custom_Arr() {
-		// 	return this.filter_Custom_Class_Lvl("charges");
-		// },
-
-		// charges_Class_Params() {
-		// 	const charges_class = this.charges_Class_Arr;
-		// 	const charges_custom = this.charges_Custom_Arr;
-		// 	return charges_class.concat(charges_custom);
-		// },
 	},
 };
 </script>

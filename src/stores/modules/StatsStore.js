@@ -71,15 +71,15 @@ export const useStatsStore = defineStore({
 
 		stats_Base_Arr(stor) {
 			const MYStore = useMYStore();
-			let stats_arr_base = MYStore.MY.class.stats_base;
-			let stats_arr_save = stor.stats_base_save[MYStore.MY.class.name];
+			let stats_arr_base = MYStore.MY_Class.stats_base;
+			let stats_arr_save = stor.stats_base_save[MYStore.MY.class_name];
 			return stats_arr_save ? stats_arr_save : stats_arr_base;
 		},
 
 		stats_Base_Hower_Arr(stor) {
       const MYStore = useMYStore();
 			let stats_base_arr = this.stats_Base_Arr;
-			let stats_hower_arr = stor.stats_base_hower[MYStore.MY.class.name];
+			let stats_hower_arr = stor.stats_base_hower[MYStore.MY.class_name];
 			return stats_hower_arr ? stats_hower_arr : stats_base_arr;
 		},
 
@@ -97,7 +97,7 @@ export const useStatsStore = defineStore({
 
 		stats_Class_Page() {
 			const MYStore = useMYStore();
-			const class_main = MYStore.level_Filter_Arr(MYStore.MY.class?.stats);
+			const class_main = MYStore.level_Filter_Arr(MYStore.MY_Class?.stats);
 			const class_custom = MYStore.filter_Custom_Class_Lvl("stats");
 			return [...class_main, ...class_custom];
 		},
@@ -129,7 +129,7 @@ export const useStatsStore = defineStore({
 
 		stats_Saving_Arr_AllName() {
 			const MYStore = useMYStore();
-			let arr_save = [...MYStore.MY.class.saving];
+			let arr_save = [...MYStore.MY_Class.saving];
 			const specials_lvl = MYStore.class_Specials_Filter_Lvl("saving");
 			specials_lvl?.forEach((el) => el.saving.forEach((x) => arr_save.push(x)));
 

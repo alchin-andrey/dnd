@@ -45,7 +45,7 @@ export const useChargesStore = defineStore({
 
 		charges_Class_Main_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.class.charges);
+			return MYStore.level_Filter_Arr(MYStore.MY_Class.charges);
 		},
 
     charges_Class_Custom_Arr() {

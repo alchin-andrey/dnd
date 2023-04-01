@@ -4,7 +4,7 @@
 			<div>{{ numb }}</div>
 		</div>
 		<div class="name jbm-300">
-			<div>{{ t_name }}</div>
+			<div>{{ t_Name }}</div>
 		</div>
 		<div class="main">
 			<transition mode="out-in" name="type">
@@ -25,11 +25,10 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMainStore } from "@/stores/general/MainStore";
 
 export default {
-	name: "AppSlider",
+	name: "AppSliderName",
 	props: {
 		numb: {
 			type: String,
@@ -56,24 +55,31 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["pages"]),
-    ...mapState(useMainStore, ["race", "class"]),
+    ...mapState(useMainStore, [
+      "race_Key",
+      "class_Key",
+    ]),
 
-		t_name() {
+		t_Name() {
 			return this.t(this.name);
 		},
 
 		t_Type() {
-			return this.t(this.kay_Slider[this.kay_Numb]);
+			return this.t(this.key_Slider[this.kay_Numb]);
 		},
 
-		kay_Slider() {
-      console.log('this.race:', this.race)
-			return Object.keys(this[this.name]);
+		key_Slider() {
+      if(this.name == "race") return this.race_Key
+      if(this.name == "class") return this.class_Key
 		},
+
+    slide_Name() {
+      if(this.name == "race") return this.MY.race_name;
+      if(this.name == "class") return this.MY.class_name;
+    },
 
 		kay_Numb() {
-			return this.kay_Slider.indexOf(this.slides);
+			return this.key_Slider.indexOf(this.slide_Name);
 		},
 	},
 	methods: {
@@ -99,40 +105,34 @@ export default {
 
 		getSlideNext() {
 			let i = this.kay_Numb;
-			console.log('i:', i)
-			let arr = this.kay_Slider;
-			console.log('arr:', arr)
+			let arr = this.key_Slider;
 			i++;
-			console.log('this.kay_Slider.length:', this.kay_Slider.length)
-			i == this.kay_Slider.length ? (i = 0) : null;
-			console.log('i после:', i)
-			console.log('this[this.name][arr[i]]:', this[this.name][arr[i]])
-			this.MY[this.name] = this[this.name][arr[i]];
+			i == arr.length ? (i = 0) : null;
+      this.getName(arr[i]);
 		},
 
 		getSlideBack() {
 			let i = this.kay_Numb;
-			console.log('i:', i)
-			let arr = this.kay_Slider;
-			console.log('arr:', arr)
+			let arr = this.key_Slider;
 			i--;
-			console.log('arr.length:', arr.length)
 			i == -1 ? (i = arr.length - 1) : null;
-			console.log('i после:', i)
-			console.log('this.name:', this.name)
-			console.log('this.race:', this[this.name])
-			console.log('arr[i]:', arr[i])
-			console.log('this[this.name][arr[i]]:', this[this.name][arr[i]])
-			this.MY[this.name] = this[this.name][arr[i]];
+			this.getName(arr[i]);
 		},
+
+    getName(name) {
+      if(this.name == "race") {
+        this.MY.race_name = name;
+      } else if(this.name == "class") {
+        this.MY.class_name = name;
+      }
+    }
 	},
 };
 </script>
 
 <style scoped>
-
 .mg-18 {
-  margin-bottom: 18px;
+	margin-bottom: 18px;
 }
 .numb {
 	height: 18px;
@@ -160,7 +160,6 @@ export default {
 	margin-top: 18px;
 	width: 52px;
 	height: 18px;
-	/* margin: 22px; */
 	display: flex;
 	justify-content: space-between;
 }

@@ -10,7 +10,7 @@
 			<AppMainCell class="cell" title="race" :content="MY.race.name" />
 			<AppMainCell class="cell" title="ethnos" :content="MY.ethnos.name" />
 
-			<AppMainCell class="cell" title="class" :content="MY.class.name" />
+			<AppMainCell class="cell" title="class" :content="MY.class_name" />
 			<AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
 
 			<AppMainCell
@@ -60,7 +60,7 @@
 			<AppPrintStats
 				class="cell"
 				title="print_spell_complex"
-				:icon="MY.class.spell_attribute"
+				:icon="MY_Class.spell_attribute"
 				:numb="spells_Saving"
 				list_3
 			/>
@@ -83,6 +83,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, [
       "MY",
+      "MY_Class",
       "MY_Backstory",
       "MY_Subclass"
     ]),
@@ -106,7 +107,7 @@ export default {
 		},
 
 		spells_Saving() {
-			const spell_attribute = this.MY.class.spell_attribute;
+			const spell_attribute = this.MY_Class.spell_attribute;
 			return this.spells_Saving_Numb(spell_attribute);
 		},
 

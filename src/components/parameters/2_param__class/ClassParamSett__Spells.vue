@@ -175,11 +175,11 @@ export default {
 		delSpell(item) {
 			const item_name = item.spell.find((el) => el.name).name;
 			const save_spell =
-				this.MY._settings_class[this.MY.class.name][
+				this.MY._settings_class[this.MY.class_name][
 					this.spells_setting.id_link
 				];
 			const new_arr = save_spell.filter((el) => el.name_set !== item_name);
-			this.MY._settings_class[this.MY.class.name][this.spells_setting.id_link] =
+			this.MY._settings_class[this.MY.class_name][this.spells_setting.id_link] =
 				new_arr;
 		},
 	},

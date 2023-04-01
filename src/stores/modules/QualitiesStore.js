@@ -45,7 +45,7 @@ export const useQualitiesStore = defineStore({
 
     hp_Bonus_Class_Param() {
       const MYStore = useMYStore();
-      const main_class = this.hp_Bonus(MYStore.MY.class);
+      const main_class = this.hp_Bonus(MYStore.MY_Class);
       const custom_class = this.hp_Bonus_Custom(MYStore.сustomm_Settings_Class_Arr);
       return main_class + custom_class;
     },
@@ -54,7 +54,7 @@ export const useQualitiesStore = defineStore({
       const MYStore = useMYStore();
       const StatsStore = useStatsStore();
 
-			const hp_dice = MYStore.MY.class.hp_dice;
+			const hp_dice = MYStore.MY_Class.hp_dice;
 			const x = Math.ceil(hp_dice / 2) + 1;
 			const con_mod = StatsStore.stats_Mod("constitution");
 			const lvl = MYStore.MY.level;
@@ -133,7 +133,7 @@ export const useQualitiesStore = defineStore({
 
     qualities_Class_All() {
       const MYStore = useMYStore();
-      const class_main = MYStore.level_Filter_Arr(MYStore.MY.class?.qualities);
+      const class_main = MYStore.level_Filter_Arr(MYStore.MY_Class?.qualities);
       const custom_class = MYStore.filter_Custom_Class_Lvl("qualities");
       return [...class_main, ...custom_class];
     },

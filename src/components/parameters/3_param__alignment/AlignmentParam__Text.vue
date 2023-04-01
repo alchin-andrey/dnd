@@ -34,8 +34,8 @@
     <my-wrapper gap_26 hr>
 		<my-card-text class="story int-400"
       notation="class"
-			:title="MY.class.name"
-			:text_html="MY.class.details"
+			:title="MY_Class.name"
+			:text_html="MY_Class.details"
 		>
 		</my-card-text>
 	</my-wrapper>
@@ -59,14 +59,11 @@ export default {
 	name: "AlignmentParam__Text",
 	computed: {
 		...mapState(useMYStore, [
-      "MY", 
+      "MY",
+      "MY_Class",
       "MY_Backstory",
       "сustomm_Settings_Class_Arr"
     ]),
-
-		// t_Story() {
-		// 	return this.t(this.MY.class.details);
-		// },
 
     MY_Subclass() {
       const сustomm = this.сustomm_Settings_Class_Arr;

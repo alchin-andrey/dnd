@@ -55,7 +55,7 @@ export default {
 	},
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Class"]),
     ...mapState(useStatsStore, ["stats_base_numb", "stats_base_save", "stats_base_hower"]),
 		// GETTERS
     ...mapState(useStatsStore, [
@@ -88,21 +88,21 @@ export default {
 
 	methods: {
     hoverStop() {
-      this.stats_base_hower[this.MY.class.name] = null;
+      this.stats_base_hower[this.MY.class_name] = null;
     },
 
 		hoverStateNewArr(numb) {
       const arr = this.getNewArr(this.stats_Base_Hower_Arr, numb);
-      this.stats_base_hower[this.MY.class.name] = arr;
+      this.stats_base_hower[this.MY.class_name] = arr;
 		},
 
 		getStateNewArr(numb) {
-      const arr_base = this.MY.class.stats_base.slice(0);
+      const arr_base = this.MY_Class.stats_base.slice(0);
       const arr = this.getNewArr(this.stats_Base_Arr, numb);
       if(arr.length == arr_base.length && arr.every((el, i) => arr_base[i] == el)) {
-        this.stats_base_save[this.MY.class.name] = null;
+        this.stats_base_save[this.MY.class_name] = null;
       } else {
-        this.stats_base_save[this.MY.class.name] = arr;
+        this.stats_base_save[this.MY.class_name] = arr;
       }
 		},
 

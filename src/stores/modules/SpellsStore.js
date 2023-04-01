@@ -125,7 +125,7 @@ export const useSpellsStore = defineStore({
 
 		spells_Class_Main_Arr() {
 			const MYStore = useMYStore();
-			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY.class?.spells);
+			const spell_obj = MYStore.level_Filter_Arr(MYStore.MY_Class?.spells);
 			return spell_obj;
 		},
 

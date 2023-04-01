@@ -30,13 +30,13 @@ export const useProficienciesStore = defineStore({
 
       proficiencies_Arr_Setting: (stor) => (arr, kay) => {
         let custom_prof = [];
-        arr.forEach(el => {
-          el.select_list.forEach(sub_el => {
-            const prof_arr = stor.proficiencies_Arr(
-              sub_el?.proficiencies, kay);
-              custom_prof = custom_prof.concat(prof_arr);
+          arr?.forEach(el => {
+            el.select_list.forEach(sub_el => {
+              const prof_arr = stor.proficiencies_Arr(
+                sub_el?.proficiencies, kay);
+                custom_prof = custom_prof.concat(prof_arr);
+              });
             });
-          });
         return custom_prof;
       },
 
@@ -76,7 +76,7 @@ export const useProficienciesStore = defineStore({
       //NOTE - CLASS
       proficiencies_Arr_Class: (stor) => (kay) => {
         const MYStore = useMYStore();
-        return stor.proficiencies_Arr(MYStore.MY.class.proficiencies, kay);
+        return stor.proficiencies_Arr(MYStore.MY_Class.proficiencies, kay);
       },
 
       proficiencies_Arr_Setting_Class: (stor) => (kay) => {

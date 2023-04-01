@@ -50,8 +50,8 @@ export default {
 
 
 		getLink() {
-			if (!this.MY._settings_class[this.MY.class.name]) {
-				this.MY._settings_class[this.MY.class.name] = {};
+			if (!this.MY._settings_class[this.MY.class_name]) {
+				this.MY._settings_class[this.MY.class_name] = {};
 			}
 		},
 
@@ -63,7 +63,7 @@ export default {
 				arr.push(list_el);
 			}
 			this.getLink();
-			this.MY._settings_class[this.MY.class.name][this.custom.id_link] = arr;
+			this.MY._settings_class[this.MY.class_name][this.custom.id_link] = arr;
 		},
 	},
 };

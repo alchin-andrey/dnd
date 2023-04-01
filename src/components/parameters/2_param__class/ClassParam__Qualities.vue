@@ -12,7 +12,7 @@
 		<my-attribute
 			title="hp_dice"
 			:numb="MY.level"
-			:dice="MY.class.hp_dice"
+			:dice="MY_Class.hp_dice"
 		/>
 		<my-attribute
 			v-if="initiative_Numb_Class"
@@ -49,7 +49,7 @@ export default {
 	},
 	computed: {
 		// STORE
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Class"]),
 		// GETTERS
     ...mapState(useQualitiesStore, [
       "hp_Max_Class_Param",

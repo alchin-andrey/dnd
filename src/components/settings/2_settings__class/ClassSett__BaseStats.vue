@@ -7,7 +7,7 @@
 	</my-selection-card>
   <transition name="fade">
 	<my-selection-card
-		v-if="stats_base_save[MY.class.name]"
+		v-if="stats_base_save[MY.class_name]"
 		@click="defaultStats()"
 	>
 		<div class="int-700 btm_reset" >
@@ -41,7 +41,7 @@ export default {
 
 	methods: {
 		defaultStats() {
-			this.stats_base_save[this.MY.class.name] = null;
+			this.stats_base_save[this.MY.class_name] = null;
 		},
 	},
 };

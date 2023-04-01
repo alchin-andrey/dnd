@@ -17,10 +17,14 @@ import { useMYStore } from "@/stores/user/MYStore";
 export default {
 	name: "ClassParam__Text",
 	computed: {
-		...mapState(useMYStore, ["MY", "сustomm_Settings_Class_Arr"]),
+		...mapState(useMYStore, [
+      "MY",
+      "MY_Class",
+      "сustomm_Settings_Class_Arr",
+    ]),
 
 		t_Story() {
-			return this.t(this.MY.class.details);
+			return this.t(this.MY_Class.details);
 		},
 
     MY_Subclass() {

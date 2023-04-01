@@ -18,17 +18,15 @@
 			</section>
 
 			<div v-if="!pages.race_page" class="delimiter"></div>
-			<AppSlider
+			<AppSliderName
 				v-if="pages.race_page"
 				numb="01"
 				name="race"
-				:slides="MY.race.name"
 			/>
-			<AppSlider
+			<AppSliderName
 				v-if="pages.class_page"
 				numb="02"
 				name="class"
-				:slides="MY.class.name"
 			/>
 			<AppName
 				v-if="pages.alignment_page"
@@ -263,7 +261,7 @@ export default {
 
 		arr_Name_Class_Page() {
 			let arr = [];
-			arr.push(this.MY.class.name);
+			arr.push(this.MY.class_name);
 			this.subclass_Name ? arr.push(this.subclass_Name) : null;
 			return arr;
 		},
@@ -294,8 +292,8 @@ export default {
 		},
 	},
 	watch: {
-		"MY.race": "getWatch",
-		"MY.class": "getWatch_Class",
+		"MY.race_name": "getWatch_Race",
+		"MY.class_name": "getWatch_Class",
 	},
 
 	methods: {
@@ -307,7 +305,7 @@ export default {
       const name = this.MY.name;
       // const race = this.MY.race.name;
       // const ethnos = this.MY.ethnos.name;
-      // const classes = this.MY.class.name;
+      // const classes = this.MY.class_name;
       const lvl = this.MY.level;
 
       const element = document.getElementById('element-to-convert');
@@ -356,7 +354,7 @@ export default {
 			this.MY.age = this.Get_Age;
 		},
 
-		getWatch() {
+		getWatch_Race() {
 			this.getEthnos();
 			this.closeEthnos();
 			this.closeColor("skin");

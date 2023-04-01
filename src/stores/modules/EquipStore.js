@@ -97,7 +97,7 @@ export const useEquipStore = defineStore({
     // SECTION - Castom
     equipments_Class_Main_Arr() {
       const MYStore = useMYStore();
-			return MYStore.level_Filter_Arr(MYStore.MY.class.equipment);
+			return MYStore.level_Filter_Arr(MYStore.MY_Class.equipment);
 		},
 
     equipments_Class_Custom_Arr() {
