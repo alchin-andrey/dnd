@@ -48,7 +48,6 @@ export default {
 
   methods: {
     getCreated() {
-      console.log('getCreated:')
       const query = this.$route.query;
       if(query) {
         if(!this.sait_settings.save.MY_level) {

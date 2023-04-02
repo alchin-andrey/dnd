@@ -52,7 +52,7 @@ export default {
 		},
 
 		getCustomSelect(list_el) {
-			const active = this.custom.select_list.includes(list_el);
+			const active = this.getActive(list_el);
 			let arr = this.custom.select_list.slice(0);
 			if (!active) {
 				arr.splice(0, 1);

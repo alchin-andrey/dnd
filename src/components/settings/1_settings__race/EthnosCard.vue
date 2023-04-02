@@ -140,7 +140,6 @@ export default {
 	},
 	methods: {
 		getEthnosName(name) {
-			console.log('name:', name)
 			this.MY.ethnos_name_save[this.MY.race_name] = name;
 		},
 	},
