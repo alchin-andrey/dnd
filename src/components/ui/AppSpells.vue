@@ -199,12 +199,14 @@
           <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
         </my-wrapper>
         <div class="hr"></div>
-        <div class="text_spell gray_4" v-html="t_Expanded"></div>
-        <div
-          class="text_spell rare-text"
-          v-if="mod_Expanded_Extra"
-          v-html="mod_Expanded_Extra"
-        ></div>
+        <div class="flex_col gap-16">
+          <div class="text_spell gray_4" v-html="t_Expanded"></div>
+          <div
+            class="text_spell rare-text"
+            v-if="mod_Expanded_Extra"
+            v-html="mod_Expanded_Extra"
+          />
+        </div>
   </main>
 
 
@@ -380,12 +382,14 @@
           <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
         </my-wrapper>
         <div class="hr"></div>
-        <div class="text_spell gray_4" v-html="t_Expanded"></div>
-        <div
-          class="text_spell rare-text"
-          v-if="mod_Expanded_Extra"
-          v-html="mod_Expanded_Extra"
-        ></div>
+        <div class="flex_col gap-16">
+          <div class="text_spell gray_4" v-html="t_Expanded"></div>
+          <div
+            class="text_spell rare-text"
+            v-if="mod_Expanded_Extra"
+            v-html="mod_Expanded_Extra"
+          />
+        </div>
       </my-dialog-spell>
   </main>
 </template>
@@ -1579,6 +1583,9 @@ export default {
 }
 .gap-10 {
   gap: 10px;
+}
+.gap-16 {
+  gap: 16px;
 }
 .gap-26 {
   gap: 26px;

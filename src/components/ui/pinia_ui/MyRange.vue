@@ -174,7 +174,7 @@ export default {
 				if (this.lvl) {
 					return null;
 				} else {
-					this.race_page[`${this.Target_Range}_kof`] = this.Kof_Range;
+					this.race_page.settings[`${this.Target_Range}_kof`] = this.Kof_Range;
 				}
 			},
 			immediate: true,
@@ -185,7 +185,7 @@ export default {
 				if (this.lvl) {
 					return null;
 				} else {
-					this.race_page[`${this.Target_Range}_kof`] = this.Kof_Range;
+					this.race_page.settings[`${this.Target_Range}_kof`] = this.Kof_Range;
 				}
 			},
 			immediate: true,

@@ -228,14 +228,14 @@ export default {
 		Get_Height() {
 			let min = this.race_Settings.height.min;
 			let max = this.race_Settings.height.max;
-			let kof = this.race_page.height_kof;
+			let kof = this.race_page.settings.height_kof;
 			return min + Math.round((max - min) * kof);
 		},
 
 		Get_Weight() {
 			let min = this.race_Settings.weight.min;
 			let max = this.race_Settings.weight.max;
-			let kof = this.race_page.weight_kof;
+			let kof = this.race_page.settings.weight_kof;
 			return min + Math.round((max - min) * kof);
 		},
 
@@ -360,7 +360,6 @@ export default {
           this.sait_settings.save.select_lang = null;
         }
       this.links.stats_link = {};
-      
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;

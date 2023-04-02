@@ -9,7 +9,7 @@ import myTranslation from "@/plagins/myTranslation.js";
 import EmojiChenge from "@/plagins/EmojiChenge.js";
 import { createPinia } from 'pinia';
 
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 
 

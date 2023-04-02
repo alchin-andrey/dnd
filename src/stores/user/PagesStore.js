@@ -1,4 +1,3 @@
-// import { ref, computed } from "vue";
 
 import { defineStore, storeToRefs } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
@@ -27,43 +26,31 @@ export const usePagesStore = defineStore({
 			class_page: false,
       alignment_page: false,
 		},
+
 		page_setting_open: null,
 		setting_open: null,
 		shown_home: true,
 
 		race_page: {
-			shown: {
-				// ethnos: false,
-        // backstory: false,
-				// gender: false,
-				// skin_color: false,
-				// eyes_color: false,
-				// hair_color: false,
-				// age: false,
-				// height: false,
-				// weight: false,
-			},
-
-			height_kof: 0.5,
-			weight_kof: 0.5,
-			age_kof: 0.5,
+			shown: {},
+      settings: {
+        height_kof: 0.5,
+        weight_kof: 0.5,
+        age_kof: 0.5,
+      }
 		},
 
 		class_page: {
-			shown: {
-				// stats: false,
-			},
+			shown: {},
 		},
 
 		alignment_page: {
-			shown: {
-				// alignment: false,
-			},
+			shown: {},
 		},
 	}),
 
   persist: {
-    paths: ['sait_settings', 'pages'],
+    paths: ['sait_settings', 'pages', 'race_page.settings'],
   },
 
   getters: {

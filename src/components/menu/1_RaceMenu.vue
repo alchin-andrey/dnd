@@ -180,7 +180,7 @@ export default {
 		},
 
 		Weight_Note() {
-			let kof = this.race_page.weight_kof;
+			let kof = this.race_page.settings.weight_kof;
 			if (kof === 0) {
 				return this.t("skinny");
 			} else if (kof === 1) {
