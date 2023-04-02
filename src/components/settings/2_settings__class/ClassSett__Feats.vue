@@ -21,7 +21,7 @@
       :setting_name="feat_Arr.name"
       :select_list="feat_Arr.select_list"
 			:custom="list_el"
-			:active_boll_link="feat_Arr.select_list.includes(list_el)"
+			:active_boll_link="getActive(list_el)"
 			@click="getFeatsSelect(list_el)"
 			@clickOneMore="getFeatsSelect"
 		/>
@@ -83,6 +83,16 @@ export default {
 	},
 
 	methods: {
+    getActive(list_el) {
+      return this.feat_Arr.select_list.some(item => {
+        if (item.name) {
+          return item.name == list_el.name
+        } else {
+          return item.name_set == list_el.name_set
+        }
+      });
+    },
+
 		shownFeatsBtn(name) {
 			this.getFeatsLink({});
 			this.MY._settings_class[this.MY.class_name][this.id_link].id_btn = name;
@@ -100,7 +110,7 @@ export default {
 		},
 
 		getFeatsSelect(list_el) {
-			const active = this.feat_Arr.select_list.includes(list_el);
+			const active = this.getActive(list_el);
 			let arr = this.feat_Arr.select_list.slice(0);
 			if (!active) {
 				arr.splice(0, 1);
