@@ -6055,4 +6055,6 @@ export default {
   andrii_pavlov_contact: '<a target="_blank" href="https://t.me/godblessdnd">@godblessdnd</a>',
 
   lobby_master_button: "Я теж Майстер, додайте мої контакти",
+
+  start_over: "Почати заново",
 };
