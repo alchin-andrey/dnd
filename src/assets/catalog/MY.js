@@ -35,4 +35,6 @@ export default {
 		eyes: null,
 		hair: null,
 	},
+
+  stats_base_save: {},
 };

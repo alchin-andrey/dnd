@@ -5,7 +5,7 @@ import { useMYStore } from "@/stores/user/MYStore";
 export const usePagesStore = defineStore({
 	id: "PagesStore",
 	state: () => ({
-    sait_settings: {
+    site_settings: {
       save: {},
       welcome: true,
     },
@@ -23,7 +23,7 @@ export const usePagesStore = defineStore({
 
       level_sett: {
         min: 1,
-        max: 6,
+        max: 20,
       }
 		},
 		pages: {
@@ -55,7 +55,7 @@ export const usePagesStore = defineStore({
 	}),
 
   persist: {
-    paths: ['sait_settings', 'pages', 'race_page.settings'],
+    paths: ['site_settings', 'pages', 'race_page.settings'],
   },
 
   getters: {

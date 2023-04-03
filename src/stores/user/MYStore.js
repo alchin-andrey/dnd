@@ -15,6 +15,7 @@ export const useMYStore = defineStore({
 	id: "MYStore",
 	state: () => ({
 		MY: MY,
+		MY_def: JSON.parse(JSON.stringify(MY)),
 	}),
   persist: true,
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="marg">
-		<Welcome />
+		<Welcome reset/>
 		<Donate />
 	</div>
 </template>

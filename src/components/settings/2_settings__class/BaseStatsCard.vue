@@ -56,7 +56,7 @@ export default {
 	computed: {
 		// STORES
 		...mapState(useMYStore, ["MY", "MY_Class"]),
-    ...mapState(useStatsStore, ["stats_base_numb", "stats_base_save", "stats_base_hower"]),
+    ...mapState(useStatsStore, ["stats_base_numb", "stats_base_hower"]),
 		// GETTERS
     ...mapState(useStatsStore, [
       "stats_Keys", 
@@ -100,9 +100,9 @@ export default {
       const arr_base = this.MY_Class.stats_base.slice(0);
       const arr = this.getNewArr(this.stats_Base_Arr, numb);
       if(arr.length == arr_base.length && arr.every((el, i) => arr_base[i] == el)) {
-        this.stats_base_save[this.MY.class_name] = null;
+        this.MY.stats_base_save[this.MY.class_name] = null;
       } else {
-        this.stats_base_save[this.MY.class_name] = arr;
+        this.MY.stats_base_save[this.MY.class_name] = arr;
       }
 		},
 

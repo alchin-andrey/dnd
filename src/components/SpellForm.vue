@@ -28,7 +28,7 @@ export default {
 	computed: {
     ...mapWritableState(useDicStore, ["select_lang"]),
     ...mapState(useMYStore, ["MY"]),
-    ...mapState(usePagesStore, ["sait_settings", "links"]),
+    ...mapState(usePagesStore, ["site_settings", "links"]),
 		...mapState(useSpellsStore, ["spells", "mods"]),
 
     spell_Obj() {
@@ -50,13 +50,13 @@ export default {
     getCreated() {
       const query = this.$route.query;
       if(query) {
-        if(!this.sait_settings.save.MY_level) {
-          this.sait_settings.save.MY_level = this.MY.level;
+        if(!this.site_settings.save.MY_level) {
+          this.site_settings.save.MY_level = this.MY.level;
         }
         this.MY.level = query?.l ? Number(query.l) : this.MY.level;
 
-        if(!this.sait_settings.save.select_lang) {
-          this.sait_settings.save.select_lang = this.select_lang;
+        if(!this.site_settings.save.select_lang) {
+          this.site_settings.save.select_lang = this.select_lang;
         }
         this.select_lang = query?.ln ?? this.select_lang;
 

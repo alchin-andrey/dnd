@@ -168,6 +168,7 @@ export default {
 		window.addEventListener("resize", this.onResize);
 		this.onResize();
 	},
+  
 	destroyed() {
 		window.removeEventListener("resize", this.onResize);
 	},
@@ -181,7 +182,7 @@ export default {
       "MY_Ethnos",
       "subclass_Name"]),
 		...mapState(usePagesStore, [
-      "sait_settings",
+      "site_settings",
       "links",
 			"race_page",
 			"class_page",
@@ -375,14 +376,14 @@ export default {
 		},
 
 		getCreated() {
-      if(this.sait_settings.save.MY_level) {
-          this.MY.level = this.sait_settings.save.MY_level;
-          this.sait_settings.save.MY_level = null;
+      if(this.site_settings.save.MY_level) {
+          this.MY.level = this.site_settings.save.MY_level;
+          this.site_settings.save.MY_level = null;
         }
 
-      if(this.sait_settings.save.select_lang) {
-          this.select_lang = this.sait_settings.save.select_lang;
-          this.sait_settings.save.select_lang = null;
+      if(this.site_settings.save.select_lang) {
+          this.select_lang = this.site_settings.save.select_lang;
+          this.site_settings.save.select_lang = null;
         }
       this.links.stats_link = {};
 			this.MY.height = this.Get_Height;

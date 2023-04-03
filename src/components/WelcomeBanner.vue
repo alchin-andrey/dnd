@@ -1,5 +1,5 @@
 <template>
-  <div v-if="sait_settings.welcome" class="wrapp">
+  <div v-if="site_settings.welcome" class="wrapp">
     <my-selection-card passive>
       <Welcome />
       <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
@@ -16,11 +16,11 @@ export default {
   components: { Welcome },
   name: "WelcomeBanner",
   computed: {
-		...mapState(usePagesStore, ["sait_settings"]),
+		...mapState(usePagesStore, ["site_settings"]),
   },
   methods: {
     close() {
-        this.sait_settings.welcome = false;
+        this.site_settings.welcome = false;
       },
   },
 };

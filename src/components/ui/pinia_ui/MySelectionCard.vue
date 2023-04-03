@@ -10,6 +10,7 @@
 			link: link,
       copy_card: copy,
       blue_card: download,
+      red_card: reset,
 		}"
 	>
   <div v-if="download" class="copy_icon">
@@ -63,6 +64,10 @@ export default {
       type: Boolean,
 			default: false,
 		},
+    reset: {
+      type: Boolean,
+      default: false,
+    },
     download: {
       type: Boolean,
       default: false,
@@ -134,6 +139,15 @@ export default {
 }
 .blue_card:hover {
 	background: #1355FF;
+}
+
+.red_card {
+	background: #580000;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+.red_card:hover {
+	background: #FF0000;
 }
 
 .no_blur {

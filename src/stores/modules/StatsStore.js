@@ -18,13 +18,13 @@ export const useStatsStore = defineStore({
 
 		stats_base_numb: [15, 14, 13, 12, 10, 8],
 
-		stats_base_save: {},
+		// stats_base_save: {},
 		stats_base_hower: {},
 	}),
 
-  persist: {
-    paths: ['stats_base_save'],
-  },
+  // persist: {
+  //   paths: ['stats_base_save'],
+  // },
 
 	getters: {
 		stats_Keys() {
@@ -61,7 +61,7 @@ export const useStatsStore = defineStore({
 		stats_Base_Arr(stor) {
 			const MYStore = useMYStore();
 			let stats_arr_base = MYStore.MY_Class.stats_base;
-			let stats_arr_save = stor.stats_base_save[MYStore.MY.class_name];
+			let stats_arr_save = MYStore.MY.stats_base_save[MYStore.MY.class_name];
 			return stats_arr_save ? stats_arr_save : stats_arr_base;
 		},
 
