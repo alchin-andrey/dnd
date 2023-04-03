@@ -128,6 +128,8 @@ export const useMYStore = defineStore({
       const main_custom = stor.сustomm_Main_Settings_Class_Arr;
       const feats = FeatsStore.feats_Select_Arr;
       const feats_custom = stor.сustomm_Feats_Settings_Class_Arr;
+      // console.log('feats_Condition:', FeatsStore.feats_Condition)
+      // console.log('feats_Condition_Filter:', FeatsStore.feats_Condition_Filter)
       return [
         ...main_custom, 
         ...feats, 

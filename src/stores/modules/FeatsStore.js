@@ -77,16 +77,41 @@ export const useFeatsStore = defineStore({
 	}),
 
 	getters: {
-		// ...mapState(useMYStore, ["MY"]),
+		feats_Arr() {
+      const new_arr = Object.values(this.feats_obj);
+			// return this.feats_List_Filter(new_arr);
+			return new_arr;
+		},
 
-		feats() {
-			const obj = this.feats_obj;
-			// const arr = this.feats_Select_Arr
-			let new_arr = [];
-			for (const key in obj) {
-				new_arr.push(obj[key]);
-			}
-			return this.feats_List_Filter(new_arr);
+    feats_Arr_Select_Id() {
+      const arr_select = this.feats_Select_Arr.reduce((acc, el) => {
+        if(el.id_btn == "feats") return acc.concat(el);
+        return acc;
+      }, []);
+      return arr_select;
+    },
+
+    feats_Arr_Free() {
+      const arr_select = this.feats_Arr_Select_Id.reduce((acc, el) => acc.concat(el.select_list), []);
+      const arr_condition_pass = this.feats_Condition_Pass;
+      const arr_all = [...arr_select, ...arr_condition_pass];
+      const arr_free = this.feats_Arr.filter(el => !arr_all.some(item => item.name == el.name));
+			return arr_free;
+		},
+
+    feats_Condition() {
+      const new_arr = this.feats_Arr.filter(el => el.condition);
+			return new_arr;
+		},
+
+    feats_Condition_Pass() {
+      const new_arr = this.feats_List_Filter(this.feats_Condition);
+			return new_arr;
+		},
+
+    feats_Condition_Pass_Name() {
+      const all_name = this.feats_Condition_Pass.reduce((acc, el) => acc.concat(el.name), []);
+			return all_name;
 		},
 
 		feats_Settings_Class() {
@@ -113,7 +138,7 @@ export const useFeatsStore = defineStore({
 		},
 
 		feats_Feats_Arr() {
-			return this.getFeatsForFeatsArr(this.feats);
+			return this.getFeatsForFeatsArr(this.feats_Arr);
 		},
 
 		feats_Select_Arr() {
@@ -162,17 +187,18 @@ export const useFeatsStore = defineStore({
 	},
 
 	actions: {
-		feats_List_Filter(arr) {
+
+    feats_List_Filter(arr) {
 			const filter_arr = arr.filter((el) => {
-				if (el?.filter?.stats) {
-					return this.feats_List_Filter_MinBaseStats(el.filter.stats);
-				} else if (el.filter?.proficiencies?.armor) {
-					return this.feats_List_Filter_ArmorMastery(
-						el.filter?.proficiencies?.armor
+				if (el.filter?.stats) {
+					return !this.feats_List_Filter_MinBaseStats(el.filter.stats);
+				} else if (el.filter.proficiencies?.armor) {
+					return !this.feats_List_Filter_ArmorMastery(
+						el.filter.proficiencies?.armor
 					);
 				} else if (el.filter?.spells_exception) {
-					return this.feats_List_Filter_SpellsException(
-						el.filter?.spells_exception
+					return !this.feats_List_Filter_SpellsException(
+						el.filter.spells_exception
 					);
 				} else {
 					return true;
@@ -186,7 +212,6 @@ export const useFeatsStore = defineStore({
 			let res = false;
 			arr.forEach((item) => {
 				const base_stats_name = item.name;
-				// const base_stats_num = StatsStore.stats_Class_Page_Numb(base_stats_name);
 				const base_stats_num = StatsStore.stats_Numb(base_stats_name);
 				res = base_stats_num >= item.min_num || res;
 			});
@@ -196,7 +221,6 @@ export const useFeatsStore = defineStore({
 		feats_List_Filter_ArmorMastery(arr) {
 			const ProficienciesStore = useProficienciesStore();
 			let res = false;
-			// const base_pof_name = ProficienciesStore.proficiencies_RC_Params_All("armor");
 			const base_pof_name = ProficienciesStore.proficiencies_Page_Arr("armor");
 			arr.forEach((item) => {
 				res = base_pof_name.includes(item) || res;
@@ -207,7 +231,6 @@ export const useFeatsStore = defineStore({
 		feats_List_Filter_SpellsException(arr) {
 			const SpellsStore = useSpellsStore();
 			let res = false;
-			// const spell_arr = SpellsStore.spells_RC_Param;
 			const spell_arr = SpellsStore.spells_For_Arr_Obj(SpellsStore.spells_Page_Arr);
 			let all_type = spell_arr.reduce(
 				(acc, el) => acc.concat(el.find((item) => item.type).type),
@@ -287,7 +310,7 @@ export const useFeatsStore = defineStore({
 					list: list,
 				});
 				if (btn_save == "feats") {
-					list = list.filter((el) => !select_list.includes(el));
+					list = list.filter((el) => !select_list.some(item => item.name == el.name));
 					select_list_all = select_list_all.concat(select_list);
 				}
 			});
@@ -295,10 +318,10 @@ export const useFeatsStore = defineStore({
 			const list_all = obj;
 			new_arr.forEach((item) => {
 				const select_list_all_includ = select_list_all.filter(
-					(el) => !item.select_list.includes(el)
+					(el) => !item.select_list.some(item => item.name == el.name)
 				);
 				const new_list = list_all.filter(
-					(el) => !select_list_all_includ.includes(el)
+					(el) => !select_list_all_includ.some(item => item.name == el.name)
 				);
 				feats_arr.push({
 					...item,

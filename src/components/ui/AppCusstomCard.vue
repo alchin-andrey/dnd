@@ -1,5 +1,5 @@
 <template>
-	<my-selection-card no_blur :active_boll_link="active_boll_link">
+	<my-selection-card no_blur :passive="pass_boll_link" :active_boll_link="active_boll_link">
 		<!-- //NOTE - Text -->
 		<my-card-text
 			v-if="custom.name || custom.details"
@@ -211,6 +211,10 @@ export default {
 			type: Object,
 			default: null,
 		},
+		pass_boll_link: {
+			type: Boolean,
+			default: false,
+		},
 		active_boll_link: {
 			type: Boolean,
 			default: false,
@@ -291,14 +295,15 @@ export default {
 		},
 	},
 	watch: {
-		active_boll_link: {
-			handler: function (val, oldVal) {
-				if (val == true) {
-					this.$emit("clickOneMore", this.custom);
-				}
-			},
-			immediate: true,
-		},
+		// active_boll_link: {
+		// 	handler: function (val, oldVal) {
+		// 		console.log('val:', val)
+		// 		if (val == true) {
+		// 			this.$emit("clickOneMore", this.custom);
+		// 		}
+		// 	},
+		// 	immediate: true,
+		// },
 	},
 
   methods: {

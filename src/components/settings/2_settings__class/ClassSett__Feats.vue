@@ -22,6 +22,7 @@
       :select_list="feat_Arr.select_list"
 			:custom="list_el"
 			:active_boll_link="getActive(list_el)"
+			:pass_boll_link="getPass(list_el)"
 			@click="getFeatsSelect(list_el)"
 			@clickOneMore="getFeatsSelect"
 		/>
@@ -45,10 +46,6 @@ export default {
 		};
 	},
 	props: {
-		// modelValue: {
-		// 	type: String,
-		// 	default: null,
-		// },
 		id_link: {
 			type: String,
 			default: null,
@@ -61,6 +58,7 @@ export default {
 			"feats_Stats_2_Arr",
 			"feats_Stats_1_1_Arr",
 			"feats_Feats_Arr",
+      "feats_Condition_Pass",
 		]),
 
 		feat_Arr() {
@@ -83,14 +81,22 @@ export default {
 	},
 
 	methods: {
-    getActive(list_el) {
-      return this.feat_Arr.select_list.some(item => {
+    getOverlap(arr, list_el) {
+      return arr.some(item => {
         if (item.name) {
           return item.name == list_el.name
         } else {
           return item.name_set == list_el.name_set
         }
       });
+    },
+
+    getActive(list_el) {
+      return this.getOverlap(this.feat_Arr.select_list, list_el);
+    },
+
+    getPass(list_el) {
+      return this.getOverlap(this.feats_Condition_Pass, list_el);
     },
 
 		shownFeatsBtn(name) {
@@ -111,15 +117,17 @@ export default {
 
 		getFeatsSelect(list_el) {
 			const active = this.getActive(list_el);
-			let arr = this.feat_Arr.select_list.slice(0);
-			if (!active) {
-				arr.splice(0, 1);
-				arr.push(list_el);
-			}
-			this.getFeatsLink({ id_btn: this.shown_Btn });
-			this.MY._settings_class[this.MY.class_name][this.id_link][
-				this.shown_Btn
-			] = arr;
+			const pass = this.getPass(list_el);
+
+      if (active || pass) {
+        return null;
+      } else {
+        let arr = this.feat_Arr.select_list.slice(0);
+        arr.splice(0, 1);
+        arr.push(list_el);
+        this.getFeatsLink({ id_btn: this.shown_Btn });
+        this.MY._settings_class[this.MY.class_name][this.id_link][this.shown_Btn] = arr;
+      }
 		},
 	},
 };

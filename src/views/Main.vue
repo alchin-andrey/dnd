@@ -149,6 +149,7 @@ import { mapState, mapWritableState, mapActions } from "pinia";
 import { useDicStore } from "@/stores/general/DicStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useFeatsStore } from "@/stores/modules/FeatsStore";
 
 import MainApp from "@/components/main/MainApp.js";
 export default {
@@ -190,6 +191,11 @@ export default {
 			"pages",
 			"page_Open",
 		]),
+
+    ...mapState(useFeatsStore, [
+      "feats_Condition_Pass_Name", 
+      "feats_Arr_Select_Id",
+      "feats_Arr_Free"]),
 
 		t_Details() {
 			return this.t("responsive_bottom");
@@ -299,6 +305,25 @@ export default {
 	watch: {
 		"MY.race_name": "getWatch_Race",
 		"MY.class_name": "getWatch_Class",
+    feats_Condition_Pass_Name: {
+			handler: function (val, oldVal) {
+      if (oldVal && val.toString() !== oldVal.toString()) {
+        this.feats_Arr_Select_Id.forEach(el => {
+          if(el.id_btn == "feats") {
+            const obj = this.MY._settings_class[this.MY.class_name][el.id_link];
+            const name = obj.feats[0].name;
+            const includ = this.feats_Condition_Pass_Name.includes(name);
+            const new_el = this.feats_Arr_Free[0];
+            if(includ) {
+              this.MY._settings_class[this.MY.class_name][el.id_link] = {...obj, feats: [new_el]}
+            }
+          }
+        })
+      }
+			},
+      // deep: true,
+			// immediate: true,
+		},
 	},
 
 	methods: {
