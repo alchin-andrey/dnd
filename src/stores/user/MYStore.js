@@ -1,6 +1,4 @@
-// import { ref, computed } from "vue";
-// import { watch, toRef } from 'vue';
-import { acceptHMRUpdate, defineStore } from "pinia";
+import { defineStore } from "pinia";
 import MY from "@/assets/catalog/MY.js";
 import { useMainStore } from "@/stores/general/MainStore";
 
@@ -25,11 +23,6 @@ export const useMYStore = defineStore({
 			return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
 		},
 
-    MY_Backstory() {
-      const MainStore = useMainStore();
-      return MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
-    },
-
     MY_Race() {
       const MainStore = useMainStore();
       return MainStore.race_Arr.find(el => el.name == this.MY.race_name);
@@ -46,6 +39,11 @@ export const useMYStore = defineStore({
       } else {
         return this.ethnos_Arr[0];
       }
+    },
+
+    MY_Backstory() {
+      const MainStore = useMainStore();
+      return MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
     },
 
     MY_Class() {
@@ -129,8 +127,6 @@ export const useMYStore = defineStore({
       const main_custom = stor.сustomm_Main_Settings_Class_Arr;
       const feats = FeatsStore.feats_Select_Arr;
       const feats_custom = stor.сustomm_Feats_Settings_Class_Arr;
-      // console.log('feats_Condition:', FeatsStore.feats_Condition)
-      // console.log('feats_Condition_Filter:', FeatsStore.feats_Condition_Filter)
       return [
         ...main_custom, 
         ...feats, 

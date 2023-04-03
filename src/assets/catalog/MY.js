@@ -11,9 +11,12 @@ export default {
 
 //settings
   _spells_save: {},
+  
   _settings_race: {},
-  _settings_class_old: {},
+
   _settings_class: {},
+  _settings_class_old: {},
+
   _settings_alignment: {},
   
 	//Character

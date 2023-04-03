@@ -107,6 +107,7 @@ import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
+import { useFormStore } from "@/stores/modules/simple/FormStore";
 
 
 export default {
@@ -126,6 +127,11 @@ export default {
 			"skin_color_Char_Body",
 			"eyes_color_Char_Body",
 			"hair_color_Char_Body",
+		]),
+		...mapState(useFormStore, [
+			"Age_Note",
+			"Weight_Note",
+			"Hight_Note",
 		]),
 
 		filter_Setting: (stor) => (numb) => {
@@ -158,41 +164,7 @@ export default {
 			return this.undefined_Filter.length !== 0;
 		},
 
-		Age_Note() {
-			let age = this.MY_Race.race_settings.age;
-			let baby = age.min;
-			let young = age.young;
-			let mature = age.mature;
-			let old = age.old;
-			let oldest = age.max;
-			const MY_age = this.MY.age;
-			if (baby <= MY_age && MY_age < young) {
-				return this.t("baby");
-			} else if (young <= MY_age && MY_age < mature) {
-				return this.t("young");
-			} else if (mature <= MY_age && MY_age < old) {
-				return this.t("mature");
-			} else if (old <= MY_age && MY_age < oldest) {
-				return this.t("old");
-			} else {
-				return this.t("oldest");
-			}
-		},
 
-		Weight_Note() {
-			let kof = this.race_page.settings.weight_kof;
-			if (kof === 0) {
-				return this.t("skinny");
-			} else if (kof === 1) {
-				return this.t("fat");
-			} else {
-				return null;
-			}
-		},
-
-		Hight_Note() {
-			return this.t(this.MY_Race.race_settings.size);
-		},
 	},
 	methods: {
 		...mapActions(usePagesStore, ["showSettings__Race"]),

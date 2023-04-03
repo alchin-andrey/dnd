@@ -18,16 +18,8 @@
 			</section>
 
 			<div v-if="!pages.race_page" class="delimiter"></div>
-			<AppSliderName
-				v-if="pages.race_page"
-				numb="01"
-				name="race"
-			/>
-			<AppSliderName
-				v-if="pages.class_page"
-				numb="02"
-				name="class"
-			/>
+			<AppSliderName v-if="pages.race_page" numb="01" name="race" />
+			<AppSliderName v-if="pages.class_page" numb="02" name="class" />
 			<AppName
 				v-if="pages.alignment_page"
 				numb="03"
@@ -128,14 +120,22 @@
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
 
-	<div v-if="dialogVisible || PRINT_BLANK" id="element-to-convert"><BlankPrint /></div>
+	<div v-if="dialogVisible || PRINT_BLANK" id="element-to-convert">
+		<BlankPrint />
+	</div>
 
 	<div v-if="small_screen" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
 			<div class="grey-4-main">{{ t("responsive_top") }}</div>
 			<div class="emog">
 				{{ em_Before }}
-				<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="21"/>
+				<emoji
+					v-if="em_Upd"
+					:data="emojiIndex"
+					:emoji="em_Upd"
+					:set="set_emoji"
+					:size="21"
+				/>
 				{{ em_After }}
 			</div>
 		</div>
@@ -149,6 +149,7 @@ import { mapState, mapWritableState, mapActions } from "pinia";
 import { useDicStore } from "@/stores/general/DicStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useFormStore } from "@/stores/modules/simple/FormStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
 
 import MainApp from "@/components/main/MainApp.js";
@@ -159,7 +160,7 @@ export default {
 		return {
 			dialogVisible: false,
 			small_screen: false,
-      PRINT_BLANK: false,
+			PRINT_BLANK: false,
 		};
 	},
 
@@ -168,22 +169,18 @@ export default {
 		window.addEventListener("resize", this.onResize);
 		this.onResize();
 	},
-  
+
 	destroyed() {
 		window.removeEventListener("resize", this.onResize);
 	},
 
 	computed: {
 		//STORES
-    ...mapWritableState(useDicStore, ["select_lang"]),
-		...mapState(useMYStore, [
-      "MY",
-      "MY_Race",
-      "MY_Ethnos",
-      "subclass_Name"]),
+		...mapWritableState(useDicStore, ["select_lang"]),
+		...mapState(useMYStore, ["MY", "MY_Race", "MY_Ethnos", "subclass_Name"]),
 		...mapState(usePagesStore, [
-      "site_settings",
-      "links",
+			"site_settings",
+			"links",
 			"race_page",
 			"class_page",
 			"shown_home",
@@ -193,10 +190,18 @@ export default {
 			"page_Open",
 		]),
 
-    ...mapState(useFeatsStore, [
-      "feats_Condition_Pass_Name", 
-      "feats_Arr_Select_Id",
-      "feats_Arr_Free"]),
+		...mapState(useFormStore, [
+			"Get_Age",
+			"Get_Weight",
+			"Get_Height",
+			"Char_Hight_Back",
+		]),
+
+		...mapState(useFeatsStore, [
+			"feats_Condition_Pass_Name",
+			"feats_Arr_Select_Id",
+			"feats_Arr_Free",
+		]),
 
 		t_Details() {
 			return this.t("responsive_bottom");
@@ -232,37 +237,6 @@ export default {
 			);
 		},
 
-		Get_Height() {
-			let min = this.race_Settings.height.min;
-			let max = this.race_Settings.height.max;
-			let kof = this.race_page.settings.height_kof;
-			return min + Math.round((max - min) * kof);
-		},
-
-		Get_Weight() {
-			let min = this.race_Settings.weight.min;
-			let max = this.race_Settings.weight.max;
-			let kof = this.race_page.settings.weight_kof;
-			return min + Math.round((max - min) * kof);
-		},
-
-		Get_Age() {
-			let min = this.race_Settings.age.min;
-			let max = this.race_Settings.age.max;
-			let mature = this.race_Settings.age.mature;
-			if (this.MY.age) {
-				if (this.MY.age < min) {
-					return min;
-				} else if (this.MY.age > max) {
-					return max;
-				} else {
-					return this.MY.age;
-				}
-			} else {
-				return mature;
-			}
-		},
-
 		arr_Name_Race_Page() {
 			let arr = [];
 			arr.push(this.MY.race_name);
@@ -277,53 +251,40 @@ export default {
 			this.subclass_Name ? arr.push(this.subclass_Name) : null;
 			return arr;
 		},
-
-		race_Settings() {
-			return this.MY_Race.race_settings;
-		},
-
-		Char_Hight_Back() {
-			let max_height = this.MY_Race.race_settings.height.max;
-			let min_height = this.MY_Race.race_settings.height.min;
-			let mein_height = (min_height + max_height) / 2;
-			let kof = 0;
-			if (mein_height == 105) {
-				kof = 4;
-			} else if (mein_height == 135) {
-				kof = 3.7;
-			} else if (mein_height == 165) {
-				kof = 3.4;
-			} else {
-				kof = 3.1;
-			}
-			if (this.race_page.shown.eyes_color || this.race_page.shown.hair_color) {
-				return `calc((100% / 210 * ${mein_height})*${kof})`;
-			} else {
-				return `100%`;
-			}
-		},
 	},
 	watch: {
 		"MY.race_name": "getWatch_Race",
 		"MY.class_name": "getWatch_Class",
-    feats_Condition_Pass_Name: {
+    "MY.age"() {
+      if(!this.MY.age) this.MY.age = this.Get_Age;
+    },
+    "MY.height"() {
+      if(!this.MY.height) this.MY.height = this.Get_Height;
+    },
+    "MY.weight"() {
+      if(!this.MY.weight) this.MY.weight = this.Get_Weight;
+    },
+
+		feats_Condition_Pass_Name: {
 			handler: function (val, oldVal) {
-      if (oldVal && val.toString() !== oldVal.toString()) {
-        this.feats_Arr_Select_Id.forEach(el => {
-          if(el.id_btn == "feats") {
-            const obj = this.MY._settings_class[this.MY.class_name][el.id_link];
-            const name = obj.feats[0].name;
-            const includ = this.feats_Condition_Pass_Name.includes(name);
-            const new_el = this.feats_Arr_Free[0];
-            if(includ) {
-              this.MY._settings_class[this.MY.class_name][el.id_link] = {...obj, feats: [new_el]}
-            }
-          }
-        })
-      }
+				if (oldVal && val.toString() !== oldVal.toString()) {
+					this.feats_Arr_Select_Id.forEach((el) => {
+						if (el.id_btn == "feats") {
+							const obj =
+								this.MY._settings_class[this.MY.class_name][el.id_link];
+							const name = obj.feats[0].name;
+							const includ = this.feats_Condition_Pass_Name.includes(name);
+							const new_el = this.feats_Arr_Free[0];
+							if (includ) {
+								this.MY._settings_class[this.MY.class_name][el.id_link] = {
+									...obj,
+									feats: [new_el],
+								};
+							}
+						}
+					});
+				}
 			},
-      // deep: true,
-			// immediate: true,
 		},
 	},
 
@@ -333,33 +294,33 @@ export default {
 		},
 
 		exportToPDF() {
-      const name = this.MY.name;
-      const lvl = this.MY.level;
+			const name = this.MY.name;
+			const lvl = this.MY.level;
 
-      const element = document.getElementById('element-to-convert');
-      const opt = {
-        margin: 0,
+			const element = document.getElementById("element-to-convert");
+			const opt = {
+				margin: 0,
 				filename: `${name}_LVL${lvl}.pdf`,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-        dpi: 150,
-        scale: 1,
-        // windowWidth: 1044,
-        width: 2088,
-        // height: 1223,
-        imageTimeout: 30000,
-        letterRendering: true,
-        useCORS: true
-        },
-        jsPDF: { 
-          unit: 'pt', 
-          format: 'a4', 
-          orientation: 'portrait', 
-          // hotfixes: "px_scaling", 
-        }
-      };
-      html2pdf().set(opt).from(element).save();
-      // html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then();
+				image: { type: "jpeg", quality: 1 },
+				html2canvas: {
+					dpi: 150,
+					scale: 1,
+					// windowWidth: 1044,
+					width: 2088,
+					// height: 1223,
+					imageTimeout: 30000,
+					letterRendering: true,
+					useCORS: true,
+				},
+				jsPDF: {
+					unit: "pt",
+					format: "a4",
+					orientation: "portrait",
+					// hotfixes: "px_scaling",
+				},
+			};
+			html2pdf().set(opt).from(element).save();
+			// html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then();
 		},
 
 		...mapActions(usePagesStore, [
@@ -376,16 +337,16 @@ export default {
 		},
 
 		getCreated() {
-      if(this.site_settings.save.MY_level) {
-          this.MY.level = this.site_settings.save.MY_level;
-          this.site_settings.save.MY_level = null;
-        }
+			if (this.site_settings.save.MY_level) {
+				this.MY.level = this.site_settings.save.MY_level;
+				this.site_settings.save.MY_level = null;
+			}
 
-      if(this.site_settings.save.select_lang) {
-          this.select_lang = this.site_settings.save.select_lang;
-          this.site_settings.save.select_lang = null;
-        }
-      this.links.stats_link = {};
+			if (this.site_settings.save.select_lang) {
+				this.select_lang = this.site_settings.save.select_lang;
+				this.site_settings.save.select_lang = null;
+			}
+			this.links.stats_link = {};
 			this.MY.height = this.Get_Height;
 			this.MY.weight = this.Get_Weight;
 			this.MY.age = this.Get_Age;
@@ -410,7 +371,6 @@ export default {
 </script>
 
 <style>
-
 .title-donat {
 	margin-bottom: 21px;
 }
@@ -533,28 +493,28 @@ export default {
 }
 
 .character > img {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+	transition-duration: 0.8s;
+	transition-timing-function: ease-in-out;
 }
 
 .character > svg {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-property: all, fill;
-  transition-duration: 0.8s, 0.1s;
-  transition-timing-function: ease-in-out;
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+	transition-property: all, fill;
+	transition-duration: 0.8s, 0.1s;
+	transition-timing-function: ease-in-out;
 }
 
 .active_eyes {
@@ -614,8 +574,8 @@ export default {
 }
 
 .story h3 {
-  font-family: 'Inter-700';
-  font-style: normal;
+	font-family: "Inter-700";
+	font-style: normal;
 	font-weight: normal;
 	font-size: 13px;
 	line-height: 15px;
@@ -626,12 +586,12 @@ export default {
 }
 
 .story-print h3 {
-  font-family: 'Inter-600';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 30px;
-  letter-spacing: 0.02em;
+	font-family: "Inter-600";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
 	margin-top: 26px;
 	margin-bottom: 10px;
 }
@@ -700,7 +660,6 @@ export default {
 	line-height: 0;
 	top: 4px;
 }
-
 
 /* ---------------------sidebar_right----------------------*/
 </style>

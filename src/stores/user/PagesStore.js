@@ -38,11 +38,6 @@ export const usePagesStore = defineStore({
 
 		race_page: {
 			shown: {},
-      settings: {
-        height_kof: 0.5,
-        weight_kof: 0.5,
-        age_kof: 0.5,
-      }
 		},
 
 		class_page: {
@@ -55,7 +50,7 @@ export const usePagesStore = defineStore({
 	}),
 
   persist: {
-    paths: ['site_settings', 'pages', 'race_page.settings'],
+    paths: ['site_settings', 'pages'],
   },
 
   getters: {

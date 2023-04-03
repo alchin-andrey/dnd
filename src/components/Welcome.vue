@@ -15,9 +15,10 @@
 </template>
 
 <script>
-import { mapState, mapWritableState } from "pinia";
+import { mapWritableState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+import { useFormStore } from "@/stores/modules/simple/FormStore";
 export default {
 	name: "Welcome",
   props: {
@@ -30,6 +31,7 @@ export default {
 	computed: {
     ...mapWritableState(useMYStore, ["MY","MY_def"]),
     ...mapWritableState(usePagesStore, ["site_settings", 'pages', 'race_page', "showHome"]),
+    ...mapWritableState(useFormStore, ["form_kof"]),
 
 		t_Title() {
 			return this.t("welcome_title");
@@ -52,10 +54,10 @@ export default {
     resetState() {
       this.MY = JSON.parse(JSON.stringify(this.MY_def));
       this.site_settings.welcome = true;
-      this.race_page.settings =  {
-        height_kof: 0.5,
-        weight_kof: 0.5,
-        age_kof: 0.5,
+      this.form_kof = {
+        height: 0.5,
+        weight: 0.5,
+        age: 0.5,
       };
 
       this.pages = {

@@ -29,6 +29,7 @@
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+import { useFormStore } from "@/stores/modules/simple/FormStore";
 export default {
 	name: "MyRange",
 	data() {
@@ -61,7 +62,8 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race",]),
-		...mapState(usePagesStore, ["race_page", "main_page"]),
+		...mapState(usePagesStore, ["main_page"]),
+    ...mapState(useFormStore, ["form_kof"]),
 		Target_Range() {
 			if (this.lvl) {
 				return "lvl";
@@ -172,7 +174,7 @@ export default {
 				if (this.lvl) {
 					return null;
 				} else {
-					this.race_page.settings[`${this.Target_Range}_kof`] = this.Kof_Range;
+					this.form_kof[this.Target_Range] = this.Kof_Range;
 				}
 			},
 			immediate: true,
@@ -183,7 +185,7 @@ export default {
 				if (this.lvl) {
 					return null;
 				} else {
-					this.race_page.settings[`${this.Target_Range}_kof`] = this.Kof_Range;
+					this.form_kof[this.Target_Range] = this.Kof_Range;
 				}
 			},
 			immediate: true,

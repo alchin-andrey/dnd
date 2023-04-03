@@ -40,33 +40,6 @@ export default {
 			"eyes_color_Char_Body",
 			"hair_color_Char_Body",
 		]),
-
-		MY_Age() {
-			return `${this.MY.age} ${this.t(this.age_Units)}`;
-		},
-
-		MY_Height() {
-			return `${this.MY.height} ${this.t("cm")}`;
-		},
-
-		MY_Weight() {
-			return `${this.MY.weight} ${this.t("kg")}`;
-		},
-
-		age_Units() {
-			const numb = this.MY.age;
-			const mod10 = Math.abs(numb % 10);
-			const mod100 = Math.abs(numb % 100);
-			if (mod100 > 10 && mod100 < 20) {
-				return "years";
-			} else if (mod10 >= 2 && mod10 <= 4) {
-				return "yeara";
-			} else if (mod10 === 1) {
-				return "year";
-			} else {
-				return "years";
-			}
-		},
 	},
 };
 </script>

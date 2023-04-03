@@ -17,14 +17,8 @@ export const useStatsStore = defineStore({
 		],
 
 		stats_base_numb: [15, 14, 13, 12, 10, 8],
-
-		// stats_base_save: {},
 		stats_base_hower: {},
 	}),
-
-  // persist: {
-  //   paths: ['stats_base_save'],
-  // },
 
 	getters: {
 		stats_Keys() {
