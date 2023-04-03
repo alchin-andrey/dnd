@@ -15,14 +15,9 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "MyRangeSize",
-  data() {
-		return {
-			min_lvl: 1,
-			max_lvl: 20,
-		};
-	},
   props: {
     arr: {
       type: Array,
@@ -43,6 +38,7 @@ export default {
   },
   computed: {
     ...mapState(useMYStore, ["MY", "MY_Race"]),
+    ...mapState(usePagesStore, ["main_page"]),
 
     Target_Range() {
       if (this.lvl) {
@@ -57,21 +53,27 @@ export default {
         return null;
       }
     },
+
     Min_Range() {
       if (this.lvl) {
-        return this.min_lvl;
+        return this.main_page.level_sett.min;
       } else {
         return this.MY_Race.race_settings[this.Target_Range].min;
       } 
     },
+
     Level_Arr() {
-      return [0, 5, 10, 15, 20]
+      const N = this.main_page.level_sett.max;
+      if(N == 20) return [0, 5, 10, 15, 20];
+      return [0, ...Array(N+1).keys()].slice(1);
     },
+
     Weight_Arr() {
       let min = this.MY_Race.race_settings.weight.min
       let max = this.MY_Race.race_settings.weight.max
       return [0, min, max]
     },
+
     Age_Arr() {
       let baby = this.MY_Race.race_settings.age.min
       let young = this.MY_Race.race_settings.age.young
@@ -80,6 +82,7 @@ export default {
       let oldest = this.MY_Race.race_settings.age.max
       return [0, baby, young, mature, old, oldest]
     },
+
     Skale_Arr() {
       if (this.lvl) {
         return this.Level_Arr
@@ -92,11 +95,13 @@ export default {
       }
     },
   },
+
   methods: {
     getBottom(numb) {
       let max_size = this.Skale_Arr[this.Skale_Arr.length - 1]
       return `calc((100vh - 64px - 30px) / ${max_size} * ${numb} - 1px + 15px - 9px)`;
     },
+
     getSize(numb) {
       if (numb >= this.Min_Range) {
         this.MY[this.Target_Range] = numb

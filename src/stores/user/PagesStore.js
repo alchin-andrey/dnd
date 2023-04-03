@@ -20,6 +20,11 @@ export const usePagesStore = defineStore({
 				lang: false,
 				lvl: false,
 			},
+
+      level_sett: {
+        min: 1,
+        max: 6,
+      }
 		},
 		pages: {
 			race_page: true,

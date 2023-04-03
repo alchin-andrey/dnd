@@ -34,8 +34,6 @@ export default {
 	data() {
 		return {
 			inputValue: "",
-			min_lvl: 1,
-			max_lvl: 20,
 		};
 	},
 	props: {
@@ -63,7 +61,7 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race",]),
-		...mapState(usePagesStore, ["race_page"]),
+		...mapState(usePagesStore, ["race_page", "main_page"]),
 		Target_Range() {
 			if (this.lvl) {
 				return "lvl";
@@ -108,7 +106,7 @@ export default {
 
 		Max_Range() {
 			if (this.lvl) {
-				return this.max_lvl;
+				return this.main_page.level_sett.max;
 			} else {
 				return this.MY_Race.race_settings[this.Target_Range].max;
 			}
@@ -116,7 +114,7 @@ export default {
 
 		Min_Range() {
 			if (this.lvl) {
-				return this.min_lvl;
+				return this.main_page.level_sett.min;
 			} else {
 				return this.MY_Race.race_settings[this.Target_Range].min;
 			}
