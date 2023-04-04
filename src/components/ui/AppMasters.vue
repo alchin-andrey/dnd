@@ -1,6 +1,5 @@
 <template>
-	<div class="flex_col gap-26 int-400">
-    
+	<my-wrapper class="int-400" gap_26 hr>
     <section class="foto-master">
       <img :src="master_Foto" :alt="master_param.name"/>
     </section>
@@ -15,8 +14,7 @@
       <div><span>{{ t_Format }}</span> <span>{{ t_Master_Format }}</span></div>
       <div><span>{{ t_Telegram }}</span> <span v-html="t_Master_Telegram"/></div>
     </section>
-
-	</div>
+	</my-wrapper>
 </template>
 
 <script>

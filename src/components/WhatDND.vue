@@ -13,7 +13,7 @@
       <main class="mr-centr">
         <section class="col-base">
           <div class="int-700-20">{{ t_How }}</div>
-          <div class="int-400 text-base flex_col gap-16 dot-text">
+          <div class="int-400 text-base flex_col gap-15 dot-text">
             <div>
               <span v-html="t_How_Details_1" />
               <span class="grey-4-main" v-html="t_How_Details_1_1" />
@@ -101,8 +101,8 @@ export default {
   justify-content: center;
 }
 
-.gap-16 {
-  gap: 16px;
+.gap-15 {
+  gap: 15px;
 }
 .gap-64 {
   gap: 64px;
