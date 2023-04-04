@@ -17,15 +17,15 @@
       <main class="print-page" v-if="!PRINT_WORK">
         <section class="wrap-head">
           <BlankTable__QualStats /> 
-          <BlankTable__Fines class="marg-top-36"/>
+          <BlankTable__Fines class="mr-top-36"/>
         </section>
         <section class="wrap-bottom">
-        <BlankTable__Actions class="marg-top-72"/>
-        <BlankTable__Equip class="marg-top-36"/>
+        <BlankTable__Actions class="mr-top-72"/>
+        <BlankTable__Equip class="mr-top-36"/>
         </section>
       </main>
 
-      <main class="print-page">
+      <main class="print-page" v-if="!PRINT_WORK">
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min"/>
           <AppSpells
@@ -40,7 +40,7 @@
 
       <main class="print-page" 
         v-for="arr in list_Spell_Left_Arr"
-				:key="arr">
+				:key="arr" v-if="!PRINT_WORK">
         <section class="col-wrap-spell">
           <AppSpells
             class="cell-spell mr-min"
@@ -57,8 +57,9 @@
 			</main>
 
       <main class="print-page" >
-        <section class="wrap-head int-600-28">
-          <div>{{T('print_biography')}}</div>
+        <section class="wrap-head">
+          <div class="int-600-28">{{T('print_biography')}}</div>
+          <div class="print-col int-500-22 mr-top-10" v-html="T('print_biography_details')" />
         </section>
         <section class="wrap-bottom pad-top-72 int-600-28 flex_row">
           <div>{{T('print_characters')}}</div>
@@ -243,11 +244,15 @@ export default {
 	gap: 36px;
 }
 
-.marg-top-36 {
+.mr-top-10 {
+  margin-top: 10px;
+}
+
+.mr-top-36 {
   margin-top: 36px;
 }
 
-.marg-top-72 {
+.mr-top-72 {
   margin-top: 72px;
 }
 
@@ -288,6 +293,10 @@ export default {
 
 .flex_row > div {
   width: 648px;
+}
+
+.print-col {
+  width: 600px;
 }
 
 </style>

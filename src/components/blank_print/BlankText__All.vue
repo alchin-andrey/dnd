@@ -76,7 +76,7 @@ export default {
 	height: 100%;
 	/* column-fill: auto; */
 	column-count: 3;
-	column-gap: 48px;
+	column-gap: 72px;
 }
 
 .hr-print {
