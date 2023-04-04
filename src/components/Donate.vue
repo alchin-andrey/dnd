@@ -3,6 +3,17 @@
 		<div class="story-dev int-400" v-html="t_Html"></div>
 		<div class="grid gap-26 int-700">
 			<section class="grid gap-4">
+				 
+				<my-selection-card link>
+					<a
+						class="link-pad"
+						target="_blank"
+						href="https://www.patreon.com/dndme"
+					>
+						Patreon ↗
+					</a>
+				</my-selection-card>
+
 				<my-selection-card
 					@click="doCopy(uan_numb), copiedLink('uan_copied')"
 					copy
@@ -19,16 +30,6 @@
 					<div class="text" :class="{'text-finish': finish}">
 						{{ `BTC  ${btc_numb}` }}
 					</div>
-				</my-selection-card>
-
-				<my-selection-card link>
-					<a
-						class="link-pad"
-						target="_blank"
-						href="https://www.patreon.com/dndme"
-					>
-						Patreon ↗
-					</a>
 				</my-selection-card>
 			</section>
 
