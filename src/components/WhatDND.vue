@@ -1,28 +1,33 @@
 <template>
   <section class="scroll-content">
     <div class="jbm-300">{{ t_Base }}</div>
-    <div class="flex_row gap-48 mr-top-54">
+    <div class="flex_row gap-64 mr-top-54">
       
-      <section class="col-base">
-        <div class="int-700-20">{{ t_What }}</div>
-        <div class="int-400 text-base grey-4-main" v-html="t_What_Details"/>
-      </section>
+      <main>
+        <section class="col-base">
+          <div class="int-700-20">{{ t_What }}</div>
+          <div class="int-400 text-base grey-4-main" v-html="t_What_Details"/>
+        </section>
+      </main>
 
-      <section class="col-base">
-        <div class="int-700-20">{{ t_How }}</div>
-        <div class="int-400 text-base flex_col gap-16 dot-text">
-          <div>
-            <span v-html="t_How_Details_1" />
-            <span class="grey-4-main" v-html="t_How_Details_1_1" />
+      <main class="mr-centr">
+        <section class="col-base">
+          <div class="int-700-20">{{ t_How }}</div>
+          <div class="int-400 text-base flex_col gap-16 dot-text">
+            <div>
+              <span v-html="t_How_Details_1" />
+              <span class="grey-4-main" v-html="t_How_Details_1_1" />
+            </div>
+            <div class="grey-4-main" v-html="t_How_Details_2" />
+            <div v-html="t_How_Details_3" />
+            <div class="grey-4-main" v-html="t_How_Details_4" />
+            <div class="grey-4-main" v-html="t_How_Details_5" />
+            <div v-html="t_How_Details_6" />
+            <div class="grey-4-main" v-html="t_How_Details_7" />
           </div>
-          <div class="grey-4-main" v-html="t_How_Details_2" />
-          <div v-html="t_How_Details_3" />
-          <div class="grey-4-main" v-html="t_How_Details_4" />
-          <div class="grey-4-main" v-html="t_How_Details_5" />
-          <div v-html="t_How_Details_6" />
-          <div class="grey-4-main" v-html="t_How_Details_7" />
-        </div>
-      </section>
+        </section>
+      </main>
+
     </div>
   </section>
 </template>
@@ -64,6 +69,7 @@ export default {
 <style scoped>
 
 .scroll-content {
+  width: 100%;
 	overflow-y: scroll;
 	scrollbar-width: none;
 }
@@ -80,16 +86,26 @@ export default {
   flex-direction: column;
 }
 
+.mr-centr {
+  margin: 0 auto;
+}
+
 .col-base {
-  width: 50%;
+  max-width: 362px;
+}
+
+.col-center {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gap-16 {
   gap: 16px;
 }
-
-.gap-48 {
-  gap: 48px;
+.gap-64 {
+  gap: 64px;
 }
 
 .mr-top-54 {

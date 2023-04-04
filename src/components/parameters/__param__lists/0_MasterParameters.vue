@@ -1,16 +1,19 @@
 <template>
-  <div class="jbm-300">{{ t_Master }}</div>
-  <my-wrapper hr>
-    <AppMasters
-    class="mr-top-48"
-    v-for="master in masters"
-    :key="master.id"
-    :master_param="master" />
-  </my-wrapper>
+	<div class="jbm-300">{{ t_Master }}</div>
+	<my-wrapper hr>
+		<AppMasters
+			class="mr-top-48"
+			v-for="master in masters"
+			:key="master.id"
+			:master_param="master"
+		/>
+	</my-wrapper>
 
-  <my-selection-card class="marg-top-4" plus>
-    <div class="int-700"> {{ t_Master_Btm }}</div>
-  </my-selection-card>
+	<my-selection-card class="int-700 marg-top-4" link plus>
+		<a class="link-pad" target="_blank" href="https://t.me/dimalagoda">
+			{{ t_Master_Btm }}
+		</a>
+	</my-selection-card>
 </template>
 
 <script>
@@ -33,8 +36,11 @@ export default {
 </script>
 
 <style scoped>
-
 .mr-top-48 {
-  margin-top: 48px;
+	margin-top: 48px;
+}
+
+.link-pad {
+	padding: 16px;
 }
 </style>
