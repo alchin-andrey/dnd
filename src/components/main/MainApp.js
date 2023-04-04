@@ -1,9 +1,14 @@
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
+import Welcome from "@/components/Welcome.vue";
+import WhatDND from "@/components/WhatDND.vue";
 import Donate from "@/components/Donate.vue";
 import BlankPrint from "@/components/BlankPrint.vue";
 
 import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
 import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
+
+// MASTER_PAGE
+import MasterParameters from "@/components/parameters/__param__lists/0_MasterParameters.vue";
 
 // RACE_PAGE
 import RaceMenu from "@/components/menu/1_RaceMenu.vue";
@@ -22,11 +27,16 @@ import AlignmentParameters from "@/components/parameters/__param__lists/3_Alignm
 export default {
 	components: {
     WelcomeBanner,
+    Welcome,
+    WhatDND,
 		Donate,
 		BlankPrint,
 
 		HeaderMenu,
 		HeaderSettings,
+
+    // MASTER_PAGE
+    MasterParameters,
 		// RACE_PAGE
 		RaceMenu, //TODO: Сылки на рост, вес, возраст
 		RaceSettings,

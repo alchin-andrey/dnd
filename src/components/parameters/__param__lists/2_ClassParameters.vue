@@ -38,29 +38,6 @@
 			/>
 		</section>
 	</transition>
-
-	<!-- <TransitionGroup name="list" tag="ul" class="container"> -->
-	<!-- <TransitionGroup tag="ul" name="fade" class="container"> -->
-	<!-- <TransitionGroup
-    tag="ul"
-    :css="false"
-    @before-enter="onBeforeEnter"
-    @enter="onEnter"
-    @leave="onLeave"
-  >
-  <ClassParam__Stats key="stats" v-if="!shown_Base_Stats" hr :data-index="0"/>
-  <ClassParam__Skills key="skills" v-if="shown_Main_Paramm" hr :data-index="1"/>
-	
-  <ClassParam__Qualities key="qualities" v-if="true" hr :data-index="2"/>
-  <ClassParam__SkillsAll key="skillsall" v-if="shown_Stats_Param" :data-index="3"/>
-	<ClassParam__Charges key="charges" v-if="shown_Main_Paramm" hr :data-index="4"/>
-  <ClassParam__Proficiencies key="proficiencies" v-if="shown_Main_Paramm" hr :data-index="5"/>
-  <ClassParam__Fines key="fines" v-if="shown_Main_Paramm" hr :data-index="6"/>
-  <ClassParam__Spells key="spells" v-if="shown_Main_Paramm" hr :data-index="7"/>
-	<ClassParam__Weapons key="weapons" v-if="shown_Main_Paramm" hr :data-index="8"/>
-	<ClassParam__EquipKit key="equipkit" v-if="shown_Main_Paramm" hr :data-index="9"/>
-  <ClassParam__Text key="text" v-if="shown_Main_Paramm" :data-index="10"/>
-</TransitionGroup> -->
 </template>
 
 <script>

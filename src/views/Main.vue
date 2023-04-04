@@ -4,20 +4,22 @@
 		<div class="main_chapter">
 			<HeaderMenu />
 
-			<section class="grid-col gap-10">
-				<MyBackPage
-					v-if="!pages.race_page"
-					:text_arr="arr_Name_Race_Page"
-					@click="goPage('race_page')"
-				/>
-				<MyBackPage
-					v-if="!pages.race_page && !pages.class_page"
-					:text_arr="arr_Name_Class_Page"
-					@click="goPage('class_page')"
-				/>
+			<section v-if="!pages.race_page && !pages.master_page">
+        <div class="grid-col gap-10">
+          <MyBackPage
+            :text_arr="arr_Name_Race_Page"
+            @click="goPage('race_page')"
+          />
+          <MyBackPage
+            v-if="!pages.class_page"
+            :text_arr="arr_Name_Class_Page"
+            @click="goPage('class_page')"
+          />
+        </div>
+        <div class="delimiter mr-top-22" />
 			</section>
 
-			<div v-if="!pages.race_page" class="delimiter"></div>
+      <div v-if="pages.master_page" class="int-700-20 mr-top-22" v-html="t_Lobby"/>
 			<AppSliderName v-if="pages.race_page" numb="01" name="race" />
 			<AppSliderName v-if="pages.class_page" numb="02" name="class" />
 			<AppName
@@ -26,41 +28,34 @@
 				title="name"
 				v-model="MY.name"
 			/>
-			<div class="delimiter"></div>
+			<div class="delimiter" />
 		</div>
 
 		<div class="main_menu_wrap" @click="showHome()">
-			<div class="main_chapter_menu" @click.stop>
-				<RaceMenu v-if="pages.race_page" />
+			<div 
+      class="main_chapter_menu" 
+      :class="{'pd-top-22': pages.master_page}"
+      @click.stop
+      >
+        <Welcome no_title v-if="pages.master_page"/>
+				
+        <RaceMenu v-if="pages.race_page" />
 				<ClassMenu v-if="pages.class_page" />
 				<AlignmentMenu v-if="pages.alignment_page" />
 			</div>
 
 			<transition name="btm-fade" mode="out-in">
-				<section v-if="shown_home">
-					<my-button
-						v-if="pages.race_page"
-						numb="02"
-						title="class"
-						@click="goPage('class_page')"
-					></my-button>
-					<my-button
-						v-if="pages.class_page"
-						numb="03"
-						title="alignment"
-						@click="goPage('alignment_page')"
-					></my-button>
-					<my-button
-						v-if="pages.alignment_page"
-						title="download_charsheet"
-						@click="showDialog()"
-					></my-button>
-				</section>
+        <my-button
+          v-if="shown_home"
+          :numb="btn_Numb"
+          :title="btn_Name"
+          @click="btnGo()"
+        />
 				<my-button-back
 					v-else
 					title="command_back"
 					@click="showHome()"
-				></my-button-back>
+				/>
 			</transition>
 		</div>
 	</div>
@@ -77,7 +72,8 @@
 	<!-- Character -->
 
 	<div class="represent" @click="showHome()" v-show="!PRINT_BLANK">
-		<transition name="fade-body">
+    <WhatDND v-if="pages.master_page"/>
+		<transition v-if="!pages.master_page" name="fade-body">
 			<div
 				class="character"
 				:class="{
@@ -109,18 +105,19 @@
 		class="sidebar_right"
 		:class="{ sidebar_right_close: close_Sidebar_Right }"
 	>
+		<MasterParameters v-if="pages.master_page" />
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
 		<AlignmentParameters v-if="pages.alignment_page" />
 	</div>
 
 	<!-- alse -->
-	<my-dialog-spell v-model:show="dialogVisible" finish>
+	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
 		<div class="title-donat int-700">{{ t("support_project") }}</div>
 		<Donate finish @getPdf="exportToPDF()" />
 	</my-dialog-spell>
 
-	<div v-if="dialogVisible || PRINT_BLANK" id="element-to-convert">
+	<div v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert">
 		<BlankPrint />
 	</div>
 
@@ -158,7 +155,6 @@ export default {
 	mixins: [MainApp],
 	data() {
 		return {
-			dialogVisible: false,
 			small_screen: false,
 			PRINT_BLANK: false,
 		};
@@ -188,6 +184,8 @@ export default {
 			"setting_open",
 			"pages",
 			"page_Open",
+      "btn_Numb",
+      "btn_Name"
 		]),
 
 		...mapState(useFormStore, [
@@ -206,6 +204,10 @@ export default {
 		t_Details() {
 			return this.t("responsive_bottom");
 		},
+
+    t_Lobby() {
+      return this.T("lobby_welcome_title");
+    },
 
 		em_Upd() {
 			return this.updEmoji(this.t_Details);
@@ -289,6 +291,16 @@ export default {
 	},
 
 	methods: {
+    ...mapActions(usePagesStore, [
+			"showHome",
+			"closeEthnos",
+			"closeColor",
+			"closePar",
+			"goPage",
+			"closeCustomSett",
+      "btnGo",
+		]),
+
 		onResize() {
 			this.small_screen = window.innerWidth <= 1279;
 		},
@@ -321,19 +333,6 @@ export default {
 			};
 			html2pdf().set(opt).from(element).save();
 			// html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then();
-		},
-
-		...mapActions(usePagesStore, [
-			"showHome",
-			"closeEthnos",
-			"closeColor",
-			"closePar",
-			"goPage",
-			"closeCustomSett",
-		]),
-
-		showDialog() {
-			this.dialogVisible = true;
 		},
 
 		getCreated() {
@@ -397,8 +396,12 @@ export default {
 	gap: 10px;
 }
 
+.mr-top-22 {
+  margin-top: 22px;
+}
+
 .stripe {
-	width: 2px;
+	min-width: 2px;
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -436,6 +439,10 @@ export default {
 	overflow-y: scroll;
 	max-height: 100%;
 	scrollbar-width: none;
+}
+
+.pd-top-22 {
+  padding-top: 22px;
 }
 
 .main_chapter_menu::-webkit-scrollbar {

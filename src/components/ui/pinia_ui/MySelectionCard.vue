@@ -13,18 +13,20 @@
       red_card: reset,
 		}"
 	>
-  <div v-if="download" class="copy_icon">
-    <img src="@/assets/img/icon/download.svg" />
+  <div v-if="download || arrow || plus" class="copy_icon">
+    <svg
+      class="main_svg"
+      viewBox="0 0 18 18"
+      xmlns="http://www.w3.org/2000/svg"
+      v-html="ui_icon[img_Icon]"
+    />
   </div>
 		<div v-if="copy" class="copy_icon">
 			<transition name="mode-fade" mode="out-in">
-				<svg
+				<svg class="main_svg"
 					v-if="!copied"
 					key="off"
-					width="18"
-					height="18"
 					viewBox="0 0 18 18"
-					fill="white"
 					fill-rule="evenodd"
 					clip-rule="evenodd"
 					xmlns="http://www.w3.org/2000/svg"
@@ -41,8 +43,14 @@
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "MySelectionCard",
+  data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		passive: {
 			type: Boolean,
@@ -69,6 +77,14 @@ export default {
       default: false,
     },
     download: {
+      type: Boolean,
+      default: false,
+    },
+    arrow: {
+      type: Boolean,
+      default: false,
+    },
+    plus: {
       type: Boolean,
       default: false,
     },
@@ -103,6 +119,11 @@ export default {
 				return null;
 			}
 		},
+    img_Icon() {
+      if(this.download) return "download"
+      if(this.arrow) return "arrow_right_small"
+      if(this.plus) return "plus"
+    }
 	},
 };
 </script>
@@ -171,6 +192,12 @@ export default {
 
 .link {
 	padding: 0px;
+}
+
+.main_svg {
+  width: 18px;
+	height: 18px;
+	fill: white;
 }
 
 .copy_icon {

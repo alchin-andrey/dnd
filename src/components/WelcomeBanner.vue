@@ -4,11 +4,20 @@
       <Welcome />
       <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
     </my-selection-card>
+    <my-selection-card
+    v-if="show_Master_Page" 
+    class="marg-top-4" 
+    arrow
+    @click="getPage()"
+    >
+      <div class="int-700"> {{ T("lobby_button") }}</div>
+    </my-selection-card>
 </div>
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
+import { useDicStore } from "@/stores/general/DicStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import Welcome from "@/components/Welcome.vue";
 
@@ -16,9 +25,23 @@ export default {
   components: { Welcome },
   name: "WelcomeBanner",
   computed: {
-		...mapState(usePagesStore, ["site_settings"]),
+		...mapState(usePagesStore, ["site_settings", "page_Open"]),
+    ...mapState(useDicStore, ["select_lang"]),
+
+    show_Master_Page() {
+      return this.select_lang !== 'ru'
+    }
   },
   methods: {
+    ...mapActions(usePagesStore, [
+			"goPage",
+		]),
+
+    getPage() {
+      this.site_settings.old_page = this.page_Open;
+      this.goPage('master_page')
+    },
+
     close() {
         this.site_settings.welcome = false;
       },
@@ -43,5 +66,9 @@ export default {
   right: 16px;
   top: 16px;
   cursor: pointer;
+}
+
+.marg-top-4 {
+  margin-top: 4px;
 }
 </style>

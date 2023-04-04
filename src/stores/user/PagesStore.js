@@ -8,6 +8,8 @@ export const usePagesStore = defineStore({
     site_settings: {
       save: {},
       welcome: true,
+      print_dialog: false,
+      old_page: null,
     },
 
     links: {
@@ -26,10 +28,12 @@ export const usePagesStore = defineStore({
         max: 20,
       }
 		},
+
 		pages: {
-			race_page: true,
+      race_page: true,
 			class_page: false,
       alignment_page: false,
+      master_page: false,
 		},
 
 		page_setting_open: null,
@@ -47,6 +51,8 @@ export const usePagesStore = defineStore({
 		alignment_page: {
 			shown: {},
 		},
+
+    master_page: {}
 	}),
 
   persist: {
@@ -55,17 +61,58 @@ export const usePagesStore = defineStore({
 
   getters: {
     page_Open() {
-      if(this.pages.race_page) {
-        return "race_page";
-      } else if(this.pages.class_page) {
-        return "class_page";
-      } else if(this.pages.alignment_page) {
-        return "alignment_page";
-      }
+      const key = Object.keys(this.pages);
+      let name = "race_page";
+      key.forEach(el => this.pages[el] ? name = el : null);
+      return name;
+    },
+
+    btn_Page() {
+      const OLD = this.site_settings.old_page;
+      if(OLD == "race_page") return 1;
+      if(this.pages.race_page || OLD == "class_page") return 2;
+      if(this.pages.class_page || OLD == "alignment_page") return 3;
+      if(this.pages.alignment_page) return 4;
+    },
+
+    btn_Numb() {
+      if(this.btn_Page == 1) return '01';
+      if(this.btn_Page == 2) return '02';
+      if(this.btn_Page == 3) return '03';
+      if(this.btn_Page == 4) return null;
+    },
+
+    btn_Name() {
+      if(this.btn_Page == 1) return 'race';
+      if(this.btn_Page == 2) return 'class';
+      if(this.btn_Page == 3) return 'alignment';
+      if(this.btn_Page == 4) return 'download_charsheet';
     }
   },
 
 	actions: {
+
+    btnGo() {
+      if(this.site_settings.old_page) {
+        this.goOldPage();
+      } else {
+        if(this.btn_Page == 1) {
+          this.goPage('race_page');
+        } else if(this.btn_Page == 2) {
+          this.goPage('class_page');
+        } else if(this.btn_Page == 3) {
+          this.goPage('alignment_page');
+        } else if(this.btn_Page == 4) {
+          this.site_settings.print_dialog = true;
+        }
+      }
+    },
+
+		goOldPage() {
+      this.goPage(this.site_settings.old_page);
+      this.site_settings.old_page = null;
+		},
+
 		goPage(page_name) {
 			for (const [key, value] of Object.entries(this.pages)) {
 				value == true ? (this.pages[key] = false) : null;
@@ -105,7 +152,11 @@ export const usePagesStore = defineStore({
 		},
 
 		showSettings__Main(name) {
-			this.showSettings("main_page", name);
+      if(this.site_settings.old_page) {
+        this.goOldPage();
+      } else {
+        this.showSettings("main_page", name);
+      }
 		},
 
 		// ANCHOR //^ Race Page: Shown settings

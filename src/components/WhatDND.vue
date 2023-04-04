@@ -1,0 +1,112 @@
+<template>
+  <section class="scroll-content">
+    <div class="jbm-300">{{ t_Base }}</div>
+    <div class="flex_row gap-48 mr-top-54">
+      
+      <section class="col-base">
+        <div class="int-700-20">{{ t_What }}</div>
+        <div class="int-400 text-base grey-4-main" v-html="t_What_Details"/>
+      </section>
+
+      <section class="col-base">
+        <div class="int-700-20">{{ t_How }}</div>
+        <div class="int-400 text-base flex_col gap-16 dot-text">
+          <div>
+            <span v-html="t_How_Details_1" />
+            <span class="grey-4-main" v-html="t_How_Details_1_1" />
+          </div>
+          <div class="grey-4-main" v-html="t_How_Details_2" />
+          <div v-html="t_How_Details_3" />
+          <div class="grey-4-main" v-html="t_How_Details_4" />
+          <div class="grey-4-main" v-html="t_How_Details_5" />
+          <div v-html="t_How_Details_6" />
+          <div class="grey-4-main" v-html="t_How_Details_7" />
+        </div>
+      </section>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+	name: "WhatDND",
+	computed: {
+    t_Base() {
+			return this.t("lobby_base");
+		},
+
+    t_What() {
+			return this.t("lobby_what_is_it");
+		},
+
+    t_What_Details() {
+			return this.t("lobby_what_is_it_details");
+		},
+
+    t_How() {
+      console.log('t_How:')
+			return this.t("lobby_how_it_works");
+		},
+
+    t_How_Details_1: (stor) => stor.t("lobby_how_it_works_details_1"),
+    t_How_Details_1_1: (stor) => stor.t("lobby_how_it_works_details_1_1"),
+    t_How_Details_2: (stor) => stor.t("lobby_how_it_works_details_2"),
+    t_How_Details_3: (stor) => stor.t("lobby_how_it_works_details_3"),
+    t_How_Details_4: (stor) => stor.t("lobby_how_it_works_details_4"),
+    t_How_Details_5: (stor) => stor.t("lobby_how_it_works_details_5"),
+    t_How_Details_6: (stor) => stor.t("lobby_how_it_works_details_6"),
+    t_How_Details_7: (stor) => stor.t("lobby_how_it_works_details_7"),
+
+	},
+};
+</script>
+
+<style scoped>
+
+.scroll-content {
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+
+.scroll-content::-webkit-scrollbar {
+	width: 0;
+}
+.flex_row {
+  display: flex;
+}
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-base {
+  width: 50%;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-48 {
+  gap: 48px;
+}
+
+.mr-top-54 {
+  margin-top: 54px;
+}
+
+.text-base {
+	margin-top: 69px;
+}
+
+.dot-text > div {
+  position: relative;
+}
+.dot-text > div::before {
+  content: '•';
+  position: absolute;
+  top: 0;
+  left: -12px;
+}
+</style>

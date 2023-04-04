@@ -4,7 +4,7 @@
 			@click="showSettings__Main('logo')"
 			:active="main_page.shown.logo"
 		/>
-		<div class="header_col">
+		<div class="header_col" v-if="!pages.master_page">
 			<my-header-card
 				@click="showSettings__Main('lang')"
 				:active="main_page.shown.lang"
@@ -35,7 +35,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "HeaderMenu",
 	computed: {
-		...mapState(usePagesStore, ["main_page"]),
+		...mapState(usePagesStore, ["main_page", "pages"]),
 		...mapState(useDicStore, ["dic", "select_lang"]),
     ...mapState(useMYStore, ["MY"]),
 

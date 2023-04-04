@@ -1,14 +1,14 @@
 <template>
-    <RaceParam__Stats hr/> <!-- //TODO -->
-    <RaceParam__Skills hr/> 
-    <RaceParam__Qualities hr/> <!-- //TODO -->
-    <RaceParam__Charges hr/>
-    <RaceParam__Proficiencies hr/>
-    <RaceParam__Fines hr/> 
-    <RaceParam__Spells hr/> <!-- //TODO -->
-    <RaceParam__Weapons hr />
-		<RaceParam__EquipKit hr />
-    <RaceParam__Text />
+  <RaceParam__Stats hr/>
+  <RaceParam__Skills hr/> 
+  <RaceParam__Qualities hr/>
+  <RaceParam__Charges hr/>
+  <RaceParam__Proficiencies hr/>
+  <RaceParam__Fines hr/> 
+  <RaceParam__Spells hr/> 
+  <RaceParam__Weapons hr />
+  <RaceParam__EquipKit hr />
+  <RaceParam__Text />
 </template>
 
 <script>

@@ -1,8 +1,10 @@
 <template>
-	<div class="int-400">
-		<div class="title">{{ t_Title }}</div>
-		<div class="text">{{ t_Text }}</div>
-		<div class="text_html" v-html="t_Html"></div>
+	<div class="int-400 flex_col gap-26">
+		<div class="int-700" v-if="!no_title">{{ t_Title }}</div>
+		<section>
+      <div class="text">{{ t_Text }}</div>
+      <div class="text_html" v-html="t_Html"></div>
+		</section>
 		<my-selection-card
 			class="marg-top-26 int-700"
 			v-if="reset"
@@ -26,6 +28,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		no_title: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
@@ -34,7 +40,7 @@ export default {
     ...mapWritableState(useFormStore, ["form_kof"]),
 
 		t_Title() {
-			return this.t("welcome_title");
+			return this.T("welcome_title");
 		},
 
 		t_Text() {
@@ -64,6 +70,7 @@ export default {
 			race_page: true,
 			class_page: false,
       alignment_page: false,
+      master_page: false,
 		};
       this.showHome()
     },
@@ -71,22 +78,14 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.title {
-	height: 15px;
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	margin-bottom: 26px;
+.flex_col {
+  display: flex;
+  flex-direction: column;
 }
 
-.title:first-letter {
-	text-transform: uppercase;
+.gap-26 {
+  gap: 26px;
 }
 
 .text {
@@ -101,9 +100,5 @@ export default {
 }
 .text_html {
 	color: rgba(255, 255, 255, 0.4);
-}
-
-.marg-top-26 {
-	margin-top: 26px;
 }
 </style>

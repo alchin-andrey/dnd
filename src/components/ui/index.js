@@ -12,6 +12,8 @@ import AppCusstomCard from "@/components/ui/AppCusstomCard.vue";
 import AppTooltip from "@/components/ui/AppTooltip.vue";
 import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
 
+import AppMasters from "@/components/ui/AppMasters.vue";
+
 
 //Main
 // import AppSlider from "@/components/ui/main/AppSlider.vue";
@@ -82,6 +84,8 @@ export default [
   AppCusstomCard,
   AppTooltip,
   AppSpellsPacks,
+
+  AppMasters,
 
 //main
   // AppSlider,

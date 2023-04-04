@@ -1,6 +1,7 @@
 export default {
 
   andrii_pavlov: {
+    id: 1,
     name: "andrii_pavlov",
     details: "andrii_pavlov_details",
     city: ["kyiv"],
