@@ -25,7 +25,7 @@ export const usePagesStore = defineStore({
 
       level_sett: {
         min: 1,
-        max: 20,
+        max: 6,
       }
 		},
 
