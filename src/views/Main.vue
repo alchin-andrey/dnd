@@ -321,8 +321,10 @@ export default {
     },
 
 		loadPdf() {
-			const name = this.MY.name;
 			const lvl = this.MY.level;
+			const name = this.MY.name.length !== 0
+				? this.MY.name
+				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
 
 			const element = document.getElementById("element-to-convert");
 			const opt = {

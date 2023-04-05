@@ -63,6 +63,12 @@
 		<!-- Ethnos_spells -->
 	</div>
 
+  <my-card-text
+		class="marg-bot"
+		v-if="t_Disclaimer"
+		:text="t_Disclaimer"
+	/>
+
 	<EthnosCard />
 </template>
 
@@ -71,6 +77,7 @@ import EthnosCard from "@/components/settings/1_settings__race/EthnosCard.vue";
 
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useMainStore } from "@/stores/general/MainStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useChargesStore } from "@/stores/modules/ChargesStore";
 export default {
@@ -83,6 +90,11 @@ export default {
 		...mapState(useMYStore, ["MY", "MY_Race", "level_Filter_Arr"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_Race"]),
     ...mapState(useChargesStore, ["charges_Race_Main_Arr"]),
+    ...mapState(useMainStore, ["srd"]),
+
+    t_Disclaimer() {
+      return this.srd ? this.t("phb_disclaimer") : null;
+    },
 
 		shown_Spells_Race() {
 			let race_spells = this.MY_Race.spells;
@@ -100,5 +112,9 @@ export default {
 	flex-direction: column;
 	gap: 26px;
 	margin: 0 0 26px 16px;
+}
+
+.marg-bot {
+	margin-bottom: 16px;
 }
 </style>

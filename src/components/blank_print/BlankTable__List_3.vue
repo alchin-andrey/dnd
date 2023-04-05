@@ -2,10 +2,10 @@
 	<main>
 		<section class="grid__body-name">
 			<div class="name-title name-title__inverted grid-col-2">
-				<div class="int-600-48">{{ MY_Name }}</div>
+				<div class="int-600-48">{{ MY.name }}</div>
 			</div>
 			<div class="name-title name-title__normal grid-col-2">
-				<div class="int-600-48">{{ MY_Name }}</div>
+				<div class="int-600-48">{{ MY.name }}</div>
 			</div>
 			<AppMainCell class="cell" title="race" :content="MY_Race.name" />
 			<AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
@@ -100,13 +100,6 @@ export default {
 			"skills_passive_Print_All_Numb",
 		]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
-
-		MY_Name() {
-			const name = this.MY.name;
-			return name.length !== 0
-				? name
-				: `${this.T("someone")} ${this.t(this.MY_Race.name)}`;
-		},
 
 		spells_Saving() {
 			const spell_attribute = this.MY_Class.spell_attribute;

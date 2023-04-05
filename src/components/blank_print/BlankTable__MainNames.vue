@@ -1,6 +1,6 @@
 <template>
   <div class="grid__body">
-    <div class="grid__title int-600-48"><div class="text__item">{{ MY_Name }}</div></div>
+    <div class="grid__title int-600-48"><div class="text__item">{{ MY.name }}</div></div>
     <AppMainCell class="cell" title="race" :content="MY_Race.name" />
     <AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
@@ -45,11 +45,6 @@ export default {
       "MY_Secret",
       "MY_Weakness",
     ]),
-
-    MY_Name() {
-      const name = this.MY.name;
-      return name.length !== 0 ? name : `${this.str_Upper(this.t("someone"))} ${this.t(this.MY_Race.name)}`
-    }
 	},
 };
 </script>

@@ -3,7 +3,6 @@
 		<div class="story-dev int-400" v-html="t_Html"></div>
 		<div class="grid gap-26 int-700">
 			<section class="grid gap-4">
-				 
 				<my-selection-card link>
 					<a
 						class="link-pad"
