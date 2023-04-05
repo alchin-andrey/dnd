@@ -54,7 +54,11 @@ export default {
 		document.removeEventListener("keyup", this.listenerUp);
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, [
+      "MY",
+      "MY_Race",
+      "MY_Class",
+    ]),
     ...mapState(useMainStore, [
       "race_Key",
       "class_Key",
@@ -74,8 +78,8 @@ export default {
 		},
 
     slide_Name() {
-      if(this.name == "race") return this.MY.race_name;
-      if(this.name == "class") return this.MY.class_name;
+      if(this.name == "race") return this.MY_Race.name;
+      if(this.name == "class") return this.MY_Class.name;
     },
 
 		kay_Numb() {

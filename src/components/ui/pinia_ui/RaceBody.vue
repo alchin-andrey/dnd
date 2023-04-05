@@ -54,6 +54,7 @@ export default {
       "MY", 
       "MY_Race", 
       "MY_Ethnos",
+      "MY_Class",
     ]),
     ...mapState(usePagesStore, ["race_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
@@ -93,7 +94,7 @@ export default {
     },
 
     img_Char() {
-      let race = this.MY.race_name;
+      let race = this.MY_Race.name;
       let ethnos = this.ethnos_Char;
       let phisiological = this.MY.gender.phisiological;
       let img;
@@ -106,7 +107,7 @@ export default {
         sex = "male";
       }
       if (this.body_part == "class") {
-        img = this.MY.class_name;
+        img = this.MY_Class.name;
       } else {
         img = this.img_Char_Numb;
       }

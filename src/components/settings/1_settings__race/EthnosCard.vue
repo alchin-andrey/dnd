@@ -120,7 +120,8 @@ export default {
 	computed: {
 		// STORE
 		...mapState(useMYStore, [
-      "MY", 
+      "MY",
+      "MY_Race",
       "ethnos_Arr",
       "MY_Ethnos",
       "level_Filter_Arr"
@@ -140,7 +141,7 @@ export default {
 	},
 	methods: {
 		getEthnosName(name) {
-			this.MY.ethnos_name_save[this.MY.race_name] = name;
+			this.MY.ethnos_name_save[this.MY_Race.name] = name;
 		},
 	},
 };

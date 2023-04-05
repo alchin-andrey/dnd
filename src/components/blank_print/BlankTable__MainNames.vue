@@ -1,7 +1,7 @@
 <template>
   <div class="grid__body">
     <div class="grid__title int-600-48"><div class="text__item">{{ MY_Name }}</div></div>
-    <AppMainCell class="cell" title="race" :content="MY.race_name" />
+    <AppMainCell class="cell" title="race" :content="MY_Race.name" />
     <AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
     <AppMainCell class="cell" title="class" :content="MY.class_name" />
@@ -32,9 +32,12 @@ export default {
 		...mapState(useMYStore, [
       "MY", 
       "str_Upper",
-      "MY_Backstory",
+      "MY_Race",
+      "MY_Class",
       "MY_Ethnos",
-      "MY_Subclass"]),
+      "MY_Backstory",
+      "MY_Subclass",
+    ]),
     ...mapState(useAlignmentStore, [
       "MY_Main_Feature",
       "MY_Ideals",
@@ -45,7 +48,7 @@ export default {
 
     MY_Name() {
       const name = this.MY.name;
-      return name.length !== 0 ? name : `${this.str_Upper(this.t("someone"))} ${this.t(this.MY.race_name)}`
+      return name.length !== 0 ? name : `${this.str_Upper(this.t("someone"))} ${this.t(this.MY_Race.name)}`
     }
 	},
 };

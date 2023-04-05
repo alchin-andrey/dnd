@@ -152,7 +152,7 @@ export default {
 		},
 	},
 	watch: {
-		"MY.race_name": {
+		"MY_Race.name": {
 			handler() {
 				if (this.lvl) {
 					return null;

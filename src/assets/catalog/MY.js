@@ -2,7 +2,7 @@
 export default {
 	//Key selections
 	name: "Байрактар",
-  race_name: "gnome",
+  race_name: null,
   ethnos_name_save: {},
 
   class_name: "rogue",

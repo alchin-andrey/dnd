@@ -31,7 +31,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Race"]),
 
     getActive: (stor) => (list_el) => {
       return stor.custom.select_list.some(item => {
@@ -46,12 +46,13 @@ export default {
 
 	methods: {
 		getLink() {
-			if (!this.MY._settings_race[this.MY.race_name]) {
-				this.MY._settings_race[this.MY.race_name] = {};
+			if (!this.MY._settings_race[this.MY_Race.name]) {
+				this.MY._settings_race[this.MY_Race.name] = {};
 			}
 		},
 
 		getCustomSelect(list_el) {
+			console.log('list_el:', list_el)
 			const active = this.getActive(list_el);
 			let arr = this.custom.select_list.slice(0);
 			if (!active) {
@@ -59,7 +60,8 @@ export default {
 				arr.push(list_el);
 			}
 			this.getLink();
-			this.MY._settings_race[this.MY.race_name][this.custom.id_link] = arr;
+			console.log('arr:', arr)
+			this.MY._settings_race[this.MY_Race.name][this.custom.id_link] = arr;
 		},
 	},
 };

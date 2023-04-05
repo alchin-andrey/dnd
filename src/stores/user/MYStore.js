@@ -25,7 +25,7 @@ export const useMYStore = defineStore({
 
     MY_Race() {
       const MainStore = useMainStore();
-      return MainStore.race_Arr.find(el => el.name == this.MY.race_name);
+      return this.getMYObj(MainStore.race_Arr, this.MY.race_name);
     },
 
     ethnos_Arr() {
@@ -33,7 +33,7 @@ export const useMYStore = defineStore({
 		},
 
     MY_Ethnos() {
-      const name_save = this.MY.ethnos_name_save?.[this.MY.race_name];
+      const name_save = this.MY.ethnos_name_save?.[this.MY_Race.name];
       if (name_save) {
         return this.ethnos_Arr.find(el => el.name == name_save);
       } else {
@@ -143,16 +143,6 @@ export const useMYStore = defineStore({
       const filter_only_mastery = this.filterSettings_OnlyMastery(filter_battle_style);
 
       return filter_only_mastery;
-    },
-
-    subclass_Name() {
-      let res = null;
-      this.сustomm_Settings_Class_Arr.forEach(el => {
-        if(el.name == "subclass") {
-          res = el.select_list.find(item => item.name).name;
-        }
-      });
-      return res;
     },
 
     settings_Class_Arr() {
@@ -278,7 +268,7 @@ export const useMYStore = defineStore({
 	actions: {
 
     getMYObj(start_arr, name) {
-      if(name == null) return start_arr[0];
+      if(!name) return start_arr[0];
       const res_obj = start_arr.find(el => el.name == name);
       return res_obj ?? start_arr[0];
     },
@@ -293,12 +283,18 @@ export const useMYStore = defineStore({
 
 		settingsMainSelect(page, settings_arr, type_str, per_id_link) {
       let new_arr = [];
+
 			const sett_lvl = this.level_Filter_Arr(settings_arr);
 			const sett_for_type = sett_lvl.filter((el) => el.type == type_str);
-			let sett_select = this.MY[`_settings_${page}`][this.MY[`${page}_name`]];
-      if (page == "alignment") {
+			let sett_select;
+      if (page == "race") {
+        sett_select = this.MY._settings_race[this.MY_Race.name];
+      } else if (page == "class") {
+        sett_select = this.MY._settings_class[this.MY_Class.name];
+      } else if (page == "alignment") {
         sett_select = this.MY._settings_alignment;
-      }
+      } 
+
 
 			let all_name = sett_for_type.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];

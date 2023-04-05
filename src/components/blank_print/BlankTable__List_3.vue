@@ -7,7 +7,7 @@
 			<div class="name-title name-title__normal grid-col-2">
 				<div class="int-600-48">{{ MY_Name }}</div>
 			</div>
-			<AppMainCell class="cell" title="race" :content="MY.race_name" />
+			<AppMainCell class="cell" title="race" :content="MY_Race.name" />
 			<AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
 			<AppMainCell class="cell" title="class" :content="MY.class_name" />
@@ -83,8 +83,9 @@ export default {
 	computed: {
 		...mapState(useMYStore, [
       "MY",
-      "MY_Backstory",
+      "MY_Race",
       "MY_Ethnos",
+      "MY_Backstory",
       "MY_Class",
       "MY_Subclass"
     ]),
@@ -104,7 +105,7 @@ export default {
 			const name = this.MY.name;
 			return name.length !== 0
 				? name
-				: `${this.T("someone")} ${this.t(this.MY.race_name)}`;
+				: `${this.T("someone")} ${this.t(this.MY_Race.name)}`;
 		},
 
 		spells_Saving() {

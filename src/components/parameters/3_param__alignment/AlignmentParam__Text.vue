@@ -3,7 +3,7 @@
     <my-wrapper gap_26 hr>
 			<my-card-text class="story int-400"
         notation="race"
-				:title="MY.race_name"
+				:title="MY_Race.name"
 				:text_html="MY_Race.details"
 				:rare="MY_Race.rare"
 			>
@@ -62,16 +62,11 @@ export default {
       "MY",
       "MY_Race",
       "MY_Ethnos",
-      "MY_Class",
       "MY_Backstory",
+      "MY_Class",
+      "MY_Subclass",
       "сustomm_Settings_Class_Arr"
     ]),
-
-    MY_Subclass() {
-      const сustomm = this.сustomm_Settings_Class_Arr;
-      const subclass = сustomm.find(el => el.name == "subclass")
-      return subclass?.select_list[0];
-    }
 	},
 };
 </script>

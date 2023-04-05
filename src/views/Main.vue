@@ -179,7 +179,8 @@ export default {
       "MY_Race", 
       "MY_Ethnos",
       "MY_Backstory",
-      "subclass_Name"
+      "MY_Class",
+      "MY_Subclass"
     ]),
 		...mapState(usePagesStore, [
 			"site_settings",
@@ -248,7 +249,7 @@ export default {
 
 		arr_Name_Race_Page() {
 			let arr = [];
-			arr.push(this.MY.race_name);
+			arr.push(this.MY_Race.name);
 			arr.push(this.MY_Ethnos.name);
 			arr.push(this.MY_Backstory.name);
 			return arr;
@@ -257,12 +258,12 @@ export default {
 		arr_Name_Class_Page() {
 			let arr = [];
 			arr.push(this.MY.class_name);
-			this.subclass_Name ? arr.push(this.subclass_Name) : null;
+			this.MY_Subclass.name ? arr.push(this.MY_Subclass.name) : null;
 			return arr;
 		},
 	},
 	watch: {
-		"MY.race_name": "getWatch_Race",
+		"MY_Race.name": "getWatch_Race",
 		"MY.class_name": "getWatch_Class",
     "MY.age"() {
       if(!this.MY.age) this.MY.age = this.Get_Age;
