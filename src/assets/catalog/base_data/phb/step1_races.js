@@ -5,7 +5,7 @@ import lang from "@/assets/catalog/base_data/list_languages.js";
 import weaponry from "@/assets/catalog/base_data/kinds_weapons.js";
 import tool from "@/assets/catalog/base_data/kinds_tools.js";
 import armory from "@/assets/catalog/base_data/kinds_armor.js";
-import backstory from "@/assets/catalog/base_data/srd/list_backstories.js";
+import backstory from "@/assets/catalog/base_data/phb/list_backstories.js";
 
 export default {
 
