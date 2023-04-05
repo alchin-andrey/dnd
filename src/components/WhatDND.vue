@@ -65,9 +65,6 @@ export default {
     t_What_Details_1_1: (stor) => stor.t("lobby_what_is_it_details_1_1"),
     t_What_Details_1_2() {
       const str = this.t("lobby_what_is_it_details_1_2");
-      console.log('str:', str)
-      console.log('str.toLowerCase():', str.toLowerCase())
-      console.log('this.srd:', this.srd)
       return this.srd ? str.toLowerCase() : str;
     },
     t_What_Details_1_3: (stor) => stor.t("lobby_what_is_it_details_1_3"),
