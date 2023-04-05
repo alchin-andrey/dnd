@@ -12,7 +12,7 @@ export default {
   welcome_message:
     "Щоб повноцінно грати в D&D, достатньо придумати персонажа потрібного рівня, а решту влаштує ваш Майстер. Цей чарівний сайт допоможе вам створити персонажа за 3 простих кроки: Раса, Клас та Світогляд. Всі налаштування — ліворуч.\n\nНайкращий підхід для першого разу — розслабитися і вибирати за покликом серця. Тут немає неправильних рішень. У фіналі ви отримаєте аркуш персонажа, з яким ви зможете розпочати гру!",
   welcome_disclaimer:
-    '<br /><p>This site is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC<br /><br />Матеріали на цьому сайті не змінюють необхідності придбання офіційних матеріалів. Cистема Dungeons & Dragons є власністю корпорації Wizards of the Coast, графічні матеріали є власністю Sky Castle Studios та створені за допомогою <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a></p>',
+    '<br /><p>Матеріали на цьому сайті не змінюють необхідності придбання офіційних матеріалів. Cистема Dungeons & Dragons є власністю корпорації Wizards of the Coast. Графічні матеріали є власністю Sky Castle Studios та створені за допомогою <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a><br /><br />This site is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC</p>',
 
   authors:
     '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент</p>' +
@@ -23,9 +23,8 @@ export default {
     '<br /><p>Ми не маємо спонсора та джерела прибутку для цього проекту, тому якщо у вас є бажання задонатити, будемо дуже вдячні. На отримані кошти ми плануємо розвивати цей сервіс, додавати функції та розширювати довідники.</p>' +
     '<br /><p>Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 50% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 
-
   phb_disclaimer:
-    'Інші варіанти недоступні для використання тут через обмеження Open Gaming Licence від Wizards of the Coast ... ',
+    'Інші варіанти недоступні для використання тут через обмеження Open Gaming Licence від власників системи Dungeons & Dragons — Wizards of the Coast LLC ... ',
   //Общее
 
   name: "імʼя",
