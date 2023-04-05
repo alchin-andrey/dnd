@@ -130,7 +130,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -174,6 +173,304 @@ export default {
                 type: "plus",
                 keyword: "bonus_move",
                 details: "in_first_round",
+              },
+            ],
+          },
+          {
+            name: "assasin",
+            details: "assasin_details",
+
+            proficiencies: {
+              tools: [tools.disguise, tools.poisoner],
+            },
+
+            fines: [
+              {
+                level: 3,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_not_moved",
+              },
+              {
+                level: 3,
+                type: "plus",
+                keyword: "double_damage",
+                details: "on_sudden_attack",
+              },
+              {
+                level: 17,
+                type: "plus",
+                keyword: "double_damage_more",
+                details: "on_sudden_attack_extra",
+              },
+            ],
+
+            spells: [
+              {
+                level: 9,
+                spell: spells.fake_identity,
+              },
+              {
+                level: 13,
+                spell: spells.fake_presence,
+              },
+            ],
+          },
+          {
+            name: "arcane_trickster",
+            details: "arcane_trickster_details",
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.mage_hand_rogue,
+              },
+              {
+                level: 17,
+                spell: spells.steal_spell,
+              },
+            ],
+
+            charges: [
+              {
+                level: 3,
+                name: "spell_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "[1]",
+                    0,
+                    0,
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                  ],
+                  [
+                    "[2]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[3]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[4]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+              {
+                level: 17,
+                name: "spell_steal_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 9,
+                type: "plus",
+                keyword: "disadvantage",
+                details: "on_saving_against_your_spells",
+              },
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                position: 3,
+                name: "spells_0",
+                select: [
+                  2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+                ],
+                list: [
+                  // spells[0] wizard
+                  {
+                    name_set: spells.acid_splash[0].name,
+                    spells: [{ level: 3, spell: spells.acid_splash }],
+                  },
+                  {
+                    name_set: spells.friends[0].name,
+                    spells: [{ level: 3, spell: spells.friends }],
+                  },
+                  {
+                    name_set: spells.blade_ward[0].name,
+                    spells: [{ level: 3, spell: spells.blade_ward }],
+                  },
+                  {
+                    name_set: spells.chill_touch[0].name,
+                    spells: [{ level: 3, spell: spells.chill_touch }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ level: 3, spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.minor_illusion[0].name,
+                    spells: [{ level: 3, spell: spells.minor_illusion }],
+                  },
+                  {
+                    name_set: spells.true_strike[0].name,
+                    spells: [{ level: 3, spell: spells.true_strike }],
+                  },
+                  {
+                    name_set: spells.fire_bolt[0].name,
+                    spells: [{ level: 3, spell: spells.fire_bolt }],
+                  },
+                  {
+                    name_set: spells.dancing_lights[0].name,
+                    spells: [{ level: 3, spell: spells.dancing_lights }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ level: 3, spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.light[0].name,
+                    spells: [{ level: 3, spell: spells.light }],
+                  },
+                  {
+                    name_set: spells.message[0].name,
+                    spells: [{ level: 3, spell: spells.message }],
+                  },
+                  {
+                    name_set: spells.prestidigitation[0].name,
+                    spells: [{ level: 3, spell: spells.prestidigitation }],
+                  },
+                  {
+                    name_set: spells.shocking_grasp[0].name,
+                    spells: [{ level: 3, spell: spells.shocking_grasp }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ level: 3, spell: spells.poison_spray }],
+                  },
+                ],
+              },
+              // {
+              //   level: 3,
+              //   type: "spells",
+              //   position: 3,
+              //   name: "spells_0",
+              //   select: [
+              //     2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+              //   ],
+              //   mana_min: 0,
+              //   mana_max: 0,
+              //   classes: ["wizard"],
+              // },
+              {
+                level: 3,
+                type: "spells",
+                position: 4,
+                name: "spells",
+                select: [
+                  0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12,
+                  13,
+                ],
+                mana_min: 1,
+                mana_max: [
+                  0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
+                ],
+                filter: { classes: ["wizard"], }
               },
             ],
           },
@@ -636,9 +933,461 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
+          {
+            name: "battle_master",
+            details: "battle_master_details",
+
+            spell_attribute: "strength",
+
+            charges: [
+              {
+                level: 3,
+                name: "superiority_dice_slots",
+                foo: "Str_Level_10_18",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    4,
+                    4,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 5,
+                type: "plus",
+                keyword: "plus_1_maneuver",
+                details: "on_initiative_and_0_maneuver",
+              },
+            ],
+
+            spells: [
+              {
+                level: 7,
+                spell: spells.know_your_enemy,
+              },
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                position: 1,
+                name: "maneuvers",
+                select: [
+                  0, 0, 3, 3, 3, 3, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9,
+                ],
+                list: [
+                  {
+                    name_set: spells.maneuver_evasive_footwork[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_evasive_footwork }],
+                  },
+                  {
+                    name_set: spells.maneuver_lunging_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_lunging_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_maneuvering_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_maneuvering_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_menacing_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_menacing_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_feinting_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_feinting_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_disarming_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_disarming_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_trip_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_trip_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_riposte[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_riposte }],
+                  },
+                  {
+                    name_set: spells.maneuver_distracting_strike[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_distracting_strike }],
+                  },
+                  {
+                    name_set: spells.maneuver_parry[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_parry }],
+                  },
+                  {
+                    name_set: spells.maneuver_goading_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_goading_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_rally[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_rally }],
+                  },
+                  {
+                    name_set: spells.maneuver_pushing_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_pushing_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_precision_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_precision_attack }],
+                  },
+                  {
+                    name_set: spells.maneuver_commanders_strike[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_commanders_strike }],
+                  },
+                  {
+                    name_set: spells.maneuver_sweeping_attack[0].name,
+                    spells: [{ level: 3, spell: spells.maneuver_sweeping_attack }],
+                  },
+                ],
+              },
+              {
+                level: 3,
+                type: "custom",
+                position: 9,
+                name: "tools",
+                select: 1,
+                list: [
+                  {
+                    name_set: tools.alchemists_supplies.name,
+                    proficiencies: { tools: [tools.alchemists_supplies] },
+                  },
+                  {
+                    name_set: tools.blacksmith.name,
+                    proficiencies: { tools: [tools.blacksmith] },
+                  },
+                  {
+                    name_set: tools.brewer.name,
+                    proficiencies: { tools: [tools.brewer] },
+                  },
+                  {
+                    name_set: tools.calligraphers_supplies.name,
+                    proficiencies: { tools: [tools.calligraphers_supplies] },
+                  },
+                  {
+                    name_set: tools.carpenters_tools.name,
+                    proficiencies: { tools: [tools.carpenters_tools] },
+                  },
+                  {
+                    name_set: tools.cartographers_tools.name,
+                    proficiencies: { tools: [tools.cartographers_tools] },
+                  },
+                  {
+                    name_set: tools.cobblers_tools.name,
+                    proficiencies: { tools: [tools.cobblers_tools] },
+                  },
+                  {
+                    name_set: tools.cooks_tools.name,
+                    proficiencies: { tools: [tools.cooks_tools] },
+                  },
+                  {
+                    name_set: tools.disguise.name,
+                    proficiencies: { tools: [tools.disguise] },
+                  },
+                  {
+                    name_set: tools.glassblowers_tools.name,
+                    proficiencies: { tools: [tools.glassblowers_tools] },
+                  },
+                  {
+                    name_set: tools.jewelers_tools.name,
+                    proficiencies: { tools: [tools.jewelers_tools] },
+                  },
+                  {
+                    name_set: tools.leatherworkers_tools.name,
+                    proficiencies: { tools: [tools.leatherworkers_tools] },
+                  },
+                  {
+                    name_set: tools.mason.name,
+                    proficiencies: { tools: [tools.mason] },
+                  },
+                  {
+                    name_set: tools.navigators_tools.name,
+                    proficiencies: { tools: [tools.navigators_tools] },
+                  },
+                  {
+                    name_set: tools.painters_supplies.name,
+                    proficiencies: { tools: [tools.painters_supplies] },
+                  },
+                  {
+                    name_set: tools.poisoner.name,
+                    proficiencies: { tools: [tools.poisoner] },
+                  },
+                  {
+                    name_set: tools.potters_tools.name,
+                    proficiencies: { tools: [tools.potters_tools] },
+                  },
+                  {
+                    name_set: tools.tinkers_tools.name,
+                    proficiencies: { tools: [tools.tinkers_tools] },
+                  },
+                  {
+                    name_set: tools.weavers_tools.name,
+                    proficiencies: { tools: [tools.weavers_tools] },
+                  },
+                  {
+                    name_set: tools.woodcarvers_tools.name,
+                    proficiencies: { tools: [tools.woodcarvers_tools] },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "eldritch_knight",
+            details: "eldritch_knight_details",
+
+            fines: [
+              {
+                level: 10,
+                type: "advantage",
+                keyword: "disadvantage",
+                details: "on_spell_saving_after_hit",
+              },
+            ],
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.weapon_bond,
+              },
+              {
+                level: 3,
+                spell: spells.call_bonbed_weapon,
+              },
+              {
+                level: 7,
+                spell: spells.bonus_attack_fighter,
+              },
+              {
+                level: 15,
+                spell: spells.arcane_charge,
+              },
+            ],
+
+            charges: [
+              {
+                level: 1,
+                name: "spell_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "[1]",
+                    0,
+                    0,
+                    2,
+                    3,
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                  ],
+                  [
+                    "[2]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[3]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                  ],
+                  [
+                    "[4]",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                position: 3,
+                name: "spells_0",
+                select: [
+                  2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
+                ],
+                list: [
+                  // spells[0] wizard
+                  {
+                    name_set: spells.acid_splash[0].name,
+                    spells: [{ level: 3, spell: spells.acid_splash }],
+                  },
+                  {
+                    name_set: spells.mage_hand[0].name,
+                    spells: [{ level: 3, spell: spells.mage_hand }],
+                  },
+                  {
+                    name_set: spells.friends[0].name,
+                    spells: [{ level: 3, spell: spells.friends }],
+                  },
+                  {
+                    name_set: spells.blade_ward[0].name,
+                    spells: [{ level: 3, spell: spells.blade_ward }],
+                  },
+                  {
+                    name_set: spells.chill_touch[0].name,
+                    spells: [{ level: 3, spell: spells.chill_touch }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ level: 3, spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.minor_illusion[0].name,
+                    spells: [{ level: 3, spell: spells.minor_illusion }],
+                  },
+                  {
+                    name_set: spells.true_strike[0].name,
+                    spells: [{ level: 3, spell: spells.true_strike }],
+                  },
+                  {
+                    name_set: spells.fire_bolt[0].name,
+                    spells: [{ level: 3, spell: spells.fire_bolt }],
+                  },
+                  {
+                    name_set: spells.dancing_lights[0].name,
+                    spells: [{ level: 3, spell: spells.dancing_lights }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ level: 3, spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.light[0].name,
+                    spells: [{ level: 3, spell: spells.light }],
+                  },
+                  {
+                    name_set: spells.message[0].name,
+                    spells: [{ level: 3, spell: spells.message }],
+                  },
+                  {
+                    name_set: spells.prestidigitation[0].name,
+                    spells: [{ level: 3, spell: spells.prestidigitation }],
+                  },
+                  {
+                    name_set: spells.shocking_grasp[0].name,
+                    spells: [{ level: 3, spell: spells.shocking_grasp }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ level: 3, spell: spells.poison_spray }],
+                  },
+                ],
+              },
+              {
+                level: 3,
+                type: "spells",
+                position: 4,
+                name: "spells",
+                select: [
+                  0, 0, 3, 4, 4, 4, 5, 6, 6, 7, 8, 8, 9, 10, 10, 11, 11, 11, 12,
+                  13,
+                ],
+                mana_min: 1,
+                mana_max: [
+                  0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4,
+                ],
+                filter: { 
+                  classes: ["wizard"],
+                type: ["abjuration","evocation"],}
+              },
+            ],
+          },
           {
             name: "champion",
             details: "champion_details",
@@ -1351,7 +2100,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -1385,6 +2133,295 @@ export default {
               {
                 level: 14,
                 spell: spells.retaliation,
+              },
+            ],
+          },
+          {
+            name: "totem_warrior",
+            details: "totem_warrior_details",
+
+            equipment: [
+              {
+                level: 3,
+                inventory: [[items.totem, 1]],
+              },
+            ],
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.beast_sense_ritual,
+              },
+              {
+                level: 3,
+                spell: spells.speak_with_animals_ritual,
+              },
+              {
+                level: 10,
+                spell: spells.commune_with_nature_ritual,
+              },
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                position: 1,
+                name: "totem_spirit",
+                delails: "totem_spirit_details",
+                select: 1,
+                list: [
+                  {
+                    name: "wolf",
+                    fines: [
+                      {
+                        level: 3,
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "near_friends_attack_in_rage",
+                      },
+                    ],
+                  },
+                  {
+                    name: "bear",
+                    fines: [
+                      {
+                        level: 3,
+                        type: "resistance",
+                        keyword: "resistance",
+                        details: "any_damage_but_psy",
+                      },
+                    ],
+                  },
+                  {
+                    name: "eagle",
+                    fines: [
+                      {
+                        level: 3,
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "on_dodging_in_rage",
+
+                        condition: "if_no_heavy_armor",
+                      },
+                    ],
+
+                    spells: [
+                      {
+                        level: 3,
+                        spell: spells.quick_dash,
+                      },
+                    ],
+                  },
+                  {
+                    name: "elk",
+
+                    fines: [
+                      {
+                        level: 3,
+                        type: "plus",
+                        keyword: "speed_plus_15",
+                        details: "if_no_heavy_armor_on_rage",
+                      },
+                    ],
+                  },
+                  {
+                    name: "tiger",
+                    fines: [
+                      {
+                        level: 3,
+                        type: "plus",
+                        keyword: "long_jumps",
+                        details: "in_rage",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 6,
+                type: "custom",
+                position: 1,
+                name: "totem_aspect",
+                delails: "totem_aspect_details",
+                select: 1,
+                list: [
+                  {
+                    name: "wolf",
+                    fines: [
+                      {
+                        level: 6,
+                        type: "plus",
+                        keyword: "fast_tempo",
+                        details: "while_following_prints",
+                      },
+                      {
+                        level: 6,
+                        type: "plus",
+                        keyword: "normal_tempo",
+                        details: "in_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name: "bear",
+                    fines: [
+                      {
+                        level: 6,
+                        type: "plus",
+                        keyword: "double_weight",
+                        details: "weight_capacity_details",
+                      },
+                      {
+                        level: 6,
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "str_check_on_move",
+                      },
+                    ],
+                  },
+                  {
+                    name: "eagle",
+                    fines: [
+                      {
+                        level: 6,
+                        type: "plus",
+                        keyword: "to_see",
+                        details: "one_mile_100f_details",
+                      },
+                      {
+                        level: 6,
+                        type: "advantage",
+                        keyword: "no_disadvantage",
+                        details: "on_perception_in_lowlight",
+                      },
+                    ],
+                  },
+                  {
+                    name: "elk",
+                    fines: [
+                      {
+                        level: 6,
+                        type: "plus",
+                        keyword: "double_speed",
+                        details: "travel_elk",
+                      },
+                    ],
+                  },
+                  {
+                    name: "tiger",
+                    settings: [
+                      {
+                        level: 6,
+                        type: "custom",
+                        name: "skills",
+                        position: 8,
+                        select: 1,
+                        list: [
+                          {
+                            name_set: "athletics",
+                            skills: [
+                              {
+                                name: "athletics",
+                                num: "Mastery",
+                                details: "athletics_details",
+                              },
+                            ],
+                          },
+                          {
+                            name_set: "acrobatics",
+                            skills: [
+                              {
+                                name: "acrobatics",
+                                num: "Mastery",
+                                details: "acrobatics_details",
+                              },
+                            ],
+                          },
+                          {
+                            name_set: "stealth",
+                            skills: [
+                              {
+                                name: "stealth",
+                                num: "Mastery",
+                                details: "stealth_details",
+                              },
+                            ],
+                          },
+                          {
+                            name_set: "survival",
+                            skills: [
+                              {
+                                name: "survival",
+                                num: "Mastery",
+                                details: "survival_details",
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 14,
+                type: "custom",
+                position: 1,
+                name: "totem_harmony",
+                delails: "totem_aspect_details",
+                select: 1,
+                list: [
+                  {
+                    name: "wolf",
+                    spells: [
+                      {
+                        level: 14,
+                        spell: spells.wolf_knock,
+                      },
+                    ],
+                  },
+                  {
+                    name: "bear",
+                    fines: [
+                      {
+                        level: 14,
+                        type: "advantage",
+                        keyword: "advantage",
+                        details: "on_dodging_in_rage_bear",
+                      },
+                    ],
+                  },
+                  {
+                    name: "eagle",
+                    fines: [
+                      {
+                        level: 14,
+                        type: "plus",
+                        keyword: "flight",
+                        details: "as_walking_speed_in_rage",
+                      },
+                    ],
+                  },
+                  {
+                    name: "elk",
+                    spells: [
+                      {
+                        level: 14,
+                        spell: spells.elk_knock,
+                      },
+                    ],
+                  },
+                  {
+                    name: "tiger",
+                    spells: [
+                      {
+                        level: 14,
+                        spell: spells.tiger_strike,
+                      },
+                    ],
+                  },
+                ],
               },
             ],
           },
@@ -2036,7 +3073,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -2102,6 +3138,146 @@ export default {
               {
                 level: 17,
                 spell: spells.quivering_palm,
+              },
+            ],
+          },
+          {
+            name: "way_of_the_shadow",
+            details: "way_of_the_shadow_details",
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.minor_illusion,
+              },
+              {
+                level: 3,
+                spell: spells.pass_without_trace_monk,
+              },
+              {
+                level: 3,
+                spell: spells.darkvision_monk,
+              },
+              {
+                level: 3,
+                spell: spells.silence_monk,
+              },
+              {
+                level: 3,
+                spell: spells.darkness_monk,
+              },
+              {
+                level: 6,
+                spell: spells.shadow_step,
+              },
+              {
+                level: 11,
+                spell: spells.cloak_of_shadows_monk,
+              },
+              {
+                level: 17,
+                spell: spells.opportunist,
+              },
+            ],
+          },
+          {
+            name: "way_of_the_four_elements",
+            details: "way_of_the_four_elements_details",
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.element_bond,
+              },
+            ],
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                position: 1,
+                name: "practices",
+                select: [
+                  1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4,
+                ],
+                list: [
+                  {
+                    level: 3,
+                    name_set: spells.water_whip[0].name,
+                    spells: [{ level: 3, spell: spells.water_whip }],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.fire_snake_teeth[0].name,
+                    spells: [{ level: 3, spell: spells.fire_snake_teeth }],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.ashing_strike[0].name,
+                    spells: [{ level: 3, spell: spells.ashing_strike }],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.four_thunder_fist[0].name,
+                    spells: [{ level: 3, spell: spells.four_thunder_fist }],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.gust_of_wind_monk[0].name,
+                    spells: [{ level: 3, spell: spells.gust_of_wind_monk }],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.air_fist[0].name,
+                    spells: [{ level: 3, spell: spells.air_fist }],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.form_river[0].name,
+                    spells: [{ level: 3, spell: spells.form_river }],
+                  },
+
+                  {
+                    level: 6,
+                    name_set: spells.shatter_monk[0].name,
+                    spells: [{ level: 6, spell: spells.shatter_monk }],
+                  },
+                  {
+                    level: 6,
+                    name_set: spells.hold_person_monk[0].name,
+                    spells: [{ level: 6, spell: spells.hold_person_monk }],
+                  },
+
+                  {
+                    level: 11,
+                    name_set: spells.fly_monk[0].name,
+                    spells: [ { level:11, spell: spells.fly_monk }, ],},
+                  {
+                    level: 11,
+                    name_set: spells.fireball_monk[0].name,
+                    spells: [ { level:11, spell: spells.fireball_monk }, ],},
+                  {
+                    level: 11,
+                    name_set: spells.gaseous_form_monk[0].name,
+                    spells: [ { level:11, spell: spells.gaseous_form_monk }, ],},
+
+                  {
+                    level: 17,
+                    name_set: spells.cone_of_cold_monk[0].name,
+                    spells: [ { level:17, spell: spells.cone_of_cold_monk }, ],},
+                  {
+                    level: 17,
+                    name_set: spells.wall_of_stone_monk[0].name,
+                    spells: [ { level:17, spell: spells.wall_of_stone_monk }, ],},
+                  {
+                    level: 17,
+                    name_set: spells.stoneskin_monk[0].name,
+                    spells: [ { level:17, spell: spells.stoneskin_monk }, ],},
+                  {
+                    level: 17,
+                    name_set: spells.wall_of_fire_monk[0].name,
+                    spells: [ { level:17, spell: spells.wall_of_fire_monk }, ],},
+                ],
               },
             ],
           },
@@ -2559,7 +3735,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -2659,6 +3834,246 @@ export default {
               {
                 level: 20,
                 spell: spells.holy_nimbus,
+              },
+            ],
+          },
+          {
+            name: "oath_of_antients",
+            details: "oath_of_antients_details",
+
+            charges: [
+              {
+                level: 15,
+                name: "undying_sentinel_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+              {
+                level: 20,
+                name: "elder_champion_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 15,
+                type: "resistance",
+                keyword: "immunity",
+                details: "aging_against",
+              },
+            ],
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.divine_channel_antients_1,
+              },
+              {
+                level: 3,
+                spell: spells.divine_channel_antients_2,
+              },
+              {
+                level: 3,
+                spell: spells.ensnaring_strike,
+              },
+              {
+                level: 3,
+                spell: spells.speak_with_animals,
+              },
+              {
+                level: 5,
+                spell: spells.moonbeam,
+              },
+              {
+                level: 5,
+                spell: spells.misty_step,
+              },
+              {
+                level: 7,
+                spell: spells.aura_of_warding,
+              },
+              {
+                level: 9,
+                spell: spells.protection_from_energy,
+              },
+              {
+                level: 9,
+                spell: spells.plant_growth,
+              },
+              {
+                level: 13,
+                spell: spells.ice_storm,
+              },
+              {
+                level: 13,
+                spell: spells.stoneskin,
+              },
+              {
+                level: 15,
+                spell: spells.undying_sentinel,
+              },
+              {
+                level: 17,
+                spell: spells.tree_stride,
+              },
+              {
+                level: 17,
+                spell: spells.commune_with_nature,
+              },
+              {
+                level: 20,
+                spell: spells.elder_champion,
+              },
+            ],
+          },
+          {
+            name: "oath_of_vengence",
+            details: "oath_of_vengence_details",
+
+            charges: [
+              {
+                level: 20,
+                name: "avenging_angel_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 3,
+                spell: spells.divine_channel_vengence_1,
+              },
+              {
+                level: 3,
+                spell: spells.divine_channel_vengence_2,
+              },
+              {
+                level: 3,
+                spell: spells.hunters_mark,
+              },
+              {
+                level: 3,
+                spell: spells.bane,
+              },
+              {
+                level: 5,
+                spell: spells.misty_step,
+              },
+              {
+                level: 5,
+                spell: spells.hold_person,
+              },
+              {
+                level: 7,
+                spell: spells.relentless_avenger,
+              },
+              {
+                level: 9,
+                spell: spells.protection_from_energy,
+              },
+              {
+                level: 9,
+                spell: spells.haste,
+              },
+              {
+                level: 13,
+                spell: spells.banishment,
+              },
+              {
+                level: 13,
+                spell: spells.dimension_door,
+              },
+              {
+                level: 15,
+                spell: spells.soul_of_vengeance,
+              },
+              {
+                level: 17,
+                spell: spells.scrying,
+              },
+              {
+                level: 17,
+                spell: spells.hold_monster,
+              },
+
+              {
+                level: 20,
+                spell: spells.avenging_angel,
               },
             ],
           },
@@ -3110,9 +4525,342 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
+          {
+            //домен бури
+            name: "domain_thunder",
+            details: "domain_thunder_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "thunder_wrath_slots",
+                type: "long_rest",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 17,
+                type: "plus",
+                keyword: "flight",
+                details: "as_walking_speed",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.thunder_wrath,
+              },
+              {
+                level: 1,
+                spell: spells.thunderwave,
+              },
+              {
+                level: 1,
+                spell: spells.fog_cloud,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_wrath,
+              },
+              {
+                level: 3,
+                spell: spells.shatter,
+              },
+              {
+                level: 3,
+                spell: spells.gust_of_wind,
+              },
+              {
+                level: 5,
+                spell: spells.sleet_storm,
+              },
+              {
+                level: 5,
+                spell: spells.call_lightning,
+              },
+              {
+                level: 6,
+                spell: spells.thunder_strike,
+              },
+              {
+                level: 7,
+                spell: spells.control_water,
+              },
+              {
+                level: 7,
+                spell: spells.ice_storm,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_sound,
+              },
+              {
+                level: 9,
+                spell: spells.insect_plague,
+              },
+              {
+                level: 9,
+                spell: spells.destructive_wave,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+              weapons: [weaponry.military],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен войньі
+            name: "domain_war",
+            details: "domain_war_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "inspired_attack_slots",
+                type: "long_rest",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 17,
+                type: "resistance",
+                keyword: "resistance",
+                details: "to_no_magic_weapon",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.inspired_attack,
+              },
+              {
+                level: 1,
+                spell: spells.divine_favor,
+              },
+              {
+                level: 1,
+                spell: spells.shield_of_faith,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_directed_strike,
+              },
+              {
+                level: 3,
+                spell: spells.spiritual_weapon,
+              },
+              {
+                level: 3,
+                spell: spells.magic_weapon,
+              },
+              {
+                level: 5,
+                spell: spells.spirit_guardians,
+              },
+              {
+                level: 5,
+                spell: spells.crusaders_mantle,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_war_god_bless,
+              },
+              {
+                level: 7,
+                spell: spells.stoneskin,
+              },
+              {
+                level: 7,
+                spell: spells.freedom_of_movement,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_weapon,
+              },
+              {
+                level: 9,
+                spell: spells.flame_strike,
+              },
+              {
+                level: 9,
+                spell: spells.hold_monster,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+              weapons: [weaponry.military],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.chainmail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
           {
             //домен жизни
             name: "domain_life",
@@ -3243,6 +4991,698 @@ export default {
                         type: "disadvantage",
                         keyword: "disadvantage",
                         details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен знания
+            name: "domain_knowledge",
+            details: "domain_knowledge_details",
+
+            charges: [
+              {
+                level: 17,
+                name: "cleric_see_past_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.identify,
+              },
+              {
+                level: 1,
+                spell: spells.command,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_learn_tool,
+              },
+              {
+                level: 3,
+                spell: spells.suggestion,
+              },
+              {
+                level: 3,
+                spell: spells.augury,
+              },
+              {
+                level: 5,
+                spell: spells.nondetection,
+              },
+              {
+                level: 5,
+                spell: spells.speak_with_dead,
+              },
+              {
+                level: 6,
+                spell: spells.divine_channel_read_thoughts,
+              },
+              {
+                level: 7,
+                spell: spells.arcane_eye,
+              },
+              {
+                level: 7,
+                spell: spells.confusion,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 9,
+                spell: spells.legend_lore,
+              },
+              {
+                level: 9,
+                spell: spells.scrying,
+              },
+              {
+                level: 17,
+                spell: spells.cleric_see_past,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 10,
+                name: "languages",
+                select: 2,
+                list: [
+                  {
+                    name: lang.halfling.name,
+                    details: lang.halfling.details,
+                    proficiencies: { languages: [lang.halfling] },
+                  },
+                  {
+                    name: lang.gnome.name,
+                    details: lang.gnome.details,
+                    proficiencies: { languages: [lang.gnome] },
+                  },
+                  {
+                    name: lang.dwarf.name,
+                    details: lang.dwarf.details,
+                    proficiencies: { languages: [lang.dwarf] },
+                  },
+                  {
+                    name: lang.elf.name,
+                    details: lang.elf.details,
+                    proficiencies: { languages: [lang.elf] },
+                  },
+                  {
+                    name: lang.orc.name,
+                    details: lang.orc.details,
+                    proficiencies: { languages: [lang.orc] },
+                  },
+                  {
+                    name: lang.dragon.name,
+                    details: lang.dragon.details,
+                    proficiencies: { languages: [lang.dragon] },
+                  },
+                  {
+                    name: lang.giant.name,
+                    details: lang.giant.details,
+                    proficiencies: { languages: [lang.giant] },
+                  },
+                  {
+                    name: lang.goblin.name,
+                    details: lang.goblin.details,
+                    proficiencies: { languages: [lang.goblin] },
+                  },
+                  {
+                    name: lang.thieves.name,
+                    details: lang.thieves.details,
+                    proficiencies: { languages: [lang.thieves] },
+                  },
+                  {
+                    name: lang.druid.name,
+                    details: lang.druid.details,
+                    proficiencies: { languages: [lang.druid] },
+                  },
+                  {
+                    name: lang.animal.name,
+                    details: lang.animal.details,
+                    proficiencies: { languages: [lang.animal] },
+                  },
+                  {
+                    name: lang.sylvan.name,
+                    details: lang.sylvan.details,
+                    proficiencies: { languages: [lang.sylvan] },
+                  },
+                  {
+                    name: lang.undercommon.name,
+                    details: lang.undercommon.details,
+                    proficiencies: { languages: [lang.undercommon] },
+                  },
+                  {
+                    name: lang.deep.name,
+                    details: lang.deep.details,
+                    proficiencies: { languages: [lang.deep] },
+                  },
+                  {
+                    name: lang.primordial.name,
+                    details: lang.primordial.details,
+                    proficiencies: { languages: [lang.primordial] },
+                  },
+                  {
+                    name: lang.sky.name,
+                    details: lang.sky.details,
+                    proficiencies: { languages: [lang.sky] },
+                  },
+                  {
+                    name: lang.demonic.name,
+                    details: lang.demonic.details,
+                    proficiencies: { languages: [lang.demonic] },
+                  },
+                  {
+                    name: lang.tiefling.name,
+                    details: lang.tiefling.details,
+                    proficiencies: { languages: [lang.tiefling] },
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 8,
+                name: "skills",
+                select: 2,
+                list: [
+                  {
+                    name_set: "history",
+                    skills: [{ name: "history", num: "Mastery_x2" }],
+                  },
+                  {
+                    name_set: "arcana",
+                    skills: [{ name: "arcana", num: "Mastery_x2" }],
+                  },
+                  {
+                    name_set: "nature",
+                    skills: [{ name: "nature", num: "Mastery_x2" }],
+                  },
+                  {
+                    name_set: "religion",
+                    skills: [{ name: "religion", num: "Mastery_x2" }],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен обмана
+            name: "domain_trickery",
+            details: "domain_trickery_details",
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.tricker_bless,
+              },
+              {
+                level: 1,
+                spell: spells.disguise_self,
+              },
+              {
+                level: 1,
+                spell: spells.charm_person,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_mirror_image,
+              },
+              {
+                level: 3,
+                spell: spells.pass_without_trace,
+              },
+              {
+                level: 3,
+                spell: spells.mirror_image,
+              },
+              {
+                level: 5,
+                spell: spells.blink,
+              },
+              {
+                level: 5,
+                spell: spells.dispel_magic,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_cloak_of_shadows,
+              },
+              {
+                level: 7,
+                spell: spells.dimension_door,
+              },
+              {
+                level: 7,
+                spell: spells.polymorph,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_poison,
+              },
+              {
+                level: 9,
+                spell: spells.modify_memory,
+              },
+              {
+                level: 9,
+                spell: spells.dominate_person,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен природьі
+            name: "domain_nature",
+            details: "domain_nature_details",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.divine_channel_charm_alimal_plant,
+              },
+              {
+                level: 6,
+                spell: spells.dampen_elements,
+              },
+              {
+                level: 8,
+                spell: spells.divine_strike_nature,
+              },
+
+              {
+                level: 1,
+                spell: spells.animal_friendship,
+              },
+              {
+                level: 1,
+                spell: spells.speak_with_animals,
+              },
+              {
+                level: 3,
+                spell: spells.barkskin,
+              },
+              {
+                level: 3,
+                spell: spells.spike_growth,
+              },
+              {
+                level: 5,
+                spell: spells.plant_growth,
+              },
+              {
+                level: 5,
+                spell: spells.wind_wall,
+              },
+              {
+                level: 7,
+                spell: spells.dominate_beast,
+              },
+              {
+                level: 7,
+                spell: spells.grasping_vine,
+              },
+              {
+                level: 9,
+                spell: spells.tree_stride,
+              },
+              {
+                level: 9,
+                spell: spells.insect_plague,
+              },
+            ],
+
+            proficiencies: {
+              armor: [armory.heavy],
+            },
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 3,
+                name: "spells_0",
+                select: 1,
+                list: [
+                  //spells[0] druid
+                  {
+                    name_set: spells.shillelagh[0].name,
+                    spells: [{ level: 1, spell: spells.shillelagh }],
+                  },
+                  {
+                    name_set: spells.druidcraft[0].name,
+                    spells: [{ level: 1, spell: spells.druidcraft }],
+                  },
+                  {
+                    name_set: spells.ray_of_frost[0].name,
+                    spells: [{ level: 1, spell: spells.ray_of_frost }],
+                  },
+                  {
+                    name_set: spells.mending[0].name,
+                    spells: [{ level: 1, spell: spells.mending }],
+                  },
+                  {
+                    name_set: spells.resistance[0].name,
+                    spells: [{ level: 1, spell: spells.resistance }],
+                  },
+                  {
+                    name_set: spells.produce_flame[0].name,
+                    spells: [{ level: 1, spell: spells.produce_flame }],
+                  },
+                  {
+                    name_set: spells.thorn_whip[0].name,
+                    spells: [{ level: 1, spell: spells.thorn_whip }],
+                  },
+                  {
+                    name_set: spells.guidance[0].name,
+                    spells: [{ level: 1, spell: spells.guidance }],
+                  },
+                  {
+                    name_set: spells.poison_spray[0].name,
+                    spells: [{ level: 1, spell: spells.poison_spray }],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 8,
+                name: "skills",
+                select: 1,
+                list: [
+                  {
+                    name_set: "survival",
+                    skills: [
+                      {
+                        name: "survival",
+                        num: "Mastery",
+                        details: "survival_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "nature",
+                    skills: [
+                      {
+                        name: "nature",
+                        num: "Mastery",
+                        details: "nature_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "animal_handling",
+                    skills: [
+                      {
+                        name: "animal_handling",
+                        num: "Mastery",
+                        details: "animal_handling_details",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [{ level: 1, armor: [[armors.scalemail, 1]] }],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [{ level: 1, armor: [[armors.leather, 1]] }],
+                  },
+                  {
+                    name_set: armors.chainmail.name,
+                    equipment: [{ level: 1, armor: [[armors.chainmail, 1]] }],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            //домен света
+            name: "domain_light",
+            details: "domain_light_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "warding_flare_slots",
+                type: "long_rest",
+                foo: "Num_WIS_Min1",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.light,
+              },
+              {
+                level: 1,
+                spell: spells.warding_flare,
+              },
+              {
+                level: 2,
+                spell: spells.divine_channel_radiance_dawn,
+              },
+              {
+                level: 8,
+                spell: spells.cleric_extra_damage,
+              },
+              {
+                level: 17,
+                spell: spells.crown_of_light,
+              },
+
+              {
+                level: 1,
+                spell: spells.burning_hands,
+              },
+              {
+                level: 1,
+                spell: spells.faerie_fire_0,
+              },
+              {
+                level: 3,
+                spell: spells.scorching_ray,
+              },
+              {
+                level: 3,
+                spell: spells.flaming_sphere,
+              },
+              {
+                level: 5,
+                spell: spells.daylight,
+              },
+              {
+                level: 5,
+                spell: spells.fireball,
+              },
+              {
+                level: 7,
+                spell: spells.wall_of_fire,
+              },
+              {
+                level: 7,
+                spell: spells.guardian_of_faith,
+              },
+              {
+                level: 9,
+                spell: spells.scrying,
+              },
+              {
+                level: 9,
+                spell: spells.flame_strike,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 11,
+                name: "armor_class",
+                select: 1,
+                list: [
+                  {
+                    name_set: armors.scalemail.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.scalemail, 1]],
+                      },
+                    ],
+                    fines: [
+                      {
+                        level: 1,
+                        type: "disadvantage",
+                        keyword: "disadvantage",
+                        details: "on_stealth",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: armors.leather.name,
+                    equipment: [
+                      {
+                        level: 1,
+                        armor: [[armors.leather, 1]],
                       },
                     ],
                   },
@@ -3607,7 +6047,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -4035,6 +6474,34 @@ export default {
               },
             ],
           },
+          {
+            name: "circle_of_the_moon",
+            details: "circle_of_the_moon_details",
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape_combat,
+              },
+              {
+                level: 2,
+                spell: spells.wild_shape_heal,
+              },
+              {
+                level: 14,
+                spell: spells.alter_self_druid,
+              },
+            ],
+
+            fines: [
+              {
+                level: 6,
+                type: "plus",
+                keyword: "ignoring",
+                details: "of_nonmagic_damage_immunity_wild_shape",
+              },
+            ],
+          },
         ],
       },
       {
@@ -4418,9 +6885,203 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
+          {
+            name: "archifey",
+            details: "archifey_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "fey_presence_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+              {
+                level: 6,
+                name: "misty_escape_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+              {
+                level: 14,
+                name: "dark_delirium_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 10,
+                type: "advantage",
+                keyword: "immunity",
+                details: "charm_against",
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.fey_presence,
+              },
+              {
+                level: 6,
+                spell: spells.misty_escape,
+              },
+              {
+                level: 10,
+                spell: spells.beguiling_defenses,
+              },
+              {
+                level: 14,
+                spell: spells.dark_delirium,
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                position: 3,
+                name: "spells",
+                select: [
+                  2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
+                  14, 15, 15,
+                ],
+                mana_min: 1,
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                ],
+                filter: { classes: ["warlock"], },
+                extra_items: [
+                  // Архифея позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
+                  {
+                    level: 1,
+                    name_set: spells.faerie_fire[1].name,
+                    spells: [{ level: 1, spell: spells.faerie_fire,}],
+                  },
+                  {
+                    level: 1,
+                    name_set: spells.sleep[1].name,
+                    spells: [{ level: 1, spell: spells.sleep,}],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.phantasmal_force[2].name,
+                    spells: [{ level: 3, spell: spells.phantasmal_force,}],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.calm_emotions[2].name,
+                    spells: [{ level: 3, spell: spells.calm_emotions,}],
+                  },
+                  {
+                    level: 5,
+                    name_set: spells.blink[3].name,
+                    spells: [{ level: 5, spell: spells.blink,}],
+                  },
+                  {
+                    level: 5,
+                    name_set: spells.plant_growth[3].name,
+                    spells: [{ level: 5, spell: spells.plant_growth,}],
+                  },
+                  {
+                    level: 7,
+                    name_set: spells.greater_invisibility[4].name,
+                    spells: [{ level: 7, spell: spells.greater_invisibility,}],
+                  },
+                  {
+                    level: 7,
+                    name_set: spells.dominate_beast[4].name,
+                    spells: [{ level: 7, spell: spells.dominate_beast,}],
+                  },
+                  {
+                    level: 9,
+                    name_set: spells.dominate_person[5].name,
+                    spells: [{ level: 9, spell: spells.dominate_person,}],
+                  },
+                  {
+                    level: 9,
+                    name_set: spells.seeming[5].name,
+                    spells: [{ level: 9, spell: spells.seeming,}],
+                  },
+                ],
+              },
+            ],
+          },
           {
             name: "fiend",
             details: "fiend_details",
@@ -4577,6 +7238,151 @@ export default {
                     level: 9,
                     name_set: spells.hallow[5].name,
                     spells: [{ level: 9, spell: spells.hallow,}],
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            name: "great_old_one",
+            details: "great_old_one_details",
+
+            fines: [
+              {
+                level: 1,
+                type: "plus",
+                keyword: "able_to_speak",
+                details: "telepatic_30f",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "immunity",
+                details: "to_read_thoughts",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "resistance",
+                details: "psychic_damage_against",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "damage_back",
+                details: "psychic_w",
+              },
+            ],
+
+            charges: [
+              {
+                level: 6,
+                name: "entropic_ward_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 6,
+                spell: spells.entropic_ward,
+              },
+              {
+                level: 14,
+                spell: spells.create_thrall,
+              },
+            ],
+
+            settings: [
+              {
+                type: "spells",
+                position: 3,
+                name: "spells",
+                select: [
+                  2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14,
+                  14, 15, 15,
+                ],
+                mana_min: 1,
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+                ],
+                filter: { classes: ["warlock"],},
+                extra_items: [
+                  // Ваш покравитель позволяет вам при изучении заклинаний колдуна вьібирать из более широкого списка. В ваш список заклинаний колдуна добавляются следующие заклинания.
+                  {
+                    level: 1,
+                    name_set: spells.dissonant_whispers[1].name,
+                    spells: [{ level: 1, spell: spells.dissonant_whispers,}],
+                  },
+                  {
+                    level: 1,
+                    name_set: spells.tashas_hideous_laughter[1].name,
+                    spells: [{ level: 1, spell: spells.tashas_hideous_laughter,}],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.phantasmal_force[2].name,
+                    spells: [{ level: 3, spell: spells.phantasmal_force,}],
+                  },
+                  {
+                    level: 3,
+                    name_set: spells.detect_thoughts[2].name,
+                    spells: [{ level: 3, spell: spells.detect_thoughts,}],
+                  },
+                  {
+                    level: 5,
+                    name_set: spells.clairvoyance[3].name,
+                    spells: [{ level: 5, spell: spells.clairvoyance,}],
+                  },
+                  {
+                    level: 5,
+                    name_set: spells.sending[3].name,
+                    spells: [{ level: 5, spell: spells.sending,}],
+                  },
+                  {
+                    level: 7,
+                    name_set: spells.dominate_beast[4].name,
+                    spells: [{ level: 7, spell: spells.dominate_beast,}],
+                  },
+                  {
+                    level: 7,
+                    name_set: spells.evards_black_tentacles[4].name,
+                    spells: [{ level: 7, spell: spells.evards_black_tentacles,}],
+                  },
+                  {
+                    level: 9,
+                    name_set: spells.dominate_person[5].name,
+                    spells: [{ level: 9, spell: spells.dominate_person,}],
+                  },
+                  {
+                    level: 9,
+                    name_set: spells.telekinesis[5].name,
+                    spells: [{ level: 9, spell: spells.telekinesis,}],
                   },
                 ],
               },
@@ -5778,7 +8584,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -5974,6 +8779,75 @@ export default {
                     ],
                   },
                 ],
+              },
+            ],
+          },
+          {
+            name: "sorcerer_wild_magic",
+            details: "sorcerer_wild_magic_details",
+
+            charges: [
+              {
+                level: 2,
+                name: "wild_magic_surge_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.wild_magic_surge,
+              },
+              {
+                level: 6,
+                spell: spells.bend_luck,
+              },
+            ],
+
+            fines: [
+              {
+                level: 1,
+                type: "plus",
+                keyword: "random_magic_effect",
+                details: "on_casting_spell_mana_and_used_chaos",
+              },
+              {
+                level: 14,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_random_magic_effect",
+              },
+              {
+                level: 18,
+                type: "plus",
+                keyword: "extra_dice_damage",
+                details: "on_max_dice_result_in_spell",
               },
             ],
           },
@@ -6409,7 +9283,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -6445,6 +9318,520 @@ export default {
               {
                 level: 14,
                 spell: spells.overload,
+              },
+            ],
+          },
+          {
+            name: "school_of_conjuration",
+            details: "school_of_conjuration_details",
+
+            charges: [
+              {
+                level: 6,
+                name: "movement_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_conjuration",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_concentration_damage",
+              },
+              {
+                level: 14,
+                type: "plus",
+                keyword: "hp_30",
+                details: "on_conjuration_creatures",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.small_conjuration,
+              },
+              {
+                level: 6,
+                spell: spells.safe_movement,
+              },
+              {
+                level: 6,
+                spell: spells.swap,
+              },
+            ],
+          },
+          {
+            name: "school_of_illusion",
+            details: "school_of_illusion_details",
+
+            charges: [
+              {
+                level: 10,
+                name: "self_illusion_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_illusion",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.minor_illusion,
+              },
+              {
+                level: 6,
+                spell: spells.transform_illusion,
+              },
+              {
+                level: 10,
+                spell: spells.self_illusion,
+              },
+              {
+                level: 14,
+                spell: spells.illusory_reality,
+              },
+            ],
+          },
+          {
+            name: "school_of_necromancy",
+            details: "school_of_necromancy_details",
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_necromancy",
+              },
+              {
+                level: 2,
+                type: "plus",
+                keyword: "heal",
+                details: "from_spell_kill_necromancy",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "health_bonus",
+                details: "lvl_to_animated_undead",
+              },
+              {
+                level: 6,
+                type: "plus",
+                keyword: "mastery_bonus",
+                details: "to_damage_to_animated_undead",
+              },
+              {
+                level: 10,
+                type: "resistance",
+                keyword: "resistance",
+                details: "on_necrotic_damage",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "immunity",
+                details: "on_hp_reduction",
+              },
+            ],
+
+            // Каждьій раз, когда вьі создаете нежить, используя заклинание школьі Некромантии, она получает дополнительньіе преимущества: -Максимум хитов создаваемой нежити увеличивается на значение, равное вашему уровню волшебника. -Создаваемьіе существа добавляют ваш бонус мастерства к броскам урона оружием.
+            spells: [
+              {
+                level: 6,
+                spell: spells.animate_dead_wizard,
+              },
+              {
+                level: 14,
+                spell: spells.control_undead,
+              },
+            ],
+          },
+          {
+            name: "school_of_abjuration",
+            details: "school_of_abjuration_details",
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_abjuration",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "mastery_bonus",
+                details: "on_check_bjuration",
+              },
+              {
+                level: 14,
+                type: "advantage",
+                keyword: "advantage",
+                details: "on_saving_spells",
+              },
+              {
+                level: 14,
+                type: "resistance",
+                keyword: "resistance",
+                details: "on_damage_spells",
+              },
+            ],
+
+            charges: [
+              {
+                level: 2,
+                name: "magical_protection_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.magical_protection,
+              },
+            ],
+          },
+          {
+            name: "school_of_enchantment",
+            details: "school_of_enchantment_details",
+
+            charges: [
+              {
+                level: 6,
+                name: "instinct_charm_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_enchantment",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.hypnotic_look,
+              },
+              {
+                level: 6,
+                spell: spells.instinct_charm,
+              },
+              {
+                level: 10,
+                spell: spells.powerful_charm,
+              },
+              {
+                level: 14,
+                spell: spells.false_memories,
+              },
+              {
+                level: 14,
+                spell: spells.erase_memories,
+              },
+            ],
+          },
+          {
+            name: "school_of_transmutation",
+            details: "school_of_transmutation_details",
+
+            charges: [
+              {
+                level: 10,
+                name: "polymorph_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+              {
+                level: 14,
+                name: "genius_slots",
+                type: "long_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_transmutation",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.small_alchemy,
+              },
+              {
+                level: 6,
+                spell: spells.transmutation_stone,
+              },
+              // Вьі можете накладьівать превращение [polymorph], не тратя ячейку заклинаний. Когда вьі так поступаете, вьі можете вьібрать в качестве цели только себя и превратиться можете в зверя, Показатель опасности которого не больше 1. Активировав превращение подобньім путем один раз, вьі не можете делать єто еще раз до завершения короткого или продолжительного отдьіха, хотя вьі можете накладьівать єто заклинание обьічньім способом, за ячейки заклинаний.
+              {
+                level:10,
+                spell: spells.polymorph,
+              },
+              {
+                level:10,
+                spell: spells.polymorph_wizard,
+              },
+              {
+                level: 14,
+                spell: spells.big_transformation,
+              },
+              {
+                level:14,
+                spell: spells.raise_dead_wizard,
+              },
+              {
+                level: 14,
+                spell: spells.return_youth,
+              },
+              {
+                level: 14,
+                spell: spells.panacea,
+              },
+            ],
+          },
+          {
+            name: "school_of_divination",
+            details: "school_of_divination_details",
+
+            charges: [
+              {
+                level: 10,
+                name: "third_eye_slots",
+                type: "short_rest",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                  ],
+                ],
+              },
+            ],
+
+            fines: [
+              {
+                level: 2,
+                type: "plus",
+                keyword: "twice_less",
+                details: "gold_and_time_divination",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.portent,
+              },
+              {
+                level: 6,
+                spell: spells.divination_expert,
+              },
+              {
+                level: 10,
+                spell: spells.third_eye,
               },
             ],
           },
@@ -6789,9 +10176,54 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
+          {
+            name: "college_valor",
+            details: "college_valor_details",
+
+            proficiencies: {
+              armor: [armory.medium, armory.shields],
+              weapons: [weaponry.military],
+            },
+
+            fines: [
+              {
+                level: 3,
+                type: "plus",
+                keyword: "spell_bardic_inspiration",
+                details: "on_damage_and_ac",
+              },
+            ],
+
+            spells: [
+              {
+                level: 6,
+                spell: spells.extra_attack,
+              },
+              {
+                level: 14,
+                spell: spells.bonus_attack,
+              },
+            ],
+
+            settings: [
+              {
+                level: 6,
+                type: "spells",
+                position: 4,
+                name: "spells",
+                select: [
+                  0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+                ],
+                mana_min: 0,
+                mana_max: [
+                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9,
+                ],
+                filter: { classes: ["bard"], }
+              },
+            ],
+          },
           {
             name: "college_lore",
             details: "college_lore_details",
@@ -7737,7 +11169,6 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -7890,6 +11321,40 @@ export default {
               },
             ],
           },
+          {
+            name: "beastmaster",
+            details: "beastmaster_details",
+
+            settings: [
+              {
+                level: 3,
+                type: "custom",
+                position: 1,
+                name: "companion",
+                select: 1,
+                list: [
+                  {
+                    name_set: spells.rangers_companion[0].name,
+                    spells: [
+                      {
+                        level: 3,
+                        spell: spells.rangers_companion,
+                      },
+                    ],
+                  },
+                  {
+                    name_set: spells.primal_companion[0].name,
+                    spells: [
+                      {
+                        level: 3,
+                        spell: spells.primal_companion,
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
         ],
       },
       {
@@ -7897,7 +11362,6 @@ export default {
         type: "custom",
         position: 2,
         name: "favor",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -8216,6 +11680,51 @@ export default {
               },
             ],
           },
+          {
+            name: "favored_foe",
+            details: "favored_foe_details",
+
+            charges: [
+              {
+                level: 1,
+                name: "favored_foe_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 1,
+                spell: spells.favored_foe,
+              },
+            ],
+          },
         ],
       },
       {
@@ -8223,7 +11732,6 @@ export default {
         type: "custom",
         position: 2,
         name: "exploration",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -8387,6 +11895,376 @@ export default {
               },
             ],
           },
+          {
+            name: "deft_explorer",
+            details: "deft_explorer_details",
+
+            qualities: [
+              {
+                level: 6,
+                name: "speed",
+                type: "bonus",
+                num: 5,
+                show: true,
+              },
+            ],
+
+            fines: [
+              {
+                level: 6,
+                type: "plus",
+                keyword: "climbing_and_swimming",
+                details: "without_speed_fee",
+              },
+              {
+                level: 10,
+                type: "plus",
+                keyword: "exhaust_rediction",
+                details: "in_short_rest",
+              },
+            ],
+
+            charges: [
+              {
+                level: 10,
+                name: "tireless_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 10,
+                spell: spells.tireless,
+              },
+            ],
+
+            settings: [
+              {
+                level: 1,
+                type: "custom",
+                position: 8,
+                name: "skills",
+                select: 1,
+                filter: "only_mastery",
+                list: [
+                  {
+                    name_set: "athletics",
+                    skills: [
+                      {
+                        name: "athletics",
+                        num: "Mastery",
+                        details: "athletics_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "acrobatics",
+                    skills: [
+                      {
+                        name: "acrobatics",
+                        num: "Mastery",
+                        details: "acrobatics_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "sleight_of_hand",
+                    skills: [
+                      {
+                        name: "sleight_of_hand",
+                        num: "Mastery",
+                        details: "sleight_of_hand_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "stealth",
+                    skills: [
+                      {
+                        name: "stealth",
+                        num: "Mastery",
+                        details: "stealth_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "investigation",
+                    skills: [
+                      {
+                        name: "investigation",
+                        num: "Mastery",
+                        details: "investigation_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "history",
+                    skills: [
+                      {
+                        name: "history",
+                        num: "Mastery",
+                        details: "history_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "religion",
+                    skills: [
+                      {
+                        name: "religion",
+                        num: "Mastery",
+                        details: "religion_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "arcana",
+                    skills: [
+                      {
+                        name: "arcana",
+                        num: "Mastery",
+                        details: "arcana_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "nature",
+                    skills: [
+                      {
+                        name: "nature",
+                        num: "Mastery",
+                        details: "nature_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "survival",
+                    skills: [
+                      {
+                        name: "survival",
+                        num: "Mastery",
+                        details: "survival_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "perception",
+                    skills: [
+                      {
+                        name: "perception",
+                        num: "Mastery",
+                        details: "perception_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "insight",
+                    skills: [
+                      {
+                        name: "insight",
+                        num: "Mastery",
+                        details: "insight_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "medicine",
+                    skills: [
+                      {
+                        name: "medicine",
+                        num: "Mastery",
+                        details: "medicine_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "animal_handling",
+                    skills: [
+                      {
+                        name: "animal_handling",
+                        num: "Mastery",
+                        details: "animal_handling_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "performance",
+                    skills: [
+                      {
+                        name: "performance",
+                        num: "Mastery",
+                        details: "performance_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "persuasion",
+                    skills: [
+                      {
+                        name: "persuasion",
+                        num: "Mastery",
+                        details: "persuasion_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "deception",
+                    skills: [
+                      {
+                        name: "deception",
+                        num: "Mastery",
+                        details: "deception_details",
+                      },
+                    ],
+                  },
+                  {
+                    name_set: "intimidation",
+                    skills: [
+                      {
+                        name: "intimidation",
+                        num: "Mastery",
+                        details: "intimidation_details",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                level: 1,
+                type: "custom",
+                position: 10,
+                name: "languages",
+                select: 2,
+                list: [
+                  {
+                    name: lang.halfling.name,
+                    details: lang.halfling.details,
+                    proficiencies: { languages: [lang.halfling] },
+                  },
+                  {
+                    name: lang.gnome.name,
+                    details: lang.gnome.details,
+                    proficiencies: { languages: [lang.gnome] },
+                  },
+                  {
+                    name: lang.dwarf.name,
+                    details: lang.dwarf.details,
+                    proficiencies: { languages: [lang.dwarf] },
+                  },
+                  {
+                    name: lang.elf.name,
+                    details: lang.elf.details,
+                    proficiencies: { languages: [lang.elf] },
+                  },
+                  {
+                    name: lang.orc.name,
+                    details: lang.orc.details,
+                    proficiencies: { languages: [lang.orc] },
+                  },
+                  {
+                    name: lang.dragon.name,
+                    details: lang.dragon.details,
+                    proficiencies: { languages: [lang.dragon] },
+                  },
+                  {
+                    name: lang.giant.name,
+                    details: lang.giant.details,
+                    proficiencies: { languages: [lang.giant] },
+                  },
+                  {
+                    name: lang.goblin.name,
+                    details: lang.goblin.details,
+                    proficiencies: { languages: [lang.goblin] },
+                  },
+                  {
+                    name: lang.thieves.name,
+                    details: lang.thieves.details,
+                    proficiencies: { languages: [lang.thieves] },
+                  },
+                  {
+                    name: lang.druid.name,
+                    details: lang.druid.details,
+                    proficiencies: { languages: [lang.druid] },
+                  },
+                  {
+                    name: lang.animal.name,
+                    details: lang.animal.details,
+                    proficiencies: { languages: [lang.animal] },
+                  },
+                  {
+                    name: lang.sylvan.name,
+                    details: lang.sylvan.details,
+                    proficiencies: { languages: [lang.sylvan] },
+                  },
+                  {
+                    name: lang.undercommon.name,
+                    details: lang.undercommon.details,
+                    proficiencies: { languages: [lang.undercommon] },
+                  },
+                  {
+                    name: lang.deep.name,
+                    details: lang.deep.details,
+                    proficiencies: { languages: [lang.deep] },
+                  },
+                  {
+                    name: lang.primordial.name,
+                    details: lang.primordial.details,
+                    proficiencies: { languages: [lang.primordial] },
+                  },
+                  {
+                    name: lang.sky.name,
+                    details: lang.sky.details,
+                    proficiencies: { languages: [lang.sky] },
+                  },
+                  {
+                    name: lang.demonic.name,
+                    details: lang.demonic.details,
+                    proficiencies: { languages: [lang.demonic] },
+                  },
+                  {
+                    name: lang.tiefling.name,
+                    details: lang.tiefling.details,
+                    proficiencies: { languages: [lang.tiefling] },
+                  },
+                ],
+              },
+              // {
+              //   level: 1,
+              //   type: "languages",
+              //   position: 10,
+              //   name: "languages",
+              //   select: 2,
+              //   filter: "no_used",
+              // },
+            ],
+          },
         ],
       },
       {
@@ -8463,7 +12341,6 @@ export default {
         type: "custom",
         position: 2,
         name: "primal_sense",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -8475,6 +12352,33 @@ export default {
               },
             ],
           },
+          {
+            //Вьі можете единождьі применить каждое из єтих заклинаний без использования ячеек заклинания. Как только вьі используете заклинание таким образом, вьі больше не сможете сделать єто повторно до окончания продолжительного отдьіха.
+            name: "true_sense",
+            details: "true_sense_details",
+            spells: [
+              {
+                level: 3,
+                spell: spells.speak_with_animals_ranger,
+              },
+              {
+                level: 5,
+                spell: spells.beast_sense_ranger,
+              },
+              {
+                level:9,
+                spell:spells.speak_with_plants_ranger,
+              },
+              {
+                level:13,
+                spell:spells.locate_creature_ranger,
+              },
+              {
+                level: 17,
+                spell: spells.commune_with_nature_ranger,
+              },
+            ],
+          },
         ],
       },
       {
@@ -8482,7 +12386,6 @@ export default {
         type: "custom",
         position: 2,
         name: "disguise",
-        details: "phb_disclaimer",
         select: 1,
         list: [
           {
@@ -8491,6 +12394,49 @@ export default {
               {
                 level: 10,
                 spell: spells.disguise_on_sight,
+              },
+            ],
+          },
+          {
+            name_set: "spell_disguise_nature",
+            charges: [
+              {
+                level: 10,
+                name: "disguise_nature_slots",
+                type: "long_rest",
+                foo: "Num_Mastery",
+                list: [
+                  [
+                    "",
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                  ],
+                ],
+              },
+            ],
+
+            spells: [
+              {
+                level: 10,
+                spell: spells.disguise_nature,
               },
             ],
           },
