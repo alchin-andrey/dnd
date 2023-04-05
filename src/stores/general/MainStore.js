@@ -52,11 +52,11 @@ export const useMainStore = defineStore({
     },
 
     class_Arr() {
-			return Object.values(this.classes_srd);
+			return Object.values(this.classes_Obj);
 		},
 
     class_Key() {
-      return Object.keys(this.classes_srd);
+      return Object.keys(this.classes_Obj);
     },
 	},
 });
