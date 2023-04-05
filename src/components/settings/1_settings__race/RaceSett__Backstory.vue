@@ -5,7 +5,7 @@
 	:custom="list_el"
   :select_list="[list_el]"
 	@click="getBackName(list_el.name)"
-	:active_boll_link="MY.backstory_name == list_el.name"/>
+	:active_boll_link="MY_Backstory.name == list_el.name"/>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ import { useMainStore } from "@/stores/general/MainStore";
 export default {
 	name: "RaceSetting__Backstory",
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Backstory"]),
 		...mapState(useMainStore, ["backstories_Arr"]),
 
 	},

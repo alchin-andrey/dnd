@@ -16,7 +16,7 @@
 			<AppMainCell
 				class="cell grid-col-2"
 				title="past"
-				:content="MY.backstory_name"
+				:content="MY_Backstory.name"
 			/>
 		</section>
 
@@ -83,6 +83,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, [
       "MY",
+      "MY_Backstory",
       "MY_Ethnos",
       "MY_Class",
       "MY_Subclass"

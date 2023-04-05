@@ -6,7 +6,7 @@ export default {
   ethnos_name_save: {},
 
   class_name: "rogue",
-  backstory_name: "back_urchin",
+  backstory_name: null,
 	level: 1,
 
 //settings

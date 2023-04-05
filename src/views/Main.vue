@@ -174,7 +174,13 @@ export default {
 	computed: {
 		//STORES
 		...mapWritableState(useDicStore, ["select_lang"]),
-		...mapState(useMYStore, ["MY", "MY_Race", "MY_Ethnos", "subclass_Name"]),
+		...mapState(useMYStore, [
+      "MY", 
+      "MY_Race", 
+      "MY_Ethnos",
+      "MY_Backstory",
+      "subclass_Name"
+    ]),
 		...mapState(usePagesStore, [
 			"site_settings",
 			"links",
@@ -244,7 +250,7 @@ export default {
 			let arr = [];
 			arr.push(this.MY.race_name);
 			arr.push(this.MY_Ethnos.name);
-			arr.push(this.MY.backstory_name);
+			arr.push(this.MY_Backstory.name);
 			return arr;
 		},
 

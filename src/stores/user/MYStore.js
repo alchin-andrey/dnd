@@ -43,8 +43,7 @@ export const useMYStore = defineStore({
 
     MY_Backstory() {
       const MainStore = useMainStore();
-      const backstory = MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
-      return backstory ?? MainStore.backstories_Arr[0];
+      return this.getMYObj(MainStore.backstories_Arr, this.MY.backstory_name);
     },
 
     MY_Class() {
@@ -277,6 +276,14 @@ export const useMYStore = defineStore({
 
 	//SECTION - //? ACTIONS
 	actions: {
+
+    getMYObj(start_arr, name) {
+      if(name == null) return start_arr[0];
+      const res_obj = start_arr.find(el => el.name == name);
+      return res_obj ?? start_arr[0];
+    },
+
+
     select_spells_Numb(item) {
 			const lvl = this.MY.level;
       const select_numb = Array.isArray(item.select) ? item.select[lvl - 1] : item.select;
