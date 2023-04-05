@@ -114,7 +114,7 @@
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
 		<div class="title-donat int-700">{{ t("support_project") }}</div>
-		<Donate finish @getPdf="exportToPDF()" />
+		<Donate finish @getPdf="exportToPDF()" :progress="progress_load"/>
 	</my-dialog-spell>
 
 	<div v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert">
@@ -157,6 +157,7 @@ export default {
 		return {
 			small_screen: false,
 			PRINT_BLANK: false,
+      progress_load: 100,
 		};
 	},
 
@@ -305,7 +306,14 @@ export default {
 			this.small_screen = window.innerWidth <= 1279;
 		},
 
-		exportToPDF() {
+    exportToPDF() {
+      this.progress_load = 25;
+      setTimeout(() => {
+        this.loadPdf()
+					}, 1);
+    },
+
+		loadPdf() {
 			const name = this.MY.name;
 			const lvl = this.MY.level;
 
@@ -331,8 +339,19 @@ export default {
 					// hotfixes: "px_scaling",
 				},
 			};
-			html2pdf().set(opt).from(element).save();
-			// html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then();
+			// html2pdf().set(opt).from(element).save();
+			// html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then().output('blob');
+
+      // html2pdf().set(opt).from(element)
+      // .toContainer().then(() => this.progress_load = 50)
+      // .toCanvas().then(() => this.progress_load = 55)
+      // .toImg().then(() => this.progress_load = 60)
+      // .toPdf().then(() => this.progress_load = 70)
+      // .save().then(() => this.progress_load = 80)
+      // .output().then(() => this.progress_load = 100);
+
+      html2pdf().set(opt).from(element).toContainer().thenCore(() => this.progress_load = 60)
+      .toCanvas().thenCore(() => this.progress_load = 80).toImg().toPdf().save().output().then(() => this.progress_load = 100);
 		},
 
 		getCreated() {

@@ -49,7 +49,6 @@ export default {
 		},
 
     t_How() {
-      console.log('t_How:')
 			return this.t("lobby_how_it_works");
 		},
 

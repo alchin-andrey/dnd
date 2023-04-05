@@ -46,6 +46,10 @@
 				<my-selection-card download @click="btnClick()">
 					<div class="text" >{{ t_Pdf }}</div>
 				</my-selection-card>
+
+        <!-- <AppLoadBtm @click="btnClick()">
+					<div class="text" >{{ progress }}</div>
+				</AppLoadBtm> -->
 			</section>
 		</div>
 	</div>
@@ -60,6 +64,10 @@ export default {
 		finish: {
 			type: Boolean,
 			default: false,
+		},
+    progress: {
+			type: Number,
+			default: 100,
 		},
 	},
 	data() {

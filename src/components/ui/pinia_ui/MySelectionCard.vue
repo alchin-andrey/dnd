@@ -158,6 +158,7 @@ export default {
 .blue_card {
 	background: #0047FF;
 }
+
 .blue_card:hover {
 	background: #1355FF;
 }
@@ -220,4 +221,5 @@ export default {
 .mode-fade-leave-to {
 	opacity: 0;
 }
+
 </style>
