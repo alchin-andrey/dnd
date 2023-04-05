@@ -257,14 +257,14 @@ export default {
 
 		arr_Name_Class_Page() {
 			let arr = [];
-			arr.push(this.MY.class_name);
+			arr.push(this.MY_Class.name);
 			this.MY_Subclass.name ? arr.push(this.MY_Subclass.name) : null;
 			return arr;
 		},
 	},
 	watch: {
 		"MY_Race.name": "getWatch_Race",
-		"MY.class_name": "getWatch_Class",
+		"MY_Class.name": "getWatch_Class",
     "MY.age"() {
       if(!this.MY.age) this.MY.age = this.Get_Age;
     },
@@ -281,12 +281,12 @@ export default {
 					this.feats_Arr_Select_Id.forEach((el) => {
 						if (el.id_btn == "feats") {
 							const obj =
-								this.MY._settings_class[this.MY.class_name][el.id_link];
+								this.MY._settings_class[this.MY_Class.name][el.id_link];
 							const name = obj.feats[0].name;
 							const includ = this.feats_Condition_Pass_Name.includes(name);
 							const new_el = this.feats_Arr_Free[0];
 							if (includ) {
-								this.MY._settings_class[this.MY.class_name][el.id_link] = {
+								this.MY._settings_class[this.MY_Class.name][el.id_link] = {
 									...obj,
 									feats: [new_el],
 								};

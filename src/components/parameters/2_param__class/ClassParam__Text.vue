@@ -20,18 +20,13 @@ export default {
 		...mapState(useMYStore, [
       "MY",
       "MY_Class",
+      "MY_Subclass",
       "сustomm_Settings_Class_Arr",
     ]),
 
 		t_Story() {
 			return this.t(this.MY_Class.details);
 		},
-
-    MY_Subclass() {
-      const сustomm = this.сustomm_Settings_Class_Arr;
-      const subclass = сustomm.find(el => el.name == "subclass")
-      return subclass?.select_list[0];
-    }
 	},
 };
 </script>

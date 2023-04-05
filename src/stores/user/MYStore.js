@@ -34,11 +34,7 @@ export const useMYStore = defineStore({
 
     MY_Ethnos() {
       const name_save = this.MY.ethnos_name_save?.[this.MY_Race.name];
-      if (name_save) {
-        return this.ethnos_Arr.find(el => el.name == name_save);
-      } else {
-        return this.ethnos_Arr[0];
-      }
+      return this.getMYObj(this.ethnos_Arr, name_save);
     },
 
     MY_Backstory() {
@@ -48,7 +44,7 @@ export const useMYStore = defineStore({
 
     MY_Class() {
       const MainStore = useMainStore();
-      return MainStore.class_Arr.find(el => el.name == this.MY.class_name);
+      return this.getMYObj(MainStore.class_Arr, this.MY.class_name);
     },
     
     MY_Subclass() {
@@ -182,7 +178,7 @@ export const useMYStore = defineStore({
       let all_name = sett_spell.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
 
-      const sett_select = this.MY._settings_class[this.MY.class_name];
+      const sett_select = this.MY._settings_class[this.MY_Class.name];
       let new_arr = [];
       for (const item_name of uniqu_name) {
 				const link_name = item_name;
@@ -384,7 +380,7 @@ export const useMYStore = defineStore({
           let new_select_list = [];
             el.select_list.forEach(item => {
               const select_includ = select_item_all.some(sub_el => sub_el.name == item.name);
-              const sett_select = this.MY._settings_class[this.MY.class_name];
+              const sett_select = this.MY._settings_class[this.MY_Class.name];
               if(!select_includ && sett_select?.[el.id_link]) {
                 new_select_list.push(item);
                 select_item_all.push(item);
@@ -424,7 +420,7 @@ export const useMYStore = defineStore({
         const skills_mastery_param = SkillsStore.skills_Name_Class_Mastery_No_Settings;
         const skills_mastery = [...skills_mastery_sett, ...skills_mastery_param];
 
-        const sett_select = this.MY._settings_class[this.MY.class_name];
+        const sett_select = this.MY._settings_class[this.MY_Class.name];
         let new_arr = arr.slice(0);
         arr_for_filter.forEach(el => {
           const list_clean = el.list.filter(item => !item.skills);

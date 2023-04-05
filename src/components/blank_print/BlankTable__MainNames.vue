@@ -4,7 +4,7 @@
     <AppMainCell class="cell" title="race" :content="MY_Race.name" />
     <AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
-    <AppMainCell class="cell" title="class" :content="MY.class_name" />
+    <AppMainCell class="cell" title="class" :content="MY_Class.name" />
     <AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
 
     <AppMainCell class="cell grid__full" title="past" :content="MY_Backstory.name" />
@@ -33,9 +33,9 @@ export default {
       "MY", 
       "str_Upper",
       "MY_Race",
-      "MY_Class",
       "MY_Ethnos",
       "MY_Backstory",
+      "MY_Class",
       "MY_Subclass",
     ]),
     ...mapState(useAlignmentStore, [

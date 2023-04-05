@@ -1,13 +1,14 @@
 
 export default {
 	//Key selections
+	level: 1,
 	name: "Байрактар",
+  
   race_name: null,
   ethnos_name_save: {},
 
-  class_name: "rogue",
+  class_name: null,
   backstory_name: null,
-	level: 1,
 
 //settings
   _spells_save: {},

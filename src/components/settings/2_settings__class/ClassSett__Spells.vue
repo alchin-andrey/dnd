@@ -53,6 +53,7 @@ export default {
 		// STORE
 		...mapState(useMYStore, [
 			"MY",
+      "MY_Class",
 			"Mastery",
 			"Mastery_x2",
 			"level_Filter_Arr",
@@ -97,15 +98,15 @@ export default {
 
 	methods: {
 		getLink() {
-			if (!this.MY._settings_class[this.MY.class_name]) {
-				this.MY._settings_class[this.MY.class_name] = {};
+			if (!this.MY._settings_class[this.MY_Class.name]) {
+				this.MY._settings_class[this.MY_Class.name] = {};
 			}
 			if (
-				!this.MY._settings_class[this.MY.class_name][
+				!this.MY._settings_class[this.MY_Class.name][
 					this.spells_setting.id_link
 				]
 			) {
-				this.MY._settings_class[this.MY.class_name][
+				this.MY._settings_class[this.MY_Class.name][
 					this.spells_setting.id_link
 				] = [];
 			}
@@ -114,7 +115,7 @@ export default {
 		getSpellSelect(list_el) {
 			if (!this.full_Spells_Select) {
 				this.getLink();
-				this.MY._settings_class[this.MY.class_name][
+				this.MY._settings_class[this.MY_Class.name][
 					this.spells_setting.id_link
 				].push(list_el);
 			}

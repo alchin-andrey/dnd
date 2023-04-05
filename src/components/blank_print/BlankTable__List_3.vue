@@ -10,7 +10,7 @@
 			<AppMainCell class="cell" title="race" :content="MY_Race.name" />
 			<AppMainCell class="cell" title="ethnos" :content="MY_Ethnos.name" />
 
-			<AppMainCell class="cell" title="class" :content="MY.class_name" />
+			<AppMainCell class="cell" title="class" :content="MY_Class.name" />
 			<AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" />
 
 			<AppMainCell

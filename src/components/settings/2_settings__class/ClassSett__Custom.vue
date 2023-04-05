@@ -34,7 +34,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Class"]),
     getActive: (stor) => (list_el) => {
       return stor.custom.select_list.some(item => {
         if (item.name) {
@@ -50,8 +50,8 @@ export default {
 
 
 		getLink() {
-			if (!this.MY._settings_class[this.MY.class_name]) {
-				this.MY._settings_class[this.MY.class_name] = {};
+			if (!this.MY._settings_class[this.MY_Class.name]) {
+				this.MY._settings_class[this.MY_Class.name] = {};
 			}
 		},
 
@@ -63,7 +63,7 @@ export default {
 				arr.push(list_el);
 			}
 			this.getLink();
-			this.MY._settings_class[this.MY.class_name][this.custom.id_link] = arr;
+			this.MY._settings_class[this.MY_Class.name][this.custom.id_link] = arr;
 		},
 	},
 };

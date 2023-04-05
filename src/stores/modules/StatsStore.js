@@ -55,14 +55,14 @@ export const useStatsStore = defineStore({
 		stats_Base_Arr(stor) {
 			const MYStore = useMYStore();
 			let stats_arr_base = MYStore.MY_Class.stats_base;
-			let stats_arr_save = MYStore.MY.stats_base_save[MYStore.MY.class_name];
+			let stats_arr_save = MYStore.MY.stats_base_save[MYStore.MY_Class.name];
 			return stats_arr_save ? stats_arr_save : stats_arr_base;
 		},
 
 		stats_Base_Hower_Arr(stor) {
       const MYStore = useMYStore();
 			let stats_base_arr = this.stats_Base_Arr;
-			let stats_hower_arr = stor.stats_base_hower[MYStore.MY.class_name];
+			let stats_hower_arr = stor.stats_base_hower[MYStore.MY_Class.name];
 			return stats_hower_arr ? stats_hower_arr : stats_base_arr;
 		},
 

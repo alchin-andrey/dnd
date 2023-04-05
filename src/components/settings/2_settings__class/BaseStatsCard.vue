@@ -88,21 +88,21 @@ export default {
 
 	methods: {
     hoverStop() {
-      this.stats_base_hower[this.MY.class_name] = null;
+      this.stats_base_hower[this.MY_Class.name] = null;
     },
 
 		hoverStateNewArr(numb) {
       const arr = this.getNewArr(this.stats_Base_Hower_Arr, numb);
-      this.stats_base_hower[this.MY.class_name] = arr;
+      this.stats_base_hower[this.MY_Class.name] = arr;
 		},
 
 		getStateNewArr(numb) {
       const arr_base = this.MY_Class.stats_base.slice(0);
       const arr = this.getNewArr(this.stats_Base_Arr, numb);
       if(arr.length == arr_base.length && arr.every((el, i) => arr_base[i] == el)) {
-        this.MY.stats_base_save[this.MY.class_name] = null;
+        this.MY.stats_base_save[this.MY_Class.name] = null;
       } else {
-        this.MY.stats_base_save[this.MY.class_name] = arr;
+        this.MY.stats_base_save[this.MY_Class.name] = arr;
       }
 		},
 

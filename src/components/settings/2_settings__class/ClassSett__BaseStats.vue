@@ -7,7 +7,7 @@
 	</my-selection-card>
   <transition name="fade">
 	<my-selection-card
-		v-if="MY.stats_base_save[MY.class_name]"
+		v-if="MY.stats_base_save[MY_Class.name]"
 		@click="defaultStats()"
 	>
 		<div class="int-700 btm_reset" >
@@ -33,14 +33,14 @@ export default {
 	},
 	computed: {
 		// STORES
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Class"]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Keys"]),
 	},
 
 	methods: {
 		defaultStats() {
-			this.MY.stats_base_save[this.MY.class_name] = null;
+			this.MY.stats_base_save[this.MY_Class.name] = null;
 		},
 	},
 };

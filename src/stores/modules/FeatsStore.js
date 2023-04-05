@@ -143,7 +143,7 @@ export const useFeatsStore = defineStore({
 
 		feats_Select_Arr() {
 			const MYStore = useMYStore();
-			const sett_select = MYStore.MY._settings_class[MYStore.MY.class_name];
+			const sett_select = MYStore.MY._settings_class[MYStore.MY_Class.name];
 			const feats_lvl = this.feats_Settings_Class;
 			let new_arr = [];
 			feats_lvl?.forEach((item) => {
@@ -247,8 +247,8 @@ export const useFeatsStore = defineStore({
 			const link_btn = "feats";
 			const MYStore = useMYStore();
 			const sett_select_old =
-				MYStore.MY._settings_class_old[MYStore.MY.class_name];
-			const sett_select = MYStore.MY._settings_class[MYStore.MY.class_name];
+				MYStore.MY._settings_class_old[MYStore.MY_Class.name];
+			const sett_select = MYStore.MY._settings_class[MYStore.MY_Class.name];
 			const feats_lvl = this.feats_Settings_Class;
 			let list = obj;
 			let select_list_all = [];
@@ -295,7 +295,7 @@ export const useFeatsStore = defineStore({
 							(el) => !save_list_old.includes(el.name)
 						);
 						select_list.push(list_select_includ[0]);
-						MYStore.MY._settings_class[MYStore.MY.class_name][item.id_link][
+						MYStore.MY._settings_class[MYStore.MY_Class.name][item.id_link][
 							link_btn
 						] = select_list;
 					}
@@ -333,7 +333,7 @@ export const useFeatsStore = defineStore({
 
 		getStatsForFeatsArr(link_btn, select_numb) {
 			const MYStore = useMYStore();
-			const sett_select = MYStore.MY._settings_class[MYStore.MY.class_name];
+			const sett_select = MYStore.MY._settings_class[MYStore.MY_Class.name];
 			const feats_lvl = this.feats_Settings_Class;
 			let new_arr = [];
 			feats_lvl?.forEach((item) => {

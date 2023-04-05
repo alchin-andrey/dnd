@@ -53,7 +53,7 @@ export default {
 	},
 
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Class"]),
 		...mapState(useFeatsStore, [
 			"feats_Stats_2_Arr",
 			"feats_Stats_1_1_Arr",
@@ -75,7 +75,7 @@ export default {
 
 		shown_Btn() {
 			const btn =
-				this.MY._settings_class[this.MY.class_name]?.[this.id_link]?.id_btn;
+				this.MY._settings_class[this.MY_Class.name]?.[this.id_link]?.id_btn;
 			return btn ?? "stats_2";
 		},
 	},
@@ -101,15 +101,15 @@ export default {
 
 		shownFeatsBtn(name) {
 			this.getFeatsLink({});
-			this.MY._settings_class[this.MY.class_name][this.id_link].id_btn = name;
+			this.MY._settings_class[this.MY_Class.name][this.id_link].id_btn = name;
 		},
 
 		getFeatsLink(obj) {
-			if (!this.MY._settings_class[this.MY.class_name]) {
-				this.MY._settings_class[this.MY.class_name] = {};
+			if (!this.MY._settings_class[this.MY_Class.name]) {
+				this.MY._settings_class[this.MY_Class.name] = {};
 			}
-			if (!this.MY._settings_class[this.MY.class_name][this.id_link]) {
-				this.MY._settings_class[this.MY.class_name][this.id_link] = obj;
+			if (!this.MY._settings_class[this.MY_Class.name][this.id_link]) {
+				this.MY._settings_class[this.MY_Class.name][this.id_link] = obj;
 			}
 			const sett = this.MY._settings_class;
 			this.MY._settings_class_old = JSON.parse(JSON.stringify(sett));
@@ -126,7 +126,7 @@ export default {
         arr.splice(0, 1);
         arr.push(list_el);
         this.getFeatsLink({ id_btn: this.shown_Btn });
-        this.MY._settings_class[this.MY.class_name][this.id_link][this.shown_Btn] = arr;
+        this.MY._settings_class[this.MY_Class.name][this.id_link][this.shown_Btn] = arr;
       }
 		},
 	},
