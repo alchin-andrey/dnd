@@ -18,23 +18,42 @@ export const useMainStore = defineStore({
     backstories_phb,
 		races_phb,
     classes_phb,
+
+    srd: true,
 	}),
+
+  persist: {
+    paths: ['srd'],
+  },
 	getters: {
+
+    backstories_Obj() {
+      return this.srd ? this.backstories_srd : this.backstories_phb;
+		},
+
+    races_Obj() {
+      return this.srd ? this.races_srd : this.races_phb;
+		},
+
+    classes_Obj() {
+      return this.srd ? this.classes_srd : this.classes_phb;
+		},
+
     backstories_Arr() {
-			return Object.values(this.backstories_srd);
+			return Object.values(this.backstories_Obj);
 		},
 
     race_Arr() {
-			return Object.values(this.races_srd);
+			return Object.values(this.races_Obj);
 		},
+
+    race_Key() {
+      return Object.keys(this.races_Obj);
+    },
 
     class_Arr() {
 			return Object.values(this.classes_srd);
 		},
-
-    race_Key() {
-      return Object.keys(this.races_srd);
-    },
 
     class_Key() {
       return Object.keys(this.classes_srd);

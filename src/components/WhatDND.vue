@@ -1,12 +1,22 @@
 <template>
   <section class="scroll-content">
+    <!-- <div class="jbm-300" 
+    @click="toggleSrd()"
+    :class="{'rare-text': !srd}"
+    >{{ t_Base }}
+    </div> -->
     <div class="jbm-300">{{ t_Base }}</div>
     <div class="flex_row gap-64 mr-top-54">
       
       <main>
         <section class="col-base">
           <div class="int-700-20">{{ t_What }}</div>
-          <div class="int-400 text-base grey-4-main" v-html="t_What_Details"/>
+          <!-- <div class="int-400 text-base grey-4-main" v-html="t_What_Details"/> -->
+          <div class="int-400 text-base grey-4-main">
+          <span v-html="t_What_Details_1_1"></span>
+          <span @click="toggleSrd()" v-html="t_What_Details_1_2"></span>
+          <span v-html="t_What_Details_1_3"></span>
+          </div>
         </section>
       </main>
 
@@ -33,9 +43,13 @@
 </template>
 
 <script>
+import { mapWritableState } from "pinia";
+import { useMainStore } from "@/stores/general/MainStore";
 export default {
 	name: "WhatDND",
 	computed: {
+    ...mapWritableState(useMainStore, ["srd"]),
+
     t_Base() {
 			return this.t("lobby_base");
 		},
@@ -47,6 +61,18 @@ export default {
     t_What_Details() {
 			return this.t("lobby_what_is_it_details");
 		},
+
+    t_What_Details_1_1: (stor) => stor.t("lobby_what_is_it_details_1_1"),
+    t_What_Details_1_2() {
+      const str = this.t("lobby_what_is_it_details_1_2");
+      console.log('str:', str)
+      console.log('str.toLowerCase():', str.toLowerCase())
+      console.log('this.srd:', this.srd)
+      return this.srd ? str.toLowerCase() : str;
+    },
+    t_What_Details_1_3: (stor) => stor.t("lobby_what_is_it_details_1_3"),
+
+
 
     t_How() {
 			return this.t("lobby_how_it_works");
@@ -62,6 +88,12 @@ export default {
     t_How_Details_7: (stor) => stor.t("lobby_how_it_works_details_7"),
 
 	},
+
+  methods: {
+    toggleSrd() {
+      this.srd = !this.srd;
+    }
+  }
 };
 </script>
 
