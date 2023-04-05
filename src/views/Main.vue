@@ -157,7 +157,8 @@ export default {
 		return {
 			small_screen: false,
 			PRINT_BLANK: false,
-      progress_load: 100,
+      progress_load: 0,
+      loading_pdf: false,
 		};
 	},
 
@@ -314,10 +315,11 @@ export default {
 		},
 
     exportToPDF() {
-      this.progress_load = 25;
-      setTimeout(() => {
-        this.loadPdf()
-					}, 1);
+      if(!this.loading_pdf) {
+        this.loading_pdf = true;
+        this.progress_load = 15;
+        setTimeout(() => this.loadPdf(), 0.1);
+      }
     },
 
 		loadPdf() {
@@ -348,19 +350,20 @@ export default {
 					// hotfixes: "px_scaling",
 				},
 			};
-			// html2pdf().set(opt).from(element).save();
-			// html2pdf().set(opt).from(element).toContainer().toCanvas().toImg().toPdf().save().then().output('blob');
-
       // html2pdf().set(opt).from(element)
-      // .toContainer().then(() => this.progress_load = 50)
-      // .toCanvas().then(() => this.progress_load = 55)
-      // .toImg().then(() => this.progress_load = 60)
-      // .toPdf().then(() => this.progress_load = 70)
-      // .save().then(() => this.progress_load = 80)
+      // .toContainer().then(() => this.progress_load = 80)
+      // .toCanvas().then(() => this.progress_load = 80)
+      // .toImg().then(() => this.progress_load = 70)
+      // .toPdf().then(() => this.progress_load = 80)
+      // .save().then(() => this.progress_load = 90)
       // .output().then(() => this.progress_load = 100);
 
-      html2pdf().set(opt).from(element).toContainer().thenCore(() => this.progress_load = 60)
-      .toCanvas().thenCore(() => this.progress_load = 80).toImg().toPdf().save().output().then(() => this.progress_load = 100);
+      html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
+      .toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+      .output().then(() => {
+        setTimeout(() => this.progress_load = 0, 1000);
+        setTimeout(() => this.loading_pdf = 0, 2000);
+      });
 		},
 
 		getCreated() {

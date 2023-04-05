@@ -1,17 +1,17 @@
 <template>
-	<div
-		class="load_btm flex-col-sb"
-    :class=" {active_btm: progress == 100}"
-	>
-  <div> {{ t_Text }} </div>
-  <div class="main_icon">
-    <svg
-      class="main_svg"
-      viewBox="0 0 18 18"
-      xmlns="http://www.w3.org/2000/svg"
-      v-html="ui_icon.arrow_right_small"
-    />
-  </div>
+	<div class="main_btm flex-col-sb" :class="{ active_btm: progress == 0 }">
+		<div>{{ t_Text }}</div>
+		<div class="main_icon">
+			<svg
+				class="main_svg"
+				viewBox="0 0 18 18"
+				xmlns="http://www.w3.org/2000/svg"
+				v-html="ui_icon.arrow_right_small"
+			/>
+		</div>
+    <div class="load_btm">
+    <div class="load-progress" :style="{ width: load_Progress,}"/>
+    </div>
 	</div>
 </template>
 
@@ -19,25 +19,30 @@
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "AppLoadBtm",
-  data() {
+	data() {
 		return {
 			ui_icon: ui_icon,
 		};
 	},
 	props: {
-    text: {
-      type: String,
-      default: 'Load ...',
-    },
-    progress: {
+		text: {
+			type: String,
+			default: "Load ...",
+		},
+		progress: {
 			type: Number,
-			default: 100,
+			default: 0,
 		},
 	},
 	computed: {
-    t_Text() {
-      return this.T(this.text);
-    },
+		t_Text() {
+      if(this.progress == 0) {
+        return this.T(this.text);
+      } else {
+        return this.T('load_progress');
+      }
+		},
+
 		get_Active() {
 			if (this.active_link !== null) {
 				return this.active_link === this.select_link;
@@ -47,129 +52,90 @@ export default {
 				return null;
 			}
 		},
-    img_Icon() {
-      if(this.download) return "download"
-      if(this.arrow) return "arrow_right_small"
-      if(this.plus) return "plus"
+
+		img_Icon() {
+			if (this.download) return "download";
+			if (this.arrow) return "arrow_right_small";
+			if (this.plus) return "plus";
+		},
+
+    load_Progress() {
+      return this.progress + '%'
     }
 	},
 };
 </script>
 
 <style scoped>
-
-.load_btm {
-  padding: 16px;
-	background: #0E1518;
+.main_btm {
+	padding: 16px;
+	background: #0e1518;
 	backdrop-filter: blur(60px);
 	border-radius: 12px;
-  cursor: pointer;
+	position: relative;
+}
+
+.pd-16 {
+	padding: 16px;
+}
+
+.load_btm {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+  overflow: hidden;
+	/* background: red; */
+	border-radius: 12px;
 }
 
 .active_btm {
+  background: #0047ff;
 	cursor: pointer;
 }
 
 .active_btm:hover {
-	background: #1355FF;
+	background: #1355ff;
 }
 
+.load-progress {
+  height: 100%;
+  background: #0047ff;
+  transition-property: all;
+  transition-duration: 1s;
+}
 
+/* .load-progress:hover {
+  background: #1355ff;
+} */
 
 .flex-col-sb {
-display: flex;
-justify-content: space-between;
-}
-
-.active_card {
-	cursor: pointer;
-}
-
-.active_card:hover {
-	background: rgba(255, 255, 255, 0.1);
-}
-.copy_card {
-  fill-opacity: 0.4;
-}
-
-.copy_card:hover {
-	fill-opacity: 1;
-}
-
-.pasive_card {
-	padding: 16px;
-	background: rgba(255, 255, 255, 0.06);
-	backdrop-filter: blur(60px);
-	border-radius: 12px;
 	display: flex;
-	flex-direction: column;
-	gap: 26px;
+  align-items: center;
+	justify-content: space-between;
 }
 
 .blue_card {
-	background: #0047FF;
+	background: #0047ff;
 }
 
 .blue_card:hover {
-	background: #1355FF;
+	background: #1355ff;
 }
 
-.red_card {
-	background: #580000;
-  transition-property: all;
-  transition-duration: 0.5s;
-}
-.red_card:hover {
-	background: #FF0000;
-}
-
-.no_blur {
-	backdrop-filter: none;
-}
-
-.colors_card {
-	height: 100%;
-	background: #000000;
-}
-
-.basic {
-	border: 2px solid rgba(255, 255, 255, 0.2);
-	padding: 14px;
-}
-
-.selection_card_active {
-	border: 2px solid #ffffff;
-	padding: 14px;
-}
-
-.link {
-	padding: 0px;
-}
 
 .main_icon {
-  width: 18px;
+	width: 18px;
 	height: 18px;
 	fill: white;
 }
 
 .main_svg {
-  width: 18px;
+	width: 18px;
 	height: 18px;
 	fill: white;
 }
-
-
-
-.copy_icon {
-	height: 18px;
-	position: absolute;
-	right: 16px;
-	top: 50%;
-	bottom: 50%;
-	-webkit-transform: translate(0%, -50%);
-	-ms-transform: translate(0%, -50%);
-	transform: translate(0%, -50%);
-}
-
-
 </style>
