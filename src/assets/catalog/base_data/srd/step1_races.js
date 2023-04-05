@@ -1,11 +1,11 @@
-import color from "./_colors.js";
-import spells from "./list_spells.js";
-import gender from "./list_genders.js";
-import lang from "./list_languages.js";
-import weaponry from "./kinds_weapons.js";
-import tool from "./kinds_tools.js";
-import armory from "./kinds_armor.js";
-import backstory from "./list_backstories.js";
+import color from "@/assets/catalog/base_data/_colors.js";
+import spells from "@/assets/catalog/base_data/list_spells.js";
+import gender from "@/assets/catalog/base_data/list_genders.js";
+import lang from "@/assets/catalog/base_data/list_languages.js";
+import weaponry from "@/assets/catalog/base_data/kinds_weapons.js";
+import tool from "@/assets/catalog/base_data/kinds_tools.js";
+import armory from "@/assets/catalog/base_data/kinds_armor.js";
+import backstory from "@/assets/catalog/base_data/srd/list_backstories.js";
 
 export default {
 
@@ -264,82 +264,6 @@ export default {
             },
           ],
         },
-
-        forest: {
-          name: "forest",
-          details: "forest_gnome_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503211188",
-          // link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[8][2]],
-            hair: [color[2][5]],
-          },
-
-          // stats: { dexterity: 1 },
-          stats: [{ name: "dexterity", num: 1, },],
-
-          // qualities: { vision_night: 60 },
-          qualities: [{name: "vision_night", num: 60,},],
-
-
-          proficiencies: {
-            languages: [lang.animal],
-          },
-
-          spells: [
-            {
-              level: 1,
-              spell: spells.minor_illusion,
-            },
-          ],
-        },
-
-        deep: {
-          name: "deep",
-          details: "deep_gnome_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503210924",
-          // link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[0][3], color[0][4], color[0][5], color[0][6]],
-            eyes: [color[7][2], color[7][3], color[7][4], color[7][5]],
-            hair: [color[8][1]],
-          },
-
-          age: {
-            min: 10,
-            young: 18,
-            mature: 25,
-            old: 200,
-            max: 250,
-          },
-
-          weight: {
-            min: 36,
-            max: 54,
-          },
-
-          // stats: { dexterity: 1 },
-          stats: [{ name: "dexterity", num: 1, },],
-
-          // qualities: { vision_night: 120 },
-          qualities: [{name: "vision_night", num: 120,},],
-
-          proficiencies: {
-            languages: [lang.undercommon],
-          },
-
-          fines: [
-            {
-              type: "advantage",
-              keyword: "advantage",
-              details: "stealth_in_stones",
-            },
-          ],
-        },
-
       },
 
       gender: gender,
@@ -453,63 +377,6 @@ export default {
             },
           ],
         },
-
-        stout: {
-          name: "stout",
-          details: "stout_halfling_details",
-
-          link_male: "https://www.heroforge.com/load_config%3D503185616",
-          link_female: "https://www.heroforge.com/load_config%3D503211377",
-
-          color: {
-            skin: [color[2][0]],
-            eyes: [color[4][5]],
-            hair: [color[1][4]],
-          },
-
-          // stats: { constitution: 1 },
-          stats: [{ name: "constitution", num: 1, },],
-
-          fines: [
-            {
-              type: "advantage",
-              keyword: "advantage",
-              details: "poison_against",
-            },
-
-            {
-              type: "resistance",
-              keyword: "resistance",
-              details: "poison_damage",
-            },
-          ],
-        },
-
-        ghost: {
-          name: "ghost",
-          details: "ghost_halfling_details",
-          link_male: "https://www.heroforge.com/load_config%3D503211188",
-          link_female: "https://www.heroforge.com/load_config%3D503211452",
-
-          color: {
-            skin: [color[2][2]],
-            eyes: [color[8][2]],
-            hair: [color[2][5]],
-          },
-
-          // stats: { wisdom: 1 },
-          stats: [{ name: "wisdom", num: 1, },],
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "telepathy",
-              details: "known_languages",
-            },
-          ],
-
-          rare: "rare",
-        },
       },
 
       gender: gender,
@@ -598,53 +465,6 @@ export default {
 
     race_settings: {
       ethnos: {
-        mountain: {
-          name: "mountain",
-          details: "mountain_dwarf_details",
-
-          //link_male
-          //link_female
-
-          color: {
-            skin: [
-              color[1][0],
-              color[1][1],
-              color[2][0],
-              color[2][1],
-              color[2][2],
-              color[3][0],
-            ],
-            eyes: [
-              color[4][4],
-              color[2][5],
-              color[8][0],
-              color[2][4],
-              color[2][5],
-            ],
-            hair: [
-              color[0][6],
-              color[2][1],
-              color[3][1],
-              color[1][3],
-              color[1][4],
-              color[2][2],
-              color[2][3],
-              color[2][4],
-              color[2][5],
-            ],
-          },
-
-          // stats: { strength: 2 },
-          stats: [{ name: "strength", num: 2, },],
-
-          // qualities: { vision_night: 60 },
-          qualities: [{name: "vision_night", num: 60,},],
-
-          proficiencies: {
-            armor: [armory.light, armory.medium],
-          },
-        },
-
         hill: {
           name: "hill",
           details: "hill_dwarf_details",
@@ -673,81 +493,6 @@ export default {
 
           hp_bonus: [1,1],
 
-        },
-
-        grey: {
-          name: "grey",
-          details: "grey_dwarf_details",
-          // link_male: "https://www.heroforge.com/load_config%3D503210924",
-          // link_female: "https://www.heroforge.com/load_config%3D503211388",
-
-          color: {
-            skin: [color[0][3], color[0][4], color[0][5]],
-            eyes: [color[4][4], color[2][5], color[8][0]],
-            hair: [
-              color[2][1],
-              color[3][1],
-              color[1][3],
-              color[1][4],
-              color[2][2],
-              color[2][3],
-              color[2][4],
-              color[2][5],
-            ],
-          },
-
-          // stats: { strength: 1 },
-          stats: [{ name: "strength", num: 1, },],
-
-          // qualities: { vision_night: 120 },
-          qualities: [{name: "vision_night", num: 120,},],
-
-          charges: [
-            {
-              level: 3,
-              name: "enlargement_self_slots",
-              type: "long_rest",
-              list: [
-                ["", 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-              ],
-            },
-            {
-              level: 5,
-              name: "invisibility_self_slots",
-              type: "long_rest",
-              list: [
-                ["", 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-              ],
-            },
-          ],
-
-          proficiencies: {
-            languages: [lang.undercommon],
-          },
-
-          fines: [
-            {
-              type: "disadvantage",
-              keyword: "disadvantage",
-              details: "perception_under_sun",
-            },
-            {
-              type: "disadvantage",
-              keyword: "disadvantage",
-              details: "attack_under_sun",
-            },
-          ],
-
-          spells: [
-            {
-              level: 3,
-              spell: spells.enlargement_self,
-            },
-            {
-              level: 5,
-              spell: spells.invisibility_self,
-            },
-          ],
         },
       },
 
@@ -1814,7 +1559,6 @@ export default {
 
     race_settings: {
       ethnos: {
-
         high_elf: {
           name: "high_elf",
           details: "high_elf_details",
@@ -2033,130 +1777,6 @@ export default {
               ]
             },
           ],
-        },
-
-        forest: {
-          name: "forest",
-          details: "forest_elf_details",
-
-          color: {
-            skin: [
-              color[2][3],
-              color[2][4],
-              color[3][4],
-            ],
-            eyes: [
-              color[5][3],
-              color[2][4],
-              color[2][5],
-            ],
-            hair: [
-              color[0][6],
-              color[2][6],
-              color[2][5],
-            ],
-          },
-
-          // stats: {wisdom: 1,},
-          stats: [{ name: "wisdom", num: 1, },],
-
-          // qualities: {vision_night: 60,},
-          qualities: [{name: "vision_night", num: 60,},],
-
-          proficiencies: {
-            weapons: [
-              weaponry.long_swords,
-              weaponry.short_swords,
-              weaponry.long_bows,
-              weaponry.short_bows,
-            ],
-          },
-
-          fines: [
-            {
-              type: "plus",
-              keyword: "stealth_in_wild",
-              details: "stealth_in_wild_details",
-            },
-          ],
-        },
-
-        dark: {
-          name: "dark",
-          details: "dark_elf_details",
-
-          color: {
-            skin: [
-              color[0][5],
-              color[0][4],
-              color[0][6],
-            ],
-            eyes: [
-              color[0][1],
-              color[1][0],
-              color[8][0],
-              color[9][0],
-              color[10][0],
-              color[11][0],
-              color[12][0],
-            ],
-            hair: [
-              color[0][0],
-              color[1][0],
-              color[8][0],
-              color[9][0],
-              color[10][0],
-              color[11][0],
-              color[12][0],
-            ],
-          },
-
-          // stats: {charisma: 1,},
-          stats: [{ name: "charisma", num: 1, },],
-
-          // qualities: {vision_night: 120,},
-          qualities: [{name: "vision_night", num: 120,},],
-
-          proficiencies: {
-            weapons: [
-              weaponry.rapires,
-              weaponry.short_swords,
-              weaponry.hand_arbalets,
-            ],
-          },
-
-          fines: [
-            {
-              type: "disadvantage",
-              keyword: "disadvantage",
-              details: "perception_under_sun",
-            },
-            {
-              type: "disadvantage",
-              keyword: "disadvantage",
-              details: "attack_under_sun",
-            },
-          ],
-
-          spells: [
-            {
-              level: 1,
-              spell: spells.dancing_lights,
-            },
-
-            {
-              level: 3,
-              spell: spells.faerie_fire_0,
-            },
-
-            {
-              level: 5,
-              spell: spells.darkness_tiefling,
-            },
-          ],
-
-          rare: "rare",
-
         },
       },
 

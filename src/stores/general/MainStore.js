@@ -1,8 +1,8 @@
 // import { ref, computed } from "vue";
 import { defineStore } from "pinia";
-import backstories from "@/assets/catalog/base_data/list_backstories.js";
-import race from "@/assets/catalog/base_data/step1_races.js";
-import classes from "@/assets/catalog/base_data/step2_classes.js";
+import backstories from "@/assets/catalog/base_data/srd/list_backstories.js";
+import race from "@/assets/catalog/base_data/srd/step1_races.js";
+import classes from "@/assets/catalog/base_data/srd/step2_classes.js";
 
 export const useMainStore = defineStore({
 	id: "MainStore",

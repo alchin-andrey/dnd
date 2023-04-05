@@ -1,7 +1,7 @@
-import tools from "./kinds_tools.js";
-import weapons from "./list_weapons.js";
-import items from "./list_items.js";
-import lang from "./list_languages.js";
+import tools from "@/assets/catalog/base_data/kinds_tools.js";
+import weapons from "@/assets/catalog/base_data/list_weapons.js";
+import items from "@/assets/catalog/base_data/list_items.js";
+import lang from "@/assets/catalog/base_data/list_languages.js";
 
 export default {
 
