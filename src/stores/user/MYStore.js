@@ -43,7 +43,8 @@ export const useMYStore = defineStore({
 
     MY_Backstory() {
       const MainStore = useMainStore();
-      return MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
+      const backstory = MainStore.backstories_Arr.find(el => el.name == this.MY.backstory_name);
+      return backstory ?? MainStore.backstories_Arr[0];
     },
 
     MY_Class() {
