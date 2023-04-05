@@ -258,7 +258,7 @@ export default {
 		arr_Name_Class_Page() {
 			let arr = [];
 			arr.push(this.MY_Class.name);
-			this.MY_Subclass.name ? arr.push(this.MY_Subclass.name) : null;
+			this.MY_Subclass?.name ? arr.push(this.MY_Subclass.name) : null;
 			return arr;
 		},
 	},
