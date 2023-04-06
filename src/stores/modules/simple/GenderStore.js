@@ -48,15 +48,30 @@ export const useGenderStore = defineStore({
       const sex = this.sex_Char_Body;
       const arr = this.names[lang][sex];
       return arr;
-    }
+    },
+
+    // MY_Name() {
+    //   if(!this.MY.name && this.MY.name !== '') {
+    //     return this.getRandomName_();
+    //   } else if(1) {
+    //     const incl = this.names_Arr.includes(this.MY.name);
+    //     if(!incl) return this.getRandomName_();
+    //   }
+    // }
 	},
 
   actions: {
-    getRandomName(){
+    getRandomName() {
       const MYStore = useMYStore();
       const arr = this.names_Arr;
       const random = arr[Math.floor(Math.random() * arr.length)];
       MYStore.MY.name = random;
-    }
+    },
+
+    // getRandomName_() {
+    //   const arr = this.names_Arr;
+    //   const random = arr[Math.floor(Math.random() * arr.length)];
+    //   return random;
+    // }
   }
 });

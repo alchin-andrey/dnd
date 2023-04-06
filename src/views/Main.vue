@@ -210,7 +210,7 @@ export default {
 			"feats_Arr_Free",
 		]),
 
-		...mapState(useGenderStore, ["names_Arr"]),
+		...mapState(useGenderStore, ["names_Arr", "sex_Char_Body"]),
 
 		t_Details() {
 			return this.t("responsive_bottom");
@@ -270,6 +270,11 @@ export default {
 		"MY_Class.name": "getWatch_Class",
 
     select_lang(val, oldVal) {
+      const incl = this.names_Arr.includes(this.MY.name);
+      if(!incl) this.getRandomName();
+    },
+
+    sex_Char_Body(val, oldVal) {
       const incl = this.names_Arr.includes(this.MY.name);
       if(!incl) this.getRandomName();
     },
