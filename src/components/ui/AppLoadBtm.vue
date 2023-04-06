@@ -108,8 +108,22 @@ export default {
   transition-duration: 1s;
 }
 
-/* .load-progress:hover {
-  background: #1355ff;
+/* .load-progress {
+  height: 100%;
+  background: #0047ff;
+  animation-name: progress;
+  animation-duration: 10s;
+  animation-timing-function: cubic-bezier(.05,1.17,.86,.91);
+} */
+
+/* @keyframes progress{
+
+0%{
+  width: 0%;
+}
+100%{
+  width: 100%;
+}
 } */
 
 .flex-col-sb {
