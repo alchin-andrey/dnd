@@ -1,8 +1,8 @@
 <template>
-	<div class="main_btm flex-col-sb" :class="{ active_btm: progress == 0 }">
+	<div class="main_btm flex-col-sb" :class="{ active_btm: stop_Loading }">
 		<div>{{ t_Text }}</div>
 		<div class="main_icon">
-			<svg
+			<svg v-if="stop_Loading"
 				class="main_svg"
 				viewBox="0 0 18 18"
 				xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +61,10 @@ export default {
 
     load_Progress() {
       return this.progress + '%'
+    },
+
+    stop_Loading() {
+      return this.progress == 0;
     }
 	},
 };
