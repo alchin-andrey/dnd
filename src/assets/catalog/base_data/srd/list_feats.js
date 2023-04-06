@@ -10,7 +10,7 @@ export default {
 
   custom_stalker: {
     name: "feat_custom_stalker",
-    details: "feat_custom_stalker",
+    details: "feat_custom_stalker_details",
 
     skills: [
       {
