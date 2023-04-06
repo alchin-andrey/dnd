@@ -27,6 +27,7 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
+import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 export default {
   name: "RaceBody",
   props: {
@@ -58,6 +59,7 @@ export default {
     ]),
     ...mapState(usePagesStore, ["race_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
+    ...mapState(useGenderStore, ["sex_Char_Body"]),
 
     growth_Char() {
       if (this.MY.height === null) {
@@ -96,16 +98,10 @@ export default {
     img_Char() {
       let race = this.MY_Race.name;
       let ethnos = this.ethnos_Char;
-      let phisiological = this.MY.gender.phisiological;
       let img;
-      let sex;
+      let sex = this.sex_Char_Body;
       let body = this.body_part;
       let result;
-      if (phisiological === "female" || phisiological === "demigirl") {
-        sex = "female";
-      } else {
-        sex = "male";
-      }
       if (this.body_part == "class") {
         img = this.MY_Class.name;
       } else {

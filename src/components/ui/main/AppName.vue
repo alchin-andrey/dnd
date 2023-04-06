@@ -6,30 +6,47 @@
 		<div class="name jbm-300">
 			<div>{{ t_Title }}</div>
 		</div>
-		<div class="wrap liner">
-			<input
-				size="1"
-				@keyup="getName()"
-				spellcheck="false"
-				class="main"
-				:class="{ liner: inputValue !== '' }"
-				v-model="inputValue"
-				type="text"
+  <main class="flex-col-sb gap-4">
+    <section class="wrap liner">
+      <input
+        size="1"
+        @keyup="getName()"
+        spellcheck="false"
+        class="int-700-20 mr-top-4"
+        :class="{ liner: inputValue !== '' }"
+        v-model="inputValue"
+        type="text"
         maxlength="20"
-				:placeholder="t_Placeholder"
-			/>
-		</div>
+        :placeholder="t_Placeholder"
+      />
+    </section>
+    <section class="main_icon" @click="getRandomName()">
+      <svg
+        class="main_svg"
+        viewBox="0 0 18 18"
+        xmlns="http://www.w3.org/2000/svg"
+        v-html="ui_icon.return"
+      />
+    </section>
+  </main>
 	</div>
 </template>
 
 <script>
-import { mapState } from "pinia";
+import ui_icon from "@/assets/catalog/icon/ui_icon";
+import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { usePagesStore } from "@/stores/user/PagesStore";
-import { useMainStore } from "@/stores/general/MainStore";
+import { useGenderStore } from "@/stores/modules/simple/GenderStore";
+// import { usePagesStore } from "@/stores/user/PagesStore";
+// import { useMainStore } from "@/stores/general/MainStore";
 
 export default {
 	name: "AppName",
+  data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		modelValue: {
 			type: String,
@@ -46,8 +63,6 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["pages"]),
-		...mapState(useMainStore, ["race", "class"]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -58,6 +73,8 @@ export default {
 		},
 	},
 	methods: {
+    ...mapActions(useGenderStore, ["getRandomName"]),
+
 		getName() {
 			this.MY.name = this.inputValue;
 		},
@@ -79,6 +96,16 @@ export default {
 </script>
 
 <style scoped>
+
+.flex-col-sb {
+	display: flex;
+  align-items: center;
+	justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 4px;
+}
 .mg-18 {
 	margin-bottom: 18px;
 	display: grid;
@@ -92,49 +119,33 @@ export default {
 	margin-top: 36px;
 }
 
-.main {
-	height: 24px;
+.mr-top-4 {
 	margin-top: 4px;
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 24px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	/* text-decoration: underline; */
-	/* text-transform: capitalize; */
-}
-
-.wrap {
-	/* width: 100%; */
-	/* max-width: min-content;
-  display: flex; */
 }
 
 input[type="text"] {
-	/* border-bottom: 2px solid #ffffff; */
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-khtml-border-radius: 0;
 	background: #0e1518 !important;
 	outline: none;
+  color: #ffffff;
 	height: 28px;
 	width: 100%;
-	/* min-width: 112px; */
+  white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .liner {
+  width: 100%;
 	text-decoration-line: underline;
 	text-decoration-color: #ffffff;
 }
 
 ::placeholder {
-	/* color: rgba(255, 255, 255, 0.2); */
 	color: #ffc93d;
-	/* text-decoration-line: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.2); */
 	opacity: 1;
 }
 
@@ -145,67 +156,16 @@ input[type="text"] {
 ::-ms-input-placeholder {
 	color: rgba(255, 255, 255, 0.2);
 }
-
-.arrows {
-	margin-top: 18px;
-	width: 52px;
-	height: 18px;
-	/* margin: 22px; */
-	display: flex;
-	justify-content: space-between;
-}
-
-.arrows div {
-	height: 32px;
-	width: 32px;
-	cursor: pointer;
-}
-
-.arrow_left {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: -7px;
-}
-
-.arrow_right {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: -7px;
-}
-
-.arrows img {
-	height: 18px;
+.main_icon {
 	width: 18px;
-	cursor: pointer;
+	height: 18px;
+	fill: white;
+  cursor: pointer;
 }
 
-.arrow_left:active img {
-	width: 15px;
-}
-
-.arrow_right:active img {
-	width: 15px;
-}
-
-.push img {
-	width: 15px;
-}
-
-.delimiter {
-	height: 1px;
-	margin: 40px 0 0 0;
-	background: rgba(255, 255, 255, 0.2);
-}
-
-.type-enter-active,
-.type-leave-active {
-	transition: opacity 0.3s;
-}
-
-.type-enter-from,
-.type-leave-to {
-	opacity: 0;
+.main_svg {
+	width: 18px;
+	height: 18px;
+	fill: white;
 }
 </style>

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapWritableState } from "pinia";
+import { mapWritableState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
@@ -59,7 +59,10 @@ export default {
 	},
 
   methods: {
+    ...mapActions(useMYStore, ["getCreated"]),
+
     resetState() {
+      // this.MY = this.MY_def;
       this.MY = JSON.parse(JSON.stringify(this.MY_def));
       
       this.srd = true,
@@ -73,13 +76,15 @@ export default {
       };
       
       this.pages = {
-			race_page: true,
-			class_page: false,
-      alignment_page: false,
-      master_page: false,
-		};
-      this.showHome()
+        race_page: true,
+        class_page: false,
+        alignment_page: false,
+        master_page: false,
+      };
+      this.showHome();
+      this.getCreated();
     },
+
   }
 };
 </script>

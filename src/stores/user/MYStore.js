@@ -1,21 +1,30 @@
 import { defineStore } from "pinia";
+
 import MY from "@/assets/catalog/MY.js";
+import MY_def from "@/assets/catalog/MY_def.js";
+
+import { usePagesStore } from "@/stores/user/PagesStore";
+
 import { useMainStore } from "@/stores/general/MainStore";
+import { useDicStore } from "@/stores/general/DicStore";
+
+import { useGenderStore } from "@/stores/modules/simple/GenderStore";
+import { useFormStore } from "@/stores/modules/simple/FormStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
-
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
-// import { usePagesStore } from "@/stores/user/PagesStore";
 
 export const useMYStore = defineStore({
 	id: "MYStore",
 	state: () => ({
 		MY: MY,
-		MY_def: JSON.parse(JSON.stringify(MY)),
+		MY_def: MY_def,
 	}),
-  persist: true,
+  persist: {
+    paths: ['MY'],
+  },
 
 	//SECTION - GETTERS
 	getters: {
@@ -262,6 +271,28 @@ export const useMYStore = defineStore({
 
 	//SECTION - //? ACTIONS
 	actions: {
+
+    getCreated() {
+      const DicStore = useDicStore();
+      const PagesStore = usePagesStore();
+      const GenderStore = useGenderStore();
+      const FormStore = useFormStore();
+			if (PagesStore.site_settings.save.MY_level) {
+				this.MY.level = PagesStore.site_settings.save.MY_level;
+				PagesStore.site_settings.save.MY_level = null;
+			}
+
+			if (PagesStore.site_settings.save.select_lang) {
+				DicStore.select_lang = PagesStore.site_settings.save.select_lang;
+				PagesStore.site_settings.save.select_lang = null;
+			}
+			PagesStore.links.stats_link = {};
+
+      if(!this.MY.height) this.MY.height = FormStore.Get_Height;
+			if(!this.MY.weight) this.MY.weight = FormStore.Get_Weight;
+			if(!this.MY.age) this.MY.age = FormStore.Get_Age;
+			if(!this.MY.name && this.MY.name !== '') GenderStore.getRandomName();
+		},
 
     getMYObj(start_arr, name) {
       if(!name) return start_arr[0];

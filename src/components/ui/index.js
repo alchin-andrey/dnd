@@ -17,7 +17,6 @@ import AppMasters from "@/components/ui/AppMasters.vue";
 
 
 //Main
-// import AppSlider from "@/components/ui/main/AppSlider.vue";
 import AppSliderName from "@/components/ui/main/AppSliderName.vue";
 import AppName from "@/components/ui/main/AppName.vue";
 
@@ -90,7 +89,6 @@ export default [
   AppMasters,
 
 //main
-  // AppSlider,
   AppSliderName,
   AppName,
 

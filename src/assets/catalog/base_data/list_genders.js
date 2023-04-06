@@ -1,15 +1,15 @@
 export default {
     phisiological: [
-        { name: "male", details: 'male_details',},
-        { name: "intersex", details: "intersex_details",},
-        { name: "female", details: "female_details",},
+        { name: "male", details: "male_details", body: "male"},
+        { name: "intersex", details: "intersex_details", body: "male"},
+        { name: "female", details: "female_details", body: "female"},
 
-        { name: "demiboy", details: "demiboy_details",},
-        { name: "demigirl", details: "demigirl_details",},
+        { name: "demiboy", details: "demiboy_details", body: "male"},
+        { name: "demigirl", details: "demigirl_details", body: "female"},
 
-        { name: "neutral_gender", details: "neutral_gender_details",},
-        { name: "unstable", details: "unstable_details",},
-        { name: "other_gender", details: "other_gender_details",},
+        { name: "neutral_gender", details: "neutral_gender_details", body: "male"},
+        { name: "unstable", details: "unstable_details", body: "male"},
+        { name: "other_gender", details: "other_gender_details", body: "male"},
     ],
 
     feel: [

@@ -147,6 +147,7 @@ import { useDicStore } from "@/stores/general/DicStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
+import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
 
 import MainApp from "@/components/main/MainApp.js";
@@ -185,7 +186,6 @@ export default {
     ]),
 		...mapState(usePagesStore, [
 			"site_settings",
-			"links",
 			"race_page",
 			"class_page",
 			"shown_home",
@@ -209,6 +209,8 @@ export default {
 			"feats_Arr_Select_Id",
 			"feats_Arr_Free",
 		]),
+
+		...mapState(useGenderStore, ["names_Arr"]),
 
 		t_Details() {
 			return this.t("responsive_bottom");
@@ -266,40 +268,36 @@ export default {
 	watch: {
 		"MY_Race.name": "getWatch_Race",
 		"MY_Class.name": "getWatch_Class",
-    "MY.age"() {
-      if(!this.MY.age) this.MY.age = this.Get_Age;
-    },
-    "MY.height"() {
-      if(!this.MY.height) this.MY.height = this.Get_Height;
-    },
-    "MY.weight"() {
-      if(!this.MY.weight) this.MY.weight = this.Get_Weight;
+
+    select_lang(val, oldVal) {
+      const incl = this.names_Arr.includes(this.MY.name);
+      if(!incl) this.getRandomName();
     },
 
-		feats_Condition_Pass_Name: {
-			handler: function (val, oldVal) {
-				if (oldVal && val.toString() !== oldVal.toString()) {
-					this.feats_Arr_Select_Id.forEach((el) => {
-						if (el.id_btn == "feats") {
-							const obj =
-								this.MY._settings_class[this.MY_Class.name][el.id_link];
-							const name = obj.feats[0].name;
-							const includ = this.feats_Condition_Pass_Name.includes(name);
-							const new_el = this.feats_Arr_Free[0];
-							if (includ) {
-								this.MY._settings_class[this.MY_Class.name][el.id_link] = {
-									...obj,
-									feats: [new_el],
-								};
-							}
-						}
-					});
-				}
-			},
-		},
+		feats_Condition_Pass_Name(val, oldVal) {
+      if (oldVal && val.toString() !== oldVal.toString()) {
+        this.feats_Arr_Select_Id.forEach((el) => {
+          if (el.id_btn == "feats") {
+            const obj =
+              this.MY._settings_class[this.MY_Class.name][el.id_link];
+            const name = obj.feats[0].name;
+            const includ = this.feats_Condition_Pass_Name.includes(name);
+            const new_el = this.feats_Arr_Free[0];
+            if (includ) {
+              this.MY._settings_class[this.MY_Class.name][el.id_link] = {
+                ...obj,
+                feats: [new_el],
+              };
+            }
+          }
+        });
+      }
+    },
+    
 	},
 
 	methods: {
+    ...mapActions(useMYStore, ["getCreated"]),
     ...mapActions(usePagesStore, [
 			"showHome",
 			"closeEthnos",
@@ -309,6 +307,7 @@ export default {
 			"closeCustomSett",
       "btnGo",
 		]),
+    ...mapActions(useGenderStore, ["getRandomName"]),
 
 		onResize() {
 			this.small_screen = window.innerWidth <= 1279;
@@ -350,13 +349,6 @@ export default {
 					// hotfixes: "px_scaling",
 				},
 			};
-      // html2pdf().set(opt).from(element)
-      // .toContainer().then(() => this.progress_load = 80)
-      // .toCanvas().then(() => this.progress_load = 80)
-      // .toImg().then(() => this.progress_load = 70)
-      // .toPdf().then(() => this.progress_load = 80)
-      // .save().then(() => this.progress_load = 90)
-      // .output().then(() => this.progress_load = 100);
 
       html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
       .toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
@@ -364,22 +356,6 @@ export default {
         setTimeout(() => this.progress_load = 0, 1000);
         setTimeout(() => this.loading_pdf = 0, 2000);
       });
-		},
-
-		getCreated() {
-			if (this.site_settings.save.MY_level) {
-				this.MY.level = this.site_settings.save.MY_level;
-				this.site_settings.save.MY_level = null;
-			}
-
-			if (this.site_settings.save.select_lang) {
-				this.select_lang = this.site_settings.save.select_lang;
-				this.site_settings.save.select_lang = null;
-			}
-			this.links.stats_link = {};
-			this.MY.height = this.Get_Height;
-			this.MY.weight = this.Get_Weight;
-			this.MY.age = this.Get_Age;
 		},
 
 		getWatch_Race() {

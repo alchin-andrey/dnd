@@ -1,6 +1,5 @@
 <template>
 	<div class="int-400">
-		<!-- <img class="title" :src="Lang_Icon"/> -->
 		<div class="title">
 				<emoji v-for="n in title" :key="n"
 					:data="emojiIndex"
@@ -9,7 +8,7 @@
 					:size="20"
 				/>
 		</div>
-		<div class="text">{{ text }}</div>
+		<div class="int-700">{{ text }}</div>
 	</div>
 </template>
 
@@ -50,12 +49,5 @@ export default {
 .emoji-mart-emoji {
 	padding: 0;
 	line-height: 0;
-}
-
-.text {
-	height: 15px;
-	font-weight: 700;
-	font-size: 13px;
-	line-height: 15px;
 }
 </style>
