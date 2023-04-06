@@ -7,6 +7,32 @@ import lang from "@/assets/catalog/base_data/list_languages.js";
 import mods from "@/assets/catalog/base_data/list_spells_mods.js";
 
 export default {
+
+  custom_stalker: {
+    name: "feat_custom_stalker",
+    details: "feat_custom_stalker",
+
+    skills: [
+      {
+        name: "stealth",
+        num: "Mastery",
+        details: "stealth_details",
+      },
+      {
+        name: "survival",
+        num: "Mastery",
+        details: "survival_details",
+      },
+    ],
+
+    fines: [
+      {
+        type: "advantage",
+        keyword: "advantage",
+        details: "on_survival_stalker",
+      },
+    ],
+  },
   
   grappler: {
     name: "feat_grappler",
