@@ -11,9 +11,9 @@
 
 	<section class="grid-gap">
 		<my-card-text
-			v-if="shown_Btn !== 'feats'"
-			class="text-mrg"
-			text="stats_base_details_class"
+			v-if="t_feats_Details"
+			class="marg-bot"
+			:text="t_feats_Details"
 		/>
 		<AppCusstomCard
 			v-for="list_el in feat_Arr.list"
@@ -31,6 +31,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useMainStore } from "@/stores/general/MainStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
 
 export default {
@@ -52,6 +53,7 @@ export default {
 	},
 
 	computed: {
+    ...mapState(useMainStore, ["srd"]),
 		...mapState(useMYStore, ["MY", "MY_Class"]),
 		...mapState(useFeatsStore, [
 			"feats_Stats_2_Arr",
@@ -59,6 +61,18 @@ export default {
 			"feats_Feats_Arr",
       "feats_Condition_Pass",
 		]),
+
+    t_Disclaimer() {
+      return this.srd ? this.t("phb_disclaimer") : null;
+    },
+
+    t_feats_Details() {
+      if(this.shown_Btn == 'feats' && this.srd) {
+        return this.t_Disclaimer;
+      } else {
+        return this.T("stats_base_details_class")
+      }
+    },
 
 		feat_Arr() {
 			if (this.shown_Btn == "stats_2") {
@@ -137,7 +151,7 @@ export default {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 8px;
-	height: 50px;
+	/* min-height: 47px; */
 	margin-bottom: 24px;
 }
 
@@ -148,5 +162,13 @@ export default {
 
 .text-mrg {
 	margin-bottom: 24px;
+}
+
+.marg-bot {
+	margin-bottom: 16px;
+}
+
+.pd-rl-14 {
+  padding: 0 14px;
 }
 </style>
