@@ -6,19 +6,19 @@
 		<div class="name jbm-300">
 			<div>{{ t_Title }}</div>
 		</div>
-  <main class="flex-col-sb gap-4">
-    <section class="wrap liner">
-      <input
-        size="1"
-        @keyup="getName()"
-        spellcheck="false"
-        class="int-700-20 mr-top-4"
-        :class="{ liner: inputValue !== '' }"
-        v-model="inputValue"
-        type="text"
-        maxlength="20"
-        :placeholder="t_Placeholder"
-      />
+  <main class="flex-col-sb gap-4 mr-top-4">
+    <section class="wrap-input">
+        <input
+          size="1"
+          @keyup="getName()"
+          spellcheck="false"
+          class="int-700-20"
+          :class="{ liner: inputValue !== '' }"
+          v-model="inputValue"
+          type="text"
+          maxlength="20"
+          :placeholder="t_Placeholder"
+        />
     </section>
     <section class="main_icon" @click="getRandomName()">
       <svg
@@ -123,6 +123,15 @@ export default {
 	margin-top: 4px;
 }
 
+.wrap-input {
+  width: 100%;
+}
+
+.liner {
+	text-decoration-line: underline;
+	text-decoration-color: #ffffff;
+}
+
 input[type="text"] {
 	border-radius: 0;
 	-webkit-border-radius: 0;
@@ -131,17 +140,10 @@ input[type="text"] {
 	background: #0e1518 !important;
 	outline: none;
   color: #ffffff;
-	height: 28px;
 	width: 100%;
   white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-
-.liner {
-  width: 100%;
-	text-decoration-line: underline;
-	text-decoration-color: #ffffff;
 }
 
 ::placeholder {

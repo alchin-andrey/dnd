@@ -142,8 +142,7 @@
 <script>
 import html2pdf from "html2pdf.js";
 
-import { mapState, mapWritableState, mapActions } from "pinia";
-import { useDicStore } from "@/stores/general/DicStore";
+import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
@@ -175,7 +174,6 @@ export default {
 
 	computed: {
 		//STORES
-		...mapWritableState(useDicStore, ["select_lang"]),
 		...mapState(useMYStore, [
       "MY", 
       "MY_Race", 
@@ -210,7 +208,7 @@ export default {
 			"feats_Arr_Free",
 		]),
 
-		...mapState(useGenderStore, ["names_Arr", "sex_Char_Body"]),
+		...mapState(useGenderStore, ["names_Arr"]),
 
 		t_Details() {
 			return this.t("responsive_bottom");
@@ -269,13 +267,8 @@ export default {
 		"MY_Race.name": "getWatch_Race",
 		"MY_Class.name": "getWatch_Class",
 
-    select_lang(val, oldVal) {
-      const incl = this.names_Arr.includes(this.MY.name);
-      if(!incl) this.getRandomName();
-    },
-
-    sex_Char_Body(val, oldVal) {
-      const incl = this.names_Arr.includes(this.MY.name);
+    names_Arr(val, oldVal) {
+      const incl = val.includes(this.MY.name);
       if(!incl) this.getRandomName();
     },
 
