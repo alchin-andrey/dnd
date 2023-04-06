@@ -6,7 +6,7 @@
 				class="main_svg"
 				viewBox="0 0 18 18"
 				xmlns="http://www.w3.org/2000/svg"
-				v-html="ui_icon.arrow_right_small"
+				v-html="ui_icon.download"
 			/>
 		</div>
     <div class="load_btm">
