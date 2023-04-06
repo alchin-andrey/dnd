@@ -8,12 +8,13 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 
-import feats_obj from "@/assets/catalog/base_data/list_feats.js";
+import feats_obj_srd from "@/assets/catalog/base_data/srd/list_feats.js";
+import feats_obj_phb from "@/assets/catalog/base_data/phb/list_feats.js";
 
 export const useFeatsStore = defineStore({
 	id: "FeatsStore",
 	state: () => ({
-		feats_obj: feats_obj,
+		feats_obj: true ? feats_obj_srd : feats_obj_phb, //NOTE - не знаю де srd перемінна
 		stats_2: [
 			{
 				name_set: "strength",

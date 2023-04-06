@@ -1,10 +1,10 @@
-import spells from "./list_spells.js";
-import weaponry from "./kinds_weapons.js";
-import armory from "./kinds_armor.js";
-import tools from "./kinds_tools.js";
-import item from "./list_items.js";
-import lang from "./list_languages.js";
-import mods from "./list_spells_mods.js";
+import spells from "@/assets/catalog/base_data/list_spells.js";
+import weaponry from "@/assets/catalog/base_data/kinds_weapons.js";
+import armory from "@/assets/catalog/base_data/kinds_armor.js";
+import tools from "@/assets/catalog/base_data/kinds_tools.js";
+import item from "@/assets/catalog/base_data/list_items.js";
+import lang from "@/assets/catalog/base_data/list_languages.js";
+import mods from "@/assets/catalog/base_data/list_spells_mods.js";
 
 export default {
   actor: {
