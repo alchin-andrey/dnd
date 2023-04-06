@@ -107,9 +107,6 @@
     </div>
   </main>
 
-
-  
-
     <main v-else-if="qr_form" id="qr_spell" class="flex_col gap-26">
       <my-wrapper>
           <div class="title_spell gray_2">{{ t_Type }} /</div>
@@ -208,8 +205,6 @@
           />
         </div>
   </main>
-
-
 
   <main v-else id="site_spell">
       <AppTooltip

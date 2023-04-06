@@ -13,7 +13,6 @@
 			:custom="list_el"
 			@click="getCustomSelect(list_el)"
 			:active_boll_link="getActive(list_el)"
-      @clickOneMore="getCustomSelect"
 		/>
 	</section>
 </template>
@@ -21,7 +20,6 @@
 
 
 <script>
-// @clickOneMore="getCustomSelect"
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 
@@ -47,18 +45,16 @@ export default {
 	},
 
 	methods: {
-
-
 		getCustomSelect(list_el) {
-
 			const active = this.getActive(list_el);
-			let arr = this.custom.select_list.slice(0);
-			if (!active) {
-				arr.splice(0, 1);
+      if (active) {
+        return null;
+      } else {
+        let arr = this.custom.select_list.slice(0);
+        arr.splice(0, 1);
 				arr.push(list_el);
-			}
-			// this.getLink();
-			this.MY._settings_alignment[this.custom.id_link] = arr;
+        this.MY._settings_alignment[this.custom.id_link] = arr;
+      }
 		},
 	},
 };

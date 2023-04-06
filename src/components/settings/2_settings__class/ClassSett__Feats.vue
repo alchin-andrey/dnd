@@ -24,7 +24,6 @@
 			:active_boll_link="getActive(list_el)"
 			:pass_boll_link="getPass(list_el)"
 			@click="getFeatsSelect(list_el)"
-			@clickOneMore="getFeatsSelect"
 		/>
 	</section>
 </template>

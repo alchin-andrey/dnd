@@ -294,20 +294,6 @@ export default {
 			return this.t(this.custom.condition);
 		},
 	},
-	watch: {
-		// active_boll_link: {
-		// 	handler: function (val, oldVal) {
-		// 		console.log('val:', val)
-		// 		if (val == true) {
-		// 			this.$emit("clickOneMore", this.custom);
-		// 		}
-		// 	},
-		// 	immediate: true,
-		// },
-	},
-
-  methods: {
-  }
 };
 </script>
 
