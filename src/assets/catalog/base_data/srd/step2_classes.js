@@ -130,7 +130,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -636,7 +636,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -1351,7 +1351,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -2036,7 +2036,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -2559,7 +2559,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -3110,7 +3110,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -3607,7 +3607,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -4418,7 +4418,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -5778,7 +5778,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -6409,7 +6409,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -6789,7 +6789,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -7737,7 +7737,7 @@ export default {
         type: "custom",
         position: 0,
         name: "subclass",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -7897,7 +7897,7 @@ export default {
         type: "custom",
         position: 2,
         name: "favor",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -8223,7 +8223,7 @@ export default {
         type: "custom",
         position: 2,
         name: "exploration",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -8463,7 +8463,7 @@ export default {
         type: "custom",
         position: 2,
         name: "primal_sense",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
@@ -8482,7 +8482,7 @@ export default {
         type: "custom",
         position: 2,
         name: "disguise",
-        details: "phb_disclaimer",
+        disclaimer: true,
         select: 1,
         list: [
           {
