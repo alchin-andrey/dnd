@@ -19,8 +19,8 @@ import Donate from "@/components/Donate.vue";
 export default {
 	components: { 
     Welcome,
-    Btm__Reset,
     Btm__WhatDND,
+    Btm__Reset,
     Donate,
   },
 	name: "Description",
