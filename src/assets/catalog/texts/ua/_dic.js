@@ -24,7 +24,7 @@ export default {
     '<br /><p>Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 50% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
 
   phb_disclaimer:
-    'Інші варіанти недоступні для використання тут через обмеження Open Gaming Licence від власників системи Dungeons & Dragons — Wizards of the Coast LLC ... ',
+    'Інші варіанти недоступні для використання тут через обмеження Open Gaming Licence від власників системи Dungeons & Dragons — Wizards of the Coast LLC ... Запитайте свого Майстра, як отримати більше варіантів.',
   //Общее
 
   name: "імʼя",
