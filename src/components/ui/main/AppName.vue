@@ -6,7 +6,7 @@
 		<div class="name jbm-300">
 			<div>{{ t_Title }}</div>
 		</div>
-  <main class="flex-col-sb gap-4 mr-top-4">
+  <main class="flex-row-sb-c gap-4 mr-top-4">
     <section class="wrap-input">
         <input
           size="1"
@@ -96,16 +96,6 @@ export default {
 </script>
 
 <style scoped>
-
-.flex-col-sb {
-	display: flex;
-  align-items: center;
-	justify-content: space-between;
-}
-
-.gap-4 {
-  gap: 4px;
-}
 .mg-18 {
 	margin-bottom: 18px;
 	display: grid;

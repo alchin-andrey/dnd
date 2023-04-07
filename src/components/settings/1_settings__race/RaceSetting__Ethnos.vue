@@ -1,4 +1,5 @@
 <template>
+  <AppSrdDisclaimer class="mr-b-15"/>
 	<div class="ethnos_attributes">
 		<!-- Ethnos_stats + qualities -->
 		<my-wrapper v-if="MY_Race.stats || level_Filter_Arr(MY_Race.qualities).length !== 0">
@@ -63,19 +64,13 @@
 		<!-- Ethnos_spells -->
 	</div>
 
-  <my-card-text
-		class="marg-bot"
-		v-if="t_Disclaimer"
-		:text="t_Disclaimer"
-	/>
-
 	<EthnosCard />
 </template>
 
 <script>
 import EthnosCard from "@/components/settings/1_settings__race/EthnosCard.vue";
 
-import { mapState, mapActions } from "pinia";
+import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useMainStore } from "@/stores/general/MainStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";

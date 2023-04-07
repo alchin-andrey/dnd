@@ -1,5 +1,5 @@
 <template>
-	<section class="flex-col">
+	<section class="flex-col gap-8">
 		<my-card-text
 			class="marg-bot"
 			v-if="custom.details"
@@ -61,23 +61,7 @@ export default {
 </script>
 
 <style scoped>
-.flex-col {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	/* margin: 0 0 26px 16px; */
-}
 .marg-bot {
 	margin-bottom: 16px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-	transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-	opacity: 0;
 }
 </style>

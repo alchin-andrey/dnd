@@ -1,9 +1,10 @@
 <template>
-  <my-card-text
-		class="marg-bot"
-		v-if="t_Disclaimer"
-		:text="t_Disclaimer"
-	/>
+  <section>
+    <AppSrdDisclaimer class="mr-b-15"/>
+    <!-- <div v-if="backstories_Arr.details" :text="backstories_Arr.details" /> -->
+    <div class="int-400 white-04" v-html="t_Disclaimer" />
+  </section>
+
   <AppCusstomCard 
   v-for="list_el in backstories_Arr"
 	:key="list_el"
@@ -24,7 +25,7 @@ export default {
 		...mapState(useMainStore, ["backstories_Arr", "srd"]),
 
     t_Disclaimer() {
-      return this.srd ? this.t("phb_disclaimer") : null;
+      return this.t("lobby_how_it_works_details_1");
     },
 
 	},

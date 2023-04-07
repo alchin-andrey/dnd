@@ -1,7 +1,7 @@
 <template>
 	<section class="flex-col">
 		<my-card-text
-			class="marg-bot"
+			class="mr-b-15"
 			v-if="spells_setting.details"
 			:text="spells_setting.details"
 		/>
@@ -13,7 +13,7 @@
 					v-if="filter_Spells(i).length !== 0"
 					:numb_manna="i"
 				>
-					<section class="flex-col gap-8 marg-top-34">
+					<section class="flex-col gap-8 mr-t-34">
 						<my-selection-card
 							no_blur
 							v-for="list_el in filter_Spells(i)"
@@ -39,7 +39,6 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
-import { useSpellsStore } from "@/stores/modules/SpellsStore";
 
 export default {
 	name: "ClassSett__Spells",
@@ -58,8 +57,6 @@ export default {
 			"Mastery_x2",
 			"level_Filter_Arr",
 		]),
-
-		// ...mapState(useSpellsStore, ["spells_Filter_Without"]),
 
 		spells_List_Filter() {
 			const list = this.spells_setting.list;
@@ -123,34 +120,3 @@ export default {
 	},
 };
 </script>
-
-<style scoped>
-.marg-bot {
-	margin-bottom: 16px;
-}
-
-.flex-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.gap-8 {
-	gap: 8px;
-}
-
-.marg-top-34 {
-  margin-top: 34px;
-}
-
-.gap-34 {
-	gap: 34px;
-}
-
-.manna-numb {
-	margin-left: 16px;
-}
-
-.rare-text {
-	color: #ffc93d;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="marg gap-26">
+	<div class="flex-col-sb gap-26 pd-l-32">
 		<section class="flex-col gap-26">
       <Welcome/>
       <div class="flex-col gap-4">
@@ -28,24 +28,4 @@ export default {
 </script>
 
 <style scoped>
-.marg {
-	margin-left: 32px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.flex-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.gap-26 {
-	gap: 26px;
-}
-
-.gap-4 {
-	gap: 4px;
-}
 </style>

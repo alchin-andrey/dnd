@@ -123,7 +123,7 @@
 
 	<div v-if="small_screen" class="plug-wrap int-700-20">
 		<div class="plug-dialog">
-			<div class="grey-4-main">{{ t("responsive_top") }}</div>
+			<div class="white-04">{{ t("responsive_top") }}</div>
 			<div class="emog">
 				{{ em_Before }}
 				<emoji

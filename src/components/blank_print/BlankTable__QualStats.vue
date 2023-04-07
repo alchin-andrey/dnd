@@ -32,7 +32,7 @@
 		</div>
 		<div class="grid__body-right">
 			<section
-				class="flex-col pad-24 cell"
+				class="skill-wrapp pad-24 cell"
 				v-for="skill in t_skill_Arr"
 				:key="skill.t_name"
 			>
@@ -142,7 +142,7 @@ export default {
 	grid-column: span 2;
 }
 
-.flex-col {
+.skill-wrapp {
 	display: flex;
 	height: 72px;
 	justify-content: space-between;

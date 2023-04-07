@@ -14,6 +14,7 @@ import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
 import AppLoadBtm from "@/components/ui/AppLoadBtm.vue";
 
 import AppMasters from "@/components/ui/AppMasters.vue";
+import AppSrdDisclaimer from "@/components/ui/AppSrdDisclaimer.vue";
 
 
 //Main
@@ -87,6 +88,7 @@ export default [
   AppLoadBtm,
 
   AppMasters,
+  AppSrdDisclaimer,
 
 //main
   AppSliderName,

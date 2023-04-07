@@ -6,7 +6,7 @@
 			:numb="spells_RC_Param_Ability_Passive.length"
 			text="abilities_passive"
 		>
-			<div class="flex-col gap-4 marg-top-8">
+			<div class="flex-col gap-4 mr-t-8">
 				<AppSpells
 					v-for="item in spells_Race_Param_Ability_Passive"
 					:key="item"
@@ -31,7 +31,7 @@
 			:numb="spells_RC_Param_Ability.length"
 			text="ability"
 		>
-			<div class="flex-col gap-4 marg-top-8">
+			<div class="flex-col gap-4 mr-t-8">
 				<AppSpells
 					v-for="item in spells_Race_Param_Ability"
 					:key="item"
@@ -57,7 +57,7 @@
 				:numb="filter_All_Manna_Spells(i).length"
 				:numb_manna="i"
 			>
-				<div class="flex-col gap-4 marg-top-8">
+				<div class="flex-col gap-4 mr-t-8">
 					<AppSpells
 						v-for="item in filter_Race_Param_Manna_Spells(i)"
 						:key="item"
@@ -195,23 +195,4 @@ export default {
 </script>
 
 <style scoped>
-.flex-col {
-	display: flex;
-	flex-direction: column;
-}
-
-.gap-4 {
-	gap: 4px;
-}
-.gap-8 {
-	gap: 8px;
-}
-
-.marg-top-8 {
-	margin-top: 8px;
-}
-
-.gap-26 {
-	gap: 26px;
-}
 </style>

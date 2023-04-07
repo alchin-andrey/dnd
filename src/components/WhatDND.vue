@@ -1,18 +1,13 @@
 <template>
   <section class="scroll-content">
-    <!-- <div class="jbm-300" 
-    @click="toggleSrd()"
-    :class="{'rare-text': !srd}"
-    >{{ t_Base }}
-    </div> -->
     <div class="jbm-300">{{ t_Base }}</div>
     <div class="flex_row gap-64 mr-top-54">
       
       <main>
         <section class="col-base">
           <div class="int-700-20">{{ t_What }}</div>
-          <!-- <div class="int-400 text-base grey-4-main" v-html="t_What_Details"/> -->
-          <div class="int-400 text-base grey-4-main">
+          <!-- <div class="int-400 text-base white-04" v-html="t_What_Details"/> -->
+          <div class="int-400 text-base white-04">
           <span v-html="t_What_Details_1_1"></span>
           <span @click="toggleSrd()" v-html="t_What_Details_1_2"></span>
           <span v-html="t_What_Details_1_3"></span>
@@ -26,14 +21,14 @@
           <div class="int-400 text-base flex_col gap-15 dot-text">
             <div>
               <span v-html="t_How_Details_1" />
-              <span class="grey-4-main" v-html="t_How_Details_1_1" />
+              <span class="white-04" v-html="t_How_Details_1_1" />
             </div>
-            <div class="grey-4-main" v-html="t_How_Details_2" />
+            <div class="white-04" v-html="t_How_Details_2" />
             <div v-html="t_How_Details_3" />
-            <div class="grey-4-main" v-html="t_How_Details_4" />
-            <div class="grey-4-main" v-html="t_How_Details_5" />
+            <div class="white-04" v-html="t_How_Details_4" />
+            <div class="white-04" v-html="t_How_Details_5" />
             <div v-html="t_How_Details_6" />
-            <div class="grey-4-main" v-html="t_How_Details_7" />
+            <div class="white-04" v-html="t_How_Details_7" />
           </div>
         </section>
       </main>

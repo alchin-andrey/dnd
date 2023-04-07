@@ -1,5 +1,5 @@
 <template>
-	<div class="main_btm flex-col-sb" :class="{ active_btm: stop_Loading }">
+	<div class="main_btm flex-row-sb-c" :class="{ active_btm: stop_Loading }">
 		<div>{{ t_Text }}</div>
 		<div class="main_icon">
 			<svg v-if="stop_Loading"
@@ -111,39 +111,6 @@ export default {
   transition-property: all;
   transition-duration: 1s;
 }
-
-/* .load-progress {
-  height: 100%;
-  background: #0047ff;
-  animation-name: progress;
-  animation-duration: 10s;
-  animation-timing-function: cubic-bezier(.05,1.17,.86,.91);
-} */
-
-/* @keyframes progress{
-
-0%{
-  width: 0%;
-}
-100%{
-  width: 100%;
-}
-} */
-
-.flex-col-sb {
-	display: flex;
-  align-items: center;
-	justify-content: space-between;
-}
-
-.blue_card {
-	background: #0047ff;
-}
-
-.blue_card:hover {
-	background: #1355ff;
-}
-
 
 .main_icon {
 	width: 18px;

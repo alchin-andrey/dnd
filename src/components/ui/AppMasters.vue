@@ -6,10 +6,10 @@
     
     <section class="flex_col gap-4">
       <div class="int-700">{{ t_Name }}</div>
-      <div class="grey-4-main" v-html="t_Details"></div>
+      <div class="white-04" v-html="t_Details"></div>
     </section>
 
-    <section class="flex_col gap-4 grey-4-main">
+    <section class="flex_col gap-4 white-04">
       <div><span>{{ t_City }}</span> <span>{{ t_Master_City }}</span></div>
       <div><span>{{ t_Format }}</span> <span>{{ t_Master_Format }}</span></div>
       <div><span>{{ t_Telegram }}</span> <span v-html="t_Master_Telegram"/></div>
