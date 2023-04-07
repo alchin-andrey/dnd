@@ -1,47 +1,29 @@
 <template>
-  <div v-if="site_settings.welcome" class="wrapp">
+  <div v-if="site_settings.welcome" class="wrapp-baner">
     <my-selection-card passive>
       <Welcome />
       <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
     </my-selection-card>
-    <my-selection-card
-    v-if="show_Master_Page" 
-    class="marg-top-4" 
-    arrow
-    @click="getPage()"
-    >
-      <div class="int-700"> {{ T("lobby_button") }}</div>
-    </my-selection-card>
+    <Btm__WhatDND class="marg-top-4" />
 </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "pinia";
-import { useDicStore } from "@/stores/general/DicStore";
+import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import Welcome from "@/components/Welcome.vue";
+import Btm__WhatDND from "@/components/Btm__WhatDND.vue";
 
 export default {
-  components: { Welcome },
+  components: { 
+    Welcome, 
+    Btm__WhatDND,
+  },
   name: "WelcomeBanner",
   computed: {
-		...mapState(usePagesStore, ["site_settings", "page_Open"]),
-    ...mapState(useDicStore, ["select_lang"]),
-
-    show_Master_Page() {
-      return this.select_lang !== 'ru'
-    }
+		...mapState(usePagesStore, ["site_settings"]),
   },
   methods: {
-    ...mapActions(usePagesStore, [
-			"goPage",
-		]),
-
-    getPage() {
-      this.site_settings.old_page = this.page_Open;
-      this.goPage('master_page')
-    },
-
     close() {
         this.site_settings.welcome = false;
       },
@@ -50,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.wrapp {
+.wrapp-baner {
   width: 394px;
   position: absolute;
   right: 50%;

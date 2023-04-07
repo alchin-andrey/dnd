@@ -442,6 +442,7 @@ export default {
 .main_chapter_menu {
 	padding: 40px 32px 32px 32px;
 	overflow-y: scroll;
+  min-width: 320px;
 	max-height: 100%;
 	scrollbar-width: none;
 }

@@ -5,23 +5,10 @@
       <div class="text">{{ t_Text }}</div>
       <div class="text_html" v-html="t_Html"></div>
 		</section>
-		<my-selection-card
-			class="marg-top-26 int-700"
-			v-if="reset"
-			reset
-			@click="resetState()"
-		>
-			<div class="text">{{ t_Reset }}</div>
-		</my-selection-card>
 	</div>
 </template>
 
 <script>
-import { mapWritableState, mapActions } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
-import { usePagesStore } from "@/stores/user/PagesStore";
-import { useFormStore } from "@/stores/modules/simple/FormStore";
-import { useMainStore } from "@/stores/general/MainStore";
 export default {
 	name: "Welcome",
   props: {
@@ -36,10 +23,6 @@ export default {
 	},
 
 	computed: {
-    ...mapWritableState(useMYStore, ["MY","MY_def"]),
-    ...mapWritableState(usePagesStore, ["site_settings", 'pages', 'race_page', "showHome"]),
-    ...mapWritableState(useFormStore, ["form_kof"]),
-    ...mapWritableState(useMainStore, ["srd"]),
 
 		t_Title() {
 			return this.T("welcome_title");
@@ -53,38 +36,9 @@ export default {
 			return this.t("welcome_disclaimer");
 		},
 
-    t_Reset() {
-			return this.t("start_over");
-		},
 	},
 
   methods: {
-    ...mapActions(useMYStore, ["getCreated"]),
-
-    resetState() {
-      // this.MY = this.MY_def;
-      this.MY = JSON.parse(JSON.stringify(this.MY_def));
-      
-      this.srd = true,
-      
-      this.site_settings.welcome = true;
-      
-      this.form_kof = {
-        height: 0.5,
-        weight: 0.5,
-        age: 0.5,
-      };
-      
-      this.pages = {
-        race_page: true,
-        class_page: false,
-        alignment_page: false,
-        master_page: false,
-      };
-      this.showHome();
-      this.getCreated();
-    },
-
   }
 };
 </script>

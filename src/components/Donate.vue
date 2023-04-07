@@ -42,10 +42,6 @@
 					<div class="text">{{ t_Copy }}</div>
 				</my-selection-card> -->
 
-				<!-- <my-selection-card download @click="btnClick()">
-					<div class="text" >{{ t_Pdf }}</div>
-				</my-selection-card> -->
-
         <AppLoadBtm @click="btnClick()" :text="t_Pdf" :progress="progress"/>
 			</section>
 		</div>
