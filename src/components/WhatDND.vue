@@ -6,12 +6,12 @@
       <main>
         <section class="col-base">
           <div class="int-700-20">{{ t_What }}</div>
-          <!-- <div class="int-400 text-base white-04" v-html="t_What_Details"/> -->
-          <div class="int-400 text-base white-04">
-          <span v-html="t_What_Details_1_1"></span>
-          <span @click="toggleSrd()" v-html="t_What_Details_1_2"></span>
-          <span v-html="t_What_Details_1_3"></span>
-          </div>
+          <div class="int-400 text-base white-04" v-html="t_What_Details"/>
+          <!-- <div class="int-400 text-base white-04">
+            <span v-html="t_What_Details_1_1"></span>
+            <span @click="toggleSrd()" v-html="t_What_Details_1_2"></span>
+            <span v-html="t_What_Details_1_3"></span>
+          </div> -->
         </section>
       </main>
 
@@ -57,14 +57,12 @@ export default {
 			return this.t("lobby_what_is_it_details");
 		},
 
-    t_What_Details_1_1: (stor) => stor.t("lobby_what_is_it_details_1_1"),
-    t_What_Details_1_2() {
-      const str = this.t("lobby_what_is_it_details_1_2");
-      return this.srd ? str.toLowerCase() : str;
-    },
-    t_What_Details_1_3: (stor) => stor.t("lobby_what_is_it_details_1_3"),
-
-
+    // t_What_Details_1_1: (stor) => stor.t("lobby_what_is_it_details_1_1"),
+    // t_What_Details_1_2() {
+    //   const str = this.t("lobby_what_is_it_details_1_2");
+    //   return this.srd ? str.toLowerCase() : str;
+    // },
+    // t_What_Details_1_3: (stor) => stor.t("lobby_what_is_it_details_1_3"),
 
     t_How() {
 			return this.t("lobby_how_it_works");
@@ -81,11 +79,11 @@ export default {
 
 	},
 
-  methods: {
-    toggleSrd() {
-      this.srd = !this.srd;
-    }
-  }
+  // methods: {
+  //   toggleSrd() {
+  //     this.srd = !this.srd;
+  //   }
+  // }
 };
 </script>
 

@@ -1,19 +1,17 @@
 <template>
-	<section class="flex-col gap-8">
-		<my-card-text
-			class="marg-bot"
-			v-if="custom.details"
-			:text="custom.details"
-		/>
-		<AppCusstomCard
-			v-for="list_el in custom.list"
-			:key="list_el"
-      :setting_name="custom.name"
-      :select_list="custom.select_list"
-			:custom="list_el"
-			@click="getCustomSelect(list_el)"
-			:active_boll_link="getActive(list_el)"
-		/>
+	<section class="flex-col gap-34">
+    <AppSrdDisclaimer :text="custom.details" :disclaimer="Boolean(custom?.disclaimer)"/>
+    <section class="flex-col gap-8">
+      <AppCusstomCard
+        v-for="list_el in custom.list"
+        :key="list_el"
+        :setting_name="custom.name"
+        :select_list="custom.select_list"
+        :custom="list_el"
+        @click="getCustomSelect(list_el)"
+        :active_boll_link="getActive(list_el)"
+      />
+    </section>
 	</section>
 </template>
 
@@ -33,6 +31,7 @@ export default {
 		...mapState(useMYStore, ["MY", "MY_Race"]),
 
     getActive: (stor) => (list_el) => {
+      console.log(stor.custom.disclaimer)
       return stor.custom.select_list.some(item => {
         if (item.name) {
           return item.name == list_el.name

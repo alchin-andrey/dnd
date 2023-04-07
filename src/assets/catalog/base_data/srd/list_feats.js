@@ -13,7 +13,7 @@ export default {
     details: "feat_custom_stalker_details",
     condition: "rare_details",
 
-    filter:{},
+    // filter:{},
 
     skills: [
       {

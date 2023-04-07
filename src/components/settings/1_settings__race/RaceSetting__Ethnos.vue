@@ -1,6 +1,7 @@
 <template>
-  <AppSrdDisclaimer class="mr-b-15"/>
-	<div class="ethnos_attributes">
+  <div class="flex-col gap-34">
+  <AppSrdDisclaimer/>
+	<div class="flex-col gap-26 pd-l-16">
 		<!-- Ethnos_stats + qualities -->
 		<my-wrapper v-if="MY_Race.stats || level_Filter_Arr(MY_Race.qualities).length !== 0">
 			<AppStats
@@ -63,8 +64,8 @@
 		</my-wrapper>
 		<!-- Ethnos_spells -->
 	</div>
-
 	<EthnosCard />
+  </div>
 </template>
 
 <script>
@@ -102,14 +103,4 @@ export default {
 </script>
 
 <style scoped>
-.ethnos_attributes {
-	display: flex;
-	flex-direction: column;
-	gap: 26px;
-	margin: 0 0 26px 16px;
-}
-
-.marg-bot {
-	margin-bottom: 16px;
-}
 </style>

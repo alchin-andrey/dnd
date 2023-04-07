@@ -1,30 +1,27 @@
 <template>
-	<section class="grid-col int-700">
-		<my-selection-card
-			v-for="btn in main_buttons"
-			:active_boll_link="shown_Btn == btn.name"
-			@click="shownFeatsBtn(btn.name)"
-		>
-			<span>{{ t(btn.text) }}</span>
-		</my-selection-card>
-	</section>
-
-	<section class="grid-gap">
-		<my-card-text
-			v-if="t_feats_Details"
-			class="marg-bot"
-			:text="t_feats_Details"
-		/>
-		<AppCusstomCard
-			v-for="list_el in feat_Arr.list"
-			:key="list_el"
-      :setting_name="feat_Arr.name"
-      :select_list="feat_Arr.select_list"
-			:custom="list_el"
-			:active_boll_link="getActive(list_el)"
-			:pass_boll_link="getPass(list_el)"
-			@click="getFeatsSelect(list_el)"
-		/>
+	<section class="flex-col gap-34">
+    <section class="grid-col int-700">
+      <my-selection-card
+        v-for="btn in main_buttons"
+        :active_boll_link="shown_Btn == btn.name"
+        @click="shownFeatsBtn(btn.name)"
+      >
+        <span>{{ t(btn.text) }}</span>
+      </my-selection-card>
+    </section>
+    <AppSrdDisclaimer :text="t_feats_Details" :disclaimer="show_Disclaimer"/>
+    <section class="flex-col gap-8">
+      <AppCusstomCard
+        v-for="list_el in feat_Arr.list"
+        :key="list_el"
+        :setting_name="feat_Arr.name"
+        :select_list="feat_Arr.select_list"
+        :custom="list_el"
+        :active_boll_link="getActive(list_el)"
+        :pass_boll_link="getPass(list_el)"
+        @click="getFeatsSelect(list_el)"
+      />
+    </section>  
 	</section>
 </template>
 
@@ -62,13 +59,13 @@ export default {
       "feats_Condition_Pass",
 		]),
 
-    t_Disclaimer() {
-      return this.srd ? this.t("phb_disclaimer") : null;
+    show_Disclaimer() {
+      return this.shown_Btn == "feats";
     },
 
     t_feats_Details() {
-      if(this.shown_Btn == 'feats' && this.srd) {
-        return this.t_Disclaimer;
+      if(this.shown_Btn == 'feats') {
+        return null;
       } else {
         return this.T("stats_base_details_class")
       }
@@ -151,13 +148,10 @@ export default {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 8px;
-	/* min-height: 47px; */
-	margin-bottom: 24px;
 }
 
 .grid-gap {
 	display: grid;
-	gap: 8px;
 }
 
 .text-mrg {

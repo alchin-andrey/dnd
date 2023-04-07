@@ -1,5 +1,5 @@
 <template>
-	<div class="ethnos_cards_menu">
+	<div class="flex-col gap-8">
 		<my-selection-card
 			v-for="ethnos in ethnos_Arr"
 			:key="ethnos"
@@ -106,7 +106,6 @@
 			>
 			</my-card-text>
 		</my-selection-card>
-		<!-- Ethnos_card_текст -->
 	</div>
 </template>
 
@@ -148,13 +147,6 @@ export default {
 </script>
 
 <style>
-.ethnos_cards_menu {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	/* z-index: 100; */
-}
-
 .ethnos_char_back {
 	width: 100%;
 	height: 120px;
@@ -165,7 +157,6 @@ export default {
 }
 
 .ethnos_char_back img {
-	/* height: 390px; */
 	position: absolute;
 	top: 16px;
 }
@@ -176,16 +167,4 @@ export default {
 	top: 16px;
 	left: 0;
 }
-
-/* .flex_custom {
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.gap_4 {
-  display: flex;
-  gap: 4px;
-} */
 </style>

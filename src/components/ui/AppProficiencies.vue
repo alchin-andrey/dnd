@@ -30,7 +30,7 @@
 			</div>
 		</AppTooltip>
 		<div class="item int-400" :class="{ passive: passive_Link }">
-			<div class="flex-col h-18" v-if="unique_Names.length == 0">—</div>
+			<div class="flex-row-c h-18" v-if="unique_Names.length == 0">—</div>
 			<AppTooltip
 				text="hint_over_limit"
 				v-for="(name, i) in unique_Names"
@@ -39,7 +39,7 @@
 				warn
 				:class="{ passive: passive_Old(name) }"
 			>
-				<div class="flex-col h-18">
+				<div class="flex-row-c h-18">
 					<div :class="{ 'rare-text': overflow_Save(name) }">
 						{{ t_Name(name, i) }}
 					</div>

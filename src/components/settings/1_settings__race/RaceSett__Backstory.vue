@@ -1,17 +1,16 @@
 <template>
-  <section>
-    <AppSrdDisclaimer class="mr-b-15"/>
-    <!-- <div v-if="backstories_Arr.details" :text="backstories_Arr.details" /> -->
-    <div class="int-400 white-04" v-html="t_Disclaimer" />
-  </section>
-
-  <AppCusstomCard 
-  v-for="list_el in backstories_Arr"
-	:key="list_el"
-	:custom="list_el"
-  :select_list="[list_el]"
-	@click="getBackName(list_el.name)"
-	:active_boll_link="MY_Backstory.name == list_el.name"/>
+  <div class="flex-col gap-34">
+    <AppSrdDisclaimer :text="backstories_Arr.details"/>
+    <section class="flex-col gap-8">
+      <AppCusstomCard 
+      v-for="list_el in backstories_Arr"
+      :key="list_el"
+      :custom="list_el"
+      :select_list="[list_el]"
+      @click="getBackName(list_el.name)"
+      :active_boll_link="MY_Backstory.name == list_el.name" />
+    </section>
+  </div>
 </template>
 
 <script>

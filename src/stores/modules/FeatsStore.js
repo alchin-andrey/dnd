@@ -108,7 +108,7 @@ export const useFeatsStore = defineStore({
 		},
 
     feats_Condition() {
-      const new_arr = this.feats_Arr.filter(el => el.condition);
+      const new_arr = this.feats_Arr.filter(el => el.filter);
 			return new_arr;
 		},
 
@@ -251,14 +251,14 @@ export const useFeatsStore = defineStore({
 			return res;
 		},
 
-		getFeatsForFeatsArr(obj) {
+		getFeatsForFeatsArr(arr) {
 			const link_btn = "feats";
 			const MYStore = useMYStore();
 			const sett_select_old =
 				MYStore.MY._settings_class_old[MYStore.MY_Class.name];
 			const sett_select = MYStore.MY._settings_class[MYStore.MY_Class.name];
 			const feats_lvl = this.feats_Settings_Class;
-			let list = obj;
+			let list = arr;
 			let select_list_all = [];
 			let save_list_old = [];
 			let new_arr = [];
@@ -279,13 +279,13 @@ export const useFeatsStore = defineStore({
 				let select_list = [];
 				if (btn_save == "feats") {
 					const includ_select = select_list_all.some(
-						(el) => el.name == select_save?.[0].name
+						(el) => el.name == select_save?.[0]?.name
 					);
 					const includ_save_old = save_list_old.some(
-						(el) => el == select_save?.[0].name
+						(el) => el == select_save?.[0]?.name
 					);
 					const includ_null = list.some(
-						(el) => el.name == select_save?.[0].name
+						(el) => el.name == select_save?.[0]?.name
 					);
 					if (btn_save == btn_save_old && includ_null) {
 						select_list = select_save;
@@ -323,7 +323,7 @@ export const useFeatsStore = defineStore({
 				}
 			});
 			let feats_arr = [];
-			const list_all = obj;
+			const list_all = arr;
 			new_arr.forEach((item) => {
 				const select_list_all_includ = select_list_all.filter(
 					(el) => !item.select_list.some(item => item.name == el.name)

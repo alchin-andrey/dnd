@@ -13,7 +13,7 @@
 				:key="item_packs"
 				:packs="item_packs"
 			/>
-			<section class="flex-row" v-if="gold">
+			<section class="flex-row-c gap-col-4" v-if="gold">
 				<div class="coin">
 					<emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="12" />
 				</div>
@@ -95,10 +95,13 @@ export default {
 	display: flex;
 	column-gap: 36px;
 }
-.flex-row {
+.flex-row-c {
 	display: flex;
 	align-items: center;
-	gap: 0 4px;
+}
+
+.gap-col-4 {
+  gap: 0 4px;
 }
 
 .coin {
