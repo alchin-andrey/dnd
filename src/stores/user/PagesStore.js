@@ -8,6 +8,7 @@ export const usePagesStore = defineStore({
     site_settings: {
       save: {},
       welcome: true,
+      logo_anim: false,
       print_dialog: false,
       old_page: null,
     },
@@ -155,6 +156,7 @@ export const usePagesStore = defineStore({
       if(this.site_settings.old_page) {
         this.goOldPage();
       } else {
+        if(name == 'logo') this.site_settings.logo_anim = false;
         this.showSettings("main_page", name);
       }
 		},

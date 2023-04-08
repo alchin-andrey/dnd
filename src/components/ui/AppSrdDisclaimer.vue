@@ -35,15 +35,14 @@ export default {
     },
 
     show_Disclaimer() {
-      console.log(this.disclaimer);
       return this.srd && this.disclaimer;
     }
 	},
 
   methods: {
     toggleSrd() {
-      this.srd = false;
       // this.srd = !this.srd;
+      this.srd = false;
     }
   }
 };

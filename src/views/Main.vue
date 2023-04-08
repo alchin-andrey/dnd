@@ -668,11 +668,11 @@ export default {
 	z-index: 1000;
 }
 
-.emog .emoji-mart-emoji {
+/* .emoji-mart-emoji {
 	padding: 0;
 	line-height: 0;
 	top: 4px;
-}
+} */
 
 /* ---------------------sidebar_right----------------------*/
 </style>

@@ -9,11 +9,10 @@
 			selection_card_active: get_Active,
 			link: link,
       copy_card: copy,
-      blue_card: download,
       red_card: reset,
 		}"
 	>
-  <div v-if="download || arrow || plus" class="copy_icon">
+  <div v-if="reset || arrow || plus" class="copy_icon">
     <svg
       class="main_svg"
       viewBox="0 0 18 18"
@@ -76,10 +75,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    download: {
-      type: Boolean,
-      default: false,
-    },
     arrow: {
       type: Boolean,
       default: false,
@@ -120,9 +115,10 @@ export default {
 			}
 		},
     img_Icon() {
-      if(this.download) return "download"
-      if(this.arrow) return "arrow_right_small"
-      if(this.plus) return "plus"
+      if(this.reset) return "return";
+      if(this.arrow) return "arrow_right_small";
+      if(this.plus) return "plus";
+
     }
 	},
 };
@@ -153,14 +149,6 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 26px;
-}
-
-.blue_card {
-	background: #0047FF;
-}
-
-.blue_card:hover {
-	background: #1355FF;
 }
 
 .red_card {

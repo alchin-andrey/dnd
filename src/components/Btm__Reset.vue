@@ -33,8 +33,14 @@ export default {
       this.MY = JSON.parse(JSON.stringify(this.MY_def));
       
       this.srd = true,
-      
-      this.site_settings.welcome = true;
+
+      this.site_settings = {
+        save: {},
+        welcome: true,
+        logo_anim: false,
+        print_dialog: false,
+        old_page: null,
+      },
       
       this.form_kof = {
         height: 0.5,
@@ -48,8 +54,9 @@ export default {
         alignment_page: false,
         master_page: false,
       };
-      this.showHome();
       this.getCreated();
+      this.showHome();
+      // setTimeout(() => this.showHome(), 500);
     },
 
   }

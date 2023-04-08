@@ -127,7 +127,7 @@ a {
 	gap: 8px;
 }
 
-.btm-fade-enter-active {
+/* .btm-fade-enter-active {
 	transition: all 0.2s ease-in-out;
 }
 
@@ -139,20 +139,20 @@ a {
 .btm-fade-leave-to {
 	transform: translateX(-300px);
 	opacity: 0;
-}
+} */
 
 /* ---------------------characters----------------------*/
 
-.represent {
+/* .represent {
 	padding: 32px;
 	flex: 1 1 auto;
 	display: flex;
 	background-color: #0e1518;
 	z-index: 2;
 	overflow: hidden;
-}
+} */
 
-.character {
+/* .character {
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -183,7 +183,7 @@ a {
   transition-property: all, fill;
   transition-duration: 0.8s, 0.1s;
   transition-timing-function: ease-in-out;
-}
+} */
 
 .active_eyes {
 	align-self: flex-start;
@@ -327,11 +327,11 @@ a {
 	z-index: 1000;
 }
 
-.emog .emoji-mart-emoji {
+/* .emoji-mart-emoji {
 	padding: 0;
 	line-height: 0;
 	top: 4px;
-}
+} */
 
 
 

@@ -3,17 +3,13 @@
 		class="logo"
 		:class="{
 			card_active: active,
+      animation__active: show_Animation,
 		}"
 	>
-		<svg
-			width="25"
-			height="28"
+		<svg 
+      class="logo_svg"
 			viewBox="0 0 25 29"
-			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			:stroke="logo_Color"
-			stroke-width="0.75"
-			stroke-linejoin="bevel"
 		>
 			<path
 				d="M12.5 1L24.1913 7.75V21.25L12.5 28L0.808657 21.25V7.75L12.5 1Z"
@@ -29,6 +25,8 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "MyLogoCard",
 	props: {
@@ -38,13 +36,11 @@ export default {
 		},
 	},
 	computed: {
-		logo_Color() {
-			if (this.active) {
-				return "#0E1518";
-			} else {
-				return "#ffffff";
-			}
-		},
+    ...mapState(usePagesStore, ["site_settings"]),
+
+    show_Animation() {
+      return !this.site_settings.welcome && this.site_settings.logo_anim;
+    }
 	},
 };
 </script>
@@ -62,8 +58,45 @@ export default {
 	cursor: pointer;
 }
 
+.logo_svg{
+  width: 25px;
+	height: 28px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 0.75;
+	stroke-linejoin: "bevel";
+}
+
 .card_active {
 	background: #ffffff;
-	color: #0e1518;
 }
+.card_active > svg {
+  stroke: #0E1518;
+}
+
+.animation__active  {
+  animation-name: active_back;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
+  animation-delay: 0.8s;
+}
+
+@keyframes active_back{
+0%{ background: transparent; }
+20%{ background: #ffffff; }
+40%{ background: #ffffff; }
+100%{ background: transparent; }
+}
+
+/* .animation__active > svg  {
+  animation-name: active_stroke;
+  animation-duration: 1s;
+}
+
+@keyframes active_stroke{
+0%{ stroke: #ffffff; }
+50%{ stroke: #0E1518; }
+100%{ stroke: #ffffff; }
+} */
+
 </style>
