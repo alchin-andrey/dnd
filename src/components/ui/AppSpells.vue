@@ -1380,7 +1380,6 @@ export default {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	/* gap: 4px; */
 }
 .gap-12 {
 	gap: 12px;
