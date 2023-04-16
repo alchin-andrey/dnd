@@ -7,9 +7,9 @@
 					<a
 						class="link-pad"
 						target="_blank"
-						href="https://www.patreon.com/dndme"
+						href="https://www.buymeacoffee.com/dndme"
 					>
-						Patreon ↗
+					    P̶a̶t̶r̶e̶o̶n̶ Buy Me a Coffee ↗
 					</a>
 				</my-selection-card>
 
