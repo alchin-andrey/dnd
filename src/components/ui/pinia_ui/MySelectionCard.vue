@@ -8,8 +8,8 @@
 			basic: basic,
 			selection_card_active: get_Active,
 			link: link,
-      copy_card: copy,
-      red_card: reset,
+      		copy_card: copy,
+      		red_card: reset,
 		}"
 	>
   <div v-if="reset || arrow || plus" class="copy_icon">
@@ -18,7 +18,7 @@
       viewBox="0 0 18 18"
       xmlns="http://www.w3.org/2000/svg"
       v-html="ui_icon[img_Icon]"
-    />
+    ></svg>
   </div>
 		<div v-if="copy" class="copy_icon">
 			<transition name="mode-fade" mode="out-in">
