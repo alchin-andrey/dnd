@@ -27,10 +27,10 @@ export default {
             icon: ["🇷🇺", "🛳️", "🖕"],
             name: "русский",
         },
-        {
-            mark: "en",
-            icon: ["🇬🇧"],
-            name: "English",
-        },
+        // {
+        //     mark: "en",
+        //     icon: ["🇬🇧"],
+        //     name: "English",
+        // },
     ],
 };
