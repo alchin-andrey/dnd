@@ -97,7 +97,7 @@
                       viewBox="0 0 18 18"
                       xmlns="http://www.w3.org/2000/svg"
                       v-html="ui_icon.plus"
-                    />
+                    ></svg>
                 </div>
               </div>
             </div>
@@ -249,7 +249,7 @@
                 viewBox="0 0 18 18"
                 xmlns="http://www.w3.org/2000/svg"
                 v-html="ui_icon[icon_Svg]"
-              />
+              ></svg>
             </section>
             <!-- <transition name="scroll-packs"> -->
             <section

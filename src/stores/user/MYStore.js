@@ -286,6 +286,8 @@ export const useMYStore = defineStore({
 				DicStore.select_lang = PagesStore.site_settings.save.select_lang;
 				PagesStore.site_settings.save.select_lang = null;
 			}
+      const lang_true = DicStore.dic.lang.find(el => el.mark == DicStore.select_lang);
+      if (!lang_true) DicStore.select_lang = "ua_inrium";
 			PagesStore.links.stats_link = {};
 
       if(!this.MY.height) this.MY.height = FormStore.Get_Height;
