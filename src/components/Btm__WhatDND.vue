@@ -27,7 +27,6 @@ export default {
     ...mapActions(usePagesStore, ["goPage"]),
 
     getPage() {
-      console.log('this.page_Open:', this.page_Open)
       this.site_settings.old_page = this.page_Open;
       this.goPage('master_page');
       this.showHome();

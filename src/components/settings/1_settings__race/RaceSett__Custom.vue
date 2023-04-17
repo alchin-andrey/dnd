@@ -31,7 +31,6 @@ export default {
 		...mapState(useMYStore, ["MY", "MY_Race"]),
 
     getActive: (stor) => (list_el) => {
-      console.log(stor.custom.disclaimer)
       return stor.custom.select_list.some(item => {
         if (item.name) {
           return item.name == list_el.name

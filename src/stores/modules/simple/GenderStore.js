@@ -45,7 +45,6 @@ export const useGenderStore = defineStore({
     names_Arr() {
       const DicStore = useDicStore();
       const lang = DicStore.select_lang;
-      console.log(lang);
       const sex = this.sex_Char_Body;
       const arr = this.names[lang][sex];
       return arr;
