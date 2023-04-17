@@ -653,6 +653,7 @@ export default {
 
           color: {
             skin: [
+              color[2][1],
               color[1][4],
               color[1][5],
               color[2][4],
@@ -662,7 +663,7 @@ export default {
               color[0][6],
             ],
             eyes: [color[2][4], color[2][5]],
-            hair: [color[0][6], color[1][6], color[2][5], color[2][6]],
+            hair: [color[2][5], color[0][6], color[1][6], color[2][6]],
           },
 
           // stats: { wisdom: 1 },
@@ -1728,6 +1729,7 @@ export default {
           color[9][5],
         ],
         hair: [
+          color[2][2],
           color[2][5],
           color[0][0],
           color[0][1],
@@ -1745,7 +1747,6 @@ export default {
           color[1][6],
           color[2][0],
           color[2][1],
-          color[2][2],
           color[2][3],
           color[2][4],
           color[2][6],
