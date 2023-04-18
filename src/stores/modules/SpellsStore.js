@@ -25,13 +25,20 @@ export const useSpellsStore = defineStore({
 			return new_arr;
 		},
 
+    spells_Aim_Numb: (stor) => (name) => {
+      const MYStore = useMYStore();
+      const StatsStore = useStatsStore();
+			const mastery = MYStore.Mastery;
+			const stats_mod = StatsStore.stats_Mod(name);
+			return mastery + stats_mod;
+		},
+
     spells_Saving_Numb: (stor) => (name) => {
       const MYStore = useMYStore();
       const StatsStore = useStatsStore();
 			const KOF = 8;
-			// let attribute = this.spell_Attribute_MOD;
-			let mastery = MYStore.Mastery;
-			let stats_mod = StatsStore.stats_Mod(name);
+			const mastery = MYStore.Mastery;
+			const stats_mod = StatsStore.stats_Mod(name);
 			return KOF + mastery + stats_mod;
 		},
 
