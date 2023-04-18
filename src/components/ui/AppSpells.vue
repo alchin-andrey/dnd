@@ -723,7 +723,9 @@ export default {
 		},
 
     Saving_Numb() {
-      const attribute = this.spell_Attribute_MOD;
+	    const primary_attribute = this.Spell_Index.spell_attribute;
+      const secondary_attribute = this.spell_Attribute_MOD;
+      const attribute = primary_attribute ?? secondary_attribute;
       return this.spells_Saving_Numb(attribute);
     },
 
