@@ -1,5 +1,5 @@
 <template>
-	<my-selection-card no_blur :passive="pass_boll_link" :active_boll_link="active_boll_link">
+	<my-selection-card no_blur :passive="pass_boll_link" :active_boll_link="active_boll_link" banned>
 		<!-- //NOTE - Text -->
 		<my-card-text
 			v-if="custom.name || custom.details"

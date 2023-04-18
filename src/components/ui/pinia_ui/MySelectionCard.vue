@@ -3,6 +3,7 @@
 		class="pasive_card"
 		:class="{
 			active_card: !passive && !basic,
+      'banned-cursor': passive && banned,
 			colors_card: colors_card,
 			no_blur: no_blur,
 			basic: basic,
@@ -52,6 +53,10 @@ export default {
 	},
 	props: {
 		passive: {
+			type: Boolean,
+			default: false,
+		},
+		banned: {
 			type: Boolean,
 			default: false,
 		},
@@ -208,6 +213,10 @@ export default {
 .mode-fade-enter-from,
 .mode-fade-leave-to {
 	opacity: 0;
+}
+
+.banned-cursor {
+	cursor: not-allowed;
 }
 
 </style>
