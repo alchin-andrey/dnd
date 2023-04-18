@@ -752,6 +752,7 @@ export default {
       expanded: "spell_faerie_fire_0_expanded", // полное описание
 
       type: "evocation",
+      slot_type: "faerie_fire_0_slot",
       classes: [],
 
       cast_time: "action",
@@ -786,6 +787,54 @@ export default {
       impact_size_saved: null,
 
       spell_attribute: "charisma",
+    },
+  ],
+
+  minor_illusion_gnome: [
+    {      
+      h: {ua: 848, ru: 848},
+      link: "minor_illusion_gnome",
+      name: "spell_minor_illusion_gnome",
+      details: "spell_minor_illusion_details",
+      expanded: "spell_minor_illusion_expanded", // полное описание
+
+      type: "illusion",
+      classes: ["bard", "sorcerer", "warlock", "wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+
+      parts: ["focus", "somatic"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: 30,
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      // рассчет урона
+
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "investigation",
+      impact_size_saved: null,
+
+      spell_attribute: "intelligence",
     },
   ],
 
@@ -15253,8 +15302,6 @@ export default {
       saving_need: true,
       saving_attribute: "investigation",
       impact_size_saved: null,
-
-      spell_attribute: "intelligence",
     },
   ],
 

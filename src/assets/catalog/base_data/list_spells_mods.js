@@ -75,5 +75,15 @@ export default {
       cast_duration_units_plus: "plus_10_min",
       spell_attribute: "intelligence",
     },
+    {
+      id: 9,
+      expanded_extra: "spell_attribute_intelligence_saving",
+      spell_attribute: "intelligence",
+    },
+    {
+      id: 10,
+      expanded_extra: "spell_attribute_intelligence_aim",
+      spell_attribute: "intelligence",
+    },
   ]
 };

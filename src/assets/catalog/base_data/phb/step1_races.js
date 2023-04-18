@@ -6,6 +6,7 @@ import weaponry from "@/assets/catalog/base_data/kinds_weapons.js";
 import tool from "@/assets/catalog/base_data/kinds_tools.js";
 import armory from "@/assets/catalog/base_data/kinds_armor.js";
 import backstory from "@/assets/catalog/base_data/phb/list_backstories.js";
+import mods from "@/assets/catalog/base_data/list_spells_mods.js";
 
 export default {
 
@@ -94,161 +95,7 @@ export default {
           ],
 
           spells: [
-            //NOTE - ДЛЯ ОТЛАДКИ ------
-
-            // По левелу перса
-
-            // {
-            //   level: 1,
-            //   spell: spells.detect_magic_warlock,
-            // },
-
-            // {
-            //   level: 2,
-            //   spell: spells.wild_shape,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.poison_breath_cone,
-            // },
-
-            // // По классовой бабуйне
-
-            // {
-            //   level: 1,
-            //   spell: spells.rage,
-            // },
-
-            // String (первая часть, которая чаще всего с "×")
-
-            // {
-            //   level: 1,
-            //   spell: spells.acid_splash,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.eldritch_blast,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.bless,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.cordon_of_arrows,
-            // },
-
-            // {
-            //   level: 2,
-            //   spell: spells.wild_shape,
-            // },
-
-            // {
-            //   level: 2,
-            //   spell: spells.wild_shape_combat,
-            // },
-
-            // {
-            //   level: 2,
-            //   spell: spells.divine_channel_undead,
-            // },
-
-            // {
-            //   level: 10,
-            //   spell: spells.divine_intervention,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.create_or_destroy_water,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.create_or_destroy_water,
-            // },
-
-            // //Num
-
-            // {
-            //   level: 1,
-            //   spell: spells.flame_blade,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.hellish_rebuke,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.hellish_rebuke,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.color_spray,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.aid,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.prayer_of_healing,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.gust_of_wind,
-            // },
-
-            // //Pls
-
-            // {
-            //   level: 1,
-            //   spell: spells.armor_of_agathys,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.elk_knock,
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.divine_channel_devotion_1,
-            // },
-
-            // //Скобочки
-
-            // {
-            //   level: 1,
-            //   spell: spells.hunters_mark, //spell_duration
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.hex, //spell_duration
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.fog_cloud, //aoe_size
-            // },
-
-            // {
-            //   level: 1,
-            //   spell: spells.animal_messenger, //spell_duration
-            // },
-
-            //NOTE - Для отладки ------------------
-
-            //*АКТУАЛЬНІ! Разкомментировать после отладки
+            
             {
               level: 1,
               spell: spells.toy,
@@ -291,7 +138,7 @@ export default {
           spells: [
             {
               level: 1,
-              spell: spells.minor_illusion,
+              spell: spells.minor_illusion_gnome,
             },
           ],
         },
@@ -1869,68 +1716,68 @@ export default {
               list: [
                 // spells[0] wizard
                 {
-                  name_set: spells.acid_splash[0].name,
-                  spells: [{ spell: spells.acid_splash }],
-                },
-                {
-                  name_set: spells.mage_hand[0].name,
-                  spells: [{ spell: spells.mage_hand }],
-                },
-                {
                   name_set: spells.friends[0].name,
                   spells: [{ spell: spells.friends }],
-                },
-                {
-                  name_set: spells.blade_ward[0].name,
-                  spells: [{ spell: spells.blade_ward }],
-                },
-                {
-                  name_set: spells.chill_touch[0].name,
-                  spells: [{ spell: spells.chill_touch }],
-                },
-                {
-                  name_set: spells.ray_of_frost[0].name,
-                  spells: [{ spell: spells.ray_of_frost }],
-                },
-                {
-                  name_set: spells.minor_illusion[0].name,
-                  spells: [{ spell: spells.minor_illusion }],
-                },
-                {
-                  name_set: spells.true_strike[0].name,
-                  spells: [{ spell: spells.true_strike }],
-                },
-                {
-                  name_set: spells.fire_bolt[0].name,
-                  spells: [{ spell: spells.fire_bolt }],
-                },
-                {
-                  name_set: spells.dancing_lights[0].name,
-                  spells: [{ spell: spells.dancing_lights }],
-                },
-                {
-                  name_set: spells.mending[0].name,
-                  spells: [{ spell: spells.mending }],
-                },
-                {
-                  name_set: spells.light[0].name,
-                  spells: [{ spell: spells.light }],
                 },
                 {
                   name_set: spells.message[0].name,
                   spells: [{ spell: spells.message }],
                 },
                 {
+                  name_set: spells.mage_hand[0].name,
+                  spells: [{ spell: spells.mage_hand }],
+                },
+                {
+                  name_set: spells.mending[0].name,
+                  spells: [{ spell: spells.mending }],
+                },
+                {
                   name_set: spells.prestidigitation[0].name,
                   spells: [{ spell: spells.prestidigitation }],
                 },
                 {
+                  name_set: spells.dancing_lights[0].name,
+                  spells: [{ spell: spells.dancing_lights }],
+                },
+                {
+                  name_set: spells.light[0].name,
+                  spells: [{ spell: spells.light, mod: mods.m[9],}],
+                },
+                {
+                  name_set: spells.minor_illusion[0].name,
+                  spells: [{ spell: spells.minor_illusion, mod: mods.m[9],}],
+                },
+                {
+                  name_set: spells.true_strike[0].name,
+                  spells: [{ spell: spells.true_strike }],
+                },
+                {
+                  name_set: spells.blade_ward[0].name,
+                  spells: [{ spell: spells.blade_ward }],
+                },
+                {
+                  name_set: spells.acid_splash[0].name,
+                  spells: [{ spell: spells.acid_splash, mod: mods.m[9],}],
+                },
+                {
+                  name_set: spells.ray_of_frost[0].name,
+                  spells: [{ spell: spells.ray_of_frost, mod: mods.m[10],}],
+                },
+                {
+                  name_set: spells.chill_touch[0].name,
+                  spells: [{ spell: spells.chill_touch, mod: mods.m[10],}],
+                },
+                {
                   name_set: spells.shocking_grasp[0].name,
-                  spells: [{ spell: spells.shocking_grasp }],
+                  spells: [{ spell: spells.shocking_grasp, mod: mods.m[10],}],
+                },
+                {
+                  name_set: spells.fire_bolt[0].name,
+                  spells: [{ spell: spells.fire_bolt, mod: mods.m[10],}],
                 },
                 {
                   name_set: spells.poison_spray[0].name,
-                  spells: [{ spell: spells.poison_spray }],
+                  spells: [{ spell: spells.poison_spray, mod: mods.m[9],}],
                 },
               ],
             },
@@ -2139,6 +1986,25 @@ export default {
             },
           ],
 
+          charges: [
+            {
+              level: 3,
+              name: "faerie_fire_0_slots",
+              type: "long_rest",
+              list: [
+                ["", 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+              ],
+            },
+            {
+              level: 5,
+              name: "darkness_tiefling_slots",
+              type: "long_rest",
+              list: [
+                ["", 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+              ],
+            },
+          ],
+
           spells: [
             {
               level: 1,
@@ -2149,7 +2015,6 @@ export default {
               level: 3,
               spell: spells.faerie_fire_0,
             },
-
             {
               level: 5,
               spell: spells.darkness_tiefling,

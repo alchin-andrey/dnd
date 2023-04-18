@@ -1229,6 +1229,7 @@ export default {
   spell_music_box_expanded: spells.music_box_expanded,
 
   spell_minor_illusion: spells.minor_illusion,
+  spell_minor_illusion_gnome: spells.minor_illusion_gnome,
   spell_minor_illusion_details: spells.minor_illusion_details,
   spell_minor_illusion_expanded: spells.minor_illusion_expanded,
 
@@ -6091,4 +6092,10 @@ export default {
   feat_custom_stalker_details:"Ви — експерт у вистеженні здобичі. Під час полювання ви почуваєтеся впевненіше, ніж удома, і ваша здобич рідко услизає від вас.",
 
   on_survival_stalker: "на перевірки Виживання для вистеження істоти, побаченої вами за останню добу",
+
+  spell_attribute_intelligence_saving: "Складність Випробування для цього закляття залежить від модифікатора Інтелекту.",
+  spell_attribute_intelligence_aim: "Влучність цього закляття залежить від модифікатора Інтелекту.",
+
+  faerie_fire_0_slots: "Вогники фей",
+  faerie_fire_0_slot: "1× Вогники фей",
 };
