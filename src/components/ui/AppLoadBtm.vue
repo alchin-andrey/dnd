@@ -7,7 +7,7 @@
 				viewBox="0 0 18 18"
 				xmlns="http://www.w3.org/2000/svg"
 				v-html="ui_icon.download"
-			/>
+			></svg>
 		</div>
     <div class="load_btm">
     <div class="load-progress" :style="{ width: load_Progress,}"/>
@@ -116,6 +116,13 @@ export default {
 	width: 18px;
 	height: 18px;
 	fill: white;
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	/* bottom: 50%; */
+	-webkit-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
 }
 
 .main_svg {
