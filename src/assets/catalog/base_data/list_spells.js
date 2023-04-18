@@ -145,8 +145,9 @@ export default {
 
       saving_need: true,
       saving_attribute: "charisma",
-
       impact_size_saved: "÷2",
+
+      spell_attribute: "charisma",
     },
   ],
 
@@ -191,6 +192,8 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+
+      spell_attribute: "constitution",
     },
   ],
 
@@ -235,6 +238,8 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+
+      spell_attribute: "constitution",
     },
   ],
 
@@ -279,6 +284,8 @@ export default {
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
+
+      spell_attribute: "constitution",
     },
   ],
 
@@ -323,6 +330,8 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+
+      spell_attribute: "constitution",
     },
   ],
 
@@ -367,6 +376,8 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
+
+      spell_attribute: "constitution",
     },
   ],
 
@@ -411,6 +422,8 @@ export default {
       saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
+
+      spell_attribute: "constitution",
     },
   ],
 
@@ -771,7 +784,8 @@ export default {
       saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
-      // рассчет урона если спас пройден
+
+      spell_attribute: "charisma",
     },
   ],
 
@@ -15237,8 +15251,10 @@ export default {
       impact_size_pls: null,
 
       saving_need: true,
-      saving_attribute: "intelligence",
+      saving_attribute: "investigation",
       impact_size_saved: null,
+
+      spell_attribute: "intelligence",
     },
   ],
 

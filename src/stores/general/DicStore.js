@@ -6,7 +6,7 @@ export const useDicStore = defineStore({
 	id: "DicStore",
 	state: () => ({
 		dic: dic,
-    select_lang: "ua_inrium",
+    select_lang: "ua",
 	}),
 
   persist: {
