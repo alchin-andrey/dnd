@@ -58,7 +58,8 @@ export default {
 }
 
 .slide-fade-left-leave-active {
-  transition: all 0.8s cubic-bezier(.48,-0.25,.74,.83);
+  /* transition: all 0.8s cubic-bezier(.48,-0.25,.74,.83); */
+  transition: all 0.8s cubic-bezier(.7,0,.74,.83);
 }
 
 .slide-fade-left-enter-from,
