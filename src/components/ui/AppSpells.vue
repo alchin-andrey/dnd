@@ -64,7 +64,7 @@
           <magic-attribute
             v-if="Spell_Index.aim_need"
             title="aim_bonus"
-            :numb="Mastery"
+            :numb="aim_Numb"
             plus
             blank_print
           />
@@ -190,7 +190,7 @@
           <magic-attribute
             v-if="Spell_Index.aim_need"
             title="aim_bonus"
-            :numb="Mastery"
+            :numb="aim_Numb"
             plus
           />
           <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
@@ -371,7 +371,7 @@
           <magic-attribute
             v-if="Spell_Index.aim_need"
             title="aim_bonus"
-            :numb="Mastery"
+            :numb="aim_Numb"
             plus
           />
           <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
@@ -479,7 +479,7 @@ export default {
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj", "stats_Full_Name"]),
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
-		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
+		...mapState(useSpellsStore, ["spells_Saving_Numb", "spells_Aim_Numb"]),
 
     print_Spell_Link_Qr() {
       const site = 'dndme.club/#';
@@ -724,10 +724,16 @@ export default {
 
     Saving_Numb() {
 	    const primary_attribute = this.Spell_Index.spell_attribute;
-      console.log("🚀", primary_attribute)
       const secondary_attribute = this.spell_Attribute_MOD;
       const attribute = primary_attribute ?? secondary_attribute;
       return this.spells_Saving_Numb(attribute);
+    },
+
+    aim_Numb() {
+	    const primary_attribute = this.Spell_Index.spell_attribute;
+      const secondary_attribute = this.spell_Attribute_MOD;
+      const attribute = primary_attribute ?? secondary_attribute;
+      return this.spells_Aim_Numb(attribute);
     },
 
 		t_Save() {
