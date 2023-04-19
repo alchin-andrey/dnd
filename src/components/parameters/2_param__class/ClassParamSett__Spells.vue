@@ -103,7 +103,7 @@ export default {
 		},
 	},
 	computed: {
-		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
+		...mapState(useMYStore, ["MY", "level_Filter_Arr", "MY_Class"]),
 		...mapState(useChargesStore, [
 			"charges_Class_Spell_Slots",
 			"charges_Class_Spell_Manna",
@@ -174,13 +174,9 @@ export default {
 	methods: {
 		delSpell(item) {
 			const item_name = item.spell.find((el) => el.name).name;
-			const save_spell =
-				this.MY._settings_class[this.MY_Class.name][
-					this.spells_setting.id_link
-				];
+			const save_spell = this.MY._settings_class[this.MY_Class.name][this.spells_setting.id_link];
 			const new_arr = save_spell.filter((el) => el.name_set !== item_name);
-			this.MY._settings_class[this.MY_Class.name][this.spells_setting.id_link] =
-				new_arr;
+			this.MY._settings_class[this.MY_Class.name][this.spells_setting.id_link] = new_arr;
 		},
 	},
 };
