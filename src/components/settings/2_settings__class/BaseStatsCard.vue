@@ -9,7 +9,7 @@
 				viewBox="0 0 18 18"
 				xmlns="http://www.w3.org/2000/svg"
 				v-html="stats_icon[stats_name]"
-			/>
+			></svg>
 			<!-- <img :src="icon_Image" :alt="icon" /> -->
 			<div class="item">
 				{{ t_Title }}<span>{{ t_Type }}</span>

@@ -25,7 +25,7 @@
 							viewBox="0 0 18 18"
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="ui_icon.plus"
-						/>
+						></svg>
 					</div>
 					<div>
 						<div class="cell-free" v-for="n in 3" />
@@ -38,7 +38,7 @@
 							viewBox="0 0 18 18"
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="ui_icon.minus"
-						/>
+						></svg>
 					</div>
 					<div>
 						<div class="cell-free" v-for="n in 3" />

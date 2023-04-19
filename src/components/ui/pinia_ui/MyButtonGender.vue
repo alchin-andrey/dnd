@@ -6,7 +6,7 @@
         viewBox="0 0 72 72"
         xmlns="http://www.w3.org/2000/svg"
         v-html="gender_icon[img]"
-        />
+        ></svg>
     </div>
 		<!-- <img :src="get_Image" :alt="img" /> -->
 	</div>

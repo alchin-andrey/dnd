@@ -1,19 +1,13 @@
 <template>
-  <div v-if="only_numb">{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}</div>
-	<div v-else class="column" 
-  :class="{ passive: numb == 0 && passive, 'jbm-300': !text_stule,}">
+	<div v-if="only_numb">{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}</div>
+	<div v-else class="column" :class="{ passive: numb == 0 && passive, 'jbm-300': !text_stule, }">
 		<div class="column_value">
 			<section class="flex_row">
 				<div v-if="icon_Shown" class="icon">
-					<svg class="main_svg"
-						viewBox="0 0 18 18"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-						v-html="atribute_icon[icon_Image]"
-					/>
+					<svg class="main_svg" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+						v-html="atribute_icon[icon_Image]"></svg>
 				</div>
-				<div class="item"
-        :class="{'int-700': text_stule}">
+				<div class="item" :class="{ 'int-700': text_stule }">
 					{{ t_Title }}<span v-if="t_Type">{{ t_Type }}</span>
 				</div>
 			</section>
@@ -22,17 +16,11 @@
 			</div>
 			<div class="numb jbm-300" v-if="price">
 				{{ Price }}
-        {{ em_Before }}
-			<emoji
-				v-if="em_Upd"
-				:data="emojiIndex"
-				:emoji="em_Upd"
-				:set="set_emoji"
-				:size="11"
-			/>{{ em_After }}
+				{{ em_Before }}
+				<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="11" />{{ em_After }}
 				<!-- <emoji :data="emojiIndex" :emoji="em_Price" :set="set_emoji" :size="11" /> -->
 			</div>
-			<div class="numb jbm-300" :class="{'grey-2': Numb == 0}" v-else>
+			<div class="numb jbm-300" :class="{ 'grey-2': Numb == 0 }" v-else>
 				{{ Prefix }}{{ Numb }}<span class="small">{{ Dice }}</span>{{ Pls }} {{ Unit }}
 			</div>
 		</div>
@@ -41,7 +29,7 @@
 			<div class="cube_neg" v-for="n in cube_Negative" :key="n"></div>
 			<div class="cube_old" v-for="n in old_numb" :key="n"></div>
 			<div class="cube_zero" v-for="n in cube_Numb_Zero" :key="n"></div>
-      <div class="cube_save" v-for="n in cube_Save" :key="n"></div>
+			<div class="cube_save" v-for="n in cube_Save" :key="n"></div>
 		</div>
 	</div>
 </template>
@@ -91,7 +79,7 @@ export default {
 			type: String,
 			default: null,
 		},
-    pls: {
+		pls: {
 			type: Number,
 			default: null,
 		},
@@ -123,11 +111,11 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    text_stule: {
+		text_stule: {
 			type: Boolean,
 			default: false,
 		},
-    only_numb: {
+		only_numb: {
 			type: Boolean,
 			default: false,
 		},
@@ -155,31 +143,31 @@ export default {
 		},
 
 		Price() {
-      let res = null;
-      if (this.price % 100 == 0) {
-        res = this.price / 100;
-      } else if (this.price % 10 == 0) {
-        res = this.price / 10;
-      } else {
-        res = this.price;
-      }
-      return res;
+			let res = null;
+			if (this.price % 100 == 0) {
+				res = this.price / 100;
+			} else if (this.price % 10 == 0) {
+				res = this.price / 10;
+			} else {
+				res = this.price;
+			}
+			return res;
 			// return this.price ? this.price : this.numb;
 		},
 
-    em_Price() {
-      let emoji = null;
-      if (this.price % 100 == 0) {
-        emoji = "coin_gold_short";
-      } else if (this.price % 10 == 0) {
-        emoji = "coin_silver_short";
-      } else {
-        emoji = "coin_copper_short";
-      }
-      return this.t(emoji);
-    },
+		em_Price() {
+			let emoji = null;
+			if (this.price % 100 == 0) {
+				emoji = "coin_gold_short";
+			} else if (this.price % 10 == 0) {
+				emoji = "coin_silver_short";
+			} else {
+				emoji = "coin_copper_short";
+			}
+			return this.t(emoji);
+		},
 
-    em_Upd() {
+		em_Upd() {
 			return this.updEmoji(this.em_Price);
 		},
 
@@ -207,12 +195,12 @@ export default {
 			return this.dice ? `d${this.dice}` : null;
 		},
 
-    Pls() {
-      if (this.pls) {
-        let symbol = this.pls >=0 ? '+' : null;
-        return symbol + this.pls;
-      }
-      return null
+		Pls() {
+			if (this.pls) {
+				let symbol = this.pls >= 0 ? '+' : null;
+				return symbol + this.pls;
+			}
+			return null
 		},
 
 		icon_Shown() {
@@ -246,13 +234,13 @@ export default {
 		},
 
 		cube_Numb_Zero() {
-      if (this.dice) {
+			if (this.dice) {
 				return this.dice * this.numb - this.numb;
 			}
 		},
 
-    cube_Save() {
-      return this.save_bool ? this.numb : null;
+		cube_Save() {
+			return this.save_bool ? this.numb : null;
 		},
 	},
 };
@@ -278,12 +266,12 @@ export default {
 	width: 230px;
 	display: flex;
 	justify-content: space-between;
-  
+
 	flex: 1 1 auto;
 }
 
 .flex_row {
-  display: flex;
+	display: flex;
 }
 
 .icon {
@@ -294,9 +282,9 @@ export default {
 }
 
 .main_svg {
-  width: 18px;
+	width: 18px;
 	height: 18px;
-  fill: white;
+	fill: white;
 }
 
 /* .active_svg {
@@ -306,8 +294,8 @@ export default {
 } */
 
 .item {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .item span {
@@ -366,7 +354,7 @@ export default {
 }
 
 .cube_save {
-  width: 8px;
+	width: 8px;
 	height: 8px;
 	border-radius: 2px;
 	background: #05ff00;

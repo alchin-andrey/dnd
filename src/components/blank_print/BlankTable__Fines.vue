@@ -11,7 +11,7 @@
 								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
 								v-html="atribute_icon.vision_night"
-							/>
+							></svg>
 						</div>
 						<div class="int-500-22">{{ t_Vision_Night }}</div>
 					</section>
@@ -27,8 +27,8 @@
 								:class="{ save_svg: save_Icon(skill_pass.mod) }"
 								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
-								v-html="stats_icon[skill_pass.mod]"
-							/>
+								v-html="stats_icon[skill_pass.mod]" 
+								></svg>
 						</div>
 						<div class="int-500-22">
 							{{ t_Skills_Passive(skill_pass.name) }}
@@ -43,7 +43,7 @@
 								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
 								v-html="stats_icon[MY_Class.spell_attribute]"
-							/>
+							></svg>
 						</div>
 						<div class="int-500-22">{{ t_Spells_Saving }}</div>
 					</section>
@@ -60,7 +60,7 @@
 							viewBox="0 0 18 18"
 							xmlns="http://www.w3.org/2000/svg"
 							v-html="fines_icon[fines.type]"
-						/>
+						></svg>
 					</div>
 					<!-- <div class="int-500-22 fines-text">{{ t_Fines(fines) }}</div> -->
 					<div class="int-500-22 fines-text">

@@ -17,7 +17,7 @@
         viewBox="0 0 18 18"
         xmlns="http://www.w3.org/2000/svg"
         v-html="fines_icon[fines.type]"
-      />
+      ></svg>
 		</div>
 		<div class="text int-400" :class="{ emoji_true: em_Upd }">
 			<span

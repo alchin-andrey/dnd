@@ -28,7 +28,7 @@
 					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
 					v-html="atribute_icon[icon_Image]"
-				/>
+				></svg>
 			</div>
 			<div class="title" :class="{'print-title': blank_print,}">
 				{{ t_Title }}

@@ -8,7 +8,7 @@
 					viewBox="0 0 18 18"
 					xmlns="http://www.w3.org/2000/svg"
 					v-html="stats_icon[icon_Svg]"
-				/>
+				></svg>
 			</div>
 			<div class="cell-item">{{ t_Title }}</div>
 		</section>

@@ -1,392 +1,226 @@
 <template>
-  <main v-if="blank_print" id="print_spell">
-    <div class="flex_col gap-52 int-500-22">
-      <section class="flex_col gap-8">
-        <div class="int-700-22 print-grey">{{ t_Type }} /</div>
-        <div class="int-700-22">
-          {{ em_Before
-          }}<emoji
-            v-if="em_Upd"
-            :data="emojiIndex"
-            :emoji="em_Upd"
-            :set="set_emoji"
-            :size="24"
-          />{{ em_After }} {{ name_Extra_MOD }}
-        </div>
-        <div class="text_print" v-html="t_Text"></div>
-      </section>
+	<main v-if="blank_print" id="print_spell">
+		<div class="flex_col gap-52 int-500-22">
+			<section class="flex_col gap-8">
+				<div class="int-700-22 print-grey">{{ t_Type }} /</div>
+				<div class="int-700-22">
+					{{ em_Before
+					}}
+					<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="24" />{{ em_After }} {{
+						name_Extra_MOD }}
+				</div>
+				<div class="text_print" v-html="t_Text"></div>
+			</section>
 
-      <section class="flex_col gap-10">
-        <AppPrintSpellMain title="parts" :text="t_Parts_Value" emoji />
-        <AppPrintSpellMain title="cast_time" :text="t_Cast_Value" />
-        <AppPrintSpellMain title="time" :text="t_Time_Value" />
-        <AppPrintSpellMain title="aim_target" :text="t_Target_Value" />
-        <AppPrintSpellMain v-if="t_Save_Print" title="saving" :text="t_Save_Print" />
-      </section>
+			<section class="flex_col gap-10">
+				<AppPrintSpellMain title="parts" :text="t_Parts_Value" emoji />
+				<AppPrintSpellMain title="cast_time" :text="t_Cast_Value" />
+				<AppPrintSpellMain title="time" :text="t_Time_Value" />
+				<AppPrintSpellMain title="aim_target" :text="t_Target_Value" />
+				<AppPrintSpellMain v-if="t_Save_Print" title="saving" :text="t_Save_Print" />
+			</section>
 
-      <section class="flex_col gap-8"
-          v-if="
-            Spell_Index.aim_need ||
-            Spell_Index.impact_type ||
-            Value_Ran ||
-            Spell_Index.aim_aoe
-          "
-        >
-          <magic-attribute
-            v-if="Spell_Index.impact_type"
-            :title="Spell_Index.impact_type"
-            :addition="Spell_Index.impact_damage_type"
-            :str="Value_Str"
-            :numb="Value_Num"
-            :dice="Value_Dic"
-            :pls="Value_Pls"
-            :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-            main
-            blank_print
-          />
-          <magic-attribute
-            v-if="Spell_Index.second_impact_type"
-            :title="Spell_Index.second_impact_type"
-            :addition="Spell_Index.second_impact_damage_type"
-            :numb="Spell_Index.second_impact_size_num"
-            :dice="Spell_Index.second_impact_size_dic"
-            :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-            main
-            blank_print
-          />
-          <magic-attribute
-            v-if="Spell_Index.aim_aoe"
-            title="aim_aoe"
-            :prefix="Spell_Index.aim_aoe"
-            :numb="by_Mana('aim_aoe_size')"
-            blank_print
-          />
-          <magic-attribute
-            v-if="Spell_Index.aim_need"
-            title="aim_bonus"
-            :numb="aim_Numb"
-            plus
-            blank_print
-          />
-          <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" blank_print/>
-        </section>
+			<section class="flex_col gap-8" v-if="
+				Spell_Index.aim_need ||
+				Spell_Index.impact_type ||
+				Value_Ran ||
+				Spell_Index.aim_aoe
+			">
+				<magic-attribute v-if="Spell_Index.impact_type" :title="Spell_Index.impact_type"
+					:addition="Spell_Index.impact_damage_type" :str="Value_Str" :numb="Value_Num" :dice="Value_Dic"
+					:pls="Value_Pls" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main blank_print />
+				<magic-attribute v-if="Spell_Index.second_impact_type" :title="Spell_Index.second_impact_type"
+					:addition="Spell_Index.second_impact_damage_type" :numb="Spell_Index.second_impact_size_num"
+					:dice="Spell_Index.second_impact_size_dic" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main
+					blank_print />
+				<magic-attribute v-if="Spell_Index.aim_aoe" title="aim_aoe" :prefix="Spell_Index.aim_aoe"
+					:numb="by_Mana('aim_aoe_size')" blank_print />
+				<magic-attribute v-if="Spell_Index.aim_need" title="aim_bonus" :numb="aim_Numb" plus blank_print />
+				<magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" blank_print />
+			</section>
 
-        <div class="flex_qr_wrapp">
-          <section class="flex_mana jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
-            
-            <div 
-            class="manna_bubble_print" 
-            :class="{manna_bubble_print_zero: t_Slot_Type == '0'}"  
-            v-if="spell_Slot_Type_MOD"
-            >
-            {{ t_Slot_Type }}
-            </div>
-            
-            <div class="flex_row gap-8" v-if="shown_Manna">
-              <div 
-              class="manna_bubble_print" 
-              :class="{manna_bubble_print_zero: Index == 0 }" 
-              >
-              {{ print_Manna }}
-              </div>
+			<div class="flex_qr_wrapp">
+				<section class="flex_mana jbm-500-22" v-if="spell_Slot_Type_MOD || shown_Manna">
 
-              <div class="manna_bubble_print jbm-500-40" v-if="print_Plus">
-                <div class="print_icon">
-                    <svg
-                      class="print-svg"
-                      viewBox="0 0 18 18"
-                      xmlns="http://www.w3.org/2000/svg"
-                      v-html="ui_icon.plus"
-                    ></svg>
-                </div>
-              </div>
-            </div>
-          </section>
-          <qrcode-vue :value="print_Spell_Link_Qr" :size="size" level="L" />
-        </div>
-    </div>
-  </main>
+					<div class="manna_bubble_print" :class="{ manna_bubble_print_zero: t_Slot_Type == '0' }"
+						v-if="spell_Slot_Type_MOD">
+						{{ t_Slot_Type }}
+					</div>
 
-    <main v-else-if="qr_form" id="qr_spell" class="flex_col gap-26">
-      <my-wrapper>
-          <div class="title_spell gray_2">{{ t_Type }} /</div>
-          <div class="title_spell">
-            {{ em_Before
-            }}<emoji
-              v-if="em_Upd"
-              :data="emojiIndex"
-              :emoji="em_Upd"
-              :set="set_emoji"
-              :size="emoji_size"
-            />{{ em_After }} {{ name_Extra_MOD }}
-          </div>
-        </my-wrapper>
-        <section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
-          <section
-            class="manna_bubble manna_bubble_active manna_bubble_str"
-            v-if="spell_Slot_Type_MOD"
-          >
-            {{ t_Slot_Type }}
-          </section>
-          <section class="manna_flex" v-if="shown_Manna">
-            <div
-              class="manna_bubble manna_bubble_choice"
-              v-for="n in Manna_Length"
-              :key="n"
-              @click="choiceManna(n)"
-              :class="{
-                manna_bubble_passive: n - 1 < Index,
-                manna_bubble_active: n - 1 === Mana_Numb,
-                manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === Mana_Numb),
-              }"
-            >
-              {{ n - 1 }}
-            </div>
-          </section>
-        </section>
-    
-        <div class="text_spell" v-html="t_Text"></div>
-    
-        <my-wrapper gap_6>
-          <my-spell-main title="parts" :text="t_Parts_Value" emoji />
-          <my-spell-main title="cast_time" :text="t_Cast_Value" />
-          <my-spell-main title="time" :text="t_Time_Value" />
-          <my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save" />
-        </my-wrapper>
-        <my-wrapper
-          v-if="
-            Spell_Index.aim_need ||
-            Spell_Index.impact_type ||
-            Value_Ran ||
-            Spell_Index.aim_aoe
-          "
-        >
-          <magic-attribute
-            v-if="Spell_Index.impact_type"
-            :title="Spell_Index.impact_type"
-            :addition="Spell_Index.impact_damage_type"
-            :str="Value_Str"
-            :numb="Value_Num"
-            :dice="Value_Dic"
-            :pls="Value_Pls"
-            :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-            main
-          />
-          <magic-attribute
-            v-if="Spell_Index.second_impact_type"
-            :title="Spell_Index.second_impact_type"
-            :addition="Spell_Index.second_impact_damage_type"
-            :numb="Spell_Index.second_impact_size_num"
-            :dice="Spell_Index.second_impact_size_dic"
-            :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-            main
-          />
-          <magic-attribute
-            v-if="Spell_Index.aim_aoe"
-            title="aim_aoe"
-            :prefix="Spell_Index.aim_aoe"
-            :numb="by_Mana('aim_aoe_size')"
-          />
-          <magic-attribute
-            v-if="Spell_Index.aim_need"
-            title="aim_bonus"
-            :numb="aim_Numb"
-            plus
-          />
-          <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
-        </my-wrapper>
-        <div class="hr"></div>
-        <div class="flex_col gap-16">
-          <div class="text_spell gray_4" v-html="t_Expanded"></div>
-          <div
-            class="text_spell rare-text"
-            v-if="mod_Expanded_Extra"
-            v-html="mod_Expanded_Extra"
-          />
-        </div>
-  </main>
+					<div class="flex_row gap-8" v-if="shown_Manna">
+						<div class="manna_bubble_print" :class="{ manna_bubble_print_zero: Index == 0 }">
+							{{ print_Manna }}
+						</div>
 
-  <main v-else id="site_spell">
-      <AppTooltip
-        class="relative marg_slow"
-        text="hint_over_limit"
-        :shown="overflow_Save && !param"
-        warn
-        :style="{ margin: getMarg }"
-      >
-        <div
-          :class="{
-            'lvl-dot': shown_Level_Dot(spell_obj),
-            'lvl-dot-param': param,
-          }"
-          class="flex_spell"
-          @mouseover="hoverIn_Full()"
-          @mouseleave="hoverOut()"
-          @click="showDialog_Full()"
-        >
-          <div ref="stripe" class="side_stripe"></div>
-          <div class="int-400 flex_col" :class="{ passive: passive }">
-            <section class="flex_title">
-              <div class="title_spell h_18" :class="{ 'rare-text': overflow_Save }">
-                {{ em_Before
-                }}<emoji
-                  v-if="em_Upd"
-                  :data="emojiIndex"
-                  :emoji="em_Upd"
-                  :set="set_emoji"
-                  :size="emoji_size"
-                />{{ em_After }} {{ name_Extra_MOD }}
-              </div>
-              <svg
-                class="icon_svg"
-                :class="{
-                  passive: full_select,
-                }"
-                @click.stop
-                @mouseover="hoverIn_Select()"
-                @mouseleave="hoverOut()"
-                @click="btnClick()"
-                viewBox="0 0 18 18"
-                xmlns="http://www.w3.org/2000/svg"
-                v-html="ui_icon[icon_Svg]"
-              ></svg>
-            </section>
-            <!-- <transition name="scroll-packs"> -->
-            <section
-              class="flex_col gap-12"
-              :class="{
-                'marg-top-4': !this.only_title,
-                null_height: this.only_title,
-                full_height: this.only_title && this.isShown,
-              }"
-            >
-              <div class="text_spell" v-html="t_Text"></div>
-              <magic-attribute
-                v-if="Spell_Index.impact_type"
-                :title="Spell_Index.impact_type"
-                :addition="Spell_Index.impact_damage_type"
-                :str="Value_Str"
-                :numb="Value_Num"
-                :dice="Value_Dic"
-                :pls="Value_Pls"
-                :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-                main
-                not_dot
-              />
-              <magic-attribute
-                v-if="Spell_Index.second_impact_type"
-                :title="Spell_Index.second_impact_type"
-                :addition="Spell_Index.second_impact_damage_type"
-                :numb="Spell_Index.second_impact_size_num"
-                :dice="Spell_Index.second_impact_size_dic"
-                :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-                main
-                not_dot
-              />
-            </section>
-            <!-- </transition> -->
-          </div>
-        </div>
-      </AppTooltip>
-      <my-dialog-spell v-model:show="dialogVisible" v-model:mana="mana_numb">
-        <my-wrapper>
-          <div class="title_spell gray_2">{{ t_Type }} /</div>
-          <div class="title_spell">
-            {{ em_Before
-            }}<emoji
-              v-if="em_Upd"
-              :data="emojiIndex"
-              :emoji="em_Upd"
-              :set="set_emoji"
-              :size="emoji_size"
-            />{{ em_After }} {{ name_Extra_MOD }}
-          </div>
-        </my-wrapper>
-        <section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
-          <section
-            class="manna_bubble manna_bubble_active manna_bubble_str"
-            v-if="spell_Slot_Type_MOD"
-          >
-            {{ t_Slot_Type }}
-          </section>
-          <section class="manna_flex" v-if="shown_Manna">
-            <div
-              class="manna_bubble manna_bubble_choice"
-              v-for="n in Manna_Length"
-              :key="n"
-              @click="choiceManna(n)"
-              :class="{
-                manna_bubble_passive: n - 1 < Index,
-                manna_bubble_active: n - 1 === mana_numb,
-                manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === mana_numb),
-              }"
-            >
-              {{ n - 1 }}
-            </div>
-          </section>
-        </section>
-    
-        <div class="text_spell" v-html="t_Text"></div>
-    
-        <my-wrapper gap_6>
-          <my-spell-main title="parts" :text="t_Parts_Value" emoji />
-          <my-spell-main title="cast_time" :text="t_Cast_Value" />
-          <my-spell-main title="time" :text="t_Time_Value" />
-          <my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save" />
-        </my-wrapper>
-        <my-wrapper
-          v-if="
-            Spell_Index.aim_need ||
-            Spell_Index.impact_type ||
-            Value_Ran ||
-            Spell_Index.aim_aoe
-          "
-        >
-          <magic-attribute
-            v-if="Spell_Index.impact_type"
-            :title="Spell_Index.impact_type"
-            :addition="Spell_Index.impact_damage_type"
-            :str="Value_Str"
-            :numb="Value_Num"
-            :dice="Value_Dic"
-            :pls="Value_Pls"
-            :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-            main
-          />
-          <magic-attribute
-            v-if="Spell_Index.second_impact_type"
-            :title="Spell_Index.second_impact_type"
-            :addition="Spell_Index.second_impact_damage_type"
-            :numb="Spell_Index.second_impact_size_num"
-            :dice="Spell_Index.second_impact_size_dic"
-            :feet="Spell_Index.impact_size_foo?.includes('Feet')"
-            main
-          />
-          <magic-attribute
-            v-if="Spell_Index.aim_aoe"
-            title="aim_aoe"
-            :prefix="Spell_Index.aim_aoe"
-            :numb="by_Mana('aim_aoe_size')"
-          />
-          <magic-attribute
-            v-if="Spell_Index.aim_need"
-            title="aim_bonus"
-            :numb="aim_Numb"
-            plus
-          />
-          <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
-        </my-wrapper>
-        <div class="hr"></div>
-        <div class="flex_col gap-16">
-          <div class="text_spell gray_4" v-html="t_Expanded"></div>
-          <div
-            class="text_spell rare-text"
-            v-if="mod_Expanded_Extra"
-            v-html="mod_Expanded_Extra"
-          />
-        </div>
-      </my-dialog-spell>
-  </main>
+						<div class="manna_bubble_print jbm-500-40" v-if="print_Plus">
+							<div class="print_icon">
+								<svg class="print-svg" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"
+									v-html="ui_icon.plus"></svg>
+							</div>
+						</div>
+					</div>
+				</section>
+				<qrcode-vue :value="print_Spell_Link_Qr" :size="size" level="L" />
+			</div>
+		</div>
+	</main>
+
+	<main v-else-if="qr_form" id="qr_spell" class="flex_col gap-26">
+		<my-wrapper>
+			<div class="title_spell gray_2">{{ t_Type }} /</div>
+			<div class="title_spell">
+				{{ em_Before
+				}}
+				<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="emoji_size" />{{ em_After }}
+				{{ name_Extra_MOD }}
+			</div>
+		</my-wrapper>
+		<section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
+			<section class="manna_bubble manna_bubble_active manna_bubble_str" v-if="spell_Slot_Type_MOD">
+				{{ t_Slot_Type }}
+			</section>
+			<section class="manna_flex" v-if="shown_Manna">
+				<div class="manna_bubble manna_bubble_choice" v-for="n in Manna_Length" :key="n" @click="choiceManna(n)"
+					:class="{
+						manna_bubble_passive: n - 1 < Index,
+						manna_bubble_active: n - 1 === Mana_Numb,
+						manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === Mana_Numb),
+					}">
+					{{ n - 1 }}
+				</div>
+			</section>
+		</section>
+
+		<div class="text_spell" v-html="t_Text"></div>
+
+		<my-wrapper gap_6>
+			<my-spell-main title="parts" :text="t_Parts_Value" emoji />
+			<my-spell-main title="cast_time" :text="t_Cast_Value" />
+			<my-spell-main title="time" :text="t_Time_Value" />
+			<my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save" />
+		</my-wrapper>
+		<my-wrapper v-if="
+			Spell_Index.aim_need ||
+			Spell_Index.impact_type ||
+			Value_Ran ||
+			Spell_Index.aim_aoe
+		">
+			<magic-attribute v-if="Spell_Index.impact_type" :title="Spell_Index.impact_type"
+				:addition="Spell_Index.impact_damage_type" :str="Value_Str" :numb="Value_Num" :dice="Value_Dic"
+				:pls="Value_Pls" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main />
+			<magic-attribute v-if="Spell_Index.second_impact_type" :title="Spell_Index.second_impact_type"
+				:addition="Spell_Index.second_impact_damage_type" :numb="Spell_Index.second_impact_size_num"
+				:dice="Spell_Index.second_impact_size_dic" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main />
+			<magic-attribute v-if="Spell_Index.aim_aoe" title="aim_aoe" :prefix="Spell_Index.aim_aoe"
+				:numb="by_Mana('aim_aoe_size')" />
+			<magic-attribute v-if="Spell_Index.aim_need" title="aim_bonus" :numb="aim_Numb" plus />
+			<magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
+		</my-wrapper>
+		<div class="hr"></div>
+		<div class="flex_col gap-16">
+			<div class="text_spell gray_4" v-html="t_Expanded"></div>
+			<div class="text_spell rare-text" v-if="mod_Expanded_Extra" v-html="mod_Expanded_Extra" />
+		</div>
+	</main>
+
+	<main v-else id="site_spell">
+		<AppTooltip class="relative marg_slow" text="hint_over_limit" :shown="overflow_Save && !param" warn
+			:style="{ margin: getMarg }">
+			<div :class="{
+				'lvl-dot': shown_Level_Dot(spell_obj),
+				'lvl-dot-param': param,
+			}" class="flex_spell" @mouseover="hoverIn_Full()" @mouseleave="hoverOut()" @click="showDialog_Full()">
+				<div ref="stripe" class="side_stripe"></div>
+				<div class="int-400 flex_col" :class="{ passive: passive }">
+					<section class="flex_title">
+						<div class="title_spell h_18" :class="{ 'rare-text': overflow_Save }">
+							{{ em_Before
+							}}
+							<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="emoji_size" />{{
+								em_After }} {{ name_Extra_MOD }}
+						</div>
+						<svg class="icon_svg" :class="{
+							passive: full_select,
+						}" @click.stop @mouseover="hoverIn_Select()" @mouseleave="hoverOut()" @click="btnClick()"
+							viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" v-html="ui_icon[icon_Svg]"></svg>
+					</section>
+					<!-- <transition name="scroll-packs"> -->
+					<section class="flex_col gap-12" :class="{
+						'marg-top-4': !this.only_title,
+						null_height: this.only_title,
+						full_height: this.only_title && this.isShown,
+					}">
+						<div class="text_spell" v-html="t_Text"></div>
+						<magic-attribute v-if="Spell_Index.impact_type" :title="Spell_Index.impact_type"
+							:addition="Spell_Index.impact_damage_type" :str="Value_Str" :numb="Value_Num" :dice="Value_Dic"
+							:pls="Value_Pls" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main not_dot />
+						<magic-attribute v-if="Spell_Index.second_impact_type" :title="Spell_Index.second_impact_type"
+							:addition="Spell_Index.second_impact_damage_type" :numb="Spell_Index.second_impact_size_num"
+							:dice="Spell_Index.second_impact_size_dic" :feet="Spell_Index.impact_size_foo?.includes('Feet')"
+							main not_dot />
+					</section>
+					<!-- </transition> -->
+				</div>
+			</div>
+		</AppTooltip>
+		<my-dialog-spell v-model:show="dialogVisible" v-model:mana="mana_numb">
+			<my-wrapper>
+				<div class="title_spell gray_2">{{ t_Type }} /</div>
+				<div class="title_spell">
+					{{ em_Before
+					}}
+					<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="emoji_size" />{{
+						em_After }} {{ name_Extra_MOD }}
+				</div>
+			</my-wrapper>
+			<section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
+				<section class="manna_bubble manna_bubble_active manna_bubble_str" v-if="spell_Slot_Type_MOD">
+					{{ t_Slot_Type }}
+				</section>
+				<section class="manna_flex" v-if="shown_Manna">
+					<div class="manna_bubble manna_bubble_choice" v-for="n in Manna_Length" :key="n" @click="choiceManna(n)"
+						:class="{
+							manna_bubble_passive: n - 1 < Index,
+							manna_bubble_active: n - 1 === mana_numb,
+							manna_bubble_hover: !(n - 1 < Index) && !(n - 1 === mana_numb),
+						}">
+						{{ n - 1 }}
+					</div>
+				</section>
+			</section>
+
+			<div class="text_spell" v-html="t_Text"></div>
+
+			<my-wrapper gap_6>
+				<my-spell-main title="parts" :text="t_Parts_Value" emoji />
+				<my-spell-main title="cast_time" :text="t_Cast_Value" />
+				<my-spell-main title="time" :text="t_Time_Value" />
+				<my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save" />
+			</my-wrapper>
+			<my-wrapper v-if="
+				Spell_Index.aim_need ||
+				Spell_Index.impact_type ||
+				Value_Ran ||
+				Spell_Index.aim_aoe
+			">
+				<magic-attribute v-if="Spell_Index.impact_type" :title="Spell_Index.impact_type"
+					:addition="Spell_Index.impact_damage_type" :str="Value_Str" :numb="Value_Num" :dice="Value_Dic"
+					:pls="Value_Pls" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main />
+				<magic-attribute v-if="Spell_Index.second_impact_type" :title="Spell_Index.second_impact_type"
+					:addition="Spell_Index.second_impact_damage_type" :numb="Spell_Index.second_impact_size_num"
+					:dice="Spell_Index.second_impact_size_dic" :feet="Spell_Index.impact_size_foo?.includes('Feet')" main />
+				<magic-attribute v-if="Spell_Index.aim_aoe" title="aim_aoe" :prefix="Spell_Index.aim_aoe"
+					:numb="by_Mana('aim_aoe_size')" />
+				<magic-attribute v-if="Spell_Index.aim_need" title="aim_bonus" :numb="aim_Numb" plus />
+				<magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
+			</my-wrapper>
+			<div class="hr"></div>
+			<div class="flex_col gap-16">
+				<div class="text_spell gray_4" v-html="t_Expanded"></div>
+				<div class="text_spell rare-text" v-if="mod_Expanded_Extra" v-html="mod_Expanded_Extra" />
+			</div>
+		</my-dialog-spell>
+	</main>
 </template>
 
 <script>
@@ -401,9 +235,9 @@ import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSpells",
-  components: {
-      QrcodeVue,
-    },
+	components: {
+		QrcodeVue,
+	},
 	emits: ["updateSpell"],
 	data() {
 		return {
@@ -413,7 +247,7 @@ export default {
 			mana_numb: null,
 			emoji_size: 16,
 			isShown: false,
-      size: 120,
+			size: 120,
 		};
 	},
 	props: {
@@ -449,54 +283,54 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-    active_card: {
+		active_card: {
 			type: Boolean,
 			default: false,
 		},
-    select_list: {
+		select_list: {
 			type: Array,
 			default: [],
 		},
-    blank_print: {
+		blank_print: {
 			type: Boolean,
 			default: false,
 		},
-    qr_form: {
+		qr_form: {
 			type: Boolean,
 			default: false,
 		},
 	},
 
 	computed: {
-    ...mapWritableState(useDicStore, ["select_lang"]),
+		...mapWritableState(useDicStore, ["select_lang"]),
 		...mapState(useMYStore, [
-      "MY", 
-      "Mastery", 
-      "shown_Level_Dot",
-      "MY_Class"
-    ]),
+			"MY",
+			"Mastery",
+			"shown_Level_Dot",
+			"MY_Class"
+		]),
 		// GETTERS
 		...mapState(useStatsStore, ["stats_Mod", "stats_Numb", "stats_Base_Obj", "stats_Full_Name"]),
 		...mapState(useSkillsStore, ["skills"]),
 		...mapState(useOverflowStore, ["overflow_Spell"]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb", "spells_Aim_Numb"]),
 
-    print_Spell_Link_Qr() {
-      const site = 'dndme.club/#';
-      const chapter = '/s/'
-      const spell_link = this.Spell_Index.link;
-      const full_link = site + chapter + spell_link;
+		print_Spell_Link_Qr() {
+			const site = 'dndme.club/#';
+			const chapter = '/s/'
+			const spell_link = this.Spell_Index.link;
+			const full_link = site + chapter + spell_link;
 
-      const lang = `ln=${this.select_lang}`;
-      const lvl = `l=${this.MY.level}`;
-      const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
-      const spell_attribute = `sa=${this.spell_Attribute_MOD.slice(0, 2)}`;
+			const lang = `ln=${this.select_lang}`;
+			const lvl = `l=${this.MY.level}`;
+			const base_link = new URLSearchParams(this.stats_Base_Obj).toString()
+			const spell_attribute = `sa=${this.spell_Attribute_MOD.slice(0, 2)}`;
 
-      const spell_mod_id = this.spell_Mod?.id;
-      const mod = this.spell_Mod ? `&m=${spell_mod_id}` : '';
-      const link = `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
-      return link;
-    },
+			const spell_mod_id = this.spell_Mod?.id;
+			const mod = this.spell_Mod ? `&m=${spell_mod_id}` : '';
+			const link = `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
+			return link;
+		},
 
 		shown_Spell_Text() {
 			return this.only_title ? this.isShown : true;
@@ -607,16 +441,16 @@ export default {
 			return (!manna_0 || !ability) && !slot_type;
 		},
 
-    print_Manna() {
-      const i = this.Index;
-      return i == 0 ? i : `${i}× ${this.t("mana")}`;
-    },
+		print_Manna() {
+			const i = this.Index;
+			return i == 0 ? i : `${i}× ${this.t("mana")}`;
+		},
 
-    print_Plus() {
-      const i = this.Index;
-      const max = this.Manna_Length - 1;
-      return max > i;
-    },
+		print_Plus() {
+			const i = this.Index;
+			const max = this.Manna_Length - 1;
+			return max > i;
+		},
 
 		em_Upd() {
 			return this.updEmoji(this.t_Title);
@@ -694,7 +528,7 @@ export default {
 		},
 
 		t_Time_Value() {
-      const foo_time = this.Value_Sti;
+			const foo_time = this.Value_Sti;
 			let spell_time = foo_time ?? this.Spell_Index.spell_time;
 
 			let value_1 = null;
@@ -708,8 +542,8 @@ export default {
 			let value_2 = foo_dur ?? this.by_Mana("spell_duration");
 
 			const foo_sdu = this.Value_Sdu;
-      let value_3 = foo_sdu ? this.t(foo_sdu) : this.t(this.Spell_Index.spell_duration_units);
-      
+			let value_3 = foo_sdu ? this.t(foo_sdu) : this.t(this.Spell_Index.spell_duration_units);
+
 			let string = null;
 			if (!value_1) {
 				string = `${value_2} ${value_3}`;
@@ -722,28 +556,27 @@ export default {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		},
 
-    Saving_Numb() {
-	    const primary_attribute = this.Spell_Index.spell_attribute;
-      const secondary_attribute = this.spell_Attribute_MOD;
-      const attribute = primary_attribute ?? secondary_attribute;
-      return this.spells_Saving_Numb(attribute);
-    },
+		Saving_Numb() {
+			const primary_attribute = this.Spell_Index.spell_attribute;
+			const secondary_attribute = this.spell_Attribute_MOD;
+			const attribute = primary_attribute ?? secondary_attribute;
+			return this.spells_Saving_Numb(attribute);
+		},
 
-    aim_Numb() {
-	    const primary_attribute = this.Spell_Index.spell_attribute;
-      const secondary_attribute = this.spell_Attribute_MOD;
-      const attribute = primary_attribute ?? secondary_attribute;
-      return this.spells_Aim_Numb(attribute);
-    },
+		aim_Numb() {
+			const primary_attribute = this.Spell_Index.spell_attribute;
+			const secondary_attribute = this.spell_Attribute_MOD;
+			const attribute = primary_attribute ?? secondary_attribute;
+			return this.spells_Aim_Numb(attribute);
+		},
 
 		t_Save() {
 			if (this.Spell_Index.saving_attribute) {
 				let test = `${this.T("saving")} ${this.T(
 					this.Spell_Index.saving_attribute
 				)} ${this.Saving_Numb}`;
-				let success = `${this.t("if_succeed")} ${
-					this.Spell_Index.impact_size_saved
-				}`;
+				let success = `${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved
+					}`;
 				if (this.Spell_Index.impact_size_saved) {
 					return `${test} — ${success}`;
 				} else {
@@ -757,9 +590,8 @@ export default {
 		t_Save_Print() {
 			if (this.Spell_Index.saving_attribute) {
 				let test = `${this.T(this.Spell_Index.saving_attribute)} ${this.Saving_Numb}`;
-				let success = `${this.t("if_succeed")} ${
-					this.Spell_Index.impact_size_saved
-				}`;
+				let success = `${this.t("if_succeed")} ${this.Spell_Index.impact_size_saved
+					}`;
 				if (this.Spell_Index.impact_size_saved) {
 					return `${test}, ${success}`;
 				} else {
@@ -871,7 +703,7 @@ export default {
 			let num = this.Spell_Index.impact_size_num;
 			let mana = this.Mana_Numb;
 			let mana_min = this.Index;
-			return num + Math.floor((mana - mana_min) / 2)*2;
+			return num + Math.floor((mana - mana_min) / 2) * 2;
 		},
 
 		Num_Plus_1() {
@@ -1365,7 +1197,7 @@ export default {
 		choiceManna(numb) {
 			return numb - 1 < this.Index ? null : (this.mana_numb = numb - 1);
 		},
-    
+
 		choiceManna(numb) {
 			return numb - 1 < this.Index ? null : (this.mana_numb = numb - 1);
 		},
@@ -1390,6 +1222,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 }
+
 .gap-12 {
 	gap: 12px;
 }
@@ -1427,7 +1260,7 @@ export default {
 
 .manna_bubble {
 	padding: 5px 12px;
-  width: 31px;
+	width: 31px;
 	height: 28px;
 	border-radius: 100px;
 	display: flex;
@@ -1437,8 +1270,8 @@ export default {
 }
 
 .manna_bubble_str {
-  width: 100%;
-  max-width: max-content;
+	width: 100%;
+	max-width: max-content;
 }
 
 .manna_bubble_choice {
@@ -1581,31 +1414,35 @@ export default {
 }
 
 .gap-8 {
-  gap: 8px;
+	gap: 8px;
 }
+
 .gap-10 {
-  gap: 10px;
+	gap: 10px;
 }
+
 .gap-16 {
-  gap: 16px;
+	gap: 16px;
 }
+
 .gap-26 {
-  gap: 26px;
+	gap: 26px;
 }
+
 .gap-52 {
-  gap: 52px;
+	gap: 52px;
 }
 
 .manna_bubble_print {
-  width: max-content;
-  padding: 4px 18px;
-  border: 6px solid #000000;
-  border-radius: 200px;
+	width: max-content;
+	padding: 4px 18px;
+	border: 6px solid #000000;
+	border-radius: 200px;
 }
 
 .manna_bubble_print_zero {
-  padding: 8px 22px;
-  border: 2px solid #000000;
+	padding: 8px 22px;
+	border: 2px solid #000000;
 }
 
 /* .text_print {
@@ -1613,11 +1450,11 @@ export default {
 } */
 
 .flex_row {
-  display: flex;
+	display: flex;
 }
 
 .fs-40 {
-  font-size: 40px;
+	font-size: 40px;
 }
 
 /* .spell_qr {
@@ -1626,24 +1463,24 @@ export default {
 } */
 
 .flex_qr_wrapp {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
 }
 
 .flex_mana {
-  flex: 1 1 auto;
-  justify-self: flex-start;
+	flex: 1 1 auto;
+	justify-self: flex-start;
 }
 
 .print_icon {
-  width: 36px;
+	width: 36px;
 	height: 36px;
 }
 
 .print-svg {
-  width: 36px;
+	width: 36px;
 	height: 36px;
 	fill: black;
 }

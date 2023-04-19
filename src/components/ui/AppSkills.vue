@@ -10,7 +10,7 @@
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
 						v-html="stats_icon[icon_Stats]"
-					/>
+					></svg>
 				</div>
 				<div class="item">
           {{ t_Title }}
