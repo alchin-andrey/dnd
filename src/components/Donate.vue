@@ -13,7 +13,7 @@
 				<a 
 				class="link-pad color-blue" 
 				target="_blank" 
-				href="https://www.buymeacoffee.com/dndme"
+				href="https://www.buymeacoffee.com/dndme/membership"
 				>{{ t_Donat }}</a>
 			</my-selection-card>
 

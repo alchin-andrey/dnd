@@ -18,9 +18,13 @@ export default {
     '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент</p>' +
     '<p><a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код</p>' +
     '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Найкращий Майстер Києва</a> — валідація</p>' +
-    '<p><a target="_blank" href="https://t.me/kjnchka">@ Evgenia Kashchuk</a> — позаштатний радник ❤️.</p>' +
-    '<br /><p>Будемо дуже вдячні за донат. На отримані кошти ми будемо додавати функції та розширювати довідники. А ви отримаєте круті персональні переваги — імена, риси, та навіть чари!</p>' +
-    '<br /><p>Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 50% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".</p>',
+    '<p><a target="_blank" href="https://t.me/kjnchka">@ Evgenia Kashchuk</a> — позаштатний радник ❤️.</p>',
+
+    thank_you: "Будемо дуже вдячні за донат. На отримані кошти ми будемо додавати функції та розширювати довідники. А ви отримаєте круті персональні переваги — імена, риси, та навіть закляття!",
+
+    benefaction: 'Безжальне та жорстоке вторгнення ₚосії в Україну триває, тому 50% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".',
+
+    view_benefits: 'Переглянути переваги',
 
   phb_disclaimer_1:
     'Інші варіанти обмежені для використання тут ліцензією Open Gaming Licence від власників системи Dungeons & Dragons — Wizards of the Coast LLC. Якщо ви вже маєте придбаний офіційний примірник <a target="_blank" href="https://dnd.wizards.com/products/rpg_playershandbook">Player`s Handbook</a>, ви можете',
@@ -5851,7 +5855,7 @@ export default {
   condition_pact_of_the_tome: "Умова: Пакт Гримуара",
   condition_pact_of_the_blade: "Умова: Пакт Клинка",
 
-  support_project: "Підтримай проект",
+  support_project: 'Підтримай проект <br/> та отримай <span class="buff">переваги</span>!',
   copy_link_character: "Скопіювати посилання на персонажа",
   download_pdf: "Скачати PDF аркуш персонажа",
   coming_soon: "скоро",
