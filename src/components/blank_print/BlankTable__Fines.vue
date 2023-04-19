@@ -35,10 +35,10 @@
 						</div>
 					</section>
 
-					<section class="row-36">
+					<section class="row-36" v-if="show_Spells_Saving">
 						<div class="icon">
 							<svg
-								class="main_svg"
+								class="stats_svg"
 								:class="{ save_svg: save_Icon(MY_Class.spell_attribute) }"
 								viewBox="0 0 18 18"
 								xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,10 @@ export default {
 			"skills_passive",
 			"skills_passive_Print_All_Numb",
 		]),
-		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
+		...mapState(useSpellsStore, [
+			"spells_Saving_Numb", 
+			"spells_RC_Param",
+		]),
 		...mapState(useFinesStore, ["fines_All_Param"]),
 
 		t_Fines_Title() {
@@ -136,6 +139,11 @@ export default {
 			const str_2 = stor.str_Upper(str[1]);
 			const num = stor.skills_passive_Print_All_Numb(name);
 			return `${str_1} ${str_2}: ${num}`;
+		},
+
+		show_Spells_Saving() {
+			const not_ability_arr = this.spells_RC_Param.filter((el) => el.spell.find((item) => item.name).type !== "ability");
+			return not_ability_arr.length !== 0;
 		},
 
 		t_Spells_Saving() {
