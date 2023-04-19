@@ -1,6 +1,9 @@
 <template>
 	<Transition duration="550" name="nested">
-		<div class="dialog" v-if="show" @click="hideDialog">
+		<div 
+		class="dialog"
+		:class="{'flex-row-c': finish}"
+		v-if="show" @click="hideDialog">
 			<div 
       @click.stop 
       class="dialog__wrapp int-400" 
@@ -51,8 +54,6 @@ export default {
 	position: fixed;
 	z-index: 1000;
 	cursor: pointer;
-	/* display: inline-block; */
-	/* text-align: end; */
 }
 
 .dialog__wrapp {
@@ -66,6 +67,7 @@ export default {
 	overflow-y: scroll;
 	scrollbar-width: none;
 	max-height: 100%;
+	/* max-height: min-content; */
 }
 
 .dialog__finish {

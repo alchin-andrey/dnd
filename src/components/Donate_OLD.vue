@@ -1,24 +1,50 @@
 <template>
 	<div class="grid gap-26">
-		<div class="int-700-20" v-html="t_Title" />
+		<div class="story-dev int-400" v-html="t_Html"></div>
+		<div class="grid gap-26 int-700">
+			<section class="grid gap-4">
+				<my-selection-card link>
+					<a
+						class="link-pad"
+						target="_blank"
+						href="https://www.buymeacoffee.com/dndme"
+					>
+					    P̶a̶t̶r̶e̶o̶n̶ Buy Me a Coffee ↗
+					</a>
+				</my-selection-card>
 
-		<section class="grid gap-15 int-400">
-		<div class="white-04" v-html="t_Authors" />
-		<div v-html="t_Thanks" />
-		<div class="rare-text" v-html="t_Benefaction" />
-		</section>
+				<my-selection-card
+					@click="doCopy(uan_numb), copiedLink('uan_copied')"
+					copy
+					:copied="uan_copied"
+				>
+					<div class="text">{{ `UAH  ${uan_text}` }}</div>
+				</my-selection-card>
 
-		<section class="grid gap-4 int-700">
-			<my-selection-card link white_btn>
-				<a 
-				class="link-pad color-blue" 
-				target="_blank" 
-				href="https://www.buymeacoffee.com/dndme"
-				>{{ t_Donat }}</a>
-			</my-selection-card>
+				<my-selection-card
+					@click="doCopy(btc_numb), copiedLink('btc_copied')"
+					copy
+					:copied="btc_copied"
+				>
+					<div class="text" :class="{'text-finish': finish}">
+						{{ `BTC  ${btc_numb}` }}
+					</div>
+				</my-selection-card>
+			</section>
 
-			<AppLoadBtm v-if="finish" @click="btnClick()" :text="t_Pdf" :progress="progress" />
-		</section>
+			<section class="grid gap-4" v-if="finish">
+
+				<!-- <my-selection-card
+					@click="doCopy(char_numb), copiedLink('char_copied')"
+					copy
+					:copied="char_copied"
+				>
+					<div class="text">{{ t_Copy }}</div>
+				</my-selection-card> -->
+
+        <AppLoadBtm @click="btnClick()" :text="t_Pdf" :progress="progress"/>
+			</section>
+		</div>
 	</div>
 </template>
 
@@ -26,13 +52,13 @@
 import { copyText } from "vue3-clipboard";
 export default {
 	name: "Donate",
-	emits: ["getPdf"],
+  emits: ["getPdf"],
 	props: {
 		finish: {
 			type: Boolean,
 			default: false,
 		},
-		progress: {
+    progress: {
 			type: Number,
 			default: 100,
 		},
@@ -70,53 +96,33 @@ export default {
 			setTimeout(() => (this[name] = false), 2000);
 		},
 
-		btnClick() {
+    btnClick() {
 			this.$emit("getPdf");
 		},
 	},
 
 	computed: {
-		t_Title() {
-			return this.t("support_project");
+		t_Card() {
+			return this.t("donation_card");
 		},
-
-		t_Authors() {
+		t_Btc() {
+			return this.t("donation_btc");
+		},
+		t_Html() {
 			return this.t("authors");
 		},
 
-		t_Thanks() {
-			return this.t("thank_you");
-		},
-
-		t_Benefaction() {
-			return this.t("benefaction");
-		},
-
-		t_Donat() {
-			return this.T("view_benefits");
+		t_Copy() {
+			return this.t("copy_link_character");
 		},
 
 		t_Pdf() {
 			return this.t("download_pdf");
 		},
 
-		// t_Card() {
-		// 	return this.t("donation_card");
-		// },
-		
-		// t_Btc() {
-		// 	return this.t("donation_btc");
-		// },
-
-		// t_Copy() {
-		// 	return this.t("copy_link_character");
-		// },
-
-
-		// t_Soon() {
-		// 	return this.t("coming_soon");
-		// },
-
+		t_Soon() {
+			return this.t("coming_soon");
+		},
 	},
 };
 </script>
@@ -135,7 +141,7 @@ export default {
 }
 
 .grid {
-	display: grid;
+  display: grid;
 }
 
 .gap-4 {
@@ -163,8 +169,7 @@ export default {
 .text {
 	width: 300px;
 	white-space: pre;
-	overflow: hidden;
-	/* Обрезаем всё за пределами блока */
+	overflow: hidden; /* Обрезаем всё за пределами блока */
 	text-overflow: ellipsis;
 }
 

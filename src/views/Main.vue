@@ -113,7 +113,6 @@
 
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
-		<div class="title-donat int-700">{{ t("support_project") }}</div>
 		<Donate finish @getPdf="exportToPDF()" :progress="progress_load"/>
 	</my-dialog-spell>
 

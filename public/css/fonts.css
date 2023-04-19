@@ -197,6 +197,11 @@
   color: #000000;
 }
 
-.rare-text {
+.rare-text,
+.rare-text a {
 	color: #ffc93d;
+}
+
+.color-blue {
+	color: #0047FF;
 }

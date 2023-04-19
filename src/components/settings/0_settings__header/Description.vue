@@ -1,13 +1,10 @@
 <template>
 	<div class="flex-col-sb gap-26 pd-l-32">
-		<section class="flex-col gap-26">
-      <Welcome/>
-      <div class="flex-col gap-4">
-        <Btm__WhatDND />
-        <Btm__Reset />
-      </div>
+    <Donate />
+		<section class="flex-col gap-4">
+      <Btm__WhatDND />
+      <Btm__Reset />
 		</section>
-		<Donate />
 	</div>
 </template>
 

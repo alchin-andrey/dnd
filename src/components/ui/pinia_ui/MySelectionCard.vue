@@ -11,11 +11,15 @@
 			link: link,
       copy_card: copy,
       red_card: reset,
+      white_card: white_btn,
 		}"
 	>
-  <div v-if="reset || arrow || plus" class="copy_icon">
+  <div v-if="reset || arrow || plus || link" class="copy_icon">
     <svg
       class="main_svg"
+			:class="{
+      white_card_svg: white_btn,
+		}"
       viewBox="0 0 18 18"
       xmlns="http://www.w3.org/2000/svg"
       v-html="ui_icon[img_Icon]"
@@ -80,6 +84,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    white_btn: {
+      type: Boolean,
+      default: false,
+    },
     arrow: {
       type: Boolean,
       default: false,
@@ -123,7 +131,7 @@ export default {
       if(this.reset) return "return";
       if(this.arrow) return "arrow_right_small";
       if(this.plus) return "plus";
-
+      if(this.link && !this.plus) return "link";
     }
 	},
 };
@@ -165,6 +173,15 @@ export default {
 	background: #FF0000;
 }
 
+.white_card {
+	background: #FFFFFF;
+	color: #0047FF;
+}
+
+.white_card:hover {
+	background: #FFFFFF;
+}
+
 .no_blur {
 	backdrop-filter: none;
 }
@@ -192,6 +209,9 @@ export default {
   width: 18px;
 	height: 18px;
 	fill: white;
+}
+.white_card_svg {
+	fill: #0047FF;
 }
 
 .copy_icon {
