@@ -269,7 +269,8 @@ export default {
 
     names_Arr(val, oldVal) {
       const incl = val.includes(this.MY.name);
-      if(!incl) this.getRandomName();
+			const user_name = this.site_settings.name_user;
+      if(!incl && !user_name) this.getRandomName();
     },
 
 		feats_Condition_Pass_Name(val, oldVal) {

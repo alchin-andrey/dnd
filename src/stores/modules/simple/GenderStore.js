@@ -10,7 +10,6 @@ export const useGenderStore = defineStore({
 	state: () => ({
 		gender: gender,
     names: names,
-    name_user: false,
 	}),
 	getters: {
 		phisiological_Arr(state) {

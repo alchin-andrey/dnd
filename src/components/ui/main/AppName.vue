@@ -20,7 +20,7 @@
           :placeholder="t_Placeholder"
         />
     </section>
-    <section class="main_icon" @click="getRandomName()">
+    <section class="main_icon" @click="randomName()">
       <svg
         class="main_svg"
         viewBox="0 0 18 18"
@@ -37,7 +37,7 @@ import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
-// import { usePagesStore } from "@/stores/user/PagesStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 // import { useMainStore } from "@/stores/general/MainStore";
 
 export default {
@@ -63,6 +63,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
+		...mapState(usePagesStore, ["site_settings"]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -75,8 +76,14 @@ export default {
 	methods: {
     ...mapActions(useGenderStore, ["getRandomName"]),
 
+		randomName() {
+			this.getRandomName();
+			this.site_settings.name_user = true;
+		},
+
 		getName() {
 			this.MY.name = this.inputValue;
+			this.site_settings.name_user = true;
 		},
 	},
 	watch: {

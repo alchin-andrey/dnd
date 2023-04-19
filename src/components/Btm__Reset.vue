@@ -40,6 +40,7 @@ export default {
         logo_anim: false,
         print_dialog: false,
         old_page: null,
+        name_user: false,
       },
       
       this.form_kof = {
