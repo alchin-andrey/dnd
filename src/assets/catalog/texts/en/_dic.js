@@ -5879,7 +5879,7 @@ export default {
   spell_hunger_of_hadar_details: spells.hunger_of_hadar_details,
   spell_hunger_of_hadar_expanded: spells.hunger_of_hadar_expanded,
 
-  gender_phisiological: "Гердер фіз",
+  gender_phisiological: "Гендер фіз",
   armors_proficiency: "Володіння обладунками",
   weapons_proficiency: "Володіння зброєю",
   tools_proficiency: "Володіння інструментами",
