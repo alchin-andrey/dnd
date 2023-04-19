@@ -66,8 +66,8 @@ export const useFinesStore = defineStore({
 		},
 
     fines_All_Param() {
-			const race_param = this.fines_Class_Main_Arr;
-			const class_param = this.fines_Class_Custom_Arr;
+			const race_param = this.fines_Race_Param;
+			const class_param = this.fines_Class_Param;
 			return [...race_param, ...class_param];
 		},
     
