@@ -3,6 +3,7 @@
 		class="logo"
 		:class="{
 			card_active: active,
+			logo_hover: !active,
       animation__active: show_Animation,
 		}"
 	>
@@ -67,6 +68,14 @@ export default {
 	stroke-linejoin: "bevel";
 }
 
+.logo_hover {
+	transition-property: all;
+  transition-duration: 0.5s;
+}
+.logo_hover:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
 .card_active {
 	background: #ffffff;
 }
@@ -87,16 +96,5 @@ export default {
 40%{ background: #ffffff; }
 100%{ background: transparent; }
 }
-
-/* .animation__active > svg  {
-  animation-name: active_stroke;
-  animation-duration: 1s;
-}
-
-@keyframes active_stroke{
-0%{ stroke: #ffffff; }
-50%{ stroke: #0E1518; }
-100%{ stroke: #ffffff; }
-} */
 
 </style>

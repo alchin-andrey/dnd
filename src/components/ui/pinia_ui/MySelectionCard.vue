@@ -9,8 +9,8 @@
 			basic: basic,
 			selection_card_active: get_Active,
 			link: link,
-      		copy_card: copy,
-      		red_card: reset,
+      copy_card: copy,
+      red_card: reset,
 		}"
 	>
   <div v-if="reset || arrow || plus" class="copy_icon">
