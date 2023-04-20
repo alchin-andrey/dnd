@@ -20,11 +20,11 @@ export default {
 
 <style scoped>
 .slide-right-enter-active {
-	animation: slide-right-in 0.7s ease-out;
+	animation: slide-right-in 2s cubic-bezier(.25,.1,.25,1);
 }
 
 .slide-right-leave-active {
-	animation: slide-right-out 0.7s ease-out;
+	animation: slide-right-out 2s cubic-bezier(.25,.1,.25,1);
 }
 
 @keyframes slide-right-out {

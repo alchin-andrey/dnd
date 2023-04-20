@@ -46,6 +46,7 @@ export default {
 
 	methods: {
 		next() {
+			this.interval = 5000;
 			if (this.visibleSlide >= this.slidesLength - 1) {
 				this.visibleSlide = 0;
 			} else {
