@@ -2,6 +2,7 @@ import WelcomeBanner from "@/components/WelcomeBanner.vue";
 import Welcome from "@/components/Welcome.vue";
 import WhatDND from "@/components/WhatDND.vue";
 import Donate from "@/components/Donate.vue";
+import PromoSlider from "@/components/PromoSlider.vue";
 import BlankPrint from "@/components/BlankPrint.vue";
 
 import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
@@ -30,6 +31,7 @@ export default {
     Welcome,
     WhatDND,
 		Donate,
+		PromoSlider,
 		BlankPrint,
 
 		HeaderMenu,

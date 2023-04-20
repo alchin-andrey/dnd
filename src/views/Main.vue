@@ -113,7 +113,10 @@
 
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
-		<Donate finish @getPdf="exportToPDF()" :progress="progress_load"/>
+		<section>
+			<PromoSlider/>
+			<Donate class="pd-32" finish @getPdf="exportToPDF()" :progress="progress_load"/>
+		</section>
 	</my-dialog-spell>
 
 	<div v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert">

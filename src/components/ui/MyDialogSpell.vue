@@ -72,7 +72,8 @@ export default {
 
 .dialog__finish {
   margin: 0 auto;
-  width: 426px;
+  width: 460px;
+	padding: 0;
 }
 
 .dialog__wrapp::-webkit-scrollbar {
