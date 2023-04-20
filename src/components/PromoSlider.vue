@@ -26,7 +26,7 @@ export default {
 	data() {
 		return {
 			visibleSlide: 0,
-			interval: 4000,
+			interval: 6000,
 		};
 	},
 
@@ -46,7 +46,7 @@ export default {
 
 	methods: {
 		next() {
-			this.interval = 6000;
+			this.interval = 8000;
 			if (this.visibleSlide >= this.slidesLength - 1) {
 				this.visibleSlide = 0;
 			} else {
