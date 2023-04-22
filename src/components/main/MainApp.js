@@ -1,4 +1,5 @@
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
+import PlagBanner from "@/components/PlagBanner.vue";
 import Welcome from "@/components/Welcome.vue";
 import WhatDND from "@/components/WhatDND.vue";
 import Donate from "@/components/Donate.vue";
@@ -28,6 +29,7 @@ import AlignmentParameters from "@/components/parameters/__param__lists/3_Alignm
 export default {
 	components: {
     WelcomeBanner,
+    PlagBanner,
     Welcome,
     WhatDND,
 		Donate,

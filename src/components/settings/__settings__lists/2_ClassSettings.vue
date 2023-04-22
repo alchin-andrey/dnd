@@ -52,11 +52,5 @@ export default {
 </script>
 
 <style scoped>
-/* .flex_options {
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	gap: 8px;
-} */
+
 </style>

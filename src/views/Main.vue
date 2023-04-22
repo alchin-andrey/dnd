@@ -123,22 +123,7 @@
 		<BlankPrint />
 	</div>
 
-	<div v-if="small_screen" class="plug-wrap int-700-20">
-		<div class="plug-dialog">
-			<div class="white-04">{{ t("responsive_top") }}</div>
-			<div class="emog">
-				{{ em_Before }}
-				<emoji
-					v-if="em_Upd"
-					:data="emojiIndex"
-					:emoji="em_Upd"
-					:set="set_emoji"
-					:size="21"
-				/>
-				{{ em_After }}
-			</div>
-		</div>
-	</div>
+	<PlagBanner v-if="small_screen"/>
 </template>
 
 <script>
@@ -212,25 +197,10 @@ export default {
 
 		...mapState(useGenderStore, ["names_Arr"]),
 
-		t_Details() {
-			return this.t("responsive_bottom");
-		},
-
     t_Lobby() {
       return this.T("lobby_welcome_title");
     },
 
-		em_Upd() {
-			return this.updEmoji(this.t_Details);
-		},
-
-		em_Before() {
-			return this.beforeEmoji(this.t_Details);
-		},
-
-		em_After() {
-			return this.afterEmoji(this.t_Details);
-		},
 		//GETTERS
 
 		close_Sidebar_Right() {
@@ -635,47 +605,6 @@ export default {
 	transform: translateX(20px);
 	opacity: 0;
 }
-
-.flex_options {
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	gap: 8px;
-}
-
-.plug-wrap {
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	background-color: #0e1518;
-	position: fixed;
-	z-index: 10;
-	color: #ffffff;
-	padding: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 26px;
-}
-
-.plug-dialog {
-	width: 320px;
-	background: rgba(255, 255, 255, 0.06);
-	border-radius: 12px;
-	padding: 28px;
-	display: flex;
-	flex-direction: column;
-	gap: 72px;
-	z-index: 1000;
-}
-
-/* .emoji-mart-emoji {
-	padding: 0;
-	line-height: 0;
-	top: 4px;
-} */
 
 /* ---------------------sidebar_right----------------------*/
 </style>

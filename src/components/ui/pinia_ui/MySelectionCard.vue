@@ -12,13 +12,19 @@
       copy_card: copy,
       red_card: reset,
       white_card: white_btn,
+			blue_card: blue_btn,
 		}"
 	>
-  <div v-if="reset || arrow || plus || link" class="copy_icon">
+  <div 
+	v-if="reset || arrow || plus || link" 
+	class="copy_icon"
+	:class="{ copy_icon_x2: x2_svg, }"
+	>
     <svg
       class="main_svg"
 			:class="{
       white_card_svg: white_btn,
+			x2_svg: x2_svg,
 		}"
       viewBox="0 0 18 18"
       xmlns="http://www.w3.org/2000/svg"
@@ -85,6 +91,14 @@ export default {
       default: false,
     },
     white_btn: {
+      type: Boolean,
+      default: false,
+    },
+    blue_btn: {
+      type: Boolean,
+      default: false,
+    },
+    x2_svg: {
       type: Boolean,
       default: false,
     },
@@ -173,6 +187,14 @@ export default {
 	background: #FF0000;
 }
 
+.blue_card {
+  background: #0047ff;
+}
+
+.blue_card:hover {
+	background: #1355ff;
+}
+
 .white_card {
 	background: #FFFFFF;
 	color: #0047FF;
@@ -210,6 +232,11 @@ export default {
 	height: 18px;
 	fill: white;
 }
+
+.x2_svg {
+  width: 36px;
+	height: 36px;
+}
 .white_card_svg {
 	fill: #0047FF;
 }
@@ -223,6 +250,10 @@ export default {
 	-webkit-transform: translate(0%, -50%);
 	-ms-transform: translate(0%, -50%);
 	transform: translate(0%, -50%);
+}
+
+.copy_icon_x2 {
+	height: 36px;
 }
 
 .mode-fade-enter-active,
