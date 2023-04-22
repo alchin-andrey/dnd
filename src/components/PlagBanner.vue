@@ -9,6 +9,7 @@
 				<section class="plag-absolute flex-col gap-4">
 					<div class="plug-dialog">
 					<div class="emog">
+					<span class="buff">dndme.club</span>
 						{{ em_Before }}
 						<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="21" />
 						{{ em_After }}
@@ -25,14 +26,7 @@
 </template>
 
 <script>
-// import { mapState } from "pinia";
-// import { usePagesStore } from "@/stores/user/PagesStore";
-// import Welcome from "@/components/Welcome.vue";
-// import Btm__WhatDND from "@/components/Btm__WhatDND.vue";
-
 export default {
-	components: {
-	},
 	name: "PlagBanner",
 	computed: {
 		t_Details() {
@@ -105,10 +99,12 @@ export default {
 	width: 320px;
 	background: rgba(255, 255, 255, 0.06);
 	border-radius: 12px;
-	padding: 28px;
+	padding: 24px 28px 28px;
 	backdrop-filter: blur(30px);
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	gap: 72px;
 
 }
