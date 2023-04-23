@@ -176,6 +176,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	gap: 26px;
+	position: relative;
 }
 
 .red_card {
