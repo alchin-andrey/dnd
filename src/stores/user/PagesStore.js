@@ -35,7 +35,7 @@ export const usePagesStore = defineStore({
       race_page: true,
 			class_page: false,
       alignment_page: false,
-      // master_page: false,
+      // master_page: true,
 		},
 
 		page_setting_open: null,
@@ -68,28 +68,6 @@ export const usePagesStore = defineStore({
       key.forEach(el => this.pages[el] ? name = el : null);
       return name;
     },
-
-    // btn_Page() {
-    //   const OLD = this.site_settings.old_page;
-    //   if(OLD == "race_page") return 1;
-    //   if(this.pages.race_page || OLD == "class_page") return 2;
-    //   if(this.pages.class_page || OLD == "alignment_page") return 3;
-    //   if(this.pages.alignment_page) return 4;
-    // },
-
-    // btn_Numb() {
-    //   if(this.btn_Page == 1) return '01';
-    //   if(this.btn_Page == 2) return '02';
-    //   if(this.btn_Page == 3) return '03';
-    //   if(this.btn_Page == 4) return null;
-    // },
-
-    // btn_Name() {
-    //   if(this.btn_Page == 1) return 'race';
-    //   if(this.btn_Page == 2) return 'class';
-    //   if(this.btn_Page == 3) return 'alignment';
-    //   if(this.btn_Page == 4) return 'download_charsheet';
-    // }
 
     btn_Page() {
       if(this.pages.race_page) return 1;
@@ -124,24 +102,25 @@ export const usePagesStore = defineStore({
 
 	actions: {
 
-    btnGo() {
-      // if(this.site_settings.old_page) {
-      //   this.goOldPage();
-      // } else {
-        if(this.btn_Page == 1) {
-          this.goPage('class_page');
-        } else if(this.btn_Page == 2) {
-          this.goPage('alignment_page');
-        } else if(this.btn_Page == 3) {
-          this.site_settings.print_dialog = true;
-        }
-      // }
+    zeroingDell() {
+      if(this.site_settings.old_page) {
+        this.goPage(this.site_settings.old_page);
+        this.site_settings.old_page = null;
+      }
+      if(!this.site_settings.old_page && this.pages.master_page) {
+        this.goPage('race_page');
+      }
     },
 
-		// goOldPage() {
-    //   this.goPage(this.site_settings.old_page);
-    //   this.site_settings.old_page = null;
-		// },
+    btnGo() {
+      if(this.btn_Page == 1) {
+        this.goPage('class_page');
+      } else if(this.btn_Page == 2) {
+        this.goPage('alignment_page');
+      } else if(this.btn_Page == 3) {
+        this.site_settings.print_dialog = true;
+      }
+    },
 
 		goPage(page_name) {
 			for (const [key, value] of Object.entries(this.pages)) {

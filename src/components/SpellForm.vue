@@ -23,7 +23,7 @@ export default {
 		};
 	},
   created() {
-		this.getCreated();
+		this.getCreatedSpell();
 	},
 	computed: {
     ...mapWritableState(useDicStore, ["select_lang"]),
@@ -47,7 +47,7 @@ export default {
 	},
 
   methods: {
-    getCreated() {
+    getCreatedSpell() {
       const query = this.$route.query;
       if(query) {
         if(!this.site_settings.save.MY_level) {

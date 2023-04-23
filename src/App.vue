@@ -3,14 +3,18 @@
 </template>
 
 <script>
-// import Main from '@/views/Main.vue';
-// import SpellForm from '@/components/SpellForm.vue';
+import { mapActions } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
+
 export default {
 	name: "App",
-	// components: {
-	// 	Main,
-	// 	SpellForm,
-	// },
+	created() {
+		this.zeroingDell();
+	},
+
+	methods: {
+    ...mapActions(usePagesStore, ["zeroingDell"]),
+	}
 };
 </script>
 

@@ -38,16 +38,15 @@
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
 
 import PlagBanner from "@/components/PlagBanner.vue";
 import Welcome from "@/components/Welcome.vue";
 import WhatDND from "@/components/WhatDND.vue";
 import MasterParameters from "@/components/parameters/__param__lists/0_MasterParameters.vue";
 
-// import MainApp from "@/components/main/MainApp.js";
 export default {
 	name: "MasterPage",
-	// mixins: [MainApp],
 	components: {
     PlagBanner,
     Welcome,
@@ -61,6 +60,7 @@ export default {
 	},
 
 	created() {
+		this.getCreated();
 		window.addEventListener("resize", this.onResize);
 		this.onResize();
 	},
@@ -71,7 +71,6 @@ export default {
 
 	computed: {
 		...mapState(usePagesStore, [
-			"site_settings",
       "btn_Numb_Page",
       "btn_Name_Page"
 		]),
@@ -82,8 +81,9 @@ export default {
 	},
 
 	methods: {
+		...mapActions(useMYStore, ["getCreated"]),
+
 		goTo(route) {
-				// this.site_settings.old_page = null;
         this.$router.push(route);
       },
 

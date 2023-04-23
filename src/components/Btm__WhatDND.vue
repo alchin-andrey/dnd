@@ -16,7 +16,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "Btm__WhatDND",
   computed: {
-		...mapState(usePagesStore, ["site_settings", "page_Open", "showHome"]),
+		...mapState(usePagesStore, ["site_settings", "page_setting_open"]),
     ...mapState(useDicStore, ["select_lang"]),
 
     show_Master_Page() {
@@ -24,13 +24,18 @@ export default {
     }
   },
   methods: {
-    ...mapActions(usePagesStore, ["goPage"]),
+    ...mapActions(usePagesStore, ["showHome"]),
 
     getPage() {
-      // this.site_settings.old_page = this.page_Open;
-      // this.goPage('master_page');
       this.showHome();
       this.$router.push('/masters');
+      // if(this.page_setting_open == 'main_page') {
+      //   this.showHome();
+      //   setTimeout(() => this.$router.push('/masters'), 500);
+      // } else {
+      //   this.showHome();
+      //   this.$router.push('/masters');
+      // }
     },
   },
 };
