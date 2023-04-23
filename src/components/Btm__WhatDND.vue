@@ -27,9 +27,10 @@ export default {
     ...mapActions(usePagesStore, ["goPage"]),
 
     getPage() {
-      this.site_settings.old_page = this.page_Open;
-      this.goPage('master_page');
+      // this.site_settings.old_page = this.page_Open;
+      // this.goPage('master_page');
       this.showHome();
+      this.$router.push('/masters');
     },
   },
 };

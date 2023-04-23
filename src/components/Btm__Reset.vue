@@ -39,7 +39,7 @@ export default {
         welcome: true,
         logo_anim: false,
         print_dialog: false,
-        old_page: null,
+        // old_page: null,
         name_user: false,
       },
       
@@ -53,7 +53,7 @@ export default {
         race_page: true,
         class_page: false,
         alignment_page: false,
-        master_page: false,
+        // master_page: false,
       };
       this.getCreated();
       this.showHome();

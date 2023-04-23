@@ -127,64 +127,6 @@ a {
 	gap: 8px;
 }
 
-/* .btm-fade-enter-active {
-	transition: all 0.2s ease-in-out;
-}
-
-.btm-fade-leave-active {
-	transition: all 0.2s ease-in-out;
-}
-
-.btm-fade-enter-from,
-.btm-fade-leave-to {
-	transform: translateX(-300px);
-	opacity: 0;
-} */
-
-/* ---------------------characters----------------------*/
-
-/* .represent {
-	padding: 32px;
-	flex: 1 1 auto;
-	display: flex;
-	background-color: #0e1518;
-	z-index: 2;
-	overflow: hidden;
-} */
-
-/* .character {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	transition-duration: 0.8s;
-	transition-timing-function: ease-in-out;
-}
-
-.character > img {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
-}
-
-.character > svg {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-property: all, fill;
-  transition-duration: 0.8s, 0.1s;
-  transition-timing-function: ease-in-out;
-} */
-
 .active_eyes {
 	align-self: flex-start;
 	transition-property: all;

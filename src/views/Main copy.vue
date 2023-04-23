@@ -4,7 +4,7 @@
 		<div class="main_chapter">
 			<HeaderMenu />
 
-			<section v-if="!pages.race_page">
+			<section v-if="!pages.race_page && !pages.master_page">
         <div class="grid-col gap-10">
           <MyBackPage
             :text_arr="arr_Name_Race_Page"
@@ -19,6 +19,7 @@
         <div class="delimiter mr-top-22" />
 			</section>
 
+      <div v-if="pages.master_page" class="int-700-20 mr-top-22" v-html="t_Lobby"/>
 			<AppSliderName v-if="pages.race_page" numb="01" name="race" />
 			<AppSliderName v-if="pages.class_page" numb="02" name="class" />
 			<AppName
@@ -33,8 +34,11 @@
 		<div class="main_menu_wrap" @click="showHome()">
 			<div 
       class="main_chapter_menu" 
+      :class="{'pd-top-22': pages.master_page}"
       @click.stop
       >
+        <Welcome no_title v-if="pages.master_page"/>
+				
         <RaceMenu v-if="pages.race_page" />
 				<ClassMenu v-if="pages.class_page" />
 				<AlignmentMenu v-if="pages.alignment_page" />
@@ -68,7 +72,8 @@
 	<!-- Character -->
 
 	<div class="represent" @click="showHome()" v-show="!PRINT_BLANK">
-		<transition name="fade-body">
+    <WhatDND v-if="pages.master_page"/>
+		<transition v-if="!pages.master_page" name="fade-body">
 			<div
 				class="character"
 				:class="{
@@ -100,6 +105,7 @@
 		class="sidebar_right"
 		:class="{ sidebar_right_close: close_Sidebar_Right }"
 	>
+		<MasterParameters v-if="pages.master_page" />
 		<RaceParameters v-if="pages.race_page" />
 		<ClassParameters v-if="pages.class_page" />
 		<AlignmentParameters v-if="pages.alignment_page" />

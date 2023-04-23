@@ -4,7 +4,7 @@
 			@click="showSettings__Main('logo')"
 			:active="main_page.shown.logo"
 		/>
-		<div class="header_col" v-if="!pages.master_page">
+		<div class="header_col">
 			<my-header-card
 				@click="showSettings__Main('lang')"
 				:active="main_page.shown.lang"

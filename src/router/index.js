@@ -1,30 +1,23 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import Main from '@/views/Main.vue';
+import MasterPage from '@/views/MasterPage.vue';
 import SpellForm from '@/components/SpellForm.vue';
 
 const routes = [
-  // {
-  //   path: '/',
-  //   redirect: { name: 'Main' }
-  // },
-  // {
-  //   path: '/dnd/',
-  //   name: 'Main',
-  //   component: Main,
-  // },
   {
     path: '/',
     name: 'Main',
     component: Main,
   },
   {
-    // path: '/dnd/s/:id',
-    // path: '/s/:id',
-    // path: '/dnd/s/:queryParams(.*)',
+    path: '/masters',
+    name: 'MasterPage',
+    component: MasterPage,
+  },
+  {
     path: '/s/:id(.*)',
     name: 'SpellForm',
     component: SpellForm,
-    // props: true
   },
 ];
 

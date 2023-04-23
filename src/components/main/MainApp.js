@@ -1,7 +1,7 @@
 import WelcomeBanner from "@/components/WelcomeBanner.vue";
 import PlagBanner from "@/components/PlagBanner.vue";
-import Welcome from "@/components/Welcome.vue";
-import WhatDND from "@/components/WhatDND.vue";
+// import Welcome from "@/components/Welcome.vue";
+// import WhatDND from "@/components/WhatDND.vue";
 import Donate from "@/components/Donate.vue";
 import PromoSlider from "@/components/PromoSlider.vue";
 import BlankPrint from "@/components/BlankPrint.vue";
@@ -10,7 +10,7 @@ import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
 import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
 
 // MASTER_PAGE
-import MasterParameters from "@/components/parameters/__param__lists/0_MasterParameters.vue";
+// import MasterParameters from "@/components/parameters/__param__lists/0_MasterParameters.vue";
 
 // RACE_PAGE
 import RaceMenu from "@/components/menu/1_RaceMenu.vue";
@@ -30,8 +30,8 @@ export default {
 	components: {
     WelcomeBanner,
     PlagBanner,
-    Welcome,
-    WhatDND,
+    // Welcome,
+    // WhatDND,
 		Donate,
 		PromoSlider,
 		BlankPrint,
@@ -40,7 +40,7 @@ export default {
 		HeaderSettings,
 
     // MASTER_PAGE
-    MasterParameters,
+    // MasterParameters,
 		// RACE_PAGE
 		RaceMenu, //TODO: Сылки на рост, вес, возраст
 		RaceSettings,

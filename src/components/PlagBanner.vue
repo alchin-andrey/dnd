@@ -2,24 +2,22 @@
 	<div class="plug-wrap flex-row-c int-700-20">
 		<div class="plag-scroll">
 			<div class="plag-promo-wrap">
-				<div class="plag-promo">
-				</div>
-				
+				<div class="plag-promo"></div>
 
 				<section class="plag-absolute flex-col gap-4">
 					<div class="plug-dialog">
-					<div class="emog">
-					<span class="buff">dndme.club</span>
-						{{ em_Before }}
-						<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="21" />
-						{{ em_After }}
+						<div class="emog">
+							<span class="buff">dndme.club</span>
+							{{ em_Before }}
+							<emoji v-if="em_Upd" :data="emojiIndex" :emoji="em_Upd" :set="set_emoji" :size="21" />
+							{{ em_After }}
+						</div>
 					</div>
-				</div>
-			<my-selection-card blue_btn link x2_svg>
-				<a class="pd-20-28" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ t_Donat
-				}}</a>
-			</my-selection-card>
-		</section>
+					<my-selection-card blue_btn link x2_svg>
+						<a class="pd-20-28" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ t_Donat
+						}}</a>
+					</my-selection-card>
+				</section>
 			</div>
 		</div>
 	</div>
@@ -74,8 +72,8 @@ export default {
 }
 
 .plag-scroll::-webkit-scrollbar {
-  width: 0;
-  display: none;
+	width: 0;
+	display: none;
 }
 
 .plag-promo-wrap {
