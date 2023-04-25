@@ -1,11 +1,24 @@
 <template> 
-	<div class="column jbm-300" :class="{ passive: numb == 0 && passive_Old}" >
+	<AppTooltip
+		class="relative"
+		text="hint_over_limit"
+		:shown="overflow_Numb"
+		warn
+	>
+	<div class="column jbm-300" 
+	:class="{ 
+		passive: numb == 0 && passive_Old,
+		'rare-text': overflow_Numb,
+		}" 
+	>
 		<div class="column_value">
 			<section class="flex_row">
 				<div class="icon">
 					<svg class="icon_svg"
 						:class="{
+							max_icon_svg: overflow_Numb,
               save_svg: shown_Save,
+							max_save_svg: shown_Save && overflow_Numb,
               }"
 						viewBox="0 0 18 18"
 						xmlns="http://www.w3.org/2000/svg"
@@ -19,23 +32,33 @@
 			<div class="numb">{{ Prefix }}{{ summ_Numb }}</div>
 		</div>
 		<div class="visual">
-			<div class="cube" v-for="n in cube_Numb" :key="n"/>
 			<div class="cube-neg" v-for="n in cube_Negative" :key="n"/>
+
+			<div 
+			class="cube"  	
+			v-for="n in cube_Numb" :key="n"
+			:class="{cube_max: overflow_Cube(n)}" 
+			/>
+
 			<div class="cube-second" 
       :class="{ 
         passive: passive_Old,
         opasity: numb == 0}" 
-      v-for="n in cube_Second" :key="n"/>
+      v-for="n in cube_Second" :key="n"
+			/>
 		</div>
 	</div>
+</AppTooltip>
 </template>
 
 <script>
 import stats_icon from "@/assets/catalog/icon/stats_icon";
 import { mapState } from "pinia";
+import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 
 export default {
 	name: "AppSkills",
@@ -57,13 +80,35 @@ export default {
 			type: Number,
 			default: null,
 		},
+
+		setting_filter: {
+			type: String,
+			default: null,
+		},
+
+		active_card: {
+			type: Boolean,
+			default: false,
+		},
+    select_list: {
+			type: Array,
+			default: [],
+		},
+		param: {
+			type: Boolean,
+			default: false,
+		},
 	},
 
 	computed: {
 		// STORES
+    ...mapState(useMYStore, ["Mastery"]),
     ...mapState(usePagesStore, ["page_Open"]),
     ...mapState(useSkillsStore, ["skills", "skills_passive"]),
     ...mapState(useStatsStore, ["stats_Save_Page_Arr"]),
+		...mapState(useOverflowStore, [
+			"overflow_Skills_Numb",
+		]),
 
     passive_Old() {
       return this.page_Open !== "alignment_page";
@@ -80,6 +125,14 @@ export default {
     Prefix() {
 			return this.summ_Numb > 0 ? "+" : "";
 		},
+
+		// main_Numb() {
+		// 	if(this.overflow_Numb && this.numb == this.Mastery * 2) {
+    //     return this.numb / 2;
+		// 	} else {
+		// 		return this.numb;
+		// 	}
+		// },
 
 		summ_Numb() {
 			return this.numb + this.second_numb;
@@ -107,6 +160,28 @@ export default {
 
     cube_Second() {
       return this.second_numb > 0 ? this.second_numb : null;
+		},
+
+		only_Mastery() {
+			return this.setting_filter == "only_mastery";
+		},
+
+		overflow_Numb() {
+			if (this.param || this.only_Mastery) {
+				return false;
+			} else {
+				return this.overflow_Skills_Numb(this.title, this.active_card, this.select_list);
+			}
+		},
+
+		overflow_Cube: (stor) => (i) => {
+			if (stor.overflow_Numb) {
+				if(stor.cube_Numb == stor.Mastery) {
+					return true;
+				} else {
+					return stor.Mastery < i;
+				}
+			}
 		},
 	},
 };
@@ -147,9 +222,18 @@ export default {
 	/* stroke-opacity: 0.2; */
 }
 
+.max_icon_svg {
+	stroke: #ffc93d;
+}
+
 .save_svg {
 	fill: white;
   /* stroke-opacity: 1; */
+}
+
+.max_save_svg {
+	fill: #ffc93d;
+	stroke: #ffc93d;
 }
 
 .item {
@@ -199,5 +283,9 @@ export default {
 	height: 8px;
 	border-radius: 2px;
 	border: 1px solid #ff0000;
+}
+
+.cube_max {
+	background: #ffc93d;
 }
 </style>

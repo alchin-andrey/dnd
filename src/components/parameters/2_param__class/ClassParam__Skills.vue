@@ -6,6 +6,7 @@
 			:title="name"
 			:numb="skills_Class_Numb(name)"
 			:second_numb="skills_RP_MOD_Numb(name)"
+			param
 		/>
 	</my-wrapper>
 </template>

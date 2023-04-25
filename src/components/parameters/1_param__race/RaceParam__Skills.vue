@@ -5,6 +5,7 @@
 				:key="name"
 				:title="name"
 				:numb="skills_Race_Numb(name)"
+				param
 			></AppSkills>
 		</my-wrapper>
 </template>

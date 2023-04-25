@@ -14,7 +14,7 @@
 		<section class="column_link int-400 active">
 			<div class="link-text" 
       :class="{ 
-        'rare-text': overflow_Item_Menu(item) || sett_Counter(item)}">
+        'rare-text': overflow_Item(item) || sett_Counter(item)}">
 				<span class="type-text">{{ t_Type(item) }}</span>
 			</div>
 			<div class="icon">
@@ -93,6 +93,14 @@ export default {
 				return stor.t(item?.name);
 			}
 			return null;
+		},
+
+		overflow_Item: (stor) => (item) => {
+			if(item.name == "skills" && item?.filter == 'only_mastery') {
+				return false;
+			} else {
+				return stor.overflow_Item_Menu(item);
+			}
 		},
 
     sett_Counter: (stor) => (item) => {

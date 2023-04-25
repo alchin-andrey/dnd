@@ -47,7 +47,13 @@
 				v-for="skill in level_Filter_Arr(custom.skills)"
 				:key="skill"
 			>
-				<AppSkills :title="skill.name" :numb="this[skill.num]" />
+				<AppSkills 
+				:title="skill.name" 
+				:numb="this[skill.num]"
+				:active_card="active_boll_link"
+        :select_list="select_list"
+				:setting_filter="setting_filter"
+				/>
 				<my-card-text
 					v-if="skill.details && setting_name == 'skills'"
 					:text_html="skill.details"
@@ -200,6 +206,10 @@ export default {
 	},
 	props: {
 		setting_name: {
+			type: String,
+			default: null,
+		},
+		setting_filter: {
 			type: String,
 			default: null,
 		},

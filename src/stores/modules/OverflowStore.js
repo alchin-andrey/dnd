@@ -6,6 +6,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useSkillsStore } from "@/stores/modules/SkillsStore";
 
 export const useOverflowStore = defineStore({
 	id: "OverflowStore",
@@ -74,6 +75,12 @@ export const useOverflowStore = defineStore({
 			const stats_arr = stor.filter_List_Lvl(item.select_list, "stats");
 			stats_arr.forEach((el) => {
 				const new_res = stor.overflow_Stats_Numb(el.name, true);
+				res = res ? true : new_res;
+			});
+
+			const skills_arr = stor.filter_List_Lvl(item.select_list, "skills");
+			skills_arr.forEach((el) => {
+				const new_res = stor.overflow_Skills_Numb(el.name, true);
 				res = res ? true : new_res;
 			});
 
@@ -178,6 +185,23 @@ export const useOverflowStore = defineStore({
 			const stat_numb_max = stat_numb < max ? stat_numb : max;
 			const overflow_numb = stat_numb - stat_numb_max;
 			return i - overflow_numb <= 0;
+		},
+
+		//NOTE - Skills_Numb
+		overflow_Skills_Numb: (stor) => (name, active, select_list) => {
+			const skills_select_arr = stor.filter_List_Lvl(select_list, "skills");
+			const select_true = skills_select_arr.some(el => el.name.includes(name));
+			const SkillsStore = useSkillsStore();
+			const skills_name = SkillsStore.skills_Owner_Name_Page;
+			const name_times = skills_name.reduce(
+				(acc, el) => (el == name ? acc + 1 : acc),
+				0
+				);
+			if ((active || select_list.length == 1 && select_true) && name_times <= 1) {
+				return false;
+			} else {
+				return name_times >= 1;
+			}
 		},
 	},
 

@@ -6,7 +6,7 @@
       v-for="list_el in backstories_Arr"
       :key="list_el"
       :custom="list_el"
-      :select_list="[list_el]"
+      :select_list="[MY_Backstory]"
       @click="getBackName(list_el.name)"
       :active_boll_link="MY_Backstory.name == list_el.name" />
     </section>

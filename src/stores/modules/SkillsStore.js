@@ -1,6 +1,7 @@
 // import { ref, computed } from "vue";
-import { defineStore } from "pinia";
+import { defineStore, storeToRefs } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 
 export const useSkillsStore = defineStore({
@@ -42,12 +43,19 @@ export const useSkillsStore = defineStore({
 			return this.skills.reduce((acc, el) => acc.concat(el.name), []);
 		},
 
-    skills_Numb_Bonus: (stor) => (arr_all, name) => {
+    skills_Numb_Bonus_Full: (stor) => (arr_all, name) => {
       const filter_name = arr_all.filter(el => el.name == name);
-      return filter_name.reduce((acc, el) => acc + stor[el.num], 0);
+      const all_summ_bonus = filter_name.reduce((acc, el) => acc + stor[el.num], 0);
+      return all_summ_bonus;
 		},
 
-    skills_Race_All() {
+    skills_Numb_Bonus: (stor) => (arr_all, name) => {
+      const filter_name = arr_all.filter(el => el.name == name);
+      const res_bonus = filter_name.reduce((acc, el) => Math.max(acc, stor[el.num]), 0);
+      return res_bonus;
+		},
+
+    skills_Race_Owner() {
       const MYStore = useMYStore();
       const race = MYStore.level_Filter_Arr(MYStore.MY_Race?.skills);
       const ethnos = MYStore.level_Filter_Arr(MYStore.MY_Ethnos?.skills);
@@ -56,14 +64,23 @@ export const useSkillsStore = defineStore({
       return [...race, ...ethnos, ...backstory, ...race_custom];
     },
 
+    skills_Race_Owner_All_Name() {
+      const all_name = this.skills_Race_Owner.reduce((acc, el) => acc.concat(el.name), []);
+      return all_name;
+    },
+
     skills_Race_Param() {
-      const skills_name_all = this.skills_Race_All.reduce((acc, el) => acc.concat(el.name), []);
+      const skills_name_all = this.skills_Race_Owner_All_Name;
 			const uniqu_name = [...new Set(skills_name_all)];
       return uniqu_name;
     },
 
+    skills_Race_Numb_Bonus_Full: (stor) => (name) => {
+			return stor.skills_Numb_Bonus_Full(stor.skills_Race_Owner, name);
+		},
+
     skills_Race_Numb: (stor) => (name) => {
-			return stor.skills_Numb_Bonus(stor.skills_Race_All, name);
+			return stor.skills_Numb_Bonus(stor.skills_Race_Owner, name);
 		},
 
     skills_MOD_Numb: (stor) => (name) => {
@@ -80,22 +97,79 @@ export const useSkillsStore = defineStore({
 
     skills_Name_Class_Mastery_No_Settings() {
       const MYStore = useMYStore();
-      const race_skills = this.skills_Race_All;
+      const race_skills = this.skills_Race_Owner;
       const class_main = MYStore.level_Filter_Arr(MYStore.MY_Class?.skills);
       return [...race_skills, ...class_main];
     },
 
-    skills_Class_All() {
+    skills_Settings_Class_Owner() {
+      const MYStore = useMYStore();
+      let res_arr = [];
+      MYStore.сustomm_Settings_Class_Arr?.forEach(el => {
+          el?.select_list.forEach(sub_el => {
+            if(el.filter !== "only_mastery") {
+              const item_lvl = MYStore.level_Filter_Arr(sub_el?.skills);
+              res_arr = res_arr.concat(item_lvl);
+            }
+          });
+        });
+			return res_arr;
+		},
+
+    skills_Class_Owner() {
       const MYStore = useMYStore();
       const class_main = MYStore.level_Filter_Arr(MYStore.MY_Class?.skills);
-      const class_custom = MYStore.filter_Custom_Class_Lvl("skills");
-      return [...class_main, ...class_custom,];
+      // const class_custom = MYStore.filter_Custom_Class_Lvl("skills");
+      const class_custom_owner = this.skills_Settings_Class_Owner;
+      return [...class_main, ...class_custom_owner,];
+    },
+
+    // skills_Class_Owner() {
+    //   const MYStore = useMYStore();
+    //   const class_main = MYStore.level_Filter_Arr(MYStore.MY_Class?.skills);
+    //   const class_custom_owner = this.filterCustomSkillsClassLvl(false);
+    //   return [...class_main, ...class_custom_owner];
+    // },
+
+    // skills_Class_Competence() {
+    //   const class_custom_competence = this.filterCustomSkillsClassLvl(true);
+    //   return class_custom_competence;
+    // },
+
+    skills_Settings_Class_Competence() {
+      const MYStore = useMYStore();
+      let res_arr = [];
+      MYStore.сustomm_Settings_Class_Arr?.forEach(el => {
+          el?.select_list.forEach(sub_el => {
+            if(el.filter == "only_mastery") {
+              const item_lvl = MYStore.level_Filter_Arr(sub_el?.skills);
+              res_arr = res_arr.concat(item_lvl);
+            }
+          });
+        });
+			return res_arr;
+		},
+
+    skills_Class_Competence() {
+      const class_custom_competence = this.skills_Settings_Class_Competence;
+      return class_custom_competence;
+		},
+
+    skills_RC_Owner() {
+      const race_skills_owner = this.skills_Race_Owner;
+      const class_skills_owner = this.skills_Class_Owner;
+      return [...race_skills_owner, ...class_skills_owner,];
     },
 
     skills_RC_Page() {
-      const race_skills = this.skills_Race_All;
-      const class_skills = this.skills_Class_All;
-      return [...race_skills, ...class_skills];
+      const RC_skills_owner = this.skills_RC_Owner;
+      const class_skills_competence = this.skills_Class_Competence;
+      return [...RC_skills_owner, ...class_skills_competence];
+    },
+
+    skills_RC_Owner_All_Name() {
+      const all_name = this.skills_RC_Owner.reduce((acc, el) => acc.concat(el.name), []);
+      return all_name;
     },
 
     skills_RC_Page_Name() {
@@ -104,10 +178,38 @@ export const useSkillsStore = defineStore({
       return uniqu_name;
     },
 
+    skills_Class_Numb_Owner: (stor) => (name) => {
+      const skills_race_numb = stor.skills_Race_Numb(name);
+      const skills_class_numb = stor.skills_Numb_Bonus(stor.skills_Class_Owner, name);
+      const rest = skills_class_numb - skills_race_numb;
+      const res_numb = rest < 0 ? 0 : rest;
+      return res_numb;
+    },
+
+    skills_RC_Numb_Owner: (stor) => (name) => {
+      const race_numb_owner = stor.skills_Race_Numb(name);
+      const class_numb_owner = stor.skills_Class_Numb_Owner(name);
+      return race_numb_owner + class_numb_owner;
+    },
+
+    skills_Class_Numb_Competence: (stor) => (name) => {
+      const RC_numb_owner = stor.skills_RC_Numb_Owner(name);
+      const class_numb_competence = stor.skills_Numb_Bonus(stor.skills_Class_Competence, name);
+      const numb_summ = RC_numb_owner + class_numb_competence;
+      const max_numb = stor.Mastery_x2;
+      const res_numb = numb_summ <= max_numb ? class_numb_competence : 0;
+      return res_numb;
+    },
+
+    skills_Class_Numb_Bonus_Full: (stor) => (name) => {
+			return stor.skills_Numb_Bonus_Full(stor.skills_Class_Owner, name);
+		},
+
     skills_Class_Numb: (stor) => (name) => {
-      const class_numb = stor.skills_Numb_Bonus(stor.skills_Class_All, name);
+      const class_numb_owner = stor.skills_Class_Numb_Owner(name);
+      const class_numb_competence = stor.skills_Class_Numb_Competence(name);
       const skills_foo = stor.skill_Specials_Foo(name);
-			return class_numb + skills_foo;
+			return class_numb_owner + class_numb_competence + skills_foo;
 		},
 
     skill_Specials_Foo: (stor) => (name) => {
@@ -189,8 +291,47 @@ export const useSkillsStore = defineStore({
     getSkillMarg: (stor) => (i) => {
 			return i == 0 ? true : stor.skills[i].mod !== stor.skills[i - 1].mod;
 		},
+
+    //NOTE - Skills Pages
+    skills_Owner_Name_Page() {
+			const PagesStore = usePagesStore();
+			if (PagesStore.pages.race_page) {
+				return this.skills_Race_Owner_All_Name;
+			} else if (PagesStore.pages.class_page) {
+				return this.skills_RC_Owner_All_Name;
+			} else {
+				return this.skills_RC_Owner_All_Name;
+			}
+		},
+
+    skills_Numb_Bonus_Full_Page: (stor) => (name) => {
+			const PagesStore = usePagesStore();
+			if (PagesStore.pages.race_page) {
+				return stor.skills_Race_Numb_Bonus_Full(name);
+			} else if (PagesStore.pages.class_page) {
+				return stor.skills_Class_Numb_Bonus_Full(name);
+			} else {
+				return stor.skills_Class_Numb_Bonus_Full(name);
+			}
+		},
   },
 
   actions: {
+    filterCustomSkillsClassLvl(filter) {
+      const MYStore = useMYStore();
+      let res_arr = [];
+      MYStore.сustomm_Settings_Class_Arr?.forEach(el => {
+          el?.select_list.forEach(sub_el => {
+            if(filter && el.filter == "only_mastery") {
+              const item_lvl = MYStore.level_Filter_Arr(sub_el?.skills);
+              res_arr = res_arr.concat(item_lvl);
+            } else if(!filter && el.filter !== "only_mastery") {
+              const item_lvl = MYStore.level_Filter_Arr(sub_el?.skills);
+              res_arr = res_arr.concat(item_lvl);
+            }
+          });
+        });
+			return res_arr;
+		},
   }
 });

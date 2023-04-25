@@ -32,6 +32,14 @@ export const useMYStore = defineStore({
 			return `${t_str[0].toUpperCase()}${t_str.slice(1)}`;
 		},
 
+    Mastery(state) {
+			return 1 + Math.ceil(state.MY.level / 4);
+		},
+
+    Mastery_x2() {
+			return this.Mastery * 2;
+		},
+
     MY_Race() {
       const MainStore = useMainStore();
       return this.getMYObj(MainStore.race_Arr, this.MY.race_name);
@@ -51,6 +59,17 @@ export const useMYStore = defineStore({
       return this.getMYObj(MainStore.backstories_Arr, this.MY.backstory_name);
     },
 
+    MY_Backstory_Menu() {
+      const MainStore = useMainStore();
+      return [{
+        id_link: "backstory",
+        name: "past",
+        select: 1,
+        list: MainStore.backstories_Arr,
+        select_list: [this.MY_Backstory],
+      }];
+    },
+
     MY_Class() {
       const MainStore = useMainStore();
       return this.getMYObj(MainStore.class_Arr, this.MY.class_name);
@@ -61,14 +80,6 @@ export const useMYStore = defineStore({
       const subclass = сustomm.find(el => el.name == "subclass");
       return subclass?.select_list[0];
     },
-
-		Mastery(state) {
-			return 1 + Math.ceil(state.MY.level / 4);
-		},
-
-    Mastery_x2() {
-			return this.Mastery * 2;
-		},
 
     sort_Level: (state) => (start_arr) => {
       return start_arr.sort((a, b) => {

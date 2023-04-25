@@ -6,6 +6,7 @@
 			:class="{ skill_marg: getSkillMarg(i) }"
 			:title="name"
 			:numb="skills_RC_All_Numb(name)"
+			param
 		/>
 	</my-wrapper>
 </template>

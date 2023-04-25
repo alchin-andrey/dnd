@@ -5239,19 +5239,19 @@ export default {
                 list: [
                   {
                     name_set: "history",
-                    skills: [{ name: "history", num: "Mastery_x2" }],
+                    skills: [{ name: "history", num: "Mastery_x2", details: "history_details",}],
                   },
                   {
                     name_set: "arcana",
-                    skills: [{ name: "arcana", num: "Mastery_x2" }],
+                    skills: [{ name: "arcana", num: "Mastery_x2", details: "arcana_details", }],
                   },
                   {
                     name_set: "nature",
-                    skills: [{ name: "nature", num: "Mastery_x2" }],
+                    skills: [{ name: "nature", num: "Mastery_x2", details: "nature_details", }],
                   },
                   {
                     name_set: "religion",
-                    skills: [{ name: "religion", num: "Mastery_x2" }],
+                    skills: [{ name: "religion", num: "Mastery_x2", details: "religion_details", }],
                   },
                 ],
               },

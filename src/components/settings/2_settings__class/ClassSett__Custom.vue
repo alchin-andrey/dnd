@@ -7,6 +7,7 @@
         :key="list_el"
         :setting_name="custom.name"
         :select_list="custom.select_list"
+        :setting_filter="custom.filter"
         :custom="list_el"
         @click="getCustomSelect(list_el)"
         :active_boll_link="getActive(list_el)"
@@ -31,6 +32,9 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Class"]),
+
+    
+
     getActive: (stor) => (list_el) => {
       return stor.custom.select_list.some(item => {
         if (item.name) {

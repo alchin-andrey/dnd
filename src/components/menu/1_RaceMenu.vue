@@ -11,13 +11,14 @@
 				:type="MY_Ethnos.name"
 				:rare="MY_Ethnos.rare"
 			></my-selection>
-			<my-selection
+			<!-- <my-selection
 				@click="showSettings__Race('backstory')"
 				:active="race_page.shown.backstory"
 				title="past"
 				:type="MY_Backstory.name"
 				:rare="MY_Backstory.rare"
-			></my-selection>
+			></my-selection> -->
+			<AppSelectionArr :menu="MY_Backstory_Menu"/>
 		</section>
 		<!-- RACE ETHNOS -->
 
@@ -117,6 +118,7 @@ export default {
 		...mapState(useMYStore, [
       "MY", 
       "MY_Backstory",
+			"MY_Backstory_Menu",
       "MY_Race",
       "MY_Ethnos",
       "сustomm_Settings_Race_Arr",
