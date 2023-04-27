@@ -6109,4 +6109,5 @@ export default {
   lobby_conclustion: 'Dungeons & Dragons здатна сподобатися кожному. Це доводить її всесвітня популярність протягом вже 50+ років, не зважаючи на складність початку <br/>(до появи <span class="buff">dndme.club</span>). Спробуй і ти!',
 
   lobby_CTA: "Створи персонажа",
+  lobby_footer: 'По всім питанням пишіть Дімі <a target="_blank" href="t.me/dimalagoda">t.me/dimalagoda</a>'
 };
