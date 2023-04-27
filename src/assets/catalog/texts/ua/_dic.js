@@ -6103,4 +6103,5 @@ export default {
   andrii_pavlov_details: masters.andrii_pavlov_details,
   andrii_pavlov_contact: masters.andrii_pavlov_contact,
 
+  lobby_master_button: "Я теж Майстер, додайте мої контакти",
 };
