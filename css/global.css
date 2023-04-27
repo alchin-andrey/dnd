@@ -39,12 +39,15 @@
 .pd-16 { padding: 16px; }
 .pd-32 { padding: 32px; }
 
+.pd-t-22 { padding-top: 22px; }
+
 .pd-l-16 { padding-left: 16px; }
 .pd-l-32 { padding-left: 32px; }
 
 
 .mr-t-4 { margin-top: 4px; }
 .mr-t-8 { margin-top: 8px; }
+.mr-t-22 { margin-top: 22px; }
 .mr-t-34 { margin-top: 34px; }
 
 .mr-b-15 { margin-bottom: 15px; }
