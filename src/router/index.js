@@ -10,7 +10,7 @@ const routes = [
     component: Main,
   },
   {
-    path: '/masters',
+    path: '/welcome-to-dnd',
     name: 'MasterPage',
     component: MasterPage,
   },

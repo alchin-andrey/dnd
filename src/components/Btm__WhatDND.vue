@@ -28,13 +28,13 @@ export default {
 
     getPage() {
       this.showHome();
-      this.$router.push('/masters');
+      this.$router.push('/welcome-to-dnd');
       // if(this.page_setting_open == 'main_page') {
       //   this.showHome();
-      //   setTimeout(() => this.$router.push('/masters'), 500);
+      //   setTimeout(() => this.$router.push('/welcome-to-dnd'), 500);
       // } else {
       //   this.showHome();
-      //   this.$router.push('/masters');
+      //   this.$router.push('/welcome-to-dnd');
       // }
     },
   },
