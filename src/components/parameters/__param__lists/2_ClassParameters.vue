@@ -26,8 +26,7 @@
 					hr
 				/>
 				<ClassParam__SkillsAll key="skillsAll" hr />
-				<ClassParam__SkillsPassive key="skillsPassive" all hr/>
-				<AppDisclaimer key="disclaimer"/>
+				<ClassParam__SkillsPassive key="skillsPassive" all/>
 			</TransitionGroup>
 		</section>
 
@@ -37,9 +36,7 @@
 				:key="item.id_link"
 				:shown="class_page.shown[item.id_link]"
 				:spells_setting="item"
-				hr
 			/>
-			<AppDisclaimer/>
 		</section>
 	</transition>
 </template>
