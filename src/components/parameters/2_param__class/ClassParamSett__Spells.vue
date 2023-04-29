@@ -16,6 +16,7 @@
 				spells_RC_Param_Ability.length !== 0 ||
         spells_RC_Param_Ability_Passive.length !== 0
 			"
+			:hr="hr"
 		>
     <AppSpellsPacks
 				class="flex-col"
@@ -98,6 +99,10 @@ export default {
 			default: {},
 		},
 		shown: {
+			type: Boolean,
+			default: false,
+		},
+		hr: {
 			type: Boolean,
 			default: false,
 		},

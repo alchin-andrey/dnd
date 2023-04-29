@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import Main from '@/views/Main.vue';
-import MasterPage from '@/views/MasterPage.vue';
+import WelcomePage from '@/views/WelcomePage.vue';
 import SpellForm from '@/components/SpellForm.vue';
 
 const routes = [
@@ -11,8 +11,8 @@ const routes = [
   },
   {
     path: '/welcome-to-dnd',
-    name: 'MasterPage',
-    component: MasterPage,
+    name: 'WelcomePage',
+    component: WelcomePage,
   },
   {
     path: '/s/:id(.*)',

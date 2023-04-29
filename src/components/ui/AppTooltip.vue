@@ -1,5 +1,5 @@
 <template>
-	<div class="h-100">
+	<div>
 			<div class="flex"
 				@mouseenter="toggle"
 				@mouseleave="toggle"

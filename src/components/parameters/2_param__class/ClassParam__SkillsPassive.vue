@@ -9,7 +9,7 @@
 				:second_numb="skills_passive_RP_MOD_Numb(name)"
 			/>
 		</my-wrapper>
-		<my-wrapper v-if="all">
+		<my-wrapper v-if="all" :hr="hr">
 			<AppSkills
 				v-for="skill in skills_passive"
 				:key="skill"

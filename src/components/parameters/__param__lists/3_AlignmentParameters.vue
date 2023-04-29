@@ -9,7 +9,8 @@
   <ClassParam__Fines hr />
   <ClassParam__Spells hr />
   <ClassParam__Weapons hr />
-  <ClassParam__EquipKit />
+  <ClassParam__EquipKit hr/>
+  <AppDisclaimer />
 </template>
 
 <script>

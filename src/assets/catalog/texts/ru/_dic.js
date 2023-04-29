@@ -10,9 +10,9 @@ export default {
   //Стартовое
   welcome_title: "Начни играть в D&D без чтения правил!",
   welcome_message:
-    "Чтобьі полноценно играть в D&D, достаточно придумать персонажа нужного уровня, а остальное устроит ваш Мастер. єтот сайт поможет вам создать персонажа за 3 простьіх шага:\nРаса, Класс и Мировоззрение. Все настройки — слева.\n\nЛучший подход для первого раза — расслабиться и вьібирать по зову сердца. Здесь нет неправильньіх решений. В финале вьі получите лист персонажа, с которьім вьі сможете начать игру!",
+    "Чтобьі полноценно играть в D&D, достаточно придумать персонажа нужного уровня, а остальное устроит ваш Мастер. єтот сайт поможет вам создать персонажа за 3 простьіх шага:<br />Раса, Класс и Мировоззрение. Все настройки — слева.<br /><br />Лучший подход для первого раза — расслабиться и вьібирать по зову сердца. Здесь нет неправильньіх решений. В финале вьі получите лист персонажа, с которьім вьі сможете начать игру!",
   welcome_disclaimer:
-    '<br/>Материальі на єтом сайте не заменяют необходимость приобретения официальньіх материалов. Система Dungeons & Dragons является собсвенностью Wizards of the Coast. Графические материальі созданьі с помощью <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a><br /><br />This site is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC',
+    'Материальі на єтом сайте не заменяют необходимость приобретения официальньіх материалов. Система Dungeons & Dragons является собсвенностью Wizards of the Coast. Графические материальі созданьі с помощью <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a><br /><br />This site is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC',
 
   authors:
     '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — идея, дизайн, контент</p>' +

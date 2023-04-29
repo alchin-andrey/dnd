@@ -1,5 +1,5 @@
 <template>
-	<div class="flex-col-sb gap-26 pd-l-32">
+	<div class="h-100 flex-col-sb gap-26 pd-l-32">
     <Donate />
 		<section class="flex-col gap-4">
       <Btm__WhatDND />

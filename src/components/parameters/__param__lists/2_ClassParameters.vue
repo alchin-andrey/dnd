@@ -12,7 +12,8 @@
 			<ClassParam__Spells hr />
 			<ClassParam__Weapons hr />
 			<ClassParam__EquipKit hr />
-			<ClassParam__Text />
+			<ClassParam__Text hr />
+			<AppDisclaimer />
 		</section>
 
 		<!-- //NOTE - Stats -->
@@ -25,7 +26,8 @@
 					hr
 				/>
 				<ClassParam__SkillsAll key="skillsAll" hr />
-				<ClassParam__SkillsPassive key="skillsPassive" all />
+				<ClassParam__SkillsPassive key="skillsPassive" all hr/>
+				<AppDisclaimer key="disclaimer"/>
 			</TransitionGroup>
 		</section>
 
@@ -35,7 +37,9 @@
 				:key="item.id_link"
 				:shown="class_page.shown[item.id_link]"
 				:spells_setting="item"
+				hr
 			/>
+			<AppDisclaimer/>
 		</section>
 	</transition>
 </template>

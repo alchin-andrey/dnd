@@ -16,7 +16,7 @@
 		}"
 	>
   <div 
-	v-if="reset || arrow || plus || link" 
+	v-if="reset || arrow || plus || link || route" 
 	class="copy_icon"
 	:class="{ copy_icon_x2: x2_svg, }"
 	>
@@ -114,6 +114,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		route: {
+			type: Boolean,
+			default: false,
+		},
 		active_link: {
 			type: String,
 			default: null,
@@ -146,6 +150,7 @@ export default {
       if(this.arrow) return "arrow_right_small";
       if(this.plus) return "plus";
       if(this.link && !this.plus) return "link";
+			if(this.route) return "arrow_right_small";
     }
 	},
 };

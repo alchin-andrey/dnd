@@ -11,9 +11,9 @@ export default {
   //Стартовое
   welcome_title: "Поринь у Dungeons & Dragons без читання правил!",
   welcome_message:
-    "Щоб почати грати в D&D, достатньо придумати персонажа потрібного рівня, а решту влаштує ваш Майстер. Цей чарівний сайт допоможе вам створити персонажа за 3 простих кроки: Раса, Клас та Світогляд. Всі налаштування — ліворуч.\n\nНайкращий підхід для першого разу — розслабитися і вибирати за покликом серця. Тут немає неправильних рішень. У фіналі ви отримаєте аркуш персонажа, з яким ви зможете розпочати гру!",
+    "Щоб почати грати в D&D, достатньо придумати персонажа потрібного рівня, а решту влаштує ваш Майстер. Цей чарівний сайт допоможе вам створити персонажа за 3 простих кроки: Раса, Клас та Світогляд. Всі налаштування — ліворуч.<br /><br />Найкращий підхід для першого разу — розслабитися і вибирати за покликом серця. Тут немає неправильних рішень. У фіналі ви отримаєте аркуш персонажа, з яким ви зможете розпочати гру!",
   welcome_disclaimer:
-    '<br /><p>Матеріали на цьому сайті не змінюють необхідності придбання офіційних матеріалів. Cистема Dungeons & Dragons є власністю Wizards of the Coast. Графічні матеріали є власністю Sky Castle Studios та створені за допомогою <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a><br /><br />This site is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC</p>',
+    '<p>Матеріали на цьому сайті не змінюють необхідності придбання офіційних матеріалів. Cистема Dungeons & Dragons є власністю Wizards of the Coast. Графічні матеріали є власністю Sky Castle Studios та створені за допомогою <a target="_blank" href="https://www.heroforge.com">Hero Forge ↗</a><br /><br />This site is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC</p>',
 
   authors:
     '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент</p>' +
