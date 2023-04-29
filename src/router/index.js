@@ -22,11 +22,10 @@ const routes = [
 ];
 
 const router = createRouter({
+  // history: createWebHashHistory(),
   // history: createWebHistory(process.env.BASE_URL),
   // history: createWebHistory('/dnd/'),
-  // history: createWebHistory(),
-  history: createWebHashHistory(),
-  // history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 });
 
