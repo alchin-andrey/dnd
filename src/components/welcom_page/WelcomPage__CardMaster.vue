@@ -5,7 +5,7 @@
 			<img class="img-size br-4" :src="master_Foto" :alt="master_param.name">
 
 			<div class="flex-col-sb">
-				<section class="flex_col gap-4">
+				<section class="flex-col gap-4">
 					<div class="int-700">{{ t_Name }}</div>
 					<div class="int-400 white-04" v-html="t_Details"></div>
 				</section>
