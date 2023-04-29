@@ -6055,7 +6055,7 @@ export default {
   how_to_start_2_details: 'dndme.club допоможе створити персонажа без читання правил за 3 простих кроки.',
 
   how_to_start_3_title: 'Приходь на гру',
-  how_to_start_3_details: 'Роздрукуй аркуш персонажа та вчасно приходь з ним<br/>на заплановану гру.',
+  how_to_start_3_details: 'Роздрукуй аркуш персонажа<br/>та вчасно приходь з ним<br/>на заплановану гру.',
 
   how_to_find: 'Де знайти свою першу гру або майстра',
 
@@ -6109,5 +6109,6 @@ export default {
   lobby_conclustion: 'Dungeons & Dragons здатна сподобатися кожному. Це доводить її всесвітня популярність протягом вже 50+ років, не зважаючи на складність початку <br/>(до появи <span class="buff">dndme.club</span>). Спробуй і ти!',
 
   lobby_CTA: "Створи персонажа",
-  lobby_footer: 'По всім питанням пишіть Дімі <a target="_blank" href="t.me/dimalagoda">t.me/dimalagoda</a>'
+  lobby_footer: 'По всім питанням пишіть Дімі <a target="_blank" href="https://t.me/dimalagoda">t.me/dimalagoda</a>',
+  lobby_support_project: "Підтримай проект",
 };

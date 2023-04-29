@@ -4,7 +4,7 @@ export default {
     id: 1,
     name: "club_did_name",
     details: "club_did_details",
-    link_name: "club_did_link",
+    link_name: "dedlihozor.club",
     link: "https://dedlihozor.club"
   },
 

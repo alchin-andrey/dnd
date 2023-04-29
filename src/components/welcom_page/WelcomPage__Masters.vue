@@ -1,6 +1,6 @@
 <template>
 	<article>
-		<div class="jbm-300">{{ t("lobby_menu_3") }}</div>
+		<div class="jbm-300">{{ t("how_to_find") }}</div>
 			<div class="flex-row flex-wrap gap-4 mr-t-26">
 				<WelcomPage__CardClub 
 				v-for="club in clubs" 
