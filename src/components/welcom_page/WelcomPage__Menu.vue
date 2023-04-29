@@ -9,7 +9,7 @@
 		<section class="int-700 flex-col gap-4 mr-t-54">
 			<my-selection-card @click="goTo('/')" blue_btn route> {{ t_Btn_Dndme }} </my-selection-card>
 			<my-selection-card link>
-				<a class="pd-16" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ t_Donat }}</a>
+				<a class="pd-16" target="_blank" href="https://www.buymeacoffee.com/dndme">{{ t_Donat }}</a>
 			</my-selection-card>
 		</section>
 	</div>
@@ -24,7 +24,7 @@ export default {
 		},
 
 		t_Donat() {
-			return this.T("accelerate_development");
+			return this.T("lobby_support_project");
 		},
 	},
 
