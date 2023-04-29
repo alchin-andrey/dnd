@@ -15,7 +15,7 @@ const routes = [
     component: WelcomePage,
   },
   {
-    path: '/s/:id(.*)',
+    path: '/#/s/:id(.*)',
     name: 'SpellForm',
     component: SpellForm,
   },
