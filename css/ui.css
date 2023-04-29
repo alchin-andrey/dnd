@@ -1,0 +1,22 @@
+.cur-p { cursor: pointer; }
+
+.br-4 { border-radius: 4px;}
+.br-12 { border-radius: 12px;}
+
+.blur-60 { backdrop-filter: blur(60px); }
+
+.btm-main {
+	padding: 16px;
+	border-radius: 12px;
+}
+
+.btm-trans {
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.btm-grey {background: rgba(255, 255, 255, 0.06);}
+.btm-grey.hov:hover {background: rgba(255, 255, 255, 0.1);}
+
+.btm-blue {background: #0047ff;}
+.btm-blue.hov:hover { background: #1355ff;}
