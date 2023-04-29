@@ -8,20 +8,21 @@ export default {
     link: "https://dedlihozor.club"
   },
 
-  eneri: {
+  inrium: {
     id: 2,
+    name: "club_inrium_name",
+    details: "club_inrium_details",
+    link_name: "inrium.org.ua",
+    link: "https://inrium.org.ua",
+  },
+
+  eneri: {
+    id: 3,
     name: "club_eneri_name",
     details: "club_eneri_details",
     link_name: "eneri.com.ua",
     link: "https://eneri.com.ua",
   },
-
-  // inrium: {
-  //   id: 3,
-  //   name: "club_inrium_name",
-    // link_name: "eneri.com.ua",
-    // link: "https://eneri.com.ua",
-  // },
 
   // dndlviv: {
   //   id: 4,

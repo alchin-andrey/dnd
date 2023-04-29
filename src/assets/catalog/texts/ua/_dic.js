@@ -6063,20 +6063,15 @@ export default {
 
   club_did_name: "Дід Лихозір",
   club_did_details: "Київський клуб з Майстрами, офлайн та онлайн іграми.",
-  club_did_link: "dedlihozor.club",
 
   club_eneri_name: "ЕНЕРІ",
   club_eneri_details: "Майданчик з офлайн та онлайн іграми від різних Майстрів<br/>у різних містах України.",
-  club_eneri_link: "eneri.com.ua",
 
   club_inrium_name: "ІНРІУМ",
-  club_inrium_details: "Майданчик з офлайн та онлайн іграми від різних Майстрів<br/>у різних містах України.",
-  club_inrium_link: "У розробці",
+  club_inrium_details: "Безпечне й затишне місце для україномовних гравців <br/>та Майстрів.",
 
   club_dndlviv_name: "D&D Lviv+",
   club_dndlviv_details: "Майданчик з офлайн та онлайн іграми від різних Майстрів<br/>у різних містах України.",
-  club_dndlviv_link: "dnd.lviv.ua",
-
   // ---
 
   city: "Місто",  
