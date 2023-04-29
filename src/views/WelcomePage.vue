@@ -15,10 +15,10 @@
 
 	<section class="welcom-wrapp">
 		<div class="pd-rlb-32 w-956">
-			<WelcomPage__WhatDND id="welcome-to-dnd#welcom-part1" class="pd-t-32" />
-			<WelcomPage__Start id="welcome-to-dnd#welcom-part2" class="mr-t-32 pd-t-32"/>
-			<WelcomPage__Masters id="welcome-to-dnd#welcom-part3" class="mr-t-64 pd-t-32"/>
-			<WelcomPage__Game id="welcome-to-dnd#welcom-part4" class="mr-t-64 pd-t-32"/>
+			<WelcomPage__WhatDND id="welcom-part1" class="pd-t-32" />
+			<WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32"/>
+			<WelcomPage__Masters id="welcom-part3" class="mr-t-64 pd-t-32"/>
+			<WelcomPage__Game id="welcom-part4" class="mr-t-64 pd-t-32"/>
 			<WelcomPage__Footer class="mr-t-102"/>
 			<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
 		</div>

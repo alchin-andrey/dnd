@@ -9,6 +9,7 @@
   <RaceParam__Weapons hr />
   <RaceParam__EquipKit hr />
   <RaceParam__Text hr/>
+  <AppDisclaimer />
 </template>
 
 <script>

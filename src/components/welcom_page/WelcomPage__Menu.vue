@@ -1,10 +1,10 @@
 <template>
 	<div class="pd-rl-32">
 		<section class="jbm-300 flex-col gap-18">
-			<a href="#welcome-to-dnd#welcom-part1">{{ t("lobby_menu_1") }}</a>
-			<a href="#welcome-to-dnd#welcom-part2">{{ t("lobby_menu_2") }}</a>
-			<a href="#welcome-to-dnd#welcom-part3">{{ t("lobby_menu_3") }}</a>
-			<a href="#welcome-to-dnd#welcom-part4">{{ t("lobby_menu_4") }}</a>
+			<a href="#welcom-part1">{{ t("lobby_menu_1") }}</a>
+			<a href="#welcom-part2">{{ t("lobby_menu_2") }}</a>
+			<a href="#welcom-part3">{{ t("lobby_menu_3") }}</a>
+			<a href="#welcom-part4">{{ t("lobby_menu_4") }}</a>
 		</section>
 		<section class="int-700 flex-col gap-4 mr-t-54">
 			<my-selection-card @click="goTo('/')" blue_btn route> {{ t_Btn_Dndme }} </my-selection-card>
