@@ -96,6 +96,7 @@ export default {
 	background-size: 1600px 496px;
 	overflow-y: scroll;
 	scrollbar-width: none;
+	scroll-behavior: smooth;
 }
 .welcom-wrapp::-webkit-scrollbar {
 	width: 0;
