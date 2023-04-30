@@ -56,27 +56,22 @@
 
 	<section v-else id="site_weapon">
 		<div
-			class="flex_weapon"
+			class="flex-row gap-18 cur-p"
 			@mouseover="hoverIn_Full()"
 			@mouseleave="hoverOut()"
 			@click="showDialog_Full()"
 		>
-			<div ref="stripe" class="side_stripe"></div>
-			<div class="int-400 flex_col" :class="{ passive: passive }">
-				<div v-if="!param_stule">
-					<div class="flex_title">
-						<div class="title h_18">
-							{{ t_Weapon_Name }}
-						</div>
-						<img
-							class="icon"
-							src="@/assets/img/icon/arrow_right_small.svg"
-							alt="arrow"
-							@mouseover="hoverIn_Select()"
-							@mouseleave="hoverOut()"
-							@click="showDialog_Select()"
-						/>
-					</div>
+			<div ref="stripe" class="stripe-item--main"></div>
+			<div class="int-400 flex-col gap-4" :class="{ 'pas-param': passive }">
+				<div class="flex-row-sb" v-if="!param_stule">
+					<div class="int-700 flex-as-c h-18">{{ t_Weapon_Name }}</div>
+					<AppSvg
+						class="svg-18 svg-main-f" 
+						@mouseover="hoverIn_Select()"
+						@mouseleave="hoverOut()"
+						@click="showDialog_Select()"
+						:path="ui_icon.arrow_right_small"
+					/>
 				</div>
 				<section v-if="param_stule">
 					<my-attribute
@@ -87,7 +82,7 @@
 						text_stule
 					/>
 				</section>
-				<section v-if="!param_stule">
+				<section class="flex-col gap-4" v-if="!param_stule">
 					<my-attribute
 						v-if="weapon[0].damage_1_hand_num"
 						title="damage"
@@ -108,13 +103,13 @@
 			</div>
 		</div>
 		<my-dialog-spell v-model:show="dialogVisible">
-			<my-wrapper>
+			<section>
 				<div class="int-700">{{ t_Weapon_Name }}</div>
-				<div class="text gray_4">{{ t_Weapon_Details }}</div>
-				<div class="weapon_type gray_4">{{ t_Weapon_Type }}</div>
-			</my-wrapper>
+				<div class="white-04 mr-t-4">{{ t_Weapon_Details }}</div>
+				<div class="white-04 mr-t-15">{{ t_Weapon_Type }}</div>
+			</section>
 
-			<my-wrapper>
+			<section class="flex-col gap-4">
 				<my-attribute
 					title="aim_bonus"
 					:type="bonus_Type"
@@ -134,9 +129,9 @@
 					addition="MAX"
 					:numb="weapon[0].range_max"
 				/>
-			</my-wrapper>
+			</section>
 
-			<my-wrapper>
+			<section class="flex-col gap-4">
 				<magic-attribute
 					title="damage"
 					:addition="weapon[0].damage_type"
@@ -158,8 +153,9 @@
 					:pls="damage_Bonus_Numb"
 					dot
 				/>
-			</my-wrapper>
-			<my-wrapper v-if="shown_ACW">
+			</section>
+
+			<section class="flex-col gap-4" v-if="shown_ACW">
 				<my-attribute
 					v-if="weapon[0].ammunition"
 					title="ammunition"
@@ -179,12 +175,13 @@
 					unit="kg"
 					dot
 				/>
-			</my-wrapper>
+			</section>
 		</my-dialog-spell>
 	</section>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
@@ -195,6 +192,7 @@ export default {
 	data() {
 		return {
 			dialogVisible: false,
+			ui_icon: ui_icon,
 		};
 	},
 	props: {
@@ -493,92 +491,6 @@ export default {
 </script>
 
 <style scoped>
-.flex_weapon {
-	display: flex;
-	gap: 0 18px;
-	height: 100%;
-	width: 100%;
-	cursor: pointer;
-	/* cursor: url('@/assets/img/icon/cursor_magic.png'), pointer; */
-}
-
-.flex_col {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 4px 0;
-	/*flex: 1 1 auto;*/
-}
-
-.flex_title {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.side_stripe {
-	min-width: 4px;
-	min-height: 100%;
-	background: rgba(255, 255, 255, 0.2);
-	flex: none;
-	order: 0;
-	align-self: stretch;
-	flex-grow: 0;
-}
-
-.active {
-	background: #ffffff;
-}
-
-.h_18 {
-	height: 18px;
-}
-
-.title {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	display: flex;
-	align-items: center;
-	white-space: pre;
-}
-
-.text {
-	white-space: pre-wrap;
-}
-
-.title::first-letter {
-	text-transform: uppercase;
-	font-size: 130%;
-}
-
-.weapon_type {
-	margin-top: 12px;
-}
-
-.gray_2 {
-	color: rgba(255, 255, 255, 0.2);
-}
-
-.gray_4 {
-	color: rgba(255, 255, 255, 0.4);
-}
-
-.hr {
-	height: 1px;
-	background: rgba(255, 255, 255, 0.2);
-}
-
-.passive {
-	opacity: 0.2;
-	/* cursor: auto; */
-}
-
-
 .print-cell-pad {
   padding: 4px 12px 8px;
 }

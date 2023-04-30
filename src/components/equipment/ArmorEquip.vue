@@ -1,26 +1,23 @@
 <template>
 	<div
-		class="flex_weapon"
+		class="flex-row gap-18 cur-p"
 		@mouseover="hoverIn_Full()"
 		@mouseleave="hoverOut()"
 		@click="showDialog_Full()"
 	>
-		<div ref="stripe" class="side_stripe"></div>
-		<div class="int-400 flex_col" :class="{ passive: passive }">
-			<div>
-				<div class="flex_title">
-					<div class="title int-700 h_18">{{ t_Armor_Name }}</div>
-					<img
-						class="icon"
-						src="@/assets/img/icon/arrow_right_small.svg"
-						alt="arrow"
-						@mouseover="hoverIn_Select()"
-						@mouseleave="hoverOut()"
-						@click="showDialog_Select()"
-					/>
-				</div>
-        <div class="text gray_2" v-html="t_Armor_Type"></div>
+		<div ref="stripe" class="stripe-item--main"></div>
+		<div class="int-400 flex-col gap-4" :class="{ 'pas-param': passive }">
+			<div class="flex-row-sb">
+				<div class="int-700 flex-as-c h-18">{{ t_Armor_Name }}</div>
+				<AppSvg
+					class="svg-18 svg-main-f" 
+					@mouseover="hoverIn_Select()"
+					@mouseleave="hoverOut()"
+					@click="showDialog_Select()"
+					:path="ui_icon.arrow_right_small"
+				/>
 			</div>
+      <div class="white-02" v-html="t_Armor_Type"></div>
       <my-attribute v-if="Armor.armor_bonus"
 				title="armor_class"
 				:numb="Armor.armor_bonus"
@@ -38,13 +35,13 @@
 	</div>
 	<my-dialog-spell v-model:show="dialogVisible">
 
-      <my-wrapper>
+    <section>
 			<div class="int-700">{{ t_Armor_Name }}</div>
-			<div class="text gray_4">{{ t_Armor_Details }}</div>
-      <div class="type gray_4">{{ t_Armor_Type }}</div>
-		</my-wrapper>
+			<div class="white-04 mr-t-4">{{ t_Armor_Details }}</div>
+      <div class="white-04 mr-t-15">{{ t_Armor_Type }}</div>
+		</section>
 
-		<my-wrapper>
+		<section class="flex-col gap-4">
       <my-attribute v-if="Armor.armor_bonus"
 				title="armor_class"
 				:numb="Armor.armor_bonus"
@@ -60,9 +57,9 @@
         no_icon
         dot
 			/>
-		</my-wrapper>
+		</section>
 
-		<my-wrapper v-if="Armor.cost || Armor.weight">
+		<section class="flex-col gap-4" v-if="Armor.cost || Armor.weight">
 			<my-attribute
 				v-if="Armor.cost"
 				title="cost"
@@ -76,16 +73,18 @@
 				unit="kg"
 				dot
 			/>
-		</my-wrapper>
+		</section>
 	</my-dialog-spell>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "ArmorEquip",
 	data() {
 		return {
 			dialogVisible: false,
+			ui_icon: ui_icon,
 		};
 	},
 	props: {
@@ -108,10 +107,10 @@ export default {
     },
 
     t_Equip_Name: (state) => (item) => {
-			const name = state.t(item[0].name);
+			const name = state.T(item[0].name);
 			const namb = item[1];
-			let str = namb > 1 ? `${name} × ${namb}` : name; 
-			return str[0].toUpperCase() + str.slice(1);
+			const str = namb > 1 ? `${name} × ${namb}` : name; 
+			return str;
 		},
 
     t_Armor_Name() {
@@ -123,36 +122,31 @@ export default {
     },
 
     t_Armor_Type() {
-      return this.t(this.Armor.type[0].name);
-    },
-
-    armor_Numb() {
-      let numb = this.armor[1]
-      return numb > 1 ? `× ${numb}`: null;
+      return this.T(this.Armor.type[0].name);
     },
 	},
 
 	watch: {
 		dialogVisible(val) {
 			if (val === false) {
-				this.$refs.stripe.classList.remove("active");
+				this.$refs.stripe.classList.remove("stripe-item--active");
 			}
 		},
 	},
 	methods: {
 		hoverIn_Select() {
 			if (this.select) {
-				this.$refs.stripe.classList.add("active");
+				this.$refs.stripe.classList.add("stripe-item--active");
 			}
 		},
 		hoverOut() {
 			if (!this.dialogVisible) {
-				this.$refs.stripe.classList.remove("active");
+				this.$refs.stripe.classList.remove("stripe-item--active");
 			}
 		},
 		hoverIn_Full() {
 			if (!this.select) {
-				this.$refs.stripe.classList.add("active");
+				this.$refs.stripe.classList.add("stripe-item--active");
 			}
 		},
 		showDialog_Full() {
@@ -169,81 +163,4 @@ export default {
 </script>
 
 <style scoped>
-.flex_weapon {
-	display: flex;
-	gap: 0 18px;
-	height: 100%;
-	width: 100%;
-	cursor: pointer;
-	/* cursor: url('@/assets/img/icon/cursor_magic.png'), pointer; */
-}
-
-.flex_col {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 4px 0;
-	/*flex: 1 1 auto;*/
-}
-
-.flex_title {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 4px;
-}
-.type {
-	margin-top: 12px;
-}
-
-.type::first-letter {
-	text-transform: uppercase;
-}
-.text {
-	text-align: start;
-}
-
-.text::first-letter {
-	text-transform: uppercase;
-}
-
-.side_stripe {
-	min-width: 4px;
-	min-height: 100%;
-	background: rgba(255, 255, 255, 0.2);
-	flex: none;
-	order: 0;
-	align-self: stretch;
-	flex-grow: 0;
-}
-
-.active {
-	background: #ffffff;
-}
-
-.h_18 {
-	height: 18px;
-}
-
-.title {
-	display: flex;
-	align-items: center;
-	white-space: pre;
-}
-
-.title::first-letter {
-	text-transform: uppercase;
-}
-
-.gray_2 {
-	color: rgba(255, 255, 255, 0.2);
-}
-
-.gray_4 {
-	color: rgba(255, 255, 255, 0.4);
-}
-
-.passive {
-  opacity: 0.2;
-}
 </style>

@@ -1,7 +1,7 @@
 <template>
-	<div class="flex_section int-400">
+	<div class="flex-row gap-36 int-400">
 
-		<my-wrapper gap_26 v-if="shown_Packs" class="packs_section">
+		<my-wrapper gap_26 v-if="shown_Packs" class="packs-size">
       <PacksEquip
 				v-for="item_packs_old in packs_old"
 				:key="item_packs_old"
@@ -13,16 +13,16 @@
 				:key="item_packs"
 				:packs="item_packs"
 			/>
-			<section class="flex-row-c gap-col-4" v-if="gold">
-				<div class="coin">
+			<section class="flex-row-c gap-4 h-18" v-if="gold">
+				<div class="flex-row-c svg-18">
 					<emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="12" />
 				</div>
-				<div class="text">{{ t_Text }}</div>
+				<div>{{ t_Text }}</div>
 			</section>
 		</my-wrapper>
 
 		<InventoryEquip
-			:class="{ pad_top: !shown_Inventory_stripe }"
+			:class="{ 'pd-t-2': !shown_Inventory_stripe }"
       :inventory_old="inventory_old"
 			:inventory="inventory"
 			:stripe="shown_Inventory_stripe"
@@ -72,7 +72,7 @@ export default {
     },
 
 		t_Text() {
-			return `${this.t("coin_gold")} × ${this.gold}`;
+			return `${this.T("coin_gold")} × ${this.gold}`;
 		},
 
 		shown_Inventory_stripe() {
@@ -91,37 +91,7 @@ export default {
 </script>
 
 <style scoped>
-.flex_section {
-	display: flex;
-	column-gap: 36px;
-}
-.flex-row-c {
-	display: flex;
-	align-items: center;
-}
-
-.gap-col-4 {
-  gap: 0 4px;
-}
-
-.coin {
-	width: 18px;
-	height: 18px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-}
-.text:first-letter {
-	text-transform: uppercase;
-}
-
-.packs_section {
-	width: 168px;
-}
-
-.pad_top {
-	padding-top: 2px;
-}
+.packs-size {width: 168px;}
 
 .emoji-mart-emoji {
 	padding: 0;

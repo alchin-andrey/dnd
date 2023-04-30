@@ -1,5 +1,7 @@
 .cur-p { cursor: pointer; }
 
+.pas-param { opacity: 0.2;}
+
 .br-4 { border-radius: 4px;}
 .br-12 { border-radius: 12px;}
 
@@ -20,3 +22,12 @@
 
 .btm-blue {background: #0047ff;}
 .btm-blue.hov:hover { background: #1355ff;}
+
+
+/* stripe */
+.stripe-item--main {
+	min-width: 4px;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.stripe-item--active { background: #ffffff;}
