@@ -457,24 +457,24 @@ export default {
 	watch: {
 		dialogVisible(val) {
 			if (val === false) {
-				this.$refs.stripe.classList.remove("active");
+				this.$refs.stripe.classList.remove("stripe-item--active");
 			}
 		},
 	},
 	methods: {
 		hoverIn_Select() {
 			if (this.select) {
-				this.$refs.stripe.classList.add("active");
+				this.$refs.stripe.classList.add("stripe-item--active");
 			}
 		},
 		hoverOut() {
 			if (!this.dialogVisible) {
-				this.$refs.stripe.classList.remove("active");
+				this.$refs.stripe.classList.remove("stripe-item--active");
 			}
 		},
 		hoverIn_Full() {
 			if (!this.select) {
-				this.$refs.stripe.classList.add("active");
+				this.$refs.stripe.classList.add("stripe-item--active");
 			}
 		},
 		showDialog_Full() {
