@@ -1,22 +1,15 @@
 <template>
-	<div
-		class="flex-row gap-18 cur-p"
-		@mouseover="hoverIn_Full()"
-		@mouseout="hoverOut()"
-		@click="showDialog_Full()"
+	<AppStripWrapp
+		:select="select"
+		:icon_name="icon_Svg"
+		:dialog="dialogVisible"
+		@click.stop
+		@clickFull="showDialog()"
+		@clickSelect="shownScroll()"
 	>
-		<div ref="stripe" class="stripe-item--main"></div>
-		<div class="int-400 w-100" :class="{ 'pas-param': passive }">
-			<div class="flex-row-sb">
-				<div class="flex-as-c">{{ t_Packs_Name }}</div>
-				<AppSvg  
-				@click.stop 
-				@mouseover.stop 
-				@click="shownScroll()"
-				class="svg-18 svg-main-f" 
-				:path="ui_icon[img_Icon]"
-				/>
-			</div>
+		<div class="int-400" :class="{ 'pas-param': passive }">
+			<div class="flex-row-c h-min-18 pd-r-18">{{ t_Packs_Name }}</div>
+
 				<section 
         class="null-height"
         :class="{'full-height': this.packs_scroll,}"
@@ -24,7 +17,7 @@
 					<InventoryEquip :inventory="packs[0].items" />
 				</section>
 		</div>
-	</div>
+	</AppStripWrapp>
 	<my-dialog-spell v-model:show="dialogVisible">
 
 		<section>
@@ -86,37 +79,18 @@ export default {
 			return this.t(this.packs[0].details);
 		},
 
-		img_Icon() {
+		icon_Svg() {
 			return this.packs_scroll ? "arrow_top_small" : "arrow_down_small";
 		},
 	},
 
-	watch: {
-		dialogVisible(val) {
-			if (val === false) {
-				this.$refs.stripe.classList.remove("stripe-item--active");
-			}
-		},
-	},
 	methods: {
 		shownScroll() {
 			this.packs_scroll = !this.packs_scroll;
 		},
 
-		hoverOut() {
-			if (!this.dialogVisible) {
-				this.$refs.stripe.classList.remove("stripe-item--active");
-			}
-		},
-		hoverIn_Full() {
-			if (!this.select) {
-				this.$refs.stripe.classList.add("stripe-item--active");
-			}
-		},
-		showDialog_Full() {
-			if (!this.select) {
-				this.dialogVisible = true;
-			}
+		showDialog() {
+			this.dialogVisible = true;
 		},
 	},
 };

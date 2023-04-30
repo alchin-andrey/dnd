@@ -1,22 +1,12 @@
 <template>
-	<div
-		class="flex-row gap-18 cur-p"
-		@mouseover="hoverIn_Full()"
-		@mouseleave="hoverOut()"
-		@click="showDialog_Full()"
+	<AppStripWrapp 
+	:select="select" 
+	:dialog="dialogVisible"
+	@clickFull="showDialog()"
+	@clickSelect="showDialog()"
 	>
-		<div ref="stripe" class="stripe-item--main"></div>
 		<div class="int-400 flex-col gap-4" :class="{ 'pas-param': passive }">
-			<div class="flex-row-sb">
-				<div class="int-700 flex-as-c h-18">{{ t_Armor_Name }}</div>
-				<AppSvg
-					class="svg-18 svg-main-f" 
-					@mouseover="hoverIn_Select()"
-					@mouseleave="hoverOut()"
-					@click="showDialog_Select()"
-					:path="ui_icon.arrow_right_small"
-				/>
-			</div>
+			<div class="int-700 f-lh-18">{{ t_Armor_Name }}</div>
       <div class="white-02" v-html="t_Armor_Type"></div>
       <my-attribute v-if="Armor.armor_bonus"
 				title="armor_class"
@@ -32,61 +22,58 @@
         no_icon
 			/>
 		</div>
-	</div>
-	<my-dialog-spell v-model:show="dialogVisible">
+		<my-dialog-spell v-model:show="dialogVisible">
 
-    <section>
-			<div class="int-700">{{ t_Armor_Name }}</div>
-			<div class="white-04 mr-t-4">{{ t_Armor_Details }}</div>
-      <div class="white-04 mr-t-15">{{ t_Armor_Type }}</div>
-		</section>
+			<section>
+				<div class="int-700">{{ t_Armor_Name }}</div>
+				<div class="white-04 mr-t-4">{{ t_Armor_Details }}</div>
+				<div class="white-04 mr-t-15">{{ t_Armor_Type }}</div>
+			</section>
 
-		<section class="flex-col gap-4">
-      <my-attribute v-if="Armor.armor_bonus"
-				title="armor_class"
-				:numb="Armor.armor_bonus"
-        type="bonus"
-        plus
-        no_icon
-        dot
-			/>
-      <my-attribute v-if="Armor.armor_class"
-				title="armor_class"
-				:numb="Armor.armor_class"
-        type="armor_full"
-        no_icon
-        dot
-			/>
-		</section>
+			<section class="flex-col gap-4">
+				<my-attribute v-if="Armor.armor_bonus"
+					title="armor_class"
+					:numb="Armor.armor_bonus"
+					type="bonus"
+					plus
+					no_icon
+					dot
+				/>
+				<my-attribute v-if="Armor.armor_class"
+					title="armor_class"
+					:numb="Armor.armor_class"
+					type="armor_full"
+					no_icon
+					dot
+				/>
+			</section>
 
-		<section class="flex-col gap-4" v-if="Armor.cost || Armor.weight">
-			<my-attribute
-				v-if="Armor.cost"
-				title="cost"
-				:price="Armor.cost"
-				dot
-			/>
-			<my-attribute
-				v-if="Armor.weight"
-				title="weight"
-				:numb="Armor.weight"
-				unit="kg"
-				dot
-			/>
-		</section>
-	</my-dialog-spell>
+			<section class="flex-col gap-4" v-if="Armor.cost || Armor.weight">
+				<my-attribute
+					v-if="Armor.cost"
+					title="cost"
+					:price="Armor.cost"
+					dot
+				/>
+				<my-attribute
+					v-if="Armor.weight"
+					title="weight"
+					:numb="Armor.weight"
+					unit="kg"
+					dot
+				/>
+			</section>
+		</my-dialog-spell>
+	</AppStripWrapp>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
+// import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "ArmorEquip",
-	data() {
-		return {
-			dialogVisible: false,
-			ui_icon: ui_icon,
-		};
-	},
+	data: () => ({
+		dialogVisible: false,
+	}),
 	props: {
 		armor: {
 			type: Array,
@@ -126,41 +113,10 @@ export default {
     },
 	},
 
-	watch: {
-		dialogVisible(val) {
-			if (val === false) {
-				this.$refs.stripe.classList.remove("stripe-item--active");
-			}
-		},
-	},
 	methods: {
-		hoverIn_Select() {
-			if (this.select) {
-				this.$refs.stripe.classList.add("stripe-item--active");
-			}
-		},
-		hoverOut() {
-			if (!this.dialogVisible) {
-				this.$refs.stripe.classList.remove("stripe-item--active");
-			}
-		},
-		hoverIn_Full() {
-			if (!this.select) {
-				this.$refs.stripe.classList.add("stripe-item--active");
-			}
-		},
-		showDialog_Full() {
-			if (!this.select) {
-				this.dialogVisible = true;
-			}
-		},
-
-		showDialog_Select() {
+		showDialog() {
 			this.dialogVisible = true;
-		},
-	},
+		}
+	}
 };
 </script>
-
-<style scoped>
-</style>

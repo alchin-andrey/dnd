@@ -55,24 +55,15 @@
 	</section>
 
 	<section v-else id="site_weapon">
-		<div
-			class="flex-row gap-18 cur-p"
-			@mouseover="hoverIn_Full()"
-			@mouseleave="hoverOut()"
-			@click="showDialog_Full()"
+		<AppStripWrapp 
+		:select="select"
+		:dialog="dialogVisible"
+		@clickFull="showDialog()"
+		@clickSelect="showDialog()"
+		:icon="!param_stule"
 		>
-			<div ref="stripe" class="stripe-item--main"></div>
 			<div class="int-400 flex-col gap-4" :class="{ 'pas-param': passive }">
-				<div class="flex-row-sb" v-if="!param_stule">
-					<div class="int-700 flex-as-c h-18">{{ t_Weapon_Name }}</div>
-					<AppSvg
-						class="svg-18 svg-main-f" 
-						@mouseover="hoverIn_Select()"
-						@mouseleave="hoverOut()"
-						@click="showDialog_Select()"
-						:path="ui_icon.arrow_right_small"
-					/>
-				</div>
+				<div class="int-700 f-lh-18" v-if="!param_stule">{{ t_Weapon_Name }}</div>
 				<section v-if="param_stule">
 					<my-attribute
 						:title="t_Weapon_Name"
@@ -101,7 +92,7 @@
 					/>
 				</section>
 			</div>
-		</div>
+		</AppStripWrapp>
 		<my-dialog-spell v-model:show="dialogVisible">
 			<section>
 				<div class="int-700">{{ t_Weapon_Name }}</div>
@@ -181,7 +172,6 @@
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
@@ -189,12 +179,9 @@ import { useProficienciesStore } from "@/stores/modules/ProficienciesStore";
 
 export default {
 	name: "WeaponEquip",
-	data() {
-		return {
-			dialogVisible: false,
-			ui_icon: ui_icon,
-		};
-	},
+	data: () => ({
+		dialogVisible: false,
+	}),
 	props: {
 		weapon: {
 			type: Array,
@@ -454,39 +441,11 @@ export default {
 		},
 	},
 
-	watch: {
-		dialogVisible(val) {
-			if (val === false) {
-				this.$refs.stripe.classList.remove("stripe-item--active");
-			}
-		},
-	},
 	methods: {
-		hoverIn_Select() {
-			if (this.select) {
-				this.$refs.stripe.classList.add("stripe-item--active");
-			}
-		},
-		hoverOut() {
-			if (!this.dialogVisible) {
-				this.$refs.stripe.classList.remove("stripe-item--active");
-			}
-		},
-		hoverIn_Full() {
-			if (!this.select) {
-				this.$refs.stripe.classList.add("stripe-item--active");
-			}
-		},
-		showDialog_Full() {
-			if (!this.select) {
-				this.dialogVisible = true;
-			}
-		},
-
-		showDialog_Select() {
+		showDialog() {
 			this.dialogVisible = true;
-		},
-	},
+		}
+	}
 };
 </script>
 

@@ -3,7 +3,10 @@
 		<div 
 		class="dialog"
 		:class="{'flex-row-c': finish}"
-		v-if="show" @click="hideDialog">
+		v-if="show" 
+		@click.stop
+		@click="hideDialog"
+		>
 			<div 
       @click.stop 
       class="dialog__wrapp int-400" 

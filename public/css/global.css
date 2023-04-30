@@ -8,6 +8,7 @@
 .w-362 {width: 362px;}
 
 .h-18 {height: 18px;}
+.h-min-18 {min-height: 18px;}
 
 .flex-wrap {flex-wrap: wrap;}
 
@@ -87,8 +88,15 @@
 .pd-t-22 { padding-top: 22px; }
 .pd-t-32 { padding-top: 32px; }
 
+.pd-r-18 {padding-right: 18px;}
+
+
 .pd-l-16 { padding-left: 16px; }
 .pd-l-32 { padding-left: 32px; }
+
+
+
+
 
 
 .mr-t-4 { margin-top: 4px; }
