@@ -6061,7 +6061,7 @@ export default {
 
   // --- clubs
 
-  club_did_name: "Дід Лихозір",
+  club_did_name: "Дід Лихозор",
   club_did_details: "Київський клуб з Майстрами, офлайн та онлайн іграми.",
 
   club_eneri_name: "ЕНЕРІ",
