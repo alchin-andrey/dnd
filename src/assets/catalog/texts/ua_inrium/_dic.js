@@ -6079,6 +6079,7 @@ export default {
   city: "Місто",  
   format: "Формат",
   kyiv: "Київ",
+  lviv: "Львів",
   offline: "Оффлайн",
   online: "Онлайн",
   telegram: "Telegram",
@@ -6086,6 +6087,10 @@ export default {
   andrii_pavlov: masters.andrii_pavlov,
   andrii_pavlov_details: masters.andrii_pavlov_details,
   andrii_pavlov_contact: masters.andrii_pavlov_contact,
+
+  oleksandr_frankivsky: masters.oleksandr_frankivsky,
+  oleksandr_frankivsky_details: masters.oleksandr_frankivsky_details,
+  oleksandr_frankivsky_contact: masters.oleksandr_frankivsky_contact,
 
   lobby_master_button: "Я теж Майстер, додайте мою анкету",
 

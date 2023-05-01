@@ -7,5 +7,17 @@ export default {
     city: ["kyiv","online"],
     format: [],
     telegram: "andrii_pavlov_contact",
+    link: "https://t.me/godblessdnd"
+  },
+
+  oleksandr_frankivsky: {
+    id: 1,
+    name: "oleksandr_frankivsky",
+    details: "oleksandr_frankivsky_details",
+    city: ["lviv","online"],
+    format: [],
+    telegram: "oleksandr_frankivsky_contact",
+    link: "https://t.me/Lagoni",
   }
+  
 };
