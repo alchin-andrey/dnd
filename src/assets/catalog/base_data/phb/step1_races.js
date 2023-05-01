@@ -1909,8 +1909,10 @@ export default {
           stats: [{ name: "wisdom", num: 1, },],
 
           // qualities: {vision_night: 60,},
-          qualities: [{name: "vision_night", num: 60,},],
-          qualities: [{name: "speed", num: 35,},],
+          qualities: [
+            {name: "speed", num: 35,},
+            {name: "vision_night", num: 60,},
+          ],
 
           proficiencies: {
             weapons: [
