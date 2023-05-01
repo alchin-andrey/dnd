@@ -1,10 +1,12 @@
 <template>
-	<div class="btm-grey br-12 blur-60 hov cur-p">
+	<div class="btm-grey br-12 blur-60 hov cur-p pos-rel">
 		<a target="_blank" :href="link">
-			<div class="pd-16 pos-rel">
-				<div class="int-700">{{ T_Btm_Name }}</div>
-				<AppSvg class="svg-18 svg-main-f icon-pos" :path="ui_icon[icon]"/>
-			</div>
+			<div :class="[style_Btm]">{{ T_Btm_Name }}</div>
+			<AppSvg 
+				class="svg-18 svg-main-f icon-pos"
+				:class="[style_Svg]"
+				:path="ui_icon[icon]"
+			/>
 		</a>
 	</div>
 </template>
@@ -25,23 +27,37 @@ export default {
 		},
 		icon: {
 			type: String,
-			default: "arrow_right_small",
+			default: "arrow_right_small", // return, plus, donate;
 		},
 		link: {
 			type: String,
 			default: null,
-		}
+		},
+		btm_x2: {
+      type: Boolean,
+      default: false,
+    },
 	},
 	computed: {
 		T_Btm_Name() {
 			return this.T(this.name)
-		}
-    // icon_Svg() {
-    //   if(this.type = null) return "arrow_right_small";
-    //   if(this.type = "return") return "return";
-    //   if(this.type = "plus") return "plus";
-    //   if(this.type = "donate") return "donate";
-    // }
+		},
+
+		style_Btm() {
+			if(this.btm_x2) {
+				return 'int-700-20 pd-20-28';
+			} else {
+				return 'int-700 pd-16';
+			}
+		},
+
+		style_Svg() {
+			if(this.btm_x2) {
+				return 'svg-36 icon-pos_x2';
+			} else {
+				return 'svg-18';
+			}
+		},
 	},
 };
 </script>
@@ -55,5 +71,8 @@ export default {
 	-webkit-transform: translate(0%, -50%);
 	-ms-transform: translate(0%, -50%);
 	transform: translate(0%, -50%);
+}
+.icon-pos_x2 {
+	right: 14px;
 }
 </style>

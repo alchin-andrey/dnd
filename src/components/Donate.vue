@@ -9,10 +9,6 @@
 		</section>
 
 		<section class="flex-col gap-4 int-700">
-			<!-- <my-selection-card link white_btn>
-				<a class="pd-16 color-blue" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ T("view_benefits")
-				}}</a>
-			</my-selection-card> -->
 			<AppBtmLink
 				class="btm-white"
 				name="view_benefits"

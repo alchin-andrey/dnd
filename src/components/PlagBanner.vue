@@ -13,10 +13,19 @@
 							{{ em_After }}
 						</div>
 					</div>
-					<my-selection-card blue_btn link x2_svg>
+
+					<AppBtmLink
+						class="btm-blue"
+						name="accelerate_development"
+						icon="donate"
+						link="https://www.buymeacoffee.com/dndme/membership"
+						btm_x2
+					/>
+
+					<!-- <my-selection-card blue_btn link x2_svg>
 						<a class="pd-20-28" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ t_Donat
 						}}</a>
-					</my-selection-card>
+					</my-selection-card> -->
 				</section>
 			</div>
 		</div>
