@@ -177,34 +177,20 @@
 	letter-spacing: 0.02em;
 }
 
-.print-grey {
-	color: #828282;
-}
+.white-02 {color: rgba(255, 255, 255, 0.2);}
+.white-04 {color: rgba(255, 255, 255, 0.4);}
+.buff { color: #05ff00; }
+.debuff { color: #ff0000;}
+.color-blue { color: #0047FF;}
 
-.white-04 {
-	color: rgba(255, 255, 255, 0.4);
-}
-
-.buff {
-	color: #05ff00;
-}
-
-.debuff {
-	color: #ff0000;
-}
-
-.text_print > span {
-  color: #000000;
-}
+.print-grey { color: #828282;}
+.text_print > span { color: #000000;}
 
 .rare-text,
 .rare-text a {
 	color: #ffc93d;
 }
 
-.color-blue {
-	color: #0047FF;
-}
 
 .f-lh-18 {
 	line-height: 18px;
