@@ -1,11 +1,9 @@
 <template>
-    <my-selection-card
-    v-if="show_Master_Page" 
-    arrow
+  <AppBtmLink
+    v-if="show_Master_Page"
     @click="getPage()"
-    >
-      <div class="int-700"> {{ T("lobby_button") }}</div>
-    </my-selection-card>
+    name="lobby_button" 
+  />
 </template>
 
 <script>
@@ -29,13 +27,6 @@ export default {
     getPage() {
       this.showHome();
       this.$router.push('/welcome-to-dnd');
-      // if(this.page_setting_open == 'main_page') {
-      //   this.showHome();
-      //   setTimeout(() => this.$router.push('/welcome-to-dnd'), 500);
-      // } else {
-      //   this.showHome();
-      //   this.$router.push('/welcome-to-dnd');
-      // }
     },
   },
 };

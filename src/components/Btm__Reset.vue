@@ -1,10 +1,10 @@
 <template>
-  <my-selection-card
-    reset
+  <AppBtmLink
+    class="btm-red"
+    icon="return"
     @click="resetState()"
-  >
-    <div class="int-700">{{ t_Reset }}</div>
-  </my-selection-card>
+    name="start_over" 
+  />
 </template>
 
 <script>
@@ -20,10 +20,6 @@ export default {
     ...mapWritableState(usePagesStore, ["site_settings", 'pages', "showHome"]),
     ...mapWritableState(useFormStore, ["form_kof"]),
     ...mapWritableState(useMainStore, ["srd"]),
-
-    t_Reset() {
-			return this.T("start_over");
-		},
 	},
 
   methods: {

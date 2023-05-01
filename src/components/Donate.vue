@@ -9,12 +9,22 @@
 		</section>
 
 		<section class="flex-col gap-4 int-700">
-			<my-selection-card link white_btn>
-				<a class="pd-16 color-blue" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ t_Donat
+			<!-- <my-selection-card link white_btn>
+				<a class="pd-16 color-blue" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ T("view_benefits")
 				}}</a>
-			</my-selection-card>
-
-			<AppLoadBtm v-if="finish" @click="btnClick()" :text="t_Pdf" :progress="progress" />
+			</my-selection-card> -->
+			<AppBtmLink
+				class="btm-white"
+				name="view_benefits"
+				icon="donate"
+				link="https://www.buymeacoffee.com/dndme/membership" 
+			/>
+			<AppLoadBtm 
+				v-if="finish" 
+				@click="btnClick()" 
+				:text="t_Pdf" 
+				:progress="progress" 
+			/>
 		</section>
 	</div>
 </template>
@@ -50,9 +60,9 @@ export default {
 			return this.t("benefaction");
 		},
 
-		t_Donat() {
-			return this.T("view_benefits");
-		},
+		// t_Donat() {
+		// 	return this.T("view_benefits");
+		// },
 
 		t_Pdf() {
 			return this.t("download_pdf");
