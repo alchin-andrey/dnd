@@ -11,7 +11,7 @@ export default {
   },
 
   oleksandr_frankivsky: {
-    id: 1,
+    id: 2,
     name: "oleksandr_frankivsky",
     details: "oleksandr_frankivsky_details",
     city: ["lviv","online"],
@@ -19,5 +19,5 @@ export default {
     telegram: "oleksandr_frankivsky_contact",
     link: "https://t.me/Lagoni",
   }
-  
+
 };
