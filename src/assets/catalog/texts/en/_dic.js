@@ -957,7 +957,7 @@ export default {
 
   //Tiefling
 
-  tiefling: "тіфлинґ",
+  tiefling: "Тифлінґ",
   tiefling_details: races.tiefling,
 
   // Elf

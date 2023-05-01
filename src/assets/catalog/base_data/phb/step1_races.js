@@ -1910,6 +1910,7 @@ export default {
 
           // qualities: {vision_night: 60,},
           qualities: [{name: "vision_night", num: 60,},],
+          qualities: [{name: "speed", num: 35,},],
 
           proficiencies: {
             weapons: [

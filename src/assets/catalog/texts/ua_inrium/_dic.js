@@ -961,7 +961,7 @@ export default {
 
   //Tiefling
 
-  tiefling: "тіфлинґ",
+  tiefling: "Тифлінґ",
   tiefling_details: races.tiefling,
 
   // Elf
@@ -2912,7 +2912,7 @@ export default {
   fighter_details: classes.fighter_details,
 
   armor_chainmail: "кольчуга",
-  armor_chainmail_details: "",
+  armor_chainmail_details: "Виготовлена із з’єднаних між собою металевих кілець, кольчуга має шар стьобаної тканини під собою, щоб запобігти натиранню та пом’якшити удари. До складу костюма входять рукавиці.",
 
   on_damage_second_attack: "на пошкодження і від другої атаки в ході",
   plus_2_on_ranged: "+2 на далекобійні атаки (застосовано)",
@@ -6037,7 +6037,7 @@ export default {
 
   lobby_menu_1: "Що таке Dungeons & Dragons",
   lobby_menu_2: "Як почати",
-  lobby_menu_3: "Де знайти гру або майста",
+  lobby_menu_3: "Де знайти гру або майстра",
   lobby_menu_4: "Як проходить гра",
 
   lobby_welcome_title: "Що таке<br/>Dungeons & Dragons",
