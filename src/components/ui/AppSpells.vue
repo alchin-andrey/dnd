@@ -1642,10 +1642,6 @@ export default {
   border: 2px solid #000000;
 }
 
-/* .text_print {
-  color: #000000 !important;
-} */
-
 .flex_row {
   display: flex;
 }
@@ -1653,11 +1649,6 @@ export default {
 .fs-40 {
   font-size: 40px;
 }
-
-/* .spell_qr {
-  display: flex;
-  justify-content: flex-end;
-} */
 
 .flex_qr_wrapp {
   width: 100%;

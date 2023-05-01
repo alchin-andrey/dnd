@@ -2,6 +2,7 @@ import {Emoji} from "emoji-mart-vue-fast/src";
 
 import AppSvg from "@/components/ui/AppSvg.vue";
 import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
+import AppBtmLink from "@/components/ui/AppBtmLink.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -82,6 +83,7 @@ export default [
   
   AppSvg,
   AppStripWrapp,
+  AppBtmLink,
 
   AppDisclaimer,
   AppProficiencies,

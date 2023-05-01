@@ -1,21 +1,20 @@
 <template>
-	<div class="btm-grey br-12 pd-16 blur-60 dtm-size-2">
-		<div class="flex-row gap-16">
-
-			<img class="img-size br-4" :src="master_Foto" :alt="master_param.name">
-
-			<div class="flex-col-sb">
-				<section class="flex-col gap-4">
-					<div class="int-700">{{ t_Name }}</div>
-					<div class="int-400 white-04" v-html="t_Details"></div>
-				</section>
-
-				<section class="int-400 flex_col gap-4 white-04">
-					<div>{{ t_Master_City }}</div>
-					<div><span>{{ t_Telegram }}</span> <span v-html="t_Master_Telegram"/></div>
-				</section>
+	<div class="btm-grey hov br-12 blur-60 cur-p dtm-size-2">
+		<a target="_blank" :href="master_param.link">
+			<div class="flex-row gap-16 pd-16">
+				<img class="img-size br-4" :src="master_Foto" :alt="master_param.name">
+				<div class="flex-col-sb">
+					<section class="flex-col gap-4">
+						<div class="int-700">{{ t_Name }}</div>
+						<div class="int-400 white-04" v-html="t_Details"></div>
+					</section>
+					<section class="int-400 flex_col gap-4 white-04">
+						<div>{{ t_Master_City }}</div>
+						<div><span>{{ t_Telegram }}</span> <span v-html="t_Master_Telegram"/></div>
+					</section>
+				</div>
 			</div>
-		</div>
+		</a>
 	</div>
 </template>
 <script>

@@ -3,7 +3,11 @@
 		<section class="btm-size">
 			<div class="int-700 flex-col gap-32 w-362">
 				<div v-html="t('lobby_conclustion')"/>
-				<my-selection-card @click="goTo('/')" blue_btn route> {{ T("how_to_start_2_title") }} </my-selection-card>
+				<AppBtmLink
+					class="btm-blue"
+					@click="goTo('/')"
+					name="how_to_start_2_title" 
+				/>
 			</div>
 		</section>
 

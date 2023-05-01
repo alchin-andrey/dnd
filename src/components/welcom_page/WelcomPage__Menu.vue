@@ -6,11 +6,18 @@
 			<a href="#welcom-part3">{{ t("lobby_menu_3") }}</a>
 			<a href="#welcom-part4">{{ t("lobby_menu_4") }}</a>
 		</section>
+		
 		<section class="int-700 flex-col gap-4 mr-t-54">
-			<my-selection-card @click="goTo('/')" blue_btn route> {{ t_Btn_Dndme }} </my-selection-card>
-			<my-selection-card link>
-				<a class="pd-16" target="_blank" href="https://www.buymeacoffee.com/dndme">{{ t_Donat }}</a>
-			</my-selection-card>
+			<AppBtmLink
+			class="btm-blue"
+			@click="goTo('/')"
+			name="how_to_start_2_title" 
+			/>
+			<AppBtmLink 
+			name="lobby_support_project" 
+			icon="donate" 
+			link="https://www.buymeacoffee.com/dndme" 
+			/>
 		</section>
 	</div>
 </template>
@@ -18,16 +25,6 @@
 
 export default {
 	name: "WelcomPage__Menu",
-	computed: {
-		t_Btn_Dndme() {
-			return this.T("how_to_start_2_title");
-		},
-
-		t_Donat() {
-			return this.T("lobby_support_project");
-		},
-	},
-
 	methods: {
 		goTo(route) {
         this.$router.push(route);
