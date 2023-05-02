@@ -1,37 +1,39 @@
 <template>
-	<div class="column_value jbm-300">
-		<div class="text">
-			<svg
-				class="active_svg"
-				:class="{
-					save_svg: stats_Saving_Arr.includes(stats_name),
-				}"
-				viewBox="0 0 18 18"
-				xmlns="http://www.w3.org/2000/svg"
-				v-html="stats_icon[stats_name]"
-			></svg>
-			<!-- <img :src="icon_Image" :alt="icon" /> -->
-			<div class="item">
-				{{ t_Title }}<span>{{ t_Type }}</span>
+	<AppCardWrapp passive>
+		<div class="column_value jbm-300">
+			<div class="text">
+				<svg
+					class="active_svg"
+					:class="{
+						save_svg: stats_Saving_Arr.includes(stats_name),
+					}"
+					viewBox="0 0 18 18"
+					xmlns="http://www.w3.org/2000/svg"
+					v-html="stats_icon[stats_name]"
+				></svg>
+				<!-- <img :src="icon_Image" :alt="icon" /> -->
+				<div class="item">
+					{{ t_Title }}<span>{{ t_Type }}</span>
+				</div>
+			</div>
+			<div class="stats_amount">
+				<div
+					class="numb int-400"
+					v-for="numb in revers_Stats_Numb"
+					:key="numb"
+						@mouseover="hoverStateNewArr(numb)" 
+						@mouseleave="hoverStop()"
+					@click="getStateNewArr(numb)"
+					:class="{
+						active: numb == stats_base_numb[stats_Index],
+						active_hower: numb == stats_base_numb[stats_Hower_Index],
+					}"
+				>
+					{{ numb }}
+				</div>
 			</div>
 		</div>
-		<div class="stats_amount">
-			<div
-				class="numb int-400"
-				v-for="numb in revers_Stats_Numb"
-				:key="numb"
-        @mouseover="hoverStateNewArr(numb)" 
-        @mouseleave="hoverStop()"
-				@click="getStateNewArr(numb)"
-				:class="{
-					active: numb == stats_base_numb[stats_Index],
-					active_hower: numb == stats_base_numb[stats_Hower_Index],
-				}"
-			>
-				{{ numb }}
-			</div>
-		</div>
-	</div>
+	</AppCardWrapp>
 </template>
 
 <script>

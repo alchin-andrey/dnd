@@ -1,5 +1,5 @@
 <template>
-	<my-selection-card no_blur :passive="pass_boll_link" :active_boll_link="active_boll_link" banned>
+	<AppCardWrapp no_blur :active_card="active_boll_link" :banned="pass_boll_link">
 		<!-- //NOTE - Text -->
 		<my-card-text
 			v-if="custom.name || custom.details"
@@ -9,9 +9,8 @@
 		</my-card-text>
 
 		<!-- //NOTE - Stats -->
-		<my-wrapper v-if="shown_Stats">
-			<my-wrapper
-				gap_26
+		<AppWrapper v-if="shown_Stats">
+			<AppWrapper gap="26"
 				v-for="state in level_Filter_Arr(custom.stats)"
 				:key="state"
 			>
@@ -24,8 +23,8 @@
           :select_list="select_list"
 				/>
 				<my-card-text v-if="state.details" :text_html="state.details" />
-			</my-wrapper>
-			<my-wrapper
+			</AppWrapper>
+			<AppWrapper
 				v-for="saving in level_Filter_Arr(custom.saving)"
 				:key="saving"
 			>
@@ -37,13 +36,12 @@
 					:active_card="active_boll_link"
           :select_list="select_list"
 				/>
-			</my-wrapper>
-		</my-wrapper>
+			</AppWrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Skilss -->
-		<my-wrapper v-if="shown_Param_Arr(custom.skills)">
-			<my-wrapper
-				gap_26
+		<AppWrapper v-if="shown_Param_Arr(custom.skills)">
+			<AppWrapper gap="26"
 				v-for="skill in level_Filter_Arr(custom.skills)"
 				:key="skill"
 			>
@@ -58,21 +56,21 @@
 					v-if="skill.details && setting_name == 'skills'"
 					:text_html="skill.details"
 				/>
-			</my-wrapper>
-		</my-wrapper>
+			</AppWrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Skilss_Passive -->
-		<my-wrapper v-if="shown_Param_Arr(custom.skills_passive)">
+		<AppWrapper v-if="shown_Param_Arr(custom.skills_passive)">
 			<AppSkills
 				v-for="skills_passive in level_Filter_Arr(custom.skills_passive)"
 				:key="skills_passive"
 				:title="skills_passive.name"
 				:numb="skills_passive.num"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Qualities -->
-		<my-wrapper v-if="shown_Qualities">
+		<AppWrapper v-if="shown_Qualities">
 			<my-attribute
 				v-if="custom.hp_bonus"
 				title="hp_bonus"
@@ -87,19 +85,19 @@
 				:feet="qual.name == 'speed' || qual.name == 'vision_night'"
 				:plus="qual.type == 'bonus'"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Charges -->
-		<my-wrapper v-if="shown_Param_Arr(custom.charges)">
+		<AppWrapper v-if="shown_Param_Arr(custom.charges)">
 			<AppCharges
 				v-for="item in level_Filter_Arr(custom.charges)"
 				:key="item"
 				:charge="item"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Proficiencies -->
-			<my-wrapper v-if="shown_Proficiencies">
+			<AppWrapper v-if="shown_Proficiencies">
 				<AppProficiencies 
           v-for="(val, name) in custom.proficiencies" 
           :key="name"
@@ -108,29 +106,29 @@
 					:active_card="active_boll_link"
           :select_list="select_list"
 				/>
-			</my-wrapper>
+			</AppWrapper>
 
 		<!-- //NOTE - Armor -->
-		<my-wrapper v-if="armors_Equip(custom.equipment).length !== 0" gap_26>
+		<AppWrapper gap="26" v-if="armors_Equip(custom.equipment).length !== 0">
 			<ArmorEquip
 				v-for="armor in armors_Equip(custom.equipment)"
 				:key="armor"
 				:armor="armor"
 				select
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Fines -->
-		<my-wrapper v-if="shown_Param_Arr(custom.fines)" gap_8>
+		<AppWrapper gap="8" v-if="shown_Param_Arr(custom.fines)">
 			<AppFines
 				v-for="item in level_Filter_Arr(custom.fines)"
 				:key="item"
 				:fines="item"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Spells -->
-		<my-wrapper v-if="shown_Param_Arr(custom.spells)" gap_26>
+		<AppWrapper gap="26" v-if="shown_Param_Arr(custom.spells)">
 			<AppSpells
 				v-for="item in level_Filter_Arr(custom.spells)"
 				:key="item"
@@ -139,20 +137,20 @@
 				:active_card="active_boll_link"
         :select_list="select_list"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Weapon -->
-		<my-wrapper v-if="weapons_Equip(custom.equipment).length !== 0" gap_26>
+		<AppWrapper gap="26" v-if="weapons_Equip(custom.equipment).length !== 0">
 			<WeaponEquip
 				v-for="weapon in weapons_Equip(custom.equipment)"
 				:key="weapon"
 				:weapon="weapon"
 				select
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Invenory_Kit -->
-		<my-wrapper
+		<AppWrapper
 			v-if="
 				packs_Equip(custom.equipment).length !== 0 ||
 				inventory_Equip(custom.equipment).length !== 0 ||
@@ -164,10 +162,10 @@
 				:inventory="inventory_Equip(custom.equipment)"
         :gold="gold_Equip_Numb(custom.equipment)"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Settings -->
-		<my-wrapper v-if="shown_Param_Arr(custom.settings)">
+		<AppWrapper v-if="shown_Param_Arr(custom.settings)">
 			<MyCusstomSetting
 				v-for="item in level_Filter_Arr(custom.settings)"
 				:key="item"
@@ -176,13 +174,13 @@
 				:sum="select_Sum(item)"
 			>
 			</MyCusstomSetting>
-		</my-wrapper>
+		</AppWrapper>
 
 		<!-- //NOTE - Сondition -->
-		<my-wrapper v-if="custom.condition">
-			<div class="rare-text int-400" v-html="t_Condition" />
-		</my-wrapper>
-	</my-selection-card>
+		<AppWrapper v-if="custom.condition">
+			<div class="int-400 rare-text" v-html="t_Condition" />
+		</AppWrapper>
+	</AppCardWrapp>
 </template>
 
 <script>
@@ -308,7 +306,4 @@ export default {
 </script>
 
 <style scoped>
-.rare-text {
-	color: #ffc93d;
-}
 </style>

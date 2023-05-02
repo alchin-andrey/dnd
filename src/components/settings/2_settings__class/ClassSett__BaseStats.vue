@@ -1,21 +1,18 @@
 <template>
 	<section class="marg">
-			<ClassParam__Stats />
+		<ClassParam__Stats />
 	</section>
-	<my-selection-card v-for="name in stats_Keys" :key="name" passive>
-		<BaseStatsCard :stats_name="name" />
-	</my-selection-card>
-  <transition name="fade">
-	<my-selection-card
-		v-if="MY.stats_base_save[MY_Class.name]"
-		@click="defaultStats()"
-	>
-		<div class="int-700 btm_reset" >
-			<div>{{ t("refresh_to_recommended") }}</div>
-			<img src="@/assets/img/icon/reset.svg" alt="reset" />
-		</div>
-	</my-selection-card>
-</transition>
+
+	<BaseStatsCard v-for="name in stats_Keys" :key="name" :stats_name="name" />
+	
+	<transition name="fade">
+		<AppBtmLink 
+			v-if="MY.stats_base_save[MY_Class.name]" 
+			icon="return"
+			@click="defaultStats()"
+			name="refresh_to_recommended" 
+		/>
+	</transition>
 </template>
 
 <script>
@@ -47,24 +44,17 @@ export default {
 </script>
 
 <style scoped>
-.btm_reset {
-	display: flex;
-	justify-content: space-between;
-	height: 15px;
-	padding-right: 3px;
-}
-
 .marg {
 	margin: 0 0 26px 16px;
 }
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+	opacity: 0;
 }
 </style>

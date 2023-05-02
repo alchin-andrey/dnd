@@ -1,5 +1,5 @@
 <template>
-	<my-selection-card class="reletiv" passive colors_card>
+	<AppCardWrapp class="btm-black h-100 pos-rel" passive>
 		<div class="colors_box jbm-300" @mouseleave="hoverStop()">
 			<div v-for="(val, i) in color" :key="i" class="colors_row">
 				<my-color-block
@@ -34,9 +34,9 @@
 				:class="{ reset_color_custom: !color_Reset }"
 				@click="resetColor(body_part)"
 			>
-				<img src="@/assets/img/icon/reset.svg" alt="reset" />
+				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.return" />
 			</div>
-	</my-selection-card>
+	</AppCardWrapp>
 </template>
 
 <script>
@@ -44,6 +44,8 @@ import { mapState } from "pinia";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "MyColorSelect",
 	props: {
@@ -55,6 +57,7 @@ export default {
 	data() {
 		return {
 			hower_link: `${this.body_part}_hower`,
+			ui_icon: ui_icon,
 		};
 	},
 	computed: {
@@ -108,9 +111,6 @@ export default {
 </script>
 
 <style scoped>
-.reletiv {
-	position: relative;
-}
 .colors_box {
 	display: flex;
 	flex-direction: column;

@@ -21,6 +21,7 @@ export default {
 <style>
 body {
 	background-color: #0e1518;
+	color: #ffffff;
 }
 
 a {
@@ -40,7 +41,7 @@ a {
 	-ms-user-select: none;
 	user-select: none;
 	overflow: hidden;
-	color: #ffffff;
+	/* color: #ffffff; */
 }
 
 .title-donat {

@@ -1,13 +1,13 @@
 <template>
 	<section class="flex-col gap-34">
     <section class="grid-col int-700">
-      <my-selection-card
+      <AppCardWrapp
         v-for="btn in main_buttons"
-        :active_boll_link="shown_Btn == btn.name"
+        :active_card="shown_Btn == btn.name"
         @click="shownFeatsBtn(btn.name)"
       >
         <span>{{ t(btn.text) }}</span>
-      </my-selection-card>
+      </AppCardWrapp>
     </section>
     <AppSrdDisclaimer :text="t_feats_Details" :disclaimer="show_Disclaimer"/>
     <section class="flex-col gap-8">

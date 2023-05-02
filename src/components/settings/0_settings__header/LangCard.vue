@@ -1,25 +1,20 @@
 <template>
-	<div class="int-400">
-		<div class="title">
-				<emoji v-for="n in title" :key="n"
-					:data="emojiIndex"
-					:emoji="n"
-					:set="set_emoji"
-					:size="20"
-				/>
-		</div>
+	<AppCardWrapp gap="4" :active_card="active_card">
+		<emoji class="title" 
+			v-for="n in title" :key="n"
+			:data="emojiIndex"
+			:emoji="n"
+			:set="set_emoji"
+			:size="20"
+		/>
 		<div class="int-700">{{ text }}</div>
-	</div>
+	</AppCardWrapp>
 </template>
 
 <script>
 export default {
 	name: "LangCard",
 	props: {
-    mark: {
-			type: String,
-			default: null,
-		},
 		title: {
 			type: Array,
 			default: null,
@@ -28,11 +23,10 @@ export default {
 			type: String,
 			default: null,
 		},
-	},
-	computed: {
-		Lang_Icon() {
-			return require(`@/assets/img/icon/lang/icon_${this.mark}.png`);
-		},
+		active_card: {
+      type: Boolean,
+      default: false,
+    },
 	},
 };
 </script>
@@ -41,9 +35,8 @@ export default {
 .title {
 	height: 24px;
   display: flex;
-  gap: 6px;
   align-items: center;
-	margin-bottom: 4px;
+  gap: 6px;
 }
 
 .emoji-mart-emoji {

@@ -23,7 +23,7 @@ export default {
 	props: {
 		name: {
 			type: String,
-			default: null,
+			default: '',
 		},
 		icon: {
 			type: String,

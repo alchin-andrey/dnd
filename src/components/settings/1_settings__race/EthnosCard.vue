@@ -1,14 +1,13 @@
 <template>
 	<div class="flex-col gap-8">
-		<my-selection-card
+		<AppCardWrapp no_blur
 			v-for="ethnos in ethnos_Arr"
 			:key="ethnos"
-			no_blur
 			@click="getEthnosName(ethnos.name)"
-			:active_boll_link="MY_Ethnos.name === ethnos.name"
+			:active_card="MY_Ethnos.name === ethnos.name"
 		>
 			<div
-				class="ethnos_char_back"
+				class="ethnos-char-back"
 				:style="{
 					'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
 				}"
@@ -19,7 +18,7 @@
 			</div>
 
 			<!-- Ethnos_card_stats + qualities -->
-			<my-wrapper v-if="ethnos.stats || level_Filter_Arr(ethnos.qualities).length !== 0">
+			<AppWrapper v-if="ethnos.stats || level_Filter_Arr(ethnos.qualities).length !== 0">
 				<AppStats
 					v-for="stat in ethnos.stats"
 					:key="stat.name"
@@ -43,22 +42,22 @@
 					:feet="qual.name == 'speed' || qual.name == 'vision_night'"
 					:plus="qual.type == 'bonus'"
 				/>
-			</my-wrapper>
+			</AppWrapper>
 
 			<!-- Ethnos_card_stats + qualities-->
 
 			<!-- Ethnos_card_Charges -->
-			<my-wrapper v-if="level_Filter_Arr(ethnos.charges).length !== 0">
+			<AppWrapper v-if="level_Filter_Arr(ethnos.charges).length !== 0">
 				<AppCharges
 					v-for="item in level_Filter_Arr(ethnos.charges)"
 					:key="item"
 					:charge="item"
 				/>
-			</my-wrapper>
+			</AppWrapper>
 			<!-- Ethnos_card_Charges -->
 
 			<!-- Ethnos_card_proficiencies -->
-			<my-wrapper v-if="ethnos.proficiencies">
+			<AppWrapper v-if="ethnos.proficiencies">
 				<AppProficiencies
 					v-for="(val, name) in ethnos.proficiencies"
 					:key="name"
@@ -66,17 +65,17 @@
 					:arr_name="proficiencies_Arr(ethnos.proficiencies, name)"
 					:active_card="MY_Ethnos.name === ethnos.name"
 				/>
-			</my-wrapper>
+			</AppWrapper>
 			<!-- Ethnos_card_proficiencies -->
 
 			<!-- Ethnos_card_fines -->
-			<my-wrapper v-if="ethnos.fines" gap_8>
+			<AppWrapper gap="8" v-if="ethnos.fines">
 				<AppFines v-for="item in ethnos.fines" :key="item" :fines="item" />
-			</my-wrapper>
+			</AppWrapper>
 			<!-- Ethnos_card_fines -->
 
 			<!-- Ethnos_card_spells -->
-			<my-wrapper v-if="level_Filter_Arr(ethnos.spells).length !== 0" gap_26>
+			<AppWrapper gap="26" v-if="level_Filter_Arr(ethnos.spells).length !== 0">
 				<AppSpells
 					v-for="item in level_Filter_Arr(ethnos.spells)"
 					:key="item"
@@ -84,10 +83,10 @@
 					select
 					:active_card="MY_Ethnos.name === ethnos.name"
 				/>
-			</my-wrapper>
+			</AppWrapper>
 			<!-- Ethnos_card_spells -->
 
-			<my-wrapper v-if="ethnos.settings">
+			<AppWrapper v-if="ethnos.settings">
 				<MyCusstomSetting
 					v-for="item in ethnos.settings"
 					:key="item"
@@ -96,7 +95,7 @@
 					:sum="select_Sum(item.list)"
 				>
 				</MyCusstomSetting>
-			</my-wrapper>
+			</AppWrapper>
 
 			<!-- Ethnos_card_текст -->
 			<my-card-text
@@ -105,7 +104,7 @@
 				:rare="ethnos.rare"
 			>
 			</my-card-text>
-		</my-selection-card>
+		</AppCardWrapp>
 	</div>
 </template>
 
@@ -147,7 +146,7 @@ export default {
 </script>
 
 <style>
-.ethnos_char_back {
+.ethnos-char-back {
 	width: 100%;
 	height: 120px;
 	background: #0e1518;
@@ -156,12 +155,12 @@ export default {
 	overflow: hidden;
 }
 
-.ethnos_char_back img {
+.ethnos-char-back img {
 	position: absolute;
 	top: 16px;
 }
 
-.ethnos_char_back svg {
+.ethnos-char-back svg {
 	height: 300px;
 	position: absolute;
 	top: 16px;

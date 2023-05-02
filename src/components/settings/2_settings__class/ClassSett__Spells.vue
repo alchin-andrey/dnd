@@ -14,8 +14,7 @@
 					:numb_manna="i"
 				>
 					<section class="flex-col gap-8 mr-t-34">
-						<my-selection-card
-							no_blur
+						<AppCardWrapp no_blur
 							v-for="list_el in filter_Spells(i)"
 							:key="list_el"
 						>
@@ -28,7 +27,7 @@
                 :full_select="full_Spells_Select"
 								@updateSpell="getSpellSelect(list_el)"
 							/>
-						</my-selection-card>
+						</AppCardWrapp>
 					</section>
 				</AppSpellsPacks>
 			</div>

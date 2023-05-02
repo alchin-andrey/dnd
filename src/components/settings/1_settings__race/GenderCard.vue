@@ -1,5 +1,5 @@
 <template>
-  <my-selection-card passive>
+  <AppCardWrapp passive>
     <div class="gender_card_title jbm-300">{{ t_Title }}</div>
     <div class="gender__flex" >
       <div class="gender__flex-3">
@@ -72,7 +72,7 @@
       :text="hower_link ? hower_link.details : `${MY.gender[title]}_details`"
     >
     </my-card-text>
-  </my-selection-card>
+  </AppCardWrapp>
 </template>
 
 <script>

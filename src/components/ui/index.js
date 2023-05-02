@@ -1,8 +1,10 @@
 import {Emoji} from "emoji-mart-vue-fast/src";
 
+import AppWrapper from "@/components/ui/AppWrapper.vue";
 import AppSvg from "@/components/ui/AppSvg.vue";
 import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
 import AppBtmLink from "@/components/ui/AppBtmLink.vue";
+import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -81,9 +83,11 @@ import MyBackPage from "@/components/ui/pinia_ui/MyBackPage.vue";
 export default [
   Emoji,
   
+  AppWrapper,
   AppSvg,
   AppStripWrapp,
   AppBtmLink,
+  AppCardWrapp,
 
   AppDisclaimer,
   AppProficiencies,

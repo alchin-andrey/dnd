@@ -21,11 +21,6 @@
 						link="https://www.buymeacoffee.com/dndme/membership"
 						btm_x2
 					/>
-
-					<!-- <my-selection-card blue_btn link x2_svg>
-						<a class="pd-20-28" target="_blank" href="https://www.buymeacoffee.com/dndme/membership">{{ t_Donat
-						}}</a>
-					</my-selection-card> -->
 				</section>
 			</div>
 		</div>

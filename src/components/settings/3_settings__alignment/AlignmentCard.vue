@@ -1,5 +1,5 @@
 <template>
-	<my-selection-card passive>
+	<AppCardWrapp passive>
 		<div class="gender_card_title jbm-300">{{ t_Title }}</div>
 		<div class="gender__flex">
 			<my-button-gender
@@ -18,7 +18,7 @@
 			:text="hower_link ? hower_link.details : `${MY.alignment}_details`"
 		>
 		</my-card-text>
-	</my-selection-card>
+	</AppCardWrapp>
 </template>
 
 <script>

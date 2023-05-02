@@ -2,7 +2,7 @@
 	<div 
 	class="br-12 w-220" 
 	:class="{
-		'btm-trans pd-14': !active,
+		'btm-trans': !active,
 		'btm-blue hov pd-16 cur-p': active,
 		}"
 	>

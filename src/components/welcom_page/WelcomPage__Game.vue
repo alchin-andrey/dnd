@@ -1,6 +1,6 @@
 <template>
 	<article class="flex-row gap-4">
-		<section class="btm-size btm-trans br-12 pd-14">
+		<section class="btm-size btm-trans br-12">
 			<div class="int-700">{{ t("lobby_menu_4") }}</div>
 			<div class="int-400 flex-col gap-15 white-04 w-362 mr-t-24">
 				<div class="ident-15 mr-l-15 flex-col gap-15">

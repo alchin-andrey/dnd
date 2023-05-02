@@ -1,13 +1,12 @@
 <template>
-			<my-selection-card
-				v-for="item in dic.lang"
-				:key="item"
-				@click="getLangSite(item.mark)"
-				:select_link="item.mark"
-				:active_link="select_lang"
-			>
-				<LangCard :title="item.icon" :text="item.name" :mark="item.mark" />
-			</my-selection-card>
+	<LangCard
+		v-for="item in dic.lang"
+		:key="item"
+		@click="getLangSite(item.mark)"
+		:title="item.icon" 
+		:text="item.name" 
+		:active_card="item.mark == select_lang"
+	/>
 </template>
 
 <script>
@@ -28,6 +27,3 @@ export default {
 	},
 };
 </script>
-
-<style scoped>
-</style>

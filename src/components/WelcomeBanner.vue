@@ -1,10 +1,9 @@
 <template>
   <Transition name="slide-fade-left">
     <div @click.stop v-if="site_settings.welcome" class="wrapp-baner">
-      <my-selection-card passive>
+      <AppCardWrapp @clickIcon="close()" icon="close" passive>
         <Welcome />
-        <div class="icone_del"><img @click="close()" src="@/assets/img/icon/close.svg"/></div>
-      </my-selection-card>
+      </AppCardWrapp>
       <Btm__WhatDND class="mr-t-4" />
     </div>
   </Transition>
