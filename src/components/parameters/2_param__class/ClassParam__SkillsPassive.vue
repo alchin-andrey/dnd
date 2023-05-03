@@ -1,23 +1,21 @@
 <template>
-	<my-wrapper>
-		<my-wrapper v-if="shown_Skills_Passive" :hr="hr">
-			<AppSkills
-				v-for="name in skills_passive_Class_Param"
-				:key="name"
-				:title="name"
-				:numb="skills_passive_Class_Numb(name)"
-				:second_numb="skills_passive_RP_MOD_Numb(name)"
-			/>
-		</my-wrapper>
-		<my-wrapper v-if="all" :hr="hr">
-			<AppSkills
-				v-for="skill in skills_passive"
-				:key="skill"
-				:title="skill.name"
-				:numb="skills_passive_All_Numb(skill.name)"
-			/>
-		</my-wrapper>
-	</my-wrapper>
+	<AppWrapper v-if="all" :hr="hr">
+		<AppSkills
+			v-for="skill in skills_passive"
+			:key="skill"
+			:title="skill.name"
+			:numb="skills_passive_All_Numb(skill.name)"
+		/>
+	</AppWrapper>
+	<AppWrapper v-else-if="shown_Skills_Passive" :hr="hr">
+		<AppSkills
+			v-for="name in skills_passive_Class_Param"
+			:key="name"
+			:title="name"
+			:numb="skills_passive_Class_Numb(name)"
+			:second_numb="skills_passive_RP_MOD_Numb(name)"
+		/>
+	</AppWrapper>
 </template>
 
 <script>
@@ -46,7 +44,7 @@ export default {
 		]),
 
 		shown_Skills_Passive() {
-			return this.skills_passive_Class_Param.length !== 0 && !this.all;
+			return this.skills_passive_Class_Param.length !== 0;
 		},
 	},
 };

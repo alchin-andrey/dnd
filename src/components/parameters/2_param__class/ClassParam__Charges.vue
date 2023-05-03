@@ -1,19 +1,17 @@
 <template>
-	<div>
-		<my-wrapper v-if="shown_Charges" :hr="hr">
-			<AppCharges
-				v-for="item in charges_Race_Param"
-				:key="item"
-				:charge="item"
-				:passive="passive_Old"
-			/>
-			<AppCharges
-				v-for="item in charges_Class_Param"
-				:key="item"
-				:charge="item"
-			/>
-		</my-wrapper>
-	</div>
+	<AppWrapper v-if="shown_Charges" :hr="hr">
+		<AppCharges
+			v-for="item in charges_Race_Param"
+			:key="item"
+			:charge="item"
+			:passive="passive_Old"
+		/>
+		<AppCharges
+			v-for="item in charges_Class_Param"
+			:key="item"
+			:charge="item"
+		/>
+	</AppWrapper>
 </template>
 
 <script>
@@ -31,12 +29,11 @@ export default {
 	},
 	computed: {
 		...mapState(usePagesStore, ["page_Open"]),
+		...mapState(useChargesStore, ["charges_Race_Param", "charges_Class_Param"]),
 
 		passive_Old() {
 			return this.page_Open !== "alignment_page";
 		},
-
-		...mapState(useChargesStore, ["charges_Race_Param", "charges_Class_Param"]),
 
 		shown_Charges() {
 			return (

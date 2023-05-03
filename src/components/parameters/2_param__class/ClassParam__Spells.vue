@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper v-if="spells_RC_Param.length !== 0" gap_26 :hr="hr">
+	<AppWrapper gap="26" v-if="spells_RC_Param.length !== 0" :hr="hr">
     <AppSpellsPacks
 			class="flex-col"
 			v-if="spells_RC_Param_Ability_Passive.length !== 0"
@@ -76,7 +76,7 @@
 				</div>
 			</AppSpellsPacks>
 		</section>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

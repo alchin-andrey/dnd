@@ -1,12 +1,12 @@
 <template>
-	<my-wrapper v-if="shown_Spells_All" gap_26 :hr="hr">
+	<AppWrapper v-if="shown_Spells_All" gap="26" :hr="hr">
 		<AppSpells
 			v-for="item in spells_Race_Param"
 			:key="item"
 			:spell_obj="item"
       param
 		/>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

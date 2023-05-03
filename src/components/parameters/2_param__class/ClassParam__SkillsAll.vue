@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper :hr="hr">
+	<AppWrapper :hr="hr">
 		<AppSkills
 			v-for="(name, i) in skills_Keys"
 			:key="name"
@@ -8,7 +8,7 @@
 			:numb="skills_RC_All_Numb(name)"
 			param
 		/>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

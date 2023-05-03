@@ -120,7 +120,7 @@
   </main>
 
   <main v-else-if="qr_form" id="qr_spell" class="flex_col gap-26">
-    <my-wrapper>
+    <AppWrapper>
       <div class="title_spell gray_2">{{ t_Type }} /</div>
       <div class="title_spell">
         {{ em_Before }}
@@ -133,7 +133,7 @@
         />{{ em_After }}
         {{ name_Extra_MOD }}
       </div>
-    </my-wrapper>
+    </AppWrapper>
     <section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
       <section
         class="manna_bubble manna_bubble_active manna_bubble_str"
@@ -160,13 +160,13 @@
 
     <div class="text_spell" v-html="t_Text"></div>
 
-    <my-wrapper gap_6>
+    <AppWrapper gap="6">
       <my-spell-main title="parts" :text="t_Parts_Value" emoji />
       <my-spell-main title="cast_time" :text="t_Cast_Value" />
       <my-spell-main title="time" :text="t_Time_Value" />
       <my-spell-main title="aim_target" :text="t_Target_Value" :save="t_Save" />
-    </my-wrapper>
-    <my-wrapper
+    </AppWrapper>
+    <AppWrapper
       v-if="
         Spell_Index.aim_need ||
         Spell_Index.impact_type ||
@@ -207,7 +207,7 @@
         plus
       />
       <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
-    </my-wrapper>
+    </AppWrapper>
     <div class="hr"></div>
     <div class="flex_col gap-16">
       <div class="text_spell gray_4" v-html="t_Expanded"></div>
@@ -305,7 +305,7 @@
       </div>
     </AppTooltip>
     <my-dialog-spell v-model:show="dialogVisible" v-model:mana="mana_numb">
-      <my-wrapper>
+      <AppWrapper>
         <div class="title_spell gray_2">{{ t_Type }} /</div>
         <div class="title_spell">
           {{ em_Before }}
@@ -317,7 +317,7 @@
             :size="emoji_size"
           />{{ em_After }} {{ name_Extra_MOD }}
         </div>
-      </my-wrapper>
+      </AppWrapper>
       <section class="jbm-300" v-if="spell_Slot_Type_MOD || shown_Manna">
         <section
           class="manna_bubble manna_bubble_active manna_bubble_str"
@@ -344,7 +344,7 @@
 
       <div class="text_spell" v-html="t_Text"></div>
 
-      <my-wrapper gap_6>
+      <AppWrapper gap="6">
         <my-spell-main title="parts" :text="t_Parts_Value" emoji />
         <my-spell-main title="cast_time" :text="t_Cast_Value" />
         <my-spell-main title="time" :text="t_Time_Value" />
@@ -353,8 +353,8 @@
           :text="t_Target_Value"
           :save="t_Save"
         />
-      </my-wrapper>
-      <my-wrapper
+      </AppWrapper>
+      <AppWrapper
         v-if="
           Spell_Index.aim_need ||
           Spell_Index.impact_type ||
@@ -395,7 +395,7 @@
           plus
         />
         <magic-attribute v-if="Value_Ran" title="aim_range" :numb="Value_Ran" />
-      </my-wrapper>
+      </AppWrapper>
       <div class="hr"></div>
       <div class="flex_col gap-16">
         <div class="text_spell gray_4" v-html="t_Expanded"></div>

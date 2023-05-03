@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper :hr="hr">
+	<AppWrapper :hr="hr">
 		<my-attribute
 			v-if="hp_Bonus_Race_Param"
 			title="hp_bonus"
@@ -19,7 +19,7 @@
 			feet
       passive
 		/>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

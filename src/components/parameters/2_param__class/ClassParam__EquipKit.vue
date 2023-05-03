@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper v-if="shown_Invenory_Equip_Class" :hr="hr">
+	<AppWrapper v-if="shown_Invenory_Equip_Class" :hr="hr">
 		<KitEquip 
     :inventory_old="inventory_Equip_Race"
     :inventory="inventory_Equip_Class"
@@ -9,7 +9,7 @@
 
     :gold="gold_Equip_All"
     />
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

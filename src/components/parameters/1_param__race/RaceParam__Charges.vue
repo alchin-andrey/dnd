@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<my-wrapper v-if="charges_Race_Param.length !== 0" :hr="hr">
+		<AppWrapper v-if="charges_Race_Param.length !== 0" :hr="hr">
 			<AppCharges
 				v-for="item in charges_Race_Param"
 				:key="item"
 				:charge="item"
 			/>
-		</my-wrapper>
+		</AppWrapper>
 	</div>
 </template>
 

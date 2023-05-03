@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper v-if="shown_Weapons" hr>
+	<AppWrapper v-if="shown_Weapons" :hr="hr">
 		<WeaponEquip
 			v-for="weapon in weapons_Equip_Race"
 			:key="weapon"
@@ -13,7 +13,7 @@
 			:weapon="weapon"
       param_stule
     />
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

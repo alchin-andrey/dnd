@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper gap_26>
+	<AppWrapper gap="26">
 		<div class="story int-400" v-html="t_Story"></div>
 		<my-card-text
 			v-if="MY_Subclass"
@@ -7,7 +7,7 @@
 			:text_html="MY_Subclass.details"
 		>
 		</my-card-text>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

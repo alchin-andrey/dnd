@@ -1,16 +1,16 @@
 <template>
 	<div v-if="shown">
-		<my-wrapper v-if="charges_Class_Spell_Manna.length !== 0" hr>
+		<AppWrapper v-if="charges_Class_Spell_Manna.length !== 0" hr>
 			<AppCharges
 				v-for="item in charges_Class_Spell_Manna"
 				:key="item"
 				:charge="item"
 				spell_count
 			/>
-		</my-wrapper>
+		</AppWrapper>
 
-		<my-wrapper
-			gap_26
+		<AppWrapper
+			gap="26"
 			v-if="
 				spells_RC_Param_Manna.length !== 0 ||
 				spells_RC_Param_Ability.length !== 0 ||
@@ -81,7 +81,7 @@
 					</div>
 				</AppSpellsPacks>
 			</section>
-		</my-wrapper>
+		</AppWrapper>
 	</div>
 </template>
 

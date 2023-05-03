@@ -1,5 +1,5 @@
 <template>
-  <my-wrapper gap_8 :hr="hr">
+  <AppWrapper gap="8" :hr="hr">
 		<AppProficiencies
 			v-for="name in proficiencies"
 			:key="name"
@@ -8,7 +8,7 @@
 			:arr_name_old="proficiencies_Race_Params_All_or_Any(name)"
       param
 		/>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

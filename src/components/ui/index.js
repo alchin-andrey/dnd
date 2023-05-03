@@ -58,7 +58,7 @@ import MySelectionBox from "@/components/ui/pinia_ui/MySelectionBox.vue";
 import MySelectionCard from "@/components/ui/pinia_ui/MySelectionCard.vue";
 import MyCardText from "@/components/ui/pinia_ui/MyCardText.vue";
 
-import MyWrapper from "@/components/ui/pinia_ui/MyWrapper.vue";
+
 import RaceBody from "@/components/ui/pinia_ui/RaceBody.vue";
 import MySkale from "@/components/ui/pinia_ui/MySkale.vue";
 import MySizeGrowth from "@/components/ui/pinia_ui/MySizeGrowth.vue";
@@ -136,7 +136,7 @@ export default [
   MySelectionBox,
   MySelectionCard,
   MyCardText,
-  MyWrapper,
+
   RaceBody,
   MySkale,
   MySizeGrowth,

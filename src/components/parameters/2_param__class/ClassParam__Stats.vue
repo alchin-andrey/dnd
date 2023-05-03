@@ -1,11 +1,11 @@
 <template>
-	<my-wrapper gap_16 :hr="hr">
+	<AppWrapper gap="16" :hr="hr">
 		<div class="column_value jbm-300">
 			<div class="base pad-52 grey-2">{{ t_Base }}</div>
 			<div class="mod">{{ t_Save }}</div>
 			<div class="mod">{{ t_Mod }}</div>
 		</div>
-		<my-wrapper>
+		<AppWrapper>
 			<div class="column_value jbm-300" v-for="name in stats_Keys" :key="name">
 				<div class="base">
 					<svg
@@ -74,8 +74,8 @@
 					</div>
 				</div>
 			</div>
-		</my-wrapper>
-	</my-wrapper>
+		</AppWrapper>
+	</AppWrapper>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
 	<div class="flex-row gap-36 int-400">
 
-		<my-wrapper gap_26 v-if="shown_Packs" class="packs-size">
+		<AppWrapper gap="26" v-if="shown_Packs" class="packs-size">
       <PacksEquip
 				v-for="item_packs_old in packs_old"
 				:key="item_packs_old"
@@ -19,7 +19,7 @@
 				</div>
 				<div>{{ t_Text }}</div>
 			</section>
-		</my-wrapper>
+		</AppWrapper>
 
 		<InventoryEquip
 			:class="{ 'pd-t-2': !shown_Inventory_stripe }"

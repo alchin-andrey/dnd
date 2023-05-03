@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper v-if="shown_Fines_ClassParam" gap_8 :hr="hr">
+	<AppWrapper v-if="shown_Fines_ClassParam" gap="8" :hr="hr">
 		<!-- RACE -->
 		<AppFines
 			v-for="item in fines_Race_Param"
@@ -15,7 +15,7 @@
       :fines="item" 
       param
     />
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

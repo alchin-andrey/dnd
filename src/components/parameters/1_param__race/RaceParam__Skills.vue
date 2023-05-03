@@ -1,5 +1,5 @@
 <template>
-  <my-wrapper v-if="filter_Skills.length !== 0" :hr="hr">
+  <AppWrapper v-if="filter_Skills.length !== 0" :hr="hr">
 			<AppSkills
 				v-for="name in filter_Skills"
 				:key="name"
@@ -7,7 +7,7 @@
 				:numb="skills_Race_Numb(name)"
 				param
 			></AppSkills>
-		</my-wrapper>
+		</AppWrapper>
 </template>
 
 <script>

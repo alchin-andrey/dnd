@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper :hr="hr">
+	<AppWrapper :hr="hr">
 		<AppStats
 			v-for="name in stats_Keys"
 			:key="name"
@@ -9,7 +9,7 @@
 			:numb="stats_Race_Page_Numb(name)"
       param
 		/>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

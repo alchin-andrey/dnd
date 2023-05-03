@@ -1,5 +1,5 @@
 <template>
-	<my-wrapper v-if="filter_Skills.length !== 0" :hr="hr">
+	<AppWrapper v-if="filter_Skills.length !== 0" :hr="hr">
 		<AppSkills
 			v-for="name in filter_Skills"
 			:key="name"
@@ -8,7 +8,7 @@
 			:second_numb="skills_RP_MOD_Numb(name)"
 			param
 		/>
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>

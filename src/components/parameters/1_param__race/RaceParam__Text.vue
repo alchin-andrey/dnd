@@ -1,5 +1,5 @@
 <template>
-    <my-wrapper gap_26>
+    <AppWrapper gap="26" :hr="hr">
 			<div class="story int-400" v-html="t_Story"></div>
 			<my-card-text
 				v-if="MY_Ethnos.name !== 'common'"
@@ -15,7 +15,7 @@
 				:rare="MY_Backstory.rare"
 			>
 			</my-card-text>
-		</my-wrapper>
+		</AppWrapper>
 </template>
 
 <script>
@@ -24,6 +24,12 @@ import { useMYStore } from "@/stores/user/MYStore";
 
 export default {
 	name: "RaceParam__Text",
+	props: {
+		hr: {
+			type: Boolean,
+			default: false,
+		},
+	},
 	computed: {
 		...mapState(useMYStore, [
       "MY", 

@@ -1,5 +1,5 @@
 <template>
-  <my-wrapper :hr="hr">
+  <AppWrapper :hr="hr">
 		<my-attribute
 			title="armor_class"
 			:type="armor_Name_Class_Param"
@@ -32,7 +32,7 @@
 			:numb="vision_night_Numb_Class"
 			feet
 		/>
-  </my-wrapper>
+  </AppWrapper>
 </template>
 
 <script>

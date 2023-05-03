@@ -1,12 +1,12 @@
 <template>
-	<my-wrapper v-if="weapons_Equip_Race.length !== 0" hr>
+	<AppWrapper v-if="weapons_Equip_Race.length !== 0" hr>
 		<WeaponEquip
 			v-for="weapon in weapons_Equip_Race"
 			:key="weapon"
 			:weapon="weapon"
       param_stule
     />
-	</my-wrapper>
+	</AppWrapper>
 </template>
 
 <script>
