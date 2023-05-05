@@ -3986,6 +3986,7 @@ export default {
       expanded: "spell_wild_shape_combat_expanded",
 
       type: "ability",
+      slot_type: "wild_shape_slot",
       classes: ["druid"],
 
       cast_time: "bonus_action",

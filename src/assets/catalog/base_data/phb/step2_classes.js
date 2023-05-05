@@ -5976,10 +5976,6 @@ export default {
       },
       {
         level: 2,
-        spell: spells.wild_shape,
-      },
-      {
-        level: 2,
         spell: spells.find_familiar_druid,
       },
     ],
@@ -6101,6 +6097,13 @@ export default {
                 type: "plus",
                 keyword: "saving_wisdom",
                 details: "on_any_animal_or_plant_attack",
+              },
+            ],
+
+            spells: [
+              {
+                level: 2,
+                spell: spells.wild_shape,
               },
             ],
 
