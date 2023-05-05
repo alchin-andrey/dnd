@@ -3520,8 +3520,8 @@ export default {
 
     saving: ["intelligence", "wisdom"],
     stats_base: [
-      "intelligence",
       "wisdom",
+      "intelligence",
       "constitution",
       "dexterity",
       "charisma",
