@@ -3932,7 +3932,7 @@ export default {
   wild_shape: [
     {
       //0      
-      h: {ua_inrium: 586, ua: 586,  ru: 586},
+      h: {ua_inrium: 1096, ua: 1096,  ru: 586},
       link: "wild_shape",
       name: "spell_wild_shape",
       details: "spell_wild_shape_details",
@@ -3979,7 +3979,7 @@ export default {
   wild_shape_combat: [
     {
       //0      
-      h: {ua_inrium: 586, ua: 586,  ru: 586},
+      h: {ua_inrium: 1096, ua: 1096,  ru: 586},
       link: "wild_shape_combat",
       name: "spell_wild_shape_combat",
       details: "spell_wild_shape_combat_details",
