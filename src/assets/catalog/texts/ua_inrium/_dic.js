@@ -6066,10 +6066,12 @@ export default {
 
   club_eneri_name: "ЕНЕРІ",
   club_eneri_details: "Майданчик з офлайн та онлайн іграми від різних Майстрів<br/>у різних містах України.",
-  club_eneri_link: "eneri.com.ua",
 
   club_inrium_name: "ІНРІУМ",
-  club_inrium_details: "Безпечне й затишне місце для україномовних гравців <br/>та Майстрів.",
+  club_inrium_details: "Ініціатива Настільно-Рольових Ігор Українською Мовою.",
+
+  club_rumble_dice_name: "Гримлячі кістки",
+  club_rumble_dice_details: "Затишний Телеграм канал та чат з дотепними мемами, корисними файлами та анонсами ігор.",
 
   club_dndlviv_name: "D&D Lviv+",
   club_dndlviv_details: "Майданчик з офлайн та онлайн іграми від різних Майстрів<br/>у різних містах України.",

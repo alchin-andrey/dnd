@@ -8,20 +8,28 @@ export default {
     link: "https://dedlihozor.club"
   },
 
-  inrium: {
-    id: 2,
-    name: "club_inrium_name",
-    details: "club_inrium_details",
-    link_name: "inrium.org.ua",
-    link: "https://inrium.org.ua",
-  },
-
   eneri: {
-    id: 3,
+    id: 2,
     name: "club_eneri_name",
     details: "club_eneri_details",
     link_name: "eneri.com.ua",
     link: "https://eneri.com.ua",
+  },
+
+  rumble_dice: {
+    id: 3,
+    name: "club_rumble_dice_name",
+    details: "club_rumble_dice_details",
+    link_name: "@rumble_dice",
+    link: "https://t.me/rumble_dice",
+  },
+
+  inrium: {
+    id: 4,
+    name: "club_inrium_name",
+    details: "club_inrium_details",
+    link_name: "inrium.org.ua",
+    link: "https://inrium.org.ua",
   },
 
   // dndlviv: {

@@ -12,6 +12,8 @@ export default {
     andrii_pavlov_contact: 
     '<a target="_blank" href="https://t.me/godblessdnd">@godblessdnd</a>',
 
+    //-----
+
     oleksandr_frankivsky: "Олександр",
 
     oleksandr_frankivsky_details: 
