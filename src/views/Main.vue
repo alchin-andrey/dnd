@@ -138,6 +138,7 @@ export default {
 		return {
 			small_screen: false,
 			PRINT_BLANK: false,
+			// PRINT_BLANK: true,
       progress_load: 0,
       loading_pdf: false,
 		};
