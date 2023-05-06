@@ -1,14 +1,15 @@
-/* .btm-main {
+.card-main {
 	padding: 16px;
 	background: rgba(255, 255, 255, 0.06);
 	border-radius: 12px;
-	backdrop-filter: blur(60px);
+	/* backdrop-filter: blur(60px); */
 }
-.btm-main.hov:hover {background: rgba(255, 255, 255, 0.1);} */
+.card-main.hov:hover {background: rgba(255, 255, 255, 0.1);}
 
 .btm-anim { transition-duration: 0.5s;}
 
 .cur-p { cursor: pointer; }
+.cur-ban { cursor: not-allowed; }
 .cur-auto { cursor: auto; }
 
 .pas-param { opacity: 0.2;}
@@ -22,9 +23,18 @@
 .btm-grey.hov:hover {background: rgba(255, 255, 255, 0.1);}
 
 .btm-trans {
+	padding: 14px;
 	background: transparent;
 	border: 2px solid rgba(255, 255, 255, 0.06);
 }
+
+.btm-select {
+	border: 2px solid #ffffff; 
+	padding: 14px;
+}
+
+.btm-black {background: #000000;}
+/* .btm-black.hov:hover { background: #000000;} */
 
 .btm-blue {background: #0047ff;}
 .btm-blue.hov:hover { background: #1355ff;}
