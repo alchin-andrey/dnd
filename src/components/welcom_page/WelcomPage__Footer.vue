@@ -51,8 +51,7 @@ export default {
 	}
 
 	.text-wrapp {
-		width: 100%;
 		padding: 0;
-}
+	}
 }
 </style>

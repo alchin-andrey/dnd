@@ -1,6 +1,7 @@
 .mob-header {
 	width: 100%;
 	height: 88px;
+	
 	background: #0E1518;
 	box-shadow: 0px 4px 20px #000000;
 	z-index: 1000;
@@ -25,7 +26,10 @@
 .br-4 { border-radius: 4px;}
 .br-12 { border-radius: 12px;}
 
-.blur-60 { backdrop-filter: blur(60px); }
+.blur-60 { 
+	backdrop-filter: blur(60px); 
+	-webkit-backdrop-filter: blur(60px);
+}
 
 .btm-grey {background: rgba(255, 255, 255, 0.06);}
 .btm-grey.hov:hover {background: rgba(255, 255, 255, 0.1);}
