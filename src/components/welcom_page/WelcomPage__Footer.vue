@@ -1,18 +1,16 @@
 <template>
-	<article class="flex-row gap-4">
-		<section class="btm-size">
+	<!-- <article class="flex-row gap-4"> -->
+	<article class="card-wrapp">
+		<section class="card-size">
 			<div class="int-700 flex-col gap-32 w-362">
-				<div v-html="t('lobby_conclustion')"/>
-				<AppBtmLink
-					class="btm-blue"
-					@click="goTo('/')"
-					name="how_to_start_2_title" 
-				/>
+				<div v-html="t('lobby_conclustion')" />
+				<AppBtmLink class="btm-blue" @click="goTo('/')" name="how_to_start_2_title" />
 			</div>
 		</section>
 
-		<section class="btm-size pd-rl-16">
-			<AppDisclaimer class="w-362" />
+		<!-- <section class="card-size pd-rl-16"> -->
+		<section class="card-size">
+			<AppDisclaimer class="text-wrapp" />
 		</section>
 	</article>
 </template>
@@ -21,12 +19,40 @@ export default {
 	name: "WelcomPage__Footer",
 	methods: {
 		goTo(route) {
-        this.$router.push(route);
-      },
+			this.$router.push(route);
+		},
 	},
 };
 </script>
 
 <style scoped>
-.btm-size { width: calc(50% - 2px); }
+.card-wrapp {
+	display: flex;
+	gap: 4px;
+}
+
+.text-wrapp {
+	width: 362px;
+	padding: 0 16px;
+}
+
+.card-size {
+	width: 444px;
+}
+
+@media (max-width: 955px) {
+	.card-wrapp {
+		flex-direction: column;
+		gap: 64px;
+	}
+
+	.card-size {
+		width: 100%;
+	}
+
+	.text-wrapp {
+		width: 100%;
+		padding: 0;
+}
+}
 </style>

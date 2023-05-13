@@ -39,8 +39,14 @@ export default {
 
 <style scoped>
 .dtm-size {
-	/* width: 220px; */
-	width: calc(25% - 3px);
+	width: 220px;
 	height: 266px;
+}
+
+@media (max-width: 480px) {
+	.dtm-size {
+		width: 100%;
+		height: 356px;
+	}
 }
 </style>

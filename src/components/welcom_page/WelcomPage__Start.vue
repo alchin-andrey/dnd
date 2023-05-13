@@ -1,8 +1,12 @@
 <template>
 	<article>
 		<div class="jbm-300">{{ t("lobby_menu_2") }}</div>
-			<div class="flex-row gap-4 mr-t-26">
-				<WelcomPage__CardStart v-for="step in start_steps" :key="step.num"
+			<!-- <div class="flex-row gap-4 mr-t-26"> -->
+			<div class="card-wrapp mr-t-26">
+				<WelcomPage__CardStart 
+				class="card-size"
+				v-for="step in start_steps" 
+				:key="step.num"
 				:numb="step.num"
 				:title="step.title"
 				:text="step.details"
@@ -35,4 +39,21 @@ export default {
 </script>
 
 <style scoped>
+.card-wrapp {
+	display: flex;
+	gap: 4px
+}
+
+.card-size {
+	width: 200px;
+}
+
+@media (max-width: 955px) {
+	.card-wrapp {
+		flex-direction: column;
+	}
+	.card-size {
+		width: 100%;
+	}
+}
 </style>
