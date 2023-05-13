@@ -75,6 +75,7 @@ export default {
 	padding: 16px;
 	background: #0e1518;
 	backdrop-filter: blur(60px);
+	-webkit-backdrop-filter: blur(60px);
 	border-radius: 12px;
 	position: relative;
 }
