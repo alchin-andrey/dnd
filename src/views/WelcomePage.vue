@@ -15,7 +15,7 @@
 
 	<main class="w-100">
 		<div v-if="screen_1279" class="mob-header flex-col-c w-100">
-			<div class="flex-row-sb-c pd-rl-32">
+			<div class="flex-row-sb-c pd-rl-20">
 				<div class="jbm-300 cur-p buff" @click="goTo('/')">dndme.club</div>
 				<AppBtmLink
 				class="btm-blue w-200"
