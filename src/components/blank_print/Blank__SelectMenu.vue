@@ -4,7 +4,7 @@
     <div class="hr-vert-2"></div>
     <div class="hr-vert-3"></div>
 		<div class="column-content">
-			<div class="int-600-28">{{ site_Link }}</div>
+			<div class="int-600-28">dndme.club</div>
 			<div>{{ link_Description }}</div>
 			<div class="hr-print"></div>
 			<AppPrintMenu__Chapter title="level" :chapter="String(MY.level)" />
@@ -94,10 +94,6 @@ export default {
 		]),
     ...mapState(useStatsStore, [ "stats_Base_Settings_Full_T"]),
     ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr"]),
-
-		site_Link() {
-			return "dndme.club";
-		},
 
 		link_Description() {
 			return this.t("link_description");
