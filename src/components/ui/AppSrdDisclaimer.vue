@@ -25,7 +25,7 @@ export default {
     },
   },
 	computed: {
-    ...mapWritableState(useMainStore, ["srd"]),
+    ...mapWritableState(useMainStore, ["srd", "can_show_phb"]),
     t_Disclaimer_1: (stor) => stor.t("phb_disclaimer_1") + ' ',
     t_Disclaimer_2: (stor) => stor.t("phb_disclaimer_2") + ' ',
     t_Disclaimer_3: (stor) => stor.t("phb_disclaimer_3"),
@@ -35,7 +35,7 @@ export default {
     },
 
     show_Disclaimer() {
-      return this.srd && this.disclaimer;
+      return this.srd && this.disclaimer && this.can_show_phb;
     }
 	},
 

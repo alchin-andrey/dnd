@@ -14,7 +14,7 @@
 	<div v-if="screen_Max" class="stripe" />
 
 	<main class="w-100">
-		<div v-if="screen_1279" class="mob-header flex-col-c w-100 pos-rel">
+		<div v-if="!screen_Max" class="mob-header flex-col-c">
 			<div class="flex-row-sb-c pd-rl-20">
 				<div class="jbm-300 cur-p buff" @click="goTo('/')">dndme.club</div>
 				<AppBtmLink
@@ -23,7 +23,6 @@
 				name="how_to_start_2_title"
 				/>
 			</div>
-			<!-- <div class="gradient"/> -->
 		</div>
 	
 		<section class="welcom-wrapp">
@@ -39,8 +38,6 @@
 			</div>
 		</section>
 	</main>
-
-	<!-- <PlagBanner v-if="small_screen"/> -->
 </template>
 <script>
 
@@ -73,7 +70,17 @@ export default {
 	},
 
 	computed: {
-		...mapState(usePagesStore, ["screen_Max", "screen_1279"])
+		...mapState(usePagesStore, [
+			"screen_Max", 
+			"screen_1280", 
+			"screen_955", 
+			"screen_480",
+		]),
+
+		// styl_Wrapp() {
+		// 	if(this.screen_Max) return 'int-700-20 pd-20-28';
+		// 	return 'int-700 pd-16';
+		// },
 	},
 
 	methods: {
@@ -117,14 +124,6 @@ export default {
 
 .min-w-320 {min-width: 320px;}
 .w-200 {width: 200px;}
-
-.gradient {
-	height: 32px;
-	width: 100%;
-	position: absolute;
-	bottom: -32px;
-	background: linear-gradient(0deg, rgba(14, 21, 24, 0) 0%, #0e1518 100%);
-}
 
 @media (max-width: 1279px) {
 	.welcom-wrapp {
