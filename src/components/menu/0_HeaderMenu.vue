@@ -5,7 +5,7 @@
 			:active="main_page.shown.logo"
 		/>
 		<div class="header_col">
-			<my-header-card
+			<AppHeaderCard
 				@click="showSettings__Main('lang')"
 				:active="main_page.shown.lang"
 			>
@@ -15,13 +15,11 @@
 					:set="set_emoji"
 					:size="15"
 				/>
-				<!-- <img class="header_icon" :src="lang_Icon" alt="Lang_Icon" /> -->
-			</my-header-card>
-			<my-header-card
+			</AppHeaderCard>
+			<AppHeaderCard
 				@click="showSettings__Main('lvl')"
 				:active="main_page.shown.lvl"
-				:slots="char_Lvl"
-			/>
+			> {{ char_Lvl }} </AppHeaderCard>
 		</div>
 	</div>
 </template>
@@ -61,10 +59,15 @@ export default {
 <style scoped>
 .header {
 	height: 28px;
-	/* margin: 0 0 22px 0; */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+@media (max-width: 1279px) {
+	.header {
+		height: 50px;
+	}
 }
 
 .header_col {

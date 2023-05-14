@@ -1,24 +1,19 @@
 <template>
 	<div
-		class="wrapp_head jbm-300"
+		class="wrapp-head jbm-300"
 		:class="{
-			card_active: active,
-			card_hover: !active,
+			'card-active': active,
+			'card-hover': !active,
 		}"
 	>
-		<slot class="flex_head"></slot>
-		{{ slots }}
+		<slot class="flex-row-c" />
 	</div>
 </template>
 
 <script>
 export default {
-	name: "MyHeaderCard",
+	name: "AppHeaderCard",
 	props: {
-		slots: {
-			type: String,
-			default: null,
-		},
 		active: {
 			type: Boolean,
 			default: false,
@@ -28,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.wrapp_head {
+.wrapp-head {
 	padding: 0 12px 0 12px;
 	height: 100%;
 	background: rgba(255, 255, 255, 0.06);
@@ -43,17 +38,19 @@ export default {
 	text-transform: uppercase;
 }
 
-.flex_head {
-	display: flex;
-	align-items: center;
+@media (max-width: 1279px) {
+	.wrapp-head {
+		padding: 0 16px 0 16px;
+		min-width: 50px;
+	}
 }
 
-.card_hover:hover {
+.card-hover:hover {
 	background: rgba(255, 255, 255, 0.1);
 	color: #ffffff;
 }
 
-.card_active {
+.card-active {
 	background: #ffffff;
 	color: #0e1518;
 }

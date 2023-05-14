@@ -6,6 +6,7 @@ import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
 import AppBtmLink from "@/components/ui/AppBtmLink.vue";
 import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
 import AppLogoCard from "@/components/ui/AppLogoCard.vue";
+import AppHeaderCard from "@/components/ui/AppHeaderCard.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -66,7 +67,6 @@ import MySizeGrowth from "@/components/ui/pinia_ui/MySizeGrowth.vue";
 import MyRange from "@/components/ui/pinia_ui/MyRange.vue";
 import MyRangeSize from "@/components/ui/pinia_ui/MyRangeSize.vue";
 
-import MyHeaderCard from "@/components/ui/pinia_ui/MyHeaderCard.vue";
 import MagicAttribute from "@/components/ui/MagicAttribute.vue";
 import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import MySpellMain from "@/components/ui/MySpellMain.vue";
@@ -143,7 +143,7 @@ export default [
   MyRange,
   MyRangeSize,
 
-  MyHeaderCard,
+  AppHeaderCard,
   AppLogoCard,
   MagicAttribute,
   MyDialogSpell,

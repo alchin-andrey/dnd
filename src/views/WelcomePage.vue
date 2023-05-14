@@ -14,7 +14,7 @@
 	<div v-if="screen_Max" class="stripe" />
 
 	<main class="w-100">
-		<div v-if="!screen_Max" class="mob-header flex-col-c">
+		<div v-if="!screen_Max" class="mob-header flex-col-c-jc">
 			<div class="flex-row-sb-c pd-rl-20">
 				<div class="jbm-300 cur-p buff" @click="goTo('/')">dndme.club</div>
 				<AppBtmLink
