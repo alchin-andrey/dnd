@@ -5,26 +5,21 @@
 		class="column"
 		@click="showSettings(page_Open, item.id_link)"
 		:class="{
-			active_link: active_Link(item),
-			hover: !active_Link(item),
+			'active-link': active_Link(item) && screen_Max,
+			'hover': !active_Link(item) && screen_Max,
 			'lvl-dot': shown_Level_Dot(item),
 		}"
 	>
 		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
-		<section class="column_link int-400 active">
-			<div class="link-text" 
-      :class="{ 
-        'rare-text': overflow_Item(item) || sett_Counter(item)}">
+		<section class="column-link int-400">
+			<div 
+			class="link-text" 
+      :class="{'rare-text': overflow_Item(item) || sett_Counter(item)}"
+			:style="{'width': size_Text}"
+			>
 				<span class="type-text">{{ t_Type(item) }}</span>
 			</div>
-			<div class="icon">
-				<svg
-					class="main_svg"
-					viewBox="0 0 18 18"
-					xmlns="http://www.w3.org/2000/svg"
-					v-html="ui_icon[icon_Image(item)]"
-				></svg>
-			</div>
+			<AppSvg class="svg-18 svg-main-f" :path="ui_icon[icon_Image(item)]" />
 		</section>
 	</div>
 </template>
@@ -61,6 +56,8 @@ export default {
 			"class_page",
       "alignment_page",
 			"page_Open",
+			"screen_Max", 
+			"screen_Menu_Num",
 		]),
 		...mapState(useOverflowStore, ["overflow_Item_Menu"]),
 
@@ -91,6 +88,8 @@ export default {
 			const first_name = stor.uniqu_Name[item.name][0];
 			if (item == first_name && !stor.no_name) {
 				return stor.t(item?.name);
+			} else if(!stor.screen_Max) {
+				return '\\';
 			}
 			return null;
 		},
@@ -114,9 +113,9 @@ export default {
       if (item.type == "spells") {
         const dub_detect = stor.overflow_Item_Menu(item);
         const numb = item.select_numb - item.select_list.length;
-        const selected = `${stor.t("spell_selected")} ${item.select_numb}`;
-        const left = `${stor.t("spells_left")} ${numb}`;
-        const duplicated = `${stor.t("spell_duplicated")}`;
+        const selected = `${stor.T("spell_selected")} ${item.select_numb}`;
+        const left = `${stor.T("spells_left")} ${numb}`;
+        const duplicated = `${stor.T("spell_duplicated")}`;
         return numb !== 0 ? left : dub_detect ? duplicated : selected;
       }
 			if (
@@ -134,12 +133,21 @@ export default {
 				let arr = [];
 				item.select_list.forEach((item) => {
 					if (item?.name) {
-						arr.push(stor.t(item?.name));
+						arr.push(stor.T(item?.name));
 					} else if (item?.name_set) {
-						arr.push(stor.t(item?.name_set));
+						arr.push(stor.T(item?.name_set));
 					}
 				});
-				return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+				return arr.join(", ");
+			}
+		},
+
+		size_Text() {
+			if(this.screen_Max) {
+				return '114px'
+			} else {
+				const num = this.screen_Menu_Num - 124 - 20*2 - 16*2 - 18;
+				return `${num}px`
 			}
 		},
 	},
@@ -151,18 +159,26 @@ export default {
 
 <style scoped>
 .column {
-	height: 18px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	position: relative;
 	cursor: pointer;
+	gap: 4px;
 }
 
-.flex_row {
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
+@media (max-width: 1279px) {
+	.column {
+		padding: 16px;
+		background: rgba(255, 255, 255, 0.06);
+		backdrop-filter: blur(30px);
+		-webkit-backdrop-filter: blur(30px);
+		border-radius: 12px;
+		isolation: isolate;
+	}
+
+	.column:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
 }
 
 .hover:hover::before {
@@ -175,14 +191,15 @@ export default {
 	background: #ffffff;
 }
 
-.column_link {
+.column-link {
 	display: flex;
-	gap: 4px;
-	position: relative;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: rgba(255, 255, 255, 0.2);
+}
+
+.column_title {
+	min-width: 120px;
 }
 
 .lvl-dot::after {
@@ -196,7 +213,7 @@ export default {
 	border-radius: 50%;
 }
 
-.active_link:before {
+.active-link:before {
 	content: "";
 	position: absolute;
 	width: 35px;
@@ -206,43 +223,20 @@ export default {
 	background: #ffffff;
 }
 
-.column_link span {
-	white-space: nowrap; /* Текст не переносится */
-	overflow: hidden; /* Обрезаем всё за пределами блока */
+.column-link span {
+	white-space: nowrap;
+	overflow: hidden;
 	text-overflow: ellipsis;
 }
 
 .link-text {
-	width: 110px;
 	display: flex;
 	align-items: center;
-	/* height: 18px; */
 }
-.link-text:first-letter {
-	text-transform: uppercase;
-}
-.type-text:first-letter {
-	text-transform: uppercase;
-}
+
 
 .icon {
 	width: 18px;
 	height: 18px;
-}
-
-.main_svg {
-	fill: white;
-}
-
-.rare-text {
-	color: #ffc93d;
-}
-
-.active {
-	color: #ffffff;
-}
-
-.cursor_auto {
-	cursor: auto;
 }
 </style>

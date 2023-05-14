@@ -1,16 +1,16 @@
 <template>
-	<my-selection-box :shown="alignment_page.shown.alignment">
+	<My-Selection-Box :shown="alignment_page.shown.alignment">
 		<AlignmentSett__Alignment />
-	</my-selection-box>
+	</My-Selection-Box>
 
 	<!-- customm_Settings -->
-  <my-selection-box
+  <My-Selection-Box
 			v-for="item in сustomm_Main_Settings_Alignment_Arr"
 			:key="item.id_link"
 			:shown="alignment_page.shown[item.id_link]"
 		>
 			<AlignmentSett__Custom :custom="item"/>
-		</my-selection-box>
+		</My-Selection-Box>
 </template>
 
 <script>

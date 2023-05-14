@@ -2,26 +2,24 @@
 	<section class="pos-rel">
 		<div class="gradient"></div>
 		<div class="btm">
-			<div class="numb jbm-300" v-if="numb">
-				<div>
-					{{ numb }}
-				</div>
-			</div>
+			<div class="numb jbm-300" v-if="numb">{{ numb }}</div>
 			<div class="title jbm-300">
-				<div>
-					{{ t_Title }}
-				</div>
-				<div>
-					<img alt="arrow_down" src="@/assets/img/icon/arrow_down.svg" />
-				</div>
+				<div>{{ t_Title }}</div>
+				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.arrow_down" />
 			</div>
 		</div>
 	</section>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "MyButton",
+	data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		numb: {
 			type: String,
@@ -43,12 +41,35 @@ export default {
 
 <style scoped>
 .btm {
-	width: 320px;
+	/* width: 100vh; */
   display: grid;
   gap: 18px;
 	background: #0047ff;
   padding: 32px;
 	cursor: pointer;
+	position: relative;
+}
+
+.btm::before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: -100%;
+	background: rgba(0, 71, 255, 0.2);
+	z-index: 100;
+}
+
+.btm::after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: -100%;
+	background: rgba(0, 71, 255, 0.2);
+	z-index: 100;
 }
 
 .numb {

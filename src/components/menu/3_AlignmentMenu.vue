@@ -2,7 +2,7 @@
 	<div class="selection_menu_wrap">
 
     <div class="selection_menu">
-      <my-selection
+      <AppSelection
 				@click="showSettings__Alignment('alignment')"
 				:active="alignment_page.shown.alignment"
 				title="alignment"
@@ -42,12 +42,11 @@ export default {
 	gap: 34px;
 }
 
-.selection_menu_wrap::-webkit-scrollbar {
+/* .selection_menu_wrap::-webkit-scrollbar {
 	width: 0;
-}
+} */
 
 .selection_menu {
-	width: 256px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;

@@ -18,12 +18,12 @@
 		</div>
 
     <div class="selection_menu">
-      <my-selection
+      <AppSelection
 				@click="showSettings__Class('stats')"
 				:active="class_page.shown.stats"
 				title="stats"
 				:t_type="stats_Base_Settings_Two_T"
-			></my-selection>
+			></AppSelection>
 			<AppSelectionArr :menu="feats_Filter" no_name/>
 			<AppSelectionArr :menu="stats_Filter" no_name/>
 			<AppSelectionArr :menu="skills_Filter"/>
@@ -150,12 +150,11 @@ export default {
 	gap: 34px;
 }
 
-.selection_menu_wrap::-webkit-scrollbar {
+/* .selection_menu_wrap::-webkit-scrollbar {
 	width: 0;
-}
+} */
 
 .selection_menu {
-	width: 256px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;

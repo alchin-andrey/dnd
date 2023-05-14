@@ -1,33 +1,33 @@
 <template>
-	<my-selection-box :shown="class_page.shown.stats">
+	<My-Selection-Box :shown="class_page.shown.stats">
 		<ClassSett__BaseStats />
-	</my-selection-box>
+	</My-Selection-Box>
 
 	<!-- customm_Settings -->
-  <my-selection-box
+  <My-Selection-Box
 			v-for="item in сustomm_Settings_Class_Arr"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
 		>
 			<ClassSett__Custom :custom="item"/>
-		</my-selection-box>
+		</My-Selection-Box>
 
-  <my-selection-box
+  <My-Selection-Box
 			v-for="item in spells_Settings_Class_Arr"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
 		>
 			<ClassSett__Spells :spells_setting="item"/>
-		</my-selection-box>
+		</My-Selection-Box>
 
   <!-- feats_Settings -->
-  <my-selection-box
+  <My-Selection-Box
 			v-for="item in feats_Settings_Class"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
 		>
     <ClassSett__Feats :id_link="item.id_link" />
-		</my-selection-box>
+		</My-Selection-Box>
 </template>
 
 <script>

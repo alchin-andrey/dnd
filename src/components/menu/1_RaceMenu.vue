@@ -1,23 +1,14 @@
 <template>
-	<!-- <div class="main_chapter_menu"> -->
-
 	<!-- RACE ETHNOS -->
 	<div class="selection_menu_wrap">
 		<section class="selection_menu">
-			<my-selection
+			<AppSelection
 				@click="showSettings__Race('ethnos')"
 				:active="race_page.shown.ethnos"
 				title="ethnos"
 				:type="MY_Ethnos.name"
 				:rare="MY_Ethnos.rare"
-			></my-selection>
-			<!-- <my-selection
-				@click="showSettings__Race('backstory')"
-				:active="race_page.shown.backstory"
-				title="past"
-				:type="MY_Backstory.name"
-				:rare="MY_Backstory.rare"
-			></my-selection> -->
+			/>
 			<AppSelectionArr :menu="MY_Backstory_Menu"/>
 		</section>
 		<!-- RACE ETHNOS -->
@@ -45,62 +36,57 @@
 
 		<!-- OTHER RACE SETTINGS -->
 		<section class="selection_menu">
-			<my-selection
+			<AppSelection
 				@click="showSettings__Race('gender')"
 				:active="race_page.shown.gender"
 				title="gender"
 				:type="MY.gender.phisiological"
-			></my-selection>
-			<my-controller
+			/>
+			<AppController
 				@click="showSettings__Race('age')"
 				:active="race_page.shown.age"
 				title="age"
 				:value="MY.age"
 				age
 				:note="Age_Note"
-			></my-controller>
-			<my-controller
+			/>
+			<AppController
 				@click="showSettings__Race('height')"
 				:active="race_page.shown.height"
 				title="height"
 				:value="MY.height"
 				unit="cm"
 				:note="Hight_Note"
-			></my-controller>
-			<my-controller
+			/>
+			<AppController
 				@click="showSettings__Race('weight')"
 				:active="race_page.shown.weight"
 				title="weight"
 				:value="MY.weight"
 				unit="kg"
 				:note="Weight_Note"
-			>
-			</my-controller>
-			<my-selection
+			/>
+			<AppSelection
 				@click="showSettings__Race('skin_color')"
 				:active="race_page.shown.skin_color"
 				title="color_skin"
 				:type="skin_color_Char_Body.name"
-			>
-			</my-selection>
-			<my-selection
+			/>
+			<AppSelection
 				@click="showSettings__Race('eyes_color')"
 				:active="race_page.shown.eyes_color"
 				title="color_eyes"
 				:type="eyes_color_Char_Body.name"
-			>
-			</my-selection>
-			<my-selection
+			/>
+			<AppSelection
 				@click="showSettings__Race('hair_color')"
 				:active="race_page.shown.hair_color"
 				title="color_hair"
 				:type="hair_color_Char_Body.name"
-			>
-			</my-selection>
+			/>
 		</section>
 		<!-- OTHER RACE SETTINGS -->
 	</div>
-	<!-- </div> -->
 </template>
 
 <script>
@@ -175,17 +161,6 @@ export default {
 </script>
 
 <style scoped>
-/* .main_chapter_menu {
-	padding: 40px 32px 32px 32px;
-	overflow-y: scroll;
-	max-height: 100%;
-	scrollbar-width: none;
-} */
-
-/* .main_chapter_menu::-webkit-scrollbar {
-	width: 0;
-} */
-
 .selection_menu_wrap {
 	display: flex;
 	flex-direction: column;
@@ -197,7 +172,6 @@ export default {
 }
 
 .selection_menu {
-	width: 256px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;

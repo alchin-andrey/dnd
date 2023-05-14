@@ -31,11 +31,10 @@
 			<div class="main_menu_wrap" @click="showHome()">
 				<div 
 					class="main_chapter_menu" 
-					@click.stop
 					>
-						<RaceMenu v-if="pages.race_page" />
-					<ClassMenu v-if="pages.class_page" />
-					<AlignmentMenu v-if="pages.alignment_page" />
+						<RaceMenu v-if="pages.race_page" @click.stop />
+						<ClassMenu v-if="pages.class_page" @click.stop />
+						<AlignmentMenu v-if="pages.alignment_page" @click.stop />
 				</div>
 				<transition name="btm-fade" mode="out-in">
 						<my-button
@@ -340,6 +339,11 @@ export default {
 	display: flex;
 	height: 100%;
 	width: 100%;
+	overflow-x: hidden;
+}
+
+.main-class::-webkit-scrollbar {
+	width: 0;
 }
 
 .delimiter {
@@ -355,20 +359,6 @@ export default {
 	flex-direction: column;
 }
 
-.main_menu_wrap {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	overflow-y: scroll;
-	max-height: 100%;
-	scrollbar-width: none;
-}
-
-.main_menu_wrap::-webkit-scrollbar {
-	width: 0;
-}
-
 .main_chapter {
 	padding: 0 32px 0 32px;
 	display: flex;
@@ -382,13 +372,48 @@ export default {
 	gap: 10px;
 }
 
+.main_menu_wrap {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+	overflow-y: scroll;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	flex: 1 1 auto;
+}
+
+.main_menu_wrap::-webkit-scrollbar {
+	width: 0;
+}
+
+.main_chapter_menu {
+	padding: 40px 32px 32px 32px;
+	overflow-y: scroll;
+  /* min-width: 320px; */
+	height: 100%;
+	scrollbar-width: none;
+	/* flex: 1 1 auto; */
+}
+
+.main_chapter_menu::-webkit-scrollbar {
+	width: 0;
+}
+
 @media (max-width: 1279px) {
 	.main-class {
 		display: flex;
 		justify-content: center;
 		height: 100%;
 		width: 100%;
+		overflow-y: scroll;
+		scrollbar-width: none;
 	}
+
+	.main-class::-webkit-scrollbar {
+		width: 0;
+	}
+
 	.sidebar_left {
 		width: 100%;
 		max-width: 434px;
@@ -403,39 +428,16 @@ export default {
 	.back-page-grup {
 		gap: 4px;
 	}
-}
 
-.main_chapter_menu {
-	padding: 40px 32px 32px 32px;
-	overflow-y: scroll;
-  min-width: 320px;
-	max-height: 100%;
-	scrollbar-width: none;
-}
+	.main_menu_wrap {
+		overflow-y: visible;
+		overflow-x: visible;
+	}
 
-.pd-top-22 {
-  padding-top: 22px;
-}
-
-.main_chapter_menu::-webkit-scrollbar {
-	width: 0;
-}
-
-.selection_menu_wrap {
-	display: flex;
-	flex-direction: column;
-	gap: 34px;
-}
-
-.selection_menu_wrap::-webkit-scrollbar {
-	width: 0;
-}
-
-.selection_menu {
-	width: 256px;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
+	.main_chapter_menu {
+		padding: 34px 20px 26px 20px;
+		overflow-y: visible;
+	}
 }
 
 .btm-fade-enter-active {

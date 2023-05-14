@@ -2,31 +2,40 @@
 	<div
 		class="column"
 		:class="{
-			active_link: active,
-			cursor_auto: pass_Link,
-			hover: !pass_Link,
+			'active-link': active && screen_Max,
+			'hover': !pass_Link && screen_Max,
+			'column-hov cur-p': !pass_Link,
 		}"
 	>
-		<div class="column_title jbm-300">{{ t_Title }}</div>
-		<div
-			class="column_link int-400"
-			:class="{
-				rare: rare,
-				active: !pass_Link,
-				icon: !pass_Link || active,
-				icon_active: active,
-			}"
-		>
-			{{ t_Type }}
+		<div class="column-title jbm-300">{{ t_Title }}</div>
+		<div class="flex-row-c" >
+			<div
+				class="column-link int-400"
+				:class="{
+					'rare-text': rare,
+					'white-02': pass_Link,
+				}"
+				:style="{'width': size_Text}"
+			>
+				<span>{{ t_Type }}</span>
+			</div>
+			<AppSvg class="svg-18 svg-main-f" :class="{'svg-none-f': pass_Link}" :path="ui_icon[icon_Svg]" />
 		</div>
 	</div>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
-	name: "MySelection",
+	name: "AppSelection",
+	data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		title: {
 			type: String,
@@ -55,6 +64,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race"]),
+		...mapState(usePagesStore, ["screen_Max", "screen_Menu_Num"]),
 		pass_Link() {
 			let skin = this.MY_Race.race_settings.color.skin.length;
 			let eyes = this.MY_Race.race_settings.color.eyes.length;
@@ -73,34 +83,60 @@ export default {
       if(this.t_type) {
         return this.t_type;
       } else if (this.type) {
-				return this.title === "gender" ? this.gender_Name : this.t(this.type);
+				return this.title === "gender" ? this.gender_Name : this.T(this.type);
 			} else if (this.type_arr.length === 0) {
 				return "—";
 			} else {
 				let arr = [];
 				for (let i in this.type_arr) {
-					arr.push(this.t(this.type_arr[i]));
+					arr.push(this.T(this.type_arr[i]));
 				}
 				return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
 			}
 		},
 
 		gender_Name() {
-			let name = this.t(this.type);
+			let name = this.T(this.type);
 			return this.MY.gender.feel === "cisgender" ? name : `${name} *`;
 		},
+
+		size_Text() {
+			if(this.screen_Max) {
+				return '114px'
+			} else {
+				const num = this.screen_Menu_Num - 124 - 20*2 - 16*2 - 18;
+				return `${num}px`
+			}
+		},
+
+		icon_Svg() {
+			return this.active ? 'arrow_right_small' : 'arrow_down_small';
+		}
 	},
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .column {
-	height: 18px;
 	display: flex;
 	align-items: center;
-	position: relative;
 	cursor: pointer;
+	gap: 4px;
+}
+
+@media (max-width: 1279px) {
+	.column {
+		padding: 16px;
+		background: rgba(255, 255, 255, 0.06);
+		backdrop-filter: blur(30px);
+		-webkit-backdrop-filter: blur(30px);
+		border-radius: 12px;
+		isolation: isolate;
+	}
+
+	.column-hov:hover {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
 }
 
 .hover:hover::after {
@@ -113,7 +149,7 @@ export default {
 	background: #ffffff;
 }
 
-.active_link:before {
+.active-link:before {
 	content: "";
 	position: absolute;
 	width: 35px;
@@ -123,59 +159,18 @@ export default {
 	background: #ffffff;
 }
 
-.column_title {
-	width: 120px;
+.column-title {
+	min-width: 120px;
+}
+.column-link {
+  display: flex;
+  align-items: center;
+	overflow: hidden;
 }
 
-.column_title div {
-	display: inline;
-}
-
-.column_link {
-	width: 132px;
-	padding-right: 16px;
-	margin-left: 4px;
-	position: relative;
+.column-link span {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: rgba(255, 255, 255, 0.2);
-}
-
-.column_link div {
-	white-space: nowrap; /* Текст не переносится */
-	overflow: hidden; /* Обрезаем всё за пределами блока */
-	text-overflow: ellipsis;
-}
-
-.column_link:first-letter {
-	text-transform: uppercase;
-}
-
-.icon::after {
-	content: url(@/assets/img/icon/arrow_down_small.svg);
-	position: absolute;
-	right: 0px;
-	top: -2px;
-}
-
-.icon_active::after {
-	content: url(@/assets/img/icon/arrow_right_small.svg);
-	position: absolute;
-	right: 0px;
-	top: -2px;
-}
-
-
-.active {
-	color: #ffffff;
-}
-
-.rare {
-	color: #ffc93d;
-}
-
-.cursor_auto {
-	cursor: auto;
 }
 </style>

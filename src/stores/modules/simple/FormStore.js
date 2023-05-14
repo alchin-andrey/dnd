@@ -98,7 +98,6 @@ export const useFormStore = defineStore({
 
     Age_Note() {
       const MYStore = useMYStore();
-      const { t } = useDicStore();
 			let age = MYStore.MY_Race.race_settings.age;
 			let baby = age.min;
 			let young = age.young;
@@ -107,25 +106,24 @@ export const useFormStore = defineStore({
 			let oldest = age.max;
 			const MY_AGE = MYStore.MY.age;
 			if (baby <= MY_AGE && MY_AGE < young) {
-				return t("baby");
+				return "baby";
 			} else if (young <= MY_AGE && MY_AGE < mature) {
-				return t("young");
+				return "young";
 			} else if (mature <= MY_AGE && MY_AGE < old) {
-				return t("mature");
+				return "mature";
 			} else if (old <= MY_AGE && MY_AGE < oldest) {
-				return t("old");
+				return "old";
 			} else {
-				return t("oldest");
+				return "oldest";
 			}
 		},
 
 		Weight_Note() {
-      const { t } = useDicStore();
 			let kof = this.form_kof.weight;
 			if (kof === 0) {
-				return t("skinny");
+				return "skinny";
 			} else if (kof === 1) {
-				return t("fat");
+				return "fat";
 			} else {
 				return null;
 			}
@@ -133,8 +131,7 @@ export const useFormStore = defineStore({
 
 		Hight_Note() {
       const MYStore = useMYStore();
-      const { t } = useDicStore();
-			return t(MYStore.MY_Race.race_settings.size);
+			return MYStore.MY_Race.race_settings.size;
 		},
 
 	},

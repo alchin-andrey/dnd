@@ -8,6 +8,8 @@ import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
 import AppLogoCard from "@/components/ui/AppLogoCard.vue";
 import AppHeaderCard from "@/components/ui/AppHeaderCard.vue";
 import AppBackPage from "@/components/ui/AppBackPage.vue";
+import AppSelection from "@/components/ui/AppSelection.vue";
+import AppController from "@/components/ui/AppController.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -49,8 +51,8 @@ import MyCardTextColor from "@/components/ui/pinia_ui/MyCardTextColor.vue";
 import MyColorSelect from "@/components/ui/pinia_ui/MyColorSelect.vue";
 
 
-import MySelection from "@/components/ui/pinia_ui/MySelection.vue";
-import MyController from "@/components/ui/pinia_ui/MyController.vue";
+
+
 
 import MyButton from "@/components/ui/pinia_ui/MyButton.vue";
 import MyButtonBack from "@/components/ui/pinia_ui/MyButtonBack.vue";
@@ -126,8 +128,8 @@ export default [
   MyCardTextColor,
 
   
-  MySelection,
-  MyController,
+  AppSelection,
+  AppController,
 
   MyButton,
   MyButtonBack,

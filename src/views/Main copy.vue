@@ -442,10 +442,6 @@ export default {
 	gap: 34px;
 }
 
-.selection_menu_wrap::-webkit-scrollbar {
-	width: 0;
-}
-
 .selection_menu {
 	width: 256px;
 	display: flex;
