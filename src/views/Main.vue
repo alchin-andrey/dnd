@@ -117,7 +117,7 @@
 		<BlankPrint />
 	</div>
 
-	<PlagBanner v-if="small_screen"/>
+	<!-- <PlagBanner v-if="!screen_Max"/> -->
 </template>
 
 <script>
@@ -146,13 +146,13 @@ export default {
 
 	created() {
 		this.getCreated();
-		window.addEventListener("resize", this.onResize);
-		this.onResize();
+		// window.addEventListener("resize", this.onResize);
+		// this.onResize();
 	},
 
-	destroyed() {
-		window.removeEventListener("resize", this.onResize);
-	},
+	// destroyed() {
+	// 	window.removeEventListener("resize", this.onResize);
+	// },
 
 	computed: {
 		//STORES
@@ -174,7 +174,8 @@ export default {
 			"pages",
 			"page_Open",
       "btn_Numb",
-      "btn_Name"
+      "btn_Name",
+			"screen_Max"
 		]),
 
 		...mapState(useFormStore, [
@@ -275,9 +276,9 @@ export default {
 		]),
     ...mapActions(useGenderStore, ["getRandomName"]),
 
-		onResize() {
-			this.small_screen = window.innerWidth <= 1279;
-		},
+		// onResize() {
+		// 	this.small_screen = window.innerWidth <= 1279;
+		// },
 
     exportToPDF() {
       if(!this.loading_pdf) {

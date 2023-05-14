@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<my-logo-card
+		<AppLogoCard
 			@click="showSettings__Main('logo')"
 			:active="main_page.shown.logo"
 		/>

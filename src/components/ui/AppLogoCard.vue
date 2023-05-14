@@ -2,13 +2,13 @@
 	<div
 		class="logo"
 		:class="{
-			card_active: active,
-			logo_hover: !active,
-      animation__active: show_Animation,
+			'card-active': active,
+			'logo-hover': !active,
+      'animation--active': show_Animation,
 		}"
 	>
 		<svg 
-      class="logo_svg"
+      class="logo-svg"
 			viewBox="0 0 25 29"
 			xmlns="http://www.w3.org/2000/svg"
 		>
@@ -29,7 +29,7 @@
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
-	name: "MyLogoCard",
+	name: "AppLogoCard",
 	props: {
 		active: {
 			type: Boolean,
@@ -59,7 +59,16 @@ export default {
 	cursor: pointer;
 }
 
-.logo_svg{
+@media (max-width: 1279px) {
+	.logo {
+		margin-left: 0;
+		width: 50px;
+		height: 50px;
+		background: rgba(255, 255, 255, 0.06);
+		border-radius: 100%;
+	}
+}
+.logo-svg{
   width: 25px;
 	height: 28px;
   fill: none;
@@ -68,33 +77,33 @@ export default {
 	stroke-linejoin: "bevel";
 }
 
-.logo_hover {
+.logo-hover {
 	transition-property: all;
   transition-duration: 0.5s;
 }
-.logo_hover:hover {
+.logo-hover:hover {
 	background: rgba(255, 255, 255, 0.1);
 }
 
-.card_active {
+.card-active {
 	background: #ffffff;
 }
-.card_active > svg {
+.card-active > svg {
   stroke: #0E1518;
 }
 
-.animation__active  {
-  animation-name: active_back;
+.animation--active  {
+  animation-name: active-back;
   animation-duration: 2s;
   animation-timing-function: cubic-bezier(.04,.85,.35,.51);
   animation-delay: 0.8s;
 }
 
-@keyframes active_back{
-0%{ background: transparent; }
-20%{ background: #ffffff; }
-40%{ background: #ffffff; }
-100%{ background: transparent; }
+@keyframes active-back{
+	0%{ background: transparent; }
+	20%{ background: #ffffff; }
+	40%{ background: #ffffff; }
+	100%{ background: transparent; }
 }
 
 </style>

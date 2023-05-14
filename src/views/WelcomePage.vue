@@ -1,7 +1,7 @@
 <template>
 	<section v-if="screen_Max" class="flex-col pd-t-32 min-w-320">
 		<div class="flex-row-c gap-4 pd-rl-32 h-28">
-			<my-logo-card @click="goTo('/')"/>
+			<AppLogoCard @click="goTo('/')"/>
 			<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
 		</div>
 
