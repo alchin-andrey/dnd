@@ -175,16 +175,16 @@ export default {
 </script>
 
 <style scoped>
-.main_chapter_menu {
+/* .main_chapter_menu {
 	padding: 40px 32px 32px 32px;
 	overflow-y: scroll;
 	max-height: 100%;
 	scrollbar-width: none;
-}
+} */
 
-.main_chapter_menu::-webkit-scrollbar {
+/* .main_chapter_menu::-webkit-scrollbar {
 	width: 0;
-}
+} */
 
 .selection_menu_wrap {
 	display: flex;

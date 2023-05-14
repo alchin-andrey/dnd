@@ -1,43 +1,42 @@
 <template>
-	<section v-if="screen_Max" class="flex-col pd-t-32 min-w-320">
-		<div class="flex-row-c gap-4 pd-rl-32 h-28">
-			<AppLogoCard @click="goTo('/')"/>
-			<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
-		</div>
-
-		<div class="h-100 flex-col-sb mr-t-84">
-			<WelcomPage__Menu />
-			<my-button-back title="command_back" @click="goTo('/')" />
-		</div>
-
-	</section>
-	<div v-if="screen_Max" class="stripe" />
-
-	<main class="w-100">
-		<div v-if="!screen_Max" class="mob-header flex-col-c-jc">
-			<div class="flex-row-sb-c pd-rl-20">
-				<div class="jbm-300 cur-p buff" @click="goTo('/')">dndme.club</div>
-				<AppBtmLink
-				class="btm-blue w-200"
-				@click="goTo('/')"
-				name="how_to_start_2_title"
-				/>
+	<div class="flex-row h-100">
+		<section v-if="screen_Max" class="flex-col pd-t-32 min-w-320">
+			<div class="flex-row-c gap-4 pd-rl-32 h-28">
+				<AppLogoCard @click="goTo('/')"/>
+				<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
 			</div>
-		</div>
-	
-		<section class="welcom-wrapp">
-			<div class="h-100">
-				<div class="welcom-content">
-					<WelcomPage__WhatDND id="welcom-part1" class="pd-t-32" />
-					<WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32"/>
-					<WelcomPage__Masters id="welcom-part3" class="mr-t-64 pd-t-32"/>
-					<WelcomPage__Game id="welcom-part4" class="mr-t-64 pd-t-32"/>
-					<WelcomPage__Footer class="mr-t-102"/>
-					<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
-				</div>
+			<div class="h-100 flex-col-sb mr-t-84">
+				<WelcomPage__Menu />
+				<my-button-back title="command_back" @click="goTo('/')" />
 			</div>
 		</section>
-	</main>
+		<div v-if="screen_Max" class="stripe-page" />
+		<main class="w-100">
+			<div v-if="!screen_Max" class="mob-header flex-col-c-jc">
+				<div class="flex-row-sb-c pd-rl-20">
+					<div class="jbm-300 cur-p buff" @click="goTo('/')">dndme.club</div>
+					<AppBtmLink
+					class="btm-blue w-200"
+					@click="goTo('/')"
+					name="how_to_start_2_title"
+					/>
+				</div>
+			</div>
+		
+			<section class="welcom-wrapp">
+				<div class="h-100">
+					<div class="welcom-content">
+						<WelcomPage__WhatDND id="welcom-part1" class="pd-t-32" />
+						<WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32"/>
+						<WelcomPage__Masters id="welcom-part3" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Game id="welcom-part4" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Footer class="mr-t-102"/>
+						<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
 </template>
 <script>
 
@@ -96,10 +95,6 @@ export default {
 <style scoped>
 .h-28 {
 	height: 28px;
-}
-.stripe {
-	min-width: 2px;
-	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .welcom-wrapp {

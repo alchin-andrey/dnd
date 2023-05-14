@@ -221,7 +221,7 @@
 
   <main v-else id="site_spell">
     <AppTooltip
-      class="relative marg_slow"
+      class="pos-rel marg_slow"
       text="hint_over_limit"
       :shown="overflow_Save && !param"
       warn
@@ -515,7 +515,8 @@ export default {
       const spell_mod_id = this.spell_Mod?.id;
       const mod = this.spell_Mod ? `&m=${spell_mod_id}` : "";
       const link =
-        `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
+      `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
+      console.log('link:', link)
       return link;
     },
 

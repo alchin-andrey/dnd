@@ -1,5 +1,5 @@
 <template>
-	<section class="relative">
+	<section class="pos-rel">
 		<div class="gradient"></div>
 		<div class="btm">
 			<div class="numb jbm-300" v-if="numb">

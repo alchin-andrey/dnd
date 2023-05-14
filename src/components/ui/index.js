@@ -7,6 +7,7 @@ import AppBtmLink from "@/components/ui/AppBtmLink.vue";
 import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
 import AppLogoCard from "@/components/ui/AppLogoCard.vue";
 import AppHeaderCard from "@/components/ui/AppHeaderCard.vue";
+import AppBackPage from "@/components/ui/AppBackPage.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -72,7 +73,7 @@ import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import MySpellMain from "@/components/ui/MySpellMain.vue";
 
 import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
-import MyBackPage from "@/components/ui/pinia_ui/MyBackPage.vue";
+
 
 
 
@@ -118,7 +119,7 @@ export default [
   AppPrintSpellTitle,
   AppPrintSpellMain,
 
-  MyBackPage,
+  AppBackPage,
 
   MyColorBlock,
   MyColorSelect,

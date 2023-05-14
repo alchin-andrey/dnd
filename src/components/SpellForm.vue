@@ -79,6 +79,7 @@ export default {
   display: flex;
   justify-content: center;
 	padding: 10px;
+  height: 100%;
 }
 
 .spell-baner {

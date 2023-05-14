@@ -67,6 +67,7 @@ export const usePagesStore = defineStore({
     screen_1280: (stor) => stor.screen_size <= 1280,
     screen_955: (stor) => stor.screen_size <= 955,
     screen_480: (stor) => stor.screen_size <= 480,
+    screen_Menu_Num: (stor) => stor.screen_size >= 434 ? 434 : stor.screen_size,
 
     page_Open() {
       const key = Object.keys(this.pages);

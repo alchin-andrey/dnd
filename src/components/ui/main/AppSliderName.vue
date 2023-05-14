@@ -1,34 +1,42 @@
 <template>
 	<div class="mg-18">
-		<div class="numb jbm-300">
-			<div>{{ numb }}</div>
-		</div>
-		<div class="name jbm-300">
-			<div>{{ t_Name }}</div>
-		</div>
-		<div class="main">
-			<transition mode="out-in" name="type">
-				<div :key="t_Type">{{ t_Type }}</div>
-			</transition>
-		</div>
-		<div class="arrows">
-			<div ref="back" class="arrow_left" @click="getSlideBack()">
-				<img alt="arrow_left" src="@/assets/img/icon/arrow_left.svg" />
-			</div>
-			<div ref="next" class="arrow_right" @click="getSlideNext()">
-				<img alt="arrow_right" src="@/assets/img/icon/arrow_right.svg" />
+		<div class="jbm-300 mr-b-36" v-if="screen_Max">{{ numb }}</div>
+		<div class="flex-row gap-14">
+			<div class="stripe-item--slider" v-if="!screen_Max" />
+			<div :class="[stule_Mob]">
+				<section>
+					<div class="jbm-300">{{ t_Name }}</div>
+					<transition mode="out-in" name="type">
+						<div class="int-700-20 mr-t-4" :key="t_Type">{{ t_Type }}</div>
+					</transition>
+				</section>
+				<section class="arrows-wrapp">
+					<div ref="back" class="arrow-left" @click="getSlideBack()">
+						<AppSvg class="svg-main-f" :path="ui_icon.arrow_left"/>
+					</div>
+					<div ref="next" class="arrow-right" @click="getSlideNext()">
+						<AppSvg class="svg-main-f" :path="ui_icon.arrow_right"/>
+					</div>
+				</section>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMainStore } from "@/stores/general/MainStore";
 
 export default {
 	name: "AppSliderName",
+	data() {
+		return {
+			ui_icon: ui_icon,
+		};
+	},
 	props: {
 		numb: {
 			type: String,
@@ -54,6 +62,7 @@ export default {
 		document.removeEventListener("keyup", this.listenerUp);
 	},
 	computed: {
+		...mapState(usePagesStore, ["screen_Max"]),
 		...mapState(useMYStore, [
       "MY",
       "MY_Race",
@@ -65,11 +74,11 @@ export default {
     ]),
 
 		t_Name() {
-			return this.t(this.name);
+			return this.T(this.name);
 		},
 
 		t_Type() {
-			return this.t(this.key_Slider[this.kay_Numb]);
+			return this.T(this.key_Slider[this.kay_Numb]);
 		},
 
 		key_Slider() {
@@ -84,6 +93,11 @@ export default {
 
 		kay_Numb() {
 			return this.key_Slider.indexOf(this.slide_Name);
+		},
+
+		stule_Mob() {
+			if(this.screen_Max) return 'flex-col gap-4'
+			if(!this.screen_Max) return 'flex-row-sb w-100'
 		},
 	},
 	methods: {
@@ -138,78 +152,67 @@ export default {
 .mg-18 {
 	margin-bottom: 18px;
 }
-.numb {
-	height: 18px;
-}
 
-.name {
-	height: 18px;
-	margin-top: 36px;
-}
-
-.main {
-	height: 24px;
-	margin-top: 4px;
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 24px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	text-transform: capitalize;
-}
-
-.arrows {
-	margin-top: 18px;
+.arrows-wrapp {
 	width: 52px;
-	height: 18px;
 	display: flex;
 	justify-content: space-between;
 }
 
-.arrows div {
+.arrows-wrapp > div {
 	height: 32px;
-	width: 32px;
+	width: 25px;
 	cursor: pointer;
 }
 
-.arrow_left {
+.arrow-left {
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	margin: -7px;
 }
 
-.arrow_right {
+.arrow-right {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
-	margin: -7px;
 }
 
-.arrows img {
+.arrows-wrapp svg {
 	height: 18px;
 	width: 18px;
 	cursor: pointer;
 }
 
-.arrow_left:active img {
+.arrow-left:active svg,
+.arrow-right:active svg,
+.push svg {
 	width: 15px;
 }
 
-.arrow_right:active img {
-	width: 15px;
-}
+@media (max-width: 1279px) {
+	.arrows-wrapp {
+		width: 100px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.arrows-wrapp > div {
+		height: 48px;
+		width: 48px;
+		background: rgba(255, 255, 255, 0.06);
+		border-radius: 32px;
+	}
 
-.push img {
-	width: 15px;
-}
+	.arrows-wrapp > div:hover {
+		background: rgba(255, 255, 255, 0.1);
+	}
 
-.delimiter {
-	height: 1px;
-	margin: 40px 0 0 0;
-	background: rgba(255, 255, 255, 0.2);
+	.arrow-left {
+		padding-left: 18px;
+	}
+
+	.arrow-right {
+		padding-right: 18px;
+	}
+
 }
 
 .type-enter-active,

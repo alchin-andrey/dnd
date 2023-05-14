@@ -1,6 +1,6 @@
 <template> 
 	<AppTooltip
-		class="relative"
+		class="pos-rel"
 		text="hint_over_limit"
 		:shown="overflow_Numb"
 		warn
