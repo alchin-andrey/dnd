@@ -373,10 +373,8 @@ export default {
 }
 
 .main_menu_wrap {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 	overflow-y: scroll;
 	overflow-x: hidden;
 	scrollbar-width: none;
@@ -388,12 +386,10 @@ export default {
 }
 
 .main_chapter_menu {
+	height: 100%;
 	padding: 40px 32px 32px 32px;
 	overflow-y: scroll;
-  /* min-width: 320px; */
-	height: 100%;
 	scrollbar-width: none;
-	/* flex: 1 1 auto; */
 }
 
 .main_chapter_menu::-webkit-scrollbar {

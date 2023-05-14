@@ -78,6 +78,7 @@
 
 .stripe-item--slider {
 	min-width: 2px;
+	height: 100%;
 	background: rgba(255, 255, 255, 0.06);
 }
 

@@ -120,7 +120,6 @@ export default {
 .column {
 	display: flex;
 	align-items: center;
-	cursor: pointer;
 	gap: 4px;
 }
 

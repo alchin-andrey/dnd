@@ -113,7 +113,7 @@ export default {
 		isolation: isolate;
 	}
 
-	.column-hov:hover {
+	.column:hover {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 }

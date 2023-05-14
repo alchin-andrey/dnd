@@ -49,9 +49,15 @@
 }
 
 .flex-row-sb {
-  /* width: 100%; */
 	display: flex;
   flex-direction: row;
+	justify-content: space-between;
+}
+
+.flex-row-end-sb {
+	display: flex;
+  flex-direction: row;
+	align-items: flex-end;
 	justify-content: space-between;
 }
 
