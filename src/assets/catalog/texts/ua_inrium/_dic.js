@@ -1143,7 +1143,7 @@ export default {
   other: "інше",
 
   //cast time
-  cast_time: "каст",
+  cast_time: "час касту",
   reaction: "Реакція",
   bonus_action: "Бонусна дія",
   action: "Основна дія",
@@ -1179,7 +1179,7 @@ export default {
   in_distance: "на відстані",
 
   //duration
-  time: "час",
+  time: "Тривалість",
   instant: "миттєво",
   concentration: "концентрація",
   till_dissipate: "поки не розсіється",
@@ -6115,4 +6115,12 @@ export default {
   lobby_CTA: "Створи персонажа",
   lobby_footer: 'По всім питанням пишіть Дімі <a target="_blank" href="https://t.me/dimalagoda">t.me/dimalagoda</a>',
   lobby_support_project: "Підтримай проект",
+
+  details: "деталі",
+  char_details: "деталі персонажа",
+
+  spell_aura_of_purity: spells.aura_of_purity,
+  spell_aura_of_purity_details: spells.aura_of_purity_details,
+  spell_aura_of_purity_expanded: spells.aura_of_purity_expanded,
+  
 };

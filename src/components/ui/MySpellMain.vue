@@ -73,7 +73,7 @@ export default {
 
 .col_title {
 	margin-right: 14px;
-	width: 45px;
+	width: 64px;
 	display: flex;
 }
 

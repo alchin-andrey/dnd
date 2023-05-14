@@ -9,7 +9,7 @@ import masters from "@/assets/catalog/texts/masters.js";
 
 export default {
   //Стартовое
-  welcome_title: "Поринь у Dungeons & Dragons без читання правил!",
+  welcome_title: "Поринь у D&D без читання правил!",
   welcome_message:
     "Щоб почати грати в D&D, достатньо придумати персонажа потрібного рівня, а решту влаштує ваш Майстер. Цей чарівний сайт допоможе вам створити персонажа за 3 простих кроки: Раса, Клас та Світогляд. Всі налаштування — ліворуч.<br /><br />Найкращий підхід для першого разу — розслабитися і вибирати за покликом серця. Тут немає неправильних рішень. У фіналі ви отримаєте аркуш персонажа, з яким ви зможете розпочати гру!",
   welcome_disclaimer:
@@ -6114,4 +6114,10 @@ export default {
   lobby_CTA: "Створи персонажа",
   lobby_footer: 'По всім питанням пишіть Дімі <a target="_blank" href="https://t.me/dimalagoda">t.me/dimalagoda</a>',
   lobby_support_project: "Підтримай проект",
+
+  details: "деталі",
+
+  spell_aura_of_purity: spells.aura_of_purity,
+  spell_aura_of_purity_details: spells.aura_of_purity_details,
+  spell_aura_of_purity_expanded: spells.aura_of_purity_expanded,
 };

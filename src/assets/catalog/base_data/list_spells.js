@@ -24725,6 +24725,53 @@ export default {
     },
   ],
 
+  aura_of_purity: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 764, ua: 764,  ru: 794}, // recalculate
+      link: "aura_of_purity",
+      name: "spell_aura_of_purity",
+      details: "spell_aura_of_purity_details",
+      expanded: "spell_aura_of_purity_expanded",
+
+      type: "abjuration",
+      classes: ["cleric","paladin",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_range: null,
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   banishment: [
     {},
     {},
