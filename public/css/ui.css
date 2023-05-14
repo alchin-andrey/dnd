@@ -79,7 +79,7 @@
 .stripe-item--slider {
 	width: 2px;
 	min-width: 2px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.06);
 }
 
 .stripe-item--active { background: #ffffff;}
