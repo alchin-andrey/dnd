@@ -1,5 +1,5 @@
 <template>
-	<div class="mr-b-18">
+	<div class="mr-b-18 h-100">
 	<div class="jbm-300 mr-b-36" v-if="screen_Max">{{ numb }}</div>
   <main class="flex-row gap-14">
 		<div class="stripe-item--slider" v-if="!screen_Max" />
