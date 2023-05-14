@@ -1,5 +1,5 @@
 <template>
-  <!-- <Teleport to="#app"> -->
+  <Teleport to="body">
     <Transition duration="550" name="nested">
       <div
         v-if="show"
@@ -19,7 +19,7 @@
         </div>
       </div>
     </Transition>
-  <!-- </Teleport> -->
+  </Teleport>
 </template>
 
 <script>

@@ -1,8 +1,9 @@
 <template>
-	<article class="flex-row gap-4">
-		<section class="btm-size btm-trans br-12">
+	<article class="card-wrapp">
+		<section class="card-size btm-trans br-12">
 			<div class="int-700">{{ t("lobby_menu_4") }}</div>
-			<div class="int-400 flex-col gap-15 white-04 w-362 mr-t-24">
+			<!-- <div class="int-400 flex-col gap-15 white-04 w-362 mr-t-24"> -->
+			<div class="text-wrapp int-400 white-04 mr-t-24">
 				<div class="ident-15 mr-l-15 flex-col gap-15">
 					<div>— {{ t('how_it_goes_1') }}</div>
 					<div>— {{ t('how_it_goes_2') }}</div>
@@ -12,7 +13,7 @@
 			</div>
 		</section>
 
-		<section class="btm-size">
+		<section class="card-size">
 			<div class="flex-col gap-4">
 				<WelcomPage__CardGame
 				v-for="step in game_steps"
@@ -41,7 +42,37 @@ export default {
 </script>
 
 <style scoped>
-.btm-size { width: calc(50% - 2px); }
+
+.card-wrapp {
+	display: flex;
+	gap: 4px
+}
+.card-size { 
+	width: 444px; 
+}
+
+.text-wrapp {
+	width: 362px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
 .ident-15 > div { text-indent: -15px; }
-.mr-l-15 { margin-left: 15px;}
+
+
+
+@media (max-width: 955px) {
+	.card-wrapp {
+		flex-direction: column;
+	}
+	.card-size {
+		width: 100%;
+	}
+}
+
+@media (max-width: 480px) {
+	.text-wrapp {
+		width: 330px;
+	}
+}
 </style>

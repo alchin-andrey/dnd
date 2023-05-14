@@ -20,6 +20,7 @@ export const useMainStore = defineStore({
     classes_phb,
 
     srd: true,
+    can_show_phb: true,
 	}),
 
   persist: {

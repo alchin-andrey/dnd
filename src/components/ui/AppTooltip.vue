@@ -85,6 +85,7 @@ export default {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid #ffffff;
   backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(60px);
   border-radius: 6px;
 }
 

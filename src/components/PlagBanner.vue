@@ -103,6 +103,7 @@ export default {
 	border-radius: 12px;
 	padding: 24px 28px 28px;
 	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;

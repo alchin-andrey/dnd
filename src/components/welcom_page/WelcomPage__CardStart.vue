@@ -1,6 +1,6 @@
 <template>
 	<div 
-	class="br-12 w-220" 
+	class="br-12" 
 	:class="{
 		'btm-trans': !active,
 		'btm-blue hov pd-16 cur-p': active,

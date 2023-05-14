@@ -5,6 +5,7 @@ import { useMYStore } from "@/stores/user/MYStore";
 export const usePagesStore = defineStore({
 	id: "PagesStore",
 	state: () => ({
+    screen_size: null,
     site_settings: {
       save: {},
       welcome: true,
@@ -62,6 +63,11 @@ export const usePagesStore = defineStore({
   },
 
   getters: {
+    screen_Max: (stor) => stor.screen_size >= 1280,
+    screen_1280: (stor) => stor.screen_size <= 1280,
+    screen_955: (stor) => stor.screen_size <= 955,
+    screen_480: (stor) => stor.screen_size <= 480,
+
     page_Open() {
       const key = Object.keys(this.pages);
       let name = "race_page";

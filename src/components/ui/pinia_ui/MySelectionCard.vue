@@ -177,6 +177,7 @@ export default {
 	/* width: 394px; */
 	background: rgba(255, 255, 255, 0.06);
 	backdrop-filter: blur(60px);
+	-webkit-backdrop-filter: blur(60px);
 	border-radius: 12px;
 	display: flex;
 	flex-direction: column;

@@ -33,6 +33,7 @@ export default {
 	height: 100%;
 	background: rgba(255, 255, 255, 0.06);
 	backdrop-filter: blur(60px);
+	-webkit-backdrop-filter: blur(60px);
 	border-radius: 100px;
 	display: flex;
 	justify-content: center;

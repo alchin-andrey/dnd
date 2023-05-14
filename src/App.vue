@@ -3,17 +3,31 @@
 </template>
 
 <script>
-import { mapActions } from "pinia";
+import { mapActions, mapWritableState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "App",
 	created() {
 		this.zeroingDell();
+		window.addEventListener("resize", this.onResize);
+		this.onResize();
+	},
+
+	destroyed() {
+		window.removeEventListener("resize", this.onResize);
+	},
+
+	computed: {
+		...mapWritableState(usePagesStore, ["screen_size"])
 	},
 
 	methods: {
     ...mapActions(usePagesStore, ["zeroingDell"]),
+
+		onResize() {
+			this.screen_size = window.innerWidth;
+		},
 	}
 };
 </script>
