@@ -1,24 +1,22 @@
 <template>
-  <!-- <div> -->
-    <img
-          v-if="img_Char"
-          :style="{ 
-            height: hight_Char,
-            left: left_Char 
-            }"
-          :src="img_Char"
-          :alt="body_part"
-        />
+  <img
+    v-if="img_Char"
+    :style="{ 
+      height: hight_Char,
+      left: left_Char 
+      }"
+    :src="img_Char"
+    :alt="body_part"
+  />
   
-        <svg
-          v-if="!img_Char"
-          :fill="placeholder_Color_Hex"
-          :height="calc_Img"
-          viewBox="0 0 197 400"
-          xmlns="http://www.w3.org/2000/svg"
-          v-html="placeholder[body_part]"
-        ></svg>
-  <!-- </div> -->
+  <svg
+    v-else
+    :fill="placeholder_Color_Hex"
+    :height="calc_Img"
+    viewBox="0 0 197 400"
+    xmlns="http://www.w3.org/2000/svg"
+    v-html="placeholder[body_part]"
+  ></svg>
 </template>
 
 <script>
@@ -39,10 +37,10 @@ export default {
       type: String,
       default: null,
     },
-    // blank_print: {
-    //   type: Boolean,
-    //   default: false,
-    // },
+		mob_menu: {
+			type: Boolean,
+			default: false,
+		},
   },
   data() {
     return {
@@ -131,7 +129,7 @@ export default {
     },
 
     hight_Char() {
-      if(this.ethnos_name) {
+      if(this.ethnos_name || this.mob_menu) {
         return `${this.MY_Race.ethnos_preview[0]}px`;
       } else {
         return this.calc_Img;
@@ -139,10 +137,9 @@ export default {
     },
 
     left_Char() {
-      if(this.ethnos_name) {
+      if(this.ethnos_name || this.mob_menu) {
         return `${this.MY_Race.ethnos_preview[1]}px`;
-      // } else if(this.blank_print) {
-      //   return 0;
+        // return `120px`;
       } else {
         return `50%`;
       }
@@ -161,32 +158,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-/* .character img {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
-}
-
-.character svg {
-  position: absolute;
-  bottom: 0;
-  right: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-  -ms-transform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  transition-property: all, fill;
-  transition-duration: 0.8s, 0.1s;
-  transition-timing-function: ease-in-out;
-} */
-
 </style>

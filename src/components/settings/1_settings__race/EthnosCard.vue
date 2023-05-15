@@ -6,16 +6,7 @@
 			@click="getEthnosName(ethnos.name)"
 			:active_card="MY_Ethnos.name === ethnos.name"
 		>
-			<div
-				class="ethnos-char-back"
-				:style="{
-					'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/image.png')})`,
-				}"
-			>
-				<RaceBody body_part="skin" :ethnos_name="ethnos.name" />
-				<RaceBody body_part="hair" :ethnos_name="ethnos.name" />
-				<RaceBody body_part="eyes" :ethnos_name="ethnos.name" />
-			</div>
+		<AppCharCard :ethnos_name="ethnos.name"/>
 
 			<!-- Ethnos_card_stats + qualities -->
 			<AppWrapper v-if="ethnos.stats || level_Filter_Arr(ethnos.qualities).length !== 0">
@@ -144,26 +135,3 @@ export default {
 	},
 };
 </script>
-
-<style>
-.ethnos-char-back {
-	width: 100%;
-	height: 120px;
-	background: #0e1518;
-	border-radius: 4px;
-	position: relative;
-	overflow: hidden;
-}
-
-.ethnos-char-back img {
-	position: absolute;
-	top: 16px;
-}
-
-.ethnos-char-back svg {
-	height: 300px;
-	position: absolute;
-	top: 16px;
-	left: 0;
-}
-</style>

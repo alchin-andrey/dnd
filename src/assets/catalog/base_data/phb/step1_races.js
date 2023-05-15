@@ -15,7 +15,8 @@ export default {
     details: "gnome_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [300,-24],
+    // ethnos_preview: [300, -24],
+    ethnos_preview: [300, 70],
 
     race_settings: {
       ethnos: {
@@ -271,7 +272,8 @@ export default {
     details: "halfling_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [300,-24],
+    // ethnos_preview: [300, -24],
+    ethnos_preview: [300, 70],
 
     race_settings: {
       ethnos: {
@@ -441,7 +443,8 @@ export default {
     details: "dwarf_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [345,-30],
+    // ethnos_preview: [345, -30],
+    ethnos_preview: [345, 90],
 
     race_settings: {
       ethnos: {
@@ -697,7 +700,8 @@ export default {
     details: "human_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [390,-36],
+    // ethnos_preview: [390,-36],
+    ethnos_preview: [390, 82],
 
     race_settings: {
       ethnos: {
@@ -1152,7 +1156,8 @@ export default {
     details: "halfelf_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [390,-36],
+    // ethnos_preview: [390,-36],
+    ethnos_preview: [390, 82],
 
     race_settings: {
       ethnos: {
@@ -1658,7 +1663,8 @@ export default {
     details: "elf_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [390,-36],
+    // ethnos_preview: [390,-36],
+    ethnos_preview: [390, 82],
 
     race_settings: {
       ethnos: {
@@ -2248,7 +2254,8 @@ export default {
     details: "tiefling_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [390,-36],
+    // ethnos_preview: [390,-36],
+    ethnos_preview: [390, 82],
 
     race_settings: {
       ethnos: {
@@ -2494,7 +2501,8 @@ export default {
     details:"halforc_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [435,-42],
+    // ethnos_preview: [435,-42],
+    ethnos_preview: [435, 96],
 
     race_settings: {
       ethnos: {
@@ -2600,7 +2608,8 @@ export default {
     details:"dragonborn_details",
 
     noimg_ethnos: true,
-    ethnos_preview: [435,-42],
+    // ethnos_preview: [435,-42],
+    ethnos_preview: [435, 96],
 
     race_settings: {
       ethnos: {

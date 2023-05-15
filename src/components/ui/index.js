@@ -10,6 +10,7 @@ import AppHeaderCard from "@/components/ui/AppHeaderCard.vue";
 import AppBackPage from "@/components/ui/AppBackPage.vue";
 import AppSelection from "@/components/ui/AppSelection.vue";
 import AppController from "@/components/ui/AppController.vue";
+import AppCharCard from "@/components/ui/AppCharCard.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -104,6 +105,9 @@ export default [
   AppTooltip,
   AppSpellsPacks,
   AppLoadBtm,
+  AppSelection,
+  AppController,
+  AppCharCard,
 
   AppMasters,
   AppSrdDisclaimer,
@@ -126,10 +130,6 @@ export default [
   MyColorBlock,
   MyColorSelect,
   MyCardTextColor,
-
-  
-  AppSelection,
-  AppController,
 
   MyButton,
   MyButtonBack,

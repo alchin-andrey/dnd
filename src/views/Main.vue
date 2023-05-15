@@ -4,7 +4,9 @@
 		<div class="sidebar_left">
 			<div class="main_chapter">
 				<HeaderMenu />
-				<section v-if="!pages.race_page">
+				<div class="flex-col gap-4">
+					<AppCharCard mob_menu v-if="!screen_Max"/>
+					<section v-if="!pages.race_page">
 						<div class="back-page-grup">
 							<AppBackPage
 								:text_arr="arr_Name_Race_Page"
@@ -17,7 +19,8 @@
 							/>
 						</div>
 						<div class="delimiter mr-t-22" v-if="screen_Max" />
-				</section>
+					</section>
+				</div>
 				<AppSliderName v-if="pages.race_page" numb="01" name="race" />
 				<AppSliderName v-if="pages.class_page" numb="02" name="class" />
 				<AppName
