@@ -126,31 +126,29 @@ export const useStatsStore = defineStore({
 		},
 
 		stats_Base_Settings_Full_T() {
-      const { t } = useDicStore();
+      const { T } = useDicStore();
       let base_arr = this.stats_Base_Arr;
       let arr = [];
       for (let kay in base_arr) {
         let index = base_arr.indexOf(base_arr[kay]);
         let numb = this.stats_base_numb[index];
-        let str = t(base_arr[kay]).slice(0, 3);
-        let new_Str = str[0].toUpperCase() + str.slice(1);
-        arr.push(`${numb} ${new_Str}`);
+        let Str = T(base_arr[kay]).slice(0, 3);
+        arr.push(`${numb} ${Str}`);
       }
-      return arr.map((n) => n).join(", ");
+      return arr.join(", ");
 		},
 
 		stats_Base_Settings_Two_T() {
-			const { t } = useDicStore();
+			const { T } = useDicStore();
 			let base_arr = this.stats_Base_Arr;
 			let arr = [];
 			for (let i = 0; i < 2; i++) {
 				let index = base_arr.indexOf(base_arr[i]);
 				let numb = this.stats_base_numb[index];
-				let str = t(base_arr[i]).slice(0, 3);
-				let new_Str = str[0].toUpperCase() + str.slice(1);
-				arr.push(`${numb} ${new_Str}`);
+				let Str = T(base_arr[i]).slice(0, 3);
+				arr.push(`${numb} ${Str}`);
 			}
-			let text = arr.map((n) => n).join(", ");
+			let text = arr.join(", ");
 			return `${text}, ...`;
 		},
 

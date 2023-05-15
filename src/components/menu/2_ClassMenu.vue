@@ -22,7 +22,7 @@
 				@click="showSettings__Class('stats')"
 				:active="class_page.shown.stats"
 				title="stats"
-				:t_type="stats_Base_Settings_Two_T"
+				:t_type="base_Stats_Menu"
 			></AppSelection>
 			<AppSelectionArr :menu="feats_Filter" no_name/>
 			<AppSelectionArr :menu="stats_Filter" no_name/>
@@ -56,11 +56,11 @@ export default {
 	name: "ClassMenu",
 	computed: {
     // STORE
-		...mapState(usePagesStore, ["class_page"]),
+		...mapState(usePagesStore, ["class_page", "screen_Max"]),
     // GETTERS
 		...mapState(useMYStore, [ "сustomm_Settings_Class_Arr", "spells_Settings_Class_Arr" ]),
 
-    ...mapState(useStatsStore, [ "stats_Base_Settings_Two_T"]),
+    ...mapState(useStatsStore, [ "stats_Base_Settings_Two_T", "stats_Base_Settings_Full_T"]),
     ...mapState(useFeatsStore, [ "feats_Select_Arr"]),
 
     filter_Setting: (stor) => (numb) => {
@@ -106,14 +106,6 @@ export default {
       return this.other_Filter.length !== 0
     },
 
-    // shown_Spells() {
-    //   return (
-    //     this.spells_0_Filter.length !== 0 ||
-    //     this.spells_Filter.length !== 0 ||
-    //     this.spells_Settings_Class_Arr.length !== 0
-    //   )
-    // },
-
     shown_Spells() {
       return (
         this.spells_0_Filter.length !== 0 ||
@@ -135,6 +127,10 @@ export default {
     shown_Undefined() {
       return this.undefined_Filter.length !== 0
     },
+
+    base_Stats_Menu() {
+      return this.screen_Max ? this.stats_Base_Settings_Two_T : this.stats_Base_Settings_Full_T;
+    }
 	},
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Class"]),
