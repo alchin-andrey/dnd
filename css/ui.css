@@ -1,3 +1,12 @@
+.mob-header {
+	width: 100%;
+	height: 88px;
+	background: #0E1518;
+	box-shadow: 0px 4px 20px #000000;
+	position: relative;
+	z-index: 1000;
+}
+
 .card-main {
 	padding: 16px;
 	background: rgba(255, 255, 255, 0.06);
@@ -17,7 +26,15 @@
 .br-4 { border-radius: 4px;}
 .br-12 { border-radius: 12px;}
 
-.blur-60 { backdrop-filter: blur(60px); }
+.blur-60 { 
+	backdrop-filter: blur(60px); 
+	-webkit-backdrop-filter: blur(60px);
+}
+
+/* .blur-60::before { 
+	backdrop-filter: blur(60px); 
+	-webkit-backdrop-filter: blur(60px);
+} */
 
 .btm-grey {background: rgba(255, 255, 255, 0.06);}
 .btm-grey.hov:hover {background: rgba(255, 255, 255, 0.1);}
@@ -49,9 +66,20 @@
 
 
 /* stripe */
+.stripe-page {
+	min-width: 2px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
 .stripe-item--main {
 	min-width: 4px;
 	background: rgba(255, 255, 255, 0.2);
+}
+
+.stripe-item--slider {
+	width: 2px;
+	min-width: 2px;
+	background: rgba(255, 255, 255, 0.06);
 }
 
 .stripe-item--active { background: #ffffff;}
