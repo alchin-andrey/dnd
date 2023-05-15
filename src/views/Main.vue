@@ -111,7 +111,7 @@
 		<BlankPrint />
 	</div>
 
-	<!-- <PlagBanner v-if="!screen_Max"/> -->
+	<PlagBanner v-if="!screen_Max"/>
 </template>
 
 <script>
