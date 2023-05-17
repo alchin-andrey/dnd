@@ -56,8 +56,6 @@ export default {
 @media (max-width: 1279px) {
 	.sidebar_wrap {
 		position: absolute;
-		width: 434px;
-		/* padding: 20px; */
 	}
 }
 

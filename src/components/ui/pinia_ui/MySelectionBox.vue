@@ -77,7 +77,7 @@ export default {
 <style scoped>
 .mob-main-header {
 	width: 100%;
-	/* position: relative; */
+	position: relative;
 	z-index: 1000;
   position: fixed;
 }
@@ -213,7 +213,7 @@ export default {
   cursor: auto;
   /* overflow-y: scroll;
   scrollbar-width: none; */
-  max-height: 100%;
+  height: 100%;
   /* padding: 20px 0; */
   /* pointer-events: none; */
 }
@@ -229,7 +229,7 @@ export default {
   width: 394px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   gap: 8px;
   overflow-y: scroll;
   scrollbar-width: none;
