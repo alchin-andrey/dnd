@@ -77,9 +77,9 @@ export default {
 <style scoped>
 .mob-main-header {
 	width: 100%;
-	position: relative;
+	/* position: relative; */
 	z-index: 1000;
-  /* position: fixed; */
+  position: fixed;
 }
 .mob-full-header {
 	height: 88px;
@@ -170,7 +170,7 @@ export default {
   opacity: 0;
 }
 
-@media (max-width: 1279px) {
+/* @media (max-width: 1279px) {
   .sidebar_selection {
     left: 0;
     top: 100%;
@@ -192,7 +192,7 @@ export default {
     transform: translateY(100px);
     opacity: 0;
   }
-}
+} */
 
 /* dialog */
 .dialog {
@@ -200,12 +200,9 @@ export default {
   bottom: 0;
   right: 0;
   left: 0;
-  /* padding: 4px; */
   background-color: #0e1518;
   position: fixed;
   z-index: 500;
-  /* cursor: pointer; */
-  /* pointer-events: none; */
 }
 
 .dialog__wrapp {
@@ -213,14 +210,9 @@ export default {
   cursor: auto;
   /* overflow-y: scroll;
   scrollbar-width: none; */
-<<<<<<< HEAD
   height: 100%;
   /* padding-bottom: 20px; */
-=======
-  height: 100vh;
->>>>>>> parent of b048493d (refresh)
   /* padding: 20px 0; */
-  /* pointer-events: none; */
 }
 
 .dialog__wrapp::-webkit-scrollbar {
@@ -228,25 +220,24 @@ export default {
 }
 
 .dialog__content {
-  /* padding-top: 88px; */
-  padding-top: 20px;
-  /* padding-bottom: 20px; */
+  padding-top: 88px;
+  padding-bottom: 20px;
   margin: 0 auto;
-  width: 394px;
+  width: 100%;
+  max-width: 394px;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 88px);
+  height: 100%;
   gap: 8px;
   overflow-y: scroll;
   scrollbar-width: none;
 }
 
 .pd-t-108 { 
-  padding-bottom: 20px;
+  padding-top: 108px;
+  max-width: auto;
+  width: 394px;
 }
-
-/* .pd-t-108 { padding-top: 108px; } */
-/* .pd-t-108 { padding-top: 108px; } */
 
 .dialog__content::-webkit-scrollbar {
   width: 0;
