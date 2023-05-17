@@ -235,7 +235,7 @@ export default {
   scrollbar-width: none;
 }
 
-.pd-t-108 { padding-top: 108px; }
+/* .pd-t-108 { padding-top: 108px; } */
 
 .dialog__content::-webkit-scrollbar {
   width: 0;
