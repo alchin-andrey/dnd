@@ -79,7 +79,7 @@ export default {
 	width: 100%;
 	position: relative;
 	z-index: 1000;
-  position: fixed;
+  /* position: fixed; */
 }
 .mob-full-header {
 	height: 88px;
@@ -214,6 +214,7 @@ export default {
   /* overflow-y: scroll;
   scrollbar-width: none; */
   height: 100%;
+  /* padding-bottom: 20px; */
   /* padding: 20px 0; */
   /* pointer-events: none; */
 }
@@ -223,19 +224,25 @@ export default {
 }
 
 .dialog__content {
-  padding-top: 88px;
-  padding-bottom: 20px;
+  /* padding-top: 88px; */
+  padding-top: 20px;
+  /* padding-bottom: 20px; */
   margin: 0 auto;
   width: 394px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 88px);
   gap: 8px;
   overflow-y: scroll;
   scrollbar-width: none;
 }
 
-.pd-t-108 { padding-top: 108px; }
+.pd-t-108 { 
+  padding-bottom: 20px;
+}
+
+/* .pd-t-108 { padding-top: 108px; } */
+/* .pd-t-108 { padding-top: 108px; } */
 
 .dialog__content::-webkit-scrollbar {
   width: 0;
