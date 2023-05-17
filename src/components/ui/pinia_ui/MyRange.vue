@@ -226,7 +226,7 @@ export default {
 <style scoped>
 .range_slider {
 	width: 344px;
-	height: 1000vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
