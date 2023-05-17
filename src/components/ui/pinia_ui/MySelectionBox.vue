@@ -213,8 +213,12 @@ export default {
   cursor: auto;
   /* overflow-y: scroll;
   scrollbar-width: none; */
+<<<<<<< HEAD
   height: 100%;
   /* padding-bottom: 20px; */
+=======
+  height: 100vh;
+>>>>>>> parent of b048493d (refresh)
   /* padding: 20px 0; */
   /* pointer-events: none; */
 }
