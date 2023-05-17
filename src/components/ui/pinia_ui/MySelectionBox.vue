@@ -27,8 +27,8 @@
   </AppMobDialog> -->
 
   <Transition v-else :duration="{ enter: 700, leave: 700 }" name="nested">
-    <div v-if="shown" class="dialog">
-      <div class="dialog__wrapp int-400">
+    <div v-if="shown" class="dialog" @click.stop>
+      <div class="dialog__wrapp int-400" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
           <div class="btm-wrapp">
             <div class="btm-close" @click="showHome()">
@@ -77,7 +77,7 @@ export default {
 <style scoped>
 .mob-main-header {
 	width: 100%;
-	position: relative;
+	/* position: relative; */
 	z-index: 1000;
   position: fixed;
 }
@@ -143,7 +143,7 @@ export default {
 
 .selection_box {
   min-width: 426px;
-  height: 100vh;
+  height: 100%;
   padding: 32px 32px 32px 0;
   display: flex;
   flex-direction: column;
@@ -204,7 +204,8 @@ export default {
   background-color: #0e1518;
   position: fixed;
   z-index: 500;
-  cursor: pointer;
+  /* cursor: pointer; */
+  /* pointer-events: none; */
 }
 
 .dialog__wrapp {
@@ -214,6 +215,7 @@ export default {
   scrollbar-width: none; */
   max-height: 100%;
   /* padding: 20px 0; */
+  /* pointer-events: none; */
 }
 
 .dialog__wrapp::-webkit-scrollbar {
