@@ -229,7 +229,7 @@ export default {
   width: 394px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   gap: 8px;
   overflow-y: scroll;
   scrollbar-width: none;
