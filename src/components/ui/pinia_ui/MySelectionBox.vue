@@ -213,7 +213,7 @@ export default {
   cursor: auto;
   /* overflow-y: scroll;
   scrollbar-width: none; */
-  height: 100vh;
+  height: 100%;
   /* padding: 20px 0; */
   /* pointer-events: none; */
 }

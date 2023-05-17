@@ -160,7 +160,7 @@ export default {
 			if (this.height) {
 				return `calc((100vh - ${pad}) / 210 * ${this.Min_Range} - 30px)`;
 			} else {
-				return `calc((100vh - 108px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
+				return `calc((100vh - ${pad} - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
 			}
 		},
 		Range_Width() {
@@ -168,7 +168,7 @@ export default {
 			if (this.height) {
 				return `calc((100vh - ${pad}) - ${this.Range_Bottom} - ((100vh - ${pad}) - ((100vh - ${pad}) / 210 * ${this.Max_Range})))`;
 			} else {
-				return `calc((100vh - 108px) - ${this.Range_Bottom})`;
+				return `calc((100vh - ${pad}) - ${this.Range_Bottom})`;
 			}
 		},
 		Range_Margin() {
@@ -226,7 +226,8 @@ export default {
 <style scoped>
 .range_slider {
 	width: 344px;
-	/* height: 1000vh; */
+	/* height: 100%; */
+	height: 1000vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
