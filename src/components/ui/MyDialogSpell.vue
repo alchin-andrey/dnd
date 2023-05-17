@@ -72,7 +72,6 @@ export default {
   overflow-y: scroll;
   scrollbar-width: none;
   max-height: 100%;
-  /* max-height: min-content; */
 }
 
 .dialog__finish {

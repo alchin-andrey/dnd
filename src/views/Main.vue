@@ -1,80 +1,20 @@
 <template>
 	<!-- Left bar -->
 	<div class="main-class">
-		<div class="sidebar_left">
-			<div class="main_chapter">
-				<HeaderMenu />
-				<div class="flex-col gap-4">
-					<AppCharCard mob_menu v-if="!screen_Max"/>
-					<section v-if="!pages.race_page">
-						<div class="back-page-grup">
-							<AppBackPage
-								:text_arr="arr_Name_Race_Page"
-								@click="goPage('race_page')"
-							/>
-							<AppBackPage
-								v-if="!pages.class_page"
-								:text_arr="arr_Name_Class_Page"
-								@click="goPage('class_page')"
-							/>
-						</div>
-						<div class="delimiter mr-t-22" v-if="screen_Max" />
-					</section>
-				</div>
-				<AppSliderName v-if="pages.race_page" numb="01" name="race" />
-				<AppSliderName v-if="pages.class_page" numb="02" name="class" />
-				<AppName
-					v-if="pages.alignment_page"
-					numb="03"
-					title="name"
-					v-model="MY.name"
-				/>
-				<div class="delimiter" v-if="screen_Max" />
-			</div>
-			<div class="main_menu_wrap" @click="showHome()">
-				<div 
-					class="main_chapter_menu" 
-					>
-						<RaceMenu v-if="pages.race_page" @click.stop />
-						<ClassMenu v-if="pages.class_page" @click.stop />
-						<AlignmentMenu v-if="pages.alignment_page" @click.stop />
-				</div>
-				<transition name="btm-fade" mode="out-in">
-						<my-button
-							v-if="shown_home"
-							:numb="btn_Numb"
-							:title="btn_Name"
-							@click="btnGo()"
-						/>
-					<my-button-back
-						v-else
-						title="command_back"
-						@click="showHome()"
-					/>
-				</transition>
-			</div>
-		</div>
-		<!-- Drop-down menu -->
-		<div class="sidebar_wrap" :class="{ sidebar_wrap_open: setting_open }">
-			<HeaderSettings />
-			<RaceSettings v-if="pages.race_page" />
-			<ClassSettings v-if="pages.class_page" />
-			<AlignmentSettings v-if="pages.alignment_page" />
-		</div>
-		<div v-if="screen_Max" class="stripe-page"></div>
-		<!-- Character -->
+		<Transition name="fade-bar">
+			<Main__MenuBar/>
+		</Transition>
+		<Main__SetBar/>
+
+
 		<div class="represent" @click="showHome()" v-show="screen_Max && !PRINT_BLANK">
 			<transition name="fade-body">
-				<div
-					class="character"
-					:class="{
-						active_eyes: race_page.shown.eyes_color || race_page.shown.hair_color,
-						active_skin: race_page.shown.skin_color,
-					}"
-					:style="{
-						height: Char_Hight_Back,
-					}"
-				>
+				<div class="character" :class="{
+					active_eyes: race_page.shown.eyes_color || race_page.shown.hair_color,
+					active_skin: race_page.shown.skin_color,
+				}" :style="{
+	height: Char_Hight_Back,
+}">
 					<WelcomeBanner />
 					<RaceBody body_part="skin" />
 					<RaceBody body_part="eyes" />
@@ -88,11 +28,7 @@
 		</div>
 		<!-- Character -->
 		<!-- sidebar_right -->
-		<div
-			v-show="screen_Max && !PRINT_BLANK"
-			class="sidebar_right"
-			:class="{ sidebar_right_close: close_Sidebar_Right }"
-		>
+		<div v-show="screen_Max && !PRINT_BLANK" class="sidebar_right" :class="{ sidebar_right_close: close_Sidebar_Right }">
 			<RaceParameters v-if="pages.race_page" />
 			<ClassParameters v-if="pages.class_page" />
 			<AlignmentParameters v-if="pages.alignment_page" />
@@ -102,8 +38,8 @@
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
 		<section>
-			<PromoSlider/>
-			<Donate class="pd-32" finish @getPdf="exportToPDF()" :progress="progress_load"/>
+			<PromoSlider />
+			<Donate class="pd-32" finish @getPdf="exportToPDF()" :progress="progress_load" />
 		</section>
 	</my-dialog-spell>
 
@@ -111,7 +47,7 @@
 		<BlankPrint />
 	</div>
 
-	<PlagBanner v-if="!screen_Max"/>
+	<!-- <PlagBanner v-if="!screen_Max"/> -->
 </template>
 
 <script>
@@ -133,31 +69,22 @@ export default {
 			small_screen: false,
 			PRINT_BLANK: false,
 			// PRINT_BLANK: true,
-      progress_load: 0,
-      loading_pdf: false,
+			progress_load: 0,
+			loading_pdf: false,
 		};
 	},
 
 	created() {
 		this.getCreated();
-		// window.addEventListener("resize", this.onResize);
-		// this.onResize();
 	},
-
-	// destroyed() {
-	// 	window.removeEventListener("resize", this.onResize);
-	// },
 
 	computed: {
 		//STORES
 		...mapState(useMYStore, [
-      "MY", 
-      "MY_Race", 
-      "MY_Ethnos",
-      "MY_Backstory",
-      "MY_Class",
-      "MY_Subclass"
-    ]),
+			"MY",
+			"MY_Race",
+			"MY_Class",
+		]),
 		...mapState(usePagesStore, [
 			"site_settings",
 			"race_page",
@@ -167,8 +94,8 @@ export default {
 			"setting_open",
 			"pages",
 			"page_Open",
-      "btn_Numb",
-      "btn_Name",
+			"btn_Numb",
+			"btn_Name",
 			"screen_Max"
 		]),
 
@@ -187,12 +114,6 @@ export default {
 
 		...mapState(useGenderStore, ["names_Arr"]),
 
-    t_Lobby() {
-      return this.T("lobby_welcome_title");
-    },
-
-		//GETTERS
-
 		close_Sidebar_Right() {
 			const open_class_page = this.pages.class_page;
 			const feats =
@@ -209,78 +130,59 @@ export default {
 				this.pages.race_page && (this.shown_home || this.race_page.shown.height)
 			);
 		},
-
-		arr_Name_Race_Page() {
-			let arr = [];
-			arr.push(this.MY_Race.name);
-			arr.push(this.MY_Ethnos.name);
-			arr.push(this.MY_Backstory.name);
-			return arr;
-		},
-
-		arr_Name_Class_Page() {
-			let arr = [];
-			arr.push(this.MY_Class.name);
-			this.MY_Subclass?.name ? arr.push(this.MY_Subclass.name) : null;
-			return arr;
-		},
 	},
 	watch: {
 		"MY_Race.name": "getWatch_Race",
 		"MY_Class.name": "getWatch_Class",
 
-    names_Arr(val, oldVal) {
-      const incl = val.includes(this.MY.name);
+		names_Arr(val, oldVal) {
+			const incl = val.includes(this.MY.name);
 			const user_name = this.site_settings.name_user;
-      if(!incl && !user_name) this.getRandomName();
-    },
+			if (!incl && !user_name) this.getRandomName();
+		},
 
 		feats_Condition_Pass_Name(val, oldVal) {
-      if (oldVal && val.toString() !== oldVal.toString()) {
-        this.feats_Arr_Select_Id.forEach((el) => {
-          if (el.id_btn == "feats") {
-            const obj =
-              this.MY._settings_class[this.MY_Class.name][el.id_link];
-            const name = obj.feats[0].name;
-            const includ = this.feats_Condition_Pass_Name.includes(name);
-            const new_el = this.feats_Arr_Free[0];
-            if (includ) {
-              this.MY._settings_class[this.MY_Class.name][el.id_link] = {
-                ...obj,
-                feats: [new_el],
-              };
-            }
-          }
-        });
-      }
-    },
-    
+			if (oldVal && val.toString() !== oldVal.toString()) {
+				this.feats_Arr_Select_Id.forEach((el) => {
+					if (el.id_btn == "feats") {
+						const obj =
+							this.MY._settings_class[this.MY_Class.name][el.id_link];
+						const name = obj.feats[0].name;
+						const includ = this.feats_Condition_Pass_Name.includes(name);
+						const new_el = this.feats_Arr_Free[0];
+						if (includ) {
+							this.MY._settings_class[this.MY_Class.name][el.id_link] = {
+								...obj,
+								feats: [new_el],
+							};
+						}
+					}
+				});
+			}
+		},
+
 	},
 
 	methods: {
-    ...mapActions(useMYStore, ["getCreated"]),
-    ...mapActions(usePagesStore, [
+		...mapActions(useMYStore, ["getCreated"]),
+		...mapActions(usePagesStore, [
 			"showHome",
 			"closeEthnos",
 			"closeColor",
 			"closePar",
 			"goPage",
 			"closeCustomSett",
-      "btnGo",
+			"btnGo",
 		]),
-    ...mapActions(useGenderStore, ["getRandomName"]),
+		...mapActions(useGenderStore, ["getRandomName"]),
 
-		// onResize() {
-		// 	this.small_screen = window.innerWidth <= 1279;
-		// },
-
-    exportToPDF() {
-      if(!this.loading_pdf) {
-        this.loading_pdf = true;
-        this.progress_load = 15;
-        setTimeout(() => this.loadPdf(), 0.1);
-      }
-    },
+		exportToPDF() {
+			if (!this.loading_pdf) {
+				this.loading_pdf = true;
+				this.progress_load = 15;
+				setTimeout(() => this.loadPdf(), 0.1);
+			}
+		},
 
 		loadPdf() {
 			const lvl = this.MY.level;
@@ -311,12 +213,12 @@ export default {
 				},
 			};
 
-      html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
-      .toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
-      .output().then(() => {
-        setTimeout(() => this.progress_load = 0, 1000);
-        setTimeout(() => this.loading_pdf = 0, 2000);
-      });
+			html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
+				.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+				.output().then(() => {
+					setTimeout(() => this.progress_load = 0, 1000);
+					setTimeout(() => this.loading_pdf = 0, 2000);
+				});
 		},
 
 		getWatch_Race() {
@@ -348,57 +250,6 @@ export default {
 .main-class::-webkit-scrollbar {
 	width: 0;
 }
-
-.delimiter {
-	height: 1px;
-	background: rgba(255, 255, 255, 0.2);
-}
-
-.sidebar_left {
-	padding-top: 32px;
-	width: 320px;
-	background-color: #0e1518;
-	display: flex;
-	flex-direction: column;
-}
-
-.main_chapter {
-	padding: 0 32px 0 32px;
-	display: flex;
-	flex-direction: column;
-	gap: 22px;
-}
-
-.back-page-grup {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-
-.main_menu_wrap {
-	display: flex;
-	flex-direction: column;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	scrollbar-width: none;
-	flex: 1 1 auto;
-}
-
-.main_menu_wrap::-webkit-scrollbar {
-	width: 0;
-}
-
-.main_chapter_menu {
-	height: 100%;
-	padding: 40px 32px 32px 32px;
-	overflow-y: scroll;
-	scrollbar-width: none;
-}
-
-.main_chapter_menu::-webkit-scrollbar {
-	width: 0;
-}
-
 @media (max-width: 1279px) {
 	.main-class {
 		display: flex;
@@ -412,45 +263,6 @@ export default {
 	.main-class::-webkit-scrollbar {
 		width: 0;
 	}
-
-	.sidebar_left {
-		width: 100%;
-		max-width: 434px;
-		padding-top: 20px;
-	}
-
-	.main_chapter {
-		padding: 0 20px 0 20px;
-		gap: 26px;
-	}
-
-	.back-page-grup {
-		gap: 4px;
-	}
-
-	.main_menu_wrap {
-		overflow-y: visible;
-		overflow-x: visible;
-	}
-
-	.main_chapter_menu {
-		padding: 34px 20px 26px 20px;
-		overflow-y: visible;
-	}
-}
-
-.btm-fade-enter-active {
-	transition: all 0.2s ease-in-out;
-}
-
-.btm-fade-leave-active {
-	transition: all 0.2s ease-in-out;
-}
-
-.btm-fade-enter-from,
-.btm-fade-leave-to {
-	transform: translateX(-300px);
-	opacity: 0;
 }
 
 /* ---------------------characters----------------------*/
@@ -472,7 +284,7 @@ export default {
 	transition-timing-function: ease-in-out;
 }
 
-.character > img {
+.character>img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -484,7 +296,7 @@ export default {
 	transition-timing-function: ease-in-out;
 }
 
-.character > svg {
+.character>svg {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -513,7 +325,7 @@ export default {
 
 /* ---------------------sidebar_right----------------------*/
 
-.sidebar_wrap {
+/* .sidebar_wrap {
 	height: 100%;
 	display: flex;
 	width: 0;
@@ -524,7 +336,7 @@ export default {
 .sidebar_wrap_open {
 	width: 426px;
 	transition: all 0.4s ease-in-out;
-}
+} */
 
 .sidebar_right {
 	min-width: 426px;
@@ -598,6 +410,19 @@ export default {
 .slide-fade-leave-to {
 	transform: translateX(20px);
 	opacity: 0;
+}
+
+
+
+.fade-bar-enter-active,
+.fade-bar-leave-active {
+  transition: opacity 0.5s ease;
+	/* position: absolute; */
+}
+
+.fade-bar-enter-from,
+.fade-bar-leave-to {
+  opacity: 0;
 }
 
 /* ---------------------sidebar_right----------------------*/

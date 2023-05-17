@@ -19,33 +19,33 @@
       <RaceSetting__Gender />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.skin_color">
+		<My-Selection-Box :shown="race_page.shown.skin_color" not_mob_header>
 			<my-color-select body_part="skin" />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.eyes_color">
+		<My-Selection-Box :shown="race_page.shown.eyes_color" not_mob_header>
 			<my-color-select body_part="eyes" />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.hair_color">
+		<My-Selection-Box :shown="race_page.shown.hair_color" not_mob_header>
 			<my-color-select body_part="hair" />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.age">
+		<My-Selection-Box :shown="race_page.shown.age" not_mob_header>
 			<div class="flex_options">
 				<MyRange v-model.number="MY.age" age />
 				<MyRangeSize age />
 			</div>
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.height">
+		<My-Selection-Box :shown="race_page.shown.height" not_mob_header>
 			<div class="flex_options">
 				<MyRange v-model.number="MY.height" height />
 				<mySizeGrowth />
 			</div>
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.weight">
+		<My-Selection-Box :shown="race_page.shown.weight" not_mob_header>
 			<div class="flex_options">
 				<MyRange v-model.number="MY.weight" weight />
 				<MyRangeSize weight />

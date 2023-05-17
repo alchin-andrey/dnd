@@ -55,7 +55,7 @@ export default {
       "MY_Ethnos",
       "MY_Class",
     ]),
-    ...mapState(usePagesStore, ["race_page"]),
+    ...mapState(usePagesStore, ["race_page", "screen_Max"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
     ...mapState(useGenderStore, ["sex_Char_Body"]),
 
@@ -70,7 +70,7 @@ export default {
     },
 
     Hower() {
-      return this.race_page[this.hower_link]
+      return this.screen_Max ? this.race_page[this.hower_link] : false;
     },
 
     ethnos_Char() {

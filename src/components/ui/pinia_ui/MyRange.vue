@@ -62,7 +62,7 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race",]),
-		...mapState(usePagesStore, ["main_page"]),
+		...mapState(usePagesStore, ["main_page", "screen_Max"]),
     ...mapState(useFormStore, ["form_kof"]),
 		Target_Range() {
 			if (this.lvl) {
@@ -133,18 +133,42 @@ export default {
 		},
 
 		// Выравнивание ползунка
+		// Range_Bottom() {
+		// 	if (this.height) {
+		// 		return `calc((100vh - 64px) / 210 * ${this.Min_Range} - 30px)`;
+		// 	} else {
+		// 		return `calc((100vh - 64px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
+		// 	}
+		// },
+		// Range_Width() {
+		// 	if (this.height) {
+		// 		return `calc((100vh - 64px) - ${this.Range_Bottom} - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.Max_Range})))`;
+		// 	} else {
+		// 		return `calc((100vh - 64px) - ${this.Range_Bottom})`;
+		// 	}
+		// },
+		// Range_Margin() {
+		// 	return `calc(${this.Range_Width} / 2 - 172px - 1px)`;
+		// },
+
+		Range_Pad() {
+			return this.screen_Max ? '64px' : '108px'
+		},
+
 		Range_Bottom() {
+			const pad = this.Range_Pad;
 			if (this.height) {
-				return `calc((100vh - 64px) / 210 * ${this.Min_Range} - 30px)`;
+				return `calc((100vh - ${pad}) / 210 * ${this.Min_Range} - 30px)`;
 			} else {
-				return `calc((100vh - 64px - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
+				return `calc((100vh - ${pad} - 30px) / ${this.Max_Range} * ${this.Min_Range})`;
 			}
 		},
 		Range_Width() {
+			const pad = this.Range_Pad;
 			if (this.height) {
-				return `calc((100vh - 64px) - ${this.Range_Bottom} - ((100vh - 64px) - ((100vh - 64px) / 210 * ${this.Max_Range})))`;
+				return `calc((100vh - ${pad}) - ${this.Range_Bottom} - ((100vh - ${pad}) - ((100vh - ${pad}) / 210 * ${this.Max_Range})))`;
 			} else {
-				return `calc((100vh - 64px) - ${this.Range_Bottom})`;
+				return `calc((100vh - ${pad}) - ${this.Range_Bottom})`;
 			}
 		},
 		Range_Margin() {

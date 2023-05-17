@@ -97,9 +97,14 @@ export default {
   },
 
   methods: {
+    // getBottom(numb) {
+    //   let max_size = this.Skale_Arr[this.Skale_Arr.length - 1]
+    //   return `calc((100vh - 64px - 30px) / ${max_size} * ${numb} - 1px + 15px - 9px)`;
+    // },
+
     getBottom(numb) {
       let max_size = this.Skale_Arr[this.Skale_Arr.length - 1]
-      return `calc((100vh - 64px - 30px) / ${max_size} * ${numb} - 1px + 15px - 9px)`;
+      return `calc((100% - 15px - 10px) / ${max_size} * ${numb})`;
     },
 
     getSize(numb) {
