@@ -213,7 +213,7 @@ export default {
   cursor: auto;
   /* overflow-y: scroll;
   scrollbar-width: none; */
-  height: 100%;
+  height: 100vh;
   /* padding: 20px 0; */
   /* pointer-events: none; */
 }
@@ -229,13 +229,13 @@ export default {
   width: 394px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   gap: 8px;
   overflow-y: scroll;
   scrollbar-width: none;
 }
 
-/* .pd-t-108 { padding-top: 108px; } */
+.pd-t-108 { padding-top: 108px; }
 
 .dialog__content::-webkit-scrollbar {
   width: 0;
