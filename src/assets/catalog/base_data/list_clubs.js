@@ -8,6 +8,14 @@ export default {
     link: "https://dedlihozor.club"
   },
 
+  huhy: {
+    id: 5,
+    name: "club_huhy_name",
+    details: "club_huhy_details",
+    link_name: "@huhyclub",
+    link: "https://t.me/huhyclub",
+  },
+
   eneri: {
     id: 2,
     name: "club_eneri_name",
@@ -16,20 +24,20 @@ export default {
     link: "https://eneri.com.ua",
   },
 
+  inrium: {
+    id: 4,
+    name: "club_inrium_name",
+    details: "club_inrium_details",
+    link_name: "@inrium_games",
+    link: "https://t.me/inrium_games",
+  },
+
   rumble_dice: {
     id: 3,
     name: "club_rumble_dice_name",
     details: "club_rumble_dice_details",
     link_name: "@rumble_dice",
     link: "https://t.me/rumble_dice",
-  },
-
-  inrium: {
-    id: 4,
-    name: "club_inrium_name",
-    details: "club_inrium_details",
-    link_name: "inrium.org.ua",
-    link: "https://inrium.org.ua",
   },
 
   // dndlviv: {

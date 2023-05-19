@@ -6064,6 +6064,9 @@ export default {
   club_did_name: "Дід Лихозор",
   club_did_details: "Київський клуб з Майстрами, офлайн та онлайн іграми.",
 
+  club_huhy_name: "Хухи.space",
+  club_huhy_details: "Київський клуб з Майстрами та офлайн іграми.",
+
   club_eneri_name: "ЕНЕРІ",
   club_eneri_details: "Майданчик з офлайн та онлайн іграми від різних Майстрів<br/>у різних містах України.",
 
