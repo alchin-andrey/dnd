@@ -37,9 +37,17 @@
 
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
-		<section>
+		<section class="flex-col h-100">
 			<PromoSlider />
-			<Donate class="pd-32" finish @getPdf="exportToPDF()" :progress="progress_load" />
+			<Donate 
+			:class="{
+				'pd-32': screen_Max,
+				'pd-20': !screen_Max,
+				}" 
+				finish 
+				@getPdf="exportToPDF()" 
+				:progress="progress_load"
+				/>
 		</section>
 	</my-dialog-spell>
 

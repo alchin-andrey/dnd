@@ -1,6 +1,6 @@
 <template>
 	<!-- Preview -->
-	<My-Selection-Box :shown="main_page.shown.logo" not_mob_header>
+	<My-Selection-Box :shown="main_page.shown.logo" not_mob_header mob_pd>
 		<Description />
 	</My-Selection-Box>
 	<!-- Preview -->

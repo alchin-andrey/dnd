@@ -1,6 +1,7 @@
 <template>
 	<DonatCarusel 
 	class="carousel"
+	:style="{'height': size_Text}"
 	@next="next"
 	:interval="interval">
 		<DonatCaruselSlide 
@@ -15,6 +16,8 @@
 </template>
 
 <script>
+import { mapState} from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import DonatCarusel from '@/components/carousel/DonatCarusel.vue';
 import DonatCaruselSlide from '@/components/carousel/DonatCaruselSlide.vue';
 export default {
@@ -31,6 +34,7 @@ export default {
 	},
 
 	computed: {
+		...mapState(usePagesStore, ["screen_Max", "screen_Menu_Num"]),
 		slide_Arr() {
 			let arr = [];
 			for (let i = 1; i < 9; i++) {
@@ -42,6 +46,15 @@ export default {
 		slidesLength() {
 			return this.slide_Arr.length;
 		},
+
+		size_Text() {
+			if(this.screen_Max) {
+				return '200px'
+			} else {
+				const num = 190 - (434 - this.screen_Menu_Num) / 2;
+				return `${num}px`
+			}
+		}
 	},
 
 	methods: {
@@ -62,10 +75,16 @@ export default {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	height: 200px;
+	/* height: 200px; */
 	z-index: 10;
 	cursor: pointer;
 }
+
+/* @media (max-width: 1279px) {
+	.carousel {
+		height: 190px;
+	}
+} */
 
 .carousel-slider {
 	position: absolute;
@@ -73,9 +92,10 @@ export default {
 	left: 0;
 	bottom: 0;
 	right: 0;
+	height: 100px;
 }
 
-.carousel-slider img {
+.carousel-slider > img {
 	width: 100%;
 }
 </style>

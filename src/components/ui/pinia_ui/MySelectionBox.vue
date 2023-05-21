@@ -31,12 +31,15 @@
       <div class="dialog__wrapp int-400" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
           <div class="btm-wrapp">
-            <div class="btm-close" @click="showHome()">
-              <AppSvg class="svg-18 svg-main-f" :path="ui_icon.close" />
-            </div>
+            <AppBtmCloseMob @btmGo="showHome()"/>
           </div>
         </div>
-        <div class="dialog__content" :class="{'pd-t-108': !not_mob_header}">
+        <div 
+        class="dialog__content" 
+        :class="{
+          'dialog--mob-header-pd': !not_mob_header,
+          'dialog--mob-pd': mob_pd,
+          }">
           <slot></slot>
         </div>
       </div>
@@ -45,18 +48,16 @@
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "MySelectionBox",
-  data() {
-    return {
-      ui_icon: ui_icon,
-    };
-  },
   props: {
     shown: {
+      type: Boolean,
+      default: false,
+    },
+    mob_pd: {
       type: Boolean,
       default: false,
     },
@@ -95,24 +96,6 @@ export default {
   justify-content: flex-end;
   max-width: 434px;
 }
-
-.btm-close {
-  min-height: 48px;
-  width: 48px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.btm-close:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .sidebar_selection {
   height: 100%;
   left: 426px;
@@ -170,30 +153,6 @@ export default {
   opacity: 0;
 }
 
-/* @media (max-width: 1279px) {
-  .sidebar_selection {
-    left: 0;
-    top: 100%;
-  }
-
-  .sidebar_selection_open {
-    top: 0;
-  }
-
-  .selection_box {
-    max-width: 100%;
-    height: 100%;
-    padding: 0;
-    position: relative;
-    padding: 20px;
-  }
-
-  .slide-fade-sidebar-leave-to {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-} */
-
 /* dialog */
 .dialog {
   top: 0;
@@ -233,10 +192,16 @@ export default {
   scrollbar-width: none;
 }
 
-.pd-t-108 { 
+.dialog--mob-header-pd { 
   padding-top: 108px;
   max-width: auto;
   width: 394px;
+}
+
+.dialog--mob-pd {
+  max-width: 434px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .dialog__content::-webkit-scrollbar {

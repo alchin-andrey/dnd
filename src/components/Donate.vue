@@ -1,5 +1,11 @@
 <template>
-	<div class="flex-col gap-26">
+	<div 
+	class="flex-col gap-26 h-100"
+	:class="{
+				'pd-32': finish && screen_Max,
+				'pd-20': finish && !screen_Max,
+				}" 
+	>
 		<div class="int-700-20" v-html="t_Title" />
 
 		<section class="flex-col gap-15 int-400">
@@ -8,7 +14,11 @@
 			<div class="rare-text" v-html="t_Benefaction" />
 		</section>
 
-		<section class="flex-col gap-4 int-700">
+		<section class="flex-col gap-4 int-700" 	
+		:class="{
+				'flex-flex': finish && !screen_Max,
+				}" 
+	>
 			<AppBtmLink
 				class="btm-white"
 				name="view_benefits"
@@ -26,6 +36,8 @@
 </template>
 
 <script>
+import { mapState} from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "Donate",
 	emits: ["getPdf"],
@@ -40,6 +52,8 @@ export default {
 		},
 	},
 	computed: {
+		...mapState(usePagesStore, ["screen_Max"]),
+
 		t_Title() {
 			return this.t("support_project");
 		},
@@ -56,10 +70,6 @@ export default {
 			return this.t("benefaction");
 		},
 
-		// t_Donat() {
-		// 	return this.T("view_benefits");
-		// },
-
 		t_Pdf() {
 			return this.t("download_pdf");
 		},
@@ -73,3 +83,10 @@ export default {
 	},
 };
 </script>
+
+<style scoped>
+.flex-flex {
+	flex: 1 1 auto;
+	justify-content: flex-end;
+}
+</style>

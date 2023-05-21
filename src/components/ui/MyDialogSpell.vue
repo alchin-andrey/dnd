@@ -1,20 +1,29 @@
 <template>
   <Teleport to="body">
     <Transition duration="550" name="nested">
+
       <div
         v-if="show"
         class="dialog"
-        :class="{ 'flex-row-c': finish }"
+        :class="{ 
+          'flex-row-c': finish && screen_Max,
+          'dialog--finish': finish,
+          }"
         @click.stop
         @click="hideDialog"
       >
-        <div
-          class="dialog__wrapp int-400"
-          :class="{ dialog__finish: finish }"
-          @click.stop
-        >
-          <div class="dialog__content">
-            <slot></slot>
+        <div>
+          <div class="btm-wrapp" v-if="!screen_Max">
+            <AppBtmCloseMob @btmGo="hideDialog"/>
+          </div>
+          <div
+            class="dialog__wrapp int-400"
+            :class="{ 'dialog-wrapp--finish': finish }"
+            @click.stop
+          >
+            <div class="dialog__content">
+              <slot></slot>
+            </div>
           </div>
         </div>
       </div>
@@ -23,6 +32,8 @@
 </template>
 
 <script>
+import { mapState} from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "MyDialogSpell",
   props: {
@@ -39,6 +50,9 @@ export default {
       default: false,
     },
   },
+  computed: {
+    ...mapState(usePagesStore, ["screen_Max"]),
+  },
   methods: {
     hideDialog() {
       this.$emit("update:mana", null);
@@ -49,22 +63,37 @@ export default {
 </script>
 
 <style scoped>
+
+.btm-wrapp {
+  padding: 20px 20px 20px 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 434px;
+}
 .dialog {
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   padding: 4px;
-  background: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   z-index: 1000;
   cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog--finish {
+  justify-content: center;
 }
 
 .dialog__wrapp {
-  margin: 0 0 0 auto;
   padding: 28px;
-  background: #1c2326;
+  background-color: #1c2326;
   border-radius: 12px;
   width: 396px;
   z-index: 1001;
@@ -74,20 +103,44 @@ export default {
   max-height: 100%;
 }
 
-.dialog__finish {
-  margin: 0 auto;
+.dialog__wrapp::-webkit-scrollbar {
+  width: 0;
+}
+
+.dialog-wrapp--finish {
+  /* margin: 0 auto; */
   width: 460px;
   padding: 0;
 }
 
-.dialog__wrapp::-webkit-scrollbar {
-  width: 0;
+@media (max-width: 1279px) {
+  .dialog {
+    padding: 0 0 4px 0;
+    background-color: #0e1518;
+    justify-content: center;
+  }
+
+  .dialog__wrapp {
+    /* overflow-y: hidden; */
+    max-height: calc(100% - 88px);
+  }
+
+  .dialog-wrapp--finish {
+    width: 100%;
+    height: calc(100% - 88px);
+    max-width: 434px;
+  }
+
+  .dialog__content {
+    height: 100%;
+  }
 }
 
 .dialog__content {
   display: flex;
   flex-direction: column;
   gap: 26px;
+  height: 100%;
 }
 
 .nested-enter-active,
@@ -106,16 +159,33 @@ export default {
 }
 
 .nested-enter-active .dialog__wrapp,
-.nested-leave-active .dialog__wrapp {
+.nested-leave-active .dialog__wrapp{
   transition: all 0.3s ease-out;
 }
 
-.nested-enter-active .dialog__wrapp {
+.nested-enter-active .dialog__wrapp{
   transition-delay: 0.25s ease-out;
 }
 
 .nested-enter-from .dialog__wrapp,
-.nested-leave-to .dialog__wrapp {
+.nested-leave-to .dialog__wrapp{
+  transform: translateY(50px);
+  opacity: 0.001;
+}
+
+
+
+.nested-enter-active .btm-wrapp,
+.nested-leave-active .btm-wrapp{
+  transition: all 0.3s ease-out;
+}
+
+.nested-enter-active .btm-wrapp{
+  transition-delay: 0.25s ease-out;
+}
+
+.nested-enter-from .btm-wrapp,
+.nested-leave-to .btm-wrapp{
   transform: translateY(50px);
   opacity: 0.001;
 }
