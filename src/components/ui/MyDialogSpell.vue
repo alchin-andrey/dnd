@@ -8,9 +8,10 @@
         :class="{ 
           'flex-row-c': finish && screen_Max,
           'dialog--finish': finish,
+          'cur-p': screen_Max,
           }"
         @click.stop
-        @click="hideDialog"
+        @click="mainHideDialog"
       >
         <div>
           <div class="btm-wrapp" v-if="!screen_Max">
@@ -54,6 +55,10 @@ export default {
     ...mapState(usePagesStore, ["screen_Max"]),
   },
   methods: {
+    mainHideDialog() {
+      if(this.screen_Max) this.hideDialog()
+    },
+
     hideDialog() {
       this.$emit("update:mana", null);
       this.$emit("update:show", false);
@@ -82,7 +87,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   z-index: 1000;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
   justify-content: flex-end;
 }

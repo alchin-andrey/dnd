@@ -1,6 +1,6 @@
 <template>
 	<div 
-	class="flex-col gap-26 h-100"
+	class="flex-col gap-26 flex-flex"
 	:class="{
 				'pd-32': finish && screen_Max,
 				'pd-20': finish && !screen_Max,
@@ -16,7 +16,7 @@
 
 		<section class="flex-col gap-4 int-700" 	
 		:class="{
-				'flex-flex': finish && !screen_Max,
+				'flex-flex js-end': finish && !screen_Max,
 				}" 
 	>
 			<AppBtmLink
@@ -87,6 +87,11 @@ export default {
 <style scoped>
 .flex-flex {
 	flex: 1 1 auto;
+}
+
+.js-end {
 	justify-content: flex-end;
 }
+
+
 </style>

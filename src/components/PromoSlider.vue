@@ -1,7 +1,7 @@
 <template>
 	<DonatCarusel 
 	class="carousel"
-	:style="{'height': size_Text}"
+	:style="{'min-height': size_Height}"
 	@next="next"
 	:interval="interval">
 		<DonatCaruselSlide 
@@ -47,7 +47,7 @@ export default {
 			return this.slide_Arr.length;
 		},
 
-		size_Text() {
+		size_Height() {
 			if(this.screen_Max) {
 				return '200px'
 			} else {
