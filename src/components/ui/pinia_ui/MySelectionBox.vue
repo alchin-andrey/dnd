@@ -26,7 +26,7 @@
     <slot></slot>
   </AppMobDialog> -->
 
-  <Transition v-else :duration="{ enter: 700, leave: 700 }" name="nested">
+  <!-- <Transition v-else :duration="{ enter: 700, leave: 700 }" name="nested">
     <div v-if="shown" class="dialog" @click.stop>
       <div class="dialog__wrapp int-400" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
@@ -44,7 +44,12 @@
         </div>
       </div>
     </div>
-  </Transition>
+  </Transition> -->
+
+
+  <AppMobDialog v-else :shown="shown" :mob_pd="mob_pd" :not_mob_header="not_mob_header">
+    <slot></slot>
+  </AppMobDialog>
 </template>
 
 <script>
@@ -76,9 +81,8 @@ export default {
 </script>
 
 <style scoped>
-.mob-main-header {
+/* .mob-main-header {
 	width: 100%;
-	/* position: relative; */
 	z-index: 1000;
   position: fixed;
 }
@@ -95,7 +99,7 @@ export default {
   align-items: center;
   justify-content: flex-end;
   max-width: 434px;
-}
+} */
 .sidebar_selection {
   height: 100%;
   left: 426px;
@@ -154,7 +158,7 @@ export default {
 }
 
 /* dialog */
-.dialog {
+/* .dialog {
   top: 0;
   bottom: 0;
   right: 0;
@@ -167,11 +171,7 @@ export default {
 .dialog__wrapp {
   z-index: 501;
   cursor: auto;
-  /* overflow-y: scroll;
-  scrollbar-width: none; */
   height: 100%;
-  /* padding-bottom: 20px; */
-  /* padding: 20px 0; */
 }
 
 .dialog__wrapp::-webkit-scrollbar {
@@ -213,7 +213,6 @@ export default {
   transition: all 0.5s ease-out;
 }
 
-/* delay leave of parent element */
 .nested-leave-active {
   transition-delay: 0.2s;
 }
@@ -236,5 +235,5 @@ export default {
 .nested-leave-to .dialog__wrapp {
   transform: translateY(100px);
   opacity: 0.001;
-}
+} */
 </style>

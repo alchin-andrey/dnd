@@ -1,9 +1,6 @@
 <template>
-	<!-- Left bar -->
 	<div class="main-class">
-		<Transition name="fade-bar">
-			<Main__MenuBar/>
-		</Transition>
+		<Main__MenuBar/>
 		<Main__SetBar/>
 
 
@@ -28,11 +25,8 @@
 		</div>
 		<!-- Character -->
 		<!-- sidebar_right -->
-		<div v-show="screen_Max && !PRINT_BLANK" class="sidebar_right" :class="{ sidebar_right_close: close_Sidebar_Right }">
-			<RaceParameters v-if="pages.race_page" />
-			<ClassParameters v-if="pages.class_page" />
-			<AlignmentParameters v-if="pages.alignment_page" />
-		</div>
+
+		<Main__ParamBar/>
 	</div>
 
 	<!-- alse -->
@@ -74,9 +68,7 @@ export default {
 	mixins: [MainApp],
 	data() {
 		return {
-			small_screen: false,
 			PRINT_BLANK: false,
-			// PRINT_BLANK: true,
 			progress_load: 0,
 			loading_pdf: false,
 		};
@@ -121,17 +113,6 @@ export default {
 		]),
 
 		...mapState(useGenderStore, ["names_Arr"]),
-
-		close_Sidebar_Right() {
-			const open_class_page = this.pages.class_page;
-			const feats =
-				this.setting_open?.slice(0, 5) == "feats" && open_class_page;
-			const stats = this.setting_open?.includes("stats") && open_class_page;
-			const skills = this.setting_open?.includes("skills") && open_class_page;
-			const many_spells =
-				this.setting_open?.includes("many_spells") && open_class_page;
-			return !this.shown_home && !(stats || feats || skills || many_spells);
-		},
 
 		hide_Ruler() {
 			return (
@@ -333,40 +314,6 @@ export default {
 
 /* ---------------------sidebar_right----------------------*/
 
-/* .sidebar_wrap {
-	height: 100%;
-	display: flex;
-	width: 0;
-	transition: all 0.4s ease-in-out;
-	position: relative;
-}
-
-.sidebar_wrap_open {
-	width: 426px;
-	transition: all 0.4s ease-in-out;
-} */
-
-.sidebar_right {
-	min-width: 426px;
-	max-width: 426px;
-	padding: 32px;
-	overflow-y: scroll;
-	scrollbar-width: none;
-	background-color: #0e1518;
-	z-index: 2;
-	transition: all 0.4s ease-in-out;
-}
-
-.sidebar_right::-webkit-scrollbar {
-	width: 0;
-}
-
-.sidebar_right_close {
-	margin-right: -426px;
-	opacity: 0;
-	transition: all 0.4s ease-in-out;
-}
-
 .story {
 	max-width: 362px;
 	color: rgba(255, 255, 255, 0.4);
@@ -419,19 +366,5 @@ export default {
 	transform: translateX(20px);
 	opacity: 0;
 }
-
-
-
-.fade-bar-enter-active,
-.fade-bar-leave-active {
-  transition: opacity 0.5s ease;
-	/* position: absolute; */
-}
-
-.fade-bar-enter-from,
-.fade-bar-leave-to {
-  opacity: 0;
-}
-
 /* ---------------------sidebar_right----------------------*/
 </style>

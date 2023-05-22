@@ -19,15 +19,15 @@
       <RaceSetting__Gender />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.skin_color" not_mob_header>
+		<My-Selection-Box :shown="race_page.shown.skin_color" not_mob_header not_mob_pd>
 			<my-color-select body_part="skin" />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.eyes_color" not_mob_header>
+		<My-Selection-Box :shown="race_page.shown.eyes_color" not_mob_header not_mob_pd>
 			<my-color-select body_part="eyes" />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.hair_color" not_mob_header>
+		<My-Selection-Box :shown="race_page.shown.hair_color" not_mob_header not_mob_pd>
 			<my-color-select body_part="hair" />
 		</My-Selection-Box>
 

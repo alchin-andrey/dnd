@@ -4,28 +4,9 @@ import Donate from "@/components/Donate.vue";
 import PromoSlider from "@/components/PromoSlider.vue";
 import BlankPrint from "@/components/BlankPrint.vue";
 
-// import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
-// import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSettings.vue";
-
-
-// RACE_PAGE
-// import RaceMenu from "@/components/menu/1_RaceMenu.vue";
-// import RaceSettings from "@/components/settings/__settings__lists/1_RaceSettings.vue";
-import RaceParameters from "@/components/parameters/__param__lists/1_RaceParameters.vue";
-// CLASS_PAGE
-// import ClassMenu from "@/components/menu/2_ClassMenu.vue";
-// import ClassSettings from "@/components/settings/__settings__lists/2_ClassSettings.vue";
-import ClassParameters from "@/components/parameters/__param__lists/2_ClassParameters.vue";
-
-// ALIGNMENT_PAGE
-// import AlignmentMenu from "@/components/menu/3_AlignmentMenu.vue";
-// import AlignmentSettings from "@/components/settings/__settings__lists/3_AlignmentSettings.vue";
-import AlignmentParameters from "@/components/parameters/__param__lists/3_AlignmentParameters.vue";
-
-
 import Main__MenuBar from "@/components/main/Main__MenuBar.vue";
-
 import Main__SetBar from "@/components/main/Main__SetBar.vue";
+import Main__ParamBar from "@/components/main/Main__ParamBar.vue";
 
 
 
@@ -38,26 +19,9 @@ export default {
 		PromoSlider,
 		BlankPrint,
 
-		// HeaderMenu,
-		// HeaderSettings,
-
-		// RACE_PAGE
-		// RaceMenu, //TODO: Сылки на рост, вес, возраст
-		// RaceSettings,
-		RaceParameters,
-		// CLASS_PAGE
-		// ClassMenu,
-		// ClassSettings,
-		ClassParameters,
-
-		// ALIGNMENT_PAGE
-		// AlignmentMenu,
-		// AlignmentSettings,
-		AlignmentParameters,
-
-
 
 		Main__MenuBar,
 		Main__SetBar,
+		Main__ParamBar,
 	},
 };

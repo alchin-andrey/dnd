@@ -3,7 +3,7 @@
 		<div class="main-chapter">
 			<HeaderMenu/>
 			<div class="flex-col gap-4">
-				<AppCharCard mob_menu v-if="!screen_Max" />
+				<AppCharCard mob_menu v-if="!screen_Max" @click="showMobParam()"/>
 				<section v-if="!pages.race_page">
 					<div class="back-page-grup">
 						<AppBackPage :text_arr="arr_Name_Race_Page" @click="goPage('race_page')" />
@@ -97,6 +97,7 @@ export default {
 			"showHome",
 			"goPage",
 			"btnGo",
+			"showMobParam",
 		]),
 	},
 };
