@@ -1,5 +1,5 @@
 <template>
-	<My-Selection-Box :shown="alignment_page.shown.alignment">
+	<My-Selection-Box title="alignment" :select="MY.alignment" :shown="alignment_page.shown.alignment">
 		<AlignmentSett__Alignment />
 	</My-Selection-Box>
 
@@ -7,6 +7,7 @@
   <My-Selection-Box
 			v-for="item in сustomm_Main_Settings_Alignment_Arr"
 			:key="item.id_link"
+			:menu="item"
 			:shown="alignment_page.shown[item.id_link]"
 		>
 			<AlignmentSett__Custom :custom="item"/>
@@ -25,6 +26,7 @@ export default {
 	mixins: [AlignmentSett],
 	computed: {
 		// STORE
+		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["alignment_page"]),
     ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr"]),
 	},
