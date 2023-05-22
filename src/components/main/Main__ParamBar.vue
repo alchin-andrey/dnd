@@ -5,20 +5,20 @@
 		<AlignmentParameters v-if="pages.alignment_page" />
 	</div>
 
-	<AppMobDialog v-else :shown="shown_mob_param" mob_param mob_fixed>
-			<section class="character-mob">
-				<RaceBody body_part="skin" />
-				<RaceBody body_part="eyes" />
-				<RaceBody body_part="hair" />
-				<RaceBody body_part="class" v-if="!pages.race_page" />
-				<mySizeGrowth division zero skale_top />
-			</section>
-			
-			<section class="mr-t-24">
-				<RaceParameters v-if="pages.race_page" />
-				<ClassParameters v-if="pages.class_page" />
-				<AlignmentParameters v-if="pages.alignment_page" />
-			</section>
+	<AppMobDialog v-else title="char_details" :shown="shown_mob_param" mob_param mob_fixed>
+		<section class="character-mob">
+			<RaceBody body_part="skin" />
+			<RaceBody body_part="eyes" />
+			<RaceBody body_part="hair" />
+			<RaceBody body_part="class" v-if="!pages.race_page" />
+			<mySizeGrowth division zero skale_top />
+		</section>
+
+		<section class="mr-t-24">
+			<RaceParameters v-if="pages.race_page" />
+			<ClassParameters v-if="pages.class_page" />
+			<AlignmentParameters v-if="pages.alignment_page" />
+		</section>
 	</AppMobDialog>
 </template>
 

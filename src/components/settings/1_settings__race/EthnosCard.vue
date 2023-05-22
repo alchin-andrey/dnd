@@ -55,6 +55,7 @@
 					:title="name"
 					:arr_name="proficiencies_Arr(ethnos.proficiencies, name)"
 					:active_card="MY_Ethnos.name === ethnos.name"
+					param
 				/>
 			</AppWrapper>
 			<!-- Ethnos_card_proficiencies -->
@@ -73,6 +74,7 @@
 					:spell_obj="item"
 					select
 					:active_card="MY_Ethnos.name === ethnos.name"
+					param
 				/>
 			</AppWrapper>
 			<!-- Ethnos_card_spells -->

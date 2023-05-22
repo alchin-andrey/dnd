@@ -4,6 +4,8 @@
     <div v-if="shown" class="dialog" :class="{'dialog--fixed': mob_fixed}" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
           <div class="btm-wrapp">
+            <div class="jbm-300">{{ t_Title }}</div>
+            <div class="int-400" :class="{'rare-text': rare || overflow_Item || sett_Counter}">{{ t_Select }}</div>
             <AppBtmCloseMob @btmGo="showHome()"/>
           </div>
         </div>
@@ -25,11 +27,29 @@
 </template>
 
 <script>
-import { mapActions } from "pinia";
+import { mapState, mapActions } from "pinia";
+import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
   name: "AppMobDialog",
   props: {
+    title: {
+      type: String,
+      default: null,
+    },
+    select: {
+      type: String,
+      default: null,
+    },
+    rare: {
+			type: String,
+			default: null,
+		},
+    menu: {
+      type: Object,
+			default: {},
+    },
     shown: {
       type: Boolean,
       default: false,
@@ -50,6 +70,79 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  computed: {
+    ...mapState(useMYStore, ["MY"]),
+    ...mapState(useOverflowStore, ["overflow_Item_Menu"]),
+
+    t_Title() {
+      if(this.title) {
+        return this.t(this.title)
+      } else {
+        return this.t(this.menu.name);
+      }
+    },
+
+    t_Select() {
+      if(this.select) {
+        return this.title === "gender" ? this.gender_Name : this.T(this.select);
+      } else {
+        return this.t_Select_Menu;
+      }
+    },
+
+    gender_Name() {
+			let name = this.T(this.select);
+			return this.MY.gender.feel === "cisgender" ? name : `${name} *`;
+		},
+
+    overflow_Item() {
+			if(this.menu.name == "skills" && this.menu?.filter == 'only_mastery') {
+				return false;
+			} else {
+				return this.overflow_Item_Menu(this.menu);
+			}
+		},
+
+    sett_Counter() {
+      if (this.menu.type == "spells") {
+        const numb = this.menu.select_numb - this.menu.select_list.length;
+        return numb !== 0;
+      }
+    },
+
+    t_Select_Menu() {
+      if (this.menu.type == "spells") {
+        const dub_detect = this.overflow_Item_Menu(this.menu);
+        const numb = this.menu.select_numb - this.menu.select_list.length;
+        const selected = `${this.T("spell_selected")} ${this.menu.select_numb}`;
+        const left = `${this.T("spells_left")} ${numb}`;
+        const duplicated = `${this.T("spell_duplicated")}`;
+        return numb !== 0 ? left : dub_detect ? duplicated : selected;
+      }
+			if (
+				this.menu.type == "feats" &&
+				(this.menu.id_btn == "stats_2" || this.menu.id_btn == "stats_1_1")
+			) {
+				let arr = [];
+				this.menu.select_list.forEach((item) => {
+					const name = item.stats[0].name;
+					const num = item.stats[0].num;
+					arr.push(`+${num} ${this.t(name).slice(0, 3)}`);
+				});
+				return arr.map((n) => n.replace(n[3], n[3].toUpperCase())).join(", ");
+			} else {
+				let arr = [];
+				this.menu.select_list?.forEach((item) => {
+					if (item?.name) {
+						arr.push(this.T(item?.name));
+					} else if (item?.name_set) {
+						arr.push(this.T(item?.name_set));
+					}
+				});
+				return arr.join(", ");
+			}
+		},
   },
   methods: {
     ...mapActions(usePagesStore, ["showHome"]),
@@ -78,7 +171,7 @@ export default {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   max-width: 434px;
 }
 
