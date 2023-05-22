@@ -1,9 +1,9 @@
 <template>
-		<My-Selection-Box :shown="race_page.shown.ethnos">
+		<My-Selection-Box :shown="race_page.shown.ethnos" mob_fixed>
 			<RaceSetting__Ethnos />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.backstory">
+		<My-Selection-Box :shown="race_page.shown.backstory" mob_fixed>
 			<RaceSetting__Backstory />
 		</My-Selection-Box>
 
@@ -11,6 +11,7 @@
 			v-for="item in сustomm_Settings_Race_Arr"
 			:key="item.id_link"
 			:shown="race_page.shown[item.id_link]"
+			mob_fixed
 		>
 			<RaceSett__Custom :custom="item"/>
 		</My-Selection-Box>
@@ -31,7 +32,7 @@
 			<my-color-select body_part="hair" />
 		</My-Selection-Box>
 
-		<My-Selection-Box :shown="race_page.shown.age" not_mob_header>
+		<My-Selection-Box :shown="race_page.shown.age" not_mob_header >
 			<div class="flex_options">
 				<MyRange v-model.number="MY.age" age />
 				<MyRangeSize age />

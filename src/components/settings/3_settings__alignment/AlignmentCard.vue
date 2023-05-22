@@ -1,7 +1,7 @@
 <template>
 	<AppCardWrapp passive>
 		<div class="gender_card_title jbm-300">{{ t_Title }}</div>
-		<div class="gender__flex">
+		<div class="gender-grid">
 			<my-button-gender
 				v-for="item in arr"
 				:key="item.name"
@@ -84,10 +84,12 @@ export default {
 	color: rgba(255, 255, 255, 0.2);
 }
 
-.gender__flex {
-	display: flex;
-	gap: 72px;
-	flex-wrap: wrap;
+.gender-grid {
+	display: grid;
+	grid-template-columns: repeat(3,72px);
+	grid-template-rows: repeat(3,72px);
+	row-gap: 72px;
+	justify-content:space-between;
 }
 
 </style>

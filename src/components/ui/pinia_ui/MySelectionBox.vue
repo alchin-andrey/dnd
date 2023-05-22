@@ -47,7 +47,7 @@
   </Transition> -->
 
 
-  <AppMobDialog v-else :shown="shown" :mob_pd="mob_pd" :not_mob_header="not_mob_header">
+  <AppMobDialog v-else :shown="shown" :not_mob_pd="not_mob_pd" :not_mob_header="not_mob_header" :mob_fixed="mob_fixed">
     <slot></slot>
   </AppMobDialog>
 </template>
@@ -62,7 +62,11 @@ export default {
       type: Boolean,
       default: false,
     },
-    mob_pd: {
+    mob_fixed: {
+      type: Boolean,
+      default: false,
+    },
+    not_mob_pd: {
       type: Boolean,
       default: false,
     },

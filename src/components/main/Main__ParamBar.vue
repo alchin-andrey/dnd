@@ -5,7 +5,7 @@
 		<AlignmentParameters v-if="pages.alignment_page" />
 	</div>
 
-	<AppMobDialog v-else :shown="shown_mob_param" mob_param>
+	<AppMobDialog v-else :shown="shown_mob_param" mob_param mob_fixed>
 			<section class="character-mob">
 				<RaceBody body_part="skin" />
 				<RaceBody body_part="eyes" />

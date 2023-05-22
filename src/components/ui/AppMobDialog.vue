@@ -1,7 +1,7 @@
 <template>
   <Teleport to="body">
   <Transition :duration="{ enter: 700, leave: 700 }" name="nested">
-    <div v-if="shown" class="dialog" @click.stop>
+    <div v-if="shown" class="dialog" :class="{'dialog--fixed': mob_fixed}" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
           <div class="btm-wrapp">
             <AppBtmCloseMob @btmGo="showHome()"/>
@@ -14,6 +14,7 @@
             'dialog--mob-header-pd': !not_mob_header,
             'dialog--mob-pd': not_mob_pd,
             'dialog--mob-param': mob_param,
+            'dialog--mob-fixed': mob_fixed && !mob_param,
             }">
             <slot></slot>
           </div>
@@ -38,6 +39,10 @@ export default {
       default: false,
     },
     mob_param: {
+      type: Boolean,
+      default: false,
+    },
+    mob_fixed: {
       type: Boolean,
       default: false,
     },
@@ -85,8 +90,11 @@ export default {
   background-color: #0e1518;
   position: fixed;
   z-index: 500;
-  /* display: flex;
-  justify-content: center; */
+}
+
+.dialog--fixed {
+  display: flex;
+  justify-content: center;
 }
 
 .dialog__wrapp {
@@ -128,6 +136,11 @@ export default {
   padding-right: 0;
   padding-left: 0;
 }
+
+.dialog--mob-fixed{
+  min-width: 434px;
+}
+
 .dialog--mob-param {
   max-width: 394px;
   padding-right: 16px;

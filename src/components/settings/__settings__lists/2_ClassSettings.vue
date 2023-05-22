@@ -8,6 +8,7 @@
 			v-for="item in сustomm_Settings_Class_Arr"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
+			mob_fixed
 		>
 			<ClassSett__Custom :custom="item"/>
 		</My-Selection-Box>
@@ -16,6 +17,7 @@
 			v-for="item in spells_Settings_Class_Arr"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
+			mob_fixed
 		>
 			<ClassSett__Spells :spells_setting="item"/>
 		</My-Selection-Box>
@@ -25,6 +27,7 @@
 			v-for="item in feats_Settings_Class"
 			:key="item.id_link"
 			:shown="class_page.shown[item.id_link]"
+			mob_fixed
 		>
     <ClassSett__Feats :id_link="item.id_link" />
 		</My-Selection-Box>
