@@ -3,11 +3,14 @@ import ClassSett__Custom from "@/components/settings/2_settings__class/ClassSett
 import ClassSett__Feats from "@/components/settings/2_settings__class/ClassSett__Feats.vue";
 import ClassSett__Spells from "@/components/settings/2_settings__class/ClassSett__Spells.vue";
 
+import ClassParamSett__Spells from "@/components/parameters/2_param__class/ClassParamSett__Spells.vue";
+
 export default {
   components: {
     ClassSett__BaseStats,
     ClassSett__Custom,
     ClassSett__Feats,
     ClassSett__Spells,
+    ClassParamSett__Spells,
 	},
 };

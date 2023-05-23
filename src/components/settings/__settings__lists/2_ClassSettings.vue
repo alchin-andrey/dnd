@@ -21,7 +21,8 @@
 			:shown="class_page.shown[item.id_link]"
 			mob_fixed
 		>
-			<ClassSett__Spells :spells_setting="item"/>
+			<ClassParamSett__Spells v-if="mob_param_spell && !screen_Max" :spells_setting="item" :shown="true"/>
+			<ClassSett__Spells :spells_setting="item" v-else/>
 		</My-Selection-Box>
 
   <!-- feats_Settings -->
@@ -50,7 +51,7 @@ export default {
 	mixins: [ClassSett],
 	computed: {
 		// STORE
-		...mapState(usePagesStore, ["class_page"]),
+		...mapState(usePagesStore, ["class_page", "mob_param_spell", "screen_Max"]),
 		...mapState(useMYStore, [
 			"сustomm_Settings_Class_Arr_No_Feats", "spells_Settings_Class_Arr",
 		]),

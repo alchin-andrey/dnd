@@ -6,9 +6,14 @@
           <div class="btm-wrapp">
             <div class="jbm-300">{{ t_Title }}</div>
             <div class="int-400 column-link" :class="{'rare-text': rare || overflow_Item || sett_Counter}"><span>{{ t_Select }}</span></div>
-            <div class="btm-round" @click="showHome()">
-              <AppSvg class="svg-18 svg-main-f" name="close" />
-            </div>
+            <section class="flex-row gap-4">
+              <div v-if="shown_Second_Btm" class="btm-round" :class="{'btm-white hov': mob_param_spell}" @click="showMobParamSpell()">
+                <AppSvg class="svg-18 svg-main-f" :name="svg_Name" />
+              </div>
+              <div class="btm-round" @click="showHome()">
+                <AppSvg class="svg-18 svg-main-f" name="close" />
+              </div>
+            </section>
           </div>
         </div>
       <div class="dialog__wrapp int-400" @click.stop>
@@ -76,6 +81,15 @@ export default {
   computed: {
     ...mapState(useMYStore, ["MY"]),
     ...mapState(useOverflowStore, ["overflow_Item_Menu"]),
+    ...mapState(usePagesStore, ["setting_open", "mob_param_spell"]),
+
+    shown_Second_Btm() {
+      return this.setting_open?.includes("many_spells")
+    },
+
+    svg_Name() {
+      return this.mob_param_spell ? "plus" : "edit" ;
+    },
 
     t_Title() {
       if(this.title) {
@@ -146,7 +160,7 @@ export default {
 		},
   },
   methods: {
-    ...mapActions(usePagesStore, ["showHome"]),
+    ...mapActions(usePagesStore, ["showHome", "showMobParamSpell"]),
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<div 
+	<div
 	:class="{ 
 		'sidebar_wrap': screen_Max,
 		'sidebar_wrap_open': setting_open && screen_Max,
@@ -20,6 +20,7 @@ import HeaderSettings from "@/components/settings/__settings__lists/0_HeaderSett
 import RaceSettings from "@/components/settings/__settings__lists/1_RaceSettings.vue";
 import ClassSettings from "@/components/settings/__settings__lists/2_ClassSettings.vue";
 import AlignmentSettings from "@/components/settings/__settings__lists/3_AlignmentSettings.vue";
+
 export default {
 	name: "Main__SetBar",
 	components: {
@@ -32,7 +33,7 @@ export default {
 		...mapState(usePagesStore, [
 			"setting_open",
 			"pages",
-			"screen_Max"
+			"screen_Max",
 		]),
 	},
 };
