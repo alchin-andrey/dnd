@@ -161,6 +161,11 @@ export const useMYStore = defineStore({
       return filter_only_mastery;
     },
 
+    сustomm_Settings_Class_Arr_No_Feats() {
+      const res = this.сustomm_Settings_Class_Arr.filter(el => el.type !== "feats");
+      return res;
+    },
+
     settings_Class_Arr() {
       const custom_class = this.сustomm_Settings_Class_Arr;
       const spells_sett = this.spells_Settings_Class_Arr;

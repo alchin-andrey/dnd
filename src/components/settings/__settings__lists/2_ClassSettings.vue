@@ -5,7 +5,7 @@
 
 	<!-- customm_Settings -->
   <My-Selection-Box
-			v-for="item in сustomm_Main_Settings_Class_Arr"
+			v-for="item in сustomm_Settings_Class_Arr_No_Feats"
 			:key="item.id_link"
 			:menu="item"
 			:shown="class_page.shown[item.id_link]"
@@ -51,15 +51,11 @@ export default {
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["class_page"]),
-		...mapState(useMYStore, ["spells_Settings_Class_Arr", "сustomm_Main_Settings_Class_Arr"]),
+		...mapState(useMYStore, [
+			"сustomm_Settings_Class_Arr_No_Feats", "spells_Settings_Class_Arr",
+		]),
 		...mapState(useStatsStore, [ "base_Stats_Menu"]),
 		...mapState(useFeatsStore, ["feats_Select_Arr"]),
 	},
-  methods: {
-  }
 };
 </script>
-
-<style scoped>
-
-</style>
