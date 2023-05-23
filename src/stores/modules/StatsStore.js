@@ -152,6 +152,11 @@ export const useStatsStore = defineStore({
 			return `${text}, ...`;
 		},
 
+		base_Stats_Menu() {
+			const PagesStore = usePagesStore();
+      return PagesStore.screen_Max ? this.stats_Base_Settings_Two_T : this.stats_Base_Settings_Full_T;
+    },
+
     // NOTE - Calculations
     stats_Base_Obj() {
       const str = this.stats_Numb("strength");

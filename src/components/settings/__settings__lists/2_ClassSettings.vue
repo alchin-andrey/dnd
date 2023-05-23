@@ -1,12 +1,13 @@
 <template>
-	<My-Selection-Box :shown="class_page.shown.stats">
+	<My-Selection-Box title="stats" :select="base_Stats_Menu" :shown="class_page.shown.stats">
 		<ClassSett__BaseStats />
 	</My-Selection-Box>
 
 	<!-- customm_Settings -->
   <My-Selection-Box
-			v-for="item in сustomm_Settings_Class_Arr"
+			v-for="item in сustomm_Main_Settings_Class_Arr"
 			:key="item.id_link"
+			:menu="item"
 			:shown="class_page.shown[item.id_link]"
 			mob_fixed
 		>
@@ -16,6 +17,7 @@
   <My-Selection-Box
 			v-for="item in spells_Settings_Class_Arr"
 			:key="item.id_link"
+			:menu="item"
 			:shown="class_page.shown[item.id_link]"
 			mob_fixed
 		>
@@ -24,8 +26,10 @@
 
   <!-- feats_Settings -->
   <My-Selection-Box
-			v-for="item in feats_Settings_Class"
+			v-for="item in feats_Select_Arr"
 			:key="item.id_link"
+			title="stats"
+			:menu="item"
 			:shown="class_page.shown[item.id_link]"
 			mob_fixed
 		>
@@ -38,6 +42,7 @@ import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
+import { useStatsStore } from "@/stores/modules/StatsStore";
 
 import ClassSett from "@/components/settings/2_settings__class/ClassSetting.js";
 export default {
@@ -46,8 +51,9 @@ export default {
 	computed: {
 		// STORE
 		...mapState(usePagesStore, ["class_page"]),
-		...mapState(useMYStore, ["сustomm_Settings_Class_Arr", "spells_Settings_Class_Arr"]),
-    ...mapState(useFeatsStore, ["feats_Settings_Class"]),
+		...mapState(useMYStore, ["spells_Settings_Class_Arr", "сustomm_Main_Settings_Class_Arr"]),
+		...mapState(useStatsStore, [ "base_Stats_Menu"]),
+		...mapState(useFeatsStore, ["feats_Select_Arr"]),
 	},
   methods: {
   }

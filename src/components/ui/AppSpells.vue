@@ -516,7 +516,6 @@ export default {
       const mod = this.spell_Mod ? `&m=${spell_mod_id}` : "";
       const link =
       `${full_link}?${lang}&${lvl}&${spell_attribute}&${base_link}` + mod;
-      console.log('link:', link)
       return link;
     },
 

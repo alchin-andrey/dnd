@@ -47,7 +47,16 @@
   </Transition> -->
 
 
-  <AppMobDialog v-else :shown="shown" :not_mob_pd="not_mob_pd" :not_mob_header="not_mob_header" :mob_fixed="mob_fixed">
+  <AppMobDialog 
+  v-else
+  :title="title"
+  :select="select"
+  :menu="menu"
+  :shown="shown" 
+  :not_mob_pd="not_mob_pd" 
+  :not_mob_header="not_mob_header" 
+  :mob_fixed="mob_fixed"
+  >
     <slot></slot>
   </AppMobDialog>
 </template>
@@ -58,6 +67,18 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "MySelectionBox",
   props: {
+    title: {
+      type: String,
+      default: null,
+    },
+    select: {
+      type: String,
+      default: null,
+    },
+    menu: {
+      type: Object,
+			default: {},
+    },
     shown: {
       type: Boolean,
       default: false,

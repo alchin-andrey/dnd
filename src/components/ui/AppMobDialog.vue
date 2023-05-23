@@ -119,8 +119,7 @@ export default {
         const left = `${this.T("spells_left")} ${numb}`;
         const duplicated = `${this.T("spell_duplicated")}`;
         return numb !== 0 ? left : dub_detect ? duplicated : selected;
-      }
-			if (
+      } else if (
 				this.menu.type == "feats" &&
 				(this.menu.id_btn == "stats_2" || this.menu.id_btn == "stats_1_1")
 			) {
@@ -128,9 +127,9 @@ export default {
 				this.menu.select_list.forEach((item) => {
 					const name = item.stats[0].name;
 					const num = item.stats[0].num;
-					arr.push(`+${num} ${this.t(name).slice(0, 3)}`);
+					arr.push(`+${num} ${this.T(name).slice(0, 3)}`);
 				});
-				return arr.map((n) => n.replace(n[3], n[3].toUpperCase())).join(", ");
+				return arr.join(", ");
 			} else {
 				let arr = [];
 				this.menu.select_list?.forEach((item) => {
@@ -173,6 +172,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   max-width: 434px;
+  gap: 8px;
 }
 
 .dialog {

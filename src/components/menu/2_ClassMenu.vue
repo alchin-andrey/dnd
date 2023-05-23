@@ -60,7 +60,7 @@ export default {
     // GETTERS
 		...mapState(useMYStore, [ "сustomm_Settings_Class_Arr", "spells_Settings_Class_Arr" ]),
 
-    ...mapState(useStatsStore, [ "stats_Base_Settings_Two_T", "stats_Base_Settings_Full_T"]),
+    ...mapState(useStatsStore, [ "base_Stats_Menu"]),
     ...mapState(useFeatsStore, [ "feats_Select_Arr"]),
 
     filter_Setting: (stor) => (numb) => {
@@ -127,10 +127,6 @@ export default {
     shown_Undefined() {
       return this.undefined_Filter.length !== 0
     },
-
-    base_Stats_Menu() {
-      return this.screen_Max ? this.stats_Base_Settings_Two_T : this.stats_Base_Settings_Full_T;
-    }
 	},
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Class"]),
