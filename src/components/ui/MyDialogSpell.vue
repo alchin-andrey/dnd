@@ -15,7 +15,9 @@
       >
         <div>
           <div class="btm-wrapp" v-if="!screen_Max">
-            <AppBtmCloseMob @btmGo="hideDialog"/>
+            <div class="btm-round" @click="hideDialog()">
+              <AppSvg class="svg-18 svg-main-f" name="close" />
+            </div>
           </div>
           <div
             class="dialog__wrapp int-400"

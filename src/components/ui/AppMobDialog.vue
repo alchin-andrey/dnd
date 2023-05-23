@@ -6,7 +6,9 @@
           <div class="btm-wrapp">
             <div class="jbm-300">{{ t_Title }}</div>
             <div class="int-400 column-link" :class="{'rare-text': rare || overflow_Item || sett_Counter}"><span>{{ t_Select }}</span></div>
-            <AppBtmCloseMob @btmGo="showHome()"/>
+            <div class="btm-round" @click="showHome()">
+              <AppSvg class="svg-18 svg-main-f" name="close" />
+            </div>
           </div>
         </div>
       <div class="dialog__wrapp int-400" @click.stop>

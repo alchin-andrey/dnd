@@ -18,7 +18,7 @@
 						:placeholder="t_Placeholder"
 					/>
 			</section>
-			<section class="main-icon" @click="randomName()">
+			<section :class="style_Icon" @click="randomName()">
 				<AppSvg class="svg-18 svg-main-f" name="return"/>
 			</section>
 		</div>
@@ -59,6 +59,11 @@ export default {
     t_Placeholder() {
 			return this.t("name_placeholder");
 		},
+
+		style_Icon() {
+			if(this.screen_Max) return 'main-icon'
+			else return 'btm-round hov'
+		}
 	},
 	methods: {
     ...mapActions(useGenderStore, ["getRandomName"]),
@@ -126,18 +131,5 @@ input[type="text"] {
 	height: 18px;
   cursor: pointer;
 	margin-bottom: 3px;
-}
-
-@media (max-width: 1279px) {
-	.main-icon {
-		margin-bottom: 0;
-		height: 48px;
-		min-width: 48px;
-		background: rgba(255, 255, 255, 0.06);
-		border-radius: 32px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
 }
 </style>

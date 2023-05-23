@@ -7,11 +7,11 @@
   align-items: center;
   justify-content: center;
   /* position: relative; */
-  z-index: 1000;
+  /* z-index: 1000; */
   cursor: pointer;
 }
 
-.btm-round.hov:hover { background: rgba(255, 255, 255, 0.1); }
+.btm-round:hover { background: rgba(255, 255, 255, 0.1); }
 
 .mob-header {
 	width: 100%;

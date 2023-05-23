@@ -36,6 +36,12 @@ export default {
 body {
 	background-color: #0e1518;
 	color: #ffffff;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 a {
@@ -48,12 +54,12 @@ a {
 	height: 100%;
 	/* display: flex; */
   /* justify-content: center; */
-	-webkit-touch-callout: none;
+	/* -webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none;
+	user-select: none; */
 	overflow: hidden;
 }
 </style>
