@@ -5,7 +5,7 @@
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
           <div class="btm-wrapp">
             <div class="jbm-300">{{ t_Title }}</div>
-            <div class="int-400" :class="{'rare-text': rare || overflow_Item || sett_Counter}">{{ t_Select }}</div>
+            <div class="int-400 column-link" :class="{'rare-text': rare || overflow_Item || sett_Counter}"><span>{{ t_Select }}</span></div>
             <AppBtmCloseMob @btmGo="showHome()"/>
           </div>
         </div>
@@ -153,7 +153,6 @@ export default {
 
 .mob-main-header {
 	width: 100%;
-	/* position: relative; */
 	z-index: 1000;
   position: fixed;
   top: 0;
@@ -172,7 +171,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   max-width: 434px;
-  gap: 8px;
+  gap: 16px;
 }
 
 .dialog {
@@ -240,12 +239,23 @@ export default {
   padding-left: 16px;
 }
 
+.column-link {
+  display: flex;
+  align-items: center;
+	overflow: hidden;
+}
+
+.column-link span {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .nested-enter-active,
 .nested-leave-active {
   transition: all 0.5s ease-out;
 }
 
-/* delay leave of parent element */
 .nested-leave-active {
   transition-delay: 0.2s;
 }
