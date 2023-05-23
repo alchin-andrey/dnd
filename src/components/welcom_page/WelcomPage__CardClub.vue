@@ -9,20 +9,15 @@
 				</section>
 				<section class="flex-row-sb-c int-400">
 				<div>{{ club_param.link_name }}</div>
-				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.link_main"/>
+				<AppSvg class="svg-18 svg-main-f" name="link_main"/>
 				</section>
 			</div>
 		</a>
 	</div>
 </template>
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
-
 export default {
 	name: "WelcomPage__CardClub",
-	data: () => ({
-		ui_icon,
-	}),
 	props: {
 		club_param: {
 			type: Object,

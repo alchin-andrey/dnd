@@ -16,21 +16,15 @@
     <AppSvg
       v-if="icon"
       class="svg-18 svg-main-f cur-p icon-pos"
-      :path="ui_icon[icon]"
+      :name="icon"
       @click="getAction()"
     />
   </div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
   name: "AppCardWrapp",
-  data() {
-    return {
-      ui_icon: ui_icon,
-    };
-  },
   props: {
     gap: {
       type: String,

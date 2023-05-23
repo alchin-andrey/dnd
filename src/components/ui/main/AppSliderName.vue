@@ -12,10 +12,10 @@
 				</section>
 				<section class="arrows-wrapp">
 					<div ref="back" class="arrow-left" @click="getSlideBack()">
-						<AppSvg class="svg-main-f" :path="ui_icon.arrow_left"/>
+						<AppSvg class="svg-main-f" name="arrow_left"/>
 					</div>
 					<div ref="next" class="arrow-right" @click="getSlideNext()">
-						<AppSvg class="svg-main-f" :path="ui_icon.arrow_right"/>
+						<AppSvg class="svg-main-f" name="arrow_right"/>
 					</div>
 				</section>
 			</div>
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -32,11 +31,6 @@ import { useMainStore } from "@/stores/general/MainStore";
 
 export default {
 	name: "AppSliderName",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		numb: {
 			type: String,

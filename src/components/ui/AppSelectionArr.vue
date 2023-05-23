@@ -19,25 +19,18 @@
 			>
 				<span class="type-text">{{ t_Type(item) }}</span>
 			</div>
-			<AppSvg class="svg-18 svg-main-f" :path="ui_icon[icon_Image(item)]" />
+			<AppSvg class="svg-18 svg-main-f" :name="icon_Image(item)" />
 		</section>
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
-
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "AppSelectionArr",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		menu: {
 			type: Object,

@@ -19,23 +19,21 @@
 			>
 				<span>{{ t_Type }}</span>
 			</div>
-			<AppSvg class="svg-18 svg-main-f" :class="{'svg-none-f': pass_Link}" :path="ui_icon[icon_Svg]" />
+			<AppSvg 
+			class="svg-18 svg-main-f" 
+			:class="{'svg-none-f': pass_Link}" 
+			:name="icon_Svg" 
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppSelection",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		title: {
 			type: String,

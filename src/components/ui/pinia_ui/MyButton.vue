@@ -5,21 +5,15 @@
 			<div class="numb jbm-300" v-if="numb">{{ numb }}</div>
 			<div class="title jbm-300">
 				<div>{{ t_Title }}</div>
-				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.arrow_down" />
+				<AppSvg class="svg-18 svg-main-f" name="arrow_down" />
 			</div>
 		</div>
 	</section>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "MyButton",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		numb: {
 			type: String,

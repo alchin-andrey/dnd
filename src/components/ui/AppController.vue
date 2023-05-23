@@ -9,21 +9,15 @@
 			<div>{{ value }} {{ t_Unit }}</div>
 			<div class="note">{{ t_Note }}</div>
 		</div>
-		<AppSvg class="svg-18 svg-main-f" :path="ui_icon.arrow_slider" />
+		<AppSvg class="svg-18 svg-main-f" name="arrow_slider" />
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppController",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		modelValue: {
 			type: Number,

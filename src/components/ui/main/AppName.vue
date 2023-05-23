@@ -19,7 +19,7 @@
 					/>
 			</section>
 			<section class="main-icon" @click="randomName()">
-				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.return"/>
+				<AppSvg class="svg-18 svg-main-f" name="return"/>
 			</section>
 		</div>
   </main>
@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
@@ -35,11 +34,6 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "AppName",
-  data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		modelValue: {
 			type: String,

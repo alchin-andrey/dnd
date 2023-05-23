@@ -5,21 +5,15 @@
 			<AppSvg 
 				class="svg-18 svg-main-f icon-pos"
 				:class="[style_Svg]"
-				:path="ui_icon[icon]"
+				:name="icon"
 			/>
 		</a>
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "AppBtmLink",
-  data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		name: {
 			type: String,

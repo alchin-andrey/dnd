@@ -5,21 +5,15 @@
 			{{ t_Title }}
 			</p>
 		</div>
-		<AppSvg :class="['svg-18', style_Svg]" :path="ui_icon.arrow_down_small" />
+		<AppSvg :class="['svg-18', style_Svg]" name="arrow_down_small"/>
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppBackPage",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
     text: {
 			type: String,

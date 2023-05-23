@@ -34,7 +34,7 @@
 				:class="{ reset_color_custom: !color_Reset }"
 				@click="resetColor(body_part)"
 			>
-				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.return" />
+				<AppSvg class="svg-18 svg-main-f" name="return" />
 			</div>
 	</AppCardWrapp>
 </template>
@@ -45,7 +45,6 @@ import { useColorStore } from "@/stores/modules/simple/ColorStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "MyColorSelect",
 	props: {
@@ -57,7 +56,6 @@ export default {
 	data() {
 		return {
 			hower_link: `${this.body_part}_hower`,
-			ui_icon: ui_icon,
 		};
 	},
 	computed: {

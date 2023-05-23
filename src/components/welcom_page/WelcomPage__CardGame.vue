@@ -6,18 +6,13 @@
 					<div class="int-700">{{ t(param.name) }}</div>
 					<div class="int-400 mr-t-4 white-04" v-html="t(param.details)" />
 				</div>
-				<AppSvg class="svg-18 svg-main-f" :path="ui_icon.link_main"/>
+				<AppSvg class="svg-18 svg-main-f" name="link_main"/>
 			</div>
 		</a>
 </template>
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
-
 export default {
 	name: "WelcomPage__CardGame",
-	data: () => ({
-		ui_icon,
-	}),
 	props: {
 		param: {
 			type: Object,

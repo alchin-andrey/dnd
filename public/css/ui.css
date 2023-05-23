@@ -1,3 +1,18 @@
+.btm-round {
+  min-height: 48px;
+  min-width: 48px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.btm-round.hov:hover { background: rgba(255, 255, 255, 0.1); }
+
 .mob-header {
 	width: 100%;
 	height: 88px;
@@ -13,7 +28,7 @@
 	border-radius: 12px;
 	/* backdrop-filter: blur(60px); */
 }
-.card-main.hov:hover {background: rgba(255, 255, 255, 0.1);}
+.card-main.hov:hover { background: rgba(255, 255, 255, 0.1); }
 
 .btm-anim { transition-duration: 0.5s;}
 

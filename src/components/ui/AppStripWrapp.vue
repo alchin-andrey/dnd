@@ -13,19 +13,15 @@
 				@mouseover="hoverIn_Select()"
 				@mouseleave="hoverOut()"
 				@click="showDialog_Select()"
-				:path="ui_icon[icon_Svg]"
+				:name="icon_Svg"
 			/>
 			<slot></slot>
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "AppStripWrapp",
-	data: () => ({
-		ui_icon: ui_icon,
-	}),
 	props: {
 		icon: {
 			type: Boolean,

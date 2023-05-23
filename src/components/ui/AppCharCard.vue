@@ -6,22 +6,16 @@
 		<RaceBody body_part="class" :mob_menu="mob_menu" v-if="!pages.race_page"/>
 		<div class="flex-row gap-6">
 			<div class="jbm-300">{{ t_Details }}</div>
-			<AppSvg class="svg-18 svg-main-f" :path="ui_icon.arrow_right"/>
+			<AppSvg class="svg-18 svg-main-f" name="arrow_right"/>
 		</div>
 	</div>
 </template>
 
 <script>
-import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppCharCard",
-	data() {
-		return {
-			ui_icon: ui_icon,
-		};
-	},
 	props: {
 		ethnos_name: {
 			type: String,
