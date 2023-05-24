@@ -6119,6 +6119,7 @@ export default {
   lobby_support_project: "Підтримай проект",
 
   details: "деталі",
+  char_details: "деталі персонажа",
 
   spell_aura_of_purity: spells.aura_of_purity,
   spell_aura_of_purity_details: spells.aura_of_purity_details,
