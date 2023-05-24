@@ -98,3 +98,55 @@
 }
 
 .stripe-item--active { background: #ffffff;}
+
+
+:root {
+	--slider-bg: rgba(255, 255, 255, 0.06);
+  --slider-connect-bg: #ffffff;
+	--slider-height: 100%;
+	--slider-vertical-height: 100%;
+	--slider-radius: 12px;
+	
+	
+	--slider-handle-width: 30px;
+	--slider-handle-height: 100%;
+	--slider-handle-shadow: none;
+	--slider-handle-shadow-active: none;
+	--slider-handle-radius: 0;
+	--slider-handle-border: 0;
+}
+
+.slider-vertical .slider-handle {
+	bottom: calc(var(--slider-handle-width)/-1) !important;
+	right: 0 !important;
+}
+
+.slider-vertical .slider-origin {
+	width: 100% !important;
+}
+
+.slider-base, .slider-connects {
+	overflow: hidden;
+}
+
+.slider-touch-area::after {
+	content:'';
+	position: absolute;
+	width: 96px;
+	height: 6px;
+	top: 12px;
+	left: calc(50% - 96px/2);
+	background: #0E1518;
+	opacity: 0.2;
+	border-radius: 4px;
+}
+
+.range-value {
+	position: absolute;
+	left: 16px;
+	bottom: 11px;
+	height: 24px;
+	color: #000000;
+	background-color: #ffffff;
+	z-index: 1000;
+}

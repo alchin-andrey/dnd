@@ -5,6 +5,10 @@
 .w-100 {width: 100%;}
 .h-100 {height: 100%;}
 
+.w-max-344 {
+	max-width: 344px;
+}
+
 .w-362 {width: 362px;}
 
 .h-18 {height: 18px;}
@@ -114,6 +118,7 @@
 
 
 .pd-r-18 {padding-right: 18px;}
+.pd-r-42 {padding-right: 42px;}
 
 
 .pd-l-16 { padding-left: 16px; }

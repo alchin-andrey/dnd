@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@vueform/slider": "^2.1.7",
     "core-js": "^3.8.3",
     "emoji-mart-vue-fast": "^11.2.0",
     "emoji-regex": "^10.2.1",

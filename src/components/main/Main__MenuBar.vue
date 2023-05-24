@@ -2,6 +2,7 @@
 	<div class="sidebar-left">
 		<div class="main-chapter">
 			<HeaderMenu/>
+			<!-- <AppRangSlider /> -->
 			<div class="flex-col gap-4">
 				<AppCharCard mob_menu v-if="!screen_Max" @click="showMobParam()"/>
 				<section v-if="!pages.race_page">

@@ -23,7 +23,8 @@
 
 		<My-Selection-Box title="age" :select="MY_Age" :shown="race_page.shown.age" not_mob_header >
 			<div class="flex_options">
-				<MyRange v-model.number="MY.age" age />
+				<!-- <MyRange v-model.number="MY.age" age /> -->
+				<AppRangSlider v-model.number="MY.age" age/>
 				<MyRangeSize age />
 			</div>
 		</My-Selection-Box>
@@ -121,6 +122,7 @@ export default {
 .flex_options {
 	height: 100%;
 	display: flex;
+	justify-content: space-around;
 	justify-content: space-between;
 	align-items: flex-end;
 	gap: 8px;
