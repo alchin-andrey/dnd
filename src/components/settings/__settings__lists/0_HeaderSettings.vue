@@ -14,7 +14,8 @@
 	<!-- Level -->
 	<My-Selection-Box :shown="main_page.shown.lvl" not_mob_header>
 		<div class="flex_options">
-			<MyRange v-model.number="MY.level" lvl />
+			<!-- <MyRange v-model.number="MY.level" lvl /> -->
+			<AppRangSlider v-model.number="MY.level" lvl/>
 			<MyRangeSize lvl />
 		</div>
 	</My-Selection-Box>
