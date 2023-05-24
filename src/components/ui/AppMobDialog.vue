@@ -7,7 +7,13 @@
             <div class="jbm-300">{{ t_Title }}</div>
             <div class="int-400 column-link" :class="{'rare-text': rare || overflow_Item || sett_Counter}"><span>{{ t_Select }}</span></div>
             <section class="flex-row gap-4">
-              <div v-if="shown_Second_Btm" class="btm-round" :class="{'btm-white hov': mob_param_spell}" @click="showMobParamSpell()">
+              <div 
+              v-if="shown_Second_Btm" 
+              class="btm-round" 
+              :class="{
+                'btm-white hov': overflow_Btm,
+                }" 
+              @click="showMobParamSpell()">
                 <AppSvg class="svg-18 svg-main-f" :name="svg_Name" />
               </div>
               <div class="btm-round" @click="showHome()">
@@ -110,6 +116,11 @@ export default {
     gender_Name() {
 			let name = this.T(this.select);
 			return this.MY.gender.feel === "cisgender" ? name : `${name} *`;
+		},
+
+    overflow_Btm() {
+			return !this.mob_param_spell && !this.sett_Counter 
+            || this.mob_param_spell && this.sett_Counter;
 		},
 
     overflow_Item() {

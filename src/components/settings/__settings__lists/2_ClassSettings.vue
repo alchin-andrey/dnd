@@ -21,7 +21,7 @@
 			:shown="class_page.shown[item.id_link]"
 			mob_fixed
 		>
-			<ClassParamSett__Spells v-if="mob_param_spell && !screen_Max" :spells_setting="item" :shown="true"/>
+			<ClassParamSett__Spells v-if="mob_param_spell && !screen_Max" :spells_setting="item" :shown="true" class="pd-rl-16"/>
 			<ClassSett__Spells :spells_setting="item" v-else/>
 		</My-Selection-Box>
 

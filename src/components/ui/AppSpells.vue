@@ -231,6 +231,7 @@
         :class="{
           'lvl-dot': shown_Level_Dot(spell_obj),
           'lvl-dot-param': param,
+          'mob-set-btm btm-pos': !screen_Max && this.delete,
         }"
         class="flex_spell"
         @mouseover="hoverIn_Full()"
@@ -415,6 +416,7 @@ import ui_icon from "@/assets/catalog/icon/ui_icon";
 import { mapState, mapWritableState } from "pinia";
 import { useDicStore } from "@/stores/general/DicStore";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useSkillsStore } from "@/stores/modules/SkillsStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
@@ -490,6 +492,7 @@ export default {
   computed: {
     ...mapWritableState(useDicStore, ["select_lang"]),
     ...mapState(useMYStore, ["MY", "Mastery", "shown_Level_Dot", "MY_Class"]),
+    ...mapState(usePagesStore, ["screen_Max"]),
     // GETTERS
     ...mapState(useStatsStore, [
       "stats_Mod",
@@ -1670,5 +1673,11 @@ export default {
   width: 36px;
   height: 36px;
   fill: black;
+}
+
+.btm-pos {
+  min-width: 394px;
+	position: relative;
+	left: -16px;
 }
 </style>

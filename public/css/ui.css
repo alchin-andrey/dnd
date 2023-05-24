@@ -13,6 +13,17 @@
 
 .btm-round:hover { background: rgba(255, 255, 255, 0.1); }
 
+.mob-set-btm {
+	padding: 16px;
+	background: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(30px);
+	-webkit-backdrop-filter: blur(30px);
+	border-radius: 12px;
+	isolation: isolate;
+}
+
+.mob-set-btm:hover {background-color: rgba(255, 255, 255, 0.1);}
+
 .mob-header {
 	width: 100%;
 	height: 88px;

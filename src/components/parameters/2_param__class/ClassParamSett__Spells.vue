@@ -88,6 +88,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useChargesStore } from "@/stores/modules/ChargesStore";
 import { useSpellsStore } from "@/stores/modules/SpellsStore";
 
@@ -109,6 +110,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "level_Filter_Arr", "MY_Class"]),
+		...mapState(usePagesStore, ["screen_Max"]),
 		...mapState(useChargesStore, [
 			"charges_Class_Spell_Slots",
 			"charges_Class_Spell_Manna",

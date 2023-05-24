@@ -23,7 +23,6 @@
 
 		<My-Selection-Box title="age" :select="MY_Age" :shown="race_page.shown.age" not_mob_header >
 			<div class="flex_options">
-				<!-- <MyRange v-model.number="MY.age" age /> -->
 				<AppRangSlider v-model.number="MY.age" age/>
 				<MyRangeSize age />
 			</div>
@@ -31,7 +30,6 @@
 
 		<My-Selection-Box title="height" :select="MY_Height" :shown="race_page.shown.height" not_mob_header>
 			<div class="flex_options">
-				<!-- <MyRange v-model.number="MY.height" height /> -->
 				<AppRangSlider v-model.number="MY.height" height/>
 				<mySizeGrowth />
 			</div>
@@ -39,7 +37,6 @@
 
 		<My-Selection-Box title="weight" :select="MY_Weight" :shown="race_page.shown.weight" not_mob_header>
 			<div class="flex_options">
-				<!-- <MyRange v-model.number="MY.weight" weight /> -->
 				<AppRangSlider v-model.number="MY.weight" weight/>
 				<MyRangeSize weight />
 			</div>
