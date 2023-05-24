@@ -247,6 +247,7 @@ export default {
 		width: 100%;
 		overflow-y: scroll;
 		scrollbar-width: none;
+		scroll-behavior: smooth;
 	}
 
 	.main-class::-webkit-scrollbar {

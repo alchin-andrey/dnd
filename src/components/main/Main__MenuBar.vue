@@ -1,5 +1,5 @@
 <template>
-	<div class="sidebar-left">
+	<div class="sidebar-left" id="top">
 		<div class="main-chapter">
 			<HeaderMenu/>
 			<!-- <AppRangSlider /> -->
@@ -25,7 +25,7 @@
 				<AlignmentMenu v-if="pages.alignment_page" @click.stop />
 			</div>
 			<transition name="btm-fade" mode="out-in">
-				<my-button v-if="chang_Btm" :numb="btn_Numb" :title="btn_Name" @click="btnGo()" />
+				<my-button v-if="chang_Btm" :numb="btn_Numb" :title="btn_Name" @btmDo="btnGo()" />
 				<my-button-back v-else title="command_back" @click="showHome()" />
 			</transition>
 		</div>
@@ -48,7 +48,6 @@ export default {
 		RaceMenu,
 		ClassMenu,
 		AlignmentMenu,
-
 	},
 	computed: {
 		//STORES

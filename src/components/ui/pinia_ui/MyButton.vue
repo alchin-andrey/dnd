@@ -1,19 +1,20 @@
 <template>
-	<section class="pos-rel">
+	<a href="#top" class="pos-rel">
 		<div class="gradient"></div>
-		<div class="btm">
+		<div class="btm" @click="btnClick()">
 			<div class="numb jbm-300" v-if="numb">{{ numb }}</div>
 			<div class="title jbm-300">
 				<div>{{ t_Title }}</div>
 				<AppSvg class="svg-18 svg-main-f" name="arrow_down" />
 			</div>
 		</div>
-	</section>
+	</a>
 </template>
 
 <script>
 export default {
 	name: "MyButton",
+	emits: ["btmDo"],
 	props: {
 		numb: {
 			type: String,
@@ -30,10 +31,20 @@ export default {
 			return this.t(this.title);
 		},
 	},
+
+	methods: {
+		btnClick() {
+			this.$emit("btmDo");
+		},
+	},
 };
 </script>
 
 <style scoped>
+a {
+	display: block;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 .btm {
 	/* width: 100vh; */
   display: grid;
