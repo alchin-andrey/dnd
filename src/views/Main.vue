@@ -190,7 +190,7 @@ export default {
 					// windowWidth: 1044,
 					width: 2088,
 					// height: 1223,
-					imageTimeout: 30000,
+					// imageTimeout: 30000,
 					letterRendering: true,
 					useCORS: true,
 				},
