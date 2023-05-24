@@ -241,6 +241,7 @@ export default {
 }
 
 .dialog--mob-pd {
+  padding-bottom: 0;
   padding-right: 0;
   padding-left: 0;
 }
