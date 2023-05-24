@@ -1,6 +1,6 @@
 <template>
-	<div class="sidebar-left" id="top">
-		<div class="main-chapter">
+	<div class="sidebar-left" v-vpshow="pages.class_page" >
+		<div class="main-chapter" v-vpshow="pages.alignment_page">
 			<HeaderMenu/>
 			<!-- <AppRangSlider /> -->
 			<div class="flex-col gap-4">

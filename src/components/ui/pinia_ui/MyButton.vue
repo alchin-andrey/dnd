@@ -1,5 +1,5 @@
 <template>
-	<a href="#top" class="pos-rel">
+	<div class="pos-rel">
 		<div class="gradient"></div>
 		<div class="btm" @click="btnClick()">
 			<div class="numb jbm-300" v-if="numb">{{ numb }}</div>
@@ -8,7 +8,7 @@
 				<AppSvg class="svg-18 svg-main-f" name="arrow_down" />
 			</div>
 		</div>
-	</a>
+	</div>
 </template>
 
 <script>
@@ -41,12 +41,7 @@ export default {
 </script>
 
 <style scoped>
-a {
-	display: block;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
 .btm {
-	/* width: 100vh; */
   display: grid;
   gap: 18px;
 	background: #0047ff;
