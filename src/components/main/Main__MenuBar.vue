@@ -1,33 +1,37 @@
 <template>
-	<div class="sidebar-left" v-vpshow="pages.class_page" >
-		<div class="main-chapter" v-vpshow="pages.alignment_page">
-			<HeaderMenu/>
-			<!-- <AppRangSlider /> -->
-			<div class="flex-col gap-4">
-				<AppCharCard mob_menu v-if="!screen_Max" @click="showMobParam()"/>
-				<section v-if="!pages.race_page">
-					<div class="back-page-grup">
-						<AppBackPage :text_arr="arr_Name_Race_Page" @click="goPage('race_page')" />
-						<AppBackPage v-if="!pages.class_page" :text_arr="arr_Name_Class_Page" @click="goPage('class_page')" />
+	<div v-vpshow="pages.race_page">
+		<div v-vpshow="pages.class_page">
+			<div class="sidebar-left" v-vpshow="pages.alignment_page">
+				<div class="main-chapter">
+					<HeaderMenu/>
+					<!-- <AppRangSlider /> -->
+					<div class="flex-col gap-4">
+						<AppCharCard mob_menu v-if="!screen_Max" @click="showMobParam()"/>
+						<section v-if="!pages.race_page">
+							<div class="back-page-grup">
+								<AppBackPage :text_arr="arr_Name_Race_Page" @click="goPage('race_page')" />
+								<AppBackPage v-if="!pages.class_page" :text_arr="arr_Name_Class_Page" @click="goPage('class_page')" />
+							</div>
+							<div class="delimiter mr-t-22" v-if="screen_Max" />
+						</section>
 					</div>
-					<div class="delimiter mr-t-22" v-if="screen_Max" />
-				</section>
+					<AppSliderName v-if="pages.race_page" numb="01" name="race" />
+					<AppSliderName v-if="pages.class_page" numb="02" name="class" />
+					<AppName v-if="pages.alignment_page" numb="03" title="name" v-model="MY.name" />
+					<div class="delimiter" v-if="screen_Max" />
+				</div>
+				<div class="main-menu-wrap" @click="showHome()">
+					<div class="main-chapter-menu">
+						<RaceMenu v-if="pages.race_page" @click.stop />
+						<ClassMenu v-if="pages.class_page" @click.stop />
+						<AlignmentMenu v-if="pages.alignment_page" @click.stop />
+					</div>
+					<transition name="btm-fade" mode="out-in">
+						<my-button v-if="chang_Btm" :numb="btn_Numb" :title="btn_Name" @btmDo="btnGo()" />
+						<my-button-back v-else title="command_back" @click="showHome()" />
+					</transition>
+				</div>
 			</div>
-			<AppSliderName v-if="pages.race_page" numb="01" name="race" />
-			<AppSliderName v-if="pages.class_page" numb="02" name="class" />
-			<AppName v-if="pages.alignment_page" numb="03" title="name" v-model="MY.name" />
-			<div class="delimiter" v-if="screen_Max" />
-		</div>
-		<div class="main-menu-wrap" @click="showHome()">
-			<div class="main-chapter-menu">
-				<RaceMenu v-if="pages.race_page" @click.stop />
-				<ClassMenu v-if="pages.class_page" @click.stop />
-				<AlignmentMenu v-if="pages.alignment_page" @click.stop />
-			</div>
-			<transition name="btm-fade" mode="out-in">
-				<my-button v-if="chang_Btm" :numb="btn_Numb" :title="btn_Name" @btmDo="btnGo()" />
-				<my-button-back v-else title="command_back" @click="showHome()" />
-			</transition>
 		</div>
 	</div>
 </template>
