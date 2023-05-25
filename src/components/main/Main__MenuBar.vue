@@ -1,7 +1,7 @@
 <template>
-	<div v-vpshow="pages.race_page">
-		<div v-vpshow="pages.class_page">
-			<div class="sidebar-left" v-vpshow="pages.alignment_page">
+	<div class="h-100" v-vpshow="pages.race_page">
+		<div class="h-100" v-vpshow="pages.class_page">
+			<div class="sidebar-left h-100" v-vpshow="pages.alignment_page">
 				<div class="main-chapter">
 					<HeaderMenu/>
 					<!-- <AppRangSlider /> -->
