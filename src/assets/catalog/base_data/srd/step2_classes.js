@@ -776,12 +776,22 @@ export default {
         position: 7,
       },
       {
+        level: 6,
+        type: "feats",
+        position: 7,
+      },
+      {
         level: 8,
         type: "feats",
         position: 7,
       },
       {
         level: 12,
+        type: "feats",
+        position: 7,
+      },
+      {
+        level: 14,
         type: "feats",
         position: 7,
       },
