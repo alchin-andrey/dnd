@@ -1114,7 +1114,7 @@ export default {
 
       height: {
         min: 150,
-        max: 180,
+        max: 210,
       },
 
       size:"size_medium",
@@ -1619,7 +1619,7 @@ export default {
 
       height: {
         min: 150,
-        max: 180,
+        max: 210,
       },
 
       size:"size_medium",
@@ -2205,7 +2205,7 @@ export default {
 
       height: {
         min: 150,
-        max: 180,
+        max: 210,
       },
 
       size:"size_medium",
@@ -2423,7 +2423,7 @@ export default {
 
       height: {
         min: 150,
-        max: 180,
+        max: 210,
       },
 
       size:"size_medium",
