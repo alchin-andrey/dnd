@@ -21,7 +21,7 @@ export default {
   },
 
   sanech: {
-    id: 2,
+    id: 3,
     name: "sanech",
     details: "sanech_details",
     city: ["kyiv"],
