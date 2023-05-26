@@ -6096,6 +6096,10 @@ export default {
   oleksandr_frankivsky_details: masters.oleksandr_frankivsky_details,
   oleksandr_frankivsky_contact: masters.oleksandr_frankivsky_contact,
 
+  sanech: masters.sanech,
+  sanech_details: masters.sanech_details,
+  sanech_contact: masters.sanech_contact,
+
   lobby_master_button: "Я теж Майстер, додайте мою анкету",
 
   how_it_goes: 'Як проходить гра',

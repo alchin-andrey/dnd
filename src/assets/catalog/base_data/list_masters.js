@@ -18,6 +18,16 @@ export default {
     format: [],
     telegram: "oleksandr_frankivsky_contact",
     link: "https://t.me/Lagoni",
+  },
+
+  sanech: {
+    id: 2,
+    name: "sanech",
+    details: "sanech_details",
+    city: ["kyiv"],
+    format: [],
+    telegram: "sanech_contact",
+    link: "https://t.me/SanechSanech",
   }
 
 };
