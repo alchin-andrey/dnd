@@ -1,14 +1,14 @@
 <template>
 	<!-- <AppCardWrapp :active_card="!alignment_page.my_image" @click="getPhotoStatus(false)"> -->
-	<AppCardWrapp :active_card="!MY.custom_photo" passive>
+	<AppCardWrapp :active_card="!active_Custom_Photo" passive>
 		<div class="int-700">{{ T('standard') }}</div>
 	</AppCardWrapp>
 	<!-- <AppCardWrapp gap="26" :active_card="alignment_page.my_image" @click="getPhotoStatus(true)" passive> -->
-	<AppCardWrapp gap="26" :active_card="MY.custom_photo" passive>
+	<AppCardWrapp gap="26" :active_card="active_Custom_Photo" passive>
 		
 		<section class="input_box" :style="stule_Img_Obj">
 			<label for="">
-				<input type="file" id="myFile" size="50" @change="onChange($event)">
+				<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 			</label>
 		</section>
 
@@ -32,6 +32,7 @@ import LangCard from "@/components/settings/0_settings__header/LangCard.vue";
 import { mapState } from "pinia";
 // import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+import { alarm } from "@/assets/catalog/texts/ua/spells";
 export default {
 	name: "AlignmentSett__Photo",
 	components: { LangCard, },
@@ -50,6 +51,10 @@ export default {
 				'background-size': 'contain',
 			}
 			else return {'background-image': this.upload};
+		},
+
+		active_Custom_Photo() {
+			return Boolean(this.MY.custom_photo)
 		}
 	},
 
@@ -59,18 +64,24 @@ export default {
 		// },
 
 		onChange(event) {
-			let reader = new FileReader();
-			// let name = event.target.files[0].name;
-			reader.addEventListener("load", (el) => {
-				if (el.srcElement.result) {
-					this.MY.custom_photo = el.srcElement.result
-				}
-			});
-			reader.readAsDataURL(event.target.files[0]);
+			const inc = event.target.files[0].type.includes("image")
+			// console.log('event.target.files[0]:', event.target.files[0].type)
+			if (inc) {
+				let reader = new FileReader();
+				// let name = event.target.files[0].name;
+				reader.addEventListener("load", (el) => {
+					console.log('el:', el)
+					if (el.target.result) {
+						this.MY.custom_photo = el.target.result
+					}
+				});
+				reader.readAsDataURL(event.target.files[0]);
+			}
 		},
 
 		delPhoto() {
 			this.MY.custom_photo = null;
+			document.getElementById('myFile').value = '';
 		}
 	},
 };
