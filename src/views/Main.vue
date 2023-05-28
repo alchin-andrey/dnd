@@ -26,7 +26,7 @@
 		<!-- Character -->
 		<!-- sidebar_right -->
 
-		<Main__ParamBar/>
+		<Main__ParamBar v-show="!PRINT_BLANK"/>
 	</div>
 
 	<!-- alse -->
@@ -69,6 +69,7 @@ export default {
 	data() {
 		return {
 			PRINT_BLANK: false,
+			// PRINT_BLANK: true,
 			progress_load: 0,
 			loading_pdf: false,
 		};

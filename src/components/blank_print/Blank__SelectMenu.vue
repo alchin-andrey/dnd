@@ -60,6 +60,7 @@
 
       <AppPrintMenu__Chapter title="alignment" :chapter="MY.alignment" />
       <AppPrintMenu__Arr :menu="сustomm_Main_Settings_Alignment_Arr" />
+			<AppPrintMenu__Chapter title="photo" :chapter="photo_Select" />
 
 		</div>
 	</section>
@@ -93,7 +94,7 @@ export default {
 			"hair_color_Char_Body",
 		]),
     ...mapState(useStatsStore, [ "stats_Base_Settings_Full_T"]),
-    ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr"]),
+    ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr", "photo_Select"]),
 
 		link_Description() {
 			return this.t("link_description");
