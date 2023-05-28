@@ -12,6 +12,11 @@
 		>
 			<AlignmentSett__Custom :custom="item"/>
 		</My-Selection-Box>
+
+
+		<My-Selection-Box :shown="alignment_page.shown.photo" title="photo" :select="photo_Select">
+			<AlignmentSett__Photo />
+		</My-Selection-Box>
 </template>
 
 <script>
@@ -28,7 +33,7 @@ export default {
 		// STORE
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["alignment_page"]),
-    ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr"]),
+    ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr", "photo_Select"]),
 	},
   methods: {
   }

@@ -36,6 +36,8 @@ export default {
   link_main: '<path fill-rule="evenodd" clip-rule="evenodd" d="M9 11.2929L11.2929 8.99999L9 6.70709L9.70711 5.99999L12 8.29289L12.7071 8.99999L12 9.7071L9.70711 12L9 11.2929Z" /><rect x="6" y="9.5" width="1" height="6" transform="rotate(-90 6 9.5)"/>',
 
   edit: '<path fill-rule="evenodd" clip-rule="evenodd" d="M6.52595 9.9481L11.4741 5L13 6.52595L8.0519 11.4741L6.52595 13L5 11.4741L6.52595 9.9481ZM9 13L10 12H13V13H9Z"/>',
+  
+  upload: '<path d="M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z"/><path d="M1.11882 0H34.8151V3.29065H1.11882V0Z"/>',
 
 
 

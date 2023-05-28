@@ -55,6 +55,11 @@ export const useAlignmentStore = defineStore({
       return name?.select_list[0];
     },
 
+    photo_Select() {
+      const MYStore = useMYStore();
+			return MYStore.MY.custom_photo ? "your_image" : "standard";
+		}
+
 	},
 
 	actions: {

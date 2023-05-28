@@ -10,7 +10,7 @@
   />
   
   <svg
-    v-else
+  v-else-if="!img_Char && !MY.custom_photo"
     :fill="placeholder_Color_Hex"
     :height="calc_Img"
     viewBox="0 0 197 400"
@@ -55,7 +55,7 @@ export default {
       "MY_Ethnos",
       "MY_Class",
     ]),
-    ...mapState(usePagesStore, ["race_page", "screen_Max"]),
+    ...mapState(usePagesStore, ["race_page", "screen_Max", "alignment_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
     ...mapState(useGenderStore, ["sex_Char_Body"]),
 
@@ -94,6 +94,14 @@ export default {
     },
 
     img_Char() {
+      // if(this.alignment_page.my_image && this.MY.custom_photo) {
+      //   if (this.body_part == "skin") return this.MY.custom_photo;
+      //   else return null;
+      // }
+      if(this.MY.custom_photo) {
+        if (this.body_part == "skin") return this.MY.custom_photo;
+        else return null;
+      }
       let race = this.MY_Race.name;
       let ethnos = this.ethnos_Char;
       let img;

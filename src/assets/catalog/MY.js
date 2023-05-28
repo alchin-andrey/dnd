@@ -41,4 +41,6 @@ export default {
 	},
 
   stats_base_save: {},
+
+	custom_photo: null,
 };

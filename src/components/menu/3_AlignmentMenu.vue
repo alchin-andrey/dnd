@@ -10,6 +10,15 @@
 			/>
       <AppSelectionArr :menu="сustomm_Main_Settings_Alignment_Arr"/>
 		</div>
+
+		<section class="selection_menu">
+			<AppSelection
+				@click="showSettings__Alignment('photo')"
+				:active="alignment_page.shown.photo"
+				title="photo"
+				:type="photo_Select"
+			/>
+		</section>
     
 	</div>
 </template>
@@ -26,7 +35,7 @@ export default {
     // STORE
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["alignment_page"]),
-		...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr"]),
+		...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr", "photo_Select"]),
 	},
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Alignment"]),
@@ -41,10 +50,6 @@ export default {
 	flex-direction: column;
 	gap: 34px;
 }
-
-/* .selection_menu_wrap::-webkit-scrollbar {
-	width: 0;
-} */
 
 .selection_menu {
 	display: flex;

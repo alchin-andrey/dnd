@@ -4,7 +4,6 @@
 			<div class="sidebar-left h-100" v-vpshow="pages.alignment_page">
 				<div class="main-chapter">
 					<HeaderMenu/>
-					<!-- <AppRangSlider /> -->
 					<div class="flex-col gap-4">
 						<AppCharCard mob_menu v-if="!screen_Max" @click="showMobParam()"/>
 						<section v-if="!pages.race_page">

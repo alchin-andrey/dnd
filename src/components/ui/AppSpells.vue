@@ -104,12 +104,13 @@
 
             <div class="manna_bubble_print jbm-500-40" v-if="print_Plus">
               <div class="print_icon">
-                <svg
+                <AppSvg class="print-svg" name="plus"/>
+                <!-- <svg
                   class="print-svg"
                   viewBox="0 0 18 18"
                   xmlns="http://www.w3.org/2000/svg"
                   v-html="ui_icon.plus"
-                ></svg>
+                ></svg> -->
               </div>
             </div>
           </div>
