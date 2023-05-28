@@ -1,5 +1,5 @@
 <template>
-  <Teleport to="body">
+  <!-- <Teleport to="body"> -->
   <Transition :duration="{ enter: 700, leave: 700 }" name="nested">
     <div v-if="shown" class="dialog" :class="{'dialog--fixed': mob_fixed}" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
@@ -36,7 +36,7 @@
         </div>
       </div>
   </Transition>
-</Teleport>
+<!-- </Teleport> -->
 </template>
 
 <script>
