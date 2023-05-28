@@ -28,14 +28,11 @@
 </template>
 
 <script>
-import LangCard from "@/components/settings/0_settings__header/LangCard.vue";
 import { mapState } from "pinia";
 // import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
-import { alarm } from "@/assets/catalog/texts/ua/spells";
 export default {
 	name: "AlignmentSett__Photo",
-	components: { LangCard, },
 	data() {
 		return {
 			upload: `url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E")`,
