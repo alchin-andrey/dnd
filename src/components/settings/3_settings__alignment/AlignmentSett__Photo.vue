@@ -67,7 +67,6 @@ export default {
 				let reader = new FileReader();
 				// let name = event.target.files[0].name;
 				reader.addEventListener("load", (el) => {
-					console.log('el:', el)
 					if (el.target.result) {
 						this.MY.custom_photo = el.target.result
 					}
