@@ -1,6 +1,6 @@
 <template>
   <!-- <Teleport to="body"> -->
-  <Transition :duration="{ enter: 700, leave: 700 }" name="nested">
+  <Transition :duration="{ enter: 500, leave: 500 }" name="nested">
     <div v-if="shown" class="dialog" :class="{'dialog--fixed': mob_fixed}" @click.stop>
         <div class="mob-main-header" :class="{'mob-full-header': !not_mob_header}">
           <div class="btm-wrapp">
@@ -281,11 +281,11 @@ export default {
 
 .nested-enter-active,
 .nested-leave-active {
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .nested-leave-active {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 
 .nested-enter-from,
@@ -295,11 +295,11 @@ export default {
 
 .nested-enter-active .dialog__wrapp,
 .nested-leave-active .dialog__wrapp {
-  transition: all 0.5s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 .nested-enter-active .dialog__wrapp {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 
 .nested-enter-from .dialog__wrapp,
