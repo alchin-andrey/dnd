@@ -6,7 +6,7 @@
 	<!-- <AppCardWrapp gap="26" :active_card="alignment_page.my_image" @click="getPhotoStatus(true)" passive> -->
 	<AppCardWrapp gap="26" :active_card="active_Custom_Photo" passive>
 		
-		<section class="input_box" :style="stule_Img_Obj">
+		<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
 			<label for="">
 				<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 			</label>
@@ -45,11 +45,16 @@ export default {
 		// ...mapState(usePagesStore, ["alignment_page"]),
 
 		stule_Img_Obj() {
-			if (this.MY.custom_photo) return {
+			if (this.active_Custom_Photo) return {
 				'background-image': `url(${this.MY.custom_photo})`,
 				'background-size': 'contain',
 			}
 			else return {'background-image': this.upload};
+		},
+
+		stule_Hov() {
+			if (this.active_Custom_Photo) return 'hov-img';
+			else return 'hov'
 		},
 
 		link_Pinterest() {
@@ -95,7 +100,7 @@ export default {
 </script>
 
 <style scoped>
-.input_box {
+.input-box {
 	position: relative;
 	width: 100%;
 	height: 480px;
@@ -106,7 +111,7 @@ export default {
 	cursor: pointer;
 }
 
-.input_box input {
+.input-box input {
 	width: 100%;
 	height: 100%;
 	opacity: 0;
@@ -115,7 +120,7 @@ export default {
 	cursor: pointer;
 }
 
-.input_box label {
+.input-box label {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -131,13 +136,17 @@ export default {
 	overflow: hidden;
 	transition-property: background-image, background-color;
 	transition-duration: .5s;
+	border-radius: 6px;
 }
-.input_box label:hover{
+.hov label:hover{
+	background-color: rgba(255, 255, 255, 0.06);
+  }
+
+.hov-img label:hover{
   background-image: url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E");
 	background-color: rgba(0, 0, 0, 0.65);
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
-	border-radius: 6px;
   }
 
 	.svg-pos {
