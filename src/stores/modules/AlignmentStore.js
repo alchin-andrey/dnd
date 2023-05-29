@@ -2,6 +2,7 @@
 // import { mapState } from "pinia";
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 
 
@@ -59,8 +60,8 @@ export const useAlignmentStore = defineStore({
     },
 
     photo_Select() {
-      const MYStore = useMYStore();
-			return MYStore.MY.custom_photo ? "your_image" : "standard";
+      const PagesStore = usePagesStore();
+			return PagesStore.alignment_page.user_image ? "your_image" : "standard";
 		},
 
     photo_Link_Hero() {

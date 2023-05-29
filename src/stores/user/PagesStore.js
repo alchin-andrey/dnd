@@ -56,7 +56,7 @@ export const usePagesStore = defineStore({
 
 		alignment_page: {
 			shown: {},
-      // my_image: false,
+      user_image: false,
 		},
 
     // master_page: {}
@@ -66,7 +66,7 @@ export const usePagesStore = defineStore({
     paths: [
       'site_settings', 
       'pages', 
-      // 'alignment_page.my_image'
+      'alignment_page.user_image'
     ],
   },
 

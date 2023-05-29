@@ -98,7 +98,7 @@ export default {
       //   if (this.body_part == "skin") return this.MY.custom_photo;
       //   else return null;
       // }
-      if(this.MY.custom_photo) {
+      if(this.alignment_page.user_image && this.MY.custom_photo && !this.ethnos_name) {
         if (this.body_part == "skin") return this.MY.custom_photo;
         else return null;
       }

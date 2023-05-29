@@ -285,6 +285,7 @@ export default {
 	transform: translate(-50%, 0%);
 	transition-duration: 0.8s;
 	transition-timing-function: ease-in-out;
+	border-radius: 24px;
 }
 
 .character>svg {
