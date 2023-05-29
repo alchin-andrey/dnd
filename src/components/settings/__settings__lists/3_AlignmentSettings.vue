@@ -14,7 +14,7 @@
 		</My-Selection-Box>
 
 
-		<My-Selection-Box :shown="alignment_page.shown.photo" title="photo" :select="photo_Select">
+		<My-Selection-Box :shown="alignment_page.shown.photo" title="photo" :select="photo_Select" mob_fixed>
 			<AlignmentSett__Photo />
 		</My-Selection-Box>
 </template>
