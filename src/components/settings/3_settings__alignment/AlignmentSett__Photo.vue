@@ -11,6 +11,7 @@
 				<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 			</label>
 		</section>
+		<!-- <input class="int-400" type="url" name="url" id="url" placeholder="Введіть URL" pattern="https://.*" size="30" required @change="onChangeUrl($event)"> -->
 
 		<section>
 			<div class="int-700 pos-rel">{{ T('your_image') }}
@@ -20,7 +21,7 @@
 		</section>
 
 		<section class="int-400 flex-row gap-32">
-			<a target="_blank" href="https://www.heroforge.com/">{{ T('edit_photo') }}</a>
+			<a target="_blank" :href="photo_Link_Hero">{{ T('edit_photo') }}</a>
 			<a target="_blank" :href="link_Pinterest">{{ T('choose_photo') }}</a>
 		</section>
 
@@ -32,6 +33,7 @@ import { mapState } from "pinia";
 // import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
+import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
 export default {
 	name: "AlignmentSett__Photo",
 	data() {
@@ -42,7 +44,7 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
 		...mapState(useGenderStore, ["sex_Char_Body"]),
-		// ...mapState(usePagesStore, ["alignment_page"]),
+		...mapState(useAlignmentStore, ["photo_Link_Hero"]),
 
 		stule_Img_Obj() {
 			if (this.active_Custom_Photo) return {
@@ -77,6 +79,23 @@ export default {
 		// },
 
 		onChange(event) {
+			// console.log('event.target.files[0]:', event.target.files[0])
+			const inc = event.target.files[0].type.includes("image")
+			// console.log('event.target.files[0]:', event.target.files[0].type)
+			if (inc) {
+				let reader = new FileReader();
+				// let name = event.target.files[0].name;
+				reader.addEventListener("load", (el) => {
+					if (el.target.result) {
+						this.MY.custom_photo = el.target.result
+					}
+				});
+				reader.readAsDataURL(event.target.files[0]);
+			}
+		},
+
+		onChangeUrl(event) {
+			console.log('event:', event.target.value)
 			const inc = event.target.files[0].type.includes("image")
 			// console.log('event.target.files[0]:', event.target.files[0].type)
 			if (inc) {
@@ -156,5 +175,13 @@ export default {
 	-webkit-transform: translate(0%, -50%);
 	-ms-transform: translate(0%, -50%);
 	transform: translate(0%, -50%);
+}
+
+input[type=url] {
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.06);
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 4px;
 }
 </style>
