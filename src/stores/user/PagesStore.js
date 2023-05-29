@@ -56,7 +56,7 @@ export const usePagesStore = defineStore({
 
 		alignment_page: {
 			shown: {},
-      // my_image: false,
+      user_image: false,
 		},
 
     // master_page: {}
@@ -66,15 +66,15 @@ export const usePagesStore = defineStore({
     paths: [
       'site_settings', 
       'pages', 
-      // 'alignment_page.my_image'
+      'alignment_page.user_image'
     ],
   },
 
   getters: {
     screen_Max: (stor) => stor.screen_size >= 1280,
-    screen_1280: (stor) => stor.screen_size <= 1280,
-    screen_955: (stor) => stor.screen_size <= 955,
-    screen_480: (stor) => stor.screen_size <= 480,
+    // screen_1280: (stor) => stor.screen_size <= 1280,
+    // screen_955: (stor) => stor.screen_size <= 955,
+    // screen_480: (stor) => stor.screen_size <= 480,
     screen_Menu_Num: (stor) => stor.screen_size >= 434 ? 434 : stor.screen_size,
 
     page_Open() {

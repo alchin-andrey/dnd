@@ -69,12 +69,7 @@ export default {
 	},
 
 	computed: {
-		...mapState(usePagesStore, [
-			"screen_Max", 
-			"screen_1280", 
-			"screen_955", 
-			"screen_480",
-		]),
+		...mapState(usePagesStore, ["screen_Max"]),
 
 		// styl_Wrapp() {
 		// 	if(this.screen_Max) return 'int-700-20 pd-20-28';

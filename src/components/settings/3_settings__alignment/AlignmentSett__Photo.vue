@@ -1,12 +1,16 @@
 <template>
-	<!-- <AppCardWrapp :active_card="!alignment_page.my_image" @click="getPhotoStatus(false)"> -->
-	<AppCardWrapp :active_card="!active_Custom_Photo" passive>
+	<!-- <AppCardWrapp :active_card="!alignment_page.user_image" @click="getPhotoStatus(false)"> -->
+	<AppCardWrapp :active_card="!alignment_page.user_image" @click="getPhotoStatus(false)">
 		<div class="int-700">{{ T('standard') }}</div>
 	</AppCardWrapp>
-	<!-- <AppCardWrapp gap="26" :active_card="alignment_page.my_image" @click="getPhotoStatus(true)" passive> -->
-	<AppCardWrapp gap="26" :active_card="active_Custom_Photo" passive>
-		
-		<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
+	<!-- <AppCardWrapp gap="26" :active_card="alignment_page.user_image" @click="getPhotoStatus(true)" passive> -->
+	<AppCardWrapp 
+	gap="26" 
+	:active_card="alignment_page.user_image" 
+	:passive="!active_Custom_Photo"
+	@click="getPhotoStatus(active_Custom_Photo)"
+	>
+		<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj" @click.stop>
 			<label for="">
 				<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 			</label>
@@ -21,8 +25,8 @@
 		</section>
 
 		<section class="int-400 flex-row gap-32">
-			<a target="_blank" :href="photo_Link_Hero">{{ T('edit_photo') }}</a>
-			<a target="_blank" :href="photo_Link_Pinterest">{{ T('choose_photo') }}</a>
+			<a @click.stop target="_blank" :href="photo_Link_Hero">{{ T('edit_photo') }}</a>
+			<a @click.stop target="_blank" :href="photo_Link_Pinterest">{{ T('choose_photo') }}</a>
 		</section>
 
 	</AppCardWrapp>
@@ -30,7 +34,7 @@
 
 <script>
 import { mapState } from "pinia";
-// import { usePagesStore } from "@/stores/user/PagesStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
 export default {
@@ -42,6 +46,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
+		...mapState(usePagesStore, ["alignment_page"]),
 		...mapState(useAlignmentStore, ["photo_Link_Hero", "photo_Link_Pinterest"]),
 
 		stule_Img_Obj() {
@@ -57,51 +62,41 @@ export default {
 			else return 'hov'
 		},
 
+		active_Curd() {
+			return Boolean(this.MY.custom_photo) && this.alignment_page.user_image
+		},
+
 		active_Custom_Photo() {
 			return Boolean(this.MY.custom_photo)
 		}
 	},
 
 	methods: {
-		// getPhotoStatus(bool) {
-		// 	this.alignment_page.my_image = bool;
-		// },
+		getPhotoStatus(bool) {
+			this.alignment_page.user_image = bool;
+		},
 
 		onChange(event) {
-			console.log('event.target.files[0]:', event.target.files[0])
 			const inc = event.target.files[0].type.includes("image")
-			// console.log('event.target.files[0]:', event.target.files[0].type)
 			if (inc) {
 				let reader = new FileReader();
-				// let name = event.target.files[0].name;
 				reader.addEventListener("load", (el) => {
 					if (el.target.result) {
-						this.MY.custom_photo = el.target.result
+						this.MY.custom_photo = el.target.result;
+						this.alignment_page.user_image = true;
 					}
 				});
 				reader.readAsDataURL(event.target.files[0]);
 			}
 		},
 
-		onChangeUrl(event) {
-			console.log('event:', event.target.value)
-			this.MY.custom_photo = event.target.value
-			const inc = event.target.files[0].type.includes("image")
-			// console.log('event.target.files[0]:', event.target.files[0].type)
-			if (inc) {
-				let reader = new FileReader();
-				// let name = event.target.files[0].name;
-				reader.addEventListener("load", (el) => {
-					if (el.target.result) {
-						this.MY.custom_photo = el.target.result
-					}
-				});
-				reader.readAsDataURL(event.target.files[0]);
-			}
-		},
+		// onChangeUrl(event) {
+		// 	this.MY.custom_photo = event.target.value
+		// },
 
 		delPhoto() {
 			this.MY.custom_photo = null;
+			this.alignment_page.user_image = false;
 			document.getElementById('myFile').value = '';
 		}
 	},
@@ -174,11 +169,11 @@ export default {
 	transform: translate(0%, -50%);
 }
 
-input[type=url] {
+/* input[type=url] {
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0.06);
 	border-radius: 4px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 	padding: 4px;
-}
+} */
 </style>

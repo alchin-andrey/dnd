@@ -1,5 +1,9 @@
 <template>
-  <section class="int-400 flex-col gap-15" v-if="show_Disclaimer || text">
+  <section 
+  class="int-400 flex-col gap-15"
+  :class="{'pd-rl-16': !screen_Max}"
+  v-if="show_Disclaimer || text"
+  >
     <div v-if="show_Disclaimer">
       <span class="white-04" v-html="t_Disclaimer_1" />
       <span class="pointer" @click="toggleSrd()" v-html="t_Disclaimer_2" />
@@ -10,8 +14,9 @@
 </template>
 
 <script>
-import { mapWritableState } from "pinia";
+import { mapState, mapWritableState } from "pinia";
 import { useMainStore } from "@/stores/general/MainStore";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppSrdDisclaimer",
   props: {
@@ -26,6 +31,7 @@ export default {
   },
 	computed: {
     ...mapWritableState(useMainStore, ["srd", "can_show_phb"]),
+    ...mapState(usePagesStore, ["screen_Max"]),
     t_Disclaimer_1: (stor) => stor.t("phb_disclaimer_1") + ' ',
     t_Disclaimer_2: (stor) => stor.t("phb_disclaimer_2") + ' ',
     t_Disclaimer_3: (stor) => stor.t("phb_disclaimer_3"),
