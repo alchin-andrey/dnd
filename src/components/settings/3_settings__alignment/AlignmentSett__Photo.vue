@@ -12,16 +12,16 @@
 			</label>
 		</section>
 
-		<section class="int-700">
-			<div class="pos-rel">{{ T('your_image') }}
+		<section>
+			<div class="int-700 pos-rel">{{ T('your_image') }}
 				<AppSvg v-if="MY.custom_photo" class="svg-18 svg-pos cur-p" name="delete" @click="delPhoto()"/>
 			</div>
-			<div class="white-04 mr-t-4">{{ T('your_image_details') }}</div>
+			<div class="int-400 white-04 mr-t-4">{{ T('your_image_details') }}</div>
 		</section>
 
-		<section class="flex-row gap-32">
+		<section class="int-400 flex-row gap-32">
 			<a target="_blank" href="https://www.heroforge.com/">{{ T('edit_photo') }}</a>
-			<a target="_blank" href="https://ru.pinterest.com/">{{ T('choose_photo') }}</a>
+			<a target="_blank" :href="link_Pinterest">{{ T('choose_photo') }}</a>
 		</section>
 
 	</AppCardWrapp>
@@ -31,6 +31,7 @@
 import { mapState } from "pinia";
 // import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 export default {
 	name: "AlignmentSett__Photo",
 	data() {
@@ -39,7 +40,8 @@ export default {
 		};
 	},
 	computed: {
-		...mapState(useMYStore, ["MY"]),
+		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
+		...mapState(useGenderStore, ["sex_Char_Body"]),
 		// ...mapState(usePagesStore, ["alignment_page"]),
 
 		stule_Img_Obj() {
@@ -48,6 +50,15 @@ export default {
 				'background-size': 'contain',
 			}
 			else return {'background-image': this.upload};
+		},
+
+		link_Pinterest() {
+			const main = 'https://ro.pinterest.com/search/pins/?q=dnd'
+			const race_name = this.MY_Race.name;
+			const class_name = this.MY_Class.name;
+			const sex = this.sex_Char_Body;
+			const link = `${main}%20${race_name}%20${sex}%20${class_name}`
+			return link;
 		},
 
 		active_Custom_Photo() {
