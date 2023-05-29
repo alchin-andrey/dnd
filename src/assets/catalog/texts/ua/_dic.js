@@ -6128,4 +6128,12 @@ export default {
   spell_aura_of_purity: spells.aura_of_purity,
   spell_aura_of_purity_details: spells.aura_of_purity_details,
   spell_aura_of_purity_expanded: spells.aura_of_purity_expanded,
+
+  photo: "світлина",
+  standard: "стандарт",
+  your_image: "Cвоє зображення",
+  your_image_details: "Підготуйте зображення вашого персонажа або створіть за допомогою сервісів нижче, і загрузіть його сюди з вашого пристрою.",
+  edit_photo: "Редагувати на Heroforge ↗",
+  choose_photo: "Підібрати на Pinterest ↗",
+  
 };
