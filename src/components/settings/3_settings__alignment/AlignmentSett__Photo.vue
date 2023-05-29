@@ -22,7 +22,7 @@
 
 		<section class="int-400 flex-row gap-32">
 			<a target="_blank" :href="photo_Link_Hero">{{ T('edit_photo') }}</a>
-			<a target="_blank" :href="link_Pinterest">{{ T('choose_photo') }}</a>
+			<a target="_blank" :href="photo_Link_Pinterest">{{ T('choose_photo') }}</a>
 		</section>
 
 	</AppCardWrapp>
@@ -32,7 +32,6 @@
 import { mapState } from "pinia";
 // import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
-import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
 export default {
 	name: "AlignmentSett__Photo",
@@ -43,8 +42,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
-		...mapState(useGenderStore, ["sex_Char_Body"]),
-		...mapState(useAlignmentStore, ["photo_Link_Hero"]),
+		...mapState(useAlignmentStore, ["photo_Link_Hero", "photo_Link_Pinterest"]),
 
 		stule_Img_Obj() {
 			if (this.active_Custom_Photo) return {
@@ -59,15 +57,6 @@ export default {
 			else return 'hov'
 		},
 
-		link_Pinterest() {
-			const main = 'https://ro.pinterest.com/search/pins/?q=dnd'
-			const race_name = this.MY_Race.name;
-			const class_name = this.MY_Class.name;
-			const sex = this.sex_Char_Body;
-			const link = `${main}%20${race_name}%20${sex}%20${class_name}`
-			return link;
-		},
-
 		active_Custom_Photo() {
 			return Boolean(this.MY.custom_photo)
 		}
@@ -79,7 +68,7 @@ export default {
 		// },
 
 		onChange(event) {
-			// console.log('event.target.files[0]:', event.target.files[0])
+			console.log('event.target.files[0]:', event.target.files[0])
 			const inc = event.target.files[0].type.includes("image")
 			// console.log('event.target.files[0]:', event.target.files[0].type)
 			if (inc) {
@@ -96,6 +85,7 @@ export default {
 
 		onChangeUrl(event) {
 			console.log('event:', event.target.value)
+			this.MY.custom_photo = event.target.value
 			const inc = event.target.files[0].type.includes("image")
 			// console.log('event.target.files[0]:', event.target.files[0].type)
 			if (inc) {
@@ -156,6 +146,13 @@ export default {
 	transition-property: background-image, background-color;
 	transition-duration: .5s;
 	border-radius: 6px;
+
+
+	/* position: fixed;
+	top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; */
 }
 .hov label:hover{
 	background-color: rgba(255, 255, 255, 0.06);

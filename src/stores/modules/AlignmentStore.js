@@ -72,7 +72,18 @@ export const useAlignmentStore = defineStore({
       const link_main = this.hero_links.none[race_name][sex];
       const link = this.hero_links[class_name]?.[race_name][sex];
 			return link ?? link_main;
-		}
+		},
+
+    photo_Link_Pinterest() {
+      const MYStore = useMYStore();
+      const GenderStore = useGenderStore();
+			const race_name = MYStore.MY_Race.name;
+			const class_name = MYStore.MY_Class.name;
+			const sex = GenderStore.sex_Char_Body;
+			const main = 'https://ro.pinterest.com/search/pins/?q=dnd'
+			const link = `${main}%20${race_name}%20${sex}%20${class_name}`
+			return link;
+		},
 
 	},
 
