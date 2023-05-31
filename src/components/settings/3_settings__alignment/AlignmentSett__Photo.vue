@@ -4,7 +4,7 @@
 	</AppCardWrapp>
 	<AppCardWrapp gap="26" :active_card="site_settings.photo_user"
 		:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)">
-		<main class="flex-col gap-16">
+		<main class="flex-col gap-8">
 			
 			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
 				<label for="">
@@ -264,9 +264,9 @@ input[type=url] {
 	width: 100%;
 	height: 48px;
 	background-color: rgba(255, 255, 255, 0.06);
-	border-radius: 12px;
+	border-radius: 8px;
 	/* border: 1px solid rgba(255, 255, 255, 0.1); */
-	padding: 8px;
+	padding: 16px;
 	color: #ffffff;
 }
 
