@@ -59,7 +59,6 @@ export default {
     }
   },
 
-
   computed: {
     ...mapState(useMYStore, [
       "MY", 
@@ -76,13 +75,12 @@ export default {
     },
 
     stule_Img_Obj() {
-      const rl = this.site_settings.photo_sett.pos_rl + '%';
-      const tb = this.site_settings.photo_sett.pos_tb + '%';
+      const pos = this.site_settings.photo_sett.position + '%';
 			return {
 				'background-image': `url(${this.MY.custom_photo})`,
 
         'background-size': 'cover',
-        'background-position': `${rl} ${tb}`,
+        'background-position': `${pos} ${pos}`,
 
         height: this.hight_Char,
         width: this.width_Custom_Char,
@@ -180,12 +178,9 @@ export default {
       const screen_print = `1825px`;
       const screen_mob = `470px`;
       let kof = this.alignment_page.ratio_photo;
-      console.log('kof:', kof)
-      console.log('size_cover:', this.site_settings.photo_sett.size_cover)
       if(!this.site_settings.photo_sett.size_cover) {
         kof = this.site_settings.photo_sett.ratio;
       };
-      console.log('kof:', kof)
       const sc_main_kof = `${screen_main} * ${kof}`
       const sc_print_kof = `${screen_print} * ${kof}`
       const sc_mob_kof = `${screen_mob} * ${kof}`

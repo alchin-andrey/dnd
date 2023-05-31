@@ -12,16 +12,31 @@
 			<label for="">
 				<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 			</label>
-			<template v-if="edit_visible">
-				<AppRangPhoto class="rang-rl" v-model.number="site_settings.photo_sett.pos_rl"/>
-				<AppRangPhoto class="rang-tb" v-model.number="site_settings.photo_sett.pos_tb" orientation="vertical"/>
+			<template v-if="size_Cover && MY.custom_photo">
+				<AppRangPhoto 
+				:class="[style_Rang_Photo]" 
+				v-if="pos_Rang_Photo" 
+				v-model.number="site_settings.photo_sett.position"
+				:orientation="pos_Rang_Photo"/>
 			</template>
 		</section>
 
 		<section class="flex-row gap-8" v-if="MY.custom_photo">
-			<AppBtmIcon class="size-btm" :icon="size_Icon" @click="getPosition()"/>
-			<AppBtmIcon class="size-btm" icon="edit" :passive="!size_Cover" @click="showEdit()"/>
-			<AppBtmIcon class="size-btm" icon="delete" @click="delPhoto()"/>
+			<AppBtmIcon 
+				class="size-btm" 
+				icon="arrow_slider_rl" 
+				@click="getPosition(true)"
+				:active_btm="site_settings.photo_sett.size_cover"
+				@click.stop
+			/>
+			<AppBtmIcon 
+				class="size-btm" 
+				icon="arrow_slider_tb" 
+				@click="getPosition(false)"
+				:active_btm="!site_settings.photo_sett.size_cover"
+				@click.stop
+			/>
+			<AppBtmIcon class="size-btm" icon="delete" @click="delPhoto()" @click.stop/>
 		</section>
 		<!-- <input class="int-400" type="url" name="url" id="url" placeholder="Введіть URL" pattern="https://.*" size="30" required @change="onChangeUrl($event)"> -->
 
@@ -57,32 +72,29 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
-		...mapState(usePagesStore, ["site_settings"]),
+		...mapState(usePagesStore, ["site_settings", "alignment_page"]),
 		...mapState(useAlignmentStore, ["photo_Link_Hero", "photo_Link_Pinterest"]),
 
 		stule_Img_Obj() {
 			if (this.active_Custom_Photo) {
-				const rl = this.site_settings.photo_sett.pos_rl + '%';
-				const tb = this.site_settings.photo_sett.pos_tb + '%';
+				const pos = this.site_settings.photo_sett.position + '%';
 				let size = 'cover';
 				if (!this.site_settings.photo_sett.size_cover) {
 					size = 'contain';
 				}
-				const rl_num = this.size_Cover ? rl : '50%';
-				const tb_num = this.size_Cover ? tb : '50%';
+				const pos_num = this.size_Cover ? pos : '50%';
 				return {
 					'background-image': `url(${this.MY.custom_photo})`,
 					'background-size': size,
-					// 'background-size': '135%',
-					'background-position': `${rl_num} ${tb_num}`,
+					'background-position': `${pos_num} ${pos_num}`,
 				}
 			}
 				return {'background-image': this.upload};
 		},
 
 		stule_Hov() {
-			if (this.edit_visible) return null;
-			if (this.active_Custom_Photo) return 'hov-img';
+			if (this.active_Custom_Photo) return null;
+			// if (this.active_Custom_Photo) return 'hov-img';
 			else return 'hov'
 		},
 
@@ -98,9 +110,18 @@ export default {
 			return this.site_settings.photo_sett.size_cover
 		},
 
-		size_Icon() {
-			if(this.size_Cover) return 'arrow_slider_rl';
-			else return 'arrow_slider_tb';
+		pos_Rang_Photo() {
+			const maim_rang = this.alignment_page.ratio_photo;
+			const photo_rang = this.site_settings.photo_sett.ratio;
+			if(photo_rang > maim_rang) return 'horizontal';
+			if(photo_rang < maim_rang) return 'vertical';
+		},
+
+		style_Rang_Photo() {
+			const maim_rang = this.alignment_page.ratio_photo;
+			const photo_rang = this.site_settings.photo_sett.ratio;
+			if(photo_rang > maim_rang) return 'rang-rl';
+			if(photo_rang < maim_rang) return 'rang-tb';
 		},
 	},
 
@@ -133,12 +154,16 @@ export default {
 		// 	this.MY.custom_photo = event.target.value
 		// },
 
-		getPosition() {
-			if(this.site_settings.photo_sett.size_cover) {
-				this.edit_visible = false;
-			} 
-			this.site_settings.photo_sett.size_cover = !this.site_settings.photo_sett.size_cover;
+		getPosition(bool) {
+			this.site_settings.photo_sett.size_cover = bool;
 		},
+
+		// getPosition() {
+		// 	if(this.site_settings.photo_sett.size_cover) {
+		// 		this.edit_visible = false;
+		// 	} 
+		// 	this.site_settings.photo_sett.size_cover = !this.site_settings.photo_sett.size_cover;
+		// },
 
 		showEdit() {
 			if(this.size_Cover) {
@@ -147,9 +172,6 @@ export default {
     },
 
 		delPhoto() {
-			this.site_settings.photo_sett.pos_rl = 50;
-			this.site_settings.photo_sett.pos_tb = 50;
-
 			this.site_settings.photo_sett.size_cover = true;
 			this.site_settings.photo_sett.position = 50;
 

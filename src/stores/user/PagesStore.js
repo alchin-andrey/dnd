@@ -16,9 +16,6 @@ export const usePagesStore = defineStore({
 
       photo_user: false,
       photo_sett: {
-        pos_rl: 50,
-        pos_tb: 50,
-
         size_cover: true,
         ratio: 1,
         position: 50,

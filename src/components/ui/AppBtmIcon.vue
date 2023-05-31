@@ -1,11 +1,12 @@
 <template>
 	<div 
-	class="btm-grey br-12 flex-row-c-jc"
+	class="card-main br-12 flex-row-c-jc"
 	:class="{
         'hov cur-p': !passive,
+				'btm-select': active_btm,
       }"
 	>
-		<AppSvg  :class="['svg-36', 'svg-main-f', style_Svg]" :name="icon"/>
+		<AppSvg  :class="['svg-18', 'svg-main-f', style_Svg]" :name="icon"/>
 	</div>
 </template>
 
@@ -17,6 +18,10 @@ export default {
 			type: String,
 			default: "delete",
 		},
+		active_btm: {
+      type: Boolean,
+      default: false,
+    },
 		passive: {
       type: Boolean,
       default: false,
