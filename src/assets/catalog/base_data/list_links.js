@@ -147,4 +147,102 @@ rogue: {
 
 },
 
+fighter: {
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D510990629/",
+    female:"https://www.heroforge.com/load_config%3D510990614/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D510990690/",
+    female:"https://www.heroforge.com/load_config%3D510990664/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D510990570/",
+    female:"https://www.heroforge.com/load_config%3D510990552/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D510990736/",
+    female:"https://www.heroforge.com/load_config%3D510990721/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D510990650/",
+    female:"https://www.heroforge.com/load_config%3D510990638/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D510990602/",
+    female:"https://www.heroforge.com/load_config%3D510990586/",
+  },
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D510990762/",
+    female:"https://www.heroforge.com/load_config%3D510990748/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D510990715/",
+    female:"https://www.heroforge.com/load_config%3D510990711/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D510983580/",
+    female:"https://www.heroforge.com/load_config%3D510983572/",
+  },
+
+},
+
+barbarian: {
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D511014355/",
+    female:"https://www.heroforge.com/load_config%3D511014345/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D511014417/",
+    female:"https://www.heroforge.com/load_config%3D511014403/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D511014290/",
+    female:"https://www.heroforge.com/load_config%3D511014270/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D511014478/",
+    female:"https://www.heroforge.com/load_config%3D511014468/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D511014385/",
+    female:"https://www.heroforge.com/load_config%3D511014369/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D511014327/",
+    female:"https://www.heroforge.com/load_config%3D511014303/",
+  },
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D511014506/",
+    female:"https://www.heroforge.com/load_config%3D511014491/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D511014454/",
+    female:"https://www.heroforge.com/load_config%3D511014437/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D511014255/",
+    female:"https://www.heroforge.com/load_config%3D511014245/",
+  },
+
+},
+
 };
