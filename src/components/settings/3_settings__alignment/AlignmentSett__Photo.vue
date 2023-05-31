@@ -26,10 +26,12 @@
 					@click.stop />
 				<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop />
 			</section>
-			<label class="photo-url" for="url">
-				<input v-if="!MY.custom_photo" type="url" name="url" id="url" class="int-700" :placeholder="T('enter_url')" pattern="https://.*" size="30"
+
+			<label v-if="!MY.custom_photo" class="photo-url" for="url">
+				<input ref="url_photo" type="url" name="url" id="url" class="int-700" :placeholder="T('enter_url')" pattern="https://.*" size="30"
 				required @change="onChangeUrl($event)">
 			</label>
+			
 		</main>
 
 		<section>
@@ -62,6 +64,15 @@ export default {
 			upload: `url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E")`,
 		};
 	},
+
+	// mounted() {
+	// 	document.addEventListener("paste", this.PastePhoto);
+	// },
+
+	// beforeUnmount() {
+	// 	document.removeEventListener("paste", this.PastePhoto);
+	// },
+
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
 		...mapState(usePagesStore, ["site_settings", "alignment_page"]),
@@ -146,7 +157,23 @@ export default {
 			}
 		},
 
+		PastePhoto(e) {
+			const el = this.$refs.url_photo.value
+			console.log('el:', el)
+			const image = new Image();
+			image.src = event.target.value;
+			image.addEventListener("paste", (e) => {
+				console.log('e:', e)
+				this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+				this.MY.custom_photo = event.target.value;
+				this.site_settings.photo_user = true;
+			});
+		},
+
 		onChangeUrl(event) {
+			const el = this.$refs.url_photo.value
+			// console.log('el:', el)
+			// console.log('event:', event.target.value)
 			const image = new Image();
 			image.src = event.target.value;
 			image.addEventListener("load", (e) => {
@@ -273,5 +300,7 @@ input[type=url] {
 .photo-url:hover {
 	background-color: rgba(255, 255, 255, 0.06);
 	transition-duration: .5s;
+	border-radius: 8px;
+	/* overflow: hidden; */
 }
 </style>
