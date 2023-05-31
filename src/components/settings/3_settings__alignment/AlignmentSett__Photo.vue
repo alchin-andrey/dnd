@@ -150,6 +150,14 @@ export default {
 		},
 
 		onPasteUrl(event) {
+			// const link = event.clipboardData.getData('Text')
+			// const image = new Image();
+			// image.src = link;
+			// image.addEventListener("load", (e) => {
+			// 	this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+			// 	this.MY.custom_photo = link;
+			// 	this.site_settings.photo_user = true;
+			// });
 			setTimeout(() => {
 				const image = new Image();
 				image.src = event.target.value;
@@ -158,7 +166,7 @@ export default {
 				this.MY.custom_photo = event.target.value;
 				this.site_settings.photo_user = true;
 			});
-			}, 4);
+			}, 0);
 		},
 
 		getPosition(bool) {
