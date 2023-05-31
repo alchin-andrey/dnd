@@ -9,7 +9,7 @@
 			<div>{{ value }} {{ t_Unit }}</div>
 			<div class="note">{{ t_Note }}</div>
 		</div>
-		<AppSvg class="svg-18 svg-main-f" name="arrow_slider" />
+		<AppSvg class="svg-18 svg-main-f" name="arrow_slider_rl" />
 	</div>
 </template>
 

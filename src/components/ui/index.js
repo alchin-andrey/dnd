@@ -4,6 +4,7 @@ import AppWrapper from "@/components/ui/AppWrapper.vue";
 import AppSvg from "@/components/ui/AppSvg.vue";
 import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
 import AppBtmLink from "@/components/ui/AppBtmLink.vue";
+import AppBtmIcon from "@/components/ui/AppBtmIcon.vue";
 import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
 import AppLogoCard from "@/components/ui/AppLogoCard.vue";
 import AppHeaderCard from "@/components/ui/AppHeaderCard.vue";
@@ -13,6 +14,7 @@ import AppController from "@/components/ui/AppController.vue";
 import AppCharCard from "@/components/ui/AppCharCard.vue";
 import AppMobDialog from "@/components/ui/AppMobDialog.vue";
 import AppRangSlider from "@/components/ui/AppRangSlider.vue";
+import AppRangPhoto from "@/components/ui/AppRangPhoto.vue";
 
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
@@ -93,6 +95,7 @@ export default [
   AppSvg,
   AppStripWrapp,
   AppBtmLink,
+  AppBtmIcon,
   AppCardWrapp,
 
   AppDisclaimer,
@@ -112,6 +115,7 @@ export default [
   AppCharCard,
   AppMobDialog,
   AppRangSlider,
+  AppRangPhoto,
 
   AppMasters,
   AppSrdDisclaimer,

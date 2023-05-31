@@ -1,16 +1,22 @@
 <template>
-  <img
-    v-if="img_Char"
-    :style="{ 
-      height: hight_Char,
-      left: left_Char 
-      }"
-    :src="img_Char"
-    :alt="body_part"
-  />
+      <img
+      v-if="img_Char"
+      :style="{
+        height: hight_Char,
+        left: left_Char
+        }"
+      :src="img_Char"
+      :alt="body_part"
+    />
+
+    <div 
+      v-else-if="show_Custom_Img"
+      class="custom-img"  
+      :style="stule_Img_Obj"
+    />
   
   <svg
-  v-else-if="!img_Char && !MY.custom_photo"
+    v-else-if="!img_Char && !MY.custom_photo"
     :fill="placeholder_Color_Hex"
     :height="calc_Img"
     viewBox="0 0 197 400"
@@ -41,6 +47,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		blank_print: {
+			type: Boolean,
+			default: false,
+		},
   },
   data() {
     return {
@@ -48,6 +58,8 @@ export default {
       placeholder: placeholder,
     }
   },
+
+
   computed: {
     ...mapState(useMYStore, [
       "MY", 
@@ -55,9 +67,27 @@ export default {
       "MY_Ethnos",
       "MY_Class",
     ]),
-    ...mapState(usePagesStore, ["race_page", "screen_Max", "alignment_page"]),
+    ...mapState(usePagesStore, ["race_page", "screen_Max", "site_settings"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
     ...mapState(useGenderStore, ["sex_Char_Body"]),
+
+    show_Custom_Img() {
+      return !this.img_Char && this.MY.custom_photo && this.body_part == 'skin'
+    },
+
+    stule_Img_Obj() {
+      const rl = this.site_settings.photo_sett.pos_rl + '%';
+      const tb = this.site_settings.photo_sett.pos_tb + '%';
+			return {
+				'background-image': `url(${this.MY.custom_photo})`,
+
+        'background-size': 'cover',
+        'background-position': `${rl} ${tb}`,
+
+        height: this.hight_Char,
+        width: this.width_Custom_Char,
+			}
+		},
 
     growth_Char() {
       if (this.MY.height === null) {
@@ -94,13 +124,14 @@ export default {
     },
 
     img_Char() {
-      // if(this.alignment_page.my_image && this.MY.custom_photo) {
-      //   if (this.body_part == "skin") return this.MY.custom_photo;
-      //   else return null;
-      // }
-      if(this.alignment_page.user_image && this.MY.custom_photo && !this.ethnos_name) {
-        if (this.body_part == "skin") return this.MY.custom_photo;
+      if(
+        this.site_settings.photo_user 
+        && this.MY.custom_photo 
+        && !this.ethnos_name
+        ) {
+        if (this.body_part == "skin" && this.site_settings.photo_sett.size == 'contain') return this.MY.custom_photo;
         else return null;
+        // return null;
       }
       let race = this.MY_Race.name;
       let ethnos = this.ethnos_Char;
@@ -144,10 +175,35 @@ export default {
       }
     },
 
+    width_Custom_Char() {
+      const screen_main = `(100vh - 64px)`;
+      const screen_print = `1825px`;
+      const screen_mob = `470px`;
+      const kof = 0.7541666;
+
+      const sc_main_kof = `${screen_main} * ${kof}`
+      const sc_print_kof = `${screen_print} * ${kof}`
+      const sc_mob_kof = `${screen_mob} * ${kof}`
+
+      if (this.race_page.shown.skin_color) {
+        return `calc(${sc_main_kof})`;
+      } else if (
+        this.race_page.shown.eyes_color ||
+        this.race_page.shown.hair_color
+      ) {
+        return `calc(${sc_main_kof} * 2)`;
+      } else if (this.blank_print) {
+        return `calc(${sc_print_kof} * ${this.growth_Char} / 210)`
+      } else if (this.screen_Max) {
+        return `calc(${sc_main_kof} * ${this.growth_Char} / 210)`
+      } else {
+        return `calc(${sc_mob_kof} * ${this.growth_Char} / 210)`
+      }
+    },
+
     left_Char() {
       if(this.ethnos_name || this.mob_menu) {
         return `${this.MY_Race.ethnos_preview[1]}px`;
-        // return `120px`;
       } else {
         return `50%`;
       }
@@ -167,4 +223,9 @@ export default {
 </script>
 
 <style scoped>
+.custom-img {
+  background-repeat: no-repeat;
+	/* border-radius: 5%; */
+  /* overflow: hidden; */
+}
 </style>

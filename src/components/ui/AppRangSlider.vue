@@ -2,7 +2,16 @@
 	<div class="h-100 w-100 pd-r-42 pos-rel" 			:style="{
 				'height': style_Height,
 			}">
-		<Slider v-model.number="inputValue" orientation="vertical" direction="rtl" :min="min_Options" :max="Max_Range" :options="options_Range" tooltipPosition="top" :lazy="false"/>
+		<Slider
+		class="range-main"
+		v-model.number="inputValue" 
+		orientation="vertical" 
+		direction="rtl" 
+		:min="min_Options" 
+		:max="Max_Range" 
+		:options="options_Range" 
+		tooltipPosition="top" 
+		:lazy="false"/>
 	<div class="range-value int-700-20">
     {{ t_Unit }}
     </div>
@@ -151,13 +160,14 @@ export default {
 				if (this.lvl) {
 					return null;
 				} else {
+					this.inputValue = this.modelValue;
 					// this.$emit("update:modelValue", this.inputValue);
-					setTimeout(() => {
-						this.inputValue = this.MY[this.Target_Range] + 1;
-						this.$emit("update:modelValue", this.inputValue);
-						this.inputValue = this.MY[this.Target_Range] - 1;
-						this.$emit("update:modelValue", this.inputValue);
-					}, 1);
+					// setTimeout(() => {
+					// 	this.inputValue = this.MY[this.Target_Range] + 1;
+					// 	this.$emit("update:modelValue", this.inputValue);
+					// 	this.inputValue = this.MY[this.Target_Range] - 1;
+					// 	this.$emit("update:modelValue", this.inputValue);
+					// }, 1);
 				}
 			},
 			// deep: true,
@@ -194,7 +204,7 @@ export default {
 <style>
 @import '@vueform/slider/themes/default.css';
 
-:root {
+.range-main {
 	--slider-bg: rgba(255, 255, 255, 0.06);
   --slider-connect-bg: #ffffff;
 	--slider-height: 100%;
@@ -210,20 +220,20 @@ export default {
 	--slider-handle-border: 0;
 }
 
-.slider-vertical .slider-handle {
+.range-main.slider-vertical .slider-handle {
 	bottom: calc(var(--slider-handle-width)/-1);
 	right: 0;
 }
 
-.slider-vertical .slider-origin {
+.range-main.slider-vertical .slider-origin {
 	width: 100%;
 }
 
-.slider-base, .slider-connects {
+.range-main .slider-base, .slider-connects {
 	overflow: hidden;
 }
 
-.slider-touch-area::after {
+.range-main .slider-touch-area::after {
 	content:'';
 	position: absolute;
 	width: 96px;

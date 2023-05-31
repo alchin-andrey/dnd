@@ -16,6 +16,10 @@
 	fill: black;
 }
 
+.svg-pass-f { 
+	opacity: 0.2;
+}
+
 .svg-red-f { 
 	fill: black;
 }

@@ -39,20 +39,20 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["pages", "alignment_page"]),
+		...mapState(usePagesStore, ["pages", "site_settings"]),
 
 		t_Details() {
 			return this.T('details')
 		},
 
 		active_Mob_Custom_Char() {
-			return this.mob_menu && this.alignment_page.user_image
+			return this.mob_menu && this.site_settings.photo_user
 		},
 
 		stule_Img_Obj() {
 			if (this.active_Mob_Custom_Char) return {
-				'background-image': `url(${this.MY.custom_photo})`,
-			}
+					'background-image': `url(${this.MY.custom_photo})`,
+				}
 			else return {};
 		},
 	},
@@ -97,7 +97,8 @@ export default {
 .custom-char-menu {
 	min-height: 200px;
 	background-repeat: no-repeat;
-	background-size: 100% auto;
+	/* background-size: 100% auto; */
+	background-size: cover;
 	border: none;
 	/* padding: 0; */
 }

@@ -13,7 +13,9 @@ export default {
 
   arrow_left_small: '<path fill-rule="evenodd" clip-rule="evenodd" d="M5.85356 6.56062L3.56066 8.85352L5.85356 11.1464L5.14646 11.8535L2.85356 9.56063L2.14645 8.85352L2.85356 8.14642L5.14646 5.85352L5.85356 6.56062Z"/>',
 
-  arrow_slider: '<path fill-rule="evenodd" clip-rule="evenodd" d="M11 11.2929L13.2929 8.99999L11 6.70709L11.7071 5.99999L14 8.29289L14.7071 8.99999L14 9.7071L11.7071 12L11 11.2929Z" /><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.70711L4.7071 9.00001L7 11.2929L6.29289 12L3.99999 9.70711L3.29289 9.00001L3.99999 8.2929L6.29289 6L7 6.70711Z" /><rect x="4.5" y="8.5" width="9" height="1" />',
+  arrow_slider_rl: '<path fill-rule="evenodd" clip-rule="evenodd" d="M11 11.2929L13.2929 8.99999L11 6.70709L11.7071 5.99999L14 8.29289L14.7071 8.99999L14 9.7071L11.7071 12L11 11.2929Z" /><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.70711L4.7071 9.00001L7 11.2929L6.29289 12L3.99999 9.70711L3.29289 9.00001L3.99999 8.2929L6.29289 6L7 6.70711Z" /><rect x="4.5" y="8.5" width="9" height="1" />',
+  
+  arrow_slider_tb: '<path fill-rule="evenodd" clip-rule="evenodd" d="M7.04045 11L9.33335 13.2929L11.6262 11L12.3334 11.7071L10.0405 14L9.33335 14.7071L8.62624 14L6.33334 11.7071L7.04045 11Z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M11.6262 7L9.33334 4.7071L7.04044 7L6.33333 6.29289L8.62623 3.99999L9.33334 3.29289L10.0404 3.99999L12.3333 6.29289L11.6262 7Z"/><rect x="9.83334" y="4.5" width="9" height="1" transform="rotate(90 9.83334 4.5)"/>',
 
   check: '<path d="M4.98798 8.0843L5.95903 6.99688L8.12088 9.11627L12.1499 5.22283L13.1421 6.27603L8.06646 11.0731L4.98798 8.0843Z" />',
 

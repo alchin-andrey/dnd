@@ -37,6 +37,12 @@ export default {
         print_dialog: false,
         // old_page: null,
         name_user: false,
+        photo_user: false,
+        photo_sett: {
+          size: 'cover',
+          pos_rl: 50,
+          pos_tb: 50,
+        }
       },
       
       this.form_kof = {

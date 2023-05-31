@@ -275,7 +275,7 @@ export default {
 	transition-timing-function: ease-in-out;
 }
 
-.character>img {
+/* .character>img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -288,7 +288,22 @@ export default {
 	border-radius: 24px;
 }
 
-.character>svg {
+.character > .custom-img {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+	transition-duration: 0.8s;
+	transition-timing-function: ease-in-out;
+	border-radius: 24px;
+} */
+
+.character>img,
+.character>svg,
+.character > .custom-img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -299,6 +314,7 @@ export default {
 	transition-property: all, fill;
 	transition-duration: 0.8s, 0.1s;
 	transition-timing-function: ease-in-out;
+	border-radius: 24px;
 }
 
 .active_eyes {
