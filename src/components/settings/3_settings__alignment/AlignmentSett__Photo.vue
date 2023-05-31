@@ -12,6 +12,7 @@
 			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
 				<label for="">
 					<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
+					<!-- <AppSvg class="svg-54 svg-main-f" name="upload"/> -->
 				</label>
 				<div v-if="MY.custom_photo" class="plag-photo-load"></div>
 				<template v-if="size_Cover && MY.custom_photo">
@@ -19,8 +20,11 @@
 					:class="[style_Rang_Photo]"
 					v-if="pos_Rang_Photo"
 					v-model.number="site_settings.photo_sett.position"
-					:orientation="pos_Rang_Photo"/>
-
+					:orientation="pos_Rang_Photo"
+					:pad="padding_Rang_Photo"
+					@click.stop
+					/>
+					
 				</template>
 			</section>
 			<section class="grit-btm" v-if="MY.custom_photo">
@@ -109,23 +113,29 @@ export default {
 			return this.site_settings.photo_sett.size_cover
 		},
 
-		pos_Rang_Photo() {
+		ratio_Rang_Photo() {
 			const maim_rang = this.alignment_page.ratio_photo;
 			const photo_rang = this.site_settings.photo_sett.ratio;
-			if(photo_rang > maim_rang) return 'horizontal';
-			if(photo_rang < maim_rang) return 'vertical';
+			return maim_rang - photo_rang;
+		},
+
+		pos_Rang_Photo() {
+			if(this.ratio_Rang_Photo < 0) return 'horizontal';
+			if(this.ratio_Rang_Photo > 0) return 'vertical';
+		},
+
+		padding_Rang_Photo() {
+			if(this.ratio_Rang_Photo < 0) return 10;
+			if(this.ratio_Rang_Photo > 0) return 8;
 		},
 
 		style_Rang_Photo() {
-			const maim_rang = this.alignment_page.ratio_photo;
-			const photo_rang = this.site_settings.photo_sett.ratio;
-			if(photo_rang > maim_rang) return 'rang-rl';
-			if(photo_rang < maim_rang) return 'rang-tb';
+			if(this.ratio_Rang_Photo < 0) return 'rang-rl';
+			if(this.ratio_Rang_Photo > 0) return 'rang-tb';
 		},
 	},
 
 	methods: {
-
 		getPhotoStatus(bool) {
 			this.site_settings.photo_user = bool;
 		},
@@ -156,13 +166,6 @@ export default {
 		getPosition(bool) {
 			this.site_settings.photo_sett.size_cover = bool;
 		},
-
-		// getPosition() {
-		// 	if(this.site_settings.photo_sett.size_cover) {
-		// 		this.edit_visible = false;
-		// 	} 
-		// 	this.site_settings.photo_sett.size_cover = !this.site_settings.photo_sett.size_cover;
-		// },
 
 		showEdit() {
 			if(this.size_Cover) {
@@ -199,7 +202,6 @@ export default {
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
 	border-radius: 6px;
-	/* cursor: pointer; */
 	overflow: hidden;
 }
 

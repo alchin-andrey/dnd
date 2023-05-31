@@ -6,7 +6,8 @@
 		:orientation="orientation" 
 		direction="rtl" 
 		:min="0" 
-		:max="100"
+		:max="range_Max"
+		:options="options_Range"
 		:tooltips="false"
 		tooltipPosition="top" 
 		:lazy="false"
@@ -18,7 +19,6 @@
 <script>
 import Slider from '@vueform/slider';
 import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
 	name: "AppRangPhoto",
@@ -28,9 +28,6 @@ export default {
 	data() {
 		return {
 			inputValue: "",
-			options: {
-				padding: [40],
-			}
 		};
 	},
 	props: {
@@ -46,9 +43,23 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		pad: {
+			type: Number,
+			default: 0,
+		},
 	},
 	computed: {
 		...mapState(usePagesStore, ["main_page", "screen_Max"]),
+
+		range_Max() {
+			return 100 + this.pad;
+		},
+
+		options_Range() {
+			return {padding: [0, this.pad]}
+		},
+
+
 	},
 	watch: {
 		modelValue: {
@@ -73,44 +84,37 @@ export default {
 @import '@vueform/slider/themes/default.css';
 
 .rang-photo {
-	--slider-bg: rgba(0, 0, 0, 0.65);
-  --slider-connect-bg: rgba(0, 0, 0, 0.65);
-	/* --slider-height: 100%; */
+	--slider-bg: rgba(0, 0, 0, 0.2);
+  --slider-connect-bg: transparent;
+	--slider-connect-bg-disabled: #9CA3AF;
+	--slider-height: 8px;
 	--slider-vertical-height: 100%;
-	--slider-radius: 12px;
+	--slider-radius: 4px;
 	
-	
-	/* --slider-handle-width: 30px; */
-	/* --slider-handle-height: 100%; */
-	/* --slider-handle-shadow: none; */
-	/* --slider-handle-shadow-active: none; */
-	/* --slider-handle-radius: 0; */
-	/* --slider-handle-border: 0; */
+	--slider-handle-bg: #fff;
+	--slider-handle-border: 0;
+	--slider-handle-width: 32px;
+	--slider-handle-height: 32px;
+	--slider-handle-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+	--slider-handle-shadow-active: 0px 2px 6px rgba(0, 0, 0, 0.9);
+	--slider-handle-radius: 8px;
+	--slider-handle-ring-width: 3px;
+	/* --slider-handle-ring-color: transparent; */
+	--slider-handle-ring-color: rgba(0, 0, 0, 0.02);
 }
 
-/* .rang-photo.slider-vertical .slider-handle {
-	bottom: calc(var(--slider-handle-width)/-1);
+.rang-photo.slider-vertical .slider-handle {
+	bottom: 0;
 	right: 0;
-} */
-
-.rang-photo.slider-vertical .slider-origin {
-	width: 100%;
 }
 
-/* .rang-photo .slider-base, .slider-connects {
-	overflow: hidden;
-} */
+.rang-photo.slider-horizontal .slider-handle {
+    right: 0;
+		top: auto;
+		bottom: calc(var(--slider-height)/-1);
+}
 
-/* .rang-photo .slider-touch-area::after {
-	content:'';
-	position: absolute;
-	width: 96px;
-	height: 6px;
-	top: 12px;
-	left: calc(50% - 96px/2);
-	background: #0E1518;
-	opacity: 0.2;
-	border-radius: 4px;
-} */
-
+.rang-photo.slider-base, .slider-connects {
+	border: 2px solid rgba(255, 255, 255, 0.2);
+}
 </style>
