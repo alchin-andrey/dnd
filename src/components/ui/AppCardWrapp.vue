@@ -6,7 +6,7 @@
       {
         'hov cur-p': !passive && !banned,
         'pos-rel': icon,
-        'btm-select': active_card,
+        'card-select': active_card,
         'cur-ban': banned,
 				'blur-60': !no_blur,
       },

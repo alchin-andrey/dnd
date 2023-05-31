@@ -8,36 +8,35 @@
 	:passive="!active_Custom_Photo || site_settings.photo_user"
 	@click="getPhotoStatus(active_Custom_Photo)"
 	>
-		<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj" @click.stop>
-			<label for="">
-				<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
-			</label>
-			<template v-if="size_Cover && MY.custom_photo">
-				<AppRangPhoto 
-				:class="[style_Rang_Photo]" 
-				v-if="pos_Rang_Photo" 
-				v-model.number="site_settings.photo_sett.position"
-				:orientation="pos_Rang_Photo"/>
-			</template>
-		</section>
-
-		<section class="flex-row gap-8" v-if="MY.custom_photo">
-			<AppBtmIcon 
-				class="size-btm" 
-				icon="photo_fill" 
-				@click="getPosition(true)"
-				:active_btm="site_settings.photo_sett.size_cover"
-				@click.stop
-			/>
-			<AppBtmIcon 
-				class="size-btm" 
-				icon="photo_fit" 
-				@click="getPosition(false)"
-				:active_btm="!site_settings.photo_sett.size_cover"
-				@click.stop
-			/>
-			<AppBtmIcon class="size-btm" icon="delete" @click="delPhoto()" @click.stop/>
-		</section>
+		<main class="flex-col gap-16">
+			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj" @click.stop>
+				<label for="">
+					<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
+				</label>
+				<template v-if="size_Cover && MY.custom_photo">
+					<AppRangPhoto
+					:class="[style_Rang_Photo]"
+					v-if="pos_Rang_Photo"
+					v-model.number="site_settings.photo_sett.position"
+					:orientation="pos_Rang_Photo"/>
+				</template>
+			</section>
+			<section class="grit-btm" v-if="MY.custom_photo">
+				<AppBtmIcon
+					icon="photo_fill"
+					@click="getPosition(true)"
+					:active_btm="site_settings.photo_sett.size_cover"
+					@click.stop
+				/>
+				<AppBtmIcon
+					icon="photo_fit"
+					@click="getPosition(false)"
+					:active_btm="!site_settings.photo_sett.size_cover"
+					@click.stop
+				/>
+				<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop/>
+			</section>
+		</main>
 		<!-- <input class="int-400" type="url" name="url" id="url" placeholder="Введіть URL" pattern="https://.*" size="30" required @change="onChangeUrl($event)"> -->
 
 		<section>
@@ -185,11 +184,13 @@ export default {
 </script>
 
 <style scoped>
-
-.size-btm {
-	width: 100%;
-	height: 47px;
+.grit-btm {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 47px;
+	gap: 8px;
 }
+
 .input-box {
 	position: relative;
 	width: 100%;

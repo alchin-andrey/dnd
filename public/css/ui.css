@@ -62,18 +62,22 @@
 	-webkit-backdrop-filter: blur(60px);
 } */
 
+.card-select {
+	border: 2px solid #ffffff; 
+	padding: 14px;
+}
+
 .btm-grey {background: rgba(255, 255, 255, 0.06);}
 .btm-grey.hov:hover {background: rgba(255, 255, 255, 0.1);}
+
+.btm-select { 
+	border: 2px solid #ffffff;
+}
 
 .btm-trans {
 	padding: 14px;
 	background: transparent;
 	border: 2px solid rgba(255, 255, 255, 0.06);
-}
-
-.btm-select {
-	border: 2px solid #ffffff; 
-	padding: 14px;
 }
 
 .btm-black {background: #000000;}

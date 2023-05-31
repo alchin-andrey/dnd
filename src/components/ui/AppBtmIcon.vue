@@ -1,6 +1,6 @@
 <template>
 	<div 
-	class="card-main br-12 flex-row-c-jc"
+	class="btm-grey br-12 flex-row-c-jc"
 	:class="{
         'hov cur-p': !passive,
 				'btm-select': active_btm,
