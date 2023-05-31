@@ -50,7 +50,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["screen_Max"]),
+		...mapState(usePagesStore, ["screen_Max", "site_settings"]),
 
 		t_Title() {
 			return this.t(this.title);
