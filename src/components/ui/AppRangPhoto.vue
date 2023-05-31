@@ -114,7 +114,7 @@ export default {
 		bottom: calc(var(--slider-height)/-1);
 }
 
-.rang-photo.slider-base, .slider-connects {
+.rang-photo .slider-connects {
 	border: 2px solid rgba(255, 255, 255, 0.2);
 }
 </style>
