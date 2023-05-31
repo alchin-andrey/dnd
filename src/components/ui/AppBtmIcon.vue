@@ -6,7 +6,7 @@
 				'btm-select': active_btm,
       }"
 	>
-		<AppSvg  :class="['svg-18', 'svg-main-f', style_Svg]" :name="icon"/>
+		<AppSvg  :class="['svg-28', 'svg-main-f', style_Svg]" :name="icon"/>
 	</div>
 </template>
 

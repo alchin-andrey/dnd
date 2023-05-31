@@ -24,14 +24,14 @@
 		<section class="flex-row gap-8" v-if="MY.custom_photo">
 			<AppBtmIcon 
 				class="size-btm" 
-				icon="arrow_slider_rl" 
+				icon="photo_fill" 
 				@click="getPosition(true)"
 				:active_btm="site_settings.photo_sett.size_cover"
 				@click.stop
 			/>
 			<AppBtmIcon 
 				class="size-btm" 
-				icon="arrow_slider_tb" 
+				icon="photo_fit" 
 				@click="getPosition(false)"
 				:active_btm="!site_settings.photo_sett.size_cover"
 				@click.stop
