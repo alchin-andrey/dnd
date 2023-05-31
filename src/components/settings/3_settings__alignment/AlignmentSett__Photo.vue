@@ -5,7 +5,7 @@
 	<AppCardWrapp gap="26" :active_card="site_settings.photo_user"
 		:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)">
 		<main class="flex-col gap-8">
-			
+
 			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
 				<label for="">
 					<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
@@ -18,7 +18,7 @@
 						@click.stop />
 				</template>
 			</section>
-			
+
 			<section class="grit-btm" v-if="MY.custom_photo">
 				<AppBtmIcon icon="photo_fill" @click="getPosition(true)" :active_btm="site_settings.photo_sett.size_cover"
 					@click.stop />
@@ -28,10 +28,10 @@
 			</section>
 
 			<label v-if="!MY.custom_photo" class="photo-url" for="url">
-				<input ref="url_photo" type="url" name="url" id="url" class="int-700" :placeholder="T('enter_url')" pattern="https://.*" size="30"
-				required @paste="onPasteUrl($event)">
+				<input ref="url_photo" type="url" name="url" id="url" class="int-700" :placeholder="T('enter_url')"
+					pattern="https://.*" size="30" required @paste="onPasteUrl($event)">
 			</label>
-			
+
 		</main>
 
 		<section>
@@ -63,6 +63,14 @@ export default {
 			edit_visible: false,
 			upload: `url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E")`,
 		};
+	},
+
+	mounted() {
+		document.addEventListener("paste", this.PastePhoto);
+	},
+
+	beforeUnmount() {
+		document.removeEventListener("paste", this.PastePhoto);
 	},
 
 	computed: {
@@ -151,22 +159,31 @@ export default {
 
 		onPasteUrl(event) {
 			// const link = event.clipboardData.getData('Text')
-			// const image = new Image();
-			// image.src = link;
-			// image.addEventListener("load", (e) => {
-			// 	this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-			// 	this.MY.custom_photo = link;
-			// 	this.site_settings.photo_user = true;
-			// });
 			setTimeout(() => {
 				const image = new Image();
 				image.src = event.target.value;
 				image.addEventListener("load", (e) => {
-				this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-				this.MY.custom_photo = event.target.value;
-				this.site_settings.photo_user = true;
-			});
+					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+					this.MY.custom_photo = event.target.value;
+					this.site_settings.photo_user = true;
+				});
 			}, 0);
+		},
+
+		PastePhoto(event) {
+			var item = Array.from(event.clipboardData.items).find(x => /^image\//.test(x.type));
+			if (item) {
+				let blob = item.getAsFile();
+				let image = new Image();
+				let link = URL.createObjectURL(blob);
+				image.src = link;
+				image.addEventListener("load", (e) => {
+					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+				});
+				this.MY.custom_photo = link;
+				this.site_settings.photo_user = true;
+			}
+
 		},
 
 		getPosition(bool) {
