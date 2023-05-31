@@ -65,11 +65,13 @@ export default {
 				const rl = this.site_settings.photo_sett.pos_rl + '%';
 				const tb = this.site_settings.photo_sett.pos_tb + '%';
 				const size = this.site_settings.photo_sett.size;
+				const rl_num = this.size_Cover ? rl : '50%';
+				const tb_num = this.size_Cover ? tb : '50%';
 				return {
 					'background-image': `url(${this.MY.custom_photo})`,
 					'background-size': size,
 					// 'background-size': '135%',
-					'background-position': `${rl} ${tb}`,
+					'background-position': `${rl_num} ${tb_num}`,
 				}
 			}
 				return {'background-image': this.upload};
