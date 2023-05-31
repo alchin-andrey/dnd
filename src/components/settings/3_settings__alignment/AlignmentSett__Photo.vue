@@ -9,16 +9,18 @@
 	@click="getPhotoStatus(active_Custom_Photo)"
 	>
 		<main class="flex-col gap-16">
-			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj" @click.stop>
+			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
 				<label for="">
 					<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 				</label>
+				<div v-if="MY.custom_photo" class="plag-photo-load"></div>
 				<template v-if="size_Cover && MY.custom_photo">
 					<AppRangPhoto
 					:class="[style_Rang_Photo]"
 					v-if="pos_Rang_Photo"
 					v-model.number="site_settings.photo_sett.position"
 					:orientation="pos_Rang_Photo"/>
+
 				</template>
 			</section>
 			<section class="grit-btm" v-if="MY.custom_photo">
@@ -92,9 +94,7 @@ export default {
 		},
 
 		stule_Hov() {
-			if (this.active_Custom_Photo) return null;
-			// if (this.active_Custom_Photo) return 'hov-img';
-			else return 'hov'
+			if (!this.MY.custom_photo) return 'hov cur-p'
 		},
 
 		active_Curd() {
@@ -199,7 +199,17 @@ export default {
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
 	border-radius: 6px;
-	cursor: pointer;
+	/* cursor: pointer; */
+	overflow: hidden;
+}
+
+.plag-photo-load {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
 }
 
 .rang-rl {
@@ -207,6 +217,7 @@ export default {
 	bottom: 8px;
 	left: 8px;
 	right: 8px;
+	z-index: 100;
 }
 
 .rang-tb {
@@ -214,6 +225,7 @@ export default {
 	top: 8px;
 	bottom: 8px;
 	right: 8px;
+	z-index: 100;
 }
 
 .input-box input {
@@ -237,42 +249,21 @@ export default {
 	font-weight: 400;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	cursor: pointer;
 	overflow: hidden;
 	transition-property: background-image, background-color;
 	transition-duration: .5s;
-	border-radius: 6px;
-
-
-	/* position: fixed;
-	top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0; */
 }
 
-.input-box label:hover{
-	/* background-color: rgba(255, 255, 255, 0.06); */
-  }
 .hov label:hover{
 	background-color: rgba(255, 255, 255, 0.06);
   }
 
-.hov-img label:hover{
+/* .hov-img label:hover{
   background-image: url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E");
 	background-color: rgba(0, 0, 0, 0.65);
 	background-repeat: no-repeat;
 	background-position: 50%, 50%;
-  }
-
-	/* .svg-pos {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	-webkit-transform: translate(0%, -50%);
-	-ms-transform: translate(0%, -50%);
-	transform: translate(0%, -50%);
-} */
+  } */
 
 /* input[type=url] {
 	width: 100%;
