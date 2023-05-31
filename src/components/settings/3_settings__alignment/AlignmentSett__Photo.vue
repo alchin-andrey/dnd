@@ -204,16 +204,16 @@ export default {
 
 .rang-rl {
 	position: absolute;
-	bottom: 10px;
-	left: 50px;
-	right: 50px;
+	bottom: 8px;
+	left: 8px;
+	right: 8px;
 }
 
 .rang-tb {
 	position: absolute;
-	top: 50px;
-	bottom: 50px;
-	right: 10px;
+	top: 8px;
+	bottom: 8px;
+	right: 8px;
 }
 
 .input-box input {

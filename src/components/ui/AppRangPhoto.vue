@@ -10,6 +10,7 @@
 		:tooltips="false"
 		tooltipPosition="top" 
 		:lazy="false"
+		:step="0.1"
 		/>
 	</div>
 </template>
