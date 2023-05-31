@@ -6137,4 +6137,5 @@ export default {
   edit_photo: "Редагувати на Heroforge ↗",
   choose_photo: "Підібрати на Pinterest ↗",
   
+  enter_url: "або URL:",
 };
