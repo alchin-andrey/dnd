@@ -10,7 +10,7 @@
 			'lvl-dot': shown_Level_Dot(item),
 		}"
 	>
-		<div class="column_title jbm-300">{{ t_Title(item) }}</div>
+		<div class="column-title jbm-300">{{ t_Title(item) }}</div>
 		<section class="column-link int-400">
 			<div 
 			class="link-text" 
@@ -180,7 +180,8 @@ export default {
 	width: 20px;
 	height: 2px;
 	left: -40px;
-	top: calc(50% - 1px);
+	/* left: 0; */
+	/* top: calc(50% - 1px); */
 	background: #ffffff;
 }
 
@@ -191,7 +192,7 @@ export default {
 	text-overflow: ellipsis;
 }
 
-.column_title {
+.column-title {
 	min-width: 120px;
 }
 
@@ -212,7 +213,6 @@ export default {
 	width: 35px;
 	height: 2px;
 	left: -39px;
-	top: calc(50% - 1px);
 	background: #ffffff;
 }
 
@@ -225,11 +225,5 @@ export default {
 .link-text {
 	display: flex;
 	align-items: center;
-}
-
-
-.icon {
-	width: 18px;
-	height: 18px;
 }
 </style>

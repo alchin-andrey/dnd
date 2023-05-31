@@ -3,28 +3,27 @@
 		class="column"
 		:class="{
 			'active-link': active && screen_Max,
-			'hover': !pass_Link && screen_Max,
+			'hover': !active && !pass_Link && screen_Max,
 			'column-hov cur-p': !pass_Link,
 		}"
 	>
 		<div class="column-title jbm-300">{{ t_Title }}</div>
-		<div class="flex-row-c" >
-			<div
-				class="column-link int-400"
-				:class="{
-					'rare-text': rare,
-					'white-02': pass_Link,
-				}"
-				:style="{'width': size_Text}"
+		<section class="column-link int-400">
+			<div 
+			class="link-text" 
+      :class="{
+				'rare-text': rare,
+				'white-02': pass_Link,
+			}"
+			:style="{'width': size_Text}"
 			>
 				<span>{{ t_Type }}</span>
 			</div>
 			<AppSvg 
 			class="svg-18 svg-main-f" 
 			:class="{'svg-none-f': pass_Link}" 
-			:name="icon_Svg" 
-			/>
-		</div>
+			:name="icon_Svg" />
+		</section>
 	</div>
 </template>
 
@@ -118,6 +117,7 @@ export default {
 .column {
 	display: flex;
 	align-items: center;
+	position: relative;
 	gap: 4px;
 }
 
@@ -131,19 +131,40 @@ export default {
 		isolation: isolate;
 	}
 
-	.column-hov:hover {
+	.column:hover {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 }
 
-.hover:hover::after {
+.hover:hover::before {
 	content: "";
 	position: absolute;
 	width: 20px;
 	height: 2px;
 	left: -40px;
-	top: calc(50% - 1px);
 	background: #ffffff;
+}
+
+.column-link {
+	display: flex;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.column-title {
+	min-width: 120px;
+}
+
+.lvl-dot::after {
+	content: "";
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	right: -15px;
+	top: calc(50% - 4px);
+	background: #0047ff;
+	border-radius: 50%;
 }
 
 .active-link:before {
@@ -152,22 +173,17 @@ export default {
 	width: 35px;
 	height: 2px;
 	left: -39px;
-	top: calc(50% - 1px);
 	background: #ffffff;
-}
-
-.column-title {
-	min-width: 120px;
-}
-.column-link {
-  display: flex;
-  align-items: center;
-	overflow: hidden;
 }
 
 .column-link span {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.link-text {
+	display: flex;
+	align-items: center;
 }
 </style>
