@@ -64,7 +64,10 @@ export default {
 			if (this.active_Custom_Photo) {
 				const rl = this.site_settings.photo_sett.pos_rl + '%';
 				const tb = this.site_settings.photo_sett.pos_tb + '%';
-				const size = this.site_settings.photo_sett.size;
+				let size = 'cover';
+				if (!this.site_settings.photo_sett.size_cover) {
+					size = 'contain';
+				}
 				const rl_num = this.size_Cover ? rl : '50%';
 				const tb_num = this.size_Cover ? tb : '50%';
 				return {
@@ -92,7 +95,7 @@ export default {
 		},
 
 		size_Cover() {
-			return this.site_settings.photo_sett.size == 'cover'
+			return this.site_settings.photo_sett.size_cover
 		},
 
 		size_Icon() {
@@ -111,13 +114,18 @@ export default {
 			const inc = event.target.files[0].type.includes("image")
 			if (inc) {
 				let reader = new FileReader();
+				reader.readAsDataURL(event.target.files[0]);
 				reader.addEventListener("load", (el) => {
 					if (el.target.result) {
+						const image = new Image();
+            image.src = el.target.result;
+            image.addEventListener("load", (e) => {
+							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+            });
 						this.MY.custom_photo = el.target.result;
 						this.site_settings.photo_user = true;
 					}
 				});
-				reader.readAsDataURL(event.target.files[0]);
 			}
 		},
 
@@ -126,12 +134,10 @@ export default {
 		// },
 
 		getPosition() {
-			if(this.size_Cover) {
-				this.site_settings.photo_sett.size = 'contain'
+			if(this.site_settings.photo_sett.size_cover) {
 				this.edit_visible = false;
-			} else {
-				this.site_settings.photo_sett.size = 'cover'
-			}
+			} 
+			this.site_settings.photo_sett.size_cover = !this.site_settings.photo_sett.size_cover;
 		},
 
 		showEdit() {
@@ -141,9 +147,12 @@ export default {
     },
 
 		delPhoto() {
-			this.site_settings.photo_sett.size = 'cover';
 			this.site_settings.photo_sett.pos_rl = 50;
 			this.site_settings.photo_sett.pos_tb = 50;
+
+			this.site_settings.photo_sett.size_cover = true;
+			this.site_settings.photo_sett.position = 50;
+
 			this.MY.custom_photo = null;
 			this.site_settings.photo_user = false;
 			this.edit_visible = false;

@@ -16,11 +16,13 @@ export const usePagesStore = defineStore({
 
       photo_user: false,
       photo_sett: {
-        size: 'cover',
         pos_rl: 50,
         pos_tb: 50,
-      }
 
+        size_cover: true,
+        ratio: 1,
+        position: 50,
+      }
     },
 
     links: {
@@ -64,6 +66,7 @@ export const usePagesStore = defineStore({
 
 		alignment_page: {
 			shown: {},
+      ratio_photo: 362/480,
 		},
 
     // master_page: {}

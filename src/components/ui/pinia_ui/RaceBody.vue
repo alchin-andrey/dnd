@@ -67,7 +67,7 @@ export default {
       "MY_Ethnos",
       "MY_Class",
     ]),
-    ...mapState(usePagesStore, ["race_page", "screen_Max", "site_settings"]),
+    ...mapState(usePagesStore, ["race_page", "screen_Max", "site_settings", "alignment_page"]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
     ...mapState(useGenderStore, ["sex_Char_Body"]),
 
@@ -129,9 +129,9 @@ export default {
         && this.MY.custom_photo 
         && !this.ethnos_name
         ) {
-        if (this.body_part == "skin" && this.site_settings.photo_sett.size == 'contain') return this.MY.custom_photo;
-        else return null;
-        // return null;
+        // if (this.body_part == "skin" && !this.site_settings.photo_sett.size_cover) return this.MY.custom_photo;
+        // else return null;
+        return null;
       }
       let race = this.MY_Race.name;
       let ethnos = this.ethnos_Char;
@@ -179,8 +179,13 @@ export default {
       const screen_main = `(100vh - 64px)`;
       const screen_print = `1825px`;
       const screen_mob = `470px`;
-      const kof = 0.7541666;
-
+      let kof = this.alignment_page.ratio_photo;
+      console.log('kof:', kof)
+      console.log('size_cover:', this.site_settings.photo_sett.size_cover)
+      if(!this.site_settings.photo_sett.size_cover) {
+        kof = this.site_settings.photo_sett.ratio;
+      };
+      console.log('kof:', kof)
       const sc_main_kof = `${screen_main} * ${kof}`
       const sc_print_kof = `${screen_print} * ${kof}`
       const sc_mob_kof = `${screen_mob} * ${kof}`
