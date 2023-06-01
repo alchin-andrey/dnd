@@ -51,17 +51,7 @@ none: {
 
 example: {
 
-  gnome: {
-    male:"",
-    female:"",
-  },
-
-  halfling: {
-    male:"",
-    female:"",
-  },
-
-  dwarf: {
+  tiefling: {
     male:"",
     female:"",
   },
@@ -71,7 +61,22 @@ example: {
     female:"",
   },
 
+  halforc: {
+    male:"",
+    female:"",
+  },
+
+  halfling: {
+    male:"",
+    female:"",
+  },
+
   halfelf: {
+    male:"",
+    female:"",
+  },
+
+  gnome: {
     male:"",
     female:"",
   },
@@ -81,12 +86,7 @@ example: {
     female:"",
   },
 
-  tiefling: {
-    male:"",
-    female:"",
-  },
-
-  halforc: {
+  dwarf: {
     male:"",
     female:"",
   },
@@ -97,6 +97,8 @@ example: {
   },
 
 },
+
+// ----------------
 
 rogue: {
 
@@ -290,6 +292,55 @@ monk: {
   dragonborn: {
     male:"https://www.heroforge.com/load_config%3D511027062/",
     female:"https://www.heroforge.com/load_config%3D511023423/",
+  },
+
+},
+
+paladin: {
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D511050940/",
+    female:"https://www.heroforge.com/load_config%3D511050774/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D511048266/",
+    female:"https://www.heroforge.com/load_config%3D511048254/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D511048229/",
+    female:"https://www.heroforge.com/load_config%3D511048218/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D511048202/",
+    female:"https://www.heroforge.com/load_config%3D511048189/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D511048180/",
+    female:"https://www.heroforge.com/load_config%3D511048176/",
+  },
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D511048166/",
+    female:"https://www.heroforge.com/load_config%3D511047804/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D511047784/",
+    female:"https://www.heroforge.com/load_config%3D511047430/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D511047424/",
+    female:"https://www.heroforge.com/load_config%3D511047317/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D511047311/",
+    female:"https://www.heroforge.com/load_config%3D511046688/",
   },
 
 },
