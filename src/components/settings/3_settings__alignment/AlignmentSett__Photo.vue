@@ -19,7 +19,11 @@
 					<input type="file" ref="myFile" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 					<!-- <AppSvg class="svg-54 svg-main-f" name="upload"/> -->
 				</label>
-				<div v-if="MY.custom_photo" class="plag-photo-load"></div>
+				<div 
+				v-if="MY.custom_photo" 
+				class="plag-photo-load"
+				:class="{'animation--active': errors.file_photo}" 
+				></div>
 				<template v-if="size_Cover && MY.custom_photo">
 					<AppRangPhoto :class="[style_Rang_Photo]" v-if="pos_Rang_Photo"
 						v-model.number="site_settings.photo_sett.position" :orientation="pos_Rang_Photo" :pad="padding_Rang_Photo"
@@ -54,8 +58,7 @@
 						:placeholder="T('enter_url')"
 						pattern="https://.*" 
 						size="30"
-						@paste="onPasteUrl($event)"
-						@change="onChangeUrl($event)"
+						@keyup.enter="onChangeUrl($event)"
 						@input="onInputUrl($event)"
 					>
 				</label>
@@ -87,25 +90,20 @@ export default {
 			errors: {
 				file_photo: false,
 				url_photo: false,
-				url_value_photo: false,
 			},
-
-			file_erorr_photo: false,
-			url_erorr_photo: false,
-			url_value_erorr_photo: false,
 
 			upload: `url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E")`,
 		};
 	},
 
 	mounted() {
-		document.addEventListener("paste", this.PastePhoto);
+		document.addEventListener("paste", this.pastePhoto);
 		document.addEventListener("drop", this.dropPhoto);
 		document.addEventListener("dragover", this.dragoverPhoto);
 	},
 
 	beforeUnmount() {
-		document.removeEventListener("paste", this.PastePhoto);
+		document.removeEventListener("paste", this.pastePhoto);
 		document.removeEventListener("drop", this.dropPhoto);
 		document.removeEventListener("dragover", this.dragoverPhoto);
 	},
@@ -171,109 +169,70 @@ export default {
 			this.site_settings.photo_user = bool;
 		},
 
-		readPhotoFile(file) {
-				// let blob = file;
-				// let link = URL.createObjectURL(blob);
-			let reader = new FileReader();
-				reader.readAsDataURL(file);
-				reader.addEventListener("load", (el) => {
-					if (el.target.result) {
-						const image = new Image();
-						image.src = el.target.result;
-						image.addEventListener("load", (e) => {
-							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-						});
-						this.MY.custom_photo = el.target.result;
-						this.site_settings.photo_user = true;
-					}
-			});
-		},
-
-		readLinkPhoto(link) {
-			const path = 'https://'
-			link = link.substr(0, 4) == 'http' ? link : path + link;
-			const image = new Image();
-			image.src = link;
-			image.addEventListener("load", (e) => {
-				this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-				this.MY.custom_photo = link;
-				this.site_settings.photo_user = true;
-			});
-		},
-
-		// readImg(val, type) {
-		// 	let src = val;
-		// 	const path = 'https://'
-		// 	src = val.substr(0, 4) == 'http' ? val : path + val;
-		// 	this.$refs.urlPhoto.value = val;
-		// 	const img = new Image();
-		// 	img.onerror = () => { 
-		// 		if (type == 'url') this.errors.url_photo = true;
-		// 		if (type == 'value') this.errors.url_value_photo = true;
-		// 		if (this.$refs.urlPhoto) {
-		// 			this.$refs.urlPhoto.value = val;
-		// 			this.errors.url_value_photo = true;
-		// 		}
-		// 	}
-		// 	img.onload = () => {
-		// 		this.site_settings.photo_sett.ratio = img.width / img.height;
-		// 		this.MY.custom_photo = src;
-		// 		this.site_settings.photo_user = true;
-		// 	}
-		// 	img.src = src;
-		// },
-
-		readImg(link) {
+		readImg(link, file) {
 			let src = link;
-			const path = 'https://'
-			src = link.substr(0, 4) == 'http' ? link : path + link;
-			if (this.$refs.urlPhoto) {
-				this.$refs.urlPhoto.value = src;
+			if(!file) {
+				const path = 'https://'
+				src = link.substr(0, 4) == 'http' ? link : path + link;
+				if (this.$refs.urlPhoto) {
+					this.$refs.urlPhoto.value = src;
+				}
 			};
 			const img = new Image();
 			img.onerror = () => {
-				console.log('onerror:')
 				this.fileError();
-				this.errors.url_photo = true;
+				if (!file) {this.errors.url_photo = true;}
 			};
 			img.onload = () => {
 				this.site_settings.photo_sett.ratio = img.width / img.height;
 				this.MY.custom_photo = src;
 				this.site_settings.photo_user = true;
+				this.errors.url_photo = false;
+				this.errors.file_photo = false;
 			}
 			img.src = src;
 		},
 
-		fileError() {
-			console.log('this.errors.file_photo:', this.errors.file_photo)
+		readPhotoFile(file) {
 			this.errors.file_photo = false;
-			// this.$refs.myFileBox.classList.remove("animation--active");
+			let reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.addEventListener("load", (el) => {
+					if (el.target.result) {
+						this.readImg(el.target.result, true)
+					}
+			});
+		},
+
+		fileError() {
+			this.errors.file_photo = false;
 				setTimeout(() => {
 				this.errors.file_photo = true;
-				// this.$refs.myFileBox.classList.add("animation--active");
 				if(!this.MY.custom_photo) {
 					this.$refs.myFile.value = '';
 				}
-			}, 0);
+			}, 4);
 		},
 
 		onChange(event) {
 			const image_file = event.target.files[0].type.includes("image")
 			if (image_file) {
-				this.readPhotoFile(event.target.files[0])
+				this.readPhotoFile(event.target.files[0], true)
 			} else {
 				this.fileError();
 			}
 		},
 
-		onPasteUrl(event) {
-			setTimeout(() => {
-				const link = event.target.value;
-				this.readImg(link);
-			}, 0);
-		},
+		// onPasteUrl(event) {
+		// 	console.log('onPasteUrl:')
+		// 	setTimeout(() => {
+		// 		const link = event.target.value;
+		// 		this.readImg(link);
+		// 	}, 0);
+		// },
 
 		onChangeUrl(event) {
+			console.log('onChangeUrl:')
 			const link = event.target.value;
 			if(link) {
 				this.readImg(link);
@@ -281,16 +240,17 @@ export default {
 		},
 
 		onInputUrl(event) {
+			console.log('onInputUrl:')
 			const link = event.target.value;
 			if(link == '') this.errors.url_photo = false;
 		},
 
-		PastePhoto(event) {
-			const item = Array.from(event.clipboardData.items).find(x => /^image\//.test(x.type));
+		sequencingProcess(el) {
+			const item = Array.from(el.items).find(x => /^image\//.test(x.type));
 			if (item) {
 				this.readPhotoFile(item.getAsFile())
 			} else {
-				const link = event.clipboardData.getData('Text');
+				const link = el.getData('Text');
 				if(link) {
 					this.readImg(link);
 				} else {
@@ -299,18 +259,13 @@ export default {
 			}
 		},
 
+		pastePhoto(event) {
+			console.log('pastePhoto:')
+			this.sequencingProcess(event.clipboardData)
+		},
+
 		dropPhoto(event) {
-			const item = Array.from(event.dataTransfer.items).find(x => /^image\//.test(x.type));
-			if (item) {
-				this.readPhotoFile(item.getAsFile())
-			} else {
-				const link = event.dataTransfer.getData('Text');
-				if(link) {
-					this.readImg(link);
-				} else {
-					this.fileError();
-				}
-			} 
+			this.sequencingProcess(event.dataTransfer);
 			event.preventDefault();
 		},
 
@@ -332,7 +287,6 @@ export default {
 			this.MY.custom_photo = null;
 			this.site_settings.photo_user = false;
 			this.$refs.myFile.value = '';
-			// document.getElementById('myFile').value = '';
 		},
 	},
 };
@@ -447,9 +401,9 @@ input[type=text] {
 
 .animation--active  {
   animation-name: active-back;
-  animation-duration: 2s;
+  animation-duration: 1.8s;
   animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 @keyframes active-back{

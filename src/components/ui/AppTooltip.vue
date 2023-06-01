@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div @mouseenter="toggle" @mouseleave="toggle">
+    <div @mouseenter="toggle_Visib" @mouseleave="toggle_Hiden">
       <slot />
       <transition name="slide-fade-tolltip">
         <div
@@ -66,19 +66,18 @@ export default {
   },
 
   methods: {
-    toggle() {
-      this.isShown = !this.isShown;
+    toggle_Visib() {
+      this.isShown = true;
+    },
+
+    toggle_Hiden() {
+      this.isShown = false;
     },
   },
 };
 </script>
 
 <style scoped>
-/* .flex {
-  display: flex;
-  flex-direction: column;
-} */
-
 .tooltip-clss {
   position: absolute;
   color: #ffffff;
