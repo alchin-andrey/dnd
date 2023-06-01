@@ -175,6 +175,7 @@ export default {
 			// const link = event.clipboardData.getData('Text')
 			setTimeout(() => {
 				const image = new Image();
+				console.log('event.target.value:', event.target.value)
 				image.src = event.target.value;
 				image.addEventListener("load", (e) => {
 					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
@@ -211,7 +212,6 @@ export default {
 					this.site_settings.photo_user = true;
 				});
 			}
-			event.preventDefault();
 		},
 
 		dropPhoto(event) {
