@@ -8,6 +8,7 @@
           class="tooltip-pointer"
           :class="{
             'tooltip-pointer--warn': warn,
+            'tooltip-pointer--error': error,
           }"
         />
       </transition>
@@ -18,6 +19,7 @@
         class="tooltip-clss int-400"
         :class="{
           'tooltip-clss--warn': warn,
+          'tooltip-clss--error': error,
         }"
       >
         {{ t_Text }}
@@ -44,6 +46,10 @@ export default {
       default: false,
     },
     warn: {
+      type: Boolean,
+      default: false,
+    },
+    error: {
       type: Boolean,
       default: false,
     },
@@ -112,6 +118,17 @@ export default {
 }
 .tooltip-pointer--warn:after {
   border-bottom-color: #ffc93d;
+}
+
+.tooltip-clss--error {
+  border-color: #FF0000;;
+  color: #FF0000;
+}
+.tooltip-clss--error:after {
+  border-bottom-color: #FF0000;
+}
+.tooltip-pointer--error:after {
+  border-bottom-color: #FF0000;
 }
 
 .slide-fade-tolltip-enter-active,

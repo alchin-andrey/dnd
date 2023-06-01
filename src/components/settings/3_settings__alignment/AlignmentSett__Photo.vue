@@ -3,12 +3,20 @@
 		<div class="int-700">{{ T('standard') }}</div>
 	</AppCardWrapp>
 	<AppCardWrapp gap="26" :active_card="site_settings.photo_user"
-		:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)">
+		:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)" no_blur>
 		<main class="flex-col gap-8">
 
-			<section :class="['input-box', stule_Hov]" :style="stule_Img_Obj">
+			<section
+			ref="myFileBox"
+			class="input-box" 
+			:class="{
+				'hov cur-p': !MY.custom_photo,
+				'animation--active': errors.file_photo,
+			}" 
+			:style="stule_Img_Obj"
+			>
 				<label for="">
-					<input type="file" id="myFile" size="50" accept="image/*" @change="onChange($event)">
+					<input type="file" ref="myFile" id="myFile" size="50" accept="image/*" @change="onChange($event)">
 					<!-- <AppSvg class="svg-54 svg-main-f" name="upload"/> -->
 				</label>
 				<div v-if="MY.custom_photo" class="plag-photo-load"></div>
@@ -26,12 +34,32 @@
 					@click.stop />
 				<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop />
 			</section>
-
-			<label v-if="!MY.custom_photo" class="photo-url" for="url">
-				<input ref="url_photo" type="url" name="url" id="url" class="int-700" :placeholder="T('enter_url')"
-					pattern="https://.*" size="30" required @paste="onPasteUrl($event)">
-			</label>
-
+			<AppTooltip
+				v-if="!MY.custom_photo" 
+				class="pos-rel"
+				text="url_photo_error"
+				:shown="errors.url_photo"
+				error
+			>
+				<label 
+				class="photo-url flex-row" 
+				for="url"
+				>
+					<input 
+						ref="urlPhoto" 
+						type="url"
+						name="url"
+						class="int-700"
+						:class="{'error-text': errors.url_photo}"
+						:placeholder="T('enter_url')"
+						pattern="https://.*" 
+						size="30"
+						@paste="onPasteUrl($event)"
+						@change="onChangeUrl($event)"
+						@input="onInputUrl($event)"
+					>
+				</label>
+			</AppTooltip>
 		</main>
 
 		<section>
@@ -44,9 +72,6 @@
 			<a @click.stop target="_blank" :href="photo_Link_Pinterest">{{ T('choose_photo') }}</a>
 		</section>
 
-		<my-dialog-spell v-model:show="dialogVisible">
-			<div class="input-box" :style="stule_Img_Obj"></div>
-		</my-dialog-spell>
 	</AppCardWrapp>
 </template>
 
@@ -59,8 +84,16 @@ export default {
 	name: "AlignmentSett__Photo",
 	data() {
 		return {
-			dialogVisible: false,
-			edit_visible: false,
+			errors: {
+				file_photo: false,
+				url_photo: false,
+				url_value_photo: false,
+			},
+
+			file_erorr_photo: false,
+			url_erorr_photo: false,
+			url_value_erorr_photo: false,
+
 			upload: `url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E")`,
 		};
 	},
@@ -97,10 +130,6 @@ export default {
 				}
 			}
 			return { 'background-image': this.upload };
-		},
-
-		stule_Hov() {
-			if (!this.MY.custom_photo) return 'hov cur-p'
 		},
 
 		active_Curd() {
@@ -142,53 +171,10 @@ export default {
 			this.site_settings.photo_user = bool;
 		},
 
-		onChange(event) {
-			const inc = event.target.files[0].type.includes("image")
-			if (inc) {
-				// let blob = event.target.files[0];
-				// let image = new Image();
+		readPhotoFile(file) {
+				// let blob = file;
 				// let link = URL.createObjectURL(blob);
-				// image.src = link;
-				// image.addEventListener("load", (e) => {
-				// 	this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-				// });
-				// this.MY.custom_photo = link;
-				// this.site_settings.photo_user = true;
-
-				let reader = new FileReader();
-				reader.readAsDataURL(event.target.files[0]);
-				reader.addEventListener("load", (el) => {
-					if (el.target.result) {
-						const image = new Image();
-						image.src = el.target.result;
-						image.addEventListener("load", (e) => {
-							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-						});
-						this.MY.custom_photo = el.target.result;
-						this.site_settings.photo_user = true;
-					}
-				});
-			}
-		},
-
-		onPasteUrl(event) {
-			// const link = event.clipboardData.getData('Text')
-			setTimeout(() => {
-				const image = new Image();
-				image.src = event.target.value;
-				image.addEventListener("load", (e) => {
-					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-					this.MY.custom_photo = event.target.value;
-					this.site_settings.photo_user = true;
-				});
-			}, 0);
-		},
-
-		PastePhoto(event) {
-			const item = Array.from(event.clipboardData.items).find(x => /^image\//.test(x.type));
-			if (item) {
-				const file = item.getAsFile();
-				let reader = new FileReader();
+			let reader = new FileReader();
 				reader.readAsDataURL(file);
 				reader.addEventListener("load", (el) => {
 					if (el.target.result) {
@@ -200,48 +186,131 @@ export default {
 						this.MY.custom_photo = el.target.result;
 						this.site_settings.photo_user = true;
 					}
-				});
+			});
+		},
+
+		readLinkPhoto(link) {
+			const path = 'https://'
+			link = link.substr(0, 4) == 'http' ? link : path + link;
+			const image = new Image();
+			image.src = link;
+			image.addEventListener("load", (e) => {
+				this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+				this.MY.custom_photo = link;
+				this.site_settings.photo_user = true;
+			});
+		},
+
+		// readImg(val, type) {
+		// 	let src = val;
+		// 	const path = 'https://'
+		// 	src = val.substr(0, 4) == 'http' ? val : path + val;
+		// 	this.$refs.urlPhoto.value = val;
+		// 	const img = new Image();
+		// 	img.onerror = () => { 
+		// 		if (type == 'url') this.errors.url_photo = true;
+		// 		if (type == 'value') this.errors.url_value_photo = true;
+		// 		if (this.$refs.urlPhoto) {
+		// 			this.$refs.urlPhoto.value = val;
+		// 			this.errors.url_value_photo = true;
+		// 		}
+		// 	}
+		// 	img.onload = () => {
+		// 		this.site_settings.photo_sett.ratio = img.width / img.height;
+		// 		this.MY.custom_photo = src;
+		// 		this.site_settings.photo_user = true;
+		// 	}
+		// 	img.src = src;
+		// },
+
+		readImg(link) {
+			let src = link;
+			const path = 'https://'
+			src = link.substr(0, 4) == 'http' ? link : path + link;
+			if (this.$refs.urlPhoto) {
+				this.$refs.urlPhoto.value = src;
+			};
+			const img = new Image();
+			img.onerror = () => {
+				console.log('onerror:')
+				this.fileError();
+				this.errors.url_photo = true;
+			};
+			img.onload = () => {
+				this.site_settings.photo_sett.ratio = img.width / img.height;
+				this.MY.custom_photo = src;
+				this.site_settings.photo_user = true;
+			}
+			img.src = src;
+		},
+
+		fileError() {
+			console.log('this.errors.file_photo:', this.errors.file_photo)
+			this.errors.file_photo = false;
+			// this.$refs.myFileBox.classList.remove("animation--active");
+				setTimeout(() => {
+				this.errors.file_photo = true;
+				// this.$refs.myFileBox.classList.add("animation--active");
+				if(!this.MY.custom_photo) {
+					this.$refs.myFile.value = '';
+				}
+			}, 0);
+		},
+
+		onChange(event) {
+			const image_file = event.target.files[0].type.includes("image")
+			if (image_file) {
+				this.readPhotoFile(event.target.files[0])
+			} else {
+				this.fileError();
+			}
+		},
+
+		onPasteUrl(event) {
+			setTimeout(() => {
+				const link = event.target.value;
+				this.readImg(link);
+			}, 0);
+		},
+
+		onChangeUrl(event) {
+			const link = event.target.value;
+			if(link) {
+				this.readImg(link);
+			}
+		},
+
+		onInputUrl(event) {
+			const link = event.target.value;
+			if(link == '') this.errors.url_photo = false;
+		},
+
+		PastePhoto(event) {
+			const item = Array.from(event.clipboardData.items).find(x => /^image\//.test(x.type));
+			if (item) {
+				this.readPhotoFile(item.getAsFile())
 			} else {
 				const link = event.clipboardData.getData('Text');
-				const image = new Image();
-				image.src = link;
-				image.addEventListener("load", (e) => {
-					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-					this.MY.custom_photo = link;
-					this.site_settings.photo_user = true;
-				});
+				if(link) {
+					this.readImg(link);
+				} else {
+					this.fileError();
+				}
 			}
 		},
 
 		dropPhoto(event) {
 			const item = Array.from(event.dataTransfer.items).find(x => /^image\//.test(x.type));
 			if (item) {
-				const file = item.getAsFile();
-				const reader = new FileReader();
-				reader.readAsDataURL(file);
-				reader.addEventListener("load", (el) => {
-					if (el.target.result) {
-						const image = new Image();
-						image.src = el.target.result;
-						image.addEventListener("load", (e) => {
-							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-						});
-						this.MY.custom_photo = el.target.result;
-						this.site_settings.photo_user = true;
-					}
-				});
+				this.readPhotoFile(item.getAsFile())
 			} else {
-				let link = event.dataTransfer.getData('Text');
-				const path = 'https://'
-				link = link.substr(0, 4) == 'http' ? link : path + link;
-				const image = new Image();
-				image.src = link;
-				image.addEventListener("load", (e) => {
-					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-					this.MY.custom_photo = link;
-					this.site_settings.photo_user = true;
-				});
-			}
+				const link = event.dataTransfer.getData('Text');
+				if(link) {
+					this.readImg(link);
+				} else {
+					this.fileError();
+				}
+			} 
 			event.preventDefault();
 		},
 
@@ -253,20 +322,17 @@ export default {
 			this.site_settings.photo_sett.size_cover = bool;
 		},
 
-		showEdit() {
-			if (this.size_Cover) {
-				this.edit_visible = !this.edit_visible;
-			}
-		},
-
 		delPhoto() {
 			this.site_settings.photo_sett.size_cover = true;
 			this.site_settings.photo_sett.position = 50;
 
+			this.errors.file_photo = false;
+			this.errors.url_photo = false;
+
 			this.MY.custom_photo = null;
 			this.site_settings.photo_user = false;
-			this.edit_visible = false;
-			document.getElementById('myFile').value = '';
+			this.$refs.myFile.value = '';
+			// document.getElementById('myFile').value = '';
 		},
 	},
 };
@@ -358,7 +424,15 @@ input[type=url] {
 	height: 48px;
 	background-color: rgba(255, 255, 255, 0.06);
 	border-radius: 8px;
-	/* border: 1px solid rgba(255, 255, 255, 0.1); */
+	padding: 16px;
+	color: #ffffff;
+}
+
+input[type=text] {
+	width: 100%;
+	height: 48px;
+	background-color: rgba(255, 255, 255, 0.06);
+	border-radius: 8px;
 	padding: 16px;
 	color: #ffffff;
 }
@@ -367,6 +441,21 @@ input[type=url] {
 	background-color: rgba(255, 255, 255, 0.06);
 	transition-duration: .5s;
 	border-radius: 8px;
-	/* overflow: hidden; */
+	height: 100%;
+}
+
+
+.animation--active  {
+  animation-name: active-back;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
+  animation-delay: 0.2s;
+}
+
+@keyframes active-back{
+	0%{ background-color: rgba(255, 255, 255, 0.06); }
+	20%{ background-color: #FF0000; }
+	40%{ background-color: #FF0000; }
+	100%{ background-color: rgba(255, 255, 255, 0.06); }
 }
 </style>
