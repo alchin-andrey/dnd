@@ -67,10 +67,14 @@ export default {
 
 	mounted() {
 		document.addEventListener("paste", this.PastePhoto);
+		document.addEventListener("drop", this.dropPhoto);
+		document.addEventListener("dragover", this.dragoverPhoto);
 	},
 
 	beforeUnmount() {
 		document.removeEventListener("paste", this.PastePhoto);
+		document.removeEventListener("drop", this.dropPhoto);
+		document.removeEventListener("dragover", this.dragoverPhoto);
 	},
 
 	computed: {
@@ -141,29 +145,29 @@ export default {
 		onChange(event) {
 			const inc = event.target.files[0].type.includes("image")
 			if (inc) {
-				let blob = event.target.files[0];
-				let image = new Image();
-				let link = URL.createObjectURL(blob);
-				image.src = link;
-				image.addEventListener("load", (e) => {
-					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-				});
-				this.MY.custom_photo = link;
-				this.site_settings.photo_user = true;
-
-				// let reader = new FileReader();
-				// reader.readAsDataURL(event.target.files[0]);
-				// reader.addEventListener("load", (el) => {
-				// 	if (el.target.result) {
-				// 		const image = new Image();
-				// 		image.src = el.target.result;
-				// 		image.addEventListener("load", (e) => {
-				// 			this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
-				// 		});
-				// 		this.MY.custom_photo = el.target.result;
-				// 		this.site_settings.photo_user = true;
-				// 	}
+				// let blob = event.target.files[0];
+				// let image = new Image();
+				// let link = URL.createObjectURL(blob);
+				// image.src = link;
+				// image.addEventListener("load", (e) => {
+				// 	this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
 				// });
+				// this.MY.custom_photo = link;
+				// this.site_settings.photo_user = true;
+
+				let reader = new FileReader();
+				reader.readAsDataURL(event.target.files[0]);
+				reader.addEventListener("load", (el) => {
+					if (el.target.result) {
+						const image = new Image();
+						image.src = el.target.result;
+						image.addEventListener("load", (e) => {
+							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+						});
+						this.MY.custom_photo = el.target.result;
+						this.site_settings.photo_user = true;
+					}
+				});
 			}
 		},
 
@@ -182,17 +186,21 @@ export default {
 
 		PastePhoto(event) {
 			const item = Array.from(event.clipboardData.items).find(x => /^image\//.test(x.type));
-			console.log('item:', item)
 			if (item) {
-				const blob = item.getAsFile();
-				const image = new Image();
-				const link = URL.createObjectURL(blob);
-				image.src = link;
-				image.addEventListener("load", (e) => {
-					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+				const file = item.getAsFile();
+				let reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.addEventListener("load", (el) => {
+					if (el.target.result) {
+						const image = new Image();
+						image.src = el.target.result;
+						image.addEventListener("load", (e) => {
+							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+						});
+						this.MY.custom_photo = el.target.result;
+						this.site_settings.photo_user = true;
+					}
 				});
-				this.MY.custom_photo = link;
-				this.site_settings.photo_user = true;
 			} else {
 				const link = event.clipboardData.getData('Text');
 				const image = new Image();
@@ -203,6 +211,43 @@ export default {
 					this.site_settings.photo_user = true;
 				});
 			}
+			event.preventDefault();
+		},
+
+		dropPhoto(event) {
+			const item = Array.from(event.dataTransfer.items).find(x => /^image\//.test(x.type));
+			if (item) {
+				const file = item.getAsFile();
+				const reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.addEventListener("load", (el) => {
+					if (el.target.result) {
+						const image = new Image();
+						image.src = el.target.result;
+						image.addEventListener("load", (e) => {
+							this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+						});
+						this.MY.custom_photo = el.target.result;
+						this.site_settings.photo_user = true;
+					}
+				});
+			} else {
+				let link = event.dataTransfer.getData('Text');
+				const path = 'https://'
+				link = link.substr(0, 4) == 'http' ? link : path + link;
+				const image = new Image();
+				image.src = link;
+				image.addEventListener("load", (e) => {
+					this.site_settings.photo_sett.ratio = e.target.width / e.target.height;
+					this.MY.custom_photo = link;
+					this.site_settings.photo_user = true;
+				});
+			}
+			event.preventDefault();
+		},
+
+		dragoverPhoto(event) {
+			event.preventDefault();
 		},
 
 		getPosition(bool) {
