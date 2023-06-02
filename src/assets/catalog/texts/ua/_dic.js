@@ -6137,4 +6137,5 @@ export default {
   choose_photo: "Підібрати на Pinterest ↗",
   
   enter_url: "або URL:",
+  url_photo_error:"Посилання повинно вести на зображення",
 };
