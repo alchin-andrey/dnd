@@ -119,7 +119,7 @@ export default {
 }
 
 .avatar-sett-wrapp {
-	width: 112px;
+	width: 162px;
 	margin: 1px 1px 0 0;
 }
 
@@ -127,14 +127,17 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	gap: 16px;
-	padding-top: 24px;
+	padding: 30px 26px 26px;
 	position: relative;
 	z-index: 1000;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 24px;
 }
 
 .sett-text-absol {
 	position: absolute;
-	top: 0;
+	top: 8px;
 	left: 50%;
 	z-index: 100;
 	transform: translateX(-50%);
@@ -142,8 +145,11 @@ export default {
 
 .sett-tired {
 	position: relative;
-	margin-top: 64px;
-	padding-top: 46px;
+	margin-top: 36px;
+	padding: 54px 26px 26px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	border-radius: 24px;
 }
 
 .flex-centr {

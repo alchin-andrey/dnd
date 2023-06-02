@@ -1,7 +1,7 @@
 <template>
 	<div class="main-class">
-		<Main__MenuBar/>
-		<Main__SetBar/>
+		<Main__MenuBar />
+		<Main__SetBar />
 		<Main__CharBar v-show="!PRINT_BLANK"/>
 		<Main__ParamBar v-show="!PRINT_BLANK"/>
 	</div>
@@ -22,9 +22,11 @@
 		</section>
 	</my-dialog-spell>
 
-	<div v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert">
+	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
+
+	<!-- <div v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert">
 		<BlankPrint />
-	</div>
+	</div> -->
 
 	<!-- <PlagBanner v-if="!screen_Max"/> -->
 </template>
