@@ -208,10 +208,10 @@ export default {
 				this.errors.url_photo = false;
 				this.errors.file_photo = false;
 
-				const time = this.shown_home ? 200 : 0;
-				// const time = this.shown_home ? [200, 300] : [0, 0];
-				// setTimeout(() => this.goPage("alignment_page"), time[0]);
-				setTimeout(() => this.showSettings__Alignment('photo'), time);
+				if(!this.alignment_page.shown.photo) {
+					const time = this.shown_home ? 200 : 0;
+					setTimeout(() => this.showSettings__Alignment('photo'), time);
+				}
 			}
 			img.src = src;
 		},
