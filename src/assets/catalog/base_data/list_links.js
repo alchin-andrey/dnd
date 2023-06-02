@@ -639,4 +639,53 @@ bard: {
 
 },
 
+ranger: {
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D511074596/",
+    female:"https://www.heroforge.com/load_config%3D511074586/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D511074560/",
+    female:"https://www.heroforge.com/load_config%3D511074544/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D511074529/",
+    female:"https://www.heroforge.com/load_config%3D511074505/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D511074490/",
+    female:"https://www.heroforge.com/load_config%3D511074480/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D511074459/",
+    female:"https://www.heroforge.com/load_config%3D511074436/",
+  },
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D511074421/",
+    female:"https://www.heroforge.com/load_config%3D511074403/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D511074371/",
+    female:"https://www.heroforge.com/load_config%3D511074358/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D511074338/",
+    female:"https://www.heroforge.com/load_config%3D511074327/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D511074316/",
+    female:"https://www.heroforge.com/load_config%3D511074273/",
+  },
+
+},
+
 };
