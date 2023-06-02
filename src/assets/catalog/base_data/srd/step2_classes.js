@@ -28,7 +28,10 @@ export default {
         weaponry.hand_arbalets,
       ],
       tools: [tools.thief],
-      languages: [lang.thieves],
+      languages: [{
+        name: "lang_thieves",
+        details: "lang_thieves_details"
+    },],
     },
 
     saving: ["dexterity", "intelligence"],
@@ -3525,7 +3528,10 @@ export default {
         weaponry.scimitars,
       ],
       tools: [tools.herbalists_tools],
-      languages: [lang.druid],
+      languages: [{
+            name: "lang_druid",
+            details: "lang_druid_details"
+        },],
     },
 
     saving: ["intelligence", "wisdom"],

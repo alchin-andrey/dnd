@@ -38,18 +38,18 @@ export default {
         name: "lang_goblin",
         details: "lang_goblin_details"
     },
-    thieves: {
-        name: "lang_thieves",
-        details: "lang_thieves_details"
-    },
-    druid: {
-        name: "lang_druid",
-        details: "lang_druid_details"
-    },
-    animal: {
-        name: "lang_animal",
-        details: "lang_animal_details"
-    },
+    // thieves: {
+    //     name: "lang_thieves",
+    //     details: "lang_thieves_details"
+    // },
+    // druid: {
+    //     name: "lang_druid",
+    //     details: "lang_druid_details"
+    // },
+    // animal: {
+    //     name: "lang_animal",
+    //     details: "lang_animal_details"
+    // },
     sylvan: {
         name: "lang_sylvan",
         details: "lang_sylvan_details"

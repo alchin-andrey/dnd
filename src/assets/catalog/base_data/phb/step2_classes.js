@@ -28,7 +28,10 @@ export default {
         weaponry.hand_arbalets,
       ],
       tools: [tools.thief],
-      languages: [lang.thieves],
+      languages: [{
+        name: "lang_thieves",
+        details: "lang_thieves_details"
+    },],
     },
 
     saving: ["dexterity", "intelligence"],
@@ -5189,21 +5192,6 @@ export default {
                     proficiencies: { languages: [lang.goblin] },
                   },
                   {
-                    name: lang.thieves.name,
-                    details: lang.thieves.details,
-                    proficiencies: { languages: [lang.thieves] },
-                  },
-                  {
-                    name: lang.druid.name,
-                    details: lang.druid.details,
-                    proficiencies: { languages: [lang.druid] },
-                  },
-                  {
-                    name: lang.animal.name,
-                    details: lang.animal.details,
-                    proficiencies: { languages: [lang.animal] },
-                  },
-                  {
                     name: lang.sylvan.name,
                     details: lang.sylvan.details,
                     proficiencies: { languages: [lang.sylvan] },
@@ -5965,7 +5953,10 @@ export default {
         weaponry.scimitars,
       ],
       tools: [tools.herbalists_tools],
-      languages: [lang.druid],
+      languages: [{
+            name: "lang_druid",
+            details: "lang_druid_details"
+        },],
     },
 
     saving: ["intelligence", "wisdom"],
@@ -12215,21 +12206,6 @@ export default {
                     name: lang.goblin.name,
                     details: lang.goblin.details,
                     proficiencies: { languages: [lang.goblin] },
-                  },
-                  {
-                    name: lang.thieves.name,
-                    details: lang.thieves.details,
-                    proficiencies: { languages: [lang.thieves] },
-                  },
-                  {
-                    name: lang.druid.name,
-                    details: lang.druid.details,
-                    proficiencies: { languages: [lang.druid] },
-                  },
-                  {
-                    name: lang.animal.name,
-                    details: lang.animal.details,
-                    proficiencies: { languages: [lang.animal] },
                   },
                   {
                     name: lang.sylvan.name,

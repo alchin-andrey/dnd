@@ -784,21 +784,6 @@ export default {
             proficiencies: { languages: [lang.goblin] },
           },
           {
-            name: lang.thieves.name,
-            details: lang.thieves.details,
-            proficiencies: { languages: [lang.thieves] },
-          },
-          {
-            name: lang.druid.name,
-            details: lang.druid.details,
-            proficiencies: { languages: [lang.druid] },
-          },
-          {
-            name: lang.animal.name,
-            details: lang.animal.details,
-            proficiencies: { languages: [lang.animal] },
-          },
-          {
             name: lang.sylvan.name,
             details: lang.sylvan.details,
             proficiencies: { languages: [lang.sylvan] },
