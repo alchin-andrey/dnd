@@ -7,12 +7,16 @@
         }"
       :src="img_Char"
       :alt="body_part"
+      @click.stop
+      @click="showSettings__Alignment('photo')"
     />
 
     <div 
       v-else-if="show_Custom_Img"
       class="custom-img"  
       :style="stule_Img_Obj"
+      @click.stop
+      @click="showSettings__Alignment('photo')"
     />
   
   <svg
@@ -27,7 +31,7 @@
 
 <script>
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
@@ -218,6 +222,10 @@ export default {
       }
     },
   },
+
+  methods: {
+    ...mapActions(usePagesStore, ["showSettings__Alignment"]),
+  }
 
 };
 </script>

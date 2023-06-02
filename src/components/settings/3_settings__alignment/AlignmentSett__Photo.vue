@@ -1,85 +1,87 @@
 <template>
-	<AppCardWrapp :active_card="!site_settings.photo_user" @click="getPhotoStatus(false)">
-		<div class="int-700">{{ T('standard') }}</div>
-	</AppCardWrapp>
-	<AppCardWrapp gap="26" :active_card="site_settings.photo_user"
-		:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)" no_blur>
-		<main class="flex-col gap-8">
+	<My-Selection-Box :shown="alignment_page.shown.photo" title="photo" :select="photo_Select" mob_fixed>
+		<AppCardWrapp :active_card="!site_settings.photo_user" @click="getPhotoStatus(false)">
+			<div class="int-700">{{ T('standard') }}</div>
+		</AppCardWrapp>
+		<AppCardWrapp gap="26" :active_card="site_settings.photo_user"
+			:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)" no_blur>
+			<main class="flex-col gap-8">
 
-			<section
-			ref="myFileBox"
-			class="input-box" 
-			:class="{
-				'hov cur-p': !MY.custom_photo,
-				'animation--active': errors.file_photo,
-			}" 
-			:style="stule_Img_Obj"
-			>
-				<label for="">
-					<input type="file" ref="myFile" id="myFile" size="50" accept="image/*" @change="onChange($event)">
-					<!-- <AppSvg class="svg-54 svg-main-f" name="upload"/> -->
-				</label>
-				<div 
-				v-if="MY.custom_photo" 
-				class="plag-photo-load"
-				:class="{'animation--active': errors.file_photo}" 
-				></div>
-				<template v-if="size_Cover && MY.custom_photo">
-					<AppRangPhoto :class="[style_Rang_Photo]" v-if="pos_Rang_Photo"
-						v-model.number="site_settings.photo_sett.position" :orientation="pos_Rang_Photo" :pad="padding_Rang_Photo"
-						@click.stop />
-				</template>
-			</section>
-
-			<section class="grit-btm" v-if="MY.custom_photo">
-				<AppBtmIcon icon="photo_fill" @click="getPosition(true)" :active_btm="site_settings.photo_sett.size_cover"
-					@click.stop />
-				<AppBtmIcon icon="photo_fit" @click="getPosition(false)" :active_btm="!site_settings.photo_sett.size_cover"
-					@click.stop />
-				<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop />
-			</section>
-			<AppTooltip
-				v-if="!MY.custom_photo" 
-				class="pos-rel"
-				text="url_photo_error"
-				:shown="errors.url_photo"
-				error
-			>
-				<label 
-				class="photo-url flex-row" 
-				for="url"
+				<section
+				ref="myFileBox"
+				class="input-box" 
+				:class="{
+					'hov cur-p': !MY.custom_photo,
+					'animation--active': errors.file_photo,
+				}" 
+				:style="stule_Img_Obj"
 				>
-					<input 
-						ref="urlPhoto" 
-						type="url"
-						name="url"
-						class="int-700"
-						:class="{'error-text': errors.url_photo}"
-						:placeholder="T('enter_url')"
-						pattern="https://.*" 
-						size="30"
-						@keyup.enter="onChangeUrl($event)"
-						@input="onInputUrl($event)"
+					<label for="">
+						<input type="file" ref="myFile" id="myFile" size="50" accept="image/*" @change="onChange($event)">
+						<!-- <AppSvg class="svg-54 svg-main-f" name="upload"/> -->
+					</label>
+					<div 
+					v-if="MY.custom_photo" 
+					class="plag-photo-load"
+					:class="{'animation--active': errors.file_photo}" 
+					></div>
+					<template v-if="size_Cover && MY.custom_photo">
+						<AppRangPhoto :class="[style_Rang_Photo]" v-if="pos_Rang_Photo"
+							v-model.number="site_settings.photo_sett.position" :orientation="pos_Rang_Photo" :pad="padding_Rang_Photo"
+							@click.stop />
+					</template>
+				</section>
+
+				<section class="grit-btm" v-if="MY.custom_photo">
+					<AppBtmIcon icon="photo_fill" @click="getPosition(true)" :active_btm="site_settings.photo_sett.size_cover"
+						@click.stop />
+					<AppBtmIcon icon="photo_fit" @click="getPosition(false)" :active_btm="!site_settings.photo_sett.size_cover"
+						@click.stop />
+					<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop />
+				</section>
+				<AppTooltip
+					v-if="!MY.custom_photo" 
+					class="pos-rel"
+					text="url_photo_error"
+					:shown="errors.url_photo"
+					error
+				>
+					<label 
+					class="photo-url flex-row" 
+					for="url"
 					>
-				</label>
-			</AppTooltip>
-		</main>
+						<input 
+							ref="urlPhoto" 
+							type="url"
+							name="url"
+							class="int-700"
+							:class="{'error-text': errors.url_photo}"
+							:placeholder="T('enter_url')"
+							pattern="https://.*" 
+							size="30"
+							@keyup.enter="onChangeUrl($event)"
+							@input="onInputUrl($event)"
+						>
+					</label>
+				</AppTooltip>
+			</main>
 
-		<section>
-			<div class="int-700 pos-rel">{{ T('your_image') }}</div>
-			<div class="int-400 white-04 mr-t-4">{{ T('your_image_details') }}</div>
-		</section>
+			<section>
+				<div class="int-700 pos-rel">{{ T('your_image') }}</div>
+				<div class="int-400 white-04 mr-t-4">{{ T('your_image_details') }}</div>
+			</section>
 
-		<section class="int-400 flex-row gap-32">
-			<a @click.stop target="_blank" :href="photo_Link_Hero">{{ T('edit_photo') }}</a>
-			<a @click.stop target="_blank" :href="photo_Link_Pinterest">{{ T('choose_photo') }}</a>
-		</section>
+			<section class="int-400 flex-row gap-32">
+				<a @click.stop target="_blank" :href="photo_Link_Hero">{{ T('edit_photo') }}</a>
+				<a @click.stop target="_blank" :href="photo_Link_Pinterest">{{ T('choose_photo') }}</a>
+			</section>
 
-	</AppCardWrapp>
+		</AppCardWrapp>
+	</My-Selection-Box>
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
@@ -110,8 +112,13 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
-		...mapState(usePagesStore, ["site_settings", "alignment_page"]),
-		...mapState(useAlignmentStore, ["photo_Link_Hero", "photo_Link_Pinterest"]),
+		...mapState(usePagesStore, ["site_settings", "alignment_page", "shown_home"]),
+		...mapState(useAlignmentStore, [
+			"photo_Select",
+			"photo_Link_Hero", 
+			"photo_Link_Pinterest",
+			// "errors",
+		]),
 
 		stule_Img_Obj() {
 			if (this.active_Custom_Photo) {
@@ -165,6 +172,17 @@ export default {
 	},
 
 	methods: {
+		// ...mapActions(useAlignmentStore, [
+		// 	"onChange",
+		// 	"onChangeUrl",
+		// 	"onInputUrl",
+		// 	"pastePhoto",
+		// 	"dropPhoto",
+		// 	"dragoverPhoto",
+		// ]),
+
+		...mapActions(usePagesStore, ["showSettings__Alignment"]),
+
 		getPhotoStatus(bool) {
 			this.site_settings.photo_user = bool;
 		},
@@ -189,6 +207,11 @@ export default {
 				this.site_settings.photo_user = true;
 				this.errors.url_photo = false;
 				this.errors.file_photo = false;
+
+				const time = this.shown_home ? 200 : 0;
+				// const time = this.shown_home ? [200, 300] : [0, 0];
+				// setTimeout(() => this.goPage("alignment_page"), time[0]);
+				setTimeout(() => this.showSettings__Alignment('photo'), time);
 			}
 			img.src = src;
 		},
@@ -208,7 +231,7 @@ export default {
 			this.errors.file_photo = false;
 				setTimeout(() => {
 				this.errors.file_photo = true;
-				if(!this.MY.custom_photo) {
+				if(!this.MY.custom_photo && this.$refs.myFile) {
 					this.$refs.myFile.value = '';
 				}
 			}, 4);
@@ -260,8 +283,9 @@ export default {
 		},
 
 		pastePhoto(event) {
-			console.log('pastePhoto:')
+			// if(this.alignment_page.shown.photo) {
 			this.sequencingProcess(event.clipboardData)
+			// }
 		},
 
 		dropPhoto(event) {

@@ -208,7 +208,7 @@ export default {
   left: 0;
   background-color: #0e1518;
   position: fixed;
-  z-index: 500;
+  z-index: 110;
 }
 
 .dialog--fixed {
@@ -217,7 +217,7 @@ export default {
 }
 
 .dialog__wrapp {
-  z-index: 501;
+  /* z-index: 501; */
   cursor: auto;
   height: 100%;
 }

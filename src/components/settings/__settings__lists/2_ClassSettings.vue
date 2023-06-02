@@ -36,6 +36,9 @@
 		>
     <ClassSett__Feats :id_link="item.id_link" />
 		</My-Selection-Box>
+
+
+		<AlignmentSett__Photo />
 </template>
 
 <script>

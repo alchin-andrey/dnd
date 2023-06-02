@@ -100,6 +100,8 @@ export default {
 	height: 100%;
 	display: flex;
 	gap: 0 12px;
+	position: relative;
+	z-index: 15;
 }
 
 .skale_numb_top {

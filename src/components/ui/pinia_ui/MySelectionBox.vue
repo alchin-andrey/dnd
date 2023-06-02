@@ -22,6 +22,7 @@
   :not_mob_pd="not_mob_pd" 
   :not_mob_header="not_mob_header" 
   :mob_fixed="mob_fixed"
+  class="index"
   >
     <slot></slot>
   </AppMobDialog>
@@ -72,6 +73,10 @@ export default {
 </script>
 
 <style scoped>
+
+.index {
+  z-index: 120;
+}
 .sidebar_selection {
   height: 100%;
   left: 426px;

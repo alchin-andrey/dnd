@@ -90,7 +90,9 @@ export default {
 	overflow: hidden;
 }
 
-.character-mob>img {
+.character-mob>img,
+.character-mob>svg,
+.character-mob > .custom-img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -99,9 +101,11 @@ export default {
 	-ms-transform: translate(-50%, 0%);
 	transform: translate(-50%, 0%);
 	border-radius: 12px;
+	z-index: 10;
+	cursor: pointer;
 }
 
-.character-mob > .custom-img {
+/* .character-mob > .custom-img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -120,5 +124,5 @@ export default {
 	-webkit-transform: translate(-50%, 0%);
 	-ms-transform: translate(-50%, 0%);
 	transform: translate(-50%, 0%);
-}
+} */
 </style>

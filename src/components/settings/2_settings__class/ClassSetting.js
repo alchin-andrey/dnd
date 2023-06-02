@@ -5,6 +5,8 @@ import ClassSett__Spells from "@/components/settings/2_settings__class/ClassSett
 
 import ClassParamSett__Spells from "@/components/parameters/2_param__class/ClassParamSett__Spells.vue";
 
+import AlignmentSett__Photo from "@/components/settings/3_settings__alignment/AlignmentSett__Photo.vue";
+
 export default {
   components: {
     ClassSett__BaseStats,
@@ -12,5 +14,7 @@ export default {
     ClassSett__Feats,
     ClassSett__Spells,
     ClassParamSett__Spells,
+
+    AlignmentSett__Photo,
 	},
 };

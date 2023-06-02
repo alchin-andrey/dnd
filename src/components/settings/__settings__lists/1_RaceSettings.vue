@@ -53,6 +53,9 @@
 		<My-Selection-Box title="color_hair" :select="hair_color_Char_Body.name" :shown="race_page.shown.hair_color" not_mob_header not_mob_pd>
 			<my-color-select body_part="hair" />
 		</My-Selection-Box>
+
+
+		<AlignmentSett__Photo />
 </template>
 
 <script>

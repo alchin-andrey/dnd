@@ -12,12 +12,7 @@
 		</div>
 
 		<section class="selection_menu">
-			<AppSelection
-				@click="showSettings__Alignment('photo')"
-				:active="alignment_page.shown.photo"
-				title="photo"
-				:type="photo_Select"
-			/>
+			<AlignmentMenu__Photo />
 		</section>
     
 	</div>
@@ -29,8 +24,13 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
 
+import AlignmentMenu__Photo from "@/components/menu/3_menu__alignment/AlignmentMenu__Photo.vue"
+
 export default {
 	name: "AlignmentMenu",
+	components: {
+		AlignmentMenu__Photo
+	},
 	computed: {
     // STORE
 		...mapState(useMYStore, ["MY"]),

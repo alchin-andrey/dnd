@@ -1,5 +1,5 @@
 <template>
-	<div class="represent" @click="showHome()" v-show="screen_Max">
+	<div class="represent" @click="showHome()" v-if="screen_Max">
 		<transition name="fade-body">
 			<div class="character" :style="style_Char_Pos">
 				<WelcomeBanner />
@@ -17,6 +17,7 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
+import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
 
@@ -28,6 +29,10 @@ export default {
 	},
 	data() {
 		return {
+			errors: {
+				file_photo: false,
+				url_photo: false,
+			},
 		};
 	},
 
@@ -37,8 +42,9 @@ export default {
 			"race_page",
 			"shown_home",
 			"pages",
-			"screen_Max"
+			"screen_Max",
 		]),
+		...mapState(useMYStore, ["MY"]),
 		...mapState(useFormStore, ["Char_Hight_Back"]),
 
 		char_Pos() {
@@ -100,6 +106,8 @@ export default {
 	transition-duration: 0.8s, 0.1s;
 	transition-timing-function: ease-in-out;
 	border-radius: 24px;
+	z-index: 10;
+	cursor: pointer;
 }
 
 .flex-start {

@@ -38,6 +38,8 @@
 			<AppSelectionArr :menu="inventory_Filter"/>
 		</div>
 
+    <AlignmentMenu__Photo />
+
     <div class="selection_menu undefined" v-if="shown_Undefined">
       <AppSelectionArr :menu="undefined_Filter"/>
 		</div>
@@ -52,8 +54,13 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
+
+import AlignmentMenu__Photo from "@/components/menu/3_menu__alignment/AlignmentMenu__Photo.vue"
 export default {
 	name: "ClassMenu",
+  components: {
+		AlignmentMenu__Photo
+	},
 	computed: {
     // STORE
 		...mapState(usePagesStore, ["class_page", "screen_Max"]),

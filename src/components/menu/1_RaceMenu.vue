@@ -85,6 +85,8 @@
 				:type="hair_color_Char_Body.name"
 			/>
 		</section>
+
+		<AlignmentMenu__Photo />
 		<!-- OTHER RACE SETTINGS -->
 	</div>
 </template>
@@ -96,9 +98,12 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
 
-
+import AlignmentMenu__Photo from "@/components/menu/3_menu__alignment/AlignmentMenu__Photo.vue"
 export default {
 	name: "RaceMenu",
+	components: {
+		AlignmentMenu__Photo
+	},
 	computed: {
 		// STORE
 		...mapState(useMYStore, [
