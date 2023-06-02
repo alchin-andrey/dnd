@@ -11,18 +11,18 @@
 					</div>
 					<Blank__Avatar /> 
 				</section>
-				<Blank__SelectMenu />
+        <section class="wrap-bottom pos-rel">
+          <BlankTable__QualStats />
+          <BlankTable__Fines class="mr-top-36"/>
+        </section>
 			</main>
 
       <main class="print-page" v-if="!PRINT_WORK">
         <section class="wrap-head">
-          <BlankTable__QualStats /> 
-          <BlankTable__Fines class="mr-top-36"/>
+          <BlankTable__Actions /> 
+          <BlankTable__Equip class="mr-top-36"/>
         </section>
-        <section class="wrap-bottom">
-        <BlankTable__Actions class="mr-top-72"/>
-        <BlankTable__Equip class="mr-top-36"/>
-        </section>
+        <Blank__SelectMenu />
       </main>
 
       <main class="print-page" v-if="!PRINT_WORK">
@@ -61,7 +61,7 @@
           <div class="int-600-28">{{T('print_biography')}}</div>
           <div class="print-col int-500-22 mr-top-10" v-html="T('print_biography_details')" />
         </section>
-        <section class="wrap-bottom pad-top-72 int-600-28 flex_row">
+        <section class="wrap-bottom int-600-28 flex_row">
           <div>{{T('print_characters')}}</div>
           <div>{{T('print_events')}}</div>
           <div>{{T('print_places')}}</div>
@@ -233,6 +233,7 @@ export default {
 .wrap-bottom {
 	border-top: 1px dashed #333333;
 	height: 1404px;
+  padding-top: 72px;
 }
 
 .grid-wrap {

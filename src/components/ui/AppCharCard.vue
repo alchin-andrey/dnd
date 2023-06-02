@@ -13,7 +13,7 @@
 			<RaceBody body_part="eyes" :ethnos_name="ethnos_name" :mob_menu="mob_menu"/>
 			<RaceBody body_part="class" :mob_menu="mob_menu" v-if="!pages.race_page"/>
 		</section>
-		<div class="flex-row gap-6 text-rel">
+		<div class="flex-row gap-6 text-rel" v-if="mob_menu">
 			<div class="jbm-300">{{ t_Details }}</div>
 			<AppSvg class="svg-18 svg-main-f" name="arrow_right"/>
 		</div>

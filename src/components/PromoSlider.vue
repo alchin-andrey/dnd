@@ -10,7 +10,7 @@
 		:index="i" 
 		:visibleSlide="visibleSlide"
 		class="carousel-slider">
-			<img :src="slide" :alt="slide">
+			<img :src="slide" :alt="slide" draggable="false">
 		</DonatCaruselSlide>
 	</DonatCarusel>
 </template>

@@ -8,7 +8,8 @@
       :src="img_Char"
       :alt="body_part"
       @click.stop
-      @click="showSettings__Alignment('photo')"
+      @click="showPhotoSet()"
+      draggable="false"
     />
 
     <div 
@@ -16,7 +17,7 @@
       class="custom-img"  
       :style="stule_Img_Obj"
       @click.stop
-      @click="showSettings__Alignment('photo')"
+      @click="showPhotoSet()"
     />
   
   <svg
@@ -225,6 +226,21 @@ export default {
 
   methods: {
     ...mapActions(usePagesStore, ["showSettings__Alignment"]),
+
+    showPhotoSet() {
+
+      if(!this.ethnos_name && !this.mob_menu) {
+        this.showSettings__Alignment('photo')
+      } 
+
+
+      // if(this.ethnos_name || this.mob_menu) {
+      //   return
+      // } else {
+      //   console.log('photo:')
+      //   this.showSettings__Alignment('photo')
+      // }
+    }
   }
 
 };
