@@ -92,23 +92,17 @@ export default {
     },
 
     stule_error_Char() {
-      const inc_color = ['1-2', '1-3', '1-4', '1-5']
-      const red_body = inc_color.includes(this.color_Char_Body.img);
-      const error_comp = this.error;
-      const error_file = this.errors.file_photo;
-      return {
-        'animation--error-photo-upload': red_body && error_comp && error_file,
-        'animation--error-char-upload': !red_body && error_comp && error_file,
-        'pasive-img': !red_body && error_comp,
+      if(this.body_part == 'skin') {
+        const inc_color = ['1-2', '1-3', '1-4', '1-5']
+        const red_body = inc_color.includes(this.color_Char_Body.img);
+        const error_comp = this.error;
+        const error_file = this.errors.file_photo;
+        return {
+          'animation--error-photo-upload': red_body && error_comp && error_file,
+          'animation--error-char-upload': !red_body && error_comp && error_file,
+          'pasive-img': !red_body && error_comp,
+        }
       }
-
-      // if(red_body && error_comp && error_file) {
-      //   return 'animation--error-photo-upload'
-      // } else if(error_comp && error_file) {
-      //   return 'animation--error-char-upload pasive-img'
-      // } else if(error_comp) {
-      //   return 'pasive-img'
-      // }
     },
 
     stule_Img_Obj() {
