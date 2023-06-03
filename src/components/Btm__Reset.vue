@@ -27,39 +27,27 @@ export default {
 
     resetState() {
       this.MY = JSON.parse(JSON.stringify(this.MY_def));
-      
-      this.srd = true,
-
-      this.site_settings = {
-        save: {},
-        welcome: true,
-        logo_anim: false,
-        print_dialog: false,
-        // old_page: null,
-        // name_user: false,
-        // photo_user: false,
-        // photo_sett: {
-        //   size_cover: true,
-        //   ratio: 1,
-        //   position: 50,
-        // }
-      },
-      
       this.form_kof = {
         height: 0.5,
         weight: 0.5,
         age: 0.5,
       };
+      this.srd = true,
       
+      this.site_settings = {
+        save: {},
+        welcome: true,
+        logo_anim: false,
+        print_dialog: false,
+      },
+
       this.pages = {
         race_page: true,
         class_page: false,
         alignment_page: false,
-        // master_page: false,
       };
       this.getCreated();
       this.showHome();
-      // setTimeout(() => this.showHome(), 500);
     },
 
   }

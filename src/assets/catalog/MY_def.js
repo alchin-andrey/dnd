@@ -10,7 +10,7 @@ export default {
   class_name: null,
   backstory_name: null,
 
-//settings
+	//Save
   _spells_save: {},
   
   _settings_race: {},
