@@ -541,4 +541,151 @@ sorcerer: {
 
 },
 
+wizard: {
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D511073278/",
+    female:"https://www.heroforge.com/load_config%3D511073265/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D511073233/",
+    female:"https://www.heroforge.com/load_config%3D511073220/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D511073215/",
+    female:"https://www.heroforge.com/load_config%3D511073199/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D511073186/",
+    female:"https://www.heroforge.com/load_config%3D511069435/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D511069426/",
+    female:"https://www.heroforge.com/load_config%3D511069414/",
+  },
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D511069406/",
+    female:"https://www.heroforge.com/load_config%3D511069398/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D511069393/",
+    female:"https://www.heroforge.com/load_config%3D511069382/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D511069378/",
+    female:"https://www.heroforge.com/load_config%3D511069369/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D511069328/",
+    female:"https://www.heroforge.com/load_config%3D511069302/",
+  },
+
+},
+
+bard: {
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D511074037/",
+    female:"https://www.heroforge.com/load_config%3D511074021/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D511074001/",
+    female:"https://www.heroforge.com/load_config%3D511073985/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D511073964/",
+    female:"https://www.heroforge.com/load_config%3D511073953/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D511073935/",
+    female:"https://www.heroforge.com/load_config%3D511073926/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D511073912/",
+    female:"https://www.heroforge.com/load_config%3D511073888/",
+  },
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D511073868/",
+    female:"https://www.heroforge.com/load_config%3D511073859/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D511073847/",
+    female:"https://www.heroforge.com/load_config%3D511073793/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D511073768/",
+    female:"https://www.heroforge.com/load_config%3D511073749/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D511073739/",
+    female:"https://www.heroforge.com/load_config%3D511073724/",
+  },
+
+},
+
+ranger: {
+
+  tiefling: {
+    male:"https://www.heroforge.com/load_config%3D511074596/",
+    female:"https://www.heroforge.com/load_config%3D511074586/",
+  },
+
+  human: {
+    male:"https://www.heroforge.com/load_config%3D511074560/",
+    female:"https://www.heroforge.com/load_config%3D511074544/",
+  },
+
+  halforc: {
+    male:"https://www.heroforge.com/load_config%3D511074529/",
+    female:"https://www.heroforge.com/load_config%3D511074505/",
+  },
+
+  halfling: {
+    male:"https://www.heroforge.com/load_config%3D511074490/",
+    female:"https://www.heroforge.com/load_config%3D511074480/",
+  },
+
+  halfelf: {
+    male:"https://www.heroforge.com/load_config%3D511074459/",
+    female:"https://www.heroforge.com/load_config%3D511074436/",
+  },
+
+  gnome: {
+    male:"https://www.heroforge.com/load_config%3D511074421/",
+    female:"https://www.heroforge.com/load_config%3D511074403/",
+  },
+
+  elf: {
+    male:"https://www.heroforge.com/load_config%3D511074371/",
+    female:"https://www.heroforge.com/load_config%3D511074358/",
+  },
+
+  dwarf: {
+    male:"https://www.heroforge.com/load_config%3D511074338/",
+    female:"https://www.heroforge.com/load_config%3D511074327/",
+  },
+
+  dragonborn: {
+    male:"https://www.heroforge.com/load_config%3D511074316/",
+    female:"https://www.heroforge.com/load_config%3D511074273/",
+  },
+
+},
+
 };
