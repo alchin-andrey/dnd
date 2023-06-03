@@ -1,7 +1,7 @@
 <template>
       <img
       v-if="img_Char"
-      :class="stule_error_Char" 
+      :class="anim_error_Char" 
       :style="{
         height: hight_Char,
         left: left_Char
@@ -91,18 +91,23 @@ export default {
       return !this.img_Char && this.MY.custom_photo && this.body_part == 'skin'
     },
 
-    stule_error_Char() {
-      if(this.body_part == 'skin') {
-        const inc_color = ['1-2', '1-3', '1-4', '1-5']
-        const red_body = inc_color.includes(this.color_Char_Body.img);
-        const error_comp = this.error;
-        const error_file = this.errors.file_photo;
+    anim_error_Char() {
         return {
-          'animation--error-photo-upload': red_body && error_comp && error_file,
-          'animation--error-char-upload': !red_body && error_comp && error_file,
-          'pasive-img': !red_body && error_comp,
+          'animation--error-char-upload': this.error && this.errors.file_photo,
+          'pasive-img': this.error,
         }
-      }
+
+      // if(this.body_part == 'skin') {
+      //   const inc_color = ['1-2', '1-3', '1-4', '1-5']
+      //   const red_body = inc_color.includes(this.color_Char_Body.img);
+      //   const error_comp = this.error;
+      //   const error_file = this.errors.file_photo;
+      //   return {
+      //     'animation--error-photo-upload': red_body && error_comp && error_file,
+      //     'animation--error-char-upload': !red_body && error_comp && error_file,
+      //     'pasive-img': !red_body && error_comp,
+      //   }
+      // }
     },
 
     stule_Img_Obj() {
