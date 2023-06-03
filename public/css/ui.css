@@ -134,12 +134,12 @@
   animation-name: error-char;
   animation-duration: 1.8s;
   animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-  animation-delay: 0.1s;
+  /* animation-delay: 0.1s; */
 }
 
 @keyframes error-char{
 	0%{ opacity: 0; }
 	5%{ opacity: 1; }
-	50%{ opacity: 1; }
+	40%{ opacity: 1; }
 	100%{ opacity: 0; }
 }
