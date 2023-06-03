@@ -11,15 +11,6 @@ export const usePagesStore = defineStore({
       welcome: true,
       logo_anim: false,
       print_dialog: false,
-      // old_page: null,
-      name_user: false,
-
-      photo_user: false,
-      photo_sett: {
-        size_cover: true,
-        ratio: 1,
-        position: 50,
-      }
     },
 
     errors: {
@@ -47,7 +38,6 @@ export const usePagesStore = defineStore({
       race_page: true,
 			class_page: false,
       alignment_page: false,
-      // master_page: true,
 		},
 
 		page_setting_open: null,
@@ -69,8 +59,6 @@ export const usePagesStore = defineStore({
 			shown: {},
       ratio_photo: 362/480,
 		},
-
-    // master_page: {}
 	}),
 
   persist: {

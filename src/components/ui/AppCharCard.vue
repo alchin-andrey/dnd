@@ -45,14 +45,14 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["pages", "site_settings", "errors"]),
+		...mapState(usePagesStore, ["pages", "errors"]),
 
 		t_Details() {
 			return this.T('details')
 		},
 
 		active_Mob_Custom_Char() {
-			return this.mob_menu && this.site_settings.photo_user
+			return this.mob_menu && this.MY.param.user_photo
 		},
 
 		stule_Img_Obj() {

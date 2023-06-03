@@ -36,13 +36,13 @@ export default {
         logo_anim: false,
         print_dialog: false,
         // old_page: null,
-        name_user: false,
-        photo_user: false,
-        photo_sett: {
-          size_cover: true,
-          ratio: 1,
-          position: 50,
-        }
+        // name_user: false,
+        // photo_user: false,
+        // photo_sett: {
+        //   size_cover: true,
+        //   ratio: 1,
+        //   position: 50,
+        // }
       },
       
       this.form_kof = {

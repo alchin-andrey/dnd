@@ -93,7 +93,7 @@ export default {
 
 		names_Arr(val, oldVal) {
 			const incl = val.includes(this.MY.name);
-			const user_name = this.site_settings.name_user;
+			const user_name = this.MY.param.user_name;
 			if (!incl && !user_name) this.getRandomName();
 		},
 

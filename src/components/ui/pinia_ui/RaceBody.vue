@@ -121,7 +121,7 @@ export default {
     },
 
     stule_Img_Obj() {
-      const pos = this.site_settings.photo_sett.position + '%';
+      const pos = this.MY.param.sett_photo.position + '%';
       const back = !this.error ? `url(${this.MY.custom_photo})` : `transparent`;
 			return {
 				'background': back,
@@ -170,11 +170,11 @@ export default {
 
     img_Char() {
       if(
-        this.site_settings.photo_user 
+        this.MY.param.user_photo 
         && this.MY.custom_photo 
         && !this.ethnos_name
         ) {
-        // if (this.body_part == "skin" && !this.site_settings.photo_sett.size_cover) return this.MY.custom_photo;
+        // if (this.body_part == "skin" && !this.MY.param.sett_photo.size_cover) return this.MY.custom_photo;
         // else return null;
         return null;
       }
@@ -225,8 +225,8 @@ export default {
       const screen_print = `1825px`;
       const screen_mob = `470px`;
       let kof = this.alignment_page.ratio_photo;
-      if(!this.site_settings.photo_sett.size_cover) {
-        kof = this.site_settings.photo_sett.ratio;
+      if(!this.MY.param.sett_photo.size_cover) {
+        kof = this.MY.param.sett_photo.ratio;
       };
       const sc_main_kof = `${screen_main} * ${kof}`
       const sc_print_kof = `${screen_print} * ${kof}`

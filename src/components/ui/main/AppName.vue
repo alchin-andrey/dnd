@@ -50,7 +50,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["screen_Max", "site_settings"]),
+		...mapState(usePagesStore, ["screen_Max"]),
 
 		t_Title() {
 			return this.t(this.title);
@@ -70,12 +70,12 @@ export default {
 
 		randomName() {
 			this.getRandomName();
-			this.site_settings.name_user = true;
+			this.MY.param.user_name = true;
 		},
 
 		getName() {
 			this.MY.name = this.inputValue;
-			this.site_settings.name_user = true;
+			this.MY.param.user_name = true;
 		},
 	},
 	watch: {

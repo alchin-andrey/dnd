@@ -60,8 +60,8 @@ export const useAlignmentStore = defineStore({
     },
 
     photo_Select() {
-      const PagesStore = usePagesStore();
-			return PagesStore.site_settings.photo_user ? "your_image" : "standard";
+      const MYStore = useMYStore();
+			return MYStore.MY.param.user_photo ? "your_image" : "standard";
 		},
 
     photo_Link_Hero() {

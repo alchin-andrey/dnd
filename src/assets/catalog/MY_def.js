@@ -43,4 +43,14 @@ export default {
   stats_base_save: {},
 	
 	custom_photo: null,
+
+	param: {
+		user_name: false,
+		user_photo: false,
+		sett_photo: {
+			size_cover: true,
+			ratio: 1,
+			position: 50,
+		}
+	}
 };

@@ -1,10 +1,10 @@
 <template>
 	<My-Selection-Box :shown="alignment_page.shown.photo" title="photo" :select="photo_Select" mob_fixed>
-		<AppCardWrapp :active_card="!site_settings.photo_user" @click="getPhotoStatus(false)">
+		<AppCardWrapp :active_card="!MY.param.user_photo" @click="getPhotoStatus(false)">
 			<div class="int-700">{{ T('standard') }}</div>
 		</AppCardWrapp>
-		<AppCardWrapp gap="26" :active_card="site_settings.photo_user"
-			:passive="!active_Custom_Photo || site_settings.photo_user" @click="getPhotoStatus(active_Custom_Photo)" no_blur>
+		<AppCardWrapp gap="26" :active_card="MY.param.user_photo"
+			:passive="!active_Custom_Photo || MY.param.user_photo" @click="getPhotoStatus(active_Custom_Photo)" no_blur>
 			<main class="flex-col gap-8">
 
 				<section
@@ -27,15 +27,15 @@
 					></div>
 					<template v-if="size_Cover && MY.custom_photo">
 						<AppRangPhoto :class="[style_Rang_Photo]" v-if="pos_Rang_Photo"
-							v-model.number="site_settings.photo_sett.position" :orientation="pos_Rang_Photo" :pad="padding_Rang_Photo"
+							v-model.number="MY.param.sett_photo.position" :orientation="pos_Rang_Photo" :pad="padding_Rang_Photo"
 							@click.stop />
 					</template>
 				</section>
 
 				<section class="grit-btm" v-if="MY.custom_photo">
-					<AppBtmIcon icon="photo_fill" @click="getPosition(true)" :active_btm="site_settings.photo_sett.size_cover"
+					<AppBtmIcon icon="photo_fill" @click="getPosition(true)" :active_btm="MY.param.sett_photo.size_cover"
 						@click.stop />
-					<AppBtmIcon icon="photo_fit" @click="getPosition(false)" :active_btm="!site_settings.photo_sett.size_cover"
+					<AppBtmIcon icon="photo_fit" @click="getPosition(false)" :active_btm="!MY.param.sett_photo.size_cover"
 						@click.stop />
 					<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop />
 				</section>
@@ -112,7 +112,7 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
-		...mapState(usePagesStore, ["site_settings", "alignment_page", "shown_home"]),
+		...mapState(usePagesStore, ["alignment_page", "shown_home"]),
 		...mapState(useAlignmentStore, [
 			"photo_Select",
 			"photo_Link_Hero", 
@@ -122,9 +122,9 @@ export default {
 
 		stule_Img_Obj() {
 			if (this.active_Custom_Photo) {
-				const pos = this.site_settings.photo_sett.position + '%';
+				const pos = this.MY.param.sett_photo.position + '%';
 				let size = 'cover';
-				if (!this.site_settings.photo_sett.size_cover) {
+				if (!this.MY.param.sett_photo.size_cover) {
 					size = 'contain';
 				}
 				const pos_num = this.size_Cover ? pos : '50%';
@@ -138,7 +138,7 @@ export default {
 		},
 
 		active_Curd() {
-			return Boolean(this.MY.custom_photo) && this.site_settings.photo_user
+			return Boolean(this.MY.custom_photo) && this.MY.param.user_photo
 		},
 
 		active_Custom_Photo() {
@@ -146,12 +146,12 @@ export default {
 		},
 
 		size_Cover() {
-			return this.site_settings.photo_sett.size_cover
+			return this.MY.param.sett_photo.size_cover
 		},
 
 		ratio_Rang_Photo() {
 			const maim_rang = this.alignment_page.ratio_photo;
-			const photo_rang = this.site_settings.photo_sett.ratio;
+			const photo_rang = this.MY.param.sett_photo.ratio;
 			return maim_rang - photo_rang;
 		},
 
@@ -184,7 +184,7 @@ export default {
 		...mapActions(usePagesStore, ["showSettings__Alignment"]),
 
 		getPhotoStatus(bool) {
-			this.site_settings.photo_user = bool;
+			this.MY.param.user_photo = bool;
 		},
 
 		readImg(link, file) {
@@ -202,9 +202,9 @@ export default {
 				if (!file) {this.errors.url_photo = true;}
 			};
 			img.onload = () => {
-				this.site_settings.photo_sett.ratio = img.width / img.height;
+				this.MY.param.sett_photo.ratio = img.width / img.height;
 				this.MY.custom_photo = src;
-				this.site_settings.photo_user = true;
+				this.MY.param.user_photo = true;
 				this.errors.url_photo = false;
 				this.errors.file_photo = false;
 
@@ -295,18 +295,18 @@ export default {
 		},
 
 		getPosition(bool) {
-			this.site_settings.photo_sett.size_cover = bool;
+			this.MY.param.sett_photo.size_cover = bool;
 		},
 
 		delPhoto() {
-			this.site_settings.photo_sett.size_cover = true;
-			this.site_settings.photo_sett.position = 50;
+			this.MY.param.sett_photo.size_cover = true;
+			this.MY.param.sett_photo.position = 50;
 
 			this.errors.file_photo = false;
 			this.errors.url_photo = false;
 
 			this.MY.custom_photo = null;
-			this.site_settings.photo_user = false;
+			this.MY.param.user_photo = false;
 			this.$refs.myFile.value = '';
 		},
 	},
