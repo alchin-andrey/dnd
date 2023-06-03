@@ -16,7 +16,7 @@
     <div 
       v-else-if="show_Custom_Img"
       class="custom-img"  
-      :class="{'animation--error-photo-upload': error && errors.file_photo}" 
+      :class="anim_error_Back" 
       :style="stule_Img_Obj"
       @click.stop
       @click="showPhotoSet()"
@@ -110,6 +110,14 @@ export default {
       //     'pasive-img': !red_body && error_comp,
       //   }
       // }
+    },
+
+    anim_error_Back() {
+        return {
+          'animation--error-photo-upload': this.error 
+          && this.errors.file_photo 
+          && !this.alignment_page.shown.photo,
+        }
     },
 
     stule_Img_Obj() {
