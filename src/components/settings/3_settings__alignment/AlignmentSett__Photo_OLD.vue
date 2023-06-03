@@ -39,6 +39,31 @@
 						@click.stop />
 					<AppBtmIcon icon="delete" @click="delPhoto()" @click.stop />
 				</section>
+				<AppTooltip
+					v-if="!MY.custom_photo" 
+					class="pos-rel"
+					text="url_photo_error"
+					:shown="errors.url_photo"
+					error
+				>
+					<label 
+					class="photo-url flex-row" 
+					for="url"
+					>
+						<input 
+							ref="urlPhoto" 
+							type="url"
+							name="url"
+							class="int-700"
+							:class="{'error-text': errors.url_photo}"
+							:placeholder="T('enter_url')"
+							pattern="https://.*" 
+							size="30"
+							@keyup.enter="onChangeUrl($event)"
+							@input="onInputUrl($event)"
+						>
+					</label>
+				</AppTooltip>
 			</main>
 
 			<section>
@@ -64,9 +89,10 @@ export default {
 	name: "AlignmentSett__Photo",
 	data() {
 		return {
-			// errors: {
-			// 	file_photo: false,
-			// },
+			errors: {
+				file_photo: false,
+				url_photo: false,
+			},
 
 			upload: `url("data:image/svg+xml,%3Csvg width='36' height='54' viewBox='0 0 36 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 26.3251L2.30369 28.6283L16.1903 14.4785V53.9664H19.4809V14.4127L33.6307 28.6283L36 26.2591L17.8356 8.09465L0 26.3251Z' fill='white'/%3E%3Cpath d='M1.11882 0H34.8151V3.29065H1.11882V0Z' fill='white'/%3E%3C/svg%3E")`,
 		};
@@ -86,12 +112,7 @@ export default {
 
 	computed: {
 		...mapState(useMYStore, ["MY", "MY_Race", "MY_Class"]),
-		...mapState(usePagesStore, [
-			"site_settings", 
-			"alignment_page", 
-			"shown_home",
-			"errors"
-		]),
+		...mapState(usePagesStore, ["site_settings", "alignment_page", "shown_home"]),
 		...mapState(useAlignmentStore, [
 			"photo_Select",
 			"photo_Link_Hero", 
@@ -151,29 +172,40 @@ export default {
 	},
 
 	methods: {
+		// ...mapActions(useAlignmentStore, [
+		// 	"onChange",
+		// 	"onChangeUrl",
+		// 	"onInputUrl",
+		// 	"pastePhoto",
+		// 	"dropPhoto",
+		// 	"dragoverPhoto",
+		// ]),
+
 		...mapActions(usePagesStore, ["showSettings__Alignment"]),
 
-		readPhotoFile(file) {
-			this.errors.file_photo = false;
-			let reader = new FileReader();
-			reader.onload = (el) => {
-				if (el.target.result) {
-					this.readImg(el.target.result)
-				}
-			};
-			reader.readAsDataURL(file);
+		getPhotoStatus(bool) {
+			this.site_settings.photo_user = bool;
 		},
 
-		readImg(str_base64) {
-			let src = str_base64;
+		readImg(link, file) {
+			let src = link;
+			if(!file) {
+				const path = 'https://'
+				src = link.substr(0, 4) == 'http' ? link : path + link;
+				if (this.$refs.urlPhoto) {
+					this.$refs.urlPhoto.value = src;
+				}
+			};
 			const img = new Image();
 			img.onerror = () => {
 				this.fileError();
+				if (!file) {this.errors.url_photo = true;}
 			};
 			img.onload = () => {
 				this.site_settings.photo_sett.ratio = img.width / img.height;
 				this.MY.custom_photo = src;
 				this.site_settings.photo_user = true;
+				this.errors.url_photo = false;
 				this.errors.file_photo = false;
 
 				if(!this.alignment_page.shown.photo) {
@@ -184,11 +216,22 @@ export default {
 			img.src = src;
 		},
 
+		readPhotoFile(file) {
+			this.errors.file_photo = false;
+			let reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.addEventListener("load", (el) => {
+					if (el.target.result) {
+						this.readImg(el.target.result, true)
+					}
+			});
+		},
+
 		fileError() {
 			this.errors.file_photo = false;
 				setTimeout(() => {
-					if(!this.MY.custom_photo && this.$refs.myFile) {
-					this.errors.file_photo = true;
+				this.errors.file_photo = true;
+				if(!this.MY.custom_photo && this.$refs.myFile) {
 					this.$refs.myFile.value = '';
 				}
 			}, 4);
@@ -197,10 +240,32 @@ export default {
 		onChange(event) {
 			const image_file = event.target.files[0].type.includes("image")
 			if (image_file) {
-				this.readPhotoFile(event.target.files[0])
+				this.readPhotoFile(event.target.files[0], true)
 			} else {
 				this.fileError();
 			}
+		},
+
+		// onPasteUrl(event) {
+		// 	console.log('onPasteUrl:')
+		// 	setTimeout(() => {
+		// 		const link = event.target.value;
+		// 		this.readImg(link);
+		// 	}, 0);
+		// },
+
+		onChangeUrl(event) {
+			console.log('onChangeUrl:')
+			const link = event.target.value;
+			if(link) {
+				this.readImg(link);
+			}
+		},
+
+		onInputUrl(event) {
+			console.log('onInputUrl:')
+			const link = event.target.value;
+			if(link == '') this.errors.url_photo = false;
 		},
 
 		sequencingProcess(el) {
@@ -208,27 +273,28 @@ export default {
 			if (item) {
 				this.readPhotoFile(item.getAsFile())
 			} else {
-				this.fileError();
+				const link = el.getData('Text');
+				if(link) {
+					this.readImg(link);
+				} else {
+					this.fileError();
+				}
 			}
 		},
 
 		pastePhoto(event) {
-			console.log('event.clipboardData:', event.clipboardData.items)
+			// if(this.alignment_page.shown.photo) {
 			this.sequencingProcess(event.clipboardData)
+			// }
 		},
 
 		dropPhoto(event) {
-			console.log('event.clipboardData:', event.dataTransfer.items)
 			this.sequencingProcess(event.dataTransfer);
 			event.preventDefault();
 		},
 
 		dragoverPhoto(event) {
 			event.preventDefault();
-		},
-
-		getPhotoStatus(bool) {
-			this.site_settings.photo_user = bool;
 		},
 
 		getPosition(bool) {
@@ -240,7 +306,7 @@ export default {
 			this.site_settings.photo_sett.position = 50;
 
 			this.errors.file_photo = false;
-			// this.errors.url_photo = false;
+			this.errors.url_photo = false;
 
 			this.MY.custom_photo = null;
 			this.site_settings.photo_user = false;

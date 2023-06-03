@@ -22,6 +22,10 @@ export const usePagesStore = defineStore({
       }
     },
 
+    errors: {
+      file_photo: false,
+    },
+
     links: {
       stats_link: {},
     },
