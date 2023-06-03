@@ -93,7 +93,9 @@ export default {
 
     anim_error_Char() {
         return {
-          'animation--error-char-upload': this.error && this.errors.file_photo,
+          'animation--error-char-upload': this.error 
+          && this.errors.file_photo 
+          && !this.alignment_page.shown.photo,
           'pasive-img': this.error,
         }
 
