@@ -1,10 +1,7 @@
 <template>
       <img
       v-if="img_Char"
-      :class="{
-        'animation--error-char-upload': error && errors.file_photo,
-        'pasive-img': error
-        }" 
+      :class="stule_error_Char" 
       :style="{
         height: hight_Char,
         left: left_Char
@@ -92,6 +89,26 @@ export default {
 
     show_Custom_Img() {
       return !this.img_Char && this.MY.custom_photo && this.body_part == 'skin'
+    },
+
+    stule_error_Char() {
+      const inc_color = ['1-2', '1-3', '1-4', '1-5']
+      const red_body = inc_color.includes(this.color_Char_Body.img);
+      const error_comp = this.error;
+      const error_file = this.errors.file_photo;
+      return {
+        'animation--error-photo-upload': red_body && error_comp && error_file,
+        'animation--error-char-upload': !red_body && error_comp && error_file,
+        'pasive-img': !red_body && error_comp,
+      }
+
+      // if(red_body && error_comp && error_file) {
+      //   return 'animation--error-photo-upload'
+      // } else if(error_comp && error_file) {
+      //   return 'animation--error-char-upload pasive-img'
+      // } else if(error_comp) {
+      //   return 'pasive-img'
+      // }
     },
 
     stule_Img_Obj() {
