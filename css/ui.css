@@ -62,18 +62,22 @@
 	-webkit-backdrop-filter: blur(60px);
 } */
 
+.card-select {
+	border: 2px solid #ffffff; 
+	padding: 14px;
+}
+
 .btm-grey {background: rgba(255, 255, 255, 0.06);}
 .btm-grey.hov:hover {background: rgba(255, 255, 255, 0.1);}
+
+.btm-select { 
+	border: 2px solid #ffffff;
+}
 
 .btm-trans {
 	padding: 14px;
 	background: transparent;
 	border: 2px solid rgba(255, 255, 255, 0.06);
-}
-
-.btm-select {
-	border: 2px solid #ffffff; 
-	padding: 14px;
 }
 
 .btm-black {background: #000000;}
@@ -109,3 +113,33 @@
 }
 
 .stripe-item--active { background: #ffffff;}
+
+
+
+.animation--error-photo-upload  {
+  animation-name: active-back;
+  animation-duration: 1.8s;
+  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
+  animation-delay: 0.1s;
+}
+
+@keyframes active-back{
+	0%{ background-color: rgba(255, 255, 255, 0.06); }
+	5%{ background-color: #FF0000; }
+	50%{ background-color: #FF0000; }
+	100%{ background-color: rgba(255, 255, 255, 0.06); }
+}
+
+.animation--error-char-upload  {
+  animation-name: error-char;
+  animation-duration: 1.8s;
+  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
+  /* animation-delay: 0.1s; */
+}
+
+@keyframes error-char{
+	0%{ opacity: 0; }
+	5%{ opacity: 1; }
+	50%{ opacity: 1; }
+	100%{ opacity: 0; }
+}

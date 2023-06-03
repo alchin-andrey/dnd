@@ -3,9 +3,19 @@
 	height: 18px;
 }
 
+.svg-28 {
+	min-width: 28px;
+	height: 28px;
+}
+
 .svg-36 {
 	min-width: 36px;
 	height: 36px;
+}
+
+.svg-54 {
+	min-width: 54px;
+	height: 54px;
 }
 
 .svg-main-f { 
@@ -13,6 +23,14 @@
 }
 
 .svg-black-f { 
+	fill: black;
+}
+
+.svg-pass-f { 
+	opacity: 0.2;
+}
+
+.svg-red-f { 
 	fill: black;
 }
 

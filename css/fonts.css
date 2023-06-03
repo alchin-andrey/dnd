@@ -186,6 +186,11 @@
 .print-grey { color: #828282;}
 .text_print > span { color: #000000;}
 
+
+.main-text {color: #ffffff;}
+
+
+.error-text { color: #ff0000 !important;}
 .rare-text,
 .rare-text a {
 	color: #ffc93d;
