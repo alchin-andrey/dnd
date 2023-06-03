@@ -12,7 +12,7 @@
 				class="input-box" 
 				:class="{
 					'hov cur-p': !MY.custom_photo,
-					'animation--active': errors.file_photo,
+					'animation--error-photo-upload': errors.file_photo,
 				}" 
 				:style="stule_Img_Obj"
 				>
@@ -23,7 +23,7 @@
 					<div 
 					v-if="MY.custom_photo" 
 					class="plag-photo-load"
-					:class="{'animation--active': errors.file_photo}" 
+					:class="{'animation--error-photo-upload': errors.file_photo}" 
 					></div>
 					<template v-if="size_Cover && MY.custom_photo">
 						<AppRangPhoto :class="[style_Rang_Photo]" v-if="pos_Rang_Photo"
@@ -247,7 +247,6 @@ export default {
 		},
 
 		// onPasteUrl(event) {
-		// 	console.log('onPasteUrl:')
 		// 	setTimeout(() => {
 		// 		const link = event.target.value;
 		// 		this.readImg(link);
@@ -255,7 +254,6 @@ export default {
 		// },
 
 		onChangeUrl(event) {
-			console.log('onChangeUrl:')
 			const link = event.target.value;
 			if(link) {
 				this.readImg(link);
@@ -263,7 +261,6 @@ export default {
 		},
 
 		onInputUrl(event) {
-			console.log('onInputUrl:')
 			const link = event.target.value;
 			if(link == '') this.errors.url_photo = false;
 		},
@@ -420,20 +417,5 @@ input[type=text] {
 	transition-duration: .5s;
 	border-radius: 8px;
 	height: 100%;
-}
-
-
-.animation--active  {
-  animation-name: active-back;
-  animation-duration: 1.8s;
-  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-  animation-delay: 0.1s;
-}
-
-@keyframes active-back{
-	0%{ background-color: rgba(255, 255, 255, 0.06); }
-	20%{ background-color: #FF0000; }
-	40%{ background-color: #FF0000; }
-	100%{ background-color: rgba(255, 255, 255, 0.06); }
 }
 </style>

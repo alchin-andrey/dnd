@@ -8,6 +8,7 @@
 	<AppMobDialog v-else title="char_details" :shown="shown_mob_param" mob_param mob_fixed>
 		<section class="character-mob">
 			<RaceBody body_part="skin" />
+			<RaceBody body_part="skin" error/>
 			<RaceBody body_part="eyes" />
 			<RaceBody body_part="hair" />
 			<RaceBody body_part="class" v-if="!pages.race_page" />
@@ -90,8 +91,8 @@ export default {
 	overflow: hidden;
 }
 
-.character-mob>img,
-.character-mob>svg,
+.character-mob > img,
+.character-mob > svg,
 .character-mob > .custom-img {
 	position: absolute;
 	bottom: 0;

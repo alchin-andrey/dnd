@@ -9,6 +9,7 @@
 	>
 		<section v-if="!active_Mob_Custom_Char">
 			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="mob_menu"/>
+			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="mob_menu" :error="mob_menu"/>
 			<RaceBody body_part="hair" :ethnos_name="ethnos_name" :mob_menu="mob_menu"/>
 			<RaceBody body_part="eyes" :ethnos_name="ethnos_name" :mob_menu="mob_menu"/>
 			<RaceBody body_part="class" :mob_menu="mob_menu" v-if="!pages.race_page"/>
@@ -17,6 +18,11 @@
 			<div class="jbm-300">{{ t_Details }}</div>
 			<AppSvg class="svg-18 svg-main-f" name="arrow_right"/>
 		</div>
+		<div 
+			v-if="MY.custom_photo && !ethnos_name" 
+			class="plag-photo-load"
+			:class="{'animation--error-photo-upload': errors.file_photo}" 
+			/>
 		<div class="grad-card" v-if="active_Mob_Custom_Char"/>
 	</div>
 </template>
@@ -39,7 +45,7 @@ export default {
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["pages", "site_settings"]),
+		...mapState(usePagesStore, ["pages", "site_settings", "errors"]),
 
 		t_Details() {
 			return this.T('details')
@@ -101,6 +107,15 @@ export default {
 	background-size: cover;
 	border: none;
 	/* padding: 0; */
+}
+
+.plag-photo-load {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
 }
 
 .text-rel {

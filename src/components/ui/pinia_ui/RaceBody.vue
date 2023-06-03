@@ -1,6 +1,10 @@
 <template>
       <img
       v-if="img_Char"
+      :class="{
+        'animation--error-char-upload': error && errors.file_photo,
+        'pasive-img': error
+        }" 
       :style="{
         height: hight_Char,
         left: left_Char
@@ -15,6 +19,7 @@
     <div 
       v-else-if="show_Custom_Img"
       class="custom-img"  
+      :class="{'animation--error-photo-upload': error && errors.file_photo}" 
       :style="stule_Img_Obj"
       @click.stop
       @click="showPhotoSet()"
@@ -56,6 +61,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+    error: {
+      type: Boolean,
+			default: false,
+    }
   },
   data() {
     return {
@@ -71,7 +80,13 @@ export default {
       "MY_Ethnos",
       "MY_Class",
     ]),
-    ...mapState(usePagesStore, ["race_page", "screen_Max", "site_settings", "alignment_page"]),
+    ...mapState(usePagesStore, [
+      "race_page", 
+      "screen_Max", 
+      "site_settings", 
+      "alignment_page",
+      "errors",
+    ]),
     ...mapState(useColorStore, ["color_Char_Сommon"]),
     ...mapState(useGenderStore, ["sex_Char_Body"]),
 
@@ -81,8 +96,9 @@ export default {
 
     stule_Img_Obj() {
       const pos = this.site_settings.photo_sett.position + '%';
+      const back = !this.error ? `url(${this.MY.custom_photo})` : `transparent`;
 			return {
-				'background-image': `url(${this.MY.custom_photo})`,
+				'background': back,
 
         'background-size': 'cover',
         'background-position': `${pos} ${pos}`,
@@ -145,7 +161,7 @@ export default {
       if (this.body_part == "class") {
         img = this.MY_Class.name;
       } else {
-        img = this.img_Char_Numb;
+        img = !this.error ? this.img_Char_Numb : '1-4';
       }
       try {
         result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${body}/${img}.png`);
@@ -225,21 +241,15 @@ export default {
   },
 
   methods: {
-    ...mapActions(usePagesStore, ["showSettings__Alignment"]),
+    ...mapActions(usePagesStore, ["showSettings__Alignment", "showMobParam"]),
 
     showPhotoSet() {
 
       if(!this.ethnos_name && !this.mob_menu) {
-        this.showSettings__Alignment('photo')
-      } 
-
-
-      // if(this.ethnos_name || this.mob_menu) {
-      //   return
-      // } else {
-      //   console.log('photo:')
-      //   this.showSettings__Alignment('photo')
-      // }
+        this.showSettings__Alignment('photo');
+      } else if(this.mob_menu) {
+        this.showMobParam();
+      }
     }
   }
 
@@ -251,5 +261,9 @@ export default {
   background-repeat: no-repeat;
 	/* border-radius: 5%; */
   /* overflow: hidden; */
+}
+
+.pasive-img {
+  opacity: 0;
 }
 </style>

@@ -4,6 +4,7 @@
 			<div class="character" :style="style_Char_Pos">
 				<WelcomeBanner />
 				<RaceBody body_part="skin" />
+				<RaceBody body_part="skin" error/>
 				<RaceBody body_part="eyes" />
 				<RaceBody body_part="hair" />
 				<RaceBody body_part="class" v-if="!pages.race_page" />

@@ -12,19 +12,19 @@
 				class="input-box" 
 				:class="{
 					'hov cur-p': !MY.custom_photo,
-					'animation--active': errors.file_photo,
+					'animation--error-photo-upload': errors.file_photo,
 				}" 
 				:style="stule_Img_Obj"
 				>
 					<label for="">
-						<input type="file" ref="myFile" id="myFile" size="50" accept="image/*" @change="onChange($event)">
+						<input type="file" ref="myFile" id="myFile" size="50" accept="image/*" @change="uploadPhoto($event)">
 						<!-- <AppSvg class="svg-54 svg-main-f" name="upload"/> -->
 					</label>
 					<div 
 					v-if="MY.custom_photo" 
 					class="plag-photo-load"
-					:class="{'animation--active': errors.file_photo}" 
-					></div>
+					:class="{'animation--error-photo-upload': errors.file_photo}" 
+					/>
 					<template v-if="size_Cover && MY.custom_photo">
 						<AppRangPhoto :class="[style_Rang_Photo]" v-if="pos_Rang_Photo"
 							v-model.number="site_settings.photo_sett.position" :orientation="pos_Rang_Photo" :pad="padding_Rang_Photo"
@@ -152,6 +152,12 @@ export default {
 
 	methods: {
 		...mapActions(usePagesStore, ["showSettings__Alignment"]),
+		// ...mapActions(useAlignmentStore, [
+		// 	"uploadPhoto",
+		// 	"pastePhoto",
+		// 	"dropPhoto",
+		// 	"dragoverPhoto"
+		// ]),
 
 		readPhotoFile(file) {
 			this.errors.file_photo = false;
@@ -187,14 +193,15 @@ export default {
 		fileError() {
 			this.errors.file_photo = false;
 				setTimeout(() => {
-					if(!this.MY.custom_photo && this.$refs.myFile) {
 					this.errors.file_photo = true;
+					if(!this.MY.custom_photo && this.$refs.myFile) {
 					this.$refs.myFile.value = '';
 				}
 			}, 4);
+			setTimeout(() => this.errors.file_photo = false, 2000);
 		},
 
-		onChange(event) {
+		uploadPhoto(event) {
 			const image_file = event.target.files[0].type.includes("image")
 			if (image_file) {
 				this.readPhotoFile(event.target.files[0])
@@ -212,14 +219,30 @@ export default {
 			}
 		},
 
+		// sequencingProcess(el, file_input) {
+		// 	let type_file;
+		// 	if(file_input) {
+		// 		type_file = el.type.includes("image")
+		// 	} else {
+		// 		type_file = Array.from(el.items).find(x => /^image\//.test(x.type));
+		// 	}
+		// 	if (type_file) {
+		// 		this.readPhotoFile(file_input ? el : type_file.getAsFile())
+		// 	} else {
+		// 		this.fileError();
+		// 	}
+		// },
+
+		// uploadPhoto(event) {
+		// 	this.sequencingProcess(event.target.files[0], true)
+		// },
+
 		pastePhoto(event) {
-			console.log('event.clipboardData:', event.clipboardData.items)
-			this.sequencingProcess(event.clipboardData)
+			this.sequencingProcess(event.clipboardData, false)
 		},
 
 		dropPhoto(event) {
-			console.log('event.clipboardData:', event.dataTransfer.items)
-			this.sequencingProcess(event.dataTransfer);
+			this.sequencingProcess(event.dataTransfer, false);
 			event.preventDefault();
 		},
 

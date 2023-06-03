@@ -17,10 +17,6 @@ export const useAlignmentStore = defineStore({
     alignment_sett: alignment_sett,
     hero_links: list_links,
 
-    // errors: {
-    //   file_photo: false,
-    //   url_photo: false,
-    // },
 	}),
 
 	getters: {
@@ -93,113 +89,5 @@ export const useAlignmentStore = defineStore({
 	},
 
 	actions: {
-
-    // readImg(link, file) {
-		// 	let src = link;
-		// 	if(!file) {
-		// 		const path = 'https://'
-		// 		src = link.substr(0, 4) == 'http' ? link : path + link;
-		// 		if (this.$refs.urlPhoto) {
-		// 			this.$refs.urlPhoto.value = src;
-		// 		}
-		// 	};
-		// 	const img = new Image();
-		// 	img.onerror = () => {
-		// 		this.fileError();
-		// 		if (!file) {this.errors.url_photo = true;}
-		// 	};
-		// 	img.onload = () => {
-    //     const MYStore = useMYStore();
-    //     const PagesStore = usePagesStore();
-
-		// 		PagesStore.site_settings.photo_sett.ratio = img.width / img.height;
-		// 		MYStore.MY.custom_photo = src;
-		// 		PagesStore.site_settings.photo_user = true;
-		// 		this.errors.url_photo = false;
-		// 		this.errors.file_photo = false;
-		// 	}
-		// 	img.src = src;
-		// },
-
-		// readPhotoFile(file) {
-		// 	this.errors.file_photo = false;
-		// 	let reader = new FileReader();
-		// 		reader.readAsDataURL(file);
-		// 		reader.addEventListener("load", (el) => {
-		// 			if (el.target.result) {
-		// 				this.readImg(el.target.result, true)
-		// 			}
-		// 	});
-		// },
-
-		// fileError() {
-    //   const MYStore = useMYStore();
-		// 	this.errors.file_photo = false;
-		// 		setTimeout(() => {
-		// 		this.errors.file_photo = true;
-		// 		if(!MYStore.MY.custom_photo) {
-		// 			this.$refs.myFile.value = '';
-		// 		}
-		// 	}, 4);
-		// },
-
-		// onChange(event) {
-		// 	const image_file = event.target.files[0].type.includes("image")
-		// 	if (image_file) {
-		// 		this.readPhotoFile(event.target.files[0], true)
-		// 	} else {
-		// 		this.fileError();
-		// 	}
-		// },
-
-		// // onPasteUrl(event) {
-		// // 	console.log('onPasteUrl:')
-		// // 	setTimeout(() => {
-		// // 		const link = event.target.value;
-		// // 		this.readImg(link);
-		// // 	}, 0);
-		// // },
-
-		// onChangeUrl(event) {
-		// 	console.log('onChangeUrl:')
-		// 	const link = event.target.value;
-		// 	if(link) {
-		// 		this.readImg(link);
-		// 	}
-		// },
-
-		// onInputUrl(event) {
-		// 	console.log('onInputUrl:')
-		// 	const link = event.target.value;
-		// 	if(link == '') this.errors.url_photo = false;
-		// },
-
-		// sequencingProcess(el) {
-		// 	const item = Array.from(el.items).find(x => /^image\//.test(x.type));
-		// 	if (item) {
-		// 		this.readPhotoFile(item.getAsFile())
-		// 	} else {
-		// 		const link = el.getData('Text');
-		// 		if(link) {
-		// 			this.readImg(link);
-		// 		} else {
-		// 			this.fileError();
-		// 		}
-		// 	}
-		// },
-
-		// pastePhoto(event) {
-		// 	console.log('pastePhoto:')
-		// 	this.sequencingProcess(event.clipboardData)
-		// },
-
-		// dropPhoto(event) {
-		// 	this.sequencingProcess(event.dataTransfer);
-		// 	event.preventDefault();
-		// },
-
-		// dragoverPhoto(event) {
-		// 	event.preventDefault();
-		// },
   }
 });
