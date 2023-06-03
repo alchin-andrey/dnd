@@ -125,8 +125,8 @@
 
 @keyframes active-back{
 	0%{ background-color: rgba(255, 255, 255, 0.06); }
-	20%{ background-color: #FF0000; }
-	40%{ background-color: #FF0000; }
+	5%{ background-color: #FF0000; }
+	50%{ background-color: #FF0000; }
 	100%{ background-color: rgba(255, 255, 255, 0.06); }
 }
 
@@ -140,6 +140,6 @@
 @keyframes error-char{
 	0%{ opacity: 0; }
 	5%{ opacity: 1; }
-	40%{ opacity: 1; }
+	50%{ opacity: 1; }
 	100%{ opacity: 0; }
 }
