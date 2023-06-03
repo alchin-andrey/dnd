@@ -139,7 +139,7 @@
 
 @keyframes error-char{
 	0%{ opacity: 0; }
-	20%{ opacity: 1; }
-	40%{ opacity: 1; }
+	5%{ opacity: 1; }
+	50%{ opacity: 1; }
 	100%{ opacity: 0; }
 }
