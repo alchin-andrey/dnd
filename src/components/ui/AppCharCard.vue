@@ -57,7 +57,7 @@ export default {
 
 		stule_Img_Obj() {
 			if (this.active_Mob_Custom_Char) return {
-					'background-image': `url(${this.MY.custom_photo})`,
+					'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/forest_custom@3x.png')}), url(${this.MY.custom_photo})`,
 				}
 			else return {};
 		},
@@ -74,7 +74,6 @@ export default {
 	width: 100%;
 	min-height: 120px;
 	background: #0e1518;
-	border-radius: 4px;
 	position: relative;
 	overflow: hidden;
 	background-image: url('@/assets/img/characters/halfling/ethhnos/image.png');
