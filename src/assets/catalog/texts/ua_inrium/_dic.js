@@ -1530,7 +1530,7 @@ export default {
   tool_disguise: "гримувальні",
   tool_poisoner: "отруйника",
 
-  on_not_moved: "на атаки по істотах, які ще не зробили хід у цьому раунді",
+  on_not_moved: "на атаки по істотах, які ще не зробили хід у цьому бою",
 
   double_damage: "2× пошкодження",
   double_damage_more: "ще 2× пошкодження",
