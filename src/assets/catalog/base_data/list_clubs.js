@@ -16,6 +16,14 @@ export default {
     link: "https://t.me/huhyclub",
   },
 
+  mr: {
+    id: 6,
+    name: "club_mr_name",
+    details: "club_mr_details",
+    link_name: "@Lviv_MR_DnD",
+    link: "https://t.me/Lviv_MR_DnD/9310",
+  },
+
   eneri: {
     id: 2,
     name: "club_eneri_name",
