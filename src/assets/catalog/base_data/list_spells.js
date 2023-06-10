@@ -25673,6 +25673,55 @@ export default {
     },
   ],
 
+  mordenkainens_faithful_hound: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 822, ua: 822,  ru: 822}, //TODO - check numbers
+      link: "mordenkainens_faithful_hound",
+      name: "spell_mordenkainens_faithful_hound",
+      details: "spell_mordenkainens_faithful_hound_details",
+      expanded: "spell_mordenkainens_faithful_hound_expanded",
+
+      type: "conjuration",
+      classes: ["wizard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 8,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: "damage",
+      impact_damage_type: "piercing_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 4,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   polymorph: [
     {},
     {},

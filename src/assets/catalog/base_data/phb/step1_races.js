@@ -142,6 +142,10 @@ export default {
           spells: [
             {
               level: 1,
+              spell: spells.mordenkainens_faithful_hound,
+            },
+            {
+              level: 1,
               spell: spells.minor_illusion_gnome,
             },
           ],

@@ -6142,4 +6142,8 @@ export default {
   
   enter_url: "або URL:",
   url_photo_error:"Посилання повинно вести на зображення",
+
+  spell_mordenkainens_faithful_hound: spells.mordenkainens_faithful_hound,
+  spell_mordenkainens_faithful_hound_details: spells.mordenkainens_faithful_hound_details,
+  spell_mordenkainens_faithful_hound_expanded: spells.mordenkainens_faithful_hound_expanded,
 };

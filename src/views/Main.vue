@@ -50,7 +50,7 @@ export default {
 	data() {
 		return {
 			PRINT_BLANK: false,
-			// PRINT_BLANK: true,
+			//PRINT_BLANK: true,
 			progress_load: 0,
 			loading_pdf: false,
 		};
