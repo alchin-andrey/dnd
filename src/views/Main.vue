@@ -26,10 +26,6 @@
 
 	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
 
-	<!-- <div v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert">
-		<BlankPrint />
-	</div> -->
-
 	<!-- <PlagBanner v-if="!screen_Max"/> -->
 </template>
 
@@ -50,7 +46,7 @@ export default {
 	data() {
 		return {
 			PRINT_BLANK: false,
-			//PRINT_BLANK: true,
+			// PRINT_BLANK: true,
 			progress_load: 0,
 			loading_pdf: false,
 		};
