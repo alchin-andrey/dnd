@@ -11425,7 +11425,10 @@ export default {
                     ],
 
                     proficiencies: {
-                      languages: [lang.animal],
+                      languages: [{
+                        name: "lang_animal",
+                        details: "lang_animal_details"
+                    },],
                     },
                   },
                   {
