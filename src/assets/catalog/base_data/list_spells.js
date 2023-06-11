@@ -24886,7 +24886,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 778, ua: 778, ru: 778},
       link: "conjure_minor_elementals",
       name: "spell_conjure_minor_elementals",
       details: "spell_conjure_minor_elementals_details",
@@ -24940,7 +24940,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 778, ua: 778, ru: 778},
       link: "conjure_woodland_beings",
       name: "spell_conjure_woodland_beings",
       details: "spell_conjure_woodland_beings_details",
@@ -25391,7 +25391,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 778, ua: 778, ru: 778},
       link: "fabricate",
       name: "spell_fabricate",
       details: "spell_fabricate_details",
@@ -25537,7 +25537,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 646, ua: 646, ru: 646},
       link: "giant_insect",
       name: "spell_giant_insect",
       details: "spell_giant_insect_details",
@@ -25837,7 +25837,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 676, ua: 676, ru: 676},
       link: "leomunds_secret_chest",
       name: "spell_leomunds_secret_chest",
       details: "spell_leomunds_secret_chest_details",
@@ -25933,7 +25933,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800,  ru: 800}, //TODO - check numbers
+      h: {ua_inrium: 852, ua: 852,  ru: 852}, 
       link: "mordenkainens_faithful_hound",
       name: "spell_mordenkainens_faithful_hound",
       details: "spell_mordenkainens_faithful_hound_details",
@@ -25982,7 +25982,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800,  ru: 800}, //TODO - check numbers
+      h: {ua_inrium: 778, ua: 778,  ru: 778}, 
       link: "mordenkainens_private_sanctum",
       name: "spell_mordenkainens_private_sanctum",
       details: "spell_mordenkainens_private_sanctum_details",
@@ -26036,7 +26036,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 804, ua: 804, ru: 804},
       link: "otilukes_resilient_sphere",
       name: "spell_otilukes_resilient_sphere",
       details: "spell_otilukes_resilient_sphere_details",
@@ -26084,7 +26084,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800, ru: 800},
+      h: {ua_inrium: 908, ua: 908, ru: 908},
       link: "phantasmal_killer",
       name: "spell_phantasmal_killer",
       details: "spell_phantasmal_killer_details",
@@ -26185,7 +26185,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800,  ru: 800},
+      h: {ua_inrium: 834, ua: 834,  ru: 834},
       link: "staggering_smite",
       name: "spell_staggering_smite",
       details: "spell_staggering_smite_details",
@@ -26332,7 +26332,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 800, ua: 800,  ru: 800},
+      h: {ua_inrium: 646, ua: 646,  ru: 646},
       link: "swift_quiver",
       name: "spell_swift_quiver",
       details: "spell_swift_quiver_details",

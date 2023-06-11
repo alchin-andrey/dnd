@@ -62,50 +62,6 @@ export default {
           spells: [
 
             //ДЛЯ ВІДЛАДКИ
-            {
-              level: 1,
-              spell: spells.swift_quiver,
-            },
-            {
-              level: 1,
-              spell: spells.otilukes_resilient_sphere,
-            },
-            {
-              level: 1,
-              spell: spells.staggering_smite,
-            },
-            {
-              level: 1,
-              spell: spells.leomunds_secret_chest,
-            },
-            {
-              level: 1,
-              spell: spells.mordenkainens_private_sanctum,
-            },
-            {
-              level: 1,
-              spell: spells.fabricate,
-            },
-            {
-              level: 1,
-              spell: spells.giant_insect,
-            },
-            {
-              level: 1,
-              spell: spells.mordenkainens_faithful_hound,
-            },
-            {
-              level: 1,
-              spell: spells.phantasmal_killer,
-            },
-            {
-              level: 1,
-              spell: spells.conjure_woodland_beings,
-            },
-            {
-              level: 1,
-              spell: spells.conjure_minor_elementals,
-            },
             
             {
               level: 1,
