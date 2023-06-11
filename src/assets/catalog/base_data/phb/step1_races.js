@@ -24,42 +24,6 @@ export default {
           name: "rock",
           details: "rock_gnome_details",
 
-          //link_male
-          //link_female
-//NOTE - Для отладки
-          // settings: [
-          //   {
-          //     type: "stats",
-          //     name: "stats",
-          //     select: 2,
-          //     filter: "no_used",
-          //     num: 1,
-          //   },
-          //   {
-          //     type: "skills",
-          //     name: "skills",
-          //     select: 2,
-          //     filter: "no_used",
-          //     num: "mastery"
-          //   },
-          //   {
-          //     type: "languages",
-          //     name: "languages",
-          //     select: 1,
-          //     filter: "no_used",
-          //   },
-          //   {
-          //     type: "spells",
-          //     name: "spells",
-          //     level: 1,
-          //     select: 2,
-          //     mana_min: 0,
-          //     mana_max: 0,
-          //     classes: ["wizard"],
-          //   },
-          // ],
-//NOTE - Для отладки
-
           color: {
             skin: [color[2][1], color[2][2], color[2][3], color[2][4]],
             eyes: [
@@ -96,6 +60,52 @@ export default {
           ],
 
           spells: [
+
+            //ДЛЯ ВІДЛАДКИ
+            {
+              level: 1,
+              spell: spells.swift_quiver,
+            },
+            {
+              level: 1,
+              spell: spells.otilukes_resilient_sphere,
+            },
+            {
+              level: 1,
+              spell: spells.staggering_smite,
+            },
+            {
+              level: 1,
+              spell: spells.leomunds_secret_chest,
+            },
+            {
+              level: 1,
+              spell: spells.mordenkainens_private_sanctum,
+            },
+            {
+              level: 1,
+              spell: spells.fabricate,
+            },
+            {
+              level: 1,
+              spell: spells.giant_insect,
+            },
+            {
+              level: 1,
+              spell: spells.mordenkainens_faithful_hound,
+            },
+            {
+              level: 1,
+              spell: spells.phantasmal_killer,
+            },
+            {
+              level: 1,
+              spell: spells.conjure_woodland_beings,
+            },
+            {
+              level: 1,
+              spell: spells.conjure_minor_elementals,
+            },
             
             {
               level: 1,
@@ -105,7 +115,6 @@ export default {
               level: 1,
               spell: spells.lighter,
             },
-
             {
               level: 1,
               spell: spells.music_box,
@@ -140,10 +149,6 @@ export default {
           },
 
           spells: [
-            {
-              level: 1,
-              spell: spells.mordenkainens_faithful_hound,
-            },
             {
               level: 1,
               spell: spells.minor_illusion_gnome,

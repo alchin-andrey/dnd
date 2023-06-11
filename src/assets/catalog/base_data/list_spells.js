@@ -24880,6 +24880,114 @@ export default {
     {},
   ],
 
+  conjure_minor_elementals: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "conjure_minor_elementals",
+      name: "spell_conjure_minor_elementals",
+      details: "spell_conjure_minor_elementals_details",
+      expanded: "spell_conjure_minor_elementals_expanded",
+
+      type: "conjuration",
+      classes: ["druid","wizard"],
+
+      cast_time: null,
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "dangerness",
+      impact_damage_type: "sum_w",
+
+      impact_size_foo: "Num_Plus_2_2_4",
+      impact_size_str: null,
+      impact_size_num: 2,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  conjure_woodland_beings: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "conjure_woodland_beings",
+      name: "spell_conjure_woodland_beings",
+      details: "spell_conjure_woodland_beings_details",
+      expanded: "spell_conjure_woodland_beings_expanded",
+
+      type: "conjuration",
+      classes: ["druid","ranger"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "dangerness",
+      impact_damage_type: "sum_w",
+
+      impact_size_foo: "Num_Plus_2_2_4",
+      impact_size_str: null,
+      impact_size_num: 2,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
   compulsion: [
     {},
     {},
@@ -25277,6 +25385,55 @@ export default {
     },
   ],
 
+  fabricate: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "fabricate",
+      name: "spell_fabricate",
+      details: "spell_fabricate_details",
+      expanded: "spell_fabricate_expanded",
+
+      type: "transmutation",
+      classes: ["wizard"],
+
+      cast_time: null,
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 10,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   fire_shield: [
     {},
     {},
@@ -25356,6 +25513,55 @@ export default {
       spell_duration_units: "hour",
 
       aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  giant_insect: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "giant_insect",
+      name: "spell_giant_insect",
+      details: "spell_giant_insect_details",
+      expanded: "spell_giant_insect_expanded",
+
+      type: "transmutation",
+      classes: ["druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
       aim_aoe: null,
       aim_aoe_size: null,
 
@@ -25625,6 +25831,54 @@ export default {
     },
   ],
 
+  leomunds_secret_chest: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "leomunds_secret_chest",
+      name: "spell_leomunds_secret_chest",
+      details: "spell_leomunds_secret_chest_details",
+      expanded: "spell_leomunds_secret_chest_expanded",
+
+      type: "conjuration",
+      classes: ["wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_chest_5050","touch","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   locate_creature: [
     {},
     {},
@@ -25679,7 +25933,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 822, ua: 822,  ru: 822}, //TODO - check numbers
+      h: {ua_inrium: 800, ua: 800,  ru: 800}, //TODO - check numbers
       link: "mordenkainens_faithful_hound",
       name: "spell_mordenkainens_faithful_hound",
       details: "spell_mordenkainens_faithful_hound_details",
@@ -25722,6 +25976,161 @@ export default {
     },
   ],
 
+  mordenkainens_private_sanctum: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800,  ru: 800}, //TODO - check numbers
+      link: "mordenkainens_private_sanctum",
+      name: "spell_mordenkainens_private_sanctum",
+      details: "spell_mordenkainens_private_sanctum_details",
+      expanded: "spell_mordenkainens_private_sanctum_expanded",
+
+      type: "abjuration",
+      classes: ["wizard"],
+
+      cast_time: null,
+      cast_duration: 10,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 24,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "aim_aoe",
+      impact_damage_type: "cube",
+
+      impact_size_foo: "Feet__Num_Plus_100",
+      impact_size_str: null,
+      impact_size_num: 100,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  otilukes_resilient_sphere: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "otilukes_resilient_sphere",
+      name: "spell_otilukes_resilient_sphere",
+      details: "spell_otilukes_resilient_sphere_details",
+      expanded: "spell_otilukes_resilient_sphere_expanded",
+
+      type: "evocation",
+      classes: ["wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: null,
+    },
+  ],
+
+  phantasmal_killer: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800, ru: 800},
+      link: "phantasmal_killer",
+      name: "spell_phantasmal_killer",
+      details: "spell_phantasmal_killer_details",
+      expanded: "spell_phantasmal_killer_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+
+      impact_size_foo: "Num_Plus_1",
+      impact_size_str: null,
+      impact_size_num: 4,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+
   polymorph: [
     {},
     {},
@@ -25762,6 +26171,55 @@ export default {
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  staggering_smite: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800,  ru: 800},
+      link: "staggering_smite",
+      name: "spell_staggering_smite",
+      details: "spell_staggering_smite_details",
+      expanded: "spell_staggering_smite_expanded",
+
+      type: "evocation",
+      classes: ["paladin"],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 4,
+      impact_size_dic: 6,
       impact_size_pls: null,
 
       saving_need: true,
@@ -25847,6 +26305,55 @@ export default {
       spell_time: "concentration",
       spell_duration: 1,
       spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  swift_quiver: [
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 800, ua: 800,  ru: 800},
+      link: "swift_quiver",
+      name: "spell_swift_quiver",
+      details: "spell_swift_quiver_details",
+      expanded: "spell_swift_quiver_expanded",
+
+      type: "transmutation",
+      classes: ["ranger",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "quiver",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
 
       aim_need: false,
 

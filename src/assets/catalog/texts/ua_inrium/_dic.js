@@ -6146,4 +6146,46 @@ export default {
   spell_mordenkainens_faithful_hound: spells.mordenkainens_faithful_hound,
   spell_mordenkainens_faithful_hound_details: spells.mordenkainens_faithful_hound_details,
   spell_mordenkainens_faithful_hound_expanded: spells.mordenkainens_faithful_hound_expanded,
+
+  spell_phantasmal_killer: spells.phantasmal_killer,
+  spell_phantasmal_killer_details: spells.phantasmal_killer_details,
+  spell_phantasmal_killer_expanded: spells.phantasmal_killer_expanded,
+
+  spell_conjure_woodland_beings: spells.conjure_woodland_beings,
+  spell_conjure_woodland_beings_details: spells.conjure_woodland_beings_details,
+  spell_conjure_woodland_beings_expanded: spells.conjure_woodland_beings_expanded,
+
+  spell_conjure_minor_elementals: spells.conjure_minor_elementals,
+  spell_conjure_minor_elementals_details: spells.conjure_minor_elementals_details,
+  spell_conjure_minor_elementals_expanded: spells.conjure_minor_elementals_expanded,
+
+  spell_giant_insect: spells.giant_insect,
+  spell_giant_insect_details: spells.giant_insect_details,
+  spell_giant_insect_expanded: spells.giant_insect_expanded,
+
+  spell_fabricate: spells.fabricate,
+  spell_fabricate_details: spells.fabricate_details,
+  spell_fabricate_expanded: spells.fabricate_expanded,
+
+  spell_mordenkainens_private_sanctum: spells.mordenkainens_private_sanctum,
+  spell_mordenkainens_private_sanctum_details: spells.mordenkainens_private_sanctum_details,
+  spell_mordenkainens_private_sanctum_expanded: spells.mordenkainens_private_sanctum_expanded,
+
+  spell_leomunds_secret_chest: spells.leomunds_secret_chest,
+  spell_leomunds_secret_chest_details: spells.leomunds_secret_chest_details,
+  spell_leomunds_secret_chest_expanded: spells.leomunds_secret_chest_expanded,
+
+  material_chest_5050:"коштовна скриня за 5000+ зм, Її зменшена копія за 50+ зм",
+
+  spell_staggering_smite: spells.staggering_smite,
+  spell_staggering_smite_details: spells.staggering_smite_details,
+  spell_staggering_smite_expanded: spells.staggering_smite_expanded,
+
+  spell_otilukes_resilient_sphere: spells.otilukes_resilient_sphere,
+  spell_otilukes_resilient_sphere_details: spells.otilukes_resilient_sphere_details,
+  spell_otilukes_resilient_sphere_expanded: spells.otilukes_resilient_sphere_expanded,
+
+  spell_swift_quiver: spells.swift_quiver,
+  spell_swift_quiver_details: spells.swift_quiver_details,
+  spell_swift_quiver_expanded: spells.swift_quiver_expanded,
 };
