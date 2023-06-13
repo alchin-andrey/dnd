@@ -32,14 +32,6 @@ export default {
     link: "https://eneri.com.ua",
   },
 
-  inrium: {
-    id: 4,
-    name: "club_inrium_name",
-    details: "club_inrium_details",
-    link_name: "@inrium_games",
-    link: "https://t.me/inrium_games",
-  },
-
   rumble_dice: {
     id: 3,
     name: "club_rumble_dice_name",
