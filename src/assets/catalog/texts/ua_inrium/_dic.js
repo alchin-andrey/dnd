@@ -4957,12 +4957,13 @@ export default {
   ideal_career: "кар'єра",
   ideal_melancholy: "вигода",
 
-  commitment: "прихильність",
+  commitment: "привʼязаність",
   // ПРИБУТКОВІ
 
   attachment_tool: "інструмент",
   attachment_talisman: "талісман",
   attachment_thing: "памʼятна річ",
+  attachment_pet: "тваринка",
   attachment_vehicle: "транспорт",
   attachment_corner: "майстерня",
   attachment_childhood: "дитинство",
@@ -6188,4 +6189,6 @@ export default {
   spell_swift_quiver: spells.swift_quiver,
   spell_swift_quiver_details: spells.swift_quiver_details,
   spell_swift_quiver_expanded: spells.swift_quiver_expanded,
+
+  your_option: "Свій варіант",
 };

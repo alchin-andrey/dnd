@@ -40,6 +40,14 @@ export default {
     link: "https://t.me/rumble_dice",
   },
 
+  cats_and_dice: {
+    id: 7,
+    name: "club_cats_and_dice_name",
+    details: "club_cats_and_dice_details",
+    link_name: "@cats_and_dice",
+    link: "https://t.me/cats_and_dice",
+  },
+
   // dndlviv: {
   //   id: 4,
   //   name: "club_dndlviv_name",
