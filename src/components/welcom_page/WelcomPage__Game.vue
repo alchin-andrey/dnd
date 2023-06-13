@@ -3,13 +3,13 @@
 		<section class="card-size btm-trans br-12">
 			<div class="int-700">{{ t("lobby_menu_4") }}</div>
 			<!-- <div class="int-400 flex-col gap-15 white-04 w-362 mr-t-24"> -->
-			<div class="text-wrapp int-400 white-04 mr-t-24">
+			<div class="text-wrapp int-400 mr-t-24">
 				<div class="ident-15 mr-l-15 flex-col gap-15">
 					<div>— {{ t('how_it_goes_1') }}</div>
 					<div>— {{ t('how_it_goes_2') }}</div>
 					<div>— {{ t('how_it_goes_3') }}</div>
 				</div>
-				<div>{{ t('how_it_goes_4') }}</div>
+				<div class="white-04">{{ t('how_it_goes_4') }}</div>
 			</div>
 		</section>
 
