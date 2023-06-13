@@ -45,7 +45,7 @@ export default {
 }
 
 .card-size {
-	width: 200px;
+	width: 220px;
 }
 
 @media (max-width: 955px) {
