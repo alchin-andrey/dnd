@@ -6083,6 +6083,9 @@ export default {
   club_mr_name: "Майстерня Рольовика",
   club_mr_details: "Львівський клуб де постійно відбуваються онлайн та оффлайн ігри.",
 
+  club_cats_and_dice_name: "Cats&Dice",
+  club_cats_and_dice_details: "Наймиліший Телеграм чатик, де діляться фото своїх тваринок!<br/>Ну і анонсами ігор ))",
+
   // ---
 
   city: "Місто",  
