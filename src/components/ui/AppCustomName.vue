@@ -50,9 +50,13 @@ export default {
 	},
 	methods: {
 		getCustomName() {
-			const obj = { name_set: "your_option", name_custom: "",};
+			const arr = this.MY[this.save_setting][this.id_link];
 			this.MY._settings_custom_name[this.id_link] = this.inputValue;
-			this.MY[this.save_setting][this.id_link] = [{...obj, name_custom: this.MY._settings_custom_name[this.id_link]}];
+			arr.map(n => {
+				if(n.hasOwnProperty('name_custom')) {
+					return n.name_custom = this.inputValue;
+				}
+			});
 		},
 	},
 	watch: {
