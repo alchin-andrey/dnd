@@ -6194,4 +6194,6 @@ export default {
   spell_swift_quiver_expanded: spells.swift_quiver_expanded,
 
   your_option: "Свій варіант",
+  bow_shortsword_2: "Лук та два меча",
+  bow_two_simple_weapons: "Лук та дві прості зброї",
 };

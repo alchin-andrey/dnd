@@ -11097,14 +11097,6 @@ export default {
 
     equipment: [
       {
-        level: 1,
-        weapon: [[weapons.longbow, 1]],
-        inventory: [
-          [items.arrow, 20],
-          [items.quiver, 1],
-        ],
-      },
-      {
         level: 2,
         inventory: [[items.focus, 1]],
       },
@@ -12550,15 +12542,33 @@ export default {
         select: 1,
         list: [
           {
-            name_set: "shortsword_2",
+            name: "bow_shortsword_2",
             equipment: [
+              {
+                level: 1,
+                weapon: [[weapons.longbow, 1]],
+                inventory: [
+                  [items.arrow, 20],
+                  [items.quiver, 1],
+                ],
+              },
               {
                 weapon: [[weapons.shortsword, 2]],
               },
             ],
           },
           {
-            name: "two_simple_weapons",
+            name: "bow_two_simple_weapons",
+            equipment: [
+              {
+                level: 1,
+                weapon: [[weapons.longbow, 1]],
+                inventory: [
+                  [items.arrow, 20],
+                  [items.quiver, 1],
+                ],
+              },
+            ],
             settings: [
               {
                 type: "custom",
