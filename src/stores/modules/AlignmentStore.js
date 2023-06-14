@@ -29,10 +29,22 @@ export const useAlignmentStore = defineStore({
       return this.alignment_lists.alignment;
     },
 
+    alignment_Name: (stor) => (item) => {
+      if(item.name_set) {
+        return item.name_custom ? item.name_custom : item.name_set;
+      } else {
+        return item.name;
+      }
+    },
+
     MY_Main_Feature() {
       const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
       const name = сustomm.find(el => el.name == "main_feature");
       return name?.select_list[0];
+    },
+
+    MY_Main_Feature_Name() {
+      return this.alignment_Name(this.MY_Main_Feature);
     },
 
     MY_Ideals() {
@@ -41,10 +53,18 @@ export const useAlignmentStore = defineStore({
       return name?.select_list[0];
     },
 
+    MY_Ideals_Name() {
+      return this.alignment_Name(this.MY_Ideals);
+    },
+
     MY_Commitment() {
       const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
       const name = сustomm.find(el => el.name == "commitment");
       return name?.select_list[0];
+    },
+
+    MY_Commitment_Name() {
+      return this.alignment_Name(this.MY_Commitment);
     },
 
     MY_Secret() {
@@ -53,10 +73,18 @@ export const useAlignmentStore = defineStore({
       return name?.select_list[0];
     },
 
+    MY_Secret_Name() {
+      return this.alignment_Name(this.MY_Secret);
+    },
+
     MY_Weakness() {
       const сustomm = this.сustomm_Main_Settings_Alignment_Arr;
       const name = сustomm.find(el => el.name == "weakness");
       return name?.select_list[0];
+    },
+
+    MY_Weakness_Name() {
+      return this.alignment_Name(this.MY_Weakness);
     },
 
     photo_Select() {

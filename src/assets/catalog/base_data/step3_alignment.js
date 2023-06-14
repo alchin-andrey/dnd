@@ -69,6 +69,7 @@ export default {
           { name: "feature_brave" }, // храбрий
           { name: "feature_adventurer" }, // авантюрист
           { name: "feature_rebel" }, // бунтарь
+          { name_set: "user_option", name_custom: "",},
         ],
       },
       {
@@ -111,6 +112,7 @@ export default {
           { name: "ideal_glory" }, // слава
           { name: "ideal_career" }, // карʼєра
           { name: "ideal_melancholy" }, // користь
+          { name_set: "user_option", name_custom: "",},
         ],
       },
       {
@@ -152,6 +154,7 @@ export default {
           { name: "attachment_idol" }, // кумир
           { name: "attachment_artifact" }, // артефакт
           { name: "attachment_structure" }, // сакральна споруда
+          { name_set: "user_option", name_custom: "",},
         ],
       },
       {
@@ -173,6 +176,7 @@ export default {
           { name: "secret_target" }, // мішень
           { name: "secret_plans" }, // коварні плани
           { name: "secret_prophesy" }, // пророцтво
+          { name_set: "user_option", name_custom: "",},
         ],
       },
       {
@@ -202,6 +206,7 @@ export default {
           { name: "weakness_carelessness" }, // беспечность
           { name: "weakness_recklessness" }, // безрассудство
           { name: "weakness_obsession" }, // одержимость
+          { name_set: "user_option", name_custom: "",},
         ],
       },
     ],

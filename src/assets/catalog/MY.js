@@ -19,6 +19,8 @@ export default {
   _settings_class_old: {},
 
   _settings_alignment: {},
+
+	_settings_custom_name: {},
   
 	//Character
 	alignment: "fluid_neutral",

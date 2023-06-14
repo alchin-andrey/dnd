@@ -40,20 +40,6 @@ export default {
 			if (!stor.no_name) return stor.t(name);
 		},
 
-		// for_Rendering_Arr: (stor) => (name) => {
-		// 	if (name == "spells") return stor.spells_Arr;
-		// 	else return stor.menu_Arr(name);
-		// },
-
-		// spells_Arr() {
-		// 	const name_filter = this.menu.filter((el) => el.name == "spells");
-		// 	let arr = [];
-		// 	name_filter.forEach((item) => {
-		// 		arr.push(this.str_Upper(this.t_Elem_Spells(item)));
-		// 	});
-		// 	return arr;
-		// },
-
 		for_Rendering_Arr: (stor) => (name) => {
 			const name_filter = stor.menu.filter((el) => el.name == name);
 			let arr = [];
@@ -85,10 +71,15 @@ export default {
 			) {
 				const name = elem.stats[0].name;
 				const num = elem.stats[0].num;
-				return `+${num} ${stor.str_Upper(stor.t(name)).slice(0, 3)}`;
+				return `+${num} ${stor.T(name).slice(0, 3)}`;
 			} else {
-				if (elem?.name) return stor.str_Upper(stor.t(elem.name));
-				if (elem?.name_set) return stor.str_Upper(stor.t(elem.name_set));
+				if (elem?.name) {
+					return stor.T(elem.name);
+				} else if (elem.hasOwnProperty('name_custom')) {
+					return elem.name_custom ? elem.name_custom : stor.T(elem.name_set);
+				} else if (elem?.name_set) {
+					return stor.T(elem.name_set);
+				} 
 			}
 		},
 	},

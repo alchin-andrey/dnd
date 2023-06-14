@@ -2,7 +2,7 @@
   <div class="flex-col gap-34">
     <AppSrdDisclaimer :text="backstories_Arr.details"/>
     <section class="flex-col gap-8">
-      <AppCusstomCard 
+      <AppCustomCard 
       v-for="list_el in backstories_Arr"
       :key="list_el"
       :custom="list_el"

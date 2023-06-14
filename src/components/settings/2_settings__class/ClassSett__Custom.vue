@@ -2,7 +2,7 @@
   <section class="flex-col gap-34">
     <AppSrdDisclaimer :text="custom.details" :disclaimer="Boolean(custom?.disclaimer)"/>
     <section class="flex-col gap-8">
-      <AppCusstomCard
+      <AppCustomCard
         v-for="list_el in custom.list"
         :key="list_el"
         :setting_name="custom.name"

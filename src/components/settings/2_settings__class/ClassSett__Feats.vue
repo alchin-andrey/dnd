@@ -11,7 +11,7 @@
     </section>
     <AppSrdDisclaimer :text="t_feats_Details" :disclaimer="show_Disclaimer"/>
     <section class="flex-col gap-8">
-      <AppCusstomCard
+      <AppCustomCard
         v-for="list_el in feat_Arr.list"
         :key="list_el"
         :setting_name="feat_Arr.name"

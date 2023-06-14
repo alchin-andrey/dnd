@@ -8,6 +8,13 @@
 		>
 		</my-card-text>
 
+		<AppCustomName 
+		v-if="shown_CustomName" 
+		v-model="MY._settings_custom_name[id_link]"
+		:save_setting="save_setting"
+		:id_link="id_link"
+		/>
+
 		<!-- //NOTE - Stats -->
 		<AppWrapper v-if="shown_Stats">
 			<AppWrapper gap="26"
@@ -196,7 +203,7 @@ import KitEquip from "@/components/equipment/KitEquip.vue";
 import WeaponEquip from "@/components/equipment/WeaponEquip.vue";
 import ArmorEquip from "@/components/equipment/ArmorEquip.vue";
 export default {
-	name: "AppCusstomCard",
+	name: "AppCustomCard",
 	components: {
 		KitEquip,
 		WeaponEquip,
@@ -208,6 +215,14 @@ export default {
 			default: null,
 		},
 		setting_filter: {
+			type: String,
+			default: null,
+		},
+		save_setting: {
+			type: String,
+			default: null,
+		},
+		id_link: {
 			type: String,
 			default: null,
 		},
@@ -250,6 +265,10 @@ export default {
         return false
       }
     },
+
+		shown_CustomName() {
+			return this.custom.hasOwnProperty('name_custom');
+		},
 
 		shown_Qualities() {
 			return (

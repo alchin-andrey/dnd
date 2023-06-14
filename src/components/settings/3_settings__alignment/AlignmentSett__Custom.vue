@@ -2,7 +2,7 @@
   <section class="flex-col gap-34">
     <AppSrdDisclaimer :text="custom.details" :disclaimer="Boolean(custom?.disclaimer)"/>
     <section class="flex-col gap-8">
-      <AppCusstomCard
+      <AppCustomCard
         v-for="list_el in custom.list"
         :key="list_el"
         :setting_name="custom.name"
@@ -10,6 +10,8 @@
         :custom="list_el"
         @click="getCustomSelect(list_el)"
         :active_boll_link="getActive(list_el)"
+        save_setting="_settings_alignment"
+        :id_link="custom.id_link"
       />
     </section>
 	</section>
@@ -50,7 +52,12 @@ export default {
       } else {
         let arr = this.custom.select_list.slice(0);
         arr.splice(0, 1);
-				arr.push(list_el);
+        if(list_el.hasOwnProperty('name_custom')) {
+          const save_custom_name = this.MY._settings_custom_name[this.custom.id_link];
+          arr.push({...list_el, name_custom: save_custom_name});
+        } else {
+          arr.push(list_el);
+        }
         this.MY._settings_alignment[this.custom.id_link] = arr;
       }
 		},

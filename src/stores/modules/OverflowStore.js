@@ -60,6 +60,12 @@ export const useOverflowStore = defineStore({
 				});
 			});
 
+			const name_custom_arr = item.select_list.filter( el => el.name_set == 'user_option');
+			name_custom_arr.forEach((el) => {
+				const new_res = !el.name_custom;
+				res = res ? true : new_res;
+			});
+
 			const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
 			spell_arr.forEach((el) => {
 				const new_res = stor.overflow_Spell(el, true);

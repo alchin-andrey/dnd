@@ -127,6 +127,8 @@ export default {
 				item.select_list.forEach((item) => {
 					if (item?.name) {
 						arr.push(stor.T(item?.name));
+					} else if(item.hasOwnProperty('name_custom')) {
+						arr.push(item.name_custom ? item.name_custom : stor.T(item.name_set));
 					} else if (item?.name_set) {
 						arr.push(stor.T(item?.name_set));
 					}

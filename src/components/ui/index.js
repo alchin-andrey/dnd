@@ -24,7 +24,8 @@ import AppStats from "@/components/ui/AppStats.vue";
 import AppSkills from "@/components/ui/AppSkills.vue";
 import AppSpells from "@/components/ui/AppSpells.vue";
 import AppCharges from "@/components/ui/AppCharges.vue";
-import AppCusstomCard from "@/components/ui/AppCusstomCard.vue";
+import AppCustomCard from "@/components/ui/AppCustomCard.vue";
+import AppCustomName from "@/components/ui/AppCustomName.vue";
 
 import AppTooltip from "@/components/ui/AppTooltip.vue";
 import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
@@ -106,7 +107,8 @@ export default [
   AppSkills,
   AppSpells,
   AppCharges,
-  AppCusstomCard,
+  AppCustomCard,
+  AppCustomName,
   AppTooltip,
   AppSpellsPacks,
   AppLoadBtm,

@@ -10,13 +10,13 @@
     <AppMainCell class="cell grid__full" title="past" :content="MY_Backstory.name" />
 
     <AppMainCell class="cell" title="alignment" :content="MY.alignment" />
-    <AppMainCell class="cell" title="main_feature" :content="MY_Main_Feature.name" />
+    <AppMainCell class="cell" title="main_feature" :content="MY_Main_Feature_Name" />
 
-    <AppMainCell class="cell" title="ideals" :content="MY_Ideals.name" />
-    <AppMainCell class="cell" title="commitment" :content="MY_Commitment.name" />
+    <AppMainCell class="cell" title="ideals" :content="MY_Ideals_Name" />
+    <AppMainCell class="cell" title="commitment" :content="MY_Commitment_Name" />
 
-    <AppMainCell class="cell bord-bl-3" title="secret" :content="MY_Secret.name" />
-    <AppMainCell class="cell bord-br-3" title="weakness" :content="MY_Weakness.name" />
+    <AppMainCell class="cell bord-bl-3" title="secret" :content="MY_Secret_Name" />
+    <AppMainCell class="cell bord-br-3" title="weakness" :content="MY_Weakness_Name" />
   </div>
 </template>
 
@@ -39,11 +39,11 @@ export default {
       "MY_Subclass",
     ]),
     ...mapState(useAlignmentStore, [
-      "MY_Main_Feature",
-      "MY_Ideals",
-      "MY_Commitment",
-      "MY_Secret",
-      "MY_Weakness",
+      "MY_Main_Feature_Name",
+      "MY_Ideals_Name",
+      "MY_Commitment_Name",
+      "MY_Secret_Name",
+      "MY_Weakness_Name",
     ]),
 	},
 };
