@@ -44,13 +44,13 @@ export default {
 		},
 
     t_Placeholder() {
-			return this.T("user_option");
+			return this.T("your_option");
 		},
 
 	},
 	methods: {
 		getCustomName() {
-			const obj = { name_set: "user_option", name_custom: "",};
+			const obj = { name_set: "your_option", name_custom: "",};
 			this.MY._settings_custom_name[this.id_link] = this.inputValue;
 			this.MY[this.save_setting][this.id_link] = [{...obj, name_custom: this.MY._settings_custom_name[this.id_link]}];
 		},

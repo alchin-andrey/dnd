@@ -60,7 +60,7 @@ export const useOverflowStore = defineStore({
 				});
 			});
 
-			const name_custom_arr = item.select_list.filter( el => el.name_set == 'user_option');
+			const name_custom_arr = item.select_list.filter( el => el.name_set == 'your_option');
 			name_custom_arr.forEach((el) => {
 				const new_res = !el.name_custom;
 				res = res ? true : new_res;
