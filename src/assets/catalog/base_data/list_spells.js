@@ -26431,7 +26431,62 @@ export default {
 
   // NOTE - Spells [5]
 
+  animate_objects: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "animate_objects",
+      name: "spell_animate_objects",
+      details: "spell_animate_objects_details",
+      expanded: "spell_animate_objects_expanded",
+
+      type: "transmutation",
+      classes: ["wizard","sorcerer","bard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "object",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 40,
+
+      impact_type: "slot_count",
+      impact_damage_type: null,
+
+      impact_size_foo: "Num_Plus_2",
+      impact_size_str: null,
+      impact_size_num: 10,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
   cloudkill: [
+    {},
     {},
     {},
     {},
@@ -26478,7 +26533,6 @@ export default {
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
-    {},
     {},
     {},
     {},

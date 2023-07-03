@@ -62,6 +62,11 @@ export default {
           spells: [
 
             //ДЛЯ ВІДЛАДКИ
+
+            {
+              level: 1,
+              spell: spells.animate_objects,
+            },
             
             {
               level: 1,
