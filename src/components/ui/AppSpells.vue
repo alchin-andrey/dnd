@@ -929,6 +929,13 @@ export default {
       return num + (mana - mana_min) * 2;
     },
 
+    Num_Second_Plus_2() {
+      let num = this.Spell_Index.second_impact_size_num;
+      let mana = this.Mana_Numb;
+      let mana_min = this.Index;
+      return num + (mana - mana_min) * 2;
+    },
+
     Num_Plus_2_2_4() {
       let num = this.Spell_Index.impact_size_num;
       let mana = this.Mana_Numb - this.Index;
@@ -1043,6 +1050,13 @@ export default {
     //ANCHOR - PLS
     Pls_MOD() {
       let pls = this.Spell_Index.impact_size_pls;
+      let mod = this.stats_Mod(this.spell_Attribute_MOD);
+      let res = pls + mod;
+      return res < 0 ? 0 : res;
+    },
+
+    Pls_Second_MOD() {
+      let pls = this.Spell_Index.second_impact_size_pls;
       let mod = this.stats_Mod(this.spell_Attribute_MOD);
       let res = pls + mod;
       return res < 0 ? 0 : res;

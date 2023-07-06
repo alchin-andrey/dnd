@@ -26682,7 +26682,7 @@ export default {
       second_impact_type: "or",
       second_impact_damage_type: "bludgeoning_w",
 
-      second_impact_size_foo: "Num_Plus_2__Pls_MOD",
+      second_impact_size_foo: "Num_Second_Plus_2__Pls_Second_MOD",
       second_impact_size_str: null,
       second_impact_size_num: 2,
       second_impact_size_dic: 6,
