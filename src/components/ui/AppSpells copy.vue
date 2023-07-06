@@ -53,11 +53,9 @@
           v-if="Spell_Index.second_impact_type"
           :title="Spell_Index.second_impact_type"
           :addition="Spell_Index.second_impact_damage_type"
-          :str="Value_Second_Str"
-          :numb="Value_Second_Num"
-          :dice="Value_Second_Dic"
-          :pls="Value_Second_Pls"
-          :feet="Spell_Index.second_impact_size_foo?.includes('Feet')"
+          :numb="Spell_Index.second_impact_size_num"
+          :dice="Spell_Index.second_impact_size_dic"
+          :feet="Spell_Index.impact_size_foo?.includes('Feet')"
           main
           blank_print
         />
@@ -192,11 +190,9 @@
         v-if="Spell_Index.second_impact_type"
         :title="Spell_Index.second_impact_type"
         :addition="Spell_Index.second_impact_damage_type"
-        :str="Value_Second_Str"
-        :numb="Value_Second_Num"
-        :dice="Value_Second_Dic"
-        :pls="Value_Second_Pls"
-        :feet="Spell_Index.second_impact_size_foo?.includes('Feet')"
+        :numb="Spell_Index.second_impact_size_num"
+        :dice="Spell_Index.second_impact_size_dic"
+        :feet="Spell_Index.impact_size_foo?.includes('Feet')"
         main
       />
       <magic-attribute
@@ -299,11 +295,9 @@
               v-if="Spell_Index.second_impact_type"
               :title="Spell_Index.second_impact_type"
               :addition="Spell_Index.second_impact_damage_type"
-              :str="Value_Second_Str"
-              :numb="Value_Second_Num"
-              :dice="Value_Second_Dic"
-              :pls="Value_Second_Pls"
-              :feet="Spell_Index.second_impact_size_foo?.includes('Feet')"
+              :numb="Spell_Index.second_impact_size_num"
+              :dice="Spell_Index.second_impact_size_dic"
+              :feet="Spell_Index.impact_size_foo?.includes('Feet')"
               main
               not_dot
             />
@@ -385,11 +379,9 @@
           v-if="Spell_Index.second_impact_type"
           :title="Spell_Index.second_impact_type"
           :addition="Spell_Index.second_impact_damage_type"
-          :str="Value_Second_Str"
-          :numb="Value_Second_Num"
-          :dice="Value_Second_Dic"
-          :pls="Value_Second_Pls"
-          :feet="Spell_Index.second_impact_size_foo?.includes('Feet')"
+          :numb="Spell_Index.second_impact_size_num"
+          :dice="Spell_Index.second_impact_size_dic"
+          :feet="Spell_Index.impact_size_foo?.includes('Feet')"
           main
         />
         <magic-attribute
@@ -1289,57 +1281,29 @@ export default {
     },
 
     //ANCHOR - FOO
-    // Value_Foo_Сlean: (state) => (Val) => {
-    //   let num = null;
-    //   let foo = state.Spell_Index.impact_size_foo;
-    //   if (foo) {
-    //     let str = foo.split("__");
-    //     for (let i in str) {
-    //       str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
-    //     }
-    //   }
-    //   return num;
-    // },
-
-    // Value_Foo: (state) => (Val) => {
-    //   let low_val = Val.toLowerCase();
-    //   let num = state.Spell_Index[`impact_size_${low_val}`];
-    //   let foo = state.Spell_Index.impact_size_foo;
-    //   if (foo) {
-    //     let str = foo.split("__");
-    //     for (let i in str) {
-    //       str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
-    //     }
-    //   }
-    //   return num;
-    // },
-
-    Value_Foo_Сlean: (state) => (Val, foo) => {
-      if (foo) {
-        let str = foo.split("__");
-        for (let i in str) {
-          if (str[i].substr(0, 3) === Val) {
-            return state[str[i]]
-          };
-        }
-      }
-      return null;
-    },
-
     Value_Foo: (state) => (Val) => {
       let low_val = Val.toLowerCase();
       let num = state.Spell_Index[`impact_size_${low_val}`];
-      const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.impact_size_foo);
-      if (foo) return foo;
-      else return num;
+      let foo = state.Spell_Index.impact_size_foo;
+      if (foo) {
+        let str = foo.split("__");
+        for (let i in str) {
+          str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
+        }
+      }
+      return num;
     },
 
-    Value_Second_Foo: (state) => (Val) => {
-      let low_val = Val.toLowerCase();
-      let num = state.Spell_Index[`second_impact_size_${low_val}`];
-      const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.second_impact_size_foo);
-      if (foo) return foo;
-      else return num;
+    Value_Foo_Сlean: (state) => (Val) => {
+      let num = null;
+      let foo = state.Spell_Index.impact_size_foo;
+      if (foo) {
+        let str = foo.split("__");
+        for (let i in str) {
+          str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
+        }
+      }
+      return num;
     },
 
     kof_Foo: (state) => (lvl_arr, kof_arr) => {
@@ -1359,36 +1323,18 @@ export default {
       return this.Value_Foo("Str");
     },
 
-    Value_Second_Str() {
-      return this.Value_Second_Foo("Str");
-    },
-
     Value_Num() {
       return this.Value_Foo("Num");
     },
 
-    Value_Second_Num() {
-      return this.Value_Second_Foo("Num");
-    },
-
     Value_Dic() {
       let dice = this.Spell_Index.impact_size_dic;
-      let foo = this.Value_Foo_Сlean("Dic", this.Spell_Index.impact_size_foo);
-      return dice + foo;
-    },
-
-    Value_Second_Dic() {
-      let dice = this.Spell_Index.second_impact_size_dic;
-      let foo = this.Value_Foo_Сlean("Dic", this.Spell_Index.second_impact_size_foo);
+      let foo = this.Value_Foo_Сlean("Dic");
       return dice + foo;
     },
 
     Value_Pls() {
       return this.Value_Foo("Pls");
-    },
-
-    Value_Second_Pls() {
-      return this.Value_Second_Foo("Pls");
     },
 
     Value_Det() {
