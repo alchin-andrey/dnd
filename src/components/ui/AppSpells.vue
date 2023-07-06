@@ -1326,21 +1326,30 @@ export default {
       return null;
     },
 
-    Value_Foo: (state) => (Val) => {
+    // Value_Foo: (state) => (Val, pref) => {
+    //   let low_val = Val.toLowerCase();
+    //   let num = state.Spell_Index[`impact_size_${low_val}`];
+    //   const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.impact_size_foo);
+    //   if (foo) return foo;
+    //   else return num;
+    // },
+
+    Value_Foo: (state) => (Val, pref) => {
       let low_val = Val.toLowerCase();
-      let num = state.Spell_Index[`impact_size_${low_val}`];
-      const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.impact_size_foo);
+      const str_impact = pref ? `${pref}_impact_size` : `impact_size`;
+      let num = state.Spell_Index[`${str_impact}_${low_val}`];
+      const foo = state.Value_Foo_Сlean(Val, state.Spell_Index[`${str_impact}_foo`]);
       if (foo) return foo;
       else return num;
     },
 
-    Value_Second_Foo: (state) => (Val) => {
-      let low_val = Val.toLowerCase();
-      let num = state.Spell_Index[`second_impact_size_${low_val}`];
-      const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.second_impact_size_foo);
-      if (foo) return foo;
-      else return num;
-    },
+    // Value_Second_Foo: (state) => (Val) => {
+    //   let low_val = Val.toLowerCase();
+    //   let num = state.Spell_Index[`second_impact_size_${low_val}`];
+    //   const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.second_impact_size_foo);
+    //   if (foo) return foo;
+    //   else return num;
+    // },
 
     kof_Foo: (state) => (lvl_arr, kof_arr) => {
       !kof_arr ? (kof_arr = lvl_arr) : null;
@@ -1360,7 +1369,7 @@ export default {
     },
 
     Value_Second_Str() {
-      return this.Value_Second_Foo("Str");
+      return this.Value_Foo("Str", "second");
     },
 
     Value_Num() {
@@ -1368,7 +1377,7 @@ export default {
     },
 
     Value_Second_Num() {
-      return this.Value_Second_Foo("Num");
+      return this.Value_Foo("Num", "second");
     },
 
     Value_Dic() {
@@ -1388,7 +1397,7 @@ export default {
     },
 
     Value_Second_Pls() {
-      return this.Value_Second_Foo("Pls");
+      return this.Value_Foo("Pls", "second");
     },
 
     Value_Det() {
