@@ -67,6 +67,23 @@ export default {
               level: 1,
               spell: spells.animate_objects,
             },
+            {
+              level: 1,
+              spell: spells.antilife_shell,
+            },
+            {
+              level: 1,
+              spell: spells.awaken,
+            },
+            {
+              level: 1,
+              spell: spells.banishing_smite,
+            },
+            {
+              level: 1,
+              spell: spells.bigbys_hand,
+            },
+            // КІНЕЦЬ ВІДЛАДКИ
             
             {
               level: 1,

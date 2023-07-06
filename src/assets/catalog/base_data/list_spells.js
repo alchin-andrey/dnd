@@ -24895,7 +24895,7 @@ export default {
       type: "conjuration",
       classes: ["druid","wizard"],
 
-      cast_time: null,
+      cast_time: "ritual",
       cast_duration: 1,
       cast_duration_units: "min",
 
@@ -25400,7 +25400,7 @@ export default {
       type: "transmutation",
       classes: ["wizard"],
 
-      cast_time: null,
+      cast_time: "ritual",
       cast_duration: 10,
       cast_duration_units: "min",
 
@@ -25991,7 +25991,7 @@ export default {
       type: "abjuration",
       classes: ["wizard"],
 
-      cast_time: null,
+      cast_time: "ritual",
       cast_duration: 10,
       cast_duration_units: "min",
 
@@ -26458,13 +26458,13 @@ export default {
       parts: ["somatic","verbal"],
 
       spell_time: "concentration",
-      spell_duration: 10,
+      spell_duration: 1,
       spell_duration_units: "min",
 
       aim_need: false,
 
-      aim_aoe: "sphere",
-      aim_aoe_size: 40,
+      aim_aoe: null,
+      aim_aoe_size: null,
 
       impact_type: "slot_count",
       impact_damage_type: null,
@@ -26474,6 +26474,219 @@ export default {
       impact_size_num: 10,
       impact_size_dic: null,
       impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
+  antilife_shell: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "antilife_shell",
+      name: "spell_antilife_shell",
+      details: "spell_antilife_shell_details",
+      expanded: "spell_antilife_shell_expanded",
+
+      type: "abjuration",
+      classes: ["druid",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 20,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  awaken: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "awaken",
+      name: "spell_awaken",
+      details: "spell_awaken_details",
+      expanded: "spell_awaken_expanded",
+
+      type: "transmutation",
+      classes: ["druid","bard"],
+
+      cast_time: "ritual",
+      cast_duration: 8,
+      cast_duration_units: "hour",
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_agat_1000gold","touch","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 30,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  banishing_smite: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "banishing_smite",
+      name: "spell_banishing_smite",
+      details: "spell_banishing_smite_details",
+      expanded: "spell_banishing_smite_expanded",
+
+      type: "abjuration",
+      classes: ["paladin",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "force_w",
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  bigbys_hand: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "bigbys_hand",
+      name: "spell_bigbys_hand",
+      details: "spell_bigbys_hand_details",
+      expanded: "spell_bigbys_hand_expanded",
+
+      type: "evocation",
+      classes: ["wizard",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "force_w",
+
+      impact_size_foo: "Num_Plus_2",
+      impact_size_str: null,
+      impact_size_num: 4,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      second_impact_type: "or",
+      second_impact_damage_type: "bludgeoning_w",
+
+      second_impact_size_foo: "Num_Plus_2__Pls_MOD",
+      second_impact_size_str: null,
+      second_impact_size_num: 2,
+      second_impact_size_dic: 6,
+      second_impact_size_pls: null,
 
       saving_need: false,
       saving_attribute: null,

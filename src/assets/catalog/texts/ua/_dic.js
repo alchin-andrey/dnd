@@ -6202,4 +6202,18 @@ export default {
   spell_animate_objects: spells.animate_objects,
   spell_animate_objects_details: spells.animate_objects_details,
   spell_animate_objects_expanded: spells.animate_objects_expanded,
+
+  spell_antilife_shell: spells.antilife_shell,
+  spell_antilife_shell_details: spells.antilife_shell_details,
+  spell_antilife_shell_expanded: spells.antilife_shell_expanded,
+
+  spell_awaken: spells.awaken,
+  spell_awaken_details: spells.awaken_details,
+  spell_awaken_expanded: spells.awaken_expanded,
+
+  material_agat_1000gold: "агат за 1000+ зм (витрачається)",
+
+  spell_banishing_smite: spells.banishing_smite,
+  spell_banishing_smite_details: spells.banishing_smite_details,
+  spell_banishing_smite_expanded: spells.banishing_smite_expanded,
 };
