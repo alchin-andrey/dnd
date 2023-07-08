@@ -6217,4 +6217,8 @@ export default {
   spell_banishing_smite_details: spells.banishing_smite_details,
   spell_banishing_smite_expanded: spells.banishing_smite_expanded,
 
+  spell_bigbys_hand: spells.bigbys_hand,
+  spell_bigbys_hand_details: spells.bigbys_hand_details,
+  spell_bigbys_hand_expanded: spells.bigbys_hand_expanded,
+
 };
