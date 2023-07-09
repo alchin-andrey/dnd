@@ -5438,7 +5438,7 @@ export default {
   spell_wall_of_stone_details: spells.wall_of_stone_details,
   spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
 
-  material_diamont_dust_100gold: "діамантовий пил за 100+ зм",
+  material_diamont_dust_100gold: "діамантовий пил за 100+ зм (витрачається)",
 
   spell_stoneskin: spells.stoneskin,
   spell_stoneskin_details: spells.stoneskin_details,
@@ -6240,5 +6240,17 @@ export default {
   spell_creation: spells.creation,
   spell_creation_details: spells.creation_details,
   spell_creation_expanded: spells.creation_expanded,
+
+  spell_dispell_evil_and_good: spells.dispell_evil_and_good,
+  spell_dispell_evil_and_good_details: spells.dispell_evil_and_good_details,
+  spell_dispell_evil_and_good_expanded: spells.dispell_evil_and_good_expanded,
+
+  spell_geas: spells.geas,
+  spell_geas_details: spells.geas_details,
+  spell_geas_expanded: spells.geas_expanded,
+
+  spell_greater_restoration: spells.greater_restoration,
+  spell_greater_restoration_details: spells.greater_restoration_details,
+  spell_greater_restoration_expanded: spells.greater_restoration_expanded,
 
 };

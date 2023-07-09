@@ -103,6 +103,18 @@ export default {
               level: 1,
               spell: spells.creation,
             },
+            {
+              level: 1,
+              spell: spells.dispell_evil_and_good,
+            },
+            {
+              level: 1,
+              spell: spells.geas,
+            },
+            {
+              level: 1,
+              spell: spells.greater_restoration,
+            },
             // КІНЕЦЬ ВІДЛАДКИ
             
             {

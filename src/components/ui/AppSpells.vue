@@ -1249,6 +1249,13 @@ export default {
       if (mana >= 6) return "till_dissipate";
     },
 
+    Sti_9Til() {
+      // let num = this.Spell_Index.spell_time;
+      let mana = this.Mana_Numb;
+      if (mana < 9) return null;
+      if (mana >= 9) return "till_dissipate";
+    },
+
     //ANCHOR - Sdu
     Sdu_Min_Hour_Hour_Nul() {
       // let num = this.Spell_Index.spell_duration_units;

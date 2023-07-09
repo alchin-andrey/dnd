@@ -27194,7 +27194,7 @@ export default {
       impact_type: null,
       impact_damage_type: null,
 
-      impact_size_foo: "Aos_Plus_5",
+      impact_size_foo: null,
       impact_size_str: null,
       impact_size_num: null,
       impact_size_dic: null,
@@ -27204,10 +27204,10 @@ export default {
       saving_attribute: null,
       impact_size_saved: null,
     },
-    {},
-    {},
-    {},
-    {},
+    {aim_aoe_size: 10,},
+    {aim_aoe_size: 15,},
+    {aim_aoe_size: 20,},
+    {aim_aoe_size: 25,},
   ],
 
   destructive_wave: [
@@ -27319,7 +27319,6 @@ export default {
       impact_size_saved: null,
     },
   ],
-
 
   dominate_person: [
     {},
@@ -27484,6 +27483,110 @@ export default {
     {},
     {},
     {},
+  ],
+
+  geas: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "geas",
+      name: "spell_geas",
+      details: "spell_geas_details",
+      expanded: "spell_geas_expanded",
+
+      type: "enchantment",
+      classes: ["paladin","cleric","bard","druid","wizard"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 30,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "damage",
+      impact_damage_type: "psychic_w",
+
+      impact_size_foo: "Sti_9Til",
+      impact_size_str: null,
+      impact_size_num: 5,
+      impact_size_dic: 10,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+    {spell_duration: 30,},
+    {spell_duration: 365,},
+    {spell_duration: 365,},
+    {spell_duration: null,},
+  ],
+
+  greater_restoration: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "greater_restoration",
+      name: "spell_greater_restoration",
+      details: "spell_greater_restoration_details",
+      expanded: "spell_greater_restoration_expanded",
+
+      type: "abjuration",
+      classes: ["cleric","bard","druid"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_diamont_dust_100gold","touch","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
   ],
 
   hallow: [
