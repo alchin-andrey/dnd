@@ -6220,4 +6220,24 @@ export default {
   spell_bigbys_hand: spells.bigbys_hand,
   spell_bigbys_hand_details: spells.bigbys_hand_details,
   spell_bigbys_hand_expanded: spells.bigbys_hand_expanded,
+
+  spell_circle_of_power: spells.circle_of_power,
+  spell_circle_of_power_details: spells.circle_of_power_details,
+  spell_circle_of_power_expanded: spells.circle_of_power_expanded,
+
+  spell_conjure_volley: spells.conjure_volley,
+  spell_conjure_volley_details: spells.conjure_volley_details,
+  spell_conjure_volley_expanded: spells.conjure_volley_expanded,
+
+  spell_contact_other_plane: spells.contact_other_plane,
+  spell_contact_other_plane_details: spells.contact_other_plane_details,
+  spell_contact_other_plane_expanded: spells.contact_other_plane_expanded,
+
+  spell_contagion: spells.contagion,
+  spell_contagion_details: spells.contagion_details,
+  spell_contagion_expanded: spells.contagion_expanded,
+
+  spell_creation: spells.creation,
+  spell_creation_details: spells.creation_details,
+  spell_creation_expanded: spells.creation_expanded,
 };

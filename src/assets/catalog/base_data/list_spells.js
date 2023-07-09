@@ -26698,6 +26698,56 @@ export default {
     {},
   ],
 
+  circle_of_power: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "circle_of_power",
+      name: "spell_circle_of_power",
+      details: "spell_circle_of_power_details",
+      expanded: "spell_circle_of_power_expanded",
+
+      type: "abjuration",
+      classes: ["paladin",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "sphere",
+      aim_aoe_size: 60,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   cloudkill: [
     {},
     {},
@@ -26956,6 +27006,210 @@ export default {
     {},
   ],
 
+  conjure_volley: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 882, ua: 882, ru: 912},
+      link: "conjure_volley",
+      name: "spell_conjure_volley",
+      details: "spell_conjure_volley_details",
+      expanded: "spell_conjure_volley_expanded",
+
+      type: "conjuration",
+      classes: ["ranger",],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 150,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+
+      aim_aoe: "cilinder",
+      aim_aoe_size: 80,
+
+      impact_type: "damage",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: 8,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "dexterity",
+      impact_size_saved: "÷2",
+    },
+  ],
+
+  contact_other_plane: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "contact_other_plane",
+      name: "spell_contact_other_plane",
+      details: "spell_contact_other_plane_details",
+      expanded: "spell_contact_other_plane_expanded",
+
+      type: "divination",
+      classes: ["wizard","warlock"],
+
+      cast_time: "ritual_plus10min",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  contagion: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "contagion",
+      name: "spell_contagion",
+      details: "spell_contagion_details",
+      expanded: "spell_contagion_expanded",
+
+      type: "necromancy",
+      classes: ["druid","cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 7,
+      spell_duration_units: "day",
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "constitution",
+      impact_size_saved: null,
+    },
+  ],
+
+  creation: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "creation",
+      name: "spell_creation",
+      details: "spell_creation_details",
+      expanded: "spell_creation_expanded",
+
+      type: "illusion",
+      classes: ["wizard","sorcerer"],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: "cube",
+      aim_aoe_size: 5,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: "Aos_Plus_5",
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+    {},
+    {},
+    {},
+    {},
+  ],
+
   destructive_wave: [
     {},
     {},
@@ -27015,6 +27269,57 @@ export default {
       impact_size_saved: "÷2",
     },
   ],
+
+  dispell_evil_and_good: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "dispell_evil_and_good",
+      name: "spell_dispell_evil_and_good",
+      details: "spell_dispell_evil_and_good_details",
+      expanded: "spell_dispell_evil_and_good_expanded",
+
+      type: "abjuration",
+      classes: ["paladin","cleric"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: true,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    },
+  ],
+
 
   dominate_person: [
     {},

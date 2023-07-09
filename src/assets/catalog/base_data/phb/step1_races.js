@@ -83,6 +83,26 @@ export default {
               level: 1,
               spell: spells.bigbys_hand,
             },
+            {
+              level: 1,
+              spell: spells.circle_of_power,
+            },
+            {
+              level: 1,
+              spell: spells.conjure_volley,
+            },
+            {
+              level: 1,
+              spell: spells.contact_other_plane,
+            },
+            {
+              level: 1,
+              spell: spells.contagion,
+            },
+            {
+              level: 1,
+              spell: spells.creation,
+            },
             // КІНЕЦЬ ВІДЛАДКИ
             
             {
