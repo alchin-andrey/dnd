@@ -27851,6 +27851,56 @@ export default {
     {},
   ],
 
+  mislead: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 892, ua: 892, ru: 862},
+      link: "mislead",
+      name: "spell_mislead",
+      details: "spell_mislead_details",
+      expanded: "spell_mislead_expanded",
+
+      type: "illusion",
+      classes: ["bard","wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "self",
+      aim_type: null,
+      aim_range: null,
+
+      parts: ["somatic"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   modify_memory: [
     {},
     {},

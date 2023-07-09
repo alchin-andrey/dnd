@@ -6252,4 +6252,8 @@ export default {
   spell_greater_restoration: spells.greater_restoration,
   spell_greater_restoration_details: spells.greater_restoration_details,
   spell_greater_restoration_expanded: spells.greater_restoration_expanded,
+
+  spell_mislead: spells.mislead,
+  spell_mislead_details: spells.mislead_details,
+  spell_mislead_expanded: spells.mislead_expanded,
 };

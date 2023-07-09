@@ -115,6 +115,10 @@ export default {
               level: 1,
               spell: spells.greater_restoration,
             },
+            {
+              level: 1,
+              spell: spells.mislead,
+            },
             // КІНЕЦЬ ВІДЛАДКИ
             
             {
