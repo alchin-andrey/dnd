@@ -28004,6 +28004,60 @@ export default {
     },
   ],
 
+  planar_binding: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 808, ua: 808, ru: 778},
+      link: "planar_binding",
+      name: "spell_planar_binding",
+      details: "spell_planar_binding_details",
+      expanded: "spell_planar_binding_expanded",
+
+      type: "abjuration",
+      classes: ["bard","druid","wizard","cleric",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 60,
+
+      parts: ["material_jewel_1000gold","somatic", "verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "day",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: true,
+      saving_attribute: "charisma",
+      impact_size_saved: null,
+    },
+    {spell_duration: 10,},
+    {spell_duration: 30,},
+    {spell_duration: 180,},
+    {spell_duration: 366,},
+  ],
+
   seeming: [
     {},
     {},

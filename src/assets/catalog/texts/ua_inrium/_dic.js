@@ -5805,7 +5805,7 @@ export default {
   spell_fire_shield_details: spells.fire_shield_details,
   spell_fire_shield_expanded: spells.fire_shield_expanded,
 
-  material_incense_1000gold: "травы, масла и благовония за 1000+ зм (витрачається)",
+  material_incense_1000gold: "трави, масла і пахощі за 1000+ зм (витрачається)",
 
   spell_hallow: spells.hallow,
   spell_hallow_details: spells.hallow_details,
@@ -6256,5 +6256,11 @@ export default {
   spell_mislead: spells.mislead,
   spell_mislead_details: spells.mislead_details,
   spell_mislead_expanded: spells.mislead_expanded,
+
+  material_jewel_1000gold: "дорогоцінний камінь за 1000+ зм (витрачається)",
+
+  spell_planar_binding: spells.planar_binding,
+  spell_planar_binding_details: spells.planar_binding_details,
+  spell_planar_binding_expanded: spells.planar_binding_expanded,
 
 };

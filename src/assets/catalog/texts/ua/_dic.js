@@ -6256,4 +6256,8 @@ export default {
   spell_mislead: spells.mislead,
   spell_mislead_details: spells.mislead_details,
   spell_mislead_expanded: spells.mislead_expanded,
+
+  spell_planar_binding: spells.planar_binding,
+  spell_planar_binding_details: spells.planar_binding_details,
+  spell_planar_binding_expanded: spells.planar_binding_expanded,
 };

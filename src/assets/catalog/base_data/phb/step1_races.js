@@ -119,6 +119,10 @@ export default {
               level: 1,
               spell: spells.mislead,
             },
+            {
+              level: 1,
+              spell: spells.planar_binding,
+            },
             // КІНЕЦЬ ВІДЛАДКИ
             
             {
