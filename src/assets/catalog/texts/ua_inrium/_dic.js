@@ -6263,4 +6263,24 @@ export default {
   spell_planar_binding_details: spells.planar_binding_details,
   spell_planar_binding_expanded: spells.planar_binding_expanded,
 
+  material_oil_1000gold: "мазь за 1000+ зм (витрачається)",
+
+  spell_reincarnate: spells.reincarnate,
+  spell_reincarnate_details: spells.reincarnate_details,
+  spell_reincarnate_expanded: spells.reincarnate_expanded,
+
+  spell_telepatic_bond: spells.telepatic_bond,
+  spell_telepatic_bond_details: spells.telepatic_bond_details,
+  spell_telepatic_bond_expanded: spells.telepatic_bond_expanded,
+
+  material_chalk_50gold: "рідкісна крейда та чорнило з дорогоцінним камінням за 50+ зм (витрачається)",
+
+  spell_teleportation_circle: spells.teleportation_circle,
+  spell_teleportation_circle_details: spells.teleportation_circle_details,
+  spell_teleportation_circle_expanded: spells.teleportation_circle_expanded,
+
+  spell_wall_of_force: spells.wall_of_force,
+  spell_wall_of_force_details: spells.wall_of_force_details,
+  spell_wall_of_force_expanded: spells.wall_of_force_expanded,
+
 };

@@ -123,6 +123,22 @@ export default {
               level: 1,
               spell: spells.planar_binding,
             },
+            {
+              level: 1,
+              spell: spells.reincarnate,
+            },
+            {
+              level: 1,
+              spell: spells.telepatic_bond,
+            },
+            {
+              level: 1,
+              spell: spells.teleportation_circle,
+            },
+            {
+              level: 1,
+              spell: spells.wall_of_force,
+            },
             // КІНЕЦЬ ВІДЛАДКИ
             
             {

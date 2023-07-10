@@ -26326,55 +26326,6 @@ export default {
     },
   ],
 
-  swift_quiver: [
-    {},
-    {},
-    {},
-    {},
-    {      
-      h: {ua_inrium: 646, ua: 646,  ru: 646},
-      link: "swift_quiver",
-      name: "spell_swift_quiver",
-      details: "spell_swift_quiver_details",
-      expanded: "spell_swift_quiver_expanded",
-
-      type: "transmutation",
-      classes: ["ranger",],
-
-      cast_time: "bonus_action",
-      cast_duration: null,
-      cast_duration_units: null,
-
-      aim_target: "quiver",
-      aim_type: "near",
-      aim_range: null,
-
-      parts: ["touch","somatic","verbal"],
-
-      spell_time: "concentration",
-      spell_duration: 1,
-      spell_duration_units: "min",
-
-      aim_need: false,
-
-      aim_aoe: null,
-      aim_aoe_size: null,
-
-      impact_type: null,
-      impact_damage_type: null,
-
-      impact_size_foo: null,
-      impact_size_str: null,
-      impact_size_num: null,
-      impact_size_dic: null,
-      impact_size_pls: null,
-
-      saving_need: false,
-      saving_attribute: null,
-      impact_size_saved: null,
-    },
-  ],
-
   wall_of_fire: [
     {},
     {},
@@ -28158,6 +28109,55 @@ export default {
     },
   ],
 
+  reincarnate: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 884, ua: 884,  ru: 944},
+      link: "reincarnate",
+      name: "spell_reincarnate",
+      details: "spell_reincarnate_details",
+      expanded: "spell_reincarnate_expanded",
+
+      type: "transmutation",
+      classes: ["druid",],
+
+      cast_time: "ritual",
+      cast_duration: 1,
+      cast_duration_units: "hour",
+
+      aim_target: "creature",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_oil_1000gold","touch","somatic","verbal"],
+
+      spell_time: "instant",
+      spell_duration: null,
+      spell_duration_units: null,
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   scrying: [
     {},
     {},
@@ -28204,6 +28204,56 @@ export default {
 
       saving_need: true,
       saving_attribute: "wisdom",
+      impact_size_saved: null,
+    },
+  ],
+
+  swift_quiver: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 646, ua: 646,  ru: 646},
+      link: "swift_quiver",
+      name: "spell_swift_quiver",
+      details: "spell_swift_quiver_details",
+      expanded: "spell_swift_quiver_expanded",
+
+      type: "transmutation",
+      classes: ["ranger",],
+
+      cast_time: "bonus_action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "quiver",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["touch","somatic","verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 1,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
       impact_size_saved: null,
     },
   ],
@@ -28257,6 +28307,104 @@ export default {
     },
   ],
 
+  telepatic_bond: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 748, ua: 748, ru: 748},
+      link: "telepatic_bond",
+      name: "spell_telepatic_bond",
+      details: "spell_telepatic_bond_details",
+      expanded: "spell_telepatic_bond_expanded",
+
+      type: "divination",
+      classes: ["wizard",],
+
+      cast_time: "action_plus10min",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "creature",
+      aim_type: "in_distance",
+      aim_range: 30,
+
+      parts: ["focus","somatic","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "hour",
+
+      aim_need: false,
+      aim_aoe: null,
+      aim_aoe_size: null,
+
+      impact_type: "targets_number",
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: 8,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  teleportation_circle: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 748, ua: 748, ru: 748},
+      link: "teleportation_circle",
+      name: "spell_teleportation_circle",
+      details: "spell_teleportation_circle_details",
+      expanded: "spell_teleportation_circle_expanded",
+
+      type: "conjuration",
+      classes: ["bard","sorcerer","wizard",],
+
+      cast_time: null,
+      cast_duration: 1,
+      cast_duration_units: "min",
+
+      aim_target: "point",
+      aim_type: "near",
+      aim_range: null,
+
+      parts: ["material_chalk_50gold","touch","verbal"],
+
+      spell_time: null,
+      spell_duration: 1,
+      spell_duration_units: "round",
+
+      aim_need: false,
+      aim_aoe: "cilinder",
+      aim_aoe_size: 10,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
   tree_stride: [
     {},
     {},
@@ -28291,6 +28439,56 @@ export default {
 
       aim_aoe: "sphere",
       aim_aoe_size: 1000,
+
+      impact_type: null,
+      impact_damage_type: null,
+
+      impact_size_foo: null,
+      impact_size_str: null,
+      impact_size_num: null,
+      impact_size_dic: null,
+      impact_size_pls: null,
+
+      saving_need: false,
+      saving_attribute: null,
+      impact_size_saved: null,
+    },
+  ],
+
+  wall_of_force: [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {      
+      h: {ua_inrium: 878, ua: 878,  ru: 938},
+      link: "wall_of_force",
+      name: "spell_wall_of_force",
+      details: "spell_wall_of_force_details",
+      expanded: "spell_wall_of_force_expanded",
+
+      type: "evocation",
+      classes: ["wizard"],
+
+      cast_time: "action",
+      cast_duration: null,
+      cast_duration_units: null,
+
+      aim_target: "point",
+      aim_type: "in_distance",
+      aim_range: 120,
+
+      parts: ["focus","somatic", "verbal"],
+
+      spell_time: "concentration",
+      spell_duration: 10,
+      spell_duration_units: "min",
+
+      aim_need: false,
+
+      aim_aoe: "line",
+      aim_aoe_size: 100,
 
       impact_type: null,
       impact_damage_type: null,
