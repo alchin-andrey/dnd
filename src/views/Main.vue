@@ -5,7 +5,7 @@
 		<Main__CharBar v-show="!PRINT_BLANK"/>
 		<Main__ParamBar v-show="!PRINT_BLANK"/>
 
-		<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
+		<!-- <BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/> -->
 	</div>
 
 	<!-- alse -->
@@ -24,7 +24,7 @@
 		</section>
 	</my-dialog-spell>
 
-	<!-- <BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/> -->
+	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
 
 	<!-- <PlagBanner v-if="!screen_Max"/> -->
 </template>
@@ -45,8 +45,8 @@ export default {
 	mixins: [MainApp],
 	data() {
 		return {
-			// PRINT_BLANK: false,
-			PRINT_BLANK: true,
+			PRINT_BLANK: false,
+			// PRINT_BLANK: true,
 			progress_load: 0,
 			loading_pdf: false,
 		};
