@@ -26389,7 +26389,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 748, ua: 748, ru: 748},
       link: "animate_objects",
       name: "spell_animate_objects",
       details: "spell_animate_objects_details",
@@ -26443,7 +26443,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 734, ua: 734, ru: 734},
       link: "antilife_shell",
       name: "spell_antilife_shell",
       details: "spell_antilife_shell_details",
@@ -26493,7 +26493,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 676, ua: 676, ru: 676},
       link: "awaken",
       name: "spell_awaken",
       details: "spell_awaken_details",
@@ -26543,7 +26543,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 734, ua: 734, ru: 734},
       link: "banishing_smite",
       name: "spell_banishing_smite",
       details: "spell_banishing_smite_details",
@@ -26593,7 +26593,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 882, ua: 882, ru: 882},
       link: "bigbys_hand",
       name: "spell_bigbys_hand",
       details: "spell_bigbys_hand_details",
@@ -26656,7 +26656,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 764, ua: 764, ru: 764},
       link: "circle_of_power",
       name: "spell_circle_of_power",
       details: "spell_circle_of_power_details",
@@ -27064,7 +27064,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 1104, ua: 1104, ru: 1104},
       link: "contagion",
       name: "spell_contagion",
       details: "spell_contagion_details",
@@ -27114,7 +27114,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 706, ua: 706, ru: 706},
       link: "creation",
       name: "spell_creation",
       details: "spell_creation_details",
@@ -27228,7 +27228,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 834, ua: 834, ru: 834},
       link: "dispell_evil_and_good",
       name: "spell_dispell_evil_and_good",
       details: "spell_dispell_evil_and_good_details",
@@ -27443,7 +27443,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 818, ua: 818, ru: 818},
       link: "geas",
       name: "spell_geas",
       details: "spell_geas_details",
@@ -27497,7 +27497,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 676, ua: 676, ru: 676},
       link: "greater_restoration",
       name: "spell_greater_restoration",
       details: "spell_greater_restoration_details",
@@ -27809,7 +27809,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 892, ua: 892, ru: 862},
+      h: {ua_inrium: 616, ua: 616, ru: 616},
       link: "mislead",
       name: "spell_mislead",
       details: "spell_mislead_details",
@@ -27962,7 +27962,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 808, ua: 808, ru: 778},
+      h: {ua_inrium: 774, ua: 774, ru: 774},
       link: "planar_binding",
       name: "spell_planar_binding",
       details: "spell_planar_binding_details",
@@ -28116,7 +28116,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 884, ua: 884,  ru: 944},
+      h: {ua_inrium: 706, ua: 706,  ru: 706},
       link: "reincarnate",
       name: "spell_reincarnate",
       details: "spell_reincarnate_details",
@@ -28363,7 +28363,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 748, ua: 748, ru: 748},
+      h: {ua_inrium: 764, ua: 764, ru: 764},
       link: "teleportation_circle",
       name: "spell_teleportation_circle",
       details: "spell_teleportation_circle_details",
@@ -28462,7 +28462,7 @@ export default {
     {},
     {},
     {      
-      h: {ua_inrium: 878, ua: 878,  ru: 938},
+      h: {ua_inrium: 748, ua: 748,  ru: 748},
       link: "wall_of_force",
       name: "spell_wall_of_force",
       details: "spell_wall_of_force_details",

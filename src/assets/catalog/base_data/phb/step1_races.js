@@ -62,97 +62,24 @@ export default {
           spells: [
 
             //ДЛЯ ВІДЛАДКИ
-
-            {
-              level: 1,
-              spell: spells.animate_objects,
-            },
-            {
-              level: 1,
-              spell: spells.antilife_shell,
-            },
-            {
-              level: 1,
-              spell: spells.awaken,
-            },
-            {
-              level: 1,
-              spell: spells.banishing_smite,
-            },
-            {
-              level: 1,
-              spell: spells.bigbys_hand,
-            },
-            {
-              level: 1,
-              spell: spells.circle_of_power,
-            },
-            {
-              level: 1,
-              spell: spells.conjure_volley,
-            },
-            {
-              level: 1,
-              spell: spells.contact_other_plane,
-            },
-            {
-              level: 1,
-              spell: spells.contagion,
-            },
-            {
-              level: 1,
-              spell: spells.creation,
-            },
-            {
-              level: 1,
-              spell: spells.dispell_evil_and_good,
-            },
-            {
-              level: 1,
-              spell: spells.geas,
-            },
-            {
-              level: 1,
-              spell: spells.greater_restoration,
-            },
-            {
-              level: 1,
-              spell: spells.mislead,
-            },
             {
               level: 1,
               spell: spells.planar_binding,
             },
-            {
-              level: 1,
-              spell: spells.reincarnate,
-            },
-            {
-              level: 1,
-              spell: spells.telepatic_bond,
-            },
-            {
-              level: 1,
-              spell: spells.teleportation_circle,
-            },
-            {
-              level: 1,
-              spell: spells.wall_of_force,
-            },
             // КІНЕЦЬ ВІДЛАДКИ
             
-            {
-              level: 1,
-              spell: spells.toy,
-            },
-            {
-              level: 1,
-              spell: spells.lighter,
-            },
-            {
-              level: 1,
-              spell: spells.music_box,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.toy,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.lighter,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.music_box,
+            // },
           ],
         },
 

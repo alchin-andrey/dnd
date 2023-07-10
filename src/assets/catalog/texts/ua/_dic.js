@@ -5438,7 +5438,7 @@ export default {
   spell_wall_of_stone_details: spells.wall_of_stone_details,
   spell_wall_of_stone_expanded: spells.wall_of_stone_expanded,
 
-  material_diamont_dust_100gold: "діамантовий пил за 100+ зм",
+  material_diamont_dust_100gold: "діамантовий пил за 100+ зм (витрачається)",
 
   spell_stoneskin: spells.stoneskin,
   spell_stoneskin_details: spells.stoneskin_details,
@@ -6256,6 +6256,8 @@ export default {
   spell_mislead: spells.mislead,
   spell_mislead_details: spells.mislead_details,
   spell_mislead_expanded: spells.mislead_expanded,
+
+  material_jewel_1000gold: "дорогоцінний камінь за 1000+ зм (витрачається)",
 
   spell_planar_binding: spells.planar_binding,
   spell_planar_binding_details: spells.planar_binding_details,
