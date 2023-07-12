@@ -1769,7 +1769,7 @@ export default {
   spell_detect_magic_details: spells.detect_magic_details,
   spell_detect_magic_expanded: spells.detect_magic_expanded,
 
-  material_pearl_100gold: "перлина за 10 зм",
+  material_pearl_100gold: "перлина за 100+ зм",
 
   spell_burning_hands: spells.burning_hands,
   spell_burning_hands_details: spells.burning_hands_details,

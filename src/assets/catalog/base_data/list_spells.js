@@ -9489,7 +9489,7 @@ export default {
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in_disttance",
+      aim_type: "in_distance",
       aim_range: 60,
 
       parts: ["somatic", "verbal"],
@@ -21939,7 +21939,7 @@ export default {
       cast_duration_units: null,
 
       aim_target: "creature",
-      aim_type: "in_disttance",
+      aim_type: "in_distance",
       aim_range: 60,
 
       parts: ["focus", "somatic", "verbal"],
