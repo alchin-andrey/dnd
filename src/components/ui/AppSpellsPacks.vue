@@ -22,14 +22,13 @@
       class="null_height"
       :class="{full_height: packs_scroll,}">
       <transition name="scroll-packs-spells">
-        <slot v-if="packs_scroll"/>
+        <slot v-if="packs_scroll"/> 
       </transition>
       </section>
 		</div>
 </template>
 
 <script>
-// v-if="packs_scroll"
 import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "AppSpellsPacks",
@@ -132,14 +131,16 @@ export default {
 
 .null_height {
   max-height: 0;
-  /* opacity: 0.5; */
+  /* opacity: 0; */
+	/* transform: translateY(-10px); */
   transition: all 0.5s ease-out;
   /* overflow: hidden; */
 }
 
 .full_height {
-  max-height: 400vh;
+  max-height: 6000px;
   /* opacity: 1; */
+	/* transform: translateY(0px); */
   transition: all 0.5s ease-in;
 }
 
