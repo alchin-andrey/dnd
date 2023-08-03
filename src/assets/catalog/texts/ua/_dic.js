@@ -2929,7 +2929,7 @@ export default {
   spell_action_surge_expanded: spells.action_surge_expanded,
 
   action_surge_slots: "Сплески дій",
-  action_surge_slot: "Сплеск дій",
+  action_surge_slot: "1× Сплеск дій",
 
   battle_master: classes.battle_master,
   battle_master_details: classes.battle_master_details,

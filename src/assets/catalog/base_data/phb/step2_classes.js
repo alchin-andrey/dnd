@@ -921,6 +921,10 @@ export default {
         spell: spells.second_wind,
       },
       {
+        level: 2,
+        spell: spells.action_surge,
+      },
+      {
         level: 5,
         spell: spells.extra_attack_fighter,
       },
