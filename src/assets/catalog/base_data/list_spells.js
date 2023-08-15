@@ -84,7 +84,7 @@ const spell_name = [
     // рассчет урона
 
     impact_size_pls: null,
-    
+
     saving_attribute: null,
     // Характеристика ( null - бай дефолт из класса | характеристика)
     impact_size_saved: null,
@@ -3071,7 +3071,7 @@ export default {
       spell_duration: null,
       spell_duration_units: null,
 
-      aim_need: true,
+      aim_need: false,
 
       aim_aoe: null,
       aim_aoe_size: null,
@@ -7956,7 +7956,7 @@ export default {
       spell_duration: null,
       spell_duration_units: null,
 
-      aim_need: true,
+      aim_need: false,
 
       aim_aoe: null,
       aim_aoe_size: null,

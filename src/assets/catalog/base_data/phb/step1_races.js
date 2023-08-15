@@ -61,29 +61,20 @@ export default {
 
           spells: [
 
-            //ДЛЯ ВІДЛАДКИ
-            {
-              level: 1,
-              spell: spells.maneuver_menacing_attack,
-            },
-            {
-              level: 1,
-              spell: spells.maneuver_distracting_strike,
-            },
             // КІНЕЦЬ ВІДЛАДКИ
             
-            // {
-            //   level: 1,
-            //   spell: spells.toy,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.lighter,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.music_box,
-            // },
+            {
+              level: 1,
+              spell: spells.toy,
+            },
+            {
+              level: 1,
+              spell: spells.lighter,
+            },
+            {
+              level: 1,
+              spell: spells.music_box,
+            },
           ],
         },
 
