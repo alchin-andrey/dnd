@@ -62,24 +62,40 @@ export default {
           spells: [
 
             //ДЛЯ ВІДЛАДКИ
-            // {
-            //   level: 1,
-            //   spell: spells.planar_binding,
-            // },
+            {
+              level: 1,
+              spell: spells.maneuver_menacing_attack,
+            },
+            {
+              level: 1,
+              spell: spells.maneuver_distracting_strike,
+            },
+            {
+              level: 1,
+              spell: spells.vampiric_touch,
+            },
+            {
+              level: 1,
+              spell: spells.death_ward,
+            },
+            {
+              level: 1,
+              spell: spells.conjure_volley,
+            },
             // КІНЕЦЬ ВІДЛАДКИ
             
-            {
-              level: 1,
-              spell: spells.toy,
-            },
-            {
-              level: 1,
-              spell: spells.lighter,
-            },
-            {
-              level: 1,
-              spell: spells.music_box,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.toy,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.lighter,
+            // },
+            // {
+            //   level: 1,
+            //   spell: spells.music_box,
+            // },
           ],
         },
 
