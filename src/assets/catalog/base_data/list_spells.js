@@ -84,10 +84,7 @@ const spell_name = [
     // рассчет урона
 
     impact_size_pls: null,
-
-    saving_need: false,
-    // нужен ли cпасбросок
-    // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
+    
     saving_attribute: null,
     // Характеристика ( null - бай дефолт из класса | характеристика)
     impact_size_saved: null,
@@ -143,7 +140,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: "÷2",
 
@@ -189,7 +185,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
 
@@ -235,7 +230,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
 
@@ -281,7 +275,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
 
@@ -327,7 +320,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
 
@@ -373,7 +365,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
 
@@ -419,7 +410,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
 
@@ -466,7 +456,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -512,7 +501,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -598,7 +586,6 @@ export default {
 
       impact_size_pls: null,
 
-      saving_need: false,
       // нужен ли cпасбросок
       // если true - строка Испьітание цели - Сложность входной = 8 + Характеристика + мастерство + особьіе мод?
       saving_attribute: null,
@@ -647,7 +634,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -692,7 +678,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -737,7 +722,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -782,7 +766,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
 
@@ -830,7 +813,6 @@ export default {
 
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "investigation",
       impact_size_saved: null,
 
@@ -922,7 +904,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       // нужен ли cпасбросок
       // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
       saving_attribute: null,
@@ -1011,7 +992,6 @@ export default {
 
       impact_size_pls: null,
 
-      saving_need: false,
       // нужен ли cпасбросок
       // если true - строка Испьітание цели - Сложность входной = 8 + мод характеристики + мастерство + особьіе мод?
       saving_attribute: null,
@@ -1056,7 +1036,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1097,7 +1076,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       //Если оно может видеть или сльішать вас, оно должно совершить успешньій спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмьі)
       impact_size_saved: null,
@@ -1139,7 +1117,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       //Если оно может видеть или сльішать вас, оно должно совершить успешньій спасбросок Мудрости (Сл равна 8 + ваш бонус мастерства + ваш модификатор Харизмьі)
       impact_size_saved: null,
@@ -1182,7 +1159,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1224,7 +1200,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1266,7 +1241,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1308,7 +1282,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1350,7 +1323,6 @@ export default {
       impact_size_dic: 12,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: "0",
     },
@@ -1391,7 +1363,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1432,7 +1403,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1473,7 +1443,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1514,7 +1483,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1555,7 +1523,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1596,7 +1563,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1637,7 +1603,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1678,7 +1643,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1724,7 +1688,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1770,7 +1733,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1816,7 +1778,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1863,7 +1824,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1910,7 +1870,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -1957,7 +1916,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -2004,7 +1962,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
@@ -2051,7 +2008,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -2098,7 +2054,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -2145,7 +2100,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -2191,7 +2145,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2237,7 +2190,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2283,7 +2235,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2329,7 +2280,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -2375,7 +2325,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2421,7 +2370,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     }
@@ -2467,7 +2415,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     }
@@ -2513,7 +2460,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2559,7 +2505,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2605,7 +2550,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2651,7 +2595,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -2697,7 +2640,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2743,7 +2685,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     }
@@ -2789,7 +2730,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2835,7 +2775,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2881,7 +2820,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2926,7 +2864,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -2971,7 +2908,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3017,7 +2953,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: 4,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3062,7 +2997,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3107,7 +3041,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3152,7 +3085,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3197,7 +3129,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3242,7 +3173,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3287,7 +3217,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3332,7 +3261,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3377,7 +3305,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3422,7 +3349,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3467,7 +3393,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3512,7 +3437,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     }
@@ -3558,7 +3482,6 @@ export default {
       impact_size_dic: null, //6
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3603,7 +3526,6 @@ export default {
       impact_size_dic: null, //6
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3649,7 +3571,6 @@ export default {
       impact_size_dic: null, //6
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3695,7 +3616,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3741,7 +3661,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3786,7 +3705,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3831,7 +3749,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -3877,7 +3794,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -3923,7 +3839,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 2,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -3970,7 +3885,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4017,7 +3931,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4064,7 +3977,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4111,7 +4023,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4156,7 +4067,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4201,7 +4111,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4248,7 +4157,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -4295,7 +4203,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4342,7 +4249,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -4388,7 +4294,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4434,7 +4339,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4479,7 +4383,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4525,7 +4428,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4570,7 +4472,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4615,7 +4516,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4661,7 +4561,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4706,7 +4605,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -4752,7 +4650,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4797,7 +4694,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "base_with",
       impact_size_saved: null,
     },
@@ -4842,7 +4738,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4887,7 +4782,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4932,7 +4826,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -4978,7 +4871,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5023,7 +4915,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5068,7 +4959,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5115,7 +5005,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5163,7 +5052,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5211,7 +5099,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5256,7 +5143,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5301,7 +5187,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5346,7 +5231,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5391,7 +5275,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5436,7 +5319,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5481,7 +5363,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 10,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5527,7 +5408,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5572,7 +5452,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5617,7 +5496,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5662,7 +5540,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5707,7 +5584,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5752,7 +5628,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5797,7 +5672,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5842,7 +5716,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -5883,7 +5756,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5928,7 +5800,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -5973,7 +5844,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6022,7 +5892,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6069,7 +5938,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 10,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6116,7 +5984,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 10,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6163,7 +6030,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6209,7 +6075,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -6255,7 +6120,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -6301,7 +6165,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -6347,7 +6210,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -6393,7 +6255,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -6439,7 +6300,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     }
@@ -6487,7 +6347,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6533,7 +6392,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6582,7 +6440,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6631,7 +6488,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6680,7 +6536,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6731,7 +6586,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -6776,7 +6630,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -6821,7 +6674,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -6867,7 +6719,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6913,7 +6764,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -6959,7 +6809,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7005,7 +6854,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 3,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7047,7 +6895,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7093,7 +6940,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7139,7 +6985,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     },
@@ -7185,7 +7030,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7231,7 +7075,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: 4,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7277,7 +7120,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7323,7 +7165,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7369,7 +7210,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7415,7 +7255,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7460,7 +7299,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     },
@@ -7506,7 +7344,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -7552,7 +7389,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7597,7 +7433,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -7643,7 +7478,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -7688,7 +7522,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7734,7 +7567,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7780,7 +7612,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7826,7 +7657,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7871,7 +7701,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7916,7 +7745,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -7962,7 +7790,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8008,7 +7835,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8054,7 +7880,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8100,7 +7925,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8146,7 +7970,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8191,7 +8014,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8236,7 +8058,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8283,7 +8104,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8328,7 +8148,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8374,7 +8193,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     }
@@ -8420,7 +8238,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8466,7 +8283,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 2,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8511,7 +8327,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8557,7 +8372,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8602,7 +8416,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     }
@@ -8647,7 +8460,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     }
@@ -8692,7 +8504,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8738,7 +8549,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -8784,7 +8594,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -8830,7 +8639,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "10d10",
     },
@@ -8876,7 +8684,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 10,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -8923,7 +8730,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -8970,7 +8776,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9015,7 +8820,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9059,7 +8863,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9103,7 +8906,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9147,7 +8949,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9192,7 +8993,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -9237,7 +9037,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -9282,7 +9081,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9328,7 +9126,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -9374,7 +9171,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -9420,7 +9216,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
@@ -9466,7 +9261,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: "÷2",
     },
@@ -9512,7 +9306,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -9557,7 +9350,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9603,7 +9395,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9649,7 +9440,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9695,7 +9485,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9742,7 +9531,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9788,7 +9576,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9834,7 +9621,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9880,7 +9666,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9926,7 +9711,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -9972,7 +9756,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10018,7 +9801,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10064,7 +9846,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10110,7 +9891,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10156,7 +9936,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10202,7 +9981,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10247,7 +10025,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10292,7 +10069,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10337,7 +10113,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10382,7 +10157,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10427,7 +10201,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10473,7 +10246,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10519,7 +10291,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10565,7 +10336,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10611,7 +10381,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10657,7 +10426,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10702,7 +10470,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10748,7 +10515,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -10794,7 +10560,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10840,7 +10605,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10885,7 +10649,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10931,7 +10694,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -10977,7 +10739,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11022,7 +10783,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11067,7 +10827,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11112,7 +10871,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11157,7 +10915,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11202,7 +10959,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11247,7 +11003,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11293,7 +11048,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11338,7 +11092,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11384,7 +11137,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11430,7 +11182,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11475,7 +11226,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11521,7 +11271,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11567,7 +11316,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11612,7 +11360,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11657,7 +11404,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11703,7 +11449,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -11752,7 +11497,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11800,7 +11544,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -11845,7 +11588,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -11890,7 +11632,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -11936,7 +11677,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -11981,7 +11721,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -12026,7 +11765,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12071,7 +11809,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12116,7 +11853,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12161,7 +11897,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12207,7 +11942,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12253,7 +11987,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12298,7 +12031,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12344,7 +12076,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12389,7 +12120,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12434,7 +12164,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     }
@@ -12480,7 +12209,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     }
@@ -12525,7 +12253,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12570,7 +12297,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12615,7 +12341,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     }
@@ -12660,7 +12385,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12706,7 +12430,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12752,7 +12475,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12798,7 +12520,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12843,7 +12564,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12889,7 +12609,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -12938,7 +12657,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -12988,7 +12706,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -13034,7 +12751,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -13080,7 +12796,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -13125,7 +12840,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     }
@@ -13171,7 +12885,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13215,7 +12928,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13261,7 +12973,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -13306,7 +13017,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13352,7 +13062,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -13398,7 +13107,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -13444,7 +13152,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13490,7 +13197,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -13535,7 +13241,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -13580,7 +13285,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13624,7 +13328,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13669,7 +13372,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13717,7 +13419,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -13766,7 +13467,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -13816,7 +13516,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13862,7 +13561,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13908,7 +13606,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -13956,7 +13653,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -14004,7 +13700,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14059,7 +13754,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14107,7 +13801,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -14158,7 +13851,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -14204,7 +13896,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14249,7 +13940,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14294,7 +13984,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14344,7 +14033,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -14389,7 +14077,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14435,7 +14122,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14480,7 +14166,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14525,7 +14210,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14571,7 +14255,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14617,7 +14300,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14663,7 +14345,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14708,7 +14389,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14754,7 +14434,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -14800,7 +14479,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14845,7 +14523,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14890,7 +14567,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -14936,7 +14612,6 @@ export default {
       impact_size_dic: 12,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "0",
     },
@@ -14981,7 +14656,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15026,7 +14700,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15071,7 +14744,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15117,7 +14789,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15163,7 +14834,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "0",
     },
@@ -15208,7 +14878,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15254,7 +14923,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15300,7 +14968,6 @@ export default {
 
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "investigation",
       impact_size_saved: null,
     },
@@ -15345,7 +15012,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15390,7 +15056,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15435,7 +15100,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15481,7 +15145,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: "0",
     },
@@ -15526,7 +15189,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15578,7 +15240,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -15675,7 +15336,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     },
@@ -15725,7 +15385,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15783,7 +15442,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15832,7 +15490,6 @@ export default {
       impact_size_dic: 12,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -15889,7 +15546,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -15946,7 +15602,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: 1,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16003,7 +15658,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -16054,7 +15708,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16111,7 +15764,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -16160,7 +15812,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -16214,7 +15865,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
@@ -16263,7 +15913,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: "÷2",
     },
@@ -16320,7 +15969,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 5,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16377,7 +16025,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 3,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16426,7 +16073,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -16483,7 +16129,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -16532,7 +16177,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16586,7 +16230,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16643,7 +16286,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16700,7 +16342,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -16757,7 +16398,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     },
@@ -16806,7 +16446,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16863,7 +16502,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16920,7 +16558,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -16978,7 +16615,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17028,7 +16664,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17078,7 +16713,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17127,7 +16761,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17177,7 +16810,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17226,7 +16858,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -17279,7 +16910,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
       // рассчет урона если спас пройден
@@ -17329,7 +16959,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17378,7 +17007,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
@@ -17427,7 +17055,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
@@ -17484,7 +17111,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -17542,7 +17168,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17591,7 +17216,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17640,7 +17264,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -17697,7 +17320,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17747,7 +17369,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17796,7 +17417,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -17853,7 +17473,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -17902,7 +17521,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -17959,7 +17577,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18012,7 +17629,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: 4,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18064,7 +17680,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18113,7 +17728,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: "÷2",
     },
@@ -18170,7 +17784,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18227,7 +17840,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18284,7 +17896,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18333,7 +17944,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -18382,7 +17992,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18439,7 +18048,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18513,7 +18121,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18562,7 +18169,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18635,7 +18241,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -18684,7 +18289,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18741,7 +18345,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18798,7 +18401,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18847,7 +18449,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 5,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18896,7 +18497,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 2,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -18952,7 +18552,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 10,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19004,7 +18603,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19063,7 +18661,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19115,7 +18712,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19167,7 +18763,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -19219,7 +18814,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19271,7 +18865,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19323,7 +18916,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "intelligence",
       impact_size_saved: null,
     },
@@ -19375,7 +18967,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19427,7 +19018,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -19486,7 +19076,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19544,7 +19133,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -19603,7 +19191,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19648,7 +19235,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19701,7 +19287,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "0",
     },
@@ -19760,7 +19345,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19812,7 +19396,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -19871,7 +19454,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -19923,7 +19505,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -19975,7 +19556,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -20034,7 +19614,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -20086,7 +19665,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20142,7 +19720,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20194,7 +19771,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: "÷2",
     },
@@ -20273,7 +19849,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20332,7 +19907,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20392,7 +19966,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20451,7 +20024,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20503,7 +20075,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20562,7 +20133,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -20614,7 +20184,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -20666,7 +20235,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20718,7 +20286,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20770,7 +20337,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: 1,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20824,7 +20390,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20883,7 +20448,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -20935,7 +20499,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -20987,7 +20550,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21047,7 +20609,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21099,7 +20660,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21151,7 +20711,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21203,7 +20762,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21255,7 +20813,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: null,
     },
@@ -21308,7 +20865,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21381,7 +20937,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -21440,7 +20995,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21492,7 +21046,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -21551,7 +21104,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -21603,7 +21155,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21655,7 +21206,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21708,7 +21258,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21760,7 +21309,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21812,7 +21360,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21858,7 +21405,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -21910,7 +21456,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -21962,7 +21507,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -22029,7 +21573,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22088,7 +21631,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -22140,7 +21682,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22188,7 +21729,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22236,7 +21776,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22289,7 +21828,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22336,7 +21874,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -22389,7 +21926,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22436,7 +21972,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -22484,7 +22019,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -22538,7 +22072,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22586,7 +22119,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22640,7 +22172,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -22688,7 +22219,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22741,7 +22271,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22789,7 +22318,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22837,7 +22365,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22884,7 +22411,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22938,7 +22464,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -22989,7 +22514,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23037,7 +22561,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23085,7 +22608,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -23138,7 +22660,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23191,7 +22712,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23238,7 +22758,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -23291,7 +22810,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23339,7 +22857,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -23396,7 +22913,6 @@ export default {
       second_impact_size_dic: 6,
       second_impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -23443,7 +22959,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23491,7 +23006,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -23545,7 +23059,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -23598,7 +23111,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -23651,7 +23163,6 @@ export default {
       impact_size_dic: 4,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23704,7 +23215,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23752,7 +23262,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23802,7 +23311,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23850,7 +23358,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23897,7 +23404,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23944,7 +23450,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -23992,7 +23497,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24039,7 +23543,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24086,7 +23589,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24134,7 +23636,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -24182,7 +23683,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -24229,7 +23729,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24276,7 +23775,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24324,7 +23822,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: "÷2",
     },
@@ -24378,7 +23875,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -24425,7 +23921,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24473,7 +23968,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24526,7 +24020,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24573,7 +24066,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24621,7 +24113,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: "÷2",
     },
@@ -24672,7 +24163,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24719,7 +24209,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24766,7 +24255,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24815,7 +24303,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -24869,7 +24356,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -24923,7 +24409,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -24977,7 +24462,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25031,7 +24515,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -25080,7 +24563,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -25134,7 +24616,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "strength",
       impact_size_saved: "÷2",
     },
@@ -25183,7 +24664,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25231,7 +24711,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25280,7 +24759,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25328,7 +24806,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -25379,7 +24856,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -25428,7 +24904,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25477,7 +24952,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25525,7 +24999,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25574,7 +25047,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25623,7 +25095,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -25671,7 +25142,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: null,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25719,7 +25189,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -25768,7 +25237,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25825,7 +25293,6 @@ export default {
       second_impact_size_dic: 6,
       second_impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -25873,7 +25340,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25921,7 +25387,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -25970,7 +25435,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26019,7 +25483,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26072,7 +25535,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -26120,7 +25582,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -26173,7 +25634,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -26222,7 +25682,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -26271,7 +25730,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26320,7 +25778,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26369,7 +25826,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -26426,7 +25882,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26480,7 +25935,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26530,7 +25984,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26580,7 +26033,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26639,7 +26091,6 @@ export default {
       second_impact_size_dic: 6,
       second_impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26693,7 +26144,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26743,7 +26193,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -26795,7 +26244,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26843,7 +26291,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -26893,7 +26340,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -26946,7 +26392,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27001,7 +26446,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -27051,7 +26495,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27101,7 +26544,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: null,
     },
@@ -27151,7 +26593,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27215,7 +26656,6 @@ export default {
       second_impact_size_pls: null,
 
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -27265,7 +26705,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -27314,7 +26753,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -27366,7 +26804,6 @@ export default {
       impact_size_dic: 6,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -27426,7 +26863,6 @@ export default {
       second_impact_size_pls: null,
 
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: "÷2",
     },
@@ -27480,7 +26916,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -27534,7 +26969,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27584,7 +27018,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -27634,7 +27067,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -27687,7 +27119,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "constitution",
       impact_size_saved: "÷2",
     },
@@ -27742,7 +27173,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27791,7 +27221,6 @@ export default {
       impact_size_dic: 8,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27846,7 +27275,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27895,7 +27323,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -27949,7 +27376,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -27999,7 +27425,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -28054,7 +27479,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "charisma",
       impact_size_saved: null,
     },
@@ -28103,7 +27527,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28152,7 +27575,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28202,7 +27624,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "wisdom",
       impact_size_saved: null,
     },
@@ -28252,7 +27673,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28301,7 +27721,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28350,7 +27769,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28399,7 +27817,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28449,7 +27866,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28499,7 +27915,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28549,7 +27964,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: true,
       saving_attribute: "dexterity",
       impact_size_saved: null,
     },
@@ -28602,7 +28016,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28656,7 +28069,6 @@ export default {
       impact_size_dic: 10,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28711,7 +28123,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28767,7 +28178,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
@@ -28821,7 +28231,6 @@ export default {
       impact_size_dic: null,
       impact_size_pls: null,
 
-      saving_need: false,
       saving_attribute: null,
       impact_size_saved: null,
     },
