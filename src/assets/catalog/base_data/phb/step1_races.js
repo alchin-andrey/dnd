@@ -62,24 +62,24 @@ export default {
           spells: [
 
             //ДЛЯ ВІДЛАДКИ
-            {
-              level: 1,
-              spell: spells.planar_binding,
-            },
+            // {
+            //   level: 1,
+            //   spell: spells.planar_binding,
+            // },
             // КІНЕЦЬ ВІДЛАДКИ
             
-            // {
-            //   level: 1,
-            //   spell: spells.toy,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.lighter,
-            // },
-            // {
-            //   level: 1,
-            //   spell: spells.music_box,
-            // },
+            {
+              level: 1,
+              spell: spells.toy,
+            },
+            {
+              level: 1,
+              spell: spells.lighter,
+            },
+            {
+              level: 1,
+              spell: spells.music_box,
+            },
           ],
         },
 
