@@ -2127,9 +2127,9 @@ export default {
 
       parts: ["none"],
 
-      spell_time: "instant",
-      spell_duration: null,
-      spell_duration_units: null,
+      spell_time: "up_to",
+      spell_duration: 1,
+      spell_duration_units: "round",
 
       aim_need: false,
 
