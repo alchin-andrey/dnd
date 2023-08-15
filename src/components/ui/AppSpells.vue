@@ -760,19 +760,21 @@ export default {
 
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
-
-    Saving_Numb() {
-      const primary_attribute = this.Spell_Index.spell_attribute;
-      const secondary_attribute = this.spell_Attribute_MOD;
-      const attribute = primary_attribute ?? secondary_attribute;
-      return this.spells_Saving_Numb(attribute);
-    },
-
+    
     Saving_Maneuver() {
       const STR = this.stats_Mod("strength");
-			const DEX = this.stats_Mod("dexterity");
+      const DEX = this.stats_Mod("dexterity");
       let res = STR >= DEX ? "strength" : "dexterity";
       return res;
+    },
+
+    Saving_Numb() {
+      const maneuver = this.Spell_Index.link.includes("maneuver");
+      const maneuver_attribute = maneuver ? this.Saving_Maneuver : null;
+      const primary_attribute = this.Spell_Index.spell_attribute;
+      const secondary_attribute = this.spell_Attribute_MOD;
+      const attribute = maneuver_attribute ?? primary_attribute ?? secondary_attribute;
+      return this.spells_Saving_Numb(attribute);
     },
 
     aim_Numb() {
@@ -783,10 +785,10 @@ export default {
     },
 
     t_Save() {
-      if (this.Spell_Index.saving_need) {
-        const name = this.Spell_Index.saving_attribute ?? this.Saving_Maneuver;
-        const num = this.Spell_Index.saving_attribute ? this.Saving_Numb : this.spells_Saving_Numb(this.Saving_Maneuver);
-        let test = `${this.T("saving")} ${this.T(name)} ${num}`;
+      if (this.Spell_Index.saving_attribute) {
+        let test = `${this.T("saving")} ${this.T(
+          this.Spell_Index.saving_attribute
+        )} ${this.Saving_Numb}`;
         let success = `${this.t("if_succeed")} ${
           this.Spell_Index.impact_size_saved
         }`;
@@ -799,24 +801,6 @@ export default {
         return null;
       }
     },
-
-    // t_Save() {
-    //   if (this.Spell_Index.saving_attribute) {
-    //     let test = `${this.T("saving")} ${this.T(
-    //       this.Spell_Index.saving_attribute
-    //     )} ${this.Saving_Numb}`;
-    //     let success = `${this.t("if_succeed")} ${
-    //       this.Spell_Index.impact_size_saved
-    //     }`;
-    //     if (this.Spell_Index.impact_size_saved) {
-    //       return `${test} — ${success}`;
-    //     } else {
-    //       return test;
-    //     }
-    //   } else {
-    //     return null;
-    //   }
-    // },
 
     t_Save_Print() {
       if (this.Spell_Index.saving_attribute) {

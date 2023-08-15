@@ -70,18 +70,6 @@ export default {
               level: 1,
               spell: spells.maneuver_distracting_strike,
             },
-            {
-              level: 1,
-              spell: spells.vampiric_touch,
-            },
-            {
-              level: 1,
-              spell: spells.death_ward,
-            },
-            {
-              level: 1,
-              spell: spells.conjure_volley,
-            },
             // КІНЕЦЬ ВІДЛАДКИ
             
             // {
