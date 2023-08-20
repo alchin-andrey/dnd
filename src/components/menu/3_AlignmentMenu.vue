@@ -13,6 +13,13 @@
 
 		<section class="selection_menu">
 			<AlignmentMenu__Photo />
+
+			<AppSelection
+				@click="showSettings__Alignment('blank_print')"
+				:active="alignment_page.shown.blank_print"
+				title="blank_print"
+				:type="MY.param.blank_print"
+			/>
 		</section>
     
 	</div>

@@ -40,6 +40,8 @@ import AppSliderName from "@/components/ui/main/AppSliderName.vue";
 import AppName from "@/components/ui/main/AppName.vue";
 
 // Blank Print
+import AppPrintFating from "@/components/ui/blank/AppPrintFating.vue";
+import AppPrintSavingTrows from "@/components/ui/blank/AppPrintSavingTrows.vue";
 import AppMainCell from "@/components/ui/blank/AppMainCell.vue";
 import AppPrintMenu__Chapter from "@/components/ui/blank/AppPrintMenu__Chapter.vue";
 import AppPrintMenu__Arr from "@/components/ui/blank/AppPrintMenu__Arr.vue";
@@ -47,6 +49,7 @@ import AppPrintQualities from "@/components/ui/blank/AppPrintQualities.vue";
 import AppPrintStats from "@/components/ui/blank/AppPrintStats.vue";
 import AppPrintSpellTitle from "@/components/ui/blank/AppPrintSpellTitle.vue";
 import AppPrintSpellMain from "@/components/ui/blank/AppPrintSpellMain.vue";
+import AppPrintLevelBlok from "@/components/ui/blank/AppPrintLevelBlok.vue";
 
 
 
@@ -127,6 +130,8 @@ export default [
   AppName,
 
 // Blank Print
+  AppPrintFating,
+  AppPrintSavingTrows,
   AppMainCell,
   AppPrintMenu__Chapter,
   AppPrintMenu__Arr,
@@ -134,6 +139,7 @@ export default [
   AppPrintStats,
   AppPrintSpellTitle,
   AppPrintSpellMain,
+  AppPrintLevelBlok,
 
   AppBackPage,
 

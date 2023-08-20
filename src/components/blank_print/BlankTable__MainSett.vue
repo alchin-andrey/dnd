@@ -1,16 +1,16 @@
 <template>
-  <div class="grid__body">
-    <AppMainCell class="cell bord-tl-6" title="gender_phisiological" :content="MY.gender.phisiological" />
+  <div class="grid-body cell-body">
+    <AppMainCell class="cell" title="gender_phisiological" :content="MY.gender.phisiological" />
     <AppMainCell class="cell" title="feel" :content="MY.gender.feel" />
-    <AppMainCell class="cell bord-tr-6" title="attraction" :content="MY.gender.attraction" />
+    <AppMainCell class="cell" title="attraction" :content="MY.gender.attraction" />
 
     <AppMainCell class="cell" title="age" :content="MY_Age" />
     <AppMainCell class="cell" title="height" :content="MY_Height" />
     <AppMainCell class="cell" title="weight" :content="MY_Weight" />
 
-    <AppMainCell class="cell bord-bl-6" title="color_eyes" :content="eyes_color_Char_Body.name" />
+    <AppMainCell class="cell" title="color_eyes" :content="eyes_color_Char_Body.name" />
     <AppMainCell class="cell" title="color_skin" :content="skin_color_Char_Body.name" />
-    <AppMainCell class="cell bord-br-6" title="color_hair" :content="hair_color_Char_Body.name" />
+    <AppMainCell class="cell" title="color_hair" :content="hair_color_Char_Body.name" />
 
   </div>
 </template>
@@ -65,36 +65,43 @@ export default {
 </script>
 
 <style scoped>
-.grid__body {
+.grid-body {
 	display: grid;
 	grid-template-rows: repeat(3, 72px);
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.grid__full {
-  grid-column: span 2;
-}
-
 .cell {
 	padding: 0 12px;
-	border: 1px solid #000;
-	margin: -1px -1px 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
 }
-.bord-tl-6 {
+
+.cell-body> :first-child {
   border-radius: 6px 0 0 0;
 }
 
-.bord-tr-6 {
+.cell-body> :nth-child(3) {
   border-radius: 0 6px 0 0;
 }
-.bord-br-6 {
+
+.cell-body> :last-child {
   border-radius: 0 0 6px 0;
 }
 
-.bord-bl-6 {
+.cell-body> :nth-last-child(3) {
   border-radius: 0 0 0 6px;
+}
+
+.cell-body> :nth-child(-n+3) {
+  border-top: 1px solid #000000;
+}
+
+.cell-body> :nth-last-child(3n) {
+  border-left: 1px solid #000000;
 }
 </style>

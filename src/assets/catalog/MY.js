@@ -53,6 +53,7 @@ export default {
 			size_cover: true,
 			ratio: 1,
 			position: 50,
-		}
+		},
+		blank_print: 'standard',
 	}
 };

@@ -1,25 +1,32 @@
 <template>
-	<div class="wrap-cell">
-		<section class="title-head jbm-500-22">
-			<div class="icon">
-				<svg
-					class="main_svg"
-					viewBox="0 0 18 18"
-					xmlns="http://www.w3.org/2000/svg"
-					v-html="atribute_icon[title]"
-				/>
-			</div>
-			<div class="cell-item">{{ t_Title }}</div>
-		</section>
-    <div class="int-600-72 numb" :class="{'mr-28': list_3}" v-if="!title_numb">{{ value_Numb }}</div>
-    <div class="flex-vis">
-    <div class="hp-text jbm-500-22" v-if="title_numb">{{ t_Temporary }}</div>
-      <div class="visual">
-      
-      <div class="cube_zero" v-if="hp_Dice" v-for="n in cube_Numb_Zero" :key="n" />
+  <div class="wrap-cell">
+    <section class="title-head jbm-500-22">
+      <div class="icon">
+        <svg class="main_svg" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" v-html="atribute_icon[title]" />
       </div>
-    </div>
-	</div>
+      <div class="cell-item">{{ t_Title }}</div>
+    </section>
+
+    <section class="flex-row-jc mr-t-32" v-if="shown_Fatigue">
+      <AppPrintFating class="cell-size" classic />
+    </section>
+
+    <section class="flex-row-jc mr-t-8" v-if="shown_Saving">
+      <AppPrintSavingTrows class="cell-size" classic />
+    </section>
+
+    <section class="int-600-72 numb" :class="{ 'mr-28': list_3 }" v-if="!title_numb && numb">
+      {{ value_Numb }}
+    </section>
+
+    <section class="flex-vis" v-if="title_numb || hp_Dice">
+      <div class="hp-text jbm-500-22" v-if="title_numb">{{ t_Temporary }}</div>
+      <div class="visual">
+
+        <div class="cube_zero" v-if="hp_Dice" v-for="n in cube_Numb_Zero" :key="n" />
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -27,38 +34,38 @@ import atribute_icon from "@/assets/catalog/icon/atribute_icon";
 import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 export default {
-	name: "AppPrintQualities",
-	data() {
-		return {
-			atribute_icon: atribute_icon,
-		};
-	},
-	props: {
-		title: {
-			type: String,
-			default: null,
-		},
-		numb: {
-			type: Number,
-			default: null,
-		},
+  name: "AppPrintQualities",
+  data() {
+    return {
+      atribute_icon: atribute_icon,
+    };
+  },
+  props: {
+    title: {
+      type: String,
+      default: null,
+    },
+    numb: {
+      type: Number,
+      default: null,
+    },
     title_numb: {
       type: Boolean,
-			default: false,
+      default: false,
     },
     list_3: {
       type: Boolean,
-			default: false,
+      default: false,
     },
-	},
+  },
 
-	computed: {
+  computed: {
     ...mapState(useMYStore, ["MY"]),
-		t_Title() {
+    t_Title() {
       const str = this.t(this.title);
-      if(this.title_numb) return `${str} ${this.numb}`
-			else return str;
-		},
+      if (this.title_numb) return `${str} ${this.numb}`
+      else return str;
+    },
 
     t_Temporary() {
       return `${this.t("temporary")}:`;
@@ -70,21 +77,29 @@ export default {
 
     value_Numb() {
       const unit = this.numb > 0 ? "+" : "";
-      if(this.title == "initiative") return unit + this.numb
-      if(this.hp_Dice) return `d${this.numb}`
+      if (this.title == "initiative") return unit + this.numb
+      if (this.hp_Dice) return `d${this.numb}`
       else return this.numb;
     },
 
     cube_Numb_Zero() {
       return this.MY.level;
-    }
-	},
+    },
+
+    shown_Fatigue() {
+      return this.title == "fatigue"
+    },
+
+    shown_Saving() {
+      return this.title == "saving_throws"
+    },
+  },
 };
 </script>
 
 <style scoped>
 .wrap-cell {
-	height: 100%;
+  height: 100%;
   padding: 4px;
   display: flex;
   flex-direction: column;
@@ -92,7 +107,7 @@ export default {
 
 .title-head {
   height: 36px;
-	display: flex;
+  display: flex;
   align-items: center;
 }
 
@@ -102,15 +117,19 @@ export default {
   align-items: center;
 }
 
+.cell-size {
+  width: 112px;
+}
+
 .icon {
-	width: 36px;
-	height: 36px;
-	margin-right: 2px;
+  width: 36px;
+  height: 36px;
+  margin-right: 2px;
 }
 
 .main_svg {
-	width: 36px;
-	height: 36px;
+  width: 36px;
+  height: 36px;
   fill: black;
 }
 
@@ -137,17 +156,17 @@ export default {
 }
 
 .visual {
-	display: flex;
+  display: flex;
   justify-self: center;
   justify-content: center;
-	flex-wrap: wrap-reverse;
-	gap: 4px;
+  flex-wrap: wrap-reverse;
+  gap: 4px;
 }
 
 .cube_zero {
-	width: 16px;
-	height: 16px;
-	border-radius: 4px;
-	border: 2px solid #000000;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid #000000;
 }
 </style>

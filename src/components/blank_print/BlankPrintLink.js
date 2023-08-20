@@ -10,9 +10,14 @@ import BlankTable__Fines from "@/components/blank_print/BlankTable__Fines.vue";
 
 import BlankTable__Actions from "@/components/blank_print/BlankTable__Actions.vue";
 import BlankTable__Equip from "@/components/blank_print/BlankTable__Equip.vue";
+import BlankTable__Weapons from "@/components/blank_print/BlankTable__Weapons.vue";
 
 import BlankTable__List_3 from "@/components/blank_print/BlankTable__List_3.vue";
 import BlankText__All from "@/components/blank_print/BlankText__All.vue";
+
+
+import BlankText__Biography from "@/components/blank_print/BlankText__Biography.vue";
+import Blank__ClassicList from "@/components/blank_print/Blank__ClassicList.vue";
 
 export default {
 	components: {
@@ -27,9 +32,14 @@ export default {
   
   BlankTable__Actions,
   BlankTable__Equip,
+  BlankTable__Weapons,
 
   BlankTable__List_3,
   BlankText__All,
+
+
+  BlankText__Biography,
+  Blank__ClassicList,
   
 	},
 };

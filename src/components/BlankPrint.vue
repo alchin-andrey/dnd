@@ -2,10 +2,12 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-			<main class="print-page" v-if="!PRINT_WORK">
+			<Blank__ClassicList class="print-page" v-if="oldSchool_Blank"/>
+
+			<main class="print-page" v-if="!oldSchool_Blank">
 				<section class="blank-head">
 					<div class="grid-wrap">
-						<BlankTable__MainNames />
+						<BlankTable__MainNames/>
 						<BlankTable__MainSett />
 						<BlankTable__Proficiencies />
 					</div>
@@ -13,19 +15,23 @@
 				</section>
         <section class="wrap-bottom pos-rel">
           <BlankTable__QualStats />
-          <BlankTable__Fines class="mr-top-36"/>
+          <BlankTable__Fines class="mr-t-36"/>
         </section>
 			</main>
 
-      <main class="print-page" v-if="!PRINT_WORK">
+      <main class="print-page">
         <section class="wrap-head">
           <BlankTable__Actions /> 
-          <BlankTable__Equip class="mr-top-36"/>
+          <BlankText__Biography class="mr-t-36" v-if="oldSchool_Blank"/>
+          <section class="flex-row mr-t-36" v-else>
+            <BlankTable__Equip />
+            <BlankTable__Weapons />
+          </section>
         </section>
         <Blank__SelectMenu />
       </main>
 
-      <main class="print-page" v-if="!PRINT_WORK">
+      <main class="print-page">
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min"/>
           <AppSpells
@@ -40,7 +46,7 @@
 
       <main class="print-page" 
         v-for="arr in list_Spell_Left_Arr"
-				:key="arr" v-if="!PRINT_WORK">
+				:key="arr">
         <section class="col-wrap-spell">
           <AppSpells
             class="cell-spell mr-min"
@@ -56,11 +62,8 @@
         <BlankText__All/>
 			</main>
 
-      <main class="print-page" >
-        <section class="wrap-head">
-          <div class="int-600-28">{{T('print_biography')}}</div>
-          <div class="print-col int-500-22 mr-top-10" v-html="T('print_biography_details')" />
-        </section>
+      <main class="print-page" v-if="!oldSchool_Blank">
+        <BlankText__Biography class="wrap-head" />
         <section class="wrap-bottom int-600-28 flex_row">
           <div>{{T('print_characters')}}</div>
           <div>{{T('print_events')}}</div>
@@ -94,7 +97,7 @@ export default {
 	mixins: [BlankPrintLink],
   data() {
 		return {
-      PRINT_WORK: false,
+      // PRINT_WORK: false,
       ALL_SPELL: false,
 
       h_table: null,
@@ -108,9 +111,9 @@ export default {
         const id = `spell_${i}`
         const name = el.find(item => item.name).name
         const h = document.getElementById(id).offsetHeight;
-        console.log('name:', name);
-        console.log('h:', {ua: h, ru: 123, });
-        console.log('-------------------');
+        // console.log('name:', name);
+        // console.log('h:', {ua: h, ru: 123, });
+        // console.log('-------------------');
       });
     }
     this.h_table = document.getElementById("table_list_3").offsetHeight;
@@ -127,6 +130,9 @@ export default {
     ...mapState(useDicStore, ["select_lang"]),
 		...mapState(useSpellsStore, ["spell_RC_Param_Sort_ApAM", "spells_Arr"]),
 
+    oldSchool_Blank() {
+      return this.MY.param.blank_print == 'oldschool';
+    },
 
     spell_List_3() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM;
@@ -239,7 +245,6 @@ export default {
 .grid-wrap {
 	min-width: 648px;
 	max-width: 648px;
-	margin: 1px 1px 0 0;
 	display: flex;
 	flex-direction: column;
 	gap: 36px;
@@ -247,10 +252,6 @@ export default {
 
 .mr-top-10 {
   margin-top: 10px;
-}
-
-.mr-top-36 {
-  margin-top: 36px;
 }
 
 .mr-top-72 {
@@ -294,10 +295,6 @@ export default {
 
 .flex_row > div {
   width: 648px;
-}
-
-.print-col {
-  width: 600px;
 }
 
 </style>

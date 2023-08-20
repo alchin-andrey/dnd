@@ -1,7 +1,6 @@
 <template>
-	<div class="wrap-table">
-		<!-- <div>{{ t_Fines_Title }}</div> -->
-		<div class="flax-col-wrap">
+	<div class="wrap-table" :class="style_Table">
+		<div :class="{'flax-col-wrap': !vertical}">
 			<div class="column-content">
 				<main class="main-fines">
 					<section class="row-36">
@@ -62,7 +61,6 @@
 							v-html="fines_icon[fines.type]"
 						></svg>
 					</div>
-					<!-- <div class="int-500-22 fines-text">{{ t_Fines(fines) }}</div> -->
 					<div class="int-500-22 fines-text">
             {{ em_Before(t_Fines(fines)) }}
 			<emoji
@@ -99,6 +97,12 @@ export default {
 			fines_icon: fines_icon,
 		};
 	},
+	props: {
+    vertical: {
+      type: Boolean,
+      default: false,
+    },
+  },
 	computed: {
 		...mapState(useMYStore, [
       "MY",
@@ -171,6 +175,10 @@ export default {
 		em_After: (stor) => (name) => {
 			return stor.afterEmoji(name);
 		},
+
+		style_Table() {
+			return this.vertical ? "vertical" : "horizontal";
+		}
 	},
 };
 </script>
@@ -178,16 +186,24 @@ export default {
 <style scoped>
 .wrap-table {
 	padding: 12px 12px;
-	width: 1944px;
-	height: 648px;
+	/* width: 1944px;
+	height: 648px; */
 	border: 1px solid #000000;
 	border-radius: 6px;
 }
 
+.vertical {
+	width: 100%;
+	min-height: 1800px;
+}
+
+.horizontal {
+	width: 1944px;
+	height: 648px;
+}
+
 .flax-col-wrap {
 	width: 100%;
-	/* margin-top: 14px; */
-	/* height: 580px; */
 	height: 624px;
 }
 

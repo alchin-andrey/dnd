@@ -45,6 +45,12 @@
   align-items: center;
 }
 
+.flex-row-jc {
+	display: flex;
+  flex-direction: row;
+	justify-content: center;
+}
+
 .flex-row-c-jc {
 	display: flex;
   flex-direction: row;
@@ -93,6 +99,7 @@
 .gap-15 { gap: 15px; }
 .gap-16 { gap: 16px; }
 .gap-18 { gap: 18px; }
+.gap-24 { gap: 24px; }
 .gap-26 { gap: 26px; }
 .gap-32 { gap: 32px; }
 .gap-34 { gap: 34px; }
@@ -109,6 +116,7 @@
 
 .pd-rl-16 {padding: 0 16px;}
 .pd-rl-20 {padding: 0 20px;}
+.pd-rl-24 {padding: 0 24px;}
 .pd-rl-32 {padding: 0 32px;}
 .pd-20-28 {padding: 20px 28px;}
 
@@ -126,12 +134,14 @@
 
 .mr-t-4 { margin-top: 4px; }
 .mr-t-8 { margin-top: 8px; }
+.mr-t-10 { margin-top: 10px; }
 .mr-t-12 { margin-top: 12px; }
 .mr-t-15 { margin-top: 15px; }
 .mr-t-16 { margin-top: 16px; }
 .mr-t-22 { margin-top: 22px; }
 .mr-t-24 { margin-top: 24px; }
 .mr-t-26 { margin-top: 26px; }
+.mr-t-30 { margin-top: 30px; }
 .mr-t-32 { margin-top: 32px; }
 .mr-t-34 { margin-top: 34px; }
 .mr-t-36 { margin-top: 36px; }

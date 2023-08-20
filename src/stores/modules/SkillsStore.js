@@ -4,6 +4,8 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 
+import { useDicStore } from "@/stores/general/DicStore";
+
 export const useSkillsStore = defineStore({
 	id: 'SkillsStore',
 	state: () => ({
@@ -313,6 +315,18 @@ export const useSkillsStore = defineStore({
 			} else {
 				return stor.skills_Class_Numb_Bonus_Full(name);
 			}
+		},
+
+    t_skill_Arr() {
+      const DicStore = useDicStore();
+			let arr = [];
+			this.skills_Keys.forEach((el) => {
+				const t_name = DicStore.t(el);
+				const numb = this.skills_RC_All_Numb(el);
+				arr.push({ t_name: t_name, numb: numb });
+			});
+			arr.sort((a, b) => a.t_name.localeCompare(b.t_name));
+			return arr;
 		},
   },
 

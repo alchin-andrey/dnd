@@ -4,8 +4,7 @@
     <div class="hr-vert-2"></div>
     <div class="hr-vert-3"></div>
 		<div class="column-content">
-			<div class="int-600-28">dndme.club</div>
-			<div>{{ link_Description }}</div>
+			<BlankText__Support />
 			<div class="hr-print"></div>
 			<AppPrintMenu__Chapter title="level" :chapter="String(MY.level)" />
       <div class="hr-print"></div>
@@ -73,9 +72,19 @@ import { useColorStore } from "@/stores/modules/simple/ColorStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
+
+import BlankText__Support from "@/components/blank_print/BlankText__Support.vue";
 export default {
 	name: "Blank__SelectMenu",
-
+	components: {
+		BlankText__Support,
+  },
+	data() {
+    return {
+      donate_qr: 'send.monobank.ua/jar/F8Yfa61mr',
+      size_qr: 120,
+    };
+  },
 	computed: {
 		...mapState(useMYStore, [
       "MY",
@@ -95,10 +104,6 @@ export default {
 		]),
     ...mapState(useStatsStore, [ "stats_Base_Settings_Full_T"]),
     ...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr", "photo_Select"]),
-
-		link_Description() {
-			return this.t("link_description");
-		},
 
 		MY_Age() {
 			return `${this.MY.age} ${this.t(this.age_Units)}`;
@@ -229,14 +234,13 @@ export default {
 	gap: 16px 64px;
 }
 
-
-/* .mr-print{
-  width: 100%;
-  height: 18px;
-} */
 .hr-print {
 	width: 512px;
 	margin: 34px 0;
 	border-bottom: 2px solid #000000;
+}
+
+.h-120 {
+	height: 120px;
 }
 </style>

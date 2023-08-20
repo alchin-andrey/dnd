@@ -1,78 +1,43 @@
 <template>
-	<div class="wrap-section">
-		<section class="wrap-table-equip">
-			<div class="table-equip">
-				<div class="cell-invent">
-					<div>{{ t_Equipment }}</div>
+	<div :class="style_Br">
+		<div :class="style_Span_Top">
+			<div>{{ t_Equipment }}</div>
 
-					<div class="column-content">
-						<template v-for="(pack, i) in packs_Equip_All" :key="pack">
-							<div :class="{ 'marg-t-30': i > 0 }" />
-							<div class="int-500-22">{{ t_Equip_Name(pack) }}:</div>
-							<div v-for="inv in pack[0].items" :key="inv">
-								<div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
-							</div>
-						</template>
-
-						<template v-for="(inv, i) in inventory_Equip_Print" :key="inv">
-							<!-- <div :class="{'marg-t-30': i == 0}"/> -->
-							<div class="marg-t-30" v-if="i == 0" />
-							<div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
-						</template>
+			<div :class="style_Column">
+				<template v-for="(pack, i) in packs_Equip_All" :key="pack">
+					<div :class="{ 'mr-t-30': i > 0 }" />
+					<div class="int-500-22">{{ t_Equip_Name(pack) }}:</div>
+					<div v-for="inv in pack[0].items" :key="inv">
+						<div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
 					</div>
-				</div>
+				</template>
 
-				<div class="cell-equip" v-for="coin in coins" :key="coin">
-					<div>{{ T(coin) }}</div>
-					<div class="int-600-22 print-grey" v-if="coin == 'gold'">
-						{{ gold_Equip_All }}
-					</div>
-				</div>
-
-				<div class="cell-equip">
-					<div>{{ T("armor") }}</div>
-					<div class="int-600-22">{{ t_Armor_Name }}</div>
-				</div>
-
-				<div class="cell-equip">
-					<div>{{ T("bullets") }}</div>
-					<div class="int-600-22">
-						{{ t_Ammunition_Name }}
-						<span class="print-grey">{{ t_Ammunition_Numb }}</span>
-					</div>
-				</div>
+				<template v-for="(inv, i) in inventory_Equip_Print" :key="inv">
+					<div class="mr-t-30" v-if="i == 0" />
+					<div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
+				</template>
 			</div>
-		</section>
-		<section class="wrap-table-weapon-charg">
-			<!-- <div class="wrap-table-weapon"> -->
-			<div class="table-weapon">
-				<div class="table-weapon__grid">
-					<div class="cell-weapon">{{ T("weapons") }}</div>
-					<div class="cell-weapon">{{ T("print_aim_range") }}</div>
-					<div class="cell-weapon">{{ T("print_aim_need") }}</div>
-					<div class="cell-weapon">{{ T("print_damage") }}</div>
-				</div>
-				<WeaponEquip
-					class="table-weapon__grid int-600-22"
-					v-for="weapon in weapons_Equip_All"
-					:key="weapon"
-					:weapon="weapon"
-					blank_print
-				/>
-			</div>
-			<!-- </div> -->
+		</div>
 
-			<!-- <div class="wrap-table-weapon"> -->
-			<div class="table-charge">
-				<AppCharges
-					v-for="item in sort_Charg"
-					:key="item"
-					:charge="item"
-					blank_print
-				/>
+		<div class="cell" v-for="coin in coins" :key="coin">
+			<div>{{ T(coin) }}</div>
+			<div class="int-600-22 print-grey" v-if="coin == 'gold'">
+				{{ gold_Equip_All }}
 			</div>
-			<!-- </div> -->
-		</section>
+		</div>
+
+		<div :class="style_Span_Bottom">
+			<div>{{ T("armor") }}</div>
+			<div class="int-600-22">{{ t_Armor_Name }}</div>
+		</div>
+
+		<div :class="style_Span_Bottom">
+			<div>{{ T("bullets") }}</div>
+			<div class="int-600-22">
+				{{ t_Ammunition_Name }}
+				<span class="print-grey">{{ t_Ammunition_Numb }}</span>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -81,12 +46,17 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useEquipStore } from "@/stores/modules/EquipStore";
-import { useChargesStore } from "@/stores/modules/ChargesStore";
 import WeaponEquip from "@/components/equipment/WeaponEquip.vue";
 export default {
 	name: "BlankTable__Equip",
 	components: {
 		WeaponEquip,
+	},
+	props: {
+		classic: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -96,14 +66,12 @@ export default {
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(useQualitiesStore, ["armor_Name_Class_Param"]),
-		...mapState(useChargesStore, ["charges_All_Param"]),
 		...mapState(useEquipStore, [
 			"gold_Equip_All",
 			"packs_Equip_All",
 			"inventory_Equip_All",
 			"inventory_Equip_Print",
 			"ammunition_Equip_Print",
-			"weapons_Equip_All",
 		]),
 
 		t_Equipment() {
@@ -136,106 +104,99 @@ export default {
 			if (ammunition) return `×${ammunition[1]}`;
 		},
 
-		t_Aim_Range() {
-			const str = this.T("aim_range");
-			return str.length >= 5 ? str.slice(0, 5) + "." : str;
+		style_Br() {
+			if (this.classic) return 'grid-body--simple';
+			else return 'grid-body--full';
 		},
 
-    sort_Charg() {
-      const start_arr = this.charges_All_Param;
-      const arcanum_slots = start_arr.find(el => el.name == "arcanum_slots");
-      const spell_slots = start_arr.find(el => el.name == "spell_slots");
-      let filter_arr = start_arr.filter(el => el.name !== "spell_slots");
-      filter_arr = filter_arr.filter(el => el.name !== "arcanum_slots");
-      if(arcanum_slots) filter_arr.push(arcanum_slots);
-      if(spell_slots) filter_arr.push(spell_slots);
-      return filter_arr;
-    }
+		style_Span_Top() {
+			if (this.classic) return 'cell grid-col-4';
+			else return 'cell grid-col-6';
+		},
+
+		style_Span_Bottom() {
+			if (this.classic) return 'cell grid-col-2';
+			else return 'cell';
+		},
+
+		style_Column() {
+			if (this.classic) return 'column-content h-size--simple';
+			else return 'column-content h-size--full';
+		},
+
+
 	},
 };
 </script>
 
 <style scoped>
-.wrap-section {
-	display: flex;
-	height: 612px;
-	border: 1px solid #000000;
-	border-radius: 6px;
-}
-
-.title-marg {
-	margin: 4px 0 0 12px;
-}
-
-.wrap-table-equip {
-	width: 1296px;
-	height: 100%;
-	border-right: 1px solid #000000;
-}
-
-.table-equip {
+.grid-body--full {
 	display: grid;
 	grid-template-rows: 538px 72px;
-	grid-template-columns: repeat(4, 1fr) repeat(2, 2fr);
+	grid-template-columns: repeat(4, 162px) repeat(2, 324px);
 }
 
-.cell-invent {
-	padding: 4px 12px;
-	/* border-bottom: 1px solid #000000; */
-	grid-column: span 6;
+.grid-body--simple {
+	display: grid;
+	grid-template-rows: 936px repeat(2, 72px);
+	grid-template-columns: repeat(4, 1fr);
 }
 
-.cell-equip {
+.grid-col-2 { grid-column: span 2; }
+.grid-col-4 { grid-column: span 4; }
+.grid-col-6 { grid-column: span 6; }
+
+.cell {
 	padding: 4px 12px 8px;
-  border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.grid-body--full > :first-child {
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-radius: 6px 0 0 0;
 }
 
-.cell-equip:nth-child(n + 3) {
+.grid-body--simple > :first-child {
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-radius: 6px 6px 0 0;
+}
+
+.grid-body--full > :nth-child(2) {
+	border-left: 1px solid #000000;
+	border-radius: 0 0 0 6px;
+}
+.grid-body--simple > :nth-child(2) {
 	border-left: 1px solid #000000;
 }
-.print-grey {
-	color: #828282;
+
+.grid-body--simple > :nth-last-child(2) {
+	border-left: 1px solid #000000;
+	border-radius: 0 0 0 6px;
+}
+
+.grid-body--simple > :last-child {
+	border-radius: 0 0 6px 0;
 }
 
 .column-content {
 	margin-top: 24px;
 	width: max-content;
-	/* width: calc(25% - 22.25px); */
-	height: 450px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	gap: 0 35px;
 }
 
-.column-content > div {
+.h-size--full {
+	height: 450px;
+}
+.h-size--simple {
+	height: 848px;
+}
+
+.column-content>div {
 	width: 100%;
-}
-
-.marg-t-30 {
-	margin-top: 30px;
-}
-
-.wrap-table-weapon-charg {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-/* .table-weapon {
-} */
-
-.table-weapon__grid {
-	display: grid;
-	grid-template-columns: 300px 121px 68px 160px;
-	border-bottom: 1px solid #000000;
-}
-
-.table-weapon__grid > * {
-	padding: 4px 12px 8px;
-}
-
-.table-charge > * {
-	padding: 4px 12px 8px;
-  border-top: 1px solid #000000;
 }
 </style>

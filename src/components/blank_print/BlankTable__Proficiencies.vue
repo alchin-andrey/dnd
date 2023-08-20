@@ -1,7 +1,7 @@
 <template>
-	<div class="grid__body">
+	<div class="grid-body cell-body">
 		<AppMainCell
-			class="cell bord-tl-tr-6"
+			class="cell"
 			title="armors_proficiency"
 			:content_arr="proficiencies_RC_Params('armor')"
 		/>
@@ -16,7 +16,7 @@
 			:content_arr="proficiencies_RC_Params('tools')"
 		/>
 		<AppMainCell
-			class="cell bord-br-bl-6"
+			class="cell"
 			title="languages_proficiency"
 			:content_arr="proficiencies_RC_Params('languages')"
 		/>
@@ -45,28 +45,29 @@ export default {
 </script>
 
 <style scoped>
-.grid__body {
+.grid-body {
 	display: grid;
 	grid-template-rows: 80px 168px 110px 110px;
 }
 
-.grid__full {
-	grid-column: span 2;
-}
-
 .cell {
 	padding: 4px 12px;
-	border: 1px solid #000;
-	margin: -1px -1px 0 0;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
+
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
 }
-.bord-tl-tr-6 {
+
+.cell-body> :first-child {
+	border-top: 1px solid #000000;
 	border-radius: 6px 6px 0 0;
 }
-.bord-br-bl-6 {
+
+.cell-body> :last-child {
 	border-radius: 0 0 6px 6px;
 }
 </style>

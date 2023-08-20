@@ -1,7 +1,6 @@
 <template>
-	<My-Selection-Box title="alignment" :select="MY.alignment" :shown="alignment_page.shown.alignment">
+
 		<AlignmentSett__Alignment />
-	</My-Selection-Box>
 
 	<!-- customm_Settings -->
   <My-Selection-Box
@@ -13,9 +12,8 @@
 			<AlignmentSett__Custom :custom="item"/>
 		</My-Selection-Box>
 
-		<!-- <My-Selection-Box :shown="alignment_page.shown.photo" title="photo" :select="photo_Select" mob_fixed> -->
 			<AlignmentSett__Photo />
-		<!-- </My-Selection-Box> -->
+			<AlignmentSett__Blank />
 </template>
 
 <script>
