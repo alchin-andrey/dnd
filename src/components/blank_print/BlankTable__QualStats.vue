@@ -173,7 +173,7 @@ export default {
 
 .grid-body--skills {
 	display: grid;
-	grid-template-rows: repeat(18, 72px);
+	grid-template-rows: repeat(18, 70px);
 	grid-template-columns: 324px;
 }
 
