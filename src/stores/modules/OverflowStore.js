@@ -60,11 +60,13 @@ export const useOverflowStore = defineStore({
 				});
 			});
 
-			const name_custom_arr = item.select_list.filter( el => el.name_set == 'your_option');
-			name_custom_arr.forEach((el) => {
-				const new_res = !el.name_custom;
-				res = res ? true : new_res;
-			});
+			if(item.select_list) {
+				const name_custom_arr = item.select_list.filter( el => el.name_set == 'your_option');
+				name_custom_arr.forEach((el) => {
+					const new_res = !el.name_custom;
+					res = res ? true : new_res;
+				});
+			}
 
 			const spell_arr = stor.filter_List_Lvl(item.select_list, "spells");
 			spell_arr.forEach((el) => {
