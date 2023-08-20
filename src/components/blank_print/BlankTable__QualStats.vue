@@ -161,7 +161,7 @@ export default {
 
 .grid-body--stats {
 	display: grid;
-	grid-template-rows: repeat(6, 360px);
+	grid-template-rows: repeat(6, 354px);
 	grid-template-columns: 216px;
 }
 
