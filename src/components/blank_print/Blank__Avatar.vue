@@ -1,23 +1,23 @@
 <template>
-	<div class="avatar-print">
+	<div>
 
 		<div class="hiden-avatar">
 			<section class="character_blank" :class="{ character_blank_higher: chare_Higher }">
-				<RaceBody body_part="skin" blank_print />
-				<RaceBody body_part="eyes" blank_print />
-				<RaceBody body_part="hair" blank_print />
-				<RaceBody body_part="class" blank_print />
+				<RaceBody body_part="skin" :blank_print="blank_print" />
+				<RaceBody body_part="eyes" :blank_print="blank_print" />
+				<RaceBody body_part="hair" :blank_print="blank_print" />
+				<RaceBody body_part="class" :blank_print="blank_print" />
 			</section>
 		</div>
 
-		<AppPrintLevelBlok br_24 />
+		<AppPrintLevelBlok br_24 v-if="standart_Blank"/>
 
-		<section class="avatar-sett-wrapp">
+		<section class="avatar-sett-wrapp" v-if="standart_Blank">
 			<AppPrintSavingTrows class="flex-sett" />
 			<AppPrintFating class="sett-tired" />
 		</section>
 
-		<div class="gradient" v-if="chare_Higher"></div>
+		<div :class="style_Grad" v-if="chare_Higher" />
 	</div>
 </template>
 
@@ -34,6 +34,13 @@ export default {
 		};
 	},
 
+	props: {
+		blank_print: {
+			type: String,
+			default: null,
+		},
+  },
+
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 
@@ -47,26 +54,21 @@ export default {
 
 		chare_Higher() {
 			return this.MY.height >= 155;
+		},
+
+		standart_Blank() {
+			return this.blank_print == 'standard';
+		},
+
+		style_Grad() {
+			if (this.standart_Blank) return 'gradient--standard';
+			else return 'gradient--oldschool';
 		}
 	},
 };
 </script>
 
-<style>
-.main-svg {
-	width: 36px;
-	height: 36px;
-	fill: black;
-}
-
-.avatar-print {
-	width: 100%;
-	height: 1404px;
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-}
-
+<style scoped>
 .avatar-sett-wrapp {
 	width: 162px;
 	margin: 1px 1px 0 0;
@@ -168,14 +170,25 @@ export default {
 	bottom: auto;
 }
 
-.gradient {
+.gradient--standard {
 	height: 300px;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
 	background: linear-gradient(180deg,
 			rgba(255, 255, 255, 0) 0%,
-			rgba(255, 255, 255, 0.5130427170868348) 46%,
+			rgba(255, 255, 255, 0.5) 46%,
+			rgba(255, 255, 255, 1) 100%);
+}
+
+.gradient--oldschool {
+	height: 150px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background: linear-gradient(180deg,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 0.4) 46%,
 			rgba(255, 255, 255, 1) 100%);
 }
 </style>

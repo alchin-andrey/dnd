@@ -144,6 +144,9 @@ export default {
 <style scoped>
 .wrap-table {
 	display: flex;
+	background-color: #ffffff;
+	position: relative;
+	z-index: 10;
 }
 
 .grid-body--full-left {

@@ -11,7 +11,7 @@
 						<BlankTable__MainSett />
 						<BlankTable__Proficiencies />
 					</div>
-					<Blank__Avatar /> 
+					<Blank__Avatar class="avatar-print-standard" blank_print="standard"/> 
 				</section>
         <section class="wrap-bottom pos-rel">
           <BlankTable__QualStats />
@@ -214,6 +214,14 @@ export default {
 
 .blank-conteiner::-webkit-scrollbar {
 	width: 0;
+}
+
+.avatar-print-standard {
+	width: 100%;
+	height: 1404px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
 }
 
 .blank-scroll {

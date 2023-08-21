@@ -55,8 +55,8 @@ export default {
 			default: false,
 		},
 		blank_print: {
-			type: Boolean,
-			default: false,
+			type: String,
+			default: null,
 		},
     error: {
       type: Boolean,
@@ -222,14 +222,16 @@ export default {
 
     width_Custom_Char() {
       const screen_main = `(100vh - 64px)`;
-      const screen_print = `1825px`;
+      const screen_print_standard = `1825px`;
+      const screen_print_oldschool = `684px`;
       const screen_mob = `470px`;
       let kof = this.alignment_page.ratio_photo;
       if(!this.MY.param.sett_photo.size_cover) {
         kof = this.MY.param.sett_photo.ratio;
       };
       const sc_main_kof = `${screen_main} * ${kof}`
-      const sc_print_kof = `${screen_print} * ${kof}`
+      const sc_print_standard_kof = `${screen_print_standard} * ${kof}`
+      const sc_print_oldschool_kof = `${screen_print_oldschool} * ${kof}`
       const sc_mob_kof = `${screen_mob} * ${kof}`
 
       if (this.race_page.shown.skin_color) {
@@ -239,8 +241,10 @@ export default {
         this.race_page.shown.hair_color
       ) {
         return `calc(${sc_main_kof} * 2)`;
-      } else if (this.blank_print) {
-        return `calc(${sc_print_kof} * ${this.growth_Char} / 210)`
+      } else if (this.blank_print == 'standard') {
+        return `calc(${sc_print_standard_kof} * ${this.growth_Char} / 210)`
+      } else if (this.blank_print == 'oldschool') {
+        return `calc(${sc_print_oldschool_kof} * ${this.growth_Char} / 210)`
       } else if (this.screen_Max) {
         return `calc(${sc_main_kof} * ${this.growth_Char} / 210)`
       } else {
