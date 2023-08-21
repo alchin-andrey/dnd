@@ -21,9 +21,6 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
-
 import BlankTable__MainNames from "@/components/blank_print/BlankTable__MainNames.vue";
 import BlankTable__QualStats from "@/components/blank_print/BlankTable__QualStats.vue";
 import BlankTable__Proficiencies from "@/components/blank_print/BlankTable__Proficiencies.vue";
@@ -35,14 +32,6 @@ export default {
 		BlankTable__QualStats,
 		BlankTable__Proficiencies,
 		Blank__Avatar,
-	},
-
-	computed: {
-		...mapState(useMYStore, ["MY"]),
-
-		chare_Higher() {
-			return this.MY.height >= 155;
-		}
 	},
 };
 </script>

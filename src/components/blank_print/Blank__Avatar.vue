@@ -53,7 +53,8 @@ export default {
 		},
 
 		chare_Higher() {
-			return this.MY.height >= 155;
+			const size = this.standart_Blank ? 155 : 147;
+			return this.MY.height >= size;
 		},
 
 		standart_Blank() {
