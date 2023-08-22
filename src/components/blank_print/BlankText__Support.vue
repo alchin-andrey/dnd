@@ -5,8 +5,8 @@
 			<section class="gap-24 mr-t-36" :class="style_Qr">
 				<qrcode-vue :value="donate_qr" :size="size_qr" level="L" />
 				<div>
-					<div class="int-600-28">{{ T('lobby_support_project') }}</div>
-					<div class="w-364">{{ T('support_project_link') }}</div>
+					<div class="int-600-28 line-size">{{ T('lobby_support_project') }}</div>
+					<div class="mr-t-8 w-364">{{ T('support_project_link') }}</div>
 				</div>
 			</section>
 		</div>
@@ -50,5 +50,9 @@ export default {
 }
 .w-584 {
 	width: 584px;
+}
+
+.line-size {
+	line-height: 28px;
 }
 </style>
