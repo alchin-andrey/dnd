@@ -17,7 +17,7 @@ import BlankTable__MainSett from "@/components/blank_print/BlankTable__MainSett.
 import BlankTable__Fines from "@/components/blank_print/BlankTable__Fines.vue";
 import BlankText__Support from "@/components/blank_print/BlankText__Support.vue";
 export default {
-	name: "Blank__ClassicList__Right",
+	name: "Blank__OldschoolList__Right",
 	components: {
 		BlankTable__MainNames,
 		BlankTable__MainSett,

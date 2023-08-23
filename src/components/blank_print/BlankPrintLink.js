@@ -17,7 +17,10 @@ import BlankText__All from "@/components/blank_print/BlankText__All.vue";
 
 
 import BlankText__Biography from "@/components/blank_print/BlankText__Biography.vue";
-import Blank__ClassicList from "@/components/blank_print/Blank__ClassicList.vue";
+import Blank__OldschoolList from "@/components/blank_print/Blank__OldschoolList.vue";
+import Blank__StandardList from "@/components/blank_print/Blank__StandardList.vue";
+import Blank__Page_1 from "@/components/blank_print/Blank__Page_1.vue";
+import Blank__Page_2 from "@/components/blank_print/Blank__Page_2.vue";
 
 export default {
 	components: {
@@ -39,7 +42,11 @@ export default {
 
 
   BlankText__Biography,
-  Blank__ClassicList,
+  Blank__OldschoolList,
+  Blank__StandardList,
+  
+  Blank__Page_1,
+  Blank__Page_2,
   
 	},
 };

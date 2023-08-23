@@ -26,7 +26,7 @@ import BlankTable__QualStats from "@/components/blank_print/BlankTable__QualStat
 import BlankTable__Proficiencies from "@/components/blank_print/BlankTable__Proficiencies.vue";
 import Blank__Avatar from "@/components/blank_print/Blank__Avatar.vue";
 export default {
-	name: "Blank__ClassicList__Left",
+	name: "Blank__OldschoolList__Left",
 	components: {
 		BlankTable__MainNames,
 		BlankTable__QualStats,

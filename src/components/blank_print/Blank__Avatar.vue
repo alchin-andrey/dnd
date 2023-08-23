@@ -10,9 +10,9 @@
 			</section>
 		</div>
 
-		<AppPrintLevelBlok br_24 v-if="standart_Blank"/>
+		<AppPrintLevelBlok br_24 v-if="standard_Blank"/>
 
-		<section class="avatar-sett-wrapp" v-if="standart_Blank">
+		<section class="avatar-sett-wrapp" v-if="standard_Blank">
 			<AppPrintSavingTrows class="flex-sett" />
 			<AppPrintFating class="sett-tired" />
 		</section>
@@ -53,16 +53,16 @@ export default {
 		},
 
 		chare_Higher() {
-			const size = this.standart_Blank ? 155 : 147;
+			const size = this.standard_Blank ? 155 : 147;
 			return this.MY.height >= size;
 		},
 
-		standart_Blank() {
+		standard_Blank() {
 			return this.blank_print == 'standard';
 		},
 
 		style_Grad() {
-			if (this.standart_Blank) return 'gradient--standard';
+			if (this.standard_Blank) return 'gradient--standard';
 			else return 'gradient--oldschool';
 		}
 	},

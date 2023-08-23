@@ -14,7 +14,7 @@ import BlankTable__QualStats from "@/components/blank_print/BlankTable__QualStat
 import BlankTable__Weapons from "@/components/blank_print/BlankTable__Weapons.vue";
 import BlankTable__Equip from "@/components/blank_print/BlankTable__Equip.vue";
 export default {
-	name: "Blank__ClassicList__Center",
+	name: "Blank__OldschoolList__Center",
 	components: {
 		BlankTable__MainNames,
 		BlankTable__QualStats,

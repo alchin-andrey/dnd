@@ -3,7 +3,36 @@
 		<div class="blank-scroll">
 
     <Blank__Page_1 class="print-page" :blank_print="MY.param.blank_print"/>
-    <Blank__Page_2 class="print-page" :blank_print="MY.param.blank_print"/>
+
+			<!-- <Blank__OldschoolList class="print-page" v-if="oldSchool_Blank"/>
+			<Blank__StandardList class="print-page" v-if="!oldSchool_Blank"/> -->
+
+			<!-- <main class="print-page" v-if="!oldSchool_Blank">
+				<section class="blank-head">
+					<div class="grid-wrap">
+						<BlankTable__MainNames/>
+						<BlankTable__MainSett />
+						<BlankTable__Proficiencies />
+					</div>
+					<Blank__Avatar class="avatar-print-standard" blank_print="standard"/> 
+				</section>
+        <section class="wrap-bottom pos-rel">
+          <BlankTable__QualStats />
+          <BlankTable__Fines class="mr-t-36"/>
+        </section>
+			</main> -->
+
+      <main class="print-page">
+        <section class="wrap-head">
+          <BlankTable__Actions /> 
+          <BlankText__Biography class="mr-t-36" v-if="oldSchool_Blank"/>
+          <section class="flex-row mr-t-36" v-else>
+            <BlankTable__Equip />
+            <BlankTable__Weapons />
+          </section>
+        </section>
+        <Blank__SelectMenu />
+      </main>
 
       <main class="print-page">
         <section class="col-wrap-spell">

@@ -1,10 +1,5 @@
 <template>
-  <AppBtmLink
-    class="btm-red"
-    icon="return"
-    @click="resetState()"
-    name="start_over" 
-  />
+  <AppBtmLink class="btm-red" icon="return" @click="resetState()" name="start_over" />
 </template>
 
 <script>
@@ -14,13 +9,13 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
 import { useMainStore } from "@/stores/general/MainStore";
 export default {
-	name: "Btm__Reset",
-	computed: {
-    ...mapWritableState(useMYStore, ["MY","MY_def"]),
+  name: "Btm__Reset",
+  computed: {
+    ...mapWritableState(useMYStore, ["MY", "MY_def"]),
     ...mapWritableState(usePagesStore, ["site_settings", 'pages', "showHome"]),
     ...mapWritableState(useFormStore, ["form_kof"]),
     ...mapWritableState(useMainStore, ["srd"]),
-	},
+  },
 
   methods: {
     ...mapActions(useMYStore, ["getCreated"]),
@@ -33,19 +28,33 @@ export default {
         age: 0.5,
       };
       this.srd = true,
-      
+
       this.site_settings = {
         save: {},
         welcome: true,
         logo_anim: false,
         print_dialog: false,
+        print_image: {
+          standard: {
+            page_1: null,
+            load_1: false,
+            page_2: null,
+            load_2: false,
+          },
+          oldschool: {
+            page_1: null,
+            load_1: false,
+            page_2: null,
+            load_2: false,
+          },
+        }
       },
 
-      this.pages = {
-        race_page: true,
-        class_page: false,
-        alignment_page: false,
-      };
+        this.pages = {
+          race_page: true,
+          class_page: false,
+          alignment_page: false,
+        };
       this.getCreated();
       this.showHome();
     },
