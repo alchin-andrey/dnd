@@ -1,6 +1,6 @@
 <template>
-	<!-- <section class="int-400-22" v-if="pages.alignment_page"> -->
-	<section class="int-400-22">
+	<section class="int-400-22" v-if="pages.alignment_page">
+	<!-- <section class="int-400-22"> -->
 		<Blank__Page_1 class="print-page" blank_print="oldschool" id="oldschool-page-1"/>
 		<Blank__Page_1 class="print-page" blank_print="standard" id="standard-page-1"/>
 	</section>
@@ -29,50 +29,26 @@ export default {
 		]),
 	},
 
-	mounted() {
-			if(!this.site_settings.print_image.oldschool.page_1) {
-				this.getPageImage();
-			}
-    },
-
 	watch: {
-		// "alignment_page.shown.blank_print": "getPageImage",
-		"pages.alignment_page": "getPageImage",
-		"MY.name": "getPageImage",
-		"MY.custom_photo": "getPageImage",
-		"MY.param.user_photo": "getPageImage",
+		"alignment_page.shown.blank_print": "getPageImage",
+		// "pages.alignment_page": "getPageImage",
+		// "MY.custom_photo": "getPageImage",
+		// "MY.param.user_photo": "getPageImage",
 	},
 
 	methods: {
 
 		getPageImage() {
+			console.log('getPageImage:')
 			this.site_settings.print_image.oldschool.load_1 = true;
 			this.site_settings.print_image.standard.load_1 = true;
-			if(this.pages.alignment_page) {
-				// setTimeout(() => {
+			if(this.alignment_page.shown.blank_print) {
+				setTimeout(() => {
 						this.onCapture('oldschool', 1);
 						this.onCapture('standard', 1);
-				// } , 500);
+				} , 400);
 			}
 		},
-
-    // onCapture(type, page_numb) {
-		// 	const load = `load_${page_numb}`;
-		// 	this.site_settings.print_image[type][load] = true;
-		// 	const list_id = `${type}-page-${page_numb}`;
-    //   const capture = document.getElementById(list_id);
-    //   domtoimage
-		// 		.toPng(capture)
-    //     .then((dataUrl) => {
-		// 			const page = `page_${page_numb}`;
-    //       this.site_settings.print_image[type][page] = dataUrl;
-		// 			this.site_settings.print_image[type][load] = false;
-    //     })
-    //     .catch((error) => {
-		// 			this.site_settings.print_image[type][load] = false;
-    //       console.error("oops, something went wrong!", error);
-    //     });
-    // },
 
     onCapture(type, page_numb) {
 			const load = `load_${page_numb}`;
@@ -87,9 +63,9 @@ export default {
 
       domtoimage
 				.toPng(capture, options)
-        .then((dataUrl2) => {
+        .then((dataUrl) => {
 					const page = `page_${page_numb}`;
-          this.site_settings.print_image[type][page] = dataUrl2;
+          this.site_settings.print_image[type][page] = dataUrl;
 					this.site_settings.print_image[type][load] = false;
         })
         .catch((error) => {
