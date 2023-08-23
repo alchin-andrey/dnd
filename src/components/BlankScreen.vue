@@ -29,6 +29,12 @@ export default {
 		]),
 	},
 
+	mounted() {
+			if(!this.site_settings.print_image.oldschool.page_1) {
+				this.getPageImage();
+			}
+    },
+
 	watch: {
 		// "alignment_page.shown.blank_print": "getPageImage",
 		"pages.alignment_page": "getPageImage",
@@ -73,9 +79,14 @@ export default {
 			this.site_settings.print_image[type][load] = true;
 			const list_id = `${type}-page-${page_numb}`;
       const capture = document.getElementById(list_id);
+
+			const options = {
+				width: capture.clientWidth,
+        height: capture.clientHeight,
+      }
+
       domtoimage
-				.toPng(capture)
-        .then((dataUrl) => domtoimage.toPng(capture))
+				.toPng(capture, options)
         .then((dataUrl2) => {
 					const page = `page_${page_numb}`;
           this.site_settings.print_image[type][page] = dataUrl2;
