@@ -3,6 +3,7 @@ import PlagBanner from "@/components/PlagBanner.vue";
 import Donate from "@/components/Donate.vue";
 import PromoSlider from "@/components/PromoSlider.vue";
 import BlankPrint from "@/components/BlankPrint.vue";
+import BlankScreen from "@/components/BlankScreen.vue";
 
 import Main__MenuBar from "@/components/main/Main__MenuBar.vue";
 import Main__SetBar from "@/components/main/Main__SetBar.vue";
@@ -22,6 +23,7 @@ export default {
 		Donate,
 		PromoSlider,
 		BlankPrint,
+		BlankScreen,
 
 		Main__MenuBar,
 		Main__SetBar,

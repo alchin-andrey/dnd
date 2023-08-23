@@ -15,14 +15,10 @@ export const usePagesStore = defineStore({
         standard: {
           page_1: null,
           load_1: false,
-          page_2: null,
-          load_2: false,
         },
         oldschool: {
           page_1: null,
           load_1: false,
-          page_2: null,
-          load_2: false,
         },
       }
     },

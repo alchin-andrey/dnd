@@ -183,7 +183,7 @@ export default {
 	overflow-y: scroll;
 	scrollbar-width: none;
 	background-color: #ffffff;
-	margin-right: -2088px;
+	/* margin-right: -2088px; */
 }
 
 .blank-conteiner::-webkit-scrollbar {

@@ -24,21 +24,12 @@
 		</section>
 	</my-dialog-spell>
 
-	<section class="int-400-22" v-if="alignment_page.shown.blank_print">
-		<Blank__Page_1 class="print-page" blank_print="oldschool" id="oldschool-page-1"/>
-		<Blank__Page_1 class="print-page" blank_print="standard" id="standard-page-1"/>
-		<Blank__Page_2 class="print-page" blank_print="oldschool" id="oldschool-page-2"/>
-		<Blank__Page_2 class="print-page" blank_print="standard" id="standard-page-2"/>
-	</section>
-
+	<BlankScreen />
 	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
-
-	<!-- <PlagBanner v-if="!screen_Max"/> -->
 </template>
 
 <script>
 import html2pdf from "html2pdf.js";
-import domtoimage from 'dom-to-image-more';
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -46,8 +37,6 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
-
-
 
 import MainApp from "@/components/main/MainApp.js";
 export default {
@@ -77,7 +66,6 @@ export default {
 			"site_settings",
 			"pages",
 			"screen_Max",
-			"alignment_page"
 		]),
 
 		...mapState(useFormStore, [
@@ -97,8 +85,6 @@ export default {
 	watch: {
 		"MY_Race.name": "getWatch_Race",
 		"MY_Class.name": "getWatch_Class",
-
-		"alignment_page.shown.blank_print": "getPageImage",
 
 		names_Arr(val, oldVal) {
 			const incl = val.includes(this.MY.name);
@@ -137,39 +123,6 @@ export default {
 		]),
 		...mapActions(useGenderStore, ["getRandomName"]),
 
-		getPageImage() {
-			this.site_settings.print_image.oldschool.load_1 = true;
-			this.site_settings.print_image.oldschool.load_2 = true;
-			this.site_settings.print_image.standard.load_1 = true;
-			this.site_settings.print_image.standard.load_2 = true;
-			if(this.alignment_page.shown.blank_print) {
-				setTimeout(() => {
-				this.onCapture('oldschool', 1);
-				this.onCapture('standard', 1);
-				this.onCapture('oldschool', 2);
-				this.onCapture('standard', 2);
-			} , 500);
-			}
-		},
-
-    onCapture(type, page_numb) {
-			const load = `load_${page_numb}`;
-			this.site_settings.print_image[type][load] = true;
-			const list_id = `${type}-page-${page_numb}`;
-      const capture = document.getElementById(list_id);
-      domtoimage
-				.toPng(capture)
-        .then((dataUrl) => {
-					const page = `page_${page_numb}`;
-          this.site_settings.print_image[type][page] = dataUrl;
-					this.site_settings.print_image[type][load] = false;
-        })
-        .catch((error) => {
-					this.site_settings.print_image[type][load] = false;
-          console.error("oops, something went wrong!", error);
-        });
-    },
-
 				exportToPDF() {
 			if (!this.loading_pdf) {
 				this.loading_pdf = true;
@@ -180,6 +133,7 @@ export default {
 
 		loadPdf() {
 			const lvl = this.MY.level;
+			const type = this.T(this.MY.param.blank_print);
 			const name = this.MY.name.length !== 0
 				? this.MY.name
 				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
@@ -187,7 +141,7 @@ export default {
 			const element = document.getElementById("element-to-convert");
 			const opt = {
 				margin: 0,
-				filename: `${name}_LVL${lvl}.pdf`,
+				filename: `${name}_LVL${lvl}_${type}.pdf`,
 				image: { type: "jpeg", quality: 1 },
 				html2canvas: {
 					dpi: 150,
@@ -197,6 +151,7 @@ export default {
 					// height: 1223,
 					// imageTimeout: 30000,
 					letterRendering: true,
+					allowTaint: true,
 					useCORS: true,
 				},
 				jsPDF: {
@@ -291,51 +246,4 @@ export default {
 	margin-bottom: 10px;
 }
 
-
-
-.blank-conteiner {
-	/* width: 100%; */
-	width: 2088px; /* 1588 */
-	color: #000000;
-	/* z-index: 10; */
-	/* height: 10000%; */
-	/* padding: 72px; */
-	/* overflow-y: scroll; */
-	/* scrollbar-width: none; */
-	/* background-color: #ffffff; */
-	/* margin-right: -2088px; */
-}
-
-.blank-conteiner::-webkit-scrollbar {
-	width: 0;
-}
-
-.blank-scroll {
-	height: 10000%;
-}
-
-.print-page {
-	width: 100%;
-	height: 2952px;
-	padding: 72px;
-	background-color: #ffffff;
-	width: 2088px;
-	color: #000000;
-}
-
-
-.lab__btn {
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  background: #ffc107;
-  color: white;
-  border-radius: 9px;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease-in-out;
-}
-
-.lab__btn:hover {
-  background: transparent;
-}
 </style>

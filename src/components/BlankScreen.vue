@@ -1,0 +1,102 @@
+<template>
+	<!-- <section class="int-400-22" v-if="pages.alignment_page"> -->
+	<section class="int-400-22">
+		<Blank__Page_1 class="print-page" blank_print="oldschool" id="oldschool-page-1"/>
+		<Blank__Page_1 class="print-page" blank_print="standard" id="standard-page-1"/>
+	</section>
+</template>
+
+<script>
+import domtoimage from 'dom-to-image-more';
+
+import { mapState} from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import { useMYStore } from "@/stores/user/MYStore";
+
+import Blank__Page_1 from "@/components/blank_print/Blank__Page_1.vue";
+export default {
+	name: "BlankScreen",
+	components: {
+		Blank__Page_1,
+	},
+		computed: {
+		//STORES
+		...mapState(useMYStore, ["MY"]),
+		...mapState(usePagesStore, [
+			"site_settings",
+			"pages",
+			"alignment_page"
+		]),
+	},
+
+	watch: {
+		// "alignment_page.shown.blank_print": "getPageImage",
+		"pages.alignment_page": "getPageImage",
+		"MY.name": "getPageImage",
+		"MY.custom_photo": "getPageImage",
+		"MY.param.user_photo": "getPageImage",
+	},
+
+	methods: {
+
+		getPageImage() {
+			this.site_settings.print_image.oldschool.load_1 = true;
+			this.site_settings.print_image.standard.load_1 = true;
+			if(this.pages.alignment_page) {
+				// setTimeout(() => {
+						this.onCapture('oldschool', 1);
+						this.onCapture('standard', 1);
+				// } , 500);
+			}
+		},
+
+    // onCapture(type, page_numb) {
+		// 	const load = `load_${page_numb}`;
+		// 	this.site_settings.print_image[type][load] = true;
+		// 	const list_id = `${type}-page-${page_numb}`;
+    //   const capture = document.getElementById(list_id);
+    //   domtoimage
+		// 		.toPng(capture)
+    //     .then((dataUrl) => {
+		// 			const page = `page_${page_numb}`;
+    //       this.site_settings.print_image[type][page] = dataUrl;
+		// 			this.site_settings.print_image[type][load] = false;
+    //     })
+    //     .catch((error) => {
+		// 			this.site_settings.print_image[type][load] = false;
+    //       console.error("oops, something went wrong!", error);
+    //     });
+    // },
+
+    onCapture(type, page_numb) {
+			const load = `load_${page_numb}`;
+			this.site_settings.print_image[type][load] = true;
+			const list_id = `${type}-page-${page_numb}`;
+      const capture = document.getElementById(list_id);
+      domtoimage
+				.toPng(capture)
+        .then((dataUrl) => domtoimage.toPng(capture))
+        .then((dataUrl2) => {
+					const page = `page_${page_numb}`;
+          this.site_settings.print_image[type][page] = dataUrl2;
+					this.site_settings.print_image[type][load] = false;
+        })
+        .catch((error) => {
+					this.site_settings.print_image[type][load] = false;
+          console.error("oops, something went wrong!", error);
+        });
+    },
+	},
+};
+</script>
+
+<style>
+.print-page {
+	width: 100%;
+	height: 2952px;
+	padding: 72px;
+	background-color: #ffffff;
+	width: 2088px;
+	color: #000000;
+}
+</style>

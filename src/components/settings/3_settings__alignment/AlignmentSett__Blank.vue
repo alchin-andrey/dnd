@@ -1,17 +1,12 @@
 <template>
-	<My-Selection-Box :shown="alignment_page.shown.blank_print" title="blank_print" :select="MY.param.blank_print">
-		<AppCardWrapp 
-		v-for="item in blank_arr"
-		:key="item"
-		:active_card="MY.param.blank_print == item.name" 
-		@click="getBlank(item.name)">
+	<My-Selection-Box :shown="alignment_page.shown.blank_print" title="blank_print" :select="MY.param.blank_print"
+		mob_fixed>
+		<AppCardWrapp v-for="item in blank_arr" :key="item" :active_card="MY.param.blank_print == item.name"
+			@click="getBlank(item.name)">
 			<div>
 				<section>
-					<img 
-					class="img-size" 
-					:src="site_settings.print_image[item.name].page_1"
-					v-if="!site_settings.print_image[item.name].load_1 && site_settings.print_image[item.name].page_1"
-					>
+					<img class="img-size" :src="site_settings.print_image[item.name].page_1"
+						v-if="!site_settings.print_image[item.name].load_1 && site_settings.print_image[item.name].page_1">
 					<div class="flex-row-c-jc size-load" v-else>
 						<div>
 							<div class="loader"></div>
@@ -37,8 +32,8 @@ export default {
 	data() {
 		return {
 			blank_arr: [
-				{name: 'standard', details: 'blank_standard_details'},
-				{name: 'oldschool', details: 'blank_oldschool_details'},
+				{ name: 'standard', details: 'blank_standard_details' },
+				{ name: 'oldschool', details: 'blank_oldschool_details' },
 			]
 		};
 	},
@@ -69,28 +64,32 @@ export default {
 }
 
 .loader {
-   --b: 5px;  /* border thickness */
-   --n: 10;    /* number of dashes*/
-   --g: 10deg; /* gap between dashes*/
-   --c: rgb(255, 255, 255);   /* the color */
-   width: 50px; /* size */
-   aspect-ratio: 1;
-   border-radius: 50%;
-   padding: 1px;
-   background: conic-gradient(#0000,var(--c)) content-box;
-   -webkit-mask:
-     repeating-conic-gradient(#0000 0deg,
-        #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
-        #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
-     radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
-           mask:
-     repeating-conic-gradient(#0000 0deg,
-        #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
-        #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
-     radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
-   -webkit-mask-composite: destination-in;
-           mask-composite: intersect;
-   animation: load 1s infinite steps(var(--n));
- }
- @keyframes load {to{transform: rotate(1turn)}}
-</style>
+	--b: 5px; /* border thickness */
+	--n: 10; /* number of dashes*/
+	--g: 10deg; /* gap between dashes*/
+	--c: rgb(255, 255, 255); /* the color */
+	width: 50px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	padding: 1px;
+	background: conic-gradient(#0000, var(--c)) content-box;
+	-webkit-mask:
+		repeating-conic-gradient(#0000 0deg,
+			#000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+			#0000 calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+		radial-gradient(farthest-side, #0000 calc(98% - var(--b)), #000 calc(100% - var(--b)));
+	mask:
+		repeating-conic-gradient(#0000 0deg,
+			#000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+			#0000 calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+		radial-gradient(farthest-side, #0000 calc(98% - var(--b)), #000 calc(100% - var(--b)));
+	-webkit-mask-composite: destination-in;
+	mask-composite: intersect;
+	animation: load 1s infinite steps(var(--n));
+}
+
+@keyframes load {
+	to {
+		transform: rotate(1turn)
+	}
+}</style>
