@@ -136,21 +136,21 @@ export default {
 			const numb_page_full = element.clientHeight / 2952;
 			const numb_page_main = this.MY.param.blank_print == 'standard' ? 5 : 4;
 			const num_page_spell = numb_page_full - numb_page_main;
-			console.log('num_page_spell:', num_page_spell);
 			const opt = {
 				margin: 0,
 				filename: `${name}_LVL${lvl}_${type}.pdf`,
 				image: { type: "jpeg", quality: 1 },
 				html2canvas: {
-					dpi: 150,
-					scale: 1,
+					// dpi: 150,
+					dpi: 300,
+					scale: 2,
 					width: 2088,
 					// height: 2952,
 					// width: element.clientWidth,
 					// height: element.clientHeight,
-					imageTimeout: 30000,
+					// imageTimeout: 30000,
 					letterRendering: true,
-					allowTaint: true,
+					// allowTaint: true,
 					useCORS: true,
 				},
 				jsPDF: {
@@ -173,8 +173,6 @@ export default {
 			if (this.MY.param.blank_print == 'standard') {
 				elements.push(document.getElementById('print-page-6'));
 			}
-
-			console.log('elements:', elements)
 
 			let worker = html2pdf()
 				.set(opt)
