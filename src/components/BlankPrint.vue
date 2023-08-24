@@ -2,10 +2,10 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-    <Blank__Page_1 class="print-page" :blank_print="MY.param.blank_print"/>
-    <Blank__Page_2 class="print-page" :blank_print="MY.param.blank_print"/>
+    <Blank__Page_1 class="print-page int-400-22" id="print-page-1" :blank_print="MY.param.blank_print"/>
+    <Blank__Page_2 class="print-page int-400-22" id="print-page-2" :blank_print="MY.param.blank_print"/>
 
-      <main class="print-page">
+      <main class="print-page int-400-22" id="print-page-3" >
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min"/>
           <AppSpells
@@ -203,7 +203,8 @@ export default {
 }
 
 .print-page {
-	width: 100%;
+	/* width: 100%; */
+  width: 2088px;
 	height: 2952px;
 	padding: 72px;
 }

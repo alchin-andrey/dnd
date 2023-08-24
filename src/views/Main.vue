@@ -131,13 +131,16 @@ export default {
 			}
 		},
 
-		loadPdf() {
+		async loadPdf() {
 			const lvl = this.MY.level;
 			const type = this.T(this.MY.param.blank_print);
 			const name = this.MY.name.length !== 0
 				? this.MY.name
 				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
-			const element = document.getElementById("element-to-convert");
+			// const element = document.getElementById("element-to-convert");
+			const element_1 = document.getElementById("print-page-1");
+			const element_2 = document.getElementById("print-page-2");
+			const element_3 = document.getElementById("print-page-3");
 			// const element = document.getElementById("page_1");
 			const opt = {
 				margin: 0,
@@ -147,7 +150,7 @@ export default {
 					dpi: 150,
 					scale: 1,
 					width: 2088,
-					height: 2952 * 3,
+					// height: 2952,
 					// width: element.clientWidth,
 					// height: element.clientHeight,
 					imageTimeout: 30000,
@@ -185,12 +188,41 @@ export default {
 // 					setTimeout(() => this.loading_pdf = 0, 2000);
 // 				});
 
-			html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
-				.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+
+const elements = [element_1, element_2, element_3];
+
+  let worker = html2pdf()
+    .set(opt)
+    .from(elements[0]);
+
+  if (elements.length > 1) {
+    worker = worker.toPdf();
+
+    elements.slice(1).forEach(async element => {
+      worker = worker
+        .get('pdf')
+        .then(pdf => {
+          pdf.addPage();
+        })
+        .from(element)
+        .toContainer()
+        .toCanvas()
+        .toPdf();
+    });
+  }
+
+  return worker.save().then(() => this.progress_load = 100)
 				.output().then(() => {
 					setTimeout(() => this.progress_load = 0, 1000);
 					setTimeout(() => this.loading_pdf = 0, 2000);
-				});
+				});;
+
+			// html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
+			// 	.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+			// 	.output().then(() => {
+			// 		setTimeout(() => this.progress_load = 0, 1000);
+			// 		setTimeout(() => this.loading_pdf = 0, 2000);
+			// 	});
 		},
 
 		getWatch_Race() {
