@@ -19,8 +19,10 @@
 			</main>
 
       <main class="print-page" 
-        v-for="arr in list_Spell_Left_Arr"
-				:key="arr">
+        v-for="arr, i in list_Spell_Left_Arr"
+				:key="arr"
+        :id="`print-page-4.${i+1}`"
+        >
         <section class="col-wrap-spell">
           <AppSpells
             class="cell-spell mr-min"
@@ -32,11 +34,11 @@
         </section>
 			</main>
 
-      <main class="print-page">
+      <main class="print-page" id="print-page-5">
         <BlankText__All/>
 			</main>
 
-      <main class="print-page" v-if="!oldSchool_Blank">
+      <main class="print-page" v-if="!oldSchool_Blank" id="print-page-6">
         <BlankText__Biography class="wrap-head" />
         <section class="wrap-bottom int-600-28 flex_row">
           <div>{{T('print_characters')}}</div>

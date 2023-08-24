@@ -2,8 +2,8 @@
 	<div class="main-class">
 		<Main__MenuBar />
 		<Main__SetBar />
-		<Main__CharBar v-show="!PRINT_BLANK"/>
-		<Main__ParamBar v-show="!PRINT_BLANK"/>
+		<Main__CharBar v-show="!PRINT_BLANK" />
+		<Main__ParamBar v-show="!PRINT_BLANK" />
 
 		<!-- <BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/> -->
 	</div>
@@ -12,20 +12,15 @@
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
 		<section class="flex-col h-100">
 			<PromoSlider />
-			<Donate 
-			:class="{
+			<Donate :class="{
 				'pd-32': screen_Max,
 				'pd-20': !screen_Max,
-				}" 
-				finish 
-				@getPdf="exportToPDF()" 
-				:progress="progress_load"
-				/>
+			}" finish @getPdf="exportToPDF()" :progress="progress_load" />
 		</section>
 	</my-dialog-spell>
 
 	<BlankScreen />
-	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
+	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert" />
 </template>
 
 <script>
@@ -55,7 +50,7 @@ export default {
 		this.getCreated();
 	},
 
-		computed: {
+	computed: {
 		//STORES
 		...mapState(useMYStore, [
 			"MY",
@@ -123,7 +118,7 @@ export default {
 		]),
 		...mapActions(useGenderStore, ["getRandomName"]),
 
-				exportToPDF() {
+		exportToPDF() {
 			if (!this.loading_pdf) {
 				this.loading_pdf = true;
 				this.progress_load = 15;
@@ -131,17 +126,17 @@ export default {
 			}
 		},
 
-		async loadPdf() {
+		loadPdf() {
 			const lvl = this.MY.level;
 			const type = this.T(this.MY.param.blank_print);
 			const name = this.MY.name.length !== 0
 				? this.MY.name
 				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
-			// const element = document.getElementById("element-to-convert");
-			const element_1 = document.getElementById("print-page-1");
-			const element_2 = document.getElementById("print-page-2");
-			const element_3 = document.getElementById("print-page-3");
-			// const element = document.getElementById("page_1");
+			const element = document.getElementById("element-to-convert");
+			const numb_page_full = element.clientHeight / 2952;
+			const numb_page_main = this.MY.param.blank_print == 'standard' ? 5 : 4;
+			const num_page_spell = numb_page_full - numb_page_main;
+			console.log('num_page_spell:', num_page_spell);
 			const opt = {
 				margin: 0,
 				filename: `${name}_LVL${lvl}_${type}.pdf`,
@@ -162,56 +157,47 @@ export default {
 					unit: "pt",
 					format: "a4",
 					orientation: "portrait",
-					compress: true,
+					// compress: true,
 					// hotfixes: "px_scaling",
 				},
 			};
 
-			// generating the PDF
-//   let docPDF = html2pdf()
-//     .from(element)
-//     .set(opt)
-// 		.toContainer()
-// 		.then(() => this.progress_load = 85)
-//     .outputPdf()
-//     .get("pdf")
-//     .then((pdf) => {
-//       let totalPages = pdf.internal.getNumberOfPages();
-//       for (let i = 1; i <= totalPages; i++) {
-//         pdf.setPage(i);
-//       }
-//     });
+			const elements = [];
+			for (let i = 1; i <= 3; i++) {
+				elements.push(document.getElementById(`print-page-${i}`));
+			}
+			for (let i = 1; i <= num_page_spell; i++) {
+				elements.push(document.getElementById(`print-page-4.${i}`));
+			}
+			elements.push(document.getElementById('print-page-5'));
+			if (this.MY.param.blank_print == 'standard') {
+				elements.push(document.getElementById('print-page-6'));
+			}
 
-// await docPDF.outputPdf().save().then(() => this.progress_load = 100)
-// 				.output().then(() => {
-// 					setTimeout(() => this.progress_load = 0, 1000);
-// 					setTimeout(() => this.loading_pdf = 0, 2000);
-// 				});
+			console.log('elements:', elements)
 
+			let worker = html2pdf()
+				.set(opt)
+				.from(elements[0]);
 
-const elements = [element_1, element_2, element_3];
+			if (elements.length > 1) {
+				worker = worker.toPdf();
 
-  let worker = html2pdf()
-    .set(opt)
-    .from(elements[0]);
+				elements.slice(1).forEach(async element => {
+					worker = worker
+						.get('pdf')
+						.then(pdf => {
+							pdf.addPage();
+						})
+						.from(element)
+						.toContainer()
+						.then(() => this.progress_load = 85)
+						.toCanvas()
+						.toPdf();
+				});
+			}
 
-  if (elements.length > 1) {
-    worker = worker.toPdf();
-
-    elements.slice(1).forEach(async element => {
-      worker = worker
-        .get('pdf')
-        .then(pdf => {
-          pdf.addPage();
-        })
-        .from(element)
-        .toContainer()
-        .toCanvas()
-        .toPdf();
-    });
-  }
-
-  return worker.save().then(() => this.progress_load = 100)
+			return worker.save().then(() => this.progress_load = 100)
 				.output().then(() => {
 					setTimeout(() => this.progress_load = 0, 1000);
 					setTimeout(() => this.loading_pdf = 0, 2000);
@@ -254,6 +240,7 @@ const elements = [element_1, element_2, element_3];
 .main-class::-webkit-scrollbar {
 	width: 0;
 }
+
 @media (max-width: 1279px) {
 	.main-class {
 		display: flex;
@@ -300,5 +287,4 @@ const elements = [element_1, element_2, element_3];
 	margin-top: 26px;
 	margin-bottom: 10px;
 }
-
 </style>
