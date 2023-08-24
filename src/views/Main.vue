@@ -149,6 +149,7 @@ export default {
 					// windowWidth: 1044,
 					width: 2088,
 					// height: 1223,
+					height: 2952,
 					// imageTimeout: 30000,
 					letterRendering: true,
 					allowTaint: true,
