@@ -131,17 +131,61 @@ export default {
 			}
 		},
 
-		loadPdf() {
+		// loadPdf() {
+		// 	const lvl = this.MY.level;
+		// 	const type = this.T(this.MY.param.blank_print);
+		// 	const name = this.MY.name.length !== 0
+		// 		? this.MY.name
+		// 		: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
+
+		// 	const element = document.getElementById("element-to-convert");
+		// 	const opt = {
+		// 		margin: 0,
+		// 		filename: `${name}_LVL${lvl}_${type}.pdf`,
+		// 		image: { type: "jpeg", quality: 1 },
+		// 		html2canvas: {
+		// 			dpi: 150,
+		// 			scale: 1,
+		// 			width: 2088,
+		// 			// height: 2952,
+		// 			// width: element.clientWidth,
+		// 			// height: element.clientHeight,
+		// 			imageTimeout: 30000,
+		// 			letterRendering: true,
+		// 			allowTaint: true,
+		// 			useCORS: true,
+		// 		},
+		// 		jsPDF: {
+		// 			unit: "pt",
+		// 			format: "a4",
+		// 			orientation: "portrait",
+		// 			compress: true,
+		// 			// hotfixes: "px_scaling",
+		// 		},
+		// 	};
+
+		// 	html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
+		// 		.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+		// 		.output().then(() => {
+		// 			setTimeout(() => this.progress_load = 0, 1000);
+		// 			setTimeout(() => this.loading_pdf = 0, 2000);
+		// 		});
+		// },
+
+		async loadPdf() {
 			const lvl = this.MY.level;
 			const type = this.T(this.MY.param.blank_print);
 			const name = this.MY.name.length !== 0
 				? this.MY.name
 				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
+			
+				const fileName = `${name}_LVL${lvl}_${type}.pdf`;
 
 			const element = document.getElementById("element-to-convert");
+			// const element = document.getElementById("page_1");
 			const opt = {
 				margin: 0,
-				filename: `${name}_LVL${lvl}_${type}.pdf`,
+				filename: fileName,
 				image: { type: "jpeg", quality: 1 },
 				html2canvas: {
 					dpi: 150,
@@ -164,12 +208,33 @@ export default {
 				},
 			};
 
-			html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
-				.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+			// generating the PDF
+  let docPDF = html2pdf()
+    .from(element)
+    .set(opt)
+		.toContainer()
+		.then(() => this.progress_load = 85)
+    .outputPdf()
+    .get("pdf")
+    .then((pdf) => {
+      let totalPages = pdf.internal.getNumberOfPages();
+      for (let i = 1; i <= totalPages; i++) {
+        pdf.setPage(i);
+      }
+    });
+
+await docPDF.outputPdf().save().then(() => this.progress_load = 100)
 				.output().then(() => {
 					setTimeout(() => this.progress_load = 0, 1000);
 					setTimeout(() => this.loading_pdf = 0, 2000);
 				});
+
+			// html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
+			// 	.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+			// 	.output().then(() => {
+			// 		setTimeout(() => this.progress_load = 0, 1000);
+			// 		setTimeout(() => this.loading_pdf = 0, 2000);
+			// 	});
 		},
 
 		getWatch_Race() {
