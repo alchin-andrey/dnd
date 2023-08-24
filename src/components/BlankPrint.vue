@@ -178,7 +178,7 @@ export default {
 	width: 2088px; /* 1588 */
 	color: #000000;
 	z-index: 10;
-	height: 10000%;
+	/* height: 10000%; */
 	/* padding: 72px; */
 	overflow-y: scroll;
 	scrollbar-width: none;
