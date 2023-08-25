@@ -143,8 +143,8 @@ export default {
 				html2canvas: {
 					// dpi: 150,
 					// dpi: 300,
-					dpi: 192,
-					scale: 1.5,
+					dpi: 150,
+					scale: 1,
 					width: 2088,
 					// height: 2952,
 					// width: element.clientWidth,
