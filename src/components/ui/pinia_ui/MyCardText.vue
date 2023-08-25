@@ -109,10 +109,6 @@ export default {
 	margin-bottom: 0px;
 }
 
-.title:first-letter {
-	text-transform: uppercase;
-}
-
 .text {
 	color: rgba(255, 255, 255, 0.4);
 }
