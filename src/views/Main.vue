@@ -141,8 +141,6 @@ export default {
 				filename: `${name}_LVL${lvl}_${type}.pdf`,
 				image: { type: "jpeg", quality: 1 },
 				html2canvas: {
-					// dpi: 150,
-					// dpi: 300,
 					dpi: 150,
 					scale: 1,
 					width: 2088,
