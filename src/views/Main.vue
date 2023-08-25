@@ -149,7 +149,7 @@ export default {
 					// height: 2952,
 					// width: element.clientWidth,
 					// height: element.clientHeight,
-					imageTimeout: 30000,
+					// imageTimeout: 30000,
 					letterRendering: true,
 					// allowTaint: true,
 					useCORS: true,

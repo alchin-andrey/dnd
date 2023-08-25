@@ -1,5 +1,5 @@
 <template>
-	<div class="int-400">
+	<div class="int-400 flex-col">
 		<div
 			class="title"
 			:class="{
@@ -9,9 +9,9 @@
 		>
 			{{ t_Title }}
 		</div>
-		<div v-if="text_html" class="text" :class="{'print-text': blank_print, 'int-400-22': blank_print,}" v-html="t_Html"></div>
-    <div v-if="text_html_2" class="text" :class="{'print-text': blank_print, 'int-400-22': blank_print,}" v-html="t_Html_2"></div>
-		<div else class="text" 
+		<div v-if="text_html" class="text" :class="{'print-text': blank_print, 'int-400-22': blank_print,}" v-html="t_Html" />
+    <div v-if="text_html_2" class="text" :class="{'print-text': blank_print, 'int-400-22': blank_print,}" v-html="t_Html_2" />
+		<div else class="text text-space" 
     :class="{
     'print-text': blank_print,
     'int-400-22': blank_print,}">
@@ -115,6 +115,8 @@ export default {
 
 .text {
 	color: rgba(255, 255, 255, 0.4);
+}
+.text-space {
 	text-align: start;
 	white-space: pre-line;
 }
