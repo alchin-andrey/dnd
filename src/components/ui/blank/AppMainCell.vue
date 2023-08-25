@@ -2,7 +2,7 @@
 	<div class="grid-cell">
 		<div class="cell-item">{{t_Title}}</div>
 		<div 
-    class="cell-item font-w-600"
+    class="cell-item int-600-22"
     :class="{wrap_arr: content_arr.length !== 0}"
     >{{t_Content}}</div>
 	</div>
@@ -60,9 +60,5 @@ export default {
 
 .wrap_arr {
   white-space: normal;
-}
-
-.font-w-600 {
-  font-weight: 600;
 }
 </style>

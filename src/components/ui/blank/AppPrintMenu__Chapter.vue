@@ -1,7 +1,7 @@
 <template>
 	<section class="column">
 		<div class="column-title jbm-500-22">{{ t_Title }}</div>
-		<div class="column-item font-w-600">
+		<div class="column-item int-600-22">
 			<div class="item-text-wrap" :class="{'h-72': base_Stats}" v-for="elem in render_Chapter">
         <div class="item-text" :class="{'item-text-normal': base_Stats}">
           {{ rend_Elem(elem) }}
@@ -66,9 +66,6 @@ export default {
 </script>
 
 <style scoped>
-.font-w-600 {
-	font-weight: 600;
-}
 .column {
   width: 100%;
 	min-height: 36px;
