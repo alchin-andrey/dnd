@@ -73,10 +73,10 @@ export default {
 			return this.t(this.text_html_2);
 		},
 		t_Text() {
-			return this.t(this.text);
+			return this.T(this.text);
 		},
 		t_Rare() {
-			return this.t(`${this.rare}_details`);
+			return this.T(`${this.rare}_details`);
 		},
 	},
 };
@@ -120,24 +120,14 @@ export default {
 	color: black;
 }
 
-.text:first-letter {
-	text-transform: uppercase;
-}
-
 .text span {
 	color: #ffc93d;
 	margin-top: 20px;
 }
 
-.text span:first-letter {
-	text-transform: uppercase;
-}
+
 .rare-text {
   color: #ffc93d;
-}
-
-.rare-text:first-letter {
-	text-transform: uppercase;
 }
 
 .print-rare {

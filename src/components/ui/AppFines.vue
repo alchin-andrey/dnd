@@ -78,11 +78,11 @@ export default {
 		},
 
 		t_Title() {
-			return this.t(this.fines.keyword);
+			return this.T(this.fines.keyword);
 		},
 
 		t_Details() {
-			return this.t(this.fines.details);
+			return this.T(this.fines.details);
 		},
 
 		em_Upd() {
@@ -134,10 +134,6 @@ export default {
 .text {
 	margin-left: 4px;
 	padding: 2px 0 1px 0;
-}
-
-.text:first-letter {
-	text-transform: uppercase;
 }
 
 .emoji_true {

@@ -33,15 +33,15 @@ export default {
 
 	computed: {
 		t_Title() {
-			return this.t(this.title);
+			return this.T(this.title);
 		},
 		t_Text() {
 			if (this.ethnos_color) {
-				return `${this.t("characteristic")} ${this.t("for_ethnos")}`;
+				return `${this.T("characteristic")} ${this.t("for_ethnos")}`;
 			} else if (this.race_color) {
-				return `${this.t("characteristic")} ${this.t("for_race")}`;
+				return `${this.T("characteristic")} ${this.t("for_race")}`;
 			} else {
-				return `${this.t("not_characteristic")} ${this.t("for_race")}`;
+				return `${this.T("not_characteristic")} ${this.t("for_race")}`;
 			}
 		},
 	},
@@ -60,17 +60,9 @@ export default {
 	margin-bottom: 4px;
 }
 
-.title:first-letter {
-	text-transform: uppercase;
-}
-
 .text {
 	color: rgba(255, 255, 255, 0.4);
 	text-align: start;
-}
-
-.text:first-letter {
-	text-transform: uppercase;
 }
 
 .ethnos {

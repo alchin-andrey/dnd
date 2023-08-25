@@ -672,7 +672,7 @@ export default {
     },
 
     t_Type() {
-      let string = this.t(this.Spell_Index.type);
+      let string = this.T(this.Spell_Index.type);
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
 
@@ -1620,10 +1620,6 @@ export default {
   display: flex;
   align-items: center;
   white-space: pre;
-}
-
-.title_spell:first-letter {
-  text-transform: uppercase;
 }
 
 .gray_2 {
