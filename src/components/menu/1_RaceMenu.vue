@@ -9,7 +9,7 @@
 				:type="MY_Ethnos.name"
 				:rare="MY_Ethnos.rare"
 			/>
-			<AppSelectionArr :menu="MY_Backstory_Menu"/>
+			<AppSelectionArr :menu="MY_Backstory_Menu" :step_num="1"/>
 		</section>
 		<!-- RACE ETHNOS -->
 
@@ -17,21 +17,21 @@
 			class="selection_menu"
 			v-if="сustomm_Settings_Race_Arr.length !== 0"
 		>
-			<AppSelectionArr :menu="other_Filter"/>
-      <AppSelectionArr :menu="spells_0_Filter"/>
-			<AppSelectionArr :menu="spells_Filter"/>
-      <AppSelectionArr :menu="stats_Filter"/>
-			<AppSelectionArr :menu="skills_Filter"/>
-			<AppSelectionArr :menu="tools_Filter"/>
-			<AppSelectionArr :menu="languages_Filter"/>
-      <AppSelectionArr :menu="armors_Filter"/>
-			<AppSelectionArr :menu="weapons_Filter"/>
-			<AppSelectionArr :menu="packs_Filter"/>
-			<AppSelectionArr :menu="inventory_Filter"/>
+			<AppSelectionArr :menu="other_Filter" :step_num="1"/>
+      <AppSelectionArr :menu="spells_0_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="spells_Filter" :step_num="1"/>
+      <AppSelectionArr :menu="stats_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="skills_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="tools_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="languages_Filter" :step_num="1"/>
+      <AppSelectionArr :menu="armors_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="weapons_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="packs_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="inventory_Filter" :step_num="1"/>
 		</section>
 
 		<section class="selection_menu undefined" v-if="shown_Undefined">
-			<AppSelectionArr :menu="undefined_Filter" />
+			<AppSelectionArr :menu="undefined_Filter" :step_num="1"/>
 		</section>
 
 		<!-- OTHER RACE SETTINGS -->

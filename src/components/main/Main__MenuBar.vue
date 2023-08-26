@@ -8,8 +8,8 @@
 						<AppCharCard mob_menu v-if="!screen_Max" @click="showMobParam()"/>
 						<section v-if="!pages.race_page">
 							<div class="back-page-grup">
-								<AppBackPage :text_arr="arr_Name_Race_Page" @click="goPage('race_page')" />
-								<AppBackPage v-if="!pages.class_page" :text_arr="arr_Name_Class_Page" @click="goPage('class_page')" />
+								<AppBackPage :text_arr="arr_Name_Race_Page" :overflow="overflow_Step_1" @click="goPage('race_page')" />
+								<AppBackPage v-if="!pages.class_page" :text_arr="arr_Name_Class_Page" :overflow="overflow_Step_2" @click="goPage('class_page')" />
 							</div>
 							<div class="delimiter mr-t-22" v-if="screen_Max" />
 						</section>
@@ -21,9 +21,9 @@
 				</div>
 				<div class="main-menu-wrap" @click="showHome()">
 					<div class="main-chapter-menu">
-						<RaceMenu v-if="pages.race_page" @click.stop />
-						<ClassMenu v-if="pages.class_page" @click.stop />
-						<AlignmentMenu v-if="pages.alignment_page" @click.stop />
+						<RaceMenu v-show="pages.race_page" @click.stop />
+						<ClassMenu v-show="pages.class_page" @click.stop />
+						<AlignmentMenu v-show="pages.alignment_page" @click.stop />
 					</div>
 					<transition name="btm-fade" mode="out-in">
 						<my-button v-if="chang_Btm" :numb="btn_Numb" :title="btn_Name" @btmDo="btnGo()" />
@@ -44,6 +44,7 @@ import HeaderMenu from "@/components/menu/0_HeaderMenu.vue";
 import RaceMenu from "@/components/menu/1_RaceMenu.vue";
 import ClassMenu from "@/components/menu/2_ClassMenu.vue";
 import AlignmentMenu from "@/components/menu/3_AlignmentMenu.vue";
+import { useOverflowStore } from "@/stores/modules/OverflowStore";
 export default {
 	name: "Main__MenuBar",
 	components: {
@@ -70,6 +71,8 @@ export default {
 			"btn_Name",
 			"screen_Max"
 		]),
+
+		...mapState(useOverflowStore, ["overflow_Step_1", "overflow_Step_2"]),
 
 		arr_Name_Race_Page() {
 			let arr = [];

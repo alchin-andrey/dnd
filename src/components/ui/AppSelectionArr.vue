@@ -40,6 +40,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		step_num: {
+			type: Number,
+			default: null,
+		},
 	},
 	computed: {
 		...mapState(useMYStore, ["MY", "level_Filter_Arr"]),
@@ -52,7 +56,7 @@ export default {
 			"screen_Max", 
 			"screen_Menu_Num",
 		]),
-		...mapState(useOverflowStore, ["overflow_Item_Menu"]),
+		...mapState(useOverflowStore, ["overflow_Item_Menu", "overflow_steps"]),
 
 		active_Link: (stor) => (item) => {
 			return stor[stor.page_Open]?.shown[item.id_link];
@@ -87,18 +91,37 @@ export default {
 			return null;
 		},
 
+		// overflow_Item: (stor) => (item) => {
+		// 	if(item.name == "skills" && item?.filter == 'only_mastery') {
+		// 		return false;
+		// 	} else {
+		// 		return stor.overflow_Item_Menu(item);
+		// 	}
+		// },
+
 		overflow_Item: (stor) => (item) => {
+			let res = false;
 			if(item.name == "skills" && item?.filter == 'only_mastery') {
-				return false;
+				res = false;
 			} else {
-				return stor.overflow_Item_Menu(item);
+				res = stor.overflow_Item_Menu(item);
 			}
+			if(stor.step_num) {
+				const step = `step_${stor.step_num}`;
+				stor.overflow_steps[step][item.id_link] = res;
+			}
+			return res;
 		},
 
     sett_Counter: (stor) => (item) => {
       if (item.type == "spells") {
         const numb = item.select_numb - item.select_list.length;
-        return numb !== 0;
+				const res = numb !== 0;
+			if(stor.step_num) {
+				const step = `step_${stor.step_num}`;
+				stor.overflow_steps[step][`${item.id_link}__num`] = res;
+			}
+        return res;
       }
     },
 
@@ -148,6 +171,20 @@ export default {
 	},
 	methods: {
 		...mapActions(usePagesStore, ["showSettings"]),
+
+		// overflow_Item(item) {
+		// 	let res = false;
+		// 	if(item.name == "skills" && item?.filter == 'only_mastery') {
+		// 		res = false;
+		// 	} else {
+		// 		res = this.overflow_Item_Menu(item);
+		// 	}
+		// 	if(this.step_num) {
+		// 		const step = `step_${this.step_num}`;
+		// 		this.overflow_steps[step][item.id_link] = res;
+		// 	}
+		// 	return res;
+		// },
 	},
 };
 </script>

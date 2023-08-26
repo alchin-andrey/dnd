@@ -2,19 +2,19 @@
 	<div class="selection_menu_wrap">
 
     <div class="selection_menu" v-if="shown_Subclass">
-			<AppSelectionArr :menu="subclass_Filter"/>
-			<AppSelectionArr :menu="subclass_other_Filter"/>
+			<AppSelectionArr :menu="subclass_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="subclass_other_Filter" :step_num="2"/>
 		</div>
 
     <div class="selection_menu" v-if="shown_Other">
-			<AppSelectionArr :menu="other_Filter"/>
+			<AppSelectionArr :menu="other_Filter" :step_num="2"/>
 		</div>
 
     <div class="selection_menu" v-if="shown_Spells">
-      <AppSelectionArr :menu="spells_0_Filter"/>
-			<AppSelectionArr :menu="spells_1_Filter"/>
-			<AppSelectionArr :menu="spells_Filter"/>
-			<AppSelectionArr :menu="spells_Arcanum_Filter"/>
+      <AppSelectionArr :menu="spells_0_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="spells_1_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="spells_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="spells_Arcanum_Filter" :step_num="2"/>
 		</div>
 
     <div class="selection_menu">
@@ -24,24 +24,24 @@
 				title="stats"
 				:t_type="base_Stats_Menu"
 			></AppSelection>
-			<AppSelectionArr :menu="feats_Filter" no_name/>
-			<AppSelectionArr :menu="stats_Filter" no_name/>
-			<AppSelectionArr :menu="skills_Filter"/>
-			<AppSelectionArr :menu="tools_Filter"/>
-			<AppSelectionArr :menu="languages_Filter"/>
+			<AppSelectionArr :menu="feats_Filter" :step_num="2" no_name/>
+			<AppSelectionArr :menu="stats_Filter" :step_num="2" no_name/>
+			<AppSelectionArr :menu="skills_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="tools_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="languages_Filter" :step_num="2"/>
 		</div>
 
     <div class="selection_menu" v-if="shown_Equip">
-      <AppSelectionArr :menu="armors_Filter"/>
-			<AppSelectionArr :menu="weapons_Filter"/>
-			<AppSelectionArr :menu="packs_Filter"/>
-			<AppSelectionArr :menu="inventory_Filter"/>
+      <AppSelectionArr :menu="armors_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="weapons_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="packs_Filter" :step_num="2"/>
+			<AppSelectionArr :menu="inventory_Filter" :step_num="2"/>
 		</div>
 
     <AlignmentMenu__Photo />
 
     <div class="selection_menu undefined" v-if="shown_Undefined">
-      <AppSelectionArr :menu="undefined_Filter"/>
+      <AppSelectionArr :menu="undefined_Filter" :step_num="2"/>
 		</div>
 
 	</div>

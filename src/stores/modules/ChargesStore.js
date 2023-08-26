@@ -3,10 +3,6 @@ import { useMYStore } from "@/stores/user/MYStore";
 
 export const useChargesStore = defineStore({
 	id: "ChargesStore",
-	state: () => ({
-		fines: [],
-	}),
-
 	getters: {
     charges_Race_Main_Arr() {
       const MYStore = useMYStore();

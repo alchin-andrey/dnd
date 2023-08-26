@@ -1,5 +1,5 @@
 <template>
-	<div class="flex_custom">
+	<div class="flex_custom" :class="{'rare-text rare-back': overflow}">
 		<div class="column-link int-400">
 			<p :style="{'width': size_Text}">
 			{{ t_Title }}
@@ -22,6 +22,10 @@ export default {
 		text_arr: {
 			type: Array,
 			default: [],
+		},
+		overflow: {
+			type: Boolean,
+			default: false,
 		},
 	},
 
@@ -85,6 +89,9 @@ export default {
 		isolation: isolate;
 		border-radius: 12px;
 		color: black;
+	}
+	.rare-back {
+		background: #ffc93d;
 	}
 }
 </style>
