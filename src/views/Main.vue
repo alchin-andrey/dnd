@@ -41,7 +41,6 @@ export default {
 		return {
 			PRINT_BLANK: false,
 			// PRINT_BLANK: true,
-			// PRINT_BLANK: true,
 			progress_load: 0,
 			loading_pdf: false,
 		};
@@ -148,7 +147,7 @@ export default {
 					// height: 2952,
 					// width: element.clientWidth,
 					// height: element.clientHeight,
-					// imageTimeout: 30000,
+					imageTimeout: 30000,
 					letterRendering: true,
 					// allowTaint: true,
 					useCORS: true,
