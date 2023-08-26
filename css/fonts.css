@@ -68,6 +68,16 @@
   text-transform: uppercase;
 }
 
+.jbm-500-22-blank {
+  font-family: 'JetBrains Mono-500';
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--px-22);
+  line-height: var(--px-36);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .jbm-500-40 {
   font-family: 'JetBrains Mono-500';
   font-style: normal;
@@ -96,6 +106,15 @@
 	letter-spacing: 0.02em;
 }
 
+.int-400-22-blank {
+	font-family: "Inter-400";
+	font-style: normal;
+	font-weight: normal;
+	font-size: var(--px-22);
+	line-height: var(--px-30);
+	letter-spacing: 0.02em;
+}
+
 .int-500-22 {
 	font-family: "Inter-500";
 	font-style: normal;
@@ -114,12 +133,30 @@
 	letter-spacing: 0.02em;
 }
 
+.int-600-22-blank {
+	font-family: "Inter-600";
+	font-style: normal;
+	font-weight: normal;
+	font-size: var(--px-22);
+	line-height: var(--px-30);
+	letter-spacing: 0.02em;
+}
+
 .int-600-28 {
 	font-family: 'Inter-600';
   font-style: normal;
   font-weight: normal;
   font-size: 28px;
   line-height: 48px;
+  letter-spacing: 0.02em;
+}
+
+.int-600-28-blank {
+	font-family: 'Inter-600';
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--px-28);
+  line-height: var(--px-48);
   letter-spacing: 0.02em;
 }
 
@@ -132,12 +169,30 @@
   letter-spacing: 0.02em;
 }
 
+.int-600-48-blank {
+	font-family: "Inter-600";
+	font-style: normal;
+	font-weight: normal;
+	font-size: var(--px-48);
+	line-height: var(--px-60);
+	letter-spacing: 0.02em;
+}
+
 .int-600-72 {
   font-family: 'Inter-600';
   font-style: normal;
   font-weight: normal;
   font-size: 72px;
   line-height: 72px;
+  letter-spacing: 0.02em;
+}
+
+.int-600-72-blank {
+  font-family: 'Inter-600';
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--px-72);
+  line-height: var(--px-72);
   letter-spacing: 0.02em;
 }
 
@@ -156,6 +211,15 @@
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 20px;
+	letter-spacing: 0.02em;
+}
+
+.int-700-18-blank {
+	font-family: "Inter-700";
+	font-style: normal;
+	font-weight: normal;
+	font-size: var(--px-18);
+	line-height: var(--px-20);
 	letter-spacing: 0.02em;
 }
 
