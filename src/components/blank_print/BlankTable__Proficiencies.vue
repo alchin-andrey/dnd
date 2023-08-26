@@ -47,27 +47,29 @@ export default {
 <style scoped>
 .grid-body {
 	display: grid;
-	grid-template-rows: 80px 168px 110px 110px;
+	grid-template-rows: var(--px-80) var(--px-168) var(--px-110) var(--px-110);
 }
 
 .cell {
-	padding: 4px 12px;
+	padding: var(--px-4) var(--px-12);
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
 
-	border-right: 1px solid #000000;
-	border-bottom: 1px solid #000000;
-	border-left: 1px solid #000000;
+	border-right: var(--border-blank);
+	border-bottom: var(--border-blank);
+	border-left: var(--border-blank);
 }
 
 .cell-body> :first-child {
-	border-top: 1px solid #000000;
-	border-radius: 6px 6px 0 0;
+	border-top: var(--border-blank);
+	border-top-left-radius: var(--cell-rad);
+	border-top-right-radius: var(--cell-rad);
 }
 
 .cell-body> :last-child {
-	border-radius: 0 0 6px 6px;
+	border-bottom-right-radius: var(--cell-rad);
+	border-bottom-left-radius: var(--cell-rad);
 }
 </style>

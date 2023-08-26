@@ -1,8 +1,8 @@
 <template>
 	<section class="int-400-22" v-if="pages.alignment_page">
 	<!-- <section class="int-400-22"> -->
-		<Blank__Page_1 class="print-page" blank_print="oldschool" id="oldschool-page-1"/>
-		<Blank__Page_1 class="print-page" blank_print="standard" id="standard-page-1"/>
+		<Blank__Page_1 class="print-page" blank_print="oldschool" blank_size="print" id="oldschool-screen-1"/>
+		<Blank__Page_1 class="print-page" blank_print="standard" blank_size="print" id="standard-screen-1"/>
 	</section>
 </template>
 
@@ -53,7 +53,8 @@ export default {
     onCapture(type, page_numb) {
 			const load = `load_${page_numb}`;
 			this.site_settings.print_image[type][load] = true;
-			const list_id = `${type}-page-${page_numb}`;
+			const list_id = `${type}-screen-${page_numb}`;
+      console.log('list_id:', list_id)
       const capture = document.getElementById(list_id);
 
 			const options = {
@@ -77,7 +78,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .print-page {
 	width: 100%;
 	height: 2952px;

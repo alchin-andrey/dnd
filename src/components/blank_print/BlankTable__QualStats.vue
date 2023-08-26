@@ -55,12 +55,12 @@
 		</div>
 		<div :class="style_Grid__Skills" v-if="show_Skills">
 			<section
-				class="skill-wrapp pd-rl-24 cell"
+				class="skill-wrapp cell"
 				v-for="skill in t_skill_Arr"
 				:key="skill.t_name"
 			>
-				<div class="jbm-500-22">{{ skill.t_name }}</div>
-				<div class="int-600-22">{{ skill_Numb(skill.numb) }}</div>
+				<div class="jbm-500-22-blank">{{ skill.t_name }}</div>
+				<div class="int-600-22-blank">{{ skill_Numb(skill.numb) }}</div>
 			</section>
 		</div>
 	</div>
@@ -151,85 +151,85 @@ export default {
 
 .grid-body--full-left {
 	display: grid;
-	grid-template-rows: 288px 360px;
-	grid-template-columns: repeat(6, 216px);
+	grid-template-rows: var(--px-288) var(--px-360);
+	grid-template-columns: repeat(6, var(--px-216));
 }
 
 .grid-body--full-right {
 	display: grid;
-	grid-template-rows: repeat(9, 72px);
-	grid-template-columns: repeat(2, 324px);
+	grid-template-rows: repeat(9, var(--px-72));
+	grid-template-columns: repeat(2, var(--px-324));
   grid-auto-flow: column;
 }
 
 .grid-body--stats {
 	display: grid;
-	grid-template-rows: repeat(6, 354px);
-	grid-template-columns: 216px;
+	grid-template-rows: repeat(6, var(--px-354));
+	grid-template-columns: var(--px-216);
 }
 
 .grid-body--atribute {
 	display: grid;
-	grid-template-rows: repeat(3, 288px);
-	grid-template-columns: repeat(3, 216px);
+	grid-template-rows: repeat(3, var(--px-288));
+	grid-template-columns: repeat(3, var(--px-216));
 }
 
 .grid-body--skills {
 	display: grid;
-	grid-template-rows: repeat(18, 70px);
-	grid-template-columns: 324px;
+	grid-template-rows: repeat(18, var(--px-70));
+	grid-template-columns: var(--px-324);
 }
 
 .cell {
-	border-right: 1px solid #000000;
-	border-bottom: 1px solid #000000;
+	border-right: var(--border-blank);
+	border-bottom: var(--border-blank);
 }
 
 .cell-body > * {
-	border-left: 1px solid #000000;
+	border-left: var(--border-blank);
 }
 
 .cell-body> :first-child {
-	border-top: 1px solid #000000;
-	border-radius: 6px 6px 0 0;
+	border-top: var(--border-blank);
+	border-radius: var(--px-6) var(--px-6) 0 0;
 }
 
 .cell-body> :last-child {
-	border-radius: 0 0 6px 6px;
+	border-radius: 0 0 var(--px-6) var(--px-6);
 }
 
 .grid-body--full-left > :first-child,
 .grid-body--atribute > :first-child {
-	border-left: 1px solid #000000;
-	border-radius: 6px 0 0 0;
+	border-left: var(--border-blank);
+	border-radius: var(--px-6) 0 0 0;
 }
 
 .grid-body--full-left > :nth-child(-n + 5),
 .grid-body--atribute > :nth-child(-n + 3) {
-	border-top: 1px solid #000000;
+	border-top: var(--border-blank);
 }
 
 .grid-body--atribute > :nth-child(5),
 .grid-body--full-left > :nth-child(6) {
-	border-left: 1px solid #000000;
-	border-radius: 0 0 0 6px;
+	border-left: var(--border-blank);
+	border-radius: 0 0 0 var(--px-6);
 }
 
 .grid-body--full-right > :nth-child(1) {
-	border-top: 1px solid #000000;
+	border-top: var(--border-blank);
 }
 
 
 
 .grid-body--atribute > :nth-child(3),
 .grid-body--full-right > :nth-child(10) {
-  border-top: 1px solid #000000;
-	border-radius: 0 6px 0 0;
+  border-top: var(--border-blank);
+	border-radius: 0 var(--px-6) 0 0;
 }
 
 .grid-body--atribute > :last-child,
 .grid-body--full-right > :last-child {
-	border-radius: 0 0 6px 0;
+	border-radius: 0 0 var(--px-6) 0;
 }
 
 .grid-col-2 {
@@ -238,12 +238,13 @@ export default {
 
 .grid-col-3 {
 	grid-column: span 3;
-	border-left: 1px solid #000000;
+	border-left: var(--border-blank);
 }
 
 .skill-wrapp {
 	display: flex;
-	height: 72px;
+	padding: 0 var(--px-24);
+	height: var(--px-72);
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;

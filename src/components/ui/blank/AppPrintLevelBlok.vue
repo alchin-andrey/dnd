@@ -1,10 +1,10 @@
 <template>
-	<section class="level-blok br-6" 
+	<section class="level-blok blank-br-6" 
 	:class="{
-		'br-24': br_24,
+		'blank-br-24': br_24,
 	}">
 		<div>{{ t_Title }}</div>
-		<div class="int-600-48" v-if="!title">{{ MY.level }}</div>
+		<div class="int-600-48-blank" v-if="!title">{{ MY.level }}</div>
 		<div v-if="!title">{{ t_Mastery }}</div>
 	</section>
 </template>
@@ -48,14 +48,17 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: center; */
-	padding-top: 8px;
-	gap: 2px;
-	width: 144px;
-	height: 144px;
-	border: 1px solid #000000;
+	padding-top: var(--px-8);
+	gap: var(--px-2);
+	width: var(--px-144);
+	height: var(--px-144);
+	border: var(--border-blank);
 	position: relative;
 	z-index: 1000;
 	background-color: #ffffff;
 }
+
+.blank-br-6 { border-radius: var(--px-6);}
+
+.blank-br-24 { border-radius: var(--px-24);}
 </style>

@@ -5,13 +5,13 @@
         <span>{{ print_Weapon_Name }}</span> 
         <span class="print-grey">{{ print_Weapon_Numb }}</span>
       </div>
-      <div class="int-400-22" v-if="print_Hand">
-        <span class="int-400-22">/ {{ t(print_Hand) }}</span>
+      <div class="int-400-22-blank" v-if="print_Hand">
+        <span class="int-400-22-blank">/ {{ t(print_Hand) }}</span>
       </div>
     </div>
 		<div class="print-cell-pad">
       <div><span>{{ print_Aim_Range }}</span></div>
-      <div class="int-400-22" v-if="print_Hand"><span>{{ print_Aim_Range }}</span></div>
+      <div class="int-400-22-blank" v-if="print_Hand"><span>{{ print_Aim_Range }}</span></div>
     </div>
 		<div class="print-cell-pad">
       <my-attribute
@@ -20,7 +20,7 @@
 				only_numb
 			/>
       <my-attribute 
-        class="int-400-22"
+        class="int-400-22-blank"
         v-if="print_Hand" 
 				:numb="aim_Bonus_Numb"
 				plus
@@ -34,7 +34,7 @@
         :pls="damage_Bonus_Numb"
         only_numb
       />
-      <div class="int-400-22" v-if="print_Hand">
+      <div class="int-400-22-blank" v-if="print_Hand">
         <my-attribute
           v-if="print_Hand == 'damage_1_hand'"
           :numb="weapon[0].damage_1_hand_num"
@@ -451,6 +451,6 @@ export default {
 
 <style scoped>
 .print-cell-pad {
-  padding: 4px 12px 8px;
+  padding: var(--px-4) var(--px-12) var(--px-8);
 }
 </style>

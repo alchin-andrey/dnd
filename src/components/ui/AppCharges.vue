@@ -17,7 +17,7 @@
   <section class="column" :class="{ 
     passive: passive,
     'jbm-300': !blank_print,
-    'int-600-22': blank_print,
+    'int-600-22-blank': blank_print,
     'print-row': blank_print,
     }">
 		<div class="flex_row">
@@ -39,7 +39,7 @@
       :class="{'print-column_vis': blank_print,} "
       >
 				<div class="small" 
-        :class="{'int-700-18': blank_print,}">
+        :class="{'int-700-18-blank': blank_print,}">
 					<span class="passive" v-if="spell_count">{{
 						numb_Spells(item)
 					}}</span>
@@ -49,7 +49,7 @@
         :class="{
           'charge_text': !blank_print,
           'print-charge_text': blank_print,
-          'int-700-18': blank_print,
+          'int-700-18-blank': blank_print,
           } "
         v-if="Inf(item)">{{ Inf(item) }}</div>
 				<div v-else
@@ -310,38 +310,39 @@ export default {
 
 .print-row {
   position: relative;
-  max-height: 72px;
+	min-height: auto;
+  max-height: var(--px-72);
 }
 
 .print-title {
-  margin-left: 28px;
+  margin-left: var(--px-28);
 }
 
 .print-icon {
   position: absolute;
-  width: 36px;
-	height: 36px;
-  top: 2px;
-  left: 2px;
+  width: var(--px-36);
+	height: var(--px-36);
+  top: var(--px-2);
+  left: var(--px-2);
 }
 
 .print_svg {
-	width: 36px;
-	height: 36px;
+	width: var(--px-36);
+	height: var(--px-36);
 	fill: black;
 }
 
 .print-column_vis {
-  min-height: 30px;
+  min-height: var(--px-30);
 }
 
 .print-items {
-  max-width: 425px;
+  max-width: var(--px-425);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-top: 3px;
-  gap: 0 8px;
+  padding-top: var(--px-3);
+  gap: 0 var(--px-8);
   flex-wrap: wrap;
 
 }
@@ -349,8 +350,8 @@ export default {
 .print-visual {
 	display: flex;
 	align-items: center;
-	margin-left: 4px;
-	gap: 4px;
+	margin-left: var(--px-4);
+	gap: var(--px-4);
 }
 
 .print-charge_text {
@@ -360,11 +361,11 @@ export default {
 }
 
 .print-cube_zero {
-  margin-top: 1px;
-	width: 16px;
-	height: 16px;
-	border-radius: 4px;
-	border: 2px solid #000000;
+  margin-top: var(--px-1);
+	width: var(--px-16);
+	height: var(--px-16);
+	border-radius: var(--px-4);
+	border: var(--border-blank--cube);
   background: none;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<Blank__StandardList v-if="standard_Blank"/>
-		<Blank__OldschoolList v-else/>
+		<Blank__StandardList :blank_size="blank_size" v-if="standard_Blank"/>
+		<Blank__OldschoolList :blank_size="blank_size" v-else />
 	</div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
 
 	props: {
 		blank_print: {
+			type: String,
+			default: null,
+		},
+		blank_size: {
 			type: String,
 			default: null,
 		},

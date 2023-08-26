@@ -39,6 +39,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		blank_size: {
+			type: String,
+			default: null,
+		},
   },
 
 	computed: {
@@ -71,22 +75,22 @@ export default {
 
 <style scoped>
 .avatar-sett-wrapp {
-	width: 162px;
+	width: var(--px-162);
 	margin: 1px 1px 0 0;
 }
 
 .flex-sett {
-	padding: 30px 26px 26px;
+	padding: var(--px-30) var(--px-26) var(--px-26);
 	position: relative;
 	z-index: 1000;
 	background: #FFFFFF;
-	border: 1px solid #000000;
-	border-radius: 24px;
+	border: var(--border-blank);
+	border-radius: var(--px-24);
 }
 
 .sett-text-absol {
 	position: absolute;
-	top: 8px;
+	top: var(--px-8);
 	left: 50%;
 	z-index: 100;
 	transform: translateX(-50%);
@@ -94,15 +98,15 @@ export default {
 
 .sett-tired {
 	position: relative;
-	margin-top: 36px;
-	padding: 54px 26px 26px;
+	margin-top: var(--px-36);
+	padding: var(--px-54) var(--px-26) var(--px-26);
 	background: #FFFFFF;
-	border: 1px solid #000000;
-	border-radius: 24px;
+	border: var(--border-blank);
+	border-radius: var(--px-24);
 }
 
 .flex-centr {
-	height: 60px;
+	height: var(--px-60);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -113,21 +117,21 @@ export default {
 }
 
 .cell-free:first-child {
-	border-top: 1px solid #000000;
-	border-radius: 12px 12px 0 0;
+	border-top: var(--border-blank);
+	border-radius: var(--px-12) var(--px-12) 0 0;
 }
 
 .cell-free:last-child {
-	border-radius: 0 0 12px 12px;
+	border-radius: 0 0 var(--px-12) var(--px-12);
 }
 
 .cell-free {
 	width: 100%;
 	height: 48px;
 	background-color: #ffffff;
-	border-right: 1px solid #000000;
-	border-left: 1px solid #000000;
-	border-bottom: 1px solid #000000;
+	border-right: var(--border-blank);
+	border-left: var(--border-blank);
+	border-bottom: var(--border-blank);
 }
 
 .hiden-avatar {
@@ -142,7 +146,7 @@ export default {
 	width: 100%;
 	position: absolute;
 	bottom: 0;
-	border-radius: 24px;
+	border-radius: var(--px-24);
 	overflow: hidden;
 }
 
@@ -150,10 +154,10 @@ export default {
 .character_blank svg,
 .character_blank>.custom-img {
 	position: absolute;
-	bottom: 60px;
+	bottom: var(--px-60);
 	left: 50%;
 	transform: translateX(-50%);
-	border-radius: 24px;
+	border-radius: var(--px-24);
 }
 
 .character_blank_higher {
@@ -172,7 +176,7 @@ export default {
 }
 
 .gradient--standard {
-	height: 300px;
+	height: var(--px-300);
 	width: 100%;
 	position: absolute;
 	bottom: 0;
@@ -183,7 +187,7 @@ export default {
 }
 
 .gradient--oldschool {
-	height: 150px;
+	height: var(--px-150);
 	width: 100%;
 	position: absolute;
 	bottom: 0;

@@ -4,7 +4,7 @@
 		<AppCardWrapp v-for="item in blank_arr" :key="item" :active_card="MY.param.blank_print == item.name"
 			@click="getBlank(item.name)">
 			<div>
-				<section>
+				<!-- <section>
 					<img class="img-size" :src="site_settings.print_image[item.name].page_1"
 						v-if="!site_settings.print_image[item.name].load_1 && site_settings.print_image[item.name].page_1">
 					<div class="flex-row-c-jc size-load" v-else>
@@ -12,7 +12,9 @@
 							<div class="loader"></div>
 						</div>
 					</div>
-				</section>
+				</section> -->
+
+				<Blank__Page_1 :blank_print="item.name" blank_size="mini"/>
 
 				<div class="int-700 mr-t-22">{{ T(item.name) }}</div>
 				<div class="int-400 white-04 mr-t-4">{{ T(item.details) }}</div>
@@ -27,8 +29,13 @@ import { mapState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 
+import Blank__Page_1 from "@/components/blank_print/Blank__Page_1.vue";
+
 export default {
 	name: "AlignmentSett__Blank",
+	components: {
+		Blank__Page_1,
+	},
 	data() {
 		return {
 			blank_arr: [

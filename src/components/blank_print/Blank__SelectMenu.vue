@@ -4,7 +4,7 @@
     <div class="hr-vert-2"></div>
     <div class="hr-vert-3"></div>
 		<div class="column-content">
-			<BlankText__Support />
+			<BlankText__Support blank_size="print"/>
 			<div class="hr-print"></div>
 			<AppPrintMenu__Chapter title="level" :chapter="String(MY.level)" />
       <div class="hr-print"></div>

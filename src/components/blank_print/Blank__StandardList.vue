@@ -1,16 +1,16 @@
 <template>
-	<div>
-		<section class="blank-head">
-			<div class="grid-wrap">
+	<div :class="['int-400-22-blank', style_Main]">
+		<section :class="style_Head">
+			<div :class="style_Head_Wrap">
 				<BlankTable__MainNames />
 				<BlankTable__MainSett />
 				<BlankTable__Proficiencies />
 			</div>
-			<Blank__Avatar class="avatar-print-standard" blank_print="standard" />
+			<Blank__Avatar :class="style_Avatar" blank_print="standard" />
 		</section>
-		<section class="wrap-bottom pos-rel">
+		<section :class="style_Bottom">
 			<BlankTable__QualStats />
-			<BlankTable__Fines class="mr-t-36" />
+			<BlankTable__Fines class="mr-t-36-blank" :blank_size="blank_size" />
 		</section>
 	</div>
 </template>
@@ -33,17 +33,76 @@ export default {
 		BlankTable__QualStats,
 		BlankTable__Fines,
 	},
+	props: {
+		blank_size: {
+			type: String,
+			default: null,
+		},
+  },
+	computed: {
+		mini_Blank() {
+			return this.blank_size == 'mini';
+		},
+
+		style_Main() {
+			if (this.mini_Blank) return 'print-page--mini var-blank--mini';
+			else return 'print-page--print var-blank--print';
+		},
+
+		style_Head() {
+			if (this.mini_Blank) return 'blank-head--mini';
+			else return 'blank-head--print';
+		},
+
+		style_Head_Wrap() {
+			if (this.mini_Blank) return 'grid-wrap--mini';
+			else return 'grid-wrap--print';
+		},
+
+		style_Avatar() {
+			if (this.mini_Blank) return 'avatar-standard--mini';
+			else return 'avatar-standard--print';
+		},
+
+		style_Bottom() {
+			if (this.mini_Blank) return 'blank-bottom--mini';
+			else return 'blank-bottom--print';
+		},
+	},
 };
 </script>
 
 <style scoped>
-.blank-head {
+
+.print-page--print {
+  width: 2088px;
+	height: 2952px;
+	padding: 72px;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.print-page--mini {
+	width: 362px;
+	height: 512px;
+	padding: 22px 19px 22px 19px;
+  background-color: #ffffff;
+	color: #000000;
+	border-radius: 6px;
+}
+.blank-head--print {
 	display: flex;
 	gap: 72px;
 	height: 1403px;
 }
 
-.grid-wrap {
+.blank-head--mini {
+	display: flex;
+	gap: 12px;
+	height: 233px;
+}
+
+.grid-wrap--print {
 	min-width: 648px;
 	max-width: 648px;
 	display: flex;
@@ -51,7 +110,15 @@ export default {
 	gap: 36px;
 }
 
-.avatar-print-standard {
+.grid-wrap--mini {
+	min-width: 108px;
+	max-width: 108px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.avatar-standard--print {
 	width: 100%;
 	height: 1404px;
 	position: relative;
@@ -59,9 +126,25 @@ export default {
 	justify-content: space-between;
 }
 
-.wrap-bottom {
+.avatar-standard--mini {
+	width: 100%;
+	height: 234px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.blank-bottom--print {
 	border-top: 1px dashed #333333;
 	height: 1404px;
   padding-top: 72px;
+	position: relative;
+}
+
+.blank-bottom--mini {
+	border-top: 1px dashed rgb(51, 51, 51, 0.16);
+	height: 234px;
+  padding-top: 12px;
+	position: relative;
 }
 </style>

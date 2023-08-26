@@ -1,0 +1,137 @@
+.var-blank--print {
+	--border-blank: 1px solid #000000; 
+	--border-blank--cube: 2px solid #000000; 
+	--cell-rad: 6px;
+	
+	--px-1: 1px;
+	--px-2: 2px;
+	--px-3: 3px;
+	--px-4: 4px;
+	--px-6: 6px;
+	--px-8: 8px;
+	--px-12: 12px;
+	--px-14: 14px;
+	--px-16: 16px;
+	--px-18: 18px;
+	--px-20: 20px;
+	--px-22: 22px;
+	--px-24: 24px;
+	--px-26: 26px;
+	--px-28: 28px;
+	--px-30: 30px;
+	--px-35: 35px;
+	--px-36: 36px;
+	--px-38: 38px;
+	--px-48: 48px;
+	--px-54: 54px;
+	--px-60: 60px;
+	--px-68: 68px;
+	--px-70: 70px;
+	--px-72: 72px;
+	--px-76: 76px;
+	--px-82: 82px;
+	--px-80: 80px;
+	--px-90: 90px;
+	--px-110: 110px;
+	--px-112: 112px;
+	--px-121: 121px;
+	--px-144: 144px;
+	--px-150: 150px;
+	--px-160: 160px;
+	--px-162: 162px;
+	--px-168: 168px;
+	--px-216: 216px;
+	--px-288: 288px;
+	--px-300: 300px;
+	--px-324: 324px;
+	--px-354: 354px;
+	--px-360: 360px;
+	--px-364: 364px;
+	--px-425: 425px;
+	--px-450: 450px;
+	--px-504: 504px;
+	--px-538: 538px;
+	--px-540: 540px;
+	--px-576: 576px;
+	--px-584: 584px;
+	--px-612: 612px;
+	--px-624: 624px;
+	--px-636: 636px;
+	--px-648: 648px;
+	--px-848: 848px;
+	--px-936: 936px;
+	--px-1800: 1800px;
+	--px-1944: 1944px;
+}
+
+.var-blank--mini {
+	--border-blank: 1px solid rgb(0, 0, 0, 0.16);
+	--border-blank--cube: 1px solid rgb(0, 0, 0, 0.5);
+	--cell-rad: 1px;
+	
+	--px-1: calc(1px / 6);
+	--px-2: calc(2px / 6);
+	--px-3: calc(3px / 6);
+	--px-4: calc(4px / 6);
+	--px-6: 1px;
+	--px-8: calc(8px / 6);
+	--px-12: 2px;
+	--px-14: calc(14px / 6);
+	--px-16: calc(16px / 6);
+	--px-18: 3px;
+	--px-20: calc(20px / 6);
+	--px-22: calc(22px / 6);
+	--px-24: 4px;
+	--px-26: calc(26px / 6);
+	--px-28: calc(28px / 6);
+	--px-30: 5px;
+	--px-32: calc(32px / 6);
+	--px-35: calc(35px / 6);
+	--px-36: 6px;
+	--px-38: calc(38px / 6);
+	--px-48: 8px;
+	--px-54: 9px;
+	--px-60: 10px;
+	--px-68: calc(68px / 6);
+	--px-70: calc(70px / 6);
+	--px-72: 12px;
+	--px-76: calc(76px / 6);
+	--px-80: calc(80px / 6);
+	--px-82: calc(82px / 6);
+	--px-90: 15px;
+	--px-110: calc(110px / 6);
+	--px-112: calc(112px / 6);
+	--px-121: calc(121px / 6);
+	--px-144: 24px;
+	--px-150: 25px;
+	--px-160: calc(160px / 6);
+	--px-162: 27px;
+	--px-168: 28px;
+	--px-216: 36px;
+	--px-288: 48px;
+	--px-300: 50px;
+	--px-324: 54px;
+	--px-354: 59px;
+	--px-360: 60px;
+	--px-364: calc(364px / 6);
+	--px-425: calc(425px / 6);
+	--px-450: 75px;
+	--px-504: 84px;
+	--px-538: calc(538px / 6);
+	--px-540: 90px;
+	--px-576: 96px;
+	--px-584: calc(584px / 6);
+	--px-612: 102px;
+	--px-624: 104px;
+	--px-636: 106px;
+	--px-648: 108px;
+	--px-848: calc(848px / 6);
+	--px-936: 156px;
+	--px-1800: 300px;
+	--px-1944: 324px;
+}
+
+
+
+
+

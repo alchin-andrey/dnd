@@ -34,7 +34,7 @@ export default {
 <style scoped>
 .sett-text-absol {
 	position: absolute;
-	top: 8px;
+	top: var(--px-8);
 	left: 50%;
 	z-index: 100;
 	transform: translateX(-50%);
@@ -46,24 +46,24 @@ export default {
 
 .cell-fatigue {
 	width: 100%;
-	border-right: 1px solid #000000;
-	border-left: 1px solid #000000;
-	border-bottom: 1px solid #000000;
+	border-right: var(--border-blank);
+	border-left: var(--border-blank);
+	border-bottom: var(--border-blank);
 }
 
 .h-36 {
-	height: 36px;
+	height: var(--px-36);
 }
 .h-48 {
-	height: 48px;
+	height: var(--px-48);
 }
 
 .cell-fatigue:first-child {
-	border-top: 1px solid #000000;
-	border-radius: 12px 12px 0 0;
+	border-top: var(--border-blank);
+	border-radius: var(--px-12) var(--px-12) 0 0;
 }
 
 .cell-fatigue:last-child {
-	border-radius: 0 0 12px 12px;
+	border-radius: 0 0 var(--px-12) var(--px-12);
 }
 </style>

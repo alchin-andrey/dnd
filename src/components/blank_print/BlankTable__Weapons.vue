@@ -8,7 +8,7 @@
 					<div>{{ T("print_damage") }}</div>
 				</div>
 				<WeaponEquip
-					class="grid-body--weapon int-600-22"
+					class="grid-body--weapon int-600-22-blank"
 					v-for="weapon in weapons_Equip_All"
 					:key="weapon"
 					:weapon="weapon"
@@ -74,33 +74,33 @@ export default {
 }
 
 .tb-br--full {
-	border: 1px solid #000000;
-	border-radius: 6px;
+	border: var(--border-blank);
+	border-radius: var(--px-6);
 }
 
 .tb-br--simple {
-	border-top: 1px solid #000000;
-	border-right: 1px solid #000000;
-	border-bottom: 1px solid #000000;
-	border-radius: 0 6px 6px 0;
+	border-top: var(--border-blank);
+	border-right: var(--border-blank);
+	border-bottom: var(--border-blank);
+	border-radius: 0 var(--px-6) var(--px-6) 0;
 }
 
 .h-size-classic {
-	height: 612px;
+	height: var(--px-612);
 }
 
 .grid-body--weapon {
 	display: grid;
-	grid-template-columns: 300px 121px 68px 160px;
-	border-bottom: 1px solid #000000;
+	grid-template-columns: var(--px-300) var(--px-121) var(--px-68) var(--px-160);
+	border-bottom: var(--border-blank);
 }
 
 .grid-body--weapon > * {
-	padding: 4px 12px 8px;
+	padding: var(--px-4) var(--px-12) var(--px-8);
 }
 
 .table-charge > * {
-	padding: 4px 12px 8px;
-  border-top: 1px solid #000000;
+	padding: var(--px-4) var(--px-12) var(--px-8);
+  border-top: var(--border-blank);
 }
 </style>

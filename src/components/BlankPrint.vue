@@ -2,12 +2,13 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-    <Blank__Page_1 class="print-page int-400-22" id="print-page-1" :blank_print="MY.param.blank_print"/>
-    <Blank__Page_2 class="print-page int-400-22" id="print-page-2" :blank_print="MY.param.blank_print"/>
+    <Blank__Page_1 id="print-page-1" :blank_print="MY.param.blank_print" blank_size="print"/>
+
+    <Blank__Page_2 class="print-page int-400-22 var-blank--print" id="print-page-2" :blank_print="MY.param.blank_print"/>
 
       <main class="print-page int-400-22" id="print-page-3" >
         <section class="col-wrap-spell">
-          <BlankTable__List_3 id="table_list_3" class="main-table mr-min"/>
+          <BlankTable__List_3 id="table_list_3" class="main-table mr-min var-blank--print"/>
           <AppSpells
             class="cell-spell mr-min"
             v-for="item in spell_List_3"
@@ -178,14 +179,14 @@ export default {
 .blank-conteiner {
 	/* width: 100%; */
 	width: 2088px; /* 1588 */
-	color: #000000;
+	/* color: #000000; */
 	z-index: 10;
 	/* height: 10000%; */
 	/* padding: 72px; */
 	overflow-y: scroll;
 	scrollbar-width: none;
-	background-color: #ffffff;
-	/* margin-right: -2088px; */
+	/* background-color: #ffffff; */
+	margin-right: -2088px;
 }
 
 .blank-conteiner::-webkit-scrollbar {
@@ -209,6 +210,8 @@ export default {
   width: 2088px;
 	height: 2952px;
 	padding: 72px;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .blank-head {

@@ -2,7 +2,7 @@
 	<div>
 		<BlankTable__MainNames type="name" />
 
-		<section class="flex-row gap-36 mr-t-36">
+		<section class="flex-row gap-36-blank mr-t-36-blank">
 			<BlankTable__QualStats type="stats" />
 
 			<div class="flex-col w-324">
@@ -11,12 +11,12 @@
 					<AppPrintLevelBlok title="bardic_inspiration_slots" />
 				</section>
 
-				<Blank__Avatar class="avatar-print-oldschool mr-t-36" blank_print="oldschool"/> 
+				<Blank__Avatar class="avatar-print-oldschool mr-t-36-blank" blank_print="oldschool"/> 
 
 				<BlankTable__QualStats type="skills" />
 			</div>
 		</section>
-		<BlankTable__Proficiencies class="mr-t-36" />
+		<BlankTable__Proficiencies class="mr-t-36-blank" />
 	</div>
 </template>
 
@@ -38,12 +38,12 @@ export default {
 
 <style scoped>
 .w-324 {
-	width: 324px;
+	width: var(--px-324);
 }
 .avatar-print-oldschool {
-	width: 500px;
+	width: var(--px-504);
 	flex: 1 1 auto;
 	position: relative;
-	left: -88px;
+	right: var(--px-90);
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-	<div class="flex-row-sb">
+	<div :class="['flex-row-sb', 'int-400-22-blank', style_Main]">
 		<Blank__OldschoolList__Left class="list-col--left" />
 		<Blank__OldschoolList__Center class="list-col" />
-		<Blank__OldschoolList__Right class="list-col" />
+		<Blank__OldschoolList__Right class="list-col" :blank_size="blank_size"/>
 	</div>
 </template>
 
@@ -18,14 +18,52 @@ export default {
 		Blank__OldschoolList__Center,
 		Blank__OldschoolList__Right,
 	},
+	props: {
+		blank_size: {
+			type: String,
+			default: null,
+		}
+	},
+	computed: {
+		mini_Blank() {
+			return this.blank_size == 'mini';
+		},
+
+		style_Main() {
+			if (this.mini_Blank) return 'print-page--mini var-blank--mini';
+			else return 'print-page--print var-blank--print';
+		},
+
+		style_Bottom() {
+			if (this.mini_Blank) return 'blank-bottom--mini';
+			else return 'blank-bottom--print';
+		},
+	},
 };
 </script>
 
 <style scoped>
+.print-page--print {
+  width: 2088px;
+	height: 2952px;
+	padding: 72px;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.print-page--mini {
+	width: 362px;
+	height: 512px;
+	padding: 22px 19px 22px 19px;
+  background-color: #ffffff;
+	color: #000000;
+	border-radius: 6px;
+}
+
 .list-col--left {
-	width: 576px;
+	width: var(--px-576);
 }
 .list-col {
-	width: 648px;
+	width: var(--px-648);
 }
 </style>
