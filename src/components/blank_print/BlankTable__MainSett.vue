@@ -20,88 +20,89 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
 export default {
-	name: "BlankTable__MainSett",
-	methods: {},
-
-	computed: {
-		...mapState(useMYStore, ["MY"]),
+  name: "BlankTable__MainSett",
+  computed: {
+    ...mapState(useMYStore, ["MY"]),
     ...mapState(useColorStore, [
-			"skin_color_Char_Body",
-			"eyes_color_Char_Body",
-			"hair_color_Char_Body",
-		]),
+      "skin_color_Char_Body",
+      "eyes_color_Char_Body",
+      "hair_color_Char_Body",
+    ]),
 
     MY_Age() {
-    return `${this.MY.age} ${this.t(this.age_Units)}`
-  },
+      return `${this.MY.age} ${this.t(this.age_Units)}`
+    },
 
-  MY_Height() {
-    return `${this.MY.height} ${this.t('cm')}`
-  },
+    MY_Height() {
+      return `${this.MY.height} ${this.t('cm')}`
+    },
 
-  MY_Weight() {
-    return `${this.MY.weight} ${this.t('kg')}`
-  },
+    MY_Weight() {
+      return `${this.MY.weight} ${this.t('kg')}`
+    },
 
-  age_Units() {
+    age_Units() {
       const numb = this.MY.age;
-			const mod10 = Math.abs(numb % 10);
-			const mod100 = Math.abs(numb % 100);
-			if (mod100 > 10 && mod100 < 20) {
-				return "years";
-			} else if (mod10 >= 2 && mod10 <= 4) {
-				return "yeara";
-			} else if (mod10 === 1) {
-				return "year";
-			} else {
-				return "years";
-			}
-		},
+      const mod10 = Math.abs(numb % 10);
+      const mod100 = Math.abs(numb % 100);
+      if (mod100 > 10 && mod100 < 20) {
+        return "years";
+      } else if (mod10 >= 2 && mod10 <= 4) {
+        return "yeara";
+      } else if (mod10 === 1) {
+        return "year";
+      } else {
+        return "years";
+      }
+    },
 
-	},
-
+  },
 
 };
 </script>
 
 <style scoped>
 .grid-body {
-	display: grid;
-	grid-template-rows: repeat(3, 72px);
-	grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-rows: repeat(3, var(--cell-row-main));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .cell {
-	padding: 0 12px;
+  padding: 0 var(--px-12);
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-right: var(--border-blank);
+  border-bottom: var(--border-blank);
 }
 
 .cell-body> :first-child {
-  border-radius: 6px 0 0 0;
+  /* border-radius: var(--px-6) 0 0 0; */
+  border-top-left-radius: var(--cell-rad);
 }
 
 .cell-body> :nth-child(3) {
-  border-radius: 0 6px 0 0;
+  /* border-radius: 0 var(--px-6) 0 0; */
+  border-top-right-radius: var(--cell-rad);
 }
 
 .cell-body> :last-child {
-  border-radius: 0 0 6px 0;
+  /* border-radius: 0 0 var(--px-6) 0; */
+  border-bottom-right-radius: var(--cell-rad);
 }
 
 .cell-body> :nth-last-child(3) {
-  border-radius: 0 0 0 6px;
+  /* border-radius: 0 0 0 var(--px-6); */
+  border-bottom-left-radius: var(--cell-rad);
 }
 
 .cell-body> :nth-child(-n+3) {
-  border-top: 1px solid #000000;
+  border-top: var(--border-blank);
 }
 
 .cell-body> :nth-last-child(3n) {
-  border-left: 1px solid #000000;
+  border-left: var(--border-blank);
 }
 </style>

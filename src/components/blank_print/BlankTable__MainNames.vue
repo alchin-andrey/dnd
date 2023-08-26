@@ -1,6 +1,6 @@
 <template>
   <div :class="[style_Grid, style_Grid_Cell]">
-    <div class="grid-title int-600-48" v-if="show_Name">
+    <div class="grid-title int-600-48-blank" v-if="show_Name">
       <div class="text-item">{{ MY.name }}</div>
     </div>
     <AppMainCell class="cell br-left" title="race" :content="MY_Race.name" v-if="show_Part_1"/>
@@ -9,7 +9,7 @@
     <AppMainCell class="cell br-left" title="class" :content="MY_Class.name" v-if="show_Part_1"/>
     <AppMainCell class="cell" title="subclass" :content="MY_Subclass?.name" v-if="show_Part_1"/>
 
-    <AppMainCell class="cell grid__full " title="past" :content="MY_Backstory.name" v-if="show_Part_2"/>
+    <AppMainCell class="cell grid-span-2" title="past" :content="MY_Backstory.name" v-if="show_Part_2"/>
 
     <AppMainCell class="cell br-left" title="alignment" :content="MY.alignment" v-if="show_Part_2"/>
     <AppMainCell class="cell" title="main_feature" :content="MY_Main_Feature_Name" v-if="show_Part_2"/>
@@ -69,19 +69,6 @@ export default {
       return this.type == 'part'
     },
 
-    style_Grid() {
-      if (this.full_Type) return 'grid-body--full';
-      if (this.name_Type) return 'grid-body--name';
-      if (this.part_Type) return 'grid-body--part';
-    },
-
-    style_Grid_Cell() {
-      if (this.name_Type) return 'cell-body--full';
-      if (this.part == 2) return 'cell-body cell-body--top';
-      if (this.part == 1 || this.part == 3) return 'cell-body cell-body--simple';
-      else return 'cell-body--top cell-body';
-    },
-
     show_Name() {
       return !this.part_Type;
     },
@@ -97,6 +84,19 @@ export default {
     show_Part_3() {
       return !this.name_Type && this.part == 3 || this.full_Type;
     },
+
+    style_Grid() {
+      if (this.full_Type) return 'grid-body--full';
+      if (this.name_Type) return 'grid-body--name';
+      if (this.part_Type) return 'grid-body--part';
+    },
+
+    style_Grid_Cell() {
+      if (this.name_Type) return 'cell-body--full';
+      if (this.part == 2) return 'cell-body cell-body--top';
+      if (this.part == 1 || this.part == 3) return 'cell-body cell-body--simple';
+      else return 'cell-body--top cell-body';
+    },
   },
 };
 </script>
@@ -104,31 +104,32 @@ export default {
 <style scoped>
 .grid-body--name {
   display: grid;
-  grid-template-rows: 144px;
+  grid-template-rows: var(--px-144);
   grid-template-columns: 100%;
 }
 
+
 .grid-body--full {
   display: grid;
-  grid-template-rows: 144px repeat(6, 72px);
+  grid-template-rows: var(--px-144) repeat(6, var(--px-72));
   grid-template-columns: repeat(2, 50%);
 }
 
 .grid-body--part {
   display: grid;
-  grid-template-rows: repeat(2, 72px);
+  grid-template-rows: repeat(2, var(--px-72));
   grid-template-columns: repeat(2, 50%);
 }
 
 .grid-title {
   grid-column: span 2;
 
-  padding: 0 24px;
+  padding: 0 var(--px-24);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #000;
+  border: var(--border-blank);
   overflow: hidden;
 }
 
@@ -138,47 +139,48 @@ export default {
   text-overflow: ellipsis;
 }
 
-.grid__full {
+.grid-span-2 {
   grid-column: span 2;
-  border-left: 1px solid #000000;
+  border-left: var(--border-blank);
 }
 
 .cell {
-  padding: 0 12px;
+  padding: 0 var(--px-12);
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-right: var(--border-blank);
+  border-bottom: var(--border-blank);
 }
 
 .br-left {
-  border-left: 1px solid #000000;
+  border-left: var(--border-blank);
 }
 .cell-body--full> :first-child {
-  border-radius: 6px;
+  border-radius: var(--cell-rad);
 }
 
 .cell-body--top> :first-child {
-  border-radius: 6px 6px 0 0;
-  border-top: 1px solid #000000;
+  border-top-left-radius: var(--cell-rad);
+  border-top-right-radius: var(--cell-rad);
+  border-top: var(--border-blank);
 }
 .cell-body--simple> :first-child {
-  border-radius: 6px 0 0 0;
-  border-top: 1px solid #000000;
+  border-top-left-radius: var(--cell-rad);
+  border-top: var(--border-blank);
 }
 
 .cell-body--simple> :nth-child(2) {
-  border-radius: 0 6px 0 0;
-  border-top: 1px solid #000000;
+  border-top-right-radius: var(--cell-rad);
+  border-top: var(--border-blank);
 }
 
 .cell-body> :last-child {
-  border-radius: 0 0 6px 0;
+  border-bottom-right-radius: var(--cell-rad);
 }
 
 .cell-body> :nth-last-child(2) {
-  border-radius: 0 0 0 6px;
+  border-bottom-left-radius: var(--cell-rad);
 }
 </style>

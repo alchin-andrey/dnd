@@ -13,6 +13,11 @@
 	height: 36px;
 }
 
+.svg-36-blank {
+	min-width: var(--px-36);
+	height: var(--px-36);
+}
+
 .svg-54 {
 	min-width: 54px;
 	height: 54px;

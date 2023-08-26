@@ -2,9 +2,11 @@
 	<div class="grid-cell">
 		<div class="cell-item">{{t_Title}}</div>
 		<div 
-    class="cell-item int-600-22"
-    :class="{wrap_arr: content_arr.length !== 0}"
-    >{{t_Content}}</div>
+		class="cell-item int-600-22-blank"
+		:class="{'wrap-arr': content_arr.length !== 0}"
+		>
+			{{t_Content}}
+		</div>
 	</div>
 </template>
 
@@ -58,7 +60,7 @@ export default {
 	text-overflow: ellipsis;
 }
 
-.wrap_arr {
+.wrap-arr {
   white-space: normal;
 }
 </style>

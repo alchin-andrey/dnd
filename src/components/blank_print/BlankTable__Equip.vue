@@ -5,35 +5,35 @@
 
 			<div :class="style_Column">
 				<template v-for="(pack, i) in packs_Equip_All" :key="pack">
-					<div :class="{ 'mr-t-30': i > 0 }" />
-					<div class="int-500-22">{{ t_Equip_Name(pack) }}:</div>
+					<div :class="{ 'mr-t-30-blank': i > 0 }" />
+					<div class="int-500-22-blank">{{ t_Equip_Name(pack) }}:</div>
 					<div v-for="inv in pack[0].items" :key="inv">
-						<div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
+						<div class="int-500-22-blank">• {{ t_Equip_Name(inv) }}</div>
 					</div>
 				</template>
 
 				<template v-for="(inv, i) in inventory_Equip_Print" :key="inv">
-					<div class="mr-t-30" v-if="i == 0" />
-					<div class="int-500-22">• {{ t_Equip_Name(inv) }}</div>
+					<div class="mr-t-30-blank" v-if="i == 0" />
+					<div class="int-500-22-blank">• {{ t_Equip_Name(inv) }}</div>
 				</template>
 			</div>
 		</div>
 
 		<div class="cell" v-for="coin in coins" :key="coin">
 			<div>{{ T(coin) }}</div>
-			<div class="int-600-22 print-grey" v-if="coin == 'gold'">
+			<div class="int-600-22-blank print-grey" v-if="coin == 'gold'">
 				{{ gold_Equip_All }}
 			</div>
 		</div>
 
 		<div :class="style_Span_Bottom">
 			<div>{{ T("armor") }}</div>
-			<div class="int-600-22">{{ t_Armor_Name }}</div>
+			<div class="int-600-22-blank">{{ t_Armor_Name }}</div>
 		</div>
 
 		<div :class="style_Span_Bottom">
 			<div>{{ T("bullets") }}</div>
-			<div class="int-600-22">
+			<div class="int-600-22-blank">
 				{{ t_Ammunition_Name }}
 				<span class="print-grey">{{ t_Ammunition_Numb }}</span>
 			</div>
@@ -132,13 +132,13 @@ export default {
 <style scoped>
 .grid-body--full {
 	display: grid;
-	grid-template-rows: 538px 72px;
-	grid-template-columns: repeat(4, 162px) repeat(2, 324px);
+	grid-template-rows: var(--px-538) var(--px-72);
+	grid-template-columns: repeat(4, var(--px-162)) repeat(2, var(--px-324));
 }
 
 .grid-body--simple {
 	display: grid;
-	grid-template-rows: 936px repeat(2, 72px);
+	grid-template-rows: var(--px-936) repeat(2, var(--px-72));
 	grid-template-columns: repeat(4, 1fr);
 }
 
@@ -147,53 +147,53 @@ export default {
 .grid-col-6 { grid-column: span 6; }
 
 .cell {
-	padding: 4px 12px 8px;
-	border-right: 1px solid #000000;
-	border-bottom: 1px solid #000000;
+	padding: var(--px-4) var(--px-12) var(--px-8);
+	border-right: var(--border-blank);
+	border-bottom: var(--border-blank);
 }
 .grid-body--full > :first-child {
-	border-left: 1px solid #000000;
-	border-top: 1px solid #000000;
-	border-radius: 6px 0 0 0;
+	border-left: var(--border-blank);
+	border-top: var(--border-blank);
+	border-radius: var(--px-6) 0 0 0;
 }
 
 .grid-body--simple > :first-child {
-	border-left: 1px solid #000000;
-	border-top: 1px solid #000000;
-	border-radius: 6px 6px 0 0;
+	border-left: var(--border-blank);
+	border-top: var(--border-blank);
+	border-radius: var(--px-6) var(--px-6) 0 0;
 }
 
 .grid-body--full > :nth-child(2) {
-	border-left: 1px solid #000000;
-	border-radius: 0 0 0 6px;
+	border-left: var(--border-blank);
+	border-radius: 0 0 0 var(--px-6);
 }
 .grid-body--simple > :nth-child(2) {
-	border-left: 1px solid #000000;
+	border-left: var(--border-blank);
 }
 
 .grid-body--simple > :nth-last-child(2) {
-	border-left: 1px solid #000000;
-	border-radius: 0 0 0 6px;
+	border-left: var(--border-blank);
+	border-radius: 0 0 0 var(--px-6);
 }
 
 .grid-body--simple > :last-child {
-	border-radius: 0 0 6px 0;
+	border-radius: 0 0 var(--px-6) 0;
 }
 
 .column-content {
-	margin-top: 24px;
+	margin-top: var(--px-24);
 	width: max-content;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 0 35px;
+	gap: 0 var(--px-35);
 }
 
 .h-size--full {
-	height: 450px;
+	height: var(--px-450);
 }
 .h-size--simple {
-	height: 848px;
+	height: var(--px-848);
 }
 
 .column-content>div {

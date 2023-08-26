@@ -1,13 +1,13 @@
 <template>
-	<div class="flex-col gap-36">
+	<div class="flex-col gap-36-blank">
 		<BlankTable__MainNames type="part" :part="2" />
 		<BlankTable__MainNames type="part" :part="3" />
 
 		<BlankTable__MainSett />
 
-		<BlankTable__Fines vertical />
+		<BlankTable__Fines :blank_size="blank_size" vertical />
 
-		<BlankText__Support class="print-cell" qr_centre/>
+		<BlankText__Support class="print-cell" :blank_size="blank_size" qr_centre/>
 	</div>
 </template>
 
@@ -24,14 +24,20 @@ export default {
 		BlankTable__Fines,
 		BlankText__Support,
 	},
+	props: {
+		blank_size: {
+			type: String,
+			default: null,
+		}
+	},
 };
 </script>
 
 <style scoped>
 .print-cell {
-	padding: 0 12px;
-	border: 1px solid #000000;
-	border-radius: 6px;
+	padding: 0 var(--px-12);
+	border: var(--border-blank);
+	border-radius: var(--px-6);
 	width: 100%;
 	height: 100%;
 }

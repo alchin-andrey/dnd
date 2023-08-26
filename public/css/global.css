@@ -133,6 +133,7 @@
 .pd-l-32 { padding-left: 32px; }
 
 .mr-t-4 { margin-top: 4px; }
+.mr-t-6 { margin-top: 6px; }
 .mr-t-8 { margin-top: 8px; }
 .mr-t-10 { margin-top: 10px; }
 .mr-t-12 { margin-top: 12px; }
@@ -158,6 +159,18 @@
 .mr-b-18 { margin-bottom: 18px; }
 .mr-b-34 { margin-bottom: 34px; }
 .mr-b-36 { margin-bottom: 36px; }
+
+
+
+/* blank */
+.mr-t-8-blank { margin-top: var(--px-8); }
+.mr-t-30-blank { margin-top: var(--px-30); }
+.mr-t-32-blank { margin-top: var(--px-32); }
+.mr-t-36-blank { margin-top: var(--px-36); }
+
+.gap-16-blank { gap: var(--px-16); }
+.gap-24-blank { gap: var(--px-24); }
+.gap-36-blank { gap: var(--px-36); }
 
 
 

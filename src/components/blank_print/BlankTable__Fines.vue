@@ -12,7 +12,7 @@
 								v-html="atribute_icon.vision_night"
 							></svg>
 						</div>
-						<div class="int-500-22">{{ t_Vision_Night }}</div>
+						<div class="int-500-22-blank">{{ t_Vision_Night }}</div>
 					</section>
 
 					<section
@@ -29,7 +29,7 @@
 								v-html="stats_icon[skill_pass.mod]" 
 								></svg>
 						</div>
-						<div class="int-500-22">
+						<div class="int-500-22-blank">
 							{{ t_Skills_Passive(skill_pass.name) }}
 						</div>
 					</section>
@@ -44,7 +44,7 @@
 								v-html="stats_icon[MY_Class.spell_attribute]"
 							></svg>
 						</div>
-						<div class="int-500-22">{{ t_Spells_Saving }}</div>
+						<div class="int-500-22-blank">{{ t_Spells_Saving }}</div>
 					</section>
 				</main>
 
@@ -61,14 +61,14 @@
 							v-html="fines_icon[fines.type]"
 						></svg>
 					</div>
-					<div class="int-500-22 fines-text">
+					<div class="int-500-22-blank fines-text">
             {{ em_Before(t_Fines(fines)) }}
 			<emoji
 				v-if="em_Upd(t_Fines(fines))"
 				:data="emojiIndex"
 				:emoji="em_Upd(t_Fines(fines))"
 				:set="set_emoji"
-				:size="22"
+				:size="em_Size"
 			/>{{ em_After(t_Fines(fines)) }}
           </div>
 				</section>
@@ -102,6 +102,10 @@ export default {
       type: Boolean,
       default: false,
     },
+		blank_size: {
+			type: String,
+			default: null,
+		},
   },
 	computed: {
 		...mapState(useMYStore, [
@@ -176,6 +180,11 @@ export default {
 			return stor.afterEmoji(name);
 		},
 
+		em_Size() {
+			if(this.blank_size == 'mini') return 3.66;
+			else return 22;
+		},
+
 		style_Table() {
 			return this.vertical ? "vertical" : "horizontal";
 		}
@@ -185,79 +194,79 @@ export default {
 
 <style scoped>
 .wrap-table {
-	padding: 12px 12px;
+	padding: var(--px-12);
 	/* width: 1944px;
 	height: 648px; */
-	border: 1px solid #000000;
-	border-radius: 6px;
+	border: var(--border-blank);
+	border-radius: var(--px-6);
 }
 
 .vertical {
 	width: 100%;
-	min-height: 1800px;
+	min-height: var(--px-1800);
 }
 
 .horizontal {
-	width: 1944px;
-	height: 648px;
+	width: var(--px-1944);
+	height: var(--px-648);
 }
 
 .flax-col-wrap {
 	width: 100%;
-	height: 624px;
+	height: var(--px-624);
 }
 
 .row-36 {
 	display: flex;
 	width: 100%;
-	height: 36px;
+	height: var(--px-36);
 	align-items: center;
 }
 
 .row-finse {
 	display: flex;
 	width: 100%;
-	min-height: 36px;
+	min-height: var(--px-36);
 	/* align-items: flex-start; */
 }
 
 .fines-text {
-	width: 540px;
-	padding-top: 2px;
+	width: var(--px-540);
+	padding-top: var(--px-2);
 }
 .column-content {
-	width: 636px;
+	width: var(--px-636);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 16px 12px;
+	gap: var(--px-16) var(--px-12);
 }
 
 .main-fines {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
-	margin-bottom: 18px;
+	gap: var(--px-16);
+	margin-bottom: var(--px-18);
 }
 
 .icon {
-	width: 36px;
-	height: 36px;
-	margin-right: 2px;
+	width: var(--px-36);
+	height: var(--px-36);
+	margin-right: var(--px-2);
 }
 
 .main_svg {
-	width: 36px;
-	height: 36px;
+	width: var(--px-36);
+	height: var(--px-36);
 	fill: black;
 }
 .stats_svg {
-	width: 36px;
-	height: 36px;
+	width: var(--px-36);
+	height: var(--px-36);
 	fill: none;
 	stroke: black;
-	stroke-width: 1px;
+	stroke-width: var(--px-1);
 }
 
 .save_svg {
@@ -267,6 +276,6 @@ export default {
 .emoji-mart-emoji {
 	padding: 0;
 	line-height: 0;
-	top: 2px;
+	top: var(--px-2);
 }
 </style>

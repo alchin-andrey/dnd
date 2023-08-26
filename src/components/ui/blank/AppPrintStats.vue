@@ -1,5 +1,5 @@
 <template>
-	<div class="wrap-cell jbm-500-22">
+	<div class="wrap-cell jbm-500-22-blank">
 		<section class="title-head">
 			<div class="icon">
 				<svg
@@ -12,13 +12,13 @@
 			</div>
 			<div class="cell-item">{{ t_Title }}</div>
 		</section>
-		<div class="int-600-72 numb" :class="{'mr-28': list_3}">{{ numb_Value }}</div>
+		<div class="int-600-72-blank numb" :class="{'mr-28': list_3}">{{ numb_Value }}</div>
 			<div class="visual" v-if="!list_3">
 				<section class="text-item">
 					<div>{{ t_Base }}</div>
 					<div>{{ t_Save }}</div>
 				</section>
-				<section class="numb-item int-600-22">
+				<section class="numb-item int-600-22-blank">
 					<div>{{ base_Numb }}</div>
 					<div>{{ save_Numb }}</div>
 				</section>
@@ -108,13 +108,13 @@ export default {
 <style scoped>
 .wrap-cell {
 	height: 100%;
-	padding: 4px;
+	padding: var(--px-4);
   display: flex;
   flex-direction: column;
 }
 
 .title-head {
-  height: 36px;
+  height: var(--px-36);
 	display: flex;
   align-items: center;
 }
@@ -126,14 +126,14 @@ export default {
 }
 
 .icon {
-	width: 36px;
-	height: 36px;
-	margin-right: 2px;
+	width: var(--px-36);
+	height: var(--px-36);
+	margin-right: var(--px-2);
 }
 
 .main_svg {
-	width: 36px;
-	height: 36px;
+	width: var(--px-36);
+	height: var(--px-36);
 	fill: none;
 	stroke: black;
 	/* stroke-width: 1px; */
@@ -144,11 +144,11 @@ export default {
 
 .numb {
 	text-align: center;
-	margin-top: 82px;
+	margin-top: var(--px-82);
 }
 
 .mr-28 {
-  margin-top: 28px;
+  margin-top: var(--px-28);
 }
 
 .visual {
@@ -156,7 +156,7 @@ export default {
 	display: flex;
   flex-direction: column;
 	justify-content: flex-end;
-  padding: 0 20px 14px 20px;
+  padding: 0 var(--px-20) var(--px-14) var(--px-20);
 }
 
 .text-item {

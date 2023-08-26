@@ -1,5 +1,5 @@
 <template>
-		<div class="flex-col gap-36">
+		<div class="flex-col gap-36-blank">
 			<BlankTable__MainNames type="part" :part="1"/>
 			<BlankTable__QualStats type="atribute" />
 			<BlankTable__Weapons classic/>
