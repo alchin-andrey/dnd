@@ -58,6 +58,10 @@ export default {
 			type: String,
 			default: null,
 		},
+    blank_size: {
+			type: String,
+			default: null,
+		},
     error: {
       type: Boolean,
 			default: false,
@@ -220,35 +224,86 @@ export default {
       }
     },
 
+    // width_Custom_Char() {
+    //   const screen_main = `(100vh - 64px)`;
+      
+    //   const screen_standard_print = `1825px`;
+    //   const screen_standard_mini = `${1825/6}px`;
+    //   const screen_oldschool_print = `684px`;
+    //   const screen_oldschool_mini = `${684/6}px`;
+    //   const screen_mob = `470px`;
+    //   let kof = this.alignment_page.ratio_photo;
+    //   if(!this.MY.param.sett_photo.size_cover) {
+    //     kof = this.MY.param.sett_photo.ratio;
+    //   };
+    //   const sc_main_kof = `${screen_main} * ${kof}`
+
+    //   const sc_standard_print_kof = `${screen_standard_print} * ${kof}`
+    //   const sc_standard_mini_kof = `${screen_standard_mini} * ${kof}`
+    //   const sc_oldschool_print_kof = `${screen_oldschool_print} * ${kof}`
+    //   const sc_oldschool_mini_kof = `${screen_oldschool_mini} * ${kof}`
+    //   const sc_mob_kof = `${screen_mob} * ${kof}`
+
+    //   if (this.race_page.shown.skin_color) {
+    //     return `calc(${sc_main_kof})`;
+    //   } else if (
+    //     this.race_page.shown.eyes_color ||
+    //     this.race_page.shown.hair_color
+    //   ) {
+    //     return `calc(${sc_main_kof} * 2)`;
+    //   } else if (this.blank_print == 'standard') {
+    //     if (this.blank_size == 'mini') {
+    //       return `calc(${sc_standard_mini_kof} * ${this.growth_Char} / 210)`
+    //     } else {
+    //       return `calc(${sc_standard_print_kof} * ${this.growth_Char} / 210)`
+    //     } 
+    //   } else if (this.blank_print == 'oldschool') {
+    //     if (this.blank_size == 'mini') {
+    //       return `calc(${sc_oldschool_mini_kof} * ${this.growth_Char} / 210)`
+    //     } else {
+    //       return `calc(${sc_oldschool_print_kof} * ${this.growth_Char} / 210)`
+    //     }
+    //   } else if (this.screen_Max) {
+    //     return `calc(${sc_main_kof} * ${this.growth_Char} / 210)`
+    //   } else {
+    //     return `calc(${sc_mob_kof} * ${this.growth_Char} / 210)`
+    //   }
+    // },
+
     width_Custom_Char() {
       const screen_main = `(100vh - 64px)`;
-      const screen_print_standard = `1825px`;
-      const screen_print_oldschool = `684px`;
-      const screen_mob = `470px`;
+      let screen_other = null;
+      if (this.blank_print == 'standard') {
+        if (this.blank_size == 'mini') {
+          screen_other = `${1825/6}px`;
+        } else {
+          screen_other = `1825px`;
+        } 
+      } else if (this.blank_print == 'oldschool') {
+        if (this.blank_size == 'mini') {
+          screen_other = `${684/6}px`;
+        } else {
+          screen_other = `684px`;
+        }
+      } else if (this.screen_Max) {
+        screen_other = screen_main;
+      } else {
+        screen_other = `470px`;
+      }
       let kof = this.alignment_page.ratio_photo;
       if(!this.MY.param.sett_photo.size_cover) {
         kof = this.MY.param.sett_photo.ratio;
       };
-      const sc_main_kof = `${screen_main} * ${kof}`
-      const sc_print_standard_kof = `${screen_print_standard} * ${kof}`
-      const sc_print_oldschool_kof = `${screen_print_oldschool} * ${kof}`
-      const sc_mob_kof = `${screen_mob} * ${kof}`
 
       if (this.race_page.shown.skin_color) {
-        return `calc(${sc_main_kof})`;
+        return `calc(${screen_main} * ${kof})`;
       } else if (
         this.race_page.shown.eyes_color ||
         this.race_page.shown.hair_color
       ) {
-        return `calc(${sc_main_kof} * 2)`;
-      } else if (this.blank_print == 'standard') {
-        return `calc(${sc_print_standard_kof} * ${this.growth_Char} / 210)`
-      } else if (this.blank_print == 'oldschool') {
-        return `calc(${sc_print_oldschool_kof} * ${this.growth_Char} / 210)`
-      } else if (this.screen_Max) {
-        return `calc(${sc_main_kof} * ${this.growth_Char} / 210)`
+        return `calc(${screen_main} * ${kof} * 2)`;
       } else {
-        return `calc(${sc_mob_kof} * ${this.growth_Char} / 210)`
+        return `calc(${screen_other} * ${kof} * ${this.growth_Char} / 210)`
       }
     },
 

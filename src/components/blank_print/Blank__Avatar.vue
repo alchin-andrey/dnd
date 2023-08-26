@@ -3,10 +3,10 @@
 
 		<div class="hiden-avatar">
 			<section class="character_blank" :class="{ character_blank_higher: chare_Higher }">
-				<RaceBody body_part="skin" :blank_print="blank_print" />
-				<RaceBody body_part="eyes" :blank_print="blank_print" />
-				<RaceBody body_part="hair" :blank_print="blank_print" />
-				<RaceBody body_part="class" :blank_print="blank_print" />
+				<RaceBody body_part="skin" :blank_print="blank_print" :blank_size="blank_size"/>
+				<RaceBody body_part="eyes" :blank_print="blank_print" :blank_size="blank_size"/>
+				<RaceBody body_part="hair" :blank_print="blank_print" :blank_size="blank_size"/>
+				<RaceBody body_part="class" :blank_print="blank_print" :blank_size="blank_size"/>
 			</section>
 		</div>
 
@@ -33,7 +33,6 @@ export default {
 			ui_icon: ui_icon,
 		};
 	},
-
 	props: {
 		blank_print: {
 			type: String,

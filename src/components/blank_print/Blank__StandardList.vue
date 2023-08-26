@@ -6,7 +6,7 @@
 				<BlankTable__MainSett />
 				<BlankTable__Proficiencies />
 			</div>
-			<Blank__Avatar :class="style_Avatar" blank_print="standard" />
+			<Blank__Avatar :class="style_Avatar" blank_print="standard" :blank_size="blank_size" />
 		</section>
 		<section :class="style_Bottom">
 			<BlankTable__QualStats />

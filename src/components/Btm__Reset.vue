@@ -34,16 +34,16 @@ export default {
         welcome: true,
         logo_anim: false,
         print_dialog: false,
-        print_image: {
-          standard: {
-            page_1: null,
-            load_1: false,
-          },
-          oldschool: {
-            page_1: null,
-            load_1: false,
-          },
-        }
+        // print_image: {
+        //   standard: {
+        //     page_1: null,
+        //     load_1: false,
+        //   },
+        //   oldschool: {
+        //     page_1: null,
+        //     load_1: false,
+        //   },
+        // }
       },
 
         this.pages = {

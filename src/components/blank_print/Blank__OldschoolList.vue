@@ -1,6 +1,6 @@
 <template>
 	<div :class="['flex-row-sb', 'int-400-22-blank', style_Main]">
-		<Blank__OldschoolList__Left class="list-col--left" />
+		<Blank__OldschoolList__Left class="list-col--left" :blank_size="blank_size"/>
 		<Blank__OldschoolList__Center class="list-col" />
 		<Blank__OldschoolList__Right class="list-col" :blank_size="blank_size"/>
 	</div>

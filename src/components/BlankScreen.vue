@@ -1,6 +1,5 @@
 <template>
 	<section class="int-400-22" v-if="pages.alignment_page">
-	<!-- <section class="int-400-22"> -->
 		<Blank__Page_1 class="print-page" blank_print="oldschool" blank_size="print" id="oldschool-screen-1"/>
 		<Blank__Page_1 class="print-page" blank_print="standard" blank_size="print" id="standard-screen-1"/>
 	</section>

@@ -11,7 +11,7 @@
 					<AppPrintLevelBlok title="bardic_inspiration_slots" />
 				</section>
 
-				<Blank__Avatar class="avatar-print-oldschool mr-t-36-blank" blank_print="oldschool"/> 
+				<Blank__Avatar class="avatar-print-oldschool mr-t-36-blank" blank_print="oldschool" :blank_size="blank_size"/> 
 
 				<BlankTable__QualStats type="skills" />
 			</div>
@@ -32,6 +32,12 @@ export default {
 		BlankTable__QualStats,
 		BlankTable__Proficiencies,
 		Blank__Avatar,
+	},
+	props: {
+		blank_size: {
+			type: String,
+			default: null,
+		},
 	},
 };
 </script>
