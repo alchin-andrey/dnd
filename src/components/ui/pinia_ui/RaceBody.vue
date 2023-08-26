@@ -224,88 +224,88 @@ export default {
       }
     },
 
-    // width_Custom_Char() {
-    //   const screen_main = `(100vh - 64px)`;
-      
-    //   const screen_standard_print = `1825px`;
-    //   const screen_standard_mini = `${1825/6}px`;
-    //   const screen_oldschool_print = `684px`;
-    //   const screen_oldschool_mini = `${684/6}px`;
-    //   const screen_mob = `470px`;
-    //   let kof = this.alignment_page.ratio_photo;
-    //   if(!this.MY.param.sett_photo.size_cover) {
-    //     kof = this.MY.param.sett_photo.ratio;
-    //   };
-    //   const sc_main_kof = `${screen_main} * ${kof}`
-
-    //   const sc_standard_print_kof = `${screen_standard_print} * ${kof}`
-    //   const sc_standard_mini_kof = `${screen_standard_mini} * ${kof}`
-    //   const sc_oldschool_print_kof = `${screen_oldschool_print} * ${kof}`
-    //   const sc_oldschool_mini_kof = `${screen_oldschool_mini} * ${kof}`
-    //   const sc_mob_kof = `${screen_mob} * ${kof}`
-
-    //   if (this.race_page.shown.skin_color) {
-    //     return `calc(${sc_main_kof})`;
-    //   } else if (
-    //     this.race_page.shown.eyes_color ||
-    //     this.race_page.shown.hair_color
-    //   ) {
-    //     return `calc(${sc_main_kof} * 2)`;
-    //   } else if (this.blank_print == 'standard') {
-    //     if (this.blank_size == 'mini') {
-    //       return `calc(${sc_standard_mini_kof} * ${this.growth_Char} / 210)`
-    //     } else {
-    //       return `calc(${sc_standard_print_kof} * ${this.growth_Char} / 210)`
-    //     } 
-    //   } else if (this.blank_print == 'oldschool') {
-    //     if (this.blank_size == 'mini') {
-    //       return `calc(${sc_oldschool_mini_kof} * ${this.growth_Char} / 210)`
-    //     } else {
-    //       return `calc(${sc_oldschool_print_kof} * ${this.growth_Char} / 210)`
-    //     }
-    //   } else if (this.screen_Max) {
-    //     return `calc(${sc_main_kof} * ${this.growth_Char} / 210)`
-    //   } else {
-    //     return `calc(${sc_mob_kof} * ${this.growth_Char} / 210)`
-    //   }
-    // },
-
     width_Custom_Char() {
       const screen_main = `(100vh - 64px)`;
-      let screen_other = null;
-      if (this.blank_print == 'standard') {
-        if (this.blank_size == 'mini') {
-          screen_other = `${1825/6}px`;
-        } else {
-          screen_other = `1825px`;
-        } 
-      } else if (this.blank_print == 'oldschool') {
-        if (this.blank_size == 'mini') {
-          screen_other = `${684/6}px`;
-        } else {
-          screen_other = `684px`;
-        }
-      } else if (this.screen_Max) {
-        screen_other = screen_main;
-      } else {
-        screen_other = `470px`;
-      }
+      
+      const screen_standard_print = `1825px`;
+      const screen_standard_mini = `${1825/6}px`;
+      const screen_oldschool_print = `890px`;
+      const screen_oldschool_mini = `${890/6}px`;
+      const screen_mob = `470px`;
       let kof = this.alignment_page.ratio_photo;
       if(!this.MY.param.sett_photo.size_cover) {
         kof = this.MY.param.sett_photo.ratio;
       };
+      const sc_main_kof = `${screen_main} * ${kof}`
+
+      const sc_standard_print_kof = `${screen_standard_print} * ${kof}`
+      const sc_standard_mini_kof = `${screen_standard_mini} * ${kof}`
+      const sc_oldschool_print_kof = `${screen_oldschool_print} * ${kof}`
+      const sc_oldschool_mini_kof = `${screen_oldschool_mini} * ${kof}`
+      const sc_mob_kof = `${screen_mob} * ${kof}`
 
       if (this.race_page.shown.skin_color) {
-        return `calc(${screen_main} * ${kof})`;
+        return `calc(${sc_main_kof})`;
       } else if (
         this.race_page.shown.eyes_color ||
         this.race_page.shown.hair_color
       ) {
-        return `calc(${screen_main} * ${kof} * 2)`;
+        return `calc(${sc_main_kof} * 2)`;
+      } else if (this.blank_print == 'standard') {
+        if (this.blank_size == 'mini') {
+          return `calc(${sc_standard_mini_kof} * ${this.growth_Char} / 210)`
+        } else {
+          return `calc(${sc_standard_print_kof} * ${this.growth_Char} / 210)`
+        } 
+      } else if (this.blank_print == 'oldschool') {
+        if (this.blank_size == 'mini') {
+          return `calc(${sc_oldschool_mini_kof} * ${this.growth_Char} / 210)`
+        } else {
+          return `calc(${sc_oldschool_print_kof} * ${this.growth_Char} / 210)`
+        }
+      } else if (this.screen_Max) {
+        return `calc(${sc_main_kof} * ${this.growth_Char} / 210)`
       } else {
-        return `calc(${screen_other} * ${kof} * ${this.growth_Char} / 210)`
+        return `calc(${sc_mob_kof} * ${this.growth_Char} / 210)`
       }
     },
+
+    // width_Custom_Char() {
+    //   const screen_main = `(100vh - 64px)`;
+    //   let screen_other = null;
+    //   if (this.blank_print == 'standard') {
+    //     if (this.blank_size == 'mini') {
+    //       screen_other = `${1825/6}px`;
+    //     } else {
+    //       screen_other = `1825px`;
+    //     } 
+    //   } else if (this.blank_print == 'oldschool') {
+    //     if (this.blank_size == 'mini') {
+    //       screen_other = `${684/6}px`;
+    //     } else {
+    //       screen_other = `684px`;
+    //     }
+    //   } else if (this.screen_Max) {
+    //     screen_other = screen_main;
+    //   } else {
+    //     screen_other = `470px`;
+    //   }
+    //   let kof = this.alignment_page.ratio_photo;
+    //   if(!this.MY.param.sett_photo.size_cover) {
+    //     kof = this.MY.param.sett_photo.ratio;
+    //   };
+
+    //   if (this.race_page.shown.skin_color) {
+    //     return `calc(${screen_main} * ${kof})`;
+    //   } else if (
+    //     this.race_page.shown.eyes_color ||
+    //     this.race_page.shown.hair_color
+    //   ) {
+    //     return `calc(${screen_main} * ${kof} * 2)`;
+    //   } else {
+    //     return `calc(${screen_other} * ${kof} * ${this.growth_Char} / 210)`
+    //   }
+    // },
 
     left_Char() {
       if(this.ethnos_name || this.mob_menu) {
