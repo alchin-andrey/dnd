@@ -21,10 +21,10 @@ import AppProficiencies from "@/components/ui/AppProficiencies.vue";
 import AppFines from "@/components/ui/AppFines.vue";
 
 //TRUE
-import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
+// import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
 
 //TEST
-// import AppSelectionArr from "@/components/ui/AppSelectionArr____.vue";
+import AppSelectionArr from "@/components/ui/AppSelectionArr____.vue";
 
 
 
