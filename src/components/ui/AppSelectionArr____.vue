@@ -12,11 +12,16 @@
 	>
 		<div class="column-title jbm-300">{{ t_Title(item) }}</div>
 		<section class="column-link int-400">
-			<div 
+			<!-- <div 
 			class="link-text" 
       :class="{'rare-text': overflow_Item(item) || sett_Counter(item)}"
 			:style="{'width': size_Text}"
+			> -->
+			<div 
+			class="link-text" 
+			:style="{'width': size_Text}"
 			>
+			
 				<span class="type-text">{{ t_Type(item) }}</span>
 			</div>
 			<AppSvg class="svg-18 svg-main-f" :name="icon_Image(item)" />
@@ -58,7 +63,7 @@ export default {
 		]),
 		...mapState(useOverflowStore, [
 			"overflow_Item_Menu", 
-			"overflow_steps"
+			// "overflow_steps"
 		]),
 
 		active_Link: (stor) => (item) => {
@@ -109,10 +114,10 @@ export default {
 			} else {
 				res = stor.overflow_Item_Menu(item);
 			}
-			if(stor.step_num) {
-				const step = `step_${stor.step_num}`;
-				stor.overflow_steps[step][item.id_link] = res;
-			}
+			// if(stor.step_num) {
+			// 	const step = `step_${stor.step_num}`;
+			// 	stor.overflow_steps[step][item.id_link] = res;
+			// }
 			return res;
 		},
 
@@ -120,10 +125,10 @@ export default {
       if (item.type == "spells") {
         const numb = item.select_numb - item.select_list.length;
 				const res = numb !== 0;
-			if(stor.step_num) {
-				const step = `step_${stor.step_num}`;
-				stor.overflow_steps[step][`${item.id_link}__num`] = res;
-			}
+			// if(stor.step_num) {
+			// 	const step = `step_${stor.step_num}`;
+			// 	stor.overflow_steps[step][`${item.id_link}__num`] = res;
+			// }
         return res;
       }
     },

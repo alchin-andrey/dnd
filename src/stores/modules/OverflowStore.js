@@ -11,11 +11,11 @@ import { useSkillsStore } from "@/stores/modules/SkillsStore";
 export const useOverflowStore = defineStore({
 	id: "OverflowStore",
 	state: () => ({
-		// overflow_steps: {
-		// 	step_1: {},
-		// 	step_2: {},
-		// 	step_3: {},
-		// }
+		overflow_steps: {
+			step_1: {},
+			step_2: {},
+			step_3: {},
+		}
 	}),
 
 	getters: {
@@ -26,21 +26,21 @@ export const useOverflowStore = defineStore({
 			"page_Open",
 		]),
 
-		// overflow_Steps: (stor) => (step) => {
-		// 	const obj = stor.overflow_steps[step]
-		// 	for (var key in obj) {
-		// 		if (obj[key]) return true;
-		// 	}
-		// 	return false;
-		// },
+		overflow_Steps: (stor) => (step) => {
+			const obj = stor.overflow_steps[step]
+			for (var key in obj) {
+				if (obj[key]) return true;
+			}
+			return false;
+		},
 
-		// overflow_Step_1() {
-		// 	return this.overflow_Steps('step_1');
-		// },
+		overflow_Step_1() {
+			return this.overflow_Steps('step_1');
+		},
 
-		// overflow_Step_2() {
-		// 	return this.overflow_Steps('step_2');
-		// },
+		overflow_Step_2() {
+			return this.overflow_Steps('step_2');
+		},
 
 		filter_List_Lvl: (stor) => (arr, name, kay) => {
       if(arr) {
