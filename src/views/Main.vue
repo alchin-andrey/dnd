@@ -194,7 +194,7 @@ export default {
 				});
 			}
 
-			return worker.save().then(() => this.progress_load = 100)
+			worker.save().then(() => this.progress_load = 100)
 				.output().then(() => {
 					setTimeout(() => this.progress_load = 0, 1000);
 					setTimeout(() => this.loading_pdf = 0, 2000);
