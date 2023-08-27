@@ -5,8 +5,8 @@ import components from "@/components/ui";
 import directives from "@/directives";
 import VueClipboard from "vue3-clipboard";
 
-import myTranslation from "@/plagins/myTranslation.js";
-import EmojiChenge from "@/plagins/EmojiChenge.js";
+import myTranslation from "@/plugins/myTranslation.js";
+import EmojiChenge from "@/plugins/EmojiChenge.js";
 import { createPinia } from 'pinia';
 
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
