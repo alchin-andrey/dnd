@@ -19,8 +19,12 @@ import AppRangPhoto from "@/components/ui/AppRangPhoto.vue";
 import AppDisclaimer from "@/components/ui/AppDisclaimer.vue";
 import AppProficiencies from "@/components/ui/AppProficiencies.vue";
 import AppFines from "@/components/ui/AppFines.vue";
-// import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
-import AppSelectionArr from "@/components/ui/AppSelectionArr____.vue";
+
+//TRUE
+import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
+
+//TEST
+// import AppSelectionArr from "@/components/ui/AppSelectionArr____.vue";
 
 
 

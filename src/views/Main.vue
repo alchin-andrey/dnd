@@ -161,51 +161,51 @@ export default {
 				},
 			};
 
-			const elements = [];
-			for (let i = 1; i <= 3; i++) {
-				elements.push(document.getElementById(`print-page-${i}`));
-			}
-			for (let i = 1; i <= num_page_spell; i++) {
-				elements.push(document.getElementById(`print-page-4.${i}`));
-			}
-			elements.push(document.getElementById('print-page-5'));
-			if (this.MY.param.blank_print == 'standard') {
-				elements.push(document.getElementById('print-page-6'));
-			}
+			// const elements = [];
+			// for (let i = 1; i <= 3; i++) {
+			// 	elements.push(document.getElementById(`print-page-${i}`));
+			// }
+			// for (let i = 1; i <= num_page_spell; i++) {
+			// 	elements.push(document.getElementById(`print-page-4.${i}`));
+			// }
+			// elements.push(document.getElementById('print-page-5'));
+			// if (this.MY.param.blank_print == 'standard') {
+			// 	elements.push(document.getElementById('print-page-6'));
+			// }
 
-			let worker = html2pdf()
-				.set(opt)
-				.from(elements[0]);
+			// let worker = html2pdf()
+			// 	.set(opt)
+			// 	.from(elements[0]);
 
-			if (elements.length > 1) {
-				worker = worker.toPdf();
+			// if (elements.length > 1) {
+			// 	worker = worker.toPdf();
 
-				elements.slice(1).forEach(async element => {
-					worker = worker
-						.get('pdf')
-						.then(pdf => {
-							pdf.addPage();
-						})
-						.from(element)
-						.toContainer()
-						.then(() => this.progress_load = 85)
-						.toCanvas()
-						.toPdf();
-				});
-			}
+			// 	elements.slice(1).forEach(async element => {
+			// 		worker = worker
+			// 			.get('pdf')
+			// 			.then(pdf => {
+			// 				pdf.addPage();
+			// 			})
+			// 			.from(element)
+			// 			.toContainer()
+			// 			.then(() => this.progress_load = 85)
+			// 			.toCanvas()
+			// 			.toPdf();
+			// 	});
+			// }
 
-			worker.save().then(() => this.progress_load = 100)
-				.output().then(() => {
-					setTimeout(() => this.progress_load = 0, 1000);
-					setTimeout(() => this.loading_pdf = 0, 2000);
-				});;
-
-			// html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
-			// 	.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+			// worker.save().then(() => this.progress_load = 100)
 			// 	.output().then(() => {
 			// 		setTimeout(() => this.progress_load = 0, 1000);
 			// 		setTimeout(() => this.loading_pdf = 0, 2000);
-			// 	});
+			// 	});;
+
+			html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
+				.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
+				.output().then(() => {
+					setTimeout(() => this.progress_load = 0, 1000);
+					setTimeout(() => this.loading_pdf = 0, 2000);
+				});
 		},
 
 		getWatch_Race() {
