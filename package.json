@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && npm run post:build",
-    "post:build": "node build/post-build.js"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "@vueform/slider": "^2.1.7",

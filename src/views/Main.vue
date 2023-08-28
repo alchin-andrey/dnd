@@ -9,8 +9,8 @@
 	</div>
 
 
-	<my-dialog-spell :show="hashChanged && $root.env !== 'development'" finish>
-	<!-- <my-dialog-spell :show="true" finish> -->
+	<!-- <my-dialog-spell :show="hashChanged && $root.env !== 'development'" finish>
+	<my-dialog-spell :show="true" finish>
 		<div class="notification-header">
         <button type="button" class="close-refresh-modal" @click="closeModal" aria-label="Close">
           <span aria-hidden="true"><i class="fal fa-times fa-sm"></i></span>
@@ -25,7 +25,7 @@
           <button class="btn btn-default" @click="reloadApp">Update</button>
         </div>
       </div>
-	</my-dialog-spell>
+	</my-dialog-spell> -->
 
 
 	<!-- alse -->
@@ -46,7 +46,7 @@
 <script>
 import html2pdf from "html2pdf.js";
 
-import { refreshPageMixin } from '@/mixins/refresh-page.mixin.js';
+// import { refreshPageMixin } from '@/mixins/refresh-page.mixin.js';
 
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
@@ -58,7 +58,10 @@ import { useFeatsStore } from "@/stores/modules/FeatsStore";
 import MainApp from "@/components/main/MainApp.js";
 export default {
 	name: "Main",
-	mixins: [MainApp, refreshPageMixin],
+	mixins: [
+		MainApp, 
+		// refreshPageMixin,
+	],
 	data() {
 		return {
 			PRINT_BLANK: false,
