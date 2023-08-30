@@ -16,12 +16,12 @@ export default {
     link: "https://eneri.com.ua",
   },
 
-  did: {
-    id: 1,
-    name: "club_did_name",
-    details: "club_did_details",
-    link_name: "dedlihozor.club",
-    link: "https://dedlihozor.club"
+  miar: {
+    id: 8,
+    name: "club_miar_name",
+    details: "club_miar_details",
+    link_name: "miar.com.ua",
+    link: "https://miar.com.ua",
   },
 
   mr: {
@@ -30,6 +30,14 @@ export default {
     details: "club_mr_details",
     link_name: "@Lviv_MR_DnD",
     link: "https://t.me/Lviv_MR_DnD/9310",
+  },
+
+  did: {
+    id: 1,
+    name: "club_did_name",
+    details: "club_did_details",
+    link_name: "dedlihozor.club",
+    link: "https://dedlihozor.club"
   },
 
   rumble_dice: {
