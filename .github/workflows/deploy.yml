@@ -3,10 +3,10 @@ name: Deploy
 on:
   push:
     branches:
-      - stop 
-      # - master
+      #- stop 
+       - master
 
-jobs:
+jobs
   build:
     name: Build
     runs-on: ubuntu-latest

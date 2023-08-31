@@ -1,5 +1,5 @@
 <template>
-	<a target="_blank" href="https://www.buymeacoffee.com/dndme/membership">
+	<a target="_blank" href="https://cutt.ly/lwkDE0Yn">
 		<slot></slot>
 	</a>
 </template>

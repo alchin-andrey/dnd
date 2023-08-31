@@ -9,9 +9,9 @@
 		<div class="int-700-20" v-html="t_Title" />
 
 		<section class="flex-col gap-15 int-400">
-			<div class="white-04" v-html="t_Authors" />
 			<div v-html="t_Thanks" />
-			<div class="rare-text" v-html="t_Benefaction" />
+			<!-- <div class="rare-text" v-html="t_Benefaction" /> -->
+			<div class="white-04" v-html="t_Authors" />
 		</section>
 
 		<section class="flex-col gap-4 int-700" 	
@@ -23,7 +23,7 @@
 				class="btm-white"
 				name="view_benefits"
 				icon="donate"
-				link="https://www.buymeacoffee.com/dndme/membership" 
+				link="https://cutt.ly/lwkDE0Yn"
 			/>
 			<AppLoadBtm 
 				v-if="finish" 

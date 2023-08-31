@@ -37,7 +37,7 @@ export default {
 		...mapState(usePagesStore, ["screen_Max", "screen_Menu_Num"]),
 		slide_Arr() {
 			let arr = [];
-			for (let i = 1; i < 9; i++) {
+			for (let i = 1; i < 2; i++) {
 				arr.push(require(`@/assets/img/promo/${i}.png`));
 			}
 			return arr;

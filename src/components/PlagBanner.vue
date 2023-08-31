@@ -18,7 +18,7 @@
 						class="btm-blue"
 						name="accelerate_development"
 						icon="donate"
-						link="https://www.buymeacoffee.com/dndme/membership"
+						link="https://send.monobank.ua/jar/F8Yfa61mr"
 						btm_x2
 					/>
 				</section>

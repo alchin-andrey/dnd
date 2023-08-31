@@ -16,7 +16,7 @@
 			<AppBtmLink 
 			name="lobby_support_project" 
 			icon="donate" 
-			link="https://www.buymeacoffee.com/dndme" 
+			link="https://cutt.ly/lwkDE0Yn" 
 			/>
 		</section>
 	</div>
