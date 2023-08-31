@@ -3,8 +3,8 @@ name: Deploy
 on:
   push:
     branches:
-      #- stop 
-       - master
+      - stop 
+      # - master
 
 jobs
   build:
