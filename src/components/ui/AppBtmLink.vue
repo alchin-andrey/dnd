@@ -1,7 +1,20 @@
 <template>
 	<div class="btm-grey br-12 blur-60 hov cur-p pos-rel">
 		<a target="_blank" :href="link">
-			<div :class="[style_Btm]">{{ T_Btm_Name }}</div>
+			<div class="int-700 flex-row-c pd-rl-16 h-47 ">
+			<!-- <div :class="style_Btm"> -->
+				<!-- {{ T_Btm_Name }} -->
+					<div>
+						{{ em_Before }}
+						<emoji
+						v-if="em_Upd"
+						:data="emojiIndex"
+						:emoji="em_Upd"
+						:set="set_emoji"
+						:size="14"
+						/>{{ em_After }}
+					</div>
+			</div>
 			<AppSvg 
 				class="svg-18 svg-main-f icon-pos"
 				:class="[style_Svg]"
@@ -37,6 +50,18 @@ export default {
 			return this.T(this.name)
 		},
 
+		em_Upd() {
+			return this.updEmoji(this.T_Btm_Name);
+		},
+
+		em_Before() {
+			return this.beforeEmoji(this.T_Btm_Name);
+		},
+
+		em_After() {
+			return this.afterEmoji(this.T_Btm_Name);
+		},
+
 		style_Btm() {
 			if(this.btm_x2) {
 				return 'int-700-20 pd-20-28';
@@ -68,5 +93,19 @@ export default {
 }
 .icon-pos_x2 {
 	right: 14px;
+}
+
+.emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+	top: 2px;
+}
+
+.h-47 {
+	height: 47px;
+}
+
+.text-c {
+	vertical-align: middle;
 }
 </style>
