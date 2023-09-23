@@ -12692,7 +12692,7 @@ export default {
         ],
       },
       {
-        level: 3,
+        level: 2,
         type: "spells",
         position: 4,
         name: "spells",
