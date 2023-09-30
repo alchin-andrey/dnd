@@ -929,7 +929,7 @@ export default {
         spell: spells.extra_attack_fighter,
       },
       {
-        level: 5,
+        level: 9,
         spell: spells.indomity,
       },
     ],
