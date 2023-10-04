@@ -4456,17 +4456,17 @@ export default {
 
             charges: [
               {
-                level: 1,
+                level: 6,
                 name: "dark_ones_own_luck_slots",
                 type: "short_rest",
                 list: [
                   [
                     "d10",
-                    1,
-                    1,
-                    1,
-                    1,
-                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                     1,
                     1,
                     1,
