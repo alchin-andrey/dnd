@@ -83,7 +83,8 @@ export default {
     ]),
     ...mapState(usePagesStore, [
       "race_page", 
-      "screen_Max", 
+      "screen_Max",
+      "setting_open",
       "site_settings", 
       "alignment_page",
       "errors",
@@ -326,14 +327,17 @@ export default {
   },
 
   methods: {
-    ...mapActions(usePagesStore, ["showSettings__Alignment", "showMobParam"]),
+    ...mapActions(usePagesStore, ["showSettings__Alignment", "showMobParam", "showHome"]),
 
     showPhotoSet() {
-
-      if(!this.ethnos_name && !this.mob_menu) {
-        this.showSettings__Alignment('photo');
+      if (this.ethnos_name) {
+        return null;
       } else if(this.mob_menu) {
         this.showMobParam();
+      } else if (!this.setting_open) {
+        this.showSettings__Alignment('photo');
+      } else {
+        this.showHome();
       }
     }
   }
