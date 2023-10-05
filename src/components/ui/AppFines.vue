@@ -26,7 +26,7 @@
 					negative: Negative,
 				}"
 			>
-				{{ t_Title }}
+				{{ T_Title }}
 			</span>
 			{{ em_Before }}
 			<emoji
@@ -77,12 +77,12 @@ export default {
         );
 		},
 
-		t_Title() {
+		T_Title() {
 			return this.T(this.fines.keyword);
 		},
 
 		t_Details() {
-			return this.T(this.fines.details);
+			return this.t(this.fines.details);
 		},
 
 		em_Upd() {
