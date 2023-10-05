@@ -70,8 +70,18 @@ export default {
 		},
 
 		shown_Level_Dot: (store) => (item) => {
-			let lvl = store.MY.level;
-			return item.level == lvl && lvl !== 1;
+			const lvl = store.MY.level;
+			if (lvl !== 1) {
+				const res_1 = item.level == lvl;
+				if(!res_1 && Array.isArray(item.select)) {
+					const past = item.select[lvl - 2];
+					const present = item.select[lvl - 1];
+					const res_2 = (present - past) > 0;
+					return res_2;
+				}
+				return res_1;
+			}
+			return false;
 		},
 
 		uniqu_Name() {
