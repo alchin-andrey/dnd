@@ -2287,7 +2287,7 @@ export default {
                         level: 6,
                         type: "plus",
                         keyword: "double_weight",
-                        details: "weight_capacity_details",
+                        details: "weight_capacity",
                       },
                       {
                         level: 6,
