@@ -888,7 +888,7 @@ export default {
             {
               type: "custom",
               name: "feats",
-              position:6,
+              position:7,
               select: 1,
               list: [
                 feats.actor,
@@ -900,7 +900,6 @@ export default {
                 feats.lucky,
                 feats.tough,
                 feats.durable,
-                feats.resilient, 
                 feats.skilled,
                 feats.keen_mind,
                 feats.linguist,
