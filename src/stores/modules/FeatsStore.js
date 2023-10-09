@@ -87,7 +87,18 @@ export const useFeatsStore = defineStore({
 		},
 
 		feats_Arr() {
+			const MYStore = useMYStore();
       const new_arr = Object.values(this.feats_Obj);
+			
+			const race_faets_obj = MYStore.сustomm_Settings_Race_Arr.find(el => el.name == 'feats');
+			if (race_faets_obj) {
+				const race_faets_name = race_faets_obj.select_list[0].name;
+				const index = new_arr.findIndex(n => n.name == race_faets_name);
+				if (index !== -1) {
+					new_arr.splice(index, 1);
+				}
+			}
+
 			return new_arr;
 		},
 
