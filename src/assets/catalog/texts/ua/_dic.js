@@ -6301,4 +6301,6 @@ export default {
 
   human_simple: "базовий",
   human_simple_details: races.human_simple,
+
+  feats: "риси",
 };

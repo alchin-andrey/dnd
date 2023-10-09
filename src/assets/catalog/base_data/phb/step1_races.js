@@ -7,6 +7,7 @@ import tool from "@/assets/catalog/base_data/kinds_tools.js";
 import armory from "@/assets/catalog/base_data/kinds_armor.js";
 import backstory from "@/assets/catalog/base_data/phb/list_backstories.js";
 import mods from "@/assets/catalog/base_data/list_spells_mods.js";
+import feats from "@/assets/catalog/base_data/phb/list_feats.js";
 
 export default {
 
@@ -885,8 +886,44 @@ export default {
               ]
             },
             {
-              type: "feats",
-              position: 7,
+              type: "custom",
+              name: "feats",
+              position:7,
+              select: 1,
+              list: [
+                feats.actor,
+                feats.athlete,
+                feats.mobile,  
+                feats.dungeon_delver,
+                feats.observant,  
+                feats.alert,   
+                feats.lucky,
+                feats.tough,
+                feats.durable,
+                feats.resilient, 
+                feats.skilled,
+                feats.keen_mind,
+                feats.linguist,
+                feats.healer,
+                feats.lightly_armored,
+                feats.moderately_armored,
+                feats.heavily_armored,
+                feats.shield_master,
+                feats.great_weapon_master,
+                feats.polearm_master,
+                feats.weapon_master,
+                feats.dual_wielder,
+                feats.crossbow_expert,
+                feats.sharpshooter,
+                feats.martial_adept,
+                feats.brawler,
+                feats.charger,
+                feats.savage_attacker,
+                feats.sentinel,
+                feats.mounted_combatant,
+                feats.mage_slayer,
+                feats.magic_initiate
+              ],
             },
             {
               type: "custom",
