@@ -5,7 +5,7 @@ import races_srd from "@/assets/catalog/base_data/srd/step1_races.js";
 import classes_srd from "@/assets/catalog/base_data/srd/step2_classes.js";
 
 import backstories_phb from "@/assets/catalog/base_data/phb/list_backstories.js";
-import races_phb from "@/assets/catalog/base_data/phb/step1_races_new.js";
+import races_phb from "@/assets/catalog/base_data/phb/step1_races.js";
 import classes_phb from "@/assets/catalog/base_data/phb/step2_classes.js";
 
 export const useMainStore = defineStore({
