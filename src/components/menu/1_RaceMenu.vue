@@ -13,7 +13,7 @@
 		</section>
 		<!-- RACE ETHNOS -->
 
-		<section
+		<!-- <section
 			class="selection_menu"
 			v-if="сustomm_Settings_Race_Arr.length !== 0"
 		>
@@ -24,6 +24,42 @@
 			<AppSelectionArr :menu="skills_Filter" :step_num="1"/>
 			<AppSelectionArr :menu="tools_Filter" :step_num="1"/>
 			<AppSelectionArr :menu="languages_Filter" :step_num="1"/>
+      <AppSelectionArr :menu="armors_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="weapons_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="packs_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="inventory_Filter" :step_num="1"/>
+		</section> -->
+
+		<section
+			class="selection_menu"
+			v-if="shown_Other"
+		>
+			<AppSelectionArr :menu="other_Filter" :step_num="1"/>
+		</section>
+
+		<section
+			class="selection_menu"
+			v-if="shown_Spells"
+		>
+      <AppSelectionArr :menu="spells_0_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="spells_1_Filter" :step_num="1"/>
+		</section>
+
+		<section
+			class="selection_menu"
+			v-if="shown_Stats"
+		>
+      <AppSelectionArr :menu="feats_Filter" :step_num="1"/>
+      <AppSelectionArr :menu="stats_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="skills_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="tools_Filter" :step_num="1"/>
+			<AppSelectionArr :menu="languages_Filter" :step_num="1"/>
+		</section>
+
+		<section
+			class="selection_menu"
+			v-if="shown_Equip"
+		>
       <AppSelectionArr :menu="armors_Filter" :step_num="1"/>
 			<AppSelectionArr :menu="weapons_Filter" :step_num="1"/>
 			<AppSelectionArr :menu="packs_Filter" :step_num="1"/>
@@ -138,7 +174,7 @@ export default {
 		other_Filter: (stor) => stor.filter_Setting(2),
 
 		spells_0_Filter: (stor) => stor.filter_Setting(3),
-		spells_Filter: (stor) => stor.filter_Setting(4),
+		spells_1_Filter: (stor) => stor.filter_Setting(4),
 
 		feats_Filter: (stor) => stor.filter_Setting(6),
 		stats_Filter: (stor) => stor.filter_Setting(7),
@@ -152,6 +188,36 @@ export default {
 		inventory_Filter: (stor) => stor.filter_Setting(14),
 
 		undefined_Filter: (stor) => stor.filter_Setting(undefined),
+
+		shown_Other() {
+      return this.other_Filter.length !== 0
+    },
+
+		shown_Spells() {
+      return (
+        this.spells_0_Filter.length !== 0 ||
+        this.spells_1_Filter.length !== 0
+      )
+    },
+
+		shown_Stats() {
+      return (
+        this.feats_Filter.length !== 0 ||
+        this.stats_Filter.length !== 0 ||
+        this.skills_Filter.length !== 0 ||
+        this.tools_Filter.length !== 0 ||
+        this.languages_Filter.length !== 0
+      )
+    },
+
+		shown_Equip() {
+      return (
+        this.armors_Filter.length !== 0 ||
+        this.weapons_Filter.length !== 0 ||
+        this.packs_Filter.length !== 0 ||
+        this.inventory_Filter.length !== 0
+      )
+    },
 
 		shown_Undefined() {
 			return this.undefined_Filter.length !== 0;
