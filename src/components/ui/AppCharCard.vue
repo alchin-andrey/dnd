@@ -76,6 +76,7 @@ export default {
 	background: #0e1518;
 	position: relative;
 	overflow: hidden;
+	border-radius: 4px;
 	background-image: url('@/assets/img/characters/halfling/ethhnos/image.png');
 }
 
