@@ -728,11 +728,6 @@ export default {
                   proficiencies: {languages: [lang.chondatanian]}
                 },
                 {
-                  name: lang.chondatanian.name,
-                  details: lang.chondatanian.details,
-                  proficiencies: {languages: [lang.chondatanian]}
-                },
-                {
                   name: lang.uluik.name,
                   details: lang.uluik.details,
                   proficiencies: {languages: [lang.uluik]}
@@ -1186,11 +1181,6 @@ export default {
                   name: lang.halruanian.name,
                   details: lang.halruanian.details,
                   proficiencies: {languages: [lang.halruanian]}
-                },
-                {
-                  name: lang.chondatanian.name,
-                  details: lang.chondatanian.details,
-                  proficiencies: {languages: [lang.chondatanian]}
                 },
                 {
                   name: lang.chondatanian.name,
