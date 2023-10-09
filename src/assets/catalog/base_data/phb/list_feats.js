@@ -1101,12 +1101,6 @@ export default {
             },
           },
           {
-            name_set: weaponry.clubs.name,
-            proficiencies: {
-              weapons: [weaponry.clubs],
-            },
-          },
-          {
             name_set: weaponry.daggers.name,
             proficiencies: {
               weapons: [weaponry.daggers],
