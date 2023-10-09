@@ -674,7 +674,7 @@ export default {
     race_settings: {
       ethnos: {
 
-        human_simple: {
+        damarian: {
           color: {
             skin: [
               color[2][1],
@@ -687,589 +687,297 @@ export default {
             hair: [color[2][6]],
           },
 
-          name: "human_simple",
-          details: "human_simple_details",
+          name: "damarian",
+          details: "damarian_details",
 
-          stats: [
-            { name: "strength", num: 1, },
-            { name: "dexterity", num: 1, },
-            { name: "constitution", num: 1, },
-            { name: "intelligence", num: 1, },
-            { name: "wisdom", num: 1, },
-            { name: "charisma", num: 1, },
-          ],
-
-          settings: [
-            {
-              level: 1,
-              type: "custom",
-              name: "languages",
-              position: 10,
-              select: 1,
-              list: [
-                {
-                  name: lang.damarian.name,
-                  details: lang.damarian.details,
-                  proficiencies: {languages: [lang.damarian]}
-                },
-                {
-                  name: lang.vaelan.name,
-                  details: lang.vaelan.details,
-                  proficiencies: {languages: [lang.vaelan]}
-                },
-                {
-                  name: lang.halruanian.name,
-                  details: lang.halruanian.details,
-                  proficiencies: {languages: [lang.halruanian]}
-                },
-                {
-                  name: lang.chondatanian.name,
-                  details: lang.chondatanian.details,
-                  proficiencies: {languages: [lang.chondatanian]}
-                },
-                {
-                  name: lang.chondatanian.name,
-                  details: lang.chondatanian.details,
-                  proficiencies: {languages: [lang.chondatanian]}
-                },
-                {
-                  name: lang.uluik.name,
-                  details: lang.uluik.details,
-                  proficiencies: {languages: [lang.uluik]}
-                },
-                {
-                  name: lang.dambratan.name,
-                  details: lang.dambratan.details,
-                  proficiencies: {languages: [lang.dambratan]}
-                },
-                {
-                  name: lang.shaarian.name,
-                  details: lang.shaarian.details,
-                  proficiencies: {languages: [lang.shaarian]}
-                },
-                {
-                  name: lang.chessent.name,
-                  details: lang.chessent.details,
-                  proficiencies: {languages: [lang.chessent]}
-                },
-                {
-                  name: lang.alzhedo.name,
-                  details: lang.alzhedo.details,
-                  proficiencies: {languages: [lang.alzhedo]}
-                },
-                {
-                  name: lang.shu.name,
-                  details: lang.shu.details,
-                  proficiencies: {languages: [lang.shu]}
-                },
-                {
-                  name: lang.rashemian.name,
-                  details: lang.rashemian.details,
-                  proficiencies: {languages: [lang.rashemian]}
-                },
-                {
-                  name: lang.midani.name,
-                  details: lang.midani.details,
-                  proficiencies: {languages: [lang.midani]}
-                },
-                {
-                  name: lang.chult.name,
-                  details: lang.chult.details,
-                  proficiencies: {languages: [lang.chult]}
-                },
-                {
-                  name: lang.teramian.name,
-                  details: lang.teramian.details,
-                  proficiencies: {languages: [lang.teramian]}
-                },
-                {
-                  name: lang.tuiganian.name,
-                  details: lang.tuiganian.details,
-                  proficiencies: {languages: [lang.tuiganian]}
-                },
-                {
-                  name: lang.guran.name,
-                  details: lang.guran.details,
-                  proficiencies: {languages: [lang.guran]}
-                },
-                {
-                  name: lang.rushum.name,
-                  details: lang.rushum.details,
-                  proficiencies: {languages: [lang.rushum]}
-                },
-                {
-                  name: lang.illuskian.name,
-                  details: lang.illuskian.details,
-                  proficiencies: {languages: [lang.illuskian]}
-                },
-              ]
-            },
-          ]
-
+          proficiencies: {
+            languages: [lang.damarian],
+          },
         },
 
-        variant: {
+        ffolk: {
           color: {
-            skin: [
-              color[1][0],
-            ],
-            eyes: [color[8][3]],
-            hair: [color[3][3]],
+            skin: [color[2][1]],
+            eyes: [color[7][3]],
+            hair: [color[3][5]],
           },
 
-          name: "variant",
-          details: "variant_details",
+          name: "ffolk",
+          details: "ffolk_details",
 
-          settings: [
-            {
-              type: "custom",
-              name: "stats",
-              position:7,
-              select: 2,
-              list: [
-                {
-                  name_set: "strength",
-                  stats: [
-                    {
-                      name: "strength",
-                      num: 1,
-                      details: "strength_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "dexterity",
-                  stats: [
-                    {
-                      name: "dexterity",
-                      num: 1,
-                      details: "dexterity_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "constitution",
-                  stats: [
-                    {
-                      name: "constitution",
-                      num: 1,
-                      details: "constitution_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "intelligence",
-                  stats: [
-                    {
-                      name: "intelligence",
-                      num: 1,
-                      details: "intelligence_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "wisdom",
-                  stats: [
-                    {
-                      name: "wisdom",
-                      num: 1,
-                      details: "wisdom_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "charisma",
-                  stats: [
-                    {
-                      name: "charisma",
-                      num: 1,
-                      details: "charisma_details",
-                    },
-                  ],
-                },
-              ]
-            },
-            {
-              type: "feats",
-              position: 7,
-            },
-            {
-              type: "custom",
-              name: "skills",
-              position: 8,
-              select: 1,
-              list: [
-                {
-                  name_set: "athletics",
-                  skills: [
-                    {
-                      name: "athletics",
-                      num: "Mastery",
-                      details: "athletics_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "acrobatics",
-                  skills: [
-                    {
-                      name: "acrobatics",
-                      num: "Mastery",
-                      details: "acrobatics_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "sleight_of_hand",
-                  skills: [
-                    {
-                      name: "sleight_of_hand",
-                      num: "Mastery",
-                      details: "sleight_of_hand_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "stealth",
-                  skills: [
-                    {
-                      name: "stealth",
-                      num: "Mastery",
-                      details: "stealth_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "investigation",
-                  skills: [
-                    {
-                      name: "investigation",
-                      num: "Mastery",
-                      details: "investigation_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "history",
-                  skills: [
-                    {
-                      name: "history",
-                      num: "Mastery",
-                      details: "history_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "religion",
-                  skills: [
-                    {
-                      name: "religion",
-                      num: "Mastery",
-                      details: "religion_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "arcana",
-                  skills: [
-                    {
-                      name: "arcana",
-                      num: "Mastery",
-                      details: "arcana_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "nature",
-                  skills: [
-                    {
-                      name: "nature",
-                      num: "Mastery",
-                      details: "nature_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "survival",
-                  skills: [
-                    {
-                      name: "survival",
-                      num: "Mastery",
-                      details: "survival_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "perception",
-                  skills: [
-                    {
-                      name: "perception",
-                      num: "Mastery",
-                      details: "perception_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "insight",
-                  skills: [
-                    {
-                      name: "insight",
-                      num: "Mastery",
-                      details: "insight_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "medicine",
-                  skills: [
-                    {
-                      name: "medicine",
-                      num: "Mastery",
-                      details: "medicine_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "animal_handling",
-                  skills: [
-                    {
-                      name: "animal_handling",
-                      num: "Mastery",
-                      details: "animal_handling_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "performance",
-                  skills: [
-                    {
-                      name: "performance",
-                      num: "Mastery",
-                      details: "performance_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "persuasion",
-                  skills: [
-                    {
-                      name: "persuasion",
-                      num: "Mastery",
-                      details: "persuasion_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "deception",
-                  skills: [
-                    {
-                      name: "deception",
-                      num: "Mastery",
-                      details: "deception_details",
-                    },
-                  ],
-                },
-                {
-                  name_set: "intimidation",
-                  skills: [
-                    {
-                      name: "intimidation",
-                      num: "Mastery",
-                      details: "intimidation_details",
-                    },
-                  ],
-                },
-              ]
-            },
-            {
-              level: 1,
-              type: "custom",
-              name: "languages",
-              position: 10,
-              select: 1,
-              list: [
-                {
-                  name: lang.halfling.name,
-                  details: lang.halfling.details,
-                  proficiencies: {languages: [lang.halfling]}
-                },
-                {
-                  name: lang.gnome.name,
-                  details: lang.gnome.details,
-                  proficiencies: {languages: [lang.gnome]}
-                },
-                {
-                  name: lang.dwarf.name,
-                  details: lang.dwarf.details,
-                  proficiencies: {languages: [lang.dwarf]}
-                },
-                {
-                  name: lang.elf.name,
-                  details: lang.elf.details,
-                  proficiencies: {languages: [lang.elf]}
-                },
-                {
-                  name: lang.orc.name,
-                  details: lang.orc.details,
-                  proficiencies: {languages: [lang.orc]}
-                },
-                {
-                  name: lang.dragon.name,
-                  details: lang.dragon.details,
-                  proficiencies: {languages: [lang.dragon]}
-                },
-                {
-                  name: lang.giant.name,
-                  details: lang.giant.details,
-                  proficiencies: {languages: [lang.giant]}
-                },
-                {
-                  name: lang.goblin.name,
-                  details: lang.goblin.details,
-                  proficiencies: {languages: [lang.goblin]}
-                },
-                {
-                  name: lang.sylvan.name,
-                  details: lang.sylvan.details,
-                  proficiencies: {languages: [lang.sylvan]}
-                },
-                {
-                  name: lang.undercommon.name,
-                  details: lang.undercommon.details,
-                  proficiencies: {languages: [lang.undercommon]}
-                },
-                {
-                  name: lang.deep.name,
-                  details: lang.deep.details,
-                  proficiencies: {languages: [lang.deep]}
-                },
-                {
-                  name: lang.primordial.name,
-                  details: lang.primordial.details,
-                  proficiencies: {languages: [lang.primordial]}
-                },
-                {
-                  name: lang.sky.name,
-                  details: lang.sky.details,
-                  proficiencies: {languages: [lang.sky]}
-                },
-                {
-                  name: lang.demonic.name,
-                  details: lang.demonic.details,
-                  proficiencies: {languages: [lang.demonic]}
-                },
-                {
-                  name: lang.tiefling.name,
-                  details: lang.tiefling.details,
-                  proficiencies: {languages: [lang.tiefling]}
-                },
-              ]
-            },
-            {
-              level: 1,
-              type: "custom",
-              name: "languages",
-              position: 10,
-              select: 1,
-              list: [
-                {
-                  name: lang.damarian.name,
-                  details: lang.damarian.details,
-                  proficiencies: {languages: [lang.damarian]}
-                },
-                {
-                  name: lang.vaelan.name,
-                  details: lang.vaelan.details,
-                  proficiencies: {languages: [lang.vaelan]}
-                },
-                {
-                  name: lang.halruanian.name,
-                  details: lang.halruanian.details,
-                  proficiencies: {languages: [lang.halruanian]}
-                },
-                {
-                  name: lang.chondatanian.name,
-                  details: lang.chondatanian.details,
-                  proficiencies: {languages: [lang.chondatanian]}
-                },
-                {
-                  name: lang.chondatanian.name,
-                  details: lang.chondatanian.details,
-                  proficiencies: {languages: [lang.chondatanian]}
-                },
-                {
-                  name: lang.uluik.name,
-                  details: lang.uluik.details,
-                  proficiencies: {languages: [lang.uluik]}
-                },
-                {
-                  name: lang.dambratan.name,
-                  details: lang.dambratan.details,
-                  proficiencies: {languages: [lang.dambratan]}
-                },
-                {
-                  name: lang.shaarian.name,
-                  details: lang.shaarian.details,
-                  proficiencies: {languages: [lang.shaarian]}
-                },
-                {
-                  name: lang.chessent.name,
-                  details: lang.chessent.details,
-                  proficiencies: {languages: [lang.chessent]}
-                },
-                {
-                  name: lang.alzhedo.name,
-                  details: lang.alzhedo.details,
-                  proficiencies: {languages: [lang.alzhedo]}
-                },
-                {
-                  name: lang.shu.name,
-                  details: lang.shu.details,
-                  proficiencies: {languages: [lang.shu]}
-                },
-                {
-                  name: lang.rashemian.name,
-                  details: lang.rashemian.details,
-                  proficiencies: {languages: [lang.rashemian]}
-                },
-                {
-                  name: lang.midani.name,
-                  details: lang.midani.details,
-                  proficiencies: {languages: [lang.midani]}
-                },
-                {
-                  name: lang.chult.name,
-                  details: lang.chult.details,
-                  proficiencies: {languages: [lang.chult]}
-                },
-                {
-                  name: lang.teramian.name,
-                  details: lang.teramian.details,
-                  proficiencies: {languages: [lang.teramian]}
-                },
-                {
-                  name: lang.tuiganian.name,
-                  details: lang.tuiganian.details,
-                  proficiencies: {languages: [lang.tuiganian]}
-                },
-                {
-                  name: lang.guran.name,
-                  details: lang.guran.details,
-                  proficiencies: {languages: [lang.guran]}
-                },
-                {
-                  name: lang.rushum.name,
-                  details: lang.rushum.details,
-                  proficiencies: {languages: [lang.rushum]}
-                },
-                {
-                  name: lang.illuskian.name,
-                  details: lang.illuskian.details,
-                  proficiencies: {languages: [lang.illuskian]}
-                },
-              ]
-            },
-          ]
+          proficiencies: {
+            languages: [lang.vaelan],
+          },
+        },
+
+        halruanian: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[10][2], color[2][5], color[0][5], color[6][3]],
+            hair: [color[3][2], color[2][5]],
+          },
+
+          name: "halruanian",
+          details: "halruanian_details",
+
+          proficiencies: {
+            languages: [lang.halruanian],
+          },
+        },
+
+        tetirian: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][3]],
+            hair: [color[2][6]],
+          },
+
+          name: "tetirian",
+          details: "tetirian_details",
+
+          proficiencies: {
+            languages: [lang.chondatanian],
+          },
+        },
+
+        ulutiune: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[8][3]],
+            hair: [color[0][6]],
+          },
+
+          name: "ulutiune",
+          details: "ulutiune_details",
+
+          proficiencies: {
+            languages: [lang.uluik],
+          },
+        },
+
+        arkayun: {
+          name: "arkayun",
+          details: "arkayun_details",
+
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          proficiencies: {
+            languages: [lang.dambratan],
+          },
+        },
+
+        nar: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[1][4]],
+            hair: [color[0][6]],
+          },
+
+          name: "nar",
+          details: "nar_details",
+
+          proficiencies: {
+            languages: [lang.damarian],
+          },
+        },
+
+        shaarian: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[11][2]],
+            hair: [color[2][5]],
+          },
+
+          name: "shaarian",
+          details: "shaarian_details",
+
+          proficiencies: {
+            languages: [lang.shaarian],
+          },
+        },
+
+        chondatan: {
+          color: {
+            skin: [color[2][2]],
+            eyes: [color[6][3], color[2][5]],
+            hair: [color[0][2], color[0][3], color[0][4], color[0][5]],
+          },
+
+          name: "chondatan",
+          details: "chondatan_details",
+
+          proficiencies: {
+            languages: [lang.chondatanian],
+          },
+        },
+
+        mulan: {
+          color: {
+            skin: [color[2][3]],
+            eyes: [color[2][4]],
+            hair: [color[1][6]],
+          },
+
+          name: "mulan",
+          details: "mulan_details",
+
+          proficiencies: {
+            languages: [lang.chessent],
+          },
+        },
+
+        kalishit: {
+          color: {
+            skin: [color[2][4]],
+            eyes: [color[2][5]],
+            hair: [color[2][6]],
+          },
+
+          name: "kalishit",
+          details: "kalishit_details",
+
+          proficiencies: {
+            languages: [lang.alzhedo],
+          },
+        },
+
+        shu: {
+          color: {
+            skin: [color[2][4]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "shu",
+          details: "shu_details",
+
+          proficiencies: {
+            languages: [lang.shu],
+          },
+        },
+
+        rashemi: {
+          color: {
+            skin: [color[2][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "rashemi",
+          details: "rashemi_details",
+
+          proficiencies: {
+            languages: [lang.rashemian],
+          },
+        },
+
+        bedin: {
+          color: {
+            skin: [color[2][6]],
+            eyes: [color[2][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "bedin",
+          details: "bedin_details",
+
+          proficiencies: {
+            languages: [lang.midani],
+          },
+        },
+
+        chult: {
+          color: {
+            skin: [color[1][6]],
+            eyes: [color[3][3]],
+            hair: [color[2][5]],
+          },
+
+          name: "chult",
+          details: "chult_details",
+
+          proficiencies: {
+            languages: [lang.chult],
+          },
+        },
+
+        terami: {
+          color: {
+            skin: [color[1][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][6]],
+          },
+
+          name: "terami",
+          details: "terami_details",
+
+          proficiencies: {
+            languages: [lang.teramian],
+          },
+        },
+
+        tuigan: {
+          color: {
+            skin: [color[3][5]],
+            eyes: [color[0][5]],
+            hair: [color[0][5]],
+          },
+
+          name: "tuigan",
+          details: "tuigan_details",
+
+          proficiencies: {
+            languages: [lang.tuiganian],
+          },
+        },
+
+        gur: {
+          color: {
+            skin: [color[0][3]],
+            eyes: [color[2][5]],
+            hair: [color[1][6]],
+          },
+
+          name: "gur",
+          details: "gur_details",
+
+          proficiencies: {
+            languages: [lang.guran],
+          },
+        },
+
+        imaskari: {
+          color: {
+            skin: [color[9][0]],
+            eyes: [color[0][2]],
+            hair: [color[8][1]],
+          },
+
+          name: "imaskari",
+          details: "imaskari_details",
+
+          proficiencies: {
+            languages: [lang.rushum],
+          },
+        },
+
+        illuskian: {
+          color: {
+            skin: [color[2][0]],
+            eyes: [color[7][3]],
+            hair: [color[1][4], color[0][6], color[2][2]],
+          },
+
+          name: "illuskian",
+          details: "illuskian_details",
+
+          proficiencies: {
+            languages: [lang.illuskian],
+          },
         },
       },
 
@@ -1385,6 +1093,23 @@ export default {
       },
     },
 
+    // stats: {
+    //   strength: 1,
+    //   dexterity: 1,
+    //   constitution: 1,
+    //   intelligence: 1,
+    //   wisdom: 1,
+    //   charisma: 1,
+    // },
+    stats: [
+      { name: "strength", num: 1, },
+      { name: "dexterity", num: 1, },
+      { name: "constitution", num: 1, },
+      { name: "intelligence", num: 1, },
+      { name: "wisdom", num: 1, },
+      { name: "charisma", num: 1, },
+    ],
+
     // qualities: { speed: 30 },
     qualities: [{name: "speed", num: 30,},],
 
@@ -1392,7 +1117,6 @@ export default {
       weapons: [weaponry.dimple],
       languages: [lang.common],
     },
-
   },
 
   halfelf: {
