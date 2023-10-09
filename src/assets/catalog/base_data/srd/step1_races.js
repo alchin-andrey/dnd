@@ -1161,23 +1161,6 @@ export default {
       },
     },
 
-    // stats: {
-    //   strength: 1,
-    //   dexterity: 1,
-    //   constitution: 1,
-    //   intelligence: 1,
-    //   wisdom: 1,
-    //   charisma: 1,
-    // },
-    stats: [
-      { name: "strength", num: 1, },
-      { name: "dexterity", num: 1, },
-      { name: "constitution", num: 1, },
-      { name: "intelligence", num: 1, },
-      { name: "wisdom", num: 1, },
-      { name: "charisma", num: 1, },
-    ],
-
     // qualities: { speed: 30 },
     qualities: [{name: "speed", num: 30,},],
 
