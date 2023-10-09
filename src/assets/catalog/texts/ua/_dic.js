@@ -6295,4 +6295,10 @@ export default {
   blank_oldschool_details:"Бланк наближений до канонічного аркуша персонажа",
 
   support_project_link: "50% донатів відправляємо до “Повернись Живим”. send.monobank.ua/jar/F8Yfa61mr",
+
+  variant: "унікал",
+  variant_details: races.variant,
+
+  human_simple: "базовий",
+  human_simple_details: races.human_simple,
 };
