@@ -888,7 +888,7 @@ export default {
             {
               type: "custom",
               name: "feats",
-              position:7,
+              position:6,
               select: 1,
               list: [
                 feats.actor,
