@@ -138,7 +138,7 @@ export default {
 }
 
 .full_height {
-  max-height: 6000px;
+  max-height: 10000px;
   /* opacity: 1; */
 	/* transform: translateY(0px); */
   transition: all 0.5s ease-in;
