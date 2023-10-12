@@ -10214,23 +10214,6 @@ export default {
                 spell: spells.bonus_attack,
               },
             ],
-
-            settings: [
-              {
-                level: 6,
-                type: "spells",
-                position: 4,
-                name: "spells",
-                select: [
-                  0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-                ],
-                mana_min: 0,
-                mana_max: [
-                  1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9,
-                ],
-                filter: { classes: ["bard"], }
-              },
-            ],
           },
           {
             name: "college_lore",
@@ -10863,8 +10846,8 @@ export default {
         position: 4,
         name: "spells",
         select: [
-          4, 5, 6, 7, 8, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 14,
-          14,
+          4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 16,
+          16,
         ],
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
