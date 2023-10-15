@@ -448,18 +448,6 @@ export default {
                   },
                 ],
               },
-              // {
-              //   level: 3,
-              //   type: "spells",
-              //   position: 3,
-              //   name: "spells_0",
-              //   select: [
-              //     2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-              //   ],
-              //   mana_min: 0,
-              //   mana_max: 0,
-              //   classes: ["wizard"],
-              // },
               {
                 level: 3,
                 type: "spells",
@@ -1846,7 +1834,7 @@ export default {
         ],
       },
       {
-        level: 2,
+        level: 1,
         type: "custom",
         position: 1,
         name: "battle_style",
@@ -4435,6 +4423,7 @@ export default {
       {
         level: 2,
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10],
@@ -5896,6 +5885,7 @@ export default {
       {
         level: 1,
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [
@@ -6771,6 +6761,7 @@ export default {
       },
       {
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [
@@ -10017,6 +10008,7 @@ export default {
       },
       {
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [
@@ -10025,6 +10017,7 @@ export default {
         ],
         mana_min: 1,
         mana_max: [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 9, 9],
+        
         filter: { classes: ["wizard"], }
       },
       {

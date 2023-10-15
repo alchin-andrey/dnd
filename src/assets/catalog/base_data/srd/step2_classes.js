@@ -1097,7 +1097,7 @@ export default {
         ],
       },
       {
-        level: 2,
+        level: 1,
         type: "custom",
         position: 1,
         name: "battle_style",
@@ -3020,6 +3020,7 @@ export default {
       {
         level: 2,
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10],
@@ -3471,6 +3472,7 @@ export default {
       {
         level: 1,
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [
@@ -4316,6 +4318,7 @@ export default {
       },
       {
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [
@@ -6642,6 +6645,7 @@ export default {
       },
       {
         type: "spells",
+        book: true,
         position: 4,
         name: "spells",
         select: [
