@@ -146,8 +146,10 @@ export const usePagesStore = defineStore({
 				value == true ? (this.pages[key] = false) : null;
 			}
 			this.pages[page_name] = true;
-      this.site_settings.visit_page[page_name] = true;
-      this.new_user = false;
+      if (page_name !== 'race_page') {
+        this.site_settings.visit_page[page_name] = true;
+        this.new_user = false;
+      }
 			if (this.page_setting_open !== "main_page") {
 				this.showHome();
 			}
