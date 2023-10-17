@@ -11,7 +11,7 @@
 				:title="step.title"
 				:text="step.details"
 				:active="step.active"
-				@click="step.active ? goTo('/') : null"
+				@click="step.active ? btn() : null"
 				/>
 			</div>
 	</article>
@@ -20,6 +20,7 @@
 import WelcomPage__CardStart from "@/components/welcom_page/WelcomPage__CardStart.vue";
 export default {
 	name: "WelcomPage__Start",
+	emits: ["btnClick"],
 	components: {
 		WelcomPage__CardStart,
 	},
@@ -31,8 +32,8 @@ export default {
 		]
 	}),
 	methods: {
-		goTo(route) {
-        this.$router.push(route);
+		btn() {
+				this.$emit("btnClick");
       },
 	},
 };

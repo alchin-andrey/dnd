@@ -73,6 +73,10 @@ export default {
 
 	created() {
 		this.getCreated();
+		if(this.site_settings.welcome && this.new_user && !this.screen_Max) {
+			this.showHome();
+			this.$router.push('/welcome-to-dnd');
+		}
 	},
 
 	computed: {
@@ -83,6 +87,7 @@ export default {
 			"MY_Class",
 		]),
 		...mapState(usePagesStore, [
+			"new_user",
 			"site_settings",
 			"pages",
 			"screen_Max",
@@ -140,6 +145,7 @@ export default {
 			"closeEthnos",
 			"closeColor",
 			"closeCustomSett",
+			"showHome",
 		]),
 		...mapActions(useGenderStore, ["getRandomName"]),
 

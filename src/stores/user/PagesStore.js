@@ -5,22 +5,13 @@ import { useMYStore } from "@/stores/user/MYStore";
 export const usePagesStore = defineStore({
 	id: "PagesStore",
 	state: () => ({
+    new_user: true,
     screen_size: null,
     site_settings: {
       save: {},
       welcome: true,
       logo_anim: false,
       print_dialog: false,
-      // print_image: {
-      //   standard: {
-      //     page_1: null,
-      //     load_1: false,
-      //   },
-      //   oldschool: {
-      //     page_1: null,
-      //     load_1: false,
-      //   },
-      // }
     },
 
     errors: {
@@ -73,6 +64,7 @@ export const usePagesStore = defineStore({
 
   persist: {
     paths: [
+      'new_user',
       'site_settings', 
       'pages', 
     ],

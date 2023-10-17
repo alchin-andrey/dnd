@@ -12,13 +12,14 @@ export default {
   name: "Btm__Reset",
   computed: {
     ...mapWritableState(useMYStore, ["MY", "MY_def"]),
-    ...mapWritableState(usePagesStore, ["site_settings", 'pages', "showHome"]),
+    ...mapWritableState(usePagesStore, ["site_settings", 'pages', "new_user"]),
     ...mapWritableState(useFormStore, ["form_kof"]),
     ...mapWritableState(useMainStore, ["srd"]),
   },
 
   methods: {
     ...mapActions(useMYStore, ["getCreated"]),
+    ...mapActions(usePagesStore, ["showHome"]),
 
     resetState() {
       this.MY = JSON.parse(JSON.stringify(this.MY_def));
@@ -29,21 +30,13 @@ export default {
       };
       this.srd = true,
 
+      this.new_user = true,
+
       this.site_settings = {
         save: {},
         welcome: true,
         logo_anim: false,
         print_dialog: false,
-        // print_image: {
-        //   standard: {
-        //     page_1: null,
-        //     load_1: false,
-        //   },
-        //   oldschool: {
-        //     page_1: null,
-        //     load_1: false,
-        //   },
-        // }
       },
 
         this.pages = {

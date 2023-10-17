@@ -6,7 +6,7 @@
 				<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
 			</div>
 			<div class="h-100 flex-col-sb mr-t-84">
-				<WelcomPage__Menu />
+				<WelcomPage__Menu @btnClick="goTo('/')"/>
 				<my-button-back title="command_back" @click="goTo('/')" />
 			</div>
 		</section>
@@ -27,10 +27,11 @@
 				<div class="h-100">
 					<div class="welcom-content">
 						<WelcomPage__WhatDND id="welcom-part1" class="pd-t-32" />
-						<WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32"/>
-						<WelcomPage__Masters id="welcom-part3" class="mr-t-64 pd-t-32"/>
-						<WelcomPage__Game id="welcom-part4" class="mr-t-64 pd-t-32"/>
-						<WelcomPage__Footer class="mr-t-102"/>
+						<WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/>
+						<WelcomPage__UserChar id="welcom-part3" class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/>
+						<WelcomPage__Masters id="welcom-part4" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Game id="welcom-part5" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Footer class="mr-t-102" @btnClick="goTo('/')"/>
 						<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
 					</div>
 				</div>
@@ -40,7 +41,7 @@
 </template>
 <script>
 
-import { mapActions, mapState } from "pinia";
+import { mapActions, mapState, mapWritableState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
@@ -48,6 +49,7 @@ import PlagBanner from "@/components/PlagBanner.vue";
 import WelcomPage__Menu from "@/components/welcom_page/WelcomPage__Menu.vue";
 import WelcomPage__WhatDND from "@/components/welcom_page/WelcomPage__WhatDND.vue";
 import WelcomPage__Start from "@/components/welcom_page/WelcomPage__Start.vue";
+import WelcomPage__UserChar from "@/components/welcom_page/WelcomPage__UserChar.vue";
 import WelcomPage__Masters from "@/components/welcom_page/WelcomPage__Masters.vue";
 import WelcomPage__Game from "@/components/welcom_page/WelcomPage__Game.vue";
 import WelcomPage__Footer from "@/components/welcom_page/WelcomPage__Footer.vue";
@@ -59,6 +61,7 @@ export default {
 		WelcomPage__Menu,
 		WelcomPage__WhatDND,
 		WelcomPage__Start,
+		WelcomPage__UserChar,
 		WelcomPage__Masters,
 		WelcomPage__Game,
 		WelcomPage__Footer,
@@ -70,6 +73,7 @@ export default {
 
 	computed: {
 		...mapState(usePagesStore, ["screen_Max"]),
+		...mapWritableState(usePagesStore, ["new_user"]),
 
 		// styl_Wrapp() {
 		// 	if(this.screen_Max) return 'int-700-20 pd-20-28';
@@ -81,7 +85,8 @@ export default {
 		...mapActions(useMYStore, ["getCreated"]),
 
 		goTo(route) {
-        this.$router.push(route);
+				this.$router.push(route);
+				this.new_user = false;
       },
 	},
 };

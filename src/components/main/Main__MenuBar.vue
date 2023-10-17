@@ -57,11 +57,8 @@ export default {
 		//STORES
 		...mapState(useMYStore, [
 			"MY",
-			"MY_Race",
-			"MY_Ethnos",
-			"MY_Backstory",
-			"MY_Class",
-			"MY_Subclass"
+			"arr_Name_Race_Page",
+			"arr_Name_Class_Page"
 		]),
 		...mapState(usePagesStore, [
 			"class_page",
@@ -73,21 +70,6 @@ export default {
 		]),
 
 		...mapState(useOverflowStore, ["overflow_Step_1", "overflow_Step_2"]),
-
-		arr_Name_Race_Page() {
-			let arr = [];
-			arr.push(this.MY_Race.name);
-			arr.push(this.MY_Ethnos.name);
-			arr.push(this.MY_Backstory.name);
-			return arr;
-		},
-
-		arr_Name_Class_Page() {
-			let arr = [];
-			arr.push(this.MY_Class.name);
-			this.MY_Subclass?.name ? arr.push(this.MY_Subclass.name) : null;
-			return arr;
-		},
 
 		show_Bar() {
 			return this.screen_Max ? true : this.shown_home;

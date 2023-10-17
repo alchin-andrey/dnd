@@ -49,11 +49,7 @@ export default {
       if (this.text) {
 				return this.t(this.text);
 			} else {
-				let arr = [];
-				for (let i in this.text_arr) {
-					arr.push(this.t(this.text_arr[i]));
-				}
-				return arr.map((n) => `${n[0].toUpperCase()}${n.slice(1)}`).join(", ");
+				return this.text_arr.map((el) => this.T(el)).join(", ");
       }
 		},
 	},

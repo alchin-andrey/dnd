@@ -4,7 +4,7 @@
 		<section class="card-size">
 			<div class="int-700 flex-col gap-32 w-362">
 				<div v-html="t('lobby_conclustion')" />
-				<AppBtmLink class="btm-blue" @click="goTo('/')" name="how_to_start_2_title" />
+				<AppBtmLink class="btm-blue" @click="btn()" name="how_to_start_2_title" />
 			</div>
 		</section>
 
@@ -17,10 +17,11 @@
 <script>
 export default {
 	name: "WelcomPage__Footer",
+	emits: ["btnClick"],
 	methods: {
-		goTo(route) {
-			this.$router.push(route);
-		},
+		btn() {
+				this.$emit("btnClick");
+      },
 	},
 };
 </script>
