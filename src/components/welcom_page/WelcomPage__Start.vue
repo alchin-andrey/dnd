@@ -25,8 +25,8 @@ export default {
 	},
 	data: () => ({
 		start_steps: [
-			{num: "01", title: "how_to_start_1_title", details: "how_to_start_1_details", active: false},
-			{num: "02", title: "how_to_start_2_title", details: "how_to_start_2_details", active: true},
+			{num: "01", title: "how_to_start_2_title", details: "how_to_start_2_details", active: true},
+			{num: "02", title: "how_to_start_1_title", details: "how_to_start_1_details", active: false},
 			{num: "03", title: "how_to_start_3_title", details: "how_to_start_3_details", active: false},
 		]
 	}),

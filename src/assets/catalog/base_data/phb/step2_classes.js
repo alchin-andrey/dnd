@@ -3647,6 +3647,12 @@ export default {
         details: "on_stealth",
       },
       {
+        level: 2,
+        type: "plus",
+        keyword: "spellbook",
+        details: "change_spells",
+      },
+      {
         level: 3,
         type: "plus",
         keyword: "immunity",
@@ -4426,6 +4432,7 @@ export default {
         book: true,
         position: 4,
         name: "spells",
+        details: "spellbook_setting_details",
         select: [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10],
         foo: "Sel_Plus_CHA_Min1",
         mana_min: 1,
@@ -4503,6 +4510,15 @@ export default {
           [items.shield, 1],
           [items.holy_symbol, 1],
         ],
+      },
+    ],
+
+    fines: [
+      {
+        level: 1,
+        type: "plus",
+        keyword: "spellbook",
+        details: "change_spells",
       },
     ],
 
@@ -5888,6 +5904,7 @@ export default {
         book: true,
         position: 4,
         name: "spells",
+        details: "spellbook_setting_details",
         select: [
           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
         ],
@@ -5981,6 +5998,12 @@ export default {
         type: "minus",
         keyword: "unability",
         details: "to_wear_metal_armor",
+      },
+      {
+        level: 1,
+        type: "plus",
+        keyword: "spellbook",
+        details: "change_spells",
       },
       {
         level: 18,
@@ -6764,6 +6787,7 @@ export default {
         book: true,
         position: 4,
         name: "spells",
+        details: "spellbook_setting_details",
         select: [
           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
         ],
@@ -9230,6 +9254,12 @@ export default {
         details: "mana_slots_short_rest_lvl_05",
       },
       {
+        level: 1,
+        type: "plus",
+        keyword: "spellbook",
+        details: "change_spells",
+      },
+      {
         level: 18,
         type: "plus",
         keyword: "use_wo_mana",
@@ -10011,6 +10041,7 @@ export default {
         book: true,
         position: 4,
         name: "spells",
+        details: "spellbook_setting_details",
         select: [
           6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
           42, 44,
