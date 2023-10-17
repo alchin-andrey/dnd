@@ -3,6 +3,7 @@
 		class="column"
 		:class="{
 			'active-link': active && screen_Max,
+			'mob-hover': !pass_Link && !screen_Max,
 			'hover': !active && !pass_Link && screen_Max,
 			'column-hov cur-p': !pass_Link,
 		}"
@@ -131,7 +132,7 @@ export default {
 		isolation: isolate;
 	}
 
-	.column:hover {
+	.mob-hover:hover {
 		background-color: rgba(255, 255, 255, 0.1);
 	}
 }
