@@ -7,11 +7,12 @@
 			</section>
 			<section v-else>
 				<AppCharCard welcom_char />
-				<div class="int-700 mr-t-16">{{ MY.name }}</div>
+				<div class="int-700 mr-t-16">{{ t_Name }}</div>
 				<div class="int-400 mr-t-4 white-04">
 					<div>{{ t_Lvl }}</div>
 					<div>{{ t_Race_Name }}</div>
-					<div v-if="!pages.race_page">{{ t_Class_Name }}</div>
+					<div v-if="show_Class">{{ t_Class_Name }}</div>
+					<div v-if="show_Alignment">{{ t_Alignment_Name }}</div>
 				</div>
 			</section>
 			<section class="flex-row-sb-c mr-t-18">
@@ -39,20 +40,38 @@ export default {
 			"arr_Name_Race_Page",
 			"arr_Name_Class_Page"
 		]),
-		...mapState(usePagesStore, ["pages", "new_user"]),
+		...mapState(usePagesStore, ["new_user", "pages", "site_settings"]),
 
 		t_Lvl() {
-			return `${this.MY.level}${this.t('level_unit')} ${this.t('level')},`
+			return `${this.MY.level}${this.t('level_unit')} ${this.t('level')}`
 		},
 
 		t_Race_Name() {
-			const text = this.getLine(this.arr_Name_Race_Page);
-			return `${text},`;
+			return this.getLine(this.arr_Name_Race_Page);
 		},
 
 		t_Class_Name() {
-			const text = this.getLine(this.arr_Name_Class_Page);
-			return `${text},`;
+			return this.getLine(this.arr_Name_Class_Page);
+		},
+
+		t_Alignment_Name() {
+			return this.T(this.MY.alignment);
+		},
+
+		show_Class() {
+			return this.site_settings.visit_page.class_page
+			|| this.pages.class_page
+			|| this.pages.alignment_page
+		},
+
+		show_Alignment() {
+			return this.site_settings.visit_page.alignment_page
+			|| this.pages.alignment_page
+		},
+
+		t_Name() {
+			if (this.show_Alignment) return this.MY.name;
+			else return this.T('noname');
 		},
 
 		t_Edit() {

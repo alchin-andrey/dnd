@@ -12,7 +12,11 @@ export default {
   name: "Btm__Reset",
   computed: {
     ...mapWritableState(useMYStore, ["MY", "MY_def"]),
-    ...mapWritableState(usePagesStore, ["site_settings", 'pages', "new_user"]),
+    ...mapWritableState(usePagesStore, [
+      "site_settings", 
+      'pages', 
+      // "new_user"
+    ]),
     ...mapWritableState(useFormStore, ["form_kof"]),
     ...mapWritableState(useMainStore, ["srd"]),
   },
@@ -30,10 +34,14 @@ export default {
       };
       this.srd = true,
 
-      this.new_user = true,
+      // this.new_user = true,
 
       this.site_settings = {
         save: {},
+        visit_page: {
+          class_page: false,
+          alignment_page: false,
+        },
         welcome: true,
         logo_anim: false,
         print_dialog: false,

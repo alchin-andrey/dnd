@@ -9,6 +9,10 @@ export const usePagesStore = defineStore({
     screen_size: null,
     site_settings: {
       save: {},
+      visit_page: {
+        class_page: false,
+        alignment_page: false,
+      },
       welcome: true,
       logo_anim: false,
       print_dialog: false,
@@ -130,8 +134,10 @@ export const usePagesStore = defineStore({
     btnGo() {
       if(this.btn_Page == 1) {
         this.goPage('class_page');
+        this.site_settings.visit_page.class_page = true;
       } else if(this.btn_Page == 2) {
         this.goPage('alignment_page');
+        this.site_settings.visit_page.alignment_page = true;
       } else if(this.btn_Page == 3) {
         this.site_settings.print_dialog = true;
       }
