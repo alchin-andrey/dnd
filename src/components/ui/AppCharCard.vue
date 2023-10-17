@@ -63,7 +63,7 @@ export default {
 
 		stule_Img_Obj() {
 			if (this.active_Mob_Custom_Char) return {
-					'background-image': `url(${require('@/assets/img/characters/halfling/ethhnos/forest_custom@3x.png')}), url(${this.MY.custom_photo})`,
+					'background-image': `url(${this.MY.custom_photo}), url(${require('@/assets/img/characters/halfling/ethhnos/forest_custom@3x.png')})`,
 				}
 			else return {};
 		},

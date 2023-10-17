@@ -120,7 +120,7 @@ export const usePagesStore = defineStore({
   },
 
 	actions: {
-
+    // Видалення минулих змінних
     zeroingDell() {
       if(this.site_settings.old_page) {
         this.goPage(this.site_settings.old_page);
