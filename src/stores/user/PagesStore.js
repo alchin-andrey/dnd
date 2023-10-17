@@ -134,10 +134,8 @@ export const usePagesStore = defineStore({
     btnGo() {
       if(this.btn_Page == 1) {
         this.goPage('class_page');
-        this.site_settings.visit_page.class_page = true;
       } else if(this.btn_Page == 2) {
         this.goPage('alignment_page');
-        this.site_settings.visit_page.alignment_page = true;
       } else if(this.btn_Page == 3) {
         this.site_settings.print_dialog = true;
       }
@@ -148,6 +146,8 @@ export const usePagesStore = defineStore({
 				value == true ? (this.pages[key] = false) : null;
 			}
 			this.pages[page_name] = true;
+      this.site_settings.visit_page[page_name] = true;
+      this.new_user = false;
 			if (this.page_setting_open !== "main_page") {
 				this.showHome();
 			}
