@@ -8,11 +8,11 @@
 	:style="stule_Img_Obj"
 	>
 		<section v-if="!active_Mob_Custom_Char">
-			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="mob_menu || welcom_char" />
-			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="mob_menu || welcom_char" :error="mob_menu" />
-			<RaceBody body_part="hair" :ethnos_name="ethnos_name" :mob_menu="mob_menu || welcom_char" />
-			<RaceBody body_part="eyes" :ethnos_name="ethnos_name" :mob_menu="mob_menu || welcom_char" />
-			<RaceBody body_part="class" :mob_menu="mob_menu || welcom_char"  v-if="!pages.race_page" />
+			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="show_Mob_Char" />
+			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="show_Mob_Char" :error="show_Mob_Char" />
+			<RaceBody body_part="hair" :ethnos_name="ethnos_name" :mob_menu="show_Mob_Char" />
+			<RaceBody body_part="eyes" :ethnos_name="ethnos_name" :mob_menu="show_Mob_Char" />
+			<RaceBody body_part="class" :mob_menu="show_Mob_Char"  v-if="!pages.race_page" />
 		</section>
 		<div class="flex-row gap-6 text-rel" v-if="mob_menu">
 			<div class="jbm-300">{{ t_Details }}</div>
@@ -55,10 +55,12 @@ export default {
 			return this.T('details')
 		},
 
+		show_Mob_Char() {
+			return this.mob_menu || this.welcom_char;
+		},
+
 		active_Mob_Custom_Char() {
-			if(this.MY.param.user_photo) {
-				return this.mob_menu || this.welcom_char;
-			}
+			return this.show_Mob_Char && this.MY.param.user_photo;
 		},
 
 		stule_Img_Obj() {

@@ -237,20 +237,20 @@ export const usePagesStore = defineStore({
 		closeCustomSett() {
 			const MYStore = useMYStore();
 
-			const setting_open = this.setting_open;
-			if (setting_open && setting_open.includes("__")) {
+			// const setting_open = this.setting_open;
+			if (this.setting_open && this.setting_open.includes("__")) {
 				let custom = MYStore.сustomm_Settings_Race_Arr;
         if (this.pages.class_page) {
           custom = MYStore.settings_Class_Arr;
         }
 
-        const filter_full = custom?.find((el) => el.id_link == setting_open);
+        const filter_full = custom?.find((el) => el.id_link == this.setting_open);
         if (filter_full) {
           this.toggleSettings(this.page_Open, filter_full.id_link);
           return;
         }
         
-        const str_name_numb = setting_open.split("___").pop();
+        const str_name_numb = this.setting_open.split("___").pop();
         const filter_name_i = custom?.find((el) => el.id_link.includes(str_name_numb));
         if (filter_name_i) {
           this.toggleSettings(this.page_Open, filter_name_i.id_link);
@@ -282,5 +282,13 @@ export const usePagesStore = defineStore({
     showMobParamSpell() {
       this.mob_param_spell = !this.mob_param_spell;
 		},
+
+    showPhotoSet() {
+      if (!this.setting_open) {
+        this.showSettings__Alignment('photo');
+      } else {
+        this.showHome();
+      }
+    }
 	},
 });

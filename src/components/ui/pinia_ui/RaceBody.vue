@@ -8,8 +8,6 @@
         }"
       :src="img_Char"
       :alt="body_part"
-      @click.stop
-      @click="showPhotoSet()"
       draggable="false"
     />
 
@@ -18,8 +16,6 @@
       class="custom-img"  
       :class="anim_error_Back" 
       :style="stule_Img_Obj"
-      @click.stop
-      @click="showPhotoSet()"
     />
   
   <svg
@@ -34,7 +30,7 @@
 
 <script>
 import placeholder from "@/assets/catalog/base_data/_placeholder.js";
-import { mapState, mapActions } from "pinia";
+import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useColorStore } from "@/stores/modules/simple/ColorStore";
@@ -103,18 +99,6 @@ export default {
           && !this.alignment_page.shown.photo,
           'pasive-img': this.error,
         }
-
-      // if(this.body_part == 'skin') {
-      //   const inc_color = ['1-2', '1-3', '1-4', '1-5']
-      //   const red_body = inc_color.includes(this.color_Char_Body.img);
-      //   const error_comp = this.error;
-      //   const error_file = this.errors.file_photo;
-      //   return {
-      //     'animation--error-photo-upload': red_body && error_comp && error_file,
-      //     'animation--error-char-upload': !red_body && error_comp && error_file,
-      //     'pasive-img': !red_body && error_comp,
-      //   }
-      // }
     },
 
     anim_error_Back() {
@@ -271,43 +255,6 @@ export default {
       }
     },
 
-    // width_Custom_Char() {
-    //   const screen_main = `(100vh - 64px)`;
-    //   let screen_other = null;
-    //   if (this.blank_print == 'standard') {
-    //     if (this.blank_size == 'mini') {
-    //       screen_other = `${1825/6}px`;
-    //     } else {
-    //       screen_other = `1825px`;
-    //     } 
-    //   } else if (this.blank_print == 'oldschool') {
-    //     if (this.blank_size == 'mini') {
-    //       screen_other = `${684/6}px`;
-    //     } else {
-    //       screen_other = `684px`;
-    //     }
-    //   } else if (this.screen_Max) {
-    //     screen_other = screen_main;
-    //   } else {
-    //     screen_other = `470px`;
-    //   }
-    //   let kof = this.alignment_page.ratio_photo;
-    //   if(!this.MY.param.sett_photo.size_cover) {
-    //     kof = this.MY.param.sett_photo.ratio;
-    //   };
-
-    //   if (this.race_page.shown.skin_color) {
-    //     return `calc(${screen_main} * ${kof})`;
-    //   } else if (
-    //     this.race_page.shown.eyes_color ||
-    //     this.race_page.shown.hair_color
-    //   ) {
-    //     return `calc(${screen_main} * ${kof} * 2)`;
-    //   } else {
-    //     return `calc(${screen_other} * ${kof} * ${this.growth_Char} / 210)`
-    //   }
-    // },
-
     left_Char() {
       if(this.ethnos_name || this.mob_menu) {
         return `${this.MY_Race.ethnos_preview[1]}px`;
@@ -327,19 +274,6 @@ export default {
   },
 
   methods: {
-    ...mapActions(usePagesStore, ["showSettings__Alignment", "showMobParam", "showHome"]),
-
-    showPhotoSet() {
-      if (this.ethnos_name) {
-        return null;
-      } else if(this.mob_menu) {
-        this.showMobParam();
-      } else if (!this.setting_open) {
-        this.showSettings__Alignment('photo');
-      } else {
-        this.showHome();
-      }
-    }
   }
 
 };

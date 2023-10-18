@@ -6,12 +6,14 @@
 	</div>
 
 	<AppMobDialog v-else title="char_details" :shown="shown_mob_param" mob_param mob_fixed>
-		<section class="character-mob">
-			<RaceBody body_part="skin" />
-			<RaceBody body_part="skin" error/>
-			<RaceBody body_part="eyes" />
-			<RaceBody body_part="hair" />
-			<RaceBody body_part="class" v-if="!pages.race_page" />
+		<section class="character-mobile">
+			<section class="character-mobile--body" @click="showPhotoSet()">
+				<RaceBody body_part="skin" />
+				<RaceBody body_part="skin" error/>
+				<RaceBody body_part="eyes" />
+				<RaceBody body_part="hair" />
+				<RaceBody body_part="class" v-if="!pages.race_page" />
+			</section>
 			<mySizeGrowth division zero skale_top />
 		</section>
 
@@ -24,7 +26,7 @@
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
 import RaceParameters from "@/components/parameters/__param__lists/1_RaceParameters.vue";
@@ -58,11 +60,12 @@ export default {
 		},
 	},
 	methods: {
+		...mapActions(usePagesStore, ["showPhotoSet"]),
 	},
 };
 </script>
 
-<style>
+<style scoped>
 .sidebar_right {
 	min-width: 426px;
 	max-width: 426px;
@@ -84,16 +87,16 @@ export default {
 	transition: all 0.4s ease-in-out;
 }
 
-.character-mob {
+.character-mobile {
 	width: 100%;
 	min-height: 470px;
 	position: relative;
 	overflow: hidden;
 }
 
-.character-mob > img,
-.character-mob > svg,
-.character-mob > .custom-img {
+.character-mobile--body > img,
+.character-mobile--body > svg,
+.character-mobile--body > .custom-img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
@@ -105,25 +108,4 @@ export default {
 	z-index: 10;
 	cursor: pointer;
 }
-
-/* .character-mob > .custom-img {
-	position: absolute;
-	bottom: 0;
-	right: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, 0%);
-	-ms-transform: translate(-50%, 0%);
-	transform: translate(-50%, 0%);
-	border-radius: 12px;
-}
-
-.character-mob>svg {
-	position: absolute;
-	bottom: 0;
-	right: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, 0%);
-	-ms-transform: translate(-50%, 0%);
-	transform: translate(-50%, 0%);
-} */
 </style>

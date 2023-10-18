@@ -1,13 +1,15 @@
 <template>
 	<div class="represent" @click="showHome()" v-if="screen_Max">
 		<transition name="fade-body">
-			<div class="character" :style="style_Char_Pos">
+			<div class="character-main" :style="style_Char_Pos">
 				<WelcomeBanner />
-				<RaceBody body_part="skin" />
-				<RaceBody body_part="skin" error/>
-				<RaceBody body_part="eyes" />
-				<RaceBody body_part="hair" />
-				<RaceBody body_part="class" v-if="!pages.race_page" />
+				<section class="character-main--body" @click.stop="showPhotoSet()">
+					<RaceBody body_part="skin" />
+					<RaceBody body_part="skin" error/>
+					<RaceBody body_part="eyes" />
+					<RaceBody body_part="hair" />
+					<RaceBody body_part="class" v-if="!pages.race_page" />
+				</section>
 				<transition name="slide-fade-size">
 					<mySizeGrowth v-if="hide_Ruler" division zero skale_top />
 				</transition>
@@ -70,12 +72,12 @@ export default {
 	},
 
 	methods: {
-		...mapActions(usePagesStore, ["showHome"]),
+		...mapActions(usePagesStore, ["showHome", "showPhotoSet"]),
 	},
 };
 </script>
 
-<style>
+<style scoped>
 .represent {
 	padding: 32px;
 	flex: 1 1 auto;
@@ -85,7 +87,7 @@ export default {
 	overflow: hidden;
 }
 
-.character {
+.character-main {
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -93,9 +95,9 @@ export default {
 	transition-timing-function: ease-in-out;
 }
 
-.character>img,
-.character>svg,
-.character>.custom-img {
+.character-main--body > img,
+.character-main--body > svg,
+.character-main--body > .custom-img {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
