@@ -58,6 +58,7 @@
       <AppPrintMenu__Arr :menu="undefined_Filter_Class"/>
       <div class="hr-print"></div>
 
+			<AppPrintMenu__Chapter title="name" :chapter="MY.name" />
       <AppPrintMenu__Chapter title="alignment" :chapter="MY.alignment" />
       <AppPrintMenu__Arr :menu="сustomm_Main_Settings_Alignment_Arr" />
 			<AppPrintMenu__Chapter title="photo" :chapter="photo_Select" />
