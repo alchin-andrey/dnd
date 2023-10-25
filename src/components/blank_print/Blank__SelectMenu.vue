@@ -33,6 +33,7 @@
 			<AppPrintMenu__Chapter title="color_hair" :chapter="hair_color_Char_Body.name"/>
 			<div class="hr-print"></div>
 
+			<AppPrintMenu__Chapter title="class" :chapter="MY_Class.name" />
       <AppPrintMenu__Arr :menu="subclass_Filter_Class"/>
       <AppPrintMenu__Arr :menu="subclass_other_Filter_Class"/>
       <AppPrintMenu__Arr :menu="other_Filter_Class"/>
