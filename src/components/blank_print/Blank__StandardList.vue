@@ -46,7 +46,7 @@ export default {
 
 		style_Main() {
 			if (this.mini_Blank) return 'print-page--mini var-blank--mini';
-			else return 'print-page--print var-blank--print';
+			else return 'print-page var-blank--print';
 		},
 
 		style_Head() {
@@ -74,7 +74,7 @@ export default {
 
 <style scoped>
 
-.print-page--print {
+.print-page {
   width: 2088px;
 	height: 2952px;
 	padding: 72px;

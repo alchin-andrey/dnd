@@ -144,10 +144,6 @@ export default {
 			const name = this.MY.name.length !== 0
 				? this.MY.name
 				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
-			const element = document.getElementById("element-to-convert");
-			const numb_page_full = element.clientHeight / 2952;
-			const numb_page_main = this.MY.param.blank_print == 'standard' ? 5 : 4;
-			const num_page_spell = numb_page_full - numb_page_main;
 			const opt = {
 				margin: 0,
 				filename: `${name}_LVL${lvl}_${type}.pdf`,
@@ -173,17 +169,8 @@ export default {
 				},
 			};
 
-			const elements = [];
-			for (let i = 1; i <= 3; i++) {
-				elements.push(document.getElementById(`print-page-${i}`));
-			}
-			for (let i = 1; i <= num_page_spell; i++) {
-				elements.push(document.getElementById(`print-page-4.${i}`));
-			}
-			elements.push(document.getElementById('print-page-5'));
-			if (this.MY.param.blank_print == 'standard') {
-				elements.push(document.getElementById('print-page-6'));
-			}
+			const element = document.getElementById("element-to-convert");
+			const elements = [ ...element.querySelectorAll('.print-page')];
 
 			let worker = html2pdf()
 				.set(opt)
@@ -192,13 +179,13 @@ export default {
 			if (elements.length > 1) {
 				worker = worker.toPdf();
 
-				elements.slice(1).forEach(async element => {
+				elements.slice(1).forEach(async el => {
 					worker = worker
 						.get('pdf')
 						.then(pdf => {
 							pdf.addPage();
 						})
-						.from(element)
+						.from(el)
 						.toContainer()
 						.then(() => this.progress_load = 85)
 						.toCanvas()

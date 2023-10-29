@@ -10,7 +10,7 @@
 			<section class="flex-col gap-10">
 				<AppPrintSpellMain title="class" :text="T(MY_Class.name)" />
 				<AppPrintSpellMain v-if="MY_Subclass" title="subclass" :text="T(MY_Subclass.name)" />
-				<AppPrintSpellMain title="level" :text="MY.level" />
+				<AppPrintSpellMain title="level" :text="String(MY.level)" />
 				<AppPrintSpellMain title="all_spell" text="" />
 			</section>
 		</div>

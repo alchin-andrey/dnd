@@ -38,13 +38,6 @@
       <main class="print-page int-400-22" id="print-page-5">
         <section class="col-wrap-spell">
           <BlankTable__SpellBookTitle class="main-table mr-min var-blank--print"/>
-          <!-- <AppSpells
-            class="cell-spell mr-min"
-            v-for="item in spell_List_3"
-						:key="item"
-						:spell_obj="item"
-            blank_print
-					/> -->
         </section>
 			</main>
 
@@ -87,7 +80,7 @@ export default {
 	mixins: [BlankPrintLink],
   data() {
 		return {
-      // PRINT_WORK: true,
+      PRINT_WORK: true,
       ALL_SPELL: false,
 
       h_table: null,
