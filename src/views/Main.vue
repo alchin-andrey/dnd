@@ -8,26 +8,6 @@
 		<!-- <BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/> -->
 	</div>
 
-
-	<!-- <my-dialog-spell :show="hashChanged && $root.env !== 'development'" finish>
-	<my-dialog-spell :show="true" finish>
-		<div class="notification-header">
-        <button type="button" class="close-refresh-modal" @click="closeModal" aria-label="Close">
-          <span aria-hidden="true"><i class="fal fa-times fa-sm"></i></span>
-        </button>
-      </div>
-      <div class="notification-body">
-        <div class="notification-button">
-          <p class="text-center font12">An update is available. Please save all current work and click update below. You can also accept these updates by refreshing your browswer at any time.</p>
-          <p class="text-center"><span class="font10">Not updating may result in errors.</span></p>
-        </div>
-        <div class="refresh-button text-center">
-          <button class="btn btn-default" @click="reloadApp">Update</button>
-        </div>
-      </div>
-	</my-dialog-spell> -->
-
-
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
 		<section class="flex-col h-100">
@@ -64,8 +44,9 @@ export default {
 	],
 	data() {
 		return {
-			PRINT_BLANK: false,
 			// PRINT_BLANK: true,
+			PRINT_BLANK: false,
+
 			progress_load: 0,
 			loading_pdf: false,
 		};

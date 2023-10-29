@@ -2,6 +2,9 @@ import {Emoji} from "emoji-mart-vue-fast/src";
 
 import AppWrapper from "@/components/ui/AppWrapper.vue";
 import AppSvg from "@/components/ui/AppSvg.vue";
+import AppGpt from "@/components/ui/AppGpt.vue";
+
+
 import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
 import AppBtmLink from "@/components/ui/AppBtmLink.vue";
 import AppBtmIcon from "@/components/ui/AppBtmIcon.vue";
@@ -105,6 +108,8 @@ export default [
   
   AppWrapper,
   AppSvg,
+  AppGpt,
+
   AppStripWrapp,
   AppBtmLink,
   AppBtmIcon,

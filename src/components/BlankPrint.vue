@@ -2,11 +2,11 @@
 	<div class="blank-conteiner int-400-22">
 		<div class="blank-scroll">
 
-    <Blank__Page_1 id="print-page-1" :blank_print="MY.param.blank_print" blank_size="print"/>
+    <Blank__Page_1 id="print-page-1" :blank_print="MY.param.blank_print" blank_size="print" v-if="PRINT_WORK"/>
 
-    <Blank__Page_2 class="print-page int-400-22 var-blank--print" id="print-page-2" :blank_print="MY.param.blank_print"/>
+    <Blank__Page_2 class="print-page int-400-22 var-blank--print" id="print-page-2" :blank_print="MY.param.blank_print" v-if="PRINT_WORK"/>
 
-      <main class="print-page int-400-22" id="print-page-3" >
+      <main class="print-page int-400-22" id="print-page-3">
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min var-blank--print"/>
           <AppSpells
@@ -35,11 +35,24 @@
         </section>
 			</main>
 
-      <main class="print-page" id="print-page-5">
+      <main class="print-page int-400-22" id="print-page-5">
+        <section class="col-wrap-spell">
+          <BlankTable__SpellBookTitle class="main-table mr-min var-blank--print"/>
+          <!-- <AppSpells
+            class="cell-spell mr-min"
+            v-for="item in spell_List_3"
+						:key="item"
+						:spell_obj="item"
+            blank_print
+					/> -->
+        </section>
+			</main>
+
+      <main class="print-page" id="print-page-6">
         <BlankText__All/>
 			</main>
 
-      <main class="print-page" v-if="!oldSchool_Blank" id="print-page-6">
+      <main class="print-page" v-if="!oldSchool_Blank" id="print-page-7">
         <BlankText__Biography class="wrap-head" />
         <section class="wrap-bottom int-600-28 flex_row">
           <div>{{T('print_characters')}}</div>
@@ -74,7 +87,7 @@ export default {
 	mixins: [BlankPrintLink],
   data() {
 		return {
-      // PRINT_WORK: false,
+      // PRINT_WORK: true,
       ALL_SPELL: false,
 
       h_table: null,

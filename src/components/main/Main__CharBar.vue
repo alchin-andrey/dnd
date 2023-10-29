@@ -3,6 +3,7 @@
 		<transition name="fade-body">
 			<div class="character-main" :style="style_Char_Pos">
 				<WelcomeBanner />
+				<!-- <AppGpt /> -->
 				<section class="character-main--body" @click.stop="showPhotoSet()">
 					<RaceBody body_part="skin" />
 					<RaceBody body_part="skin" error/>

@@ -15,6 +15,8 @@ import BlankTable__Weapons from "@/components/blank_print/BlankTable__Weapons.vu
 import BlankTable__List_3 from "@/components/blank_print/BlankTable__List_3.vue";
 import BlankText__All from "@/components/blank_print/BlankText__All.vue";
 
+import BlankTable__SpellBookTitle from "@/components/blank_print/BlankTable__SpellBookTitle.vue";
+
 
 import BlankText__Biography from "@/components/blank_print/BlankText__Biography.vue";
 import Blank__OldschoolList from "@/components/blank_print/Blank__OldschoolList.vue";
@@ -39,6 +41,8 @@ export default {
 
   BlankTable__List_3,
   BlankText__All,
+
+  BlankTable__SpellBookTitle,
 
 
   BlankText__Biography,
