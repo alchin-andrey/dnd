@@ -206,6 +206,17 @@ export const useMYStore = defineStore({
 			return res_arr;
 		},
 
+    filter_Spell_List_Lvl: (stor) => (arr, name) => {
+      let res_arr = [];
+        arr?.forEach(el => {
+          el?.list.forEach(sub_el => {
+            let item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
+            res_arr = res_arr.concat(item_lvl);
+          });
+        });
+			return res_arr;
+		},
+
     // filter_Custom_Lvl: (stor) => (arr, name, spellsbook) => {
     //   let res_arr = [];
     //     arr?.forEach(el => {
@@ -268,7 +279,7 @@ export const useMYStore = defineStore({
       const spells_main = this.spells_Setting_Class_Arr_Main;
       // console.log('spells_main:', spells_main)
       const spells_book = this.spells_Setting_Class_Arr_Book;
-      // console.log('spells_book:', spells_book)
+      console.log('spells_book:', spells_book)
       return [...spells_main, ...spells_book];
     },
 

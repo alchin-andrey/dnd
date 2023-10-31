@@ -11,7 +11,7 @@
 				<AppPrintSpellMain title="class" :text="T(MY_Class.name)" />
 				<AppPrintSpellMain v-if="MY_Subclass" title="subclass" :text="T(MY_Subclass.name)" />
 				<AppPrintSpellMain title="level" :text="String(MY.level)" />
-				<AppPrintSpellMain title="all_spell" text="" />
+				<AppPrintSpellMain title="all_spell" :text="spellbook_spells_Numn_All" />
 			</section>
 		</div>
 		
@@ -22,7 +22,7 @@
 				<div> {{ T('prepared_spells_details') }} </div>
 			</section>
 
-			<AppPrintSpellMain title="available_spells" :text="T(MY_Class.name)" />
+			<AppPrintSpellMain title="available_spells" :text="spellbook_spells_Numn_Can_Select" />
 
 			<div> {{ T('prepared_spells_footnote') }} </div>
 		</div>
@@ -41,7 +41,8 @@ export default {
 		...mapState(useMYStore, [
 			"MY",
 			"MY_Class",
-			"MY_Subclass"
+			"MY_Subclass",
+			"spells_Setting_Class_Arr_Book"
 		]),
 		...mapState(useSpellsStore, ["spells_Saving_Numb"]),
 
@@ -54,6 +55,14 @@ export default {
 		t_Details() {
 			return this.T('spellbook_details');
 		},
+
+		spellbook_spells_Numn_All() {
+      return String(this.spells_Setting_Class_Arr_Book[0].list.length)
+    },
+
+		spellbook_spells_Numn_Can_Select() {
+      return String(this.spells_Setting_Class_Arr_Book[0].select_numb)
+    },
 
 	},
 };

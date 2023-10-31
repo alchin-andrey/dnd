@@ -5,7 +5,7 @@
 		<Main__CharBar v-show="!PRINT_BLANK" />
 		<Main__ParamBar v-show="!PRINT_BLANK" />
 
-		<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/>
+		<!-- <BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert"/> -->
 	</div>
 
 	<!-- alse -->
@@ -20,7 +20,7 @@
 	</my-dialog-spell>
 
 
-	<!-- <BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert" /> -->
+	<BlankPrint v-if="site_settings.print_dialog || PRINT_BLANK" id="element-to-convert" />
 </template>
 
 <script>
@@ -44,8 +44,8 @@ export default {
 	],
 	data() {
 		return {
-			PRINT_BLANK: true,
-			// PRINT_BLANK: false,
+			// PRINT_BLANK: true,
+			PRINT_BLANK: false,
 
 			progress_load: 0,
 			loading_pdf: false,

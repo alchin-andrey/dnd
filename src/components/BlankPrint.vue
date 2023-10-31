@@ -14,12 +14,17 @@
         </section>
       </main>
 
-      <template v-if="list_Main_Spells_Arr__Book.length !== 0">
+      <template v-if="show_Spellbook">
         <main class="print-page int-400-22" v-for="arr, i in list_Main_Spells_Arr__Book" :key="arr"
           :id="`print-page-4.${i + 1}`">
           <section class="col-wrap-spell">
             <BlankTable__SpellBookTitle id="table_spellbook" class="main-table mr-min var-blank--print" v-if="i == 0" />
-            <AppSpells class="cell-spell mr-min" v-for="item in arr" :key="item" :spell_obj="item" blank_print book/>
+            <template v-for="item in arr" :key="item">
+              <div v-if="item == 'hr'" class="hr-select cell-spell mr-min">
+                <div class="book-hr"></div>
+              </div>
+              <AppSpells v-else class="cell-spell mr-min" :spell_obj="item" blank_print book/>
+            </template>
           </section>
         </main>
       </template>
@@ -88,7 +93,7 @@ export default {
     this.h_list_spells_main = document.querySelector(".col-wrap-spell").offsetHeight;
 
 
-    if (this.showSpellbook) {
+    if (this.show_Spellbook) {
       this.h_table_spellbook_list = document.getElementById("table_spellbook").offsetHeight;
       this.h_list_spells_book = document.querySelector(".col-wrap-spell").offsetHeight;
     }
@@ -100,12 +105,12 @@ export default {
   },
 
   computed: {
-    ...mapState(useMYStore, ["MY", "str_Upper"]),
+    ...mapState(useMYStore, ["MY", "spells_Setting_Class_Arr_Book"]),
     ...mapState(useDicStore, ["select_lang"]),
     ...mapState(useSpellsStore, [
-      "spell_RC_Param_Sort_ApAM",
+      // "spell_RC_Param_Sort_ApAM",
       "spell_RC_Param_Sort_ApAM__Main",
-      "spell_RC_Param_Sort_ApAM__Book",
+      "spell_RC_Param_Sort_ApAM__Book_All",
       "spells_Arr",
     ]),
 
@@ -113,8 +118,8 @@ export default {
       return this.MY.param.blank_print == 'oldschool';
     },
 
-    showSpellbook() {
-      return this.list_Main_Spells_Arr__Book.length !== 0
+    show_Spellbook() {
+      return this.spells_Setting_Class_Arr_Book.length !== 0
     },
 
     list_Main_Spells_Arr() {
@@ -151,7 +156,7 @@ export default {
     },
 
     list_Main_Spells_Arr__Book() {
-      const spell_arr = this.spell_RC_Param_Sort_ApAM__Book;
+      const spell_arr = this.spell_RC_Param_Sort_ApAM__Book_All;
       const lang = this.select_lang;
 
       let count_column = 1;
@@ -161,7 +166,13 @@ export default {
       let res_arr = [];
       let arr = [];
       for (let i = 0; i < spell_arr.length; i++) {
-        const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
+        let h_spell = null;
+        if(spell_arr[i] == 'hr') {
+          h_spell = 98
+        } else {
+          h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
+        }
+
         h_column -= h_spell;
 
         if (h_column < 0) {
@@ -329,5 +340,15 @@ export default {
 
 .flex_row>div {
   width: 648px;
+}
+
+.hr-select {
+  height: 98px;
+}
+
+.book-hr {
+  width: 100%;
+	height: 2px;
+	background: #0E1518;
 }
 </style>

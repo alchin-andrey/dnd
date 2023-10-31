@@ -163,6 +163,13 @@ export const useSpellsStore = defineStore({
 			return spell_arr;
     },
 
+    spells_Class_Settings_Many_Arr_Book_No_Select() {
+      const MYStore = useMYStore();
+      const arr = MYStore.spells_Setting_Class_Arr_Book;
+      const spell_arr = MYStore.filter_Spell_List_Lvl(arr, "spells")
+			return spell_arr;
+    },
+
 		spells_Class_Settings_Many_Arr_All() {
 			const spell_main = this.spells_Class_Settings_Many_Arr_Main;
 			const spell_book = this.spells_Class_Settings_Many_Arr_Book;
@@ -192,6 +199,11 @@ export const useSpellsStore = defineStore({
 			return MYStore.sort_Level(this.spells_Class_Settings_Many_Arr_Book);
 		},
 
+		spells_Class_Param_All__Book_No_Select() {
+      const MYStore = useMYStore();
+			return MYStore.sort_Level(this.spells_Class_Settings_Many_Arr_Book_No_Select);
+		},
+
 		// spells_Class_Param_All__Full() {
     //   const MYStore = useMYStore();
 		// 	const spells_all_main = this.spells_Class_Param_All__Main;
@@ -210,6 +222,10 @@ export const useSpellsStore = defineStore({
 
 		spells_Class_Param__Book() {
 			return this.spells_Filter_UniqueArr(this.spells_Class_Param_All__Book);
+		},
+
+		spells_Class_Param__Book_No_Select() {
+			return this.spells_Filter_UniqueArr(this.spells_Class_Param_All__Book_No_Select);
 		},
 
 		spells_Class_Param_without_Race_Param() {
@@ -238,6 +254,13 @@ export const useSpellsStore = defineStore({
 			const class_spells_includ = this.spells_Class_Param_without_Race_Param;
 			const RC_param = [...race_spells, ...class_spells_includ]
 			return MYStore.sort_Level(RC_param);
+		},
+
+		spells_Class_Param_All__Book_No_Select_without_All_Select() {
+			const all_select = this.spells_RC_Param;
+      const book_no_select = this.spells_Class_Param__Book_No_Select;
+      const filter_class_spells = this.spells_Filter_Without(book_no_select, all_select);
+			return filter_class_spells;
 		},
 
 		spells_RC_Param__Main() {
@@ -275,7 +298,14 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_RC_Param_Manna__Book() {
-      const RC_mana = this.spells_filter_Not_Ability(this.spells_RC_Param__Main);
+      const RC_mana = this.spells_filter_Not_Ability(this.spells_Class_Param__Book);
+      RC_mana.sort((a, b) => a.spell.length - b.spell.length);
+      RC_mana.sort((a, b) => a.spell.findIndex((el) => el.name) - b.spell.findIndex((el) => el.name));
+			return RC_mana;
+		},
+
+		spells_RC_Param_Manna__Book_No_Select() {
+      const RC_mana = this.spells_filter_Not_Ability(this.spells_Class_Param__Book_No_Select);
       RC_mana.sort((a, b) => a.spell.length - b.spell.length);
       RC_mana.sort((a, b) => a.spell.findIndex((el) => el.name) - b.spell.findIndex((el) => el.name));
 			return RC_mana;
@@ -313,7 +343,7 @@ export const useSpellsStore = defineStore({
     },
 
     spell_RC_Param_Sort_ApAM__Book() {
-      const manna = this.spells_Class_Param__Book;
+      const manna = this.spells_RC_Param_Manna__Book;
 
       const spell_mod = manna.filter((el) => el.mod);
       
@@ -329,20 +359,8 @@ export const useSpellsStore = defineStore({
       ];
     },
 
-		spell_RC_Param_Sort_ApAM() {
-      const abil_pass = this.spells_RC_Param_Ability_Passive;
-      const abil = this.spells_RC_Param_Ability;
-      
-      const abil_ALL = [...abil_pass, ...abil];
-      const abil_clean = abil_ALL.filter((el) => el.spell.find((item) => !item.slot_type));
-      const abil_slot_type = abil_ALL.filter((el) => el.spell.find((item) => item.slot_type));
-      abil_slot_type.sort((a, b) => {
-        const a_slot = a.spell.find(el => el.name).slot_type;
-        const b_slot = b.spell.find(el => el.name).slot_type;
-        return a_slot.localeCompare(b_slot);
-      });
-
-      const manna = this.spells_RC_Param_Manna;
+    spell_RC_Param_Sort_ApAM__Book_No_Select() {
+      const manna = this.spells_RC_Param_Manna__Book_No_Select;
 
       const spell_mod = manna.filter((el) => el.mod);
       
@@ -352,13 +370,57 @@ export const useSpellsStore = defineStore({
 
       const spell_clean = manna.filter((el) => !el.mod);
       return [
-        ...abil_clean,
-        ...abil_slot_type,
         ...spell_mod_slot,
         ...spell_mod_0,
         ...spell_clean,
       ];
     },
+
+    spell_RC_Param_Sort_ApAM__Book_All() {
+      const book_select = this.spell_RC_Param_Sort_ApAM__Book;
+      const hr = ['hr'];
+      const book_no_select = this.spell_RC_Param_Sort_ApAM__Book_No_Select;
+
+      
+      return [
+        ...book_select,
+        ...hr,
+        ...book_no_select,
+      ];
+    },
+
+		
+
+		// spell_RC_Param_Sort_ApAM() {
+    //   const abil_pass = this.spells_RC_Param_Ability_Passive;
+    //   const abil = this.spells_RC_Param_Ability;
+      
+    //   const abil_ALL = [...abil_pass, ...abil];
+    //   const abil_clean = abil_ALL.filter((el) => el.spell.find((item) => !item.slot_type));
+    //   const abil_slot_type = abil_ALL.filter((el) => el.spell.find((item) => item.slot_type));
+    //   abil_slot_type.sort((a, b) => {
+    //     const a_slot = a.spell.find(el => el.name).slot_type;
+    //     const b_slot = b.spell.find(el => el.name).slot_type;
+    //     return a_slot.localeCompare(b_slot);
+    //   });
+
+    //   const manna = this.spells_RC_Param_Manna;
+
+    //   const spell_mod = manna.filter((el) => el.mod);
+      
+    //   const spell_mod_slot = spell_mod.filter((el) => el.mod.slot_type !== "0");
+    //   spell_mod_slot.sort((a, b) => a.mod.slot_type.localeCompare(b.mod.slot_type));
+    //   const spell_mod_0 = spell_mod.filter((el) => el.mod.slot_type == "0");
+
+    //   const spell_clean = manna.filter((el) => !el.mod);
+    //   return [
+    //     ...abil_clean,
+    //     ...abil_slot_type,
+    //     ...spell_mod_slot,
+    //     ...spell_mod_0,
+    //     ...spell_clean,
+    //   ];
+    // },
 
 		//NOTE - PAGE
 		spells_Page_All_Arr() {
