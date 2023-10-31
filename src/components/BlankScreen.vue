@@ -38,7 +38,6 @@ export default {
 	methods: {
 
 		getPageImage() {
-			console.log('getPageImage:')
 			this.site_settings.print_image.oldschool.load_1 = true;
 			this.site_settings.print_image.standard.load_1 = true;
 			if(this.alignment_page.shown.blank_print) {
@@ -53,7 +52,6 @@ export default {
 			const load = `load_${page_numb}`;
 			this.site_settings.print_image[type][load] = true;
 			const list_id = `${type}-screen-${page_numb}`;
-      console.log('list_id:', list_id)
       const capture = document.getElementById(list_id);
 
 			const options = {

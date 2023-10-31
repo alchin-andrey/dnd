@@ -2,7 +2,7 @@
   <main v-if="blank_print" id="print_spell">
     <div class="flex_col gap-52 int-500-22">
       <section class="flex_col gap-8">
-        <div class="int-700-22 print-grey">{{ t_Type }} /</div>
+        <div class="int-700-22 print-grey">{{ t_Type_Print }}</div>
         <div class="int-700-22">
           {{ em_Before }}
           <emoji
@@ -492,6 +492,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    book: {
+      type: Boolean,
+      default: false,
+    },
     qr_form: {
       type: Boolean,
       default: false,
@@ -672,8 +676,13 @@ export default {
     },
 
     t_Type() {
-      let string = this.T(this.Spell_Index.type);
-      return string.charAt(0).toUpperCase() + string.slice(1);
+      return this.T(this.Spell_Index.type);
+    },
+
+    t_Type_Print() {
+      const type = this.T(this.Spell_Index.type);
+      const spellbook = this.T('spellbook');
+      return this.book ? `${spellbook} / ${type} /` : `${type} /`;
     },
 
     t_Slot_Type() {

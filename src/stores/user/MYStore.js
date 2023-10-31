@@ -199,36 +199,114 @@ export const useMYStore = defineStore({
       let res_arr = [];
         arr?.forEach(el => {
           el?.select_list.forEach(sub_el => {
-            const item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
+            let item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
             res_arr = res_arr.concat(item_lvl);
           });
         });
 			return res_arr;
 		},
 
-    spells_Settings_Class_Arr() {
-      const sett_class = this.level_Filter_Arr(this.MY_Class.settings);
-      const sett_custom = this.filter_Custom_Lvl(this.сustomm_Main_Settings_Class_Arr, 'settings');
+    // filter_Custom_Lvl: (stor) => (arr, name, spellsbook) => {
+    //   let res_arr = [];
+    //     arr?.forEach(el => {
+    //       el?.select_list.forEach(sub_el => {
+    //         let item_lvl = stor.level_Filter_Arr(sub_el?.[name]);
+    //         if(spellsbook) {
+    //           item_lvl[0] = {...item_lvl[0], book: Boolean(el.book)}
+    //         }
+    //         res_arr = res_arr.concat(item_lvl);
+    //       });
+    //     });
+		// 	return res_arr;
+		// },
+
+    // spells_Settings_Class_Arr() {
+    //   const sett_class = this.level_Filter_Arr(this.MY_Class.settings);
+    //   const sett_custom = this.filter_Custom_Lvl(this.сustomm_Main_Settings_Class_Arr, 'settings');
+    //   const sett_all = [
+    //     ...sett_class, 
+    //     ...sett_custom
+    //   ];
+    //   const sett_spell = sett_all.filter((el) => el.type == 'spells');
+
+    //   let all_name = sett_spell.reduce((acc, el) => acc.concat(el.name), []);
+		// 	const uniqu_name = [...new Set(all_name)];
+
+    //   const sett_select = this.MY._settings_class[this.MY_Class.name];
+    //   let new_arr = [];
+    //   for (const item_name of uniqu_name) {
+		// 		const link_name = item_name;
+		// 		const sett_for_name = sett_spell.filter((el) => el.name == item_name);
+    //     sett_for_name?.forEach((item, i) => {
+    //       const link_name_i = `many_spells___${link_name}__${i}`;
+		// 			const select_numb = this.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
+		// 			const select_arr = sett_select?.[link_name_i] ?? [];
+          
+    //       const list_lvl = this.settings_Spells_List(item); //NOTE - NEW_FOR_SPELL
+
+		// 			let select_list = [];
+		// 			for (let i = 0; i < select_numb; i += 1) {
+		// 				select_arr?.[i] ? select_list.push(select_arr[i]) : null;
+		// 			}
+
+    //       new_arr.push({
+		// 				...item,
+		// 				id_link: link_name_i,
+		// 				select_list: select_list,
+    //         list: list_lvl,
+    //         select_numb: select_numb,
+		// 			});
+
+    //     });
+    //   }
+
+    //   return new_arr;
+    // },
+
+    spells_Settings_Class_Arr() { 
+      // const spells_main = this.spells_Setting_Class_Arr_Main();
+      const spells_main = this.spells_Setting_Class_Arr_Main;
+      // console.log('spells_main:', spells_main)
+      const spells_book = this.spells_Setting_Class_Arr_Book;
+      // console.log('spells_book:', spells_book)
+      return [...spells_main, ...spells_book];
+    },
+
+    spells_Setting_Class_Arr_Main() {
+      return this.spells_Settings_Arr(undefined);
+    },
+
+    spells_Setting_Class_Arr_Book() {
+      return this.spells_Settings_Arr(true);
+    },
+
+    spells_Settings_Arr: (stor) => (book) => {
+      const sett_class = stor.level_Filter_Arr(stor.MY_Class.settings);
+      const sett_custom = stor.filter_Custom_Lvl(stor.сustomm_Main_Settings_Class_Arr, 'settings');
       const sett_all = [
         ...sett_class, 
         ...sett_custom
       ];
-      const sett_spell = sett_all.filter((el) => el.type == 'spells');
+
+      const sett_spell = sett_all.filter((el) => el.type == 'spells' && el.book == book);
 
       let all_name = sett_spell.reduce((acc, el) => acc.concat(el.name), []);
 			const uniqu_name = [...new Set(all_name)];
 
-      const sett_select = this.MY._settings_class[this.MY_Class.name];
+      const sett_select = stor.MY._settings_class[stor.MY_Class.name];
       let new_arr = [];
+
+      const link_title = book ? 'many_spells_book' : 'many_spells';
+      
       for (const item_name of uniqu_name) {
 				const link_name = item_name;
 				const sett_for_name = sett_spell.filter((el) => el.name == item_name);
         sett_for_name?.forEach((item, i) => {
-          const link_name_i = `many_spells___${link_name}__${i}`;
-					const select_numb = this.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
+          const link_name_i = `${link_title}___${link_name}__${i}`;
+					const select_numb = stor.select_spells_Numb(item); //NOTE - NEW_FOR_SPELL
 					const select_arr = sett_select?.[link_name_i] ?? [];
           
-          const list_lvl = this.settings_Spells_List(item); //NOTE - NEW_FOR_SPELL
+          const list_lvl = stor.settings_Spells_List(item); //NOTE - NEW_FOR_SPELL
 
 					let select_list = [];
 					for (let i = 0; i < select_numb; i += 1) {
