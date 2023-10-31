@@ -122,46 +122,100 @@ export default {
       return this.spells_Setting_Class_Arr_Book.length !== 0
     },
 
+    // list_Main_Spells_Arr() {
+    //   const spell_arr = this.spell_RC_Param_Sort_ApAM__Main;
+    //   const lang = this.select_lang;
+
+    //   let count_column = 1;
+    //   // let h_column = this.h_list;
+    //   let h_column = this.h_list_spells_main - this.h_table_spells_list;
+
+    //   let res_arr = [];
+    //   let arr = [];
+    //   for (let i = 0; i < spell_arr.length; i++) {
+    //     const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
+    //     h_column -= h_spell;
+
+    //     if (h_column < 0) {
+    //       if (count_column == 3) {
+    //         res_arr.push(arr);
+    //         h_column = this.h_list_spells_main - h_spell;
+    //         count_column = 1;
+    //         arr = [];
+    //       } else {
+    //         h_column = this.h_list_spells_main - h_spell;
+    //         count_column++;
+    //       }
+    //     }
+    //     arr.push(spell_arr[i])
+    //     if (i == spell_arr.length - 1) {
+    //       res_arr.push(arr);
+    //     }
+    //   }
+    //   return res_arr;
+    // },
+
     list_Main_Spells_Arr() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM__Main;
-      const lang = this.select_lang;
-
-      let count_column = 1;
-      // let h_column = this.h_list;
-      let h_column = this.h_list_spells_main - this.h_table_spells_list;
-
-      let res_arr = [];
-      let arr = [];
-      for (let i = 0; i < spell_arr.length; i++) {
-        const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
-        h_column -= h_spell;
-
-        if (h_column < 0) {
-          if (count_column == 3) {
-            res_arr.push(arr);
-            h_column = this.h_list_spells_main - h_spell;
-            count_column = 1;
-            arr = [];
-          } else {
-            h_column = this.h_list_spells_main - h_spell;
-            count_column++;
-          }
-        }
-        arr.push(spell_arr[i])
-        if (i == spell_arr.length - 1) {
-          res_arr.push(arr);
-        }
-      }
-      return res_arr;
+      const h_list = this.h_list_spells_main;
+      const h_table = this.h_table_spells_list;
+      return this.spellTitleList(spell_arr, h_list, h_table);
     },
 
     list_Main_Spells_Arr__Book() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM__Book_All;
+      const h_list = this.h_list_spells_book;
+      const h_table = this.h_table_spells_list;
+      return this.spellTitleList(spell_arr, h_list, h_table);
+    },
+
+    // list_Main_Spells_Arr__Book() {
+    //   const spell_arr = this.spell_RC_Param_Sort_ApAM__Book_All;
+    //   const lang = this.select_lang;
+
+    //   let count_column = 1;
+    //   // let h_column = this.h_list;
+    //   let h_column = this.h_list_spells_book - this.h_table_spellbook_list;
+
+    //   let res_arr = [];
+    //   let arr = [];
+    //   for (let i = 0; i < spell_arr.length; i++) {
+    //     let h_spell = null;
+    //     if(spell_arr[i] == 'hr') {
+    //       h_spell = 98
+    //     } else {
+    //       h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
+    //     }
+
+    //     h_column -= h_spell;
+
+    //     if (h_column < 0) {
+    //       if (count_column == 3) {
+    //         res_arr.push(arr);
+    //         h_column = this.h_list_spells_book - h_spell;
+    //         count_column = 1;
+    //         arr = [];
+    //       } else {
+    //         h_column = this.h_list_spells_book - h_spell;
+    //         count_column++;
+    //       }
+    //     }
+    //     arr.push(spell_arr[i])
+    //     if (i == spell_arr.length - 1) {
+    //       res_arr.push(arr);
+    //     }
+    //   }
+    //   return res_arr;
+    // },
+
+  },
+
+  methods: {
+    spellTitleList(spell_arr, h_list, h_table) {
       const lang = this.select_lang;
 
       let count_column = 1;
-      // let h_column = this.h_list;
-      let h_column = this.h_list_spells_book - this.h_table_spellbook_list;
+      let h_column = h_list - h_table;
 
       let res_arr = [];
       let arr = [];
@@ -178,11 +232,11 @@ export default {
         if (h_column < 0) {
           if (count_column == 3) {
             res_arr.push(arr);
-            h_column = this.h_list_spells_book - h_spell;
+            h_column = h_list - h_spell;
             count_column = 1;
             arr = [];
           } else {
-            h_column = this.h_list_spells_book - h_spell;
+            h_column = h_list - h_spell;
             count_column++;
           }
         }
@@ -192,39 +246,6 @@ export default {
         }
       }
       return res_arr;
-    },
-
-  },
-
-
-
-
-
-
-  methods: {
-    spellTitleList(spell_arr, h_table) {
-      // const spell_arr = this.spell_RC_Param_Sort_ApAM;
-      const lang = this.select_lang;
-
-      let count_column = 1;
-      let h_column = this.h_list - h_table;
-
-      let arr = [];
-      for (let i = 0; i < spell_arr.length; i++) {
-        const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
-        h_column -= h_spell;
-
-        if (h_column < 0) {
-          if (count_column == 3) {
-            break;
-          } else {
-            h_column = this.h_list - h_spell;
-            count_column++;
-          }
-        }
-        arr.push(spell_arr[i])
-      }
-      return arr;
     },
 
   },

@@ -277,9 +277,7 @@ export const useMYStore = defineStore({
     spells_Settings_Class_Arr() { 
       // const spells_main = this.spells_Setting_Class_Arr_Main();
       const spells_main = this.spells_Setting_Class_Arr_Main;
-      // console.log('spells_main:', spells_main)
       const spells_book = this.spells_Setting_Class_Arr_Book;
-      console.log('spells_book:', spells_book)
       return [...spells_main, ...spells_book];
     },
 
