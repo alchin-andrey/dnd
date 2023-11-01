@@ -20,7 +20,7 @@
           <section class="col-wrap-spell">
             <BlankTable__SpellBookTitle id="table_spellbook" class="main-table mr-min var-blank--print" v-if="i == 0" />
             <template v-for="item in arr" :key="item">
-              <div v-if="item == 'hr'" class="hr-select cell-spell mr-min">
+              <div v-if="item == 'hr'" class="hr-select cell-hr mr-min">
                 <div class="book-hr"></div>
               </div>
               <AppSpells v-else class="cell-spell mr-min" :spell_obj="item" blank_print book/>
@@ -71,10 +71,8 @@ export default {
       PRINT_WORK: true,
       ALL_SPELL: false,
 
-      h_list_spells_main: null,
-      h_list_spells_book: null,
-      h_table_spells_list: null,
-      h_table_spellbook_list: null,
+      // h_table_spells_list: 1324,
+      // h_table_spellbook_list: 1344,
     };
   },
 
@@ -89,19 +87,15 @@ export default {
         // console.log('-------------------');
       });
     }
-    this.h_table_spells_list = document.getElementById("table_list_3").offsetHeight;
-    this.h_list_spells_main = document.querySelector(".col-wrap-spell").offsetHeight;
 
+    // this.h_table_spells_list = document.getElementById("table_list_3").offsetHeight;
+    // this.h_list_spells_main = document.querySelector(".col-wrap-spell").offsetHeight;
 
-    if (this.show_Spellbook) {
-      this.h_table_spellbook_list = document.getElementById("table_spellbook").offsetHeight;
-      this.h_list_spells_book = document.querySelector(".col-wrap-spell").offsetHeight;
-    }
-    // const list = document.querySelector(".print-page");
-    // const h_list = list.offsetHeight;
-    // const h_pad_top = parseFloat(window.getComputedStyle(list).paddingTop);
-    // const h_pad_bottom = parseFloat(window.getComputedStyle(list).paddingBottom);
-    // this.h_list = h_list - h_pad_top - h_pad_bottom;
+    // if (this.show_Spellbook) {
+    //   this.h_table_spellbook_list = document.getElementById("table_spellbook").offsetHeight;
+    //   this.h_list_spells_book = document.querySelector(".col-wrap-spell").offsetHeight;
+    // }
+
   },
 
   computed: {
@@ -122,99 +116,26 @@ export default {
       return this.spells_Setting_Class_Arr_Book.length !== 0
     },
 
-    // list_Main_Spells_Arr() {
-    //   const spell_arr = this.spell_RC_Param_Sort_ApAM__Main;
-    //   const lang = this.select_lang;
-
-    //   let count_column = 1;
-    //   // let h_column = this.h_list;
-    //   let h_column = this.h_list_spells_main - this.h_table_spells_list;
-
-    //   let res_arr = [];
-    //   let arr = [];
-    //   for (let i = 0; i < spell_arr.length; i++) {
-    //     const h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
-    //     h_column -= h_spell;
-
-    //     if (h_column < 0) {
-    //       if (count_column == 3) {
-    //         res_arr.push(arr);
-    //         h_column = this.h_list_spells_main - h_spell;
-    //         count_column = 1;
-    //         arr = [];
-    //       } else {
-    //         h_column = this.h_list_spells_main - h_spell;
-    //         count_column++;
-    //       }
-    //     }
-    //     arr.push(spell_arr[i])
-    //     if (i == spell_arr.length - 1) {
-    //       res_arr.push(arr);
-    //     }
-    //   }
-    //   return res_arr;
-    // },
-
     list_Main_Spells_Arr() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM__Main;
-      const h_list = this.h_list_spells_main;
-      const h_table = this.h_table_spells_list;
-      return this.spellTitleList(spell_arr, h_list, h_table);
+      const h_table_main = 1324;
+      return this.spellTitleList(spell_arr, h_table_main);
     },
 
     list_Main_Spells_Arr__Book() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM__Book_All;
-      const h_list = this.h_list_spells_book;
-      const h_table = this.h_table_spells_list;
-      return this.spellTitleList(spell_arr, h_list, h_table);
+      const h_table_book = 1344;
+      return this.spellTitleList(spell_arr, h_table_book);
     },
-
-    // list_Main_Spells_Arr__Book() {
-    //   const spell_arr = this.spell_RC_Param_Sort_ApAM__Book_All;
-    //   const lang = this.select_lang;
-
-    //   let count_column = 1;
-    //   // let h_column = this.h_list;
-    //   let h_column = this.h_list_spells_book - this.h_table_spellbook_list;
-
-    //   let res_arr = [];
-    //   let arr = [];
-    //   for (let i = 0; i < spell_arr.length; i++) {
-    //     let h_spell = null;
-    //     if(spell_arr[i] == 'hr') {
-    //       h_spell = 98
-    //     } else {
-    //       h_spell = spell_arr[i].spell.find(el => el.name).h[lang];
-    //     }
-
-    //     h_column -= h_spell;
-
-    //     if (h_column < 0) {
-    //       if (count_column == 3) {
-    //         res_arr.push(arr);
-    //         h_column = this.h_list_spells_book - h_spell;
-    //         count_column = 1;
-    //         arr = [];
-    //       } else {
-    //         h_column = this.h_list_spells_book - h_spell;
-    //         count_column++;
-    //       }
-    //     }
-    //     arr.push(spell_arr[i])
-    //     if (i == spell_arr.length - 1) {
-    //       res_arr.push(arr);
-    //     }
-    //   }
-    //   return res_arr;
-    // },
 
   },
 
   methods: {
-    spellTitleList(spell_arr, h_list, h_table) {
+    spellTitleList(spell_arr, h_table) {
       const lang = this.select_lang;
 
       let count_column = 1;
+      const h_list = 2808;
       let h_column = h_list - h_table;
 
       let res_arr = [];
@@ -365,6 +286,12 @@ export default {
 
 .hr-select {
   height: 98px;
+}
+
+.cell-hr {
+  width: 100%;
+  padding: 48px 56px;
+  border: 1px solid #828282;
 }
 
 .book-hr {
