@@ -20,7 +20,7 @@ export default {
     '" Я Майстер настільно-рольових ігор вже протягом 5 років. Я віддаю перевагу ігровому досвіду, який здатен занурити вас в незабутні пригоди та принести приємні емоції. Також я один з спів ведучих ютуб каналу <a target="_blank" href="https://www.youtube.com/@tepli-nastolki">Теплі Настолки</a>, де роблю огляди систем та гайди. "',
 
     oleksandr_frankivsky_contact: 
-    '<a target="_blank" href="https://t.me/Lagoni">@Lagoni</a>',
+    '<a target="_blank" href="https://t.me/Lagoni">@Emperf</a>',
 
     //-----
 

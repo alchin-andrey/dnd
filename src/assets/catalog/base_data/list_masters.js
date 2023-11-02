@@ -17,7 +17,7 @@ export default {
     city: ["lviv","online"],
     format: [],
     telegram: "oleksandr_frankivsky_contact",
-    link: "https://t.me/Lagoni",
+    link: "https://t.me/Emperf",
   },
 
   sanech: {
