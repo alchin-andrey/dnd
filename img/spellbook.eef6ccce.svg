@@ -1,0 +1,29 @@
+<svg width="536" height="250" viewBox="0 0 536 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_5103_20114)">
+<rect x="0.5" y="30.5" width="535" height="189" stroke="black"/>
+<rect x="30.5" y="0.5" width="475" height="249" stroke="black"/>
+<circle cx="268" cy="125" r="237.5" stroke="black"/>
+<circle cx="54" cy="125" r="23.5" stroke="black"/>
+<circle cx="230.5" cy="125.5" r="200" stroke="black"/>
+<circle cx="193" cy="125" r="162.5" stroke="black"/>
+<circle cx="155" cy="125" r="124.5" stroke="black"/>
+<path d="M172.5 125C172.5 163.933 140.716 195.5 101.5 195.5C62.2845 195.5 30.5 163.933 30.5 125C30.5 86.0672 62.2845 54.5 101.5 54.5C140.716 54.5 172.5 86.0672 172.5 125Z" stroke="black"/>
+<circle cx="77.5" cy="124.5" r="47" stroke="black"/>
+<circle cx="125" cy="125" r="94.5" stroke="black"/>
+<path d="M31 125C131.833 83.6667 181 1 505 1" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C131.833 166.333 181 249 505 249" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C138.215 145.667 190.494 187 535 187" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C138.215 104.333 190.494 63 535 63" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C131.833 156.333 181 219 505 219" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C131.833 93.6667 181 31 505 31" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C138.215 133 190.494 149 535 149" stroke="black" stroke-dasharray="1 2"/>
+<path d="M31 125C138.215 117 190.494 101 535 101" stroke="black" stroke-dasharray="1 2"/>
+<path d="M1 31C1 83.8 13 125 30 125" stroke="black"/>
+<path d="M1 219C1 166.2 13 125 30 125" stroke="black"/>
+</g>
+<defs>
+<clipPath id="clip0_5103_20114">
+<rect width="536" height="250" fill="white"/>
+</clipPath>
+</defs>
+</svg>
