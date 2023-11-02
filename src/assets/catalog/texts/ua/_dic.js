@@ -2205,7 +2205,7 @@ export default {
   style_dueling: "дуелянт",
   style_protection: "захист",
   style_defence: "оборона",
-  style_great_weapon: "велика збооя",
+  style_great_weapon: "велика зброя",
   style_double_weapon: "дві зброї",
   style_archery: "стрільба",
 

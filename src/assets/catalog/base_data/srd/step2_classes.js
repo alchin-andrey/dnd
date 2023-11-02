@@ -1107,7 +1107,7 @@ export default {
             name: "style_dueling",
             fines: [
               {
-                level: 2,
+                level: 1,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_attack_signle_one_handed",
@@ -1118,7 +1118,7 @@ export default {
             name: "style_protection",
             spells: [
               {
-                level: 2,
+                level: 1,
                 spell: spells.side_pary,
               },
             ],
@@ -1127,7 +1127,7 @@ export default {
             name: "style_defence",
             fines: [
               {
-                level: 2,
+                level: 1,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_armor_if_armor",
@@ -1136,7 +1136,7 @@ export default {
 
             specials: [
               {
-                level: 2,
+                level: 1,
                 type: "armor",
                 armor_bonus: 1,
               },
@@ -1146,7 +1146,7 @@ export default {
             name: "style_great_weapon",
             fines: [
               {
-                level: 2,
+                level: 1,
                 type: "advantage",
                 keyword: "rethrow",
                 details: "if_1_or_2_on_two_handed_weapon",
@@ -1157,7 +1157,7 @@ export default {
             name: "style_double_weapon",
             fines: [
               {
-                level: 2,
+                level: 1,
                 type: "plus",
                 keyword: "bonus",
                 details: "on_damage_second_attack",
@@ -1168,7 +1168,7 @@ export default {
             name: "style_archery",
             fines: [
               {
-                level: 2,
+                level: 1,
                 type: "plus",
                 keyword: "aim_bonus",
                 details: "plus_2_on_ranged",
@@ -1177,7 +1177,7 @@ export default {
 
             specials: [
               {
-                level: 2,
+                level: 1,
                 type: "weapon_ranged",
                 aim_bonus: 2,
               },
