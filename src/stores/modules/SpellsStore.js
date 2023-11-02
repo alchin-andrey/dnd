@@ -305,7 +305,8 @@ export const useSpellsStore = defineStore({
 		},
 
 		spells_RC_Param_Manna__Book_No_Select() {
-      const RC_mana = this.spells_filter_Not_Ability(this.spells_Class_Param__Book_No_Select);
+      // const RC_mana = this.spells_filter_Not_Ability(this.spells_Class_Param__Book_No_Select);
+      const RC_mana = this.spells_filter_Not_Ability(this.spells_Class_Param_All__Book_No_Select_without_All_Select);
       RC_mana.sort((a, b) => a.spell.length - b.spell.length);
       RC_mana.sort((a, b) => a.spell.findIndex((el) => el.name) - b.spell.findIndex((el) => el.name));
 			return RC_mana;
