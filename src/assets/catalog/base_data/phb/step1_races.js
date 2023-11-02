@@ -1943,7 +1943,7 @@ export default {
           },
 
           // stats: {wisdom: 1,},
-          stats: [{ name: "wisdom", num: 1, },],
+          stats: [{ name: "intelligence", num: 1, },],
 
           // qualities: {vision_night: 60,},
           qualities: [{name: "vision_night", num: 60,},],
