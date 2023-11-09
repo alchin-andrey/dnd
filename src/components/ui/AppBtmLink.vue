@@ -1,6 +1,6 @@
 <template>
 	<div class="btm-grey br-12 blur-60 hov cur-p pos-rel">
-		<a target="_blank" :href="link">
+		<a :target="target_Link" :href="link">
 			<div class="int-700 flex-row-c pd-rl-16 h-47 ">
 			<!-- <div :class="style_Btm"> -->
 				<!-- {{ T_Btm_Name }} -->
@@ -40,6 +40,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		link_self: {
+      type: Boolean,
+      default: false,
+    },
 		btm_x2: {
       type: Boolean,
       default: false,
@@ -60,6 +64,10 @@ export default {
 
 		em_After() {
 			return this.afterEmoji(this.T_Btm_Name);
+		},
+
+		target_Link() {
+			return this.link_self ? '_self' : '_blank';
 		},
 
 		style_Btm() {

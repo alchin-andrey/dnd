@@ -5,10 +5,7 @@
 				<AppLogoCard @click="goTo('/')"/>
 				<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
 			</div>
-			<div class="h-100 flex-col-sb mr-t-84">
-				<WelcomPage__Menu @btnClick="goTo('/')"/>
-				<my-button-back title="command_back" @click="goTo('/')" />
-			</div>
+			<WelcomPage__Menu/>
 		</section>
 		<div v-if="screen_Max" class="stripe-page" />
 		<main class="w-100">
