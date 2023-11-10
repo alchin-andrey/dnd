@@ -1,23 +1,20 @@
 <template>
 	<div class="btm-grey br-12 blur-60 hov cur-p pos-rel">
-		<a target="_blank" :href="link">
+		<a :target="target_Link" :href="link">
 			<div class="int-700 flex-row-c pd-rl-16 h-47 ">
-			<!-- <div :class="style_Btm"> -->
-				<!-- {{ T_Btm_Name }} -->
-					<div>
-						{{ em_Before }}
-						<emoji
-						v-if="em_Upd"
-						:data="emojiIndex"
-						:emoji="em_Upd"
-						:set="set_emoji"
-						:size="14"
-						/>{{ em_After }}
-					</div>
+				<div>
+					{{ em_Before }}
+					<emoji
+					v-if="em_Upd"
+					:data="emojiIndex"
+					:emoji="em_Upd"
+					:set="set_emoji"
+					:size="14"
+					/>{{ em_After }}
+				</div>
 			</div>
 			<AppSvg 
 				class="svg-18 svg-main-f icon-pos"
-				:class="[style_Svg]"
 				:name="icon"
 			/>
 		</a>
@@ -40,7 +37,7 @@ export default {
 			type: String,
 			default: null,
 		},
-		btm_x2: {
+		link_self: {
       type: Boolean,
       default: false,
     },
@@ -62,20 +59,8 @@ export default {
 			return this.afterEmoji(this.T_Btm_Name);
 		},
 
-		style_Btm() {
-			if(this.btm_x2) {
-				return 'int-700-20 pd-20-28';
-			} else {
-				return 'int-700 pd-16';
-			}
-		},
-
-		style_Svg() {
-			if(this.btm_x2) {
-				return 'svg-36 icon-pos_x2';
-			} else {
-				return 'svg-18';
-			}
+		target_Link() {
+			return this.link_self ? '_self' : '_blank';
 		},
 	},
 };
@@ -91,9 +76,6 @@ export default {
 	-ms-transform: translate(0%, -50%);
 	transform: translate(0%, -50%);
 }
-.icon-pos_x2 {
-	right: 14px;
-}
 
 .emoji-mart-emoji {
 	padding: 0;
@@ -103,9 +85,5 @@ export default {
 
 .h-47 {
 	height: 47px;
-}
-
-.text-c {
-	vertical-align: middle;
 }
 </style>

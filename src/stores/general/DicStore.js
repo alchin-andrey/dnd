@@ -14,6 +14,12 @@ export const useDicStore = defineStore({
   },
 
 	getters: {
+		// MY_Select_Lang() {
+		// 	const lang_true = this.dic.lang.find(el => el.mark == this.select_lang);
+		// 	if(!this.lang_true) return this.dic.lang[0].mark;
+		// 	else return this.select_lang;
+		// },
+
 		t: (stor) => (word) => {
 			const lang = stor.select_lang;
 			const t_word = stor.dic[lang][word];
@@ -27,5 +33,11 @@ export const useDicStore = defineStore({
         return T_str;
       }
 		},
+	},
+
+	actions: {
+		getMainLang() {
+
+		}
 	},
 });

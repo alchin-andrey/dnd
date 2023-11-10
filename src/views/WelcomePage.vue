@@ -5,10 +5,7 @@
 				<AppLogoCard @click="goTo('/')"/>
 				<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
 			</div>
-			<div class="h-100 flex-col-sb mr-t-84">
-				<WelcomPage__Menu @btnClick="goTo('/')"/>
-				<my-button-back title="command_back" @click="goTo('/')" />
-			</div>
+			<WelcomPage__Menu/>
 		</section>
 		<div v-if="screen_Max" class="stripe-page" />
 		<main class="w-100">
@@ -26,9 +23,10 @@
 			<section class="welcom-wrapp">
 				<div class="h-100">
 					<div class="welcom-content">
+						<WelcomPage__TryToPlay id="welcom-part3" class="pd-t-32" @btnClick="goTo('/')"/>
 						<WelcomPage__WhatDND id="welcom-part1" class="pd-t-32" />
-						<WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/>
-						<WelcomPage__UserChar id="welcom-part3" class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/>
+						<!-- <WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/> -->
+						<!-- <WelcomPage__UserChar class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/> -->
 						<WelcomPage__Masters id="welcom-part4" class="mr-t-64 pd-t-32"/>
 						<WelcomPage__Game id="welcom-part5" class="mr-t-64 pd-t-32"/>
 						<WelcomPage__Footer class="mr-t-102" @btnClick="goTo('/')"/>
@@ -39,14 +37,15 @@
 		</main>
 	</div>
 </template>
-<script>
 
+<script>
 import { mapActions, mapState, mapWritableState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
-import PlagBanner from "@/components/PlagBanner.vue";
+
 import WelcomPage__Menu from "@/components/welcom_page/WelcomPage__Menu.vue";
+import WelcomPage__TryToPlay from "@/components/welcom_page/WelcomPage__TryToPlay.vue";
 import WelcomPage__WhatDND from "@/components/welcom_page/WelcomPage__WhatDND.vue";
 import WelcomPage__Start from "@/components/welcom_page/WelcomPage__Start.vue";
 import WelcomPage__UserChar from "@/components/welcom_page/WelcomPage__UserChar.vue";
@@ -57,8 +56,8 @@ import WelcomPage__Footer from "@/components/welcom_page/WelcomPage__Footer.vue"
 export default {
 	name: "WelcomePage",
 	components: {
-    PlagBanner,
 		WelcomPage__Menu,
+		WelcomPage__TryToPlay,
 		WelcomPage__WhatDND,
 		WelcomPage__Start,
 		WelcomPage__UserChar,
