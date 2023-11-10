@@ -12,7 +12,7 @@
 <script>
 
 export default {
-	name: "WelcomPage__Menu",
+	name: "WelcomPage__WhatDND",
 };
 </script>
 
