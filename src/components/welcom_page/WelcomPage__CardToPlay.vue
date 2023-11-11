@@ -61,7 +61,7 @@ export default {
 		},
 
 		link_Go() {
-			return this.masters ? '#welcom-part4' : null;
+			return this.masters ? '#welcom-part51' : null;
 		},
 
 		svg_Back() {

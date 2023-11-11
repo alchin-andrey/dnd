@@ -4,22 +4,22 @@
 			<AppBtmLink
 			class="btm-blue"
 			name="lobby_menu_char"
-			link="#welcom-part3"
+			link="#welcom-part11"
 			link_self
 			/>
 			<AppBtmLink 
 			name="lobby_menu_3" 
 			icon="arrow_down_small" 
-			link="#welcom-part4"
+			link="#welcom-part51"
 			link_self 
 			/>
 		</section>
 
 		<section>
 			<div class="jbm-300 flex-col gap-18">
-				<a href="#welcom-part1">{{ t("lobby_menu_1") }}</a>
-				<a href="#welcom-part5">{{ t("lobby_menu_4") }}</a>
-				<a href="#welcom-part2">{{ t("lobby_menu_2") }}</a>
+				<a href="#welcom-part21">{{ t("lobby_menu_1") }}</a>
+				<a href="#welcom-part31">{{ t("lobby_menu_4") }}</a>
+				<a href="#welcom-part41">{{ t("lobby_menu_2") }}</a>
 			</div>
 			<AppBtmLink
 			class="btm-white mr-t-36"

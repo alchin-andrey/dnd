@@ -23,12 +23,12 @@
 			<section class="welcom-wrapp">
 				<div class="h-100">
 					<div class="welcom-content">
-						<WelcomPage__TryToPlay id="welcom-part3" class="pd-t-32" @btnClick="goTo('/')"/>
-						<WelcomPage__WhatDND id="welcom-part1" class="pd-t-32" />
+						<WelcomPage__TryToPlay id="welcom-part11" class="pd-t-32" @btnClick="goTo('/')"/>
+						<WelcomPage__WhatDND id="welcom-part21" class="pd-t-32" />
 						<!-- <WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/> -->
 						<!-- <WelcomPage__UserChar class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/> -->
-						<WelcomPage__Masters id="welcom-part4" class="mr-t-64 pd-t-32"/>
-						<WelcomPage__Game id="welcom-part5" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Game id="welcom-part41" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Masters id="welcom-part51" class="mr-t-64 pd-t-32"/>
 						<WelcomPage__Footer class="mr-t-102" @btnClick="goTo('/')"/>
 						<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
 					</div>

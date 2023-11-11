@@ -1,16 +1,8 @@
 <template>
-	<article class="card-wrapp">
-		<section class="card-size btm-trans br-12">
-			<div class="int-700">{{ t("lobby_menu_4") }}</div>
-			<!-- <div class="int-400 flex-col gap-15 white-04 w-362 mr-t-24"> -->
-			<div class="text-wrapp int-400 mr-t-24">
-				<div class="ident-15 mr-l-15 flex-col gap-15">
-					<div>— {{ t('how_it_goes_1') }}</div>
-					<div>— {{ t('how_it_goes_2') }}</div>
-					<div>— {{ t('how_it_goes_3') }}</div>
-				</div>
-				<div class="white-04">{{ t('how_it_goes_4') }}</div>
-			</div>
+	<article class="flex-row flex-wrap gap-4 mr-t-108">
+		<section class="card-size mr-b-24">
+			<div class="int-700-20">{{ t("party_example") }}</div>
+			<div class="int-400 white-04 mr-t-24" v-html="t('party_example_details')" />
 		</section>
 
 		<section class="card-size">
@@ -33,9 +25,24 @@ export default {
 	},
 	data: () => ({
 		game_steps: [
-			{name: 'lobby_game_type_1_name', details: 'lobby_game_type_1_details', link: 'https://youtu.be/GY6AZbLfxmQ?t=185'},
-			{name: 'lobby_game_type_2_name', details: 'lobby_game_type_2_details' , link: 'https://youtu.be/7CjvWO05rA0?t=507'},
-			{name: 'lobby_game_type_3_name', details: 'lobby_game_type_3_details' , link: 'https://youtu.be/P8pLvV3FjPc?t=756'},
+			{
+				name: 'lobby_game_type_1_name',
+				details: 'lobby_game_type_1_details',
+				img: require('@/assets/img/other/dnd_story_one_shot.png'),
+				link: 'https://youtu.be/GY6AZbLfxmQ?t=185',
+			},
+			{
+				name: 'lobby_game_type_2_name',
+				details: 'lobby_game_type_2_details',
+				img: require('@/assets/img/other/dnd_story_module.png'),
+				link: 'https://youtu.be/7CjvWO05rA0?t=507',
+			},
+			{
+				name: 'lobby_game_type_3_name',
+				details: 'lobby_game_type_3_details',
+				img: require('@/assets/img/other/dnd_story_campaign.png'),
+				link: 'https://youtu.be/P8pLvV3FjPc?t=756',
+			},
 		]
 	}),
 };
@@ -48,7 +55,7 @@ export default {
 	gap: 4px
 }
 .card-size { 
-	width: 444px; 
+	width: 394px; 
 }
 
 .text-wrapp {
