@@ -43,13 +43,13 @@ export default {
 		},
 
 		t_Title() {
-			if(this.masters) return this.T('lobby_menu_3');
-			else return  this.T('сreate_character');
+			if(this.masters) return this.T('select_master');
+			else return  this.T('create_character');
 		},
 
 		t_Html() {
-			if(this.masters) return this.t('lobby_menu_3_details');
-			else return  this.t('сreate_character_details');
+			if(this.masters) return this.t('select_master_details');
+			else return  this.t('create_character_details');
 		},
 
 		icon_Name() {
