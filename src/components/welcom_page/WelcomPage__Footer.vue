@@ -1,58 +1,102 @@
 <template>
 	<!-- <article class="flex-row gap-4"> -->
-	<article class="card-wrapp">
+	<article class="card-flex">
 		<section class="card-size">
-			<div class="int-700 flex-col gap-32 w-362">
-				<div v-html="t('lobby_conclustion')" />
-				<AppBtmLink class="btm-blue" @click="btn()" name="how_to_start_2_title" />
+			<div class="flex-col-sb h-100 w-362">
+				<div>
+					<div class="int-700-20" v-html="t('join_us')" />
+					<div class="int-400 white-04 mr-t-24">
+						{{ em_Before }}
+						<emoji 
+						v-if="em_Upd" 
+						:data="emojiIndex" 
+						:emoji="em_Upd" 
+						:set="set_emoji" 
+						:size="14" />
+						{{ em_After }}
+					</div>
+					<AppBtmLink class="mr-t-28" :name="t_me_link_name" :link="t_me_link" icon="link" />
+				</div>
+				<div class="mr-t-108">
+					<AppDisclaimer />
+					<div class="int-400 white-04 mr-t-15" v-html="t('lobby_footer')" />
+				</div>
 			</div>
 		</section>
 
-		<!-- <section class="card-size pd-rl-16"> -->
 		<section class="card-size">
-			<AppDisclaimer class="text-wrapp" />
+			<section class="flex-col btm-grey br-12 blur-60 h-100 hid">
+			<img src="@/assets/img/promo/1.png" alt="donate">
+			<Donate class="card-wrapp"/>
+		</section>
 		</section>
 	</article>
 </template>
 <script>
+import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
+import Donate from "@/components/Donate.vue";
 export default {
 	name: "WelcomPage__Footer",
-	emits: ["btnClick"],
-	methods: {
-		btn() {
-				this.$emit("btnClick");
-      },
+	components: {
+		Donate,
 	},
+	data: () => ({
+		t_me_link: 'https://t.me/dndme_club',
+		t_me_link_name: 't.me/dndme_club',
+		join: 'join_us_details'
+
+	}),
+
+	computed: {
+		...mapState(usePagesStore, ["screen_Max"]),
+		em_Upd() {
+			return this.updEmoji(this.join);
+		},
+
+		em_Before() {
+			return this.beforeEmoji(this.join);
+		},
+
+		em_After() {
+			return this.afterEmoji(this.join);
+		},
+	}
 };
 </script>
 
 <style scoped>
-.card-wrapp {
+.card-flex {
 	display: flex;
 	gap: 4px;
+	flex-wrap: wrap-reverse;
 }
-
-.text-wrapp {
-	width: 362px;
-	padding: 0 16px;
-}
-
 .card-size {
 	width: 444px;
+	
+}
+
+.hid {
+	overflow: hidden;
+}
+.card-wrapp {
+	padding: 32px;
 }
 
 @media (max-width: 955px) {
+	.card-flex {
+		gap: 108px;
+	}
 	.card-wrapp {
-		flex-direction: column;
-		gap: 64px;
+		padding: 20px;
 	}
 
 	.card-size {
-		width: 100%;
+		width: 362px;
 	}
 
-	.text-wrapp {
-		padding: 0;
+	img {
+		display: none;
 	}
 }
 </style>

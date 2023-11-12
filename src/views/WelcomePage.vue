@@ -30,8 +30,7 @@
 						<WelcomPage__Game id="welcom-part41" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__GameLove id="welcom-part41" class="mr-t-76 pd-t-32" @btnClick="goTo('/')"/>
 						<WelcomPage__Masters id="welcom-part51" class="mr-t-76 pd-t-32"/>
-						<WelcomPage__Footer class="mr-t-102" @btnClick="goTo('/')"/>
-						<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
+						<WelcomPage__Footer id="welcom-part61" class="mr-t-76 pd-t-32"/>
 					</div>
 				</div>
 			</section>

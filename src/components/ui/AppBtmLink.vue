@@ -44,7 +44,7 @@ export default {
 	},
 	computed: {
 		T_Btm_Name() {
-			return this.T(this.name)
+			return this.t(this.name)
 		},
 
 		em_Upd() {

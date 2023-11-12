@@ -25,7 +25,7 @@
 			class="btm-white mr-t-36"
 			name="lobby_support_project" 
 			icon="donate" 
-			link="#welcom-part6"
+			link="#welcom-part61"
 			link_self
 			/>
 		</section>
