@@ -1,5 +1,5 @@
 <template>
-	<article class="flex-row flex-wrap gap-4 mr-t-108">
+	<article class="flex-row flex-wrap gap-4">
 		<div class="int-700-20 card-size mr-b-32" v-html="t('lobby_welcome_title')" />
 
 		<div class="int-400-13 card-size">

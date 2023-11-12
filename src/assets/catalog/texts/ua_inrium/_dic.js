@@ -6128,7 +6128,9 @@ export default {
   lobby_game_type_3_name: 'Campaign',
   lobby_game_type_3_details: 'Масштабна історія, яка може тривати кілька місяців або навіть років. Ось як це робить команда <a target="_blank" href="https://youtu.be/P8pLvV3FjPc?t=756">Critical&nbsp;Role</a>&nbsp;(EN).',
 
-  lobby_conclustion: 'Dungeons & Dragons здатна сподобатися кожному. Це доводить її всесвітня популярність протягом вже 50+ років, не зважаючи на складність початку <br/>(до появи <span class="buff">dndme.club</span>). Спробуй і ти!',
+  lobby_conclustion: 'Dungeons & Dragons здатна сподобатися кожному',
+
+  lobby_conclustion_details: 'Це доводить її невщухаюча всесвітня популярність протягом вже 50+ років, не зважаючи на складність створення персонажа. Але ці складнощі у минулому —  <span class="buff">dndme.club</span> допомагає створити персонажа без читання правил за 3 простих кроки. Спробуй і ти!',
 
   lobby_CTA: "Створи персонажа",
   lobby_footer: 'По всім питанням пишіть Дімі <a target="_blank" href="https://t.me/dimalagoda">t.me/dimalagoda</a>',

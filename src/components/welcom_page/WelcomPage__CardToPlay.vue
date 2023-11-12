@@ -1,16 +1,16 @@
 <template>
 	<div class="br-12 blur-60 hov cur-p pos-rel card-size" :class="style_Cerd">
 		<a :target="target_Link" :href="link_Go">
-			<div class="pd-16 h-349">
-				<div class="jbm-300 mr-b-182">{{ serial_Number }}</div>
+			<div class="pd-16" :style="style_Height_Obj">
+				<div class="jbm-300 mr-b-182" v-if="!short">{{ serial_Number }}</div>
 				
 				<section>
-					<div class="int-700"> {{ t_Title }} </div>
+					<div class="int-700-20"> {{ t_Title }} </div>
 					<div class="int-400 mr-t-4 w-320" v-html="t_Html" />
 				</section>
 			</div>
-			<div class="back-pos" v-html="svg_Back" />
-			<AppSvg 
+			<div class="back-pos" v-html="svg_Back" v-if="!short"/>
+			<AppSvg
 				class="svg-18 svg-main-f icon-pos"
 				:name="icon_Name"
 			/>
@@ -73,6 +73,14 @@ export default {
 			if(this.masters) return 'btm-grey';
 			else return  'btm-blue';
 		},
+
+		style_Height_Obj() {
+			if(this.short) return 'h-349';
+			else return  'btm-blue';
+
+			if (this.short) return {'height': '349px'};
+			else return {'height': '100%'};
+		}
 	},
 };
 </script>
@@ -106,4 +114,3 @@ export default {
 	height: 349px;
 }
 </style>
-@/assets/catalog/icon/big_svg

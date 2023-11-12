@@ -1,8 +1,8 @@
 <template>
-	<article class="flex-row flex-wrap gap-4 mr-t-108">
+	<article class="flex-row flex-wrap gap-4">
 		<section class="card-size mr-b-24">
-			<div class="int-700-20">{{ t("party_example") }}</div>
-			<div class="int-400 white-04 mr-t-24" v-html="t('party_example_details')" />
+			<div class="int-700-20 w-320">{{ t("party_example") }}</div>
+			<div class="int-400 white-04 mr-t-24 w-320" v-html="t('party_example_details')" />
 		</section>
 
 		<section class="card-size">
@@ -19,7 +19,7 @@
 <script>
 import WelcomPage__CardGame from "@/components/welcom_page/WelcomPage__CardGame.vue";
 export default {
-	name: "WelcomPage__Masters",
+	name: "WelcomPage__Game",
 	components: {
 		WelcomPage__CardGame,
 	},
@@ -50,36 +50,9 @@ export default {
 
 <style scoped>
 
-.card-wrapp {
-	display: flex;
-	gap: 4px
-}
-.card-size { 
-	width: 394px; 
+.card-size {
+	width: 100%;
+	max-width: 394px; 
 }
 
-.text-wrapp {
-	width: 362px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-}
-.ident-15 > div { text-indent: -15px; }
-
-
-
-@media (max-width: 955px) {
-	.card-wrapp {
-		flex-direction: column;
-	}
-	.card-size {
-		width: 100%;
-	}
-}
-
-@media (max-width: 480px) {
-	.text-wrapp {
-		width: 330px;
-	}
-}
 </style>

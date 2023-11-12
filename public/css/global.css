@@ -9,8 +9,8 @@
 	max-width: 344px;
 }
 
-.w-362 {width: 362px;}
 .w-320 {width: 320px;}
+.w-362 {width: 362px;}
 
 .h-18 {height: 18px;}
 .h-min-18 {min-height: 18px;}
@@ -152,6 +152,7 @@
 .mr-t-40 { margin-top: 40px; }
 .mr-t-54 { margin-top: 54px; }
 .mr-t-64 { margin-top: 64px; }
+.mr-t-76 { margin-top: 76px; }
 .mr-t-84 { margin-top: 84px; }
 .mr-t-96 { margin-top: 96px; }
 .mr-t-102 { margin-top: 102px; }

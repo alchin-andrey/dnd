@@ -5,7 +5,7 @@
 		'border cur-p': mob_menu,
 		'custom-char-menu': active_Mob_Custom_Char,
 		}"
-	:style="stule_Img_Obj"
+	:style="style_Img_Obj"
 	>
 		<section v-if="!active_Mob_Custom_Char">
 			<RaceBody body_part="skin" :ethnos_name="ethnos_name" :mob_menu="show_Mob_Char" />
@@ -63,7 +63,7 @@ export default {
 			return this.show_Mob_Char && this.MY.param.user_photo;
 		},
 
-		stule_Img_Obj() {
+		style_Img_Obj() {
 			if (this.active_Mob_Custom_Char) return {
 					'background-image': `url(${this.MY.custom_photo}), url(${require('@/assets/img/characters/halfling/ethhnos/forest_custom@3x.png')})`,
 				}

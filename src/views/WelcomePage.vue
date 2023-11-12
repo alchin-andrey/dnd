@@ -24,11 +24,12 @@
 				<div class="h-100">
 					<div class="welcom-content">
 						<WelcomPage__TryToPlay id="welcom-part11" class="pd-t-32" @btnClick="goTo('/')"/>
-						<WelcomPage__WhatDND id="welcom-part21" class="pd-t-32" />
+						<WelcomPage__WhatDND id="welcom-part21" class="mr-t-76  pd-t-32" />
 						<!-- <WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/> -->
 						<!-- <WelcomPage__UserChar class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/> -->
-						<WelcomPage__Game id="welcom-part41" class="mr-t-64 pd-t-32"/>
-						<WelcomPage__Masters id="welcom-part51" class="mr-t-64 pd-t-32"/>
+						<WelcomPage__Game id="welcom-part41" class="mr-t-76 pd-t-32"/>
+						<WelcomPage__GameLove id="welcom-part41" class="mr-t-76 pd-t-32" @btnClick="goTo('/')"/>
+						<WelcomPage__Masters id="welcom-part51" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Footer class="mr-t-102" @btnClick="goTo('/')"/>
 						<div class="int-400 white-04 mr-t-102" v-html="t('lobby_footer')"/>
 					</div>
@@ -51,6 +52,7 @@ import WelcomPage__Start from "@/components/welcom_page/WelcomPage__Start.vue";
 import WelcomPage__UserChar from "@/components/welcom_page/WelcomPage__UserChar.vue";
 import WelcomPage__Masters from "@/components/welcom_page/WelcomPage__Masters.vue";
 import WelcomPage__Game from "@/components/welcom_page/WelcomPage__Game.vue";
+import WelcomPage__GameLove from "@/components/welcom_page/WelcomPage__GameLove.vue";
 import WelcomPage__Footer from "@/components/welcom_page/WelcomPage__Footer.vue";
 
 export default {
@@ -63,6 +65,7 @@ export default {
 		WelcomPage__UserChar,
 		WelcomPage__Masters,
 		WelcomPage__Game,
+		WelcomPage__GameLove,
 		WelcomPage__Footer,
 	},
 
