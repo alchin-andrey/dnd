@@ -6122,11 +6122,11 @@ export default {
   how_it_goes_4: 'Сюжети, типові або авторські, розділяються на Ваншот, Модуль та Кампейн. Але це родзілення умовне, бо вдалий ваншот легко може перетворитися на Модуль, або навіть на Кампейн.',
 
   lobby_game_type_1_name: 'One-shot',
-  lobby_game_type_1_details: 'Коротка історія на 1-2 гри. Як от <a target="_blank" href="https://youtu.be/GY6AZbLfxmQ?t=185">Штольні&nbsp;Божевілля, від&nbsp;idearoll</a>. Найкраще підходить для першої спроби.',
+  lobby_game_type_1_details: 'Коротка історія на 1-2 гри. Найкраще підходить для першої спроби. Як ось наприклад онлайн-партія <a target="_blank" href="https://youtu.be/UWDPz2vrUn0">Велике&nbsp;Пограбування, від&nbsp;idearoll</a>',
   lobby_game_type_2_name: 'Module',
   lobby_game_type_2_details: 'Середня історія, яку можна грати протягом кількох сеансів, зазвичай 3-5 ігор. Наприклад <a target="_blank" href="https://youtu.be/7CjvWO05rA0?t=507">Подвійна&nbsp;Гра, від&nbsp;Dice&Bones</a>.',
   lobby_game_type_3_name: 'Campaign',
-  lobby_game_type_3_details: 'Масштабна історія, яка може тривати кілька місяців або навіть років. Ось як це робить команда <a target="_blank" href="https://youtu.be/P8pLvV3FjPc?t=756">Critical&nbsp;Role</a>&nbsp;(EN).',
+  lobby_game_type_3_details: 'Довготривала історія, яка може тривати кілька місяців або навіть років. Ось як це робить команда <a target="_blank" href="https://www.youtube.com/@diceandbonesdnd">Dice&Bones</a> у своїй кампанії <a target="_blank" href="https://www.youtube.com/watch?v=Dl4kA4w0rU0&list=PLO1kG5YTufOacRM7eAfovXMwk_SU1OWNT">“Отруєна Спадщина”</a>.',
 
   lobby_conclustion: 'Dungeons & Dragons здатна сподобатися кожному',
 
