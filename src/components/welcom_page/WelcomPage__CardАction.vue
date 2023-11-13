@@ -26,7 +26,7 @@ export default {
 			},
 			{
 				numb: '03',
-				title: 'lobby_game_step_3_name',
+				title: 'lobby_game_step_3',
 				details: 'lobby_game_step_3_details',
 			},
 		]
