@@ -1,11 +1,11 @@
 <template>
-	<!-- <article class="flex-row gap-4"> -->
 	<article class="card-flex">
 		<section class="card-size">
 			<div class="flex-col-sb h-100 w-362">
 				<div>
 					<div class="int-700-20" v-html="t('join_us')" />
-					<div class="int-400 white-04 mr-t-24">
+					<div class="int-400 white-04 mr-t-24" v-html="t('join_us_details')"> </div>
+					<!-- <div class="int-400 white-04 mr-t-24">
 						{{ em_Before }}
 						<emoji 
 						v-if="em_Upd" 
@@ -14,7 +14,7 @@
 						:set="set_emoji" 
 						:size="14" />
 						{{ em_After }}
-					</div>
+					</div> -->
 					<AppBtmLink class="mr-t-28" :name="t_me_link_name" :link="t_me_link" icon="link" />
 				</div>
 				<div class="mr-t-108">
@@ -33,8 +33,6 @@
 	</article>
 </template>
 <script>
-import { mapState } from "pinia";
-import { usePagesStore } from "@/stores/user/PagesStore";
 import Donate from "@/components/Donate.vue";
 export default {
 	name: "WelcomPage__Footer",
@@ -44,23 +42,24 @@ export default {
 	data: () => ({
 		t_me_link: 'https://t.me/dndme_club',
 		t_me_link_name: 't.me/dndme_club',
-		join: 'join_us_details'
-
 	}),
 
 	computed: {
-		...mapState(usePagesStore, ["screen_Max"]),
-		em_Upd() {
-			return this.updEmoji(this.join);
-		},
+		// t_Join() {
+		// 	return this.t('join_us_details')
+		// },
 
-		em_Before() {
-			return this.beforeEmoji(this.join);
-		},
+		// em_Upd() {
+		// 	return this.updEmoji(this.t_Join);
+		// },
 
-		em_After() {
-			return this.afterEmoji(this.join);
-		},
+		// em_Before() {
+		// 	return this.beforeEmoji(this.t_Join);
+		// },
+
+		// em_After() {
+		// 	return this.afterEmoji(this.t_Join);
+		// },
 	}
 };
 </script>
