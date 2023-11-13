@@ -259,6 +259,7 @@
 	letter-spacing: 0.02em;
 }
 
+.white-006 {color: rgba(255, 255, 255, 0.06);}
 .white-02 {color: rgba(255, 255, 255, 0.2);}
 .white-04 {color: rgba(255, 255, 255, 0.4);}
 .buff { color: #05ff00; }

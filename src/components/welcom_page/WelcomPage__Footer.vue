@@ -1,5 +1,4 @@
 <template>
-	<!-- <article class="flex-row gap-4"> -->
 	<article class="card-flex">
 		<section class="card-size">
 			<div class="flex-col-sb h-100 w-362">
@@ -34,8 +33,6 @@
 	</article>
 </template>
 <script>
-import { mapState } from "pinia";
-import { usePagesStore } from "@/stores/user/PagesStore";
 import Donate from "@/components/Donate.vue";
 export default {
 	name: "WelcomPage__Footer",
@@ -48,23 +45,21 @@ export default {
 	}),
 
 	computed: {
-		...mapState(usePagesStore, ["screen_Max"]),
+		// t_Join() {
+		// 	return this.t('join_us_details')
+		// },
 
-		t_Join() {
-			return this.t('join_us_details')
-		},
+		// em_Upd() {
+		// 	return this.updEmoji(this.t_Join);
+		// },
 
-		em_Upd() {
-			return this.updEmoji(this.t_Join);
-		},
+		// em_Before() {
+		// 	return this.beforeEmoji(this.t_Join);
+		// },
 
-		em_Before() {
-			return this.beforeEmoji(this.t_Join);
-		},
-
-		em_After() {
-			return this.afterEmoji(this.t_Join);
-		},
+		// em_After() {
+		// 	return this.afterEmoji(this.t_Join);
+		// },
 	}
 };
 </script>

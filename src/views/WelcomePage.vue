@@ -27,6 +27,7 @@
 						<WelcomPage__WhatDND id="welcom-part21" class="mr-t-76  pd-t-32" />
 						<!-- <WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/> -->
 						<!-- <WelcomPage__UserChar class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/> -->
+						<WelcomPage__GameProcess id="welcom-part31" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Game id="welcom-part41" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__GameLove id="welcom-part41" class="mr-t-76 pd-t-32" @btnClick="goTo('/')"/>
 						<WelcomPage__Masters id="welcom-part51" class="mr-t-76 pd-t-32"/>
@@ -50,6 +51,7 @@ import WelcomPage__WhatDND from "@/components/welcom_page/WelcomPage__WhatDND.vu
 import WelcomPage__Start from "@/components/welcom_page/WelcomPage__Start.vue";
 import WelcomPage__UserChar from "@/components/welcom_page/WelcomPage__UserChar.vue";
 import WelcomPage__Masters from "@/components/welcom_page/WelcomPage__Masters.vue";
+import WelcomPage__GameProcess from "@/components/welcom_page/WelcomPage__GameProcess.vue";
 import WelcomPage__Game from "@/components/welcom_page/WelcomPage__Game.vue";
 import WelcomPage__GameLove from "@/components/welcom_page/WelcomPage__GameLove.vue";
 import WelcomPage__Footer from "@/components/welcom_page/WelcomPage__Footer.vue";
@@ -63,6 +65,7 @@ export default {
 		WelcomPage__Start,
 		WelcomPage__UserChar,
 		WelcomPage__Masters,
+		WelcomPage__GameProcess,
 		WelcomPage__Game,
 		WelcomPage__GameLove,
 		WelcomPage__Footer,
