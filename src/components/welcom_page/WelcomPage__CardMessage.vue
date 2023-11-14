@@ -7,32 +7,38 @@
 				<div>{{ massage_Nickname }}</div>
 			</div>
 		</section>
-		<section class="int-400-13" >{{ massage_Text }}</section>
+
+		<section>
+			<div v-if="dice" class="flex-row gap-10">
+				<img class="message-dice" :src="message_DiceImg" :alt="name">
+				<div class="w-100 mr-t-32">
+					<div class="int-700-20 flex-row-sb mr-r-16">
+						<div>+ {{ dice[1] }}</div>
+						<div class="flex-row gap-4">
+							<div>= <span :class="dice[3]">{{ dice[2] }}</span></div>
+							<emoji
+								v-if="dice[4]"
+								:data="emojiIndex"
+								:emoji="dice[4]"
+								:set="set_emoji"
+								:size="20"
+							/>
+						</div>
+					</div>
+					<div class="int-400-13 white-04" >{{ massage_Text }}</div>
+				</div>
+			</div>
+			
+			<div v-else class="int-400-13" 
+				:class="{'white-04': !name && text_numb !== 0}"
+			>{{ massage_Text }}</div>
+		</section>
 	</div>
 </template>
 
 <script>
 export default {
 	name: "WelcomPage__CardMessage",
-	// data: () => ({
-	// 	maseg: [
-	// 		{
-	// 			numb: '01',
-	// 			title: 'lobby_game_step_1',
-	// 			details: 'lobby_game_step_1_details',
-	// 		},
-	// 		{
-	// 			numb: '02',
-	// 			title: 'lobby_game_step_2',
-	// 			details: 'lobby_game_step_2_details',
-	// 		},
-	// 		{
-	// 			numb: '03',
-	// 			title: 'lobby_game_step_3',
-	// 			details: 'lobby_game_step_3_details',
-	// 		},
-	// 	]
-	// }),
 	props: {
 		name: {
 			type: String,
@@ -42,19 +48,19 @@ export default {
 			type: Number,
 			default: 0,
 		},
-		// height: {
-		// 	type: Number,
-		// 	default: null,
-		// },
-		// full: {
-		// 	type: Boolean,
-		// 	default: false,
-		// },
+		dice: {
+			type: Array,
+			default: null,
+		},
 	},
 
 	computed: {
 		message_Ava() {
 			return require(`@/assets/img/message/ava_${this.name}.png`);
+		},
+
+		message_DiceImg() {
+			if(this.dice) return require(`@/assets/img/message/dice_${this.dice[0]}.png`);
 		},
 
 		massage_Name() {
@@ -79,6 +85,12 @@ export default {
 .message-ava {
 	width: 36px;
 	height: 36px;
+}
+
+.emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+	top: 2px;
 }
 
 </style>

@@ -22,6 +22,7 @@
 						:class="get_Style(message)"
 						:name="message.name"
 						:text_numb="message.text_numb"
+						:dice="message.dice"
 						/>
 				</section>
 			</article>
@@ -85,6 +86,7 @@ export default {
 					{
 						name: 'dima',
 						text_numb: 6,
+						dice: [2, 4, 6, 'debuff', '🥲']
 					}
 				]
 			},
@@ -130,6 +132,7 @@ export default {
 					{
 						name: 'julia',
 						text_numb: 12,
+						dice: [20, 6, 26, 'buff', '🤯'],
 					}
 				]
 			},
