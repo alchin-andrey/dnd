@@ -1,5 +1,5 @@
 <template>
-	<div class="btm-grey br-12 blur-60 pd-16">
+	<div class="br-12 pd-16 pos-rel" :class="massage_Back">
 		<section class="flex-row-c gap-10 mr-b-10" v-if="name">
 		<img class="message-ava" :src="message_Ava" :alt="name">
 			<div class="int-400 white-04">
@@ -30,9 +30,10 @@
 			</div>
 			
 			<div v-else class="int-400-13" 
-				:class="{'white-04': !name && text_numb !== 0}"
+				:class="massage_Text_Color"
 			>{{ massage_Text }}</div>
 		</section>
+		<div :class="massage_Grad" />
 	</div>
 </template>
 
@@ -76,6 +77,22 @@ export default {
 			return this.t(`lobby_game_message_${this.text_numb}`);
 		},
 
+		massage_Text_Color() {
+			if(this.text_numb == 0 || this.text_numb == 15) return 'white-02';
+			if(!this.name && this.text_numb !== 0) return 'white-04';
+		},
+
+		massage_Grad() {
+			if(this.text_numb == 0) return 'grad-top';
+			if(this.text_numb == 15) return 'grad-bott';
+		},
+
+		massage_Back() {
+			if(this.text_numb == 0) return 'back-top';
+			if(this.text_numb == 15) return 'back-bott blur-1';
+			else return 'btm-grey blur-60'
+		}
+
 	}
 };
 </script>
@@ -91,6 +108,36 @@ export default {
 	padding: 0;
 	line-height: 0;
 	top: 2px;
+}
+
+.grad-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 200px;
+	z-index: 10;
+	border-radius: 12px 12px 0 0;
+	background: linear-gradient(transparent 0%, rgba(14, 21, 24, 0.6) 25%, transparent 100%);
+}
+
+.grad-bott {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 200px;
+	z-index: 10;
+	border-radius: 0 0 12px 12px;
+	background: linear-gradient(180deg, transparent 0%, rgba(14, 21, 24, 0.6) 75%, transparent 100% );
+}
+
+.back-top {
+	background: linear-gradient(transparent 0%, transparent 30%, rgba(255, 255, 255, 0.03) 100% );
+}
+
+.back-bott {
+	background: linear-gradient(rgba(255, 255, 255, 0.03) 0%, transparent 80%, transparent 100%);
 }
 
 </style>
