@@ -2,8 +2,8 @@
 	<div class="flex-row h-100">
 		<section v-if="screen_Max" class="flex-col pd-t-32 min-w-320">
 			<div class="flex-row-c gap-4 pd-rl-32 h-28">
-				<AppLogoCard @click="goTo('/')"/>
-				<div class="int-700 cur-p buff" @click="goTo('/')">dndme.club</div>
+				<AppLogoCard @click="goToChar()"/>
+				<div class="int-700 cur-p buff" @click="goToChar()">dndme.club</div>
 			</div>
 			<WelcomPage__Menu/>
 		</section>
@@ -11,10 +11,10 @@
 		<main class="w-100">
 			<div v-if="!screen_Max" class="mob-header flex-col-c-jc">
 				<div class="flex-row-sb-c pd-rl-20">
-					<div class="jbm-300 cur-p buff" @click="goTo('/')">dndme.club</div>
+					<div class="jbm-300 cur-p buff" @click="goToChar()">dndme.club</div>
 					<AppBtmLink
-					class="btm-blue w-200"
-					@click="goTo('/')"
+					class="int-700 btm-blue w-200"
+					@click="goToChar()"
 					name="how_to_start_2_title"
 					/>
 				</div>
@@ -23,13 +23,11 @@
 			<section class="welcom-wrapp">
 				<div class="h-100">
 					<div class="welcom-content">
-						<WelcomPage__TryToPlay id="welcom-part11" class="pd-t-32" @btnClick="goTo('/')"/>
+						<WelcomPage__TryToPlay id="welcom-part11" class="pd-t-32" @btnClick="goToChar()"/>
 						<WelcomPage__WhatDND id="welcom-part21" class="mr-t-76  pd-t-32" />
-						<!-- <WelcomPage__Start id="welcom-part2" class="mr-t-32 pd-t-32" @btnClick="goTo('/')"/> -->
-						<!-- <WelcomPage__UserChar class="mr-t-64 pd-t-32" @btnClick="goTo('/')"/> -->
 						<WelcomPage__GameProcess id="welcom-part31" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Game id="welcom-part41" class="mr-t-76 pd-t-32"/>
-						<WelcomPage__GameLove id="welcom-part41" class="mr-t-76 pd-t-32" @btnClick="goTo('/')"/>
+						<WelcomPage__GameLove id="welcom-part41" class="mr-t-76 pd-t-32" @btnClick="goToChar()"/>
 						<WelcomPage__Masters id="welcom-part51" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Footer id="welcom-part61" class="mr-t-76 pd-t-32"/>
 					</div>
@@ -77,21 +75,11 @@ export default {
 
 	computed: {
 		...mapState(usePagesStore, ["screen_Max"]),
-		...mapWritableState(usePagesStore, ["new_user"]),
-
-		// styl_Wrapp() {
-		// 	if(this.screen_Max) return 'int-700-20 pd-20-28';
-		// 	return 'int-700 pd-16';
-		// },
 	},
 
 	methods: {
 		...mapActions(useMYStore, ["getCreated"]),
-
-		goTo(route) {
-				this.$router.push(route);
-				this.new_user = false;
-      },
+		...mapActions(usePagesStore, ["goToChar"]),
 	},
 };
 </script>

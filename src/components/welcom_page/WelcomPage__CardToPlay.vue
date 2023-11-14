@@ -1,7 +1,7 @@
 <template>
-	<div class="br-12 blur-60 hov cur-p pos-rel card-size" :class="style_Cerd">
+	<div class="br-12 blur-60 hov cur-p pos-rel" :class="style_Cerd">
 		<a :target="target_Link" :href="link_Go">
-			<div class="pd-16" :style="style_Height_Obj">
+			<div class="pd-16">
 				<div class="jbm-300 mr-b-182" v-if="!short">{{ serial_Number }}</div>
 				
 				<section>
@@ -73,25 +73,11 @@ export default {
 			if(this.masters) return 'btm-grey';
 			else return  'btm-blue';
 		},
-
-		style_Height_Obj() {
-			if(this.short) return 'h-349';
-			else return  'btm-blue';
-
-			if (this.short) return {'height': '349px'};
-			else return {'height': '100%'};
-		}
 	},
 };
 </script>
 
 <style scoped>
-
-.card-size {
-	width: 100%;
-	max-width: 394px;
-	/* width: 444px; */
-}
 
 .icon-pos {
 	position: absolute;

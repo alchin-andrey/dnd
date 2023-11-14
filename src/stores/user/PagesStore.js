@@ -7,6 +7,7 @@ export const usePagesStore = defineStore({
 	state: () => ({
     new_user: true,
     screen_size: null,
+    loading_pdf: false,
     site_settings: {
       save: {},
       visit_page: {
@@ -121,6 +122,13 @@ export const usePagesStore = defineStore({
 
 	actions: {
     // Видалення минулих змінних
+
+    goToChar() {
+      this.$router.push('/');
+      this.new_user = false;
+    },
+
+
     zeroingDell() {
       if(this.site_settings.old_page) {
         this.goPage(this.site_settings.old_page);

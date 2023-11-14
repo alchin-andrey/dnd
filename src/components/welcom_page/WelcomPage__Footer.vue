@@ -5,17 +5,12 @@
 				<div>
 					<div class="int-700-20" v-html="t('join_us')" />
 					<div class="int-400 white-04 mr-t-24" v-html="t('join_us_details')"> </div>
-					<!-- <div class="int-400 white-04 mr-t-24">
-						{{ em_Before }}
-						<emoji 
-						v-if="em_Upd" 
-						:data="emojiIndex" 
-						:emoji="em_Upd" 
-						:set="set_emoji" 
-						:size="14" />
-						{{ em_After }}
-					</div> -->
-					<AppBtmLink class="mr-t-28" :name="t_me_link_name" :link="t_me_link" icon="link" />
+					<AppBtmLink 
+					class="int-700 mr-t-28" 
+					:name="t_me_link_name" 
+					:link="t_me_link" 
+					icon="link" 
+					/>
 				</div>
 				<div class="mr-t-108">
 					<AppDisclaimer />
@@ -43,24 +38,6 @@ export default {
 		t_me_link: 'https://t.me/dndme_club',
 		t_me_link_name: 't.me/dndme_club',
 	}),
-
-	computed: {
-		// t_Join() {
-		// 	return this.t('join_us_details')
-		// },
-
-		// em_Upd() {
-		// 	return this.updEmoji(this.t_Join);
-		// },
-
-		// em_Before() {
-		// 	return this.beforeEmoji(this.t_Join);
-		// },
-
-		// em_After() {
-		// 	return this.afterEmoji(this.t_Join);
-		// },
-	}
 };
 </script>
 

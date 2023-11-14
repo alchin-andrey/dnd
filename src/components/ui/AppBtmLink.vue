@@ -1,7 +1,15 @@
 <template>
-	<div class="btm-grey br-12 blur-60 hov cur-p pos-rel">
+	<div 
+	class="btm-grey br-12 blur-60 pos-rel"
+	:class="{'hov cur-p': !passive}"
+	>
 		<a :target="target_Link" :href="link">
-			<div class="int-700 flex-row-c pd-rl-16 h-47 ">
+			<div class="flex-row-c pd-rl-16 h-47 "
+			:class="{
+				'jbm-300': jbm,
+				'int-700': !jbm,
+			}"
+			>
 				<div>
 					{{ em_Before }}
 					<emoji
@@ -38,6 +46,14 @@ export default {
 			default: null,
 		},
 		link_self: {
+      type: Boolean,
+      default: false,
+    },
+		jbm: {
+      type: Boolean,
+      default: false,
+    },
+		passive: {
       type: Boolean,
       default: false,
     },
