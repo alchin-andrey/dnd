@@ -128,6 +128,7 @@
 
 
 .pd-r-18 {padding-right: 18px;}
+.pd-r-32 {padding-right: 32px;}
 .pd-r-42 {padding-right: 42px;}
 
 
@@ -161,9 +162,11 @@
 .mr-t-102 { margin-top: 102px; }
 .mr-t-108 { margin-top: 108px; }
 
-.mr-l-15 { margin-left: 15px;}
+.mr-r-32 { margin-right: 32px;}
 
 .mr-b-4 { margin-bottom: 4px; }
+.mr-b-8 { margin-bottom: 8px; }
+.mr-b-10 { margin-bottom: 10px; }
 .mr-b-15 { margin-bottom: 15px; }
 .mr-b-18 { margin-bottom: 18px; }
 .mr-b-24 { margin-bottom: 24px; }
@@ -172,6 +175,8 @@
 .mr-b-36 { margin-bottom: 36px; }
 .mr-b-182 { margin-bottom: 182px; }
 
+.mr-l-15 { margin-left: 15px;}
+.mr-l-32 { margin-left: 32px;}
 
 
 /* blank */

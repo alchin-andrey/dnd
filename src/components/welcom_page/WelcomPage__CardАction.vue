@@ -1,5 +1,5 @@
 <template>
-	<div class="step-wrap" :style="style_Height">
+	<div class="step-wrap">
 		<!-- <div class="hr-step" /> -->
 		<div class="w-320">
 			<div class="jbm-300 mr-t-15">{{ numb }}</div>
@@ -57,10 +57,6 @@ export default {
 
 		t_Details() {
 			return this.t(this.obj_Select.details);
-		},
-
-		style_Height() {
-			return {'height': `${this.height}px`}
 		},
 
 	}
