@@ -6038,7 +6038,7 @@ export default {
   lobby_button: "Більше про D&D",
 
   lobby_menu_1: "Що таке Dungeons & Dragons",
-  lobby_menu_2: "Як почати",
+  lobby_menu_2: "Приклади партій",
   lobby_menu_3: "Вибрати гру або Майстра",
   lobby_menu_4: "Як проходить гра",
 
