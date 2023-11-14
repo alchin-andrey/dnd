@@ -15,19 +15,12 @@
 			<Donate :class="{
 				'pd-32': screen_Max,
 				'pd-20': !screen_Max,
-			}" finish @getPdf="exportToPDF()" :progress="progress_load" />
+			}" finish />
 		</section>
 	</my-dialog-spell>
-
-
-	<BlankPrint v-if="loading_pdf || PRINT_BLANK" id="element-to-convert" />
 </template>
 
 <script>
-import html2pdf from "html2pdf.js";
-
-// import { refreshPageMixin } from '@/mixins/refresh-page.mixin.js';
-
 import { mapState, mapActions } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
@@ -40,15 +33,11 @@ export default {
 	name: "Main",
 	mixins: [
 		MainApp, 
-		// refreshPageMixin,
 	],
 	data() {
 		return {
 			// PRINT_BLANK: true,
 			PRINT_BLANK: false,
-
-			progress_load: 0,
-			loading_pdf: false,
 		};
 	},
 
@@ -129,83 +118,6 @@ export default {
 			"showHome",
 		]),
 		...mapActions(useGenderStore, ["getRandomName"]),
-
-		exportToPDF() {
-			if (!this.loading_pdf) {
-				this.loading_pdf = true;
-				this.progress_load = 15;
-				setTimeout(() => this.loadPdf(), 0.1);
-			}
-		},
-
-		loadPdf() {
-			const lvl = this.MY.level;
-			const type = this.T(this.MY.param.blank_print);
-			const name = this.MY.name.length !== 0
-				? this.MY.name
-				: `${this.T("someone")}_${this.t(this.MY_Race.name)}`;
-			const opt = {
-				margin: 0,
-				filename: `${name}_LVL${lvl}_${type}.pdf`,
-				image: { type: "jpeg", quality: 1 },
-				html2canvas: {
-					dpi: 150,
-					scale: 1,
-					width: 2088,
-					// height: 2952,
-					// width: element.clientWidth,
-					// height: element.clientHeight,
-					imageTimeout: 30000,
-					letterRendering: true,
-					allowTaint: true,
-					useCORS: true,
-				},
-				jsPDF: {
-					unit: "pt",
-					format: "a4",
-					orientation: "portrait",
-					// compress: true,
-					// hotfixes: "px_scaling",
-				},
-			};
-
-			const element = document.getElementById("element-to-convert");
-			const elements = [ ...element.querySelectorAll('.print-page')];
-
-			let worker = html2pdf()
-				.set(opt)
-				.from(elements[0]);
-
-			if (elements.length > 1) {
-				worker = worker.toPdf();
-
-				elements.slice(1).forEach(async el => {
-					worker = worker
-						.get('pdf')
-						.then(pdf => {
-							pdf.addPage();
-						})
-						.from(el)
-						.toContainer()
-						.then(() => this.progress_load = 85)
-						.toCanvas()
-						.toPdf();
-				});
-			}
-
-			worker.save().then(() => this.progress_load = 100)
-				.output().then(() => {
-					setTimeout(() => this.progress_load = 0, 1000);
-					setTimeout(() => this.loading_pdf = 0, 2000);
-				});;
-
-			// html2pdf().set(opt).from(element).toContainer().then(() => this.progress_load = 85)
-			// 	.toCanvas().toImg().toPdf().save().then(() => this.progress_load = 100)
-			// 	.output().then(() => {
-			// 		setTimeout(() => this.progress_load = 0, 1000);
-			// 		setTimeout(() => this.loading_pdf = 0, 2000);
-			// 	});
-		},
 
 		getWatch_Race() {
 			this.closeEthnos();

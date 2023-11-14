@@ -1,13 +1,19 @@
 <template>
   <router-view></router-view>
+	<BlankPrint v-if="loading_pdf" id="element-to-convert" />
 </template>
 
 <script>
 import { mapActions, mapWritableState } from "pinia";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
+import BlankPrint from "@/components/BlankPrint.vue";
+
 export default {
 	name: "App",
+	components: {
+		BlankPrint,
+	},
 	created() {
 		this.zeroingDell();
 		window.addEventListener("resize", this.onResize);
@@ -19,7 +25,7 @@ export default {
 	},
 
 	computed: {
-		...mapWritableState(usePagesStore, ["screen_size"])
+		...mapWritableState(usePagesStore, ["screen_size", "loading_pdf"])
 	},
 
 	methods: {

@@ -22,7 +22,7 @@
 				<a href="#welcom-part41">{{ t("lobby_menu_2") }}</a>
 			</div>
 			<AppBtmLink
-			class="btm-white mr-t-36"
+			class="int-700 btm-white mr-t-36"
 			name="lobby_support_project" 
 			icon="donate" 
 			link="#welcom-part61"

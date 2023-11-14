@@ -27,9 +27,7 @@
 			/>
 			<AppLoadBtm 
 				v-if="finish" 
-				@click="btnClick()" 
-				:text="t_Pdf" 
-				:progress="progress" 
+				text="download_pdf" 
 			/>
 		</section>
 	</div>
@@ -68,10 +66,6 @@ export default {
 
 		t_Benefaction() {
 			return this.t("benefaction");
-		},
-
-		t_Pdf() {
-			return this.t("download_pdf");
 		},
 		
 	},

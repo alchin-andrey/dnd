@@ -1,5 +1,10 @@
 <template>
-  <AppBtmLink class="btm-red" icon="return" @click="resetState()" name="start_over" />
+  <div @click="resetState()">
+    <div class="btm-grey br-12 blur-60 hov cur-p flex-row-c-jc h-47" v-if="short">
+      <AppSvg class="svg-18" name="delete" />
+    </div>
+    <AppBtmLink class="btm-red" icon="return" name="start_over" v-else/>
+  </div>
 </template>
 
 <script>
@@ -10,12 +15,18 @@ import { useFormStore } from "@/stores/modules/simple/FormStore";
 import { useMainStore } from "@/stores/general/MainStore";
 export default {
   name: "Btm__Reset",
+  props: {
+		short: {
+      type: Boolean,
+      default: false,
+    },
+	},
   computed: {
     ...mapWritableState(useMYStore, ["MY", "MY_def"]),
     ...mapWritableState(usePagesStore, [
       "site_settings", 
       'pages', 
-      // "new_user"
+      "new_user"
     ]),
     ...mapWritableState(useFormStore, ["form_kof"]),
     ...mapWritableState(useMainStore, ["srd"]),
@@ -34,7 +45,7 @@ export default {
       };
       this.srd = true,
 
-      // this.new_user = true,
+      this.new_user = true,
 
       this.site_settings = {
         save: {},
@@ -59,3 +70,11 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+.h-47 {
+	height: 47px;
+}
+
+</style>
