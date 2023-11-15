@@ -59,11 +59,6 @@
 	-webkit-backdrop-filter: blur(60px);
 }
 
-.blur-10 { 
-	backdrop-filter: blur(1px); 
-	-webkit-backdrop-filter: blur(1px);
-}
-
 /* .blur-60::before { 
 	backdrop-filter: blur(60px); 
 	-webkit-backdrop-filter: blur(60px);

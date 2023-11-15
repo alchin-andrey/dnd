@@ -1,5 +1,5 @@
 <template>
-	<div class="br-12 pd-16 pos-rel" :class="massage_Back">
+	<div class="br-12 pd-16 pos-rel" :class="massage_Back" :style="stule_Img_Back">
 		<section class="flex-row-c gap-10 mr-b-10" v-if="name">
 		<img class="message-ava" :src="message_Ava" :alt="name">
 			<div class="int-400 white-04">
@@ -10,7 +10,8 @@
 
 		<section>
 			<div v-if="dice" class="flex-row gap-10">
-				<img class="message-dice" :src="message_DiceImg" :alt="name">
+				<!-- <img class="message-dice" :src="message_DiceImg" :alt="name"> -->
+				<div class="dice-gost" />
 				<div class="w-100 mr-t-32">
 					<div class="int-700-20 flex-row-sb mr-r-16">
 						<div>+ {{ dice[1] }}</div>
@@ -89,9 +90,20 @@ export default {
 
 		massage_Back() {
 			if(this.text_numb == 0) return 'back-top';
-			if(this.text_numb == 15) return 'back-bott blur-1';
+			if(this.text_numb == 15) return 'back-bott';
 			else return 'btm-grey blur-60'
-		}
+		},
+
+		stule_Img_Back() {
+			if(this.dice) {
+				return {
+					'background-image': `url(${this.message_DiceImg})`,
+					'background-repeat': 'no-repeat',
+					'background-position': '0 100%',
+					'background-size': '136px 136px',
+				}
+			}
+	},
 
 	}
 };
@@ -102,6 +114,11 @@ export default {
 .message-ava {
 	width: 36px;
 	height: 36px;
+}
+
+.dice-gost {
+	min-width: 110px;
+	height: 110px;
 }
 
 .emoji-mart-emoji {
