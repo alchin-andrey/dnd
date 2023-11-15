@@ -23,13 +23,13 @@
 			<section class="welcom-wrapp">
 				<div class="h-100">
 					<div class="welcom-content">
-						<WelcomPage__TryToPlay id="welcom-part11" class="pd-t-32" @btnClick="goToChar()"/>
-						<WelcomPage__WhatDND id="welcom-part21" class="mr-t-76  pd-t-32" />
-						<WelcomPage__GameProcess id="welcom-part31" class="mr-t-76 pd-t-32"/>
-						<WelcomPage__Game id="welcom-part41" class="mr-t-76 pd-t-32"/>
-						<WelcomPage__GameLove id="welcom-part41" class="mr-t-76 pd-t-32" @btnClick="goToChar()"/>
-						<WelcomPage__Masters id="welcom-part51" class="mr-t-76 pd-t-32"/>
-						<WelcomPage__Footer id="welcom-part61" class="mr-t-76 pd-t-32"/>
+						<WelcomPage__TryToPlay id="welcom-part1" class="pd-t-32" @btnClick="goToChar()"/>
+						<WelcomPage__WhatDND id="welcom-part2" class="mr-t-76  pd-t-32" />
+						<WelcomPage__GameProcess id="welcom-part3" class="mr-t-76 pd-t-32"/>
+						<WelcomPage__Game id="welcom-part4" class="mr-t-76 pd-t-32"/>
+						<WelcomPage__GameLove id="welcom-part4" class="mr-t-76 pd-t-32" @btnClick="goToChar()"/>
+						<WelcomPage__Masters id="welcom-part5" class="mr-t-76 pd-t-32"/>
+						<WelcomPage__Footer id="welcom-part6" class="mr-t-76 pd-t-32"/>
 					</div>
 				</div>
 			</section>

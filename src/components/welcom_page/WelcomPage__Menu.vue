@@ -4,28 +4,28 @@
 			<AppBtmLink
 			class="btm-blue"
 			name="lobby_menu_char"
-			link="#welcom-part11"
+			link="#welcom-part1"
 			link_self
 			/>
 			<AppBtmLink 
 			name="lobby_menu_3" 
 			icon="arrow_down_small" 
-			link="#welcom-part51"
+			link="#welcom-part5"
 			link_self 
 			/>
 		</section>
 
 		<section>
 			<div class="jbm-300 flex-col gap-18">
-				<a href="#welcom-part21">{{ t("lobby_menu_1") }}</a>
-				<a href="#welcom-part31">{{ t("lobby_menu_4") }}</a>
-				<a href="#welcom-part41">{{ t("lobby_menu_2") }}</a>
+				<a href="#welcom-part2">{{ t("lobby_menu_1") }}</a>
+				<a href="#welcom-part3">{{ t("lobby_menu_4") }}</a>
+				<a href="#welcom-part4">{{ t("lobby_menu_2") }}</a>
 			</div>
 			<AppBtmLink
 			class="int-700 btm-white mr-t-36"
 			name="lobby_support_project" 
 			icon="donate" 
-			link="#welcom-part61"
+			link="#welcom-part6"
 			link_self
 			/>
 		</section>
