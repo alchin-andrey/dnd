@@ -1,113 +1,212 @@
 <template>
 	<article>
-		<div class="int-700-20 w-320">{{ t("game_process") }}</div>
-		<article class="flex-row-sb flex-wrap mr-t-8">
-			<section class="flex-col gap-4 step-size mr-t-54">
-				<WelcomPage__CardАction
+		<div class="int-700-20 w-320 mr-b-8">{{ t("game_process") }}</div>
+		<div class="flex-col step-gap">
+			<article
 				v-for="step in game_steps"
 				:key="step.name"
-				:class="step.css"
-				:numb="step.numb"
-				:height="step.height"
-				:full="step.full"
-				/>
-			</section>
-			<section class="img-size">
-				<img class="exem-1x" src="@/assets/img/other/game_example.png" alt="game_example">
-				<img class="exem-3x" src="@/assets/img/other/game_example_3x.png" alt="game_example">
-			</section>
-		</article>
+				class="flex-row flex-wrap gap-32"
+				>
+				<section class="step-size">
+					<WelcomPage__CardАction
+					:class="step.css"
+					:numb="step.numb"
+					:full="step.full"
+					/>
+				</section>
+				<section class="flex-col gap-4 message-size">
+						<WelcomPage__CardMessage
+						v-for="message in step.message"
+						:key="message"
+						class="message-card-size"
+						:class="get_Style(message)"
+						:name="message.name"
+						:text_numb="message.text_numb"
+						:dice="message.dice"
+						/>
+				</section>
+			</article>
+		</div>
 	</article>
 </template>
 <script>
 import WelcomPage__CardАction from "@/components/welcom_page/WelcomPage__CardАction.vue";
+import WelcomPage__CardMessage from "@/components/welcom_page/WelcomPage__CardMessage.vue";
 export default {
 	name: "WelcomPage__GameProcess",
 	components: {
 		WelcomPage__CardАction,
+		WelcomPage__CardMessage,
 	},
 	data: () => ({
 		game_steps: [
 			{
 				numb: '01',
-				height: 168,
 				full: true,
-				css: '',
+				css: 'mr-t-54',
+				message: [
+					{
+						name: null,
+						text_numb: 0,
+					},
+					{
+						name: 'master',
+						text_numb: 1,
+					}
+				]
 			},
 			{
 				numb: '02',
-				height: 250,
 				full: true,
 				css: '',
+				message: [
+					{
+						name: null,
+						text_numb: 2,
+					},
+					{
+						name: 'julia',
+						text_numb: 3,
+					},
+					{
+						name: 'dima',
+						text_numb: 4,
+					}
+				]
 			},
 			{
 				numb: '03',
-				height: 306,
 				full: true,
 				css: '',
+				message: [
+					{
+						name: 'master',
+						text_numb: 5,
+					},
+					{
+						name: 'dima',
+						text_numb: 6,
+						dice: [2, 4, 6, 'debuff', '🥲']
+					}
+				]
 			},
 			{
 				numb: '01',
-				height: 350,
 				full: false,
 				css: 'white-02 mob-invis',
+				message: [
+					{
+						name: 'master',
+						text_numb: 7,
+					},
+					{
+						name: 'goblin',
+						text_numb: 8,
+					},
+					{
+						name: 'master',
+						text_numb: 9,
+					}
+				]
 			},
 			{
 				numb: '02',
-				height: 114,
 				full: false,
 				css: 'white-02 mob-invis',
+				message: [
+					{
+						name: 'julia',
+						text_numb: 10,
+					}
+				]
 			},
 			{
 				numb: '03',
-				height: 320,
 				full: false,
 				css: 'white-02 mob-invis',
+				message: [
+					{
+						name: 'master',
+						text_numb: 11,
+					},
+					{
+						name: 'julia',
+						text_numb: 12,
+						dice: [20, 6, 26, 'buff', '🤯'],
+					}
+				]
 			},
 			{
 				numb: '01',
-				height: 350,
 				full: false,
 				css: 'white-006 mob-invis',
+				message: [
+					{
+						name: 'master',
+						text_numb: 13,
+					},
+					{
+						name: 'goblin',
+						text_numb: 14,
+					},
+					{
+						name: 'master',
+						text_numb: 15,
+					}
+				]
 			},
 		]
 	}),
+
+	computed: {
+		get_Style: (stor) => (message) => {
+			const name = message.name;
+			const numb = message.text_numb;
+			const master_message = name == 'master' || name == 'goblin' || numb == 0;
+			if(!master_message) return 'flex-end';
+		}
+	}
 };
 </script>
 
 <style scoped>
 
-.exem-3x {
-	display: none;
-}
-
 .step-size {
-	width: 100%;
-	max-width: 366px; 
+	width: 366px; 
 }
 
-.img-size {
-	width: 100%;
-	max-width: 496px; 
+.step-gap {
+	gap: 4px;
 }
 
-img {
+.message-size {
 	width: 100%;
+	max-width: 464px; 
+}
+
+.message-card-size {
+	width: 394px; 
+}
+
+.flex-end {
+	align-self: flex-end;
 }
 
 @media (max-width: 955px) {
-	.mob-invis {
-		display: none;
+	.step-size {
+		width: 100%;
+	}
+
+	.step-gap {
+		gap: 32px;
 	}
 }
 
-@media (max-width: 480px) {
-		.exem-1x {
-		display: none;
-	}
 
-	.exem-3x {
-		display: block;
+@media (max-width: 480px) {
+	.message-card-size {
+		/* width: 362px;  */
+		width: 346px; 
 	}
 
 }
