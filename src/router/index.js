@@ -5,12 +5,12 @@ import SpellForm from '@/components/SpellForm.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/char-builder',
     name: 'Main',
     component: Main,
   },
   {
-    path: '/welcome-to-dnd',
+    path: '/',
     name: 'WelcomePage',
     component: WelcomePage,
   },
