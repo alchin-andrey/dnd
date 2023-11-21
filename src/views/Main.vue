@@ -43,10 +43,10 @@ export default {
 
 	created() {
 		this.getCreated();
-		if(this.pages.race_page && this.new_user && !this.screen_Max) {
-			this.showHome();
-			this.$router.push('/welcome-to-dnd');
-		}
+		// if(this.pages.race_page && this.new_user && !this.screen_Max) {
+		// 	this.showHome();
+		// 	this.$router.push('/welcome-to-dnd');
+		// }
 	},
 
 	computed: {

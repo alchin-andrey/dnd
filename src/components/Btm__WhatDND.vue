@@ -28,7 +28,7 @@ export default {
     getPage() {
       this.showHome();
       this.new_user = false;
-      this.$router.push('/welcome-to-dnd');
+      this.$router.push('/');
     },
   },
 };

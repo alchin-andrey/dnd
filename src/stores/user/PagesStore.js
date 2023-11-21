@@ -124,7 +124,7 @@ export const usePagesStore = defineStore({
     // Видалення минулих змінних
 
     goToChar() {
-      this.$router.push('/');
+      this.$router.push('/char-builder');
       this.new_user = false;
     },
 
