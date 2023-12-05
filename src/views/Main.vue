@@ -10,10 +10,7 @@
 
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
-	<!-- <my-dialog-spell finish> -->
-		<!-- <section class="flex-col h-100"> -->
-			<WelcomPage__Start />
-		<!-- </section> -->
+		<WelcomPage__Start />
 	</my-dialog-spell>
 </template>
 

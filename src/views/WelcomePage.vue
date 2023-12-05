@@ -2,8 +2,8 @@
 	<div class="flex-row h-100">
 		<section v-if="screen_Max" class="flex-col pd-t-32 min-w-320">
 			<div class="flex-row-c gap-4 pd-rl-32 h-28">
-				<AppLogoCard @click="goToChar()"/>
-				<div class="int-700 cur-p buff" @click="goToChar()">dndme.club</div>
+				<AppLogoCard @click="goHomePage()"/>
+				<div class="int-700 cur-p buff" @click="goHomePage()">dndme.club</div>
 			</div>
 			<WelcomPage__Menu/>
 		</section>
@@ -75,7 +75,7 @@ export default {
 
 	methods: {
 		...mapActions(useMYStore, ["getCreated"]),
-		...mapActions(usePagesStore, ["goToChar"]),
+		...mapActions(usePagesStore, ["goToChar", "goHomePage"]),
 	},
 };
 </script>

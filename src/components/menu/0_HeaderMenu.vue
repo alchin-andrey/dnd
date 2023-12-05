@@ -1,9 +1,10 @@
 <template>
 	<div class="header">
-		<AppLogoCard
+		<!-- <AppLogoCard
 			@click="showSettings__Main('logo')"
 			:active="main_page.shown.logo"
-		/>
+		/> -->
+		<AppLogoCard @click="goHomePage()"/>
 		<div class="header_col">
 			<AppHeaderCard
 				@click="showSettings__Main('lang')"
@@ -51,7 +52,7 @@ export default {
 	},
 
 	methods: {
-		...mapActions(usePagesStore, ["showSettings__Main"]),
+		...mapActions(usePagesStore, ["showSettings__Main", "goHomePage"]),
 	},
 };
 </script>

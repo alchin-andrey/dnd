@@ -2,7 +2,7 @@
 	<div class="represent" @click="showHome()" v-if="screen_Max">
 		<transition name="fade-body">
 			<div class="character-main" :style="style_Char_Pos">
-				<WelcomeBanner />
+				<!-- <WelcomeBanner /> -->
 				<!-- <AppGpt /> -->
 				<section class="character-main--body" @click.stop="showPhotoSet()">
 					<RaceBody body_part="skin" />
@@ -25,11 +25,11 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useFormStore } from "@/stores/modules/simple/FormStore";
 
-import WelcomeBanner from "@/components/WelcomeBanner.vue";
+// import WelcomeBanner from "@/components/WelcomeBanner.vue";
 export default {
 	name: "Main_CharBar",
 	components: {
-		WelcomeBanner,
+		// WelcomeBanner,
 	},
 	data() {
 		return {
