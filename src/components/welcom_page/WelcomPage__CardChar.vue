@@ -1,10 +1,10 @@
 <template>
 	<div class="flex-col gap-4 h-100">
-		<AppBtmLink name="lobby_menu_char" icon="check_green" passive jbm />
+		<AppBtm name="lobby_menu_char" icon="check_green" passive jbm />
 		<WelcomPage__UserChar class="flex-sel"/>
 		<div class="grid-char">
-			<AppLoadBtm text="download_pdf" />
-			<AppBtmLink name="edit" icon="edit" @click="goToChar()"/>
+			<AppLoadBtm />
+			<AppBtm name="edit" icon="edit" @click="goToChar()"/>
 			<Btm__Reset short/>
 		</div>
 	</div>

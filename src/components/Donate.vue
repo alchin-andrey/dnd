@@ -18,7 +18,7 @@
 		:class="{
 				'flex-flex js-end': finish && !screen_Max,
 				}" 
-	>
+			>
 			<AppBtmLink
 				class="btm-white"
 				name="view_benefits"

@@ -10,13 +10,10 @@
 
 	<!-- alse -->
 	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
-		<section class="flex-col h-100">
-			<PromoSlider />
-			<Donate :class="{
-				'pd-32': screen_Max,
-				'pd-20': !screen_Max,
-			}" finish />
-		</section>
+	<!-- <my-dialog-spell finish> -->
+		<!-- <section class="flex-col h-100"> -->
+			<WelcomPage__Start />
+		<!-- </section> -->
 	</my-dialog-spell>
 </template>
 

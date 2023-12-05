@@ -6,6 +6,7 @@ import AppGpt from "@/components/ui/AppGpt.vue";
 
 
 import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
+import AppBtm from "@/components/ui/AppBtm.vue";
 import AppBtmLink from "@/components/ui/AppBtmLink.vue";
 import AppBtmIcon from "@/components/ui/AppBtmIcon.vue";
 import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
@@ -111,6 +112,7 @@ export default [
   AppGpt,
 
   AppStripWrapp,
+  AppBtm,
   AppBtmLink,
   AppBtmIcon,
   AppCardWrapp,

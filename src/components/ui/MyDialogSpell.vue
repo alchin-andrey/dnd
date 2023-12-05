@@ -26,8 +26,22 @@
           >
             <div class="dialog__content">
               <slot></slot>
+              <AppBtm
+                @click.stop
+                v-if="finish && !screen_Max"
+                name="back_to_main_page"
+              />
             </div>
           </div>
+        </div>
+        <!-- <slot name="bottom"></slot> -->
+        <div class="btm-wrapp--finish dialog-wrapp--finish">
+          <AppBtm
+            @click.stop
+            v-if="finish && screen_Max"
+            class="back-btm-size "
+            name="back_to_main_page"
+          />
         </div>
       </div>
     </Transition>
@@ -71,6 +85,10 @@ export default {
 
 <style scoped>
 
+.back-btm-size {
+  width: 287px;
+}
+
 .btm-wrapp {
   padding: 20px 20px 20px 20px;
   margin: 0 auto;
@@ -95,7 +113,10 @@ export default {
 }
 
 .dialog--finish {
+  flex-direction: column;
+  gap: 4px;
   justify-content: center;
+  padding: 32px;
 }
 
 .dialog__wrapp {
@@ -116,8 +137,12 @@ export default {
 
 .dialog-wrapp--finish {
   /* margin: 0 auto; */
-  width: 460px;
-  padding: 0;
+  /* width: 460px; */
+  width: 832px;
+  /* padding: 0; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 @media (max-width: 1279px) {
@@ -127,15 +152,20 @@ export default {
     justify-content: center;
   }
 
+  .dialog--finish {
+    /* justify-content: center; */
+    justify-content: start;
+    align-items: center;
+    padding: 0 0 32px 0;
+  }
+
   .dialog__wrapp {
     /* overflow-y: hidden; */
     max-height: calc(100% - 88px);
   }
 
   .dialog-wrapp--finish {
-    width: 100%;
-    height: calc(100% - 88px);
-    max-width: 434px;
+    width: 444px;
   }
 
   .dialog__content {
@@ -165,7 +195,7 @@ export default {
   opacity: 0;
 }
 
-.nested-enter-active .dialog__wrapp,
+/* .nested-enter-active .dialog__wrapp,
 .nested-leave-active .dialog__wrapp{
   transition: all 0.3s ease-out;
 }
@@ -178,22 +208,37 @@ export default {
 .nested-leave-to .dialog__wrapp{
   transform: translateY(50px);
   opacity: 0.001;
-}
+} */
 
 
-
+.nested-enter-active .dialog__wrapp,
+.nested-leave-active .dialog__wrapp,
 .nested-enter-active .btm-wrapp,
-.nested-leave-active .btm-wrapp{
+.nested-leave-active .btm-wrapp,
+.nested-enter-active .btm-wrapp--finish,
+.nested-leave-active .btm-wrapp--finish{
   transition: all 0.3s ease-out;
 }
 
-.nested-enter-active .btm-wrapp{
+.nested-enter-active .dialog__wrapp,
+.nested-enter-active .btm-wrapp,
+.nested-enter-active .btm-wrapp--finish{
   transition-delay: 0.25s ease-out;
 }
 
+.nested-enter-from .dialog__wrapp,
+.nested-leave-to .dialog__wrapp,
 .nested-enter-from .btm-wrapp,
-.nested-leave-to .btm-wrapp{
+.nested-leave-to .btm-wrapp,
+.nested-enter-from .btm-wrapp--finish,
+.nested-leave-to .btm-wrapp--finish{
   transform: translateY(50px);
   opacity: 0.001;
+}
+
+@media (max-width: 955px) {
+  .dialog-wrapp--finish {
+    width: 394px;
+  }
 }
 </style>

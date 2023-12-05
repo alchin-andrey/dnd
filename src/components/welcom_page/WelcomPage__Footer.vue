@@ -4,7 +4,7 @@
 			<div class="flex-col-sb h-100 w-362">
 				<div>
 					<div class="int-700-20" v-html="t('join_us')" />
-					<div class="int-400 white-04 mr-t-24" v-html="t('join_us_details')"> </div>
+					<div class="int-400 white-04 mr-t-24" v-html="t('join_us_details')" />
 					<AppBtmLink 
 					class="int-700 mr-t-28" 
 					:name="t_me_link_name" 

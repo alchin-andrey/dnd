@@ -128,6 +128,12 @@ export const usePagesStore = defineStore({
       this.new_user = false;
     },
 
+    goHomePage() {
+      this.showHome();
+      this.new_user = false;
+      this.$router.push('/');
+    },
+
 
     zeroingDell() {
       if(this.site_settings.old_page) {

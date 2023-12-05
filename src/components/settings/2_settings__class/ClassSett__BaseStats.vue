@@ -6,7 +6,7 @@
 	<BaseStatsCard v-for="name in stats_Keys" :key="name" :stats_name="name" />
 	
 	<transition name="fade">
-		<AppBtmLink 
+		<AppBtm
 			v-if="MY.stats_base_save[MY_Class.name]" 
 			icon="return"
 			@click="defaultStats()"

@@ -1,13 +1,17 @@
 <template>
-	<div class="int-700 main_btm flex-row-sb-c" :class="{ active_btm: stop_Loading }" @click="exportToPDF()">
-		<div>{{ t_Text }}</div>
-		<div class="main_icon">
-			<svg v-if="stop_Loading"
-				class="main_svg"
-				viewBox="0 0 18 18"
-				xmlns="http://www.w3.org/2000/svg"
-				v-html="ui_icon.download"
-			></svg>
+	<div class="main_btm flex-col-sb" :class="{ active_btm: stop_Loading }" @click="exportToPDF()">
+		<div class="jbm-300 mr-b-25" v-if="full">01</div>
+		<div class="flex-row-sb-c">
+			<div>
+				<div class="int-700">{{ t_Title }}</div>
+				<div v-if="full" class="text-size int-400 mr-t-4">{{ t_Text }}</div>
+			</div>
+			<AppSvg 
+				v-if="stop_Loading"
+				class="svg-18 svg-main-f"
+				:class="style_PosSvg"
+				name="download"
+			/>
 		</div>
     <div class="load_btm">
     <div class="load-progress" :style="{ width: load_Progress,}"/>
@@ -21,24 +25,20 @@ import html2pdf from "html2pdf.js";
 import { mapState, mapWritableState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
-import ui_icon from "@/assets/catalog/icon/ui_icon";
+// import ui_icon from "@/assets/catalog/icon/ui_icon";
 export default {
 	name: "AppLoadBtm",
 	data() {
 		return {
-			ui_icon: ui_icon,
+			// ui_icon: ui_icon,
 			progress_load: 0,
 		};
 	},
 	props: {
-		text: {
-			type: String,
-			default: "Load ...",
-		},
-		// progress: {
-		// 	type: Number,
-		// 	default: 0,
-		// },
+		full: {
+			type: Boolean,
+			default: false,
+		}
 	},
 	computed: {
 		...mapState(useMYStore, [
@@ -46,30 +46,18 @@ export default {
 			"MY_Race",
 		]),
 
+		// download_pdf
+
 		...mapWritableState(usePagesStore, ["loading_pdf"]),
-		
+
+		t_Title() {
+			if(this.progress_load !== 0) return this.T('load_progress');
+      if(this.full) return this.T('download_charsheet')
+      return this.T('download_pdf');
+		},
+
 		t_Text() {
-      if(this.progress_load == 0) {
-        return this.T(this.text);
-      } else {
-        return this.T('load_progress');
-      }
-		},
-
-		get_Active() {
-			if (this.active_link !== null) {
-				return this.active_link === this.select_link;
-			} else if (this.active_boll_link) {
-				return this.active_boll_link;
-			} else {
-				return null;
-			}
-		},
-
-		img_Icon() {
-			if (this.download) return "download";
-			if (this.arrow) return "arrow_right_small";
-			if (this.plus) return "plus";
+      return this.t('download_charsheet_details');
 		},
 
     load_Progress() {
@@ -78,7 +66,12 @@ export default {
 
     stop_Loading() {
       return this.progress_load == 0;
-    }
+    },
+
+		style_PosSvg() {
+			if(this.full) return 'full_pos';
+      return 'simple_pos';
+		}
 	},
 
 	methods: {
@@ -172,10 +165,6 @@ export default {
 	position: relative;
 }
 
-.pd-16 {
-	padding: 16px;
-}
-
 .load_btm {
 	content: "";
 	position: absolute;
@@ -205,22 +194,28 @@ export default {
   transition-duration: 1s;
 }
 
-.main_icon {
-	width: 18px;
-	height: 18px;
-	fill: white;
+.full_pos{
+	position: absolute;
+	right: 16px;
+	bottom: 15px;
+}
+
+.simple_pos{
 	position: absolute;
 	right: 16px;
 	top: 50%;
-	/* bottom: 50%; */
 	-webkit-transform: translate(0%, -50%);
 	-ms-transform: translate(0%, -50%);
 	transform: translate(0%, -50%);
 }
 
-.main_svg {
-	width: 18px;
-	height: 18px;
-	fill: white;
+.text-size {
+	padding-right: 38px;
+}
+
+@media (max-width: 1279px) {
+	.text-size {
+		padding-right: 68px;
+	}
 }
 </style>

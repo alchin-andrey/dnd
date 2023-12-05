@@ -1,7 +1,7 @@
 <template>
-  <AppBtmLink
+  <AppBtm
     v-if="show_Master_Page"
-    @click="getPage()"
+    @click="goHomePage()"
     name="lobby_button" 
   />
 </template>
@@ -23,13 +23,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(usePagesStore, ["showHome"]),
-
-    getPage() {
-      this.showHome();
-      this.new_user = false;
-      this.$router.push('/');
-    },
+    ...mapActions(usePagesStore, ["showHome", "goHomePage"]),
   },
 };
 </script>

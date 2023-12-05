@@ -15,13 +15,12 @@
 				:master_param="master"
 				/>
 			</div>
-
-			<AppBtmLink 
-			class="mr-t-4 w-362"
-			name="lobby_master_button" 
-			icon="plus" 
-			link="https://t.me/dimalagoda" 
-			/>
+				<AppBtmLink 
+				class="mr-t-4 w-362"
+				name="lobby_master_button" 
+				icon="plus" 
+				link="https://t.me/dimalagoda" 
+				/>
 	</article>
 </template>
 <script>

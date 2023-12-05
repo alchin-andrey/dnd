@@ -1,6 +1,5 @@
-.pos-rel {
-	position: relative;
-}
+a.db {display: block;}
+.pos-rel {position: relative;}
 
 .w-100 {width: 100%;}
 .h-100 {height: 100%;}
@@ -171,6 +170,7 @@
 .mr-b-15 { margin-bottom: 15px; }
 .mr-b-18 { margin-bottom: 18px; }
 .mr-b-24 { margin-bottom: 24px; }
+.mr-b-25 { margin-bottom: 25px; }
 .mr-b-32 { margin-bottom: 32px; }
 .mr-b-34 { margin-bottom: 34px; }
 .mr-b-36 { margin-bottom: 36px; }

@@ -3,7 +3,7 @@
     <div class="btm-grey br-12 blur-60 hov cur-p flex-row-c-jc h-47" v-if="short">
       <AppSvg class="svg-18" name="delete" />
     </div>
-    <AppBtmLink class="btm-red" icon="return" name="start_over" v-else/>
+    <AppBtm class="btm-red" icon="return" name="start_over" v-else/>
   </div>
 </template>
 

@@ -1,40 +1,45 @@
 <template>
 	<article>
-		<div class="jbm-300">{{ t("lobby_menu_2") }}</div>
-			<!-- <div class="flex-row gap-4 mr-t-26"> -->
+		<emoji
+			:data="emojiIndex"
+			emoji="🎉"
+			:set="set_emoji"
+			:size="24"
+		/>
+		<div class="int-700-20" v-html="T_Title" />
 			<div class="card-wrapp mr-t-26">
-				<WelcomPage__CardStart 
-				class="card-size"
-				v-for="step in start_steps" 
-				:key="step.num"
-				:numb="step.num"
-				:title="step.title"
-				:text="step.details"
-				:active="step.active"
-				@click="step.active ? btn() : null"
+				<AppLoadBtm class="card-size" full/>
+				<AppBtmLink
+					class="btm-white-dlack card-size" 
+					pos="02"
+					name="support_project" 
+					icon="donate"
+					text="support_project_details"
+					link="https://cutt.ly/lwkDE0Yn"
+				/>
+				<AppBtm 
+					class="card-size" 
+					pos="03"
+					name="select_master" 
+					text="select_master_details_short"
+					@click="goHomePage()"
 				/>
 			</div>
 	</article>
 </template>
 <script>
-import WelcomPage__CardStart from "@/components/welcom_page/WelcomPage__CardStart.vue";
+import { mapActions } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
+
 export default {
 	name: "WelcomPage__Start",
-	emits: ["btnClick"],
-	components: {
-		WelcomPage__CardStart,
+	computed: {
+		T_Title() {
+			return this.t("finish_title");
+		},
 	},
-	data: () => ({
-		start_steps: [
-			{num: "01", title: "how_to_start_2_title", details: "how_to_start_2_details", active: true},
-			{num: "02", title: "how_to_start_1_title", details: "how_to_start_1_details", active: false},
-			{num: "03", title: "how_to_start_3_title", details: "how_to_start_3_details", active: false},
-		]
-	}),
 	methods: {
-		btn() {
-				this.$emit("btnClick");
-      },
+		...mapActions(usePagesStore, ["goHomePage"]),
 	},
 };
 </script>
@@ -42,19 +47,28 @@ export default {
 <style scoped>
 .card-wrapp {
 	display: flex;
-	gap: 4px
+	gap: 4px;
+	height: 280px;
 }
 
 .card-size {
-	width: 220px;
+	width: 256px;
+	height: 100%;
 }
 
-@media (max-width: 955px) {
+@media (max-width: 1279px) {
 	.card-wrapp {
 		flex-direction: column;
+		height: auto;
 	}
 	.card-size {
 		width: 100%;
 	}
+}
+
+.emoji-mart-emoji {
+	padding: 0;
+	line-height: 0;
+	top: 2px;
 }
 </style>

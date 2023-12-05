@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapWritableState } from "pinia";
+import { mapActions, mapState} from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
@@ -46,8 +46,6 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 import WelcomPage__Menu from "@/components/welcom_page/WelcomPage__Menu.vue";
 import WelcomPage__TryToPlay from "@/components/welcom_page/WelcomPage__TryToPlay.vue";
 import WelcomPage__WhatDND from "@/components/welcom_page/WelcomPage__WhatDND.vue";
-import WelcomPage__Start from "@/components/welcom_page/WelcomPage__Start.vue";
-import WelcomPage__UserChar from "@/components/welcom_page/WelcomPage__UserChar.vue";
 import WelcomPage__Masters from "@/components/welcom_page/WelcomPage__Masters.vue";
 import WelcomPage__GameProcess from "@/components/welcom_page/WelcomPage__GameProcess.vue";
 import WelcomPage__Game from "@/components/welcom_page/WelcomPage__Game.vue";
@@ -60,8 +58,6 @@ export default {
 		WelcomPage__Menu,
 		WelcomPage__TryToPlay,
 		WelcomPage__WhatDND,
-		WelcomPage__Start,
-		WelcomPage__UserChar,
 		WelcomPage__Masters,
 		WelcomPage__GameProcess,
 		WelcomPage__Game,
