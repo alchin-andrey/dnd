@@ -27,6 +27,10 @@ export const usePagesStore = defineStore({
       stats_link: {},
     },
 
+    welcome_page: {
+      hash: null,
+    },
+
 		main_page: {
 			shown: {
 				logo: false,
@@ -128,12 +132,12 @@ export const usePagesStore = defineStore({
       this.new_user = false;
     },
 
-    goHomePage() {
+    goHomePage(hash_name) {
       this.showHome();
       this.new_user = false;
+      if(hash_name) this.welcome_page.hash = hash_name;
       this.$router.push('/');
     },
-
 
     zeroingDell() {
       if(this.site_settings.old_page) {

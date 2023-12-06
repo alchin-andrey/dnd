@@ -22,7 +22,7 @@
 					pos="03"
 					name="select_master" 
 					text="select_master_details_short"
-					@click="goHomePage()"
+					@click="goHomePage('masters_part')"
 				/>
 			</div>
 	</article>
