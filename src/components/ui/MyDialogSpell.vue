@@ -30,6 +30,7 @@
                 @click.stop
                 v-if="finish && !screen_Max"
                 name="back_to_main_page"
+                @click="goHomePage()"
               />
             </div>
           </div>
@@ -41,6 +42,7 @@
             v-if="finish && screen_Max"
             class="back-btm-size "
             name="back_to_main_page"
+            @click="goHomePage()"
           />
         </div>
       </div>
@@ -68,7 +70,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(usePagesStore, ["screen_Max"]),
+    ...mapState(usePagesStore, ["screen_Max", "goHomePage"]),
   },
   methods: {
     mainHideDialog() {

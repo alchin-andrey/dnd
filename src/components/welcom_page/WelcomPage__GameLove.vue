@@ -6,22 +6,27 @@
 		</section>
 
 		<section class="card-size">
-			<WelcomPage__CardToPlay short @click="cardGo()" />
+			<WelcomPage__CardToPlay v-if="new_user" @click="goToChar()" short/>
+			<WelcomPage__UserChar v-else @click="goToChar()"/>
 		</section>
 	</article>
 </template>
 <script>
+import { mapActions, mapState} from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 import WelcomPage__CardToPlay from "@/components/welcom_page/WelcomPage__CardToPlay.vue";
+import WelcomPage__UserChar from "@/components/welcom_page/WelcomPage__UserChar.vue";
 export default {
 	name: "WelcomPage__GameLove",
 	components: {
 		WelcomPage__CardToPlay,
+		WelcomPage__UserChar,
 	},
-	emits:["btnClick"],
+	computed: {
+		...mapState(usePagesStore, ["new_user"]),
+	},
 	methods: {
-		cardGo() {
-			this.$emit("btnClick")
-		}
+		...mapActions(usePagesStore, ["goToChar"]),
 	}
 };
 </script>

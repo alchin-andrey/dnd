@@ -27,7 +27,7 @@
 						<WelcomPage__WhatDND id="welcom-part2" class="mr-t-76  pd-t-32" />
 						<WelcomPage__GameProcess id="welcom-part3" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Game id="welcom-part4" class="mr-t-76 pd-t-32"/>
-						<WelcomPage__GameLove id="welcom-part4" class="mr-t-76 pd-t-32" @btnClick="goToChar()"/>
+						<WelcomPage__GameLove id="welcom-part4" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Masters id="welcom-part5" class="mr-t-76 pd-t-32"/>
 						<WelcomPage__Footer id="welcom-part6" class="mr-t-76 pd-t-32"/>
 					</div>

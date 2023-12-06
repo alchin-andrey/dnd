@@ -1,6 +1,6 @@
 <template>
 	<article>
-		<div class="jbm-300">{{ t("how_to_find") }}</div>
+		<div class="int-700-20" v-html="t_Title" />
 			<div class="flex-row flex-wrap gap-4 mr-t-26">
 				<WelcomPage__CardClub 
 				v-for="club in clubs" 
@@ -37,6 +37,10 @@ export default {
 	},
 	computed: {
 		...mapState(useSecondaryStore, ["masters", "clubs"]),
+
+		t_Title() {
+			return this.t('how_to_find');
+		}
 	},
 };
 </script>

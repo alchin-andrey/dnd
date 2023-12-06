@@ -1,6 +1,6 @@
 <template>
 	<article>
-		<div class="btm-grey br-12 blur-60 pd-16 h-100">
+		<div class="btm-grey br-12 blur-60 pd-16 hov cur-p h-100">
 			<AppCharCard welcom_char />
 			<div class="int-700 mr-t-16">{{ t_Name }}</div>
 			<div class="int-400 mr-t-4 white-04">

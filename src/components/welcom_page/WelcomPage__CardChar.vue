@@ -1,7 +1,7 @@
 <template>
 	<div class="flex-col gap-4 h-100">
 		<AppBtm name="lobby_menu_char" icon="check_green" passive jbm />
-		<WelcomPage__UserChar class="flex-sel"/>
+		<WelcomPage__UserChar @click="goToChar()" class="flex-sel"/>
 		<div class="grid-char">
 			<AppLoadBtm />
 			<AppBtm name="edit" icon="edit" @click="goToChar()"/>
