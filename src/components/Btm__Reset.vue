@@ -7,7 +7,7 @@
       <AppBtm class="btm-red" icon="return" name="start_over" v-else/>
 
     </div>
-    <AppMainDialog v-model:show="dialogVisible" >
+    <AppDialog__Main v-model:show="dialogVisible" >
       <div class="int-700-20" v-html="t_Title" />
       <WelcomPage__UserChar no_wrapp/>
       <section class="dialog-size">
@@ -16,7 +16,7 @@
           <AppBtm class="btm-white-dlack" icon="check" name="relinquish" @click="showDialog()"/>
         </div>
       </section>
-    </AppMainDialog>
+    </AppDialog__Main>
   </div>
 </template>
 
