@@ -46,6 +46,8 @@ import AppLoadBtm from "@/components/ui/AppLoadBtm.vue";
 import AppMasters from "@/components/ui/AppMasters.vue";
 import AppSrdDisclaimer from "@/components/ui/AppSrdDisclaimer.vue";
 
+import AppDialog__Main from "@/components/ui/AppDialog__Main.vue";
+import AppDialog__Property from "@/components/ui/AppDialog__Property.vue";
 
 //Main
 import AppSliderName from "@/components/ui/main/AppSliderName.vue";
@@ -92,7 +94,6 @@ import MyRange from "@/components/ui/pinia_ui/MyRange.vue";
 import MyRangeSize from "@/components/ui/pinia_ui/MyRangeSize.vue";
 
 import MagicAttribute from "@/components/ui/MagicAttribute.vue";
-import MyDialogSpell from "@/components/ui/MyDialogSpell.vue";
 import MySpellMain from "@/components/ui/MySpellMain.vue";
 
 import MyCusstomSetting from "@/components/ui/pinia_ui/MyCusstomSetting.vue";
@@ -139,6 +140,9 @@ export default [
 
   AppMasters,
   AppSrdDisclaimer,
+  
+  AppDialog__Main,
+  AppDialog__Property,
 
 //main
   AppSliderName,
@@ -180,7 +184,6 @@ export default [
   AppHeaderCard,
   AppLogoCard,
   MagicAttribute,
-  MyDialogSpell,
   MySpellMain,
 
   MyCusstomSetting,

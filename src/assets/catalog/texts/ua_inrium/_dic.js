@@ -6375,4 +6375,9 @@ export default {
 
   back_to_main_page: "Повернутися на головну",
   finish_title: "Твій герой готовий до пригод!<br/>Отже, що далі?",
+
+  delete: "Видалити",
+  relinquish: "Залишити",
+
+  delete_character: "<span class='debuff'>Видалити цього персонажа?</span><br/>Нажаль, він буде втрачений<br/>назавжди ...",
 };

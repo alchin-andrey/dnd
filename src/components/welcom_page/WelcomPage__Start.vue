@@ -1,5 +1,5 @@
 <template>
-	<article>
+	<article class="wrapp-size">
 		<emoji
 			:data="emojiIndex"
 			emoji="🎉"
@@ -63,6 +63,16 @@ export default {
 	}
 	.card-size {
 		width: 100%;
+	}
+
+	.wrapp-size {
+		width: 380px;
+	}
+}
+
+@media (max-width: 955px) {
+	.wrapp-size {
+		width: 330px;
 	}
 }
 

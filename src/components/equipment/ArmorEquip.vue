@@ -22,7 +22,7 @@
         no_icon
 			/>
 		</div>
-		<my-dialog-spell v-model:show="dialogVisible">
+		<AppDialog__Property v-model:show="dialogVisible">
 
 			<section>
 				<div class="int-700">{{ t_Armor_Name }}</div>
@@ -63,7 +63,7 @@
 					dot
 				/>
 			</section>
-		</my-dialog-spell>
+		</AppDialog__Property>
 	</AppStripWrapp>
 </template>
 

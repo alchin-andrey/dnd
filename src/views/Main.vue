@@ -9,9 +9,9 @@
 	</div>
 
 	<!-- alse -->
-	<my-dialog-spell v-model:show="site_settings.print_dialog" finish>
+	<AppDialog__Main v-model:show="site_settings.print_dialog" finish>
 		<WelcomPage__Start />
-	</my-dialog-spell>
+	</AppDialog__Main>
 </template>
 
 <script>

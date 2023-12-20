@@ -18,7 +18,7 @@
 				</section>
 		</div>
 	</AppStripWrapp>
-	<my-dialog-spell v-model:show="dialogVisible">
+	<AppDialog__Property v-model:show="dialogVisible">
 
 		<section>
 			<div class="int-700">{{ t_Packs_Name }}</div>
@@ -33,7 +33,7 @@
 			<my-attribute title="cost" :price="packs[0].cost" dot />
 			<my-attribute title="weight" :numb="packs[0].weight" unit="kg" dot />
 		</section>
-	</my-dialog-spell>
+	</AppDialog__Property>
 </template>
 
 <script>

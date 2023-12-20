@@ -96,8 +96,11 @@
 .btm-white-dlack.hov:hover { background: #FFFFFF;}
 .btm-white-dlack svg {fill: #000000;}
 
-.btm-red {background: #580000; transition-duration: 0.5s;}
-.btm-red.hov:hover { background: #FF0000;}
+/* .btm-red {background: #580000; transition-duration: 0.5s;}
+.btm-red.hov:hover { background: #FF0000;} */
+
+.btm-red {background: #FF0000; transition-duration: 0.5s;}
+.btm-red.hov:hover { background: #580000;}
 
 
 /* stripe */

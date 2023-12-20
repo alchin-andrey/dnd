@@ -312,7 +312,7 @@
         </div>
       </div>
     </AppTooltip>
-    <my-dialog-spell v-model:show="dialogVisible" v-model:mana="mana_numb">
+    <AppDialog__Property v-model:show="dialogVisible" v-model:mana="mana_numb">
       <AppWrapper>
         <div class="title_spell gray_2">{{ t_Type }} /</div>
         <div class="title_spell">
@@ -415,7 +415,7 @@
           v-html="mod_Expanded_Extra"
         />
       </div>
-    </my-dialog-spell>
+    </AppDialog__Property>
   </main>
 </template>
 

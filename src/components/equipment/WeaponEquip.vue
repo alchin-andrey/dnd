@@ -93,7 +93,7 @@
 				</section>
 			</div>
 		</AppStripWrapp>
-		<my-dialog-spell v-model:show="dialogVisible">
+		<AppDialog__Property v-model:show="dialogVisible">
 			<section>
 				<div class="int-700">{{ t_Weapon_Name }}</div>
 				<div class="white-04 mr-t-4">{{ t_Weapon_Details }}</div>
@@ -167,7 +167,7 @@
 					dot
 				/>
 			</section>
-		</my-dialog-spell>
+		</AppDialog__Property>
 	</section>
 </template>
 
