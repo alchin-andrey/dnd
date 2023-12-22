@@ -137,6 +137,7 @@ export const usePagesStore = defineStore({
       this.new_user = false;
       if(hash_name) this.welcome_page.hash = hash_name;
       this.$router.push('/');
+      this.site_settings.print_dialog = false;
     },
 
     zeroingDell() {
