@@ -1,7 +1,10 @@
 <template>
 	<article>
 		<div class="h-100"
-		:class="{'btm-grey br-12 blur-60 pd-16 hov cur-p': !no_wrapp}"
+		:class="{
+			'btm-grey br-12 blur-60 pd-16 hov cur-p': !no_wrapp,
+			'animation--active': show_Animation,
+			}"
 		>
 			<AppCharCard welcom_char />
 			<div class="int-700 mr-t-16">{{ t_Name }}</div>
@@ -33,7 +36,7 @@ export default {
 			"arr_Name_Race_Page",
 			"arr_Name_Class_Page"
 		]),
-		...mapState(usePagesStore, ["pages", "site_settings"]),
+		...mapState(usePagesStore, ["pages", "site_settings", "welcome_page"]),
 
 		t_Lvl() {
 			return `${this.MY.level}${this.t('level_unit')} ${this.t('level')}`
@@ -66,6 +69,10 @@ export default {
 			if (this.show_Alignment) return this.MY.name;
 			else return this.T('noname');
 		},
+
+		show_Animation() {
+      return this.welcome_page.back_anim;
+    }
 	},
 
 	methods: {
@@ -86,5 +93,19 @@ export default {
 	border-radius: 4px;
 	background-image: url('@/assets/img/characters/halfling/ethhnos/image.png');
 	border: 2px solid rgba(255, 255, 255, 0.20);
+}
+
+.animation--active  {
+  animation-name: active-back;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
+  /* animation-delay: 0.8s; */
+}
+
+@keyframes active-back{
+	0%{ background: rgba(255, 255, 255, 0.06); }
+	20%{ background: rgba(255, 255, 255, 0.1); }
+	40%{ background: rgba(255, 255, 255, 0.1); }
+	100%{ background: rgba(255, 255, 255, 0.06); }
 }
 </style>

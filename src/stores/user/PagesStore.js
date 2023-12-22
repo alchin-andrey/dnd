@@ -29,6 +29,7 @@ export const usePagesStore = defineStore({
 
     welcome_page: {
       hash: null,
+      back_anim: false,
     },
 
 		main_page: {

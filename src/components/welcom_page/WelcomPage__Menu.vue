@@ -6,6 +6,7 @@
 			name="lobby_menu_char"
 			link="#welcom-part1"
 			link_self
+			@click="close()"
 			/>
 			<AppBtmLink 
 			name="lobby_menu_3" 
@@ -33,7 +34,21 @@
 </template>
 <script>
 
+import { mapState } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
+
 export default {
-	name: "WelcomPage__Menu"
+	name: "WelcomPage__Menu",
+	computed: {
+		...mapState(usePagesStore, ["welcome_page"]),
+	},
+	methods: {
+    close() {
+			if(this.welcome_page.back_anim != true) {
+        this.welcome_page.back_anim = true;
+				setTimeout(() => this.welcome_page.back_anim = false, 2000);
+			}
+    },
+  },
 };
 </script>
