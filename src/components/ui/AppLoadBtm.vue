@@ -52,7 +52,7 @@ export default {
 
 		t_Title() {
 			if(this.progress_load !== 0) return this.T('load_progress');
-      if(this.full) return this.T('download_charsheet')
+      if(this.full) return this.T('download_cta')
       return this.T('download_pdf');
 		},
 

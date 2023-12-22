@@ -6380,4 +6380,7 @@ export default {
   relinquish: "Залишити",
 
   delete_character: "<span class='debuff'>Видалити цього персонажа?</span><br/>Нажаль, він буде втрачений<br/>назавжди ...",
+
+  continue: "Продовжити",
+  download_cta: "Скачай аркуш персонажа",
 };

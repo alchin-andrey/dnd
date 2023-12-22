@@ -114,7 +114,7 @@ export const usePagesStore = defineStore({
     btn_Name() {
       if(this.btn_Page == 1) return 'class';
       if(this.btn_Page == 2) return 'alignment';
-      if(this.btn_Page == 3) return 'download_charsheet';
+      if(this.btn_Page == 3) return 'continue';
     },
 
     btn_Name_Page() {
