@@ -31,6 +31,10 @@
 	fill: black;
 }
 
+.svg-green-f { 
+	fill: #05FF00;
+}
+
 .svg-pass-f { 
 	opacity: 0.2;
 }

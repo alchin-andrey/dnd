@@ -88,13 +88,17 @@
 .btm-blue {background: #0047ff;}
 .btm-blue.hov:hover { background: #1355ff;}
 
-.btm-white {background: #FFFFFF;}
-.btm-white a {color: #0047FF;}
+.btm-white {background: #FFFFFF; color: #0047FF;}
+.btm-white.hov:hover { background: #eaeefd;}
 .btm-white svg {fill: #0047FF;}
-.btm-white.hov:hover { background: #FFFFFF;}
 
-.btm-red {background: #580000; transition-duration: 0.5s;}
-.btm-red.hov:hover { background: #FF0000;}
+.btm-white-dlack {background: #FFFFFF; color: #000000;}
+.btm-white-dlack.hov:hover { background: #eaeefd;}
+.btm-white-dlack svg {fill: #000000;}
+
+/* .btm-red {background: #FF0000; transition-duration: 0.5s;} */
+.btm-red {background: #FF0000;}
+.btm-red.hov:hover { background: #ff3030;}
 
 
 /* stripe */
