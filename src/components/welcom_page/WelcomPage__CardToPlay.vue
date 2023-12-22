@@ -1,8 +1,8 @@
 <template>
-	<div class="br-12 blur-60 hov cur-p pos-rel" :class="style_Cerd">
+	<div class="br-12 blur-60 hov cur-p pos-rel btn-size" :class="style_Cerd">
 		<a :target="target_Link" :href="link_Go">
-			<div class="pd-16">
-				<div class="jbm-300 mr-b-182" v-if="!short">{{ serial_Number }}</div>
+			<div class="flex-col-sb pd-16 h-100">
+				<div class="jbm-300" v-if="!short">{{ serial_Number }}</div>
 				
 				<section>
 					<div class="int-700-20"> {{ t_Title }} </div>
@@ -96,7 +96,7 @@ export default {
 	z-index: -1;
 }
 
-.h-349 {
-	height: 349px;
+.btn-size {
+	min-height: 349px;
 }
 </style>

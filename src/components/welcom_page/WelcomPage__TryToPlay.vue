@@ -3,7 +3,7 @@
 		<div class="int-700-30" v-html="t('lobby_try_to_play')" />
 
 		<div class="flex-row flex-wrap gap-4 mr-t-108">
-			<div class="card-size" :class="{'mr-bot': !new_user}">
+			<div class="card-size flex-col" :class="{'mr-bot': !new_user}">
 				<WelcomPage__CardToPlay @click="goToChar()" v-if="new_user"/>
 				<WelcomPage__CardChar v-else/>
 			</div>
