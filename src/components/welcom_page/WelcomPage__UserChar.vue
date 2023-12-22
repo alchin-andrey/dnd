@@ -104,8 +104,8 @@ export default {
 
 @keyframes active-back{
 	0%{ background: rgba(255, 255, 255, 0.06); }
-	20%{ background: rgba(255, 255, 255, 0.1); }
-	40%{ background: rgba(255, 255, 255, 0.1); }
+	20%{ background: rgba(255, 255, 255, 0.2); }
+	40%{ background: rgba(255, 255, 255, 0.2); }
 	100%{ background: rgba(255, 255, 255, 0.06); }
 }
 </style>
