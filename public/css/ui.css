@@ -89,11 +89,11 @@
 .btm-blue.hov:hover { background: #1355ff;}
 
 .btm-white {background: #FFFFFF; color: #0047FF;}
-.btm-white.hov:hover { background: #eaeefd;}
+.btm-white.hov:hover { background: #ffffff;}
 .btm-white svg {fill: #0047FF;}
 
 .btm-white-dlack {background: #FFFFFF; color: #000000;}
-.btm-white-dlack.hov:hover { background: #eaeefd;}
+.btm-white-dlack.hov:hover { background: #ffffff;}
 .btm-white-dlack svg {fill: #000000;}
 
 /* .btm-red {background: #FF0000; transition-duration: 0.5s;} */

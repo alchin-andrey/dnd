@@ -128,7 +128,7 @@ export default {
 }
 
 .text-size {
-	padding-right: 38px;
+	padding-right: 36px;
 }
 
 @media (max-width: 1279px) {
