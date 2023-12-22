@@ -1,9 +1,9 @@
 <template>
-	<article>
+	<article @mouseover="stopAnim()">
 		<div class="h-100"
 		:class="{
 			'btm-grey br-12 blur-60 pd-16 hov cur-p': !no_wrapp,
-			'animation--active': show_Animation,
+			'animation--vision': !no_wrapp && show_Animation,
 			}"
 		>
 			<AppCharCard welcom_char />
@@ -79,6 +79,10 @@ export default {
 		getLine(arr) {
 			return arr.map((el) => this.T(el)).join(", ");
 		},
+
+		stopAnim() {
+			this.welcome_page.back_anim = false;
+		},
 	}
 };
 </script>
@@ -95,11 +99,10 @@ export default {
 	border: 2px solid rgba(255, 255, 255, 0.20);
 }
 
-.animation--active  {
+/* .animation--active  {
   animation-name: active-back;
   animation-duration: 2s;
   animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-  /* animation-delay: 0.8s; */
 }
 
 @keyframes active-back{
@@ -107,5 +110,7 @@ export default {
 	20%{ background: rgba(255, 255, 255, 0.2); }
 	40%{ background: rgba(255, 255, 255, 0.2); }
 	100%{ background: rgba(255, 255, 255, 0.06); }
-}
+} */
+
+
 </style>

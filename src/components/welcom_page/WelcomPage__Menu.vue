@@ -6,7 +6,7 @@
 			name="lobby_menu_char"
 			link="#welcom-part1"
 			link_self
-			@click="close()"
+			@click="anim_Back()"
 			/>
 			<AppBtmLink 
 			name="lobby_menu_3" 
@@ -43,11 +43,9 @@ export default {
 		...mapState(usePagesStore, ["welcome_page"]),
 	},
 	methods: {
-    close() {
-			if(this.welcome_page.back_anim != true) {
-        this.welcome_page.back_anim = true;
-				setTimeout(() => this.welcome_page.back_anim = false, 2000);
-			}
+    anim_Back() {
+			this.welcome_page.back_anim = false
+			setTimeout(() => this.welcome_page.back_anim = true, 0.1);
     },
   },
 };
