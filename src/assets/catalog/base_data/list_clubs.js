@@ -4,8 +4,8 @@ export default {
     id: 5,
     name: "club_huhy_name",
     details: "club_huhy_details",
-    link_name: "@huhyclub",
-    link: "https://t.me/huhyclub",
+    link_name: "@huhyspace",
+    link: "https://t.me/huhyspace",
   },
 
   eneri: {
