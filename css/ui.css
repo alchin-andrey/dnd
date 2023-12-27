@@ -89,11 +89,11 @@
 .btm-blue.hov:hover { background: #1355ff;}
 
 .btm-white {background: #FFFFFF; color: #0047FF;}
-.btm-white.hov:hover { background: #eaeefd;}
+.btm-white.hov:hover { background: #ffffff;}
 .btm-white svg {fill: #0047FF;}
 
 .btm-white-dlack {background: #FFFFFF; color: #000000;}
-.btm-white-dlack.hov:hover { background: #eaeefd;}
+.btm-white-dlack.hov:hover { background: #ffffff;}
 .btm-white-dlack svg {fill: #000000;}
 
 /* .btm-red {background: #FF0000; transition-duration: 0.5s;} */
@@ -119,33 +119,3 @@
 }
 
 .stripe-item--active { background: #ffffff;}
-
-
-
-.animation--error-photo-upload  {
-  animation-name: active-back;
-  animation-duration: 1.8s;
-  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-  animation-delay: 0.1s;
-}
-
-@keyframes active-back{
-	0%{ background-color: rgba(255, 255, 255, 0.06); }
-	5%{ background-color: #FF0000; }
-	50%{ background-color: #FF0000; }
-	100%{ background-color: rgba(255, 255, 255, 0.06); }
-}
-
-.animation--error-char-upload  {
-  animation-name: error-char;
-  animation-duration: 1.8s;
-  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-  /* animation-delay: 0.1s; */
-}
-
-@keyframes error-char{
-	0%{ opacity: 0; }
-	5%{ opacity: 1; }
-	50%{ opacity: 1; }
-	100%{ opacity: 0; }
-}
