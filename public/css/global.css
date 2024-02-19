@@ -12,7 +12,9 @@ a.db {display: block;}
 .w-362 {width: 362px;}
 
 .h-18 {height: 18px;}
+.h-50 {height: 50px;}
 .h-min-18 {min-height: 18px;}
+.h-min-50 {min-height: 50px;}
 
 .flex-wrap {flex-wrap: wrap;}
 
@@ -177,6 +179,7 @@ a.db {display: block;}
 .mr-b-182 { margin-bottom: 182px; }
 
 .mr-l-15 { margin-left: 15px;}
+.mr-l-16 { margin-left: 16px;}
 .mr-l-32 { margin-left: 32px;}
 
 

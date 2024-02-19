@@ -3,11 +3,36 @@
 		<ClassParam__Stats />
 	</section>
 
-	<BaseStatsCard v-for="name in stats_Keys" :key="name" :stats_name="name" />
+	<section class="mr-b-24">
+		<div class="grid-col int-700">
+			<AppCardWrapp
+				v-for="btn in stats_btn"
+				:active_card="MY.custom_stats == btn.custom_stats"
+				@click="getStatsStatus(btn.custom_stats)"
+			class="h-50"
+			>
+				<div class="flex-row-sb-c h-100">
+					<span>{{ T(btn.name) }}</span>
+					<span class="white-02">{{ btn.numb }}</span>
+				</div>
+			</AppCardWrapp>
+		</div>
+		<div class="int-400 rare-text mr-t-8 mr-l-16" v-if="MY.custom_stats">{{ T("need_to_clarify") }}</div>
+	</section>
+
+	<!-- <section> -->
+		<template v-if="!MY.custom_stats">
+			<BaseStatsCard__Main v-for="name in stats_Keys" :key="name" :stats_name="name" />
+		</template>
+		<template v-else>
+			<BaseStatsCard__Custom v-for="name in stats_Keys" :key="name" :stats_name="name" v-model="MY.custom_stats_base_save[name]" />
+		</template>
+	<!-- </section> -->
 	
 	<transition name="fade">
 		<AppBtm
-			v-if="MY.stats_base_save[MY_Class.name]" 
+			class="mr-t-24"
+			v-if="show_Default_Btn" 
 			icon="return"
 			@click="defaultStats()"
 			name="refresh_to_recommended" 
@@ -16,7 +41,8 @@
 </template>
 
 <script>
-import BaseStatsCard from "@/components/settings/2_settings__class/BaseStatsCard.vue";
+import BaseStatsCard__Main from "@/components/settings/2_settings__class/BaseStatsCard__Main.vue";
+import BaseStatsCard__Custom from "@/components/settings/2_settings__class/BaseStatsCard__Custom.vue";
 import ClassParam__Stats from "@/components/parameters/2_param__class/ClassParam__Stats.vue";
 
 import { mapState } from "pinia";
@@ -25,27 +51,76 @@ import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
 	name: "ClassSett__BaseStats",
 	components: {
-		BaseStatsCard,
+		BaseStatsCard__Main,
+		BaseStatsCard__Custom,
 		ClassParam__Stats,
+	},
+	data() {
+		return {
+			stats_btn: [
+				{ name: "standard", numb: 72, custom_stats: false, },
+				{ name: "stats_custom", numb: 72, custom_stats: true, },
+			],
+		};
 	},
 	computed: {
 		// STORES
 		...mapState(useMYStore, ["MY", "MY_Class"]),
 		// GETTERS
-		...mapState(useStatsStore, ["stats_Keys"]),
+		...mapState(useStatsStore, ["stats_Keys", "stats_Base_Arr", "stats_base_numb"]),
+
+		show_Default_Btn() {
+			if(this.MY.custom_stats) {
+				const def_arr = this.MY_Class.stats_base;
+				for (const kay in def_arr) {
+					const index = def_arr.indexOf(def_arr[kay]);
+					const numb = this.stats_base_numb[index];
+					if (this.MY.custom_stats_base_save[def_arr[kay]] !== numb) return true;
+				}
+				return false;
+			} else {
+				return this.MY.stats_base_save[this.MY_Class.name];
+			}
+		},
+
 	},
 
 	methods: {
 		defaultStats() {
-			this.MY.stats_base_save[this.MY_Class.name] = null;
+			if(this.MY.custom_stats) {
+				this.getCustomStatsObj(this.MY_Class.stats_base);
+			} else {
+				this.MY.stats_base_save[this.MY_Class.name] = null;
+			}
 		},
+
+		getStatsStatus(bool) {
+			this.MY.custom_stats = bool;
+			if(this.MY.custom_stats && Object.keys(this.MY.custom_stats_base_save).length == 0) {
+				this.getCustomStatsObj(this.stats_Base_Arr);
+			}
+		},
+
+		getCustomStatsObj(arr) {
+			for (let kay in arr) {
+				let index = arr.indexOf(arr[kay]);
+				let numb = this.stats_base_numb[index];
+				this.MY.custom_stats_base_save[arr[kay]] = numb;
+			}
+		}
 	},
 };
 </script>
 
 <style scoped>
 .marg {
-	margin: 0 0 26px 16px;
+	margin: 0 0 24px 16px;
+}
+
+.grid-col {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px;
 }
 
 .fade-enter-active,

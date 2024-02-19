@@ -43,7 +43,7 @@ import { mapState } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
 export default {
-	name: "BaseStatsCard",
+	name: "BaseStatsCard__Main",
 	data() {
 		return {
 			stats_icon: stats_icon,

@@ -43,6 +43,8 @@ export default {
 	},
 
   stats_base_save: {},
+	custom_stats: false,
+	custom_stats_base_save: {},
 	
 	custom_photo: null,
 

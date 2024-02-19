@@ -21,6 +21,11 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "AppCustomName",
+	data() {
+		return {
+			inputValue: "",
+		};
+	},
 	props: {
 		modelValue: {
 			type: String,
