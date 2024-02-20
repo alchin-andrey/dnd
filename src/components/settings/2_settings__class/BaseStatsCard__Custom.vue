@@ -124,10 +124,10 @@ input[type="text"] {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	/* padding: 0 14px;
+	padding: 0 14px;
 	display: flex;
 	align-items: center;
-	height: 100%; */
+	height: 100%;
 }
 
 ::placeholder {
