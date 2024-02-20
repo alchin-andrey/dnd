@@ -222,14 +222,17 @@ export default {
 		},
 
 		cube_Negative() {
-			return (this.numb + this.pls) < 0 ? Math.abs(this.numb + this.pls) : null;
-			// return this.numb < 0 ? Math.abs(this.numb) : null;
+			if (this.dice) return null;
+			if (this.pls) return null;
+			return this.numb < 0 ? Math.abs(this.numb) : null;
 		},
 
 		cube_Numb_Zero() {
 			if (this.dice) {
 				// return this.dice * (this.numb + this.pls) - (this.numb + this.pls);
-				return this.dice * this.numb - this.numb;
+				const dice_num = this.dice * this.numb;
+				if (this.pls < 0) return dice_num - Math.abs(this.pls);
+				return dice_num - this.numb;
 			}
 		},
 
