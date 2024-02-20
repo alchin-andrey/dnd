@@ -8,11 +8,11 @@
 				{{ t_Title }}<span>{{ t_Type }}</span>
 			</div>
 		</div>
-		<div class="btm-grey hov br-l-12 pd-14 int-700 liner">
+		<div class="btm-grey hov br-l-12 int-700 liner">
 			<input 
 			size="1" 
 			spellcheck="false" 
-			class="liner" 
+			class="liner pd-14" 
 			v-model="inputValue" 
 			type="text" 
 			/>
@@ -96,11 +96,14 @@ export default {
 	border-radius: 12px;
 	border: 2px solid rgba(255, 255, 255, 0.06);
 	overflow: hidden;
+	max-height: 47px;
+	min-height: 47px;
 }
 
 .grid-col {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	/* grid-template-rows: 47px; */
 	gap: 8px;
 }
 
