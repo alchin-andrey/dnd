@@ -231,7 +231,10 @@ export default {
 			if (this.dice) {
 				// return this.dice * (this.numb + this.pls) - (this.numb + this.pls);
 				const dice_num = this.dice * this.numb;
-				if (this.pls < 0) return dice_num - Math.abs(this.pls);
+				if (this.pls < 0) {
+					const res = dice_num - Math.abs(this.pls);
+					return res > 0 ? res : null;
+				} 
 				return dice_num - this.numb;
 			}
 		},
