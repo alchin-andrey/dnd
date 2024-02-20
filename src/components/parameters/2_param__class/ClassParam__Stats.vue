@@ -187,7 +187,10 @@ export default {
 		cube_Negative_Save: (stor) => (name) => {
 			let save = stor.stats_Save_Mod(name);
 			let mod = stor.stats_Mod(name);
-			return save + mod < 0 ? Math.abs(mod) : null;
+			if (save > 0) return null;
+			if (mod < 0) return Math.abs(mod);
+			else null;
+			// return save + mod < 0 ? Math.abs(mod) : null;
 		},
 
 		max_Numb: (stor) => (name) => {
