@@ -1,5 +1,10 @@
 <template>
-	<AppCardWrapp no_blur :active_card="active_boll_link" :banned="pass_boll_link">
+	<AppCardWrapp 
+	no_blur 
+	:active_card="active_boll_link" 
+	:banned="pass_boll_link"
+	:no_pd="shown_CustomName"
+	>
 		<!-- //NOTE - Text -->
 		<my-card-text
 			v-if="custom.name || custom.details"
@@ -13,6 +18,7 @@
 		v-model="MY._settings_custom_name[id_link]"
 		:save_setting="save_setting"
 		:id_link="id_link"
+		:active_card="active_boll_link" 
 		/>
 
 		<!-- //NOTE - Stats -->

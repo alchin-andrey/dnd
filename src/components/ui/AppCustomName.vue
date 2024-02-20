@@ -5,7 +5,10 @@
 				@keyup="getCustomName()"
 				spellcheck="false"
 				class="int-700"
-				:class="{ liner: modelValue }"
+				:class="[ 
+				style_Pd,
+				{ liner: modelValue,}
+				]"
 				v-model="inputValue"
 				type="text"
 				maxlength="60"
@@ -39,6 +42,10 @@ export default {
 			type: String,
 			default: null,
 		},
+		active_card: {
+      type: Boolean,
+      default: false,
+    },
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
@@ -51,6 +58,11 @@ export default {
     t_Placeholder() {
 			return this.T("your_option");
 		},
+
+		style_Pd() {
+			if(this.active_card) return 'pd-rl-14 btm-select'
+			else return 'pd-rl-16'
+		}
 
 	},
 	methods: {
@@ -98,6 +110,10 @@ input[type="text"] {
   white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	display: flex;
+	align-items: center;
+	height: 47px;
+	border-radius: 12px;
 }
 
 ::placeholder {
@@ -118,4 +134,12 @@ input[type="text"] {
   cursor: pointer;
 	margin-bottom: 3px;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+select:focus, textarea:focus, input:focus {
+        font-size: 16px;
+				line-height: 18px;
+    }
+}
+
 </style>

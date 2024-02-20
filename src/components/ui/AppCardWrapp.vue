@@ -6,9 +6,10 @@
       {
         'hov cur-p': !passive && !banned,
         'pos-rel': icon,
-        'card-select': active_card,
+        'card-select': active_card && !no_pd,
         'cur-ban': banned,
 				'blur-60': !no_blur,
+        'pd-0': no_pd,
       },
     ]"
   >
@@ -50,6 +51,10 @@ export default {
 			type: Boolean,
 			default: false,
     },
+    no_pd: {
+      type: Boolean,
+			default: false,
+    }
   },
   computed: {
     class_Gap() {
