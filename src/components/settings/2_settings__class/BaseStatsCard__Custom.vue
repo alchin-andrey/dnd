@@ -12,7 +12,7 @@
 			<input 
 			size="1" 
 			spellcheck="false" 
-			class="liner pd-14" 
+			class="liner" 
 			v-model="inputValue" 
 			type="text" 
 			/>
@@ -124,6 +124,10 @@ input[type="text"] {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	padding: 0 14px;
+	display: flex;
+	align-items: center;
+	height: 100%;
 }
 
 ::placeholder {
@@ -171,5 +175,12 @@ input::-webkit-inner-spin-button {
 .item span {
 	margin-left: 8px;
 	color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+select:focus, textarea:focus, input:focus {
+        font-size: 16px;
+				line-height: 18px;
+    }
 }
 </style>
