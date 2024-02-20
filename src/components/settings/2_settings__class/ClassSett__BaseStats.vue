@@ -17,7 +17,7 @@
 				</div>
 			</AppCardWrapp>
 		</div>
-		<div class="int-400 rare-text mr-t-8 mr-l-16" v-if="MY.custom_stats">{{ T("need_to_clarify") }}</div>
+		<div class="int-400 rare-text mr-t-8 mr-l-16" v-if="MY.custom_stats">{{ T("rare_details") }}</div>
 	</section>
 
 	<!-- <section> -->

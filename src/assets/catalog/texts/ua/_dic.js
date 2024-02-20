@@ -6383,4 +6383,6 @@ export default {
 
   continue: "Продовжити",
   download_cta: "Скачай аркуш персонажа",
+
+  stats_custom: "Про",
 };
