@@ -28,6 +28,10 @@
 							>{{ base_Numb(name) }}</span>
 					</div>
 				</div>
+
+				<!-- --------------------- -->
+
+
 				<div class="mod">
 					<div
 						class="mod_numb"
@@ -53,6 +57,12 @@
 						></div>
 					</div>
 				</div>
+
+
+				<!-- --------------------- -->
+
+
+
 				<div class="mod">
 					<div
 						class="mod_numb"
@@ -159,7 +169,9 @@ export default {
 			let save = stor.stats_Save(name);
 			let mod = stor.stats_Mod(name);
 			if (save && mod < 0) {
-				return save - Math.abs(mod);
+				let res = save - Math.abs(mod);
+				if (res < 0) return null;
+				else return res;
 			} else if (save) {
 				return save;
 			} else {

@@ -13,7 +13,7 @@
 			>
 				<div class="flex-row-sb-c h-100">
 					<span>{{ T(btn.name) }}</span>
-					<span class="white-02">{{ btn.numb }}</span>
+					<span class="white-02">{{ stats_Sum(btn.custom_stats) }}</span>
 				</div>
 			</AppCardWrapp>
 		</div>
@@ -83,6 +83,17 @@ export default {
 			}
 		},
 
+		stats_Custom_Sum() {
+			const numb_arr = Object.values(this.MY.custom_stats_base_save);
+			if(numb_arr.length == 0) return 72;
+			let sum = numb_arr.reduce((a, b) => a + b, 0);
+			return sum;
+		},
+
+		stats_Sum: (stor) => (bool) =>  {
+			if(bool) return stor.stats_Custom_Sum
+			else return 72
+		}
 	},
 
 	methods: {
@@ -102,10 +113,9 @@ export default {
 		},
 
 		getCustomStatsObj(arr) {
-			for (let kay in arr) {
-				let index = arr.indexOf(arr[kay]);
-				let numb = this.stats_base_numb[index];
-				this.MY.custom_stats_base_save[arr[kay]] = numb;
+			for (let i in arr) {
+				let numb = this.stats_base_numb[i];
+				this.MY.custom_stats_base_save[arr[i]] = numb;
 			}
 		}
 	},

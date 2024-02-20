@@ -209,32 +209,26 @@ export default {
 			return (icon || atribute_icon) && !this.no_icon;
 		},
 
-		// icon_Image() {
-		// 	if (this.icon === null) {
-		// 		return null;
-		// 	} else if (this.numb > 0) {
-		// 		return require(`@/assets/img/icon/atribute/${this.icon}_active.svg`);
-		// 	} else {
-		// 		return require(`@/assets/img/icon/atribute/${this.icon}_passive.svg`);
-		// 	}
-		// },
-
 		cube_Numb() {
 			if (this.feet) {
 				return Math.ceil(this.numb / 5);
 			} else if (this.numb < 0 || this.save_bool) {
 				return null;
 			} else {
-				return Math.floor(this.numb) + this.pls;
+				const cube_numb = Math.floor(this.numb) + this.pls;
+				if(cube_numb < 0) return null;
+				else return cube_numb
 			}
 		},
 
 		cube_Negative() {
-			return this.numb < 0 ? Math.abs(this.numb) : null;
+			return (this.numb + this.pls) < 0 ? Math.abs(this.numb + this.pls) : null;
+			// return this.numb < 0 ? Math.abs(this.numb) : null;
 		},
 
 		cube_Numb_Zero() {
 			if (this.dice) {
+				// return this.dice * (this.numb + this.pls) - (this.numb + this.pls);
 				return this.dice * this.numb - this.numb;
 			}
 		},
