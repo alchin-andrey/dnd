@@ -10,13 +10,13 @@
 		</div>
 		<div class="btm-grey hov br-l-12 int-700 liner">
 			<input 
-			:ref="stats_name"
 			size="1" 
 			spellcheck="false" 
 			class="liner" 
 			v-model="inputValue" 
 			type="text" 
 			onclick="this.setSelectionRange(0, this.value.length)"
+			inputmode="numeric"
 			/>
 		</div>
 	</div>
@@ -74,7 +74,7 @@ export default {
 				if (newValue == '') {
 					this.inputValue = 0;
 					this.MY.custom_stats_base_save[this.stats_name] = 0;
-				} else if (Number(newValue) == NaN) {
+				} else if (Number(newValue) == NaN || newValue.includes('+') || newValue.includes(',') || newValue.includes('.')) {
 					this.inputValue = oldValue;
 				} else if (Number(newValue) >= 0 && Number(newValue) <= 20) {
 					if (newValue[0] == '0' && newValue.length > 1) newValue = newValue.slice(1);
@@ -95,29 +95,7 @@ export default {
 				}
 			},
 		},
-		// inputValue: {
-		// 	handler(newValue, oldValue) {
-		// 		if (newValue == '') {
-		// 			this.inputValue = 0;
-		// 			this.MY.custom_stats_base_save[this.stats_name] = 0;
-		// 		} else if (Number(newValue) == NaN) {
-		// 			this.inputValue = oldValue;
-		// 		} else if (Number(newValue) >= 0 && Number(newValue) <= 20) {
-		// 			console.log('oldValue:', oldValue)
-		// 			console.log('newValue:', newValue)
-		// 			if (newValue[0] == '0' && newValue.length > 1) newValue = newValue.slice(1);
-		// 			if (oldValue == '0' && newValue.length > 1) newValue = newValue.slice(0, -1);
-		// 			this.MY.custom_stats_base_save[this.stats_name] = Number(newValue);
-		// 			this.inputValue = newValue;
-		// 		} else if (Number(newValue) >= 0 && oldValue == '0' && newValue.length > 1) {
-		// 			newValue = newValue.slice(0, -1);
-		// 			this.MY.custom_stats_base_save[this.stats_name] = Number(newValue);
-		// 			this.inputValue = newValue;
-		// 		} else {
-		// 			this.inputValue = oldValue;
-		// 		}
-		// 	},
-		// },
+
 	},
 
 	methods: {
