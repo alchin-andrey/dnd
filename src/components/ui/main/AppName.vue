@@ -1,29 +1,27 @@
 <template>
 	<div class="mr-b-18 h-100">
-	<div class="jbm-300 mr-b-36" v-if="screen_Max">{{ numb }}</div>
-  <main class="flex-row gap-14">
-		<div class="stripe-item--slider" v-if="!screen_Max" />
-    <div class="flex-row-end-sb gap-4 w-100">
-			<section class="w-100">
+		<div class="jbm-300 mr-b-36" v-if="screen_Max">{{ numb }}</div>
+		<main class="flex-row gap-14">
+			<div class="stripe-item--slider" v-if="!screen_Max" />
+			<div class="flex-row-end-sb gap-4 w-100">
+				<section class="w-100">
 					<div class="jbm-300">{{ t_Title }}</div>
-					<input
-						size="1"
-						@keyup="getName()"
-						spellcheck="false"
+					<input size="1" 
+						@keyup="getName()" 
+						spellcheck="false" 
 						class="int-700-20 mr-t-4"
-						:class="{ liner: inputValue !== '' }"
-						v-model="inputValue"
-						type="text"
-						maxlength="20"
-						:placeholder="t_Placeholder"
-						onfocus="this.select()"
+						:class="{ liner: inputValue !== '' }" 
+						v-model="inputValue" type="text" maxlength="20"
+						:placeholder="t_Placeholder" 
+						onfocus="this.setSelectionRange(0, this.value.length)"
+						@blur="stopSelectTexe()" 
 					/>
-			</section>
-			<section :class="style_Icon" @click="randomName()">
-				<AppSvg class="svg-18 svg-main-f" name="return"/>
-			</section>
-		</div>
-  </main>
+				</section>
+				<section :class="style_Icon" @click="randomName()">
+					<AppSvg class="svg-18 svg-main-f" name="return" />
+				</section>
+			</div>
+		</main>
 	</div>
 </template>
 
@@ -62,17 +60,18 @@ export default {
 			return this.t(this.title);
 		},
 
-    t_Placeholder() {
+		t_Placeholder() {
 			return this.t("name_placeholder");
 		},
 
 		style_Icon() {
-			if(this.screen_Max) return 'main-icon'
+			if (this.screen_Max) return 'main-icon'
 			else return 'btm-round hov'
 		}
 	},
 	methods: {
-    ...mapActions(useGenderStore, ["getRandomName"]),
+		...mapActions(useGenderStore, ["getRandomName"]),
+		...mapActions(usePagesStore, ["stopSelectTexe"]),
 
 		randomName() {
 			this.getRandomName();
@@ -83,6 +82,7 @@ export default {
 			this.MY.name = this.inputValue;
 			this.MY.param.user_name = true;
 		},
+
 	},
 	watch: {
 		modelValue: {
@@ -113,9 +113,9 @@ input[type="text"] {
 	-khtml-border-radius: 0;
 	background: #0e1518 !important;
 	outline: none;
-  color: #ffffff;
+	color: #ffffff;
 	width: 100%;
-  white-space: nowrap;
+	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -132,10 +132,11 @@ input[type="text"] {
 ::-ms-input-placeholder {
 	color: rgba(255, 255, 255, 0.2);
 }
+
 .main-icon {
 	width: 18px;
 	height: 18px;
-  cursor: pointer;
+	cursor: pointer;
 	margin-bottom: 3px;
 }
 </style>

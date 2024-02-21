@@ -13,13 +13,14 @@
 				type="text"
 				maxlength="60"
 				:placeholder="t_Placeholder"
-				onfocus="this.select()"
+				onfocus="this.setSelectionRange(0, this.value.length)"
+				@blur="stopSelectTexe()" 
 			/>
 	</section>
 </template>
 
 <script>
-import { mapState } from "pinia";
+import { mapState, mapActions } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 
@@ -67,6 +68,8 @@ export default {
 
 	},
 	methods: {
+		...mapActions(usePagesStore, ["stopSelectTexe"]),
+
 		getCustomName() {
 			const arr = this.MY[this.save_setting][this.id_link];
 			this.MY._settings_custom_name[this.id_link] = this.inputValue;

@@ -16,7 +16,7 @@
 			class="liner" 
 			v-model="inputValue" 
 			type="text" 
-			onclick="this.select()"
+			onclick="this.setSelectionRange(0, this.value.length)"
 			/>
 		</div>
 	</div>
