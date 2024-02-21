@@ -12,7 +12,9 @@ a.db {display: block;}
 .w-362 {width: 362px;}
 
 .h-18 {height: 18px;}
+.h-50 {height: 50px;}
 .h-min-18 {min-height: 18px;}
+.h-min-50 {min-height: 50px;}
 
 .flex-wrap {flex-wrap: wrap;}
 
@@ -107,6 +109,7 @@ a.db {display: block;}
 .gap-40 { gap: 40px; }
 .gap-52 { gap: 52px; }
 
+.pd-0 { padding: 0px; }
 .pd-2 { padding: 2px; }
 .pd-14 { padding: 14px; }
 .pd-16 { padding: 16px; }
@@ -115,6 +118,7 @@ a.db {display: block;}
 
 .pd-rlb-32 {padding: 0 32px 32px;}
 
+.pd-rl-14 {padding: 0 14px;}
 .pd-rl-16 {padding: 0 16px;}
 .pd-rl-20 {padding: 0 20px;}
 .pd-rl-24 {padding: 0 24px;}
@@ -177,6 +181,7 @@ a.db {display: block;}
 .mr-b-182 { margin-bottom: 182px; }
 
 .mr-l-15 { margin-left: 15px;}
+.mr-l-16 { margin-left: 16px;}
 .mr-l-32 { margin-left: 32px;}
 
 
