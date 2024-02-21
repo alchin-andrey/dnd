@@ -6,11 +6,19 @@
 
       <Blank__Page_2 class="print-page int-400-22 var-blank--print" id="print-page-2" :blank_print="MY.param.blank_print"
         v-if="PRINT_WORK" />
-
+        
+    <template v-if="list_Main_Spells_Arr.length !== 0">
       <main class="print-page int-400-22" v-for="arr, i in list_Main_Spells_Arr" :key="arr" :id="`print-page-3.${i + 1}`">
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min var-blank--print" v-if="i == 0" />
           <AppSpells class="cell-spell mr-min" v-for="item in arr" :key="item" :spell_obj="item" blank_print />
+        </section>
+      </main>
+    </template>
+
+      <main class="print-page int-400-22" v-if="list_Main_Spells_Arr.length == 0" id="print-page-3.1">
+        <section class="col-wrap-spell">
+          <BlankTable__List_3 id="table_list_3" class="main-table mr-min var-blank--print" />
         </section>
       </main>
 
@@ -119,6 +127,7 @@ export default {
     list_Main_Spells_Arr() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM__Main;
       const h_table_main = 1324;
+      console.log('this.spellTitleList(spell_arr, h_table_main):', this.spellTitleList(spell_arr, h_table_main))
       return this.spellTitleList(spell_arr, h_table_main);
     },
 
