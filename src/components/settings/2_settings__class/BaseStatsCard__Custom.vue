@@ -70,24 +70,28 @@ export default {
 		},
 		inputValue: {
 			handler(newValue, oldValue) {
+				console.log('oldValue:', oldValue)
+				console.log('newValue:', newValue)
+				// console.log('newValue:', newValue)
 				if (newValue == '') {
 					this.inputValue = 0;
 					this.MY.custom_stats_base_save[this.stats_name] = 0;
-					let input = this.$refs[this.stats_name];
-					// console.log('input:', input)
-					input.focus();
-					input.selectionStart = input.value.length;
 				} else if (Number(newValue) == NaN) {
 					this.inputValue = oldValue;
 				} else if (Number(newValue) >= 0 && Number(newValue) <= 20) {
 					if (newValue[0] == '0' && newValue.length > 1) newValue = newValue.slice(1);
-					// if (oldValue == '0' && newValue.length > 1) newValue = newValue.slice(0, -1);
+					if (oldValue == '0' && newValue.length > 1) newValue = newValue.slice(0, -1);
 					this.MY.custom_stats_base_save[this.stats_name] = Number(newValue);
 					this.inputValue = newValue;
-				// } else if (Number(newValue) >= 0 && oldValue == '0' && newValue.length > 1) {
-				// 	newValue = newValue.slice(0, -1);
-				// 	this.MY.custom_stats_base_save[this.stats_name] = Number(newValue);
-				// 	this.inputValue = newValue;
+				} else if (Number(newValue) >= 0 && oldValue == '0' && newValue.length > 1) {
+					newValue = newValue.slice(0, -1);
+					this.MY.custom_stats_base_save[this.stats_name] = Number(newValue);
+					this.inputValue = newValue;
+				} else if (Number(newValue) > 20) {
+					if(newValue.length == 2) newValue = newValue.slice(1)
+					if(newValue.length == 3) newValue = newValue.slice(2);
+					this.MY.custom_stats_base_save[this.stats_name] = Number(newValue);
+					this.inputValue = newValue;
 				} else {
 					this.inputValue = oldValue;
 				}
