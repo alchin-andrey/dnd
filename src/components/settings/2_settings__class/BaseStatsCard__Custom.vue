@@ -71,9 +71,6 @@ export default {
 		},
 		inputValue: {
 			handler(newValue, oldValue) {
-				console.log('oldValue:', oldValue)
-				console.log('newValue:', newValue)
-				// console.log('newValue:', newValue)
 				if (newValue == '') {
 					this.inputValue = 0;
 					this.MY.custom_stats_base_save[this.stats_name] = 0;
