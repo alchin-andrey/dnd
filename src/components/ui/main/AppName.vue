@@ -16,6 +16,7 @@
 						type="text"
 						maxlength="20"
 						:placeholder="t_Placeholder"
+						onfocus="this.select()"
 					/>
 			</section>
 			<section :class="style_Icon" @click="randomName()">

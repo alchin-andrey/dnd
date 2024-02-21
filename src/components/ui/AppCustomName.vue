@@ -13,6 +13,7 @@
 				type="text"
 				maxlength="60"
 				:placeholder="t_Placeholder"
+				onfocus="this.select()"
 			/>
 	</section>
 </template>
