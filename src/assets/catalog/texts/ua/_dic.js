@@ -20,7 +20,7 @@ export default {
     '<p><a target="_blank" href="https://t.me/dimalagoda">@ Dima Lagoda, Product Designer</a> — ідея, дизайн, контент</p>' +
     '<p><a target="_blank" href="https://t.me/Ki3iL">@ Andrii Alchin, Frontend Developer</a> — код</p>' +
     '<p><a target="_blank" href="https://t.me/godblessdnd">@ Andrii Pavlov, Найкращий Майстер Києва</a> — валідація</p>' +
-    '<p><a target="_blank" href="https://t.me/kjnchka">@ Evgenia Lagoda</a> — позаштатний радник ❤️.</p>',
+    '<p><a target="_blank" href="https://t.me/kjnchka">@ Jane Lagoda</a> — позаштатний радник ❤️.</p>',
 
     thank_you: 'На отримані кошти ми будемо додавати функції та розширювати довідники. Вторгнення ₚосії в Україну триває, тому 50% донатів ми відправляємо у фонд "<a target="_blank" href="https://savelife.in.ua">Повернись Живим</a>".',
 
