@@ -2333,7 +2333,7 @@ export default {
     // stats: {strength: 2,charisma: 1,},
     stats: [
       { name: "strength", num: 2, },
-      { name: "constitution", num: 1, },
+      { name: "charisma", num: 1, },
   ],
 
     // qualities: { speed: 30 },
