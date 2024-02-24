@@ -985,7 +985,7 @@ export default {
 
   // Dragonborn
 
-  dragonborn: "драконороджений",
+  dragonborn: "драконич",
   dragonborn_details: races.dragonborn,
 
   red_dragonborn: "червоний",
