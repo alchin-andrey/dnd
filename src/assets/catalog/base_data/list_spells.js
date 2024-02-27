@@ -12765,7 +12765,6 @@ export default {
       expanded: "spell_dissapear_expanded",
 
       type: "ability",
-      slot_type: "dissapear_slot",
       classes: [],
 
       cast_time: "action",
