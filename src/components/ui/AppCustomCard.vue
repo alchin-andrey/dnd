@@ -67,7 +67,7 @@
 				/>
 				<my-card-text
 					v-if="skill.details && setting_name == 'skills'"
-					:text_html="skill.details"
+					:text="skill.details"
 				/>
 			</AppWrapper>
 		</AppWrapper>
