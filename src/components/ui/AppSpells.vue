@@ -1018,7 +1018,7 @@ export default {
 
     Num_Lvl_Plus_CHA() {
       let lvl = this.MY.level;
-      let mod = this.stats_Mod("intelligence");
+      let mod = this.stats_Mod("charisma");
       return lvl + mod;
     },
 
