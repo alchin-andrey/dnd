@@ -2294,8 +2294,8 @@ export default {
   use_somatic: "Використання Жестів",
   in_taken_hands: "зайнятими руками",
 
-  cast_reaction: "Реакція як Каст",
-  for_spells_action: "для заклять з Кастом Основна | Бонусна дія",
+  cast_reaction: "Можливість швидко використати закляття",
+  for_spells_action: "замість провокованої атаки. Діє для заклять з Кастом Основна або Бонусна дія",
 
   feat_grappler: "Борець",
   feat_grappler_details:
