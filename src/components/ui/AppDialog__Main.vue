@@ -11,8 +11,8 @@
         @click.stop
         @click="mainHideDialog"
       >
-        <div class="pos-rel">
-          <div class="btm-wrapp" v-if="!screen_Max">
+        <div class="pos-rel pos-scroll">
+          <div class="btm-wrapp pos-rel" v-if="!screen_Max">
             <div class="btm-round" @click="hideDialog()">
               <AppSvg class="svg-18 svg-main-f" name="close" />
             </div>
@@ -137,6 +137,10 @@ export default {
     background-color: #0e1518;
     justify-content: start;
     align-items: center;
+  }
+
+  .pos-scroll {
+    overflow-y: scroll;
   }
 
   .dialog__wrapp {
