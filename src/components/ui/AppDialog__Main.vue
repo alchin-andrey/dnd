@@ -133,7 +133,7 @@ export default {
 
 @media (max-width: 1279px) {
   .dialog {
-    padding: 0 0 32px 0;
+    padding: 0 0 4px 0;
     background-color: #0e1518;
     justify-content: start;
     align-items: center;
