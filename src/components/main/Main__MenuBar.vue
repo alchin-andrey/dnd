@@ -159,8 +159,9 @@ export default {
 	}
 
 	.main-menu-wrap {
-		overflow-y: visible;
-		overflow-x: visible;
+		/* overflow-y: visible; */
+		/* overflow-x: visible; */
+		overflow: visible;
 	}
 
 	.main-chapter-menu {

@@ -145,10 +145,12 @@ export default {
 
 @media (max-width: 1279px) {
 	.main-class {
-		display: flex;
-		justify-content: center;
+		display: block;
+		/* display: flex; */
+		/* justify-content: center; */
+		max-width: 434px;
+		margin: 0 auto;
 		height: 100%;
-		width: 100%;
 		overflow-y: scroll;
 		scrollbar-width: none;
 		scroll-behavior: smooth;
