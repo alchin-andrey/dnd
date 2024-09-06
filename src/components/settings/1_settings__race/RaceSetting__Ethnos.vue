@@ -3,7 +3,7 @@
   <AppSrdDisclaimer/>
 	<div class="flex-col gap-26 pd-l-16">
 		<!-- Ethnos_stats + qualities -->
-		<AppWrapper v-if="MY_Race.stats || level_Filter_Arr(MY_Race.qualities).length !== 0">
+		<AppWrapper v-if="MY_Race.stats || MY_Race.skills || level_Filter_Arr(MY_Race.qualities).length !== 0">
 			<AppStats
 				v-for="stat in MY_Race.stats"
 				:key="stat.name"
@@ -12,6 +12,12 @@
 				plus
 				:numb="stat.num"
 			/>
+			<AppSkills 
+				v-for="skill in MY_Race.skills"
+				:title="skill.name" 
+				:numb="this[skill.num]"
+				param
+				/>
       <my-attribute
 					v-for="qual in level_Filter_Arr(MY_Race.qualities)"
 					:key="qual"
@@ -83,7 +89,7 @@ export default {
 	},
 
 	computed: {
-		...mapState(useMYStore, ["MY", "MY_Race", "level_Filter_Arr"]),
+		...mapState(useMYStore, ["MY", "Mastery", "MY_Race", "level_Filter_Arr"]),
 		...mapState(useProficienciesStore, ["proficiencies_Arr_Race"]),
     ...mapState(useChargesStore, ["charges_Race_Main_Arr"]),
     ...mapState(useMainStore, ["srd"]),
