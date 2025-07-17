@@ -5,6 +5,7 @@ on:
     branches:
       - stop 
       # - master
+      
 
 jobs:
   build:
