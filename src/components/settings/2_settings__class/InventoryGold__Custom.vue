@@ -8,23 +8,21 @@
         <div>{{ t_Text }}</div>
       </div>
 
-			<div
-				class="reset_btm"
-				:class="{ reset_btm_custom: !gold_Reset }"
-				@click="resetGold()"
-			>
-				<AppSvg class="svg-18 svg-main-f" name="return" />
-			</div>
-
+      <div
+        class="reset_btm"
+        :class="{ reset_btm_custom: !gold_Reset }"
+        @click="resetGold"
+      >
+        <AppSvg class="svg-18 svg-main-f" name="return" />
+      </div>
     </div>
+
     <div class="card-main flex-row-c flex-no-grow br-r-12 pd-0 w-96">
       <input
-      type="text"
-      v-model="inputValue"
-      @input="handleInput"
-      @blur="normalizeValue"
-      placeholder="Введите число от 0 до 9999"
-    />
+        type="text"
+        v-model="inputValue"
+        placeholder="Введите число"
+      />
     </div>
   </div>
 </template>
@@ -36,68 +34,61 @@ import { useMYStore } from "@/stores/user/MYStore";
 
 export default {
   name: "InventoryGold__Custom",
+
   data() {
     return {
-      inputValue: '',
-      number: 0
-    }
+      inputValue: ''
+    };
   },
-  mounted() {
-    this.inputValue = this.gold_Equip_All?.toString() ?? '';
-    this.number = this.gold_Equip_All ?? 0;
-  },
+
   computed: {
     ...mapState(useEquipStore, [
       "gold_Equip_All",
       "gold_Equip_All_Default",
     ]),
-    ...mapState(useMYStore, [
-      "MY"
-    ]),
+    ...mapState(useMYStore, ["MY"]),
+
     t_Text() {
-			return this.T("coin_gold");
-		},
+      return this.T("coin_gold");
+    },
 
     gold_Reset() {
-			return this.gold_Equip_All !== this.gold_Equip_All_Default;
-		},
-
+      return this.gold_Equip_All !== this.gold_Equip_All_Default;
+    }
   },
 
-    methods: {
-    handleInput(e) {
-      const raw = e.target.value;
-      const numericOnly = raw.replace(/\D/g, '');
+  watch: {
+    inputValue(val) {
+      const numeric = val.replace(/\D/g, '');
+      let num = parseInt(numeric, 10);
 
-      if (numericOnly === '') {
-        this.inputValue = '0';
-        this.number = 0;
-        this.MY.param.user_gold = 0;
-        return;
+      if (isNaN(num) || numeric === '') {
+        num = 0;
+      } else if (num > 9999999) {
+        num = 9999999;
       }
 
-      let num = parseInt(numericOnly, 10);
-
-      if (isNaN(num)) return;
-      if (num > 9999999) num = 9999999;
-
-      this.inputValue = num.toString();
-      this.number = num;
       this.MY.param.user_gold = num;
-    },
-    normalizeValue() {
-      if (this.inputValue === '') {
-        this.number = 0;
-        this.inputValue = '0';
-        this.MY.param.user_gold = 0;
+
+      const corrected = num.toString();
+      if (this.inputValue !== corrected) {
+        this.inputValue = corrected;
       }
     },
 
+    'MY.param.user_gold': {
+      immediate: true,
+      handler(newVal) {
+        const value = newVal ?? this.gold_Equip_All ?? 0;
+        this.inputValue = value.toString();
+      }
+    }
+  },
+
+  methods: {
     resetGold() {
-			this.MY.param.user_gold = null;
-      this.inputValue = this.gold_Equip_All?.toString() ?? '';
-      this.number = this.gold_Equip_All ?? 0;
-		},
+      this.MY.param.user_gold = null;
+    }
   }
 };
 </script>
