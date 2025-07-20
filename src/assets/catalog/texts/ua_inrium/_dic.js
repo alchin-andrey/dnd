@@ -6385,4 +6385,9 @@ export default {
   download_cta: "Скачай аркуш персонажа",
 
   stats_custom: "Про",
+
+  extra_inventory: "Золото та додаткове спорядження",
+  inventory_name_length: "Рекомендована довжина назви — до 18 символів.",
+  items_available: "пунктів доступно",
+  items_used: "пунктів",
 };
