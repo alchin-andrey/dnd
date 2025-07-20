@@ -138,6 +138,7 @@ export default {
 }
 
 .reset_color_custom {
+	cursor:  auto;
 	opacity: 0;
 	transform: rotate(-180deg);
 }

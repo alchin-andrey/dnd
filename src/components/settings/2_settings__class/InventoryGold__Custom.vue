@@ -138,6 +138,7 @@ input[type="text"] {
 }
 
 .reset_btm_custom {
+  cursor:  auto;
 	opacity: 0;
 	transform: rotate(-180deg);
 }
