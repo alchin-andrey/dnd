@@ -33,10 +33,16 @@ export const useEquipStore = defineStore({
 		},
 
     gold_Equip_Numb: (stor) => (obj_arr) => {
-      const MYStore = useMYStore();
+			const MYStore = useMYStore();
       const eqip_lvl = MYStore.level_Filter_Arr(obj_arr);
-      const res = eqip_lvl.reduce((acc, el) => el.gold ? acc + el.gold : acc, 0);
-      return res;
+      const regular_gold = eqip_lvl.reduce((acc, el) => el.gold ? acc + el.gold : acc, 0);
+      return regular_gold;
+    },
+
+		gold_Equip_Numb_User: (stor) => (obj_arr) => {
+      const MYStore = useMYStore();
+			const user_gold = MYStore.MY.param.user_gold
+      return user_gold ?? stor.gold_Equip_Numb(obj_arr);
     },
     // !SECTION - Tootal
 
@@ -90,7 +96,7 @@ export const useEquipStore = defineStore({
 		},
 
     gold_Equip_Race() {
-			return this.gold_Equip_Numb(this.equipments_Race_Params);
+			return this.gold_Equip_Numb_User(this.equipments_Race_Params);
 		},
     // !SECTION - Race
 
@@ -132,7 +138,7 @@ export const useEquipStore = defineStore({
 		},
 
     gold_Equip_Class() {
-			return this.gold_Equip_Numb(this.equipments_Class_Params);
+			return this.gold_Equip_Numb_User(this.equipments_Class_Params);
 		},
     // !SECTION - Castom
 
@@ -167,8 +173,12 @@ export const useEquipStore = defineStore({
 			return this.item_Equip_All_Arr("armor");
 		},
 
-    gold_Equip_All() {
+		gold_Equip_All_Default() {
 			return this.gold_Equip_Numb(this.equipments_All_Params);
+		},
+
+    gold_Equip_All() {
+			return this.gold_Equip_Numb_User(this.equipments_All_Params);
 		},
 
     inventory_Equip_Print() {

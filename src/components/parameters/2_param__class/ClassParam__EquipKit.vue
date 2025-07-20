@@ -8,6 +8,7 @@
     :packs="packs_Equip_Class"
 
     :gold="gold_Equip_All"
+		:no_gold="no_gold"
     />
 	</AppWrapper>
 </template>
@@ -25,6 +26,10 @@ export default {
 	},
   props: {
     hr: {
+			type: Boolean,
+			default: false,
+		},
+		no_gold: {
 			type: Boolean,
 			default: false,
 		},

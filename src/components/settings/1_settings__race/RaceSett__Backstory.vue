@@ -30,6 +30,7 @@ export default {
 	},
   methods: {
 		getBackName(name) {
+      console.log('MY_Backstory:', this.MY_Backstory)
       this.MY.backstory_name = name;
 		},
 	},

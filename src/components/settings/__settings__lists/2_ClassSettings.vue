@@ -37,6 +37,10 @@
     <ClassSett__Feats :id_link="item.id_link" />
 		</My-Selection-Box>
 
+	<My-Selection-Box title="inventory" select="Only gold" :shown="class_page.shown.inventory">
+		<ClassSett__Inventory />
+	</My-Selection-Box>
+
 
 		<AlignmentSett__Photo />
 </template>

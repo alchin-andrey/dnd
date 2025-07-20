@@ -51,6 +51,7 @@ export default {
 	param: {
 		user_name: false,
 		user_photo: false,
+		user_gold: null,
 		sett_photo: {
 			size_cover: true,
 			ratio: 1,

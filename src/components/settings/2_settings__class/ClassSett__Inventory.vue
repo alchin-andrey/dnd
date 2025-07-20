@@ -1,0 +1,55 @@
+<template>
+	<section class="marg">
+		<ClassParam__EquipKit no_gold />
+	</section>
+	<section class="flex-col gap-8">
+		<AppCardWrapp passive>
+		<my-card-text
+			:title="inventory_Promo_Title"
+			:text="inventory_Promo_Details"
+		/>
+		<my-card-text rare="rare"/>
+		</AppCardWrapp>
+
+		<InventoryGold__Custom/>
+
+  </section>
+
+</template>
+
+<script>
+import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassParam__EquipKit.vue";
+import InventoryGold__Custom from "@/components/settings/2_settings__class/InventoryGold__Custom.vue";
+
+export default {
+	name: "ClassSett__Inventory",
+	components: {
+		ClassParam__EquipKit,
+		InventoryGold__Custom,
+	},
+	computed: {
+		inventory_Promo_Title() {
+			return this.t('extra_inventory');
+		},
+
+		inventory_Promo_Details() {
+			let length = this.t("inventory_name_length");
+			let num_items = 26;
+			let items = this.t("items_available");
+			return `${length} \n${num_items} ${items}`
+		},
+
+		inventory_Promo_Rare() {
+			return this.t('rare');
+		},
+	},
+
+};
+</script>
+
+<style scoped>
+.marg {
+	margin: 0 0 24px 16px;
+}
+
+</style>

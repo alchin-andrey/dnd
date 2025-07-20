@@ -13,7 +13,7 @@
 				:key="item_packs"
 				:packs="item_packs"
 			/>
-			<section class="flex-row-c gap-4 h-18" v-if="gold">
+			<section class="flex-row-c gap-4 h-18" v-if="!no_gold">
 				<div class="flex-row-c svg-18">
 					<emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="12" />
 				</div>
@@ -63,6 +63,10 @@ export default {
 			type: Number,
 			default: null,
 		},
+		no_gold: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
     ...mapState(usePagesStore, ["page_Open"]),
@@ -72,7 +76,8 @@ export default {
     },
 
 		t_Text() {
-			return `${this.T("coin_gold")} × ${this.gold}`;
+			let gold_num = this.gold ?? 0;
+			return `${this.T("coin_gold")} × ${gold_num}`;
 		},
 
 		shown_Inventory_stripe() {

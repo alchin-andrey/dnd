@@ -38,6 +38,15 @@
 			<AppSelectionArr :menu="inventory_Filter" :step_num="2"/>
 		</div>
 
+    <div class="selection_menu">
+      <AppSelection
+				@click="showSettings__Class('inventory')"
+				:active="class_page.shown.inventory"
+				title="inventory"
+				t_type="Only gold"
+			></AppSelection>
+		</div>
+
     <AlignmentMenu__Photo />
 
     <div class="selection_menu undefined" v-if="shown_Undefined">
