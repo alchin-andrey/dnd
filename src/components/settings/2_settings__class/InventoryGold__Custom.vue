@@ -17,7 +17,7 @@
 			</div>
 
     </div>
-    <div class="card-main flex-row-c br-r-12 pd-0 w-96">
+    <div class="card-main flex-row-c flex-no-grow br-r-12 pd-0 w-96">
       <input
       type="text"
       v-model="inputValue"
@@ -79,7 +79,7 @@ export default {
       let num = parseInt(numericOnly, 10);
 
       if (isNaN(num)) return;
-      if (num > 9999) num = 9999;
+      if (num > 9999999) num = 9999999;
 
       this.inputValue = num.toString();
       this.number = num;

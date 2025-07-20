@@ -37,7 +37,7 @@
     <ClassSett__Feats :id_link="item.id_link" />
 		</My-Selection-Box>
 
-	<My-Selection-Box title="inventory" select="Only gold" :shown="class_page.shown.inventory">
+	<My-Selection-Box title="inventory" :select="t_inventory_Menu" :shown="class_page.shown.inventory">
 		<ClassSett__Inventory />
 	</My-Selection-Box>
 
@@ -51,6 +51,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 import { useMYStore } from "@/stores/user/MYStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
 import { useStatsStore } from "@/stores/modules/StatsStore";
+import { useEquipStore } from "@/stores/modules/EquipStore";
 
 import ClassSett from "@/components/settings/2_settings__class/ClassSetting.js";
 export default {
@@ -62,8 +63,10 @@ export default {
 		...mapState(useMYStore, [
 			"сustomm_Settings_Class_Arr_No_Feats", "spells_Settings_Class_Arr",
 		]),
-		...mapState(useStatsStore, [ "base_Stats_Menu"]),
+		...mapState(useStatsStore, ["base_Stats_Menu"]),
 		...mapState(useFeatsStore, ["feats_Select_Arr"]),
+		...mapState(useEquipStore, ["t_inventory_Menu"]),
+
 	},
 };
 </script>
