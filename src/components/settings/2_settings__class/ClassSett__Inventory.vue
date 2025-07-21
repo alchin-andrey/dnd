@@ -18,8 +18,14 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useMYStore } from "@/stores/user/MYStore";
+import { useEquipStore } from "@/stores/modules/EquipStore";
+
 import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassParam__EquipKit.vue";
 import InventoryGold__Custom from "@/components/settings/2_settings__class/InventoryGold__Custom.vue";
+
+
 
 export default {
 	name: "ClassSett__Inventory",
@@ -28,13 +34,17 @@ export default {
 		InventoryGold__Custom,
 	},
 	computed: {
+		...mapState(useEquipStore, [
+			"inventory_Total",
+		]),
+
 		inventory_Promo_Title() {
 			return this.t('extra_inventory');
 		},
 
 		inventory_Promo_Details() {
 			let length = this.t("inventory_name_length");
-			let num_items = 26;
+			let num_items = 48 - this.inventory_Total;
 			let items = this.t("items_available");
 			return `${length} \n${num_items} ${items}`
 		},

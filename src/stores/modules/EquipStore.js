@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
+import { useDicStore } from "@/stores/general/DicStore";
 
 
 
@@ -193,6 +194,19 @@ export const useEquipStore = defineStore({
 			return find;
 		},
     // !SECTION - ALL
+
+		inventory_Total() {
+			let packs_sum = this.packs_Equip_All.reduce(
+				(sum, pack) => sum + pack[0].items.length, 0
+			);
+			let equip_print_sum = this.inventory_Equip_Print.length;
+			return packs_sum + equip_print_sum;
+		},
+
+		t_inventory_Menu() {
+			const { t } = useDicStore();
+			return `${this.inventory_Total} ${t("items_used")}`
+		},
   },
   
   actions: {

@@ -43,7 +43,7 @@
 				@click="showSettings__Class('inventory')"
 				:active="class_page.shown.inventory"
 				title="inventory"
-				t_type="Only gold"
+				:t_type="t_inventory_Menu"
 			></AppSelection>
 		</div>
 
@@ -63,6 +63,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 import { useStatsStore } from "@/stores/modules/StatsStore";
 import { useFeatsStore } from "@/stores/modules/FeatsStore";
+import { useEquipStore } from "@/stores/modules/EquipStore";
 
 import AlignmentMenu__Photo from "@/components/menu/3_menu__alignment/AlignmentMenu__Photo.vue"
 export default {
@@ -74,10 +75,14 @@ export default {
     // STORE
 		...mapState(usePagesStore, ["class_page", "screen_Max"]),
     // GETTERS
-		...mapState(useMYStore, [ "сustomm_Settings_Class_Arr", "spells_Settings_Class_Arr" ]),
+		...mapState(useMYStore, [ 
+      "сustomm_Settings_Class_Arr", 
+      "spells_Settings_Class_Arr" 
+    ]),
 
-    ...mapState(useStatsStore, [ "base_Stats_Menu"]),
-    ...mapState(useFeatsStore, [ "feats_Select_Arr"]),
+    ...mapState(useStatsStore, [ "base_Stats_Menu" ]),
+    ...mapState(useFeatsStore, [ "feats_Select_Arr" ]),
+    ...mapState(useEquipStore, [ "t_inventory_Menu" ]),
 
     filter_Setting: (stor) => (numb) => {
       return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);

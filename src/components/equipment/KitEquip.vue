@@ -106,7 +106,7 @@ export default {
 </script>
 
 <style scoped>
-.packs-size {width: 168px;}
+.packs-size {width: 172px;}
 
 .emoji-mart-emoji {
 	padding: 0;
