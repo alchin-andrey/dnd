@@ -12,6 +12,7 @@
 		</AppCardWrapp>
 
 		<InventoryGold__Custom/>
+		<!-- <Inventory__Custom/> -->
 
   </section>
 
@@ -24,6 +25,7 @@ import { useEquipStore } from "@/stores/modules/EquipStore";
 
 import ClassParam__EquipKit from "@/components/parameters/2_param__class/ClassParam__EquipKit.vue";
 import InventoryGold__Custom from "@/components/settings/2_settings__class/InventoryGold__Custom.vue";
+import Inventory__Custom from "@/components/settings/2_settings__class/Inventory__Custom.vue";
 
 
 
@@ -32,6 +34,7 @@ export default {
 	components: {
 		ClassParam__EquipKit,
 		InventoryGold__Custom,
+		Inventory__Custom,
 	},
 	computed: {
 		...mapState(useEquipStore, [

@@ -45,13 +45,14 @@ export default {
   stats_base_save: {},
 	custom_stats: false,
 	custom_stats_base_save: {},
+	custom_inventory: [],
 	
 	custom_photo: null,
+	user_gold: null,
 
 	param: {
 		user_name: false,
 		user_photo: false,
-		user_gold: null,
 		sett_photo: {
 			size_cover: true,
 			ratio: 1,

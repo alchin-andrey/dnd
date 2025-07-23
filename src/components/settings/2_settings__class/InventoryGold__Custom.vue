@@ -21,7 +21,6 @@
       <input
         type="text"
         v-model="inputValue"
-        placeholder="Введите число"
       />
     </div>
   </div>
@@ -68,7 +67,7 @@ export default {
         num = 9999999;
       }
 
-      this.MY.param.user_gold = num;
+      this.MY.user_gold = num;
 
       const corrected = num.toString();
       if (this.inputValue !== corrected) {
@@ -76,7 +75,7 @@ export default {
       }
     },
 
-    'MY.param.user_gold': {
+    'MY.user_gold': {
       immediate: true,
       handler(newVal) {
         const value = newVal ?? this.gold_Equip_All ?? 0;
@@ -87,7 +86,7 @@ export default {
 
   methods: {
     resetGold() {
-      this.MY.param.user_gold = null;
+      this.MY.user_gold = null;
     }
   }
 };
@@ -95,6 +94,7 @@ export default {
 
 <style scoped>
 input[type="text"] {
+  border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-khtml-border-radius: 0;

@@ -42,7 +42,7 @@ export const useEquipStore = defineStore({
 
 		gold_Equip_Numb_User: (stor) => (obj_arr) => {
       const MYStore = useMYStore();
-			const user_gold = MYStore.MY.param.user_gold
+			const user_gold = MYStore.MY.user_gold
       return user_gold ?? stor.gold_Equip_Numb(obj_arr);
     },
     // !SECTION - Tootal
