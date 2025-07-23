@@ -16,6 +16,10 @@ export default {
       type: Number,
       default: 0,
     },
+		minValue: {
+      type: Number,
+      default: 0,
+    },
     maxValue: {
       type: Number,
       default: 9999,
@@ -32,7 +36,7 @@ export default {
       const numeric = val.replace(/\D/g, "");
       let num = parseInt(numeric, 10);
       if (isNaN(num) || numeric === "") {
-        num = 0;
+        num = this.minValue;
       } else if (num > this.maxValue) {
         num = this.maxValue;
       }
@@ -45,7 +49,7 @@ export default {
     modelValue: {
       immediate: true,
       handler(newVal) {
-        const value = newVal ?? this.defaultValue ?? 0;
+        const value = newVal ?? this.defaultValue ?? this.minValue;
         this.inputValue = value.toString();
       },
     },

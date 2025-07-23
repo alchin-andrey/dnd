@@ -196,11 +196,13 @@ export const useEquipStore = defineStore({
     // !SECTION - ALL
 
 		inventory_Total() {
+			const MYStore = useMYStore();
 			let packs_sum = this.packs_Equip_All.reduce(
 				(sum, pack) => sum + pack[0].items.length, 0
 			);
 			let equip_print_sum = this.inventory_Equip_Print.length;
-			return packs_sum + equip_print_sum;
+			let equip_custom = MYStore.MY.custom_inventory.length;
+			return packs_sum + equip_print_sum + equip_custom;
 		},
 
 		t_inventory_Menu() {

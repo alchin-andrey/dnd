@@ -1,34 +1,33 @@
 <template>
 	<div class="flex-row gap-2 int-700">
-			<section class="card-main pd-0 flex-row-sb br-l-12 w-100 pos-rel">
-				<input
-					class="name-item"
-					:class="[
-					style_Pd,
-					{ liner: inputValue_Name,}
-					]"
-					size="1"
-					@keyup="getCustomName()"
-					spellcheck="false"
-					v-model="inputValue_Name"
-					type="text"
-					maxlength="36"
-					:placeholder="t_Placeholder"
-					onfocus="this.setSelectionRange(0, this.value.length)"
-					@blur="stopSelectTexe()"
-				/>
-				<div
-        class="del_btm"
-        @click="delInventoryItem"
-				>
-					<AppSvg class="svg-18 svg-main-f" name="delete" />
-				</div>
-			</section>
-		<AppCountInput
-      v-model="inputValue_Count"
-      :default-value="1"
-			:max-value="9999"
-    />
+		<section class="card-main pd-0 flex-row-sb w-100 pos-rel" :class="style_Br">
+			<input 
+			class="name-item" 
+			:class="{ liner: inputValue_Name, }" 
+			size="1" 
+			spellcheck="false" 
+			v-model="inputValue_Name" 
+			type="text"
+			maxlength="36" 
+			:placeholder="t_Placeholder" 
+			onfocus="this.setSelectionRange(0, this.value.length)"
+			@blur="stopSelectTexe()" 
+			/>
+			<div 
+			v-if="!isNew"
+			class="del_btm" 
+			@click="delInventoryItem"
+			>
+				<AppSvg class="svg-18 svg-main-f" name="delete" />
+			</div>
+		</section>
+		<AppCountInput 
+		v-if="!isNew"
+		v-model="inputValue_Count" 
+		:default-value="1" 
+		:min-value="minValue" 
+		:max-value="maxValue" 
+		/>
 	</div>
 </template>
 
@@ -39,10 +38,11 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "Inventory__Custom",
+	emits: ["update:modelValue_Name", "update:modelValue_Count", "delete"],
 	data() {
 		return {
 			inputValue_Name: "",
-			inputValue_Count: "",
+			inputValue_Count: null,
 		};
 	},
 	props: {
@@ -51,53 +51,44 @@ export default {
 			default: null,
 		},
 		modelValue_Count: {
-			type: String,
-			default: null,
+			type: Number,
+			default: 1,
 		},
-		save_setting: {
-			type: String,
-			default: null,
+		isNew: {
+			type: Boolean,
+			default: false,
 		},
-		id_link: {
-			type: String,
-			default: null,
-		},
-		active_card: {
-      type: Boolean,
-      default: false,
-    },
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["screen_Max"]),
 
-		// t_Title() {
-		// 	return this.t(this.title);
-		// },
-
-    t_Placeholder() {
+		t_Placeholder() {
 			return this.T("inventory_custom_placeholder");
 		},
 
-		style_Pd() {
-			if(this.active_card) return 'pd-rl-14 btm-select'
-			else return 'pd-rl-16'
-		}
+		style_Br() {
+			return !this.isNew ? 'br-l-12' : null;
+		},
+
+		minValue() {
+			return this.inputValue_Name ? 1 : 0;
+		},
+
+		maxValue() {
+			return this.inputValue_Name ? 9999 : 0;
+		},
 
 	},
+
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectTexe"]),
 
-		getCustomName() {
-			const arr = this.MY[this.save_setting][this.id_link];
-			this.MY._settings_custom_name[this.id_link] = this.inputValue;
-			arr.map(n => {
-				if(n.hasOwnProperty('name_custom')) {
-					return n.name_custom = this.inputValue;
-				}
-			});
-		},
+		delInventoryItem() {
+			this.$emit('delete');
+		}
 	},
+
 	watch: {
 		modelValue_Name: {
 			handler() {
@@ -132,15 +123,16 @@ export default {
 }
 
 input[type="text"] {
+	padding: 16px;
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-khtml-border-radius: 0;
 	background: transparent;
 	outline: none;
-  color: #ffffff;
+	color: #ffffff;
 	width: 100%;
-  white-space: nowrap;
+	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: flex;
@@ -169,10 +161,11 @@ input[type="text"].count-item {
 ::-ms-input-placeholder {
 	color: rgba(255, 255, 255, 0.2);
 }
+
 .main-icon {
 	width: 18px;
 	height: 18px;
-  cursor: pointer;
+	cursor: pointer;
 	margin-bottom: 3px;
 }
 
@@ -190,5 +183,4 @@ select:focus, textarea:focus, input:focus {
 				line-height: 18px;
     }
 } */
-
 </style>
