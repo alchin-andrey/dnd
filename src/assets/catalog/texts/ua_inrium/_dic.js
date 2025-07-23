@@ -6388,6 +6388,6 @@ export default {
 
   extra_inventory: "Золото та додаткове спорядження",
   inventory_name_length: "Рекомендована довжина назви — до 18 символів.",
-  items_available: "доступно",
+  items_available: "/ 48 доступно",
   items_used: "/ 48",
 };
