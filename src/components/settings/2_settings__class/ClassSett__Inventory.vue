@@ -1,6 +1,6 @@
 <template>
 	<section class="marg">
-		<ClassParam__EquipKit no_gold />
+		<ClassParam__EquipKit no_gold no_custom/>
 	</section>
 	<section class="flex-col gap-8">
 		<AppCardWrapp passive>

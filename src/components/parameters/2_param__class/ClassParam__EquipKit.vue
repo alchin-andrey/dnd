@@ -1,11 +1,12 @@
 <template>
 	<AppWrapper v-if="shown_Invenory_Equip_Class" :hr="hr">
 		<KitEquip 
-    :inventory_old="inventory_Equip_Race"
-    :inventory="inventory_Equip_Class"
-
     :packs_old="packs_Equip_Race"
     :packs="packs_Equip_Class"
+
+		:inventory_old="inventory_Equip_Race"
+    :inventory="inventory_Equip_Class"
+		:no_custom="no_custom"
 
     :gold="gold_Equip_All"
 		:no_gold="no_gold"
@@ -26,6 +27,10 @@ export default {
 	},
   props: {
     hr: {
+			type: Boolean,
+			default: false,
+		},
+		no_custom: {
 			type: Boolean,
 			default: false,
 		},

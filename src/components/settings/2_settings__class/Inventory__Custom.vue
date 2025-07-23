@@ -5,7 +5,7 @@
 					class="name-item"
 					:class="[
 					style_Pd,
-					{ liner: modelValue,}
+					{ liner: inputValue_Name,}
 					]"
 					size="1"
 					@keyup="getCustomName()"

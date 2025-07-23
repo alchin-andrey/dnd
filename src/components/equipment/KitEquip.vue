@@ -24,7 +24,7 @@
 		<InventoryEquip
 			:class="{ 'pd-t-2': !shown_Inventory_stripe }"
       :inventory_old="inventory_old"
-			:inventory="inventory"
+			:inventory="inventory_All"
 			:stripe="shown_Inventory_stripe"
 		/>
 	</div>
@@ -32,6 +32,7 @@
 
 <script>
 import { mapState } from "pinia";
+import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import PacksEquip from "@/components/equipment/PacksEquip.vue";
 import InventoryEquip from "@/components/equipment/InventoryEquip.vue";
@@ -59,6 +60,10 @@ export default {
 			type: Array,
 			default: [],
 		},
+		no_custom: {
+			type: Boolean,
+			default: false,
+		},
 		gold: {
 			type: Number,
 			default: null,
@@ -73,6 +78,7 @@ export default {
 		},
 	},
 	computed: {
+		...mapState(useMYStore, ["MY"]),
     ...mapState(usePagesStore, ["page_Open"]),
 
     passive_Old() {
@@ -101,6 +107,10 @@ export default {
         || this.gold
         );
 		},
+
+		inventory_All() {
+			return this.no_custom ? this.inventory : [...this.inventory, ...this.MY.custom_inventory];
+		}
 	},
 };
 </script>
