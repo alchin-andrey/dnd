@@ -3,7 +3,9 @@
 		<KitEquip 
     :packs="packs_Equip_Race" 
     :inventory="inventory_Equip_Race" 
-    :gold="gold_Equip_Race" />
+    :gold="gold_Equip_Race" 
+		no_custom
+		/>
 	</AppWrapper>
 </template>
 

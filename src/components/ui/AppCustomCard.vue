@@ -175,6 +175,7 @@
 				:inventory="inventory_Equip(custom.equipment)"
         :gold="gold_Equip_Numb(custom.equipment)"
 				no_gold_zero
+				no_custom
 			/>
 		</AppWrapper>
 
