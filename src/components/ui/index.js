@@ -38,6 +38,7 @@ import AppSpells from "@/components/ui/AppSpells.vue";
 import AppCharges from "@/components/ui/AppCharges.vue";
 import AppCustomCard from "@/components/ui/AppCustomCard.vue";
 import AppCustomName from "@/components/ui/AppCustomName.vue";
+import AppCountInput from "@/components/ui/AppCountInput.vue";
 
 import AppTooltip from "@/components/ui/AppTooltip.vue";
 import AppSpellsPacks from "@/components/ui/AppSpellsPacks.vue";
@@ -128,6 +129,8 @@ export default [
   AppCharges,
   AppCustomCard,
   AppCustomName,
+  AppCountInput,
+  
   AppTooltip,
   AppSpellsPacks,
   AppLoadBtm,

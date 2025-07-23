@@ -24,13 +24,11 @@
 					<AppSvg class="svg-18 svg-main-f" name="delete" />
 				</div>
 			</section>
-    <section class="card-main flex-row-c flex-no-grow br-r-12 pd-0 w-96">
-      <input
-				class="count-item liner"
-        type="text"
-        v-model="inputValue_Count"
-      />
-    </section>
+		<AppCountInput
+      v-model="inputValue_Count"
+      :default-value="1"
+			:max-value="9999"
+    />
 	</div>
 </template>
 
