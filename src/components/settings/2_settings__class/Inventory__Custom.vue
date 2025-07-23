@@ -1,6 +1,6 @@
 <template>
 	<div class="flex-row gap-2 int-700">
-		<section class="card-main pd-0 flex-row-sb w-100 pos-rel" :class="style_Br">
+		<section class="card-main pd-0 pd-r-16 flex-row-sb w-100" :class="style_Br">
 			<input 
 			class="name-item" 
 			:class="{ liner: inputValue_Name, }" 
@@ -123,7 +123,7 @@ export default {
 }
 
 input[type="text"] {
-	padding: 16px;
+	padding: 16px 0 16px 16px;
 	border-radius: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -170,10 +170,13 @@ input[type="text"].count-item {
 }
 
 .del_btm {
-	position: absolute;
+	/* position: absolute;
 	right: 16px;
-	top: calc(50% - 9px);
+	top: calc(50% - 9px); */
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
