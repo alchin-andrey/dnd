@@ -114,15 +114,30 @@ export default {
 			}
 		},
 
+		// focusNew() {
+		// 	const newIndex = this.MY.custom_inventory.length;
+		// 	this.$nextTick(() => {
+		// 		const refs = this.$refs.inventoryItems;
+		// 		if (Array.isArray(refs) && refs[newIndex] && refs[newIndex].focusInput) {
+		// 			refs[newIndex].focusInput();
+		// 		}
+		// 	});
+		// },
+
 		focusNew() {
-			const newIndex = this.MY.custom_inventory.length;
-			this.$nextTick(() => {
-				const refs = this.$refs.inventoryItems;
-				if (Array.isArray(refs) && refs[newIndex] && refs[newIndex].focusInput) {
-					refs[newIndex].focusInput();
-				}
-			});
-		},
+		this.$nextTick(() => {
+			const refs = this.$refs.inventoryItems;
+			if (!Array.isArray(refs)) return;
+
+			const emptyIndex = this.MY.custom_inventory.findIndex(i => !i[0].name);
+			const targetIndex = emptyIndex !== -1 ? emptyIndex : this.MY.custom_inventory.length;
+
+			if (refs[targetIndex] && refs[targetIndex].focusInput) {
+				refs[targetIndex].focusInput();
+			}
+		});
+		},	
+
 	},
 
 };
