@@ -45,6 +45,7 @@ export default {
 		return {
 			inputValue_Name: "",
 			inputValue_Count: null,
+			lastCountValue: 1,
 		};
 	},
 	props: {
@@ -117,13 +118,24 @@ export default {
 			immediate: true,
 		},
 		inputValue_Name: {
-			handler() {
-				this.$emit("update:modelValue_Name", this.inputValue_Name);
+			handler(newVal) {
+				this.$emit("update:modelValue_Name", newVal);
+				if (!newVal) {
+					if (this.inputValue_Count > 0) {
+						this.lastCountValue = this.inputValue_Count;
+					}
+					this.inputValue_Count = 0;
+				} else if (this.inputValue_Count === 0) {
+					this.inputValue_Count = this.lastCountValue > 0 ? this.lastCountValue : 1;
+				}
 			},
 		},
 		inputValue_Count: {
-			handler() {
-				this.$emit("update:modelValue_Count", this.inputValue_Count);
+			handler(newVal) {
+				this.$emit("update:modelValue_Count", newVal);
+				if (newVal > 0) {
+					this.lastCountValue = newVal;
+				}
 			},
 		},
 	},

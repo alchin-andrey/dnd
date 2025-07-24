@@ -1,10 +1,17 @@
 <template>
   <div class="card-main flex-row-c flex-no-grow br-l-4-r-12 pd-0 w-96">
-    <input type="text" v-model="inputValue" />
+    <input 
+    type="text" 
+    v-model="inputValue" 
+    onfocus="this.setSelectionRange(0, this.value.length)"
+    @blur="stopSelectTexe()"
+    />
   </div>
 </template>
 
 <script>
+import { mapActions } from "pinia";
+import { usePagesStore } from "@/stores/user/PagesStore";
 export default {
   name: "AppCountInput",
   props: {
@@ -54,6 +61,10 @@ export default {
       },
     },
   },
+
+  methods: {
+		...mapActions(usePagesStore, ["stopSelectTexe"]),
+	},
 };
 </script>
 
