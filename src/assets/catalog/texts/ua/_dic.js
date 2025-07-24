@@ -6390,4 +6390,6 @@ export default {
   inventory_name_length: "Рекомендована довжина назви — до 18 символів.",
   items_available: "/ 48 пунктів доступно",
   items_used: "/ 48 пунктів",
+
+  inventory_custom_placeholder: "Додати пункт",
 };
