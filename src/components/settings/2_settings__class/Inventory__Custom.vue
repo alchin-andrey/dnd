@@ -169,7 +169,7 @@ input[type="text"].count-item {
 	transition: color 0.4s ease;
 }
 
-:hover::placeholder {
+:not(:focus):hover::placeholder {
 	color: #FFFFFF;
 }
 
