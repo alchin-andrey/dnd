@@ -54,9 +54,13 @@
 .br-12 { border-radius: 12px;}
 .br-24 { border-radius: 24px;}
 
+.br-l-12 { border-radius: 12px 0 0 12px;}
+
+.br-r-4 { border-radius: 0 4px 4px 0;}
 .br-r-12 { border-radius: 0 12px 12px 0;}
 
-.br-l-12 { border-radius: 12px 0 0 12px;}
+.br-l-4-r-12 { border-radius: 4px 12px 12px 4px;}
+.br-l-12-r-4 { border-radius: 12px 4px 4px 12px;}
 
 .blur-60 { 
 	backdrop-filter: blur(60px); 

@@ -1,5 +1,5 @@
 <template>
-  <div class="card-main flex-row-c flex-no-grow br-r-12 pd-0 w-96">
+  <div class="card-main flex-row-c flex-no-grow br-l-4-r-12 pd-0 w-96">
     <input type="text" v-model="inputValue" />
   </div>
 </template>
@@ -74,7 +74,7 @@ input[type="text"] {
   display: flex;
   align-items: center;
   height: 47px;
-  border-radius: 0 12px 12px 0;
+  border-radius: 4px 12px 12px 4px;
   text-decoration-line: underline;
   text-decoration-color: #ffffff;
 }

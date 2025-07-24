@@ -68,7 +68,7 @@ export default {
 		},
 
 		style_Br() {
-			return !this.isNew ? 'br-l-12' : null;
+			return !this.isNew ? 'br-l-12-r-4' : null;
 		},
 
 		minValue() {
@@ -152,6 +152,11 @@ input[type="text"].count-item {
 ::placeholder {
 	color: rgba(255, 255, 255, 0.2);
 	opacity: 1;
+	transition: color 0.4s ease;
+}
+
+:hover::placeholder {
+	color: #FFFFFF;
 }
 
 :-ms-input-placeholder {

@@ -1,6 +1,6 @@
 <template>
   <div class="flex-row gap-2 int-700">
-    <div class="card-main flex-row-sb br-l-12 w-100">
+    <div class="card-main flex-row-sb br-l-12-r-4 w-100">
       <div class="flex-row-c gap-8">
         <div class="flex-row-c">
           <emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="14" />
