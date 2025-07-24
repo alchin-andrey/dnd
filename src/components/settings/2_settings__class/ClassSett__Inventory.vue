@@ -9,12 +9,16 @@
 		</AppCardWrapp>
 
 		<InventoryGold__Custom />
-		<Inventory__Custom v-for="(item, index) in displayInventory" :key="index" :modelValue_Name="item[0]?.name"
-		:modelValue_Count="item[1]" 
+		<Inventory__Custom v-for="(item, index) in displayInventory" 
+		:key="index" 
+		ref="inventoryItems"
+		:index="index" 
+		:modelValue_Name="item[0]?.name"
+		:modelValue_Count="item[1]"
 		:is-new="index === MY.custom_inventory.length"
 		@update:modelValue_Name="updateName(index, $event)" @update:modelValue_Count="updateCount(index, $event)"
-		@delete="deleteItem(index)" />
-
+		@delete="deleteItem(index)" 
+		@enter="focusNew" />
 	</section>
 
 </template>
@@ -80,18 +84,18 @@ export default {
 	},
 
 	methods: {
-		updateName(index, val) {
-			if (index === this.MY.custom_inventory.length) {
-				this.placeholderName = val;
-				if (val !== '') {
-					this.MY.custom_inventory.push([{ name: val }, this.placeholderCount]);
-					this.placeholderName = '';
-					this.placeholderCount = 1;
-				}
-			} else {
-				this.MY.custom_inventory[index][0].name = val;
+	updateName(index, val) {
+		if (index === this.MY.custom_inventory.length) {
+			this.placeholderName = val;
+			if (val !== '') {
+				this.MY.custom_inventory.push([{ name: val }, this.placeholderCount]);
+				this.placeholderName = '';
+				this.placeholderCount = 1;
 			}
-		},
+		} else {
+			this.MY.custom_inventory[index][0].name = val;
+		}
+	},
 
 		updateCount(index, val) {
 			if (index === this.MY.custom_inventory.length) {
@@ -108,6 +112,16 @@ export default {
 			} else {
 				this.MY.custom_inventory.splice(index, 1);
 			}
+		},
+
+		focusNew() {
+			const newIndex = this.MY.custom_inventory.length;
+			this.$nextTick(() => {
+				const refs = this.$refs.inventoryItems;
+				if (Array.isArray(refs) && refs[newIndex] && refs[newIndex].focusInput) {
+					refs[newIndex].focusInput();
+				}
+			});
 		},
 	},
 

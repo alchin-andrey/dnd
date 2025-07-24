@@ -1,17 +1,19 @@
 <template>
 	<div class="flex-row gap-2 int-700">
 		<section class="card-main pd-0 pd-r-16 flex-row-sb w-100" :class="style_Br">
-			<input 
-			class="name-item" 
-			:class="{ liner: inputValue_Name, }" 
-			size="1" 
-			spellcheck="false" 
-			v-model="inputValue_Name" 
+			<input
+			ref="nameInput"
+			class="name-item"
+			:class="{ liner: inputValue_Name, }"
+			size="1"
+			spellcheck="false"
+			v-model="inputValue_Name"
 			type="text"
-			maxlength="36" 
-			:placeholder="t_Placeholder" 
+			maxlength="36"
+			:placeholder="t_Placeholder"
 			onfocus="this.setSelectionRange(0, this.value.length)"
-			@blur="stopSelectTexe()" 
+			@blur="stopSelectTexe()"
+			@keydown.enter.prevent="enterKey"
 			/>
 			<div 
 			v-if="!isNew"
@@ -38,7 +40,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "Inventory__Custom",
-	emits: ["update:modelValue_Name", "update:modelValue_Count", "delete"],
+	emits: ["update:modelValue_Name", "update:modelValue_Count", "delete", "enter"],
 	data() {
 		return {
 			inputValue_Name: "",
@@ -57,6 +59,10 @@ export default {
 		isNew: {
 			type: Boolean,
 			default: false,
+		},
+		index: {
+			type: Number,
+			default: 0,
 		},
 	},
 	computed: {
@@ -86,6 +92,14 @@ export default {
 
 		delInventoryItem() {
 			this.$emit('delete');
+		},
+
+		enterKey() {
+			this.$emit('enter', this.index);
+		},
+
+		focusInput() {
+			this.$refs.nameInput?.focus();
 		}
 	},
 
