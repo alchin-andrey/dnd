@@ -3,7 +3,7 @@
 		<div :class="style_Span_Top" ref="equipContainer">
 			<div>{{ t_Equipment }}</div>
 
-			<div :class="style_Column">
+			<div :class="[style_Column, style_Column_Size]">
 				<template v-for="(pack, i) in packs_Equip_All" :key="pack">
 					<div :class="{ 'mr-t-30-blank': i > 0 }" />
 					<div class="int-500-22-blank">{{ t_Equip_Name(pack) }}:</div>
@@ -18,7 +18,7 @@
 				</template>
 			</div>
 
-			<div v-if="overLimit" class="overflow-warning">
+			<div v-if="overLimit && !blank_Mini" class="overflow-warning">
 				Кепські справи, деякі речі не влазять!
 			</div>
 		</div>
@@ -61,6 +61,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		blank_size: {
+			type: String,
+			default: null,
+		}
 	},
 	data() {
 		return {
@@ -134,17 +138,24 @@ export default {
 			if (this.classic) return 'column-content h-size--simple';
 			else return 'column-content h-size--full';
 		},
+
+		blank_Mini() {
+			return this.blank_size == 'mini'
+		},
+
+		style_Column_Size() {
+			if (this.blank_Mini) return 'w-50';
+			else return 'w-300';
+		},
 	},
 
 	methods: {
 		checkOverflow() {
 			this.$nextTick(() => {
-				setTimeout(() => {
-					const el = this.$refs.equipContainer;
-					if (el) {
-						this.overLimit = el.scrollHeight > el.clientHeight;
-					}
-				}, 50);
+				const el = this.$refs.equipContainer;
+				if (el) {
+					this.overLimit = el.scrollHeight > el.clientHeight;
+				}
 			});
 		}
 	},
@@ -216,12 +227,9 @@ export default {
 
 .column-content {
 	margin-top: var(--px-24);
-	/* width: max-content; */
-	width: 300px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	/* gap: 0 var(--px-35); */
 	gap: 0 var(--px-20);
 }
 

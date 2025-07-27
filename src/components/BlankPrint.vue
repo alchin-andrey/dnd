@@ -127,7 +127,6 @@ export default {
     list_Main_Spells_Arr() {
       const spell_arr = this.spell_RC_Param_Sort_ApAM__Main;
       const h_table_main = 1324;
-      console.log('this.spellTitleList(spell_arr, h_table_main):', this.spellTitleList(spell_arr, h_table_main))
       return this.spellTitleList(spell_arr, h_table_main);
     },
 

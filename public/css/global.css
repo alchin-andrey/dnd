@@ -8,7 +8,9 @@ a.db {display: block;}
 	max-width: 344px;
 }
 
+.w-50 {width: 50px;}
 .w-96 {width: 96px;}
+.w-300 {width: 300px;}
 .w-320 {width: 320px;}
 .w-362 {width: 362px;}
 

@@ -3,7 +3,7 @@
 			<BlankTable__MainNames type="part" :part="1"/>
 			<BlankTable__QualStats type="atribute" />
 			<BlankTable__Weapons classic/>
-			<BlankTable__Equip classic/>
+			<BlankTable__Equip classic :blank_size="blank_size"/>
 		</div>
 </template>
 
@@ -21,7 +21,11 @@ export default {
 		BlankTable__Weapons,
 		BlankTable__Equip,
 	},
-	computed: {
+	props: {
+		blank_size: {
+			type: String,
+			default: null,
+		}
 	},
 };
 </script>
