@@ -1,6 +1,6 @@
 <template>
 	<div :class="style_Br">
-		<div :class="style_Span_Top">
+		<div :class="style_Span_Top" ref="equipContainer">
 			<div>{{ t_Equipment }}</div>
 
 			<div :class="style_Column">
@@ -16,6 +16,10 @@
 					<div class="mr-t-30-blank" v-if="i == 0" />
 					<div class="int-500-22-blank">&bull;&nbsp;{{ t_Equip_Name(inv) }}</div>
 				</template>
+			</div>
+
+			<div v-if="overLimit" class="overflow-warning">
+				Кепські справи, деякі речі не влазять!
 			</div>
 		</div>
 
@@ -61,7 +65,14 @@ export default {
 	data() {
 		return {
 			coins: ["platina", "gold", "silver", "copper"],
+			overLimit: false,
 		};
+	},
+	mounted() {
+		this.checkOverflow();
+	},
+	updated() {
+		this.checkOverflow();
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
@@ -70,7 +81,6 @@ export default {
 			"gold_Equip_All",
 			"packs_Equip_All",
 			"inventory_Equip_All",
-			"inventory_Equip_Print",
 			"inventory_Equip_Print_Custom",
 			"ammunition_Equip_Print",
 		]),
@@ -111,8 +121,8 @@ export default {
 		},
 
 		style_Span_Top() {
-			if (this.classic) return 'cell grid-col-4';
-			else return 'cell grid-col-6';
+			if (this.classic) return 'cell pos-rel equip-wrapper grid-col-4';
+			else return 'cell pos-rel equip-wrapper grid-col-6';
 		},
 
 		style_Span_Bottom() {
@@ -124,8 +134,19 @@ export default {
 			if (this.classic) return 'column-content h-size--simple';
 			else return 'column-content h-size--full';
 		},
+	},
 
-
+	methods: {
+		checkOverflow() {
+			this.$nextTick(() => {
+				setTimeout(() => {
+					const el = this.$refs.equipContainer;
+					if (el) {
+						this.overLimit = el.scrollHeight > el.clientHeight;
+					}
+				}, 50);
+			});
+		}
 	},
 };
 </script>
@@ -143,9 +164,17 @@ export default {
 	grid-template-columns: repeat(4, 1fr);
 }
 
-.grid-col-2 { grid-column: span 2; }
-.grid-col-4 { grid-column: span 4; }
-.grid-col-6 { grid-column: span 6; }
+.grid-col-2 {
+	grid-column: span 2;
+}
+
+.grid-col-4 {
+	grid-column: span 4;
+}
+
+.grid-col-6 {
+	grid-column: span 6;
+}
 
 .cell {
 	padding: var(--px-4) var(--px-12) var(--px-8);
@@ -154,32 +183,34 @@ export default {
 	overflow: hidden;
 	overflow-wrap: break-word;
 }
-.grid-body--full > :first-child {
+
+.grid-body--full> :first-child {
 	border-left: var(--border-blank);
 	border-top: var(--border-blank);
 	border-radius: var(--px-6) 0 0 0;
 }
 
-.grid-body--simple > :first-child {
+.grid-body--simple> :first-child {
 	border-left: var(--border-blank);
 	border-top: var(--border-blank);
 	border-radius: var(--px-6) var(--px-6) 0 0;
 }
 
-.grid-body--full > :nth-child(2) {
-	border-left: var(--border-blank);
-	border-radius: 0 0 0 var(--px-6);
-}
-.grid-body--simple > :nth-child(2) {
-	border-left: var(--border-blank);
-}
-
-.grid-body--simple > :nth-last-child(2) {
+.grid-body--full> :nth-child(2) {
 	border-left: var(--border-blank);
 	border-radius: 0 0 0 var(--px-6);
 }
 
-.grid-body--simple > :last-child {
+.grid-body--simple> :nth-child(2) {
+	border-left: var(--border-blank);
+}
+
+.grid-body--simple> :nth-last-child(2) {
+	border-left: var(--border-blank);
+	border-radius: 0 0 0 var(--px-6);
+}
+
+.grid-body--simple> :last-child {
 	border-radius: 0 0 var(--px-6) 0;
 }
 
@@ -197,11 +228,32 @@ export default {
 .h-size--full {
 	height: var(--px-450);
 }
+
 .h-size--simple {
 	height: var(--px-848);
 }
 
 .column-content>div {
 	width: 100%;
+}
+
+.overflow-warning {
+	position: absolute;
+	right: 12px;
+	top: 6px;
+	color: red;
+	font-weight: bold;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.equip-wrapper {
+	height: 100%;
+	overflow: auto;
+}
+
+.equip-wrapper::-webkit-scrollbar {
+	background: transparent;
+	/* чтобы вообще ничего не было */
 }
 </style>
