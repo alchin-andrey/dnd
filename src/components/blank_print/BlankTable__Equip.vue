@@ -8,13 +8,13 @@
 					<div :class="{ 'mr-t-30-blank': i > 0 }" />
 					<div class="int-500-22-blank">{{ t_Equip_Name(pack) }}:</div>
 					<div v-for="inv in pack[0].items" :key="inv">
-						<div class="int-500-22-blank">• {{ t_Equip_Name(inv) }}</div>
+						<div class="int-500-22-blank">&bull;&nbsp;{{ t_Equip_Name(inv) }}</div>
 					</div>
 				</template>
 
-				<template v-for="(inv, i) in inventory_Equip_Print" :key="inv">
+				<template v-for="(inv, i) in inventory_Equip_Print_Custom" :key="inv">
 					<div class="mr-t-30-blank" v-if="i == 0" />
-					<div class="int-500-22-blank">• {{ t_Equip_Name(inv) }}</div>
+					<div class="int-500-22-blank">&bull;&nbsp;{{ t_Equip_Name(inv) }}</div>
 				</template>
 			</div>
 		</div>
@@ -71,6 +71,7 @@ export default {
 			"packs_Equip_All",
 			"inventory_Equip_All",
 			"inventory_Equip_Print",
+			"inventory_Equip_Print_Custom",
 			"ammunition_Equip_Print",
 		]),
 
@@ -150,6 +151,8 @@ export default {
 	padding: var(--px-4) var(--px-12) var(--px-8);
 	border-right: var(--border-blank);
 	border-bottom: var(--border-blank);
+	overflow: hidden;
+	overflow-wrap: break-word;
 }
 .grid-body--full > :first-child {
 	border-left: var(--border-blank);
@@ -182,11 +185,13 @@ export default {
 
 .column-content {
 	margin-top: var(--px-24);
-	width: max-content;
+	/* width: max-content; */
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 0 var(--px-35);
+	/* gap: 0 var(--px-35); */
+	gap: 0 var(--px-20);
 }
 
 .h-size--full {

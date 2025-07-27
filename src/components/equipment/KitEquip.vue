@@ -22,6 +22,7 @@
 		</AppWrapper>
 
 		<InventoryEquip
+			class="word-break"
 			:class="{ 'pd-t-2': !shown_Inventory_stripe }"
       :inventory_old="inventory_old"
 			:inventory="inventory_All"
@@ -116,11 +117,16 @@ export default {
 </script>
 
 <style scoped>
-.packs-size {width: 172px;}
+.packs-size {min-width: 172px;}
 
 .emoji-mart-emoji {
 	padding: 0;
 	line-height: 0;
 	top: -1px;
+}
+
+.word-break {
+	overflow: hidden;
+	overflow-wrap: break-word;
 }
 </style>

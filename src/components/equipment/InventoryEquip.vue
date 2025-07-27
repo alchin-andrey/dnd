@@ -3,10 +3,10 @@
 		<div ref="stripe" class="stripe-item--main" v-if="stripe"></div>
 		<section>
 			<div :class="{'pas-param': passive_Old}" v-for="items in inventory_old" :key="items">
-				• {{ t_Equip_Name(items) }}
+				&bull;&nbsp;{{ t_Equip_Name(items) }}
 			</div>
 			<div v-for="items in inventory" :key="items" :class="{'debuff': t_Equip_Name(items) == undefined }">
-				• {{ t_Equip_Name(items) }}
+				&bull;&nbsp;{{ t_Equip_Name(items) }}
 			</div>
 		</section>
 	</div>
