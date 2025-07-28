@@ -114,18 +114,7 @@ export default {
 			}
 		},
 
-		// focusNew() {
-		// 	const newIndex = this.MY.custom_inventory.length;
-		// 	this.$nextTick(() => {
-		// 		const refs = this.$refs.inventoryItems;
-		// 		if (Array.isArray(refs) && refs[newIndex] && refs[newIndex].focusInput) {
-		// 			refs[newIndex].focusInput();
-		// 		}
-		// 	});
-		// },
-
 		focusNew() {
-		this.$nextTick(() => {
 			const refs = this.$refs.inventoryItems;
 			if (!Array.isArray(refs)) return;
 
@@ -135,7 +124,6 @@ export default {
 			if (refs[targetIndex] && refs[targetIndex].focusInput) {
 				refs[targetIndex].focusInput();
 			}
-		});
 		},	
 
 	},

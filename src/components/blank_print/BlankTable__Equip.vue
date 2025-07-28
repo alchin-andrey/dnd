@@ -125,8 +125,8 @@ export default {
 		},
 
 		style_Span_Top() {
-			if (this.classic) return 'cell pos-rel equip-wrapper grid-col-4';
-			else return 'cell pos-rel equip-wrapper grid-col-6';
+			if (this.classic) return 'cell pos-rel grid-col-4';
+			else return 'cell pos-rel grid-col-6';
 		},
 
 		style_Span_Bottom() {
@@ -151,12 +151,10 @@ export default {
 
 	methods: {
 		checkOverflow() {
-			this.$nextTick(() => {
-				const el = this.$refs.equipContainer;
-				if (el) {
-					this.overLimit = el.scrollHeight > el.clientHeight;
-				}
-			});
+			const el = this.$refs.equipContainer;
+			if (el) {
+				this.overLimit = el.scrollWidth > el.clientWidth;
+			}
 		}
 	},
 };
@@ -253,15 +251,5 @@ export default {
 	font-weight: bold;
 	pointer-events: none;
 	z-index: 2;
-}
-
-.equip-wrapper {
-	height: 100%;
-	overflow: auto;
-}
-
-.equip-wrapper::-webkit-scrollbar {
-	background: transparent;
-	/* чтобы вообще ничего не было */
 }
 </style>
