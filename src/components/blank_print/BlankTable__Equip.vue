@@ -14,12 +14,14 @@
 
 				<template v-for="(inv, i) in inventory_Equip_Print_Custom" :key="inv">
 					<div class="mr-t-30-blank" v-if="i == 0" />
-					<div class="int-500-22-blank">&bull;&nbsp;{{ t_Equip_Name(inv) }}</div>
+					<div class="int-500-22-blank equip-item">
+						&bull;&nbsp;{{ t_Equip_Name(inv) }}
+					</div>
 				</template>
 			</div>
 
 			<div v-if="overLimit && !blank_Mini" class="overflow-warning">
-				Кепські справи, деякі речі не влазять!
+				{{ overflowWarningMessage }}
 			</div>
 		</div>
 
@@ -51,11 +53,10 @@ import { useMYStore } from "@/stores/user/MYStore";
 import { useQualitiesStore } from "@/stores/modules/QualitiesStore";
 import { useEquipStore } from "@/stores/modules/EquipStore";
 import WeaponEquip from "@/components/equipment/WeaponEquip.vue";
+
 export default {
 	name: "BlankTable__Equip",
-	components: {
-		WeaponEquip,
-	},
+	components: { WeaponEquip },
 	props: {
 		classic: {
 			type: Boolean,
@@ -64,16 +65,22 @@ export default {
 		blank_size: {
 			type: String,
 			default: null,
-		}
+		},
 	},
 	data() {
 		return {
 			coins: ["platina", "gold", "silver", "copper"],
 			overLimit: false,
+			overflowCount: 0,
 		};
 	},
 	mounted() {
 		this.checkOverflow();
+		// window.addEventListener("load", this.checkOverflow, { once: true });
+		window.addEventListener("resize", this.checkOverflow);
+	},
+	beforeUnmount() {
+		window.removeEventListener("resize", this.checkOverflow);
 	},
 	updated() {
 		this.checkOverflow();
@@ -120,42 +127,71 @@ export default {
 		},
 
 		style_Br() {
-			if (this.classic) return 'grid-body--simple';
-			else return 'grid-body--full';
+			if (this.classic) return "grid-body--simple";
+			else return "grid-body--full";
 		},
 
 		style_Span_Top() {
-			if (this.classic) return 'cell pos-rel grid-col-4';
-			else return 'cell pos-rel grid-col-6';
+			if (this.classic) return "cell pos-rel grid-col-4";
+			else return "cell pos-rel grid-col-6";
 		},
 
 		style_Span_Bottom() {
-			if (this.classic) return 'cell grid-col-2';
-			else return 'cell';
+			if (this.classic) return "cell grid-col-2";
+			else return "cell";
 		},
 
 		style_Column() {
-			if (this.classic) return 'column-content h-size--simple';
-			else return 'column-content h-size--full';
+			if (this.classic) return "column-content h-size--simple";
+			else return "column-content h-size--full";
 		},
 
 		blank_Mini() {
-			return this.blank_size == 'mini'
+			return this.blank_size == "mini";
 		},
 
 		style_Column_Size() {
-			if (this.blank_Mini) return 'w-50';
-			else return 'w-300';
+			if (this.blank_Mini) return "w-50";
+			else return "w-300";
+		},
+
+		overflowWarningMessage() {
+			if (this.overflowCount === 0) {
+				return '';
+			} else if (this.overflowCount === 1) {
+				return 'Кепські справи, 1 річ не влазить!';
+			} else if (this.overflowCount >= 2 && this.overflowCount <= 4) {
+				return `Кепські справи, ${this.overflowCount} речі не влазять!`;
+			} else {
+				return `Кепські справи, ${this.overflowCount} речей не влазить!`;
+			}
 		},
 	},
 
 	methods: {
+		// checkOverflow() {
+		// 	const el = this.$refs.equipContainer;
+		// 	if (el) {
+		// 		this.overLimit = el.scrollWidth > el.clientWidth;
+		// 	}
+		// },
+
 		checkOverflow() {
-			const el = this.$refs.equipContainer;
-			if (el) {
-				this.overLimit = el.scrollWidth > el.clientWidth;
-			}
-		}
+			const container = this.$refs.equipContainer;
+			const items = container?.querySelectorAll(".equip-item");
+			if (!container || !items) return;
+
+			const containerRect = container.getBoundingClientRect();
+			let count = 0;
+
+			items.forEach((item) => {
+				const rect = item.getBoundingClientRect();
+				if (rect.right > containerRect.right) count++;
+			});
+
+			this.overflowCount = count;
+			this.overLimit = count > 0;
+		},
 	},
 };
 </script>
