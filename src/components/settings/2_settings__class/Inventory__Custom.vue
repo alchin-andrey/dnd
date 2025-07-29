@@ -28,7 +28,8 @@
 		v-model="inputValue_Count" 
 		:default-value="1" 
 		:min-value="1" 
-		:max-value="9999" 
+		:max-value="9999"
+		@enter="enterKey" 
 		/>
 	</div>
 </template>
@@ -96,8 +97,8 @@ export default {
 
 		checkEmptyOnBlur() {
 			this.stopSelectText();
-			if(this.inputValue_Name == '') this.delInventoryItem();
-		}
+			// if(this.inputValue_Name == '') this.delInventoryItem();
+		},
 	},
 
 	watch: {

@@ -126,7 +126,7 @@ export default {
 				refs[targetIndex].focusInput();
 			}
 		},
-		
+
 	},
 
 };

@@ -5,6 +5,7 @@
     v-model="inputValue" 
     onfocus="this.setSelectionRange(0, this.value.length)"
     @blur="stopSelectText()"
+    @keydown.enter.prevent="$emit('enter')"
     />
   </div>
 </template>
@@ -32,7 +33,7 @@ export default {
       default: 9999,
     },
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "enter"],
   data() {
     return {
       inputValue: "",
