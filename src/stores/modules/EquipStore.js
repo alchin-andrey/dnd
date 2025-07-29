@@ -210,7 +210,15 @@ export const useEquipStore = defineStore({
 			return packs_sum + equip_print_sum + equip_custom;
 		},
 
-		t_inventory_Menu() {
+		max_Inventory_Slots() {
+			return 48 - this.inventory_Total;
+		},
+
+		overflow_Inventory_Slots() {
+			if (this.max_Inventory_Slots < 0) return 'rare'
+		},
+
+		t_Inventory_Menu() {
 			const { t } = useDicStore();
 			return `${this.inventory_Total} ${t("items_used")}`
 		},

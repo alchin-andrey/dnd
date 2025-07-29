@@ -51,6 +51,7 @@ export default {
 
 	computed: {
 		...mapState(useEquipStore, [
+			"max_Inventory_Slots",
 			"inventory_Total",
 		]),
 		...mapState(useMYStore, ["MY"]),
@@ -61,7 +62,7 @@ export default {
 
 		inventory_Promo_Details() {
 			let length = this.t("inventory_name_length");
-			let num_items = 48 - this.inventory_Total;
+			let num_items = this.max_Inventory_Slots;
 			let items = this.t("items_available");
 			return `${length} \n${num_items} ${items}`
 		},
@@ -70,13 +71,9 @@ export default {
 			return this.t('rare');
 		},
 
-		maxSlots() {
-			return 48 - this.inventory_Total;
-		},
-
 		displayInventory() {
 			const arr = this.MY.custom_inventory;
-			if (this.maxSlots !== 0) {
+			if (this.max_Inventory_Slots > 0) {
 				return [...arr, [{ name: this.placeholderName }, this.placeholderCount]];
 			}
 			return arr;

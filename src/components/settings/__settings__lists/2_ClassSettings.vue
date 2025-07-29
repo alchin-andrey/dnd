@@ -1,48 +1,61 @@
 <template>
-	<My-Selection-Box title="stats" :select="base_Stats_Menu" :shown="class_page.shown.stats">
+	<My-Selection-Box 
+	title="stats" 
+	:select="base_Stats_Menu" 
+	:shown="class_page.shown.stats">
 		<ClassSett__BaseStats />
 	</My-Selection-Box>
 
 	<!-- customm_Settings -->
-  <My-Selection-Box
-			v-for="item in сustomm_Settings_Class_Arr_No_Feats"
-			:key="item.id_link"
-			:menu="item"
-			:shown="class_page.shown[item.id_link]"
-			mob_fixed
-		>
-			<ClassSett__Custom :custom="item"/>
-		</My-Selection-Box>
+	<My-Selection-Box 
+	v-for="item in сustomm_Settings_Class_Arr_No_Feats" 
+	:key="item.id_link" 
+	:menu="item"
+	:shown="class_page.shown[item.id_link]" 
+	mob_fixed
+	>
+		<ClassSett__Custom :custom="item" />
+	</My-Selection-Box>
 
-  <My-Selection-Box
-			v-for="item in spells_Settings_Class_Arr"
-			:key="item.id_link"
-			:menu="item"
-			:shown="class_page.shown[item.id_link]"
-			mob_fixed
-		>
-			<ClassParamSett__Spells v-if="mob_param_spell && !screen_Max" :spells_setting="item" :shown="true" class="pd-rl-16"/>
-			<ClassSett__Spells :spells_setting="item" v-else/>
-		</My-Selection-Box>
+	<My-Selection-Box 
+	v-for="item in spells_Settings_Class_Arr" 
+	:key="item.id_link" 
+	:menu="item"
+	:shown="class_page.shown[item.id_link]"
+	mob_fixed
+	>
+		<ClassParamSett__Spells 
+		v-if="mob_param_spell && !screen_Max" 
+		:spells_setting="item" 
+		:shown="true"
+		class="pd-rl-16" 
+		/>
+		<ClassSett__Spells :spells_setting="item" v-else />
+	</My-Selection-Box>
 
-  <!-- feats_Settings -->
-  <My-Selection-Box
-			v-for="item in feats_Select_Arr"
-			:key="item.id_link"
-			title="stats"
-			:menu="item"
-			:shown="class_page.shown[item.id_link]"
-			mob_fixed
-		>
-    <ClassSett__Feats :id_link="item.id_link" />
-		</My-Selection-Box>
+	<!-- feats_Settings -->
+	<My-Selection-Box 
+	v-for="item in feats_Select_Arr" 
+	:key="item.id_link" 
+	title="stats" 
+	:menu="item"
+	:shown="class_page.shown[item.id_link]" 
+	mob_fixed
+	>
+		<ClassSett__Feats :id_link="item.id_link" />
+	</My-Selection-Box>
 
-	<My-Selection-Box title="inventory" :select="t_inventory_Menu" :shown="class_page.shown.inventory">
+	<My-Selection-Box 
+	title="inventory" 
+	:select="t_Inventory_Menu"
+	:shown="class_page.shown.inventory"
+	:rare="overflow_Inventory_Slots"
+	>
 		<ClassSett__Inventory />
 	</My-Selection-Box>
 
 
-		<AlignmentSett__Photo />
+	<AlignmentSett__Photo />
 </template>
 
 <script>
@@ -65,7 +78,7 @@ export default {
 		]),
 		...mapState(useStatsStore, ["base_Stats_Menu"]),
 		...mapState(useFeatsStore, ["feats_Select_Arr"]),
-		...mapState(useEquipStore, ["t_inventory_Menu"]),
+		...mapState(useEquipStore, ["overflow_Inventory_Slots", "t_Inventory_Menu"]),
 
 	},
 };

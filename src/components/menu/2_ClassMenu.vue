@@ -43,7 +43,8 @@
 				@click="showSettings__Class('inventory')"
 				:active="class_page.shown.inventory"
 				title="inventory"
-				:t_type="t_inventory_Menu"
+				:t_type="t_Inventory_Menu"
+        :rare="overflow_Inventory_Slots"
 			></AppSelection>
 		</div>
 
@@ -79,10 +80,16 @@ export default {
       "сustomm_Settings_Class_Arr", 
       "spells_Settings_Class_Arr" 
     ]),
-
-    ...mapState(useStatsStore, [ "base_Stats_Menu" ]),
-    ...mapState(useFeatsStore, [ "feats_Select_Arr" ]),
-    ...mapState(useEquipStore, [ "t_inventory_Menu" ]),
+    ...mapState(useStatsStore, [ 
+      "base_Stats_Menu" 
+    ]),
+    ...mapState(useFeatsStore, [ 
+      "feats_Select_Arr" 
+    ]),
+    ...mapState(useEquipStore, [
+      "overflow_Inventory_Slots",
+      "t_Inventory_Menu" 
+    ]),
 
     filter_Setting: (stor) => (numb) => {
       return stor.сustomm_Settings_Class_Arr.filter((item) => item.position == numb);

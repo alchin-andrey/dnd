@@ -23,6 +23,7 @@
   :not_mob_header="not_mob_header" 
   :mob_fixed="mob_fixed"
   class="index"
+  :rare="rare"
   >
     <slot></slot>
   </AppMobDialog>
@@ -62,6 +63,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    rare: {
+			type: String,
+			default: null,
+		},
   },
   computed: {
     ...mapState(usePagesStore, ["screen_Max"]),
