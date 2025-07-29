@@ -14,7 +14,7 @@
 						v-model="inputValue" type="text" maxlength="20"
 						:placeholder="t_Placeholder" 
 						onfocus="this.setSelectionRange(0, this.value.length)"
-						@blur="stopSelectTexe()" 
+						@blur="stopSelectText()" 
 					/>
 				</section>
 				<section :class="style_Icon" @click="randomName()">
@@ -71,7 +71,7 @@ export default {
 	},
 	methods: {
 		...mapActions(useGenderStore, ["getRandomName"]),
-		...mapActions(usePagesStore, ["stopSelectTexe"]),
+		...mapActions(usePagesStore, ["stopSelectText"]),
 
 		randomName() {
 			this.getRandomName();

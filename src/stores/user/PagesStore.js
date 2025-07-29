@@ -311,7 +311,7 @@ export const usePagesStore = defineStore({
       }
     },
 
-    stopSelectTexe() {
+    stopSelectText() {
 			if (window.getSelection) {
 				if (window.getSelection().empty) {  // Chrome
 					window.getSelection().empty();

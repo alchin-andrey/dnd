@@ -18,7 +18,8 @@
 		:is-new="index === MY.custom_inventory.length"
 		@update:modelValue_Name="updateName(index, $event)" @update:modelValue_Count="updateCount(index, $event)"
 		@delete="deleteItem(index)" 
-		@enter="focusNew" />
+		@enter="focusNew"
+		/>
 	</section>
 
 </template>
@@ -116,13 +117,16 @@ export default {
 			if (!Array.isArray(refs)) return;
 
 			const emptyIndex = this.MY.custom_inventory.findIndex(i => !i[0].name);
-			const targetIndex = emptyIndex !== -1 ? emptyIndex : this.MY.custom_inventory.length;
+			if (emptyIndex !== -1) {
+				this.deleteItem(emptyIndex)
+			}
 
+			const targetIndex = this.MY.custom_inventory.length;
 			if (refs[targetIndex] && refs[targetIndex].focusInput) {
 				refs[targetIndex].focusInput();
 			}
-		},	
-
+		},
+		
 	},
 
 };

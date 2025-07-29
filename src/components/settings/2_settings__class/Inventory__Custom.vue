@@ -12,7 +12,7 @@
 			maxlength="36"
 			:placeholder="t_Placeholder"
 			onfocus="this.setSelectionRange(0, this.value.length)"
-			@blur="stopSelectTexe()"
+			@blur="checkEmptyOnBlur"
 			@keydown.enter.prevent="enterKey"
 			/>
 			<div 
@@ -27,8 +27,8 @@
 		v-if="!isNew"
 		v-model="inputValue_Count" 
 		:default-value="1" 
-		:min-value="minValue" 
-		:max-value="maxValue" 
+		:min-value="1" 
+		:max-value="9999" 
 		/>
 	</div>
 </template>
@@ -45,7 +45,6 @@ export default {
 		return {
 			inputValue_Name: "",
 			inputValue_Count: null,
-			lastCountValue: 1,
 		};
 	},
 	props: {
@@ -78,18 +77,10 @@ export default {
 			return !this.isNew ? 'br-l-12-r-4' : null;
 		},
 
-		minValue() {
-			return this.inputValue_Name ? 1 : 0;
-		},
-
-		maxValue() {
-			return this.inputValue_Name ? 9999 : 0;
-		},
-
 	},
 
 	methods: {
-		...mapActions(usePagesStore, ["stopSelectTexe"]),
+		...mapActions(usePagesStore, ["stopSelectText"]),
 
 		delInventoryItem() {
 			this.$emit('delete');
@@ -101,6 +92,11 @@ export default {
 
 		focusInput() {
 			this.$refs.nameInput?.focus();
+		},
+
+		checkEmptyOnBlur() {
+			this.stopSelectText();
+			if(this.inputValue_Name == '') this.delInventoryItem();
 		}
 	},
 
@@ -120,22 +116,11 @@ export default {
 		inputValue_Name: {
 			handler(newVal) {
 				this.$emit("update:modelValue_Name", newVal);
-				if (!newVal) {
-					if (this.inputValue_Count > 0) {
-						this.lastCountValue = this.inputValue_Count;
-					}
-					this.inputValue_Count = 0;
-				} else if (this.inputValue_Count === 0) {
-					this.inputValue_Count = this.lastCountValue > 0 ? this.lastCountValue : 1;
-				}
 			},
 		},
 		inputValue_Count: {
 			handler(newVal) {
 				this.$emit("update:modelValue_Count", newVal);
-				if (newVal > 0) {
-					this.lastCountValue = newVal;
-				}
 			},
 		},
 	},

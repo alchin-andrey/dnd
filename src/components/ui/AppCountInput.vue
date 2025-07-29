@@ -4,7 +4,7 @@
     type="text" 
     v-model="inputValue" 
     onfocus="this.setSelectionRange(0, this.value.length)"
-    @blur="stopSelectTexe()"
+    @blur="stopSelectText()"
     />
   </div>
 </template>
@@ -63,7 +63,7 @@ export default {
   },
 
   methods: {
-		...mapActions(usePagesStore, ["stopSelectTexe"]),
+		...mapActions(usePagesStore, ["stopSelectText"]),
 	},
 };
 </script>

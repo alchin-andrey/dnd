@@ -14,7 +14,7 @@
 				maxlength="60"
 				:placeholder="t_Placeholder"
 				onfocus="this.setSelectionRange(0, this.value.length)"
-				@blur="stopSelectTexe()" 
+				@blur="stopSelectText()" 
 			/>
 	</section>
 </template>
@@ -68,7 +68,7 @@ export default {
 
 	},
 	methods: {
-		...mapActions(usePagesStore, ["stopSelectTexe"]),
+		...mapActions(usePagesStore, ["stopSelectText"]),
 
 		getCustomName() {
 			const arr = this.MY[this.save_setting][this.id_link];
