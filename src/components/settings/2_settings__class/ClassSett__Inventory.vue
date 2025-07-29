@@ -18,7 +18,8 @@
 		:is-new="index === MY.custom_inventory.length"
 		@update:modelValue_Name="updateName(index, $event)" @update:modelValue_Count="updateCount(index, $event)"
 		@delete="deleteItem(index)" 
-		@enter="focusNew"
+		@enter="handleEnter(index)"
+		@blur="handleBlur(index)"
 		/>
 	</section>
 
@@ -112,19 +113,29 @@ export default {
 			}
 		},
 
+		checkEmptyInput(index) {
+			if (index < this.MY.custom_inventory.length &&
+				!this.MY.custom_inventory[index][0].name.trim()) {
+				this.deleteItem(index);
+			}
+		},
+
 		focusNew() {
 			const refs = this.$refs.inventoryItems;
 			if (!Array.isArray(refs)) return;
-
-			const emptyIndex = this.MY.custom_inventory.findIndex(i => !i[0].name);
-			if (emptyIndex !== -1) {
-				this.deleteItem(emptyIndex)
-			}
-
 			const targetIndex = this.MY.custom_inventory.length;
 			if (refs[targetIndex] && refs[targetIndex].focusInput) {
 				refs[targetIndex].focusInput();
 			}
+		},
+
+		handleEnter(index) {
+			this.checkEmptyInput(index);
+			this.focusNew()
+		},
+
+		handleBlur(index) {
+			this.checkEmptyInput(index);
 		},
 
 	},

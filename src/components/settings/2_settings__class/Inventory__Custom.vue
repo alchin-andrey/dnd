@@ -41,7 +41,7 @@ import { usePagesStore } from "@/stores/user/PagesStore";
 
 export default {
 	name: "Inventory__Custom",
-	emits: ["update:modelValue_Name", "update:modelValue_Count", "delete", "enter"],
+	emits: ["update:modelValue_Name", "update:modelValue_Count", "delete", "enter", "blur"],
 	data() {
 		return {
 			inputValue_Name: "",
@@ -97,7 +97,7 @@ export default {
 
 		checkEmptyOnBlur() {
 			this.stopSelectText();
-			// if(this.inputValue_Name == '') this.delInventoryItem();
+			this.$emit('blur');
 		},
 	},
 
