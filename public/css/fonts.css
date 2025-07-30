@@ -133,6 +133,15 @@
 	letter-spacing: 0.02em;
 }
 
+.int-500-22-blank {
+	font-family: "Inter-500";
+	font-style: normal;
+	font-weight: normal;
+	font-size: var(--px-22);
+	line-height: var(--px-30);
+	letter-spacing: 0.02em;
+}
+
 .int-600-22 {
 	font-family: "Inter-600";
 	font-style: normal;

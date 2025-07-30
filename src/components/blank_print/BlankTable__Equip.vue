@@ -12,7 +12,13 @@
 					</div>
 				</template>
 
-				<template v-for="(inv, i) in inventory_Equip_Print_Custom" :key="inv">
+				<template v-for="(inv, i) in inventory_Equip_Print" :key="inv">
+					<div class="mr-t-30-blank" v-if="i == 0" />
+					<div class="int-500-22-blank">
+						&bull;&nbsp;{{ t_Equip_Name(inv) }}
+					</div>
+				</template>
+				<template v-for="(inv, i) in MY.custom_inventory" :key="inv">
 					<div class="mr-t-30-blank" v-if="i == 0" />
 					<div class="int-500-22-blank equip-item">
 						&bull;&nbsp;{{ t_Equip_Name(inv) }}
@@ -20,7 +26,7 @@
 				</template>
 			</div>
 
-			<div v-if="overLimit && !blank_Mini" class="overflow-warning">
+			<div v-if="overLimit && !blank_Mini" class="int-600-22-blank overflow-warning">
 				{{ overflowWarningMessage }}
 			</div>
 		</div>
@@ -92,7 +98,7 @@ export default {
 			"gold_Equip_All",
 			"packs_Equip_All",
 			"inventory_Equip_All",
-			"inventory_Equip_Print_Custom",
+			"inventory_Equip_Print",
 			"ammunition_Equip_Print",
 		]),
 
@@ -156,15 +162,10 @@ export default {
 		},
 
 		overflowWarningMessage() {
-			if (this.overflowCount === 0) {
-				return '';
-			} else if (this.overflowCount === 1) {
-				return 'Кепські справи, 1 річ не влазить!';
-			} else if (this.overflowCount >= 2 && this.overflowCount <= 4) {
-				return `Кепські справи, ${this.overflowCount} речі не влазять!`;
-			} else {
-				return `Кепські справи, ${this.overflowCount} речей не влазить!`;
-			}
+			const mes_1 = this.t('inventory_overflow_1');
+			const num = this.overflowCount;
+			const mes_2 = this.t('inventory_overflow_2');
+			return `${mes_1} ${num} ${mes_2}`;
 		},
 	},
 
@@ -282,9 +283,8 @@ export default {
 .overflow-warning {
 	position: absolute;
 	right: 12px;
-	top: 6px;
+	top: 4px;
 	color: red;
-	font-weight: bold;
 	pointer-events: none;
 	z-index: 2;
 }

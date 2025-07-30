@@ -188,10 +188,15 @@ export const useEquipStore = defineStore({
 			return filter;
 		},
 
-    inventory_Equip_Print_Custom() {
-      const MYStore = useMYStore();
-			return [...this.inventory_Equip_Print, ...MYStore.MY.custom_inventory];
-		},
+    // inventory_Equip_Custom() {
+    //   const MYStore = useMYStore();
+		// 	return MYStore.MY.custom_inventory;
+		// },
+
+    // inventory_Equip_Print_Custom() {
+    //   const MYStore = useMYStore();
+		// 	return [...this.inventory_Equip_Print, ...MYStore.MY.custom_inventory];
+		// },
 
     ammunition_Equip_Print() {
       const all = this.inventory_Equip_All;
