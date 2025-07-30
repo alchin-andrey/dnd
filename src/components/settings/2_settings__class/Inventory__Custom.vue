@@ -14,6 +14,7 @@
 			onfocus="this.setSelectionRange(0, this.value.length)"
 			@blur="checkEmptyOnBlur"
 			@keydown.enter.prevent="enterKey"
+			@paste.stop
 			/>
 			<div 
 			v-if="!isNew"

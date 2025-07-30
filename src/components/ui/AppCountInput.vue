@@ -6,6 +6,7 @@
     onfocus="this.setSelectionRange(0, this.value.length)"
     @blur="stopSelectText()"
     @keydown.enter.prevent="$emit('enter')"
+    @paste.stop
     />
   </div>
 </template>
