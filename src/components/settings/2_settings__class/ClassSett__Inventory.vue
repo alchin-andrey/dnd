@@ -1,5 +1,5 @@
 <template>
-	<section class="marg">
+	<section class="marg w-max-394">
 		<ClassParam__EquipKit no_gold no_custom />
 	</section>
 	<section class="flex-col gap-8">
