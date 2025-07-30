@@ -6392,4 +6392,6 @@ export default {
   items_used: "/ 48 пунктів",
 
   inventory_custom_placeholder: "Додати пункт",
+  inventory_overflow_1:"Ще",
+  inventory_overflow_2:"не вміщається! Скороти назви",
 };
