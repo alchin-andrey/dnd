@@ -3,9 +3,13 @@
 		<ClassParam__EquipKit no_gold no_custom />
 	</section>
 	<section class="flex-col gap-8">
-		<AppCardWrapp passive>
-			<my-card-text :title="inventory_Promo_Title" :text="inventory_Promo_Details" />
-			<my-card-text rare="rare" />
+		<AppCardWrapp class="int-400" passive>
+			<div>
+				<div class="int-700 mr-b-5"> {{ inventory_Promo_Title }} </div>
+				<div class="white-04"> {{ inventory_Promo_Details }} </div>
+				<div :class="style_Overflow"> {{ inventory_Promo_Slots }} </div>
+			</div>
+			<div class="rare-text"> {{ inventory_Promo_Rare }} </div>
 		</AppCardWrapp>
 
 		<InventoryGold__Custom />
@@ -53,6 +57,7 @@ export default {
 
 	computed: {
 		...mapState(useEquipStore, [
+			"overflow_Inventory_Slots",
 			"max_Inventory_Slots",
 			"inventory_Total",
 		]),
@@ -63,14 +68,21 @@ export default {
 		},
 
 		inventory_Promo_Details() {
-			let length = this.t("inventory_name_length");
+			return this.t("inventory_name_length");
+		},
+
+		inventory_Promo_Slots() {
 			let num_items = this.max_Inventory_Slots;
 			let items = this.t("items_available");
-			return `${length} \n${num_items} ${items}`
+			return `${num_items} ${items}`
 		},
 
 		inventory_Promo_Rare() {
-			return this.t('rare');
+			return this.t('rare_details');
+		},
+
+		style_Overflow() {
+			return this.overflow_Inventory_Slots ? 'rare-text' : 'white-04';
 		},
 
 		displayInventory() {
