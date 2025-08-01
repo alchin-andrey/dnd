@@ -50,8 +50,7 @@ export default {
 
 	data() {
 		return {
-			placeholderName: "",
-			placeholderCount: 1,
+			placeholder: { name: "", count: 1 }
 		};
 	},
 
@@ -88,7 +87,7 @@ export default {
 		displayInventory() {
 			const arr = this.MY.custom_inventory;
 			if (this.max_Inventory_Slots > 0) {
-				return [...arr, [{ name: this.placeholderName }, this.placeholderCount]];
+				return [...arr, [{ name: this.placeholder.name }, this.placeholder.count]];
 			}
 			return arr;
 		},
@@ -97,11 +96,10 @@ export default {
 	methods: {
 	updateName(index, val) {
 		if (index === this.MY.custom_inventory.length) {
-			this.placeholderName = val;
+			this.placeholder.name = val;
 			if (val !== '') {
-				this.MY.custom_inventory.push([{ name: val }, this.placeholderCount]);
-				this.placeholderName = '';
-				this.placeholderCount = 1;
+				this.MY.custom_inventory.push([{ name: val }, this.placeholder.count]);
+				this.placeholder = { name: "", count: 1 };
 			}
 		} else {
 			this.MY.custom_inventory[index][0].name = val;
@@ -110,7 +108,7 @@ export default {
 
 		updateCount(index, val) {
 			if (index === this.MY.custom_inventory.length) {
-				this.placeholderCount = val;
+				this.placeholder.count = val;
 			} else {
 				this.MY.custom_inventory[index][1] = val;
 			}
@@ -118,8 +116,7 @@ export default {
 
 		deleteItem(index) {
 			if (index === this.MY.custom_inventory.length) {
-				this.placeholderName = '';
-				this.placeholderCount = 1;
+				this.placeholder = { name: "", count: 1 };
 			} else {
 				this.MY.custom_inventory.splice(index, 1);
 			}
