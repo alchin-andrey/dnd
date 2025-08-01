@@ -1,9 +1,11 @@
 <template>
   <div class="card-main flex-row-c flex-no-grow br-l-4-r-12 pd-0 w-96">
     <input 
+    class="int-700"
     type="text" 
     v-model="inputValue" 
     onfocus="this.setSelectionRange(0, this.value.length)"
+    inputmode="numeric"
     @blur="stopSelectText()"
     @keydown.enter.prevent="$emit('enter')"
     @paste.stop
@@ -90,5 +92,6 @@ input[type="text"] {
   border-radius: 4px 12px 12px 4px;
   text-decoration-line: underline;
   text-decoration-color: #ffffff;
+  -webkit-appearance: none;
 }
 </style>

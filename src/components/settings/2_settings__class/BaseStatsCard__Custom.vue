@@ -12,7 +12,7 @@
 			<input 
 			size="1" 
 			spellcheck="false" 
-			class="liner" 
+			class="int-700 liner" 
 			v-model="inputValue" 
 			type="text" 
 			onclick="this.setSelectionRange(0, this.value.length)"
@@ -189,10 +189,10 @@ input::-webkit-inner-spin-button {
 	color: rgba(255, 255, 255, 0.2);
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) {
 select:focus, textarea:focus, input:focus {
         font-size: 16px;
 				line-height: 18px;
     }
-}
+} */
 </style>

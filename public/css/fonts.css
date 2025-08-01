@@ -214,7 +214,8 @@
   letter-spacing: 0.02em;
 }
 
-.int-700 {
+.int-700,
+.int-700::placeholder {
 	font-family: "Inter-700";
 	font-style: normal;
 	font-weight: normal;

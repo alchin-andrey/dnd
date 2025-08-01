@@ -118,6 +118,7 @@ input[type="text"] {
 	align-items: center;
 	height: 47px;
 	border-radius: 12px;
+	-webkit-appearance: none;
 }
 
 ::placeholder {
@@ -139,11 +140,11 @@ input[type="text"] {
 	margin-bottom: 3px;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) {
 select:focus, textarea:focus, input:focus {
         font-size: 16px;
 				line-height: 18px;
     }
-}
+} */
 
 </style>
