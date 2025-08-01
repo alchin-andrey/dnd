@@ -224,6 +224,26 @@
 	letter-spacing: 0.02em;
 }
 
+.int-700-ios,
+.int-700-ios::placeholder {
+	font-family: "Inter-700";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+}
+
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+	.int-700-ios,
+	.int-700-ios::placeholder {
+		font-size: 16px;
+		transform: scale(0.8125);
+		transform-origin: left center;
+		-webkit-text-size-adjust: 100%;
+	}
+}
+
 .int-700-18 {
 	font-family: "Inter-700";
 	font-style: normal;

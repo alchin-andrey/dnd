@@ -8,11 +8,11 @@
 				{{ t_Title }}<span>{{ t_Type }}</span>
 			</div>
 		</div>
-		<div class="btm-grey hov br-l-12 int-700 liner">
+		<div class="btm-grey hov br-l-12">
 			<input 
 			size="1" 
 			spellcheck="false" 
-			class="int-700 liner" 
+			class="int-700-ios liner" 
 			v-model="inputValue" 
 			type="text" 
 			onclick="this.setSelectionRange(0, this.value.length)"

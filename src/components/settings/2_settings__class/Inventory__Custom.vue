@@ -1,9 +1,9 @@
 <template>
-	<div class="flex-row gap-2 int-700">
+	<div class="flex-row gap-2">
 		<section class="card-main pd-0 pd-r-16 flex-row-sb w-100" :class="style_Br">
 			<input
 			ref="nameInput"
-			class="name-item int-700"
+			class="name-item int-700-ios"
 			:class="{ liner: inputValue_Name, }"
 			size="1"
 			spellcheck="false"

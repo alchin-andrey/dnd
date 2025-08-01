@@ -1,7 +1,7 @@
 <template>
   <div class="card-main flex-row-c flex-no-grow br-l-4-r-12 pd-0 w-96">
     <input 
-    class="int-700"
+    class="int-700-ios"
     type="text" 
     v-model="inputValue" 
     onfocus="this.setSelectionRange(0, this.value.length)"

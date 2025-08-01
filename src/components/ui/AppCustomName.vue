@@ -4,7 +4,7 @@
 				size="1"
 				@keyup="getCustomName()"
 				spellcheck="false"
-				class="int-700"
+				class="int-700-ios"
 				:class="[ 
 				style_Pd,
 				{ liner: modelValue,}
