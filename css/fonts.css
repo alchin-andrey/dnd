@@ -133,6 +133,15 @@
 	letter-spacing: 0.02em;
 }
 
+.int-500-22-blank {
+	font-family: "Inter-500";
+	font-style: normal;
+	font-weight: normal;
+	font-size: var(--px-22);
+	line-height: var(--px-30);
+	letter-spacing: 0.02em;
+}
+
 .int-600-22 {
 	font-family: "Inter-600";
 	font-style: normal;
@@ -205,13 +214,41 @@
   letter-spacing: 0.02em;
 }
 
-.int-700 {
+.int-700,
+.int-700::placeholder {
 	font-family: "Inter-700";
 	font-style: normal;
 	font-weight: normal;
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
+}
+
+.int-700-ios,
+.int-700-ios::placeholder {
+	font-family: "Inter-700";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+	/* transition: font-size 0.1s, line-height 0.1s; */
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 768px) {
+  .int-700-ios:focus,
+  .int-700-ios:focus::placeholder {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+}
+  
+@supports (-webkit-touch-callout: none) {
+  .int-700-ios:focus,
+  .int-700-ios:focus::placeholder {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
 }
 
 .int-700-18 {
