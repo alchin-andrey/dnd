@@ -7,7 +7,7 @@
 			:class="{ liner: inputValue_Name, }"
 			size="1"
 			spellcheck="false"
-			:value="inputValue_Name" 
+			v-model="inputValue_Name"
 			type="text"
 			maxlength="36"
 			:placeholder="t_Placeholder"
@@ -15,24 +15,22 @@
 			@blur="checkEmptyOnBlur"
 			@keydown.enter.prevent="enterKey"
 			@paste.stop
-			@input="handleInput" 
-			@keyup="handleInput" 
 			/>
-			<div
+			<div 
 			v-if="!isNew"
-			class="del_btm"
+			class="del_btm" 
 			@click="delInventoryItem"
 			>
 				<AppSvg class="svg-18 svg-main-f" name="delete" />
 			</div>
 		</section>
-		<AppCountInput
+		<AppCountInput 
 		v-if="!isNew"
-		v-model="inputValue_Count"
-		:default-value="1"
-		:min-value="1"
+		v-model="inputValue_Count" 
+		:default-value="1" 
+		:min-value="1" 
 		:max-value="9999"
-		@enter="enterKey"
+		@enter="enterKey" 
 		/>
 	</div>
 </template>
@@ -86,14 +84,6 @@ export default {
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
 
-		handleInput(event) {
-			const newValue = event.target.value;
-			if (this.inputValue_Name !== newValue) {
-				this.inputValue_Name = newValue;
-				this.$emit("update:modelValue_Name", this.inputValue_Name);
-			}
-		},
-
 		delInventoryItem() {
 			this.$emit('delete');
 		},
@@ -114,10 +104,8 @@ export default {
 
 	watch: {
 		modelValue_Name: {
-			handler(newVal) {
-				if (this.inputValue_Name !== newVal) {
-					this.inputValue_Name = newVal;
-				}
+			handler() {
+				this.inputValue_Name = this.modelValue_Name;
 			},
 			immediate: true,
 		},
@@ -126,6 +114,11 @@ export default {
 				this.inputValue_Count = this.modelValue_Count;
 			},
 			immediate: true,
+		},
+		inputValue_Name: {
+			handler(newVal) {
+				this.$emit("update:modelValue_Name", newVal);
+			},
 		},
 		inputValue_Count: {
 			handler(newVal) {
@@ -192,9 +185,20 @@ input[type="text"].count-item {
 }
 
 .del_btm {
+	/* position: absolute;
+	right: 16px;
+	top: calc(50% - 9px); */
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
+
+/* @media screen and (-webkit-min-device-pixel-ratio: 0) {
+select:focus, textarea:focus, input:focus {
+        font-size: 16px;
+				line-height: 18px;
+    }
+} */
 </style>
