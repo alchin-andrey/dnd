@@ -56,7 +56,6 @@ export default {
 
 	computed: {
 		...mapState(useEquipStore, [
-			"overflow_Inventory_Slots",
 			"max_Inventory_Slots",
 			"inventory_Total",
 		]),
@@ -71,7 +70,7 @@ export default {
 		},
 
 		inventory_Promo_Slots() {
-			let num_items = this.max_Inventory_Slots;
+			let num_items = this.max_Inventory_Slots > 0 ? this.max_Inventory_Slots : 0;
 			let items = this.t("items_available");
 			return `${num_items} ${items}`
 		},
@@ -81,7 +80,8 @@ export default {
 		},
 
 		style_Overflow() {
-			return this.overflow_Inventory_Slots ? 'rare-text' : 'white-04';
+			console.log('this.max_Inventory_Slots:', this.max_Inventory_Slots)
+			return this.max_Inventory_Slots <= 0 ? 'rare-text' : 'white-04';
 		},
 
 		displayInventory() {
