@@ -80,7 +80,6 @@ export default {
 		},
 
 		style_Overflow() {
-			console.log('this.max_Inventory_Slots:', this.max_Inventory_Slots)
 			return this.max_Inventory_Slots <= 0 ? 'rare-text' : 'white-04';
 		},
 
