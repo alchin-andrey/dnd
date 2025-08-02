@@ -141,6 +141,11 @@ export default {
 
   .pos-scroll {
     overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .pos-scroll::-webkit-scrollbar {
+    width: 0;
   }
 
   .dialog__wrapp {
