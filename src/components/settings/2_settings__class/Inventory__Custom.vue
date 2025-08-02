@@ -102,24 +102,16 @@ export default {
 			this.$emit('enter', this.index);
 		},
 
-		// focusInput() {
-		// 	this.$refs.nameInput?.focus();
-		// },
-
 		focusInput() {
 			const input = this.$refs.nameInput;
 			if (input) {
 				input.focus();
 
-				// setTimeout(() => {
-					// this.$nextTick(() => {
 						input.scrollIntoView({
 							behavior: "smooth",
 							block: "center",
 							inline: "nearest",
 						});
-					// });
-				// }, 300);
 			}
 		},
 
