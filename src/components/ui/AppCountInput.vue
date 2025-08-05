@@ -7,7 +7,7 @@
     onfocus="this.setSelectionRange(0, this.value.length)"
     inputmode="numeric"
     @blur="stopSelectText()"
-    @keydown.enter.prevent="$emit('enter')"
+    @keyup.enter.prevent="$emit('enter')"
     @paste.stop
     />
   </div>
