@@ -107,18 +107,11 @@ export default {
 			const input = this.$refs.nameInput;
 			if (input) {
 				input.focus();
-
-        // if (this.isNew && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
-				// 	const currentValue = input.value;
-				// 	input.value = ' ';
-				// 	input.value = currentValue;
-        // }
-
-						input.scrollIntoView({
-							behavior: "smooth",
-							block: "center",
-							inline: "nearest",
-						});
+				input.scrollIntoView({
+					behavior: "smooth",
+					block: "center",
+					inline: "nearest",
+				});
 			}
 		},
 
