@@ -16,7 +16,8 @@
 			@keydown.enter.prevent="enterKey"
 			@paste.stop
 			@input="handleInput" 
-			@keyup="handleInput" 
+			@keyup="handleInput"
+			autocapitalize="sentences"
 			/>
 			<div
 			v-if="!isNew"

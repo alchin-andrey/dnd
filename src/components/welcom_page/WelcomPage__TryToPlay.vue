@@ -2,7 +2,7 @@
 	<article>
 		<div class="int-700-30" v-html="t('lobby_try_to_play')" />
 
-		<div class="flex-row flex-wrap gap-4 mr-t-108">
+		<div :class="['flex-row', 'flex-wrap', 'gap-4', style_Mr]">
 			<div class="card-size flex-col" :class="{'mr-bot': !new_user}">
 				<WelcomPage__CardToPlay @click="goToChar()" v-if="new_user"/>
 				<WelcomPage__CardChar v-else/>
@@ -26,7 +26,11 @@ export default {
 	},
 
 	computed: {
-		...mapState(usePagesStore, ["new_user"]),
+		...mapState(usePagesStore, ["new_user", "screen_Max"]),
+
+		style_Mr() {
+			return this.screen_Max ? "mr-t-108" : "mr-t-48" 
+		}
 	},
 
 	methods: {
