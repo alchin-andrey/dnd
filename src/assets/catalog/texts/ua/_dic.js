@@ -6325,7 +6325,7 @@ export default {
   all_spell: "Усього заклять",
 
   //New main page
-  lobby_try_to_play:'Спробуй зіграти у<br/><span class="buff">Dungeons & Dargons</span><br/> без читання правил!', 
+  lobby_try_to_play:'Спробуй зіграти у<br/><span class="buff">Dungeons & Dragons</span><br/> без читання правил!', 
   create_character: "Створи свого героя",
   create_character_details: "<br />Щоб почати грати в D&D, достатньо придумати свого персонажа, а решту влаштує ваш Майстер.<br /><br />Найкращий підхід для першого разу — вибирати просто за покликом серця, бо тут немає неправильних рішень.",
   select_master: "Вибери гру або Майстра",
