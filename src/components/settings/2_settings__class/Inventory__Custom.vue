@@ -1,6 +1,6 @@
 <template>
 	<div class="flex-row gap-2">
-		<section class="card-main pd-0 pd-r-16 flex-row-sb w-100" :class="style_Br">
+		<section class="card-main pos-rel pd-0 flex-row-sb w-100" :class="style_Br">
 			<input
 			ref="nameInput"
 			class="name-item int-700-ios"
@@ -201,9 +201,13 @@ input[type="text"].count-item {
 }
 
 .del_btm {
+	right: 0;
+	width: 50px;
+	height: 47px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-shrink: 0;
 }
 </style>

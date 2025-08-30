@@ -1,7 +1,7 @@
 <template>
   <div class="flex-row gap-2 int-700">
-    <div class="card-main flex-row-sb br-l-12-r-4 w-100">
-      <div class="flex-row-c gap-8">
+    <div class="card-main flex-row-sb pd-0 br-l-12-r-4 w-100">
+      <div class="flex-row-c pd-16 gap-8">
         <div class="flex-row-c">
           <emoji :data="emojiIndex" emoji="🟡" :set="set_emoji" :size="14" />
         </div>
@@ -64,6 +64,8 @@ export default {
 }
 
 .reset_btm {
+	width: 50px;
+	height: 47px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
