@@ -27,7 +27,7 @@ export default {
     city: ["kyiv"],
     format: [],
     telegram: "sanech_contact",
-    link: "https://t.me/SanechSanech",
+    link: "https://t.me/SanechDM",
   }
 
 };
