@@ -6394,4 +6394,10 @@ export default {
   inventory_custom_placeholder: "Додати пункт",
   inventory_overflow_1:"Ще",
   inventory_overflow_2:"не вміщається! Скороти назви",
+
+  empty:"пусто",
+
+  your_biography:" народився у ...",
+  insert:"Вставити ↩︎",
+  use_gpt:"Згенерувати у ChatGPT ↗",
 };
