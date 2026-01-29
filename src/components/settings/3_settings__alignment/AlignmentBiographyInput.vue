@@ -1,5 +1,5 @@
 <template>
-	<section class="int-400 w-100">
+	<section class="int-400 br-12 pd-16 pd-b-14 cur-text w-100" @click="focusOnly">
 			<textarea 
 				ref="textarea"
 				rows="1"
@@ -10,7 +10,6 @@
 				maxlength="5000"
 				:placeholder="t_Placeholder"
 				@paste.stop
-				@blur="stopSelectText()" 
 			/>
 			<div class="int-400 flex-row-sb">
 				<div class="w-70"
@@ -131,6 +130,21 @@ export default {
       el.style.height = 'auto'
       el.style.height = el.scrollHeight + 'px'
     },
+
+		focusOnly() {
+			this.$refs.textarea.focus()
+		},
+
+		focusToEnd(e) {
+			const el = this.$refs.textarea
+			if (!el) return
+
+			if (e?.target === el || el.contains(e?.target)) return
+
+			el.focus()
+			const len = el.value?.length ?? 0
+			el.setSelectionRange(len, len)
+		},
 
 	},
 	watch: {

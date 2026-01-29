@@ -44,6 +44,7 @@
 .btm-anim { transition-duration: 0.5s;}
 
 .cur-p { cursor: pointer; }
+.cur-text { cursor: text; }
 .cur-ban { cursor: not-allowed; }
 .cur-auto { cursor: auto; }
 

@@ -14,7 +14,7 @@
 				</AppCardWrapp>
 			</div>
 
-			<AppCardWrapp class="mr-b-24 pd-16 pd-b-14" no_pd passive>
+			<AppCardWrapp class="mr-b-24" no_pd passive>
 				<AlignmentBiographyInput
 					v-model="MY.biography_options[MY.user_biography - 1].text"
 				/>
