@@ -7,13 +7,15 @@
 				spellcheck="false"
 				class="int-400 mr-b-20"
 				v-model="inputValue"
-				maxlength="1000"
+				maxlength="5000"
 				:placeholder="t_Placeholder"
 				@paste.stop
 				@blur="stopSelectText()" 
 			/>
 			<div class="int-400 flex-row-sb">
-				<div class="white-04 w-60"> {{ num_Symbols }} </div>
+				<div class="w-70"
+				:class="[style_Symbols]"
+				> {{ num_Symbols }} </div>
 				<div class="cur-p" 
 				@mousedown.prevent 
 				@click="pasteFromClipboard"
@@ -67,12 +69,17 @@ export default {
 		},
 
     t_Placeholder() {
-			return this.T("your_biography");
+			return `${this.MY.name} ${this.t("your_biography")}`;
 		},
 
     num_Symbols() {
 			let num = this.inputValue.length
-			return `${num}/1000`;
+			return `${num} / 5000`;
+		},
+
+		style_Symbols() {
+			let limit = this.inputValue.length == 5000;
+			return limit ? 'rare-text' : 'white-04';
 		},
 
 	},
@@ -87,7 +94,7 @@ export default {
 			const clipTextRaw = await navigator.clipboard.readText()
 			if (!clipTextRaw) return
 
-			const max = 1000
+			const max = 5000
 			const isFocused = document.activeElement === el
 
 			if (!isFocused) {
@@ -128,7 +135,7 @@ export default {
 	},
 	watch: {
     inputValue(val) {
-			// const clamped = (val ?? "").slice(0, 1000)
+			// const clamped = (val ?? "").slice(0, 5000)
 			// if (clamped !== val) {
 			// 	this.inputValue = clamped
 			// 	return
@@ -140,7 +147,7 @@ export default {
     modelValue: {
       immediate: true,
       handler(val) {
-				// const clamped = (val ?? "").slice(0, 1000)
+				// const clamped = (val ?? "").slice(0, 5000)
 				// if (clamped === this.inputValue) return
 				// this.inputValue = clamped
 				// this.$nextTick(this.autoResize)
@@ -165,7 +172,7 @@ textarea {
 	width: 100%;
 	resize: none;
 	overflow: hidden;
-	/* -webkit-appearance: none; */
+	-webkit-appearance: none;
 }
 
 ::placeholder {

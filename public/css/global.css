@@ -10,6 +10,7 @@ a.db {display: block;}
 
 .w-50 {width: 50px;}
 .w-60 {width: 60px;}
+.w-70 {width: 70px;}
 .w-96 {width: 96px;}
 .w-300 {width: 300px;}
 .w-320 {width: 320px;}
@@ -135,6 +136,8 @@ a.db {display: block;}
 .pd-t-2 { padding-top: 2px; }
 .pd-t-22 { padding-top: 22px; }
 .pd-t-32 { padding-top: 32px; }
+
+.pd-b-14 { padding-bottom: 14px; }
 
 .pd-r-16 {padding-right: 16px;}
 .pd-r-18 {padding-right: 18px;}
