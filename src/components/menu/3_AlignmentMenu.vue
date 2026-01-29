@@ -15,6 +15,13 @@
 			<AlignmentMenu__Photo />
 
 			<AppSelection
+				@click="showSettings__Alignment('biography')"
+				:active="alignment_page.shown.biography"
+				title="print_biography"
+				:type="MY_Biography_Menu"
+			/>
+
+			<AppSelection
 				@click="showSettings__Alignment('blank_print')"
 				:active="alignment_page.shown.blank_print"
 				title="blank_print"
@@ -42,7 +49,7 @@ export default {
     // STORE
 		...mapState(useMYStore, ["MY"]),
 		...mapState(usePagesStore, ["alignment_page"]),
-		...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr", "photo_Select"]),
+		...mapState(useAlignmentStore, ["сustomm_Main_Settings_Alignment_Arr", "MY_Biography_Menu", "photo_Select"]),
 	},
 	methods: {
     ...mapActions(usePagesStore, ["showSettings__Alignment"]),

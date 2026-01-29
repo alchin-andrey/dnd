@@ -4,6 +4,7 @@ import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
+import { useDicStore } from "@/stores/general/DicStore";
 
 
 import alignment_lists from "@/assets/catalog/base_data/list_alignment.js";
@@ -87,6 +88,15 @@ export const useAlignmentStore = defineStore({
       return this.alignment_Name(this.MY_Weakness);
     },
 
+    MY_Biography_Menu() {
+      const MYStore = useMYStore();
+      const { T, t } = useDicStore();
+      const title = `${T("choose_variant")} ${MYStore.MY.user_biography}`;
+      const biography_text = MYStore.MY.biography_options[MYStore.MY.user_biography - 1].text;
+      const empty_text = `(${t('empty')})`;
+      return biography_text ? title : `${title} ${empty_text}`;
+    },
+
     photo_Select() {
       const MYStore = useMYStore();
 			return MYStore.MY.param.user_photo ? "your_image" : "standard";
@@ -112,6 +122,17 @@ export const useAlignmentStore = defineStore({
 			const main = 'https://ro.pinterest.com/search/pins/?q=dnd'
 			const link = `${main}%20${race_name}%20${sex}%20${class_name}`
 			return link;
+		},
+
+    biography_Link_GPT() {
+      // const MYStore = useMYStore();
+      // const GenderStore = useGenderStore();
+			// const race_name = MYStore.MY_Race.name;
+			// const class_name = MYStore.MY_Class.name;
+			// const sex = GenderStore.sex_Char_Body;
+			const main = 'https://chatgpt.com/'
+			// const link = `${main}%20${race_name}%20${sex}%20${class_name}`
+			return main;
 		},
 
 	},

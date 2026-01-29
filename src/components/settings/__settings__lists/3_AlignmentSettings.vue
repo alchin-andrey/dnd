@@ -13,6 +13,7 @@
 		</My-Selection-Box>
 
 			<AlignmentSett__Photo />
+			<AlignmentSett__Biography />
 			<AlignmentSett__Blank />
 </template>
 

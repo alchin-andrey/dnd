@@ -49,6 +49,13 @@ export default {
 	
 	custom_photo: null,
 	user_gold: null,
+		user_biography: 1,
+
+	biography_options: [
+				{ option: 1, text: null,},
+				{ option: 2, text: null,},
+				{ option: 3, text: null,},
+			],
 
 	param: {
 		user_name: false,
