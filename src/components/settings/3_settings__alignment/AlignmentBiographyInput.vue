@@ -3,23 +3,22 @@
 			<textarea 
 				ref="textarea"
 				rows="1"
+				@focus="onFocus"
 				@input="autoResize"
-				@paste="onPaste"
+				@paste.stop.prevent="onPaste"
 				spellcheck="false"
 				class="int-400-ios mr-b-20"
 				v-model="inputValue"
 				maxlength="5000"
 				:placeholder="t_Placeholder"
-				@paste.stop
 			/>
 			<div class="int-400 flex-row-sb">
 				<div class="w-70"
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
 				<div class="cur-p" 
-				@click.stop
 				@pointerdown.prevent
-				@click="pasteFromClipboard"
+				@click.stop="pasteFromClipboard"
 				>{{ T('insert') }}</div>
 				<a target="_blank" :href="biography_Link_GPT">{{ T('use_gpt') }}</a>
 			</div>
@@ -121,7 +120,7 @@ export default {
 			if (!text) return
 
 			// Мы берём управление вставкой, чтобы применить лимит 5000 и т.п.
-			e.preventDefault()
+			// e.preventDefault()
 			this.insertTextSmart(el, text)
 		},
 
@@ -164,6 +163,10 @@ export default {
 			el.focus()
 			const len = el.value?.length ?? 0
 			el.setSelectionRange(len, len)
+		},
+
+		onFocus() {
+			this.$nextTick(this.autoResize)
 		},
 
 	},
