@@ -5,7 +5,7 @@
 				rows="1"
 				@focus="onFocus"
 				@input="autoResize"
-				@paste.stop.prevent="onPaste"
+				@paste.stop="onPaste"
 				spellcheck="false"
 				class="int-400-ios mr-b-20"
 				v-model="inputValue"
@@ -90,7 +90,6 @@ export default {
 			const el = this.$refs.textarea
 			if (!el) return
 
-			// 1) Пытаемся прочитать буфер (десктопы/некоторые андроиды)
 			let clipTextRaw = ""
 			try {
 				if (navigator.clipboard?.readText) {
@@ -100,11 +99,8 @@ export default {
 				clipTextRaw = ""
 			}
 
-			// 2) Если прочитать не удалось (часто iOS) — просто фокус и системная вставка
 			if (!clipTextRaw) {
 				el.focus({ preventScroll: true })
-				// можно показать тост/подсказку:
-				// "Нажмите и удерживайте поле → Вставить"
 				return
 			}
 
@@ -112,15 +108,13 @@ export default {
 		},
 
 		onPaste(e) {
-			// Это сработает на телефоне при обычной "Вставить"
 			const el = this.$refs.textarea
 			if (!el) return
 
 			const text = e.clipboardData?.getData("text") ?? ""
 			if (!text) return
 
-			// Мы берём управление вставкой, чтобы применить лимит 5000 и т.п.
-			// e.preventDefault()
+			e.preventDefault()
 			this.insertTextSmart(el, text)
 		},
 
@@ -130,7 +124,6 @@ export default {
 			const start = el.selectionStart ?? value.length
 			const end = el.selectionEnd ?? value.length
 
-			// сколько реально можно добавить с учётом выделения
 			const canAdd = max - (value.length - (end - start))
 			if (canAdd <= 0) return
 
