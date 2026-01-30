@@ -167,6 +167,7 @@ input[type="text"] {
 	display: flex;
 	align-items: center;
 	height: 47px;
+	appearance: none;
 	-webkit-appearance: none;
 }
 

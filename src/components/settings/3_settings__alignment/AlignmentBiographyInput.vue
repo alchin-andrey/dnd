@@ -16,11 +16,14 @@
 				<div class="w-70"
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
-				<div class="cur-p" 
-				@pointerdown.prevent.stop
-				@click.stop="pasteFromClipboard"
-				>{{ T('insert') }}</div>
-				<div v-if="showPasteHint" class="white-04">На телефоні: тримайте поле → «Вставити»</div>
+				<div 
+					v-if="showInsertButton"
+					class="cur-p" 
+					@pointerdown.prevent
+					@click.stop="pasteFromClipboard"
+				>
+				{{ T('insert') }}
+				</div>
 				<a target="_blank" :href="biography_Link_GPT">{{ T('use_gpt') }}</a>
 			</div>
 	</section>
@@ -37,7 +40,6 @@ export default {
 	data() {
 		return {
 			inputValue: "",
-			showPasteHint: false,
 		};
 	},
 	mounted() {
@@ -84,6 +86,16 @@ export default {
 			return limit ? 'rare-text' : 'white-04';
 		},
 
+		isAndroid() {
+			return /Android/i.test(navigator.userAgent || "")
+		},
+		canReadClipboard() {
+			return !!(window.isSecureContext && navigator.clipboard?.readText)
+		},
+		showInsertButton() {
+			return !this.isAndroid || this.canReadClipboard
+		}
+
 	},
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
@@ -92,43 +104,21 @@ export default {
 			const el = this.$refs.textarea
 			if (!el) return
 
-			// 1) всегда даём фокус
-			el.focus({ preventScroll: true })
+			let clipTextRaw = ""
+			try {
+				if (navigator.clipboard?.readText) {
+					clipTextRaw = await navigator.clipboard.readText()
+				}
+			} catch (e) {
+				clipTextRaw = ""
+			}
 
-			// 2) пробуем прочитать буфер ТОЛЬКО если это имеет шанс сработать
-			const text = await this.tryReadClipboardText()
-			if (text) {
-				this.insertTextSmart(el, text)
+			if (!clipTextRaw) {
+				el.focus({ preventScroll: true })
 				return
 			}
 
-			// 3) фолбэк: показываем подсказку (iOS/Android)
-			this.showPasteHint = true
-			clearTimeout(this._pasteHintTimer)
-			this._pasteHintTimer = setTimeout(() => {
-				this.showPasteHint = false
-			}, 2000)
-		},
-
-		async tryReadClipboardText() {
-			// важно: без HTTPS почти всегда будет null (кроме localhost)
-			if (!window.isSecureContext) return ""
-
-			if (!navigator.clipboard?.readText) return ""
-
-			// permissions API есть не везде — поэтому пробуем мягко
-			try {
-				if (navigator.permissions?.query) {
-					const p = await navigator.permissions.query({ name: "clipboard-read" })
-					if (p.state === "denied") return ""
-				}
-			} catch (_) {}
-
-			try {
-				return await navigator.clipboard.readText()
-			} catch (_) {
-				return ""
-			}
+			this.insertTextSmart(el, clipTextRaw)
 		},
 
 		onPaste(e) {
@@ -138,7 +128,6 @@ export default {
 			const text = e.clipboardData?.getData("text") ?? ""
 			if (!text) return
 
-			// контролируем лимит сами
 			e.preventDefault()
 			this.insertTextSmart(el, text)
 		},
@@ -154,7 +143,9 @@ export default {
 
 			const text = (textRaw ?? "").slice(0, canAdd)
 
+			el.focus({ preventScroll: true })
 			el.setRangeText(text, start, end, "end")
+
 			this.inputValue = el.value
 			this.$nextTick(this.autoResize)
 		},

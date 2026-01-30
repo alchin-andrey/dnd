@@ -92,6 +92,7 @@ input[type="text"] {
   border-radius: 4px 12px 12px 4px;
   text-decoration-line: underline;
   text-decoration-color: #ffffff;
+  appearance: none;
   -webkit-appearance: none;
 }
 </style>

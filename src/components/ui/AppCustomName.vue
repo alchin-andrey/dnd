@@ -118,6 +118,7 @@ input[type="text"] {
 	align-items: center;
 	height: 47px;
 	border-radius: 12px;
+	appearance: none;
 	-webkit-appearance: none;
 }
 

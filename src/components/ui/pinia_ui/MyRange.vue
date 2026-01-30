@@ -240,6 +240,7 @@ export default {
 }
 
 input[type="range"] {
+	appearance: none;
 	-webkit-appearance: none;
 	height: 344px;
 	background: transparent;
