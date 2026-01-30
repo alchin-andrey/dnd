@@ -1,11 +1,11 @@
 <template>
-	<section class="int-400-ios br-12 pd-16 pd-b-14 cur-text w-100" @click="focusToEnd">
+	<section class="br-12 pd-16 pd-b-14 cur-text w-100" @click="focusToEnd">
 			<textarea 
 				ref="textarea"
 				rows="1"
 				@input="autoResize"
 				spellcheck="false"
-				class="int-400 mr-b-20"
+				class="int-400-ios mr-b-20"
 				v-model="inputValue"
 				maxlength="5000"
 				:placeholder="t_Placeholder"
