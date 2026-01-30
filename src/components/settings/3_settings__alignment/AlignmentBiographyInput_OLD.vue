@@ -4,7 +4,6 @@
 				ref="textarea"
 				rows="1"
 				@input="autoResize"
-				@paste="onPaste"
 				spellcheck="false"
 				class="int-400-ios mr-b-20"
 				v-model="inputValue"
@@ -17,8 +16,7 @@
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
 				<div class="cur-p" 
-				@click.stop
-				@pointerdown.prevent
+				@mousedown.prevent 
 				@click="pasteFromClipboard"
 				>{{ T('insert') }}</div>
 				<a target="_blank" :href="biography_Link_GPT">{{ T('use_gpt') }}</a>
@@ -87,62 +85,44 @@ export default {
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
 
-		async pasteFromClipboard () {
-			const el = this.$refs.textarea
-			if (!el) return
+	async pasteFromClipboard () {
+		const el = this.$refs.textarea
+		if (!el) return
 
-			// 1) Пытаемся прочитать буфер (десктопы/некоторые андроиды)
-			let clipTextRaw = ""
-			try {
-				if (navigator.clipboard?.readText) {
-					clipTextRaw = await navigator.clipboard.readText()
-				}
-			} catch (e) {
-				clipTextRaw = ""
-			}
+		try {
+			const clipTextRaw = await navigator.clipboard.readText()
+			if (!clipTextRaw) return
 
-			// 2) Если прочитать не удалось (часто iOS) — просто фокус и системная вставка
-			if (!clipTextRaw) {
-				el.focus({ preventScroll: true })
-				// можно показать тост/подсказку:
-				// "Нажмите и удерживайте поле → Вставить"
+			const max = 5000
+			const isFocused = document.activeElement === el
+
+			if (!isFocused) {
+				const next = clipTextRaw.slice(0, max)
+
+				el.focus()
+				el.setRangeText(next, 0, (el.value ?? "").length, "end")
+
+				this.inputValue = el.value
+				this.$nextTick(this.autoResize)
 				return
 			}
 
-			this.insertTextSmart(el, clipTextRaw)
-		},
-
-		onPaste(e) {
-			// Это сработает на телефоне при обычной "Вставить"
-			const el = this.$refs.textarea
-			if (!el) return
-
-			const text = e.clipboardData?.getData("text") ?? ""
-			if (!text) return
-
-			// Мы берём управление вставкой, чтобы применить лимит 5000 и т.п.
-			e.preventDefault()
-			this.insertTextSmart(el, text)
-		},
-
-		insertTextSmart(el, textRaw) {
-			const max = 5000
 			const value = el.value ?? this.inputValue ?? ""
 			const start = el.selectionStart ?? value.length
 			const end = el.selectionEnd ?? value.length
 
-			// сколько реально можно добавить с учётом выделения
 			const canAdd = max - (value.length - (end - start))
 			if (canAdd <= 0) return
 
-			const text = (textRaw ?? "").slice(0, canAdd)
+			const clipText = clipTextRaw.slice(0, canAdd)
 
-			el.focus({ preventScroll: true })
-			el.setRangeText(text, start, end, "end")
-
+			el.setRangeText(clipText, start, end, "end")
 			this.inputValue = el.value
 			this.$nextTick(this.autoResize)
-		},
+		} catch (e) {
+			console.warn("Clipboard read failed:", e)
+		}
+	},
 
 		autoResize() {
       const el = this.$refs.textarea
