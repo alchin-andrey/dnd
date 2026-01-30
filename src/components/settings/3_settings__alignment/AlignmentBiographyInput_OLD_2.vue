@@ -3,22 +3,21 @@
 			<textarea 
 				ref="textarea"
 				rows="1"
-				@focus="onFocus"
 				@input="autoResize"
-				@paste.stop="onPaste"
 				spellcheck="false"
 				class="int-400-ios mr-b-20"
 				v-model="inputValue"
 				maxlength="5000"
 				:placeholder="t_Placeholder"
+				@paste.stop
 			/>
 			<div class="int-400 flex-row-sb">
 				<div class="w-70"
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
 				<div class="cur-p" 
-				@pointerdown.prevent
-				@click.stop="pasteFromClipboard"
+				@mousedown.prevent 
+				@click="pasteFromClipboard"
 				>{{ T('insert') }}</div>
 				<a target="_blank" :href="biography_Link_GPT">{{ T('use_gpt') }}</a>
 			</div>
@@ -86,40 +85,28 @@ export default {
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
 
-		async pasteFromClipboard () {
-			const el = this.$refs.textarea
-			if (!el) return
+	async pasteFromClipboard () {
+		const el = this.$refs.textarea
+		if (!el) return
 
-			let clipTextRaw = ""
-			try {
-				if (navigator.clipboard?.readText) {
-					clipTextRaw = await navigator.clipboard.readText()
-				}
-			} catch (e) {
-				clipTextRaw = ""
-			}
+		try {
+			const clipTextRaw = await navigator.clipboard.readText()
+			if (!clipTextRaw) return
 
-			if (!clipTextRaw) {
-				el.focus({ preventScroll: true })
+			const max = 5000
+			const isFocused = document.activeElement === el
+
+			if (!isFocused) {
+				const next = clipTextRaw.slice(0, max)
+
+				el.focus()
+				el.setRangeText(next, 0, (el.value ?? "").length, "end")
+
+				this.inputValue = el.value
+				this.$nextTick(this.autoResize)
 				return
 			}
 
-			this.insertTextSmart(el, clipTextRaw)
-		},
-
-		onPaste(e) {
-			const el = this.$refs.textarea
-			if (!el) return
-
-			const text = e.clipboardData?.getData("text") ?? ""
-			if (!text) return
-
-			e.preventDefault()
-			this.insertTextSmart(el, text)
-		},
-
-		insertTextSmart(el, textRaw) {
-			const max = 5000
 			const value = el.value ?? this.inputValue ?? ""
 			const start = el.selectionStart ?? value.length
 			const end = el.selectionEnd ?? value.length
@@ -127,14 +114,15 @@ export default {
 			const canAdd = max - (value.length - (end - start))
 			if (canAdd <= 0) return
 
-			const text = (textRaw ?? "").slice(0, canAdd)
+			const clipText = clipTextRaw.slice(0, canAdd)
 
-			el.focus({ preventScroll: true })
-			el.setRangeText(text, start, end, "end")
-
+			el.setRangeText(clipText, start, end, "end")
 			this.inputValue = el.value
 			this.$nextTick(this.autoResize)
-		},
+		} catch (e) {
+			console.warn("Clipboard read failed:", e)
+		}
+	},
 
 		autoResize() {
       const el = this.$refs.textarea
@@ -156,10 +144,6 @@ export default {
 			el.focus()
 			const len = el.value?.length ?? 0
 			el.setSelectionRange(len, len)
-		},
-
-		onFocus() {
-			this.$nextTick(this.autoResize)
 		},
 
 	},

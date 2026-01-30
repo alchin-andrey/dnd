@@ -97,6 +97,33 @@
 	letter-spacing: 0.02em;
 }
 
+.int-400-ios,
+.int-400-ios::placeholder {
+	font-family: "Inter-400";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+	/* transition: font-size 0.1s, line-height 0.1s; */
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 768px) {
+  .int-400-ios:focus,
+  .int-400-ios:focus::placeholder {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+}
+  
+@supports (-webkit-touch-callout: none) {
+  .int-400-ios:focus,
+  .int-400-ios:focus::placeholder {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+}
+
 .int-400-13 {
 	font-family: "Inter-400";
 	font-style: normal;

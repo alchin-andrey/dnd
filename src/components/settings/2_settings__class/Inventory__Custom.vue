@@ -193,13 +193,6 @@ input[type="text"].count-item {
 	color: rgba(255, 255, 255, 0.2);
 }
 
-.main-icon {
-	width: 18px;
-	height: 18px;
-	cursor: pointer;
-	margin-bottom: 3px;
-}
-
 .del_btm {
 	right: 0;
 	width: 50px;
