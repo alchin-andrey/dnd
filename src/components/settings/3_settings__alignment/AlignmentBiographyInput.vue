@@ -9,7 +9,7 @@
 				spellcheck="false"
 				class="int-400-ios mr-b-20"
 				v-model="inputValue"
-				maxlength="5000"
+				maxlength="2000"
 				:placeholder="t_Placeholder"
 			/>
 			<div class="int-400 flex-row-sb">
@@ -74,11 +74,11 @@ export default {
 
     num_Symbols() {
 			let num = this.inputValue.length
-			return `${num} / 5000`;
+			return `${num} / 2000`;
 		},
 
 		style_Symbols() {
-			let limit = this.inputValue.length == 5000;
+			let limit = this.inputValue.length == 2000;
 			return limit ? 'rare-text' : 'white-04';
 		},
 
@@ -119,7 +119,7 @@ export default {
 		},
 
 		insertTextSmart(el, textRaw) {
-			const max = 5000
+			const max = 2000
 			const value = el.value ?? this.inputValue ?? ""
 			const start = el.selectionStart ?? value.length
 			const end = el.selectionEnd ?? value.length
@@ -165,7 +165,7 @@ export default {
 	},
 	watch: {
     inputValue(val) {
-			// const clamped = (val ?? "").slice(0, 5000)
+			// const clamped = (val ?? "").slice(0, 2000)
 			// if (clamped !== val) {
 			// 	this.inputValue = clamped
 			// 	return
@@ -177,7 +177,7 @@ export default {
     modelValue: {
       immediate: true,
       handler(val) {
-				// const clamped = (val ?? "").slice(0, 5000)
+				// const clamped = (val ?? "").slice(0, 2000)
 				// if (clamped === this.inputValue) return
 				// this.inputValue = clamped
 				// this.$nextTick(this.autoResize)
