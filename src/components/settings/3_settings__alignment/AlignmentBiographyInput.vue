@@ -17,7 +17,7 @@
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
 				<div 
-					v-if="showInsertButton"
+					v-if="!isAndroid"
 					class="cur-p" 
 					@pointerdown.prevent
 					@click.stop="pasteFromClipboard"
@@ -87,16 +87,12 @@ export default {
 		},
 
 		isAndroid() {
-			return /Android/i.test(navigator.userAgent || "")
+			const ua = navigator.userAgent || ""
+			const isAndroidUA = /Android/i.test(ua)
+			return isAndroidUA
 		},
-		canReadClipboard() {
-			return !!(window.isSecureContext && navigator.clipboard?.readText)
-		},
-		showInsertButton() {
-			return !this.isAndroid || this.canReadClipboard
-		}
-
 	},
+	
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
 
