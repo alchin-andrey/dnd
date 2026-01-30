@@ -17,9 +17,10 @@
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
 				<div class="cur-p" 
-				@pointerdown.prevent
+				@pointerdown.prevent.stop
 				@click.stop="pasteFromClipboard"
 				>{{ T('insert') }}</div>
+				<div v-if="showPasteHint" class="white-04">На телефоні: тримайте поле → «Вставити»</div>
 				<a target="_blank" :href="biography_Link_GPT">{{ T('use_gpt') }}</a>
 			</div>
 	</section>
@@ -36,6 +37,7 @@ export default {
 	data() {
 		return {
 			inputValue: "",
+			showPasteHint: false,
 		};
 	},
 	mounted() {
@@ -90,21 +92,43 @@ export default {
 			const el = this.$refs.textarea
 			if (!el) return
 
-			let clipTextRaw = ""
-			try {
-				if (navigator.clipboard?.readText) {
-					clipTextRaw = await navigator.clipboard.readText()
-				}
-			} catch (e) {
-				clipTextRaw = ""
-			}
+			// 1) всегда даём фокус
+			el.focus({ preventScroll: true })
 
-			if (!clipTextRaw) {
-				el.focus({ preventScroll: true })
+			// 2) пробуем прочитать буфер ТОЛЬКО если это имеет шанс сработать
+			const text = await this.tryReadClipboardText()
+			if (text) {
+				this.insertTextSmart(el, text)
 				return
 			}
 
-			this.insertTextSmart(el, clipTextRaw)
+			// 3) фолбэк: показываем подсказку (iOS/Android)
+			this.showPasteHint = true
+			clearTimeout(this._pasteHintTimer)
+			this._pasteHintTimer = setTimeout(() => {
+				this.showPasteHint = false
+			}, 2000)
+		},
+
+		async tryReadClipboardText() {
+			// важно: без HTTPS почти всегда будет null (кроме localhost)
+			if (!window.isSecureContext) return ""
+
+			if (!navigator.clipboard?.readText) return ""
+
+			// permissions API есть не везде — поэтому пробуем мягко
+			try {
+				if (navigator.permissions?.query) {
+					const p = await navigator.permissions.query({ name: "clipboard-read" })
+					if (p.state === "denied") return ""
+				}
+			} catch (_) {}
+
+			try {
+				return await navigator.clipboard.readText()
+			} catch (_) {
+				return ""
+			}
 		},
 
 		onPaste(e) {
@@ -114,6 +138,7 @@ export default {
 			const text = e.clipboardData?.getData("text") ?? ""
 			if (!text) return
 
+			// контролируем лимит сами
 			e.preventDefault()
 			this.insertTextSmart(el, text)
 		},
@@ -129,9 +154,7 @@ export default {
 
 			const text = (textRaw ?? "").slice(0, canAdd)
 
-			el.focus({ preventScroll: true })
 			el.setRangeText(text, start, end, "end")
-
 			this.inputValue = el.value
 			this.$nextTick(this.autoResize)
 		},
@@ -202,6 +225,7 @@ textarea {
 	width: 100%;
 	resize: none;
 	overflow: hidden;
+	appearance: none;
 	-webkit-appearance: none;
 }
 
