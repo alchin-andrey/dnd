@@ -7,7 +7,7 @@
 				@input="autoResize"
 				@paste.stop="onPaste"
 				spellcheck="false"
-				class="int-400-ios mr-b-20"
+				:class="[style_Font, 'mr-b-20']"
 				v-model="inputValue"
 				maxlength="2000"
 				:placeholder="t_Placeholder"
@@ -91,8 +91,25 @@ export default {
 			const isAndroidUA = /Android/i.test(ua)
 			return isAndroidUA
 		},
+
+		isIOS() {
+			const ua = navigator.userAgent || navigator.vendor || window.opera
+
+			if (/iPad|iPhone|iPod/.test(ua)) return true
+
+			if (
+				ua.includes("Mac") &&
+				"ontouchend" in document
+			) return true
+
+			return false
+		},
+
+		style_Font() {
+			return this.isIOS ? 'int-400-16' : 'int-400';
+		}
 	},
-	
+
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
 
