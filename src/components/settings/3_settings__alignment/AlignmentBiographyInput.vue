@@ -1,5 +1,5 @@
 <template>
-	<section class="int-400 br-12 pd-16 pd-b-14 cur-text w-100" @click="focusOnly">
+	<section class="int-400-ios br-12 pd-16 pd-b-14 cur-text w-100" @click="focusToEnd">
 			<textarea 
 				ref="textarea"
 				rows="1"
