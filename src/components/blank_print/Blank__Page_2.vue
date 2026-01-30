@@ -6,7 +6,7 @@
 				<BlankTable__Equip />
 				<BlankTable__Weapons />
 			</section>
-			<BlankText__Biography class="mr-t-36" v-else />
+			<BlankText__Biography class="mr-t-72" v-else />
 		</section>
 		<Blank__SelectMenu />
 	</main>
