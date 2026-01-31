@@ -178,51 +178,6 @@ export const useStatsStore = defineStore({
       return `${text}, ...`;
     },
 
-    // stats_Base_Settings_Full_T() {
-    //   const MYStore = useMYStore();
-    //   const { T } = useDicStore();
-    //   let arr = [];
-    //   if (MYStore.MY.custom_stats) {
-    //     const base_arr = this.stats_Custom_Base_Arr_Sort;
-    //     for (let i = 0; i < 6; i++) {
-    //       let Str = T(base_arr[i][0]).slice(0, 3);
-    //       let numb = base_arr[i][1];
-    //       arr.push(`${numb} ${Str}`);
-    //     }
-    //   } else {
-    //     const base_arr = this.stats_Base_Arr;
-    //     for (let i = 0; i < 6; i++) {
-    //       let numb = this.stats_base_numb[i];
-    //       let Str = T(base_arr[i]).slice(0, 3);
-    //       arr.push(`${numb} ${Str}`);
-    //     }
-    //   }
-    //   return arr.join(", ");
-    // },
-
-    // stats_Base_Settings_Two_T() {
-    //   const MYStore = useMYStore();
-    //   const { T } = useDicStore();
-    //   let arr = [];
-    //   if (MYStore.MY.custom_stats) {
-    //     const base_arr = this.stats_Custom_Base_Arr_Sort;
-    //     for (let i = 0; i < 2; i++) {
-    //       let Str = T(base_arr[i][0]).slice(0, 3);
-    //       let numb = base_arr[i][1];
-    //       arr.push(`${numb} ${Str}`);
-    //     }
-    //   } else {
-    //     const base_arr = this.stats_Base_Arr;
-    //     for (let i = 0; i < 2; i++) {
-    //       let numb = this.stats_base_numb[i];
-    //       let Str = T(base_arr[i]).slice(0, 3);
-    //       arr.push(`${numb} ${Str}`);
-    //     }
-    //   }
-    //   let text = arr.join(", ");
-    //   return `${text}, ...`;
-    // },
-
     base_Stats_Menu() {
       const PagesStore = usePagesStore();
       return PagesStore.screen_Max

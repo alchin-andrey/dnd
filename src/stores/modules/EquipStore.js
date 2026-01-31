@@ -162,6 +162,10 @@ export const useEquipStore = defineStore({
 			return this.item_Equip_All_Arr("weapon");
 		},
 
+    weapons_Equip_All_Name() {
+			return this.weapons_Equip_All.map(arr => arr[0]?.name);
+		},
+
     inventory_Equip_All() {
 			return this.item_Equip_All_Arr("inventory");
 		},

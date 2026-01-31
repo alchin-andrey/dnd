@@ -4,12 +4,14 @@ import { defineStore } from "pinia";
 import { useMYStore } from "@/stores/user/MYStore";
 import { usePagesStore } from "@/stores/user/PagesStore";
 import { useGenderStore } from "@/stores/modules/simple/GenderStore";
+import { useBioStore } from "@/stores/modules/simple/BioStore";
 import { useDicStore } from "@/stores/general/DicStore";
 
 
 import alignment_lists from "@/assets/catalog/base_data/list_alignment.js";
 import alignment_sett from "@/assets/catalog/base_data/step3_alignment.js";
 import list_links from "@/assets/catalog/base_data/list_links.js";
+import list_prompts from "@/assets/catalog/base_data/list_prompts.js";
 
 export const useAlignmentStore = defineStore({
 	id: "AlignmentStore",
@@ -17,6 +19,7 @@ export const useAlignmentStore = defineStore({
 		alignment_lists: alignment_lists,
     alignment_sett: alignment_sett,
     hero_links: list_links,
+    prompts: list_prompts,
 
 	}),
 
@@ -125,14 +128,15 @@ export const useAlignmentStore = defineStore({
 		},
 
     biography_Link_GPT() {
-      // const MYStore = useMYStore();
-      // const GenderStore = useGenderStore();
-			// const race_name = MYStore.MY_Race.name;
-			// const class_name = MYStore.MY_Class.name;
-			// const sex = GenderStore.sex_Char_Body;
-			const main = 'https://chatgpt.com/'
-			// const link = `${main}%20${race_name}%20${sex}%20${class_name}`
-			return main;
+      const BioStore = useBioStore();
+			const base = 'https://chatgpt.com/?q='
+			const prompt = this.prompts.bio.prompt;
+      const attrs = BioStore.attrsStringBio;
+      const encoded = encodeURIComponent(`${prompt}\n\n${attrs}`);
+      const url = base + encoded;
+      console.log(attrs)
+      console.log('url.length:', url.length)
+			return url;
 		},
 
 	},

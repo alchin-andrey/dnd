@@ -25,7 +25,8 @@
 				{{ T('insert') }}
 				</div>
 				<a 
-					target="_blank" 
+					target="_blank"
+					rel="noopener" 
 					:href="biography_Link_GPT"
 					@pointerdown.stop
 					@click.stop
@@ -56,18 +57,6 @@ export default {
 			type: String,
 			default: null,
 		},
-		save_setting: {
-			type: String,
-			default: null,
-		},
-		id_link: {
-			type: String,
-			default: null,
-		},
-		active_card: {
-      type: Boolean,
-      default: false,
-    },
 	},
 	computed: {
 		...mapState(useMYStore, ["MY"]),
