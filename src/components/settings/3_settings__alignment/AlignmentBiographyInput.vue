@@ -19,12 +19,18 @@
 				<div 
 					v-if="!isAndroid"
 					class="cur-p" 
-					@pointerdown.prevent
+					@pointerdown.prevent.stop
 					@click.stop="pasteFromClipboard"
 				>
 				{{ T('insert') }}
 				</div>
-				<a target="_blank" :href="biography_Link_GPT">{{ T('use_gpt') }}</a>
+				<a 
+					target="_blank" 
+					:href="biography_Link_GPT"
+					@pointerdown.stop
+					@click.stop
+				>{{ T('use_gpt') }}
+				</a>
 			</div>
 	</section>
 </template>
@@ -180,7 +186,16 @@ export default {
 
 			if (e?.target === el || el.contains(e?.target)) return
 
-			el.focus()
+			const start = el.selectionStart ?? 0
+			const end = el.selectionEnd ?? 0
+			const hasSelectionInTextarea = start !== end
+
+			if (document.activeElement === el && hasSelectionInTextarea) return
+
+			const sel = window.getSelection?.()
+			if (sel && sel.rangeCount > 0 && !sel.isCollapsed) return
+
+			el.focus({ preventScroll: true })
 			const len = el.value?.length ?? 0
 			el.setSelectionRange(len, len)
 		},
