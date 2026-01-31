@@ -12,13 +12,13 @@
     <AppMainCell class="cell grid-span-2" title="past" :content="MY_Backstory.name" v-if="show_Part_2"/>
 
     <AppMainCell class="cell br-left" title="alignment" :content="MY.alignment" v-if="show_Part_2"/>
-    <AppMainCell class="cell" title="main_feature" :content="MY_Main_Feature_Name" v-if="show_Part_2"/>
+    <AppMainCell class="cell" title="main_feature" :content="empty_Сell(MY_Main_Feature_Name)" v-if="show_Part_2"/>
 
-    <AppMainCell class="cell br-left" title="ideals" :content="MY_Ideals_Name" v-if="show_Part_3"/>
-    <AppMainCell class="cell" title="commitment" :content="MY_Commitment_Name" v-if="show_Part_3"/>
+    <AppMainCell class="cell br-left" title="ideals" :content="empty_Сell(MY_Ideals_Name)" v-if="show_Part_3"/>
+    <AppMainCell class="cell" title="commitment" :content="empty_Сell(MY_Commitment_Name)" v-if="show_Part_3"/>
 
-    <AppMainCell class="cell br-left" title="secret" :content="MY_Secret_Name" v-if="show_Part_3"/>
-    <AppMainCell class="cell" title="weakness" :content="MY_Weakness_Name" v-if="show_Part_3"/>
+    <AppMainCell class="cell br-left" title="secret" :content="empty_Сell(MY_Secret_Name)" v-if="show_Part_3"/>
+    <AppMainCell class="cell" title="weakness" :content="empty_Сell(MY_Weakness_Name)" v-if="show_Part_3"/>
   </div>
 </template>
 
@@ -56,6 +56,10 @@ export default {
       "MY_Secret_Name",
       "MY_Weakness_Name",
     ]),
+
+    empty_Сell: (stor) => (item) => {
+        return item !== 'your_option' ? item : '';
+    },
 
     full_Type() {
       return this.type == 'full'
