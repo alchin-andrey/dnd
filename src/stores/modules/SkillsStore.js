@@ -328,6 +328,12 @@ export const useSkillsStore = defineStore({
 			arr.sort((a, b) => a.t_name.localeCompare(b.t_name));
 			return arr;
 		},
+
+    skills_Max_Name_Arr() {
+      const max_value = Math.max(...this.skills_Keys.map(s => this.skills_RC_All_Numb(s)));
+      const max_name = this.skills_Keys.filter(s => this.skills_RC_All_Numb(s) === max_value);
+      return max_name;
+    },
   },
 
   actions: {

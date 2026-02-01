@@ -36,20 +36,15 @@ export function attrsToString(attrs) {
     .join(";\n") + ".";
 }
 
-/**
- * Склеивает блоки текста:
- * [
- *   ["a", "b"],
- *   ["c"]
- * ]
- * =>
- * "a\nb\n\nc"
- */
-export function blocksToText(blocks, {
-  lineSeparator = "\n",
-  blockSeparator = "\n\n",
-} = {}) {
-  return blocks
+export function blocksToText(
+  blocks,
+  {
+    lineSeparator = "\n",
+    blockSeparator = "\n\n",
+    endDot = true,
+  } = {}
+) {
+  let text = blocks
     .map(block =>
       block
         .filter(Boolean)
@@ -57,6 +52,12 @@ export function blocksToText(blocks, {
     )
     .filter(Boolean)
     .join(blockSeparator);
+
+  if (endDot) {
+    text = text.replace(/;(?=[^;]*$)/, ".");
+  }
+
+  return text;
 }
 
 export function stripPrefixOne(value, prefix) {
