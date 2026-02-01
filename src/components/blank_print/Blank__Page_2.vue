@@ -6,6 +6,7 @@
 				<BlankTable__Equip />
 				<BlankTable__Weapons />
 			</section>
+			<div v-else class="int-600-28 f-lh-30 mr-t-72">{{ T('print_notes') }}</div>
 			<!-- <BlankText__Biography class="mr-t-72" v-else /> -->
 		</section>
 		<Blank__SelectMenu />
