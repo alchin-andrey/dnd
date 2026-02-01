@@ -269,6 +269,13 @@ export const useStatsStore = defineStore({
         return stor.stats_Class_Page_Numb(name);
       }
     },
+
+
+    stats_Mod_Max_Name_Arr() {
+      const max_value = Math.max(...this.stats_Keys.map(s => this.stats_Mod(s)));
+      const max_name = this.stats_Keys.filter(s => this.stats_Mod(s) === max_value);
+      return max_name;
+    },
   },
 
   actions: {},
