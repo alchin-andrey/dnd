@@ -115,8 +115,8 @@ export const useBioStore = defineStore({
           line("Level", safe(a.level)),
         ],
         [
-          line("Max stat", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )),
-          line("Max skill", safeList(a.max_skills_names.length <= 2 ? a.max_skills_names : [] )),
+          line("Max stats", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )),
+          line("Max skills", safeList(a.max_skills_names.length <= 2 ? a.max_skills_names : [] )),
         ],
         [
           line("Proficiencies/Tools", stripPrefixes(a.tools, 'tool_')),
@@ -165,8 +165,8 @@ export const useBioStore = defineStore({
         ["Subclass", safe(a.subclass)],
         ["Level", safe(a.level)],
 
-        ["Max stat", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )],
-        ["Max skill", safeList(a.max_skills_names.length <= 2 ? a.max_skills_names : [] )],
+        ["Max stats", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )],
+        ["Max skills", safeList(a.max_skills_names.length <= 2 ? a.max_skills_names : [] )],
 
         ["Proficiencies/Tools", stripPrefixes(a.tools, 'tool_')],
         ["Weapons", safeList(a.weapons)],
