@@ -47,7 +47,8 @@
         <BlankText__All />
       </main>
 
-      <main class="print-page" v-if="!oldSchool_Blank" id="print-page-6">
+      <!-- <main class="print-page" v-if="!oldSchool_Blank" id="print-page-6"> -->
+      <main class="print-page" id="print-page-6">
         <BlankText__Biography class="wrap-head" />
         <section class="wrap-bottom int-600-28 flex_row">
           <div>{{ T('print_characters') }}</div>
