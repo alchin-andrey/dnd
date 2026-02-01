@@ -27,15 +27,9 @@ export const useBioStore = defineStore({
       const ColorStore = useColorStore();
       const EquipStore = useEquipStore();
       const StatsStore = useStatsStore();
+      const SkillsStore = useSkillsStore();
 
-      // console.log('stats_Mod_Max_Name_Arr:', StatsStore.stats_Mod_Max_Name_Arr);
-      // console.log('stats_Keys:', Math.max( 
-      //   ...StatsStore.stats_Keys.map(s => StatsStore.stats_Mod(s))
-      // ));
-      // console.log('stats_Keys:', StatsStore.stats_Keys)
-      // console.log('stats_Keys:', StatsStore.stats_Keys.map(s => s));
-      // console.log('stats_Save_All_Page_Arr:', StatsStore.stats_Save_All_Page_Arr);
-      // console.log('stats_Save_Page_Arr:', StatsStore.stats_Save_Page_Arr);
+      // console.log('t_skill_Arr:', SkillsStore.skills_Keys)
 
       const weapons_no_unarmed = EquipStore.weapons_Equip_All_Name.filter(name => name !== 'unarmed')
 
@@ -76,7 +70,7 @@ export const useBioStore = defineStore({
         level: MYStore.MY.level,
 
         max_stats_names: StatsStore.stats_Mod_Max_Name_Arr,
-        max_skill_names: [],
+        max_skills_names: SkillsStore.skills_Max_Name_Arr,
 
         tools: ProficienciesStore.proficiencies_RC_Params('tools'),
         weapons: weapons_no_unarmed,
@@ -121,8 +115,8 @@ export const useBioStore = defineStore({
           line("Level", safe(a.level)),
         ],
         [
-          line("Max stat", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )),
-          // ["Max skill", safe(a.skill)],
+          line("Max stats", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )),
+          line("Max skills", safeList(a.max_skills_names.length <= 2 ? a.max_skills_names : [] )),
         ],
         [
           line("Proficiencies/Tools", stripPrefixes(a.tools, 'tool_')),
@@ -171,8 +165,8 @@ export const useBioStore = defineStore({
         ["Subclass", safe(a.subclass)],
         ["Level", safe(a.level)],
 
-        //   ["Max stat", safe(a.stat)],
-        //   ["Max skill", safe(a.skill)],
+        ["Max stats", safeList(a.max_stats_names.length <= 2 ? a.max_stats_names : [] )],
+        ["Max skills", safeList(a.max_skills_names.length <= 2 ? a.max_skills_names : [] )],
 
         ["Proficiencies/Tools", stripPrefixes(a.tools, 'tool_')],
         ["Weapons", safeList(a.weapons)],
