@@ -6,4 +6,12 @@ export default {
 
   },
 
+  image: {
+
+    prompt: "Create a single, full-body character illustration on a fully transparent background. Render a direct, literal visual synthesis of all provided attributes. Treat every attribute as mandatory and equal — do not idealize, beautify, normalize, or reinterpret. Age must be interpreted strictly within the biological aging curve of the specified race, and shown through visible anatomy and texture, never overridden by power, class, or experience. Body proportions must strictly follow the given height and weight, emphasizing real mass and structure rather than athletic aesthetics. Gender expression must reflect intentional presentation, aligned with age and personality, without stereotype or parody. Clothing must reflect Backgound and Class. Equipment and tools must appear functional, worn, and lived-in, not decorative. Convey emotional traits through subtle physical cues, not dramatic posing. Use realistic fantasy art style. Output a single character only. No background, text, or effects.", //add dic name?
+
+  },
+
+  
+
 };
