@@ -59,35 +59,31 @@ export function blocksToText(blocks, {
     .join(blockSeparator);
 }
 
-export function stripPrefixOne(
-  value,
-  prefixes = ["lang_", "back_", "tool_"]
-) {
+export function stripPrefixOne(value, prefix) {
   const s = safe(value);
   if (!s) return "";
 
-  for (const p of prefixes) {
-    if (s.startsWith(p)) return s.slice(p.length);
+  if (prefix && s.startsWith(prefix)) {
+    return s.slice(prefix.length);
   }
+
   return s;
 }
 
-export function stripPrefixes(
-  v,
-  {
-    prefixes = ["lang_", "back_", "tool_"],
-    separator = ", ",
-  } = {}
-) {
+/**
+ * Принимает строку ИЛИ массив строк.
+ * prefix — строка, например "lang_"
+ */
+export function stripPrefixes(v, prefix, separator = ", ") {
   if (Array.isArray(v)) {
     return v
-      .map(x => stripPrefixOne(x, prefixes))
+      .map(x => stripPrefixOne(x, prefix))
       .map(safe)
       .filter(Boolean)
       .join(separator);
   }
 
-  return stripPrefixOne(v, prefixes);
+  return stripPrefixOne(v, prefix);
 }
 
 

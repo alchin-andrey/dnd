@@ -83,8 +83,8 @@ export const useBioStore = defineStore({
       return [
         [
           line("Race", `${safe(a.ethnos)} ${safe(a.race)}`),
-          line("Background", stripPrefixes(a.background)),
-          line("Languages", stripPrefixes(a.languages)),
+          line("Background", stripPrefixes(a.background, 'back_')),
+          line("Languages", stripPrefixes(a.languages, 'lang_')),
         ],
         [
           line("Genger-phisiological", safe(a.gender.phisiological)),  
@@ -112,17 +112,17 @@ export const useBioStore = defineStore({
         //   ["Max skill", safe(a.skill)],
         // ],
         [
-          line("Proficiencies/Tools", stripPrefixes(a.tools)),
+          line("Proficiencies/Tools", stripPrefixes(a.tools, 'tool_')),
           line("Weapons", safeList(a.weapons)),
         ],
         [
           line("Name", safe(a.name)),
           line("Alignment", safe(a.alignment)),
-          line("Main feature", safe(a.main_feature)),
-          line("Ideals", safe(a.ideals)),
-          line("Commitment", safe(a.commitment)),
-          line("Secret", safe(a.secret)),
-          line("Weakness", safe(a.weakness)),
+          line("Main feature", stripPrefixes(a.main_feature, 'feature_')),
+          line("Ideals", stripPrefixes(a.ideals, 'ideal_')),
+          line("Commitment", stripPrefixes(a.commitment, 'attachment_')),
+          line("Secret", stripPrefixes(a.secret, 'secret_')),
+          line("Weakness", stripPrefixes(a.weakness, 'weakness_')),
         ]
       ];
     },
@@ -138,8 +138,8 @@ export const useBioStore = defineStore({
       return [
 
         ["Race", `${safe(a.ethnos)} ${safe(a.race)}`],
-        ["Background", stripPrefixes(a.background)],
-        ["Languages", stripPrefixes(a.languages)],
+        ["Background", stripPrefixes(a.background, 'back_')],
+        ["Languages", stripPrefixes(a.languages, 'lang_')],
 
         ["Genger-phisiological", safe(a.gender.phisiological)],  
         ["Genger-feel", safe(a.gender.feel)],  
@@ -161,16 +161,16 @@ export const useBioStore = defineStore({
         //   ["Max stat", safe(a.stat)],
         //   ["Max skill", safe(a.skill)],
 
-        ["Proficiencies/Tools", stripPrefixes(a.tools)],
+        ["Proficiencies/Tools", stripPrefixes(a.tools, 'tool_')],
         ["Weapons", safeList(a.weapons)],
         
         ["Name", safe(a.name)],
         ["Alignment", safe(a.alignment)],
-        ["Main feature", safe(a.main_feature)],
-        ["Ideals", safe(a.ideals)],
-        ["Commitment", safe(a.commitment)],
-        ["Secret", safe(a.secret)],
-        ["Weakness", safe(a.weakness)],
+        ["Main feature", stripPrefixes(a.main_feature, 'feature_')],
+        ["Ideals", stripPrefixes(a.ideals, 'ideal_')],
+        ["Commitment", stripPrefixes(a.commitment, 'attachment_')],
+        ["Secret", stripPrefixes(a.secret, 'secret_')],
+        ["Weakness", stripPrefixes(a.weakness, 'weakness_')],
       ];
     },
 
