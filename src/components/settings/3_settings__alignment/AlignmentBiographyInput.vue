@@ -147,7 +147,7 @@ export default {
 			const el = this.$refs.textarea
 			if (!el) return
 
-			const text = e.clipboardData?.getData("text") ?? ""
+			const text = e.clipboardData?.getData("text/plain") ?? ""
 			if (!text) return
 
 			e.preventDefault()
@@ -156,6 +156,9 @@ export default {
 
 		insertTextSmart(el, textRaw) {
 			const max = 5750
+
+			const normalizedRaw = (textRaw ?? "").replace(/\r\n?/g, "\n")
+
 			const value = el.value ?? this.inputValue ?? ""
 			const start = el.selectionStart ?? value.length
 			const end = el.selectionEnd ?? value.length
@@ -163,7 +166,7 @@ export default {
 			const canAdd = max - (value.length - (end - start))
 			if (canAdd <= 0) return
 
-			const text = (textRaw ?? "").slice(0, canAdd)
+			const text = normalizedRaw.slice(0, canAdd)
 
 			el.focus({ preventScroll: true })
 			el.setRangeText(text, start, end, "end")
