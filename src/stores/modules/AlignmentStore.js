@@ -134,8 +134,8 @@ export const useAlignmentStore = defineStore({
       const attrs = BioStore.attrsStringBio;
       const encoded = encodeURIComponent(`${prompt}\n\n${attrs}`);
       const url = base + encoded;
-      console.log(attrs)
-      console.log('url.length:', url.length)
+      // console.log(attrs)
+      // console.log('url.length:', url.length)
 			return url;
 		},
 
