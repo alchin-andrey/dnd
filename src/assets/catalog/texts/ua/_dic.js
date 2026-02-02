@@ -6399,5 +6399,5 @@ export default {
 
   your_biography:"народився у ...",
   insert:"Вставити ↩︎",
-  use_gpt:"Згенерувати у ChatGPT ↗",
+  use_gpt:"Згенерувати в ChatGPT ✦",
 };
