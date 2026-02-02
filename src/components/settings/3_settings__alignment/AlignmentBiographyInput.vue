@@ -17,12 +17,12 @@
 				:class="[style_Symbols]"
 				> {{ num_Symbols }} </div>
 				<div 
-					v-if="!isAndroid"
+					v-if="!isAndroid || inputValue"
 					class="cur-p" 
 					@pointerdown.prevent.stop
 					@click.stop="pasteFromClipboard"
 				>
-				{{ T('insert') }}
+				{{ t_Btm }}
 				</div>
 				<a
 					class="color-lightblue"
@@ -72,6 +72,10 @@ export default {
 			return `${this.MY.name} ${this.t("your_biography")}`;
 		},
 
+		t_Btm(){
+			return this.inputValue ? this.T('clear') : this.T('insert');
+		},
+
     num_Symbols() {
 			let num = this.inputValue.length
 			return `${num} / 5750`;
@@ -112,6 +116,15 @@ export default {
 		async pasteFromClipboard () {
 			const el = this.$refs.textarea
 			if (!el) return
+
+			if (this.inputValue) {
+				this.inputValue = ""
+				this.$nextTick(() => {
+					el.focus({ preventScroll: true })
+				})
+				return
+			}
+
 
 			let clipTextRaw = ""
 			try {
