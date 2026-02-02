@@ -6,7 +6,7 @@
 				@pointerdown="onTextareaPointerDown"
 				@keydown="onTextareaKeydown"
 				@focus="onFocus"
-				@input="autoResize"
+				@input="onInput"
 				@paste.stop="onPaste"
 				spellcheck="false"
 				:class="[style_Font, 'mr-b-20']"
@@ -199,10 +199,7 @@ export default {
 			if (!el) return
 
 			if (this.inputValue) {
-				this.inputValue = ""
-				this.$nextTick(() => {
-					el.focus({ preventScroll: true })
-				})
+				this.clearWithUndo(el)
 				return
 			}
 
@@ -258,6 +255,28 @@ export default {
 			this.$nextTick(this.autoResize)
 		},
 
+		onInput(e) {
+			const el = this.$refs.textarea
+			if (!el) return
+
+			const max = 5750
+			const type = e?.inputType || ""
+
+			this.$nextTick(this.autoResize)
+
+			if (type === "historyUndo" || type === "historyRedo") {
+				if (el.value.length > max) {
+					const pos = Math.min(el.selectionStart ?? max, max)
+
+					this.withScrollLock(el, () => {
+						el.value = el.value.slice(0, max)
+						el.setSelectionRange(pos, pos)
+						el.dispatchEvent(new Event("input", { bubbles: true }))
+					})
+				}
+			}
+		},
+
 		autoResize() {
 			const el = this.$refs.textarea
 			if (!el) return
@@ -276,6 +295,29 @@ export default {
 		},
 
 		onFocus() {
+			this.$nextTick(this.autoResize)
+		},
+
+		clearWithUndo(el) {
+			if (!el) return
+
+			this.withScrollLock(el, () => {
+				el.focus({ preventScroll: true })
+
+				el.setSelectionRange(0, el.value.length)
+
+				let ok = false
+				try {
+					ok = typeof document.execCommand === "function"
+						&& document.execCommand("insertText", false, "")
+				} catch (e) {}
+
+				if (!ok) {
+					el.setRangeText("", 0, el.value.length, "end")
+					el.dispatchEvent(new Event("input", { bubbles: true }))
+				}
+			})
+
 			this.$nextTick(this.autoResize)
 		},
 
