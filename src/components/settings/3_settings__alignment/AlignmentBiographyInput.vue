@@ -9,7 +9,7 @@
 				spellcheck="false"
 				:class="[style_Font, 'mr-b-20']"
 				v-model="inputValue"
-				maxlength="6000"
+				maxlength="5750"
 				:placeholder="t_Placeholder"
 			/>
 			<div class="int-400 flex-row-sb">
@@ -24,7 +24,8 @@
 				>
 				{{ T('insert') }}
 				</div>
-				<a 
+				<a
+					class="color-lightblue"
 					target="_blank"
 					rel="noopener" 
 					:href="biography_Link_GPT"
@@ -73,11 +74,11 @@ export default {
 
     num_Symbols() {
 			let num = this.inputValue.length
-			return `${num} / 6000`;
+			return `${num} / 5750`;
 		},
 
 		style_Symbols() {
-			let limit = this.inputValue.length == 6000;
+			let limit = this.inputValue.length == 5750;
 			return limit ? 'rare-text' : 'white-04';
 		},
 
@@ -141,7 +142,7 @@ export default {
 		},
 
 		insertTextSmart(el, textRaw) {
-			const max = 6000
+			const max = 5750
 			const value = el.value ?? this.inputValue ?? ""
 			const start = el.selectionStart ?? value.length
 			const end = el.selectionEnd ?? value.length
@@ -196,7 +197,7 @@ export default {
 	},
 	watch: {
     inputValue(val) {
-			// const clamped = (val ?? "").slice(0, 6000)
+			// const clamped = (val ?? "").slice(0, 5750)
 			// if (clamped !== val) {
 			// 	this.inputValue = clamped
 			// 	return
@@ -208,7 +209,7 @@ export default {
     modelValue: {
       immediate: true,
       handler(val) {
-				// const clamped = (val ?? "").slice(0, 6000)
+				// const clamped = (val ?? "").slice(0, 5750)
 				// if (clamped === this.inputValue) return
 				// this.inputValue = clamped
 				// this.$nextTick(this.autoResize)

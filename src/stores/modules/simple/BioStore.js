@@ -29,8 +29,6 @@ export const useBioStore = defineStore({
       const StatsStore = useStatsStore();
       const SkillsStore = useSkillsStore();
 
-      // console.log('t_skill_Arr:', SkillsStore.skills_Keys)
-
       const weapons_no_unarmed = EquipStore.weapons_Equip_All_Name.filter(name => name !== 'unarmed')
 
       return {
