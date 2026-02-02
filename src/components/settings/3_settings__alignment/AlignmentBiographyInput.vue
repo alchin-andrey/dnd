@@ -1,8 +1,10 @@
 <template>
-	<section class="br-12 pd-16 pd-b-14 cur-text w-100" @click="focusToEnd">
+	<section class="br-12 pd-16 pd-b-14 cur-text w-100" @pointerdown.capture="onSectionPointerDown">
 			<textarea 
 				ref="textarea"
 				rows="1"
+				@pointerdown="onTextareaPointerDown"
+				@keydown="onTextareaKeydown"
 				@focus="onFocus"
 				@input="autoResize"
 				@paste.stop="onPaste"
@@ -48,6 +50,7 @@ export default {
 	data() {
 		return {
 			inputValue: "",
+			_skipFocusToEndOnce: false,
 		};
 	},
 	mounted() {
@@ -113,6 +116,84 @@ export default {
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
 
+		getScrollParents(el) {
+			const parents = []
+			let node = el?.parentElement
+			while (node && node !== document.body) {
+				const style = window.getComputedStyle(node)
+				const overflowY = style.overflowY
+				const canScroll = (overflowY === "auto" || overflowY === "scroll") && node.scrollHeight > node.clientHeight
+				if (canScroll) parents.push(node)
+				node = node.parentElement
+			}
+			return parents
+		},
+		saveScrollState(el) {
+			const parents = this.getScrollParents(el)
+			return {
+				windowY: window.scrollY,
+				parents: parents.map(p => ({ el: p, top: p.scrollTop })),
+			}
+		},
+		restoreScrollState(state) {
+			if (!state) return
+			try { window.scrollTo({ top: state.windowY, left: window.scrollX, behavior: "instant" }) } catch(e) { window.scrollTo(window.scrollX, state.windowY) }
+			for (const p of state.parents) {
+				p.el.scrollTop = p.top
+			}
+		},
+		withScrollLock(el, fn) {
+			const state = this.saveScrollState(el)
+			fn?.()
+			requestAnimationFrame(() => {
+				this.restoreScrollState(state)
+				requestAnimationFrame(() => this.restoreScrollState(state))
+			})
+		},
+
+		onSectionPointerDown(e) {
+			const el = this.$refs.textarea
+			if (!el) return
+
+			if (e.target === el || el.contains(e.target)) return
+
+			const interactive = e.target?.closest?.('a, button, input, textarea, select, option, [role="button"], .cur-p')
+			if (interactive) return
+
+			const wasFocused = (document.activeElement === el)
+
+			e.preventDefault()
+
+			if (wasFocused) return
+
+			this.withScrollLock(el, () => {
+				el.focus({ preventScroll: true })
+				const len = el.value?.length ?? 0
+				el.setSelectionRange(len, len)
+			})
+		},
+
+		onTextareaPointerDown() {
+			const el = this.$refs.textarea
+			if (!el) return
+			const state = this.saveScrollState(el)
+			requestAnimationFrame(() => this.restoreScrollState(state))
+			requestAnimationFrame(() => this.restoreScrollState(state))
+		},
+		
+		onTextareaKeydown(e) {
+			const el = this.$refs.textarea
+			if (!el) return
+			const isMod = e.ctrlKey || e.metaKey
+			if (!isMod) return
+			const key = (e.key || "").toLowerCase()
+			if (!["v","z","x"].includes(key)) return
+			const state = this.saveScrollState(el)
+			requestAnimationFrame(() => this.restoreScrollState(state))
+			requestAnimationFrame(() => this.restoreScrollState(state))
+		},
+
+
 		async pasteFromClipboard () {
 			const el = this.$refs.textarea
 			if (!el) return
@@ -168,42 +249,30 @@ export default {
 
 			const text = normalizedRaw.slice(0, canAdd)
 
-			el.focus({ preventScroll: true })
-			el.setRangeText(text, start, end, "end")
+			this.withScrollLock(el, () => {
+				el.focus({ preventScroll: true })
+				el.setRangeText(text, start, end, "end")
+			})
 
 			this.inputValue = el.value
 			this.$nextTick(this.autoResize)
 		},
 
 		autoResize() {
-      const el = this.$refs.textarea
-      if (!el) return
-      el.style.height = 'auto'
-      el.style.height = el.scrollHeight + 'px'
-    },
-
-		focusOnly() {
-			this.$refs.textarea.focus()
-		},
-
-		focusToEnd(e) {
 			const el = this.$refs.textarea
 			if (!el) return
+			const state = this.saveScrollState(el)
+			el.style.height = "auto"
+			el.style.height = el.scrollHeight + "px"
 
-			if (e?.target === el || el.contains(e?.target)) return
+			this.restoreScrollState(state)
+			requestAnimationFrame(() => this.restoreScrollState(state))
+		},
 
-			const start = el.selectionStart ?? 0
-			const end = el.selectionEnd ?? 0
-			const hasSelectionInTextarea = start !== end
-
-			if (document.activeElement === el && hasSelectionInTextarea) return
-
-			const sel = window.getSelection?.()
-			if (sel && sel.rangeCount > 0 && !sel.isCollapsed) return
-
-			el.focus({ preventScroll: true })
-			const len = el.value?.length ?? 0
-			el.setSelectionRange(len, len)
+		focusOnly() {
+			const el = this.$refs.textarea
+			if (!el) return
+			this.withScrollLock(el, () => el.focus({ preventScroll: true }))
 		},
 
 		onFocus() {
