@@ -6401,4 +6401,6 @@ export default {
   insert:"Вставити ↩︎",
   use_gpt:"Згенерувати в ChatGPT ✦",
   clear: "Очистити ✕︎",
+  banner_title: "Сподобалась функція?",
+  banner_cta: "Підтримати проект",
 };
