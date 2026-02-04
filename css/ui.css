@@ -44,6 +44,7 @@
 .btm-anim { transition-duration: 0.5s;}
 
 .cur-p { cursor: pointer; }
+.cur-text { cursor: text; }
 .cur-ban { cursor: not-allowed; }
 .cur-auto { cursor: auto; }
 
@@ -107,6 +108,18 @@
 /* .btm-red {background: #FF0000; transition-duration: 0.5s;} */
 .btm-red {background: #FF0000;}
 .btm-red.hov:hover { background: #ff3030;}
+
+.btm_donate_banner {
+	background: linear-gradient(0deg, rgba(203, 48, 224, 0.1), rgba(203, 48, 224, 0.1)),
+	linear-gradient(90deg, rgba(255, 0, 225, 0) 0%, rgba(255, 0, 225, 0.4) 100%);
+	transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.btm_donate_banner.hov:hover {
+	background: linear-gradient(0deg, rgba(203, 47, 224, 0.1), rgba(203, 47, 224, 0.1)),
+	linear-gradient(90deg, rgba(255, 0, 225, 0) 0%, rgba(255, 0, 225, 0.6) 100%);
+	box-shadow: 0px 0px 24px 0px #EA04FF33 inset;
+}
 
 
 /* stripe */

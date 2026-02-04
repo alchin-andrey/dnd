@@ -1,3 +1,8 @@
+.svg-15 {
+	min-width: 15px;
+	height: 15px;
+}
+
 .svg-18 {
 	min-width: 18px;
 	height: 18px;
@@ -17,11 +22,6 @@
 	min-width: var(--px-36);
 	height: var(--px-36);
 }
-
-/* .svg-47 {
-	min-width: 47px;
-	height: 47px;
-} */
 
 .svg-54 {
 	min-width: 54px;

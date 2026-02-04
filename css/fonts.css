@@ -97,6 +97,43 @@
 	letter-spacing: 0.02em;
 }
 
+.int-400-16,
+.int-400-16::placeholder {
+	font-family: "Inter-400";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 18px;
+	letter-spacing: 0.02em;
+}
+
+.int-400-ios,
+.int-400-ios::placeholder {
+	font-family: "Inter-400";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+	/* transition: font-size 0.1s, line-height 0.1s; */
+}
+
+@media (hover: none), (pointer: coarse), (max-width: 768px) {
+  .int-400-ios:focus,
+  .int-400-ios:focus::placeholder {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+}
+  
+@supports (-webkit-touch-callout: none) {
+  .int-400-ios:focus,
+  .int-400-ios:focus::placeholder {
+    font-size: 16px !important;
+    line-height: 18px !important;
+  }
+}
+
 .int-400-13 {
 	font-family: "Inter-400";
 	font-style: normal;
@@ -301,7 +338,9 @@
 .white-04 {color: rgba(255, 255, 255, 0.4);}
 .buff { color: #05ff00; }
 .debuff { color: #ff0000;}
+.color-lightblue { color: #00E0FF;}
 .color-blue { color: #0047FF;}
+.color-purple { color: #CB30E0;}
 
 .print-grey { color: #828282;}
 .text_print > span { color: #000000;}
@@ -317,6 +356,5 @@
 }
 
 
-.f-lh-18 {
-	line-height: 18px;
-}
+.f-lh-18 {line-height: 18px;}
+.f-lh-30 {line-height: 30px;}
