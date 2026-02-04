@@ -47,7 +47,7 @@ import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
 
 export default {
 	name: "AlignmentBiographyInput",
-	emits: ['show-donate'],
+	emits: ['show-donate', 'update:modelValue'],
 	data() {
 		return {
 			inputValue: "",
