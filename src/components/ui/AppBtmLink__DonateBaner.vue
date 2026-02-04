@@ -3,7 +3,9 @@
 	class="db btm_donate_banner br-12 blur-60 pd-12-16-14 hov cur-p"
 	target="_blank"
 	rel="noopener" 
-	href="https://cutt.ly/lwkDE0Yn">
+	href="https://cutt.ly/lwkDE0Yn"
+	@click="onClick"
+	>
 	<div class="flex-row-sb">
 		<div class="int-400 color-purple" >{{ T('banner_title') }}</div>
 		<div class="flex-row">
@@ -22,6 +24,8 @@
 <script>
 export default {
 	name: "AppBtmLink__DonateBaner",
+	emits: ['close'],
+
 	props: {
 		link: {
 			type: String,
@@ -56,6 +60,12 @@ export default {
 	computed: {
 		target_Link() {
 			return this.link_self ? '_self' : '_blank';
+		},
+	},
+
+		methods: {
+		onClick() {
+			this.$emit('close');
 		},
 	},
 };

@@ -17,9 +17,14 @@
 			<AppCardWrapp no_pd passive>
 				<AlignmentBiographyInput
 					v-model="MY.biography_options[MY.user_biography - 1].text"
+					@show-donate="toggleDonate(true)"
 				/>
 			</AppCardWrapp>
-			<AppBtmLink__DonateBaner class="mr-t-8" />
+			<AppBtmLink__DonateBaner 
+				class="mr-t-8" 
+				v-if="showDonate"
+				@close="toggleDonate(false)"
+			/>
 			<div class="int-400 white-04 mr-t-24" v-html="details_Biography" />
 		</section>
 	</My-Selection-Box>
@@ -27,31 +32,47 @@
 
 
 <script>
-import AlignmentBiographyInput from "@/components/settings/3_settings__alignment/AlignmentBiographyInput.vue";
-import { mapState } from "pinia";
-import { useMYStore } from "@/stores/user/MYStore";
-import { usePagesStore } from "@/stores/user/PagesStore";
-import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
-export default {
-	name: "AlignmentSett__Biography",
-	components: { AlignmentBiographyInput },
-	computed: {
-		...mapState(useMYStore, ["MY"]),
-		...mapState(usePagesStore, ["alignment_page"]),
-		...mapState(useAlignmentStore, ["MY_Biography_Menu"]),
-
-		details_Biography() {
-			return this.T("print_biography_details");
+	import AlignmentBiographyInput from "@/components/settings/3_settings__alignment/AlignmentBiographyInput.vue";
+	import { mapState } from "pinia";
+	import { useMYStore } from "@/stores/user/MYStore";
+	import { usePagesStore } from "@/stores/user/PagesStore";
+	import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
+	export default {
+		name: "AlignmentSett__Biography",
+		components: { AlignmentBiographyInput },
+		data() {
+			return {
+				showDonate: false,
+			};
 		},
 
-	},
-
-	methods: {
-		getBiographyOptions(option) {
-			this.MY.user_biography = option;
+		watch: {
+			'alignment_page.shown.biography'(isOpen) {
+				if (!isOpen) this.toggleDonate(false);
+			},
 		},
-	},
-};
+
+		computed: {
+			...mapState(useMYStore, ["MY"]),
+			...mapState(usePagesStore, ["alignment_page"]),
+			...mapState(useAlignmentStore, ["MY_Biography_Menu"]),
+
+			details_Biography() {
+				return this.T("print_biography_details");
+			},
+
+		},
+
+		methods: {
+			getBiographyOptions(option) {
+				this.MY.user_biography = option;
+			},
+
+			toggleDonate(state) {
+				this.showDonate = !!state;
+			},
+		},
+	};
 </script>
 
 <style scoped>

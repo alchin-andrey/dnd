@@ -32,7 +32,7 @@
 					rel="noopener" 
 					:href="biography_Link_GPT"
 					@pointerdown.stop
-					@click.stop
+					@click.stop="onUseGPT"
 				>{{ T('use_gpt') }}
 				</a>
 			</div>
@@ -47,6 +47,7 @@ import { useAlignmentStore } from "@/stores/modules/AlignmentStore";
 
 export default {
 	name: "AlignmentBiographyInput",
+	emits: ['show-donate'],
 	data() {
 		return {
 			inputValue: "",
@@ -115,6 +116,10 @@ export default {
 
 	methods: {
 		...mapActions(usePagesStore, ["stopSelectText"]),
+
+		onUseGPT() {
+      this.$emit('show-donate');
+    },
 
 		getScrollParents(el) {
 			const parents = []
