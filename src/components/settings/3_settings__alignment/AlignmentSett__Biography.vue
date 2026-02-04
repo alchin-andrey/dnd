@@ -69,7 +69,8 @@
 			},
 
 			toggleDonate(state) {
-				setTimeout(() => this.showDonate = !!state, 1000);
+				return
+				// setTimeout(() => this.showDonate = !!state, 1000);
 			},
 
 		},
