@@ -14,12 +14,13 @@
 				</AppCardWrapp>
 			</div>
 
-			<AppCardWrapp class="mr-b-24" no_pd passive>
+			<AppCardWrapp no_pd passive>
 				<AlignmentBiographyInput
 					v-model="MY.biography_options[MY.user_biography - 1].text"
 				/>
 			</AppCardWrapp>
-			<div class="int-400 white-04" v-html="details_Biography" />
+			<AppBtmLink__DonateBaner class="mr-t-8" />
+			<div class="int-400 white-04 mr-t-24" v-html="details_Biography" />
 		</section>
 	</My-Selection-Box>
 </template>

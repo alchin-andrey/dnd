@@ -146,10 +146,11 @@ a.db {display: block;}
 .pd-r-34 {padding-right: 34px;}
 .pd-r-42 {padding-right: 42px;}
 
-
 .pd-l-16 { padding-left: 16px; }
 .pd-l-22 { padding-left: 22px; }
 .pd-l-32 { padding-left: 32px; }
+
+.pd-12-16-14 {padding: 12px 16px 14px;}
 
 .mr-t-4 { margin-top: 4px; }
 .mr-t-5 { margin-top: 5px; }

@@ -8,6 +8,7 @@ import AppGpt from "@/components/ui/AppGpt.vue";
 import AppStripWrapp from "@/components/ui/AppStripWrapp.vue";
 import AppBtm from "@/components/ui/AppBtm.vue";
 import AppBtmLink from "@/components/ui/AppBtmLink.vue";
+import AppBtmLink__DonateBaner from "@/components/ui/AppBtmLink__DonateBaner.vue";
 import AppBtmIcon from "@/components/ui/AppBtmIcon.vue";
 import AppCardWrapp from "@/components/ui/AppCardWrapp.vue";
 import AppLogoCard from "@/components/ui/AppLogoCard.vue";
@@ -116,6 +117,7 @@ export default [
   AppStripWrapp,
   AppBtm,
   AppBtmLink,
+  AppBtmLink__DonateBaner,
   AppBtmIcon,
   AppCardWrapp,
 
