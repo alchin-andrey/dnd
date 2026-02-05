@@ -110,7 +110,7 @@ export default {
 		},
 
 		style_Font() {
-			return this.isIOS ? 'int-400-16' : 'int-400';
+			return this.isIOS ? 'int-400' : 'int-400';
 		}
 	},
 
