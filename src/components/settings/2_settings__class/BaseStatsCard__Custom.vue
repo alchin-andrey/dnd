@@ -12,7 +12,7 @@
 			<input 
 			size="1" 
 			spellcheck="false" 
-			class="int-700-ios liner" 
+			class="int-700 liner" 
 			v-model="inputValue" 
 			type="text" 
 			onclick="this.setSelectionRange(0, this.value.length)"
