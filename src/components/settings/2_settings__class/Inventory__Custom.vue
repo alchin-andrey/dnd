@@ -3,7 +3,7 @@
 		<section class="card-main pos-rel pd-0 flex-row-sb w-100" :class="style_Br">
 			<input
 			ref="nameInput"
-			class="name-item int-700-ios"
+			class="name-item int-700"
 			:class="{ liner: inputValue_Name, }"
 			size="1"
 			spellcheck="false"
