@@ -13,7 +13,7 @@
             :size="24"
           />{{ em_After }} {{ name_Extra_MOD }}
         </div>
-        <div class="text_print" v-html="t_Text"></div>
+        <div class="text-print" v-html="t_Text"></div>
       </section>
 
       <section class="flex_col gap-10">
@@ -104,15 +104,9 @@
               {{ print_Manna }}
             </div>
 
-            <div class="manna_bubble_print jbm-500-40" v-if="print_Plus">
+            <div class="manna_bubble_print" v-if="print_Plus">
               <div class="print_icon">
                 <AppSvg class="print-svg" name="plus"/>
-                <!-- <svg
-                  class="print-svg"
-                  viewBox="0 0 18 18"
-                  xmlns="http://www.w3.org/2000/svg"
-                  v-html="ui_icon.plus"
-                ></svg> -->
               </div>
             </div>
           </div>
@@ -124,8 +118,8 @@
 
   <main v-else-if="qr_form" id="qr_spell" class="flex_col gap-26">
     <AppWrapper>
-      <div class="title_spell gray_2">{{ t_Type }} /</div>
-      <div class="title_spell">
+      <div class="title-spell int-700 white-02">{{ t_Type }} /</div>
+      <div class="title-spell int-700">
         {{ em_Before }}
         <emoji
           v-if="em_Upd"
@@ -161,7 +155,7 @@
       </section>
     </section>
 
-    <div class="text_spell" v-html="t_Text"></div>
+    <div class="text-spell" v-html="t_Text"></div>
 
     <AppWrapper gap="6">
       <my-spell-main title="parts" :text="t_Parts_Value" emoji />
@@ -215,9 +209,9 @@
     </AppWrapper>
     <div class="hr"></div>
     <div class="flex_col gap-16">
-      <div class="text_spell gray_4" v-html="t_Expanded"></div>
+      <div class="text-spell white-04" v-html="t_Expanded"></div>
       <div
-        class="text_spell rare-text"
+        class="text-spell rare-text"
         v-if="mod_Expanded_Extra"
         v-html="mod_Expanded_Extra"
       />
@@ -247,7 +241,7 @@
         <div class="int-400 flex_col" :class="{ passive: passive }">
           <section class="flex_title">
             <div
-              class="title_spell h_18"
+              class="title-spell int-700 h_18"
               :class="{ 'rare-text': overflow_Save }"
             >
               {{ em_Before }}
@@ -282,7 +276,7 @@
               full_height: this.only_title && this.isShown,
             }"
           >
-            <div class="text_spell" v-html="t_Text"></div>
+            <div class="text-spell" v-html="t_Text"></div>
             <magic-attribute
               v-if="Spell_Index.impact_type"
               :title="Spell_Index.impact_type"
@@ -314,8 +308,8 @@
     </AppTooltip>
     <AppDialog__Property v-model:show="dialogVisible" v-model:mana="mana_numb">
       <AppWrapper>
-        <div class="title_spell gray_2">{{ t_Type }} /</div>
-        <div class="title_spell">
+        <div class="title-spell int-700 white-02">{{ t_Type }} /</div>
+        <div class="title-spell int-700">
           {{ em_Before }}
           <emoji
             v-if="em_Upd"
@@ -350,7 +344,7 @@
         </section>
       </section>
 
-      <div class="text_spell" v-html="t_Text"></div>
+      <div class="text-spell" v-html="t_Text"></div>
 
       <AppWrapper gap="6">
         <my-spell-main title="parts" :text="t_Parts_Value" emoji />
@@ -408,9 +402,9 @@
       </AppWrapper>
       <div class="hr"></div>
       <div class="flex_col gap-16">
-        <div class="text_spell gray_4" v-html="t_Expanded"></div>
+        <div class="text-spell white-04" v-html="t_Expanded"></div>
         <div
-          class="text_spell rare-text"
+          class="text-spell rare-text"
           v-if="mod_Expanded_Extra"
           v-html="mod_Expanded_Extra"
         />
@@ -1328,31 +1322,6 @@ export default {
     },
 
     //ANCHOR - FOO
-    // Value_Foo_Сlean: (state) => (Val) => {
-    //   let num = null;
-    //   let foo = state.Spell_Index.impact_size_foo;
-    //   if (foo) {
-    //     let str = foo.split("__");
-    //     for (let i in str) {
-    //       str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
-    //     }
-    //   }
-    //   return num;
-    // },
-
-    // Value_Foo: (state) => (Val) => {
-    //   let low_val = Val.toLowerCase();
-    //   let num = state.Spell_Index[`impact_size_${low_val}`];
-    //   let foo = state.Spell_Index.impact_size_foo;
-    //   if (foo) {
-    //     let str = foo.split("__");
-    //     for (let i in str) {
-    //       str[i].substr(0, 3) === Val ? (num = state[str[i]]) : null;
-    //     }
-    //   }
-    //   return num;
-    // },
-
     Value_Foo_Сlean: (state) => (Val, foo) => {
       if (foo) {
         let str = foo.split("__");
@@ -1365,14 +1334,6 @@ export default {
       return null;
     },
 
-    // Value_Foo: (state) => (Val, pref) => {
-    //   let low_val = Val.toLowerCase();
-    //   let num = state.Spell_Index[`impact_size_${low_val}`];
-    //   const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.impact_size_foo);
-    //   if (foo) return foo;
-    //   else return num;
-    // },
-
     Value_Foo: (state) => (Val, pref) => {
       let low_val = Val.toLowerCase();
       const str_impact = pref ? `${pref}_impact_size` : `impact_size`;
@@ -1381,14 +1342,6 @@ export default {
       if (foo) return foo;
       else return num;
     },
-
-    // Value_Second_Foo: (state) => (Val) => {
-    //   let low_val = Val.toLowerCase();
-    //   let num = state.Spell_Index[`second_impact_size_${low_val}`];
-    //   const foo = state.Value_Foo_Сlean(Val, state.Spell_Index.second_impact_size_foo);
-    //   if (foo) return foo;
-    //   else return num;
-    // },
 
     kof_Foo: (state) => (lvl_arr, kof_arr) => {
       !kof_arr ? (kof_arr = lvl_arr) : null;
@@ -1534,7 +1487,6 @@ export default {
   cursor: pointer;
   color: #ffffff;
   position: relative;
-  /* cursor: url('@/assets/img/icon/cursor_magic.png'), pointer; */
 }
 
 .flex_col {
@@ -1619,27 +1571,13 @@ export default {
   height: 18px;
 }
 
-.title_spell {
-  font-family: "Inter-700";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.02em;
+.title-spell {
   display: flex;
   align-items: center;
   white-space: pre;
 }
 
-.gray_2 {
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.gray_4 {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.text_spell {
+.text-spell {
   width: 340px;
   text-align: start;
 }
@@ -1727,26 +1665,6 @@ export default {
 .scroll-packs-leave-to {
   transform: translateY(-10px);
   opacity: 0;
-}
-
-.gap-8 {
-  gap: 8px;
-}
-
-.gap-10 {
-  gap: 10px;
-}
-
-.gap-16 {
-  gap: 16px;
-}
-
-.gap-26 {
-  gap: 26px;
-}
-
-.gap-52 {
-  gap: 52px;
 }
 
 .manna_bubble_print {

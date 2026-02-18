@@ -28,10 +28,6 @@ import AppFines from "@/components/ui/AppFines.vue";
 //TRUE
 import AppSelectionArr from "@/components/ui/AppSelectionArr.vue";
 
-//TEST
-// import AppSelectionArr from "@/components/ui/AppSelectionArr____.vue";
-
-
 
 import AppStats from "@/components/ui/AppStats.vue";
 import AppSkills from "@/components/ui/AppSkills.vue";
@@ -92,7 +88,7 @@ import MyCardText from "@/components/ui/pinia_ui/MyCardText.vue";
 import RaceBody from "@/components/ui/pinia_ui/RaceBody.vue";
 import MySkale from "@/components/ui/pinia_ui/MySkale.vue";
 import MySizeGrowth from "@/components/ui/pinia_ui/MySizeGrowth.vue";
-import MyRange from "@/components/ui/pinia_ui/MyRange.vue";
+
 import MyRangeSize from "@/components/ui/pinia_ui/MyRangeSize.vue";
 
 import MagicAttribute from "@/components/ui/MagicAttribute.vue";
@@ -183,7 +179,7 @@ export default [
   RaceBody,
   MySkale,
   MySizeGrowth,
-  MyRange,
+
   MyRangeSize,
 
   AppHeaderCard,

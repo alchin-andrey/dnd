@@ -1,7 +1,7 @@
 <template>
 	<div class="text-col">
 		<my-card-text
-			class="story-print int-400-22"
+			class="story-print"
 			notation="race"
 			:title="MY_Race.name"
 			:text_html="MY_Race.details"
@@ -30,7 +30,7 @@
 		/>
 	
 		<div class="hr-print"></div>
-		<my-card-text class="story-print int-400-22"
+		<my-card-text class="story-print"
 			notation="class"
 			:title="MY_Class.name"
 			:text_html="MY_Class.details"
@@ -70,8 +70,7 @@ export default {
 <style scoped>
 .text-col {
 	height: 100%;
-	/* column-fill: auto; */
-		column-count: 3;
+	column-count: 3;
 	column-gap: 72px;
 }
 

@@ -1,8 +1,8 @@
 <template>
-	<div class="int-400">
-		<h3 class="title">{{ t_Title }}</h3>
+	<div>
+		<h3 class="int-700 main-text">{{ t_Title }}</h3>
 		<p
-			class="text"
+			class="int-400 white-04 mr-t-4"
 			:class="{
 				ethnos: ethnos_color,
 				race: race_color && !ethnos_color,
@@ -49,21 +49,6 @@ export default {
 </script>
 
 <style scoped>
-.title {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	margin-bottom: 4px;
-}
-
-.text {
-	color: rgba(255, 255, 255, 0.4);
-	text-align: start;
-}
 
 .ethnos {
 	color: #05ff00;

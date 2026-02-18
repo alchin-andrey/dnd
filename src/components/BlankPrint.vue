@@ -4,11 +4,11 @@
 
       <Blank__Page_1 id="print-page-1" :blank_print="MY.param.blank_print" blank_size="print" v-if="PRINT_WORK" />
 
-      <Blank__Page_2 class="print-page int-400-22 var-blank--print" id="print-page-2" :blank_print="MY.param.blank_print"
+      <Blank__Page_2 class="print-page var-blank--print" id="print-page-2" :blank_print="MY.param.blank_print"
         v-if="PRINT_WORK" />
         
     <template v-if="list_Main_Spells_Arr.length !== 0">
-      <main class="print-page int-400-22" v-for="arr, i in list_Main_Spells_Arr" :key="arr" :id="`print-page-3.${i + 1}`">
+      <main class="print-page" v-for="arr, i in list_Main_Spells_Arr" :key="arr" :id="`print-page-3.${i + 1}`">
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min var-blank--print" v-if="i == 0" />
           <AppSpells class="cell-spell mr-min" v-for="item in arr" :key="item" :spell_obj="item" blank_print />
@@ -16,14 +16,14 @@
       </main>
     </template>
 
-      <main class="print-page int-400-22" v-if="list_Main_Spells_Arr.length == 0" id="print-page-3.1">
+      <main class="print-page" v-if="list_Main_Spells_Arr.length == 0" id="print-page-3.1">
         <section class="col-wrap-spell">
           <BlankTable__List_3 id="table_list_3" class="main-table mr-min var-blank--print" />
         </section>
       </main>
 
       <template v-if="show_Spellbook">
-        <main class="print-page int-400-22" v-for="arr, i in list_Main_Spells_Arr__Book" :key="arr"
+        <main class="print-page" v-for="arr, i in list_Main_Spells_Arr__Book" :key="arr"
           :id="`print-page-4.${i + 1}`">
           <section class="col-wrap-spell">
             <BlankTable__SpellBookTitle id="table_spellbook" class="main-table mr-min var-blank--print" v-if="i == 0" />
@@ -37,17 +37,10 @@
         </main>
       </template>
 
-      <!-- <main class="print-page int-400-22" id="print-page-4">
-        <section class="col-wrap-spell">
-          <BlankTable__SpellBookTitle id="table_spellbook" class="main-table mr-min var-blank--print"/>
-        </section>
-			</main> -->
-
       <main class="print-page" id="print-page-5">
         <BlankText__All />
       </main>
 
-      <!-- <main class="print-page" v-if="!oldSchool_Blank" id="print-page-6"> -->
       <main class="print-page" id="print-page-6">
         <BlankText__Biography class="wrap-head" />
         <section class="wrap-bottom int-600-28 flex_row">

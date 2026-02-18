@@ -37,10 +37,6 @@ export default {
 
 	created() {
 		this.getCreated();
-		// if(this.pages.race_page && this.new_user && !this.screen_Max) {
-		// 	this.showHome();
-		// 	this.$router.push('/welcome-to-dnd');
-		// }
 	},
 
 	computed: {
@@ -146,8 +142,6 @@ export default {
 @media (max-width: 1279px) {
 	.main-class {
 		display: block;
-		/* display: flex; */
-		/* justify-content: center; */
 		max-width: 434px;
 		margin: 0 auto;
 		height: 100%;
@@ -167,28 +161,5 @@ export default {
 	max-width: 362px;
 	color: rgba(255, 255, 255, 0.4);
 	text-align: start;
-}
-
-.story h3 {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-	color: #ffffff;
-	margin-top: 26px;
-	margin-bottom: 5px;
-}
-
-.story-print h3 {
-	font-family: "Inter-600";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 28px;
-	line-height: 30px;
-	letter-spacing: 0.02em;
-	margin-top: 26px;
-	margin-bottom: 10px;
 }
 </style>

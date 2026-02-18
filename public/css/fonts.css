@@ -1,57 +1,54 @@
 @font-face {
-    font-family: 'JetBrains Mono-300';
+    font-family: 'JetBrains-Mono';
+    src: url('../fonts/JetBrainsMono/JetBrainsMono-Light.woff2') format("woff2");
+    font-weight: 300;
     font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/JetBrainsMono-Light.ttf') format("truetype");
+		font-display: swap;
 }
 
 @font-face {
-    font-family: 'JetBrains Mono-500';
+    font-family: 'JetBrains-Mono';
+    src: url('../fonts/JetBrainsMono/JetBrainsMono-Medium.woff2') format("woff2");
+    font-weight: 500;
     font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/JetBrainsMono-Medium.ttf') format("truetype");
+		font-display: swap;
 }
 
 @font-face {
-    font-family: 'JetBrains Mono-600';
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Regular.woff2') format("woff2");
+    font-weight: 400;
     font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/JetBrainsMono-SemiBold.ttf') format("truetype");
+		font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter-700';
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Medium.woff2') format("woff2");
+    font-weight: 500;
     font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Inter-Bold.ttf') format("truetype");
+		font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter-400';
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-SemiBold.woff2') format("woff2");
+    font-weight: 600;
     font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Inter-Regular.ttf') format("truetype");
+		font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter-500';
+    font-family: 'Inter';
+    src: url('../fonts/Inter/Inter-Bold.woff2') format("woff2");
+    font-weight: 700;
     font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Inter-Medium.ttf') format("truetype");
+		font-display: swap;
 }
-
-@font-face {
-    font-family: 'Inter-600';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Inter-SemiBold.ttf') format("truetype");
-}
-
 
 .jbm-300 {
-	font-family: "JetBrains Mono-300";
-	font-style: normal;
-	font-weight: normal;
+	font-family: 'JetBrains-Mono', Arial, sans-serif;
+	font-weight: 300;
 	font-size: 11px;
 	line-height: 18px;
 	letter-spacing: 0.06em;
@@ -59,9 +56,8 @@
 }
 
 .jbm-500-22 {
-  font-family: 'JetBrains Mono-500';
-  font-style: normal;
-  font-weight: normal;
+  font-family: 'JetBrains-Mono', Arial, sans-serif;
+	font-weight: 500;
   font-size: 22px;
   line-height: 36px;
   letter-spacing: 0.02em;
@@ -69,230 +65,195 @@
 }
 
 .jbm-500-22-blank {
-  font-family: 'JetBrains Mono-500';
-  font-style: normal;
-  font-weight: normal;
+  font-family: 'JetBrains-Mono', Arial, sans-serif;
+	font-weight: 500;
   font-size: var(--px-22);
   line-height: var(--px-36);
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
-.jbm-500-40 {
-  font-family: 'JetBrains Mono-500';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  /* line-height: 36px; */
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
 .int-400 {
-	font-family: "Inter-400";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 400;
 	font-size: 11px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
 }
 
 .int-400-13 {
-	font-family: "Inter-400";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 400;
 	font-size: 13px;
 	line-height: 18px;
 	letter-spacing: 0.02em;
 }
 
 .int-400-22 {
-	font-family: "Inter-400";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 400;
 	font-size: 22px;
 	line-height: 30px;
 	letter-spacing: 0.02em;
 }
 
 .int-400-22-blank {
-	font-family: "Inter-400";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 400;
 	font-size: var(--px-22);
 	line-height: var(--px-30);
 	letter-spacing: 0.02em;
 }
 
 .int-500-22 {
-	font-family: "Inter-500";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 500;
 	font-size: 22px;
 	line-height: 30px;
 	letter-spacing: 0.02em;
 }
 
 .int-500-22-blank {
-	font-family: "Inter-500";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 500;
 	font-size: var(--px-22);
 	line-height: var(--px-30);
 	letter-spacing: 0.02em;
 }
 
 .int-600-22 {
-	font-family: "Inter-600";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
 	font-size: 22px;
 	line-height: 30px;
 	letter-spacing: 0.02em;
 }
 
 .int-600-22-blank {
-	font-family: "Inter-600";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
 	font-size: var(--px-22);
 	line-height: var(--px-30);
 	letter-spacing: 0.02em;
 }
 
 .int-600-28 {
-	font-family: 'Inter-600';
-  font-style: normal;
-  font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
   font-size: 28px;
   line-height: 48px;
   letter-spacing: 0.02em;
 }
 
 .int-600-28-blank {
-	font-family: 'Inter-600';
-  font-style: normal;
-  font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
   font-size: var(--px-28);
   line-height: var(--px-48);
   letter-spacing: 0.02em;
 }
 
 .int-600-48 {
-	font-family: 'Inter-600';
-  font-style: normal;
-  font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
   font-size: 48px;
   line-height: 60px;
   letter-spacing: 0.02em;
 }
 
 .int-600-48-blank {
-	font-family: "Inter-600";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
 	font-size: var(--px-48);
 	line-height: var(--px-60);
 	letter-spacing: 0.02em;
 }
 
 .int-600-72 {
-  font-family: 'Inter-600';
-  font-style: normal;
-  font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
   font-size: 72px;
-  line-height: 72px;
+  line-height: 1.2; /* 72px; */
   letter-spacing: 0.02em;
 }
 
 .int-600-72-blank {
-  font-family: 'Inter-600';
-  font-style: normal;
-  font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
   font-size: var(--px-72);
-  line-height: var(--px-72);
+  /* font-size: 4.5rem; */
+  line-height: 1;
   letter-spacing: 0.02em;
 }
 
 .int-700,
 .int-700::placeholder {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
 	font-size: 13px;
 	line-height: 15px;
 	letter-spacing: 0.02em;
 }
-
-/* .int-700-ios,
-.int-700-ios::placeholder {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0.02em;
-}
-
-@media (hover: none), (pointer: coarse), (max-width: 768px) {
-  .int-700-ios:focus,
-  .int-700-ios:focus::placeholder {
-    font-size: 16px !important;
-    line-height: 18px !important;
-  }
-}
-  
-@supports (-webkit-touch-callout: none) {
-  .int-700-ios:focus,
-  .int-700-ios:focus::placeholder {
-    font-size: 16px !important;
-    line-height: 18px !important;
-  }
-} */
 
 .int-700-18 {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
 	font-size: 18px;
 	line-height: 20px;
 	letter-spacing: 0.02em;
 }
 
 .int-700-18-blank {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
 	font-size: var(--px-18);
 	line-height: var(--px-20);
 	letter-spacing: 0.02em;
 }
 
 .int-700-20 {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
 	font-size: 20px;
-	line-height: 24px;
+	line-height: 1.2; /* 24px; */
 	letter-spacing: 0.02em;
 }
 
 .int-700-22 {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
 	font-size: 22px;
 	line-height: 30px;
 	letter-spacing: 0.02em;
 }
 
 .int-700-30 {
-	font-family: "Inter-700";
-	font-style: normal;
-	font-weight: normal;
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
 	font-size: 30px;
-	line-height: 36px;
+	line-height: 1.2; /* 36px; */
 	letter-spacing: 0.02em;
+}
+
+.story h3 {
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0.02em;
+	color: #ffffff;
+	margin-top: 26px;
+	margin-bottom: 5px;
+}
+
+.story-print h3 {
+	font-family: "Inter", Arial, sans-serif;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
+	margin-top: 26px;
+	margin-bottom: 10px;
 }
 
 .white-006 {color: rgba(255, 255, 255, 0.06);}
@@ -305,7 +266,9 @@
 .color-purple { color: #CB30E0;}
 
 .print-grey { color: #828282;}
-.text_print > span { color: #000000;}
+
+.text-print, 
+.text-print > span { color: #000000;}
 
 
 .main-text {color: #ffffff;}

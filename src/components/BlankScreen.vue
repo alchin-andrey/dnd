@@ -1,5 +1,5 @@
 <template>
-	<section class="int-400-22" v-if="pages.alignment_page">
+	<section v-if="pages.alignment_page">
 		<Blank__Page_1 class="print-page" blank_print="oldschool" blank_size="print" id="oldschool-screen-1"/>
 		<Blank__Page_1 class="print-page" blank_print="standard" blank_size="print" id="standard-screen-1"/>
 	</section>
@@ -30,9 +30,6 @@ export default {
 
 	watch: {
 		"alignment_page.shown.blank_print": "getPageImage",
-		// "pages.alignment_page": "getPageImage",
-		// "MY.custom_photo": "getPageImage",
-		// "MY.param.user_photo": "getPageImage",
 	},
 
 	methods: {
