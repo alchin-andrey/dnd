@@ -95,7 +95,7 @@ export default {
 	width: 100%;
 	min-height: 120px;
 	border-radius: 4px;
-	background-image: url('@/assets/img/characters/halfling/ethhnos/image.png');
+	background-image: url('@/assets/img/ethnos/image.png');
 	border: 2px solid rgba(255, 255, 255, 0.20);
 }
 
