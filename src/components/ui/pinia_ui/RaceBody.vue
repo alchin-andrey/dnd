@@ -179,7 +179,7 @@ export default {
         img = !this.error ? this.img_Char_Numb : '1-4';
       }
       try {
-        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${body}/${img}.png`);
+        result = require(`@/assets/img/characters/${race}${ethnos}/${sex}/${body}/${img}.avif`);
       } catch (e) {
         if (e.code !== "MODULE_NOT_FOUND") {
           throw e;
