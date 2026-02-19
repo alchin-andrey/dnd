@@ -65,7 +65,7 @@ export default {
 
 		style_Img_Obj() {
 			if (this.active_Mob_Custom_Char) return {
-					'background-image': `url(${this.MY.custom_photo}), url(${require('@/assets/img/ethnos/forest_custom@3x.png')})`,
+					'background-image': `url(${this.MY.custom_photo}), url(${require('@/assets/img/ethnos/forest_custom@3x.avif')})`,
 				}
 			else return {};
 		},
@@ -85,7 +85,7 @@ export default {
 	position: relative;
 	overflow: hidden;
 	border-radius: 4px;
-	background-image: url('@/assets/img/ethnos/image.png');
+	background-image: url('@/assets/img/ethnos/image.avif');
 }
 
 .border {

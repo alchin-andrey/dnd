@@ -28,19 +28,19 @@ export default {
 			{
 				name: 'lobby_game_type_1_name',
 				details: 'lobby_game_type_1_details',
-				img: require('@/assets/img/other/dnd_story_one_shot.png'),
+				img: require('@/assets/img/other/dnd_story_one_shot.avif'),
 				link: 'https://youtu.be/UWDPz2vrUn0',
 			},
 			{
 				name: 'lobby_game_type_2_name',
 				details: 'lobby_game_type_2_details',
-				img: require('@/assets/img/other/dnd_story_module.png'),
+				img: require('@/assets/img/other/dnd_story_module.avif'),
 				link: 'https://youtu.be/7CjvWO05rA0?t=507',
 			},
 			{
 				name: 'lobby_game_type_3_name',
 				details: 'lobby_game_type_3_details',
-				img: require('@/assets/img/other/dnd_story_campaign.png'),
+				img: require('@/assets/img/other/dnd_story_campaign.avif'),
 				link: 'https://www.youtube.com/watch?v=Dl4kA4w0rU0&list=PLO1kG5YTufOacRM7eAfovXMwk_SU1OWNT',
 			},
 		]

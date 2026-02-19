@@ -38,7 +38,7 @@ export default {
 		slide_Arr() {
 			let arr = [];
 			for (let i = 1; i < 2; i++) {
-				arr.push(require(`@/assets/img/promo/${i}.png`));
+				arr.push(require(`@/assets/img/promo/${i}.avif`));
 			}
 			return arr;
 		},

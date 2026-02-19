@@ -92,7 +92,7 @@ export default {
 .plag-promo {
 	width: 100%;
 	height: 100%;
-	background: url('@/assets/img/other/plag_promo.png') 0 0/cover no-repeat;
+	background: url('@/assets/img/other/plag_promo.avif') 0 0/cover no-repeat;
 	filter: blur(2px);
 	opacity: 0.6;
 }

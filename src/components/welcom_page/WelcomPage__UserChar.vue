@@ -88,29 +88,4 @@ export default {
 </script>
 
 <style scoped>
-.char-back {
-	display: flex;
-	align-items: center;
-	padding-left: 32px;
-	width: 100%;
-	min-height: 120px;
-	border-radius: 4px;
-	background-image: url('@/assets/img/ethnos/image.png');
-	border: 2px solid rgba(255, 255, 255, 0.20);
-}
-
-/* .animation--active  {
-  animation-name: active-back;
-  animation-duration: 2s;
-  animation-timing-function: cubic-bezier(.04,.85,.35,.51);
-}
-
-@keyframes active-back{
-	0%{ background: rgba(255, 255, 255, 0.06); }
-	20%{ background: rgba(255, 255, 255, 0.2); }
-	40%{ background: rgba(255, 255, 255, 0.2); }
-	100%{ background: rgba(255, 255, 255, 0.06); }
-} */
-
-
 </style>

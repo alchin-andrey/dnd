@@ -26,7 +26,7 @@ export default {
 	},
 	computed: {
 		Club_Img() {
-			return require(`@/assets/img/clubs/${this.club_param.id}.png`);
+			return require(`@/assets/img/clubs/${this.club_param.id}.avif`);
 		},
 	},
 };

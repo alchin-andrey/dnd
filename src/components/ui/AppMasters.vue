@@ -54,7 +54,7 @@ export default {
 
     master_Foto() {
       const name = this.master_param.name;
-      return require(`@/assets/img/masters/${name}.png`);
+      return require(`@/assets/img/masters/${name}.avif`);
     },
 
     t_City() {

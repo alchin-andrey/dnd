@@ -31,7 +31,7 @@ export default {
 	height: 420px;
 	padding: 15px 16px;
 	margin-top: 48px;
-	background-image: url('@/assets/img/other/what_dnd.png');
+	background-image: url('@/assets/img/other/what_dnd.avif');
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 	background-size: cover;

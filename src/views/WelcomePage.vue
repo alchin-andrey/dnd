@@ -98,7 +98,7 @@ export default {
 
 .welcom-wrapp {
 	width: 100%;
-	background-image: url(@/assets/img/other/welcome_image_20_grad.png);
+	background-image: url(@/assets/img/other/welcome_image_20_grad.avif);
 	background-position: 0 0;
 	background-repeat: repeat-x;
 	background-size: 1600px 496px;

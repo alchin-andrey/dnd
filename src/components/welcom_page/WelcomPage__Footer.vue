@@ -21,7 +21,7 @@
 
 		<section class="card-size">
 			<section class="flex-col btm-grey br-12 blur-60 h-100 hid">
-			<img src="@/assets/img/promo/1.png" alt="donate">
+			<img src="@/assets/img/promo/1.avif" alt="donate">
 			<Donate class="card-wrapp"/>
 		</section>
 		</section>

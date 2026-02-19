@@ -58,11 +58,11 @@ export default {
 
 	computed: {
 		message_Ava() {
-			return require(`@/assets/img/message/ava_${this.name}.png`);
+			return require(`@/assets/img/message/ava_${this.name}.avif`);
 		},
 
 		message_DiceImg() {
-			if(this.dice) return require(`@/assets/img/message/dice_${this.dice[0]}.png`);
+			if(this.dice) return require(`@/assets/img/message/dice_${this.dice[0]}.avif`);
 		},
 
 		massage_Name() {
