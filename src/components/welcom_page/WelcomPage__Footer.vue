@@ -35,8 +35,8 @@ export default {
 		Donate,
 	},
 	data: () => ({
-		t_me_link: 'https://t.me/dndme_club',
-		t_me_link_name: 't.me/dndme_club',
+		t_me_link: 'https://t.me/dndmeclub',
+		t_me_link_name: 't.me/dndmeclub',
 	}),
 };
 </script>
