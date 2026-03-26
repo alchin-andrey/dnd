@@ -23791,7 +23791,7 @@ export default {
       expanded: "spell_spirit_guardians_expanded",
 
       type: "conjuration",
-      classes: ["paladin",],
+      classes: ["cleric",],
 
       cast_time: "action",
       cast_duration: null,
