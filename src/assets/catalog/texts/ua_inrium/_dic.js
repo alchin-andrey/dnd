@@ -6100,6 +6100,7 @@ export default {
   lviv: "Львів",
   offline: "Оффлайн",
   online: "Онлайн",
+  online_fd: "Онлайн Foundry + Discord",
   telegram: "Telegram",
 
   andrii_pavlov: masters.andrii_pavlov,
@@ -6113,6 +6114,10 @@ export default {
   sanech: masters.sanech,
   sanech_details: masters.sanech_details,
   sanech_contact: masters.sanech_contact,
+
+  rostik: masters.rostik,
+  rostik_details: masters.rostik_details,
+  rostik_contact: masters.rostik_contact,  
 
   lobby_master_button: "Я теж Майстер, додайте мою анкету",
 

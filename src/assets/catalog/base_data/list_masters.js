@@ -28,6 +28,16 @@ export default {
     format: [],
     telegram: "sanech_contact",
     link: "https://t.me/SanechDM",
+  },
+
+  rostik: {
+    id: 4,
+    name: "rostik",
+    details: "rostik_details",
+    city: ["online_fd"],
+    format: [],
+    telegram: "rostik_contact",
+    link: "https://t.me/legendarniy_myr",
   }
 
 };
